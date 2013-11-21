@@ -91,12 +91,12 @@
                 <paramerter>revise-TelephonyManager.xml</paramerter>
             </execute>
         </target>
-        <target path ="telephony-common.jar.out/smali/com/android/internal/telephony/IccCard.smali" action="MERGE" >
+        <target path ="framework.jar.out/smali/com/android/internal/telephony/IccCard.smali" action="MERGE" >
             <execute script="Python" routine="_merge_single_file.py">
                 <paramerter>revise-IccCard.xml</paramerter>
             </execute>
         </target>
-        <target path ="telephony-common.jar.out/smali/com/android/internal/telephony/PhoneSubInfo.smali" action="MERGE" >
+        <target path ="framework.jar.out/smali/com/android/internal/telephony/PhoneSubInfo.smali" action="MERGE" >
             <execute script="Python" routine="_merge_single_file.py">
                 <paramerter>revise-PhoneSubInfo.xml</paramerter>
             </execute>

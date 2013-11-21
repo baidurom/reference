@@ -7,12 +7,12 @@
     </revise>
 
     <revise require="OPTION" description="Prehandle incoming short message for Baidu">
-        <target path ="telephony-common.jar.out/smali/com/android/internal/telephony/SMSDispatcher.smali" action="MERGE" >
+        <target path ="framework.jar.out/smali/com/android/internal/telephony/SMSDispatcher.smali" action="MERGE" >
             <execute script="Python" routine="_merge_single_file.py">
                 <paramerter>revise-SMSDispatcher.xml</paramerter>
             </execute>
         </target>
-        <target path="telephony-common.jar.out/com/android/internal/telephony/SMSDispatcher\$TrafficMonitorMessageReceiverClass.smali" action="REPLACE" />
+        <target path="framework.jar.out/com/android/internal/telephony/SMSDispatcher\$TrafficMonitorMessageReceiverClass.smali" action="REPLACE" />
     </revise>
 
     <revise require="OPTION" description="Network firewall policy">
@@ -80,7 +80,7 @@
                 <paramerter>revise-ConnectivityManager.xml</paramerter>
             </execute>
         </target>
-        <target path="telephony-common.jar.out/smali/com/android/internal/telephony/IccSmsInterfaceManager.smali" action="MERGE" >
+        <target path="framework.jar.out/smali/com/android/internal/telephony/IccSmsInterfaceManager.smali" action="MERGE" >
             <execute script="Python" routine="_merge_single_file.py">
                 <paramerter>revise-IccSmsInterfaceManager.xml</paramerter>
             </execute>
