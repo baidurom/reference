@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="password_keyboard_key_height_numeric">60.0dip</dimen>
+    <dimen name="password_keyboard_verticalGap">0.0dip</dimen>
+    <dimen name="keyguard_lockscreen_clock_font_size">70.0dip</dimen>
+    <dimen name="yi_magnifier_range_padding">4.0dip</dimen>
+    <dimen name="yi_lockscreen_password_top_padding">6.0dip</dimen>
+    <dimen name="yi_lockscreen_pin_top_padding">52.0dip</dimen>
+    <dimen name="yi_lockscreen_hotword1_padding">241.0dip</dimen>
+    <dimen name="yi_lockscreen_hotword2_padding">256.0dip</dimen>
+    <dimen name="yi_lockscreen_hotword3_padding">90.0dip</dimen>
+    <dimen name="yi_lockscreen_hotword4_padding">159.0dip</dimen>
+    <dimen name="yi_lockscreen_hotword5_padding">48.0dip</dimen>
+    <dimen name="yi_lockscreen_hotword6_padding">248.0dip</dimen>
+    <dimen name="yi_lockscreen_hotword7_padding">102.0dip</dimen>
+    <dimen name="yi_lockscreen_unlockwidget_margintop">304.0dip</dimen>
+    <dimen name="yi_lockscreen_password_height">356.0dip</dimen>
+    <dimen name="yi_lockscreen_voiceprint_height">356.0dip</dimen>
+    <dimen name="yi_lockscreen_pattern_top_margin">20.0dip</dimen>
+</resources>

@@ -1,0 +1,3 @@
+post-build=google/yakju/maguro:4.1.2/JZO54K/485486:user/test-keys
+post-timestamp=1397552802
+pre-device=maguro

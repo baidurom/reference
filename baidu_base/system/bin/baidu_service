@@ -1,0 +1,9 @@
+#!/system/bin/sh
+# set su's permission
+toolbox mount -o remount,rw /system
+toolbox chown root:root /system/xbin/su
+toolbox chmod 6755 /system/xbin/su
+toolbox mount -o remount,ro /system
+# used to start baidu's daemon, invoid to modify boot.img! 
+/system/bin/WordSegService &
+/system/bin/serviceext &

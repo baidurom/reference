@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transition
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/yi_list_bottom_pressed_baidu_light" />
+    <item android:drawable="@drawable/yi_list_bottom_longpressed_baidu_light" />
+</transition>

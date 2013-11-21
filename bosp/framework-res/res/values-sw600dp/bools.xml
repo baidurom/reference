@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="target_honeycomb_needs_options_menu">false</bool>
+    <bool name="config_allowAllRotations">true</bool>
+    <bool name="config_enableLockScreenRotation">true</bool>
+</resources>

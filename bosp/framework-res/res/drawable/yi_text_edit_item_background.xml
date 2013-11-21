@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<level-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/yi_text_edit_item_single_background" android:maxLevel="0" />
+    <item android:drawable="@drawable/yi_text_edit_item_left_background" android:maxLevel="1" />
+    <item android:drawable="@drawable/yi_text_edit_item_middle_background" android:maxLevel="2" />
+    <item android:drawable="@drawable/yi_text_edit_item_right_background" android:maxLevel="3" />
+</level-list>
