@@ -1,0 +1,6 @@
+version: 1.5.1.b4db7735a5
+apkFileName: framework-res.apk
+isFrameworkApk: true
+sdkInfo:
+  minSdkVersion: '17'
+  targetSdkVersion: '17'

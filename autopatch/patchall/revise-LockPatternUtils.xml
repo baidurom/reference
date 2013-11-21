@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge>
+    <item action="ADD"
+          nearby=".method public clearLock(Z)V"
+          position="OVER"
+          anchor="return-void">
+    const-string v0, "lockscreen.lockmode_type"
+
+    const-wide/16 v1, 0x2
+
+    invoke-direct {p0, v0, v1, v2}, Lcom/android/internal/widget/LockPatternUtils;->setLong(Ljava/lang/String;J)V
+    </item>
+</merge>

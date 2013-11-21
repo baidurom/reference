@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<revision>
+
+    <!-- Demo of upgrade  
+    <revise require="MUST" description="Root and enable adb on booing" >
+        <target path="vendor/BOOT/RAMDISK/default.prop" action="MERGE" >
+            <execute script="Python" routine="_merge_single_file.py" >
+                <paramerter>ROM38/revise-default.prop.xml</paramerter>
+            </execute>
+        </target>
+    </revise>
+	-->
+
+</revision>
