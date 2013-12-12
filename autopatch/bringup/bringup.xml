@@ -70,7 +70,7 @@
     </revise>
 
     <revise require="MUST" description="Merge missed fields and methods in CallManager">
-        <target path ="framework.jar.out/smali/com/android/internal/telephony/CallManager.smali" action="MERGE" >
+        <target path ="telephony-common.jar.out/smali/com/android/internal/telephony/CallManager.smali" action="MERGE" >
             <execute script="Python" routine="_merge_single_file.py">
                 <paramerter>revise-CallManager.xml</paramerter>
             </execute>
