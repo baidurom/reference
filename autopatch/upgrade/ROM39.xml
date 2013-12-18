@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<revision>
+
+    <revise require="OPTION" description="Add isLowRamDevice interface to switch some features" >
+        <target path="framework.jar.out/smali/android/app/ActivityManager.smali" action="MERGE" >
+            <execute script="Python" routine="_merge_single_file.py" >
+                <paramerter>ROM39/revise-ActivityManager.xml</paramerter>
+            </execute>
+        </target>
+    </revise>
+
+</revision>
