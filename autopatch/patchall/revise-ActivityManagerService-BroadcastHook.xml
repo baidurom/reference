@@ -2,9 +2,9 @@
 <merge>
     
     <item action="ADD"
-          nearby=".method public registerReceiver(Landroid/app/IApplicationThread;Ljava/lang/String;Landroid/content/IIntentReceiver;Landroid/content/IntentFilter;Ljava/lang/String;)Landroid/content/Intent;"
-          position="BELOW"
-          anchor="invoke-direct/range.*\(Landroid/content/Intent;Lcom/android/server/am/ProcessRecord;Ljava/lang/String;IILjava/lang/String;Ljava/util/List;Landroid/content/IIntentReceiver;ILjava/lang/String;Landroid/os/Bundle;ZZZ\)V(?:.|\n)+?.local (.*), r:Lcom/android/server/am/BroadcastRecord;"
+          nearby=".method public registerReceiver("
+          position="OVER"
+          anchor="invoke-virtual {.*, (.*)}, Lcom/android/server/am/BroadcastQueue;->enqueueParallelBroadcastLocked"
           match="REGEX">
     move-object/from16 v0, p0
 
@@ -12,9 +12,19 @@
     </item>
 
     <item action="ADD"
-          nearby=".method private final broadcastIntentLocked(Lcom/android/server/am/ProcessRecord;Ljava/lang/String;Landroid/content/Intent;Ljava/lang/String;Landroid/content/IIntentReceiver;ILjava/lang/String;Landroid/os/Bundle;Ljava/lang/String;ZZII)I"
-          position="BELOW"
-          anchor="invoke-direct/range.*\(Landroid/content/Intent;Lcom/android/server/am/ProcessRecord;Ljava/lang/String;IILjava/lang/String;Ljava/util/List;Landroid/content/IIntentReceiver;ILjava/lang/String;Landroid/os/Bundle;ZZZ\)V(?:.|\n)+?.local (.*), r:Lcom/android/server/am/BroadcastRecord;"
+          nearby=".method private final broadcastIntentLocked("
+          position="OVER"
+          anchor="if-eqz (?:.+\s+) invoke-virtual {.*, (.*)}, Lcom/android/server/am/BroadcastQueue;->replaceParallelBroadcastLocked"
+          match="REGEX">
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, %s}, Lcom/android/server/am/ActivityManagerService;->hookMessageBroadcastBaidu(Lcom/android/server/am/BroadcastRecord;)V
+    </item>
+
+    <item action="ADD"
+          nearby=".method private final broadcastIntentLocked("
+          position="OVER"
+          anchor="if-eqz (?:.+\s+) invoke-virtual {.*, (.*)}, Lcom/android/server/am/BroadcastQueue;->replaceOrderedBroadcastLocked"
           match="REGEX">
     move-object/from16 v0, p0
 
