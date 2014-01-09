@@ -1,173 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
-<revision>
+<features>
 
-    <revise require="OPTION" description="Contact's photograph optimization">
-        <target path="framework.jar.out/smali/android/widget/QuickContactBadge.smali" action="REPLACE" />
-        <target path="framework.jar.out/smali/android/widget/QuickContactBadge\$QueryHandler.smali" action="REPLACE" />
-    </revise>
+    <feature require="OPTION" description="Contact's photograph optimization">
+        <revise action="REPLACE" target="framework.jar.out/smali/android/widget/QuickContactBadge.smali" />
+        <revise action="REPLACE" target="framework.jar.out/smali/android/widget/QuickContactBadge\$QueryHandler.smali" />
+    </feature>
 
-    <revise require="OPTION" description="Prehandle incoming short message for Baidu">
-        <target path ="framework.jar.out/smali/com/android/internal/telephony/SMSDispatcher.smali" action="MERGE" >
-            <execute script="Python" routine="_merge_single_file.py">
-                <paramerter>revise-SMSDispatcher.xml</paramerter>
-            </execute>
-        </target>
-        <target path="framework.jar.out/com/android/internal/telephony/SMSDispatcher\$TrafficMonitorMessageReceiverClass.smali" action="REPLACE" />
-    </revise>
+    <feature require="OPTION" description="Prehandle incoming short message for Baidu">
+        <revise action="MERGE" 
+                target="framework.jar.out/smali/com/android/internal/telephony/SMSDispatcher.smali"
+                patch="revise-SMSDispatcher.xml" />
+        <revise action="REPLACE"
+                target="framework.jar.out/com/android/internal/telephony/SMSDispatcher\$TrafficMonitorMessageReceiverClass.smali" />
+    </feature>
 
-    <revise require="OPTION" description="Network firewall policy">
-        <target path ="framework.jar.out/smali/android/net/NetworkPolicyManager.smali" action="MERGE" >
-            <execute script="Python" routine="_merge_single_file.py">
-                <paramerter>revise-NetworkPolicyManager.xml</paramerter>
-            </execute>
-        </target>
-        <target path ="services.jar.out/smali/com/android/server/net/NetworkPolicyManagerService.smali" action="MERGE" >
-            <execute script="Python" routine="_merge_single_file.py">
-                <paramerter>revise-NetworkPolicyManagerService.xml</paramerter>
-            </execute>
-        </target>
-    </revise>
 
-    <revise require="OPTION" description="Hook to reorder SMS broadcast">
-        <target path ="services.jar.out/smali/com/android/server/am/ActivityManagerService.smali" action="MERGE" >
-            <execute script="Python" routine="_merge_single_file.py">
-                <paramerter>revise-ActivityManagerService-BroadcastHook.xml</paramerter>
-            </execute>
-        </target>
-        <target path ="services.jar.out/smali/com/android/server/am/BroadcastRecord.smali" action="MERGE" >
-            <execute script="Python" routine="_merge_single_file.py">
-                <paramerter>revise-BroadcastRecord.xml</paramerter>
-            </execute>
-        </target>
-    </revise>
+    <feature require="OPTION" description="Network firewall policy">
+        <revise action="MERGE" 
+                target="framework.jar.out/smali/android/net/NetworkPolicyManager.smali"
+                patch="revise-NetworkPolicyManager.xml" />
+        <revise action="MERGE"
+                target="services.jar.out/smali/com/android/server/net/NetworkPolicyManagerService.smali"
+                patch="revise-NetworkPolicyManagerService.xml" />
+    </feature>
 
-    <revise require="OPTION" description="Baidu default ringtone settings">
-        <target path="framework.jar.out/smali/android/media/MediaScanner\$MyMediaScannerClient.smali" action="MERGE">
-            <execute script="Python" routine="_merge_single_file.py">
-                <paramerter>revise-MyMediaScannerClient.xml</paramerter>
-            </execute>
-        </target>
-    </revise>
+    <feature require="OPTION" description="Hook to reorder SMS broadcast">
+        <revise action="MERGE"
+                target="services.jar.out/smali/com/android/server/am/ActivityManagerService.smali"
+                patch="revise-ActivityManagerService-BroadcastHook.xml" />
+        <revise action="MERGE"
+                target="services.jar.out/smali/com/android/server/am/BroadcastRecord.smali"
+                patch="revise-BroadcastRecord.xml" />
+    </feature>
 
-    <revise require="OPTION" description="Baidu Lockscreen">
-        <target path="framework.jar.out/smali/com/android/internal/widget/DigitalClock.smali" action="REPLACE" />
-        <target path="framework.jar.out/smali/com/android/internal/widget/DragView.smali" action="ADD" />
-        <target path="framework.jar.out/smali/com/android/internal/widget/LockPatternUtils.smali" action="MERGE" >
-            <execute script="Python" routine="_merge_single_file.py">
-                <paramerter>revise-LockPatternUtils.xml</paramerter>
-            </execute>
-        </target>
-    </revise>
+    <feature require="OPTION" description="Baidu default ringtone settings">
+        <revise action="MERGE"
+                target="framework.jar.out/smali/android/media/MediaScanner\$MyMediaScannerClient.smali" 
+                patch="revise-MyMediaScannerClient.xml"/>
+    </feature>
 
-    <revise require="OPTION" description="Dynamic permission checking">
-        <target path="framework.jar.out/smali/android/app/ContextImpl\$ApplicationContentResolver.smali" action="MERGE" >
-            <execute script="Python" routine="_merge_single_file.py">
-                <paramerter>revise-ApplicationContentResolver.xml</paramerter>
-            </execute>
-        </target>
-        <target path="framework.jar.out/smali/android/app/Instrumentation.smali" action="MERGE" >
-            <execute script="Python" routine="_merge_single_file.py">
-                <paramerter>revise-Instrumentation.xml</paramerter>
-            </execute>
-        </target>
-        <target path="framework.jar.out/smali/android/location/LocationManager.smali" action="MERGE" >
-            <execute script="Python" routine="_merge_single_file.py">
-                <paramerter>revise-LocationManager.xml</paramerter>
-            </execute>
-        </target>
-        <target path="framework.jar.out/smali/android/net/ConnectivityManager.smali" action="MERGE" >
-            <execute script="Python" routine="_merge_single_file.py">
-                <paramerter>revise-ConnectivityManager.xml</paramerter>
-            </execute>
-        </target>
-        <target path="framework.jar.out/smali/com/android/internal/telephony/IccSmsInterfaceManager.smali" action="MERGE" >
-            <execute script="Python" routine="_merge_single_file.py">
-                <paramerter>revise-IccSmsInterfaceManager.xml</paramerter>
-            </execute>
-        </target>
-    </revise>
+    <feature require="OPTION" description="Baidu Lockscreen">
+        <revise action="REPLACE" target="framework.jar.out/smali/com/android/internal/widget/DigitalClock.smali" />
+        <revise action="ADD" target="framework.jar.out/smali/com/android/internal/widget/DragView.smali" />
+        <revise action="MERGE" 
+                target="framework.jar.out/smali/com/android/internal/widget/LockPatternUtils.smali" 
+                patch="revise-LockPatternUtils.xml" />
+    </feature>
 
-    <revise require="OPTION" description="Baidu Backup service">
-        <target path="services.jar.out/smali/com/android/server/BackupManagerService.smali" action="REPLACE" />
-        <target path="services.jar.out/smali/com/android/server/BackupManagerService\$1.smali" action="REPLACE" />
-        <target path="services.jar.out/smali/com/android/server/BackupManagerService\$2.smali" action="REPLACE" />
-        <target path="services.jar.out/smali/com/android/server/BackupManagerService\$3.smali" action="REPLACE" />
-        <target path="services.jar.out/smali/com/android/server/BackupManagerService\$4.smali" action="REPLACE" />
-        <target path="services.jar.out/smali/com/android/server/BackupManagerService\$ActiveRestoreSession\$EndRestoreRunnable.smali" action="REPLACE" />
-        <target path="services.jar.out/smali/com/android/server/BackupManagerService\$ActiveRestoreSession.smali" action="REPLACE" />
-        <target path="services.jar.out/smali/com/android/server/BackupManagerService\$BackupRequest.smali" action="REPLACE" />
-        <target path="services.jar.out/smali/com/android/server/BackupManagerService\$BackupState.smali" action="REPLACE" />
-        <target path="services.jar.out/smali/com/android/server/BackupManagerService\$ClearDataObserver.smali" action="REPLACE" />
-        <target path="services.jar.out/smali/com/android/server/BackupManagerService\$ClearParams.smali" action="REPLACE" />
-        <target path="services.jar.out/smali/com/android/server/BackupManagerService\$FileMetadata.smali" action="REPLACE" />
-        <target path="services.jar.out/smali/com/android/server/BackupManagerService\$FullBackupParams.smali" action="REPLACE" />
-        <target path="services.jar.out/smali/com/android/server/BackupManagerService\$FullParams.smali" action="REPLACE" />
-        <target path="services.jar.out/smali/com/android/server/BackupManagerService\$FullRestoreParams.smali" action="REPLACE" />
-        <target path="services.jar.out/smali/com/android/server/BackupManagerService\$Operation.smali" action="REPLACE" />
-        <target path="services.jar.out/smali/com/android/server/BackupManagerService\$PerformBackupTask.smali" action="REPLACE" />
-        <target path="services.jar.out/smali/com/android/server/BackupManagerService\$PerformClearTask.smali" action="REPLACE" />
-        <target path="services.jar.out/smali/com/android/server/BackupManagerService\$PerformFullBackupTask\$FullBackupRunner.smali" action="REPLACE" />
-        <target path="services.jar.out/smali/com/android/server/BackupManagerService\$PerformFullBackupTask.smali" action="REPLACE" />
-        <target path="services.jar.out/smali/com/android/server/BackupManagerService\$PerformFullRestoreTask\$RestoreDeleteObserver.smali" action="REPLACE" />
-        <target path="services.jar.out/smali/com/android/server/BackupManagerService\$PerformFullRestoreTask\$RestoreFileRunnable.smali" action="REPLACE" />
-        <target path="services.jar.out/smali/com/android/server/BackupManagerService\$PerformFullRestoreTask\$RestoreInstallObserver.smali" action="REPLACE" />
-        <target path="services.jar.out/smali/com/android/server/BackupManagerService\$PerformFullRestoreTask.smali" action="REPLACE" />
-        <target path="services.jar.out/smali/com/android/server/BackupManagerService\$PerformInitializeTask.smali" action="REPLACE" />
-        <target path="services.jar.out/smali/com/android/server/BackupManagerService\$PerformRestoreTask\$RestoreRequest.smali" action="REPLACE" />
-        <target path="services.jar.out/smali/com/android/server/BackupManagerService\$PerformRestoreTask.smali" action="REPLACE" />
-        <target path="services.jar.out/smali/com/android/server/BackupManagerService\$ProvisionedObserver.smali" action="REPLACE" />
-        <target path="services.jar.out/smali/com/android/server/BackupManagerService\$RestoreGetSetsParams.smali" action="REPLACE" />
-        <target path="services.jar.out/smali/com/android/server/BackupManagerService\$RestoreParams.smali" action="REPLACE" />
-        <target path="services.jar.out/smali/com/android/server/BackupManagerService\$RestorePolicy.smali" action="REPLACE" />
-        <target path="services.jar.out/smali/com/android/server/BackupManagerService\$RestoreState.smali" action="REPLACE" />
-        <target path="services.jar.out/smali/com/android/server/BackupManagerService\$RunBackupReceiver.smali" action="REPLACE" />
-        <target path="services.jar.out/smali/com/android/server/BackupManagerService\$RunInitializeReceiver.smali" action="REPLACE" />
-        <target path="services.jar.out/smali/com/android/server/BackupManagerService\$BackupHandler.smali" action="REPLACE" />
-        <target path="services.jar.out/smali/com/android/server/BackupManagerService\$BaiduConnection.smali" action="ADD" />
-        <target path="services.jar.out/smali/com/android/server/BackupManagerService\$ObserveBaiduTransport.smali" action="ADD" />
-    </revise>
+    <feature require="OPTION" description="Dynamic permission checking">
+        <revise action="MERGE"
+                target="framework.jar.out/smali/android/app/ContextImpl\$ApplicationContentResolver.smali"
+                patch="revise-ApplicationContentResolver.xml" />
+        <revise action="MERGE"
+                target="framework.jar.out/smali/android/app/Instrumentation.smali"
+                patch="revise-Instrumentation.xml"/>
+        <revise action="MERGE"
+                target="framework.jar.out/smali/android/location/LocationManager.smali"
+                patch="revise-LocationManager.xml"/>
+        <revise action="MERGE"
+                target="framework.jar.out/smali/android/net/ConnectivityManager.smali"
+                patch="revise-ConnectivityManager.xml"/>
+        <revise action="MERGE"
+                target="framework.jar.out/smali/com/android/internal/telephony/IccSmsInterfaceManager.smali"
+                patch="revise-IccSmsInterfaceManager.xml" />
+    </feature>
 
-    <revise require="OPTION" description="Baidu TextView" >
-        <target path="framework.jar.out/smali/android/widget/Editor\$1.smali" action="REPLACE" />
-        <target path="framework.jar.out/smali/android/widget/Editor\$2.smali" action="ADD" />
-        <target path="framework.jar.out/smali/android/widget/Editor\$ActionPopupWindow.smali" action="REPLACE" />
-        <target path="framework.jar.out/smali/android/widget/Editor\$Blink.smali" action="REPLACE" />
-        <target path="framework.jar.out/smali/android/widget/Editor\$CorrectionHighlighter.smali" action="REPLACE" />
-        <target path="framework.jar.out/smali/android/widget/Editor\$DragLocalState.smali" action="REPLACE" />
-        <target path="framework.jar.out/smali/android/widget/Editor\$EasyEditPopupWindow.smali" action="REPLACE" />
-        <target path="framework.jar.out/smali/android/widget/Editor\$EasyEditSpanController\$1.smali" action="REPLACE" />
-        <target path="framework.jar.out/smali/android/widget/Editor\$EasyEditSpanController.smali" action="REPLACE" />
-        <target path="framework.jar.out/smali/android/widget/Editor\$ErrorPopup.smali" action="REPLACE" />
-        <target path="framework.jar.out/smali/android/widget/Editor\$HandleView\$1.smali" action="REPLACE" />
-        <target path="framework.jar.out/smali/android/widget/Editor\$HandleView.smali" action="REPLACE" />
-        <target path="framework.jar.out/smali/android/widget/Editor\$InputContentType.smali" action="REPLACE" />
-        <target path="framework.jar.out/smali/android/widget/Editor\$InputMethodState.smali" action="REPLACE" />
-        <target path="framework.jar.out/smali/android/widget/Editor\$InsertionHandleView\$1.smali" action="REPLACE" />
-        <target path="framework.jar.out/smali/android/widget/Editor\$InsertionHandleView.smali" action="REPLACE" />
-        <target path="framework.jar.out/smali/android/widget/Editor\$InsertionPointCursorController.smali" action="REPLACE" />
-        <target path="framework.jar.out/smali/android/widget/Editor\$PinnedPopupWindow.smali" action="REPLACE" />
-        <target path="framework.jar.out/smali/android/widget/Editor\$PositionListener.smali" action="REPLACE" />
-        <target path="framework.jar.out/smali/android/widget/Editor\$SelectionActionModeCallback.smali" action="REPLACE" />
-        <target path="framework.jar.out/smali/android/widget/Editor\$SelectionEndHandleView.smali" action="REPLACE" />
-        <target path="framework.jar.out/smali/android/widget/Editor\$SelectionModifierCursorController.smali" action="REPLACE" />
-        <target path="framework.jar.out/smali/android/widget/Editor\$SelectionStartHandleView.smali" action="REPLACE" />
-        <target path="framework.jar.out/smali/android/widget/Editor\$SuggestionsPopupWindow\$CustomPopupWindow.smali" action="REPLACE" />
-        <target path="framework.jar.out/smali/android/widget/Editor\$SuggestionsPopupWindow\$SuggestionAdapter.smali" action="REPLACE" />
-        <target path="framework.jar.out/smali/android/widget/Editor\$SuggestionsPopupWindow\$SuggestionInfo.smali" action="REPLACE" />
-        <target path="framework.jar.out/smali/android/widget/Editor\$SuggestionsPopupWindow\$SuggestionSpanComparator.smali" action="REPLACE" />
-        <target path="framework.jar.out/smali/android/widget/Editor\$SuggestionsPopupWindow.smali" action="REPLACE" />
-        <target path="framework.jar.out/smali/android/widget/Editor\$UserDictionaryListener.smali" action="REPLACE" />
-        <target path="framework.jar.out/smali/android/widget/Editor.smali" action="REPLACE" />
-        <target path="framework.jar.out/smali/android/widget/TextView.smali" action="REPLACE" />
-        <target path="framework.jar.out/smali/android/widget/TextView\$ChangeWatcher.smali" action="REPLACE" />
-        <target path="framework.jar.out/smali/android/text/Layout.smali" action="REPLACE" />
-        <target path="framework.jar.out/smali/com/android/internal/util/SearchHelper.smali" action="ADD" />
-        <target path="framework.jar.out/smali/com/android/internal/util/WordSegment.smali" action="ADD" />
-        <target path="framework.jar.out/smali/com/android/internal/widget/PopupLayout.smali" action="ADD" />
-        <target path="framework.jar.out/smali/com/android/internal/widget/MagnifierView.smali" action="ADD" />
-        <target path="framework.jar.out/smali/android/widget/MagnifierView2.smali" action="ADD" />
-        <target path="framework.jar.out/smali/android/widget/MagnifierController.smali" action="ADD" />
-        <target path="framework.jar.out/smali/android/widget/MagnifierController\$1.smali" action="ADD" />
-    </revise>
+    <feature require="OPTION" description="Baidu Backup service">
+        <revise target="services.jar.out/smali/com/android/server/BackupManagerService.smali" action="REPLACE" />
+        <revise target="services.jar.out/smali/com/android/server/BackupManagerService\$1.smali" action="REPLACE" />
+        <revise target="services.jar.out/smali/com/android/server/BackupManagerService\$2.smali" action="REPLACE" />
+        <revise target="services.jar.out/smali/com/android/server/BackupManagerService\$3.smali" action="REPLACE" />
+        <revise target="services.jar.out/smali/com/android/server/BackupManagerService\$4.smali" action="REPLACE" />
+        <revise target="services.jar.out/smali/com/android/server/BackupManagerService\$ActiveRestoreSession\$EndRestoreRunnable.smali" action="REPLACE" />
+        <revise target="services.jar.out/smali/com/android/server/BackupManagerService\$ActiveRestoreSession.smali" action="REPLACE" />
+        <revise target="services.jar.out/smali/com/android/server/BackupManagerService\$BackupRequest.smali" action="REPLACE" />
+        <revise target="services.jar.out/smali/com/android/server/BackupManagerService\$BackupState.smali" action="REPLACE" />
+        <revise target="services.jar.out/smali/com/android/server/BackupManagerService\$ClearDataObserver.smali" action="REPLACE" />
+        <revise target="services.jar.out/smali/com/android/server/BackupManagerService\$ClearParams.smali" action="REPLACE" />
+        <revise target="services.jar.out/smali/com/android/server/BackupManagerService\$FileMetadata.smali" action="REPLACE" />
+        <revise target="services.jar.out/smali/com/android/server/BackupManagerService\$FullBackupParams.smali" action="REPLACE" />
+        <revise target="services.jar.out/smali/com/android/server/BackupManagerService\$FullParams.smali" action="REPLACE" />
+        <revise target="services.jar.out/smali/com/android/server/BackupManagerService\$FullRestoreParams.smali" action="REPLACE" />
+        <revise target="services.jar.out/smali/com/android/server/BackupManagerService\$Operation.smali" action="REPLACE" />
+        <revise target="services.jar.out/smali/com/android/server/BackupManagerService\$PerformBackupTask.smali" action="REPLACE" />
+        <revise target="services.jar.out/smali/com/android/server/BackupManagerService\$PerformClearTask.smali" action="REPLACE" />
+        <revise target="services.jar.out/smali/com/android/server/BackupManagerService\$PerformFullBackupTask\$FullBackupRunner.smali" action="REPLACE" />
+        <revise target="services.jar.out/smali/com/android/server/BackupManagerService\$PerformFullBackupTask.smali" action="REPLACE" />
+        <revise target="services.jar.out/smali/com/android/server/BackupManagerService\$PerformFullRestoreTask\$RestoreDeleteObserver.smali" action="REPLACE" />
+        <revise target="services.jar.out/smali/com/android/server/BackupManagerService\$PerformFullRestoreTask\$RestoreFileRunnable.smali" action="REPLACE" />
+        <revise target="services.jar.out/smali/com/android/server/BackupManagerService\$PerformFullRestoreTask\$RestoreInstallObserver.smali" action="REPLACE" />
+        <revise target="services.jar.out/smali/com/android/server/BackupManagerService\$PerformFullRestoreTask.smali" action="REPLACE" />
+        <revise target="services.jar.out/smali/com/android/server/BackupManagerService\$PerformInitializeTask.smali" action="REPLACE" />
+        <revise target="services.jar.out/smali/com/android/server/BackupManagerService\$PerformRestoreTask\$RestoreRequest.smali" action="REPLACE" />
+        <revise target="services.jar.out/smali/com/android/server/BackupManagerService\$PerformRestoreTask.smali" action="REPLACE" />
+        <revise target="services.jar.out/smali/com/android/server/BackupManagerService\$ProvisionedObserver.smali" action="REPLACE" />
+        <revise target="services.jar.out/smali/com/android/server/BackupManagerService\$RestoreGetSetsParams.smali" action="REPLACE" />
+        <revise target="services.jar.out/smali/com/android/server/BackupManagerService\$RestoreParams.smali" action="REPLACE" />
+        <revise target="services.jar.out/smali/com/android/server/BackupManagerService\$RestorePolicy.smali" action="REPLACE" />
+        <revise target="services.jar.out/smali/com/android/server/BackupManagerService\$RestoreState.smali" action="REPLACE" />
+        <revise target="services.jar.out/smali/com/android/server/BackupManagerService\$RunBackupReceiver.smali" action="REPLACE" />
+        <revise target="services.jar.out/smali/com/android/server/BackupManagerService\$RunInitializeReceiver.smali" action="REPLACE" />
+        <revise target="services.jar.out/smali/com/android/server/BackupManagerService\$BackupHandler.smali" action="REPLACE" />
+        <revise target="services.jar.out/smali/com/android/server/BackupManagerService\$BaiduConnection.smali" action="ADD" />
+        <revise target="services.jar.out/smali/com/android/server/BackupManagerService\$ObserveBaiduTransport.smali" action="ADD" />
+    </feature>
 
-</revision>
+    <feature require="OPTION" description="Baidu TextView" >
+        <revise target="framework.jar.out/smali/android/widget/Editor\$1.smali" action="REPLACE" />
+        <revise target="framework.jar.out/smali/android/widget/Editor\$2.smali" action="ADD" />
+        <revise target="framework.jar.out/smali/android/widget/Editor\$ActionPopupWindow.smali" action="REPLACE" />
+        <revise target="framework.jar.out/smali/android/widget/Editor\$Blink.smali" action="REPLACE" />
+        <revise target="framework.jar.out/smali/android/widget/Editor\$CorrectionHighlighter.smali" action="REPLACE" />
+        <revise target="framework.jar.out/smali/android/widget/Editor\$DragLocalState.smali" action="REPLACE" />
+        <revise target="framework.jar.out/smali/android/widget/Editor\$EasyEditPopupWindow.smali" action="REPLACE" />
+        <revise target="framework.jar.out/smali/android/widget/Editor\$EasyEditSpanController\$1.smali" action="REPLACE" />
+        <revise target="framework.jar.out/smali/android/widget/Editor\$EasyEditSpanController.smali" action="REPLACE" />
+        <revise target="framework.jar.out/smali/android/widget/Editor\$ErrorPopup.smali" action="REPLACE" />
+        <revise target="framework.jar.out/smali/android/widget/Editor\$HandleView\$1.smali" action="REPLACE" />
+        <revise target="framework.jar.out/smali/android/widget/Editor\$HandleView.smali" action="REPLACE" />
+        <revise target="framework.jar.out/smali/android/widget/Editor\$InputContentType.smali" action="REPLACE" />
+        <revise target="framework.jar.out/smali/android/widget/Editor\$InputMethodState.smali" action="REPLACE" />
+        <revise target="framework.jar.out/smali/android/widget/Editor\$InsertionHandleView\$1.smali" action="REPLACE" />
+        <revise target="framework.jar.out/smali/android/widget/Editor\$InsertionHandleView.smali" action="REPLACE" />
+        <revise target="framework.jar.out/smali/android/widget/Editor\$InsertionPointCursorController.smali" action="REPLACE" />
+        <revise target="framework.jar.out/smali/android/widget/Editor\$PinnedPopupWindow.smali" action="REPLACE" />
+        <revise target="framework.jar.out/smali/android/widget/Editor\$PositionListener.smali" action="REPLACE" />
+        <revise target="framework.jar.out/smali/android/widget/Editor\$SelectionActionModeCallback.smali" action="REPLACE" />
+        <revise target="framework.jar.out/smali/android/widget/Editor\$SelectionEndHandleView.smali" action="REPLACE" />
+        <revise target="framework.jar.out/smali/android/widget/Editor\$SelectionModifierCursorController.smali" action="REPLACE" />
+        <revise target="framework.jar.out/smali/android/widget/Editor\$SelectionStartHandleView.smali" action="REPLACE" />
+        <revise target="framework.jar.out/smali/android/widget/Editor\$SuggestionsPopupWindow\$CustomPopupWindow.smali" action="REPLACE" />
+        <revise target="framework.jar.out/smali/android/widget/Editor\$SuggestionsPopupWindow\$SuggestionAdapter.smali" action="REPLACE" />
+        <revise target="framework.jar.out/smali/android/widget/Editor\$SuggestionsPopupWindow\$SuggestionInfo.smali" action="REPLACE" />
+        <revise target="framework.jar.out/smali/android/widget/Editor\$SuggestionsPopupWindow\$SuggestionSpanComparator.smali" action="REPLACE" />
+        <revise target="framework.jar.out/smali/android/widget/Editor\$SuggestionsPopupWindow.smali" action="REPLACE" />
+        <revise target="framework.jar.out/smali/android/widget/Editor\$UserDictionaryListener.smali" action="REPLACE" />
+        <revise target="framework.jar.out/smali/android/widget/Editor.smali" action="REPLACE" />
+        <revise target="framework.jar.out/smali/android/widget/TextView.smali" action="REPLACE" />
+        <revise target="framework.jar.out/smali/android/widget/TextView\$ChangeWatcher.smali" action="REPLACE" />
+        <revise target="framework.jar.out/smali/android/text/Layout.smali" action="REPLACE" />
+        <revise target="framework.jar.out/smali/com/android/internal/util/SearchHelper.smali" action="ADD" />
+        <revise target="framework.jar.out/smali/com/android/internal/util/WordSegment.smali" action="ADD" />
+        <revise target="framework.jar.out/smali/com/android/internal/widget/PopupLayout.smali" action="ADD" />
+        <revise target="framework.jar.out/smali/com/android/internal/widget/MagnifierView.smali" action="ADD" />
+        <revise target="framework.jar.out/smali/android/widget/MagnifierView2.smali" action="ADD" />
+        <revise target="framework.jar.out/smali/android/widget/MagnifierController.smali" action="ADD" />
+        <revise target="framework.jar.out/smali/android/widget/MagnifierController\$1.smali" action="ADD" />
+    </feature>
+
+</features>
