@@ -7,6 +7,9 @@
 
 
 # static fields
+
+.field public static final CONFIG_THEME:I = -0x80000000
+    
 .field public static final CONFIG_DENSITY:I = 0x1000
 
 .field public static final CONFIG_FONT_SCALE:I = 0x40000000
@@ -396,10 +399,8 @@
     .parameter "input"
 
     .prologue
-    .line 425
     const/4 v1, 0x0
 
-    .line 426
     .local v1, output:I
     const/4 v0, 0x0
 
@@ -411,7 +412,6 @@
 
     if-ge v0, v2, :cond_1
 
-    .line 427
     const/4 v2, 0x1
 
     shl-int/2addr v2, v0
@@ -420,21 +420,22 @@
 
     if-eqz v2, :cond_0
 
-    .line 428
     sget-object v2, Landroid/content/pm/ActivityInfo;->CONFIG_NATIVE_BITS:[I
 
     aget v2, v2, v0
 
     or-int/2addr v1, v2
 
-    .line 426
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 431
     :cond_1
+    invoke-static {p0, v1}, Landroid/content/pm/ActivityInfo;->setOutputBaidu(II)I
+    
+    move-result v1
+    
     return v1
 .end method
 
@@ -894,3 +895,26 @@
     .line 569
     return-void
 .end method
+
+.method private static setOutputBaidu(II)I
+    .locals 3
+    .parameter "input"
+    .parameter "orgOutput"
+
+    .prologue
+    const/high16 v2, -0x8000
+
+    move v0, p1
+
+    .local v0, output:I
+    and-int v1, p0, v2
+
+    if-eqz v1, :cond_0
+
+
+    or-int/2addr v0, v2
+
+    :cond_0
+    return v0
+.end method
+    

@@ -7036,3 +7036,18 @@
 
     goto :goto_0
 .end method
+
+.method refreshFontCache()V
+    .locals 0
+
+    .prologue
+    .line 572
+    invoke-static {}, Landroid/graphics/Canvas;->freeCaches()V
+
+    .line 573
+    invoke-static {}, Landroid/graphics/Canvas;->freeTextLayoutCaches()V
+
+    .line 574
+    return-void
+.end method
+    

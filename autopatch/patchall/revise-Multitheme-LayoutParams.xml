@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge>
+
+    <item action="ADD"
+          position="BELOW"
+          anchor="# static fields" >
+.field public static final PRIVATE_FLAG_NOT_RESPONSE_HOME_KEY:I = 0x10
+    </item>
+
+</merge>

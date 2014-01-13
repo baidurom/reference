@@ -1691,7 +1691,7 @@
 
     .line 637
     .local v3, r:Landroid/content/res/Resources;
-    invoke-virtual {v3, p2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-direct {p0, p3, p1, p2, v3}, Landroid/app/ApplicationPackageManager;->multiTheme_getDrawableLocal(Landroid/content/pm/ApplicationInfo;Ljava/lang/String;ILandroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -4893,3 +4893,47 @@
 
     goto :goto_0
 .end method
+
+.method private multiTheme_getDrawableLocal(Landroid/content/pm/ApplicationInfo;Ljava/lang/String;ILandroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
+    .locals 2
+    .parameter "appInfo"
+    .parameter "packageName"
+    .parameter "resid"
+    .parameter "r"
+
+    .prologue
+    .line 625
+    const/4 v0, 0x0
+
+    .line 626
+    .local v0, dr:Landroid/graphics/drawable/Drawable;
+    iget v1, p1, Landroid/content/pm/ApplicationInfo;->icon:I
+
+    if-eq p3, v1, :cond_0
+
+    invoke-static {p2}, Landroid/content/ThemeDefine;->isSpecialPackage(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    .line 627
+    :cond_0
+    invoke-virtual {p4, p3}, Landroid/content/res/Resources;->getIconDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    .line 629
+    :cond_1
+    if-nez v0, :cond_2
+
+    .line 630
+    invoke-virtual {p4, p3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    .line 632
+    :cond_2
+    return-object v0
+.end method
+    
