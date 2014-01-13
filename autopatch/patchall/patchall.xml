@@ -14,7 +14,6 @@
                 target="framework.jar.out/com/android/internal/telephony/SMSDispatcher\$TrafficMonitorMessageReceiverClass.smali" />
     </feature>
 
-
     <feature require="OPTION" description="Network firewall policy">
         <revise action="MERGE" 
                 target="framework.jar.out/smali/android/net/NetworkPolicyManager.smali"
@@ -146,6 +145,54 @@
         <revise target="framework.jar.out/smali/android/widget/MagnifierView2.smali" action="ADD" />
         <revise target="framework.jar.out/smali/android/widget/MagnifierController.smali" action="ADD" />
         <revise target="framework.jar.out/smali/android/widget/MagnifierController\$1.smali" action="ADD" />
+    </feature>
+
+    <feature require="OPTION" description="Baidu Multi Theme" >
+        <revise action="ADD" target="framework.jar.out/smali/android/content/ThemeDefine.smali"/>
+        <revise action="ADD" target="framework.jar.out/smali/android/content/res/Resources\$1.smali" />
+        <revise action="REPLACE" target="framework.jar.out/smali/android/content/res/Resources.smali" />
+        <revise action="REPLACE" target="framework.jar.out/smali/com/android/internal/app/ActionBarImpl.smali" />
+        <revise action="REPLACE" target="framework.jar.out/smali/com/android/internal/widget/ActionBarView.smali" />
+        <revise action="REPLACE" target="framework.jar.out/smali/com/android/internal/widget/ActionBarView\$ExpandedActionViewMenuPresenter.smali" />
+        <revise action="REPLACE" target="framework.jar.out/smali/com/android/internal/widget/ActionBarView\$HomeView.smali" />
+        <revise action="REPLACE" target="framework.jar.out/smali/android/view/VolumePanel.smali" />
+        <revise action="REPLACE" target="framework.jar.out/smali/android/view/VolumePanel\$StreamResources.smali" />
+        <revise action="REPLACE" target="framework.jar.out/smali/android/view/VolumePanel\$WarningDialogReceiver.smali" />
+        <revise action="REPLACE" target="framework.jar.out/smali/android/view/VolumePanel\$1.smali" />
+        <revise action="REPLACE" target="framework.jar.out/smali/android/view/VolumePanel\$2.smali" />
+        <revise action="REPLACE" target="framework.jar.out/smali/android/view/VolumePanel\$3.smali" />
+        <revise action="REPLACE" target="framework.jar.out/smali/android/view/VolumePanel\$4.smali" />
+        <revise action="REPLACE" target="framework.jar.out/smali/android/view/VolumePanel\$5.smali" />
+        <revise action="MERGE"
+                target="framework.jar.out/smali/android/content/Intent.smali"
+                patch="revise-Multitheme-Intent.xml" />
+        <revise action="MERGE"
+                target="framework.jar.out/smali/android/content/pm/ActivityInfo.smali"
+                patch="revise-Multitheme-ActivityInfo.xml" />
+        <revise action="MERGE"
+                target="framework.jar.out/smali/android/content/res/AssetManager.smali"
+                patch="revise-Multitheme-AssetManager.xml" />
+        <revise action="MERGE"
+                target="framework.jar.out/smali/android/content/res/Configuration.smali"
+                patch="revise-Multitheme-Configuration.xml" />
+        <revise action="MERGE"
+                target="framework.jar.out/smali/android/app/ActivityThread.smali"
+                patch="revise-Multitheme-ActivityThread.xml" />
+        <revise action="MERGE"
+                target="framework.jar.out/smali/android/app/ActivityThread\$2.smali"
+                patch="revise-Multitheme-ActivityThread-Anonymous.xml" />
+        <revise action="MERGE"
+                target="framework.jar.out/smali/android/app/ApplicationPackageManager.smali"
+                patch="revise-Multitheme-ApplicationPackageManager.xml" />
+        <revise action="MERGE"
+                target="framework.jar.out/smali/android/app/ContextImpl.smali"
+                patch="revise-Multitheme-ContextImpl.xml" />
+        <revise action="MERGE"
+                target="framework.jar.out/smali/android/view/WindowManager\$LayoutParams.smali"
+                patch="revise-Multitheme-LayoutParams.xml" />
+        <revise action="MERGE"
+                target="services.jar.out/smali/com/android/server/am/ActivityManagerService.smali"
+                patch="revise-Multitheme-ActivityManagerService.xml" />
     </feature>
 
 </features>
