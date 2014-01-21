@@ -36,7 +36,7 @@
                 target="framework.jar.out/smali/com/android/internal/telephony/CallerInfo.smali"
                 patch="revise-CallerInfo.xml" />
         <revise action="MERGE"
-                target="framework.jar.out/smali/com/android/internal/telephony/CallerInfoAsyncQuery\$CallerInfoAsyncQueryHandler.smali" 
+                target="framework.jar.out/smali/com/android/internal/telephony/CallerInfoAsyncQuery$CallerInfoAsyncQueryHandler.smali" 
                 patch="revise-CallerInfoAsyncQuery.xml" />
     </feature>
 
@@ -45,7 +45,7 @@
                 target="framework.jar.out/smali/android/os/Environment.smali" 
                 patch="revise-Environment.xml" />
         <revise action="ADD"
-                target="services.jar.out/smali/com/android/server/MountService\$SdType.smali" />
+                target="services.jar.out/smali/com/android/server/MountService$SdType.smali" />
     </feature>
 
     <feature require="MUST" description="Launch Baidu services on booting">
@@ -80,7 +80,7 @@
                 target="framework.jar.out/smali/com/android/internal/telephony/IPhoneSubInfo.smali" 
                 patch="revise-IPhoneSubInfo.xml" />
         <revise action="MERGE"
-                target="framework.jar.out/smali/com/android/internal/telephony/IPhoneSubInfo\$Stub\$Proxy.smali"
+                target="framework.jar.out/smali/com/android/internal/telephony/IPhoneSubInfo$Stub$Proxy.smali"
                 patch="revise-IPhoneSubInfoStubProxy.xml" />
     </feature>
 
