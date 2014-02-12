@@ -44,7 +44,7 @@
 
     const-string v0, "android.intent.action.THEME_CHANGED"
 
-    invoke-direct {v3, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    invoke-direct {v3, v0}, Landroid/content/Intent;->&lt;init&gt;(Ljava/lang/String;)V
 
     sget v12, Lcom/android/server/am/ActivityManagerService;->MY_PID:I
 
