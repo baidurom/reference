@@ -121,4 +121,19 @@
                 patch="revise-Multitheme-ActivityManagerService.xml" />
     </feature>
 
+    <feature require="OPTION" description="Add isLowRamDevice interface to switch some features" >
+        <revise action="MERGE"
+                target="framework.jar.out/smali/android/app/ActivityManager.smali"
+                patch="revise-ActivityManager.xml" >
+        </revise>
+    </feature>
+
+    <feature require="OPTION" description="Add phone label info to CallerInfo" >
+        <revise action="REPLACE" target="framework.jar.out/smali/com/android/internal/telephony/CallerInfoAsyncQuery*" />
+        <revise action="MERGE"
+                target="framework.jar.out/smali/com/android/internal/telephony/CallerInfo.smali"
+                patch="revise-CallerInfo.xml" >
+        </revise>
+    </feature>
+
 </features>
