@@ -19,18 +19,12 @@
     .locals 1
 
     .prologue
-    .line 230
-    invoke-static {}, Ljava/util/TimeZone;->getDefault()Ljava/util/TimeZone;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/util/TimeZone;->getID()Ljava/lang/String;
-
-    move-result-object v0
+    .line 232
+    const-string v0, "UTC"
 
     invoke-direct {p0, v0}, Landroid/text/format/Time;-><init>(Ljava/lang/String;)V
 
-    .line 231
+    .line 233
     return-void
 .end method
 
@@ -45,12 +39,12 @@
 
     const/4 v8, 0x0
 
-    .line 234
+    .line 236
     new-instance v5, Lcom/android/internal/telephony/cdma/sms/BearerData$TimeStamp;
 
     invoke-direct {v5}, Lcom/android/internal/telephony/cdma/sms/BearerData$TimeStamp;-><init>()V
 
-    .line 236
+    .line 238
     .local v5, ts:Lcom/android/internal/telephony/cdma/sms/BearerData$TimeStamp;
     const/4 v7, 0x0
 
@@ -60,7 +54,7 @@
 
     move-result v6
 
-    .line 237
+    .line 239
     .local v6, year:I
     const/16 v7, 0x63
 
@@ -71,12 +65,12 @@
     :cond_0
     move-object v5, v8
 
-    .line 254
+    .line 256
     .end local v5           #ts:Lcom/android/internal/telephony/cdma/sms/BearerData$TimeStamp;
     :goto_0
     return-object v5
 
-    .line 238
+    .line 240
     .restart local v5       #ts:Lcom/android/internal/telephony/cdma/sms/BearerData$TimeStamp;
     :cond_1
     const/16 v7, 0x60
@@ -86,16 +80,16 @@
     add-int/lit16 v7, v6, 0x76c
 
     :goto_1
-    iput v7, v5, Landroid/text/format/Time;->year:I
+    iput v7, v5, Lcom/android/internal/telephony/cdma/sms/BearerData$TimeStamp;->year:I
 
-    .line 239
+    .line 241
     aget-byte v7, p0, v9
 
     invoke-static {v7}, Lcom/android/internal/telephony/IccUtils;->cdmaBcdByteToInt(B)I
 
     move-result v3
 
-    .line 240
+    .line 242
     .local v3, month:I
     if-lt v3, v9, :cond_2
 
@@ -108,21 +102,21 @@
 
     goto :goto_0
 
-    .line 238
+    .line 240
     .end local v3           #month:I
     :cond_3
     add-int/lit16 v7, v6, 0x7d0
 
     goto :goto_1
 
-    .line 241
+    .line 243
     .restart local v3       #month:I
     :cond_4
     add-int/lit8 v7, v3, -0x1
 
-    iput v7, v5, Landroid/text/format/Time;->month:I
+    iput v7, v5, Lcom/android/internal/telephony/cdma/sms/BearerData$TimeStamp;->month:I
 
-    .line 242
+    .line 244
     const/4 v7, 0x2
 
     aget-byte v7, p0, v7
@@ -131,7 +125,7 @@
 
     move-result v0
 
-    .line 243
+    .line 245
     .local v0, day:I
     if-lt v0, v9, :cond_5
 
@@ -144,11 +138,11 @@
 
     goto :goto_0
 
-    .line 244
+    .line 246
     :cond_6
-    iput v0, v5, Landroid/text/format/Time;->monthDay:I
+    iput v0, v5, Lcom/android/internal/telephony/cdma/sms/BearerData$TimeStamp;->monthDay:I
 
-    .line 245
+    .line 247
     const/4 v7, 0x3
 
     aget-byte v7, p0, v7
@@ -157,7 +151,7 @@
 
     move-result v1
 
-    .line 246
+    .line 248
     .local v1, hour:I
     if-ltz v1, :cond_7
 
@@ -170,11 +164,11 @@
 
     goto :goto_0
 
-    .line 247
+    .line 249
     :cond_8
-    iput v1, v5, Landroid/text/format/Time;->hour:I
+    iput v1, v5, Lcom/android/internal/telephony/cdma/sms/BearerData$TimeStamp;->hour:I
 
-    .line 248
+    .line 250
     const/4 v7, 0x4
 
     aget-byte v7, p0, v7
@@ -183,7 +177,7 @@
 
     move-result v2
 
-    .line 249
+    .line 251
     .local v2, minute:I
     if-ltz v2, :cond_9
 
@@ -194,11 +188,11 @@
 
     goto :goto_0
 
-    .line 250
+    .line 252
     :cond_a
-    iput v2, v5, Landroid/text/format/Time;->minute:I
+    iput v2, v5, Lcom/android/internal/telephony/cdma/sms/BearerData$TimeStamp;->minute:I
 
-    .line 251
+    .line 253
     const/4 v7, 0x5
 
     aget-byte v7, p0, v7
@@ -207,7 +201,7 @@
 
     move-result v4
 
-    .line 252
+    .line 254
     .local v4, second:I
     if-ltz v4, :cond_b
 
@@ -218,9 +212,9 @@
 
     goto :goto_0
 
-    .line 253
+    .line 255
     :cond_c
-    iput v4, v5, Landroid/text/format/Time;->second:I
+    iput v4, v5, Lcom/android/internal/telephony/cdma/sms/BearerData$TimeStamp;->second:I
 
     goto :goto_0
 .end method
@@ -231,18 +225,18 @@
     .locals 3
 
     .prologue
-    .line 259
+    .line 261
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 260
+    .line 262
     .local v0, builder:Ljava/lang/StringBuilder;
     const-string v1, "TimeStamp "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 261
+    .line 263
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -253,53 +247,7 @@
 
     move-result-object v1
 
-    iget v2, p0, Landroid/text/format/Time;->year:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 262
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, ", month="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, Landroid/text/format/Time;->month:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 263
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, ", day="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, Landroid/text/format/Time;->monthDay:I
+    iget v2, p0, Lcom/android/internal/telephony/cdma/sms/BearerData$TimeStamp;->year:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -316,13 +264,13 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, ", hour="
+    const-string v2, ", month="
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    iget v2, p0, Landroid/text/format/Time;->hour:I
+    iget v2, p0, Lcom/android/internal/telephony/cdma/sms/BearerData$TimeStamp;->month:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -339,13 +287,13 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, ", minute="
+    const-string v2, ", day="
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    iget v2, p0, Landroid/text/format/Time;->minute:I
+    iget v2, p0, Lcom/android/internal/telephony/cdma/sms/BearerData$TimeStamp;->monthDay:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -362,13 +310,13 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, ", second="
+    const-string v2, ", hour="
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    iget v2, p0, Landroid/text/format/Time;->second:I
+    iget v2, p0, Lcom/android/internal/telephony/cdma/sms/BearerData$TimeStamp;->hour:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -381,11 +329,57 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 267
-    const-string v1, " }"
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, ", minute="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, p0, Lcom/android/internal/telephony/cdma/sms/BearerData$TimeStamp;->minute:I
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 268
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, ", second="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, p0, Lcom/android/internal/telephony/cdma/sms/BearerData$TimeStamp;->second:I
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 269
+    const-string v1, " }"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 270
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1

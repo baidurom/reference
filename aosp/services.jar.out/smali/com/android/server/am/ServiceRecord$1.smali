@@ -42,7 +42,7 @@
     .parameter
 
     .prologue
-    .line 363
+    .line 374
     iput-object p1, p0, Lcom/android/server/am/ServiceRecord$1;->this$0:Lcom/android/server/am/ServiceRecord;
 
     iput-object p2, p0, Lcom/android/server/am/ServiceRecord$1;->val$localPackageName:Ljava/lang/String;
@@ -55,7 +55,7 @@
 
     iput-object p6, p0, Lcom/android/server/am/ServiceRecord$1;->val$localForegroundNoti:Landroid/app/Notification;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -70,29 +70,29 @@
 
     const/4 v10, 0x1
 
-    .line 365
+    .line 376
     invoke-static {}, Landroid/app/NotificationManager;->getService()Landroid/app/INotificationManager;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/server/NotificationManagerService;
 
-    .line 367
+    .line 378
     .local v0, nm:Lcom/android/server/NotificationManagerService;
     if-nez v0, :cond_0
 
-    .line 384
+    .line 395
     :goto_0
     return-void
 
-    .line 371
+    .line 382
     :cond_0
     const/4 v1, 0x1
 
     :try_start_0
     new-array v7, v1, [I
 
-    .line 372
+    .line 383
     .local v7, outId:[I
     iget-object v1, p0, Lcom/android/server/am/ServiceRecord$1;->val$localPackageName:Ljava/lang/String;
 
@@ -116,12 +116,12 @@
 
     goto :goto_0
 
-    .line 374
+    .line 385
     .end local v7           #outId:[I
     :catch_0
     move-exception v9
 
-    .line 375
+    .line 386
     .local v9, e:Ljava/lang/RuntimeException;
     const-string v1, "ActivityManager"
 
@@ -129,7 +129,7 @@
 
     invoke-static {v1, v2, v9}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 379
+    .line 390
     iget-object v1, p0, Lcom/android/server/am/ServiceRecord$1;->this$0:Lcom/android/server/am/ServiceRecord;
 
     iget-object v1, v1, Lcom/android/server/am/ServiceRecord;->ams:Lcom/android/server/am/ActivityManagerService;
@@ -148,7 +148,7 @@
 
     invoke-virtual/range {v1 .. v6}, Lcom/android/server/am/ActivityManagerService;->setServiceForeground(Landroid/content/ComponentName;Landroid/os/IBinder;ILandroid/app/Notification;Z)V
 
-    .line 381
+    .line 392
     iget-object v1, p0, Lcom/android/server/am/ServiceRecord$1;->this$0:Lcom/android/server/am/ServiceRecord;
 
     iget-object v1, v1, Lcom/android/server/am/ServiceRecord;->ams:Lcom/android/server/am/ActivityManagerService;

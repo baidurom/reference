@@ -55,7 +55,7 @@
     iput v1, p0, Lcom/baidu/themeanimation/element/TextElement$TextElementView;->mEndIndex:I
 
     .line 213
-    iget-object v1, p1, Lcom/baidu/themeanimation/element/VisibleElement;->mPaint:Landroid/graphics/Paint;
+    iget-object v1, p1, Lcom/baidu/themeanimation/element/TextElement;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p1}, Lcom/baidu/themeanimation/element/TextElement;->getColor()I
 
@@ -64,7 +64,7 @@
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 214
-    iget-object v1, p1, Lcom/baidu/themeanimation/element/VisibleElement;->mPaint:Landroid/graphics/Paint;
+    iget-object v1, p1, Lcom/baidu/themeanimation/element/TextElement;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p1}, Lcom/baidu/themeanimation/element/TextElement;->getSize()I
 
@@ -75,7 +75,7 @@
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setTextSize(F)V
 
     .line 216
-    iget-object v1, p1, Lcom/baidu/themeanimation/element/VisibleElement;->mPaint:Landroid/graphics/Paint;
+    iget-object v1, p1, Lcom/baidu/themeanimation/element/TextElement;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1}, Landroid/graphics/Paint;->getFontMetrics()Landroid/graphics/Paint$FontMetrics;
 
@@ -105,7 +105,7 @@
     if-eqz v1, :cond_0
 
     .line 219
-    iget-object v2, p1, Lcom/baidu/themeanimation/element/VisibleElement;->mPaint:Landroid/graphics/Paint;
+    iget-object v2, p1, Lcom/baidu/themeanimation/element/TextElement;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p1}, Lcom/baidu/themeanimation/element/TextElement;->getBold()Z
 
@@ -119,7 +119,7 @@
     invoke-virtual {v2, v1}, Landroid/graphics/Paint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
     .line 220
-    iget-object v1, p1, Lcom/baidu/themeanimation/element/VisibleElement;->mPaint:Landroid/graphics/Paint;
+    iget-object v1, p1, Lcom/baidu/themeanimation/element/TextElement;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p1}, Lcom/baidu/themeanimation/element/TextElement;->getText()Ljava/lang/String;
 
@@ -258,7 +258,7 @@
     .local v4, tempTextString:Ljava/lang/String;
     iget-object v6, p0, Lcom/baidu/themeanimation/element/TextElement$TextElementView;->this$0:Lcom/baidu/themeanimation/element/TextElement;
 
-    iget-object v6, v6, Lcom/baidu/themeanimation/element/VisibleElement;->mPaint:Landroid/graphics/Paint;
+    iget-object v6, v6, Lcom/baidu/themeanimation/element/TextElement;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v6, v4}, Landroid/graphics/Paint;->measureText(Ljava/lang/String;)F
 
@@ -343,7 +343,7 @@
     .line 274
     iget-object v0, p0, Lcom/baidu/themeanimation/element/TextElement$TextElementView;->this$0:Lcom/baidu/themeanimation/element/TextElement;
 
-    iget-object v0, v0, Lcom/baidu/themeanimation/element/VisibleElement;->mPaint:Landroid/graphics/Paint;
+    iget-object v0, v0, Lcom/baidu/themeanimation/element/TextElement;->mPaint:Landroid/graphics/Paint;
 
     iget-object v1, p0, Lcom/baidu/themeanimation/element/TextElement$TextElementView;->this$0:Lcom/baidu/themeanimation/element/TextElement;
 
@@ -407,7 +407,7 @@
 
     iget-object v2, p0, Lcom/baidu/themeanimation/element/TextElement$TextElementView;->this$0:Lcom/baidu/themeanimation/element/TextElement;
 
-    iget-object v2, v2, Lcom/baidu/themeanimation/element/VisibleElement;->mPaint:Landroid/graphics/Paint;
+    iget-object v2, v2, Lcom/baidu/themeanimation/element/TextElement;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v0, v6, v1, v2}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
@@ -440,7 +440,7 @@
 
     iget-object v2, p0, Lcom/baidu/themeanimation/element/TextElement$TextElementView;->this$0:Lcom/baidu/themeanimation/element/TextElement;
 
-    iget-object v2, v2, Lcom/baidu/themeanimation/element/VisibleElement;->mPaint:Landroid/graphics/Paint;
+    iget-object v2, v2, Lcom/baidu/themeanimation/element/TextElement;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v0, v6, v1, v2}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
@@ -463,7 +463,7 @@
     .line 288
     iget-object v0, p0, Lcom/baidu/themeanimation/element/TextElement$TextElementView;->this$0:Lcom/baidu/themeanimation/element/TextElement;
 
-    iget-object v1, v0, Lcom/baidu/themeanimation/element/VisibleElement;->mPaint:Landroid/graphics/Paint;
+    iget-object v1, v0, Lcom/baidu/themeanimation/element/TextElement;->mPaint:Landroid/graphics/Paint;
 
     iget-object v0, p0, Lcom/baidu/themeanimation/element/TextElement$TextElementView;->this$0:Lcom/baidu/themeanimation/element/TextElement;
 
@@ -481,7 +481,7 @@
     .line 289
     iget-object v0, p0, Lcom/baidu/themeanimation/element/TextElement$TextElementView;->this$0:Lcom/baidu/themeanimation/element/TextElement;
 
-    iget-object v0, v0, Lcom/baidu/themeanimation/element/VisibleElement;->mPaint:Landroid/graphics/Paint;
+    iget-object v0, v0, Lcom/baidu/themeanimation/element/TextElement;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 

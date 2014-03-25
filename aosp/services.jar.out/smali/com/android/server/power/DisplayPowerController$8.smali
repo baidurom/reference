@@ -3,7 +3,7 @@
 .source "DisplayPowerController.java"
 
 # interfaces
-.implements Landroid/hardware/SensorEventListener;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
@@ -27,64 +27,30 @@
     .parameter
 
     .prologue
-    .line 1305
+    .line 1460
     iput-object p1, p0, Lcom/android/server/power/DisplayPowerController$8;->this$0:Lcom/android/server/power/DisplayPowerController;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAccuracyChanged(Landroid/hardware/Sensor;I)V
-    .locals 0
-    .parameter "sensor"
-    .parameter "accuracy"
+.method public run()V
+    .locals 1
 
     .prologue
-    .line 1318
-    return-void
-.end method
+    .line 1463
+    iget-object v0, p0, Lcom/android/server/power/DisplayPowerController$8;->this$0:Lcom/android/server/power/DisplayPowerController;
 
-.method public onSensorChanged(Landroid/hardware/SensorEvent;)V
-    .locals 5
-    .parameter "event"
+    #getter for: Lcom/android/server/power/DisplayPowerController;->mCallbacks:Lcom/android/server/power/DisplayPowerController$Callbacks;
+    invoke-static {v0}, Lcom/android/server/power/DisplayPowerController;->access$500(Lcom/android/server/power/DisplayPowerController;)Lcom/android/server/power/DisplayPowerController$Callbacks;
 
-    .prologue
-    .line 1308
-    iget-object v3, p0, Lcom/android/server/power/DisplayPowerController$8;->this$0:Lcom/android/server/power/DisplayPowerController;
+    move-result-object v0
 
-    #getter for: Lcom/android/server/power/DisplayPowerController;->mLightSensorEnabled:Z
-    invoke-static {v3}, Lcom/android/server/power/DisplayPowerController;->access$900(Lcom/android/server/power/DisplayPowerController;)Z
+    invoke-interface {v0}, Lcom/android/server/power/DisplayPowerController$Callbacks;->onProximityPositive()V
 
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    .line 1309
-    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
-
-    move-result-wide v1
-
-    .line 1310
-    .local v1, time:J
-    iget-object v3, p1, Landroid/hardware/SensorEvent;->values:[F
-
-    const/4 v4, 0x0
-
-    aget v0, v3, v4
-
-    .line 1311
-    .local v0, lux:F
-    iget-object v3, p0, Lcom/android/server/power/DisplayPowerController$8;->this$0:Lcom/android/server/power/DisplayPowerController;
-
-    #calls: Lcom/android/server/power/DisplayPowerController;->handleLightSensorEvent(JF)V
-    invoke-static {v3, v1, v2, v0}, Lcom/android/server/power/DisplayPowerController;->access$1000(Lcom/android/server/power/DisplayPowerController;JF)V
-
-    .line 1313
-    .end local v0           #lux:F
-    .end local v1           #time:J
-    :cond_0
+    .line 1464
     return-void
 .end method

@@ -1,11 +1,11 @@
 .class Lcom/android/server/am/ActivityManagerService$17;
-.super Landroid/os/IRemoteCallback$Stub;
+.super Landroid/content/IIntentReceiver$Stub;
 .source "ActivityManagerService.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/am/ActivityManagerService;->dispatchUserSwitch(Lcom/android/server/am/UserStartedState;II)V
+    value = Lcom/android/server/am/ActivityManagerService;->switchUser(I)Z
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,55 +15,34 @@
 
 
 # instance fields
-.field mCount:I
-
 .field final synthetic this$0:Lcom/android/server/am/ActivityManagerService;
-
-.field final synthetic val$N:I
-
-.field final synthetic val$newUserId:I
-
-.field final synthetic val$oldUserId:I
-
-.field final synthetic val$uss:Lcom/android/server/am/UserStartedState;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/server/am/ActivityManagerService;ILcom/android/server/am/UserStartedState;II)V
-    .locals 1
-    .parameter
-    .parameter
-    .parameter
-    .parameter
+.method constructor <init>(Lcom/android/server/am/ActivityManagerService;)V
+    .locals 0
     .parameter
 
     .prologue
-    .line 14402
+    .line 15644
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$17;->this$0:Lcom/android/server/am/ActivityManagerService;
 
-    iput p2, p0, Lcom/android/server/am/ActivityManagerService$17;->val$N:I
-
-    iput-object p3, p0, Lcom/android/server/am/ActivityManagerService$17;->val$uss:Lcom/android/server/am/UserStartedState;
-
-    iput p4, p0, Lcom/android/server/am/ActivityManagerService$17;->val$oldUserId:I
-
-    iput p5, p0, Lcom/android/server/am/ActivityManagerService$17;->val$newUserId:I
-
-    invoke-direct {p0}, Landroid/os/IRemoteCallback$Stub;-><init>()V
-
-    .line 14403
-    const/4 v0, 0x0
-
-    iput v0, p0, Lcom/android/server/am/ActivityManagerService$17;->mCount:I
+    invoke-direct {p0}, Landroid/content/IIntentReceiver$Stub;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public sendResult(Landroid/os/Bundle;)V
-    .locals 5
+.method public performReceive(Landroid/content/Intent;ILjava/lang/String;Landroid/os/Bundle;ZZI)V
+    .locals 0
+    .parameter "intent"
+    .parameter "resultCode"
     .parameter "data"
+    .parameter "extras"
+    .parameter "ordered"
+    .parameter "sticky"
+    .parameter "sendingUser"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -71,58 +50,6 @@
     .end annotation
 
     .prologue
-    .line 14406
-    iget-object v1, p0, Lcom/android/server/am/ActivityManagerService$17;->this$0:Lcom/android/server/am/ActivityManagerService;
-
-    monitor-enter v1
-
-    .line 14407
-    :try_start_0
-    iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$17;->this$0:Lcom/android/server/am/ActivityManagerService;
-
-    iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mCurUserSwitchCallback:Ljava/lang/Object;
-
-    if-ne v0, p0, :cond_0
-
-    .line 14408
-    iget v0, p0, Lcom/android/server/am/ActivityManagerService$17;->mCount:I
-
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, Lcom/android/server/am/ActivityManagerService$17;->mCount:I
-
-    .line 14409
-    iget v0, p0, Lcom/android/server/am/ActivityManagerService$17;->mCount:I
-
-    iget v2, p0, Lcom/android/server/am/ActivityManagerService$17;->val$N:I
-
-    if-ne v0, v2, :cond_0
-
-    .line 14410
-    iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$17;->this$0:Lcom/android/server/am/ActivityManagerService;
-
-    iget-object v2, p0, Lcom/android/server/am/ActivityManagerService$17;->val$uss:Lcom/android/server/am/UserStartedState;
-
-    iget v3, p0, Lcom/android/server/am/ActivityManagerService$17;->val$oldUserId:I
-
-    iget v4, p0, Lcom/android/server/am/ActivityManagerService$17;->val$newUserId:I
-
-    invoke-virtual {v0, v2, v3, v4}, Lcom/android/server/am/ActivityManagerService;->sendContinueUserSwitchLocked(Lcom/android/server/am/UserStartedState;II)V
-
-    .line 14413
-    :cond_0
-    monitor-exit v1
-
-    .line 14414
+    .line 15649
     return-void
-
-    .line 14413
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
 .end method

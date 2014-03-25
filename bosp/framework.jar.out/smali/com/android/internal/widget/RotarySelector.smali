@@ -1015,7 +1015,7 @@
 
     invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v19, "invalid mGrabbedState: "
+    const-string/jumbo v19, "invalid mGrabbedState: "
 
     invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1952,8 +1952,6 @@
     return-void
 
     .line 315
-    nop
-
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1

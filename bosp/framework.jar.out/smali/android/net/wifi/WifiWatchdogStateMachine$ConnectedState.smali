@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 687
+    .line 689
     iput-object p1, p0, Landroid/net/wifi/WifiWatchdogStateMachine$ConnectedState;->this$0:Landroid/net/wifi/WifiWatchdogStateMachine;
 
     invoke-direct {p0}, Lcom/android/internal/util/State;-><init>()V
@@ -38,7 +38,7 @@
     .locals 1
 
     .prologue
-    .line 690
+    .line 692
     invoke-static {}, Landroid/net/wifi/WifiWatchdogStateMachine;->access$000()Z
 
     move-result v0
@@ -52,7 +52,7 @@
     #calls: Landroid/net/wifi/WifiWatchdogStateMachine;->logd(Ljava/lang/String;)V
     invoke-static {v0}, Landroid/net/wifi/WifiWatchdogStateMachine;->access$100(Ljava/lang/String;)V
 
-    .line 691
+    .line 693
     :cond_0
     return-void
 .end method
@@ -64,34 +64,34 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 695
+    .line 697
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 709
+    .line 711
     const/4 v0, 0x0
 
     :goto_0
     return v0
 
-    .line 697
+    .line 699
     :pswitch_0
     iget-object v1, p0, Landroid/net/wifi/WifiWatchdogStateMachine$ConnectedState;->this$0:Landroid/net/wifi/WifiWatchdogStateMachine;
 
     #calls: Landroid/net/wifi/WifiWatchdogStateMachine;->updateSettings()V
     invoke-static {v1}, Landroid/net/wifi/WifiWatchdogStateMachine;->access$200(Landroid/net/wifi/WifiWatchdogStateMachine;)V
 
-    .line 699
+    .line 701
     const-string v1, "Updated secure settings and turned debug on"
 
     #calls: Landroid/net/wifi/WifiWatchdogStateMachine;->logd(Ljava/lang/String;)V
     invoke-static {v1}, Landroid/net/wifi/WifiWatchdogStateMachine;->access$100(Ljava/lang/String;)V
 
-    .line 700
+    .line 702
     invoke-static {v0}, Landroid/net/wifi/WifiWatchdogStateMachine;->access$002(Z)Z
 
-    .line 702
+    .line 704
     iget-object v1, p0, Landroid/net/wifi/WifiWatchdogStateMachine$ConnectedState;->this$0:Landroid/net/wifi/WifiWatchdogStateMachine;
 
     #getter for: Landroid/net/wifi/WifiWatchdogStateMachine;->mPoorNetworkDetectionEnabled:Z
@@ -101,7 +101,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 703
+    .line 705
     iget-object v1, p0, Landroid/net/wifi/WifiWatchdogStateMachine$ConnectedState;->this$0:Landroid/net/wifi/WifiWatchdogStateMachine;
 
     iget-object v2, p0, Landroid/net/wifi/WifiWatchdogStateMachine$ConnectedState;->this$0:Landroid/net/wifi/WifiWatchdogStateMachine;
@@ -116,7 +116,7 @@
 
     goto :goto_0
 
-    .line 705
+    .line 707
     :cond_0
     iget-object v1, p0, Landroid/net/wifi/WifiWatchdogStateMachine$ConnectedState;->this$0:Landroid/net/wifi/WifiWatchdogStateMachine;
 
@@ -132,7 +132,7 @@
 
     goto :goto_0
 
-    .line 695
+    .line 697
     nop
 
     :pswitch_data_0

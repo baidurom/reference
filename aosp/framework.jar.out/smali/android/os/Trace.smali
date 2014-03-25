@@ -16,17 +16,25 @@
 
 .field public static final TRACE_TAG_ALWAYS:J = 0x1L
 
+.field public static final TRACE_TAG_APP:J = 0x2000L
+
 .field public static final TRACE_TAG_AUDIO:J = 0x100L
 
 .field public static final TRACE_TAG_CAMERA:J = 0x400L
 
 .field public static final TRACE_TAG_GRAPHICS:J = 0x2L
 
+.field public static final TRACE_TAG_HWUI:J = 0x800L
+
 .field public static final TRACE_TAG_INPUT:J = 0x4L
 
 .field public static final TRACE_TAG_NEVER:J = 0x0L
 
 .field private static final TRACE_TAG_NOT_READY:J = -0x8000000000000000L
+
+.field public static final TRACE_TAG_PERF:J = 0x1000L
+
+.field public static final TRACE_TAG_RESOURCES:J = 0x4000L
 
 .field public static final TRACE_TAG_SYNC_MANAGER:J = 0x80L
 
@@ -46,8 +54,8 @@
     .locals 3
 
     .prologue
-    .line 50
-    const/16 v0, 0xa
+    .line 54
+    const/16 v0, 0xe
 
     new-array v0, v0, [Ljava/lang/String;
 
@@ -111,21 +119,45 @@
 
     aput-object v2, v0, v1
 
+    const/16 v1, 0xa
+
+    const-string v2, "HWUI"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0xb
+
+    const-string v2, "Performance"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0xc
+
+    const-string v2, "APP"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0xd
+
+    const-string v2, "Resources"
+
+    aput-object v2, v0, v1
+
     sput-object v0, Landroid/os/Trace;->TRACE_TAGS:[Ljava/lang/String;
 
-    .line 58
+    .line 63
     const-wide/high16 v0, -0x8000
 
     sput-wide v0, Landroid/os/Trace;->sEnabledTags:J
 
-    .line 74
+    .line 79
     new-instance v0, Landroid/os/Trace$1;
 
     invoke-direct {v0}, Landroid/os/Trace$1;-><init>()V
 
     invoke-static {v0}, Landroid/os/SystemProperties;->addChangeCallback(Ljava/lang/Runnable;)V
 
-    .line 79
+    .line 84
     return-void
 .end method
 
@@ -133,10 +165,10 @@
     .locals 0
 
     .prologue
-    .line 81
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 86
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 82
+    .line 87
     return-void
 .end method
 
@@ -156,12 +188,12 @@
     .locals 5
 
     .prologue
-    .line 99
+    .line 104
     invoke-static {}, Landroid/os/Trace;->nativeGetEnabledTags()J
 
     move-result-wide v0
 
-    .line 100
+    .line 105
     .local v0, tags:J
     const-wide/high16 v2, -0x8000
 
@@ -169,7 +201,7 @@
 
     if-nez v2, :cond_0
 
-    .line 101
+    .line 106
     const-string v2, "Trace"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -192,11 +224,11 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 104
+    .line 109
     :cond_0
     sput-wide v0, Landroid/os/Trace;->sEnabledTags:J
 
-    .line 105
+    .line 110
     return-wide v0
 .end method
 
@@ -205,10 +237,10 @@
     .parameter "traceTag"
 
     .prologue
-    .line 115
+    .line 120
     sget-wide v0, Landroid/os/Trace;->sEnabledTags:J
 
-    .line 116
+    .line 121
     .local v0, tags:J
     const-wide/high16 v2, -0x8000
 
@@ -216,12 +248,12 @@
 
     if-nez v2, :cond_0
 
-    .line 117
+    .line 122
     invoke-static {}, Landroid/os/Trace;->cacheEnabledTags()J
 
     move-result-wide v0
 
-    .line 119
+    .line 124
     :cond_0
     and-long v2, v0, p0
 
@@ -260,17 +292,17 @@
     .parameter "methodName"
 
     .prologue
-    .line 143
+    .line 148
     invoke-static {p0, p1}, Landroid/os/Trace;->isTagEnabled(J)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 144
+    .line 149
     invoke-static {p0, p1, p2}, Landroid/os/Trace;->nativeTraceBegin(JLjava/lang/String;)V
 
-    .line 146
+    .line 151
     :cond_0
     return-void
 .end method
@@ -282,17 +314,17 @@
     .parameter "counterValue"
 
     .prologue
-    .line 130
+    .line 135
     invoke-static {p0, p1}, Landroid/os/Trace;->isTagEnabled(J)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 131
+    .line 136
     invoke-static {p0, p1, p2, p3}, Landroid/os/Trace;->nativeTraceCounter(JLjava/lang/String;I)V
 
-    .line 133
+    .line 138
     :cond_0
     return-void
 .end method
@@ -302,17 +334,17 @@
     .parameter "traceTag"
 
     .prologue
-    .line 155
+    .line 160
     invoke-static {p0, p1}, Landroid/os/Trace;->isTagEnabled(J)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 156
+    .line 161
     invoke-static {p0, p1}, Landroid/os/Trace;->nativeTraceEnd(J)V
 
-    .line 158
+    .line 163
     :cond_0
     return-void
 .end method

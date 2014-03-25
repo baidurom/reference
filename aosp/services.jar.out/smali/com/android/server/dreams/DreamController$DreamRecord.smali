@@ -48,24 +48,24 @@
     .parameter "userId"
 
     .prologue
-    .line 224
+    .line 240
     iput-object p1, p0, Lcom/android/server/dreams/DreamController$DreamRecord;->this$0:Lcom/android/server/dreams/DreamController;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 225
+    .line 241
     iput-object p2, p0, Lcom/android/server/dreams/DreamController$DreamRecord;->mToken:Landroid/os/Binder;
 
-    .line 226
+    .line 242
     iput-object p3, p0, Lcom/android/server/dreams/DreamController$DreamRecord;->mName:Landroid/content/ComponentName;
 
-    .line 227
+    .line 243
     iput-boolean p4, p0, Lcom/android/server/dreams/DreamController$DreamRecord;->mIsTest:Z
 
-    .line 228
+    .line 244
     iput p5, p0, Lcom/android/server/dreams/DreamController$DreamRecord;->mUserId:I
 
-    .line 229
+    .line 245
     return-void
 .end method
 
@@ -75,7 +75,7 @@
     .locals 2
 
     .prologue
-    .line 234
+    .line 250
     iget-object v0, p0, Lcom/android/server/dreams/DreamController$DreamRecord;->this$0:Lcom/android/server/dreams/DreamController;
 
     #getter for: Lcom/android/server/dreams/DreamController;->mHandler:Landroid/os/Handler;
@@ -89,7 +89,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 243
+    .line 259
     return-void
 .end method
 
@@ -99,7 +99,7 @@
     .parameter "service"
 
     .prologue
-    .line 248
+    .line 264
     iget-object v0, p0, Lcom/android/server/dreams/DreamController$DreamRecord;->this$0:Lcom/android/server/dreams/DreamController;
 
     #getter for: Lcom/android/server/dreams/DreamController;->mHandler:Landroid/os/Handler;
@@ -113,7 +113,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 257
+    .line 273
     return-void
 .end method
 
@@ -122,7 +122,7 @@
     .parameter "name"
 
     .prologue
-    .line 262
+    .line 278
     iget-object v0, p0, Lcom/android/server/dreams/DreamController$DreamRecord;->this$0:Lcom/android/server/dreams/DreamController;
 
     #getter for: Lcom/android/server/dreams/DreamController;->mHandler:Landroid/os/Handler;
@@ -136,6 +136,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 271
+    .line 287
     return-void
 .end method

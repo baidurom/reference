@@ -18,10 +18,7 @@
 .method public abstract onAddView(Landroid/view/View;)V
 .end method
 
-.method public abstract onRemoveView(Landroid/view/View;Z)V
-.end method
-
-.method public abstract onRemoveViewAnimationCompleted()V
+.method public abstract onRemoveView(Landroid/view/View;)V
 .end method
 
 .method public abstract onUserActivityTimeoutChanged()V

@@ -3,7 +3,7 @@
 .source "DisplayPowerController.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/animation/Animator$AnimatorListener;
 
 
 # annotations
@@ -27,30 +27,54 @@
     .parameter
 
     .prologue
-    .line 1195
+    .line 773
     iput-object p1, p0, Lcom/android/server/power/DisplayPowerController$5;->this$0:Lcom/android/server/power/DisplayPowerController;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .locals 1
+.method public onAnimationCancel(Landroid/animation/Animator;)V
+    .locals 0
+    .parameter "animation"
 
     .prologue
-    .line 1198
+    .line 786
+    return-void
+.end method
+
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 1
+    .parameter "animation"
+
+    .prologue
+    .line 779
     iget-object v0, p0, Lcom/android/server/power/DisplayPowerController$5;->this$0:Lcom/android/server/power/DisplayPowerController;
 
-    #getter for: Lcom/android/server/power/DisplayPowerController;->mCallbacks:Lcom/android/server/power/DisplayPowerController$Callbacks;
-    invoke-static {v0}, Lcom/android/server/power/DisplayPowerController;->access$400(Lcom/android/server/power/DisplayPowerController;)Lcom/android/server/power/DisplayPowerController$Callbacks;
+    #calls: Lcom/android/server/power/DisplayPowerController;->sendUpdatePowerState()V
+    invoke-static {v0}, Lcom/android/server/power/DisplayPowerController;->access$800(Lcom/android/server/power/DisplayPowerController;)V
 
-    move-result-object v0
+    .line 780
+    return-void
+.end method
 
-    invoke-interface {v0}, Lcom/android/server/power/DisplayPowerController$Callbacks;->onProximityNegative()V
+.method public onAnimationRepeat(Landroid/animation/Animator;)V
+    .locals 0
+    .parameter "animation"
 
-    .line 1199
+    .prologue
+    .line 783
+    return-void
+.end method
+
+.method public onAnimationStart(Landroid/animation/Animator;)V
+    .locals 0
+    .parameter "animation"
+
+    .prologue
+    .line 776
     return-void
 .end method

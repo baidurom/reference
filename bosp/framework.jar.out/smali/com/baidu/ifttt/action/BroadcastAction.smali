@@ -35,7 +35,7 @@
 
     .line 24
     :try_start_0
-    const-string v1, "intent"
+    const-string/jumbo v1, "intent"
 
     invoke-virtual {p1, v1}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
@@ -75,7 +75,7 @@
 
     .prologue
     .line 34
-    iget-object v0, p0, Lcom/baidu/ifttt/action/Action;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/baidu/ifttt/action/BroadcastAction;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/baidu/ifttt/action/BroadcastAction;->mIntent:Landroid/content/Intent;
 
@@ -97,7 +97,7 @@
     .line 40
     .local v0, jsonObject:Lorg/json/JSONObject;
     :try_start_0
-    const-string v1, "intent"
+    const-string/jumbo v1, "intent"
 
     iget-object v2, p0, Lcom/baidu/ifttt/action/BroadcastAction;->mIntent:Landroid/content/Intent;
 

@@ -14,7 +14,7 @@
     .line 11
     const/4 v0, 0x1
 
-    iput v0, p0, Lcom/baidu/service/power/PowerMode;->mType:I
+    iput v0, p0, Lcom/baidu/service/power/SuperMode;->mType:I
 
     .line 12
     return-void
@@ -38,7 +38,7 @@
     invoke-super {p0, p1}, Lcom/baidu/service/power/PowerMode;->applyMode(Landroid/content/Context;)V
 
     .line 18
-    iget-object v1, p0, Lcom/baidu/service/power/PowerMode;->mProfile:Lcom/baidu/service/power/Profile;
+    iget-object v1, p0, Lcom/baidu/service/power/SuperMode;->mProfile:Lcom/baidu/service/power/Profile;
 
     invoke-virtual {v1, p1}, Lcom/baidu/service/power/Profile;->applyProfileWithoutSM(Landroid/content/Context;)V
 

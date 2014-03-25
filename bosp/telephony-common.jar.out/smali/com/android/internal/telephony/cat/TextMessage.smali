@@ -253,6 +253,20 @@
     return-void
 .end method
 
+.method public static getInstance()Lcom/android/internal/telephony/cat/TextMessage;
+    .locals 1
+
+    .prologue
+    .line 73
+    new-instance v0, Lcom/android/internal/telephony/cat/TextMessage;
+
+    invoke-direct {v0}, Lcom/android/internal/telephony/cat/TextMessage;-><init>()V
+
+    .line 74
+    .local v0, self:Lcom/android/internal/telephony/cat/TextMessage;
+    return-object v0
+.end method
+
 
 # virtual methods
 .method public describeContents()I

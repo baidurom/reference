@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 192
+    .line 204
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen$2;->this$0:Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -42,7 +42,7 @@
     .parameter "v"
 
     .prologue
-    .line 195
+    .line 207
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen$2;->this$0:Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;->mKeyboardHelper:Lcom/android/internal/widget/PasswordEntryKeyboardHelper;
@@ -52,6 +52,6 @@
 
     invoke-virtual {v0}, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->handleBackspace()V
 
-    .line 196
+    .line 208
     return-void
 .end method

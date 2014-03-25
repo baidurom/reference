@@ -703,7 +703,7 @@
     .line 186
     const-string v0, "CDMA_MMI"
 
-    const-string v1, "isUssdRequest is not implemented in CdmaMmiCode"
+    const-string/jumbo v1, "isUssdRequest is not implemented in CdmaMmiCode"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -830,7 +830,7 @@
     :try_start_1
     iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
-    iget-object v4, v4, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v4, v4, Lcom/android/internal/telephony/cdma/CDMAPhone;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
     const/4 v5, 0x1
 

@@ -153,7 +153,7 @@
 
     const-string/jumbo v1, "mms"
 
-    const-string v2, "inbox"
+    const-string/jumbo v2, "inbox"
 
     invoke-virtual {v0, v1, v2, v4}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
 
@@ -162,7 +162,7 @@
 
     const-string/jumbo v1, "mms"
 
-    const-string v2, "inbox/#"
+    const-string/jumbo v2, "inbox/#"
 
     invoke-virtual {v0, v1, v2, v7}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
 

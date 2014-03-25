@@ -58,6 +58,11 @@
         <group gid="camera" />
     </permission>
 
+    <permission name="android.permission.ACCESS_MTK_MMHW" >
+        <group gid="media" />
+        <group gid="camera" />
+    </permission>
+
     <permission name="android.permission.READ_LOGS" >
         <group gid="log" />
     </permission>
@@ -187,6 +192,9 @@
     <assign-permission name="android.permission.ACCESS_DRM" uid="media" />
     <assign-permission name="android.permission.ACCESS_SURFACE_FLINGER" uid="media" />
     <assign-permission name="android.permission.WAKE_LOCK" uid="media" />
+    <assign-permission name="android.permission.CAMERA" uid="media" />
+    <assign-permission name="android.permission.RECORD_AUDIO" uid="media" />
+    <assign-permission name="android.permission.MODIFY_AUDIO_SETTINGS" uid="media" />
 
     <assign-permission name="android.permission.ACCESS_SURFACE_FLINGER" uid="graphics" />
 

@@ -201,7 +201,7 @@
     .line 1157
     iget-object v0, p0, Landroid/accounts/AccountManagerService$4;->this$0:Landroid/accounts/AccountManagerService;
 
-    iget-object v1, p0, Landroid/accounts/AccountManagerService$Session;->mAccounts:Landroid/accounts/AccountManagerService$UserAccounts;
+    iget-object v1, p0, Landroid/accounts/AccountManagerService$4;->mAccounts:Landroid/accounts/AccountManagerService$UserAccounts;
 
     new-instance v2, Landroid/accounts/Account;
 
@@ -239,7 +239,7 @@
     .line 1164
     iget-object v0, p0, Landroid/accounts/AccountManagerService$4;->this$0:Landroid/accounts/AccountManagerService;
 
-    iget-object v1, p0, Landroid/accounts/AccountManagerService$Session;->mAccounts:Landroid/accounts/AccountManagerService$UserAccounts;
+    iget-object v1, p0, Landroid/accounts/AccountManagerService$4;->mAccounts:Landroid/accounts/AccountManagerService$UserAccounts;
 
     iget-object v2, p0, Landroid/accounts/AccountManagerService$4;->val$account:Landroid/accounts/Account;
 
@@ -283,7 +283,7 @@
     if-nez v0, :cond_0
 
     .line 1129
-    iget-object v0, p0, Landroid/accounts/AccountManagerService$Session;->mAuthenticator:Landroid/accounts/IAccountAuthenticator;
+    iget-object v0, p0, Landroid/accounts/AccountManagerService$4;->mAuthenticator:Landroid/accounts/IAccountAuthenticator;
 
     iget-object v1, p0, Landroid/accounts/AccountManagerService$4;->val$authTokenType:Ljava/lang/String;
 
@@ -295,7 +295,7 @@
 
     .line 1131
     :cond_0
-    iget-object v0, p0, Landroid/accounts/AccountManagerService$Session;->mAuthenticator:Landroid/accounts/IAccountAuthenticator;
+    iget-object v0, p0, Landroid/accounts/AccountManagerService$4;->mAuthenticator:Landroid/accounts/IAccountAuthenticator;
 
     iget-object v1, p0, Landroid/accounts/AccountManagerService$4;->val$account:Landroid/accounts/Account;
 

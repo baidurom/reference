@@ -38,426 +38,875 @@
     .parameter "l"
 
     .prologue
-    .line 433
+    .line 590
     iput-object p1, p0, Lcom/android/server/MountService$MountServiceHandler;->this$0:Lcom/android/server/MountService;
 
-    .line 434
+    .line 591
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 430
+    .line 587
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/MountService$MountServiceHandler;->mForceUnmounts:Ljava/util/ArrayList;
 
-    .line 431
+    .line 588
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/MountService$MountServiceHandler;->mUpdatingStatus:Z
 
-    .line 435
+    .line 592
     return-void
 .end method
 
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .locals 17
+    .locals 27
     .parameter "msg"
 
     .prologue
-    .line 439
+    .line 596
     move-object/from16 v0, p1
 
-    iget v12, v0, Landroid/os/Message;->what:I
+    iget v0, v0, Landroid/os/Message;->what:I
 
-    packed-switch v12, :pswitch_data_0
+    move/from16 v22, v0
 
-    .line 521
+    packed-switch v22, :pswitch_data_0
+
+    .line 730
     :cond_0
     :goto_0
     return-void
 
-    .line 442
+    .line 598
     :pswitch_0
+    const-string v22, "MountService"
+
+    const-string v23, "H_UNMOUNT_PM_UPDATE"
+
+    invoke-static/range {v22 .. v23}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 599
     move-object/from16 v0, p1
 
-    iget-object v11, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
+    iget-object v0, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    check-cast v11, Lcom/android/server/MountService$UnmountCallBack;
+    move-object/from16 v20, v0
 
-    .line 443
-    .local v11, ucb:Lcom/android/server/MountService$UnmountCallBack;
+    check-cast v20, Lcom/android/server/MountService$UnmountCallBack;
+
+    .line 600
+    .local v20, ucb:Lcom/android/server/MountService$UnmountCallBack;
+    const/16 v21, 0x0
+
+    .line 601
+    .local v21, volume:Landroid/os/storage/StorageVolume;
     move-object/from16 v0, p0
 
-    iget-object v12, v0, Lcom/android/server/MountService$MountServiceHandler;->mForceUnmounts:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/android/server/MountService$MountServiceHandler;->this$0:Lcom/android/server/MountService;
 
-    invoke-virtual {v12, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    move-object/from16 v22, v0
 
-    .line 446
-    move-object/from16 v0, p0
+    #getter for: Lcom/android/server/MountService;->mVolumesLock:Ljava/lang/Object;
+    invoke-static/range {v22 .. v22}, Lcom/android/server/MountService;->access$300(Lcom/android/server/MountService;)Ljava/lang/Object;
 
-    iget-boolean v12, v0, Lcom/android/server/MountService$MountServiceHandler;->mUpdatingStatus:Z
+    move-result-object v23
 
-    if-nez v12, :cond_0
+    monitor-enter v23
 
-    .line 448
-    const/4 v12, 0x1
-
-    move-object/from16 v0, p0
-
-    iput-boolean v12, v0, Lcom/android/server/MountService$MountServiceHandler;->mUpdatingStatus:Z
-
-    .line 449
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lcom/android/server/MountService$MountServiceHandler;->this$0:Lcom/android/server/MountService;
-
-    #getter for: Lcom/android/server/MountService;->mPms:Lcom/android/server/pm/PackageManagerService;
-    invoke-static {v12}, Lcom/android/server/MountService;->access$300(Lcom/android/server/MountService;)Lcom/android/server/pm/PackageManagerService;
-
-    move-result-object v12
-
-    const/4 v13, 0x0
-
-    const/4 v14, 0x1
-
-    invoke-virtual {v12, v13, v14}, Lcom/android/server/pm/PackageManagerService;->updateExternalMediaStatus(ZZ)V
-
-    goto :goto_0
-
-    .line 456
-    .end local v11           #ucb:Lcom/android/server/MountService$UnmountCallBack;
-    :pswitch_1
-    const/4 v12, 0x0
-
-    move-object/from16 v0, p0
-
-    iput-boolean v12, v0, Lcom/android/server/MountService$MountServiceHandler;->mUpdatingStatus:Z
-
-    .line 457
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lcom/android/server/MountService$MountServiceHandler;->mForceUnmounts:Ljava/util/ArrayList;
-
-    invoke-virtual {v12}, Ljava/util/ArrayList;->size()I
-
-    move-result v7
-
-    .line 458
-    .local v7, size:I
-    new-array v8, v7, [I
-
-    .line 459
-    .local v8, sizeArr:[I
-    const/4 v9, 0x0
-
-    .line 461
-    .local v9, sizeArrN:I
-    const-string v12, "activity"
-
-    invoke-static {v12}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/android/server/am/ActivityManagerService;
-
-    .line 463
-    .local v1, ams:Lcom/android/server/am/ActivityManagerService;
-    const/4 v4, 0x0
-
-    .local v4, i:I
-    move v10, v9
-
-    .end local v9           #sizeArrN:I
-    .local v10, sizeArrN:I
-    :goto_1
-    if-ge v4, v7, :cond_8
-
-    .line 464
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lcom/android/server/MountService$MountServiceHandler;->mForceUnmounts:Ljava/util/ArrayList;
-
-    invoke-virtual {v12, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v11
-
-    check-cast v11, Lcom/android/server/MountService$UnmountCallBack;
-
-    .line 465
-    .restart local v11       #ucb:Lcom/android/server/MountService$UnmountCallBack;
-    iget-object v5, v11, Lcom/android/server/MountService$UnmountCallBack;->path:Ljava/lang/String;
-
-    .line 466
-    .local v5, path:Ljava/lang/String;
-    const/4 v2, 0x0
-
-    .line 467
-    .local v2, done:Z
-    iget-boolean v12, v11, Lcom/android/server/MountService$UnmountCallBack;->force:Z
-
-    if-nez v12, :cond_2
-
-    .line 468
-    const/4 v2, 0x1
-
-    .line 483
-    :cond_1
-    :goto_2
-    if-nez v2, :cond_6
-
-    iget v12, v11, Lcom/android/server/MountService$UnmountCallBack;->retries:I
-
-    const/4 v13, 0x1
-
-    if-ge v12, v13, :cond_6
-
-    .line 485
-    const-string v12, "MountService"
-
-    const-string v13, "Retrying to kill storage users again"
-
-    invoke-static {v12, v13}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 486
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lcom/android/server/MountService$MountServiceHandler;->this$0:Lcom/android/server/MountService;
-
-    #getter for: Lcom/android/server/MountService;->mHandler:Landroid/os/Handler;
-    invoke-static {v12}, Lcom/android/server/MountService;->access$400(Lcom/android/server/MountService;)Landroid/os/Handler;
-
-    move-result-object v12
-
-    move-object/from16 v0, p0
-
-    iget-object v13, v0, Lcom/android/server/MountService$MountServiceHandler;->this$0:Lcom/android/server/MountService;
-
-    #getter for: Lcom/android/server/MountService;->mHandler:Landroid/os/Handler;
-    invoke-static {v13}, Lcom/android/server/MountService;->access$400(Lcom/android/server/MountService;)Landroid/os/Handler;
-
-    move-result-object v13
-
-    const/4 v14, 0x2
-
-    iget v15, v11, Lcom/android/server/MountService$UnmountCallBack;->retries:I
-
-    add-int/lit8 v16, v15, 0x1
-
-    move/from16 v0, v16
-
-    iput v0, v11, Lcom/android/server/MountService$UnmountCallBack;->retries:I
-
-    invoke-static {v15}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v15
-
-    invoke-virtual {v13, v14, v15}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v13
-
-    const-wide/16 v14, 0x1e
-
-    invoke-virtual {v12, v13, v14, v15}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
-
-    move v9, v10
-
-    .line 463
-    .end local v10           #sizeArrN:I
-    .restart local v9       #sizeArrN:I
-    :goto_3
-    add-int/lit8 v4, v4, 0x1
-
-    move v10, v9
-
-    .end local v9           #sizeArrN:I
-    .restart local v10       #sizeArrN:I
-    goto :goto_1
-
-    .line 470
-    :cond_2
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lcom/android/server/MountService$MountServiceHandler;->this$0:Lcom/android/server/MountService;
-
-    invoke-virtual {v12, v5}, Lcom/android/server/MountService;->getStorageUsers(Ljava/lang/String;)[I
-
-    move-result-object v6
-
-    .line 471
-    .local v6, pids:[I
-    if-eqz v6, :cond_3
-
-    array-length v12, v6
-
-    if-nez v12, :cond_4
-
-    .line 472
-    :cond_3
-    const/4 v2, 0x1
-
-    goto :goto_2
-
-    .line 475
-    :cond_4
-    const-string v12, "unmount media"
-
-    const/4 v13, 0x1
-
-    invoke-virtual {v1, v6, v12, v13}, Lcom/android/server/am/ActivityManagerService;->killPids([ILjava/lang/String;Z)Z
-
-    .line 477
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lcom/android/server/MountService$MountServiceHandler;->this$0:Lcom/android/server/MountService;
-
-    invoke-virtual {v12, v5}, Lcom/android/server/MountService;->getStorageUsers(Ljava/lang/String;)[I
-
-    move-result-object v6
-
-    .line 478
-    if-eqz v6, :cond_5
-
-    array-length v12, v6
-
-    if-nez v12, :cond_1
-
-    .line 479
-    :cond_5
-    const/4 v2, 0x1
-
-    goto :goto_2
-
-    .line 491
-    .end local v6           #pids:[I
-    :cond_6
-    iget v12, v11, Lcom/android/server/MountService$UnmountCallBack;->retries:I
-
-    const/4 v13, 0x1
-
-    if-lt v12, v13, :cond_7
-
-    .line 492
-    const-string v12, "MountService"
-
-    const-string v13, "Failed to unmount media inspite of 1 retries. Forcibly killing processes now"
-
-    invoke-static {v12, v13}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 495
-    :cond_7
-    add-int/lit8 v9, v10, 0x1
-
-    .end local v10           #sizeArrN:I
-    .restart local v9       #sizeArrN:I
-    aput v4, v8, v10
-
-    .line 496
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lcom/android/server/MountService$MountServiceHandler;->this$0:Lcom/android/server/MountService;
-
-    #getter for: Lcom/android/server/MountService;->mHandler:Landroid/os/Handler;
-    invoke-static {v12}, Lcom/android/server/MountService;->access$400(Lcom/android/server/MountService;)Landroid/os/Handler;
-
-    move-result-object v12
-
-    move-object/from16 v0, p0
-
-    iget-object v13, v0, Lcom/android/server/MountService$MountServiceHandler;->this$0:Lcom/android/server/MountService;
-
-    #getter for: Lcom/android/server/MountService;->mHandler:Landroid/os/Handler;
-    invoke-static {v13}, Lcom/android/server/MountService;->access$400(Lcom/android/server/MountService;)Landroid/os/Handler;
-
-    move-result-object v13
-
-    const/4 v14, 0x3
-
-    invoke-virtual {v13, v14, v11}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v13
-
-    invoke-virtual {v12, v13}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
-
-    goto :goto_3
-
-    .line 501
-    .end local v2           #done:Z
-    .end local v5           #path:Ljava/lang/String;
-    .end local v9           #sizeArrN:I
-    .end local v11           #ucb:Lcom/android/server/MountService$UnmountCallBack;
-    .restart local v10       #sizeArrN:I
-    :cond_8
-    add-int/lit8 v4, v10, -0x1
-
-    :goto_4
-    if-ltz v4, :cond_0
-
-    .line 502
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lcom/android/server/MountService$MountServiceHandler;->mForceUnmounts:Ljava/util/ArrayList;
-
-    aget v13, v8, v4
-
-    invoke-virtual {v12, v13}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
-
-    .line 501
-    add-int/lit8 v4, v4, -0x1
-
-    goto :goto_4
-
-    .line 508
-    .end local v1           #ams:Lcom/android/server/am/ActivityManagerService;
-    .end local v4           #i:I
-    .end local v7           #size:I
-    .end local v8           #sizeArr:[I
-    .end local v10           #sizeArrN:I
-    :pswitch_2
-    move-object/from16 v0, p1
-
-    iget-object v11, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v11, Lcom/android/server/MountService$UnmountCallBack;
-
-    .line 509
-    .restart local v11       #ucb:Lcom/android/server/MountService$UnmountCallBack;
-    invoke-virtual {v11}, Lcom/android/server/MountService$UnmountCallBack;->handleFinished()V
-
-    goto/16 :goto_0
-
-    .line 514
-    .end local v11           #ucb:Lcom/android/server/MountService$UnmountCallBack;
-    :pswitch_3
+    .line 602
     :try_start_0
     move-object/from16 v0, p0
 
-    iget-object v12, v0, Lcom/android/server/MountService$MountServiceHandler;->this$0:Lcom/android/server/MountService;
+    iget-object v0, v0, Lcom/android/server/MountService$MountServiceHandler;->this$0:Lcom/android/server/MountService;
+
+    move-object/from16 v22, v0
+
+    #getter for: Lcom/android/server/MountService;->mVolumesByPath:Ljava/util/HashMap;
+    invoke-static/range {v22 .. v22}, Lcom/android/server/MountService;->access$400(Lcom/android/server/MountService;)Ljava/util/HashMap;
+
+    move-result-object v22
+
+    move-object/from16 v0, v20
+
+    iget-object v0, v0, Lcom/android/server/MountService$UnmountCallBack;->path:Ljava/lang/String;
+
+    move-object/from16 v24, v0
+
+    move-object/from16 v0, v22
+
+    move-object/from16 v1, v24
+
+    invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v22
+
+    move-object/from16 v0, v22
+
+    check-cast v0, Landroid/os/storage/StorageVolume;
+
+    move-object/from16 v21, v0
+
+    .line 603
+    monitor-exit v23
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 604
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/MountService$MountServiceHandler;->this$0:Lcom/android/server/MountService;
+
+    move-object/from16 v22, v0
+
+    const-string v23, "android.intent.action.MEDIA_EJECT"
+
+    sget-object v24, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
+
+    move-object/from16 v0, v22
+
+    move-object/from16 v1, v23
+
+    move-object/from16 v2, v21
+
+    move-object/from16 v3, v24
+
+    #calls: Lcom/android/server/MountService;->sendStorageIntent(Ljava/lang/String;Landroid/os/storage/StorageVolume;Landroid/os/UserHandle;)V
+    invoke-static {v0, v1, v2, v3}, Lcom/android/server/MountService;->access$600(Lcom/android/server/MountService;Ljava/lang/String;Landroid/os/storage/StorageVolume;Landroid/os/UserHandle;)V
+
+    .line 612
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/MountService$MountServiceHandler;->this$0:Lcom/android/server/MountService;
+
+    move-object/from16 v22, v0
+
+    #getter for: Lcom/android/server/MountService;->mShutdownCount:I
+    invoke-static/range {v22 .. v22}, Lcom/android/server/MountService;->access$1400(Lcom/android/server/MountService;)I
+
+    move-result v22
+
+    if-lez v22, :cond_1
+
+    .line 613
+    const-wide/16 v22, 0x1f4
+
+    invoke-static/range {v22 .. v23}, Landroid/os/SystemClock;->sleep(J)V
+
+    .line 618
+    :goto_1
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/MountService$MountServiceHandler;->mForceUnmounts:Ljava/util/ArrayList;
+
+    move-object/from16 v22, v0
+
+    move-object/from16 v0, v22
+
+    move-object/from16 v1, v20
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 619
+    const-string v22, "MountService"
+
+    new-instance v23, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v23 .. v23}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v24, " registered = "
+
+    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v23
+
+    move-object/from16 v0, p0
+
+    iget-boolean v0, v0, Lcom/android/server/MountService$MountServiceHandler;->mUpdatingStatus:Z
+
+    move/from16 v24, v0
+
+    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v23
+
+    invoke-virtual/range {v23 .. v23}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v23
+
+    invoke-static/range {v22 .. v23}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 621
+    move-object/from16 v0, p0
+
+    iget-boolean v0, v0, Lcom/android/server/MountService$MountServiceHandler;->mUpdatingStatus:Z
+
+    move/from16 v22, v0
+
+    if-nez v22, :cond_0
+
+    .line 622
+    const-string v22, "MountService"
+
+    const-string v23, "Updating external media status on PackageManager"
+
+    invoke-static/range {v22 .. v23}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 623
+    move-object/from16 v0, v20
+
+    iget-object v0, v0, Lcom/android/server/MountService$UnmountCallBack;->path:Ljava/lang/String;
+
+    move-object/from16 v22, v0
+
+    const-string v23, "/storage/emulated/0"
+
+    invoke-virtual/range {v22 .. v23}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v22
+
+    if-eqz v22, :cond_2
+
+    .line 624
+    const/16 v22, 0x1
+
+    move/from16 v0, v22
+
+    move-object/from16 v1, p0
+
+    iput-boolean v0, v1, Lcom/android/server/MountService$MountServiceHandler;->mUpdatingStatus:Z
+
+    .line 625
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/MountService$MountServiceHandler;->this$0:Lcom/android/server/MountService;
+
+    move-object/from16 v22, v0
+
+    #getter for: Lcom/android/server/MountService;->mPms:Lcom/android/server/pm/PackageManagerService;
+    invoke-static/range {v22 .. v22}, Lcom/android/server/MountService;->access$1600(Lcom/android/server/MountService;)Lcom/android/server/pm/PackageManagerService;
+
+    move-result-object v22
+
+    const/16 v23, 0x0
+
+    const/16 v24, 0x1
+
+    invoke-virtual/range {v22 .. v24}, Lcom/android/server/pm/PackageManagerService;->updateExternalMediaStatus(ZZ)V
+
+    goto/16 :goto_0
+
+    .line 603
+    :catchall_0
+    move-exception v22
+
+    :try_start_1
+    monitor-exit v23
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v22
+
+    .line 615
+    :cond_1
+    const-wide/16 v22, 0x5dc
+
+    invoke-static/range {v22 .. v23}, Landroid/os/SystemClock;->sleep(J)V
+
+    goto :goto_1
+
+    .line 626
+    :cond_2
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/MountService$MountServiceHandler;->this$0:Lcom/android/server/MountService;
+
+    move-object/from16 v22, v0
+
+    #getter for: Lcom/android/server/MountService;->mUnmountPrimary:Z
+    invoke-static/range {v22 .. v22}, Lcom/android/server/MountService;->access$1200(Lcom/android/server/MountService;)Z
+
+    move-result v22
+
+    if-nez v22, :cond_0
+
+    .line 629
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/MountService$MountServiceHandler;->this$0:Lcom/android/server/MountService;
+
+    move-object/from16 v22, v0
+
+    invoke-virtual/range {v22 .. v22}, Lcom/android/server/MountService;->finishMediaUpdate()V
+
+    goto/16 :goto_0
+
+    .line 635
+    .end local v20           #ucb:Lcom/android/server/MountService$UnmountCallBack;
+    .end local v21           #volume:Landroid/os/storage/StorageVolume;
+    :pswitch_1
+    const-string v22, "MountService"
+
+    const-string v23, "H_UNMOUNT_PM_DONE"
+
+    invoke-static/range {v22 .. v23}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 636
+    const-string v22, "MountService"
+
+    const-string v23, "Updated status. Processing requests"
+
+    invoke-static/range {v22 .. v23}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 637
+    const/16 v22, 0x0
+
+    move/from16 v0, v22
+
+    move-object/from16 v1, p0
+
+    iput-boolean v0, v1, Lcom/android/server/MountService$MountServiceHandler;->mUpdatingStatus:Z
+
+    .line 638
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/MountService$MountServiceHandler;->mForceUnmounts:Ljava/util/ArrayList;
+
+    move-object/from16 v22, v0
+
+    invoke-virtual/range {v22 .. v22}, Ljava/util/ArrayList;->size()I
+
+    move-result v16
+
+    .line 639
+    .local v16, size:I
+    move/from16 v0, v16
+
+    new-array v0, v0, [I
+
+    move-object/from16 v17, v0
+
+    .line 640
+    .local v17, sizeArr:[I
+    const/16 v18, 0x0
+
+    .line 642
+    .local v18, sizeArrN:I
+    const-string v22, "activity"
+
+    invoke-static/range {v22 .. v22}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+
+    move-result-object v4
+
+    check-cast v4, Lcom/android/server/am/ActivityManagerService;
+
+    .line 644
+    .local v4, ams:Lcom/android/server/am/ActivityManagerService;
+    const/4 v7, 0x0
+
+    .local v7, i:I
+    move/from16 v19, v18
+
+    .end local v18           #sizeArrN:I
+    .local v19, sizeArrN:I
+    :goto_2
+    move/from16 v0, v16
+
+    if-ge v7, v0, :cond_11
+
+    .line 645
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/MountService$MountServiceHandler;->mForceUnmounts:Ljava/util/ArrayList;
+
+    move-object/from16 v22, v0
+
+    move-object/from16 v0, v22
+
+    invoke-virtual {v0, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v20
+
+    check-cast v20, Lcom/android/server/MountService$UnmountCallBack;
+
+    .line 646
+    .restart local v20       #ucb:Lcom/android/server/MountService$UnmountCallBack;
+    move-object/from16 v0, v20
+
+    iget-object v13, v0, Lcom/android/server/MountService$UnmountCallBack;->path:Ljava/lang/String;
+
+    .line 647
+    .local v13, path:Ljava/lang/String;
+    const/4 v11, 0x0
+
+    .line 648
+    .local v11, needKill:Z
+    const/4 v5, 0x0
+
+    .line 649
+    .local v5, done:Z
+    move-object/from16 v0, v20
+
+    iget-boolean v0, v0, Lcom/android/server/MountService$UnmountCallBack;->force:Z
+
+    move/from16 v22, v0
+
+    if-nez v22, :cond_4
+
+    .line 650
+    const/4 v5, 0x1
+
+    .line 692
+    :cond_3
+    :goto_3
+    if-nez v5, :cond_f
+
+    move-object/from16 v0, v20
+
+    iget v0, v0, Lcom/android/server/MountService$UnmountCallBack;->retries:I
+
+    move/from16 v22, v0
+
+    const/16 v23, 0x4
+
+    move/from16 v0, v22
+
+    move/from16 v1, v23
+
+    if-ge v0, v1, :cond_f
+
+    .line 694
+    const-string v22, "MountService"
+
+    const-string v23, "Retrying to kill storage users again"
+
+    invoke-static/range {v22 .. v23}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 695
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/MountService$MountServiceHandler;->this$0:Lcom/android/server/MountService;
+
+    move-object/from16 v22, v0
+
+    #getter for: Lcom/android/server/MountService;->mHandler:Landroid/os/Handler;
+    invoke-static/range {v22 .. v22}, Lcom/android/server/MountService;->access$1700(Lcom/android/server/MountService;)Landroid/os/Handler;
+
+    move-result-object v22
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/MountService$MountServiceHandler;->this$0:Lcom/android/server/MountService;
+
+    move-object/from16 v23, v0
+
+    #getter for: Lcom/android/server/MountService;->mHandler:Landroid/os/Handler;
+    invoke-static/range {v23 .. v23}, Lcom/android/server/MountService;->access$1700(Lcom/android/server/MountService;)Landroid/os/Handler;
+
+    move-result-object v23
+
+    const/16 v24, 0x2
+
+    move-object/from16 v0, v20
+
+    iget v0, v0, Lcom/android/server/MountService$UnmountCallBack;->retries:I
+
+    move/from16 v25, v0
+
+    add-int/lit8 v26, v25, 0x1
+
+    move/from16 v0, v26
+
+    move-object/from16 v1, v20
+
+    iput v0, v1, Lcom/android/server/MountService$UnmountCallBack;->retries:I
+
+    invoke-static/range {v25 .. v25}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v25
+
+    invoke-virtual/range {v23 .. v25}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v23
+
+    const-wide/16 v24, 0x1e
+
+    invoke-virtual/range {v22 .. v25}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
+
+    move/from16 v18, v19
+
+    .line 644
+    .end local v19           #sizeArrN:I
+    .restart local v18       #sizeArrN:I
+    :goto_4
+    add-int/lit8 v7, v7, 0x1
+
+    move/from16 v19, v18
+
+    .end local v18           #sizeArrN:I
+    .restart local v19       #sizeArrN:I
+    goto :goto_2
+
+    .line 652
+    :cond_4
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/MountService$MountServiceHandler;->this$0:Lcom/android/server/MountService;
+
+    move-object/from16 v22, v0
+
+    move-object/from16 v0, v22
+
+    invoke-virtual {v0, v13}, Lcom/android/server/MountService;->getStorageUsers(Ljava/lang/String;)[I
+
+    move-result-object v14
+
+    .line 653
+    .local v14, pids:[I
+    if-eqz v14, :cond_5
+
+    array-length v0, v14
+
+    move/from16 v22, v0
+
+    if-nez v22, :cond_6
+
+    .line 654
+    :cond_5
+    const/4 v5, 0x1
+
+    goto :goto_3
+
+    .line 655
+    :cond_6
+    if-eqz v4, :cond_e
+
+    .line 656
+    invoke-virtual {v4}, Lcom/android/server/am/ActivityManagerService;->getRunningAppProcesses()Ljava/util/List;
+
+    move-result-object v15
+
+    .line 657
+    .local v15, runningList:Ljava/util/List;,"Ljava/util/List<Landroid/app/ActivityManager$RunningAppProcessInfo;>;"
+    if-eqz v15, :cond_c
+
+    .line 658
+    array-length v10, v14
+
+    .line 659
+    .local v10, len:I
+    const/4 v9, 0x0
+
+    .local v9, k:I
+    :goto_5
+    if-ge v9, v10, :cond_7
+
+    .line 660
+    if-eqz v11, :cond_9
+
+    .line 676
+    .end local v9           #k:I
+    .end local v10           #len:I
+    :cond_7
+    :goto_6
+    if-eqz v11, :cond_d
+
+    .line 678
+    const-string v22, "unmount media"
+
+    const/16 v23, 0x1
+
+    move-object/from16 v0, v22
+
+    move/from16 v1, v23
+
+    invoke-virtual {v4, v14, v0, v1}, Lcom/android/server/am/ActivityManagerService;->killPids([ILjava/lang/String;Z)Z
+
+    .line 680
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/MountService$MountServiceHandler;->this$0:Lcom/android/server/MountService;
+
+    move-object/from16 v22, v0
+
+    move-object/from16 v0, v22
+
+    invoke-virtual {v0, v13}, Lcom/android/server/MountService;->getStorageUsers(Ljava/lang/String;)[I
+
+    move-result-object v14
+
+    .line 681
+    if-eqz v14, :cond_8
+
+    array-length v0, v14
+
+    move/from16 v22, v0
+
+    if-nez v22, :cond_3
+
+    .line 682
+    :cond_8
+    const/4 v5, 0x1
+
+    goto/16 :goto_3
+
+    .line 663
+    .restart local v9       #k:I
+    .restart local v10       #len:I
+    :cond_9
+    invoke-interface {v15}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v8
+
+    .local v8, i$:Ljava/util/Iterator;
+    :cond_a
+    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v22
+
+    if-eqz v22, :cond_b
+
+    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v12
+
+    check-cast v12, Landroid/app/ActivityManager$RunningAppProcessInfo;
+
+    .line 664
+    .local v12, p:Landroid/app/ActivityManager$RunningAppProcessInfo;
+    iget v0, v12, Landroid/app/ActivityManager$RunningAppProcessInfo;->pid:I
+
+    move/from16 v22, v0
+
+    aget v23, v14, v9
+
+    move/from16 v0, v22
+
+    move/from16 v1, v23
+
+    if-ne v0, v1, :cond_a
+
+    .line 665
+    const/4 v11, 0x1
+
+    .line 666
+    const-string v22, "MountService"
+
+    const-string v23, "java process, need kill!"
+
+    invoke-static/range {v22 .. v23}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 659
+    .end local v12           #p:Landroid/app/ActivityManager$RunningAppProcessInfo;
+    :cond_b
+    add-int/lit8 v9, v9, 0x1
+
+    goto :goto_5
+
+    .line 673
+    .end local v8           #i$:Ljava/util/Iterator;
+    .end local v9           #k:I
+    .end local v10           #len:I
+    :cond_c
+    const-string v22, "MountService"
+
+    const-string v23, "runningList from AMS is null!"
+
+    invoke-static/range {v22 .. v23}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_6
+
+    .line 685
+    :cond_d
+    const-string v22, "MountService"
+
+    const-string v23, "all native process, don\'t need kill!"
+
+    invoke-static/range {v22 .. v23}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 686
+    const/4 v5, 0x1
+
+    goto/16 :goto_3
+
+    .line 689
+    .end local v15           #runningList:Ljava/util/List;,"Ljava/util/List<Landroid/app/ActivityManager$RunningAppProcessInfo;>;"
+    :cond_e
+    const-string v22, "MountService"
+
+    const-string v23, "Fail to get AMS while unmount!"
+
+    invoke-static/range {v22 .. v23}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto/16 :goto_3
+
+    .line 700
+    .end local v14           #pids:[I
+    :cond_f
+    move-object/from16 v0, v20
+
+    iget v0, v0, Lcom/android/server/MountService$UnmountCallBack;->retries:I
+
+    move/from16 v22, v0
+
+    const/16 v23, 0x4
+
+    move/from16 v0, v22
+
+    move/from16 v1, v23
+
+    if-lt v0, v1, :cond_10
+
+    .line 701
+    const-string v22, "MountService"
+
+    const-string v23, "Failed to unmount media inspite of 4 retries. Forcibly killing processes now"
+
+    invoke-static/range {v22 .. v23}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 704
+    :cond_10
+    add-int/lit8 v18, v19, 0x1
+
+    .end local v19           #sizeArrN:I
+    .restart local v18       #sizeArrN:I
+    aput v7, v17, v19
+
+    .line 705
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/MountService$MountServiceHandler;->this$0:Lcom/android/server/MountService;
+
+    move-object/from16 v22, v0
+
+    #getter for: Lcom/android/server/MountService;->mHandler:Landroid/os/Handler;
+    invoke-static/range {v22 .. v22}, Lcom/android/server/MountService;->access$1700(Lcom/android/server/MountService;)Landroid/os/Handler;
+
+    move-result-object v22
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/MountService$MountServiceHandler;->this$0:Lcom/android/server/MountService;
+
+    move-object/from16 v23, v0
+
+    #getter for: Lcom/android/server/MountService;->mHandler:Landroid/os/Handler;
+    invoke-static/range {v23 .. v23}, Lcom/android/server/MountService;->access$1700(Lcom/android/server/MountService;)Landroid/os/Handler;
+
+    move-result-object v23
+
+    const/16 v24, 0x3
+
+    move-object/from16 v0, v23
+
+    move/from16 v1, v24
+
+    move-object/from16 v2, v20
+
+    invoke-virtual {v0, v1, v2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v23
+
+    invoke-virtual/range {v22 .. v23}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+
+    goto/16 :goto_4
+
+    .line 710
+    .end local v5           #done:Z
+    .end local v11           #needKill:Z
+    .end local v13           #path:Ljava/lang/String;
+    .end local v18           #sizeArrN:I
+    .end local v20           #ucb:Lcom/android/server/MountService$UnmountCallBack;
+    .restart local v19       #sizeArrN:I
+    :cond_11
+    add-int/lit8 v7, v19, -0x1
+
+    :goto_7
+    if-ltz v7, :cond_0
+
+    .line 711
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/MountService$MountServiceHandler;->mForceUnmounts:Ljava/util/ArrayList;
+
+    move-object/from16 v22, v0
+
+    aget v23, v17, v7
+
+    invoke-virtual/range {v22 .. v23}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
+
+    .line 710
+    add-int/lit8 v7, v7, -0x1
+
+    goto :goto_7
+
+    .line 716
+    .end local v4           #ams:Lcom/android/server/am/ActivityManagerService;
+    .end local v7           #i:I
+    .end local v16           #size:I
+    .end local v17           #sizeArr:[I
+    .end local v19           #sizeArrN:I
+    :pswitch_2
+    const-string v22, "MountService"
+
+    const-string v23, "H_UNMOUNT_MS"
+
+    invoke-static/range {v22 .. v23}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 717
+    move-object/from16 v0, p1
+
+    iget-object v0, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    move-object/from16 v20, v0
+
+    check-cast v20, Lcom/android/server/MountService$UnmountCallBack;
+
+    .line 718
+    .restart local v20       #ucb:Lcom/android/server/MountService$UnmountCallBack;
+    invoke-virtual/range {v20 .. v20}, Lcom/android/server/MountService$UnmountCallBack;->handleFinished()V
+
+    goto/16 :goto_0
+
+    .line 723
+    .end local v20           #ucb:Lcom/android/server/MountService$UnmountCallBack;
+    :pswitch_3
+    :try_start_2
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/MountService$MountServiceHandler;->this$0:Lcom/android/server/MountService;
+
+    move-object/from16 v22, v0
 
     #calls: Lcom/android/server/MountService;->handleSystemReady()V
-    invoke-static {v12}, Lcom/android/server/MountService;->access$500(Lcom/android/server/MountService;)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-static/range {v22 .. v22}, Lcom/android/server/MountService;->access$1800(Lcom/android/server/MountService;)V
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
     goto/16 :goto_0
 
-    .line 515
+    .line 724
     :catch_0
-    move-exception v3
+    move-exception v6
 
-    .line 516
-    .local v3, ex:Ljava/lang/Exception;
-    const-string v12, "MountService"
+    .line 725
+    .local v6, ex:Ljava/lang/Exception;
+    const-string v22, "MountService"
 
-    const-string v13, "Boot-time mount exception"
+    const-string v23, "Boot-time mount exception"
 
-    invoke-static {v12, v13, v3}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    move-object/from16 v0, v22
+
+    move-object/from16 v1, v23
+
+    invoke-static {v0, v1, v6}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto/16 :goto_0
 
-    .line 439
+    .line 596
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

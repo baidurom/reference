@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 399
+    .line 885
     iput-object p1, p0, Lcom/android/server/usb/UsbDeviceManager$UsbHandler$QuickbootBroadcastReceiver;->this$1:Lcom/android/server/usb/UsbDeviceManager$UsbHandler;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -38,7 +38,7 @@
     .parameter "x1"
 
     .prologue
-    .line 399
+    .line 885
     invoke-direct {p0, p1}, Lcom/android/server/usb/UsbDeviceManager$UsbHandler$QuickbootBroadcastReceiver;-><init>(Lcom/android/server/usb/UsbDeviceManager$UsbHandler;)V
 
     return-void
@@ -52,12 +52,23 @@
     .parameter "intent"
 
     .prologue
-    .line 403
+    .line 888
+    invoke-static {}, Lcom/android/server/usb/UsbDeviceManager;->access$200()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 889
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 404
+    .line 890
     .local v0, action:Ljava/lang/String;
     const-string v1, "android.intent.action.ACTION_QUICKBOOT_SHUTDOWN"
 
@@ -67,20 +78,20 @@
 
     if-eqz v1, :cond_1
 
-    .line 405
+    .line 891
     iget-object v1, p0, Lcom/android/server/usb/UsbDeviceManager$UsbHandler$QuickbootBroadcastReceiver;->this$1:Lcom/android/server/usb/UsbDeviceManager$UsbHandler;
 
     const/4 v2, 0x1
 
     #setter for: Lcom/android/server/usb/UsbDeviceManager$UsbHandler;->mIsQbShutdown:Z
-    invoke-static {v1, v2}, Lcom/android/server/usb/UsbDeviceManager$UsbHandler;->access$1002(Lcom/android/server/usb/UsbDeviceManager$UsbHandler;Z)Z
+    invoke-static {v1, v2}, Lcom/android/server/usb/UsbDeviceManager$UsbHandler;->access$3502(Lcom/android/server/usb/UsbDeviceManager$UsbHandler;Z)Z
 
-    .line 409
+    .line 895
     :cond_0
     :goto_0
     return-void
 
-    .line 406
+    .line 892
     :cond_1
     const-string v1, "android.intent.action.ACTION_QUICKBOOT_BOOT"
 
@@ -90,13 +101,13 @@
 
     if-eqz v1, :cond_0
 
-    .line 407
+    .line 893
     iget-object v1, p0, Lcom/android/server/usb/UsbDeviceManager$UsbHandler$QuickbootBroadcastReceiver;->this$1:Lcom/android/server/usb/UsbDeviceManager$UsbHandler;
 
     const/4 v2, 0x0
 
     #setter for: Lcom/android/server/usb/UsbDeviceManager$UsbHandler;->mIsQbShutdown:Z
-    invoke-static {v1, v2}, Lcom/android/server/usb/UsbDeviceManager$UsbHandler;->access$1002(Lcom/android/server/usb/UsbDeviceManager$UsbHandler;Z)Z
+    invoke-static {v1, v2}, Lcom/android/server/usb/UsbDeviceManager$UsbHandler;->access$3502(Lcom/android/server/usb/UsbDeviceManager$UsbHandler;Z)Z
 
     goto :goto_0
 .end method

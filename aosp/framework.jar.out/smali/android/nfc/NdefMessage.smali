@@ -47,7 +47,7 @@
     const/4 v7, 0x0
 
     .line 111
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 113
     if-nez p1, :cond_0
@@ -135,7 +135,7 @@
 
     .prologue
     .line 94
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 95
     if-nez p1, :cond_0
@@ -191,7 +191,7 @@
 
     .prologue
     .line 131
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 133
     array-length v4, p1

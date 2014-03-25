@@ -37,7 +37,7 @@
 
     .prologue
     .line 15
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -85,7 +85,7 @@
     invoke-virtual {v1, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
 
     .line 41
-    const-string v2, "intent"
+    const-string/jumbo v2, "intent"
 
     iget-object v3, p0, Lcom/baidu/service/power/Action;->mIntent:Landroid/content/Intent;
 

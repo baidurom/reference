@@ -32,12 +32,12 @@
     .parameter "day"
 
     .prologue
-    .line 259
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 264
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 260
+    .line 265
     iput p1, p0, Landroid/content/SyncStorageEngine$DayStats;->day:I
 
-    .line 261
+    .line 266
     return-void
 .end method

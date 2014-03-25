@@ -33,14 +33,14 @@
     .parameter
 
     .prologue
-    .line 334
+    .line 360
     iput-object p1, p0, Lcom/android/server/StatusBarManagerService$4;->this$0:Lcom/android/server/StatusBarManagerService;
 
     iput p2, p0, Lcom/android/server/StatusBarManagerService$4;->val$vis:I
 
     iput p3, p0, Lcom/android/server/StatusBarManagerService$4;->val$mask:I
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -51,14 +51,14 @@
     .locals 3
 
     .prologue
-    .line 336
+    .line 362
     iget-object v0, p0, Lcom/android/server/StatusBarManagerService$4;->this$0:Lcom/android/server/StatusBarManagerService;
 
     iget-object v0, v0, Lcom/android/server/StatusBarManagerService;->mBar:Lcom/android/internal/statusbar/IStatusBar;
 
     if-eqz v0, :cond_0
 
-    .line 338
+    .line 364
     :try_start_0
     iget-object v0, p0, Lcom/android/server/StatusBarManagerService$4;->this$0:Lcom/android/server/StatusBarManagerService;
 
@@ -72,12 +72,12 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 342
+    .line 368
     :cond_0
     :goto_0
     return-void
 
-    .line 339
+    .line 365
     :catch_0
     move-exception v0
 

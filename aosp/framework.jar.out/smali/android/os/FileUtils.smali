@@ -53,7 +53,7 @@
 
     .prologue
     .line 36
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -209,7 +209,7 @@
 
     .line 88
     :try_start_2
-    invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
+    invoke-virtual {v1}, Ljava/io/InputStream;->close()V
 
     .line 93
     .end local v1           #in:Ljava/io/InputStream;
@@ -221,7 +221,7 @@
     :catchall_0
     move-exception v3
 
-    invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
+    invoke-virtual {v1}, Ljava/io/InputStream;->close()V
 
     throw v3
     :try_end_2
@@ -491,7 +491,7 @@
     invoke-virtual {v1}, Ljava/io/BufferedInputStream;->close()V
 
     .line 193
-    invoke-virtual {v4}, Ljava/io/FileInputStream;->close()V
+    invoke-virtual {v4}, Ljava/io/InputStream;->close()V
 
     .end local v7           #length:I
     :goto_0
@@ -517,7 +517,7 @@
     invoke-virtual {v1}, Ljava/io/BufferedInputStream;->close()V
 
     .line 193
-    invoke-virtual {v4}, Ljava/io/FileInputStream;->close()V
+    invoke-virtual {v4}, Ljava/io/InputStream;->close()V
 
     goto :goto_0
 
@@ -540,7 +540,7 @@
     invoke-virtual {v1}, Ljava/io/BufferedInputStream;->close()V
 
     .line 193
-    invoke-virtual {v4}, Ljava/io/FileInputStream;->close()V
+    invoke-virtual {v4}, Ljava/io/InputStream;->close()V
 
     goto :goto_0
 
@@ -579,7 +579,7 @@
     invoke-virtual {v1}, Ljava/io/BufferedInputStream;->close()V
 
     .line 193
-    invoke-virtual {v4}, Ljava/io/FileInputStream;->close()V
+    invoke-virtual {v4}, Ljava/io/InputStream;->close()V
 
     goto :goto_0
 
@@ -650,7 +650,7 @@
     invoke-virtual {v1}, Ljava/io/BufferedInputStream;->close()V
 
     .line 193
-    invoke-virtual {v4}, Ljava/io/FileInputStream;->close()V
+    invoke-virtual {v4}, Ljava/io/InputStream;->close()V
 
     goto :goto_0
 
@@ -671,7 +671,7 @@
     invoke-virtual {v1}, Ljava/io/BufferedInputStream;->close()V
 
     .line 193
-    invoke-virtual {v4}, Ljava/io/FileInputStream;->close()V
+    invoke-virtual {v4}, Ljava/io/InputStream;->close()V
 
     goto :goto_0
 
@@ -718,7 +718,7 @@
     invoke-virtual {v1}, Ljava/io/BufferedInputStream;->close()V
 
     .line 193
-    invoke-virtual {v4}, Ljava/io/FileInputStream;->close()V
+    invoke-virtual {v4}, Ljava/io/InputStream;->close()V
 
     goto/16 :goto_0
 
@@ -753,7 +753,7 @@
     invoke-virtual {v1}, Ljava/io/BufferedInputStream;->close()V
 
     .line 193
-    invoke-virtual {v4}, Ljava/io/FileInputStream;->close()V
+    invoke-virtual {v4}, Ljava/io/InputStream;->close()V
 
     goto/16 :goto_0
 
@@ -807,7 +807,7 @@
     invoke-virtual {v1}, Ljava/io/BufferedInputStream;->close()V
 
     .line 193
-    invoke-virtual {v4}, Ljava/io/FileInputStream;->close()V
+    invoke-virtual {v4}, Ljava/io/InputStream;->close()V
 
     goto/16 :goto_0
 
@@ -822,7 +822,7 @@
     invoke-virtual {v1}, Ljava/io/BufferedInputStream;->close()V
 
     .line 193
-    invoke-virtual {v4}, Ljava/io/FileInputStream;->close()V
+    invoke-virtual {v4}, Ljava/io/InputStream;->close()V
 
     throw v12
 .end method

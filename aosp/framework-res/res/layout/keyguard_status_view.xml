@@ -5,6 +5,7 @@
         <LinearLayout android:layout_gravity="top|center" android:orientation="vertical" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
             <com.android.internal.policy.impl.keyguard.ClockView android:layout_gravity="right" android:id="@id/clock_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="@dimen/kg_status_line_font_right_margin">
                 <TextView android:textAppearance="?textAppearanceMedium" android:textSize="@dimen/kg_status_clock_font_size" android:textColor="#ffffffff" android:ellipsize="none" android:id="@id/clock_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:drawablePadding="2.0dip" />
+                <TextView android:textSize="14.0sp" android:ellipsize="none" android:id="@id/am_pm" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:singleLine="true" android:layout_toRightOf="@id/clock_text" android:layout_alignBaseline="@id/clock_text" />
             </com.android.internal.policy.impl.keyguard.ClockView>
             <include layout="@layout/keyguard_status_area" />
         </LinearLayout>

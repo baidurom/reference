@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 1534
+    .line 1775
     iput-object p1, p0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
 
     invoke-direct {p0}, Landroid/net/INetworkPolicyListener$Stub;-><init>()V
@@ -39,28 +39,60 @@
     .parameter "meteredIfaces"
 
     .prologue
-    .line 1560
+    .line 1798
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "onMeteredIfacesChanged(ifaces="
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-static {p1}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, ")"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    #calls: Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
+    invoke-static {v4}, Lcom/android/server/ConnectivityService;->access$400(Ljava/lang/String;)V
+
+    .line 1801
     iget-object v4, p0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
 
     #getter for: Lcom/android/server/ConnectivityService;->mRulesLock:Ljava/lang/Object;
-    invoke-static {v4}, Lcom/android/server/ConnectivityService;->access$500(Lcom/android/server/ConnectivityService;)Ljava/lang/Object;
+    invoke-static {v4}, Lcom/android/server/ConnectivityService;->access$700(Lcom/android/server/ConnectivityService;)Ljava/lang/Object;
 
     move-result-object v5
 
     monitor-enter v5
 
-    .line 1561
+    .line 1802
     :try_start_0
     iget-object v4, p0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
 
     #getter for: Lcom/android/server/ConnectivityService;->mMeteredIfaces:Ljava/util/HashSet;
-    invoke-static {v4}, Lcom/android/server/ConnectivityService;->access$700(Lcom/android/server/ConnectivityService;)Ljava/util/HashSet;
+    invoke-static {v4}, Lcom/android/server/ConnectivityService;->access$900(Lcom/android/server/ConnectivityService;)Ljava/util/HashSet;
 
     move-result-object v4
 
     invoke-virtual {v4}, Ljava/util/HashSet;->clear()V
 
-    .line 1562
+    .line 1803
     move-object v0, p1
 
     .local v0, arr$:[Ljava/lang/String;
@@ -75,31 +107,31 @@
 
     aget-object v2, v0, v1
 
-    .line 1563
+    .line 1804
     .local v2, iface:Ljava/lang/String;
     iget-object v4, p0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
 
     #getter for: Lcom/android/server/ConnectivityService;->mMeteredIfaces:Ljava/util/HashSet;
-    invoke-static {v4}, Lcom/android/server/ConnectivityService;->access$700(Lcom/android/server/ConnectivityService;)Ljava/util/HashSet;
+    invoke-static {v4}, Lcom/android/server/ConnectivityService;->access$900(Lcom/android/server/ConnectivityService;)Ljava/util/HashSet;
 
     move-result-object v4
 
     invoke-virtual {v4, v2}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 1562
+    .line 1803
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 1565
+    .line 1806
     .end local v2           #iface:Ljava/lang/String;
     :cond_0
     monitor-exit v5
 
-    .line 1566
+    .line 1807
     return-void
 
-    .line 1565
+    .line 1806
     .end local v0           #arr$:[Ljava/lang/String;
     .end local v1           #i$:I
     .end local v3           #len$:I
@@ -114,19 +146,47 @@
 .end method
 
 .method public onRestrictBackgroundChanged(Z)V
-    .locals 4
+    .locals 5
     .parameter "restrictBackground"
 
     .prologue
-    .line 1577
+    .line 1813
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "onRestrictBackgroundChanged(restrictBackground="
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ")"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    #calls: Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
+    invoke-static {v3}, Lcom/android/server/ConnectivityService;->access$400(Ljava/lang/String;)V
+
+    .line 1818
     iget-object v3, p0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
 
     #getter for: Lcom/android/server/ConnectivityService;->mActiveDefaultNetwork:I
-    invoke-static {v3}, Lcom/android/server/ConnectivityService;->access$800(Lcom/android/server/ConnectivityService;)I
+    invoke-static {v3}, Lcom/android/server/ConnectivityService;->access$1000(Lcom/android/server/ConnectivityService;)I
 
     move-result v1
 
-    .line 1578
+    .line 1819
     .local v1, networkType:I
     invoke-static {v1}, Landroid/net/ConnectivityManager;->isNetworkTypeValid(I)Z
 
@@ -134,26 +194,26 @@
 
     if-eqz v3, :cond_0
 
-    .line 1579
+    .line 1820
     iget-object v3, p0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
 
     #getter for: Lcom/android/server/ConnectivityService;->mNetTrackers:[Landroid/net/NetworkStateTracker;
-    invoke-static {v3}, Lcom/android/server/ConnectivityService;->access$900(Lcom/android/server/ConnectivityService;)[Landroid/net/NetworkStateTracker;
+    invoke-static {v3}, Lcom/android/server/ConnectivityService;->access$1100(Lcom/android/server/ConnectivityService;)[Landroid/net/NetworkStateTracker;
 
     move-result-object v3
 
     aget-object v2, v3, v1
 
-    .line 1580
+    .line 1821
     .local v2, tracker:Landroid/net/NetworkStateTracker;
     if-eqz v2, :cond_0
 
-    .line 1581
+    .line 1822
     invoke-interface {v2}, Landroid/net/NetworkStateTracker;->getNetworkInfo()Landroid/net/NetworkInfo;
 
     move-result-object v0
 
-    .line 1582
+    .line 1823
     .local v0, info:Landroid/net/NetworkInfo;
     if-eqz v0, :cond_0
 
@@ -163,12 +223,12 @@
 
     if-eqz v3, :cond_0
 
-    .line 1583
+    .line 1824
     iget-object v3, p0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
 
     invoke-virtual {v3, v0}, Lcom/android/server/ConnectivityService;->sendConnectedBroadcast(Landroid/net/NetworkInfo;)V
 
-    .line 1587
+    .line 1828
     .end local v0           #info:Landroid/net/NetworkInfo;
     .end local v2           #tracker:Landroid/net/NetworkStateTracker;
     :cond_0
@@ -181,22 +241,60 @@
     .parameter "uidRules"
 
     .prologue
-    .line 1542
+    .line 1780
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "onUidRulesChanged(uid="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ", uidRules="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ")"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    #calls: Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
+    invoke-static {v1}, Lcom/android/server/ConnectivityService;->access$400(Ljava/lang/String;)V
+
+    .line 1783
     iget-object v1, p0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
 
     #getter for: Lcom/android/server/ConnectivityService;->mRulesLock:Ljava/lang/Object;
-    invoke-static {v1}, Lcom/android/server/ConnectivityService;->access$500(Lcom/android/server/ConnectivityService;)Ljava/lang/Object;
+    invoke-static {v1}, Lcom/android/server/ConnectivityService;->access$700(Lcom/android/server/ConnectivityService;)Ljava/lang/Object;
 
     move-result-object v2
 
     monitor-enter v2
 
-    .line 1544
+    .line 1785
     :try_start_0
     iget-object v1, p0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
 
     #getter for: Lcom/android/server/ConnectivityService;->mUidRules:Landroid/util/SparseIntArray;
-    invoke-static {v1}, Lcom/android/server/ConnectivityService;->access$600(Lcom/android/server/ConnectivityService;)Landroid/util/SparseIntArray;
+    invoke-static {v1}, Lcom/android/server/ConnectivityService;->access$800(Lcom/android/server/ConnectivityService;)Landroid/util/SparseIntArray;
 
     move-result-object v1
 
@@ -206,28 +304,28 @@
 
     move-result v0
 
-    .line 1545
+    .line 1786
     .local v0, oldRules:I
     if-ne v0, p2, :cond_0
 
     monitor-exit v2
 
-    .line 1551
+    .line 1792
     :goto_0
     return-void
 
-    .line 1547
+    .line 1788
     :cond_0
     iget-object v1, p0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
 
     #getter for: Lcom/android/server/ConnectivityService;->mUidRules:Landroid/util/SparseIntArray;
-    invoke-static {v1}, Lcom/android/server/ConnectivityService;->access$600(Lcom/android/server/ConnectivityService;)Landroid/util/SparseIntArray;
+    invoke-static {v1}, Lcom/android/server/ConnectivityService;->access$800(Lcom/android/server/ConnectivityService;)Landroid/util/SparseIntArray;
 
     move-result-object v1
 
     invoke-virtual {v1, p1, p2}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 1548
+    .line 1789
     monitor-exit v2
 
     goto :goto_0

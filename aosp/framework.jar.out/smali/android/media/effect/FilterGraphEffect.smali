@@ -62,7 +62,7 @@
     .line 75
     .local v1, reader:Landroid/filterfw/io/GraphReader;
     :try_start_0
-    invoke-virtual {v1, p1}, Landroid/filterfw/io/TextGraphReader;->readGraphString(Ljava/lang/String;)Landroid/filterfw/core/FilterGraph;
+    invoke-virtual {v1, p1}, Landroid/filterfw/io/GraphReader;->readGraphString(Ljava/lang/String;)Landroid/filterfw/core/FilterGraph;
 
     move-result-object v2
 

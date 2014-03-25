@@ -87,6 +87,77 @@
 
 
 # virtual methods
+.method public getFontMetricsInt(Ljava/lang/CharSequence;Landroid/graphics/Paint$FontMetricsInt;)I
+    .locals 1
+    .parameter "text"
+    .parameter "fm"
+
+    .prologue
+    .line 88
+    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 89
+    invoke-super {p0, p2}, Landroid/graphics/Paint;->getFontMetricsInt(Landroid/graphics/Paint$FontMetricsInt;)I
+
+    move-result v0
+
+    .line 91
+    :goto_0
+    return v0
+
+    :cond_0
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p0, p2, v0}, Landroid/text/TextPaint;->getStringFontMetricsInt(Landroid/graphics/Paint$FontMetricsInt;Ljava/lang/String;)I
+
+    move-result v0
+
+    goto :goto_0
+.end method
+
+.method public getFontMetricsInt([CLandroid/graphics/Paint$FontMetricsInt;II)I
+    .locals 1
+    .parameter "text"
+    .parameter "fm"
+    .parameter "pos"
+    .parameter "len"
+
+    .prologue
+    .line 98
+    if-eqz p1, :cond_0
+
+    array-length v0, p1
+
+    if-nez v0, :cond_1
+
+    .line 99
+    :cond_0
+    invoke-super {p0, p2}, Landroid/graphics/Paint;->getFontMetricsInt(Landroid/graphics/Paint$FontMetricsInt;)I
+
+    move-result v0
+
+    .line 101
+    :goto_0
+    return v0
+
+    :cond_1
+    invoke-static {p1, p3, p4}, Ljava/lang/String;->valueOf([CII)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p0, p2, v0}, Landroid/text/TextPaint;->getStringFontMetricsInt(Landroid/graphics/Paint$FontMetricsInt;Ljava/lang/String;)I
+
+    move-result v0
+
+    goto :goto_0
+.end method
+
 .method public set(Landroid/text/TextPaint;)V
     .locals 1
     .parameter "tp"

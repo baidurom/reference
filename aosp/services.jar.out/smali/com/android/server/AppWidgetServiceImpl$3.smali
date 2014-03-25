@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 1082
+    .line 1109
     iput-object p1, p0, Lcom/android/server/AppWidgetServiceImpl$3;->this$0:Lcom/android/server/AppWidgetServiceImpl;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -43,12 +43,12 @@
     .parameter "service"
 
     .prologue
-    .line 1085
+    .line 1112
     invoke-static {p2}, Lcom/android/internal/widget/IRemoteViewsFactory$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/widget/IRemoteViewsFactory;
 
     move-result-object v0
 
-    .line 1088
+    .line 1115
     .local v0, cb:Lcom/android/internal/widget/IRemoteViewsFactory;
     :try_start_0
     invoke-interface {v0}, Lcom/android/internal/widget/IRemoteViewsFactory;->onDataSetChangedAsync()V
@@ -56,7 +56,7 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 1094
+    .line 1121
     :goto_0
     iget-object v2, p0, Lcom/android/server/AppWidgetServiceImpl$3;->this$0:Lcom/android/server/AppWidgetServiceImpl;
 
@@ -64,25 +64,25 @@
 
     invoke-virtual {v2, p0}, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
 
-    .line 1095
+    .line 1122
     return-void
 
-    .line 1089
+    .line 1116
     :catch_0
     move-exception v1
 
-    .line 1090
+    .line 1117
     .local v1, e:Landroid/os/RemoteException;
     invoke-virtual {v1}, Landroid/os/RemoteException;->printStackTrace()V
 
     goto :goto_0
 
-    .line 1091
+    .line 1118
     .end local v1           #e:Landroid/os/RemoteException;
     :catch_1
     move-exception v1
 
-    .line 1092
+    .line 1119
     .local v1, e:Ljava/lang/RuntimeException;
     invoke-virtual {v1}, Ljava/lang/RuntimeException;->printStackTrace()V
 
@@ -94,6 +94,6 @@
     .parameter "name"
 
     .prologue
-    .line 1100
+    .line 1127
     return-void
 .end method

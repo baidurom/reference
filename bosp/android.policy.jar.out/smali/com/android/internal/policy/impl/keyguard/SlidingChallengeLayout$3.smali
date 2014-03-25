@@ -22,8 +22,8 @@
     .locals 0
 
     .prologue
-    .line 159
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 168
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -35,7 +35,7 @@
     .parameter "t"
 
     .prologue
-    .line 161
+    .line 170
     mul-float v0, p1, p1
 
     return v0

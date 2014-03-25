@@ -28,6 +28,8 @@
 
 .field static final TRANSACTION_createUser:I = 0x1
 
+.field static final TRANSACTION_getSwitchedUserId:I = 0xd
+
 .field static final TRANSACTION_getUserHandle:I = 0xc
 
 .field static final TRANSACTION_getUserIcon:I = 0x5
@@ -144,7 +146,7 @@
     .line 41
     sparse-switch p1, :sswitch_data_0
 
-    .line 192
+    .line 200
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v5
@@ -568,9 +570,29 @@
 
     goto/16 :goto_0
 
-    .line 41
-    nop
+    .line 193
+    .end local v0           #_arg0:I
+    .end local v2           #_result:I
+    :sswitch_d
+    const-string v4, "android.os.IUserManager"
 
+    invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 194
+    invoke-virtual {p0}, Landroid/os/IUserManager$Stub;->getSwitchedUserId()I
+
+    move-result v2
+
+    .line 195
+    .restart local v2       #_result:I
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 196
+    invoke-virtual {p3, v2}, Landroid/os/Parcel;->writeInt(I)V
+
+    goto/16 :goto_0
+
+    .line 41
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
@@ -585,6 +607,7 @@
         0xa -> :sswitch_a
         0xb -> :sswitch_b
         0xc -> :sswitch_c
+        0xd -> :sswitch_d
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 414
+    .line 452
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -28,48 +28,26 @@
 
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Ljava/lang/Object;
-    .locals 8
+    .locals 3
     .parameter "ctx"
 
     .prologue
-    .line 416
-    invoke-virtual {p1}, Landroid/app/ContextImpl;->getOuterContext()Landroid/content/Context;
+    .line 454
+    const-string v1, "location"
+
+    invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 417
-    .local v0, outerContext:Landroid/content/Context;
-    new-instance v1, Landroid/app/NotificationManager;
+    .line 455
+    .local v0, b:Landroid/os/IBinder;
+    new-instance v1, Landroid/location/LocationManager;
 
-    new-instance v2, Landroid/view/ContextThemeWrapper;
+    invoke-static {v0}, Landroid/location/ILocationManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/location/ILocationManager;
 
-    const/4 v3, 0x0
+    move-result-object v2
 
-    invoke-virtual {v0}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
-
-    move-result-object v4
-
-    iget v4, v4, Landroid/content/pm/ApplicationInfo;->targetSdkVersion:I
-
-    const v5, #style@Theme.Dialog#t
-
-    const v6, #style@Theme.Holo.Dialog#t
-
-    const v7, #style@Theme.DeviceDefault.Dialog#t
-
-    invoke-static {v3, v4, v5, v6, v7}, Landroid/content/res/Resources;->selectSystemTheme(IIIII)I
-
-    move-result v3
-
-    invoke-direct {v2, v0, v3}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
-
-    iget-object v3, p1, Landroid/app/ContextImpl;->mMainThread:Landroid/app/ActivityThread;
-
-    invoke-virtual {v3}, Landroid/app/ActivityThread;->getHandler()Landroid/os/Handler;
-
-    move-result-object v3
-
-    invoke-direct {v1, v2, v3}, Landroid/app/NotificationManager;-><init>(Landroid/content/Context;Landroid/os/Handler;)V
+    invoke-direct {v1, p1, v2}, Landroid/location/LocationManager;-><init>(Landroid/content/Context;Landroid/location/ILocationManager;)V
 
     return-object v1
 .end method

@@ -41,15 +41,104 @@
 
     .prologue
     .line 44
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 36
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/wm/DimAnimator;->mDimShown:Z
 
-    .line 52
+    .line 46
     :try_start_0
+    sget-boolean v0, Lcom/android/server/wm/WindowManagerService;->DEBUG_SURFACE_TRACE:Z
+
+    if-eqz v0, :cond_2
+
+    .line 47
+    new-instance v0, Lcom/android/server/wm/WindowStateAnimator$SurfaceTrace;
+
+    const-string v2, "DimAnimator"
+
+    const/16 v3, 0x10
+
+    const/16 v4, 0x10
+
+    const/4 v5, -0x1
+
+    const v6, 0x20004
+
+    move-object v1, p1
+
+    invoke-direct/range {v0 .. v6}, Lcom/android/server/wm/WindowStateAnimator$SurfaceTrace;-><init>(Landroid/view/SurfaceSession;Ljava/lang/String;IIII)V
+
+    iput-object v0, p0, Lcom/android/server/wm/DimAnimator;->mDimSurface:Landroid/view/Surface;
+
+    .line 56
+    :goto_0
+    sget-boolean v0, Lcom/android/server/wm/WindowManagerService;->SHOW_TRANSACTIONS:Z
+
+    if-nez v0, :cond_0
+
+    sget-boolean v0, Lcom/android/server/wm/WindowManagerService;->SHOW_SURFACE_ALLOC:Z
+
+    if-eqz v0, :cond_1
+
+    .line 57
+    :cond_0
+    const-string v0, "WindowManager"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "  DIM "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/android/server/wm/DimAnimator;->mDimSurface:Landroid/view/Surface;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ": CREATE"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 59
+    :cond_1
+    iget-object v0, p0, Lcom/android/server/wm/DimAnimator;->mDimSurface:Landroid/view/Surface;
+
+    invoke-virtual {v0, p2}, Landroid/view/Surface;->setLayerStack(I)V
+
+    .line 60
+    iget-object v0, p0, Lcom/android/server/wm/DimAnimator;->mDimSurface:Landroid/view/Surface;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/view/Surface;->setAlpha(F)V
+
+    .line 61
+    iget-object v0, p0, Lcom/android/server/wm/DimAnimator;->mDimSurface:Landroid/view/Surface;
+
+    invoke-virtual {v0}, Landroid/view/Surface;->show()V
+
+    .line 65
+    :goto_1
+    return-void
+
+    .line 52
+    :cond_2
     new-instance v0, Landroid/view/Surface;
 
     const-string v2, "DimAnimator"
@@ -67,29 +156,10 @@
     invoke-direct/range {v0 .. v6}, Landroid/view/Surface;-><init>(Landroid/view/SurfaceSession;Ljava/lang/String;IIII)V
 
     iput-object v0, p0, Lcom/android/server/wm/DimAnimator;->mDimSurface:Landroid/view/Surface;
-
-    .line 59
-    iget-object v0, p0, Lcom/android/server/wm/DimAnimator;->mDimSurface:Landroid/view/Surface;
-
-    invoke-virtual {v0, p2}, Landroid/view/Surface;->setLayerStack(I)V
-
-    .line 60
-    iget-object v0, p0, Lcom/android/server/wm/DimAnimator;->mDimSurface:Landroid/view/Surface;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/view/Surface;->setAlpha(F)V
-
-    .line 61
-    iget-object v0, p0, Lcom/android/server/wm/DimAnimator;->mDimSurface:Landroid/view/Surface;
-
-    invoke-virtual {v0}, Landroid/view/Surface;->show()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 65
-    :goto_0
-    return-void
+    goto :goto_0
 
     .line 62
     :catch_0
@@ -103,7 +173,7 @@
 
     invoke-static {v0, v1, v7}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_0
+    goto :goto_1
 .end method
 
 
@@ -112,22 +182,22 @@
     .locals 1
 
     .prologue
-    .line 201
+    .line 203
     iget-object v0, p0, Lcom/android/server/wm/DimAnimator;->mDimSurface:Landroid/view/Surface;
 
     if-eqz v0, :cond_0
 
-    .line 202
+    .line 204
     iget-object v0, p0, Lcom/android/server/wm/DimAnimator;->mDimSurface:Landroid/view/Surface;
 
     invoke-virtual {v0}, Landroid/view/Surface;->destroy()V
 
-    .line 203
+    .line 205
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/wm/DimAnimator;->mDimSurface:Landroid/view/Surface;
 
-    .line 205
+    .line 207
     :cond_0
     return-void
 .end method
@@ -138,10 +208,10 @@
     .parameter "pw"
 
     .prologue
-    .line 208
+    .line 210
     invoke-virtual {p2, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 209
+    .line 211
     const-string v0, "mDimSurface="
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -150,7 +220,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/Object;)V
 
-    .line 210
+    .line 212
     const-string v0, " "
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -163,15 +233,15 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 211
+    .line 213
     iget v0, p0, Lcom/android/server/wm/DimAnimator;->mLastDimHeight:I
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 212
+    .line 214
     invoke-virtual {p2, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 213
+    .line 215
     const-string v0, "mDimShown="
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -180,7 +250,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Z)V
 
-    .line 214
+    .line 216
     const-string v0, " current="
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -189,7 +259,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(F)V
 
-    .line 215
+    .line 217
     const-string v0, " target="
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -198,7 +268,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(F)V
 
-    .line 216
+    .line 218
     const-string v0, " delta="
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -207,7 +277,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(F)V
 
-    .line 217
+    .line 219
     const-string v0, " lastAnimTime="
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -216,298 +286,447 @@
 
     invoke-virtual {p2, v0, v1}, Ljava/io/PrintWriter;->println(J)V
 
-    .line 218
+    .line 220
     return-void
 .end method
 
 .method updateParameters(Landroid/content/res/Resources;Lcom/android/server/wm/DimAnimator$Parameters;J)V
-    .locals 12
+    .locals 15
     .parameter "res"
     .parameter "params"
     .parameter "currentTime"
 
     .prologue
     .line 72
-    iget-object v8, p0, Lcom/android/server/wm/DimAnimator;->mDimSurface:Landroid/view/Surface;
+    iget-object v11, p0, Lcom/android/server/wm/DimAnimator;->mDimSurface:Landroid/view/Surface;
 
-    if-nez v8, :cond_1
+    if-nez v11, :cond_1
 
     .line 73
-    const-string v8, "DimAnimator"
+    const-string v11, "DimAnimator"
 
-    const-string v9, "updateParameters: no Surface"
+    const-string v12, "updateParameters: no Surface"
 
-    invoke-static {v8, v9}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v11, v12}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 134
+    .line 136
     :cond_0
     :goto_0
     return-void
 
-    .line 79
-    :cond_1
-    iget v8, p2, Lcom/android/server/wm/DimAnimator$Parameters;->mDimWidth:I
-
-    int-to-double v8, v8
-
-    const-wide/high16 v10, 0x3ff8
-
-    mul-double/2addr v8, v10
-
-    double-to-int v3, v8
-
     .line 80
-    .local v3, dw:I
-    iget v8, p2, Lcom/android/server/wm/DimAnimator$Parameters;->mDimHeight:I
+    :cond_1
+    move-object/from16 v0, p2
 
-    int-to-double v8, v8
+    iget v11, v0, Lcom/android/server/wm/DimAnimator$Parameters;->mDimWidth:I
 
-    const-wide/high16 v10, 0x3ff8
+    move-object/from16 v0, p2
 
-    mul-double/2addr v8, v10
+    iget v12, v0, Lcom/android/server/wm/DimAnimator$Parameters;->mDimHeight:I
 
-    double-to-int v0, v8
+    if-le v11, v12, :cond_7
+
+    move-object/from16 v0, p2
+
+    iget v3, v0, Lcom/android/server/wm/DimAnimator$Parameters;->mDimWidth:I
 
     .line 81
-    .local v0, dh:I
-    iget-object v7, p2, Lcom/android/server/wm/DimAnimator$Parameters;->mDimWinAnimator:Lcom/android/server/wm/WindowStateAnimator;
+    .local v3, dmax:I
+    :goto_1
+    int-to-double v11, v3
+
+    const-wide/high16 v13, 0x3ff8
+
+    mul-double/2addr v11, v13
+
+    double-to-int v6, v11
 
     .line 82
-    .local v7, winAnimator:Lcom/android/server/wm/WindowStateAnimator;
-    iget v5, p2, Lcom/android/server/wm/DimAnimator$Parameters;->mDimTarget:F
+    .local v6, dw:I
+    int-to-double v11, v3
+
+    const-wide/high16 v13, 0x3ff8
+
+    mul-double/2addr v11, v13
+
+    double-to-int v2, v11
 
     .line 83
-    .local v5, target:F
-    iget-boolean v8, p0, Lcom/android/server/wm/DimAnimator;->mDimShown:Z
+    .local v2, dh:I
+    move-object/from16 v0, p2
 
-    if-nez v8, :cond_5
+    iget-object v10, v0, Lcom/android/server/wm/DimAnimator$Parameters;->mDimWinAnimator:Lcom/android/server/wm/WindowStateAnimator;
+
+    .line 84
+    .local v10, winAnimator:Lcom/android/server/wm/WindowStateAnimator;
+    move-object/from16 v0, p2
+
+    iget v8, v0, Lcom/android/server/wm/DimAnimator$Parameters;->mDimTarget:F
+
+    .line 85
+    .local v8, target:F
+    iget-boolean v11, p0, Lcom/android/server/wm/DimAnimator;->mDimShown:Z
+
+    if-nez v11, :cond_8
 
     .line 86
-    const/4 v8, 0x1
+    sget-boolean v11, Lcom/android/server/wm/WindowManagerService;->SHOW_TRANSACTIONS:Z
 
-    iput-boolean v8, p0, Lcom/android/server/wm/DimAnimator;->mDimShown:Z
+    if-eqz v11, :cond_2
+
+    const-string v11, "WindowManager"
+
+    new-instance v12, Ljava/lang/StringBuilder;
+
+    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v13, "  DIM "
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    iget-object v13, p0, Lcom/android/server/wm/DimAnimator;->mDimSurface:Landroid/view/Surface;
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    const-string v13, ": SHOW pos=(0,0) ("
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    invoke-virtual {v12, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    const-string v13, "x"
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    invoke-virtual {v12, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    const-string v13, ")"
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-static {v11, v12}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 88
-    :try_start_0
-    iput v3, p0, Lcom/android/server/wm/DimAnimator;->mLastDimWidth:I
+    :cond_2
+    const/4 v11, 0x1
 
-    .line 89
-    iput v0, p0, Lcom/android/server/wm/DimAnimator;->mLastDimHeight:I
+    iput-boolean v11, p0, Lcom/android/server/wm/DimAnimator;->mDimShown:Z
+
+    .line 90
+    :try_start_0
+    iput v6, p0, Lcom/android/server/wm/DimAnimator;->mLastDimWidth:I
 
     .line 91
-    iget-object v8, p0, Lcom/android/server/wm/DimAnimator;->mDimSurface:Landroid/view/Surface;
-
-    mul-int/lit8 v9, v3, -0x1
-
-    div-int/lit8 v9, v9, 0x6
-
-    mul-int/lit8 v10, v0, -0x1
-
-    div-int/lit8 v10, v10, 0x6
-
-    invoke-virtual {v8, v9, v10}, Landroid/view/Surface;->setPosition(II)V
-
-    .line 92
-    iget-object v8, p0, Lcom/android/server/wm/DimAnimator;->mDimSurface:Landroid/view/Surface;
-
-    invoke-virtual {v8, v3, v0}, Landroid/view/Surface;->setSize(II)V
+    iput v2, p0, Lcom/android/server/wm/DimAnimator;->mLastDimHeight:I
 
     .line 93
-    iget-object v8, p0, Lcom/android/server/wm/DimAnimator;->mDimSurface:Landroid/view/Surface;
+    iget-object v11, p0, Lcom/android/server/wm/DimAnimator;->mDimSurface:Landroid/view/Surface;
 
-    invoke-virtual {v8}, Landroid/view/Surface;->show()V
+    mul-int/lit8 v12, v6, -0x1
+
+    div-int/lit8 v12, v12, 0x6
+
+    mul-int/lit8 v13, v2, -0x1
+
+    div-int/lit8 v13, v13, 0x6
+
+    invoke-virtual {v11, v12, v13}, Landroid/view/Surface;->setPosition(II)V
+
+    .line 94
+    iget-object v11, p0, Lcom/android/server/wm/DimAnimator;->mDimSurface:Landroid/view/Surface;
+
+    invoke-virtual {v11, v6, v2}, Landroid/view/Surface;->setSize(II)V
+
+    .line 95
+    iget-object v11, p0, Lcom/android/server/wm/DimAnimator;->mDimSurface:Landroid/view/Surface;
+
+    invoke-virtual {v11}, Landroid/view/Surface;->show()V
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 105
-    :cond_2
-    :goto_1
-    iget-object v8, p0, Lcom/android/server/wm/DimAnimator;->mDimSurface:Landroid/view/Surface;
+    .line 107
+    :cond_3
+    :goto_2
+    iget-object v11, p0, Lcom/android/server/wm/DimAnimator;->mDimSurface:Landroid/view/Surface;
 
-    iget v9, v7, Lcom/android/server/wm/WindowStateAnimator;->mAnimLayer:I
+    iget v12, v10, Lcom/android/server/wm/WindowStateAnimator;->mAnimLayer:I
 
-    add-int/lit8 v9, v9, -0x1
+    add-int/lit8 v12, v12, -0x1
 
-    invoke-virtual {v8, v9}, Landroid/view/Surface;->setLayer(I)V
+    invoke-virtual {v11, v12}, Landroid/view/Surface;->setLayer(I)V
 
     .line 109
-    iget v8, p0, Lcom/android/server/wm/DimAnimator;->mDimTargetAlpha:F
+    sget-boolean v11, Lcom/android/server/wm/WindowManagerService;->SHOW_TRANSACTIONS:Z
 
-    cmpl-float v8, v8, v5
+    if-eqz v11, :cond_4
 
-    if-eqz v8, :cond_0
+    const-string v11, "WindowManager"
 
-    .line 112
-    iput-wide p3, p0, Lcom/android/server/wm/DimAnimator;->mLastDimAnimTime:J
+    new-instance v12, Ljava/lang/StringBuilder;
 
-    .line 113
-    iget-boolean v8, v7, Lcom/android/server/wm/WindowStateAnimator;->mAnimating:Z
+    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
 
-    if-eqz v8, :cond_7
+    const-string v13, "  DIM "
 
-    iget-object v8, v7, Lcom/android/server/wm/WindowStateAnimator;->mAnimation:Landroid/view/animation/Animation;
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-eqz v8, :cond_7
+    move-result-object v12
 
-    iget-object v8, v7, Lcom/android/server/wm/WindowStateAnimator;->mAnimation:Landroid/view/animation/Animation;
+    iget-object v13, p0, Lcom/android/server/wm/DimAnimator;->mDimSurface:Landroid/view/Surface;
 
-    invoke-virtual {v8}, Landroid/view/animation/Animation;->computeDurationHint()J
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-wide v1
+    move-result-object v12
 
-    .line 116
-    .local v1, duration:J
-    :goto_2
-    iget v8, p0, Lcom/android/server/wm/DimAnimator;->mDimTargetAlpha:F
+    const-string v13, ": layer="
 
-    cmpl-float v8, v5, v8
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-lez v8, :cond_3
+    move-result-object v12
 
-    .line 117
-    new-instance v6, Landroid/util/TypedValue;
+    iget v13, v10, Lcom/android/server/wm/WindowStateAnimator;->mAnimLayer:I
 
-    invoke-direct {v6}, Landroid/util/TypedValue;-><init>()V
+    add-int/lit8 v13, v13, -0x1
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    const-string v13, " target="
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    invoke-virtual {v12, v8}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-static {v11, v12}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 111
+    :cond_4
+    iget v11, p0, Lcom/android/server/wm/DimAnimator;->mDimTargetAlpha:F
+
+    cmpl-float v11, v11, v8
+
+    if-eqz v11, :cond_0
+
+    .line 114
+    move-wide/from16 v0, p3
+
+    iput-wide v0, p0, Lcom/android/server/wm/DimAnimator;->mLastDimAnimTime:J
+
+    .line 115
+    iget-boolean v11, v10, Lcom/android/server/wm/WindowStateAnimator;->mAnimating:Z
+
+    if-eqz v11, :cond_a
+
+    iget-object v11, v10, Lcom/android/server/wm/WindowStateAnimator;->mAnimation:Landroid/view/animation/Animation;
+
+    if-eqz v11, :cond_a
+
+    iget-object v11, v10, Lcom/android/server/wm/WindowStateAnimator;->mAnimation:Landroid/view/animation/Animation;
+
+    invoke-virtual {v11}, Landroid/view/animation/Animation;->computeDurationHint()J
+
+    move-result-wide v4
 
     .line 118
-    .local v6, tv:Landroid/util/TypedValue;
-    const/high16 v8, 0x112
+    .local v4, duration:J
+    :goto_3
+    iget v11, p0, Lcom/android/server/wm/DimAnimator;->mDimTargetAlpha:F
 
-    const/4 v9, 0x1
+    cmpl-float v11, v8, v11
 
-    invoke-virtual {p1, v8, v6, v9}, Landroid/content/res/Resources;->getValue(ILandroid/util/TypedValue;Z)V
+    if-lez v11, :cond_5
+
+    .line 119
+    new-instance v9, Landroid/util/TypedValue;
+
+    invoke-direct {v9}, Landroid/util/TypedValue;-><init>()V
 
     .line 120
-    iget v8, v6, Landroid/util/TypedValue;->type:I
+    .local v9, tv:Landroid/util/TypedValue;
+    const/high16 v11, 0x112
 
-    const/4 v9, 0x6
+    const/4 v12, 0x1
 
-    if-ne v8, v9, :cond_8
+    move-object/from16 v0, p1
 
-    .line 121
-    long-to-float v8, v1
+    invoke-virtual {v0, v11, v9, v12}, Landroid/content/res/Resources;->getValue(ILandroid/util/TypedValue;Z)V
 
-    long-to-float v9, v1
+    .line 122
+    iget v11, v9, Landroid/util/TypedValue;->type:I
 
-    invoke-virtual {v6, v8, v9}, Landroid/util/TypedValue;->getFraction(FF)F
+    const/4 v12, 0x6
 
-    move-result v8
+    if-ne v11, v12, :cond_b
 
-    float-to-long v1, v8
+    .line 123
+    long-to-float v11, v4
 
-    .line 127
-    .end local v6           #tv:Landroid/util/TypedValue;
-    :cond_3
-    :goto_3
-    const-wide/16 v8, 0x1
+    long-to-float v12, v4
 
-    cmp-long v8, v1, v8
+    invoke-virtual {v9, v11, v12}, Landroid/util/TypedValue;->getFraction(FF)F
 
-    if-gez v8, :cond_4
+    move-result v11
+
+    float-to-long v4, v11
 
     .line 129
-    const-wide/16 v1, 0x1
+    .end local v9           #tv:Landroid/util/TypedValue;
+    :cond_5
+    :goto_4
+    const-wide/16 v11, 0x1
+
+    cmp-long v11, v4, v11
+
+    if-gez v11, :cond_6
 
     .line 131
-    :cond_4
-    iput v5, p0, Lcom/android/server/wm/DimAnimator;->mDimTargetAlpha:F
+    const-wide/16 v4, 0x1
 
-    .line 132
-    iget v8, p0, Lcom/android/server/wm/DimAnimator;->mDimTargetAlpha:F
+    .line 133
+    :cond_6
+    iput v8, p0, Lcom/android/server/wm/DimAnimator;->mDimTargetAlpha:F
 
-    iget v9, p0, Lcom/android/server/wm/DimAnimator;->mDimCurrentAlpha:F
+    .line 134
+    iget v11, p0, Lcom/android/server/wm/DimAnimator;->mDimTargetAlpha:F
 
-    sub-float/2addr v8, v9
+    iget v12, p0, Lcom/android/server/wm/DimAnimator;->mDimCurrentAlpha:F
 
-    long-to-float v9, v1
+    sub-float/2addr v11, v12
 
-    div-float/2addr v8, v9
+    long-to-float v12, v4
 
-    iput v8, p0, Lcom/android/server/wm/DimAnimator;->mDimDeltaPerMs:F
+    div-float/2addr v11, v12
+
+    iput v11, p0, Lcom/android/server/wm/DimAnimator;->mDimDeltaPerMs:F
 
     goto/16 :goto_0
 
-    .line 94
-    .end local v1           #duration:J
+    .line 80
+    .end local v2           #dh:I
+    .end local v3           #dmax:I
+    .end local v4           #duration:J
+    .end local v6           #dw:I
+    .end local v8           #target:F
+    .end local v10           #winAnimator:Lcom/android/server/wm/WindowStateAnimator;
+    :cond_7
+    move-object/from16 v0, p2
+
+    iget v3, v0, Lcom/android/server/wm/DimAnimator$Parameters;->mDimHeight:I
+
+    goto/16 :goto_1
+
+    .line 96
+    .restart local v2       #dh:I
+    .restart local v3       #dmax:I
+    .restart local v6       #dw:I
+    .restart local v8       #target:F
+    .restart local v10       #winAnimator:Lcom/android/server/wm/WindowStateAnimator;
     :catch_0
-    move-exception v4
-
-    .line 95
-    .local v4, e:Ljava/lang/RuntimeException;
-    const-string v8, "WindowManager"
-
-    const-string v9, "Failure showing dim surface"
-
-    invoke-static {v8, v9, v4}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto :goto_1
+    move-exception v7
 
     .line 97
-    .end local v4           #e:Ljava/lang/RuntimeException;
-    :cond_5
-    iget v8, p0, Lcom/android/server/wm/DimAnimator;->mLastDimWidth:I
+    .local v7, e:Ljava/lang/RuntimeException;
+    const-string v11, "WindowManager"
 
-    if-ne v8, v3, :cond_6
+    const-string v12, "Failure showing dim surface"
 
-    iget v8, p0, Lcom/android/server/wm/DimAnimator;->mLastDimHeight:I
+    invoke-static {v11, v12, v7}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    if-eq v8, v0, :cond_2
-
-    .line 98
-    :cond_6
-    iput v3, p0, Lcom/android/server/wm/DimAnimator;->mLastDimWidth:I
+    goto/16 :goto_2
 
     .line 99
-    iput v0, p0, Lcom/android/server/wm/DimAnimator;->mLastDimHeight:I
+    .end local v7           #e:Ljava/lang/RuntimeException;
+    :cond_8
+    iget v11, p0, Lcom/android/server/wm/DimAnimator;->mLastDimWidth:I
+
+    if-ne v11, v6, :cond_9
+
+    iget v11, p0, Lcom/android/server/wm/DimAnimator;->mLastDimHeight:I
+
+    if-eq v11, v2, :cond_3
 
     .line 100
-    iget-object v8, p0, Lcom/android/server/wm/DimAnimator;->mDimSurface:Landroid/view/Surface;
+    :cond_9
+    iput v6, p0, Lcom/android/server/wm/DimAnimator;->mLastDimWidth:I
 
-    invoke-virtual {v8, v3, v0}, Landroid/view/Surface;->setSize(II)V
+    .line 101
+    iput v2, p0, Lcom/android/server/wm/DimAnimator;->mLastDimHeight:I
 
     .line 102
-    iget-object v8, p0, Lcom/android/server/wm/DimAnimator;->mDimSurface:Landroid/view/Surface;
+    iget-object v11, p0, Lcom/android/server/wm/DimAnimator;->mDimSurface:Landroid/view/Surface;
 
-    mul-int/lit8 v9, v3, -0x1
+    invoke-virtual {v11, v6, v2}, Landroid/view/Surface;->setSize(II)V
 
-    div-int/lit8 v9, v9, 0x6
+    .line 104
+    iget-object v11, p0, Lcom/android/server/wm/DimAnimator;->mDimSurface:Landroid/view/Surface;
 
-    mul-int/lit8 v10, v0, -0x1
+    mul-int/lit8 v12, v6, -0x1
 
-    div-int/lit8 v10, v10, 0x6
+    div-int/lit8 v12, v12, 0x6
 
-    invoke-virtual {v8, v9, v10}, Landroid/view/Surface;->setPosition(II)V
+    mul-int/lit8 v13, v2, -0x1
 
-    goto :goto_1
+    div-int/lit8 v13, v13, 0x6
 
-    .line 113
-    :cond_7
-    const-wide/16 v1, 0xc8
+    invoke-virtual {v11, v12, v13}, Landroid/view/Surface;->setPosition(II)V
 
-    goto :goto_2
+    goto/16 :goto_2
 
-    .line 122
-    .restart local v1       #duration:J
-    .restart local v6       #tv:Landroid/util/TypedValue;
-    :cond_8
-    iget v8, v6, Landroid/util/TypedValue;->type:I
-
-    const/16 v9, 0x10
-
-    if-lt v8, v9, :cond_3
-
-    iget v8, v6, Landroid/util/TypedValue;->type:I
-
-    const/16 v9, 0x1f
-
-    if-gt v8, v9, :cond_3
-
-    .line 124
-    iget v8, v6, Landroid/util/TypedValue;->data:I
-
-    int-to-long v1, v8
+    .line 115
+    :cond_a
+    const-wide/16 v4, 0xc8
 
     goto :goto_3
+
+    .line 124
+    .restart local v4       #duration:J
+    .restart local v9       #tv:Landroid/util/TypedValue;
+    :cond_b
+    iget v11, v9, Landroid/util/TypedValue;->type:I
+
+    const/16 v12, 0x10
+
+    if-lt v11, v12, :cond_5
+
+    iget v11, v9, Landroid/util/TypedValue;->type:I
+
+    const/16 v12, 0x1f
+
+    if-gt v11, v12, :cond_5
+
+    .line 126
+    iget v11, v9, Landroid/util/TypedValue;->data:I
+
+    int-to-long v4, v11
+
+    goto :goto_4
 .end method
 
 .method updateSurface(ZJZ)Z
@@ -523,12 +742,12 @@
 
     const/4 v7, 0x0
 
-    .line 141
+    .line 143
     iget-object v3, p0, Lcom/android/server/wm/DimAnimator;->mDimSurface:Landroid/view/Surface;
 
     if-nez v3, :cond_1
 
-    .line 142
+    .line 144
     const-string v3, "DimAnimator"
 
     const-string v4, "updateSurface: no Surface"
@@ -537,29 +756,29 @@
 
     move v0, v2
 
-    .line 197
+    .line 199
     :cond_0
     :goto_0
     return v0
 
-    .line 146
+    .line 148
     :cond_1
     if-nez p1, :cond_2
 
-    .line 147
+    .line 149
     iget v3, p0, Lcom/android/server/wm/DimAnimator;->mDimTargetAlpha:F
 
     cmpl-float v3, v3, v7
 
     if-eqz v3, :cond_2
 
-    .line 148
+    .line 150
     iput-wide p2, p0, Lcom/android/server/wm/DimAnimator;->mLastDimAnimTime:J
 
-    .line 149
+    .line 151
     iput v7, p0, Lcom/android/server/wm/DimAnimator;->mDimTargetAlpha:F
 
-    .line 150
+    .line 152
     iget v3, p0, Lcom/android/server/wm/DimAnimator;->mDimCurrentAlpha:F
 
     neg-float v3, v3
@@ -570,22 +789,22 @@
 
     iput v3, p0, Lcom/android/server/wm/DimAnimator;->mDimDeltaPerMs:F
 
-    .line 154
+    .line 156
     :cond_2
     iget-wide v3, p0, Lcom/android/server/wm/DimAnimator;->mLastDimAnimTime:J
 
     cmp-long v3, v3, v8
 
-    if-eqz v3, :cond_4
+    if-eqz v3, :cond_5
 
     const/4 v0, 0x1
 
-    .line 155
+    .line 157
     .local v0, animating:Z
     :goto_1
     if-eqz v0, :cond_0
 
-    .line 156
+    .line 158
     iget v3, p0, Lcom/android/server/wm/DimAnimator;->mDimCurrentAlpha:F
 
     iget v4, p0, Lcom/android/server/wm/DimAnimator;->mDimDeltaPerMs:F
@@ -602,21 +821,63 @@
 
     iput v3, p0, Lcom/android/server/wm/DimAnimator;->mDimCurrentAlpha:F
 
-    .line 158
-    if-eqz p4, :cond_5
-
     .line 160
+    if-eqz p4, :cond_6
+
+    .line 162
     const/4 v0, 0x0
 
-    .line 174
+    .line 176
     :cond_3
     :goto_2
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_9
 
     .line 177
+    sget-boolean v2, Lcom/android/server/wm/WindowManagerService;->SHOW_TRANSACTIONS:Z
+
+    if-eqz v2, :cond_4
+
+    const-string v2, "WindowManager"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "  DIM "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, p0, Lcom/android/server/wm/DimAnimator;->mDimSurface:Landroid/view/Surface;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ": alpha="
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget v4, p0, Lcom/android/server/wm/DimAnimator;->mDimCurrentAlpha:F
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 179
+    :cond_4
     iput-wide p2, p0, Lcom/android/server/wm/DimAnimator;->mLastDimAnimTime:J
 
-    .line 178
+    .line 180
     iget-object v2, p0, Lcom/android/server/wm/DimAnimator;->mDimSurface:Landroid/view/Surface;
 
     iget v3, p0, Lcom/android/server/wm/DimAnimator;->mDimCurrentAlpha:F
@@ -626,22 +887,22 @@
     goto :goto_0
 
     .end local v0           #animating:Z
-    :cond_4
+    :cond_5
     move v0, v2
 
-    .line 154
+    .line 156
     goto :goto_1
 
-    .line 161
+    .line 163
     .restart local v0       #animating:Z
-    :cond_5
+    :cond_6
     iget v3, p0, Lcom/android/server/wm/DimAnimator;->mDimDeltaPerMs:F
 
     cmpl-float v3, v3, v7
 
-    if-lez v3, :cond_6
+    if-lez v3, :cond_7
 
-    .line 162
+    .line 164
     iget v3, p0, Lcom/android/server/wm/DimAnimator;->mDimCurrentAlpha:F
 
     iget v4, p0, Lcom/android/server/wm/DimAnimator;->mDimTargetAlpha:F
@@ -650,20 +911,20 @@
 
     if-lez v3, :cond_3
 
-    .line 163
+    .line 165
     const/4 v0, 0x0
 
     goto :goto_2
 
-    .line 165
-    :cond_6
+    .line 167
+    :cond_7
     iget v3, p0, Lcom/android/server/wm/DimAnimator;->mDimDeltaPerMs:F
 
     cmpg-float v3, v3, v7
 
-    if-gez v3, :cond_7
+    if-gez v3, :cond_8
 
-    .line 166
+    .line 168
     iget v3, p0, Lcom/android/server/wm/DimAnimator;->mDimCurrentAlpha:F
 
     iget v4, p0, Lcom/android/server/wm/DimAnimator;->mDimTargetAlpha:F
@@ -672,37 +933,115 @@
 
     if-gez v3, :cond_3
 
-    .line 167
+    .line 169
     const/4 v0, 0x0
 
     goto :goto_2
 
-    .line 170
-    :cond_7
-    const/4 v0, 0x0
-
-    goto :goto_2
-
-    .line 180
+    .line 172
     :cond_8
+    const/4 v0, 0x0
+
+    goto :goto_2
+
+    .line 182
+    :cond_9
     iget v3, p0, Lcom/android/server/wm/DimAnimator;->mDimTargetAlpha:F
 
     iput v3, p0, Lcom/android/server/wm/DimAnimator;->mDimCurrentAlpha:F
 
-    .line 181
+    .line 183
     iput-wide v8, p0, Lcom/android/server/wm/DimAnimator;->mLastDimAnimTime:J
 
     .line 184
+    sget-boolean v3, Lcom/android/server/wm/WindowManagerService;->SHOW_TRANSACTIONS:Z
+
+    if-eqz v3, :cond_a
+
+    const-string v3, "WindowManager"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "  DIM "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    iget-object v5, p0, Lcom/android/server/wm/DimAnimator;->mDimSurface:Landroid/view/Surface;
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, ": final alpha="
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    iget v5, p0, Lcom/android/server/wm/DimAnimator;->mDimCurrentAlpha:F
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 186
+    :cond_a
     iget-object v3, p0, Lcom/android/server/wm/DimAnimator;->mDimSurface:Landroid/view/Surface;
 
     iget v4, p0, Lcom/android/server/wm/DimAnimator;->mDimCurrentAlpha:F
 
     invoke-virtual {v3, v4}, Landroid/view/Surface;->setAlpha(F)V
 
-    .line 185
+    .line 187
     if-nez p1, :cond_0
 
-    .line 189
+    .line 188
+    sget-boolean v3, Lcom/android/server/wm/WindowManagerService;->SHOW_TRANSACTIONS:Z
+
+    if-eqz v3, :cond_b
+
+    const-string v3, "WindowManager"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "  DIM "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    iget-object v5, p0, Lcom/android/server/wm/DimAnimator;->mDimSurface:Landroid/view/Surface;
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, ": HIDE"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 191
+    :cond_b
     :try_start_0
     iget-object v3, p0, Lcom/android/server/wm/DimAnimator;->mDimSurface:Landroid/view/Surface;
 
@@ -710,17 +1049,17 @@
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 193
+    .line 195
     :goto_3
     iput-boolean v2, p0, Lcom/android/server/wm/DimAnimator;->mDimShown:Z
 
-    goto :goto_0
+    goto/16 :goto_0
 
-    .line 190
+    .line 192
     :catch_0
     move-exception v1
 
-    .line 191
+    .line 193
     .local v1, e:Ljava/lang/RuntimeException;
     const-string v3, "WindowManager"
 

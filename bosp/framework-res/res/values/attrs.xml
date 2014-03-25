@@ -1851,6 +1851,8 @@
         <enum name="widgets" value="5" />
         <enum name="expandChallengeHandle" value="6" />
         <enum name="pageDeleteDropTarget" value="7" />
+        <enum name="mediatekLayerForeground" value="8" />
+        <enum name="mediatekLayerBackground" value="9" />
     </attr>
     <attr name="layout_centerWithinArea" format="float" />
     <attr name="layout_maxWidth" format="dimension" />

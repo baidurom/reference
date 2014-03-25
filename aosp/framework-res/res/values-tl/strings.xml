@@ -271,7 +271,7 @@
     <string name="permgrouplab_display">Iba pang UI ng Application</string>
     <string name="permgroupdesc_display">Apektuhan ang UI ng iba pang mga application.</string>
     <string name="permgrouplab_storage">Imbakan</string>
-    <string name="permgroupdesc_storage">I-access ang imbakan na USB.</string>
+    <string name="permgroupdesc_storage">I-access ang SD card.</string>
     <string name="permlab_statusBar">huwag paganahin o baguhin ang status bar</string>
     <string name="permdesc_statusBar">Pinapayagan ang app na huwag paganahin ang status bar o magdagdag at mag-alis ng mga icon ng system.</string>
     <string name="permlab_statusBarService">status bar</string>
@@ -486,9 +486,9 @@
     <string name="permdesc_brick">Pinapayagan ang app na huwag paganahin nang permanente ang buong telepono. Lubos itong mapanganib.</string>
     <string name="permlab_reboot">puwersahin ang pag-reboot ng telepono</string>
     <string name="permdesc_reboot">Pinapayagan ang app na puwersahing i-reboot ang telepono.</string>
-    <string name="permlab_mount_unmount_filesystems">access filesystem USB storage</string>
+    <string name="permlab_mount_unmount_filesystems">i-access ang filesystem ng SD Card</string>
     <string name="permdesc_mount_unmount_filesystems">Pinapayagan ang app na i-mount at i-unmount ang mga filesystem para sa naaalis na storage.</string>
-    <string name="permlab_mount_format_filesystems">burahin ang imbakan ng USB</string>
+    <string name="permlab_mount_format_filesystems">burahin ang SD card</string>
     <string name="permdesc_mount_format_filesystems">Pinapayagan ang app na i-format ang naaalis na storage.</string>
     <string name="permlab_asec_access">kumuha ng impormasyon sa panloob na imbakan</string>
     <string name="permdesc_asec_access">Pinapayagan ang app na kumuha ng impormasyon sa panloob na storage.</string>
@@ -597,9 +597,9 @@
     <string name="permlab_writeDictionary">magdagdag ng mga salita sa diksyunaryong tinukoy ng user</string>
     <string name="permdesc_writeDictionary">Pinapayagan ang app na magsulat ng mga bagong salita sa diksyunaryo ng user.</string>
     <string name="permlab_sdcardRead">subukan ang access sa pinoprotektahang storage</string>
-    <string name="permdesc_sdcardRead">Binibigyang-daan ang app na subukan ang isang pagpapahintulot para sa USB storage na magiging availabe sa mga device sa hinaharap.</string>
-    <string name="permlab_sdcardWrite">bago tanggal laman USB storage</string>
-    <string name="permdesc_sdcardWrite">Pinapayagan ang app na magsulat sa USB storage.</string>
+    <string name="permdesc_sdcardRead">Pinapayagan ang app na subukan ang isang pahintulot para sa SD card na magiging available sa mga device sa hinaharap.</string>
+    <string name="permlab_sdcardWrite">baguhin o tanggalin ang mga nilalaman ng iyong SD card</string>
+    <string name="permdesc_sdcardWrite">Pinapayagan ang app na magsulat sa SD card.</string>
     <string name="permlab_mediaStorageWrite">baguhin/tanggalin ang mga nilalaman ng panloob na imbakan ng media</string>
     <string name="permdesc_mediaStorageWrite">Pinapayagan ang app na baguhin ang mga nilalaman ng panloob na media storage.</string>
     <string name="permlab_sdcardAccessAll">i-access panlabas na storage ng user</string>
@@ -714,7 +714,7 @@
     <string name="keyguard_password_wrong_pin_code">Maling PIN code.</string>
     <string name="keyguard_label_text">Upang i-unlock, pindutin ang Menu pagkatapos ay 0.</string>
     <string name="emergency_call_dialog_number_for_display">Pang-emergency na numero</string>
-    <string name="lockscreen_carrier_default">Walang serbisyo.</string>
+    <string name="lockscreen_carrier_default">Walang serbisyo</string>
     <string name="lockscreen_screen_locked">Naka-lock ang screen.</string>
     <string name="lockscreen_instructions_when_pattern_enabled">Pindutin ang Menu upang i-unlock o magsagawa ng pang-emergency na tawag.</string>
     <string name="lockscreen_instructions_when_pattern_disabled">Pindutin ang Menu upang i-unlock.</string>
@@ -733,7 +733,7 @@
     <string name="lockscreen_missing_sim_message">Walang SIM card sa telepono.</string>
     <string name="lockscreen_missing_sim_instructions">Maglagay ng isang SIM card.</string>
     <string name="lockscreen_missing_sim_instructions_long">Nawawala o hindi nababasa ang SIM card. Maglagay ng isang SIM card.</string>
-    <string name="lockscreen_permanent_disabled_sim_message_short">Hindi nagagamit na SIM card.</string>
+    <string name="lockscreen_permanent_disabled_sim_message_short">Hindi nagagamit na SIM card</string>
     <string name="lockscreen_permanent_disabled_sim_instructions">"Ang iyong SIM card ay permanenteng hindi pinagana.
  Makipag-ugnay sa iyong wireless service provider para sa isa pang SIM card."</string>
     <string name="lockscreen_transport_prev_description">Button na nakaraang track</string>
@@ -743,9 +743,9 @@
     <string name="lockscreen_transport_stop_description">Button na Itigil</string>
     <string name="emergency_calls_only">Mga pang-emergency na tawag lang</string>
     <string name="lockscreen_network_locked_message">Naka-lock ang network</string>
-    <string name="lockscreen_sim_puk_locked_message">Naka-PUK-lock ang SIM card.</string>
+    <string name="lockscreen_sim_puk_locked_message">Naka-PUK-lock ang SIM card</string>
     <string name="lockscreen_sim_puk_locked_instructions">Tingnan ang Gabay ng User o makipag-ugnay sa Pangangalaga sa Customer.</string>
-    <string name="lockscreen_sim_locked_message">Naka-lock ang SIM card.</string>
+    <string name="lockscreen_sim_locked_message">Naka-lock ang SIM card</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">Ina-unlock ang SIM card…</string>
     <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"Mali mong naguhit ang iyong pattern sa pag-unlock nang %d (na) beses. 
 
@@ -1030,15 +1030,15 @@ Nais mo ba itong isara?"</string>
     <string name="perm_costs_money">maaari itong magdulot ng gastos sa iyo</string>
     <string name="usb_storage_activity_title">USB mass storage</string>
     <string name="usb_storage_title">Nakakonekta ang USB</string>
-    <string name="usb_storage_message">Kumonekta ka sa iyong computer sa pamamagitan ng USB. Pindutin ang button sa ibaba kung gusto mong kumopya ng mga file sa pagitan ng iyong computer at USB storage ng iyong Android.</string>
+    <string name="usb_storage_message">Kumonekta ka sa iyong computer sa pamamagitan ng USB. Pindutin ang button sa ibaba kung gusto mong kumopya ng mga file sa pagitan ng iyong computer at SD card ng iyong Android.</string>
     <string name="usb_storage_button_mount">I-on ang USB storage</string>
-    <string name="usb_storage_error_message">May problema sa paggamit ng iyong USB storage para sa USB mass storage.</string>
+    <string name="usb_storage_error_message">May problema sa paggamit ng iyong SD card para sa USB mass storage.</string>
     <string name="usb_storage_notification_title">Nakakonekta ang USB</string>
     <string name="usb_storage_notification_message">Pindutin upang kumopya ng mga file papunta/mula sa iyong computer.</string>
     <string name="usb_storage_stop_notification_title">I-off ang USB storage</string>
     <string name="usb_storage_stop_notification_message">Pindutin upang i-off ang USB storage.</string>
     <string name="usb_storage_stop_title">Ginagamit ang USB storage</string>
-    <string name="usb_storage_stop_message">Bago i-off ang USB storage, i-unmount (\"i-eject\") ang USB storage ng iyong Android mula sa iyong computer.</string>
+    <string name="usb_storage_stop_message">Bago i-off ang USB storage, i-unmount (\"i-eject\") ang SD card ng iyong Android mula sa iyong computer.</string>
     <string name="usb_storage_stop_button_mount">I-off ang USB storage</string>
     <string name="usb_storage_stop_error_message">Nagkaroon ng problema sa pag-off ng USB storage. Tiyaking na-unmount mo ang USB host, pagkatapos ay subukang muli.</string>
     <string name="dlg_confirm_kill_storage_users_title">I-on ang USB storage</string>
@@ -1050,8 +1050,8 @@ Nais mo ba itong isara?"</string>
     <string name="usb_cd_installer_notification_title">Nakakonekta bilang isang installer</string>
     <string name="usb_accessory_notification_title">Nakakonekta sa isang accessory ng USB</string>
     <string name="usb_notification_message">Pindutin para sa iba pang mga pagpipilian sa USB.</string>
-    <string name="extmedia_format_title">Iformat USB storage?</string>
-    <string name="extmedia_format_message">Mabubura ang lahat ng file na nakaimbak sa iyong USB storage. Hindi mababawi ang pagkilos na ito!</string>
+    <string name="extmedia_format_title">I-format ang SD card?</string>
+    <string name="extmedia_format_message">Mawawala ang lahat ng data sa iyong card.</string>
     <string name="extmedia_format_button_format">Format</string>
     <string name="adb_active_notification_title">Konektado ang debugging ng USB</string>
     <string name="adb_active_notification_message">Pindutin upang huwag paganahin ang pag-debug ng USB.</string>
@@ -1064,18 +1064,18 @@ Nais mo ba itong isara?"</string>
     <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="candidates_style"><u>mga kandidato</u></string>
-    <string name="ext_media_checking_notification_title">Ihinahanda ang imbakan na USB</string>
+    <string name="ext_media_checking_notification_title">Hinanda ang %s</string>
     <string name="ext_media_checking_notification_message">Sinusuri para sa mga error.</string>
-    <string name="ext_media_nofs_notification_title">Blangkong imbakan na USB</string>
-    <string name="ext_media_nofs_notification_message">Blangko ang USB storage o may hindi sinusuportahang filesystem.</string>
-    <string name="ext_media_unmountable_notification_title">Nasirang imbakan na USB</string>
-    <string name="ext_media_unmountable_notification_message">Sira ang USB storage. Subukan itong i-reformat.</string>
-    <string name="ext_media_badremoval_notification_title">Di inasahan naalis USB storage</string>
-    <string name="ext_media_badremoval_notification_message">I-unmount ang imbakan na USB bago alisin upang maiwasan ang pagkawala ng data.</string>
-    <string name="ext_media_safe_unmount_notification_title">Ligtas na alisin imbakan na USB</string>
-    <string name="ext_media_safe_unmount_notification_message">Maaari mong ligtas na alisin ang imbakan na USB.</string>
-    <string name="ext_media_nomedia_notification_title">Inalis na imbakan na USB</string>
-    <string name="ext_media_nomedia_notification_message">Inalis ang imbakan na USB. Magpasok ng bagong media.</string>
+    <string name="ext_media_nofs_notification_title">Blangko %s</string>
+    <string name="ext_media_nofs_notification_message">%s ay blangko o may hindi suportadong filesystem.</string>
+    <string name="ext_media_unmountable_notification_title">Sirang %s</string>
+    <string name="ext_media_unmountable_notification_message">%s ay sira. Maaaring kailangan mo ito i-reformat.</string>
+    <string name="ext_media_badremoval_notification_title">%s hindi inaasahang inalis</string>
+    <string name="ext_media_badremoval_notification_message">I-unmount ang %s bago alisin upang iwasan ang kawalan ng data.</string>
+    <string name="ext_media_safe_unmount_notification_title">%s ligtas alisin</string>
+    <string name="ext_media_safe_unmount_notification_message">Ligtas mong maaalis ang %s.</string>
+    <string name="ext_media_nomedia_notification_title">Inalis ang %s</string>
+    <string name="ext_media_nomedia_notification_message">%s ay inalis. Magpasok ng bago.</string>
     <string name="activity_list_empty">Walang nahanap na mga tumutugmang aktibidad.</string>
     <string name="permlab_pkgUsageStats">i-update ang mga istatistika ng paggamit ng nilalaman</string>
     <string name="permdesc_pkgUsageStats">Pinapayagan ang app na baguhin ang nakolektang mga istatistika ng paggamit ng bahagi. Hindi para sa paggamit ng normal na apps.</string>
@@ -1135,13 +1135,13 @@ para sa account na %s."</string>
     <string name="no_matches">Walang mga tugma</string>
     <string name="find_on_page">Maghanap sa pahina</string>
     <string name="action_mode_done">Tapos na</string>
-    <string name="progress_unmounting">Ina-unmount ang USB storage...</string>
-    <string name="progress_erasing">Binubura ang USB storage...</string>
-    <string name="format_error">Hindi mabura ang USB storage.</string>
+    <string name="progress_unmounting">Ina-unmount ang SD card...</string>
+    <string name="progress_erasing">Binubura ang SD card...</string>
+    <string name="format_error">Hindi mabura ang SD card.</string>
     <string name="media_bad_removal">Inalis ang SD card bago na-unmount.</string>
-    <string name="media_checking">Kasalukuyang sinusuri ang imbakan na USB.</string>
+    <string name="media_checking">Kasalukuyang sinusuri ang SD card.</string>
     <string name="media_removed">Inalis ang SD card.</string>
-    <string name="media_shared">Kasalukuyang ginagamit ang imbakan na USB ng isang computer.</string>
+    <string name="media_shared">Kasalukuyang ginagamit ang SD card ng isang computer.</string>
     <string name="media_unknown_state">Panlabas na media sa hindi kilalang katayuan.</string>
     <string name="share">Ibahagi</string>
     <string name="find">Hanapin</string>
@@ -1315,4 +1315,7 @@ Maaaring mapinsala ng pakikinig sa malakas na volume sa loob ng mahahabang panah
     <string name="enable_accessibility_canceled">Nakansela ang pagiging naa-access.</string>
     <string name="user_switched">Kasalukuyang user %1$s.</string>
     <string name="owner_name">May-ari</string>
+    <string name="storage_phone">Imbakan ng telepono</string>
+    <string name="storage_external_usb">Panlabas na USB na imbakan</string>
+    <string name="zz_keyguard_accessibility_voice_unlock">Boses na unlock.</string>
 </resources>

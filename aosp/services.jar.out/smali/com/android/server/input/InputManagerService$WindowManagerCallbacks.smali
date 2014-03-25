@@ -41,3 +41,6 @@
 
 .method public abstract notifyLidSwitchChanged(JZ)V
 .end method
+
+.method public abstract notifyPredump(Lcom/android/server/input/InputApplicationHandle;Lcom/android/server/input/InputWindowHandle;II)V
+.end method

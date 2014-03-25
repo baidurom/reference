@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 691
+    .line 723
     iput-object p1, p0, Lcom/android/server/InputMethodManagerService$4;->this$0:Lcom/android/server/InputMethodManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,27 +40,27 @@
     .parameter "intent"
 
     .prologue
-    .line 694
+    .line 726
     iget-object v0, p0, Lcom/android/server/InputMethodManagerService$4;->this$0:Lcom/android/server/InputMethodManagerService;
 
     iget-object v1, v0, Lcom/android/server/InputMethodManagerService;->mMethodMap:Ljava/util/HashMap;
 
     monitor-enter v1
 
-    .line 695
+    .line 727
     :try_start_0
     iget-object v0, p0, Lcom/android/server/InputMethodManagerService$4;->this$0:Lcom/android/server/InputMethodManagerService;
 
     #calls: Lcom/android/server/InputMethodManagerService;->checkCurrentLocaleChangedLocked()V
     invoke-static {v0}, Lcom/android/server/InputMethodManagerService;->access$1100(Lcom/android/server/InputMethodManagerService;)V
 
-    .line 696
+    .line 728
     monitor-exit v1
 
-    .line 697
+    .line 729
     return-void
 
-    .line 696
+    .line 728
     :catchall_0
     move-exception v0
 

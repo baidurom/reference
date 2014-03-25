@@ -56,9 +56,9 @@
 # instance fields
 .field private mHaveDisplaySize:Z
 
-.field private final mOomAdj:[I
+.field private mOomAdj:[I
 
-.field private final mOomMinFree:[J
+.field private mOomMinFree:[J
 
 .field private final mOomMinFreeHigh:[J
 
@@ -72,7 +72,7 @@
     .locals 1
 
     .prologue
-    .line 42
+    .line 49
     const/16 v0, 0x9
 
     sput v0, Lcom/android/server/am/ProcessList;->HIDDEN_APP_MIN_ADJ:I
@@ -94,10 +94,10 @@
 
     const/4 v5, 0x0
 
-    .line 157
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 166
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 134
+    .line 143
     new-array v1, v4, [I
 
     aput v5, v1, v5
@@ -122,21 +122,21 @@
 
     iput-object v1, p0, Lcom/android/server/am/ProcessList;->mOomAdj:[I
 
-    .line 140
+    .line 149
     new-array v1, v4, [J
 
     fill-array-data v1, :array_0
 
     iput-object v1, p0, Lcom/android/server/am/ProcessList;->mOomMinFreeLow:[J
 
-    .line 146
+    .line 155
     new-array v1, v4, [J
 
     fill-array-data v1, :array_1
 
     iput-object v1, p0, Lcom/android/server/am/ProcessList;->mOomMinFreeHigh:[J
 
-    .line 151
+    .line 160
     iget-object v1, p0, Lcom/android/server/am/ProcessList;->mOomAdj:[I
 
     array-length v1, v1
@@ -145,16 +145,16 @@
 
     iput-object v1, p0, Lcom/android/server/am/ProcessList;->mOomMinFree:[J
 
-    .line 158
+    .line 167
     new-instance v0, Lcom/android/internal/util/MemInfoReader;
 
     invoke-direct {v0}, Lcom/android/internal/util/MemInfoReader;-><init>()V
 
-    .line 159
+    .line 168
     .local v0, minfo:Lcom/android/internal/util/MemInfoReader;
     invoke-virtual {v0}, Lcom/android/internal/util/MemInfoReader;->readMemInfo()V
 
-    .line 160
+    .line 169
     invoke-virtual {v0}, Lcom/android/internal/util/MemInfoReader;->getTotalSize()J
 
     move-result-wide v1
@@ -165,13 +165,13 @@
 
     iput-wide v1, p0, Lcom/android/server/am/ProcessList;->mTotalMemMb:J
 
-    .line 161
+    .line 170
     invoke-direct {p0, v5, v5, v5}, Lcom/android/server/am/ProcessList;->updateOomLevels(IIZ)V
 
-    .line 162
+    .line 171
     return-void
 
-    .line 140
+    .line 149
     nop
 
     :array_0
@@ -184,7 +184,7 @@
         0x0t 0x80t 0x0t 0x0t 0x0t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 146
+    .line 155
     :array_1
     .array-data 0x8
         0x0t 0x80t 0x0t 0x0t 0x0t 0x0t 0x0t 0x0t
@@ -196,6 +196,238 @@
     .end array-data
 .end method
 
+.method private readFile(Ljava/lang/String;)Ljava/lang/String;
+    .locals 8
+    .parameter "path"
+
+    .prologue
+    .line 275
+    const/4 v3, 0x0
+
+    .line 276
+    .local v3, fr:Ljava/io/FileReader;
+    const/4 v0, 0x0
+
+    .line 278
+    .local v0, br:Ljava/io/BufferedReader;
+    :try_start_0
+    new-instance v4, Ljava/io/FileReader;
+
+    invoke-direct {v4, p1}, Ljava/io/FileReader;-><init>(Ljava/lang/String;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 279
+    .end local v3           #fr:Ljava/io/FileReader;
+    .local v4, fr:Ljava/io/FileReader;
+    :try_start_1
+    new-instance v1, Ljava/io/BufferedReader;
+
+    invoke-direct {v1, v4}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_3
+
+    .line 280
+    .end local v0           #br:Ljava/io/BufferedReader;
+    .local v1, br:Ljava/io/BufferedReader;
+    :try_start_2
+    invoke-virtual {v1}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_4
+
+    move-result-object v5
+
+    .line 285
+    if-eqz v1, :cond_0
+
+    .line 287
+    :try_start_3
+    invoke-virtual {v1}, Ljava/io/BufferedReader;->close()V
+
+    .line 288
+    if-eqz v4, :cond_0
+
+    .line 289
+    invoke-virtual {v4}, Ljava/io/FileReader;->close()V
+    :try_end_3
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_5
+
+    :cond_0
+    :goto_0
+    move-object v0, v1
+
+    .end local v1           #br:Ljava/io/BufferedReader;
+    .restart local v0       #br:Ljava/io/BufferedReader;
+    move-object v3, v4
+
+    .line 292
+    .end local v4           #fr:Ljava/io/FileReader;
+    .restart local v3       #fr:Ljava/io/FileReader;
+    :cond_1
+    :goto_1
+    return-object v5
+
+    .line 281
+    :catch_0
+    move-exception v2
+
+    .line 282
+    .local v2, e:Ljava/io/IOException;
+    :goto_2
+    :try_start_4
+    const-string v5, "ActivityManager"
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v7, "Unable to read "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v5, v6}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 283
+    const-string v5, ""
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+
+    .line 285
+    if-eqz v0, :cond_1
+
+    .line 287
+    :try_start_5
+    invoke-virtual {v0}, Ljava/io/BufferedReader;->close()V
+
+    .line 288
+    if-eqz v3, :cond_1
+
+    .line 289
+    invoke-virtual {v3}, Ljava/io/FileReader;->close()V
+    :try_end_5
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_1
+
+    goto :goto_1
+
+    .line 291
+    :catch_1
+    move-exception v6
+
+    goto :goto_1
+
+    .line 285
+    .end local v2           #e:Ljava/io/IOException;
+    :catchall_0
+    move-exception v5
+
+    :goto_3
+    if-eqz v0, :cond_2
+
+    .line 287
+    :try_start_6
+    invoke-virtual {v0}, Ljava/io/BufferedReader;->close()V
+
+    .line 288
+    if-eqz v3, :cond_2
+
+    .line 289
+    invoke-virtual {v3}, Ljava/io/FileReader;->close()V
+    :try_end_6
+    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_2
+
+    .line 292
+    :cond_2
+    :goto_4
+    throw v5
+
+    .line 291
+    :catch_2
+    move-exception v6
+
+    goto :goto_4
+
+    .line 285
+    .end local v3           #fr:Ljava/io/FileReader;
+    .restart local v4       #fr:Ljava/io/FileReader;
+    :catchall_1
+    move-exception v5
+
+    move-object v3, v4
+
+    .end local v4           #fr:Ljava/io/FileReader;
+    .restart local v3       #fr:Ljava/io/FileReader;
+    goto :goto_3
+
+    .end local v0           #br:Ljava/io/BufferedReader;
+    .end local v3           #fr:Ljava/io/FileReader;
+    .restart local v1       #br:Ljava/io/BufferedReader;
+    .restart local v4       #fr:Ljava/io/FileReader;
+    :catchall_2
+    move-exception v5
+
+    move-object v0, v1
+
+    .end local v1           #br:Ljava/io/BufferedReader;
+    .restart local v0       #br:Ljava/io/BufferedReader;
+    move-object v3, v4
+
+    .end local v4           #fr:Ljava/io/FileReader;
+    .restart local v3       #fr:Ljava/io/FileReader;
+    goto :goto_3
+
+    .line 281
+    .end local v3           #fr:Ljava/io/FileReader;
+    .restart local v4       #fr:Ljava/io/FileReader;
+    :catch_3
+    move-exception v2
+
+    move-object v3, v4
+
+    .end local v4           #fr:Ljava/io/FileReader;
+    .restart local v3       #fr:Ljava/io/FileReader;
+    goto :goto_2
+
+    .end local v0           #br:Ljava/io/BufferedReader;
+    .end local v3           #fr:Ljava/io/FileReader;
+    .restart local v1       #br:Ljava/io/BufferedReader;
+    .restart local v4       #fr:Ljava/io/FileReader;
+    :catch_4
+    move-exception v2
+
+    move-object v0, v1
+
+    .end local v1           #br:Ljava/io/BufferedReader;
+    .restart local v0       #br:Ljava/io/BufferedReader;
+    move-object v3, v4
+
+    .end local v4           #fr:Ljava/io/FileReader;
+    .restart local v3       #fr:Ljava/io/FileReader;
+    goto :goto_2
+
+    .line 291
+    .end local v0           #br:Ljava/io/BufferedReader;
+    .end local v3           #fr:Ljava/io/FileReader;
+    .restart local v1       #br:Ljava/io/BufferedReader;
+    .restart local v4       #fr:Ljava/io/FileReader;
+    :catch_5
+    move-exception v6
+
+    goto :goto_0
+.end method
+
 .method private updateOomLevels(IIZ)V
     .locals 17
     .parameter "displayWidth"
@@ -203,7 +435,7 @@
     .parameter "write"
 
     .prologue
-    .line 178
+    .line 212
     move-object/from16 v0, p0
 
     iget-wide v13, v0, Lcom/android/server/am/ProcessList;->mTotalMemMb:J
@@ -218,15 +450,15 @@
 
     div-float v12, v13, v14
 
-    .line 181
+    .line 215
     .local v12, scaleMem:F
     const v9, 0x25800
 
-    .line 182
+    .line 216
     .local v9, minSize:I
     const v7, 0xfa000
 
-    .line 183
+    .line 217
     .local v7, maxSize:I
     mul-int v13, p1, p2
 
@@ -242,19 +474,19 @@
 
     div-float v11, v13, v14
 
-    .line 186
+    .line 220
     .local v11, scaleDisp:F
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 187
+    .line 221
     .local v1, adjString:Ljava/lang/StringBuilder;
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 189
+    .line 223
     .local v8, memString:Ljava/lang/StringBuilder;
     cmpl-float v13, v12, v11
 
@@ -262,7 +494,7 @@
 
     move v10, v12
 
-    .line 190
+    .line 224
     .local v10, scale:F
     :goto_0
     const/4 v13, 0x0
@@ -273,7 +505,7 @@
 
     const/4 v10, 0x0
 
-    .line 192
+    .line 226
     :cond_0
     :goto_1
     const/4 v4, 0x0
@@ -288,14 +520,14 @@
 
     if-ge v4, v13, :cond_4
 
-    .line 193
+    .line 227
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/am/ProcessList;->mOomMinFreeLow:[J
 
     aget-wide v5, v13, v4
 
-    .line 194
+    .line 228
     .local v5, low:J
     move-object/from16 v0, p0
 
@@ -303,7 +535,7 @@
 
     aget-wide v2, v13, v4
 
-    .line 195
+    .line 229
     .local v2, high:J
     move-object/from16 v0, p0
 
@@ -323,20 +555,20 @@
 
     aput-wide v14, v13, v4
 
-    .line 197
+    .line 231
     if-lez v4, :cond_1
 
-    .line 198
+    .line 232
     const/16 v13, 0x2c
 
     invoke-virtual {v1, v13}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 199
+    .line 233
     const/16 v13, 0x2c
 
     invoke-virtual {v8, v13}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 201
+    .line 235
     :cond_1
     move-object/from16 v0, p0
 
@@ -346,7 +578,7 @@
 
     invoke-virtual {v1, v13}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 202
+    .line 236
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/am/ProcessList;->mOomMinFree:[J
@@ -363,7 +595,7 @@
 
     invoke-virtual {v8, v13, v14}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 192
+    .line 226
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_2
@@ -375,10 +607,10 @@
     :cond_2
     move v10, v11
 
-    .line 189
+    .line 223
     goto :goto_0
 
-    .line 191
+    .line 225
     .restart local v10       #scale:F
     :cond_3
     const/high16 v13, 0x3f80
@@ -391,12 +623,12 @@
 
     goto :goto_1
 
-    .line 206
+    .line 240
     .restart local v4       #i:I
     :cond_4
     if-eqz p3, :cond_5
 
-    .line 207
+    .line 241
     const-string v13, "/sys/module/lowmemorykiller/parameters/adj"
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -407,7 +639,7 @@
 
     invoke-direct {v0, v13, v14}, Lcom/android/server/am/ProcessList;->writeFile(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 208
+    .line 242
     const-string v13, "/sys/module/lowmemorykiller/parameters/minfree"
 
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -418,7 +650,7 @@
 
     invoke-direct {v0, v13, v14}, Lcom/android/server/am/ProcessList;->writeFile(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 212
+    .line 246
     :cond_5
     return-void
 .end method
@@ -429,10 +661,10 @@
     .parameter "data"
 
     .prologue
-    .line 224
+    .line 258
     const/4 v1, 0x0
 
-    .line 226
+    .line 260
     .local v1, fos:Ljava/io/FileOutputStream;
     :try_start_0
     new-instance v2, Ljava/io/FileOutputStream;
@@ -442,7 +674,7 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 227
+    .line 261
     .end local v1           #fos:Ljava/io/FileOutputStream;
     .local v2, fos:Ljava/io/FileOutputStream;
     :try_start_1
@@ -455,10 +687,10 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_4
 
-    .line 231
+    .line 265
     if-eqz v2, :cond_2
 
-    .line 233
+    .line 267
     :try_start_2
     invoke-virtual {v2}, Ljava/io/FileOutputStream;->close()V
     :try_end_2
@@ -466,14 +698,14 @@
 
     move-object v1, v2
 
-    .line 238
+    .line 272
     .end local v2           #fos:Ljava/io/FileOutputStream;
     .restart local v1       #fos:Ljava/io/FileOutputStream;
     :cond_0
     :goto_0
     return-void
 
-    .line 234
+    .line 268
     .end local v1           #fos:Ljava/io/FileOutputStream;
     .restart local v2       #fos:Ljava/io/FileOutputStream;
     :catch_0
@@ -481,16 +713,16 @@
 
     move-object v1, v2
 
-    .line 235
+    .line 269
     .end local v2           #fos:Ljava/io/FileOutputStream;
     .restart local v1       #fos:Ljava/io/FileOutputStream;
     goto :goto_0
 
-    .line 228
+    .line 262
     :catch_1
     move-exception v0
 
-    .line 229
+    .line 263
     .local v0, e:Ljava/io/IOException;
     :goto_1
     :try_start_3
@@ -518,10 +750,10 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 231
+    .line 265
     if-eqz v1, :cond_0
 
-    .line 233
+    .line 267
     :try_start_4
     invoke-virtual {v1}, Ljava/io/FileOutputStream;->close()V
     :try_end_4
@@ -529,13 +761,13 @@
 
     goto :goto_0
 
-    .line 234
+    .line 268
     :catch_2
     move-exception v3
 
     goto :goto_0
 
-    .line 231
+    .line 265
     .end local v0           #e:Ljava/io/IOException;
     :catchall_0
     move-exception v3
@@ -543,24 +775,24 @@
     :goto_2
     if-eqz v1, :cond_1
 
-    .line 233
+    .line 267
     :try_start_5
     invoke-virtual {v1}, Ljava/io/FileOutputStream;->close()V
     :try_end_5
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_3
 
-    .line 235
+    .line 269
     :cond_1
     :goto_3
     throw v3
 
-    .line 234
+    .line 268
     :catch_3
     move-exception v4
 
     goto :goto_3
 
-    .line 231
+    .line 265
     .end local v1           #fos:Ljava/io/FileOutputStream;
     .restart local v2       #fos:Ljava/io/FileOutputStream;
     :catchall_1
@@ -572,7 +804,7 @@
     .restart local v1       #fos:Ljava/io/FileOutputStream;
     goto :goto_2
 
-    .line 228
+    .line 262
     .end local v1           #fos:Ljava/io/FileOutputStream;
     .restart local v2       #fos:Ljava/io/FileOutputStream;
     :catch_4
@@ -603,23 +835,23 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 165
+    .line 174
     iget-boolean v1, p0, Lcom/android/server/am/ProcessList;->mHaveDisplaySize:Z
 
     if-nez v1, :cond_0
 
-    .line 166
+    .line 175
     new-instance v0, Landroid/graphics/Point;
 
     invoke-direct {v0}, Landroid/graphics/Point;-><init>()V
 
-    .line 167
+    .line 176
     .local v0, p:Landroid/graphics/Point;
     const/4 v1, 0x0
 
     invoke-virtual {p1, v1, v0}, Lcom/android/server/wm/WindowManagerService;->getInitialDisplaySize(ILandroid/graphics/Point;)V
 
-    .line 168
+    .line 177
     iget v1, v0, Landroid/graphics/Point;->x:I
 
     if-eqz v1, :cond_0
@@ -628,17 +860,17 @@
 
     if-eqz v1, :cond_0
 
-    .line 169
+    .line 178
     iget v1, v0, Landroid/graphics/Point;->x:I
 
     iget v2, v0, Landroid/graphics/Point;->y:I
 
     invoke-direct {p0, v1, v2, v3}, Lcom/android/server/am/ProcessList;->updateOomLevels(IIZ)V
 
-    .line 170
+    .line 179
     iput-boolean v3, p0, Lcom/android/server/am/ProcessList;->mHaveDisplaySize:Z
 
-    .line 173
+    .line 182
     .end local v0           #p:Landroid/graphics/Point;
     :cond_0
     return-void
@@ -651,7 +883,7 @@
     .prologue
     const-wide/16 v3, 0x400
 
-    .line 215
+    .line 249
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -662,31 +894,31 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 216
+    .line 250
     iget-object v1, p0, Lcom/android/server/am/ProcessList;->mOomAdj:[I
 
     aget v1, v1, v0
 
     if-gt p1, v1, :cond_0
 
-    .line 217
+    .line 251
     iget-object v1, p0, Lcom/android/server/am/ProcessList;->mOomMinFree:[J
 
     aget-wide v1, v1, v0
 
     mul-long/2addr v1, v3
 
-    .line 220
+    .line 254
     :goto_1
     return-wide v1
 
-    .line 215
+    .line 249
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 220
+    .line 254
     :cond_1
     iget-object v1, p0, Lcom/android/server/am/ProcessList;->mOomMinFree:[J
 

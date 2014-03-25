@@ -128,7 +128,7 @@
     :cond_0
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    const-string v2, "instance name or service type cannot be null"
+    const-string/jumbo v2, "instance name or service type cannot be null"
 
     invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

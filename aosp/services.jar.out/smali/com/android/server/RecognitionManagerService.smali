@@ -252,7 +252,7 @@
 
     .line 121
     .local v3, serviceInfo:Landroid/content/pm/ServiceInfo;
-    iget-object v4, v3, Landroid/content/pm/ComponentInfo;->packageName:Ljava/lang/String;
+    iget-object v4, v3, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
 
     invoke-virtual {p1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -263,9 +263,9 @@
     .line 122
     new-instance v4, Landroid/content/ComponentName;
 
-    iget-object v5, v3, Landroid/content/pm/ComponentInfo;->packageName:Ljava/lang/String;
+    iget-object v5, v3, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
 
-    iget-object v6, v3, Landroid/content/pm/ComponentInfo;->name:Ljava/lang/String;
+    iget-object v6, v3, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
 
     invoke-direct {v4, v5, v6}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -306,9 +306,9 @@
     .restart local v3       #serviceInfo:Landroid/content/pm/ServiceInfo;
     new-instance v4, Landroid/content/ComponentName;
 
-    iget-object v5, v3, Landroid/content/pm/ComponentInfo;->packageName:Ljava/lang/String;
+    iget-object v5, v3, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
 
-    iget-object v6, v3, Landroid/content/pm/ComponentInfo;->name:Ljava/lang/String;
+    iget-object v6, v3, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
 
     invoke-direct {v4, v5, v6}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 

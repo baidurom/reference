@@ -88,7 +88,7 @@
 
     .prologue
     .line 151
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 154
     sget-object v0, Lcom/android/internal/os/PowerProfile;->sPowerMap:Ljava/util/HashMap;
@@ -249,7 +249,7 @@
 
     .line 184
     :cond_4
-    const-string v11, "item"
+    const-string/jumbo v11, "item"
 
     invoke-virtual {v3, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -323,7 +323,7 @@
     .line 194
     :goto_1
     :try_start_3
-    const-string v11, "item"
+    const-string/jumbo v11, "item"
 
     invoke-virtual {v3, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

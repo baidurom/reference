@@ -271,7 +271,7 @@
     <string name="permgrouplab_display">다른 애플리케이션 UI</string>
     <string name="permgroupdesc_display">다른 애플리케이션의 UI에 영향을 줍니다.</string>
     <string name="permgrouplab_storage">저장</string>
-    <string name="permgroupdesc_storage">USB 저장소에 액세스합니다.</string>
+    <string name="permgroupdesc_storage">SD 카드에 액세스합니다.</string>
     <string name="permlab_statusBar">상태 표시줄 사용 중지 또는 수정</string>
     <string name="permdesc_statusBar">앱이 상태 표시줄을 사용중지하거나 시스템 아이콘을 추가 및 제거할 수 있도록 허용합니다.</string>
     <string name="permlab_statusBarService">상태 표시줄</string>
@@ -486,9 +486,9 @@
     <string name="permdesc_brick">앱이 휴대전화를 영구적으로 사용중지할 수 있게 허용합니다. 이 기능은 매우 위험합니다.</string>
     <string name="permlab_reboot">휴대전화 강제로 다시 부팅</string>
     <string name="permdesc_reboot">앱이 휴대전화를 강제로 재부팅할 수 있도록 허용합니다.</string>
-    <string name="permlab_mount_unmount_filesystems">USB 저장소 파일 시스템에 액세스</string>
+    <string name="permlab_mount_unmount_filesystems">SD 카드 파일 시스템에 액세스</string>
     <string name="permdesc_mount_unmount_filesystems">앱이 이동식 저장소의 파일 시스템을 마운트하고 마운트 해제할 수 있도록 허용합니다.</string>
-    <string name="permlab_mount_format_filesystems">USB 저장소 지우기</string>
+    <string name="permlab_mount_format_filesystems">SD 카드 지우기</string>
     <string name="permdesc_mount_format_filesystems">앱이 이동식 저장소를 포맷할 수 있도록 허용합니다.</string>
     <string name="permlab_asec_access">내부 저장소에 대한 정보 가져오기</string>
     <string name="permdesc_asec_access">앱이 내부 저장소의 정보를 가져올 수 있도록 허용합니다.</string>
@@ -597,9 +597,9 @@
     <string name="permlab_writeDictionary">사용자 정의 사전에 단어 추가</string>
     <string name="permdesc_writeDictionary">앱이 사용자 사전에 새 단어를 입력할 수 있도록 허용합니다.</string>
     <string name="permlab_sdcardRead">보호된 저장소에 액세스 테스트</string>
-    <string name="permdesc_sdcardRead">앱이 향후 기기에서 사용할 수 있는 USB 저장소의 권한을 테스트하도록 허용합니다.</string>
-    <string name="permlab_sdcardWrite">USB 저장소의 콘텐츠 수정 또는 삭제</string>
-    <string name="permdesc_sdcardWrite">앱이 USB 저장소에 쓸 수 있도록 허용합니다.</string>
+    <string name="permdesc_sdcardRead">앱이 미래의 기기에서 사용할 수 있는 SD 카드의 권한을 테스트하도록 허용합니다.</string>
+    <string name="permlab_sdcardWrite">SD 카드의 콘텐츠 수정 또는 삭제</string>
+    <string name="permdesc_sdcardWrite">앱이 SD 카드에 쓸 수 있도록 허용합니다.</string>
     <string name="permlab_mediaStorageWrite">내부 미디어 저장소 콘텐츠 수정/삭제</string>
     <string name="permdesc_mediaStorageWrite">앱이 내부 미디어 저장소의 콘텐츠를 수정할 수 있도록 허용합니다.</string>
     <string name="permlab_sdcardAccessAll">모든 사용자의 외부 저장소에 액세스</string>
@@ -729,11 +729,11 @@
     <string name="lockscreen_charged">충전됨</string>
     <string name="lockscreen_battery_short">%d%%</string>
     <string name="lockscreen_low_battery">충전기를 연결하세요.</string>
-    <string name="lockscreen_missing_sim_message_short">SIM 카드가 없습니다.</string>
+    <string name="lockscreen_missing_sim_message_short">SIM 카드가 없습니다</string>
     <string name="lockscreen_missing_sim_message">휴대전화에 SIM 카드가 없습니다.</string>
     <string name="lockscreen_missing_sim_instructions">SIM 카드를 삽입하세요.</string>
     <string name="lockscreen_missing_sim_instructions_long">SIM 카드가 없거나 읽을 수 없습니다. SIM 카드를 삽입하세요.</string>
-    <string name="lockscreen_permanent_disabled_sim_message_short">사용할 수 없는 SIM 카드입니다.</string>
+    <string name="lockscreen_permanent_disabled_sim_message_short">사용할 수 없는 SIM 카드입니다</string>
     <string name="lockscreen_permanent_disabled_sim_instructions">"SIM 카드 사용이 영구적으로 사용중지되었습니다.
 다른 SIM 카드를 사용하려면 무선 서비스 제공업체에 문의하시기 바랍니다."</string>
     <string name="lockscreen_transport_prev_description">이전 트랙 버튼</string>
@@ -743,9 +743,9 @@
     <string name="lockscreen_transport_stop_description">중지 버튼</string>
     <string name="emergency_calls_only">긴급 통화만</string>
     <string name="lockscreen_network_locked_message">네트워크 잠김</string>
-    <string name="lockscreen_sim_puk_locked_message">SIM 카드가 PUK 잠김 상태입니다.</string>
+    <string name="lockscreen_sim_puk_locked_message">SIM 카드가 PUK 잠김 상태입니다</string>
     <string name="lockscreen_sim_puk_locked_instructions">사용자 가이드를 참조하거나 고객지원팀에 문의하세요.</string>
-    <string name="lockscreen_sim_locked_message">SIM 카드가 잠겨 있습니다.</string>
+    <string name="lockscreen_sim_locked_message">SIM 카드가 잠겨 있습니다</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">SIM 카드 잠금해제 중...</string>
     <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"잠금해제 패턴을 %d회 잘못 그렸습니다. 
 
@@ -1030,15 +1030,15 @@
     <string name="perm_costs_money">비용이 부과될 수 있습니다.</string>
     <string name="usb_storage_activity_title">USB 대용량 저장소</string>
     <string name="usb_storage_title">USB 연결됨</string>
-    <string name="usb_storage_message">USB를 통해 컴퓨터에 연결했습니다. 컴퓨터와 Android의 USB 저장소 간에 파일을 복사하려면 아래의 버튼을 터치하세요.</string>
+    <string name="usb_storage_message">USB를 통해 컴퓨터에 연결했습니다. 컴퓨터와 Android의 SD 카드 간에 파일을 복사하려면 아래의 버튼을 터치하세요.</string>
     <string name="usb_storage_button_mount">USB 저장소 사용</string>
-    <string name="usb_storage_error_message">USB 대용량 저장소로 USB 저장소를 사용하는 동안 문제가 발생했습니다.</string>
+    <string name="usb_storage_error_message">USB 대용량 저장소로 SD 카드를 사용하는 동안 문제가 발생했습니다.</string>
     <string name="usb_storage_notification_title">USB 연결됨</string>
     <string name="usb_storage_notification_message">컴퓨터에 파일을 복사하거나 컴퓨터의 파일을 복사하려면 터치하세요.</string>
     <string name="usb_storage_stop_notification_title">USB 저장소 사용 안함</string>
     <string name="usb_storage_stop_notification_message">USB 저장소를 사용 중지하려면 터치하세요.</string>
     <string name="usb_storage_stop_title">USB 저장소 사용 중</string>
-    <string name="usb_storage_stop_message">USB 저장소를 사용하지 않도록 설정하기 전에 컴퓨터에서 Android의 USB 저장소를 마운트 해제(꺼내기)하세요.</string>
+    <string name="usb_storage_stop_message">USB 저장소를 사용하지 않도록 설정하기 전에 컴퓨터에서 Android의 SD 카드를 마운트 해제(꺼내기)하세요.</string>
     <string name="usb_storage_stop_button_mount">USB 저장소 사용 안함</string>
     <string name="usb_storage_stop_error_message">USB 저장소를 사용하지 않도록 설정하는 동안 문제가 발생했습니다. USB 호스트를 마운트 해제했는지 확인한 다음 다시 시도하세요.</string>
     <string name="dlg_confirm_kill_storage_users_title">USB 저장소 사용</string>
@@ -1050,8 +1050,8 @@
     <string name="usb_cd_installer_notification_title">설치 프로그램으로 연결됨</string>
     <string name="usb_accessory_notification_title">USB 액세서리에 연결됨</string>
     <string name="usb_notification_message">다른 USB 옵션을 보려면 터치하세요.</string>
-    <string name="extmedia_format_title">USB 저장소를 포맷하시겠습니까?</string>
-    <string name="extmedia_format_message">USB 저장소에 저장된 파일이 모두 삭제됩니다. 이 작업은 되돌릴 수 없습니다.</string>
+    <string name="extmedia_format_title">SD 카드를 포맷하시겠습니까?</string>
+    <string name="extmedia_format_message">카드의 모든 데이터가 삭제됩니다.</string>
     <string name="extmedia_format_button_format">포맷</string>
     <string name="adb_active_notification_title">USB 디버깅 연결됨</string>
     <string name="adb_active_notification_message">USB 디버깅을 사용하지 않으려면 터치하세요.</string>
@@ -1064,18 +1064,18 @@
     <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="candidates_style"><u>가능한 원인</u></string>
-    <string name="ext_media_checking_notification_title">USB 저장소 준비 중</string>
+    <string name="ext_media_checking_notification_title">SD 카드 준비 중</string>
     <string name="ext_media_checking_notification_message">오류 확인 중입니다.</string>
-    <string name="ext_media_nofs_notification_title">USB 저장소 비어 있음</string>
-    <string name="ext_media_nofs_notification_message">USB 저장소가 비어 있거나 지원되지 않는 파일 시스템을 사용합니다.</string>
-    <string name="ext_media_unmountable_notification_title">USB 저장소 손상됨</string>
-    <string name="ext_media_unmountable_notification_message">USB 저장소가 손상되었습니다. 다시 포맷하시기 바랍니다.</string>
-    <string name="ext_media_badremoval_notification_title">USB 저장소가 예기치 않게 제거됨</string>
-    <string name="ext_media_badremoval_notification_message">데이터 손실을 피하려면 USB 저장소를 제거하기 전에 마운트 해제합니다.</string>
-    <string name="ext_media_safe_unmount_notification_title">USB 저장소 안전하게 제거</string>
-    <string name="ext_media_safe_unmount_notification_message">USB 저장소를 안전하게 제거할 수 있습니다.</string>
-    <string name="ext_media_nomedia_notification_title">USB 저장소 제거됨</string>
-    <string name="ext_media_nomedia_notification_message">USB 저장소를 제거했습니다. 새 미디어를 삽입하세요.</string>
+    <string name="ext_media_nofs_notification_title">빈 SD 카드</string>
+    <string name="ext_media_nofs_notification_message">SD 카드가 비어 있거나 지원되지 않는 파일 시스템을 사용합니다.</string>
+    <string name="ext_media_unmountable_notification_title">손상된 SD 카드</string>
+    <string name="ext_media_unmountable_notification_message">SD 카드가 손상되었습니다. 다시 포맷하시기 바랍니다.</string>
+    <string name="ext_media_badremoval_notification_title">SD 카드가 예상치 않게 제거되었습니다.</string>
+    <string name="ext_media_badremoval_notification_message">데이터 손실을 피하려면 SD 카드를 제거하기 전에 마운트 해제합니다.</string>
+    <string name="ext_media_safe_unmount_notification_title">SD 카드 제거 가능</string>
+    <string name="ext_media_safe_unmount_notification_message">안전하게 SD 카드를 제거할 수 있습니다.</string>
+    <string name="ext_media_nomedia_notification_title">SD 카드 없음</string>
+    <string name="ext_media_nomedia_notification_message">"SD 카드가 없습니다.  SD 카드를 넣으세요."</string>
     <string name="activity_list_empty">일치하는 활동이 없습니다.</string>
     <string name="permlab_pkgUsageStats">구성 요소 사용 통계 업데이트</string>
     <string name="permdesc_pkgUsageStats">앱이 수집된 구성요소 사용 통계를 수정하도록 합니다. 일반 앱에서는 사용하지 않습니다.</string>
@@ -1135,13 +1135,13 @@
     <string name="no_matches">검색결과 없음</string>
     <string name="find_on_page">페이지에서 찾기</string>
     <string name="action_mode_done">완료</string>
-    <string name="progress_unmounting">USB 저장소 마운트 해제 중...</string>
-    <string name="progress_erasing">USB 저장소 지우는 중...</string>
-    <string name="format_error">USB 저장소를 지우지 못했습니다.</string>
+    <string name="progress_unmounting">SD 카드 마운트 해제 중...</string>
+    <string name="progress_erasing">SD 카드 지우는 중...</string>
+    <string name="format_error">SD 카드를 지우지 못했습니다.</string>
     <string name="media_bad_removal">SD 카드가 마운트 해제되기 전에 제거되었습니다.</string>
-    <string name="media_checking">현재 USB 저장소를 확인하는 중입니다.</string>
+    <string name="media_checking">현재 SD 카드를 확인하는 중입니다.</string>
     <string name="media_removed">SD 카드가 제거되었습니다.</string>
-    <string name="media_shared">현재 USB 저장소를 컴퓨터에서 사용하고 있습니다.</string>
+    <string name="media_shared">현재 SD 카드를 컴퓨터에서 사용하고 있습니다.</string>
     <string name="media_unknown_state">외부 미디어가 알 수 없는 상태입니다.</string>
     <string name="share">공유</string>
     <string name="find">찾기</string>
@@ -1315,4 +1315,7 @@
     <string name="enable_accessibility_canceled">접근성이 취소되었습니다.</string>
     <string name="user_switched">현재 사용자는 %1$s님입니다.</string>
     <string name="owner_name">소유자</string>
+    <string name="storage_phone">전화 저장소</string>
+    <string name="storage_external_usb">외장 USB 저장소</string>
+    <string name="zz_keyguard_accessibility_voice_unlock">음성 잠금해제.</string>
 </resources>

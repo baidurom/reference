@@ -113,7 +113,7 @@
     const/4 v2, 0x0
 
     .line 128
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 73
     new-instance v0, Ljava/util/HashMap;
@@ -760,7 +760,7 @@
 
     .line 218
     .local v2, map:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;"
-    const-string v1, "listener"
+    const-string/jumbo v1, "listener"
 
     invoke-interface {v2, v1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -813,7 +813,7 @@
 
     .line 152
     .local v2, map:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;"
-    const-string v1, "listener"
+    const-string/jumbo v1, "listener"
 
     invoke-interface {v2, v1, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 

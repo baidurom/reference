@@ -28,6 +28,8 @@
 
 .field static final TRANSACTION_listen:I = 0x1
 
+.field static final TRANSACTION_notifyAllDataConnection:I = 0xe
+
 .field static final TRANSACTION_notifyCallForwardingChanged:I = 0x6
 
 .field static final TRANSACTION_notifyCallState:I = 0x2
@@ -49,6 +51,8 @@
 .field static final TRANSACTION_notifyServiceState:I = 0x3
 
 .field static final TRANSACTION_notifySignalStrength:I = 0x4
+
+.field static final TRANSACTION_updateRegistryCellLocation:I = 0xd
 
 
 # direct methods
@@ -140,7 +144,7 @@
     .line 38
     sparse-switch p1, :sswitch_data_0
 
-    .line 205
+    .line 237
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v0
@@ -710,9 +714,134 @@
 
     goto/16 :goto_0
 
-    .line 38
-    nop
+    .line 206
+    .end local v10           #_arg0:Ljava/util/List;,"Ljava/util/List<Landroid/telephony/CellInfo;>;"
+    :sswitch_d
+    const-string v0, "com.android.internal.telephony.ITelephonyRegistry"
 
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 207
+    invoke-virtual {p0}, Lcom/android/internal/telephony/ITelephonyRegistry$Stub;->updateRegistryCellLocation()V
+
+    .line 208
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 209
+    const/4 v0, 0x1
+
+    goto/16 :goto_0
+
+    .line 213
+    :sswitch_e
+    const-string v0, "com.android.internal.telephony.ITelephonyRegistry"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 215
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v1
+
+    .line 217
+    .restart local v1       #_arg0:I
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    if-eqz v0, :cond_a
+
+    const/4 v2, 0x1
+
+    .line 219
+    .local v2, _arg1:Z
+    :goto_b
+    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 221
+    .restart local v3       #_arg2:Ljava/lang/String;
+    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 223
+    .restart local v4       #_arg3:Ljava/lang/String;
+    invoke-virtual {p2}, Landroid/os/Parcel;->createStringArray()[Ljava/lang/String;
+
+    move-result-object v5
+
+    .line 225
+    .local v5, _arg4:[Ljava/lang/String;
+    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v6
+
+    .line 227
+    .local v6, _arg5:Ljava/lang/String;
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v7
+
+    .line 229
+    .local v7, _arg6:I
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    if-eqz v0, :cond_b
+
+    const/4 v8, 0x1
+
+    .line 231
+    .local v8, _arg7:Z
+    :goto_c
+    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v9
+
+    .local v9, _arg8:Ljava/lang/String;
+    move-object v0, p0
+
+    .line 232
+    invoke-virtual/range {v0 .. v9}, Lcom/android/internal/telephony/ITelephonyRegistry$Stub;->notifyAllDataConnection(IZLjava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;IZLjava/lang/String;)V
+
+    .line 233
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 234
+    const/4 v0, 0x1
+
+    goto/16 :goto_0
+
+    .line 217
+    .end local v2           #_arg1:Z
+    .end local v3           #_arg2:Ljava/lang/String;
+    .end local v4           #_arg3:Ljava/lang/String;
+    .end local v5           #_arg4:[Ljava/lang/String;
+    .end local v6           #_arg5:Ljava/lang/String;
+    .end local v7           #_arg6:I
+    .end local v8           #_arg7:Z
+    .end local v9           #_arg8:Ljava/lang/String;
+    :cond_a
+    const/4 v2, 0x0
+
+    goto :goto_b
+
+    .line 229
+    .restart local v2       #_arg1:Z
+    .restart local v3       #_arg2:Ljava/lang/String;
+    .restart local v4       #_arg3:Ljava/lang/String;
+    .restart local v5       #_arg4:[Ljava/lang/String;
+    .restart local v6       #_arg5:Ljava/lang/String;
+    .restart local v7       #_arg6:I
+    :cond_b
+    const/4 v8, 0x0
+
+    goto :goto_c
+
+    .line 38
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
@@ -727,6 +856,8 @@
         0xa -> :sswitch_a
         0xb -> :sswitch_b
         0xc -> :sswitch_c
+        0xd -> :sswitch_d
+        0xe -> :sswitch_e
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

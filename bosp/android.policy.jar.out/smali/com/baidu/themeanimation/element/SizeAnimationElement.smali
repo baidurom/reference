@@ -53,7 +53,7 @@
 
     .line 53
     .local v6, lockSizeAnimation:Lcom/baidu/themeanimation/element/SizeAnimationElement$LockSizeAnimation;
-    iget-object v8, p0, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v8, p0, Lcom/baidu/themeanimation/element/SizeAnimationElement;->mKeyFrames:Ljava/util/List;
 
     invoke-interface {v8}, Ljava/util/List;->size()I
 
@@ -70,7 +70,7 @@
 
     .line 58
     .local v4, index:I
-    iget-object v8, p0, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v8, p0, Lcom/baidu/themeanimation/element/SizeAnimationElement;->mKeyFrames:Ljava/util/List;
 
     invoke-interface {v8, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -116,7 +116,7 @@
     invoke-virtual {v7, v8}, Lcom/baidu/themeanimation/element/SizeAnimationElement$SizeKeyFrame;->setH(I)V
 
     .line 66
-    iget-object v8, p0, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v8, p0, Lcom/baidu/themeanimation/element/SizeAnimationElement;->mKeyFrames:Ljava/util/List;
 
     const/4 v9, 0x0
 
@@ -167,7 +167,7 @@
 
     .line 75
     .local v1, endTime:J
-    iget-object v8, p0, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v8, p0, Lcom/baidu/themeanimation/element/SizeAnimationElement;->mKeyFrames:Ljava/util/List;
 
     invoke-interface {v8}, Ljava/util/List;->size()I
 
@@ -180,7 +180,7 @@
     if-ltz v3, :cond_1
 
     .line 76
-    iget-object v8, p0, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v8, p0, Lcom/baidu/themeanimation/element/SizeAnimationElement;->mKeyFrames:Ljava/util/List;
 
     invoke-interface {v8, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -199,7 +199,7 @@
     if-gez v8, :cond_4
 
     .line 77
-    iget-object v8, p0, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v8, p0, Lcom/baidu/themeanimation/element/SizeAnimationElement;->mKeyFrames:Ljava/util/List;
 
     invoke-interface {v8, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -212,7 +212,7 @@
     move-result-wide v1
 
     .line 78
-    iget-object v8, p0, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v8, p0, Lcom/baidu/themeanimation/element/SizeAnimationElement;->mKeyFrames:Ljava/util/List;
 
     invoke-interface {v8}, Ljava/util/List;->size()I
 

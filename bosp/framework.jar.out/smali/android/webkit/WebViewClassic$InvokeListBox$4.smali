@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 8715
+    .line 9475
     iput-object p1, p0, Landroid/webkit/WebViewClassic$InvokeListBox$4;->this$1:Landroid/webkit/WebViewClassic$InvokeListBox;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -42,13 +42,13 @@
     .parameter "dialog"
 
     .prologue
-    .line 8718
+    .line 9478
     iget-object v0, p0, Landroid/webkit/WebViewClassic$InvokeListBox$4;->this$1:Landroid/webkit/WebViewClassic$InvokeListBox;
 
     iget-object v0, v0, Landroid/webkit/WebViewClassic$InvokeListBox;->this$0:Landroid/webkit/WebViewClassic;
 
     #getter for: Landroid/webkit/WebViewClassic;->mWebViewCore:Landroid/webkit/WebViewCore;
-    invoke-static {v0}, Landroid/webkit/WebViewClassic;->access$1000(Landroid/webkit/WebViewClassic;)Landroid/webkit/WebViewCore;
+    invoke-static {v0}, Landroid/webkit/WebViewClassic;->access$1100(Landroid/webkit/WebViewClassic;)Landroid/webkit/WebViewCore;
 
     move-result-object v0
 
@@ -60,7 +60,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/webkit/WebViewCore;->sendMessage(III)V
 
-    .line 8720
+    .line 9480
     iget-object v0, p0, Landroid/webkit/WebViewClassic$InvokeListBox$4;->this$1:Landroid/webkit/WebViewClassic$InvokeListBox;
 
     iget-object v0, v0, Landroid/webkit/WebViewClassic$InvokeListBox;->this$0:Landroid/webkit/WebViewClassic;
@@ -68,8 +68,8 @@
     const/4 v1, 0x0
 
     #setter for: Landroid/webkit/WebViewClassic;->mListBoxDialog:Landroid/app/AlertDialog;
-    invoke-static {v0, v1}, Landroid/webkit/WebViewClassic;->access$8702(Landroid/webkit/WebViewClassic;Landroid/app/AlertDialog;)Landroid/app/AlertDialog;
+    invoke-static {v0, v1}, Landroid/webkit/WebViewClassic;->access$9402(Landroid/webkit/WebViewClassic;Landroid/app/AlertDialog;)Landroid/app/AlertDialog;
 
-    .line 8721
+    .line 9481
     return-void
 .end method

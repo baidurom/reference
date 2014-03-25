@@ -527,6 +527,8 @@
 
 .field public static final global_action_power_off:I = #string@global_action_power_off#t
 
+.field public static final global_action_reboot:I = #string@global_action_reboot#t
+
 .field public static final global_action_silent_mode_off_status:I = #string@global_action_silent_mode_off_status#t
 
 .field public static final global_action_silent_mode_on_status:I = #string@global_action_silent_mode_on_status#t
@@ -820,6 +822,8 @@
 .field public static final lockscreen_access_pattern_detected:I = #string@lockscreen_access_pattern_detected#t
 
 .field public static final lockscreen_access_pattern_start:I = #string@lockscreen_access_pattern_start#t
+
+.field public static final lockscreen_battery_short:I = #string@lockscreen_battery_short#t
 
 .field public static final lockscreen_carrier_default:I = #string@lockscreen_carrier_default#t
 
@@ -1131,6 +1135,10 @@
 
 .field public static final progress_unmounting:I = #string@progress_unmounting#t
 
+.field public static final reboot_confirm:I = #string@reboot_confirm#t
+
+.field public static final reboot_confirm_question:I = #string@reboot_confirm_question#t
+
 .field public static final reboot_safemode_confirm:I = #string@reboot_safemode_confirm#t
 
 .field public static final reboot_safemode_title:I = #string@reboot_safemode_title#t
@@ -1367,6 +1375,14 @@
 
 .field public static final status_bar_notification_info_overflow:I = #string@status_bar_notification_info_overflow#t
 
+.field public static final storage_external_usb:I = #string@storage_external_usb#t
+
+.field public static final storage_internal:I = #string@storage_internal#t
+
+.field public static final storage_phone:I = #string@storage_phone#t
+
+.field public static final storage_sd_card:I = #string@storage_sd_card#t
+
 .field public static final submit:I = #string@submit#t
 
 .field public static final sync_binding_label:I = #string@sync_binding_label#t
@@ -1477,6 +1493,8 @@
 
 .field public static final volume_icon_description_ringer:I = #string@volume_icon_description_ringer#t
 
+.field public static final volume_unknown:I = #string@volume_unknown#t
+
 .field public static final vpn_lockdown_connected:I = #string@vpn_lockdown_connected#t
 
 .field public static final vpn_lockdown_connecting:I = #string@vpn_lockdown_connecting#t
@@ -1559,8 +1577,8 @@
     .locals 0
 
     .prologue
-    .line 12990
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 12916
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

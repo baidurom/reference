@@ -497,7 +497,7 @@
     .line 253
     iput-boolean v4, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTopAlignPageWhenShrinkingForBouncer:Z
 
-    .line 1920
+    .line 1918
     new-instance v2, Lcom/android/internal/policy/impl/keyguard/PagedView$2;
 
     invoke-direct {v2, p0}, Lcom/android/internal/policy/impl/keyguard/PagedView$2;-><init>(Lcom/android/internal/policy/impl/keyguard/PagedView;)V
@@ -677,25 +677,25 @@
     .parameter "ev"
 
     .prologue
-    .line 1641
+    .line 1639
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     if-nez v0, :cond_0
 
-    .line 1642
+    .line 1640
     invoke-static {}, Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    .line 1644
+    .line 1642
     :cond_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v0, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
-    .line 1645
+    .line 1643
     return-void
 .end method
 
@@ -704,7 +704,7 @@
     .parameter "dragView"
 
     .prologue
-    .line 2317
+    .line 2315
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/PagedView$9;
 
     invoke-direct {v0, p0, p1}, Lcom/android/internal/policy/impl/keyguard/PagedView$9;-><init>(Lcom/android/internal/policy/impl/keyguard/PagedView;Landroid/view/View;)V
@@ -716,7 +716,7 @@
     .locals 8
 
     .prologue
-    .line 2258
+    .line 2256
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getContext()Landroid/content/Context;
 
     move-result-object v4
@@ -725,7 +725,7 @@
 
     move-result-object v0
 
-    .line 2259
+    .line 2257
     .local v0, config:Landroid/view/ViewConfiguration;
     iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
@@ -739,7 +739,7 @@
 
     invoke-virtual {v4, v5, v6}, Landroid/view/VelocityTracker;->computeCurrentVelocity(IF)V
 
-    .line 2261
+    .line 2259
     iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v4}, Landroid/view/VelocityTracker;->getYVelocity()F
@@ -754,7 +754,7 @@
 
     if-gez v4, :cond_0
 
-    .line 2263
+    .line 2261
     new-instance v3, Landroid/graphics/PointF;
 
     iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mVelocityTracker:Landroid/view/VelocityTracker;
@@ -771,7 +771,7 @@
 
     invoke-direct {v3, v4, v5}, Landroid/graphics/PointF;-><init>(FF)V
 
-    .line 2265
+    .line 2263
     .local v3, vel:Landroid/graphics/PointF;
     new-instance v2, Landroid/graphics/PointF;
 
@@ -781,7 +781,7 @@
 
     invoke-direct {v2, v4, v5}, Landroid/graphics/PointF;-><init>(FF)V
 
-    .line 2266
+    .line 2264
     .local v2, upVec:Landroid/graphics/PointF;
     iget v4, v3, Landroid/graphics/PointF;->x:F
 
@@ -817,7 +817,7 @@
 
     double-to-float v1, v4
 
-    .line 2268
+    .line 2266
     .local v1, theta:F
     float-to-double v4, v1
 
@@ -833,7 +833,7 @@
 
     if-gtz v4, :cond_0
 
-    .line 2272
+    .line 2270
     .end local v1           #theta:F
     .end local v2           #upVec:Landroid/graphics/PointF;
     .end local v3           #vel:Landroid/graphics/PointF;
@@ -854,17 +854,17 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2463
+    .line 2460
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mDeleteDropTarget:Landroid/view/View;
 
     if-eqz v2, :cond_1
 
-    .line 2464
+    .line 2461
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mAltTmpRect:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v1, v1, v1, v1}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 2465
+    .line 2462
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mDeleteDropTarget:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
@@ -873,16 +873,16 @@
 
     check-cast v0, Landroid/view/View;
 
-    .line 2466
+    .line 2463
     .local v0, parent:Landroid/view/View;
     if-eqz v0, :cond_0
 
-    .line 2467
+    .line 2464
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mAltTmpRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->getGlobalVisibleRect(Landroid/graphics/Rect;)Z
 
-    .line 2469
+    .line 2466
     :cond_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mDeleteDropTarget:Landroid/view/View;
 
@@ -890,7 +890,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->getGlobalVisibleRect(Landroid/graphics/Rect;)Z
 
-    .line 2470
+    .line 2467
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTmpRect:Landroid/graphics/Rect;
 
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mAltTmpRect:Landroid/graphics/Rect;
@@ -907,88 +907,30 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 2471
+    .line 2468
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTmpRect:Landroid/graphics/Rect;
 
     invoke-virtual {v1, p1, p2}, Landroid/graphics/Rect;->contains(II)Z
 
     move-result v1
 
-    .line 2473
+    .line 2470
     .end local v0           #parent:Landroid/view/View;
     :cond_1
     return v1
 .end method
 
-.method private isTouchPointInCurrentPage(II)Z
-    .locals 6
-    .parameter "x"
-    .parameter "y"
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 1031
-    invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getCurrentPage()I
-
-    move-result v2
-
-    invoke-virtual {p0, v2}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getPageAt(I)Landroid/view/View;
-
-    move-result-object v0
-
-    .line 1032
-    .local v0, v:Landroid/view/View;
-    if-eqz v0, :cond_0
-
-    .line 1033
-    iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTmpRect:Landroid/graphics/Rect;
-
-    invoke-virtual {v0}, Landroid/view/View;->getLeft()I
-
-    move-result v3
-
-    invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getScrollX()I
-
-    move-result v4
-
-    sub-int/2addr v3, v4
-
-    invoke-virtual {v0}, Landroid/view/View;->getRight()I
-
-    move-result v4
-
-    invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getScrollX()I
-
-    move-result v5
-
-    sub-int/2addr v4, v5
-
-    invoke-virtual {v0}, Landroid/view/View;->getBottom()I
-
-    move-result v5
-
-    invoke-virtual {v2, v3, v1, v4, v5}, Landroid/graphics/Rect;->set(IIII)V
-
-    .line 1035
-    iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTmpRect:Landroid/graphics/Rect;
-
-    invoke-virtual {v1, p1, p2}, Landroid/graphics/Rect;->contains(II)Z
-
-    move-result v1
-
-    .line 1037
-    :cond_0
-    return v1
-.end method
-
-.method private isTouchPointInViewportWithBuffer(II)Z
+.method private isTouchPointInViewport(IIZ)Z
     .locals 5
     .parameter "x"
     .parameter "y"
+    .parameter "buffer"
 
     .prologue
     .line 1024
+    if-eqz p3, :cond_0
+
+    .line 1025
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTmpRect:Landroid/graphics/Rect;
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mViewport:Landroid/graphics/Rect;
@@ -1029,14 +971,25 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 1026
+    .line 1027
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTmpRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0, p1, p2}, Landroid/graphics/Rect;->contains(II)Z
 
     move-result v0
 
+    .line 1029
+    :goto_0
     return v0
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mViewport:Landroid/graphics/Rect;
+
+    invoke-virtual {v0, p1, p2}, Landroid/graphics/Rect;->contains(II)Z
+
+    move-result v0
+
+    goto :goto_0
 .end method
 
 .method private onDropToDelete()V
@@ -1049,30 +1002,30 @@
 
     const/4 v11, 0x1
 
-    .line 2479
+    .line 2476
     iget-object v3, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mDragView:Landroid/view/View;
 
-    .line 2481
+    .line 2478
     .local v3, dragView:Landroid/view/View;
     const/4 v7, 0x0
 
-    .line 2482
+    .line 2479
     .local v7, toScale:F
     const/4 v6, 0x0
 
-    .line 2485
+    .line 2482
     .local v6, toAlpha:F
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2486
+    .line 2483
     .local v2, animations:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/animation/Animator;>;"
     new-instance v4, Landroid/animation/AnimatorSet;
 
     invoke-direct {v4}, Landroid/animation/AnimatorSet;-><init>()V
 
-    .line 2487
+    .line 2484
     .local v4, motionAnim:Landroid/animation/AnimatorSet;
     new-instance v8, Landroid/view/animation/DecelerateInterpolator;
 
@@ -1082,7 +1035,7 @@
 
     invoke-virtual {v4, v8}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 2488
+    .line 2485
     const/4 v8, 0x2
 
     new-array v8, v8, [Landroid/animation/Animator;
@@ -1113,15 +1066,15 @@
 
     invoke-virtual {v4, v8}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 2491
+    .line 2488
     invoke-virtual {v2, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2493
+    .line 2490
     new-instance v0, Landroid/animation/AnimatorSet;
 
     invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
 
-    .line 2494
+    .line 2491
     .local v0, alphaAnim:Landroid/animation/AnimatorSet;
     new-instance v8, Landroid/view/animation/LinearInterpolator;
 
@@ -1129,7 +1082,7 @@
 
     invoke-virtual {v0, v8}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 2495
+    .line 2492
     new-array v8, v11, [Landroid/animation/Animator;
 
     const-string v9, "alpha"
@@ -1146,45 +1099,45 @@
 
     invoke-virtual {v0, v8}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 2497
+    .line 2494
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2499
+    .line 2496
     invoke-direct {p0, v3}, Lcom/android/internal/policy/impl/keyguard/PagedView;->createPostDeleteAnimationRunnable(Landroid/view/View;)Ljava/lang/Runnable;
 
     move-result-object v5
 
-    .line 2501
+    .line 2498
     .local v5, onAnimationEndRunnable:Ljava/lang/Runnable;
     new-instance v1, Landroid/animation/AnimatorSet;
 
     invoke-direct {v1}, Landroid/animation/AnimatorSet;-><init>()V
 
-    .line 2502
+    .line 2499
     .local v1, anim:Landroid/animation/AnimatorSet;
     invoke-virtual {v1, v2}, Landroid/animation/AnimatorSet;->playTogether(Ljava/util/Collection;)V
 
-    .line 2503
+    .line 2500
     iget v8, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->DRAG_TO_DELETE_FADE_OUT_DURATION:I
 
     int-to-long v8, v8
 
     invoke-virtual {v1, v8, v9}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 2504
+    .line 2501
     new-instance v8, Lcom/android/internal/policy/impl/keyguard/PagedView$12;
 
     invoke-direct {v8, p0, v5}, Lcom/android/internal/policy/impl/keyguard/PagedView$12;-><init>(Lcom/android/internal/policy/impl/keyguard/PagedView;Ljava/lang/Runnable;)V
 
     invoke-virtual {v1, v8}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 2509
+    .line 2506
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 2511
+    .line 2508
     iput-boolean v11, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mDeferringForDelete:Z
 
-    .line 2512
+    .line 2509
     return-void
 .end method
 
@@ -1192,14 +1145,14 @@
     .locals 1
 
     .prologue
-    .line 2121
+    .line 2119
     iget v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mPostReorderingPreZoomInRemainingAnimationCount:I
 
     add-int/lit8 v0, v0, -0x1
 
     iput v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mPostReorderingPreZoomInRemainingAnimationCount:I
 
-    .line 2122
+    .line 2120
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mPostReorderingPreZoomInRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
@@ -1208,17 +1161,17 @@
 
     if-nez v0, :cond_0
 
-    .line 2124
+    .line 2122
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mPostReorderingPreZoomInRunnable:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 2125
+    .line 2123
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mPostReorderingPreZoomInRunnable:Ljava/lang/Runnable;
 
-    .line 2127
+    .line 2125
     :cond_0
     return-void
 .end method
@@ -1228,7 +1181,7 @@
     .parameter "ev"
 
     .prologue
-    .line 1655
+    .line 1653
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v3
@@ -1239,24 +1192,24 @@
 
     shr-int/lit8 v2, v3, 0x8
 
-    .line 1657
+    .line 1655
     .local v2, pointerIndex:I
     invoke-virtual {p1, v2}, Landroid/view/MotionEvent;->getPointerId(I)I
 
     move-result v1
 
-    .line 1658
+    .line 1656
     .local v1, pointerId:I
     iget v3, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mActivePointerId:I
 
     if-ne v1, v3, :cond_0
 
-    .line 1662
+    .line 1660
     if-nez v2, :cond_1
 
     const/4 v0, 0x1
 
-    .line 1663
+    .line 1661
     .local v0, newPointerIndex:I
     :goto_0
     invoke-virtual {p1, v0}, Landroid/view/MotionEvent;->getX(I)F
@@ -1267,41 +1220,41 @@
 
     iput v3, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mLastMotionX:F
 
-    .line 1664
+    .line 1662
     invoke-virtual {p1, v0}, Landroid/view/MotionEvent;->getY(I)F
 
     move-result v3
 
     iput v3, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mLastMotionY:F
 
-    .line 1665
+    .line 1663
     const/4 v3, 0x0
 
     iput v3, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mLastMotionXRemainder:F
 
-    .line 1666
+    .line 1664
     invoke-virtual {p1, v0}, Landroid/view/MotionEvent;->getPointerId(I)I
 
     move-result v3
 
     iput v3, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mActivePointerId:I
 
-    .line 1667
+    .line 1665
     iget-object v3, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     if-eqz v3, :cond_0
 
-    .line 1668
+    .line 1666
     iget-object v3, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v3}, Landroid/view/VelocityTracker;->clear()V
 
-    .line 1671
+    .line 1669
     .end local v0           #newPointerIndex:I
     :cond_0
     return-void
 
-    .line 1662
+    .line 1660
     :cond_1
     const/4 v0, 0x0
 
@@ -1315,10 +1268,10 @@
     .prologue
     const/high16 v1, 0x3f80
 
-    .line 1236
+    .line 1229
     sub-float/2addr p1, v1
 
-    .line 1237
+    .line 1230
     mul-float v0, p1, p1
 
     mul-float/2addr v0, p1
@@ -1332,22 +1285,22 @@
     .locals 1
 
     .prologue
-    .line 1648
+    .line 1646
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     if-eqz v0, :cond_0
 
-    .line 1649
+    .line 1647
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v0}, Landroid/view/VelocityTracker;->recycle()V
 
-    .line 1650
+    .line 1648
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    .line 1652
+    .line 1650
     :cond_0
     return-void
 .end method
@@ -1358,24 +1311,24 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1602
+    .line 1600
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->releaseVelocityTracker()V
 
-    .line 1603
+    .line 1601
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->endReordering()V
 
-    .line 1604
+    .line 1602
     iput v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTouchState:I
 
-    .line 1605
+    .line 1603
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mActivePointerId:I
 
-    .line 1606
+    .line 1604
     iput-boolean v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mDownEventOnEdge:Z
 
-    .line 1607
+    .line 1605
     return-void
 .end method
 
@@ -1383,7 +1336,7 @@
     .locals 2
 
     .prologue
-    .line 2004
+    .line 2002
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getChildCount()I
 
     move-result v0
@@ -1392,12 +1345,12 @@
 
     if-gt v0, v1, :cond_1
 
-    .line 2014
+    .line 2012
     :cond_0
     :goto_0
     return-void
 
-    .line 2005
+    .line 2003
     :cond_1
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->isScrollingIndicatorEnabled()Z
 
@@ -1405,24 +1358,24 @@
 
     if-eqz v0, :cond_0
 
-    .line 2007
+    .line 2005
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getScrollingIndicator()Landroid/view/View;
 
-    .line 2008
+    .line 2006
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mScrollIndicator:Landroid/view/View;
 
     if-eqz v0, :cond_2
 
-    .line 2009
+    .line 2007
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->updateScrollingIndicatorPosition()V
 
-    .line 2011
+    .line 2009
     :cond_2
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mShouldShowScrollIndicator:Z
 
     if-eqz v0, :cond_0
 
-    .line 2012
+    .line 2010
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mShouldShowScrollIndicatorImmediately:Z
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->showScrollingIndicator(Z)V
@@ -1434,36 +1387,36 @@
     .locals 14
 
     .prologue
-    .line 2017
+    .line 2015
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->isScrollingIndicatorEnabled()Z
 
     move-result v10
 
     if-nez v10, :cond_1
 
-    .line 2040
+    .line 2038
     :cond_0
     :goto_0
     return-void
 
-    .line 2018
+    .line 2016
     :cond_1
     iget-object v10, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mScrollIndicator:Landroid/view/View;
 
     if-eqz v10, :cond_0
 
-    .line 2019
+    .line 2017
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getChildCount()I
 
     move-result v6
 
-    .line 2020
+    .line 2018
     .local v6, numPages:I
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getViewportWidth()I
 
     move-result v8
 
-    .line 2021
+    .line 2019
     .local v8, pageWidth:I
     const/4 v10, 0x0
 
@@ -1477,7 +1430,7 @@
 
     move-result v4
 
-    .line 2022
+    .line 2020
     .local v4, lastChildIndex:I
     invoke-virtual {p0, v4}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getChildOffset(I)I
 
@@ -1489,7 +1442,7 @@
 
     sub-int v5, v10, v11
 
-    .line 2023
+    .line 2021
     .local v5, maxScrollX:I
     iget v10, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mScrollIndicatorPaddingLeft:I
 
@@ -1499,7 +1452,7 @@
 
     sub-int v9, v10, v11
 
-    .line 2024
+    .line 2022
     .local v9, trackWidth:I
     iget-object v10, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mScrollIndicator:Landroid/view/View;
 
@@ -1523,7 +1476,7 @@
 
     sub-int v3, v10, v11
 
-    .line 2027
+    .line 2025
     .local v3, indicatorWidth:I
     const/4 v10, 0x0
 
@@ -1547,11 +1500,11 @@
 
     move-result v7
 
-    .line 2028
+    .line 2026
     .local v7, offset:F
     div-int v2, v9, v6
 
-    .line 2029
+    .line 2027
     .local v2, indicatorSpace:I
     sub-int v10, v9, v2
 
@@ -1565,7 +1518,7 @@
 
     add-int v1, v10, v11
 
-    .line 2030
+    .line 2028
     .local v1, indicatorPos:I
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->hasElasticScrollIndicator()Z
 
@@ -1573,7 +1526,7 @@
 
     if-eqz v10, :cond_3
 
-    .line 2031
+    .line 2029
     iget-object v10, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mScrollIndicator:Landroid/view/View;
 
     invoke-virtual {v10}, Landroid/view/View;->getMeasuredWidth()I
@@ -1582,7 +1535,7 @@
 
     if-eq v10, v2, :cond_2
 
-    .line 2032
+    .line 2030
     iget-object v10, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mScrollIndicator:Landroid/view/View;
 
     invoke-virtual {v10}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -1591,12 +1544,12 @@
 
     iput v2, v10, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 2033
+    .line 2031
     iget-object v10, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mScrollIndicator:Landroid/view/View;
 
     invoke-virtual {v10}, Landroid/view/View;->requestLayout()V
 
-    .line 2039
+    .line 2037
     :cond_2
     :goto_1
     iget-object v10, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mScrollIndicator:Landroid/view/View;
@@ -1607,7 +1560,7 @@
 
     goto :goto_0
 
-    .line 2036
+    .line 2034
     :cond_3
     div-int/lit8 v10, v2, 0x2
 
@@ -1615,7 +1568,7 @@
 
     sub-int v0, v10, v11
 
-    .line 2037
+    .line 2035
     .local v0, indicatorCenterOffset:I
     add-int/2addr v1, v0
 
@@ -1631,12 +1584,12 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 1241
+    .line 1234
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getViewportWidth()I
 
     move-result v2
 
-    .line 1245
+    .line 1238
     .local v2, screenSize:I
     const/high16 v3, 0x4000
 
@@ -1646,17 +1599,17 @@
 
     mul-float v0, v3, v4
 
-    .line 1247
+    .line 1240
     .local v0, f:F
     cmpl-float v3, v0, v5
 
     if-nez v3, :cond_0
 
-    .line 1263
+    .line 1256
     :goto_0
     return-void
 
-    .line 1250
+    .line 1243
     :cond_0
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
@@ -1668,14 +1621,14 @@
 
     if-ltz v3, :cond_1
 
-    .line 1251
+    .line 1244
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v3
 
     div-float/2addr v0, v3
 
-    .line 1254
+    .line 1247
     :cond_1
     int-to-float v3, v2
 
@@ -1685,16 +1638,16 @@
 
     move-result v1
 
-    .line 1255
+    .line 1248
     .local v1, overScrollAmount:I
     cmpg-float v3, p1, v5
 
     if-gez v3, :cond_2
 
-    .line 1256
+    .line 1249
     iput v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mOverScrollX:I
 
-    .line 1257
+    .line 1250
     const/4 v3, 0x0
 
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getScrollY()I
@@ -1703,13 +1656,13 @@
 
     invoke-super {p0, v3, v4}, Landroid/view/ViewGroup;->scrollTo(II)V
 
-    .line 1262
+    .line 1255
     :goto_1
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->invalidate()V
 
     goto :goto_0
 
-    .line 1259
+    .line 1252
     :cond_2
     iget v3, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mMaxScrollX:I
 
@@ -1717,7 +1670,7 @@
 
     iput v3, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mOverScrollX:I
 
-    .line 1260
+    .line 1253
     iget v3, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mMaxScrollX:I
 
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getScrollY()I
@@ -1836,17 +1789,17 @@
 
     const/4 v5, 0x0
 
-    .line 2044
+    .line 2042
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mDragView:Landroid/view/View;
 
     if-eqz v1, :cond_0
 
-    .line 2045
+    .line 2043
     new-instance v0, Landroid/animation/AnimatorSet;
 
     invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
 
-    .line 2046
+    .line 2044
     .local v0, anim:Landroid/animation/AnimatorSet;
     iget v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->REORDERING_DROP_REPOSITION_DURATION:I
 
@@ -1854,7 +1807,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 2047
+    .line 2045
     const/4 v1, 0x2
 
     new-array v1, v1, [Landroid/animation/Animator;
@@ -1889,17 +1842,17 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 2050
+    .line 2048
     new-instance v1, Lcom/android/internal/policy/impl/keyguard/PagedView$4;
 
     invoke-direct {v1, p0}, Lcom/android/internal/policy/impl/keyguard/PagedView$4;-><init>(Lcom/android/internal/policy/impl/keyguard/PagedView;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 2056
+    .line 2054
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 2058
+    .line 2056
     .end local v0           #anim:Landroid/animation/AnimatorSet;
     :cond_0
     return-void
@@ -1919,17 +1872,17 @@
     .locals 1
 
     .prologue
-    .line 1957
+    .line 1955
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mScrollIndicatorAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 1958
+    .line 1956
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mScrollIndicatorAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 1960
+    .line 1958
     :cond_0
     return-void
 .end method
@@ -2082,28 +2035,28 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 1266
+    .line 1259
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getViewportWidth()I
 
     move-result v2
 
-    .line 1268
+    .line 1261
     .local v2, screenSize:I
     int-to-float v3, v2
 
     div-float v0, p1, v3
 
-    .line 1270
+    .line 1263
     .local v0, f:F
     cmpl-float v3, v0, v5
 
     if-nez v3, :cond_0
 
-    .line 1287
+    .line 1280
     :goto_0
     return-void
 
-    .line 1271
+    .line 1264
     :cond_0
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
@@ -2121,7 +2074,7 @@
 
     mul-float v0, v3, v4
 
-    .line 1274
+    .line 1267
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v3
@@ -2132,14 +2085,14 @@
 
     if-ltz v3, :cond_1
 
-    .line 1275
+    .line 1268
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v3
 
     div-float/2addr v0, v3
 
-    .line 1278
+    .line 1271
     :cond_1
     const v3, 0x3e0f5c29
 
@@ -2153,16 +2106,16 @@
 
     move-result v1
 
-    .line 1279
+    .line 1272
     .local v1, overScrollAmount:I
     cmpg-float v3, p1, v5
 
     if-gez v3, :cond_2
 
-    .line 1280
+    .line 1273
     iput v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mOverScrollX:I
 
-    .line 1281
+    .line 1274
     const/4 v3, 0x0
 
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getScrollY()I
@@ -2171,13 +2124,13 @@
 
     invoke-super {p0, v3, v4}, Landroid/view/ViewGroup;->scrollTo(II)V
 
-    .line 1286
+    .line 1279
     :goto_1
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->invalidate()V
 
     goto :goto_0
 
-    .line 1283
+    .line 1276
     :cond_2
     iget v3, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mMaxScrollX:I
 
@@ -2185,7 +2138,7 @@
 
     iput v3, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mOverScrollX:I
 
-    .line 1284
+    .line 1277
     iget v3, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mMaxScrollX:I
 
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getScrollY()I
@@ -2202,12 +2155,12 @@
     .parameter "ev"
 
     .prologue
-    .line 1164
+    .line 1157
     const/high16 v0, 0x3f80
 
     invoke-virtual {p0, p1, v0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->determineScrollingStart(Landroid/view/MotionEvent;F)V
 
-    .line 1165
+    .line 1158
     return-void
 .end method
 
@@ -2221,49 +2174,49 @@
 
     const/4 v9, 0x1
 
-    .line 1173
+    .line 1166
     iget v10, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mActivePointerId:I
 
     invoke-virtual {p1, v10}, Landroid/view/MotionEvent;->findPointerIndex(I)I
 
     move-result v0
 
-    .line 1174
+    .line 1167
     .local v0, pointerIndex:I
     const/4 v10, -0x1
 
     if-ne v0, v10, :cond_1
 
-    .line 1205
+    .line 1198
     :cond_0
     :goto_0
     return-void
 
-    .line 1177
+    .line 1170
     :cond_1
     invoke-virtual {p1, v0}, Landroid/view/MotionEvent;->getX(I)F
 
     move-result v2
 
-    .line 1178
+    .line 1171
     .local v2, x:F
     invoke-virtual {p1, v0}, Landroid/view/MotionEvent;->getY(I)F
 
     move-result v6
 
-    .line 1179
+    .line 1172
     .local v6, y:F
     float-to-int v10, v2
 
     float-to-int v11, v6
 
-    invoke-direct {p0, v10, v11}, Lcom/android/internal/policy/impl/keyguard/PagedView;->isTouchPointInViewportWithBuffer(II)Z
+    invoke-direct {p0, v10, v11, v9}, Lcom/android/internal/policy/impl/keyguard/PagedView;->isTouchPointInViewport(IIZ)Z
 
     move-result v10
 
     if-eqz v10, :cond_0
 
-    .line 1183
+    .line 1176
     iget-boolean v10, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mOnlyAllowEdgeSwipes:Z
 
     if-eqz v10, :cond_2
@@ -2272,7 +2225,7 @@
 
     if-eqz v10, :cond_0
 
-    .line 1185
+    .line 1178
     :cond_2
     iget v10, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mLastMotionX:F
 
@@ -2284,7 +2237,7 @@
 
     float-to-int v3, v10
 
-    .line 1186
+    .line 1179
     .local v3, xDiff:I
     iget v10, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mLastMotionY:F
 
@@ -2296,7 +2249,7 @@
 
     float-to-int v7, v10
 
-    .line 1188
+    .line 1181
     .local v7, yDiff:I
     iget v10, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTouchSlop:I
 
@@ -2308,7 +2261,7 @@
 
     move-result v1
 
-    .line 1189
+    .line 1182
     .local v1, touchSlop:I
     iget v10, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mPagingTouchSlop:I
 
@@ -2316,21 +2269,21 @@
 
     move v5, v9
 
-    .line 1190
+    .line 1183
     .local v5, xPaged:Z
     :goto_1
     if-le v3, v1, :cond_6
 
     move v4, v9
 
-    .line 1191
+    .line 1184
     .local v4, xMoved:Z
     :goto_2
     if-le v7, v1, :cond_3
 
     move v8, v9
 
-    .line 1193
+    .line 1186
     .local v8, yMoved:Z
     :cond_3
     if-nez v4, :cond_4
@@ -2339,7 +2292,7 @@
 
     if-eqz v8, :cond_0
 
-    .line 1194
+    .line 1187
     :cond_4
     iget-boolean v10, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mUsePagingTouchSlop:Z
 
@@ -2347,11 +2300,11 @@
 
     if-eqz v5, :cond_0
 
-    .line 1196
+    .line 1189
     :goto_3
     iput v9, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTouchState:I
 
-    .line 1197
+    .line 1190
     iget v9, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTotalMotionX:F
 
     iget v10, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mLastMotionX:F
@@ -2366,15 +2319,15 @@
 
     iput v9, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTotalMotionX:F
 
-    .line 1198
+    .line 1191
     iput v2, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mLastMotionX:F
 
-    .line 1199
+    .line 1192
     const/4 v9, 0x0
 
     iput v9, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mLastMotionXRemainder:F
 
-    .line 1200
+    .line 1193
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getViewportOffsetX()I
 
     move-result v9
@@ -2389,7 +2342,7 @@
 
     iput v9, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTouchX:F
 
-    .line 1201
+    .line 1194
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
     move-result-wide v9
@@ -2402,7 +2355,7 @@
 
     iput v9, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mSmoothingTime:F
 
-    .line 1202
+    .line 1195
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->pageBeginMoving()V
 
     goto :goto_0
@@ -2413,17 +2366,17 @@
     :cond_5
     move v5, v8
 
-    .line 1189
+    .line 1182
     goto :goto_1
 
     .restart local v5       #xPaged:Z
     :cond_6
     move v4, v8
 
-    .line 1190
+    .line 1183
     goto :goto_2
 
-    .line 1194
+    .line 1187
     .restart local v4       #xMoved:Z
     .restart local v8       #yMoved:Z
     :cond_7
@@ -2718,12 +2671,12 @@
     .parameter "f"
 
     .prologue
-    .line 1754
+    .line 1752
     const/high16 v0, 0x3f00
 
     sub-float/2addr p1, v0
 
-    .line 1755
+    .line 1753
     float-to-double v0, p1
 
     const-wide v2, 0x3fde28c7460698c7L
@@ -2732,7 +2685,7 @@
 
     double-to-float p1, v0
 
-    .line 1756
+    .line 1754
     float-to-double v0, p1
 
     invoke-static {v0, v1}, Ljava/lang/Math;->sin(D)D
@@ -2750,44 +2703,44 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 2177
+    .line 2175
     iget-boolean v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mReorderingStarted:Z
 
     if-nez v1, :cond_1
 
-    .line 2204
+    .line 2202
     :cond_0
     :goto_0
     return-void
 
-    .line 2178
+    .line 2176
     :cond_1
     iput-boolean v2, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mReorderingStarted:Z
 
-    .line 2182
+    .line 2180
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/PagedView$6;
 
     invoke-direct {v0, p0}, Lcom/android/internal/policy/impl/keyguard/PagedView$6;-><init>(Lcom/android/internal/policy/impl/keyguard/PagedView;)V
 
-    .line 2188
+    .line 2186
     .local v0, onCompleteRunnable:Ljava/lang/Runnable;
     iget-boolean v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mDeferringForDelete:Z
 
     if-nez v1, :cond_0
 
-    .line 2189
+    .line 2187
     new-instance v1, Lcom/android/internal/policy/impl/keyguard/PagedView$7;
 
     invoke-direct {v1, p0, v0}, Lcom/android/internal/policy/impl/keyguard/PagedView$7;-><init>(Lcom/android/internal/policy/impl/keyguard/PagedView;Ljava/lang/Runnable;)V
 
     iput-object v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mPostReorderingPreZoomInRunnable:Ljava/lang/Runnable;
 
-    .line 2195
+    .line 2193
     iget v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->NUM_ANIMATIONS_RUNNING_BEFORE_ZOOM_OUT:I
 
     iput v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mPostReorderingPreZoomInRemainingAnimationCount:I
 
-    .line 2198
+    .line 2196
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mDragView:Landroid/view/View;
 
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/keyguard/PagedView;->indexOfChild(Landroid/view/View;)I
@@ -2796,7 +2749,7 @@
 
     invoke-virtual {p0, v1, v2}, Lcom/android/internal/policy/impl/keyguard/PagedView;->snapToPage(II)V
 
-    .line 2200
+    .line 2198
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->animateDragViewToOriginalPosition()V
 
     goto :goto_0
@@ -2807,12 +2760,12 @@
     .parameter "animated"
 
     .prologue
-    .line 1928
+    .line 1926
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->hideScrollingIndicatorRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 1929
+    .line 1927
     if-nez p1, :cond_0
 
     const/4 v0, 0x1
@@ -2820,17 +2773,17 @@
     :goto_0
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->showScrollingIndicator(Z)V
 
-    .line 1930
+    .line 1928
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->hideScrollingIndicatorRunnable:Ljava/lang/Runnable;
 
     const-wide/16 v1, 0x28a
 
     invoke-virtual {p0, v0, v1, v2}, Lcom/android/internal/policy/impl/keyguard/PagedView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 1931
+    .line 1929
     return-void
 
-    .line 1929
+    .line 1927
     :cond_0
     const/4 v0, 0x0
 
@@ -2899,14 +2852,14 @@
     .parameter "page"
 
     .prologue
-    .line 1212
+    .line 1205
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getViewportWidth()I
 
     move-result v1
 
     div-int/lit8 v0, v1, 0x2
 
-    .line 1214
+    .line 1207
     .local v0, halfScreenSize:I
     iget v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mScrollX:I
 
@@ -2916,12 +2869,12 @@
 
     move-result p1
 
-    .line 1215
+    .line 1208
     invoke-static {v0, p1}, Ljava/lang/Math;->max(II)I
 
     move-result p1
 
-    .line 1217
+    .line 1210
     invoke-virtual {p0, p1, p2, p3}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getScrollProgress(ILandroid/view/View;I)F
 
     move-result v1
@@ -2934,12 +2887,12 @@
     .parameter "relativeOffset"
 
     .prologue
-    .line 1683
+    .line 1681
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getChildCount()I
 
     move-result v0
 
-    .line 1686
+    .line 1684
     .local v0, childCount:I
     const/4 v1, 0x0
 
@@ -2947,12 +2900,12 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 1687
+    .line 1685
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getRelativeChildOffset(I)I
 
     move-result v2
 
-    .line 1688
+    .line 1686
     .local v2, left:I
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getPageAt(I)Landroid/view/View;
 
@@ -2964,20 +2917,20 @@
 
     add-int v3, v2, v4
 
-    .line 1689
+    .line 1687
     .local v3, right:I
     if-gt v2, p1, :cond_0
 
     if-gt p1, v3, :cond_0
 
-    .line 1693
+    .line 1691
     .end local v1           #i:I
     .end local v2           #left:I
     .end local v3           #right:I
     :goto_1
     return v1
 
-    .line 1686
+    .line 1684
     .restart local v1       #i:I
     .restart local v2       #left:I
     .restart local v3       #right:I
@@ -2986,7 +2939,7 @@
 
     goto :goto_0
 
-    .line 1693
+    .line 1691
     .end local v2           #left:I
     .end local v3           #right:I
     :cond_1
@@ -3112,7 +3065,7 @@
     .parameter "index"
 
     .prologue
-    .line 1699
+    .line 1697
     invoke-virtual {p0, p1}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getPageAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -3121,11 +3074,11 @@
 
     move-result v0
 
-    .line 1700
+    .line 1698
     .local v0, measuredWidth:I
     iget v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mMinimumWidth:I
 
-    .line 1701
+    .line 1699
     .local v1, minWidth:I
     if-le v1, v0, :cond_0
 
@@ -3154,7 +3107,7 @@
     .locals 1
 
     .prologue
-    .line 1208
+    .line 1201
     const/high16 v0, 0x3f80
 
     return v0
@@ -3212,25 +3165,25 @@
     .parameter "v"
 
     .prologue
-    .line 1869
+    .line 1867
     const/4 v2, -0x1
 
-    .line 1870
+    .line 1868
     .local v2, result:I
     if-eqz p1, :cond_1
 
-    .line 1871
+    .line 1869
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v3
 
-    .line 1872
+    .line 1870
     .local v3, vp:Landroid/view/ViewParent;
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getChildCount()I
 
     move-result v0
 
-    .line 1873
+    .line 1871
     .local v0, count:I
     const/4 v1, 0x0
 
@@ -3238,21 +3191,21 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 1874
+    .line 1872
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getPageAt(I)Landroid/view/View;
 
     move-result-object v4
 
     if-ne v3, v4, :cond_0
 
-    .line 1879
+    .line 1877
     .end local v0           #count:I
     .end local v1           #i:I
     .end local v3           #vp:Landroid/view/ViewParent;
     :goto_1
     return v1
 
-    .line 1873
+    .line 1871
     .restart local v0       #count:I
     .restart local v1       #i:I
     .restart local v3       #vp:Landroid/view/ViewParent;
@@ -3267,7 +3220,7 @@
     :cond_1
     move v1, v2
 
-    .line 1879
+    .line 1877
     goto :goto_1
 .end method
 
@@ -3275,14 +3228,14 @@
     .locals 12
 
     .prologue
-    .line 1717
+    .line 1715
     const v7, 0x7fffffff
 
-    .line 1718
+    .line 1716
     .local v7, minDistanceFromScreenCenter:I
     const/4 v8, -0x1
 
-    .line 1719
+    .line 1717
     .local v8, minDistanceFromScreenCenterIndex:I
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getViewportOffsetX()I
 
@@ -3302,13 +3255,13 @@
 
     add-int v9, v10, v11
 
-    .line 1720
+    .line 1718
     .local v9, screenCenter:I
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getChildCount()I
 
     move-result v1
 
-    .line 1721
+    .line 1719
     .local v1, childCount:I
     const/4 v5, 0x0
 
@@ -3316,22 +3269,22 @@
     :goto_0
     if-ge v5, v1, :cond_1
 
-    .line 1722
+    .line 1720
     invoke-virtual {p0, v5}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getPageAt(I)Landroid/view/View;
 
     move-result-object v6
 
-    .line 1723
+    .line 1721
     .local v6, layout:Landroid/view/View;
     invoke-virtual {p0, v6}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getScaledMeasuredWidth(Landroid/view/View;)I
 
     move-result v2
 
-    .line 1724
+    .line 1722
     .local v2, childWidth:I
     div-int/lit8 v4, v2, 0x2
 
-    .line 1725
+    .line 1723
     .local v4, halfChildWidth:I
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getViewportOffsetX()I
 
@@ -3345,7 +3298,7 @@
 
     add-int v0, v10, v4
 
-    .line 1726
+    .line 1724
     .local v0, childCenter:I
     sub-int v10, v0, v9
 
@@ -3353,23 +3306,23 @@
 
     move-result v3
 
-    .line 1727
+    .line 1725
     .local v3, distanceFromScreenCenter:I
     if-ge v3, v7, :cond_0
 
-    .line 1728
+    .line 1726
     move v7, v3
 
-    .line 1729
+    .line 1727
     move v8, v5
 
-    .line 1721
+    .line 1719
     :cond_0
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_0
 
-    .line 1732
+    .line 1730
     .end local v0           #childCenter:I
     .end local v2           #childWidth:I
     .end local v3           #distanceFromScreenCenter:I
@@ -3384,10 +3337,10 @@
     .parameter "x"
 
     .prologue
-    .line 1705
+    .line 1703
     const/4 v1, 0x0
 
-    .line 1706
+    .line 1704
     .local v1, index:I
     const/4 v0, 0x0
 
@@ -3399,7 +3352,7 @@
 
     if-ge v0, v2, :cond_1
 
-    .line 1707
+    .line 1705
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -3420,22 +3373,22 @@
 
     if-gez v2, :cond_0
 
-    .line 1713
+    .line 1711
     .end local v1           #index:I
     :goto_1
     return v1
 
-    .line 1710
+    .line 1708
     .restart local v1       #index:I
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    .line 1706
+    .line 1704
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 1713
+    .line 1711
     :cond_1
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getChildCount()I
 
@@ -3595,14 +3548,14 @@
     .parameter "page"
 
     .prologue
-    .line 1221
+    .line 1214
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getViewportWidth()I
 
     move-result v4
 
     div-int/lit8 v1, v4, 0x2
 
-    .line 1223
+    .line 1216
     .local v1, halfScreenSize:I
     invoke-virtual {p0, p2}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getScaledMeasuredWidth(Landroid/view/View;)I
 
@@ -3612,7 +3565,7 @@
 
     add-int v3, v4, v5
 
-    .line 1224
+    .line 1217
     .local v3, totalDistance:I
     invoke-virtual {p0, p3}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getChildOffset(I)I
 
@@ -3628,7 +3581,7 @@
 
     sub-int v0, p1, v4
 
-    .line 1227
+    .line 1220
     .local v0, delta:I
     int-to-float v4, v0
 
@@ -3640,7 +3593,7 @@
 
     div-float v2, v4, v5
 
-    .line 1228
+    .line 1221
     .local v2, scrollProgress:F
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getMaxScrollProgress()F
 
@@ -3650,7 +3603,7 @@
 
     move-result v2
 
-    .line 1229
+    .line 1222
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getMaxScrollProgress()F
 
     move-result v4
@@ -3661,7 +3614,7 @@
 
     move-result v2
 
-    .line 1230
+    .line 1223
     return v2
 .end method
 
@@ -3669,7 +3622,7 @@
     .locals 1
 
     .prologue
-    .line 1913
+    .line 1911
     const/4 v0, 0x0
 
     return-object v0
@@ -3772,7 +3725,7 @@
     .locals 1
 
     .prologue
-    .line 2000
+    .line 1998
     const/4 v0, 0x1
 
     return v0
@@ -3787,19 +3740,19 @@
 
     const/4 v4, 0x0
 
-    .line 1963
+    .line 1961
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getChildCount()I
 
     move-result v0
 
     if-gt v0, v2, :cond_1
 
-    .line 1993
+    .line 1991
     :cond_0
     :goto_0
     return-void
 
-    .line 1964
+    .line 1962
     :cond_1
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->isScrollingIndicatorEnabled()Z
 
@@ -3807,38 +3760,38 @@
 
     if-eqz v0, :cond_0
 
-    .line 1966
+    .line 1964
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getScrollingIndicator()Landroid/view/View;
 
-    .line 1967
+    .line 1965
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mScrollIndicator:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    .line 1969
+    .line 1967
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->updateScrollingIndicatorPosition()V
 
-    .line 1970
+    .line 1968
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->cancelScrollingIndicatorAnimations()V
 
-    .line 1971
+    .line 1969
     if-eqz p1, :cond_2
 
-    .line 1972
+    .line 1970
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mScrollIndicator:Landroid/view/View;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1973
+    .line 1971
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mScrollIndicator:Landroid/view/View;
 
     invoke-virtual {v0, v4}, Landroid/view/View;->setAlpha(F)V
 
     goto :goto_0
 
-    .line 1975
+    .line 1973
     :cond_2
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mScrollIndicator:Landroid/view/View;
 
@@ -3856,14 +3809,14 @@
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mScrollIndicatorAnimator:Landroid/animation/ValueAnimator;
 
-    .line 1976
+    .line 1974
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mScrollIndicatorAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v1, 0x28a
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 1977
+    .line 1975
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mScrollIndicatorAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v1, Lcom/android/internal/policy/impl/keyguard/PagedView$3;
@@ -3872,7 +3825,7 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1990
+    .line 1988
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mScrollIndicatorAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
@@ -4209,14 +4162,14 @@
     .parameter "testTouchState"
 
     .prologue
-    .line 2168
+    .line 2166
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mIsReordering:Z
 
-    .line 2169
+    .line 2167
     .local v0, state:Z
     if-eqz p1, :cond_0
 
-    .line 2170
+    .line 2168
     iget v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTouchState:I
 
     const/4 v2, 0x4
@@ -4228,11 +4181,11 @@
     :goto_0
     and-int/2addr v0, v1
 
-    .line 2172
+    .line 2170
     :cond_0
     return v0
 
-    .line 2170
+    .line 2168
     :cond_1
     const/4 v1, 0x0
 
@@ -4243,7 +4196,7 @@
     .locals 1
 
     .prologue
-    .line 1917
+    .line 1915
     const/4 v0, 0x0
 
     return v0
@@ -4378,10 +4331,10 @@
     .locals 3
 
     .prologue
-    .line 1296
+    .line 1289
     const/high16 v0, 0x3f80
 
-    .line 1297
+    .line 1290
     .local v0, f:F
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
@@ -4399,7 +4352,7 @@
 
     mul-float v0, v1, v2
 
-    .line 1298
+    .line 1291
     const v1, 0x3e0f5c29
 
     mul-float/2addr v1, v0
@@ -4505,7 +4458,7 @@
 
     const/4 v3, 0x0
 
-    .line 2130
+    .line 2128
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Landroid/view/accessibility/AccessibilityManager;->getInstance(Landroid/content/Context;)Landroid/view/accessibility/AccessibilityManager;
@@ -4518,7 +4471,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 2131
+    .line 2129
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mContext:Landroid/content/Context;
 
     const v2, #string@keyguard_accessibility_widget_reorder_end#t
@@ -4529,21 +4482,21 @@
 
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/keyguard/PagedView;->announceForAccessibility(Ljava/lang/CharSequence;)V
 
-    .line 2134
+    .line 2132
     :cond_0
     iput-boolean v3, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mIsReordering:Z
 
-    .line 2137
+    .line 2135
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTempVisiblePagesRange:[I
 
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getVisiblePages([I)V
 
-    .line 2138
+    .line 2136
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTempVisiblePagesRange:[I
 
     invoke-virtual {p0, v4, v1}, Lcom/android/internal/policy/impl/keyguard/PagedView;->boundByReorderablePages(Z[I)V
 
-    .line 2139
+    .line 2137
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -4554,7 +4507,7 @@
 
     if-ge v0, v1, :cond_3
 
-    .line 2140
+    .line 2138
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTempVisiblePagesRange:[I
 
     aget v1, v1, v3
@@ -4567,7 +4520,7 @@
 
     if-le v0, v1, :cond_2
 
-    .line 2141
+    .line 2139
     :cond_1
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getPageAt(I)Landroid/view/View;
 
@@ -4577,13 +4530,13 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setAlpha(F)V
 
-    .line 2139
+    .line 2137
     :cond_2
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 2144
+    .line 2142
     :cond_3
     return-void
 .end method
@@ -4593,28 +4546,28 @@
     .parameter "vel"
 
     .prologue
-    .line 2409
+    .line 2406
     invoke-static {}, Landroid/view/animation/AnimationUtils;->currentAnimationTimeMillis()J
 
     move-result-wide v4
 
-    .line 2416
+    .line 2413
     .local v4, startTime:J
     new-instance v9, Lcom/android/internal/policy/impl/keyguard/PagedView$10;
 
     invoke-direct {v9, p0, v4, v5}, Lcom/android/internal/policy/impl/keyguard/PagedView$10;-><init>(Lcom/android/internal/policy/impl/keyguard/PagedView;J)V
 
-    .line 2437
+    .line 2434
     .local v9, tInterpolator:Landroid/animation/TimeInterpolator;
     new-instance v3, Landroid/graphics/Rect;
 
     invoke-direct {v3}, Landroid/graphics/Rect;-><init>()V
 
-    .line 2438
+    .line 2435
     .local v3, from:Landroid/graphics/Rect;
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mDragView:Landroid/view/View;
 
-    .line 2439
+    .line 2436
     .local v1, dragView:Landroid/view/View;
     invoke-virtual {v1}, Landroid/view/View;->getTranslationX()F
 
@@ -4624,7 +4577,7 @@
 
     iput v2, v3, Landroid/graphics/Rect;->left:I
 
-    .line 2440
+    .line 2437
     invoke-virtual {v1}, Landroid/view/View;->getTranslationY()F
 
     move-result v2
@@ -4633,7 +4586,7 @@
 
     iput v2, v3, Landroid/graphics/Rect;->top:I
 
-    .line 2441
+    .line 2438
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/PagedView$FlingAlongVectorAnimatorUpdateListener;
 
     iget v6, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->FLING_TO_DELETE_FRICTION:F
@@ -4642,30 +4595,30 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/internal/policy/impl/keyguard/PagedView$FlingAlongVectorAnimatorUpdateListener;-><init>(Landroid/view/View;Landroid/graphics/PointF;Landroid/graphics/Rect;JF)V
 
-    .line 2444
+    .line 2441
     .local v0, updateCb:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
     invoke-direct {p0, v1}, Lcom/android/internal/policy/impl/keyguard/PagedView;->createPostDeleteAnimationRunnable(Landroid/view/View;)Ljava/lang/Runnable;
 
     move-result-object v8
 
-    .line 2447
+    .line 2444
     .local v8, onAnimationEndRunnable:Ljava/lang/Runnable;
     new-instance v7, Landroid/animation/ValueAnimator;
 
     invoke-direct {v7}, Landroid/animation/ValueAnimator;-><init>()V
 
-    .line 2448
+    .line 2445
     .local v7, mDropAnim:Landroid/animation/ValueAnimator;
     invoke-virtual {v7, v9}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 2449
+    .line 2446
     iget v2, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->FLING_TO_DELETE_FADE_OUT_DURATION:I
 
     int-to-long v10, v2
 
     invoke-virtual {v7, v10, v11}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 2450
+    .line 2447
     const/4 v2, 0x2
 
     new-array v2, v2, [F
@@ -4674,28 +4627,28 @@
 
     invoke-virtual {v7, v2}, Landroid/animation/ValueAnimator;->setFloatValues([F)V
 
-    .line 2451
+    .line 2448
     invoke-virtual {v7, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 2452
+    .line 2449
     new-instance v2, Lcom/android/internal/policy/impl/keyguard/PagedView$11;
 
     invoke-direct {v2, p0, v8}, Lcom/android/internal/policy/impl/keyguard/PagedView$11;-><init>(Lcom/android/internal/policy/impl/keyguard/PagedView;Ljava/lang/Runnable;)V
 
     invoke-virtual {v7, v2}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 2457
+    .line 2454
     invoke-virtual {v7}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 2458
+    .line 2455
     const/4 v2, 0x1
 
     iput-boolean v2, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mDeferringForDelete:Z
 
-    .line 2459
+    .line 2456
     return-void
 
-    .line 2450
+    .line 2447
     nop
 
     :array_0
@@ -4714,7 +4667,7 @@
 
     const/4 v3, 0x0
 
-    .line 1613
+    .line 1611
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getSource()I
 
     move-result v2
@@ -4723,14 +4676,14 @@
 
     if-eqz v2, :cond_0
 
-    .line 1614
+    .line 1612
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v2
 
     packed-switch v2, :pswitch_data_0
 
-    .line 1637
+    .line 1635
     :cond_0
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->onGenericMotionEvent(Landroid/view/MotionEvent;)Z
 
@@ -4739,7 +4692,7 @@
     :goto_0
     return v2
 
-    .line 1619
+    .line 1617
     :pswitch_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getMetaState()I
 
@@ -4749,16 +4702,16 @@
 
     if-eqz v2, :cond_3
 
-    .line 1620
+    .line 1618
     const/4 v1, 0x0
 
-    .line 1621
+    .line 1619
     .local v1, vscroll:F
     invoke-virtual {p1, v4}, Landroid/view/MotionEvent;->getAxisValue(I)F
 
     move-result v0
 
-    .line 1626
+    .line 1624
     .local v0, hscroll:F
     :goto_1
     cmpl-float v2, v0, v3
@@ -4769,7 +4722,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 1627
+    .line 1625
     :cond_1
     cmpl-float v2, v0, v3
 
@@ -4779,17 +4732,17 @@
 
     if-lez v2, :cond_4
 
-    .line 1628
+    .line 1626
     :cond_2
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->scrollRight()V
 
-    .line 1632
+    .line 1630
     :goto_2
     const/4 v2, 0x1
 
     goto :goto_0
 
-    .line 1623
+    .line 1621
     .end local v0           #hscroll:F
     .end local v1           #vscroll:F
     :cond_3
@@ -4799,7 +4752,7 @@
 
     neg-float v1, v2
 
-    .line 1624
+    .line 1622
     .restart local v1       #vscroll:F
     const/16 v2, 0xa
 
@@ -4810,13 +4763,13 @@
     .restart local v0       #hscroll:F
     goto :goto_1
 
-    .line 1630
+    .line 1628
     :cond_4
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->scrollLeft()V
 
     goto :goto_2
 
-    .line 1614
+    .line 1612
     nop
 
     :pswitch_data_0
@@ -4830,7 +4783,7 @@
     .parameter "event"
 
     .prologue
-    .line 2562
+    .line 2559
     const/4 v0, 0x1
 
     return v0
@@ -4841,15 +4794,15 @@
     .parameter "event"
 
     .prologue
-    .line 2529
+    .line 2526
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
-    .line 2530
+    .line 2527
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setScrollable(Z)V
 
-    .line 2531
+    .line 2528
     invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityEvent;->getEventType()I
 
     move-result v0
@@ -4858,24 +4811,24 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 2532
+    .line 2529
     iget v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mCurrentPage:I
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setFromIndex(I)V
 
-    .line 2533
+    .line 2530
     iget v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mCurrentPage:I
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setToIndex(I)V
 
-    .line 2534
+    .line 2531
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getChildCount()I
 
     move-result v0
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setItemCount(I)V
 
-    .line 2536
+    .line 2533
     :cond_0
     return-void
 .end method
@@ -4887,10 +4840,10 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 2517
+    .line 2514
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 2518
+    .line 2515
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getPageCount()I
 
     move-result v1
@@ -4900,7 +4853,7 @@
     :goto_0
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setScrollable(Z)V
 
-    .line 2519
+    .line 2516
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getCurrentPage()I
 
     move-result v0
@@ -4913,12 +4866,12 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 2520
+    .line 2517
     const/16 v0, 0x1000
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
 
-    .line 2522
+    .line 2519
     :cond_0
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getCurrentPage()I
 
@@ -4926,16 +4879,16 @@
 
     if-lez v0, :cond_1
 
-    .line 2523
+    .line 2520
     const/16 v0, 0x2000
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
 
-    .line 2525
+    .line 2522
     :cond_1
     return-void
 
-    .line 2518
+    .line 2515
     :cond_2
     const/4 v0, 0x0
 
@@ -4953,10 +4906,10 @@
 
     const/4 v8, 0x1
 
-    .line 1051
+    .line 1044
     invoke-direct {p0, p1}, Lcom/android/internal/policy/impl/keyguard/PagedView;->acquireVelocityTrackerAndAddMovement(Landroid/view/MotionEvent;)V
 
-    .line 1054
+    .line 1047
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getChildCount()I
 
     move-result v10
@@ -4967,18 +4920,18 @@
 
     move-result v8
 
-    .line 1160
+    .line 1153
     :cond_0
     :goto_0
     return v8
 
-    .line 1061
+    .line 1054
     :cond_1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    .line 1062
+    .line 1055
     .local v0, action:I
     const/4 v10, 0x2
 
@@ -4988,13 +4941,13 @@
 
     if-eq v10, v8, :cond_0
 
-    .line 1067
+    .line 1060
     :cond_2
     and-int/lit16 v10, v0, 0xff
 
     packed-switch v10, :pswitch_data_0
 
-    .line 1160
+    .line 1153
     :cond_3
     :goto_1
     :pswitch_0
@@ -5006,7 +4959,7 @@
 
     goto :goto_0
 
-    .line 1073
+    .line 1066
     :pswitch_1
     iget v10, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mActivePointerId:I
 
@@ -5014,32 +4967,32 @@
 
     if-eq v10, v11, :cond_4
 
-    .line 1074
+    .line 1067
     invoke-virtual {p0, p1}, Lcom/android/internal/policy/impl/keyguard/PagedView;->determineScrollingStart(Landroid/view/MotionEvent;)V
 
     goto :goto_1
 
-    .line 1085
+    .line 1078
     :cond_4
     :pswitch_2
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v5
 
-    .line 1086
+    .line 1079
     .local v5, x:F
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v7
 
-    .line 1088
+    .line 1081
     .local v7, y:F
     iput v5, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mDownMotionX:F
 
-    .line 1089
+    .line 1082
     iput v7, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mDownMotionY:F
 
-    .line 1090
+    .line 1083
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getScrollX()I
 
     move-result v10
@@ -5048,42 +5001,42 @@
 
     iput v10, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mDownScrollX:F
 
-    .line 1091
+    .line 1084
     iput v5, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mLastMotionX:F
 
-    .line 1092
+    .line 1085
     iput v7, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mLastMotionY:F
 
-    .line 1093
+    .line 1086
     invoke-virtual {p0, p0, v5, v7}, Lcom/android/internal/policy/impl/keyguard/PagedView;->mapPointFromViewToParent(Landroid/view/View;FF)[F
 
     move-result-object v3
 
-    .line 1094
+    .line 1087
     .local v3, p:[F
     aget v10, v3, v9
 
     iput v10, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mParentDownMotionX:F
 
-    .line 1095
+    .line 1088
     aget v10, v3, v8
 
     iput v10, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mParentDownMotionY:F
 
-    .line 1096
+    .line 1089
     iput v12, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mLastMotionXRemainder:F
 
-    .line 1097
+    .line 1090
     iput v12, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTotalMotionX:F
 
-    .line 1098
+    .line 1091
     invoke-virtual {p1, v9}, Landroid/view/MotionEvent;->getPointerId(I)I
 
     move-result v10
 
     iput v10, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mActivePointerId:I
 
-    .line 1101
+    .line 1094
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getViewportOffsetX()I
 
     move-result v10
@@ -5092,7 +5045,7 @@
 
     add-int v2, v10, v11
 
-    .line 1102
+    .line 1095
     .local v2, leftEdgeBoundary:I
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getMeasuredWidth()I
 
@@ -5108,7 +5061,7 @@
 
     sub-int v4, v10, v11
 
-    .line 1103
+    .line 1096
     .local v4, rightEdgeBoundary:I
     iget v10, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mDownMotionX:F
 
@@ -5126,11 +5079,11 @@
 
     if-ltz v10, :cond_6
 
-    .line 1104
+    .line 1097
     :cond_5
     iput-boolean v8, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mDownEventOnEdge:Z
 
-    .line 1112
+    .line 1105
     :cond_6
     iget-object v10, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mScroller:Landroid/widget/Scroller;
 
@@ -5150,7 +5103,7 @@
 
     move-result v6
 
-    .line 1113
+    .line 1106
     .local v6, xDist:I
     iget-object v10, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mScroller:Landroid/widget/Scroller;
 
@@ -5167,15 +5120,15 @@
     :cond_7
     move v1, v8
 
-    .line 1114
+    .line 1107
     .local v1, finishedScrolling:Z
     :goto_2
     if-eqz v1, :cond_9
 
-    .line 1115
+    .line 1108
     iput v9, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTouchState:I
 
-    .line 1116
+    .line 1109
     iget-object v10, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mScroller:Landroid/widget/Scroller;
 
     invoke-virtual {v10}, Landroid/widget/Scroller;->abortAnimation()V
@@ -5186,10 +5139,10 @@
     :cond_8
     move v1, v9
 
-    .line 1113
+    .line 1106
     goto :goto_2
 
-    .line 1118
+    .line 1111
     .restart local v1       #finishedScrolling:Z
     :cond_9
     iget v10, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mDownMotionX:F
@@ -5200,24 +5153,24 @@
 
     float-to-int v11, v11
 
-    invoke-direct {p0, v10, v11}, Lcom/android/internal/policy/impl/keyguard/PagedView;->isTouchPointInViewportWithBuffer(II)Z
+    invoke-direct {p0, v10, v11, v8}, Lcom/android/internal/policy/impl/keyguard/PagedView;->isTouchPointInViewport(IIZ)Z
 
     move-result v10
 
     if-eqz v10, :cond_a
 
-    .line 1119
+    .line 1112
     iput v8, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTouchState:I
 
     goto/16 :goto_1
 
-    .line 1121
+    .line 1114
     :cond_a
     iput v9, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTouchState:I
 
     goto/16 :goto_1
 
-    .line 1143
+    .line 1136
     .end local v1           #finishedScrolling:Z
     .end local v2           #leftEdgeBoundary:I
     .end local v3           #p:[F
@@ -5228,7 +5181,7 @@
     :pswitch_3
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->resetTouchState()V
 
-    .line 1145
+    .line 1138
     iget v10, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mLastMotionX:F
 
     float-to-int v10, v10
@@ -5237,7 +5190,7 @@
 
     float-to-int v11, v11
 
-    invoke-direct {p0, v10, v11}, Lcom/android/internal/policy/impl/keyguard/PagedView;->isTouchPointInCurrentPage(II)Z
+    invoke-direct {p0, v10, v11, v9}, Lcom/android/internal/policy/impl/keyguard/PagedView;->isTouchPointInViewport(IIZ)Z
 
     move-result v10
 
@@ -5245,16 +5198,16 @@
 
     goto/16 :goto_0
 
-    .line 1151
+    .line 1144
     :pswitch_4
     invoke-direct {p0, p1}, Lcom/android/internal/policy/impl/keyguard/PagedView;->onSecondaryPointerUp(Landroid/view/MotionEvent;)V
 
-    .line 1152
+    .line 1145
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->releaseVelocityTracker()V
 
     goto/16 :goto_1
 
-    .line 1067
+    .line 1060
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_2
@@ -5966,10 +5919,7 @@
     return-void
 .end method
 
-.method public abstract onRemoveView(Landroid/view/View;Z)V
-.end method
-
-.method public abstract onRemoveViewAnimationCompleted()V
+.method public abstract onRemoveView(Landroid/view/View;)V
 .end method
 
 .method protected onRequestFocusInDescendants(ILandroid/graphics/Rect;)Z
@@ -6031,7 +5981,7 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 2096
+    .line 2094
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Landroid/view/accessibility/AccessibilityManager;->getInstance(Landroid/content/Context;)Landroid/view/accessibility/AccessibilityManager;
@@ -6044,7 +5994,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 2097
+    .line 2095
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mContext:Landroid/content/Context;
 
     const v2, #string@keyguard_accessibility_widget_reorder_start#t
@@ -6055,26 +6005,26 @@
 
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/keyguard/PagedView;->announceForAccessibility(Ljava/lang/CharSequence;)V
 
-    .line 2102
+    .line 2100
     :cond_0
     const/4 v1, 0x4
 
     iput v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTouchState:I
 
-    .line 2103
+    .line 2101
     iput-boolean v3, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mIsReordering:Z
 
-    .line 2106
+    .line 2104
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTempVisiblePagesRange:[I
 
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getVisiblePages([I)V
 
-    .line 2107
+    .line 2105
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTempVisiblePagesRange:[I
 
     invoke-virtual {p0, v3, v1}, Lcom/android/internal/policy/impl/keyguard/PagedView;->boundByReorderablePages(Z[I)V
 
-    .line 2108
+    .line 2106
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -6085,7 +6035,7 @@
 
     if-ge v0, v1, :cond_3
 
-    .line 2109
+    .line 2107
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTempVisiblePagesRange:[I
 
     const/4 v2, 0x0
@@ -6100,7 +6050,7 @@
 
     if-le v0, v1, :cond_2
 
-    .line 2110
+    .line 2108
     :cond_1
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getPageAt(I)Landroid/view/View;
 
@@ -6110,17 +6060,17 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setAlpha(F)V
 
-    .line 2108
+    .line 2106
     :cond_2
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 2116
+    .line 2114
     :cond_3
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->invalidate()V
 
-    .line 2117
+    .line 2115
     return-void
 .end method
 
@@ -6129,7 +6079,7 @@
     .parameter "ev"
 
     .prologue
-    .line 1308
+    .line 1301
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getChildCount()I
 
     move-result v31
@@ -6140,20 +6090,20 @@
 
     move-result v31
 
-    .line 1593
+    .line 1592
     :goto_0
     return v31
 
-    .line 1310
+    .line 1303
     :cond_0
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/policy/impl/keyguard/PagedView;->acquireVelocityTrackerAndAddMovement(Landroid/view/MotionEvent;)V
 
-    .line 1312
+    .line 1305
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v4
 
-    .line 1314
+    .line 1307
     .local v4, action:I
     and-int/lit16 v0, v4, 0xff
 
@@ -6161,7 +6111,7 @@
 
     packed-switch v31, :pswitch_data_0
 
-    .line 1593
+    .line 1592
     :cond_1
     :goto_1
     :pswitch_0
@@ -6169,7 +6119,7 @@
 
     goto :goto_0
 
-    .line 1320
+    .line 1313
     :pswitch_1
     move-object/from16 v0, p0
 
@@ -6183,7 +6133,7 @@
 
     if-nez v31, :cond_2
 
-    .line 1321
+    .line 1314
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mScroller:Landroid/widget/Scroller;
@@ -6192,7 +6142,7 @@
 
     invoke-virtual/range {v31 .. v31}, Landroid/widget/Scroller;->abortAnimation()V
 
-    .line 1325
+    .line 1318
     :cond_2
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getX()F
 
@@ -6210,7 +6160,7 @@
 
     iput v0, v1, Lcom/android/internal/policy/impl/keyguard/PagedView;->mDownMotionX:F
 
-    .line 1326
+    .line 1319
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v31
@@ -6227,7 +6177,7 @@
 
     iput v0, v1, Lcom/android/internal/policy/impl/keyguard/PagedView;->mDownMotionY:F
 
-    .line 1327
+    .line 1320
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getScrollX()I
 
     move-result v31
@@ -6244,7 +6194,7 @@
 
     iput v0, v1, Lcom/android/internal/policy/impl/keyguard/PagedView;->mDownScrollX:F
 
-    .line 1328
+    .line 1321
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mLastMotionX:F
@@ -6269,7 +6219,7 @@
 
     move-result-object v18
 
-    .line 1329
+    .line 1322
     .local v18, p:[F
     const/16 v31, 0x0
 
@@ -6281,7 +6231,7 @@
 
     iput v0, v1, Lcom/android/internal/policy/impl/keyguard/PagedView;->mParentDownMotionX:F
 
-    .line 1330
+    .line 1323
     const/16 v31, 0x1
 
     aget v31, v18, v31
@@ -6292,7 +6242,7 @@
 
     iput v0, v1, Lcom/android/internal/policy/impl/keyguard/PagedView;->mParentDownMotionY:F
 
-    .line 1331
+    .line 1324
     const/16 v31, 0x0
 
     move/from16 v0, v31
@@ -6301,7 +6251,7 @@
 
     iput v0, v1, Lcom/android/internal/policy/impl/keyguard/PagedView;->mLastMotionXRemainder:F
 
-    .line 1332
+    .line 1325
     const/16 v31, 0x0
 
     move/from16 v0, v31
@@ -6310,7 +6260,7 @@
 
     iput v0, v1, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTotalMotionX:F
 
-    .line 1333
+    .line 1326
     const/16 v31, 0x0
 
     move-object/from16 v0, p1
@@ -6327,7 +6277,7 @@
 
     iput v0, v1, Lcom/android/internal/policy/impl/keyguard/PagedView;->mActivePointerId:I
 
-    .line 1336
+    .line 1329
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getViewportOffsetX()I
 
     move-result v31
@@ -6340,7 +6290,7 @@
 
     add-int v16, v31, v32
 
-    .line 1337
+    .line 1330
     .local v16, leftEdgeBoundary:I
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getMeasuredWidth()I
 
@@ -6360,7 +6310,7 @@
 
     sub-int v27, v31, v32
 
-    .line 1338
+    .line 1331
     .local v27, rightEdgeBoundary:I
     move-object/from16 v0, p0
 
@@ -6394,7 +6344,7 @@
 
     if-ltz v31, :cond_4
 
-    .line 1339
+    .line 1332
     :cond_3
     const/16 v31, 0x1
 
@@ -6404,7 +6354,7 @@
 
     iput-boolean v0, v1, Lcom/android/internal/policy/impl/keyguard/PagedView;->mDownEventOnEdge:Z
 
-    .line 1342
+    .line 1335
     :cond_4
     move-object/from16 v0, p0
 
@@ -6420,12 +6370,12 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1343
+    .line 1336
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->pageBeginMoving()V
 
     goto/16 :goto_1
 
-    .line 1348
+    .line 1341
     .end local v16           #leftEdgeBoundary:I
     .end local v18           #p:[F
     .end local v27           #rightEdgeBoundary:I
@@ -6442,9 +6392,9 @@
 
     move/from16 v1, v32
 
-    if-ne v0, v1, :cond_7
+    if-ne v0, v1, :cond_8
 
-    .line 1350
+    .line 1344
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mActivePointerId:I
@@ -6459,8 +6409,36 @@
 
     move-result v23
 
-    .line 1351
+    .line 1345
     .local v23, pointerIndex:I
+    const/16 v31, -0x1
+
+    move/from16 v0, v23
+
+    move/from16 v1, v31
+
+    if-ne v0, v1, :cond_5
+
+    .line 1346
+    const/16 v23, 0x0
+
+    .line 1347
+    move-object/from16 v0, p1
+
+    move/from16 v1, v23
+
+    invoke-virtual {v0, v1}, Landroid/view/MotionEvent;->getPointerId(I)I
+
+    move-result v31
+
+    move/from16 v0, v31
+
+    move-object/from16 v1, p0
+
+    iput v0, v1, Lcom/android/internal/policy/impl/keyguard/PagedView;->mActivePointerId:I
+
+    .line 1350
+    :cond_5
     move-object/from16 v0, p1
 
     move/from16 v1, v23
@@ -6469,7 +6447,7 @@
 
     move-result v30
 
-    .line 1352
+    .line 1351
     .local v30, x:F
     move-object/from16 v0, p0
 
@@ -6487,7 +6465,7 @@
 
     sub-float v7, v31, v30
 
-    .line 1354
+    .line 1353
     .local v7, deltaX:F
     move-object/from16 v0, p0
 
@@ -6507,7 +6485,7 @@
 
     iput v0, v1, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTotalMotionX:F
 
-    .line 1359
+    .line 1358
     invoke-static {v7}, Ljava/lang/Math;->abs(F)F
 
     move-result v31
@@ -6516,9 +6494,9 @@
 
     cmpl-float v31, v31, v32
 
-    if-ltz v31, :cond_6
+    if-ltz v31, :cond_7
 
-    .line 1360
+    .line 1359
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTouchX:F
@@ -6533,7 +6511,7 @@
 
     iput v0, v1, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTouchX:F
 
-    .line 1361
+    .line 1360
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
     move-result-wide v31
@@ -6554,16 +6532,16 @@
 
     iput v0, v1, Lcom/android/internal/policy/impl/keyguard/PagedView;->mSmoothingTime:F
 
-    .line 1362
+    .line 1361
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mDeferScrollUpdate:Z
 
     move/from16 v31, v0
 
-    if-nez v31, :cond_5
+    if-nez v31, :cond_6
 
-    .line 1363
+    .line 1362
     float-to-int v0, v7
 
     move/from16 v31, v0
@@ -6578,7 +6556,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/internal/policy/impl/keyguard/PagedView;->scrollBy(II)V
 
-    .line 1368
+    .line 1367
     :goto_2
     move/from16 v0, v30
 
@@ -6586,7 +6564,7 @@
 
     iput v0, v1, Lcom/android/internal/policy/impl/keyguard/PagedView;->mLastMotionX:F
 
-    .line 1369
+    .line 1368
     float-to-int v0, v7
 
     move/from16 v31, v0
@@ -6607,23 +6585,23 @@
 
     goto/16 :goto_1
 
-    .line 1366
-    :cond_5
+    .line 1365
+    :cond_6
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->invalidate()V
 
     goto :goto_2
 
-    .line 1371
-    :cond_6
+    .line 1370
+    :cond_7
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->awakenScrollBars()Z
 
     goto/16 :goto_1
 
-    .line 1373
+    .line 1372
     .end local v7           #deltaX:F
     .end local v23           #pointerIndex:I
     .end local v30           #x:F
-    :cond_7
+    :cond_8
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTouchState:I
@@ -6636,9 +6614,9 @@
 
     move/from16 v1, v32
 
-    if-ne v0, v1, :cond_b
+    if-ne v0, v1, :cond_c
 
-    .line 1375
+    .line 1374
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v31
@@ -6649,7 +6627,7 @@
 
     iput v0, v1, Lcom/android/internal/policy/impl/keyguard/PagedView;->mLastMotionX:F
 
-    .line 1376
+    .line 1375
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v31
@@ -6660,7 +6638,7 @@
 
     iput v0, v1, Lcom/android/internal/policy/impl/keyguard/PagedView;->mLastMotionY:F
 
-    .line 1380
+    .line 1379
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mLastMotionX:F
@@ -6685,7 +6663,7 @@
 
     move-result-object v24
 
-    .line 1381
+    .line 1380
     .local v24, pt:[F
     const/16 v31, 0x0
 
@@ -6697,7 +6675,7 @@
 
     iput v0, v1, Lcom/android/internal/policy/impl/keyguard/PagedView;->mParentDownMotionX:F
 
-    .line 1382
+    .line 1381
     const/16 v31, 0x1
 
     aget v31, v24, v31
@@ -6708,10 +6686,10 @@
 
     iput v0, v1, Lcom/android/internal/policy/impl/keyguard/PagedView;->mParentDownMotionY:F
 
-    .line 1383
+    .line 1382
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->updateDragViewTranslationDuringDrag()V
 
-    .line 1386
+    .line 1385
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mDragView:Landroid/view/View;
@@ -6726,7 +6704,7 @@
 
     move-result v8
 
-    .line 1387
+    .line 1386
     .local v8, dragViewIndex:I
     move-object/from16 v0, p0
 
@@ -6750,7 +6728,7 @@
 
     float-to-int v6, v0
 
-    .line 1389
+    .line 1388
     .local v6, bufferSize:I
     move-object/from16 v0, p0
 
@@ -6798,7 +6776,7 @@
 
     float-to-int v15, v0
 
-    .line 1391
+    .line 1390
     .local v15, leftBufferEdge:I
     move-object/from16 v0, p0
 
@@ -6848,7 +6826,7 @@
 
     move/from16 v26, v0
 
-    .line 1395
+    .line 1394
     .local v26, rightBufferEdge:I
     move-object/from16 v0, p0
 
@@ -6884,24 +6862,24 @@
 
     move-result v13
 
-    .line 1397
+    .line 1396
     .local v13, isHoveringOverDelete:Z
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v8, v13}, Lcom/android/internal/policy/impl/keyguard/PagedView;->setPageHoveringOverDeleteDropTarget(IZ)V
 
-    .line 1406
+    .line 1405
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mParentDownMotionX:F
 
     move/from16 v22, v0
 
-    .line 1407
+    .line 1406
     .local v22, parentX:F
     const/16 v19, -0x1
 
-    .line 1408
+    .line 1407
     .local v19, pageIndexToSnapTo:I
     int-to-float v0, v15
 
@@ -6909,19 +6887,19 @@
 
     cmpg-float v31, v22, v31
 
-    if-gez v31, :cond_9
+    if-gez v31, :cond_a
 
-    if-lez v8, :cond_9
+    if-lez v8, :cond_a
 
-    .line 1409
+    .line 1408
     add-int/lit8 v19, v8, -0x1
 
-    .line 1414
-    :cond_8
+    .line 1413
+    :cond_9
     :goto_3
     move/from16 v20, v19
 
-    .line 1415
+    .line 1414
     .local v20, pageUnderPointIndex:I
     const/16 v31, -0x1
 
@@ -6929,11 +6907,11 @@
 
     move/from16 v1, v31
 
-    if-le v0, v1, :cond_a
+    if-le v0, v1, :cond_b
 
-    if-nez v13, :cond_a
+    if-nez v13, :cond_b
 
-    .line 1416
+    .line 1415
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTempVisiblePagesRange:[I
@@ -6946,7 +6924,7 @@
 
     aput v33, v31, v32
 
-    .line 1417
+    .line 1416
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTempVisiblePagesRange:[I
@@ -6963,7 +6941,7 @@
 
     aput v33, v31, v32
 
-    .line 1418
+    .line 1417
     const/16 v31, 0x1
 
     move-object/from16 v0, p0
@@ -6980,7 +6958,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/internal/policy/impl/keyguard/PagedView;->boundByReorderablePages(Z[I)V
 
-    .line 1419
+    .line 1418
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTempVisiblePagesRange:[I
@@ -7037,14 +7015,14 @@
 
     if-eqz v31, :cond_1
 
-    .line 1422
+    .line 1421
     move/from16 v0, v20
 
     move-object/from16 v1, p0
 
     iput v0, v1, Lcom/android/internal/policy/impl/keyguard/PagedView;->mSidePageHoverIndex:I
 
-    .line 1423
+    .line 1422
     new-instance v31, Lcom/android/internal/policy/impl/keyguard/PagedView$1;
 
     move-object/from16 v0, v31
@@ -7061,7 +7039,7 @@
 
     iput-object v0, v1, Lcom/android/internal/policy/impl/keyguard/PagedView;->mSidePageHoverRunnable:Ljava/lang/Runnable;
 
-    .line 1473
+    .line 1472
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mSidePageHoverRunnable:Ljava/lang/Runnable;
@@ -7090,9 +7068,9 @@
 
     goto/16 :goto_1
 
-    .line 1410
+    .line 1409
     .end local v20           #pageUnderPointIndex:I
-    :cond_9
+    :cond_a
     move/from16 v0, v26
 
     int-to-float v0, v0
@@ -7101,7 +7079,7 @@
 
     cmpl-float v31, v22, v31
 
-    if-lez v31, :cond_8
+    if-lez v31, :cond_9
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getChildCount()I
 
@@ -7111,16 +7089,16 @@
 
     move/from16 v0, v31
 
-    if-ge v8, v0, :cond_8
+    if-ge v8, v0, :cond_9
 
-    .line 1411
+    .line 1410
     add-int/lit8 v19, v8, 0x1
 
     goto/16 :goto_3
 
-    .line 1476
+    .line 1475
     .restart local v20       #pageUnderPointIndex:I
-    :cond_a
+    :cond_b
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mSidePageHoverRunnable:Ljava/lang/Runnable;
@@ -7133,7 +7111,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/policy/impl/keyguard/PagedView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 1477
+    .line 1476
     const/16 v31, -0x1
 
     move/from16 v0, v31
@@ -7144,7 +7122,7 @@
 
     goto/16 :goto_1
 
-    .line 1480
+    .line 1479
     .end local v6           #bufferSize:I
     .end local v8           #dragViewIndex:I
     .end local v13           #isHoveringOverDelete:Z
@@ -7154,12 +7132,12 @@
     .end local v22           #parentX:F
     .end local v24           #pt:[F
     .end local v26           #rightBufferEdge:I
-    :cond_b
+    :cond_c
     invoke-virtual/range {p0 .. p1}, Lcom/android/internal/policy/impl/keyguard/PagedView;->determineScrollingStart(Landroid/view/MotionEvent;)V
 
     goto/16 :goto_1
 
-    .line 1485
+    .line 1484
     :pswitch_3
     move-object/from16 v0, p0
 
@@ -7173,14 +7151,14 @@
 
     move/from16 v1, v32
 
-    if-ne v0, v1, :cond_18
+    if-ne v0, v1, :cond_19
 
-    .line 1486
+    .line 1485
     move-object/from16 v0, p0
 
     iget v5, v0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mActivePointerId:I
 
-    .line 1487
+    .line 1486
     .local v5, activePointerId:I
     move-object/from16 v0, p1
 
@@ -7188,7 +7166,7 @@
 
     move-result v23
 
-    .line 1488
+    .line 1487
     .restart local v23       #pointerIndex:I
     move-object/from16 v0, p1
 
@@ -7198,7 +7176,7 @@
 
     move-result v30
 
-    .line 1489
+    .line 1488
     .restart local v30       #x:F
     move-object/from16 v0, p0
 
@@ -7206,7 +7184,7 @@
 
     move-object/from16 v28, v0
 
-    .line 1490
+    .line 1489
     .local v28, velocityTracker:Landroid/view/VelocityTracker;
     const/16 v31, 0x3e8
 
@@ -7230,7 +7208,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/VelocityTracker;->computeCurrentVelocity(IF)V
 
-    .line 1491
+    .line 1490
     move-object/from16 v0, v28
 
     invoke-virtual {v0, v5}, Landroid/view/VelocityTracker;->getXVelocity(I)F
@@ -7243,7 +7221,7 @@
 
     move/from16 v29, v0
 
-    .line 1492
+    .line 1491
     .local v29, velocityX:I
     move-object/from16 v0, p0
 
@@ -7257,7 +7235,7 @@
 
     float-to-int v7, v0
 
-    .line 1493
+    .line 1492
     .local v7, deltaX:I
     move-object/from16 v0, p0
 
@@ -7281,7 +7259,7 @@
 
     move-result v21
 
-    .line 1494
+    .line 1493
     .local v21, pageWidth:I
     invoke-static {v7}, Ljava/lang/Math;->abs(I)I
 
@@ -7305,11 +7283,11 @@
 
     cmpl-float v31, v31, v32
 
-    if-lez v31, :cond_10
+    if-lez v31, :cond_11
 
     const/4 v14, 0x1
 
-    .line 1497
+    .line 1496
     .local v14, isSignificantMove:Z
     :goto_4
     move-object/from16 v0, p0
@@ -7346,7 +7324,7 @@
 
     iput v0, v1, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTotalMotionX:F
 
-    .line 1499
+    .line 1498
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTotalMotionX:F
@@ -7357,7 +7335,7 @@
 
     cmpl-float v31, v31, v32
 
-    if-lez v31, :cond_11
+    if-lez v31, :cond_12
 
     invoke-static/range {v29 .. v29}, Ljava/lang/Math;->abs(I)I
 
@@ -7373,16 +7351,16 @@
 
     move/from16 v1, v32
 
-    if-le v0, v1, :cond_11
+    if-le v0, v1, :cond_12
 
     const/4 v12, 0x1
 
-    .line 1505
+    .line 1504
     .local v12, isFling:Z
     :goto_5
     const/16 v25, 0x0
 
-    .line 1506
+    .line 1505
     .local v25, returnToOriginalPage:Z
     invoke-static {v7}, Ljava/lang/Math;->abs(I)I
 
@@ -7406,7 +7384,7 @@
 
     cmpl-float v31, v31, v32
 
-    if-lez v31, :cond_c
+    if-lez v31, :cond_d
 
     move/from16 v0, v29
 
@@ -7428,43 +7406,43 @@
 
     cmpl-float v31, v31, v32
 
-    if-eqz v31, :cond_c
+    if-eqz v31, :cond_d
 
-    if-eqz v12, :cond_c
+    if-eqz v12, :cond_d
 
-    .line 1508
+    .line 1507
     const/16 v25, 0x1
 
-    .line 1515
-    :cond_c
-    if-eqz v14, :cond_d
-
-    if-lez v7, :cond_d
-
-    if-eqz v12, :cond_e
-
+    .line 1514
     :cond_d
-    if-eqz v12, :cond_13
+    if-eqz v14, :cond_e
 
-    if-lez v29, :cond_13
+    if-lez v7, :cond_e
+
+    if-eqz v12, :cond_f
 
     :cond_e
+    if-eqz v12, :cond_14
+
+    if-lez v29, :cond_14
+
+    :cond_f
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mCurrentPage:I
 
     move/from16 v31, v0
 
-    if-lez v31, :cond_13
+    if-lez v31, :cond_14
 
-    .line 1517
-    if-eqz v25, :cond_12
+    .line 1516
+    if-eqz v25, :cond_13
 
     move-object/from16 v0, p0
 
     iget v9, v0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mCurrentPage:I
 
-    .line 1518
+    .line 1517
     .local v9, finalPage:I
     :goto_6
     move-object/from16 v0, p0
@@ -7473,7 +7451,7 @@
 
     invoke-virtual {v0, v9, v1}, Lcom/android/internal/policy/impl/keyguard/PagedView;->snapToPageWithVelocity(II)V
 
-    .line 1576
+    .line 1575
     .end local v5           #activePointerId:I
     .end local v7           #deltaX:I
     .end local v9           #finalPage:I
@@ -7485,7 +7463,7 @@
     .end local v28           #velocityTracker:Landroid/view/VelocityTracker;
     .end local v29           #velocityX:I
     .end local v30           #x:F
-    :cond_f
+    :cond_10
     :goto_7
     move-object/from16 v0, p0
 
@@ -7499,12 +7477,12 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/policy/impl/keyguard/PagedView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 1578
+    .line 1577
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->resetTouchState()V
 
     goto/16 :goto_1
 
-    .line 1494
+    .line 1493
     .restart local v5       #activePointerId:I
     .restart local v7       #deltaX:I
     .restart local v21       #pageWidth:I
@@ -7512,22 +7490,22 @@
     .restart local v28       #velocityTracker:Landroid/view/VelocityTracker;
     .restart local v29       #velocityX:I
     .restart local v30       #x:F
-    :cond_10
+    :cond_11
     const/4 v14, 0x0
 
     goto/16 :goto_4
 
-    .line 1499
+    .line 1498
     .restart local v14       #isSignificantMove:Z
-    :cond_11
+    :cond_12
     const/4 v12, 0x0
 
     goto :goto_5
 
-    .line 1517
+    .line 1516
     .restart local v12       #isFling:Z
     .restart local v25       #returnToOriginalPage:Z
-    :cond_12
+    :cond_13
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mCurrentPage:I
@@ -7538,20 +7516,20 @@
 
     goto :goto_6
 
-    .line 1519
-    :cond_13
-    if-eqz v14, :cond_14
-
-    if-gez v7, :cond_14
-
-    if-eqz v12, :cond_15
-
+    .line 1518
     :cond_14
-    if-eqz v12, :cond_17
+    if-eqz v14, :cond_15
 
-    if-gez v29, :cond_17
+    if-gez v7, :cond_15
+
+    if-eqz v12, :cond_16
 
     :cond_15
+    if-eqz v12, :cond_18
+
+    if-gez v29, :cond_18
+
+    :cond_16
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mCurrentPage:I
@@ -7568,16 +7546,16 @@
 
     move/from16 v1, v32
 
-    if-ge v0, v1, :cond_17
+    if-ge v0, v1, :cond_18
 
-    .line 1522
-    if-eqz v25, :cond_16
+    .line 1521
+    if-eqz v25, :cond_17
 
     move-object/from16 v0, p0
 
     iget v9, v0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mCurrentPage:I
 
-    .line 1523
+    .line 1522
     .restart local v9       #finalPage:I
     :goto_8
     move-object/from16 v0, p0
@@ -7588,9 +7566,9 @@
 
     goto :goto_7
 
-    .line 1522
+    .line 1521
     .end local v9           #finalPage:I
-    :cond_16
+    :cond_17
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mCurrentPage:I
@@ -7601,13 +7579,13 @@
 
     goto :goto_8
 
-    .line 1525
-    :cond_17
+    .line 1524
+    :cond_18
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->snapToDestination()V
 
     goto :goto_7
 
-    .line 1527
+    .line 1526
     .end local v5           #activePointerId:I
     .end local v7           #deltaX:I
     .end local v12           #isFling:Z
@@ -7618,7 +7596,7 @@
     .end local v28           #velocityTracker:Landroid/view/VelocityTracker;
     .end local v29           #velocityX:I
     .end local v30           #x:F
-    :cond_18
+    :cond_19
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTouchState:I
@@ -7631,9 +7609,9 @@
 
     move/from16 v1, v32
 
-    if-ne v0, v1, :cond_1a
+    if-ne v0, v1, :cond_1b
 
-    .line 1531
+    .line 1530
     const/16 v31, 0x0
 
     move-object/from16 v0, p0
@@ -7648,7 +7626,7 @@
 
     move-result v17
 
-    .line 1532
+    .line 1531
     .local v17, nextPage:I
     move-object/from16 v0, p0
 
@@ -7660,9 +7638,9 @@
 
     move/from16 v1, v31
 
-    if-eq v0, v1, :cond_19
+    if-eq v0, v1, :cond_1a
 
-    .line 1533
+    .line 1532
     move-object/from16 v0, p0
 
     move/from16 v1, v17
@@ -7671,15 +7649,15 @@
 
     goto/16 :goto_7
 
-    .line 1535
-    :cond_19
+    .line 1534
+    :cond_1a
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->snapToDestination()V
 
     goto/16 :goto_7
 
-    .line 1537
+    .line 1536
     .end local v17           #nextPage:I
-    :cond_1a
+    :cond_1b
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTouchState:I
@@ -7692,9 +7670,9 @@
 
     move/from16 v1, v32
 
-    if-ne v0, v1, :cond_1c
+    if-ne v0, v1, :cond_1d
 
-    .line 1541
+    .line 1540
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getChildCount()I
 
     move-result v31
@@ -7713,7 +7691,7 @@
 
     move-result v17
 
-    .line 1542
+    .line 1541
     .restart local v17       #nextPage:I
     move-object/from16 v0, p0
 
@@ -7725,9 +7703,9 @@
 
     move/from16 v1, v31
 
-    if-eq v0, v1, :cond_1b
+    if-eq v0, v1, :cond_1c
 
-    .line 1543
+    .line 1542
     move-object/from16 v0, p0
 
     move/from16 v1, v17
@@ -7736,15 +7714,15 @@
 
     goto/16 :goto_7
 
-    .line 1545
-    :cond_1b
+    .line 1544
+    :cond_1c
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->snapToDestination()V
 
     goto/16 :goto_7
 
-    .line 1547
+    .line 1546
     .end local v17           #nextPage:I
-    :cond_1c
+    :cond_1d
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTouchState:I
@@ -7757,9 +7735,9 @@
 
     move/from16 v1, v32
 
-    if-ne v0, v1, :cond_1e
+    if-ne v0, v1, :cond_1f
 
-    .line 1549
+    .line 1548
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v31
@@ -7770,7 +7748,7 @@
 
     iput v0, v1, Lcom/android/internal/policy/impl/keyguard/PagedView;->mLastMotionX:F
 
-    .line 1550
+    .line 1549
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v31
@@ -7781,7 +7759,7 @@
 
     iput v0, v1, Lcom/android/internal/policy/impl/keyguard/PagedView;->mLastMotionY:F
 
-    .line 1554
+    .line 1553
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mLastMotionX:F
@@ -7806,7 +7784,7 @@
 
     move-result-object v24
 
-    .line 1555
+    .line 1554
     .restart local v24       #pt:[F
     const/16 v31, 0x0
 
@@ -7818,7 +7796,7 @@
 
     iput v0, v1, Lcom/android/internal/policy/impl/keyguard/PagedView;->mParentDownMotionX:F
 
-    .line 1556
+    .line 1555
     const/16 v31, 0x1
 
     aget v31, v24, v31
@@ -7829,33 +7807,33 @@
 
     iput v0, v1, Lcom/android/internal/policy/impl/keyguard/PagedView;->mParentDownMotionY:F
 
-    .line 1557
+    .line 1556
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->updateDragViewTranslationDuringDrag()V
 
-    .line 1558
+    .line 1557
     const/4 v11, 0x0
 
-    .line 1561
+    .line 1560
     .local v11, handledFling:Z
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->isFlingingToDelete()Landroid/graphics/PointF;
 
     move-result-object v10
 
-    .line 1562
+    .line 1561
     .local v10, flingToDeleteVector:Landroid/graphics/PointF;
-    if-eqz v10, :cond_1d
+    if-eqz v10, :cond_1e
 
-    .line 1563
+    .line 1562
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v10}, Lcom/android/internal/policy/impl/keyguard/PagedView;->onFlingToDelete(Landroid/graphics/PointF;)V
 
-    .line 1564
+    .line 1563
     const/4 v11, 0x1
 
-    .line 1567
-    :cond_1d
-    if-nez v11, :cond_f
+    .line 1566
+    :cond_1e
+    if-nez v11, :cond_10
 
     move-object/from16 v0, p0
 
@@ -7891,23 +7869,23 @@
 
     move-result v31
 
-    if-eqz v31, :cond_f
+    if-eqz v31, :cond_10
 
-    .line 1569
+    .line 1568
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->onDropToDelete()V
 
     goto/16 :goto_7
 
-    .line 1572
+    .line 1571
     .end local v10           #flingToDeleteVector:Landroid/graphics/PointF;
     .end local v11           #handledFling:Z
     .end local v24           #pt:[F
-    :cond_1e
+    :cond_1f
     invoke-virtual/range {p0 .. p1}, Lcom/android/internal/policy/impl/keyguard/PagedView;->onUnhandledTap(Landroid/view/MotionEvent;)V
 
     goto/16 :goto_7
 
-    .line 1582
+    .line 1581
     :pswitch_4
     move-object/from16 v0, p0
 
@@ -7921,24 +7899,24 @@
 
     move/from16 v1, v32
 
-    if-ne v0, v1, :cond_1f
+    if-ne v0, v1, :cond_20
 
-    .line 1583
+    .line 1582
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->snapToDestination()V
 
-    .line 1585
-    :cond_1f
+    .line 1584
+    :cond_20
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->resetTouchState()V
 
     goto/16 :goto_1
 
-    .line 1589
+    .line 1588
     :pswitch_5
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/policy/impl/keyguard/PagedView;->onSecondaryPointerUp(Landroid/view/MotionEvent;)V
 
     goto/16 :goto_1
 
-    .line 1314
+    .line 1307
     nop
 
     :pswitch_data_0
@@ -7958,7 +7936,7 @@
     .parameter "ev"
 
     .prologue
-    .line 1609
+    .line 1607
     return-void
 .end method
 
@@ -7967,10 +7945,10 @@
     .parameter "amount"
 
     .prologue
-    .line 1290
+    .line 1283
     invoke-virtual {p0, p1}, Lcom/android/internal/policy/impl/keyguard/PagedView;->dampedOverScroll(F)V
 
-    .line 1291
+    .line 1284
     return-void
 .end method
 
@@ -8026,28 +8004,28 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 2540
+    .line 2537
     invoke-super {p0, p1, p2}, Landroid/view/ViewGroup;->performAccessibilityAction(ILandroid/os/Bundle;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 2557
+    .line 2554
     :goto_0
     return v0
 
-    .line 2543
+    .line 2540
     :cond_0
     sparse-switch p1, :sswitch_data_0
 
-    .line 2557
+    .line 2554
     :cond_1
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 2545
+    .line 2542
     :sswitch_0
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getCurrentPage()I
 
@@ -8061,12 +8039,12 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 2546
+    .line 2543
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->scrollRight()V
 
     goto :goto_0
 
-    .line 2551
+    .line 2548
     :sswitch_1
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getCurrentPage()I
 
@@ -8074,12 +8052,12 @@
 
     if-lez v1, :cond_1
 
-    .line 2552
+    .line 2549
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->scrollLeft()V
 
     goto :goto_0
 
-    .line 2543
+    .line 2540
     nop
 
     :sswitch_data_0
@@ -8095,10 +8073,10 @@
     .parameter "focused"
 
     .prologue
-    .line 1675
+    .line 1673
     invoke-super {p0, p1, p2}, Landroid/view/ViewGroup;->requestChildFocus(Landroid/view/View;Landroid/view/View;)V
 
-    .line 1676
+    .line 1674
     invoke-virtual {p0, p1}, Lcom/android/internal/policy/impl/keyguard/PagedView;->indexOfChild(Landroid/view/View;)I
 
     move-result v1
@@ -8107,7 +8085,7 @@
 
     move-result v0
 
-    .line 1677
+    .line 1675
     .local v0, page:I
     if-ltz v0, :cond_0
 
@@ -8123,10 +8101,10 @@
 
     if-nez v1, :cond_0
 
-    .line 1678
+    .line 1676
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->snapToPage(I)V
 
-    .line 1680
+    .line 1678
     :cond_0
     return-void
 .end method
@@ -8214,7 +8192,7 @@
     .locals 1
 
     .prologue
-    .line 1853
+    .line 1851
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mScroller:Landroid/widget/Scroller;
 
     invoke-virtual {v0}, Landroid/widget/Scroller;->isFinished()Z
@@ -8223,7 +8201,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1854
+    .line 1852
     iget v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mCurrentPage:I
 
     if-lez v0, :cond_0
@@ -8234,12 +8212,12 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->snapToPage(I)V
 
-    .line 1858
+    .line 1856
     :cond_0
     :goto_0
     return-void
 
-    .line 1856
+    .line 1854
     :cond_1
     iget v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mNextPage:I
 
@@ -8258,7 +8236,7 @@
     .locals 2
 
     .prologue
-    .line 1861
+    .line 1859
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mScroller:Landroid/widget/Scroller;
 
     invoke-virtual {v0}, Landroid/widget/Scroller;->isFinished()Z
@@ -8267,7 +8245,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1862
+    .line 1860
     iget v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mCurrentPage:I
 
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getChildCount()I
@@ -8284,12 +8262,12 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->snapToPage(I)V
 
-    .line 1866
+    .line 1864
     :cond_0
     :goto_0
     return-void
 
-    .line 1864
+    .line 1862
     :cond_1
     iget v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mNextPage:I
 
@@ -8601,7 +8579,7 @@
     .parameter "isHovering"
 
     .prologue
-    .line 2476
+    .line 2473
     return-void
 .end method
 
@@ -8748,25 +8726,25 @@
 
     const/4 v2, 0x1
 
-    .line 1934
+    .line 1932
     iput-boolean v2, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mShouldShowScrollIndicator:Z
 
-    .line 1935
+    .line 1933
     iput-boolean v2, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mShouldShowScrollIndicatorImmediately:Z
 
-    .line 1936
+    .line 1934
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getChildCount()I
 
     move-result v0
 
     if-gt v0, v2, :cond_1
 
-    .line 1954
+    .line 1952
     :cond_0
     :goto_0
     return-void
 
-    .line 1937
+    .line 1935
     :cond_1
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->isScrollingIndicatorEnabled()Z
 
@@ -8774,39 +8752,39 @@
 
     if-eqz v0, :cond_0
 
-    .line 1939
+    .line 1937
     iput-boolean v3, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mShouldShowScrollIndicator:Z
 
-    .line 1940
+    .line 1938
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getScrollingIndicator()Landroid/view/View;
 
-    .line 1941
+    .line 1939
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mScrollIndicator:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    .line 1943
+    .line 1941
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->updateScrollingIndicatorPosition()V
 
-    .line 1944
+    .line 1942
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mScrollIndicator:Landroid/view/View;
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1945
+    .line 1943
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->cancelScrollingIndicatorAnimations()V
 
-    .line 1946
+    .line 1944
     if-eqz p1, :cond_2
 
-    .line 1947
+    .line 1945
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mScrollIndicator:Landroid/view/View;
 
     invoke-virtual {v0, v4}, Landroid/view/View;->setAlpha(F)V
 
     goto :goto_0
 
-    .line 1949
+    .line 1947
     :cond_2
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mScrollIndicator:Landroid/view/View;
 
@@ -8822,14 +8800,14 @@
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mScrollIndicatorAnimator:Landroid/animation/ValueAnimator;
 
-    .line 1950
+    .line 1948
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mScrollIndicatorAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v1, 0x96
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 1951
+    .line 1949
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mScrollIndicatorAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
@@ -8841,7 +8819,7 @@
     .locals 2
 
     .prologue
-    .line 1736
+    .line 1734
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getPageNearestToCenterOfScreen()I
 
     move-result v0
@@ -8850,7 +8828,7 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/android/internal/policy/impl/keyguard/PagedView;->snapToPage(II)V
 
-    .line 1737
+    .line 1735
     return-void
 .end method
 
@@ -8859,12 +8837,12 @@
     .parameter "whichPage"
 
     .prologue
-    .line 1797
+    .line 1795
     const/16 v0, 0x2ee
 
     invoke-virtual {p0, p1, v0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->snapToPage(II)V
 
-    .line 1798
+    .line 1796
     return-void
 .end method
 
@@ -8874,12 +8852,12 @@
     .parameter "duration"
 
     .prologue
-    .line 1804
+    .line 1802
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, p2, v0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->snapToPage(IIZ)V
 
-    .line 1805
+    .line 1803
     return-void
 .end method
 
@@ -8890,12 +8868,12 @@
     .parameter "duration"
 
     .prologue
-    .line 1819
+    .line 1817
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, p2, p3, v0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->snapToPage(IIIZ)V
 
-    .line 1820
+    .line 1818
     return-void
 .end method
 
@@ -8909,18 +8887,18 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1822
+    .line 1820
     iput p1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mNextPage:I
 
-    .line 1823
+    .line 1821
     invoke-virtual {p0, p1}, Lcom/android/internal/policy/impl/keyguard/PagedView;->notifyPageSwitching(I)V
 
-    .line 1824
+    .line 1822
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getFocusedChild()Landroid/view/View;
 
     move-result-object v6
 
-    .line 1825
+    .line 1823
     .local v6, focusedChild:Landroid/view/View;
     if-eqz v6, :cond_0
 
@@ -8936,23 +8914,23 @@
 
     if-ne v6, v0, :cond_0
 
-    .line 1827
+    .line 1825
     invoke-virtual {v6}, Landroid/view/View;->clearFocus()V
 
-    .line 1830
+    .line 1828
     :cond_0
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->pageBeginMoving()V
 
-    .line 1831
+    .line 1829
     invoke-virtual {p0, p3}, Lcom/android/internal/policy/impl/keyguard/PagedView;->awakenScrollBars(I)Z
 
-    .line 1832
+    .line 1830
     if-eqz p4, :cond_4
 
-    .line 1833
+    .line 1831
     const/4 p3, 0x0
 
-    .line 1838
+    .line 1836
     :cond_1
     :goto_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mScroller:Landroid/widget/Scroller;
@@ -8967,7 +8945,7 @@
 
     invoke-virtual {v0}, Landroid/widget/Scroller;->abortAnimation()V
 
-    .line 1839
+    .line 1837
     :cond_2
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mScroller:Landroid/widget/Scroller;
 
@@ -8981,32 +8959,32 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/widget/Scroller;->startScroll(IIIII)V
 
-    .line 1841
+    .line 1839
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->notifyPageSwitched()V
 
-    .line 1844
+    .line 1842
     if-eqz p4, :cond_3
 
-    .line 1845
+    .line 1843
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->computeScroll()V
 
-    .line 1848
+    .line 1846
     :cond_3
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mForceScreenScrolled:Z
 
-    .line 1849
+    .line 1847
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->invalidate()V
 
-    .line 1850
+    .line 1848
     return-void
 
-    .line 1834
+    .line 1832
     :cond_4
     if-nez p3, :cond_1
 
-    .line 1835
+    .line 1833
     invoke-static {p2}, Ljava/lang/Math;->abs(I)I
 
     move-result p3
@@ -9021,7 +8999,7 @@
     .parameter "immediate"
 
     .prologue
-    .line 1807
+    .line 1805
     const/4 v3, 0x0
 
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getPageCount()I
@@ -9038,7 +9016,7 @@
 
     move-result p1
 
-    .line 1812
+    .line 1810
     invoke-virtual {p0, p1}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getChildOffset(I)I
 
     move-result v3
@@ -9049,19 +9027,19 @@
 
     sub-int v1, v3, v4
 
-    .line 1813
+    .line 1811
     .local v1, newX:I
     iget v2, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mUnboundedScrollX:I
 
-    .line 1814
+    .line 1812
     .local v2, sX:I
     sub-int v0, v1, v2
 
-    .line 1815
+    .line 1813
     .local v0, delta:I
     invoke-virtual {p0, p1, v0, p2, p3}, Lcom/android/internal/policy/impl/keyguard/PagedView;->snapToPage(IIIZ)V
 
-    .line 1816
+    .line 1814
     return-void
 .end method
 
@@ -9070,14 +9048,14 @@
     .parameter "whichPage"
 
     .prologue
-    .line 1800
+    .line 1798
     const/16 v0, 0x2ee
 
     const/4 v1, 0x1
 
     invoke-virtual {p0, p1, v0, v1}, Lcom/android/internal/policy/impl/keyguard/PagedView;->snapToPage(IIZ)V
 
-    .line 1801
+    .line 1799
     return-void
 .end method
 
@@ -9089,7 +9067,7 @@
     .prologue
     const/high16 v8, 0x3f80
 
-    .line 1760
+    .line 1758
     const/4 v6, 0x0
 
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getChildCount()I
@@ -9106,14 +9084,14 @@
 
     move-result p1
 
-    .line 1761
+    .line 1759
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getViewportWidth()I
 
     move-result v6
 
     div-int/lit8 v4, v6, 0x2
 
-    .line 1766
+    .line 1764
     .local v4, halfScreenSize:I
     invoke-virtual {p0, p1}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getChildOffset(I)I
 
@@ -9125,17 +9103,17 @@
 
     sub-int v5, v6, v7
 
-    .line 1767
+    .line 1765
     .local v5, newX:I
     iget v6, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mUnboundedScrollX:I
 
     sub-int v0, v5, v6
 
-    .line 1768
+    .line 1766
     .local v0, delta:I
     const/4 v3, 0x0
 
-    .line 1770
+    .line 1768
     .local v3, duration:I
     invoke-static {p2}, Ljava/lang/Math;->abs(I)I
 
@@ -9145,16 +9123,16 @@
 
     if-ge v6, v7, :cond_0
 
-    .line 1773
+    .line 1771
     const/16 v6, 0x2ee
 
     invoke-virtual {p0, p1, v6}, Lcom/android/internal/policy/impl/keyguard/PagedView;->snapToPage(II)V
 
-    .line 1794
+    .line 1792
     :goto_0
     return-void
 
-    .line 1781
+    .line 1779
     :cond_0
     invoke-static {v0}, Ljava/lang/Math;->abs(I)I
 
@@ -9174,7 +9152,7 @@
 
     move-result v2
 
-    .line 1782
+    .line 1780
     .local v2, distanceRatio:F
     int-to-float v6, v4
 
@@ -9188,20 +9166,20 @@
 
     add-float v1, v6, v7
 
-    .line 1785
+    .line 1783
     .local v1, distance:F
     invoke-static {p2}, Ljava/lang/Math;->abs(I)I
 
     move-result p2
 
-    .line 1786
+    .line 1784
     iget v6, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mMinSnapVelocity:I
 
     invoke-static {v6, p2}, Ljava/lang/Math;->max(II)I
 
     move-result p2
 
-    .line 1791
+    .line 1789
     const/high16 v6, 0x447a
 
     int-to-float v7, p2
@@ -9220,7 +9198,7 @@
 
     mul-int/lit8 v3, v6, 0x4
 
-    .line 1793
+    .line 1791
     invoke-virtual {p0, p1, v0, v3}, Lcom/android/internal/policy/impl/keyguard/PagedView;->snapToPage(III)V
 
     goto :goto_0
@@ -9234,18 +9212,18 @@
 
     const/4 v1, 0x1
 
-    .line 2147
+    .line 2145
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getPageNearestToCenterOfScreen()I
 
     move-result v0
 
-    .line 2148
+    .line 2146
     .local v0, dragViewIndex:I
     iget-object v3, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTempVisiblePagesRange:[I
 
     aput v2, v3, v2
 
-    .line 2149
+    .line 2147
     iget-object v3, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTempVisiblePagesRange:[I
 
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getPageCount()I
@@ -9256,15 +9234,15 @@
 
     aput v4, v3, v1
 
-    .line 2150
+    .line 2148
     iget-object v3, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTempVisiblePagesRange:[I
 
     invoke-virtual {p0, v1, v3}, Lcom/android/internal/policy/impl/keyguard/PagedView;->boundByReorderablePages(Z[I)V
 
-    .line 2151
+    .line 2149
     iput-boolean v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mReorderingStarted:Z
 
-    .line 2154
+    .line 2152
     iget-object v3, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mTempVisiblePagesRange:[I
 
     aget v3, v3, v2
@@ -9277,24 +9255,24 @@
 
     if-gt v0, v3, :cond_1
 
-    .line 2156
+    .line 2154
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->zoomOut()Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 2158
+    .line 2156
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
     iput-object v2, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mDragView:Landroid/view/View;
 
-    .line 2160
+    .line 2158
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->onStartReordering()V
 
-    .line 2164
+    .line 2162
     :cond_0
     :goto_0
     return v1
@@ -9407,7 +9385,7 @@
 
     const/high16 v6, 0x3f80
 
-    .line 2208
+    .line 2206
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mZoomInOutAnim:Landroid/animation/AnimatorSet;
 
     if-eqz v2, :cond_0
@@ -9420,12 +9398,12 @@
 
     if-eqz v2, :cond_0
 
-    .line 2209
+    .line 2207
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mZoomInOutAnim:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v2}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 2211
+    .line 2209
     :cond_0
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getScaleX()F
 
@@ -9443,7 +9421,7 @@
 
     if-gez v2, :cond_3
 
-    .line 2212
+    .line 2210
     :cond_1
     new-instance v2, Landroid/animation/AnimatorSet;
 
@@ -9451,7 +9429,7 @@
 
     iput-object v2, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mZoomInOutAnim:Landroid/animation/AnimatorSet;
 
-    .line 2213
+    .line 2211
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mZoomInOutAnim:Landroid/animation/AnimatorSet;
 
     iget v3, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->REORDERING_ZOOM_IN_OUT_DURATION:I
@@ -9460,7 +9438,7 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 2214
+    .line 2212
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mZoomInOutAnim:Landroid/animation/AnimatorSet;
 
     const/4 v3, 0x2
@@ -9493,7 +9471,7 @@
 
     invoke-virtual {v2, v3}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 2217
+    .line 2215
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mZoomInOutAnim:Landroid/animation/AnimatorSet;
 
     new-instance v2, Lcom/android/internal/policy/impl/keyguard/PagedView$8;
@@ -9502,23 +9480,23 @@
 
     invoke-virtual {v0, v2}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 2244
+    .line 2242
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mZoomInOutAnim:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
     move v0, v1
 
-    .line 2251
+    .line 2249
     :cond_2
     :goto_0
     return v0
 
-    .line 2247
+    .line 2245
     :cond_3
     if-eqz p1, :cond_2
 
-    .line 2248
+    .line 2246
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     goto :goto_0
@@ -9534,7 +9512,7 @@
 
     const/4 v1, 0x0
 
-    .line 2062
+    .line 2060
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mZoomInOutAnim:Landroid/animation/AnimatorSet;
 
     if-eqz v2, :cond_0
@@ -9547,12 +9525,12 @@
 
     if-eqz v2, :cond_0
 
-    .line 2063
+    .line 2061
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mZoomInOutAnim:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v2}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 2066
+    .line 2064
     :cond_0
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->getScaleX()F
 
@@ -9570,14 +9548,14 @@
 
     if-ltz v2, :cond_1
 
-    .line 2067
+    .line 2065
     new-instance v2, Landroid/animation/AnimatorSet;
 
     invoke-direct {v2}, Landroid/animation/AnimatorSet;-><init>()V
 
     iput-object v2, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mZoomInOutAnim:Landroid/animation/AnimatorSet;
 
-    .line 2068
+    .line 2066
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mZoomInOutAnim:Landroid/animation/AnimatorSet;
 
     iget v3, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->REORDERING_ZOOM_IN_OUT_DURATION:I
@@ -9586,7 +9564,7 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 2069
+    .line 2067
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mZoomInOutAnim:Landroid/animation/AnimatorSet;
 
     const/4 v3, 0x2
@@ -9623,7 +9601,7 @@
 
     invoke-virtual {v2, v3}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 2072
+    .line 2070
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mZoomInOutAnim:Landroid/animation/AnimatorSet;
 
     new-instance v2, Lcom/android/internal/policy/impl/keyguard/PagedView$5;
@@ -9632,12 +9610,12 @@
 
     invoke-virtual {v1, v2}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 2089
+    .line 2087
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView;->mZoomInOutAnim:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 2092
+    .line 2090
     :goto_0
     return v0
 

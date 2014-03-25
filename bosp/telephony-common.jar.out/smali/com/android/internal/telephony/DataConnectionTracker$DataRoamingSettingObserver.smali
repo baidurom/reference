@@ -25,13 +25,13 @@
     .parameter "handler"
 
     .prologue
-    .line 323
+    .line 577
     iput-object p1, p0, Lcom/android/internal/telephony/DataConnectionTracker$DataRoamingSettingObserver;->this$0:Lcom/android/internal/telephony/DataConnectionTracker;
 
-    .line 324
+    .line 578
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 325
+    .line 579
     return-void
 .end method
 
@@ -42,13 +42,13 @@
     .parameter "selfChange"
 
     .prologue
-    .line 341
+    .line 600
     iget-object v0, p0, Lcom/android/internal/telephony/DataConnectionTracker$DataRoamingSettingObserver;->this$0:Lcom/android/internal/telephony/DataConnectionTracker;
 
     #calls: Lcom/android/internal/telephony/DataConnectionTracker;->handleDataOnRoamingChange()V
-    invoke-static {v0}, Lcom/android/internal/telephony/DataConnectionTracker;->access$000(Lcom/android/internal/telephony/DataConnectionTracker;)V
+    invoke-static {v0}, Lcom/android/internal/telephony/DataConnectionTracker;->access$100(Lcom/android/internal/telephony/DataConnectionTracker;)V
 
-    .line 342
+    .line 601
     return-void
 .end method
 
@@ -57,14 +57,26 @@
     .parameter "context"
 
     .prologue
-    .line 328
+    .line 582
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 329
+    .line 584
     .local v0, resolver:Landroid/content/ContentResolver;
-    const-string v1, "data_roaming"
+    invoke-static {}, Lcom/android/internal/telephony/DataConnectionTracker;->access$000()[Ljava/lang/String;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/android/internal/telephony/DataConnectionTracker$DataRoamingSettingObserver;->this$0:Lcom/android/internal/telephony/DataConnectionTracker;
+
+    iget-object v2, v2, Lcom/android/internal/telephony/DataConnectionTracker;->mPhone:Lcom/android/internal/telephony/PhoneBase;
+
+    invoke-virtual {v2}, Lcom/android/internal/telephony/PhoneBase;->getMySimId()I
+
+    move-result v2
+
+    aget-object v1, v1, v2
 
     invoke-static {v1}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
@@ -74,7 +86,7 @@
 
     invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 331
+    .line 590
     return-void
 .end method
 
@@ -83,15 +95,15 @@
     .parameter "context"
 
     .prologue
-    .line 334
+    .line 593
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 335
+    .line 594
     .local v0, resolver:Landroid/content/ContentResolver;
     invoke-virtual {v0, p0}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 336
+    .line 595
     return-void
 .end method

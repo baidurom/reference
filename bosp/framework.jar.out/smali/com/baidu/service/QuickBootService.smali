@@ -574,7 +574,7 @@
 
     .line 200
     .local v0, am:Landroid/app/AlarmManager;
-    const/4 v5, 0x4
+    const/16 v5, 0xa
 
     invoke-virtual {v0, v5, v3, v4, v2}, Landroid/app/AlarmManager;->set(IJLandroid/app/PendingIntent;)V
 
@@ -792,7 +792,7 @@
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
     .line 465
-    const-string v1, "level"
+    const-string/jumbo v1, "level"
 
     iget v3, p0, Lcom/baidu/service/QuickBootService;->mBatteryLevel:I
 

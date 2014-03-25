@@ -14,6 +14,8 @@
 
 .field public static final APPWIDGET_SERVICE:Ljava/lang/String; = "appwidget"
 
+.field public static final AUDIOPROFILE_SERVICE:Ljava/lang/String; = "audioprofile"
+
 .field public static final AUDIO_SERVICE:Ljava/lang/String; = "audio"
 
 .field public static final BACKUP_SERVICE:Ljava/lang/String; = "backup"
@@ -72,6 +74,10 @@
 
 .field public static final MEDIA_ROUTER_SERVICE:Ljava/lang/String; = "media_router"
 
+.field public static final MESSAGE_MONITOR_SERVICE:Ljava/lang/String; = "msgmonitorservice"
+
+.field public static final MOBILE_SERVICE:Ljava/lang/String; = "mobile"
+
 .field public static final MODE_APPEND:I = 0x8000
 
 .field public static final MODE_ENABLE_WRITE_AHEAD_LOGGING:I = 0x8
@@ -90,6 +96,12 @@
     .end annotation
 .end field
 
+.field public static final MTK_AGPS_SERVICE:Ljava/lang/String; = "mtk-agps"
+
+.field public static final MTK_HDMI_SERVICE:Ljava/lang/String; = "mtkhdmi"
+
+.field public static final MTK_PERF_SERVICE:Ljava/lang/String; = "mtk-perfservice"
+
 .field public static final NETWORKMANAGEMENT_SERVICE:Ljava/lang/String; = "network_management"
 
 .field public static final NETWORK_POLICY_SERVICE:Ljava/lang/String; = "netpolicy"
@@ -105,6 +117,8 @@
 .field public static final POWER_SERVICE:Ljava/lang/String; = "power"
 
 .field public static final SCHEDULING_POLICY_SERVICE:Ljava/lang/String; = "scheduling_policy"
+
+.field public static final SEARCH_ENGINE_SERVICE:Ljava/lang/String; = "search_engine"
 
 .field public static final SEARCH_SERVICE:Ljava/lang/String; = "search"
 
@@ -149,7 +163,7 @@
 
     .prologue
     .line 57
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -420,7 +434,7 @@
     .locals 1
 
     .prologue
-    .line 2726
+    .line 2785
     const/4 v0, 0x0
 
     return v0

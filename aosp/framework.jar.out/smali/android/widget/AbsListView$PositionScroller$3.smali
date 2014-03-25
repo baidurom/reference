@@ -36,7 +36,7 @@
     .parameter
 
     .prologue
-    .line 4314
+    .line 4685
     iput-object p1, p0, Landroid/widget/AbsListView$PositionScroller$3;->this$1:Landroid/widget/AbsListView$PositionScroller;
 
     iput p2, p0, Landroid/widget/AbsListView$PositionScroller$3;->val$position:I
@@ -45,7 +45,7 @@
 
     iput p4, p0, Landroid/widget/AbsListView$PositionScroller$3;->val$duration:I
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -56,7 +56,7 @@
     .locals 4
 
     .prologue
-    .line 4316
+    .line 4687
     iget-object v0, p0, Landroid/widget/AbsListView$PositionScroller$3;->this$1:Landroid/widget/AbsListView$PositionScroller;
 
     iget v1, p0, Landroid/widget/AbsListView$PositionScroller$3;->val$position:I
@@ -67,6 +67,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/widget/AbsListView$PositionScroller;->startWithOffset(III)V
 
-    .line 4317
+    .line 4688
     return-void
 .end method

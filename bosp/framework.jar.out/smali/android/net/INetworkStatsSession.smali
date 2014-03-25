@@ -39,6 +39,14 @@
     .end annotation
 .end method
 
+.method public abstract getMobileTotalBytes(IJJ)J
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract getSummaryForAllUid(Landroid/net/NetworkTemplate;JJZ)Landroid/net/NetworkStats;
     .annotation system Ldalvik/annotation/Throws;
         value = {

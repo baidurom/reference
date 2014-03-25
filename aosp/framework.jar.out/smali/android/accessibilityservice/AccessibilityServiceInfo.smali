@@ -85,7 +85,7 @@
 
     .prologue
     .line 259
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 261
     return-void
@@ -115,9 +115,9 @@
     .local v12, serviceInfo:Landroid/content/pm/ServiceInfo;
     new-instance v14, Landroid/content/ComponentName;
 
-    iget-object v15, v12, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
+    iget-object v15, v12, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
 
-    iget-object v0, v12, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
+    iget-object v0, v12, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
 
     move-object/from16 v16, v0
 
@@ -246,7 +246,7 @@
 
     move-result-object v15
 
-    iget-object v0, v12, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
+    iget-object v0, v12, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
 
     move-object/from16 v16, v0
 
@@ -289,7 +289,7 @@
 
     .line 301
     .local v2, allAttributes:Landroid/util/AttributeSet;
-    iget-object v14, v12, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v14, v12, Landroid/content/pm/ServiceInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     invoke-virtual {v7, v14}, Landroid/content/pm/PackageManager;->getResourcesForApplication(Landroid/content/pm/ApplicationInfo;)Landroid/content/res/Resources;
 
@@ -1154,11 +1154,11 @@
 
     .line 434
     .local v1, serviceInfo:Landroid/content/pm/ServiceInfo;
-    iget-object v2, v1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
+    iget-object v2, v1, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
 
     iget v3, p0, Landroid/accessibilityservice/AccessibilityServiceInfo;->mDescriptionResId:I
 
-    iget-object v4, v1, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v4, v1, Landroid/content/pm/ServiceInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     invoke-virtual {p1, v2, v3, v4}, Landroid/content/pm/PackageManager;->getText(Ljava/lang/String;ILandroid/content/pm/ApplicationInfo;)Ljava/lang/CharSequence;
 

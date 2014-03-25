@@ -39,13 +39,13 @@
     .parameter "looper"
 
     .prologue
-    .line 1115
+    .line 1132
     iput-object p1, p0, Landroid/webkit/WebViewInputDispatcher$UiHandler;->this$0:Landroid/webkit/WebViewInputDispatcher;
 
-    .line 1116
+    .line 1133
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 1117
+    .line 1134
     return-void
 .end method
 
@@ -58,12 +58,12 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 1121
+    .line 1138
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1141
+    .line 1158
     new-instance v0, Ljava/lang/IllegalStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -90,65 +90,65 @@
 
     throw v0
 
-    .line 1123
+    .line 1140
     :pswitch_0
     iget-object v0, p0, Landroid/webkit/WebViewInputDispatcher$UiHandler;->this$0:Landroid/webkit/WebViewInputDispatcher;
 
     #calls: Landroid/webkit/WebViewInputDispatcher;->dispatchUiEvents(Z)V
-    invoke-static {v0, v1}, Landroid/webkit/WebViewInputDispatcher;->access$300(Landroid/webkit/WebViewInputDispatcher;Z)V
+    invoke-static {v0, v1}, Landroid/webkit/WebViewInputDispatcher;->access$400(Landroid/webkit/WebViewInputDispatcher;Z)V
 
-    .line 1143
+    .line 1160
     :goto_0
     return-void
 
-    .line 1126
+    .line 1143
     :pswitch_1
     iget-object v0, p0, Landroid/webkit/WebViewInputDispatcher$UiHandler;->this$0:Landroid/webkit/WebViewInputDispatcher;
 
     #calls: Landroid/webkit/WebViewInputDispatcher;->handleWebKitTimeout()V
-    invoke-static {v0}, Landroid/webkit/WebViewInputDispatcher;->access$400(Landroid/webkit/WebViewInputDispatcher;)V
-
-    goto :goto_0
-
-    .line 1129
-    :pswitch_2
-    iget-object v0, p0, Landroid/webkit/WebViewInputDispatcher$UiHandler;->this$0:Landroid/webkit/WebViewInputDispatcher;
-
-    #calls: Landroid/webkit/WebViewInputDispatcher;->postLongPress()V
     invoke-static {v0}, Landroid/webkit/WebViewInputDispatcher;->access$500(Landroid/webkit/WebViewInputDispatcher;)V
 
     goto :goto_0
 
-    .line 1132
-    :pswitch_3
+    .line 1146
+    :pswitch_2
     iget-object v0, p0, Landroid/webkit/WebViewInputDispatcher$UiHandler;->this$0:Landroid/webkit/WebViewInputDispatcher;
 
-    #calls: Landroid/webkit/WebViewInputDispatcher;->postClick()V
+    #calls: Landroid/webkit/WebViewInputDispatcher;->postLongPress()V
     invoke-static {v0}, Landroid/webkit/WebViewInputDispatcher;->access$600(Landroid/webkit/WebViewInputDispatcher;)V
 
     goto :goto_0
 
-    .line 1135
+    .line 1149
+    :pswitch_3
+    iget-object v0, p0, Landroid/webkit/WebViewInputDispatcher$UiHandler;->this$0:Landroid/webkit/WebViewInputDispatcher;
+
+    #calls: Landroid/webkit/WebViewInputDispatcher;->postClick()V
+    invoke-static {v0}, Landroid/webkit/WebViewInputDispatcher;->access$700(Landroid/webkit/WebViewInputDispatcher;)V
+
+    goto :goto_0
+
+    .line 1152
     :pswitch_4
     iget-object v0, p0, Landroid/webkit/WebViewInputDispatcher$UiHandler;->this$0:Landroid/webkit/WebViewInputDispatcher;
 
     #calls: Landroid/webkit/WebViewInputDispatcher;->postShowTapHighlight(Z)V
-    invoke-static {v0, v1}, Landroid/webkit/WebViewInputDispatcher;->access$700(Landroid/webkit/WebViewInputDispatcher;Z)V
+    invoke-static {v0, v1}, Landroid/webkit/WebViewInputDispatcher;->access$800(Landroid/webkit/WebViewInputDispatcher;Z)V
 
     goto :goto_0
 
-    .line 1138
+    .line 1155
     :pswitch_5
     iget-object v0, p0, Landroid/webkit/WebViewInputDispatcher$UiHandler;->this$0:Landroid/webkit/WebViewInputDispatcher;
 
     const/4 v1, 0x0
 
     #calls: Landroid/webkit/WebViewInputDispatcher;->postShowTapHighlight(Z)V
-    invoke-static {v0, v1}, Landroid/webkit/WebViewInputDispatcher;->access$700(Landroid/webkit/WebViewInputDispatcher;Z)V
+    invoke-static {v0, v1}, Landroid/webkit/WebViewInputDispatcher;->access$800(Landroid/webkit/WebViewInputDispatcher;Z)V
 
     goto :goto_0
 
-    .line 1121
+    .line 1138
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

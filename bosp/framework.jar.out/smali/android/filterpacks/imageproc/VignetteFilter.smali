@@ -165,7 +165,7 @@
     .line 107
     iget-object v2, p0, Landroid/filterpacks/imageproc/VignetteFilter;->mProgram:Landroid/filterfw/core/Program;
 
-    const-string v3, "inv_max_dist"
+    const-string/jumbo v3, "inv_max_dist"
 
     div-float v4, v6, v0
 

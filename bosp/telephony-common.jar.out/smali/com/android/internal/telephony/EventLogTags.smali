@@ -50,10 +50,6 @@
 
 .field public static final PDP_SETUP_FAIL:I = 0xc3b9
 
-.field public static final SMS_DENIED_BY_USER:I = 0xc3cd
-
-.field public static final SMS_SENT_BY_USER:I = 0xc3d0
-
 
 # direct methods
 .method private constructor <init>()V
@@ -71,12 +67,12 @@
     .parameter "ipAddress"
 
     .prologue
-    .line 157
+    .line 151
     const v0, 0xc3c5
 
     invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(ILjava/lang/String;)I
 
-    .line 158
+    .line 152
     return-void
 .end method
 
@@ -87,7 +83,7 @@
     .parameter "networkType"
 
     .prologue
-    .line 113
+    .line 107
     const v0, 0xc3ba
 
     const/4 v1, 0x3
@@ -120,7 +116,7 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 114
+    .line 108
     return-void
 .end method
 
@@ -130,7 +126,7 @@
     .parameter "networkType"
 
     .prologue
-    .line 133
+    .line 127
     const v0, 0xc3bf
 
     const/4 v1, 0x2
@@ -155,7 +151,7 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 134
+    .line 128
     return-void
 .end method
 
@@ -166,7 +162,7 @@
     .parameter "networkType"
 
     .prologue
-    .line 129
+    .line 123
     const v0, 0xc3be
 
     const/4 v1, 0x3
@@ -199,7 +195,7 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 130
+    .line 124
     return-void
 .end method
 
@@ -209,7 +205,7 @@
     .parameter "newstate"
 
     .prologue
-    .line 149
+    .line 143
     const v0, 0xc3c3
 
     const/4 v1, 0x2
@@ -226,7 +222,7 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 150
+    .line 144
     return-void
 .end method
 
@@ -238,7 +234,7 @@
     .parameter "newdatastate"
 
     .prologue
-    .line 153
+    .line 147
     const v0, 0xc3c4
 
     const/4 v1, 0x4
@@ -279,7 +275,7 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 154
+    .line 148
     return-void
 .end method
 
@@ -289,7 +285,7 @@
     .parameter "cid"
 
     .prologue
-    .line 117
+    .line 111
     const v0, 0xc3bb
 
     const/4 v1, 0x2
@@ -314,7 +310,7 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 118
+    .line 112
     return-void
 .end method
 
@@ -324,7 +320,7 @@
     .parameter "enable"
 
     .prologue
-    .line 121
+    .line 115
     const v0, 0xc3bc
 
     const/4 v1, 0x2
@@ -345,7 +341,7 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 122
+    .line 116
     return-void
 .end method
 
@@ -354,12 +350,12 @@
     .parameter "outPacketCount"
 
     .prologue
-    .line 165
+    .line 159
     const v0, 0xc3c7
 
     invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(II)I
 
-    .line 166
+    .line 160
     return-void
 .end method
 
@@ -368,12 +364,12 @@
     .parameter "outPacketCount"
 
     .prologue
-    .line 161
+    .line 155
     const v0, 0xc3c6
 
     invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(II)I
 
-    .line 162
+    .line 156
     return-void
 .end method
 
@@ -382,12 +378,12 @@
     .parameter "outPacketCount"
 
     .prologue
-    .line 173
+    .line 167
     const v0, 0xc3c9
 
     invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(II)I
 
-    .line 174
+    .line 168
     return-void
 .end method
 
@@ -396,12 +392,12 @@
     .parameter "outPacketCount"
 
     .prologue
-    .line 177
+    .line 171
     const v0, 0xc3ca
 
     invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(II)I
 
-    .line 178
+    .line 172
     return-void
 .end method
 
@@ -410,12 +406,12 @@
     .parameter "outPacketCount"
 
     .prologue
-    .line 169
+    .line 163
     const v0, 0xc3c8
 
     invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(II)I
 
-    .line 170
+    .line 164
     return-void
 .end method
 
@@ -425,7 +421,7 @@
     .parameter "newstate"
 
     .prologue
-    .line 141
+    .line 135
     const v0, 0xc3c1
 
     const/4 v1, 0x2
@@ -442,7 +438,7 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 142
+    .line 136
     return-void
 .end method
 
@@ -453,7 +449,7 @@
     .parameter "networkTo"
 
     .prologue
-    .line 137
+    .line 131
     const v0, 0xc3c0
 
     const/4 v1, 0x3
@@ -486,7 +482,7 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 138
+    .line 132
     return-void
 .end method
 
@@ -498,7 +494,7 @@
     .parameter "newgprsstate"
 
     .prologue
-    .line 145
+    .line 139
     const v0, 0xc3c2
 
     const/4 v1, 0x4
@@ -539,7 +535,7 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 146
+    .line 140
     return-void
 .end method
 
@@ -548,12 +544,12 @@
     .parameter "dnsAddress"
 
     .prologue
-    .line 89
+    .line 83
     const v0, 0xc3b4
 
     invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(ILjava/lang/String;)I
 
-    .line 90
+    .line 84
     return-void
 .end method
 
@@ -562,12 +558,12 @@
     .parameter "outPacketCount"
 
     .prologue
-    .line 101
+    .line 95
     const v0, 0xc3b7
 
     invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(II)I
 
-    .line 102
+    .line 96
     return-void
 .end method
 
@@ -577,7 +573,7 @@
     .parameter "networkType"
 
     .prologue
-    .line 125
+    .line 119
     const v0, 0xc3bd
 
     const/4 v1, 0x2
@@ -602,7 +598,7 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 126
+    .line 120
     return-void
 .end method
 
@@ -611,12 +607,12 @@
     .parameter "outPacketCount"
 
     .prologue
-    .line 97
+    .line 91
     const v0, 0xc3b6
 
     invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(II)I
 
-    .line 98
+    .line 92
     return-void
 .end method
 
@@ -625,12 +621,12 @@
     .parameter "outPacketCount"
 
     .prologue
-    .line 93
+    .line 87
     const v0, 0xc3b5
 
     invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(II)I
 
-    .line 94
+    .line 88
     return-void
 .end method
 
@@ -639,12 +635,12 @@
     .parameter "outPacketCount"
 
     .prologue
-    .line 105
+    .line 99
     const v0, 0xc3b8
 
     invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(II)I
 
-    .line 106
+    .line 100
     return-void
 .end method
 
@@ -655,7 +651,7 @@
     .parameter "networkType"
 
     .prologue
-    .line 109
+    .line 103
     const v0, 0xc3b9
 
     const/4 v1, 0x3
@@ -688,34 +684,6 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 110
-    return-void
-.end method
-
-.method public static writeSmsDeniedByUser(Ljava/lang/String;)V
-    .locals 1
-    .parameter "appSignature"
-
-    .prologue
-    .line 181
-    const v0, 0xc3cd
-
-    invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(ILjava/lang/String;)I
-
-    .line 182
-    return-void
-.end method
-
-.method public static writeSmsSentByUser(Ljava/lang/String;)V
-    .locals 1
-    .parameter "appSignature"
-
-    .prologue
-    .line 185
-    const v0, 0xc3d0
-
-    invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(ILjava/lang/String;)I
-
-    .line 186
+    .line 104
     return-void
 .end method

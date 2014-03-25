@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 243
+    .line 422
     iput-object p1, p0, Lcom/android/internal/telephony/UiccCard$1;->this$0:Lcom/android/internal/telephony/UiccCard;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -43,7 +43,7 @@
     .parameter "which"
 
     .prologue
-    .line 246
+    .line 425
     iget-object v1, p0, Lcom/android/internal/telephony/UiccCard$1;->this$0:Lcom/android/internal/telephony/UiccCard;
 
     #getter for: Lcom/android/internal/telephony/UiccCard;->mLock:Ljava/lang/Object;
@@ -53,12 +53,12 @@
 
     monitor-enter v2
 
-    .line 247
+    .line 426
     const/4 v1, -0x1
 
     if-ne p2, v1, :cond_0
 
-    .line 248
+    .line 427
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/telephony/UiccCard$1;->this$0:Lcom/android/internal/telephony/UiccCard;
 
@@ -67,7 +67,7 @@
     #calls: Lcom/android/internal/telephony/UiccCard;->log(Ljava/lang/String;)V
     invoke-static {v1, v3}, Lcom/android/internal/telephony/UiccCard;->access$100(Lcom/android/internal/telephony/UiccCard;Ljava/lang/String;)V
 
-    .line 249
+    .line 428
     iget-object v1, p0, Lcom/android/internal/telephony/UiccCard$1;->this$0:Lcom/android/internal/telephony/UiccCard;
 
     #getter for: Lcom/android/internal/telephony/UiccCard;->mContext:Landroid/content/Context;
@@ -83,21 +83,21 @@
 
     check-cast v0, Landroid/os/PowerManager;
 
-    .line 251
+    .line 430
     .local v0, pm:Landroid/os/PowerManager;
     const-string v1, "SIM is added."
 
     invoke-virtual {v0, v1}, Landroid/os/PowerManager;->reboot(Ljava/lang/String;)V
 
-    .line 253
+    .line 432
     .end local v0           #pm:Landroid/os/PowerManager;
     :cond_0
     monitor-exit v2
 
-    .line 254
+    .line 433
     return-void
 
-    .line 253
+    .line 432
     :catchall_0
     move-exception v1
 

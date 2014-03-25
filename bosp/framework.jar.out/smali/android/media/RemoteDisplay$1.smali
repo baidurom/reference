@@ -39,7 +39,7 @@
     .parameter
 
     .prologue
-    .line 117
+    .line 169
     iput-object p1, p0, Landroid/media/RemoteDisplay$1;->this$0:Landroid/media/RemoteDisplay;
 
     iput-object p2, p0, Landroid/media/RemoteDisplay$1;->val$surface:Landroid/view/Surface;
@@ -50,7 +50,7 @@
 
     iput p5, p0, Landroid/media/RemoteDisplay$1;->val$flags:I
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -61,7 +61,7 @@
     .locals 5
 
     .prologue
-    .line 120
+    .line 172
     iget-object v0, p0, Landroid/media/RemoteDisplay$1;->this$0:Landroid/media/RemoteDisplay;
 
     #getter for: Landroid/media/RemoteDisplay;->mListener:Landroid/media/RemoteDisplay$Listener;
@@ -79,6 +79,6 @@
 
     invoke-interface {v0, v1, v2, v3, v4}, Landroid/media/RemoteDisplay$Listener;->onDisplayConnected(Landroid/view/Surface;III)V
 
-    .line 121
+    .line 173
     return-void
 .end method

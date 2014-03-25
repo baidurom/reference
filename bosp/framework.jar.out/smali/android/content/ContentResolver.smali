@@ -99,20 +99,20 @@
     .parameter "context"
 
     .prologue
-    .line 185
+    .line 186
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 183
+    .line 184
     new-instance v0, Ljava/util/Random;
 
     invoke-direct {v0}, Ljava/util/Random;-><init>()V
 
     iput-object v0, p0, Landroid/content/ContentResolver;->mRandom:Ljava/util/Random;
 
-    .line 186
+    .line 187
     iput-object p1, p0, Landroid/content/ContentResolver;->mContext:Landroid/content/Context;
 
-    .line 187
+    .line 188
     return-void
 .end method
 
@@ -126,13 +126,13 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1500
+    .line 1528
     invoke-static {p2}, Landroid/content/ContentResolver;->validateSyncExtrasBundle(Landroid/os/Bundle;)V
 
-    .line 1501
+    .line 1529
     if-nez p0, :cond_0
 
-    .line 1502
+    .line 1530
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "account must not be null"
@@ -141,11 +141,11 @@
 
     throw v0
 
-    .line 1504
+    .line 1532
     :cond_0
     if-nez p1, :cond_1
 
-    .line 1505
+    .line 1533
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "authority must not be null"
@@ -154,7 +154,7 @@
 
     throw v0
 
-    .line 1507
+    .line 1535
     :cond_1
     const-string v0, "force"
 
@@ -188,7 +188,7 @@
 
     if-nez v0, :cond_2
 
-    const-string v0, "initialize"
+    const-string/jumbo v0, "initialize"
 
     invoke-virtual {p2, v0, v1}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
 
@@ -212,7 +212,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 1514
+    .line 1542
     :cond_2
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -222,7 +222,7 @@
 
     throw v0
 
-    .line 1517
+    .line 1545
     :cond_3
     :try_start_0
     invoke-static {}, Landroid/content/ContentResolver;->getContentService()Landroid/content/IContentService;
@@ -241,11 +241,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1522
+    .line 1550
     :goto_0
     return-void
 
-    .line 1518
+    .line 1546
     :catch_0
     move-exception v0
 
@@ -258,10 +258,10 @@
     .parameter "callback"
 
     .prologue
-    .line 1740
+    .line 1768
     if-nez p1, :cond_0
 
-    .line 1741
+    .line 1769
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v3, "you passed in a null callback"
@@ -270,14 +270,14 @@
 
     throw v2
 
-    .line 1744
+    .line 1772
     :cond_0
     :try_start_0
     new-instance v1, Landroid/content/ContentResolver$1;
 
     invoke-direct {v1, p1}, Landroid/content/ContentResolver$1;-><init>(Landroid/content/SyncStatusObserver;)V
 
-    .line 1749
+    .line 1777
     .local v1, observer:Landroid/content/ISyncStatusObserver$Stub;
     invoke-static {}, Landroid/content/ContentResolver;->getContentService()Landroid/content/IContentService;
 
@@ -287,15 +287,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1750
+    .line 1778
     return-object v1
 
-    .line 1751
+    .line 1779
     .end local v1           #observer:Landroid/content/ISyncStatusObserver$Stub;
     :catch_0
     move-exception v0
 
-    .line 1752
+    .line 1780
     .local v0, e:Landroid/os/RemoteException;
     new-instance v2, Ljava/lang/RuntimeException;
 
@@ -312,7 +312,7 @@
     .parameter "authority"
 
     .prologue
-    .line 1419
+    .line 1447
     :try_start_0
     invoke-static {}, Landroid/content/ContentResolver;->getContentService()Landroid/content/IContentService;
 
@@ -322,11 +322,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1422
+    .line 1450
     :goto_0
     return-void
 
-    .line 1420
+    .line 1448
     :catch_0
     move-exception v0
 
@@ -337,20 +337,20 @@
     .locals 2
 
     .prologue
-    .line 1919
+    .line 1950
     sget-object v1, Landroid/content/ContentResolver;->sContentService:Landroid/content/IContentService;
 
     if-eqz v1, :cond_0
 
-    .line 1920
+    .line 1951
     sget-object v1, Landroid/content/ContentResolver;->sContentService:Landroid/content/IContentService;
 
-    .line 1926
+    .line 1957
     .local v0, b:Landroid/os/IBinder;
     :goto_0
     return-object v1
 
-    .line 1922
+    .line 1953
     .end local v0           #b:Landroid/os/IBinder;
     :cond_0
     const-string v1, "content"
@@ -359,7 +359,7 @@
 
     move-result-object v0
 
-    .line 1924
+    .line 1955
     .restart local v0       #b:Landroid/os/IBinder;
     invoke-static {v0}, Landroid/content/IContentService$Stub;->asInterface(Landroid/os/IBinder;)Landroid/content/IContentService;
 
@@ -367,7 +367,7 @@
 
     sput-object v1, Landroid/content/ContentResolver;->sContentService:Landroid/content/IContentService;
 
-    .line 1926
+    .line 1957
     sget-object v1, Landroid/content/ContentResolver;->sContentService:Landroid/content/IContentService;
 
     goto :goto_0
@@ -379,7 +379,7 @@
     .end annotation
 
     .prologue
-    .line 1667
+    .line 1695
     :try_start_0
     invoke-static {}, Landroid/content/ContentResolver;->getContentService()Landroid/content/IContentService;
 
@@ -389,7 +389,7 @@
 
     move-result-object v1
 
-    .line 1668
+    .line 1696
     .local v1, syncs:Ljava/util/List;,"Ljava/util/List<Landroid/content/SyncInfo;>;"
     invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
 
@@ -397,10 +397,10 @@
 
     if-eqz v2, :cond_0
 
-    .line 1669
+    .line 1697
     const/4 v2, 0x0
 
-    .line 1671
+    .line 1699
     :goto_0
     return-object v2
 
@@ -417,11 +417,11 @@
 
     goto :goto_0
 
-    .line 1672
+    .line 1700
     :catch_0
     move-exception v0
 
-    .line 1673
+    .line 1701
     .local v0, e:Landroid/os/RemoteException;
     new-instance v2, Ljava/lang/RuntimeException;
 
@@ -445,7 +445,7 @@
     .end annotation
 
     .prologue
-    .line 1688
+    .line 1716
     :try_start_0
     invoke-static {}, Landroid/content/ContentResolver;->getContentService()Landroid/content/IContentService;
 
@@ -459,11 +459,11 @@
 
     return-object v1
 
-    .line 1689
+    .line 1717
     :catch_0
     move-exception v0
 
-    .line 1690
+    .line 1718
     .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -480,7 +480,7 @@
     .parameter "authority"
 
     .prologue
-    .line 1580
+    .line 1608
     :try_start_0
     invoke-static {}, Landroid/content/ContentResolver;->getContentService()Landroid/content/IContentService;
 
@@ -494,11 +494,11 @@
 
     return v1
 
-    .line 1581
+    .line 1609
     :catch_0
     move-exception v0
 
-    .line 1582
+    .line 1610
     .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -513,7 +513,7 @@
     .locals 3
 
     .prologue
-    .line 1611
+    .line 1639
     :try_start_0
     invoke-static {}, Landroid/content/ContentResolver;->getContentService()Landroid/content/IContentService;
 
@@ -527,11 +527,11 @@
 
     return v1
 
-    .line 1612
+    .line 1640
     :catch_0
     move-exception v0
 
-    .line 1613
+    .line 1641
     .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -560,10 +560,10 @@
     .end annotation
 
     .prologue
-    .line 1559
+    .line 1587
     if-nez p0, :cond_0
 
-    .line 1560
+    .line 1588
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string v2, "account must not be null"
@@ -572,11 +572,11 @@
 
     throw v1
 
-    .line 1562
+    .line 1590
     :cond_0
     if-nez p1, :cond_1
 
-    .line 1563
+    .line 1591
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string v2, "authority must not be null"
@@ -585,7 +585,7 @@
 
     throw v1
 
-    .line 1566
+    .line 1594
     :cond_1
     :try_start_0
     invoke-static {}, Landroid/content/ContentResolver;->getContentService()Landroid/content/IContentService;
@@ -600,11 +600,11 @@
 
     return-object v1
 
-    .line 1567
+    .line 1595
     :catch_0
     move-exception v0
 
-    .line 1568
+    .line 1596
     .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -619,7 +619,7 @@
     .locals 3
 
     .prologue
-    .line 1430
+    .line 1458
     :try_start_0
     invoke-static {}, Landroid/content/ContentResolver;->getContentService()Landroid/content/IContentService;
 
@@ -633,11 +633,11 @@
 
     return-object v1
 
-    .line 1431
+    .line 1459
     :catch_0
     move-exception v0
 
-    .line 1432
+    .line 1460
     .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -654,7 +654,7 @@
     .parameter "authority"
 
     .prologue
-    .line 1447
+    .line 1475
     :try_start_0
     invoke-static {}, Landroid/content/ContentResolver;->getContentService()Landroid/content/IContentService;
 
@@ -668,11 +668,11 @@
 
     return v1
 
-    .line 1448
+    .line 1476
     :catch_0
     move-exception v0
 
-    .line 1449
+    .line 1477
     .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -689,7 +689,7 @@
     .parameter "authority"
 
     .prologue
-    .line 1703
+    .line 1731
     :try_start_0
     invoke-static {}, Landroid/content/ContentResolver;->getContentService()Landroid/content/IContentService;
 
@@ -703,11 +703,11 @@
 
     return-object v1
 
-    .line 1704
+    .line 1732
     :catch_0
     move-exception v0
 
-    .line 1705
+    .line 1733
     .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -724,7 +724,7 @@
     .parameter "authority"
 
     .prologue
-    .line 1645
+    .line 1673
     :try_start_0
     invoke-static {}, Landroid/content/ContentResolver;->getContentService()Landroid/content/IContentService;
 
@@ -738,11 +738,11 @@
 
     return v1
 
-    .line 1646
+    .line 1674
     :catch_0
     move-exception v0
 
-    .line 1647
+    .line 1675
     .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -759,7 +759,7 @@
     .parameter "authority"
 
     .prologue
-    .line 1719
+    .line 1747
     :try_start_0
     invoke-static {}, Landroid/content/ContentResolver;->getContentService()Landroid/content/IContentService;
 
@@ -773,11 +773,11 @@
 
     return v1
 
-    .line 1720
+    .line 1748
     :catch_0
     move-exception v0
 
-    .line 1721
+    .line 1749
     .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -799,21 +799,21 @@
     .prologue
     const/16 v7, 0x64
 
-    .line 1787
+    .line 1815
     invoke-direct {p0, p1, p2}, Landroid/content/ContentResolver;->samplePercentForDuration(J)I
 
     move-result v3
 
-    .line 1788
+    .line 1816
     .local v3, samplePercent:I
     if-ge v3, v7, :cond_1
 
-    .line 1789
+    .line 1817
     iget-object v5, p0, Landroid/content/ContentResolver;->mRandom:Ljava/util/Random;
 
     monitor-enter v5
 
-    .line 1790
+    .line 1818
     :try_start_0
     iget-object v4, p0, Landroid/content/ContentResolver;->mRandom:Ljava/util/Random;
 
@@ -825,16 +825,16 @@
 
     if-lt v4, v3, :cond_0
 
-    .line 1791
+    .line 1819
     monitor-exit v5
 
-    .line 1822
+    .line 1850
     .end local p5
     .end local p6
     :goto_0
     return-void
 
-    .line 1793
+    .line 1821
     .restart local p5
     .restart local p6
     :cond_0
@@ -842,17 +842,17 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1796
+    .line 1824
     :cond_1
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2, v7}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 1797
+    .line 1825
     .local v2, projectionBuffer:Ljava/lang/StringBuilder;
     if-eqz p4, :cond_3
 
-    .line 1798
+    .line 1826
     const/4 v1, 0x0
 
     .local v1, i:I
@@ -861,25 +861,25 @@
 
     if-ge v1, v4, :cond_3
 
-    .line 1803
+    .line 1831
     if-eqz v1, :cond_2
 
     const/16 v4, 0x2f
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 1804
+    .line 1832
     :cond_2
     aget-object v4, p4, v1
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1798
+    .line 1826
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 1793
+    .line 1821
     .end local v1           #i:I
     .end local v2           #projectionBuffer:Ljava/lang/StringBuilder;
     :catchall_0
@@ -892,14 +892,14 @@
 
     throw v4
 
-    .line 1811
+    .line 1839
     .restart local v2       #projectionBuffer:Ljava/lang/StringBuilder;
     :cond_3
     invoke-static {}, Landroid/app/AppGlobals;->getInitialPackage()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1813
+    .line 1841
     .local v0, blockingPackage:Ljava/lang/String;
     const v4, 0xcb22
 
@@ -998,21 +998,21 @@
     .prologue
     const/16 v2, 0x64
 
-    .line 1826
+    .line 1854
     invoke-direct {p0, p1, p2}, Landroid/content/ContentResolver;->samplePercentForDuration(J)I
 
     move-result v1
 
-    .line 1827
+    .line 1855
     .local v1, samplePercent:I
     if-ge v1, v2, :cond_1
 
-    .line 1828
+    .line 1856
     iget-object v3, p0, Landroid/content/ContentResolver;->mRandom:Ljava/util/Random;
 
     monitor-enter v3
 
-    .line 1829
+    .line 1857
     :try_start_0
     iget-object v2, p0, Landroid/content/ContentResolver;->mRandom:Ljava/util/Random;
 
@@ -1024,28 +1024,28 @@
 
     if-lt v2, v1, :cond_0
 
-    .line 1830
+    .line 1858
     monitor-exit v3
 
-    .line 1843
+    .line 1871
     .end local p5
     :goto_0
     return-void
 
-    .line 1832
+    .line 1860
     .restart local p5
     :cond_0
     monitor-exit v3
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1834
+    .line 1862
     :cond_1
     invoke-static {}, Landroid/app/AppGlobals;->getInitialPackage()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1835
+    .line 1863
     .local v0, blockingPackage:Ljava/lang/String;
     const v2, 0xcb23
 
@@ -1101,7 +1101,7 @@
 
     goto :goto_0
 
-    .line 1832
+    .line 1860
     .restart local p5
     :catchall_0
     move-exception v2
@@ -1113,7 +1113,7 @@
 
     throw v2
 
-    .line 1835
+    .line 1863
     .restart local v0       #blockingPackage:Ljava/lang/String;
     :cond_2
     const-string p5, ""
@@ -1138,7 +1138,7 @@
     .end annotation
 
     .prologue
-    .line 824
+    .line 852
     const-string/jumbo v1, "r"
 
     invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1147,15 +1147,15 @@
 
     if-eqz v1, :cond_0
 
-    .line 825
+    .line 853
     const/high16 v0, 0x1000
 
-    .line 845
+    .line 873
     .local v0, modeBits:I
     :goto_0
     return v0
 
-    .line 826
+    .line 854
     .end local v0           #modeBits:I
     :cond_0
     const-string/jumbo v1, "w"
@@ -1174,14 +1174,14 @@
 
     if-eqz v1, :cond_2
 
-    .line 827
+    .line 855
     :cond_1
     const/high16 v0, 0x2c00
 
     .restart local v0       #modeBits:I
     goto :goto_0
 
-    .line 830
+    .line 858
     .end local v0           #modeBits:I
     :cond_2
     const-string/jumbo v1, "wa"
@@ -1192,13 +1192,13 @@
 
     if-eqz v1, :cond_3
 
-    .line 831
+    .line 859
     const/high16 v0, 0x2a00
 
     .restart local v0       #modeBits:I
     goto :goto_0
 
-    .line 834
+    .line 862
     .end local v0           #modeBits:I
     :cond_3
     const-string/jumbo v1, "rw"
@@ -1209,13 +1209,13 @@
 
     if-eqz v1, :cond_4
 
-    .line 835
+    .line 863
     const/high16 v0, 0x3800
 
     .restart local v0       #modeBits:I
     goto :goto_0
 
-    .line 837
+    .line 865
     .end local v0           #modeBits:I
     :cond_4
     const-string/jumbo v1, "rwt"
@@ -1226,13 +1226,13 @@
 
     if-eqz v1, :cond_5
 
-    .line 838
+    .line 866
     const/high16 v0, 0x3c00
 
     .restart local v0       #modeBits:I
     goto :goto_0
 
-    .line 842
+    .line 870
     .end local v0           #modeBits:I
     :cond_5
     new-instance v1, Ljava/io/FileNotFoundException;
@@ -1277,13 +1277,13 @@
     .parameter "extras"
 
     .prologue
-    .line 1535
+    .line 1563
     invoke-static {p2}, Landroid/content/ContentResolver;->validateSyncExtrasBundle(Landroid/os/Bundle;)V
 
-    .line 1536
+    .line 1564
     if-nez p0, :cond_0
 
-    .line 1537
+    .line 1565
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string v2, "account must not be null"
@@ -1292,11 +1292,11 @@
 
     throw v1
 
-    .line 1539
+    .line 1567
     :cond_0
     if-nez p1, :cond_1
 
-    .line 1540
+    .line 1568
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string v2, "authority must not be null"
@@ -1305,7 +1305,7 @@
 
     throw v1
 
-    .line 1543
+    .line 1571
     :cond_1
     :try_start_0
     invoke-static {}, Landroid/content/ContentResolver;->getContentService()Landroid/content/IContentService;
@@ -1316,14 +1316,14 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1547
+    .line 1575
     return-void
 
-    .line 1544
+    .line 1572
     :catch_0
     move-exception v0
 
-    .line 1545
+    .line 1573
     .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -1339,10 +1339,10 @@
     .parameter "handle"
 
     .prologue
-    .line 1761
+    .line 1789
     if-nez p0, :cond_0
 
-    .line 1762
+    .line 1790
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "you passed in a null handle"
@@ -1351,7 +1351,7 @@
 
     throw v0
 
-    .line 1765
+    .line 1793
     :cond_0
     :try_start_0
     invoke-static {}, Landroid/content/ContentResolver;->getContentService()Landroid/content/IContentService;
@@ -1365,11 +1365,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1770
+    .line 1798
     :goto_0
     return-void
 
-    .line 1766
+    .line 1794
     :catch_0
     move-exception v0
 
@@ -1383,10 +1383,10 @@
     .parameter "extras"
 
     .prologue
-    .line 1354
+    .line 1382
     invoke-static {p2}, Landroid/content/ContentResolver;->validateSyncExtrasBundle(Landroid/os/Bundle;)V
 
-    .line 1356
+    .line 1384
     :try_start_0
     invoke-static {}, Landroid/content/ContentResolver;->getContentService()Landroid/content/IContentService;
 
@@ -1396,11 +1396,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1359
+    .line 1387
     :goto_0
     return-void
 
-    .line 1357
+    .line 1385
     :catch_0
     move-exception v0
 
@@ -1414,15 +1414,15 @@
     .prologue
     const-wide/16 v2, 0x1f4
 
-    .line 1778
+    .line 1806
     cmp-long v0, p1, v2
 
     if-ltz v0, :cond_0
 
-    .line 1779
+    .line 1807
     const/16 v0, 0x64
 
-    .line 1781
+    .line 1809
     :goto_0
     return v0
 
@@ -1447,7 +1447,7 @@
     .parameter "syncable"
 
     .prologue
-    .line 1594
+    .line 1622
     :try_start_0
     invoke-static {}, Landroid/content/ContentResolver;->getContentService()Landroid/content/IContentService;
 
@@ -1457,11 +1457,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1599
+    .line 1627
     :goto_0
     return-void
 
-    .line 1595
+    .line 1623
     :catch_0
     move-exception v0
 
@@ -1473,7 +1473,7 @@
     .parameter "sync"
 
     .prologue
-    .line 1627
+    .line 1655
     :try_start_0
     invoke-static {}, Landroid/content/ContentResolver;->getContentService()Landroid/content/IContentService;
 
@@ -1483,11 +1483,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1632
+    .line 1660
     :goto_0
     return-void
 
-    .line 1628
+    .line 1656
     :catch_0
     move-exception v0
 
@@ -1501,7 +1501,7 @@
     .parameter "sync"
 
     .prologue
-    .line 1464
+    .line 1492
     :try_start_0
     invoke-static {}, Landroid/content/ContentResolver;->getContentService()Landroid/content/IContentService;
 
@@ -1511,11 +1511,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1469
+    .line 1497
     :goto_0
     return-void
 
-    .line 1465
+    .line 1493
     :catch_0
     move-exception v0
 
@@ -1527,7 +1527,7 @@
     .parameter "extras"
 
     .prologue
-    .line 1377
+    .line 1405
     :try_start_0
     invoke-virtual {p0}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
 
@@ -1551,52 +1551,52 @@
 
     check-cast v3, Ljava/lang/String;
 
-    .line 1378
+    .line 1406
     .local v3, key:Ljava/lang/String;
     invoke-virtual {p0, v3}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v4
 
-    .line 1379
+    .line 1407
     .local v4, value:Ljava/lang/Object;
     if-eqz v4, :cond_0
 
-    .line 1380
+    .line 1408
     instance-of v5, v4, Ljava/lang/Long;
 
     if-nez v5, :cond_0
 
-    .line 1381
+    .line 1409
     instance-of v5, v4, Ljava/lang/Integer;
 
     if-nez v5, :cond_0
 
-    .line 1382
+    .line 1410
     instance-of v5, v4, Ljava/lang/Boolean;
 
     if-nez v5, :cond_0
 
-    .line 1383
+    .line 1411
     instance-of v5, v4, Ljava/lang/Float;
 
     if-nez v5, :cond_0
 
-    .line 1384
+    .line 1412
     instance-of v5, v4, Ljava/lang/Double;
 
     if-nez v5, :cond_0
 
-    .line 1385
+    .line 1413
     instance-of v5, v4, Ljava/lang/String;
 
     if-nez v5, :cond_0
 
-    .line 1386
+    .line 1414
     instance-of v5, v4, Landroid/accounts/Account;
 
     if-nez v5, :cond_0
 
-    .line 1387
+    .line 1415
     new-instance v5, Ljava/lang/IllegalArgumentException;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -1632,23 +1632,23 @@
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 1390
+    .line 1418
     .end local v2           #i$:Ljava/util/Iterator;
     .end local v3           #key:Ljava/lang/String;
     .end local v4           #value:Ljava/lang/Object;
     :catch_0
     move-exception v0
 
-    .line 1391
+    .line 1419
     .local v0, e:Ljava/lang/IllegalArgumentException;
     throw v0
 
-    .line 1392
+    .line 1420
     .end local v0           #e:Ljava/lang/IllegalArgumentException;
     :catch_1
     move-exception v1
 
-    .line 1393
+    .line 1421
     .local v1, exc:Ljava/lang/RuntimeException;
     new-instance v5, Ljava/lang/IllegalArgumentException;
 
@@ -1658,7 +1658,7 @@
 
     throw v5
 
-    .line 1395
+    .line 1423
     .end local v1           #exc:Ljava/lang/RuntimeException;
     .restart local v2       #i$:Ljava/util/Iterator;
     :cond_1
@@ -1667,28 +1667,50 @@
 
 
 # virtual methods
+.method public AddToQueryHistory(Ljava/lang/String;Ljava/lang/Throwable;I)Z
+    .locals 1
+    .parameter "uri"
+    .parameter "stackTrace"
+    .parameter "cursorHashCode"
+
+    .prologue
+    .line 430
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public RemoveFromQueryHistory(I)V
+    .locals 0
+    .parameter "cursorHashCode"
+
+    .prologue
+    .line 438
+    return-void
+.end method
+
 .method public final acquireContentProviderClient(Landroid/net/Uri;)Landroid/content/ContentProviderClient;
     .locals 3
     .parameter "uri"
 
     .prologue
-    .line 1128
+    .line 1156
     invoke-virtual {p0, p1}, Landroid/content/ContentResolver;->acquireProvider(Landroid/net/Uri;)Landroid/content/IContentProvider;
 
     move-result-object v0
 
-    .line 1129
+    .line 1157
     .local v0, provider:Landroid/content/IContentProvider;
     if-eqz v0, :cond_0
 
-    .line 1130
+    .line 1158
     new-instance v1, Landroid/content/ContentProviderClient;
 
     const/4 v2, 0x1
 
     invoke-direct {v1, p0, v0, v2}, Landroid/content/ContentProviderClient;-><init>(Landroid/content/ContentResolver;Landroid/content/IContentProvider;Z)V
 
-    .line 1133
+    .line 1161
     :goto_0
     return-object v1
 
@@ -1703,23 +1725,23 @@
     .parameter "name"
 
     .prologue
-    .line 1148
+    .line 1176
     invoke-virtual {p0, p1}, Landroid/content/ContentResolver;->acquireProvider(Ljava/lang/String;)Landroid/content/IContentProvider;
 
     move-result-object v0
 
-    .line 1149
+    .line 1177
     .local v0, provider:Landroid/content/IContentProvider;
     if-eqz v0, :cond_0
 
-    .line 1150
+    .line 1178
     new-instance v1, Landroid/content/ContentProviderClient;
 
     const/4 v2, 0x1
 
     invoke-direct {v1, p0, v0, v2}, Landroid/content/ContentProviderClient;-><init>(Landroid/content/ContentResolver;Landroid/content/IContentProvider;Z)V
 
-    .line 1153
+    .line 1181
     :goto_0
     return-object v1
 
@@ -1735,7 +1757,7 @@
     .parameter "name"
 
     .prologue
-    .line 195
+    .line 196
     invoke-virtual {p0, p1, p2}, Landroid/content/ContentResolver;->acquireProvider(Landroid/content/Context;Ljava/lang/String;)Landroid/content/IContentProvider;
 
     move-result-object v0
@@ -1744,197 +1766,6 @@
 .end method
 
 .method public final acquireExistingProvider(Landroid/net/Uri;)Landroid/content/IContentProvider;
-    .locals 4
-    .parameter "uri"
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 1068
-    const-string v2, "content"
-
-    invoke-virtual {p1}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_1
-
-    .line 1075
-    :cond_0
-    :goto_0
-    return-object v1
-
-    .line 1071
-    :cond_1
-    invoke-virtual {p1}, Landroid/net/Uri;->getAuthority()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 1072
-    .local v0, auth:Ljava/lang/String;
-    if-eqz v0, :cond_0
-
-    .line 1073
-    iget-object v1, p0, Landroid/content/ContentResolver;->mContext:Landroid/content/Context;
-
-    invoke-virtual {p1}, Landroid/net/Uri;->getAuthority()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {p0, v1, v2}, Landroid/content/ContentResolver;->acquireExistingProvider(Landroid/content/Context;Ljava/lang/String;)Landroid/content/IContentProvider;
-
-    move-result-object v1
-
-    goto :goto_0
-.end method
-
-.method protected abstract acquireProvider(Landroid/content/Context;Ljava/lang/String;)Landroid/content/IContentProvider;
-.end method
-
-.method public final acquireProvider(Landroid/net/Uri;)Landroid/content/IContentProvider;
-    .locals 4
-    .parameter "uri"
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 1049
-    const-string v2, "content"
-
-    invoke-virtual {p1}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_1
-
-    .line 1056
-    :cond_0
-    :goto_0
-    return-object v1
-
-    .line 1052
-    :cond_1
-    invoke-virtual {p1}, Landroid/net/Uri;->getAuthority()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 1053
-    .local v0, auth:Ljava/lang/String;
-    if-eqz v0, :cond_0
-
-    .line 1054
-    iget-object v1, p0, Landroid/content/ContentResolver;->mContext:Landroid/content/Context;
-
-    invoke-virtual {p1}, Landroid/net/Uri;->getAuthority()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {p0, v1, v2}, Landroid/content/ContentResolver;->acquireProvider(Landroid/content/Context;Ljava/lang/String;)Landroid/content/IContentProvider;
-
-    move-result-object v1
-
-    goto :goto_0
-.end method
-
-.method public final acquireProvider(Ljava/lang/String;)Landroid/content/IContentProvider;
-    .locals 1
-    .parameter "name"
-
-    .prologue
-    .line 1082
-    if-nez p1, :cond_0
-
-    .line 1083
-    const/4 v0, 0x0
-
-    .line 1085
-    :goto_0
-    return-object v0
-
-    :cond_0
-    iget-object v0, p0, Landroid/content/ContentResolver;->mContext:Landroid/content/Context;
-
-    invoke-virtual {p0, v0, p1}, Landroid/content/ContentResolver;->acquireProvider(Landroid/content/Context;Ljava/lang/String;)Landroid/content/IContentProvider;
-
-    move-result-object v0
-
-    goto :goto_0
-.end method
-
-.method public final acquireUnstableContentProviderClient(Landroid/net/Uri;)Landroid/content/ContentProviderClient;
-    .locals 3
-    .parameter "uri"
-
-    .prologue
-    .line 1173
-    invoke-virtual {p0, p1}, Landroid/content/ContentResolver;->acquireUnstableProvider(Landroid/net/Uri;)Landroid/content/IContentProvider;
-
-    move-result-object v0
-
-    .line 1174
-    .local v0, provider:Landroid/content/IContentProvider;
-    if-eqz v0, :cond_0
-
-    .line 1175
-    new-instance v1, Landroid/content/ContentProviderClient;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v1, p0, v0, v2}, Landroid/content/ContentProviderClient;-><init>(Landroid/content/ContentResolver;Landroid/content/IContentProvider;Z)V
-
-    .line 1178
-    :goto_0
-    return-object v1
-
-    :cond_0
-    const/4 v1, 0x0
-
-    goto :goto_0
-.end method
-
-.method public final acquireUnstableContentProviderClient(Ljava/lang/String;)Landroid/content/ContentProviderClient;
-    .locals 3
-    .parameter "name"
-
-    .prologue
-    .line 1198
-    invoke-virtual {p0, p1}, Landroid/content/ContentResolver;->acquireUnstableProvider(Ljava/lang/String;)Landroid/content/IContentProvider;
-
-    move-result-object v0
-
-    .line 1199
-    .local v0, provider:Landroid/content/IContentProvider;
-    if-eqz v0, :cond_0
-
-    .line 1200
-    new-instance v1, Landroid/content/ContentProviderClient;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v1, p0, v0, v2}, Landroid/content/ContentProviderClient;-><init>(Landroid/content/ContentResolver;Landroid/content/IContentProvider;Z)V
-
-    .line 1203
-    :goto_0
-    return-object v1
-
-    :cond_0
-    const/4 v1, 0x0
-
-    goto :goto_0
-.end method
-
-.method protected abstract acquireUnstableProvider(Landroid/content/Context;Ljava/lang/String;)Landroid/content/IContentProvider;
-.end method
-
-.method public final acquireUnstableProvider(Landroid/net/Uri;)Landroid/content/IContentProvider;
     .locals 4
     .parameter "uri"
 
@@ -1976,6 +1807,197 @@
 
     move-result-object v2
 
+    invoke-virtual {p0, v1, v2}, Landroid/content/ContentResolver;->acquireExistingProvider(Landroid/content/Context;Ljava/lang/String;)Landroid/content/IContentProvider;
+
+    move-result-object v1
+
+    goto :goto_0
+.end method
+
+.method protected abstract acquireProvider(Landroid/content/Context;Ljava/lang/String;)Landroid/content/IContentProvider;
+.end method
+
+.method public final acquireProvider(Landroid/net/Uri;)Landroid/content/IContentProvider;
+    .locals 4
+    .parameter "uri"
+
+    .prologue
+    const/4 v1, 0x0
+
+    .line 1077
+    const-string v2, "content"
+
+    invoke-virtual {p1}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_1
+
+    .line 1084
+    :cond_0
+    :goto_0
+    return-object v1
+
+    .line 1080
+    :cond_1
+    invoke-virtual {p1}, Landroid/net/Uri;->getAuthority()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 1081
+    .local v0, auth:Ljava/lang/String;
+    if-eqz v0, :cond_0
+
+    .line 1082
+    iget-object v1, p0, Landroid/content/ContentResolver;->mContext:Landroid/content/Context;
+
+    invoke-virtual {p1}, Landroid/net/Uri;->getAuthority()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p0, v1, v2}, Landroid/content/ContentResolver;->acquireProvider(Landroid/content/Context;Ljava/lang/String;)Landroid/content/IContentProvider;
+
+    move-result-object v1
+
+    goto :goto_0
+.end method
+
+.method public final acquireProvider(Ljava/lang/String;)Landroid/content/IContentProvider;
+    .locals 1
+    .parameter "name"
+
+    .prologue
+    .line 1110
+    if-nez p1, :cond_0
+
+    .line 1111
+    const/4 v0, 0x0
+
+    .line 1113
+    :goto_0
+    return-object v0
+
+    :cond_0
+    iget-object v0, p0, Landroid/content/ContentResolver;->mContext:Landroid/content/Context;
+
+    invoke-virtual {p0, v0, p1}, Landroid/content/ContentResolver;->acquireProvider(Landroid/content/Context;Ljava/lang/String;)Landroid/content/IContentProvider;
+
+    move-result-object v0
+
+    goto :goto_0
+.end method
+
+.method public final acquireUnstableContentProviderClient(Landroid/net/Uri;)Landroid/content/ContentProviderClient;
+    .locals 3
+    .parameter "uri"
+
+    .prologue
+    .line 1201
+    invoke-virtual {p0, p1}, Landroid/content/ContentResolver;->acquireUnstableProvider(Landroid/net/Uri;)Landroid/content/IContentProvider;
+
+    move-result-object v0
+
+    .line 1202
+    .local v0, provider:Landroid/content/IContentProvider;
+    if-eqz v0, :cond_0
+
+    .line 1203
+    new-instance v1, Landroid/content/ContentProviderClient;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, p0, v0, v2}, Landroid/content/ContentProviderClient;-><init>(Landroid/content/ContentResolver;Landroid/content/IContentProvider;Z)V
+
+    .line 1206
+    :goto_0
+    return-object v1
+
+    :cond_0
+    const/4 v1, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final acquireUnstableContentProviderClient(Ljava/lang/String;)Landroid/content/ContentProviderClient;
+    .locals 3
+    .parameter "name"
+
+    .prologue
+    .line 1226
+    invoke-virtual {p0, p1}, Landroid/content/ContentResolver;->acquireUnstableProvider(Ljava/lang/String;)Landroid/content/IContentProvider;
+
+    move-result-object v0
+
+    .line 1227
+    .local v0, provider:Landroid/content/IContentProvider;
+    if-eqz v0, :cond_0
+
+    .line 1228
+    new-instance v1, Landroid/content/ContentProviderClient;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, p0, v0, v2}, Landroid/content/ContentProviderClient;-><init>(Landroid/content/ContentResolver;Landroid/content/IContentProvider;Z)V
+
+    .line 1231
+    :goto_0
+    return-object v1
+
+    :cond_0
+    const/4 v1, 0x0
+
+    goto :goto_0
+.end method
+
+.method protected abstract acquireUnstableProvider(Landroid/content/Context;Ljava/lang/String;)Landroid/content/IContentProvider;
+.end method
+
+.method public final acquireUnstableProvider(Landroid/net/Uri;)Landroid/content/IContentProvider;
+    .locals 4
+    .parameter "uri"
+
+    .prologue
+    const/4 v1, 0x0
+
+    .line 1124
+    const-string v2, "content"
+
+    invoke-virtual {p1}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_1
+
+    .line 1131
+    :cond_0
+    :goto_0
+    return-object v1
+
+    .line 1127
+    :cond_1
+    invoke-virtual {p1}, Landroid/net/Uri;->getAuthority()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 1128
+    .local v0, auth:Ljava/lang/String;
+    if-eqz v0, :cond_0
+
+    .line 1129
+    iget-object v1, p0, Landroid/content/ContentResolver;->mContext:Landroid/content/Context;
+
+    invoke-virtual {p1}, Landroid/net/Uri;->getAuthority()Ljava/lang/String;
+
+    move-result-object v2
+
     invoke-virtual {p0, v1, v2}, Landroid/content/ContentResolver;->acquireUnstableProvider(Landroid/content/Context;Ljava/lang/String;)Landroid/content/IContentProvider;
 
     move-result-object v1
@@ -1988,13 +2010,13 @@
     .parameter "name"
 
     .prologue
-    .line 1110
+    .line 1138
     if-nez p1, :cond_0
 
-    .line 1111
+    .line 1139
     const/4 v0, 0x0
 
-    .line 1113
+    .line 1141
     :goto_0
     return-object v0
 
@@ -2032,17 +2054,17 @@
     .end annotation
 
     .prologue
-    .line 898
+    .line 926
     .local p2, operations:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/content/ContentProviderOperation;>;"
     invoke-virtual {p0, p1}, Landroid/content/ContentResolver;->acquireContentProviderClient(Ljava/lang/String;)Landroid/content/ContentProviderClient;
 
     move-result-object v0
 
-    .line 899
+    .line 927
     .local v0, provider:Landroid/content/ContentProviderClient;
     if-nez v0, :cond_0
 
-    .line 900
+    .line 928
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2067,7 +2089,7 @@
 
     throw v1
 
-    .line 903
+    .line 931
     :cond_0
     :try_start_0
     invoke-virtual {v0, p2}, Landroid/content/ContentProviderClient;->applyBatch(Ljava/util/ArrayList;)[Landroid/content/ContentProviderResult;
@@ -2076,13 +2098,13 @@
 
     move-result-object v1
 
-    .line 905
+    .line 933
     invoke-virtual {v0}, Landroid/content/ContentProviderClient;->release()Z
 
-    .line 903
+    .line 931
     return-object v1
 
-    .line 905
+    .line 933
     :catchall_0
     move-exception v1
 
@@ -2097,16 +2119,16 @@
     .parameter "values"
 
     .prologue
-    .line 921
+    .line 949
     invoke-virtual {p0, p1}, Landroid/content/ContentResolver;->acquireProvider(Landroid/net/Uri;)Landroid/content/IContentProvider;
 
     move-result-object v7
 
-    .line 922
+    .line 950
     .local v7, provider:Landroid/content/IContentProvider;
     if-nez v7, :cond_0
 
-    .line 923
+    .line 951
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -2131,20 +2153,20 @@
 
     throw v0
 
-    .line 926
+    .line 954
     :cond_0
     :try_start_0
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v9
 
-    .line 927
+    .line 955
     .local v9, startTime:J
     invoke-interface {v7, p1, p2}, Landroid/content/IContentProvider;->bulkInsert(Landroid/net/Uri;[Landroid/content/ContentValues;)I
 
     move-result v8
 
-    .line 928
+    .line 956
     .local v8, rowsCreated:I
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -2152,7 +2174,7 @@
 
     sub-long v1, v3, v9
 
-    .line 929
+    .line 957
     .local v1, durationMillis:J
     const-string v4, "bulkinsert"
 
@@ -2167,27 +2189,27 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 936
+    .line 964
     .end local v1           #durationMillis:J
     .end local v8           #rowsCreated:I
     .end local v9           #startTime:J
     :goto_0
     invoke-virtual {p0, v7}, Landroid/content/ContentResolver;->releaseProvider(Landroid/content/IContentProvider;)Z
 
-    .line 934
+    .line 962
     return v8
 
-    .line 931
+    .line 959
     :catch_0
     move-exception v6
 
-    .line 934
+    .line 962
     .local v6, e:Landroid/os/RemoteException;
     const/4 v8, 0x0
 
     goto :goto_0
 
-    .line 936
+    .line 964
     .end local v6           #e:Landroid/os/RemoteException;
     :catchall_0
     move-exception v0
@@ -2205,10 +2227,10 @@
     .parameter "extras"
 
     .prologue
-    .line 1020
+    .line 1048
     if-nez p1, :cond_0
 
-    .line 1021
+    .line 1049
     new-instance v2, Ljava/lang/NullPointerException;
 
     const-string/jumbo v3, "uri == null"
@@ -2217,11 +2239,11 @@
 
     throw v2
 
-    .line 1023
+    .line 1051
     :cond_0
     if-nez p2, :cond_1
 
-    .line 1024
+    .line 1052
     new-instance v2, Ljava/lang/NullPointerException;
 
     const-string/jumbo v3, "method == null"
@@ -2230,17 +2252,17 @@
 
     throw v2
 
-    .line 1026
+    .line 1054
     :cond_1
     invoke-virtual {p0, p1}, Landroid/content/ContentResolver;->acquireProvider(Landroid/net/Uri;)Landroid/content/IContentProvider;
 
     move-result-object v1
 
-    .line 1027
+    .line 1055
     .local v1, provider:Landroid/content/IContentProvider;
     if-nez v1, :cond_2
 
-    .line 1028
+    .line 1056
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -2265,7 +2287,7 @@
 
     throw v2
 
-    .line 1031
+    .line 1059
     :cond_2
     :try_start_0
     invoke-interface {v1, p2, p3, p4}, Landroid/content/IContentProvider;->call(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;
@@ -2275,24 +2297,24 @@
 
     move-result-object v2
 
-    .line 1037
+    .line 1065
     :goto_0
     invoke-virtual {p0, v1}, Landroid/content/ContentResolver;->releaseProvider(Landroid/content/IContentProvider;)Z
 
-    .line 1035
+    .line 1063
     return-object v2
 
-    .line 1032
+    .line 1060
     :catch_0
     move-exception v0
 
-    .line 1035
+    .line 1063
     .local v0, e:Landroid/os/RemoteException;
     const/4 v2, 0x0
 
     goto :goto_0
 
-    .line 1037
+    .line 1065
     .end local v0           #e:Landroid/os/RemoteException;
     :catchall_0
     move-exception v2
@@ -2311,7 +2333,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1406
+    .line 1434
     if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Landroid/net/Uri;->getAuthority()Ljava/lang/String;
@@ -2321,13 +2343,13 @@
     :goto_0
     invoke-static {v1, v0}, Landroid/content/ContentResolver;->cancelSync(Landroid/accounts/Account;Ljava/lang/String;)V
 
-    .line 1407
+    .line 1435
     return-void
 
     :cond_0
     move-object v0, v1
 
-    .line 1406
+    .line 1434
     goto :goto_0
 .end method
 
@@ -2338,16 +2360,16 @@
     .parameter "selectionArgs"
 
     .prologue
-    .line 952
+    .line 980
     invoke-virtual {p0, p1}, Landroid/content/ContentResolver;->acquireProvider(Landroid/net/Uri;)Landroid/content/IContentProvider;
 
     move-result-object v7
 
-    .line 953
+    .line 981
     .local v7, provider:Landroid/content/IContentProvider;
     if-nez v7, :cond_0
 
-    .line 954
+    .line 982
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -2372,20 +2394,20 @@
 
     throw v0
 
-    .line 957
+    .line 985
     :cond_0
     :try_start_0
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v9
 
-    .line 958
+    .line 986
     .local v9, startTime:J
     invoke-interface {v7, p1, p2, p3}, Landroid/content/IContentProvider;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
 
     move-result v8
 
-    .line 959
+    .line 987
     .local v8, rowsDeleted:I
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -2393,7 +2415,7 @@
 
     sub-long v1, v3, v9
 
-    .line 960
+    .line 988
     .local v1, durationMillis:J
     const-string v4, "delete"
 
@@ -2408,27 +2430,27 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 967
+    .line 995
     .end local v1           #durationMillis:J
     .end local v8           #rowsDeleted:I
     .end local v9           #startTime:J
     :goto_0
     invoke-virtual {p0, v7}, Landroid/content/ContentResolver;->releaseProvider(Landroid/content/IContentProvider;)Z
 
-    .line 965
+    .line 993
     return v8
 
-    .line 962
+    .line 990
     :catch_0
     move-exception v6
 
-    .line 965
+    .line 993
     .local v6, e:Landroid/os/RemoteException;
     const/4 v8, -0x1
 
     goto :goto_0
 
-    .line 967
+    .line 995
     .end local v6           #e:Landroid/os/RemoteException;
     :catchall_0
     move-exception v0
@@ -2452,12 +2474,12 @@
 
     const/4 v9, 0x0
 
-    .line 784
+    .line 812
     invoke-virtual {p1}, Landroid/net/Uri;->getAuthority()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 786
+    .line 814
     .local v0, authority:Ljava/lang/String;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -2465,7 +2487,7 @@
 
     if-eqz v8, :cond_0
 
-    .line 787
+    .line 815
     new-instance v8, Ljava/io/FileNotFoundException;
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -2490,7 +2512,7 @@
 
     throw v8
 
-    .line 790
+    .line 818
     :cond_0
     :try_start_0
     iget-object v8, p0, Landroid/content/ContentResolver;->mContext:Landroid/content/Context;
@@ -2505,17 +2527,17 @@
 
     move-result-object v6
 
-    .line 795
+    .line 823
     .local v6, r:Landroid/content/res/Resources;
     invoke-virtual {p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
 
     move-result-object v5
 
-    .line 796
+    .line 824
     .local v5, path:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     if-nez v5, :cond_1
 
-    .line 797
+    .line 825
     new-instance v8, Ljava/io/FileNotFoundException;
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -2540,13 +2562,13 @@
 
     throw v8
 
-    .line 791
+    .line 819
     .end local v5           #path:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     .end local v6           #r:Landroid/content/res/Resources;
     :catch_0
     move-exception v2
 
-    .line 792
+    .line 820
     .local v2, ex:Landroid/content/pm/PackageManager$NameNotFoundException;
     new-instance v8, Ljava/io/FileNotFoundException;
 
@@ -2572,7 +2594,7 @@
 
     throw v8
 
-    .line 799
+    .line 827
     .end local v2           #ex:Landroid/content/pm/PackageManager$NameNotFoundException;
     .restart local v5       #path:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     .restart local v6       #r:Landroid/content/res/Resources;
@@ -2581,11 +2603,11 @@
 
     move-result v4
 
-    .line 801
+    .line 829
     .local v4, len:I
     if-ne v4, v10, :cond_2
 
-    .line 803
+    .line 831
     const/4 v8, 0x0
 
     :try_start_1
@@ -2601,12 +2623,12 @@
 
     move-result v3
 
-    .line 812
+    .line 840
     .local v3, id:I
     :goto_0
     if-nez v3, :cond_4
 
-    .line 813
+    .line 841
     new-instance v8, Ljava/io/FileNotFoundException;
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -2631,12 +2653,12 @@
 
     throw v8
 
-    .line 804
+    .line 832
     .end local v3           #id:I
     :catch_1
     move-exception v1
 
-    .line 805
+    .line 833
     .local v1, e:Ljava/lang/NumberFormatException;
     new-instance v8, Ljava/io/FileNotFoundException;
 
@@ -2662,14 +2684,14 @@
 
     throw v8
 
-    .line 807
+    .line 835
     .end local v1           #e:Ljava/lang/NumberFormatException;
     :cond_2
     const/4 v8, 0x2
 
     if-ne v4, v8, :cond_3
 
-    .line 808
+    .line 836
     invoke-interface {v5, v10}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v8
@@ -2689,7 +2711,7 @@
     .restart local v3       #id:I
     goto :goto_0
 
-    .line 810
+    .line 838
     .end local v3           #id:I
     :cond_3
     new-instance v8, Ljava/io/FileNotFoundException;
@@ -2716,21 +2738,21 @@
 
     throw v8
 
-    .line 815
+    .line 843
     .restart local v3       #id:I
     :cond_4
     new-instance v7, Landroid/content/ContentResolver$OpenResourceIdResult;
 
     invoke-direct {v7, p0}, Landroid/content/ContentResolver$OpenResourceIdResult;-><init>(Landroid/content/ContentResolver;)V
 
-    .line 816
+    .line 844
     .local v7, res:Landroid/content/ContentResolver$OpenResourceIdResult;
     iput-object v6, v7, Landroid/content/ContentResolver$OpenResourceIdResult;->r:Landroid/content/res/Resources;
 
-    .line 817
+    .line 845
     iput v3, v7, Landroid/content/ContentResolver$OpenResourceIdResult;->id:I
 
-    .line 818
+    .line 846
     return-object v7
 .end method
 
@@ -2742,20 +2764,20 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 265
+    .line 266
     invoke-virtual {p0, p1}, Landroid/content/ContentResolver;->acquireProvider(Landroid/net/Uri;)Landroid/content/IContentProvider;
 
     move-result-object v1
 
-    .line 266
+    .line 267
     .local v1, provider:Landroid/content/IContentProvider;
     if-nez v1, :cond_0
 
-    .line 275
+    .line 276
     :goto_0
     return-object v2
 
-    .line 271
+    .line 272
     :cond_0
     :try_start_0
     invoke-interface {v1, p1, p2}, Landroid/content/IContentProvider;->getStreamTypes(Landroid/net/Uri;Ljava/lang/String;)[Ljava/lang/String;
@@ -2765,21 +2787,21 @@
 
     move-result-object v2
 
-    .line 277
+    .line 278
     :goto_1
     invoke-virtual {p0, v1}, Landroid/content/ContentResolver;->releaseProvider(Landroid/content/IContentProvider;)Z
 
     goto :goto_0
 
-    .line 272
+    .line 273
     :catch_0
     move-exception v0
 
-    .line 275
+    .line 276
     .local v0, e:Landroid/os/RemoteException;
     goto :goto_1
 
-    .line 277
+    .line 278
     .end local v0           #e:Landroid/os/RemoteException;
     :catchall_0
     move-exception v2
@@ -2796,16 +2818,16 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 215
+    .line 216
     invoke-virtual {p0, p1}, Landroid/content/ContentResolver;->acquireExistingProvider(Landroid/net/Uri;)Landroid/content/IContentProvider;
 
     move-result-object v1
 
-    .line 216
+    .line 217
     .local v1, provider:Landroid/content/IContentProvider;
     if-eqz v1, :cond_1
 
-    .line 218
+    .line 219
     :try_start_0
     invoke-interface {v1, p1}, Landroid/content/IContentProvider;->getType(Landroid/net/Uri;)Ljava/lang/String;
     :try_end_0
@@ -2815,29 +2837,29 @@
 
     move-result-object v2
 
-    .line 225
+    .line 226
     :goto_0
     invoke-virtual {p0, v1}, Landroid/content/ContentResolver;->releaseProvider(Landroid/content/IContentProvider;)Z
 
-    .line 243
+    .line 244
     :cond_0
     :goto_1
     return-object v2
 
-    .line 219
+    .line 220
     :catch_0
     move-exception v0
 
-    .line 220
+    .line 221
     .local v0, e:Landroid/os/RemoteException;
     goto :goto_0
 
-    .line 221
+    .line 222
     .end local v0           #e:Landroid/os/RemoteException;
     :catch_1
     move-exception v0
 
-    .line 222
+    .line 223
     .local v0, e:Ljava/lang/Exception;
     :try_start_1
     const-string v3, "ContentResolver"
@@ -2886,7 +2908,7 @@
 
     goto :goto_0
 
-    .line 225
+    .line 226
     .end local v0           #e:Ljava/lang/Exception;
     :catchall_0
     move-exception v3
@@ -2895,7 +2917,7 @@
 
     throw v3
 
-    .line 229
+    .line 230
     :cond_1
     const-string v3, "content"
 
@@ -2909,7 +2931,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 234
+    .line 235
     :try_start_2
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -2926,25 +2948,25 @@
 
     move-result-object v2
 
-    .line 236
+    .line 237
     .local v2, type:Ljava/lang/String;
     goto :goto_1
 
-    .line 237
+    .line 238
     .end local v2           #type:Ljava/lang/String;
     :catch_2
     move-exception v0
 
-    .line 240
+    .line 241
     .local v0, e:Landroid/os/RemoteException;
     goto :goto_1
 
-    .line 241
+    .line 242
     .end local v0           #e:Landroid/os/RemoteException;
     :catch_3
     move-exception v0
 
-    .line 242
+    .line 243
     .local v0, e:Ljava/lang/Exception;
     const-string v3, "ContentResolver"
 
@@ -2999,16 +3021,16 @@
     .prologue
     const/4 v11, 0x0
 
-    .line 860
+    .line 888
     invoke-virtual {p0, p1}, Landroid/content/ContentResolver;->acquireProvider(Landroid/net/Uri;)Landroid/content/IContentProvider;
 
     move-result-object v8
 
-    .line 861
+    .line 889
     .local v8, provider:Landroid/content/IContentProvider;
     if-nez v8, :cond_0
 
-    .line 862
+    .line 890
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -3033,20 +3055,20 @@
 
     throw v0
 
-    .line 865
+    .line 893
     :cond_0
     :try_start_0
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v9
 
-    .line 866
+    .line 894
     .local v9, startTime:J
     invoke-interface {v8, p1, p2}, Landroid/content/IContentProvider;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
 
     move-result-object v6
 
-    .line 867
+    .line 895
     .local v6, createdRow:Landroid/net/Uri;
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -3054,9 +3076,9 @@
 
     sub-long v1, v3, v9
 
-    .line 868
+    .line 896
     .local v1, durationMillis:J
-    const-string v4, "insert"
+    const-string/jumbo v4, "insert"
 
     const/4 v5, 0x0
 
@@ -3069,30 +3091,30 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 875
+    .line 903
     invoke-virtual {p0, v8}, Landroid/content/ContentResolver;->releaseProvider(Landroid/content/IContentProvider;)Z
 
-    .line 873
+    .line 901
     .end local v1           #durationMillis:J
     .end local v6           #createdRow:Landroid/net/Uri;
     .end local v9           #startTime:J
     :goto_0
     return-object v6
 
-    .line 870
+    .line 898
     :catch_0
     move-exception v7
 
-    .line 875
+    .line 903
     .local v7, e:Landroid/os/RemoteException;
     invoke-virtual {p0, v8}, Landroid/content/ContentResolver;->releaseProvider(Landroid/content/IContentProvider;)Z
 
     move-object v6, v11
 
-    .line 873
+    .line 901
     goto :goto_0
 
-    .line 875
+    .line 903
     .end local v7           #e:Landroid/os/RemoteException;
     :catchall_0
     move-exception v0
@@ -3108,12 +3130,12 @@
     .parameter "observer"
 
     .prologue
-    .line 1266
+    .line 1294
     const/4 v0, 0x1
 
     invoke-virtual {p0, p1, p2, v0}, Landroid/content/ContentResolver;->notifyChange(Landroid/net/Uri;Landroid/database/ContentObserver;Z)V
 
-    .line 1267
+    .line 1295
     return-void
 .end method
 
@@ -3124,14 +3146,14 @@
     .parameter "syncToNetwork"
 
     .prologue
-    .line 1286
+    .line 1314
     invoke-static {}, Landroid/os/UserHandle;->getCallingUserId()I
 
     move-result v0
 
     invoke-virtual {p0, p1, p2, p3, v0}, Landroid/content/ContentResolver;->notifyChange(Landroid/net/Uri;Landroid/database/ContentObserver;ZI)V
 
-    .line 1287
+    .line 1315
     return-void
 .end method
 
@@ -3143,7 +3165,7 @@
     .parameter "userHandle"
 
     .prologue
-    .line 1297
+    .line 1325
     :try_start_0
     invoke-static {}, Landroid/content/ContentResolver;->getContentService()Landroid/content/IContentService;
 
@@ -3173,11 +3195,11 @@
 
     invoke-interface/range {v0 .. v5}, Landroid/content/IContentService;->notifyChange(Landroid/net/Uri;Landroid/database/IContentObserver;ZZI)V
 
-    .line 1303
+    .line 1331
     :goto_2
     return-void
 
-    .line 1297
+    .line 1325
     :cond_0
     invoke-virtual {p2}, Landroid/database/ContentObserver;->getContentObserver()Landroid/database/IContentObserver;
     :try_end_0
@@ -3192,7 +3214,7 @@
 
     goto :goto_1
 
-    .line 1301
+    .line 1329
     :catch_0
     move-exception v0
 
@@ -3212,12 +3234,12 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 597
+    .line 627
     invoke-virtual {p1}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
 
     move-result-object v10
 
-    .line 598
+    .line 628
     .local v10, scheme:Ljava/lang/String;
     const-string v2, "android.resource"
 
@@ -3227,7 +3249,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 599
+    .line 629
     const-string/jumbo v0, "r"
 
     invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -3236,7 +3258,7 @@
 
     if-nez v0, :cond_0
 
-    .line 600
+    .line 630
     new-instance v0, Ljava/io/FileNotFoundException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -3261,13 +3283,13 @@
 
     throw v0
 
-    .line 602
+    .line 632
     :cond_0
     invoke-virtual {p0, p1}, Landroid/content/ContentResolver;->getResourceId(Landroid/net/Uri;)Landroid/content/ContentResolver$OpenResourceIdResult;
 
     move-result-object v9
 
-    .line 604
+    .line 634
     .local v9, r:Landroid/content/ContentResolver$OpenResourceIdResult;
     :try_start_0
     iget-object v0, v9, Landroid/content/ContentResolver$OpenResourceIdResult;->r:Landroid/content/res/Resources;
@@ -3280,18 +3302,18 @@
 
     move-result-object v0
 
-    .line 657
+    .line 686
     .end local v9           #r:Landroid/content/ContentResolver$OpenResourceIdResult;
     :cond_1
     :goto_0
     return-object v0
 
-    .line 605
+    .line 635
     .restart local v9       #r:Landroid/content/ContentResolver$OpenResourceIdResult;
     :catch_0
     move-exception v7
 
-    .line 606
+    .line 636
     .local v7, ex:Landroid/content/res/Resources$NotFoundException;
     new-instance v0, Ljava/io/FileNotFoundException;
 
@@ -3317,7 +3339,7 @@
 
     throw v0
 
-    .line 608
+    .line 638
     .end local v7           #ex:Landroid/content/res/Resources$NotFoundException;
     .end local v9           #r:Landroid/content/ContentResolver$OpenResourceIdResult;
     :cond_2
@@ -3329,7 +3351,7 @@
 
     if-eqz v2, :cond_3
 
-    .line 609
+    .line 639
     new-instance v0, Ljava/io/File;
 
     invoke-virtual {p1}, Landroid/net/Uri;->getPath()Ljava/lang/String;
@@ -3346,7 +3368,7 @@
 
     move-result-object v1
 
-    .line 611
+    .line 641
     .local v1, pfd:Landroid/os/ParcelFileDescriptor;
     new-instance v0, Landroid/content/res/AssetFileDescriptor;
 
@@ -3358,7 +3380,7 @@
 
     goto :goto_0
 
-    .line 613
+    .line 643
     .end local v1           #pfd:Landroid/os/ParcelFileDescriptor;
     :cond_3
     const-string/jumbo v2, "r"
@@ -3369,7 +3391,7 @@
 
     if-eqz v2, :cond_4
 
-    .line 614
+    .line 644
     const-string v2, "*/*"
 
     invoke-virtual {p0, p1, v2, v0}, Landroid/content/ContentResolver;->openTypedAssetFileDescriptor(Landroid/net/Uri;Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/res/AssetFileDescriptor;
@@ -3378,17 +3400,17 @@
 
     goto :goto_0
 
-    .line 616
+    .line 646
     :cond_4
     invoke-virtual {p0, p1}, Landroid/content/ContentResolver;->acquireUnstableProvider(Landroid/net/Uri;)Landroid/content/IContentProvider;
 
     move-result-object v12
 
-    .line 617
+    .line 647
     .local v12, unstableProvider:Landroid/content/IContentProvider;
     if-nez v12, :cond_5
 
-    .line 618
+    .line 648
     new-instance v0, Ljava/io/FileNotFoundException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -3413,15 +3435,15 @@
 
     throw v0
 
-    .line 620
+    .line 650
     :cond_5
     const/4 v11, 0x0
 
-    .line 621
+    .line 651
     .local v11, stableProvider:Landroid/content/IContentProvider;
     const/4 v8, 0x0
 
-    .line 625
+    .line 655
     .local v8, fd:Landroid/content/res/AssetFileDescriptor;
     :try_start_1
     invoke-interface {v12, p1, p2}, Landroid/content/IContentProvider;->openAssetFile(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/res/AssetFileDescriptor;
@@ -3433,43 +3455,43 @@
 
     move-result-object v8
 
-    .line 626
+    .line 656
     if-nez v8, :cond_b
 
-    .line 667
+    .line 696
     if-eqz v11, :cond_6
 
-    .line 668
+    .line 697
     invoke-virtual {p0, v11}, Landroid/content/ContentResolver;->releaseProvider(Landroid/content/IContentProvider;)Z
 
-    .line 670
+    .line 699
     :cond_6
     if-eqz v12, :cond_1
 
-    .line 671
+    .line 700
     :goto_1
     invoke-virtual {p0, v12}, Landroid/content/ContentResolver;->releaseUnstableProvider(Landroid/content/IContentProvider;)Z
 
     goto :goto_0
 
-    .line 630
+    .line 660
     :catch_1
     move-exception v6
 
-    .line 634
+    .line 664
     .local v6, e:Landroid/os/DeadObjectException;
     :try_start_2
     invoke-virtual {p0, v12}, Landroid/content/ContentResolver;->unstableProviderDied(Landroid/content/IContentProvider;)V
 
-    .line 635
+    .line 665
     invoke-virtual {p0, p1}, Landroid/content/ContentResolver;->acquireProvider(Landroid/net/Uri;)Landroid/content/IContentProvider;
 
     move-result-object v11
 
-    .line 636
+    .line 666
     if-nez v11, :cond_9
 
-    .line 637
+    .line 667
     new-instance v0, Ljava/io/FileNotFoundException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -3498,12 +3520,12 @@
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_2
     .catch Ljava/io/FileNotFoundException; {:try_start_2 .. :try_end_2} :catch_3
 
-    .line 660
+    .line 689
     .end local v6           #e:Landroid/os/DeadObjectException;
     :catch_2
     move-exception v6
 
-    .line 662
+    .line 691
     .local v6, e:Landroid/os/RemoteException;
     :try_start_3
     new-instance v0, Ljava/io/FileNotFoundException;
@@ -3532,28 +3554,28 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 667
+    .line 696
     .end local v6           #e:Landroid/os/RemoteException;
     :catchall_0
     move-exception v0
 
     if-eqz v11, :cond_7
 
-    .line 668
+    .line 697
     invoke-virtual {p0, v11}, Landroid/content/ContentResolver;->releaseProvider(Landroid/content/IContentProvider;)Z
 
-    .line 670
+    .line 699
     :cond_7
     if-eqz v12, :cond_8
 
-    .line 671
+    .line 700
     invoke-virtual {p0, v12}, Landroid/content/ContentResolver;->releaseUnstableProvider(Landroid/content/IContentProvider;)Z
 
-    .line 667
+    .line 696
     :cond_8
     throw v0
 
-    .line 639
+    .line 669
     .local v6, e:Landroid/os/DeadObjectException;
     :cond_9
     :try_start_4
@@ -3565,37 +3587,34 @@
 
     move-result-object v8
 
-    .line 640
+    .line 670
     if-nez v8, :cond_b
 
-    .line 667
+    .line 696
     if-eqz v11, :cond_a
 
-    .line 668
+    .line 697
     invoke-virtual {p0, v11}, Landroid/content/ContentResolver;->releaseProvider(Landroid/content/IContentProvider;)Z
 
-    .line 670
+    .line 699
     :cond_a
     if-eqz v12, :cond_1
 
     goto :goto_1
 
-    .line 646
+    .line 676
     .end local v6           #e:Landroid/os/DeadObjectException;
     :cond_b
     if-nez v11, :cond_c
 
-    .line 647
+    .line 677
     :try_start_5
     invoke-virtual {p0, p1}, Landroid/content/ContentResolver;->acquireProvider(Landroid/net/Uri;)Landroid/content/IContentProvider;
 
     move-result-object v11
 
-    .line 649
+    .line 679
     :cond_c
-    invoke-virtual {p0, v12}, Landroid/content/ContentResolver;->releaseUnstableProvider(Landroid/content/IContentProvider;)Z
-
-    .line 650
     new-instance v1, Landroid/content/ContentResolver$ParcelFileDescriptorInner;
 
     invoke-virtual {v8}, Landroid/content/res/AssetFileDescriptor;->getParcelFileDescriptor()Landroid/os/ParcelFileDescriptor;
@@ -3604,11 +3623,11 @@
 
     invoke-direct {v1, p0, v0, v11}, Landroid/content/ContentResolver$ParcelFileDescriptorInner;-><init>(Landroid/content/ContentResolver;Landroid/os/ParcelFileDescriptor;Landroid/content/IContentProvider;)V
 
-    .line 655
+    .line 684
     .restart local v1       #pfd:Landroid/os/ParcelFileDescriptor;
     const/4 v11, 0x0
 
-    .line 657
+    .line 686
     new-instance v0, Landroid/content/res/AssetFileDescriptor;
 
     invoke-virtual {v8}, Landroid/content/res/AssetFileDescriptor;->getStartOffset()J
@@ -3625,24 +3644,24 @@
     .catch Landroid/os/RemoteException; {:try_start_5 .. :try_end_5} :catch_2
     .catch Ljava/io/FileNotFoundException; {:try_start_5 .. :try_end_5} :catch_3
 
-    .line 667
+    .line 696
     if-eqz v11, :cond_d
 
-    .line 668
+    .line 697
     invoke-virtual {p0, v11}, Landroid/content/ContentResolver;->releaseProvider(Landroid/content/IContentProvider;)Z
 
-    .line 670
+    .line 699
     :cond_d
     if-eqz v12, :cond_1
 
-    goto/16 :goto_1
+    goto :goto_1
 
-    .line 664
+    .line 693
     .end local v1           #pfd:Landroid/os/ParcelFileDescriptor;
     :catch_3
     move-exception v6
 
-    .line 665
+    .line 694
     .local v6, e:Ljava/io/FileNotFoundException;
     :try_start_6
     throw v6
@@ -3661,23 +3680,23 @@
     .end annotation
 
     .prologue
-    .line 527
+    .line 557
     invoke-virtual {p0, p1, p2}, Landroid/content/ContentResolver;->openAssetFileDescriptor(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/res/AssetFileDescriptor;
 
     move-result-object v0
 
-    .line 528
+    .line 558
     .local v0, afd:Landroid/content/res/AssetFileDescriptor;
     if-nez v0, :cond_0
 
-    .line 529
+    .line 559
     const/4 v1, 0x0
 
-    .line 534
+    .line 564
     :goto_0
     return-object v1
 
-    .line 532
+    .line 562
     :cond_0
     invoke-virtual {v0}, Landroid/content/res/AssetFileDescriptor;->getDeclaredLength()J
 
@@ -3689,21 +3708,21 @@
 
     if-gez v1, :cond_1
 
-    .line 534
+    .line 564
     invoke-virtual {v0}, Landroid/content/res/AssetFileDescriptor;->getParcelFileDescriptor()Landroid/os/ParcelFileDescriptor;
 
     move-result-object v1
 
     goto :goto_0
 
-    .line 540
+    .line 570
     :cond_1
     :try_start_0
     invoke-virtual {v0}, Landroid/content/res/AssetFileDescriptor;->close()V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 544
+    .line 574
     :goto_1
     new-instance v1, Ljava/io/FileNotFoundException;
 
@@ -3713,7 +3732,7 @@
 
     throw v1
 
-    .line 541
+    .line 571
     :catch_0
     move-exception v1
 
@@ -3730,12 +3749,12 @@
     .end annotation
 
     .prologue
-    .line 433
+    .line 463
     invoke-virtual {p1}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 434
+    .line 464
     .local v4, scheme:Ljava/lang/String;
     const-string v6, "android.resource"
 
@@ -3745,12 +3764,12 @@
 
     if-eqz v6, :cond_0
 
-    .line 437
+    .line 467
     invoke-virtual {p0, p1}, Landroid/content/ContentResolver;->getResourceId(Landroid/net/Uri;)Landroid/content/ContentResolver$OpenResourceIdResult;
 
     move-result-object v3
 
-    .line 439
+    .line 469
     .local v3, r:Landroid/content/ContentResolver$OpenResourceIdResult;
     :try_start_0
     iget-object v6, v3, Landroid/content/ContentResolver$OpenResourceIdResult;->r:Landroid/content/res/Resources;
@@ -3763,17 +3782,17 @@
 
     move-result-object v5
 
-    .line 451
+    .line 481
     .end local v3           #r:Landroid/content/ContentResolver$OpenResourceIdResult;
     :goto_0
     return-object v5
 
-    .line 441
+    .line 471
     .restart local v3       #r:Landroid/content/ContentResolver$OpenResourceIdResult;
     :catch_0
     move-exception v1
 
-    .line 442
+    .line 472
     .local v1, ex:Landroid/content/res/Resources$NotFoundException;
     new-instance v6, Ljava/io/FileNotFoundException;
 
@@ -3799,7 +3818,7 @@
 
     throw v6
 
-    .line 444
+    .line 474
     .end local v1           #ex:Landroid/content/res/Resources$NotFoundException;
     .end local v3           #r:Landroid/content/ContentResolver$OpenResourceIdResult;
     :cond_0
@@ -3811,7 +3830,7 @@
 
     if-eqz v6, :cond_1
 
-    .line 447
+    .line 477
     new-instance v5, Ljava/io/FileInputStream;
 
     invoke-virtual {p1}, Landroid/net/Uri;->getPath()Ljava/lang/String;
@@ -3822,7 +3841,7 @@
 
     goto :goto_0
 
-    .line 449
+    .line 479
     :cond_1
     const-string/jumbo v6, "r"
 
@@ -3830,7 +3849,7 @@
 
     move-result-object v2
 
-    .line 451
+    .line 481
     .local v2, fd:Landroid/content/res/AssetFileDescriptor;
     if-eqz v2, :cond_2
 
@@ -3851,11 +3870,11 @@
 
     goto :goto_1
 
-    .line 452
+    .line 482
     :catch_1
     move-exception v0
 
-    .line 453
+    .line 483
     .local v0, e:Ljava/io/IOException;
     new-instance v6, Ljava/io/FileNotFoundException;
 
@@ -3876,7 +3895,7 @@
     .end annotation
 
     .prologue
-    .line 465
+    .line 495
     const-string/jumbo v0, "w"
 
     invoke-virtual {p0, p1, v0}, Landroid/content/ContentResolver;->openOutputStream(Landroid/net/Uri;Ljava/lang/String;)Ljava/io/OutputStream;
@@ -3897,12 +3916,12 @@
     .end annotation
 
     .prologue
-    .line 489
+    .line 519
     invoke-virtual {p0, p1, p2}, Landroid/content/ContentResolver;->openAssetFileDescriptor(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/res/AssetFileDescriptor;
 
     move-result-object v1
 
-    .line 491
+    .line 521
     .local v1, fd:Landroid/content/res/AssetFileDescriptor;
     if-eqz v1, :cond_0
 
@@ -3921,11 +3940,11 @@
 
     goto :goto_0
 
-    .line 492
+    .line 522
     :catch_0
     move-exception v0
 
-    .line 493
+    .line 523
     .local v0, e:Ljava/io/IOException;
     new-instance v2, Ljava/io/FileNotFoundException;
 
@@ -3950,16 +3969,16 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 708
+    .line 737
     invoke-virtual {p0, p1}, Landroid/content/ContentResolver;->acquireUnstableProvider(Landroid/net/Uri;)Landroid/content/IContentProvider;
 
     move-result-object v9
 
-    .line 709
+    .line 738
     .local v9, unstableProvider:Landroid/content/IContentProvider;
     if-nez v9, :cond_0
 
-    .line 710
+    .line 739
     new-instance v0, Ljava/io/FileNotFoundException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -3984,15 +4003,15 @@
 
     throw v0
 
-    .line 712
+    .line 741
     :cond_0
     const/4 v8, 0x0
 
-    .line 713
+    .line 742
     .local v8, stableProvider:Landroid/content/IContentProvider;
     const/4 v7, 0x0
 
-    .line 717
+    .line 746
     .local v7, fd:Landroid/content/res/AssetFileDescriptor;
     :try_start_0
     invoke-interface {v9, p1, p2, p3}, Landroid/content/IContentProvider;->openTypedAssetFile(Landroid/net/Uri;Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/res/AssetFileDescriptor;
@@ -4004,45 +4023,45 @@
 
     move-result-object v7
 
-    .line 718
+    .line 747
     if-nez v7, :cond_7
 
-    .line 759
+    .line 787
     if-eqz v8, :cond_1
 
-    .line 760
+    .line 788
     invoke-virtual {p0, v8}, Landroid/content/ContentResolver;->releaseProvider(Landroid/content/IContentProvider;)Z
 
-    .line 762
+    .line 790
     :cond_1
     if-eqz v9, :cond_2
 
-    .line 763
+    .line 791
     :goto_0
     invoke-virtual {p0, v9}, Landroid/content/ContentResolver;->releaseUnstableProvider(Landroid/content/IContentProvider;)Z
 
-    .line 749
+    .line 777
     :cond_2
     return-object v0
 
-    .line 722
+    .line 751
     :catch_0
     move-exception v6
 
-    .line 726
+    .line 755
     .local v6, e:Landroid/os/DeadObjectException;
     :try_start_1
     invoke-virtual {p0, v9}, Landroid/content/ContentResolver;->unstableProviderDied(Landroid/content/IContentProvider;)V
 
-    .line 727
+    .line 756
     invoke-virtual {p0, p1}, Landroid/content/ContentResolver;->acquireProvider(Landroid/net/Uri;)Landroid/content/IContentProvider;
 
     move-result-object v8
 
-    .line 728
+    .line 757
     if-nez v8, :cond_5
 
-    .line 729
+    .line 758
     new-instance v0, Ljava/io/FileNotFoundException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -4071,12 +4090,12 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_1
     .catch Ljava/io/FileNotFoundException; {:try_start_1 .. :try_end_1} :catch_2
 
-    .line 752
+    .line 780
     .end local v6           #e:Landroid/os/DeadObjectException;
     :catch_1
     move-exception v6
 
-    .line 754
+    .line 782
     .local v6, e:Landroid/os/RemoteException;
     :try_start_2
     new-instance v0, Ljava/io/FileNotFoundException;
@@ -4105,28 +4124,28 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 759
+    .line 787
     .end local v6           #e:Landroid/os/RemoteException;
     :catchall_0
     move-exception v0
 
     if-eqz v8, :cond_3
 
-    .line 760
+    .line 788
     invoke-virtual {p0, v8}, Landroid/content/ContentResolver;->releaseProvider(Landroid/content/IContentProvider;)Z
 
-    .line 762
+    .line 790
     :cond_3
     if-eqz v9, :cond_4
 
-    .line 763
+    .line 791
     invoke-virtual {p0, v9}, Landroid/content/ContentResolver;->releaseUnstableProvider(Landroid/content/IContentProvider;)Z
 
-    .line 759
+    .line 787
     :cond_4
     throw v0
 
-    .line 731
+    .line 760
     .local v6, e:Landroid/os/DeadObjectException;
     :cond_5
     :try_start_3
@@ -4138,37 +4157,34 @@
 
     move-result-object v7
 
-    .line 732
+    .line 761
     if-nez v7, :cond_7
 
-    .line 759
+    .line 787
     if-eqz v8, :cond_6
 
-    .line 760
+    .line 788
     invoke-virtual {p0, v8}, Landroid/content/ContentResolver;->releaseProvider(Landroid/content/IContentProvider;)Z
 
-    .line 762
+    .line 790
     :cond_6
     if-eqz v9, :cond_2
 
     goto :goto_0
 
-    .line 738
+    .line 767
     .end local v6           #e:Landroid/os/DeadObjectException;
     :cond_7
     if-nez v8, :cond_8
 
-    .line 739
+    .line 768
     :try_start_4
     invoke-virtual {p0, p1}, Landroid/content/ContentResolver;->acquireProvider(Landroid/net/Uri;)Landroid/content/IContentProvider;
 
     move-result-object v8
 
-    .line 741
+    .line 770
     :cond_8
-    invoke-virtual {p0, v9}, Landroid/content/ContentResolver;->releaseUnstableProvider(Landroid/content/IContentProvider;)Z
-
-    .line 742
     new-instance v1, Landroid/content/ContentResolver$ParcelFileDescriptorInner;
 
     invoke-virtual {v7}, Landroid/content/res/AssetFileDescriptor;->getParcelFileDescriptor()Landroid/os/ParcelFileDescriptor;
@@ -4177,11 +4193,11 @@
 
     invoke-direct {v1, p0, v0, v8}, Landroid/content/ContentResolver$ParcelFileDescriptorInner;-><init>(Landroid/content/ContentResolver;Landroid/os/ParcelFileDescriptor;Landroid/content/IContentProvider;)V
 
-    .line 747
+    .line 775
     .local v1, pfd:Landroid/os/ParcelFileDescriptor;
     const/4 v8, 0x0
 
-    .line 749
+    .line 777
     new-instance v0, Landroid/content/res/AssetFileDescriptor;
 
     invoke-virtual {v7}, Landroid/content/res/AssetFileDescriptor;->getStartOffset()J
@@ -4198,24 +4214,24 @@
     .catch Landroid/os/RemoteException; {:try_start_4 .. :try_end_4} :catch_1
     .catch Ljava/io/FileNotFoundException; {:try_start_4 .. :try_end_4} :catch_2
 
-    .line 759
+    .line 787
     if-eqz v8, :cond_9
 
-    .line 760
+    .line 788
     invoke-virtual {p0, v8}, Landroid/content/ContentResolver;->releaseProvider(Landroid/content/IContentProvider;)Z
 
-    .line 762
+    .line 790
     :cond_9
     if-eqz v9, :cond_2
 
-    goto/16 :goto_0
+    goto :goto_0
 
-    .line 756
+    .line 784
     .end local v1           #pfd:Landroid/os/ParcelFileDescriptor;
     :catch_2
     move-exception v6
 
-    .line 757
+    .line 785
     .local v6, e:Ljava/io/FileNotFoundException;
     :try_start_5
     throw v6
@@ -4232,7 +4248,7 @@
     .parameter "sortOrder"
 
     .prologue
-    .line 315
+    .line 316
     const/4 v6, 0x0
 
     move-object v0, p0
@@ -4255,7 +4271,7 @@
 .end method
 
 .method public final query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/database/Cursor;
-    .locals 23
+    .locals 24
     .parameter "uri"
     .parameter "projection"
     .parameter "selection"
@@ -4264,57 +4280,62 @@
     .parameter "cancellationSignal"
 
     .prologue
-    .line 356
+    .line 357
     invoke-virtual/range {p0 .. p1}, Landroid/content/ContentResolver;->acquireUnstableProvider(Landroid/net/Uri;)Landroid/content/IContentProvider;
 
     move-result-object v3
 
-    .line 357
+    .line 358
     .local v3, unstableProvider:Landroid/content/IContentProvider;
     if-nez v3, :cond_1
 
-    .line 358
-    const/16 v22, 0x0
+    .line 359
+    const/16 v23, 0x0
 
-    .line 401
+    .line 411
     :cond_0
     :goto_0
-    return-object v22
+    return-object v23
 
-    .line 360
+    .line 361
     :cond_1
     const/4 v10, 0x0
 
     .line 362
     .local v10, stableProvider:Landroid/content/IContentProvider;
+    const/16 v19, 0x0
+
+    .line 364
+    .local v19, qCursor:Landroid/database/Cursor;
     :try_start_0
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
-    move-result-wide v20
+    move-result-wide v21
 
-    .line 364
-    .local v20, startTime:J
+    .line 366
+    .local v21, startTime:J
     const/4 v9, 0x0
 
-    .line 365
+    .line 367
     .local v9, remoteCancellationSignal:Landroid/os/ICancellationSignal;
     if-eqz p6, :cond_2
 
-    .line 366
+    .line 368
     invoke-virtual/range {p6 .. p6}, Landroid/os/CancellationSignal;->throwIfCanceled()V
 
-    .line 367
+    .line 369
     invoke-interface {v3}, Landroid/content/IContentProvider;->createCancellationSignal()Landroid/os/ICancellationSignal;
 
     move-result-object v9
 
-    .line 368
+    .line 370
     move-object/from16 v0, p6
 
     invoke-virtual {v0, v9}, Landroid/os/CancellationSignal;->setRemote(Landroid/os/ICancellationSignal;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_2
 
     :cond_2
     move-object/from16 v4, p1
@@ -4327,40 +4348,39 @@
 
     move-object/from16 v8, p5
 
-    .line 372
+    .line 373
     :try_start_1
     invoke-interface/range {v3 .. v9}, Landroid/content/IContentProvider;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Landroid/os/ICancellationSignal;)Landroid/database/Cursor;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Landroid/os/DeadObjectException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/lang/IllegalStateException; {:try_start_1 .. :try_end_1} :catch_2
 
     move-result-object v19
 
-    .line 386
-    .local v19, qCursor:Landroid/database/Cursor;
+    .line 387
     :goto_1
     if-nez v19, :cond_6
 
-    .line 387
-    const/16 v22, 0x0
+    .line 388
+    const/16 v23, 0x0
 
-    .line 403
+    .line 413
     if-eqz v3, :cond_3
 
-    .line 404
+    .line 414
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v3}, Landroid/content/ContentResolver;->releaseUnstableProvider(Landroid/content/IContentProvider;)Z
 
-    .line 406
+    .line 416
     :cond_3
     if-eqz v10, :cond_0
 
-    .line 407
+    .line 417
     .end local v9           #remoteCancellationSignal:Landroid/os/ICancellationSignal;
-    .end local v19           #qCursor:Landroid/database/Cursor;
-    .end local v20           #startTime:J
+    .end local v21           #startTime:J
     :goto_2
     move-object/from16 v0, p0
 
@@ -4368,42 +4388,43 @@
 
     goto :goto_0
 
-    .line 374
+    .line 375
     .restart local v9       #remoteCancellationSignal:Landroid/os/ICancellationSignal;
-    .restart local v20       #startTime:J
+    .restart local v21       #startTime:J
     :catch_0
     move-exception v18
 
-    .line 378
+    .line 379
     .local v18, e:Landroid/os/DeadObjectException;
     :try_start_2
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v3}, Landroid/content/ContentResolver;->unstableProviderDied(Landroid/content/IContentProvider;)V
 
-    .line 379
+    .line 380
     invoke-virtual/range {p0 .. p1}, Landroid/content/ContentResolver;->acquireProvider(Landroid/net/Uri;)Landroid/content/IContentProvider;
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_1
+    .catch Ljava/lang/IllegalStateException; {:try_start_2 .. :try_end_2} :catch_2
 
     move-result-object v10
 
-    .line 380
+    .line 381
     if-nez v10, :cond_5
 
-    .line 381
-    const/16 v22, 0x0
+    .line 382
+    const/16 v23, 0x0
 
-    .line 403
+    .line 413
     if-eqz v3, :cond_4
 
-    .line 404
+    .line 414
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v3}, Landroid/content/ContentResolver;->releaseUnstableProvider(Landroid/content/IContentProvider;)Z
 
-    .line 406
+    .line 416
     :cond_4
     if-eqz v10, :cond_0
 
@@ -4422,26 +4443,25 @@
 
     move-object/from16 v16, v9
 
-    .line 383
+    .line 384
     :try_start_3
     invoke-interface/range {v10 .. v16}, Landroid/content/IContentProvider;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Landroid/os/ICancellationSignal;)Landroid/database/Cursor;
 
     move-result-object v19
 
-    .restart local v19       #qCursor:Landroid/database/Cursor;
     goto :goto_1
 
-    .line 390
+    .line 391
     .end local v18           #e:Landroid/os/DeadObjectException;
     :cond_6
     invoke-interface/range {v19 .. v19}, Landroid/database/Cursor;->getCount()I
 
-    .line 391
+    .line 392
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v4
 
-    sub-long v12, v4, v20
+    sub-long v12, v4, v21
 
     .local v12, durationMillis:J
     move-object/from16 v11, p0
@@ -4454,108 +4474,201 @@
 
     move-object/from16 v17, p5
 
-    .line 392
+    .line 393
     invoke-direct/range {v11 .. v17}, Landroid/content/ContentResolver;->maybeLogQueryToEventLog(JLandroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 394
-    new-instance v22, Landroid/content/ContentResolver$CursorWrapperInner;
+    .line 395
+    new-instance v23, Landroid/content/ContentResolver$CursorWrapperInner;
 
     if-eqz v10, :cond_8
 
     move-object v4, v10
 
     :goto_3
-    move-object/from16 v0, v22
+    move-object/from16 v0, v23
 
     move-object/from16 v1, p0
 
     move-object/from16 v2, v19
 
     invoke-direct {v0, v1, v2, v4}, Landroid/content/ContentResolver$CursorWrapperInner;-><init>(Landroid/content/ContentResolver;Landroid/database/Cursor;Landroid/content/IContentProvider;)V
+
+    .line 397
+    .local v23, wrapper:Landroid/content/ContentResolver$CursorWrapperInner;
+    const/4 v10, 0x0
+
+    .line 399
+    new-instance v4, Landroid/database/sqlite/DatabaseObjectNotClosedException;
+
+    invoke-direct {v4}, Landroid/database/sqlite/DatabaseObjectNotClosedException;-><init>()V
+
+    invoke-virtual {v4}, Landroid/database/sqlite/DatabaseObjectNotClosedException;->fillInStackTrace()Ljava/lang/Throwable;
+
+    move-result-object v20
+
+    .line 400
+    .local v20, stackTrace:Ljava/lang/Throwable;
+    invoke-virtual/range {p1 .. p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual/range {v23 .. v23}, Ljava/lang/Object;->hashCode()I
+
+    move-result v5
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v20
+
+    invoke-virtual {v0, v4, v1, v5}, Landroid/content/ContentResolver;->AddToQueryHistory(Ljava/lang/String;Ljava/lang/Throwable;I)Z
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
     .catch Landroid/os/RemoteException; {:try_start_3 .. :try_end_3} :catch_1
+    .catch Ljava/lang/IllegalStateException; {:try_start_3 .. :try_end_3} :catch_2
 
-    .line 396
-    .local v22, wrapper:Landroid/content/ContentResolver$CursorWrapperInner;
-    const/4 v10, 0x0
-
-    .line 403
+    .line 413
     if-eqz v3, :cond_7
 
-    .line 404
+    .line 414
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v3}, Landroid/content/ContentResolver;->releaseUnstableProvider(Landroid/content/IContentProvider;)Z
 
-    .line 406
+    .line 416
     :cond_7
     if-eqz v10, :cond_0
 
     goto :goto_2
 
-    .line 394
-    .end local v22           #wrapper:Landroid/content/ContentResolver$CursorWrapperInner;
+    .line 395
+    .end local v20           #stackTrace:Ljava/lang/Throwable;
+    .end local v23           #wrapper:Landroid/content/ContentResolver$CursorWrapperInner;
     :cond_8
     :try_start_4
     invoke-virtual/range {p0 .. p1}, Landroid/content/ContentResolver;->acquireProvider(Landroid/net/Uri;)Landroid/content/IContentProvider;
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
     .catch Landroid/os/RemoteException; {:try_start_4 .. :try_end_4} :catch_1
+    .catch Ljava/lang/IllegalStateException; {:try_start_4 .. :try_end_4} :catch_2
 
     move-result-object v4
 
     goto :goto_3
 
-    .line 398
+    .line 402
     .end local v9           #remoteCancellationSignal:Landroid/os/ICancellationSignal;
     .end local v12           #durationMillis:J
-    .end local v19           #qCursor:Landroid/database/Cursor;
-    .end local v20           #startTime:J
+    .end local v21           #startTime:J
     :catch_1
     move-exception v18
 
-    .line 401
+    .line 405
     .local v18, e:Landroid/os/RemoteException;
-    const/16 v22, 0x0
+    const/16 v23, 0x0
 
-    .line 403
+    .line 413
     if-eqz v3, :cond_9
 
-    .line 404
+    .line 414
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v3}, Landroid/content/ContentResolver;->releaseUnstableProvider(Landroid/content/IContentProvider;)Z
 
-    .line 406
+    .line 416
     :cond_9
     if-eqz v10, :cond_0
 
-    goto :goto_2
+    goto/16 :goto_2
 
-    .line 403
+    .line 406
     .end local v18           #e:Landroid/os/RemoteException;
-    :catchall_0
-    move-exception v4
+    :catch_2
+    move-exception v18
 
-    if-eqz v3, :cond_a
+    .line 407
+    .local v18, e:Ljava/lang/IllegalStateException;
+    :try_start_5
+    const-string v4, "ContentResolver"
 
-    .line 404
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "IllegalStateException handle:  ("
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual/range {v18 .. v18}, Ljava/lang/IllegalStateException;->getMessage()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    const-string v6, ")"
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 408
+    if-eqz v19, :cond_a
+
+    .line 409
+    invoke-interface/range {v19 .. v19}, Landroid/database/Cursor;->close()V
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+
+    .line 411
+    :cond_a
+    const/16 v23, 0x0
+
+    .line 413
+    if-eqz v3, :cond_b
+
+    .line 414
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v3}, Landroid/content/ContentResolver;->releaseUnstableProvider(Landroid/content/IContentProvider;)Z
 
-    .line 406
-    :cond_a
-    if-eqz v10, :cond_b
+    .line 416
+    :cond_b
+    if-eqz v10, :cond_0
 
-    .line 407
+    goto/16 :goto_2
+
+    .line 413
+    .end local v18           #e:Ljava/lang/IllegalStateException;
+    :catchall_0
+    move-exception v4
+
+    if-eqz v3, :cond_c
+
+    .line 414
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v3}, Landroid/content/ContentResolver;->releaseUnstableProvider(Landroid/content/IContentProvider;)Z
+
+    .line 416
+    :cond_c
+    if-eqz v10, :cond_d
+
+    .line 417
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v10}, Landroid/content/ContentResolver;->releaseProvider(Landroid/content/IContentProvider;)Z
 
-    .line 403
-    :cond_b
+    .line 413
+    :cond_d
     throw v4
 .end method
 
@@ -4566,14 +4679,14 @@
     .parameter "observer"
 
     .prologue
-    .line 1222
+    .line 1250
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
 
     invoke-virtual {p0, p1, p2, p3, v0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 1223
+    .line 1251
     return-void
 .end method
 
@@ -4585,7 +4698,7 @@
     .parameter "userHandle"
 
     .prologue
-    .line 1230
+    .line 1258
     :try_start_0
     invoke-static {}, Landroid/content/ContentResolver;->getContentService()Landroid/content/IContentService;
 
@@ -4599,11 +4712,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1234
+    .line 1262
     :goto_0
     return-void
 
-    .line 1232
+    .line 1260
     :catch_0
     move-exception v0
 
@@ -4624,21 +4737,21 @@
     .end annotation
 
     .prologue
-    .line 1325
+    .line 1353
     const/4 v0, 0x0
 
-    .line 1326
+    .line 1354
     .local v0, account:Landroid/accounts/Account;
     if-eqz p2, :cond_1
 
-    .line 1327
+    .line 1355
     const-string v2, "account"
 
     invoke-virtual {p2, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1328
+    .line 1356
     .local v1, accountName:Ljava/lang/String;
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -4646,7 +4759,7 @@
 
     if-nez v2, :cond_0
 
-    .line 1329
+    .line 1357
     new-instance v0, Landroid/accounts/Account;
 
     .end local v0           #account:Landroid/accounts/Account;
@@ -4654,14 +4767,14 @@
 
     invoke-direct {v0, v1, v2}, Landroid/accounts/Account;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1331
+    .line 1359
     .restart local v0       #account:Landroid/accounts/Account;
     :cond_0
     const-string v2, "account"
 
     invoke-virtual {p2, v2}, Landroid/os/Bundle;->remove(Ljava/lang/String;)V
 
-    .line 1333
+    .line 1361
     .end local v1           #accountName:Ljava/lang/String;
     :cond_1
     if-eqz p1, :cond_2
@@ -4673,10 +4786,10 @@
     :goto_0
     invoke-static {v0, v2, p2}, Landroid/content/ContentResolver;->requestSync(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 1334
+    .line 1362
     return-void
 
-    .line 1333
+    .line 1361
     :cond_2
     const/4 v2, 0x0
 
@@ -4688,17 +4801,17 @@
     .parameter "observer"
 
     .prologue
-    .line 1244
+    .line 1272
     :try_start_0
     invoke-virtual {p1}, Landroid/database/ContentObserver;->releaseContentObserver()Landroid/database/IContentObserver;
 
     move-result-object v0
 
-    .line 1245
+    .line 1273
     .local v0, contentObserver:Landroid/database/IContentObserver;
     if-eqz v0, :cond_0
 
-    .line 1246
+    .line 1274
     invoke-static {}, Landroid/content/ContentResolver;->getContentService()Landroid/content/IContentService;
 
     move-result-object v1
@@ -4707,13 +4820,13 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1251
+    .line 1279
     .end local v0           #contentObserver:Landroid/database/IContentObserver;
     :cond_0
     :goto_0
     return-void
 
-    .line 1249
+    .line 1277
     :catch_0
     move-exception v1
 
@@ -4731,16 +4844,16 @@
     .parameter "selectionArgs"
 
     .prologue
-    .line 986
+    .line 1014
     invoke-virtual {p0, p1}, Landroid/content/ContentResolver;->acquireProvider(Landroid/net/Uri;)Landroid/content/IContentProvider;
 
     move-result-object v7
 
-    .line 987
+    .line 1015
     .local v7, provider:Landroid/content/IContentProvider;
     if-nez v7, :cond_0
 
-    .line 988
+    .line 1016
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -4765,20 +4878,20 @@
 
     throw v0
 
-    .line 991
+    .line 1019
     :cond_0
     :try_start_0
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v9
 
-    .line 992
+    .line 1020
     .local v9, startTime:J
     invoke-interface {v7, p1, p2, p3, p4}, Landroid/content/IContentProvider;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
     move-result v8
 
-    .line 993
+    .line 1021
     .local v8, rowsUpdated:I
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -4786,7 +4899,7 @@
 
     sub-long v1, v3, v9
 
-    .line 994
+    .line 1022
     .local v1, durationMillis:J
     const-string/jumbo v4, "update"
 
@@ -4801,27 +4914,27 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1001
+    .line 1029
     .end local v1           #durationMillis:J
     .end local v8           #rowsUpdated:I
     .end local v9           #startTime:J
     :goto_0
     invoke-virtual {p0, v7}, Landroid/content/ContentResolver;->releaseProvider(Landroid/content/IContentProvider;)Z
 
-    .line 999
+    .line 1027
     return v8
 
-    .line 996
+    .line 1024
     :catch_0
     move-exception v6
 
-    .line 999
+    .line 1027
     .local v6, e:Landroid/os/RemoteException;
     const/4 v8, -0x1
 
     goto :goto_0
 
-    .line 1001
+    .line 1029
     .end local v6           #e:Landroid/os/RemoteException;
     :catchall_0
     move-exception v0

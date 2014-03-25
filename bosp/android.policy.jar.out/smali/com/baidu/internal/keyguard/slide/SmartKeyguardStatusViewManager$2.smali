@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 268
+    .line 280
     iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$2;->this$0:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,14 +41,14 @@
     .locals 3
 
     .prologue
-    .line 275
-    const-string v0, "KeyguardStatusViewManager"
+    .line 287
+    const-string v0, "SmartKeyguardStatusViewManager"
 
     const-string v1, "wake up lock screen"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 276
+    .line 288
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$2;->this$0:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;
 
     #getter for: Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
@@ -60,7 +60,7 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;->userActivity(J)V
 
-    .line 277
+    .line 289
     return-void
 .end method
 
@@ -69,7 +69,7 @@
     .parameter "color"
 
     .prologue
-    .line 270
+    .line 282
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$2;->this$0:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;
 
     #getter for: Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;->mWorkspaceLayout:Landroid/widget/GridLayout;
@@ -79,6 +79,6 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/GridLayout;->setBackgroundColor(I)V
 
-    .line 271
+    .line 283
     return-void
 .end method

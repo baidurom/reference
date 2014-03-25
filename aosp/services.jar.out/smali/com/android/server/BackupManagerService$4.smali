@@ -27,7 +27,7 @@
     .locals 3
 
     .prologue
-    .line 4203
+    .line 4212
     invoke-static {}, Lcom/android/server/BackupManagerService$RestoreState;->values()[Lcom/android/server/BackupManagerService$RestoreState;
 
     move-result-object v0
@@ -269,7 +269,7 @@
 
     goto :goto_5
 
-    .line 4203
+    .line 4212
     :catch_6
     move-exception v0
 

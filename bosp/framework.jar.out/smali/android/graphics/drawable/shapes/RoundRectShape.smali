@@ -55,7 +55,7 @@
     .line 64
     new-instance v0, Ljava/lang/ArrayIndexOutOfBoundsException;
 
-    const-string v1, "inner radii must have >= 8 values"
+    const-string/jumbo v1, "inner radii must have >= 8 values"
 
     invoke-direct {v0, v1}, Ljava/lang/ArrayIndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
 

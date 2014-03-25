@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 637
+    .line 760
     iput-object p1, p0, Landroid/net/wifi/WifiStateMachine$2;->this$0:Landroid/net/wifi/WifiStateMachine;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,13 +40,13 @@
     .parameter "intent"
 
     .prologue
-    .line 640
+    .line 763
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine$2;->this$0:Landroid/net/wifi/WifiStateMachine;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/net/wifi/WifiStateMachine;->startScan(Z)V
 
-    .line 641
+    .line 764
     return-void
 .end method

@@ -63,7 +63,7 @@
 .end method
 
 .method public constructor <init>(Landroid/filterfw/core/FilterContext;Ljava/lang/Class;)V
-    .locals 2
+    .locals 1
     .parameter "context"
     .parameter "schedulerClass"
 
@@ -75,13 +75,7 @@
     iput-object p2, p0, Landroid/filterfw/core/AsyncRunner;->mSchedulerClass:Ljava/lang/Class;
 
     .line 151
-    const-string v0, "AsyncRunner"
-
-    const/4 v1, 0x2
-
-    invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
-
-    move-result v0
+    const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/filterfw/core/AsyncRunner;->mLogVerbose:Z
 
@@ -489,7 +483,7 @@
     :try_start_1
     new-instance v0, Landroid/filterfw/core/SyncRunner;
 
-    iget-object v1, p0, Landroid/filterfw/core/GraphRunner;->mFilterContext:Landroid/filterfw/core/FilterContext;
+    iget-object v1, p0, Landroid/filterfw/core/AsyncRunner;->mFilterContext:Landroid/filterfw/core/FilterContext;
 
     iget-object v2, p0, Landroid/filterfw/core/AsyncRunner;->mSchedulerClass:Ljava/lang/Class;
 

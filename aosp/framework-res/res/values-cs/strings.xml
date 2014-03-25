@@ -271,7 +271,7 @@
     <string name="permgrouplab_display">Uživatelské rozhraní dalších aplikací</string>
     <string name="permgroupdesc_display">Vliv na uživatelské rozhraní dalších aplikací</string>
     <string name="permgrouplab_storage">Úložiště</string>
-    <string name="permgroupdesc_storage">Přístup do úložiště USB.</string>
+    <string name="permgroupdesc_storage">Přístup ke kartě SD.</string>
     <string name="permlab_statusBar">zakázání či změny stavového řádku</string>
     <string name="permdesc_statusBar">Umožňuje aplikaci zakázat stavový řádek nebo přidat či odebrat systémové ikony.</string>
     <string name="permlab_statusBarService">stavový řádek</string>
@@ -486,9 +486,9 @@
     <string name="permdesc_brick">Umožňuje aplikaci trvale vypnout celý telefon. To je velmi nebezpečné oprávnění.</string>
     <string name="permlab_reboot">vynucení restartování telefonu</string>
     <string name="permdesc_reboot">Umožňuje aplikaci vynutit restartování telefonu.</string>
-    <string name="permlab_mount_unmount_filesystems">přístup k systému souborů v úložišti USB</string>
+    <string name="permlab_mount_unmount_filesystems">přístup k systému souborů na kartě SD</string>
     <string name="permdesc_mount_unmount_filesystems">Umožňuje aplikaci připojit či odpojit souborové systémy ve vyměnitelných úložištích.</string>
-    <string name="permlab_mount_format_filesystems">smazání úložiště USB</string>
+    <string name="permlab_mount_format_filesystems">smazání karty SD</string>
     <string name="permdesc_mount_format_filesystems">Umožňuje aplikaci formátovat vyměnitelná úložiště.</string>
     <string name="permlab_asec_access">získat informace o interním úložišti</string>
     <string name="permdesc_asec_access">Umožňuje aplikaci získat informace o interním úložišti.</string>
@@ -597,9 +597,9 @@
     <string name="permlab_writeDictionary">přidávání slov do slovníku definovaného uživatelem</string>
     <string name="permdesc_writeDictionary">Umožňuje aplikaci zapisovat nová slova do uživatelského slovníku.</string>
     <string name="permlab_sdcardRead">testování přístupu do chráněného úložiště</string>
-    <string name="permdesc_sdcardRead">Umožňuje aplikaci testovat oprávnění pro úložiště USB, které bude dostupné v budoucích zařízeních.</string>
-    <string name="permlab_sdcardWrite">úprava nebo mazání obsahu v úložišti USB</string>
-    <string name="permdesc_sdcardWrite">Umožňuje aplikaci zapisovat do úložiště USB.</string>
+    <string name="permdesc_sdcardRead">Umožňuje aplikaci testovat oprávnění pro kartu SD, která bude dostupná v budoucích zařízeních.</string>
+    <string name="permlab_sdcardWrite">úprava nebo mazání obsahu na kartě SD</string>
+    <string name="permdesc_sdcardWrite">Umožňuje aplikaci zapisovat na kartu SD.</string>
     <string name="permlab_mediaStorageWrite">Upravit/smazat interní úlož.</string>
     <string name="permdesc_mediaStorageWrite">Umožňuje aplikaci upravovat obsah interního úložiště médií.</string>
     <string name="permlab_sdcardAccessAll">přístup k externímu úložišti všech uživatelů</string>
@@ -733,7 +733,7 @@
     <string name="lockscreen_missing_sim_message">V telefonu není žádná SIM karta.</string>
     <string name="lockscreen_missing_sim_instructions">Vložte SIM kartu.</string>
     <string name="lockscreen_missing_sim_instructions_long">SIM karta chybí nebo je nečitelná. Vložte SIM kartu.</string>
-    <string name="lockscreen_permanent_disabled_sim_message_short">Nepoužitelná karta SIM.</string>
+    <string name="lockscreen_permanent_disabled_sim_message_short">Nepoužitelná karta SIM</string>
     <string name="lockscreen_permanent_disabled_sim_instructions">"Vaše SIM karta byla natrvalo zablokována.
  Požádejte svého poskytovatele bezdrátových služeb o další SIM kartu."</string>
     <string name="lockscreen_transport_prev_description">Tlačítko Předchozí stopa</string>
@@ -743,9 +743,9 @@
     <string name="lockscreen_transport_stop_description">Tlačítko Zastavit</string>
     <string name="emergency_calls_only">Pouze tísňová volání</string>
     <string name="lockscreen_network_locked_message">Síť je blokována</string>
-    <string name="lockscreen_sim_puk_locked_message">SIM karta je zablokována pomocí kódu PUK.</string>
+    <string name="lockscreen_sim_puk_locked_message">SIM karta je zablokována pomocí kódu PUK</string>
     <string name="lockscreen_sim_puk_locked_instructions">Další informace naleznete v uživatelské příručce; nebo kontaktujte zákaznickou podporu.</string>
-    <string name="lockscreen_sim_locked_message">SIM karta je zablokována.</string>
+    <string name="lockscreen_sim_locked_message">SIM karta je zablokována</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">Odblokování SIM karty...</string>
     <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"Již %dkrát jste použili nesprávné bezpečnostní gesto. 
 
@@ -1030,15 +1030,15 @@ Chcete ji zavřít?"</string>
     <string name="perm_costs_money">může vás to něco stát</string>
     <string name="usb_storage_activity_title">Velkokapacitní úložiště USB</string>
     <string name="usb_storage_title">USB připojeno</string>
-    <string name="usb_storage_message">Připojili jste se k počítači pomocí rozhraní USB. Chcete-li kopírovat soubory z počítače do úložiště USB v zařízení Android či obráceně, klepněte na tlačítko níže.</string>
+    <string name="usb_storage_message">Připojili jste se k počítači pomocí rozhraní USB. Chcete-li kopírovat soubory z počítače na kartu SD v zařízení Android či obráceně, stiskněte tlačítko níže.</string>
     <string name="usb_storage_button_mount">Zapnout úložiště USB</string>
-    <string name="usb_storage_error_message">Problém s použitím úložiště USB jako velkokapacitního úložiště USB.</string>
+    <string name="usb_storage_error_message">Problém s použitím karty SD jako velkokapacitního úložiště USB.</string>
     <string name="usb_storage_notification_title">USB připojeno</string>
     <string name="usb_storage_notification_message">Dotykem můžete kopírovat soubory do nebo z počítače.</string>
     <string name="usb_storage_stop_notification_title">Vypnout úložiště USB</string>
     <string name="usb_storage_stop_notification_message">Dotykem vypnete úložiště USB.</string>
     <string name="usb_storage_stop_title">Úložiště USB je používáno</string>
-    <string name="usb_storage_stop_message">Nejdříve úložiště USB zařízení Android v počítači odpojte (odeberte) a teprve poté jej vypněte.</string>
+    <string name="usb_storage_stop_message">Před vypnutím úložiště USB nejdříve kartu SD zařízení Android v počítači odpojte (odeberte).</string>
     <string name="usb_storage_stop_button_mount">Vypnout úložiště USB</string>
     <string name="usb_storage_stop_error_message">Při vypínání úložiště USB došlo k chybě. Zkontrolujte, zda byl hostitel USB odpojen, a zkuste to znovu.</string>
     <string name="dlg_confirm_kill_storage_users_title">Zapnout úložiště USB</string>
@@ -1050,8 +1050,8 @@ Chcete ji zavřít?"</string>
     <string name="usb_cd_installer_notification_title">Připojeno jako instalátor</string>
     <string name="usb_accessory_notification_title">Připojeno k perifernímu zařízení USB</string>
     <string name="usb_notification_message">Dotykem zobrazíte další možnosti rozhraní USB.</string>
-    <string name="extmedia_format_title">Formátovat úložiště USB?</string>
-    <string name="extmedia_format_message">Všechny soubory uložené v úložišti USB budou vymazány. Tuto akci nelze vrátit zpět.</string>
+    <string name="extmedia_format_title">Formátovat kartu SD?</string>
+    <string name="extmedia_format_message">Všechna data na kartě budou ztracena.</string>
     <string name="extmedia_format_button_format">Formátovat</string>
     <string name="adb_active_notification_title">Ladění přes rozhraní USB připojeno</string>
     <string name="adb_active_notification_message">Dotykem zakážete ladění USB.</string>
@@ -1064,18 +1064,18 @@ Chcete ji zavřít?"</string>
     <string name="fast_scroll_alphabet">" AÁBCČDĎEÉĚFGHCHIÍJKLMNŇOÓPQRŘSŠTŤUÚVWXYÝZŽ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789AÁBCČDĎEÉĚFGHCHIÍJKLMNŇOÓPQRŘSŠTŤUÚVWXYÝZŽ"</string>
     <string name="candidates_style"><u>kandidáti</u></string>
-    <string name="ext_media_checking_notification_title">Příprava úložiště USB</string>
+    <string name="ext_media_checking_notification_title">Probíhá příprava %s</string>
     <string name="ext_media_checking_notification_message">Kontrola chyb.</string>
-    <string name="ext_media_nofs_notification_title">Prázdné úložiště USB</string>
-    <string name="ext_media_nofs_notification_message">Úložiště USB je prázdné nebo obsahuje nepodporovaný systém souborů.</string>
-    <string name="ext_media_unmountable_notification_title">Úložiště USB je poškozeno</string>
-    <string name="ext_media_unmountable_notification_message">Úložiště USB je poškozeno. Zkuste ho přeformátovat.</string>
-    <string name="ext_media_badremoval_notification_title">Úložiště USB nečekaně odebráno</string>
-    <string name="ext_media_badremoval_notification_message">Před odebráním úložiště USB ho nejprve odpojte. Zabráníte tak ztrátě dat.</string>
-    <string name="ext_media_safe_unmount_notification_title">Úložiště USB lze odebrat</string>
-    <string name="ext_media_safe_unmount_notification_message">Úložiště USB lze bezpečně odebrat.</string>
-    <string name="ext_media_nomedia_notification_title">Úložiště USB odebráno</string>
-    <string name="ext_media_nomedia_notification_message">Úložiště USB odebráno. Vložte nové médium.</string>
+    <string name="ext_media_nofs_notification_title">Prázdná %s</string>
+    <string name="ext_media_nofs_notification_message">%s prázdná nebo nepodporovaný systém souborů.</string>
+    <string name="ext_media_unmountable_notification_title">Poškozená %s</string>
+    <string name="ext_media_unmountable_notification_message">%s poškozená. Pravděpodobně bude třeba ji znovu naformátovat.</string>
+    <string name="ext_media_badremoval_notification_title">%s neočekávaně vyjmuta</string>
+    <string name="ext_media_badremoval_notification_message">Aby se zabránilo ztrátě dat, před vyjmutím odpojte %s.</string>
+    <string name="ext_media_safe_unmount_notification_title">%s lze bezpečně vyjmout</string>
+    <string name="ext_media_safe_unmount_notification_message">Nyní můžete bezpečně vyjmout %s.</string>
+    <string name="ext_media_nomedia_notification_title">Vyjmuta %s</string>
+    <string name="ext_media_nomedia_notification_message">%s vyjmuta. Vložte novou.</string>
     <string name="activity_list_empty">Nebyly nalezeny žádné odpovídající aktivity.</string>
     <string name="permlab_pkgUsageStats">aktualizovat statistiku použití součástí</string>
     <string name="permdesc_pkgUsageStats">Umožňuje aplikaci upravit shromážděné statistiky využití komponent. Toto oprávnění není určeno pro běžné aplikace.</string>
@@ -1135,13 +1135,13 @@ pro účet %s."</string>
     <string name="no_matches">Žádné shody</string>
     <string name="find_on_page">Hledat na stránce</string>
     <string name="action_mode_done">Hotovo</string>
-    <string name="progress_unmounting">Odpojování úložiště USB...</string>
-    <string name="progress_erasing">Mazání úložiště USB...</string>
-    <string name="format_error">Úložiště USB nelze smazat.</string>
+    <string name="progress_unmounting">Odpojování karty SD...</string>
+    <string name="progress_erasing">Mazání karty SD...</string>
+    <string name="format_error">Kartu SD nelze smazat.</string>
     <string name="media_bad_removal">Karta SD nebyla před odebráním odpojena.</string>
-    <string name="media_checking">Probíhá kontrola úložiště USB.</string>
+    <string name="media_checking">Probíhá kontrola karty SD.</string>
     <string name="media_removed">Karta SD byla odebrána.</string>
-    <string name="media_shared">Úložiště USB je momentálně používáno počítačem.</string>
+    <string name="media_shared">Karta SD je momentálně používána počítačem.</string>
     <string name="media_unknown_state">Neznámý stav externího média.</string>
     <string name="share">Sdílet</string>
     <string name="find">Najít</string>
@@ -1315,4 +1315,7 @@ Dlouhodobý poslech hlasitého zvuku může poškodit sluch."</string>
     <string name="enable_accessibility_canceled">Usnadnění zrušeno.</string>
     <string name="user_switched">Aktuální uživatel je %1$s.</string>
     <string name="owner_name">Vlastník</string>
+    <string name="storage_phone">Paměť telefonu</string>
+    <string name="storage_external_usb">Externí úložiště USB</string>
+    <string name="zz_keyguard_accessibility_voice_unlock">Odemknutí hlasem.</string>
 </resources>

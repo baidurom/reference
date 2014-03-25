@@ -27,16 +27,16 @@
     .parameter "userId"
 
     .prologue
-    .line 224
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 259
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 225
+    .line 260
     iput-object p1, p0, Landroid/app/ActivityThread$ProviderKey;->authority:Ljava/lang/String;
 
-    .line 226
+    .line 261
     iput p2, p0, Landroid/app/ActivityThread$ProviderKey;->userId:I
 
-    .line 227
+    .line 262
     return-void
 .end method
 
@@ -49,17 +49,17 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 231
+    .line 266
     instance-of v2, p1, Landroid/app/ActivityThread$ProviderKey;
 
     if-eqz v2, :cond_0
 
     move-object v0, p1
 
-    .line 232
+    .line 267
     check-cast v0, Landroid/app/ActivityThread$ProviderKey;
 
-    .line 233
+    .line 268
     .local v0, other:Landroid/app/ActivityThread$ProviderKey;
     iget-object v2, p0, Landroid/app/ActivityThread$ProviderKey;->authority:Ljava/lang/String;
 
@@ -79,7 +79,7 @@
 
     const/4 v1, 0x1
 
-    .line 235
+    .line 270
     .end local v0           #other:Landroid/app/ActivityThread$ProviderKey;
     :cond_0
     return v1
@@ -89,7 +89,7 @@
     .locals 2
 
     .prologue
-    .line 240
+    .line 275
     iget-object v0, p0, Landroid/app/ActivityThread$ProviderKey;->authority:Ljava/lang/String;
 
     if-eqz v0, :cond_0

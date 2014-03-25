@@ -57,7 +57,7 @@
     const/4 v0, 0x0
 
     .line 110
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 52
     iput v0, p0, Landroid/graphics/Canvas;->mDensity:I
@@ -93,7 +93,7 @@
     const/4 v0, 0x0
 
     .line 136
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 52
     iput v0, p0, Landroid/graphics/Canvas;->mDensity:I
@@ -141,7 +141,7 @@
     const/4 v0, 0x0
 
     .line 125
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 52
     iput v0, p0, Landroid/graphics/Canvas;->mDensity:I

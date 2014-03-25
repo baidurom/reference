@@ -64,7 +64,7 @@
     const/4 v1, 0x0
 
     .line 130
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 57
     iput-boolean v1, p0, Landroid/content/Loader;->mStarted:Z
@@ -219,7 +219,7 @@
     .local p0, this:Landroid/content/Loader;,"Landroid/content/Loader<TD;>;"
     invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    const-string v0, "mId="
+    const-string/jumbo v0, "mId="
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 

@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 2663
+    .line 2762
     iput-object p1, p0, Lcom/android/server/InputMethodManagerService$7;->this$0:Lcom/android/server/InputMethodManagerService;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -43,14 +43,14 @@
     .parameter "which"
 
     .prologue
-    .line 2666
+    .line 2765
     iget-object v2, p0, Lcom/android/server/InputMethodManagerService$7;->this$0:Lcom/android/server/InputMethodManagerService;
 
     iget-object v3, v2, Lcom/android/server/InputMethodManagerService;->mMethodMap:Ljava/util/HashMap;
 
     monitor-enter v3
 
-    .line 2667
+    .line 2766
     :try_start_0
     iget-object v2, p0, Lcom/android/server/InputMethodManagerService$7;->this$0:Lcom/android/server/InputMethodManagerService;
 
@@ -92,15 +92,15 @@
 
     if-gt v2, p2, :cond_1
 
-    .line 2669
+    .line 2768
     :cond_0
     monitor-exit v3
 
-    .line 2682
+    .line 2781
     :goto_0
     return-void
 
-    .line 2671
+    .line 2770
     :cond_1
     iget-object v2, p0, Lcom/android/server/InputMethodManagerService$7;->this$0:Lcom/android/server/InputMethodManagerService;
 
@@ -111,7 +111,7 @@
 
     aget-object v0, v2, p2
 
-    .line 2672
+    .line 2771
     .local v0, im:Landroid/view/inputmethod/InputMethodInfo;
     iget-object v2, p0, Lcom/android/server/InputMethodManagerService$7;->this$0:Lcom/android/server/InputMethodManagerService;
 
@@ -122,16 +122,16 @@
 
     aget v1, v2, p2
 
-    .line 2673
+    .line 2772
     .local v1, subtypeId:I
     iget-object v2, p0, Lcom/android/server/InputMethodManagerService$7;->this$0:Lcom/android/server/InputMethodManagerService;
 
     invoke-virtual {v2}, Lcom/android/server/InputMethodManagerService;->hideInputMethodMenu()V
 
-    .line 2674
+    .line 2773
     if-eqz v0, :cond_4
 
-    .line 2675
+    .line 2774
     if-ltz v1, :cond_2
 
     invoke-virtual {v0}, Landroid/view/inputmethod/InputMethodInfo;->getSubtypeCount()I
@@ -140,11 +140,11 @@
 
     if-lt v1, v2, :cond_3
 
-    .line 2677
+    .line 2776
     :cond_2
     const/4 v1, -0x1
 
-    .line 2679
+    .line 2778
     :cond_3
     iget-object v2, p0, Lcom/android/server/InputMethodManagerService$7;->this$0:Lcom/android/server/InputMethodManagerService;
 
@@ -154,7 +154,7 @@
 
     invoke-virtual {v2, v4, v1}, Lcom/android/server/InputMethodManagerService;->setInputMethodLocked(Ljava/lang/String;I)V
 
-    .line 2681
+    .line 2780
     :cond_4
     monitor-exit v3
 

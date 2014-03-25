@@ -17,6 +17,10 @@
 # static fields
 .field private static DBG:Z = false
 
+.field private static final DEFAULT_LAUNCHER:Ljava/lang/String; = "com.android.launcher"
+
+.field private static final FILTER_PERMISSION:Ljava/lang/String; = "android.permission.ADVANCED_WIDGET_API"
+
 .field private static final MIN_UPDATE_PERIOD:I = 0x1b7740
 
 .field private static final SETTINGS_FILENAME:Ljava/lang/String; = "appwidgets.xml"
@@ -25,6 +29,8 @@
 
 
 # instance fields
+.field hostName:Ljava/lang/String;
+
 .field mAlarmManager:Landroid/app/AlarmManager;
 
 .field final mAppWidgetIds:Ljava/util/ArrayList;
@@ -149,7 +155,7 @@
     .locals 1
 
     .prologue
-    .line 93
+    .line 97
     const/4 v0, 0x0
 
     sput-boolean v0, Lcom/android/server/AppWidgetServiceImpl;->DBG:Z
@@ -164,88 +170,93 @@
     .parameter "saveStateHandler"
 
     .prologue
-    .line 201
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 207
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 176
+    .line 180
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/AppWidgetServiceImpl;->mBoundRemoteViewsServices:Ljava/util/HashMap;
 
-    .line 178
+    .line 182
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/AppWidgetServiceImpl;->mRemoteViewsServicesAppWidgets:Ljava/util/HashMap;
 
-    .line 184
+    .line 188
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/android/server/AppWidgetServiceImpl;->hostName:Ljava/lang/String;
+
+    .line 190
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/AppWidgetServiceImpl;->mInstalledProviders:Ljava/util/ArrayList;
 
-    .line 185
+    .line 191
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/android/server/AppWidgetServiceImpl;->mNextAppWidgetId:I
 
-    .line 186
+    .line 192
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
 
-    .line 187
+    .line 193
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/AppWidgetServiceImpl;->mHosts:Ljava/util/ArrayList;
 
-    .line 189
+    .line 195
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/AppWidgetServiceImpl;->mPackagesWithBindWidgetPermission:Ljava/util/HashSet;
 
-    .line 198
+    .line 204
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/AppWidgetServiceImpl;->mDeletedProviders:Ljava/util/ArrayList;
 
-    .line 199
+    .line 205
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/AppWidgetServiceImpl;->mDeletedHosts:Ljava/util/ArrayList;
 
-    .line 918
+    .line 945
     new-instance v0, Lcom/android/server/AppWidgetServiceImpl$2;
 
     invoke-direct {v0, p0}, Lcom/android/server/AppWidgetServiceImpl$2;-><init>(Lcom/android/server/AppWidgetServiceImpl;)V
 
     iput-object v0, p0, Lcom/android/server/AppWidgetServiceImpl;->mSaveStateRunnable:Ljava/lang/Runnable;
 
-    .line 202
+    .line 208
     iput-object p1, p0, Lcom/android/server/AppWidgetServiceImpl;->mContext:Landroid/content/Context;
 
-    .line 203
+    .line 209
     invoke-static {}, Landroid/app/AppGlobals;->getPackageManager()Landroid/content/pm/IPackageManager;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/AppWidgetServiceImpl;->mPm:Landroid/content/pm/IPackageManager;
 
-    .line 204
+    .line 210
     iget-object v0, p0, Lcom/android/server/AppWidgetServiceImpl;->mContext:Landroid/content/Context;
 
     const-string v1, "alarm"
@@ -258,16 +269,16 @@
 
     iput-object v0, p0, Lcom/android/server/AppWidgetServiceImpl;->mAlarmManager:Landroid/app/AlarmManager;
 
-    .line 205
+    .line 211
     iput p2, p0, Lcom/android/server/AppWidgetServiceImpl;->mUserId:I
 
-    .line 206
+    .line 212
     iput-object p3, p0, Lcom/android/server/AppWidgetServiceImpl;->mSaveStateHandler:Landroid/os/Handler;
 
-    .line 207
+    .line 213
     invoke-virtual {p0}, Lcom/android/server/AppWidgetServiceImpl;->computeMaximumWidgetBitmapMemory()V
 
-    .line 208
+    .line 214
     return-void
 .end method
 
@@ -276,7 +287,7 @@
     .parameter "x0"
 
     .prologue
-    .line 87
+    .line 89
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->ensureStateLoadedLocked()V
 
     return-void
@@ -291,7 +302,7 @@
     .prologue
     const/4 v9, 0x1
 
-    .line 559
+    .line 565
     sget-boolean v6, Lcom/android/server/AppWidgetServiceImpl;->DBG:Z
 
     if-eqz v6, :cond_0
@@ -326,13 +337,13 @@
 
     invoke-direct {p0, v6}, Lcom/android/server/AppWidgetServiceImpl;->log(Ljava/lang/String;)V
 
-    .line 561
+    .line 567
     :cond_0
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v1
 
-    .line 563
+    .line 569
     .local v1, ident:J
     :try_start_0
     iget-object v7, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
@@ -341,25 +352,25 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 564
+    .line 570
     :try_start_1
     invoke-direct {p0, p3}, Lcom/android/server/AppWidgetServiceImpl;->cloneIfLocalBinder(Landroid/os/Bundle;)Landroid/os/Bundle;
 
     move-result-object p3
 
-    .line 565
+    .line 571
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->ensureStateLoadedLocked()V
 
-    .line 566
+    .line 572
     invoke-virtual {p0, p1}, Lcom/android/server/AppWidgetServiceImpl;->lookupAppWidgetIdLocked(I)Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
 
     move-result-object v0
 
-    .line 567
+    .line 573
     .local v0, id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     if-nez v0, :cond_1
 
-    .line 568
+    .line 574
     new-instance v6, Ljava/lang/IllegalArgumentException;
 
     const-string v8, "bad appWidgetId"
@@ -368,7 +379,7 @@
 
     throw v6
 
-    .line 611
+    .line 617
     .end local v0           #id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     :catchall_0
     move-exception v6
@@ -382,7 +393,7 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 613
+    .line 619
     :catchall_1
     move-exception v6
 
@@ -390,7 +401,7 @@
 
     throw v6
 
-    .line 570
+    .line 576
     .restart local v0       #id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     :cond_1
     :try_start_3
@@ -398,7 +409,7 @@
 
     if-eqz v6, :cond_2
 
-    .line 571
+    .line 577
     new-instance v6, Ljava/lang/IllegalArgumentException;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -439,17 +450,17 @@
 
     throw v6
 
-    .line 574
+    .line 580
     :cond_2
     invoke-virtual {p0, p2}, Lcom/android/server/AppWidgetServiceImpl;->lookupProviderLocked(Landroid/content/ComponentName;)Lcom/android/server/AppWidgetServiceImpl$Provider;
 
     move-result-object v5
 
-    .line 575
+    .line 581
     .local v5, p:Lcom/android/server/AppWidgetServiceImpl$Provider;
     if-nez v5, :cond_3
 
-    .line 576
+    .line 582
     new-instance v6, Ljava/lang/IllegalArgumentException;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -474,13 +485,13 @@
 
     throw v6
 
-    .line 578
+    .line 584
     :cond_3
     iget-boolean v6, v5, Lcom/android/server/AppWidgetServiceImpl$Provider;->zombie:Z
 
     if-eqz v6, :cond_4
 
-    .line 579
+    .line 585
     new-instance v6, Ljava/lang/IllegalArgumentException;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -505,14 +516,14 @@
 
     throw v6
 
-    .line 583
+    .line 589
     :cond_4
     iput-object v5, v0, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->provider:Lcom/android/server/AppWidgetServiceImpl$Provider;
 
-    .line 584
+    .line 590
     if-nez p3, :cond_5
 
-    .line 585
+    .line 591
     new-instance v4, Landroid/os/Bundle;
 
     invoke-direct {v4}, Landroid/os/Bundle;-><init>()V
@@ -521,13 +532,13 @@
     .local v4, options:Landroid/os/Bundle;
     move-object p3, v4
 
-    .line 587
+    .line 593
     .end local v4           #options:Landroid/os/Bundle;
     .restart local p3
     :cond_5
     iput-object p3, v0, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->options:Landroid/os/Bundle;
 
-    .line 590
+    .line 596
     const-string v6, "appWidgetCategory"
 
     invoke-virtual {p3, v6}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
@@ -536,34 +547,34 @@
 
     if-nez v6, :cond_6
 
-    .line 591
+    .line 597
     const-string v6, "appWidgetCategory"
 
     const/4 v8, 0x1
 
     invoke-virtual {p3, v6, v8}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 595
+    .line 601
     :cond_6
     iget-object v6, v5, Lcom/android/server/AppWidgetServiceImpl$Provider;->instances:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 596
+    .line 602
     iget-object v6, v5, Lcom/android/server/AppWidgetServiceImpl$Provider;->instances:Ljava/util/ArrayList;
 
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
-    .line 597
+    .line 603
     .local v3, instancesSize:I
     if-ne v3, v9, :cond_7
 
-    .line 599
+    .line 605
     invoke-virtual {p0, v5}, Lcom/android/server/AppWidgetServiceImpl;->sendEnableIntentLocked(Lcom/android/server/AppWidgetServiceImpl$Provider;)V
 
-    .line 606
+    .line 612
     :cond_7
     const/4 v6, 0x1
 
@@ -575,25 +586,25 @@
 
     invoke-virtual {p0, v5, v6}, Lcom/android/server/AppWidgetServiceImpl;->sendUpdateIntentLocked(Lcom/android/server/AppWidgetServiceImpl$Provider;[I)V
 
-    .line 609
+    .line 615
     invoke-static {v5}, Lcom/android/server/AppWidgetServiceImpl;->getAppWidgetIds(Lcom/android/server/AppWidgetServiceImpl$Provider;)[I
 
     move-result-object v6
 
     invoke-virtual {p0, v5, v6}, Lcom/android/server/AppWidgetServiceImpl;->registerForBroadcastsLocked(Lcom/android/server/AppWidgetServiceImpl$Provider;[I)V
 
-    .line 610
+    .line 616
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->saveStateAsync()V
 
-    .line 611
+    .line 617
     monitor-exit v7
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 613
+    .line 619
     invoke-static {v1, v2}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 615
+    .line 621
     return-void
 .end method
 
@@ -604,12 +615,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 637
+    .line 643
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v0
 
-    .line 639
+    .line 645
     .local v0, callingUid:I
     :try_start_0
     invoke-virtual {p0, p1}, Lcom/android/server/AppWidgetServiceImpl;->getUidForPackage(Ljava/lang/String;)I
@@ -624,30 +635,30 @@
 
     if-nez v3, :cond_0
 
-    .line 647
+    .line 653
     :goto_0
     return v2
 
-    .line 642
+    .line 648
     :catch_0
     move-exception v1
 
-    .line 643
+    .line 649
     .local v1, e:Ljava/lang/Exception;
     goto :goto_0
 
-    .line 645
+    .line 651
     .end local v1           #e:Ljava/lang/Exception;
     :cond_0
     iget-object v3, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
 
     monitor-enter v3
 
-    .line 646
+    .line 652
     :try_start_1
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->ensureStateLoadedLocked()V
 
-    .line 647
+    .line 653
     iget-object v2, p0, Lcom/android/server/AppWidgetServiceImpl;->mPackagesWithBindWidgetPermission:Ljava/util/HashSet;
 
     invoke-virtual {v2, p1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
@@ -658,7 +669,7 @@
 
     goto :goto_0
 
-    .line 648
+    .line 654
     :catchall_0
     move-exception v2
 
@@ -674,7 +685,7 @@
     .parameter "info"
 
     .prologue
-    .line 1129
+    .line 1156
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->isLocalBinder()Z
 
     move-result v0
@@ -683,12 +694,12 @@
 
     if-eqz p1, :cond_0
 
-    .line 1130
+    .line 1157
     invoke-virtual {p1}, Landroid/appwidget/AppWidgetProviderInfo;->clone()Landroid/appwidget/AppWidgetProviderInfo;
 
     move-result-object p1
 
-    .line 1132
+    .line 1159
     .end local p1
     :cond_0
     return-object p1
@@ -699,7 +710,7 @@
     .parameter "bundle"
 
     .prologue
-    .line 1139
+    .line 1166
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->isLocalBinder()Z
 
     move-result v0
@@ -708,14 +719,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 1140
+    .line 1167
     invoke-virtual {p1}, Landroid/os/Bundle;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/os/Bundle;
 
-    .line 1142
+    .line 1169
     :goto_0
     return-object v0
 
@@ -730,7 +741,7 @@
     .parameter "rv"
 
     .prologue
-    .line 1122
+    .line 1149
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->isLocalBinder()Z
 
     move-result v0
@@ -739,12 +750,12 @@
 
     if-eqz p1, :cond_0
 
-    .line 1123
+    .line 1150
     invoke-virtual {p1}, Landroid/widget/RemoteViews;->clone()Landroid/widget/RemoteViews;
 
     move-result-object p1
 
-    .line 1125
+    .line 1152
     .end local p1
     :cond_0
     return-object p1
@@ -755,7 +766,7 @@
     .parameter "id"
 
     .prologue
-    .line 830
+    .line 838
     iget-object v3, p0, Lcom/android/server/AppWidgetServiceImpl;->mRemoteViewsServicesAppWidgets:Ljava/util/HashMap;
 
     invoke-virtual {v3}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
@@ -766,7 +777,7 @@
 
     move-result-object v1
 
-    .line 831
+    .line 839
     .local v1, it:Ljava/util/Iterator;,"Ljava/util/Iterator<Landroid/content/Intent$FilterComparison;>;"
     :cond_0
     :goto_0
@@ -776,14 +787,14 @@
 
     if-eqz v3, :cond_1
 
-    .line 832
+    .line 840
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Landroid/content/Intent$FilterComparison;
 
-    .line 833
+    .line 841
     .local v2, key:Landroid/content/Intent$FilterComparison;
     iget-object v3, p0, Lcom/android/server/AppWidgetServiceImpl;->mRemoteViewsServicesAppWidgets:Ljava/util/HashMap;
 
@@ -793,7 +804,7 @@
 
     check-cast v0, Ljava/util/HashSet;
 
-    .line 834
+    .line 842
     .local v0, ids:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/Integer;>;"
     iget v3, p1, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->appWidgetId:I
 
@@ -807,26 +818,26 @@
 
     if-eqz v3, :cond_0
 
-    .line 837
+    .line 845
     invoke-virtual {v0}, Ljava/util/HashSet;->isEmpty()Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    .line 838
+    .line 846
     invoke-virtual {v2}, Landroid/content/Intent$FilterComparison;->getIntent()Landroid/content/Intent;
 
     move-result-object v3
 
     invoke-direct {p0, v3, p1}, Lcom/android/server/AppWidgetServiceImpl;->destroyRemoteViewsService(Landroid/content/Intent;Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;)V
 
-    .line 839
+    .line 847
     invoke-interface {v1}, Ljava/util/Iterator;->remove()V
 
     goto :goto_0
 
-    .line 843
+    .line 851
     .end local v0           #ids:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/Integer;>;"
     .end local v2           #key:Landroid/content/Intent$FilterComparison;
     :cond_1
@@ -839,12 +850,12 @@
     .parameter "id"
 
     .prologue
-    .line 784
+    .line 792
     new-instance v0, Lcom/android/server/AppWidgetServiceImpl$1;
 
     invoke-direct {v0, p0, p1}, Lcom/android/server/AppWidgetServiceImpl$1;-><init>(Lcom/android/server/AppWidgetServiceImpl;Landroid/content/Intent;)V
 
-    .line 804
+    .line 812
     .local v0, conn:Landroid/content/ServiceConnection;
     iget-object v4, p2, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->provider:Lcom/android/server/AppWidgetServiceImpl$Provider;
 
@@ -854,13 +865,13 @@
 
     move-result v3
 
-    .line 807
+    .line 815
     .local v3, userId:I
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v1
 
-    .line 809
+    .line 817
     .local v1, token:J
     :try_start_0
     iget-object v4, p0, Lcom/android/server/AppWidgetServiceImpl;->mContext:Landroid/content/Context;
@@ -871,13 +882,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 811
+    .line 819
     invoke-static {v1, v2}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 813
+    .line 821
     return-void
 
-    .line 811
+    .line 819
     :catchall_0
     move-exception v4
 
@@ -893,7 +904,7 @@
     .parameter "pw"
 
     .prologue
-    .line 363
+    .line 369
     const-string v0, "  ["
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -904,17 +915,17 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 364
+    .line 370
     iget v0, p1, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->appWidgetId:I
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 365
+    .line 371
     const-string v0, "    hostId="
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 366
+    .line 372
     iget-object v0, p1, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->host:Lcom/android/server/AppWidgetServiceImpl$Host;
 
     iget v0, v0, Lcom/android/server/AppWidgetServiceImpl$Host;->hostId:I
@@ -925,7 +936,7 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(C)V
 
-    .line 367
+    .line 373
     iget-object v0, p1, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->host:Lcom/android/server/AppWidgetServiceImpl$Host;
 
     iget-object v0, v0, Lcom/android/server/AppWidgetServiceImpl$Host;->packageName:Ljava/lang/String;
@@ -936,24 +947,24 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(C)V
 
-    .line 368
+    .line 374
     iget-object v0, p1, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->host:Lcom/android/server/AppWidgetServiceImpl$Host;
 
     iget v0, v0, Lcom/android/server/AppWidgetServiceImpl$Host;->uid:I
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 369
+    .line 375
     iget-object v0, p1, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->provider:Lcom/android/server/AppWidgetServiceImpl$Provider;
 
     if-eqz v0, :cond_0
 
-    .line 370
+    .line 376
     const-string v0, "    provider="
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 371
+    .line 377
     iget-object v0, p1, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->provider:Lcom/android/server/AppWidgetServiceImpl$Provider;
 
     iget-object v0, v0, Lcom/android/server/AppWidgetServiceImpl$Provider;->info:Landroid/appwidget/AppWidgetProviderInfo;
@@ -966,13 +977,13 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 373
+    .line 379
     :cond_0
     iget-object v0, p1, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->host:Lcom/android/server/AppWidgetServiceImpl$Host;
 
     if-eqz v0, :cond_1
 
-    .line 374
+    .line 380
     const-string v0, "    host.callbacks="
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -983,13 +994,13 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 376
+    .line 382
     :cond_1
     iget-object v0, p1, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->views:Landroid/widget/RemoteViews;
 
     if-eqz v0, :cond_2
 
-    .line 377
+    .line 383
     const-string v0, "    views="
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -998,7 +1009,7 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 379
+    .line 385
     :cond_2
     return-void
 .end method
@@ -1010,7 +1021,7 @@
     .parameter "pw"
 
     .prologue
-    .line 353
+    .line 359
     const-string v0, "  ["
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1021,7 +1032,7 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 354
+    .line 360
     iget v0, p1, Lcom/android/server/AppWidgetServiceImpl$Host;->hostId:I
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(I)V
@@ -1030,7 +1041,7 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(C)V
 
-    .line 355
+    .line 361
     iget-object v0, p1, Lcom/android/server/AppWidgetServiceImpl$Host;->packageName:Ljava/lang/String;
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1039,7 +1050,7 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(C)V
 
-    .line 356
+    .line 362
     iget v0, p1, Lcom/android/server/AppWidgetServiceImpl$Host;->uid:I
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(I)V
@@ -1048,7 +1059,7 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(C)V
 
-    .line 357
+    .line 363
     const-string v0, "    callbacks="
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1057,7 +1068,7 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 358
+    .line 364
     const-string v0, "    instances.size="
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1070,7 +1081,7 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 359
+    .line 365
     const-string v0, " zombie="
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1079,7 +1090,7 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 360
+    .line 366
     return-void
 .end method
 
@@ -1090,10 +1101,10 @@
     .parameter "pw"
 
     .prologue
-    .line 331
+    .line 337
     iget-object v0, p1, Lcom/android/server/AppWidgetServiceImpl$Provider;->info:Landroid/appwidget/AppWidgetProviderInfo;
 
-    .line 332
+    .line 338
     .local v0, info:Landroid/appwidget/AppWidgetProviderInfo;
     const-string v1, "  ["
 
@@ -1105,7 +1116,7 @@
 
     invoke-virtual {p3, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 333
+    .line 339
     iget-object v1, v0, Landroid/appwidget/AppWidgetProviderInfo;->provider:Landroid/content/ComponentName;
 
     invoke-virtual {v1}, Landroid/content/ComponentName;->flattenToShortString()Ljava/lang/String;
@@ -1114,12 +1125,12 @@
 
     invoke-virtual {p3, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 334
+    .line 340
     const/16 v1, 0x3a
 
     invoke-virtual {p3, v1}, Ljava/io/PrintWriter;->println(C)V
 
-    .line 335
+    .line 341
     const-string v1, "    min=("
 
     invoke-virtual {p3, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1128,7 +1139,7 @@
 
     invoke-virtual {p3, v1}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 336
+    .line 342
     const-string v1, "x"
 
     invoke-virtual {p3, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1137,7 +1148,7 @@
 
     invoke-virtual {p3, v1}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 337
+    .line 343
     const-string v1, ")   minResize=("
 
     invoke-virtual {p3, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1146,7 +1157,7 @@
 
     invoke-virtual {p3, v1}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 338
+    .line 344
     const-string v1, "x"
 
     invoke-virtual {p3, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1155,47 +1166,47 @@
 
     invoke-virtual {p3, v1}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 339
+    .line 345
     const-string v1, ") updatePeriodMillis="
 
     invoke-virtual {p3, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 340
+    .line 346
     iget v1, v0, Landroid/appwidget/AppWidgetProviderInfo;->updatePeriodMillis:I
 
     invoke-virtual {p3, v1}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 341
+    .line 347
     const-string v1, " resizeMode="
 
     invoke-virtual {p3, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 342
+    .line 348
     iget v1, v0, Landroid/appwidget/AppWidgetProviderInfo;->resizeMode:I
 
     invoke-virtual {p3, v1}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 343
+    .line 349
     iget v1, v0, Landroid/appwidget/AppWidgetProviderInfo;->widgetCategory:I
 
     invoke-virtual {p3, v1}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 344
+    .line 350
     const-string v1, " autoAdvanceViewId="
 
     invoke-virtual {p3, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 345
+    .line 351
     iget v1, v0, Landroid/appwidget/AppWidgetProviderInfo;->autoAdvanceViewId:I
 
     invoke-virtual {p3, v1}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 346
+    .line 352
     const-string v1, " initialLayout=#"
 
     invoke-virtual {p3, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 347
+    .line 353
     iget v1, v0, Landroid/appwidget/AppWidgetProviderInfo;->initialLayout:I
 
     invoke-static {v1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
@@ -1204,7 +1215,7 @@
 
     invoke-virtual {p3, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 348
+    .line 354
     const-string v1, " uid="
 
     invoke-virtual {p3, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1213,7 +1224,7 @@
 
     invoke-virtual {p3, v1}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 349
+    .line 355
     const-string v1, " zombie="
 
     invoke-virtual {p3, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1222,7 +1233,7 @@
 
     invoke-virtual {p3, v1}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 350
+    .line 356
     return-void
 .end method
 
@@ -1230,23 +1241,23 @@
     .locals 1
 
     .prologue
-    .line 428
+    .line 434
     iget-boolean v0, p0, Lcom/android/server/AppWidgetServiceImpl;->mStateLoaded:Z
 
     if-nez v0, :cond_0
 
-    .line 429
+    .line 435
     invoke-virtual {p0}, Lcom/android/server/AppWidgetServiceImpl;->loadAppWidgetListLocked()V
 
-    .line 430
+    .line 436
     invoke-virtual {p0}, Lcom/android/server/AppWidgetServiceImpl;->loadStateLocked()V
 
-    .line 431
+    .line 437
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/AppWidgetServiceImpl;->mStateLoaded:Z
 
-    .line 433
+    .line 439
     :cond_0
     return-void
 .end method
@@ -1256,18 +1267,18 @@
     .parameter "h"
 
     .prologue
-    .line 1372
+    .line 1403
     iget-object v3, p0, Lcom/android/server/AppWidgetServiceImpl$Host;->instances:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    .line 1373
+    .line 1404
     .local v2, instancesSize:I
     new-array v0, v2, [I
 
-    .line 1374
+    .line 1405
     .local v0, appWidgetIds:[I
     const/4 v1, 0x0
 
@@ -1275,7 +1286,7 @@
     :goto_0
     if-ge v1, v2, :cond_0
 
-    .line 1375
+    .line 1406
     iget-object v3, p0, Lcom/android/server/AppWidgetServiceImpl$Host;->instances:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1288,12 +1299,12 @@
 
     aput v3, v0, v1
 
-    .line 1374
+    .line 1405
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 1377
+    .line 1408
     :cond_0
     return-object v0
 .end method
@@ -1303,18 +1314,18 @@
     .parameter "p"
 
     .prologue
-    .line 1351
+    .line 1382
     iget-object v3, p0, Lcom/android/server/AppWidgetServiceImpl$Provider;->instances:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    .line 1352
+    .line 1383
     .local v2, instancesSize:I
     new-array v0, v2, [I
 
-    .line 1353
+    .line 1384
     .local v0, appWidgetIds:[I
     const/4 v1, 0x0
 
@@ -1322,7 +1333,7 @@
     :goto_0
     if-ge v1, v2, :cond_0
 
-    .line 1354
+    .line 1385
     iget-object v3, p0, Lcom/android/server/AppWidgetServiceImpl$Provider;->instances:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1335,14 +1346,148 @@
 
     aput v3, v0, v1
 
-    .line 1353
+    .line 1384
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 1356
+    .line 1387
     :cond_0
     return-object v0
+.end method
+
+.method private getProcessNameById(I)Ljava/lang/String;
+    .locals 9
+    .parameter "pid"
+
+    .prologue
+    .line 2039
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v8, "/proc/"
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    const-string v8, "/cmdline"
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 2040
+    .local v3, f:Ljava/lang/String;
+    const/4 v4, 0x0
+
+    .line 2042
+    .local v4, in:Ljava/io/FileInputStream;
+    :try_start_0
+    new-instance v5, Ljava/io/FileInputStream;
+
+    invoke-direct {v5, v3}, Ljava/io/FileInputStream;-><init>(Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+
+    .end local v4           #in:Ljava/io/FileInputStream;
+    .local v5, in:Ljava/io/FileInputStream;
+    move-object v4, v5
+
+    .line 2046
+    .end local v5           #in:Ljava/io/FileInputStream;
+    .restart local v4       #in:Ljava/io/FileInputStream;
+    :goto_0
+    new-instance v6, Ljava/io/InputStreamReader;
+
+    invoke-direct {v6, v4}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;)V
+
+    .line 2047
+    .local v6, reader:Ljava/io/InputStreamReader;
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    .line 2048
+    .local v1, builder:Ljava/lang/StringBuilder;
+    const/4 v7, 0x1
+
+    new-array v0, v7, [C
+
+    .line 2050
+    .local v0, buf:[C
+    :goto_1
+    :try_start_1
+    invoke-virtual {v6, v0}, Ljava/io/InputStreamReader;->read([C)I
+
+    move-result v7
+
+    const/4 v8, -0x1
+
+    if-eq v7, v8, :cond_0
+
+    .line 2051
+    const/4 v7, 0x0
+
+    aget-char v7, v0, v7
+
+    invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
+
+    goto :goto_1
+
+    .line 2054
+    :catch_0
+    move-exception v2
+
+    .line 2055
+    .local v2, e:Ljava/io/IOException;
+    invoke-virtual {v2}, Ljava/io/IOException;->printStackTrace()V
+
+    .line 2057
+    .end local v2           #e:Ljava/io/IOException;
+    :goto_2
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    return-object v7
+
+    .line 2043
+    .end local v0           #buf:[C
+    .end local v1           #builder:Ljava/lang/StringBuilder;
+    .end local v6           #reader:Ljava/io/InputStreamReader;
+    :catch_1
+    move-exception v2
+
+    .line 2044
+    .local v2, e:Ljava/lang/Exception;
+    invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
+
+    goto :goto_0
+
+    .line 2053
+    .end local v2           #e:Ljava/lang/Exception;
+    .restart local v0       #buf:[C
+    .restart local v1       #builder:Ljava/lang/StringBuilder;
+    .restart local v6       #reader:Ljava/io/InputStreamReader;
+    :cond_0
+    :try_start_2
+    invoke-virtual {v6}, Ljava/io/InputStreamReader;->close()V
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
+
+    goto :goto_2
 .end method
 
 .method static getSettingsFile(I)Ljava/io/File;
@@ -1350,7 +1495,7 @@
     .parameter "userId"
 
     .prologue
-    .line 1814
+    .line 1852
     new-instance v0, Ljava/io/File;
 
     invoke-static {p0}, Landroid/os/Environment;->getUserSystemDirectory(I)Ljava/io/File;
@@ -1370,10 +1515,10 @@
     .parameter "fc"
 
     .prologue
-    .line 817
+    .line 825
     const/4 v0, 0x0
 
-    .line 818
+    .line 826
     .local v0, appWidgetIds:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/Integer;>;"
     iget-object v1, p0, Lcom/android/server/AppWidgetServiceImpl;->mRemoteViewsServicesAppWidgets:Ljava/util/HashMap;
 
@@ -1383,7 +1528,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 819
+    .line 827
     iget-object v1, p0, Lcom/android/server/AppWidgetServiceImpl;->mRemoteViewsServicesAppWidgets:Ljava/util/HashMap;
 
     invoke-virtual {v1, p2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1393,7 +1538,7 @@
     .end local v0           #appWidgetIds:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/Integer;>;"
     check-cast v0, Ljava/util/HashSet;
 
-    .line 824
+    .line 832
     .restart local v0       #appWidgetIds:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/Integer;>;"
     :goto_0
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1402,17 +1547,17 @@
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 825
+    .line 833
     return-void
 
-    .line 821
+    .line 829
     :cond_0
     new-instance v0, Ljava/util/HashSet;
 
     .end local v0           #appWidgetIds:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/Integer;>;"
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    .line 822
+    .line 830
     .restart local v0       #appWidgetIds:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/Integer;>;"
     iget-object v1, p0, Lcom/android/server/AppWidgetServiceImpl;->mRemoteViewsServicesAppWidgets:Ljava/util/HashMap;
 
@@ -1425,7 +1570,7 @@
     .locals 2
 
     .prologue
-    .line 1118
+    .line 1145
     invoke-static {}, Landroid/os/Process;->myPid()I
 
     move-result v0
@@ -1452,7 +1597,7 @@
     .parameter "msg"
 
     .prologue
-    .line 229
+    .line 235
     const-string v0, "AppWidgetServiceImpl"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1487,581 +1632,743 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 230
+    .line 236
     return-void
 .end method
 
 .method private parseProviderInfoXml(Landroid/content/ComponentName;Landroid/content/pm/ResolveInfo;)Lcom/android/server/AppWidgetServiceImpl$Provider;
-    .locals 17
+    .locals 19
     .parameter "component"
     .parameter "ri"
 
     .prologue
-    .line 1394
-    const/4 v7, 0x0
-
-    .line 1396
-    .local v7, p:Lcom/android/server/AppWidgetServiceImpl$Provider;
-    move-object/from16 v0, p2
-
-    iget-object v1, v0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
-
-    .line 1397
-    .local v1, activityInfo:Landroid/content/pm/ActivityInfo;
+    .line 1425
     const/4 v9, 0x0
 
-    .line 1399
-    .local v9, parser:Landroid/content/res/XmlResourceParser;
+    .line 1427
+    .local v9, p:Lcom/android/server/AppWidgetServiceImpl$Provider;
+    move-object/from16 v0, p2
+
+    iget-object v3, v0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
+
+    .line 1428
+    .local v3, activityInfo:Landroid/content/pm/ActivityInfo;
+    const/4 v11, 0x0
+
+    .line 1430
+    .local v11, parser:Landroid/content/res/XmlResourceParser;
     :try_start_0
     move-object/from16 v0, p0
 
-    iget-object v14, v0, Lcom/android/server/AppWidgetServiceImpl;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/server/AppWidgetServiceImpl;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v14}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+    move-object/from16 v16, v0
 
-    move-result-object v14
+    invoke-virtual/range {v16 .. v16}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
-    const-string v15, "android.appwidget.provider"
+    move-result-object v16
 
-    invoke-virtual {v1, v14, v15}, Landroid/content/pm/ActivityInfo;->loadXmlMetaData(Landroid/content/pm/PackageManager;Ljava/lang/String;)Landroid/content/res/XmlResourceParser;
+    const-string v17, "android.appwidget.provider"
 
-    move-result-object v9
+    move-object/from16 v0, v16
 
-    .line 1401
-    if-nez v9, :cond_1
+    move-object/from16 v1, v17
 
-    .line 1402
-    const-string v14, "AppWidgetServiceImpl"
+    invoke-virtual {v3, v0, v1}, Landroid/content/pm/ActivityInfo;->loadXmlMetaData(Landroid/content/pm/PackageManager;Ljava/lang/String;)Landroid/content/res/XmlResourceParser;
 
-    new-instance v15, Ljava/lang/StringBuilder;
+    move-result-object v11
 
-    invoke-direct {v15}, Ljava/lang/StringBuilder;-><init>()V
+    .line 1432
+    if-nez v11, :cond_1
 
-    const-string v16, "No android.appwidget.provider meta-data for AppWidget provider \'"
+    .line 1433
+    const-string v16, "AppWidgetServiceImpl"
 
-    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-instance v17, Ljava/lang/StringBuilder;
 
-    move-result-object v15
+    invoke-direct/range {v17 .. v17}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-object/from16 v0, p1
+    const-string v18, "No android.appwidget.provider meta-data for AppWidget provider \'"
 
-    invoke-virtual {v15, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v15
+    move-result-object v17
 
-    const/16 v16, 0x27
+    move-object/from16 v0, v17
 
-    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    move-object/from16 v1, p1
 
-    move-result-object v15
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v15}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v17
 
-    move-result-object v15
+    const/16 v18, 0x27
 
-    invoke-static {v14, v15}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v17
+
+    invoke-virtual/range {v17 .. v17}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v17
+
+    invoke-static/range {v16 .. v17}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1404
-    const/4 v8, 0x0
+    .line 1435
+    const/4 v10, 0x0
 
-    .line 1479
-    if-eqz v9, :cond_0
+    .line 1517
+    if-eqz v11, :cond_0
 
-    .line 1480
-    invoke-interface {v9}, Landroid/content/res/XmlResourceParser;->close()V
+    .line 1518
+    invoke-interface {v11}, Landroid/content/res/XmlResourceParser;->close()V
 
-    .line 1482
+    .line 1520
     :cond_0
     :goto_0
-    return-object v8
+    return-object v10
 
-    .line 1407
+    .line 1438
     :cond_1
     :try_start_1
-    invoke-static {v9}, Landroid/util/Xml;->asAttributeSet(Lorg/xmlpull/v1/XmlPullParser;)Landroid/util/AttributeSet;
+    invoke-static {v11}, Landroid/util/Xml;->asAttributeSet(Lorg/xmlpull/v1/XmlPullParser;)Landroid/util/AttributeSet;
 
-    move-result-object v2
+    move-result-object v4
 
-    .line 1411
-    .local v2, attrs:Landroid/util/AttributeSet;
+    .line 1442
+    .local v4, attrs:Landroid/util/AttributeSet;
     :cond_2
-    invoke-interface {v9}, Landroid/content/res/XmlResourceParser;->next()I
-
-    move-result v12
-
-    .local v12, type:I
-    const/4 v14, 0x1
-
-    if-eq v12, v14, :cond_3
-
-    const/4 v14, 0x2
-
-    if-ne v12, v14, :cond_2
-
-    .line 1415
-    :cond_3
-    invoke-interface {v9}, Landroid/content/res/XmlResourceParser;->getName()Ljava/lang/String;
-
-    move-result-object v6
-
-    .line 1416
-    .local v6, nodeName:Ljava/lang/String;
-    const-string v14, "appwidget-provider"
-
-    invoke-virtual {v14, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-interface {v11}, Landroid/content/res/XmlResourceParser;->next()I
 
     move-result v14
 
-    if-nez v14, :cond_4
+    .local v14, type:I
+    const/16 v16, 0x1
 
-    .line 1417
-    const-string v14, "AppWidgetServiceImpl"
+    move/from16 v0, v16
 
-    new-instance v15, Ljava/lang/StringBuilder;
+    if-eq v14, v0, :cond_3
 
-    invoke-direct {v15}, Ljava/lang/StringBuilder;-><init>()V
+    const/16 v16, 0x2
 
-    const-string v16, "Meta-data does not start with appwidget-provider tag for AppWidget provider \'"
+    move/from16 v0, v16
 
-    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-ne v14, v0, :cond_2
 
-    move-result-object v15
+    .line 1446
+    :cond_3
+    invoke-interface {v11}, Landroid/content/res/XmlResourceParser;->getName()Ljava/lang/String;
 
-    move-object/from16 v0, p1
+    move-result-object v8
 
-    invoke-virtual {v15, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    .line 1447
+    .local v8, nodeName:Ljava/lang/String;
+    const-string v16, "appwidget-provider"
 
-    move-result-object v15
+    move-object/from16 v0, v16
 
-    const/16 v16, 0x27
+    invoke-virtual {v0, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    move-result v16
 
-    move-result-object v15
+    if-nez v16, :cond_4
 
-    invoke-virtual {v15}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 1448
+    const-string v16, "AppWidgetServiceImpl"
 
-    move-result-object v15
+    new-instance v17, Ljava/lang/StringBuilder;
 
-    invoke-static {v14, v15}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-direct/range {v17 .. v17}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v18, "Meta-data does not start with appwidget-provider tag for AppWidget provider \'"
+
+    invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v17
+
+    move-object/from16 v0, v17
+
+    move-object/from16 v1, p1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v17
+
+    const/16 v18, 0x27
+
+    invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v17
+
+    invoke-virtual/range {v17 .. v17}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v17
+
+    invoke-static/range {v16 .. v17}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 1419
-    const/4 v8, 0x0
+    .line 1450
+    const/4 v10, 0x0
 
-    .line 1479
-    if-eqz v9, :cond_0
+    .line 1517
+    if-eqz v11, :cond_0
 
-    .line 1480
-    invoke-interface {v9}, Landroid/content/res/XmlResourceParser;->close()V
+    .line 1518
+    invoke-interface {v11}, Landroid/content/res/XmlResourceParser;->close()V
 
     goto :goto_0
 
-    .line 1422
+    .line 1453
     :cond_4
     :try_start_2
-    new-instance v8, Lcom/android/server/AppWidgetServiceImpl$Provider;
+    new-instance v10, Lcom/android/server/AppWidgetServiceImpl$Provider;
 
-    invoke-direct {v8}, Lcom/android/server/AppWidgetServiceImpl$Provider;-><init>()V
+    invoke-direct {v10}, Lcom/android/server/AppWidgetServiceImpl$Provider;-><init>()V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 1423
-    .end local v7           #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
-    .local v8, p:Lcom/android/server/AppWidgetServiceImpl$Provider;
+    .line 1454
+    .end local v9           #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
+    .local v10, p:Lcom/android/server/AppWidgetServiceImpl$Provider;
     :try_start_3
-    new-instance v5, Landroid/appwidget/AppWidgetProviderInfo;
+    new-instance v7, Landroid/appwidget/AppWidgetProviderInfo;
 
-    invoke-direct {v5}, Landroid/appwidget/AppWidgetProviderInfo;-><init>()V
+    invoke-direct {v7}, Landroid/appwidget/AppWidgetProviderInfo;-><init>()V
 
-    iput-object v5, v8, Lcom/android/server/AppWidgetServiceImpl$Provider;->info:Landroid/appwidget/AppWidgetProviderInfo;
+    iput-object v7, v10, Lcom/android/server/AppWidgetServiceImpl$Provider;->info:Landroid/appwidget/AppWidgetProviderInfo;
 
-    .line 1424
-    .local v5, info:Landroid/appwidget/AppWidgetProviderInfo;
+    .line 1455
+    .local v7, info:Landroid/appwidget/AppWidgetProviderInfo;
     move-object/from16 v0, p1
 
-    iput-object v0, v5, Landroid/appwidget/AppWidgetProviderInfo;->provider:Landroid/content/ComponentName;
+    iput-object v0, v7, Landroid/appwidget/AppWidgetProviderInfo;->provider:Landroid/content/ComponentName;
 
-    .line 1425
-    iget-object v14, v1, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    .line 1456
+    iget-object v0, v3, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    iget v14, v14, Landroid/content/pm/ApplicationInfo;->uid:I
+    move-object/from16 v16, v0
 
-    iput v14, v8, Lcom/android/server/AppWidgetServiceImpl$Provider;->uid:I
+    move-object/from16 v0, v16
 
-    .line 1427
+    iget v0, v0, Landroid/content/pm/ApplicationInfo;->uid:I
+
+    move/from16 v16, v0
+
+    move/from16 v0, v16
+
+    iput v0, v10, Lcom/android/server/AppWidgetServiceImpl$Provider;->uid:I
+
+    .line 1458
     move-object/from16 v0, p0
 
-    iget-object v14, v0, Lcom/android/server/AppWidgetServiceImpl;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/server/AppWidgetServiceImpl;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v14}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+    move-object/from16 v16, v0
 
-    move-result-object v14
+    invoke-virtual/range {v16 .. v16}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
-    iget-object v15, v1, Landroid/content/pm/ComponentInfo;->packageName:Ljava/lang/String;
+    move-result-object v16
+
+    iget-object v0, v3, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+
+    move-object/from16 v17, v0
 
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/server/AppWidgetServiceImpl;->mUserId:I
 
-    move/from16 v16, v0
+    move/from16 v18, v0
 
-    invoke-virtual/range {v14 .. v16}, Landroid/content/pm/PackageManager;->getResourcesForApplicationAsUser(Ljava/lang/String;I)Landroid/content/res/Resources;
+    invoke-virtual/range {v16 .. v18}, Landroid/content/pm/PackageManager;->getResourcesForApplicationAsUser(Ljava/lang/String;I)Landroid/content/res/Resources;
 
-    move-result-object v10
+    move-result-object v12
 
-    .line 1430
-    .local v10, res:Landroid/content/res/Resources;
-    sget-object v14, Lcom/android/internal/R$styleable;->AppWidgetProviderInfo:[I
+    .line 1461
+    .local v12, res:Landroid/content/res/Resources;
+    sget-object v16, Lcom/android/internal/R$styleable;->AppWidgetProviderInfo:[I
 
-    invoke-virtual {v10, v2, v14}, Landroid/content/res/Resources;->obtainAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
+    move-object/from16 v0, v16
 
-    move-result-object v11
-
-    .line 1436
-    .local v11, sa:Landroid/content/res/TypedArray;
-    const/4 v14, 0x0
-
-    invoke-virtual {v11, v14}, Landroid/content/res/TypedArray;->peekValue(I)Landroid/util/TypedValue;
+    invoke-virtual {v12, v4, v0}, Landroid/content/res/Resources;->obtainAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v13
 
-    .line 1438
-    .local v13, value:Landroid/util/TypedValue;
-    if-eqz v13, :cond_7
+    .line 1467
+    .local v13, sa:Landroid/content/res/TypedArray;
+    const/16 v16, 0x0
 
-    iget v14, v13, Landroid/util/TypedValue;->data:I
+    move/from16 v0, v16
 
-    :goto_1
-    iput v14, v5, Landroid/appwidget/AppWidgetProviderInfo;->minWidth:I
-
-    .line 1439
-    const/4 v14, 0x1
-
-    invoke-virtual {v11, v14}, Landroid/content/res/TypedArray;->peekValue(I)Landroid/util/TypedValue;
-
-    move-result-object v13
-
-    .line 1440
-    if-eqz v13, :cond_8
-
-    iget v14, v13, Landroid/util/TypedValue;->data:I
-
-    :goto_2
-    iput v14, v5, Landroid/appwidget/AppWidgetProviderInfo;->minHeight:I
-
-    .line 1441
-    const/16 v14, 0x8
-
-    invoke-virtual {v11, v14}, Landroid/content/res/TypedArray;->peekValue(I)Landroid/util/TypedValue;
-
-    move-result-object v13
-
-    .line 1443
-    if-eqz v13, :cond_9
-
-    iget v14, v13, Landroid/util/TypedValue;->data:I
-
-    :goto_3
-    iput v14, v5, Landroid/appwidget/AppWidgetProviderInfo;->minResizeWidth:I
-
-    .line 1444
-    const/16 v14, 0x9
-
-    invoke-virtual {v11, v14}, Landroid/content/res/TypedArray;->peekValue(I)Landroid/util/TypedValue;
-
-    move-result-object v13
-
-    .line 1446
-    if-eqz v13, :cond_a
-
-    iget v14, v13, Landroid/util/TypedValue;->data:I
-
-    :goto_4
-    iput v14, v5, Landroid/appwidget/AppWidgetProviderInfo;->minResizeHeight:I
-
-    .line 1447
-    const/4 v14, 0x2
-
-    const/4 v15, 0x0
-
-    invoke-virtual {v11, v14, v15}, Landroid/content/res/TypedArray;->getInt(II)I
-
-    move-result v14
-
-    iput v14, v5, Landroid/appwidget/AppWidgetProviderInfo;->updatePeriodMillis:I
-
-    .line 1449
-    const/4 v14, 0x3
-
-    const/4 v15, 0x0
-
-    invoke-virtual {v11, v14, v15}, Landroid/content/res/TypedArray;->getResourceId(II)I
-
-    move-result v14
-
-    iput v14, v5, Landroid/appwidget/AppWidgetProviderInfo;->initialLayout:I
-
-    .line 1451
-    const/16 v14, 0xa
-
-    const/4 v15, 0x0
-
-    invoke-virtual {v11, v14, v15}, Landroid/content/res/TypedArray;->getResourceId(II)I
-
-    move-result v14
-
-    iput v14, v5, Landroid/appwidget/AppWidgetProviderInfo;->initialKeyguardLayout:I
-
-    .line 1453
-    const/4 v14, 0x4
-
-    invoke-virtual {v11, v14}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 1455
-    .local v3, className:Ljava/lang/String;
-    if-eqz v3, :cond_5
-
-    .line 1456
-    new-instance v14, Landroid/content/ComponentName;
-
-    invoke-virtual/range {p1 .. p1}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
+    invoke-virtual {v13, v0}, Landroid/content/res/TypedArray;->peekValue(I)Landroid/util/TypedValue;
 
     move-result-object v15
 
-    invoke-direct {v14, v15, v3}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    .line 1469
+    .local v15, value:Landroid/util/TypedValue;
+    if-eqz v15, :cond_7
 
-    iput-object v14, v5, Landroid/appwidget/AppWidgetProviderInfo;->configure:Landroid/content/ComponentName;
+    iget v0, v15, Landroid/util/TypedValue;->data:I
 
-    .line 1458
+    move/from16 v16, v0
+
+    :goto_1
+    move/from16 v0, v16
+
+    iput v0, v7, Landroid/appwidget/AppWidgetProviderInfo;->minWidth:I
+
+    .line 1470
+    const/16 v16, 0x1
+
+    move/from16 v0, v16
+
+    invoke-virtual {v13, v0}, Landroid/content/res/TypedArray;->peekValue(I)Landroid/util/TypedValue;
+
+    move-result-object v15
+
+    .line 1471
+    if-eqz v15, :cond_8
+
+    iget v0, v15, Landroid/util/TypedValue;->data:I
+
+    move/from16 v16, v0
+
+    :goto_2
+    move/from16 v0, v16
+
+    iput v0, v7, Landroid/appwidget/AppWidgetProviderInfo;->minHeight:I
+
+    .line 1472
+    const/16 v16, 0x8
+
+    move/from16 v0, v16
+
+    invoke-virtual {v13, v0}, Landroid/content/res/TypedArray;->peekValue(I)Landroid/util/TypedValue;
+
+    move-result-object v15
+
+    .line 1474
+    if-eqz v15, :cond_9
+
+    iget v0, v15, Landroid/util/TypedValue;->data:I
+
+    move/from16 v16, v0
+
+    :goto_3
+    move/from16 v0, v16
+
+    iput v0, v7, Landroid/appwidget/AppWidgetProviderInfo;->minResizeWidth:I
+
+    .line 1475
+    const/16 v16, 0x9
+
+    move/from16 v0, v16
+
+    invoke-virtual {v13, v0}, Landroid/content/res/TypedArray;->peekValue(I)Landroid/util/TypedValue;
+
+    move-result-object v15
+
+    .line 1477
+    if-eqz v15, :cond_a
+
+    iget v0, v15, Landroid/util/TypedValue;->data:I
+
+    move/from16 v16, v0
+
+    :goto_4
+    move/from16 v0, v16
+
+    iput v0, v7, Landroid/appwidget/AppWidgetProviderInfo;->minResizeHeight:I
+
+    .line 1478
+    const/16 v16, 0x2
+
+    const/16 v17, 0x0
+
+    move/from16 v0, v16
+
+    move/from16 v1, v17
+
+    invoke-virtual {v13, v0, v1}, Landroid/content/res/TypedArray;->getInt(II)I
+
+    move-result v16
+
+    move/from16 v0, v16
+
+    iput v0, v7, Landroid/appwidget/AppWidgetProviderInfo;->updatePeriodMillis:I
+
+    .line 1480
+    const/16 v16, 0x3
+
+    const/16 v17, 0x0
+
+    move/from16 v0, v16
+
+    move/from16 v1, v17
+
+    invoke-virtual {v13, v0, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
+
+    move-result v16
+
+    move/from16 v0, v16
+
+    iput v0, v7, Landroid/appwidget/AppWidgetProviderInfo;->initialLayout:I
+
+    .line 1482
+    const/16 v16, 0xa
+
+    const/16 v17, 0x0
+
+    move/from16 v0, v16
+
+    move/from16 v1, v17
+
+    invoke-virtual {v13, v0, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
+
+    move-result v16
+
+    move/from16 v0, v16
+
+    iput v0, v7, Landroid/appwidget/AppWidgetProviderInfo;->initialKeyguardLayout:I
+
+    .line 1484
+    const/16 v16, 0x4
+
+    move/from16 v0, v16
+
+    invoke-virtual {v13, v0}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    .line 1486
+    .local v5, className:Ljava/lang/String;
+    if-eqz v5, :cond_5
+
+    .line 1487
+    new-instance v16, Landroid/content/ComponentName;
+
+    invoke-virtual/range {p1 .. p1}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
+
+    move-result-object v17
+
+    move-object/from16 v0, v16
+
+    move-object/from16 v1, v17
+
+    invoke-direct {v0, v1, v5}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    move-object/from16 v0, v16
+
+    iput-object v0, v7, Landroid/appwidget/AppWidgetProviderInfo;->configure:Landroid/content/ComponentName;
+
+    .line 1489
     :cond_5
     move-object/from16 v0, p0
 
-    iget-object v14, v0, Lcom/android/server/AppWidgetServiceImpl;->mContext:Landroid/content/Context;
+    iget-object v0, v0, Lcom/android/server/AppWidgetServiceImpl;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v14}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+    move-object/from16 v16, v0
 
-    move-result-object v14
+    invoke-virtual/range {v16 .. v16}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
-    invoke-virtual {v1, v14}, Landroid/content/pm/ActivityInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
+    move-result-object v16
 
-    move-result-object v14
+    move-object/from16 v0, v16
 
-    invoke-virtual {v14}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v3, v0}, Landroid/content/pm/ActivityInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
 
-    move-result-object v14
+    move-result-object v16
 
-    iput-object v14, v5, Landroid/appwidget/AppWidgetProviderInfo;->label:Ljava/lang/String;
+    invoke-virtual/range {v16 .. v16}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    .line 1459
+    move-result-object v16
+
+    move-object/from16 v0, v16
+
+    iput-object v0, v7, Landroid/appwidget/AppWidgetProviderInfo;->label:Ljava/lang/String;
+
+    .line 1490
     invoke-virtual/range {p2 .. p2}, Landroid/content/pm/ResolveInfo;->getIconResource()I
 
-    move-result v14
+    move-result v16
 
-    iput v14, v5, Landroid/appwidget/AppWidgetProviderInfo;->icon:I
+    move/from16 v0, v16
 
-    .line 1460
-    const/4 v14, 0x5
+    iput v0, v7, Landroid/appwidget/AppWidgetProviderInfo;->icon:I
 
-    const/4 v15, 0x0
+    .line 1491
+    const/16 v16, 0x5
 
-    invoke-virtual {v11, v14, v15}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    const/16 v17, 0x0
 
-    move-result v14
+    move/from16 v0, v16
 
-    iput v14, v5, Landroid/appwidget/AppWidgetProviderInfo;->previewImage:I
+    move/from16 v1, v17
 
-    .line 1462
-    const/4 v14, 0x6
+    invoke-virtual {v13, v0, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
-    const/4 v15, -0x1
+    move-result v16
 
-    invoke-virtual {v11, v14, v15}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    move/from16 v0, v16
 
-    move-result v14
+    iput v0, v7, Landroid/appwidget/AppWidgetProviderInfo;->previewImage:I
 
-    iput v14, v5, Landroid/appwidget/AppWidgetProviderInfo;->autoAdvanceViewId:I
+    .line 1493
+    const/16 v16, 0x6
 
-    .line 1464
-    const/4 v14, 0x7
+    const/16 v17, -0x1
 
-    const/4 v15, 0x0
+    move/from16 v0, v16
 
-    invoke-virtual {v11, v14, v15}, Landroid/content/res/TypedArray;->getInt(II)I
+    move/from16 v1, v17
 
-    move-result v14
+    invoke-virtual {v13, v0, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
-    iput v14, v5, Landroid/appwidget/AppWidgetProviderInfo;->resizeMode:I
+    move-result v16
 
-    .line 1467
-    const/16 v14, 0xb
+    move/from16 v0, v16
 
-    const/4 v15, 0x1
+    iput v0, v7, Landroid/appwidget/AppWidgetProviderInfo;->autoAdvanceViewId:I
 
-    invoke-virtual {v11, v14, v15}, Landroid/content/res/TypedArray;->getInt(II)I
+    .line 1495
+    const/16 v16, 0x7
 
-    move-result v14
+    const/16 v17, 0x0
 
-    iput v14, v5, Landroid/appwidget/AppWidgetProviderInfo;->widgetCategory:I
+    move/from16 v0, v16
 
-    .line 1471
-    invoke-virtual {v11}, Landroid/content/res/TypedArray;->recycle()V
+    move/from16 v1, v17
+
+    invoke-virtual {v13, v0, v1}, Landroid/content/res/TypedArray;->getInt(II)I
+
+    move-result v16
+
+    move/from16 v0, v16
+
+    iput v0, v7, Landroid/appwidget/AppWidgetProviderInfo;->resizeMode:I
+
+    .line 1498
+    const/16 v16, 0xb
+
+    const/16 v17, 0x1
+
+    move/from16 v0, v16
+
+    move/from16 v1, v17
+
+    invoke-virtual {v13, v0, v1}, Landroid/content/res/TypedArray;->getInt(II)I
+
+    move-result v16
+
+    move/from16 v0, v16
+
+    iput v0, v7, Landroid/appwidget/AppWidgetProviderInfo;->widgetCategory:I
+
+    .line 1502
+    invoke-virtual {v13}, Landroid/content/res/TypedArray;->recycle()V
+
+    .line 1504
+    sget-object v16, Lcom/mediatek/internal/R$styleable;->MTKAppWidgetProviderInfo:[I
+
+    move-object/from16 v0, v16
+
+    invoke-virtual {v12, v4, v0}, Landroid/content/res/Resources;->obtainAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
+
+    move-result-object v2
+
+    .line 1506
+    .local v2, a:Landroid/content/res/TypedArray;
+    const/16 v16, 0x0
+
+    const/16 v17, 0x0
+
+    move/from16 v0, v16
+
+    move/from16 v1, v17
+
+    invoke-virtual {v2, v0, v1}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+
+    move-result v16
+
+    move/from16 v0, v16
+
+    iput-boolean v0, v7, Landroid/appwidget/AppWidgetProviderInfo;->hasUsedCustomerView:Z
+
+    .line 1507
+    const/16 v16, 0x0
+
+    move/from16 v0, v16
+
+    invoke-virtual {v2, v0}, Landroid/content/res/TypedArray;->peekValue(I)Landroid/util/TypedValue;
+
+    move-result-object v15
+
+    .line 1508
+    invoke-virtual {v2}, Landroid/content/res/TypedArray;->recycle()V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
 
-    .line 1479
-    if-eqz v9, :cond_6
+    .line 1517
+    if-eqz v11, :cond_6
 
-    .line 1480
-    invoke-interface {v9}, Landroid/content/res/XmlResourceParser;->close()V
+    .line 1518
+    invoke-interface {v11}, Landroid/content/res/XmlResourceParser;->close()V
 
     :cond_6
-    move-object v7, v8
+    move-object v9, v10
 
-    .line 1482
-    .end local v8           #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
-    .restart local v7       #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
+    .line 1520
+    .end local v10           #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
+    .restart local v9       #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
     goto/16 :goto_0
 
-    .line 1438
-    .end local v3           #className:Ljava/lang/String;
-    .end local v7           #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
-    .restart local v8       #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
+    .line 1469
+    .end local v2           #a:Landroid/content/res/TypedArray;
+    .end local v5           #className:Ljava/lang/String;
+    .end local v9           #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
+    .restart local v10       #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
     :cond_7
-    const/4 v14, 0x0
+    const/16 v16, 0x0
 
     goto/16 :goto_1
 
-    .line 1440
+    .line 1471
     :cond_8
-    const/4 v14, 0x0
+    const/16 v16, 0x0
 
     goto/16 :goto_2
 
-    .line 1443
+    .line 1474
     :cond_9
     :try_start_4
-    iget v14, v5, Landroid/appwidget/AppWidgetProviderInfo;->minWidth:I
+    iget v0, v7, Landroid/appwidget/AppWidgetProviderInfo;->minWidth:I
+
+    move/from16 v16, v0
 
     goto/16 :goto_3
 
-    .line 1446
+    .line 1477
     :cond_a
-    iget v14, v5, Landroid/appwidget/AppWidgetProviderInfo;->minHeight:I
+    iget v0, v7, Landroid/appwidget/AppWidgetProviderInfo;->minHeight:I
+
+    move/from16 v16, v0
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_1
 
-    goto :goto_4
+    goto/16 :goto_4
 
-    .line 1472
-    .end local v2           #attrs:Landroid/util/AttributeSet;
-    .end local v5           #info:Landroid/appwidget/AppWidgetProviderInfo;
-    .end local v6           #nodeName:Ljava/lang/String;
-    .end local v8           #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
-    .end local v10           #res:Landroid/content/res/Resources;
-    .end local v11           #sa:Landroid/content/res/TypedArray;
-    .end local v12           #type:I
-    .end local v13           #value:Landroid/util/TypedValue;
-    .restart local v7       #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
+    .line 1510
+    .end local v4           #attrs:Landroid/util/AttributeSet;
+    .end local v7           #info:Landroid/appwidget/AppWidgetProviderInfo;
+    .end local v8           #nodeName:Ljava/lang/String;
+    .end local v10           #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
+    .end local v12           #res:Landroid/content/res/Resources;
+    .end local v13           #sa:Landroid/content/res/TypedArray;
+    .end local v14           #type:I
+    .end local v15           #value:Landroid/util/TypedValue;
+    .restart local v9       #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
     :catch_0
-    move-exception v4
+    move-exception v6
 
-    .line 1476
-    .local v4, e:Ljava/lang/Exception;
+    .line 1514
+    .local v6, e:Ljava/lang/Exception;
     :goto_5
     :try_start_5
-    const-string v14, "AppWidgetServiceImpl"
+    const-string v16, "AppWidgetServiceImpl"
 
-    new-instance v15, Ljava/lang/StringBuilder;
+    new-instance v17, Ljava/lang/StringBuilder;
 
-    invoke-direct {v15}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct/range {v17 .. v17}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v16, "XML parsing failed for AppWidget provider \'"
+    const-string v18, "XML parsing failed for AppWidget provider \'"
 
-    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v15
+    move-result-object v17
 
-    move-object/from16 v0, p1
+    move-object/from16 v0, v17
 
-    invoke-virtual {v15, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move-object/from16 v1, p1
 
-    move-result-object v15
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const/16 v16, 0x27
+    move-result-object v17
 
-    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    const/16 v18, 0x27
 
-    move-result-object v15
+    invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v15}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v17
 
-    move-result-object v15
+    invoke-virtual/range {v17 .. v17}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-static {v14, v15, v4}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    move-result-object v17
+
+    move-object/from16 v0, v16
+
+    move-object/from16 v1, v17
+
+    invoke-static {v0, v1, v6}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
-    .line 1477
-    const/4 v8, 0x0
+    .line 1515
+    const/4 v10, 0x0
 
-    .line 1479
-    if-eqz v9, :cond_0
+    .line 1517
+    if-eqz v11, :cond_0
 
-    .line 1480
-    invoke-interface {v9}, Landroid/content/res/XmlResourceParser;->close()V
+    .line 1518
+    invoke-interface {v11}, Landroid/content/res/XmlResourceParser;->close()V
 
     goto/16 :goto_0
 
-    .line 1479
-    .end local v4           #e:Ljava/lang/Exception;
+    .line 1517
+    .end local v6           #e:Ljava/lang/Exception;
     :catchall_0
-    move-exception v14
+    move-exception v16
 
     :goto_6
-    if-eqz v9, :cond_b
+    if-eqz v11, :cond_b
 
-    .line 1480
-    invoke-interface {v9}, Landroid/content/res/XmlResourceParser;->close()V
+    .line 1518
+    invoke-interface {v11}, Landroid/content/res/XmlResourceParser;->close()V
 
     :cond_b
-    throw v14
+    throw v16
 
-    .line 1479
-    .end local v7           #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
-    .restart local v2       #attrs:Landroid/util/AttributeSet;
-    .restart local v6       #nodeName:Ljava/lang/String;
-    .restart local v8       #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
-    .restart local v12       #type:I
+    .line 1517
+    .end local v9           #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
+    .restart local v4       #attrs:Landroid/util/AttributeSet;
+    .restart local v8       #nodeName:Ljava/lang/String;
+    .restart local v10       #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
+    .restart local v14       #type:I
     :catchall_1
-    move-exception v14
+    move-exception v16
 
-    move-object v7, v8
+    move-object v9, v10
 
-    .end local v8           #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
-    .restart local v7       #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
+    .end local v10           #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
+    .restart local v9       #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
     goto :goto_6
 
-    .line 1472
-    .end local v7           #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
-    .restart local v8       #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
+    .line 1510
+    .end local v9           #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
+    .restart local v10       #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
     :catch_1
-    move-exception v4
+    move-exception v6
 
-    move-object v7, v8
+    move-object v9, v10
 
-    .end local v8           #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
-    .restart local v7       #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
+    .end local v10           #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
+    .restart local v9       #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
     goto :goto_5
 .end method
 
@@ -2069,14 +2376,14 @@
     .locals 2
 
     .prologue
-    .line 915
+    .line 942
     iget-object v0, p0, Lcom/android/server/AppWidgetServiceImpl;->mSaveStateHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/server/AppWidgetServiceImpl;->mSaveStateRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 916
+    .line 943
     return-void
 .end method
 
@@ -2085,10 +2392,10 @@
     .parameter "id"
 
     .prologue
-    .line 762
+    .line 770
     iget v0, p1, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->appWidgetId:I
 
-    .line 764
+    .line 772
     .local v0, appWidgetId:I
     iget-object v4, p0, Lcom/android/server/AppWidgetServiceImpl;->mBoundRemoteViewsServices:Ljava/util/HashMap;
 
@@ -2100,7 +2407,7 @@
 
     move-result-object v2
 
-    .line 766
+    .line 774
     .local v2, it:Ljava/util/Iterator;,"Ljava/util/Iterator<Landroid/util/Pair<Ljava/lang/Integer;Landroid/content/Intent$FilterComparison;>;>;"
     :cond_0
     :goto_0
@@ -2110,14 +2417,14 @@
 
     if-eqz v4, :cond_1
 
-    .line 767
+    .line 775
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Landroid/util/Pair;
 
-    .line 768
+    .line 776
     .local v3, key:Landroid/util/Pair;,"Landroid/util/Pair<Ljava/lang/Integer;Landroid/content/Intent$FilterComparison;>;"
     iget-object v4, v3, Landroid/util/Pair;->first:Ljava/lang/Object;
 
@@ -2129,7 +2436,7 @@
 
     if-ne v4, v0, :cond_0
 
-    .line 769
+    .line 777
     iget-object v4, p0, Lcom/android/server/AppWidgetServiceImpl;->mBoundRemoteViewsServices:Ljava/util/HashMap;
 
     invoke-virtual {v4, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2138,27 +2445,27 @@
 
     check-cast v1, Lcom/android/server/AppWidgetServiceImpl$ServiceConnectionProxy;
 
-    .line 771
+    .line 779
     .local v1, conn:Lcom/android/server/AppWidgetServiceImpl$ServiceConnectionProxy;
     invoke-virtual {v1}, Lcom/android/server/AppWidgetServiceImpl$ServiceConnectionProxy;->disconnect()V
 
-    .line 772
+    .line 780
     iget-object v4, p0, Lcom/android/server/AppWidgetServiceImpl;->mContext:Landroid/content/Context;
 
     invoke-virtual {v4, v1}, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
 
-    .line 773
+    .line 781
     invoke-interface {v2}, Ljava/util/Iterator;->remove()V
 
     goto :goto_0
 
-    .line 779
+    .line 787
     .end local v1           #conn:Lcom/android/server/AppWidgetServiceImpl$ServiceConnectionProxy;
     .end local v3           #key:Landroid/util/Pair;,"Landroid/util/Pair<Ljava/lang/Integer;Landroid/content/Intent$FilterComparison;>;"
     :cond_1
     invoke-direct {p0, p1}, Lcom/android/server/AppWidgetServiceImpl;->decrementAppWidgetServiceRefCount(Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;)V
 
-    .line 780
+    .line 788
     return-void
 .end method
 
@@ -2171,7 +2478,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1269
+    .line 1296
     iget-object v2, p1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     iget-object v2, v2, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
@@ -2184,12 +2491,12 @@
 
     if-eqz v2, :cond_1
 
-    .line 1281
+    .line 1308
     :cond_0
     :goto_0
     return v1
 
-    .line 1272
+    .line 1299
     :cond_1
     iget-object v2, p1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
@@ -2199,16 +2506,16 @@
 
     if-eqz v2, :cond_0
 
-    .line 1275
+    .line 1302
     new-instance v2, Landroid/content/ComponentName;
 
     iget-object v3, p1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v3, v3, Landroid/content/pm/ComponentInfo;->packageName:Ljava/lang/String;
+    iget-object v3, v3, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
 
     iget-object v4, p1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v4, v4, Landroid/content/pm/ComponentInfo;->name:Ljava/lang/String;
+    iget-object v4, v4, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
 
     invoke-direct {v2, v3, v4}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -2216,16 +2523,16 @@
 
     move-result-object v0
 
-    .line 1277
+    .line 1304
     .local v0, p:Lcom/android/server/AppWidgetServiceImpl$Provider;
     if-eqz v0, :cond_0
 
-    .line 1278
+    .line 1305
     iget-object v1, p0, Lcom/android/server/AppWidgetServiceImpl;->mInstalledProviders:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1279
+    .line 1306
     const/4 v1, 0x1
 
     goto :goto_0
@@ -2238,10 +2545,10 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 1847
+    .line 1885
     const/4 v5, 0x0
 
-    .line 1848
+    .line 1886
     .local v5, providersAdded:Z
     new-instance v4, Landroid/content/Intent;
 
@@ -2249,11 +2556,11 @@
 
     invoke-direct {v4, v8}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1849
+    .line 1887
     .local v4, intent:Landroid/content/Intent;
     invoke-virtual {v4, p1}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1852
+    .line 1890
     :try_start_0
     iget-object v8, p0, Lcom/android/server/AppWidgetServiceImpl;->mPm:Landroid/content/pm/IPackageManager;
 
@@ -2277,11 +2584,11 @@
 
     move-result-object v2
 
-    .line 1859
+    .line 1897
     .local v2, broadcastReceivers:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     if-nez v2, :cond_1
 
-    .line 1860
+    .line 1898
     .local v0, N:I
     :goto_0
     const/4 v3, 0x0
@@ -2290,18 +2597,18 @@
     :goto_1
     if-ge v3, v0, :cond_3
 
-    .line 1861
+    .line 1899
     invoke-interface {v2, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v7
 
     check-cast v7, Landroid/content/pm/ResolveInfo;
 
-    .line 1862
+    .line 1900
     .local v7, ri:Landroid/content/pm/ResolveInfo;
     iget-object v1, v7, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    .line 1863
+    .line 1901
     .local v1, ai:Landroid/content/pm/ActivityInfo;
     iget-object v8, v1, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
@@ -2313,14 +2620,14 @@
 
     if-eqz v8, :cond_2
 
-    .line 1860
+    .line 1898
     :cond_0
     :goto_2
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
-    .line 1855
+    .line 1893
     .end local v0           #N:I
     .end local v1           #ai:Landroid/content/pm/ActivityInfo;
     .end local v2           #broadcastReceivers:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
@@ -2329,11 +2636,11 @@
     :catch_0
     move-exception v6
 
-    .line 1872
+    .line 1910
     :goto_3
     return v0
 
-    .line 1859
+    .line 1897
     .restart local v2       #broadcastReceivers:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     :cond_1
     invoke-interface {v2}, Ljava/util/List;->size()I
@@ -2342,13 +2649,13 @@
 
     goto :goto_0
 
-    .line 1866
+    .line 1904
     .restart local v0       #N:I
     .restart local v1       #ai:Landroid/content/pm/ActivityInfo;
     .restart local v3       #i:I
     .restart local v7       #ri:Landroid/content/pm/ResolveInfo;
     :cond_2
-    iget-object v8, v1, Landroid/content/pm/ComponentInfo;->packageName:Ljava/lang/String;
+    iget-object v8, v1, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
 
     invoke-virtual {p1, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2356,10 +2663,10 @@
 
     if-eqz v8, :cond_0
 
-    .line 1867
+    .line 1905
     invoke-virtual {p0, v7}, Lcom/android/server/AppWidgetServiceImpl;->addProviderLocked(Landroid/content/pm/ResolveInfo;)Z
 
-    .line 1868
+    .line 1906
     const/4 v5, 0x1
 
     goto :goto_2
@@ -2369,7 +2676,7 @@
     :cond_3
     move v0, v5
 
-    .line 1872
+    .line 1910
     goto :goto_3
 .end method
 
@@ -2379,61 +2686,61 @@
     .parameter "hostId"
 
     .prologue
-    .line 436
+    .line 442
     invoke-virtual {p0, p1}, Lcom/android/server/AppWidgetServiceImpl;->enforceSystemOrCallingUid(Ljava/lang/String;)I
 
     move-result v1
 
-    .line 437
+    .line 443
     .local v1, callingUid:I
     iget-object v5, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
 
     monitor-enter v5
 
-    .line 438
+    .line 444
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->ensureStateLoadedLocked()V
 
-    .line 439
+    .line 445
     iget v0, p0, Lcom/android/server/AppWidgetServiceImpl;->mNextAppWidgetId:I
 
     add-int/lit8 v4, v0, 0x1
 
     iput v4, p0, Lcom/android/server/AppWidgetServiceImpl;->mNextAppWidgetId:I
 
-    .line 441
+    .line 447
     .local v0, appWidgetId:I
     invoke-virtual {p0, v1, p1, p2}, Lcom/android/server/AppWidgetServiceImpl;->lookupOrAddHostLocked(ILjava/lang/String;I)Lcom/android/server/AppWidgetServiceImpl$Host;
 
     move-result-object v2
 
-    .line 443
+    .line 449
     .local v2, host:Lcom/android/server/AppWidgetServiceImpl$Host;
     new-instance v3, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
 
     invoke-direct {v3}, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;-><init>()V
 
-    .line 444
+    .line 450
     .local v3, id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     iput v0, v3, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->appWidgetId:I
 
-    .line 445
+    .line 451
     iput-object v2, v3, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->host:Lcom/android/server/AppWidgetServiceImpl$Host;
 
-    .line 447
+    .line 453
     iget-object v4, v2, Lcom/android/server/AppWidgetServiceImpl$Host;->instances:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 448
+    .line 454
     iget-object v4, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 450
+    .line 456
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->saveStateAsync()V
 
-    .line 451
+    .line 457
     sget-boolean v4, Lcom/android/server/AppWidgetServiceImpl;->DBG:Z
 
     if-eqz v4, :cond_0
@@ -2478,13 +2785,13 @@
 
     invoke-direct {p0, v4}, Lcom/android/server/AppWidgetServiceImpl;->log(Ljava/lang/String;)V
 
-    .line 453
+    .line 459
     :cond_0
     monitor-exit v5
 
     return v0
 
-    .line 454
+    .line 460
     .end local v0           #appWidgetId:I
     .end local v2           #host:Lcom/android/server/AppWidgetServiceImpl$Host;
     .end local v3           #id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
@@ -2505,7 +2812,7 @@
     .parameter "options"
 
     .prologue
-    .line 618
+    .line 624
     iget-object v0, p0, Lcom/android/server/AppWidgetServiceImpl;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.BIND_APPWIDGET"
@@ -2540,10 +2847,10 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 620
+    .line 626
     invoke-direct {p0, p1, p2, p3}, Lcom/android/server/AppWidgetServiceImpl;->bindAppWidgetIdImpl(ILandroid/content/ComponentName;Landroid/os/Bundle;)V
 
-    .line 621
+    .line 627
     return-void
 .end method
 
@@ -2555,7 +2862,7 @@
     .parameter "options"
 
     .prologue
-    .line 626
+    .line 632
     :try_start_0
     iget-object v1, p0, Lcom/android/server/AppWidgetServiceImpl;->mContext:Landroid/content/Context;
 
@@ -2567,21 +2874,21 @@
     :try_end_0
     .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 632
+    .line 638
     :cond_0
     invoke-direct {p0, p2, p3, p4}, Lcom/android/server/AppWidgetServiceImpl;->bindAppWidgetIdImpl(ILandroid/content/ComponentName;Landroid/os/Bundle;)V
 
-    .line 633
+    .line 639
     const/4 v1, 0x1
 
     :goto_0
     return v1
 
-    .line 627
+    .line 633
     :catch_0
     move-exception v0
 
-    .line 628
+    .line 634
     .local v0, se:Ljava/lang/SecurityException;
     invoke-direct {p0, p1}, Lcom/android/server/AppWidgetServiceImpl;->callerHasBindAppWidgetPermission(Ljava/lang/String;)Z
 
@@ -2589,7 +2896,7 @@
 
     if-nez v1, :cond_0
 
-    .line 629
+    .line 635
     const/4 v1, 0x0
 
     goto :goto_0
@@ -2602,27 +2909,27 @@
     .parameter "connection"
 
     .prologue
-    .line 680
+    .line 686
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
 
     monitor-enter v14
 
-    .line 681
+    .line 687
     :try_start_0
     invoke-direct/range {p0 .. p0}, Lcom/android/server/AppWidgetServiceImpl;->ensureStateLoadedLocked()V
 
-    .line 682
+    .line 688
     invoke-virtual/range {p0 .. p1}, Lcom/android/server/AppWidgetServiceImpl;->lookupAppWidgetIdLocked(I)Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
 
     move-result-object v7
 
-    .line 683
+    .line 689
     .local v7, id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     if-nez v7, :cond_0
 
-    .line 684
+    .line 690
     new-instance v13, Ljava/lang/IllegalArgumentException;
 
     const-string v15, "bad appWidgetId"
@@ -2631,7 +2938,7 @@
 
     throw v13
 
-    .line 731
+    .line 737
     .end local v7           #id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     :catchall_0
     move-exception v13
@@ -2642,7 +2949,7 @@
 
     throw v13
 
-    .line 686
+    .line 692
     .restart local v7       #id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     :cond_0
     :try_start_1
@@ -2652,7 +2959,7 @@
 
     move-result-object v2
 
-    .line 688
+    .line 694
     .local v2, componentName:Landroid/content/ComponentName;
     :try_start_2
     invoke-static {}, Landroid/app/AppGlobals;->getPackageManager()Landroid/content/pm/IPackageManager;
@@ -2673,7 +2980,7 @@
 
     move-result-object v9
 
-    .line 690
+    .line 696
     .local v9, si:Landroid/content/pm/ServiceInfo;
     const-string v13, "android.permission.BIND_REMOTEVIEWS"
 
@@ -2685,7 +2992,7 @@
 
     if-nez v13, :cond_1
 
-    .line 691
+    .line 697
     new-instance v13, Ljava/lang/SecurityException;
 
     new-instance v15, Ljava/lang/StringBuilder;
@@ -2713,12 +3020,12 @@
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 694
+    .line 700
     .end local v9           #si:Landroid/content/pm/ServiceInfo;
     :catch_0
     move-exception v5
 
-    .line 695
+    .line 701
     .local v5, e:Landroid/os/RemoteException;
     :try_start_3
     new-instance v13, Ljava/lang/IllegalArgumentException;
@@ -2745,13 +3052,13 @@
 
     throw v13
 
-    .line 701
+    .line 707
     .end local v5           #e:Landroid/os/RemoteException;
     .restart local v9       #si:Landroid/content/pm/ServiceInfo;
     :cond_1
     const/4 v3, 0x0
 
-    .line 702
+    .line 708
     .local v3, conn:Lcom/android/server/AppWidgetServiceImpl$ServiceConnectionProxy;
     new-instance v6, Landroid/content/Intent$FilterComparison;
 
@@ -2759,7 +3066,7 @@
 
     invoke-direct {v6, v0}, Landroid/content/Intent$FilterComparison;-><init>(Landroid/content/Intent;)V
 
-    .line 703
+    .line 709
     .local v6, fc:Landroid/content/Intent$FilterComparison;
     invoke-static/range {p1 .. p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -2769,7 +3076,7 @@
 
     move-result-object v8
 
-    .line 704
+    .line 710
     .local v8, key:Landroid/util/Pair;,"Landroid/util/Pair<Ljava/lang/Integer;Landroid/content/Intent$FilterComparison;>;"
     move-object/from16 v0, p0
 
@@ -2781,7 +3088,7 @@
 
     if-eqz v13, :cond_2
 
-    .line 705
+    .line 711
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/AppWidgetServiceImpl;->mBoundRemoteViewsServices:Ljava/util/HashMap;
@@ -2793,18 +3100,18 @@
     .end local v3           #conn:Lcom/android/server/AppWidgetServiceImpl$ServiceConnectionProxy;
     check-cast v3, Lcom/android/server/AppWidgetServiceImpl$ServiceConnectionProxy;
 
-    .line 706
+    .line 712
     .restart local v3       #conn:Lcom/android/server/AppWidgetServiceImpl$ServiceConnectionProxy;
     invoke-virtual {v3}, Lcom/android/server/AppWidgetServiceImpl$ServiceConnectionProxy;->disconnect()V
 
-    .line 707
+    .line 713
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/AppWidgetServiceImpl;->mContext:Landroid/content/Context;
 
     invoke-virtual {v13, v3}, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
 
-    .line 708
+    .line 714
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/AppWidgetServiceImpl;->mBoundRemoteViewsServices:Ljava/util/HashMap;
@@ -2814,7 +3121,7 @@
     :cond_2
     move-object v4, v3
 
-    .line 711
+    .line 717
     .end local v3           #conn:Lcom/android/server/AppWidgetServiceImpl$ServiceConnectionProxy;
     .local v4, conn:Lcom/android/server/AppWidgetServiceImpl$ServiceConnectionProxy;
     iget-object v13, v7, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->provider:Lcom/android/server/AppWidgetServiceImpl$Provider;
@@ -2825,7 +3132,7 @@
 
     move-result v12
 
-    .line 712
+    .line 718
     .local v12, userId:I
     move-object/from16 v0, p0
 
@@ -2833,7 +3140,7 @@
 
     if-eq v12, v13, :cond_3
 
-    .line 713
+    .line 719
     const-string v13, "AppWidgetServiceImpl"
 
     new-instance v15, Ljava/lang/StringBuilder;
@@ -2872,7 +3179,7 @@
 
     invoke-static {v13, v15}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 718
+    .line 724
     :cond_3
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
     :try_end_3
@@ -2880,7 +3187,7 @@
 
     move-result-wide v10
 
-    .line 720
+    .line 726
     .local v10, token:J
     :try_start_4
     new-instance v3, Lcom/android/server/AppWidgetServiceImpl$ServiceConnectionProxy;
@@ -2891,7 +3198,7 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    .line 721
+    .line 727
     .end local v4           #conn:Lcom/android/server/AppWidgetServiceImpl$ServiceConnectionProxy;
     .restart local v3       #conn:Lcom/android/server/AppWidgetServiceImpl$ServiceConnectionProxy;
     :try_start_5
@@ -2905,7 +3212,7 @@
 
     invoke-virtual {v13, v0, v3, v15, v12}, Landroid/content/Context;->bindService(Landroid/content/Intent;Landroid/content/ServiceConnection;II)Z
 
-    .line 722
+    .line 728
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/AppWidgetServiceImpl;->mBoundRemoteViewsServices:Ljava/util/HashMap;
@@ -2914,24 +3221,24 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_2
 
-    .line 724
+    .line 730
     :try_start_6
     invoke-static {v10, v11}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 730
+    .line 736
     move-object/from16 v0, p0
 
     move/from16 v1, p1
 
     invoke-direct {v0, v1, v6}, Lcom/android/server/AppWidgetServiceImpl;->incrementAppWidgetServiceRefCount(ILandroid/content/Intent$FilterComparison;)V
 
-    .line 731
+    .line 737
     monitor-exit v14
 
-    .line 732
+    .line 738
     return-void
 
-    .line 724
+    .line 730
     .end local v3           #conn:Lcom/android/server/AppWidgetServiceImpl$ServiceConnectionProxy;
     .restart local v4       #conn:Lcom/android/server/AppWidgetServiceImpl$ServiceConnectionProxy;
     :catchall_1
@@ -2962,7 +3269,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 1179
+    .line 1206
     iget-object v1, p1, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->host:Lcom/android/server/AppWidgetServiceImpl$Host;
 
     invoke-virtual {v1, p2}, Lcom/android/server/AppWidgetServiceImpl$Host;->uidMatches(I)Z
@@ -2971,12 +3278,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 1192
+    .line 1219
     :cond_0
     :goto_0
     return v0
 
-    .line 1183
+    .line 1210
     :cond_1
     iget-object v1, p1, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->provider:Lcom/android/server/AppWidgetServiceImpl$Provider;
 
@@ -2988,7 +3295,7 @@
 
     if-eq v1, p2, :cond_0
 
-    .line 1187
+    .line 1214
     :cond_2
     iget-object v1, p0, Lcom/android/server/AppWidgetServiceImpl;->mContext:Landroid/content/Context;
 
@@ -3000,7 +3307,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 1192
+    .line 1219
     const/4 v0, 0x0
 
     goto :goto_0
@@ -3011,7 +3318,7 @@
     .parameter "p"
 
     .prologue
-    .line 545
+    .line 551
     sget-boolean v2, Lcom/android/server/AppWidgetServiceImpl;->DBG:Z
 
     if-eqz v2, :cond_0
@@ -3036,25 +3343,25 @@
 
     invoke-direct {p0, v2}, Lcom/android/server/AppWidgetServiceImpl;->log(Ljava/lang/String;)V
 
-    .line 546
+    .line 552
     :cond_0
     iget-object v2, p1, Lcom/android/server/AppWidgetServiceImpl$Provider;->broadcast:Landroid/app/PendingIntent;
 
     if-eqz v2, :cond_1
 
-    .line 547
+    .line 553
     iget-object v2, p0, Lcom/android/server/AppWidgetServiceImpl;->mAlarmManager:Landroid/app/AlarmManager;
 
     iget-object v3, p1, Lcom/android/server/AppWidgetServiceImpl$Provider;->broadcast:Landroid/app/PendingIntent;
 
     invoke-virtual {v2, v3}, Landroid/app/AlarmManager;->cancel(Landroid/app/PendingIntent;)V
 
-    .line 548
+    .line 554
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 550
+    .line 556
     .local v0, token:J
     :try_start_0
     iget-object v2, p1, Lcom/android/server/AppWidgetServiceImpl$Provider;->broadcast:Landroid/app/PendingIntent;
@@ -3063,20 +3370,20 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 552
+    .line 558
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 554
+    .line 560
     const/4 v2, 0x0
 
     iput-object v2, p1, Lcom/android/server/AppWidgetServiceImpl$Provider;->broadcast:Landroid/app/PendingIntent;
 
-    .line 556
+    .line 562
     .end local v0           #token:J
     :cond_1
     return-void
 
-    .line 552
+    .line 558
     .restart local v0       #token:J
     :catchall_0
     move-exception v2
@@ -3090,7 +3397,7 @@
     .locals 5
 
     .prologue
-    .line 211
+    .line 217
     iget-object v3, p0, Lcom/android/server/AppWidgetServiceImpl;->mContext:Landroid/content/Context;
 
     const-string v4, "window"
@@ -3101,23 +3408,23 @@
 
     check-cast v2, Landroid/view/WindowManager;
 
-    .line 212
+    .line 218
     .local v2, wm:Landroid/view/WindowManager;
     invoke-interface {v2}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
     move-result-object v0
 
-    .line 213
+    .line 219
     .local v0, display:Landroid/view/Display;
     new-instance v1, Landroid/graphics/Point;
 
     invoke-direct {v1}, Landroid/graphics/Point;-><init>()V
 
-    .line 214
+    .line 220
     .local v1, size:Landroid/graphics/Point;
     invoke-virtual {v0, v1}, Landroid/view/Display;->getRealSize(Landroid/graphics/Point;)V
 
-    .line 217
+    .line 223
     iget v3, v1, Landroid/graphics/Point;->x:I
 
     mul-int/lit8 v3, v3, 0x6
@@ -3128,7 +3435,7 @@
 
     iput v3, p0, Lcom/android/server/AppWidgetServiceImpl;->mMaxWidgetBitmapMemory:I
 
-    .line 218
+    .line 224
     return-void
 .end method
 
@@ -3136,21 +3443,21 @@
     .locals 7
 
     .prologue
-    .line 481
+    .line 487
     iget-object v6, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
 
     monitor-enter v6
 
-    .line 482
+    .line 488
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->ensureStateLoadedLocked()V
 
-    .line 483
+    .line 489
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v1
 
-    .line 484
+    .line 490
     .local v1, callingUid:I
     iget-object v5, p0, Lcom/android/server/AppWidgetServiceImpl;->mHosts:Ljava/util/ArrayList;
 
@@ -3158,11 +3465,11 @@
 
     move-result v0
 
-    .line 485
+    .line 491
     .local v0, N:I
     const/4 v2, 0x0
 
-    .line 486
+    .line 492
     .local v2, changed:Z
     add-int/lit8 v4, v0, -0x1
 
@@ -3170,7 +3477,7 @@
     :goto_0
     if-ltz v4, :cond_1
 
-    .line 487
+    .line 493
     iget-object v5, p0, Lcom/android/server/AppWidgetServiceImpl;->mHosts:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -3179,7 +3486,7 @@
 
     check-cast v3, Lcom/android/server/AppWidgetServiceImpl$Host;
 
-    .line 488
+    .line 494
     .local v3, host:Lcom/android/server/AppWidgetServiceImpl$Host;
     invoke-virtual {v3, v1}, Lcom/android/server/AppWidgetServiceImpl$Host;->uidMatches(I)Z
 
@@ -3187,34 +3494,34 @@
 
     if-eqz v5, :cond_0
 
-    .line 489
+    .line 495
     invoke-virtual {p0, v3}, Lcom/android/server/AppWidgetServiceImpl;->deleteHostLocked(Lcom/android/server/AppWidgetServiceImpl$Host;)V
 
-    .line 490
+    .line 496
     const/4 v2, 0x1
 
-    .line 486
+    .line 492
     :cond_0
     add-int/lit8 v4, v4, -0x1
 
     goto :goto_0
 
-    .line 493
+    .line 499
     .end local v3           #host:Lcom/android/server/AppWidgetServiceImpl$Host;
     :cond_1
     if-eqz v2, :cond_2
 
-    .line 494
+    .line 500
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->saveStateAsync()V
 
-    .line 496
+    .line 502
     :cond_2
     monitor-exit v6
 
-    .line 497
+    .line 503
     return-void
 
-    .line 496
+    .line 502
     .end local v0           #N:I
     .end local v1           #callingUid:I
     .end local v2           #changed:Z
@@ -3234,38 +3541,38 @@
     .parameter "appWidgetId"
 
     .prologue
-    .line 458
+    .line 464
     iget-object v2, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
 
     monitor-enter v2
 
-    .line 459
+    .line 465
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->ensureStateLoadedLocked()V
 
-    .line 460
+    .line 466
     invoke-virtual {p0, p1}, Lcom/android/server/AppWidgetServiceImpl;->lookupAppWidgetIdLocked(I)Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
 
     move-result-object v0
 
-    .line 461
+    .line 467
     .local v0, id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     if-eqz v0, :cond_0
 
-    .line 462
+    .line 468
     invoke-virtual {p0, v0}, Lcom/android/server/AppWidgetServiceImpl;->deleteAppWidgetLocked(Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;)V
 
-    .line 463
+    .line 469
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->saveStateAsync()V
 
-    .line 465
+    .line 471
     :cond_0
     monitor-exit v2
 
-    .line 466
+    .line 472
     return-void
 
-    .line 465
+    .line 471
     .end local v0           #id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     :catchall_0
     move-exception v1
@@ -3282,51 +3589,51 @@
     .parameter "id"
 
     .prologue
-    .line 514
+    .line 520
     invoke-direct {p0, p1}, Lcom/android/server/AppWidgetServiceImpl;->unbindAppWidgetRemoteViewsServicesLocked(Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;)V
 
-    .line 516
+    .line 522
     iget-object v0, p1, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->host:Lcom/android/server/AppWidgetServiceImpl$Host;
 
-    .line 517
+    .line 523
     .local v0, host:Lcom/android/server/AppWidgetServiceImpl$Host;
     iget-object v3, v0, Lcom/android/server/AppWidgetServiceImpl$Host;->instances:Ljava/util/ArrayList;
 
     invoke-virtual {v3, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 518
+    .line 524
     invoke-virtual {p0, v0}, Lcom/android/server/AppWidgetServiceImpl;->pruneHostLocked(Lcom/android/server/AppWidgetServiceImpl$Host;)V
 
-    .line 520
+    .line 526
     iget-object v3, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
 
     invoke-virtual {v3, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 522
+    .line 528
     iget-object v2, p1, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->provider:Lcom/android/server/AppWidgetServiceImpl$Provider;
 
-    .line 523
+    .line 529
     .local v2, p:Lcom/android/server/AppWidgetServiceImpl$Provider;
     if-eqz v2, :cond_0
 
-    .line 524
+    .line 530
     iget-object v3, v2, Lcom/android/server/AppWidgetServiceImpl$Provider;->instances:Ljava/util/ArrayList;
 
     invoke-virtual {v3, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 525
+    .line 531
     iget-boolean v3, v2, Lcom/android/server/AppWidgetServiceImpl$Provider;->zombie:Z
 
     if-nez v3, :cond_0
 
-    .line 527
+    .line 533
     new-instance v1, Landroid/content/Intent;
 
     const-string v3, "android.appwidget.action.APPWIDGET_DELETED"
 
     invoke-direct {v1, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 528
+    .line 534
     .local v1, intent:Landroid/content/Intent;
     iget-object v3, v2, Lcom/android/server/AppWidgetServiceImpl$Provider;->info:Landroid/appwidget/AppWidgetProviderInfo;
 
@@ -3334,14 +3641,14 @@
 
     invoke-virtual {v1, v3}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    .line 529
+    .line 535
     const-string v3, "appWidgetId"
 
     iget v4, p1, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->appWidgetId:I
 
     invoke-virtual {v1, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 530
+    .line 536
     iget-object v3, p0, Lcom/android/server/AppWidgetServiceImpl;->mContext:Landroid/content/Context;
 
     new-instance v4, Landroid/os/UserHandle;
@@ -3352,7 +3659,7 @@
 
     invoke-virtual {v3, v1, v4}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 531
+    .line 537
     iget-object v3, v2, Lcom/android/server/AppWidgetServiceImpl$Provider;->instances:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
@@ -3361,10 +3668,10 @@
 
     if-nez v3, :cond_0
 
-    .line 533
+    .line 539
     invoke-virtual {p0, v2}, Lcom/android/server/AppWidgetServiceImpl;->cancelBroadcasts(Lcom/android/server/AppWidgetServiceImpl$Provider;)V
 
-    .line 536
+    .line 542
     new-instance v1, Landroid/content/Intent;
 
     .end local v1           #intent:Landroid/content/Intent;
@@ -3372,7 +3679,7 @@
 
     invoke-direct {v1, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 537
+    .line 543
     .restart local v1       #intent:Landroid/content/Intent;
     iget-object v3, v2, Lcom/android/server/AppWidgetServiceImpl$Provider;->info:Landroid/appwidget/AppWidgetProviderInfo;
 
@@ -3380,7 +3687,7 @@
 
     invoke-virtual {v1, v3}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    .line 538
+    .line 544
     iget-object v3, p0, Lcom/android/server/AppWidgetServiceImpl;->mContext:Landroid/content/Context;
 
     new-instance v4, Landroid/os/UserHandle;
@@ -3391,7 +3698,7 @@
 
     invoke-virtual {v3, v1, v4}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 542
+    .line 548
     .end local v1           #intent:Landroid/content/Intent;
     :cond_0
     return-void
@@ -3402,44 +3709,44 @@
     .parameter "hostId"
 
     .prologue
-    .line 469
+    .line 475
     iget-object v3, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
 
     monitor-enter v3
 
-    .line 470
+    .line 476
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->ensureStateLoadedLocked()V
 
-    .line 471
+    .line 477
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v0
 
-    .line 472
+    .line 478
     .local v0, callingUid:I
     invoke-virtual {p0, v0, p1}, Lcom/android/server/AppWidgetServiceImpl;->lookupHostLocked(II)Lcom/android/server/AppWidgetServiceImpl$Host;
 
     move-result-object v1
 
-    .line 473
+    .line 479
     .local v1, host:Lcom/android/server/AppWidgetServiceImpl$Host;
     if-eqz v1, :cond_0
 
-    .line 474
+    .line 480
     invoke-virtual {p0, v1}, Lcom/android/server/AppWidgetServiceImpl;->deleteHostLocked(Lcom/android/server/AppWidgetServiceImpl$Host;)V
 
-    .line 475
+    .line 481
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->saveStateAsync()V
 
-    .line 477
+    .line 483
     :cond_0
     monitor-exit v3
 
-    .line 478
+    .line 484
     return-void
 
-    .line 477
+    .line 483
     .end local v0           #callingUid:I
     .end local v1           #host:Lcom/android/server/AppWidgetServiceImpl$Host;
     :catchall_0
@@ -3457,14 +3764,14 @@
     .parameter "host"
 
     .prologue
-    .line 500
+    .line 506
     iget-object v3, p1, Lcom/android/server/AppWidgetServiceImpl$Host;->instances:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 501
+    .line 507
     .local v0, N:I
     add-int/lit8 v1, v0, -0x1
 
@@ -3472,7 +3779,7 @@
     :goto_0
     if-ltz v1, :cond_0
 
-    .line 502
+    .line 508
     iget-object v3, p1, Lcom/android/server/AppWidgetServiceImpl$Host;->instances:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -3481,38 +3788,38 @@
 
     check-cast v2, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
 
-    .line 503
+    .line 509
     .local v2, id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     invoke-virtual {p0, v2}, Lcom/android/server/AppWidgetServiceImpl;->deleteAppWidgetLocked(Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;)V
 
-    .line 501
+    .line 507
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_0
 
-    .line 505
+    .line 511
     .end local v2           #id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     :cond_0
     iget-object v3, p1, Lcom/android/server/AppWidgetServiceImpl$Host;->instances:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->clear()V
 
-    .line 506
+    .line 512
     iget-object v3, p0, Lcom/android/server/AppWidgetServiceImpl;->mHosts:Ljava/util/ArrayList;
 
     invoke-virtual {v3, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 507
+    .line 513
     iget-object v3, p0, Lcom/android/server/AppWidgetServiceImpl;->mDeletedHosts:Ljava/util/ArrayList;
 
     invoke-virtual {v3, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 509
+    .line 515
     const/4 v3, 0x0
 
     iput-object v3, p1, Lcom/android/server/AppWidgetServiceImpl$Host;->callbacks:Lcom/android/internal/appwidget/IAppWidgetHost;
 
-    .line 510
+    .line 516
     return-void
 .end method
 
@@ -3523,7 +3830,7 @@
     .parameter "args"
 
     .prologue
-    .line 382
+    .line 388
     iget-object v2, p0, Lcom/android/server/AppWidgetServiceImpl;->mContext:Landroid/content/Context;
 
     const-string v3, "android.permission.DUMP"
@@ -3534,7 +3841,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 384
+    .line 390
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -3573,17 +3880,17 @@
 
     invoke-virtual {p2, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 425
+    .line 431
     :goto_0
     return-void
 
-    .line 390
+    .line 396
     :cond_0
     iget-object v3, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
 
     monitor-enter v3
 
-    .line 391
+    .line 397
     :try_start_0
     iget-object v2, p0, Lcom/android/server/AppWidgetServiceImpl;->mInstalledProviders:Ljava/util/ArrayList;
 
@@ -3591,20 +3898,20 @@
 
     move-result v0
 
-    .line 392
+    .line 398
     .local v0, N:I
     const-string v2, "Providers:"
 
     invoke-virtual {p2, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 393
+    .line 399
     const/4 v1, 0x0
 
     .local v1, i:I
     :goto_1
     if-ge v1, v0, :cond_1
 
-    .line 394
+    .line 400
     iget-object v2, p0, Lcom/android/server/AppWidgetServiceImpl;->mInstalledProviders:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -3615,12 +3922,12 @@
 
     invoke-direct {p0, v2, v1, p2}, Lcom/android/server/AppWidgetServiceImpl;->dumpProvider(Lcom/android/server/AppWidgetServiceImpl$Provider;ILjava/io/PrintWriter;)V
 
-    .line 393
+    .line 399
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 397
+    .line 403
     :cond_1
     iget-object v2, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
 
@@ -3628,23 +3935,23 @@
 
     move-result v0
 
-    .line 398
+    .line 404
     const-string v2, " "
 
     invoke-virtual {p2, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 399
+    .line 405
     const-string v2, "AppWidgetIds:"
 
     invoke-virtual {p2, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 400
+    .line 406
     const/4 v1, 0x0
 
     :goto_2
     if-ge v1, v0, :cond_2
 
-    .line 401
+    .line 407
     iget-object v2, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -3655,12 +3962,12 @@
 
     invoke-direct {p0, v2, v1, p2}, Lcom/android/server/AppWidgetServiceImpl;->dumpAppWidgetId(Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;ILjava/io/PrintWriter;)V
 
-    .line 400
+    .line 406
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_2
 
-    .line 404
+    .line 410
     :cond_2
     iget-object v2, p0, Lcom/android/server/AppWidgetServiceImpl;->mHosts:Ljava/util/ArrayList;
 
@@ -3668,23 +3975,23 @@
 
     move-result v0
 
-    .line 405
+    .line 411
     const-string v2, " "
 
     invoke-virtual {p2, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 406
+    .line 412
     const-string v2, "Hosts:"
 
     invoke-virtual {p2, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 407
+    .line 413
     const/4 v1, 0x0
 
     :goto_3
     if-ge v1, v0, :cond_3
 
-    .line 408
+    .line 414
     iget-object v2, p0, Lcom/android/server/AppWidgetServiceImpl;->mHosts:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -3695,12 +4002,12 @@
 
     invoke-direct {p0, v2, v1, p2}, Lcom/android/server/AppWidgetServiceImpl;->dumpHost(Lcom/android/server/AppWidgetServiceImpl$Host;ILjava/io/PrintWriter;)V
 
-    .line 407
+    .line 413
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_3
 
-    .line 411
+    .line 417
     :cond_3
     iget-object v2, p0, Lcom/android/server/AppWidgetServiceImpl;->mDeletedProviders:Ljava/util/ArrayList;
 
@@ -3708,23 +4015,23 @@
 
     move-result v0
 
-    .line 412
+    .line 418
     const-string v2, " "
 
     invoke-virtual {p2, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 413
+    .line 419
     const-string v2, "Deleted Providers:"
 
     invoke-virtual {p2, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 414
+    .line 420
     const/4 v1, 0x0
 
     :goto_4
     if-ge v1, v0, :cond_4
 
-    .line 415
+    .line 421
     iget-object v2, p0, Lcom/android/server/AppWidgetServiceImpl;->mDeletedProviders:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -3735,12 +4042,12 @@
 
     invoke-direct {p0, v2, v1, p2}, Lcom/android/server/AppWidgetServiceImpl;->dumpProvider(Lcom/android/server/AppWidgetServiceImpl$Provider;ILjava/io/PrintWriter;)V
 
-    .line 414
+    .line 420
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_4
 
-    .line 418
+    .line 424
     :cond_4
     iget-object v2, p0, Lcom/android/server/AppWidgetServiceImpl;->mDeletedHosts:Ljava/util/ArrayList;
 
@@ -3748,23 +4055,23 @@
 
     move-result v0
 
-    .line 419
+    .line 425
     const-string v2, " "
 
     invoke-virtual {p2, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 420
+    .line 426
     const-string v2, "Deleted Hosts:"
 
     invoke-virtual {p2, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 421
+    .line 427
     const/4 v1, 0x0
 
     :goto_5
     if-ge v1, v0, :cond_5
 
-    .line 422
+    .line 428
     iget-object v2, p0, Lcom/android/server/AppWidgetServiceImpl;->mDeletedHosts:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -3775,12 +4082,12 @@
 
     invoke-direct {p0, v2, v1, p2}, Lcom/android/server/AppWidgetServiceImpl;->dumpHost(Lcom/android/server/AppWidgetServiceImpl$Host;ILjava/io/PrintWriter;)V
 
-    .line 421
+    .line 427
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_5
 
-    .line 424
+    .line 430
     :cond_5
     monitor-exit v3
 
@@ -3808,12 +4115,12 @@
     .end annotation
 
     .prologue
-    .line 1507
+    .line 1545
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v0
 
-    .line 1510
+    .line 1548
     .local v0, callingUid:I
     :try_start_0
     invoke-virtual {p0, p1}, Lcom/android/server/AppWidgetServiceImpl;->getUidForPackage(Ljava/lang/String;)I
@@ -3822,7 +4129,7 @@
 
     move-result v2
 
-    .line 1515
+    .line 1553
     .local v2, packageUid:I
     invoke-static {v0, v2}, Landroid/os/UserHandle;->isSameApp(II)Z
 
@@ -3830,7 +4137,7 @@
 
     if-nez v3, :cond_0
 
-    .line 1516
+    .line 1554
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -3855,12 +4162,12 @@
 
     throw v3
 
-    .line 1511
+    .line 1549
     .end local v2           #packageUid:I
     :catch_0
     move-exception v1
 
-    .line 1512
+    .line 1550
     .local v1, ex:Landroid/content/pm/PackageManager$NameNotFoundException;
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
@@ -3886,7 +4193,7 @@
 
     throw v3
 
-    .line 1519
+    .line 1557
     .end local v1           #ex:Landroid/content/pm/PackageManager$NameNotFoundException;
     .restart local v2       #packageUid:I
     :cond_0
@@ -3903,12 +4210,12 @@
     .end annotation
 
     .prologue
-    .line 1499
+    .line 1537
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v0
 
-    .line 1500
+    .line 1538
     .local v0, callingUid:I
     invoke-static {v0}, Landroid/os/UserHandle;->getAppId(I)I
 
@@ -3920,7 +4227,7 @@
 
     if-nez v0, :cond_1
 
-    .line 1503
+    .line 1541
     .end local v0           #callingUid:I
     :cond_0
     :goto_0
@@ -3940,21 +4247,21 @@
     .parameter "provider"
 
     .prologue
-    .line 1360
+    .line 1391
     iget-object v2, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
 
     monitor-enter v2
 
-    .line 1361
+    .line 1392
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->ensureStateLoadedLocked()V
 
-    .line 1362
+    .line 1393
     invoke-virtual {p0, p1}, Lcom/android/server/AppWidgetServiceImpl;->lookupProviderLocked(Landroid/content/ComponentName;)Lcom/android/server/AppWidgetServiceImpl$Provider;
 
     move-result-object v0
 
-    .line 1363
+    .line 1394
     .local v0, p:Lcom/android/server/AppWidgetServiceImpl$Provider;
     if-eqz v0, :cond_0
 
@@ -3966,14 +4273,14 @@
 
     if-ne v1, v3, :cond_0
 
-    .line 1364
+    .line 1395
     invoke-static {v0}, Lcom/android/server/AppWidgetServiceImpl;->getAppWidgetIds(Lcom/android/server/AppWidgetServiceImpl$Provider;)[I
 
     move-result-object v1
 
     monitor-exit v2
 
-    .line 1366
+    .line 1397
     :goto_0
     return-object v1
 
@@ -3986,7 +4293,7 @@
 
     goto :goto_0
 
-    .line 1368
+    .line 1399
     .end local v0           #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
     :catchall_0
     move-exception v1
@@ -4003,38 +4310,38 @@
     .parameter "hostId"
 
     .prologue
-    .line 1381
+    .line 1412
     iget-object v3, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
 
     monitor-enter v3
 
-    .line 1382
+    .line 1413
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->ensureStateLoadedLocked()V
 
-    .line 1383
+    .line 1414
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v0
 
-    .line 1384
+    .line 1415
     .local v0, callingUid:I
     invoke-virtual {p0, v0, p1}, Lcom/android/server/AppWidgetServiceImpl;->lookupHostLocked(II)Lcom/android/server/AppWidgetServiceImpl$Host;
 
     move-result-object v1
 
-    .line 1385
+    .line 1416
     .local v1, host:Lcom/android/server/AppWidgetServiceImpl$Host;
     if-eqz v1, :cond_0
 
-    .line 1386
+    .line 1417
     invoke-static {v1}, Lcom/android/server/AppWidgetServiceImpl;->getAppWidgetIds(Lcom/android/server/AppWidgetServiceImpl$Host;)[I
 
     move-result-object v2
 
     monitor-exit v3
 
-    .line 1388
+    .line 1419
     :goto_0
     return-object v2
 
@@ -4047,7 +4354,7 @@
 
     goto :goto_0
 
-    .line 1390
+    .line 1421
     .end local v0           #callingUid:I
     .end local v1           #host:Lcom/android/server/AppWidgetServiceImpl$Host;
     :catchall_0
@@ -4065,21 +4372,21 @@
     .parameter "appWidgetId"
 
     .prologue
-    .line 846
+    .line 854
     iget-object v2, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
 
     monitor-enter v2
 
-    .line 847
+    .line 855
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->ensureStateLoadedLocked()V
 
-    .line 848
+    .line 856
     invoke-virtual {p0, p1}, Lcom/android/server/AppWidgetServiceImpl;->lookupAppWidgetIdLocked(I)Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
 
     move-result-object v0
 
-    .line 849
+    .line 857
     .local v0, id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     if-eqz v0, :cond_0
 
@@ -4093,7 +4400,7 @@
 
     if-nez v1, :cond_0
 
-    .line 850
+    .line 858
     iget-object v1, v0, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->provider:Lcom/android/server/AppWidgetServiceImpl$Provider;
 
     iget-object v1, v1, Lcom/android/server/AppWidgetServiceImpl$Provider;->info:Landroid/appwidget/AppWidgetProviderInfo;
@@ -4104,7 +4411,7 @@
 
     monitor-exit v2
 
-    .line 852
+    .line 860
     :goto_0
     return-object v1
 
@@ -4115,7 +4422,7 @@
 
     goto :goto_0
 
-    .line 853
+    .line 861
     .end local v0           #id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     :catchall_0
     move-exception v1
@@ -4132,21 +4439,21 @@
     .parameter "appWidgetId"
 
     .prologue
-    .line 953
+    .line 980
     iget-object v2, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
 
     monitor-enter v2
 
-    .line 954
+    .line 981
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->ensureStateLoadedLocked()V
 
-    .line 955
+    .line 982
     invoke-virtual {p0, p1}, Lcom/android/server/AppWidgetServiceImpl;->lookupAppWidgetIdLocked(I)Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
 
     move-result-object v0
 
-    .line 956
+    .line 983
     .local v0, id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     if-eqz v0, :cond_0
 
@@ -4154,7 +4461,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 957
+    .line 984
     iget-object v1, v0, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->options:Landroid/os/Bundle;
 
     invoke-direct {p0, v1}, Lcom/android/server/AppWidgetServiceImpl;->cloneIfLocalBinder(Landroid/os/Bundle;)Landroid/os/Bundle;
@@ -4163,7 +4470,7 @@
 
     monitor-exit v2
 
-    .line 959
+    .line 986
     :goto_0
     return-object v1
 
@@ -4174,7 +4481,7 @@
 
     goto :goto_0
 
-    .line 961
+    .line 988
     .end local v0           #id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     :catchall_0
     move-exception v1
@@ -4191,7 +4498,7 @@
     .parameter "appWidgetId"
 
     .prologue
-    .line 857
+    .line 865
     sget-boolean v1, Lcom/android/server/AppWidgetServiceImpl;->DBG:Z
 
     if-eqz v1, :cond_0
@@ -4216,26 +4523,26 @@
 
     invoke-direct {p0, v1}, Lcom/android/server/AppWidgetServiceImpl;->log(Ljava/lang/String;)V
 
-    .line 858
+    .line 866
     :cond_0
     iget-object v2, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
 
     monitor-enter v2
 
-    .line 859
+    .line 867
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->ensureStateLoadedLocked()V
 
-    .line 860
+    .line 868
     invoke-virtual {p0, p1}, Lcom/android/server/AppWidgetServiceImpl;->lookupAppWidgetIdLocked(I)Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
 
     move-result-object v0
 
-    .line 861
+    .line 869
     .local v0, id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     if-eqz v0, :cond_1
 
-    .line 862
+    .line 870
     iget-object v1, v0, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->views:Landroid/widget/RemoteViews;
 
     invoke-direct {p0, v1}, Lcom/android/server/AppWidgetServiceImpl;->cloneIfLocalBinder(Landroid/widget/RemoteViews;)Landroid/widget/RemoteViews;
@@ -4244,11 +4551,11 @@
 
     monitor-exit v2
 
-    .line 865
+    .line 873
     :goto_0
     return-object v1
 
-    .line 864
+    .line 872
     :cond_1
     sget-boolean v1, Lcom/android/server/AppWidgetServiceImpl;->DBG:Z
 
@@ -4258,7 +4565,7 @@
 
     invoke-direct {p0, v1}, Lcom/android/server/AppWidgetServiceImpl;->log(Ljava/lang/String;)V
 
-    .line 865
+    .line 873
     :cond_2
     const/4 v1, 0x0
 
@@ -4266,7 +4573,7 @@
 
     goto :goto_0
 
-    .line 866
+    .line 874
     .end local v0           #id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     :catchall_0
     move-exception v1
@@ -4279,7 +4586,7 @@
 .end method
 
 .method public getInstalledProviders(I)Ljava/util/List;
-    .locals 6
+    .locals 11
     .parameter "categoryFilter"
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -4292,93 +4599,322 @@
     .end annotation
 
     .prologue
-    .line 870
-    iget-object v5, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
+    .line 879
+    invoke-static {}, Landroid/os/Binder;->getCallingPid()I
 
-    monitor-enter v5
+    move-result v7
 
-    .line 871
+    invoke-direct {p0, v7}, Lcom/android/server/AppWidgetServiceImpl;->getProcessNameById(I)Ljava/lang/String;
+
+    move-result-object v7
+
+    iput-object v7, p0, Lcom/android/server/AppWidgetServiceImpl;->hostName:Ljava/lang/String;
+
+    .line 880
+    const-string v7, "AppWidgetServiceImpl"
+
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v9, "getInstalledProviders hostName = "
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    iget-object v9, p0, Lcom/android/server/AppWidgetServiceImpl;->hostName:Ljava/lang/String;
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v7, v8}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 881
+    iget-object v7, p0, Lcom/android/server/AppWidgetServiceImpl;->mContext:Landroid/content/Context;
+
+    const-string v8, "android.permission.ADVANCED_WIDGET_API"
+
+    invoke-virtual {v7, v8}, Landroid/content/Context;->checkCallingOrSelfPermission(Ljava/lang/String;)I
+
+    move-result v4
+
+    .line 882
+    .local v4, permission:I
+    const/4 v7, -0x1
+
+    if-ne v4, v7, :cond_2
+
+    const/4 v1, 0x1
+
+    .line 883
+    .local v1, enableFiltering:Z
+    :goto_0
+    iget-object v7, p0, Lcom/android/server/AppWidgetServiceImpl;->hostName:Ljava/lang/String;
+
+    if-eqz v7, :cond_0
+
+    iget-object v7, p0, Lcom/android/server/AppWidgetServiceImpl;->hostName:Ljava/lang/String;
+
+    const-string v8, "com.android.settings"
+
+    invoke-virtual {v7, v8}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_0
+
+    .line 884
+    const/4 v1, 0x1
+
+    .line 886
+    :cond_0
+    const-string v7, "AppWidgetServiceImpl"
+
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v9, "permission of the launcher: "
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    const-string v9, " enableFiltering = "
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v7, v8}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 888
+    iget-object v8, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
+
+    monitor-enter v8
+
+    .line 889
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->ensureStateLoadedLocked()V
 
-    .line 872
-    iget-object v4, p0, Lcom/android/server/AppWidgetServiceImpl;->mInstalledProviders:Ljava/util/ArrayList;
+    .line 890
+    iget-object v7, p0, Lcom/android/server/AppWidgetServiceImpl;->mInstalledProviders:Ljava/util/ArrayList;
 
-    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 873
+    .line 891
     .local v0, N:I
-    new-instance v3, Ljava/util/ArrayList;
+    new-instance v5, Ljava/util/ArrayList;
 
-    invoke-direct {v3, v0}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v5, v0}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 874
-    .local v3, result:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/appwidget/AppWidgetProviderInfo;>;"
+    .line 892
+    .local v5, result:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/appwidget/AppWidgetProviderInfo;>;"
+    const/4 v2, 0x0
+
+    .local v2, i:I
+    :goto_1
+    if-ge v2, v0, :cond_4
+
+    .line 893
+    iget-object v7, p0, Lcom/android/server/AppWidgetServiceImpl;->mInstalledProviders:Ljava/util/ArrayList;
+
+    invoke-virtual {v7, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/android/server/AppWidgetServiceImpl$Provider;
+
+    .line 895
+    .local v3, p:Lcom/android/server/AppWidgetServiceImpl$Provider;
+    iget-object v7, p0, Lcom/android/server/AppWidgetServiceImpl;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v7}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v7
+
+    const-string v9, "android.permission.ADVANCED_WIDGET_API"
+
+    iget-object v10, v3, Lcom/android/server/AppWidgetServiceImpl$Provider;->info:Landroid/appwidget/AppWidgetProviderInfo;
+
+    iget-object v10, v10, Landroid/appwidget/AppWidgetProviderInfo;->provider:Landroid/content/ComponentName;
+
+    invoke-virtual {v10}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-virtual {v7, v9, v10}, Landroid/content/pm/PackageManager;->checkPermission(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v6
+
+    .line 897
+    .local v6, widgetPermission:I
+    const-string v7, "AppWidgetServiceImpl"
+
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v10, "widget package name: "
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    iget-object v10, v3, Lcom/android/server/AppWidgetServiceImpl$Provider;->info:Landroid/appwidget/AppWidgetProviderInfo;
+
+    iget-object v10, v10, Landroid/appwidget/AppWidgetProviderInfo;->provider:Landroid/content/ComponentName;
+
+    invoke-virtual {v10}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    const-string v10, " Permission: "
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v7, v9}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 898
+    if-eqz v1, :cond_3
+
+    if-nez v6, :cond_3
+
+    .line 892
+    :cond_1
+    :goto_2
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_1
+
+    .line 882
+    .end local v0           #N:I
+    .end local v1           #enableFiltering:Z
+    .end local v2           #i:I
+    .end local v3           #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
+    .end local v5           #result:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/appwidget/AppWidgetProviderInfo;>;"
+    .end local v6           #widgetPermission:I
+    :cond_2
     const/4 v1, 0x0
 
-    .local v1, i:I
-    :goto_0
-    if-ge v1, v0, :cond_1
+    goto/16 :goto_0
 
-    .line 875
-    iget-object v4, p0, Lcom/android/server/AppWidgetServiceImpl;->mInstalledProviders:Ljava/util/ArrayList;
+    .line 902
+    .restart local v0       #N:I
+    .restart local v1       #enableFiltering:Z
+    .restart local v2       #i:I
+    .restart local v3       #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
+    .restart local v5       #result:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/appwidget/AppWidgetProviderInfo;>;"
+    .restart local v6       #widgetPermission:I
+    :cond_3
+    const-string v7, "AppWidgetServiceImpl"
 
-    invoke-virtual {v4, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    new-instance v9, Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
-    check-cast v2, Lcom/android/server/AppWidgetServiceImpl$Provider;
+    const-string v10, "p.zombie = "
 
-    .line 876
-    .local v2, p:Lcom/android/server/AppWidgetServiceImpl$Provider;
-    iget-boolean v4, v2, Lcom/android/server/AppWidgetServiceImpl$Provider;->zombie:Z
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-nez v4, :cond_0
+    move-result-object v9
 
-    iget-object v4, v2, Lcom/android/server/AppWidgetServiceImpl$Provider;->info:Landroid/appwidget/AppWidgetProviderInfo;
+    iget-boolean v10, v3, Lcom/android/server/AppWidgetServiceImpl$Provider;->zombie:Z
 
-    iget v4, v4, Landroid/appwidget/AppWidgetProviderInfo;->widgetCategory:I
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    and-int/2addr v4, p1
+    move-result-object v9
 
-    if-eqz v4, :cond_0
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 877
-    iget-object v4, v2, Lcom/android/server/AppWidgetServiceImpl$Provider;->info:Landroid/appwidget/AppWidgetProviderInfo;
+    move-result-object v9
 
-    invoke-direct {p0, v4}, Lcom/android/server/AppWidgetServiceImpl;->cloneIfLocalBinder(Landroid/appwidget/AppWidgetProviderInfo;)Landroid/appwidget/AppWidgetProviderInfo;
+    invoke-static {v7, v9}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result-object v4
+    .line 903
+    iget-boolean v7, v3, Lcom/android/server/AppWidgetServiceImpl$Provider;->zombie:Z
 
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    if-nez v7, :cond_1
 
-    .line 874
-    :cond_0
-    add-int/lit8 v1, v1, 0x1
+    iget-object v7, v3, Lcom/android/server/AppWidgetServiceImpl$Provider;->info:Landroid/appwidget/AppWidgetProviderInfo;
 
-    goto :goto_0
+    iget v7, v7, Landroid/appwidget/AppWidgetProviderInfo;->widgetCategory:I
 
-    .line 880
-    .end local v2           #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
-    :cond_1
-    monitor-exit v5
+    and-int/2addr v7, p1
 
-    return-object v3
+    if-eqz v7, :cond_1
 
-    .line 881
+    .line 904
+    iget-object v7, v3, Lcom/android/server/AppWidgetServiceImpl$Provider;->info:Landroid/appwidget/AppWidgetProviderInfo;
+
+    invoke-direct {p0, v7}, Lcom/android/server/AppWidgetServiceImpl;->cloneIfLocalBinder(Landroid/appwidget/AppWidgetProviderInfo;)Landroid/appwidget/AppWidgetProviderInfo;
+
+    move-result-object v7
+
+    invoke-virtual {v5, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_2
+
+    .line 908
     .end local v0           #N:I
-    .end local v1           #i:I
-    .end local v3           #result:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/appwidget/AppWidgetProviderInfo;>;"
+    .end local v2           #i:I
+    .end local v3           #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
+    .end local v5           #result:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/appwidget/AppWidgetProviderInfo;>;"
+    .end local v6           #widgetPermission:I
     :catchall_0
-    move-exception v4
+    move-exception v7
 
-    monitor-exit v5
+    monitor-exit v8
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v4
+    throw v7
+
+    .line 907
+    .restart local v0       #N:I
+    .restart local v2       #i:I
+    .restart local v5       #result:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/appwidget/AppWidgetProviderInfo;>;"
+    :cond_4
+    :try_start_1
+    monitor-exit v8
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    return-object v5
 .end method
 
 .method getUidForPackage(Ljava/lang/String;)I
@@ -4391,10 +4927,10 @@
     .end annotation
 
     .prologue
-    .line 1486
+    .line 1524
     const/4 v0, 0x0
 
-    .line 1488
+    .line 1526
     .local v0, pkgInfo:Landroid/content/pm/PackageInfo;
     :try_start_0
     iget-object v1, p0, Lcom/android/server/AppWidgetServiceImpl;->mPm:Landroid/content/pm/IPackageManager;
@@ -4409,7 +4945,7 @@
 
     move-result-object v0
 
-    .line 1492
+    .line 1530
     :goto_0
     if-eqz v0, :cond_0
 
@@ -4417,7 +4953,7 @@
 
     if-nez v1, :cond_1
 
-    .line 1493
+    .line 1531
     :cond_0
     new-instance v1, Landroid/content/pm/PackageManager$NameNotFoundException;
 
@@ -4425,7 +4961,7 @@
 
     throw v1
 
-    .line 1495
+    .line 1533
     :cond_1
     iget-object v1, v0, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
@@ -4433,7 +4969,7 @@
 
     return v1
 
-    .line 1489
+    .line 1527
     :catch_0
     move-exception v1
 
@@ -4445,7 +4981,7 @@
     .parameter "packageName"
 
     .prologue
-    .line 652
+    .line 658
     iget-object v0, p0, Lcom/android/server/AppWidgetServiceImpl;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.MODIFY_APPWIDGET_BIND_PERMISSIONS"
@@ -4470,16 +5006,16 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 656
+    .line 662
     iget-object v1, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
 
     monitor-enter v1
 
-    .line 657
+    .line 663
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->ensureStateLoadedLocked()V
 
-    .line 658
+    .line 664
     iget-object v0, p0, Lcom/android/server/AppWidgetServiceImpl;->mPackagesWithBindWidgetPermission:Ljava/util/HashSet;
 
     invoke-virtual {v0, p1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
@@ -4490,7 +5026,7 @@
 
     return v0
 
-    .line 659
+    .line 665
     :catchall_0
     move-exception v0
 
@@ -4505,14 +5041,14 @@
     .locals 9
 
     .prologue
-    .line 1252
+    .line 1279
     new-instance v3, Landroid/content/Intent;
 
     const-string v5, "android.appwidget.action.APPWIDGET_UPDATE"
 
     invoke-direct {v3, v5}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1254
+    .line 1281
     .local v3, intent:Landroid/content/Intent;
     :try_start_0
     iget-object v5, p0, Lcom/android/server/AppWidgetServiceImpl;->mPm:Landroid/content/pm/IPackageManager;
@@ -4535,13 +5071,13 @@
 
     move-result-object v1
 
-    .line 1258
+    .line 1285
     .local v1, broadcastReceivers:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     if-nez v1, :cond_0
 
     const/4 v0, 0x0
 
-    .line 1259
+    .line 1286
     .local v0, N:I
     :goto_0
     const/4 v2, 0x0
@@ -4550,23 +5086,23 @@
     :goto_1
     if-ge v2, v0, :cond_1
 
-    .line 1260
+    .line 1287
     invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Landroid/content/pm/ResolveInfo;
 
-    .line 1261
+    .line 1288
     .local v4, ri:Landroid/content/pm/ResolveInfo;
     invoke-virtual {p0, v4}, Lcom/android/server/AppWidgetServiceImpl;->addProviderLocked(Landroid/content/pm/ResolveInfo;)Z
 
-    .line 1259
+    .line 1286
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 1258
+    .line 1285
     .end local v0           #N:I
     .end local v2           #i:I
     .end local v4           #ri:Landroid/content/pm/ResolveInfo;
@@ -4579,12 +5115,12 @@
 
     goto :goto_0
 
-    .line 1263
+    .line 1290
     .end local v1           #broadcastReceivers:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     :catch_0
     move-exception v5
 
-    .line 1266
+    .line 1293
     :cond_1
     return-void
 .end method
@@ -4593,46 +5129,46 @@
     .locals 6
 
     .prologue
-    .line 1540
+    .line 1578
     invoke-virtual {p0}, Lcom/android/server/AppWidgetServiceImpl;->savedStateFile()Landroid/util/AtomicFile;
 
     move-result-object v1
 
-    .line 1542
+    .line 1580
     .local v1, file:Landroid/util/AtomicFile;
     :try_start_0
     invoke-virtual {v1}, Landroid/util/AtomicFile;->openRead()Ljava/io/FileInputStream;
 
     move-result-object v2
 
-    .line 1543
+    .line 1581
     .local v2, stream:Ljava/io/FileInputStream;
     invoke-virtual {p0, v2}, Lcom/android/server/AppWidgetServiceImpl;->readStateFromFileLocked(Ljava/io/FileInputStream;)V
     :try_end_0
     .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 1545
+    .line 1583
     if-eqz v2, :cond_0
 
-    .line 1547
+    .line 1585
     :try_start_1
     invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/io/FileNotFoundException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 1555
+    .line 1593
     .end local v2           #stream:Ljava/io/FileInputStream;
     :cond_0
     :goto_0
     return-void
 
-    .line 1548
+    .line 1586
     .restart local v2       #stream:Ljava/io/FileInputStream;
     :catch_0
     move-exception v0
 
-    .line 1549
+    .line 1587
     .local v0, e:Ljava/io/IOException;
     :try_start_2
     const-string v3, "AppWidgetServiceImpl"
@@ -4661,13 +5197,13 @@
 
     goto :goto_0
 
-    .line 1552
+    .line 1590
     .end local v0           #e:Ljava/io/IOException;
     .end local v2           #stream:Ljava/io/FileInputStream;
     :catch_1
     move-exception v0
 
-    .line 1553
+    .line 1591
     .local v0, e:Ljava/io/FileNotFoundException;
     const-string v3, "AppWidgetServiceImpl"
 
@@ -4699,12 +5235,12 @@
     .parameter "appWidgetId"
 
     .prologue
-    .line 1196
+    .line 1223
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v1
 
-    .line 1197
+    .line 1224
     .local v1, callingUid:I
     iget-object v4, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
 
@@ -4712,7 +5248,7 @@
 
     move-result v0
 
-    .line 1198
+    .line 1225
     .local v0, N:I
     const/4 v2, 0x0
 
@@ -4720,7 +5256,7 @@
     :goto_0
     if-ge v2, v0, :cond_1
 
-    .line 1199
+    .line 1226
     iget-object v4, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -4729,7 +5265,7 @@
 
     check-cast v3, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
 
-    .line 1200
+    .line 1227
     .local v3, id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     iget v4, v3, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->appWidgetId:I
 
@@ -4741,19 +5277,19 @@
 
     if-eqz v4, :cond_0
 
-    .line 1204
+    .line 1231
     .end local v3           #id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     :goto_1
     return-object v3
 
-    .line 1198
+    .line 1225
     .restart local v3       #id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 1204
+    .line 1231
     .end local v3           #id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     :cond_1
     const/4 v3, 0x0
@@ -4767,14 +5303,14 @@
     .parameter "hostId"
 
     .prologue
-    .line 1219
+    .line 1246
     iget-object v3, p0, Lcom/android/server/AppWidgetServiceImpl;->mHosts:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 1220
+    .line 1247
     .local v0, N:I
     const/4 v2, 0x0
 
@@ -4782,7 +5318,7 @@
     :goto_0
     if-ge v2, v0, :cond_1
 
-    .line 1221
+    .line 1248
     iget-object v3, p0, Lcom/android/server/AppWidgetServiceImpl;->mHosts:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -4791,7 +5327,7 @@
 
     check-cast v1, Lcom/android/server/AppWidgetServiceImpl$Host;
 
-    .line 1222
+    .line 1249
     .local v1, h:Lcom/android/server/AppWidgetServiceImpl$Host;
     invoke-virtual {v1, p1}, Lcom/android/server/AppWidgetServiceImpl$Host;->uidMatches(I)Z
 
@@ -4803,19 +5339,19 @@
 
     if-ne v3, p2, :cond_0
 
-    .line 1226
+    .line 1253
     .end local v1           #h:Lcom/android/server/AppWidgetServiceImpl$Host;
     :goto_1
     return-object v1
 
-    .line 1220
+    .line 1247
     .restart local v1       #h:Lcom/android/server/AppWidgetServiceImpl$Host;
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 1226
+    .line 1253
     .end local v1           #h:Lcom/android/server/AppWidgetServiceImpl$Host;
     :cond_1
     const/4 v1, 0x0
@@ -4830,14 +5366,14 @@
     .parameter "hostId"
 
     .prologue
-    .line 1230
+    .line 1257
     iget-object v4, p0, Lcom/android/server/AppWidgetServiceImpl;->mHosts:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 1231
+    .line 1258
     .local v0, N:I
     const/4 v3, 0x0
 
@@ -4845,7 +5381,7 @@
     :goto_0
     if-ge v3, v0, :cond_1
 
-    .line 1232
+    .line 1259
     iget-object v4, p0, Lcom/android/server/AppWidgetServiceImpl;->mHosts:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -4854,7 +5390,7 @@
 
     check-cast v1, Lcom/android/server/AppWidgetServiceImpl$Host;
 
-    .line 1233
+    .line 1260
     .local v1, h:Lcom/android/server/AppWidgetServiceImpl$Host;
     iget v4, v1, Lcom/android/server/AppWidgetServiceImpl$Host;->hostId:I
 
@@ -4868,43 +5404,43 @@
 
     if-eqz v4, :cond_0
 
-    .line 1242
+    .line 1269
     .end local v1           #h:Lcom/android/server/AppWidgetServiceImpl$Host;
     :goto_1
     return-object v1
 
-    .line 1231
+    .line 1258
     .restart local v1       #h:Lcom/android/server/AppWidgetServiceImpl$Host;
     :cond_0
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 1237
+    .line 1264
     .end local v1           #h:Lcom/android/server/AppWidgetServiceImpl$Host;
     :cond_1
     new-instance v2, Lcom/android/server/AppWidgetServiceImpl$Host;
 
     invoke-direct {v2}, Lcom/android/server/AppWidgetServiceImpl$Host;-><init>()V
 
-    .line 1238
+    .line 1265
     .local v2, host:Lcom/android/server/AppWidgetServiceImpl$Host;
     iput-object p2, v2, Lcom/android/server/AppWidgetServiceImpl$Host;->packageName:Ljava/lang/String;
 
-    .line 1239
+    .line 1266
     iput p1, v2, Lcom/android/server/AppWidgetServiceImpl$Host;->uid:I
 
-    .line 1240
+    .line 1267
     iput p3, v2, Lcom/android/server/AppWidgetServiceImpl$Host;->hostId:I
 
-    .line 1241
+    .line 1268
     iget-object v4, p0, Lcom/android/server/AppWidgetServiceImpl;->mHosts:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     move-object v1, v2
 
-    .line 1242
+    .line 1269
     goto :goto_1
 .end method
 
@@ -4913,14 +5449,14 @@
     .parameter "provider"
 
     .prologue
-    .line 1208
+    .line 1235
     iget-object v3, p0, Lcom/android/server/AppWidgetServiceImpl;->mInstalledProviders:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 1209
+    .line 1236
     .local v0, N:I
     const/4 v1, 0x0
 
@@ -4928,7 +5464,7 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 1210
+    .line 1237
     iget-object v3, p0, Lcom/android/server/AppWidgetServiceImpl;->mInstalledProviders:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -4937,7 +5473,7 @@
 
     check-cast v2, Lcom/android/server/AppWidgetServiceImpl$Provider;
 
-    .line 1211
+    .line 1238
     .local v2, p:Lcom/android/server/AppWidgetServiceImpl$Provider;
     iget-object v3, v2, Lcom/android/server/AppWidgetServiceImpl$Provider;->info:Landroid/appwidget/AppWidgetProviderInfo;
 
@@ -4949,19 +5485,19 @@
 
     if-eqz v3, :cond_0
 
-    .line 1215
+    .line 1242
     .end local v2           #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
     :goto_1
     return-object v2
 
-    .line 1209
+    .line 1236
     .restart local v2       #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 1215
+    .line 1242
     .end local v2           #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
     :cond_1
     const/4 v2, 0x0
@@ -4975,57 +5511,57 @@
     .parameter "viewId"
 
     .prologue
-    .line 988
+    .line 1015
     if-nez p1, :cond_1
 
-    .line 1003
+    .line 1030
     :cond_0
     :goto_0
     return-void
 
-    .line 991
+    .line 1018
     :cond_1
     array-length v3, p1
 
     if-eqz v3, :cond_0
 
-    .line 994
+    .line 1021
     array-length v0, p1
 
-    .line 996
+    .line 1023
     .local v0, N:I
     iget-object v4, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
 
     monitor-enter v4
 
-    .line 997
+    .line 1024
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->ensureStateLoadedLocked()V
 
-    .line 998
+    .line 1025
     const/4 v1, 0x0
 
     .local v1, i:I
     :goto_1
     if-ge v1, v0, :cond_2
 
-    .line 999
+    .line 1026
     aget v3, p1, v1
 
     invoke-virtual {p0, v3}, Lcom/android/server/AppWidgetServiceImpl;->lookupAppWidgetIdLocked(I)Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
 
     move-result-object v2
 
-    .line 1000
+    .line 1027
     .local v2, id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     invoke-virtual {p0, v2, p2}, Lcom/android/server/AppWidgetServiceImpl;->notifyAppWidgetViewDataChangedInstanceLocked(Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;I)V
 
-    .line 998
+    .line 1025
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 1002
+    .line 1029
     .end local v2           #id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     :cond_2
     monitor-exit v4
@@ -5049,7 +5585,7 @@
     .parameter "viewId"
 
     .prologue
-    .line 1061
+    .line 1088
     if-eqz p1, :cond_2
 
     iget-object v9, p1, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->provider:Lcom/android/server/AppWidgetServiceImpl$Provider;
@@ -5068,14 +5604,14 @@
 
     if-nez v9, :cond_2
 
-    .line 1063
+    .line 1090
     iget-object v9, p1, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->host:Lcom/android/server/AppWidgetServiceImpl$Host;
 
     iget-object v9, v9, Lcom/android/server/AppWidgetServiceImpl$Host;->callbacks:Lcom/android/internal/appwidget/IAppWidgetHost;
 
     if-eqz v9, :cond_0
 
-    .line 1066
+    .line 1093
     :try_start_0
     iget-object v9, p1, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->host:Lcom/android/server/AppWidgetServiceImpl$Host;
 
@@ -5087,7 +5623,7 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1076
+    .line 1103
     :cond_0
     :goto_0
     iget-object v9, p1, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->host:Lcom/android/server/AppWidgetServiceImpl$Host;
@@ -5096,14 +5632,14 @@
 
     if-nez v9, :cond_2
 
-    .line 1077
+    .line 1104
     iget-object v9, p0, Lcom/android/server/AppWidgetServiceImpl;->mRemoteViewsServicesAppWidgets:Ljava/util/HashMap;
 
     invoke-virtual {v9}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
 
     move-result-object v5
 
-    .line 1078
+    .line 1105
     .local v5, keys:Ljava/util/Set;,"Ljava/util/Set<Landroid/content/Intent$FilterComparison;>;"
     invoke-interface {v5}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
@@ -5124,7 +5660,7 @@
 
     check-cast v4, Landroid/content/Intent$FilterComparison;
 
-    .line 1079
+    .line 1106
     .local v4, key:Landroid/content/Intent$FilterComparison;
     iget-object v9, p0, Lcom/android/server/AppWidgetServiceImpl;->mRemoteViewsServicesAppWidgets:Ljava/util/HashMap;
 
@@ -5146,18 +5682,18 @@
 
     if-eqz v9, :cond_1
 
-    .line 1080
+    .line 1107
     invoke-virtual {v4}, Landroid/content/Intent$FilterComparison;->getIntent()Landroid/content/Intent;
 
     move-result-object v3
 
-    .line 1082
+    .line 1109
     .local v3, intent:Landroid/content/Intent;
     new-instance v0, Lcom/android/server/AppWidgetServiceImpl$3;
 
     invoke-direct {v0, p0}, Lcom/android/server/AppWidgetServiceImpl$3;-><init>(Lcom/android/server/AppWidgetServiceImpl;)V
 
-    .line 1103
+    .line 1130
     .local v0, conn:Landroid/content/ServiceConnection;
     iget-object v9, p1, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->provider:Lcom/android/server/AppWidgetServiceImpl$Provider;
 
@@ -5167,13 +5703,13 @@
 
     move-result v8
 
-    .line 1105
+    .line 1132
     .local v8, userId:I
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v6
 
-    .line 1107
+    .line 1134
     .local v6, token:J
     :try_start_1
     iget-object v9, p0, Lcom/android/server/AppWidgetServiceImpl;->mContext:Landroid/content/Context;
@@ -5184,12 +5720,12 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1109
+    .line 1136
     invoke-static {v6, v7}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     goto :goto_1
 
-    .line 1067
+    .line 1094
     .end local v0           #conn:Landroid/content/ServiceConnection;
     .end local v2           #i$:Ljava/util/Iterator;
     .end local v3           #intent:Landroid/content/Intent;
@@ -5200,7 +5736,7 @@
     :catch_0
     move-exception v1
 
-    .line 1070
+    .line 1097
     .local v1, e:Landroid/os/RemoteException;
     iget-object v9, p1, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->host:Lcom/android/server/AppWidgetServiceImpl$Host;
 
@@ -5210,7 +5746,7 @@
 
     goto :goto_0
 
-    .line 1109
+    .line 1136
     .end local v1           #e:Landroid/os/RemoteException;
     .restart local v0       #conn:Landroid/content/ServiceConnection;
     .restart local v2       #i$:Ljava/util/Iterator;
@@ -5226,7 +5762,7 @@
 
     throw v9
 
-    .line 1115
+    .line 1142
     .end local v0           #conn:Landroid/content/ServiceConnection;
     .end local v2           #i$:Ljava/util/Iterator;
     .end local v3           #intent:Landroid/content/Intent;
@@ -5242,14 +5778,14 @@
     .locals 5
 
     .prologue
-    .line 1996
+    .line 2062
     iget-object v4, p0, Lcom/android/server/AppWidgetServiceImpl;->mHosts:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 1997
+    .line 2063
     .local v0, N:I
     add-int/lit8 v3, v0, -0x1
 
@@ -5257,7 +5793,7 @@
     :goto_0
     if-ltz v3, :cond_1
 
-    .line 1998
+    .line 2064
     iget-object v4, p0, Lcom/android/server/AppWidgetServiceImpl;->mHosts:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -5266,32 +5802,32 @@
 
     check-cast v2, Lcom/android/server/AppWidgetServiceImpl$Host;
 
-    .line 2000
+    .line 2066
     .local v2, host:Lcom/android/server/AppWidgetServiceImpl$Host;
     :try_start_0
     iget-object v4, v2, Lcom/android/server/AppWidgetServiceImpl$Host;->callbacks:Lcom/android/internal/appwidget/IAppWidgetHost;
 
     if-eqz v4, :cond_0
 
-    .line 2001
+    .line 2067
     iget-object v4, v2, Lcom/android/server/AppWidgetServiceImpl$Host;->callbacks:Lcom/android/internal/appwidget/IAppWidgetHost;
 
     invoke-interface {v4}, Lcom/android/internal/appwidget/IAppWidgetHost;->providersChanged()V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1997
+    .line 2063
     :cond_0
     :goto_1
     add-int/lit8 v3, v3, -0x1
 
     goto :goto_0
 
-    .line 2003
+    .line 2069
     :catch_0
     move-exception v1
 
-    .line 2007
+    .line 2073
     .local v1, ex:Landroid/os/RemoteException;
     const/4 v4, 0x0
 
@@ -5299,7 +5835,7 @@
 
     goto :goto_1
 
-    .line 2010
+    .line 2076
     .end local v1           #ex:Landroid/os/RemoteException;
     .end local v2           #host:Lcom/android/server/AppWidgetServiceImpl$Host;
     :cond_1
@@ -5313,7 +5849,7 @@
     .prologue
     const/4 v13, 0x0
 
-    .line 260
+    .line 266
     sget-boolean v11, Lcom/android/server/AppWidgetServiceImpl;->DBG:Z
 
     if-eqz v11, :cond_0
@@ -5338,29 +5874,29 @@
 
     invoke-direct {p0, v11}, Lcom/android/server/AppWidgetServiceImpl;->log(Ljava/lang/String;)V
 
-    .line 261
+    .line 267
     :cond_0
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 262
+    .line 268
     .local v0, action:Ljava/lang/String;
     const/4 v1, 0x0
 
-    .line 263
+    .line 269
     .local v1, added:Z
     const/4 v3, 0x0
 
-    .line 264
+    .line 270
     .local v3, changed:Z
     const/4 v9, 0x0
 
-    .line 265
+    .line 271
     .local v9, providersModified:Z
     const/4 v7, 0x0
 
-    .line 266
+    .line 272
     .local v7, pkgList:[Ljava/lang/String;
     const-string v11, "android.intent.action.EXTERNAL_APPLICATIONS_AVAILABLE"
 
@@ -5370,17 +5906,17 @@
 
     if-eqz v11, :cond_2
 
-    .line 267
+    .line 273
     const-string v11, "android.intent.extra.changed_package_list"
 
     invoke-virtual {p1, v11}, Landroid/content/Intent;->getStringArrayExtra(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v7
 
-    .line 268
+    .line 274
     const/4 v1, 0x1
 
-    .line 285
+    .line 291
     :goto_0
     if-eqz v7, :cond_1
 
@@ -5388,12 +5924,12 @@
 
     if-nez v11, :cond_4
 
-    .line 328
+    .line 334
     :cond_1
     :goto_1
     return-void
 
-    .line 269
+    .line 275
     :cond_2
     const-string v11, "android.intent.action.EXTERNAL_APPLICATIONS_UNAVAILABLE"
 
@@ -5403,38 +5939,38 @@
 
     if-eqz v11, :cond_3
 
-    .line 270
+    .line 276
     const-string v11, "android.intent.extra.changed_package_list"
 
     invoke-virtual {p1, v11}, Landroid/content/Intent;->getStringArrayExtra(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v7
 
-    .line 271
+    .line 277
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 273
+    .line 279
     :cond_3
     invoke-virtual {p1}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object v10
 
-    .line 274
+    .line 280
     .local v10, uri:Landroid/net/Uri;
     if-eqz v10, :cond_1
 
-    .line 277
+    .line 283
     invoke-virtual {v10}, Landroid/net/Uri;->getSchemeSpecificPart()Ljava/lang/String;
 
     move-result-object v8
 
-    .line 278
+    .line 284
     .local v8, pkgName:Ljava/lang/String;
     if-eqz v8, :cond_1
 
-    .line 281
+    .line 287
     const/4 v11, 0x1
 
     new-array v7, v11, [Ljava/lang/String;
@@ -5442,7 +5978,7 @@
     .end local v7           #pkgList:[Ljava/lang/String;
     aput-object v8, v7, v13
 
-    .line 282
+    .line 288
     .restart local v7       #pkgList:[Ljava/lang/String;
     const-string v11, "android.intent.action.PACKAGE_ADDED"
 
@@ -5450,7 +5986,7 @@
 
     move-result v1
 
-    .line 283
+    .line 289
     const-string v11, "android.intent.action.PACKAGE_CHANGED"
 
     invoke-virtual {v11, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -5459,7 +5995,7 @@
 
     goto :goto_0
 
-    .line 288
+    .line 294
     .end local v8           #pkgName:Ljava/lang/String;
     .end local v10           #uri:Landroid/net/Uri;
     :cond_4
@@ -5467,22 +6003,22 @@
 
     if-eqz v3, :cond_a
 
-    .line 289
+    .line 295
     :cond_5
     iget-object v12, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
 
     monitor-enter v12
 
-    .line 290
+    .line 296
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->ensureStateLoadedLocked()V
 
-    .line 291
+    .line 297
     invoke-virtual {p1}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
     move-result-object v4
 
-    .line 292
+    .line 298
     .local v4, extras:Landroid/os/Bundle;
     if-nez v3, :cond_6
 
@@ -5498,7 +6034,7 @@
 
     if-eqz v11, :cond_7
 
-    .line 294
+    .line 300
     :cond_6
     move-object v2, v7
 
@@ -5514,7 +6050,7 @@
 
     aget-object v8, v2, v5
 
-    .line 296
+    .line 302
     .restart local v8       #pkgName:Ljava/lang/String;
     const/4 v11, 0x0
 
@@ -5524,12 +6060,12 @@
 
     or-int/2addr v9, v11
 
-    .line 294
+    .line 300
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_2
 
-    .line 300
+    .line 306
     .end local v2           #arr$:[Ljava/lang/String;
     .end local v5           #i$:I
     .end local v6           #len$:I
@@ -5549,7 +6085,7 @@
 
     aget-object v8, v2, v5
 
-    .line 301
+    .line 307
     .restart local v8       #pkgName:Ljava/lang/String;
     invoke-virtual {p0, v8}, Lcom/android/server/AppWidgetServiceImpl;->addProvidersForPackageLocked(Ljava/lang/String;)Z
 
@@ -5557,22 +6093,22 @@
 
     or-int/2addr v9, v11
 
-    .line 300
+    .line 306
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_3
 
-    .line 304
+    .line 310
     .end local v8           #pkgName:Ljava/lang/String;
     :cond_8
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->saveStateAsync()V
 
-    .line 305
+    .line 311
     monitor-exit v12
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 321
+    .line 327
     .end local v2           #arr$:[Ljava/lang/String;
     .end local v5           #i$:I
     .end local v6           #len$:I
@@ -5580,19 +6116,19 @@
     :goto_4
     if-eqz v9, :cond_1
 
-    .line 323
+    .line 329
     iget-object v12, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
 
     monitor-enter v12
 
-    .line 324
+    .line 330
     :try_start_1
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->ensureStateLoadedLocked()V
 
-    .line 325
+    .line 331
     invoke-virtual {p0}, Lcom/android/server/AppWidgetServiceImpl;->notifyHostsForProvidersChangedLocked()V
 
-    .line 326
+    .line 332
     monitor-exit v12
 
     goto :goto_1
@@ -5606,7 +6142,7 @@
 
     throw v11
 
-    .line 305
+    .line 311
     .end local v4           #extras:Landroid/os/Bundle;
     :catchall_1
     move-exception v11
@@ -5618,13 +6154,13 @@
 
     throw v11
 
-    .line 307
+    .line 313
     :cond_a
     invoke-virtual {p1}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
     move-result-object v4
 
-    .line 308
+    .line 314
     .restart local v4       #extras:Landroid/os/Bundle;
     if-eqz v4, :cond_b
 
@@ -5636,17 +6172,17 @@
 
     if-nez v11, :cond_9
 
-    .line 311
+    .line 317
     :cond_b
     iget-object v12, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
 
     monitor-enter v12
 
-    .line 312
+    .line 318
     :try_start_3
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->ensureStateLoadedLocked()V
 
-    .line 313
+    .line 319
     move-object v2, v7
 
     .restart local v2       #arr$:[Ljava/lang/String;
@@ -5661,7 +6197,7 @@
 
     aget-object v8, v2, v5
 
-    .line 314
+    .line 320
     .restart local v8       #pkgName:Ljava/lang/String;
     invoke-virtual {p0, v8}, Lcom/android/server/AppWidgetServiceImpl;->removeProvidersForPackageLocked(Ljava/lang/String;)Z
 
@@ -5669,15 +6205,15 @@
 
     or-int/2addr v9, v11
 
-    .line 315
+    .line 321
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->saveStateAsync()V
 
-    .line 313
+    .line 319
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_5
 
-    .line 317
+    .line 323
     .end local v8           #pkgName:Ljava/lang/String;
     :cond_c
     monitor-exit v12
@@ -5701,7 +6237,7 @@
     .locals 9
 
     .prologue
-    .line 233
+    .line 239
     sget-boolean v7, Lcom/android/server/AppWidgetServiceImpl;->DBG:Z
 
     if-eqz v7, :cond_0
@@ -5710,13 +6246,13 @@
 
     invoke-direct {p0, v7}, Lcom/android/server/AppWidgetServiceImpl;->log(Ljava/lang/String;)V
 
-    .line 234
+    .line 240
     :cond_0
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object v6
 
-    .line 235
+    .line 241
     .local v6, revised:Ljava/util/Locale;
     if-eqz v6, :cond_1
 
@@ -5732,39 +6268,39 @@
 
     if-nez v7, :cond_4
 
-    .line 236
+    .line 242
     :cond_1
     iput-object v6, p0, Lcom/android/server/AppWidgetServiceImpl;->mLocale:Ljava/util/Locale;
 
-    .line 238
+    .line 244
     iget-object v8, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
 
     monitor-enter v8
 
-    .line 239
+    .line 245
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->ensureStateLoadedLocked()V
 
-    .line 243
+    .line 249
     new-instance v3, Ljava/util/ArrayList;
 
     iget-object v7, p0, Lcom/android/server/AppWidgetServiceImpl;->mInstalledProviders:Ljava/util/ArrayList;
 
     invoke-direct {v3, v7}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 245
+    .line 251
     .local v3, installedProviders:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/AppWidgetServiceImpl$Provider;>;"
     new-instance v5, Ljava/util/HashSet;
 
     invoke-direct {v5}, Ljava/util/HashSet;-><init>()V
 
-    .line 246
+    .line 252
     .local v5, removedProviders:Ljava/util/HashSet;,"Ljava/util/HashSet<Landroid/content/ComponentName;>;"
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 247
+    .line 253
     .local v0, N:I
     add-int/lit8 v2, v0, -0x1
 
@@ -5772,20 +6308,20 @@
     :goto_0
     if-ltz v2, :cond_3
 
-    .line 248
+    .line 254
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lcom/android/server/AppWidgetServiceImpl$Provider;
 
-    .line 249
+    .line 255
     .local v4, p:Lcom/android/server/AppWidgetServiceImpl$Provider;
     iget-object v7, v4, Lcom/android/server/AppWidgetServiceImpl$Provider;->info:Landroid/appwidget/AppWidgetProviderInfo;
 
     iget-object v1, v7, Landroid/appwidget/AppWidgetProviderInfo;->provider:Landroid/content/ComponentName;
 
-    .line 250
+    .line 256
     .local v1, cn:Landroid/content/ComponentName;
     invoke-virtual {v5, v1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
 
@@ -5793,29 +6329,29 @@
 
     if-nez v7, :cond_2
 
-    .line 251
+    .line 257
     invoke-virtual {v1}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
     move-result-object v7
 
     invoke-virtual {p0, v7, v5}, Lcom/android/server/AppWidgetServiceImpl;->updateProvidersForPackageLocked(Ljava/lang/String;Ljava/util/Set;)Z
 
-    .line 247
+    .line 253
     :cond_2
     add-int/lit8 v2, v2, -0x1
 
     goto :goto_0
 
-    .line 254
+    .line 260
     .end local v1           #cn:Landroid/content/ComponentName;
     .end local v4           #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
     :cond_3
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->saveStateAsync()V
 
-    .line 255
+    .line 261
     monitor-exit v8
 
-    .line 257
+    .line 263
     .end local v0           #N:I
     .end local v2           #i:I
     .end local v3           #installedProviders:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/AppWidgetServiceImpl$Provider;>;"
@@ -5823,7 +6359,7 @@
     :cond_4
     return-void
 
-    .line 255
+    .line 261
     :catchall_0
     move-exception v7
 
@@ -5838,7 +6374,7 @@
     .locals 1
 
     .prologue
-    .line 1843
+    .line 1881
     iget v0, p0, Lcom/android/server/AppWidgetServiceImpl;->mUserId:I
 
     invoke-static {v0}, Lcom/android/server/AppWidgetServiceImpl;->getSettingsFile(I)Ljava/io/File;
@@ -5847,7 +6383,7 @@
 
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
-    .line 1844
+    .line 1882
     return-void
 .end method
 
@@ -5855,14 +6391,14 @@
     .locals 4
 
     .prologue
-    .line 1835
+    .line 1873
     iget-object v3, p0, Lcom/android/server/AppWidgetServiceImpl;->mInstalledProviders:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 1836
+    .line 1874
     .local v0, N:I
     add-int/lit8 v1, v0, -0x1
 
@@ -5870,7 +6406,7 @@
     :goto_0
     if-ltz v1, :cond_0
 
-    .line 1837
+    .line 1875
     iget-object v3, p0, Lcom/android/server/AppWidgetServiceImpl;->mInstalledProviders:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -5879,16 +6415,16 @@
 
     check-cast v2, Lcom/android/server/AppWidgetServiceImpl$Provider;
 
-    .line 1838
+    .line 1876
     .local v2, p:Lcom/android/server/AppWidgetServiceImpl$Provider;
     invoke-virtual {p0, v2}, Lcom/android/server/AppWidgetServiceImpl;->cancelBroadcasts(Lcom/android/server/AppWidgetServiceImpl$Provider;)V
 
-    .line 1836
+    .line 1874
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_0
 
-    .line 1840
+    .line 1878
     .end local v2           #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
     :cond_0
     return-void
@@ -5900,52 +6436,52 @@
     .parameter "views"
 
     .prologue
-    .line 965
+    .line 992
     if-nez p1, :cond_1
 
-    .line 985
+    .line 1012
     :cond_0
     :goto_0
     return-void
 
-    .line 968
+    .line 995
     :cond_1
     array-length v3, p1
 
     if-eqz v3, :cond_0
 
-    .line 971
+    .line 998
     array-length v0, p1
 
-    .line 973
+    .line 1000
     .local v0, N:I
     iget-object v4, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
 
     monitor-enter v4
 
-    .line 974
+    .line 1001
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->ensureStateLoadedLocked()V
 
-    .line 975
+    .line 1002
     const/4 v1, 0x0
 
     .local v1, i:I
     :goto_1
     if-ge v1, v0, :cond_4
 
-    .line 976
+    .line 1003
     aget v3, p1, v1
 
     invoke-virtual {p0, v3}, Lcom/android/server/AppWidgetServiceImpl;->lookupAppWidgetIdLocked(I)Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
 
     move-result-object v2
 
-    .line 977
+    .line 1004
     .local v2, id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     if-nez v2, :cond_3
 
-    .line 978
+    .line 1005
     const-string v3, "AppWidgetServiceImpl"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -5976,27 +6512,27 @@
 
     invoke-static {v3, v5}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 975
+    .line 1002
     :cond_2
     :goto_2
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 979
+    .line 1006
     :cond_3
     iget-object v3, v2, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->views:Landroid/widget/RemoteViews;
 
     if-eqz v3, :cond_2
 
-    .line 981
+    .line 1008
     const/4 v3, 0x1
 
     invoke-virtual {p0, v2, p2, v3}, Lcom/android/server/AppWidgetServiceImpl;->updateAppWidgetInstanceLocked(Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;Landroid/widget/RemoteViews;Z)V
 
     goto :goto_2
 
-    .line 984
+    .line 1011
     .end local v1           #i:I
     .end local v2           #id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     :catchall_0
@@ -6023,7 +6559,7 @@
     .parameter "host"
 
     .prologue
-    .line 1246
+    .line 1273
     iget-object v0, p1, Lcom/android/server/AppWidgetServiceImpl$Host;->instances:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -6036,12 +6572,12 @@
 
     if-nez v0, :cond_0
 
-    .line 1247
+    .line 1274
     iget-object v0, p0, Lcom/android/server/AppWidgetServiceImpl;->mHosts:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 1249
+    .line 1276
     :cond_0
     return-void
 .end method
@@ -6051,17 +6587,17 @@
     .parameter "stream"
 
     .prologue
-    .line 1649
+    .line 1687
     const/16 v28, 0x0
 
-    .line 1651
+    .line 1689
     .local v28, success:Z
     :try_start_0
     invoke-static {}, Landroid/util/Xml;->newPullParser()Lorg/xmlpull/v1/XmlPullParser;
 
     move-result-object v23
 
-    .line 1652
+    .line 1690
     .local v23, parser:Lorg/xmlpull/v1/XmlPullParser;
     const/16 v31, 0x0
 
@@ -6073,23 +6609,23 @@
 
     invoke-interface {v0, v1, v2}, Lorg/xmlpull/v1/XmlPullParser;->setInput(Ljava/io/InputStream;Ljava/lang/String;)V
 
-    .line 1655
+    .line 1693
     const/16 v26, 0x0
 
-    .line 1656
+    .line 1694
     .local v26, providerIndex:I
     new-instance v13, Ljava/util/HashMap;
 
     invoke-direct {v13}, Ljava/util/HashMap;-><init>()V
 
-    .line 1658
+    .line 1696
     .local v13, loadedProviders:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Integer;Lcom/android/server/AppWidgetServiceImpl$Provider;>;"
     :cond_0
     invoke-interface/range {v23 .. v23}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
     move-result v30
 
-    .line 1659
+    .line 1697
     .local v30, type:I
     const/16 v31, 0x2
 
@@ -6099,12 +6635,12 @@
 
     if-ne v0, v1, :cond_3
 
-    .line 1660
+    .line 1698
     invoke-interface/range {v23 .. v23}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v29
 
-    .line 1661
+    .line 1699
     .local v29, tag:Ljava/lang/String;
     const-string v31, "p"
 
@@ -6118,7 +6654,7 @@
 
     if-eqz v31, :cond_4
 
-    .line 1664
+    .line 1702
     const/16 v31, 0x0
 
     const-string v32, "pkg"
@@ -6133,7 +6669,7 @@
 
     move-result-object v24
 
-    .line 1665
+    .line 1703
     .local v24, pkg:Ljava/lang/String;
     const/16 v31, 0x0
 
@@ -6149,7 +6685,7 @@
 
     move-result-object v6
 
-    .line 1667
+    .line 1705
     .local v6, cl:Ljava/lang/String;
     invoke-static {}, Landroid/app/AppGlobals;->getPackageManager()Landroid/content/pm/IPackageManager;
     :try_end_0
@@ -6161,7 +6697,7 @@
 
     move-result-object v21
 
-    .line 1669
+    .line 1707
     .local v21, packageManager:Landroid/content/pm/IPackageManager;
     :try_start_1
     new-instance v31, Landroid/content/ComponentName;
@@ -6197,7 +6733,7 @@
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_5
     .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_1 .. :try_end_1} :catch_6
 
-    .line 1676
+    .line 1714
     :goto_0
     :try_start_2
     new-instance v31, Landroid/content/ComponentName;
@@ -6216,7 +6752,7 @@
 
     move-result-object v19
 
-    .line 1677
+    .line 1715
     .local v19, p:Lcom/android/server/AppWidgetServiceImpl$Provider;
     if-nez v19, :cond_1
 
@@ -6228,13 +6764,13 @@
 
     if-eqz v31, :cond_1
 
-    .line 1679
+    .line 1717
     new-instance v19, Lcom/android/server/AppWidgetServiceImpl$Provider;
 
     .end local v19           #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
     invoke-direct/range {v19 .. v19}, Lcom/android/server/AppWidgetServiceImpl$Provider;-><init>()V
 
-    .line 1680
+    .line 1718
     .restart local v19       #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
     new-instance v31, Landroid/appwidget/AppWidgetProviderInfo;
 
@@ -6246,7 +6782,7 @@
 
     iput-object v0, v1, Lcom/android/server/AppWidgetServiceImpl$Provider;->info:Landroid/appwidget/AppWidgetProviderInfo;
 
-    .line 1681
+    .line 1719
     move-object/from16 v0, v19
 
     iget-object v0, v0, Lcom/android/server/AppWidgetServiceImpl$Provider;->info:Landroid/appwidget/AppWidgetProviderInfo;
@@ -6267,7 +6803,7 @@
 
     iput-object v0, v1, Landroid/appwidget/AppWidgetProviderInfo;->provider:Landroid/content/ComponentName;
 
-    .line 1682
+    .line 1720
     const/16 v31, 0x1
 
     move/from16 v0, v31
@@ -6276,7 +6812,7 @@
 
     iput-boolean v0, v1, Lcom/android/server/AppWidgetServiceImpl$Provider;->zombie:Z
 
-    .line 1683
+    .line 1721
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/AppWidgetServiceImpl;->mInstalledProviders:Ljava/util/ArrayList;
@@ -6289,11 +6825,11 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1685
+    .line 1723
     :cond_1
     if-eqz v19, :cond_2
 
-    .line 1687
+    .line 1725
     invoke-static/range {v26 .. v26}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v31
@@ -6310,11 +6846,11 @@
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_5
     .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_2 .. :try_end_2} :catch_6
 
-    .line 1689
+    .line 1727
     :cond_2
     add-int/lit8 v26, v26, 0x1
 
-    .line 1780
+    .line 1818
     .end local v6           #cl:Ljava/lang/String;
     .end local v19           #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
     .end local v21           #packageManager:Landroid/content/pm/IPackageManager;
@@ -6330,10 +6866,10 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 1781
+    .line 1819
     const/16 v28, 0x1
 
-    .line 1794
+    .line 1832
     .end local v13           #loadedProviders:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Integer;Lcom/android/server/AppWidgetServiceImpl$Provider;>;"
     .end local v23           #parser:Lorg/xmlpull/v1/XmlPullParser;
     .end local v26           #providerIndex:I
@@ -6341,7 +6877,7 @@
     :goto_2
     if-eqz v28, :cond_10
 
-    .line 1797
+    .line 1835
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/AppWidgetServiceImpl;->mHosts:Ljava/util/ArrayList;
@@ -6358,7 +6894,7 @@
     :goto_3
     if-ltz v11, :cond_11
 
-    .line 1798
+    .line 1836
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/AppWidgetServiceImpl;->mHosts:Ljava/util/ArrayList;
@@ -6379,12 +6915,12 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/AppWidgetServiceImpl;->pruneHostLocked(Lcom/android/server/AppWidgetServiceImpl$Host;)V
 
-    .line 1797
+    .line 1835
     add-int/lit8 v11, v11, -0x1
 
     goto :goto_3
 
-    .line 1670
+    .line 1708
     .end local v11           #i:I
     .restart local v6       #cl:Ljava/lang/String;
     .restart local v13       #loadedProviders:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Integer;Lcom/android/server/AppWidgetServiceImpl$Provider;>;"
@@ -6397,7 +6933,7 @@
     :catch_0
     move-exception v7
 
-    .line 1671
+    .line 1709
     .local v7, e:Landroid/os/RemoteException;
     :try_start_3
     move-object/from16 v0, p0
@@ -6426,7 +6962,7 @@
 
     move-result-object v25
 
-    .line 1673
+    .line 1711
     .local v25, pkgs:[Ljava/lang/String;
     const/16 v31, 0x0
 
@@ -6434,7 +6970,7 @@
 
     goto/16 :goto_0
 
-    .line 1690
+    .line 1728
     .end local v6           #cl:Ljava/lang/String;
     .end local v7           #e:Landroid/os/RemoteException;
     .end local v21           #packageManager:Landroid/content/pm/IPackageManager;
@@ -6453,12 +6989,12 @@
 
     if-eqz v31, :cond_6
 
-    .line 1691
+    .line 1729
     new-instance v10, Lcom/android/server/AppWidgetServiceImpl$Host;
 
     invoke-direct {v10}, Lcom/android/server/AppWidgetServiceImpl$Host;-><init>()V
 
-    .line 1695
+    .line 1733
     .local v10, host:Lcom/android/server/AppWidgetServiceImpl$Host;
     const/16 v31, 0x0
 
@@ -6484,7 +7020,7 @@
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_5
     .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_3 .. :try_end_3} :catch_6
 
-    .line 1697
+    .line 1735
     :try_start_4
     iget-object v0, v10, Lcom/android/server/AppWidgetServiceImpl$Host;->packageName:Ljava/lang/String;
 
@@ -6509,7 +7045,7 @@
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_5
     .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_4 .. :try_end_4} :catch_6
 
-    .line 1701
+    .line 1739
     :goto_4
     :try_start_5
     iget-boolean v0, v10, Lcom/android/server/AppWidgetServiceImpl$Host;->zombie:Z
@@ -6526,7 +7062,7 @@
 
     if-eqz v31, :cond_3
 
-    .line 1704
+    .line 1742
     :cond_5
     const/16 v31, 0x0
 
@@ -6552,7 +7088,7 @@
 
     iput v0, v10, Lcom/android/server/AppWidgetServiceImpl$Host;->hostId:I
 
-    .line 1706
+    .line 1744
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/AppWidgetServiceImpl;->mHosts:Ljava/util/ArrayList;
@@ -6571,7 +7107,7 @@
 
     goto/16 :goto_1
 
-    .line 1782
+    .line 1820
     .end local v10           #host:Lcom/android/server/AppWidgetServiceImpl$Host;
     .end local v13           #loadedProviders:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Integer;Lcom/android/server/AppWidgetServiceImpl$Provider;>;"
     .end local v23           #parser:Lorg/xmlpull/v1/XmlPullParser;
@@ -6581,7 +7117,7 @@
     :catch_1
     move-exception v7
 
-    .line 1783
+    .line 1821
     .local v7, e:Ljava/lang/NullPointerException;
     const-string v31, "AppWidgetServiceImpl"
 
@@ -6609,7 +7145,7 @@
 
     goto/16 :goto_2
 
-    .line 1698
+    .line 1736
     .end local v7           #e:Ljava/lang/NullPointerException;
     .restart local v10       #host:Lcom/android/server/AppWidgetServiceImpl$Host;
     .restart local v13       #loadedProviders:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Integer;Lcom/android/server/AppWidgetServiceImpl$Provider;>;"
@@ -6620,7 +7156,7 @@
     :catch_2
     move-exception v8
 
-    .line 1699
+    .line 1737
     .local v8, ex:Landroid/content/pm/PackageManager$NameNotFoundException;
     const/16 v31, 0x1
 
@@ -6637,7 +7173,7 @@
 
     goto :goto_4
 
-    .line 1784
+    .line 1822
     .end local v8           #ex:Landroid/content/pm/PackageManager$NameNotFoundException;
     .end local v10           #host:Lcom/android/server/AppWidgetServiceImpl$Host;
     .end local v13           #loadedProviders:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Integer;Lcom/android/server/AppWidgetServiceImpl$Provider;>;"
@@ -6648,7 +7184,7 @@
     :catch_3
     move-exception v7
 
-    .line 1785
+    .line 1823
     .local v7, e:Ljava/lang/NumberFormatException;
     const-string v31, "AppWidgetServiceImpl"
 
@@ -6676,7 +7212,7 @@
 
     goto/16 :goto_2
 
-    .line 1708
+    .line 1746
     .end local v7           #e:Ljava/lang/NumberFormatException;
     .restart local v13       #loadedProviders:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Integer;Lcom/android/server/AppWidgetServiceImpl$Provider;>;"
     .restart local v23       #parser:Lorg/xmlpull/v1/XmlPullParser;
@@ -6697,7 +7233,7 @@
 
     if-eqz v31, :cond_7
 
-    .line 1709
+    .line 1747
     const/16 v31, 0x0
 
     const-string v32, "packageName"
@@ -6712,11 +7248,11 @@
 
     move-result-object v22
 
-    .line 1710
+    .line 1748
     .local v22, packageName:Ljava/lang/String;
     if-eqz v22, :cond_3
 
-    .line 1711
+    .line 1749
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/AppWidgetServiceImpl;->mPackagesWithBindWidgetPermission:Ljava/util/HashSet;
@@ -6737,7 +7273,7 @@
 
     goto/16 :goto_1
 
-    .line 1786
+    .line 1824
     .end local v13           #loadedProviders:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Integer;Lcom/android/server/AppWidgetServiceImpl$Provider;>;"
     .end local v22           #packageName:Ljava/lang/String;
     .end local v23           #parser:Lorg/xmlpull/v1/XmlPullParser;
@@ -6747,7 +7283,7 @@
     :catch_4
     move-exception v7
 
-    .line 1787
+    .line 1825
     .local v7, e:Lorg/xmlpull/v1/XmlPullParserException;
     const-string v31, "AppWidgetServiceImpl"
 
@@ -6775,7 +7311,7 @@
 
     goto/16 :goto_2
 
-    .line 1713
+    .line 1751
     .end local v7           #e:Lorg/xmlpull/v1/XmlPullParserException;
     .restart local v13       #loadedProviders:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Integer;Lcom/android/server/AppWidgetServiceImpl$Provider;>;"
     .restart local v23       #parser:Lorg/xmlpull/v1/XmlPullParser;
@@ -6796,12 +7332,12 @@
 
     if-eqz v31, :cond_3
 
-    .line 1714
+    .line 1752
     new-instance v12, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
 
     invoke-direct {v12}, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;-><init>()V
 
-    .line 1715
+    .line 1753
     .local v12, id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     const/16 v31, 0x0
 
@@ -6827,7 +7363,7 @@
 
     iput v0, v12, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->appWidgetId:I
 
-    .line 1716
+    .line 1754
     iget v0, v12, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->appWidgetId:I
 
     move/from16 v31, v0
@@ -6844,7 +7380,7 @@
 
     if-lt v0, v1, :cond_8
 
-    .line 1717
+    .line 1755
     iget v0, v12, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->appWidgetId:I
 
     move/from16 v31, v0
@@ -6857,13 +7393,13 @@
 
     iput v0, v1, Lcom/android/server/AppWidgetServiceImpl;->mNextAppWidgetId:I
 
-    .line 1720
+    .line 1758
     :cond_8
     new-instance v18, Landroid/os/Bundle;
 
     invoke-direct/range {v18 .. v18}, Landroid/os/Bundle;-><init>()V
 
-    .line 1721
+    .line 1759
     .local v18, options:Landroid/os/Bundle;
     const/16 v31, 0x0
 
@@ -6879,11 +7415,11 @@
 
     move-result-object v17
 
-    .line 1722
+    .line 1760
     .local v17, minWidthString:Ljava/lang/String;
     if-eqz v17, :cond_9
 
-    .line 1723
+    .line 1761
     const-string v31, "appWidgetMinWidth"
 
     const/16 v32, 0x10
@@ -6904,7 +7440,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1726
+    .line 1764
     :cond_9
     const/16 v31, 0x0
 
@@ -6920,11 +7456,11 @@
 
     move-result-object v16
 
-    .line 1727
+    .line 1765
     .local v16, minHeightString:Ljava/lang/String;
     if-eqz v16, :cond_a
 
-    .line 1728
+    .line 1766
     const-string v31, "appWidgetMinHeight"
 
     const/16 v32, 0x10
@@ -6945,7 +7481,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1731
+    .line 1769
     :cond_a
     const/16 v31, 0x0
 
@@ -6961,11 +7497,11 @@
 
     move-result-object v15
 
-    .line 1732
+    .line 1770
     .local v15, maxWidthString:Ljava/lang/String;
     if-eqz v15, :cond_b
 
-    .line 1733
+    .line 1771
     const-string v31, "appWidgetMaxWidth"
 
     const/16 v32, 0x10
@@ -6984,7 +7520,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1736
+    .line 1774
     :cond_b
     const/16 v31, 0x0
 
@@ -7000,11 +7536,11 @@
 
     move-result-object v14
 
-    .line 1737
+    .line 1775
     .local v14, maxHeightString:Ljava/lang/String;
     if-eqz v14, :cond_c
 
-    .line 1738
+    .line 1776
     const-string v31, "appWidgetMaxHeight"
 
     const/16 v32, 0x10
@@ -7023,7 +7559,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1741
+    .line 1779
     :cond_c
     const/16 v31, 0x0
 
@@ -7039,11 +7575,11 @@
 
     move-result-object v5
 
-    .line 1742
+    .line 1780
     .local v5, categoryString:Ljava/lang/String;
     if-eqz v5, :cond_d
 
-    .line 1743
+    .line 1781
     const-string v31, "appWidgetCategory"
 
     const/16 v32, 0x10
@@ -7062,13 +7598,13 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1746
+    .line 1784
     :cond_d
     move-object/from16 v0, v18
 
     iput-object v0, v12, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->options:Landroid/os/Bundle;
 
-    .line 1748
+    .line 1786
     const/16 v31, 0x0
 
     const-string v32, "p"
@@ -7083,11 +7619,11 @@
 
     move-result-object v27
 
-    .line 1749
+    .line 1787
     .local v27, providerString:Ljava/lang/String;
     if-eqz v27, :cond_e
 
-    .line 1753
+    .line 1791
     const/16 v31, 0x10
 
     move-object/from16 v0, v27
@@ -7098,7 +7634,7 @@
 
     move-result v20
 
-    .line 1754
+    .line 1792
     .local v20, pIndex:I
     invoke-static/range {v20 .. v20}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -7116,14 +7652,14 @@
 
     iput-object v0, v12, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->provider:Lcom/android/server/AppWidgetServiceImpl$Provider;
 
-    .line 1759
+    .line 1797
     iget-object v0, v12, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->provider:Lcom/android/server/AppWidgetServiceImpl$Provider;
 
     move-object/from16 v31, v0
 
     if-eqz v31, :cond_3
 
-    .line 1766
+    .line 1804
     .end local v20           #pIndex:I
     :cond_e
     const/16 v31, 0x0
@@ -7146,7 +7682,7 @@
 
     move-result v9
 
-    .line 1767
+    .line 1805
     .local v9, hIndex:I
     move-object/from16 v0, p0
 
@@ -7166,21 +7702,21 @@
 
     iput-object v0, v12, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->host:Lcom/android/server/AppWidgetServiceImpl$Host;
 
-    .line 1768
+    .line 1806
     iget-object v0, v12, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->host:Lcom/android/server/AppWidgetServiceImpl$Host;
 
     move-object/from16 v31, v0
 
     if-eqz v31, :cond_3
 
-    .line 1773
+    .line 1811
     iget-object v0, v12, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->provider:Lcom/android/server/AppWidgetServiceImpl$Provider;
 
     move-object/from16 v31, v0
 
     if-eqz v31, :cond_f
 
-    .line 1774
+    .line 1812
     iget-object v0, v12, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->provider:Lcom/android/server/AppWidgetServiceImpl$Provider;
 
     move-object/from16 v31, v0
@@ -7195,7 +7731,7 @@
 
     invoke-virtual {v0, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1776
+    .line 1814
     :cond_f
     iget-object v0, v12, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->host:Lcom/android/server/AppWidgetServiceImpl$Host;
 
@@ -7211,7 +7747,7 @@
 
     invoke-virtual {v0, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1777
+    .line 1815
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
@@ -7230,7 +7766,7 @@
 
     goto/16 :goto_1
 
-    .line 1788
+    .line 1826
     .end local v5           #categoryString:Ljava/lang/String;
     .end local v9           #hIndex:I
     .end local v12           #id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
@@ -7248,7 +7784,7 @@
     :catch_5
     move-exception v7
 
-    .line 1789
+    .line 1827
     .local v7, e:Ljava/io/IOException;
     const-string v31, "AppWidgetServiceImpl"
 
@@ -7276,12 +7812,12 @@
 
     goto/16 :goto_2
 
-    .line 1790
+    .line 1828
     .end local v7           #e:Ljava/io/IOException;
     :catch_6
     move-exception v7
 
-    .line 1791
+    .line 1829
     .local v7, e:Ljava/lang/IndexOutOfBoundsException;
     const-string v31, "AppWidgetServiceImpl"
 
@@ -7309,7 +7845,7 @@
 
     goto/16 :goto_2
 
-    .line 1802
+    .line 1840
     .end local v7           #e:Ljava/lang/IndexOutOfBoundsException;
     :cond_10
     const-string v31, "AppWidgetServiceImpl"
@@ -7318,7 +7854,7 @@
 
     invoke-static/range {v31 .. v32}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1804
+    .line 1842
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
@@ -7327,7 +7863,7 @@
 
     invoke-virtual/range {v31 .. v31}, Ljava/util/ArrayList;->clear()V
 
-    .line 1805
+    .line 1843
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/AppWidgetServiceImpl;->mHosts:Ljava/util/ArrayList;
@@ -7336,7 +7872,7 @@
 
     invoke-virtual/range {v31 .. v31}, Ljava/util/ArrayList;->clear()V
 
-    .line 1806
+    .line 1844
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/AppWidgetServiceImpl;->mInstalledProviders:Ljava/util/ArrayList;
@@ -7347,7 +7883,7 @@
 
     move-result v4
 
-    .line 1807
+    .line 1845
     .local v4, N:I
     const/4 v11, 0x0
 
@@ -7355,7 +7891,7 @@
     :goto_5
     if-ge v11, v4, :cond_11
 
-    .line 1808
+    .line 1846
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/AppWidgetServiceImpl;->mInstalledProviders:Ljava/util/ArrayList;
@@ -7378,12 +7914,12 @@
 
     invoke-virtual/range {v31 .. v31}, Ljava/util/ArrayList;->clear()V
 
-    .line 1807
+    .line 1845
     add-int/lit8 v11, v11, 0x1
 
     goto :goto_5
 
-    .line 1811
+    .line 1849
     .end local v4           #N:I
     :cond_11
     return-void
@@ -7397,19 +7933,19 @@
     .prologue
     const/4 v7, 0x1
 
-    .line 1323
+    .line 1354
     iget-object v0, p1, Lcom/android/server/AppWidgetServiceImpl$Provider;->info:Landroid/appwidget/AppWidgetProviderInfo;
 
     iget v0, v0, Landroid/appwidget/AppWidgetProviderInfo;->updatePeriodMillis:I
 
     if-lez v0, :cond_1
 
-    .line 1327
+    .line 1358
     iget-object v0, p1, Lcom/android/server/AppWidgetServiceImpl$Provider;->broadcast:Landroid/app/PendingIntent;
 
     if-eqz v0, :cond_2
 
-    .line 1328
+    .line 1359
     .local v7, alreadyRegistered:Z
     :goto_0
     new-instance v8, Landroid/content/Intent;
@@ -7418,25 +7954,25 @@
 
     invoke-direct {v8, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1329
+    .line 1360
     .local v8, intent:Landroid/content/Intent;
     const-string v0, "appWidgetIds"
 
     invoke-virtual {v8, v0, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[I)Landroid/content/Intent;
 
-    .line 1330
+    .line 1361
     iget-object v0, p1, Lcom/android/server/AppWidgetServiceImpl$Provider;->info:Landroid/appwidget/AppWidgetProviderInfo;
 
     iget-object v0, v0, Landroid/appwidget/AppWidgetProviderInfo;->provider:Landroid/content/ComponentName;
 
     invoke-virtual {v8, v0}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    .line 1331
+    .line 1362
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v9
 
-    .line 1333
+    .line 1364
     .local v9, token:J
     :try_start_0
     iget-object v0, p0, Lcom/android/server/AppWidgetServiceImpl;->mContext:Landroid/content/Context;
@@ -7459,20 +7995,20 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1336
+    .line 1367
     invoke-static {v9, v10}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 1338
+    .line 1369
     if-nez v7, :cond_1
 
-    .line 1339
+    .line 1370
     iget-object v0, p1, Lcom/android/server/AppWidgetServiceImpl$Provider;->info:Landroid/appwidget/AppWidgetProviderInfo;
 
     iget v0, v0, Landroid/appwidget/AppWidgetProviderInfo;->updatePeriodMillis:I
 
     int-to-long v4, v0
 
-    .line 1340
+    .line 1371
     .local v4, period:J
     const-wide/32 v0, 0x1b7740
 
@@ -7480,10 +8016,10 @@
 
     if-gez v0, :cond_0
 
-    .line 1341
+    .line 1372
     const-wide/32 v4, 0x1b7740
 
-    .line 1343
+    .line 1374
     :cond_0
     iget-object v0, p0, Lcom/android/server/AppWidgetServiceImpl;->mAlarmManager:Landroid/app/AlarmManager;
 
@@ -7499,7 +8035,7 @@
 
     invoke-virtual/range {v0 .. v6}, Landroid/app/AlarmManager;->setInexactRepeating(IJJLandroid/app/PendingIntent;)V
 
-    .line 1348
+    .line 1379
     .end local v4           #period:J
     .end local v7           #alreadyRegistered:Z
     .end local v8           #intent:Landroid/content/Intent;
@@ -7507,13 +8043,13 @@
     :cond_1
     return-void
 
-    .line 1327
+    .line 1358
     :cond_2
     const/4 v7, 0x0
 
     goto :goto_0
 
-    .line 1336
+    .line 1367
     .restart local v7       #alreadyRegistered:Z
     .restart local v8       #intent:Landroid/content/Intent;
     .restart local v9       #token:J
@@ -7533,14 +8069,14 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 1286
+    .line 1313
     iget-object v3, p2, Lcom/android/server/AppWidgetServiceImpl$Provider;->instances:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 1287
+    .line 1314
     .local v0, N:I
     const/4 v1, 0x0
 
@@ -7548,7 +8084,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 1288
+    .line 1315
     iget-object v3, p2, Lcom/android/server/AppWidgetServiceImpl$Provider;->instances:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -7557,62 +8093,62 @@
 
     check-cast v2, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
 
-    .line 1290
+    .line 1317
     .local v2, id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     invoke-virtual {p0, v2, v4}, Lcom/android/server/AppWidgetServiceImpl;->updateAppWidgetInstanceLocked(Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;Landroid/widget/RemoteViews;)V
 
-    .line 1292
+    .line 1319
     invoke-virtual {p0, p2}, Lcom/android/server/AppWidgetServiceImpl;->cancelBroadcasts(Lcom/android/server/AppWidgetServiceImpl$Provider;)V
 
-    .line 1294
+    .line 1321
     iget-object v3, v2, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->host:Lcom/android/server/AppWidgetServiceImpl$Host;
 
     iget-object v3, v3, Lcom/android/server/AppWidgetServiceImpl$Host;->instances:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 1295
+    .line 1322
     iget-object v3, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 1296
+    .line 1323
     iput-object v4, v2, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->provider:Lcom/android/server/AppWidgetServiceImpl$Provider;
 
-    .line 1297
+    .line 1324
     iget-object v3, v2, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->host:Lcom/android/server/AppWidgetServiceImpl$Host;
 
     invoke-virtual {p0, v3}, Lcom/android/server/AppWidgetServiceImpl;->pruneHostLocked(Lcom/android/server/AppWidgetServiceImpl$Host;)V
 
-    .line 1298
+    .line 1325
     iput-object v4, v2, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->host:Lcom/android/server/AppWidgetServiceImpl$Host;
 
-    .line 1287
+    .line 1314
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 1300
+    .line 1327
     .end local v2           #id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     :cond_0
     iget-object v3, p2, Lcom/android/server/AppWidgetServiceImpl$Provider;->instances:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->clear()V
 
-    .line 1301
+    .line 1328
     iget-object v3, p0, Lcom/android/server/AppWidgetServiceImpl;->mInstalledProviders:Ljava/util/ArrayList;
 
     invoke-virtual {v3, p1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 1302
+    .line 1329
     iget-object v3, p0, Lcom/android/server/AppWidgetServiceImpl;->mDeletedProviders:Ljava/util/ArrayList;
 
     invoke-virtual {v3, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1304
+    .line 1331
     invoke-virtual {p0, p2}, Lcom/android/server/AppWidgetServiceImpl;->cancelBroadcasts(Lcom/android/server/AppWidgetServiceImpl$Provider;)V
 
-    .line 1305
+    .line 1332
     return-void
 .end method
 
@@ -7621,10 +8157,10 @@
     .parameter "pkgName"
 
     .prologue
-    .line 1970
+    .line 2008
     const/4 v4, 0x0
 
-    .line 1971
+    .line 2009
     .local v4, providersRemoved:Z
     iget-object v5, p0, Lcom/android/server/AppWidgetServiceImpl;->mInstalledProviders:Ljava/util/ArrayList;
 
@@ -7632,7 +8168,7 @@
 
     move-result v0
 
-    .line 1972
+    .line 2010
     .local v0, N:I
     add-int/lit8 v2, v0, -0x1
 
@@ -7640,7 +8176,7 @@
     :goto_0
     if-ltz v2, :cond_1
 
-    .line 1973
+    .line 2011
     iget-object v5, p0, Lcom/android/server/AppWidgetServiceImpl;->mInstalledProviders:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -7649,7 +8185,7 @@
 
     check-cast v3, Lcom/android/server/AppWidgetServiceImpl$Provider;
 
-    .line 1974
+    .line 2012
     .local v3, p:Lcom/android/server/AppWidgetServiceImpl$Provider;
     iget-object v5, v3, Lcom/android/server/AppWidgetServiceImpl$Provider;->info:Landroid/appwidget/AppWidgetProviderInfo;
 
@@ -7665,19 +8201,19 @@
 
     if-eqz v5, :cond_0
 
-    .line 1975
+    .line 2013
     invoke-virtual {p0, v2, v3}, Lcom/android/server/AppWidgetServiceImpl;->removeProviderLocked(ILcom/android/server/AppWidgetServiceImpl$Provider;)V
 
-    .line 1976
+    .line 2014
     const/4 v4, 0x1
 
-    .line 1972
+    .line 2010
     :cond_0
     add-int/lit8 v2, v2, -0x1
 
     goto :goto_0
 
-    .line 1984
+    .line 2022
     .end local v3           #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
     :cond_1
     iget-object v5, p0, Lcom/android/server/AppWidgetServiceImpl;->mHosts:Ljava/util/ArrayList;
@@ -7686,13 +8222,13 @@
 
     move-result v0
 
-    .line 1985
+    .line 2023
     add-int/lit8 v2, v0, -0x1
 
     :goto_1
     if-ltz v2, :cond_3
 
-    .line 1986
+    .line 2024
     iget-object v5, p0, Lcom/android/server/AppWidgetServiceImpl;->mHosts:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -7701,7 +8237,7 @@
 
     check-cast v1, Lcom/android/server/AppWidgetServiceImpl$Host;
 
-    .line 1987
+    .line 2025
     .local v1, host:Lcom/android/server/AppWidgetServiceImpl$Host;
     iget-object v5, v1, Lcom/android/server/AppWidgetServiceImpl$Host;->packageName:Ljava/lang/String;
 
@@ -7711,16 +8247,16 @@
 
     if-eqz v5, :cond_2
 
-    .line 1988
+    .line 2026
     invoke-virtual {p0, v1}, Lcom/android/server/AppWidgetServiceImpl;->deleteHostLocked(Lcom/android/server/AppWidgetServiceImpl$Host;)V
 
-    .line 1985
+    .line 2023
     :cond_2
     add-int/lit8 v2, v2, -0x1
 
     goto :goto_1
 
-    .line 1992
+    .line 2030
     .end local v1           #host:Lcom/android/server/AppWidgetServiceImpl$Host;
     :cond_3
     return v4
@@ -7730,19 +8266,19 @@
     .locals 6
 
     .prologue
-    .line 1558
+    .line 1596
     invoke-virtual {p0}, Lcom/android/server/AppWidgetServiceImpl;->savedStateFile()Landroid/util/AtomicFile;
 
     move-result-object v1
 
-    .line 1561
+    .line 1599
     .local v1, file:Landroid/util/AtomicFile;
     :try_start_0
     invoke-virtual {v1}, Landroid/util/AtomicFile;->startWrite()Ljava/io/FileOutputStream;
 
     move-result-object v2
 
-    .line 1562
+    .line 1600
     .local v2, stream:Ljava/io/FileOutputStream;
     invoke-virtual {p0, v2}, Lcom/android/server/AppWidgetServiceImpl;->writeStateToFileLocked(Ljava/io/FileOutputStream;)Z
 
@@ -7750,20 +8286,20 @@
 
     if-eqz v3, :cond_0
 
-    .line 1563
+    .line 1601
     invoke-virtual {v1, v2}, Landroid/util/AtomicFile;->finishWrite(Ljava/io/FileOutputStream;)V
 
-    .line 1571
+    .line 1609
     .end local v2           #stream:Ljava/io/FileOutputStream;
     :goto_0
     return-void
 
-    .line 1565
+    .line 1603
     .restart local v2       #stream:Ljava/io/FileOutputStream;
     :cond_0
     invoke-virtual {v1, v2}, Landroid/util/AtomicFile;->failWrite(Ljava/io/FileOutputStream;)V
 
-    .line 1566
+    .line 1604
     const-string v3, "AppWidgetServiceImpl"
 
     const-string v4, "Failed to save state, restoring backup."
@@ -7774,12 +8310,12 @@
 
     goto :goto_0
 
-    .line 1568
+    .line 1606
     .end local v2           #stream:Ljava/io/FileOutputStream;
     :catch_0
     move-exception v0
 
-    .line 1569
+    .line 1607
     .local v0, e:Ljava/io/IOException;
     const-string v3, "AppWidgetServiceImpl"
 
@@ -7810,14 +8346,14 @@
     .locals 4
 
     .prologue
-    .line 1818
+    .line 1856
     iget v3, p0, Lcom/android/server/AppWidgetServiceImpl;->mUserId:I
 
     invoke-static {v3}, Landroid/os/Environment;->getUserSystemDirectory(I)Ljava/io/File;
 
     move-result-object v0
 
-    .line 1819
+    .line 1857
     .local v0, dir:Ljava/io/File;
     iget v3, p0, Lcom/android/server/AppWidgetServiceImpl;->mUserId:I
 
@@ -7825,7 +8361,7 @@
 
     move-result-object v2
 
-    .line 1820
+    .line 1858
     .local v2, settingsFile:Ljava/io/File;
     invoke-virtual {v2}, Ljava/io/File;->exists()Z
 
@@ -7837,17 +8373,17 @@
 
     if-nez v3, :cond_1
 
-    .line 1821
+    .line 1859
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
     move-result v3
 
     if-nez v3, :cond_0
 
-    .line 1822
+    .line 1860
     invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
 
-    .line 1825
+    .line 1863
     :cond_0
     new-instance v1, Ljava/io/File;
 
@@ -7855,11 +8391,11 @@
 
     invoke-direct {v1, v3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 1828
+    .line 1866
     .local v1, oldFile:Ljava/io/File;
     invoke-virtual {v1, v2}, Ljava/io/File;->renameTo(Ljava/io/File;)Z
 
-    .line 1830
+    .line 1868
     .end local v1           #oldFile:Ljava/io/File;
     :cond_1
     new-instance v3, Landroid/util/AtomicFile;
@@ -7874,14 +8410,14 @@
     .parameter "p"
 
     .prologue
-    .line 1308
+    .line 1335
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.appwidget.action.APPWIDGET_ENABLED"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1309
+    .line 1336
     .local v0, intent:Landroid/content/Intent;
     iget-object v1, p1, Lcom/android/server/AppWidgetServiceImpl$Provider;->info:Landroid/appwidget/AppWidgetProviderInfo;
 
@@ -7889,7 +8425,7 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    .line 1310
+    .line 1337
     iget-object v1, p0, Lcom/android/server/AppWidgetServiceImpl;->mContext:Landroid/content/Context;
 
     new-instance v2, Landroid/os/UserHandle;
@@ -7900,7 +8436,7 @@
 
     invoke-virtual {v1, v0, v2}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 1311
+    .line 1338
     return-void
 .end method
 
@@ -7908,23 +8444,23 @@
     .locals 6
 
     .prologue
-    .line 1523
+    .line 1561
     iget-object v5, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
 
     monitor-enter v5
 
-    .line 1524
+    .line 1562
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->ensureStateLoadedLocked()V
 
-    .line 1525
+    .line 1563
     iget-object v4, p0, Lcom/android/server/AppWidgetServiceImpl;->mInstalledProviders:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 1526
+    .line 1564
     .local v0, N:I
     const/4 v2, 0x0
 
@@ -7932,7 +8468,7 @@
     :goto_0
     if-ge v2, v0, :cond_1
 
-    .line 1527
+    .line 1565
     iget-object v4, p0, Lcom/android/server/AppWidgetServiceImpl;->mInstalledProviders:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -7941,7 +8477,7 @@
 
     check-cast v3, Lcom/android/server/AppWidgetServiceImpl$Provider;
 
-    .line 1528
+    .line 1566
     .local v3, p:Lcom/android/server/AppWidgetServiceImpl$Provider;
     iget-object v4, v3, Lcom/android/server/AppWidgetServiceImpl$Provider;->instances:Ljava/util/ArrayList;
 
@@ -7951,37 +8487,37 @@
 
     if-lez v4, :cond_0
 
-    .line 1529
+    .line 1567
     invoke-virtual {p0, v3}, Lcom/android/server/AppWidgetServiceImpl;->sendEnableIntentLocked(Lcom/android/server/AppWidgetServiceImpl$Provider;)V
 
-    .line 1530
+    .line 1568
     invoke-static {v3}, Lcom/android/server/AppWidgetServiceImpl;->getAppWidgetIds(Lcom/android/server/AppWidgetServiceImpl$Provider;)[I
 
     move-result-object v1
 
-    .line 1531
+    .line 1569
     .local v1, appWidgetIds:[I
     invoke-virtual {p0, v3, v1}, Lcom/android/server/AppWidgetServiceImpl;->sendUpdateIntentLocked(Lcom/android/server/AppWidgetServiceImpl$Provider;[I)V
 
-    .line 1532
+    .line 1570
     invoke-virtual {p0, v3, v1}, Lcom/android/server/AppWidgetServiceImpl;->registerForBroadcastsLocked(Lcom/android/server/AppWidgetServiceImpl$Provider;[I)V
 
-    .line 1526
+    .line 1564
     .end local v1           #appWidgetIds:[I
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 1535
+    .line 1573
     .end local v3           #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
     :cond_1
     monitor-exit v5
 
-    .line 1536
+    .line 1574
     return-void
 
-    .line 1535
+    .line 1573
     .end local v0           #N:I
     .end local v2           #i:I
     :catchall_0
@@ -7995,51 +8531,61 @@
 .end method
 
 .method sendUpdateIntentLocked(Lcom/android/server/AppWidgetServiceImpl$Provider;[I)V
-    .locals 4
+    .locals 5
     .parameter "p"
     .parameter "appWidgetIds"
 
     .prologue
-    .line 1314
+    .line 1341
     if-eqz p2, :cond_0
 
-    array-length v1, p2
+    array-length v2, p2
 
-    if-lez v1, :cond_0
+    if-lez v2, :cond_0
 
-    .line 1315
-    new-instance v0, Landroid/content/Intent;
+    .line 1342
+    new-instance v1, Landroid/content/Intent;
 
-    const-string v1, "android.appwidget.action.APPWIDGET_UPDATE"
+    const-string v2, "android.appwidget.action.APPWIDGET_UPDATE"
 
-    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1316
-    .local v0, intent:Landroid/content/Intent;
-    const-string v1, "appWidgetIds"
+    .line 1344
+    .local v1, intent:Landroid/content/Intent;
+    new-instance v0, Ljava/lang/Exception;
 
-    invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[I)Landroid/content/Intent;
+    invoke-direct {v0}, Ljava/lang/Exception;-><init>()V
 
-    .line 1317
-    iget-object v1, p1, Lcom/android/server/AppWidgetServiceImpl$Provider;->info:Landroid/appwidget/AppWidgetProviderInfo;
+    .line 1345
+    .local v0, e:Ljava/lang/Exception;
+    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    iget-object v1, v1, Landroid/appwidget/AppWidgetProviderInfo;->provider:Landroid/content/ComponentName;
+    .line 1347
+    const-string v2, "appWidgetIds"
 
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
+    invoke-virtual {v1, v2, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[I)Landroid/content/Intent;
 
-    .line 1318
-    iget-object v1, p0, Lcom/android/server/AppWidgetServiceImpl;->mContext:Landroid/content/Context;
+    .line 1348
+    iget-object v2, p1, Lcom/android/server/AppWidgetServiceImpl$Provider;->info:Landroid/appwidget/AppWidgetProviderInfo;
 
-    new-instance v2, Landroid/os/UserHandle;
+    iget-object v2, v2, Landroid/appwidget/AppWidgetProviderInfo;->provider:Landroid/content/ComponentName;
 
-    iget v3, p0, Lcom/android/server/AppWidgetServiceImpl;->mUserId:I
+    invoke-virtual {v1, v2}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    invoke-direct {v2, v3}, Landroid/os/UserHandle;-><init>(I)V
+    .line 1349
+    iget-object v2, p0, Lcom/android/server/AppWidgetServiceImpl;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v1, v0, v2}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
+    new-instance v3, Landroid/os/UserHandle;
 
-    .line 1320
-    .end local v0           #intent:Landroid/content/Intent;
+    iget v4, p0, Lcom/android/server/AppWidgetServiceImpl;->mUserId:I
+
+    invoke-direct {v3, v4}, Landroid/os/UserHandle;-><init>(I)V
+
+    invoke-virtual {v2, v1, v3}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
+
+    .line 1351
+    .end local v0           #e:Ljava/lang/Exception;
+    .end local v1           #intent:Landroid/content/Intent;
     :cond_0
     return-void
 .end method
@@ -8050,7 +8596,7 @@
     .parameter "permission"
 
     .prologue
-    .line 663
+    .line 669
     iget-object v0, p0, Lcom/android/server/AppWidgetServiceImpl;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.MODIFY_APPWIDGET_BIND_PERMISSIONS"
@@ -8075,34 +8621,34 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 667
+    .line 673
     iget-object v1, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
 
     monitor-enter v1
 
-    .line 668
+    .line 674
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->ensureStateLoadedLocked()V
 
-    .line 669
+    .line 675
     if-eqz p2, :cond_0
 
-    .line 670
+    .line 676
     iget-object v0, p0, Lcom/android/server/AppWidgetServiceImpl;->mPackagesWithBindWidgetPermission:Ljava/util/HashSet;
 
     invoke-virtual {v0, p1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 674
+    .line 680
     :goto_0
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->saveStateAsync()V
 
-    .line 675
+    .line 681
     monitor-exit v1
 
-    .line 676
+    .line 682
     return-void
 
-    .line 672
+    .line 678
     :cond_0
     iget-object v0, p0, Lcom/android/server/AppWidgetServiceImpl;->mPackagesWithBindWidgetPermission:Ljava/util/HashSet;
 
@@ -8110,7 +8656,7 @@
 
     goto :goto_0
 
-    .line 675
+    .line 681
     :catchall_0
     move-exception v0
 
@@ -8141,48 +8687,48 @@
     .end annotation
 
     .prologue
-    .line 1147
+    .line 1174
     .local p4, updatedViews:Ljava/util/List;,"Ljava/util/List<Landroid/widget/RemoteViews;>;"
     invoke-virtual {p0, p2}, Lcom/android/server/AppWidgetServiceImpl;->enforceCallingUid(Ljava/lang/String;)I
 
     move-result v1
 
-    .line 1148
+    .line 1175
     .local v1, callingUid:I
     iget-object v8, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
 
     monitor-enter v8
 
-    .line 1149
+    .line 1176
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->ensureStateLoadedLocked()V
 
-    .line 1150
+    .line 1177
     invoke-virtual {p0, v1, p2, p3}, Lcom/android/server/AppWidgetServiceImpl;->lookupOrAddHostLocked(ILjava/lang/String;I)Lcom/android/server/AppWidgetServiceImpl$Host;
 
     move-result-object v2
 
-    .line 1151
+    .line 1178
     .local v2, host:Lcom/android/server/AppWidgetServiceImpl$Host;
     iput-object p1, v2, Lcom/android/server/AppWidgetServiceImpl$Host;->callbacks:Lcom/android/internal/appwidget/IAppWidgetHost;
 
-    .line 1153
+    .line 1180
     invoke-interface {p4}, Ljava/util/List;->clear()V
 
-    .line 1155
+    .line 1182
     iget-object v5, v2, Lcom/android/server/AppWidgetServiceImpl$Host;->instances:Ljava/util/ArrayList;
 
-    .line 1156
+    .line 1183
     .local v5, instances:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;>;"
     invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 1157
+    .line 1184
     .local v0, N:I
     new-array v6, v0, [I
 
-    .line 1158
+    .line 1185
     .local v6, updatedIds:[I
     const/4 v3, 0x0
 
@@ -8190,20 +8736,20 @@
     :goto_0
     if-ge v3, v0, :cond_0
 
-    .line 1159
+    .line 1186
     invoke-virtual {v5, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
 
-    .line 1160
+    .line 1187
     .local v4, id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     iget v7, v4, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->appWidgetId:I
 
     aput v7, v6, v3
 
-    .line 1161
+    .line 1188
     iget-object v7, v4, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->views:Landroid/widget/RemoteViews;
 
     invoke-direct {p0, v7}, Lcom/android/server/AppWidgetServiceImpl;->cloneIfLocalBinder(Landroid/widget/RemoteViews;)Landroid/widget/RemoteViews;
@@ -8212,19 +8758,19 @@
 
     invoke-interface {p4, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1158
+    .line 1185
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 1163
+    .line 1190
     .end local v4           #id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     :cond_0
     monitor-exit v8
 
     return-object v6
 
-    .line 1164
+    .line 1191
     .end local v0           #N:I
     .end local v2           #host:Lcom/android/server/AppWidgetServiceImpl$Host;
     .end local v3           #i:I
@@ -8245,16 +8791,16 @@
     .parameter "hostId"
 
     .prologue
-    .line 1168
+    .line 1195
     iget-object v2, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
 
     monitor-enter v2
 
-    .line 1169
+    .line 1196
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->ensureStateLoadedLocked()V
 
-    .line 1170
+    .line 1197
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v1
@@ -8263,26 +8809,26 @@
 
     move-result-object v0
 
-    .line 1171
+    .line 1198
     .local v0, host:Lcom/android/server/AppWidgetServiceImpl$Host;
     if-eqz v0, :cond_0
 
-    .line 1172
+    .line 1199
     const/4 v1, 0x0
 
     iput-object v1, v0, Lcom/android/server/AppWidgetServiceImpl$Host;->callbacks:Lcom/android/internal/appwidget/IAppWidgetHost;
 
-    .line 1173
+    .line 1200
     invoke-virtual {p0, v0}, Lcom/android/server/AppWidgetServiceImpl;->pruneHostLocked(Lcom/android/server/AppWidgetServiceImpl$Host;)V
 
-    .line 1175
+    .line 1202
     :cond_0
     monitor-exit v2
 
-    .line 1176
+    .line 1203
     return-void
 
-    .line 1175
+    .line 1202
     .end local v0           #host:Lcom/android/server/AppWidgetServiceImpl$Host;
     :catchall_0
     move-exception v1
@@ -8299,25 +8845,25 @@
     .parameter "safeMode"
 
     .prologue
-    .line 221
+    .line 227
     iput-boolean p1, p0, Lcom/android/server/AppWidgetServiceImpl;->mSafeMode:Z
 
-    .line 223
+    .line 229
     iget-object v1, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
 
     monitor-enter v1
 
-    .line 224
+    .line 230
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->ensureStateLoadedLocked()V
 
-    .line 225
+    .line 231
     monitor-exit v1
 
-    .line 226
+    .line 232
     return-void
 
-    .line 225
+    .line 231
     :catchall_0
     move-exception v0
 
@@ -8334,16 +8880,16 @@
     .parameter "intent"
 
     .prologue
-    .line 736
+    .line 742
     iget-object v4, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
 
     monitor-enter v4
 
-    .line 737
+    .line 743
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->ensureStateLoadedLocked()V
 
-    .line 740
+    .line 746
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -8356,7 +8902,7 @@
 
     move-result-object v2
 
-    .line 742
+    .line 748
     .local v2, key:Landroid/util/Pair;,"Landroid/util/Pair<Ljava/lang/Integer;Landroid/content/Intent$FilterComparison;>;"
     iget-object v3, p0, Lcom/android/server/AppWidgetServiceImpl;->mBoundRemoteViewsServices:Ljava/util/HashMap;
 
@@ -8366,16 +8912,16 @@
 
     if-eqz v3, :cond_1
 
-    .line 746
+    .line 752
     invoke-virtual {p0, p1}, Lcom/android/server/AppWidgetServiceImpl;->lookupAppWidgetIdLocked(I)Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
 
     move-result-object v1
 
-    .line 747
+    .line 753
     .local v1, id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     if-nez v1, :cond_0
 
-    .line 748
+    .line 754
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
     const-string v5, "bad appWidgetId"
@@ -8384,7 +8930,7 @@
 
     throw v3
 
-    .line 757
+    .line 765
     .end local v1           #id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     .end local v2           #key:Landroid/util/Pair;,"Landroid/util/Pair<Ljava/lang/Integer;Landroid/content/Intent$FilterComparison;>;"
     :catchall_0
@@ -8396,7 +8942,7 @@
 
     throw v3
 
-    .line 751
+    .line 757
     .restart local v1       #id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     .restart local v2       #key:Landroid/util/Pair;,"Landroid/util/Pair<Ljava/lang/Integer;Landroid/content/Intent$FilterComparison;>;"
     :cond_0
@@ -8409,30 +8955,40 @@
 
     check-cast v0, Lcom/android/server/AppWidgetServiceImpl$ServiceConnectionProxy;
 
-    .line 753
+    .line 759
     .local v0, conn:Lcom/android/server/AppWidgetServiceImpl$ServiceConnectionProxy;
     invoke-virtual {v0}, Lcom/android/server/AppWidgetServiceImpl$ServiceConnectionProxy;->disconnect()V
 
-    .line 754
+    .line 760
     iget-object v3, p0, Lcom/android/server/AppWidgetServiceImpl;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3, v0}, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
 
-    .line 755
+    .line 761
     iget-object v3, p0, Lcom/android/server/AppWidgetServiceImpl;->mBoundRemoteViewsServices:Ljava/util/HashMap;
 
     invoke-virtual {v3, v2}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 757
+    .line 765
     .end local v0           #conn:Lcom/android/server/AppWidgetServiceImpl$ServiceConnectionProxy;
     .end local v1           #id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
-    :cond_1
+    :goto_0
     monitor-exit v4
+
+    .line 766
+    return-void
+
+    .line 763
+    :cond_1
+    const-string v3, "AppWidgetService"
+
+    const-string v5, "Error (unbindRemoteViewsService): Connection not bound"
+
+    invoke-static {v3, v5}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 758
-    return-void
+    goto :goto_0
 .end method
 
 .method public updateAppWidgetIds([ILandroid/widget/RemoteViews;)V
@@ -8441,15 +8997,15 @@
     .parameter "views"
 
     .prologue
-    .line 885
+    .line 912
     if-nez p1, :cond_1
 
-    .line 912
+    .line 939
     :cond_0
     :goto_0
     return-void
 
-    .line 888
+    .line 915
     :cond_1
     sget-boolean v4, Lcom/android/server/AppWidgetServiceImpl;->DBG:Z
 
@@ -8475,26 +9031,26 @@
 
     invoke-direct {p0, v4}, Lcom/android/server/AppWidgetServiceImpl;->log(Ljava/lang/String;)V
 
-    .line 889
+    .line 916
     :cond_2
     const/4 v1, 0x0
 
-    .line 890
+    .line 917
     .local v1, bitmapMemoryUsage:I
     if-eqz p2, :cond_3
 
-    .line 891
+    .line 918
     invoke-virtual {p2}, Landroid/widget/RemoteViews;->estimateMemoryUsage()I
 
     move-result v1
 
-    .line 893
+    .line 920
     :cond_3
     iget v4, p0, Lcom/android/server/AppWidgetServiceImpl;->mMaxWidgetBitmapMemory:I
 
     if-le v1, v4, :cond_4
 
-    .line 894
+    .line 921
     new-instance v4, Ljava/lang/IllegalArgumentException;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -8543,49 +9099,49 @@
 
     throw v4
 
-    .line 900
+    .line 927
     :cond_4
     array-length v4, p1
 
     if-eqz v4, :cond_0
 
-    .line 903
+    .line 930
     array-length v0, p1
 
-    .line 905
+    .line 932
     .local v0, N:I
     iget-object v5, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
 
     monitor-enter v5
 
-    .line 906
+    .line 933
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->ensureStateLoadedLocked()V
 
-    .line 907
+    .line 934
     const/4 v2, 0x0
 
     .local v2, i:I
     :goto_1
     if-ge v2, v0, :cond_5
 
-    .line 908
+    .line 935
     aget v4, p1, v2
 
     invoke-virtual {p0, v4}, Lcom/android/server/AppWidgetServiceImpl;->lookupAppWidgetIdLocked(I)Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
 
     move-result-object v3
 
-    .line 909
+    .line 936
     .local v3, id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     invoke-virtual {p0, v3, p2}, Lcom/android/server/AppWidgetServiceImpl;->updateAppWidgetInstanceLocked(Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;Landroid/widget/RemoteViews;)V
 
-    .line 907
+    .line 934
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 911
+    .line 938
     .end local v3           #id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     :cond_5
     monitor-exit v5
@@ -8609,12 +9165,12 @@
     .parameter "views"
 
     .prologue
-    .line 1026
+    .line 1053
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, p2, v0}, Lcom/android/server/AppWidgetServiceImpl;->updateAppWidgetInstanceLocked(Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;Landroid/widget/RemoteViews;Z)V
 
-    .line 1027
+    .line 1054
     return-void
 .end method
 
@@ -8625,7 +9181,7 @@
     .parameter "isPartialUpdate"
 
     .prologue
-    .line 1033
+    .line 1060
     if-eqz p1, :cond_0
 
     iget-object v1, p1, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->provider:Lcom/android/server/AppWidgetServiceImpl$Provider;
@@ -8644,13 +9200,13 @@
 
     if-nez v1, :cond_0
 
-    .line 1035
+    .line 1062
     if-nez p3, :cond_1
 
-    .line 1037
+    .line 1064
     iput-object p2, p1, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->views:Landroid/widget/RemoteViews;
 
-    .line 1044
+    .line 1071
     :goto_0
     iget-object v1, p1, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->host:Lcom/android/server/AppWidgetServiceImpl$Host;
 
@@ -8658,7 +9214,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 1047
+    .line 1074
     :try_start_0
     iget-object v1, p1, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->host:Lcom/android/server/AppWidgetServiceImpl$Host;
 
@@ -8670,12 +9226,12 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1055
+    .line 1082
     :cond_0
     :goto_1
     return-void
 
-    .line 1040
+    .line 1067
     :cond_1
     iget-object v1, p1, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->views:Landroid/widget/RemoteViews;
 
@@ -8683,11 +9239,11 @@
 
     goto :goto_0
 
-    .line 1048
+    .line 1075
     :catch_0
     move-exception v0
 
-    .line 1051
+    .line 1078
     .local v0, e:Landroid/os/RemoteException;
     iget-object v1, p1, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->host:Lcom/android/server/AppWidgetServiceImpl$Host;
 
@@ -8704,54 +9260,54 @@
     .parameter "options"
 
     .prologue
-    .line 929
+    .line 956
     iget-object v4, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
 
     monitor-enter v4
 
-    .line 930
+    .line 957
     :try_start_0
     invoke-direct {p0, p2}, Lcom/android/server/AppWidgetServiceImpl;->cloneIfLocalBinder(Landroid/os/Bundle;)Landroid/os/Bundle;
 
     move-result-object p2
 
-    .line 931
+    .line 958
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->ensureStateLoadedLocked()V
 
-    .line 932
+    .line 959
     invoke-virtual {p0, p1}, Lcom/android/server/AppWidgetServiceImpl;->lookupAppWidgetIdLocked(I)Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
 
     move-result-object v0
 
-    .line 934
+    .line 961
     .local v0, id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     if-nez v0, :cond_0
 
-    .line 935
+    .line 962
     monitor-exit v4
 
-    .line 950
+    .line 977
     :goto_0
     return-void
 
-    .line 938
+    .line 965
     :cond_0
     iget-object v2, v0, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->provider:Lcom/android/server/AppWidgetServiceImpl$Provider;
 
-    .line 940
+    .line 967
     .local v2, p:Lcom/android/server/AppWidgetServiceImpl$Provider;
     iget-object v3, v0, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->options:Landroid/os/Bundle;
 
     invoke-virtual {v3, p2}, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V
 
-    .line 943
+    .line 970
     new-instance v1, Landroid/content/Intent;
 
     const-string v3, "android.appwidget.action.APPWIDGET_UPDATE_OPTIONS"
 
     invoke-direct {v1, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 944
+    .line 971
     .local v1, intent:Landroid/content/Intent;
     iget-object v3, v2, Lcom/android/server/AppWidgetServiceImpl$Provider;->info:Landroid/appwidget/AppWidgetProviderInfo;
 
@@ -8759,21 +9315,21 @@
 
     invoke-virtual {v1, v3}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    .line 945
+    .line 972
     const-string v3, "appWidgetId"
 
     iget v5, v0, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->appWidgetId:I
 
     invoke-virtual {v1, v3, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 946
+    .line 973
     const-string v3, "appWidgetOptions"
 
     iget-object v5, v0, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->options:Landroid/os/Bundle;
 
     invoke-virtual {v1, v3, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/Intent;
 
-    .line 947
+    .line 974
     iget-object v3, p0, Lcom/android/server/AppWidgetServiceImpl;->mContext:Landroid/content/Context;
 
     new-instance v5, Landroid/os/UserHandle;
@@ -8784,10 +9340,10 @@
 
     invoke-virtual {v3, v1, v5}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 948
+    .line 975
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->saveStateAsync()V
 
-    .line 949
+    .line 976
     monitor-exit v4
 
     goto :goto_0
@@ -8811,25 +9367,25 @@
     .parameter "views"
 
     .prologue
-    .line 1006
+    .line 1033
     iget-object v7, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
 
     monitor-enter v7
 
-    .line 1007
+    .line 1034
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/AppWidgetServiceImpl;->ensureStateLoadedLocked()V
 
-    .line 1008
+    .line 1035
     invoke-virtual {p0, p1}, Lcom/android/server/AppWidgetServiceImpl;->lookupProviderLocked(Landroid/content/ComponentName;)Lcom/android/server/AppWidgetServiceImpl$Provider;
 
     move-result-object v5
 
-    .line 1009
+    .line 1036
     .local v5, p:Lcom/android/server/AppWidgetServiceImpl$Provider;
     if-nez v5, :cond_0
 
-    .line 1010
+    .line 1037
     const-string v6, "AppWidgetServiceImpl"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -8852,30 +9408,30 @@
 
     invoke-static {v6, v8}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1011
+    .line 1038
     monitor-exit v7
 
-    .line 1023
+    .line 1050
     :goto_0
     return-void
 
-    .line 1013
+    .line 1040
     :cond_0
     iget-object v4, v5, Lcom/android/server/AppWidgetServiceImpl$Provider;->instances:Ljava/util/ArrayList;
 
-    .line 1014
+    .line 1041
     .local v4, instances:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;>;"
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v1
 
-    .line 1015
+    .line 1042
     .local v1, callingUid:I
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 1016
+    .line 1043
     .local v0, N:I
     const/4 v2, 0x0
 
@@ -8883,14 +9439,14 @@
     :goto_1
     if-ge v2, v0, :cond_2
 
-    .line 1017
+    .line 1044
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
 
-    .line 1018
+    .line 1045
     .local v3, id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     invoke-virtual {p0, v3, v1}, Lcom/android/server/AppWidgetServiceImpl;->canAccessAppWidgetId(Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;I)Z
 
@@ -8898,16 +9454,16 @@
 
     if-eqz v6, :cond_1
 
-    .line 1019
+    .line 1046
     invoke-virtual {p0, v3, p2}, Lcom/android/server/AppWidgetServiceImpl;->updateAppWidgetInstanceLocked(Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;Landroid/widget/RemoteViews;)V
 
-    .line 1016
+    .line 1043
     :cond_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 1022
+    .line 1049
     .end local v3           #id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     :cond_2
     monitor-exit v7
@@ -8945,17 +9501,17 @@
     .end annotation
 
     .prologue
-    .line 1882
+    .line 1920
     .local p2, removedProviders:Ljava/util/Set;,"Ljava/util/Set<Landroid/content/ComponentName;>;"
     const/16 v18, 0x0
 
-    .line 1883
+    .line 1921
     .local v18, providersUpdated:Z
     new-instance v15, Ljava/util/HashSet;
 
     invoke-direct {v15}, Ljava/util/HashSet;-><init>()V
 
-    .line 1884
+    .line 1922
     .local v15, keep:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
     new-instance v13, Landroid/content/Intent;
 
@@ -8965,13 +9521,13 @@
 
     invoke-direct {v13, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1885
+    .line 1923
     .local v13, intent:Landroid/content/Intent;
     move-object/from16 v0, p1
 
     invoke-virtual {v13, v0}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1888
+    .line 1926
     :try_start_0
     move-object/from16 v0, p0
 
@@ -9017,13 +9573,13 @@
 
     move-result-object v8
 
-    .line 1897
+    .line 1935
     .local v8, broadcastReceivers:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     if-nez v8, :cond_1
 
     const/4 v5, 0x0
 
-    .line 1898
+    .line 1936
     .local v5, N:I
     :goto_0
     const/4 v11, 0x0
@@ -9032,20 +9588,20 @@
     :goto_1
     if-ge v11, v5, :cond_6
 
-    .line 1899
+    .line 1937
     invoke-interface {v8, v11}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v20
 
     check-cast v20, Landroid/content/pm/ResolveInfo;
 
-    .line 1900
+    .line 1938
     .local v20, ri:Landroid/content/pm/ResolveInfo;
     move-object/from16 v0, v20
 
     iget-object v6, v0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    .line 1901
+    .line 1939
     .local v6, ai:Landroid/content/pm/ActivityInfo;
     iget-object v0, v6, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
@@ -9063,14 +9619,14 @@
 
     if-eqz v21, :cond_2
 
-    .line 1898
+    .line 1936
     :cond_0
     :goto_2
     add-int/lit8 v11, v11, 0x1
 
     goto :goto_1
 
-    .line 1891
+    .line 1929
     .end local v5           #N:I
     .end local v6           #ai:Landroid/content/pm/ActivityInfo;
     .end local v8           #broadcastReceivers:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
@@ -9079,16 +9635,16 @@
     :catch_0
     move-exception v19
 
-    .line 1893
+    .line 1931
     .local v19, re:Landroid/os/RemoteException;
     const/16 v21, 0x0
 
-    .line 1966
+    .line 2004
     .end local v19           #re:Landroid/os/RemoteException;
     :goto_3
     return v21
 
-    .line 1897
+    .line 1935
     .restart local v8       #broadcastReceivers:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     :cond_1
     invoke-interface {v8}, Ljava/util/List;->size()I
@@ -9097,13 +9653,13 @@
 
     goto :goto_0
 
-    .line 1904
+    .line 1942
     .restart local v5       #N:I
     .restart local v6       #ai:Landroid/content/pm/ActivityInfo;
     .restart local v11       #i:I
     .restart local v20       #ri:Landroid/content/pm/ResolveInfo;
     :cond_2
-    iget-object v0, v6, Landroid/content/pm/ComponentInfo;->packageName:Ljava/lang/String;
+    iget-object v0, v6, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
 
     move-object/from16 v21, v0
 
@@ -9117,14 +9673,14 @@
 
     if-eqz v21, :cond_0
 
-    .line 1905
+    .line 1943
     new-instance v9, Landroid/content/ComponentName;
 
-    iget-object v0, v6, Landroid/content/pm/ComponentInfo;->packageName:Ljava/lang/String;
+    iget-object v0, v6, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
 
     move-object/from16 v21, v0
 
-    iget-object v0, v6, Landroid/content/pm/ComponentInfo;->name:Ljava/lang/String;
+    iget-object v0, v6, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
 
     move-object/from16 v22, v0
 
@@ -9134,7 +9690,7 @@
 
     invoke-direct {v9, v0, v1}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1906
+    .line 1944
     .local v9, component:Landroid/content/ComponentName;
     move-object/from16 v0, p0
 
@@ -9142,11 +9698,11 @@
 
     move-result-object v16
 
-    .line 1907
+    .line 1945
     .local v16, p:Lcom/android/server/AppWidgetServiceImpl$Provider;
     if-nez v16, :cond_3
 
-    .line 1908
+    .line 1946
     move-object/from16 v0, p0
 
     move-object/from16 v1, v20
@@ -9157,8 +9713,8 @@
 
     if-eqz v21, :cond_0
 
-    .line 1909
-    iget-object v0, v6, Landroid/content/pm/ComponentInfo;->name:Ljava/lang/String;
+    .line 1947
+    iget-object v0, v6, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
 
     move-object/from16 v21, v0
 
@@ -9166,12 +9722,12 @@
 
     invoke-virtual {v15, v0}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 1910
+    .line 1948
     const/16 v18, 0x1
 
     goto :goto_2
 
-    .line 1913
+    .line 1951
     :cond_3
     move-object/from16 v0, p0
 
@@ -9181,12 +9737,12 @@
 
     move-result-object v17
 
-    .line 1914
+    .line 1952
     .local v17, parsed:Lcom/android/server/AppWidgetServiceImpl$Provider;
     if-eqz v17, :cond_0
 
-    .line 1915
-    iget-object v0, v6, Landroid/content/pm/ComponentInfo;->name:Ljava/lang/String;
+    .line 1953
+    iget-object v0, v6, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
 
     move-object/from16 v21, v0
 
@@ -9194,7 +9750,7 @@
 
     invoke-virtual {v15, v0}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 1917
+    .line 1955
     move-object/from16 v0, v17
 
     iget-object v0, v0, Lcom/android/server/AppWidgetServiceImpl$Provider;->info:Landroid/appwidget/AppWidgetProviderInfo;
@@ -9207,7 +9763,7 @@
 
     iput-object v0, v1, Lcom/android/server/AppWidgetServiceImpl$Provider;->info:Landroid/appwidget/AppWidgetProviderInfo;
 
-    .line 1919
+    .line 1957
     move-object/from16 v0, v16
 
     iget-object v0, v0, Lcom/android/server/AppWidgetServiceImpl$Provider;->instances:Ljava/util/ArrayList;
@@ -9218,16 +9774,16 @@
 
     move-result v4
 
-    .line 1920
+    .line 1958
     .local v4, M:I
     if-lez v4, :cond_0
 
-    .line 1921
+    .line 1959
     invoke-static/range {v16 .. v16}, Lcom/android/server/AppWidgetServiceImpl;->getAppWidgetIds(Lcom/android/server/AppWidgetServiceImpl$Provider;)[I
 
     move-result-object v7
 
-    .line 1925
+    .line 1963
     .local v7, appWidgetIds:[I
     move-object/from16 v0, p0
 
@@ -9235,21 +9791,21 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/AppWidgetServiceImpl;->cancelBroadcasts(Lcom/android/server/AppWidgetServiceImpl$Provider;)V
 
-    .line 1926
+    .line 1964
     move-object/from16 v0, p0
 
     move-object/from16 v1, v16
 
     invoke-virtual {v0, v1, v7}, Lcom/android/server/AppWidgetServiceImpl;->registerForBroadcastsLocked(Lcom/android/server/AppWidgetServiceImpl$Provider;[I)V
 
-    .line 1929
+    .line 1967
     const/4 v14, 0x0
 
     .local v14, j:I
     :goto_4
     if-ge v14, v4, :cond_5
 
-    .line 1930
+    .line 1968
     move-object/from16 v0, v16
 
     iget-object v0, v0, Lcom/android/server/AppWidgetServiceImpl$Provider;->instances:Ljava/util/ArrayList;
@@ -9264,7 +9820,7 @@
 
     check-cast v12, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
 
-    .line 1931
+    .line 1969
     .local v12, id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     const/16 v21, 0x0
 
@@ -9272,7 +9828,7 @@
 
     iput-object v0, v12, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->views:Landroid/widget/RemoteViews;
 
-    .line 1932
+    .line 1970
     iget-object v0, v12, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->host:Lcom/android/server/AppWidgetServiceImpl$Host;
 
     move-object/from16 v21, v0
@@ -9291,7 +9847,7 @@
 
     if-eqz v21, :cond_4
 
-    .line 1934
+    .line 1972
     :try_start_1
     iget-object v0, v12, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->host:Lcom/android/server/AppWidgetServiceImpl$Host;
 
@@ -9317,18 +9873,18 @@
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 1929
+    .line 1967
     :cond_4
     :goto_5
     add-int/lit8 v14, v14, 0x1
 
     goto :goto_4
 
-    .line 1935
+    .line 1973
     :catch_1
     move-exception v10
 
-    .line 1939
+    .line 1977
     .local v10, ex:Landroid/os/RemoteException;
     iget-object v0, v12, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->host:Lcom/android/server/AppWidgetServiceImpl$Host;
 
@@ -9344,7 +9900,7 @@
 
     goto :goto_5
 
-    .line 1944
+    .line 1982
     .end local v10           #ex:Landroid/os/RemoteException;
     .end local v12           #id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     :cond_5
@@ -9354,12 +9910,12 @@
 
     invoke-virtual {v0, v1, v7}, Lcom/android/server/AppWidgetServiceImpl;->sendUpdateIntentLocked(Lcom/android/server/AppWidgetServiceImpl$Provider;[I)V
 
-    .line 1945
+    .line 1983
     const/16 v18, 0x1
 
     goto/16 :goto_2
 
-    .line 1953
+    .line 1991
     .end local v4           #M:I
     .end local v6           #ai:Landroid/content/pm/ActivityInfo;
     .end local v7           #appWidgetIds:[I
@@ -9379,13 +9935,13 @@
 
     move-result v5
 
-    .line 1954
+    .line 1992
     add-int/lit8 v11, v5, -0x1
 
     :goto_6
     if-ltz v11, :cond_9
 
-    .line 1955
+    .line 1993
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/AppWidgetServiceImpl;->mInstalledProviders:Ljava/util/ArrayList;
@@ -9400,7 +9956,7 @@
 
     check-cast v16, Lcom/android/server/AppWidgetServiceImpl$Provider;
 
-    .line 1956
+    .line 1994
     .restart local v16       #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
     move-object/from16 v0, v16
 
@@ -9452,10 +10008,10 @@
 
     if-nez v21, :cond_8
 
-    .line 1958
+    .line 1996
     if-eqz p2, :cond_7
 
-    .line 1959
+    .line 1997
     move-object/from16 v0, v16
 
     iget-object v0, v0, Lcom/android/server/AppWidgetServiceImpl$Provider;->info:Landroid/appwidget/AppWidgetProviderInfo;
@@ -9474,7 +10030,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 1961
+    .line 1999
     :cond_7
     move-object/from16 v0, p0
 
@@ -9482,10 +10038,10 @@
 
     invoke-virtual {v0, v11, v1}, Lcom/android/server/AppWidgetServiceImpl;->removeProviderLocked(ILcom/android/server/AppWidgetServiceImpl$Provider;)V
 
-    .line 1962
+    .line 2000
     const/16 v18, 0x1
 
-    .line 1954
+    .line 1992
     :cond_8
     add-int/lit8 v11, v11, -0x1
 
@@ -9495,7 +10051,7 @@
     :cond_9
     move/from16 v21, v18
 
-    .line 1966
+    .line 2004
     goto/16 :goto_3
 .end method
 
@@ -9506,19 +10062,19 @@
     .prologue
     const/4 v10, 0x1
 
-    .line 1577
+    .line 1615
     :try_start_0
     new-instance v6, Lcom/android/internal/util/FastXmlSerializer;
 
     invoke-direct {v6}, Lcom/android/internal/util/FastXmlSerializer;-><init>()V
 
-    .line 1578
+    .line 1616
     .local v6, out:Lorg/xmlpull/v1/XmlSerializer;
     const-string v9, "utf-8"
 
     invoke-interface {v6, p1, v9}, Lorg/xmlpull/v1/XmlSerializer;->setOutput(Ljava/io/OutputStream;Ljava/lang/String;)V
 
-    .line 1579
+    .line 1617
     const/4 v9, 0x0
 
     const/4 v11, 0x1
@@ -9529,17 +10085,17 @@
 
     invoke-interface {v6, v9, v11}, Lorg/xmlpull/v1/XmlSerializer;->startDocument(Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    .line 1580
+    .line 1618
     const/4 v9, 0x0
 
     const-string v11, "gs"
 
     invoke-interface {v6, v9, v11}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 1582
+    .line 1620
     const/4 v8, 0x0
 
-    .line 1583
+    .line 1621
     .local v8, providerIndex:I
     iget-object v9, p0, Lcom/android/server/AppWidgetServiceImpl;->mInstalledProviders:Ljava/util/ArrayList;
 
@@ -9547,7 +10103,7 @@
 
     move-result v0
 
-    .line 1584
+    .line 1622
     .local v0, N:I
     const/4 v3, 0x0
 
@@ -9555,7 +10111,7 @@
     :goto_0
     if-ge v3, v0, :cond_1
 
-    .line 1585
+    .line 1623
     iget-object v9, p0, Lcom/android/server/AppWidgetServiceImpl;->mInstalledProviders:Ljava/util/ArrayList;
 
     invoke-virtual {v9, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -9564,7 +10120,7 @@
 
     check-cast v7, Lcom/android/server/AppWidgetServiceImpl$Provider;
 
-    .line 1586
+    .line 1624
     .local v7, p:Lcom/android/server/AppWidgetServiceImpl$Provider;
     iget-object v9, v7, Lcom/android/server/AppWidgetServiceImpl$Provider;->instances:Ljava/util/ArrayList;
 
@@ -9574,14 +10130,14 @@
 
     if-lez v9, :cond_0
 
-    .line 1587
+    .line 1625
     const/4 v9, 0x0
 
     const-string v11, "p"
 
     invoke-interface {v6, v9, v11}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 1588
+    .line 1626
     const/4 v9, 0x0
 
     const-string v11, "pkg"
@@ -9596,7 +10152,7 @@
 
     invoke-interface {v6, v9, v11, v12}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 1589
+    .line 1627
     const/4 v9, 0x0
 
     const-string v11, "cl"
@@ -9611,26 +10167,26 @@
 
     invoke-interface {v6, v9, v11, v12}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 1590
+    .line 1628
     const/4 v9, 0x0
 
     const-string v11, "p"
 
     invoke-interface {v6, v9, v11}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 1591
+    .line 1629
     iput v8, v7, Lcom/android/server/AppWidgetServiceImpl$Provider;->tag:I
 
-    .line 1592
+    .line 1630
     add-int/lit8 v8, v8, 0x1
 
-    .line 1584
+    .line 1622
     :cond_0
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 1596
+    .line 1634
     .end local v7           #p:Lcom/android/server/AppWidgetServiceImpl$Provider;
     :cond_1
     iget-object v9, p0, Lcom/android/server/AppWidgetServiceImpl;->mHosts:Ljava/util/ArrayList;
@@ -9639,13 +10195,13 @@
 
     move-result v0
 
-    .line 1597
+    .line 1635
     const/4 v3, 0x0
 
     :goto_1
     if-ge v3, v0, :cond_2
 
-    .line 1598
+    .line 1636
     iget-object v9, p0, Lcom/android/server/AppWidgetServiceImpl;->mHosts:Ljava/util/ArrayList;
 
     invoke-virtual {v9, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -9654,7 +10210,7 @@
 
     check-cast v2, Lcom/android/server/AppWidgetServiceImpl$Host;
 
-    .line 1599
+    .line 1637
     .local v2, host:Lcom/android/server/AppWidgetServiceImpl$Host;
     const/4 v9, 0x0
 
@@ -9662,7 +10218,7 @@
 
     invoke-interface {v6, v9, v11}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 1600
+    .line 1638
     const/4 v9, 0x0
 
     const-string v11, "pkg"
@@ -9671,7 +10227,7 @@
 
     invoke-interface {v6, v9, v11, v12}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 1601
+    .line 1639
     const/4 v9, 0x0
 
     const-string v11, "id"
@@ -9684,22 +10240,22 @@
 
     invoke-interface {v6, v9, v11, v12}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 1602
+    .line 1640
     const/4 v9, 0x0
 
     const-string v11, "h"
 
     invoke-interface {v6, v9, v11}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 1603
+    .line 1641
     iput v3, v2, Lcom/android/server/AppWidgetServiceImpl$Host;->tag:I
 
-    .line 1597
+    .line 1635
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
-    .line 1606
+    .line 1644
     .end local v2           #host:Lcom/android/server/AppWidgetServiceImpl$Host;
     :cond_2
     iget-object v9, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
@@ -9708,13 +10264,13 @@
 
     move-result v0
 
-    .line 1607
+    .line 1645
     const/4 v3, 0x0
 
     :goto_2
     if-ge v3, v0, :cond_5
 
-    .line 1608
+    .line 1646
     iget-object v9, p0, Lcom/android/server/AppWidgetServiceImpl;->mAppWidgetIds:Ljava/util/ArrayList;
 
     invoke-virtual {v9, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -9723,7 +10279,7 @@
 
     check-cast v4, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
 
-    .line 1609
+    .line 1647
     .local v4, id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     const/4 v9, 0x0
 
@@ -9731,7 +10287,7 @@
 
     invoke-interface {v6, v9, v11}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 1610
+    .line 1648
     const/4 v9, 0x0
 
     const-string v11, "id"
@@ -9744,7 +10300,7 @@
 
     invoke-interface {v6, v9, v11, v12}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 1611
+    .line 1649
     const/4 v9, 0x0
 
     const-string v11, "h"
@@ -9759,12 +10315,12 @@
 
     invoke-interface {v6, v9, v11, v12}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 1612
+    .line 1650
     iget-object v9, v4, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->provider:Lcom/android/server/AppWidgetServiceImpl$Provider;
 
     if-eqz v9, :cond_3
 
-    .line 1613
+    .line 1651
     const/4 v9, 0x0
 
     const-string v11, "p"
@@ -9779,13 +10335,13 @@
 
     invoke-interface {v6, v9, v11, v12}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 1615
+    .line 1653
     :cond_3
     iget-object v9, v4, Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;->options:Landroid/os/Bundle;
 
     if-eqz v9, :cond_4
 
-    .line 1616
+    .line 1654
     const/4 v9, 0x0
 
     const-string v11, "min_width"
@@ -9804,7 +10360,7 @@
 
     invoke-interface {v6, v9, v11, v12}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 1618
+    .line 1656
     const/4 v9, 0x0
 
     const-string v11, "min_height"
@@ -9823,7 +10379,7 @@
 
     invoke-interface {v6, v9, v11, v12}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 1620
+    .line 1658
     const/4 v9, 0x0
 
     const-string v11, "max_width"
@@ -9842,7 +10398,7 @@
 
     invoke-interface {v6, v9, v11, v12}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 1622
+    .line 1660
     const/4 v9, 0x0
 
     const-string v11, "max_height"
@@ -9861,7 +10417,7 @@
 
     invoke-interface {v6, v9, v11, v12}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 1624
+    .line 1662
     const/4 v9, 0x0
 
     const-string v11, "host_category"
@@ -9880,7 +10436,7 @@
 
     invoke-interface {v6, v9, v11, v12}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 1627
+    .line 1665
     :cond_4
     const/4 v9, 0x0
 
@@ -9888,12 +10444,12 @@
 
     invoke-interface {v6, v9, v11}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 1607
+    .line 1645
     add-int/lit8 v3, v3, 0x1
 
     goto/16 :goto_2
 
-    .line 1630
+    .line 1668
     .end local v4           #id:Lcom/android/server/AppWidgetServiceImpl$AppWidgetId;
     :cond_5
     iget-object v9, p0, Lcom/android/server/AppWidgetServiceImpl;->mPackagesWithBindWidgetPermission:Ljava/util/HashSet;
@@ -9902,7 +10458,7 @@
 
     move-result-object v5
 
-    .line 1631
+    .line 1669
     .local v5, it:Ljava/util/Iterator;,"Ljava/util/Iterator<Ljava/lang/String;>;"
     :goto_3
     invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
@@ -9911,14 +10467,14 @@
 
     if-eqz v9, :cond_6
 
-    .line 1632
+    .line 1670
     const/4 v9, 0x0
 
     const-string v11, "b"
 
     invoke-interface {v6, v9, v11}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 1633
+    .line 1671
     const/4 v11, 0x0
 
     const-string v12, "packageName"
@@ -9931,7 +10487,7 @@
 
     invoke-interface {v6, v11, v12, v9}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 1634
+    .line 1672
     const/4 v9, 0x0
 
     const-string v11, "b"
@@ -9942,7 +10498,7 @@
 
     goto :goto_3
 
-    .line 1641
+    .line 1679
     .end local v0           #N:I
     .end local v3           #i:I
     .end local v5           #it:Ljava/util/Iterator;,"Ljava/util/Iterator<Ljava/lang/String;>;"
@@ -9951,7 +10507,7 @@
     :catch_0
     move-exception v1
 
-    .line 1642
+    .line 1680
     .local v1, e:Ljava/io/IOException;
     const-string v9, "AppWidgetServiceImpl"
 
@@ -9975,14 +10531,14 @@
 
     invoke-static {v9, v10}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1643
+    .line 1681
     const/4 v9, 0x0
 
     .end local v1           #e:Ljava/io/IOException;
     :goto_4
     return v9
 
-    .line 1637
+    .line 1675
     .restart local v0       #N:I
     .restart local v3       #i:I
     .restart local v5       #it:Ljava/util/Iterator;,"Ljava/util/Iterator<Ljava/lang/String;>;"
@@ -9996,13 +10552,13 @@
 
     invoke-interface {v6, v9, v11}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 1639
+    .line 1677
     invoke-interface {v6}, Lorg/xmlpull/v1/XmlSerializer;->endDocument()V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
     move v9, v10
 
-    .line 1640
+    .line 1678
     goto :goto_4
 .end method

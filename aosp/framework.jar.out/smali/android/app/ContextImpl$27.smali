@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 446
+    .line 479
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -28,24 +28,32 @@
 
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Ljava/lang/Object;
-    .locals 3
+    .locals 4
     .parameter "ctx"
 
     .prologue
-    .line 448
-    new-instance v0, Landroid/app/SearchManager;
+    .line 482
+    const-string v2, "servicediscovery"
 
-    invoke-virtual {p1}, Landroid/app/ContextImpl;->getOuterContext()Landroid/content/Context;
+    invoke-static {v2}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+
+    move-result-object v0
+
+    .line 483
+    .local v0, b:Landroid/os/IBinder;
+    invoke-static {v0}, Landroid/net/nsd/INsdManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/net/nsd/INsdManager;
 
     move-result-object v1
 
-    iget-object v2, p1, Landroid/app/ContextImpl;->mMainThread:Landroid/app/ActivityThread;
+    .line 484
+    .local v1, service:Landroid/net/nsd/INsdManager;
+    new-instance v2, Landroid/net/nsd/NsdManager;
 
-    invoke-virtual {v2}, Landroid/app/ActivityThread;->getHandler()Landroid/os/Handler;
+    invoke-virtual {p1}, Landroid/app/ContextImpl;->getOuterContext()Landroid/content/Context;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-direct {v0, v1, v2}, Landroid/app/SearchManager;-><init>(Landroid/content/Context;Landroid/os/Handler;)V
+    invoke-direct {v2, v3, v1}, Landroid/net/nsd/NsdManager;-><init>(Landroid/content/Context;Landroid/net/nsd/INsdManager;)V
 
-    return-object v0
+    return-object v2
 .end method

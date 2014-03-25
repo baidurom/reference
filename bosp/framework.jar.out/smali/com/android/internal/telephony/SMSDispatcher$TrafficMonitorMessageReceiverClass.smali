@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 1516
+    .line 3019
     iput-object p1, p0, Lcom/android/internal/telephony/SMSDispatcher$TrafficMonitorMessageReceiverClass;->this$0:Lcom/android/internal/telephony/SMSDispatcher;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -38,7 +38,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1516
+    .line 3019
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/SMSDispatcher$TrafficMonitorMessageReceiverClass;-><init>(Lcom/android/internal/telephony/SMSDispatcher;)V
 
     return-void
@@ -52,7 +52,7 @@
     .parameter "intent"
 
     .prologue
-    .line 1518
+    .line 3021
     const-string v0, "NUMBER"
 
     invoke-virtual {p2, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
@@ -61,14 +61,14 @@
 
     sput-object v0, Lcom/baidu/internal/telephony/SMSPlugin;->trafficMonitorOperatorNumber:Ljava/lang/String;
 
-    .line 1519
+    .line 3022
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     sput-wide v0, Lcom/baidu/internal/telephony/SMSPlugin;->receiveTrafficMonitorBroadcastTime:J
 
-    .line 1520
+    .line 3023
     const-string v0, "TIME"
 
     const-wide/16 v1, 0x0
@@ -79,7 +79,7 @@
 
     sput-wide v0, Lcom/baidu/internal/telephony/SMSPlugin;->notReceiveTrafficMonitorMessageTime:J
 
-    .line 1521
+    .line 3024
     const-string v0, "DISCARD"
 
     const/4 v1, 0x0
@@ -90,6 +90,6 @@
 
     sput-boolean v0, Lcom/baidu/internal/telephony/SMSPlugin;->discard:Z
 
-    .line 1522
+    .line 3025
     return-void
 .end method

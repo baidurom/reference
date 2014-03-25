@@ -29,7 +29,7 @@
     .locals 0
 
     .prologue
-    .line 3836
+    .line 3883
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
     .parameter "addedWord"
 
     .prologue
-    .line 3870
+    .line 3917
     iget-object v3, p0, Landroid/widget/Editor$UserDictionaryListener;->mOriginalWord:Ljava/lang/String;
 
     invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -56,12 +56,12 @@
 
     if-eqz v3, :cond_1
 
-    .line 3891
+    .line 3938
     :cond_0
     :goto_0
     return-void
 
-    .line 3873
+    .line 3920
     :cond_1
     iget v3, p0, Landroid/widget/Editor$UserDictionaryListener;->mWordStart:I
 
@@ -77,7 +77,7 @@
 
     if-ge v3, v4, :cond_0
 
-    .line 3876
+    .line 3923
     iget-object v3, p0, Landroid/widget/Editor$UserDictionaryListener;->mOriginalWord:Ljava/lang/String;
 
     invoke-virtual {v3, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -86,14 +86,14 @@
 
     if-eqz v3, :cond_0
 
-    .line 3879
+    .line 3926
     invoke-virtual {p1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
     if-nez v3, :cond_0
 
-    .line 3882
+    .line 3929
     iget-object v3, p0, Landroid/widget/Editor$UserDictionaryListener;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v3}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
@@ -102,7 +102,7 @@
 
     check-cast v1, Landroid/text/Editable;
 
-    .line 3883
+    .line 3930
     .local v1, editable:Landroid/text/Editable;
     invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -116,7 +116,7 @@
 
     move-result-object v0
 
-    .line 3884
+    .line 3931
     .local v0, currentWord:Ljava/lang/String;
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -124,7 +124,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 3887
+    .line 3934
     iget-object v3, p0, Landroid/widget/Editor$UserDictionaryListener;->mTextView:Landroid/widget/TextView;
 
     iget v4, p0, Landroid/widget/Editor$UserDictionaryListener;->mWordStart:I
@@ -133,7 +133,7 @@
 
     invoke-virtual {v3, v4, v5, p2}, Landroid/widget/TextView;->replaceText_internal(IILjava/lang/CharSequence;)V
 
-    .line 3889
+    .line 3936
     iget v3, p0, Landroid/widget/Editor$UserDictionaryListener;->mWordStart:I
 
     invoke-virtual {p2}, Ljava/lang/String;->length()I
@@ -142,7 +142,7 @@
 
     add-int v2, v3, v4
 
-    .line 3890
+    .line 3937
     .local v2, newCursorPosition:I
     iget-object v3, p0, Landroid/widget/Editor$UserDictionaryListener;->mTextView:Landroid/widget/TextView;
 
@@ -158,17 +158,17 @@
     .parameter "msg"
 
     .prologue
-    .line 3852
+    .line 3899
     iget v3, p1, Landroid/os/Message;->what:I
 
     packed-switch v3, :pswitch_data_0
 
-    .line 3865
+    .line 3912
     :goto_0
     :pswitch_0
     return-void
 
-    .line 3855
+    .line 3902
     :pswitch_1
     iget-object v3, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -176,7 +176,7 @@
 
     if-nez v3, :cond_0
 
-    .line 3856
+    .line 3903
     const-string v3, "Editor"
 
     const-string v4, "Illegal message. Abort handling onUserDictionaryAdded."
@@ -185,35 +185,35 @@
 
     goto :goto_0
 
-    .line 3859
+    .line 3906
     :cond_0
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v1, Landroid/os/Bundle;
 
-    .line 3860
+    .line 3907
     .local v1, bundle:Landroid/os/Bundle;
-    const-string/jumbo v3, "originalWord"
+    const-string v3, "originalWord"
 
     invoke-virtual {v1, v3}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 3861
+    .line 3908
     .local v2, originalWord:Ljava/lang/String;
-    const-string/jumbo v3, "word"
+    const-string v3, "word"
 
     invoke-virtual {v1, v3}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 3862
+    .line 3909
     .local v0, addedWord:Ljava/lang/String;
     invoke-direct {p0, v2, v0}, Landroid/widget/Editor$UserDictionaryListener;->onUserDictionaryAdded(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 3852
+    .line 3899
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1
@@ -230,18 +230,18 @@
     .parameter "spanEnd"
 
     .prologue
-    .line 3844
+    .line 3891
     iput-object p1, p0, Landroid/widget/Editor$UserDictionaryListener;->mTextView:Landroid/widget/TextView;
 
-    .line 3845
+    .line 3892
     iput-object p2, p0, Landroid/widget/Editor$UserDictionaryListener;->mOriginalWord:Ljava/lang/String;
 
-    .line 3846
+    .line 3893
     iput p3, p0, Landroid/widget/Editor$UserDictionaryListener;->mWordStart:I
 
-    .line 3847
+    .line 3894
     iput p4, p0, Landroid/widget/Editor$UserDictionaryListener;->mWordEnd:I
 
-    .line 3848
+    .line 3895
     return-void
 .end method

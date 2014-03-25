@@ -1002,7 +1002,7 @@
 
     iget-object v9, v3, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v6, v9, Landroid/content/pm/ComponentInfo;->packageName:Ljava/lang/String;
+    iget-object v6, v9, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
 
     .line 231
     .local v6, packageName:Ljava/lang/String;
@@ -1018,7 +1018,7 @@
     :cond_5
     iget-object v9, v3, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
-    iget-object v6, v9, Landroid/content/pm/ComponentInfo;->packageName:Ljava/lang/String;
+    iget-object v6, v9, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
 
     goto :goto_2
 

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/am/ActivityManagerService;->dumpMemItems(Ljava/io/PrintWriter;Ljava/lang/String;Ljava/util/ArrayList;Z)V
+    value = Lcom/android/server/am/ActivityManagerService;->dumpProcessOomList(Ljava/io/PrintWriter;Lcom/android/server/am/ActivityManagerService;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;)Z
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -21,8 +21,11 @@
         "Ljava/lang/Object;",
         "Ljava/util/Comparator",
         "<",
-        "Lcom/android/server/am/ActivityManagerService$MemItem;",
-        ">;"
+        "Landroid/util/Pair",
+        "<",
+        "Lcom/android/server/am/ProcessRecord;",
+        "Ljava/lang/Integer;",
+        ">;>;"
     }
 .end annotation
 
@@ -32,53 +35,134 @@
     .locals 0
 
     .prologue
-    .line 10342
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 11104
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public compare(Lcom/android/server/am/ActivityManagerService$MemItem;Lcom/android/server/am/ActivityManagerService$MemItem;)I
+.method public compare(Landroid/util/Pair;Landroid/util/Pair;)I
     .locals 4
-    .parameter "lhs"
-    .parameter "rhs"
+    .parameter
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/util/Pair",
+            "<",
+            "Lcom/android/server/am/ProcessRecord;",
+            "Ljava/lang/Integer;",
+            ">;",
+            "Landroid/util/Pair",
+            "<",
+            "Lcom/android/server/am/ProcessRecord;",
+            "Ljava/lang/Integer;",
+            ">;)I"
+        }
+    .end annotation
 
     .prologue
-    .line 10345
-    iget-wide v0, p1, Lcom/android/server/am/ActivityManagerService$MemItem;->pss:J
+    .local p1, object1:Landroid/util/Pair;,"Landroid/util/Pair<Lcom/android/server/am/ProcessRecord;Ljava/lang/Integer;>;"
+    .local p2, object2:Landroid/util/Pair;,"Landroid/util/Pair<Lcom/android/server/am/ProcessRecord;Ljava/lang/Integer;>;"
+    const/4 v2, 0x1
 
-    iget-wide v2, p2, Lcom/android/server/am/ActivityManagerService$MemItem;->pss:J
+    const/4 v1, -0x1
 
-    cmp-long v0, v0, v2
+    .line 11108
+    iget-object v0, p1, Landroid/util/Pair;->first:Ljava/lang/Object;
 
-    if-gez v0, :cond_0
+    check-cast v0, Lcom/android/server/am/ProcessRecord;
 
-    .line 10346
-    const/4 v0, 0x1
+    iget v3, v0, Lcom/android/server/am/ProcessRecord;->setAdj:I
 
-    .line 10350
+    iget-object v0, p2, Landroid/util/Pair;->first:Ljava/lang/Object;
+
+    check-cast v0, Lcom/android/server/am/ProcessRecord;
+
+    iget v0, v0, Lcom/android/server/am/ProcessRecord;->setAdj:I
+
+    if-eq v3, v0, :cond_1
+
+    .line 11109
+    iget-object v0, p1, Landroid/util/Pair;->first:Ljava/lang/Object;
+
+    check-cast v0, Lcom/android/server/am/ProcessRecord;
+
+    iget v3, v0, Lcom/android/server/am/ProcessRecord;->setAdj:I
+
+    iget-object v0, p2, Landroid/util/Pair;->first:Ljava/lang/Object;
+
+    check-cast v0, Lcom/android/server/am/ProcessRecord;
+
+    iget v0, v0, Lcom/android/server/am/ProcessRecord;->setAdj:I
+
+    if-le v3, v0, :cond_0
+
+    move v0, v1
+
+    .line 11114
     :goto_0
     return v0
 
-    .line 10347
     :cond_0
-    iget-wide v0, p1, Lcom/android/server/am/ActivityManagerService$MemItem;->pss:J
+    move v0, v2
 
-    iget-wide v2, p2, Lcom/android/server/am/ActivityManagerService$MemItem;->pss:J
+    .line 11109
+    goto :goto_0
 
-    cmp-long v0, v0, v2
+    .line 11111
+    :cond_1
+    iget-object v0, p1, Landroid/util/Pair;->second:Ljava/lang/Object;
 
-    if-lez v0, :cond_1
+    check-cast v0, Ljava/lang/Integer;
 
-    .line 10348
-    const/4 v0, -0x1
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v3
+
+    iget-object v0, p2, Landroid/util/Pair;->second:Ljava/lang/Object;
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    if-eq v3, v0, :cond_3
+
+    .line 11112
+    iget-object v0, p1, Landroid/util/Pair;->second:Ljava/lang/Object;
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v3
+
+    iget-object v0, p2, Landroid/util/Pair;->second:Ljava/lang/Object;
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    if-le v3, v0, :cond_2
+
+    :goto_1
+    move v0, v1
 
     goto :goto_0
 
-    .line 10350
-    :cond_1
+    :cond_2
+    move v1, v2
+
+    goto :goto_1
+
+    .line 11114
+    :cond_3
     const/4 v0, 0x0
 
     goto :goto_0
@@ -90,14 +174,14 @@
     .parameter "x1"
 
     .prologue
-    .line 10342
-    check-cast p1, Lcom/android/server/am/ActivityManagerService$MemItem;
+    .line 11104
+    check-cast p1, Landroid/util/Pair;
 
     .end local p1
-    check-cast p2, Lcom/android/server/am/ActivityManagerService$MemItem;
+    check-cast p2, Landroid/util/Pair;
 
     .end local p2
-    invoke-virtual {p0, p1, p2}, Lcom/android/server/am/ActivityManagerService$14;->compare(Lcom/android/server/am/ActivityManagerService$MemItem;Lcom/android/server/am/ActivityManagerService$MemItem;)I
+    invoke-virtual {p0, p1, p2}, Lcom/android/server/am/ActivityManagerService$14;->compare(Landroid/util/Pair;Landroid/util/Pair;)I
 
     move-result v0
 

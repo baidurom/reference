@@ -41,7 +41,7 @@
 
     .line 51
     .local v0, inputFrame:Landroid/filterfw/core/Frame;
-    iget-object v5, p0, Landroid/media/effect/SingleFilterEffect;->mFunction:Landroid/filterfw/core/FilterFunction;
+    iget-object v5, p0, Landroid/media/effect/SizeChangeEffect;->mFunction:Landroid/filterfw/core/FilterFunction;
 
     const/4 v6, 0x2
 
@@ -49,7 +49,7 @@
 
     const/4 v7, 0x0
 
-    iget-object v8, p0, Landroid/media/effect/SingleFilterEffect;->mInputName:Ljava/lang/String;
+    iget-object v8, p0, Landroid/media/effect/SizeChangeEffect;->mInputName:Ljava/lang/String;
 
     aput-object v8, v6, v7
 

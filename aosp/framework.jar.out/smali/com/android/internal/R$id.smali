@@ -67,6 +67,8 @@
 
 .field public static final amPm:I = #id@amPm#t
 
+.field public static final am_pm:I = #id@am_pm#t
+
 .field public static final app_widget_container:I = #id@app_widget_container#t
 
 .field public static final ask_checkbox:I = #id@ask_checkbox#t
@@ -333,6 +335,8 @@
 
 .field public static final keyguard_pin_view:I = #id@keyguard_pin_view#t
 
+.field public static final keyguard_security_container:I = #id@keyguard_security_container#t
+
 .field public static final keyguard_selector_fade_container:I = #id@keyguard_selector_fade_container#t
 
 .field public static final keyguard_selector_view:I = #id@keyguard_selector_view#t
@@ -348,6 +352,8 @@
 .field public static final keyguard_status_view_face_palm:I = #id@keyguard_status_view_face_palm#t
 
 .field public static final keyguard_transport_control:I = #id@keyguard_transport_control#t
+
+.field public static final keyguard_unlock_panel:I = #id@keyguard_unlock_panel#t
 
 .field public static final keyguard_user_avatar:I = #id@keyguard_user_avatar#t
 
@@ -422,6 +428,14 @@
 .field public static final no_applications_message:I = #id@no_applications_message#t
 
 .field public static final no_permissions:I = #id@no_permissions#t
+
+.field public static final notification_sim_indicator:I = #id@notification_sim_indicator#t
+
+.field public static final notification_sim_indicator_bg:I = #id@notification_sim_indicator_bg#t
+
+.field public static final notification_sim_indicator_text:I = #id@notification_sim_indicator_text#t
+
+.field public static final notification_sim_info:I = #id@notification_sim_info#t
 
 .field public static final numberpicker_input:I = #id@numberpicker_input#t
 
@@ -711,14 +725,22 @@
 
 .field public static final zoomOut:I = #id@zoomOut#t
 
+.field public static final zz_keyguard_voice_unlock_view:I = #id@zz_keyguard_voice_unlock_view#t
+
+.field public static final zz_voiceLockCancel:I = #id@zz_voiceLockCancel#t
+
+.field public static final zz_voiceLockWave:I = #id@zz_voiceLockWave#t
+
+.field public static final zz_voice_unlock_area_view:I = #id@zz_voice_unlock_area_view#t
+
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 12001
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 11918
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

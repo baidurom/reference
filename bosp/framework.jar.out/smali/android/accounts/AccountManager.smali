@@ -108,7 +108,7 @@
 
     .prologue
     .line 243
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1906
     invoke-static {}, Lcom/google/android/collect/Maps;->newHashMap()Ljava/util/HashMap;
@@ -155,7 +155,7 @@
 
     .prologue
     .line 252
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1906
     invoke-static {}, Lcom/google/android/collect/Maps;->newHashMap()Ljava/util/HashMap;
@@ -1905,7 +1905,7 @@
 
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    const-string v2, "key is null"
+    const-string/jumbo v2, "key is null"
 
     invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -2169,7 +2169,7 @@
 
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "listener is null"
+    const-string/jumbo v1, "listener is null"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -2364,7 +2364,7 @@
 
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    const-string v2, "key is null"
+    const-string/jumbo v2, "key is null"
 
     invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

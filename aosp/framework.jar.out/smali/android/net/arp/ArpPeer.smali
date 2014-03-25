@@ -50,7 +50,7 @@
     const/4 v4, 0x6
 
     .line 57
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 46
     new-array v1, v4, [B

@@ -32,11 +32,19 @@
 
 .field public static final INTENT_VALUE_ICC_UNKNOWN:Ljava/lang/String; = "UNKNOWN"
 
+.field public static final INTENT_VALUE_LOCKED_CORPORATE:Ljava/lang/String; = "CORPORATE"
+
 .field public static final INTENT_VALUE_LOCKED_NETWORK:Ljava/lang/String; = "NETWORK"
+
+.field public static final INTENT_VALUE_LOCKED_NETWORK_SUBSET:Ljava/lang/String; = "NETWORK_SUBSET"
 
 .field public static final INTENT_VALUE_LOCKED_ON_PIN:Ljava/lang/String; = "PIN"
 
 .field public static final INTENT_VALUE_LOCKED_ON_PUK:Ljava/lang/String; = "PUK"
+
+.field public static final INTENT_VALUE_LOCKED_SERVICE_PROVIDER:Ljava/lang/String; = "SERVICE_PROVIDER"
+
+.field public static final INTENT_VALUE_LOCKED_SIM:Ljava/lang/String; = "SIM"
 
 
 # direct methods
@@ -45,8 +53,8 @@
 
     .prologue
     .line 21
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 58
+    .line 68
     return-void
 .end method

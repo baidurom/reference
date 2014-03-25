@@ -10,7 +10,7 @@
 
 .field public static final BOUNDARY_VALUE:I = 0x70000000
 
-.field public static final BOUNDARY_YI:I = 0x5
+.field public static final BOUNDARY_YI:I = 0x3
 
 .field public static final CONFIG_THEME:I = -0x80000000
 
@@ -80,7 +80,7 @@
 
     .prologue
     .line 11
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

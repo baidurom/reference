@@ -15,5 +15,8 @@
 
 
 # virtual methods
+.method public abstract requestExtraDisplayDeviceRefresh(III)V
+.end method
+
 .method public abstract requestTraversal()V
 .end method

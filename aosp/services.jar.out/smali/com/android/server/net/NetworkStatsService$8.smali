@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 801
+    .line 877
     iput-object p1, p0, Lcom/android/server/net/NetworkStatsService$8;->this$0:Lcom/android/server/net/NetworkStatsService;
 
     invoke-direct {p0}, Lcom/android/server/net/BaseNetworkObserver;-><init>()V
@@ -40,9 +40,9 @@
     .parameter "iface"
 
     .prologue
-    const/4 v4, 0x1
+    const/4 v4, 0x3
 
-    .line 805
+    .line 881
     iget-object v1, p0, Lcom/android/server/net/NetworkStatsService$8;->this$0:Lcom/android/server/net/NetworkStatsService;
 
     #getter for: Lcom/android/server/net/NetworkStatsService;->mContext:Landroid/content/Context;
@@ -56,7 +56,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 807
+    .line 883
     const-string v1, "globalAlert"
 
     invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -65,10 +65,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 810
-    const/4 v0, 0x1
+    .line 887
+    const/4 v0, 0x3
 
-    .line 811
+    .line 888
     .local v0, flags:I
     iget-object v1, p0, Lcom/android/server/net/NetworkStatsService$8;->this$0:Lcom/android/server/net/NetworkStatsService;
 
@@ -77,15 +77,17 @@
 
     move-result-object v1
 
-    const/4 v2, 0x0
+    const/4 v2, 0x1
 
-    invoke-virtual {v1, v4, v4, v2}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
+    const/4 v3, 0x0
+
+    invoke-virtual {v1, v2, v4, v3}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
 
     move-result-object v1
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 814
+    .line 891
     iget-object v1, p0, Lcom/android/server/net/NetworkStatsService$8;->this$0:Lcom/android/server/net/NetworkStatsService;
 
     #getter for: Lcom/android/server/net/NetworkStatsService;->mHandler:Landroid/os/Handler;
@@ -93,15 +95,13 @@
 
     move-result-object v1
 
-    const/4 v2, 0x3
-
-    invoke-virtual {v1, v2}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {v1, v4}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v1
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 816
+    .line 893
     .end local v0           #flags:I
     :cond_0
     return-void

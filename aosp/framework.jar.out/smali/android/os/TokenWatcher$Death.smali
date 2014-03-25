@@ -36,7 +36,7 @@
     .line 186
     iput-object p1, p0, Landroid/os/TokenWatcher$Death;->this$0:Landroid/os/TokenWatcher;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 187
     iput-object p2, p0, Landroid/os/TokenWatcher$Death;->token:Landroid/os/IBinder;

@@ -69,11 +69,11 @@
 
     packed-switch v3, :pswitch_data_0
 
-    .line 594
+    .line 596
     :pswitch_0
     const/4 v3, 0x0
 
-    .line 597
+    .line 599
     :goto_0
     return v3
 
@@ -105,7 +105,7 @@
     :goto_1
     move v3, v4
 
-    .line 597
+    .line 599
     goto :goto_0
 
     .line 546
@@ -214,7 +214,7 @@
 
     packed-switch v3, :pswitch_data_1
 
-    .line 573
+    .line 575
     iget-object v3, p0, Landroid/net/wifi/WifiWatchdogStateMachine$WatchdogEnabledState;->this$0:Landroid/net/wifi/WifiWatchdogStateMachine;
 
     iget-object v5, p0, Landroid/net/wifi/WifiWatchdogStateMachine$WatchdogEnabledState;->this$0:Landroid/net/wifi/WifiWatchdogStateMachine;
@@ -361,6 +361,20 @@
 
     .line 570
     :pswitch_4
+    iget-object v5, p0, Landroid/net/wifi/WifiWatchdogStateMachine$WatchdogEnabledState;->this$0:Landroid/net/wifi/WifiWatchdogStateMachine;
+
+    const-string v3, "linkProperties"
+
+    invoke-virtual {v0, v3}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/net/LinkProperties;
+
+    #setter for: Landroid/net/wifi/WifiWatchdogStateMachine;->mLinkProperties:Landroid/net/LinkProperties;
+    invoke-static {v5, v3}, Landroid/net/wifi/WifiWatchdogStateMachine;->access$1602(Landroid/net/wifi/WifiWatchdogStateMachine;Landroid/net/LinkProperties;)Landroid/net/LinkProperties;
+
+    .line 572
     iget-object v3, p0, Landroid/net/wifi/WifiWatchdogStateMachine$WatchdogEnabledState;->this$0:Landroid/net/wifi/WifiWatchdogStateMachine;
 
     iget-object v5, p0, Landroid/net/wifi/WifiWatchdogStateMachine$WatchdogEnabledState;->this$0:Landroid/net/wifi/WifiWatchdogStateMachine;
@@ -375,7 +389,7 @@
 
     goto/16 :goto_1
 
-    .line 579
+    .line 581
     .end local v0           #intent:Landroid/content/Intent;
     .end local v1           #networkInfo:Landroid/net/NetworkInfo;
     :pswitch_5
@@ -383,7 +397,7 @@
 
     check-cast v0, Landroid/content/Intent;
 
-    .line 580
+    .line 582
     .restart local v0       #intent:Landroid/content/Intent;
     const-string/jumbo v3, "newState"
 
@@ -393,13 +407,13 @@
 
     check-cast v2, Landroid/net/wifi/SupplicantState;
 
-    .line 582
+    .line 584
     .local v2, supplicantState:Landroid/net/wifi/SupplicantState;
     sget-object v3, Landroid/net/wifi/SupplicantState;->COMPLETED:Landroid/net/wifi/SupplicantState;
 
     if-ne v2, v3, :cond_0
 
-    .line 583
+    .line 585
     iget-object v3, p0, Landroid/net/wifi/WifiWatchdogStateMachine$WatchdogEnabledState;->this$0:Landroid/net/wifi/WifiWatchdogStateMachine;
 
     iget-object v5, p0, Landroid/net/wifi/WifiWatchdogStateMachine$WatchdogEnabledState;->this$0:Landroid/net/wifi/WifiWatchdogStateMachine;
@@ -416,7 +430,7 @@
     #setter for: Landroid/net/wifi/WifiWatchdogStateMachine;->mWifiInfo:Landroid/net/wifi/WifiInfo;
     invoke-static {v3, v5}, Landroid/net/wifi/WifiWatchdogStateMachine;->access$1402(Landroid/net/wifi/WifiWatchdogStateMachine;Landroid/net/wifi/WifiInfo;)Landroid/net/wifi/WifiInfo;
 
-    .line 584
+    .line 586
     iget-object v3, p0, Landroid/net/wifi/WifiWatchdogStateMachine$WatchdogEnabledState;->this$0:Landroid/net/wifi/WifiWatchdogStateMachine;
 
     iget-object v5, p0, Landroid/net/wifi/WifiWatchdogStateMachine$WatchdogEnabledState;->this$0:Landroid/net/wifi/WifiWatchdogStateMachine;
@@ -435,7 +449,7 @@
 
     goto/16 :goto_1
 
-    .line 589
+    .line 591
     .end local v0           #intent:Landroid/content/Intent;
     .end local v2           #supplicantState:Landroid/net/wifi/SupplicantState;
     :pswitch_6
@@ -449,7 +463,7 @@
 
     if-nez v3, :cond_0
 
-    .line 590
+    .line 592
     iget-object v3, p0, Landroid/net/wifi/WifiWatchdogStateMachine$WatchdogEnabledState;->this$0:Landroid/net/wifi/WifiWatchdogStateMachine;
 
     iget-object v5, p0, Landroid/net/wifi/WifiWatchdogStateMachine$WatchdogEnabledState;->this$0:Landroid/net/wifi/WifiWatchdogStateMachine;
@@ -465,8 +479,6 @@
     goto/16 :goto_1
 
     .line 539
-    nop
-
     :pswitch_data_0
     .packed-switch 0x21001
         :pswitch_1

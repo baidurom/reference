@@ -34,7 +34,7 @@
     .line 1257
     iput-object p1, p0, Landroid/speech/tts/TextToSpeech$Connection;->this$0:Landroid/speech/tts/TextToSpeech;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1259
     new-instance v0, Landroid/speech/tts/TextToSpeech$Connection$1;

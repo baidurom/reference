@@ -33,6 +33,8 @@
 
 .field public static final config_automatic_brightness_available:I = #bool@config_automatic_brightness_available#t
 
+.field public static final config_bluetooth_adapter_quick_switch:I = #bool@config_bluetooth_adapter_quick_switch#t
+
 .field public static final config_bluetooth_address_validation:I = #bool@config_bluetooth_address_validation#t
 
 .field public static final config_bluetooth_default_profiles:I = #bool@config_bluetooth_default_profiles#t
@@ -161,8 +163,8 @@
     .locals 0
 
     .prologue
-    .line 11050
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 10972
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

@@ -29,10 +29,10 @@
     .parameter
 
     .prologue
-    .line 388
+    .line 398
     iput-object p1, p0, Lcom/android/server/connectivity/Vpn$Connection;->this$0:Lcom/android/server/connectivity/Vpn;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -43,7 +43,7 @@
     .parameter "x1"
 
     .prologue
-    .line 388
+    .line 398
     invoke-direct {p0, p1}, Lcom/android/server/connectivity/Vpn$Connection;-><init>(Lcom/android/server/connectivity/Vpn;)V
 
     return-void
@@ -54,7 +54,7 @@
     .parameter "x0"
 
     .prologue
-    .line 388
+    .line 398
     iget-object v0, p0, Lcom/android/server/connectivity/Vpn$Connection;->mService:Landroid/os/IBinder;
 
     return-object v0
@@ -68,10 +68,10 @@
     .parameter "service"
 
     .prologue
-    .line 393
+    .line 403
     iput-object p2, p0, Lcom/android/server/connectivity/Vpn$Connection;->mService:Landroid/os/IBinder;
 
-    .line 394
+    .line 404
     return-void
 .end method
 
@@ -80,11 +80,11 @@
     .parameter "name"
 
     .prologue
-    .line 398
+    .line 408
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/connectivity/Vpn$Connection;->mService:Landroid/os/IBinder;
 
-    .line 399
+    .line 409
     return-void
 .end method

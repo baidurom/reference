@@ -51,7 +51,7 @@
     .parameter
 
     .prologue
-    .line 765
+    .line 998
     iput-object p1, p0, Lcom/android/server/wm/WindowManagerService$2;->val$holder:[Lcom/android/server/wm/WindowManagerService;
 
     iput-object p2, p0, Lcom/android/server/wm/WindowManagerService$2;->val$context:Landroid/content/Context;
@@ -70,7 +70,7 @@
 
     iput-boolean p9, p0, Lcom/android/server/wm/WindowManagerService$2;->val$onlyCore:Z
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -81,7 +81,7 @@
     .locals 12
 
     .prologue
-    .line 768
+    .line 1001
     iget-object v10, p0, Lcom/android/server/wm/WindowManagerService$2;->val$holder:[Lcom/android/server/wm/WindowManagerService;
 
     const/4 v11, 0x0
@@ -110,6 +110,6 @@
 
     aput-object v0, v10, v11
 
-    .line 770
+    .line 1003
     return-void
 .end method

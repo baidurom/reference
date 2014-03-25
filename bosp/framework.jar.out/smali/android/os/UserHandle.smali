@@ -102,7 +102,7 @@
 
     .prologue
     .line 164
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 165
     iput p1, p0, Landroid/os/UserHandle;->mHandle:I
@@ -117,7 +117,7 @@
 
     .prologue
     .line 257
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 258
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I

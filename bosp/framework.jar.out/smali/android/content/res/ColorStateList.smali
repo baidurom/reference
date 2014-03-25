@@ -82,7 +82,7 @@
 
     .prologue
     .line 72
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 66
     const/high16 v0, -0x1
@@ -100,7 +100,7 @@
 
     .prologue
     .line 78
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 66
     const/high16 v1, -0x1
@@ -376,7 +376,7 @@
 
     move-result-object v22
 
-    const-string v23, "item"
+    const-string/jumbo v23, "item"
 
     invoke-virtual/range {v22 .. v23}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -985,7 +985,7 @@
 
     move-result-object v0
 
-    const-string v1, "mColors="
+    const-string/jumbo v1, "mColors="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1001,7 +1001,7 @@
 
     move-result-object v0
 
-    const-string v1, "mDefaultColor="
+    const-string/jumbo v1, "mDefaultColor="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

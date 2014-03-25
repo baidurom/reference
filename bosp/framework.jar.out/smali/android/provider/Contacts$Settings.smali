@@ -65,7 +65,7 @@
 
     .prologue
     .line 146
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -86,7 +86,7 @@
     const/4 v7, 0x0
 
     .line 203
-    const-string v3, "key=?"
+    const-string/jumbo v3, "key=?"
 
     .line 204
     .local v3, selectString:Ljava/lang/String;
@@ -170,7 +170,7 @@
 
     .line 229
     .local v0, values:Landroid/content/ContentValues;
-    const-string v1, "key"
+    const-string/jumbo v1, "key"
 
     invoke-virtual {v0, v1, p2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 

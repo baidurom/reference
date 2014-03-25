@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static final SERVICE_ACTION:Ljava/lang/String; = "com.google.android.location.GeocodeProvider"
+.field private static final SERVICE_ACTION:Ljava/lang/String; = "com.android.location.service.GeocodeProvider"
 
 .field private static final TAG:Ljava/lang/String; = "GeocoderProxy"
 
@@ -37,7 +37,7 @@
     const/4 v5, 0x0
 
     .line 51
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 52
     iput-object p1, p0, Lcom/android/server/location/GeocoderProxy;->mContext:Landroid/content/Context;
@@ -49,7 +49,7 @@
 
     const-string v2, "GeocoderProxy"
 
-    const-string v3, "com.google.android.location.GeocodeProvider"
+    const-string v3, "com.android.location.service.GeocodeProvider"
 
     move-object v4, p2
 

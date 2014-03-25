@@ -26,12 +26,12 @@
     .parameter
 
     .prologue
-    .line 1836
+    .line 1906
     iput-object p1, p0, Landroid/media/AudioManager$FocusEventHandlerDelegate;->this$0:Landroid/media/AudioManager;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1838
+    .line 1908
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v0
@@ -39,27 +39,27 @@
     .local v0, looper:Landroid/os/Looper;
     if-nez v0, :cond_0
 
-    .line 1839
+    .line 1909
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
     move-result-object v0
 
-    .line 1842
+    .line 1912
     :cond_0
     if-eqz v0, :cond_1
 
-    .line 1844
+    .line 1914
     new-instance v1, Landroid/media/AudioManager$FocusEventHandlerDelegate$1;
 
     invoke-direct {v1, p0, v0, p1}, Landroid/media/AudioManager$FocusEventHandlerDelegate$1;-><init>(Landroid/media/AudioManager$FocusEventHandlerDelegate;Landroid/os/Looper;Landroid/media/AudioManager;)V
 
     iput-object v1, p0, Landroid/media/AudioManager$FocusEventHandlerDelegate;->mHandler:Landroid/os/Handler;
 
-    .line 1859
+    .line 1929
     :goto_0
     return-void
 
-    .line 1857
+    .line 1927
     :cond_1
     const/4 v1, 0x0
 
@@ -74,7 +74,7 @@
     .locals 1
 
     .prologue
-    .line 1862
+    .line 1932
     iget-object v0, p0, Landroid/media/AudioManager$FocusEventHandlerDelegate;->mHandler:Landroid/os/Handler;
 
     return-object v0

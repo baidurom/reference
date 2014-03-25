@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 748
+    .line 824
     iput-object p1, p0, Lcom/android/server/net/NetworkStatsService$5;->this$0:Lcom/android/server/net/NetworkStatsService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -42,22 +42,22 @@
     .prologue
     const/4 v2, -0x1
 
-    .line 754
+    .line 830
     const-string v1, "android.intent.extra.UID"
 
     invoke-virtual {p2, v1, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v0
 
-    .line 755
+    .line 831
     .local v0, uid:I
     if-ne v0, v2, :cond_0
 
-    .line 765
+    .line 841
     :goto_0
     return-void
 
-    .line 757
+    .line 833
     :cond_0
     iget-object v1, p0, Lcom/android/server/net/NetworkStatsService$5;->this$0:Lcom/android/server/net/NetworkStatsService;
 
@@ -68,7 +68,7 @@
 
     monitor-enter v2
 
-    .line 758
+    .line 834
     :try_start_0
     iget-object v1, p0, Lcom/android/server/net/NetworkStatsService$5;->this$0:Lcom/android/server/net/NetworkStatsService;
 
@@ -81,7 +81,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 760
+    .line 836
     :try_start_1
     iget-object v1, p0, Lcom/android/server/net/NetworkStatsService$5;->this$0:Lcom/android/server/net/NetworkStatsService;
 
@@ -98,7 +98,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 762
+    .line 838
     :try_start_2
     iget-object v1, p0, Lcom/android/server/net/NetworkStatsService$5;->this$0:Lcom/android/server/net/NetworkStatsService;
 
@@ -109,7 +109,7 @@
 
     invoke-virtual {v1}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 764
+    .line 840
     monitor-exit v2
 
     goto :goto_0
@@ -123,7 +123,7 @@
 
     throw v1
 
-    .line 762
+    .line 838
     :catchall_1
     move-exception v1
 

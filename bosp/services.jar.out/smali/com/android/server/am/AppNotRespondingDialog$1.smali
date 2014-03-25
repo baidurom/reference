@@ -48,11 +48,11 @@
 
     packed-switch v3, :pswitch_data_0
 
-    .line 141
+    .line 138
     :goto_0
     if-eqz v1, :cond_0
 
-    .line 143
+    .line 140
     :try_start_0
     iget-object v3, p0, Lcom/android/server/am/AppNotRespondingDialog$1;->this$0:Lcom/android/server/am/AppNotRespondingDialog;
 
@@ -64,7 +64,7 @@
     :try_end_0
     .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 148
+    .line 145
     :cond_0
     :goto_1
     return-void
@@ -91,7 +91,7 @@
 
     goto :goto_0
 
-    .line 117
+    .line 116
     :pswitch_1
     iget-object v3, p0, Lcom/android/server/am/AppNotRespondingDialog$1;->this$0:Lcom/android/server/am/AppNotRespondingDialog;
 
@@ -110,7 +110,7 @@
 
     invoke-virtual {v3, v4, v5}, Lcom/android/server/am/AppNotRespondingDialog;->startBaiduReport(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 119
+    .line 117
     iget-object v3, p0, Lcom/android/server/am/AppNotRespondingDialog$1;->this$0:Lcom/android/server/am/AppNotRespondingDialog;
 
     #getter for: Lcom/android/server/am/AppNotRespondingDialog;->mService:Lcom/android/server/am/ActivityManagerService;
@@ -131,7 +131,7 @@
 
     goto :goto_0
 
-    .line 124
+    .line 121
     :pswitch_2
     iget-object v3, p0, Lcom/android/server/am/AppNotRespondingDialog$1;->this$0:Lcom/android/server/am/AppNotRespondingDialog;
 
@@ -142,7 +142,7 @@
 
     monitor-enter v4
 
-    .line 125
+    .line 122
     :try_start_1
     iget-object v3, p0, Lcom/android/server/am/AppNotRespondingDialog$1;->this$0:Lcom/android/server/am/AppNotRespondingDialog;
 
@@ -151,7 +151,7 @@
 
     move-result-object v0
 
-    .line 127
+    .line 124
     .local v0, app:Lcom/android/server/am/ProcessRecord;
     iget v3, p1, Landroid/os/Message;->what:I
 
@@ -159,7 +159,7 @@
 
     if-ne v3, v5, :cond_1
 
-    .line 128
+    .line 125
     iget-object v3, p0, Lcom/android/server/am/AppNotRespondingDialog$1;->this$0:Lcom/android/server/am/AppNotRespondingDialog;
 
     #getter for: Lcom/android/server/am/AppNotRespondingDialog;->mService:Lcom/android/server/am/ActivityManagerService;
@@ -177,30 +177,30 @@
 
     move-result-object v1
 
-    .line 132
+    .line 129
     :cond_1
     const/4 v3, 0x0
 
     iput-boolean v3, v0, Lcom/android/server/am/ProcessRecord;->notResponding:Z
 
-    .line 133
+    .line 130
     const/4 v3, 0x0
 
     iput-object v3, v0, Lcom/android/server/am/ProcessRecord;->notRespondingReport:Landroid/app/ActivityManager$ProcessErrorStateInfo;
 
-    .line 134
+    .line 131
     iget-object v3, v0, Lcom/android/server/am/ProcessRecord;->anrDialog:Landroid/app/Dialog;
 
     iget-object v5, p0, Lcom/android/server/am/AppNotRespondingDialog$1;->this$0:Lcom/android/server/am/AppNotRespondingDialog;
 
     if-ne v3, v5, :cond_2
 
-    .line 135
+    .line 132
     const/4 v3, 0x0
 
     iput-object v3, v0, Lcom/android/server/am/ProcessRecord;->anrDialog:Landroid/app/Dialog;
 
-    .line 137
+    .line 134
     :cond_2
     monitor-exit v4
 
@@ -216,11 +216,11 @@
 
     throw v3
 
-    .line 144
+    .line 141
     :catch_0
     move-exception v2
 
-    .line 145
+    .line 142
     .local v2, e:Landroid/content/ActivityNotFoundException;
     const-string v3, "AppNotRespondingDialog"
 

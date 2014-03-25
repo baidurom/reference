@@ -73,7 +73,7 @@
     .line 54
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 91
+    .line 95
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView$1;
 
     invoke-direct {v0, p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView$1;-><init>(Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView;)V
@@ -124,7 +124,7 @@
     .parameter "user"
 
     .prologue
-    .line 99
+    .line 103
     const v1, #layout@keyguard_multi_user_avatar#t
 
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView;->mContext:Landroid/content/Context;
@@ -133,13 +133,13 @@
 
     move-result-object v0
 
-    .line 101
+    .line 105
     .local v0, uv:Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserAvatar;
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView;->mUsersGrid:Landroid/view/ViewGroup;
 
     invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 102
+    .line 106
     return-object v0
 .end method
 
@@ -148,7 +148,7 @@
     .parameter "clickable"
 
     .prologue
-    .line 115
+    .line 119
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -161,28 +161,28 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 116
+    .line 120
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView;->mUsersGrid:Landroid/view/ViewGroup;
 
     invoke-virtual {v2, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 117
+    .line 121
     .local v1, v:Landroid/view/View;
     invoke-virtual {v1, p1}, Landroid/view/View;->setClickable(Z)V
 
-    .line 118
+    .line 122
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setPressed(Z)V
 
-    .line 115
+    .line 119
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 120
+    .line 124
     .end local v1           #v:Landroid/view/View;
     :cond_0
     return-void
@@ -209,7 +209,7 @@
 
     const/4 v8, 0x0
 
-    .line 72
+    .line 76
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -221,20 +221,20 @@
 
     move-result-object v0
 
-    .line 77
+    .line 81
     .local v0, activeUser:Landroid/content/pm/UserInfo;
     :goto_0
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4, p1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 78
+    .line 82
     .local v4, users:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/content/pm/UserInfo;>;"
     iget-object v6, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView;->mOrderAddedComparator:Ljava/util/Comparator;
 
     invoke-static {v4, v6}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 80
+    .line 84
     invoke-virtual {v4}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -253,13 +253,13 @@
 
     check-cast v3, Landroid/content/pm/UserInfo;
 
-    .line 81
+    .line 85
     .local v3, user:Landroid/content/pm/UserInfo;
     invoke-direct {p0, v3}, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView;->createAndAddUser(Landroid/content/pm/UserInfo;)Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserAvatar;
 
     move-result-object v5
 
-    .line 82
+    .line 86
     .local v5, uv:Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserAvatar;
     iget v6, v3, Landroid/content/pm/UserInfo;->id:I
 
@@ -267,10 +267,10 @@
 
     if-ne v6, v7, :cond_0
 
-    .line 83
+    .line 87
     iput-object v5, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView;->mActiveUserAvatar:Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserAvatar;
 
-    .line 84
+    .line 88
     iget-object v6, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView;->mActiveUserAvatar:Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserAvatar;
 
     const/4 v7, 0x1
@@ -279,7 +279,7 @@
 
     goto :goto_1
 
-    .line 73
+    .line 77
     .end local v0           #activeUser:Landroid/content/pm/UserInfo;
     .end local v1           #i$:Ljava/util/Iterator;
     .end local v3           #user:Landroid/content/pm/UserInfo;
@@ -288,14 +288,14 @@
     :catch_0
     move-exception v2
 
-    .line 74
+    .line 78
     .local v2, re:Landroid/os/RemoteException;
     const/4 v0, 0x0
 
     .restart local v0       #activeUser:Landroid/content/pm/UserInfo;
     goto :goto_0
 
-    .line 86
+    .line 90
     .end local v2           #re:Landroid/os/RemoteException;
     .restart local v1       #i$:Ljava/util/Iterator;
     .restart local v3       #user:Landroid/content/pm/UserInfo;
@@ -306,7 +306,7 @@
 
     goto :goto_1
 
-    .line 89
+    .line 93
     .end local v3           #user:Landroid/content/pm/UserInfo;
     .end local v5           #uv:Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserAvatar;
     :cond_1
@@ -320,12 +320,12 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 124
+    .line 128
     instance-of v1, p1, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserAvatar;
 
     if-nez v1, :cond_1
 
-    .line 158
+    .line 162
     :cond_0
     :goto_0
     return-void
@@ -333,10 +333,10 @@
     :cond_1
     move-object v0, p1
 
-    .line 125
+    .line 129
     check-cast v0, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserAvatar;
 
-    .line 126
+    .line 130
     .local v0, avatar:Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserAvatar;
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserAvatar;->isClickable()Z
 
@@ -344,19 +344,19 @@
 
     if-eqz v1, :cond_0
 
-    .line 127
+    .line 131
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView;->mActiveUserAvatar:Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserAvatar;
 
     if-ne v1, v0, :cond_2
 
-    .line 129
+    .line 133
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$UserSwitcherCallback;
 
     invoke-interface {v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$UserSwitcherCallback;->showUnlockHint()V
 
     goto :goto_0
 
-    .line 133
+    .line 137
     :cond_2
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$UserSwitcherCallback;
 
@@ -364,10 +364,10 @@
 
     invoke-interface {v1, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$UserSwitcherCallback;->hideSecurityView(I)V
 
-    .line 134
+    .line 138
     invoke-direct {p0, v4}, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView;->setAllClickable(Z)V
 
-    .line 135
+    .line 139
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView;->mActiveUserAvatar:Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserAvatar;
 
     const/4 v2, 0x1
@@ -382,34 +382,47 @@
 .end method
 
 .method protected onFinishInflate()V
-    .locals 2
+    .locals 3
 
     .prologue
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     .line 58
     const v0, #id@keyguard_users_grid#t
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/ViewGroup;
-
-    iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView;->mUsersGrid:Landroid/view/ViewGroup;
-
     .line 59
-    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView;->mUsersGrid:Landroid/view/ViewGroup;
+    .local v0, resId:I
+    invoke-static {}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->isAlarmBoot()Z
 
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->removeAllViews()V
+    move-result v1
+
+    if-eqz v1, :cond_0
 
     .line 60
-    invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView;->setClipChildren(Z)V
+    const v0, 0x2100030
 
-    .line 61
-    invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView;->setClipToPadding(Z)V
+    .line 62
+    :cond_0
+    invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/view/ViewGroup;
+
+    iput-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView;->mUsersGrid:Landroid/view/ViewGroup;
 
     .line 63
+    iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView;->mUsersGrid:Landroid/view/ViewGroup;
+
+    invoke-virtual {v1}, Landroid/view/ViewGroup;->removeAllViews()V
+
+    .line 64
+    invoke-virtual {p0, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView;->setClipChildren(Z)V
+
+    .line 65
+    invoke-virtual {p0, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView;->setClipToPadding(Z)V
+
+    .line 67
     return-void
 .end method
 
@@ -418,7 +431,7 @@
     .parameter "event"
 
     .prologue
-    .line 107
+    .line 111
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
@@ -431,12 +444,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 108
+    .line 112
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$UserSwitcherCallback;
 
     invoke-interface {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$UserSwitcherCallback;->userActivity()V
 
-    .line 110
+    .line 114
     :cond_0
     const/4 v0, 0x0
 
@@ -448,9 +461,9 @@
     .parameter "callback"
 
     .prologue
-    .line 66
+    .line 70
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$UserSwitcherCallback;
 
-    .line 67
+    .line 71
     return-void
 .end method

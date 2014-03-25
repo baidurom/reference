@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 3431
+    .line 3921
     iput-object p1, p0, Lcom/android/server/wm/WindowManagerService$4;->this$0:Lcom/android/server/wm/WindowManagerService;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -44,15 +44,15 @@
     .prologue
     const/high16 v1, 0x3e80
 
-    .line 3434
+    .line 3924
     cmpg-float v0, p1, v1
 
     if-gez v0, :cond_0
 
-    .line 3436
+    .line 3926
     div-float v0, p1, v1
 
-    .line 3439
+    .line 3929
     :goto_0
     return v0
 

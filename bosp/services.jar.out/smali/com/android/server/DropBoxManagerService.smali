@@ -2013,7 +2013,7 @@
     if-eqz v19, :cond_3
 
     :try_start_4
-    throw v19
+    invoke-virtual/range {v19 .. v19}, Ljava/io/OutputStream;->close()V
     :try_end_4
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_4
 

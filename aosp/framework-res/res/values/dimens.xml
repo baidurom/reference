@@ -116,8 +116,7 @@
     <dimen name="keyguard_avatar_frame_shadow_radius">1.0dip</dimen>
     <dimen name="keyguard_avatar_size">66.0dip</dimen>
     <dimen name="keyguard_avatar_name_size">10.0sp</dimen>
-    <dimen name="kg_edge_swipe_region_size">24.0dip</dimen>
+    <dimen name="kg_edge_swipe_region_size">12.0dip</dimen>
     <dimen name="kg_squashed_layout_threshold">600.0dip</dimen>
     <dimen name="kg_small_widget_height">160.0dip</dimen>
-    <item type="dimen" name="APKTOOL_DUMMY_0078">false</item>
 </resources>

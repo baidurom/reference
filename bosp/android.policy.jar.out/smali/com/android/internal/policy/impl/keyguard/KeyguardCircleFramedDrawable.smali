@@ -511,7 +511,7 @@
     .locals 1
 
     .prologue
-    .line 150
+    .line 151
     const/4 v0, -0x3
 
     return v0
@@ -521,7 +521,7 @@
     .locals 1
 
     .prologue
-    .line 141
+    .line 142
     iget v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardCircleFramedDrawable;->mScale:F
 
     return v0
@@ -532,7 +532,7 @@
     .parameter "alpha"
 
     .prologue
-    .line 155
+    .line 156
     return-void
 .end method
 
@@ -541,7 +541,7 @@
     .parameter "cf"
 
     .prologue
-    .line 159
+    .line 160
     return-void
 .end method
 
@@ -550,21 +550,44 @@
     .parameter "pressed"
 
     .prologue
-    .line 145
+    .line 146
     iput-boolean p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardCircleFramedDrawable;->mPressed:Z
 
-    .line 146
+    .line 147
     return-void
 .end method
 
 .method public setScale(F)V
-    .locals 0
+    .locals 3
     .parameter "scale"
 
     .prologue
     .line 137
-    iput p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardCircleFramedDrawable;->mScale:F
+    const-string v0, "KFD"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "scale: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 138
+    iput p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardCircleFramedDrawable;->mScale:F
+
+    .line 139
     return-void
 .end method

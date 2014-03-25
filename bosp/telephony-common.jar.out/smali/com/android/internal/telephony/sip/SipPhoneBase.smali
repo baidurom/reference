@@ -87,6 +87,19 @@
 
 
 # virtual methods
+.method public acceptCall()V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/android/internal/telephony/CallStateException;
+        }
+    .end annotation
+
+    .prologue
+    .line 509
+    return-void
+.end method
+
 .method public activateCellBroadcastSms(ILandroid/os/Message;)V
     .locals 2
     .parameter "activate"
@@ -334,6 +347,31 @@
     goto/16 :goto_0
 .end method
 
+.method public changeBarringPassword(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
+    .locals 0
+    .parameter "facility"
+    .parameter "oldPwd"
+    .parameter "newPwd"
+    .parameter "onComplete"
+
+    .prologue
+    .line 527
+    return-void
+.end method
+
+.method public changeBarringPassword(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
+    .locals 0
+    .parameter "facility"
+    .parameter "oldPwd"
+    .parameter "newPwd"
+    .parameter "newCfm"
+    .parameter "onComplete"
+
+    .prologue
+    .line 529
+    return-void
+.end method
+
 .method public dial(Ljava/lang/String;Lcom/android/internal/telephony/UUSInfo;)Lcom/android/internal/telephony/Connection;
     .locals 1
     .parameter "dialString"
@@ -387,6 +425,34 @@
     .prologue
     .line 386
     return-void
+.end method
+
+.method public getAccumulatedCallMeter(Landroid/os/Message;)V
+    .locals 0
+    .parameter "result"
+
+    .prologue
+    .line 486
+    return-void
+.end method
+
+.method public getAccumulatedCallMeterMaximum(Landroid/os/Message;)V
+    .locals 0
+    .parameter "result"
+
+    .prologue
+    .line 489
+    return-void
+.end method
+
+.method public getActiveApnType()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 534
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method public getAllCellInfo()Ljava/util/List;
@@ -487,6 +553,15 @@
     const/4 v0, 0x0
 
     return-object v0
+.end method
+
+.method public getCurrentCallMeter(Landroid/os/Message;)V
+    .locals 0
+    .parameter "result"
+
+    .prologue
+    .line 483
+    return-void
 .end method
 
 .method public getCurrentDataConnectionList()Ljava/util/List;
@@ -595,6 +670,17 @@
     return-object v0
 .end method
 
+.method public getFacilityLock(Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
+    .locals 0
+    .parameter "facility"
+    .parameter "password"
+    .parameter "onComplete"
+
+    .prologue
+    .line 523
+    return-void
+.end method
+
 .method public abstract getForegroundCall()Lcom/android/internal/telephony/Call;
 .end method
 
@@ -648,6 +734,17 @@
     return-object v0
 .end method
 
+.method public getIccServiceStatus(Lcom/android/internal/telephony/Phone$IccService;)Lcom/android/internal/telephony/Phone$IccServiceStatus;
+    .locals 1
+    .parameter "enService"
+
+    .prologue
+    .line 477
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
 .method public getIccSmsInterfaceManager()Lcom/android/internal/telephony/IccSmsInterfaceManager;
     .locals 1
 
@@ -666,6 +763,16 @@
     const/4 v0, 0x0
 
     return-object v0
+.end method
+
+.method public getLastCallFailCause()I
+    .locals 1
+
+    .prologue
+    .line 585
+    const/4 v0, 0x0
+
+    return v0
 .end method
 
 .method public getLine1AlphaTag()Ljava/lang/String;
@@ -752,6 +859,15 @@
     return-void
 .end method
 
+.method public getPdpContextList(Landroid/os/Message;)V
+    .locals 0
+    .parameter "response"
+
+    .prologue
+    .line 538
+    return-void
+.end method
+
 .method public getPendingMmiCodes()Ljava/util/List;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
@@ -795,7 +911,26 @@
     return v0
 .end method
 
+.method public getPpuAndCurrency(Landroid/os/Message;)V
+    .locals 0
+    .parameter "result"
+
+    .prologue
+    .line 492
+    return-void
+.end method
+
 .method public abstract getRingingCall()Lcom/android/internal/telephony/Call;
+.end method
+
+.method public getSN()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 480
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method public getServiceState()Landroid/telephony/ServiceState;
@@ -869,6 +1004,57 @@
     return-object v0
 .end method
 
+.method public getVtCallForwardingOption(ILandroid/os/Message;)V
+    .locals 2
+    .parameter "commandInterfaceCFReason"
+    .parameter "onComplete"
+
+    .prologue
+    .line 556
+    const-string v0, "SipPhone"
+
+    const-string v1, "getVtCallForwardingOption: not possible in Sip"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 557
+    return-void
+.end method
+
+.method public getVtCallWaiting(Landroid/os/Message;)V
+    .locals 2
+    .parameter "onComplete"
+
+    .prologue
+    .line 568
+    const-string v0, "SipPhone"
+
+    const-string v1, "getVtCallWaiting: not possible in Sip"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 569
+    return-void
+.end method
+
+.method public getVtFacilityLock(Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
+    .locals 2
+    .parameter "facility"
+    .parameter "password"
+    .parameter "onComplete"
+
+    .prologue
+    .line 576
+    const-string v0, "SipPhone"
+
+    const-string v1, "getVtFacilityLock: not possible in Sip"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 577
+    return-void
+.end method
+
 .method public handleInCallMmiCommands(Ljava/lang/String;)Z
     .locals 1
     .parameter "dialString"
@@ -896,11 +1082,48 @@
     return v0
 .end method
 
+.method public hangupActiveCall()V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/android/internal/telephony/CallStateException;
+        }
+    .end annotation
+
+    .prologue
+    .line 521
+    return-void
+.end method
+
+.method public hangupAll()V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/android/internal/telephony/CallStateException;
+        }
+    .end annotation
+
+    .prologue
+    .line 518
+    return-void
+.end method
+
 .method public isDataConnectivityPossible()Z
     .locals 1
 
     .prologue
     .line 407
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public isDataConnectivityPossible(Ljava/lang/String;)Z
+    .locals 1
+    .parameter "apnType"
+
+    .prologue
+    .line 531
     const/4 v0, 0x0
 
     return v0
@@ -1166,7 +1389,18 @@
     .locals 0
 
     .prologue
-    .line 477
+    .line 591
+    return-void
+.end method
+
+.method public registerForCrssSuppServiceNotification(Landroid/os/Handler;ILjava/lang/Object;)V
+    .locals 0
+    .parameter "h"
+    .parameter "what"
+    .parameter "obj"
+
+    .prologue
+    .line 504
     return-void
 .end method
 
@@ -1197,6 +1431,29 @@
     return-void
 .end method
 
+.method public rejectCall()V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/android/internal/telephony/CallStateException;
+        }
+    .end annotation
+
+    .prologue
+    .line 512
+    return-void
+.end method
+
+.method public resetAccumulatedCallMeter(Ljava/lang/String;Landroid/os/Message;)V
+    .locals 0
+    .parameter "pin2"
+    .parameter "result"
+
+    .prologue
+    .line 498
+    return-void
+.end method
+
 .method public saveClirSetting(I)V
     .locals 0
     .parameter "commandInterfaceCLIRMode"
@@ -1222,6 +1479,17 @@
 
     .prologue
     .line 249
+    return-void
+.end method
+
+.method public setAccumulatedCallMeterMaximum(Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
+    .locals 0
+    .parameter "acmmax"
+    .parameter "pin2"
+    .parameter "result"
+
+    .prologue
+    .line 495
     return-void
 .end method
 
@@ -1278,6 +1546,18 @@
 
     .prologue
     .line 396
+    return-void
+.end method
+
+.method public setFacilityLock(Ljava/lang/String;ZLjava/lang/String;Landroid/os/Message;)V
+    .locals 0
+    .parameter "facility"
+    .parameter "enable"
+    .parameter "password"
+    .parameter "onComplete"
+
+    .prologue
+    .line 525
     return-void
 .end method
 
@@ -1338,12 +1618,34 @@
     return-void
 .end method
 
+.method public setPpuAndCurrency(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
+    .locals 0
+    .parameter "currency"
+    .parameter "ppu"
+    .parameter "pin2"
+    .parameter "result"
+
+    .prologue
+    .line 501
+    return-void
+.end method
+
 .method public setRadioPower(Z)V
     .locals 0
     .parameter "power"
 
     .prologue
     .line 259
+    return-void
+.end method
+
+.method public setRadioPower(ZZ)V
+    .locals 0
+    .parameter "power"
+    .parameter "shutdown"
+
+    .prologue
+    .line 540
     return-void
 .end method
 
@@ -1363,6 +1665,62 @@
     invoke-virtual {p3}, Landroid/os/Message;->sendToTarget()V
 
     .line 318
+    return-void
+.end method
+
+.method public setVtCallForwardingOption(IILjava/lang/String;ILandroid/os/Message;)V
+    .locals 2
+    .parameter "commandInterfaceCFAction"
+    .parameter "commandInterfaceCFReason"
+    .parameter "dialingNumber"
+    .parameter "timerSeconds"
+    .parameter "onComplete"
+
+    .prologue
+    .line 564
+    const-string v0, "SipPhone"
+
+    const-string v1, "setVtCallForwardingOption: not possible in Sip"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 565
+    return-void
+.end method
+
+.method public setVtCallWaiting(ZLandroid/os/Message;)V
+    .locals 2
+    .parameter "enable"
+    .parameter "onComplete"
+
+    .prologue
+    .line 572
+    const-string v0, "SipPhone"
+
+    const-string v1, "setVtCallWaiting: not possible in Sip"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 573
+    return-void
+.end method
+
+.method public setVtFacilityLock(Ljava/lang/String;ZLjava/lang/String;Landroid/os/Message;)V
+    .locals 2
+    .parameter "facility"
+    .parameter "enable"
+    .parameter "password"
+    .parameter "onComplete"
+
+    .prologue
+    .line 580
+    const-string v0, "SipPhone"
+
+    const-string v1, "setVtFacilityLock: not possible in Sip"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 581
     return-void
 .end method
 
@@ -1409,6 +1767,28 @@
     invoke-virtual {v1, v0}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
 
     .line 114
+    return-void
+.end method
+
+.method public switchHoldingAndActive()V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/android/internal/telephony/CallStateException;
+        }
+    .end annotation
+
+    .prologue
+    .line 515
+    return-void
+.end method
+
+.method public unregisterForCrssSuppServiceNotification(Landroid/os/Handler;)V
+    .locals 0
+    .parameter "h"
+
+    .prologue
+    .line 506
     return-void
 .end method
 
@@ -1551,4 +1931,57 @@
     .prologue
     .line 383
     return-void
+.end method
+
+.method public voiceAccept()V
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/android/internal/telephony/CallStateException;
+        }
+    .end annotation
+
+    .prologue
+    .line 552
+    const-string v0, "SipPhone"
+
+    const-string v1, "voiceAccept: not possible in Sip"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 553
+    return-void
+.end method
+
+.method public vtDial(Ljava/lang/String;)Lcom/android/internal/telephony/Connection;
+    .locals 1
+    .parameter "dialString"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/android/internal/telephony/CallStateException;
+        }
+    .end annotation
+
+    .prologue
+    .line 544
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
+.method public vtDial(Ljava/lang/String;Lcom/android/internal/telephony/UUSInfo;)Lcom/android/internal/telephony/Connection;
+    .locals 1
+    .parameter "dialString"
+    .parameter "uusInfo"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/android/internal/telephony/CallStateException;
+        }
+    .end annotation
+
+    .prologue
+    .line 548
+    const/4 v0, 0x0
+
+    return-object v0
 .end method

@@ -31,12 +31,12 @@
     .parameter
 
     .prologue
-    .line 216
+    .line 196
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetCarousel$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetCarousel;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 217
+    .line 197
     new-instance v0, Landroid/view/animation/AccelerateInterpolator;
 
     const/high16 v1, 0x3fc0
@@ -45,7 +45,7 @@
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetCarousel$2;->mInternal:Landroid/view/animation/Interpolator;
 
-    .line 218
+    .line 198
     const v0, 0x3fa66666
 
     iput v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetCarousel$2;->mFactor:F
@@ -62,7 +62,7 @@
     .prologue
     const/high16 v1, 0x3f80
 
-    .line 221
+    .line 201
     iget v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetCarousel$2;->mFactor:F
 
     div-float v0, v1, v0
@@ -71,7 +71,7 @@
 
     sub-float/2addr p1, v0
 
-    .line 222
+    .line 202
     iget v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetCarousel$2;->mFactor:F
 
     const/4 v1, 0x0
@@ -82,7 +82,7 @@
 
     mul-float p1, v0, v1
 
-    .line 223
+    .line 203
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetCarousel$2;->mInternal:Landroid/view/animation/Interpolator;
 
     invoke-interface {v0, p1}, Landroid/view/animation/Interpolator;->getInterpolation(F)F

@@ -25,32 +25,99 @@
 
 # virtual methods
 .method protected getEFPath(I)Ljava/lang/String;
-    .locals 1
+    .locals 3
     .parameter "efid"
 
     .prologue
     .line 54
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "getEFPath "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v1}, Lcom/android/internal/telephony/cdma/RuimFileHandler;->logd(Ljava/lang/String;)V
+
+    .line 57
     sparse-switch p1, :sswitch_data_0
 
-    .line 65
+    .line 79
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/cdma/RuimFileHandler;->getCommonIccEFPath(I)Ljava/lang/String;
 
     move-result-object v0
 
+    .line 83
+    .local v0, path:Ljava/lang/String;
     :goto_0
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "path "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v1}, Lcom/android/internal/telephony/cdma/RuimFileHandler;->logd(Ljava/lang/String;)V
+
+    .line 84
     return-object v0
 
-    .line 63
+    .line 66
+    .end local v0           #path:Ljava/lang/String;
     :sswitch_0
     const-string v0, "3F007F25"
 
+    .line 67
+    .restart local v0       #path:Ljava/lang/String;
     goto :goto_0
 
-    .line 54
+    .line 71
+    .end local v0           #path:Ljava/lang/String;
+    :sswitch_1
+    const-string v0, "3F00"
+
+    .line 72
+    .restart local v0       #path:Ljava/lang/String;
+    goto :goto_0
+
+    .line 75
+    .end local v0           #path:Ljava/lang/String;
+    :sswitch_2
+    const-string v0, "3F007F20"
+
+    .line 76
+    .restart local v0       #path:Ljava/lang/String;
+    goto :goto_0
+
+    .line 57
     nop
 
     :sswitch_data_0
     .sparse-switch
+        0x2fe2 -> :sswitch_1
+        0x6f07 -> :sswitch_2
         0x6f22 -> :sswitch_0
         0x6f28 -> :sswitch_0
         0x6f32 -> :sswitch_0
@@ -60,6 +127,20 @@
         0x6f44 -> :sswitch_0
         0x6f5a -> :sswitch_0
     .end sparse-switch
+.end method
+
+.method protected getEFPath(IZ)Ljava/lang/String;
+    .locals 1
+    .parameter "efid"
+    .parameter "is7FFF"
+
+    .prologue
+    .line 89
+    invoke-virtual {p0, p1}, Lcom/android/internal/telephony/cdma/RuimFileHandler;->getEFPath(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public loadEFImgTransparent(IIIILandroid/os/Message;)V
@@ -115,7 +196,7 @@
     .parameter "msg"
 
     .prologue
-    .line 70
+    .line 94
     const-string v0, "CDMA"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -138,7 +219,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 71
+    .line 95
     return-void
 .end method
 
@@ -147,7 +228,7 @@
     .parameter "msg"
 
     .prologue
-    .line 75
+    .line 99
     const-string v0, "CDMA"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -170,6 +251,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 76
+    .line 100
     return-void
 .end method

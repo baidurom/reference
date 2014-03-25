@@ -1,69 +1,105 @@
-.class Lcom/android/server/am/ActivityManagerService$15;
-.super Landroid/content/IIntentReceiver$Stub;
+.class final Lcom/android/server/am/ActivityManagerService$15;
+.super Ljava/lang/Object;
 .source "ActivityManagerService.java"
+
+# interfaces
+.implements Ljava/util/Comparator;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/am/ActivityManagerService;->switchUser(I)Z
+    value = Lcom/android/server/am/ActivityManagerService;->dumpMemItems(Ljava/io/PrintWriter;Ljava/lang/String;Ljava/util/ArrayList;Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x8
     name = null
 .end annotation
 
-
-# instance fields
-.field final synthetic this$0:Lcom/android/server/am/ActivityManagerService;
-
-.field final synthetic val$userId:I
-
-.field final synthetic val$uss:Lcom/android/server/am/UserStartedState;
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Ljava/util/Comparator",
+        "<",
+        "Lcom/android/server/am/ActivityManagerService$MemItem;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
-.method constructor <init>(Lcom/android/server/am/ActivityManagerService;Lcom/android/server/am/UserStartedState;I)V
+.method constructor <init>()V
     .locals 0
-    .parameter
-    .parameter
-    .parameter
 
     .prologue
-    .line 14318
-    iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$15;->this$0:Lcom/android/server/am/ActivityManagerService;
-
-    iput-object p2, p0, Lcom/android/server/am/ActivityManagerService$15;->val$uss:Lcom/android/server/am/UserStartedState;
-
-    iput p3, p0, Lcom/android/server/am/ActivityManagerService$15;->val$userId:I
-
-    invoke-direct {p0}, Landroid/content/IIntentReceiver$Stub;-><init>()V
+    .line 11372
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public performReceive(Landroid/content/Intent;ILjava/lang/String;Landroid/os/Bundle;ZZI)V
-    .locals 3
-    .parameter "intent"
-    .parameter "resultCode"
-    .parameter "data"
-    .parameter "extras"
-    .parameter "ordered"
-    .parameter "sticky"
-    .parameter "sendingUser"
+.method public compare(Lcom/android/server/am/ActivityManagerService$MemItem;Lcom/android/server/am/ActivityManagerService$MemItem;)I
+    .locals 4
+    .parameter "lhs"
+    .parameter "rhs"
 
     .prologue
-    .line 14322
-    iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$15;->this$0:Lcom/android/server/am/ActivityManagerService;
+    .line 11375
+    iget-wide v0, p1, Lcom/android/server/am/ActivityManagerService$MemItem;->pss:J
 
-    iget-object v1, p0, Lcom/android/server/am/ActivityManagerService$15;->val$uss:Lcom/android/server/am/UserStartedState;
+    iget-wide v2, p2, Lcom/android/server/am/ActivityManagerService$MemItem;->pss:J
 
-    iget v2, p0, Lcom/android/server/am/ActivityManagerService$15;->val$userId:I
+    cmp-long v0, v0, v2
 
-    invoke-virtual {v0, v1, v2}, Lcom/android/server/am/ActivityManagerService;->userInitialized(Lcom/android/server/am/UserStartedState;I)V
+    if-gez v0, :cond_0
 
-    .line 14323
-    return-void
+    .line 11376
+    const/4 v0, 0x1
+
+    .line 11380
+    :goto_0
+    return v0
+
+    .line 11377
+    :cond_0
+    iget-wide v0, p1, Lcom/android/server/am/ActivityManagerService$MemItem;->pss:J
+
+    iget-wide v2, p2, Lcom/android/server/am/ActivityManagerService$MemItem;->pss:J
+
+    cmp-long v0, v0, v2
+
+    if-lez v0, :cond_1
+
+    .line 11378
+    const/4 v0, -0x1
+
+    goto :goto_0
+
+    .line 11380
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 1
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 11372
+    check-cast p1, Lcom/android/server/am/ActivityManagerService$MemItem;
+
+    .end local p1
+    check-cast p2, Lcom/android/server/am/ActivityManagerService$MemItem;
+
+    .end local p2
+    invoke-virtual {p0, p1, p2}, Lcom/android/server/am/ActivityManagerService$15;->compare(Lcom/android/server/am/ActivityManagerService$MemItem;Lcom/android/server/am/ActivityManagerService$MemItem;)I
+
+    move-result v0
+
+    return v0
 .end method

@@ -21,5 +21,11 @@
 .method public abstract onProximityPositive()V
 .end method
 
+.method public abstract onSbProximityNegative()V
+.end method
+
+.method public abstract onSbProximityPositive()V
+.end method
+
 .method public abstract onStateChanged()V
 .end method

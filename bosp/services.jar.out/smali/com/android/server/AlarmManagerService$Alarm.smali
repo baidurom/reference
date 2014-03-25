@@ -35,26 +35,26 @@
     .prologue
     const-wide/16 v1, 0x0
 
-    .line 1027
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 1220
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1024
+    .line 1217
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/AlarmManagerService$Alarm;->isPoweroffAlarm:Z
 
-    .line 1028
+    .line 1221
     iput-wide v1, p0, Lcom/android/server/AlarmManagerService$Alarm;->when:J
 
-    .line 1029
+    .line 1222
     iput-wide v1, p0, Lcom/android/server/AlarmManagerService$Alarm;->repeatInterval:J
 
-    .line 1030
+    .line 1223
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/AlarmManagerService$Alarm;->operation:Landroid/app/PendingIntent;
 
-    .line 1031
+    .line 1224
     return-void
 .end method
 
@@ -67,7 +67,7 @@
     .parameter "now"
 
     .prologue
-    .line 1048
+    .line 1241
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "type="
@@ -78,7 +78,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 1049
+    .line 1242
     const-string v0, " when="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -87,7 +87,7 @@
 
     invoke-static {v0, v1, p3, p4, p1}, Landroid/util/TimeUtils;->formatDuration(JJLjava/io/PrintWriter;)V
 
-    .line 1050
+    .line 1243
     const-string v0, " repeatInterval="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -96,7 +96,7 @@
 
     invoke-virtual {p1, v0, v1}, Ljava/io/PrintWriter;->print(J)V
 
-    .line 1051
+    .line 1244
     const-string v0, " count="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -105,7 +105,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 1052
+    .line 1245
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "operation="
@@ -116,7 +116,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 1053
+    .line 1246
     return-void
 .end method
 
@@ -124,20 +124,20 @@
     .locals 2
 
     .prologue
-    .line 1036
+    .line 1229
     new-instance v0, Ljava/lang/StringBuilder;
 
     const/16 v1, 0x80
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 1037
+    .line 1230
     .local v0, sb:Ljava/lang/StringBuilder;
     const-string v1, "Alarm{"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1038
+    .line 1231
     invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
     move-result v1
@@ -148,22 +148,22 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1039
+    .line 1232
     const-string v1, " type "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1040
+    .line 1233
     iget v1, p0, Lcom/android/server/AlarmManagerService$Alarm;->type:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 1041
+    .line 1234
     const-string v1, " "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1042
+    .line 1235
     iget-object v1, p0, Lcom/android/server/AlarmManagerService$Alarm;->operation:Landroid/app/PendingIntent;
 
     invoke-virtual {v1}, Landroid/app/PendingIntent;->getTargetPackage()Ljava/lang/String;
@@ -172,12 +172,12 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1043
+    .line 1236
     const/16 v1, 0x7d
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 1044
+    .line 1237
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1

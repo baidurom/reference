@@ -50,7 +50,7 @@
     .prologue
     .line 60
     .local p0, this:Landroid/net/LinkProperties$CompareResult;,"Landroid/net/LinkProperties$CompareResult<TT;>;"
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 61
     new-instance v0, Ljava/util/ArrayList;

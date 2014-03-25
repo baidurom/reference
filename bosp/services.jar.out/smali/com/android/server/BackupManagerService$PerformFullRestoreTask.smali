@@ -117,7 +117,7 @@
     .line 3007
     iput-object p1, p0, Lcom/android/server/BackupManagerService$PerformFullRestoreTask;->this$0:Lcom/android/server/BackupManagerService;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2988
     iput-object v1, p0, Lcom/android/server/BackupManagerService$PerformFullRestoreTask;->mPipes:[Landroid/os/ParcelFileDescriptor;
@@ -5213,13 +5213,13 @@
     if-eqz v12, :cond_1
 
     :try_start_1
-    throw v12
+    invoke-virtual {v12}, Ljava/io/DataInputStream;->close()V
 
     .line 3133
     :cond_1
     if-eqz v14, :cond_2
 
-    throw v14
+    invoke-virtual {v14}, Ljava/io/FileInputStream;->close()V
 
     .line 3134
     :cond_2

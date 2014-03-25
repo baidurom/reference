@@ -41,7 +41,7 @@
 
     .prologue
     .line 58
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 47
     new-instance v0, Landroid/os/Bundle;
@@ -88,12 +88,12 @@
     .locals 1
 
     .prologue
-    .line 121
+    .line 126
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/location/MockProvider;->mHasLocation:Z
 
-    .line 122
+    .line 127
     return-void
 .end method
 
@@ -101,17 +101,17 @@
     .locals 2
 
     .prologue
-    .line 135
+    .line 140
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/location/MockProvider;->mHasStatus:Z
 
-    .line 136
+    .line 141
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/android/server/location/MockProvider;->mStatusUpdateTime:J
 
-    .line 137
+    .line 142
     return-void
 .end method
 
@@ -135,12 +135,12 @@
     .parameter "args"
 
     .prologue
-    .line 141
+    .line 146
     const-string v0, ""
 
     invoke-virtual {p0, p2, v0}, Lcom/android/server/location/MockProvider;->dump(Ljava/io/PrintWriter;Ljava/lang/String;)V
 
-    .line 142
+    .line 147
     return-void
 .end method
 
@@ -150,7 +150,7 @@
     .parameter "prefix"
 
     .prologue
-    .line 145
+    .line 150
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -171,7 +171,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 146
+    .line 151
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -198,7 +198,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 147
+    .line 152
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -219,7 +219,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 148
+    .line 153
     iget-object v0, p0, Lcom/android/server/location/MockProvider;->mLocation:Landroid/location/Location;
 
     new-instance v1, Landroid/util/PrintWriterPrinter;
@@ -246,7 +246,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/location/Location;->dump(Landroid/util/Printer;Ljava/lang/String;)V
 
-    .line 149
+    .line 154
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -273,7 +273,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 150
+    .line 155
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -300,7 +300,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 151
+    .line 156
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -327,7 +327,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 152
+    .line 157
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -354,7 +354,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 153
+    .line 158
     return-void
 .end method
 
@@ -448,60 +448,76 @@
     .parameter "extras"
 
     .prologue
-    .line 165
+    .line 170
     const/4 v0, 0x0
 
     return v0
 .end method
 
 .method public setLocation(Landroid/location/Location;)V
-    .locals 4
+    .locals 5
     .parameter "l"
 
     .prologue
+    const/4 v3, 0x1
+
     .line 109
-    iget-object v1, p0, Lcom/android/server/location/MockProvider;->mLocation:Landroid/location/Location;
-
-    invoke-virtual {v1, p1}, Landroid/location/Location;->set(Landroid/location/Location;)V
-
-    .line 110
-    const/4 v1, 0x1
-
-    iput-boolean v1, p0, Lcom/android/server/location/MockProvider;->mHasLocation:Z
-
-    .line 111
-    iget-boolean v1, p0, Lcom/android/server/location/MockProvider;->mEnabled:Z
-
-    if-eqz v1, :cond_0
-
-    .line 113
-    :try_start_0
-    iget-object v1, p0, Lcom/android/server/location/MockProvider;->mLocationManager:Landroid/location/ILocationManager;
-
     iget-object v2, p0, Lcom/android/server/location/MockProvider;->mLocation:Landroid/location/Location;
 
-    const/4 v3, 0x0
+    invoke-virtual {v2, p1}, Landroid/location/Location;->set(Landroid/location/Location;)V
 
-    invoke-interface {v1, v2, v3}, Landroid/location/ILocationManager;->reportLocation(Landroid/location/Location;Z)V
+    .line 111
+    new-instance v1, Landroid/os/Bundle;
+
+    invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
+
+    .line 112
+    .local v1, extras:Landroid/os/Bundle;
+    const-string v2, "Mock"
+
+    invoke-virtual {v1, v2, v3}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+
+    .line 113
+    iget-object v2, p0, Lcom/android/server/location/MockProvider;->mLocation:Landroid/location/Location;
+
+    invoke-virtual {v2, v1}, Landroid/location/Location;->setExtras(Landroid/os/Bundle;)V
+
+    .line 115
+    iput-boolean v3, p0, Lcom/android/server/location/MockProvider;->mHasLocation:Z
+
+    .line 116
+    iget-boolean v2, p0, Lcom/android/server/location/MockProvider;->mEnabled:Z
+
+    if-eqz v2, :cond_0
+
+    .line 118
+    :try_start_0
+    iget-object v2, p0, Lcom/android/server/location/MockProvider;->mLocationManager:Landroid/location/ILocationManager;
+
+    iget-object v3, p0, Lcom/android/server/location/MockProvider;->mLocation:Landroid/location/Location;
+
+    const/4 v4, 0x0
+
+    invoke-interface {v2, v3, v4}, Landroid/location/ILocationManager;->reportLocation(Landroid/location/Location;Z)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 118
+    .line 123
     :cond_0
     :goto_0
     return-void
 
-    .line 114
+    .line 119
     :catch_0
     move-exception v0
 
-    .line 115
+    .line 120
     .local v0, e:Landroid/os/RemoteException;
-    const-string v1, "MockProvider"
+    const-string v2, "MockProvider"
 
-    const-string v2, "RemoteException calling reportLocation"
+    const-string v3, "RemoteException calling reportLocation"
 
-    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 .end method
@@ -512,7 +528,7 @@
     .parameter "source"
 
     .prologue
-    .line 156
+    .line 161
     return-void
 .end method
 
@@ -523,32 +539,32 @@
     .parameter "updateTime"
 
     .prologue
-    .line 125
+    .line 130
     iput p1, p0, Lcom/android/server/location/MockProvider;->mStatus:I
 
-    .line 126
+    .line 131
     iput-wide p3, p0, Lcom/android/server/location/MockProvider;->mStatusUpdateTime:J
 
-    .line 127
+    .line 132
     iget-object v0, p0, Lcom/android/server/location/MockProvider;->mExtras:Landroid/os/Bundle;
 
     invoke-virtual {v0}, Landroid/os/Bundle;->clear()V
 
-    .line 128
+    .line 133
     if-eqz p2, :cond_0
 
-    .line 129
+    .line 134
     iget-object v0, p0, Lcom/android/server/location/MockProvider;->mExtras:Landroid/os/Bundle;
 
     invoke-virtual {v0, p2}, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V
 
-    .line 131
+    .line 136
     :cond_0
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/location/MockProvider;->mHasStatus:Z
 
-    .line 132
+    .line 137
     return-void
 .end method
 
@@ -557,6 +573,6 @@
     .parameter "userId"
 
     .prologue
-    .line 161
+    .line 166
     return-void
 .end method

@@ -30,12 +30,12 @@
     .parameter
 
     .prologue
-    .line 76
+    .line 78
     iput-object p1, p0, Landroid/location/CountryDetector$ListenerTransport$1;->this$0:Landroid/location/CountryDetector$ListenerTransport;
 
     iput-object p2, p0, Landroid/location/CountryDetector$ListenerTransport$1;->val$country:Landroid/location/Country;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -46,7 +46,7 @@
     .locals 2
 
     .prologue
-    .line 78
+    .line 80
     iget-object v0, p0, Landroid/location/CountryDetector$ListenerTransport$1;->this$0:Landroid/location/CountryDetector$ListenerTransport;
 
     #getter for: Landroid/location/CountryDetector$ListenerTransport;->mListener:Landroid/location/CountryListener;
@@ -58,6 +58,6 @@
 
     invoke-interface {v0, v1}, Landroid/location/CountryListener;->onCountryDetected(Landroid/location/Country;)V
 
-    .line 79
+    .line 81
     return-void
 .end method

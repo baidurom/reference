@@ -4,6 +4,12 @@
 
 
 # static fields
+.field public static final EXTRA_TYPE_HDMI_MHL:I = 0x1
+
+.field public static final EXTRA_TYPE_LCM:I = 0x0
+
+.field public static final EXTRA_TYPE_SMARTBOOK:I = 0x2
+
 .field public static final FLAG_DEFAULT_DISPLAY:I = 0x1
 
 .field public static final FLAG_ROTATES_WITH_CONTENT:I = 0x2
@@ -34,6 +40,8 @@
 
 .field public rotation:I
 
+.field public subtype:I
+
 .field public touch:I
 
 .field public type:I
@@ -50,13 +58,16 @@
     .locals 1
 
     .prologue
-    .line 28
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-
-    .line 140
     const/4 v0, 0x0
 
+    .line 28
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 147
     iput v0, p0, Lcom/android/server/display/DisplayDeviceInfo;->rotation:I
+
+    .line 161
+    iput v0, p0, Lcom/android/server/display/DisplayDeviceInfo;->subtype:I
 
     return-void
 .end method
@@ -66,56 +77,56 @@
     .parameter "flags"
 
     .prologue
-    .line 229
+    .line 240
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 230
+    .line 241
     .local v0, msg:Ljava/lang/StringBuilder;
     and-int/lit8 v1, p0, 0x1
 
     if-eqz v1, :cond_0
 
-    .line 231
+    .line 242
     const-string v1, ", FLAG_DEFAULT_DISPLAY"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 233
+    .line 244
     :cond_0
     and-int/lit8 v1, p0, 0x2
 
     if-eqz v1, :cond_1
 
-    .line 234
+    .line 245
     const-string v1, ", FLAG_ROTATES_WITH_CONTENT"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 236
+    .line 247
     :cond_1
     and-int/lit8 v1, p0, 0x4
 
     if-eqz v1, :cond_2
 
-    .line 237
+    .line 248
     const-string v1, ", FLAG_SECURE"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 239
+    .line 250
     :cond_2
     and-int/lit8 v1, p0, 0x8
 
     if-eqz v1, :cond_3
 
-    .line 240
+    .line 251
     const-string v1, ", FLAG_SUPPORTS_PROTECTED_BUFFERS"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 242
+    .line 253
     :cond_3
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -129,10 +140,10 @@
     .parameter "touch"
 
     .prologue
-    .line 216
+    .line 227
     packed-switch p0, :pswitch_data_0
 
-    .line 224
+    .line 235
     invoke-static {p0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
@@ -140,25 +151,25 @@
     :goto_0
     return-object v0
 
-    .line 218
+    .line 229
     :pswitch_0
     const-string v0, "NONE"
 
     goto :goto_0
 
-    .line 220
+    .line 231
     :pswitch_1
     const-string v0, "INTERNAL"
 
     goto :goto_0
 
-    .line 222
+    .line 233
     :pswitch_2
     const-string v0, "EXTERNAL"
 
     goto :goto_0
 
-    .line 216
+    .line 227
     nop
 
     :pswitch_data_0
@@ -176,67 +187,67 @@
     .parameter "other"
 
     .prologue
-    .line 188
+    .line 198
     iget-object v0, p1, Lcom/android/server/display/DisplayDeviceInfo;->name:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/android/server/display/DisplayDeviceInfo;->name:Ljava/lang/String;
 
-    .line 189
+    .line 199
     iget v0, p1, Lcom/android/server/display/DisplayDeviceInfo;->width:I
 
     iput v0, p0, Lcom/android/server/display/DisplayDeviceInfo;->width:I
 
-    .line 190
+    .line 200
     iget v0, p1, Lcom/android/server/display/DisplayDeviceInfo;->height:I
 
     iput v0, p0, Lcom/android/server/display/DisplayDeviceInfo;->height:I
 
-    .line 191
+    .line 201
     iget v0, p1, Lcom/android/server/display/DisplayDeviceInfo;->refreshRate:F
 
     iput v0, p0, Lcom/android/server/display/DisplayDeviceInfo;->refreshRate:F
 
-    .line 192
+    .line 202
     iget v0, p1, Lcom/android/server/display/DisplayDeviceInfo;->densityDpi:I
 
     iput v0, p0, Lcom/android/server/display/DisplayDeviceInfo;->densityDpi:I
 
-    .line 193
+    .line 203
     iget v0, p1, Lcom/android/server/display/DisplayDeviceInfo;->xDpi:F
 
     iput v0, p0, Lcom/android/server/display/DisplayDeviceInfo;->xDpi:F
 
-    .line 194
+    .line 204
     iget v0, p1, Lcom/android/server/display/DisplayDeviceInfo;->yDpi:F
 
     iput v0, p0, Lcom/android/server/display/DisplayDeviceInfo;->yDpi:F
 
-    .line 195
+    .line 205
     iget v0, p1, Lcom/android/server/display/DisplayDeviceInfo;->flags:I
 
     iput v0, p0, Lcom/android/server/display/DisplayDeviceInfo;->flags:I
 
-    .line 196
+    .line 206
     iget v0, p1, Lcom/android/server/display/DisplayDeviceInfo;->touch:I
 
     iput v0, p0, Lcom/android/server/display/DisplayDeviceInfo;->touch:I
 
-    .line 197
+    .line 207
     iget v0, p1, Lcom/android/server/display/DisplayDeviceInfo;->rotation:I
 
     iput v0, p0, Lcom/android/server/display/DisplayDeviceInfo;->rotation:I
 
-    .line 198
+    .line 208
     iget v0, p1, Lcom/android/server/display/DisplayDeviceInfo;->type:I
 
     iput v0, p0, Lcom/android/server/display/DisplayDeviceInfo;->type:I
 
-    .line 199
+    .line 209
     iget-object v0, p1, Lcom/android/server/display/DisplayDeviceInfo;->address:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/android/server/display/DisplayDeviceInfo;->address:Ljava/lang/String;
 
-    .line 200
+    .line 210
     return-void
 .end method
 
@@ -245,7 +256,7 @@
     .parameter "other"
 
     .prologue
-    .line 167
+    .line 177
     if-eqz p1, :cond_0
 
     iget-object v0, p0, Lcom/android/server/display/DisplayDeviceInfo;->name:Ljava/lang/String;
@@ -350,7 +361,7 @@
     .parameter "o"
 
     .prologue
-    .line 163
+    .line 173
     instance-of v0, p1, Lcom/android/server/display/DisplayDeviceInfo;
 
     if-eqz v0, :cond_0
@@ -379,7 +390,7 @@
     .locals 1
 
     .prologue
-    .line 184
+    .line 194
     const/4 v0, 0x0
 
     return v0
@@ -391,7 +402,7 @@
     .parameter "height"
 
     .prologue
-    .line 154
+    .line 164
     invoke-static {p1, p2}, Ljava/lang/Math;->min(II)I
 
     move-result v0
@@ -402,21 +413,21 @@
 
     iput v0, p0, Lcom/android/server/display/DisplayDeviceInfo;->densityDpi:I
 
-    .line 157
+    .line 167
     iget v0, p0, Lcom/android/server/display/DisplayDeviceInfo;->densityDpi:I
 
     int-to-float v0, v0
 
     iput v0, p0, Lcom/android/server/display/DisplayDeviceInfo;->xDpi:F
 
-    .line 158
+    .line 168
     iget v0, p0, Lcom/android/server/display/DisplayDeviceInfo;->densityDpi:I
 
     int-to-float v0, v0
 
     iput v0, p0, Lcom/android/server/display/DisplayDeviceInfo;->yDpi:F
 
-    .line 159
+    .line 169
     return-void
 .end method
 
@@ -424,7 +435,7 @@
     .locals 2
 
     .prologue
-    .line 205
+    .line 215
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -588,6 +599,18 @@
     iget-object v1, p0, Lcom/android/server/display/DisplayDeviceInfo;->address:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", subtype "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget v1, p0, Lcom/android/server/display/DisplayDeviceInfo;->subtype:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

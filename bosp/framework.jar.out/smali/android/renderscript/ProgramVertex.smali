@@ -35,7 +35,7 @@
     .line 72
     if-ltz p1, :cond_0
 
-    iget-object v0, p0, Landroid/renderscript/Program;->mInputs:[Landroid/renderscript/Element;
+    iget-object v0, p0, Landroid/renderscript/ProgramVertex;->mInputs:[Landroid/renderscript/Element;
 
     array-length v0, v0
 
@@ -53,7 +53,7 @@
 
     .line 75
     :cond_1
-    iget-object v0, p0, Landroid/renderscript/Program;->mInputs:[Landroid/renderscript/Element;
+    iget-object v0, p0, Landroid/renderscript/ProgramVertex;->mInputs:[Landroid/renderscript/Element;
 
     aget-object v0, v0, p1
 
@@ -65,11 +65,11 @@
 
     .prologue
     .line 63
-    iget-object v0, p0, Landroid/renderscript/Program;->mInputs:[Landroid/renderscript/Element;
+    iget-object v0, p0, Landroid/renderscript/ProgramVertex;->mInputs:[Landroid/renderscript/Element;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Landroid/renderscript/Program;->mInputs:[Landroid/renderscript/Element;
+    iget-object v0, p0, Landroid/renderscript/ProgramVertex;->mInputs:[Landroid/renderscript/Element;
 
     array-length v0, v0
 

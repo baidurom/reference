@@ -58,7 +58,7 @@
     if-eqz v0, :cond_0
 
     .line 24
-    iget-wide v0, p0, Landroid/animation/ValueAnimator;->mStartTime:J
+    iget-wide v0, p0, Landroid/animation/TimeAnimator;->mStartTime:J
 
     sub-long v2, p1, v0
 

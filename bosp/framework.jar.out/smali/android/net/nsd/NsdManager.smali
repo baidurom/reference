@@ -117,7 +117,7 @@
     const/4 v1, 0x1
 
     .line 233
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 216
     iput v1, p0, Landroid/net/nsd/NsdManager;->mListenerKey:I
@@ -139,7 +139,7 @@
     .line 219
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/net/nsd/NsdManager;->mMapLock:Ljava/lang/Object;
 
@@ -470,7 +470,7 @@
     .local v0, e:Ljava/lang/InterruptedException;
     const-string v3, "NsdManager"
 
-    const-string v4, "interrupted wait at init"
+    const-string/jumbo v4, "interrupted wait at init"
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -596,7 +596,7 @@
     .line 520
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    const-string v2, "listener cannot be null"
+    const-string/jumbo v2, "listener cannot be null"
 
     invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -723,7 +723,7 @@
     .line 465
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "listener cannot be null"
+    const-string/jumbo v1, "listener cannot be null"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -806,7 +806,7 @@
     .line 572
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "listener cannot be null"
+    const-string/jumbo v1, "listener cannot be null"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -884,7 +884,7 @@
     .line 553
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    const-string v2, "listener cannot be null"
+    const-string/jumbo v2, "listener cannot be null"
 
     invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -921,7 +921,7 @@
     .line 486
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    const-string v2, "listener not registered"
+    const-string/jumbo v2, "listener not registered"
 
     invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -934,7 +934,7 @@
     .line 489
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    const-string v2, "listener cannot be null"
+    const-string/jumbo v2, "listener cannot be null"
 
     invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

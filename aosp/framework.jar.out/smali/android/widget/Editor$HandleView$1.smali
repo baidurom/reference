@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 3030
+    .line 3064
     iput-object p1, p0, Landroid/widget/Editor$HandleView$1;->this$1:Landroid/widget/Editor$HandleView;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,13 +41,13 @@
     .locals 1
 
     .prologue
-    .line 3032
+    .line 3066
     iget-object v0, p0, Landroid/widget/Editor$HandleView$1;->this$1:Landroid/widget/Editor$HandleView;
 
     iget-object v0, v0, Landroid/widget/Editor$HandleView;->mActionPopupWindow:Landroid/widget/Editor$ActionPopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/Editor$ActionPopupWindow;->show()V
 
-    .line 3033
+    .line 3067
     return-void
 .end method

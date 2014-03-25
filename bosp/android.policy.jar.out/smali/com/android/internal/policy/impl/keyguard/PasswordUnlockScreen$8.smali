@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 524
+    .line 536
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen$8;->this$0:Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,7 +41,7 @@
     .locals 3
 
     .prologue
-    .line 542
+    .line 554
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen$8;->this$0:Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;
 
     const/high16 v1, 0x42b4
@@ -49,7 +49,7 @@
     #calls: Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;->ShowInputLayoutAnimation(F)V
     invoke-static {v0, v1}, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;->access$1100(Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;F)V
 
-    .line 543
+    .line 555
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen$8;->this$0:Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;->mPasswordEntry:Landroid/widget/EditText;
@@ -61,7 +61,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 544
+    .line 556
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen$8;->this$0:Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen$8;->this$0:Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;
@@ -76,7 +76,7 @@
     #calls: Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;->sendToUbcServerForCount(Landroid/content/Context;B)V
     invoke-static {v0, v1, v2}, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;->access$1300(Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;Landroid/content/Context;B)V
 
-    .line 545
+    .line 557
     return-void
 .end method
 
@@ -84,7 +84,7 @@
     .locals 3
 
     .prologue
-    .line 535
+    .line 547
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen$8;->this$0:Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
@@ -96,7 +96,7 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;->userActivity(J)V
 
-    .line 536
+    .line 548
     return-void
 .end method
 
@@ -104,7 +104,7 @@
     .locals 2
 
     .prologue
-    .line 528
+    .line 540
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen$8;->this$0:Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
@@ -116,7 +116,7 @@
 
     invoke-interface {v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;->dismiss(Z)V
 
-    .line 529
+    .line 541
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen$8;->this$0:Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
@@ -126,11 +126,11 @@
 
     invoke-interface {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;->reportSuccessfulUnlockAttempt()V
 
-    .line 530
+    .line 542
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen$8;->this$0:Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;->sendToUbcServerForSearchUnlockTime()V
 
-    .line 531
+    .line 543
     return-void
 .end method

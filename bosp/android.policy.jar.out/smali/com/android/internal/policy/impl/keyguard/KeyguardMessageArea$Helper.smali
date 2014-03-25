@@ -28,7 +28,7 @@
 
     .prologue
     .line 88
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 89
     const v0, #id@keyguard_message_area#t

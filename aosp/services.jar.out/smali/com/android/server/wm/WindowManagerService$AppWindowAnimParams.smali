@@ -35,16 +35,16 @@
     .parameter "appAnimator"
 
     .prologue
-    .line 623
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 707
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 624
+    .line 708
     iput-object p1, p0, Lcom/android/server/wm/WindowManagerService$AppWindowAnimParams;->mAppAnimator:Lcom/android/server/wm/AppWindowAnimator;
 
-    .line 626
+    .line 710
     iget-object v1, p1, Lcom/android/server/wm/AppWindowAnimator;->mAppToken:Lcom/android/server/wm/AppWindowToken;
 
-    .line 627
+    .line 711
     .local v1, atoken:Lcom/android/server/wm/AppWindowToken;
     new-instance v3, Ljava/util/ArrayList;
 
@@ -52,14 +52,14 @@
 
     iput-object v3, p0, Lcom/android/server/wm/WindowManagerService$AppWindowAnimParams;->mWinAnimators:Ljava/util/ArrayList;
 
-    .line 628
+    .line 712
     iget-object v3, v1, Lcom/android/server/wm/AppWindowToken;->allAppWindows:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 629
+    .line 713
     .local v0, N:I
     const/4 v2, 0x0
 
@@ -67,7 +67,7 @@
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 630
+    .line 714
     iget-object v4, p0, Lcom/android/server/wm/WindowManagerService$AppWindowAnimParams;->mWinAnimators:Ljava/util/ArrayList;
 
     iget-object v3, v1, Lcom/android/server/wm/AppWindowToken;->allAppWindows:Ljava/util/ArrayList;
@@ -82,12 +82,12 @@
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 629
+    .line 713
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 632
+    .line 716
     :cond_0
     return-void
 .end method

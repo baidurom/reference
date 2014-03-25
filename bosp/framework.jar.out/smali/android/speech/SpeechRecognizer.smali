@@ -81,7 +81,7 @@
 
     .prologue
     .line 153
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 120
     new-instance v0, Landroid/speech/SpeechRecognizer$1;
@@ -655,7 +655,7 @@
     .line 258
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
-    const-string v3, "intent must not be null"
+    const-string/jumbo v3, "intent must not be null"
 
     invoke-direct {v2, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

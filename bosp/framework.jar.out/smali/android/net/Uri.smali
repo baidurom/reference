@@ -132,7 +132,7 @@
 
     .prologue
     .line 133
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -1006,7 +1006,7 @@
     .line 1665
     new-instance v8, Ljava/lang/NullPointerException;
 
-    const-string v9, "key"
+    const-string/jumbo v9, "key"
 
     invoke-direct {v8, v9}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
@@ -1325,7 +1325,7 @@
     .line 1602
     new-instance v8, Ljava/lang/NullPointerException;
 
-    const-string v9, "key"
+    const-string/jumbo v9, "key"
 
     invoke-direct {v8, v9}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 

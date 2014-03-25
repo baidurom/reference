@@ -69,7 +69,7 @@
     .local p0, this:Lcom/android/server/power/RampAnimator;,"Lcom/android/server/power/RampAnimator<TT;>;"
     .local p1, object:Ljava/lang/Object;,"TT;"
     .local p2, property:Landroid/util/IntProperty;,"Landroid/util/IntProperty<TT;>;"
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 40
     const/4 v0, 0x1

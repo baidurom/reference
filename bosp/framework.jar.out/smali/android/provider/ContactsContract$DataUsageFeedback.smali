@@ -19,6 +19,12 @@
 
 .field public static final FEEDBACK_URI:Landroid/net/Uri; = null
 
+.field public static final SIM_CONTACT_STATUS:Ljava/lang/String; = "sim_contact_status"
+
+.field public static final SIM_CONTACT_STATUS_LOADING:I = 0x1
+
+.field public static final SIM_CONTACT_STATUS_NORMAL:I = 0x0
+
 .field public static final USAGE_TYPE:Ljava/lang/String; = "type"
 
 .field public static final USAGE_TYPE_CALL:Ljava/lang/String; = "call"
@@ -33,7 +39,7 @@
     .locals 2
 
     .prologue
-    .line 7568
+    .line 7755
     sget-object v0, Landroid/provider/ContactsContract$Data;->CONTENT_URI:Landroid/net/Uri;
 
     const-string/jumbo v1, "usagefeedback"
@@ -44,7 +50,7 @@
 
     sput-object v0, Landroid/provider/ContactsContract$DataUsageFeedback;->FEEDBACK_URI:Landroid/net/Uri;
 
-    .line 7576
+    .line 7763
     sget-object v0, Landroid/provider/ContactsContract$Contacts;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v1, "delete_usage"
@@ -62,8 +68,8 @@
     .locals 0
 
     .prologue
-    .line 7562
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 7749
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

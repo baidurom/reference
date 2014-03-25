@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 206
+    .line 391
     iput-object p1, p0, Lcom/android/server/power/ShutdownThread$4;->val$context:Landroid/content/Context;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -38,45 +38,30 @@
 
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 3
+    .locals 1
     .parameter "dialog"
     .parameter "which"
 
     .prologue
-    .line 208
-    if-gez p2, :cond_1
-
-    .line 214
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 210
-    :cond_1
-    iget-object v1, p0, Lcom/android/server/power/ShutdownThread$4;->val$context:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    const v2, #array@shutdown_reboot_actions#t
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
+    .line 393
+    invoke-static {}, Lcom/android/server/power/ShutdownThread;->access$200()Landroid/app/AlertDialog;
 
     move-result-object v0
 
-    .line 212
-    .local v0, actions:[Ljava/lang/String;
     if-eqz v0, :cond_0
 
-    array-length v1, v0
+    .line 394
+    const/4 v0, 0x0
 
-    if-ge p2, v1, :cond_0
+    invoke-static {v0}, Lcom/android/server/power/ShutdownThread;->access$202(Landroid/app/AlertDialog;)Landroid/app/AlertDialog;
 
-    .line 213
-    aget-object v1, v0, p2
+    .line 396
+    :cond_0
+    iget-object v0, p0, Lcom/android/server/power/ShutdownThread$4;->val$context:Landroid/content/Context;
 
-    invoke-static {v1}, Lcom/android/server/power/ShutdownThread;->access$202(Ljava/lang/String;)Ljava/lang/String;
+    #calls: Lcom/android/server/power/ShutdownThread;->beginShutdownSequence(Landroid/content/Context;)V
+    invoke-static {v0}, Lcom/android/server/power/ShutdownThread;->access$400(Landroid/content/Context;)V
 
-    goto :goto_0
+    .line 397
+    return-void
 .end method

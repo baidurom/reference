@@ -2650,7 +2650,7 @@
     .local v5, e:Ljava/lang/Exception;
     const-string v13, "DynamicPermissionService"
 
-    const-string v14, "insert log failed."
+    const-string/jumbo v14, "insert log failed."
 
     invoke-static {v13, v14}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 

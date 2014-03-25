@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 989
+    .line 991
     iput-object p1, p0, Lcom/android/server/sip/SipSessionGroup$SipSessionImpl$2$1;->this$2:Lcom/android/server/sip/SipSessionGroup$SipSessionImpl$2;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,7 +41,7 @@
     .locals 1
 
     .prologue
-    .line 997
+    .line 999
     iget-object v0, p0, Lcom/android/server/sip/SipSessionGroup$SipSessionImpl$2$1;->this$2:Lcom/android/server/sip/SipSessionGroup$SipSessionImpl$2;
 
     iget-object v0, v0, Lcom/android/server/sip/SipSessionGroup$SipSessionImpl$2;->this$1:Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;
@@ -60,7 +60,7 @@
     .locals 1
 
     .prologue
-    .line 1001
+    .line 1003
     iget-object v0, p0, Lcom/android/server/sip/SipSessionGroup$SipSessionImpl$2$1;->this$2:Lcom/android/server/sip/SipSessionGroup$SipSessionImpl$2;
 
     iget-object v0, v0, Lcom/android/server/sip/SipSessionGroup$SipSessionImpl$2;->this$1:Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;
@@ -83,7 +83,7 @@
     .locals 2
 
     .prologue
-    .line 991
+    .line 993
     iget-object v1, p0, Lcom/android/server/sip/SipSessionGroup$SipSessionImpl$2$1;->this$2:Lcom/android/server/sip/SipSessionGroup$SipSessionImpl$2;
 
     iget-object v1, v1, Lcom/android/server/sip/SipSessionGroup$SipSessionImpl$2;->this$1:Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;
@@ -99,7 +99,7 @@
 
     move-result-object v0
 
-    .line 992
+    .line 994
     .local v0, username:Ljava/lang/String;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 

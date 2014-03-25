@@ -155,6 +155,8 @@
 
 .field public static final keyguard_screen_password_portrait:I = #layout@keyguard_screen_password_portrait#t
 
+.field public static final keyguard_screen_password_portrait_gemini:I = #layout@keyguard_screen_password_portrait_gemini#t
+
 .field public static final keyguard_screen_sim_pin_landscape:I = #layout@keyguard_screen_sim_pin_landscape#t
 
 .field public static final keyguard_screen_sim_pin_portrait:I = #layout@keyguard_screen_sim_pin_portrait#t
@@ -170,6 +172,8 @@
 .field public static final keyguard_screen_unlock_landscape:I = #layout@keyguard_screen_unlock_landscape#t
 
 .field public static final keyguard_screen_unlock_portrait:I = #layout@keyguard_screen_unlock_portrait#t
+
+.field public static final keyguard_screen_unlock_portrait_gemini:I = #layout@keyguard_screen_unlock_portrait_gemini#t
 
 .field public static final keyguard_selector_view:I = #layout@keyguard_selector_view#t
 
@@ -405,14 +409,16 @@
 
 .field public static final zz_keyguard_transport_control:I = #layout@zz_keyguard_transport_control#t
 
+.field public static final zz_keyguard_voice_unlock_view:I = #layout@zz_keyguard_voice_unlock_view#t
+
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 13003
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 12929
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

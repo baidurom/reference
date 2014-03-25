@@ -37,7 +37,7 @@
     invoke-virtual {p0, p1, p2}, Landroid/filterfw/core/FinalPort;->checkFrameType(Landroid/filterfw/core/Frame;Z)V
 
     .line 35
-    iget-object v0, p0, Landroid/filterfw/core/FilterPort;->mFilter:Landroid/filterfw/core/Filter;
+    iget-object v0, p0, Landroid/filterfw/core/FinalPort;->mFilter:Landroid/filterfw/core/Filter;
 
     invoke-virtual {v0}, Landroid/filterfw/core/Filter;->getStatus()I
 

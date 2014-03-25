@@ -186,7 +186,7 @@
 
     .line 210
     .local v0, extras:Landroid/os/Bundle;
-    const-string v1, "initialize"
+    const-string/jumbo v1, "initialize"
 
     const/4 v2, 0x1
 
@@ -261,7 +261,7 @@
 
     if-eqz p4, :cond_2
 
-    const-string v1, "initialize"
+    const-string/jumbo v1, "initialize"
 
     const/4 v2, 0x0
 

@@ -27,13 +27,13 @@
     .parameter "foc"
 
     .prologue
-    .line 452
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 439
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 453
+    .line 440
     iput p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager$ZInterpolator;->focalLength:F
 
-    .line 454
+    .line 441
     return-void
 .end method
 
@@ -46,7 +46,7 @@
     .prologue
     const/high16 v3, 0x3f80
 
-    .line 457
+    .line 444
     iget v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager$ZInterpolator;->focalLength:F
 
     iget v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager$ZInterpolator;->focalLength:F

@@ -167,6 +167,42 @@
     return-wide v0
 .end method
 
+.method public getSwitchedUserId()I
+    .locals 3
+
+    .prologue
+    .line 377
+    :try_start_0
+    iget-object v1, p0, Landroid/os/UserManager;->mService:Landroid/os/IUserManager;
+
+    invoke-interface {v1}, Landroid/os/IUserManager;->getSwitchedUserId()I
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v1
+
+    .line 381
+    :goto_0
+    return v1
+
+    .line 378
+    :catch_0
+    move-exception v0
+
+    .line 379
+    .local v0, re:Landroid/os/RemoteException;
+    sget-object v1, Landroid/os/UserManager;->TAG:Ljava/lang/String;
+
+    const-string v2, "Could not getSwitchedUserId for user "
+
+    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 381
+    const/4 v1, 0x0
+
+    goto :goto_0
+.end method
+
 .method public getUserCount()I
     .locals 2
 

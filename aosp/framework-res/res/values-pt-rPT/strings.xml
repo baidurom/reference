@@ -271,7 +271,7 @@
     <string name="permgrouplab_display">IU de Outras Aplicações</string>
     <string name="permgroupdesc_display">Afetar a IU de outras aplicações.</string>
     <string name="permgrouplab_storage">Armazenamento</string>
-    <string name="permgroupdesc_storage">Aceder ao armazenamento USB.</string>
+    <string name="permgroupdesc_storage">Aceder ao cartão SD.</string>
     <string name="permlab_statusBar">desactivar ou modificar barra de estado</string>
     <string name="permdesc_statusBar">Permite à aplicação desativar a barra de estado ou adicionar e remover ícones do sistema.</string>
     <string name="permlab_statusBarService">barra de estado</string>
@@ -486,9 +486,9 @@
     <string name="permdesc_brick">Permite que a aplicação desative definitivamente todo o telemóvel. Esta ação é muito perigosa.</string>
     <string name="permlab_reboot">forçar reinício do telefone</string>
     <string name="permdesc_reboot">Permite que a aplicação force o reinício do telemóvel.</string>
-    <string name="permlab_mount_unmount_filesystems">aceder ao sistema de ficheiros da memória USB</string>
+    <string name="permlab_mount_unmount_filesystems">aceder ao sistema de ficheiros do Cartão SD</string>
     <string name="permdesc_mount_unmount_filesystems">Permite à aplicação montar e desmontar sistemas de ficheiros para armazenamento amovível.</string>
-    <string name="permlab_mount_format_filesystems">apagar armazenamento USB</string>
+    <string name="permlab_mount_format_filesystems">apagar Cartão SD</string>
     <string name="permdesc_mount_format_filesystems">Permite à aplicação formatar o armazenamento amovível.</string>
     <string name="permlab_asec_access">obter informações sobre o armazenamento interno</string>
     <string name="permdesc_asec_access">Permite à aplicação obter informações sobre o armazenamento interno.</string>
@@ -597,9 +597,9 @@
     <string name="permlab_writeDictionary">adicionar palavras ao dicionário definido pelo utilizador</string>
     <string name="permdesc_writeDictionary">Permite à aplicação escrever novas palavras no dicionário do utilizador.</string>
     <string name="permlab_sdcardRead">testar o acesso a armazenamento protegido</string>
-    <string name="permdesc_sdcardRead">Permite que a aplicação teste uma autorização para a memória USB que irá estar disponível em dispositivos futuros.</string>
-    <string name="permlab_sdcardWrite">modificar ou eliminar os conteúdos da memória USB</string>
-    <string name="permdesc_sdcardWrite">Permite que a aplicação escreva na unidade de armazenamento USB.</string>
+    <string name="permdesc_sdcardRead">Permite que a aplicação teste uma autorização para o cartão SD que irá estar disponível em dispositivos futuros.</string>
+    <string name="permlab_sdcardWrite">modificar ou eliminar os conteúdos do cartão SD</string>
+    <string name="permdesc_sdcardWrite">Permite que a aplicação escreva no cartão SD.</string>
     <string name="permlab_mediaStorageWrite">modif./elim. armaz. interno</string>
     <string name="permdesc_mediaStorageWrite">Permite que a aplicação modifique o conteúdo de armazenamento de suportes internos.</string>
     <string name="permlab_sdcardAccessAll">aceder ao armazenamento externo de todos os utilizadores</string>
@@ -733,7 +733,7 @@
     <string name="lockscreen_missing_sim_message">Nenhum cartão SIM no telefone.</string>
     <string name="lockscreen_missing_sim_instructions">Insira um cartão SIM.</string>
     <string name="lockscreen_missing_sim_instructions_long">O cartão SIM está em falta ou não é legível. Introduza um cartão SIM.</string>
-    <string name="lockscreen_permanent_disabled_sim_message_short">Cartão SIM inutilizável.</string>
+    <string name="lockscreen_permanent_disabled_sim_message_short">Cartão SIM inutilizável</string>
     <string name="lockscreen_permanent_disabled_sim_instructions">"O cartão SIM foi desativado definitivamente. 
  Contacte o seu fornecedor de serviços de rede sem fios para obter outro cartão SIM."</string>
     <string name="lockscreen_transport_prev_description">Botão Faixa anterior</string>
@@ -745,7 +745,7 @@
     <string name="lockscreen_network_locked_message">Rede bloqueada</string>
     <string name="lockscreen_sim_puk_locked_message">O cartão SIM está bloqueado por PUK</string>
     <string name="lockscreen_sim_puk_locked_instructions">Consulte o Manual de utilizador ou contacte a Assistência a Clientes.</string>
-    <string name="lockscreen_sim_locked_message">O cartão SIM está bloqueado.</string>
+    <string name="lockscreen_sim_locked_message">O cartão SIM está bloqueado</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">A desbloquear cartão SIM...</string>
     <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"Desenhou a sua sequência de desbloqueio incorretamente %d vezes. 
 
@@ -1030,15 +1030,15 @@ Pretende fechá-la?"</string>
     <string name="perm_costs_money">isto poderá estar sujeito a custos</string>
     <string name="usb_storage_activity_title">Armazenamento em massa USB</string>
     <string name="usb_storage_title">Ligado através de USB</string>
-    <string name="usb_storage_message">Ligou ao computador através de USB. Toque no botão abaixo se pretender copiar ficheiros entre o computador e a memória de armazenamento USB do Android.</string>
+    <string name="usb_storage_message">Ligou ao computador através de USB. Toque no botão abaixo se pretender copiar ficheiros entre o computador e o cartão SD do Android.</string>
     <string name="usb_storage_button_mount">Activar armazenamento USB</string>
-    <string name="usb_storage_error_message">Existe um problema ao utilizar a memória de armazenamento USB para o armazenamento em massa USB.</string>
+    <string name="usb_storage_error_message">Existe um problema ao utilizar o cartão SD para armazenamento em massa USB.</string>
     <string name="usb_storage_notification_title">Ligado através de USB</string>
     <string name="usb_storage_notification_message">Toque para copiar ficheiros para/do computador.</string>
     <string name="usb_storage_stop_notification_title">Desactivar armazenamento USB</string>
     <string name="usb_storage_stop_notification_message">Toque para desativar a memória de armazenamento USB.</string>
     <string name="usb_storage_stop_title">O armazenamento USB está a ser utilizado</string>
-    <string name="usb_storage_stop_message">Antes de desativar a memória de armazenamento USB, desmonte (\"ejete\") a memória de armazenamento USB do Android do computador.</string>
+    <string name="usb_storage_stop_message">Antes de desativar a memória de armazenamento USB, desmonte (\"ejete\") o cartão SD do Android do computador.</string>
     <string name="usb_storage_stop_button_mount">Desactivar armazenamento USB</string>
     <string name="usb_storage_stop_error_message">Ocorreu um problema ao desativar a memória de armazenamento USB. Verifique se desinstalou o anfitrião USB e, em seguida, tente novamente.</string>
     <string name="dlg_confirm_kill_storage_users_title">Activar armazenamento USB</string>
@@ -1050,8 +1050,8 @@ Pretende fechá-la?"</string>
     <string name="usb_cd_installer_notification_title">Ligado como um instalador</string>
     <string name="usb_accessory_notification_title">Ligado a um acessório USB</string>
     <string name="usb_notification_message">Toque para ver outras opções USB.</string>
-    <string name="extmedia_format_title">Formatar unidade de armazenamento USB?</string>
-    <string name="extmedia_format_message">Todos os ficheiros armazenados na sua USB de armazenamento serão apagados. Não é possível reverter a ação!</string>
+    <string name="extmedia_format_title">Formatar cartão SD?</string>
+    <string name="extmedia_format_message">Todos os dados do seu cartão serão perdidos.</string>
     <string name="extmedia_format_button_format">Formatar</string>
     <string name="adb_active_notification_title">Depuração USB ligada</string>
     <string name="adb_active_notification_message">Toque para desativar a depuração USB.</string>
@@ -1064,20 +1064,20 @@ Pretende fechá-la?"</string>
     <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="candidates_style"><u>candidatos</u></string>
-    <string name="ext_media_checking_notification_title">Preparar armazenamento USB</string>
+    <string name="ext_media_checking_notification_title">A preparar %s</string>
     <string name="ext_media_checking_notification_message">A verificar a presença de erros.</string>
-    <string name="ext_media_nofs_notification_title">Armazenamento USB vazio</string>
-    <string name="ext_media_nofs_notification_message">A memória de armazenamento USB está vazia ou tem um sistema de ficheiros não suportado.</string>
-    <string name="ext_media_unmountable_notification_title">Armazenamento USB danificado</string>
-    <string name="ext_media_unmountable_notification_message">A memória de armazenamento USB está danificada. Tente reformatá-la.</string>
-    <string name="ext_media_badremoval_notification_title">Armaz. USB removido inesperad.</string>
-    <string name="ext_media_badremoval_notification_message">Desmonte o armazenamento USB antes de removê-lo para evitar a perda de dados.</string>
-    <string name="ext_media_safe_unmount_notification_title">Seguro remover armaz. USB</string>
-    <string name="ext_media_safe_unmount_notification_message">Pode remover o armazenamento USB com segurança.</string>
-    <string name="ext_media_nomedia_notification_title">Armazenamento USB removido</string>
-    <string name="ext_media_nomedia_notification_message">O armazenamento USB foi removido. Insira um novo suporte de dados.</string>
+    <string name="ext_media_nofs_notification_title">%s vazio</string>
+    <string name="ext_media_nofs_notification_message">%s vazio ou tem um sistema de ficheiros não suportado.</string>
+    <string name="ext_media_unmountable_notification_title">%s danificado</string>
+    <string name="ext_media_unmountable_notification_message">%s danificado. Poderá ser necessário reformatar.</string>
+    <string name="ext_media_badremoval_notification_title">%s removido inesperadamente</string>
+    <string name="ext_media_badremoval_notification_message">Desmonte o %s antes de remover para evitar perda de dados.</string>
+    <string name="ext_media_safe_unmount_notification_title">%s removido em segurança</string>
+    <string name="ext_media_safe_unmount_notification_message">Pode remover em segurança o %s.</string>
+    <string name="ext_media_nomedia_notification_title">%s removido</string>
+    <string name="ext_media_nomedia_notification_message">%s removido. Insira um novo.</string>
     <string name="activity_list_empty">Não foi encontrada nenhuma atividade correspondente.</string>
-    <string name="permlab_pkgUsageStats">atualizar estatísticas de utilização de componentes</string>
+    <string name="permlab_pkgUsageStats">actualizar estatísticas de utilização de componentes</string>
     <string name="permdesc_pkgUsageStats">Permite que a aplicação modifique as estatísticas de utilização de componentes recolhidas. Não se destina a utilização por aplicações normais.</string>
     <string name="permlab_copyProtectedData">copiar conteúdo</string>
     <string name="permdesc_copyProtectedData">Permite à aplicação invocar o serviço de contentor predefinido para copiar conteúdo. Não se destina a ser utilizado por aplicações normais.</string>
@@ -1135,13 +1135,13 @@ para a conta %s."</string>
     <string name="no_matches">Sem correspondências</string>
     <string name="find_on_page">Localizar na página</string>
     <string name="action_mode_done">Concluído</string>
-    <string name="progress_unmounting">A desmontar memória de armazenamento USB...</string>
-    <string name="progress_erasing">A apagar memória de armazenamento USB...</string>
-    <string name="format_error">Não foi possível apagar a memória de armazenamento USB.</string>
+    <string name="progress_unmounting">A desmontar cartão SD...</string>
+    <string name="progress_erasing">A apagar cartão SD...</string>
+    <string name="format_error">Não foi possível apagar o cartão SD.</string>
     <string name="media_bad_removal">O cartão SD foi removido antes de ser desmontado.</string>
-    <string name="media_checking">O armazenamento USB está actualmente a ser verificado.</string>
+    <string name="media_checking">O cartão SD está actualmente a ser verificado.</string>
     <string name="media_removed">O cartão SD foi removido.</string>
-    <string name="media_shared">O armazenamento USB está actualmente a ser utilizado por um computador.</string>
+    <string name="media_shared">O cartão SD está actualmente a ser utilizado por um computador.</string>
     <string name="media_unknown_state">Suporte de dados externo em estado desconhecido.</string>
     <string name="share">Partilhar</string>
     <string name="find">Localizar</string>
@@ -1315,4 +1315,7 @@ Ouvir em volume alto durante longos períodos de tempo poderá prejudicar a sua 
     <string name="enable_accessibility_canceled">Acessibilidade cancelada.</string>
     <string name="user_switched">%1$s do utilizador atual.</string>
     <string name="owner_name">Proprietário</string>
+    <string name="storage_phone">Armazenamento do telefone</string>
+    <string name="storage_external_usb">Armazenamento USB externo</string>
+    <string name="zz_keyguard_accessibility_voice_unlock">Desbloqueio por voz.</string>
 </resources>

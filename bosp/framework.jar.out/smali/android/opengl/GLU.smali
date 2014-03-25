@@ -27,7 +27,7 @@
 
     .prologue
     .line 26
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -54,19 +54,19 @@
 
     .line 40
     :sswitch_1
-    const-string v0, "invalid enum"
+    const-string/jumbo v0, "invalid enum"
 
     goto :goto_0
 
     .line 42
     :sswitch_2
-    const-string v0, "invalid value"
+    const-string/jumbo v0, "invalid value"
 
     goto :goto_0
 
     .line 44
     :sswitch_3
-    const-string v0, "invalid operation"
+    const-string/jumbo v0, "invalid operation"
 
     goto :goto_0
 
@@ -89,6 +89,8 @@
     goto :goto_0
 
     .line 36
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x0 -> :sswitch_0

@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 719
+    .line 742
     iput-object p1, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView$5;->this$0:Lcom/android/internal/widget/multiwaveview/GlowPadView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -41,7 +41,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 721
+    .line 744
     iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView$5;->this$0:Lcom/android/internal/widget/multiwaveview/GlowPadView;
 
     #getter for: Lcom/android/internal/widget/multiwaveview/GlowPadView;->mPointCloud:Lcom/android/internal/widget/multiwaveview/PointCloud;
@@ -53,7 +53,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/multiwaveview/PointCloud$WaveManager;->setRadius(F)V
 
-    .line 722
+    .line 745
     iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView$5;->this$0:Lcom/android/internal/widget/multiwaveview/GlowPadView;
 
     #getter for: Lcom/android/internal/widget/multiwaveview/GlowPadView;->mPointCloud:Lcom/android/internal/widget/multiwaveview/PointCloud;
@@ -65,6 +65,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/multiwaveview/PointCloud$WaveManager;->setAlpha(F)V
 
-    .line 723
+    .line 746
     return-void
 .end method

@@ -29,20 +29,20 @@
     .parameter "label"
 
     .prologue
-    .line 170
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 177
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 171
+    .line 178
     iput p1, p0, Lcom/android/server/NetworkManagementService$IdleTimerParams;->timeout:I
 
-    .line 172
+    .line 179
     iput-object p2, p0, Lcom/android/server/NetworkManagementService$IdleTimerParams;->label:Ljava/lang/String;
 
-    .line 173
+    .line 180
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/android/server/NetworkManagementService$IdleTimerParams;->networkCount:I
 
-    .line 174
+    .line 181
     return-void
 .end method

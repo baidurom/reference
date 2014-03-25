@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 198
+    .line 210
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen$3;->this$0:Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -42,7 +42,7 @@
     .parameter "v"
 
     .prologue
-    .line 203
+    .line 215
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen$3;->this$0:Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;->mPasswordEntry:Landroid/widget/EditText;
@@ -54,7 +54,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 204
+    .line 216
     const/4 v0, 0x1
 
     return v0

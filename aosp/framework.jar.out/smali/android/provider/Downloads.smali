@@ -20,8 +20,8 @@
     .locals 0
 
     .prologue
-    .line 30
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 31
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -33,7 +33,7 @@
     .parameter "notification_class"
 
     .prologue
-    .line 800
+    .line 1096
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -56,6 +56,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 802
+    .line 1098
     return-void
 .end method

@@ -41,7 +41,7 @@
     .line 1404
     iput-object p1, p0, Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController$MagnificationSpec;->this$1:Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1408
     const/high16 v0, 0x3f80

@@ -30,7 +30,7 @@
 
 .field private static final TAG:Ljava/lang/String; = "PackageHelper"
 
-.field private static final localLOGV:Z
+.field private static final localLOGV:Z = true
 
 
 # direct methods
@@ -39,7 +39,7 @@
 
     .prologue
     .line 43
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -145,7 +145,7 @@
 .end method
 
 .method public static createSdDir(ILjava/lang/String;Ljava/lang/String;IZ)Ljava/lang/String;
-    .locals 10
+    .locals 11
     .parameter "sizeMb"
     .parameter "cid"
     .parameter "sdEncKey"
@@ -153,7 +153,7 @@
     .parameter "isExternal"
 
     .prologue
-    const/4 v7, 0x0
+    const/4 v10, 0x0
 
     .line 75
     :try_start_0
@@ -161,8 +161,37 @@
 
     move-result-object v0
 
-    .line 80
+    .line 78
     .local v0, mountService:Landroid/os/storage/IMountService;
+    const-string v1, "PackageHelper"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Size of container "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, " MB"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 80
     const-string v3, "ext4"
 
     move-object v1, p1
@@ -206,6 +235,8 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    move-object v7, v10
+
     .line 93
     .end local v0           #mountService:Landroid/os/storage/IMountService;
     .end local v9           #rc:I
@@ -217,13 +248,45 @@
     .restart local v9       #rc:I
     :cond_0
     invoke-interface {v0, p1}, Landroid/os/storage/IMountService;->getSecureContainerPath(Ljava/lang/String;)Ljava/lang/String;
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v7
 
-    .line 89
+    .line 87
     .local v7, cachePath:Ljava/lang/String;
+    const-string v1, "PackageHelper"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Created secure container "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, " at "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
     goto :goto_0
 
     .line 90
@@ -241,11 +304,14 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
+    move-object v7, v10
+
+    .line 93
     goto :goto_0
 .end method
 
 .method public static destroySdDir(Ljava/lang/String;)Z
-    .locals 6
+    .locals 7
     .parameter "cid"
 
     .prologue
@@ -253,8 +319,31 @@
 
     const/4 v2, 0x0
 
-    .line 178
+    .line 177
     :try_start_0
+    const-string v4, "PackageHelper"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "Forcibly destroying container "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 178
     invoke-static {}, Lcom/android/internal/content/PackageHelper;->getMountService()Landroid/os/storage/IMountService;
 
     move-result-object v4

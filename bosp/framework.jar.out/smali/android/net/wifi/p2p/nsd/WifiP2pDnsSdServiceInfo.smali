@@ -47,7 +47,7 @@
     .line 66
     sget-object v0, Landroid/net/wifi/p2p/nsd/WifiP2pDnsSdServiceInfo;->sVmPacket:Ljava/util/Map;
 
-    const-string v1, "local."
+    const-string/jumbo v1, "local."
 
     const-string v2, "c011"
 
@@ -548,7 +548,7 @@
     :cond_0
     new-instance v4, Ljava/lang/IllegalArgumentException;
 
-    const-string v5, "instance name or service type cannot be empty"
+    const-string/jumbo v5, "instance name or service type cannot be empty"
 
     invoke-direct {v4, v5}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

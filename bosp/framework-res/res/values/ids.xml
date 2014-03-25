@@ -290,6 +290,8 @@
     <item type="id" name="voiceunlock_tips">false</item>
     <item type="id" name="voiceprint">false</item>
     <item type="id" name="faceLockAreaView">false</item>
+    <item type="id" name="carrierDivider">false</item>
+    <item type="id" name="carrierGemini">false</item>
     <item type="id" name="headerText">false</item>
     <item type="id" name="pinDisplayGroup">false</item>
     <item type="id" name="pinDisplay">false</item>
@@ -307,6 +309,7 @@
     <item type="id" name="lockPattern">false</item>
     <item type="id" name="keyguard_selector_view">false</item>
     <item type="id" name="keyguard_selector_view_frame">false</item>
+    <item type="id" name="keyguard_unlock_panel">false</item>
     <item type="id" name="keyguard_sim_pin_view">false</item>
     <item type="id" name="keyguard_sim_puk_view">false</item>
     <item type="id" name="keyguard_status_area">false</item>
@@ -528,6 +531,11 @@
     <item type="id" name="workspace">false</item>
     <item type="id" name="relativeLayout1">false</item>
     <item type="id" name="album">false</item>
+    <item type="id" name="zz_keyguard_voice_unlock_view">false</item>
+    <item type="id" name="zz_voice_unlock_area_view">false</item>
+    <item type="id" name="zz_voiceLockMic">false</item>
+    <item type="id" name="zz_voiceLockWave">false</item>
+    <item type="id" name="zz_voiceLockCancel">false</item>
     <item type="id" name="mode_normal">false</item>
     <item type="id" name="select_all">false</item>
     <item type="id" name="share">false</item>

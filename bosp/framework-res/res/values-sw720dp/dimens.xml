@@ -4,7 +4,6 @@
     <dimen name="thumbnail_width">230.0dip</dimen>
     <dimen name="preference_screen_side_margin">0.0dip</dimen>
     <dimen name="preference_screen_side_margin_negative">-4.0dip</dimen>
-    <dimen name="preference_fragment_padding_bottom">16.0dip</dimen>
     <dimen name="preference_fragment_padding_side">32.0dip</dimen>
     <dimen name="preference_breadcrumb_paddingLeft">32.0dip</dimen>
     <dimen name="preference_breadcrumb_paddingRight">32.0dip</dimen>
@@ -19,7 +18,7 @@
     <dimen name="default_app_widget_padding_top">4.0dip</dimen>
     <dimen name="default_app_widget_padding_right">12.0dip</dimen>
     <dimen name="default_app_widget_padding_bottom">20.0dip</dimen>
-    <dimen name="kg_status_clock_font_size">188.0dip</dimen>
+    <dimen name="kg_status_clock_font_size">160.0dip</dimen>
     <dimen name="kg_status_date_font_size">34.0dip</dimen>
     <dimen name="kg_status_line_font_size">19.0sp</dimen>
     <dimen name="kg_status_line_font_right_margin">32.0dip</dimen>

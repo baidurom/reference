@@ -29,13 +29,13 @@
     .parameter "looper"
 
     .prologue
-    .line 1150
+    .line 1167
     iput-object p1, p0, Landroid/webkit/WebViewInputDispatcher$WebKitHandler;->this$0:Landroid/webkit/WebViewInputDispatcher;
 
-    .line 1151
+    .line 1168
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 1152
+    .line 1169
     return-void
 .end method
 
@@ -46,12 +46,12 @@
     .parameter "msg"
 
     .prologue
-    .line 1156
+    .line 1173
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1161
+    .line 1178
     new-instance v0, Ljava/lang/IllegalStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -78,19 +78,19 @@
 
     throw v0
 
-    .line 1158
+    .line 1175
     :pswitch_0
     iget-object v0, p0, Landroid/webkit/WebViewInputDispatcher$WebKitHandler;->this$0:Landroid/webkit/WebViewInputDispatcher;
 
     const/4 v1, 0x1
 
     #calls: Landroid/webkit/WebViewInputDispatcher;->dispatchWebKitEvents(Z)V
-    invoke-static {v0, v1}, Landroid/webkit/WebViewInputDispatcher;->access$800(Landroid/webkit/WebViewInputDispatcher;Z)V
+    invoke-static {v0, v1}, Landroid/webkit/WebViewInputDispatcher;->access$900(Landroid/webkit/WebViewInputDispatcher;Z)V
 
-    .line 1163
+    .line 1180
     return-void
 
-    .line 1156
+    .line 1173
     nop
 
     :pswitch_data_0

@@ -27,7 +27,7 @@
 
     .prologue
     .line 59
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 60
     const-string v0, "[^a-zA-Z0-9]"

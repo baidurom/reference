@@ -144,7 +144,7 @@
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v9, "invalid alias: "
+    const-string/jumbo v9, "invalid alias: "
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1974,7 +1974,7 @@
 
     .line 81
     :cond_0
-    const-string v3, "keystore"
+    const-string/jumbo v3, "keystore"
 
     invoke-static {v3}, Lorg/apache/harmony/xnet/provider/jsse/OpenSSLEngine;->getInstance(Ljava/lang/String;)Lorg/apache/harmony/xnet/provider/jsse/OpenSSLEngine;
 

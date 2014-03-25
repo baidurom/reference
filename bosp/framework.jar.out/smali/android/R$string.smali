@@ -61,6 +61,8 @@
 
 .field public static final untitled:I = #string@untitled#t
 
+.field public static final wind_signatrue:I = #string@wind_signatrue#t
+
 .field public static final yes:I = #string@yes#t
 
 
@@ -70,7 +72,7 @@
 
     .prologue
     .line 10800
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

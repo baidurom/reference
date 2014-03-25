@@ -19,6 +19,8 @@
 
 .field private final mHandler:Landroid/os/Handler;
 
+.field private mImage:Landroid/widget/ImageView;
+
 .field public mSensorAccuracies:Landroid/util/SparseIntArray;
 
 .field private final mSensorEventListener:Landroid/hardware/SensorEventListener;
@@ -34,64 +36,80 @@
     .end annotation
 .end field
 
+.field private mSensorToast:Landroid/widget/Toast;
+
 .field public mSensors:Landroid/util/SparseBooleanArray;
+
+.field private mToastView:Landroid/widget/LinearLayout;
+
+.field private magoldaccuracy:I
+
+.field private orioldaccuracy:I
 
 .field final synthetic this$0:Landroid/hardware/SystemSensorManager;
 
 
 # direct methods
 .method constructor <init>(Landroid/hardware/SystemSensorManager;Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;Landroid/os/Handler;)V
-    .locals 2
+    .locals 3
     .parameter
     .parameter "listener"
     .parameter "sensor"
     .parameter "handler"
 
     .prologue
-    .line 171
+    const/4 v2, 0x3
+
+    .line 228
     iput-object p1, p0, Landroid/hardware/SystemSensorManager$ListenerDelegate;->this$0:Landroid/hardware/SystemSensorManager;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 165
+    .line 216
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v1, p0, Landroid/hardware/SystemSensorManager$ListenerDelegate;->mSensorList:Ljava/util/ArrayList;
 
-    .line 167
+    .line 218
     new-instance v1, Landroid/util/SparseBooleanArray;
 
     invoke-direct {v1}, Landroid/util/SparseBooleanArray;-><init>()V
 
     iput-object v1, p0, Landroid/hardware/SystemSensorManager$ListenerDelegate;->mSensors:Landroid/util/SparseBooleanArray;
 
-    .line 168
+    .line 219
     new-instance v1, Landroid/util/SparseBooleanArray;
 
     invoke-direct {v1}, Landroid/util/SparseBooleanArray;-><init>()V
 
     iput-object v1, p0, Landroid/hardware/SystemSensorManager$ListenerDelegate;->mFirstEvent:Landroid/util/SparseBooleanArray;
 
-    .line 169
+    .line 220
     new-instance v1, Landroid/util/SparseIntArray;
 
     invoke-direct {v1}, Landroid/util/SparseIntArray;-><init>()V
 
     iput-object v1, p0, Landroid/hardware/SystemSensorManager$ListenerDelegate;->mSensorAccuracies:Landroid/util/SparseIntArray;
 
-    .line 172
+    .line 222
+    iput v2, p0, Landroid/hardware/SystemSensorManager$ListenerDelegate;->magoldaccuracy:I
+
+    .line 223
+    iput v2, p0, Landroid/hardware/SystemSensorManager$ListenerDelegate;->orioldaccuracy:I
+
+    .line 229
     iput-object p2, p0, Landroid/hardware/SystemSensorManager$ListenerDelegate;->mSensorEventListener:Landroid/hardware/SensorEventListener;
 
-    .line 173
+    .line 230
     if-eqz p4, :cond_0
 
     invoke-virtual {p4}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
 
     move-result-object v0
 
-    .line 177
+    .line 234
     .local v0, looper:Landroid/os/Looper;
     :goto_0
     new-instance v1, Landroid/hardware/SystemSensorManager$ListenerDelegate$1;
@@ -100,13 +118,13 @@
 
     iput-object v1, p0, Landroid/hardware/SystemSensorManager$ListenerDelegate;->mHandler:Landroid/os/Handler;
 
-    .line 208
+    .line 265
     invoke-virtual {p0, p3}, Landroid/hardware/SystemSensorManager$ListenerDelegate;->addSensor(Landroid/hardware/Sensor;)V
 
-    .line 209
+    .line 266
     return-void
 
-    .line 173
+    .line 230
     .end local v0           #looper:Landroid/os/Looper;
     :cond_0
     iget-object v0, p1, Landroid/hardware/SystemSensorManager;->mMainLooper:Landroid/os/Looper;
@@ -119,7 +137,7 @@
     .parameter "x0"
 
     .prologue
-    .line 163
+    .line 214
     iget-object v0, p0, Landroid/hardware/SystemSensorManager$ListenerDelegate;->mSensorEventListener:Landroid/hardware/SensorEventListener;
 
     return-object v0
@@ -132,7 +150,7 @@
     .parameter "sensor"
 
     .prologue
-    .line 216
+    .line 273
     iget-object v0, p0, Landroid/hardware/SystemSensorManager$ListenerDelegate;->mSensors:Landroid/util/SparseBooleanArray;
 
     invoke-virtual {p1}, Landroid/hardware/Sensor;->getHandle()I
@@ -143,12 +161,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseBooleanArray;->put(IZ)V
 
-    .line 217
+    .line 274
     iget-object v0, p0, Landroid/hardware/SystemSensorManager$ListenerDelegate;->mSensorList:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 218
+    .line 275
     return-void
 .end method
 
@@ -156,7 +174,7 @@
     .locals 1
 
     .prologue
-    .line 212
+    .line 269
     iget-object v0, p0, Landroid/hardware/SystemSensorManager$ListenerDelegate;->mSensorEventListener:Landroid/hardware/SensorEventListener;
 
     return-object v0
@@ -175,7 +193,7 @@
     .end annotation
 
     .prologue
-    .line 228
+    .line 285
     iget-object v0, p0, Landroid/hardware/SystemSensorManager$ListenerDelegate;->mSensorList:Ljava/util/ArrayList;
 
     return-object v0
@@ -186,7 +204,7 @@
     .parameter "sensor"
 
     .prologue
-    .line 225
+    .line 282
     iget-object v0, p0, Landroid/hardware/SystemSensorManager$ListenerDelegate;->mSensors:Landroid/util/SparseBooleanArray;
 
     invoke-virtual {p1}, Landroid/hardware/Sensor;->getHandle()I
@@ -201,79 +219,223 @@
 .end method
 
 .method onSensorChangedLocked(Landroid/hardware/Sensor;[F[JI)V
-    .locals 7
+    .locals 9
     .parameter "sensor"
     .parameter "values"
     .parameter "timestamp"
     .parameter "accuracy"
 
     .prologue
-    const/4 v4, 0x2
+    const/4 v6, 0x2
 
-    const/4 v6, 0x1
+    const/4 v8, 0x1
 
-    const/4 v5, 0x0
+    const/4 v5, 0x3
 
-    .line 232
+    const/4 v7, 0x0
+
+    .line 289
     sget-object v3, Landroid/hardware/SystemSensorManager;->sPool:Landroid/hardware/SensorManager$SensorEventPool;
 
     invoke-virtual {v3}, Landroid/hardware/SensorManager$SensorEventPool;->getFromPool()Landroid/hardware/SensorEvent;
 
     move-result-object v1
 
-    .line 233
+    .line 290
     .local v1, t:Landroid/hardware/SensorEvent;
     iget-object v2, v1, Landroid/hardware/SensorEvent;->values:[F
 
-    .line 234
+    .line 291
     .local v2, v:[F
-    aget v3, p2, v5
+    aget v3, p2, v7
 
-    aput v3, v2, v5
+    aput v3, v2, v7
 
-    .line 235
+    .line 292
+    aget v3, p2, v8
+
+    aput v3, v2, v8
+
+    .line 293
     aget v3, p2, v6
 
     aput v3, v2, v6
 
-    .line 236
-    aget v3, p2, v4
-
-    aput v3, v2, v4
-
-    .line 237
-    aget-wide v3, p3, v5
+    .line 294
+    aget-wide v3, p3, v7
 
     iput-wide v3, v1, Landroid/hardware/SensorEvent;->timestamp:J
 
-    .line 238
+    .line 295
     iput p4, v1, Landroid/hardware/SensorEvent;->accuracy:I
 
-    .line 239
+    .line 296
     iput-object p1, v1, Landroid/hardware/SensorEvent;->sensor:Landroid/hardware/Sensor;
 
-    .line 240
+    .line 300
+    invoke-static {}, Landroid/hardware/SystemSensorManager;->access$200()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    .line 301
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    move-result-wide v3
+
+    invoke-static {}, Landroid/hardware/SystemSensorManager;->access$300()J
+
+    move-result-wide v5
+
+    sub-long/2addr v3, v5
+
+    const-wide/16 v5, 0xbb8
+
+    cmp-long v3, v3, v5
+
+    if-lez v3, :cond_0
+
+    .line 303
+    const-string v3, "SensorManager"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "first_time_stamp ="
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-static {}, Landroid/hardware/SystemSensorManager;->access$300()J
+
+    move-result-wide v5
+
+    invoke-virtual {v4, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 304
+    invoke-static {v7}, Landroid/hardware/SystemSensorManager;->access$202(Z)Z
+
+    .line 356
+    :cond_0
+    :goto_0
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
-    .line 241
+    .line 357
     .local v0, msg:Landroid/os/Message;
-    iput v5, v0, Landroid/os/Message;->what:I
+    iput v7, v0, Landroid/os/Message;->what:I
 
-    .line 242
+    .line 358
     iput-object v1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 243
-    invoke-virtual {v0, v6}, Landroid/os/Message;->setAsynchronous(Z)V
+    .line 359
+    invoke-virtual {v0, v8}, Landroid/os/Message;->setAsynchronous(Z)V
 
-    .line 244
+    .line 360
     iget-object v3, p0, Landroid/hardware/SystemSensorManager$ListenerDelegate;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v3, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 245
+    .line 361
     return-void
+
+    .line 307
+    .end local v0           #msg:Landroid/os/Message;
+    :cond_1
+    invoke-virtual {p1}, Landroid/hardware/Sensor;->getType()I
+
+    move-result v3
+
+    if-ne v3, v6, :cond_3
+
+    .line 309
+    iget v3, p0, Landroid/hardware/SystemSensorManager$ListenerDelegate;->magoldaccuracy:I
+
+    if-eq p4, v3, :cond_2
+
+    iget v3, p0, Landroid/hardware/SystemSensorManager$ListenerDelegate;->magoldaccuracy:I
+
+    if-ne v3, v5, :cond_2
+
+    .line 310
+    const-string v3, "SensorManager"
+
+    const-string/jumbo v4, "magaccuracy is not good!"
+
+    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 311
+    iget-object v3, p0, Landroid/hardware/SystemSensorManager$ListenerDelegate;->mHandler:Landroid/os/Handler;
+
+    new-instance v4, Landroid/hardware/SystemSensorManager$ListenerDelegate$2;
+
+    invoke-direct {v4, p0}, Landroid/hardware/SystemSensorManager$ListenerDelegate$2;-><init>(Landroid/hardware/SystemSensorManager$ListenerDelegate;)V
+
+    invoke-virtual {v3, v4}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 327
+    :cond_2
+    iput p4, p0, Landroid/hardware/SystemSensorManager$ListenerDelegate;->magoldaccuracy:I
+
+    .line 329
+    :cond_3
+    invoke-virtual {p1}, Landroid/hardware/Sensor;->getType()I
+
+    move-result v3
+
+    if-ne v3, v5, :cond_0
+
+    .line 331
+    invoke-static {}, Landroid/hardware/SystemSensorManager;->access$500()I
+
+    move-result v3
+
+    and-int/lit8 v3, v3, 0x3
+
+    if-eq v3, v5, :cond_0
+
+    .line 332
+    iget v3, p0, Landroid/hardware/SystemSensorManager$ListenerDelegate;->orioldaccuracy:I
+
+    if-eq p4, v3, :cond_4
+
+    iget v3, p0, Landroid/hardware/SystemSensorManager$ListenerDelegate;->orioldaccuracy:I
+
+    if-ne v3, v5, :cond_4
+
+    .line 333
+    const-string v3, "SensorManager"
+
+    const-string/jumbo v4, "oriaccuracy is not good!"
+
+    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 334
+    iget-object v3, p0, Landroid/hardware/SystemSensorManager$ListenerDelegate;->mHandler:Landroid/os/Handler;
+
+    new-instance v4, Landroid/hardware/SystemSensorManager$ListenerDelegate$3;
+
+    invoke-direct {v4, p0}, Landroid/hardware/SystemSensorManager$ListenerDelegate$3;-><init>(Landroid/hardware/SystemSensorManager$ListenerDelegate;)V
+
+    invoke-virtual {v3, v4}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 350
+    :cond_4
+    iput p4, p0, Landroid/hardware/SystemSensorManager$ListenerDelegate;->orioldaccuracy:I
+
+    goto :goto_0
 .end method
 
 .method removeSensor(Landroid/hardware/Sensor;)I
@@ -281,7 +443,7 @@
     .parameter "sensor"
 
     .prologue
-    .line 220
+    .line 277
     iget-object v0, p0, Landroid/hardware/SystemSensorManager$ListenerDelegate;->mSensors:Landroid/util/SparseBooleanArray;
 
     invoke-virtual {p1}, Landroid/hardware/Sensor;->getHandle()I
@@ -290,12 +452,12 @@
 
     invoke-virtual {v0, v1}, Landroid/util/SparseBooleanArray;->delete(I)V
 
-    .line 221
+    .line 278
     iget-object v0, p0, Landroid/hardware/SystemSensorManager$ListenerDelegate;->mSensorList:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 222
+    .line 279
     iget-object v0, p0, Landroid/hardware/SystemSensorManager$ListenerDelegate;->mSensors:Landroid/util/SparseBooleanArray;
 
     invoke-virtual {v0}, Landroid/util/SparseBooleanArray;->size()I

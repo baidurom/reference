@@ -3,12 +3,12 @@
 .source "PhoneWindowManager.java"
 
 # interfaces
-.implements Landroid/hardware/SensorEventListener;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/internal/policy/impl/PhoneWindowManager;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/internal/policy/impl/PhoneWindowManager;->updateSystemUiVisibilityLw()I
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,133 +20,80 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
+.field final synthetic val$needsMenu:Z
+
+.field final synthetic val$visibility:I
+
 
 # direct methods
-.method constructor <init>(Lcom/android/internal/policy/impl/PhoneWindowManager;)V
+.method constructor <init>(Lcom/android/internal/policy/impl/PhoneWindowManager;IZ)V
     .locals 0
+    .parameter
+    .parameter
     .parameter
 
     .prologue
-    .line 5245
+    .line 5432
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$30;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    iput p2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$30;->val$visibility:I
+
+    iput-boolean p3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$30;->val$needsMenu:Z
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAccuracyChanged(Landroid/hardware/Sensor;I)V
-    .locals 0
-    .parameter "sensor"
-    .parameter "accuracy"
+.method public run()V
+    .locals 4
 
     .prologue
-    .line 5260
-    return-void
-.end method
-
-.method public onSensorChanged(Landroid/hardware/SensorEvent;)V
-    .locals 6
-    .parameter "event"
-
-    .prologue
-    const/4 v5, 0x0
-
-    .line 5247
-    const/high16 v0, 0x4090
-
-    .line 5248
-    .local v0, THRESHOLD:F
-    iget-object v2, p1, Landroid/hardware/SensorEvent;->values:[F
-
-    aget v1, v2, v5
-
-    .line 5249
-    .local v1, distance:F
-    const-string v2, "WindowManager"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "mProximityListener.onSensorChanged distance: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 5250
-    const/high16 v2, 0x4090
-
-    cmpl-float v2, v1, v2
-
-    if-lez v2, :cond_0
-
-    .line 5251
+    .line 5435
+    :try_start_0
     iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$30;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
-    #setter for: Lcom/android/internal/policy/impl/PhoneWindowManager;->mIsInPocket:Z
-    invoke-static {v2, v5}, Lcom/android/internal/policy/impl/PhoneWindowManager;->access$1002(Lcom/android/internal/policy/impl/PhoneWindowManager;Z)Z
+    invoke-virtual {v2}, Lcom/android/internal/policy/impl/PhoneWindowManager;->getStatusBarService()Lcom/android/internal/statusbar/IStatusBarService;
 
-    .line 5255
-    :goto_0
-    const-string v2, "WindowManager"
+    move-result-object v1
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    .line 5436
+    .local v1, statusbar:Lcom/android/internal/statusbar/IStatusBarService;
+    if-eqz v1, :cond_0
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    .line 5437
+    iget v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$30;->val$visibility:I
 
-    const-string v4, "mIsInPocket="
+    const/4 v3, -0x1
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-interface {v1, v2, v3}, Lcom/android/internal/statusbar/IStatusBarService;->setSystemUiVisibility(II)V
 
-    move-result-object v3
+    .line 5438
+    iget-boolean v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$30;->val$needsMenu:Z
 
-    iget-object v4, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$30;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
+    invoke-interface {v1, v2}, Lcom/android/internal/statusbar/IStatusBarService;->topAppWindowChanged(Z)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    #getter for: Lcom/android/internal/policy/impl/PhoneWindowManager;->mIsInPocket:Z
-    invoke-static {v4}, Lcom/android/internal/policy/impl/PhoneWindowManager;->access$1000(Lcom/android/internal/policy/impl/PhoneWindowManager;)Z
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 5256
-    iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$30;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
-
-    invoke-static {v2}, Lcom/android/internal/policy/impl/PhoneWindowManager;->access$1108(Lcom/android/internal/policy/impl/PhoneWindowManager;)I
-
-    .line 5257
-    return-void
-
-    .line 5253
+    .line 5444
+    .end local v1           #statusbar:Lcom/android/internal/statusbar/IStatusBarService;
     :cond_0
+    :goto_0
+    return-void
+
+    .line 5440
+    :catch_0
+    move-exception v0
+
+    .line 5442
+    .local v0, e:Landroid/os/RemoteException;
     iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$30;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
-    const/4 v3, 0x1
+    const/4 v3, 0x0
 
-    #setter for: Lcom/android/internal/policy/impl/PhoneWindowManager;->mIsInPocket:Z
-    invoke-static {v2, v3}, Lcom/android/internal/policy/impl/PhoneWindowManager;->access$1002(Lcom/android/internal/policy/impl/PhoneWindowManager;Z)Z
+    iput-object v3, v2, Lcom/android/internal/policy/impl/PhoneWindowManager;->mStatusBarService:Lcom/android/internal/statusbar/IStatusBarService;
 
     goto :goto_0
 .end method

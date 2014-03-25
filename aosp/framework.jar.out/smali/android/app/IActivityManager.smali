@@ -117,6 +117,8 @@
 
 .field public static final GET_PROCESS_PSS_TRANSACTION:I = 0x89
 
+.field public static final GET_PROCESS_PSWAP_TRANSACTION:I = 0xa5
+
 .field public static final GET_PROVIDER_MIME_TYPE_TRANSACTION:I = 0x73
 
 .field public static final GET_RECENT_TASKS_TRANSACTION:I = 0x3c
@@ -148,6 +150,8 @@
 .field public static final GRANT_URI_PERMISSION_FROM_OWNER_TRANSACTION:I = 0x75
 
 .field public static final GRANT_URI_PERMISSION_TRANSACTION:I = 0x37
+
+.field public static final HALT_ACTIVITY_RESUMING:I = 0xa3
 
 .field public static final HANDLE_APPLICATION_CRASH_TRANSACTION:I = 0x2
 
@@ -197,6 +201,8 @@
 
 .field public static final NOTE_WAKEUP_ALARM_TRANSACTION:I = 0x44
 
+.field public static final NOTIFY_WINDOW_TIMEOUT:I = 0xa2
+
 .field public static final OPEN_CONTENT_URI_TRANSACTION:I = 0x5
 
 .field public static final OVERRIDE_PENDING_TRANSITION_TRANSACTION:I = 0x65
@@ -228,6 +234,8 @@
 .field public static final REPORT_THUMBNAIL_TRANSACTION:I = 0x1c
 
 .field public static final REQUEST_BUG_REPORT_TRANSACTION:I = 0x9e
+
+.field public static final RESTORE_ACTIVITY_RESUMING:I = 0xa4
 
 .field public static final RESUME_APP_SWITCHES_TRANSACTION:I = 0x59
 
@@ -733,6 +741,14 @@
     .end annotation
 .end method
 
+.method public abstract getProcessPswap([I)[J
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract getProcessesInErrorState()Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -902,6 +918,14 @@
 .end method
 
 .method public abstract grantUriPermissionFromOwner(Landroid/os/IBinder;ILjava/lang/String;Landroid/net/Uri;I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract haltActivityResuming(I)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -1101,6 +1125,14 @@
     .end annotation
 .end method
 
+.method public abstract notifyWindowTimeout()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract openContentUri(Landroid/net/Uri;)Landroid/os/ParcelFileDescriptor;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -1233,6 +1265,14 @@
 .end method
 
 .method public abstract requestBugReport()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract restoreActivityResuming()Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

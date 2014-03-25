@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 83
+    .line 129
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/EmergencyButton$2;->this$0:Lcom/android/internal/policy/impl/keyguard/EmergencyButton;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -42,11 +42,11 @@
     .parameter "v"
 
     .prologue
-    .line 85
+    .line 131
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/EmergencyButton$2;->this$0:Lcom/android/internal/policy/impl/keyguard/EmergencyButton;
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->takeEmergencyCallAction()V
 
-    .line 86
+    .line 132
     return-void
 .end method

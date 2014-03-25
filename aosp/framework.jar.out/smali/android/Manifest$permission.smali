@@ -31,6 +31,8 @@
 
 .field public static final ACCESS_MOCK_LOCATION:Ljava/lang/String; = "android.permission.ACCESS_MOCK_LOCATION"
 
+.field public static final ACCESS_MTK_MMHW:Ljava/lang/String; = "android.permission.ACCESS_MTK_MMHW"
+
 .field public static final ACCESS_MTP:Ljava/lang/String; = "android.permission.ACCESS_MTP"
 
 .field public static final ACCESS_NETWORK_STATE:Ljava/lang/String; = "android.permission.ACCESS_NETWORK_STATE"
@@ -430,7 +432,7 @@
 
     .prologue
     .line 11
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

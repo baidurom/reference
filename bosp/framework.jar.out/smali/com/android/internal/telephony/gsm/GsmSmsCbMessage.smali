@@ -41,7 +41,7 @@
 
     aput-object v1, v0, v5
 
-    const-string v1, "it"
+    const-string/jumbo v1, "it"
 
     aput-object v1, v0, v6
 
@@ -144,7 +144,7 @@
 
     const/4 v1, 0x4
 
-    const-string v2, "is"
+    const-string/jumbo v2, "is"
 
     aput-object v2, v0, v1
 
@@ -202,7 +202,7 @@
 
     .prologue
     .line 55
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

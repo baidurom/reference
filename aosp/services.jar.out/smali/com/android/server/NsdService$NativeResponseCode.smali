@@ -48,10 +48,10 @@
     .parameter
 
     .prologue
-    .line 467
+    .line 471
     iput-object p1, p0, Lcom/android/server/NsdService$NativeResponseCode;->this$0:Lcom/android/server/NsdService;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

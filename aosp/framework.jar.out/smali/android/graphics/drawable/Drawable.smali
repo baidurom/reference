@@ -63,7 +63,7 @@
     const/4 v1, 0x0
 
     .line 116
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 119
     sget-object v0, Landroid/util/StateSet;->WILD_CARD:[I

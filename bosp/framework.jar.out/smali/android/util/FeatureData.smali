@@ -28,8 +28,8 @@
     .locals 0
 
     .prologue
-    .line 13
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 9
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -40,22 +40,22 @@
     .parameter "id"
 
     .prologue
-    .line 24
+    .line 20
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.baidu.network.action.FeatureData"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 25
+    .line 21
     .local v0, intent:Landroid/content/Intent;
     const-string v1, "com.baidu.network.extra.id"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 26
+    .line 22
     invoke-virtual {p0, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 27
+    .line 23
     return-void
 .end method

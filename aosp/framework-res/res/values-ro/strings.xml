@@ -271,7 +271,7 @@
     <string name="permgrouplab_display">Interfaţa de utilizare a altor aplicaţii</string>
     <string name="permgroupdesc_display">Influenţează interfaţa de utilizare a altor aplicaţii.</string>
     <string name="permgrouplab_storage">Stocare</string>
-    <string name="permgroupdesc_storage">Accesează stocarea USB.</string>
+    <string name="permgroupdesc_storage">Accesează cardul SD.</string>
     <string name="permlab_statusBar">dezactivare sau modificare bare de stare</string>
     <string name="permdesc_statusBar">Permite aplicaţiei să dezactiveze bara de stare sau să adauge şi să elimine pictograme de sistem.</string>
     <string name="permlab_statusBarService">bară de stare</string>
@@ -486,9 +486,9 @@
     <string name="permdesc_brick">Permite aplicaţiei să dezactiveze definitiv întregul telefon. Acest lucru este foarte periculos.</string>
     <string name="permlab_reboot">forţare repornire telefon</string>
     <string name="permdesc_reboot">Permite aplicaţiei să forţeze repornirea telefonului.</string>
-    <string name="permlab_mount_unmount_filesystems">acces. sist. fişiere stoc. USB</string>
+    <string name="permlab_mount_unmount_filesystems">accesează sistemul de fişiere pe cardul SD</string>
     <string name="permdesc_mount_unmount_filesystems">Permite aplicaţiei să monteze şi să demonteze sisteme de fişiere pentru stocarea pe suporturi amovibile.</string>
-    <string name="permlab_mount_format_filesystems">şterge stocarea USB</string>
+    <string name="permlab_mount_format_filesystems">şterge cardul SD</string>
     <string name="permdesc_mount_format_filesystems">Permite aplicaţiei să formateze stocarea pe suporturi amovibile.</string>
     <string name="permlab_asec_access">descărcare informaţii pe stocarea internă</string>
     <string name="permdesc_asec_access">Permite aplicaţiei să obţină informaţii despre stocarea internă.</string>
@@ -597,9 +597,9 @@
     <string name="permlab_writeDictionary">adaugă cuvinte în dicţionarul definit de utilizator</string>
     <string name="permdesc_writeDictionary">Permite aplicaţiei să scrie cuvinte noi în dicţionarul utilizatorului.</string>
     <string name="permlab_sdcardRead">testează accesul la stocarea protejată</string>
-    <string name="permdesc_sdcardRead">Permite aplicaţiei testarea permisiunii pt. stocarea USB, disponibilă pe gadgeturi viitoare.</string>
-    <string name="permlab_sdcardWrite">modifică sau şterge conţinutul stocării USB</string>
-    <string name="permdesc_sdcardWrite">Permite scriere în stoc. USB.</string>
+    <string name="permdesc_sdcardRead">Permite aplicaţiei să testeze o permisiune pentru cardul SD care va fi disponibil pe dispozitivele viitoare.</string>
+    <string name="permlab_sdcardWrite">modifică sau şterge conţinutul cardului SD</string>
+    <string name="permdesc_sdcardWrite">Permite aplicaţiei să scrie pe cardul SD.</string>
     <string name="permlab_mediaStorageWrite">modif./şterg. conţinutul media stocat intern</string>
     <string name="permdesc_mediaStorageWrite">Permite aplicaţiei să modifice conţinutul stocării media interne.</string>
     <string name="permlab_sdcardAccessAll">acces. stoc. ext. pt. toţi utilizat.</string>
@@ -714,7 +714,7 @@
     <string name="keyguard_password_wrong_pin_code">Cod PIN incorect.</string>
     <string name="keyguard_label_text">Pentru a debloca, apăsaţi Meniu, apoi 0.</string>
     <string name="emergency_call_dialog_number_for_display">Număr de urgenţă</string>
-    <string name="lockscreen_carrier_default">Fără serviciu.</string>
+    <string name="lockscreen_carrier_default">Fără serviciu</string>
     <string name="lockscreen_screen_locked">Ecranul este blocat.</string>
     <string name="lockscreen_instructions_when_pattern_enabled">Apăsaţi Meniu pentru a debloca sau pentru a efectua apeluri de urgenţă.</string>
     <string name="lockscreen_instructions_when_pattern_disabled">Apăsaţi Meniu pentru deblocare.</string>
@@ -733,7 +733,7 @@
     <string name="lockscreen_missing_sim_message">Telefonul nu are card SIM.</string>
     <string name="lockscreen_missing_sim_instructions">Introduceţi un card SIM.</string>
     <string name="lockscreen_missing_sim_instructions_long">Cardul SIM lipseşte sau nu poate fi citit. Introduceţi un card SIM.</string>
-    <string name="lockscreen_permanent_disabled_sim_message_short">Card SIM inutilizabil.</string>
+    <string name="lockscreen_permanent_disabled_sim_message_short">Card SIM inutilizabil</string>
     <string name="lockscreen_permanent_disabled_sim_instructions">"Cardul dvs. SIM este dezactivat definitiv.
  Contactaţi furnizorul de servicii wireless pentru a obţine un alt card SIM."</string>
     <string name="lockscreen_transport_prev_description">Butonul Melodia anterioară</string>
@@ -743,9 +743,9 @@
     <string name="lockscreen_transport_stop_description">Butonul Opriţi</string>
     <string name="emergency_calls_only">Numai apeluri de urgenţă</string>
     <string name="lockscreen_network_locked_message">Reţea blocată</string>
-    <string name="lockscreen_sim_puk_locked_message">Cardul SIM este blocat cu codul PUK.</string>
+    <string name="lockscreen_sim_puk_locked_message">Cardul SIM este blocat cu codul PUK</string>
     <string name="lockscreen_sim_puk_locked_instructions">Consultaţi Ghidul de utilizare sau contactaţi Serviciul de relaţii cu clienţii.</string>
-    <string name="lockscreen_sim_locked_message">Cardul SIM este blocat.</string>
+    <string name="lockscreen_sim_locked_message">Cardul SIM este blocat</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">Se deblochează cardul SIM...</string>
     <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"Aţi desenat incorect modelul pentru deblocare de %d ori. 
 
@@ -1030,15 +1030,15 @@ Doriţi să o închideţi?"</string>
     <string name="perm_costs_money">aceasta poate să genereze costuri</string>
     <string name="usb_storage_activity_title">Stocare masivă USB</string>
     <string name="usb_storage_title">USB conectat</string>
-    <string name="usb_storage_message">V-aţi conectat la computer prin USB. Atingeţi butonul de mai jos dacă doriţi să copiaţi fişiere de pe computer pe stocarea USB Android sau invers.</string>
+    <string name="usb_storage_message">V-aţi conectat la computer prin USB. Atingeţi butonul de mai jos dacă doriţi să copiaţi fişiere de pe computer pe cardul SD Android sau invers.</string>
     <string name="usb_storage_button_mount">Activaţi stocarea USB</string>
-    <string name="usb_storage_error_message">A apărut o problemă la utilizarea stocării USB pentru stocarea masivă USB.</string>
+    <string name="usb_storage_error_message">A apărut o problemă la utilizarea cardului SD pentru stocarea masivă USB.</string>
     <string name="usb_storage_notification_title">USB conectat</string>
     <string name="usb_storage_notification_message">Atingeţi pentru a copia fişiere în/din computerul dvs.</string>
     <string name="usb_storage_stop_notification_title">Dezactivaţi stocarea USB</string>
     <string name="usb_storage_stop_notification_message">Atingeţi pentru a dezactiva stocarea USB.</string>
     <string name="usb_storage_stop_title">Stocarea USB este în curs de utilizare</string>
-    <string name="usb_storage_stop_message">Înainte de a dezactiva stocarea USB, demontaţi („extrageţi”) din computer stocarea USB Android.</string>
+    <string name="usb_storage_stop_message">Înainte de a dezactiva stocarea USB, demontaţi („extrageţi”) din computer cardul SD Android.</string>
     <string name="usb_storage_stop_button_mount">Dezactivaţi stocarea USB</string>
     <string name="usb_storage_stop_error_message">Problemă la dezactivarea stocării USB. Verificaţi dacă aţi demontat dispozitivul gazdă USB, apoi încercaţi din nou.</string>
     <string name="dlg_confirm_kill_storage_users_title">Activaţi stocarea USB</string>
@@ -1050,8 +1050,8 @@ Doriţi să o închideţi?"</string>
     <string name="usb_cd_installer_notification_title">Conectat ca program de instalare</string>
     <string name="usb_accessory_notification_title">Conectat la un accesoriu USB</string>
     <string name="usb_notification_message">Atingeţi pentru alte opţiuni USB.</string>
-    <string name="extmedia_format_title">Format. stoc. USB?</string>
-    <string name="extmedia_format_message">Toate fişierele stocate în stocarea USB vor fi şterse. Această acţiune nu poate fi anulată!</string>
+    <string name="extmedia_format_title">Formataţi cardul SD?</string>
+    <string name="extmedia_format_message">Toate datele de pe cardul dvs. se vor pierde.</string>
     <string name="extmedia_format_button_format">Formataţi</string>
     <string name="adb_active_notification_title">Depanarea USB este conectată</string>
     <string name="adb_active_notification_message">Atingeţi pentru a dezactiva depanarea USB.</string>
@@ -1064,18 +1064,18 @@ Doriţi să o închideţi?"</string>
     <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="candidates_style"><u>candidaţi</u></string>
-    <string name="ext_media_checking_notification_title">Se pregăteşte stocarea USB</string>
+    <string name="ext_media_checking_notification_title">Se pregăteşte %s</string>
     <string name="ext_media_checking_notification_message">Se verifică erorile.</string>
-    <string name="ext_media_nofs_notification_title">Stocare USB goală</string>
-    <string name="ext_media_nofs_notification_message">Stocarea USB este goală sau are un sistem de fişiere neacceptat.</string>
-    <string name="ext_media_unmountable_notification_title">Stocare USB deteriorată</string>
-    <string name="ext_media_unmountable_notification_message">Stocarea USB este deteriorată. Încercaţi să o reformataţi.</string>
-    <string name="ext_media_badremoval_notification_title">Stoc. USB elim. în mod neaşt.</string>
-    <string name="ext_media_badremoval_notification_message">Demontaţi stocarea USB înaintea eliminării, pentru a evita pierderea datelor.</string>
-    <string name="ext_media_safe_unmount_notification_title">Puteţi elim. în sig. stoc. USB</string>
-    <string name="ext_media_safe_unmount_notification_message">Puteţi elimina în siguranţă stocarea USB.</string>
-    <string name="ext_media_nomedia_notification_title">Stocarea USB a fost eliminată</string>
-    <string name="ext_media_nomedia_notification_message">Stocarea USB a fost eliminată. Inseraţi mediu de stocare nou.</string>
+    <string name="ext_media_nofs_notification_title">%s gol</string>
+    <string name="ext_media_nofs_notification_message">%s este gol sau are un sistem de fişiere neacceptat.</string>
+    <string name="ext_media_unmountable_notification_title">%s deteriorat</string>
+    <string name="ext_media_unmountable_notification_message">%s este deteriorat. Este posibil să fiţi nevoit să îl reformataţi.</string>
+    <string name="ext_media_badremoval_notification_title">%s a fost eliminat în mod neaşteptat</string>
+    <string name="ext_media_badremoval_notification_message">Dezinstalaţi %s înainte de eliminare pentru a evita pierderea de date.</string>
+    <string name="ext_media_safe_unmount_notification_title">%s se poate elimina în siguranţă</string>
+    <string name="ext_media_safe_unmount_notification_message">Puteţi elimina în siguranţă %s.</string>
+    <string name="ext_media_nomedia_notification_title">%s eliminat</string>
+    <string name="ext_media_nomedia_notification_message">%s este eliminat. Introduceţi unul nou.</string>
     <string name="activity_list_empty">Nu s-a găsit nicio activitate potrivită.</string>
     <string name="permlab_pkgUsageStats">actualizare statistici referitoare la utilizarea componentelor</string>
     <string name="permdesc_pkgUsageStats">Permite aplicaţiei să modifice statisticile colectate despre utilizarea componentelor. Nu se utilizează de aplicaţiile obişnuite.</string>
@@ -1135,13 +1135,13 @@ pentru contul %s."</string>
     <string name="no_matches">Nicio potrivire</string>
     <string name="find_on_page">Găsiţi pe pagină</string>
     <string name="action_mode_done">Terminat</string>
-    <string name="progress_unmounting">Se demontează stocarea USB...</string>
-    <string name="progress_erasing">Se şterge stocarea USB...</string>
-    <string name="format_error">Nu s-a putut şterge stocarea USB.</string>
+    <string name="progress_unmounting">Se demontează cardul SD...</string>
+    <string name="progress_erasing">Se şterge cardul SD...</string>
+    <string name="format_error">Nu s-a putut şterge cardul SD.</string>
     <string name="media_bad_removal">Cardul SD a fost eliminat înainte de a fi demontat.</string>
-    <string name="media_checking">Stocarea USB este în curs de verificare.</string>
+    <string name="media_checking">Cardul SD este în curs de verificare.</string>
     <string name="media_removed">Cardul SD a fost eliminat.</string>
-    <string name="media_shared">Stocarea USB este utilizată în prezent de un computer.</string>
+    <string name="media_shared">Cardul SD este utilizat în prezent de un computer.</string>
     <string name="media_unknown_state">Media externă în stare necunoscută.</string>
     <string name="share">Distribuiţi</string>
     <string name="find">Găsiţi</string>
@@ -1315,4 +1315,7 @@ Ascultarea la volum ridicat pe perioade lungi de timp vă poate afecta auzul."</
     <string name="enable_accessibility_canceled">Accesibilitatea a fost anulată</string>
     <string name="user_switched">Utilizator curent: %1$s.</string>
     <string name="owner_name">Proprietar</string>
+    <string name="storage_phone">Stocare telefon</string>
+    <string name="storage_external_usb">Dispozitiv de stocare USB externă</string>
+    <string name="zz_keyguard_accessibility_voice_unlock">Deblocare vocală.</string>
 </resources>

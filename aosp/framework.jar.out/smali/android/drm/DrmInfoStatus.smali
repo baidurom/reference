@@ -29,7 +29,7 @@
 
     .prologue
     .line 74
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 75
     invoke-static {p2}, Landroid/drm/DrmInfoRequest;->isValidType(I)Z

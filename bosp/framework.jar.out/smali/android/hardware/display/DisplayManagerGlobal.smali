@@ -709,6 +709,42 @@
     goto :goto_0
 .end method
 
+.method public isSmartBookPluggedIn()Z
+    .locals 3
+
+    .prologue
+    .line 321
+    :try_start_0
+    iget-object v1, p0, Landroid/hardware/display/DisplayManagerGlobal;->mDm:Landroid/hardware/display/IDisplayManager;
+
+    invoke-interface {v1}, Landroid/hardware/display/IDisplayManager;->isSmartBookPluggedIn()Z
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v1
+
+    .line 324
+    :goto_0
+    return v1
+
+    .line 322
+    :catch_0
+    move-exception v0
+
+    .line 323
+    .local v0, ex:Landroid/os/RemoteException;
+    const-string v1, "DisplayManager"
+
+    const-string v2, "Failed to get SmartBook plug status."
+
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    .line 324
+    const/4 v1, 0x0
+
+    goto :goto_0
+.end method
+
 .method public registerDisplayListener(Landroid/hardware/display/DisplayManager$DisplayListener;Landroid/os/Handler;)V
     .locals 4
     .parameter "listener"
@@ -721,7 +757,7 @@
     .line 190
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    const-string v2, "listener must not be null"
+    const-string/jumbo v2, "listener must not be null"
 
     invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -894,7 +930,7 @@
     .line 204
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
-    const-string v3, "listener must not be null"
+    const-string/jumbo v3, "listener must not be null"
 
     invoke-direct {v2, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

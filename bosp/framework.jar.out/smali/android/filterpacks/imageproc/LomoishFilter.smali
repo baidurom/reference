@@ -156,7 +156,7 @@
     .line 167
     iget-object v3, p0, Landroid/filterpacks/imageproc/LomoishFilter;->mProgram:Landroid/filterfw/core/Program;
 
-    const-string v4, "inv_max_dist"
+    const-string/jumbo v4, "inv_max_dist"
 
     div-float v5, v6, v0
 

@@ -269,6 +269,8 @@
 
 .field public static final baidu_keyguard_hotword_pm:I = #string@baidu_keyguard_hotword_pm#t
 
+.field public static final baidu_mms_default_signature:I = #string@baidu_mms_default_signature#t
+
 .field public static final battery_apps_button:I = #string@battery_apps_button#t
 
 .field public static final battery_apps_message:I = #string@battery_apps_message#t
@@ -311,6 +313,8 @@
 
 .field public static final chooser_wallpaper:I = #string@chooser_wallpaper#t
 
+.field public static final close_airplane_mode:I = #string@close_airplane_mode#t
+
 .field public static final common_last_name_prefixes:I = #string@common_last_name_prefixes#t
 
 .field public static final common_name_conjunctions:I = #string@common_name_conjunctions#t
@@ -326,6 +330,10 @@
 .field public static final config_dreamsDefaultComponent:I = #string@config_dreamsDefaultComponent#t
 
 .field public static final config_ethernet_iface_regex:I = #string@config_ethernet_iface_regex#t
+
+.field public static final config_geocodeProviderPackageName:I = #string@config_geocodeProviderPackageName#t
+
+.field public static final config_networkLocationProviderPackageName:I = #string@config_networkLocationProviderPackageName#t
 
 .field public static final config_ntpServer:I = #string@config_ntpServer#t
 
@@ -344,6 +352,8 @@
 .field public static final config_wimaxServiceJarLocation:I = #string@config_wimaxServiceJarLocation#t
 
 .field public static final config_wimaxStateTrackerClassname:I = #string@config_wimaxStateTrackerClassname#t
+
+.field public static final config_wind_optr:I = #string@config_wind_optr#t
 
 .field public static final configure_input_methods:I = #string@configure_input_methods#t
 
@@ -883,6 +893,8 @@
 
 .field public static final lockscreen_access_pattern_start:I = #string@lockscreen_access_pattern_start#t
 
+.field public static final lockscreen_battery_short:I = #string@lockscreen_battery_short#t
+
 .field public static final lockscreen_carrier_default:I = #string@lockscreen_carrier_default#t
 
 .field public static final lockscreen_charged:I = #string@lockscreen_charged#t
@@ -1085,6 +1097,8 @@
 
 .field public static final older:I = #string@older#t
 
+.field public static final open_airplane_mode:I = #string@open_airplane_mode#t
+
 .field public static final open_permission_deny:I = #string@open_permission_deny#t
 
 .field public static final orgTypeCustom:I = #string@orgTypeCustom#t
@@ -1240,6 +1254,8 @@
 .field public static final reboot:I = #string@reboot#t
 
 .field public static final reboot_confirm:I = #string@reboot_confirm#t
+
+.field public static final reboot_confirm_question:I = #string@reboot_confirm_question#t
 
 .field public static final reboot_progress:I = #string@reboot_progress#t
 
@@ -1505,6 +1521,14 @@
 
 .field public static final status_bar_notification_info_overflow:I = #string@status_bar_notification_info_overflow#t
 
+.field public static final storage_external_usb:I = #string@storage_external_usb#t
+
+.field public static final storage_internal:I = #string@storage_internal#t
+
+.field public static final storage_phone:I = #string@storage_phone#t
+
+.field public static final storage_sd_card:I = #string@storage_sd_card#t
+
 .field public static final submit:I = #string@submit#t
 
 .field public static final sync_binding_label:I = #string@sync_binding_label#t
@@ -1560,6 +1584,8 @@
 .field public static final time_wday:I = #string@time_wday#t
 
 .field public static final time_wday_date:I = #string@time_wday_date#t
+
+.field public static final transport_string:I = #string@transport_string#t
 
 .field public static final twelve_hour_time_format:I = #string@twelve_hour_time_format#t
 
@@ -1618,6 +1644,8 @@
 .field public static final volume_icon_description_notification:I = #string@volume_icon_description_notification#t
 
 .field public static final volume_icon_description_ringer:I = #string@volume_icon_description_ringer#t
+
+.field public static final volume_unknown:I = #string@volume_unknown#t
 
 .field public static final vpn_lockdown_connected:I = #string@vpn_lockdown_connected#t
 
@@ -1699,6 +1727,8 @@
 
 .field public static final wifi_watchdog_network_disabled_detailed:I = #string@wifi_watchdog_network_disabled_detailed#t
 
+.field public static final wind_signatrue:I = #string@wind_signatrue#t
+
 .field public static final yes:I = #string@yes#t
 
 .field public static final zz_lockscreen_month_day_hour_minute:I = #string@zz_lockscreen_month_day_hour_minute#t
@@ -1711,8 +1741,8 @@
     .locals 0
 
     .prologue
-    .line 13304
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 13233
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

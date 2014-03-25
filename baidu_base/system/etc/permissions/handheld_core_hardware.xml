@@ -23,6 +23,7 @@
      devices.
 -->
 <permissions>
+<!--
     <feature name="android.hardware.camera" />
     <feature name="android.hardware.location" />
     <feature name="android.hardware.location.network" />
@@ -31,6 +32,7 @@
     <feature name="android.hardware.bluetooth" />
     <feature name="android.hardware.touchscreen" />
     <feature name="android.hardware.microphone" />
+-->
     <feature name="android.hardware.screen.portrait" />
     <feature name="android.hardware.screen.landscape" />
     <!-- devices with GPS must include android.hardware.location.gps.xml -->

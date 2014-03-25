@@ -161,6 +161,10 @@
 
 .field public static final carrier:I = #id@carrier#t
 
+.field public static final carrierDivider:I = #id@carrierDivider#t
+
+.field public static final carrierGemini:I = #id@carrierGemini#t
+
 .field public static final characterPicker:I = #id@characterPicker#t
 
 .field public static final check:I = #id@check#t
@@ -411,6 +415,8 @@
 
 .field public static final keyguard_pin_view:I = #id@keyguard_pin_view#t
 
+.field public static final keyguard_security_container:I = #id@keyguard_security_container#t
+
 .field public static final keyguard_selector_fade_container:I = #id@keyguard_selector_fade_container#t
 
 .field public static final keyguard_selector_view:I = #id@keyguard_selector_view#t
@@ -426,6 +432,8 @@
 .field public static final keyguard_status_view_face_palm:I = #id@keyguard_status_view_face_palm#t
 
 .field public static final keyguard_transport_control:I = #id@keyguard_transport_control#t
+
+.field public static final keyguard_unlock_panel:I = #id@keyguard_unlock_panel#t
 
 .field public static final keyguard_user_avatar:I = #id@keyguard_user_avatar#t
 
@@ -877,7 +885,15 @@
 
 .field public static final zoomOut:I = #id@zoomOut#t
 
+.field public static final zz_keyguard_voice_unlock_view:I = #id@zz_keyguard_voice_unlock_view#t
+
 .field public static final zz_transport:I = #id@zz_transport#t
+
+.field public static final zz_voiceLockCancel:I = #id@zz_voiceLockCancel#t
+
+.field public static final zz_voiceLockWave:I = #id@zz_voiceLockWave#t
+
+.field public static final zz_voice_unlock_area_view:I = #id@zz_voice_unlock_area_view#t
 
 
 # direct methods
@@ -885,8 +901,8 @@
     .locals 0
 
     .prologue
-    .line 12205
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 12126
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

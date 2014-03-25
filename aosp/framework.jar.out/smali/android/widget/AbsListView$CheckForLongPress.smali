@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 2755
+    .line 2885
     iput-object p1, p0, Landroid/widget/AbsListView$CheckForLongPress;->this$0:Landroid/widget/AbsListView;
 
     const/4 v0, 0x0
@@ -43,7 +43,7 @@
     .parameter "x1"
 
     .prologue
-    .line 2755
+    .line 2885
     invoke-direct {p0, p1}, Landroid/widget/AbsListView$CheckForLongPress;-><init>(Landroid/widget/AbsListView;)V
 
     return-void
@@ -57,18 +57,18 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 2757
+    .line 2887
     iget-object v6, p0, Landroid/widget/AbsListView$CheckForLongPress;->this$0:Landroid/widget/AbsListView;
 
     iget v5, v6, Landroid/widget/AbsListView;->mMotionPosition:I
 
-    .line 2758
+    .line 2888
     .local v5, motionPosition:I
     iget-object v6, p0, Landroid/widget/AbsListView$CheckForLongPress;->this$0:Landroid/widget/AbsListView;
 
     iget-object v7, p0, Landroid/widget/AbsListView$CheckForLongPress;->this$0:Landroid/widget/AbsListView;
 
-    iget v7, v7, Landroid/widget/AdapterView;->mFirstPosition:I
+    iget v7, v7, Landroid/widget/AbsListView;->mFirstPosition:I
 
     sub-int v7, v5, v7
 
@@ -76,16 +76,16 @@
 
     move-result-object v0
 
-    .line 2759
+    .line 2889
     .local v0, child:Landroid/view/View;
     if-eqz v0, :cond_1
 
-    .line 2760
+    .line 2890
     iget-object v6, p0, Landroid/widget/AbsListView$CheckForLongPress;->this$0:Landroid/widget/AbsListView;
 
     iget v4, v6, Landroid/widget/AbsListView;->mMotionPosition:I
 
-    .line 2761
+    .line 2891
     .local v4, longPressPosition:I
     iget-object v6, p0, Landroid/widget/AbsListView$CheckForLongPress;->this$0:Landroid/widget/AbsListView;
 
@@ -99,11 +99,11 @@
 
     move-result-wide v2
 
-    .line 2763
+    .line 2893
     .local v2, longPressId:J
     const/4 v1, 0x0
 
-    .line 2764
+    .line 2894
     .local v1, handled:Z
     invoke-virtual {p0}, Landroid/widget/AbsListView$CheckForLongPress;->sameWindow()Z
 
@@ -113,37 +113,37 @@
 
     iget-object v6, p0, Landroid/widget/AbsListView$CheckForLongPress;->this$0:Landroid/widget/AbsListView;
 
-    iget-boolean v6, v6, Landroid/widget/AdapterView;->mDataChanged:Z
+    iget-boolean v6, v6, Landroid/widget/AbsListView;->mDataChanged:Z
 
     if-nez v6, :cond_0
 
-    .line 2765
+    .line 2895
     iget-object v6, p0, Landroid/widget/AbsListView$CheckForLongPress;->this$0:Landroid/widget/AbsListView;
 
     invoke-virtual {v6, v0, v4, v2, v3}, Landroid/widget/AbsListView;->performLongPress(Landroid/view/View;IJ)Z
 
     move-result v1
 
-    .line 2767
+    .line 2897
     :cond_0
     if-eqz v1, :cond_2
 
-    .line 2768
+    .line 2898
     iget-object v6, p0, Landroid/widget/AbsListView$CheckForLongPress;->this$0:Landroid/widget/AbsListView;
 
     const/4 v7, -0x1
 
     iput v7, v6, Landroid/widget/AbsListView;->mTouchMode:I
 
-    .line 2769
+    .line 2899
     iget-object v6, p0, Landroid/widget/AbsListView$CheckForLongPress;->this$0:Landroid/widget/AbsListView;
 
     invoke-virtual {v6, v8}, Landroid/widget/AbsListView;->setPressed(Z)V
 
-    .line 2770
+    .line 2900
     invoke-virtual {v0, v8}, Landroid/view/View;->setPressed(Z)V
 
-    .line 2775
+    .line 2905
     .end local v1           #handled:Z
     .end local v2           #longPressId:J
     .end local v4           #longPressPosition:I
@@ -151,7 +151,7 @@
     :goto_0
     return-void
 
-    .line 2772
+    .line 2902
     .restart local v1       #handled:Z
     .restart local v2       #longPressId:J
     .restart local v4       #longPressPosition:I

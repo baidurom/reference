@@ -49,29 +49,29 @@
     .parameter "m"
 
     .prologue
-    .line 2825
+    .line 3453
     iput-object p1, p0, Landroid/net/wifi/p2p/WifiP2pService$ClientInfo;->this$0:Landroid/net/wifi/p2p/WifiP2pService;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2826
+    .line 3454
     iput-object p2, p0, Landroid/net/wifi/p2p/WifiP2pService$ClientInfo;->mMessenger:Landroid/os/Messenger;
 
-    .line 2827
+    .line 3455
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Landroid/net/wifi/p2p/WifiP2pService$ClientInfo;->mReqList:Landroid/util/SparseArray;
 
-    .line 2828
+    .line 3456
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/net/wifi/p2p/WifiP2pService$ClientInfo;->mServList:Ljava/util/List;
 
-    .line 2829
+    .line 3457
     return-void
 .end method
 
@@ -82,40 +82,40 @@
     .parameter "x2"
 
     .prologue
-    .line 2807
+    .line 3435
     invoke-direct {p0, p1, p2}, Landroid/net/wifi/p2p/WifiP2pService$ClientInfo;-><init>(Landroid/net/wifi/p2p/WifiP2pService;Landroid/os/Messenger;)V
 
     return-void
 .end method
 
-.method static synthetic access$12300(Landroid/net/wifi/p2p/WifiP2pService$ClientInfo;)Landroid/util/SparseArray;
+.method static synthetic access$14700(Landroid/net/wifi/p2p/WifiP2pService$ClientInfo;)Landroid/util/SparseArray;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 2807
+    .line 3435
     iget-object v0, p0, Landroid/net/wifi/p2p/WifiP2pService$ClientInfo;->mReqList:Landroid/util/SparseArray;
 
     return-object v0
 .end method
 
-.method static synthetic access$12400(Landroid/net/wifi/p2p/WifiP2pService$ClientInfo;)Ljava/util/List;
+.method static synthetic access$14800(Landroid/net/wifi/p2p/WifiP2pService$ClientInfo;)Ljava/util/List;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 2807
+    .line 3435
     iget-object v0, p0, Landroid/net/wifi/p2p/WifiP2pService$ClientInfo;->mServList:Ljava/util/List;
 
     return-object v0
 .end method
 
-.method static synthetic access$12500(Landroid/net/wifi/p2p/WifiP2pService$ClientInfo;)Landroid/os/Messenger;
+.method static synthetic access$14900(Landroid/net/wifi/p2p/WifiP2pService$ClientInfo;)Landroid/os/Messenger;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 2807
+    .line 3435
     iget-object v0, p0, Landroid/net/wifi/p2p/WifiP2pService$ClientInfo;->mMessenger:Landroid/os/Messenger;
 
     return-object v0

@@ -25,7 +25,7 @@
     .parameter "x0"
 
     .prologue
-    .line 227
+    .line 274
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardStatusViewManager$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardStatusViewManager;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -40,12 +40,12 @@
     .parameter "selfChange"
 
     .prologue
-    .line 230
+    .line 277
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardStatusViewManager$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardStatusViewManager;
 
     #calls: Lcom/android/internal/policy/impl/keyguard/KeyguardStatusViewManager;->updateAlarmInfo()V
     invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardStatusViewManager;->access$400(Lcom/android/internal/policy/impl/keyguard/KeyguardStatusViewManager;)V
 
-    .line 231
+    .line 278
     return-void
 .end method

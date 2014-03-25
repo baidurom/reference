@@ -142,7 +142,7 @@
     .prologue
     .line 45
     .local p0, this:Lcom/android/server/IntentResolver;,"Lcom/android/server/IntentResolver<TF;TR;>;"
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 712
     new-instance v0, Lcom/android/server/IntentResolver$2;

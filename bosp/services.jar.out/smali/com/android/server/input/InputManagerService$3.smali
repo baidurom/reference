@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 306
+    .line 316
     iput-object p1, p0, Lcom/android/server/input/InputManagerService$3;->this$0:Lcom/android/server/input/InputManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,12 +40,12 @@
     .parameter "intent"
 
     .prologue
-    .line 309
+    .line 319
     iget-object v0, p0, Lcom/android/server/input/InputManagerService$3;->this$0:Lcom/android/server/input/InputManagerService;
 
     #calls: Lcom/android/server/input/InputManagerService;->reloadDeviceAliases()V
     invoke-static {v0}, Lcom/android/server/input/InputManagerService;->access$100(Lcom/android/server/input/InputManagerService;)V
 
-    .line 310
+    .line 320
     return-void
 .end method

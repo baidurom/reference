@@ -26,7 +26,7 @@
 
     .prologue
     .line 159
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 160
     invoke-direct {p0}, Landroid/os/Binder;->init()V
@@ -73,15 +73,15 @@
 
     move-result v4
 
-    .line 366
+    .line 369
     .local v4, res:Z
     :goto_0
     invoke-virtual {v3}, Landroid/os/Parcel;->recycle()V
 
-    .line 367
+    .line 370
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 368
+    .line 371
     return v4
 
     .line 352
@@ -91,45 +91,51 @@
 
     .line 353
     .local v1, e:Landroid/os/RemoteException;
-    invoke-virtual {v3, v6}, Landroid/os/Parcel;->setDataPosition(I)V
+    invoke-virtual {v1}, Landroid/os/RemoteException;->printStackTrace()V
 
     .line 354
-    invoke-virtual {v3, v1}, Landroid/os/Parcel;->writeException(Ljava/lang/Exception;)V
+    invoke-virtual {v3, v6}, Landroid/os/Parcel;->setDataPosition(I)V
 
     .line 355
+    invoke-virtual {v3, v1}, Landroid/os/Parcel;->writeException(Ljava/lang/Exception;)V
+
+    .line 356
     const/4 v4, 0x1
 
-    .line 365
+    .line 368
     .restart local v4       #res:Z
     goto :goto_0
 
-    .line 356
+    .line 357
     .end local v1           #e:Landroid/os/RemoteException;
     .end local v4           #res:Z
     :catch_1
     move-exception v1
 
-    .line 357
-    .local v1, e:Ljava/lang/RuntimeException;
-    invoke-virtual {v3, v6}, Landroid/os/Parcel;->setDataPosition(I)V
-
     .line 358
-    invoke-virtual {v3, v1}, Landroid/os/Parcel;->writeException(Ljava/lang/Exception;)V
+    .local v1, e:Ljava/lang/RuntimeException;
+    invoke-virtual {v1}, Ljava/lang/RuntimeException;->printStackTrace()V
 
     .line 359
+    invoke-virtual {v3, v6}, Landroid/os/Parcel;->setDataPosition(I)V
+
+    .line 360
+    invoke-virtual {v3, v1}, Landroid/os/Parcel;->writeException(Ljava/lang/Exception;)V
+
+    .line 361
     const/4 v4, 0x1
 
-    .line 365
+    .line 368
     .restart local v4       #res:Z
     goto :goto_0
 
-    .line 360
+    .line 362
     .end local v1           #e:Ljava/lang/RuntimeException;
     .end local v4           #res:Z
     :catch_2
     move-exception v1
 
-    .line 361
+    .line 363
     .local v1, e:Ljava/lang/OutOfMemoryError;
     new-instance v2, Ljava/lang/RuntimeException;
 
@@ -137,14 +143,17 @@
 
     invoke-direct {v2, v5, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 362
+    .line 364
     .local v2, re:Ljava/lang/RuntimeException;
+    invoke-virtual {v2}, Ljava/lang/RuntimeException;->printStackTrace()V
+
+    .line 365
     invoke-virtual {v3, v6}, Landroid/os/Parcel;->setDataPosition(I)V
 
-    .line 363
+    .line 366
     invoke-virtual {v3, v2}, Landroid/os/Parcel;->writeException(Ljava/lang/Exception;)V
 
-    .line 364
+    .line 367
     const/4 v4, 0x1
 
     .restart local v4       #res:Z

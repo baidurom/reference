@@ -38,16 +38,21 @@
 
 .field private static mColl:Ljava/text/Collator;
 
+.field private static mLocale:Ljava/util/Locale;
+
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
     .prologue
-    .line 441
     const/4 v0, 0x0
 
+    .line 444
     sput-object v0, Landroid/database/DatabaseUtils;->mColl:Ljava/text/Collator;
+
+    .line 447
+    sput-object v0, Landroid/database/DatabaseUtils;->mLocale:Ljava/util/Locale;
 
     return-void
 .end method
@@ -57,9 +62,9 @@
 
     .prologue
     .line 49
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 971
+    .line 1007
     return-void
 .end method
 
@@ -140,7 +145,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 1401
+    .line 1437
     if-eqz p0, :cond_0
 
     array-length v1, p0
@@ -150,11 +155,11 @@
     :cond_0
     move-object v0, p1
 
-    .line 1407
+    .line 1443
     :goto_0
     return-object v0
 
-    .line 1404
+    .line 1440
     :cond_1
     array-length v1, p0
 
@@ -164,13 +169,13 @@
 
     new-array v0, v1, [Ljava/lang/String;
 
-    .line 1405
+    .line 1441
     .local v0, result:[Ljava/lang/String;
     array-length v1, p0
 
     invoke-static {p0, v3, v0, v3, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 1406
+    .line 1442
     array-length v1, p0
 
     array-length v2, p1
@@ -376,12 +381,12 @@
     .parameter "selectionArgs"
 
     .prologue
-    .line 846
+    .line 882
     invoke-virtual {p0, p1}, Landroid/database/sqlite/SQLiteDatabase;->compileStatement(Ljava/lang/String;)Landroid/database/sqlite/SQLiteStatement;
 
     move-result-object v0
 
-    .line 848
+    .line 884
     .local v0, prog:Landroid/database/sqlite/SQLiteStatement;
     :try_start_0
     invoke-static {v0, p2}, Landroid/database/DatabaseUtils;->blobFileDescriptorForQuery(Landroid/database/sqlite/SQLiteStatement;[Ljava/lang/String;)Landroid/os/ParcelFileDescriptor;
@@ -390,7 +395,7 @@
 
     move-result-object v1
 
-    .line 850
+    .line 886
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
     return-object v1
@@ -409,10 +414,10 @@
     .parameter "selectionArgs"
 
     .prologue
-    .line 862
+    .line 898
     invoke-virtual {p0, p1}, Landroid/database/sqlite/SQLiteStatement;->bindAllArgsAsStrings([Ljava/lang/String;)V
 
-    .line 863
+    .line 899
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteStatement;->simpleQueryForBlobFileDescriptor()Landroid/os/ParcelFileDescriptor;
 
     move-result-object v0
@@ -499,7 +504,7 @@
     .parameter "sqlStatements"
 
     .prologue
-    .line 1335
+    .line 1371
     const/4 v6, 0x0
 
     const/4 v7, 0x0
@@ -508,7 +513,7 @@
 
     move-result-object v1
 
-    .line 1339
+    .line 1375
     .local v1, db:Landroid/database/sqlite/SQLiteDatabase;
     const-string v6, ";\n"
 
@@ -516,7 +521,7 @@
 
     move-result-object v5
 
-    .line 1340
+    .line 1376
     .local v5, statements:[Ljava/lang/String;
     move-object v0, v5
 
@@ -532,7 +537,7 @@
 
     aget-object v4, v0, v2
 
-    .line 1341
+    .line 1377
     .local v4, statement:Ljava/lang/String;
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -540,27 +545,27 @@
 
     if-eqz v6, :cond_0
 
-    .line 1340
+    .line 1376
     :goto_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 1342
+    .line 1378
     :cond_0
     invoke-virtual {v1, v4}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
     goto :goto_1
 
-    .line 1344
+    .line 1380
     .end local v4           #statement:Ljava/lang/String;
     :cond_1
     invoke-virtual {v1, p2}, Landroid/database/sqlite/SQLiteDatabase;->setVersion(I)V
 
-    .line 1345
+    .line 1381
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->close()V
 
-    .line 1346
+    .line 1382
     return-void
 .end method
 
@@ -572,12 +577,12 @@
     .parameter "key"
 
     .prologue
-    .line 696
+    .line 732
     invoke-interface {p0, p1}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 697
+    .line 733
     .local v0, colIndex:I
     invoke-interface {p0, v0}, Landroid/database/Cursor;->isNull(I)Z
 
@@ -585,7 +590,7 @@
 
     if-nez v1, :cond_0
 
-    .line 698
+    .line 734
     invoke-interface {p0, v0}, Landroid/database/Cursor;->getDouble(I)D
 
     move-result-wide v1
@@ -596,11 +601,11 @@
 
     invoke-virtual {p2, p3, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Double;)V
 
-    .line 702
+    .line 738
     :goto_0
     return-void
 
-    .line 700
+    .line 736
     :cond_0
     const/4 v1, 0x0
 
@@ -618,12 +623,12 @@
     .parameter "column"
 
     .prologue
-    .line 956
+    .line 992
     invoke-interface {p0, p2}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 957
+    .line 993
     .local v0, index:I
     const/4 v1, -0x1
 
@@ -635,7 +640,7 @@
 
     if-nez v1, :cond_0
 
-    .line 958
+    .line 994
     invoke-interface {p0, v0}, Landroid/database/Cursor;->getDouble(I)D
 
     move-result-wide v1
@@ -646,7 +651,7 @@
 
     invoke-virtual {p1, p2, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Double;)V
 
-    .line 960
+    .line 996
     :cond_0
     return-void
 .end method
@@ -658,10 +663,10 @@
     .parameter "values"
 
     .prologue
-    .line 683
+    .line 719
     invoke-static {p0, p1, p2, p1}, Landroid/database/DatabaseUtils;->cursorDoubleToContentValues(Landroid/database/Cursor;Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 684
+    .line 720
     return-void
 .end method
 
@@ -892,12 +897,12 @@
     .parameter "column"
 
     .prologue
-    .line 940
+    .line 976
     invoke-interface {p0, p2}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 941
+    .line 977
     .local v0, index:I
     const/4 v1, -0x1
 
@@ -909,7 +914,7 @@
 
     if-nez v1, :cond_0
 
-    .line 942
+    .line 978
     invoke-interface {p0, v0}, Landroid/database/Cursor;->getFloat(I)F
 
     move-result v1
@@ -920,7 +925,7 @@
 
     invoke-virtual {p1, p2, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Float;)V
 
-    .line 944
+    .line 980
     :cond_0
     return-void
 .end method
@@ -932,10 +937,10 @@
     .parameter "values"
 
     .prologue
-    .line 622
+    .line 658
     invoke-static {p0, p1, p2, p1}, Landroid/database/DatabaseUtils;->cursorIntToContentValues(Landroid/database/Cursor;Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 623
+    .line 659
     return-void
 .end method
 
@@ -947,12 +952,12 @@
     .parameter "key"
 
     .prologue
-    .line 635
+    .line 671
     invoke-interface {p0, p1}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 636
+    .line 672
     .local v0, colIndex:I
     invoke-interface {p0, v0}, Landroid/database/Cursor;->isNull(I)Z
 
@@ -960,7 +965,7 @@
 
     if-nez v1, :cond_0
 
-    .line 637
+    .line 673
     invoke-interface {p0, v0}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v1
@@ -971,11 +976,11 @@
 
     invoke-virtual {p2, p3, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 641
+    .line 677
     :goto_0
     return-void
 
-    .line 639
+    .line 675
     :cond_0
     const/4 v1, 0x0
 
@@ -993,12 +998,12 @@
     .parameter "column"
 
     .prologue
-    .line 924
+    .line 960
     invoke-interface {p0, p2}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 925
+    .line 961
     .local v0, index:I
     const/4 v1, -0x1
 
@@ -1010,7 +1015,7 @@
 
     if-nez v1, :cond_0
 
-    .line 926
+    .line 962
     invoke-interface {p0, v0}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v1
@@ -1021,7 +1026,7 @@
 
     invoke-virtual {p1, p2, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 928
+    .line 964
     :cond_0
     return-void
 .end method
@@ -1033,10 +1038,10 @@
     .parameter "values"
 
     .prologue
-    .line 652
+    .line 688
     invoke-static {p0, p1, p2, p1}, Landroid/database/DatabaseUtils;->cursorLongToContentValues(Landroid/database/Cursor;Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 653
+    .line 689
     return-void
 .end method
 
@@ -1048,12 +1053,12 @@
     .parameter "key"
 
     .prologue
-    .line 665
+    .line 701
     invoke-interface {p0, p1}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 666
+    .line 702
     .local v0, colIndex:I
     invoke-interface {p0, v0}, Landroid/database/Cursor;->isNull(I)Z
 
@@ -1061,7 +1066,7 @@
 
     if-nez v2, :cond_0
 
-    .line 667
+    .line 703
     invoke-interface {p0, v0}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v2
@@ -1070,16 +1075,16 @@
 
     move-result-object v1
 
-    .line 668
+    .line 704
     .local v1, value:Ljava/lang/Long;
     invoke-virtual {p2, p3, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 672
+    .line 708
     .end local v1           #value:Ljava/lang/Long;
     :goto_0
     return-void
 
-    .line 670
+    .line 706
     :cond_0
     const/4 v2, 0x0
 
@@ -1097,12 +1102,12 @@
     .parameter "column"
 
     .prologue
-    .line 892
+    .line 928
     invoke-interface {p0, p2}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 893
+    .line 929
     .local v0, index:I
     const/4 v1, -0x1
 
@@ -1114,7 +1119,7 @@
 
     if-nez v1, :cond_0
 
-    .line 894
+    .line 930
     invoke-interface {p0, v0}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v1
@@ -1125,7 +1130,7 @@
 
     invoke-virtual {p1, p2, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 896
+    .line 932
     :cond_0
     return-void
 .end method
@@ -1136,7 +1141,7 @@
     .parameter "cursorWindowCapacity"
 
     .prologue
-    .line 748
+    .line 784
     div-int/lit8 v0, p1, 0x3
 
     sub-int v0, p0, v0
@@ -1156,7 +1161,7 @@
     .parameter "values"
 
     .prologue
-    .line 711
+    .line 747
     instance-of v4, p0, Landroid/database/AbstractWindowedCursor;
 
     if-eqz v4, :cond_0
@@ -1167,18 +1172,18 @@
 
     move-object v0, v4
 
-    .line 714
+    .line 750
     .local v0, awc:Landroid/database/AbstractWindowedCursor;
     :goto_0
     invoke-interface {p0}, Landroid/database/Cursor;->getColumnNames()[Ljava/lang/String;
 
     move-result-object v1
 
-    .line 715
+    .line 751
     .local v1, columns:[Ljava/lang/String;
     array-length v3, v1
 
-    .line 716
+    .line 752
     .local v3, length:I
     const/4 v2, 0x0
 
@@ -1186,7 +1191,7 @@
     :goto_1
     if-ge v2, v3, :cond_2
 
-    .line 717
+    .line 753
     if-eqz v0, :cond_1
 
     invoke-virtual {v0, v2}, Landroid/database/AbstractWindowedCursor;->isBlob(I)Z
@@ -1195,7 +1200,7 @@
 
     if-eqz v4, :cond_1
 
-    .line 718
+    .line 754
     aget-object v4, v1, v2
 
     invoke-interface {p0, v2}, Landroid/database/Cursor;->getBlob(I)[B
@@ -1204,13 +1209,13 @@
 
     invoke-virtual {p1, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;[B)V
 
-    .line 716
+    .line 752
     :goto_2
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 711
+    .line 747
     .end local v0           #awc:Landroid/database/AbstractWindowedCursor;
     .end local v1           #columns:[Ljava/lang/String;
     .end local v2           #i:I
@@ -1220,7 +1225,7 @@
 
     goto :goto_0
 
-    .line 720
+    .line 756
     .restart local v0       #awc:Landroid/database/AbstractWindowedCursor;
     .restart local v1       #columns:[Ljava/lang/String;
     .restart local v2       #i:I
@@ -1236,7 +1241,7 @@
 
     goto :goto_2
 
-    .line 723
+    .line 759
     :cond_2
     return-void
 .end method
@@ -1248,12 +1253,12 @@
     .parameter "column"
 
     .prologue
-    .line 908
+    .line 944
     invoke-interface {p0, p2}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 909
+    .line 945
     .local v0, index:I
     const/4 v1, -0x1
 
@@ -1265,7 +1270,7 @@
 
     if-nez v1, :cond_0
 
-    .line 910
+    .line 946
     invoke-interface {p0, v0}, Landroid/database/Cursor;->getShort(I)S
 
     move-result v1
@@ -1276,7 +1281,7 @@
 
     invoke-virtual {p1, p2, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Short;)V
 
-    .line 912
+    .line 948
     :cond_0
     return-void
 .end method
@@ -1288,10 +1293,10 @@
     .parameter "values"
 
     .prologue
-    .line 585
+    .line 621
     invoke-static {p0, p1, p2, p1}, Landroid/database/DatabaseUtils;->cursorStringToContentValues(Landroid/database/Cursor;Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 586
+    .line 622
     return-void
 .end method
 
@@ -1303,7 +1308,7 @@
     .parameter "key"
 
     .prologue
-    .line 611
+    .line 647
     invoke-interface {p0, p1}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v0
@@ -1314,7 +1319,7 @@
 
     invoke-virtual {p2, p3, v0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 612
+    .line 648
     return-void
 .end method
 
@@ -1325,12 +1330,12 @@
     .parameter "column"
 
     .prologue
-    .line 876
+    .line 912
     invoke-interface {p0, p2}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 877
+    .line 913
     .local v0, index:I
     const/4 v1, -0x1
 
@@ -1342,14 +1347,14 @@
 
     if-nez v1, :cond_0
 
-    .line 878
+    .line 914
     invoke-interface {p0, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {p1, p2, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 880
+    .line 916
     :cond_0
     return-void
 .end method
@@ -1362,7 +1367,7 @@
     .parameter "index"
 
     .prologue
-    .line 598
+    .line 634
     invoke-interface {p0, p1}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v0
@@ -1373,7 +1378,7 @@
 
     invoke-virtual {p2, p3, v0}, Landroid/database/DatabaseUtils$InsertHelper;->bind(ILjava/lang/String;)V
 
-    .line 599
+    .line 635
     return-void
 .end method
 
@@ -1382,12 +1387,12 @@
     .parameter "cursor"
 
     .prologue
-    .line 513
+    .line 549
     sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     invoke-static {p0, v0}, Landroid/database/DatabaseUtils;->dumpCurrentRow(Landroid/database/Cursor;Ljava/io/PrintStream;)V
 
-    .line 514
+    .line 550
     return-void
 .end method
 
@@ -1397,12 +1402,12 @@
     .parameter "stream"
 
     .prologue
-    .line 523
+    .line 559
     invoke-interface {p0}, Landroid/database/Cursor;->getColumnNames()[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 524
+    .line 560
     .local v0, cols:[Ljava/lang/String;
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -1434,10 +1439,10 @@
 
     invoke-virtual {p1, v5}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
-    .line 525
+    .line 561
     array-length v3, v0
 
-    .line 526
+    .line 562
     .local v3, length:I
     const/4 v2, 0x0
 
@@ -1445,7 +1450,7 @@
     :goto_0
     if-ge v2, v3, :cond_0
 
-    .line 529
+    .line 565
     :try_start_0
     invoke-interface {p0, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
     :try_end_0
@@ -1453,7 +1458,7 @@
 
     move-result-object v4
 
-    .line 535
+    .line 571
     .local v4, value:Ljava/lang/String;
     :goto_1
     new-instance v5, Ljava/lang/StringBuilder;
@@ -1488,24 +1493,24 @@
 
     invoke-virtual {p1, v5}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
-    .line 526
+    .line 562
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 530
+    .line 566
     .end local v4           #value:Ljava/lang/String;
     :catch_0
     move-exception v1
 
-    .line 533
+    .line 569
     .local v1, e:Landroid/database/sqlite/SQLiteException;
     const-string v4, "<unprintable>"
 
     .restart local v4       #value:Ljava/lang/String;
     goto :goto_1
 
-    .line 537
+    .line 573
     .end local v1           #e:Landroid/database/sqlite/SQLiteException;
     .end local v4           #value:Ljava/lang/String;
     :cond_0
@@ -1513,7 +1518,7 @@
 
     invoke-virtual {p1, v5}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
-    .line 538
+    .line 574
     return-void
 .end method
 
@@ -1523,12 +1528,12 @@
     .parameter "sb"
 
     .prologue
-    .line 547
+    .line 583
     invoke-interface {p0}, Landroid/database/Cursor;->getColumnNames()[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 548
+    .line 584
     .local v0, cols:[Ljava/lang/String;
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -1560,10 +1565,10 @@
 
     invoke-virtual {p1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 549
+    .line 585
     array-length v3, v0
 
-    .line 550
+    .line 586
     .local v3, length:I
     const/4 v2, 0x0
 
@@ -1571,7 +1576,7 @@
     :goto_0
     if-ge v2, v3, :cond_0
 
-    .line 553
+    .line 589
     :try_start_0
     invoke-interface {p0, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
     :try_end_0
@@ -1579,7 +1584,7 @@
 
     move-result-object v4
 
-    .line 559
+    .line 595
     .local v4, value:Ljava/lang/String;
     :goto_1
     new-instance v5, Ljava/lang/StringBuilder;
@@ -1620,24 +1625,24 @@
 
     invoke-virtual {p1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 550
+    .line 586
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 554
+    .line 590
     .end local v4           #value:Ljava/lang/String;
     :catch_0
     move-exception v1
 
-    .line 557
+    .line 593
     .local v1, e:Landroid/database/sqlite/SQLiteException;
     const-string v4, "<unprintable>"
 
     .restart local v4       #value:Ljava/lang/String;
     goto :goto_1
 
-    .line 561
+    .line 597
     .end local v1           #e:Landroid/database/sqlite/SQLiteException;
     .end local v4           #value:Ljava/lang/String;
     :cond_0
@@ -1645,7 +1650,7 @@
 
     invoke-virtual {p1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 562
+    .line 598
     return-void
 .end method
 
@@ -1654,16 +1659,16 @@
     .parameter "cursor"
 
     .prologue
-    .line 571
+    .line 607
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 572
+    .line 608
     .local v0, sb:Ljava/lang/StringBuilder;
     invoke-static {p0, v0}, Landroid/database/DatabaseUtils;->dumpCurrentRow(Landroid/database/Cursor;Ljava/lang/StringBuilder;)V
 
-    .line 573
+    .line 609
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -1676,12 +1681,12 @@
     .parameter "cursor"
 
     .prologue
-    .line 449
+    .line 485
     sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     invoke-static {p0, v0}, Landroid/database/DatabaseUtils;->dumpCursor(Landroid/database/Cursor;Ljava/io/PrintStream;)V
 
-    .line 450
+    .line 486
     return-void
 .end method
 
@@ -1691,7 +1696,7 @@
     .parameter "stream"
 
     .prologue
-    .line 460
+    .line 496
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1712,21 +1717,21 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
-    .line 461
+    .line 497
     if-eqz p0, :cond_1
 
-    .line 462
+    .line 498
     invoke-interface {p0}, Landroid/database/Cursor;->getPosition()I
 
     move-result v0
 
-    .line 464
+    .line 500
     .local v0, startPos:I
     const/4 v1, -0x1
 
     invoke-interface {p0, v1}, Landroid/database/Cursor;->moveToPosition(I)Z
 
-    .line 465
+    .line 501
     :goto_0
     invoke-interface {p0}, Landroid/database/Cursor;->moveToNext()Z
 
@@ -1734,23 +1739,23 @@
 
     if-eqz v1, :cond_0
 
-    .line 466
+    .line 502
     invoke-static {p0, p1}, Landroid/database/DatabaseUtils;->dumpCurrentRow(Landroid/database/Cursor;Ljava/io/PrintStream;)V
 
     goto :goto_0
 
-    .line 468
+    .line 504
     :cond_0
     invoke-interface {p0, v0}, Landroid/database/Cursor;->moveToPosition(I)Z
 
-    .line 470
+    .line 506
     .end local v0           #startPos:I
     :cond_1
     const-string v1, "<<<<<"
 
     invoke-virtual {p1, v1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
-    .line 471
+    .line 507
     return-void
 .end method
 
@@ -1760,7 +1765,7 @@
     .parameter "sb"
 
     .prologue
-    .line 481
+    .line 517
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1787,21 +1792,21 @@
 
     invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 482
+    .line 518
     if-eqz p0, :cond_1
 
-    .line 483
+    .line 519
     invoke-interface {p0}, Landroid/database/Cursor;->getPosition()I
 
     move-result v0
 
-    .line 485
+    .line 521
     .local v0, startPos:I
     const/4 v1, -0x1
 
     invoke-interface {p0, v1}, Landroid/database/Cursor;->moveToPosition(I)Z
 
-    .line 486
+    .line 522
     :goto_0
     invoke-interface {p0}, Landroid/database/Cursor;->moveToNext()Z
 
@@ -1809,23 +1814,23 @@
 
     if-eqz v1, :cond_0
 
-    .line 487
+    .line 523
     invoke-static {p0, p1}, Landroid/database/DatabaseUtils;->dumpCurrentRow(Landroid/database/Cursor;Ljava/lang/StringBuilder;)V
 
     goto :goto_0
 
-    .line 489
+    .line 525
     :cond_0
     invoke-interface {p0, v0}, Landroid/database/Cursor;->moveToPosition(I)Z
 
-    .line 491
+    .line 527
     .end local v0           #startPos:I
     :cond_1
     const-string v1, "<<<<<\n"
 
     invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 492
+    .line 528
     return-void
 .end method
 
@@ -1834,16 +1839,16 @@
     .parameter "cursor"
 
     .prologue
-    .line 502
+    .line 538
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 503
+    .line 539
     .local v0, sb:Ljava/lang/StringBuilder;
     invoke-static {p0, v0}, Landroid/database/DatabaseUtils;->dumpCursor(Landroid/database/Cursor;Ljava/lang/StringBuilder;)V
 
-    .line 504
+    .line 540
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -1856,10 +1861,10 @@
     .parameter "columnNames"
 
     .prologue
-    .line 1415
+    .line 1451
     array-length v1, p0
 
-    .line 1416
+    .line 1452
     .local v1, length:I
     const/4 v0, 0x0
 
@@ -1867,7 +1872,7 @@
     :goto_0
     if-ge v0, v1, :cond_1
 
-    .line 1417
+    .line 1453
     aget-object v2, p0, v0
 
     const-string v3, "_id"
@@ -1878,19 +1883,19 @@
 
     if-eqz v2, :cond_0
 
-    .line 1421
+    .line 1457
     .end local v0           #i:I
     :goto_1
     return v0
 
-    .line 1416
+    .line 1452
     .restart local v0       #i:I
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 1421
+    .line 1457
     :cond_1
     const/4 v0, -0x1
 
@@ -1949,21 +1954,30 @@
 
     if-nez v0, :cond_0
 
-    .line 435
-    invoke-static {}, Ljava/text/Collator;->getInstance()Ljava/text/Collator;
+    .line 436
+    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
+
+    move-result-object v0
+
+    sput-object v0, Landroid/database/DatabaseUtils;->mLocale:Ljava/util/Locale;
+
+    .line 437
+    sget-object v0, Landroid/database/DatabaseUtils;->mLocale:Ljava/util/Locale;
+
+    invoke-static {v0}, Ljava/text/Collator;->getInstance(Ljava/util/Locale;)Ljava/text/Collator;
 
     move-result-object v0
 
     sput-object v0, Landroid/database/DatabaseUtils;->mColl:Ljava/text/Collator;
 
-    .line 436
+    .line 439
     sget-object v0, Landroid/database/DatabaseUtils;->mColl:Ljava/text/Collator;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Ljava/text/Collator;->setStrength(I)V
 
-    .line 438
+    .line 441
     :cond_0
     sget-object v0, Landroid/database/DatabaseUtils;->mColl:Ljava/text/Collator;
 
@@ -1974,6 +1988,16 @@
     invoke-virtual {v0}, Ljava/text/CollationKey;->toByteArray()[B
 
     move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static getCollatorLocale()Ljava/util/Locale;
+    .locals 1
+
+    .prologue
+    .line 457
+    sget-object v0, Landroid/database/DatabaseUtils;->mLocale:Ljava/util/Locale;
 
     return-object v0
 .end method
@@ -2051,24 +2075,24 @@
 
     const/4 v2, 0x3
 
-    .line 1363
+    .line 1399
     invoke-virtual {p0}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object p0
 
-    .line 1364
+    .line 1400
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v4
 
     if-ge v4, v2, :cond_1
 
-    .line 1393
+    .line 1429
     :cond_0
     :goto_0
     return v1
 
-    .line 1367
+    .line 1403
     :cond_1
     const/4 v4, 0x0
 
@@ -2082,7 +2106,7 @@
 
     move-result-object v0
 
-    .line 1368
+    .line 1404
     .local v0, prefixSql:Ljava/lang/String;
     const-string v4, "SEL"
 
@@ -2092,12 +2116,12 @@
 
     if-eqz v4, :cond_2
 
-    .line 1369
+    .line 1405
     const/4 v1, 0x1
 
     goto :goto_0
 
-    .line 1370
+    .line 1406
     :cond_2
     const-string v4, "INS"
 
@@ -2131,13 +2155,13 @@
 
     if-eqz v4, :cond_4
 
-    .line 1374
+    .line 1410
     :cond_3
     const/4 v1, 0x2
 
     goto :goto_0
 
-    .line 1375
+    .line 1411
     :cond_4
     const-string v4, "ATT"
 
@@ -2149,10 +2173,10 @@
 
     move v1, v2
 
-    .line 1376
+    .line 1412
     goto :goto_0
 
-    .line 1377
+    .line 1413
     :cond_5
     const-string v2, "COM"
 
@@ -2164,10 +2188,10 @@
 
     move v1, v3
 
-    .line 1378
+    .line 1414
     goto :goto_0
 
-    .line 1379
+    .line 1415
     :cond_6
     const-string v2, "END"
 
@@ -2179,10 +2203,10 @@
 
     move v1, v3
 
-    .line 1380
+    .line 1416
     goto :goto_0
 
-    .line 1381
+    .line 1417
     :cond_7
     const-string v2, "ROL"
 
@@ -2192,12 +2216,12 @@
 
     if-eqz v2, :cond_8
 
-    .line 1382
+    .line 1418
     const/4 v1, 0x6
 
     goto :goto_0
 
-    .line 1383
+    .line 1419
     :cond_8
     const-string v2, "BEG"
 
@@ -2207,12 +2231,12 @@
 
     if-eqz v2, :cond_9
 
-    .line 1384
+    .line 1420
     const/4 v1, 0x4
 
     goto :goto_0
 
-    .line 1385
+    .line 1421
     :cond_9
     const-string v2, "PRA"
 
@@ -2222,12 +2246,12 @@
 
     if-eqz v2, :cond_a
 
-    .line 1386
+    .line 1422
     const/4 v1, 0x7
 
     goto :goto_0
 
-    .line 1387
+    .line 1423
     :cond_a
     const-string v2, "CRE"
 
@@ -2253,13 +2277,13 @@
 
     if-eqz v2, :cond_c
 
-    .line 1389
+    .line 1425
     :cond_b
     const/16 v1, 0x8
 
     goto/16 :goto_0
 
-    .line 1390
+    .line 1426
     :cond_c
     const-string v2, "ANA"
 
@@ -2277,7 +2301,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 1391
+    .line 1427
     :cond_d
     const/16 v1, 0x9
 
@@ -2364,12 +2388,12 @@
     .parameter "selectionArgs"
 
     .prologue
-    .line 799
+    .line 835
     invoke-virtual {p0, p1}, Landroid/database/sqlite/SQLiteDatabase;->compileStatement(Ljava/lang/String;)Landroid/database/sqlite/SQLiteStatement;
 
     move-result-object v0
 
-    .line 801
+    .line 837
     .local v0, prog:Landroid/database/sqlite/SQLiteStatement;
     :try_start_0
     invoke-static {v0, p2}, Landroid/database/DatabaseUtils;->longForQuery(Landroid/database/sqlite/SQLiteStatement;[Ljava/lang/String;)J
@@ -2378,7 +2402,7 @@
 
     move-result-wide v1
 
-    .line 803
+    .line 839
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
     return-wide v1
@@ -2397,10 +2421,10 @@
     .parameter "selectionArgs"
 
     .prologue
-    .line 812
+    .line 848
     invoke-virtual {p0, p1}, Landroid/database/sqlite/SQLiteStatement;->bindAllArgsAsStrings([Ljava/lang/String;)V
 
-    .line 813
+    .line 849
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteStatement;->simpleQueryForLong()J
 
     move-result-wide v0
@@ -2416,7 +2440,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 758
+    .line 794
     invoke-static {p0, p1, v0, v0}, Landroid/database/DatabaseUtils;->queryNumEntries(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)J
 
     move-result-wide v0
@@ -2431,7 +2455,7 @@
     .parameter "selection"
 
     .prologue
-    .line 771
+    .line 807
     const/4 v0, 0x0
 
     invoke-static {p0, p1, p2, v0}, Landroid/database/DatabaseUtils;->queryNumEntries(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)J
@@ -2449,7 +2473,7 @@
     .parameter "selectionArgs"
 
     .prologue
-    .line 789
+    .line 825
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
@@ -2474,7 +2498,7 @@
 
     move-result-object v0
 
-    .line 790
+    .line 826
     .local v0, s:Ljava/lang/String;
     :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2505,7 +2529,7 @@
 
     return-wide v1
 
-    .line 789
+    .line 825
     .end local v0           #s:Ljava/lang/String;
     :cond_0
     const-string v0, ""
@@ -2749,6 +2773,48 @@
     goto :goto_0
 .end method
 
+.method public static setCollatorLocale(Ljava/util/Locale;)V
+    .locals 2
+    .parameter "locale"
+
+    .prologue
+    .line 468
+    if-eqz p0, :cond_0
+
+    .line 469
+    sput-object p0, Landroid/database/DatabaseUtils;->mLocale:Ljava/util/Locale;
+
+    .line 470
+    sget-object v0, Landroid/database/DatabaseUtils;->mLocale:Ljava/util/Locale;
+
+    invoke-static {v0}, Ljava/text/Collator;->getInstance(Ljava/util/Locale;)Ljava/text/Collator;
+
+    move-result-object v0
+
+    sput-object v0, Landroid/database/DatabaseUtils;->mColl:Ljava/text/Collator;
+
+    .line 471
+    sget-object v0, Landroid/database/DatabaseUtils;->mColl:Ljava/text/Collator;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Ljava/text/Collator;->setStrength(I)V
+
+    .line 475
+    :goto_0
+    return-void
+
+    .line 473
+    :cond_0
+    const-string v0, "DatabaseUtils"
+
+    const-string/jumbo v1, "setCollatorLocale error, locale=null!"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+.end method
+
 .method public static sqlEscapeString(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
     .parameter "value"
@@ -2778,12 +2844,12 @@
     .parameter "selectionArgs"
 
     .prologue
-    .line 821
+    .line 857
     invoke-virtual {p0, p1}, Landroid/database/sqlite/SQLiteDatabase;->compileStatement(Ljava/lang/String;)Landroid/database/sqlite/SQLiteStatement;
 
     move-result-object v0
 
-    .line 823
+    .line 859
     .local v0, prog:Landroid/database/sqlite/SQLiteStatement;
     :try_start_0
     invoke-static {v0, p2}, Landroid/database/DatabaseUtils;->stringForQuery(Landroid/database/sqlite/SQLiteStatement;[Ljava/lang/String;)Ljava/lang/String;
@@ -2792,7 +2858,7 @@
 
     move-result-object v1
 
-    .line 825
+    .line 861
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
     return-object v1
@@ -2811,10 +2877,10 @@
     .parameter "selectionArgs"
 
     .prologue
-    .line 834
+    .line 870
     invoke-virtual {p0, p1}, Landroid/database/sqlite/SQLiteStatement;->bindAllArgsAsStrings([Ljava/lang/String;)V
 
-    .line 835
+    .line 871
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteStatement;->simpleQueryForString()Ljava/lang/String;
 
     move-result-object v0

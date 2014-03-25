@@ -8,7 +8,7 @@
 
 .field private static final MAX_POOL_SIZE:I = 0x4
 
-.field static sNextSerial:I
+.field static sNextSerial:[I
 
 .field private static sPool:Lcom/android/internal/telephony/RILRequest;
 
@@ -33,142 +33,160 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
     .prologue
-    const/4 v1, 0x0
+    .line 143
+    const/4 v0, 0x2
 
-    .line 76
-    sput v1, Lcom/android/internal/telephony/RILRequest;->sNextSerial:I
+    new-array v0, v0, [I
 
-    .line 77
+    fill-array-data v0, :array_0
+
+    sput-object v0, Lcom/android/internal/telephony/RILRequest;->sNextSerial:[I
+
+    .line 144
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Lcom/android/internal/telephony/RILRequest;->sSerialMonitor:Ljava/lang/Object;
 
-    .line 78
+    .line 145
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Lcom/android/internal/telephony/RILRequest;->sPoolSync:Ljava/lang/Object;
 
-    .line 79
+    .line 146
     const/4 v0, 0x0
 
     sput-object v0, Lcom/android/internal/telephony/RILRequest;->sPool:Lcom/android/internal/telephony/RILRequest;
 
-    .line 80
-    sput v1, Lcom/android/internal/telephony/RILRequest;->sPoolSize:I
+    .line 147
+    const/4 v0, 0x0
+
+    sput v0, Lcom/android/internal/telephony/RILRequest;->sPoolSize:I
 
     return-void
+
+    .line 143
+    nop
+
+    :array_0
+    .array-data 0x4
+        0x0t 0x0t 0x0t 0x0t
+        0x0t 0x0t 0x0t 0x0t
+    .end array-data
 .end method
 
 .method private constructor <init>()V
     .locals 0
 
     .prologue
-    .line 147
+    .line 214
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 148
+    .line 215
     return-void
 .end method
 
-.method static obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
-    .locals 4
+.method static obtain(ILandroid/os/Message;I)Lcom/android/internal/telephony/RILRequest;
+    .locals 5
     .parameter "request"
     .parameter "result"
+    .parameter "simId"
 
     .prologue
-    .line 98
+    .line 165
     const/4 v0, 0x0
 
-    .line 100
+    .line 167
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     sget-object v2, Lcom/android/internal/telephony/RILRequest;->sPoolSync:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 101
+    .line 168
     :try_start_0
     sget-object v1, Lcom/android/internal/telephony/RILRequest;->sPool:Lcom/android/internal/telephony/RILRequest;
 
     if-eqz v1, :cond_0
 
-    .line 102
+    .line 169
     sget-object v0, Lcom/android/internal/telephony/RILRequest;->sPool:Lcom/android/internal/telephony/RILRequest;
 
-    .line 103
+    .line 170
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mNext:Lcom/android/internal/telephony/RILRequest;
 
     sput-object v1, Lcom/android/internal/telephony/RILRequest;->sPool:Lcom/android/internal/telephony/RILRequest;
 
-    .line 104
+    .line 171
     const/4 v1, 0x0
 
     iput-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mNext:Lcom/android/internal/telephony/RILRequest;
 
-    .line 105
+    .line 172
     sget v1, Lcom/android/internal/telephony/RILRequest;->sPoolSize:I
 
     add-int/lit8 v1, v1, -0x1
 
     sput v1, Lcom/android/internal/telephony/RILRequest;->sPoolSize:I
 
-    .line 107
+    .line 174
     :cond_0
     monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 109
+    .line 176
     if-nez v0, :cond_1
 
-    .line 110
+    .line 177
     new-instance v0, Lcom/android/internal/telephony/RILRequest;
 
     .end local v0           #rr:Lcom/android/internal/telephony/RILRequest;
     invoke-direct {v0}, Lcom/android/internal/telephony/RILRequest;-><init>()V
 
-    .line 113
+    .line 180
     .restart local v0       #rr:Lcom/android/internal/telephony/RILRequest;
     :cond_1
     sget-object v2, Lcom/android/internal/telephony/RILRequest;->sSerialMonitor:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 114
+    .line 181
     :try_start_1
-    sget v1, Lcom/android/internal/telephony/RILRequest;->sNextSerial:I
+    sget-object v1, Lcom/android/internal/telephony/RILRequest;->sNextSerial:[I
 
-    add-int/lit8 v3, v1, 0x1
+    aget v3, v1, p2
 
-    sput v3, Lcom/android/internal/telephony/RILRequest;->sNextSerial:I
+    add-int/lit8 v4, v3, 0x1
 
-    iput v1, v0, Lcom/android/internal/telephony/RILRequest;->mSerial:I
+    aput v4, v1, p2
 
-    .line 115
+    iput v3, v0, Lcom/android/internal/telephony/RILRequest;->mSerial:I
+
+    .line 182
     monitor-exit v2
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 116
+    .line 183
     iput p0, v0, Lcom/android/internal/telephony/RILRequest;->mRequest:I
 
-    .line 117
+    .line 184
     iput-object p1, v0, Lcom/android/internal/telephony/RILRequest;->mResult:Landroid/os/Message;
 
-    .line 118
+    .line 185
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
     iput-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
-    .line 120
+    .line 187
     if-eqz p1, :cond_2
 
     invoke-virtual {p1}, Landroid/os/Message;->getTarget()Landroid/os/Handler;
@@ -177,7 +195,7 @@
 
     if-nez v1, :cond_2
 
-    .line 121
+    .line 188
     new-instance v1, Ljava/lang/NullPointerException;
 
     const-string v2, "Message target must not be null"
@@ -186,7 +204,7 @@
 
     throw v1
 
-    .line 107
+    .line 174
     :catchall_0
     move-exception v1
 
@@ -197,7 +215,7 @@
 
     throw v1
 
-    .line 115
+    .line 182
     :catchall_1
     move-exception v1
 
@@ -208,45 +226,48 @@
 
     throw v1
 
-    .line 125
+    .line 192
     :cond_2
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 126
+    .line 193
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     iget v2, v0, Lcom/android/internal/telephony/RILRequest;->mSerial:I
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 128
+    .line 195
     return-object v0
 .end method
 
-.method static resetSerial()V
-    .locals 2
+.method static resetSerial(I)V
+    .locals 3
+    .parameter "simId"
 
     .prologue
-    .line 152
+    .line 219
     sget-object v1, Lcom/android/internal/telephony/RILRequest;->sSerialMonitor:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 153
-    const/4 v0, 0x0
-
+    .line 220
     :try_start_0
-    sput v0, Lcom/android/internal/telephony/RILRequest;->sNextSerial:I
+    sget-object v0, Lcom/android/internal/telephony/RILRequest;->sNextSerial:[I
 
-    .line 154
+    const/4 v2, 0x0
+
+    aput v2, v0, p0
+
+    .line 221
     monitor-exit v1
 
-    .line 155
+    .line 222
     return-void
 
-    .line 154
+    .line 221
     :catchall_0
     move-exception v0
 
@@ -265,12 +286,12 @@
     .parameter "ret"
 
     .prologue
-    .line 180
+    .line 247
     invoke-static {p1}, Lcom/android/internal/telephony/CommandException;->fromRilErrno(I)Lcom/android/internal/telephony/CommandException;
 
     move-result-object v0
 
-    .line 182
+    .line 249
     .local v0, ex:Lcom/android/internal/telephony/CommandException;
     const-string v1, "RILJ"
 
@@ -318,38 +339,38 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 186
+    .line 253
     iget-object v1, p0, Lcom/android/internal/telephony/RILRequest;->mResult:Landroid/os/Message;
 
     if-eqz v1, :cond_0
 
-    .line 187
+    .line 254
     iget-object v1, p0, Lcom/android/internal/telephony/RILRequest;->mResult:Landroid/os/Message;
 
     invoke-static {v1, p2, v0}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 188
+    .line 255
     iget-object v1, p0, Lcom/android/internal/telephony/RILRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 191
+    .line 258
     :cond_0
     iget-object v1, p0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     if-eqz v1, :cond_1
 
-    .line 192
+    .line 259
     iget-object v1, p0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 193
+    .line 260
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
-    .line 195
+    .line 262
     :cond_1
     return-void
 .end method
@@ -358,12 +379,12 @@
     .locals 3
 
     .prologue
-    .line 137
+    .line 204
     sget-object v1, Lcom/android/internal/telephony/RILRequest;->sPoolSync:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 138
+    .line 205
     :try_start_0
     sget v0, Lcom/android/internal/telephony/RILRequest;->sPoolSize:I
 
@@ -371,34 +392,34 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 139
+    .line 206
     sget-object v0, Lcom/android/internal/telephony/RILRequest;->sPool:Lcom/android/internal/telephony/RILRequest;
 
     iput-object v0, p0, Lcom/android/internal/telephony/RILRequest;->mNext:Lcom/android/internal/telephony/RILRequest;
 
-    .line 140
+    .line 207
     sput-object p0, Lcom/android/internal/telephony/RILRequest;->sPool:Lcom/android/internal/telephony/RILRequest;
 
-    .line 141
+    .line 208
     sget v0, Lcom/android/internal/telephony/RILRequest;->sPoolSize:I
 
     add-int/lit8 v0, v0, 0x1
 
     sput v0, Lcom/android/internal/telephony/RILRequest;->sPoolSize:I
 
-    .line 142
+    .line 209
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/telephony/RILRequest;->mResult:Landroid/os/Message;
 
-    .line 144
+    .line 211
     :cond_0
     monitor-exit v1
 
-    .line 145
+    .line 212
     return-void
 
-    .line 144
+    .line 211
     :catchall_0
     move-exception v0
 
@@ -413,14 +434,14 @@
     .locals 5
 
     .prologue
-    .line 160
+    .line 227
     new-instance v2, Ljava/lang/StringBuilder;
 
     const/16 v4, 0x8
 
     invoke-direct {v2, v4}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 163
+    .line 230
     .local v2, sb:Ljava/lang/StringBuilder;
     iget v4, p0, Lcom/android/internal/telephony/RILRequest;->mSerial:I
 
@@ -428,13 +449,13 @@
 
     move-result-object v3
 
-    .line 166
+    .line 233
     .local v3, sn:Ljava/lang/String;
     const/16 v4, 0x5b
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 167
+    .line 234
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -448,26 +469,26 @@
 
     if-ge v0, v4, :cond_0
 
-    .line 168
+    .line 235
     const/16 v4, 0x30
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 167
+    .line 234
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 171
+    .line 238
     :cond_0
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 172
+    .line 239
     const/16 v4, 0x5d
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 173
+    .line 240
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v4

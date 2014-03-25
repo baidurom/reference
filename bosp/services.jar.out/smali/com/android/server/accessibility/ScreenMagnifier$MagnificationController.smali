@@ -48,7 +48,7 @@
     .line 1254
     iput-object p1, p0, Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController;->this$0:Lcom/android/server/accessibility/ScreenMagnifier;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1246
     new-instance v2, Lcom/android/server/accessibility/ScreenMagnifier$MagnificationController$MagnificationSpec;

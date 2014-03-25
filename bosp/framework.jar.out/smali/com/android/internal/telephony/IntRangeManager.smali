@@ -34,17 +34,17 @@
     .locals 1
 
     .prologue
-    .line 165
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 166
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 163
+    .line 164
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/IntRangeManager;->mRanges:Ljava/util/ArrayList;
 
-    .line 165
+    .line 166
     return-void
 .end method
 
@@ -55,13 +55,13 @@
     .parameter "selected"
 
     .prologue
-    .line 540
+    .line 541
     invoke-virtual {p0}, Lcom/android/internal/telephony/IntRangeManager;->startUpdate()V
 
-    .line 541
+    .line 542
     invoke-virtual {p0, p1, p2, p3}, Lcom/android/internal/telephony/IntRangeManager;->addRange(IIZ)V
 
-    .line 542
+    .line 543
     invoke-virtual {p0}, Lcom/android/internal/telephony/IntRangeManager;->finishUpdate()Z
 
     move-result v0
@@ -74,6 +74,26 @@
 .method protected abstract addRange(IIZ)V
 .end method
 
+.method public clearAllRanges()V
+    .locals 2
+
+    .prologue
+    .line 559
+    const-string v0, "IntRangeManager"
+
+    const-string v1, "clear all the ranges"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 560
+    iget-object v0, p0, Lcom/android/internal/telephony/IntRangeManager;->mRanges:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
+
+    .line 561
+    return-void
+.end method
+
 .method public declared-synchronized disableRange(IILjava/lang/String;)Z
     .locals 22
     .parameter "startId"
@@ -81,7 +101,7 @@
     .parameter "client"
 
     .prologue
-    .line 364
+    .line 365
     monitor-enter p0
 
     :try_start_0
@@ -95,7 +115,7 @@
 
     move-result v11
 
-    .line 366
+    .line 367
     .local v11, len:I
     const/4 v9, 0x0
 
@@ -103,7 +123,7 @@
     :goto_0
     if-ge v9, v11, :cond_13
 
-    .line 367
+    .line 368
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/IntRangeManager;->mRanges:Ljava/util/ArrayList;
@@ -118,7 +138,7 @@
 
     check-cast v16, Lcom/android/internal/telephony/IntRangeManager$IntRange;
 
-    .line 368
+    .line 369
     .local v16, range:Lcom/android/internal/telephony/IntRangeManager$IntRange;
     move-object/from16 v0, v16
 
@@ -134,17 +154,17 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 369
+    .line 370
     const/16 v19, 0x0
 
-    .line 496
+    .line 497
     .end local v16           #range:Lcom/android/internal/telephony/IntRangeManager$IntRange;
     :goto_1
     monitor-exit p0
 
     return v19
 
-    .line 370
+    .line 371
     .restart local v16       #range:Lcom/android/internal/telephony/IntRangeManager$IntRange;
     :cond_0
     :try_start_1
@@ -160,18 +180,18 @@
 
     if-gt v0, v1, :cond_12
 
-    .line 373
+    .line 374
     move-object/from16 v0, v16
 
     iget-object v4, v0, Lcom/android/internal/telephony/IntRangeManager$IntRange;->clients:Ljava/util/ArrayList;
 
-    .line 376
+    .line 377
     .local v4, clients:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/telephony/IntRangeManager$ClientRange;>;"
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v7
 
-    .line 377
+    .line 378
     .local v7, crLength:I
     const/16 v19, 0x1
 
@@ -179,7 +199,7 @@
 
     if-ne v7, v0, :cond_3
 
-    .line 378
+    .line 379
     const/16 v19, 0x0
 
     move/from16 v0, v19
@@ -190,7 +210,7 @@
 
     check-cast v5, Lcom/android/internal/telephony/IntRangeManager$ClientRange;
 
-    .line 379
+    .line 380
     .local v5, cr:Lcom/android/internal/telephony/IntRangeManager$ClientRange;
     iget v0, v5, Lcom/android/internal/telephony/IntRangeManager$ClientRange;->startId:I
 
@@ -226,7 +246,7 @@
 
     if-eqz v19, :cond_2
 
-    .line 381
+    .line 382
     const/16 v19, 0x0
 
     move-object/from16 v0, p0
@@ -243,7 +263,7 @@
 
     if-eqz v19, :cond_1
 
-    .line 382
+    .line 383
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/IntRangeManager;->mRanges:Ljava/util/ArrayList;
@@ -254,33 +274,33 @@
 
     invoke-virtual {v0, v9}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 383
+    .line 384
     const/16 v19, 0x1
 
     goto :goto_1
 
-    .line 385
+    .line 386
     :cond_1
     const/16 v19, 0x0
 
     goto :goto_1
 
-    .line 388
+    .line 389
     :cond_2
     const/16 v19, 0x0
 
     goto :goto_1
 
-    .line 396
+    .line 397
     .end local v5           #cr:Lcom/android/internal/telephony/IntRangeManager$ClientRange;
     :cond_3
     const/high16 v10, -0x8000
 
-    .line 397
+    .line 398
     .local v10, largestEndId:I
     const/16 v18, 0x0
 
-    .line 399
+    .line 400
     .local v18, updateStarted:Z
     const/4 v6, 0x0
 
@@ -288,14 +308,14 @@
     :goto_2
     if-ge v6, v7, :cond_12
 
-    .line 400
+    .line 401
     invoke-virtual {v4, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v5
 
     check-cast v5, Lcom/android/internal/telephony/IntRangeManager$ClientRange;
 
-    .line 401
+    .line 402
     .restart local v5       #cr:Lcom/android/internal/telephony/IntRangeManager$ClientRange;
     iget v0, v5, Lcom/android/internal/telephony/IntRangeManager$ClientRange;->startId:I
 
@@ -331,14 +351,14 @@
 
     if-eqz v19, :cond_10
 
-    .line 403
+    .line 404
     add-int/lit8 v19, v7, -0x1
 
     move/from16 v0, v19
 
     if-ne v6, v0, :cond_6
 
-    .line 404
+    .line 405
     move-object/from16 v0, v16
 
     iget v0, v0, Lcom/android/internal/telephony/IntRangeManager$IntRange;->endId:I
@@ -349,15 +369,15 @@
 
     if-ne v0, v10, :cond_4
 
-    .line 406
+    .line 407
     invoke-virtual {v4, v6}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 407
+    .line 408
     const/16 v19, 0x1
 
     goto/16 :goto_1
 
-    .line 410
+    .line 411
     :cond_4
     add-int/lit8 v19, v10, 0x1
 
@@ -383,26 +403,26 @@
 
     if-eqz v19, :cond_5
 
-    .line 411
+    .line 412
     invoke-virtual {v4, v6}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 412
+    .line 413
     move-object/from16 v0, v16
 
     iput v10, v0, Lcom/android/internal/telephony/IntRangeManager$IntRange;->endId:I
 
-    .line 413
+    .line 414
     const/16 v19, 0x1
 
     goto/16 :goto_1
 
-    .line 415
+    .line 416
     :cond_5
     const/16 v19, 0x0
 
     goto/16 :goto_1
 
-    .line 423
+    .line 424
     :cond_6
     new-instance v17, Lcom/android/internal/telephony/IntRangeManager$IntRange;
 
@@ -414,11 +434,11 @@
 
     invoke-direct {v0, v1, v2, v6}, Lcom/android/internal/telephony/IntRangeManager$IntRange;-><init>(Lcom/android/internal/telephony/IntRangeManager;Lcom/android/internal/telephony/IntRangeManager$IntRange;I)V
 
-    .line 425
+    .line 426
     .local v17, rangeCopy:Lcom/android/internal/telephony/IntRangeManager$IntRange;
     if-nez v6, :cond_8
 
-    .line 430
+    .line 431
     const/16 v19, 0x1
 
     move/from16 v0, v19
@@ -433,7 +453,7 @@
 
     iget v15, v0, Lcom/android/internal/telephony/IntRangeManager$ClientRange;->startId:I
 
-    .line 431
+    .line 432
     .local v15, nextStartId:I
     move-object/from16 v0, v16
 
@@ -445,13 +465,13 @@
 
     if-eq v15, v0, :cond_7
 
-    .line 432
+    .line 433
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/IntRangeManager;->startUpdate()V
 
-    .line 433
+    .line 434
     const/16 v18, 0x1
 
-    .line 434
+    .line 435
     move-object/from16 v0, v16
 
     iget v0, v0, Lcom/android/internal/telephony/IntRangeManager$IntRange;->startId:I
@@ -472,12 +492,12 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/internal/telephony/IntRangeManager;->addRange(IIZ)V
 
-    .line 435
+    .line 436
     move-object/from16 v0, v17
 
     iput v15, v0, Lcom/android/internal/telephony/IntRangeManager$IntRange;->startId:I
 
-    .line 438
+    .line 439
     :cond_7
     const/16 v19, 0x1
 
@@ -493,18 +513,18 @@
 
     iget v10, v0, Lcom/android/internal/telephony/IntRangeManager$ClientRange;->endId:I
 
-    .line 445
+    .line 446
     .end local v15           #nextStartId:I
     :cond_8
     new-instance v12, Ljava/util/ArrayList;
 
     invoke-direct {v12}, Ljava/util/ArrayList;-><init>()V
 
-    .line 447
+    .line 448
     .local v12, newRanges:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/telephony/IntRangeManager$IntRange;>;"
     move-object/from16 v8, v17
 
-    .line 448
+    .line 449
     .local v8, currentRange:Lcom/android/internal/telephony/IntRangeManager$IntRange;
     add-int/lit8 v14, v6, 0x1
 
@@ -512,14 +532,14 @@
     :goto_3
     if-ge v14, v7, :cond_c
 
-    .line 449
+    .line 450
     invoke-virtual {v4, v14}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v13
 
     check-cast v13, Lcom/android/internal/telephony/IntRangeManager$ClientRange;
 
-    .line 450
+    .line 451
     .local v13, nextCr:Lcom/android/internal/telephony/IntRangeManager$ClientRange;
     iget v0, v13, Lcom/android/internal/telephony/IntRangeManager$ClientRange;->startId:I
 
@@ -533,16 +553,16 @@
 
     if-le v0, v1, :cond_b
 
-    .line 451
+    .line 452
     if-nez v18, :cond_9
 
-    .line 452
+    .line 453
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/IntRangeManager;->startUpdate()V
 
-    .line 453
+    .line 454
     const/16 v18, 0x1
 
-    .line 455
+    .line 456
     :cond_9
     add-int/lit8 v19, v10, 0x1
 
@@ -564,13 +584,13 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/internal/telephony/IntRangeManager;->addRange(IIZ)V
 
-    .line 456
+    .line 457
     iput v10, v8, Lcom/android/internal/telephony/IntRangeManager$IntRange;->endId:I
 
-    .line 457
+    .line 458
     invoke-virtual {v12, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 458
+    .line 459
     new-instance v8, Lcom/android/internal/telephony/IntRangeManager$IntRange;
 
     .end local v8           #currentRange:Lcom/android/internal/telephony/IntRangeManager$IntRange;
@@ -578,7 +598,7 @@
 
     invoke-direct {v8, v0, v13}, Lcom/android/internal/telephony/IntRangeManager$IntRange;-><init>(Lcom/android/internal/telephony/IntRangeManager;Lcom/android/internal/telephony/IntRangeManager$ClientRange;)V
 
-    .line 462
+    .line 463
     .restart local v8       #currentRange:Lcom/android/internal/telephony/IntRangeManager$IntRange;
     :goto_4
     iget v0, v13, Lcom/android/internal/telephony/IntRangeManager$ClientRange;->endId:I
@@ -589,16 +609,16 @@
 
     if-le v0, v10, :cond_a
 
-    .line 463
+    .line 464
     iget v10, v13, Lcom/android/internal/telephony/IntRangeManager$ClientRange;->endId:I
 
-    .line 448
+    .line 449
     :cond_a
     add-int/lit8 v14, v14, 0x1
 
     goto :goto_3
 
-    .line 460
+    .line 461
     :cond_b
     iget-object v0, v8, Lcom/android/internal/telephony/IntRangeManager$IntRange;->clients:Ljava/util/ArrayList;
 
@@ -612,7 +632,7 @@
 
     goto :goto_4
 
-    .line 364
+    .line 365
     .end local v4           #clients:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/telephony/IntRangeManager$ClientRange;>;"
     .end local v5           #cr:Lcom/android/internal/telephony/IntRangeManager$ClientRange;
     .end local v6           #crIndex:I
@@ -634,7 +654,7 @@
 
     throw v19
 
-    .line 468
+    .line 469
     .restart local v4       #clients:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/telephony/IntRangeManager$ClientRange;>;"
     .restart local v5       #cr:Lcom/android/internal/telephony/IntRangeManager$ClientRange;
     .restart local v6       #crIndex:I
@@ -653,17 +673,17 @@
 
     if-ge v10, v0, :cond_e
 
-    .line 469
+    .line 470
     if-nez v18, :cond_d
 
-    .line 470
+    .line 471
     :try_start_2
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/IntRangeManager;->startUpdate()V
 
-    .line 471
+    .line 472
     const/16 v18, 0x1
 
-    .line 473
+    .line 474
     :cond_d
     add-int/lit8 v19, v10, 0x1
 
@@ -679,14 +699,14 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/internal/telephony/IntRangeManager;->addRange(IIZ)V
 
-    .line 474
+    .line 475
     iput v10, v8, Lcom/android/internal/telephony/IntRangeManager$IntRange;->endId:I
 
-    .line 476
+    .line 477
     :cond_e
     invoke-virtual {v12, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 478
+    .line 479
     if-eqz v18, :cond_f
 
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/IntRangeManager;->finishUpdate()Z
@@ -695,12 +715,12 @@
 
     if-nez v19, :cond_f
 
-    .line 479
+    .line 480
     const/16 v19, 0x0
 
     goto/16 :goto_1
 
-    .line 483
+    .line 484
     :cond_f
     move-object/from16 v0, p0
 
@@ -712,7 +732,7 @@
 
     invoke-virtual {v0, v9}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 484
+    .line 485
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/IntRangeManager;->mRanges:Ljava/util/ArrayList;
@@ -723,12 +743,12 @@
 
     invoke-virtual {v0, v9, v12}, Ljava/util/ArrayList;->addAll(ILjava/util/Collection;)Z
 
-    .line 485
+    .line 486
     const/16 v19, 0x1
 
     goto/16 :goto_1
 
-    .line 488
+    .line 489
     .end local v8           #currentRange:Lcom/android/internal/telephony/IntRangeManager$IntRange;
     .end local v12           #newRanges:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/telephony/IntRangeManager$IntRange;>;"
     .end local v14           #nextIndex:I
@@ -742,18 +762,18 @@
 
     if-le v0, v10, :cond_11
 
-    .line 489
+    .line 490
     iget v10, v5, Lcom/android/internal/telephony/IntRangeManager$ClientRange;->endId:I
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 399
+    .line 400
     :cond_11
     add-int/lit8 v6, v6, 0x1
 
     goto/16 :goto_2
 
-    .line 366
+    .line 367
     .end local v4           #clients:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/telephony/IntRangeManager$ClientRange;>;"
     .end local v5           #cr:Lcom/android/internal/telephony/IntRangeManager$ClientRange;
     .end local v6           #crIndex:I
@@ -765,7 +785,7 @@
 
     goto/16 :goto_0
 
-    .line 496
+    .line 497
     .end local v16           #range:Lcom/android/internal/telephony/IntRangeManager$IntRange;
     :cond_13
     const/16 v19, 0x0
@@ -780,7 +800,7 @@
     .parameter "client"
 
     .prologue
-    .line 178
+    .line 179
     monitor-enter p0
 
     :try_start_0
@@ -794,11 +814,11 @@
 
     move-result v10
 
-    .line 181
+    .line 182
     .local v10, len:I
     if-nez v10, :cond_1
 
-    .line 182
+    .line 183
     const/16 v16, 0x1
 
     move-object/from16 v0, p0
@@ -815,7 +835,7 @@
 
     if-eqz v16, :cond_0
 
-    .line 183
+    .line 184
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/IntRangeManager;->mRanges:Ljava/util/ArrayList;
@@ -840,22 +860,22 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 184
+    .line 185
     const/16 v16, 0x1
 
-    .line 349
+    .line 350
     :goto_0
     monitor-exit p0
 
     return v16
 
-    .line 186
+    .line 187
     :cond_0
     const/16 v16, 0x0
 
     goto :goto_0
 
-    .line 190
+    .line 191
     :cond_1
     const/4 v13, 0x0
 
@@ -863,7 +883,7 @@
     :goto_1
     if-ge v13, v10, :cond_19
 
-    .line 191
+    .line 192
     :try_start_1
     move-object/from16 v0, p0
 
@@ -879,7 +899,7 @@
 
     check-cast v12, Lcom/android/internal/telephony/IntRangeManager$IntRange;
 
-    .line 192
+    .line 193
     .local v12, range:Lcom/android/internal/telephony/IntRangeManager$IntRange;
     iget v0, v12, Lcom/android/internal/telephony/IntRangeManager$IntRange;->startId:I
 
@@ -891,7 +911,7 @@
 
     if-ge v0, v1, :cond_f
 
-    .line 195
+    .line 196
     add-int/lit8 v16, p2, 0x1
 
     iget v0, v12, Lcom/android/internal/telephony/IntRangeManager$IntRange;->startId:I
@@ -904,7 +924,7 @@
 
     if-ge v0, v1, :cond_3
 
-    .line 197
+    .line 198
     const/16 v16, 0x1
 
     move-object/from16 v0, p0
@@ -921,7 +941,7 @@
 
     if-eqz v16, :cond_2
 
-    .line 198
+    .line 199
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/IntRangeManager;->mRanges:Ljava/util/ArrayList;
@@ -948,18 +968,18 @@
 
     invoke-virtual {v0, v13, v1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 199
+    .line 200
     const/16 v16, 0x1
 
     goto :goto_0
 
-    .line 201
+    .line 202
     :cond_2
     const/16 v16, 0x0
 
     goto :goto_0
 
-    .line 203
+    .line 204
     :cond_3
     iget v0, v12, Lcom/android/internal/telephony/IntRangeManager$IntRange;->endId:I
 
@@ -971,7 +991,7 @@
 
     if-gt v0, v1, :cond_5
 
-    .line 205
+    .line 206
     iget v0, v12, Lcom/android/internal/telephony/IntRangeManager$IntRange;->startId:I
 
     move/from16 v16, v0
@@ -994,12 +1014,12 @@
 
     if-eqz v16, :cond_4
 
-    .line 206
+    .line 207
     move/from16 v0, p1
 
     iput v0, v12, Lcom/android/internal/telephony/IntRangeManager$IntRange;->startId:I
 
-    .line 207
+    .line 208
     iget-object v0, v12, Lcom/android/internal/telephony/IntRangeManager$IntRange;->clients:Ljava/util/ArrayList;
 
     move-object/from16 v16, v0
@@ -1012,18 +1032,18 @@
 
     invoke-virtual/range {v16 .. v18}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 208
+    .line 209
     const/16 v16, 0x1
 
     goto/16 :goto_0
 
-    .line 210
+    .line 211
     :cond_4
     const/16 v16, 0x0
 
     goto/16 :goto_0
 
-    .line 214
+    .line 215
     :cond_5
     add-int/lit8 v5, v13, 0x1
 
@@ -1031,7 +1051,7 @@
     :goto_2
     if-ge v5, v10, :cond_c
 
-    .line 215
+    .line 216
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/IntRangeManager;->mRanges:Ljava/util/ArrayList;
@@ -1046,7 +1066,7 @@
 
     check-cast v6, Lcom/android/internal/telephony/IntRangeManager$IntRange;
 
-    .line 216
+    .line 217
     .local v6, endRange:Lcom/android/internal/telephony/IntRangeManager$IntRange;
     add-int/lit8 v16, p2, 0x1
 
@@ -1060,7 +1080,7 @@
 
     if-ge v0, v1, :cond_8
 
-    .line 218
+    .line 219
     const/16 v16, 0x1
 
     move-object/from16 v0, p0
@@ -1077,17 +1097,17 @@
 
     if-eqz v16, :cond_7
 
-    .line 219
+    .line 220
     move/from16 v0, p1
 
     iput v0, v12, Lcom/android/internal/telephony/IntRangeManager$IntRange;->startId:I
 
-    .line 220
+    .line 221
     move/from16 v0, p2
 
     iput v0, v12, Lcom/android/internal/telephony/IntRangeManager$IntRange;->endId:I
 
-    .line 222
+    .line 223
     iget-object v0, v12, Lcom/android/internal/telephony/IntRangeManager$IntRange;->clients:Ljava/util/ArrayList;
 
     move-object/from16 v16, v0
@@ -1100,10 +1120,10 @@
 
     invoke-virtual/range {v16 .. v18}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 228
+    .line 229
     add-int/lit8 v8, v13, 0x1
 
-    .line 229
+    .line 230
     .local v8, joinIndex:I
     move v7, v8
 
@@ -1111,7 +1131,7 @@
     :goto_3
     if-ge v7, v5, :cond_6
 
-    .line 230
+    .line 231
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/IntRangeManager;->mRanges:Ljava/util/ArrayList;
@@ -1126,7 +1146,7 @@
 
     check-cast v9, Lcom/android/internal/telephony/IntRangeManager$IntRange;
 
-    .line 231
+    .line 232
     .local v9, joinRange:Lcom/android/internal/telephony/IntRangeManager$IntRange;
     iget-object v0, v12, Lcom/android/internal/telephony/IntRangeManager$IntRange;->clients:Ljava/util/ArrayList;
 
@@ -1138,7 +1158,7 @@
 
     invoke-virtual/range {v16 .. v17}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 232
+    .line 233
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/IntRangeManager;->mRanges:Ljava/util/ArrayList;
@@ -1149,19 +1169,19 @@
 
     invoke-virtual {v0, v9}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 229
+    .line 230
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_3
 
-    .line 234
+    .line 235
     .end local v9           #joinRange:Lcom/android/internal/telephony/IntRangeManager$IntRange;
     :cond_6
     const/16 v16, 0x1
 
     goto/16 :goto_0
 
-    .line 236
+    .line 237
     .end local v7           #i:I
     .end local v8           #joinIndex:I
     :cond_7
@@ -1169,7 +1189,7 @@
 
     goto/16 :goto_0
 
-    .line 238
+    .line 239
     :cond_8
     iget v0, v6, Lcom/android/internal/telephony/IntRangeManager$IntRange;->endId:I
 
@@ -1181,7 +1201,7 @@
 
     if-gt v0, v1, :cond_b
 
-    .line 241
+    .line 242
     iget v0, v6, Lcom/android/internal/telephony/IntRangeManager$IntRange;->startId:I
 
     move/from16 v16, v0
@@ -1204,12 +1224,12 @@
 
     if-eqz v16, :cond_a
 
-    .line 242
+    .line 243
     move/from16 v0, p1
 
     iput v0, v12, Lcom/android/internal/telephony/IntRangeManager$IntRange;->startId:I
 
-    .line 243
+    .line 244
     iget v0, v6, Lcom/android/internal/telephony/IntRangeManager$IntRange;->endId:I
 
     move/from16 v16, v0
@@ -1218,7 +1238,7 @@
 
     iput v0, v12, Lcom/android/internal/telephony/IntRangeManager$IntRange;->endId:I
 
-    .line 245
+    .line 246
     iget-object v0, v12, Lcom/android/internal/telephony/IntRangeManager$IntRange;->clients:Ljava/util/ArrayList;
 
     move-object/from16 v16, v0
@@ -1231,10 +1251,10 @@
 
     invoke-virtual/range {v16 .. v18}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 251
+    .line 252
     add-int/lit8 v8, v13, 0x1
 
-    .line 252
+    .line 253
     .restart local v8       #joinIndex:I
     move v7, v8
 
@@ -1242,7 +1262,7 @@
     :goto_4
     if-gt v7, v5, :cond_9
 
-    .line 253
+    .line 254
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/IntRangeManager;->mRanges:Ljava/util/ArrayList;
@@ -1257,7 +1277,7 @@
 
     check-cast v9, Lcom/android/internal/telephony/IntRangeManager$IntRange;
 
-    .line 254
+    .line 255
     .restart local v9       #joinRange:Lcom/android/internal/telephony/IntRangeManager$IntRange;
     iget-object v0, v12, Lcom/android/internal/telephony/IntRangeManager$IntRange;->clients:Ljava/util/ArrayList;
 
@@ -1269,7 +1289,7 @@
 
     invoke-virtual/range {v16 .. v17}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 255
+    .line 256
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/IntRangeManager;->mRanges:Ljava/util/ArrayList;
@@ -1280,19 +1300,19 @@
 
     invoke-virtual {v0, v9}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 252
+    .line 253
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_4
 
-    .line 257
+    .line 258
     .end local v9           #joinRange:Lcom/android/internal/telephony/IntRangeManager$IntRange;
     :cond_9
     const/16 v16, 0x1
 
     goto/16 :goto_0
 
-    .line 259
+    .line 260
     .end local v7           #i:I
     .end local v8           #joinIndex:I
     :cond_a
@@ -1300,13 +1320,13 @@
 
     goto/16 :goto_0
 
-    .line 214
+    .line 215
     :cond_b
     add-int/lit8 v5, v5, 0x1
 
     goto/16 :goto_2
 
-    .line 265
+    .line 266
     .end local v6           #endRange:Lcom/android/internal/telephony/IntRangeManager$IntRange;
     :cond_c
     const/16 v16, 0x1
@@ -1325,17 +1345,17 @@
 
     if-eqz v16, :cond_e
 
-    .line 266
+    .line 267
     move/from16 v0, p1
 
     iput v0, v12, Lcom/android/internal/telephony/IntRangeManager$IntRange;->startId:I
 
-    .line 267
+    .line 268
     move/from16 v0, p2
 
     iput v0, v12, Lcom/android/internal/telephony/IntRangeManager$IntRange;->endId:I
 
-    .line 269
+    .line 270
     iget-object v0, v12, Lcom/android/internal/telephony/IntRangeManager$IntRange;->clients:Ljava/util/ArrayList;
 
     move-object/from16 v16, v0
@@ -1348,10 +1368,10 @@
 
     invoke-virtual/range {v16 .. v18}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 275
+    .line 276
     add-int/lit8 v8, v13, 0x1
 
-    .line 276
+    .line 277
     .restart local v8       #joinIndex:I
     move v7, v8
 
@@ -1359,7 +1379,7 @@
     :goto_5
     if-ge v7, v10, :cond_d
 
-    .line 277
+    .line 278
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/IntRangeManager;->mRanges:Ljava/util/ArrayList;
@@ -1374,7 +1394,7 @@
 
     check-cast v9, Lcom/android/internal/telephony/IntRangeManager$IntRange;
 
-    .line 278
+    .line 279
     .restart local v9       #joinRange:Lcom/android/internal/telephony/IntRangeManager$IntRange;
     iget-object v0, v12, Lcom/android/internal/telephony/IntRangeManager$IntRange;->clients:Ljava/util/ArrayList;
 
@@ -1386,7 +1406,7 @@
 
     invoke-virtual/range {v16 .. v17}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 279
+    .line 280
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/IntRangeManager;->mRanges:Ljava/util/ArrayList;
@@ -1397,19 +1417,19 @@
 
     invoke-virtual {v0, v9}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 276
+    .line 277
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_5
 
-    .line 281
+    .line 282
     .end local v9           #joinRange:Lcom/android/internal/telephony/IntRangeManager$IntRange;
     :cond_d
     const/16 v16, 0x1
 
     goto/16 :goto_0
 
-    .line 283
+    .line 284
     .end local v7           #i:I
     .end local v8           #joinIndex:I
     :cond_e
@@ -1417,7 +1437,7 @@
 
     goto/16 :goto_0
 
-    .line 286
+    .line 287
     .end local v5           #endIndex:I
     :cond_f
     add-int/lit8 v16, p1, 0x1
@@ -1432,7 +1452,7 @@
 
     if-gt v0, v1, :cond_18
 
-    .line 287
+    .line 288
     iget v0, v12, Lcom/android/internal/telephony/IntRangeManager$IntRange;->endId:I
 
     move/from16 v16, v0
@@ -1443,7 +1463,7 @@
 
     if-gt v0, v1, :cond_10
 
-    .line 289
+    .line 290
     new-instance v16, Lcom/android/internal/telephony/IntRangeManager$ClientRange;
 
     move-object/from16 v0, v16
@@ -1462,16 +1482,16 @@
 
     invoke-virtual {v12, v0}, Lcom/android/internal/telephony/IntRangeManager$IntRange;->insert(Lcom/android/internal/telephony/IntRangeManager$ClientRange;)V
 
-    .line 290
+    .line 291
     const/16 v16, 0x1
 
     goto/16 :goto_0
 
-    .line 293
+    .line 294
     :cond_10
     move v5, v13
 
-    .line 294
+    .line 295
     .restart local v5       #endIndex:I
     add-int/lit8 v14, v13, 0x1
 
@@ -1479,7 +1499,7 @@
     :goto_6
     if-ge v14, v10, :cond_11
 
-    .line 295
+    .line 296
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/IntRangeManager;->mRanges:Ljava/util/ArrayList;
@@ -1494,7 +1514,7 @@
 
     check-cast v15, Lcom/android/internal/telephony/IntRangeManager$IntRange;
 
-    .line 296
+    .line 297
     .local v15, testRange:Lcom/android/internal/telephony/IntRangeManager$IntRange;
     add-int/lit8 v16, p2, 0x1
 
@@ -1508,12 +1528,12 @@
 
     if-ge v0, v1, :cond_12
 
-    .line 303
+    .line 304
     .end local v15           #testRange:Lcom/android/internal/telephony/IntRangeManager$IntRange;
     :cond_11
     if-ne v5, v13, :cond_14
 
-    .line 306
+    .line 307
     iget v0, v12, Lcom/android/internal/telephony/IntRangeManager$IntRange;->endId:I
 
     move/from16 v16, v0
@@ -1536,12 +1556,12 @@
 
     if-eqz v16, :cond_13
 
-    .line 307
+    .line 308
     move/from16 v0, p2
 
     iput v0, v12, Lcom/android/internal/telephony/IntRangeManager$IntRange;->endId:I
 
-    .line 308
+    .line 309
     new-instance v16, Lcom/android/internal/telephony/IntRangeManager$ClientRange;
 
     move-object/from16 v0, v16
@@ -1560,29 +1580,29 @@
 
     invoke-virtual {v12, v0}, Lcom/android/internal/telephony/IntRangeManager$IntRange;->insert(Lcom/android/internal/telephony/IntRangeManager$ClientRange;)V
 
-    .line 309
+    .line 310
     const/16 v16, 0x1
 
     goto/16 :goto_0
 
-    .line 299
+    .line 300
     .restart local v15       #testRange:Lcom/android/internal/telephony/IntRangeManager$IntRange;
     :cond_12
     move v5, v14
 
-    .line 294
+    .line 295
     add-int/lit8 v14, v14, 0x1
 
     goto :goto_6
 
-    .line 311
+    .line 312
     .end local v15           #testRange:Lcom/android/internal/telephony/IntRangeManager$IntRange;
     :cond_13
     const/16 v16, 0x0
 
     goto/16 :goto_0
 
-    .line 315
+    .line 316
     :cond_14
     move-object/from16 v0, p0
 
@@ -1598,7 +1618,7 @@
 
     check-cast v6, Lcom/android/internal/telephony/IntRangeManager$IntRange;
 
-    .line 320
+    .line 321
     .restart local v6       #endRange:Lcom/android/internal/telephony/IntRangeManager$IntRange;
     iget v0, v6, Lcom/android/internal/telephony/IntRangeManager$IntRange;->endId:I
 
@@ -1616,7 +1636,7 @@
 
     add-int/lit8 v11, v16, -0x1
 
-    .line 321
+    .line 322
     .local v11, newRangeEndId:I
     :goto_7
     iget v0, v12, Lcom/android/internal/telephony/IntRangeManager$IntRange;->endId:I
@@ -1639,12 +1659,12 @@
 
     if-eqz v16, :cond_17
 
-    .line 322
+    .line 323
     move/from16 v0, p2
 
     iput v0, v12, Lcom/android/internal/telephony/IntRangeManager$IntRange;->endId:I
 
-    .line 324
+    .line 325
     new-instance v16, Lcom/android/internal/telephony/IntRangeManager$ClientRange;
 
     move-object/from16 v0, v16
@@ -1663,10 +1683,10 @@
 
     invoke-virtual {v12, v0}, Lcom/android/internal/telephony/IntRangeManager$IntRange;->insert(Lcom/android/internal/telephony/IntRangeManager$ClientRange;)V
 
-    .line 330
+    .line 331
     add-int/lit8 v8, v13, 0x1
 
-    .line 331
+    .line 332
     .restart local v8       #joinIndex:I
     move v7, v8
 
@@ -1674,7 +1694,7 @@
     :goto_8
     if-ge v7, v5, :cond_16
 
-    .line 332
+    .line 333
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/IntRangeManager;->mRanges:Ljava/util/ArrayList;
@@ -1689,7 +1709,7 @@
 
     check-cast v9, Lcom/android/internal/telephony/IntRangeManager$IntRange;
 
-    .line 333
+    .line 334
     .restart local v9       #joinRange:Lcom/android/internal/telephony/IntRangeManager$IntRange;
     iget-object v0, v12, Lcom/android/internal/telephony/IntRangeManager$IntRange;->clients:Ljava/util/ArrayList;
 
@@ -1701,7 +1721,7 @@
 
     invoke-virtual/range {v16 .. v17}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 334
+    .line 335
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/IntRangeManager;->mRanges:Ljava/util/ArrayList;
@@ -1712,7 +1732,7 @@
 
     invoke-virtual {v0, v9}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 331
+    .line 332
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_8
@@ -1724,10 +1744,10 @@
     :cond_15
     move/from16 v11, p2
 
-    .line 320
+    .line 321
     goto :goto_7
 
-    .line 336
+    .line 337
     .restart local v7       #i:I
     .restart local v8       #joinIndex:I
     .restart local v11       #newRangeEndId:I
@@ -1736,7 +1756,7 @@
 
     goto/16 :goto_0
 
-    .line 338
+    .line 339
     .end local v7           #i:I
     .end local v8           #joinIndex:I
     :cond_17
@@ -1744,7 +1764,7 @@
 
     goto/16 :goto_0
 
-    .line 190
+    .line 191
     .end local v5           #endIndex:I
     .end local v6           #endRange:Lcom/android/internal/telephony/IntRangeManager$IntRange;
     .end local v11           #newRangeEndId:I
@@ -1754,7 +1774,7 @@
 
     goto/16 :goto_1
 
-    .line 345
+    .line 346
     .end local v12           #range:Lcom/android/internal/telephony/IntRangeManager$IntRange;
     :cond_19
     const/16 v16, 0x1
@@ -1773,7 +1793,7 @@
 
     if-eqz v16, :cond_1a
 
-    .line 346
+    .line 347
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/IntRangeManager;->mRanges:Ljava/util/ArrayList;
@@ -1798,18 +1818,18 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 347
+    .line 348
     const/16 v16, 0x1
 
     goto/16 :goto_0
 
-    .line 349
+    .line 350
     :cond_1a
     const/16 v16, 0x0
 
     goto/16 :goto_0
 
-    .line 178
+    .line 179
     .end local v10           #len:I
     .end local v13           #startIndex:I
     :catchall_0
@@ -1827,7 +1847,7 @@
     .locals 1
 
     .prologue
-    .line 550
+    .line 551
     iget-object v0, p0, Lcom/android/internal/telephony/IntRangeManager;->mRanges:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -1846,17 +1866,17 @@
     .prologue
     const/4 v7, 0x1
 
-    .line 506
+    .line 507
     invoke-virtual {p0}, Lcom/android/internal/telephony/IntRangeManager;->startUpdate()V
 
-    .line 507
+    .line 508
     iget-object v5, p0, Lcom/android/internal/telephony/IntRangeManager;->mRanges:Ljava/util/ArrayList;
 
     invoke-virtual {v5}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    .line 508
+    .line 509
     .local v1, iterator:Ljava/util/Iterator;,"Ljava/util/Iterator<Lcom/android/internal/telephony/IntRangeManager$IntRange;>;"
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
@@ -1864,22 +1884,22 @@
 
     if-eqz v5, :cond_3
 
-    .line 509
+    .line 510
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Lcom/android/internal/telephony/IntRangeManager$IntRange;
 
-    .line 510
+    .line 511
     .local v3, range:Lcom/android/internal/telephony/IntRangeManager$IntRange;
     iget v4, v3, Lcom/android/internal/telephony/IntRangeManager$IntRange;->startId:I
 
-    .line 511
+    .line 512
     .local v4, start:I
     iget v0, v3, Lcom/android/internal/telephony/IntRangeManager$IntRange;->endId:I
 
-    .line 513
+    .line 514
     .local v0, end:I
     :cond_0
     :goto_0
@@ -1889,14 +1909,14 @@
 
     if-eqz v5, :cond_2
 
-    .line 514
+    .line 515
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lcom/android/internal/telephony/IntRangeManager$IntRange;
 
-    .line 516
+    .line 517
     .local v2, nextNode:Lcom/android/internal/telephony/IntRangeManager$IntRange;
     iget v5, v2, Lcom/android/internal/telephony/IntRangeManager$IntRange;->startId:I
 
@@ -1904,34 +1924,34 @@
 
     if-gt v5, v6, :cond_1
 
-    .line 517
+    .line 518
     iget v5, v2, Lcom/android/internal/telephony/IntRangeManager$IntRange;->endId:I
 
     if-le v5, v0, :cond_0
 
-    .line 518
+    .line 519
     iget v0, v2, Lcom/android/internal/telephony/IntRangeManager$IntRange;->endId:I
 
     goto :goto_0
 
-    .line 521
+    .line 522
     :cond_1
     invoke-virtual {p0, v4, v0, v7}, Lcom/android/internal/telephony/IntRangeManager;->addRange(IIZ)V
 
-    .line 522
+    .line 523
     iget v4, v2, Lcom/android/internal/telephony/IntRangeManager$IntRange;->startId:I
 
-    .line 523
+    .line 524
     iget v0, v2, Lcom/android/internal/telephony/IntRangeManager$IntRange;->endId:I
 
     goto :goto_0
 
-    .line 527
+    .line 528
     .end local v2           #nextNode:Lcom/android/internal/telephony/IntRangeManager$IntRange;
     :cond_2
     invoke-virtual {p0, v4, v0, v7}, Lcom/android/internal/telephony/IntRangeManager;->addRange(IIZ)V
 
-    .line 529
+    .line 530
     .end local v0           #end:I
     .end local v3           #range:Lcom/android/internal/telephony/IntRangeManager$IntRange;
     .end local v4           #start:I

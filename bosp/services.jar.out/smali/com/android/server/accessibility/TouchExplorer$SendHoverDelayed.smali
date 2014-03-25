@@ -44,7 +44,7 @@
     .line 1491
     iput-object p1, p0, Lcom/android/server/accessibility/TouchExplorer$SendHoverDelayed;->this$0:Lcom/android/server/accessibility/TouchExplorer;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1482
     const-class v0, Lcom/android/server/accessibility/TouchExplorer$SendHoverDelayed;

@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 109
+    .line 117
     iput-object p1, p0, Landroid/net/CaptivePortalTracker$1;->this$0:Landroid/net/CaptivePortalTracker;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,12 +40,12 @@
     .parameter "intent"
 
     .prologue
-    .line 112
+    .line 120
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 113
+    .line 121
     .local v0, action:Ljava/lang/String;
     const-string v2, "android.net.conn.CONNECTIVITY_CHANGE"
 
@@ -55,7 +55,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 114
+    .line 122
     const-string/jumbo v2, "networkInfo"
 
     invoke-virtual {p2, v2}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -64,7 +64,7 @@
 
     check-cast v1, Landroid/net/NetworkInfo;
 
-    .line 116
+    .line 124
     .local v1, info:Landroid/net/NetworkInfo;
     iget-object v2, p0, Landroid/net/CaptivePortalTracker$1;->this$0:Landroid/net/CaptivePortalTracker;
 
@@ -78,7 +78,7 @@
 
     invoke-virtual {v2, v3}, Landroid/net/CaptivePortalTracker;->sendMessage(Landroid/os/Message;)V
 
-    .line 118
+    .line 126
     .end local v1           #info:Landroid/net/NetworkInfo;
     :cond_0
     return-void

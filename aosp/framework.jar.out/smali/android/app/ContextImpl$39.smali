@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 521
+    .line 569
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -27,48 +27,27 @@
 
 
 # virtual methods
-.method public getService(Landroid/app/ContextImpl;)Ljava/lang/Object;
-    .locals 4
+.method public createService(Landroid/app/ContextImpl;)Ljava/lang/Object;
+    .locals 3
     .parameter "ctx"
 
     .prologue
-    .line 523
-    #getter for: Landroid/app/ContextImpl;->mDisplay:Landroid/view/Display;
-    invoke-static {p1}, Landroid/app/ContextImpl;->access$100(Landroid/app/ContextImpl;)Landroid/view/Display;
+    .line 571
+    const-string v1, "serial"
+
+    invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 524
-    .local v0, display:Landroid/view/Display;
-    if-nez v0, :cond_0
+    .line 572
+    .local v0, b:Landroid/os/IBinder;
+    new-instance v1, Landroid/hardware/SerialManager;
 
-    .line 525
-    invoke-virtual {p1}, Landroid/app/ContextImpl;->getOuterContext()Landroid/content/Context;
+    invoke-static {v0}, Landroid/hardware/ISerialManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/hardware/ISerialManager;
 
     move-result-object v2
 
-    const-string v3, "display"
+    invoke-direct {v1, p1, v2}, Landroid/hardware/SerialManager;-><init>(Landroid/content/Context;Landroid/hardware/ISerialManager;)V
 
-    invoke-virtual {v2, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/hardware/display/DisplayManager;
-
-    .line 527
-    .local v1, dm:Landroid/hardware/display/DisplayManager;
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v2}, Landroid/hardware/display/DisplayManager;->getDisplay(I)Landroid/view/Display;
-
-    move-result-object v0
-
-    .line 529
-    .end local v1           #dm:Landroid/hardware/display/DisplayManager;
-    :cond_0
-    new-instance v2, Landroid/view/WindowManagerImpl;
-
-    invoke-direct {v2, v0}, Landroid/view/WindowManagerImpl;-><init>(Landroid/view/Display;)V
-
-    return-object v2
+    return-object v1
 .end method

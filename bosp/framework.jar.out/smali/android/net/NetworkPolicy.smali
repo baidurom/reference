@@ -44,6 +44,8 @@
 
 
 # instance fields
+.field public active:Z
+
 .field public cycleDay:I
 
 .field public cycleTimezone:Ljava/lang/String;
@@ -68,7 +70,7 @@
     .locals 1
 
     .prologue
-    .line 183
+    .line 200
     new-instance v0, Landroid/net/NetworkPolicy$1;
 
     invoke-direct {v0}, Landroid/net/NetworkPolicy$1;-><init>()V
@@ -91,10 +93,10 @@
     .parameter "inferred"
 
     .prologue
-    .line 59
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 67
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 60
+    .line 68
     const-string/jumbo v0, "missing NetworkTemplate"
 
     invoke-static {p1, v0}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -105,10 +107,10 @@
 
     iput-object v0, p0, Landroid/net/NetworkPolicy;->template:Landroid/net/NetworkTemplate;
 
-    .line 61
+    .line 69
     iput p2, p0, Landroid/net/NetworkPolicy;->cycleDay:I
 
-    .line 62
+    .line 70
     const-string/jumbo v0, "missing cycleTimezone"
 
     invoke-static {p3, v0}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -119,25 +121,30 @@
 
     iput-object v0, p0, Landroid/net/NetworkPolicy;->cycleTimezone:Ljava/lang/String;
 
-    .line 63
+    .line 71
     iput-wide p4, p0, Landroid/net/NetworkPolicy;->warningBytes:J
 
-    .line 64
+    .line 72
     iput-wide p6, p0, Landroid/net/NetworkPolicy;->limitBytes:J
 
-    .line 65
+    .line 73
     iput-wide p8, p0, Landroid/net/NetworkPolicy;->lastWarningSnooze:J
 
-    .line 66
+    .line 74
     iput-wide p10, p0, Landroid/net/NetworkPolicy;->lastLimitSnooze:J
 
-    .line 67
+    .line 75
     iput-boolean p12, p0, Landroid/net/NetworkPolicy;->metered:Z
 
-    .line 68
+    .line 76
     iput-boolean p13, p0, Landroid/net/NetworkPolicy;->inferred:Z
 
-    .line 69
+    .line 78
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Landroid/net/NetworkPolicy;->active:Z
+
+    .line 79
     return-void
 .end method
 
@@ -153,7 +160,7 @@
     .end annotation
 
     .prologue
-    .line 53
+    .line 61
     const-wide/16 v8, -0x1
 
     const-wide/16 v10, -0x1
@@ -176,7 +183,7 @@
 
     invoke-direct/range {v0 .. v13}, Landroid/net/NetworkPolicy;-><init>(Landroid/net/NetworkTemplate;ILjava/lang/String;JJJJZZ)V
 
-    .line 55
+    .line 63
     return-void
 .end method
 
@@ -189,10 +196,10 @@
 
     const/4 v2, 0x0
 
-    .line 71
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 81
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 72
+    .line 82
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
@@ -203,49 +210,49 @@
 
     iput-object v0, p0, Landroid/net/NetworkPolicy;->template:Landroid/net/NetworkTemplate;
 
-    .line 73
+    .line 83
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/net/NetworkPolicy;->cycleDay:I
 
-    .line 74
+    .line 84
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/net/NetworkPolicy;->cycleTimezone:Ljava/lang/String;
 
-    .line 75
+    .line 85
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v3
 
     iput-wide v3, p0, Landroid/net/NetworkPolicy;->warningBytes:J
 
-    .line 76
+    .line 86
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v3
 
     iput-wide v3, p0, Landroid/net/NetworkPolicy;->limitBytes:J
 
-    .line 77
+    .line 87
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v3
 
     iput-wide v3, p0, Landroid/net/NetworkPolicy;->lastWarningSnooze:J
 
-    .line 78
+    .line 88
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v3
 
     iput-wide v3, p0, Landroid/net/NetworkPolicy;->lastLimitSnooze:J
 
-    .line 79
+    .line 89
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -257,30 +264,48 @@
     :goto_0
     iput-boolean v0, p0, Landroid/net/NetworkPolicy;->metered:Z
 
-    .line 80
+    .line 90
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    :goto_1
-    iput-boolean v1, p0, Landroid/net/NetworkPolicy;->inferred:Z
+    move v0, v1
 
-    .line 81
+    :goto_1
+    iput-boolean v0, p0, Landroid/net/NetworkPolicy;->inferred:Z
+
+    .line 92
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    :goto_2
+    iput-boolean v2, p0, Landroid/net/NetworkPolicy;->active:Z
+
+    .line 93
     return-void
 
     :cond_0
     move v0, v2
 
-    .line 79
+    .line 89
     goto :goto_0
 
     :cond_1
-    move v1, v2
+    move v0, v2
 
-    .line 80
+    .line 90
     goto :goto_1
+
+    :cond_2
+    move v2, v1
+
+    .line 92
+    goto :goto_2
 .end method
 
 
@@ -291,13 +316,13 @@
     .prologue
     const-wide/16 v0, -0x1
 
-    .line 123
+    .line 137
     iput-wide v0, p0, Landroid/net/NetworkPolicy;->lastWarningSnooze:J
 
-    .line 124
+    .line 138
     iput-wide v0, p0, Landroid/net/NetworkPolicy;->lastLimitSnooze:J
 
-    .line 125
+    .line 139
     return-void
 .end method
 
@@ -308,7 +333,7 @@
     .prologue
     const-wide/16 v2, -0x1
 
-    .line 136
+    .line 150
     if-eqz p1, :cond_0
 
     iget-wide v0, p1, Landroid/net/NetworkPolicy;->limitBytes:J
@@ -317,15 +342,15 @@
 
     if-nez v0, :cond_1
 
-    .line 138
+    .line 152
     :cond_0
     const/4 v0, -0x1
 
-    .line 144
+    .line 158
     :goto_0
     return v0
 
-    .line 140
+    .line 154
     :cond_1
     iget-wide v0, p0, Landroid/net/NetworkPolicy;->limitBytes:J
 
@@ -341,13 +366,13 @@
 
     if-gez v0, :cond_3
 
-    .line 142
+    .line 156
     :cond_2
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 144
+    .line 158
     :cond_3
     const/4 v0, 0x0
 
@@ -374,7 +399,7 @@
     .locals 1
 
     .prologue
-    .line 98
+    .line 112
     const/4 v0, 0x0
 
     return v0
@@ -387,17 +412,17 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 155
+    .line 169
     instance-of v2, p1, Landroid/net/NetworkPolicy;
 
     if-eqz v2, :cond_0
 
     move-object v0, p1
 
-    .line 156
+    .line 170
     check-cast v0, Landroid/net/NetworkPolicy;
 
-    .line 157
+    .line 171
     .local v0, other:Landroid/net/NetworkPolicy;
     iget v2, p0, Landroid/net/NetworkPolicy;->cycleDay:I
 
@@ -471,7 +496,7 @@
 
     const/4 v1, 0x1
 
-    .line 165
+    .line 179
     .end local v0           #other:Landroid/net/NetworkPolicy;
     :cond_0
     return v1
@@ -481,7 +506,7 @@
     .locals 2
 
     .prologue
-    .line 131
+    .line 145
     iget v0, p0, Landroid/net/NetworkPolicy;->cycleDay:I
 
     const/4 v1, -0x1
@@ -503,7 +528,7 @@
     .locals 4
 
     .prologue
-    .line 149
+    .line 163
     const/16 v0, 0x9
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -602,12 +627,12 @@
     .parameter "totalBytes"
 
     .prologue
-    .line 115
+    .line 129
     const-wide/16 v0, 0xbb8
 
     add-long/2addr p1, v0
 
-    .line 116
+    .line 130
     iget-wide v0, p0, Landroid/net/NetworkPolicy;->limitBytes:J
 
     const-wide/16 v2, -0x1
@@ -638,7 +663,7 @@
     .parameter "totalBytes"
 
     .prologue
-    .line 105
+    .line 119
     iget-wide v0, p0, Landroid/net/NetworkPolicy;->warningBytes:J
 
     const-wide/16 v2, -0x1
@@ -668,14 +693,14 @@
     .locals 4
 
     .prologue
-    .line 170
+    .line 184
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "NetworkPolicy"
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 171
+    .line 185
     .local v0, builder:Ljava/lang/StringBuilder;
     const-string v1, "["
 
@@ -693,7 +718,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 172
+    .line 186
     const-string v1, " cycleDay="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -704,7 +729,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 173
+    .line 187
     const-string v1, ", cycleTimezone="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -715,7 +740,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 174
+    .line 188
     const-string v1, ", warningBytes="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -726,7 +751,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 175
+    .line 189
     const-string v1, ", limitBytes="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -737,7 +762,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 176
+    .line 190
     const-string v1, ", lastWarningSnooze="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -748,7 +773,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 177
+    .line 191
     const-string v1, ", lastLimitSnooze="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -759,7 +784,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 178
+    .line 192
     const-string v1, ", metered="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -770,7 +795,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    .line 179
+    .line 193
     const-string v1, ", inferred="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -781,7 +806,18 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    .line 180
+    .line 195
+    const-string v1, ", active="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-boolean v2, p0, Landroid/net/NetworkPolicy;->active:Z
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    .line 197
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -799,42 +835,42 @@
 
     const/4 v2, 0x0
 
-    .line 85
+    .line 97
     iget-object v0, p0, Landroid/net/NetworkPolicy;->template:Landroid/net/NetworkTemplate;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    .line 86
+    .line 98
     iget v0, p0, Landroid/net/NetworkPolicy;->cycleDay:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 87
+    .line 99
     iget-object v0, p0, Landroid/net/NetworkPolicy;->cycleTimezone:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 88
+    .line 100
     iget-wide v3, p0, Landroid/net/NetworkPolicy;->warningBytes:J
 
     invoke-virtual {p1, v3, v4}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 89
+    .line 101
     iget-wide v3, p0, Landroid/net/NetworkPolicy;->limitBytes:J
 
     invoke-virtual {p1, v3, v4}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 90
+    .line 102
     iget-wide v3, p0, Landroid/net/NetworkPolicy;->lastWarningSnooze:J
 
     invoke-virtual {p1, v3, v4}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 91
+    .line 103
     iget-wide v3, p0, Landroid/net/NetworkPolicy;->lastLimitSnooze:J
 
     invoke-virtual {p1, v3, v4}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 92
+    .line 104
     iget-boolean v0, p0, Landroid/net/NetworkPolicy;->metered:Z
 
     if-eqz v0, :cond_0
@@ -844,26 +880,42 @@
     :goto_0
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 93
+    .line 105
     iget-boolean v0, p0, Landroid/net/NetworkPolicy;->inferred:Z
 
     if-eqz v0, :cond_1
 
+    move v0, v1
+
     :goto_1
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 107
+    iget-boolean v0, p0, Landroid/net/NetworkPolicy;->active:Z
+
+    if-eqz v0, :cond_2
+
+    :goto_2
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 94
+    .line 108
     return-void
 
     :cond_0
     move v0, v2
 
-    .line 92
+    .line 104
     goto :goto_0
 
     :cond_1
+    move v0, v2
+
+    .line 105
+    goto :goto_1
+
+    :cond_2
     move v1, v2
 
-    .line 93
-    goto :goto_1
+    .line 107
+    goto :goto_2
 .end method

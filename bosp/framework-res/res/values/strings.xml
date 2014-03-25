@@ -24,12 +24,15 @@
     <string name="VideoView_error_text_invalid_progressive_playback">"This video isn't valid for streaming to this device."</string>
     <string name="selectTextMode">Select text</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="wind_signatrue">Send from TCL smart clound phone</string>
     <string name="config_ethernet_iface_regex">eth\\d</string>
     <string name="config_tether_apndata" />
     <string name="config_wifi_p2p_device_type">10-0050F204-5</string>
     <string name="widget_default_package_name" />
     <string name="widget_default_class_name" />
     <string name="default_wallpaper_component">@null</string>
+    <string name="config_networkLocationProviderPackageName">@null</string>
+    <string name="config_geocodeProviderPackageName">@null</string>
     <string name="config_datause_iface">rmnet0</string>
     <string name="config_default_dns_server">8.8.8.8</string>
     <string name="gsm_alphabet_default_charset" />
@@ -38,13 +41,15 @@
     <string name="db_wal_sync_mode">FULL</string>
     <string name="config_useragentprofile_url" />
     <string name="config_isoImagePath" />
-    <string name="config_ntpServer">2.android.pool.ntp.org</string>
+    <string name="config_ntpServer">asia.pool.ntp.org</string>
     <string name="config_wimaxServiceJarLocation" />
     <string name="config_wimaxNativeLibLocation" />
     <string name="config_wimaxManagerClassname" />
     <string name="config_wimaxServiceClassname" />
     <string name="config_wimaxStateTrackerClassname" />
-    <string name="config_dreamsDefaultComponent">com.google.android.deskclock/com.android.deskclock.Screensaver</string>
+    <string name="config_dreamsDefaultComponent">com.android.deskclock/com.android.deskclock.Screensaver</string>
+    <string name="config_wind_optr">wind</string>
+    <string name="baidu_mms_default_signature" />
     <string name="hour_minute_24" formatted="false">%H:%M</string>
     <string name="hour_minute_ampm" formatted="false">%-l:%M%p</string>
     <string name="hour_minute_cap_ampm" formatted="false">%-l:%M%^p</string>
@@ -299,7 +304,7 @@
     <string name="permgrouplab_display">Other Application UI</string>
     <string name="permgroupdesc_display">Effect the UI of other applications.</string>
     <string name="permgrouplab_storage">Storage</string>
-    <string name="permgroupdesc_storage">Access the USB storage.</string>
+    <string name="permgroupdesc_storage">Access the SD card.</string>
     <string name="permlab_statusBar">disable or modify status bar</string>
     <string name="permdesc_statusBar">Allows the app to disable the status bar or add and remove system icons.</string>
     <string name="permlab_statusBarService">status bar</string>
@@ -514,9 +519,9 @@
     <string name="permdesc_brick">Allows the app to disable the entire phone permanently. This is very dangerous.</string>
     <string name="permlab_reboot">force phone reboot</string>
     <string name="permdesc_reboot">Allows the app to force the phone to reboot.</string>
-    <string name="permlab_mount_unmount_filesystems">access USB storage filesystem</string>
+    <string name="permlab_mount_unmount_filesystems">access SD Card filesystem</string>
     <string name="permdesc_mount_unmount_filesystems">Allows the app to mount and unmount filesystems for removable storage.</string>
-    <string name="permlab_mount_format_filesystems">erase USB storage</string>
+    <string name="permlab_mount_format_filesystems">erase SD Card</string>
     <string name="permdesc_mount_format_filesystems">Allows the app to format removable storage.</string>
     <string name="permlab_asec_access">get information on internal storage</string>
     <string name="permdesc_asec_access">Allows the app to get information on internal storage.</string>
@@ -625,9 +630,9 @@
     <string name="permlab_writeDictionary">add words to user-defined dictionary</string>
     <string name="permdesc_writeDictionary">Allows the app to write new words into the user dictionary.</string>
     <string name="permlab_sdcardRead">test access to protected storage</string>
-    <string name="permdesc_sdcardRead">Allows the app to test a permission for USB storage that will be available on future devices.</string>
-    <string name="permlab_sdcardWrite">modify or delete the contents of your USB storage</string>
-    <string name="permdesc_sdcardWrite">Allows the app to write to the USB storage.</string>
+    <string name="permdesc_sdcardRead">Allows the app to test a permission for the SD card that will be available on future devices.</string>
+    <string name="permlab_sdcardWrite">modify or delete the contents of your SD card</string>
+    <string name="permdesc_sdcardWrite">Allows the app to write to the SD card.</string>
     <string name="permlab_mediaStorageWrite">modify/delete internal media storage contents</string>
     <string name="permdesc_mediaStorageWrite">Allows the app to modify the contents of the internal media storage.</string>
     <string name="permlab_sdcardAccessAll">access external storage of all users</string>
@@ -742,7 +747,7 @@
     <string name="keyguard_password_wrong_pin_code">Incorrect PIN code （%s times left）.</string>
     <string name="keyguard_label_text">To unlock, press Menu then 0.</string>
     <string name="emergency_call_dialog_number_for_display">Emergency number</string>
-    <string name="lockscreen_carrier_default">No service.</string>
+    <string name="lockscreen_carrier_default">No service</string>
     <string name="lockscreen_screen_locked">Screen locked.</string>
     <string name="lockscreen_instructions_when_pattern_enabled">Press Menu to unlock or place emergency call.</string>
     <string name="lockscreen_instructions_when_pattern_disabled">Press Menu to unlock.</string>
@@ -761,7 +766,7 @@
     <string name="lockscreen_missing_sim_message">No SIM card in phone.</string>
     <string name="lockscreen_missing_sim_instructions">Insert a SIM card.</string>
     <string name="lockscreen_missing_sim_instructions_long">The SIM card is missing or not readable. Insert a SIM card.</string>
-    <string name="lockscreen_permanent_disabled_sim_message_short">Unusable SIM card.</string>
+    <string name="lockscreen_permanent_disabled_sim_message_short">Unusable SIM card</string>
     <string name="lockscreen_permanent_disabled_sim_instructions">"Your SIM card has been permanently disabled.
  Contact your wireless service provider for another SIM card."</string>
     <string name="lockscreen_transport_prev_description">Previous track button</string>
@@ -771,9 +776,9 @@
     <string name="lockscreen_transport_stop_description">Stop button</string>
     <string name="emergency_calls_only">Emergency calls only</string>
     <string name="lockscreen_network_locked_message">Network locked</string>
-    <string name="lockscreen_sim_puk_locked_message">SIM card is PUK-locked.</string>
+    <string name="lockscreen_sim_puk_locked_message">SIM card is PUK-locked</string>
     <string name="lockscreen_sim_puk_locked_instructions">See the User Guide or contact Customer Care.</string>
-    <string name="lockscreen_sim_locked_message">SIM card is locked.</string>
+    <string name="lockscreen_sim_locked_message">SIM card is locked</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">Unlocking SIM card…</string>
     <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"You have incorrectly drawn your unlock pattern %d times. 
 
@@ -1097,15 +1102,15 @@ Do you want to close it?"</string>
     <string name="perm_costs_money">this may cost you money</string>
     <string name="usb_storage_activity_title">USB mass storage</string>
     <string name="usb_storage_title">USB connected</string>
-    <string name="usb_storage_message">You have connected to your computer via USB. Touch the button below if you want to copy files between your computer and your USB storage.</string>
+    <string name="usb_storage_message">You have connected to your computer via USB. Touch the button below if you want to copy files between your computer and your SD card.</string>
     <string name="usb_storage_button_mount">Turn on USB storage</string>
-    <string name="usb_storage_error_message">"There's a problem using your USB storage for USB mass storage."</string>
+    <string name="usb_storage_error_message">"There's a problem using your SD card for USB mass storage."</string>
     <string name="usb_storage_notification_title">USB connected</string>
     <string name="usb_storage_notification_message">Touch to copy files to/from your computer.</string>
     <string name="usb_storage_stop_notification_title">Turn off USB storage</string>
     <string name="usb_storage_stop_notification_message">Touch to turn off USB storage.</string>
     <string name="usb_storage_stop_title">USB storage in use</string>
-    <string name="usb_storage_stop_message">Before turning off USB storage, make sure you have unmounted (“ejected”) your USB storage from your computer.</string>
+    <string name="usb_storage_stop_message">Before turning off USB storage, make sure you have unmounted (“ejected”) your SD card from your computer.</string>
     <string name="usb_storage_stop_button_mount">Turn off USB storage</string>
     <string name="usb_storage_stop_error_message">"There was a problem turning off USB storage. Check that you've unmounted the USB host, then try again."</string>
     <string name="dlg_confirm_kill_storage_users_title">Turn on USB storage</string>
@@ -1117,8 +1122,8 @@ Do you want to close it?"</string>
     <string name="usb_cd_installer_notification_title">Connected as an installer</string>
     <string name="usb_accessory_notification_title">Connected to a USB accessory</string>
     <string name="usb_notification_message">Touch for other USB options.</string>
-    <string name="extmedia_format_title">Format USB storage?</string>
-    <string name="extmedia_format_message">"All files stored in your USB storage will be erased. This action can't be reversed!"</string>
+    <string name="extmedia_format_title">Format SD card?</string>
+    <string name="extmedia_format_message">All data on your card will be lost.</string>
     <string name="extmedia_format_button_format">Format</string>
     <string name="adb_active_notification_title">USB debugging connected</string>
     <string name="adb_active_notification_message">Touch to disable USB debugging.</string>
@@ -1132,18 +1137,18 @@ Do you want to close it?"</string>
     <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="candidates_style"><u>candidates</u></string>
-    <string name="ext_media_checking_notification_title">Preparing USB storage</string>
+    <string name="ext_media_checking_notification_title">Preparing %s</string>
     <string name="ext_media_checking_notification_message">Checking for errors.</string>
-    <string name="ext_media_nofs_notification_title">Blank USB storage</string>
-    <string name="ext_media_nofs_notification_message">USB storage is blank or has unsupported filesystem.</string>
-    <string name="ext_media_unmountable_notification_title">Damaged USB storage</string>
-    <string name="ext_media_unmountable_notification_message">USB storage is damaged. Try reformatting it.</string>
-    <string name="ext_media_badremoval_notification_title">USB storage unexpectedly removed</string>
-    <string name="ext_media_badremoval_notification_message">Unmount USB storage before removing to avoid data loss.</string>
-    <string name="ext_media_safe_unmount_notification_title">USB storage safe to remove</string>
-    <string name="ext_media_safe_unmount_notification_message">You can safely remove USB storage.</string>
-    <string name="ext_media_nomedia_notification_title">Removed USB storage</string>
-    <string name="ext_media_nomedia_notification_message">USB storage removed. Insert new media.</string>
+    <string name="ext_media_nofs_notification_title">Blank %s</string>
+    <string name="ext_media_nofs_notification_message">%s is blank or has unsupported filesystem.</string>
+    <string name="ext_media_unmountable_notification_title">Damaged %s</string>
+    <string name="ext_media_unmountable_notification_message">%s is damaged. Try reformatting it.</string>
+    <string name="ext_media_badremoval_notification_title">%s unexpectedly removed</string>
+    <string name="ext_media_badremoval_notification_message">Unmount %s before removing to avoid data loss.</string>
+    <string name="ext_media_safe_unmount_notification_title">%s safe to remove</string>
+    <string name="ext_media_safe_unmount_notification_message">You can safely remove %s.</string>
+    <string name="ext_media_nomedia_notification_title">Removed %s</string>
+    <string name="ext_media_nomedia_notification_message">%s removed. Insert a new one.</string>
     <string name="activity_list_empty">No matching activities found.</string>
     <string name="permlab_pkgUsageStats">update component usage statistics</string>
     <string name="permdesc_pkgUsageStats">Allows the app to modify collected component usage statistics. Not for use by normal apps.</string>
@@ -1204,13 +1209,13 @@ for account %s."</string>
     <string name="no_matches">No matches</string>
     <string name="find_on_page">Find on page</string>
     <string name="action_mode_done">Done</string>
-    <string name="progress_unmounting">Unmounting USB storage…</string>
-    <string name="progress_erasing">Erasing USB storage…</string>
-    <string name="format_error">"Couldn't erase USB storage."</string>
+    <string name="progress_unmounting">Unmounting SD card…</string>
+    <string name="progress_erasing">Erasing SD card…</string>
+    <string name="format_error">"Couldn't erase SD card."</string>
     <string name="media_bad_removal">SD card was removed before being unmounted.</string>
-    <string name="media_checking">USB storage is currently being checked.</string>
+    <string name="media_checking">SD card is currently being checked.</string>
     <string name="media_removed">SD card has been removed.</string>
-    <string name="media_shared">USB storage is currently in use by a computer.</string>
+    <string name="media_shared">SD card is currently in use by a computer.</string>
     <string name="media_unknown_state">External media in unknown state.</string>
     <string name="share">Share</string>
     <string name="find">Find</string>
@@ -1384,6 +1389,17 @@ Listening at high volume for long periods may damage your hearing."</string>
     <string name="enable_accessibility_canceled">Accessibility canceled.</string>
     <string name="user_switched">Current user %1$s.</string>
     <string name="owner_name">Owner</string>
+    <string name="storage_phone">Phone storage</string>
+    <string name="storage_external_usb">External USB storage</string>
+    <string name="storage_ic_usb1">External IC-USB storage1</string>
+    <string name="storage_ic_usb2">External IC-USB storage2</string>
+    <string name="zz_keyguard_accessibility_voice_unlock">Voice unlock.</string>
+    <string name="global_action_reboot">Reboot</string>
+    <string name="reboot_confirm">Your phone will reboot.</string>
+    <string name="reboot_confirm_question">Would you like to reboot?</string>
+    <string name="open_airplane_mode">Airplane mode will be enabled</string>
+    <string name="close_airplane_mode">Airplane mode will be disabled</string>
+    <string name="transport_string">Backing up to debug-only private cache</string>
     <string name="search_baidu_web">http://m.baidu.com/s?from=1635a&amp;word=%s&amp;ua=baidu_800_480_Nexus*S_1.0</string>
     <string name="custom_ringtone_picker">Pick ringtones from media</string>
     <string name="permission_dialog_title">Attention</string>
@@ -1415,8 +1431,6 @@ Listening at high volume for long periods may damage your hearing."</string>
     <string name="invalidPuk_noremaintime">Type a PUK that is 8 digits.</string>
     <string name="reboot">Reboot</string>
     <string name="reboot_progress">Rebooting…</string>
-    <string name="reboot_confirm">Your phone will reboot.</string>
-    <string name="global_action_reboot">Reboot</string>
     <string name="global_actions_toggle_airplane_mode_off">Disable airplane mode</string>
     <string name="keyguard_password_wrong_pin_code_one">Incorrect PIN code （%s time left）.</string>
     <string name="keyguard_password_wrong_pin_code_no_remain_time">Incorrect PIN code.</string>

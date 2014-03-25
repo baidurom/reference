@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 98
+    .line 119
     invoke-direct {p0}, Lcom/android/internal/telephony/SmsMessageBase$PduBase;-><init>()V
 
     return-void
@@ -31,7 +31,7 @@
     .locals 2
 
     .prologue
-    .line 100
+    .line 121
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -42,7 +42,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/internal/telephony/SmsMessageBase$PduBase;->encodedScAddress:[B
+    iget-object v1, p0, Lcom/android/internal/telephony/SmsMessageBase$SubmitPduBase;->encodedScAddress:[B
 
     invoke-static {v1}, Ljava/util/Arrays;->toString([B)Ljava/lang/String;
 
@@ -58,7 +58,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/internal/telephony/SmsMessageBase$PduBase;->encodedMessage:[B
+    iget-object v1, p0, Lcom/android/internal/telephony/SmsMessageBase$SubmitPduBase;->encodedMessage:[B
 
     invoke-static {v1}, Ljava/util/Arrays;->toString([B)Ljava/lang/String;
 

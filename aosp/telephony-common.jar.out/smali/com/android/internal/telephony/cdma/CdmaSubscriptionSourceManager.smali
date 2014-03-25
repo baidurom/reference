@@ -12,7 +12,7 @@
 
 .field static final LOG_TAG:Ljava/lang/String; = "CDMA"
 
-.field public static final PREFERRED_CDMA_SUBSCRIPTION:I = 0x1
+.field public static final PREFERRED_CDMA_SUBSCRIPTION:I = 0x0
 
 .field public static final SUBSCRIPTION_FROM_NV:I = 0x1
 
@@ -45,7 +45,7 @@
     .line 48
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Lcom/android/internal/telephony/cdma/CdmaSubscriptionSourceManager;->sReferenceCountMonitor:Ljava/lang/Object;
 
@@ -130,7 +130,7 @@
 
     const-string v2, "subscription_mode"
 
-    const/4 v3, 0x1
+    const/4 v3, 0x0
 
     invoke-static {v1, v2, v3}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 

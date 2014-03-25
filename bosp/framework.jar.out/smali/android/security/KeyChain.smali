@@ -464,7 +464,7 @@
     .line 306
     new-instance v5, Landroid/security/KeyChainException;
 
-    const-string v6, "keystore had a problem"
+    const-string/jumbo v6, "keystore had a problem"
 
     invoke-direct {v5, v6}, Landroid/security/KeyChainException;-><init>(Ljava/lang/String;)V
 
@@ -506,7 +506,7 @@
     .restart local v4       #keyId:Ljava/lang/String;
     :cond_1
     :try_start_2
-    const-string v5, "keystore"
+    const-string/jumbo v5, "keystore"
 
     invoke-static {v5}, Lorg/apache/harmony/xnet/provider/jsse/OpenSSLEngine;->getInstance(Ljava/lang/String;)Lorg/apache/harmony/xnet/provider/jsse/OpenSSLEngine;
 

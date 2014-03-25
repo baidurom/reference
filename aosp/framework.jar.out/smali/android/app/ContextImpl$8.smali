@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 322
+    .line 353
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -32,10 +32,10 @@
     .parameter "ctx"
 
     .prologue
-    .line 324
-    invoke-static {}, Landroid/bluetooth/BluetoothAdapter;->getDefaultAdapter()Landroid/bluetooth/BluetoothAdapter;
+    .line 355
+    new-instance v0, Landroid/media/MediaRouter;
 
-    move-result-object v0
+    invoke-direct {v0, p1}, Landroid/media/MediaRouter;-><init>(Landroid/content/Context;)V
 
     return-object v0
 .end method

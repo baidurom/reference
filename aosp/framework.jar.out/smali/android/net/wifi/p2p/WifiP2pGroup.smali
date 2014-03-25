@@ -20,9 +20,13 @@
 
 .field public static final PERSISTENT_NET_ID:I = -0x2
 
+.field private static final TAG:Ljava/lang/String; = "WifiP2pGroup"
+
 .field public static final TEMPORARY_NET_ID:I = -0x1
 
 .field private static final groupStartedPattern:Ljava/util/regex/Pattern;
+
+.field private static final groupStartedPattern2:Ljava/util/regex/Pattern;
 
 
 # instance fields
@@ -36,6 +40,8 @@
         }
     .end annotation
 .end field
+
+.field private mFreq:I
 
 .field private mInterface:Ljava/lang/String;
 
@@ -55,7 +61,7 @@
     .locals 1
 
     .prologue
-    .line 67
+    .line 72
     const-string/jumbo v0, "ssid=\"(.+)\" freq=(\\d+) (?:psk=)?([0-9a-fA-F]{64})?(?:passphrase=)?(?:\"(.{0,63})\")? go_dev_addr=((?:[0-9a-f]{2}:){5}[0-9a-f]{2}) ?(\\[PERSISTENT\\])?"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
@@ -64,7 +70,16 @@
 
     sput-object v0, Landroid/net/wifi/p2p/WifiP2pGroup;->groupStartedPattern:Ljava/util/regex/Pattern;
 
-    .line 309
+    .line 82
+    const-string v0, "go_dev_addr=((?:[0-9a-f]{2}:){5}[0-9a-f]{2}) ?(\\[PERSISTENT\\])?"
+
+    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    sput-object v0, Landroid/net/wifi/p2p/WifiP2pGroup;->groupStartedPattern2:Ljava/util/regex/Pattern;
+
+    .line 349
     new-instance v0, Landroid/net/wifi/p2p/WifiP2pGroup$1;
 
     invoke-direct {v0}, Landroid/net/wifi/p2p/WifiP2pGroup$1;-><init>()V
@@ -78,17 +93,17 @@
     .locals 1
 
     .prologue
-    .line 76
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 87
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 56
+    .line 58
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mClients:Ljava/util/List;
 
-    .line 77
+    .line 88
     return-void
 .end method
 
@@ -97,27 +112,27 @@
     .parameter "source"
 
     .prologue
-    .line 282
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 320
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 56
+    .line 58
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v2, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mClients:Ljava/util/List;
 
-    .line 283
+    .line 321
     if-eqz p1, :cond_1
 
-    .line 284
+    .line 322
     invoke-virtual {p1}, Landroid/net/wifi/p2p/WifiP2pGroup;->getNetworkName()Ljava/lang/String;
 
     move-result-object v2
 
     iput-object v2, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mNetworkName:Ljava/lang/String;
 
-    .line 285
+    .line 323
     new-instance v2, Landroid/net/wifi/p2p/WifiP2pDevice;
 
     invoke-virtual {p1}, Landroid/net/wifi/p2p/WifiP2pGroup;->getOwner()Landroid/net/wifi/p2p/WifiP2pDevice;
@@ -128,12 +143,12 @@
 
     iput-object v2, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mOwner:Landroid/net/wifi/p2p/WifiP2pDevice;
 
-    .line 286
+    .line 324
     iget-boolean v2, p1, Landroid/net/wifi/p2p/WifiP2pGroup;->mIsGroupOwner:Z
 
     iput-boolean v2, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mIsGroupOwner:Z
 
-    .line 287
+    .line 325
     invoke-virtual {p1}, Landroid/net/wifi/p2p/WifiP2pGroup;->getClientList()Ljava/util/Collection;
 
     move-result-object v2
@@ -163,7 +178,7 @@
 
     goto :goto_0
 
-    .line 288
+    .line 326
     .end local v0           #d:Landroid/net/wifi/p2p/WifiP2pDevice;
     :cond_0
     invoke-virtual {p1}, Landroid/net/wifi/p2p/WifiP2pGroup;->getPassphrase()Ljava/lang/String;
@@ -172,28 +187,35 @@
 
     iput-object v2, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mPassphrase:Ljava/lang/String;
 
-    .line 289
+    .line 327
     invoke-virtual {p1}, Landroid/net/wifi/p2p/WifiP2pGroup;->getInterface()Ljava/lang/String;
 
     move-result-object v2
 
     iput-object v2, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mInterface:Ljava/lang/String;
 
-    .line 290
+    .line 328
     invoke-virtual {p1}, Landroid/net/wifi/p2p/WifiP2pGroup;->getNetworkId()I
 
     move-result v2
 
     iput v2, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mNetId:I
 
-    .line 292
+    .line 329
+    invoke-virtual {p1}, Landroid/net/wifi/p2p/WifiP2pGroup;->getFrequency()I
+
+    move-result v2
+
+    iput v2, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mFreq:I
+
+    .line 331
     .end local v1           #i$:Ljava/util/Iterator;
     :cond_1
     return-void
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
-    .locals 11
+    .locals 13
     .parameter "supplicantEvent"
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -202,178 +224,320 @@
     .end annotation
 
     .prologue
-    .line 96
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 107
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 56
-    new-instance v9, Ljava/util/ArrayList;
+    .line 58
+    new-instance v10, Ljava/util/ArrayList;
 
-    invoke-direct {v9}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v10}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v9, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mClients:Ljava/util/List;
+    iput-object v10, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mClients:Ljava/util/List;
 
-    .line 98
-    const-string v9, " "
+    .line 109
+    const-string v10, " "
 
-    invoke-virtual {p1, v9}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+    invoke-virtual {p1, v10}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v9
 
-    .line 100
-    .local v8, tokens:[Ljava/lang/String;
-    array-length v9, v8
+    .line 111
+    .local v9, tokens:[Ljava/lang/String;
+    array-length v10, v9
 
-    const/4 v10, 0x3
+    const/4 v11, 0x3
 
-    if-ge v9, v10, :cond_0
+    if-ge v10, v11, :cond_0
 
-    .line 101
-    new-instance v9, Ljava/lang/IllegalArgumentException;
+    .line 112
+    new-instance v10, Ljava/lang/IllegalArgumentException;
 
-    const-string v10, "Malformed supplicant event"
+    const-string v11, "Malformed supplicant event"
 
-    invoke-direct {v9, v10}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v10, v11}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v9
+    throw v10
 
-    .line 104
+    .line 115
     :cond_0
-    const/4 v9, 0x0
+    const/4 v10, 0x0
 
-    aget-object v9, v8, v9
+    aget-object v10, v9, v10
 
-    const-string v10, "P2P-GROUP"
+    const-string v11, "P2P-GROUP"
 
-    invoke-virtual {v9, v10}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v10, v11}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v9
+    move-result v10
 
-    if-eqz v9, :cond_4
+    if-eqz v10, :cond_6
 
-    .line 105
-    const/4 v9, 0x1
+    .line 116
+    const/4 v10, 0x1
 
-    aget-object v9, v8, v9
+    aget-object v10, v9, v10
 
-    iput-object v9, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mInterface:Ljava/lang/String;
+    iput-object v10, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mInterface:Ljava/lang/String;
 
-    .line 106
-    const/4 v9, 0x2
+    .line 117
+    const/4 v10, 0x2
 
-    aget-object v9, v8, v9
+    aget-object v10, v9, v10
 
-    const-string v10, "GO"
+    const-string v11, "GO"
 
-    invoke-virtual {v9, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v10, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v9
+    move-result v10
 
-    iput-boolean v9, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mIsGroupOwner:Z
+    iput-boolean v10, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mIsGroupOwner:Z
 
-    .line 108
-    sget-object v9, Landroid/net/wifi/p2p/WifiP2pGroup;->groupStartedPattern:Ljava/util/regex/Pattern;
+    .line 119
+    sget-object v10, Landroid/net/wifi/p2p/WifiP2pGroup;->groupStartedPattern:Ljava/util/regex/Pattern;
 
-    invoke-virtual {v9, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+    invoke-virtual {v10, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object v4
 
-    .line 109
+    .line 120
     .local v4, match:Ljava/util/regex/Matcher;
+    sget-object v10, Landroid/net/wifi/p2p/WifiP2pGroup;->groupStartedPattern2:Ljava/util/regex/Pattern;
+
+    invoke-virtual {v10, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+
+    move-result-object v5
+
+    .line 121
+    .local v5, match2:Ljava/util/regex/Matcher;
     invoke-virtual {v4}, Ljava/util/regex/Matcher;->find()Z
 
-    move-result v9
+    move-result v10
 
-    if-nez v9, :cond_2
+    if-eqz v10, :cond_3
 
-    .line 155
-    .end local v4           #match:Ljava/util/regex/Matcher;
-    :cond_1
-    :goto_0
-    return-void
-
-    .line 113
-    .restart local v4       #match:Ljava/util/regex/Matcher;
-    :cond_2
-    const/4 v9, 0x1
-
-    invoke-virtual {v4, v9}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
-
-    move-result-object v9
-
-    iput-object v9, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mNetworkName:Ljava/lang/String;
-
-    .line 117
-    const/4 v9, 0x4
-
-    invoke-virtual {v4, v9}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
-
-    move-result-object v9
-
-    iput-object v9, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mPassphrase:Ljava/lang/String;
-
-    .line 118
-    new-instance v9, Landroid/net/wifi/p2p/WifiP2pDevice;
-
-    const/4 v10, 0x5
+    .line 122
+    const/4 v10, 0x1
 
     invoke-virtual {v4, v10}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v10
 
-    invoke-direct {v9, v10}, Landroid/net/wifi/p2p/WifiP2pDevice;-><init>(Ljava/lang/String;)V
-
-    iput-object v9, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mOwner:Landroid/net/wifi/p2p/WifiP2pDevice;
-
-    .line 119
-    const/4 v9, 0x6
-
-    invoke-virtual {v4, v9}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
-
-    move-result-object v9
-
-    if-eqz v9, :cond_3
-
-    .line 120
-    const/4 v9, -0x2
-
-    iput v9, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mNetId:I
-
-    goto :goto_0
-
-    .line 122
-    :cond_3
-    const/4 v9, -0x1
-
-    iput v9, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mNetId:I
-
-    goto :goto_0
+    iput-object v10, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mNetworkName:Ljava/lang/String;
 
     .line 124
-    .end local v4           #match:Ljava/util/regex/Matcher;
-    :cond_4
-    const/4 v9, 0x0
+    const/4 v10, 0x2
 
-    aget-object v9, v8, v9
+    invoke-virtual {v4, v10}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
-    const-string v10, "P2P-INVITATION-RECEIVED"
+    move-result-object v10
 
-    invoke-virtual {v9, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-static {v10}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v9
+    move-result v10
 
-    if-eqz v9, :cond_9
-
-    .line 125
-    const/4 v6, 0x0
+    iput v10, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mFreq:I
 
     .line 126
-    .local v6, sa:Ljava/lang/String;
-    const/4 v9, -0x2
+    const/4 v10, 0x4
 
-    iput v9, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mNetId:I
+    invoke-virtual {v4, v10}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
+
+    move-result-object v10
+
+    iput-object v10, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mPassphrase:Ljava/lang/String;
 
     .line 127
-    move-object v0, v8
+    new-instance v10, Landroid/net/wifi/p2p/WifiP2pDevice;
+
+    const/4 v11, 0x5
+
+    invoke-virtual {v4, v11}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-direct {v10, v11}, Landroid/net/wifi/p2p/WifiP2pDevice;-><init>(Ljava/lang/String;)V
+
+    iput-object v10, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mOwner:Landroid/net/wifi/p2p/WifiP2pDevice;
+
+    .line 128
+    const/4 v10, 0x6
+
+    invoke-virtual {v4, v10}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
+
+    move-result-object v10
+
+    if-eqz v10, :cond_2
+
+    .line 129
+    const/4 v10, -0x2
+
+    iput v10, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mNetId:I
+
+    .line 133
+    :goto_0
+    const-string v10, "WifiP2pGroup"
+
+    new-instance v11, Ljava/lang/StringBuilder;
+
+    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v12, "Normal match! frequency = "
+
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    iget v12, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mFreq:I
+
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 182
+    .end local v4           #match:Ljava/util/regex/Matcher;
+    .end local v5           #match2:Ljava/util/regex/Matcher;
+    :cond_1
+    :goto_1
+    return-void
+
+    .line 131
+    .restart local v4       #match:Ljava/util/regex/Matcher;
+    .restart local v5       #match2:Ljava/util/regex/Matcher;
+    :cond_2
+    const/4 v10, -0x1
+
+    iput v10, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mNetId:I
+
+    goto :goto_0
+
+    .line 134
+    :cond_3
+    invoke-virtual {v5}, Ljava/util/regex/Matcher;->find()Z
+
+    move-result v10
+
+    if-eqz v10, :cond_5
+
+    .line 135
+    const-string v10, ""
+
+    iput-object v10, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mNetworkName:Ljava/lang/String;
+
+    .line 136
+    const-string v10, ""
+
+    iput-object v10, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mPassphrase:Ljava/lang/String;
+
+    .line 137
+    new-instance v10, Landroid/net/wifi/p2p/WifiP2pDevice;
+
+    const/4 v11, 0x1
+
+    invoke-virtual {v5, v11}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-direct {v10, v11}, Landroid/net/wifi/p2p/WifiP2pDevice;-><init>(Ljava/lang/String;)V
+
+    iput-object v10, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mOwner:Landroid/net/wifi/p2p/WifiP2pDevice;
+
+    .line 138
+    const/4 v10, 0x2
+
+    invoke-virtual {v5, v10}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
+
+    move-result-object v10
+
+    if-eqz v10, :cond_4
+
+    .line 139
+    const/4 v10, -0x2
+
+    iput v10, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mNetId:I
+
+    .line 143
+    :goto_2
+    const-string v10, "WifiP2pGroup"
+
+    const-string v11, "Not matched SSID, but matched device address!"
+
+    invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_1
+
+    .line 141
+    :cond_4
+    const/4 v10, -0x1
+
+    iput v10, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mNetId:I
+
+    goto :goto_2
+
+    .line 145
+    :cond_5
+    const-string v10, ""
+
+    iput-object v10, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mNetworkName:Ljava/lang/String;
+
+    .line 146
+    const-string v10, ""
+
+    iput-object v10, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mPassphrase:Ljava/lang/String;
+
+    .line 147
+    new-instance v10, Landroid/net/wifi/p2p/WifiP2pDevice;
+
+    invoke-direct {v10}, Landroid/net/wifi/p2p/WifiP2pDevice;-><init>()V
+
+    iput-object v10, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mOwner:Landroid/net/wifi/p2p/WifiP2pDevice;
+
+    .line 148
+    const/4 v10, -0x1
+
+    iput v10, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mNetId:I
+
+    .line 149
+    const-string v10, "WifiP2pGroup"
+
+    const-string v11, "Match nothing!"
+
+    invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_1
+
+    .line 151
+    .end local v4           #match:Ljava/util/regex/Matcher;
+    .end local v5           #match2:Ljava/util/regex/Matcher;
+    :cond_6
+    const/4 v10, 0x0
+
+    aget-object v10, v9, v10
+
+    const-string v11, "P2P-INVITATION-RECEIVED"
+
+    invoke-virtual {v10, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v10
+
+    if-eqz v10, :cond_b
+
+    .line 152
+    const/4 v7, 0x0
+
+    .line 153
+    .local v7, sa:Ljava/lang/String;
+    const/4 v10, -0x2
+
+    iput v10, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mNetId:I
+
+    .line 154
+    move-object v0, v9
 
     .local v0, arr$:[Ljava/lang/String;
     array-length v3, v0
@@ -382,150 +546,150 @@
     const/4 v2, 0x0
 
     .local v2, i$:I
-    :goto_1
+    :goto_3
     if-ge v2, v3, :cond_1
 
-    aget-object v7, v0, v2
+    aget-object v8, v0, v2
 
-    .line 128
-    .local v7, token:Ljava/lang/String;
-    const-string v9, "="
+    .line 155
+    .local v8, token:Ljava/lang/String;
+    const-string v10, "="
 
-    invoke-virtual {v7, v9}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+    invoke-virtual {v8, v10}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v6
 
-    .line 129
-    .local v5, nameValue:[Ljava/lang/String;
-    array-length v9, v5
+    .line 156
+    .local v6, nameValue:[Ljava/lang/String;
+    array-length v10, v6
 
-    const/4 v10, 0x2
+    const/4 v11, 0x2
 
-    if-eq v9, v10, :cond_6
+    if-eq v10, v11, :cond_8
 
-    .line 127
-    :cond_5
-    :goto_2
+    .line 154
+    :cond_7
+    :goto_4
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_1
+    goto :goto_3
 
-    .line 131
-    :cond_6
-    const/4 v9, 0x0
+    .line 158
+    :cond_8
+    const/4 v10, 0x0
 
-    aget-object v9, v5, v9
+    aget-object v10, v6, v10
 
-    const-string/jumbo v10, "sa"
+    const-string/jumbo v11, "sa"
 
-    invoke-virtual {v9, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v10, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v9
+    move-result v10
 
-    if-eqz v9, :cond_7
+    if-eqz v10, :cond_9
 
-    .line 132
-    const/4 v9, 0x1
+    .line 159
+    const/4 v10, 0x1
 
-    aget-object v6, v5, v9
+    aget-object v7, v6, v10
 
-    .line 135
+    .line 162
     new-instance v1, Landroid/net/wifi/p2p/WifiP2pDevice;
 
     invoke-direct {v1}, Landroid/net/wifi/p2p/WifiP2pDevice;-><init>()V
 
-    .line 136
+    .line 163
     .local v1, dev:Landroid/net/wifi/p2p/WifiP2pDevice;
-    const/4 v9, 0x1
-
-    aget-object v9, v5, v9
-
-    iput-object v9, v1, Landroid/net/wifi/p2p/WifiP2pDevice;->deviceAddress:Ljava/lang/String;
-
-    .line 137
-    iget-object v9, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mClients:Ljava/util/List;
-
-    invoke-interface {v9, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_2
-
-    .line 141
-    .end local v1           #dev:Landroid/net/wifi/p2p/WifiP2pDevice;
-    :cond_7
-    const/4 v9, 0x0
-
-    aget-object v9, v5, v9
-
-    const-string v10, "go_dev_addr"
-
-    invoke-virtual {v9, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v9
-
-    if-eqz v9, :cond_8
-
-    .line 142
-    new-instance v9, Landroid/net/wifi/p2p/WifiP2pDevice;
-
     const/4 v10, 0x1
 
-    aget-object v10, v5, v10
+    aget-object v10, v6, v10
 
-    invoke-direct {v9, v10}, Landroid/net/wifi/p2p/WifiP2pDevice;-><init>(Ljava/lang/String;)V
+    iput-object v10, v1, Landroid/net/wifi/p2p/WifiP2pDevice;->deviceAddress:Ljava/lang/String;
 
-    iput-object v9, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mOwner:Landroid/net/wifi/p2p/WifiP2pDevice;
+    .line 164
+    iget-object v10, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mClients:Ljava/util/List;
 
-    goto :goto_2
+    invoke-interface {v10, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 146
-    :cond_8
-    const/4 v9, 0x0
+    goto :goto_4
 
-    aget-object v9, v5, v9
+    .line 168
+    .end local v1           #dev:Landroid/net/wifi/p2p/WifiP2pDevice;
+    :cond_9
+    const/4 v10, 0x0
 
-    const-string/jumbo v10, "persistent"
+    aget-object v10, v6, v10
 
-    invoke-virtual {v9, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string v11, "go_dev_addr"
 
-    move-result v9
+    invoke-virtual {v10, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    if-eqz v9, :cond_5
+    move-result v10
 
-    .line 147
-    new-instance v9, Landroid/net/wifi/p2p/WifiP2pDevice;
+    if-eqz v10, :cond_a
 
-    invoke-direct {v9, v6}, Landroid/net/wifi/p2p/WifiP2pDevice;-><init>(Ljava/lang/String;)V
+    .line 169
+    new-instance v10, Landroid/net/wifi/p2p/WifiP2pDevice;
 
-    iput-object v9, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mOwner:Landroid/net/wifi/p2p/WifiP2pDevice;
+    const/4 v11, 0x1
 
-    .line 148
-    const/4 v9, 0x1
+    aget-object v11, v6, v11
 
-    aget-object v9, v5, v9
+    invoke-direct {v10, v11}, Landroid/net/wifi/p2p/WifiP2pDevice;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v9}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    iput-object v10, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mOwner:Landroid/net/wifi/p2p/WifiP2pDevice;
 
-    move-result v9
+    goto :goto_4
 
-    iput v9, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mNetId:I
+    .line 173
+    :cond_a
+    const/4 v10, 0x0
 
-    goto :goto_2
+    aget-object v10, v6, v10
 
-    .line 153
+    const-string/jumbo v11, "persistent"
+
+    invoke-virtual {v10, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v10
+
+    if-eqz v10, :cond_7
+
+    .line 174
+    new-instance v10, Landroid/net/wifi/p2p/WifiP2pDevice;
+
+    invoke-direct {v10, v7}, Landroid/net/wifi/p2p/WifiP2pDevice;-><init>(Ljava/lang/String;)V
+
+    iput-object v10, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mOwner:Landroid/net/wifi/p2p/WifiP2pDevice;
+
+    .line 175
+    const/4 v10, 0x1
+
+    aget-object v10, v6, v10
+
+    invoke-static {v10}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v10
+
+    iput v10, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mNetId:I
+
+    goto :goto_4
+
+    .line 180
     .end local v0           #arr$:[Ljava/lang/String;
     .end local v2           #i$:I
     .end local v3           #len$:I
-    .end local v5           #nameValue:[Ljava/lang/String;
-    .end local v6           #sa:Ljava/lang/String;
-    .end local v7           #token:Ljava/lang/String;
-    :cond_9
-    new-instance v9, Ljava/lang/IllegalArgumentException;
+    .end local v6           #nameValue:[Ljava/lang/String;
+    .end local v7           #sa:Ljava/lang/String;
+    .end local v8           #token:Ljava/lang/String;
+    :cond_b
+    new-instance v10, Ljava/lang/IllegalArgumentException;
 
-    const-string v10, "Malformed supplicant event"
+    const-string v11, "Malformed supplicant event"
 
-    invoke-direct {v9, v10}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v10, v11}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v9
+    throw v10
 .end method
 
 
@@ -535,7 +699,7 @@
     .parameter "device"
 
     .prologue
-    .line 197
+    .line 224
     iget-object v2, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mClients:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -556,7 +720,7 @@
 
     check-cast v0, Landroid/net/wifi/p2p/WifiP2pDevice;
 
-    .line 198
+    .line 225
     .local v0, client:Landroid/net/wifi/p2p/WifiP2pDevice;
     invoke-virtual {v0, p1}, Landroid/net/wifi/p2p/WifiP2pDevice;->equals(Ljava/lang/Object;)Z
 
@@ -564,12 +728,12 @@
 
     if-eqz v2, :cond_0
 
-    .line 201
+    .line 228
     .end local v0           #client:Landroid/net/wifi/p2p/WifiP2pDevice;
     :goto_0
     return-void
 
-    .line 200
+    .line 227
     :cond_1
     iget-object v2, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mClients:Ljava/util/List;
 
@@ -583,14 +747,14 @@
     .parameter "address"
 
     .prologue
-    .line 192
+    .line 219
     new-instance v0, Landroid/net/wifi/p2p/WifiP2pDevice;
 
     invoke-direct {v0, p1}, Landroid/net/wifi/p2p/WifiP2pDevice;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p0, v0}, Landroid/net/wifi/p2p/WifiP2pGroup;->addClient(Landroid/net/wifi/p2p/WifiP2pDevice;)V
 
-    .line 193
+    .line 220
     return-void
 .end method
 
@@ -599,7 +763,7 @@
     .parameter "device"
 
     .prologue
-    .line 220
+    .line 247
     iget-object v0, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mOwner:Landroid/net/wifi/p2p/WifiP2pDevice;
 
     invoke-virtual {v0, p1}, Landroid/net/wifi/p2p/WifiP2pDevice;->equals(Ljava/lang/Object;)Z
@@ -619,7 +783,7 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 221
+    .line 248
     :goto_0
     return v0
 
@@ -633,7 +797,7 @@
     .locals 1
 
     .prologue
-    .line 278
+    .line 316
     const/4 v0, 0x0
 
     return v0
@@ -652,7 +816,7 @@
     .end annotation
 
     .prologue
-    .line 226
+    .line 253
     iget-object v0, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mClients:Ljava/util/List;
 
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableCollection(Ljava/util/Collection;)Ljava/util/Collection;
@@ -662,11 +826,21 @@
     return-object v0
 .end method
 
+.method public getFrequency()I
+    .locals 1
+
+    .prologue
+    .line 292
+    iget v0, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mFreq:I
+
+    return v0
+.end method
+
 .method public getInterface()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 250
+    .line 277
     iget-object v0, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mInterface:Ljava/lang/String;
 
     return-object v0
@@ -676,7 +850,7 @@
     .locals 1
 
     .prologue
-    .line 255
+    .line 282
     iget v0, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mNetId:I
 
     return v0
@@ -686,7 +860,7 @@
     .locals 1
 
     .prologue
-    .line 167
+    .line 194
     iget-object v0, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mNetworkName:Ljava/lang/String;
 
     return-object v0
@@ -696,7 +870,7 @@
     .locals 1
 
     .prologue
-    .line 187
+    .line 214
     iget-object v0, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mOwner:Landroid/net/wifi/p2p/WifiP2pDevice;
 
     return-object v0
@@ -706,7 +880,7 @@
     .locals 1
 
     .prologue
-    .line 240
+    .line 267
     iget-object v0, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mPassphrase:Ljava/lang/String;
 
     return-object v0
@@ -716,7 +890,7 @@
     .locals 1
 
     .prologue
-    .line 215
+    .line 242
     iget-object v0, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mClients:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -740,7 +914,7 @@
     .locals 1
 
     .prologue
-    .line 177
+    .line 204
     iget-boolean v0, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mIsGroupOwner:Z
 
     return v0
@@ -751,7 +925,7 @@
     .parameter "device"
 
     .prologue
-    .line 210
+    .line 237
     iget-object v0, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mClients:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
@@ -766,7 +940,7 @@
     .parameter "address"
 
     .prologue
-    .line 205
+    .line 232
     iget-object v0, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mClients:Ljava/util/List;
 
     new-instance v1, Landroid/net/wifi/p2p/WifiP2pDevice;
@@ -780,15 +954,27 @@
     return v0
 .end method
 
+.method public setFrequency(I)V
+    .locals 0
+    .parameter "mFreq"
+
+    .prologue
+    .line 297
+    iput p1, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mFreq:I
+
+    .line 298
+    return-void
+.end method
+
 .method public setInterface(Ljava/lang/String;)V
     .locals 0
     .parameter "intf"
 
     .prologue
-    .line 245
+    .line 272
     iput-object p1, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mInterface:Ljava/lang/String;
 
-    .line 246
+    .line 273
     return-void
 .end method
 
@@ -797,10 +983,10 @@
     .parameter "isGo"
 
     .prologue
-    .line 172
+    .line 199
     iput-boolean p1, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mIsGroupOwner:Z
 
-    .line 173
+    .line 200
     return-void
 .end method
 
@@ -809,10 +995,10 @@
     .parameter "netId"
 
     .prologue
-    .line 260
+    .line 287
     iput p1, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mNetId:I
 
-    .line 261
+    .line 288
     return-void
 .end method
 
@@ -821,10 +1007,10 @@
     .parameter "networkName"
 
     .prologue
-    .line 159
+    .line 186
     iput-object p1, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mNetworkName:Ljava/lang/String;
 
-    .line 160
+    .line 187
     return-void
 .end method
 
@@ -833,10 +1019,10 @@
     .parameter "device"
 
     .prologue
-    .line 182
+    .line 209
     iput-object p1, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mOwner:Landroid/net/wifi/p2p/WifiP2pDevice;
 
-    .line 183
+    .line 210
     return-void
 .end method
 
@@ -845,10 +1031,10 @@
     .parameter "passphrase"
 
     .prologue
-    .line 231
+    .line 258
     iput-object p1, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mPassphrase:Ljava/lang/String;
 
-    .line 232
+    .line 259
     return-void
 .end method
 
@@ -856,12 +1042,12 @@
     .locals 5
 
     .prologue
-    .line 264
+    .line 301
     new-instance v2, Ljava/lang/StringBuffer;
 
     invoke-direct {v2}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 265
+    .line 302
     .local v2, sbuf:Ljava/lang/StringBuffer;
     const-string/jumbo v3, "network: "
 
@@ -873,7 +1059,7 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 266
+    .line 303
     const-string v3, "\n isGO: "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
@@ -884,7 +1070,7 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuffer;->append(Z)Ljava/lang/StringBuffer;
 
-    .line 267
+    .line 304
     const-string v3, "\n GO: "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
@@ -895,7 +1081,7 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuffer;->append(Ljava/lang/Object;)Ljava/lang/StringBuffer;
 
-    .line 268
+    .line 305
     iget-object v3, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mClients:Ljava/util/List;
 
     invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -916,7 +1102,7 @@
 
     check-cast v0, Landroid/net/wifi/p2p/WifiP2pDevice;
 
-    .line 269
+    .line 306
     .local v0, client:Landroid/net/wifi/p2p/WifiP2pDevice;
     const-string v3, "\n Client: "
 
@@ -928,7 +1114,7 @@
 
     goto :goto_0
 
-    .line 271
+    .line 308
     .end local v0           #client:Landroid/net/wifi/p2p/WifiP2pDevice;
     :cond_0
     const-string v3, "\n interface: "
@@ -941,7 +1127,7 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 272
+    .line 309
     const-string v3, "\n networkId: "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
@@ -952,7 +1138,18 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuffer;->append(I)Ljava/lang/StringBuffer;
 
-    .line 273
+    .line 310
+    const-string v3, "\n frequency: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    move-result-object v3
+
+    iget v4, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mFreq:I
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuffer;->append(I)Ljava/lang/StringBuffer;
+
+    .line 311
     invoke-virtual {v2}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
     move-result-object v3
@@ -966,17 +1163,17 @@
     .parameter "flags"
 
     .prologue
-    .line 296
+    .line 335
     iget-object v2, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mNetworkName:Ljava/lang/String;
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 297
+    .line 336
     iget-object v2, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mOwner:Landroid/net/wifi/p2p/WifiP2pDevice;
 
     invoke-virtual {p1, v2, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    .line 298
+    .line 337
     iget-boolean v2, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mIsGroupOwner:Z
 
     if-eqz v2, :cond_0
@@ -986,7 +1183,7 @@
     :goto_0
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeByte(B)V
 
-    .line 299
+    .line 338
     iget-object v2, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mClients:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->size()I
@@ -995,7 +1192,7 @@
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 300
+    .line 339
     iget-object v2, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mClients:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -1016,13 +1213,13 @@
 
     check-cast v0, Landroid/net/wifi/p2p/WifiP2pDevice;
 
-    .line 301
+    .line 340
     .local v0, client:Landroid/net/wifi/p2p/WifiP2pDevice;
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
     goto :goto_1
 
-    .line 298
+    .line 337
     .end local v0           #client:Landroid/net/wifi/p2p/WifiP2pDevice;
     .end local v1           #i$:Ljava/util/Iterator;
     :cond_0
@@ -1030,23 +1227,28 @@
 
     goto :goto_0
 
-    .line 303
+    .line 342
     .restart local v1       #i$:Ljava/util/Iterator;
     :cond_1
     iget-object v2, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mPassphrase:Ljava/lang/String;
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 304
+    .line 343
     iget-object v2, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mInterface:Ljava/lang/String;
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 305
+    .line 344
     iget v2, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mNetId:I
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 306
+    .line 345
+    iget v2, p0, Landroid/net/wifi/p2p/WifiP2pGroup;->mFreq:I
+
+    invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 346
     return-void
 .end method

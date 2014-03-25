@@ -74,7 +74,7 @@
 
     if-eqz v3, :cond_2
 
-    const-string v3, "intent"
+    const-string/jumbo v3, "intent"
 
     invoke-virtual {p1, v3}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
@@ -96,7 +96,7 @@
     .line 715
     iget-object v3, p0, Landroid/accounts/AccountManagerService$RemoveAccountSession;->this$0:Landroid/accounts/AccountManagerService;
 
-    iget-object v4, p0, Landroid/accounts/AccountManagerService$Session;->mAccounts:Landroid/accounts/AccountManagerService$UserAccounts;
+    iget-object v4, p0, Landroid/accounts/AccountManagerService$RemoveAccountSession;->mAccounts:Landroid/accounts/AccountManagerService$UserAccounts;
 
     iget-object v5, p0, Landroid/accounts/AccountManagerService$RemoveAccountSession;->mAccount:Landroid/accounts/Account;
 
@@ -208,7 +208,7 @@
 
     .prologue
     .line 707
-    iget-object v0, p0, Landroid/accounts/AccountManagerService$Session;->mAuthenticator:Landroid/accounts/IAccountAuthenticator;
+    iget-object v0, p0, Landroid/accounts/AccountManagerService$RemoveAccountSession;->mAuthenticator:Landroid/accounts/IAccountAuthenticator;
 
     iget-object v1, p0, Landroid/accounts/AccountManagerService$RemoveAccountSession;->mAccount:Landroid/accounts/Account;
 

@@ -39,7 +39,7 @@
 
     .prologue
     .line 44
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 45
     iput-object p1, p0, Lcom/android/server/wm/FakeWindowImpl;->mService:Lcom/android/server/wm/WindowManagerService;
@@ -101,7 +101,7 @@
     .line 57
     iget-object v1, p0, Lcom/android/server/wm/FakeWindowImpl;->mApplicationHandle:Lcom/android/server/input/InputApplicationHandle;
 
-    const-wide v2, 0x12a05f200L
+    const-wide v2, 0x1dcd65000L
 
     iput-wide v2, v1, Lcom/android/server/input/InputApplicationHandle;->dispatchingTimeoutNanos:J
 
@@ -157,7 +157,7 @@
     .line 67
     iget-object v1, p0, Lcom/android/server/wm/FakeWindowImpl;->mWindowHandle:Lcom/android/server/input/InputWindowHandle;
 
-    const-wide v2, 0x12a05f200L
+    const-wide v2, 0x1dcd65000L
 
     iput-wide v2, v1, Lcom/android/server/input/InputWindowHandle;->dispatchingTimeoutNanos:J
 

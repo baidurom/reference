@@ -27,8 +27,8 @@
     .locals 0
 
     .prologue
-    .line 1558
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 1614
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -40,7 +40,7 @@
     .parameter "keyboardName"
 
     .prologue
-    .line 1565
+    .line 1621
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -85,12 +85,12 @@
 
     const/16 v5, 0x2f
 
-    .line 1569
+    .line 1625
     invoke-virtual {p0, v5}, Ljava/lang/String;->indexOf(I)I
 
     move-result v0
 
-    .line 1570
+    .line 1626
     .local v0, pos:I
     if-ltz v0, :cond_0
 
@@ -102,12 +102,12 @@
 
     if-ne v3, v4, :cond_1
 
-    .line 1582
+    .line 1638
     :cond_0
     :goto_0
     return-object v2
 
-    .line 1573
+    .line 1629
     :cond_1
     add-int/lit8 v3, v0, 0x1
 
@@ -115,7 +115,7 @@
 
     move-result v1
 
-    .line 1574
+    .line 1630
     .local v1, pos2:I
     add-int/lit8 v3, v0, 0x2
 
@@ -129,12 +129,12 @@
 
     if-eq v3, v4, :cond_0
 
-    .line 1578
+    .line 1634
     new-instance v2, Lcom/android/server/input/InputManagerService$KeyboardLayoutDescriptor;
 
     invoke-direct {v2}, Lcom/android/server/input/InputManagerService$KeyboardLayoutDescriptor;-><init>()V
 
-    .line 1579
+    .line 1635
     .local v2, result:Lcom/android/server/input/InputManagerService$KeyboardLayoutDescriptor;
     const/4 v3, 0x0
 
@@ -144,7 +144,7 @@
 
     iput-object v3, v2, Lcom/android/server/input/InputManagerService$KeyboardLayoutDescriptor;->packageName:Ljava/lang/String;
 
-    .line 1580
+    .line 1636
     add-int/lit8 v3, v0, 0x1
 
     invoke-virtual {p0, v3, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
@@ -153,7 +153,7 @@
 
     iput-object v3, v2, Lcom/android/server/input/InputManagerService$KeyboardLayoutDescriptor;->receiverName:Ljava/lang/String;
 
-    .line 1581
+    .line 1637
     add-int/lit8 v3, v1, 0x1
 
     invoke-virtual {p0, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;

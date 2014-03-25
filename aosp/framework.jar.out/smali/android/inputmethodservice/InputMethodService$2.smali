@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 329
+    .line 335
     iput-object p1, p0, Landroid/inputmethodservice/InputMethodService$2;->this$0:Landroid/inputmethodservice/InputMethodService;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -42,14 +42,14 @@
     .parameter "v"
 
     .prologue
-    .line 331
+    .line 337
     iget-object v2, p0, Landroid/inputmethodservice/InputMethodService$2;->this$0:Landroid/inputmethodservice/InputMethodService;
 
     invoke-virtual {v2}, Landroid/inputmethodservice/InputMethodService;->getCurrentInputEditorInfo()Landroid/view/inputmethod/EditorInfo;
 
     move-result-object v0
 
-    .line 332
+    .line 338
     .local v0, ei:Landroid/view/inputmethod/EditorInfo;
     iget-object v2, p0, Landroid/inputmethodservice/InputMethodService$2;->this$0:Landroid/inputmethodservice/InputMethodService;
 
@@ -57,28 +57,28 @@
 
     move-result-object v1
 
-    .line 333
+    .line 339
     .local v1, ic:Landroid/view/inputmethod/InputConnection;
     if-eqz v0, :cond_0
 
     if-eqz v1, :cond_0
 
-    .line 334
+    .line 340
     iget v2, v0, Landroid/view/inputmethod/EditorInfo;->actionId:I
 
     if-eqz v2, :cond_1
 
-    .line 335
+    .line 341
     iget v2, v0, Landroid/view/inputmethod/EditorInfo;->actionId:I
 
     invoke-interface {v1, v2}, Landroid/view/inputmethod/InputConnection;->performEditorAction(I)Z
 
-    .line 341
+    .line 347
     :cond_0
     :goto_0
     return-void
 
-    .line 336
+    .line 342
     :cond_1
     iget v2, v0, Landroid/view/inputmethod/EditorInfo;->imeOptions:I
 
@@ -88,7 +88,7 @@
 
     if-eq v2, v3, :cond_0
 
-    .line 338
+    .line 344
     iget v2, v0, Landroid/view/inputmethod/EditorInfo;->imeOptions:I
 
     and-int/lit16 v2, v2, 0xff

@@ -43,7 +43,7 @@
 
     .prologue
     .line 29
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -619,7 +619,7 @@
     if-nez v3, :cond_0
 
     .line 61
-    const-string v3, "javascript:"
+    const-string/jumbo v3, "javascript:"
 
     invoke-virtual {p0, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
@@ -991,7 +991,7 @@
     .line 224
     if-eqz p0, :cond_0
 
-    const-string v0, "javascript:"
+    const-string/jumbo v0, "javascript:"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 

@@ -1,12 +1,13 @@
-assert(getprop("ro.product.device") == "maguro" ||
-       getprop("ro.build.product") == "maguro");
+assert(getprop("ro.product.device") == "Coolpad8297" ||
+       getprop("ro.build.product") == "Coolpad8297");
 show_progress(0.500000, 0);
-format("ext4", "EMMC", "/dev/block/platform/omap/omap_hsmmc.0/by-name/system", "0", "/system");
-mount("ext4", "EMMC", "/dev/block/platform/omap/omap_hsmmc.0/by-name/system", "/system");
-package_extract_dir("recovery", "/system");
-package_extract_dir("system", "/system");
+format("ext4", "EMMC", "/dev/block/mmcblk0p8", "0", "/system");
+mount("ext4", "EMMC", "/dev/block/mmcblk0p8", "/system");
+assert(package_extract_dir("recovery", "/system"));
+assert(package_extract_dir("system", "/system"));
 symlink("Roboto-Bold.ttf", "/system/fonts/DroidSans-Bold.ttf");
 symlink("Roboto-Regular.ttf", "/system/fonts/DroidSans.ttf");
+symlink("aee_aed", "/system/bin/debuggerd");
 symlink("busybox", "/system/xbin/[", "/system/xbin/[[",
         "/system/xbin/adjtimex", "/system/xbin/arp", "/system/xbin/ash",
         "/system/xbin/awk", "/system/xbin/base64", "/system/xbin/basename",
@@ -114,25 +115,21 @@ set_perm(1014, 2000, 0550, "/system/etc/dhcpcd/dhcpcd-run-hooks");
 set_perm(0, 2000, 0550, "/system/etc/init.goldfish.sh");
 set_perm(0, 0, 0544, "/system/etc/install-recovery.sh");
 set_perm_recursive(0, 0, 0755, 0555, "/system/etc/ppp");
+set_perm(1014, 2000, 0550, "/system/etc/wide-dhcpv6/dhcp6c.script");
+set_perm(1014, 2000, 0550, "/system/etc/wide-dhcpv6/dhcp6cPD.script");
 set_perm(0, 2000, 0755, "/system/vendor");
-set_perm_recursive(0, 2000, 0755, 0755, "/system/vendor/bin");
-set_perm(0, 2000, 0755, "/system/vendor/etc");
-set_perm(0, 2000, 0755, "/system/vendor/firmware");
 set_perm(0, 2000, 0755, "/system/vendor/lib");
-set_perm(0, 2000, 0755, "/system/vendor/lib/egl");
+set_perm_recursive(0, 2000, 0755, 0644, "/system/vendor/lib/drm");
+set_perm(0, 0, 0644, "/system/vendor/lib/drm/libdrmwvmplugin.so");
 set_perm(0, 2000, 0755, "/system/vendor/lib/hw");
-set_perm_recursive(0, 2000, 0755, 0644, "/system/vendor/res");
-set_perm(0, 0, 0644, "/system/vendor/res/images/dock/dock.png");
 set_perm_recursive(0, 2000, 0755, 0755, "/system/xbin");
 set_perm(0, 0, 06755, "/system/xbin/librank");
 set_perm(0, 0, 06755, "/system/xbin/procmem");
 set_perm(0, 0, 06755, "/system/xbin/procrank");
 set_perm(0, 0, 06755, "/system/xbin/su");
-set_perm(0, 0, 06755, "/system/xbin/tcpdump");
+set_perm(0, 0, 0755, "/system/xbin/tcpdump");
 show_progress(0.200000, 0);
 show_progress(0.200000, 10);
-package_extract_file("boot.img", "/dev/block/platform/omap/omap_hsmmc.0/by-name/boot");
+package_extract_file("boot.img", "/dev/bootimg");
 show_progress(0.100000, 0);
-ui_print("Fixing fs_size in crypto footer...");
-assert(samsung.fs_size_fix());
 unmount("/system");

@@ -14,10 +14,7 @@
      limitations under the License.
 -->
 
-<!-- This feature should be defined for devices that support live wallpapers.
-     There are minimum hardware requirements to be able to support this
-     feature: robust multiple GL context support, fast enough CPU, enough
-     RAM to allow the wallpaper to be running all of the time. -->
+<!-- This is the standard set of features for live wallpaper software. -->
 <permissions>
     <feature name="android.software.live_wallpaper" />
 </permissions>

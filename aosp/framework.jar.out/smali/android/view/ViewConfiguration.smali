@@ -137,7 +137,7 @@
     const/16 v1, 0x8
 
     .line 233
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 234
     iput v0, p0, Landroid/view/ViewConfiguration;->mEdgeSlop:I
@@ -207,7 +207,7 @@
 
     .prologue
     .line 261
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 262
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -339,7 +339,7 @@
     iput v10, p0, Landroid/view/ViewConfiguration;->mWindowTouchSlop:I
 
     .line 282
-    const-string/jumbo v10, "window"
+    const-string v10, "window"
 
     invoke-virtual {p1, v10}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 

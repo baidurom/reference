@@ -27,15 +27,15 @@
     .parameter "callback"
 
     .prologue
-    .line 1321
+    .line 1341
     iput-object p1, p0, Landroid/bluetooth/BluetoothAdapter$StateChangeCallbackWrapper;->this$0:Landroid/bluetooth/BluetoothAdapter;
 
     invoke-direct {p0}, Landroid/bluetooth/IBluetoothStateChangeCallback$Stub;-><init>()V
 
-    .line 1322
+    .line 1342
     iput-object p2, p0, Landroid/bluetooth/BluetoothAdapter$StateChangeCallbackWrapper;->mCallback:Landroid/bluetooth/BluetoothAdapter$BluetoothStateChangeCallback;
 
-    .line 1323
+    .line 1343
     return-void
 .end method
 
@@ -46,11 +46,11 @@
     .parameter "on"
 
     .prologue
-    .line 1327
+    .line 1347
     iget-object v0, p0, Landroid/bluetooth/BluetoothAdapter$StateChangeCallbackWrapper;->mCallback:Landroid/bluetooth/BluetoothAdapter$BluetoothStateChangeCallback;
 
     invoke-interface {v0, p1}, Landroid/bluetooth/BluetoothAdapter$BluetoothStateChangeCallback;->onBluetoothStateChange(Z)V
 
-    .line 1328
+    .line 1348
     return-void
 .end method

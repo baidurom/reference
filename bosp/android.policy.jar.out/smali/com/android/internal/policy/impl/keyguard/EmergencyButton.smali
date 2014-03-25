@@ -8,9 +8,15 @@
 
 .field private static final EMERGENCY_CALL_TIMEOUT:I = 0x2710
 
+.field private static final TAG:Ljava/lang/String; = "EmergencyButton"
+
 
 # instance fields
 .field mInfoCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitorCallback;
+
+.field private mIsSecure:Z
+
+.field private mKeyguardUtilExt:Lcom/mediatek/common/policy/IKeyguardUtilExt;
 
 .field private mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
@@ -23,33 +29,62 @@
     .parameter "context"
 
     .prologue
-    .line 59
+    .line 98
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 60
+    .line 99
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 1
+    .locals 3
     .parameter "context"
     .parameter "attrs"
 
     .prologue
-    .line 63
+    .line 102
     invoke-direct {p0, p1, p2}, Landroid/widget/Button;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 42
-    new-instance v0, Lcom/android/internal/policy/impl/keyguard/EmergencyButton$1;
+    .line 51
+    new-instance v1, Lcom/android/internal/policy/impl/keyguard/EmergencyButton$1;
 
-    invoke-direct {v0, p0}, Lcom/android/internal/policy/impl/keyguard/EmergencyButton$1;-><init>(Lcom/android/internal/policy/impl/keyguard/EmergencyButton;)V
+    invoke-direct {v1, p0}, Lcom/android/internal/policy/impl/keyguard/EmergencyButton$1;-><init>(Lcom/android/internal/policy/impl/keyguard/EmergencyButton;)V
 
-    iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->mInfoCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitorCallback;
+    iput-object v1, p0, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->mInfoCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitorCallback;
 
-    .line 64
+    .line 105
+    :try_start_0
+    const-class v1, Lcom/mediatek/common/policy/IKeyguardUtilExt;
+
+    const/4 v2, 0x0
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    invoke-static {v1, v2}, Lcom/mediatek/common/MediatekClassFactory;->createInstance(Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/mediatek/common/policy/IKeyguardUtilExt;
+
+    iput-object v1, p0, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->mKeyguardUtilExt:Lcom/mediatek/common/policy/IKeyguardUtilExt;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 110
+    :goto_0
     return-void
+
+    .line 106
+    :catch_0
+    move-exception v0
+
+    .line 107
+    .local v0, e:Ljava/lang/Exception;
+    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
+
+    goto :goto_0
 .end method
 
 .method static synthetic access$000(Lcom/android/internal/policy/impl/keyguard/EmergencyButton;)Landroid/content/Context;
@@ -57,7 +92,7 @@
     .parameter "x0"
 
     .prologue
-    .line 37
+    .line 44
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -70,7 +105,7 @@
     .parameter "x2"
 
     .prologue
-    .line 37
+    .line 44
     invoke-direct {p0, p1, p2}, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->updateEmergencyCallButton(Lcom/android/internal/telephony/IccCardConstants$State;I)V
 
     return-void
@@ -81,38 +116,526 @@
     .parameter "x0"
 
     .prologue
-    .line 37
+    .line 44
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->mContext:Landroid/content/Context;
 
     return-object v0
 .end method
 
+.method static synthetic access$300(Lcom/android/internal/policy/impl/keyguard/EmergencyButton;)Landroid/content/Context;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 44
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->mContext:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method static synthetic access$400(Lcom/android/internal/policy/impl/keyguard/EmergencyButton;)Landroid/content/Context;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 44
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->mContext:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method static synthetic access$500(Lcom/android/internal/policy/impl/keyguard/EmergencyButton;)Landroid/content/Context;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 44
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->mContext:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method static synthetic access$600(Lcom/android/internal/policy/impl/keyguard/EmergencyButton;)Landroid/content/Context;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 44
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->mContext:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method static synthetic access$700(Lcom/android/internal/policy/impl/keyguard/EmergencyButton;)Landroid/content/Context;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 44
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->mContext:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method static synthetic access$800(Lcom/android/internal/policy/impl/keyguard/EmergencyButton;)Landroid/content/Context;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 44
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->mContext:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method private eccButtonShouldShow()Z
+    .locals 14
+
+    .prologue
+    const/4 v10, 0x0
+
+    const/4 v9, 0x1
+
+    .line 199
+    invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->getContext()Landroid/content/Context;
+
+    move-result-object v11
+
+    invoke-virtual {v11}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v11
+
+    const v12, #string@lockscreen_carrier_default#t
+
+    invoke-virtual {v11, v12}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
+
+    move-result-object v11
+
+    invoke-virtual {v11}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v8
+
+    .line 200
+    .local v8, plmnDefaultStr:Ljava/lang/String;
+    const-string v11, "EmergencyButton"
+
+    new-instance v12, Ljava/lang/StringBuilder;
+
+    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v13, "plmnDefaultStr = "
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    invoke-virtual {v12, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-static {v11, v12}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 201
+    invoke-static {}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->isGemini()Z
+
+    move-result v11
+
+    if-eqz v11, :cond_5
+
+    .line 202
+    invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->getContext()Landroid/content/Context;
+
+    move-result-object v11
+
+    invoke-static {v11}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
+
+    move-result-object v11
+
+    invoke-virtual {v11, v10}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->getTelephonyPlmn(I)Ljava/lang/CharSequence;
+
+    move-result-object v0
+
+    .line 203
+    .local v0, mPlmn:Ljava/lang/CharSequence;
+    invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->getContext()Landroid/content/Context;
+
+    move-result-object v11
+
+    invoke-static {v11}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
+
+    move-result-object v11
+
+    invoke-virtual {v11, v10}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->getTelephonySpn(I)Ljava/lang/CharSequence;
+
+    move-result-object v4
+
+    .line 204
+    .local v4, mSpn:Ljava/lang/CharSequence;
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-virtual {v11, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v11
+
+    if-nez v11, :cond_1
+
+    move v3, v9
+
+    .line 205
+    .local v3, mPlmnIsNotDefault:Z
+    :goto_0
+    if-eqz v4, :cond_2
+
+    invoke-virtual {v4}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-virtual {v11, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v11
+
+    if-nez v11, :cond_2
+
+    move v7, v9
+
+    .line 206
+    .local v7, mSpnIsNotDefault:Z
+    :goto_1
+    invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->getContext()Landroid/content/Context;
+
+    move-result-object v11
+
+    invoke-static {v11}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
+
+    move-result-object v11
+
+    invoke-virtual {v11, v9}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->getTelephonyPlmn(I)Ljava/lang/CharSequence;
+
+    move-result-object v1
+
+    .line 207
+    .local v1, mPlmnGemini:Ljava/lang/CharSequence;
+    invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->getContext()Landroid/content/Context;
+
+    move-result-object v11
+
+    invoke-static {v11}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
+
+    move-result-object v11
+
+    invoke-virtual {v11, v9}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->getTelephonySpn(I)Ljava/lang/CharSequence;
+
+    move-result-object v5
+
+    .line 208
+    .local v5, mSpnGemini:Ljava/lang/CharSequence;
+    if-eqz v1, :cond_3
+
+    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-virtual {v11, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v11
+
+    if-nez v11, :cond_3
+
+    move v2, v9
+
+    .line 209
+    .local v2, mPlmnGeminiIsNotDefault:Z
+    :goto_2
+    if-eqz v5, :cond_4
+
+    invoke-virtual {v5}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-virtual {v11, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v11
+
+    if-nez v11, :cond_4
+
+    move v6, v9
+
+    .line 210
+    .local v6, mSpnGeminiIsNotDefault:Z
+    :goto_3
+    if-nez v3, :cond_0
+
+    if-nez v7, :cond_0
+
+    if-nez v2, :cond_0
+
+    if-eqz v6, :cond_6
+
+    .line 222
+    .end local v1           #mPlmnGemini:Ljava/lang/CharSequence;
+    .end local v2           #mPlmnGeminiIsNotDefault:Z
+    .end local v5           #mSpnGemini:Ljava/lang/CharSequence;
+    .end local v6           #mSpnGeminiIsNotDefault:Z
+    :cond_0
+    :goto_4
+    return v9
+
+    .end local v3           #mPlmnIsNotDefault:Z
+    .end local v7           #mSpnIsNotDefault:Z
+    :cond_1
+    move v3, v10
+
+    .line 204
+    goto :goto_0
+
+    .restart local v3       #mPlmnIsNotDefault:Z
+    :cond_2
+    move v7, v10
+
+    .line 205
+    goto :goto_1
+
+    .restart local v1       #mPlmnGemini:Ljava/lang/CharSequence;
+    .restart local v5       #mSpnGemini:Ljava/lang/CharSequence;
+    .restart local v7       #mSpnIsNotDefault:Z
+    :cond_3
+    move v2, v10
+
+    .line 208
+    goto :goto_2
+
+    .restart local v2       #mPlmnGeminiIsNotDefault:Z
+    :cond_4
+    move v6, v10
+
+    .line 209
+    goto :goto_3
+
+    .line 214
+    .end local v0           #mPlmn:Ljava/lang/CharSequence;
+    .end local v1           #mPlmnGemini:Ljava/lang/CharSequence;
+    .end local v2           #mPlmnGeminiIsNotDefault:Z
+    .end local v3           #mPlmnIsNotDefault:Z
+    .end local v4           #mSpn:Ljava/lang/CharSequence;
+    .end local v5           #mSpnGemini:Ljava/lang/CharSequence;
+    .end local v7           #mSpnIsNotDefault:Z
+    :cond_5
+    invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->getContext()Landroid/content/Context;
+
+    move-result-object v11
+
+    invoke-static {v11}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
+
+    move-result-object v11
+
+    invoke-virtual {v11}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->getTelephonyPlmn()Ljava/lang/CharSequence;
+
+    move-result-object v0
+
+    .line 215
+    .restart local v0       #mPlmn:Ljava/lang/CharSequence;
+    invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->getContext()Landroid/content/Context;
+
+    move-result-object v11
+
+    invoke-static {v11}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
+
+    move-result-object v11
+
+    invoke-virtual {v11}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->getTelephonySpn()Ljava/lang/CharSequence;
+
+    move-result-object v4
+
+    .line 216
+    .restart local v4       #mSpn:Ljava/lang/CharSequence;
+    if-eqz v0, :cond_7
+
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-virtual {v11, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v11
+
+    if-nez v11, :cond_7
+
+    move v3, v9
+
+    .line 217
+    .restart local v3       #mPlmnIsNotDefault:Z
+    :goto_5
+    if-eqz v4, :cond_8
+
+    invoke-virtual {v4}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-virtual {v11, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v11
+
+    if-nez v11, :cond_8
+
+    move v7, v9
+
+    .line 218
+    .restart local v7       #mSpnIsNotDefault:Z
+    :goto_6
+    if-nez v3, :cond_0
+
+    if-nez v7, :cond_0
+
+    :cond_6
+    move v9, v10
+
+    .line 222
+    goto :goto_4
+
+    .end local v3           #mPlmnIsNotDefault:Z
+    .end local v7           #mSpnIsNotDefault:Z
+    :cond_7
+    move v3, v10
+
+    .line 216
+    goto :goto_5
+
+    .restart local v3       #mPlmnIsNotDefault:Z
+    :cond_8
+    move v7, v10
+
+    .line 217
+    goto :goto_6
+.end method
+
 .method private updateEmergencyCallButton(Lcom/android/internal/telephony/IccCardConstants$State;I)V
-    .locals 7
+    .locals 10
     .parameter "simState"
     .parameter "phoneState"
 
     .prologue
-    .line 112
+    const/4 v5, 0x0
+
+    .line 164
     const/4 v3, 0x0
 
-    .line 113
+    .line 165
     .local v3, enabled:Z
     const/4 v0, 0x2
 
-    if-ne p2, v0, :cond_1
+    if-ne p2, v0, :cond_2
 
-    .line 114
+    .line 166
     const/4 v3, 0x1
 
-    .line 126
+    .line 183
     :cond_0
     :goto_0
+    invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->dmIsLocked()Z
+
+    move-result v6
+
+    .line 185
+    .local v6, dmLocked:Z
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->mKeyguardUtilExt:Lcom/mediatek/common/policy/IKeyguardUtilExt;
+
+    invoke-interface {v0}, Lcom/mediatek/common/policy/IKeyguardUtilExt;->shouldShowEmergencyBtnForVoiceOn()Z
+
+    move-result v8
+
+    .line 187
+    .local v8, keyguardUtilShowEcc:Z
+    invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->eccButtonShouldShow()Z
+
+    move-result v7
+
+    .line 188
+    .local v7, eccShouldShow:Z
+    if-nez v3, :cond_1
+
+    if-nez v8, :cond_1
+
+    if-eqz v6, :cond_4
+
+    :cond_1
+    if-eqz v7, :cond_4
+
+    const/4 v3, 0x1
+
+    .line 189
+    :goto_1
+    const-string v0, "EmergencyButton"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "enabled= "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ", dmLocked="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ", keyguardUtilShowEcc="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v8}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ", eccShouldShow="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 192
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     sget-boolean v4, Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager;->USE_UPPER_CASE:Z
-
-    const/4 v5, 0x0
 
     move-object v1, p0
 
@@ -120,11 +643,14 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/android/internal/widget/LockPatternUtils;->updateEmergencyCallButtonState(Landroid/widget/Button;IZZZ)V
 
-    .line 128
+    .line 194
     return-void
 
-    .line 115
-    :cond_1
+    .line 167
+    .end local v6           #dmLocked:Z
+    .end local v7           #eccShouldShow:Z
+    .end local v8           #keyguardUtilShowEcc:Z
+    :cond_2
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/LockPatternUtils;->isEmergencyCallCapable()Z
@@ -133,7 +659,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 116
+    .line 168
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -142,13 +668,13 @@
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->isSimLocked()Z
 
-    move-result v6
+    move-result v9
 
-    .line 117
-    .local v6, simLocked:Z
-    if-eqz v6, :cond_2
+    .line 169
+    .local v9, simLocked:Z
+    if-eqz v9, :cond_3
 
-    .line 119
+    .line 171
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/LockPatternUtils;->isEmergencyCallEnabledWhileSimLocked()Z
@@ -157,15 +683,21 @@
 
     goto :goto_0
 
-    .line 123
-    :cond_2
-    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
-
-    invoke-virtual {v0}, Lcom/android/internal/widget/LockPatternUtils;->isSecure()Z
-
-    move-result v3
+    .line 178
+    :cond_3
+    iget-boolean v3, p0, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->mIsSecure:Z
 
     goto :goto_0
+
+    .end local v9           #simLocked:Z
+    .restart local v6       #dmLocked:Z
+    .restart local v7       #eccShouldShow:Z
+    .restart local v8       #keyguardUtilShowEcc:Z
+    :cond_4
+    move v3, v5
+
+    .line 188
+    goto :goto_1
 .end method
 
 
@@ -174,10 +706,10 @@
     .locals 2
 
     .prologue
-    .line 68
+    .line 114
     invoke-super {p0}, Landroid/widget/Button;->onAttachedToWindow()V
 
-    .line 69
+    .line 115
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -188,7 +720,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->registerCallback(Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitorCallback;)V
 
-    .line 70
+    .line 116
     return-void
 .end method
 
@@ -196,10 +728,10 @@
     .locals 2
 
     .prologue
-    .line 74
+    .line 120
     invoke-super {p0}, Landroid/widget/Button;->onDetachedFromWindow()V
 
-    .line 75
+    .line 121
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -210,7 +742,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->removeCallback(Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitorCallback;)V
 
-    .line 76
+    .line 122
     return-void
 .end method
 
@@ -218,10 +750,10 @@
     .locals 4
 
     .prologue
-    .line 80
+    .line 126
     invoke-super {p0}, Landroid/widget/Button;->onFinishInflate()V
 
-    .line 81
+    .line 127
     new-instance v2, Lcom/android/internal/widget/LockPatternUtils;
 
     iget-object v3, p0, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->mContext:Landroid/content/Context;
@@ -230,7 +762,7 @@
 
     iput-object v2, p0, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
-    .line 82
+    .line 128
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->mContext:Landroid/content/Context;
 
     const-string v3, "power"
@@ -243,14 +775,14 @@
 
     iput-object v2, p0, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->mPowerManager:Landroid/os/PowerManager;
 
-    .line 83
+    .line 129
     new-instance v2, Lcom/android/internal/policy/impl/keyguard/EmergencyButton$2;
 
     invoke-direct {v2, p0}, Lcom/android/internal/policy/impl/keyguard/EmergencyButton$2;-><init>(Lcom/android/internal/policy/impl/keyguard/EmergencyButton;)V
 
     invoke-virtual {p0, v2}, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 88
+    .line 134
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->mContext:Landroid/content/Context;
 
     invoke-static {v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -261,7 +793,7 @@
 
     move-result v0
 
-    .line 89
+    .line 135
     .local v0, phoneState:I
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->mContext:Landroid/content/Context;
 
@@ -273,11 +805,20 @@
 
     move-result-object v1
 
-    .line 90
+    .line 139
     .local v1, simState:Lcom/android/internal/telephony/IccCardConstants$State;
+    iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
+
+    invoke-virtual {v2}, Lcom/android/internal/widget/LockPatternUtils;->isSecure()Z
+
+    move-result v2
+
+    iput-boolean v2, p0, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->mIsSecure:Z
+
+    .line 142
     invoke-direct {p0, v1, v0}, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->updateEmergencyCallButton(Lcom/android/internal/telephony/IccCardConstants$State;I)V
 
-    .line 91
+    .line 143
     return-void
 .end method
 
@@ -285,7 +826,7 @@
     .locals 5
 
     .prologue
-    .line 99
+    .line 151
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->mPowerManager:Landroid/os/PowerManager;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -296,7 +837,7 @@
 
     invoke-virtual {v1, v2, v3, v4}, Landroid/os/PowerManager;->userActivity(JZ)V
 
-    .line 100
+    .line 152
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
     move-result-object v1
@@ -309,16 +850,16 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 102
+    .line 154
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     invoke-virtual {v1}, Lcom/android/internal/widget/LockPatternUtils;->resumeCall()Z
 
-    .line 109
+    .line 161
     :goto_0
     return-void
 
-    .line 104
+    .line 156
     :cond_0
     new-instance v0, Landroid/content/Intent;
 
@@ -326,13 +867,13 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 105
+    .line 157
     .local v0, intent:Landroid/content/Intent;
     const/high16 v1, 0x1080
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 107
+    .line 159
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/EmergencyButton;->getContext()Landroid/content/Context;
 
     move-result-object v1

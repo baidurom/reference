@@ -194,7 +194,7 @@
 
     .line 826
     .local v0, resultId:I
-    const-string v2, "javascript:(function() { %s.onResult(%d, %s); })();"
+    const-string/jumbo v2, "javascript:(function() { %s.onResult(%d, %s); })();"
 
     const/4 v3, 0x3
 
@@ -708,7 +708,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "javascript:(function() { "
+    const-string/jumbo v1, "javascript:(function() { "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

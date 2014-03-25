@@ -69,9 +69,9 @@
 
     .prologue
     .line 1282
-    iget-object v0, p0, Landroid/accounts/AccountManagerService$Session;->mAuthenticator:Landroid/accounts/IAccountAuthenticator;
+    iget-object v0, p0, Landroid/accounts/AccountManagerService$5;->mAuthenticator:Landroid/accounts/IAccountAuthenticator;
 
-    iget-object v2, p0, Landroid/accounts/AccountManagerService$Session;->mAccountType:Ljava/lang/String;
+    iget-object v2, p0, Landroid/accounts/AccountManagerService$5;->mAccountType:Ljava/lang/String;
 
     iget-object v3, p0, Landroid/accounts/AccountManagerService$5;->val$authTokenType:Ljava/lang/String;
 

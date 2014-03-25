@@ -88,7 +88,7 @@
 
     .prologue
     .line 56
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 57
     #getter for: Landroid/content/ContentProviderOperation$Builder;->mType:I
@@ -186,7 +186,7 @@
     const/4 v3, 0x0
 
     .line 68
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 69
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
@@ -653,7 +653,7 @@
     .line 216
     new-instance v3, Landroid/content/OperationApplicationException;
 
-    const-string v4, "insert failed"
+    const-string/jumbo v4, "insert failed"
 
     invoke-direct {v3, v4}, Landroid/content/OperationApplicationException;-><init>(Ljava/lang/String;)V
 

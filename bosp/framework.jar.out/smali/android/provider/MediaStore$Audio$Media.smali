@@ -36,8 +36,8 @@
     .locals 1
 
     .prologue
-    .line 1349
-    const-string v0, "internal"
+    .line 1427
+    const-string/jumbo v0, "internal"
 
     invoke-static {v0}, Landroid/provider/MediaStore$Audio$Media;->getContentUri(Ljava/lang/String;)Landroid/net/Uri;
 
@@ -45,7 +45,7 @@
 
     sput-object v0, Landroid/provider/MediaStore$Audio$Media;->INTERNAL_CONTENT_URI:Landroid/net/Uri;
 
-    .line 1356
+    .line 1434
     const-string v0, "external"
 
     invoke-static {v0}, Landroid/provider/MediaStore$Audio$Media;->getContentUri(Ljava/lang/String;)Landroid/net/Uri;
@@ -61,8 +61,8 @@
     .locals 0
 
     .prologue
-    .line 1328
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 1406
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -72,7 +72,7 @@
     .parameter "volumeName"
 
     .prologue
-    .line 1337
+    .line 1415
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -109,7 +109,7 @@
     .parameter "path"
 
     .prologue
-    .line 1342
+    .line 1420
     invoke-static {}, Landroid/os/Environment;->getExternalStorageDirectory()Ljava/io/File;
 
     move-result-object v0

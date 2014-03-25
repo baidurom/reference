@@ -47,7 +47,7 @@
 
     .line 70
     .local v0, cond:Lcom/baidu/service/power/TriggerCondition;
-    iget-object v2, p0, Lcom/baidu/service/power/Trigger;->mCondition:Lcom/baidu/service/power/TriggerCondition;
+    iget-object v2, p0, Lcom/baidu/service/power/TriggerFactory$2;->mCondition:Lcom/baidu/service/power/TriggerCondition;
 
     iget v3, v0, Lcom/baidu/service/power/TriggerCondition;->mData1:I
 
@@ -101,7 +101,7 @@
     invoke-static {v2, v3}, Lcom/baidu/service/power/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 72
-    iget-object v2, p0, Lcom/baidu/service/power/Trigger;->mCondition:Lcom/baidu/service/power/TriggerCondition;
+    iget-object v2, p0, Lcom/baidu/service/power/TriggerFactory$2;->mCondition:Lcom/baidu/service/power/TriggerCondition;
 
     iget v3, p0, Lcom/baidu/service/power/TriggerFactory$2;->mBatteryLevel:I
 
@@ -117,9 +117,9 @@
     if-nez v2, :cond_0
 
     .line 74
-    iget-object v2, p0, Lcom/baidu/service/power/Trigger;->mHandler:Landroid/os/Handler;
+    iget-object v2, p0, Lcom/baidu/service/power/TriggerFactory$2;->mHandler:Landroid/os/Handler;
 
-    iget-object v3, p0, Lcom/baidu/service/power/BroadcastTrigger;->mIntent:Landroid/content/Intent;
+    iget-object v3, p0, Lcom/baidu/service/power/TriggerFactory$2;->mIntent:Landroid/content/Intent;
 
     invoke-virtual {v2, v5, v3}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
@@ -127,7 +127,7 @@
 
     .line 75
     .local v1, m:Landroid/os/Message;
-    iget-object v2, p0, Lcom/baidu/service/power/Trigger;->mHandler:Landroid/os/Handler;
+    iget-object v2, p0, Lcom/baidu/service/power/TriggerFactory$2;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v2, v1}, Landroid/os/Handler;->sendMessageAtFrontOfQueue(Landroid/os/Message;)Z
 

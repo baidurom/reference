@@ -76,7 +76,7 @@
     .line 88
     iput-object p1, p0, Lcom/android/server/VibratorService$Vibration;->this$0:Lcom/android/server/VibratorService;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 89
     iput-object p2, p0, Lcom/android/server/VibratorService$Vibration;->mToken:Landroid/os/IBinder;
@@ -134,7 +134,7 @@
     return-void
 .end method
 
-.method static synthetic access$1100(Lcom/android/server/VibratorService$Vibration;)I
+.method static synthetic access$1000(Lcom/android/server/VibratorService$Vibration;)I
     .locals 1
     .parameter "x0"
 
@@ -145,7 +145,7 @@
     return v0
 .end method
 
-.method static synthetic access$500(Lcom/android/server/VibratorService$Vibration;)J
+.method static synthetic access$400(Lcom/android/server/VibratorService$Vibration;)J
     .locals 2
     .parameter "x0"
 
@@ -156,7 +156,7 @@
     return-wide v0
 .end method
 
-.method static synthetic access$600(Lcom/android/server/VibratorService$Vibration;)Landroid/os/IBinder;
+.method static synthetic access$500(Lcom/android/server/VibratorService$Vibration;)Landroid/os/IBinder;
     .locals 1
     .parameter "x0"
 
@@ -167,7 +167,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$700(Lcom/android/server/VibratorService$Vibration;)[J
+.method static synthetic access$600(Lcom/android/server/VibratorService$Vibration;)[J
     .locals 1
     .parameter "x0"
 
@@ -178,7 +178,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$800(Lcom/android/server/VibratorService$Vibration;)I
+.method static synthetic access$700(Lcom/android/server/VibratorService$Vibration;)I
     .locals 1
     .parameter "x0"
 

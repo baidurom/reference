@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 251
+    .line 264
     iput-object p1, p0, Landroid/webkit/WebCoreThreadWatchdog$PageNotRespondingRunnable$2;->this$1:Landroid/webkit/WebCoreThreadWatchdog$PageNotRespondingRunnable;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -43,7 +43,7 @@
     .parameter "which"
 
     .prologue
-    .line 259
+    .line 272
     iget-object v0, p0, Landroid/webkit/WebCoreThreadWatchdog$PageNotRespondingRunnable$2;->this$1:Landroid/webkit/WebCoreThreadWatchdog$PageNotRespondingRunnable;
 
     #getter for: Landroid/webkit/WebCoreThreadWatchdog$PageNotRespondingRunnable;->mWatchdogHandler:Landroid/os/Handler;
@@ -68,6 +68,13 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 262
+    .line 275
+    const-string/jumbo v0, "webkit/webcorewatchdog"
+
+    const-string/jumbo v1, "reset timed_out message: in PageNotRespondingRunnable thread run1"
+
+    invoke-static {v0, v1}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 277
     return-void
 .end method

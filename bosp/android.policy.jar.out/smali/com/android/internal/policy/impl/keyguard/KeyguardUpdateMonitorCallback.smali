@@ -9,7 +9,7 @@
 
     .prologue
     .line 26
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -48,12 +48,30 @@
     return-void
 .end method
 
+.method onDownloadCalibrationDataUpdate(Z)V
+    .locals 0
+    .parameter "calibrationData"
+
+    .prologue
+    .line 129
+    return-void
+.end method
+
 .method onKeyguardVisibilityChanged(Z)V
     .locals 0
     .parameter "showing"
 
     .prologue
     .line 68
+    return-void
+.end method
+
+.method onLockScreenUpdate(I)V
+    .locals 0
+    .parameter "slotId"
+
+    .prologue
+    .line 124
     return-void
 .end method
 
@@ -85,6 +103,17 @@
     return-void
 .end method
 
+.method onRefreshCarrierInfoGemini(Ljava/lang/CharSequence;Ljava/lang/CharSequence;I)V
+    .locals 0
+    .parameter "plmn"
+    .parameter "spn"
+    .parameter "simId"
+
+    .prologue
+    .line 146
+    return-void
+.end method
+
 .method onRingerModeChanged(I)V
     .locals 0
     .parameter "state"
@@ -94,12 +123,41 @@
     return-void
 .end method
 
+.method onSIMInfoChanged(I)V
+    .locals 0
+    .parameter "slotId"
+
+    .prologue
+    .line 114
+    return-void
+.end method
+
+.method onSearchNetworkUpdate(IZ)V
+    .locals 0
+    .parameter "simId"
+    .parameter "switchOn"
+
+    .prologue
+    .line 119
+    return-void
+.end method
+
 .method public onSimStateChanged(Lcom/android/internal/telephony/IccCardConstants$State;)V
     .locals 0
     .parameter "simState"
 
     .prologue
     .line 96
+    return-void
+.end method
+
+.method onSimStateChangedGemini(Lcom/android/internal/telephony/IccCardConstants$State;I)V
+    .locals 0
+    .parameter "simState"
+    .parameter "simId"
+
+    .prologue
+    .line 136
     return-void
 .end method
 

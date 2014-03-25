@@ -145,7 +145,7 @@
     :cond_1
     new-instance v0, Ljava/lang/ArrayIndexOutOfBoundsException;
 
-    const-string v1, "invalid offset or length"
+    const-string/jumbo v1, "invalid offset or length"
 
     invoke-direct {v0, v1}, Ljava/lang/ArrayIndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
 

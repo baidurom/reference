@@ -301,6 +301,9 @@
 .method public abstract setCurrentUserLw(I)V
 .end method
 
+.method public abstract setExtraDisplayDevicePlugIn(ZZ)V
+.end method
+
 .method public abstract setInitialDisplaySize(Landroid/view/Display;III)V
 .end method
 

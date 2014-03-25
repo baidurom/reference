@@ -88,7 +88,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
+    iget-object v2, p0, Landroid/renderscript/Program;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v1, v2}, Landroid/renderscript/Type;->getID(Landroid/renderscript/RenderScript;)I
 
@@ -98,7 +98,7 @@
 
     aget-object v2, v2, p2
 
-    iget-object v3, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
+    iget-object v3, p0, Landroid/renderscript/Program;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v2, v3}, Landroid/renderscript/Type;->getID(Landroid/renderscript/RenderScript;)I
 
@@ -119,7 +119,7 @@
     :cond_2
     if-eqz p1, :cond_3
 
-    iget-object v1, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
+    iget-object v1, p0, Landroid/renderscript/Program;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {p1, v1}, Landroid/renderscript/Allocation;->getID(Landroid/renderscript/RenderScript;)I
 
@@ -128,9 +128,9 @@
     .line 153
     .local v0, id:I
     :goto_0
-    iget-object v1, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
+    iget-object v1, p0, Landroid/renderscript/Program;->mRS:Landroid/renderscript/RenderScript;
 
-    iget-object v2, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
+    iget-object v2, p0, Landroid/renderscript/Program;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {p0, v2}, Landroid/renderscript/Program;->getID(Landroid/renderscript/RenderScript;)I
 
@@ -161,7 +161,7 @@
 
     .prologue
     .line 189
-    iget-object v1, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
+    iget-object v1, p0, Landroid/renderscript/Program;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v1}, Landroid/renderscript/RenderScript;->validate()V
 
@@ -186,7 +186,7 @@
     :cond_1
     if-eqz p1, :cond_2
 
-    iget-object v1, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
+    iget-object v1, p0, Landroid/renderscript/Program;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {p1, v1}, Landroid/renderscript/Sampler;->getID(Landroid/renderscript/RenderScript;)I
 
@@ -195,9 +195,9 @@
     .line 195
     .local v0, id:I
     :goto_0
-    iget-object v1, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
+    iget-object v1, p0, Landroid/renderscript/Program;->mRS:Landroid/renderscript/RenderScript;
 
-    iget-object v2, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
+    iget-object v2, p0, Landroid/renderscript/Program;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {p0, v2}, Landroid/renderscript/Program;->getID(Landroid/renderscript/RenderScript;)I
 
@@ -228,7 +228,7 @@
 
     .prologue
     .line 165
-    iget-object v1, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
+    iget-object v1, p0, Landroid/renderscript/Program;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v1}, Landroid/renderscript/RenderScript;->validate()V
 
@@ -284,7 +284,7 @@
     :cond_2
     if-eqz p1, :cond_3
 
-    iget-object v1, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
+    iget-object v1, p0, Landroid/renderscript/Program;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {p1, v1}, Landroid/renderscript/Allocation;->getID(Landroid/renderscript/RenderScript;)I
 
@@ -293,9 +293,9 @@
     .line 175
     .local v0, id:I
     :goto_0
-    iget-object v1, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
+    iget-object v1, p0, Landroid/renderscript/Program;->mRS:Landroid/renderscript/RenderScript;
 
-    iget-object v2, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
+    iget-object v2, p0, Landroid/renderscript/Program;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {p0, v2}, Landroid/renderscript/Program;->getID(Landroid/renderscript/RenderScript;)I
 

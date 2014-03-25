@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 1504
+    .line 1666
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$11;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -42,7 +42,7 @@
     .parameter "duration"
 
     .prologue
-    .line 1507
+    .line 1669
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$11;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->mSecurityViewContainer:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityViewFlipper;
@@ -64,7 +64,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
-    .line 1508
+    .line 1670
     return-void
 .end method
 
@@ -72,7 +72,7 @@
     .locals 2
 
     .prologue
-    .line 1512
+    .line 1674
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$11;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->mSecurityViewContainer:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityViewFlipper;
@@ -84,7 +84,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityViewFlipper;->setAlpha(F)V
 
-    .line 1513
+    .line 1675
     return-void
 .end method
 
@@ -92,7 +92,7 @@
     .locals 1
 
     .prologue
-    .line 1517
+    .line 1679
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$11;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->mKeyguardSelectorView:Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;
@@ -102,7 +102,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1518
+    .line 1680
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$11;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->mKeyguardSelectorView:Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;
@@ -112,7 +112,7 @@
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;->showUsabilityHint()V
 
-    .line 1520
+    .line 1682
     :cond_0
     return-void
 .end method
@@ -121,21 +121,21 @@
     .locals 1
 
     .prologue
-    .line 1524
+    .line 1686
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$11;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
-    iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewBase;->mViewMediatorCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardViewMediator$ViewMediatorCallback;
+    iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->mViewMediatorCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardViewMediator$ViewMediatorCallback;
 
     if-eqz v0, :cond_0
 
-    .line 1525
+    .line 1687
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$11;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
-    iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewBase;->mViewMediatorCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardViewMediator$ViewMediatorCallback;
+    iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->mViewMediatorCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardViewMediator$ViewMediatorCallback;
 
     invoke-interface {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardViewMediator$ViewMediatorCallback;->userActivity()V
 
-    .line 1527
+    .line 1689
     :cond_0
     return-void
 .end method

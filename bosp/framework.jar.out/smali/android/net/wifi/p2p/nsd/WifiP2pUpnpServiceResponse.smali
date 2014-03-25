@@ -119,7 +119,7 @@
     const/4 v5, 0x1
 
     .line 101
-    iget-object v7, p0, Landroid/net/wifi/p2p/nsd/WifiP2pServiceResponse;->mData:[B
+    iget-object v7, p0, Landroid/net/wifi/p2p/nsd/WifiP2pUpnpServiceResponse;->mData:[B
 
     if-nez v7, :cond_1
 
@@ -130,7 +130,7 @@
 
     .line 106
     :cond_1
-    iget-object v7, p0, Landroid/net/wifi/p2p/nsd/WifiP2pServiceResponse;->mData:[B
+    iget-object v7, p0, Landroid/net/wifi/p2p/nsd/WifiP2pUpnpServiceResponse;->mData:[B
 
     array-length v7, v7
 
@@ -143,7 +143,7 @@
 
     .line 110
     :cond_2
-    iget-object v7, p0, Landroid/net/wifi/p2p/nsd/WifiP2pServiceResponse;->mData:[B
+    iget-object v7, p0, Landroid/net/wifi/p2p/nsd/WifiP2pUpnpServiceResponse;->mData:[B
 
     aget-byte v6, v7, v6
 
@@ -154,9 +154,9 @@
     .line 111
     new-instance v6, Ljava/lang/String;
 
-    iget-object v7, p0, Landroid/net/wifi/p2p/nsd/WifiP2pServiceResponse;->mData:[B
+    iget-object v7, p0, Landroid/net/wifi/p2p/nsd/WifiP2pUpnpServiceResponse;->mData:[B
 
-    iget-object v8, p0, Landroid/net/wifi/p2p/nsd/WifiP2pServiceResponse;->mData:[B
+    iget-object v8, p0, Landroid/net/wifi/p2p/nsd/WifiP2pUpnpServiceResponse;->mData:[B
 
     array-length v8, v8
 
@@ -253,7 +253,7 @@
 
     move-result-object v3
 
-    iget v4, p0, Landroid/net/wifi/p2p/nsd/WifiP2pServiceResponse;->mServiceType:I
+    iget v4, p0, Landroid/net/wifi/p2p/nsd/WifiP2pUpnpServiceResponse;->mServiceType:I
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuffer;->append(I)Ljava/lang/StringBuffer;
 
@@ -270,7 +270,7 @@
 
     move-result-object v3
 
-    iget v4, p0, Landroid/net/wifi/p2p/nsd/WifiP2pServiceResponse;->mStatus:I
+    iget v4, p0, Landroid/net/wifi/p2p/nsd/WifiP2pUpnpServiceResponse;->mStatus:I
 
     invoke-static {v4}, Landroid/net/wifi/p2p/nsd/WifiP2pServiceResponse$Status;->toString(I)Ljava/lang/String;
 
@@ -285,7 +285,7 @@
 
     move-result-object v3
 
-    iget-object v4, p0, Landroid/net/wifi/p2p/nsd/WifiP2pServiceResponse;->mDevice:Landroid/net/wifi/p2p/WifiP2pDevice;
+    iget-object v4, p0, Landroid/net/wifi/p2p/nsd/WifiP2pUpnpServiceResponse;->mDevice:Landroid/net/wifi/p2p/WifiP2pDevice;
 
     iget-object v4, v4, Landroid/net/wifi/p2p/WifiP2pDevice;->deviceAddress:Ljava/lang/String;
 

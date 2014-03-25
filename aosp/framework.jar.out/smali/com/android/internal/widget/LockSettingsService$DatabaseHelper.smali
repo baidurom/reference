@@ -35,20 +35,20 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 352
+    .line 359
     iput-object p1, p0, Lcom/android/internal/widget/LockSettingsService$DatabaseHelper;->this$0:Lcom/android/internal/widget/LockSettingsService;
 
-    .line 353
-    const-string v0, "locksettings.db"
+    .line 360
+    const-string/jumbo v0, "locksettings.db"
 
     const/4 v1, 0x0
 
     invoke-direct {p0, p2, v0, v1, v2}, Landroid/database/sqlite/SQLiteOpenHelper;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)V
 
-    .line 354
+    .line 361
     invoke-virtual {p0, v2}, Lcom/android/internal/widget/LockSettingsService$DatabaseHelper;->setWriteAheadLoggingEnabled(Z)V
 
-    .line 355
+    .line 362
     return-void
 .end method
 
@@ -57,12 +57,12 @@
     .parameter "db"
 
     .prologue
-    .line 358
+    .line 365
     const-string v0, "CREATE TABLE locksettings (_id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT,user INTEGER,value TEXT);"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 364
+    .line 371
     return-void
 .end method
 
@@ -73,18 +73,18 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 374
+    .line 381
     const-string/jumbo v1, "ro.lockscreen.disable.default"
 
     invoke-static {v1, v4}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v0
 
-    .line 376
+    .line 383
     .local v0, lockScreenDisable:Z
     if-eqz v0, :cond_0
 
-    .line 377
+    .line 384
     iget-object v1, p0, Lcom/android/internal/widget/LockSettingsService$DatabaseHelper;->this$0:Lcom/android/internal/widget/LockSettingsService;
 
     const-string v2, "lockscreen.disabled"
@@ -94,7 +94,7 @@
     #calls: Lcom/android/internal/widget/LockSettingsService;->writeToDb(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Ljava/lang/String;I)V
     invoke-static {v1, p1, v2, v3, v4}, Lcom/android/internal/widget/LockSettingsService;->access$000(Lcom/android/internal/widget/LockSettingsService;Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 379
+    .line 386
     :cond_0
     return-void
 .end method
@@ -106,13 +106,13 @@
     .parameter "db"
 
     .prologue
-    .line 368
+    .line 375
     invoke-direct {p0, p1}, Lcom/android/internal/widget/LockSettingsService$DatabaseHelper;->createTable(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 369
+    .line 376
     invoke-direct {p0, p1}, Lcom/android/internal/widget/LockSettingsService$DatabaseHelper;->initializeDefaults(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 370
+    .line 377
     return-void
 .end method
 
@@ -123,6 +123,6 @@
     .parameter "currentVersion"
 
     .prologue
-    .line 384
+    .line 391
     return-void
 .end method

@@ -124,7 +124,7 @@
 
     .prologue
     .line 100
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 101
     iput-object p1, p0, Lcom/google/android/util/AbstractMessageParser;->text:Ljava/lang/String;
@@ -2321,7 +2321,7 @@
     :cond_3
     new-instance v3, Ljava/lang/AssertionError;
 
-    const-string v4, "last chunk did not end at word break"
+    const-string/jumbo v4, "last chunk did not end at word break"
 
     invoke-direct {v3, v4}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
 

@@ -34,7 +34,7 @@
     const/4 v10, 0x0
 
     .line 52
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 44
     const/4 v6, 0x4

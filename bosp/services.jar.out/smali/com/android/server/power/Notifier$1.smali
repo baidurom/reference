@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 433
+    .line 449
     iput-object p1, p0, Lcom/android/server/power/Notifier$1;->this$0:Lcom/android/server/power/Notifier;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,7 +41,14 @@
     .locals 3
 
     .prologue
-    .line 436
+    .line 453
+    const-string v0, "PowerManager_performance_N"
+
+    const-string v1, "mScreenOnListener."
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 455
     iget-object v0, p0, Lcom/android/server/power/Notifier$1;->this$0:Lcom/android/server/power/Notifier;
 
     #getter for: Lcom/android/server/power/Notifier;->mLock:Ljava/lang/Object;
@@ -51,7 +58,7 @@
 
     monitor-enter v1
 
-    .line 437
+    .line 456
     :try_start_0
     iget-object v0, p0, Lcom/android/server/power/Notifier$1;->this$0:Lcom/android/server/power/Notifier;
 
@@ -71,7 +78,7 @@
 
     if-nez v0, :cond_0
 
-    .line 438
+    .line 457
     iget-object v0, p0, Lcom/android/server/power/Notifier$1;->this$0:Lcom/android/server/power/Notifier;
 
     const/4 v2, 0x0
@@ -79,7 +86,7 @@
     #setter for: Lcom/android/server/power/Notifier;->mScreenOnBlockerAcquired:Z
     invoke-static {v0, v2}, Lcom/android/server/power/Notifier;->access$102(Lcom/android/server/power/Notifier;Z)Z
 
-    .line 439
+    .line 458
     iget-object v0, p0, Lcom/android/server/power/Notifier$1;->this$0:Lcom/android/server/power/Notifier;
 
     #getter for: Lcom/android/server/power/Notifier;->mScreenOnBlocker:Lcom/android/server/power/ScreenOnBlocker;
@@ -89,14 +96,14 @@
 
     invoke-interface {v0}, Lcom/android/server/power/ScreenOnBlocker;->release()V
 
-    .line 441
+    .line 460
     :cond_0
     monitor-exit v1
 
-    .line 442
+    .line 461
     return-void
 
-    .line 441
+    .line 460
     :catchall_0
     move-exception v0
 

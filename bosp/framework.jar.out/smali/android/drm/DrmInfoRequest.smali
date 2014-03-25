@@ -8,11 +8,15 @@
 
 .field public static final SUBSCRIPTION_ID:Ljava/lang/String; = "subscription_id"
 
+.field private static final TYPE_GET_OMA_DRM_INFO:I = 0x7e6
+
 .field public static final TYPE_REGISTRATION_INFO:I = 0x1
 
 .field public static final TYPE_RIGHTS_ACQUISITION_INFO:I = 0x3
 
 .field public static final TYPE_RIGHTS_ACQUISITION_PROGRESS_INFO:I = 0x4
+
+.field private static final TYPE_SET_OMA_DRM_INFO:I = 0x7e5
 
 .field public static final TYPE_UNREGISTRATION_INFO:I = 0x2
 
@@ -42,35 +46,35 @@
     .parameter "mimeType"
 
     .prologue
-    .line 67
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 72
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 59
+    .line 64
     new-instance v1, Ljava/util/HashMap;
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
     iput-object v1, p0, Landroid/drm/DrmInfoRequest;->mRequestInformation:Ljava/util/HashMap;
 
-    .line 68
+    .line 73
     iput p1, p0, Landroid/drm/DrmInfoRequest;->mInfoType:I
 
-    .line 69
+    .line 74
     iput-object p2, p0, Landroid/drm/DrmInfoRequest;->mMimeType:Ljava/lang/String;
 
-    .line 70
+    .line 75
     invoke-virtual {p0}, Landroid/drm/DrmInfoRequest;->isValid()Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 71
+    .line 76
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "infoType: "
+    const-string/jumbo v2, "infoType: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -100,7 +104,7 @@
 
     move-result-object v0
 
-    .line 73
+    .line 78
     .local v0, msg:Ljava/lang/String;
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
@@ -108,7 +112,7 @@
 
     throw v1
 
-    .line 75
+    .line 80
     .end local v0           #msg:Ljava/lang/String;
     :cond_0
     return-void
@@ -119,33 +123,45 @@
     .parameter "infoType"
 
     .prologue
-    .line 150
+    .line 155
     const/4 v0, 0x0
 
-    .line 152
+    .line 157
     .local v0, isValid:Z
-    packed-switch p0, :pswitch_data_0
+    sparse-switch p0, :sswitch_data_0
 
-    .line 160
+    .line 182
     :goto_0
     return v0
 
-    .line 157
-    :pswitch_0
+    .line 179
+    :sswitch_0
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 152
+    .line 157
     nop
 
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-    .end packed-switch
+    :sswitch_data_0
+    .sparse-switch
+        0x1 -> :sswitch_0
+        0x2 -> :sswitch_0
+        0x3 -> :sswitch_0
+        0x4 -> :sswitch_0
+        0x7d1 -> :sswitch_0
+        0x7d2 -> :sswitch_0
+        0x7d3 -> :sswitch_0
+        0x7d4 -> :sswitch_0
+        0x7d5 -> :sswitch_0
+        0x7d6 -> :sswitch_0
+        0x7d7 -> :sswitch_0
+        0x7d8 -> :sswitch_0
+        0x7d9 -> :sswitch_0
+        0x7da -> :sswitch_0
+        0x7e5 -> :sswitch_0
+        0x7e6 -> :sswitch_0
+    .end sparse-switch
 .end method
 
 
@@ -155,7 +171,7 @@
     .parameter "key"
 
     .prologue
-    .line 114
+    .line 119
     iget-object v0, p0, Landroid/drm/DrmInfoRequest;->mRequestInformation:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -169,7 +185,7 @@
     .locals 1
 
     .prologue
-    .line 92
+    .line 97
     iget v0, p0, Landroid/drm/DrmInfoRequest;->mInfoType:I
 
     return v0
@@ -179,7 +195,7 @@
     .locals 1
 
     .prologue
-    .line 83
+    .line 88
     iget-object v0, p0, Landroid/drm/DrmInfoRequest;->mMimeType:Ljava/lang/String;
 
     return-object v0
@@ -189,7 +205,7 @@
     .locals 2
 
     .prologue
-    .line 145
+    .line 150
     iget-object v0, p0, Landroid/drm/DrmInfoRequest;->mMimeType:Ljava/lang/String;
 
     if-eqz v0, :cond_0
@@ -240,7 +256,7 @@
     .end annotation
 
     .prologue
-    .line 134
+    .line 139
     iget-object v0, p0, Landroid/drm/DrmInfoRequest;->mRequestInformation:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -267,7 +283,7 @@
     .end annotation
 
     .prologue
-    .line 124
+    .line 129
     iget-object v0, p0, Landroid/drm/DrmInfoRequest;->mRequestInformation:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
@@ -287,11 +303,11 @@
     .parameter "value"
 
     .prologue
-    .line 102
+    .line 107
     iget-object v0, p0, Landroid/drm/DrmInfoRequest;->mRequestInformation:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 103
+    .line 108
     return-void
 .end method

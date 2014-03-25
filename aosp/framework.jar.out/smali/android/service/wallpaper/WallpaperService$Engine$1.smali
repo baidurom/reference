@@ -1,5 +1,5 @@
 .class Landroid/service/wallpaper/WallpaperService$Engine$1;
-.super Landroid/content/BroadcastReceiver;
+.super Lcom/android/internal/view/BaseSurfaceHolder;
 .source "WallpaperService.java"
 
 
@@ -20,81 +20,122 @@
 
 # direct methods
 .method constructor <init>(Landroid/service/wallpaper/WallpaperService$Engine;)V
-    .locals 0
+    .locals 1
     .parameter
 
     .prologue
-    .line 174
+    .line 219
     iput-object p1, p0, Landroid/service/wallpaper/WallpaperService$Engine$1;->this$1:Landroid/service/wallpaper/WallpaperService$Engine;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    invoke-direct {p0}, Lcom/android/internal/view/BaseSurfaceHolder;-><init>()V
 
+    .line 221
+    const/4 v0, 0x2
+
+    iput v0, p0, Landroid/service/wallpaper/WallpaperService$Engine$1;->mRequestedFormat:I
+
+    .line 222
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 2
-    .parameter "context"
-    .parameter "intent"
+.method public isCreating()Z
+    .locals 1
 
     .prologue
-    .line 177
-    const-string v0, "android.intent.action.SCREEN_ON"
-
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 178
+    .line 242
     iget-object v0, p0, Landroid/service/wallpaper/WallpaperService$Engine$1;->this$1:Landroid/service/wallpaper/WallpaperService$Engine;
 
-    const/4 v1, 0x1
+    iget-boolean v0, v0, Landroid/service/wallpaper/WallpaperService$Engine;->mIsCreating:Z
 
-    iput-boolean v1, v0, Landroid/service/wallpaper/WallpaperService$Engine;->mScreenOn:Z
+    return v0
+.end method
 
-    .line 179
+.method public onAllowLockCanvas()Z
+    .locals 1
+
+    .prologue
+    .line 226
     iget-object v0, p0, Landroid/service/wallpaper/WallpaperService$Engine$1;->this$1:Landroid/service/wallpaper/WallpaperService$Engine;
 
-    invoke-virtual {v0}, Landroid/service/wallpaper/WallpaperService$Engine;->reportVisibility()V
+    iget-boolean v0, v0, Landroid/service/wallpaper/WallpaperService$Engine;->mDrawingAllowed:Z
 
-    .line 184
-    :cond_0
-    :goto_0
+    return v0
+.end method
+
+.method public onRelayoutContainer()V
+    .locals 3
+
+    .prologue
+    .line 231
+    iget-object v1, p0, Landroid/service/wallpaper/WallpaperService$Engine$1;->this$1:Landroid/service/wallpaper/WallpaperService$Engine;
+
+    iget-object v1, v1, Landroid/service/wallpaper/WallpaperService$Engine;->mCaller:Lcom/android/internal/os/HandlerCaller;
+
+    const/16 v2, 0x2710
+
+    invoke-virtual {v1, v2}, Lcom/android/internal/os/HandlerCaller;->obtainMessage(I)Landroid/os/Message;
+
+    move-result-object v0
+
+    .line 232
+    .local v0, msg:Landroid/os/Message;
+    iget-object v1, p0, Landroid/service/wallpaper/WallpaperService$Engine$1;->this$1:Landroid/service/wallpaper/WallpaperService$Engine;
+
+    iget-object v1, v1, Landroid/service/wallpaper/WallpaperService$Engine;->mCaller:Lcom/android/internal/os/HandlerCaller;
+
+    invoke-virtual {v1, v0}, Lcom/android/internal/os/HandlerCaller;->sendMessage(Landroid/os/Message;)V
+
+    .line 233
     return-void
+.end method
 
-    .line 180
-    :cond_1
-    const-string v0, "android.intent.action.SCREEN_OFF"
+.method public onUpdateSurface()V
+    .locals 3
 
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    .prologue
+    .line 237
+    iget-object v1, p0, Landroid/service/wallpaper/WallpaperService$Engine$1;->this$1:Landroid/service/wallpaper/WallpaperService$Engine;
 
-    move-result-object v1
+    iget-object v1, v1, Landroid/service/wallpaper/WallpaperService$Engine;->mCaller:Lcom/android/internal/os/HandlerCaller;
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const/16 v2, 0x2710
 
-    move-result v0
+    invoke-virtual {v1, v2}, Lcom/android/internal/os/HandlerCaller;->obtainMessage(I)Landroid/os/Message;
 
-    if-eqz v0, :cond_0
+    move-result-object v0
 
-    .line 181
-    iget-object v0, p0, Landroid/service/wallpaper/WallpaperService$Engine$1;->this$1:Landroid/service/wallpaper/WallpaperService$Engine;
+    .line 238
+    .local v0, msg:Landroid/os/Message;
+    iget-object v1, p0, Landroid/service/wallpaper/WallpaperService$Engine$1;->this$1:Landroid/service/wallpaper/WallpaperService$Engine;
 
-    const/4 v1, 0x0
+    iget-object v1, v1, Landroid/service/wallpaper/WallpaperService$Engine;->mCaller:Lcom/android/internal/os/HandlerCaller;
 
-    iput-boolean v1, v0, Landroid/service/wallpaper/WallpaperService$Engine;->mScreenOn:Z
+    invoke-virtual {v1, v0}, Lcom/android/internal/os/HandlerCaller;->sendMessage(Landroid/os/Message;)V
 
-    .line 182
-    iget-object v0, p0, Landroid/service/wallpaper/WallpaperService$Engine$1;->this$1:Landroid/service/wallpaper/WallpaperService$Engine;
+    .line 239
+    return-void
+.end method
 
-    invoke-virtual {v0}, Landroid/service/wallpaper/WallpaperService$Engine;->reportVisibility()V
+.method public setFixedSize(II)V
+    .locals 0
+    .parameter "width"
+    .parameter "height"
 
-    goto :goto_0
+    .prologue
+    .line 248
+    invoke-super {p0, p1, p2}, Lcom/android/internal/view/BaseSurfaceHolder;->setFixedSize(II)V
+
+    .line 249
+    return-void
+.end method
+
+.method public setKeepScreenOn(Z)V
+    .locals 0
+    .parameter "screenOn"
+
+    .prologue
+    .line 253
+    return-void
 .end method

@@ -45,7 +45,7 @@
 
     iput p4, p0, Lcom/android/internal/widget/SlidingTab$2;->val$dy:I
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -87,7 +87,7 @@
     .local v0, anim:Landroid/view/animation/Animation;
     const-wide/16 v1, 0x3e8
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/TranslateAnimation;->setDuration(J)V
+    invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 676
     iget-object v1, p0, Lcom/android/internal/widget/SlidingTab$2;->this$0:Lcom/android/internal/widget/SlidingTab;
@@ -146,7 +146,7 @@
     .restart local v0       #anim:Landroid/view/animation/Animation;
     const-wide/16 v1, 0xfa
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/AlphaAnimation;->setDuration(J)V
+    invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 680
     iget-object v1, p0, Lcom/android/internal/widget/SlidingTab$2;->this$0:Lcom/android/internal/widget/SlidingTab;

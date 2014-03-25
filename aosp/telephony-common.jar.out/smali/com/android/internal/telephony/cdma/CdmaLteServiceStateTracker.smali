@@ -54,7 +54,7 @@
     iput-object p1, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mCdmaLtePhone:Lcom/android/internal/telephony/cdma/CDMALTEPhone;
 
     .line 64
-    iget-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mCellInfo:Landroid/telephony/CellInfo;
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mCellInfo:Landroid/telephony/CellInfo;
 
     check-cast v0, Landroid/telephony/CellInfoLte;
 
@@ -68,7 +68,7 @@
     iput-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mLteSS:Landroid/telephony/ServiceState;
 
     .line 67
-    iget-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mCellInfo:Landroid/telephony/CellInfo;
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mCellInfo:Landroid/telephony/CellInfo;
 
     check-cast v0, Landroid/telephony/CellInfoLte;
 
@@ -79,7 +79,7 @@
     invoke-virtual {v0, v1}, Landroid/telephony/CellInfoLte;->setCellSignalStrength(Landroid/telephony/CellSignalStrengthLte;)V
 
     .line 68
-    iget-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mCellInfo:Landroid/telephony/CellInfo;
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mCellInfo:Landroid/telephony/CellInfo;
 
     check-cast v0, Landroid/telephony/CellInfoLte;
 
@@ -122,11 +122,11 @@
 
     .line 584
     :cond_1
-    iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->mHomeSystemId:[I
+    iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mHomeSystemId:[I
 
     array-length v2, v2
 
-    iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->mHomeNetworkId:[I
+    iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mHomeNetworkId:[I
 
     array-length v3, v3
 
@@ -140,26 +140,26 @@
 
     .local v0, i:I
     :goto_1
-    iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->mHomeSystemId:[I
+    iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mHomeSystemId:[I
 
     array-length v2, v2
 
     if-ge v0, v2, :cond_3
 
     .line 591
-    iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->mHomeSystemId:[I
+    iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mHomeSystemId:[I
 
     aget v2, v2, v0
 
     if-ne v2, p1, :cond_2
 
-    iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->mHomeNetworkId:[I
+    iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mHomeNetworkId:[I
 
     aget v2, v2, v0
 
     if-eqz v2, :cond_0
 
-    iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->mHomeNetworkId:[I
+    iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mHomeNetworkId:[I
 
     aget v2, v2, v0
 
@@ -169,7 +169,7 @@
 
     if-eq p2, v4, :cond_0
 
-    iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->mHomeNetworkId:[I
+    iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mHomeNetworkId:[I
 
     aget v2, v2, v0
 
@@ -275,7 +275,7 @@
 
     .line 608
     .local v0, arrayList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/telephony/CellInfo;>;"
-    iget-object v2, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mCellInfo:Landroid/telephony/CellInfo;
+    iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mCellInfo:Landroid/telephony/CellInfo;
 
     monitor-enter v2
 
@@ -365,7 +365,7 @@
     .line 85
     .end local v0           #ar:Landroid/os/AsyncResult;
     :sswitch_1
-    iget-object v1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mIccRecords:Lcom/android/internal/telephony/IccRecords;
+    iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mIccRecords:Lcom/android/internal/telephony/IccRecords;
 
     check-cast v1, Lcom/android/internal/telephony/cdma/RuimRecords;
 
@@ -384,14 +384,14 @@
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->mMdn:Ljava/lang/String;
+    iput-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mMdn:Ljava/lang/String;
 
     .line 88
     invoke-virtual {v1}, Lcom/android/internal/telephony/cdma/RuimRecords;->getMin()Ljava/lang/String;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->mMin:Ljava/lang/String;
+    iput-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mMin:Ljava/lang/String;
 
     .line 89
     invoke-virtual {v1}, Lcom/android/internal/telephony/cdma/RuimRecords;->getSid()Ljava/lang/String;
@@ -409,12 +409,12 @@
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->mPrlVersion:Ljava/lang/String;
+    iput-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mPrlVersion:Ljava/lang/String;
 
     .line 91
     const/4 v2, 0x1
 
-    iput-boolean v2, p0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->mIsMinInfoReady:Z
+    iput-boolean v2, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mIsMinInfoReady:Z
 
     .line 92
     invoke-virtual {p0}, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->updateOtaspState()V
@@ -765,7 +765,7 @@
     .line 154
     .local v8, e:Ljava/lang/Exception;
     :try_start_7
-    iget-object v1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->ss:Landroid/telephony/ServiceState;
+    iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->ss:Landroid/telephony/ServiceState;
 
     invoke-virtual {v1}, Landroid/telephony/ServiceState;->getOperatorNumeric()Ljava/lang/String;
 
@@ -1055,7 +1055,7 @@
 
     .prologue
     .line 570
-    iget v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mRilRadioTechnology:I
+    iget v0, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mRilRadioTechnology:I
 
     const/16 v1, 0xe
 
@@ -1145,7 +1145,7 @@
     const/16 v4, 0xe
 
     .line 544
-    iget v2, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mRilRadioTechnology:I
+    iget v2, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mRilRadioTechnology:I
 
     if-ne v2, v4, :cond_0
 
@@ -1160,13 +1160,13 @@
 
     .line 549
     .local v1, ssChanged:Z
-    iget-object v3, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mCellInfo:Landroid/telephony/CellInfo;
+    iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mCellInfo:Landroid/telephony/CellInfo;
 
     monitor-enter v3
 
     .line 550
     :try_start_0
-    iget v2, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mRilRadioTechnology:I
+    iget v2, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mRilRadioTechnology:I
 
     if-ne v2, v4, :cond_1
 
@@ -1197,7 +1197,7 @@
 
     move-result-object v2
 
-    iget-object v4, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mSignalStrength:Landroid/telephony/SignalStrength;
+    iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mSignalStrength:Landroid/telephony/SignalStrength;
 
     const v5, 0x7fffffff
 
@@ -1225,7 +1225,7 @@
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 559
-    iget-object v2, p0, Lcom/android/internal/telephony/ServiceStateTracker;->mPhoneBase:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mPhoneBase:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v2, v0}, Lcom/android/internal/telephony/PhoneBase;->notifyCellInfo(Ljava/util/List;)V
 
@@ -1259,17 +1259,17 @@
 
     new-array v0, v0, [I
 
-    iput-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->pollingContext:[I
+    iput-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->pollingContext:[I
 
     .line 220
-    iget-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->pollingContext:[I
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->pollingContext:[I
 
     aput v3, v0, v3
 
     .line 222
     sget-object v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker$1;->$SwitchMap$com$android$internal$telephony$CommandsInterface$RadioState:[I
 
-    iget-object v1, p0, Lcom/android/internal/telephony/ServiceStateTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-interface {v1}, Lcom/android/internal/telephony/CommandsInterface;->getRadioState()Lcom/android/internal/telephony/CommandsInterface$RadioState;
 
@@ -1284,7 +1284,7 @@
     packed-switch v0, :pswitch_data_0
 
     .line 246
-    iget-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->pollingContext:[I
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->pollingContext:[I
 
     aget v1, v0, v3
 
@@ -1293,11 +1293,11 @@
     aput v1, v0, v3
 
     .line 248
-    iget-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     const/16 v1, 0x19
 
-    iget-object v2, p0, Lcom/android/internal/telephony/ServiceStateTracker;->pollingContext:[I
+    iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->pollingContext:[I
 
     invoke-virtual {p0, v1, v2}, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
@@ -1306,7 +1306,7 @@
     invoke-interface {v0, v1}, Lcom/android/internal/telephony/CommandsInterface;->getOperator(Landroid/os/Message;)V
 
     .line 250
-    iget-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->pollingContext:[I
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->pollingContext:[I
 
     aget v1, v0, v3
 
@@ -1315,11 +1315,11 @@
     aput v1, v0, v3
 
     .line 252
-    iget-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     const/16 v1, 0x18
 
-    iget-object v2, p0, Lcom/android/internal/telephony/ServiceStateTracker;->pollingContext:[I
+    iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->pollingContext:[I
 
     invoke-virtual {p0, v1, v2}, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
@@ -1328,7 +1328,7 @@
     invoke-interface {v0, v1}, Lcom/android/internal/telephony/CommandsInterface;->getVoiceRegistrationState(Landroid/os/Message;)V
 
     .line 255
-    iget-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->pollingContext:[I
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->pollingContext:[I
 
     aget v1, v0, v3
 
@@ -1337,11 +1337,11 @@
     aput v1, v0, v3
 
     .line 257
-    iget-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     const/4 v1, 0x5
 
-    iget-object v2, p0, Lcom/android/internal/telephony/ServiceStateTracker;->pollingContext:[I
+    iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->pollingContext:[I
 
     invoke-virtual {p0, v1, v2}, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
@@ -1355,12 +1355,12 @@
 
     .line 224
     :pswitch_0
-    iget-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->newSS:Landroid/telephony/ServiceState;
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->newSS:Landroid/telephony/ServiceState;
 
     invoke-virtual {v0}, Landroid/telephony/ServiceState;->setStateOutOfService()V
 
     .line 225
-    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->newCellLoc:Landroid/telephony/cdma/CdmaCellLocation;
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->newCellLoc:Landroid/telephony/cdma/CdmaCellLocation;
 
     invoke-virtual {v0}, Landroid/telephony/cdma/CdmaCellLocation;->setStateInvalid()V
 
@@ -1368,7 +1368,7 @@
     invoke-virtual {p0}, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->setSignalStrengthDefaultValues()V
 
     .line 227
-    iput-boolean v3, p0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->mGotCountryCode:Z
+    iput-boolean v3, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mGotCountryCode:Z
 
     .line 229
     invoke-virtual {p0}, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->pollStateDone()V
@@ -1377,12 +1377,12 @@
 
     .line 233
     :pswitch_1
-    iget-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->newSS:Landroid/telephony/ServiceState;
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->newSS:Landroid/telephony/ServiceState;
 
     invoke-virtual {v0}, Landroid/telephony/ServiceState;->setStateOff()V
 
     .line 234
-    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->newCellLoc:Landroid/telephony/cdma/CdmaCellLocation;
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->newCellLoc:Landroid/telephony/cdma/CdmaCellLocation;
 
     invoke-virtual {v0}, Landroid/telephony/cdma/CdmaCellLocation;->setStateInvalid()V
 
@@ -1390,7 +1390,7 @@
     invoke-virtual {p0}, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->setSignalStrengthDefaultValues()V
 
     .line 236
-    iput-boolean v3, p0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->mGotCountryCode:Z
+    iput-boolean v3, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mGotCountryCode:Z
 
     .line 238
     invoke-virtual {p0}, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->pollStateDone()V
@@ -1437,7 +1437,7 @@
 
     move-object/from16 v1, p0
 
-    iput v0, v1, Lcom/android/internal/telephony/ServiceStateTracker;->mNewRilRadioTechnology:I
+    iput v0, v1, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mNewRilRadioTechnology:I
 
     .line 269
     move-object/from16 v0, p0
@@ -1454,18 +1454,18 @@
 
     move-object/from16 v1, p0
 
-    iput v0, v1, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->mNewDataConnectionState:I
+    iput v0, v1, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mNewDataConnectionState:I
 
     .line 270
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->newSS:Landroid/telephony/ServiceState;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->newSS:Landroid/telephony/ServiceState;
 
     move-object/from16 v35, v0
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->mNewRilRadioTechnology:I
+    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mNewRilRadioTechnology:I
 
     move/from16 v36, v0
 
@@ -1484,7 +1484,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->mNewRilRadioTechnology:I
+    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mNewRilRadioTechnology:I
 
     move/from16 v36, v0
 
@@ -1506,7 +1506,7 @@
     :goto_0
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->newSS:Landroid/telephony/ServiceState;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->newSS:Landroid/telephony/ServiceState;
 
     move-object/from16 v35, v0
 
@@ -1525,7 +1525,7 @@
     .line 292
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
     move-object/from16 v35, v0
 
@@ -1567,7 +1567,7 @@
     .line 298
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->newSS:Landroid/telephony/ServiceState;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->newSS:Landroid/telephony/ServiceState;
 
     move-object/from16 v35, v0
 
@@ -1598,7 +1598,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->ss:Landroid/telephony/ServiceState;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->ss:Landroid/telephony/ServiceState;
 
     move-object/from16 v36, v0
 
@@ -1614,7 +1614,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->newSS:Landroid/telephony/ServiceState;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->newSS:Landroid/telephony/ServiceState;
 
     move-object/from16 v36, v0
 
@@ -1641,7 +1641,7 @@
     .line 304
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->ss:Landroid/telephony/ServiceState;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->ss:Landroid/telephony/ServiceState;
 
     move-object/from16 v35, v0
 
@@ -1653,7 +1653,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->newSS:Landroid/telephony/ServiceState;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->newSS:Landroid/telephony/ServiceState;
 
     move-object/from16 v35, v0
 
@@ -1670,7 +1670,7 @@
     :goto_1
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->ss:Landroid/telephony/ServiceState;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->ss:Landroid/telephony/ServiceState;
 
     move-object/from16 v35, v0
 
@@ -1682,7 +1682,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->newSS:Landroid/telephony/ServiceState;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->newSS:Landroid/telephony/ServiceState;
 
     move-object/from16 v35, v0
 
@@ -1699,7 +1699,7 @@
     :goto_2
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->mDataConnectionState:I
+    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mDataConnectionState:I
 
     move/from16 v35, v0
 
@@ -1707,7 +1707,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->mNewDataConnectionState:I
+    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mNewDataConnectionState:I
 
     move/from16 v35, v0
 
@@ -1720,7 +1720,7 @@
     :goto_3
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->mDataConnectionState:I
+    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mDataConnectionState:I
 
     move/from16 v35, v0
 
@@ -1728,7 +1728,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->mNewDataConnectionState:I
+    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mNewDataConnectionState:I
 
     move/from16 v35, v0
 
@@ -1741,13 +1741,13 @@
     :goto_4
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->mDataConnectionState:I
+    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mDataConnectionState:I
 
     move/from16 v35, v0
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->mNewDataConnectionState:I
+    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mNewDataConnectionState:I
 
     move/from16 v36, v0
 
@@ -1764,13 +1764,13 @@
     :goto_5
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->mRilRadioTechnology:I
+    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mRilRadioTechnology:I
 
     move/from16 v35, v0
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->mNewRilRadioTechnology:I
+    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mNewRilRadioTechnology:I
 
     move/from16 v36, v0
 
@@ -1787,13 +1787,13 @@
     :goto_6
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->newSS:Landroid/telephony/ServiceState;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->newSS:Landroid/telephony/ServiceState;
 
     move-object/from16 v35, v0
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->ss:Landroid/telephony/ServiceState;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->ss:Landroid/telephony/ServiceState;
 
     move-object/from16 v36, v0
 
@@ -1810,7 +1810,7 @@
     :goto_7
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->ss:Landroid/telephony/ServiceState;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->ss:Landroid/telephony/ServiceState;
 
     move-object/from16 v35, v0
 
@@ -1822,7 +1822,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->newSS:Landroid/telephony/ServiceState;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->newSS:Landroid/telephony/ServiceState;
 
     move-object/from16 v35, v0
 
@@ -1839,7 +1839,7 @@
     :goto_8
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->ss:Landroid/telephony/ServiceState;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->ss:Landroid/telephony/ServiceState;
 
     move-object/from16 v35, v0
 
@@ -1851,7 +1851,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->newSS:Landroid/telephony/ServiceState;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->newSS:Landroid/telephony/ServiceState;
 
     move-object/from16 v35, v0
 
@@ -1868,13 +1868,13 @@
     :goto_9
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->newCellLoc:Landroid/telephony/cdma/CdmaCellLocation;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->newCellLoc:Landroid/telephony/cdma/CdmaCellLocation;
 
     move-object/from16 v35, v0
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->cellLoc:Landroid/telephony/cdma/CdmaCellLocation;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->cellLoc:Landroid/telephony/cdma/CdmaCellLocation;
 
     move-object/from16 v36, v0
 
@@ -1891,7 +1891,7 @@
     :goto_a
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->mNewDataConnectionState:I
+    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mNewDataConnectionState:I
 
     move/from16 v35, v0
 
@@ -1899,7 +1899,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->mRilRadioTechnology:I
+    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mRilRadioTechnology:I
 
     move/from16 v35, v0
 
@@ -1913,7 +1913,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->mNewRilRadioTechnology:I
+    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mNewRilRadioTechnology:I
 
     move/from16 v35, v0
 
@@ -1928,7 +1928,7 @@
     :cond_1
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->mRilRadioTechnology:I
+    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mRilRadioTechnology:I
 
     move/from16 v35, v0
 
@@ -1942,7 +1942,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->mNewRilRadioTechnology:I
+    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mNewRilRadioTechnology:I
 
     move/from16 v35, v0
 
@@ -1962,7 +1962,7 @@
     :goto_b
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->mNewRilRadioTechnology:I
+    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mNewRilRadioTechnology:I
 
     move/from16 v35, v0
 
@@ -1976,7 +1976,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->mNewRilRadioTechnology:I
+    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mNewRilRadioTechnology:I
 
     move/from16 v35, v0
 
@@ -1991,7 +1991,7 @@
     :cond_3
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->mRilRadioTechnology:I
+    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mRilRadioTechnology:I
 
     move/from16 v35, v0
 
@@ -2005,7 +2005,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->mRilRadioTechnology:I
+    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mRilRadioTechnology:I
 
     move/from16 v35, v0
 
@@ -2024,7 +2024,7 @@
     :goto_c
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->mNewRilRadioTechnology:I
+    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mNewRilRadioTechnology:I
 
     move/from16 v35, v0
 
@@ -2038,7 +2038,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->mNewRilRadioTechnology:I
+    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mNewRilRadioTechnology:I
 
     move/from16 v35, v0
 
@@ -2242,7 +2242,7 @@
     .line 365
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->ss:Landroid/telephony/ServiceState;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->ss:Landroid/telephony/ServiceState;
 
     move-object/from16 v35, v0
 
@@ -2252,7 +2252,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->newSS:Landroid/telephony/ServiceState;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->newSS:Landroid/telephony/ServiceState;
 
     move-object/from16 v36, v0
 
@@ -2268,13 +2268,13 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->mDataConnectionState:I
+    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mDataConnectionState:I
 
     move/from16 v35, v0
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->mNewDataConnectionState:I
+    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mNewDataConnectionState:I
 
     move/from16 v36, v0
 
@@ -2300,7 +2300,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->ss:Landroid/telephony/ServiceState;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->ss:Landroid/telephony/ServiceState;
 
     move-object/from16 v38, v0
 
@@ -2318,7 +2318,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->mDataConnectionState:I
+    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mDataConnectionState:I
 
     move/from16 v38, v0
 
@@ -2332,7 +2332,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->newSS:Landroid/telephony/ServiceState;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->newSS:Landroid/telephony/ServiceState;
 
     move-object/from16 v38, v0
 
@@ -2350,7 +2350,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->mNewDataConnectionState:I
+    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mNewDataConnectionState:I
 
     move/from16 v38, v0
 
@@ -2366,7 +2366,7 @@
     :cond_5
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->ss:Landroid/telephony/ServiceState;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->ss:Landroid/telephony/ServiceState;
 
     move-object/from16 v34, v0
 
@@ -2374,7 +2374,7 @@
     .local v34, tss:Landroid/telephony/ServiceState;
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->newSS:Landroid/telephony/ServiceState;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->newSS:Landroid/telephony/ServiceState;
 
     move-object/from16 v35, v0
 
@@ -2382,19 +2382,19 @@
 
     move-object/from16 v1, p0
 
-    iput-object v0, v1, Lcom/android/internal/telephony/ServiceStateTracker;->ss:Landroid/telephony/ServiceState;
+    iput-object v0, v1, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->ss:Landroid/telephony/ServiceState;
 
     .line 374
     move-object/from16 v0, v34
 
     move-object/from16 v1, p0
 
-    iput-object v0, v1, Lcom/android/internal/telephony/ServiceStateTracker;->newSS:Landroid/telephony/ServiceState;
+    iput-object v0, v1, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->newSS:Landroid/telephony/ServiceState;
 
     .line 376
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->newSS:Landroid/telephony/ServiceState;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->newSS:Landroid/telephony/ServiceState;
 
     move-object/from16 v35, v0
 
@@ -2414,13 +2414,13 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
     move-object/from16 v35, v0
 
     move-object/from16 v0, v35
 
-    iget-object v0, v0, Lcom/android/internal/telephony/PhoneBase;->mDataConnectionTracker:Lcom/android/internal/telephony/DataConnectionTracker;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mDataConnectionTracker:Lcom/android/internal/telephony/DataConnectionTracker;
 
     move-object/from16 v35, v0
 
@@ -2444,13 +2444,13 @@
     .line 382
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
     move-object/from16 v35, v0
 
     move-object/from16 v0, v35
 
-    iget-object v0, v0, Lcom/android/internal/telephony/PhoneBase;->mDataConnectionTracker:Lcom/android/internal/telephony/DataConnectionTracker;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mDataConnectionTracker:Lcom/android/internal/telephony/DataConnectionTracker;
 
     move-object/from16 v35, v0
 
@@ -2459,7 +2459,7 @@
     .line 383
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
     move-object/from16 v35, v0
 
@@ -2477,7 +2477,7 @@
 
     move-object/from16 v1, v35
 
-    iput-object v0, v1, Lcom/android/internal/telephony/PhoneBase;->mDataConnectionTracker:Lcom/android/internal/telephony/DataConnectionTracker;
+    iput-object v0, v1, Lcom/android/internal/telephony/cdma/CDMAPhone;->mDataConnectionTracker:Lcom/android/internal/telephony/DataConnectionTracker;
 
     .line 386
     :cond_6
@@ -2485,13 +2485,13 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
     move-object/from16 v35, v0
 
     move-object/from16 v0, v35
 
-    iget-object v0, v0, Lcom/android/internal/telephony/PhoneBase;->mDataConnectionTracker:Lcom/android/internal/telephony/DataConnectionTracker;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mDataConnectionTracker:Lcom/android/internal/telephony/DataConnectionTracker;
 
     move-object/from16 v35, v0
 
@@ -2515,13 +2515,13 @@
     .line 389
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
     move-object/from16 v35, v0
 
     move-object/from16 v0, v35
 
-    iget-object v0, v0, Lcom/android/internal/telephony/PhoneBase;->mDataConnectionTracker:Lcom/android/internal/telephony/DataConnectionTracker;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mDataConnectionTracker:Lcom/android/internal/telephony/DataConnectionTracker;
 
     move-object/from16 v35, v0
 
@@ -2530,7 +2530,7 @@
     .line 390
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
     move-object/from16 v35, v0
 
@@ -2538,7 +2538,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
     move-object/from16 v37, v0
 
@@ -2548,13 +2548,13 @@
 
     move-object/from16 v1, v35
 
-    iput-object v0, v1, Lcom/android/internal/telephony/PhoneBase;->mDataConnectionTracker:Lcom/android/internal/telephony/DataConnectionTracker;
+    iput-object v0, v1, Lcom/android/internal/telephony/cdma/CDMAPhone;->mDataConnectionTracker:Lcom/android/internal/telephony/DataConnectionTracker;
 
     .line 393
     :cond_7
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->cellLoc:Landroid/telephony/cdma/CdmaCellLocation;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->cellLoc:Landroid/telephony/cdma/CdmaCellLocation;
 
     move-object/from16 v31, v0
 
@@ -2562,7 +2562,7 @@
     .local v31, tcl:Landroid/telephony/cdma/CdmaCellLocation;
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->newCellLoc:Landroid/telephony/cdma/CdmaCellLocation;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->newCellLoc:Landroid/telephony/cdma/CdmaCellLocation;
 
     move-object/from16 v35, v0
 
@@ -2570,19 +2570,19 @@
 
     move-object/from16 v1, p0
 
-    iput-object v0, v1, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->cellLoc:Landroid/telephony/cdma/CdmaCellLocation;
+    iput-object v0, v1, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->cellLoc:Landroid/telephony/cdma/CdmaCellLocation;
 
     .line 395
     move-object/from16 v0, v31
 
     move-object/from16 v1, p0
 
-    iput-object v0, v1, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->newCellLoc:Landroid/telephony/cdma/CdmaCellLocation;
+    iput-object v0, v1, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->newCellLoc:Landroid/telephony/cdma/CdmaCellLocation;
 
     .line 397
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->mNewDataConnectionState:I
+    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mNewDataConnectionState:I
 
     move/from16 v35, v0
 
@@ -2590,12 +2590,12 @@
 
     move-object/from16 v1, p0
 
-    iput v0, v1, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->mDataConnectionState:I
+    iput v0, v1, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mDataConnectionState:I
 
     .line 398
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->mNewRilRadioTechnology:I
+    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mNewRilRadioTechnology:I
 
     move/from16 v35, v0
 
@@ -2603,7 +2603,7 @@
 
     move-object/from16 v1, p0
 
-    iput v0, v1, Lcom/android/internal/telephony/ServiceStateTracker;->mRilRadioTechnology:I
+    iput v0, v1, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mRilRadioTechnology:I
 
     .line 399
     const/16 v35, 0x0
@@ -2612,12 +2612,12 @@
 
     move-object/from16 v1, p0
 
-    iput v0, v1, Lcom/android/internal/telephony/ServiceStateTracker;->mNewRilRadioTechnology:I
+    iput v0, v1, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mNewRilRadioTechnology:I
 
     .line 401
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->newSS:Landroid/telephony/ServiceState;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->newSS:Landroid/telephony/ServiceState;
 
     move-object/from16 v35, v0
 
@@ -2629,7 +2629,7 @@
     .line 404
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
     move-object/from16 v35, v0
 
@@ -2637,7 +2637,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->mRilRadioTechnology:I
+    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mRilRadioTechnology:I
 
     move/from16 v37, v0
 
@@ -2654,7 +2654,7 @@
     .line 409
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->mNetworkAttachedRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mNetworkAttachedRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v35, v0
 
@@ -2667,7 +2667,7 @@
     .line 413
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
     move-object/from16 v35, v0
 
@@ -2680,7 +2680,7 @@
     .line 417
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->ss:Landroid/telephony/ServiceState;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->ss:Landroid/telephony/ServiceState;
 
     move-object/from16 v35, v0
 
@@ -2693,7 +2693,7 @@
     .line 418
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
     move-object/from16 v35, v0
 
@@ -2707,7 +2707,7 @@
     :goto_e
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->ss:Landroid/telephony/ServiceState;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->ss:Landroid/telephony/ServiceState;
 
     move-object/from16 v35, v0
 
@@ -2720,7 +2720,7 @@
     :cond_b
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->mUiccApplcation:Lcom/android/internal/telephony/UiccCardApplication;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mUiccApplcation:Lcom/android/internal/telephony/UiccCardApplication;
 
     move-object/from16 v35, v0
 
@@ -2728,7 +2728,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->mUiccApplcation:Lcom/android/internal/telephony/UiccCardApplication;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mUiccApplcation:Lcom/android/internal/telephony/UiccCardApplication;
 
     move-object/from16 v35, v0
 
@@ -2746,7 +2746,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->mIccRecords:Lcom/android/internal/telephony/IccRecords;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mIccRecords:Lcom/android/internal/telephony/IccRecords;
 
     move-object/from16 v35, v0
 
@@ -2755,7 +2755,7 @@
     .line 439
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->mIccRecords:Lcom/android/internal/telephony/IccRecords;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mIccRecords:Lcom/android/internal/telephony/IccRecords;
 
     move-object/from16 v35, v0
 
@@ -2769,7 +2769,7 @@
     .local v30, showSpn:Z
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->ss:Landroid/telephony/ServiceState;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->ss:Landroid/telephony/ServiceState;
 
     move-object/from16 v35, v0
 
@@ -2791,7 +2791,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->ss:Landroid/telephony/ServiceState;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->ss:Landroid/telephony/ServiceState;
 
     move-object/from16 v35, v0
 
@@ -2801,7 +2801,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->ss:Landroid/telephony/ServiceState;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->ss:Landroid/telephony/ServiceState;
 
     move-object/from16 v36, v0
 
@@ -2823,7 +2823,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->mIccRecords:Lcom/android/internal/telephony/IccRecords;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mIccRecords:Lcom/android/internal/telephony/IccRecords;
 
     move-object/from16 v35, v0
 
@@ -2832,13 +2832,13 @@
     .line 446
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->ss:Landroid/telephony/ServiceState;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->ss:Landroid/telephony/ServiceState;
 
     move-object/from16 v35, v0
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->mIccRecords:Lcom/android/internal/telephony/IccRecords;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mIccRecords:Lcom/android/internal/telephony/IccRecords;
 
     move-object/from16 v36, v0
 
@@ -2854,7 +2854,7 @@
     :cond_c
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
     move-object/from16 v35, v0
 
@@ -2862,7 +2862,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->ss:Landroid/telephony/ServiceState;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->ss:Landroid/telephony/ServiceState;
 
     move-object/from16 v37, v0
 
@@ -2885,7 +2885,7 @@
     .local v28, prevOperatorNumeric:Ljava/lang/String;
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->ss:Landroid/telephony/ServiceState;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->ss:Landroid/telephony/ServiceState;
 
     move-object/from16 v35, v0
 
@@ -2897,7 +2897,7 @@
     .local v27, operatorNumeric:Ljava/lang/String;
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
     move-object/from16 v35, v0
 
@@ -2926,7 +2926,7 @@
     .line 462
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
     move-object/from16 v35, v0
 
@@ -2943,14 +2943,14 @@
 
     move-object/from16 v1, p0
 
-    iput-boolean v0, v1, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->mGotCountryCode:Z
+    iput-boolean v0, v1, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mGotCountryCode:Z
 
     .line 486
     :cond_d
     :goto_f
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
     move-object/from16 v36, v0
 
@@ -2958,7 +2958,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->ss:Landroid/telephony/ServiceState;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->ss:Landroid/telephony/ServiceState;
 
     move-object/from16 v35, v0
 
@@ -2985,13 +2985,13 @@
     .line 490
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
     move-object/from16 v35, v0
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->ss:Landroid/telephony/ServiceState;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->ss:Landroid/telephony/ServiceState;
 
     move-object/from16 v36, v0
 
@@ -3009,7 +3009,7 @@
     :cond_f
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->mAttachedRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mAttachedRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v35, v0
 
@@ -3022,7 +3022,7 @@
     .line 498
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->mDetachedRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mDetachedRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v35, v0
 
@@ -3038,7 +3038,7 @@
     :cond_12
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
     move-object/from16 v35, v0
 
@@ -3053,7 +3053,7 @@
     .line 506
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->mRoamingOnRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mRoamingOnRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v35, v0
 
@@ -3066,7 +3066,7 @@
     .line 510
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->mRoamingOffRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mRoamingOffRegistrants:Landroid/os/RegistrantList;
 
     move-object/from16 v35, v0
 
@@ -3079,7 +3079,7 @@
     .line 514
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
     move-object/from16 v35, v0
 
@@ -3095,7 +3095,7 @@
     .local v5, arrayCi:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/telephony/CellInfo;>;"
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->mCellInfo:Landroid/telephony/CellInfo;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mCellInfo:Landroid/telephony/CellInfo;
 
     move-object/from16 v36, v0
 
@@ -3105,7 +3105,7 @@
     :try_start_0
     move-object/from16 v0, p0
 
-    iget-object v7, v0, Lcom/android/internal/telephony/ServiceStateTracker;->mCellInfo:Landroid/telephony/CellInfo;
+    iget-object v7, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mCellInfo:Landroid/telephony/CellInfo;
 
     check-cast v7, Landroid/telephony/CellInfoLte;
 
@@ -3158,7 +3158,7 @@
     .local v32, timeStamp:J
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->ss:Landroid/telephony/ServiceState;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->ss:Landroid/telephony/ServiceState;
 
     move-object/from16 v35, v0
 
@@ -3268,7 +3268,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->mCellInfo:Landroid/telephony/CellInfo;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mCellInfo:Landroid/telephony/CellInfo;
 
     move-object/from16 v37, v0
 
@@ -3293,7 +3293,7 @@
     .line 536
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->mCellInfo:Landroid/telephony/CellInfo;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mCellInfo:Landroid/telephony/CellInfo;
 
     move-object/from16 v35, v0
 
@@ -3307,7 +3307,7 @@
     :cond_18
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->mPhoneBase:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mPhoneBase:Lcom/android/internal/telephony/PhoneBase;
 
     move-object/from16 v35, v0
 
@@ -3345,7 +3345,7 @@
     :cond_19
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->newSS:Landroid/telephony/ServiceState;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->newSS:Landroid/telephony/ServiceState;
 
     move-object/from16 v35, v0
 
@@ -3357,12 +3357,12 @@
 
     move-object/from16 v1, p0
 
-    iput v0, v1, Lcom/android/internal/telephony/ServiceStateTracker;->mNewRilRadioTechnology:I
+    iput v0, v1, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mNewRilRadioTechnology:I
 
     .line 276
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->mNewRilRadioTechnology:I
+    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mNewRilRadioTechnology:I
 
     move/from16 v35, v0
 
@@ -3378,7 +3378,7 @@
 
     move-object/from16 v1, p0
 
-    iput v0, v1, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->mNewDataConnectionState:I
+    iput v0, v1, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mNewDataConnectionState:I
 
     .line 277
     new-instance v35, Ljava/lang/StringBuilder;
@@ -3393,7 +3393,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->mNewRilRadioTechnology:I
+    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mNewRilRadioTechnology:I
 
     move/from16 v36, v0
 
@@ -3409,7 +3409,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->mNewDataConnectionState:I
+    iget v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mNewDataConnectionState:I
 
     move/from16 v36, v0
 
@@ -3526,7 +3526,7 @@
     :cond_27
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->ss:Landroid/telephony/ServiceState;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->ss:Landroid/telephony/ServiceState;
 
     move-object/from16 v35, v0
 
@@ -3545,7 +3545,7 @@
     .line 420
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->mIccRecords:Lcom/android/internal/telephony/IccRecords;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mIccRecords:Lcom/android/internal/telephony/IccRecords;
 
     move-object/from16 v35, v0
 
@@ -3553,7 +3553,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/ServiceStateTracker;->mIccRecords:Lcom/android/internal/telephony/IccRecords;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mIccRecords:Lcom/android/internal/telephony/IccRecords;
 
     move-object/from16 v35, v0
 
@@ -3590,7 +3590,7 @@
     :cond_29
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
     move-object/from16 v35, v0
 
@@ -3666,7 +3666,7 @@
     :goto_14
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
     move-object/from16 v35, v0
 
@@ -3687,18 +3687,18 @@
 
     move-object/from16 v1, p0
 
-    iput-boolean v0, v1, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->mGotCountryCode:Z
+    iput-boolean v0, v1, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mGotCountryCode:Z
 
     .line 480
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
     move-object/from16 v35, v0
 
     move-object/from16 v0, p0
 
-    iget-boolean v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->mNeedFixZone:Z
+    iget-boolean v0, v0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->mNeedFixZone:Z
 
     move/from16 v36, v0
 
@@ -3844,7 +3844,7 @@
 
     .prologue
     .line 111
-    iget-object v0, p0, Lcom/android/internal/telephony/ServiceStateTracker;->newSS:Landroid/telephony/ServiceState;
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaLteServiceStateTracker;->newSS:Landroid/telephony/ServiceState;
 
     invoke-virtual {v0, p1}, Landroid/telephony/ServiceState;->setRadioTechnology(I)V
 

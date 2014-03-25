@@ -45,7 +45,7 @@
 
     iput-object p2, p0, Landroid/speech/tts/TextToSpeech$8;->val$loc:Ljava/util/Locale;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -137,7 +137,7 @@
 
     move-result-object v4
 
-    const-string v5, "language"
+    const-string/jumbo v5, "language"
 
     invoke-virtual {v4, v5, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 

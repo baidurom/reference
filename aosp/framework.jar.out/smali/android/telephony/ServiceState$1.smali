@@ -32,8 +32,8 @@
     .locals 0
 
     .prologue
-    .line 238
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 315
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -45,7 +45,7 @@
     .parameter "in"
 
     .prologue
-    .line 240
+    .line 317
     new-instance v0, Landroid/telephony/ServiceState;
 
     invoke-direct {v0, p1}, Landroid/telephony/ServiceState;-><init>(Landroid/os/Parcel;)V
@@ -58,7 +58,7 @@
     .parameter "x0"
 
     .prologue
-    .line 238
+    .line 315
     invoke-virtual {p0, p1}, Landroid/telephony/ServiceState$1;->createFromParcel(Landroid/os/Parcel;)Landroid/telephony/ServiceState;
 
     move-result-object v0
@@ -71,7 +71,7 @@
     .parameter "size"
 
     .prologue
-    .line 244
+    .line 321
     new-array v0, p1, [Landroid/telephony/ServiceState;
 
     return-object v0
@@ -82,7 +82,7 @@
     .parameter "x0"
 
     .prologue
-    .line 238
+    .line 315
     invoke-virtual {p0, p1}, Landroid/telephony/ServiceState$1;->newArray(I)[Landroid/telephony/ServiceState;
 
     move-result-object v0

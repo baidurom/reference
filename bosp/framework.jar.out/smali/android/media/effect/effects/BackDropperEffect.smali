@@ -50,7 +50,7 @@
     iput-object v0, p0, Landroid/media/effect/effects/BackDropperEffect;->mLearningListener:Landroid/filterpacks/videoproc/BackDropperFilter$LearningDoneListener;
 
     .line 85
-    iget-object v0, p0, Landroid/media/effect/FilterGraphEffect;->mGraph:Landroid/filterfw/core/FilterGraph;
+    iget-object v0, p0, Landroid/media/effect/effects/BackDropperEffect;->mGraph:Landroid/filterfw/core/FilterGraph;
 
     const-string/jumbo v1, "replacer"
 
@@ -60,7 +60,7 @@
 
     .line 86
     .local v7, replacer:Landroid/filterfw/core/Filter;
-    const-string v0, "learningDoneListener"
+    const-string/jumbo v0, "learningDoneListener"
 
     iget-object v1, p0, Landroid/media/effect/effects/BackDropperEffect;->mLearningListener:Landroid/filterpacks/videoproc/BackDropperFilter$LearningDoneListener;
 
@@ -99,7 +99,7 @@
     if-eqz v1, :cond_1
 
     .line 92
-    iget-object v1, p0, Landroid/media/effect/FilterGraphEffect;->mGraph:Landroid/filterfw/core/FilterGraph;
+    iget-object v1, p0, Landroid/media/effect/effects/BackDropperEffect;->mGraph:Landroid/filterfw/core/FilterGraph;
 
     const-string v2, "background"
 
@@ -130,7 +130,7 @@
     if-eqz v1, :cond_0
 
     .line 95
-    iget-object v1, p0, Landroid/media/effect/FilterGraphEffect;->mGraph:Landroid/filterfw/core/FilterGraph;
+    iget-object v1, p0, Landroid/media/effect/effects/BackDropperEffect;->mGraph:Landroid/filterfw/core/FilterGraph;
 
     const-string v2, "background"
 

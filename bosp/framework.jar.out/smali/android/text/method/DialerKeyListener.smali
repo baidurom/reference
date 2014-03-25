@@ -15,7 +15,7 @@
 
     .prologue
     .line 111
-    const/16 v0, 0x16
+    const/16 v0, 0x1a
 
     new-array v0, v0, [C
 
@@ -49,6 +49,10 @@
         0x2et 0x0t
         0x20t 0x0t
         0x3bt 0x0t
+        0x50t 0x0t
+        0x57t 0x0t
+        0x70t 0x0t
+        0x77t 0x0t
     .end array-data
 .end method
 

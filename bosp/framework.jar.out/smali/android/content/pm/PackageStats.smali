@@ -62,7 +62,7 @@
 
     .prologue
     .line 147
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 148
     iget-object v0, p1, Landroid/content/pm/PackageStats;->packageName:Ljava/lang/String;
@@ -124,7 +124,7 @@
 
     .prologue
     .line 134
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 135
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -206,7 +206,7 @@
 
     .prologue
     .line 123
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 124
     iput-object p1, p0, Landroid/content/pm/PackageStats;->packageName:Ljava/lang/String;
@@ -229,7 +229,7 @@
 
     .prologue
     .line 129
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 130
     iput-object p1, p0, Landroid/content/pm/PackageStats;->packageName:Ljava/lang/String;

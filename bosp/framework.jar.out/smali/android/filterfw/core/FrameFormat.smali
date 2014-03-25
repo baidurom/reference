@@ -65,7 +65,7 @@
     const/4 v1, 0x0
 
     .line 64
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 56
     iput v1, p0, Landroid/filterfw/core/FrameFormat;->mBaseType:I
@@ -96,7 +96,7 @@
     const/4 v1, 0x0
 
     .line 67
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 56
     iput v1, p0, Landroid/filterfw/core/FrameFormat;->mBaseType:I
@@ -161,13 +161,13 @@
 
     .line 348
     :pswitch_3
-    const-string v0, "int"
+    const-string/jumbo v0, "int"
 
     goto :goto_0
 
     .line 349
     :pswitch_4
-    const-string v0, "int"
+    const-string/jumbo v0, "int"
 
     goto :goto_0
 
@@ -1846,7 +1846,7 @@
     const/4 v1, 0x0
 
     :goto_0
-    iput-object v1, v0, Landroid/filterfw/core/FrameFormat;->mMetaData:Landroid/filterfw/core/KeyValueMap;
+    iput-object v1, v0, Landroid/filterfw/core/MutableFrameFormat;->mMetaData:Landroid/filterfw/core/KeyValueMap;
 
     .line 167
     return-object v0

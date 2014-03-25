@@ -194,7 +194,7 @@
     .line 157
     new-array v0, v4, [Ljava/lang/String;
 
-    const-string v1, "key"
+    const-string/jumbo v1, "key"
 
     aput-object v1, v0, v2
 
@@ -632,7 +632,7 @@
 
     invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v13, "insertAccountIntoDatabase: "
+    const-string/jumbo v13, "insertAccountIntoDatabase: "
 
     invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -741,7 +741,7 @@
 
     invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v13, "insertAccountIntoDatabase: "
+    const-string/jumbo v13, "insertAccountIntoDatabase: "
 
     invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -838,7 +838,7 @@
 
     invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v13, "insertAccountIntoDatabase: "
+    const-string/jumbo v13, "insertAccountIntoDatabase: "
 
     invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2601,7 +2601,7 @@
 
     move-result-object v0
 
-    const-string v3, "key"
+    const-string/jumbo v3, "key"
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3520,7 +3520,7 @@
 
     .line 580
     .local v0, values:Landroid/content/ContentValues;
-    const-string v1, "key"
+    const-string/jumbo v1, "key"
 
     invoke-virtual {v0, v1, p4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -3541,7 +3541,7 @@
     .line 583
     const-string v1, "extras"
 
-    const-string v2, "key"
+    const-string/jumbo v2, "key"
 
     invoke-virtual {p1, v1, v2, v0}, Landroid/database/sqlite/SQLiteDatabase;->insert(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
 
@@ -9087,7 +9087,7 @@
 
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
-    const-string v4, "key is null"
+    const-string/jumbo v4, "key is null"
 
     invoke-direct {v3, v4}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -9360,7 +9360,7 @@
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v6, "invalidateAuthToken: accountType "
+    const-string/jumbo v6, "invalidateAuthToken: accountType "
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -10735,7 +10735,7 @@
 
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
-    const-string v4, "key is null"
+    const-string/jumbo v4, "key is null"
 
     invoke-direct {v3, v4}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

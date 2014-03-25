@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 438
+    .line 466
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -28,38 +28,48 @@
 
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Ljava/lang/Object;
-    .locals 5
+    .locals 8
     .parameter "ctx"
 
     .prologue
-    .line 440
-    const-string/jumbo v2, "power"
-
-    invoke-static {v2}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+    .line 468
+    invoke-virtual {p1}, Landroid/app/ContextImpl;->getOuterContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 441
-    .local v0, b:Landroid/os/IBinder;
-    invoke-static {v0}, Landroid/os/IPowerManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/os/IPowerManager;
+    .line 469
+    .local v0, outerContext:Landroid/content/Context;
+    new-instance v1, Landroid/app/NotificationManager;
 
-    move-result-object v1
+    new-instance v2, Landroid/view/ContextThemeWrapper;
 
-    .line 442
-    .local v1, service:Landroid/os/IPowerManager;
-    new-instance v2, Landroid/os/PowerManager;
+    const/4 v3, 0x0
 
-    invoke-virtual {p1}, Landroid/app/ContextImpl;->getOuterContext()Landroid/content/Context;
-
-    move-result-object v3
-
-    iget-object v4, p1, Landroid/app/ContextImpl;->mMainThread:Landroid/app/ActivityThread;
-
-    invoke-virtual {v4}, Landroid/app/ActivityThread;->getHandler()Landroid/os/Handler;
+    invoke-virtual {v0}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
 
     move-result-object v4
 
-    invoke-direct {v2, v3, v1, v4}, Landroid/os/PowerManager;-><init>(Landroid/content/Context;Landroid/os/IPowerManager;Landroid/os/Handler;)V
+    iget v4, v4, Landroid/content/pm/ApplicationInfo;->targetSdkVersion:I
 
-    return-object v2
+    const v5, #style@Theme.Dialog#t
+
+    const v6, #style@Theme.Holo.Dialog#t
+
+    const v7, #style@Theme.DeviceDefault.Dialog#t
+
+    invoke-static {v3, v4, v5, v6, v7}, Landroid/content/res/Resources;->selectSystemTheme(IIIII)I
+
+    move-result v3
+
+    invoke-direct {v2, v0, v3}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
+
+    iget-object v3, p1, Landroid/app/ContextImpl;->mMainThread:Landroid/app/ActivityThread;
+
+    invoke-virtual {v3}, Landroid/app/ActivityThread;->getHandler()Landroid/os/Handler;
+
+    move-result-object v3
+
+    invoke-direct {v1, v2, v3}, Landroid/app/NotificationManager;-><init>(Landroid/content/Context;Landroid/os/Handler;)V
+
+    return-object v1
 .end method

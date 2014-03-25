@@ -29,5 +29,11 @@
     <item type="drawable" name="screen_background_holo_dark">#ff000000</item>
     <item type="drawable" name="notification_template_icon_bg">#3333b5e5</item>
     <item type="drawable" name="notification_template_icon_low_bg">#0cffffff</item>
-    <item type="drawable" name="APKTOOL_DUMMY_058d">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_02e4">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_02e5">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_02e6">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_02e7">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0363">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0364">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0594">false</item>
 </resources>

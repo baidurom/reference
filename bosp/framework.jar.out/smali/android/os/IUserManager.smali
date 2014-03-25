@@ -23,6 +23,14 @@
     .end annotation
 .end method
 
+.method public abstract getSwitchedUserId()I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract getUserHandle(I)I
     .annotation system Ldalvik/annotation/Throws;
         value = {

@@ -44,7 +44,7 @@
 
     .prologue
     .line 158
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 159
     iput-object p1, p0, Landroid/net/sip/SipManager;->mContext:Landroid/content/Context;
@@ -516,7 +516,7 @@
     .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Landroid/net/sip/SipException;
 
-    const-string v2, "isOpened()"
+    const-string/jumbo v2, "isOpened()"
 
     invoke-direct {v1, v2, v0}, Landroid/net/sip/SipException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
@@ -553,7 +553,7 @@
     .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Landroid/net/sip/SipException;
 
-    const-string v2, "isRegistered()"
+    const-string/jumbo v2, "isRegistered()"
 
     invoke-direct {v1, v2, v0}, Landroid/net/sip/SipException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
@@ -745,7 +745,7 @@
     .line 220
     new-instance v1, Ljava/lang/NullPointerException;
 
-    const-string v2, "incomingCallPendingIntent cannot be null"
+    const-string/jumbo v2, "incomingCallPendingIntent cannot be null"
 
     invoke-direct {v1, v2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 

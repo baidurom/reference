@@ -25,7 +25,7 @@
     .parameter "x0"
 
     .prologue
-    .line 314
+    .line 342
     iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$3;->this$0:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -40,12 +40,12 @@
     .parameter "selfChange"
 
     .prologue
-    .line 317
+    .line 345
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$3;->this$0:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;
 
     #calls: Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;->updateAlarmInfo()V
     invoke-static {v0}, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;->access$1000(Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;)V
 
-    .line 318
+    .line 346
     return-void
 .end method

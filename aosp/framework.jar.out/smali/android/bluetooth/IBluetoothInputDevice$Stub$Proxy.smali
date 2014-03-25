@@ -28,7 +28,7 @@
 
     .prologue
     .line 256
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 257
     iput-object p1, p0, Landroid/bluetooth/IBluetoothInputDevice$Stub$Proxy;->mRemote:Landroid/os/IBinder;

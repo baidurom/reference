@@ -1,4 +1,4 @@
-.class Lcom/android/internal/telephony/cdma/sms/BearerData$Gsm7bitCodingResult;
+.class public Lcom/android/internal/telephony/cdma/sms/BearerData$Gsm7bitCodingResult;
 .super Ljava/lang/Object;
 .source "BearerData.java"
 
@@ -9,35 +9,24 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
+    accessFlags = 0x9
     name = "Gsm7bitCodingResult"
 .end annotation
 
 
 # instance fields
-.field data:[B
+.field public data:[B
 
-.field septets:I
+.field public septets:I
 
 
 # direct methods
-.method private constructor <init>()V
+.method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 540
+    .line 513
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method synthetic constructor <init>(Lcom/android/internal/telephony/cdma/sms/BearerData$1;)V
-    .locals 0
-    .parameter "x0"
-
-    .prologue
-    .line 540
-    invoke-direct {p0}, Lcom/android/internal/telephony/cdma/sms/BearerData$Gsm7bitCodingResult;-><init>()V
 
     return-void
 .end method

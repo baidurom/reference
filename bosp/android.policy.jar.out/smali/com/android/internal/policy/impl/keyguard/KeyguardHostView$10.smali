@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 1336
+    .line 1498
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$10;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -38,15 +38,9 @@
 
 # virtual methods
 .method public run()V
-    .locals 1
+    .locals 0
 
     .prologue
-    .line 1339
-    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$10;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
-
-    #calls: Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->showAppropriateWidgetPage()V
-    invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->access$2100(Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;)V
-
-    .line 1340
+    .line 1502
     return-void
 .end method

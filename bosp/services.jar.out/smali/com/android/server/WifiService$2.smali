@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 400
+    .line 452
     iput-object p1, p0, Lcom/android/server/WifiService$2;->this$0:Lcom/android/server/WifiService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,81 +35,95 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 4
+    .locals 5
     .parameter "context"
     .parameter "intent"
 
     .prologue
     const/4 v1, 0x1
 
-    .line 403
+    const/4 v2, 0x0
+
+    .line 455
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    const-string v3, "android.net.wifi.WIFI_STATE_CHANGED"
+    const-string v4, "android.net.wifi.WIFI_STATE_CHANGED"
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_2
+    if-eqz v3, :cond_2
 
-    .line 404
-    const-string v2, "wifi_state"
+    .line 456
+    const-string v3, "wifi_state"
 
-    invoke-virtual {p2, v2, v1}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    invoke-virtual {p2, v3, v1}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v0
 
-    .line 407
+    .line 459
     .local v0, wifiState:I
-    iget-object v2, p0, Lcom/android/server/WifiService$2;->this$0:Lcom/android/server/WifiService;
+    iget-object v3, p0, Lcom/android/server/WifiService$2;->this$0:Lcom/android/server/WifiService;
 
-    const/4 v3, 0x3
+    const/4 v4, 0x3
 
-    if-ne v0, v3, :cond_1
+    if-ne v0, v4, :cond_1
 
     :goto_0
     #setter for: Lcom/android/server/WifiService;->mWifiEnabled:Z
-    invoke-static {v2, v1}, Lcom/android/server/WifiService;->access$1202(Lcom/android/server/WifiService;Z)Z
+    invoke-static {v3, v1}, Lcom/android/server/WifiService;->access$1202(Lcom/android/server/WifiService;Z)Z
 
-    .line 410
+    .line 462
     iget-object v1, p0, Lcom/android/server/WifiService$2;->this$0:Lcom/android/server/WifiService;
 
     #calls: Lcom/android/server/WifiService;->resetNotification()V
     invoke-static {v1}, Lcom/android/server/WifiService;->access$1300(Lcom/android/server/WifiService;)V
 
-    .line 429
+    .line 463
+    iget-object v1, p0, Lcom/android/server/WifiService$2;->this$0:Lcom/android/server/WifiService;
+
+    #setter for: Lcom/android/server/WifiService;->mWaitForScanResult:Z
+    invoke-static {v1, v2}, Lcom/android/server/WifiService;->access$1402(Lcom/android/server/WifiService;Z)Z
+
+    .line 464
+    iget-object v1, p0, Lcom/android/server/WifiService$2;->this$0:Lcom/android/server/WifiService;
+
+    #setter for: Lcom/android/server/WifiService;->mShowReselectDialog:Z
+    invoke-static {v1, v2}, Lcom/android/server/WifiService;->access$1502(Lcom/android/server/WifiService;Z)Z
+
+    .line 486
     .end local v0           #wifiState:I
     :cond_0
     :goto_1
     return-void
 
-    .line 407
     .restart local v0       #wifiState:I
     :cond_1
-    const/4 v1, 0x0
+    move v1, v2
 
+    .line 459
     goto :goto_0
 
-    .line 411
+    .line 465
     .end local v0           #wifiState:I
     :cond_2
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v1
 
-    const-string v2, "android.net.wifi.STATE_CHANGE"
+    const-string v3, "android.net.wifi.STATE_CHANGE"
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_3
 
-    .line 413
-    iget-object v2, p0, Lcom/android/server/WifiService$2;->this$0:Lcom/android/server/WifiService;
+    .line 467
+    iget-object v3, p0, Lcom/android/server/WifiService$2;->this$0:Lcom/android/server/WifiService;
 
     const-string v1, "networkInfo"
 
@@ -119,37 +133,71 @@
 
     check-cast v1, Landroid/net/NetworkInfo;
 
-    iput-object v1, v2, Lcom/android/server/WifiService;->mNetworkInfo:Landroid/net/NetworkInfo;
+    iput-object v1, v3, Lcom/android/server/WifiService;->mNetworkInfo:Landroid/net/NetworkInfo;
 
-    .line 416
-    sget-object v1, Lcom/android/server/WifiService$4;->$SwitchMap$android$net$NetworkInfo$DetailedState:[I
+    .line 469
+    const-string v1, "WifiService"
 
-    iget-object v2, p0, Lcom/android/server/WifiService$2;->this$0:Lcom/android/server/WifiService;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    iget-object v2, v2, Lcom/android/server/WifiService;->mNetworkInfo:Landroid/net/NetworkInfo;
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v2}, Landroid/net/NetworkInfo;->getDetailedState()Landroid/net/NetworkInfo$DetailedState;
+    const-string v4, "Received NETWORK_STATE_CHANGED_ACTION, mNetworkInfo:"
 
-    move-result-object v2
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2}, Landroid/net/NetworkInfo$DetailedState;->ordinal()I
+    move-result-object v3
 
-    move-result v2
+    iget-object v4, p0, Lcom/android/server/WifiService$2;->this$0:Lcom/android/server/WifiService;
 
-    aget v1, v1, v2
+    iget-object v4, v4, Lcom/android/server/WifiService;->mNetworkInfo:Landroid/net/NetworkInfo;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v1, v3}, Lcom/mediatek/xlog/SXlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 471
+    sget-object v1, Lcom/android/server/WifiService$6;->$SwitchMap$android$net$NetworkInfo$DetailedState:[I
+
+    iget-object v3, p0, Lcom/android/server/WifiService$2;->this$0:Lcom/android/server/WifiService;
+
+    iget-object v3, v3, Lcom/android/server/WifiService;->mNetworkInfo:Landroid/net/NetworkInfo;
+
+    invoke-virtual {v3}, Landroid/net/NetworkInfo;->getDetailedState()Landroid/net/NetworkInfo$DetailedState;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/net/NetworkInfo$DetailedState;->ordinal()I
+
+    move-result v3
+
+    aget v1, v1, v3
 
     packed-switch v1, :pswitch_data_0
 
     goto :goto_1
 
-    .line 420
+    .line 473
     :pswitch_0
     iget-object v1, p0, Lcom/android/server/WifiService$2;->this$0:Lcom/android/server/WifiService;
 
-    #calls: Lcom/android/server/WifiService;->evaluateTrafficStatsPolling()V
-    invoke-static {v1}, Lcom/android/server/WifiService;->access$1400(Lcom/android/server/WifiService;)V
+    #setter for: Lcom/android/server/WifiService;->mWaitForScanResult:Z
+    invoke-static {v1, v2}, Lcom/android/server/WifiService;->access$1402(Lcom/android/server/WifiService;Z)Z
 
-    .line 421
+    .line 476
+    :pswitch_1
+    iget-object v1, p0, Lcom/android/server/WifiService$2;->this$0:Lcom/android/server/WifiService;
+
+    #calls: Lcom/android/server/WifiService;->evaluateTrafficStatsPolling()V
+    invoke-static {v1}, Lcom/android/server/WifiService;->access$1600(Lcom/android/server/WifiService;)V
+
+    .line 477
     iget-object v1, p0, Lcom/android/server/WifiService$2;->this$0:Lcom/android/server/WifiService;
 
     #calls: Lcom/android/server/WifiService;->resetNotification()V
@@ -157,41 +205,51 @@
 
     goto :goto_1
 
-    .line 424
+    .line 480
     :cond_3
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v1
 
-    const-string v2, "android.net.wifi.SCAN_RESULTS"
+    const-string v3, "android.net.wifi.SCAN_RESULTS"
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 426
+    .line 482
+    iget-object v1, p0, Lcom/android/server/WifiService$2;->this$0:Lcom/android/server/WifiService;
+
+    const-string v3, "SHOW_RESELECT_DIALOG"
+
+    invoke-virtual {p2, v3, v2}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+
+    move-result v2
+
+    #setter for: Lcom/android/server/WifiService;->mShowReselectDialog:Z
+    invoke-static {v1, v2}, Lcom/android/server/WifiService;->access$1502(Lcom/android/server/WifiService;Z)Z
+
+    .line 483
     iget-object v1, p0, Lcom/android/server/WifiService$2;->this$0:Lcom/android/server/WifiService;
 
     #calls: Lcom/android/server/WifiService;->noteScanEnd()V
-    invoke-static {v1}, Lcom/android/server/WifiService;->access$1500(Lcom/android/server/WifiService;)V
+    invoke-static {v1}, Lcom/android/server/WifiService;->access$1700(Lcom/android/server/WifiService;)V
 
-    .line 427
+    .line 484
     iget-object v1, p0, Lcom/android/server/WifiService$2;->this$0:Lcom/android/server/WifiService;
 
     #calls: Lcom/android/server/WifiService;->checkAndSetNotification()V
-    invoke-static {v1}, Lcom/android/server/WifiService;->access$1600(Lcom/android/server/WifiService;)V
+    invoke-static {v1}, Lcom/android/server/WifiService;->access$1800(Lcom/android/server/WifiService;)V
 
     goto :goto_1
 
-    .line 416
-    nop
-
+    .line 471
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
-        :pswitch_0
-        :pswitch_0
+        :pswitch_1
+        :pswitch_1
     .end packed-switch
 .end method

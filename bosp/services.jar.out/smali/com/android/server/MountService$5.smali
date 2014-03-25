@@ -1,11 +1,11 @@
 .class Lcom/android/server/MountService$5;
-.super Ljava/lang/Thread;
+.super Landroid/content/BroadcastReceiver;
 .source "MountService.java"
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/MountService;->notifyShareAvailabilityChange(Z)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/android/server/MountService;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,45 +24,63 @@
     .parameter
 
     .prologue
-    .line 1124
+    .line 985
     iput-object p1, p0, Lcom/android/server/MountService$5;->this$0:Lcom/android/server/MountService;
 
-    invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 3
+    .parameter "context"
+    .parameter "intent"
 
     .prologue
-    .line 1128
-    :try_start_0
+    .line 990
+    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 991
+    .local v0, action:Ljava/lang/String;
+    const-string v1, "android.intent.action.BOOT_COMPLETED"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 992
+    const-string v1, "MountService"
+
+    const-string v2, "MountService BOOT_COMPLETED!"
+
+    invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 993
     iget-object v1, p0, Lcom/android/server/MountService$5;->this$0:Lcom/android/server/MountService;
 
-    const/4 v2, 0x0
+    const/4 v2, 0x1
 
-    invoke-virtual {v1, v2}, Lcom/android/server/MountService;->setUsbMassStorageEnabled(Z)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    #setter for: Lcom/android/server/MountService;->mBootCompleted:Z
+    invoke-static {v1, v2}, Lcom/android/server/MountService;->access$2802(Lcom/android/server/MountService;Z)Z
 
-    .line 1140
+    .line 1064
     :goto_0
     return-void
 
-    .line 1137
-    :catch_0
-    move-exception v0
+    .line 997
+    :cond_0
+    new-instance v1, Lcom/android/server/MountService$5$1;
 
-    .line 1138
-    .local v0, ex:Ljava/lang/Exception;
-    const-string v1, "MountService"
+    invoke-direct {v1, p0}, Lcom/android/server/MountService$5$1;-><init>(Lcom/android/server/MountService$5;)V
 
-    const-string v2, "Failed to mount media on UMS enabled-disconnect"
-
-    invoke-static {v1, v2, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-virtual {v1}, Lcom/android/server/MountService$5$1;->start()V
 
     goto :goto_0
 .end method

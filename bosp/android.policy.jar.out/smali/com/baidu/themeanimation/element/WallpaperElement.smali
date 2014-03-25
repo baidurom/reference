@@ -32,7 +32,7 @@
     invoke-static {v0, v1}, Lcom/baidu/themeanimation/util/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 29
-    iget-object v0, p0, Lcom/baidu/themeanimation/element/ImageElement;->mImageElementView:Lcom/baidu/themeanimation/element/ImageElement$ImageElementView;
+    iget-object v0, p0, Lcom/baidu/themeanimation/element/WallpaperElement;->mImageElementView:Lcom/baidu/themeanimation/element/ImageElement$ImageElementView;
 
     if-eqz v0, :cond_0
 
@@ -47,7 +47,7 @@
     if-eqz v0, :cond_0
 
     .line 30
-    iget-object v0, p0, Lcom/baidu/themeanimation/element/ImageElement;->mImageElementView:Lcom/baidu/themeanimation/element/ImageElement$ImageElementView;
+    iget-object v0, p0, Lcom/baidu/themeanimation/element/WallpaperElement;->mImageElementView:Lcom/baidu/themeanimation/element/ImageElement$ImageElementView;
 
     invoke-static {}, Lcom/baidu/themeanimation/util/FileUtil;->getInstance()Lcom/baidu/themeanimation/util/FileUtil;
 
@@ -86,7 +86,7 @@
     const/4 v4, 0x0
 
     .line 35
-    iget-object v1, p0, Lcom/baidu/themeanimation/element/ImageElement;->mImageElementView:Lcom/baidu/themeanimation/element/ImageElement$ImageElementView;
+    iget-object v1, p0, Lcom/baidu/themeanimation/element/WallpaperElement;->mImageElementView:Lcom/baidu/themeanimation/element/ImageElement$ImageElementView;
 
     if-nez v1, :cond_0
 
@@ -104,7 +104,7 @@
 
     invoke-direct {v1, p0, p1, p0, v2}, Lcom/baidu/themeanimation/element/ImageElement$ImageElementView;-><init>(Lcom/baidu/themeanimation/element/ImageElement;Landroid/content/Context;Lcom/baidu/themeanimation/element/VisibleElement;I)V
 
-    iput-object v1, p0, Lcom/baidu/themeanimation/element/ImageElement;->mImageElementView:Lcom/baidu/themeanimation/element/ImageElement$ImageElementView;
+    iput-object v1, p0, Lcom/baidu/themeanimation/element/WallpaperElement;->mImageElementView:Lcom/baidu/themeanimation/element/ImageElement$ImageElementView;
 
     .line 40
     new-instance v0, Landroid/widget/RelativeLayout$LayoutParams;
@@ -136,19 +136,19 @@
     invoke-virtual {v0, v4, v4, v4, v4}, Landroid/widget/RelativeLayout$LayoutParams;->setMargins(IIII)V
 
     .line 44
-    iget-object v1, p0, Lcom/baidu/themeanimation/element/ImageElement;->mImageElementView:Lcom/baidu/themeanimation/element/ImageElement$ImageElementView;
+    iget-object v1, p0, Lcom/baidu/themeanimation/element/WallpaperElement;->mImageElementView:Lcom/baidu/themeanimation/element/ImageElement$ImageElementView;
 
     invoke-virtual {v1, v0}, Lcom/baidu/themeanimation/element/ImageElement$ImageElementView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 46
-    iget-object v1, p0, Lcom/baidu/themeanimation/element/ImageElement;->mImageElementView:Lcom/baidu/themeanimation/element/ImageElement$ImageElementView;
+    iget-object v1, p0, Lcom/baidu/themeanimation/element/WallpaperElement;->mImageElementView:Lcom/baidu/themeanimation/element/ImageElement$ImageElementView;
 
     invoke-virtual {p0, v1}, Lcom/baidu/themeanimation/element/WallpaperElement;->setView(Landroid/view/View;)V
 
     .line 48
     .end local v0           #layoutParams:Landroid/widget/RelativeLayout$LayoutParams;
     :cond_0
-    iget-object v1, p0, Lcom/baidu/themeanimation/element/ImageElement;->mImageElementView:Lcom/baidu/themeanimation/element/ImageElement$ImageElementView;
+    iget-object v1, p0, Lcom/baidu/themeanimation/element/WallpaperElement;->mImageElementView:Lcom/baidu/themeanimation/element/ImageElement$ImageElementView;
 
     return-object v1
 .end method

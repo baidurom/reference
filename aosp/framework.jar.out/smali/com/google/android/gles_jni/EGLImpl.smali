@@ -32,7 +32,7 @@
     const/4 v1, -0x1
 
     .line 26
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 27
     new-instance v0, Lcom/google/android/gles_jni/EGLContextImpl;

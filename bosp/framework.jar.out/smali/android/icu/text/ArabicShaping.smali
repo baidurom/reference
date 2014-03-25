@@ -1072,7 +1072,7 @@
     const/4 v2, 0x0
 
     .line 198
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 199
     iput p1, p0, Landroid/icu/text/ArabicShaping;->options:I
@@ -5474,7 +5474,7 @@
 
     .line 594
     :sswitch_4
-    const-string v1, "lamAlef auto"
+    const-string/jumbo v1, "lamAlef auto"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
@@ -5633,8 +5633,6 @@
     goto/16 :goto_7
 
     .line 589
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x0 -> :sswitch_0

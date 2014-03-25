@@ -142,7 +142,7 @@
 
     .line 73
     .local v3, tag:Ljava/lang/String;
-    const-string v5, "intent"
+    const-string/jumbo v5, "intent"
 
     invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

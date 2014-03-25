@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest android:sharedUserId="android.uid.system" android:versionCode="17" android:versionName="4.2.2-573038" android:sharedUserLabel="@string/android_system_label" package="android" coreApp="true"
+<manifest android:sharedUserId="android.uid.system" android:versionCode="17" android:versionName="4.2.2-eng.duanqizhi.1394786591" android:sharedUserLabel="@string/android_system_label" package="android" coreApp="true"
   xmlns:android="http://schemas.android.com/apk/res/android">
     <eat-comment />
     <protected-broadcast android:name="android.intent.action.SCREEN_OFF" />
@@ -224,6 +224,7 @@
     <permission android:label="@string/permlab_wakeLock" android:name="android.permission.WAKE_LOCK" android:protectionLevel="normal" android:permissionGroup="android.permission-group.AFFECTS_BATTERY" android:description="@string/permdesc_wakeLock" />
     <permission-group android:label="@string/permgrouplab_audioSettings" android:icon="@drawable/perm_group_audio_settings" android:name="android.permission-group.AUDIO_SETTINGS" android:priority="130" android:description="@string/permgroupdesc_audioSettings" />
     <permission android:label="@string/permlab_modifyAudioSettings" android:name="android.permission.MODIFY_AUDIO_SETTINGS" android:protectionLevel="normal" android:permissionGroup="android.permission-group.AUDIO_SETTINGS" android:description="@string/permdesc_modifyAudioSettings" />
+    <permission android:label="@string/permlab_camera" android:name="android.permission.ACCESS_MTK_MMHW" android:protectionLevel="normal" android:permissionGroup="android.permission-group.HARDWARE_CONTROLS" android:description="@string/permdesc_camera" />
     <eat-comment />
     <permission-group android:label="@string/permgrouplab_hardwareControls" android:name="android.permission-group.HARDWARE_CONTROLS" android:priority="260" android:description="@string/permgroupdesc_hardwareControls" />
     <permission android:label="@string/permlab_manageUsb" android:name="android.permission.MANAGE_USB" android:protectionLevel="system|signature" android:permissionGroup="android.permission-group.HARDWARE_CONTROLS" android:description="@string/permdesc_manageUsb" />
@@ -449,5 +450,17 @@
             </intent-filter>
         </receiver>
         <service android:name="com.android.internal.os.storage.ExternalStorageFormatter" android:permission="android.permission.MASTER_CLEAR" android:exported="true" />
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.android.server.AlarmShutdownActivity" android:permission="android.permission.SHUTDOWN" android:excludeFromRecents="true" android:configChanges="locale|mcc|mnc|keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|fontScale">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_ALARM_REQUEST_SHUTDOWN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.Holo.Dialog.Alert" android:name="com.mediatek.storage.StorageDefaultPathDialog" android:excludeFromRecents="true" android:launchMode="singleTop" android:configChanges="keyboardHidden|orientation|screenSize">
+            <intent-filter>
+                <action android:name="com.mediatek.storage.StorageDefaultPathDialog" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 </manifest>

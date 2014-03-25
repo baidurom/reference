@@ -52,7 +52,7 @@
 
     const/4 v2, 0x0
 
-    .line 1008
+    .line 1025
     new-instance v0, Landroid/text/TextUtils$TruncateAt;
 
     const-string v1, "START"
@@ -61,7 +61,7 @@
 
     sput-object v0, Landroid/text/TextUtils$TruncateAt;->START:Landroid/text/TextUtils$TruncateAt;
 
-    .line 1009
+    .line 1026
     new-instance v0, Landroid/text/TextUtils$TruncateAt;
 
     const-string v1, "MIDDLE"
@@ -70,7 +70,7 @@
 
     sput-object v0, Landroid/text/TextUtils$TruncateAt;->MIDDLE:Landroid/text/TextUtils$TruncateAt;
 
-    .line 1010
+    .line 1027
     new-instance v0, Landroid/text/TextUtils$TruncateAt;
 
     const-string v1, "END"
@@ -79,7 +79,7 @@
 
     sput-object v0, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
-    .line 1011
+    .line 1028
     new-instance v0, Landroid/text/TextUtils$TruncateAt;
 
     const-string v1, "MARQUEE"
@@ -88,7 +88,7 @@
 
     sput-object v0, Landroid/text/TextUtils$TruncateAt;->MARQUEE:Landroid/text/TextUtils$TruncateAt;
 
-    .line 1015
+    .line 1032
     new-instance v0, Landroid/text/TextUtils$TruncateAt;
 
     const-string v1, "END_SMALL"
@@ -97,7 +97,7 @@
 
     sput-object v0, Landroid/text/TextUtils$TruncateAt;->END_SMALL:Landroid/text/TextUtils$TruncateAt;
 
-    .line 1007
+    .line 1024
     const/4 v0, 0x5
 
     new-array v0, v0, [Landroid/text/TextUtils$TruncateAt;
@@ -138,7 +138,7 @@
     .end annotation
 
     .prologue
-    .line 1007
+    .line 1024
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -149,7 +149,7 @@
     .parameter "name"
 
     .prologue
-    .line 1007
+    .line 1024
     const-class v0, Landroid/text/TextUtils$TruncateAt;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -165,7 +165,7 @@
     .locals 1
 
     .prologue
-    .line 1007
+    .line 1024
     sget-object v0, Landroid/text/TextUtils$TruncateAt;->$VALUES:[Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v0}, [Landroid/text/TextUtils$TruncateAt;->clone()Ljava/lang/Object;

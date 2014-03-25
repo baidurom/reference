@@ -48,7 +48,7 @@
     .line 53
     new-instance v2, Ljava/lang/Object;
 
-    invoke-direct/range {v2 .. v2}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v2}, Ljava/lang/Object;-><init>()V
 
     iput-object v2, p0, Lcom/android/server/usb/UsbService;->mLock:Ljava/lang/Object;
 

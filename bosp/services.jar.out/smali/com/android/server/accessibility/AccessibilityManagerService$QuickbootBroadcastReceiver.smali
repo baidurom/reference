@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 226
+    .line 234
     iput-object p1, p0, Lcom/android/server/accessibility/AccessibilityManagerService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -38,7 +38,7 @@
     .parameter "x1"
 
     .prologue
-    .line 226
+    .line 234
     invoke-direct {p0, p1}, Lcom/android/server/accessibility/AccessibilityManagerService$QuickbootBroadcastReceiver;-><init>(Lcom/android/server/accessibility/AccessibilityManagerService;)V
 
     return-void
@@ -52,7 +52,7 @@
     .parameter "intent"
 
     .prologue
-    .line 229
+    .line 237
     iget-object v1, p0, Lcom/android/server/accessibility/AccessibilityManagerService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
 
     #calls: Lcom/android/server/accessibility/AccessibilityManagerService;->getCurrentUserStateLocked()Lcom/android/server/accessibility/AccessibilityManagerService$UserState;
@@ -60,7 +60,7 @@
 
     move-result-object v0
 
-    .line 230
+    .line 238
     .local v0, state:Lcom/android/server/accessibility/AccessibilityManagerService$UserState;
     const-string v1, "android.intent.action.ACTION_QUICKBOOT_BOOT"
 
@@ -74,36 +74,36 @@
 
     if-eqz v1, :cond_2
 
-    .line 231
+    .line 239
     iget-boolean v1, v0, Lcom/android/server/accessibility/AccessibilityManagerService$UserState;->mIsAccessibilityEnabled:Z
 
     if-eqz v1, :cond_0
 
-    .line 232
+    .line 240
     iget-object v1, p0, Lcom/android/server/accessibility/AccessibilityManagerService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
 
     #calls: Lcom/android/server/accessibility/AccessibilityManagerService;->scheduleSendStateToClientsLocked(Lcom/android/server/accessibility/AccessibilityManagerService$UserState;)V
     invoke-static {v1, v0}, Lcom/android/server/accessibility/AccessibilityManagerService;->access$300(Lcom/android/server/accessibility/AccessibilityManagerService;Lcom/android/server/accessibility/AccessibilityManagerService$UserState;)V
 
-    .line 234
+    .line 242
     :cond_0
     iget-object v1, p0, Lcom/android/server/accessibility/AccessibilityManagerService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
 
     #calls: Lcom/android/server/accessibility/AccessibilityManagerService;->populateEnabledAccessibilityServicesLocked(Lcom/android/server/accessibility/AccessibilityManagerService$UserState;)V
     invoke-static {v1, v0}, Lcom/android/server/accessibility/AccessibilityManagerService;->access$400(Lcom/android/server/accessibility/AccessibilityManagerService;Lcom/android/server/accessibility/AccessibilityManagerService$UserState;)V
 
-    .line 235
+    .line 243
     iget-object v1, p0, Lcom/android/server/accessibility/AccessibilityManagerService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
 
     #calls: Lcom/android/server/accessibility/AccessibilityManagerService;->manageServicesLocked(Lcom/android/server/accessibility/AccessibilityManagerService$UserState;)V
     invoke-static {v1, v0}, Lcom/android/server/accessibility/AccessibilityManagerService;->access$500(Lcom/android/server/accessibility/AccessibilityManagerService;Lcom/android/server/accessibility/AccessibilityManagerService$UserState;)V
 
-    .line 245
+    .line 253
     :cond_1
     :goto_0
     return-void
 
-    .line 236
+    .line 244
     :cond_2
     const-string v1, "android.intent.action.ACTION_QUICKBOOT_SHUTDOWN"
 
@@ -117,17 +117,17 @@
 
     if-eqz v1, :cond_1
 
-    .line 237
+    .line 245
     iget-boolean v1, v0, Lcom/android/server/accessibility/AccessibilityManagerService$UserState;->mIsAccessibilityEnabled:Z
 
     if-eqz v1, :cond_1
 
-    .line 238
+    .line 246
     const/4 v1, 0x0
 
     iput-boolean v1, v0, Lcom/android/server/accessibility/AccessibilityManagerService$UserState;->mIsAccessibilityEnabled:Z
 
-    .line 239
+    .line 247
     iget-object v1, p0, Lcom/android/server/accessibility/AccessibilityManagerService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
 
     #getter for: Lcom/android/server/accessibility/AccessibilityManagerService;->mLock:Ljava/lang/Object;
@@ -137,20 +137,20 @@
 
     monitor-enter v2
 
-    .line 240
+    .line 248
     :try_start_0
     iget-object v1, p0, Lcom/android/server/accessibility/AccessibilityManagerService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
 
     #calls: Lcom/android/server/accessibility/AccessibilityManagerService;->unbindAllServicesLocked(Lcom/android/server/accessibility/AccessibilityManagerService$UserState;)V
     invoke-static {v1, v0}, Lcom/android/server/accessibility/AccessibilityManagerService;->access$700(Lcom/android/server/accessibility/AccessibilityManagerService;Lcom/android/server/accessibility/AccessibilityManagerService$UserState;)V
 
-    .line 241
+    .line 249
     iget-object v1, p0, Lcom/android/server/accessibility/AccessibilityManagerService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
 
     #calls: Lcom/android/server/accessibility/AccessibilityManagerService;->scheduleSendStateToClientsLocked(Lcom/android/server/accessibility/AccessibilityManagerService$UserState;)V
     invoke-static {v1, v0}, Lcom/android/server/accessibility/AccessibilityManagerService;->access$300(Lcom/android/server/accessibility/AccessibilityManagerService;Lcom/android/server/accessibility/AccessibilityManagerService$UserState;)V
 
-    .line 242
+    .line 250
     monitor-exit v2
 
     goto :goto_0

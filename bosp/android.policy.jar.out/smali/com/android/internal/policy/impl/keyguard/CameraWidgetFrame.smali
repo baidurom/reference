@@ -9,7 +9,6 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;,
         Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$Callbacks;
     }
 .end annotation
@@ -35,31 +34,27 @@
 
 .field private final mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitorCallback;
 
-.field private final mCallbacks:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$Callbacks;
+.field private mCallbacks:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$Callbacks;
 
 .field private mDown:Z
-
-.field private mFullscreenPreview:Landroid/view/View;
 
 .field private final mHandler:Landroid/os/Handler;
 
 .field private mLaunchCameraStart:J
 
-.field private final mPostTransitionToCameraEndAction:Ljava/lang/Runnable;
-
-.field private mPreview:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;
+.field private final mRecoverEndAction:Ljava/lang/Runnable;
 
 .field private final mRecoverRunnable:Ljava/lang/Runnable;
+
+.field private mRecovering:Z
 
 .field private final mRenderRunnable:Ljava/lang/Runnable;
 
 .field private final mRenderedSize:Landroid/graphics/Point;
 
+.field private final mScreenLocation:[I
+
 .field private final mSecureCameraActivityStartedRunnable:Ljava/lang/Runnable;
-
-.field private final mTmpLoc:[I
-
-.field private final mTmpRect:Landroid/graphics/Rect;
 
 .field private final mTransitionToCameraEndAction:Ljava/lang/Runnable;
 
@@ -67,7 +62,7 @@
 
 .field private mTransitioning:Z
 
-.field private final mWidgetInfo:Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher$CameraWidgetInfo;
+.field private mWidgetView:Landroid/view/View;
 
 .field private final mWindowManager:Landroid/view/WindowManager;
 
@@ -77,7 +72,7 @@
     .locals 1
 
     .prologue
-    .line 40
+    .line 41
     const-class v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -86,7 +81,7 @@
 
     sput-object v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->TAG:Ljava/lang/String;
 
-    .line 41
+    .line 42
     sget-boolean v0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->DEBUG:Z
 
     sput-boolean v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->DEBUG:Z
@@ -94,199 +89,144 @@
     return-void
 .end method
 
-.method private constructor <init>(Landroid/content/Context;Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$Callbacks;Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher;Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher$CameraWidgetInfo;Landroid/view/View;)V
-    .locals 4
+.method private constructor <init>(Landroid/content/Context;Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$Callbacks;Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher;)V
+    .locals 3
     .parameter "context"
     .parameter "callbacks"
     .parameter "activityLauncher"
-    .parameter "widgetInfo"
-    .parameter "previewWidget"
 
     .prologue
-    .line 141
+    .line 125
     invoke-direct {p0, p1}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;-><init>(Landroid/content/Context;)V
 
-    .line 52
-    new-instance v1, Landroid/os/Handler;
+    .line 53
+    new-instance v0, Landroid/os/Handler;
 
-    invoke-direct {v1}, Landroid/os/Handler;-><init>()V
+    invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
-    iput-object v1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mHandler:Landroid/os/Handler;
-
-    .line 57
-    new-instance v1, Landroid/graphics/Point;
-
-    invoke-direct {v1}, Landroid/graphics/Point;-><init>()V
-
-    iput-object v1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mRenderedSize:Landroid/graphics/Point;
+    iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mHandler:Landroid/os/Handler;
 
     .line 58
-    const/4 v1, 0x2
+    new-instance v0, Landroid/graphics/Point;
 
-    new-array v1, v1, [I
+    invoke-direct {v0}, Landroid/graphics/Point;-><init>()V
 
-    iput-object v1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mTmpLoc:[I
+    iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mRenderedSize:Landroid/graphics/Point;
 
     .line 59
-    new-instance v1, Landroid/graphics/Rect;
+    const/4 v0, 0x2
 
-    invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
+    new-array v0, v0, [I
 
-    iput-object v1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mTmpRect:Landroid/graphics/Rect;
+    iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mScreenLocation:[I
 
-    .line 69
-    new-instance v1, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$1;
+    .line 68
+    new-instance v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$1;
 
-    invoke-direct {v1, p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$1;-><init>(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;)V
+    invoke-direct {v0, p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$1;-><init>(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;)V
 
-    iput-object v1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mTransitionToCameraRunnable:Ljava/lang/Runnable;
+    iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mTransitionToCameraRunnable:Ljava/lang/Runnable;
 
-    .line 75
-    new-instance v1, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$2;
+    .line 74
+    new-instance v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$2;
 
-    invoke-direct {v1, p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$2;-><init>(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;)V
+    invoke-direct {v0, p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$2;-><init>(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;)V
 
-    iput-object v1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mTransitionToCameraEndAction:Ljava/lang/Runnable;
+    iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mTransitionToCameraEndAction:Ljava/lang/Runnable;
 
-    .line 86
-    new-instance v1, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$3;
+    .line 85
+    new-instance v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$3;
 
-    invoke-direct {v1, p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$3;-><init>(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;)V
+    invoke-direct {v0, p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$3;-><init>(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;)V
 
-    iput-object v1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mPostTransitionToCameraEndAction:Ljava/lang/Runnable;
+    iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mRecoverRunnable:Ljava/lang/Runnable;
 
-    .line 92
-    new-instance v1, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$4;
+    .line 91
+    new-instance v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$4;
 
-    invoke-direct {v1, p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$4;-><init>(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;)V
+    invoke-direct {v0, p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$4;-><init>(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;)V
 
-    iput-object v1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mRecoverRunnable:Ljava/lang/Runnable;
+    iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mRecoverEndAction:Ljava/lang/Runnable;
 
-    .line 98
-    new-instance v1, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$5;
+    .line 100
+    new-instance v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$5;
 
-    invoke-direct {v1, p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$5;-><init>(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;)V
+    invoke-direct {v0, p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$5;-><init>(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;)V
 
-    iput-object v1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mRenderRunnable:Ljava/lang/Runnable;
+    iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mRenderRunnable:Ljava/lang/Runnable;
 
-    .line 104
-    new-instance v1, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$6;
+    .line 106
+    new-instance v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$6;
 
-    invoke-direct {v1, p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$6;-><init>(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;)V
+    invoke-direct {v0, p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$6;-><init>(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;)V
 
-    iput-object v1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mSecureCameraActivityStartedRunnable:Ljava/lang/Runnable;
+    iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mSecureCameraActivityStartedRunnable:Ljava/lang/Runnable;
 
-    .line 111
-    new-instance v1, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$7;
+    .line 113
+    new-instance v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$7;
 
-    invoke-direct {v1, p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$7;-><init>(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;)V
+    invoke-direct {v0, p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$7;-><init>(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;)V
 
-    iput-object v1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitorCallback;
+    iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitorCallback;
 
-    .line 142
+    .line 126
     iput-object p2, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mCallbacks:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$Callbacks;
 
-    .line 143
+    .line 127
     iput-object p3, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mActivityLauncher:Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher;
 
-    .line 144
-    iput-object p4, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mWidgetInfo:Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher$CameraWidgetInfo;
+    .line 128
+    const-string v0, "window"
 
-    .line 145
-    const-string v1, "window"
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    invoke-virtual {p1, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    move-result-object v0
 
-    move-result-object v1
+    check-cast v0, Landroid/view/WindowManager;
 
-    check-cast v1, Landroid/view/WindowManager;
+    iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mWindowManager:Landroid/view/WindowManager;
 
-    iput-object v1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mWindowManager:Landroid/view/WindowManager;
-
-    .line 146
+    .line 129
     invoke-static {p1}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
 
-    move-result-object v1
+    move-result-object v0
 
-    iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitorCallback;
+    iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitorCallback;
 
-    invoke-virtual {v1, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->registerCallback(Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitorCallback;)V
+    invoke-virtual {v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->registerCallback(Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitorCallback;)V
 
-    .line 148
-    new-instance v1, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;
+    .line 130
+    sget-boolean v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->DEBUG:Z
 
-    invoke-direct {v1, p1}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;-><init>(Landroid/content/Context;)V
+    if-eqz v0, :cond_0
 
-    iput-object v1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mPreview:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;
+    sget-object v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->TAG:Ljava/lang/String;
 
-    .line 149
-    iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mPreview:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p5}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;->addView(Landroid/view/View;)V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 150
-    iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mPreview:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;
+    const-string v2, "new CameraWidgetFrame instance "
 
-    invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->addView(Landroid/view/View;)V
-
-    .line 152
-    new-instance v0, Landroid/view/View;
-
-    invoke-direct {v0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
-
-    .line 153
-    .local v0, clickBlocker:Landroid/view/View;
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundColor(I)V
-
-    .line 154
-    invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 155
-    invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->addView(Landroid/view/View;)V
-
-    .line 157
-    const v1, #string@keyguard_accessibility_camera#t
-
-    invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
-
-    invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->setContentDescription(Ljava/lang/CharSequence;)V
-
-    .line 158
-    sget-boolean v1, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->DEBUG:Z
-
-    if-eqz v1, :cond_0
-
-    sget-object v1, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->TAG:Ljava/lang/String;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "new CameraWidgetFrame instance "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
 
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->instanceId()Ljava/lang/String;
 
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     move-result-object v2
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 159
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 131
     :cond_0
     return-void
 .end method
@@ -296,7 +236,7 @@
     .parameter "x0"
 
     .prologue
-    .line 39
+    .line 40
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->transitionToCamera()V
 
     return-void
@@ -307,21 +247,21 @@
     .parameter "x0"
 
     .prologue
-    .line 39
+    .line 40
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mTransitioning:Z
 
     return v0
 .end method
 
-.method static synthetic access$1000(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;)V
-    .locals 0
+.method static synthetic access$1000(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;)Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$Callbacks;
+    .locals 1
     .parameter "x0"
 
     .prologue
-    .line 39
-    invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->render()V
+    .line 40
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mCallbacks:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$Callbacks;
 
-    return-void
+    return-object v0
 .end method
 
 .method static synthetic access$1100(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;)V
@@ -329,22 +269,57 @@
     .parameter "x0"
 
     .prologue
-    .line 39
+    .line 40
+    invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->reset()V
+
+    return-void
+.end method
+
+.method static synthetic access$1200(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;)V
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    .line 40
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->onSecureCameraActivityStarted()V
 
     return-void
 .end method
 
-.method static synthetic access$1200(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;Z)V
+.method static synthetic access$1300(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;Z)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 39
+    .line 40
     invoke-direct {p0, p1}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->onKeyguardVisibilityChanged(Z)V
 
     return-void
+.end method
+
+.method static synthetic access$1400(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;)Landroid/content/Context;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 40
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mContext:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1500(Landroid/content/Context;)Landroid/view/View;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 40
+    invoke-static {p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->inflateGenericWidgetView(Landroid/content/Context;)Landroid/view/View;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method static synthetic access$200(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;)Landroid/os/Handler;
@@ -352,7 +327,7 @@
     .parameter "x0"
 
     .prologue
-    .line 39
+    .line 40
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mHandler:Landroid/os/Handler;
 
     return-object v0
@@ -363,7 +338,7 @@
     .parameter "x0"
 
     .prologue
-    .line 39
+    .line 40
     iget-wide v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mLaunchCameraStart:J
 
     return-wide v0
@@ -375,7 +350,7 @@
     .parameter "x1"
 
     .prologue
-    .line 39
+    .line 40
     iput-wide p1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mLaunchCameraStart:J
 
     return-wide p1
@@ -385,7 +360,7 @@
     .locals 1
 
     .prologue
-    .line 39
+    .line 40
     sget-boolean v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->DEBUG:Z
 
     return v0
@@ -395,7 +370,7 @@
     .locals 1
 
     .prologue
-    .line 39
+    .line 40
     sget-object v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->TAG:Ljava/lang/String;
 
     return-object v0
@@ -406,7 +381,7 @@
     .parameter "x0"
 
     .prologue
-    .line 39
+    .line 40
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mSecureCameraActivityStartedRunnable:Ljava/lang/Runnable;
 
     return-object v0
@@ -417,39 +392,39 @@
     .parameter "x0"
 
     .prologue
-    .line 39
+    .line 40
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mActivityLauncher:Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher;
 
     return-object v0
 .end method
 
-.method static synthetic access$800(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;)Ljava/lang/Runnable;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 39
-    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mTransitionToCameraEndAction:Ljava/lang/Runnable;
-
-    return-object v0
-.end method
-
-.method static synthetic access$900(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;)V
+.method static synthetic access$800(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;)V
     .locals 0
     .parameter "x0"
 
     .prologue
-    .line 39
+    .line 40
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->recover()V
 
     return-void
+.end method
+
+.method static synthetic access$900(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;)Z
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 40
+    iget-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mRecovering:Z
+
+    return v0
 .end method
 
 .method private cancelTransitionToCamera()V
     .locals 4
 
     .prologue
-    .line 380
+    .line 385
     sget-boolean v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->DEBUG:Z
 
     if-eqz v0, :cond_0
@@ -480,7 +455,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 381
+    .line 386
     :cond_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mHandler:Landroid/os/Handler;
 
@@ -488,7 +463,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 382
+    .line 387
     return-void
 .end method
 
@@ -499,51 +474,104 @@
     .parameter "launcher"
 
     .prologue
+    const/4 v5, -0x1
+
     const/4 v0, 0x0
 
-    .line 163
+    .line 135
     if-eqz p0, :cond_0
 
     if-eqz p1, :cond_0
 
     if-nez p2, :cond_1
 
-    .line 173
+    .line 158
     :cond_0
     :goto_0
     return-object v0
 
-    .line 166
+    .line 138
     :cond_1
     invoke-virtual {p2}, Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher;->getCameraWidgetInfo()Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher$CameraWidgetInfo;
 
+    move-result-object v2
+
+    .line 139
+    .local v2, widgetInfo:Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher$CameraWidgetInfo;
+    if-eqz v2, :cond_0
+
+    .line 141
+    iget v4, v2, Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher$CameraWidgetInfo;->layoutId:I
+
+    if-lez v4, :cond_2
+
+    invoke-static {p0, v2}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->inflateWidgetView(Landroid/content/Context;Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher$CameraWidgetInfo;)Landroid/view/View;
+
+    move-result-object v3
+
+    .line 144
+    .local v3, widgetView:Landroid/view/View;
+    :goto_1
+    if-eqz v3, :cond_0
+
+    .line 147
+    new-instance v1, Landroid/widget/ImageView;
+
+    invoke-direct {v1, p0}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
+
+    .line 148
+    .local v1, preview:Landroid/widget/ImageView;
+    new-instance v4, Landroid/widget/FrameLayout$LayoutParams;
+
+    invoke-direct {v4, v5, v5}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
+
+    invoke-virtual {v1, v4}, Landroid/widget/ImageView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 151
+    sget-object v4, Landroid/widget/ImageView$ScaleType;->FIT_CENTER:Landroid/widget/ImageView$ScaleType;
+
+    invoke-virtual {v1, v4}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
+
+    .line 152
+    invoke-virtual {v1}, Landroid/widget/ImageView;->getContext()Landroid/content/Context;
+
     move-result-object v4
 
-    .line 167
-    .local v4, widgetInfo:Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher$CameraWidgetInfo;
-    if-eqz v4, :cond_0
+    const v5, #string@keyguard_accessibility_camera#t
 
-    .line 169
-    invoke-static {p0, v4}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->getPreviewWidget(Landroid/content/Context;Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher$CameraWidgetInfo;)Landroid/view/View;
+    invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
-    .line 170
-    .local v5, previewWidget:Landroid/view/View;
-    if-eqz v5, :cond_0
+    invoke-virtual {v1, v4}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 173
+    .line 154
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;
 
-    move-object v1, p0
+    invoke-direct {v0, p0, p1, p2}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;-><init>(Landroid/content/Context;Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$Callbacks;Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher;)V
 
-    move-object v2, p1
+    .line 155
+    .local v0, cameraWidgetFrame:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;
+    invoke-virtual {v0, v1}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->addView(Landroid/view/View;)V
 
-    move-object v3, p2
+    .line 156
+    iput-object v3, v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mWidgetView:Landroid/view/View;
 
-    invoke-direct/range {v0 .. v5}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;-><init>(Landroid/content/Context;Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$Callbacks;Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher;Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher$CameraWidgetInfo;Landroid/view/View;)V
+    .line 157
+    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     goto :goto_0
+
+    .line 141
+    .end local v0           #cameraWidgetFrame:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;
+    .end local v1           #preview:Landroid/widget/ImageView;
+    .end local v3           #widgetView:Landroid/view/View;
+    :cond_2
+    invoke-static {p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->inflateGenericWidgetView(Landroid/content/Context;)Landroid/view/View;
+
+    move-result-object v3
+
+    goto :goto_1
 .end method
 
 .method private enableWindowExitAnimation(Z)V
@@ -551,24 +579,24 @@
     .parameter "isEnabled"
 
     .prologue
-    .line 421
+    .line 419
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->getRootView()Landroid/view/View;
 
     move-result-object v2
 
-    .line 422
+    .line 420
     .local v2, root:Landroid/view/View;
     invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
-    .line 423
+    .line 421
     .local v0, lp:Landroid/view/ViewGroup$LayoutParams;
     instance-of v4, v0, Landroid/view/WindowManager$LayoutParams;
 
     if-nez v4, :cond_1
 
-    .line 433
+    .line 431
     :cond_0
     :goto_0
     return-void
@@ -576,23 +604,23 @@
     :cond_1
     move-object v3, v0
 
-    .line 425
+    .line 423
     check-cast v3, Landroid/view/WindowManager$LayoutParams;
 
-    .line 426
+    .line 424
     .local v3, wlp:Landroid/view/WindowManager$LayoutParams;
     if-eqz p1, :cond_3
 
     const v1, #style@Animation.LockScreen#t
 
-    .line 427
+    .line 425
     .local v1, newWindowAnimations:I
     :goto_1
     iget v4, v3, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
     if-eq v1, v4, :cond_0
 
-    .line 428
+    .line 426
     sget-boolean v4, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->DEBUG:Z
 
     if-eqz v4, :cond_2
@@ -633,49 +661,23 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 430
+    .line 428
     :cond_2
     iput v1, v3, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
-    .line 431
+    .line 429
     iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mWindowManager:Landroid/view/WindowManager;
 
     invoke-interface {v4, v2, v3}, Landroid/view/WindowManager;->updateViewLayout(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     goto :goto_0
 
-    .line 426
+    .line 424
     .end local v1           #newWindowAnimations:I
     :cond_3
     const/4 v1, 0x0
 
     goto :goto_1
-.end method
-
-.method private static getPreviewWidget(Landroid/content/Context;Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher$CameraWidgetInfo;)Landroid/view/View;
-    .locals 1
-    .parameter "context"
-    .parameter "widgetInfo"
-
-    .prologue
-    .line 177
-    iget v0, p1, Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher$CameraWidgetInfo;->layoutId:I
-
-    if-lez v0, :cond_0
-
-    invoke-static {p0, p1}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->inflateWidgetView(Landroid/content/Context;Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher$CameraWidgetInfo;)Landroid/view/View;
-
-    move-result-object v0
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    invoke-static {p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->inflateGenericWidgetView(Landroid/content/Context;)Landroid/view/View;
-
-    move-result-object v0
-
-    goto :goto_0
 .end method
 
 .method private static inflateGenericWidgetView(Landroid/content/Context;)Landroid/view/View;
@@ -685,7 +687,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 205
+    .line 184
     sget-boolean v1, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->DEBUG:Z
 
     if-eqz v1, :cond_0
@@ -696,24 +698,24 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 206
+    .line 185
     :cond_0
     new-instance v0, Landroid/widget/ImageView;
 
     invoke-direct {v0, p0}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
-    .line 207
+    .line 186
     .local v0, iv:Landroid/widget/ImageView;
     const v1, #drawable@ic_lockscreen_camera#t
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 208
+    .line 187
     sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 209
+    .line 188
     const/16 v1, 0x7f
 
     invoke-static {v1, v3, v3, v3}, Landroid/graphics/Color;->argb(IIII)I
@@ -722,7 +724,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setBackgroundColor(I)V
 
-    .line 210
+    .line 189
     return-object v0
 .end method
 
@@ -732,7 +734,7 @@
     .parameter "widgetInfo"
 
     .prologue
-    .line 183
+    .line 162
     sget-boolean v5, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->DEBUG:Z
 
     if-eqz v5, :cond_0
@@ -761,15 +763,15 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 184
+    .line 163
     :cond_0
     const/4 v4, 0x0
 
-    .line 185
+    .line 164
     .local v4, widgetView:Landroid/view/View;
     const/4 v3, 0x0
 
-    .line 187
+    .line 166
     .local v3, exception:Ljava/lang/Exception;
     :try_start_0
     iget-object v5, p1, Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher$CameraWidgetInfo;->contextPackage:Ljava/lang/String;
@@ -780,7 +782,7 @@
 
     move-result-object v0
 
-    .line 189
+    .line 168
     .local v0, cameraContext:Landroid/content/Context;
     const-string v5, "layout_inflater"
 
@@ -790,13 +792,13 @@
 
     check-cast v1, Landroid/view/LayoutInflater;
 
-    .line 191
+    .line 170
     .local v1, cameraInflater:Landroid/view/LayoutInflater;
     invoke-virtual {v1, v0}, Landroid/view/LayoutInflater;->cloneInContext(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v1
 
-    .line 192
+    .line 171
     iget v5, p1, Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher$CameraWidgetInfo;->layoutId:I
 
     const/4 v6, 0x0
@@ -810,40 +812,40 @@
 
     move-result-object v4
 
-    .line 198
+    .line 177
     .end local v0           #cameraContext:Landroid/content/Context;
     .end local v1           #cameraInflater:Landroid/view/LayoutInflater;
     :goto_0
     if-eqz v3, :cond_1
 
-    .line 199
+    .line 178
     sget-object v5, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->TAG:Ljava/lang/String;
 
     const-string v6, "Error creating camera widget view"
 
     invoke-static {v5, v6, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 201
+    .line 180
     :cond_1
     return-object v4
 
-    .line 193
+    .line 172
     :catch_0
     move-exception v2
 
-    .line 194
+    .line 173
     .local v2, e:Landroid/content/pm/PackageManager$NameNotFoundException;
     move-object v3, v2
 
-    .line 197
+    .line 176
     goto :goto_0
 
-    .line 195
+    .line 174
     .end local v2           #e:Landroid/content/pm/PackageManager$NameNotFoundException;
     :catch_1
     move-exception v2
 
-    .line 196
+    .line 175
     .local v2, e:Ljava/lang/RuntimeException;
     move-object v3, v2
 
@@ -854,7 +856,7 @@
     .locals 1
 
     .prologue
-    .line 456
+    .line 455
     invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
     move-result v0
@@ -870,15 +872,15 @@
     .locals 1
 
     .prologue
-    .line 385
+    .line 390
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mCallbacks:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$Callbacks;
 
     invoke-interface {v0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$Callbacks;->onCameraLaunchedSuccessfully()V
 
-    .line 386
+    .line 391
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->reset()V
 
-    .line 387
+    .line 392
     return-void
 .end method
 
@@ -891,7 +893,7 @@
 
     const/4 v6, 0x0
 
-    .line 436
+    .line 434
     sget-boolean v2, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->DEBUG:Z
 
     if-eqz v2, :cond_0
@@ -932,7 +934,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 438
+    .line 436
     :cond_0
     iget-boolean v2, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mTransitioning:Z
 
@@ -940,24 +942,27 @@
 
     if-nez p1, :cond_2
 
-    .line 439
+    .line 437
     iput-boolean v6, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mTransitioning:Z
 
-    .line 440
+    .line 438
+    iput-boolean v6, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mRecovering:Z
+
+    .line 439
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mHandler:Landroid/os/Handler;
 
     iget-object v3, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mRecoverRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v2, v3}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 441
+    .line 440
     iget-wide v2, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mLaunchCameraStart:J
 
     cmp-long v2, v2, v7
 
     if-lez v2, :cond_2
 
-    .line 442
+    .line 441
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v2
@@ -966,7 +971,7 @@
 
     sub-long v0, v2, v4
 
-    .line 443
+    .line 442
     .local v0, launchTime:J
     sget-boolean v2, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->DEBUG:Z
 
@@ -992,14 +997,14 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 444
+    .line 443
     :cond_1
     iput-wide v7, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mLaunchCameraStart:J
 
-    .line 445
+    .line 444
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->onCameraLaunched()V
 
-    .line 448
+    .line 447
     .end local v0           #launchTime:J
     :cond_2
     return-void
@@ -1009,7 +1014,7 @@
     .locals 4
 
     .prologue
-    .line 451
+    .line 450
     sget-boolean v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->DEBUG:Z
 
     if-eqz v0, :cond_0
@@ -1040,7 +1045,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 452
+    .line 451
     :cond_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mHandler:Landroid/os/Handler;
 
@@ -1050,15 +1055,17 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 453
+    .line 452
     return-void
 .end method
 
 .method private recover()V
-    .locals 4
+    .locals 5
 
     .prologue
-    .line 298
+    const/high16 v4, 0x3f80
+
+    .line 299
     sget-boolean v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->DEBUG:Z
 
     if-eqz v0, :cond_0
@@ -1089,340 +1096,54 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 299
-    :cond_0
-    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mCallbacks:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$Callbacks;
-
-    invoke-interface {v0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$Callbacks;->onCameraLaunchedUnsuccessfully()V
-
     .line 300
-    invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->reset()V
+    :cond_0
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mRecovering:Z
 
     .line 301
+    invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->animate()Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v4}, Landroid/view/ViewPropertyAnimator;->scaleX(F)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v4}, Landroid/view/ViewPropertyAnimator;->scaleY(F)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->translationY(F)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    const-wide/16 v1, 0xfa
+
+    invoke-virtual {v0, v1, v2}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mRecoverEndAction:Ljava/lang/Runnable;
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->withEndAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
+
+    .line 308
     return-void
-.end method
-
-.method private render()V
-    .locals 18
-
-    .prologue
-    .line 214
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->getRootView()Landroid/view/View;
-
-    move-result-object v9
-
-    .line 215
-    .local v9, root:Landroid/view/View;
-    invoke-virtual {v9}, Landroid/view/View;->getWidth()I
-
-    move-result v12
-
-    .line 216
-    .local v12, width:I
-    invoke-virtual {v9}, Landroid/view/View;->getHeight()I
-
-    move-result v1
-
-    .line 217
-    .local v1, height:I
-    move-object/from16 v0, p0
-
-    iget-object v13, v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mRenderedSize:Landroid/graphics/Point;
-
-    iget v13, v13, Landroid/graphics/Point;->x:I
-
-    if-ne v13, v12, :cond_1
-
-    move-object/from16 v0, p0
-
-    iget-object v13, v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mRenderedSize:Landroid/graphics/Point;
-
-    iget v13, v13, Landroid/graphics/Point;->y:I
-
-    if-ne v13, v1, :cond_1
-
-    .line 218
-    sget-boolean v13, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->DEBUG:Z
-
-    if-eqz v13, :cond_0
-
-    sget-object v13, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->TAG:Ljava/lang/String;
-
-    const-string v14, "Already rendered at size=%sx%s"
-
-    const/4 v15, 0x2
-
-    new-array v15, v15, [Ljava/lang/Object;
-
-    const/16 v16, 0x0
-
-    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v17
-
-    aput-object v17, v15, v16
-
-    const/16 v16, 0x1
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v17
-
-    aput-object v17, v15, v16
-
-    invoke-static {v14, v15}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v14
-
-    invoke-static {v13, v14}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 252
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 221
-    :cond_1
-    if-eqz v12, :cond_0
-
-    if-eqz v1, :cond_0
-
-    .line 225
-    move-object/from16 v0, p0
-
-    iget-object v13, v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mPreview:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;
-
-    iput v12, v13, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;->width:I
-
-    .line 226
-    move-object/from16 v0, p0
-
-    iget-object v13, v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mPreview:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;
-
-    iput v1, v13, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;->height:I
-
-    .line 227
-    move-object/from16 v0, p0
-
-    iget-object v13, v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mPreview:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;
-
-    invoke-virtual {v13}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;->requestLayout()V
-
-    .line 229
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->getWidth()I
-
-    move-result v13
-
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->getPaddingLeft()I
-
-    move-result v14
-
-    sub-int/2addr v13, v14
-
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->getPaddingRight()I
-
-    move-result v14
-
-    sub-int v11, v13, v14
-
-    .line 230
-    .local v11, thisWidth:I
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->getHeight()I
-
-    move-result v13
-
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->getPaddingTop()I
-
-    move-result v14
-
-    sub-int/2addr v13, v14
-
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->getPaddingBottom()I
-
-    move-result v14
-
-    sub-int v10, v13, v14
-
-    .line 232
-    .local v10, thisHeight:I
-    int-to-float v13, v11
-
-    int-to-float v14, v12
-
-    div-float v4, v13, v14
-
-    .line 233
-    .local v4, pvScaleX:F
-    int-to-float v13, v10
-
-    int-to-float v14, v1
-
-    div-float v5, v13, v14
-
-    .line 234
-    .local v5, pvScaleY:F
-    invoke-static {v4, v5}, Ljava/lang/Math;->min(FF)F
-
-    move-result v3
-
-    .line 236
-    .local v3, pvScale:F
-    int-to-float v13, v12
-
-    mul-float/2addr v13, v3
-
-    float-to-int v8, v13
-
-    .line 237
-    .local v8, pvWidth:I
-    int-to-float v13, v1
-
-    mul-float/2addr v13, v3
-
-    float-to-int v2, v13
-
-    .line 239
-    .local v2, pvHeight:I
-    if-ge v8, v11, :cond_2
-
-    sub-int v13, v11, v8
-
-    div-int/lit8 v13, v13, 0x2
-
-    int-to-float v6, v13
-
-    .line 240
-    .local v6, pvTransX:F
-    :goto_1
-    if-ge v2, v10, :cond_3
-
-    sub-int v13, v10, v2
-
-    div-int/lit8 v13, v13, 0x2
-
-    int-to-float v7, v13
-
-    .line 242
-    .local v7, pvTransY:F
-    :goto_2
-    move-object/from16 v0, p0
-
-    iget-object v13, v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mPreview:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;
-
-    const/4 v14, 0x0
-
-    invoke-virtual {v13, v14}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;->setPivotX(F)V
-
-    .line 243
-    move-object/from16 v0, p0
-
-    iget-object v13, v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mPreview:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;
-
-    const/4 v14, 0x0
-
-    invoke-virtual {v13, v14}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;->setPivotY(F)V
-
-    .line 244
-    move-object/from16 v0, p0
-
-    iget-object v13, v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mPreview:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;
-
-    invoke-virtual {v13, v3}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;->setScaleX(F)V
-
-    .line 245
-    move-object/from16 v0, p0
-
-    iget-object v13, v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mPreview:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;
-
-    invoke-virtual {v13, v3}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;->setScaleY(F)V
-
-    .line 246
-    move-object/from16 v0, p0
-
-    iget-object v13, v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mPreview:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;
-
-    invoke-virtual {v13, v6}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;->setTranslationX(F)V
-
-    .line 247
-    move-object/from16 v0, p0
-
-    iget-object v13, v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mPreview:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;
-
-    invoke-virtual {v13, v7}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;->setTranslationY(F)V
-
-    .line 249
-    move-object/from16 v0, p0
-
-    iget-object v13, v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mRenderedSize:Landroid/graphics/Point;
-
-    invoke-virtual {v13, v12, v1}, Landroid/graphics/Point;->set(II)V
-
-    .line 250
-    sget-boolean v13, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->DEBUG:Z
-
-    if-eqz v13, :cond_0
-
-    sget-object v13, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->TAG:Ljava/lang/String;
-
-    const-string v14, "Rendered camera widget size=%sx%s instance=%s"
-
-    const/4 v15, 0x3
-
-    new-array v15, v15, [Ljava/lang/Object;
-
-    const/16 v16, 0x0
-
-    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v17
-
-    aput-object v17, v15, v16
-
-    const/16 v16, 0x1
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v17
-
-    aput-object v17, v15, v16
-
-    const/16 v16, 0x2
-
-    invoke-direct/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->instanceId()Ljava/lang/String;
-
-    move-result-object v17
-
-    aput-object v17, v15, v16
-
-    invoke-static {v14, v15}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v14
-
-    invoke-static {v13, v14}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto/16 :goto_0
-
-    .line 239
-    .end local v6           #pvTransX:F
-    .end local v7           #pvTransY:F
-    :cond_2
-    const/4 v6, 0x0
-
-    goto :goto_1
-
-    .line 240
-    .restart local v6       #pvTransX:F
-    :cond_3
-    const/4 v7, 0x0
-
-    goto :goto_2
 .end method
 
 .method private rescheduleTransitionToCamera()V
     .locals 4
 
     .prologue
-    .line 374
+    .line 379
     sget-boolean v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->DEBUG:Z
 
     if-eqz v0, :cond_0
@@ -1453,7 +1174,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 375
+    .line 380
     :cond_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mHandler:Landroid/os/Handler;
 
@@ -1461,7 +1182,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 376
+    .line 381
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mTransitionToCameraRunnable:Ljava/lang/Runnable;
@@ -1470,17 +1191,19 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 377
+    .line 382
     return-void
 .end method
 
 .method private reset()V
-    .locals 5
+    .locals 6
 
     .prologue
+    const/high16 v5, 0x3f80
+
     const/4 v4, 0x0
 
-    .line 390
+    .line 395
     sget-boolean v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->DEBUG:Z
 
     if-eqz v0, :cond_0
@@ -1511,282 +1234,330 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 391
+    .line 396
     :cond_0
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mLaunchCameraStart:J
 
-    .line 392
+    .line 397
     iput-boolean v4, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mTransitioning:Z
 
-    .line 393
+    .line 398
+    iput-boolean v4, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mRecovering:Z
+
+    .line 399
     iput-boolean v4, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mDown:Z
 
-    .line 394
+    .line 400
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->cancelTransitionToCamera()V
 
-    .line 395
+    .line 401
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mRecoverRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 396
-    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mPreview:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;
-
-    invoke-virtual {v0, v4}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;->setVisibility(I)V
-
-    .line 397
-    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mFullscreenPreview:Landroid/view/View;
-
-    if-eqz v0, :cond_1
-
-    .line 398
-    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mFullscreenPreview:Landroid/view/View;
-
-    invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
+    .line 402
+    invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 399
-    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mFullscreenPreview:Landroid/view/View;
+    .line 403
+    invoke-virtual {p0, v5}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->setScaleX(F)V
 
-    const/16 v1, 0x8
+    .line 404
+    invoke-virtual {p0, v5}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->setScaleY(F)V
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    .line 405
+    const/4 v0, 0x0
 
-    .line 401
-    :cond_1
+    invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->setTranslationY(F)V
+
+    .line 406
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->enableWindowExitAnimation(Z)V
 
-    .line 402
+    .line 407
     return-void
 .end method
 
 .method private transitionToCamera()V
-    .locals 15
+    .locals 18
 
     .prologue
-    const/4 v14, 0x1
-
-    const/high16 v13, 0x4000
-
-    const/high16 v12, 0x3f80
-
-    const/4 v11, 0x0
-
-    const/4 v10, 0x0
-
     .line 255
-    iget-boolean v8, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mTransitioning:Z
+    move-object/from16 v0, p0
 
-    if-nez v8, :cond_0
+    iget-boolean v13, v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mTransitioning:Z
 
-    iget-boolean v8, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mDown:Z
+    if-nez v13, :cond_0
 
-    if-eqz v8, :cond_1
+    move-object/from16 v0, p0
 
-    .line 295
+    iget-boolean v13, v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mDown:Z
+
+    if-eqz v13, :cond_1
+
+    .line 296
     :cond_0
     :goto_0
     return-void
 
     .line 257
     :cond_1
-    iput-boolean v14, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mTransitioning:Z
+    const/4 v13, 0x1
+
+    move-object/from16 v0, p0
+
+    iput-boolean v13, v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mTransitioning:Z
 
     .line 259
-    invoke-direct {p0, v10}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->enableWindowExitAnimation(Z)V
+    const/4 v13, 0x0
 
-    .line 261
-    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mPreview:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;
+    move-object/from16 v0, p0
 
-    iget-object v9, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mTmpLoc:[I
+    invoke-virtual {v0, v13}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->getChildAt(I)Landroid/view/View;
 
-    invoke-virtual {v8, v9}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;->getLocationInWindow([I)V
+    move-result-object v1
+
+    .line 260
+    .local v1, child:Landroid/view/View;
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->getRootView()Landroid/view/View;
+
+    move-result-object v6
 
     .line 262
-    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mPreview:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;
+    .local v6, root:Landroid/view/View;
+    invoke-virtual {v1}, Landroid/view/View;->getWidth()I
 
-    invoke-virtual {v8}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;->getHeight()I
-
-    move-result v8
-
-    int-to-float v8, v8
-
-    iget-object v9, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mPreview:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;
-
-    invoke-virtual {v9}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;->getScaleY()F
-
-    move-result v9
-
-    mul-float v6, v8, v9
+    move-result v12
 
     .line 263
-    .local v6, pvHeight:F
-    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mTmpLoc:[I
+    .local v12, startWidth:I
+    invoke-virtual {v1}, Landroid/view/View;->getHeight()I
 
-    aget v8, v8, v14
-
-    int-to-float v8, v8
-
-    div-float v9, v6, v13
-
-    add-float v5, v8, v9
+    move-result v11
 
     .line 265
-    .local v5, pvCenter:F
-    invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->getRootView()Landroid/view/View;
+    .local v11, startHeight:I
+    invoke-virtual {v6}, Landroid/view/View;->getWidth()I
 
-    move-result-object v7
-
-    check-cast v7, Landroid/view/ViewGroup;
+    move-result v4
 
     .line 266
-    .local v7, root:Landroid/view/ViewGroup;
-    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mFullscreenPreview:Landroid/view/View;
+    .local v4, finishWidth:I
+    invoke-virtual {v6}, Landroid/view/View;->getHeight()I
 
-    if-nez v8, :cond_2
-
-    .line 267
-    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;->mContext:Landroid/content/Context;
-
-    iget-object v9, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mWidgetInfo:Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher$CameraWidgetInfo;
-
-    invoke-static {v8, v9}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->getPreviewWidget(Landroid/content/Context;Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher$CameraWidgetInfo;)Landroid/view/View;
-
-    move-result-object v8
-
-    iput-object v8, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mFullscreenPreview:Landroid/view/View;
+    move-result v3
 
     .line 268
-    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mFullscreenPreview:Landroid/view/View;
+    .local v3, finishHeight:I
+    int-to-float v13, v4
 
-    invoke-virtual {v8, v10}, Landroid/view/View;->setClickable(Z)V
+    int-to-float v14, v12
+
+    div-float v8, v13, v14
 
     .line 269
-    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mFullscreenPreview:Landroid/view/View;
+    .local v8, scaleX:F
+    int-to-float v13, v3
 
-    invoke-virtual {v7, v8}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+    int-to-float v14, v11
+
+    div-float v9, v13, v14
+
+    .line 270
+    .local v9, scaleY:F
+    invoke-static {v8, v9}, Ljava/lang/Math;->max(FF)F
+
+    move-result v13
+
+    const/high16 v14, 0x42c8
+
+    mul-float/2addr v13, v14
+
+    invoke-static {v13}, Ljava/lang/Math;->round(F)I
+
+    move-result v13
+
+    int-to-float v13, v13
+
+    const/high16 v14, 0x42c8
+
+    div-float v7, v13, v14
 
     .line 272
-    :cond_2
-    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mTmpRect:Landroid/graphics/Rect;
+    .local v7, scale:F
+    const/4 v13, 0x2
 
-    invoke-virtual {v7, v8}, Landroid/view/ViewGroup;->getWindowVisibleDisplayFrame(Landroid/graphics/Rect;)V
+    new-array v5, v13, [I
 
     .line 273
-    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mTmpRect:Landroid/graphics/Rect;
-
-    invoke-virtual {v8}, Landroid/graphics/Rect;->height()I
-
-    move-result v8
-
-    int-to-float v1, v8
+    .local v5, loc:[I
+    invoke-virtual {v6, v5}, Landroid/view/View;->getLocationInWindow([I)V
 
     .line 274
-    .local v1, fsHeight:F
-    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mTmpRect:Landroid/graphics/Rect;
+    const/4 v13, 0x1
 
-    iget v8, v8, Landroid/graphics/Rect;->top:I
+    aget v13, v5, v13
 
-    int-to-float v8, v8
+    div-int/lit8 v14, v3, 0x2
 
-    div-float v9, v1, v13
-
-    add-float v0, v8, v9
+    add-int v2, v13, v14
 
     .line 276
-    .local v0, fsCenter:F
-    div-float v3, v6, v1
+    .local v2, finishCenter:I
+    invoke-virtual {v1, v5}, Landroid/view/View;->getLocationInWindow([I)V
 
     .line 277
-    .local v3, fsScaleY:F
-    sub-float v4, v5, v0
+    const/4 v13, 0x1
 
-    .line 278
-    .local v4, fsTransY:F
-    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mPreview:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;
+    aget v13, v5, v13
 
-    invoke-virtual {v8}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;->getScaleX()F
+    div-int/lit8 v14, v11, 0x2
 
-    move-result v2
+    add-int v10, v13, v14
 
-    .line 280
-    .local v2, fsScaleX:F
-    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mPreview:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;
+    .line 279
+    .local v10, startCenter:I
+    sget-boolean v13, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->DEBUG:Z
 
-    const/16 v9, 0x8
+    if-eqz v13, :cond_2
 
-    invoke-virtual {v8, v9}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$FixedSizeFrameLayout;->setVisibility(I)V
+    sget-object v13, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->TAG:Ljava/lang/String;
 
-    .line 281
-    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mFullscreenPreview:Landroid/view/View;
+    const-string v14, "Transitioning to camera. (start=%sx%s, finish=%sx%s, scale=%s,%s, startCenter=%s, finishCenter=%s)"
 
-    invoke-virtual {v8, v10}, Landroid/view/View;->setVisibility(I)V
+    const/16 v15, 0x8
 
-    .line 282
-    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mFullscreenPreview:Landroid/view/View;
+    new-array v15, v15, [Ljava/lang/Object;
 
-    invoke-virtual {v8, v4}, Landroid/view/View;->setTranslationY(F)V
+    const/16 v16, 0x0
 
-    .line 283
-    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mFullscreenPreview:Landroid/view/View;
+    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-virtual {v8, v2}, Landroid/view/View;->setScaleX(F)V
+    move-result-object v17
 
-    .line 284
-    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mFullscreenPreview:Landroid/view/View;
+    aput-object v17, v15, v16
 
-    invoke-virtual {v8, v3}, Landroid/view/View;->setScaleY(F)V
+    const/16 v16, 0x1
 
-    .line 285
-    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mFullscreenPreview:Landroid/view/View;
+    invoke-static {v11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-virtual {v8}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
+    move-result-object v17
 
-    move-result-object v8
+    aput-object v17, v15, v16
 
-    invoke-virtual {v8, v12}, Landroid/view/ViewPropertyAnimator;->scaleX(F)Landroid/view/ViewPropertyAnimator;
+    const/16 v16, 0x2
 
-    move-result-object v8
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-virtual {v8, v12}, Landroid/view/ViewPropertyAnimator;->scaleY(F)Landroid/view/ViewPropertyAnimator;
+    move-result-object v17
 
-    move-result-object v8
+    aput-object v17, v15, v16
 
-    invoke-virtual {v8, v11}, Landroid/view/ViewPropertyAnimator;->translationX(F)Landroid/view/ViewPropertyAnimator;
+    const/16 v16, 0x3
 
-    move-result-object v8
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-virtual {v8, v11}, Landroid/view/ViewPropertyAnimator;->translationY(F)Landroid/view/ViewPropertyAnimator;
+    move-result-object v17
 
-    move-result-object v8
+    aput-object v17, v15, v16
 
-    const-wide/16 v9, 0xfa
+    const/16 v16, 0x4
 
-    invoke-virtual {v8, v9, v10}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
+    invoke-static {v8}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v8
+    move-result-object v17
 
-    iget-object v9, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mPostTransitionToCameraEndAction:Ljava/lang/Runnable;
+    aput-object v17, v15, v16
 
-    invoke-virtual {v8, v9}, Landroid/view/ViewPropertyAnimator;->withEndAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
+    const/16 v16, 0x5
 
-    move-result-object v8
+    invoke-static {v9}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    invoke-virtual {v8}, Landroid/view/ViewPropertyAnimator;->start()V
+    move-result-object v17
 
-    .line 294
-    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mCallbacks:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$Callbacks;
+    aput-object v17, v15, v16
 
-    invoke-interface {v8}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$Callbacks;->onLaunchingCamera()V
+    const/16 v16, 0x6
+
+    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v17
+
+    aput-object v17, v15, v16
+
+    const/16 v16, 0x7
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v17
+
+    aput-object v17, v15, v16
+
+    invoke-static {v14, v15}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v14
+
+    invoke-static {v13, v14}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 286
+    :cond_2
+    const/4 v13, 0x0
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v13}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->enableWindowExitAnimation(Z)V
+
+    .line 287
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->animate()Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v13
+
+    invoke-virtual {v13, v7}, Landroid/view/ViewPropertyAnimator;->scaleX(F)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v13
+
+    invoke-virtual {v13, v7}, Landroid/view/ViewPropertyAnimator;->scaleY(F)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v13
+
+    sub-int v14, v2, v10
+
+    int-to-float v14, v14
+
+    invoke-virtual {v13, v14}, Landroid/view/ViewPropertyAnimator;->translationY(F)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v13
+
+    const-wide/16 v14, 0xfa
+
+    invoke-virtual {v13, v14, v15}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v13
+
+    move-object/from16 v0, p0
+
+    iget-object v14, v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mTransitionToCameraEndAction:Ljava/lang/Runnable;
+
+    invoke-virtual {v13, v14}, Landroid/view/ViewPropertyAnimator;->withEndAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v13
+
+    invoke-virtual {v13}, Landroid/view/ViewPropertyAnimator;->start()V
+
+    .line 295
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mCallbacks:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$Callbacks;
+
+    invoke-interface {v13}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$Callbacks;->onLaunchingCamera()V
 
     goto/16 :goto_0
 .end method
@@ -1798,51 +1569,26 @@
     .parameter "isActive"
 
     .prologue
-    .line 330
+    .line 335
     iput-boolean p1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mActive:Z
 
-    .line 331
+    .line 336
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mActive:Z
 
     if-eqz v0, :cond_0
 
-    .line 332
+    .line 337
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->rescheduleTransitionToCamera()V
 
-    .line 336
+    .line 341
     :goto_0
     return-void
 
-    .line 334
+    .line 339
     :cond_0
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->reset()V
 
     goto :goto_0
-.end method
-
-.method public onBouncerShowing(Z)V
-    .locals 2
-    .parameter "showing"
-
-    .prologue
-    .line 414
-    if-eqz p1, :cond_0
-
-    .line 415
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mTransitioning:Z
-
-    .line 416
-    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mHandler:Landroid/os/Handler;
-
-    iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mRecoverRunnable:Ljava/lang/Runnable;
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    .line 418
-    :cond_0
-    return-void
 .end method
 
 .method public onClick(Landroid/view/View;)V
@@ -1850,7 +1596,7 @@
     .parameter "v"
 
     .prologue
-    .line 310
+    .line 312
     sget-boolean v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->DEBUG:Z
 
     if-eqz v0, :cond_0
@@ -1861,27 +1607,27 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 311
+    .line 313
     :cond_0
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mTransitioning:Z
 
     if-eqz v0, :cond_2
 
-    .line 316
+    .line 318
     :cond_1
     :goto_0
     return-void
 
-    .line 312
+    .line 314
     :cond_2
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mActive:Z
 
     if-eqz v0, :cond_1
 
-    .line 313
+    .line 315
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->cancelTransitionToCamera()V
 
-    .line 314
+    .line 316
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->transitionToCamera()V
 
     goto :goto_0
@@ -1891,7 +1637,7 @@
     .locals 4
 
     .prologue
-    .line 320
+    .line 322
     sget-boolean v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->DEBUG:Z
 
     if-eqz v0, :cond_0
@@ -1936,12 +1682,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 322
+    .line 324
     :cond_0
     invoke-super {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;->onDetachedFromWindow()V
 
-    .line 323
-    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;->mContext:Landroid/content/Context;
+    .line 325
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
 
@@ -1951,17 +1697,22 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->removeCallback(Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitorCallback;)V
 
-    .line 324
+    .line 326
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->cancelTransitionToCamera()V
 
-    .line 325
+    .line 327
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mRecoverRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 326
+    .line 330
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mCallbacks:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$Callbacks;
+
+    .line 331
     return-void
 .end method
 
@@ -1969,7 +1720,7 @@
     .locals 4
 
     .prologue
-    .line 363
+    .line 368
     sget-boolean v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->DEBUG:Z
 
     if-eqz v0, :cond_0
@@ -2000,14 +1751,14 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 364
+    .line 369
     :cond_0
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->cancelTransitionToCamera()V
 
-    .line 365
+    .line 370
     invoke-super {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;->onFocusLost()V
 
-    .line 366
+    .line 371
     return-void
 .end method
 
@@ -2015,7 +1766,7 @@
     .locals 2
 
     .prologue
-    .line 369
+    .line 374
     sget-boolean v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->DEBUG:Z
 
     if-eqz v0, :cond_0
@@ -2026,98 +1777,113 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 370
+    .line 375
     :cond_0
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->reset()V
 
-    .line 371
+    .line 376
     return-void
 .end method
 
 .method protected onSizeChanged(IIII)V
-    .locals 6
+    .locals 7
     .parameter "w"
     .parameter "h"
     .parameter "oldw"
     .parameter "oldh"
 
     .prologue
-    .line 406
-    sget-boolean v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->DEBUG:Z
+    .line 411
+    sget-boolean v1, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->DEBUG:Z
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
-    sget-object v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->TAG:Ljava/lang/String;
+    sget-object v1, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->TAG:Ljava/lang/String;
 
-    const-string v1, "onSizeChanged new=%sx%s old=%sx%s at %s"
+    const-string v2, "onSizeChanged new=%sx%s old=%sx%s at %s"
 
-    const/4 v2, 0x5
+    const/4 v3, 0x5
 
-    new-array v2, v2, [Ljava/lang/Object;
+    new-array v3, v3, [Ljava/lang/Object;
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v4
+    move-result-object v5
 
-    aput-object v4, v2, v3
+    aput-object v5, v3, v4
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v4
+    move-result-object v5
 
-    aput-object v4, v2, v3
+    aput-object v5, v3, v4
 
-    const/4 v3, 0x2
+    const/4 v4, 0x2
 
     invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v4
+    move-result-object v5
 
-    aput-object v4, v2, v3
+    aput-object v5, v3, v4
 
-    const/4 v3, 0x3
+    const/4 v4, 0x3
 
     invoke-static {p4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v4
+    move-result-object v5
 
-    aput-object v4, v2, v3
+    aput-object v5, v3, v4
 
-    const/4 v3, 0x4
+    const/4 v4, 0x4
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
-    move-result-wide v4
+    move-result-wide v5
 
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v4
+    move-result-object v5
 
-    aput-object v4, v2, v3
+    aput-object v5, v3, v4
 
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v2, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 408
+    .line 413
     :cond_0
-    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mHandler:Landroid/os/Handler;
+    invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->getWorkerHandler()Landroid/os/Handler;
 
+    move-result-object v0
+
+    .line 414
+    .local v0, worker:Landroid/os/Handler;
+    if-eqz v0, :cond_1
+
+    .end local v0           #worker:Landroid/os/Handler;
+    :goto_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mRenderRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 409
+    .line 415
     invoke-super {p0, p1, p2, p3, p4}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;->onSizeChanged(IIII)V
 
-    .line 410
+    .line 416
     return-void
+
+    .line 414
+    .restart local v0       #worker:Landroid/os/Handler;
+    :cond_1
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mHandler:Landroid/os/Handler;
+
+    goto :goto_0
 .end method
 
 .method public onUserInteraction(Landroid/view/MotionEvent;)Z
@@ -2129,12 +1895,12 @@
 
     const/4 v2, 0x1
 
-    .line 340
+    .line 345
     iget-boolean v4, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mTransitioning:Z
 
     if-eqz v4, :cond_1
 
-    .line 341
+    .line 346
     sget-boolean v3, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->DEBUG:Z
 
     if-eqz v3, :cond_0
@@ -2145,19 +1911,19 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 358
+    .line 363
     :cond_0
     :goto_0
     return v2
 
-    .line 345
+    .line 350
     :cond_1
-    iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mTmpLoc:[I
+    iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mScreenLocation:[I
 
     invoke-virtual {p0, v4}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->getLocationOnScreen([I)V
 
-    .line 346
-    iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mTmpLoc:[I
+    .line 351
+    iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mScreenLocation:[I
 
     aget v4, v4, v2
 
@@ -2167,7 +1933,7 @@
 
     add-int v1, v4, v5
 
-    .line 347
+    .line 352
     .local v1, rawBottom:I
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawY()F
 
@@ -2179,7 +1945,7 @@
 
     if-lez v4, :cond_2
 
-    .line 348
+    .line 353
     sget-boolean v3, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->DEBUG:Z
 
     if-eqz v3, :cond_0
@@ -2192,13 +1958,13 @@
 
     goto :goto_0
 
-    .line 352
+    .line 357
     :cond_2
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    .line 353
+    .line 358
     .local v0, action:I
     if-eqz v0, :cond_3
 
@@ -2210,15 +1976,15 @@
     :goto_1
     iput-boolean v2, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mDown:Z
 
-    .line 354
+    .line 359
     iget-boolean v2, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mActive:Z
 
     if-eqz v2, :cond_4
 
-    .line 355
+    .line 360
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->rescheduleTransitionToCamera()V
 
-    .line 357
+    .line 362
     :cond_4
     sget-boolean v2, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->DEBUG:Z
 
@@ -2233,21 +1999,283 @@
     :cond_5
     move v2, v3
 
-    .line 358
+    .line 363
     goto :goto_0
 
     :cond_6
     move v2, v3
 
-    .line 353
+    .line 358
     goto :goto_1
 .end method
 
-.method public setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
-    .locals 0
-    .parameter "l"
+.method public render()V
+    .locals 17
 
     .prologue
-    .line 306
+    .line 193
+    const/4 v11, 0x1
+
+    new-array v9, v11, [Ljava/lang/Throwable;
+
+    .line 194
+    .local v9, thrown:[Ljava/lang/Throwable;
+    const/4 v11, 0x1
+
+    new-array v5, v11, [Landroid/graphics/Bitmap;
+
+    .line 198
+    .local v5, offscreen:[Landroid/graphics/Bitmap;
+    :try_start_0
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->getWidth()I
+
+    move-result v10
+
+    .line 199
+    .local v10, width:I
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->getHeight()I
+
+    move-result v4
+
+    .line 201
+    .local v4, height:I
+    move-object/from16 v0, p0
+
+    iget-object v11, v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mRenderedSize:Landroid/graphics/Point;
+
+    iget v11, v11, Landroid/graphics/Point;->x:I
+
+    if-ne v11, v10, :cond_1
+
+    move-object/from16 v0, p0
+
+    iget-object v11, v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mRenderedSize:Landroid/graphics/Point;
+
+    iget v11, v11, Landroid/graphics/Point;->y:I
+
+    if-ne v11, v4, :cond_1
+
+    .line 202
+    sget-boolean v11, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->DEBUG:Z
+
+    if-eqz v11, :cond_0
+
+    sget-object v11, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->TAG:Ljava/lang/String;
+
+    const-string v12, "Already rendered at size=%sx%s"
+
+    const/4 v13, 0x2
+
+    new-array v13, v13, [Ljava/lang/Object;
+
+    const/4 v14, 0x0
+
+    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v15
+
+    aput-object v15, v13, v14
+
+    const/4 v14, 0x1
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v15
+
+    aput-object v15, v13, v14
+
+    invoke-static {v12, v13}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-static {v11, v12}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 252
+    .end local v4           #height:I
+    .end local v10           #width:I
+    :cond_0
+    :goto_0
     return-void
+
+    .line 206
+    .restart local v4       #height:I
+    .restart local v10       #width:I
+    :cond_1
+    if-eqz v10, :cond_0
+
+    if-eqz v4, :cond_0
+
+    .line 209
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v6
+
+    .line 210
+    .local v6, start:J
+    const/4 v11, 0x0
+
+    sget-object v12, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
+
+    invoke-static {v10, v4, v12}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+
+    move-result-object v12
+
+    aput-object v12, v5, v11
+
+    .line 211
+    new-instance v1, Landroid/graphics/Canvas;
+
+    const/4 v11, 0x0
+
+    aget-object v11, v5, v11
+
+    invoke-direct {v1, v11}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
+
+    .line 212
+    .local v1, c:Landroid/graphics/Canvas;
+    move-object/from16 v0, p0
+
+    iget-object v11, v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mWidgetView:Landroid/view/View;
+
+    const/high16 v12, 0x4000
+
+    invoke-static {v10, v12}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    move-result v12
+
+    const/high16 v13, 0x4000
+
+    invoke-static {v4, v13}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    move-result v13
+
+    invoke-virtual {v11, v12, v13}, Landroid/view/View;->measure(II)V
+
+    .line 215
+    move-object/from16 v0, p0
+
+    iget-object v11, v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mWidgetView:Landroid/view/View;
+
+    const/4 v12, 0x0
+
+    const/4 v13, 0x0
+
+    invoke-virtual {v11, v12, v13, v10, v4}, Landroid/view/View;->layout(IIII)V
+
+    .line 216
+    move-object/from16 v0, p0
+
+    iget-object v11, v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mWidgetView:Landroid/view/View;
+
+    invoke-virtual {v11, v1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
+
+    .line 218
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v2
+
+    .line 219
+    .local v2, end:J
+    sget-boolean v11, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->DEBUG:Z
+
+    if-eqz v11, :cond_2
+
+    sget-object v11, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->TAG:Ljava/lang/String;
+
+    const-string v12, "Rendered camera widget in %sms size=%sx%s instance=%s at %s"
+
+    const/4 v13, 0x5
+
+    new-array v13, v13, [Ljava/lang/Object;
+
+    const/4 v14, 0x0
+
+    sub-long v15, v2, v6
+
+    invoke-static/range {v15 .. v16}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v15
+
+    aput-object v15, v13, v14
+
+    const/4 v14, 0x1
+
+    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v15
+
+    aput-object v15, v13, v14
+
+    const/4 v14, 0x2
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v15
+
+    aput-object v15, v13, v14
+
+    const/4 v14, 0x3
+
+    invoke-direct/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->instanceId()Ljava/lang/String;
+
+    move-result-object v15
+
+    aput-object v15, v13, v14
+
+    const/4 v14, 0x4
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v15
+
+    aput-object v15, v13, v14
+
+    invoke-static {v12, v13}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-static {v11, v12}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 225
+    :cond_2
+    move-object/from16 v0, p0
+
+    iget-object v11, v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mRenderedSize:Landroid/graphics/Point;
+
+    invoke-virtual {v11, v10, v4}, Landroid/graphics/Point;->set(II)V
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 230
+    .end local v1           #c:Landroid/graphics/Canvas;
+    .end local v2           #end:J
+    .end local v4           #height:I
+    .end local v6           #start:J
+    .end local v10           #width:I
+    :goto_1
+    move-object/from16 v0, p0
+
+    iget-object v11, v0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mHandler:Landroid/os/Handler;
+
+    new-instance v12, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$8;
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v12, v0, v9, v5}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$8;-><init>(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;[Ljava/lang/Throwable;[Landroid/graphics/Bitmap;)V
+
+    invoke-virtual {v11, v12}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    goto/16 :goto_0
+
+    .line 226
+    :catch_0
+    move-exception v8
+
+    .line 227
+    .local v8, t:Ljava/lang/Throwable;
+    const/4 v11, 0x0
+
+    aput-object v8, v9, v11
+
+    goto :goto_1
 .end method

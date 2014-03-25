@@ -25,13 +25,13 @@
     .parameter "handler"
 
     .prologue
-    .line 880
+    .line 994
     iput-object p1, p0, Lcom/android/server/BatteryService$SettingsObserver;->this$0:Lcom/android/server/BatteryService;
 
-    .line 881
+    .line 995
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 882
+    .line 996
     return-void
 .end method
 
@@ -43,7 +43,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 885
+    .line 999
     iget-object v1, p0, Lcom/android/server/BatteryService$SettingsObserver;->this$0:Lcom/android/server/BatteryService;
 
     #getter for: Lcom/android/server/BatteryService;->mContext:Landroid/content/Context;
@@ -55,7 +55,7 @@
 
     move-result-object v0
 
-    .line 888
+    .line 1002
     .local v0, resolver:Landroid/content/ContentResolver;
     const-string v1, "battery_light_enabled"
 
@@ -65,7 +65,7 @@
 
     invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 892
+    .line 1006
     const-string v1, "battery_light_pulse"
 
     invoke-static {v1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -74,17 +74,17 @@
 
     invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 896
+    .line 1010
     iget-object v1, p0, Lcom/android/server/BatteryService$SettingsObserver;->this$0:Lcom/android/server/BatteryService;
 
     #getter for: Lcom/android/server/BatteryService;->mMultiColorLed:Z
-    invoke-static {v1}, Lcom/android/server/BatteryService;->access$1200(Lcom/android/server/BatteryService;)Z
+    invoke-static {v1}, Lcom/android/server/BatteryService;->access$2000(Lcom/android/server/BatteryService;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 898
+    .line 1012
     const-string v1, "battery_light_low_color"
 
     invoke-static {v1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -93,7 +93,7 @@
 
     invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 900
+    .line 1014
     const-string v1, "battery_light_medium_color"
 
     invoke-static {v1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -102,7 +102,7 @@
 
     invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 902
+    .line 1016
     const-string v1, "battery_light_full_color"
 
     invoke-static {v1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -111,11 +111,11 @@
 
     invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 908
+    .line 1022
     :cond_0
     invoke-virtual {p0}, Lcom/android/server/BatteryService$SettingsObserver;->update()V
 
-    .line 909
+    .line 1023
     return-void
 .end method
 
@@ -124,10 +124,10 @@
     .parameter "selfChange"
 
     .prologue
-    .line 912
+    .line 1026
     invoke-virtual {p0}, Lcom/android/server/BatteryService$SettingsObserver;->update()V
 
-    .line 913
+    .line 1027
     return-void
 .end method
 
@@ -139,7 +139,7 @@
 
     const/4 v3, 0x1
 
-    .line 916
+    .line 1030
     iget-object v2, p0, Lcom/android/server/BatteryService$SettingsObserver;->this$0:Lcom/android/server/BatteryService;
 
     #getter for: Lcom/android/server/BatteryService;->mContext:Landroid/content/Context;
@@ -151,7 +151,7 @@
 
     move-result-object v1
 
-    .line 917
+    .line 1031
     .local v1, resolver:Landroid/content/ContentResolver;
     iget-object v2, p0, Lcom/android/server/BatteryService$SettingsObserver;->this$0:Lcom/android/server/BatteryService;
 
@@ -164,7 +164,7 @@
 
     move-result-object v0
 
-    .line 920
+    .line 1034
     .local v0, res:Landroid/content/res/Resources;
     iget-object v5, p0, Lcom/android/server/BatteryService$SettingsObserver;->this$0:Lcom/android/server/BatteryService;
 
@@ -182,7 +182,7 @@
     #setter for: Lcom/android/server/BatteryService;->mLightEnabled:Z
     invoke-static {v5, v2}, Lcom/android/server/BatteryService;->access$1402(Lcom/android/server/BatteryService;Z)Z
 
-    .line 924
+    .line 1038
     iget-object v2, p0, Lcom/android/server/BatteryService$SettingsObserver;->this$0:Lcom/android/server/BatteryService;
 
     const-string v5, "battery_light_pulse"
@@ -195,9 +195,9 @@
 
     :goto_1
     #setter for: Lcom/android/server/BatteryService;->mLedPulseEnabled:Z
-    invoke-static {v2, v3}, Lcom/android/server/BatteryService;->access$1602(Lcom/android/server/BatteryService;Z)Z
+    invoke-static {v2, v3}, Lcom/android/server/BatteryService;->access$1502(Lcom/android/server/BatteryService;Z)Z
 
-    .line 928
+    .line 1042
     iget-object v2, p0, Lcom/android/server/BatteryService$SettingsObserver;->this$0:Lcom/android/server/BatteryService;
 
     const-string v3, "battery_light_low_color"
@@ -213,9 +213,9 @@
     move-result v3
 
     #setter for: Lcom/android/server/BatteryService;->mBatteryLowARGB:I
-    invoke-static {v2, v3}, Lcom/android/server/BatteryService;->access$1502(Lcom/android/server/BatteryService;I)I
+    invoke-static {v2, v3}, Lcom/android/server/BatteryService;->access$2102(Lcom/android/server/BatteryService;I)I
 
-    .line 931
+    .line 1045
     iget-object v2, p0, Lcom/android/server/BatteryService$SettingsObserver;->this$0:Lcom/android/server/BatteryService;
 
     const-string v3, "battery_light_medium_color"
@@ -231,9 +231,9 @@
     move-result v3
 
     #setter for: Lcom/android/server/BatteryService;->mBatteryMediumARGB:I
-    invoke-static {v2, v3}, Lcom/android/server/BatteryService;->access$1802(Lcom/android/server/BatteryService;I)I
+    invoke-static {v2, v3}, Lcom/android/server/BatteryService;->access$2202(Lcom/android/server/BatteryService;I)I
 
-    .line 934
+    .line 1048
     iget-object v2, p0, Lcom/android/server/BatteryService$SettingsObserver;->this$0:Lcom/android/server/BatteryService;
 
     const-string v3, "battery_light_full_color"
@@ -249,26 +249,26 @@
     move-result v3
 
     #setter for: Lcom/android/server/BatteryService;->mBatteryFullARGB:I
-    invoke-static {v2, v3}, Lcom/android/server/BatteryService;->access$1702(Lcom/android/server/BatteryService;I)I
+    invoke-static {v2, v3}, Lcom/android/server/BatteryService;->access$2302(Lcom/android/server/BatteryService;I)I
 
-    .line 939
+    .line 1053
     iget-object v2, p0, Lcom/android/server/BatteryService$SettingsObserver;->this$0:Lcom/android/server/BatteryService;
 
     #calls: Lcom/android/server/BatteryService;->updateLedPulse()V
-    invoke-static {v2}, Lcom/android/server/BatteryService;->access$2000(Lcom/android/server/BatteryService;)V
+    invoke-static {v2}, Lcom/android/server/BatteryService;->access$2400(Lcom/android/server/BatteryService;)V
 
-    .line 940
+    .line 1054
     return-void
 
     :cond_0
     move v2, v4
 
-    .line 920
+    .line 1034
     goto :goto_0
 
     :cond_1
     move v3, v4
 
-    .line 924
+    .line 1038
     goto :goto_1
 .end method

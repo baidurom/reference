@@ -19,8 +19,8 @@
     .locals 0
 
     .prologue
-    .line 42
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 45
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -36,17 +36,17 @@
     .end annotation
 
     .prologue
-    .line 45
+    .line 48
     invoke-static {}, Lcom/android/internal/os/BinderInternal;->handleGc()V
 
-    .line 46
+    .line 49
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
     sput-wide v0, Lcom/android/internal/os/BinderInternal;->mLastGcTime:J
 
-    .line 47
+    .line 50
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     new-instance v1, Lcom/android/internal/os/BinderInternal$GcWatcher;
@@ -57,6 +57,6 @@
 
     sput-object v0, Lcom/android/internal/os/BinderInternal;->mGcWatcher:Ljava/lang/ref/WeakReference;
 
-    .line 48
+    .line 51
     return-void
 .end method

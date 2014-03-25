@@ -45,7 +45,7 @@
 
     .prologue
     .line 48
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 49
     const/4 v0, 0x0
@@ -64,7 +64,7 @@
 
     .prologue
     .line 58
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 59
     if-eqz p1, :cond_0
@@ -97,7 +97,7 @@
 
     .prologue
     .line 53
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 54
     invoke-virtual {p1}, [B->clone()Ljava/lang/Object;
@@ -1016,7 +1016,7 @@
     .local v1, e:Ljava/io/UnsupportedEncodingException;
     new-instance v6, Ljava/lang/IllegalArgumentException;
 
-    const-string v7, "key should be US-ASCII"
+    const-string/jumbo v7, "key should be US-ASCII"
 
     invoke-direct {v6, v7}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

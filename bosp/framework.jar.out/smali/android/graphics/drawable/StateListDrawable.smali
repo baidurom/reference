@@ -359,7 +359,7 @@
 
     move-result-object v15
 
-    const-string v16, "item"
+    const-string/jumbo v16, "item"
 
     invoke-virtual/range {v15 .. v16}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

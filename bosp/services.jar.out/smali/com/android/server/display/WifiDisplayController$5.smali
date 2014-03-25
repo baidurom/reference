@@ -3,12 +3,12 @@
 .source "WifiDisplayController.java"
 
 # interfaces
-.implements Landroid/net/wifi/p2p/WifiP2pManager$PeerListListener;
+.implements Landroid/net/wifi/p2p/WifiP2pManager$ActionListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/display/WifiDisplayController;->requestPeers()V
+    value = Lcom/android/server/display/WifiDisplayController;->tryDiscoverPeers()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,84 +27,161 @@
     .parameter
 
     .prologue
-    .line 361
+    .line 659
     iput-object p1, p0, Lcom/android/server/display/WifiDisplayController$5;->this$0:Lcom/android/server/display/WifiDisplayController;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onPeersAvailable(Landroid/net/wifi/p2p/WifiP2pDeviceList;)V
-    .locals 3
-    .parameter "peers"
+.method public onFailure(I)V
+    .locals 4
+    .parameter "reason"
 
     .prologue
-    .line 368
-    iget-object v2, p0, Lcom/android/server/display/WifiDisplayController$5;->this$0:Lcom/android/server/display/WifiDisplayController;
+    .line 672
+    invoke-static {}, Lcom/android/server/display/WifiDisplayController;->access$700()Z
 
-    #getter for: Lcom/android/server/display/WifiDisplayController;->mAvailableWifiDisplayPeers:Ljava/util/ArrayList;
-    invoke-static {v2}, Lcom/android/server/display/WifiDisplayController;->access$1100(Lcom/android/server/display/WifiDisplayController;)Ljava/util/ArrayList;
+    move-result v0
 
-    move-result-object v2
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
+    .line 673
+    const-string v0, "WifiDisplayController"
 
-    .line 369
-    invoke-virtual {p1}, Landroid/net/wifi/p2p/WifiP2pDeviceList;->getDeviceList()Ljava/util/Collection;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-interface {v2}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    const-string v2, "Discover peers failed with reason "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .local v1, i$:Ljava/util/Iterator;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "."
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 676
     :cond_0
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    iget-object v0, p0, Lcom/android/server/display/WifiDisplayController$5;->this$0:Lcom/android/server/display/WifiDisplayController;
 
-    move-result v2
+    #getter for: Lcom/android/server/display/WifiDisplayController;->mDiscoverPeersInProgress:Z
+    invoke-static {v0}, Lcom/android/server/display/WifiDisplayController;->access$800(Lcom/android/server/display/WifiDisplayController;)Z
 
-    if-eqz v2, :cond_1
+    move-result v0
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    if-eqz v0, :cond_1
+
+    .line 677
+    if-nez p1, :cond_2
+
+    iget-object v0, p0, Lcom/android/server/display/WifiDisplayController$5;->this$0:Lcom/android/server/display/WifiDisplayController;
+
+    #getter for: Lcom/android/server/display/WifiDisplayController;->mDiscoverPeersRetriesLeft:I
+    invoke-static {v0}, Lcom/android/server/display/WifiDisplayController;->access$1000(Lcom/android/server/display/WifiDisplayController;)I
+
+    move-result v0
+
+    if-lez v0, :cond_2
+
+    iget-object v0, p0, Lcom/android/server/display/WifiDisplayController$5;->this$0:Lcom/android/server/display/WifiDisplayController;
+
+    #getter for: Lcom/android/server/display/WifiDisplayController;->mWfdEnabled:Z
+    invoke-static {v0}, Lcom/android/server/display/WifiDisplayController;->access$300(Lcom/android/server/display/WifiDisplayController;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    .line 678
+    iget-object v0, p0, Lcom/android/server/display/WifiDisplayController$5;->this$0:Lcom/android/server/display/WifiDisplayController;
+
+    #getter for: Lcom/android/server/display/WifiDisplayController;->mHandler:Landroid/os/Handler;
+    invoke-static {v0}, Lcom/android/server/display/WifiDisplayController;->access$1300(Lcom/android/server/display/WifiDisplayController;)Landroid/os/Handler;
 
     move-result-object v0
 
-    check-cast v0, Landroid/net/wifi/p2p/WifiP2pDevice;
+    new-instance v1, Lcom/android/server/display/WifiDisplayController$5$1;
 
-    .line 374
-    .local v0, device:Landroid/net/wifi/p2p/WifiP2pDevice;
-    #calls: Lcom/android/server/display/WifiDisplayController;->isWifiDisplay(Landroid/net/wifi/p2p/WifiP2pDevice;)Z
-    invoke-static {v0}, Lcom/android/server/display/WifiDisplayController;->access$1200(Landroid/net/wifi/p2p/WifiP2pDevice;)Z
+    invoke-direct {v1, p0}, Lcom/android/server/display/WifiDisplayController$5$1;-><init>(Lcom/android/server/display/WifiDisplayController$5;)V
 
-    move-result v2
+    const-wide/16 v2, 0x1f4
 
-    if-eqz v2, :cond_0
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 375
-    iget-object v2, p0, Lcom/android/server/display/WifiDisplayController$5;->this$0:Lcom/android/server/display/WifiDisplayController;
-
-    #getter for: Lcom/android/server/display/WifiDisplayController;->mAvailableWifiDisplayPeers:Ljava/util/ArrayList;
-    invoke-static {v2}, Lcom/android/server/display/WifiDisplayController;->access$1100(Lcom/android/server/display/WifiDisplayController;)Ljava/util/ArrayList;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_0
-
-    .line 379
-    .end local v0           #device:Landroid/net/wifi/p2p/WifiP2pDevice;
+    .line 701
     :cond_1
-    iget-object v2, p0, Lcom/android/server/display/WifiDisplayController$5;->this$0:Lcom/android/server/display/WifiDisplayController;
+    :goto_0
+    return-void
+
+    .line 697
+    :cond_2
+    iget-object v0, p0, Lcom/android/server/display/WifiDisplayController$5;->this$0:Lcom/android/server/display/WifiDisplayController;
 
     #calls: Lcom/android/server/display/WifiDisplayController;->handleScanFinished()V
-    invoke-static {v2}, Lcom/android/server/display/WifiDisplayController;->access$900(Lcom/android/server/display/WifiDisplayController;)V
+    invoke-static {v0}, Lcom/android/server/display/WifiDisplayController;->access$1200(Lcom/android/server/display/WifiDisplayController;)V
 
-    .line 380
+    .line 698
+    iget-object v0, p0, Lcom/android/server/display/WifiDisplayController$5;->this$0:Lcom/android/server/display/WifiDisplayController;
+
+    const/4 v1, 0x0
+
+    #setter for: Lcom/android/server/display/WifiDisplayController;->mDiscoverPeersInProgress:Z
+    invoke-static {v0, v1}, Lcom/android/server/display/WifiDisplayController;->access$802(Lcom/android/server/display/WifiDisplayController;Z)Z
+
+    goto :goto_0
+.end method
+
+.method public onSuccess()V
+    .locals 2
+
+    .prologue
+    .line 662
+    invoke-static {}, Lcom/android/server/display/WifiDisplayController;->access$700()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 663
+    const-string v0, "WifiDisplayController"
+
+    const-string v1, "Discover peers succeeded.  Requesting peers now."
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 666
+    :cond_0
+    iget-object v0, p0, Lcom/android/server/display/WifiDisplayController$5;->this$0:Lcom/android/server/display/WifiDisplayController;
+
+    const/4 v1, 0x0
+
+    #setter for: Lcom/android/server/display/WifiDisplayController;->mDiscoverPeersInProgress:Z
+    invoke-static {v0, v1}, Lcom/android/server/display/WifiDisplayController;->access$802(Lcom/android/server/display/WifiDisplayController;Z)Z
+
+    .line 667
+    iget-object v0, p0, Lcom/android/server/display/WifiDisplayController$5;->this$0:Lcom/android/server/display/WifiDisplayController;
+
+    #calls: Lcom/android/server/display/WifiDisplayController;->requestPeers()V
+    invoke-static {v0}, Lcom/android/server/display/WifiDisplayController;->access$900(Lcom/android/server/display/WifiDisplayController;)V
+
+    .line 668
     return-void
 .end method

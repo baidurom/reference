@@ -145,7 +145,7 @@
     .line 290
     new-instance v4, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v5, "outerContext must not be null"
+    const-string v5, "outerContext must not be null"
 
     invoke-direct {v4, v5}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -197,7 +197,7 @@
     .line 308
     .end local v2           #outValue:Landroid/util/TypedValue;
     :cond_2
-    const-string/jumbo v4, "window"
+    const-string v4, "window"
 
     invoke-virtual {p0, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 

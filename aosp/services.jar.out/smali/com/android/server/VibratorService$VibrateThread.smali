@@ -39,12 +39,12 @@
 
     .line 448
     #getter for: Lcom/android/server/VibratorService;->mTmpWorkSource:Landroid/os/WorkSource;
-    invoke-static {p1}, Lcom/android/server/VibratorService;->access$900(Lcom/android/server/VibratorService;)Landroid/os/WorkSource;
+    invoke-static {p1}, Lcom/android/server/VibratorService;->access$800(Lcom/android/server/VibratorService;)Landroid/os/WorkSource;
 
     move-result-object v0
 
     #getter for: Lcom/android/server/VibratorService$Vibration;->mUid:I
-    invoke-static {p2}, Lcom/android/server/VibratorService$Vibration;->access$800(Lcom/android/server/VibratorService$Vibration;)I
+    invoke-static {p2}, Lcom/android/server/VibratorService$Vibration;->access$700(Lcom/android/server/VibratorService$Vibration;)I
 
     move-result v1
 
@@ -52,12 +52,12 @@
 
     .line 449
     #getter for: Lcom/android/server/VibratorService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
-    invoke-static {p1}, Lcom/android/server/VibratorService;->access$1000(Lcom/android/server/VibratorService;)Landroid/os/PowerManager$WakeLock;
+    invoke-static {p1}, Lcom/android/server/VibratorService;->access$900(Lcom/android/server/VibratorService;)Landroid/os/PowerManager$WakeLock;
 
     move-result-object v0
 
     #getter for: Lcom/android/server/VibratorService;->mTmpWorkSource:Landroid/os/WorkSource;
-    invoke-static {p1}, Lcom/android/server/VibratorService;->access$900(Lcom/android/server/VibratorService;)Landroid/os/WorkSource;
+    invoke-static {p1}, Lcom/android/server/VibratorService;->access$800(Lcom/android/server/VibratorService;)Landroid/os/WorkSource;
 
     move-result-object v1
 
@@ -65,7 +65,7 @@
 
     .line 450
     #getter for: Lcom/android/server/VibratorService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
-    invoke-static {p1}, Lcom/android/server/VibratorService;->access$1000(Lcom/android/server/VibratorService;)Landroid/os/PowerManager$WakeLock;
+    invoke-static {p1}, Lcom/android/server/VibratorService;->access$900(Lcom/android/server/VibratorService;)Landroid/os/PowerManager$WakeLock;
 
     move-result-object v0
 
@@ -160,7 +160,7 @@
     iget-object v7, p0, Lcom/android/server/VibratorService$VibrateThread;->mVibration:Lcom/android/server/VibratorService$Vibration;
 
     #getter for: Lcom/android/server/VibratorService$Vibration;->mPattern:[J
-    invoke-static {v7}, Lcom/android/server/VibratorService$Vibration;->access$700(Lcom/android/server/VibratorService$Vibration;)[J
+    invoke-static {v7}, Lcom/android/server/VibratorService$Vibration;->access$600(Lcom/android/server/VibratorService$Vibration;)[J
 
     move-result-object v5
 
@@ -173,7 +173,7 @@
     iget-object v7, p0, Lcom/android/server/VibratorService$VibrateThread;->mVibration:Lcom/android/server/VibratorService$Vibration;
 
     #getter for: Lcom/android/server/VibratorService$Vibration;->mRepeat:I
-    invoke-static {v7}, Lcom/android/server/VibratorService$Vibration;->access$1100(Lcom/android/server/VibratorService$Vibration;)I
+    invoke-static {v7}, Lcom/android/server/VibratorService$Vibration;->access$1000(Lcom/android/server/VibratorService$Vibration;)I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -238,7 +238,7 @@
     iget-object v7, p0, Lcom/android/server/VibratorService$VibrateThread;->this$0:Lcom/android/server/VibratorService;
 
     #getter for: Lcom/android/server/VibratorService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
-    invoke-static {v7}, Lcom/android/server/VibratorService;->access$1000(Lcom/android/server/VibratorService;)Landroid/os/PowerManager$WakeLock;
+    invoke-static {v7}, Lcom/android/server/VibratorService;->access$900(Lcom/android/server/VibratorService;)Landroid/os/PowerManager$WakeLock;
 
     move-result-object v7
 
@@ -298,7 +298,7 @@
     iget-object v9, p0, Lcom/android/server/VibratorService$VibrateThread;->mVibration:Lcom/android/server/VibratorService$Vibration;
 
     #calls: Lcom/android/server/VibratorService;->unlinkVibration(Lcom/android/server/VibratorService$Vibration;)V
-    invoke-static {v7, v9}, Lcom/android/server/VibratorService;->access$1300(Lcom/android/server/VibratorService;Lcom/android/server/VibratorService$Vibration;)V
+    invoke-static {v7, v9}, Lcom/android/server/VibratorService;->access$1200(Lcom/android/server/VibratorService;Lcom/android/server/VibratorService$Vibration;)V
 
     .line 518
     iget-object v7, p0, Lcom/android/server/VibratorService$VibrateThread;->this$0:Lcom/android/server/VibratorService;
@@ -340,7 +340,7 @@
     iget-object v7, p0, Lcom/android/server/VibratorService$VibrateThread;->this$0:Lcom/android/server/VibratorService;
 
     #calls: Lcom/android/server/VibratorService;->doVibratorOn(J)V
-    invoke-static {v7, v0, v1}, Lcom/android/server/VibratorService;->access$1200(Lcom/android/server/VibratorService;J)V
+    invoke-static {v7, v0, v1}, Lcom/android/server/VibratorService;->access$1100(Lcom/android/server/VibratorService;J)V
 
     move v3, v2
 

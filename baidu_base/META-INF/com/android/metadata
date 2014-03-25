@@ -1,3 +1,3 @@
-post-build=Android/full_maguro/maguro:4.2.2/JDQ39/I9250_R_2.3.45.16:userdebug/release-keys
-post-timestamp=1394113607
-pre-device=maguro
+post-build=Coolpad/Coolpad8297/Coolpad8297:4.2.2/JDQ39/eng.linchunliang.1395029812:userdebug/release-keys
+post-timestamp=1395029874
+pre-device=Coolpad8297

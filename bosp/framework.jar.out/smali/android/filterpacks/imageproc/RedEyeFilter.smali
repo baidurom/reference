@@ -345,7 +345,7 @@
     .line 106
     iget-object v1, p0, Landroid/filterpacks/imageproc/RedEyeFilter;->mProgram:Landroid/filterfw/core/Program;
 
-    const-string v2, "intensity"
+    const-string/jumbo v2, "intensity"
 
     const v3, 0x3fa66666
 
@@ -362,6 +362,8 @@
     return-void
 
     .line 101
+    nop
+
     :pswitch_data_0
     .packed-switch 0x3
         :pswitch_0

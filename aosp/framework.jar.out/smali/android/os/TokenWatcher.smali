@@ -43,7 +43,7 @@
 
     .prologue
     .line 43
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 147
     new-instance v0, Landroid/os/TokenWatcher$1;

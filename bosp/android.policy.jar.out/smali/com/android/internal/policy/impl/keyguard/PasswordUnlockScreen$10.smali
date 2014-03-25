@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 609
+    .line 621
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen$10;->this$0:Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;
 
     iput-object p2, p0, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen$10;->val$invisToVis:Landroid/animation/ObjectAnimator;
@@ -44,12 +44,12 @@
     .parameter "anim"
 
     .prologue
-    .line 612
+    .line 624
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen$10;->val$invisToVis:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
 
-    .line 613
+    .line 625
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen$10;->this$0:Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;
 
     const/4 v1, 0x0
@@ -57,7 +57,7 @@
     #calls: Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;->setVoicePrintVisibility(Z)V
     invoke-static {v0, v1}, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;->access$1400(Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;Z)V
 
-    .line 614
+    .line 626
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen$10;->this$0:Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;->mPasswordEntry:Landroid/widget/EditText;
@@ -69,7 +69,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 615
+    .line 627
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen$10;->this$0:Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;->mVoicePrintView:Lcom/yi/internal/widget/VoiceprintUnlockView;
@@ -81,6 +81,6 @@
 
     invoke-virtual {v0, v1}, Lcom/yi/internal/widget/VoiceprintUnlockView;->setRotationY(F)V
 
-    .line 616
+    .line 628
     return-void
 .end method

@@ -271,7 +271,7 @@
     <string name="permgrouplab_display">واجهة مستخدم تطبيقات أخرى</string>
     <string name="permgroupdesc_display">التأثير على واجهة المستخدم بالتطبيقات الأخرى.</string>
     <string name="permgrouplab_storage">التخزين</string>
-    <string name="permgroupdesc_storage">الدخول إلى وحدة تخزين USB.</string>
+    <string name="permgroupdesc_storage">الدخول إلى بطاقة SD.</string>
     <string name="permlab_statusBar">تعطيل شريط الحالة أو تعديله</string>
     <string name="permdesc_statusBar">للسماح للتطبيق بتعطيل شريط الحالة أو إضافة رموز نظام وإزالتها.</string>
     <string name="permlab_statusBarService">شريط الحالة</string>
@@ -486,9 +486,9 @@
     <string name="permdesc_brick">للسماح للتطبيق بتعطيل الهاتف بالكامل بشكل دائم. هذا خطير للغاية.</string>
     <string name="permlab_reboot">فرض إعادة تشغيل الهاتف</string>
     <string name="permdesc_reboot">للسماح للتطبيق بفرض إعادة تشغيل الهاتف.</string>
-    <string name="permlab_mount_unmount_filesystems">الدخول إلى نظام ملفات وحدة تخزين USB</string>
+    <string name="permlab_mount_unmount_filesystems">الدخول إلى نظام ملفات بطاقة SD</string>
     <string name="permdesc_mount_unmount_filesystems">للسماح للتطبيق بتحميل أنظمة الملفات وإلغاء تحميلها إلى وحدة التخزين القابلة للإزالة.</string>
-    <string name="permlab_mount_format_filesystems">محو وحدة تخزين USB</string>
+    <string name="permlab_mount_format_filesystems">محو بطاقة SD</string>
     <string name="permdesc_mount_format_filesystems">للسماح للتطبيق بتنسيق وحدة التخزين القابلة للإزالة.</string>
     <string name="permlab_asec_access">الحصول على معلومات حول وحدة التخزين الداخلية</string>
     <string name="permdesc_asec_access">للسماح للتطبيق بالحصول على معلومات حول سعة التخزين الداخلية.</string>
@@ -597,9 +597,9 @@
     <string name="permlab_writeDictionary">إضافة كلمات إلى القاموس المعرّف بواسطة المستخدم</string>
     <string name="permdesc_writeDictionary">للسماح للتطبيق بكتابة كلمات جديدة في قاموس المستخدم.</string>
     <string name="permlab_sdcardRead">اختبار إمكانية الدخول إلى وحدة تخزين محمية</string>
-    <string name="permdesc_sdcardRead">للسماح للتطبيق باختبار إذن لوحدة تخزين USB التي ستتوفر على أجهزة مستقبلية.</string>
-    <string name="permlab_sdcardWrite">تعديل محتويات وحدة تخزين USB أو حذفها</string>
-    <string name="permdesc_sdcardWrite">للسماح للتطبيق بالكتابة إلى وحدة تخزين USB.</string>
+    <string name="permdesc_sdcardRead">للسماح للتطبيق باختبار إذن لبطاقة SD سيتم توفيرها على أجهزة مستقبلية.</string>
+    <string name="permlab_sdcardWrite">تعديل محتويات بطاقة SD أو حذفها</string>
+    <string name="permdesc_sdcardWrite">للسماح للتطبيق بالكتابة إلى بطاقة SD.</string>
     <string name="permlab_mediaStorageWrite">تعديل/حذف محتويات وحدة تخزين الوسائط الداخلية</string>
     <string name="permdesc_mediaStorageWrite">للسماح للتطبيق بتعديل محتويات وحدة تخزين الوسائط الداخلية.</string>
     <string name="permlab_sdcardAccessAll">الوصول إلى سعة التخزين الخارجية لجميع المستخدمين</string>
@@ -733,7 +733,7 @@
     <string name="lockscreen_missing_sim_message">ليس هناك بطاقة SIM في الهاتف.</string>
     <string name="lockscreen_missing_sim_instructions">أدخل بطاقة SIM.</string>
     <string name="lockscreen_missing_sim_instructions_long">بطاقة SIM مفقودة أو غير قابلة للقراءة. أدخل بطاقة SIM.</string>
-    <string name="lockscreen_permanent_disabled_sim_message_short">بطاقة SIM غير قابلة للاستخدام.</string>
+    <string name="lockscreen_permanent_disabled_sim_message_short">بطاقة SIM غير قابلة للاستخدام</string>
     <string name="lockscreen_permanent_disabled_sim_instructions">"تم تعطيل بطاقة SIM بشكل دائم.
  اتصل بمقدم خدمة اللاسلكي للحصول على بطاقة SIM أخرى."</string>
     <string name="lockscreen_transport_prev_description">زر المقطع الصوتي السابق</string>
@@ -743,9 +743,9 @@
     <string name="lockscreen_transport_stop_description">زر الإيقاف</string>
     <string name="emergency_calls_only">مكالمات الطوارئ فقط</string>
     <string name="lockscreen_network_locked_message">الشبكة مؤمّنة</string>
-    <string name="lockscreen_sim_puk_locked_message">بطاقة SIM مؤمّنة بكود PUK.</string>
+    <string name="lockscreen_sim_puk_locked_message">بطاقة SIM مؤمّنة بكود PUK</string>
     <string name="lockscreen_sim_puk_locked_instructions">راجع دليل المستخدم أو اتصل بخدمة العملاء.</string>
-    <string name="lockscreen_sim_locked_message">بطاقة SIM مؤمّنة.</string>
+    <string name="lockscreen_sim_locked_message">بطاقة SIM مؤمّنة</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">جارٍ إلغاء تأمين بطاقة SIM…</string>
     <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"لقد رسمت نقش إلغاء التأمين بطريقة غير صحيحة %d مرة.
 
@@ -1030,15 +1030,15 @@
     <string name="perm_costs_money">قد يكلفك هذا مالاً.</string>
     <string name="usb_storage_activity_title">تخزين USB كبير السعة</string>
     <string name="usb_storage_title">USB متصل</string>
-    <string name="usb_storage_message">لقد اتصلت بجهاز الكمبيوتر من خلال USB. المس الزر أدناه إذا كنت تريد نسخ الملفات بين جهاز الكمبيوتر ووحدة تخزين USB في Android.</string>
+    <string name="usb_storage_message">لقد اتصلت بجهاز الكمبيوتر من خلال USB. المس الزر أدناه إذا كنت تريد نسخ الملفات بين جهاز الكمبيوتر وبطاقة SD لـ Android.</string>
     <string name="usb_storage_button_mount">تشغيل سعة تخزين USB</string>
-    <string name="usb_storage_error_message">حدثت مشكلة أثناء استخدام وحدة تخزين USB لتخزين كبير السعة عبر USB.</string>
+    <string name="usb_storage_error_message">حدثت مشكلة أثناء استخدام بطاقة SD لتخزين كبير السعة عبر USB.</string>
     <string name="usb_storage_notification_title">USB متصل</string>
     <string name="usb_storage_notification_message">المس لنسخ الملفات إلى/من جهاز الكمبيوتر.</string>
     <string name="usb_storage_stop_notification_title">إيقاف تشغيل سعة تخزين USB</string>
     <string name="usb_storage_stop_notification_message">المس لإيقاف وحدة تخزين USB.</string>
     <string name="usb_storage_stop_title">سعة USB التخزينية المستخدمة</string>
-    <string name="usb_storage_stop_message">قبل إيقاف وحدة تخزين USB، الغ تحميل (\"أخرج\") وحدة تخزين USB لـ Android من الكمبيوتر.</string>
+    <string name="usb_storage_stop_message">قبل إيقاف وحدة تخزين USB، الغ تحميل (\"أخرج\") بطاقة SD لـ Android من الكمبيوتر.</string>
     <string name="usb_storage_stop_button_mount">إيقاف تشغيل سعة تخزين USB</string>
     <string name="usb_storage_stop_error_message">حدثت مشكلة أثناء إيقاف وحدة تخزين USB. تحقق من إلغاء تحميل مضيف USB، ثم أعد المحاولة.</string>
     <string name="dlg_confirm_kill_storage_users_title">تشغيل سعة تخزين USB</string>
@@ -1050,8 +1050,8 @@
     <string name="usb_cd_installer_notification_title">التوصيل كأداة تثبيت</string>
     <string name="usb_accessory_notification_title">الاتصال بجهاز USB ملحق</string>
     <string name="usb_notification_message">المس للاطلاع على خيارات USB الأخرى.</string>
-    <string name="extmedia_format_title">تهيئة وحدة تخزين USB؟</string>
-    <string name="extmedia_format_message">سيتم مسح جميع الملفات المخزنة على وحدة تخزين USB. لا يمكن عكس هذا الإجراء!</string>
+    <string name="extmedia_format_title">هل تريد تنسيق بطاقة SD؟</string>
+    <string name="extmedia_format_message">ستفقد جميع البيانات على بطاقتك.</string>
     <string name="extmedia_format_button_format">تنسيق</string>
     <string name="adb_active_notification_title">تم توصيل تصحيح أخطاء USB</string>
     <string name="adb_active_notification_message">المس لتعطيل تصحيح أخطاء USB.</string>
@@ -1064,18 +1064,18 @@
     <string name="fast_scroll_alphabet">" أ ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ي"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789 أ ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ي"</string>
     <string name="candidates_style"><u>العناصر المرشحة</u></string>
-    <string name="ext_media_checking_notification_title">تحضير وحدة تخزين USB</string>
+    <string name="ext_media_checking_notification_title">جار إعداد %s</string>
     <string name="ext_media_checking_notification_message">التحقق من الأخطاء.</string>
-    <string name="ext_media_nofs_notification_title">وحدة تخزين USB فارغة</string>
-    <string name="ext_media_nofs_notification_message">وحدة تخزين USB فارغة أو تشتمل على نظام ملفات غير معتمد.</string>
-    <string name="ext_media_unmountable_notification_title">وحدة تخزين USB تالفة</string>
-    <string name="ext_media_unmountable_notification_message">تعطلت وحدة تخزين USB. جرّب إعادة تنسيقها.</string>
-    <string name="ext_media_badremoval_notification_title">تمت إزالة وحدة تخزين USB على غير المتوقع</string>
-    <string name="ext_media_badremoval_notification_message">إلغاء تركيب وحدة تخزين USB قبل الإزالة لتجنب فقد البيانات.</string>
-    <string name="ext_media_safe_unmount_notification_title">يمكنك إزالة وحدة تخزين USB بشكل آمن</string>
-    <string name="ext_media_safe_unmount_notification_message">يمكنك إزالة وحدة تخزين USB بشكل آمن.</string>
-    <string name="ext_media_nomedia_notification_title">تمت إزالة وحدة تخزين USB</string>
-    <string name="ext_media_nomedia_notification_message">تمت إزالة وحدة تخزين USB. أدرج وسائط جديدة.</string>
+    <string name="ext_media_nofs_notification_title">%s فارغة</string>
+    <string name="ext_media_nofs_notification_message">%s فارغة أو بها نظام ملفات غير مدعوم.</string>
+    <string name="ext_media_unmountable_notification_title">%s تالفة</string>
+    <string name="ext_media_unmountable_notification_message">%s تالفة. ينبغي عليك إعادة تهيئتها.</string>
+    <string name="ext_media_badremoval_notification_title">تمت إزالة %s بشكل فجائي</string>
+    <string name="ext_media_badremoval_notification_message">قم إلغاء تثبيت %s قبل إزالتها لتجنب فقدان البيانات.</string>
+    <string name="ext_media_safe_unmount_notification_title">من المأمون إزالة %s</string>
+    <string name="ext_media_safe_unmount_notification_message">يمكن إزالة %s بأمان.</string>
+    <string name="ext_media_nomedia_notification_title">تمت إزالة %s</string>
+    <string name="ext_media_nomedia_notification_message">تمت إزالة %s. أدخل ذاكرة أخرى.</string>
     <string name="activity_list_empty">لم يتم العثور على أي أنشطة متطابقة.</string>
     <string name="permlab_pkgUsageStats">تحديث إحصاءات استخدام المكون</string>
     <string name="permdesc_pkgUsageStats">للسماح للتطبيق بتعديل إحصاءات استخدام المكون المجمّعة. ليس للاستخدام بواسطة التطبيقات العادية.</string>
@@ -1135,13 +1135,13 @@
     <string name="no_matches">ليس هناك أية مطابقات</string>
     <string name="find_on_page">بحث في الصفحة</string>
     <string name="action_mode_done">تم</string>
-    <string name="progress_unmounting">جارٍ إلغاء تحميل وحدة تخزين USB...</string>
-    <string name="progress_erasing">جارٍ محو وحدة تخزين USB...</string>
-    <string name="format_error">تعذر مسح وحدة تخزين USB.</string>
+    <string name="progress_unmounting">جارٍ إلغاء تحميل بطاقة SD...</string>
+    <string name="progress_erasing">جارٍ محو بطاقة SD...</string>
+    <string name="format_error">تعذر مسح بطاقة SD.</string>
     <string name="media_bad_removal">تمت إزالة بطاقة SD قبل أن يتم إلغاء تركيبها.</string>
-    <string name="media_checking">يتم حاليًا التحقق من وحدة تخزين USB.</string>
+    <string name="media_checking">يتم الآن التحقق من بطاقة SD.</string>
     <string name="media_removed">تمت إزالة بطاقة SD.</string>
-    <string name="media_shared">وحدة تخزين USB قيد الاستخدام بواسطة كمبيوتر حاليًا.</string>
+    <string name="media_shared">بطاقة SD قيد الاستخدام حاليًا بواسطة كمبيوتر.</string>
     <string name="media_unknown_state">وسائط خارجية في حالة غير معروفة.</string>
     <string name="share">مشاركة</string>
     <string name="find">بحث</string>
@@ -1315,4 +1315,7 @@
     <string name="enable_accessibility_canceled">تم إلغاء تسهيل الدخول.</string>
     <string name="user_switched">المستخدم الحالي %1$s.</string>
     <string name="owner_name">المالك</string>
+    <string name="storage_phone">ذاكرة تخزين الهاتف</string>
+    <string name="storage_external_usb">وحدة تخزين USB الخارجية</string>
+    <string name="zz_keyguard_accessibility_voice_unlock">إلغاء القفل بالأوامر الصوتية.</string>
 </resources>

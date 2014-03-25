@@ -17,7 +17,7 @@
 
     .prologue
     .line 25
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -233,6 +233,46 @@
     const/4 v0, 0x1
 
     return v0
+.end method
+
+.method public onNotificationManagerCancelPrompt(I)V
+    .locals 0
+    .parameter "id"
+
+    .prologue
+    .line 397
+    return-void
+.end method
+
+.method public onNotificationManagerShowPrompt(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILandroid/webkit/NotificationPermissions$Callback;)V
+    .locals 0
+    .parameter "icon"
+    .parameter "title"
+    .parameter "body"
+    .parameter "counter"
+    .parameter "callback"
+
+    .prologue
+    .line 410
+    return-void
+.end method
+
+.method public onNotificationPermissionsHidePrompt()V
+    .locals 0
+
+    .prologue
+    .line 416
+    return-void
+.end method
+
+.method public onNotificationPermissionsShowPrompt(Ljava/lang/String;Landroid/webkit/NotificationPermissions$Callback;)V
+    .locals 0
+    .parameter "origin"
+    .parameter "callback"
+
+    .prologue
+    .line 425
+    return-void
 .end method
 
 .method public onProgressChanged(Landroid/webkit/WebView;I)V

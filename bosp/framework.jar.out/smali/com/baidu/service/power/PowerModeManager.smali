@@ -71,7 +71,7 @@
     const/4 v2, 0x0
 
     .line 55
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 41
     iput v2, p0, Lcom/baidu/service/power/PowerModeManager;->mSuperReason:I

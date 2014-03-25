@@ -34,19 +34,19 @@
     .parameter "end"
 
     .prologue
-    .line 504
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 509
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 505
+    .line 510
     iput-object p1, p0, Landroid/text/TextUtils$Reverser;->mSource:Ljava/lang/CharSequence;
 
-    .line 506
+    .line 511
     iput p2, p0, Landroid/text/TextUtils$Reverser;->mStart:I
 
-    .line 507
+    .line 512
     iput p3, p0, Landroid/text/TextUtils$Reverser;->mEnd:I
 
-    .line 508
+    .line 513
     return-void
 .end method
 
@@ -57,7 +57,7 @@
     .parameter "off"
 
     .prologue
-    .line 527
+    .line 532
     iget-object v0, p0, Landroid/text/TextUtils$Reverser;->mSource:Ljava/lang/CharSequence;
 
     iget v1, p0, Landroid/text/TextUtils$Reverser;->mEnd:I
@@ -85,7 +85,7 @@
     .parameter "destoff"
 
     .prologue
-    .line 531
+    .line 536
     iget-object v4, p0, Landroid/text/TextUtils$Reverser;->mSource:Ljava/lang/CharSequence;
 
     iget v5, p0, Landroid/text/TextUtils$Reverser;->mStart:I
@@ -98,23 +98,23 @@
 
     invoke-static {v4, v5, v6, p3, p4}, Landroid/text/TextUtils;->getChars(Ljava/lang/CharSequence;II[CI)V
 
-    .line 533
+    .line 538
     const/4 v4, 0x0
 
     sub-int v5, p2, p1
 
     invoke-static {p3, v4, v5}, Landroid/text/AndroidCharacter;->mirror([CII)Z
 
-    .line 535
+    .line 540
     sub-int v1, p2, p1
 
-    .line 536
+    .line 541
     .local v1, len:I
     sub-int v4, p2, p1
 
     div-int/lit8 v2, v4, 0x2
 
-    .line 537
+    .line 542
     .local v2, n:I
     const/4 v0, 0x0
 
@@ -122,12 +122,12 @@
     :goto_0
     if-ge v0, v2, :cond_0
 
-    .line 538
+    .line 543
     add-int v4, p4, v0
 
     aget-char v3, p3, v4
 
-    .line 540
+    .line 545
     .local v3, tmp:C
     add-int v4, p4, v0
 
@@ -141,7 +141,7 @@
 
     aput-char v5, p3, v4
 
-    .line 541
+    .line 546
     add-int v4, p4, v1
 
     sub-int/2addr v4, v0
@@ -150,12 +150,12 @@
 
     aput-char v3, p3, v4
 
-    .line 537
+    .line 542
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 543
+    .line 548
     .end local v3           #tmp:C
     :cond_0
     return-void
@@ -165,7 +165,7 @@
     .locals 2
 
     .prologue
-    .line 511
+    .line 516
     iget v0, p0, Landroid/text/TextUtils$Reverser;->mEnd:I
 
     iget v1, p0, Landroid/text/TextUtils$Reverser;->mStart:I
@@ -181,18 +181,18 @@
     .parameter "end"
 
     .prologue
-    .line 515
+    .line 520
     sub-int v1, p2, p1
 
     new-array v0, v1, [C
 
-    .line 517
+    .line 522
     .local v0, buf:[C
     const/4 v1, 0x0
 
     invoke-virtual {p0, p1, p2, v0, v1}, Landroid/text/TextUtils$Reverser;->getChars(II[CI)V
 
-    .line 518
+    .line 523
     new-instance v1, Ljava/lang/String;
 
     invoke-direct {v1, v0}, Ljava/lang/String;-><init>([C)V
@@ -204,7 +204,7 @@
     .locals 2
 
     .prologue
-    .line 523
+    .line 528
     const/4 v0, 0x0
 
     invoke-virtual {p0}, Landroid/text/TextUtils$Reverser;->length()I

@@ -295,7 +295,7 @@
 
     .line 88
     .local v1, intent:Landroid/content/Intent;
-    iget-object v2, p0, Lcom/android/internal/app/AlertActivity;->mAlertParams:Lcom/android/internal/app/AlertController$AlertParams;
+    iget-object v2, p0, Lcom/android/internal/app/NetInitiatedActivity;->mAlertParams:Lcom/android/internal/app/AlertController$AlertParams;
 
     .line 89
     .local v2, p:Lcom/android/internal/app/AlertController$AlertParams;

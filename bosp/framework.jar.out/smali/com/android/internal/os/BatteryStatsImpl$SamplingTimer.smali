@@ -147,7 +147,7 @@
 
     .prologue
     .line 817
-    iget v1, p0, Lcom/android/internal/os/BatteryStatsImpl$Timer;->mCount:I
+    iget v1, p0, Lcom/android/internal/os/BatteryStatsImpl$SamplingTimer;->mCount:I
 
     iget-boolean v0, p0, Lcom/android/internal/os/BatteryStatsImpl$SamplingTimer;->mInDischarge:Z
 
@@ -180,7 +180,7 @@
 
     .prologue
     .line 812
-    iget-wide v2, p0, Lcom/android/internal/os/BatteryStatsImpl$Timer;->mTotalTime:J
+    iget-wide v2, p0, Lcom/android/internal/os/BatteryStatsImpl$SamplingTimer;->mTotalTime:J
 
     iget-boolean v0, p0, Lcom/android/internal/os/BatteryStatsImpl$SamplingTimer;->mInDischarge:Z
 
@@ -235,7 +235,7 @@
 
     move-result-object v0
 
-    const-string v1, "mCurrentReportedCount="
+    const-string/jumbo v1, "mCurrentReportedCount="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

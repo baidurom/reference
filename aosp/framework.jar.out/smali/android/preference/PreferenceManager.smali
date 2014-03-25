@@ -100,7 +100,7 @@
 
     .prologue
     .line 141
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 77
     const-wide/16 v0, 0x0
@@ -126,7 +126,7 @@
 
     .prologue
     .line 156
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 77
     const-wide/16 v0, 0x0
@@ -1077,7 +1077,7 @@
 
     .line 214
     .local v1, activityInfo:Landroid/content/pm/ActivityInfo;
-    iget-object v7, v1, Landroid/content/pm/PackageItemInfo;->metaData:Landroid/os/Bundle;
+    iget-object v7, v1, Landroid/content/pm/ActivityInfo;->metaData:Landroid/os/Bundle;
 
     .line 216
     .local v7, metaData:Landroid/os/Bundle;
@@ -1104,7 +1104,7 @@
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v11, v1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
+    iget-object v11, v1, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
 
     invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1116,7 +1116,7 @@
 
     move-result-object v10
 
-    iget-object v11, v1, Landroid/content/pm/PackageItemInfo;->metaData:Landroid/os/Bundle;
+    iget-object v11, v1, Landroid/content/pm/ActivityInfo;->metaData:Landroid/os/Bundle;
 
     const-string v12, "android.preference"
 
@@ -1147,7 +1147,7 @@
     :try_start_0
     iget-object v10, p0, Landroid/preference/PreferenceManager;->mContext:Landroid/content/Context;
 
-    iget-object v11, v1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
+    iget-object v11, v1, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
 
     const/4 v12, 0x0
 
@@ -1213,7 +1213,7 @@
 
     move-result-object v11
 
-    iget-object v12, v1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
+    iget-object v12, v1, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
 
     invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

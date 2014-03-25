@@ -156,7 +156,7 @@
 
     .line 143
     .local v9, map:Ljava/util/HashMap;
-    const-string v1, "listener"
+    const-string/jumbo v1, "listener"
 
     invoke-virtual {v9, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 

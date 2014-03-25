@@ -10,7 +10,7 @@
 
 .field public static final CHARGING_ICON:I = 0x0
 
-.field private static final DEBUG:Z = false
+.field private static final DEBUG:Z = true
 
 .field public static final LOCK_ICON:I = 0x0
 
@@ -341,6 +341,25 @@
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardStatusView;->refresh()V
 
     .line 103
+    return-void
+.end method
+
+.method public onWindowFocusChanged(Z)V
+    .locals 0
+    .parameter "hasWindowFocus"
+
+    .prologue
+    .line 162
+    invoke-super {p0, p1}, Landroid/widget/GridLayout;->onWindowFocusChanged(Z)V
+
+    .line 163
+    if-eqz p1, :cond_0
+
+    .line 164
+    invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardStatusView;->refresh()V
+
+    .line 166
+    :cond_0
     return-void
 .end method
 

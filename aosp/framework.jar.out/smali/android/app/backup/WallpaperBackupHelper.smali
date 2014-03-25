@@ -48,7 +48,7 @@
 
     move-result-object v1
 
-    const-string/jumbo v2, "wallpaper"
+    const-string v2, "wallpaper"
 
     invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
@@ -65,7 +65,7 @@
 
     move-result-object v1
 
-    const-string/jumbo v2, "wallpaper_info.xml"
+    const-string v2, "wallpaper_info.xml"
 
     invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
@@ -82,7 +82,7 @@
 
     move-result-object v1
 
-    const-string/jumbo v2, "wallpaper-tmp"
+    const-string v2, "wallpaper-tmp"
 
     invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
@@ -117,7 +117,7 @@
     iput-object p3, p0, Landroid/app/backup/WallpaperBackupHelper;->mKeys:[Ljava/lang/String;
 
     .line 84
-    const-string/jumbo v4, "wallpaper"
+    const-string v4, "wallpaper"
 
     invoke-virtual {p1, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -159,7 +159,7 @@
 
     .line 89
     :cond_0
-    const-string/jumbo v4, "window"
+    const-string v4, "window"
 
     invoke-virtual {p1, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 

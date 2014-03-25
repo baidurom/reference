@@ -931,11 +931,11 @@
 
     move-result v6
 
-    iget v7, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v7, p0, Landroid/widget/TableLayout;->mPaddingLeft:I
 
     sub-int/2addr v6, v7
 
-    iget v7, p0, Landroid/view/View;->mPaddingRight:I
+    iget v7, p0, Landroid/widget/TableLayout;->mPaddingRight:I
 
     sub-int v3, v6, v7
 

@@ -34,7 +34,7 @@
 
     .prologue
     .line 88
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 89
     iput-object p1, p0, Landroid/app/AlarmManager;->mService:Landroid/app/IAlarmManager;
@@ -45,6 +45,35 @@
 
 
 # virtual methods
+.method public bootFromPoweroffAlarm()Z
+    .locals 2
+
+    .prologue
+    .line 325
+    :try_start_0
+    iget-object v1, p0, Landroid/app/AlarmManager;->mService:Landroid/app/IAlarmManager;
+
+    invoke-interface {v1}, Landroid/app/IAlarmManager;->bootFromPoweroffAlarm()Z
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v1
+
+    .line 327
+    :goto_0
+    return v1
+
+    .line 326
+    :catch_0
+    move-exception v0
+
+    .line 327
+    .local v0, ex:Landroid/os/RemoteException;
+    const/4 v1, 0x0
+
+    goto :goto_0
+.end method
+
 .method public cancel(Landroid/app/PendingIntent;)V
     .locals 1
     .parameter "operation"
@@ -63,6 +92,30 @@
     return-void
 
     .line 276
+    :catch_0
+    move-exception v0
+
+    goto :goto_0
+.end method
+
+.method public cancelPoweroffAlarm(Ljava/lang/String;)V
+    .locals 1
+    .parameter "name"
+
+    .prologue
+    .line 313
+    :try_start_0
+    iget-object v0, p0, Landroid/app/AlarmManager;->mService:Landroid/app/IAlarmManager;
+
+    invoke-interface {v0, p1}, Landroid/app/IAlarmManager;->cancelPoweroffAlarm(Ljava/lang/String;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 316
+    :goto_0
+    return-void
+
+    .line 314
     :catch_0
     move-exception v0
 

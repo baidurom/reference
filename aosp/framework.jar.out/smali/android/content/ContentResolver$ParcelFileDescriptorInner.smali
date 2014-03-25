@@ -30,21 +30,21 @@
     .parameter "icp"
 
     .prologue
-    .line 1892
+    .line 1923
     iput-object p1, p0, Landroid/content/ContentResolver$ParcelFileDescriptorInner;->this$0:Landroid/content/ContentResolver;
 
-    .line 1893
+    .line 1924
     invoke-direct {p0, p2}, Landroid/os/ParcelFileDescriptor;-><init>(Landroid/os/ParcelFileDescriptor;)V
 
-    .line 1890
+    .line 1921
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/content/ContentResolver$ParcelFileDescriptorInner;->mReleaseProviderFlag:Z
 
-    .line 1894
+    .line 1925
     iput-object p3, p0, Landroid/content/ContentResolver$ParcelFileDescriptorInner;->mContentProvider:Landroid/content/IContentProvider;
 
-    .line 1895
+    .line 1926
     return-void
 .end method
 
@@ -59,27 +59,27 @@
     .end annotation
 
     .prologue
-    .line 1899
+    .line 1930
     iget-boolean v0, p0, Landroid/content/ContentResolver$ParcelFileDescriptorInner;->mReleaseProviderFlag:Z
 
     if-nez v0, :cond_0
 
-    .line 1900
+    .line 1931
     invoke-super {p0}, Landroid/os/ParcelFileDescriptor;->close()V
 
-    .line 1901
+    .line 1932
     iget-object v0, p0, Landroid/content/ContentResolver$ParcelFileDescriptorInner;->this$0:Landroid/content/ContentResolver;
 
     iget-object v1, p0, Landroid/content/ContentResolver$ParcelFileDescriptorInner;->mContentProvider:Landroid/content/IContentProvider;
 
     invoke-virtual {v0, v1}, Landroid/content/ContentResolver;->releaseProvider(Landroid/content/IContentProvider;)Z
 
-    .line 1902
+    .line 1933
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/content/ContentResolver$ParcelFileDescriptorInner;->mReleaseProviderFlag:Z
 
-    .line 1904
+    .line 1935
     :cond_0
     return-void
 .end method
@@ -93,15 +93,15 @@
     .end annotation
 
     .prologue
-    .line 1908
+    .line 1939
     iget-boolean v0, p0, Landroid/content/ContentResolver$ParcelFileDescriptorInner;->mReleaseProviderFlag:Z
 
     if-nez v0, :cond_0
 
-    .line 1909
+    .line 1940
     invoke-virtual {p0}, Landroid/content/ContentResolver$ParcelFileDescriptorInner;->close()V
 
-    .line 1911
+    .line 1942
     :cond_0
     return-void
 .end method

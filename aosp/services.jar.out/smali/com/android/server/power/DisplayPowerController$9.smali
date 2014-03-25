@@ -3,7 +3,7 @@
 .source "DisplayPowerController.java"
 
 # interfaces
-.implements Lcom/android/server/TwilightService$TwilightListener;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
@@ -27,34 +27,30 @@
     .parameter
 
     .prologue
-    .line 1322
+    .line 1471
     iput-object p1, p0, Lcom/android/server/power/DisplayPowerController$9;->this$0:Lcom/android/server/power/DisplayPowerController;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onTwilightStateChanged()V
-    .locals 2
+.method public run()V
+    .locals 1
 
     .prologue
-    .line 1325
+    .line 1474
     iget-object v0, p0, Lcom/android/server/power/DisplayPowerController$9;->this$0:Lcom/android/server/power/DisplayPowerController;
 
-    const/4 v1, 0x1
+    #getter for: Lcom/android/server/power/DisplayPowerController;->mCallbacks:Lcom/android/server/power/DisplayPowerController$Callbacks;
+    invoke-static {v0}, Lcom/android/server/power/DisplayPowerController;->access$500(Lcom/android/server/power/DisplayPowerController;)Lcom/android/server/power/DisplayPowerController$Callbacks;
 
-    #setter for: Lcom/android/server/power/DisplayPowerController;->mTwilightChanged:Z
-    invoke-static {v0, v1}, Lcom/android/server/power/DisplayPowerController;->access$1102(Lcom/android/server/power/DisplayPowerController;Z)Z
+    move-result-object v0
 
-    .line 1326
-    iget-object v0, p0, Lcom/android/server/power/DisplayPowerController$9;->this$0:Lcom/android/server/power/DisplayPowerController;
+    invoke-interface {v0}, Lcom/android/server/power/DisplayPowerController$Callbacks;->onProximityNegative()V
 
-    #calls: Lcom/android/server/power/DisplayPowerController;->updatePowerState()V
-    invoke-static {v0}, Lcom/android/server/power/DisplayPowerController;->access$300(Lcom/android/server/power/DisplayPowerController;)V
-
-    .line 1327
+    .line 1475
     return-void
 .end method

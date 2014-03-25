@@ -15,7 +15,7 @@
 
     .prologue
     .line 28
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 29
     return-void
@@ -28,7 +28,7 @@
 
     .prologue
     .line 31
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 32
     iput p1, p0, Landroid/renderscript/Int2;->x:I

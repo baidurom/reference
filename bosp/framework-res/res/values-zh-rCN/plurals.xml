@@ -80,12 +80,12 @@
         <item quantity="one">1 小时</item>
     </plurals>
     <plurals name="wifi_available">
-        <item quantity="other">有可用的 Wi-Fi 网络</item>
-        <item quantity="one">有可用的 Wi-Fi 网络</item>
+        <item quantity="other">有可用的 WLAN 网络</item>
+        <item quantity="one">有可用的 WLAN 网络</item>
     </plurals>
     <plurals name="wifi_available_detailed">
-        <item quantity="other">打开可用的 Wi-Fi 网络</item>
-        <item quantity="one">打开可用的 Wi-Fi 网络</item>
+        <item quantity="other">打开可用的 WLAN 网络</item>
+        <item quantity="one">打开可用的 WLAN 网络</item>
     </plurals>
     <plurals name="matches_found">
         <item quantity="other">第 %1$d 项，共 %2$d 项</item>

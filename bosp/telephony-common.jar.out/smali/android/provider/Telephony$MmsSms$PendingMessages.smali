@@ -36,13 +36,15 @@
 
 .field public static final RETRY_INDEX:Ljava/lang/String; = "retry_index"
 
+.field public static final SIM_ID:Ljava/lang/String; = "pending_sim_id"
+
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 2
 
     .prologue
-    .line 1692
+    .line 2429
     sget-object v0, Landroid/provider/Telephony$MmsSms;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v1, "pending"
@@ -60,7 +62,7 @@
     .locals 0
 
     .prologue
-    .line 1691
+    .line 2428
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

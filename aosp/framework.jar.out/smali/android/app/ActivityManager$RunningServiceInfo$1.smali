@@ -32,8 +32,8 @@
     .locals 0
 
     .prologue
-    .line 1076
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 1083
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -45,7 +45,7 @@
     .parameter "source"
 
     .prologue
-    .line 1078
+    .line 1085
     new-instance v0, Landroid/app/ActivityManager$RunningServiceInfo;
 
     const/4 v1, 0x0
@@ -60,7 +60,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1076
+    .line 1083
     invoke-virtual {p0, p1}, Landroid/app/ActivityManager$RunningServiceInfo$1;->createFromParcel(Landroid/os/Parcel;)Landroid/app/ActivityManager$RunningServiceInfo;
 
     move-result-object v0
@@ -73,7 +73,7 @@
     .parameter "size"
 
     .prologue
-    .line 1081
+    .line 1088
     new-array v0, p1, [Landroid/app/ActivityManager$RunningServiceInfo;
 
     return-object v0
@@ -84,7 +84,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1076
+    .line 1083
     invoke-virtual {p0, p1}, Landroid/app/ActivityManager$RunningServiceInfo$1;->newArray(I)[Landroid/app/ActivityManager$RunningServiceInfo;
 
     move-result-object v0

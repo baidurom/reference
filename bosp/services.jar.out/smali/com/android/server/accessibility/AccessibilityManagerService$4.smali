@@ -33,14 +33,14 @@
     .parameter
 
     .prologue
-    .line 1161
+    .line 1169
     iput-object p1, p0, Lcom/android/server/accessibility/AccessibilityManagerService$4;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
 
     iput-object p2, p0, Lcom/android/server/accessibility/AccessibilityManagerService$4;->val$state:Lcom/android/server/accessibility/AccessibilityManagerService$UserState;
 
     iput-object p3, p0, Lcom/android/server/accessibility/AccessibilityManagerService$4;->val$service:Lcom/android/server/accessibility/AccessibilityManagerService$Service;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -53,7 +53,7 @@
     .parameter "which"
 
     .prologue
-    .line 1165
+    .line 1173
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityManagerService$4;->val$state:Lcom/android/server/accessibility/AccessibilityManagerService$UserState;
 
     iget-object v0, v0, Lcom/android/server/accessibility/AccessibilityManagerService$UserState;->mTouchExplorationGrantedServices:Ljava/util/Set;
@@ -64,7 +64,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 1166
+    .line 1174
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityManagerService$4;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
 
     const-string v1, "touch_exploration_granted_accessibility_services"
@@ -80,7 +80,7 @@
     #calls: Lcom/android/server/accessibility/AccessibilityManagerService;->persistComponentNamesToSettingLocked(Ljava/lang/String;Ljava/util/Set;I)V
     invoke-static {v0, v1, v2, v3}, Lcom/android/server/accessibility/AccessibilityManagerService;->access$1200(Lcom/android/server/accessibility/AccessibilityManagerService;Ljava/lang/String;Ljava/util/Set;I)V
 
-    .line 1170
+    .line 1178
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityManagerService$4;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
 
     #getter for: Lcom/android/server/accessibility/AccessibilityManagerService;->mContext:Landroid/content/Context;
@@ -102,6 +102,6 @@
 
     invoke-static {v0, v1, v2, v3}, Landroid/provider/Settings$Secure;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
-    .line 1173
+    .line 1181
     return-void
 .end method

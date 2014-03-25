@@ -160,7 +160,7 @@
     .prologue
     .line 280
     .local p0, this:Landroid/os/AsyncTask;,"Landroid/os/AsyncTask<TParams;TProgress;TResult;>;"
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 217
     sget-object v0, Landroid/os/AsyncTask$Status;->PENDING:Landroid/os/AsyncTask$Status;

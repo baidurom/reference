@@ -95,12 +95,12 @@
     .locals 2
 
     .prologue
-    .line 239
+    .line 249
     iget-object v0, p0, Landroid/webkit/AutoCompletePopup;->mPopup:Landroid/widget/ListPopupWindow;
 
     if-nez v0, :cond_1
 
-    .line 240
+    .line 250
     new-instance v0, Landroid/widget/ListPopupWindow;
 
     iget-object v1, p0, Landroid/webkit/AutoCompletePopup;->mWebView:Landroid/webkit/WebViewClassic;
@@ -113,7 +113,7 @@
 
     iput-object v0, p0, Landroid/webkit/AutoCompletePopup;->mPopup:Landroid/widget/ListPopupWindow;
 
-    .line 241
+    .line 251
     new-instance v0, Landroid/webkit/AutoCompletePopup$AnchorView;
 
     iget-object v1, p0, Landroid/webkit/AutoCompletePopup;->mWebView:Landroid/webkit/WebViewClassic;
@@ -126,7 +126,7 @@
 
     iput-object v0, p0, Landroid/webkit/AutoCompletePopup;->mAnchor:Landroid/view/View;
 
-    .line 242
+    .line 252
     iget-object v0, p0, Landroid/webkit/AutoCompletePopup;->mWebView:Landroid/webkit/WebViewClassic;
 
     invoke-virtual {v0}, Landroid/webkit/WebViewClassic;->getWebView()Landroid/webkit/WebView;
@@ -137,31 +137,31 @@
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->addView(Landroid/view/View;)V
 
-    .line 243
+    .line 253
     iget-object v0, p0, Landroid/webkit/AutoCompletePopup;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v0, p0}, Landroid/widget/ListPopupWindow;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
-    .line 244
+    .line 254
     iget-object v0, p0, Landroid/webkit/AutoCompletePopup;->mPopup:Landroid/widget/ListPopupWindow;
 
     iget-object v1, p0, Landroid/webkit/AutoCompletePopup;->mAnchor:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Landroid/widget/ListPopupWindow;->setAnchorView(Landroid/view/View;)V
 
-    .line 245
+    .line 255
     iget-object v0, p0, Landroid/webkit/AutoCompletePopup;->mPopup:Landroid/widget/ListPopupWindow;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/widget/ListPopupWindow;->setPromptPosition(I)V
 
-    .line 249
+    .line 259
     :cond_0
     :goto_0
     return-void
 
-    .line 246
+    .line 256
     :cond_1
     iget-object v0, p0, Landroid/webkit/AutoCompletePopup;->mWebView:Landroid/webkit/WebViewClassic;
 
@@ -177,7 +177,7 @@
 
     if-gez v0, :cond_0
 
-    .line 247
+    .line 257
     iget-object v0, p0, Landroid/webkit/AutoCompletePopup;->mWebView:Landroid/webkit/WebViewClassic;
 
     invoke-virtual {v0}, Landroid/webkit/WebViewClassic;->getWebView()Landroid/webkit/WebView;
@@ -195,14 +195,14 @@
     .locals 4
 
     .prologue
-    .line 210
+    .line 220
     iget-object v1, p0, Landroid/webkit/AutoCompletePopup;->mInputConnection:Landroid/webkit/WebViewClassic$WebViewInputConnection;
 
     invoke-virtual {v1}, Landroid/webkit/WebViewClassic$WebViewInputConnection;->getEditable()Landroid/text/Editable;
 
     move-result-object v0
 
-    .line 211
+    .line 221
     .local v0, oldText:Landroid/text/Editable;
     iget-object v1, p0, Landroid/webkit/AutoCompletePopup;->mInputConnection:Landroid/webkit/WebViewClassic$WebViewInputConnection;
 
@@ -214,14 +214,14 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/webkit/WebViewClassic$WebViewInputConnection;->setSelection(II)Z
 
-    .line 212
+    .line 222
     iget-object v1, p0, Landroid/webkit/AutoCompletePopup;->mInputConnection:Landroid/webkit/WebViewClassic$WebViewInputConnection;
 
     iget-object v2, p0, Landroid/webkit/AutoCompletePopup;->mText:Ljava/lang/CharSequence;
 
     invoke-virtual {v1, v2}, Landroid/webkit/WebViewClassic$WebViewInputConnection;->replaceSelection(Ljava/lang/CharSequence;)V
 
-    .line 213
+    .line 223
     iget-object v1, p0, Landroid/webkit/AutoCompletePopup;->mInputConnection:Landroid/webkit/WebViewClassic$WebViewInputConnection;
 
     iget-object v2, p0, Landroid/webkit/AutoCompletePopup;->mText:Ljava/lang/CharSequence;
@@ -238,7 +238,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/webkit/WebViewClassic$WebViewInputConnection;->setSelection(II)Z
 
-    .line 214
+    .line 224
     return-void
 .end method
 
@@ -250,37 +250,47 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 112
+    .line 119
     iput-object v1, p0, Landroid/webkit/AutoCompletePopup;->mAdapter:Landroid/widget/ListAdapter;
 
-    .line 113
+    .line 120
     iput-object v1, p0, Landroid/webkit/AutoCompletePopup;->mFilter:Landroid/widget/Filter;
 
-    .line 114
+    .line 121
     iget-object v0, p0, Landroid/webkit/AutoCompletePopup;->mPopup:Landroid/widget/ListPopupWindow;
 
     if-eqz v0, :cond_0
 
-    .line 115
+    .line 122
     iget-object v0, p0, Landroid/webkit/AutoCompletePopup;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/ListPopupWindow;->dismiss()V
 
-    .line 116
+    .line 123
     iget-object v0, p0, Landroid/webkit/AutoCompletePopup;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v0, v1}, Landroid/widget/ListPopupWindow;->setAdapter(Landroid/widget/ListAdapter;)V
 
-    .line 118
+    .line 125
     :cond_0
     return-void
+.end method
+
+.method public getText()Ljava/lang/CharSequence;
+    .locals 1
+
+    .prologue
+    .line 111
+    iget-object v0, p0, Landroid/webkit/AutoCompletePopup;->mText:Ljava/lang/CharSequence;
+
+    return-object v0
 .end method
 
 .method public onDismiss()V
     .locals 2
 
     .prologue
-    .line 235
+    .line 245
     iget-object v0, p0, Landroid/webkit/AutoCompletePopup;->mWebView:Landroid/webkit/WebViewClassic;
 
     invoke-virtual {v0}, Landroid/webkit/WebViewClassic;->getWebView()Landroid/webkit/WebView;
@@ -291,7 +301,7 @@
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->removeView(Landroid/view/View;)V
 
-    .line 236
+    .line 246
     return-void
 .end method
 
@@ -304,10 +314,10 @@
 
     const/4 v2, 0x0
 
-    .line 218
+    .line 228
     invoke-direct {p0}, Landroid/webkit/AutoCompletePopup;->ensurePopup()V
 
-    .line 219
+    .line 229
     if-lez p1, :cond_2
 
     iget-object v3, p0, Landroid/webkit/AutoCompletePopup;->mInputConnection:Landroid/webkit/WebViewClassic$WebViewInputConnection;
@@ -329,12 +339,12 @@
     :cond_0
     move v0, v1
 
-    .line 221
+    .line 231
     .local v0, showDropDown:Z
     :goto_0
     if-eqz v0, :cond_3
 
-    .line 222
+    .line 232
     iget-object v3, p0, Landroid/webkit/AutoCompletePopup;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v3}, Landroid/widget/ListPopupWindow;->isShowing()Z
@@ -343,18 +353,18 @@
 
     if-nez v3, :cond_1
 
-    .line 224
+    .line 234
     iget-object v3, p0, Landroid/webkit/AutoCompletePopup;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v3, v1}, Landroid/widget/ListPopupWindow;->setInputMethodMode(I)V
 
-    .line 226
+    .line 236
     :cond_1
     iget-object v1, p0, Landroid/webkit/AutoCompletePopup;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v1}, Landroid/widget/ListPopupWindow;->show()V
 
-    .line 227
+    .line 237
     iget-object v1, p0, Landroid/webkit/AutoCompletePopup;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v1}, Landroid/widget/ListPopupWindow;->getListView()Landroid/widget/ListView;
@@ -363,7 +373,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/ListView;->setOverScrollMode(I)V
 
-    .line 231
+    .line 241
     :goto_1
     return-void
 
@@ -371,10 +381,10 @@
     :cond_2
     move v0, v2
 
-    .line 219
+    .line 229
     goto :goto_0
 
-    .line 229
+    .line 239
     .restart local v0       #showDropDown:Z
     :cond_3
     iget-object v1, p0, Landroid/webkit/AutoCompletePopup;->mPopup:Landroid/widget/ListPopupWindow;
@@ -401,17 +411,17 @@
     .end annotation
 
     .prologue
-    .line 170
+    .line 177
     .local p1, parent:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     iget-object v2, p0, Landroid/webkit/AutoCompletePopup;->mPopup:Landroid/widget/ListPopupWindow;
 
     if-nez v2, :cond_0
 
-    .line 203
+    .line 213
     :goto_0
     return-void
 
-    .line 173
+    .line 180
     :cond_0
     const-wide/16 v2, 0x0
 
@@ -429,27 +439,27 @@
 
     if-eqz v2, :cond_3
 
-    .line 174
+    .line 181
     const-string v2, ""
 
     iput-object v2, p0, Landroid/webkit/AutoCompletePopup;->mText:Ljava/lang/CharSequence;
 
-    .line 175
+    .line 182
     invoke-direct {p0}, Landroid/webkit/AutoCompletePopup;->pushTextToInputConnection()V
 
-    .line 177
+    .line 184
     iget-boolean v2, p0, Landroid/webkit/AutoCompletePopup;->mIsAutoFillProfileSet:Z
 
     if-eqz v2, :cond_2
 
-    .line 179
+    .line 186
     iget-object v2, p0, Landroid/webkit/AutoCompletePopup;->mWebView:Landroid/webkit/WebViewClassic;
 
     iget v3, p0, Landroid/webkit/AutoCompletePopup;->mQueryId:I
 
     invoke-virtual {v2, v3}, Landroid/webkit/WebViewClassic;->autoFillForm(I)V
 
-    .line 202
+    .line 212
     :cond_1
     :goto_1
     iget-object v2, p0, Landroid/webkit/AutoCompletePopup;->mPopup:Landroid/widget/ListPopupWindow;
@@ -458,7 +468,7 @@
 
     goto :goto_0
 
-    .line 184
+    .line 191
     :cond_2
     iget-object v2, p0, Landroid/webkit/AutoCompletePopup;->mWebView:Landroid/webkit/WebViewClassic;
 
@@ -466,11 +476,11 @@
 
     move-result-object v1
 
-    .line 185
+    .line 192
     .local v1, webChromeClient:Landroid/webkit/WebChromeClient;
     if-eqz v1, :cond_1
 
-    .line 186
+    .line 193
     iget-object v2, p0, Landroid/webkit/AutoCompletePopup;->mHandler:Landroid/os/Handler;
 
     const/16 v3, 0x64
@@ -483,38 +493,38 @@
 
     goto :goto_1
 
-    .line 192
+    .line 199
     .end local v1           #webChromeClient:Landroid/webkit/WebChromeClient;
     :cond_3
     if-gez p3, :cond_4
 
-    .line 193
+    .line 200
     iget-object v2, p0, Landroid/webkit/AutoCompletePopup;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v2}, Landroid/widget/ListPopupWindow;->getSelectedItem()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 197
+    .line 204
     .local v0, selectedItem:Ljava/lang/Object;
     :goto_2
     if-eqz v0, :cond_1
 
-    .line 198
+    .line 207
     iget-object v2, p0, Landroid/webkit/AutoCompletePopup;->mFilter:Landroid/widget/Filter;
 
     invoke-virtual {v2, v0}, Landroid/widget/Filter;->convertResultToString(Ljava/lang/Object;)Ljava/lang/CharSequence;
 
     move-result-object v2
 
-    invoke-virtual {p0, v2}, Landroid/webkit/AutoCompletePopup;->setText(Ljava/lang/CharSequence;)V
+    iput-object v2, p0, Landroid/webkit/AutoCompletePopup;->mText:Ljava/lang/CharSequence;
 
-    .line 199
+    .line 209
     invoke-direct {p0}, Landroid/webkit/AutoCompletePopup;->pushTextToInputConnection()V
 
     goto :goto_1
 
-    .line 195
+    .line 202
     .end local v0           #selectedItem:Ljava/lang/Object;
     :cond_4
     iget-object v2, p0, Landroid/webkit/AutoCompletePopup;->mAdapter:Landroid/widget/ListAdapter;
@@ -666,10 +676,10 @@
     .locals 10
 
     .prologue
-    .line 134
+    .line 141
     invoke-direct {p0}, Landroid/webkit/AutoCompletePopup;->ensurePopup()V
 
-    .line 135
+    .line 142
     iget-object v8, p0, Landroid/webkit/AutoCompletePopup;->mWebView:Landroid/webkit/WebViewClassic;
 
     iget-object v9, p0, Landroid/webkit/AutoCompletePopup;->mWebView:Landroid/webkit/WebViewClassic;
@@ -682,7 +692,7 @@
 
     move-result v2
 
-    .line 136
+    .line 143
     .local v2, left:I
     iget-object v8, p0, Landroid/webkit/AutoCompletePopup;->mWebView:Landroid/webkit/WebViewClassic;
 
@@ -696,17 +706,17 @@
 
     move-result v5
 
-    .line 137
+    .line 144
     .local v5, right:I
     sub-int v7, v5, v2
 
-    .line 138
+    .line 145
     .local v7, width:I
     iget-object v8, p0, Landroid/webkit/AutoCompletePopup;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v8, v7}, Landroid/widget/ListPopupWindow;->setWidth(I)V
 
-    .line 140
+    .line 147
     iget-object v8, p0, Landroid/webkit/AutoCompletePopup;->mWebView:Landroid/webkit/WebViewClassic;
 
     iget-object v9, p0, Landroid/webkit/AutoCompletePopup;->mWebView:Landroid/webkit/WebViewClassic;
@@ -719,7 +729,7 @@
 
     move-result v0
 
-    .line 141
+    .line 148
     .local v0, bottom:I
     iget-object v8, p0, Landroid/webkit/AutoCompletePopup;->mWebView:Landroid/webkit/WebViewClassic;
 
@@ -733,11 +743,11 @@
 
     move-result v6
 
-    .line 142
+    .line 149
     .local v6, top:I
     sub-int v1, v0, v6
 
-    .line 144
+    .line 151
     .local v1, height:I
     iget-object v8, p0, Landroid/webkit/AutoCompletePopup;->mAnchor:Landroid/view/View;
 
@@ -747,32 +757,32 @@
 
     check-cast v3, Landroid/widget/AbsoluteLayout$LayoutParams;
 
-    .line 146
+    .line 153
     .local v3, lp:Landroid/widget/AbsoluteLayout$LayoutParams;
     const/4 v4, 0x0
 
-    .line 147
+    .line 154
     .local v4, needsUpdate:Z
     if-nez v3, :cond_3
 
-    .line 148
+    .line 155
     new-instance v3, Landroid/widget/AbsoluteLayout$LayoutParams;
 
     .end local v3           #lp:Landroid/widget/AbsoluteLayout$LayoutParams;
     invoke-direct {v3, v7, v1, v2, v6}, Landroid/widget/AbsoluteLayout$LayoutParams;-><init>(IIII)V
 
-    .line 159
+    .line 166
     .restart local v3       #lp:Landroid/widget/AbsoluteLayout$LayoutParams;
     :cond_0
     :goto_0
     if-eqz v4, :cond_1
 
-    .line 160
+    .line 167
     iget-object v8, p0, Landroid/webkit/AutoCompletePopup;->mAnchor:Landroid/view/View;
 
     invoke-virtual {v8, v3}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 162
+    .line 169
     :cond_1
     iget-object v8, p0, Landroid/webkit/AutoCompletePopup;->mPopup:Landroid/widget/ListPopupWindow;
 
@@ -782,16 +792,16 @@
 
     if-eqz v8, :cond_2
 
-    .line 163
+    .line 170
     iget-object v8, p0, Landroid/webkit/AutoCompletePopup;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v8}, Landroid/widget/ListPopupWindow;->show()V
 
-    .line 165
+    .line 172
     :cond_2
     return-void
 
-    .line 150
+    .line 157
     :cond_3
     iget v8, v3, Landroid/widget/AbsoluteLayout$LayoutParams;->x:I
 
@@ -809,20 +819,20 @@
 
     if-eq v8, v1, :cond_0
 
-    .line 152
+    .line 159
     :cond_4
     const/4 v4, 0x1
 
-    .line 153
+    .line 160
     iput v2, v3, Landroid/widget/AbsoluteLayout$LayoutParams;->x:I
 
-    .line 154
+    .line 161
     iput v6, v3, Landroid/widget/AbsoluteLayout$LayoutParams;->y:I
 
-    .line 155
+    .line 162
     iput v7, v3, Landroid/widget/AbsoluteLayout$LayoutParams;->width:I
 
-    .line 156
+    .line 163
     iput v1, v3, Landroid/widget/AbsoluteLayout$LayoutParams;->height:I
 
     goto :goto_0
@@ -842,22 +852,22 @@
     .end annotation
 
     .prologue
-    .line 121
+    .line 128
     .local p1, adapter:Landroid/widget/ListAdapter;,"TT;"
     invoke-direct {p0}, Landroid/webkit/AutoCompletePopup;->ensurePopup()V
 
-    .line 122
+    .line 129
     iget-object v0, p0, Landroid/webkit/AutoCompletePopup;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v0, p1}, Landroid/widget/ListPopupWindow;->setAdapter(Landroid/widget/ListAdapter;)V
 
-    .line 123
+    .line 130
     iput-object p1, p0, Landroid/webkit/AutoCompletePopup;->mAdapter:Landroid/widget/ListAdapter;
 
-    .line 124
+    .line 131
     if-eqz p1, :cond_0
 
-    .line 125
+    .line 132
     check-cast p1, Landroid/widget/Filterable;
 
     .end local p1           #adapter:Landroid/widget/ListAdapter;,"TT;"
@@ -867,21 +877,21 @@
 
     iput-object v0, p0, Landroid/webkit/AutoCompletePopup;->mFilter:Landroid/widget/Filter;
 
-    .line 126
+    .line 133
     iget-object v0, p0, Landroid/webkit/AutoCompletePopup;->mFilter:Landroid/widget/Filter;
 
     iget-object v1, p0, Landroid/webkit/AutoCompletePopup;->mText:Ljava/lang/CharSequence;
 
     invoke-virtual {v0, v1, p0}, Landroid/widget/Filter;->filter(Ljava/lang/CharSequence;Landroid/widget/Filter$FilterListener;)V
 
-    .line 130
+    .line 137
     :goto_0
     invoke-virtual {p0}, Landroid/webkit/AutoCompletePopup;->resetRect()V
 
-    .line 131
+    .line 138
     return-void
 
-    .line 128
+    .line 135
     .restart local p1       #adapter:Landroid/widget/ListAdapter;,"TT;"
     :cond_0
     const/4 v0, 0x0
@@ -896,10 +906,10 @@
     .parameter "queryId"
 
     .prologue
-    .line 108
+    .line 115
     iput p1, p0, Landroid/webkit/AutoCompletePopup;->mQueryId:I
 
-    .line 109
+    .line 116
     return-void
 .end method
 
@@ -908,10 +918,10 @@
     .parameter "isAutoFillProfileSet"
 
     .prologue
-    .line 206
+    .line 216
     iput-boolean p1, p0, Landroid/webkit/AutoCompletePopup;->mIsAutoFillProfileSet:Z
 
-    .line 207
+    .line 217
     return-void
 .end method
 

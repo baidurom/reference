@@ -55,7 +55,7 @@
 
     .prologue
     .line 38
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 39
     return-void
@@ -67,7 +67,7 @@
 
     .prologue
     .line 42
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 43
     if-eqz p1, :cond_0
@@ -156,7 +156,7 @@
 
     .line 57
     .local v0, str:Ljava/lang/StringBuffer;
-    const-string v1, "ipaddr "
+    const-string/jumbo v1, "ipaddr "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 

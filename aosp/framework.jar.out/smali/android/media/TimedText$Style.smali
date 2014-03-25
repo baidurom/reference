@@ -46,7 +46,7 @@
 
     .prologue
     .line 227
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 228
     iput p1, p0, Landroid/media/TimedText$Style;->startChar:I

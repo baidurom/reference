@@ -31,7 +31,7 @@
 
     .prologue
     .line 268
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 269
     iput-object p1, p0, Lcom/android/server/TwilightService$TwilightListenerRecord;->mListener:Lcom/android/server/TwilightService$TwilightListener;

@@ -27,12 +27,12 @@
     .parameter "_iconId"
 
     .prologue
-    .line 895
-    iget-object v0, p1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
+    .line 932
+    iget-object v0, p1, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
 
     invoke-direct {p0, v0, p2}, Landroid/app/ApplicationPackageManager$ResourceName;-><init>(Ljava/lang/String;I)V
 
-    .line 896
+    .line 933
     return-void
 .end method
 
@@ -42,14 +42,14 @@
     .parameter "_iconId"
 
     .prologue
-    .line 899
+    .line 936
     iget-object v0, p1, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    iget-object v0, v0, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
+    iget-object v0, v0, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
 
     invoke-direct {p0, v0, p2}, Landroid/app/ApplicationPackageManager$ResourceName;-><init>(Ljava/lang/String;I)V
 
-    .line 900
+    .line 937
     return-void
 .end method
 
@@ -59,16 +59,16 @@
     .parameter "_iconId"
 
     .prologue
-    .line 903
+    .line 940
     iget-object v0, p1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v0, v0, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v0, v0, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    iget-object v0, v0, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
+    iget-object v0, v0, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
 
     invoke-direct {p0, v0, p2}, Landroid/app/ApplicationPackageManager$ResourceName;-><init>(Ljava/lang/String;I)V
 
-    .line 904
+    .line 941
     return-void
 .end method
 
@@ -78,16 +78,16 @@
     .parameter "_iconId"
 
     .prologue
-    .line 889
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 926
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 890
+    .line 927
     iput-object p1, p0, Landroid/app/ApplicationPackageManager$ResourceName;->packageName:Ljava/lang/String;
 
-    .line 891
+    .line 928
     iput p2, p0, Landroid/app/ApplicationPackageManager$ResourceName;->iconId:I
 
-    .line 892
+    .line 929
     return-void
 .end method
 
@@ -102,15 +102,15 @@
 
     const/4 v2, 0x0
 
-    .line 908
+    .line 945
     if-ne p0, p1, :cond_1
 
-    .line 914
+    .line 951
     :cond_0
     :goto_0
     return v1
 
-    .line 909
+    .line 946
     :cond_1
     if-eqz p1, :cond_2
 
@@ -132,10 +132,10 @@
     :cond_3
     move-object v0, p1
 
-    .line 911
+    .line 948
     check-cast v0, Landroid/app/ApplicationPackageManager$ResourceName;
 
-    .line 913
+    .line 950
     .local v0, that:Landroid/app/ApplicationPackageManager$ResourceName;
     iget v3, p0, Landroid/app/ApplicationPackageManager$ResourceName;->iconId:I
 
@@ -147,7 +147,7 @@
 
     goto :goto_0
 
-    .line 914
+    .line 951
     :cond_4
     iget-object v3, p0, Landroid/app/ApplicationPackageManager$ResourceName;->packageName:Ljava/lang/String;
 
@@ -180,14 +180,14 @@
     .locals 3
 
     .prologue
-    .line 922
+    .line 959
     iget-object v1, p0, Landroid/app/ApplicationPackageManager$ResourceName;->packageName:Ljava/lang/String;
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
-    .line 923
+    .line 960
     .local v0, result:I
     mul-int/lit8 v1, v0, 0x1f
 
@@ -195,7 +195,7 @@
 
     add-int v0, v1, v2
 
-    .line 924
+    .line 961
     return v0
 .end method
 
@@ -203,12 +203,12 @@
     .locals 2
 
     .prologue
-    .line 929
+    .line 966
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v1, "{ResourceName "
+    const-string v1, "{ResourceName "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -232,7 +232,7 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "}"
+    const-string v1, "}"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

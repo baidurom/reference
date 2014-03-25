@@ -406,7 +406,7 @@
 
     .line 289
     .local v0, a:Landroid/content/res/TypedArray;
-    const-string v7, "layout_inflater"
+    const-string/jumbo v7, "layout_inflater"
 
     invoke-virtual {p1, v7}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -805,8 +805,6 @@
     goto/16 :goto_2
 
     .line 301
-    nop
-
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_9
@@ -4803,7 +4801,7 @@
 
     move-result-object v1
 
-    const-string v3, "layout_inflater"
+    const-string/jumbo v3, "layout_inflater"
 
     invoke-virtual {v1, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 

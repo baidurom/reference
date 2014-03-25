@@ -9,7 +9,7 @@
 
     .prologue
     .line 28
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -62,7 +62,7 @@
     invoke-virtual {v0, v1, v2}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
 
     .line 79
-    invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
+    invoke-virtual {v0}, Landroid/animation/Animator;->start()V
 
     .line 84
     .end local v0           #anim:Landroid/animation/Animator;
@@ -93,7 +93,7 @@
     invoke-virtual {v0, v1, v2}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
 
     .line 88
-    invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
+    invoke-virtual {v0}, Landroid/animation/Animator;->start()V
 
     .line 93
     .end local v0           #anim:Landroid/animation/Animator;
@@ -172,10 +172,10 @@
 
     invoke-direct {v1, p1}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityViewHelper$1;-><init>(Landroid/view/View;)V
 
-    invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
     .line 52
-    invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
+    invoke-virtual {v0}, Landroid/animation/Animator;->start()V
 
     .line 58
     .end local v0           #anim:Landroid/animation/Animator;
@@ -206,7 +206,7 @@
     invoke-virtual {v0, v1, v2}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
 
     .line 62
-    invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
+    invoke-virtual {v0}, Landroid/animation/Animator;->start()V
 
     .line 67
     .end local v0           #anim:Landroid/animation/Animator;

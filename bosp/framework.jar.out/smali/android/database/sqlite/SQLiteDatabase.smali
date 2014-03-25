@@ -189,7 +189,7 @@
     .line 110
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/database/sqlite/SQLiteDatabase;->mLock:Ljava/lang/Object;
 
@@ -4244,7 +4244,7 @@
     .line 1745
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
-    const-string v3, "locale must not be null."
+    const-string/jumbo v3, "locale must not be null."
 
     invoke-direct {v2, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

@@ -22,6 +22,8 @@
 
 .field private static final DEBUG:Z = false
 
+.field private static final DEBUG_PLUG_IN:Z = false
+
 .field private static final DRAG_HANDLE_CLOSED_ABOVE:I = 0x8
 
 .field private static final DRAG_HANDLE_CLOSED_BELOW:I = 0x0
@@ -130,6 +132,18 @@
 
 .field private mIsBouncing:Z
 
+.field private mKeyguardLayerBackground:Lcom/mediatek/common/policy/IKeyguardLayer;
+
+.field private mKeyguardLayerBackgroundLayout:Landroid/widget/FrameLayout;
+
+.field private mKeyguardLayerBackgroundView:Landroid/view/View;
+
+.field private mKeyguardLayerForeground:Lcom/mediatek/common/policy/IKeyguardLayer;
+
+.field private mKeyguardLayerForegroundLayout:Landroid/widget/FrameLayout;
+
+.field private mKeyguardLayerForegroundView:Landroid/view/View;
+
 .field private mMaxVelocity:I
 
 .field private mMinVelocity:I
@@ -143,6 +157,10 @@
 .field private mScrollState:I
 
 .field private final mScroller:Landroid/widget/Scroller;
+
+.field private mShowKeyguardLayer:Z
+
+.field private mShowKeyguardLayerRunnable:Ljava/lang/Runnable;
 
 .field private mTouchSlop:I
 
@@ -160,7 +178,7 @@
     .locals 2
 
     .prologue
-    .line 135
+    .line 144
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$1;
 
     const-string v1, "handleAlpha"
@@ -169,14 +187,14 @@
 
     sput-object v0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->HANDLE_ALPHA:Landroid/util/Property;
 
-    .line 152
+    .line 161
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$2;
 
     invoke-direct {v0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$2;-><init>()V
 
     sput-object v0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->sMotionInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 159
+    .line 168
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$3;
 
     invoke-direct {v0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$3;-><init>()V
@@ -191,12 +209,12 @@
     .parameter "context"
 
     .prologue
-    .line 228
+    .line 237
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 229
+    .line 238
     return-void
 .end method
 
@@ -206,12 +224,12 @@
     .parameter "attrs"
 
     .prologue
-    .line 232
+    .line 241
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 233
+    .line 242
     return-void
 .end method
 
@@ -232,64 +250,71 @@
 
     const/4 v4, 0x1
 
-    .line 236
+    .line 245
     invoke-direct {p0, p1, p2, p3}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 74
+    .line 83
     const/high16 v3, 0x3f80
 
     iput v3, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeOffset:F
 
-    .line 75
+    .line 84
     iput-boolean v4, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeShowing:Z
 
-    .line 76
+    .line 85
     iput-boolean v4, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeShowingTargetState:Z
 
-    .line 77
+    .line 86
     iput-boolean v4, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mWasChallengeShowing:Z
 
-    .line 78
+    .line 87
     iput-boolean v8, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mIsBouncing:Z
 
-    .line 97
+    .line 106
     const/4 v3, -0x1
 
     iput v3, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mActivePointerId:I
 
-    .line 125
+    .line 134
     const/4 v3, 0x1
 
     iput v3, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mFrameAnimationTarget:F
 
-    .line 132
+    .line 141
     iput-boolean v4, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeInteractiveExternal:Z
 
-    .line 133
+    .line 142
     iput-boolean v4, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeInteractiveInternal:Z
 
-    .line 165
+    .line 174
     new-instance v3, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$4;
 
     invoke-direct {v3, p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$4;-><init>(Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;)V
 
     iput-object v3, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mEndScrollRunnable:Ljava/lang/Runnable;
 
-    .line 171
+    .line 180
     new-instance v3, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$5;
 
     invoke-direct {v3, p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$5;-><init>(Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;)V
 
     iput-object v3, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mScrimClickListener:Landroid/view/View$OnClickListener;
 
-    .line 178
+    .line 187
     new-instance v3, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$6;
 
     invoke-direct {v3, p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$6;-><init>(Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;)V
 
     iput-object v3, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mExpandChallengeClickListener:Landroid/view/View$OnClickListener;
 
-    .line 238
+    .line 1318
+    new-instance v3, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$10;
+
+    invoke-direct {v3, p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$10;-><init>(Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;)V
+
+    iput-object v3, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mShowKeyguardLayerRunnable:Ljava/lang/Runnable;
+
+    .line 247
     new-instance v3, Landroid/widget/Scroller;
 
     sget-object v4, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->sMotionInterpolator:Landroid/view/animation/Interpolator;
@@ -298,12 +323,12 @@
 
     iput-object v3, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mScroller:Landroid/widget/Scroller;
 
-    .line 240
+    .line 249
     invoke-static {p1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
     move-result-object v2
 
-    .line 241
+    .line 250
     .local v2, vc:Landroid/view/ViewConfiguration;
     invoke-virtual {v2}, Landroid/view/ViewConfiguration;->getScaledMinimumFlingVelocity()I
 
@@ -311,19 +336,19 @@
 
     iput v3, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mMinVelocity:I
 
-    .line 242
+    .line 251
     invoke-virtual {v2}, Landroid/view/ViewConfiguration;->getScaledMaximumFlingVelocity()I
 
     move-result v3
 
     iput v3, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mMaxVelocity:I
 
-    .line 244
+    .line 253
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    .line 245
+    .line 254
     .local v1, res:Landroid/content/res/Resources;
     const v3, #dimen@kg_edge_swipe_region_size#t
 
@@ -333,7 +358,7 @@
 
     iput v3, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mDragHandleEdgeSlop:I
 
-    .line 247
+    .line 256
     invoke-static {p1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
     move-result-object v3
@@ -344,7 +369,7 @@
 
     iput v3, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mTouchSlop:I
 
-    .line 248
+    .line 257
     iget v3, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mTouchSlop:I
 
     iget v4, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mTouchSlop:I
@@ -353,19 +378,19 @@
 
     iput v3, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mTouchSlopSquare:I
 
-    .line 250
+    .line 259
     invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
     move-result-object v3
 
     iput-object v3, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mDisplayMetrics:Landroid/util/DisplayMetrics;
 
-    .line 251
+    .line 260
     iget-object v3, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mDisplayMetrics:Landroid/util/DisplayMetrics;
 
     iget v0, v3, Landroid/util/DisplayMetrics;->density:F
 
-    .line 254
+    .line 263
     .local v0, density:F
     mul-float v3, v7, v0
 
@@ -375,7 +400,7 @@
 
     iput v3, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mDragHandleClosedAbove:I
 
-    .line 255
+    .line 264
     mul-float v3, v6, v0
 
     add-float/2addr v3, v5
@@ -384,7 +409,7 @@
 
     iput v3, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mDragHandleClosedBelow:I
 
-    .line 256
+    .line 265
     mul-float v3, v7, v0
 
     add-float/2addr v3, v5
@@ -393,7 +418,7 @@
 
     iput v3, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mDragHandleOpenAbove:I
 
-    .line 257
+    .line 266
     mul-float v3, v6, v0
 
     add-float/2addr v3, v5
@@ -402,7 +427,7 @@
 
     iput v3, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mDragHandleOpenBelow:I
 
-    .line 260
+    .line 269
     const v3, #dimen@kg_widget_pager_bottom_padding#t
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -411,15 +436,15 @@
 
     iput v3, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeBottomBound:I
 
-    .line 262
+    .line 271
     invoke-virtual {p0, v8}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->setWillNotDraw(Z)V
 
-    .line 263
+    .line 272
     const/16 v3, 0x100
 
     invoke-virtual {p0, v3}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->setSystemUiVisibility(I)V
 
-    .line 264
+    .line 273
     return-void
 .end method
 
@@ -428,7 +453,7 @@
     .parameter "x0"
 
     .prologue
-    .line 47
+    .line 54
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mScrimView:Landroid/view/View;
 
     return-object v0
@@ -440,7 +465,7 @@
     .parameter "x1"
 
     .prologue
-    .line 47
+    .line 54
     invoke-direct {p0, p1}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->onFadeStart(Z)V
 
     return-void
@@ -452,17 +477,62 @@
     .parameter "x1"
 
     .prologue
-    .line 47
+    .line 54
     invoke-direct {p0, p1}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->onFadeEnd(Z)V
 
     return-void
+.end method
+
+.method static synthetic access$300(Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;)Z
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 54
+    iget-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mShowKeyguardLayer:Z
+
+    return v0
+.end method
+
+.method static synthetic access$400(Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;Z)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 54
+    invoke-direct {p0, p1}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->updateKeyguardLayerView(Z)V
+
+    return-void
+.end method
+
+.method static synthetic access$500(Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;)Landroid/widget/FrameLayout;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 54
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerForegroundLayout:Landroid/widget/FrameLayout;
+
+    return-object v0
+.end method
+
+.method static synthetic access$600(Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;)Landroid/widget/FrameLayout;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 54
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerBackgroundLayout:Landroid/widget/FrameLayout;
+
+    return-object v0
 .end method
 
 .method private cancelTransitionsInProgress()V
     .locals 1
 
     .prologue
-    .line 1000
+    .line 1053
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mScroller:Landroid/widget/Scroller;
 
     invoke-virtual {v0}, Landroid/widget/Scroller;->isFinished()Z
@@ -471,26 +541,26 @@
 
     if-nez v0, :cond_0
 
-    .line 1001
+    .line 1054
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mScroller:Landroid/widget/Scroller;
 
     invoke-virtual {v0}, Landroid/widget/Scroller;->abortAnimation()V
 
-    .line 1002
+    .line 1055
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->completeChallengeScroll()V
 
-    .line 1004
+    .line 1057
     :cond_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mFader:Landroid/animation/ObjectAnimator;
 
     if-eqz v0, :cond_1
 
-    .line 1005
+    .line 1058
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mFader:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->cancel()V
 
-    .line 1007
+    .line 1060
     :cond_1
     return-void
 .end method
@@ -506,14 +576,14 @@
 
     const/4 v4, 0x0
 
-    .line 759
+    .line 800
     iget-object v5, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     invoke-virtual {v5}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;->getTop()I
 
     move-result v0
 
-    .line 760
+    .line 801
     .local v0, challengeTop:I
     const/4 v5, 0x0
 
@@ -533,14 +603,14 @@
 
     move v1, v3
 
-    .line 763
+    .line 804
     .local v1, horizOk:Z
     :goto_0
     iget-boolean v5, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeShowing:Z
 
     if-eqz v5, :cond_2
 
-    .line 764
+    .line 805
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->getDragHandleSizeAbove()I
 
     move-result v5
@@ -567,7 +637,7 @@
 
     move v2, v3
 
-    .line 770
+    .line 811
     .local v2, vertOk:Z
     :goto_1
     if-eqz v1, :cond_4
@@ -582,17 +652,17 @@
     :cond_0
     move v1, v4
 
-    .line 760
+    .line 801
     goto :goto_0
 
     .restart local v1       #horizOk:Z
     :cond_1
     move v2, v4
 
-    .line 764
+    .line 805
     goto :goto_1
 
-    .line 767
+    .line 808
     :cond_2
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->getDragHandleSizeBelow()I
 
@@ -634,7 +704,7 @@
     :cond_4
     move v3, v4
 
-    .line 770
+    .line 811
     goto :goto_2
 .end method
 
@@ -644,12 +714,12 @@
     .prologue
     const/high16 v2, 0x3f80
 
-    .line 532
+    .line 573
     iget v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeOffset:F
 
     sub-float v0, v1, v2
 
-    .line 533
+    .line 574
     .local v0, x:F
     mul-float v1, v0, v0
 
@@ -664,14 +734,14 @@
     .locals 1
 
     .prologue
-    .line 1138
+    .line 1194
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    .line 1140
+    .line 1196
     :goto_0
     return v0
 
@@ -690,7 +760,7 @@
     .parameter "expanded"
 
     .prologue
-    .line 528
+    .line 569
     if-eqz p1, :cond_0
 
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mHasGlowpad:Z
@@ -712,7 +782,7 @@
     .locals 1
 
     .prologue
-    .line 735
+    .line 776
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->isChallengeShowing()Z
 
     move-result v0
@@ -734,7 +804,7 @@
     .locals 1
 
     .prologue
-    .line 738
+    .line 779
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->isChallengeShowing()Z
 
     move-result v0
@@ -756,14 +826,14 @@
     .locals 4
 
     .prologue
-    .line 1127
+    .line 1183
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     if-nez v2, :cond_0
 
     const/4 v0, 0x0
 
-    .line 1130
+    .line 1186
     .local v0, bottomMargin:I
     :goto_0
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->getMeasuredHeight()I
@@ -778,11 +848,11 @@
 
     sub-int v1, v2, v0
 
-    .line 1131
+    .line 1187
     .local v1, layoutBottom:I
     return v1
 
-    .line 1127
+    .line 1183
     .end local v0           #bottomMargin:I
     .end local v1           #layoutBottom:I
     :cond_0
@@ -794,7 +864,7 @@
 
     check-cast v2, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;
 
-    iget v0, v2, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+    iget v0, v2, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;->bottomMargin:I
 
     goto :goto_0
 .end method
@@ -803,24 +873,24 @@
     .locals 4
 
     .prologue
-    .line 1040
+    .line 1093
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     if-nez v2, :cond_0
 
     const/4 v2, 0x0
 
-    .line 1044
+    .line 1097
     :goto_0
     return v2
 
-    .line 1041
+    .line 1094
     :cond_0
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->getLayoutBottom()I
 
     move-result v1
 
-    .line 1042
+    .line 1095
     .local v1, layoutBottom:I
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
@@ -828,7 +898,7 @@
 
     move-result v0
 
-    .line 1044
+    .line 1097
     .local v0, challengeHeight:I
     add-int v2, v1, v0
 
@@ -843,7 +913,7 @@
     .locals 1
 
     .prologue
-    .line 1048
+    .line 1101
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->getLayoutBottom()I
 
     move-result v0
@@ -855,7 +925,7 @@
     .locals 1
 
     .prologue
-    .line 594
+    .line 635
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeInteractiveExternal:Z
 
     if-eqz v0, :cond_0
@@ -883,25 +953,25 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 722
+    .line 763
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    .line 727
+    .line 768
     :cond_0
     :goto_0
     return v1
 
-    .line 726
+    .line 767
     :cond_1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
 
-    .line 727
+    .line 768
     .local v0, x:F
     iget v2, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mDragHandleEdgeSlop:I
 
@@ -937,7 +1007,7 @@
     .parameter "y"
 
     .prologue
-    .line 742
+    .line 783
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     invoke-direct {p0, p1, p2, v0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->isPointInView(FFLandroid/view/View;)Z
@@ -953,7 +1023,7 @@
     .parameter "y"
 
     .prologue
-    .line 746
+    .line 787
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mExpandChallengeView:Landroid/view/View;
 
     invoke-direct {p0, p1, p2, v0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->isPointInView(FFLandroid/view/View;)Z
@@ -972,10 +1042,10 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 750
+    .line 791
     if-nez p3, :cond_1
 
-    .line 753
+    .line 794
     :cond_0
     :goto_0
     return v0
@@ -1032,19 +1102,19 @@
     .parameter "childDimen"
 
     .prologue
-    .line 776
+    .line 817
     packed-switch p2, :pswitch_data_0
 
-    .line 786
+    .line 827
     const/high16 v0, 0x4000
 
-    .line 787
+    .line 828
     .local v0, mode:I
     invoke-static {p1, p2}, Ljava/lang/Math;->min(II)I
 
     move-result v1
 
-    .line 790
+    .line 831
     .local v1, size:I
     :goto_0
     invoke-static {v1, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
@@ -1053,35 +1123,35 @@
 
     return v2
 
-    .line 778
+    .line 819
     .end local v0           #mode:I
     .end local v1           #size:I
     :pswitch_0
     const/high16 v0, -0x8000
 
-    .line 779
+    .line 820
     .restart local v0       #mode:I
     move v1, p1
 
-    .line 780
+    .line 821
     .restart local v1       #size:I
     goto :goto_0
 
-    .line 782
+    .line 823
     .end local v0           #mode:I
     .end local v1           #size:I
     :pswitch_1
     const/high16 v0, 0x4000
 
-    .line 783
+    .line 824
     .restart local v0       #mode:I
     move v1, p1
 
-    .line 784
+    .line 825
     .restart local v1       #size:I
     goto :goto_0
 
-    .line 776
+    .line 817
     :pswitch_data_0
     .packed-switch -0x2
         :pswitch_0
@@ -1096,7 +1166,7 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 1094
+    .line 1147
     iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     if-eqz v4, :cond_0
@@ -1105,21 +1175,21 @@
 
     if-nez v4, :cond_1
 
-    .line 1095
+    .line 1148
     :cond_0
     const/4 v3, 0x0
 
-    .line 1119
+    .line 1175
     :goto_0
     return v3
 
-    .line 1098
+    .line 1151
     :cond_1
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->getLayoutBottom()I
 
     move-result v1
 
-    .line 1099
+    .line 1152
     .local v1, layoutBottom:I
     iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
@@ -1127,7 +1197,7 @@
 
     move-result v0
 
-    .line 1101
+    .line 1154
     .local v0, challengeHeight:I
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->getMinChallengeBottom()I
 
@@ -1145,7 +1215,7 @@
 
     move-result p1
 
-    .line 1104
+    .line 1157
     const/high16 v4, 0x3f80
 
     sub-int v5, p1, v1
@@ -1162,11 +1232,11 @@
 
     sub-float v2, v4, v5
 
-    .line 1106
+    .line 1159
     .local v2, offset:F
     iput v2, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeOffset:F
 
-    .line 1107
+    .line 1160
     const/4 v4, 0x0
 
     cmpl-float v4, v2, v4
@@ -1177,11 +1247,14 @@
 
     if-nez v4, :cond_2
 
-    .line 1108
+    .line 1161
     invoke-direct {p0, v3}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->setChallengeShowing(Z)V
 
-    .line 1111
+    .line 1165
     :cond_2
+    invoke-direct {p0, p1}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->updateKeyguardLayerPosition(I)V
+
+    .line 1167
     iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     iget-object v5, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
@@ -1206,7 +1279,7 @@
 
     invoke-virtual {v4, v5, v6, v7, p1}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;->layout(IIII)V
 
-    .line 1114
+    .line 1170
     iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->getChallengeAlpha()F
@@ -1215,12 +1288,12 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;->setAlpha(F)V
 
-    .line 1115
+    .line 1171
     iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mScrollListener:Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$OnChallengeScrolledListener;
 
     if-eqz v4, :cond_3
 
-    .line 1116
+    .line 1172
     iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mScrollListener:Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$OnChallengeScrolledListener;
 
     iget-object v5, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
@@ -1231,7 +1304,7 @@
 
     invoke-interface {v4, v2, v5}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$OnChallengeScrolledListener;->onScrollPositionChanged(FI)V
 
-    .line 1118
+    .line 1174
     :cond_3
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->postInvalidateOnAnimation()V
 
@@ -1247,37 +1320,37 @@
 
     const/4 v1, 0x0
 
-    .line 1064
+    .line 1117
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeInteractiveInternal:Z
 
-    .line 1065
+    .line 1118
     invoke-direct {p0, p1}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->setChallengeShowing(Z)V
 
-    .line 1067
+    .line 1120
     if-nez p1, :cond_0
 
-    .line 1068
+    .line 1121
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->getMaxChallengeBottom()I
 
     move-result v0
 
     invoke-direct {p0, v0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->moveChallengeTo(I)Z
 
-    .line 1071
+    .line 1124
     :cond_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     invoke-virtual {v0, v1, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;->setLayerType(ILandroid/graphics/Paint;)V
 
-    .line 1072
+    .line 1125
     iput-object v2, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mFader:Landroid/animation/ObjectAnimator;
 
-    .line 1073
+    .line 1126
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->setScrollState(I)V
 
-    .line 1074
+    .line 1127
     return-void
 .end method
 
@@ -1286,12 +1359,12 @@
     .parameter "show"
 
     .prologue
-    .line 1053
+    .line 1106
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeInteractiveInternal:Z
 
-    .line 1054
+    .line 1107
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     const/4 v1, 0x2
@@ -1300,23 +1373,23 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;->setLayerType(ILandroid/graphics/Paint;)V
 
-    .line 1056
+    .line 1109
     if-eqz p1, :cond_0
 
-    .line 1057
+    .line 1110
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->getMinChallengeBottom()I
 
     move-result v0
 
     invoke-direct {p0, v0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->moveChallengeTo(I)Z
 
-    .line 1060
+    .line 1113
     :cond_0
     const/4 v0, 0x3
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->setScrollState(I)V
 
-    .line 1061
+    .line 1114
     return-void
 .end method
 
@@ -1324,29 +1397,29 @@
     .locals 1
 
     .prologue
-    .line 598
+    .line 639
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v0}, Landroid/view/VelocityTracker;->recycle()V
 
-    .line 599
+    .line 640
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    .line 600
+    .line 641
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mActivePointerId:I
 
-    .line 601
+    .line 642
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mBlockDrag:Z
 
     iput-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mDragging:Z
 
-    .line 602
+    .line 643
     return-void
 .end method
 
@@ -1354,12 +1427,12 @@
     .locals 3
 
     .prologue
-    .line 295
+    .line 304
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mScrollListener:Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$OnChallengeScrolledListener;
 
     if-eqz v1, :cond_0
 
-    .line 296
+    .line 305
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     if-eqz v1, :cond_1
@@ -1370,7 +1443,7 @@
 
     move-result v0
 
-    .line 297
+    .line 306
     .local v0, challengeTop:I
     :goto_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mScrollListener:Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$OnChallengeScrolledListener;
@@ -1379,19 +1452,19 @@
 
     invoke-interface {v1, v2, v0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$OnChallengeScrolledListener;->onScrollPositionChanged(FI)V
 
-    .line 298
+    .line 307
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mScrollListener:Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$OnChallengeScrolledListener;
 
     iget v2, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mScrollState:I
 
     invoke-interface {v1, v2}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$OnChallengeScrolledListener;->onScrollStateChanged(I)V
 
-    .line 300
+    .line 309
     .end local v0           #challengeTop:I
     :cond_0
     return-void
 
-    .line 296
+    .line 305
     :cond_1
     const/4 v0, 0x0
 
@@ -1407,21 +1480,21 @@
 
     const/4 v1, 0x0
 
-    .line 423
+    .line 464
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeShowing:Z
 
     if-ne v0, p1, :cond_1
 
-    .line 452
+    .line 493
     :cond_0
     :goto_0
     return-void
 
-    .line 426
+    .line 467
     :cond_1
     iput-boolean p1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeShowing:Z
 
-    .line 428
+    .line 469
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mExpandChallengeView:Landroid/view/View;
 
     if-eqz v0, :cond_0
@@ -1430,22 +1503,22 @@
 
     if-eqz v0, :cond_0
 
-    .line 435
+    .line 476
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeShowing:Z
 
     if-eqz v0, :cond_2
 
-    .line 436
+    .line 477
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mExpandChallengeView:Landroid/view/View;
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 437
+    .line 478
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     invoke-virtual {v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;->setVisibility(I)V
 
-    .line 438
+    .line 479
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/view/accessibility/AccessibilityManager;->getInstance(Landroid/content/Context;)Landroid/view/accessibility/AccessibilityManager;
@@ -1458,12 +1531,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 439
+    .line 480
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;->requestAccessibilityFocus()Z
 
-    .line 440
+    .line 481
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mContext:Landroid/content/Context;
@@ -1478,18 +1551,18 @@
 
     goto :goto_0
 
-    .line 444
+    .line 485
     :cond_2
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mExpandChallengeView:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 445
+    .line 486
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     invoke-virtual {v0, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;->setVisibility(I)V
 
-    .line 446
+    .line 487
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/view/accessibility/AccessibilityManager;->getInstance(Landroid/content/Context;)Landroid/view/accessibility/AccessibilityManager;
@@ -1502,12 +1575,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 447
+    .line 488
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mExpandChallengeView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->requestAccessibilityFocus()Z
 
-    .line 448
+    .line 489
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mContext:Landroid/content/Context;
@@ -1532,10 +1605,10 @@
 
     const/4 v2, 0x0
 
-    .line 1157
+    .line 1213
     const/4 v0, 0x0
 
-    .line 1158
+    .line 1214
     .local v0, show:Z
     invoke-static {p1}, Ljava/lang/Math;->abs(I)I
 
@@ -1545,25 +1618,25 @@
 
     if-le v3, v4, :cond_1
 
-    .line 1159
+    .line 1215
     if-gez p1, :cond_0
 
     move v0, v1
 
-    .line 1163
+    .line 1219
     :goto_0
     invoke-direct {p0, v0, p1}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->showChallenge(ZI)V
 
-    .line 1164
+    .line 1220
     return-void
 
     :cond_0
     move v0, v2
 
-    .line 1159
+    .line 1215
     goto :goto_0
 
-    .line 1161
+    .line 1217
     :cond_1
     iget v3, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeOffset:F
 
@@ -1590,36 +1663,36 @@
     .parameter "velocity"
 
     .prologue
-    .line 1167
+    .line 1223
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     if-nez v1, :cond_1
 
-    .line 1168
+    .line 1224
     const/4 v1, 0x0
 
     invoke-direct {p0, v1}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->setChallengeShowing(Z)V
 
-    .line 1178
+    .line 1234
     :cond_0
     :goto_0
     return-void
 
-    .line 1172
+    .line 1228
     :cond_1
     iget-boolean v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mHasLayout:Z
 
     if-eqz v1, :cond_0
 
-    .line 1173
+    .line 1229
     iput-boolean p1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeShowingTargetState:Z
 
-    .line 1174
+    .line 1230
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->getLayoutBottom()I
 
     move-result v0
 
-    .line 1175
+    .line 1231
     .local v0, layoutBottom:I
     if-eqz p1, :cond_2
 
@@ -1646,6 +1719,367 @@
     goto :goto_1
 .end method
 
+.method private updateKeyguardLayerPosition(I)V
+    .locals 9
+    .parameter "bottom"
+
+    .prologue
+    const/high16 v8, 0x3f80
+
+    .line 1421
+    iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerForegroundLayout:Landroid/widget/FrameLayout;
+
+    if-eqz v4, :cond_0
+
+    iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
+
+    if-eqz v4, :cond_0
+
+    .line 1422
+    iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerForegroundLayout:Landroid/widget/FrameLayout;
+
+    iget-object v5, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerForegroundLayout:Landroid/widget/FrameLayout;
+
+    invoke-virtual {v5}, Landroid/widget/FrameLayout;->getLeft()I
+
+    move-result v5
+
+    iget-object v6, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerForegroundLayout:Landroid/widget/FrameLayout;
+
+    invoke-virtual {v6}, Landroid/widget/FrameLayout;->getHeight()I
+
+    move-result v6
+
+    sub-int v6, p1, v6
+
+    iget-object v7, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerForegroundLayout:Landroid/widget/FrameLayout;
+
+    invoke-virtual {v7}, Landroid/widget/FrameLayout;->getRight()I
+
+    move-result v7
+
+    invoke-virtual {v4, v5, v6, v7, p1}, Landroid/widget/FrameLayout;->layout(IIII)V
+
+    .line 1426
+    invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->getLayoutBottom()I
+
+    move-result v2
+
+    .line 1427
+    .local v2, minBottom:I
+    invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->getLayoutBottom()I
+
+    move-result v4
+
+    iget-object v5, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
+
+    invoke-virtual {v5}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;->getMeasuredHeight()I
+
+    move-result v5
+
+    add-int v1, v4, v5
+
+    .line 1428
+    .local v1, maxBottom:I
+    invoke-static {v2, p1}, Ljava/lang/Math;->max(II)I
+
+    move-result v4
+
+    invoke-static {v4, v1}, Ljava/lang/Math;->min(II)I
+
+    move-result v3
+
+    .line 1429
+    .local v3, realBottom:I
+    sub-int v4, v3, v2
+
+    int-to-float v4, v4
+
+    mul-float/2addr v4, v8
+
+    iget-object v5, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
+
+    invoke-virtual {v5}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;->getMeasuredHeight()I
+
+    move-result v5
+
+    int-to-float v5, v5
+
+    div-float/2addr v4, v5
+
+    sub-float v0, v8, v4
+
+    .line 1430
+    .local v0, alpha:F
+    iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerForegroundView:Landroid/view/View;
+
+    if-eqz v4, :cond_0
+
+    .line 1431
+    iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerForegroundView:Landroid/view/View;
+
+    invoke-virtual {v4, v0}, Landroid/view/View;->setAlpha(F)V
+
+    .line 1440
+    .end local v0           #alpha:F
+    .end local v1           #maxBottom:I
+    .end local v2           #minBottom:I
+    .end local v3           #realBottom:I
+    :cond_0
+    return-void
+.end method
+
+.method private updateKeyguardLayerView(Z)V
+    .locals 12
+    .parameter "show"
+
+    .prologue
+    .line 1364
+    if-eqz p1, :cond_1
+
+    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerBackgroundView:Landroid/view/View;
+
+    if-nez v8, :cond_1
+
+    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerForegroundView:Landroid/view/View;
+
+    if-nez v8, :cond_1
+
+    .line 1366
+    :try_start_0
+    const-class v8, Lcom/mediatek/common/pluginmanager/IPluginManager;
+
+    const/4 v9, 0x4
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v10, 0x0
+
+    const-string v11, "create"
+
+    aput-object v11, v9, v10
+
+    const/4 v10, 0x1
+
+    iget-object v11, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mContext:Landroid/content/Context;
+
+    aput-object v11, v9, v10
+
+    const/4 v10, 0x2
+
+    const-class v11, Lcom/mediatek/common/policy/IKeyguardLayer;
+
+    invoke-virtual {v11}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v11
+
+    aput-object v11, v9, v10
+
+    const/4 v10, 0x3
+
+    const/4 v11, 0x0
+
+    aput-object v11, v9, v10
+
+    invoke-static {v8, v9}, Lcom/mediatek/common/MediatekClassFactory;->createInstance(Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lcom/mediatek/common/pluginmanager/IPluginManager;
+
+    .line 1371
+    .local v5, plugManager:Lcom/mediatek/common/pluginmanager/IPluginManager;
+    invoke-interface {v5}, Lcom/mediatek/common/pluginmanager/IPluginManager;->getPluginCount()I
+
+    move-result v7
+
+    .line 1372
+    .local v7, pluginCount:I
+    if-eqz v7, :cond_2
+
+    .line 1376
+    const/4 v1, 0x0
+
+    .local v1, i:I
+    :goto_0
+    if-ge v1, v7, :cond_2
+
+    .line 1377
+    invoke-interface {v5, v1}, Lcom/mediatek/common/pluginmanager/IPluginManager;->getPlugin(I)Lcom/mediatek/common/pluginmanager/IPlugin;
+
+    move-result-object v6
+
+    .line 1378
+    .local v6, plugin:Lcom/mediatek/common/pluginmanager/IPlugin;
+    invoke-interface {v6}, Lcom/mediatek/common/pluginmanager/IPlugin;->createObject()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/mediatek/common/policy/IKeyguardLayer;
+
+    .line 1379
+    .local v2, keyguardLayer:Lcom/mediatek/common/policy/IKeyguardLayer;
+    invoke-interface {v2}, Lcom/mediatek/common/policy/IKeyguardLayer;->create()Landroid/view/View;
+
+    move-result-object v3
+
+    .line 1380
+    .local v3, keyguardLayerView:Landroid/view/View;
+    const-string v8, "SlidingChallengeLayout"
+
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v10, "updateDataUsageView create plugin keyguardLayer="
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    const-string v10, ", this="
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v8, v9}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 1381
+    invoke-interface {v2}, Lcom/mediatek/common/policy/IKeyguardLayer;->getKeyguardLayerInfo()Lcom/mediatek/common/policy/KeyguardLayerInfo;
+
+    move-result-object v8
+
+    if-eqz v8, :cond_0
+
+    .line 1382
+    iput-object v2, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerBackground:Lcom/mediatek/common/policy/IKeyguardLayer;
+
+    .line 1383
+    iput-object v3, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerBackgroundView:Landroid/view/View;
+
+    .line 1376
+    :goto_1
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    .line 1385
+    :cond_0
+    iput-object v2, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerForeground:Lcom/mediatek/common/policy/IKeyguardLayer;
+
+    .line 1386
+    iput-object v3, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerForegroundView:Landroid/view/View;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_1
+
+    .line 1402
+    .end local v1           #i:I
+    .end local v2           #keyguardLayer:Lcom/mediatek/common/policy/IKeyguardLayer;
+    .end local v3           #keyguardLayerView:Landroid/view/View;
+    .end local v5           #plugManager:Lcom/mediatek/common/pluginmanager/IPluginManager;
+    .end local v6           #plugin:Lcom/mediatek/common/pluginmanager/IPlugin;
+    .end local v7           #pluginCount:I
+    :catch_0
+    move-exception v0
+
+    .line 1403
+    .local v0, e:Ljava/lang/Exception;
+    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
+
+    .line 1406
+    .end local v0           #e:Ljava/lang/Exception;
+    :cond_1
+    :goto_2
+    return-void
+
+    .line 1391
+    .restart local v5       #plugManager:Lcom/mediatek/common/pluginmanager/IPluginManager;
+    .restart local v7       #pluginCount:I
+    :cond_2
+    :try_start_1
+    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerForegroundLayout:Landroid/widget/FrameLayout;
+
+    if-eqz v8, :cond_3
+
+    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerForegroundView:Landroid/view/View;
+
+    if-eqz v8, :cond_3
+
+    .line 1392
+    new-instance v4, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;
+
+    const/4 v8, -0x1
+
+    const/4 v9, -0x1
+
+    invoke-direct {v4, v8, v9}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;-><init>(II)V
+
+    .line 1393
+    .local v4, layoutParam:Landroid/view/ViewGroup$LayoutParams;
+    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerForegroundView:Landroid/view/View;
+
+    invoke-virtual {v8, v4}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 1394
+    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerForegroundLayout:Landroid/widget/FrameLayout;
+
+    iget-object v9, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerForegroundView:Landroid/view/View;
+
+    invoke-virtual {v8, v9}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
+
+    .line 1397
+    .end local v4           #layoutParam:Landroid/view/ViewGroup$LayoutParams;
+    :cond_3
+    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerBackgroundLayout:Landroid/widget/FrameLayout;
+
+    if-eqz v8, :cond_1
+
+    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerBackgroundView:Landroid/view/View;
+
+    if-eqz v8, :cond_1
+
+    .line 1398
+    new-instance v4, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;
+
+    const/4 v8, -0x1
+
+    const/4 v9, -0x1
+
+    invoke-direct {v4, v8, v9}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;-><init>(II)V
+
+    .line 1399
+    .restart local v4       #layoutParam:Landroid/view/ViewGroup$LayoutParams;
+    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerBackgroundView:Landroid/view/View;
+
+    invoke-virtual {v8, v4}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 1400
+    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerBackgroundLayout:Landroid/widget/FrameLayout;
+
+    iget-object v9, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerBackgroundView:Landroid/view/View;
+
+    invoke-virtual {v8, v9}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+
+    goto :goto_2
+.end method
+
 
 # virtual methods
 .method animateChallengeTo(II)V
@@ -1660,65 +2094,65 @@
 
     const/high16 v12, 0x3f80
 
-    .line 384
+    .line 425
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     if-nez v0, :cond_0
 
-    .line 420
+    .line 461
     :goto_0
     return-void
 
-    .line 389
+    .line 430
     :cond_0
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->cancelTransitionsInProgress()V
 
-    .line 391
+    .line 432
     iput-boolean v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeInteractiveInternal:Z
 
-    .line 392
+    .line 433
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     const/4 v3, 0x0
 
     invoke-virtual {v0, v11, v3}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;->setLayerType(ILandroid/graphics/Paint;)V
 
-    .line 393
+    .line 434
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;->getBottom()I
 
     move-result v2
 
-    .line 394
+    .line 435
     .local v2, sy:I
     sub-int v4, p1, v2
 
-    .line 395
+    .line 436
     .local v4, dy:I
     if-nez v4, :cond_1
 
-    .line 396
+    .line 437
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->completeChallengeScroll()V
 
     goto :goto_0
 
-    .line 400
+    .line 441
     :cond_1
     invoke-virtual {p0, v11}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->setScrollState(I)V
 
-    .line 402
+    .line 443
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;->getHeight()I
 
     move-result v7
 
-    .line 403
+    .line 444
     .local v7, childHeight:I
     div-int/lit8 v10, v7, 0x2
 
-    .line 404
+    .line 445
     .local v10, halfHeight:I
     invoke-static {v4}, Ljava/lang/Math;->abs(I)I
 
@@ -1736,7 +2170,7 @@
 
     move-result v9
 
-    .line 405
+    .line 446
     .local v9, distanceRatio:F
     int-to-float v0, v10
 
@@ -1750,20 +2184,20 @@
 
     add-float v8, v0, v3
 
-    .line 408
+    .line 449
     .local v8, distance:F
     const/4 v5, 0x0
 
-    .line 409
+    .line 450
     .local v5, duration:I
     invoke-static {p2}, Ljava/lang/Math;->abs(I)I
 
     move-result p2
 
-    .line 410
+    .line 451
     if-lez p2, :cond_2
 
-    .line 411
+    .line 452
     const/high16 v0, 0x447a
 
     int-to-float v3, p2
@@ -1782,7 +2216,7 @@
 
     mul-int/lit8 v5, v0, 0x4
 
-    .line 416
+    .line 457
     :goto_1
     const/16 v0, 0x258
 
@@ -1790,19 +2224,19 @@
 
     move-result v5
 
-    .line 418
+    .line 459
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mScroller:Landroid/widget/Scroller;
 
     move v3, v1
 
     invoke-virtual/range {v0 .. v5}, Landroid/widget/Scroller;->startScroll(IIIII)V
 
-    .line 419
+    .line 460
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->postInvalidateOnAnimation()V
 
     goto :goto_0
 
-    .line 413
+    .line 454
     :cond_2
     invoke-static {v4}, Ljava/lang/Math;->abs(I)I
 
@@ -1814,7 +2248,7 @@
 
     div-float v6, v0, v3
 
-    .line 414
+    .line 455
     .local v6, childDelta:F
     add-float v0, v6, v12
 
@@ -1832,28 +2266,28 @@
     .parameter "visible"
 
     .prologue
-    .line 280
+    .line 289
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mHandleAnimation:Landroid/animation/ObjectAnimator;
 
     if-eqz v1, :cond_0
 
-    .line 281
+    .line 290
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mHandleAnimation:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v1}, Landroid/animation/ObjectAnimator;->cancel()V
 
-    .line 282
+    .line 291
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mHandleAnimation:Landroid/animation/ObjectAnimator;
 
-    .line 284
+    .line 293
     :cond_0
     if-eqz p1, :cond_1
 
     const/high16 v0, 0x3f80
 
-    .line 285
+    .line 294
     .local v0, targetAlpha:F
     :goto_0
     iget v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mHandleAlpha:F
@@ -1862,18 +2296,18 @@
 
     if-nez v1, :cond_2
 
-    .line 292
+    .line 301
     :goto_1
     return-void
 
-    .line 284
+    .line 293
     .end local v0           #targetAlpha:F
     :cond_1
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 288
+    .line 297
     .restart local v0       #targetAlpha:F
     :cond_2
     sget-object v1, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->HANDLE_ALPHA:Landroid/util/Property;
@@ -1892,21 +2326,21 @@
 
     iput-object v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mHandleAnimation:Landroid/animation/ObjectAnimator;
 
-    .line 289
+    .line 298
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mHandleAnimation:Landroid/animation/ObjectAnimator;
 
     sget-object v2, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->sHandleFadeInterpolator:Landroid/view/animation/Interpolator;
 
     invoke-virtual {v1, v2}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 290
+    .line 299
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mHandleAnimation:Landroid/animation/ObjectAnimator;
 
     const-wide/16 v2, 0xfa
 
     invoke-virtual {v1, v2, v3}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 291
+    .line 300
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mHandleAnimation:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v1}, Landroid/animation/ObjectAnimator;->start()V
@@ -1919,7 +2353,7 @@
     .parameter "p"
 
     .prologue
-    .line 1199
+    .line 1255
     instance-of v0, p1, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;
 
     return v0
@@ -1931,12 +2365,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 360
+    .line 401
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeShowingTargetState:Z
 
     invoke-direct {p0, v0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->setChallengeShowing(Z)V
 
-    .line 361
+    .line 402
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeShowing:Z
 
     if-eqz v0, :cond_0
@@ -1946,25 +2380,25 @@
     :goto_0
     iput v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeOffset:F
 
-    .line 362
+    .line 403
     invoke-virtual {p0, v2}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->setScrollState(I)V
 
-    .line 363
+    .line 404
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeInteractiveInternal:Z
 
-    .line 364
+    .line 405
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v2, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;->setLayerType(ILandroid/graphics/Paint;)V
 
-    .line 365
+    .line 406
     return-void
 
-    .line 361
+    .line 402
     :cond_0
     const/4 v0, 0x0
 
@@ -1975,10 +2409,10 @@
     .locals 2
 
     .prologue
-    .line 980
+    .line 1033
     invoke-super {p0}, Landroid/view/ViewGroup;->computeScroll()V
 
-    .line 982
+    .line 1035
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mScroller:Landroid/widget/Scroller;
 
     invoke-virtual {v0}, Landroid/widget/Scroller;->isFinished()Z
@@ -1987,35 +2421,35 @@
 
     if-nez v0, :cond_0
 
-    .line 983
+    .line 1036
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     if-nez v0, :cond_1
 
-    .line 985
+    .line 1038
     const-string v0, "SlidingChallengeLayout"
 
     const-string v1, "Challenge view missing in computeScroll"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 986
+    .line 1039
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mScroller:Landroid/widget/Scroller;
 
     invoke-virtual {v0}, Landroid/widget/Scroller;->abortAnimation()V
 
-    .line 997
+    .line 1050
     :cond_0
     :goto_0
     return-void
 
-    .line 990
+    .line 1043
     :cond_1
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mScroller:Landroid/widget/Scroller;
 
     invoke-virtual {v0}, Landroid/widget/Scroller;->computeScrollOffset()Z
 
-    .line 991
+    .line 1044
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mScroller:Landroid/widget/Scroller;
 
     invoke-virtual {v0}, Landroid/widget/Scroller;->getCurrY()I
@@ -2024,7 +2458,7 @@
 
     invoke-direct {p0, v0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->moveChallengeTo(I)Z
 
-    .line 993
+    .line 1046
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mScroller:Landroid/widget/Scroller;
 
     invoke-virtual {v0}, Landroid/widget/Scroller;->isFinished()Z
@@ -2033,7 +2467,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 994
+    .line 1047
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mEndScrollRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->post(Ljava/lang/Runnable;)Z
@@ -2048,23 +2482,23 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 693
+    .line 734
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
 
-    .line 694
+    .line 735
     .local v0, action:I
     const/4 v1, 0x0
 
-    .line 695
+    .line 736
     .local v1, handled:Z
     if-nez v0, :cond_0
 
-    .line 697
+    .line 738
     iput-boolean v4, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mEdgeCaptured:Z
 
-    .line 699
+    .line 740
     :cond_0
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mWidgetsView:Landroid/view/View;
 
@@ -2084,7 +2518,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 707
+    .line 748
     :cond_1
     iget-boolean v2, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mEdgeCaptured:Z
 
@@ -2098,7 +2532,7 @@
 
     iput-boolean v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mEdgeCaptured:Z
 
-    .line 710
+    .line 751
     :cond_2
     if-nez v1, :cond_3
 
@@ -2106,12 +2540,12 @@
 
     if-nez v2, :cond_3
 
-    .line 711
+    .line 752
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v1
 
-    .line 714
+    .line 755
     :cond_3
     const/4 v2, 0x1
 
@@ -2121,11 +2555,11 @@
 
     if-ne v0, v2, :cond_5
 
-    .line 715
+    .line 756
     :cond_4
     iput-boolean v4, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mEdgeCaptured:Z
 
-    .line 718
+    .line 759
     :cond_5
     return v1
 .end method
@@ -2135,12 +2569,12 @@
     .parameter "f"
 
     .prologue
-    .line 343
+    .line 384
     const/high16 v0, 0x3f00
 
     sub-float/2addr p1, v0
 
-    .line 344
+    .line 385
     float-to-double v0, p1
 
     const-wide v2, 0x3fde28c7460698c7L
@@ -2149,7 +2583,7 @@
 
     double-to-float p1, v0
 
-    .line 345
+    .line 386
     float-to-double v0, p1
 
     invoke-static {v0, v1}, Ljava/lang/Math;->sin(D)D
@@ -2166,10 +2600,10 @@
     .parameter "c"
 
     .prologue
-    .line 966
+    .line 1019
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->draw(Landroid/graphics/Canvas;)V
 
-    .line 977
+    .line 1030
     return-void
 .end method
 
@@ -2178,27 +2612,27 @@
     .parameter "show"
 
     .prologue
-    .line 1018
+    .line 1071
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     if-eqz v2, :cond_0
 
-    .line 1020
+    .line 1073
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->cancelTransitionsInProgress()V
 
-    .line 1021
+    .line 1074
     if-eqz p1, :cond_1
 
     const/high16 v0, 0x3f80
 
-    .line 1022
+    .line 1075
     .local v0, alpha:F
     :goto_0
     if-eqz p1, :cond_2
 
     const/16 v1, 0xa0
 
-    .line 1023
+    .line 1076
     .local v1, duration:I
     :goto_1
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
@@ -2219,7 +2653,7 @@
 
     iput-object v2, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mFader:Landroid/animation/ObjectAnimator;
 
-    .line 1024
+    .line 1077
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mFader:Landroid/animation/ObjectAnimator;
 
     new-instance v3, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$9;
@@ -2228,31 +2662,31 @@
 
     invoke-virtual {v2, v3}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1034
+    .line 1087
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mFader:Landroid/animation/ObjectAnimator;
 
     int-to-long v3, v1
 
     invoke-virtual {v2, v3, v4}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 1035
+    .line 1088
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mFader:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v2}, Landroid/animation/ObjectAnimator;->start()V
 
-    .line 1037
+    .line 1090
     .end local v0           #alpha:F
     .end local v1           #duration:I
     :cond_0
     return-void
 
-    .line 1021
+    .line 1074
     :cond_1
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 1022
+    .line 1075
     .restart local v0       #alpha:F
     :cond_2
     const/16 v1, 0x64
@@ -2264,12 +2698,12 @@
     .locals 1
 
     .prologue
-    .line 1010
+    .line 1063
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->fadeChallenge(Z)V
 
-    .line 1011
+    .line 1064
     return-void
 .end method
 
@@ -2277,12 +2711,12 @@
     .locals 1
 
     .prologue
-    .line 1014
+    .line 1067
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->fadeChallenge(Z)V
 
-    .line 1015
+    .line 1068
     return-void
 .end method
 
@@ -2290,7 +2724,7 @@
     .locals 1
 
     .prologue
-    .line 1194
+    .line 1250
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;
 
     invoke-direct {v0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;-><init>()V
@@ -2303,7 +2737,7 @@
     .parameter "attrs"
 
     .prologue
-    .line 1182
+    .line 1238
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;
 
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->getContext()Landroid/content/Context;
@@ -2320,7 +2754,7 @@
     .parameter "p"
 
     .prologue
-    .line 1187
+    .line 1243
     instance-of v0, p1, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;
 
     if-eqz v0, :cond_0
@@ -2363,7 +2797,7 @@
     .locals 1
 
     .prologue
-    .line 473
+    .line 514
     const/16 v0, 0xfa
 
     return v0
@@ -2373,24 +2807,24 @@
     .locals 3
 
     .prologue
-    .line 1077
+    .line 1130
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     if-nez v2, :cond_0
 
     const/4 v2, 0x0
 
-    .line 1081
+    .line 1134
     :goto_0
     return v2
 
-    .line 1079
+    .line 1132
     :cond_0
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->getLayoutBottom()I
 
     move-result v1
 
-    .line 1080
+    .line 1133
     .local v1, layoutBottom:I
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
@@ -2398,7 +2832,7 @@
 
     move-result v0
 
-    .line 1081
+    .line 1134
     .local v0, challengeHeight:I
     sub-int v2, v1, v0
 
@@ -2411,17 +2845,17 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 504
+    .line 545
     iget-boolean v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mIsBouncing:Z
 
     if-nez v1, :cond_1
 
-    .line 525
+    .line 566
     :cond_0
     :goto_0
     return-void
 
-    .line 505
+    .line 546
     :cond_1
     iget-boolean v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mWasChallengeShowing:Z
 
@@ -2429,16 +2863,16 @@
 
     invoke-virtual {p0, v5}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->showChallenge(Z)V
 
-    .line 506
+    .line 547
     :cond_2
     iput-boolean v5, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mIsBouncing:Z
 
-    .line 508
+    .line 549
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mScrimView:Landroid/view/View;
 
     if-eqz v1, :cond_3
 
-    .line 509
+    .line 550
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mScrimView:Landroid/view/View;
 
     const-string v2, "alpha"
@@ -2455,43 +2889,43 @@
 
     move-result-object v0
 
-    .line 510
+    .line 551
     .local v0, anim:Landroid/animation/Animator;
     const-wide/16 v1, 0xfa
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
 
-    .line 511
+    .line 552
     new-instance v1, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$8;
 
     invoke-direct {v1, p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$8;-><init>(Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;)V
 
-    invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 517
-    invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
+    .line 558
+    invoke-virtual {v0}, Landroid/animation/Animator;->start()V
 
-    .line 519
+    .line 560
     .end local v0           #anim:Landroid/animation/Animator;
     :cond_3
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     if-eqz v1, :cond_4
 
-    .line 520
+    .line 561
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     const/16 v2, 0xfa
 
     invoke-virtual {v1, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;->hideBouncer(I)V
 
-    .line 522
+    .line 563
     :cond_4
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mBouncerListener:Lcom/android/internal/policy/impl/keyguard/ChallengeLayout$OnBouncerStateChangedListener;
 
     if-eqz v1, :cond_0
 
-    .line 523
+    .line 564
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mBouncerListener:Lcom/android/internal/policy/impl/keyguard/ChallengeLayout$OnBouncerStateChangedListener;
 
     invoke-interface {v1, v5}, Lcom/android/internal/policy/impl/keyguard/ChallengeLayout$OnBouncerStateChangedListener;->onBouncerStateChanged(Z)V
@@ -2503,7 +2937,7 @@
     .locals 1
 
     .prologue
-    .line 468
+    .line 509
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mIsBouncing:Z
 
     return v0
@@ -2513,7 +2947,7 @@
     .locals 1
 
     .prologue
-    .line 463
+    .line 504
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeShowing:Z
 
     return v0
@@ -2523,7 +2957,7 @@
     .locals 1
 
     .prologue
-    .line 458
+    .line 499
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeShowing:Z
 
     return v0
@@ -2533,36 +2967,251 @@
     .locals 1
 
     .prologue
-    .line 315
+    .line 324
     invoke-super {p0}, Landroid/view/ViewGroup;->onAttachedToWindow()V
 
-    .line 317
+    .line 333
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mHasLayout:Z
 
-    .line 318
+    .line 334
     return-void
 .end method
 
 .method public onDetachedFromWindow()V
-    .locals 1
+    .locals 4
 
     .prologue
-    .line 322
+    const/4 v3, 0x0
+
+    .line 338
     invoke-super {p0}, Landroid/view/ViewGroup;->onDetachedFromWindow()V
 
-    .line 324
+    .line 348
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mEndScrollRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 325
+    .line 350
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mShowKeyguardLayerRunnable:Ljava/lang/Runnable;
+
+    invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->removeCallbacks(Ljava/lang/Runnable;)Z
+
+    .line 352
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mHasLayout:Z
 
-    .line 326
+    .line 355
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerBackground:Lcom/mediatek/common/policy/IKeyguardLayer;
+
+    if-eqz v0, :cond_0
+
+    .line 356
+    const-string v0, "SlidingChallengeLayout"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "onDetachedFromWindow mKeyguardLayerBackground destroy "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerBackground:Lcom/mediatek/common/policy/IKeyguardLayer;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 357
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerBackground:Lcom/mediatek/common/policy/IKeyguardLayer;
+
+    invoke-interface {v0}, Lcom/mediatek/common/policy/IKeyguardLayer;->destroy()V
+
+    .line 358
+    iput-object v3, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerBackground:Lcom/mediatek/common/policy/IKeyguardLayer;
+
+    .line 360
+    :cond_0
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerForeground:Lcom/mediatek/common/policy/IKeyguardLayer;
+
+    if-eqz v0, :cond_1
+
+    .line 361
+    const-string v0, "SlidingChallengeLayout"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "onDetachedFromWindow mKeyguardLayerForeground destroy "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerForeground:Lcom/mediatek/common/policy/IKeyguardLayer;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 362
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerForeground:Lcom/mediatek/common/policy/IKeyguardLayer;
+
+    invoke-interface {v0}, Lcom/mediatek/common/policy/IKeyguardLayer;->destroy()V
+
+    .line 363
+    iput-object v3, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerForeground:Lcom/mediatek/common/policy/IKeyguardLayer;
+
+    .line 365
+    :cond_1
+    iput-object v3, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerBackgroundView:Landroid/view/View;
+
+    .line 366
+    iput-object v3, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerForegroundView:Landroid/view/View;
+
+    .line 367
+    return-void
+.end method
+
+.method public onFinishInflate()V
+    .locals 6
+
+    .prologue
+    .line 1332
+    invoke-super {p0}, Landroid/view/ViewGroup;->onFinishInflate()V
+
+    .line 1333
+    invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->getChildCount()I
+
+    move-result v1
+
+    .line 1334
+    .local v1, count:I
+    const/4 v2, 0x0
+
+    .local v2, i:I
+    :goto_0
+    if-ge v2, v1, :cond_5
+
+    .line 1335
+    invoke-virtual {p0, v2}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v0
+
+    .line 1336
+    .local v0, child:Landroid/view/View;
+    invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;
+
+    .line 1337
+    .local v3, lp:Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;
+    iget v4, v3, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;->childType:I
+
+    const/16 v5, 0x8
+
+    if-ne v4, v5, :cond_1
+
+    .line 1338
+    check-cast v0, Landroid/widget/FrameLayout;
+
+    .end local v0           #child:Landroid/view/View;
+    iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerForegroundLayout:Landroid/widget/FrameLayout;
+
+    .line 1334
+    :cond_0
+    :goto_1
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    .line 1339
+    .restart local v0       #child:Landroid/view/View;
+    :cond_1
+    iget v4, v3, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;->childType:I
+
+    const/16 v5, 0x9
+
+    if-ne v4, v5, :cond_2
+
+    .line 1340
+    check-cast v0, Landroid/widget/FrameLayout;
+
+    .end local v0           #child:Landroid/view/View;
+    iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerBackgroundLayout:Landroid/widget/FrameLayout;
+
+    goto :goto_1
+
+    .line 1341
+    .restart local v0       #child:Landroid/view/View;
+    :cond_2
+    iget v4, v3, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;->childType:I
+
+    const/4 v5, 0x2
+
+    if-ne v4, v5, :cond_0
+
+    .line 1342
+    iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
+
+    if-eqz v4, :cond_3
+
+    .line 1343
+    new-instance v4, Ljava/lang/IllegalStateException;
+
+    const-string v5, "There may only be one child with layout_isChallenge=\"true\""
+
+    invoke-direct {v4, v5}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v4
+
+    .line 1346
+    :cond_3
+    instance-of v4, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
+
+    if-nez v4, :cond_4
+
+    .line 1347
+    new-instance v4, Ljava/lang/IllegalArgumentException;
+
+    const-string v5, "Challenge must be a KeyguardSecurityContainer"
+
+    invoke-direct {v4, v5}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v4
+
+    .line 1350
+    :cond_4
+    check-cast v0, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
+
+    .end local v0           #child:Landroid/view/View;
+    iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
+
+    goto :goto_1
+
+    .line 1353
+    .end local v3           #lp:Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;
+    :cond_5
     return-void
 .end method
 
@@ -2579,34 +3228,34 @@
 
     const/4 v7, -0x1
 
-    .line 545
+    .line 586
     iget-object v5, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     if-nez v5, :cond_0
 
-    .line 546
+    .line 587
     invoke-static {}, Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
 
     move-result-object v5
 
     iput-object v5, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    .line 548
+    .line 589
     :cond_0
     iget-object v5, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v5, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
-    .line 550
+    .line 591
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
 
-    .line 551
+    .line 592
     .local v0, action:I
     packed-switch v0, :pswitch_data_0
 
-    .line 585
+    .line 626
     :cond_1
     :goto_0
     iget-boolean v5, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mBlockDrag:Z
@@ -2619,20 +3268,20 @@
 
     if-eqz v5, :cond_3
 
-    .line 586
+    .line 627
     :cond_2
     iput v7, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mActivePointerId:I
 
-    .line 587
+    .line 628
     iput-boolean v8, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mDragging:Z
 
-    .line 590
+    .line 631
     :cond_3
     iget-boolean v5, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mDragging:Z
 
     return v5
 
-    .line 553
+    .line 594
     :pswitch_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
@@ -2640,31 +3289,31 @@
 
     iput v5, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mGestureStartX:F
 
-    .line 554
+    .line 595
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v5
 
     iput v5, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mGestureStartY:F
 
-    .line 555
+    .line 596
     iput-boolean v8, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mBlockDrag:Z
 
     goto :goto_0
 
-    .line 560
+    .line 601
     :pswitch_1
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->resetTouch()V
 
     goto :goto_0
 
-    .line 564
+    .line 605
     :pswitch_2
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getPointerCount()I
 
     move-result v1
 
-    .line 565
+    .line 606
     .local v1, count:I
     const/4 v2, 0x0
 
@@ -2672,18 +3321,18 @@
     :goto_1
     if-ge v2, v1, :cond_1
 
-    .line 566
+    .line 607
     invoke-virtual {p1, v2}, Landroid/view/MotionEvent;->getX(I)F
 
     move-result v3
 
-    .line 567
+    .line 608
     .local v3, x:F
     invoke-virtual {p1, v2}, Landroid/view/MotionEvent;->getY(I)F
 
     move-result v4
 
-    .line 568
+    .line 609
     .local v4, y:F
     iget-boolean v5, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mIsBouncing:Z
 
@@ -2711,7 +3360,7 @@
 
     if-ne v5, v10, :cond_6
 
-    .line 572
+    .line 613
     :cond_4
     invoke-virtual {p1, v2}, Landroid/view/MotionEvent;->getPointerId(I)I
 
@@ -2719,37 +3368,37 @@
 
     iput v5, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mActivePointerId:I
 
-    .line 573
+    .line 614
     iput v3, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mGestureStartX:F
 
-    .line 574
+    .line 615
     iput v4, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mGestureStartY:F
 
-    .line 575
+    .line 616
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->getChallengeBottom()I
 
     move-result v5
 
     iput v5, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mGestureStartChallengeBottom:I
 
-    .line 576
+    .line 617
     iput-boolean v9, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mDragging:Z
 
-    .line 577
+    .line 618
     iget-object v5, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     const/4 v6, 0x0
 
     invoke-virtual {v5, v10, v6}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;->setLayerType(ILandroid/graphics/Paint;)V
 
-    .line 565
+    .line 606
     :cond_5
     :goto_2
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 578
+    .line 619
     :cond_6
     iget-boolean v5, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeShowing:Z
 
@@ -2761,12 +3410,12 @@
 
     if-eqz v5, :cond_5
 
-    .line 579
+    .line 620
     iput-boolean v9, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mBlockDrag:Z
 
     goto :goto_2
 
-    .line 551
+    .line 592
     nop
 
     :pswitch_data_0
@@ -2779,7 +3428,7 @@
 .end method
 
 .method protected onLayout(ZIIII)V
-    .locals 26
+    .locals 27
     .parameter "changed"
     .parameter "l"
     .parameter "t"
@@ -2787,333 +3436,435 @@
     .parameter "b"
 
     .prologue
-    .line 914
+    .line 953
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->getPaddingLeft()I
-
-    move-result v16
-
-    .line 915
-    .local v16, paddingLeft:I
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->getPaddingTop()I
-
-    move-result v18
-
-    .line 916
-    .local v18, paddingTop:I
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->getPaddingRight()I
 
     move-result v17
 
-    .line 917
-    .local v17, paddingRight:I
+    .line 954
+    .local v17, paddingLeft:I
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->getPaddingTop()I
+
+    move-result v19
+
+    .line 955
+    .local v19, paddingTop:I
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->getPaddingRight()I
+
+    move-result v18
+
+    .line 956
+    .local v18, paddingRight:I
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->getPaddingBottom()I
 
-    move-result v15
+    move-result v16
 
-    .line 918
-    .local v15, paddingBottom:I
-    sub-int v21, p4, p2
+    .line 957
+    .local v16, paddingBottom:I
+    sub-int v22, p4, p2
 
-    .line 919
-    .local v21, width:I
-    sub-int v10, p5, p3
+    .line 958
+    .local v22, width:I
+    sub-int v11, p5, p3
 
-    .line 921
-    .local v10, height:I
+    .line 960
+    .local v11, height:I
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->getChildCount()I
 
-    move-result v9
+    move-result v10
 
-    .line 922
-    .local v9, count:I
-    const/4 v11, 0x0
+    .line 961
+    .local v10, count:I
+    const/4 v12, 0x0
 
-    .local v11, i:I
+    .local v12, i:I
     :goto_0
-    if-ge v11, v9, :cond_3
+    if-ge v12, v10, :cond_5
 
-    .line 923
+    .line 962
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v11}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v0, v12}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v6
+    move-result-object v7
 
-    .line 925
-    .local v6, child:Landroid/view/View;
-    invoke-virtual {v6}, Landroid/view/View;->getVisibility()I
+    .line 964
+    .local v7, child:Landroid/view/View;
+    invoke-virtual {v7}, Landroid/view/View;->getVisibility()I
 
-    move-result v22
+    move-result v23
 
-    const/16 v23, 0x8
+    const/16 v24, 0x8
 
-    move/from16 v0, v22
+    move/from16 v0, v23
 
-    move/from16 v1, v23
-
-    if-ne v0, v1, :cond_0
-
-    .line 922
-    :goto_1
-    add-int/lit8 v11, v11, 0x1
-
-    goto :goto_0
-
-    .line 927
-    :cond_0
-    invoke-virtual {v6}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v14
-
-    check-cast v14, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;
-
-    .line 929
-    .local v14, lp:Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;
-    iget v0, v14, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;->childType:I
-
-    move/from16 v22, v0
-
-    const/16 v23, 0x2
-
-    move/from16 v0, v22
-
-    move/from16 v1, v23
+    move/from16 v1, v24
 
     if-ne v0, v1, :cond_1
 
-    .line 932
-    add-int v22, v16, v21
+    .line 961
+    :cond_0
+    :goto_1
+    add-int/lit8 v12, v12, 0x1
 
-    sub-int v22, v22, v17
+    goto :goto_0
 
-    div-int/lit8 v5, v22, 0x2
+    .line 966
+    :cond_1
+    invoke-virtual {v7}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    .line 933
-    .local v5, center:I
-    invoke-virtual {v6}, Landroid/view/View;->getMeasuredWidth()I
+    move-result-object v15
 
-    move-result v8
+    check-cast v15, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;
 
-    .line 934
-    .local v8, childWidth:I
-    invoke-virtual {v6}, Landroid/view/View;->getMeasuredHeight()I
-
-    move-result v7
-
-    .line 935
-    .local v7, childHeight:I
-    div-int/lit8 v22, v8, 0x2
-
-    sub-int v13, v5, v22
-
-    .line 936
-    .local v13, left:I
-    sub-int v22, v10, v15
-
-    iget v0, v14, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+    .line 968
+    .local v15, lp:Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;
+    iget v0, v15, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;->childType:I
 
     move/from16 v23, v0
 
-    sub-int v12, v22, v23
+    const/16 v24, 0x2
 
-    .line 939
-    .local v12, layoutBottom:I
+    move/from16 v0, v23
+
+    move/from16 v1, v24
+
+    if-ne v0, v1, :cond_2
+
+    .line 971
+    add-int v23, v17, v22
+
+    sub-int v23, v23, v18
+
+    div-int/lit8 v6, v23, 0x2
+
+    .line 972
+    .local v6, center:I
+    invoke-virtual {v7}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v9
+
+    .line 973
+    .local v9, childWidth:I
+    invoke-virtual {v7}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v8
+
+    .line 974
+    .local v8, childHeight:I
+    div-int/lit8 v23, v9, 0x2
+
+    sub-int v14, v6, v23
+
+    .line 975
+    .local v14, left:I
+    sub-int v23, v11, v16
+
+    iget v0, v15, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;->bottomMargin:I
+
+    move/from16 v24, v0
+
+    sub-int v13, v23, v24
+
+    .line 978
+    .local v13, layoutBottom:I
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeBottomBound:I
 
-    move/from16 v22, v0
+    move/from16 v23, v0
 
-    sub-int v22, v7, v22
+    sub-int v23, v8, v23
 
-    move/from16 v0, v22
+    move/from16 v0, v23
 
     int-to-float v0, v0
 
-    move/from16 v22, v0
+    move/from16 v23, v0
 
-    const/high16 v23, 0x3f80
+    const/high16 v24, 0x3f80
 
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeOffset:F
 
-    move/from16 v24, v0
+    move/from16 v25, v0
 
-    sub-float v23, v23, v24
+    sub-float v24, v24, v25
 
-    mul-float v22, v22, v23
+    mul-float v23, v23, v24
 
-    move/from16 v0, v22
+    move/from16 v0, v23
 
     float-to-int v0, v0
 
-    move/from16 v22, v0
+    move/from16 v23, v0
 
-    add-int v4, v12, v22
+    add-int v5, v13, v23
 
-    .line 941
-    .local v4, bottom:I
+    .line 980
+    .local v5, bottom:I
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->getChallengeAlpha()F
 
-    move-result v22
+    move-result v23
 
-    move/from16 v0, v22
+    move/from16 v0, v23
 
-    invoke-virtual {v6, v0}, Landroid/view/View;->setAlpha(F)V
+    invoke-virtual {v7, v0}, Landroid/view/View;->setAlpha(F)V
 
-    .line 942
-    sub-int v22, v4, v7
+    .line 981
+    sub-int v23, v5, v8
 
-    add-int v23, v13, v8
+    add-int v24, v14, v9
 
-    move/from16 v0, v22
+    move/from16 v0, v23
 
-    move/from16 v1, v23
+    move/from16 v1, v24
 
-    invoke-virtual {v6, v13, v0, v1, v4}, Landroid/view/View;->layout(IIII)V
+    invoke-virtual {v7, v14, v0, v1, v5}, Landroid/view/View;->layout(IIII)V
 
     goto :goto_1
 
-    .line 943
-    .end local v4           #bottom:I
-    .end local v5           #center:I
-    .end local v7           #childHeight:I
-    .end local v8           #childWidth:I
-    .end local v12           #layoutBottom:I
-    .end local v13           #left:I
-    :cond_1
-    iget v0, v14, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;->childType:I
-
-    move/from16 v22, v0
-
-    const/16 v23, 0x6
-
-    move/from16 v0, v22
-
-    move/from16 v1, v23
-
-    if-ne v0, v1, :cond_2
-
-    .line 944
-    add-int v22, v16, v21
-
-    sub-int v22, v22, v17
-
-    div-int/lit8 v5, v22, 0x2
-
-    .line 945
-    .restart local v5       #center:I
-    invoke-virtual {v6}, Landroid/view/View;->getMeasuredWidth()I
-
-    move-result v22
-
-    div-int/lit8 v22, v22, 0x2
-
-    sub-int v13, v5, v22
-
-    .line 946
-    .restart local v13       #left:I
-    invoke-virtual {v6}, Landroid/view/View;->getMeasuredWidth()I
-
-    move-result v22
-
-    add-int v19, v13, v22
-
-    .line 947
-    .local v19, right:I
-    sub-int v22, v10, v15
-
-    iget v0, v14, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+    .line 982
+    .end local v5           #bottom:I
+    .end local v6           #center:I
+    .end local v8           #childHeight:I
+    .end local v9           #childWidth:I
+    .end local v13           #layoutBottom:I
+    .end local v14           #left:I
+    :cond_2
+    iget v0, v15, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;->childType:I
 
     move/from16 v23, v0
 
-    sub-int v4, v22, v23
+    const/16 v24, 0x6
 
-    .line 948
-    .restart local v4       #bottom:I
-    invoke-virtual {v6}, Landroid/view/View;->getMeasuredHeight()I
+    move/from16 v0, v23
 
-    move-result v22
+    move/from16 v1, v24
 
-    sub-int v20, v4, v22
+    if-ne v0, v1, :cond_3
 
-    .line 949
-    .local v20, top:I
-    move/from16 v0, v20
+    .line 983
+    add-int v23, v17, v22
 
-    move/from16 v1, v19
+    sub-int v23, v23, v18
 
-    invoke-virtual {v6, v13, v0, v1, v4}, Landroid/view/View;->layout(IIII)V
+    div-int/lit8 v6, v23, 0x2
+
+    .line 984
+    .restart local v6       #center:I
+    invoke-virtual {v7}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v23
+
+    div-int/lit8 v23, v23, 0x2
+
+    sub-int v14, v6, v23
+
+    .line 985
+    .restart local v14       #left:I
+    invoke-virtual {v7}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v23
+
+    add-int v20, v14, v23
+
+    .line 986
+    .local v20, right:I
+    sub-int v23, v11, v16
+
+    iget v0, v15, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;->bottomMargin:I
+
+    move/from16 v24, v0
+
+    sub-int v5, v23, v24
+
+    .line 987
+    .restart local v5       #bottom:I
+    invoke-virtual {v7}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v23
+
+    sub-int v21, v5, v23
+
+    .line 988
+    .local v21, top:I
+    move/from16 v0, v21
+
+    move/from16 v1, v20
+
+    invoke-virtual {v7, v14, v0, v1, v5}, Landroid/view/View;->layout(IIII)V
 
     goto/16 :goto_1
 
-    .line 952
-    .end local v4           #bottom:I
-    .end local v5           #center:I
-    .end local v13           #left:I
-    .end local v19           #right:I
-    .end local v20           #top:I
-    :cond_2
-    iget v0, v14, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
-
-    move/from16 v22, v0
-
-    add-int v22, v22, v16
-
-    iget v0, v14, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    .line 991
+    .end local v5           #bottom:I
+    .end local v6           #center:I
+    .end local v14           #left:I
+    .end local v20           #right:I
+    .end local v21           #top:I
+    :cond_3
+    iget v0, v15, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;->childType:I
 
     move/from16 v23, v0
 
-    add-int v23, v23, v18
+    const/16 v24, 0x8
 
-    invoke-virtual {v6}, Landroid/view/View;->getMeasuredWidth()I
+    move/from16 v0, v23
 
-    move-result v24
+    move/from16 v1, v24
 
-    add-int v24, v24, v16
+    if-eq v0, v1, :cond_0
 
-    invoke-virtual {v6}, Landroid/view/View;->getMeasuredHeight()I
+    .line 994
+    iget v0, v15, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;->childType:I
+
+    move/from16 v23, v0
+
+    const/16 v24, 0x9
+
+    move/from16 v0, v23
+
+    move/from16 v1, v24
+
+    if-ne v0, v1, :cond_4
+
+    .line 995
+    move/from16 v0, p2
+
+    move/from16 v1, p3
+
+    move/from16 v2, p4
+
+    move/from16 v3, p5
+
+    invoke-virtual {v7, v0, v1, v2, v3}, Landroid/view/View;->layout(IIII)V
+
+    goto/16 :goto_1
+
+    .line 1000
+    :cond_4
+    iget v0, v15, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;->leftMargin:I
+
+    move/from16 v23, v0
+
+    add-int v23, v23, v17
+
+    iget v0, v15, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;->topMargin:I
+
+    move/from16 v24, v0
+
+    add-int v24, v24, v19
+
+    invoke-virtual {v7}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v25
 
-    add-int v25, v25, v18
+    add-int v25, v25, v17
 
-    move/from16 v0, v22
+    invoke-virtual {v7}, Landroid/view/View;->getMeasuredHeight()I
 
-    move/from16 v1, v23
+    move-result v26
 
-    move/from16 v2, v24
+    add-int v26, v26, v19
 
-    move/from16 v3, v25
+    move/from16 v0, v23
 
-    invoke-virtual {v6, v0, v1, v2, v3}, Landroid/view/View;->layout(IIII)V
+    move/from16 v1, v24
+
+    move/from16 v2, v25
+
+    move/from16 v3, v26
+
+    invoke-virtual {v7, v0, v1, v2, v3}, Landroid/view/View;->layout(IIII)V
 
     goto/16 :goto_1
 
-    .line 959
-    .end local v6           #child:Landroid/view/View;
-    .end local v14           #lp:Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;
-    :cond_3
+    .line 1007
+    .end local v7           #child:Landroid/view/View;
+    .end local v15           #lp:Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;
+    :cond_5
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerForegroundLayout:Landroid/widget/FrameLayout;
+
+    move-object/from16 v23, v0
+
+    if-eqz v23, :cond_6
+
+    .line 1009
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerForegroundLayout:Landroid/widget/FrameLayout;
+
+    move-object/from16 v23, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
+
+    move-object/from16 v24, v0
+
+    invoke-virtual/range {v24 .. v24}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;->getBottom()I
+
+    move-result v24
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerForegroundLayout:Landroid/widget/FrameLayout;
+
+    move-object/from16 v25, v0
+
+    invoke-virtual/range {v25 .. v25}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
+
+    move-result v25
+
+    sub-int v24, v24, v25
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
+
+    move-object/from16 v25, v0
+
+    invoke-virtual/range {v25 .. v25}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;->getBottom()I
+
+    move-result v25
+
+    move-object/from16 v0, v23
+
+    move/from16 v1, p2
+
+    move/from16 v2, v24
+
+    move/from16 v3, p4
+
+    move/from16 v4, v25
+
+    invoke-virtual {v0, v1, v2, v3, v4}, Landroid/widget/FrameLayout;->layout(IIII)V
+
+    .line 1012
+    :cond_6
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mHasLayout:Z
 
-    move/from16 v22, v0
+    move/from16 v23, v0
 
-    if-nez v22, :cond_4
+    if-nez v23, :cond_7
 
-    .line 960
-    const/16 v22, 0x1
+    .line 1013
+    const/16 v23, 0x1
 
-    move/from16 v0, v22
+    move/from16 v0, v23
 
     move-object/from16 v1, p0
 
     iput-boolean v0, v1, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mHasLayout:Z
 
-    .line 962
-    :cond_4
+    .line 1015
+    :cond_7
     return-void
 .end method
 
@@ -3123,7 +3874,7 @@
     .parameter "heightSpec"
 
     .prologue
-    .line 795
+    .line 836
     invoke-static/range {p1 .. p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v2
@@ -3140,7 +3891,7 @@
 
     if-eq v2, v3, :cond_1
 
-    .line 797
+    .line 838
     :cond_0
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
@@ -3150,19 +3901,19 @@
 
     throw v2
 
-    .line 801
+    .line 842
     :cond_1
     invoke-static/range {p1 .. p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v23
 
-    .line 802
+    .line 843
     .local v23, width:I
     invoke-static/range {p2 .. p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v15
 
-    .line 803
+    .line 844
     .local v15, height:I
     move-object/from16 v0, p0
 
@@ -3170,14 +3921,14 @@
 
     invoke-virtual {v0, v1, v15}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->setMeasuredDimension(II)V
 
-    .line 806
+    .line 847
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     move-object/from16 v19, v0
 
-    .line 807
+    .line 848
     .local v19, oldChallengeView:Landroid/view/View;
     move-object/from16 v0, p0
 
@@ -3185,7 +3936,7 @@
 
     move-object/from16 v20, v0
 
-    .line 808
+    .line 849
     .local v20, oldExpandChallengeView:Landroid/view/View;
     const/4 v2, 0x0
 
@@ -3193,19 +3944,19 @@
 
     iput-object v2, v0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
-    .line 809
+    .line 850
     const/4 v2, 0x0
 
     move-object/from16 v0, p0
 
     iput-object v2, v0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mExpandChallengeView:Landroid/view/View;
 
-    .line 810
+    .line 851
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->getChildCount()I
 
     move-result v13
 
-    .line 814
+    .line 855
     .local v13, count:I
     const/16 v16, 0x0
 
@@ -3215,7 +3966,7 @@
 
     if-ge v0, v13, :cond_d
 
-    .line 815
+    .line 856
     move-object/from16 v0, p0
 
     move/from16 v1, v16
@@ -3224,7 +3975,7 @@
 
     move-result-object v8
 
-    .line 816
+    .line 857
     .local v8, child:Landroid/view/View;
     invoke-virtual {v8}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -3232,7 +3983,7 @@
 
     check-cast v17, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;
 
-    .line 817
+    .line 858
     .local v17, lp:Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;
     move-object/from16 v0, v17
 
@@ -3242,14 +3993,14 @@
 
     if-ne v2, v3, :cond_8
 
-    .line 818
+    .line 859
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     if-eqz v2, :cond_2
 
-    .line 819
+    .line 860
     new-instance v2, Ljava/lang/IllegalStateException;
 
     const-string v3, "There may only be one child with layout_isChallenge=\"true\""
@@ -3258,13 +4009,13 @@
 
     throw v2
 
-    .line 822
+    .line 863
     :cond_2
     instance-of v2, v8, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     if-nez v2, :cond_3
 
-    .line 823
+    .line 864
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
     const-string v3, "Challenge must be a KeyguardSecurityContainer"
@@ -3276,14 +4027,14 @@
     :cond_3
     move-object v2, v8
 
-    .line 826
+    .line 867
     check-cast v2, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     move-object/from16 v0, p0
 
     iput-object v2, v0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
-    .line 827
+    .line 868
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
@@ -3292,7 +4043,7 @@
 
     if-eq v2, v0, :cond_4
 
-    .line 828
+    .line 869
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
@@ -3308,7 +4059,7 @@
     :goto_1
     invoke-virtual {v3, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;->setVisibility(I)V
 
-    .line 831
+    .line 872
     :cond_4
     move-object/from16 v0, p0
 
@@ -3316,7 +4067,7 @@
 
     if-nez v2, :cond_5
 
-    .line 833
+    .line 874
     const v2, #id@keyguard_selector_view#t
 
     invoke-virtual {v8, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -3332,26 +4083,26 @@
 
     iput-boolean v2, v0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mHasGlowpad:Z
 
-    .line 814
+    .line 855
     :cond_5
     :goto_3
     add-int/lit8 v16, v16, 0x1
 
     goto :goto_0
 
-    .line 828
+    .line 869
     :cond_6
     const/4 v2, 0x4
 
     goto :goto_1
 
-    .line 833
+    .line 874
     :cond_7
     const/4 v2, 0x0
 
     goto :goto_2
 
-    .line 838
+    .line 877
     :cond_8
     move-object/from16 v0, v17
 
@@ -3361,14 +4112,14 @@
 
     if-ne v2, v3, :cond_b
 
-    .line 839
+    .line 878
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mExpandChallengeView:Landroid/view/View;
 
     if-eqz v2, :cond_9
 
-    .line 840
+    .line 879
     new-instance v2, Ljava/lang/IllegalStateException;
 
     const-string v3, "There may only be one child with layout_childType=\"expandChallengeHandle\""
@@ -3377,13 +4128,13 @@
 
     throw v2
 
-    .line 844
+    .line 883
     :cond_9
     move-object/from16 v0, p0
 
     iput-object v8, v0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mExpandChallengeView:Landroid/view/View;
 
-    .line 845
+    .line 884
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mExpandChallengeView:Landroid/view/View;
@@ -3392,7 +4143,7 @@
 
     if-eq v2, v0, :cond_5
 
-    .line 846
+    .line 885
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mExpandChallengeView:Landroid/view/View;
@@ -3408,7 +4159,7 @@
     :goto_4
     invoke-virtual {v3, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 847
+    .line 886
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mExpandChallengeView:Landroid/view/View;
@@ -3421,13 +4172,13 @@
 
     goto :goto_3
 
-    .line 846
+    .line 885
     :cond_a
     const/4 v2, 0x0
 
     goto :goto_4
 
-    .line 849
+    .line 888
     :cond_b
     move-object/from16 v0, v17
 
@@ -3437,14 +4188,14 @@
 
     if-ne v2, v3, :cond_c
 
-    .line 850
+    .line 889
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v8}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->setScrimView(Landroid/view/View;)V
 
     goto :goto_3
 
-    .line 851
+    .line 890
     :cond_c
     move-object/from16 v0, v17
 
@@ -3454,14 +4205,14 @@
 
     if-ne v2, v3, :cond_5
 
-    .line 852
+    .line 891
     move-object/from16 v0, p0
 
     iput-object v8, v0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mWidgetsView:Landroid/view/View;
 
     goto :goto_3
 
-    .line 859
+    .line 898
     .end local v8           #child:Landroid/view/View;
     .end local v17           #lp:Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;
     :cond_d
@@ -3483,20 +4234,20 @@
 
     if-eq v2, v3, :cond_f
 
-    .line 866
+    .line 905
     move/from16 v6, p2
 
-    .line 867
+    .line 906
     .local v6, challengeHeightSpec:I
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->getRootView()Landroid/view/View;
 
     move-result-object v21
 
-    .line 868
+    .line 907
     .local v21, root:Landroid/view/View;
     if-eqz v21, :cond_e
 
-    .line 869
+    .line 908
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
@@ -3507,13 +4258,13 @@
 
     check-cast v17, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;
 
-    .line 870
+    .line 909
     .restart local v17       #lp:Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;
     invoke-static/range {p2 .. p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v22
 
-    .line 871
+    .line 910
     .local v22, specSize:I
     move-object/from16 v0, p0
 
@@ -3527,11 +4278,11 @@
 
     sub-int v24, v2, v3
 
-    .line 872
+    .line 911
     .local v24, windowHeight:I
     sub-int v14, v24, v22
 
-    .line 873
+    .line 912
     .local v14, diff:I
     move-object/from16 v0, v17
 
@@ -3539,11 +4290,11 @@
 
     sub-int v18, v2, v14
 
-    .line 874
+    .line 913
     .local v18, maxChallengeHeight:I
     if-lez v18, :cond_e
 
-    .line 878
+    .line 917
     .end local v14           #diff:I
     .end local v17           #lp:Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;
     .end local v18           #maxChallengeHeight:I
@@ -3564,7 +4315,7 @@
 
     invoke-virtual/range {v2 .. v7}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->measureChildWithMargins(Landroid/view/View;IIII)V
 
-    .line 882
+    .line 921
     .end local v6           #challengeHeightSpec:I
     .end local v21           #root:Landroid/view/View;
     :cond_f
@@ -3575,7 +4326,7 @@
 
     if-ge v0, v13, :cond_13
 
-    .line 883
+    .line 922
     move-object/from16 v0, p0
 
     move/from16 v1, v16
@@ -3584,7 +4335,7 @@
 
     move-result-object v8
 
-    .line 884
+    .line 923
     .restart local v8       #child:Landroid/view/View;
     invoke-virtual {v8}, Landroid/view/View;->getVisibility()I
 
@@ -3594,14 +4345,14 @@
 
     if-ne v2, v3, :cond_11
 
-    .line 882
+    .line 921
     :cond_10
     :goto_6
     add-int/lit8 v16, v16, 0x1
 
     goto :goto_5
 
-    .line 888
+    .line 927
     :cond_11
     move-object/from16 v0, p0
 
@@ -3609,13 +4360,13 @@
 
     if-eq v8, v2, :cond_10
 
-    .line 892
+    .line 931
     move/from16 v9, p1
 
     .local v9, parentWidthSpec:I
     move/from16 v11, p2
 
-    .line 893
+    .line 932
     .local v11, parentHeightSpec:I
     invoke-virtual {v8}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -3623,7 +4374,7 @@
 
     check-cast v17, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;
 
-    .line 894
+    .line 933
     .restart local v17       #lp:Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$LayoutParams;
     move-object/from16 v0, v17
 
@@ -3633,16 +4384,16 @@
 
     if-ne v2, v3, :cond_12
 
-    .line 895
+    .line 934
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->getRootView()Landroid/view/View;
 
     move-result-object v21
 
-    .line 896
+    .line 935
     .restart local v21       #root:Landroid/view/View;
     if-eqz v21, :cond_12
 
-    .line 900
+    .line 939
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mDisplayMetrics:Landroid/util/DisplayMetrics;
@@ -3651,7 +4402,7 @@
 
     move/from16 v25, v0
 
-    .line 901
+    .line 940
     .local v25, windowWidth:I
     move-object/from16 v0, p0
 
@@ -3665,7 +4416,7 @@
 
     sub-int v24, v2, v3
 
-    .line 902
+    .line 941
     .restart local v24       #windowHeight:I
     const/high16 v2, 0x4000
 
@@ -3675,7 +4426,7 @@
 
     move-result v9
 
-    .line 904
+    .line 943
     const/high16 v2, 0x4000
 
     move/from16 v0, v24
@@ -3684,7 +4435,7 @@
 
     move-result v11
 
-    .line 908
+    .line 947
     .end local v21           #root:Landroid/view/View;
     .end local v24           #windowHeight:I
     .end local v25           #windowWidth:I
@@ -3699,7 +4450,7 @@
 
     goto :goto_6
 
-    .line 910
+    .line 949
     .end local v8           #child:Landroid/view/View;
     .end local v9           #parentWidthSpec:I
     .end local v11           #parentHeightSpec:I
@@ -3719,51 +4470,51 @@
 
     const/4 v10, 0x1
 
-    .line 606
+    .line 647
     iget-object v7, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     if-nez v7, :cond_0
 
-    .line 607
+    .line 648
     invoke-static {}, Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
 
     move-result-object v7
 
     iput-object v7, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    .line 609
+    .line 650
     :cond_0
     iget-object v7, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v7, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
-    .line 611
+    .line 652
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
 
-    .line 612
+    .line 653
     .local v0, action:I
     packed-switch v0, :pswitch_data_0
 
-    .line 681
+    .line 722
     :cond_1
     :goto_0
     :pswitch_0
     return v10
 
-    .line 614
+    .line 655
     :pswitch_1
     iput-boolean v9, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mBlockDrag:Z
 
-    .line 615
+    .line 656
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v7
 
     iput v7, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mGestureStartX:F
 
-    .line 616
+    .line 657
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v7
@@ -3772,7 +4523,7 @@
 
     goto :goto_0
 
-    .line 620
+    .line 661
     :pswitch_2
     iget-boolean v7, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mDragging:Z
 
@@ -3784,16 +4535,16 @@
 
     if-nez v7, :cond_2
 
-    .line 621
+    .line 662
     invoke-direct {p0, v9}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->showChallenge(I)V
 
-    .line 623
+    .line 664
     :cond_2
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->resetTouch()V
 
     goto :goto_0
 
-    .line 627
+    .line 668
     :pswitch_3
     iget v7, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mActivePointerId:I
 
@@ -3807,7 +4558,7 @@
 
     if-ne v7, v8, :cond_1
 
-    .line 631
+    .line 672
     :pswitch_4
     iget-boolean v7, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mDragging:Z
 
@@ -3819,7 +4570,7 @@
 
     if-nez v7, :cond_3
 
-    .line 632
+    .line 673
     iget-object v7, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     const/16 v8, 0x3e8
@@ -3830,7 +4581,7 @@
 
     invoke-virtual {v7, v8, v9}, Landroid/view/VelocityTracker;->computeCurrentVelocity(IF)V
 
-    .line 633
+    .line 674
     iget-object v7, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     iget v8, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mActivePointerId:I
@@ -3843,13 +4594,13 @@
 
     invoke-direct {p0, v7}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->showChallenge(I)V
 
-    .line 635
+    .line 676
     :cond_3
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->resetTouch()V
 
     goto :goto_0
 
-    .line 639
+    .line 680
     :pswitch_5
     iget-boolean v7, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mDragging:Z
 
@@ -3863,12 +4614,12 @@
 
     if-nez v7, :cond_5
 
-    .line 640
+    .line 681
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getPointerCount()I
 
     move-result v1
 
-    .line 641
+    .line 682
     .local v1, count:I
     const/4 v2, 0x0
 
@@ -3876,18 +4627,18 @@
     :goto_1
     if-ge v2, v1, :cond_5
 
-    .line 642
+    .line 683
     invoke-virtual {p1, v2}, Landroid/view/MotionEvent;->getX(I)F
 
     move-result v5
 
-    .line 643
+    .line 684
     .local v5, x:F
     invoke-virtual {p1, v2}, Landroid/view/MotionEvent;->getY(I)F
 
     move-result v6
 
-    .line 645
+    .line 686
     .local v6, y:F
     invoke-direct {p0, v5, v6}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->isInDragHandle(FF)Z
 
@@ -3926,37 +4677,37 @@
 
     if-nez v7, :cond_6
 
-    .line 649
+    .line 690
     iput v5, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mGestureStartX:F
 
-    .line 650
+    .line 691
     iput v6, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mGestureStartY:F
 
-    .line 651
+    .line 692
     invoke-virtual {p1, v2}, Landroid/view/MotionEvent;->getPointerId(I)I
 
     move-result v7
 
     iput v7, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mActivePointerId:I
 
-    .line 652
+    .line 693
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->getChallengeBottom()I
 
     move-result v7
 
     iput v7, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mGestureStartChallengeBottom:I
 
-    .line 653
+    .line 694
     iput-boolean v10, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mDragging:Z
 
-    .line 654
+    .line 695
     iget-object v7, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     const/4 v8, 0x0
 
     invoke-virtual {v7, v11, v8}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;->setLayerType(ILandroid/graphics/Paint;)V
 
-    .line 660
+    .line 701
     .end local v1           #count:I
     .end local v2           #i:I
     .end local v5           #x:F
@@ -3966,29 +4717,29 @@
 
     if-eqz v7, :cond_1
 
-    .line 663
+    .line 704
     invoke-virtual {p0, v10}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->setScrollState(I)V
 
-    .line 665
+    .line 706
     iget v7, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mActivePointerId:I
 
     invoke-virtual {p1, v7}, Landroid/view/MotionEvent;->findPointerIndex(I)I
 
     move-result v3
 
-    .line 666
+    .line 707
     .local v3, index:I
     if-gez v3, :cond_7
 
-    .line 669
+    .line 710
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->resetTouch()V
 
-    .line 670
+    .line 711
     invoke-direct {p0, v9}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->showChallenge(I)V
 
     goto/16 :goto_0
 
-    .line 641
+    .line 682
     .end local v3           #index:I
     .restart local v1       #count:I
     .restart local v2       #i:I
@@ -3999,7 +4750,7 @@
 
     goto :goto_1
 
-    .line 673
+    .line 714
     .end local v1           #count:I
     .end local v2           #i:I
     .end local v5           #x:F
@@ -4010,7 +4761,7 @@
 
     move-result v6
 
-    .line 674
+    .line 715
     .restart local v6       #y:F
     iget v7, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mGestureStartY:F
 
@@ -4030,7 +4781,7 @@
 
     move-result v4
 
-    .line 677
+    .line 718
     .local v4, pos:F
     iget v7, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mGestureStartChallengeBottom:I
 
@@ -4042,7 +4793,7 @@
 
     goto/16 :goto_0
 
-    .line 612
+    .line 653
     nop
 
     :pswitch_data_0
@@ -4063,7 +4814,7 @@
     .parameter "focused"
 
     .prologue
-    .line 330
+    .line 371
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mIsBouncing:Z
 
     if-eqz v0, :cond_0
@@ -4072,14 +4823,14 @@
 
     if-eq p1, v0, :cond_0
 
-    .line 333
+    .line 374
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->hideBouncer()V
 
-    .line 335
+    .line 376
     :cond_0
     invoke-super {p0, p1, p2}, Landroid/view/ViewGroup;->requestChildFocus(Landroid/view/View;Landroid/view/View;)V
 
-    .line 336
+    .line 377
     return-void
 .end method
 
@@ -4088,7 +4839,7 @@
     .parameter "allowIntercept"
 
     .prologue
-    .line 541
+    .line 582
     return-void
 .end method
 
@@ -4097,20 +4848,43 @@
     .parameter "interactive"
 
     .prologue
-    .line 273
+    .line 282
     iput-boolean p1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeInteractiveExternal:Z
 
-    .line 274
+    .line 283
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mExpandChallengeView:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    .line 275
+    .line 284
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mExpandChallengeView:Landroid/view/View;
 
     invoke-virtual {v0, p1}, Landroid/view/View;->setEnabled(Z)V
 
-    .line 277
+    .line 286
+    :cond_0
+    return-void
+.end method
+
+.method public setClipChildrenForNewEventView(Z)V
+    .locals 1
+    .parameter "clipChildren"
+
+    .prologue
+    .line 1443
+    invoke-virtual {p0, p1}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->setClipChildren(Z)V
+
+    .line 1444
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
+
+    if-eqz v0, :cond_0
+
+    .line 1445
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
+
+    invoke-virtual {v0, p1}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;->setClipChildrenForNewEventView(Z)V
+
+    .line 1447
     :cond_0
     return-void
 .end method
@@ -4120,17 +4894,17 @@
     .parameter "alpha"
 
     .prologue
-    .line 267
+    .line 276
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mExpandChallengeView:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    .line 268
+    .line 277
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mExpandChallengeView:Landroid/view/View;
 
     invoke-virtual {v0, p1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 270
+    .line 279
     :cond_0
     return-void
 .end method
@@ -4140,10 +4914,10 @@
     .parameter "listener"
 
     .prologue
-    .line 310
+    .line 319
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mBouncerListener:Lcom/android/internal/policy/impl/keyguard/ChallengeLayout$OnBouncerStateChangedListener;
 
-    .line 311
+    .line 320
     return-void
 .end method
 
@@ -4152,18 +4926,18 @@
     .parameter "listener"
 
     .prologue
-    .line 303
+    .line 312
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mScrollListener:Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$OnChallengeScrolledListener;
 
-    .line 304
+    .line 313
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mHasLayout:Z
 
     if-eqz v0, :cond_0
 
-    .line 305
+    .line 314
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->sendInitialListenerUpdates()V
 
-    .line 307
+    .line 316
     :cond_0
     return-void
 .end method
@@ -4173,23 +4947,23 @@
     .parameter "scrim"
 
     .prologue
-    .line 368
+    .line 409
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mScrimView:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    .line 369
+    .line 410
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mScrimView:Landroid/view/View;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 371
+    .line 412
     :cond_0
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mScrimView:Landroid/view/View;
 
-    .line 372
+    .line 413
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mScrimView:Landroid/view/View;
 
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mIsBouncing:Z
@@ -4201,24 +4975,24 @@
     :goto_0
     invoke-virtual {v1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 373
+    .line 414
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mScrimView:Landroid/view/View;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setFocusable(Z)V
 
-    .line 374
+    .line 415
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mScrimView:Landroid/view/View;
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mScrimClickListener:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 375
+    .line 416
     return-void
 
-    .line 372
+    .line 413
     :cond_1
     const/16 v0, 0x8
 
@@ -4230,15 +5004,15 @@
     .parameter "state"
 
     .prologue
-    .line 349
+    .line 390
     iget v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mScrollState:I
 
     if-eq v0, p1, :cond_0
 
-    .line 350
+    .line 391
     iput p1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mScrollState:I
 
-    .line 352
+    .line 393
     if-nez p1, :cond_1
 
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeShowing:Z
@@ -4250,25 +5024,47 @@
     :goto_0
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->animateHandle(Z)V
 
-    .line 353
+    .line 394
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mScrollListener:Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$OnChallengeScrolledListener;
 
     if-eqz v0, :cond_0
 
-    .line 354
+    .line 395
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mScrollListener:Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$OnChallengeScrolledListener;
 
     invoke-interface {v0, p1}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$OnChallengeScrolledListener;->onScrollStateChanged(I)V
 
-    .line 357
+    .line 398
     :cond_0
     return-void
 
-    .line 352
+    .line 393
     :cond_1
     const/4 v0, 0x0
 
     goto :goto_0
+.end method
+
+.method public setTouchRecepientForKeyguardLayer(Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;)V
+    .locals 1
+    .parameter "glowPadView"
+
+    .prologue
+    .line 1415
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerForegroundLayout:Landroid/widget/FrameLayout;
+
+    if-eqz v0, :cond_0
+
+    if-eqz p1, :cond_0
+
+    .line 1416
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mKeyguardLayerForegroundLayout:Landroid/widget/FrameLayout;
+
+    invoke-virtual {p1, v0}, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->setTouchRecepient(Landroid/view/View;)V
+
+    .line 1418
+    :cond_0
+    return-void
 .end method
 
 .method public showBouncer()V
@@ -4277,34 +5073,34 @@
     .prologue
     const/4 v6, 0x1
 
-    .line 478
+    .line 519
     iget-boolean v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mIsBouncing:Z
 
     if-eqz v1, :cond_1
 
-    .line 500
+    .line 541
     :cond_0
     :goto_0
     return-void
 
-    .line 479
+    .line 520
     :cond_1
     iget-boolean v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeShowing:Z
 
     iput-boolean v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mWasChallengeShowing:Z
 
-    .line 480
+    .line 521
     iput-boolean v6, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mIsBouncing:Z
 
-    .line 481
+    .line 522
     invoke-virtual {p0, v6}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->showChallenge(Z)V
 
-    .line 482
+    .line 523
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mScrimView:Landroid/view/View;
 
     if-eqz v1, :cond_2
 
-    .line 483
+    .line 524
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mScrimView:Landroid/view/View;
 
     const-string v2, "alpha"
@@ -4321,43 +5117,43 @@
 
     move-result-object v0
 
-    .line 484
+    .line 525
     .local v0, anim:Landroid/animation/Animator;
     const-wide/16 v1, 0xfa
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
 
-    .line 485
+    .line 526
     new-instance v1, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$7;
 
     invoke-direct {v1, p0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$7;-><init>(Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;)V
 
-    invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 491
-    invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
+    .line 532
+    invoke-virtual {v0}, Landroid/animation/Animator;->start()V
 
-    .line 493
+    .line 534
     .end local v0           #anim:Landroid/animation/Animator;
     :cond_2
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     if-eqz v1, :cond_3
 
-    .line 494
+    .line 535
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     const/16 v2, 0xfa
 
     invoke-virtual {v1, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;->showBouncer(I)V
 
-    .line 497
+    .line 538
     :cond_3
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mBouncerListener:Lcom/android/internal/policy/impl/keyguard/ChallengeLayout$OnBouncerStateChangedListener;
 
     if-eqz v1, :cond_0
 
-    .line 498
+    .line 539
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mBouncerListener:Lcom/android/internal/policy/impl/keyguard/ChallengeLayout$OnBouncerStateChangedListener;
 
     invoke-interface {v1, v6}, Lcom/android/internal/policy/impl/keyguard/ChallengeLayout$OnBouncerStateChangedListener;->onBouncerStateChanged(Z)V
@@ -4370,20 +5166,42 @@
     .parameter "show"
 
     .prologue
-    .line 1148
+    .line 1204
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->showChallenge(ZI)V
 
-    .line 1149
+    .line 1205
     if-nez p1, :cond_0
 
-    .line 1152
+    .line 1208
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mBlockDrag:Z
 
-    .line 1154
+    .line 1210
     :cond_0
+    return-void
+.end method
+
+.method public updateKeyguardLayerVisibility(Z)V
+    .locals 1
+    .parameter "show"
+
+    .prologue
+    .line 1409
+    iput-boolean p1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mShowKeyguardLayer:Z
+
+    .line 1410
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mShowKeyguardLayerRunnable:Ljava/lang/Runnable;
+
+    invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->removeCallbacks(Ljava/lang/Runnable;)Z
+
+    .line 1411
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->mShowKeyguardLayerRunnable:Ljava/lang/Runnable;
+
+    invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->post(Ljava/lang/Runnable;)Z
+
+    .line 1412
     return-void
 .end method

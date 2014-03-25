@@ -45,7 +45,7 @@
     .line 175
     iput-object p1, p0, Lcom/baidu/systemverify/VerificationService$VerifyMetricBuilder;->this$0:Lcom/baidu/systemverify/VerificationService;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 177
     invoke-static {}, Ljava/nio/ByteOrder;->nativeOrder()Ljava/nio/ByteOrder;
@@ -130,7 +130,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "increase internal buffer size to "
+    const-string/jumbo v4, "increase internal buffer size to "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

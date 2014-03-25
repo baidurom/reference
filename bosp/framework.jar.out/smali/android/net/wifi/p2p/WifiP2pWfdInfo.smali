@@ -7,6 +7,8 @@
 
 
 # static fields
+.field private static final CONTENT_PROTECTION_SUPPORT:I = 0x100
+
 .field private static final COUPLED_SINK_SUPPORT_AT_SINK:I = 0x8
 
 .field private static final COUPLED_SINK_SUPPORT_AT_SOURCE:I = 0x4
@@ -24,6 +26,12 @@
 
 .field private static final DEVICE_TYPE:I = 0x3
 
+.field public static final DISCONNECTED:I = 0x0
+
+.field public static final PAUSE:I = 0x3
+
+.field public static final PLAY:I = 0x2
+
 .field public static final PRIMARY_SINK:I = 0x1
 
 .field public static final SECONDARY_SINK:I = 0x2
@@ -34,7 +42,11 @@
 
 .field private static final SESSION_AVAILABLE_BIT2:I = 0x20
 
+.field public static final SETUP:I = 0x1
+
 .field public static final SOURCE_OR_PRIMARY_SINK:I = 0x3
+
+.field public static final STANDBY:I = 0x4
 
 .field private static final TAG:Ljava/lang/String; = "WifiP2pWfdInfo"
 
@@ -56,7 +68,7 @@
     .locals 1
 
     .prologue
-    .line 180
+    .line 203
     new-instance v0, Landroid/net/wifi/p2p/WifiP2pWfdInfo$1;
 
     invoke-direct {v0}, Landroid/net/wifi/p2p/WifiP2pWfdInfo$1;-><init>()V
@@ -70,10 +82,10 @@
     .locals 0
 
     .prologue
-    .line 54
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 63
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 55
+    .line 64
     return-void
 .end method
 
@@ -84,24 +96,24 @@
     .parameter "maxTput"
 
     .prologue
-    .line 57
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 66
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 58
+    .line 67
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mWfdEnabled:Z
 
-    .line 59
+    .line 68
     iput p1, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mDeviceInfo:I
 
-    .line 60
+    .line 69
     iput p2, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mCtrlPort:I
 
-    .line 61
+    .line 70
     iput p3, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mMaxThroughput:I
 
-    .line 62
+    .line 71
     return-void
 .end method
 
@@ -110,28 +122,28 @@
     .parameter "source"
 
     .prologue
-    .line 156
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 179
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 157
+    .line 180
     if-eqz p1, :cond_0
 
-    .line 158
+    .line 181
     iget v0, p1, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mDeviceInfo:I
 
     iput v0, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mDeviceInfo:I
 
-    .line 159
+    .line 182
     iget v0, p1, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mCtrlPort:I
 
     iput v0, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mCtrlPort:I
 
-    .line 160
+    .line 183
     iget v0, p1, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mMaxThroughput:I
 
     iput v0, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mMaxThroughput:I
 
-    .line 162
+    .line 185
     :cond_0
     return-void
 .end method
@@ -142,7 +154,7 @@
     .locals 1
 
     .prologue
-    .line 152
+    .line 175
     const/4 v0, 0x0
 
     return v0
@@ -152,7 +164,7 @@
     .locals 1
 
     .prologue
-    .line 122
+    .line 145
     iget v0, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mCtrlPort:I
 
     return v0
@@ -162,7 +174,7 @@
     .locals 4
 
     .prologue
-    .line 138
+    .line 161
     const-string v0, "%04x%04x%04x%04x"
 
     const/4 v1, 0x4
@@ -220,7 +232,7 @@
     .locals 1
 
     .prologue
-    .line 73
+    .line 82
     iget v0, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mDeviceInfo:I
 
     and-int/lit8 v0, v0, 0x3
@@ -232,17 +244,39 @@
     .locals 1
 
     .prologue
-    .line 134
+    .line 157
     iget v0, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mMaxThroughput:I
 
     return v0
+.end method
+
+.method public isContentProtected()Z
+    .locals 1
+
+    .prologue
+    .line 132
+    iget v0, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mDeviceInfo:I
+
+    and-int/lit16 v0, v0, 0x100
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 .method public isCoupledSinkSupportedAtSink()Z
     .locals 1
 
     .prologue
-    .line 97
+    .line 106
     iget v0, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mDeviceInfo:I
 
     and-int/lit8 v0, v0, 0x8
@@ -264,7 +298,7 @@
     .locals 1
 
     .prologue
-    .line 85
+    .line 94
     iget v0, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mDeviceInfo:I
 
     and-int/lit8 v0, v0, 0x8
@@ -286,7 +320,7 @@
     .locals 1
 
     .prologue
-    .line 109
+    .line 118
     iget v0, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mDeviceInfo:I
 
     and-int/lit8 v0, v0, 0x30
@@ -308,7 +342,7 @@
     .locals 1
 
     .prologue
-    .line 65
+    .line 74
     iget-boolean v0, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mWfdEnabled:Z
 
     return v0
@@ -321,7 +355,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 173
+    .line 196
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
@@ -331,33 +365,63 @@
     :goto_0
     iput-boolean v0, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mWfdEnabled:Z
 
-    .line 174
+    .line 197
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mDeviceInfo:I
 
-    .line 175
+    .line 198
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mCtrlPort:I
 
-    .line 176
+    .line 199
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mMaxThroughput:I
 
-    .line 177
+    .line 200
     return-void
 
-    .line 173
+    .line 196
     :cond_0
     const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public setContentProtected(Z)V
+    .locals 1
+    .parameter "enabled"
+
+    .prologue
+    .line 123
+    if-eqz p1, :cond_0
+
+    .line 124
+    iget v0, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mDeviceInfo:I
+
+    or-int/lit16 v0, v0, 0x100
+
+    iput v0, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mDeviceInfo:I
+
+    .line 128
+    :goto_0
+    return-void
+
+    .line 126
+    :cond_0
+    iget v0, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mDeviceInfo:I
+
+    and-int/lit16 v0, v0, -0x101
+
+    iput v0, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mDeviceInfo:I
 
     goto :goto_0
 .end method
@@ -367,10 +431,10 @@
     .parameter "port"
 
     .prologue
-    .line 126
+    .line 149
     iput p1, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mCtrlPort:I
 
-    .line 127
+    .line 150
     return-void
 .end method
 
@@ -379,21 +443,21 @@
     .parameter "enabled"
 
     .prologue
-    .line 101
+    .line 110
     if-eqz p1, :cond_0
 
-    .line 102
+    .line 111
     iget v0, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mDeviceInfo:I
 
     or-int/lit8 v0, v0, 0x8
 
     iput v0, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mDeviceInfo:I
 
-    .line 106
+    .line 115
     :goto_0
     return-void
 
-    .line 104
+    .line 113
     :cond_0
     iget v0, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mDeviceInfo:I
 
@@ -409,21 +473,21 @@
     .parameter "enabled"
 
     .prologue
-    .line 89
+    .line 98
     if-eqz p1, :cond_0
 
-    .line 90
+    .line 99
     iget v0, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mDeviceInfo:I
 
     or-int/lit8 v0, v0, 0x8
 
     iput v0, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mDeviceInfo:I
 
-    .line 94
+    .line 103
     :goto_0
     return-void
 
-    .line 92
+    .line 101
     :cond_0
     iget v0, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mDeviceInfo:I
 
@@ -439,24 +503,24 @@
     .parameter "deviceType"
 
     .prologue
-    .line 77
+    .line 86
     if-ltz p1, :cond_0
 
     const/4 v0, 0x3
 
     if-gt p1, v0, :cond_0
 
-    .line 78
+    .line 87
     iget v0, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mDeviceInfo:I
 
     or-int/2addr v0, p1
 
     iput v0, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mDeviceInfo:I
 
-    .line 79
+    .line 88
     const/4 v0, 0x1
 
-    .line 81
+    .line 90
     :goto_0
     return v0
 
@@ -471,10 +535,10 @@
     .parameter "maxThroughput"
 
     .prologue
-    .line 130
+    .line 153
     iput p1, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mMaxThroughput:I
 
-    .line 131
+    .line 154
     return-void
 .end method
 
@@ -483,28 +547,28 @@
     .parameter "enabled"
 
     .prologue
-    .line 113
+    .line 136
     if-eqz p1, :cond_0
 
-    .line 114
+    .line 137
     iget v0, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mDeviceInfo:I
 
     or-int/lit8 v0, v0, 0x10
 
     iput v0, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mDeviceInfo:I
 
-    .line 115
+    .line 138
     iget v0, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mDeviceInfo:I
 
     and-int/lit8 v0, v0, -0x21
 
     iput v0, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mDeviceInfo:I
 
-    .line 119
+    .line 142
     :goto_0
     return-void
 
-    .line 117
+    .line 140
     :cond_0
     iget v0, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mDeviceInfo:I
 
@@ -520,10 +584,10 @@
     .parameter "enabled"
 
     .prologue
-    .line 69
+    .line 78
     iput-boolean p1, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mWfdEnabled:Z
 
-    .line 70
+    .line 79
     return-void
 .end method
 
@@ -531,14 +595,14 @@
     .locals 3
 
     .prologue
-    .line 142
+    .line 165
     new-instance v0, Ljava/lang/StringBuffer;
 
     invoke-direct {v0}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 143
+    .line 166
     .local v0, sbuf:Ljava/lang/StringBuffer;
-    const-string v1, "WFD enabled: "
+    const-string v1, " WFD enabled: "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
@@ -548,8 +612,8 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Z)Ljava/lang/StringBuffer;
 
-    .line 144
-    const-string v1, "WFD DeviceInfo: "
+    .line 167
+    const-string v1, "\n WFD DeviceInfo: "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
@@ -559,7 +623,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(I)Ljava/lang/StringBuffer;
 
-    .line 145
+    .line 168
     const-string v1, "\n WFD CtrlPort: "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
@@ -570,7 +634,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(I)Ljava/lang/StringBuffer;
 
-    .line 146
+    .line 169
     const-string v1, "\n WFD MaxThroughput: "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
@@ -581,7 +645,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(I)Ljava/lang/StringBuffer;
 
-    .line 147
+    .line 170
     invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -595,7 +659,7 @@
     .parameter "flags"
 
     .prologue
-    .line 166
+    .line 189
     iget-boolean v0, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mWfdEnabled:Z
 
     if-eqz v0, :cond_0
@@ -605,25 +669,25 @@
     :goto_0
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 167
+    .line 190
     iget v0, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mDeviceInfo:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 168
+    .line 191
     iget v0, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mCtrlPort:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 169
+    .line 192
     iget v0, p0, Landroid/net/wifi/p2p/WifiP2pWfdInfo;->mMaxThroughput:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 170
+    .line 193
     return-void
 
-    .line 166
+    .line 189
     :cond_0
     const/4 v0, 0x0
 

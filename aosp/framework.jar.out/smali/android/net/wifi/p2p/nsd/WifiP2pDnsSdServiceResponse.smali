@@ -201,7 +201,7 @@
     const/4 v4, 0x0
 
     .line 176
-    iget-object v5, p0, Landroid/net/wifi/p2p/nsd/WifiP2pServiceResponse;->mData:[B
+    iget-object v5, p0, Landroid/net/wifi/p2p/nsd/WifiP2pDnsSdServiceResponse;->mData:[B
 
     if-nez v5, :cond_0
 
@@ -215,7 +215,7 @@
 
     new-instance v5, Ljava/io/ByteArrayInputStream;
 
-    iget-object v6, p0, Landroid/net/wifi/p2p/nsd/WifiP2pServiceResponse;->mData:[B
+    iget-object v6, p0, Landroid/net/wifi/p2p/nsd/WifiP2pDnsSdServiceResponse;->mData:[B
 
     invoke-direct {v5, v6}, Ljava/io/ByteArrayInputStream;-><init>([B)V
 
@@ -668,7 +668,7 @@
 
     move-result-object v3
 
-    iget v4, p0, Landroid/net/wifi/p2p/nsd/WifiP2pServiceResponse;->mServiceType:I
+    iget v4, p0, Landroid/net/wifi/p2p/nsd/WifiP2pDnsSdServiceResponse;->mServiceType:I
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuffer;->append(I)Ljava/lang/StringBuffer;
 
@@ -685,7 +685,7 @@
 
     move-result-object v3
 
-    iget v4, p0, Landroid/net/wifi/p2p/nsd/WifiP2pServiceResponse;->mStatus:I
+    iget v4, p0, Landroid/net/wifi/p2p/nsd/WifiP2pDnsSdServiceResponse;->mStatus:I
 
     invoke-static {v4}, Landroid/net/wifi/p2p/nsd/WifiP2pServiceResponse$Status;->toString(I)Ljava/lang/String;
 
@@ -700,7 +700,7 @@
 
     move-result-object v3
 
-    iget-object v4, p0, Landroid/net/wifi/p2p/nsd/WifiP2pServiceResponse;->mDevice:Landroid/net/wifi/p2p/WifiP2pDevice;
+    iget-object v4, p0, Landroid/net/wifi/p2p/nsd/WifiP2pDnsSdServiceResponse;->mDevice:Landroid/net/wifi/p2p/WifiP2pDevice;
 
     iget-object v4, v4, Landroid/net/wifi/p2p/WifiP2pDevice;->deviceAddress:Ljava/lang/String;
 

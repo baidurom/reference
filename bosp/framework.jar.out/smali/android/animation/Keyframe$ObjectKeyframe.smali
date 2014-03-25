@@ -29,7 +29,7 @@
     invoke-direct {p0}, Landroid/animation/Keyframe;-><init>()V
 
     .line 247
-    iput p1, p0, Landroid/animation/Keyframe;->mFraction:F
+    iput p1, p0, Landroid/animation/Keyframe$ObjectKeyframe;->mFraction:F
 
     .line 248
     iput-object p2, p0, Landroid/animation/Keyframe$ObjectKeyframe;->mValue:Ljava/lang/Object;
@@ -40,10 +40,10 @@
     const/4 v0, 0x1
 
     :goto_0
-    iput-boolean v0, p0, Landroid/animation/Keyframe;->mHasValue:Z
+    iput-boolean v0, p0, Landroid/animation/Keyframe$ObjectKeyframe;->mHasValue:Z
 
     .line 250
-    iget-boolean v0, p0, Landroid/animation/Keyframe;->mHasValue:Z
+    iget-boolean v0, p0, Landroid/animation/Keyframe$ObjectKeyframe;->mHasValue:Z
 
     if-eqz v0, :cond_1
 
@@ -52,7 +52,7 @@
     move-result-object v0
 
     :goto_1
-    iput-object v0, p0, Landroid/animation/Keyframe;->mValueType:Ljava/lang/Class;
+    iput-object v0, p0, Landroid/animation/Keyframe$ObjectKeyframe;->mValueType:Ljava/lang/Class;
 
     .line 251
     return-void
@@ -83,7 +83,7 @@
 
     move-result v2
 
-    iget-boolean v1, p0, Landroid/animation/Keyframe;->mHasValue:Z
+    iget-boolean v1, p0, Landroid/animation/Keyframe$ObjectKeyframe;->mHasValue:Z
 
     if-eqz v1, :cond_0
 
@@ -164,7 +164,7 @@
     const/4 v0, 0x1
 
     :goto_0
-    iput-boolean v0, p0, Landroid/animation/Keyframe;->mHasValue:Z
+    iput-boolean v0, p0, Landroid/animation/Keyframe$ObjectKeyframe;->mHasValue:Z
 
     .line 260
     return-void

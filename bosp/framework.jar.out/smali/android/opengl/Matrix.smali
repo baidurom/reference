@@ -27,7 +27,7 @@
 
     .prologue
     .line 41
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -52,7 +52,7 @@
     .line 319
     new-instance v9, Ljava/lang/IllegalArgumentException;
 
-    const-string v10, "left == right"
+    const-string/jumbo v10, "left == right"
 
     invoke-direct {v9, v10}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -1087,7 +1087,7 @@
     .line 266
     new-instance v9, Ljava/lang/IllegalArgumentException;
 
-    const-string v10, "left == right"
+    const-string/jumbo v10, "left == right"
 
     invoke-direct {v9, v10}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

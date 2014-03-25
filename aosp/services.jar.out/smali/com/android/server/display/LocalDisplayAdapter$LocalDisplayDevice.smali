@@ -25,6 +25,8 @@
 
 .field private final mPhys:Landroid/view/Surface$PhysicalDisplayInfo;
 
+.field private final mPhysEx:Landroid/view/Surface$PhysicalDisplayInfoEx;
+
 .field final synthetic this$0:Lcom/android/server/display/LocalDisplayAdapter;
 
 
@@ -37,24 +39,141 @@
     .parameter "phys"
 
     .prologue
-    .line 100
+    .line 118
     iput-object p1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->this$0:Lcom/android/server/display/LocalDisplayAdapter;
 
-    .line 101
+    .line 119
     invoke-direct {p0, p1, p2}, Lcom/android/server/display/DisplayDevice;-><init>(Lcom/android/server/display/DisplayAdapter;Landroid/os/IBinder;)V
 
-    .line 102
+    .line 115
+    new-instance v0, Landroid/view/Surface$PhysicalDisplayInfoEx;
+
+    invoke-direct {v0}, Landroid/view/Surface$PhysicalDisplayInfoEx;-><init>()V
+
+    iput-object v0, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mPhysEx:Landroid/view/Surface$PhysicalDisplayInfoEx;
+
+    .line 120
     iput p3, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mBuiltInDisplayId:I
 
-    .line 103
+    .line 121
     new-instance v0, Landroid/view/Surface$PhysicalDisplayInfo;
 
     invoke-direct {v0, p4}, Landroid/view/Surface$PhysicalDisplayInfo;-><init>(Landroid/view/Surface$PhysicalDisplayInfo;)V
 
     iput-object v0, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mPhys:Landroid/view/Surface$PhysicalDisplayInfo;
 
-    .line 104
+    .line 127
     return-void
+.end method
+
+.method private findDensityBucket()I
+    .locals 6
+
+    .prologue
+    const/high16 v5, 0x4320
+
+    const/high16 v4, 0x3f00
+
+    .line 209
+    iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mPhys:Landroid/view/Surface$PhysicalDisplayInfo;
+
+    iget v1, v1, Landroid/view/Surface$PhysicalDisplayInfo;->density:F
+
+    mul-float/2addr v1, v5
+
+    add-float/2addr v1, v4
+
+    float-to-int v0, v1
+
+    .line 210
+    .local v0, density:I
+    const/16 v1, 0xd5
+
+    if-eq v0, v1, :cond_0
+
+    .line 211
+    const/16 v1, 0x8c
+
+    if-ge v0, v1, :cond_1
+
+    .line 212
+    const/16 v0, 0xa0
+
+    .line 220
+    :cond_0
+    :goto_0
+    const-string v1, "LocalDisplayAdapter"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "density mapping from "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mPhys:Landroid/view/Surface$PhysicalDisplayInfo;
+
+    iget v3, v3, Landroid/view/Surface$PhysicalDisplayInfo;->density:F
+
+    mul-float/2addr v3, v5
+
+    add-float/2addr v3, v4
+
+    float-to-int v3, v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, " to "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 221
+    return v0
+
+    .line 213
+    :cond_1
+    const/16 v1, 0xc8
+
+    if-ge v0, v1, :cond_2
+
+    .line 214
+    const/16 v0, 0xa0
+
+    goto :goto_0
+
+    .line 215
+    :cond_2
+    const/16 v1, 0x118
+
+    if-ge v0, v1, :cond_3
+
+    .line 216
+    const/16 v0, 0xf0
+
+    goto :goto_0
+
+    .line 218
+    :cond_3
+    const/16 v0, 0x140
+
+    goto :goto_0
 .end method
 
 
@@ -63,22 +182,22 @@
     .locals 1
 
     .prologue
-    .line 117
+    .line 140
     iget-boolean v0, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mHavePendingChanges:Z
 
     if-eqz v0, :cond_0
 
-    .line 118
+    .line 141
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
 
-    .line 119
+    .line 142
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mHavePendingChanges:Z
 
-    .line 121
+    .line 144
     :cond_0
     return-void
 .end method
@@ -87,19 +206,19 @@
     .locals 1
 
     .prologue
-    .line 167
+    .line 226
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mBlanked:Z
 
-    .line 168
+    .line 227
     invoke-virtual {p0}, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->getDisplayTokenLocked()Landroid/os/IBinder;
 
     move-result-object v0
 
     invoke-static {v0}, Landroid/view/Surface;->blankDisplay(Landroid/os/IBinder;)V
 
-    .line 169
+    .line 228
     return-void
 .end method
 
@@ -108,10 +227,10 @@
     .parameter "pw"
 
     .prologue
-    .line 179
+    .line 238
     invoke-super {p0, p1}, Lcom/android/server/display/DisplayDevice;->dumpLocked(Ljava/io/PrintWriter;)V
 
-    .line 180
+    .line 239
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -134,7 +253,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 181
+    .line 240
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -157,7 +276,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 182
+    .line 241
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -180,227 +299,293 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 183
+    .line 242
     return-void
 .end method
 
 .method public getDisplayDeviceInfoLocked()Lcom/android/server/display/DisplayDeviceInfo;
-    .locals 5
+    .locals 7
 
     .prologue
-    const/4 v4, 0x2
+    const/4 v6, 0x3
 
-    const/4 v3, 0x1
+    const/4 v5, 0x2
 
-    .line 125
-    iget-object v0, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
+    const/4 v4, 0x1
 
-    if-nez v0, :cond_1
+    .line 148
+    iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
 
-    .line 126
-    new-instance v0, Lcom/android/server/display/DisplayDeviceInfo;
-
-    invoke-direct {v0}, Lcom/android/server/display/DisplayDeviceInfo;-><init>()V
-
-    iput-object v0, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
-
-    .line 127
-    iget-object v0, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
-
-    iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mPhys:Landroid/view/Surface$PhysicalDisplayInfo;
-
-    iget v1, v1, Landroid/view/Surface$PhysicalDisplayInfo;->width:I
-
-    iput v1, v0, Lcom/android/server/display/DisplayDeviceInfo;->width:I
-
-    .line 128
-    iget-object v0, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
-
-    iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mPhys:Landroid/view/Surface$PhysicalDisplayInfo;
-
-    iget v1, v1, Landroid/view/Surface$PhysicalDisplayInfo;->height:I
-
-    iput v1, v0, Lcom/android/server/display/DisplayDeviceInfo;->height:I
-
-    .line 129
-    iget-object v0, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
-
-    iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mPhys:Landroid/view/Surface$PhysicalDisplayInfo;
-
-    iget v1, v1, Landroid/view/Surface$PhysicalDisplayInfo;->refreshRate:F
-
-    iput v1, v0, Lcom/android/server/display/DisplayDeviceInfo;->refreshRate:F
-
-    .line 133
-    iget-object v0, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mPhys:Landroid/view/Surface$PhysicalDisplayInfo;
-
-    iget-boolean v0, v0, Landroid/view/Surface$PhysicalDisplayInfo;->secure:Z
-
-    if-eqz v0, :cond_0
-
-    .line 134
-    iget-object v0, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
-
-    const/16 v1, 0xc
-
-    iput v1, v0, Lcom/android/server/display/DisplayDeviceInfo;->flags:I
-
-    .line 138
-    :cond_0
-    iget v0, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mBuiltInDisplayId:I
-
-    if-nez v0, :cond_2
-
-    .line 139
-    iget-object v0, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
-
-    iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->this$0:Lcom/android/server/display/LocalDisplayAdapter;
-
-    invoke-virtual {v1}, Lcom/android/server/display/LocalDisplayAdapter;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    const v2, #string@display_manager_built_in_display_name#t
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lcom/android/server/display/DisplayDeviceInfo;->name:Ljava/lang/String;
-
-    .line 141
-    iget-object v0, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
-
-    iget v1, v0, Lcom/android/server/display/DisplayDeviceInfo;->flags:I
-
-    or-int/lit8 v1, v1, 0x3
-
-    iput v1, v0, Lcom/android/server/display/DisplayDeviceInfo;->flags:I
-
-    .line 143
-    iget-object v0, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
-
-    iput v3, v0, Lcom/android/server/display/DisplayDeviceInfo;->type:I
-
-    .line 144
-    iget-object v0, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
-
-    iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mPhys:Landroid/view/Surface$PhysicalDisplayInfo;
-
-    iget v1, v1, Landroid/view/Surface$PhysicalDisplayInfo;->density:F
-
-    const/high16 v2, 0x4320
-
-    mul-float/2addr v1, v2
-
-    const/high16 v2, 0x3f00
-
-    add-float/2addr v1, v2
-
-    float-to-int v1, v1
-
-    iput v1, v0, Lcom/android/server/display/DisplayDeviceInfo;->densityDpi:I
-
-    .line 145
-    iget-object v0, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
-
-    iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mPhys:Landroid/view/Surface$PhysicalDisplayInfo;
-
-    iget v1, v1, Landroid/view/Surface$PhysicalDisplayInfo;->xDpi:F
-
-    iput v1, v0, Lcom/android/server/display/DisplayDeviceInfo;->xDpi:F
-
-    .line 146
-    iget-object v0, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
-
-    iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mPhys:Landroid/view/Surface$PhysicalDisplayInfo;
-
-    iget v1, v1, Landroid/view/Surface$PhysicalDisplayInfo;->yDpi:F
-
-    iput v1, v0, Lcom/android/server/display/DisplayDeviceInfo;->yDpi:F
-
-    .line 147
-    iget-object v0, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
-
-    iput v3, v0, Lcom/android/server/display/DisplayDeviceInfo;->touch:I
-
-    .line 162
-    :cond_1
-    :goto_0
-    iget-object v0, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
-
-    return-object v0
+    if-nez v1, :cond_1
 
     .line 149
-    :cond_2
-    iget-object v0, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
+    new-instance v1, Lcom/android/server/display/DisplayDeviceInfo;
 
-    iput v4, v0, Lcom/android/server/display/DisplayDeviceInfo;->type:I
+    invoke-direct {v1}, Lcom/android/server/display/DisplayDeviceInfo;-><init>()V
+
+    iput-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
 
     .line 150
-    iget-object v0, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
+    iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
 
-    iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->this$0:Lcom/android/server/display/LocalDisplayAdapter;
+    iget-object v2, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mPhys:Landroid/view/Surface$PhysicalDisplayInfo;
 
-    invoke-virtual {v1}, Lcom/android/server/display/LocalDisplayAdapter;->getContext()Landroid/content/Context;
+    iget v2, v2, Landroid/view/Surface$PhysicalDisplayInfo;->width:I
 
-    move-result-object v1
+    iput v2, v1, Lcom/android/server/display/DisplayDeviceInfo;->width:I
 
-    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    const v2, #string@display_manager_hdmi_display_name#t
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lcom/android/server/display/DisplayDeviceInfo;->name:Ljava/lang/String;
-
-    .line 152
-    iget-object v0, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
-
-    iput v4, v0, Lcom/android/server/display/DisplayDeviceInfo;->touch:I
-
-    .line 153
-    iget-object v0, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
-
-    iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mPhys:Landroid/view/Surface$PhysicalDisplayInfo;
-
-    iget v1, v1, Landroid/view/Surface$PhysicalDisplayInfo;->width:I
+    .line 151
+    iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
 
     iget-object v2, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mPhys:Landroid/view/Surface$PhysicalDisplayInfo;
 
     iget v2, v2, Landroid/view/Surface$PhysicalDisplayInfo;->height:I
 
-    invoke-virtual {v0, v1, v2}, Lcom/android/server/display/DisplayDeviceInfo;->setAssumedDensityForExternalDisplay(II)V
+    iput v2, v1, Lcom/android/server/display/DisplayDeviceInfo;->height:I
+
+    .line 152
+    iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
+
+    iget-object v2, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mPhys:Landroid/view/Surface$PhysicalDisplayInfo;
+
+    iget v2, v2, Landroid/view/Surface$PhysicalDisplayInfo;->refreshRate:F
+
+    iput v2, v1, Lcom/android/server/display/DisplayDeviceInfo;->refreshRate:F
+
+    .line 156
+    iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mPhys:Landroid/view/Surface$PhysicalDisplayInfo;
+
+    iget-boolean v1, v1, Landroid/view/Surface$PhysicalDisplayInfo;->secure:Z
+
+    if-eqz v1, :cond_0
 
     .line 157
-    const-string v0, "portrait"
+    iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
 
-    const-string v1, "persist.demo.hdmirotation"
+    const/16 v2, 0xc
+
+    iput v2, v1, Lcom/android/server/display/DisplayDeviceInfo;->flags:I
+
+    .line 161
+    :cond_0
+    iget v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mBuiltInDisplayId:I
+
+    if-nez v1, :cond_4
+
+    .line 163
+    const-string v1, "ro.sf.hwrotation"
 
     invoke-static {v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 164
+    .local v0, hworientation:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
 
-    move-result v0
+    iget-object v2, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->this$0:Lcom/android/server/display/LocalDisplayAdapter;
 
-    if-eqz v0, :cond_1
+    invoke-virtual {v2}, Lcom/android/server/display/LocalDisplayAdapter;->getContext()Landroid/content/Context;
 
-    .line 158
-    iget-object v0, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
+    move-result-object v2
 
-    const/4 v1, 0x3
+    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    iput v1, v0, Lcom/android/server/display/DisplayDeviceInfo;->rotation:I
+    move-result-object v2
+
+    const v3, #string@display_manager_built_in_display_name#t
+
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    iput-object v2, v1, Lcom/android/server/display/DisplayDeviceInfo;->name:Ljava/lang/String;
+
+    .line 166
+    iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
+
+    iget v2, v1, Lcom/android/server/display/DisplayDeviceInfo;->flags:I
+
+    or-int/lit8 v2, v2, 0x3
+
+    iput v2, v1, Lcom/android/server/display/DisplayDeviceInfo;->flags:I
+
+    .line 168
+    iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
+
+    iput v4, v1, Lcom/android/server/display/DisplayDeviceInfo;->type:I
+
+    .line 169
+    iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
+
+    iget-object v2, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mPhys:Landroid/view/Surface$PhysicalDisplayInfo;
+
+    iget v2, v2, Landroid/view/Surface$PhysicalDisplayInfo;->density:F
+
+    const/high16 v3, 0x4320
+
+    mul-float/2addr v2, v3
+
+    const/high16 v3, 0x3f00
+
+    add-float/2addr v2, v3
+
+    float-to-int v2, v2
+
+    iput v2, v1, Lcom/android/server/display/DisplayDeviceInfo;->densityDpi:I
+
+    .line 170
+    iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
+
+    iget-object v2, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mPhys:Landroid/view/Surface$PhysicalDisplayInfo;
+
+    iget v2, v2, Landroid/view/Surface$PhysicalDisplayInfo;->xDpi:F
+
+    iput v2, v1, Lcom/android/server/display/DisplayDeviceInfo;->xDpi:F
+
+    .line 171
+    iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
+
+    iget-object v2, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mPhys:Landroid/view/Surface$PhysicalDisplayInfo;
+
+    iget v2, v2, Landroid/view/Surface$PhysicalDisplayInfo;->yDpi:F
+
+    iput v2, v1, Lcom/android/server/display/DisplayDeviceInfo;->yDpi:F
+
+    .line 172
+    iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
+
+    iput v4, v1, Lcom/android/server/display/DisplayDeviceInfo;->touch:I
+
+    .line 174
+    iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
+
+    const/4 v2, 0x0
+
+    iput v2, v1, Lcom/android/server/display/DisplayDeviceInfo;->rotation:I
+
+    .line 175
+    const-string v1, "270"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    .line 176
+    iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
+
+    iput v6, v1, Lcom/android/server/display/DisplayDeviceInfo;->rotation:I
+
+    .line 205
+    .end local v0           #hworientation:Ljava/lang/String;
+    :cond_1
+    :goto_0
+    iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
+
+    return-object v1
+
+    .line 177
+    .restart local v0       #hworientation:Ljava/lang/String;
+    :cond_2
+    const-string v1, "180"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    .line 178
+    iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
+
+    iput v5, v1, Lcom/android/server/display/DisplayDeviceInfo;->rotation:I
+
+    goto :goto_0
+
+    .line 179
+    :cond_3
+    const-string v1, "90"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    .line 180
+    iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
+
+    iput v4, v1, Lcom/android/server/display/DisplayDeviceInfo;->rotation:I
+
+    goto :goto_0
+
+    .line 184
+    .end local v0           #hworientation:Ljava/lang/String;
+    :cond_4
+    iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
+
+    iput v5, v1, Lcom/android/server/display/DisplayDeviceInfo;->type:I
+
+    .line 185
+    iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
+
+    iget-object v2, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->this$0:Lcom/android/server/display/LocalDisplayAdapter;
+
+    invoke-virtual {v2}, Lcom/android/server/display/LocalDisplayAdapter;->getContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    const v3, #string@display_manager_hdmi_display_name#t
+
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    iput-object v2, v1, Lcom/android/server/display/DisplayDeviceInfo;->name:Ljava/lang/String;
+
+    .line 187
+    iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
+
+    iput v5, v1, Lcom/android/server/display/DisplayDeviceInfo;->touch:I
+
+    .line 188
+    iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
+
+    iget-object v2, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mPhys:Landroid/view/Surface$PhysicalDisplayInfo;
+
+    iget v2, v2, Landroid/view/Surface$PhysicalDisplayInfo;->width:I
+
+    iget-object v3, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mPhys:Landroid/view/Surface$PhysicalDisplayInfo;
+
+    iget v3, v3, Landroid/view/Surface$PhysicalDisplayInfo;->height:I
+
+    invoke-virtual {v1, v2, v3}, Lcom/android/server/display/DisplayDeviceInfo;->setAssumedDensityForExternalDisplay(II)V
+
+    .line 192
+    const-string v1, "portrait"
+
+    const-string v2, "persist.demo.hdmirotation"
+
+    invoke-static {v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    .line 193
+    iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mInfo:Lcom/android/server/display/DisplayDeviceInfo;
+
+    iput v6, v1, Lcom/android/server/display/DisplayDeviceInfo;->rotation:I
 
     goto :goto_0
 .end method
@@ -409,19 +594,19 @@
     .locals 1
 
     .prologue
-    .line 173
+    .line 232
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mBlanked:Z
 
-    .line 174
+    .line 233
     invoke-virtual {p0}, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->getDisplayTokenLocked()Landroid/os/IBinder;
 
     move-result-object v0
 
     invoke-static {v0}, Landroid/view/Surface;->unblankDisplay(Landroid/os/IBinder;)V
 
-    .line 175
+    .line 234
     return-void
 .end method
 
@@ -432,7 +617,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 107
+    .line 130
     iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mPhys:Landroid/view/Surface$PhysicalDisplayInfo;
 
     invoke-virtual {v1, p1}, Landroid/view/Surface$PhysicalDisplayInfo;->equals(Landroid/view/Surface$PhysicalDisplayInfo;)Z
@@ -441,15 +626,15 @@
 
     if-nez v1, :cond_0
 
-    .line 108
+    .line 131
     iget-object v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mPhys:Landroid/view/Surface$PhysicalDisplayInfo;
 
     invoke-virtual {v1, p1}, Landroid/view/Surface$PhysicalDisplayInfo;->copyFrom(Landroid/view/Surface$PhysicalDisplayInfo;)V
 
-    .line 109
+    .line 132
     iput-boolean v0, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->mHavePendingChanges:Z
 
-    .line 112
+    .line 135
     :goto_0
     return v0
 

@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 488
+    .line 537
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -32,22 +32,42 @@
     .parameter "ctx"
 
     .prologue
-    .line 490
-    const-string/jumbo v1, "usb"
+    .line 540
+    :try_start_0
+    new-instance v1, Landroid/os/storage/StorageManager;
 
-    invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+    iget-object v2, p1, Landroid/app/ContextImpl;->mMainThread:Landroid/app/ActivityThread;
 
-    move-result-object v0
-
-    .line 491
-    .local v0, b:Landroid/os/IBinder;
-    new-instance v1, Landroid/hardware/usb/UsbManager;
-
-    invoke-static {v0}, Landroid/hardware/usb/IUsbManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/hardware/usb/IUsbManager;
+    invoke-virtual {v2}, Landroid/app/ActivityThread;->getHandler()Landroid/os/Handler;
 
     move-result-object v2
 
-    invoke-direct {v1, p1, v2}, Landroid/hardware/usb/UsbManager;-><init>(Landroid/content/Context;Landroid/hardware/usb/IUsbManager;)V
+    invoke-virtual {v2}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
 
+    move-result-object v2
+
+    invoke-direct {v1, v2}, Landroid/os/storage/StorageManager;-><init>(Landroid/os/Looper;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 543
+    :goto_0
     return-object v1
+
+    .line 541
+    :catch_0
+    move-exception v0
+
+    .line 542
+    .local v0, rex:Landroid/os/RemoteException;
+    const-string v1, "ContextImpl"
+
+    const-string v2, "Failed to create StorageManager"
+
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    .line 543
+    const/4 v1, 0x0
+
+    goto :goto_0
 .end method

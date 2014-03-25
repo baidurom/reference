@@ -271,7 +271,7 @@
     <string name="permgrouplab_display">"Interface utilisateur d'une autre application"</string>
     <string name="permgroupdesc_display">"Effet sur l'interface utilisateur d'autres applications"</string>
     <string name="permgrouplab_storage">Stockage</string>
-    <string name="permgroupdesc_storage">"Accéder à la  mémoire de stockage USB"</string>
+    <string name="permgroupdesc_storage">Accéder à la carte SD</string>
     <string name="permlab_statusBar">"Désactivation ou modification de la barre d'état"</string>
     <string name="permdesc_statusBar">"Permet à l'application de désactiver la barre d'état, ou d'ajouter et de supprimer des icônes système."</string>
     <string name="permlab_statusBarService">"barre d'état"</string>
@@ -486,9 +486,9 @@
     <string name="permdesc_brick">"Permet à l'application de désactiver définitivement le téléphone. Cette fonctionnalité peut avoir des répercussions très sérieuses."</string>
     <string name="permlab_reboot">forcer le redémarrage du téléphone</string>
     <string name="permdesc_reboot">"Permet à l'application de forcer le redémarrage du téléphone."</string>
-    <string name="permlab_mount_unmount_filesystems">accéder système fichiers mémoire USB</string>
+    <string name="permlab_mount_unmount_filesystems">accéder au système de fichiers de la carte SD</string>
     <string name="permdesc_mount_unmount_filesystems">"Permet à l'application d'installer et de désinstaller des systèmes de fichiers pour des périphériques de stockage amovibles."</string>
-    <string name="permlab_mount_format_filesystems">effacer la mémoire USB</string>
+    <string name="permlab_mount_format_filesystems">effacer la carte SD</string>
     <string name="permdesc_mount_format_filesystems">"Permet à l'application de formater le périphérique de stockage amovible."</string>
     <string name="permlab_asec_access">obtenir des informations sur la mémoire de stockage interne</string>
     <string name="permdesc_asec_access">"Permet à l'application d'obtenir des informations sur la mémoire de stockage interne."</string>
@@ -597,9 +597,9 @@
     <string name="permlab_writeDictionary">ajouter des mots au dictionnaire personnel</string>
     <string name="permdesc_writeDictionary">"Permet à l'application d'enregistrer de nouveaux mots dans le dictionnaire personnel de l'utilisateur."</string>
     <string name="permlab_sdcardRead">"tester l'accès à la mémoire de stockage protégée"</string>
-    <string name="permdesc_sdcardRead">"Permet à l'application de tester une autorisation pour la mémoire de stockage USB qui sera ensuite proposée sur les futurs appareils."</string>
-    <string name="permlab_sdcardWrite">modifier ou supprimer le contenu de la mémoire USB</string>
-    <string name="permdesc_sdcardWrite">"Permet à l'application de modifier le contenu de la mémoire de stockage USB."</string>
+    <string name="permdesc_sdcardRead">"Permet à l'application de tester une autorisation pour la carte SD qui sera ensuite proposée sur les futurs appareils."</string>
+    <string name="permlab_sdcardWrite">modifier ou supprimer le contenu de la carte SD</string>
+    <string name="permdesc_sdcardWrite">"Permet à l'application de modifier le contenu de la carte SD."</string>
     <string name="permlab_mediaStorageWrite">Modifier/Supprimer contenu mémoire interne</string>
     <string name="permdesc_mediaStorageWrite">"Permet à l'application de modifier le contenu de la mémoire de stockage multimédia interne."</string>
     <string name="permlab_sdcardAccessAll">Accès stock. ext. tous utilis.</string>
@@ -733,7 +733,7 @@
     <string name="lockscreen_missing_sim_message">"Aucune carte SIM n'est insérée dans le téléphone."</string>
     <string name="lockscreen_missing_sim_instructions">Insérez une carte SIM.</string>
     <string name="lockscreen_missing_sim_instructions_long">Carte SIM absente ou illisible. Insérez une carte SIM.</string>
-    <string name="lockscreen_permanent_disabled_sim_message_short">Carte SIM inutilisable.</string>
+    <string name="lockscreen_permanent_disabled_sim_message_short">Carte SIM inutilisable</string>
     <string name="lockscreen_permanent_disabled_sim_instructions">"Votre carte SIM a été définitivement désactivée.
  Veuillez contacter votre opérateur de téléphonie mobile pour en obtenir une autre."</string>
     <string name="lockscreen_transport_prev_description">Bouton du titre précédent</string>
@@ -743,9 +743,9 @@
     <string name="lockscreen_transport_stop_description">"Bouton d'arrêt"</string>
     <string name="emergency_calls_only">"Appels d'urgence uniquement"</string>
     <string name="lockscreen_network_locked_message">Réseau verrouillé</string>
-    <string name="lockscreen_sim_puk_locked_message">La carte SIM est verrouillée par clé PUK.</string>
+    <string name="lockscreen_sim_puk_locked_message">La carte SIM est verrouillée par clé PUK</string>
     <string name="lockscreen_sim_puk_locked_instructions">Veuillez consulter le guide utilisateur ou contacter le service client.</string>
-    <string name="lockscreen_sim_locked_message">La carte SIM est verrouillée.</string>
+    <string name="lockscreen_sim_locked_message">La carte SIM est verrouillée</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">Déblocage de la carte SIM...</string>
     <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"Vous avez dessiné un schéma de déverrouillage incorrect à %d reprises.
 
@@ -1030,15 +1030,15 @@ Voulez-vous la fermer ?"</string>
     <string name="perm_costs_money">cela peut engendrer des frais</string>
     <string name="usb_storage_activity_title">Mémoire de stockage de masse USB</string>
     <string name="usb_storage_title">Connecté par USB</string>
-    <string name="usb_storage_message">Vous êtes connecté à votre ordinateur via un câble USB. Appuyez sur le bouton ci-dessous pour copier des fichiers de votre ordinateur vers la mémoire de stockage USB de votre appareil Android, ou inversement.</string>
+    <string name="usb_storage_message">Vous êtes connecté à votre ordinateur via un câble USB. Appuyez sur le bouton ci-dessous pour copier des fichiers de votre ordinateur vers la carte SD de votre appareil Android, ou inversement.</string>
     <string name="usb_storage_button_mount">Activer la mémoire de stockage USB</string>
-    <string name="usb_storage_error_message">"Un problème est survenu lors de l'utilisation de votre mémoire de stockage USB comme périphérique de stockage de masse."</string>
+    <string name="usb_storage_error_message">"Un problème est survenu lors de l'utilisation de votre carte SD comme périphérique de stockage de masse USB."</string>
     <string name="usb_storage_notification_title">Connecté par USB</string>
     <string name="usb_storage_notification_message">Appuyez ici pour copier des fichiers depuis votre ordinateur ou vers celui-ci.</string>
     <string name="usb_storage_stop_notification_title">Désactiver la mémoire de stockage USB</string>
     <string name="usb_storage_stop_notification_message">Appuyez ici pour désactiver la mémoire de stockage USB.</string>
     <string name="usb_storage_stop_title">Mémoire de stockage USB activée</string>
-    <string name="usb_storage_stop_message">"Avant de désactiver la mémoire de stockage USB, veuillez désinstaller (\"éjecter\") de votre ordinateur la mémoire de stockage USB de l'appareil Android."</string>
+    <string name="usb_storage_stop_message">Avant de désactiver la mémoire de stockage USB, veuillez désinstaller (\"éjecter\") de votre ordinateur la carte SD de votre appareil Android.</string>
     <string name="usb_storage_stop_button_mount">Désactiver la mémoire de stockage USB</string>
     <string name="usb_storage_stop_error_message">"Un problème est survenu lors de la désactivation de la mémoire de stockage USB. Assurez-vous que l'hôte USB a bien été désinstallé, puis réessayez."</string>
     <string name="dlg_confirm_kill_storage_users_title">Activer la mémoire de stockage USB</string>
@@ -1050,8 +1050,8 @@ Voulez-vous la fermer ?"</string>
     <string name="usb_cd_installer_notification_title">"Connecté en tant que programme d'installation"</string>
     <string name="usb_accessory_notification_title">Connecté à un accessoire USB</string>
     <string name="usb_notification_message">Appuyez ici pour accéder aux autres options USB.</string>
-    <string name="extmedia_format_title">Formater mémoire ?</string>
-    <string name="extmedia_format_message">Tous les fichiers stockés sur la mémoire de stockage USB vont être effacés. Cette action est irréversible.</string>
+    <string name="extmedia_format_title">Formater la carte SD ?</string>
+    <string name="extmedia_format_message">Toutes les données stockées sur votre carte seront perdues.</string>
     <string name="extmedia_format_button_format">Format</string>
     <string name="adb_active_notification_title">Débogage USB activé</string>
     <string name="adb_active_notification_message">Appuyez pour désactiver le débogage USB.</string>
@@ -1064,18 +1064,18 @@ Voulez-vous la fermer ?"</string>
     <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="candidates_style"><u>candidats</u></string>
-    <string name="ext_media_checking_notification_title">Préparation de la mémoire de stockage USB</string>
+    <string name="ext_media_checking_notification_title">Préparation de %s</string>
     <string name="ext_media_checking_notification_message">"Recherche d'erreurs"</string>
-    <string name="ext_media_nofs_notification_title">Mémoire de stockage USB vide</string>
-    <string name="ext_media_nofs_notification_message">"La mémoire de stockage USB est vide, ou son système de fichiers n'est pas compatible."</string>
-    <string name="ext_media_unmountable_notification_title">Mémoire de stockage USB endommagée</string>
-    <string name="ext_media_unmountable_notification_message">La mémoire de stockage USB est endommagée. Veuillez essayer de la reformater.</string>
-    <string name="ext_media_badremoval_notification_title">Mémoire USB retirée inopinément</string>
-    <string name="ext_media_badremoval_notification_message">Désinstaller la mémoire de stockage USB avant de la retirer pour éviter toute perte de données.</string>
-    <string name="ext_media_safe_unmount_notification_title">Vous pouvez retirer la mémoire USB.</string>
-    <string name="ext_media_safe_unmount_notification_message">Vous pouvez retirer la mémoire de stockage USB en toute sécurité.</string>
-    <string name="ext_media_nomedia_notification_title">Mémoire de stockage USB retirée</string>
-    <string name="ext_media_nomedia_notification_message">Mémoire de stockage USB retirée. Insérez un nouveau support.</string>
+    <string name="ext_media_nofs_notification_title">Vide %s</string>
+    <string name="ext_media_nofs_notification_message">%s est vide ou son système de fichiers est incompatible.</string>
+    <string name="ext_media_unmountable_notification_title">Endommagé %s</string>
+    <string name="ext_media_unmountable_notification_message">%s est endommagé. Peut-être devrez-vous le reformater.</string>
+    <string name="ext_media_badremoval_notification_title">%s retiré inopinément</string>
+    <string name="ext_media_badremoval_notification_message">"Démontez %s avant de le retirer afin d'éviter la perte de données."</string>
+    <string name="ext_media_safe_unmount_notification_title">%s peut être retiré en toute sécurité</string>
+    <string name="ext_media_safe_unmount_notification_message">Vous pouvez retirer %s.</string>
+    <string name="ext_media_nomedia_notification_title">Retiré %s</string>
+    <string name="ext_media_nomedia_notification_message">%s retiré. Insérez un nouveau support.</string>
     <string name="activity_list_empty">Aucune activité correspondante trouvée.</string>
     <string name="permlab_pkgUsageStats">mettre à jour les données statistiques du composant</string>
     <string name="permdesc_pkgUsageStats">"Permet à l'application de modifier les statistiques d'utilisation des composants collectées. Les applications standards ne doivent pas utiliser cette fonctionnalité."</string>
@@ -1135,13 +1135,13 @@ pour le compte \"%s\""</string>
     <string name="no_matches">Aucune correspondance</string>
     <string name="find_on_page">Rechercher sur la page</string>
     <string name="action_mode_done">OK</string>
-    <string name="progress_unmounting">Désinstallation de la mémoire de stockage USB en cours…</string>
-    <string name="progress_erasing">Effacement de la mémoire de stockage USB en cours…</string>
-    <string name="format_error">"Impossible d'effacer la mémoire de stockage USB."</string>
+    <string name="progress_unmounting">Désinstallation de la carte SD en cours…</string>
+    <string name="progress_erasing">Effacement de la carte SD en cours…</string>
+    <string name="format_error">"Impossible d'effacer la carte SD."</string>
     <string name="media_bad_removal">La carte SD a été retirée sans avoir été désinstallée.</string>
-    <string name="media_checking">Vérification de la mémoire de stockage USB...</string>
+    <string name="media_checking">Vérification de la carte SD en cours.</string>
     <string name="media_removed">La carte SD a été retirée.</string>
-    <string name="media_shared">"La mémoire de stockage USB est en cours d'utilisation par l'ordinateur."</string>
+    <string name="media_shared">"La carte SD est en cours d'utilisation par l'ordinateur."</string>
     <string name="media_unknown_state">État du support externe inconnu</string>
     <string name="share">Partager</string>
     <string name="find">Rechercher</string>
@@ -1315,4 +1315,7 @@ L'écoute à un volume élevé pendant des périodes prolongées peut endommager
     <string name="enable_accessibility_canceled">Accessibilité annulée.</string>
     <string name="user_switched">Utilisateur actuel : %1$s</string>
     <string name="owner_name">Propriétaire</string>
+    <string name="storage_phone">Stockage téléphone</string>
+    <string name="storage_external_usb">Stockage USB externe</string>
+    <string name="zz_keyguard_accessibility_voice_unlock">Déblocage vocal.</string>
 </resources>

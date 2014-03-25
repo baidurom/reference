@@ -103,42 +103,42 @@
 
     const/4 v1, -0x1
 
-    .line 182
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 185
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 81
+    .line 84
     iput-boolean v4, p0, Lcom/android/internal/app/AlertController;->mViewSpacingSpecified:Z
 
-    .line 103
+    .line 106
     iput v1, p0, Lcom/android/internal/app/AlertController;->mIconId:I
 
-    .line 119
+    .line 122
     iput v1, p0, Lcom/android/internal/app/AlertController;->mCheckedItem:I
 
-    .line 129
+    .line 132
     new-instance v1, Lcom/android/internal/app/AlertController$1;
 
     invoke-direct {v1, p0}, Lcom/android/internal/app/AlertController$1;-><init>(Lcom/android/internal/app/AlertController;)V
 
     iput-object v1, p0, Lcom/android/internal/app/AlertController;->mButtonHandler:Landroid/view/View$OnClickListener;
 
-    .line 183
+    .line 186
     iput-object p1, p0, Lcom/android/internal/app/AlertController;->mContext:Landroid/content/Context;
 
-    .line 184
+    .line 187
     iput-object p2, p0, Lcom/android/internal/app/AlertController;->mDialogInterface:Landroid/content/DialogInterface;
 
-    .line 185
+    .line 188
     iput-object p3, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
 
-    .line 186
+    .line 189
     new-instance v1, Lcom/android/internal/app/AlertController$ButtonHandler;
 
     invoke-direct {v1, p2}, Lcom/android/internal/app/AlertController$ButtonHandler;-><init>(Landroid/content/DialogInterface;)V
 
     iput-object v1, p0, Lcom/android/internal/app/AlertController;->mHandler:Landroid/os/Handler;
 
-    .line 188
+    .line 191
     const/4 v1, 0x0
 
     sget-object v2, Lcom/android/internal/R$styleable;->AlertDialog:[I
@@ -149,7 +149,7 @@
 
     move-result-object v0
 
-    .line 192
+    .line 195
     .local v0, a:Landroid/content/res/TypedArray;
     const/16 v1, 0xa
 
@@ -161,7 +161,7 @@
 
     iput v1, p0, Lcom/android/internal/app/AlertController;->mAlertDialogLayout:I
 
-    .line 194
+    .line 197
     const/16 v1, 0xb
 
     const v2, #layout@select_dialog#t
@@ -172,7 +172,7 @@
 
     iput v1, p0, Lcom/android/internal/app/AlertController;->mListLayout:I
 
-    .line 197
+    .line 200
     const/16 v1, 0xc
 
     const v2, #layout@select_dialog_multichoice#t
@@ -183,7 +183,7 @@
 
     iput v1, p0, Lcom/android/internal/app/AlertController;->mMultiChoiceItemLayout:I
 
-    .line 200
+    .line 203
     const/16 v1, 0xd
 
     const v2, #layout@select_dialog_singlechoice#t
@@ -194,7 +194,7 @@
 
     iput v1, p0, Lcom/android/internal/app/AlertController;->mSingleChoiceItemLayout:I
 
-    .line 203
+    .line 206
     const/16 v1, 0xe
 
     const v2, #layout@select_dialog_item#t
@@ -205,10 +205,10 @@
 
     iput v1, p0, Lcom/android/internal/app/AlertController;->mListItemLayout:I
 
-    .line 207
+    .line 210
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 208
+    .line 211
     return-void
 .end method
 
@@ -217,7 +217,7 @@
     .parameter "x0"
 
     .prologue
-    .line 59
+    .line 62
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mButtonPositive:Landroid/widget/Button;
 
     return-object v0
@@ -228,7 +228,7 @@
     .parameter "x0"
 
     .prologue
-    .line 59
+    .line 62
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mButtonPositiveMessage:Landroid/os/Message;
 
     return-object v0
@@ -239,7 +239,7 @@
     .parameter "x0"
 
     .prologue
-    .line 59
+    .line 62
     iget v0, p0, Lcom/android/internal/app/AlertController;->mSingleChoiceItemLayout:I
 
     return v0
@@ -250,7 +250,7 @@
     .parameter "x0"
 
     .prologue
-    .line 59
+    .line 62
     iget v0, p0, Lcom/android/internal/app/AlertController;->mListItemLayout:I
 
     return v0
@@ -262,7 +262,7 @@
     .parameter "x1"
 
     .prologue
-    .line 59
+    .line 62
     iput-object p1, p0, Lcom/android/internal/app/AlertController;->mAdapter:Landroid/widget/ListAdapter;
 
     return-object p1
@@ -274,7 +274,7 @@
     .parameter "x1"
 
     .prologue
-    .line 59
+    .line 62
     iput p1, p0, Lcom/android/internal/app/AlertController;->mCheckedItem:I
 
     return p1
@@ -286,7 +286,7 @@
     .parameter "x1"
 
     .prologue
-    .line 59
+    .line 62
     iput-object p1, p0, Lcom/android/internal/app/AlertController;->mListView:Landroid/widget/ListView;
 
     return-object p1
@@ -297,7 +297,7 @@
     .parameter "x0"
 
     .prologue
-    .line 59
+    .line 62
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mButtonNegative:Landroid/widget/Button;
 
     return-object v0
@@ -308,7 +308,7 @@
     .parameter "x0"
 
     .prologue
-    .line 59
+    .line 62
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mButtonNegativeMessage:Landroid/os/Message;
 
     return-object v0
@@ -319,7 +319,7 @@
     .parameter "x0"
 
     .prologue
-    .line 59
+    .line 62
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mButtonNeutral:Landroid/widget/Button;
 
     return-object v0
@@ -330,7 +330,7 @@
     .parameter "x0"
 
     .prologue
-    .line 59
+    .line 62
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mButtonNeutralMessage:Landroid/os/Message;
 
     return-object v0
@@ -341,7 +341,7 @@
     .parameter "x0"
 
     .prologue
-    .line 59
+    .line 62
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mDialogInterface:Landroid/content/DialogInterface;
 
     return-object v0
@@ -352,7 +352,7 @@
     .parameter "x0"
 
     .prologue
-    .line 59
+    .line 62
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mHandler:Landroid/os/Handler;
 
     return-object v0
@@ -363,7 +363,7 @@
     .parameter "x0"
 
     .prologue
-    .line 59
+    .line 62
     iget v0, p0, Lcom/android/internal/app/AlertController;->mListLayout:I
 
     return v0
@@ -374,7 +374,7 @@
     .parameter "x0"
 
     .prologue
-    .line 59
+    .line 62
     iget v0, p0, Lcom/android/internal/app/AlertController;->mMultiChoiceItemLayout:I
 
     return v0
@@ -389,18 +389,18 @@
 
     const/4 v3, 0x0
 
-    .line 211
+    .line 214
     invoke-virtual {p0}, Landroid/view/View;->onCheckIsTextEditor()Z
 
     move-result v4
 
     if-eqz v4, :cond_0
 
-    .line 229
+    .line 232
     :goto_0
     return v2
 
-    .line 215
+    .line 218
     :cond_0
     instance-of v4, p0, Landroid/view/ViewGroup;
 
@@ -408,35 +408,35 @@
 
     move v2, v3
 
-    .line 216
+    .line 219
     goto :goto_0
 
     :cond_1
     move-object v1, p0
 
-    .line 219
+    .line 222
     check-cast v1, Landroid/view/ViewGroup;
 
-    .line 220
+    .line 223
     .local v1, vg:Landroid/view/ViewGroup;
     invoke-virtual {v1}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
 
-    .line 221
+    .line 224
     .local v0, i:I
     :cond_2
     if-lez v0, :cond_3
 
-    .line 222
+    .line 225
     add-int/lit8 v0, v0, -0x1
 
-    .line 223
+    .line 226
     invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object p0
 
-    .line 224
+    .line 227
     invoke-static {p0}, Lcom/android/internal/app/AlertController;->canTextInput(Landroid/view/View;)Z
 
     move-result v4
@@ -448,7 +448,7 @@
     :cond_3
     move v2, v3
 
-    .line 229
+    .line 232
     goto :goto_0
 .end method
 
@@ -459,28 +459,28 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 585
+    .line 609
     invoke-virtual {p1}, Landroid/widget/Button;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
 
     check-cast v1, Landroid/widget/LinearLayout$LayoutParams;
 
-    .line 586
+    .line 610
     .local v1, params:Landroid/widget/LinearLayout$LayoutParams;
     const/4 v3, 0x1
 
     iput v3, v1, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
 
-    .line 587
+    .line 611
     const/high16 v3, 0x3f00
 
     iput v3, v1, Landroid/widget/LinearLayout$LayoutParams;->weight:F
 
-    .line 588
+    .line 612
     invoke-virtual {p1, v1}, Landroid/widget/Button;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 589
+    .line 613
     iget-object v3, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
 
     const v4, #id@leftSpacer#t
@@ -489,14 +489,14 @@
 
     move-result-object v0
 
-    .line 590
+    .line 614
     .local v0, leftSpacer:Landroid/view/View;
     if-eqz v0, :cond_0
 
-    .line 591
+    .line 615
     invoke-virtual {v0, v5}, Landroid/view/View;->setVisibility(I)V
 
-    .line 593
+    .line 617
     :cond_0
     iget-object v3, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
 
@@ -506,14 +506,14 @@
 
     move-result-object v2
 
-    .line 594
+    .line 618
     .local v2, rightSpacer:Landroid/view/View;
     if-eqz v2, :cond_1
 
-    .line 595
+    .line 619
     invoke-virtual {v2, v5}, Landroid/view/View;->setVisibility(I)V
 
-    .line 597
+    .line 621
     :cond_1
     return-void
 .end method
@@ -529,7 +529,7 @@
     .parameter "buttonPanel"
 
     .prologue
-    .line 604
+    .line 628
     const/16 v19, 0x0
 
     const v20, #drawable@popup_full_dark#t
@@ -544,7 +544,7 @@
 
     move-result v9
 
-    .line 606
+    .line 630
     .local v9, fullDark:I
     const/16 v19, 0x1
 
@@ -560,7 +560,7 @@
 
     move-result v16
 
-    .line 608
+    .line 632
     .local v16, topDark:I
     const/16 v19, 0x2
 
@@ -576,7 +576,7 @@
 
     move-result v7
 
-    .line 610
+    .line 634
     .local v7, centerDark:I
     const/16 v19, 0x3
 
@@ -592,7 +592,7 @@
 
     move-result v4
 
-    .line 612
+    .line 636
     .local v4, bottomDark:I
     const/16 v19, 0x4
 
@@ -608,7 +608,7 @@
 
     move-result v8
 
-    .line 614
+    .line 638
     .local v8, fullBright:I
     const/16 v19, 0x5
 
@@ -624,7 +624,7 @@
 
     move-result v15
 
-    .line 616
+    .line 640
     .local v15, topBright:I
     const/16 v19, 0x6
 
@@ -640,7 +640,7 @@
 
     move-result v6
 
-    .line 618
+    .line 642
     .local v6, centerBright:I
     const/16 v19, 0x7
 
@@ -656,7 +656,7 @@
 
     move-result v3
 
-    .line 620
+    .line 644
     .local v3, bottomBright:I
     const/16 v19, 0x8
 
@@ -672,7 +672,7 @@
 
     move-result v5
 
-    .line 632
+    .line 656
     .local v5, bottomMedium:I
     const/16 v19, 0x4
 
@@ -682,7 +682,7 @@
 
     move-object/from16 v18, v0
 
-    .line 633
+    .line 657
     .local v18, views:[Landroid/view/View;
     const/16 v19, 0x4
 
@@ -690,34 +690,34 @@
 
     new-array v12, v0, [Z
 
-    .line 634
+    .line 658
     .local v12, light:[Z
     const/4 v11, 0x0
 
-    .line 635
+    .line 659
     .local v11, lastView:Landroid/view/View;
     const/4 v10, 0x0
 
-    .line 637
+    .line 661
     .local v10, lastLight:Z
     const/4 v13, 0x0
 
-    .line 638
+    .line 662
     .local v13, pos:I
     if-eqz p6, :cond_0
 
-    .line 639
+    .line 663
     aput-object p1, v18, v13
 
-    .line 640
+    .line 664
     const/16 v19, 0x0
 
     aput-boolean v19, v12, v13
 
-    .line 641
+    .line 665
     add-int/lit8 v13, v13, 0x1
 
-    .line 649
+    .line 673
     :cond_0
     invoke-virtual/range {p2 .. p2}, Landroid/widget/LinearLayout;->getVisibility()I
 
@@ -737,7 +737,7 @@
     :cond_1
     aput-object p2, v18, v13
 
-    .line 651
+    .line 675
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/app/AlertController;->mListView:Landroid/widget/ListView;
@@ -751,16 +751,16 @@
     :goto_0
     aput-boolean v19, v12, v13
 
-    .line 652
+    .line 676
     add-int/lit8 v13, v13, 0x1
 
-    .line 653
+    .line 677
     if-eqz p3, :cond_2
 
-    .line 654
+    .line 678
     aput-object p3, v18, v13
 
-    .line 655
+    .line 679
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Lcom/android/internal/app/AlertController;->mForceInverseBackground:Z
@@ -769,26 +769,26 @@
 
     aput-boolean v19, v12, v13
 
-    .line 656
+    .line 680
     add-int/lit8 v13, v13, 0x1
 
-    .line 658
+    .line 682
     :cond_2
     if-eqz p4, :cond_3
 
-    .line 659
+    .line 683
     aput-object p7, v18, v13
 
-    .line 660
+    .line 684
     const/16 v19, 0x1
 
     aput-boolean v19, v12, v13
 
-    .line 663
+    .line 687
     :cond_3
     const/4 v14, 0x0
 
-    .line 664
+    .line 688
     .local v14, setView:Z
     const/4 v13, 0x0
 
@@ -803,20 +803,20 @@
 
     if-ge v13, v0, :cond_a
 
-    .line 665
+    .line 689
     aget-object v17, v18, v13
 
-    .line 666
+    .line 690
     .local v17, v:Landroid/view/View;
     if-nez v17, :cond_5
 
-    .line 664
+    .line 688
     :goto_2
     add-int/lit8 v13, v13, 0x1
 
     goto :goto_1
 
-    .line 651
+    .line 675
     .end local v14           #setView:Z
     .end local v17           #v:Landroid/view/View;
     :cond_4
@@ -824,16 +824,16 @@
 
     goto :goto_0
 
-    .line 669
+    .line 693
     .restart local v14       #setView:Z
     .restart local v17       #v:Landroid/view/View;
     :cond_5
     if-eqz v11, :cond_6
 
-    .line 670
+    .line 694
     if-nez v14, :cond_8
 
-    .line 671
+    .line 695
     if-eqz v10, :cond_7
 
     move/from16 v19, v15
@@ -843,15 +843,15 @@
 
     invoke-virtual {v11, v0}, Landroid/view/View;->setBackgroundResource(I)V
 
-    .line 675
+    .line 699
     :goto_4
     const/4 v14, 0x1
 
-    .line 677
+    .line 701
     :cond_6
     move-object/from16 v11, v17
 
-    .line 678
+    .line 702
     aget-boolean v10, v12, v13
 
     goto :goto_2
@@ -859,10 +859,10 @@
     :cond_7
     move/from16 v19, v16
 
-    .line 671
+    .line 695
     goto :goto_3
 
-    .line 673
+    .line 697
     :cond_8
     if-eqz v10, :cond_9
 
@@ -880,15 +880,15 @@
 
     goto :goto_5
 
-    .line 681
+    .line 705
     .end local v17           #v:Landroid/view/View;
     :cond_a
     if-eqz v11, :cond_b
 
-    .line 682
+    .line 706
     if-eqz v14, :cond_f
 
-    .line 687
+    .line 711
     if-eqz v10, :cond_e
 
     if-eqz p4, :cond_d
@@ -897,7 +897,7 @@
     :goto_6
     invoke-virtual {v11, v5}, Landroid/view/View;->setBackgroundResource(I)V
 
-    .line 719
+    .line 743
     .end local v8           #fullBright:I
     :cond_b
     :goto_7
@@ -917,7 +917,7 @@
 
     if-eqz v19, :cond_c
 
-    .line 720
+    .line 744
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/app/AlertController;->mListView:Landroid/widget/ListView;
@@ -932,7 +932,7 @@
 
     invoke-virtual/range {v19 .. v20}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
-    .line 721
+    .line 745
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/internal/app/AlertController;->mCheckedItem:I
@@ -947,7 +947,7 @@
 
     if-le v0, v1, :cond_c
 
-    .line 722
+    .line 746
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/app/AlertController;->mListView:Landroid/widget/ListView;
@@ -964,7 +964,7 @@
 
     invoke-virtual/range {v19 .. v21}, Landroid/widget/ListView;->setItemChecked(IZ)V
 
-    .line 723
+    .line 747
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/app/AlertController;->mListView:Landroid/widget/ListView;
@@ -979,7 +979,7 @@
 
     invoke-virtual/range {v19 .. v20}, Landroid/widget/ListView;->setSelection(I)V
 
-    .line 726
+    .line 750
     :cond_c
     return-void
 
@@ -988,7 +988,7 @@
     :cond_d
     move v5, v3
 
-    .line 687
+    .line 711
     goto :goto_6
 
     :cond_e
@@ -996,7 +996,7 @@
 
     goto :goto_6
 
-    .line 690
+    .line 714
     :cond_f
     if-eqz v10, :cond_10
 
@@ -1021,22 +1021,22 @@
 
     const/4 v5, 0x0
 
-    .line 528
+    .line 552
     const/4 v2, 0x1
 
-    .line 529
+    .line 553
     .local v2, BIT_BUTTON_POSITIVE:I
     const/4 v0, 0x2
 
-    .line 530
+    .line 554
     .local v0, BIT_BUTTON_NEGATIVE:I
     const/4 v1, 0x4
 
-    .line 531
+    .line 555
     .local v1, BIT_BUTTON_NEUTRAL:I
     const/4 v3, 0x0
 
-    .line 532
+    .line 556
     .local v3, whichButtons:I
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
 
@@ -1050,14 +1050,14 @@
 
     iput-object v4, p0, Lcom/android/internal/app/AlertController;->mButtonPositive:Landroid/widget/Button;
 
-    .line 533
+    .line 557
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mButtonPositive:Landroid/widget/Button;
 
     iget-object v6, p0, Lcom/android/internal/app/AlertController;->mButtonHandler:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v4, v6}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 535
+    .line 559
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mButtonPositiveText:Ljava/lang/CharSequence;
 
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -1066,12 +1066,12 @@
 
     if-eqz v4, :cond_1
 
-    .line 536
+    .line 560
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mButtonPositive:Landroid/widget/Button;
 
     invoke-virtual {v4, v7}, Landroid/widget/Button;->setVisibility(I)V
 
-    .line 543
+    .line 567
     :goto_0
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
 
@@ -1085,14 +1085,14 @@
 
     iput-object v4, p0, Lcom/android/internal/app/AlertController;->mButtonNegative:Landroid/widget/Button;
 
-    .line 544
+    .line 568
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mButtonNegative:Landroid/widget/Button;
 
     iget-object v6, p0, Lcom/android/internal/app/AlertController;->mButtonHandler:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v4, v6}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 546
+    .line 570
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mButtonNegativeText:Ljava/lang/CharSequence;
 
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -1101,12 +1101,12 @@
 
     if-eqz v4, :cond_2
 
-    .line 547
+    .line 571
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mButtonNegative:Landroid/widget/Button;
 
     invoke-virtual {v4, v7}, Landroid/widget/Button;->setVisibility(I)V
 
-    .line 555
+    .line 579
     :goto_1
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
 
@@ -1120,14 +1120,14 @@
 
     iput-object v4, p0, Lcom/android/internal/app/AlertController;->mButtonNeutral:Landroid/widget/Button;
 
-    .line 556
+    .line 580
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mButtonNeutral:Landroid/widget/Button;
 
     iget-object v6, p0, Lcom/android/internal/app/AlertController;->mButtonHandler:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v4, v6}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 558
+    .line 582
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mButtonNeutralText:Ljava/lang/CharSequence;
 
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -1136,12 +1136,12 @@
 
     if-eqz v4, :cond_3
 
-    .line 559
+    .line 583
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mButtonNeutral:Landroid/widget/Button;
 
     invoke-virtual {v4, v7}, Landroid/widget/Button;->setVisibility(I)V
 
-    .line 567
+    .line 591
     :goto_2
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mContext:Landroid/content/Context;
 
@@ -1151,15 +1151,15 @@
 
     if-eqz v4, :cond_0
 
-    .line 572
+    .line 596
     if-ne v3, v2, :cond_4
 
-    .line 573
+    .line 597
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mButtonPositive:Landroid/widget/Button;
 
     invoke-direct {p0, v4}, Lcom/android/internal/app/AlertController;->centerButton(Landroid/widget/Button;)V
 
-    .line 581
+    .line 605
     :cond_0
     :goto_3
     if-eqz v3, :cond_6
@@ -1169,7 +1169,7 @@
     :goto_4
     return v4
 
-    .line 538
+    .line 562
     :cond_1
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mButtonPositive:Landroid/widget/Button;
 
@@ -1177,17 +1177,17 @@
 
     invoke-virtual {v4, v6}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 539
+    .line 563
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mButtonPositive:Landroid/widget/Button;
 
     invoke-virtual {v4, v5}, Landroid/widget/Button;->setVisibility(I)V
 
-    .line 540
+    .line 564
     or-int/2addr v3, v2
 
     goto :goto_0
 
-    .line 549
+    .line 573
     :cond_2
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mButtonNegative:Landroid/widget/Button;
 
@@ -1195,17 +1195,17 @@
 
     invoke-virtual {v4, v6}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 550
+    .line 574
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mButtonNegative:Landroid/widget/Button;
 
     invoke-virtual {v4, v5}, Landroid/widget/Button;->setVisibility(I)V
 
-    .line 552
+    .line 576
     or-int/2addr v3, v0
 
     goto :goto_1
 
-    .line 561
+    .line 585
     :cond_3
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mButtonNeutral:Landroid/widget/Button;
 
@@ -1213,32 +1213,32 @@
 
     invoke-virtual {v4, v6}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 562
+    .line 586
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mButtonNeutral:Landroid/widget/Button;
 
     invoke-virtual {v4, v5}, Landroid/widget/Button;->setVisibility(I)V
 
-    .line 564
+    .line 588
     or-int/2addr v3, v1
 
     goto :goto_2
 
-    .line 574
+    .line 598
     :cond_4
     if-ne v3, v0, :cond_5
 
-    .line 575
+    .line 599
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mButtonNeutral:Landroid/widget/Button;
 
     invoke-direct {p0, v4}, Lcom/android/internal/app/AlertController;->centerButton(Landroid/widget/Button;)V
 
     goto :goto_3
 
-    .line 576
+    .line 600
     :cond_5
     if-ne v3, v1, :cond_0
 
-    .line 577
+    .line 601
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mButtonNeutral:Landroid/widget/Button;
 
     invoke-direct {p0, v4}, Lcom/android/internal/app/AlertController;->centerButton(Landroid/widget/Button;)V
@@ -1248,7 +1248,7 @@
     :cond_6
     move v4, v5
 
-    .line 581
+    .line 605
     goto :goto_4
 .end method
 
@@ -1265,7 +1265,7 @@
 
     const/4 v2, -0x1
 
-    .line 501
+    .line 519
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
 
     invoke-virtual {v0, v5}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
@@ -1276,12 +1276,12 @@
 
     iput-object v0, p0, Lcom/android/internal/app/AlertController;->mScrollView:Landroid/widget/ScrollView;
 
-    .line 502
+    .line 520
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mScrollView:Landroid/widget/ScrollView;
 
     invoke-virtual {v0, v3}, Landroid/widget/ScrollView;->setFocusable(Z)V
 
-    .line 505
+    .line 523
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
 
     const v1, #id@message#t
@@ -1294,22 +1294,22 @@
 
     iput-object v0, p0, Lcom/android/internal/app/AlertController;->mMessageView:Landroid/widget/TextView;
 
-    .line 506
+    .line 524
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mMessageView:Landroid/widget/TextView;
 
     if-nez v0, :cond_0
 
-    .line 525
+    .line 549
     :goto_0
     return-void
 
-    .line 510
+    .line 528
     :cond_0
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mMessage:Ljava/lang/CharSequence;
 
     if-eqz v0, :cond_1
 
-    .line 511
+    .line 529
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mMessageView:Landroid/widget/TextView;
 
     iget-object v1, p0, Lcom/android/internal/app/AlertController;->mMessage:Ljava/lang/CharSequence;
@@ -1318,25 +1318,46 @@
 
     goto :goto_0
 
-    .line 513
+    .line 531
     :cond_1
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mMessageView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v4}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 514
+    .line 532
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mScrollView:Landroid/widget/ScrollView;
 
     iget-object v1, p0, Lcom/android/internal/app/AlertController;->mMessageView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v1}, Landroid/widget/ScrollView;->removeView(Landroid/view/View;)V
 
-    .line 516
+    .line 534
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mListView:Landroid/widget/ListView;
+
+    if-eqz v0, :cond_3
+
+    .line 537
+    iget-object v0, p0, Lcom/android/internal/app/AlertController;->mAdapter:Landroid/widget/ListAdapter;
 
     if-eqz v0, :cond_2
 
-    .line 517
+    iget-object v0, p0, Lcom/android/internal/app/AlertController;->mAdapter:Landroid/widget/ListAdapter;
+
+    invoke-interface {v0}, Landroid/widget/ListAdapter;->getCount()I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_2
+
+    .line 538
+    iget-object v0, p0, Lcom/android/internal/app/AlertController;->mListView:Landroid/widget/ListView;
+
+    invoke-virtual {v0, v3}, Landroid/widget/ListView;->setDividerHeight(I)V
+
+    .line 541
+    :cond_2
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
 
     invoke-virtual {v0, v5}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
@@ -1345,7 +1366,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/LinearLayout;->removeView(Landroid/view/View;)V
 
-    .line 518
+    .line 542
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mListView:Landroid/widget/ListView;
 
     new-instance v1, Landroid/widget/LinearLayout$LayoutParams;
@@ -1354,7 +1375,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 520
+    .line 544
     new-instance v0, Landroid/widget/LinearLayout$LayoutParams;
 
     const/high16 v1, 0x3f80
@@ -1365,8 +1386,8 @@
 
     goto :goto_0
 
-    .line 522
-    :cond_2
+    .line 546
+    :cond_3
     invoke-virtual {p1, v4}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
     goto :goto_0
@@ -1383,16 +1404,16 @@
 
     const/16 v9, 0x8
 
-    .line 446
+    .line 459
     const/4 v1, 0x1
 
-    .line 448
+    .line 461
     .local v1, hasTitle:Z
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mCustomTitleView:Landroid/view/View;
 
     if-eqz v4, :cond_1
 
-    .line 450
+    .line 463
     new-instance v2, Landroid/widget/LinearLayout$LayoutParams;
 
     const/4 v4, -0x1
@@ -1401,31 +1422,31 @@
 
     invoke-direct {v2, v4, v5}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
 
-    .line 453
+    .line 466
     .local v2, lp:Landroid/widget/LinearLayout$LayoutParams;
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mCustomTitleView:Landroid/view/View;
 
     invoke-virtual {p1, v4, v0, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
-    .line 456
+    .line 469
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
 
     invoke-virtual {v4, v6}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 457
+    .line 470
     .local v3, titleTemplate:Landroid/view/View;
     invoke-virtual {v3, v9}, Landroid/view/View;->setVisibility(I)V
 
-    .line 497
+    .line 515
     .end local v2           #lp:Landroid/widget/LinearLayout$LayoutParams;
     .end local v3           #titleTemplate:Landroid/view/View;
     :cond_0
     :goto_0
     return v1
 
-    .line 459
+    .line 472
     :cond_1
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mTitle:Ljava/lang/CharSequence;
 
@@ -1437,7 +1458,7 @@
 
     const/4 v0, 0x1
 
-    .line 461
+    .line 474
     .local v0, hasTextTitle:Z
     :cond_2
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
@@ -1452,10 +1473,10 @@
 
     iput-object v4, p0, Lcom/android/internal/app/AlertController;->mIconView:Landroid/widget/ImageView;
 
-    .line 462
+    .line 475
     if-eqz v0, :cond_5
 
-    .line 464
+    .line 477
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
 
     const v5, #id@alertTitle#t
@@ -1468,19 +1489,33 @@
 
     iput-object v4, p0, Lcom/android/internal/app/AlertController;->mTitleView:Landroid/widget/TextView;
 
-    .line 466
+    .line 479
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mTitleView:Landroid/widget/TextView;
 
     iget-object v5, p0, Lcom/android/internal/app/AlertController;->mTitle:Ljava/lang/CharSequence;
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 472
+    .line 482
+    iget-object v4, p0, Lcom/android/internal/app/AlertController;->mTitleView:Landroid/widget/TextView;
+
+    const/4 v5, 0x2
+
+    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setMaxLines(I)V
+
+    .line 483
+    iget-object v4, p0, Lcom/android/internal/app/AlertController;->mTitleView:Landroid/widget/TextView;
+
+    sget-object v5, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
+
+    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
+
+    .line 490
     iget v4, p0, Lcom/android/internal/app/AlertController;->mIconId:I
 
     if-lez v4, :cond_3
 
-    .line 473
+    .line 491
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mIconView:Landroid/widget/ImageView;
 
     iget v5, p0, Lcom/android/internal/app/AlertController;->mIconId:I
@@ -1489,13 +1524,13 @@
 
     goto :goto_0
 
-    .line 474
+    .line 492
     :cond_3
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mIcon:Landroid/graphics/drawable/Drawable;
 
     if-eqz v4, :cond_4
 
-    .line 475
+    .line 493
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mIconView:Landroid/widget/ImageView;
 
     iget-object v5, p0, Lcom/android/internal/app/AlertController;->mIcon:Landroid/graphics/drawable/Drawable;
@@ -1504,13 +1539,13 @@
 
     goto :goto_0
 
-    .line 476
+    .line 494
     :cond_4
     iget v4, p0, Lcom/android/internal/app/AlertController;->mIconId:I
 
     if-nez v4, :cond_0
 
-    .line 481
+    .line 499
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mTitleView:Landroid/widget/TextView;
 
     iget-object v5, p0, Lcom/android/internal/app/AlertController;->mIconView:Landroid/widget/ImageView;
@@ -1539,14 +1574,14 @@
 
     invoke-virtual {v4, v5, v6, v7, v8}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 485
+    .line 503
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mIconView:Landroid/widget/ImageView;
 
     invoke-virtual {v4, v9}, Landroid/widget/ImageView;->setVisibility(I)V
 
     goto :goto_0
 
-    .line 490
+    .line 508
     :cond_5
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
 
@@ -1554,270 +1589,346 @@
 
     move-result-object v3
 
-    .line 491
+    .line 509
     .restart local v3       #titleTemplate:Landroid/view/View;
     invoke-virtual {v3, v9}, Landroid/view/View;->setVisibility(I)V
 
-    .line 492
+    .line 510
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mIconView:Landroid/widget/ImageView;
 
     invoke-virtual {v4, v9}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 493
+    .line 511
     invoke-virtual {p1, v9}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 494
+    .line 512
     const/4 v1, 0x0
 
-    goto :goto_0
+    goto/16 :goto_0
 .end method
 
 .method private setupView()V
-    .locals 14
+    .locals 17
 
     .prologue
-    .line 394
-    iget-object v0, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
+    .line 397
+    move-object/from16 v0, p0
 
-    const v10, #id@contentPanel#t
+    iget-object v1, v0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
 
-    invoke-virtual {v0, v10}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
+    const v13, #id@contentPanel#t
+
+    invoke-virtual {v1, v13}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/widget/LinearLayout;
+
+    .line 398
+    .local v3, contentPanel:Landroid/widget/LinearLayout;
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v3}, Lcom/android/internal/app/AlertController;->setupContent(Landroid/widget/LinearLayout;)V
+
+    .line 399
+    invoke-direct/range {p0 .. p0}, Lcom/android/internal/app/AlertController;->setupButtons()Z
+
+    move-result v5
+
+    .line 401
+    .local v5, hasButtons:Z
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
+
+    const v13, #id@topPanel#t
+
+    invoke-virtual {v1, v13}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
 
     move-result-object v2
 
     check-cast v2, Landroid/widget/LinearLayout;
 
-    .line 395
-    .local v2, contentPanel:Landroid/widget/LinearLayout;
-    invoke-direct {p0, v2}, Lcom/android/internal/app/AlertController;->setupContent(Landroid/widget/LinearLayout;)V
+    .line 402
+    .local v2, topPanel:Landroid/widget/LinearLayout;
+    move-object/from16 v0, p0
 
-    .line 396
-    invoke-direct {p0}, Lcom/android/internal/app/AlertController;->setupButtons()Z
-
-    move-result v4
-
-    .line 398
-    .local v4, hasButtons:Z
-    iget-object v0, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
-
-    const v10, #id@topPanel#t
-
-    invoke-virtual {v0, v10}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/LinearLayout;
-
-    .line 399
-    .local v1, topPanel:Landroid/widget/LinearLayout;
-    iget-object v0, p0, Lcom/android/internal/app/AlertController;->mContext:Landroid/content/Context;
-
-    const/4 v10, 0x0
-
-    sget-object v11, Lcom/android/internal/R$styleable;->AlertDialog:[I
-
-    const v12, #attr@alertDialogStyle#t
+    iget-object v1, v0, Lcom/android/internal/app/AlertController;->mContext:Landroid/content/Context;
 
     const/4 v13, 0x0
 
-    invoke-virtual {v0, v10, v11, v12, v13}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    sget-object v14, Lcom/android/internal/R$styleable;->AlertDialog:[I
 
-    move-result-object v5
+    const v15, #attr@alertDialogStyle#t
 
-    .line 401
-    .local v5, a:Landroid/content/res/TypedArray;
-    invoke-direct {p0, v1}, Lcom/android/internal/app/AlertController;->setupTitle(Landroid/widget/LinearLayout;)Z
+    const/16 v16, 0x0
 
-    move-result v6
+    move/from16 v0, v16
 
-    .line 403
-    .local v6, hasTitle:Z
-    iget-object v0, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
+    invoke-virtual {v1, v13, v14, v15, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
-    const v10, #id@buttonPanel#t
-
-    invoke-virtual {v0, v10}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
-
-    move-result-object v7
+    move-result-object v6
 
     .line 404
-    .local v7, buttonPanel:Landroid/view/View;
-    if-nez v4, :cond_0
+    .local v6, a:Landroid/content/res/TypedArray;
+    move-object/from16 v0, p0
 
-    .line 405
-    const/16 v0, 0x8
+    invoke-direct {v0, v2}, Lcom/android/internal/app/AlertController;->setupTitle(Landroid/widget/LinearLayout;)Z
 
-    invoke-virtual {v7, v0}, Landroid/view/View;->setVisibility(I)V
+    move-result v7
 
     .line 406
-    iget-object v0, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
+    .local v7, hasTitle:Z
+    move-object/from16 v0, p0
 
-    const/4 v10, 0x1
+    iget-object v1, v0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
 
-    invoke-virtual {v0, v10}, Landroid/view/Window;->setCloseOnTouchOutsideIfNotSet(Z)V
+    const v13, #id@buttonPanel#t
 
-    .line 409
-    :cond_0
-    const/4 v3, 0x0
-
-    .line 410
-    .local v3, customPanel:Landroid/widget/FrameLayout;
-    iget-object v0, p0, Lcom/android/internal/app/AlertController;->mView:Landroid/view/View;
-
-    if-eqz v0, :cond_5
-
-    .line 411
-    iget-object v0, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
-
-    const v10, #id@customPanel#t
-
-    invoke-virtual {v0, v10}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
-
-    move-result-object v3
-
-    .end local v3           #customPanel:Landroid/widget/FrameLayout;
-    check-cast v3, Landroid/widget/FrameLayout;
-
-    .line 412
-    .restart local v3       #customPanel:Landroid/widget/FrameLayout;
-    iget-object v0, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
-
-    const v10, #id@custom#t
-
-    invoke-virtual {v0, v10}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v1, v13}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
 
     move-result-object v8
 
-    check-cast v8, Landroid/widget/FrameLayout;
+    .line 407
+    .local v8, buttonPanel:Landroid/view/View;
+    if-nez v5, :cond_0
+
+    .line 408
+    const/16 v1, 0x8
+
+    invoke-virtual {v8, v1}, Landroid/view/View;->setVisibility(I)V
+
+    .line 409
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
+
+    const/4 v13, 0x1
+
+    invoke-virtual {v1, v13}, Landroid/view/Window;->setCloseOnTouchOutsideIfNotSet(Z)V
+
+    .line 412
+    :cond_0
+    const/4 v4, 0x0
 
     .line 413
-    .local v8, custom:Landroid/widget/FrameLayout;
-    iget-object v0, p0, Lcom/android/internal/app/AlertController;->mView:Landroid/view/View;
+    .local v4, customPanel:Landroid/widget/FrameLayout;
+    move-object/from16 v0, p0
 
-    new-instance v10, Landroid/view/ViewGroup$LayoutParams;
+    iget-object v1, v0, Lcom/android/internal/app/AlertController;->mView:Landroid/view/View;
 
-    const/4 v11, -0x1
-
-    const/4 v12, -0x1
-
-    invoke-direct {v10, v11, v12}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
-
-    invoke-virtual {v8, v0, v10}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    if-eqz v1, :cond_6
 
     .line 414
-    iget-boolean v0, p0, Lcom/android/internal/app/AlertController;->mViewSpacingSpecified:Z
+    move-object/from16 v0, p0
 
-    if-eqz v0, :cond_1
+    iget-object v1, v0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
+
+    const v13, #id@customPanel#t
+
+    invoke-virtual {v1, v13}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
+
+    move-result-object v4
+
+    .end local v4           #customPanel:Landroid/widget/FrameLayout;
+    check-cast v4, Landroid/widget/FrameLayout;
 
     .line 415
-    iget v0, p0, Lcom/android/internal/app/AlertController;->mViewSpacingLeft:I
+    .restart local v4       #customPanel:Landroid/widget/FrameLayout;
+    move-object/from16 v0, p0
 
-    iget v10, p0, Lcom/android/internal/app/AlertController;->mViewSpacingTop:I
+    iget-object v1, v0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
 
-    iget v11, p0, Lcom/android/internal/app/AlertController;->mViewSpacingRight:I
+    const v13, #id@custom#t
 
-    iget v12, p0, Lcom/android/internal/app/AlertController;->mViewSpacingBottom:I
-
-    invoke-virtual {v8, v0, v10, v11, v12}, Landroid/widget/FrameLayout;->setPadding(IIII)V
-
-    .line 418
-    :cond_1
-    iget-object v0, p0, Lcom/android/internal/app/AlertController;->mListView:Landroid/widget/ListView;
-
-    if-eqz v0, :cond_2
-
-    .line 419
-    invoke-virtual {v3}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/LinearLayout$LayoutParams;
-
-    const/4 v10, 0x0
-
-    iput v10, v0, Landroid/widget/LinearLayout$LayoutParams;->weight:F
-
-    .line 428
-    .end local v8           #custom:Landroid/widget/FrameLayout;
-    :cond_2
-    :goto_0
-    if-eqz v6, :cond_4
-
-    .line 429
-    const/4 v9, 0x0
-
-    .line 430
-    .local v9, divider:Landroid/view/View;
-    iget-object v0, p0, Lcom/android/internal/app/AlertController;->mMessage:Ljava/lang/CharSequence;
-
-    if-nez v0, :cond_3
-
-    iget-object v0, p0, Lcom/android/internal/app/AlertController;->mView:Landroid/view/View;
-
-    if-nez v0, :cond_3
-
-    iget-object v0, p0, Lcom/android/internal/app/AlertController;->mListView:Landroid/widget/ListView;
-
-    if-eqz v0, :cond_6
-
-    .line 431
-    :cond_3
-    iget-object v0, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
-
-    const v10, #id@titleDivider#t
-
-    invoke-virtual {v0, v10}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v1, v13}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
 
     move-result-object v9
 
-    .line 436
-    :goto_1
-    if-eqz v9, :cond_4
+    check-cast v9, Landroid/widget/FrameLayout;
 
-    .line 437
-    const/4 v0, 0x0
+    .line 416
+    .local v9, custom:Landroid/widget/FrameLayout;
+    move-object/from16 v0, p0
 
-    invoke-virtual {v9, v0}, Landroid/view/View;->setVisibility(I)V
+    iget-object v1, v0, Lcom/android/internal/app/AlertController;->mView:Landroid/view/View;
 
-    .end local v9           #divider:Landroid/view/View;
-    :cond_4
-    move-object v0, p0
+    new-instance v13, Landroid/view/ViewGroup$LayoutParams;
 
-    .line 441
-    invoke-direct/range {v0 .. v7}, Lcom/android/internal/app/AlertController;->setBackground(Landroid/widget/LinearLayout;Landroid/widget/LinearLayout;Landroid/view/View;ZLandroid/content/res/TypedArray;ZLandroid/view/View;)V
+    const/4 v14, -0x1
 
-    .line 442
-    invoke-virtual {v5}, Landroid/content/res/TypedArray;->recycle()V
+    const/4 v15, -0x1
 
-    .line 443
-    return-void
+    invoke-direct {v13, v14, v15}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
+
+    invoke-virtual {v9, v1, v13}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 417
+    move-object/from16 v0, p0
+
+    iget-boolean v1, v0, Lcom/android/internal/app/AlertController;->mViewSpacingSpecified:Z
+
+    if-eqz v1, :cond_1
+
+    .line 418
+    move-object/from16 v0, p0
+
+    iget v1, v0, Lcom/android/internal/app/AlertController;->mViewSpacingLeft:I
+
+    move-object/from16 v0, p0
+
+    iget v13, v0, Lcom/android/internal/app/AlertController;->mViewSpacingTop:I
+
+    move-object/from16 v0, p0
+
+    iget v14, v0, Lcom/android/internal/app/AlertController;->mViewSpacingRight:I
+
+    move-object/from16 v0, p0
+
+    iget v15, v0, Lcom/android/internal/app/AlertController;->mViewSpacingBottom:I
+
+    invoke-virtual {v9, v1, v13, v14, v15}, Landroid/widget/FrameLayout;->setPadding(IIII)V
+
+    .line 421
+    :cond_1
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lcom/android/internal/app/AlertController;->mListView:Landroid/widget/ListView;
+
+    if-eqz v1, :cond_2
 
     .line 422
+    invoke-virtual {v4}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/widget/LinearLayout$LayoutParams;
+
+    const/4 v13, 0x0
+
+    iput v13, v1, Landroid/widget/LinearLayout$LayoutParams;->weight:F
+
+    .line 431
+    .end local v9           #custom:Landroid/widget/FrameLayout;
+    :cond_2
+    :goto_0
+    if-eqz v7, :cond_5
+
+    .line 432
+    const/4 v10, 0x0
+
+    .line 433
+    .local v10, divider:Landroid/view/View;
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lcom/android/internal/app/AlertController;->mMessage:Ljava/lang/CharSequence;
+
+    if-nez v1, :cond_3
+
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lcom/android/internal/app/AlertController;->mView:Landroid/view/View;
+
+    if-nez v1, :cond_3
+
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lcom/android/internal/app/AlertController;->mListView:Landroid/widget/ListView;
+
+    if-eqz v1, :cond_7
+
+    .line 434
+    :cond_3
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
+
+    const v13, #id@titleDivider#t
+
+    invoke-virtual {v1, v13}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
+
+    move-result-object v10
+
+    .line 440
+    :goto_1
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lcom/android/internal/app/AlertController;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v11
+
+    .line 441
+    .local v11, res:Landroid/content/res/Resources;
+    invoke-virtual {v11}, Landroid/content/res/Resources;->getThemeMainColor()I
+
+    move-result v12
+
+    .line 442
+    .local v12, textColor:I
+    if-eqz v12, :cond_4
+
+    .line 443
+    if-eqz v10, :cond_4
+
+    .line 444
+    invoke-virtual {v10, v12}, Landroid/view/View;->setBackgroundColor(I)V
+
+    .line 449
+    :cond_4
+    if-eqz v10, :cond_5
+
+    .line 450
+    const/4 v1, 0x0
+
+    invoke-virtual {v10, v1}, Landroid/view/View;->setVisibility(I)V
+
+    .end local v10           #divider:Landroid/view/View;
+    .end local v11           #res:Landroid/content/res/Resources;
+    .end local v12           #textColor:I
     :cond_5
-    iget-object v0, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
+    move-object/from16 v1, p0
 
-    const v10, #id@customPanel#t
+    .line 454
+    invoke-direct/range {v1 .. v8}, Lcom/android/internal/app/AlertController;->setBackground(Landroid/widget/LinearLayout;Landroid/widget/LinearLayout;Landroid/view/View;ZLandroid/content/res/TypedArray;ZLandroid/view/View;)V
 
-    invoke-virtual {v0, v10}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
+    .line 455
+    invoke-virtual {v6}, Landroid/content/res/TypedArray;->recycle()V
 
-    move-result-object v0
+    .line 456
+    return-void
 
-    const/16 v10, 0x8
+    .line 425
+    :cond_6
+    move-object/from16 v0, p0
 
-    invoke-virtual {v0, v10}, Landroid/view/View;->setVisibility(I)V
+    iget-object v1, v0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
+
+    const v13, #id@customPanel#t
+
+    invoke-virtual {v1, v13}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    const/16 v13, 0x8
+
+    invoke-virtual {v1, v13}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_0
 
-    .line 433
-    .restart local v9       #divider:Landroid/view/View;
-    :cond_6
-    iget-object v0, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
+    .line 436
+    .restart local v10       #divider:Landroid/view/View;
+    :cond_7
+    move-object/from16 v0, p0
 
-    const v10, #id@titleDividerTop#t
+    iget-object v1, v0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
 
-    invoke-virtual {v0, v10}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
+    const v13, #id@titleDividerTop#t
 
-    move-result-object v9
+    invoke-virtual {v1, v13}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
+
+    move-result-object v10
 
     goto :goto_1
 .end method
@@ -1829,12 +1940,12 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 176
+    .line 179
     new-instance v0, Landroid/util/TypedValue;
 
     invoke-direct {v0}, Landroid/util/TypedValue;-><init>()V
 
-    .line 177
+    .line 180
     .local v0, outValue:Landroid/util/TypedValue;
     invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
@@ -1844,7 +1955,7 @@
 
     invoke-virtual {v2, v3, v0, v1}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 
-    .line 179
+    .line 182
     iget v2, v0, Landroid/util/TypedValue;->data:I
 
     if-eqz v2, :cond_0
@@ -1865,34 +1976,34 @@
     .parameter "whichButton"
 
     .prologue
-    .line 371
+    .line 374
     packed-switch p1, :pswitch_data_0
 
-    .line 379
+    .line 382
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 373
+    .line 376
     :pswitch_0
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mButtonPositive:Landroid/widget/Button;
 
     goto :goto_0
 
-    .line 375
+    .line 378
     :pswitch_1
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mButtonNegative:Landroid/widget/Button;
 
     goto :goto_0
 
-    .line 377
+    .line 380
     :pswitch_2
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mButtonNeutral:Landroid/widget/Button;
 
     goto :goto_0
 
-    .line 371
+    .line 374
     :pswitch_data_0
     .packed-switch -0x3
         :pswitch_2
@@ -1906,12 +2017,12 @@
     .parameter "attrId"
 
     .prologue
-    .line 357
+    .line 360
     new-instance v0, Landroid/util/TypedValue;
 
     invoke-direct {v0}, Landroid/util/TypedValue;-><init>()V
 
-    .line 358
+    .line 361
     .local v0, out:Landroid/util/TypedValue;
     iget-object v1, p0, Lcom/android/internal/app/AlertController;->mContext:Landroid/content/Context;
 
@@ -1923,7 +2034,7 @@
 
     invoke-virtual {v1, p1, v0, v2}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 
-    .line 359
+    .line 362
     iget v1, v0, Landroid/util/TypedValue;->resourceId:I
 
     return v1
@@ -1933,7 +2044,7 @@
     .locals 1
 
     .prologue
-    .line 367
+    .line 370
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mListView:Landroid/widget/ListView;
 
     return-object v0
@@ -1945,14 +2056,14 @@
     .prologue
     const/high16 v2, 0x2
 
-    .line 234
+    .line 237
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->requestFeature(I)Z
 
-    .line 236
+    .line 239
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mView:Landroid/view/View;
 
     if-eqz v0, :cond_0
@@ -1965,13 +2076,13 @@
 
     if-nez v0, :cond_1
 
-    .line 237
+    .line 240
     :cond_0
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
 
     invoke-virtual {v0, v2, v2}, Landroid/view/Window;->setFlags(II)V
 
-    .line 240
+    .line 243
     :cond_1
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
 
@@ -1979,10 +2090,10 @@
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->setContentView(I)V
 
-    .line 241
+    .line 244
     invoke-direct {p0}, Lcom/android/internal/app/AlertController;->setupView()V
 
-    .line 242
+    .line 245
     return-void
 .end method
 
@@ -1992,7 +2103,7 @@
     .parameter "event"
 
     .prologue
-    .line 385
+    .line 388
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mScrollView:Landroid/widget/ScrollView;
 
     if-eqz v0, :cond_0
@@ -2022,7 +2133,7 @@
     .parameter "event"
 
     .prologue
-    .line 390
+    .line 393
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mScrollView:Landroid/widget/ScrollView;
 
     if-eqz v0, :cond_0
@@ -2054,23 +2165,23 @@
     .parameter "msg"
 
     .prologue
-    .line 301
+    .line 304
     if-nez p4, :cond_0
 
     if-eqz p3, :cond_0
 
-    .line 302
+    .line 305
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, p1, p3}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object p4
 
-    .line 305
+    .line 308
     :cond_0
     packed-switch p1, :pswitch_data_0
 
-    .line 323
+    .line 326
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "Button does not exist"
@@ -2079,36 +2190,36 @@
 
     throw v0
 
-    .line 308
+    .line 311
     :pswitch_0
     iput-object p2, p0, Lcom/android/internal/app/AlertController;->mButtonPositiveText:Ljava/lang/CharSequence;
 
-    .line 309
+    .line 312
     iput-object p4, p0, Lcom/android/internal/app/AlertController;->mButtonPositiveMessage:Landroid/os/Message;
 
-    .line 325
+    .line 328
     :goto_0
     return-void
 
-    .line 313
+    .line 316
     :pswitch_1
     iput-object p2, p0, Lcom/android/internal/app/AlertController;->mButtonNegativeText:Ljava/lang/CharSequence;
 
-    .line 314
+    .line 317
     iput-object p4, p0, Lcom/android/internal/app/AlertController;->mButtonNegativeMessage:Landroid/os/Message;
 
     goto :goto_0
 
-    .line 318
+    .line 321
     :pswitch_2
     iput-object p2, p0, Lcom/android/internal/app/AlertController;->mButtonNeutralText:Ljava/lang/CharSequence;
 
-    .line 319
+    .line 322
     iput-object p4, p0, Lcom/android/internal/app/AlertController;->mButtonNeutralMessage:Landroid/os/Message;
 
     goto :goto_0
 
-    .line 305
+    .line 308
     :pswitch_data_0
     .packed-switch -0x3
         :pswitch_2
@@ -2122,10 +2233,10 @@
     .parameter "customTitleView"
 
     .prologue
-    .line 255
+    .line 258
     iput-object p1, p0, Lcom/android/internal/app/AlertController;->mCustomTitleView:Landroid/view/View;
 
-    .line 256
+    .line 259
     return-void
 .end method
 
@@ -2134,34 +2245,34 @@
     .parameter "resId"
 
     .prologue
-    .line 333
+    .line 336
     iput p1, p0, Lcom/android/internal/app/AlertController;->mIconId:I
 
-    .line 334
+    .line 337
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mIconView:Landroid/widget/ImageView;
 
     if-eqz v0, :cond_0
 
-    .line 335
+    .line 338
     if-lez p1, :cond_1
 
-    .line 336
+    .line 339
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mIconView:Landroid/widget/ImageView;
 
     iget v1, p0, Lcom/android/internal/app/AlertController;->mIconId:I
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 341
+    .line 344
     :cond_0
     :goto_0
     return-void
 
-    .line 337
+    .line 340
     :cond_1
     if-nez p1, :cond_0
 
-    .line 338
+    .line 341
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mIconView:Landroid/widget/ImageView;
 
     const/16 v1, 0x8
@@ -2176,10 +2287,10 @@
     .parameter "icon"
 
     .prologue
-    .line 344
+    .line 347
     iput-object p1, p0, Lcom/android/internal/app/AlertController;->mIcon:Landroid/graphics/drawable/Drawable;
 
-    .line 345
+    .line 348
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mIconView:Landroid/widget/ImageView;
 
     if-eqz v0, :cond_0
@@ -2188,12 +2299,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 346
+    .line 349
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mIconView:Landroid/widget/ImageView;
 
     invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 348
+    .line 351
     :cond_0
     return-void
 .end method
@@ -2203,10 +2314,10 @@
     .parameter "forceInverseBackground"
 
     .prologue
-    .line 363
+    .line 366
     iput-boolean p1, p0, Lcom/android/internal/app/AlertController;->mForceInverseBackground:Z
 
-    .line 364
+    .line 367
     return-void
 .end method
 
@@ -2215,20 +2326,20 @@
     .parameter "message"
 
     .prologue
-    .line 259
+    .line 262
     iput-object p1, p0, Lcom/android/internal/app/AlertController;->mMessage:Ljava/lang/CharSequence;
 
-    .line 260
+    .line 263
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mMessageView:Landroid/widget/TextView;
 
     if-eqz v0, :cond_0
 
-    .line 261
+    .line 264
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mMessageView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 263
+    .line 266
     :cond_0
     return-void
 .end method
@@ -2238,20 +2349,20 @@
     .parameter "title"
 
     .prologue
-    .line 245
+    .line 248
     iput-object p1, p0, Lcom/android/internal/app/AlertController;->mTitle:Ljava/lang/CharSequence;
 
-    .line 246
+    .line 249
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mTitleView:Landroid/widget/TextView;
 
     if-eqz v0, :cond_0
 
-    .line 247
+    .line 250
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mTitleView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 249
+    .line 252
     :cond_0
     return-void
 .end method
@@ -2261,15 +2372,15 @@
     .parameter "view"
 
     .prologue
-    .line 269
+    .line 272
     iput-object p1, p0, Lcom/android/internal/app/AlertController;->mView:Landroid/view/View;
 
-    .line 270
+    .line 273
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/internal/app/AlertController;->mViewSpacingSpecified:Z
 
-    .line 271
+    .line 274
     return-void
 .end method
 
@@ -2282,26 +2393,26 @@
     .parameter "viewSpacingBottom"
 
     .prologue
-    .line 278
+    .line 281
     iput-object p1, p0, Lcom/android/internal/app/AlertController;->mView:Landroid/view/View;
 
-    .line 279
+    .line 282
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/app/AlertController;->mViewSpacingSpecified:Z
 
-    .line 280
+    .line 283
     iput p2, p0, Lcom/android/internal/app/AlertController;->mViewSpacingLeft:I
 
-    .line 281
+    .line 284
     iput p3, p0, Lcom/android/internal/app/AlertController;->mViewSpacingTop:I
 
-    .line 282
+    .line 285
     iput p4, p0, Lcom/android/internal/app/AlertController;->mViewSpacingRight:I
 
-    .line 283
+    .line 286
     iput p5, p0, Lcom/android/internal/app/AlertController;->mViewSpacingBottom:I
 
-    .line 284
+    .line 287
     return-void
 .end method

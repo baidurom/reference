@@ -30,12 +30,12 @@
     .parameter
 
     .prologue
-    .line 3772
+    .line 3837
     iput-object p1, p0, Landroid/media/videoeditor/MediaArtistNativeHelper$1;->this$0:Landroid/media/videoeditor/MediaArtistNativeHelper;
 
     iput-object p2, p0, Landroid/media/videoeditor/MediaArtistNativeHelper$1;->val$result:[Landroid/graphics/Bitmap;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -48,13 +48,13 @@
     .parameter "index"
 
     .prologue
-    .line 3774
+    .line 3839
     iget-object v0, p0, Landroid/media/videoeditor/MediaArtistNativeHelper$1;->val$result:[Landroid/graphics/Bitmap;
 
     const/4 v1, 0x0
 
     aput-object p1, v0, v1
 
-    .line 3775
+    .line 3840
     return-void
 .end method

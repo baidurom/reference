@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 130
+    .line 139
     iput-object p1, p0, Lcom/android/server/am/BroadcastQueue$1;->this$0:Lcom/android/server/am/BroadcastQueue;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,26 +39,38 @@
     .parameter "msg"
 
     .prologue
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
-    .line 136
+    .line 145
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 148
+    .line 157
     :goto_0
     return-void
 
-    .line 140
+    .line 147
     :pswitch_0
+    sget-boolean v0, Lcom/android/server/am/BroadcastQueue;->DEBUG_BROADCAST:Z
+
+    if-eqz v0, :cond_0
+
+    const-string v0, "BroadcastQueue"
+
+    const-string v1, "Received BROADCAST_INTENT_MSG"
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 149
+    :cond_0
     iget-object v0, p0, Lcom/android/server/am/BroadcastQueue$1;->this$0:Lcom/android/server/am/BroadcastQueue;
 
-    invoke-virtual {v0, v1}, Lcom/android/server/am/BroadcastQueue;->processNextBroadcast(Z)V
+    invoke-virtual {v0, v2}, Lcom/android/server/am/BroadcastQueue;->processNextBroadcast(Z)V
 
     goto :goto_0
 
-    .line 143
+    .line 152
     :pswitch_1
     iget-object v0, p0, Lcom/android/server/am/BroadcastQueue$1;->this$0:Lcom/android/server/am/BroadcastQueue;
 
@@ -66,7 +78,7 @@
 
     monitor-enter v1
 
-    .line 144
+    .line 153
     :try_start_0
     iget-object v0, p0, Lcom/android/server/am/BroadcastQueue$1;->this$0:Lcom/android/server/am/BroadcastQueue;
 
@@ -74,7 +86,7 @@
 
     invoke-virtual {v0, v2}, Lcom/android/server/am/BroadcastQueue;->broadcastTimeoutLocked(Z)V
 
-    .line 145
+    .line 154
     monitor-exit v1
 
     goto :goto_0
@@ -88,9 +100,7 @@
 
     throw v0
 
-    .line 136
-    nop
-
+    .line 145
     :pswitch_data_0
     .packed-switch 0xc8
         :pswitch_0

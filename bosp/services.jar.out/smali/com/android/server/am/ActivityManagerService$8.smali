@@ -1,11 +1,11 @@
 .class Lcom/android/server/am/ActivityManagerService$8;
-.super Landroid/content/IIntentReceiver$Stub;
+.super Lcom/android/server/am/ActivityManagerService$ForegroundToken;
 .source "ActivityManagerService.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/am/ActivityManagerService;->systemReady(Ljava/lang/Runnable;)V
+    value = Lcom/android/server/am/ActivityManagerService;->setProcessForeground(Landroid/os/IBinder;IZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,55 +17,32 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/server/am/ActivityManagerService;
 
-.field final synthetic val$doneReceivers:Ljava/util/ArrayList;
-
-.field final synthetic val$goingCallback:Ljava/lang/Runnable;
-
 
 # direct methods
-.method constructor <init>(Lcom/android/server/am/ActivityManagerService;Ljava/util/ArrayList;Ljava/lang/Runnable;)V
+.method constructor <init>(Lcom/android/server/am/ActivityManagerService;)V
     .locals 0
-    .parameter
-    .parameter
     .parameter
 
     .prologue
-    .line 7799
+    .line 5694
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$8;->this$0:Lcom/android/server/am/ActivityManagerService;
 
-    iput-object p2, p0, Lcom/android/server/am/ActivityManagerService$8;->val$doneReceivers:Ljava/util/ArrayList;
-
-    iput-object p3, p0, Lcom/android/server/am/ActivityManagerService$8;->val$goingCallback:Ljava/lang/Runnable;
-
-    invoke-direct {p0}, Landroid/content/IIntentReceiver$Stub;-><init>()V
+    invoke-direct {p0, p1}, Lcom/android/server/am/ActivityManagerService$ForegroundToken;-><init>(Lcom/android/server/am/ActivityManagerService;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public performReceive(Landroid/content/Intent;ILjava/lang/String;Landroid/os/Bundle;ZZI)V
-    .locals 2
-    .parameter "intent"
-    .parameter "resultCode"
-    .parameter "data"
-    .parameter "extras"
-    .parameter "ordered"
-    .parameter "sticky"
-    .parameter "sendingUser"
+.method public binderDied()V
+    .locals 1
 
     .prologue
-    .line 7806
+    .line 5696
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$8;->this$0:Lcom/android/server/am/ActivityManagerService;
 
-    iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mHandler:Landroid/os/Handler;
+    invoke-virtual {v0, p0}, Lcom/android/server/am/ActivityManagerService;->foregroundTokenDied(Lcom/android/server/am/ActivityManagerService$ForegroundToken;)V
 
-    new-instance v1, Lcom/android/server/am/ActivityManagerService$8$1;
-
-    invoke-direct {v1, p0}, Lcom/android/server/am/ActivityManagerService$8$1;-><init>(Lcom/android/server/am/ActivityManagerService$8;)V
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    .line 7818
+    .line 5697
     return-void
 .end method

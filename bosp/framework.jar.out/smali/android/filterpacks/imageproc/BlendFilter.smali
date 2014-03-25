@@ -20,7 +20,7 @@
 
     const/4 v1, 0x0
 
-    const-string v2, "left"
+    const-string/jumbo v2, "left"
 
     aput-object v2, v0, v1
 

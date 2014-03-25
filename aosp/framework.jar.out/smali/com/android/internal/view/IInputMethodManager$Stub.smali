@@ -46,6 +46,8 @@
 
 .field static final TRANSACTION_hideSoftInput:I = 0xb
 
+.field static final TRANSACTION_notifyImsDump:I = 0x1d
+
 .field static final TRANSACTION_notifySuggestionPicked:I = 0x16
 
 .field static final TRANSACTION_registerSuggestionSpansForNotification:I = 0x15
@@ -73,6 +75,8 @@
 .field static final TRANSACTION_showSoftInput:I = 0xa
 
 .field static final TRANSACTION_startInput:I = 0x8
+
+.field static final TRANSACTION_switchInputMethodFromWindowManager:I = 0x1e
 
 .field static final TRANSACTION_switchToLastInputMethod:I = 0x19
 
@@ -172,7 +176,7 @@
     .line 42
     sparse-switch p1, :sswitch_data_0
 
-    .line 434
+    .line 450
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v0
@@ -1584,6 +1588,72 @@
 
     goto/16 :goto_0
 
+    .line 435
+    .end local v1           #_arg0:Ljava/lang/String;
+    .end local v2           #_arg1:[Landroid/view/inputmethod/InputMethodSubtype;
+    :sswitch_1d
+    const-string v0, "com.android.internal.view.IInputMethodManager"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 437
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    if-eqz v0, :cond_16
+
+    const/4 v1, 0x1
+
+    .line 438
+    .local v1, _arg0:Z
+    :goto_17
+    invoke-virtual {p0, v1}, Lcom/android/internal/view/IInputMethodManager$Stub;->notifyImsDump(Z)V
+
+    .line 439
+    const/4 v0, 0x1
+
+    goto/16 :goto_0
+
+    .line 437
+    .end local v1           #_arg0:Z
+    :cond_16
+    const/4 v1, 0x0
+
+    goto :goto_17
+
+    .line 443
+    :sswitch_1e
+    const-string v0, "com.android.internal.view.IInputMethodManager"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 445
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    if-eqz v0, :cond_17
+
+    const/4 v1, 0x1
+
+    .line 446
+    .restart local v1       #_arg0:Z
+    :goto_18
+    invoke-virtual {p0, v1}, Lcom/android/internal/view/IInputMethodManager$Stub;->switchInputMethodFromWindowManager(Z)V
+
+    .line 447
+    const/4 v0, 0x1
+
+    goto/16 :goto_0
+
+    .line 445
+    .end local v1           #_arg0:Z
+    :cond_17
+    const/4 v1, 0x0
+
+    goto :goto_18
+
     .line 42
     nop
 
@@ -1617,6 +1687,8 @@
         0x1a -> :sswitch_1a
         0x1b -> :sswitch_1b
         0x1c -> :sswitch_1c
+        0x1d -> :sswitch_1d
+        0x1e -> :sswitch_1e
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

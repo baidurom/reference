@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 64
+    .line 70
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPINView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardPINView;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -42,15 +42,15 @@
     .parameter "v"
 
     .prologue
-    .line 67
+    .line 73
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPINView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardPINView;
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardPINView;->doHapticKeyClick()V
 
-    .line 68
+    .line 74
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPINView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardPINView;
 
-    iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;->mPasswordEntry:Landroid/widget/TextView;
+    iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardPINView;->mPasswordEntry:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->isEnabled()Z
 
@@ -58,12 +58,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 69
+    .line 75
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPINView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardPINView;
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardPINView;->verifyPasswordAndUnlock()V
 
-    .line 71
+    .line 77
     :cond_0
     return-void
 .end method

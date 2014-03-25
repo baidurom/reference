@@ -162,7 +162,7 @@
     invoke-virtual {p0, v4}, Landroid/widget/TabWidget;->setChildrenDrawingOrderEnabled(Z)V
 
     .line 118
-    iget-object v0, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Landroid/widget/TabWidget;->mContext:Landroid/content/Context;
 
     .line 119
     .local v0, context:Landroid/content/Context;

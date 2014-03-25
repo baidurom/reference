@@ -141,9 +141,9 @@
 
     .prologue
     .line 43
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1001
+    .line 1067
     return-void
 .end method
 
@@ -154,6 +154,9 @@
 .end method
 
 .method public static final native getGidForName(Ljava/lang/String;)I
+.end method
+
+.method private static final native getLruAnonMemory()J
 .end method
 
 .method public static final getParentPid(I)I
@@ -224,6 +227,9 @@
 .end method
 
 .method public static final native getPss(I)J
+.end method
+
+.method public static final native getRswapRssSum(I)J
 .end method
 
 .method public static final getThreadGroupLeader(I)I
@@ -360,6 +366,169 @@
     long-to-int v2, v2
 
     return v2
+.end method
+
+.method private static final getZramCompressRatio()F
+    .locals 6
+
+    .prologue
+    .line 956
+    invoke-static {}, Landroid/os/Debug;->getCompZram()J
+
+    move-result-wide v0
+
+    .line 957
+    .local v0, compZram:J
+    invoke-static {}, Landroid/os/Debug;->getOrigZram()J
+
+    move-result-wide v2
+
+    .line 958
+    .local v2, origZram:J
+    const-wide/16 v4, 0x0
+
+    cmp-long v4, v0, v4
+
+    if-nez v4, :cond_0
+
+    .line 959
+    const/high16 v4, 0x4000
+
+    .line 961
+    :goto_0
+    return v4
+
+    :cond_0
+    long-to-float v4, v2
+
+    long-to-float v5, v0
+
+    div-float/2addr v4, v5
+
+    const/high16 v5, 0x4040
+
+    invoke-static {v4, v5}, Ljava/lang/Math;->min(FF)F
+
+    move-result v4
+
+    goto :goto_0
+.end method
+
+.method public static final getZramExtraAvailableSize()J
+    .locals 13
+
+    .prologue
+    const/high16 v12, 0x3f80
+
+    const-wide/16 v4, 0x0
+
+    .line 989
+    invoke-static {}, Landroid/os/Debug;->getTotalZram()J
+
+    move-result-wide v6
+
+    .line 990
+    .local v6, totalZram:J
+    cmp-long v8, v6, v4
+
+    if-nez v8, :cond_0
+
+    .line 1000
+    :goto_0
+    return-wide v4
+
+    .line 994
+    :cond_0
+    const-wide/32 v0, 0xf00000
+
+    .line 995
+    .local v0, anonReserve:J
+    invoke-static {}, Landroid/os/Process;->getLruAnonMemory()J
+
+    move-result-wide v8
+
+    const-wide/32 v10, 0xf00000
+
+    sub-long v2, v8, v10
+
+    .line 996
+    .local v2, anonToCompress:J
+    cmp-long v8, v2, v4
+
+    if-gez v8, :cond_1
+
+    .line 997
+    const-wide/16 v2, 0x0
+
+    .line 999
+    :cond_1
+    long-to-float v8, v2
+
+    invoke-static {}, Landroid/os/Process;->getZramCompressRatio()F
+
+    move-result v9
+
+    div-float v9, v12, v9
+
+    sub-float v9, v12, v9
+
+    mul-float/2addr v8, v9
+
+    float-to-long v4, v8
+
+    .line 1000
+    .local v4, savableMemory:J
+    goto :goto_0
+.end method
+
+.method public static final getZramExtraTotalSize()J
+    .locals 10
+
+    .prologue
+    const-wide/16 v6, 0x0
+
+    .line 971
+    invoke-static {}, Landroid/os/Debug;->getTotalZram()J
+
+    move-result-wide v4
+
+    .line 972
+    .local v4, totalZram:J
+    cmp-long v8, v4, v6
+
+    if-nez v8, :cond_0
+
+    .line 980
+    :goto_0
+    return-wide v6
+
+    .line 977
+    :cond_0
+    invoke-static {}, Landroid/os/Process;->getTotalMemory()J
+
+    move-result-wide v6
+
+    const-wide/16 v8, 0x4
+
+    div-long v0, v6, v8
+
+    .line 978
+    .local v0, compTotalSize:J
+    long-to-float v6, v0
+
+    invoke-static {}, Landroid/os/Process;->getZramCompressRatio()F
+
+    move-result v7
+
+    mul-float/2addr v6, v7
+
+    float-to-long v2, v6
+
+    .line 980
+    .local v2, origTotalSize:J
+    sub-long v6, v2, v0
+
+    goto :goto_0
 .end method
 
 .method public static final isIsolated()Z

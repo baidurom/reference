@@ -103,7 +103,7 @@
     .line 196
     new-instance v0, Landroid/media/AudioManager;
 
-    iget-object v1, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/android/internal/widget/TransportControlView;->mContext:Landroid/content/Context;
 
     invoke-direct {v0, v1}, Landroid/media/AudioManager;-><init>(Landroid/content/Context;)V
 

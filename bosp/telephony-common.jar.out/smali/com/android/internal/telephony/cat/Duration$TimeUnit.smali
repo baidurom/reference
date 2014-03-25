@@ -48,7 +48,7 @@
 
     const/4 v2, 0x0
 
-    .line 33
+    .line 30
     new-instance v0, Lcom/android/internal/telephony/cat/Duration$TimeUnit;
 
     const-string v1, "MINUTE"
@@ -57,7 +57,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/Duration$TimeUnit;->MINUTE:Lcom/android/internal/telephony/cat/Duration$TimeUnit;
 
-    .line 34
+    .line 31
     new-instance v0, Lcom/android/internal/telephony/cat/Duration$TimeUnit;
 
     const-string v1, "SECOND"
@@ -66,7 +66,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/Duration$TimeUnit;->SECOND:Lcom/android/internal/telephony/cat/Duration$TimeUnit;
 
-    .line 35
+    .line 32
     new-instance v0, Lcom/android/internal/telephony/cat/Duration$TimeUnit;
 
     const-string v1, "TENTH_SECOND"
@@ -75,7 +75,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/Duration$TimeUnit;->TENTH_SECOND:Lcom/android/internal/telephony/cat/Duration$TimeUnit;
 
-    .line 32
+    .line 29
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/android/internal/telephony/cat/Duration$TimeUnit;
@@ -109,13 +109,13 @@
     .end annotation
 
     .prologue
-    .line 39
+    .line 36
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 40
+    .line 37
     iput p3, p0, Lcom/android/internal/telephony/cat/Duration$TimeUnit;->mValue:I
 
-    .line 41
+    .line 38
     return-void
 .end method
 
@@ -124,7 +124,7 @@
     .parameter "name"
 
     .prologue
-    .line 32
+    .line 29
     const-class v0, Lcom/android/internal/telephony/cat/Duration$TimeUnit;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -140,7 +140,7 @@
     .locals 1
 
     .prologue
-    .line 32
+    .line 29
     sget-object v0, Lcom/android/internal/telephony/cat/Duration$TimeUnit;->$VALUES:[Lcom/android/internal/telephony/cat/Duration$TimeUnit;
 
     invoke-virtual {v0}, [Lcom/android/internal/telephony/cat/Duration$TimeUnit;->clone()Ljava/lang/Object;
@@ -158,7 +158,7 @@
     .locals 1
 
     .prologue
-    .line 44
+    .line 41
     iget v0, p0, Lcom/android/internal/telephony/cat/Duration$TimeUnit;->mValue:I
 
     return v0

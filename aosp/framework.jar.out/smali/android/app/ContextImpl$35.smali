@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 494
+    .line 547
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -28,26 +28,18 @@
 
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Ljava/lang/Object;
-    .locals 3
+    .locals 2
     .parameter "ctx"
 
     .prologue
-    .line 496
-    const-string/jumbo v1, "serial"
+    .line 549
+    new-instance v0, Landroid/telephony/TelephonyManager;
 
-    invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+    invoke-virtual {p1}, Landroid/app/ContextImpl;->getOuterContext()Landroid/content/Context;
 
-    move-result-object v0
+    move-result-object v1
 
-    .line 497
-    .local v0, b:Landroid/os/IBinder;
-    new-instance v1, Landroid/hardware/SerialManager;
+    invoke-direct {v0, v1}, Landroid/telephony/TelephonyManager;-><init>(Landroid/content/Context;)V
 
-    invoke-static {v0}, Landroid/hardware/ISerialManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/hardware/ISerialManager;
-
-    move-result-object v2
-
-    invoke-direct {v1, p1, v2}, Landroid/hardware/SerialManager;-><init>(Landroid/content/Context;Landroid/hardware/ISerialManager;)V
-
-    return-object v1
+    return-object v0
 .end method

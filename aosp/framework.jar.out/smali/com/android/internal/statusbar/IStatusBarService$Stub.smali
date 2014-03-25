@@ -32,9 +32,13 @@
 
 .field static final TRANSACTION_disable:I = 0x3
 
+.field static final TRANSACTION_dispatchStatusBarKeyEvent:I = 0x19
+
 .field static final TRANSACTION_expandNotificationsPanel:I = 0x1
 
 .field static final TRANSACTION_expandSettingsPanel:I = 0x9
+
+.field static final TRANSACTION_hideSimIndicator:I = 0x17
 
 .field static final TRANSACTION_onClearAllNotifications:I = 0xf
 
@@ -63,6 +67,10 @@
 .field static final TRANSACTION_setImeWindowStatus:I = 0x8
 
 .field static final TRANSACTION_setSystemUiVisibility:I = 0x11
+
+.field static final TRANSACTION_showApplicationGuide:I = 0x18
+
+.field static final TRANSACTION_showSimIndicator:I = 0x16
 
 .field static final TRANSACTION_toggleRecentApps:I = 0x13
 
@@ -158,7 +166,7 @@
     .line 39
     sparse-switch p1, :sswitch_data_0
 
-    .line 285
+    .line 324
     invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
@@ -953,6 +961,124 @@
 
     goto/16 :goto_0
 
+    .line 286
+    :sswitch_16
+    const-string v1, "com.android.internal.statusbar.IStatusBarService"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 288
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 289
+    .local v2, _arg0:Ljava/lang/String;
+    invoke-virtual {p0, v2}, Lcom/android/internal/statusbar/IStatusBarService$Stub;->showSimIndicator(Ljava/lang/String;)V
+
+    .line 290
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 291
+    const/4 v1, 0x1
+
+    goto/16 :goto_0
+
+    .line 295
+    .end local v2           #_arg0:Ljava/lang/String;
+    :sswitch_17
+    const-string v1, "com.android.internal.statusbar.IStatusBarService"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 296
+    invoke-virtual {p0}, Lcom/android/internal/statusbar/IStatusBarService$Stub;->hideSimIndicator()V
+
+    .line 297
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 298
+    const/4 v1, 0x1
+
+    goto/16 :goto_0
+
+    .line 302
+    :sswitch_18
+    const-string v1, "com.android.internal.statusbar.IStatusBarService"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 304
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 305
+    .restart local v2       #_arg0:Ljava/lang/String;
+    invoke-virtual {p0, v2}, Lcom/android/internal/statusbar/IStatusBarService$Stub;->showApplicationGuide(Ljava/lang/String;)V
+
+    .line 306
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 307
+    const/4 v1, 0x1
+
+    goto/16 :goto_0
+
+    .line 311
+    .end local v2           #_arg0:Ljava/lang/String;
+    :sswitch_19
+    const-string v1, "com.android.internal.statusbar.IStatusBarService"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 313
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v1
+
+    if-eqz v1, :cond_5
+
+    .line 314
+    sget-object v1, Landroid/view/KeyEvent;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    move-object/from16 v0, p2
+
+    invoke-interface {v1, v0}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/view/KeyEvent;
+
+    .line 319
+    .local v2, _arg0:Landroid/view/KeyEvent;
+    :goto_6
+    invoke-virtual {p0, v2}, Lcom/android/internal/statusbar/IStatusBarService$Stub;->dispatchStatusBarKeyEvent(Landroid/view/KeyEvent;)V
+
+    .line 320
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 321
+    const/4 v1, 0x1
+
+    goto/16 :goto_0
+
+    .line 317
+    .end local v2           #_arg0:Landroid/view/KeyEvent;
+    :cond_5
+    const/4 v2, 0x0
+
+    .restart local v2       #_arg0:Landroid/view/KeyEvent;
+    goto :goto_6
+
     .line 39
     :sswitch_data_0
     .sparse-switch
@@ -977,6 +1103,10 @@
         0x13 -> :sswitch_13
         0x14 -> :sswitch_14
         0x15 -> :sswitch_15
+        0x16 -> :sswitch_16
+        0x17 -> :sswitch_17
+        0x18 -> :sswitch_18
+        0x19 -> :sswitch_19
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

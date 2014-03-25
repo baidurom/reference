@@ -27,13 +27,13 @@
     .parameter "remote"
 
     .prologue
-    .line 107
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 109
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 108
+    .line 110
     iput-object p1, p0, Landroid/location/IGpsStatusListener$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    .line 109
+    .line 111
     return-void
 .end method
 
@@ -43,7 +43,7 @@
     .locals 1
 
     .prologue
-    .line 112
+    .line 114
     iget-object v0, p0, Landroid/location/IGpsStatusListener$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     return-object v0
@@ -53,7 +53,7 @@
     .locals 1
 
     .prologue
-    .line 116
+    .line 118
     const-string v0, "android.location.IGpsStatusListener"
 
     return-object v0
@@ -69,22 +69,22 @@
     .end annotation
 
     .prologue
-    .line 142
+    .line 144
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 144
+    .line 146
     .local v0, _data:Landroid/os/Parcel;
     :try_start_0
     const-string v1, "android.location.IGpsStatusListener"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 145
+    .line 147
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 146
+    .line 148
     iget-object v1, p0, Landroid/location/IGpsStatusListener$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v2, 0x3
@@ -97,13 +97,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 149
+    .line 151
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 151
+    .line 153
     return-void
 
-    .line 149
+    .line 151
     :catchall_0
     move-exception v1
 
@@ -121,19 +121,19 @@
     .end annotation
 
     .prologue
-    .line 120
+    .line 122
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 122
+    .line 124
     .local v0, _data:Landroid/os/Parcel;
     :try_start_0
     const-string v1, "android.location.IGpsStatusListener"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 123
+    .line 125
     iget-object v1, p0, Landroid/location/IGpsStatusListener$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v2, 0x1
@@ -146,13 +146,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 126
+    .line 128
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 128
+    .line 130
     return-void
 
-    .line 126
+    .line 128
     :catchall_0
     move-exception v1
 
@@ -170,19 +170,19 @@
     .end annotation
 
     .prologue
-    .line 131
+    .line 133
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 133
+    .line 135
     .local v0, _data:Landroid/os/Parcel;
     :try_start_0
     const-string v1, "android.location.IGpsStatusListener"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 134
+    .line 136
     iget-object v1, p0, Landroid/location/IGpsStatusListener$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v2, 0x2
@@ -195,13 +195,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 137
+    .line 139
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 139
+    .line 141
     return-void
 
-    .line 137
+    .line 139
     :catchall_0
     move-exception v1
 
@@ -221,25 +221,25 @@
     .end annotation
 
     .prologue
-    .line 173
+    .line 181
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 175
+    .line 183
     .local v0, _data:Landroid/os/Parcel;
     :try_start_0
     const-string v1, "android.location.IGpsStatusListener"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 176
+    .line 184
     invoke-virtual {v0, p1, p2}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 177
+    .line 185
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 178
+    .line 186
     iget-object v1, p0, Landroid/location/IGpsStatusListener$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v2, 0x5
@@ -252,13 +252,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 181
+    .line 189
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 183
+    .line 191
     return-void
 
-    .line 181
+    .line 189
     :catchall_0
     move-exception v1
 
@@ -267,7 +267,7 @@
     throw v1
 .end method
 
-.method public onSvStatusChanged(I[I[F[F[FIII)V
+.method public onSvStatusChanged(I[I[F[F[F[I[I[II)V
     .locals 5
     .parameter "svCount"
     .parameter "prns"
@@ -277,6 +277,7 @@
     .parameter "ephemerisMask"
     .parameter "almanacMask"
     .parameter "usedInFixMask"
+    .parameter "timeToFirstFix"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -284,43 +285,46 @@
     .end annotation
 
     .prologue
-    .line 154
+    .line 161
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 156
+    .line 163
     .local v0, _data:Landroid/os/Parcel;
     :try_start_0
     const-string v1, "android.location.IGpsStatusListener"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 157
+    .line 164
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 158
+    .line 165
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeIntArray([I)V
 
-    .line 159
+    .line 166
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeFloatArray([F)V
 
-    .line 160
+    .line 167
     invoke-virtual {v0, p4}, Landroid/os/Parcel;->writeFloatArray([F)V
 
-    .line 161
+    .line 168
     invoke-virtual {v0, p5}, Landroid/os/Parcel;->writeFloatArray([F)V
 
-    .line 162
-    invoke-virtual {v0, p6}, Landroid/os/Parcel;->writeInt(I)V
+    .line 169
+    invoke-virtual {v0, p6}, Landroid/os/Parcel;->writeIntArray([I)V
 
-    .line 163
-    invoke-virtual {v0, p7}, Landroid/os/Parcel;->writeInt(I)V
+    .line 170
+    invoke-virtual {v0, p7}, Landroid/os/Parcel;->writeIntArray([I)V
 
-    .line 164
-    invoke-virtual {v0, p8}, Landroid/os/Parcel;->writeInt(I)V
+    .line 171
+    invoke-virtual {v0, p8}, Landroid/os/Parcel;->writeIntArray([I)V
 
-    .line 165
+    .line 172
+    invoke-virtual {v0, p9}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 173
     iget-object v1, p0, Landroid/location/IGpsStatusListener$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v2, 0x4
@@ -333,13 +337,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 168
+    .line 176
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 170
+    .line 178
     return-void
 
-    .line 168
+    .line 176
     :catchall_0
     move-exception v1
 

@@ -1139,7 +1139,7 @@
 
     .line 402
     :cond_5
-    const-string v0, "loop"
+    const-string/jumbo v0, "loop"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

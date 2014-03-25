@@ -143,7 +143,7 @@
     .parameter "start_top"
 
     .prologue
-    .line 48
+    .line 47
     move-object/from16 v0, p0
 
     iget-object v12, v0, Landroid/webkit/MagnifierSelectionPopupWindowView;->mTarget:Landroid/webkit/WebView;
@@ -154,7 +154,7 @@
 
     invoke-virtual {v12, v13}, Landroid/webkit/WebView;->getLocationInWindow([I)V
 
-    .line 50
+    .line 49
     move-object/from16 v0, p0
 
     iget-object v12, v0, Landroid/webkit/MagnifierSelectionPopupWindowView;->mPopupWindow:Landroid/widget/PopupWindow;
@@ -165,7 +165,7 @@
 
     if-nez v12, :cond_0
 
-    .line 51
+    .line 50
     move-object/from16 v0, p0
 
     iget-object v12, v0, Landroid/webkit/MagnifierSelectionPopupWindowView;->mPopupWindow:Landroid/widget/PopupWindow;
@@ -196,7 +196,7 @@
 
     invoke-virtual/range {v12 .. v16}, Landroid/widget/PopupWindow;->showAtLocation(Landroid/view/View;III)V
 
-    .line 52
+    .line 51
     move-object/from16 v0, p0
 
     iget-object v12, v0, Landroid/webkit/MagnifierSelectionPopupWindowView;->mPopupWindow:Landroid/widget/PopupWindow;
@@ -219,13 +219,13 @@
 
     invoke-virtual {v12, v13, v14}, Landroid/widget/PopupWindow;->update(II)V
 
-    .line 55
+    .line 54
     :cond_0
     const/4 v12, 0x4
 
     new-array v6, v12, [I
 
-    .line 56
+    .line 55
     .local v6, handles:[I
     move-object/from16 v0, p0
 
@@ -233,7 +233,7 @@
 
     invoke-virtual {v12, v6}, Landroid/webkit/WebViewClassic;->getSelectionHandles([I)V
 
-    .line 57
+    .line 56
     move-object/from16 v0, p0
 
     iget-object v12, v0, Landroid/webkit/MagnifierSelectionPopupWindowView;->mWebView:Landroid/webkit/WebViewClassic;
@@ -246,7 +246,7 @@
 
     move-result v9
 
-    .line 58
+    .line 57
     .local v9, start_x:I
     move-object/from16 v0, p0
 
@@ -260,7 +260,7 @@
 
     move-result v10
 
-    .line 59
+    .line 58
     .local v10, start_y:I
     move-object/from16 v0, p0
 
@@ -274,7 +274,7 @@
 
     move-result v4
 
-    .line 60
+    .line 59
     .local v4, end_x:I
     move-object/from16 v0, p0
 
@@ -288,7 +288,7 @@
 
     move-result v5
 
-    .line 62
+    .line 61
     .local v5, end_y:I
     move-object/from16 v0, p0
 
@@ -308,7 +308,7 @@
 
     move-result v2
 
-    .line 63
+    .line 62
     .local v2, contentX:I
     move-object/from16 v0, p0
 
@@ -328,27 +328,27 @@
 
     move-result v3
 
-    .line 67
+    .line 66
     .local v3, contentY:I
     if-eqz p1, :cond_1
 
     move v11, v10
 
-    .line 68
+    .line 67
     .local v11, top:I
     :goto_0
     if-eqz p1, :cond_2
 
     move v8, v9
 
-    .line 70
+    .line 69
     .local v8, left:I
     :goto_1
     const/4 v12, 0x5
 
     new-array v7, v12, [I
 
-    .line 71
+    .line 70
     .local v7, handlesInScreenCordinate:[I
     const/4 v12, 0x0
 
@@ -364,7 +364,7 @@
 
     aput v13, v7, v12
 
-    .line 72
+    .line 71
     const/4 v12, 0x1
 
     move-object/from16 v0, p0
@@ -379,7 +379,7 @@
 
     aput v13, v7, v12
 
-    .line 73
+    .line 72
     const/4 v12, 0x2
 
     move-object/from16 v0, p0
@@ -394,7 +394,7 @@
 
     aput v13, v7, v12
 
-    .line 74
+    .line 73
     const/4 v12, 0x3
 
     move-object/from16 v0, p0
@@ -409,7 +409,7 @@
 
     aput v13, v7, v12
 
-    .line 76
+    .line 75
     const/4 v12, 0x4
 
     move-object/from16 v0, p0
@@ -436,7 +436,7 @@
 
     aput v13, v7, v12
 
-    .line 90
+    .line 89
     move-object/from16 v0, p0
 
     iget-object v12, v0, Landroid/webkit/MagnifierSelectionPopupWindowView;->mBounds:Landroid/graphics/Rect;
@@ -455,7 +455,7 @@
 
     iput v13, v12, Landroid/graphics/Rect;->left:I
 
-    .line 91
+    .line 90
     move-object/from16 v0, p0
 
     iget-object v12, v0, Landroid/webkit/MagnifierSelectionPopupWindowView;->mBounds:Landroid/graphics/Rect;
@@ -488,7 +488,7 @@
 
     iput v13, v12, Landroid/graphics/Rect;->top:I
 
-    .line 93
+    .line 92
     move-object/from16 v0, p0
 
     iget-object v12, v0, Landroid/webkit/MagnifierSelectionPopupWindowView;->mMagnifierView:Landroid/webkit/MagnifierView;
@@ -503,7 +503,7 @@
 
     invoke-virtual {v12, v13}, Landroid/webkit/MagnifierView;->setTranslationX(F)V
 
-    .line 94
+    .line 93
     move-object/from16 v0, p0
 
     iget-object v12, v0, Landroid/webkit/MagnifierSelectionPopupWindowView;->mMagnifierView:Landroid/webkit/MagnifierView;
@@ -518,7 +518,7 @@
 
     invoke-virtual {v12, v13}, Landroid/webkit/MagnifierView;->setTranslationY(F)V
 
-    .line 95
+    .line 94
     move-object/from16 v0, p0
 
     iget-object v12, v0, Landroid/webkit/MagnifierSelectionPopupWindowView;->mMagnifierView:Landroid/webkit/MagnifierView;
@@ -529,7 +529,7 @@
 
     invoke-virtual {v12, v0, v1}, Landroid/webkit/MagnifierView;->updateMagnifierPosition(II)V
 
-    .line 96
+    .line 95
     return-void
 
     .end local v7           #handlesInScreenCordinate:[I
@@ -538,14 +538,14 @@
     :cond_1
     move v11, v5
 
-    .line 67
+    .line 66
     goto/16 :goto_0
 
     .restart local v11       #top:I
     :cond_2
     move v8, v4
 
-    .line 68
+    .line 67
     goto/16 :goto_1
 .end method
 
@@ -553,11 +553,11 @@
     .locals 1
 
     .prologue
-    .line 99
+    .line 98
     iget-object v0, p0, Landroid/webkit/MagnifierSelectionPopupWindowView;->mMagnifierView:Landroid/webkit/MagnifierView;
 
     invoke-virtual {v0}, Landroid/webkit/MagnifierView;->invalidate()V
 
-    .line 100
+    .line 99
     return-void
 .end method

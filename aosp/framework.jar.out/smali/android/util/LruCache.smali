@@ -49,7 +49,7 @@
     .prologue
     .line 80
     .local p0, this:Landroid/util/LruCache;,"Landroid/util/LruCache<TK;TV;>;"
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 81
     if-gtz p1, :cond_0

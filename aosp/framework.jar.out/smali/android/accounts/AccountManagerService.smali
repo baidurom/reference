@@ -6054,7 +6054,7 @@
     .restart local v22       #i$:Ljava/util/Iterator;
     :cond_3
     :try_start_3
-    invoke-virtual/range {v16 .. v17}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual/range {v16 .. v17}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v15
 
@@ -6076,7 +6076,7 @@
 
     move-object/from16 v1, v17
 
-    invoke-virtual {v0, v1, v15}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1, v15}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 361
     :cond_4
@@ -6090,7 +6090,7 @@
     .end local v15           #accountNames:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     .end local v17           #accountType:Ljava/lang/String;
     :cond_5
-    invoke-virtual/range {v16 .. v16}, Ljava/util/LinkedHashMap;->entrySet()Ljava/util/Set;
+    invoke-virtual/range {v16 .. v16}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
     move-result-object v3
 

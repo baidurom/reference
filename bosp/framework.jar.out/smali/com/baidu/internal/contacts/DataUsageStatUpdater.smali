@@ -91,7 +91,7 @@
 
     .prologue
     .line 87
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 88
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -219,7 +219,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "internalUpdateWithAddress: "
+    const-string/jumbo v2, "internalUpdateWithAddress: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -953,7 +953,7 @@
 
     .line 427
     .local v17, values:Landroid/content/ContentValues;
-    const-string v20, "last_time_contacted"
+    const-string/jumbo v20, "last_time_contacted"
 
     invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -1204,7 +1204,7 @@
     .prologue
     .line 116
     .local p1, addresses:Ljava/util/Collection;,"Ljava/util/Collection<Ljava/lang/String;>;"
-    const-string v0, "long_text"
+    const-string/jumbo v0, "long_text"
 
     const/4 v1, 0x0
 
@@ -1935,7 +1935,7 @@
     .end local v6           #token:Landroid/text/util/Rfc822Token;
     .end local v7           #tokens:[Landroid/text/util/Rfc822Token;
     :cond_2
-    const-string v9, "long_text"
+    const-string/jumbo v9, "long_text"
 
     invoke-direct {p0, v0, v9, v8}, Lcom/baidu/internal/contacts/DataUsageStatUpdater;->internalUpdateWithAddress(Ljava/util/Collection;Ljava/lang/String;Z)Z
 

@@ -109,7 +109,7 @@
     const/high16 v1, 0x3f80
 
     .line 95
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 51
     const/high16 v0, 0x3f00
@@ -923,12 +923,12 @@
     .line 247
     iget-object v6, p0, Lcom/android/server/display/OverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
 
-    iput v3, v6, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iput v3, v6, Landroid/view/WindowManager$LayoutParams;->width:I
 
     .line 248
     iget-object v6, p0, Lcom/android/server/display/OverlayDisplayWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
 
-    iput v0, v6, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iput v0, v6, Landroid/view/WindowManager$LayoutParams;->height:I
 
     .line 249
     return-void

@@ -36,14 +36,14 @@
 
     .prologue
     .line 39
-    iput p1, p0, Landroid/filterfw/core/FrameFormat;->mBaseType:I
+    iput p1, p0, Landroid/filterfw/core/MutableFrameFormat;->mBaseType:I
 
     .line 40
     invoke-static {p1}, Landroid/filterfw/core/MutableFrameFormat;->bytesPerSampleOf(I)I
 
     move-result v0
 
-    iput v0, p0, Landroid/filterfw/core/FrameFormat;->mBytesPerSample:I
+    iput v0, p0, Landroid/filterfw/core/MutableFrameFormat;->mBytesPerSample:I
 
     .line 41
     return-void
@@ -55,12 +55,12 @@
 
     .prologue
     .line 48
-    iput p1, p0, Landroid/filterfw/core/FrameFormat;->mBytesPerSample:I
+    iput p1, p0, Landroid/filterfw/core/MutableFrameFormat;->mBytesPerSample:I
 
     .line 49
     const/4 v0, -0x1
 
-    iput v0, p0, Landroid/filterfw/core/FrameFormat;->mSize:I
+    iput v0, p0, Landroid/filterfw/core/MutableFrameFormat;->mSize:I
 
     .line 50
     return-void
@@ -74,7 +74,7 @@
     .line 82
     new-array v0, p1, [I
 
-    iput-object v0, p0, Landroid/filterfw/core/FrameFormat;->mDimensions:[I
+    iput-object v0, p0, Landroid/filterfw/core/MutableFrameFormat;->mDimensions:[I
 
     .line 83
     return-void
@@ -97,12 +97,12 @@
     aput p1, v0, v1
 
     .line 60
-    iput-object v0, p0, Landroid/filterfw/core/FrameFormat;->mDimensions:[I
+    iput-object v0, p0, Landroid/filterfw/core/MutableFrameFormat;->mDimensions:[I
 
     .line 61
     const/4 v1, -0x1
 
-    iput v1, p0, Landroid/filterfw/core/FrameFormat;->mSize:I
+    iput v1, p0, Landroid/filterfw/core/MutableFrameFormat;->mSize:I
 
     .line 62
     return-void
@@ -131,12 +131,12 @@
     aput p2, v0, v1
 
     .line 68
-    iput-object v0, p0, Landroid/filterfw/core/FrameFormat;->mDimensions:[I
+    iput-object v0, p0, Landroid/filterfw/core/MutableFrameFormat;->mDimensions:[I
 
     .line 69
     const/4 v1, -0x1
 
-    iput v1, p0, Landroid/filterfw/core/FrameFormat;->mSize:I
+    iput v1, p0, Landroid/filterfw/core/MutableFrameFormat;->mSize:I
 
     .line 70
     return-void
@@ -171,12 +171,12 @@
     aput p3, v0, v1
 
     .line 77
-    iput-object v0, p0, Landroid/filterfw/core/FrameFormat;->mDimensions:[I
+    iput-object v0, p0, Landroid/filterfw/core/MutableFrameFormat;->mDimensions:[I
 
     .line 78
     const/4 v1, -0x1
 
-    iput v1, p0, Landroid/filterfw/core/FrameFormat;->mSize:I
+    iput v1, p0, Landroid/filterfw/core/MutableFrameFormat;->mSize:I
 
     .line 79
     return-void
@@ -193,12 +193,12 @@
     const/4 v0, 0x0
 
     :goto_0
-    iput-object v0, p0, Landroid/filterfw/core/FrameFormat;->mDimensions:[I
+    iput-object v0, p0, Landroid/filterfw/core/MutableFrameFormat;->mDimensions:[I
 
     .line 54
     const/4 v0, -0x1
 
-    iput v0, p0, Landroid/filterfw/core/FrameFormat;->mSize:I
+    iput v0, p0, Landroid/filterfw/core/MutableFrameFormat;->mSize:I
 
     .line 55
     return-void
@@ -221,7 +221,7 @@
 
     .prologue
     .line 90
-    iget-object v0, p0, Landroid/filterfw/core/FrameFormat;->mMetaData:Landroid/filterfw/core/KeyValueMap;
+    iget-object v0, p0, Landroid/filterfw/core/MutableFrameFormat;->mMetaData:Landroid/filterfw/core/KeyValueMap;
 
     if-nez v0, :cond_0
 
@@ -230,11 +230,11 @@
 
     invoke-direct {v0}, Landroid/filterfw/core/KeyValueMap;-><init>()V
 
-    iput-object v0, p0, Landroid/filterfw/core/FrameFormat;->mMetaData:Landroid/filterfw/core/KeyValueMap;
+    iput-object v0, p0, Landroid/filterfw/core/MutableFrameFormat;->mMetaData:Landroid/filterfw/core/KeyValueMap;
 
     .line 93
     :cond_0
-    iget-object v0, p0, Landroid/filterfw/core/FrameFormat;->mMetaData:Landroid/filterfw/core/KeyValueMap;
+    iget-object v0, p0, Landroid/filterfw/core/MutableFrameFormat;->mMetaData:Landroid/filterfw/core/KeyValueMap;
 
     invoke-virtual {v0, p1, p2}, Landroid/filterfw/core/KeyValueMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -248,7 +248,7 @@
 
     .prologue
     .line 86
-    iput-object p1, p0, Landroid/filterfw/core/FrameFormat;->mObjectClass:Ljava/lang/Class;
+    iput-object p1, p0, Landroid/filterfw/core/MutableFrameFormat;->mObjectClass:Ljava/lang/Class;
 
     .line 87
     return-void
@@ -260,7 +260,7 @@
 
     .prologue
     .line 44
-    iput p1, p0, Landroid/filterfw/core/FrameFormat;->mTarget:I
+    iput p1, p0, Landroid/filterfw/core/MutableFrameFormat;->mTarget:I
 
     .line 45
     return-void

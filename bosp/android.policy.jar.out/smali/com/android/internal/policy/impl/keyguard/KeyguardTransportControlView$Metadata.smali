@@ -35,7 +35,7 @@
     .line 263
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView$Metadata;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

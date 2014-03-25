@@ -21,21 +21,21 @@
     .parameter "enabled"
 
     .prologue
-    .line 250
+    .line 255
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
-    .line 251
+    .line 256
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    .line 252
+    .line 257
     .local v1, resolver:Landroid/content/ContentResolver;
     new-instance v0, Lcom/android/internal/telephony/SmsUsageMonitor$SettingsObserver;
 
     invoke-direct {v0, p0, p1, p2}, Lcom/android/internal/telephony/SmsUsageMonitor$SettingsObserver;-><init>(Landroid/os/Handler;Landroid/content/Context;Ljava/util/concurrent/atomic/AtomicBoolean;)V
 
-    .line 253
+    .line 258
     .local v0, globalObserver:Landroid/database/ContentObserver;
     const-string v2, "sms_short_code_confirmation"
 
@@ -47,6 +47,6 @@
 
     invoke-virtual {v1, v2, v3, v0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 255
+    .line 260
     return-void
 .end method

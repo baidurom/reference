@@ -59,7 +59,7 @@
 
     .prologue
     .line 175
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 176
     new-instance v0, Ljava/util/HashMap;
@@ -89,7 +89,7 @@
     .prologue
     .line 168
     .local p1, map:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;"
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 169
     iput-object p1, p0, Landroid/media/MediaFormat;->mMap:Ljava/util/Map;

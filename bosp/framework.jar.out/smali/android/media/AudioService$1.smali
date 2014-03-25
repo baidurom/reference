@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 282
+    .line 320
     iput-object p1, p0, Landroid/media/AudioService$1;->this$0:Landroid/media/AudioService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,16 +48,46 @@
 
     const/4 v3, 0x0
 
-    .line 284
+    .line 322
     sparse-switch p1, :sswitch_data_0
 
-    .line 302
+    .line 342
     :cond_0
     :goto_0
     return-void
 
-    .line 286
+    .line 324
     :sswitch_0
+    const-string v0, "AudioService"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, " Enter AudioSystem.AUDIO_STATUS_SERVER_DIED callback:"
+
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v4, p0, Landroid/media/AudioService$1;->this$0:Landroid/media/AudioService;
+
+    #getter for: Landroid/media/AudioService;->mMediaServerOk:Z
+    invoke-static {v4}, Landroid/media/AudioService;->access$000(Landroid/media/AudioService;)Z
+
+    move-result v4
+
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 325
     iget-object v0, p0, Landroid/media/AudioService$1;->this$0:Landroid/media/AudioService;
 
     #getter for: Landroid/media/AudioService;->mMediaServerOk:Z
@@ -67,7 +97,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 287
+    .line 326
     iget-object v0, p0, Landroid/media/AudioService$1;->this$0:Landroid/media/AudioService;
 
     #getter for: Landroid/media/AudioService;->mAudioHandler:Landroid/media/AudioService$AudioHandler;
@@ -84,7 +114,7 @@
     #calls: Landroid/media/AudioService;->sendMsg(Landroid/os/Handler;IIIILjava/lang/Object;I)V
     invoke-static/range {v0 .. v6}, Landroid/media/AudioService;->access$200(Landroid/os/Handler;IIIILjava/lang/Object;I)V
 
-    .line 289
+    .line 328
     iget-object v0, p0, Landroid/media/AudioService$1;->this$0:Landroid/media/AudioService;
 
     #setter for: Landroid/media/AudioService;->mMediaServerOk:Z
@@ -92,8 +122,38 @@
 
     goto :goto_0
 
-    .line 293
+    .line 332
     :sswitch_1
+    const-string v0, "AudioService"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, " Enter AudioSystem.AUDIO_STATUS_OK callback:"
+
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v4, p0, Landroid/media/AudioService$1;->this$0:Landroid/media/AudioService;
+
+    #getter for: Landroid/media/AudioService;->mMediaServerOk:Z
+    invoke-static {v4}, Landroid/media/AudioService;->access$000(Landroid/media/AudioService;)Z
+
+    move-result v4
+
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 333
     iget-object v0, p0, Landroid/media/AudioService$1;->this$0:Landroid/media/AudioService;
 
     #getter for: Landroid/media/AudioService;->mMediaServerOk:Z
@@ -103,7 +163,7 @@
 
     if-nez v0, :cond_0
 
-    .line 294
+    .line 334
     iget-object v0, p0, Landroid/media/AudioService$1;->this$0:Landroid/media/AudioService;
 
     #getter for: Landroid/media/AudioService;->mAudioHandler:Landroid/media/AudioService$AudioHandler;
@@ -120,7 +180,7 @@
     #calls: Landroid/media/AudioService;->sendMsg(Landroid/os/Handler;IIIILjava/lang/Object;I)V
     invoke-static/range {v0 .. v6}, Landroid/media/AudioService;->access$200(Landroid/os/Handler;IIIILjava/lang/Object;I)V
 
-    .line 296
+    .line 336
     iget-object v0, p0, Landroid/media/AudioService$1;->this$0:Landroid/media/AudioService;
 
     #setter for: Landroid/media/AudioService;->mMediaServerOk:Z
@@ -128,7 +188,7 @@
 
     goto :goto_0
 
-    .line 284
+    .line 322
     :sswitch_data_0
     .sparse-switch
         0x0 -> :sswitch_1

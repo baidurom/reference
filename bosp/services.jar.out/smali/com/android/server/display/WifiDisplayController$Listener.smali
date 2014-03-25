@@ -30,6 +30,9 @@
 .method public abstract onDisplayDisconnected()V
 .end method
 
+.method public abstract onDisplayDisconnecting()V
+.end method
+
 .method public abstract onFeatureStateChanged(I)V
 .end method
 

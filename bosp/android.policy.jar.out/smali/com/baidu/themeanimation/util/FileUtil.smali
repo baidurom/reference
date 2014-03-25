@@ -138,14 +138,14 @@
     .line 62
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Lcom/baidu/themeanimation/util/FileUtil;->mInstanceSync:Ljava/lang/Object;
 
     .line 63
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Lcom/baidu/themeanimation/util/FileUtil;->mExecuteServiceSync:Ljava/lang/Object;
 
@@ -159,7 +159,7 @@
     const/4 v1, 0x0
 
     .line 30
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 37
     iput-boolean v1, p0, Lcom/baidu/themeanimation/util/FileUtil;->mIsWallpaperChanged:Z
@@ -191,7 +191,7 @@
     .line 67
     iput-boolean v1, p0, Lcom/baidu/themeanimation/util/FileUtil;->mLoadImmediate:Z
 
-    .line 440
+    .line 474
     return-void
 .end method
 
@@ -279,7 +279,7 @@
     .parameter "file"
 
     .prologue
-    .line 284
+    .line 318
     const-string v0, "jpeg"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
@@ -363,13 +363,13 @@
     .parameter "isMask"
 
     .prologue
-    .line 374
+    .line 408
     :try_start_0
     iget-object v1, p0, Lcom/baidu/themeanimation/util/FileUtil;->mExecutorService:Ljava/util/concurrent/ExecutorService;
 
     if-eqz v1, :cond_0
 
-    .line 375
+    .line 409
     iget-object v1, p0, Lcom/baidu/themeanimation/util/FileUtil;->mExecutorService:Ljava/util/concurrent/ExecutorService;
 
     new-instance v2, Lcom/baidu/themeanimation/util/FileUtil$LoadBitmapTask;
@@ -380,16 +380,16 @@
     :try_end_0
     .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 380
+    .line 414
     :cond_0
     :goto_0
     return-void
 
-    .line 377
+    .line 411
     :catch_0
     move-exception v0
 
-    .line 378
+    .line 412
     .local v0, e:Ljava/util/concurrent/RejectedExecutionException;
     invoke-virtual {v0}, Ljava/util/concurrent/RejectedExecutionException;->printStackTrace()V
 
@@ -402,30 +402,30 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 291
+    .line 325
     invoke-virtual {p0}, Lcom/baidu/themeanimation/util/FileUtil;->getWallpaperChanged()Z
 
     move-result v2
 
     if-eqz v2, :cond_2
 
-    .line 293
+    .line 327
     :try_start_0
     iget-object v2, p0, Lcom/baidu/themeanimation/util/FileUtil;->mLockWallpaperBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v2, :cond_0
 
-    .line 294
+    .line 328
     iget-object v2, p0, Lcom/baidu/themeanimation/util/FileUtil;->mLockWallpaperBitmap:Landroid/graphics/Bitmap;
 
     invoke-virtual {v2}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 295
+    .line 329
     const/4 v2, 0x0
 
     iput-object v2, p0, Lcom/baidu/themeanimation/util/FileUtil;->mLockWallpaperBitmap:Landroid/graphics/Bitmap;
 
-    .line 298
+    .line 332
     :cond_0
     new-instance v1, Ljava/io/File;
 
@@ -435,7 +435,7 @@
 
     invoke-direct {v1, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 299
+    .line 333
     .local v1, wallpaperFile:Ljava/io/File;
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
@@ -449,7 +449,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 300
+    .line 334
     invoke-virtual {p0}, Lcom/baidu/themeanimation/util/FileUtil;->getLockWallpaperFilePath()Ljava/lang/String;
 
     move-result-object v2
@@ -460,12 +460,12 @@
 
     iput-object v2, p0, Lcom/baidu/themeanimation/util/FileUtil;->mLockWallpaperBitmap:Landroid/graphics/Bitmap;
 
-    .line 301
+    .line 335
     iget-object v2, p0, Lcom/baidu/themeanimation/util/FileUtil;->mLockWallpaperBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v2, :cond_1
 
-    .line 302
+    .line 336
     iget-object v2, p0, Lcom/baidu/themeanimation/util/FileUtil;->mLockWallpaperBitmap:Landroid/graphics/Bitmap;
 
     sget v3, Lcom/baidu/themeanimation/util/FileUtil;->REAL_SCREEN_WIDTH:I
@@ -500,11 +500,11 @@
     .catch Ljava/lang/OutOfMemoryError; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 312
+    .line 346
     :cond_1
     invoke-virtual {p0, v6}, Lcom/baidu/themeanimation/util/FileUtil;->setWallpaperChanged(Z)V
 
-    .line 315
+    .line 349
     .end local v1           #wallpaperFile:Ljava/io/File;
     :cond_2
     :goto_0
@@ -512,35 +512,35 @@
 
     return-object v2
 
-    .line 307
+    .line 341
     :catch_0
     move-exception v0
 
-    .line 308
+    .line 342
     .local v0, e:Ljava/lang/OutOfMemoryError;
     :try_start_1
     invoke-virtual {v0}, Ljava/lang/OutOfMemoryError;->printStackTrace()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 312
+    .line 346
     invoke-virtual {p0, v6}, Lcom/baidu/themeanimation/util/FileUtil;->setWallpaperChanged(Z)V
 
     goto :goto_0
 
-    .line 309
+    .line 343
     .end local v0           #e:Ljava/lang/OutOfMemoryError;
     :catch_1
     move-exception v0
 
-    .line 310
+    .line 344
     .local v0, e:Ljava/lang/Exception;
     :try_start_2
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 312
+    .line 346
     invoke-virtual {p0, v6}, Lcom/baidu/themeanimation/util/FileUtil;->setWallpaperChanged(Z)V
 
     goto :goto_0
@@ -562,7 +562,7 @@
     .parameter "priority"
 
     .prologue
-    .line 516
+    .line 550
     new-instance v0, Lcom/baidu/themeanimation/util/FileUtil$LoadBitmapTask;
 
     const/4 v3, 0x0
@@ -577,28 +577,28 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/baidu/themeanimation/util/FileUtil$LoadBitmapTask;-><init>(Lcom/baidu/themeanimation/util/FileUtil;Ljava/lang/String;Ljava/lang/Object;ZI)V
 
-    .line 517
+    .line 551
     .local v0, task:Lcom/baidu/themeanimation/util/FileUtil$LoadBitmapTask;
     iget-boolean v1, p0, Lcom/baidu/themeanimation/util/FileUtil;->mLoadImmediate:Z
 
     if-eqz v1, :cond_1
 
-    .line 518
+    .line 552
     iget-object v1, p0, Lcom/baidu/themeanimation/util/FileUtil;->mExecutorService2:Ljava/util/concurrent/ExecutorService;
 
     if-eqz v1, :cond_0
 
-    .line 519
+    .line 553
     iget-object v1, p0, Lcom/baidu/themeanimation/util/FileUtil;->mExecutorService2:Ljava/util/concurrent/ExecutorService;
 
     invoke-interface {v1, v0}, Ljava/util/concurrent/ExecutorService;->execute(Ljava/lang/Runnable;)V
 
-    .line 524
+    .line 558
     :cond_0
     :goto_0
     return-void
 
-    .line 522
+    .line 556
     :cond_1
     iget-object v1, p0, Lcom/baidu/themeanimation/util/FileUtil;->mLoadTasks:Ljava/util/List;
 
@@ -611,7 +611,7 @@
     .locals 3
 
     .prologue
-    .line 323
+    .line 357
     new-instance v0, Ljava/io/File;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -644,7 +644,7 @@
 
     invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 324
+    .line 358
     .local v0, file:Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
@@ -658,10 +658,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 325
+    .line 359
     const/4 v1, 0x1
 
-    .line 327
+    .line 361
     :goto_0
     return v1
 
@@ -677,34 +677,34 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 347
+    .line 381
     iget-object v3, p0, Lcom/baidu/themeanimation/util/FileUtil;->mExecutorService:Ljava/util/concurrent/ExecutorService;
 
     if-eqz v3, :cond_0
 
-    .line 348
+    .line 382
     iget-object v3, p0, Lcom/baidu/themeanimation/util/FileUtil;->mExecutorService:Ljava/util/concurrent/ExecutorService;
 
     invoke-interface {v3}, Ljava/util/concurrent/ExecutorService;->shutdownNow()Ljava/util/List;
 
-    .line 349
+    .line 383
     iput-object v5, p0, Lcom/baidu/themeanimation/util/FileUtil;->mExecutorService:Ljava/util/concurrent/ExecutorService;
 
-    .line 351
+    .line 385
     :cond_0
     iget-object v3, p0, Lcom/baidu/themeanimation/util/FileUtil;->mExecutorService2:Ljava/util/concurrent/ExecutorService;
 
     if-eqz v3, :cond_1
 
-    .line 352
+    .line 386
     iget-object v3, p0, Lcom/baidu/themeanimation/util/FileUtil;->mExecutorService2:Ljava/util/concurrent/ExecutorService;
 
     invoke-interface {v3}, Ljava/util/concurrent/ExecutorService;->shutdownNow()Ljava/util/List;
 
-    .line 353
+    .line 387
     iput-object v5, p0, Lcom/baidu/themeanimation/util/FileUtil;->mExecutorService2:Ljava/util/concurrent/ExecutorService;
 
-    .line 355
+    .line 389
     :cond_1
     iget-object v3, p0, Lcom/baidu/themeanimation/util/FileUtil;->mBitmaps:Ljava/util/HashMap;
 
@@ -712,13 +712,13 @@
 
     move-result-object v1
 
-    .line 357
+    .line 391
     .local v1, keySet:Ljava/util/Set;,"Ljava/util/Set<Ljava/lang/String;>;"
     invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    .line 358
+    .line 392
     .local v2, keySetIterator:Ljava/util/Iterator;,"Ljava/util/Iterator<Ljava/lang/String;>;"
     :cond_2
     :goto_0
@@ -728,7 +728,7 @@
 
     if-eqz v3, :cond_3
 
-    .line 359
+    .line 393
     iget-object v3, p0, Lcom/baidu/themeanimation/util/FileUtil;->mBitmaps:Ljava/util/HashMap;
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -741,7 +741,7 @@
 
     check-cast v0, Landroid/graphics/Bitmap;
 
-    .line 360
+    .line 394
     .local v0, bitmap:Landroid/graphics/Bitmap;
     if-eqz v0, :cond_2
 
@@ -751,22 +751,22 @@
 
     if-nez v3, :cond_2
 
-    .line 361
+    .line 395
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 362
+    .line 396
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 365
+    .line 399
     .end local v0           #bitmap:Landroid/graphics/Bitmap;
     :cond_3
     iget-object v3, p0, Lcom/baidu/themeanimation/util/FileUtil;->mBitmaps:Ljava/util/HashMap;
 
     invoke-virtual {v3}, Ljava/util/HashMap;->clear()V
 
-    .line 366
+    .line 400
     iget-object v3, p0, Lcom/baidu/themeanimation/util/FileUtil;->mLockWallpaperBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v3, :cond_4
@@ -779,15 +779,15 @@
 
     if-nez v3, :cond_4
 
-    .line 367
+    .line 401
     iget-object v3, p0, Lcom/baidu/themeanimation/util/FileUtil;->mLockWallpaperBitmap:Landroid/graphics/Bitmap;
 
     invoke-virtual {v3}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 368
+    .line 402
     iput-object v5, p0, Lcom/baidu/themeanimation/util/FileUtil;->mLockWallpaperBitmap:Landroid/graphics/Bitmap;
 
-    .line 370
+    .line 404
     :cond_4
     return-void
 .end method
@@ -796,12 +796,12 @@
     .locals 4
 
     .prologue
-    .line 527
+    .line 561
     iget-object v1, p0, Lcom/baidu/themeanimation/util/FileUtil;->mExecutorService2:Ljava/util/concurrent/ExecutorService;
 
     if-eqz v1, :cond_0
 
-    .line 528
+    .line 562
     iget-object v1, p0, Lcom/baidu/themeanimation/util/FileUtil;->mLoadTasks:Ljava/util/List;
 
     new-instance v2, Lcom/baidu/themeanimation/util/FileUtil$TaskComparator;
@@ -812,7 +812,7 @@
 
     invoke-static {v1, v2}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 529
+    .line 563
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -825,7 +825,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 530
+    .line 564
     iget-object v2, p0, Lcom/baidu/themeanimation/util/FileUtil;->mExecutorService2:Ljava/util/concurrent/ExecutorService;
 
     iget-object v1, p0, Lcom/baidu/themeanimation/util/FileUtil;->mLoadTasks:Ljava/util/List;
@@ -838,19 +838,19 @@
 
     invoke-interface {v2, v1}, Ljava/util/concurrent/ExecutorService;->execute(Ljava/lang/Runnable;)V
 
-    .line 529
+    .line 563
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 533
+    .line 567
     .end local v0           #i:I
     :cond_0
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/baidu/themeanimation/util/FileUtil;->mLoadImmediate:Z
 
-    .line 534
+    .line 568
     return-void
 .end method
 
@@ -861,19 +861,19 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 499
+    .line 533
     new-instance v1, Landroid/graphics/BitmapFactory$Options;
 
     invoke-direct {v1}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
-    .line 500
+    .line 534
     .local v1, options:Landroid/graphics/BitmapFactory$Options;
     iput-boolean v3, v1, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 501
+    .line 535
     iput v3, v1, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
-    .line 502
+    .line 536
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -900,15 +900,15 @@
 
     move-result-object v2
 
-    .line 503
+    .line 537
     .local v2, path:Ljava/lang/String;
     if-eqz p1, :cond_0
 
-    .line 505
+    .line 539
     :try_start_0
     invoke-static {v2, v1}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
-    .line 506
+    .line 540
     iget v3, v1, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
     int-to-float v3, v3
@@ -921,7 +921,7 @@
 
     iput v3, v1, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
-    .line 507
+    .line 541
     iget v3, v1, Landroid/graphics/BitmapFactory$Options;->outHeight:I
 
     int-to-float v3, v3
@@ -936,16 +936,16 @@
     :try_end_0
     .catch Ljava/lang/OutOfMemoryError; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 512
+    .line 546
     :cond_0
     :goto_0
     return-object v1
 
-    .line 508
+    .line 542
     :catch_0
     move-exception v0
 
-    .line 509
+    .line 543
     .local v0, e:Ljava/lang/OutOfMemoryError;
     invoke-virtual {v0}, Ljava/lang/OutOfMemoryError;->printStackTrace()V
 
@@ -957,7 +957,7 @@
     .parameter "element"
 
     .prologue
-    .line 559
+    .line 593
     iget-object v0, p0, Lcom/baidu/themeanimation/util/FileUtil;->mBitmaps:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -973,7 +973,7 @@
     .locals 1
 
     .prologue
-    .line 319
+    .line 353
     iget-object v0, p0, Lcom/baidu/themeanimation/util/FileUtil;->mLockWallpaperBitmap:Landroid/graphics/Bitmap;
 
     return-object v0
@@ -986,10 +986,10 @@
     .prologue
     const/high16 v8, 0x3f80
 
-    .line 453
+    .line 487
     const/4 v1, 0x0
 
-    .line 454
+    .line 488
     .local v1, bitmap:Landroid/graphics/Bitmap;
     iget-object v7, p0, Lcom/baidu/themeanimation/util/FileUtil;->mBitmaps:Ljava/util/HashMap;
 
@@ -1000,28 +1000,28 @@
     .end local v1           #bitmap:Landroid/graphics/Bitmap;
     check-cast v1, Landroid/graphics/Bitmap;
 
-    .line 455
+    .line 489
     .restart local v1       #bitmap:Landroid/graphics/Bitmap;
     if-nez v1, :cond_2
 
     if-eqz p1, :cond_2
 
-    .line 456
+    .line 490
     const/4 v5, 0x0
 
-    .line 458
+    .line 492
     .local v5, is:Ljava/io/InputStream;
     :try_start_0
     invoke-virtual {p0, p1}, Lcom/baidu/themeanimation/util/FileUtil;->getElementToInputStream(Ljava/lang/String;)Ljava/io/InputStream;
 
     move-result-object v5
 
-    .line 459
+    .line 493
     invoke-static {v5}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
-    .line 460
+    .line 494
     iget-object v7, p0, Lcom/baidu/themeanimation/util/FileUtil;->mBitmaps:Ljava/util/HashMap;
 
     invoke-virtual {v7, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1044,7 +1044,7 @@
 
     if-eqz v7, :cond_1
 
-    .line 463
+    .line 497
     :cond_0
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -1058,7 +1058,7 @@
 
     float-to-int v6, v7
 
-    .line 464
+    .line 498
     .local v6, width:I
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->getHeight()I
 
@@ -1072,30 +1072,30 @@
 
     float-to-int v4, v7
 
-    .line 465
+    .line 499
     .local v4, height:I
     if-lez v6, :cond_1
 
     if-lez v4, :cond_1
 
-    .line 466
+    .line 500
     const/4 v7, 0x1
 
     invoke-static {v1, v6, v4, v7}, Landroid/graphics/Bitmap;->createScaledBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
 
     move-result-object v2
 
-    .line 467
+    .line 501
     .local v2, bmp:Landroid/graphics/Bitmap;
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 468
+    .line 502
     const/4 v1, 0x0
 
-    .line 469
+    .line 503
     move-object v1, v2
 
-    .line 473
+    .line 507
     .end local v2           #bmp:Landroid/graphics/Bitmap;
     .end local v4           #height:I
     .end local v6           #width:I
@@ -1108,13 +1108,13 @@
 
     if-eqz v7, :cond_3
 
-    .line 474
+    .line 508
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 475
+    .line 509
     const/4 v1, 0x0
 
-    .line 476
+    .line 510
     iget-object v7, p0, Lcom/baidu/themeanimation/util/FileUtil;->mBitmaps:Ljava/util/HashMap;
 
     invoke-virtual {v7, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1130,23 +1130,23 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/lang/OutOfMemoryError; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 483
+    .line 517
     :goto_0
     if-eqz v5, :cond_2
 
-    .line 485
+    .line 519
     :try_start_1
     invoke-virtual {v5}, Ljava/io/InputStream;->close()V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_2
 
-    .line 492
+    .line 526
     .end local v5           #is:Ljava/io/InputStream;
     :cond_2
     :goto_1
     return-object v1
 
-    .line 478
+    .line 512
     .restart local v5       #is:Ljava/io/InputStream;
     :cond_3
     :try_start_2
@@ -1159,21 +1159,21 @@
 
     goto :goto_0
 
-    .line 480
+    .line 514
     :catch_0
     move-exception v3
 
-    .line 481
+    .line 515
     .local v3, e:Ljava/lang/OutOfMemoryError;
     :try_start_3
     invoke-virtual {v3}, Ljava/lang/OutOfMemoryError;->printStackTrace()V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 483
+    .line 517
     if-eqz v5, :cond_2
 
-    .line 485
+    .line 519
     :try_start_4
     invoke-virtual {v5}, Ljava/io/InputStream;->close()V
     :try_end_4
@@ -1181,50 +1181,50 @@
 
     goto :goto_1
 
-    .line 486
+    .line 520
     :catch_1
     move-exception v3
 
-    .line 487
+    .line 521
     .local v3, e:Ljava/io/IOException;
     invoke-virtual {v3}, Ljava/io/IOException;->printStackTrace()V
 
     goto :goto_1
 
-    .line 486
+    .line 520
     .end local v3           #e:Ljava/io/IOException;
     :catch_2
     move-exception v3
 
-    .line 487
+    .line 521
     .restart local v3       #e:Ljava/io/IOException;
     invoke-virtual {v3}, Ljava/io/IOException;->printStackTrace()V
 
     goto :goto_1
 
-    .line 483
+    .line 517
     .end local v3           #e:Ljava/io/IOException;
     :catchall_0
     move-exception v7
 
     if-eqz v5, :cond_4
 
-    .line 485
+    .line 519
     :try_start_5
     invoke-virtual {v5}, Ljava/io/InputStream;->close()V
     :try_end_5
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_3
 
-    .line 488
+    .line 522
     :cond_4
     :goto_2
     throw v7
 
-    .line 486
+    .line 520
     :catch_3
     move-exception v3
 
-    .line 487
+    .line 521
     .restart local v3       #e:Ljava/io/IOException;
     invoke-virtual {v3}, Ljava/io/IOException;->printStackTrace()V
 
@@ -1236,10 +1236,10 @@
     .parameter "element"
 
     .prologue
-    .line 331
+    .line 365
     const/4 v2, 0x0
 
-    .line 333
+    .line 367
     .local v2, inputStream:Ljava/io/InputStream;
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -1267,13 +1267,13 @@
 
     move-result-object v4
 
-    .line 334
+    .line 368
     .local v4, path:Ljava/lang/String;
     new-instance v1, Ljava/io/File;
 
     invoke-direct {v1, v4}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 336
+    .line 370
     .local v1, file:Ljava/io/File;
     :try_start_0
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
@@ -1288,7 +1288,7 @@
 
     if-eqz v5, :cond_0
 
-    .line 338
+    .line 372
     new-instance v3, Ljava/io/FileInputStream;
 
     invoke-direct {v3, v4}, Ljava/io/FileInputStream;-><init>(Ljava/lang/String;)V
@@ -1299,18 +1299,18 @@
     .local v3, inputStream:Ljava/io/InputStream;
     move-object v2, v3
 
-    .line 343
+    .line 377
     .end local v3           #inputStream:Ljava/io/InputStream;
     .restart local v2       #inputStream:Ljava/io/InputStream;
     :cond_0
     :goto_0
     return-object v2
 
-    .line 340
+    .line 374
     :catch_0
     move-exception v0
 
-    .line 341
+    .line 375
     .local v0, e:Ljava/io/FileNotFoundException;
     invoke-virtual {v0}, Ljava/io/FileNotFoundException;->printStackTrace()V
 
@@ -1321,7 +1321,7 @@
     .locals 1
 
     .prologue
-    .line 191
+    .line 225
     iget-object v0, p0, Lcom/baidu/themeanimation/util/FileUtil;->mLockScreenFilePath:Ljava/lang/String;
 
     return-object v0
@@ -1331,7 +1331,7 @@
     .locals 1
 
     .prologue
-    .line 199
+    .line 233
     iget-object v0, p0, Lcom/baidu/themeanimation/util/FileUtil;->mWallpaperFilePath:Ljava/lang/String;
 
     return-object v0
@@ -1341,7 +1341,7 @@
     .locals 1
 
     .prologue
-    .line 568
+    .line 602
     iget-boolean v0, p0, Lcom/baidu/themeanimation/util/FileUtil;->mIsThemeChange:Z
 
     return v0
@@ -1351,7 +1351,7 @@
     .locals 1
 
     .prologue
-    .line 183
+    .line 217
     iget-boolean v0, p0, Lcom/baidu/themeanimation/util/FileUtil;->mIsWallpaperChanged:Z
 
     return v0
@@ -1365,12 +1365,12 @@
     .parameter "wallpaperDir"
 
     .prologue
-    .line 162
+    .line 196
     new-instance v1, Landroid/util/DisplayMetrics;
 
     invoke-direct {v1}, Landroid/util/DisplayMetrics;-><init>()V
 
-    .line 163
+    .line 197
     .local v1, dm:Landroid/util/DisplayMetrics;
     const-string v3, "window"
 
@@ -1386,14 +1386,14 @@
 
     invoke-virtual {v3, v1}, Landroid/view/Display;->getRealMetrics(Landroid/util/DisplayMetrics;)V
 
-    .line 165
+    .line 199
     invoke-static {}, Lcom/baidu/themeanimation/util/FileUtil;->getInstance()Lcom/baidu/themeanimation/util/FileUtil;
 
     move-result-object v3
 
     invoke-virtual {v3, v1, p2, p3, p4}, Lcom/baidu/themeanimation/util/FileUtil;->setDensity(Landroid/util/DisplayMetrics;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 167
+    .line 201
     invoke-static {}, Lcom/baidu/themeanimation/util/FileUtil;->getInstance()Lcom/baidu/themeanimation/util/FileUtil;
 
     move-result-object v3
@@ -1404,26 +1404,26 @@
 
     move-result-object v0
 
-    .line 168
+    .line 202
     .local v0, configStream:Ljava/io/InputStream;
     if-eqz v0, :cond_0
 
-    .line 170
+    .line 204
     :try_start_0
     invoke-static {v0}, Lcom/baidu/themeanimation/util/ConfigParser;->parse(Ljava/io/InputStream;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 175
+    .line 209
     :cond_0
     :goto_0
     return-void
 
-    .line 171
+    .line 205
     :catch_0
     move-exception v2
 
-    .line 172
+    .line 206
     .local v2, e:Ljava/lang/Exception;
     invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
 
@@ -1445,7 +1445,7 @@
     .parameter "handler"
 
     .prologue
-    .line 269
+    .line 303
     invoke-static {}, Lcom/baidu/themeanimation/util/FileUtil;->getInstance()Lcom/baidu/themeanimation/util/FileUtil;
 
     move-result-object v1
@@ -1456,13 +1456,13 @@
 
     if-eqz v1, :cond_1
 
-    .line 271
+    .line 305
     :try_start_0
     iget-object v1, p0, Lcom/baidu/themeanimation/util/FileUtil;->mExecutorService:Ljava/util/concurrent/ExecutorService;
 
     if-eqz v1, :cond_0
 
-    .line 272
+    .line 306
     iget-object v1, p0, Lcom/baidu/themeanimation/util/FileUtil;->mExecutorService:Ljava/util/concurrent/ExecutorService;
 
     new-instance v2, Lcom/baidu/themeanimation/util/FileUtil$LoadWallpaperTask;
@@ -1475,22 +1475,22 @@
     :try_end_0
     .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 280
+    .line 314
     :cond_0
     :goto_0
     return-void
 
-    .line 274
+    .line 308
     :catch_0
     move-exception v0
 
-    .line 275
+    .line 309
     .local v0, e:Ljava/util/concurrent/RejectedExecutionException;
     invoke-virtual {v0}, Ljava/util/concurrent/RejectedExecutionException;->printStackTrace()V
 
     goto :goto_0
 
-    .line 278
+    .line 312
     .end local v0           #e:Ljava/util/concurrent/RejectedExecutionException;
     :cond_1
     const/16 v1, 0x208
@@ -1515,32 +1515,32 @@
 
     const/4 v6, 0x2
 
-    .line 207
+    .line 241
     iget-object v5, p0, Lcom/baidu/themeanimation/util/FileUtil;->mExecutorService:Ljava/util/concurrent/ExecutorService;
 
     if-nez v5, :cond_0
 
-    .line 208
+    .line 242
     invoke-static {v6}, Ljava/util/concurrent/Executors;->newFixedThreadPool(I)Ljava/util/concurrent/ExecutorService;
 
     move-result-object v5
 
     iput-object v5, p0, Lcom/baidu/themeanimation/util/FileUtil;->mExecutorService:Ljava/util/concurrent/ExecutorService;
 
-    .line 210
+    .line 244
     :cond_0
     iget-object v5, p0, Lcom/baidu/themeanimation/util/FileUtil;->mExecutorService2:Ljava/util/concurrent/ExecutorService;
 
     if-nez v5, :cond_1
 
-    .line 211
+    .line 245
     invoke-static {v6}, Ljava/util/concurrent/Executors;->newFixedThreadPool(I)Ljava/util/concurrent/ExecutorService;
 
     move-result-object v5
 
     iput-object v5, p0, Lcom/baidu/themeanimation/util/FileUtil;->mExecutorService2:Ljava/util/concurrent/ExecutorService;
 
-    .line 214
+    .line 248
     :cond_1
     new-instance v1, Ljava/io/File;
 
@@ -1548,7 +1548,7 @@
 
     invoke-direct {v1, v5}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 215
+    .line 249
     .local v1, lockscreenThemeFile:Ljava/io/File;
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
@@ -1562,7 +1562,7 @@
 
     if-nez v5, :cond_4
 
-    .line 216
+    .line 250
     :cond_2
     const-string v5, "FileUtil"
 
@@ -1590,16 +1590,16 @@
 
     move-object v2, v4
 
-    .line 240
+    .line 274
     :cond_3
     :goto_0
     return-object v2
 
-    .line 220
+    .line 254
     :cond_4
     const/4 v2, 0x0
 
-    .line 222
+    .line 256
     .local v2, manifestStream:Ljava/io/InputStream;
     :try_start_0
     const-string v5, "manifest.xml"
@@ -1608,10 +1608,10 @@
 
     move-result-object v2
 
-    .line 223
+    .line 257
     if-nez v2, :cond_5
 
-    .line 224
+    .line 258
     const-string v5, "FileUtil"
 
     const-string v6, "cannot found manifestStream.xml!!"
@@ -1620,10 +1620,10 @@
 
     move-object v2, v4
 
-    .line 225
+    .line 259
     goto :goto_0
 
-    .line 228
+    .line 262
     :cond_5
     new-instance v3, Ljava/io/File;
 
@@ -1631,7 +1631,7 @@
 
     invoke-direct {v3, v4}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 229
+    .line 263
     .local v3, wallpaperFile:Ljava/io/File;
     invoke-virtual {v3}, Ljava/io/File;->exists()Z
 
@@ -1639,7 +1639,7 @@
 
     if-nez v4, :cond_6
 
-    .line 230
+    .line 264
     iget-object v4, p0, Lcom/baidu/themeanimation/util/FileUtil;->mWallpaperFilePath:Ljava/lang/String;
 
     const-string v5, ".jpg"
@@ -1652,7 +1652,7 @@
 
     iput-object v4, p0, Lcom/baidu/themeanimation/util/FileUtil;->mWallpaperFilePath:Ljava/lang/String;
 
-    .line 231
+    .line 265
     new-instance v3, Ljava/io/File;
 
     .end local v3           #wallpaperFile:Ljava/io/File;
@@ -1660,7 +1660,7 @@
 
     invoke-direct {v3, v4}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 233
+    .line 267
     .restart local v3       #wallpaperFile:Ljava/io/File;
     :cond_6
     invoke-virtual {v3}, Ljava/io/File;->exists()Z
@@ -1675,7 +1675,7 @@
 
     if-eqz v4, :cond_3
 
-    .line 234
+    .line 268
     const/4 v4, 0x1
 
     invoke-virtual {p0, v4}, Lcom/baidu/themeanimation/util/FileUtil;->setWallpaperChanged(Z)V
@@ -1684,12 +1684,12 @@
 
     goto :goto_0
 
-    .line 237
+    .line 271
     .end local v3           #wallpaperFile:Ljava/io/File;
     :catch_0
     move-exception v0
 
-    .line 238
+    .line 272
     .local v0, e:Ljava/lang/Exception;
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
@@ -1701,7 +1701,7 @@
     .parameter "msg"
 
     .prologue
-    .line 563
+    .line 597
     const-string v0, "FileUtil"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1748,14 +1748,14 @@
 
     invoke-static {v0, v1}, Lcom/baidu/themeanimation/util/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 564
+    .line 598
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/baidu/themeanimation/util/FileUtil;->mStartTime:J
 
-    .line 565
+    .line 599
     return-void
 .end method
 
@@ -1765,12 +1765,12 @@
     .parameter "view"
 
     .prologue
-    .line 537
+    .line 571
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, p2, v0}, Lcom/baidu/themeanimation/util/FileUtil;->setBitmap(Ljava/lang/String;Ljava/lang/Object;Z)V
 
-    .line 538
+    .line 572
     return-void
 .end method
 
@@ -1781,7 +1781,7 @@
     .parameter "isMask"
 
     .prologue
-    .line 541
+    .line 575
     if-eqz p1, :cond_3
 
     iget-object v1, p0, Lcom/baidu/themeanimation/util/FileUtil;->mBitmaps:Ljava/util/HashMap;
@@ -1792,21 +1792,21 @@
 
     if-eqz v1, :cond_3
 
-    .line 542
+    .line 576
     instance-of v1, p2, Lcom/baidu/themeanimation/element/ImageElement$ImageElementView;
 
     if-eqz v1, :cond_2
 
     move-object v0, p2
 
-    .line 543
+    .line 577
     check-cast v0, Lcom/baidu/themeanimation/element/ImageElement$ImageElementView;
 
-    .line 544
+    .line 578
     .local v0, elementView:Lcom/baidu/themeanimation/element/ImageElement$ImageElementView;
     if-eqz p3, :cond_1
 
-    .line 545
+    .line 579
     iget-object v1, p0, Lcom/baidu/themeanimation/util/FileUtil;->mBitmaps:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1817,17 +1817,17 @@
 
     invoke-virtual {v0, v1}, Lcom/baidu/themeanimation/element/ImageElement$ImageElementView;->setMask(Landroid/graphics/Bitmap;)V
 
-    .line 546
+    .line 580
     invoke-virtual {v0}, Lcom/baidu/themeanimation/element/ImageElement$ImageElementView;->requestLayout()V
 
-    .line 556
+    .line 590
     .end local v0           #elementView:Lcom/baidu/themeanimation/element/ImageElement$ImageElementView;
     .end local p2
     :cond_0
     :goto_0
     return-void
 
-    .line 548
+    .line 582
     .restart local v0       #elementView:Lcom/baidu/themeanimation/element/ImageElement$ImageElementView;
     .restart local p2
     :cond_1
@@ -1843,14 +1843,14 @@
 
     goto :goto_0
 
-    .line 550
+    .line 584
     .end local v0           #elementView:Lcom/baidu/themeanimation/element/ImageElement$ImageElementView;
     :cond_2
     instance-of v1, p2, Landroid/widget/ImageView;
 
     if-eqz v1, :cond_0
 
-    .line 551
+    .line 585
     check-cast p2, Landroid/widget/ImageView;
 
     .end local p2
@@ -1866,7 +1866,7 @@
 
     goto :goto_0
 
-    .line 554
+    .line 588
     .restart local p2
     :cond_3
     invoke-direct {p0, p1, p2, p3}, Lcom/baidu/themeanimation/util/FileUtil;->load(Ljava/lang/String;Ljava/lang/Object;Z)V
@@ -1882,15 +1882,15 @@
     .parameter "wallpaperDir"
 
     .prologue
-    const/16 v9, 0x320
+    const/high16 v9, 0x4434
 
     const/16 v8, 0x1e0
 
-    const/high16 v7, 0x4448
+    const/high16 v7, 0x3f80
 
-    const/high16 v6, 0x43f0
+    const/high16 v6, 0x4448
 
-    const/high16 v5, 0x3f80
+    const/high16 v5, 0x43f0
 
     .line 89
     iget v3, p1, Landroid/util/DisplayMetrics;->densityDpi:I
@@ -1901,14 +1901,16 @@
     sput v8, Lcom/baidu/themeanimation/util/FileUtil;->DESIGH_SCREEN_WIDTH:I
 
     .line 91
-    sput v9, Lcom/baidu/themeanimation/util/FileUtil;->DESIGN_SCREEN_HEIGHT:I
+    const/16 v3, 0x320
+
+    sput v3, Lcom/baidu/themeanimation/util/FileUtil;->DESIGN_SCREEN_HEIGHT:I
 
     .line 92
     iget v3, p1, Landroid/util/DisplayMetrics;->widthPixels:I
 
     iget v4, p1, Landroid/util/DisplayMetrics;->heightPixels:I
 
-    if-ge v3, v4, :cond_4
+    if-ge v3, v4, :cond_6
 
     .line 93
     iget v3, p1, Landroid/util/DisplayMetrics;->widthPixels:I
@@ -1945,36 +1947,34 @@
 
     .line 103
     .local v0, advance:Ljava/lang/String;
-    sput v5, Lcom/baidu/themeanimation/util/FileUtil;->Image_X_SCALE:F
+    sput v7, Lcom/baidu/themeanimation/util/FileUtil;->Image_X_SCALE:F
 
     .line 104
-    sput v5, Lcom/baidu/themeanimation/util/FileUtil;->Image_Y_SCALE:F
+    sput v7, Lcom/baidu/themeanimation/util/FileUtil;->Image_Y_SCALE:F
 
     .line 105
     const/4 v1, 0x0
 
-    .line 107
+    .line 108
     .local v1, file:Ljava/io/File;
     iget v3, p0, Lcom/baidu/themeanimation/util/FileUtil;->mDensityDpi:I
 
-    const/16 v4, 0x140
+    if-ne v3, v8, :cond_9
 
-    if-ne v3, v4, :cond_6
-
-    .line 108
+    .line 109
     sget v3, Lcom/baidu/themeanimation/util/FileUtil;->REAL_SCREEN_WIDTH:I
 
-    const/16 v4, 0x2d0
+    const/16 v4, 0x438
 
     if-ne v3, v4, :cond_0
 
     sget v3, Lcom/baidu/themeanimation/util/FileUtil;->REAL_SCREEN_HEIGHT:I
 
-    const/16 v4, 0x500
+    const/16 v4, 0x780
 
     if-eq v3, v4, :cond_1
 
-    .line 110
+    .line 111
     :cond_0
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -1984,7 +1984,7 @@
 
     move-result-object v3
 
-    const-string v4, "/advance-xhdpi-"
+    const-string v4, "/advance-xxhdpi-"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1996,7 +1996,7 @@
 
     move-result-object v3
 
-    const-string v4, "*"
+    const-string v4, "x"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2012,7 +2012,7 @@
 
     move-result-object v2
 
-    .line 111
+    .line 112
     .local v2, localPath:Ljava/lang/String;
     new-instance v1, Ljava/io/File;
 
@@ -2035,7 +2035,7 @@
 
     invoke-direct {v1, v3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 112
+    .line 113
     .restart local v1       #file:Ljava/io/File;
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
@@ -2049,10 +2049,10 @@
 
     if-eqz v3, :cond_1
 
-    .line 113
+    .line 114
     move-object v0, v2
 
-    .line 116
+    .line 117
     .end local v2           #localPath:Ljava/lang/String;
     :cond_1
     if-eqz v1, :cond_2
@@ -2069,7 +2069,7 @@
 
     if-nez v3, :cond_3
 
-    .line 117
+    .line 118
     :cond_2
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -2079,7 +2079,7 @@
 
     move-result-object v3
 
-    const-string v4, "/advance-xhdpi"
+    const-string v4, "/advance-xxhdpi"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2089,7 +2089,7 @@
 
     move-result-object v2
 
-    .line 118
+    .line 119
     .restart local v2       #localPath:Ljava/lang/String;
     new-instance v1, Ljava/io/File;
 
@@ -2112,35 +2112,133 @@
 
     invoke-direct {v1, v3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 119
+    .line 120
     .restart local v1       #file:Ljava/io/File;
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
     move-result v3
 
-    if-eqz v3, :cond_5
+    if-eqz v3, :cond_7
 
     invoke-virtual {v1}, Ljava/io/File;->isDirectory()Z
 
     move-result v3
 
-    if-eqz v3, :cond_5
-
-    .line 120
-    move-object v0, v2
+    if-eqz v3, :cond_7
 
     .line 121
+    move-object v0, v2
+
+    .line 122
     sget v3, Lcom/baidu/themeanimation/util/FileUtil;->REAL_SCREEN_WIDTH:I
 
     int-to-float v3, v3
 
-    const/high16 v4, 0x4434
+    const/high16 v4, 0x4487
 
     div-float/2addr v3, v4
 
     sput v3, Lcom/baidu/themeanimation/util/FileUtil;->Image_X_SCALE:F
 
-    .line 122
+    .line 123
+    sget v3, Lcom/baidu/themeanimation/util/FileUtil;->REAL_SCREEN_HEIGHT:I
+
+    int-to-float v3, v3
+
+    const/high16 v4, 0x44f0
+
+    div-float/2addr v3, v4
+
+    sput v3, Lcom/baidu/themeanimation/util/FileUtil;->Image_Y_SCALE:F
+
+    .line 129
+    .end local v2           #localPath:Ljava/lang/String;
+    :cond_3
+    :goto_1
+    if-eqz v1, :cond_4
+
+    invoke-virtual {v1}, Ljava/io/File;->exists()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_4
+
+    invoke-virtual {v1}, Ljava/io/File;->isDirectory()Z
+
+    move-result v3
+
+    if-nez v3, :cond_5
+
+    .line 130
+    :cond_4
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v3, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, "/advance-xhdpi"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 131
+    .restart local v2       #localPath:Ljava/lang/String;
+    new-instance v1, Ljava/io/File;
+
+    .end local v1           #file:Ljava/io/File;
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-direct {v1, v3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    .line 132
+    .restart local v1       #file:Ljava/io/File;
+    invoke-virtual {v1}, Ljava/io/File;->exists()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_8
+
+    invoke-virtual {v1}, Ljava/io/File;->isDirectory()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_8
+
+    .line 133
+    move-object v0, v2
+
+    .line 134
+    sget v3, Lcom/baidu/themeanimation/util/FileUtil;->REAL_SCREEN_WIDTH:I
+
+    int-to-float v3, v3
+
+    div-float/2addr v3, v9
+
+    sput v3, Lcom/baidu/themeanimation/util/FileUtil;->Image_X_SCALE:F
+
+    .line 135
     sget v3, Lcom/baidu/themeanimation/util/FileUtil;->REAL_SCREEN_HEIGHT:I
 
     int-to-float v3, v3
@@ -2151,10 +2249,10 @@
 
     sput v3, Lcom/baidu/themeanimation/util/FileUtil;->Image_Y_SCALE:F
 
-    .line 143
+    .line 177
     .end local v2           #localPath:Ljava/lang/String;
-    :cond_3
-    :goto_1
+    :cond_5
+    :goto_2
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -2173,7 +2271,7 @@
 
     invoke-virtual {p0, v3}, Lcom/baidu/themeanimation/util/FileUtil;->setLockScreenFilePath(Ljava/lang/String;)V
 
-    .line 144
+    .line 178
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -2198,7 +2296,7 @@
 
     invoke-virtual {p0, v3}, Lcom/baidu/themeanimation/util/FileUtil;->setLockWallpaperFilePath(Ljava/lang/String;)V
 
-    .line 146
+    .line 180
     sget v3, Lcom/baidu/themeanimation/util/FileUtil;->REAL_SCREEN_WIDTH:I
 
     int-to-float v3, v3
@@ -2211,7 +2309,7 @@
 
     sput v3, Lcom/baidu/themeanimation/util/FileUtil;->X_SCALE:F
 
-    .line 147
+    .line 181
     sget v3, Lcom/baidu/themeanimation/util/FileUtil;->REAL_SCREEN_HEIGHT:I
 
     int-to-float v3, v3
@@ -2224,16 +2322,16 @@
 
     sput v3, Lcom/baidu/themeanimation/util/FileUtil;->Y_SCALE:F
 
-    .line 149
-    sput v5, Lcom/baidu/themeanimation/util/FileUtil;->WALLPAPER_SCALE:F
+    .line 183
+    sput v7, Lcom/baidu/themeanimation/util/FileUtil;->WALLPAPER_SCALE:F
 
-    .line 150
+    .line 184
     return-void
 
     .line 96
     .end local v0           #advance:Ljava/lang/String;
     .end local v1           #file:Ljava/io/File;
-    :cond_4
+    :cond_6
     iget v3, p1, Landroid/util/DisplayMetrics;->heightPixels:I
 
     sput v3, Lcom/baidu/themeanimation/util/FileUtil;->REAL_SCREEN_WIDTH:I
@@ -2245,50 +2343,293 @@
 
     goto/16 :goto_0
 
-    .line 124
+    .line 125
     .restart local v0       #advance:Ljava/lang/String;
     .restart local v1       #file:Ljava/io/File;
     .restart local v2       #localPath:Ljava/lang/String;
-    :cond_5
+    :cond_7
     sget v3, Lcom/baidu/themeanimation/util/FileUtil;->REAL_SCREEN_WIDTH:I
+
+    int-to-float v3, v3
+
+    div-float/2addr v3, v5
+
+    sput v3, Lcom/baidu/themeanimation/util/FileUtil;->Image_X_SCALE:F
+
+    .line 126
+    sget v3, Lcom/baidu/themeanimation/util/FileUtil;->REAL_SCREEN_HEIGHT:I
 
     int-to-float v3, v3
 
     div-float/2addr v3, v6
 
+    sput v3, Lcom/baidu/themeanimation/util/FileUtil;->Image_Y_SCALE:F
+
+    goto/16 :goto_1
+
+    .line 137
+    :cond_8
+    sget v3, Lcom/baidu/themeanimation/util/FileUtil;->REAL_SCREEN_WIDTH:I
+
+    int-to-float v3, v3
+
+    div-float/2addr v3, v5
+
     sput v3, Lcom/baidu/themeanimation/util/FileUtil;->Image_X_SCALE:F
 
-    .line 125
+    .line 138
     sget v3, Lcom/baidu/themeanimation/util/FileUtil;->REAL_SCREEN_HEIGHT:I
 
     int-to-float v3, v3
 
-    div-float/2addr v3, v7
+    div-float/2addr v3, v6
 
     sput v3, Lcom/baidu/themeanimation/util/FileUtil;->Image_Y_SCALE:F
 
-    goto :goto_1
+    goto :goto_2
 
-    .line 128
+    .line 141
     .end local v2           #localPath:Ljava/lang/String;
-    :cond_6
+    :cond_9
+    iget v3, p0, Lcom/baidu/themeanimation/util/FileUtil;->mDensityDpi:I
+
+    const/16 v4, 0x140
+
+    if-ne v3, v4, :cond_e
+
+    .line 142
+    sget v3, Lcom/baidu/themeanimation/util/FileUtil;->REAL_SCREEN_WIDTH:I
+
+    const/16 v4, 0x2d0
+
+    if-ne v3, v4, :cond_a
+
+    sget v3, Lcom/baidu/themeanimation/util/FileUtil;->REAL_SCREEN_HEIGHT:I
+
+    const/16 v4, 0x500
+
+    if-eq v3, v4, :cond_b
+
+    .line 144
+    :cond_a
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v3, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, "/advance-xhdpi-"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    sget v4, Lcom/baidu/themeanimation/util/FileUtil;->REAL_SCREEN_WIDTH:I
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, "x"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    sget v4, Lcom/baidu/themeanimation/util/FileUtil;->REAL_SCREEN_HEIGHT:I
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 145
+    .restart local v2       #localPath:Ljava/lang/String;
+    new-instance v1, Ljava/io/File;
+
+    .end local v1           #file:Ljava/io/File;
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-direct {v1, v3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    .line 146
+    .restart local v1       #file:Ljava/io/File;
+    invoke-virtual {v1}, Ljava/io/File;->exists()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_b
+
+    invoke-virtual {v1}, Ljava/io/File;->isDirectory()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_b
+
+    .line 147
+    move-object v0, v2
+
+    .line 150
+    .end local v2           #localPath:Ljava/lang/String;
+    :cond_b
+    if-eqz v1, :cond_c
+
+    invoke-virtual {v1}, Ljava/io/File;->exists()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_c
+
+    invoke-virtual {v1}, Ljava/io/File;->isDirectory()Z
+
+    move-result v3
+
+    if-nez v3, :cond_5
+
+    .line 151
+    :cond_c
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v3, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, "/advance-xhdpi"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 152
+    .restart local v2       #localPath:Ljava/lang/String;
+    new-instance v1, Ljava/io/File;
+
+    .end local v1           #file:Ljava/io/File;
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-direct {v1, v3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    .line 153
+    .restart local v1       #file:Ljava/io/File;
+    invoke-virtual {v1}, Ljava/io/File;->exists()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_d
+
+    invoke-virtual {v1}, Ljava/io/File;->isDirectory()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_d
+
+    .line 154
+    move-object v0, v2
+
+    .line 155
+    sget v3, Lcom/baidu/themeanimation/util/FileUtil;->REAL_SCREEN_WIDTH:I
+
+    int-to-float v3, v3
+
+    div-float/2addr v3, v9
+
+    sput v3, Lcom/baidu/themeanimation/util/FileUtil;->Image_X_SCALE:F
+
+    .line 156
+    sget v3, Lcom/baidu/themeanimation/util/FileUtil;->REAL_SCREEN_HEIGHT:I
+
+    int-to-float v3, v3
+
+    const/high16 v4, 0x44a0
+
+    div-float/2addr v3, v4
+
+    sput v3, Lcom/baidu/themeanimation/util/FileUtil;->Image_Y_SCALE:F
+
+    goto/16 :goto_2
+
+    .line 158
+    :cond_d
+    sget v3, Lcom/baidu/themeanimation/util/FileUtil;->REAL_SCREEN_WIDTH:I
+
+    int-to-float v3, v3
+
+    div-float/2addr v3, v5
+
+    sput v3, Lcom/baidu/themeanimation/util/FileUtil;->Image_X_SCALE:F
+
+    .line 159
+    sget v3, Lcom/baidu/themeanimation/util/FileUtil;->REAL_SCREEN_HEIGHT:I
+
+    int-to-float v3, v3
+
+    div-float/2addr v3, v6
+
+    sput v3, Lcom/baidu/themeanimation/util/FileUtil;->Image_Y_SCALE:F
+
+    goto/16 :goto_2
+
+    .line 162
+    .end local v2           #localPath:Ljava/lang/String;
+    :cond_e
     iget v3, p0, Lcom/baidu/themeanimation/util/FileUtil;->mDensityDpi:I
 
     const/16 v4, 0xf0
 
-    if-ne v3, v4, :cond_3
+    if-ne v3, v4, :cond_5
 
-    .line 129
+    .line 163
     sget v3, Lcom/baidu/themeanimation/util/FileUtil;->REAL_SCREEN_WIDTH:I
 
-    if-ne v3, v8, :cond_7
+    if-ne v3, v8, :cond_f
 
     sget v3, Lcom/baidu/themeanimation/util/FileUtil;->REAL_SCREEN_HEIGHT:I
 
-    if-eq v3, v9, :cond_8
+    const/16 v4, 0x320
 
-    .line 131
-    :cond_7
+    if-eq v3, v4, :cond_10
+
+    .line 165
+    :cond_f
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -2309,7 +2650,7 @@
 
     move-result-object v3
 
-    const-string v4, "*"
+    const-string v4, "x"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2325,67 +2666,67 @@
 
     move-result-object v2
 
-    .line 132
+    .line 166
     .restart local v2       #localPath:Ljava/lang/String;
     new-instance v1, Ljava/io/File;
 
     .end local v1           #file:Ljava/io/File;
     invoke-direct {v1, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 133
+    .line 167
     .restart local v1       #file:Ljava/io/File;
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
     move-result v3
 
-    if-eqz v3, :cond_8
+    if-eqz v3, :cond_10
 
     invoke-virtual {v1}, Ljava/io/File;->isDirectory()Z
 
     move-result v3
 
-    if-eqz v3, :cond_8
+    if-eqz v3, :cond_10
 
-    .line 134
+    .line 168
     move-object v0, v2
 
-    .line 137
+    .line 171
     .end local v2           #localPath:Ljava/lang/String;
-    :cond_8
-    if-eqz v1, :cond_9
+    :cond_10
+    if-eqz v1, :cond_11
 
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
     move-result v3
 
-    if-eqz v3, :cond_9
+    if-eqz v3, :cond_11
 
     invoke-virtual {v1}, Ljava/io/File;->isDirectory()Z
 
     move-result v3
 
-    if-nez v3, :cond_3
+    if-nez v3, :cond_5
 
-    .line 138
-    :cond_9
+    .line 172
+    :cond_11
     sget v3, Lcom/baidu/themeanimation/util/FileUtil;->REAL_SCREEN_WIDTH:I
+
+    int-to-float v3, v3
+
+    div-float/2addr v3, v5
+
+    sput v3, Lcom/baidu/themeanimation/util/FileUtil;->Image_X_SCALE:F
+
+    .line 173
+    sget v3, Lcom/baidu/themeanimation/util/FileUtil;->REAL_SCREEN_HEIGHT:I
 
     int-to-float v3, v3
 
     div-float/2addr v3, v6
 
-    sput v3, Lcom/baidu/themeanimation/util/FileUtil;->Image_X_SCALE:F
-
-    .line 139
-    sget v3, Lcom/baidu/themeanimation/util/FileUtil;->REAL_SCREEN_HEIGHT:I
-
-    int-to-float v3, v3
-
-    div-float/2addr v3, v7
-
     sput v3, Lcom/baidu/themeanimation/util/FileUtil;->Image_Y_SCALE:F
 
-    goto/16 :goto_1
+    goto/16 :goto_2
 .end method
 
 .method public setLockScreenFilePath(Ljava/lang/String;)V
@@ -2393,10 +2734,10 @@
     .parameter "lockWallpaperPath"
 
     .prologue
-    .line 195
+    .line 229
     iput-object p1, p0, Lcom/baidu/themeanimation/util/FileUtil;->mLockScreenFilePath:Ljava/lang/String;
 
-    .line 196
+    .line 230
     return-void
 .end method
 
@@ -2405,10 +2746,10 @@
     .parameter "lockWallpaperPath"
 
     .prologue
-    .line 203
+    .line 237
     iput-object p1, p0, Lcom/baidu/themeanimation/util/FileUtil;->mWallpaperFilePath:Ljava/lang/String;
 
-    .line 204
+    .line 238
     return-void
 .end method
 
@@ -2417,10 +2758,10 @@
     .parameter "rootPath"
 
     .prologue
-    .line 178
+    .line 212
     invoke-virtual {p0, p1}, Lcom/baidu/themeanimation/util/FileUtil;->setLockScreenFilePath(Ljava/lang/String;)V
 
-    .line 179
+    .line 213
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2447,7 +2788,7 @@
 
     invoke-virtual {p0, v0}, Lcom/baidu/themeanimation/util/FileUtil;->setLockWallpaperFilePath(Ljava/lang/String;)V
 
-    .line 180
+    .line 214
     return-void
 .end method
 
@@ -2468,10 +2809,10 @@
     .parameter "_value"
 
     .prologue
-    .line 572
+    .line 606
     iput-boolean p1, p0, Lcom/baidu/themeanimation/util/FileUtil;->mIsThemeChange:Z
 
-    .line 573
+    .line 607
     return-void
 .end method
 
@@ -2480,10 +2821,10 @@
     .parameter "_wallpaperChanged"
 
     .prologue
-    .line 187
+    .line 221
     iput-boolean p1, p0, Lcom/baidu/themeanimation/util/FileUtil;->mIsWallpaperChanged:Z
 
-    .line 188
+    .line 222
     return-void
 .end method
 
@@ -2493,13 +2834,13 @@
     .parameter "designHeight"
 
     .prologue
-    .line 153
+    .line 187
     sput p1, Lcom/baidu/themeanimation/util/FileUtil;->DESIGH_SCREEN_WIDTH:I
 
-    .line 154
+    .line 188
     sput p2, Lcom/baidu/themeanimation/util/FileUtil;->DESIGN_SCREEN_HEIGHT:I
 
-    .line 155
+    .line 189
     sget v0, Lcom/baidu/themeanimation/util/FileUtil;->REAL_SCREEN_WIDTH:I
 
     int-to-float v0, v0
@@ -2512,7 +2853,7 @@
 
     sput v0, Lcom/baidu/themeanimation/util/FileUtil;->X_SCALE:F
 
-    .line 156
+    .line 190
     sget v0, Lcom/baidu/themeanimation/util/FileUtil;->REAL_SCREEN_HEIGHT:I
 
     int-to-float v0, v0
@@ -2525,16 +2866,16 @@
 
     sput v0, Lcom/baidu/themeanimation/util/FileUtil;->Y_SCALE:F
 
-    .line 157
+    .line 191
     sget v0, Lcom/baidu/themeanimation/util/FileUtil;->X_SCALE:F
 
     sput v0, Lcom/baidu/themeanimation/util/FileUtil;->Image_X_SCALE:F
 
-    .line 158
+    .line 192
     sget v0, Lcom/baidu/themeanimation/util/FileUtil;->Y_SCALE:F
 
     sput v0, Lcom/baidu/themeanimation/util/FileUtil;->Image_Y_SCALE:F
 
-    .line 159
+    .line 193
     return-void
 .end method

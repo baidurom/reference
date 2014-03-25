@@ -271,7 +271,7 @@
     <string name="permgrouplab_display">UI Aplikasi Lainnya</string>
     <string name="permgroupdesc_display">Memengaruhi UI aplikasi lain.</string>
     <string name="permgrouplab_storage">Penyimpanan</string>
-    <string name="permgroupdesc_storage">Akses penyimpanan USB.</string>
+    <string name="permgroupdesc_storage">Akses kartu SD.</string>
     <string name="permlab_statusBar">nonaktifkan atau ubah bilah status</string>
     <string name="permdesc_statusBar">Mengizinkan apl menonaktifkan bilah status atau menambah dan menghapus ikon sistem.</string>
     <string name="permlab_statusBarService">bilah status</string>
@@ -486,9 +486,9 @@
     <string name="permdesc_brick">Mengizinkan apl menonaktifkan seluruh ponsel secara permanen. Ini sangat berbahaya.</string>
     <string name="permlab_reboot">paksa reboot ponsel</string>
     <string name="permdesc_reboot">Mengizinkan apl memaksa ponsel melakukan reboot.</string>
-    <string name="permlab_mount_unmount_filesystems">akses sistem file simpanan USB</string>
+    <string name="permlab_mount_unmount_filesystems">akses sistem file Kartu SD</string>
     <string name="permdesc_mount_unmount_filesystems">Mengizinkan apl memasang dan melepas sistem file untuk penyimpanan yang dapat dicopot.</string>
-    <string name="permlab_mount_format_filesystems">hapus penyimpanan USB</string>
+    <string name="permlab_mount_format_filesystems">hapus Kartu SD</string>
     <string name="permdesc_mount_format_filesystems">Mengizinkan apl memformat penyimpanan yang dapat dicopot.</string>
     <string name="permlab_asec_access">dapatkan informasi pada penyimpanan internal</string>
     <string name="permdesc_asec_access">Mengizinkan apl mendapatkan informasi di penyimpanan internal.</string>
@@ -597,9 +597,9 @@
     <string name="permlab_writeDictionary">Menambahkan kata ke kamus yang ditentukan pengguna</string>
     <string name="permdesc_writeDictionary">Mengizinkan apl menulis kata-kata baru ke dalam kamus pengguna.</string>
     <string name="permlab_sdcardRead">akses uji coba ke penyimpanan yang dilindungi</string>
-    <string name="permdesc_sdcardRead">Memungkinkan aplikasi menguji izin penyimpanan USB yang akan tersedia di perangkat mendatang.</string>
-    <string name="permlab_sdcardWrite">ubah/hapus konten pympanan USB</string>
-    <string name="permdesc_sdcardWrite">Mengizinkan apl menulis ke penyimpanan USB.</string>
+    <string name="permdesc_sdcardRead">Memungkinkan aplikasi menguji izin untuk kartu SD yang akan tersedia pada perangkat yang akan datang.</string>
+    <string name="permlab_sdcardWrite">mengubah atau menghapus konten kartu SD Anda</string>
+    <string name="permdesc_sdcardWrite">Memungkinkan apl menulis ke kartu SD.</string>
     <string name="permlab_mediaStorageWrite">ubah/hapus konten penyimpanan media internal</string>
     <string name="permdesc_mediaStorageWrite">Mengizinkan apl memodifikasi konten penyimpanan media internal.</string>
     <string name="permlab_sdcardAccessAll">akses penyimpanan eksternal</string>
@@ -714,7 +714,7 @@
     <string name="keyguard_password_wrong_pin_code">Kode PIN salah.</string>
     <string name="keyguard_label_text">Untuk membuka, tekan Menu lalu 0.</string>
     <string name="emergency_call_dialog_number_for_display">Nomor darurat</string>
-    <string name="lockscreen_carrier_default">Tidak ada layanan.</string>
+    <string name="lockscreen_carrier_default">Tidak ada layanan</string>
     <string name="lockscreen_screen_locked">Layar terkunci.</string>
     <string name="lockscreen_instructions_when_pattern_enabled">Tekan Menu untuk membuka atau melakukan panggilan darurat.</string>
     <string name="lockscreen_instructions_when_pattern_disabled">Tekan Menu untuk membuka.</string>
@@ -733,7 +733,7 @@
     <string name="lockscreen_missing_sim_message">Tidak ada Kartu SIM di dalam ponsel.</string>
     <string name="lockscreen_missing_sim_instructions">Masukkan kartu SIM.</string>
     <string name="lockscreen_missing_sim_instructions_long">Kartu SIM tidak ada atau tidak dapat dibaca. Masukkan kartu SIM.</string>
-    <string name="lockscreen_permanent_disabled_sim_message_short">Kartu SIM tidak dapat digunakan.</string>
+    <string name="lockscreen_permanent_disabled_sim_message_short">Kartu SIM tidak dapat digunakan</string>
     <string name="lockscreen_permanent_disabled_sim_instructions">"Kartu SIM Anda telah dinonaktifkan secara permanen.
  Hubungi penyedia layanan nirkabel Anda untuk kartu SIM lain."</string>
     <string name="lockscreen_transport_prev_description">Tombol trek sebelumnya</string>
@@ -743,9 +743,9 @@
     <string name="lockscreen_transport_stop_description">Tombol hentikan</string>
     <string name="emergency_calls_only">Panggilan darurat saja</string>
     <string name="lockscreen_network_locked_message">Jaringan terkunci</string>
-    <string name="lockscreen_sim_puk_locked_message">Kartu SIM terkunci PUK.</string>
+    <string name="lockscreen_sim_puk_locked_message">Kartu SIM terkunci PUK</string>
     <string name="lockscreen_sim_puk_locked_instructions">Lihatlah Panduan Pengguna atau hubungi Layanan Pelanggan.</string>
-    <string name="lockscreen_sim_locked_message">Kartu SIM terkunci.</string>
+    <string name="lockscreen_sim_locked_message">Kartu SIM terkunci</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">Membuka kartu SIM…</string>
     <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"Anda telah %d kali salah menggambar pola pembuka kunci. 
 
@@ -1030,15 +1030,15 @@ Apakah Anda ingin menutupnya?"</string>
     <string name="perm_costs_money">ini mungkin tidak gratis</string>
     <string name="usb_storage_activity_title">Penyimpanan massal USB</string>
     <string name="usb_storage_title">USB terhubung</string>
-    <string name="usb_storage_message">Anda telah tersambung ke komputer melalui USB. Sentuh tombol di bawah jika Anda ingin menyalin file antara komputer dan penyimpanan USB Android Anda.</string>
+    <string name="usb_storage_message">Anda telah tersambung ke komputer melalui USB. Sentuh tombol di bawah jika Anda ingin menyalin file antara komputer dan kartu SD Android Anda.</string>
     <string name="usb_storage_button_mount">Hidupkan penyimpanan USB</string>
-    <string name="usb_storage_error_message">Terjadi masalah saat menggunakan penyimpanan USB Anda untuk penyimpanan massal USB.</string>
+    <string name="usb_storage_error_message">Terjadi masalah saat menggunakan kartu SD Anda untuk penyimpanan massal USB.</string>
     <string name="usb_storage_notification_title">USB terhubung</string>
     <string name="usb_storage_notification_message">Sentuh untuk menyalin file ke/dari komputer Anda.</string>
     <string name="usb_storage_stop_notification_title">Matikan penyimpanan USB</string>
     <string name="usb_storage_stop_notification_message">Sentuh untuk mematikan penyimpanan USB.</string>
     <string name="usb_storage_stop_title">Penyimpanan USB sedang digunakan</string>
-    <string name="usb_storage_stop_message">Sebelum mematikan penyimpanan USB, lepaskan (\"keluarkan\") penyimpanan USB Anda dari komputer.</string>
+    <string name="usb_storage_stop_message">Sebelum mematikan penyimpanan USB, lepaskan (\"keluarkan\") kartu SD Android dari komputer.</string>
     <string name="usb_storage_stop_button_mount">Matikan penyimpanan USB</string>
     <string name="usb_storage_stop_error_message">Terjadi masalah saat mematikan penyimpanan USB. Periksa apakah Anda telah melepaskan host USB, lalu coba sekali lagi.</string>
     <string name="dlg_confirm_kill_storage_users_title">Hidupkan penyimpanan USB</string>
@@ -1050,8 +1050,8 @@ Apakah Anda ingin menutupnya?"</string>
     <string name="usb_cd_installer_notification_title">Tersambung sebagai pemasang</string>
     <string name="usb_accessory_notification_title">Tersambung ke aksesori USB</string>
     <string name="usb_notification_message">Sentuh untuk opsi USB lainnya.</string>
-    <string name="extmedia_format_title">Format penyimpanan USB?</string>
-    <string name="extmedia_format_message">Semua file yang tersimpan dalam penyimpanan USB Anda akan dihapus. Tindakan ini tidak dapat diurungkan!</string>
+    <string name="extmedia_format_title">Format kartu SD?</string>
+    <string name="extmedia_format_message">Semua data di kartu Anda akan hilang.</string>
     <string name="extmedia_format_button_format">Format</string>
     <string name="adb_active_notification_title">Debugging USB terhubung</string>
     <string name="adb_active_notification_message">Sentuh untuk menonaktifkan debugging USB.</string>
@@ -1064,18 +1064,18 @@ Apakah Anda ingin menutupnya?"</string>
     <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="candidates_style"><u>calon</u></string>
-    <string name="ext_media_checking_notification_title">Menyiapkan penyimpanan USB</string>
+    <string name="ext_media_checking_notification_title">Menyiapkan %s</string>
     <string name="ext_media_checking_notification_message">Memeriksa kesalahan.</string>
-    <string name="ext_media_nofs_notification_title">Penyimpanan USB kosong</string>
-    <string name="ext_media_nofs_notification_message">Penyimpanan USB kosong atau sistem berkasnya tidak didukung.</string>
-    <string name="ext_media_unmountable_notification_title">Penyimpanan USB rusak</string>
-    <string name="ext_media_unmountable_notification_message">Penyimpanan USB rusak. Coba diformat ulang.</string>
-    <string name="ext_media_badremoval_notification_title">Penyimpanan USB dilepas secara tidak sengaja</string>
-    <string name="ext_media_badremoval_notification_message">Lepas penyimpanan USB sebelum menghapus untuk menghindari kehilangan data.</string>
-    <string name="ext_media_safe_unmount_notification_title">Penyimpanan USB aman untuk dilepas</string>
-    <string name="ext_media_safe_unmount_notification_message">Anda dapat melepas penyimpanan USB dengan aman.</string>
-    <string name="ext_media_nomedia_notification_title">Penyimpanan USB dihapus</string>
-    <string name="ext_media_nomedia_notification_message">Penyimpanan USB dihapus. Masukkan media baru.</string>
+    <string name="ext_media_nofs_notification_title">%s kosong</string>
+    <string name="ext_media_nofs_notification_message">%s kosong atau memiliki sistem file yang tidak didukung.</string>
+    <string name="ext_media_unmountable_notification_title">%s rusak</string>
+    <string name="ext_media_unmountable_notification_message">%s rusak. Anda mungkin telah memformatnya ulang.</string>
+    <string name="ext_media_badremoval_notification_title">%s dilepas secara tidak terduga</string>
+    <string name="ext_media_badremoval_notification_message">Lepas %s sebelum dikeluarkan agar data tidak hilang.</string>
+    <string name="ext_media_safe_unmount_notification_title">%s aman untuk dikeluarkan</string>
+    <string name="ext_media_safe_unmount_notification_message">Anda dapat mengeluarkan %s dengan aman.</string>
+    <string name="ext_media_nomedia_notification_title">%s telah dikeluarkan</string>
+    <string name="ext_media_nomedia_notification_message">%s telah dikeluarkan. Masukkan yang baru.</string>
     <string name="activity_list_empty">Tidak ditemukan aktivitas yang sesuai.</string>
     <string name="permlab_pkgUsageStats">perbarui statistik penggunaan komponen</string>
     <string name="permdesc_pkgUsageStats">Mengizinkan apl memodifikasi statistik penggunaan komponen yang dikumpulkan. Tidak untuk digunakan oleh apl normal.</string>
@@ -1135,13 +1135,13 @@ untuk akun %s."</string>
     <string name="no_matches">Tidak ada kecocokan</string>
     <string name="find_on_page">Temukan pada laman</string>
     <string name="action_mode_done">Selesai</string>
-    <string name="progress_unmounting">Melepas penyimpanan USB...</string>
-    <string name="progress_erasing">Menghapus penyimpanan USB...</string>
-    <string name="format_error">Tidak dapat menghapus penyimpanan USB.</string>
+    <string name="progress_unmounting">Melepas kartu SD...</string>
+    <string name="progress_erasing">Menghapus kartu SD...</string>
+    <string name="format_error">Tidak dapat menghapus kartu SD.</string>
     <string name="media_bad_removal">Kartu SD dihapus sebelum dilepas.</string>
-    <string name="media_checking">Saat ini penyimpanan USB sedang diperiksa.</string>
+    <string name="media_checking">Kartu SD sedang diperiksa.</string>
     <string name="media_removed">Kartu SD telah dikeluarkan.</string>
-    <string name="media_shared">Saat ini penyimpanan USB sedang digunakan oleh komputer.</string>
+    <string name="media_shared">Kartu SD sedang digunakan oleh komputer.</string>
     <string name="media_unknown_state">Media eksternal dalam status tidak diketahui.</string>
     <string name="share">Bagikan</string>
     <string name="find">Temukan</string>
@@ -1315,4 +1315,7 @@ Mendengarkan volume tinggi dalam jangka waktu yang lama dapat merusak pendengara
     <string name="enable_accessibility_canceled">Aksesibilitas dibatalkan.</string>
     <string name="user_switched">Pengguna saat ini %1$s.</string>
     <string name="owner_name">Pemilik</string>
+    <string name="storage_phone">Penyimpanan telepon</string>
+    <string name="storage_external_usb">Penyimpanan USB eksternal</string>
+    <string name="zz_keyguard_accessibility_voice_unlock">Pengaktifan dengan suara.</string>
 </resources>

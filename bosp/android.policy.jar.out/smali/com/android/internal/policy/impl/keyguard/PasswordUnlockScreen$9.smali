@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 589
+    .line 601
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen$9;->this$0:Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;
 
     iput-object p2, p0, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen$9;->val$invisToVis:Landroid/animation/ObjectAnimator;
@@ -44,12 +44,12 @@
     .parameter "anim"
 
     .prologue
-    .line 592
+    .line 604
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen$9;->val$invisToVis:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
 
-    .line 593
+    .line 605
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen$9;->this$0:Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;
 
     const/4 v1, 0x1
@@ -57,7 +57,7 @@
     #calls: Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;->setVoicePrintVisibility(Z)V
     invoke-static {v0, v1}, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;->access$1400(Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;Z)V
 
-    .line 594
+    .line 606
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen$9;->this$0:Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;->mInputLayout:Landroid/widget/LinearLayout;
@@ -69,6 +69,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setRotationY(F)V
 
-    .line 595
+    .line 607
     return-void
 .end method

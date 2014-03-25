@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 90
+    .line 93
     iput-object p1, p0, Lcom/android/internal/widget/TransportControlView$1;->this$0:Lcom/android/internal/widget/TransportControlView;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,17 +39,17 @@
     .parameter "msg"
 
     .prologue
-    .line 93
+    .line 96
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 129
+    .line 132
     :cond_0
     :goto_0
     return-void
 
-    .line 95
+    .line 98
     :pswitch_0
     iget-object v0, p0, Lcom/android/internal/widget/TransportControlView$1;->this$0:Lcom/android/internal/widget/TransportControlView;
 
@@ -71,7 +71,7 @@
 
     goto :goto_0
 
-    .line 99
+    .line 102
     :pswitch_1
     iget-object v0, p0, Lcom/android/internal/widget/TransportControlView$1;->this$0:Lcom/android/internal/widget/TransportControlView;
 
@@ -95,7 +95,7 @@
 
     goto :goto_0
 
-    .line 103
+    .line 106
     :pswitch_2
     iget-object v0, p0, Lcom/android/internal/widget/TransportControlView$1;->this$0:Lcom/android/internal/widget/TransportControlView;
 
@@ -117,7 +117,7 @@
 
     goto :goto_0
 
-    .line 107
+    .line 110
     :pswitch_3
     iget-object v0, p0, Lcom/android/internal/widget/TransportControlView$1;->this$0:Lcom/android/internal/widget/TransportControlView;
 
@@ -130,7 +130,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 108
+    .line 111
     iget-object v0, p0, Lcom/android/internal/widget/TransportControlView$1;->this$0:Lcom/android/internal/widget/TransportControlView;
 
     #getter for: Lcom/android/internal/widget/TransportControlView;->mMetadata:Lcom/android/internal/widget/TransportControlView$Metadata;
@@ -145,7 +145,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 109
+    .line 112
     iget-object v0, p0, Lcom/android/internal/widget/TransportControlView$1;->this$0:Lcom/android/internal/widget/TransportControlView;
 
     #getter for: Lcom/android/internal/widget/TransportControlView;->mMetadata:Lcom/android/internal/widget/TransportControlView$Metadata;
@@ -160,7 +160,7 @@
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 111
+    .line 114
     :cond_1
     iget-object v0, p0, Lcom/android/internal/widget/TransportControlView$1;->this$0:Lcom/android/internal/widget/TransportControlView;
 
@@ -178,13 +178,13 @@
 
     goto :goto_0
 
-    .line 117
+    .line 120
     :pswitch_4
     iget v0, p1, Landroid/os/Message;->arg2:I
 
     if-eqz v0, :cond_2
 
-    .line 119
+    .line 122
     iget-object v0, p0, Lcom/android/internal/widget/TransportControlView$1;->this$0:Lcom/android/internal/widget/TransportControlView;
 
     #getter for: Lcom/android/internal/widget/TransportControlView;->mWidgetCallbacks:Lcom/android/internal/widget/LockScreenWidgetCallback;
@@ -194,7 +194,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 120
+    .line 123
     iget-object v0, p0, Lcom/android/internal/widget/TransportControlView$1;->this$0:Lcom/android/internal/widget/TransportControlView;
 
     #getter for: Lcom/android/internal/widget/TransportControlView;->mWidgetCallbacks:Lcom/android/internal/widget/LockScreenWidgetCallback;
@@ -206,7 +206,7 @@
 
     invoke-interface {v0, v1}, Lcom/android/internal/widget/LockScreenWidgetCallback;->requestHide(Landroid/view/View;)V
 
-    .line 124
+    .line 127
     :cond_2
     iget-object v0, p0, Lcom/android/internal/widget/TransportControlView$1;->this$0:Lcom/android/internal/widget/TransportControlView;
 
@@ -215,7 +215,7 @@
     #setter for: Lcom/android/internal/widget/TransportControlView;->mClientGeneration:I
     invoke-static {v0, v1}, Lcom/android/internal/widget/TransportControlView;->access$002(Lcom/android/internal/widget/TransportControlView;I)I
 
-    .line 125
+    .line 128
     iget-object v1, p0, Lcom/android/internal/widget/TransportControlView$1;->this$0:Lcom/android/internal/widget/TransportControlView;
 
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -227,7 +227,7 @@
 
     goto/16 :goto_0
 
-    .line 93
+    .line 96
     :pswitch_data_0
     .packed-switch 0x64
         :pswitch_0

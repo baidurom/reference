@@ -28,9 +28,17 @@
 
 .field public static final USB_FUNCTION_ACCESSORY:Ljava/lang/String; = "accessory"
 
+.field public static final USB_FUNCTION_ACM:Ljava/lang/String; = "acm"
+
 .field public static final USB_FUNCTION_ADB:Ljava/lang/String; = "adb"
 
 .field public static final USB_FUNCTION_AUDIO_SOURCE:Ljava/lang/String; = "audio_source"
+
+.field public static final USB_FUNCTION_BICR:Ljava/lang/String; = "bicr"
+
+.field public static final USB_FUNCTION_CHARGING_ONLY:Ljava/lang/String; = "charging"
+
+.field public static final USB_FUNCTION_EEM:Ljava/lang/String; = "eem"
 
 .field public static final USB_FUNCTION_MASS_STORAGE:Ljava/lang/String; = "mass_storage"
 
@@ -39,6 +47,8 @@
 .field public static final USB_FUNCTION_PTP:Ljava/lang/String; = "ptp"
 
 .field public static final USB_FUNCTION_RNDIS:Ljava/lang/String; = "rndis"
+
+.field public static final USB_FUNCTION_VIA_CDROM:Ljava/lang/String; = "via_cdrom_storage"
 
 
 # instance fields
@@ -54,16 +64,16 @@
     .parameter "service"
 
     .prologue
-    .line 227
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 268
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 228
+    .line 269
     iput-object p1, p0, Landroid/hardware/usb/UsbManager;->mContext:Landroid/content/Context;
 
-    .line 229
+    .line 270
     iput-object p2, p0, Landroid/hardware/usb/UsbManager;->mService:Landroid/hardware/usb/IUsbManager;
 
-    .line 230
+    .line 271
     return-void
 .end method
 
@@ -77,29 +87,29 @@
 
     const/4 v3, 0x0
 
-    .line 404
+    .line 445
     const-string v4, ""
 
     invoke-static {p0, v4}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 405
+    .line 446
     .local v1, functions:Ljava/lang/String;
     invoke-virtual {v1, p1}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v2
 
-    .line 406
+    .line 447
     .local v2, index:I
     if-gez v2, :cond_1
 
-    .line 410
+    .line 451
     :cond_0
     :goto_0
     return v3
 
-    .line 407
+    .line 448
     :cond_1
     if-lez v2, :cond_2
 
@@ -111,7 +121,7 @@
 
     if-ne v4, v5, :cond_0
 
-    .line 408
+    .line 449
     :cond_2
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
@@ -119,7 +129,7 @@
 
     add-int v0, v2, v4
 
-    .line 409
+    .line 450
     .local v0, charAfter:I
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
@@ -133,7 +143,7 @@
 
     if-ne v4, v5, :cond_0
 
-    .line 410
+    .line 451
     :cond_3
     const/4 v3, 0x1
 
@@ -148,7 +158,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 288
+    .line 329
     :try_start_0
     iget-object v3, p0, Landroid/hardware/usb/UsbManager;->mService:Landroid/hardware/usb/IUsbManager;
 
@@ -156,16 +166,16 @@
 
     move-result-object v0
 
-    .line 289
+    .line 330
     .local v0, accessory:Landroid/hardware/usb/UsbAccessory;
     if-nez v0, :cond_0
 
-    .line 296
+    .line 337
     .end local v0           #accessory:Landroid/hardware/usb/UsbAccessory;
     :goto_0
     return-object v2
 
-    .line 292
+    .line 333
     .restart local v0       #accessory:Landroid/hardware/usb/UsbAccessory;
     :cond_0
     const/4 v3, 0x1
@@ -182,12 +192,12 @@
 
     goto :goto_0
 
-    .line 294
+    .line 335
     .end local v0           #accessory:Landroid/hardware/usb/UsbAccessory;
     :catch_0
     move-exception v1
 
-    .line 295
+    .line 336
     .local v1, e:Landroid/os/RemoteException;
     const-string v3, "UsbManager"
 
@@ -202,7 +212,7 @@
     .locals 4
 
     .prologue
-    .line 433
+    .line 474
     const-string/jumbo v2, "persist.sys.usb.config"
 
     const-string v3, ""
@@ -211,7 +221,7 @@
 
     move-result-object v1
 
-    .line 434
+    .line 475
     .local v1, functions:Ljava/lang/String;
     const/16 v2, 0x2c
 
@@ -219,18 +229,18 @@
 
     move-result v0
 
-    .line 435
+    .line 476
     .local v0, commaIndex:I
     if-lez v0, :cond_0
 
-    .line 436
+    .line 477
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 438
+    .line 479
     .end local v1           #functions:Ljava/lang/String;
     :cond_0
     return-object v1
@@ -250,24 +260,24 @@
     .end annotation
 
     .prologue
-    .line 241
+    .line 282
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 243
+    .line 284
     .local v0, bundle:Landroid/os/Bundle;
     :try_start_0
     iget-object v5, p0, Landroid/hardware/usb/UsbManager;->mService:Landroid/hardware/usb/IUsbManager;
 
     invoke-interface {v5, v0}, Landroid/hardware/usb/IUsbManager;->getDeviceList(Landroid/os/Bundle;)V
 
-    .line 244
+    .line 285
     new-instance v4, Ljava/util/HashMap;
 
     invoke-direct {v4}, Ljava/util/HashMap;-><init>()V
 
-    .line 245
+    .line 286
     .local v4, result:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Landroid/hardware/usb/UsbDevice;>;"
     invoke-virtual {v0}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
 
@@ -291,7 +301,7 @@
 
     check-cast v3, Ljava/lang/String;
 
-    .line 246
+    .line 287
     .local v3, name:Ljava/lang/String;
     invoke-virtual {v0, v3}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -305,14 +315,14 @@
 
     goto :goto_0
 
-    .line 249
+    .line 290
     .end local v2           #i$:Ljava/util/Iterator;
     .end local v3           #name:Ljava/lang/String;
     .end local v4           #result:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Landroid/hardware/usb/UsbDevice;>;"
     :catch_0
     move-exception v1
 
-    .line 250
+    .line 291
     .local v1, e:Landroid/os/RemoteException;
     const-string v5, "UsbManager"
 
@@ -320,7 +330,7 @@
 
     invoke-static {v5, v6, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 251
+    .line 292
     const/4 v4, 0x0
 
     .end local v1           #e:Landroid/os/RemoteException;
@@ -333,7 +343,7 @@
     .parameter "accessory"
 
     .prologue
-    .line 344
+    .line 385
     :try_start_0
     iget-object v1, p0, Landroid/hardware/usb/UsbManager;->mService:Landroid/hardware/usb/IUsbManager;
 
@@ -343,15 +353,15 @@
 
     move-result v1
 
-    .line 347
+    .line 388
     :goto_0
     return v1
 
-    .line 345
+    .line 386
     :catch_0
     move-exception v0
 
-    .line 346
+    .line 387
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "UsbManager"
 
@@ -359,7 +369,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 347
+    .line 388
     const/4 v1, 0x0
 
     goto :goto_0
@@ -370,7 +380,7 @@
     .parameter "device"
 
     .prologue
-    .line 326
+    .line 367
     :try_start_0
     iget-object v1, p0, Landroid/hardware/usb/UsbManager;->mService:Landroid/hardware/usb/IUsbManager;
 
@@ -380,15 +390,15 @@
 
     move-result v1
 
-    .line 329
+    .line 370
     :goto_0
     return v1
 
-    .line 327
+    .line 368
     :catch_0
     move-exception v0
 
-    .line 328
+    .line 369
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "UsbManager"
 
@@ -396,7 +406,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 329
+    .line 370
     const/4 v1, 0x0
 
     goto :goto_0
@@ -407,7 +417,7 @@
     .parameter "function"
 
     .prologue
-    .line 422
+    .line 463
     const-string/jumbo v0, "sys.usb.config"
 
     invoke-static {v0, p1}, Landroid/hardware/usb/UsbManager;->propertyContainsFunction(Ljava/lang/String;Ljava/lang/String;)Z
@@ -422,7 +432,7 @@
     .parameter "accessory"
 
     .prologue
-    .line 308
+    .line 349
     :try_start_0
     iget-object v1, p0, Landroid/hardware/usb/UsbManager;->mService:Landroid/hardware/usb/IUsbManager;
 
@@ -432,15 +442,15 @@
 
     move-result-object v1
 
-    .line 311
+    .line 352
     :goto_0
     return-object v1
 
-    .line 309
+    .line 350
     :catch_0
     move-exception v0
 
-    .line 310
+    .line 351
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "UsbManager"
 
@@ -448,7 +458,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 311
+    .line 352
     const/4 v1, 0x0
 
     goto :goto_0
@@ -459,13 +469,13 @@
     .parameter "device"
 
     .prologue
-    .line 264
+    .line 305
     :try_start_0
     invoke-virtual {p1}, Landroid/hardware/usb/UsbDevice;->getDeviceName()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 265
+    .line 306
     .local v1, deviceName:Ljava/lang/String;
     iget-object v5, p0, Landroid/hardware/usb/UsbManager;->mService:Landroid/hardware/usb/IUsbManager;
 
@@ -473,31 +483,31 @@
 
     move-result-object v3
 
-    .line 266
+    .line 307
     .local v3, pfd:Landroid/os/ParcelFileDescriptor;
     if-eqz v3, :cond_0
 
-    .line 267
+    .line 308
     new-instance v0, Landroid/hardware/usb/UsbDeviceConnection;
 
     invoke-direct {v0, p1}, Landroid/hardware/usb/UsbDeviceConnection;-><init>(Landroid/hardware/usb/UsbDevice;)V
 
-    .line 268
+    .line 309
     .local v0, connection:Landroid/hardware/usb/UsbDeviceConnection;
     invoke-virtual {v0, v1, v3}, Landroid/hardware/usb/UsbDeviceConnection;->open(Ljava/lang/String;Landroid/os/ParcelFileDescriptor;)Z
 
     move-result v4
 
-    .line 269
+    .line 310
     .local v4, result:Z
     invoke-virtual {v3}, Landroid/os/ParcelFileDescriptor;->close()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 270
+    .line 311
     if-eqz v4, :cond_0
 
-    .line 277
+    .line 318
     .end local v0           #connection:Landroid/hardware/usb/UsbDeviceConnection;
     .end local v1           #deviceName:Ljava/lang/String;
     .end local v3           #pfd:Landroid/os/ParcelFileDescriptor;
@@ -505,11 +515,11 @@
     :goto_0
     return-object v0
 
-    .line 274
+    .line 315
     :catch_0
     move-exception v2
 
-    .line 275
+    .line 316
     .local v2, e:Ljava/lang/Exception;
     const-string v5, "UsbManager"
 
@@ -517,7 +527,7 @@
 
     invoke-static {v5, v6, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 277
+    .line 318
     .end local v2           #e:Ljava/lang/Exception;
     :cond_0
     const/4 v0, 0x0
@@ -531,7 +541,7 @@
     .parameter "pi"
 
     .prologue
-    .line 397
+    .line 438
     :try_start_0
     iget-object v1, p0, Landroid/hardware/usb/UsbManager;->mService:Landroid/hardware/usb/IUsbManager;
 
@@ -545,15 +555,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 401
+    .line 442
     :goto_0
     return-void
 
-    .line 398
+    .line 439
     :catch_0
     move-exception v0
 
-    .line 399
+    .line 440
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "UsbManager"
 
@@ -570,7 +580,7 @@
     .parameter "pi"
 
     .prologue
-    .line 371
+    .line 412
     :try_start_0
     iget-object v1, p0, Landroid/hardware/usb/UsbManager;->mService:Landroid/hardware/usb/IUsbManager;
 
@@ -584,15 +594,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 375
+    .line 416
     :goto_0
     return-void
 
-    .line 372
+    .line 413
     :catch_0
     move-exception v0
 
-    .line 373
+    .line 414
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "UsbManager"
 
@@ -609,7 +619,7 @@
     .parameter "makeDefault"
 
     .prologue
-    .line 453
+    .line 494
     :try_start_0
     iget-object v1, p0, Landroid/hardware/usb/UsbManager;->mService:Landroid/hardware/usb/IUsbManager;
 
@@ -617,15 +627,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 457
+    .line 498
     :goto_0
     return-void
 
-    .line 454
+    .line 495
     :catch_0
     move-exception v0
 
-    .line 455
+    .line 496
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "UsbManager"
 
@@ -641,7 +651,7 @@
     .parameter "path"
 
     .prologue
-    .line 468
+    .line 509
     :try_start_0
     iget-object v1, p0, Landroid/hardware/usb/UsbManager;->mService:Landroid/hardware/usb/IUsbManager;
 
@@ -649,15 +659,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 472
+    .line 513
     :goto_0
     return-void
 
-    .line 469
+    .line 510
     :catch_0
     move-exception v0
 
-    .line 470
+    .line 511
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "UsbManager"
 

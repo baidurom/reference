@@ -113,7 +113,7 @@
 
     .prologue
     .line 651
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 652
     iget-object v0, p1, Landroid/content/ClipData;->mClipDescription:Landroid/content/ClipDescription;
@@ -145,7 +145,7 @@
 
     .prologue
     .line 635
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 636
     iput-object p1, p0, Landroid/content/ClipData;->mClipDescription:Landroid/content/ClipDescription;
@@ -156,7 +156,7 @@
     .line 638
     new-instance v0, Ljava/lang/NullPointerException;
 
-    const-string v1, "item is null"
+    const-string/jumbo v1, "item is null"
 
     invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
@@ -192,7 +192,7 @@
     const/4 v7, 0x0
 
     .line 868
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 869
     new-instance v6, Landroid/content/ClipDescription;
@@ -353,7 +353,7 @@
 
     .prologue
     .line 619
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 620
     new-instance v0, Landroid/content/ClipDescription;
@@ -368,7 +368,7 @@
     .line 622
     new-instance v0, Ljava/lang/NullPointerException;
 
-    const-string v1, "item is null"
+    const-string/jumbo v1, "item is null"
 
     invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
@@ -636,7 +636,7 @@
     .line 768
     new-instance v0, Ljava/lang/NullPointerException;
 
-    const-string v1, "item is null"
+    const-string/jumbo v1, "item is null"
 
     invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 

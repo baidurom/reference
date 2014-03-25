@@ -72,7 +72,7 @@
 
     .prologue
     .line 56
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 46
     new-instance v0, Ljava/util/HashMap;
@@ -172,7 +172,7 @@
 
     iget-object v3, v2, Lcom/android/server/am/ContentProviderRecord;->info:Landroid/content/pm/ProviderInfo;
 
-    iget-object v3, v3, Landroid/content/pm/ComponentInfo;->packageName:Ljava/lang/String;
+    iget-object v3, v3, Landroid/content/pm/ProviderInfo;->packageName:Ljava/lang/String;
 
     invoke-virtual {v3, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

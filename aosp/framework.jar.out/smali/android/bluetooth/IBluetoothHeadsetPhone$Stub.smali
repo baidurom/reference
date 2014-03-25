@@ -28,9 +28,11 @@
 
 .field static final TRANSACTION_answerCall:I = 0x1
 
-.field static final TRANSACTION_cdmaSetSecondCallState:I = 0xb
+.field static final TRANSACTION_cdmaSetSecondCallState:I = 0xd
 
-.field static final TRANSACTION_cdmaSwapSecondCallState:I = 0xa
+.field static final TRANSACTION_cdmaSwapSecondCallState:I = 0xc
+
+.field static final TRANSACTION_getDefaultSIM:I = 0x9
 
 .field static final TRANSACTION_getNetworkOperator:I = 0x5
 
@@ -44,9 +46,11 @@
 
 .field static final TRANSACTION_queryPhoneState:I = 0x8
 
+.field static final TRANSACTION_restrictMultitalks:I = 0xa
+
 .field static final TRANSACTION_sendDtmf:I = 0x3
 
-.field static final TRANSACTION_updateBtHandsfreeAfterRadioTechnologyChange:I = 0x9
+.field static final TRANSACTION_updateBtHandsfreeAfterRadioTechnologyChange:I = 0xb
 
 
 # direct methods
@@ -142,7 +146,7 @@
     .line 43
     sparse-switch p1, :sswitch_data_0
 
-    .line 142
+    .line 157
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v3
@@ -377,34 +381,69 @@
     invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 121
-    invoke-virtual {p0}, Landroid/bluetooth/IBluetoothHeadsetPhone$Stub;->updateBtHandsfreeAfterRadioTechnologyChange()V
+    invoke-virtual {p0}, Landroid/bluetooth/IBluetoothHeadsetPhone$Stub;->getDefaultSIM()I
+
+    move-result v1
 
     .line 122
+    .local v1, _result:I
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 123
+    invoke-virtual {p3, v1}, Landroid/os/Parcel;->writeInt(I)V
 
     goto/16 :goto_0
 
-    .line 127
+    .line 128
+    .end local v1           #_result:I
     :sswitch_a
     const-string v2, "android.bluetooth.IBluetoothHeadsetPhone"
 
     invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 128
-    invoke-virtual {p0}, Landroid/bluetooth/IBluetoothHeadsetPhone$Stub;->cdmaSwapSecondCallState()V
-
     .line 129
+    invoke-virtual {p0}, Landroid/bluetooth/IBluetoothHeadsetPhone$Stub;->restrictMultitalks()V
+
+    .line 130
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     goto/16 :goto_0
 
-    .line 134
+    .line 135
     :sswitch_b
+    const-string v2, "android.bluetooth.IBluetoothHeadsetPhone"
+
+    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 136
+    invoke-virtual {p0}, Landroid/bluetooth/IBluetoothHeadsetPhone$Stub;->updateBtHandsfreeAfterRadioTechnologyChange()V
+
+    .line 137
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    goto/16 :goto_0
+
+    .line 142
+    :sswitch_c
+    const-string v2, "android.bluetooth.IBluetoothHeadsetPhone"
+
+    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 143
+    invoke-virtual {p0}, Landroid/bluetooth/IBluetoothHeadsetPhone$Stub;->cdmaSwapSecondCallState()V
+
+    .line 144
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    goto/16 :goto_0
+
+    .line 149
+    :sswitch_d
     const-string v4, "android.bluetooth.IBluetoothHeadsetPhone"
 
     invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 136
+    .line 151
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
@@ -413,12 +452,12 @@
 
     move v0, v3
 
-    .line 137
+    .line 152
     .local v0, _arg0:Z
     :goto_1
     invoke-virtual {p0, v0}, Landroid/bluetooth/IBluetoothHeadsetPhone$Stub;->cdmaSetSecondCallState(Z)V
 
-    .line 138
+    .line 153
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     goto/16 :goto_0
@@ -427,7 +466,7 @@
     :cond_6
     move v0, v2
 
-    .line 136
+    .line 151
     goto :goto_1
 
     .line 43
@@ -444,6 +483,8 @@
         0x9 -> :sswitch_9
         0xa -> :sswitch_a
         0xb -> :sswitch_b
+        0xc -> :sswitch_c
+        0xd -> :sswitch_d
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

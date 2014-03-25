@@ -33,64 +33,112 @@
 
     .prologue
     .line 39
-    sparse-switch p1, :sswitch_data_0
+    const/4 v0, 0x0
 
-    .line 68
-    invoke-virtual {p0, p1}, Lcom/android/internal/telephony/UsimFileHandler;->getCommonIccEFPath(I)Ljava/lang/String;
+    invoke-virtual {p0, p1, v0}, Lcom/android/internal/telephony/UsimFileHandler;->getEFPath(IZ)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 69
-    .local v0, path:Ljava/lang/String;
-    if-nez v0, :cond_0
-
-    .line 73
-    const-string v0, "3F007F105F3A"
-
-    .line 75
-    .end local v0           #path:Ljava/lang/String;
-    :cond_0
-    :goto_0
     return-object v0
+.end method
 
-    .line 62
+.method protected getEFPath(IZ)Ljava/lang/String;
+    .locals 4
+    .parameter "efid"
+    .parameter "is7FFF"
+
+    .prologue
+    .line 44
+    const-string v0, "7F20"
+
+    .line 46
+    .local v0, DF_APP:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/internal/telephony/UsimFileHandler;->mParentApp:Lcom/android/internal/telephony/UiccCardApplication;
+
+    if-eqz v2, :cond_0
+
+    iget-object v2, p0, Lcom/android/internal/telephony/UsimFileHandler;->mParentApp:Lcom/android/internal/telephony/UiccCardApplication;
+
+    invoke-virtual {v2}, Lcom/android/internal/telephony/UiccCardApplication;->getType()Lcom/android/internal/telephony/IccCardApplicationStatus$AppType;
+
+    move-result-object v2
+
+    sget-object v3, Lcom/android/internal/telephony/IccCardApplicationStatus$AppType;->APPTYPE_USIM:Lcom/android/internal/telephony/IccCardApplicationStatus$AppType;
+
+    if-ne v2, v3, :cond_0
+
+    .line 47
+    const-string v0, "7FFF"
+
+    .line 49
+    :cond_0
+    sparse-switch p1, :sswitch_data_0
+
+    .line 82
+    invoke-virtual {p0, p1}, Lcom/android/internal/telephony/UsimFileHandler;->getCommonIccEFPath(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 83
+    .local v1, path:Ljava/lang/String;
+    if-nez v1, :cond_1
+
+    .line 87
+    const-string v1, "7F105F3A"
+
+    .line 89
+    .end local v1           #path:Ljava/lang/String;
+    :cond_1
+    :goto_0
+    return-object v1
+
+    .line 51
     :sswitch_0
-    const-string v0, "3F007FFF"
+    const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 66
+    .line 76
     :sswitch_1
-    const-string v0, "3F007F105F3A"
+    const-string v1, "7FFF"
 
     goto :goto_0
 
-    .line 39
+    .line 80
+    :sswitch_2
+    const-string v1, "7F105F3A"
+
+    goto :goto_0
+
+    .line 49
     :sswitch_data_0
     .sparse-switch
-        0x4f30 -> :sswitch_1
-        0x6f11 -> :sswitch_0
-        0x6f13 -> :sswitch_0
-        0x6f14 -> :sswitch_0
-        0x6f15 -> :sswitch_0
-        0x6f16 -> :sswitch_0
-        0x6f17 -> :sswitch_0
-        0x6f18 -> :sswitch_0
-        0x6f38 -> :sswitch_0
-        0x6f3b -> :sswitch_0
-        0x6f3c -> :sswitch_0
-        0x6f40 -> :sswitch_0
-        0x6f46 -> :sswitch_0
-        0x6f4b -> :sswitch_0
-        0x6fad -> :sswitch_0
-        0x6fc5 -> :sswitch_0
-        0x6fc6 -> :sswitch_0
-        0x6fc7 -> :sswitch_0
-        0x6fc8 -> :sswitch_0
-        0x6fc9 -> :sswitch_0
-        0x6fca -> :sswitch_0
-        0x6fcb -> :sswitch_0
-        0x6fcd -> :sswitch_0
+        0x2fe2 -> :sswitch_0
+        0x4f30 -> :sswitch_2
+        0x6f11 -> :sswitch_1
+        0x6f13 -> :sswitch_1
+        0x6f14 -> :sswitch_1
+        0x6f15 -> :sswitch_1
+        0x6f16 -> :sswitch_1
+        0x6f17 -> :sswitch_1
+        0x6f18 -> :sswitch_1
+        0x6f38 -> :sswitch_1
+        0x6f3b -> :sswitch_1
+        0x6f3c -> :sswitch_1
+        0x6f40 -> :sswitch_1
+        0x6f46 -> :sswitch_1
+        0x6f49 -> :sswitch_1
+        0x6f4b -> :sswitch_1
+        0x6fad -> :sswitch_1
+        0x6fb7 -> :sswitch_1
+        0x6fc5 -> :sswitch_1
+        0x6fc6 -> :sswitch_1
+        0x6fc7 -> :sswitch_1
+        0x6fc8 -> :sswitch_1
+        0x6fc9 -> :sswitch_1
+        0x6fca -> :sswitch_1
+        0x6fcb -> :sswitch_1
+        0x6fcd -> :sswitch_1
     .end sparse-switch
 .end method
 
@@ -99,12 +147,12 @@
     .parameter "msg"
 
     .prologue
-    .line 80
+    .line 94
     const-string v0, "RIL_UsimFH"
 
     invoke-static {v0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 81
+    .line 95
     return-void
 .end method
 
@@ -113,11 +161,11 @@
     .parameter "msg"
 
     .prologue
-    .line 85
+    .line 99
     const-string v0, "RIL_UsimFH"
 
     invoke-static {v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 86
+    .line 100
     return-void
 .end method

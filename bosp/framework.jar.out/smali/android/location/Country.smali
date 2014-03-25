@@ -58,7 +58,7 @@
 
     .prologue
     .line 101
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 102
     iget-object v0, p1, Landroid/location/Country;->mCountryIso:Ljava/lang/String;
@@ -86,7 +86,7 @@
 
     .prologue
     .line 81
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 82
     if-eqz p1, :cond_0
@@ -137,7 +137,7 @@
 
     .prologue
     .line 91
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 92
     if-eqz p1, :cond_0

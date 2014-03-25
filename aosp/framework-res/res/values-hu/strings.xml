@@ -271,7 +271,7 @@
     <string name="permgrouplab_display">Egyéb alkalmazások kezelőfelülete</string>
     <string name="permgroupdesc_display">Hozzáférés más alkalmazások kezelőfelületéhez</string>
     <string name="permgrouplab_storage">Tárhely</string>
-    <string name="permgroupdesc_storage">Az USB-tár elérése.</string>
+    <string name="permgroupdesc_storage">Az SD-kártya elérése.</string>
     <string name="permlab_statusBar">állapotsor kikapcsolása vagy módosítása</string>
     <string name="permdesc_statusBar">Lehetővé teszi az alkalmazás számára az állapotsor kikapcsolását, illetve rendszerikonok hozzáadását és eltávolítását.</string>
     <string name="permlab_statusBarService">állapotsor</string>
@@ -486,9 +486,9 @@
     <string name="permdesc_brick">Lehetővé teszi az alkalmazás számára a teljes telefon végleges letiltását. Ez nagyon veszélyes.</string>
     <string name="permlab_reboot">telefon újraindításának kikényszerítése</string>
     <string name="permdesc_reboot">Lehetővé teszi az alkalmazás számára a telefon kényszerített újraindítását.</string>
-    <string name="permlab_mount_unmount_filesystems">hozzáférés az USB-háttértárhoz</string>
+    <string name="permlab_mount_unmount_filesystems">hozzáférés az SD-kártyához</string>
     <string name="permdesc_mount_unmount_filesystems">Lehetővé teszi az alkalmazás számára a külső adathordozók fájlrendszereinek csatlakoztatását és leválasztását.</string>
-    <string name="permlab_mount_format_filesystems">USB-háttértár törlése</string>
+    <string name="permlab_mount_format_filesystems">SD-kártya törlése</string>
     <string name="permdesc_mount_format_filesystems">Lehetővé teszi az alkalmazás számára a cserélhető tárhely megformázását.</string>
     <string name="permlab_asec_access">információkérés a belső tárhelyről</string>
     <string name="permdesc_asec_access">Lehetővé teszi az alkalmazás számára, hogy információkat kérjen a belső tárhelyről.</string>
@@ -597,9 +597,9 @@
     <string name="permlab_writeDictionary">szavak hozzáadása a felhasználó által definiált szótárhoz</string>
     <string name="permdesc_writeDictionary">Lehetővé teszi az alkalmazás számára, hogy új szavakat írjon a felhasználói szótárba.</string>
     <string name="permlab_sdcardRead">védett tárhelyhez való hozzáférés tesztelése</string>
-    <string name="permdesc_sdcardRead">Lehetővé teszi az alkalmazás számára egy olyan USB-háttértár engedélyének tesztelését, amely későbbi eszközökön lesz elérhető.</string>
-    <string name="permlab_sdcardWrite">USB-tár törlése/módosítása</string>
-    <string name="permdesc_sdcardWrite">Az alkalmazás USB-tárra írhat.</string>
+    <string name="permdesc_sdcardRead">Lehetővé teszi az alkalmazás számára egy olyan SD-kártya engedélyének tesztelését, amely későbbi eszközökön lesz elérhető.</string>
+    <string name="permlab_sdcardWrite">SD-kártya tartalmának módosítása vagy törlése</string>
+    <string name="permdesc_sdcardWrite">Lehetővé teszi az alkalmazás számára, hogy írjon az SD-kártyára.</string>
     <string name="permlab_mediaStorageWrite">belső tár tartalmának módosítása/törlése</string>
     <string name="permdesc_mediaStorageWrite">Lehetővé teszi az alkalmazás számára, hogy módosítsa a belső háttértár tartalmát.</string>
     <string name="permlab_sdcardAccessAll">hozzáf. minden felh. külső tár</string>
@@ -714,7 +714,7 @@
     <string name="keyguard_password_wrong_pin_code">Helytelen PIN kód.</string>
     <string name="keyguard_label_text">A feloldáshoz nyomja meg a Menü, majd a 0 gombot.</string>
     <string name="emergency_call_dialog_number_for_display">Segélyhívó szám</string>
-    <string name="lockscreen_carrier_default">Nincs szolgáltatás.</string>
+    <string name="lockscreen_carrier_default">Nincs szolgáltatás</string>
     <string name="lockscreen_screen_locked">A képernyő le van zárva.</string>
     <string name="lockscreen_instructions_when_pattern_enabled">A feloldáshoz vagy segélyhívás kezdeményezéséhez nyomja meg a Menü gombot.</string>
     <string name="lockscreen_instructions_when_pattern_disabled">A feloldáshoz nyomja meg a Menü gombot.</string>
@@ -729,11 +729,11 @@
     <string name="lockscreen_charged">Feltöltve</string>
     <string name="lockscreen_battery_short">%d%%</string>
     <string name="lockscreen_low_battery">Csatlakoztassa a töltőt.</string>
-    <string name="lockscreen_missing_sim_message_short">Nincs SIM kártya.</string>
+    <string name="lockscreen_missing_sim_message_short">Nincs SIM kártya</string>
     <string name="lockscreen_missing_sim_message">Nincs SIM-kártya a telefonban.</string>
     <string name="lockscreen_missing_sim_instructions">Helyezzen be egy SIM kártyát.</string>
     <string name="lockscreen_missing_sim_instructions_long">A SIM kártya hiányzik vagy nem olvasható. Helyezzen be egy SIM kártyát.</string>
-    <string name="lockscreen_permanent_disabled_sim_message_short">A SIM kártya nem használható.</string>
+    <string name="lockscreen_permanent_disabled_sim_message_short">A SIM kártya nem használható</string>
     <string name="lockscreen_permanent_disabled_sim_instructions">"SIM kártyája véglegesen letiltva.
  Forduljon a vezeték nélküli szolgáltatójához másik SIM kártya beszerzése érdekében."</string>
     <string name="lockscreen_transport_prev_description">Előző szám gomb</string>
@@ -743,9 +743,9 @@
     <string name="lockscreen_transport_stop_description">Leállítás gomb</string>
     <string name="emergency_calls_only">Csak segélyhívások</string>
     <string name="lockscreen_network_locked_message">A hálózat lezárva</string>
-    <string name="lockscreen_sim_puk_locked_message">A SIM-kártya le van zárva a PUK-kóddal.</string>
+    <string name="lockscreen_sim_puk_locked_message">A SIM-kártya le van zárva a PUK-kóddal</string>
     <string name="lockscreen_sim_puk_locked_instructions">Nézze meg a felhasználói útmutatót, vagy vegye fel a kapcsolatot az ügyfélszolgálattal.</string>
-    <string name="lockscreen_sim_locked_message">A SIM-kártya le van zárva.</string>
+    <string name="lockscreen_sim_locked_message">A SIM-kártya le van zárva</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">SIM-kártya feloldása...</string>
     <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"%d alkalommal rosszul rajzolta le feloldási mintát. 
 
@@ -1030,15 +1030,15 @@ Szeretné bezárni?"</string>
     <string name="perm_costs_money">ez pénzbe kerülhet Önnek</string>
     <string name="usb_storage_activity_title">USB-háttértár</string>
     <string name="usb_storage_title">USB-eszköz csatlakoztatva</string>
-    <string name="usb_storage_message">USB-kapcsolaton keresztül csatlakozott a számítógéphez. Érintse meg a lenti gombot, ha fájlokat szeretne másolni a számítógép és az Android USB-tára között.</string>
+    <string name="usb_storage_message">USB-kapcsolaton keresztül csatlakozott a számítógéphez. Érintse meg a lenti gombot, ha fájlokat szeretne másolni a számítógép és az Android SD-kártyája között.</string>
     <string name="usb_storage_button_mount">USB-tár bekapcsolása</string>
-    <string name="usb_storage_error_message">Probléma van az USB-tár tárolóként történő használatával.</string>
+    <string name="usb_storage_error_message">Probléma van az SD-kártya USB-tárként való használatával.</string>
     <string name="usb_storage_notification_title">USB-eszköz csatlakoztatva</string>
     <string name="usb_storage_notification_message">Érintse meg fájlok másolásához a számítógépről/-re.</string>
     <string name="usb_storage_stop_notification_title">USB-tár kikapcsolása</string>
     <string name="usb_storage_stop_notification_message">Érintse meg az USB-tár kikapcsolásához.</string>
     <string name="usb_storage_stop_title">USB-tár használatban</string>
-    <string name="usb_storage_stop_message">Mielőtt kikapcsolná az USB-tárat, válassza le az Android-eszköz USB-tárát a számítógépről.</string>
+    <string name="usb_storage_stop_message">Az USB-tár kikapcsolása előtt válassza le (távolítsa el) az Android készülék SD-kártyáját a számítógépről.</string>
     <string name="usb_storage_stop_button_mount">USB-tár kikapcsolása</string>
     <string name="usb_storage_stop_error_message">Hiba történt az USB-tár kikapcsolásakor. Ellenőrizze, hogy leválasztotta-e az USB-hostot, majd próbálja újra.</string>
     <string name="dlg_confirm_kill_storage_users_title">USB-tár bekapcsolása</string>
@@ -1050,8 +1050,8 @@ Szeretné bezárni?"</string>
     <string name="usb_cd_installer_notification_title">Csatlakoztatva telepítőként</string>
     <string name="usb_accessory_notification_title">Csatlakoztatva egy USB-kiegészítőhöz</string>
     <string name="usb_notification_message">Érintse meg a további USB-opciókért.</string>
-    <string name="extmedia_format_title">USB-tár formázása?</string>
-    <string name="extmedia_format_message">Az USB-háttértáron tárolt összes fájl törlésre kerül. Ez a művelet nem visszavonható!</string>
+    <string name="extmedia_format_title">SD-kártya formázása?</string>
+    <string name="extmedia_format_message">A kártyán lévő összes adat elvész.</string>
     <string name="extmedia_format_button_format">Formázás</string>
     <string name="adb_active_notification_title">USB hibakereső csatlakoztatva</string>
     <string name="adb_active_notification_message">Érintse meg az USB hibakeresés kikapcsolásához.</string>
@@ -1064,18 +1064,18 @@ Szeretné bezárni?"</string>
     <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="candidates_style"><u>jelöltek</u></string>
-    <string name="ext_media_checking_notification_title">Az USB-tár előkészítése</string>
+    <string name="ext_media_checking_notification_title">A(z) %s előkészítése</string>
     <string name="ext_media_checking_notification_message">Hibakeresés.</string>
-    <string name="ext_media_nofs_notification_title">Üres USB-tár</string>
-    <string name="ext_media_nofs_notification_message">Az USB-háttértár üres, vagy a fájlrendszere nem támogatott.</string>
-    <string name="ext_media_unmountable_notification_title">Sérült USB-tár</string>
-    <string name="ext_media_unmountable_notification_message">Az USB-tár sérült. Próbálja meg formázni.</string>
-    <string name="ext_media_badremoval_notification_title">USB-tár váratlanul eltávolítva</string>
-    <string name="ext_media_badremoval_notification_message">Az adatvesztés elkerülése érdekében válassza le az USB-tárat, mielőtt kihúzná azt.</string>
-    <string name="ext_media_safe_unmount_notification_title">Az USB-tár biztonságosan eltávolítható</string>
-    <string name="ext_media_safe_unmount_notification_message">Biztonságosan eltávolíthatja az USB-tárat.</string>
-    <string name="ext_media_nomedia_notification_title">Hiányzó USB-tár</string>
-    <string name="ext_media_nomedia_notification_message">Az USB-tár eltávolítva. Helyezzen be új hordozóeszközt.</string>
+    <string name="ext_media_nofs_notification_title">Üres %s</string>
+    <string name="ext_media_nofs_notification_message">A(z) %s üres vagy nem támogatott fájlrendszerrel rendelkezik.</string>
+    <string name="ext_media_unmountable_notification_title">Sérült %s</string>
+    <string name="ext_media_unmountable_notification_message">A(z) %s sérült. Szükség lehet az újraformázására.</string>
+    <string name="ext_media_badremoval_notification_title">A(z) %s tárolót váratlanul eltávolították.</string>
+    <string name="ext_media_badremoval_notification_message">Válassza le a(z) %s tárolót, eltávolítás előtt, nehogy adatvesztés történjen.</string>
+    <string name="ext_media_safe_unmount_notification_title">A(z) %s biztonságosan eltávolítható</string>
+    <string name="ext_media_safe_unmount_notification_message">Biztonságosan eltávolíthatja a(z) %s tárolót.</string>
+    <string name="ext_media_nomedia_notification_title">Eltávolított %s</string>
+    <string name="ext_media_nomedia_notification_message">A(z) %s eltávolítva. Tegyen be egy újat.</string>
     <string name="activity_list_empty">Nincs megfelelő tevékenység.</string>
     <string name="permlab_pkgUsageStats">komponenshasználati statisztikák frissítése</string>
     <string name="permdesc_pkgUsageStats">Lehetővé teszi az alkalmazás számára az összegyűjtött komponenshasználati statisztikák módosítását. Normál alkalmazások nem használhatják.</string>
@@ -1135,13 +1135,13 @@ a(z) %s fiók számára."</string>
     <string name="no_matches">Nincs találat</string>
     <string name="find_on_page">Keresés az oldalon</string>
     <string name="action_mode_done">Kész</string>
-    <string name="progress_unmounting">Az USB-tár leválasztása...</string>
-    <string name="progress_erasing">Az USB-tár törlése...</string>
-    <string name="format_error">Nem lehet törölni az USB-háttértárat</string>
+    <string name="progress_unmounting">SD-kártya leválasztása...</string>
+    <string name="progress_erasing">Az SD-kártya törlése...</string>
+    <string name="format_error">Nem lehet törölni az SD-kártyát.</string>
     <string name="media_bad_removal">Az SD-kártya nem lett lecsatolva, mielőtt eltávolították.</string>
-    <string name="media_checking">Az USB-tár ellenőrzése folyamatban van.</string>
+    <string name="media_checking">Az SD-kártya ellenőrzése folyamatban van.</string>
     <string name="media_removed">Az SD-kártya eltávolításra került.</string>
-    <string name="media_shared">Az USB-tárat jelenleg a számítógép használja.</string>
+    <string name="media_shared">Az SD-kártyát jelenleg a számítógép használja.</string>
     <string name="media_unknown_state">A külső meghajtó állapota ismeretlen.</string>
     <string name="share">Megosztás</string>
     <string name="find">Keresés</string>
@@ -1315,4 +1315,7 @@ Ha hosszú ideig hangosan hallgatja a zenét, az károsíthatja a hallását."</
     <string name="enable_accessibility_canceled">Hozzáférés megszakítva.</string>
     <string name="user_switched">%1$s az aktuális felhasználó.</string>
     <string name="owner_name">Tulajdonos</string>
+    <string name="storage_phone">Telefon-memória</string>
+    <string name="storage_external_usb">Külső USB-tároló</string>
+    <string name="zz_keyguard_accessibility_voice_unlock">Hangkioldás.</string>
 </resources>

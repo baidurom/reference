@@ -25,6 +25,8 @@
 
 .field private static final TIMEOUT_PERIOD:I = 0x7530
 
+.field static final XLOGTAG:Ljava/lang/String; = "webkit/webcorewatchdog"
+
 .field private static sInstance:Landroid/webkit/WebCoreThreadWatchdog;
 
 
@@ -53,13 +55,13 @@
     .parameter "webCoreThreadHandler"
 
     .prologue
-    .line 109
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 115
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 110
+    .line 116
     iput-object p1, p0, Landroid/webkit/WebCoreThreadWatchdog;->mWebCoreThreadHandler:Landroid/os/Handler;
 
-    .line 111
+    .line 117
     return-void
 .end method
 
@@ -68,7 +70,7 @@
     .parameter "x0"
 
     .prologue
-    .line 36
+    .line 39
     iget-boolean v0, p0, Landroid/webkit/WebCoreThreadWatchdog;->mPaused:Z
 
     return v0
@@ -79,7 +81,7 @@
     .parameter "x0"
 
     .prologue
-    .line 36
+    .line 39
     iget-object v0, p0, Landroid/webkit/WebCoreThreadWatchdog;->mHandler:Landroid/os/Handler;
 
     return-object v0
@@ -90,7 +92,7 @@
     .parameter "x0"
 
     .prologue
-    .line 36
+    .line 39
     iget-object v0, p0, Landroid/webkit/WebCoreThreadWatchdog;->mWebCoreThreadHandler:Landroid/os/Handler;
 
     return-object v0
@@ -101,7 +103,7 @@
     .parameter "x0"
 
     .prologue
-    .line 36
+    .line 39
     iget-object v0, p0, Landroid/webkit/WebCoreThreadWatchdog;->mWebViews:Ljava/util/Set;
 
     return-object v0
@@ -112,25 +114,25 @@
     .parameter "w"
 
     .prologue
-    .line 99
+    .line 105
     iget-object v0, p0, Landroid/webkit/WebCoreThreadWatchdog;->mWebViews:Ljava/util/Set;
 
     if-nez v0, :cond_0
 
-    .line 100
+    .line 106
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     iput-object v0, p0, Landroid/webkit/WebCoreThreadWatchdog;->mWebViews:Ljava/util/Set;
 
-    .line 102
+    .line 108
     :cond_0
     iget-object v0, p0, Landroid/webkit/WebCoreThreadWatchdog;->mWebViews:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 103
+    .line 109
     return-void
 .end method
 
@@ -138,12 +140,12 @@
     .locals 2
 
     .prologue
-    .line 144
+    .line 152
     const-class v1, Landroid/webkit/WebCoreThreadWatchdog;
 
     monitor-enter v1
 
-    .line 145
+    .line 153
     :try_start_0
     new-instance v0, Landroid/webkit/WebCoreThreadWatchdog$1;
 
@@ -151,13 +153,13 @@
 
     iput-object v0, p0, Landroid/webkit/WebCoreThreadWatchdog;->mHandler:Landroid/os/Handler;
 
-    .line 205
+    .line 217
     monitor-exit v1
 
-    .line 206
+    .line 218
     return-void
 
-    .line 205
+    .line 217
     :catchall_0
     move-exception v0
 
@@ -169,136 +171,6 @@
 .end method
 
 .method public static declared-synchronized pause()V
-    .locals 2
-
-    .prologue
-    .line 87
-    const-class v1, Landroid/webkit/WebCoreThreadWatchdog;
-
-    monitor-enter v1
-
-    :try_start_0
-    sget-object v0, Landroid/webkit/WebCoreThreadWatchdog;->sInstance:Landroid/webkit/WebCoreThreadWatchdog;
-
-    if-eqz v0, :cond_0
-
-    .line 88
-    sget-object v0, Landroid/webkit/WebCoreThreadWatchdog;->sInstance:Landroid/webkit/WebCoreThreadWatchdog;
-
-    invoke-direct {v0}, Landroid/webkit/WebCoreThreadWatchdog;->pauseWatchdog()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 90
-    :cond_0
-    monitor-exit v1
-
-    return-void
-
-    .line 87
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
-.end method
-
-.method private pauseWatchdog()V
-    .locals 2
-
-    .prologue
-    .line 114
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Landroid/webkit/WebCoreThreadWatchdog;->mPaused:Z
-
-    .line 116
-    iget-object v0, p0, Landroid/webkit/WebCoreThreadWatchdog;->mHandler:Landroid/os/Handler;
-
-    if-nez v0, :cond_0
-
-    .line 123
-    :goto_0
-    return-void
-
-    .line 120
-    :cond_0
-    iget-object v0, p0, Landroid/webkit/WebCoreThreadWatchdog;->mHandler:Landroid/os/Handler;
-
-    const/16 v1, 0x65
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
-
-    .line 121
-    iget-object v0, p0, Landroid/webkit/WebCoreThreadWatchdog;->mHandler:Landroid/os/Handler;
-
-    const/16 v1, 0x64
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
-
-    .line 122
-    iget-object v0, p0, Landroid/webkit/WebCoreThreadWatchdog;->mWebCoreThreadHandler:Landroid/os/Handler;
-
-    const/16 v1, 0xc5
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
-
-    goto :goto_0
-.end method
-
-.method public static declared-synchronized registerWebView(Landroid/webkit/WebViewClassic;)V
-    .locals 2
-    .parameter "w"
-
-    .prologue
-    .line 75
-    const-class v1, Landroid/webkit/WebCoreThreadWatchdog;
-
-    monitor-enter v1
-
-    :try_start_0
-    sget-object v0, Landroid/webkit/WebCoreThreadWatchdog;->sInstance:Landroid/webkit/WebCoreThreadWatchdog;
-
-    if-eqz v0, :cond_0
-
-    .line 76
-    sget-object v0, Landroid/webkit/WebCoreThreadWatchdog;->sInstance:Landroid/webkit/WebCoreThreadWatchdog;
-
-    invoke-direct {v0, p0}, Landroid/webkit/WebCoreThreadWatchdog;->addWebView(Landroid/webkit/WebViewClassic;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 78
-    :cond_0
-    monitor-exit v1
-
-    return-void
-
-    .line 75
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
-.end method
-
-.method private removeWebView(Landroid/webkit/WebViewClassic;)V
-    .locals 1
-    .parameter "w"
-
-    .prologue
-    .line 106
-    iget-object v0, p0, Landroid/webkit/WebCoreThreadWatchdog;->mWebViews:Ljava/util/Set;
-
-    invoke-interface {v0, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
-
-    .line 107
-    return-void
-.end method
-
-.method public static declared-synchronized resume()V
     .locals 2
 
     .prologue
@@ -315,7 +187,7 @@
     .line 94
     sget-object v0, Landroid/webkit/WebCoreThreadWatchdog;->sInstance:Landroid/webkit/WebCoreThreadWatchdog;
 
-    invoke-direct {v0}, Landroid/webkit/WebCoreThreadWatchdog;->resumeWatchdog()V
+    invoke-direct {v0}, Landroid/webkit/WebCoreThreadWatchdog;->pauseWatchdog()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -334,121 +206,57 @@
     throw v0
 .end method
 
-.method private resumeWatchdog()V
-    .locals 4
+.method private pauseWatchdog()V
+    .locals 2
 
     .prologue
-    .line 126
-    iget-boolean v0, p0, Landroid/webkit/WebCoreThreadWatchdog;->mPaused:Z
-
-    if-nez v0, :cond_1
-
-    .line 141
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 132
-    :cond_1
-    const/4 v0, 0x0
+    .line 120
+    const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/webkit/WebCoreThreadWatchdog;->mPaused:Z
 
-    .line 134
+    .line 122
     iget-object v0, p0, Landroid/webkit/WebCoreThreadWatchdog;->mHandler:Landroid/os/Handler;
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    .line 138
+    .line 130
+    :goto_0
+    return-void
+
+    .line 126
+    :cond_0
+    iget-object v0, p0, Landroid/webkit/WebCoreThreadWatchdog;->mHandler:Landroid/os/Handler;
+
+    const/16 v1, 0x65
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
+
+    .line 127
+    const-string/jumbo v0, "webkit/webcorewatchdog"
+
+    const-string/jumbo v1, "remove timed_out message: in pauseWatchdog"
+
+    invoke-static {v0, v1}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 128
+    iget-object v0, p0, Landroid/webkit/WebCoreThreadWatchdog;->mHandler:Landroid/os/Handler;
+
+    const/16 v1, 0x64
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
+
+    .line 129
     iget-object v0, p0, Landroid/webkit/WebCoreThreadWatchdog;->mWebCoreThreadHandler:Landroid/os/Handler;
 
     const/16 v1, 0xc5
 
-    iget-object v2, p0, Landroid/webkit/WebCoreThreadWatchdog;->mHandler:Landroid/os/Handler;
-
-    const/16 v3, 0x64
-
-    invoke-virtual {v2, v3}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
-
-    .line 140
-    iget-object v0, p0, Landroid/webkit/WebCoreThreadWatchdog;->mHandler:Landroid/os/Handler;
-
-    iget-object v1, p0, Landroid/webkit/WebCoreThreadWatchdog;->mHandler:Landroid/os/Handler;
-
-    const/16 v2, 0x65
-
-    invoke-virtual {v1, v2}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
-
-    move-result-object v1
-
-    const-wide/16 v2, 0x7530
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
     goto :goto_0
 .end method
 
-.method public static declared-synchronized start(Landroid/os/Handler;)Landroid/webkit/WebCoreThreadWatchdog;
-    .locals 4
-    .parameter "webCoreThreadHandler"
-
-    .prologue
-    .line 67
-    const-class v1, Landroid/webkit/WebCoreThreadWatchdog;
-
-    monitor-enter v1
-
-    :try_start_0
-    sget-object v0, Landroid/webkit/WebCoreThreadWatchdog;->sInstance:Landroid/webkit/WebCoreThreadWatchdog;
-
-    if-nez v0, :cond_0
-
-    .line 68
-    new-instance v0, Landroid/webkit/WebCoreThreadWatchdog;
-
-    invoke-direct {v0, p0}, Landroid/webkit/WebCoreThreadWatchdog;-><init>(Landroid/os/Handler;)V
-
-    sput-object v0, Landroid/webkit/WebCoreThreadWatchdog;->sInstance:Landroid/webkit/WebCoreThreadWatchdog;
-
-    .line 69
-    new-instance v0, Ljava/lang/Thread;
-
-    sget-object v2, Landroid/webkit/WebCoreThreadWatchdog;->sInstance:Landroid/webkit/WebCoreThreadWatchdog;
-
-    const-string v3, "WebCoreThreadWatchdog"
-
-    invoke-direct {v0, v2, v3}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
-
-    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
-
-    .line 71
-    :cond_0
-    sget-object v0, Landroid/webkit/WebCoreThreadWatchdog;->sInstance:Landroid/webkit/WebCoreThreadWatchdog;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit v1
-
-    return-object v0
-
-    .line 67
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
-.end method
-
-.method public static declared-synchronized unregisterWebView(Landroid/webkit/WebViewClassic;)V
+.method public static declared-synchronized registerWebView(Landroid/webkit/WebViewClassic;)V
     .locals 2
     .parameter "w"
 
@@ -466,7 +274,7 @@
     .line 82
     sget-object v0, Landroid/webkit/WebCoreThreadWatchdog;->sInstance:Landroid/webkit/WebCoreThreadWatchdog;
 
-    invoke-direct {v0, p0}, Landroid/webkit/WebCoreThreadWatchdog;->removeWebView(Landroid/webkit/WebViewClassic;)V
+    invoke-direct {v0, p0}, Landroid/webkit/WebCoreThreadWatchdog;->addWebView(Landroid/webkit/WebViewClassic;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -485,30 +293,238 @@
     throw v0
 .end method
 
+.method private removeWebView(Landroid/webkit/WebViewClassic;)V
+    .locals 1
+    .parameter "w"
+
+    .prologue
+    .line 112
+    iget-object v0, p0, Landroid/webkit/WebCoreThreadWatchdog;->mWebViews:Ljava/util/Set;
+
+    invoke-interface {v0, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+
+    .line 113
+    return-void
+.end method
+
+.method public static declared-synchronized resume()V
+    .locals 2
+
+    .prologue
+    .line 99
+    const-class v1, Landroid/webkit/WebCoreThreadWatchdog;
+
+    monitor-enter v1
+
+    :try_start_0
+    sget-object v0, Landroid/webkit/WebCoreThreadWatchdog;->sInstance:Landroid/webkit/WebCoreThreadWatchdog;
+
+    if-eqz v0, :cond_0
+
+    .line 100
+    sget-object v0, Landroid/webkit/WebCoreThreadWatchdog;->sInstance:Landroid/webkit/WebCoreThreadWatchdog;
+
+    invoke-direct {v0}, Landroid/webkit/WebCoreThreadWatchdog;->resumeWatchdog()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 102
+    :cond_0
+    monitor-exit v1
+
+    return-void
+
+    .line 99
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+
+    throw v0
+.end method
+
+.method private resumeWatchdog()V
+    .locals 4
+
+    .prologue
+    .line 133
+    iget-boolean v0, p0, Landroid/webkit/WebCoreThreadWatchdog;->mPaused:Z
+
+    if-nez v0, :cond_1
+
+    .line 149
+    :cond_0
+    :goto_0
+    return-void
+
+    .line 139
+    :cond_1
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Landroid/webkit/WebCoreThreadWatchdog;->mPaused:Z
+
+    .line 141
+    iget-object v0, p0, Landroid/webkit/WebCoreThreadWatchdog;->mHandler:Landroid/os/Handler;
+
+    if-eqz v0, :cond_0
+
+    .line 145
+    iget-object v0, p0, Landroid/webkit/WebCoreThreadWatchdog;->mWebCoreThreadHandler:Landroid/os/Handler;
+
+    const/16 v1, 0xc5
+
+    iget-object v2, p0, Landroid/webkit/WebCoreThreadWatchdog;->mHandler:Landroid/os/Handler;
+
+    const/16 v3, 0x64
+
+    invoke-virtual {v2, v3}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
+
+    .line 147
+    iget-object v0, p0, Landroid/webkit/WebCoreThreadWatchdog;->mHandler:Landroid/os/Handler;
+
+    iget-object v1, p0, Landroid/webkit/WebCoreThreadWatchdog;->mHandler:Landroid/os/Handler;
+
+    const/16 v2, 0x65
+
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
+
+    move-result-object v1
+
+    const-wide/16 v2, 0x7530
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
+
+    .line 148
+    const-string/jumbo v0, "webkit/webcorewatchdog"
+
+    const-string/jumbo v1, "reset timed_out message: in resumeWatchdog"
+
+    invoke-static {v0, v1}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+.end method
+
+.method public static declared-synchronized start(Landroid/os/Handler;)Landroid/webkit/WebCoreThreadWatchdog;
+    .locals 4
+    .parameter "webCoreThreadHandler"
+
+    .prologue
+    .line 73
+    const-class v1, Landroid/webkit/WebCoreThreadWatchdog;
+
+    monitor-enter v1
+
+    :try_start_0
+    sget-object v0, Landroid/webkit/WebCoreThreadWatchdog;->sInstance:Landroid/webkit/WebCoreThreadWatchdog;
+
+    if-nez v0, :cond_0
+
+    .line 74
+    new-instance v0, Landroid/webkit/WebCoreThreadWatchdog;
+
+    invoke-direct {v0, p0}, Landroid/webkit/WebCoreThreadWatchdog;-><init>(Landroid/os/Handler;)V
+
+    sput-object v0, Landroid/webkit/WebCoreThreadWatchdog;->sInstance:Landroid/webkit/WebCoreThreadWatchdog;
+
+    .line 75
+    new-instance v0, Ljava/lang/Thread;
+
+    sget-object v2, Landroid/webkit/WebCoreThreadWatchdog;->sInstance:Landroid/webkit/WebCoreThreadWatchdog;
+
+    const-string v3, "WebCoreThreadWatchdog"
+
+    invoke-direct {v0, v2, v3}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
+
+    .line 77
+    :cond_0
+    sget-object v0, Landroid/webkit/WebCoreThreadWatchdog;->sInstance:Landroid/webkit/WebCoreThreadWatchdog;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit v1
+
+    return-object v0
+
+    .line 73
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+
+    throw v0
+.end method
+
+.method public static declared-synchronized unregisterWebView(Landroid/webkit/WebViewClassic;)V
+    .locals 2
+    .parameter "w"
+
+    .prologue
+    .line 87
+    const-class v1, Landroid/webkit/WebCoreThreadWatchdog;
+
+    monitor-enter v1
+
+    :try_start_0
+    sget-object v0, Landroid/webkit/WebCoreThreadWatchdog;->sInstance:Landroid/webkit/WebCoreThreadWatchdog;
+
+    if-eqz v0, :cond_0
+
+    .line 88
+    sget-object v0, Landroid/webkit/WebCoreThreadWatchdog;->sInstance:Landroid/webkit/WebCoreThreadWatchdog;
+
+    invoke-direct {v0, p0}, Landroid/webkit/WebCoreThreadWatchdog;->removeWebView(Landroid/webkit/WebViewClassic;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 90
+    :cond_0
+    monitor-exit v1
+
+    return-void
+
+    .line 87
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+
+    throw v0
+.end method
+
 
 # virtual methods
 .method public run()V
     .locals 5
 
     .prologue
-    .line 210
+    .line 222
     invoke-static {}, Landroid/os/Looper;->prepare()V
 
-    .line 212
+    .line 224
     invoke-direct {p0}, Landroid/webkit/WebCoreThreadWatchdog;->createHandler()V
 
-    .line 216
+    .line 228
     const-class v1, Landroid/webkit/WebCoreThreadWatchdog;
 
     monitor-enter v1
 
-    .line 217
+    .line 229
     :try_start_0
     iget-boolean v0, p0, Landroid/webkit/WebCoreThreadWatchdog;->mPaused:Z
 
     if-nez v0, :cond_0
 
-    .line 218
+    .line 230
     iget-object v0, p0, Landroid/webkit/WebCoreThreadWatchdog;->mWebCoreThreadHandler:Landroid/os/Handler;
 
     const/16 v2, 0xc5
@@ -527,7 +543,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 220
+    .line 232
     iget-object v0, p0, Landroid/webkit/WebCoreThreadWatchdog;->mHandler:Landroid/os/Handler;
 
     iget-object v2, p0, Landroid/webkit/WebCoreThreadWatchdog;->mHandler:Landroid/os/Handler;
@@ -542,19 +558,26 @@
 
     invoke-virtual {v0, v2, v3, v4}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 222
+    .line 233
+    const-string/jumbo v0, "webkit/webcorewatchdog"
+
+    const-string/jumbo v2, "reset timed_out message: in createHandler thread run"
+
+    invoke-static {v0, v2}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 235
     :cond_0
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 224
+    .line 237
     invoke-static {}, Landroid/os/Looper;->loop()V
 
-    .line 225
+    .line 238
     return-void
 
-    .line 222
+    .line 235
     :catchall_0
     move-exception v0
 

@@ -170,7 +170,7 @@
     const/4 v5, 0x0
 
     .line 78
-    sput-boolean v5, Landroid/net/wifi/WifiWatchdogStateMachine;->DBG:Z
+    sput-boolean v7, Landroid/net/wifi/WifiWatchdogStateMachine;->DBG:Z
 
     .line 237
     const/4 v0, 0x4
@@ -1073,20 +1073,20 @@
     .parameter "rssi"
 
     .prologue
-    .line 913
+    .line 915
     const/4 v1, 0x5
 
     invoke-static {p1, v1}, Landroid/net/wifi/WifiManager;->calculateSignalLevel(II)I
 
     move-result v0
 
-    .line 914
+    .line 916
     .local v0, signalLevel:I
     sget-boolean v1, Landroid/net/wifi/WifiWatchdogStateMachine;->DBG:Z
 
     if-eqz v1, :cond_0
 
-    .line 915
+    .line 917
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1129,7 +1129,7 @@
 
     invoke-static {v1}, Landroid/net/wifi/WifiWatchdogStateMachine;->logd(Ljava/lang/String;)V
 
-    .line 916
+    .line 918
     :cond_0
     return v0
 .end method
@@ -1145,7 +1145,7 @@
 
     const/4 v1, 0x1
 
-    .line 950
+    .line 952
     if-eqz p2, :cond_0
 
     move v0, v1
@@ -1222,12 +1222,12 @@
     .parameter "s"
 
     .prologue
-    .line 970
+    .line 972
     const-string v0, "WifiWatchdogStateMachine"
 
     invoke-static {v0, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 971
+    .line 973
     return-void
 .end method
 
@@ -1236,12 +1236,12 @@
     .parameter "s"
 
     .prologue
-    .line 974
+    .line 976
     const-string v0, "WifiWatchdogStateMachine"
 
     invoke-static {v0, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 975
+    .line 977
     return-void
 .end method
 
@@ -1307,7 +1307,7 @@
     .parameter "value"
 
     .prologue
-    .line 966
+    .line 968
     if-eqz p2, :cond_0
 
     const/4 v0, 0x1
@@ -1400,7 +1400,7 @@
     .parameter "isGood"
 
     .prologue
-    .line 920
+    .line 922
     sget-boolean v0, Landroid/net/wifi/WifiWatchdogStateMachine;->DBG:Z
 
     if-eqz v0, :cond_0
@@ -1409,23 +1409,23 @@
 
     invoke-static {v0}, Landroid/net/wifi/WifiWatchdogStateMachine;->logd(Ljava/lang/String;)V
 
-    .line 921
+    .line 923
     :cond_0
     if-eqz p1, :cond_3
 
-    .line 922
+    .line 924
     iget-object v0, p0, Landroid/net/wifi/WifiWatchdogStateMachine;->mWsmChannel:Lcom/android/internal/util/AsyncChannel;
 
     const v1, 0x21016
 
     invoke-virtual {v0, v1}, Lcom/android/internal/util/AsyncChannel;->sendMessage(I)V
 
-    .line 923
+    .line 925
     iget-object v0, p0, Landroid/net/wifi/WifiWatchdogStateMachine;->mCurrentBssid:Landroid/net/wifi/WifiWatchdogStateMachine$BssidStatistics;
 
     if-eqz v0, :cond_1
 
-    .line 924
+    .line 926
     iget-object v0, p0, Landroid/net/wifi/WifiWatchdogStateMachine;->mCurrentBssid:Landroid/net/wifi/WifiWatchdogStateMachine$BssidStatistics;
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -1435,7 +1435,7 @@
     #setter for: Landroid/net/wifi/WifiWatchdogStateMachine$BssidStatistics;->mLastTimeGood:J
     invoke-static {v0, v1, v2}, Landroid/net/wifi/WifiWatchdogStateMachine$BssidStatistics;->access$4702(Landroid/net/wifi/WifiWatchdogStateMachine$BssidStatistics;J)J
 
-    .line 926
+    .line 928
     :cond_1
     sget-boolean v0, Landroid/net/wifi/WifiWatchdogStateMachine;->DBG:Z
 
@@ -1445,12 +1445,12 @@
 
     invoke-static {v0}, Landroid/net/wifi/WifiWatchdogStateMachine;->logd(Ljava/lang/String;)V
 
-    .line 934
+    .line 936
     :cond_2
     :goto_0
     return-void
 
-    .line 928
+    .line 930
     :cond_3
     iget-object v0, p0, Landroid/net/wifi/WifiWatchdogStateMachine;->mWsmChannel:Lcom/android/internal/util/AsyncChannel;
 
@@ -1458,12 +1458,12 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/util/AsyncChannel;->sendMessage(I)V
 
-    .line 929
+    .line 931
     iget-object v0, p0, Landroid/net/wifi/WifiWatchdogStateMachine;->mCurrentBssid:Landroid/net/wifi/WifiWatchdogStateMachine$BssidStatistics;
 
     if-eqz v0, :cond_4
 
-    .line 930
+    .line 932
     iget-object v0, p0, Landroid/net/wifi/WifiWatchdogStateMachine;->mCurrentBssid:Landroid/net/wifi/WifiWatchdogStateMachine$BssidStatistics;
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -1473,7 +1473,7 @@
     #setter for: Landroid/net/wifi/WifiWatchdogStateMachine$BssidStatistics;->mLastTimePoor:J
     invoke-static {v0, v1, v2}, Landroid/net/wifi/WifiWatchdogStateMachine$BssidStatistics;->access$4802(Landroid/net/wifi/WifiWatchdogStateMachine$BssidStatistics;J)J
 
-    .line 932
+    .line 934
     :cond_4
     const-string v0, "Poor link notification is sent"
 
@@ -1562,7 +1562,7 @@
     .prologue
     const v2, 0x21007
 
-    .line 886
+    .line 888
     sget-boolean v0, Landroid/net/wifi/WifiWatchdogStateMachine;->DBG:Z
 
     if-eqz v0, :cond_0
@@ -1592,33 +1592,33 @@
 
     invoke-static {v0}, Landroid/net/wifi/WifiWatchdogStateMachine;->logd(Ljava/lang/String;)V
 
-    .line 889
+    .line 891
     :cond_0
     if-nez p1, :cond_5
 
-    .line 890
+    .line 892
     iget-object v0, p0, Landroid/net/wifi/WifiWatchdogStateMachine;->mCurrentBssid:Landroid/net/wifi/WifiWatchdogStateMachine$BssidStatistics;
 
     if-nez v0, :cond_3
 
-    .line 910
+    .line 912
     :cond_1
     :goto_1
     return-void
 
-    .line 886
+    .line 888
     :cond_2
     const-string/jumbo v0, "null"
 
     goto :goto_0
 
-    .line 891
+    .line 893
     :cond_3
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/net/wifi/WifiWatchdogStateMachine;->mCurrentBssid:Landroid/net/wifi/WifiWatchdogStateMachine$BssidStatistics;
 
-    .line 892
+    .line 894
     sget-boolean v0, Landroid/net/wifi/WifiWatchdogStateMachine;->DBG:Z
 
     if-eqz v0, :cond_4
@@ -1627,13 +1627,13 @@
 
     invoke-static {v0}, Landroid/net/wifi/WifiWatchdogStateMachine;->logd(Ljava/lang/String;)V
 
-    .line 893
+    .line 895
     :cond_4
     invoke-virtual {p0, v2}, Landroid/net/wifi/WifiWatchdogStateMachine;->sendMessage(I)V
 
     goto :goto_1
 
-    .line 898
+    .line 900
     :cond_5
     iget-object v0, p0, Landroid/net/wifi/WifiWatchdogStateMachine;->mCurrentBssid:Landroid/net/wifi/WifiWatchdogStateMachine$BssidStatistics;
 
@@ -1652,7 +1652,7 @@
 
     if-nez v0, :cond_1
 
-    .line 901
+    .line 903
     :cond_6
     iget-object v0, p0, Landroid/net/wifi/WifiWatchdogStateMachine;->mBssidCache:Landroid/util/LruCache;
 
@@ -1664,26 +1664,26 @@
 
     iput-object v0, p0, Landroid/net/wifi/WifiWatchdogStateMachine;->mCurrentBssid:Landroid/net/wifi/WifiWatchdogStateMachine$BssidStatistics;
 
-    .line 902
+    .line 904
     iget-object v0, p0, Landroid/net/wifi/WifiWatchdogStateMachine;->mCurrentBssid:Landroid/net/wifi/WifiWatchdogStateMachine$BssidStatistics;
 
     if-nez v0, :cond_7
 
-    .line 903
+    .line 905
     new-instance v0, Landroid/net/wifi/WifiWatchdogStateMachine$BssidStatistics;
 
     invoke-direct {v0, p0, p1}, Landroid/net/wifi/WifiWatchdogStateMachine$BssidStatistics;-><init>(Landroid/net/wifi/WifiWatchdogStateMachine;Ljava/lang/String;)V
 
     iput-object v0, p0, Landroid/net/wifi/WifiWatchdogStateMachine;->mCurrentBssid:Landroid/net/wifi/WifiWatchdogStateMachine$BssidStatistics;
 
-    .line 904
+    .line 906
     iget-object v0, p0, Landroid/net/wifi/WifiWatchdogStateMachine;->mBssidCache:Landroid/util/LruCache;
 
     iget-object v1, p0, Landroid/net/wifi/WifiWatchdogStateMachine;->mCurrentBssid:Landroid/net/wifi/WifiWatchdogStateMachine$BssidStatistics;
 
     invoke-virtual {v0, p1, v1}, Landroid/util/LruCache;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 908
+    .line 910
     :cond_7
     sget-boolean v0, Landroid/net/wifi/WifiWatchdogStateMachine;->DBG:Z
 
@@ -1693,7 +1693,7 @@
 
     invoke-static {v0}, Landroid/net/wifi/WifiWatchdogStateMachine;->logd(Ljava/lang/String;)V
 
-    .line 909
+    .line 911
     :cond_8
     invoke-virtual {p0, v2}, Landroid/net/wifi/WifiWatchdogStateMachine;->sendMessage(I)V
 
@@ -1819,7 +1819,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "mLinkProperties: ["
+    const-string/jumbo v1, "mLinkProperties: ["
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1848,7 +1848,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "mCurrentSignalLevel: ["
+    const-string/jumbo v1, "mCurrentSignalLevel: ["
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1877,7 +1877,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "mPoorNetworkDetectionEnabled: ["
+    const-string/jumbo v1, "mPoorNetworkDetectionEnabled: ["
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

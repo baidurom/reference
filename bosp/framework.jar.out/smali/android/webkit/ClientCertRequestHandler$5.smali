@@ -30,7 +30,7 @@
     .line 116
     iput-object p1, p0, Landroid/webkit/ClientCertRequestHandler$5;->this$0:Landroid/webkit/ClientCertRequestHandler;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

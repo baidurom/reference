@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 298
+    .line 308
     iput-object p1, p0, Lcom/android/server/input/InputManagerService$2;->this$0:Lcom/android/server/input/InputManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,12 +40,12 @@
     .parameter "intent"
 
     .prologue
-    .line 301
+    .line 311
     iget-object v0, p0, Lcom/android/server/input/InputManagerService$2;->this$0:Lcom/android/server/input/InputManagerService;
 
     #calls: Lcom/android/server/input/InputManagerService;->updateKeyboardLayouts()V
     invoke-static {v0}, Lcom/android/server/input/InputManagerService;->access$000(Lcom/android/server/input/InputManagerService;)V
 
-    .line 302
+    .line 312
     return-void
 .end method

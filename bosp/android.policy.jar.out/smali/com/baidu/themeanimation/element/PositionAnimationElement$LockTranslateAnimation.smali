@@ -75,7 +75,7 @@
     :cond_0
     iget-object v8, p0, Lcom/baidu/themeanimation/element/PositionAnimationElement$LockTranslateAnimation;->this$0:Lcom/baidu/themeanimation/element/PositionAnimationElement;
 
-    iget-object v8, v8, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v8, v8, Lcom/baidu/themeanimation/element/PositionAnimationElement;->mKeyFrames:Ljava/util/List;
 
     iget v9, p0, Lcom/baidu/themeanimation/element/PositionAnimationElement$LockTranslateAnimation;->mCurrentStage:I
 
@@ -107,7 +107,7 @@
     .line 170
     iget-object v8, p0, Lcom/baidu/themeanimation/element/PositionAnimationElement$LockTranslateAnimation;->this$0:Lcom/baidu/themeanimation/element/PositionAnimationElement;
 
-    iget-object v8, v8, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v8, v8, Lcom/baidu/themeanimation/element/PositionAnimationElement;->mKeyFrames:Ljava/util/List;
 
     add-int/lit8 v9, v3, -0x1
 
@@ -140,7 +140,7 @@
     :cond_2
     iget-object v8, p0, Lcom/baidu/themeanimation/element/PositionAnimationElement$LockTranslateAnimation;->this$0:Lcom/baidu/themeanimation/element/PositionAnimationElement;
 
-    iget-object v8, v8, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v8, v8, Lcom/baidu/themeanimation/element/PositionAnimationElement;->mKeyFrames:Ljava/util/List;
 
     add-int/lit8 v9, v3, -0x1
 
@@ -166,7 +166,7 @@
     .local v2, fromYDelta:I
     iget-object v8, p0, Lcom/baidu/themeanimation/element/PositionAnimationElement$LockTranslateAnimation;->this$0:Lcom/baidu/themeanimation/element/PositionAnimationElement;
 
-    iget-object v8, v8, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v8, v8, Lcom/baidu/themeanimation/element/PositionAnimationElement;->mKeyFrames:Ljava/util/List;
 
     invoke-interface {v8, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -191,7 +191,7 @@
     .local v7, toYDelta:I
     iget-object v8, p0, Lcom/baidu/themeanimation/element/PositionAnimationElement$LockTranslateAnimation;->this$0:Lcom/baidu/themeanimation/element/PositionAnimationElement;
 
-    iget-object v8, v8, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v8, v8, Lcom/baidu/themeanimation/element/PositionAnimationElement;->mKeyFrames:Ljava/util/List;
 
     add-int/lit8 v9, v3, -0x1
 
@@ -211,7 +211,7 @@
 
     iget-object v8, p0, Lcom/baidu/themeanimation/element/PositionAnimationElement$LockTranslateAnimation;->this$0:Lcom/baidu/themeanimation/element/PositionAnimationElement;
 
-    iget-object v8, v8, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v8, v8, Lcom/baidu/themeanimation/element/PositionAnimationElement;->mKeyFrames:Ljava/util/List;
 
     invoke-interface {v8, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -225,7 +225,7 @@
 
     iget-object v8, p0, Lcom/baidu/themeanimation/element/PositionAnimationElement$LockTranslateAnimation;->this$0:Lcom/baidu/themeanimation/element/PositionAnimationElement;
 
-    iget-object v8, v8, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v8, v8, Lcom/baidu/themeanimation/element/PositionAnimationElement;->mKeyFrames:Ljava/util/List;
 
     add-int/lit8 v12, v3, -0x1
 
@@ -338,7 +338,7 @@
     :goto_1
     iget-object v8, p0, Lcom/baidu/themeanimation/element/PositionAnimationElement$LockTranslateAnimation;->this$0:Lcom/baidu/themeanimation/element/PositionAnimationElement;
 
-    iget-object v8, v8, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v8, v8, Lcom/baidu/themeanimation/element/PositionAnimationElement;->mKeyFrames:Ljava/util/List;
 
     invoke-interface {v8}, Ljava/util/List;->size()I
 
@@ -349,7 +349,7 @@
     .line 176
     iget-object v8, p0, Lcom/baidu/themeanimation/element/PositionAnimationElement$LockTranslateAnimation;->this$0:Lcom/baidu/themeanimation/element/PositionAnimationElement;
 
-    iget-object v8, v8, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v8, v8, Lcom/baidu/themeanimation/element/PositionAnimationElement;->mKeyFrames:Ljava/util/List;
 
     invoke-interface {v8, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 

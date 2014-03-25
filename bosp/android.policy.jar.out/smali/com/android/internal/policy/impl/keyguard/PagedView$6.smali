@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 2182
+    .line 2180
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView$6;->this$0:Lcom/android/internal/policy/impl/keyguard/PagedView;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,11 +41,11 @@
     .locals 1
 
     .prologue
-    .line 2185
+    .line 2183
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PagedView$6;->this$0:Lcom/android/internal/policy/impl/keyguard/PagedView;
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->onEndReordering()V
 
-    .line 2186
+    .line 2184
     return-void
 .end method

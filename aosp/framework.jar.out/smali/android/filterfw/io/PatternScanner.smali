@@ -24,7 +24,7 @@
     const/4 v0, 0x0
 
     .line 34
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 30
     iput v0, p0, Landroid/filterfw/io/PatternScanner;->mOffset:I
@@ -51,7 +51,7 @@
     const/4 v0, 0x0
 
     .line 38
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 30
     iput v0, p0, Landroid/filterfw/io/PatternScanner;->mOffset:I

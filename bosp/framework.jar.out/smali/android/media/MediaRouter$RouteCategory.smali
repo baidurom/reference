@@ -35,7 +35,7 @@
 
     .prologue
     .line 1787
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1788
     iput p1, p0, Landroid/media/MediaRouter$RouteCategory;->mNameResId:I
@@ -58,7 +58,7 @@
 
     .prologue
     .line 1781
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1782
     iput-object p1, p0, Landroid/media/MediaRouter$RouteCategory;->mName:Ljava/lang/CharSequence;

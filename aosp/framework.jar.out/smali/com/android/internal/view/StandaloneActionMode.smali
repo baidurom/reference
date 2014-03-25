@@ -206,6 +206,20 @@
     return-void
 .end method
 
+.method public isOverflowMenuShowing()Z
+    .locals 1
+
+    .prologue
+    .line 162
+    iget-object v0, p0, Lcom/android/internal/view/StandaloneActionMode;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
+
+    invoke-virtual {v0}, Lcom/android/internal/widget/ActionBarContextView;->isOverflowMenuShowing()Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public isTitleOptional()Z
     .locals 1
 

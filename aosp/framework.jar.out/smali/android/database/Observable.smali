@@ -32,7 +32,7 @@
     .prologue
     .line 29
     .local p0, this:Landroid/database/Observable;,"Landroid/database/Observable<TT;>;"
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 34
     new-instance v0, Ljava/util/ArrayList;

@@ -115,7 +115,7 @@
     const/4 v1, 0x0
 
     .line 51
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1321
     sget-object v0, Landroid/text/SpannableStringBuilder;->NO_FILTERS:[Landroid/text/InputFilter;
@@ -826,7 +826,7 @@
     .line 339
     new-instance v4, Ljava/lang/Exception;
 
-    const-string v5, "mGapLength < 1"
+    const-string/jumbo v5, "mGapLength < 1"
 
     invoke-direct {v4, v5}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
 
@@ -1832,7 +1832,7 @@
     .line 144
     new-instance v6, Ljava/lang/Exception;
 
-    const-string v7, "mGapLength < 1"
+    const-string/jumbo v7, "mGapLength < 1"
 
     invoke-direct {v6, v7}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
 

@@ -21,6 +21,8 @@
 
 .field public static final action_bar_expanded_action_views_exclusive:I = #bool@action_bar_expanded_action_views_exclusive#t
 
+.field public static final baidu_mms_send_signature:I = #bool@baidu_mms_send_signature#t
+
 .field public static final config_allowActionMenuItemTextWithIcon:I = #bool@config_allowActionMenuItemTextWithIcon#t
 
 .field public static final config_allowAllRotations:I = #bool@config_allowAllRotations#t
@@ -32,6 +34,8 @@
 .field public static final config_annoy_dianne:I = #bool@config_annoy_dianne#t
 
 .field public static final config_automatic_brightness_available:I = #bool@config_automatic_brightness_available#t
+
+.field public static final config_bluetooth_adapter_quick_switch:I = #bool@config_bluetooth_adapter_quick_switch#t
 
 .field public static final config_bluetooth_address_validation:I = #bool@config_bluetooth_address_validation#t
 
@@ -171,8 +175,8 @@
     .locals 0
 
     .prologue
-    .line 11157
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 11086
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

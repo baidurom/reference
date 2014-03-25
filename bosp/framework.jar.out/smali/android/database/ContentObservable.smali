@@ -50,13 +50,13 @@
 
     .prologue
     .line 67
-    iget-object v3, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
+    iget-object v3, p0, Landroid/database/ContentObservable;->mObservers:Ljava/util/ArrayList;
 
     monitor-enter v3
 
     .line 68
     :try_start_0
-    iget-object v2, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
+    iget-object v2, p0, Landroid/database/ContentObservable;->mObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -124,13 +124,13 @@
 
     .prologue
     .line 85
-    iget-object v3, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
+    iget-object v3, p0, Landroid/database/ContentObservable;->mObservers:Ljava/util/ArrayList;
 
     monitor-enter v3
 
     .line 86
     :try_start_0
-    iget-object v2, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
+    iget-object v2, p0, Landroid/database/ContentObservable;->mObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 

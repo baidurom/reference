@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 231
+    .line 279
     iput-object p1, p0, Landroid/net/wifi/SupplicantStateTracker$ScanState;->this$0:Landroid/net/wifi/SupplicantStateTracker;
 
     invoke-direct {p0}, Lcom/android/internal/util/State;-><init>()V
@@ -35,9 +35,17 @@
 
 # virtual methods
 .method public enter()V
-    .locals 0
+    .locals 2
 
     .prologue
-    .line 235
+    .line 283
+    iget-object v0, p0, Landroid/net/wifi/SupplicantStateTracker$ScanState;->this$0:Landroid/net/wifi/SupplicantStateTracker;
+
+    const/4 v1, 0x0
+
+    #setter for: Landroid/net/wifi/SupplicantStateTracker;->mConnecting:Z
+    invoke-static {v0, v1}, Landroid/net/wifi/SupplicantStateTracker;->access$1002(Landroid/net/wifi/SupplicantStateTracker;Z)Z
+
+    .line 284
     return-void
 .end method

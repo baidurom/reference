@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 462
+    .line 505
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -28,46 +28,49 @@
 
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Ljava/lang/Object;
-    .locals 3
+    .locals 6
     .parameter "ctx"
 
     .prologue
-    .line 465
+    .line 507
+    const/4 v2, 0x0
+
+    .line 509
+    .local v2, searchEngineMgr:Lcom/mediatek/common/search/ISearchEngineManager;
     :try_start_0
-    new-instance v1, Landroid/os/storage/StorageManager;
+    const-class v3, Lcom/mediatek/common/search/ISearchEngineManager;
 
-    iget-object v2, p1, Landroid/app/ContextImpl;->mMainThread:Landroid/app/ActivityThread;
+    const/4 v4, 0x1
 
-    invoke-virtual {v2}, Landroid/app/ActivityThread;->getHandler()Landroid/os/Handler;
+    new-array v4, v4, [Ljava/lang/Object;
 
-    move-result-object v2
+    const/4 v5, 0x0
 
-    invoke-virtual {v2}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
+    aput-object p1, v4, v5
 
-    move-result-object v2
+    invoke-static {v3, v4}, Lcom/mediatek/common/MediatekClassFactory;->createInstance(Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-direct {v1, v2}, Landroid/os/storage/StorageManager;-><init>(Landroid/os/Looper;)V
+    move-result-object v3
+
+    move-object v0, v3
+
+    check-cast v0, Lcom/mediatek/common/search/ISearchEngineManager;
+
+    move-object v2, v0
     :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 468
+    .line 514
     :goto_0
-    return-object v1
+    return-object v2
 
-    .line 466
+    .line 511
     :catch_0
-    move-exception v0
+    move-exception v1
 
-    .line 467
-    .local v0, rex:Landroid/os/RemoteException;
-    const-string v1, "ContextImpl"
-
-    const-string v2, "Failed to create StorageManager"
-
-    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    .line 468
-    const/4 v1, 0x0
+    .line 512
+    .local v1, e:Ljava/lang/Exception;
+    invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
 
     goto :goto_0
 .end method

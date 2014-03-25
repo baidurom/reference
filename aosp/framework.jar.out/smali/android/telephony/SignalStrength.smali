@@ -24,11 +24,13 @@
 
 .field private static final LOG_TAG:Ljava/lang/String; = "SignalStrength"
 
-.field public static final NUM_SIGNAL_STRENGTH_BINS:I = 0x5
+.field public static final NUM_SIGNAL_STRENGTH_BINS:I = 0x6
 
 .field public static final SIGNAL_STRENGTH_GOOD:I = 0x3
 
 .field public static final SIGNAL_STRENGTH_GREAT:I = 0x4
+
+.field public static final SIGNAL_STRENGTH_HIGHEST:I = 0x5
 
 .field public static final SIGNAL_STRENGTH_MODERATE:I = 0x2
 
@@ -37,6 +39,8 @@
 .field public static final SIGNAL_STRENGTH_NONE_OR_UNKNOWN:I = 0x0
 
 .field public static final SIGNAL_STRENGTH_POOR:I = 0x1
+
+.field private static mServiceStateExt:Lcom/mediatek/common/telephony/IServiceStateExt;
 
 
 # instance fields
@@ -54,6 +58,12 @@
 
 .field private mGsmBitErrorRate:I
 
+.field private mGsmEcn0Qdbm:I
+
+.field private mGsmRscpQdbm:I
+
+.field private mGsmRssiQdbm:I
+
 .field private mGsmSignalStrength:I
 
 .field private mLteCqi:I
@@ -66,57 +76,96 @@
 
 .field private mLteSignalStrength:I
 
+.field private mSimId:I
+
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 45
-    const/4 v0, 0x5
+    const/4 v3, 0x0
 
-    new-array v0, v0, [Ljava/lang/String;
+    .line 85
+    const/4 v1, 0x6
 
-    const/4 v1, 0x0
+    new-array v1, v1, [Ljava/lang/String;
 
     const-string/jumbo v2, "none"
 
-    aput-object v2, v0, v1
+    aput-object v2, v1, v3
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
-    const-string/jumbo v2, "poor"
+    const-string/jumbo v3, "poor"
 
-    aput-object v2, v0, v1
+    aput-object v3, v1, v2
 
-    const/4 v1, 0x2
+    const/4 v2, 0x2
 
-    const-string/jumbo v2, "moderate"
+    const-string/jumbo v3, "moderate"
 
-    aput-object v2, v0, v1
+    aput-object v3, v1, v2
 
-    const/4 v1, 0x3
+    const/4 v2, 0x3
 
-    const-string v2, "good"
+    const-string v3, "good"
 
-    aput-object v2, v0, v1
+    aput-object v3, v1, v2
 
-    const/4 v1, 0x4
+    const/4 v2, 0x4
 
-    const-string v2, "great"
+    const-string v3, "great"
 
-    aput-object v2, v0, v1
+    aput-object v3, v1, v2
 
-    sput-object v0, Landroid/telephony/SignalStrength;->SIGNAL_STRENGTH_NAMES:[Ljava/lang/String;
+    const/4 v2, 0x5
 
-    .line 307
-    new-instance v0, Landroid/telephony/SignalStrength$1;
+    const-string v3, "highest"
 
-    invoke-direct {v0}, Landroid/telephony/SignalStrength$1;-><init>()V
+    aput-object v3, v1, v2
 
-    sput-object v0, Landroid/telephony/SignalStrength;->CREATOR:Landroid/os/Parcelable$Creator;
+    sput-object v1, Landroid/telephony/SignalStrength;->SIGNAL_STRENGTH_NAMES:[Ljava/lang/String;
+
+    .line 115
+    :try_start_0
+    const-class v1, Lcom/mediatek/common/telephony/IServiceStateExt;
+
+    const/4 v2, 0x0
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    invoke-static {v1, v2}, Lcom/mediatek/common/MediatekClassFactory;->createInstance(Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/mediatek/common/telephony/IServiceStateExt;
+
+    sput-object v1, Landroid/telephony/SignalStrength;->mServiceStateExt:Lcom/mediatek/common/telephony/IServiceStateExt;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 410
+    .local v0, e:Ljava/lang/Exception;
+    :goto_0
+    new-instance v1, Landroid/telephony/SignalStrength$1;
+
+    invoke-direct {v1}, Landroid/telephony/SignalStrength$1;-><init>()V
+
+    sput-object v1, Landroid/telephony/SignalStrength;->CREATOR:Landroid/os/Parcelable$Creator;
 
     return-void
+
+    .line 116
+    .end local v0           #e:Ljava/lang/Exception;
+    :catch_0
+    move-exception v0
+
+    .line 117
+    .restart local v0       #e:Ljava/lang/Exception;
+    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
+
+    goto :goto_0
 .end method
 
 .method public constructor <init>()V
@@ -129,51 +178,209 @@
 
     const/4 v0, -0x1
 
-    .line 91
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 146
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 92
+    .line 147
     iput v2, p0, Landroid/telephony/SignalStrength;->mGsmSignalStrength:I
 
-    .line 93
+    .line 148
     iput v0, p0, Landroid/telephony/SignalStrength;->mGsmBitErrorRate:I
 
-    .line 94
+    .line 149
     iput v0, p0, Landroid/telephony/SignalStrength;->mCdmaDbm:I
 
-    .line 95
+    .line 150
     iput v0, p0, Landroid/telephony/SignalStrength;->mCdmaEcio:I
 
-    .line 96
+    .line 151
     iput v0, p0, Landroid/telephony/SignalStrength;->mEvdoDbm:I
 
-    .line 97
+    .line 152
     iput v0, p0, Landroid/telephony/SignalStrength;->mEvdoEcio:I
 
-    .line 98
+    .line 153
     iput v0, p0, Landroid/telephony/SignalStrength;->mEvdoSnr:I
 
-    .line 99
+    .line 154
     iput v2, p0, Landroid/telephony/SignalStrength;->mLteSignalStrength:I
 
-    .line 100
+    .line 155
     iput v1, p0, Landroid/telephony/SignalStrength;->mLteRsrp:I
 
-    .line 101
+    .line 156
     iput v1, p0, Landroid/telephony/SignalStrength;->mLteRsrq:I
 
-    .line 102
+    .line 157
     iput v1, p0, Landroid/telephony/SignalStrength;->mLteRssnr:I
 
-    .line 103
+    .line 158
     iput v1, p0, Landroid/telephony/SignalStrength;->mLteCqi:I
 
-    .line 104
+    .line 159
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/telephony/SignalStrength;->isGsm:Z
 
-    .line 105
+    .line 160
+    return-void
+.end method
+
+.method public constructor <init>(I)V
+    .locals 4
+    .parameter "simId"
+
+    .prologue
+    const/16 v3, 0x63
+
+    const/4 v2, 0x0
+
+    const v1, 0x7fffffff
+
+    const/4 v0, -0x1
+
+    .line 1080
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 1081
+    iput p1, p0, Landroid/telephony/SignalStrength;->mSimId:I
+
+    .line 1082
+    iput v3, p0, Landroid/telephony/SignalStrength;->mGsmSignalStrength:I
+
+    .line 1083
+    iput v0, p0, Landroid/telephony/SignalStrength;->mGsmBitErrorRate:I
+
+    .line 1084
+    iput v0, p0, Landroid/telephony/SignalStrength;->mCdmaDbm:I
+
+    .line 1085
+    iput v0, p0, Landroid/telephony/SignalStrength;->mCdmaEcio:I
+
+    .line 1086
+    iput v0, p0, Landroid/telephony/SignalStrength;->mEvdoDbm:I
+
+    .line 1087
+    iput v0, p0, Landroid/telephony/SignalStrength;->mEvdoEcio:I
+
+    .line 1088
+    iput v0, p0, Landroid/telephony/SignalStrength;->mEvdoSnr:I
+
+    .line 1089
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Landroid/telephony/SignalStrength;->isGsm:Z
+
+    .line 1090
+    iput v3, p0, Landroid/telephony/SignalStrength;->mLteSignalStrength:I
+
+    .line 1091
+    iput v1, p0, Landroid/telephony/SignalStrength;->mLteRsrp:I
+
+    .line 1092
+    iput v1, p0, Landroid/telephony/SignalStrength;->mLteRsrq:I
+
+    .line 1093
+    iput v1, p0, Landroid/telephony/SignalStrength;->mLteRssnr:I
+
+    .line 1094
+    iput v1, p0, Landroid/telephony/SignalStrength;->mLteCqi:I
+
+    .line 1096
+    iput v2, p0, Landroid/telephony/SignalStrength;->mGsmRssiQdbm:I
+
+    .line 1097
+    iput v2, p0, Landroid/telephony/SignalStrength;->mGsmRscpQdbm:I
+
+    .line 1098
+    iput v2, p0, Landroid/telephony/SignalStrength;->mGsmEcn0Qdbm:I
+
+    .line 1099
+    return-void
+.end method
+
+.method public constructor <init>(IIIIIIIIIIIIIZIII)V
+    .locals 1
+    .parameter "simId"
+    .parameter "gsmSignalStrength"
+    .parameter "gsmBitErrorRate"
+    .parameter "cdmaDbm"
+    .parameter "cdmaEcio"
+    .parameter "evdoDbm"
+    .parameter "evdoEcio"
+    .parameter "evdoSnr"
+    .parameter "lteSignalStrength"
+    .parameter "lteRsrp"
+    .parameter "lteRsrq"
+    .parameter "lteRssnr"
+    .parameter "lteCqi"
+    .parameter "gsm"
+    .parameter "gsmRssiQdbm"
+    .parameter "gsmRscpQdbm"
+    .parameter "gsmEcn0Qdbm"
+
+    .prologue
+    .line 1110
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 1111
+    iput p1, p0, Landroid/telephony/SignalStrength;->mSimId:I
+
+    .line 1112
+    iput p2, p0, Landroid/telephony/SignalStrength;->mGsmSignalStrength:I
+
+    .line 1113
+    iput p3, p0, Landroid/telephony/SignalStrength;->mGsmBitErrorRate:I
+
+    .line 1114
+    iput p4, p0, Landroid/telephony/SignalStrength;->mCdmaDbm:I
+
+    .line 1115
+    iput p5, p0, Landroid/telephony/SignalStrength;->mCdmaEcio:I
+
+    .line 1116
+    iput p6, p0, Landroid/telephony/SignalStrength;->mEvdoDbm:I
+
+    .line 1117
+    iput p7, p0, Landroid/telephony/SignalStrength;->mEvdoEcio:I
+
+    .line 1118
+    iput p8, p0, Landroid/telephony/SignalStrength;->mEvdoSnr:I
+
+    .line 1119
+    iput p9, p0, Landroid/telephony/SignalStrength;->mLteSignalStrength:I
+
+    .line 1120
+    iput p10, p0, Landroid/telephony/SignalStrength;->mLteRsrp:I
+
+    .line 1121
+    iput p11, p0, Landroid/telephony/SignalStrength;->mLteRsrq:I
+
+    .line 1122
+    iput p12, p0, Landroid/telephony/SignalStrength;->mLteRssnr:I
+
+    .line 1123
+    iput p13, p0, Landroid/telephony/SignalStrength;->mLteCqi:I
+
+    .line 1124
+    iput-boolean p14, p0, Landroid/telephony/SignalStrength;->isGsm:Z
+
+    .line 1126
+    move/from16 v0, p15
+
+    iput v0, p0, Landroid/telephony/SignalStrength;->mGsmRssiQdbm:I
+
+    .line 1127
+    move/from16 v0, p16
+
+    iput v0, p0, Landroid/telephony/SignalStrength;->mGsmRscpQdbm:I
+
+    .line 1128
+    move/from16 v0, p17
+
+    iput v0, p0, Landroid/telephony/SignalStrength;->mGsmEcn0Qdbm:I
+
+    .line 1129
     return-void
 .end method
 
@@ -194,13 +401,56 @@
     .parameter "gsmFlag"
 
     .prologue
-    .line 140
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 195
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 141
+    .line 196
     invoke-virtual/range {p0 .. p13}, Landroid/telephony/SignalStrength;->initialize(IIIIIIIIIIIIZ)V
 
-    .line 144
+    .line 199
+    return-void
+.end method
+
+.method public constructor <init>(IIIIIIIIIIIIZIII)V
+    .locals 1
+    .parameter "gsmSignalStrength"
+    .parameter "gsmBitErrorRate"
+    .parameter "cdmaDbm"
+    .parameter "cdmaEcio"
+    .parameter "evdoDbm"
+    .parameter "evdoEcio"
+    .parameter "evdoSnr"
+    .parameter "lteSignalStrength"
+    .parameter "lteRsrp"
+    .parameter "lteRsrq"
+    .parameter "lteRssnr"
+    .parameter "lteCqi"
+    .parameter "gsmFlag"
+    .parameter "gsmRssiQdbm"
+    .parameter "gsmRscpQdbm"
+    .parameter "gsmEcn0Qdbm"
+
+    .prologue
+    .line 213
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 214
+    invoke-virtual/range {p0 .. p13}, Landroid/telephony/SignalStrength;->initialize(IIIIIIIIIIIIZ)V
+
+    .line 217
+    iput p14, p0, Landroid/telephony/SignalStrength;->mGsmRssiQdbm:I
+
+    .line 218
+    move/from16 v0, p15
+
+    iput v0, p0, Landroid/telephony/SignalStrength;->mGsmRscpQdbm:I
+
+    .line 219
+    move/from16 v0, p16
+
+    iput v0, p0, Landroid/telephony/SignalStrength;->mGsmEcn0Qdbm:I
+
+    .line 220
     return-void
 .end method
 
@@ -216,10 +466,10 @@
     .parameter "gsmFlag"
 
     .prologue
-    .line 154
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 231
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 155
+    .line 232
     const/16 v8, 0x63
 
     const v9, 0x7fffffff
@@ -250,7 +500,7 @@
 
     invoke-virtual/range {v0 .. v13}, Landroid/telephony/SignalStrength;->initialize(IIIIIIIIIIIIZ)V
 
-    .line 158
+    .line 235
     return-void
 .end method
 
@@ -259,94 +509,94 @@
     .parameter "in"
 
     .prologue
-    .line 258
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 341
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 261
+    .line 344
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telephony/SignalStrength;->mGsmSignalStrength:I
 
-    .line 262
+    .line 345
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telephony/SignalStrength;->mGsmBitErrorRate:I
 
-    .line 263
+    .line 346
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telephony/SignalStrength;->mCdmaDbm:I
 
-    .line 264
+    .line 347
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telephony/SignalStrength;->mCdmaEcio:I
 
-    .line 265
+    .line 348
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telephony/SignalStrength;->mEvdoDbm:I
 
-    .line 266
+    .line 349
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telephony/SignalStrength;->mEvdoEcio:I
 
-    .line 267
+    .line 350
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telephony/SignalStrength;->mEvdoSnr:I
 
-    .line 268
+    .line 351
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telephony/SignalStrength;->mLteSignalStrength:I
 
-    .line 269
+    .line 352
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telephony/SignalStrength;->mLteRsrp:I
 
-    .line 270
+    .line 353
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telephony/SignalStrength;->mLteRsrq:I
 
-    .line 271
+    .line 354
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telephony/SignalStrength;->mLteRssnr:I
 
-    .line 272
+    .line 355
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telephony/SignalStrength;->mLteCqi:I
 
-    .line 273
+    .line 356
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -358,10 +608,38 @@
     :goto_0
     iput-boolean v0, p0, Landroid/telephony/SignalStrength;->isGsm:Z
 
-    .line 274
+    .line 358
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    iput v0, p0, Landroid/telephony/SignalStrength;->mSimId:I
+
+    .line 362
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    iput v0, p0, Landroid/telephony/SignalStrength;->mGsmRssiQdbm:I
+
+    .line 363
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    iput v0, p0, Landroid/telephony/SignalStrength;->mGsmRscpQdbm:I
+
+    .line 364
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    iput v0, p0, Landroid/telephony/SignalStrength;->mGsmEcn0Qdbm:I
+
+    .line 367
     return-void
 
-    .line 273
+    .line 356
     :cond_0
     const/4 v0, 0x0
 
@@ -373,13 +651,13 @@
     .parameter "s"
 
     .prologue
-    .line 167
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 244
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 168
+    .line 245
     invoke-virtual {p0, p1}, Landroid/telephony/SignalStrength;->copyFrom(Landroid/telephony/SignalStrength;)V
 
-    .line 169
+    .line 246
     return-void
 .end method
 
@@ -394,50 +672,79 @@
 
     const/4 v0, -0x1
 
-    .line 115
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 170
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 116
+    .line 171
     iput v2, p0, Landroid/telephony/SignalStrength;->mGsmSignalStrength:I
 
-    .line 117
+    .line 172
     iput v0, p0, Landroid/telephony/SignalStrength;->mGsmBitErrorRate:I
 
-    .line 118
+    .line 173
     iput v0, p0, Landroid/telephony/SignalStrength;->mCdmaDbm:I
 
-    .line 119
+    .line 174
     iput v0, p0, Landroid/telephony/SignalStrength;->mCdmaEcio:I
 
-    .line 120
+    .line 175
     iput v0, p0, Landroid/telephony/SignalStrength;->mEvdoDbm:I
 
-    .line 121
+    .line 176
     iput v0, p0, Landroid/telephony/SignalStrength;->mEvdoEcio:I
 
-    .line 122
+    .line 177
     iput v0, p0, Landroid/telephony/SignalStrength;->mEvdoSnr:I
 
-    .line 123
+    .line 178
     iput v2, p0, Landroid/telephony/SignalStrength;->mLteSignalStrength:I
 
-    .line 124
+    .line 179
     iput v1, p0, Landroid/telephony/SignalStrength;->mLteRsrp:I
 
-    .line 125
+    .line 180
     iput v1, p0, Landroid/telephony/SignalStrength;->mLteRsrq:I
 
-    .line 126
+    .line 181
     iput v1, p0, Landroid/telephony/SignalStrength;->mLteRssnr:I
 
-    .line 127
+    .line 182
     iput v1, p0, Landroid/telephony/SignalStrength;->mLteCqi:I
 
-    .line 128
+    .line 183
     iput-boolean p1, p0, Landroid/telephony/SignalStrength;->isGsm:Z
 
-    .line 129
+    .line 184
     return-void
+.end method
+
+.method private static equalsHandlesNulls(Ljava/lang/Object;Ljava/lang/Object;)Z
+    .locals 1
+    .parameter "a"
+    .parameter "b"
+
+    .prologue
+    .line 1199
+    if-nez p0, :cond_1
+
+    if-nez p1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    goto :goto_0
 .end method
 
 .method private static log(Ljava/lang/String;)V
@@ -445,12 +752,12 @@
     .parameter "s"
 
     .prologue
-    .line 922
+    .line 1069
     const-string v0, "SignalStrength"
 
     invoke-static {v0, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 923
+    .line 1070
     return-void
 .end method
 
@@ -459,16 +766,16 @@
     .parameter "m"
 
     .prologue
-    .line 81
+    .line 136
     new-instance v0, Landroid/telephony/SignalStrength;
 
     invoke-direct {v0}, Landroid/telephony/SignalStrength;-><init>()V
 
-    .line 82
+    .line 137
     .local v0, ret:Landroid/telephony/SignalStrength;
     invoke-direct {v0, p0}, Landroid/telephony/SignalStrength;->setFromNotifierBundle(Landroid/os/Bundle;)V
 
-    .line 83
+    .line 138
     return-object v0
 .end method
 
@@ -477,7 +784,16 @@
     .parameter "m"
 
     .prologue
-    .line 881
+    .line 1015
+    const-string/jumbo v0, "simId"
+
+    invoke-virtual {p1, v0}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
+
+    move-result v0
+
+    iput v0, p0, Landroid/telephony/SignalStrength;->mSimId:I
+
+    .line 1017
     const-string v0, "GsmSignalStrength"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
@@ -486,7 +802,7 @@
 
     iput v0, p0, Landroid/telephony/SignalStrength;->mGsmSignalStrength:I
 
-    .line 882
+    .line 1018
     const-string v0, "GsmBitErrorRate"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
@@ -495,7 +811,7 @@
 
     iput v0, p0, Landroid/telephony/SignalStrength;->mGsmBitErrorRate:I
 
-    .line 883
+    .line 1019
     const-string v0, "CdmaDbm"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
@@ -504,7 +820,7 @@
 
     iput v0, p0, Landroid/telephony/SignalStrength;->mCdmaDbm:I
 
-    .line 884
+    .line 1020
     const-string v0, "CdmaEcio"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
@@ -513,7 +829,7 @@
 
     iput v0, p0, Landroid/telephony/SignalStrength;->mCdmaEcio:I
 
-    .line 885
+    .line 1021
     const-string v0, "EvdoDbm"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
@@ -522,7 +838,7 @@
 
     iput v0, p0, Landroid/telephony/SignalStrength;->mEvdoDbm:I
 
-    .line 886
+    .line 1022
     const-string v0, "EvdoEcio"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
@@ -531,7 +847,7 @@
 
     iput v0, p0, Landroid/telephony/SignalStrength;->mEvdoEcio:I
 
-    .line 887
+    .line 1023
     const-string v0, "EvdoSnr"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
@@ -540,7 +856,7 @@
 
     iput v0, p0, Landroid/telephony/SignalStrength;->mEvdoSnr:I
 
-    .line 888
+    .line 1024
     const-string v0, "LteSignalStrength"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
@@ -549,7 +865,7 @@
 
     iput v0, p0, Landroid/telephony/SignalStrength;->mLteSignalStrength:I
 
-    .line 889
+    .line 1025
     const-string v0, "LteRsrp"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
@@ -558,7 +874,7 @@
 
     iput v0, p0, Landroid/telephony/SignalStrength;->mLteRsrp:I
 
-    .line 890
+    .line 1026
     const-string v0, "LteRsrq"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
@@ -567,7 +883,7 @@
 
     iput v0, p0, Landroid/telephony/SignalStrength;->mLteRsrq:I
 
-    .line 891
+    .line 1027
     const-string v0, "LteRssnr"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
@@ -576,7 +892,7 @@
 
     iput v0, p0, Landroid/telephony/SignalStrength;->mLteRssnr:I
 
-    .line 892
+    .line 1028
     const-string v0, "LteCqi"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
@@ -585,7 +901,7 @@
 
     iput v0, p0, Landroid/telephony/SignalStrength;->mLteCqi:I
 
-    .line 893
+    .line 1029
     const-string v0, "isGsm"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
@@ -594,7 +910,34 @@
 
     iput-boolean v0, p0, Landroid/telephony/SignalStrength;->isGsm:Z
 
-    .line 894
+    .line 1031
+    const-string v0, "RssiQdbm"
+
+    invoke-virtual {p1, v0}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
+
+    move-result v0
+
+    iput v0, p0, Landroid/telephony/SignalStrength;->mGsmRssiQdbm:I
+
+    .line 1032
+    const-string v0, "RscpQdbm"
+
+    invoke-virtual {p1, v0}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
+
+    move-result v0
+
+    iput v0, p0, Landroid/telephony/SignalStrength;->mGsmRscpQdbm:I
+
+    .line 1033
+    const-string v0, "Ecn0Qdbm"
+
+    invoke-virtual {p1, v0}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
+
+    move-result v0
+
+    iput v0, p0, Landroid/telephony/SignalStrength;->mGsmEcn0Qdbm:I
+
+    .line 1034
     return-void
 .end method
 
@@ -605,72 +948,92 @@
     .parameter "s"
 
     .prologue
-    .line 238
+    .line 316
+    iget v0, p1, Landroid/telephony/SignalStrength;->mSimId:I
+
+    iput v0, p0, Landroid/telephony/SignalStrength;->mSimId:I
+
+    .line 318
     iget v0, p1, Landroid/telephony/SignalStrength;->mGsmSignalStrength:I
 
     iput v0, p0, Landroid/telephony/SignalStrength;->mGsmSignalStrength:I
 
-    .line 239
+    .line 319
     iget v0, p1, Landroid/telephony/SignalStrength;->mGsmBitErrorRate:I
 
     iput v0, p0, Landroid/telephony/SignalStrength;->mGsmBitErrorRate:I
 
-    .line 240
+    .line 320
     iget v0, p1, Landroid/telephony/SignalStrength;->mCdmaDbm:I
 
     iput v0, p0, Landroid/telephony/SignalStrength;->mCdmaDbm:I
 
-    .line 241
+    .line 321
     iget v0, p1, Landroid/telephony/SignalStrength;->mCdmaEcio:I
 
     iput v0, p0, Landroid/telephony/SignalStrength;->mCdmaEcio:I
 
-    .line 242
+    .line 322
     iget v0, p1, Landroid/telephony/SignalStrength;->mEvdoDbm:I
 
     iput v0, p0, Landroid/telephony/SignalStrength;->mEvdoDbm:I
 
-    .line 243
+    .line 323
     iget v0, p1, Landroid/telephony/SignalStrength;->mEvdoEcio:I
 
     iput v0, p0, Landroid/telephony/SignalStrength;->mEvdoEcio:I
 
-    .line 244
+    .line 324
     iget v0, p1, Landroid/telephony/SignalStrength;->mEvdoSnr:I
 
     iput v0, p0, Landroid/telephony/SignalStrength;->mEvdoSnr:I
 
-    .line 245
+    .line 325
     iget v0, p1, Landroid/telephony/SignalStrength;->mLteSignalStrength:I
 
     iput v0, p0, Landroid/telephony/SignalStrength;->mLteSignalStrength:I
 
-    .line 246
+    .line 326
     iget v0, p1, Landroid/telephony/SignalStrength;->mLteRsrp:I
 
     iput v0, p0, Landroid/telephony/SignalStrength;->mLteRsrp:I
 
-    .line 247
+    .line 327
     iget v0, p1, Landroid/telephony/SignalStrength;->mLteRsrq:I
 
     iput v0, p0, Landroid/telephony/SignalStrength;->mLteRsrq:I
 
-    .line 248
+    .line 328
     iget v0, p1, Landroid/telephony/SignalStrength;->mLteRssnr:I
 
     iput v0, p0, Landroid/telephony/SignalStrength;->mLteRssnr:I
 
-    .line 249
+    .line 329
     iget v0, p1, Landroid/telephony/SignalStrength;->mLteCqi:I
 
     iput v0, p0, Landroid/telephony/SignalStrength;->mLteCqi:I
 
-    .line 250
+    .line 330
     iget-boolean v0, p1, Landroid/telephony/SignalStrength;->isGsm:Z
 
     iput-boolean v0, p0, Landroid/telephony/SignalStrength;->isGsm:Z
 
-    .line 251
+    .line 331
+    iget v0, p1, Landroid/telephony/SignalStrength;->mGsmRssiQdbm:I
+
+    iput v0, p0, Landroid/telephony/SignalStrength;->mGsmRssiQdbm:I
+
+    .line 332
+    iget v0, p1, Landroid/telephony/SignalStrength;->mGsmRscpQdbm:I
+
+    iput v0, p0, Landroid/telephony/SignalStrength;->mGsmRscpQdbm:I
+
+    .line 333
+    iget v0, p1, Landroid/telephony/SignalStrength;->mGsmEcn0Qdbm:I
+
+    iput v0, p0, Landroid/telephony/SignalStrength;->mGsmEcn0Qdbm:I
+
+    .line 334
     return-void
 .end method
 
@@ -678,7 +1041,7 @@
     .locals 1
 
     .prologue
-    .line 299
+    .line 402
     const/4 v0, 0x0
 
     return v0
@@ -691,7 +1054,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 829
+    .line 955
     :try_start_0
     move-object v0, p1
 
@@ -701,25 +1064,25 @@
     :try_end_0
     .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 834
+    .line 960
     .local v2, s:Landroid/telephony/SignalStrength;
     if-nez p1, :cond_1
 
-    .line 838
+    .line 964
     .end local v2           #s:Landroid/telephony/SignalStrength;
     :cond_0
     :goto_0
     return v3
 
-    .line 830
+    .line 956
     :catch_0
     move-exception v1
 
-    .line 831
+    .line 957
     .local v1, ex:Ljava/lang/ClassCastException;
     goto :goto_0
 
-    .line 838
+    .line 964
     .end local v1           #ex:Ljava/lang/ClassCastException;
     .restart local v2       #s:Landroid/telephony/SignalStrength;
     :cond_1
@@ -801,6 +1164,12 @@
 
     if-ne v4, v5, :cond_0
 
+    iget v4, p0, Landroid/telephony/SignalStrength;->mGsmRscpQdbm:I
+
+    iget v5, v2, Landroid/telephony/SignalStrength;->mGsmRscpQdbm:I
+
+    if-ne v4, v5, :cond_0
+
     const/4 v3, 0x1
 
     goto :goto_0
@@ -811,91 +1180,98 @@
     .parameter "m"
 
     .prologue
-    .line 903
+    .line 1044
+    const-string/jumbo v0, "simId"
+
+    iget v1, p0, Landroid/telephony/SignalStrength;->mSimId:I
+
+    invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+
+    .line 1046
     const-string v0, "GsmSignalStrength"
 
     iget v1, p0, Landroid/telephony/SignalStrength;->mGsmSignalStrength:I
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 904
+    .line 1047
     const-string v0, "GsmBitErrorRate"
 
     iget v1, p0, Landroid/telephony/SignalStrength;->mGsmBitErrorRate:I
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 905
+    .line 1048
     const-string v0, "CdmaDbm"
 
     iget v1, p0, Landroid/telephony/SignalStrength;->mCdmaDbm:I
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 906
+    .line 1049
     const-string v0, "CdmaEcio"
 
     iget v1, p0, Landroid/telephony/SignalStrength;->mCdmaEcio:I
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 907
+    .line 1050
     const-string v0, "EvdoDbm"
 
     iget v1, p0, Landroid/telephony/SignalStrength;->mEvdoDbm:I
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 908
+    .line 1051
     const-string v0, "EvdoEcio"
 
     iget v1, p0, Landroid/telephony/SignalStrength;->mEvdoEcio:I
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 909
+    .line 1052
     const-string v0, "EvdoSnr"
 
     iget v1, p0, Landroid/telephony/SignalStrength;->mEvdoSnr:I
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 910
+    .line 1053
     const-string v0, "LteSignalStrength"
 
     iget v1, p0, Landroid/telephony/SignalStrength;->mLteSignalStrength:I
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 911
+    .line 1054
     const-string v0, "LteRsrp"
 
     iget v1, p0, Landroid/telephony/SignalStrength;->mLteRsrp:I
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 912
+    .line 1055
     const-string v0, "LteRsrq"
 
     iget v1, p0, Landroid/telephony/SignalStrength;->mLteRsrq:I
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 913
+    .line 1056
     const-string v0, "LteRssnr"
 
     iget v1, p0, Landroid/telephony/SignalStrength;->mLteRssnr:I
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 914
+    .line 1057
     const-string v0, "LteCqi"
 
     iget v1, p0, Landroid/telephony/SignalStrength;->mLteCqi:I
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 915
+    .line 1058
     const-string v0, "isGsm"
 
     iget-boolean v1, p0, Landroid/telephony/SignalStrength;->isGsm:Z
@@ -910,7 +1286,28 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 916
+    .line 1060
+    const-string v0, "RssiQdbm"
+
+    iget v1, p0, Landroid/telephony/SignalStrength;->mGsmRssiQdbm:I
+
+    invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+
+    .line 1061
+    const-string v0, "RscpQdbm"
+
+    iget v1, p0, Landroid/telephony/SignalStrength;->mGsmRscpQdbm:I
+
+    invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+
+    .line 1062
+    const-string v0, "Ecn0Qdbm"
+
+    iget v1, p0, Landroid/telephony/SignalStrength;->mGsmEcn0Qdbm:I
+
+    invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+
+    .line 1063
     return-void
 .end method
 
@@ -918,29 +1315,29 @@
     .locals 4
 
     .prologue
-    .line 476
+    .line 579
     iget-boolean v3, p0, Landroid/telephony/SignalStrength;->isGsm:Z
 
     if-eqz v3, :cond_1
 
-    .line 477
+    .line 580
     invoke-virtual {p0}, Landroid/telephony/SignalStrength;->getLteLevel()I
 
     move-result v3
 
     if-nez v3, :cond_0
 
-    .line 478
+    .line 581
     invoke-virtual {p0}, Landroid/telephony/SignalStrength;->getGsmAsuLevel()I
 
     move-result v0
 
-    .line 497
+    .line 600
     .local v0, asuLevel:I
     :goto_0
     return v0
 
-    .line 480
+    .line 583
     .end local v0           #asuLevel:I
     :cond_0
     invoke-virtual {p0}, Landroid/telephony/SignalStrength;->getLteAsuLevel()I
@@ -950,41 +1347,41 @@
     .restart local v0       #asuLevel:I
     goto :goto_0
 
-    .line 483
+    .line 586
     .end local v0           #asuLevel:I
     :cond_1
     invoke-virtual {p0}, Landroid/telephony/SignalStrength;->getCdmaAsuLevel()I
 
     move-result v1
 
-    .line 484
+    .line 587
     .local v1, cdmaAsuLevel:I
     invoke-virtual {p0}, Landroid/telephony/SignalStrength;->getEvdoAsuLevel()I
 
     move-result v2
 
-    .line 485
+    .line 588
     .local v2, evdoAsuLevel:I
     if-nez v2, :cond_2
 
-    .line 487
+    .line 590
     move v0, v1
 
     .restart local v0       #asuLevel:I
     goto :goto_0
 
-    .line 488
+    .line 591
     .end local v0           #asuLevel:I
     :cond_2
     if-nez v1, :cond_3
 
-    .line 490
+    .line 593
     move v0, v2
 
     .restart local v0       #asuLevel:I
     goto :goto_0
 
-    .line 493
+    .line 596
     .end local v0           #asuLevel:I
     :cond_3
     if-ge v1, v2, :cond_4
@@ -1010,18 +1407,18 @@
 
     const/16 v6, -0x64
 
-    .line 616
+    .line 741
     invoke-virtual {p0}, Landroid/telephony/SignalStrength;->getCdmaDbm()I
 
     move-result v1
 
-    .line 617
+    .line 742
     .local v1, cdmaDbm:I
     invoke-virtual {p0}, Landroid/telephony/SignalStrength;->getCdmaEcio()I
 
     move-result v2
 
-    .line 621
+    .line 746
     .local v2, cdmaEcio:I
     const/16 v5, -0x4b
 
@@ -1029,26 +1426,26 @@
 
     const/16 v0, 0x10
 
-    .line 629
+    .line 754
     .local v0, cdmaAsuLevel:I
     :goto_0
     if-lt v2, v7, :cond_5
 
     const/16 v3, 0x10
 
-    .line 636
+    .line 761
     .local v3, ecioAsuLevel:I
     :goto_1
     if-ge v0, v3, :cond_a
 
     move v4, v0
 
-    .line 638
+    .line 763
     .local v4, level:I
     :goto_2
     return v4
 
-    .line 622
+    .line 747
     .end local v0           #cdmaAsuLevel:I
     .end local v3           #ecioAsuLevel:I
     .end local v4           #level:I
@@ -1062,7 +1459,7 @@
     .restart local v0       #cdmaAsuLevel:I
     goto :goto_0
 
-    .line 623
+    .line 748
     .end local v0           #cdmaAsuLevel:I
     :cond_1
     if-lt v1, v7, :cond_2
@@ -1072,7 +1469,7 @@
     .restart local v0       #cdmaAsuLevel:I
     goto :goto_0
 
-    .line 624
+    .line 749
     .end local v0           #cdmaAsuLevel:I
     :cond_2
     const/16 v5, -0x5f
@@ -1084,7 +1481,7 @@
     .restart local v0       #cdmaAsuLevel:I
     goto :goto_0
 
-    .line 625
+    .line 750
     .end local v0           #cdmaAsuLevel:I
     :cond_3
     if-lt v1, v6, :cond_4
@@ -1094,7 +1491,7 @@
     .restart local v0       #cdmaAsuLevel:I
     goto :goto_0
 
-    .line 626
+    .line 751
     .end local v0           #cdmaAsuLevel:I
     :cond_4
     const/16 v0, 0x63
@@ -1102,7 +1499,7 @@
     .restart local v0       #cdmaAsuLevel:I
     goto :goto_0
 
-    .line 630
+    .line 755
     :cond_5
     if-lt v2, v6, :cond_6
 
@@ -1111,7 +1508,7 @@
     .restart local v3       #ecioAsuLevel:I
     goto :goto_1
 
-    .line 631
+    .line 756
     .end local v3           #ecioAsuLevel:I
     :cond_6
     const/16 v5, -0x73
@@ -1123,7 +1520,7 @@
     .restart local v3       #ecioAsuLevel:I
     goto :goto_1
 
-    .line 632
+    .line 757
     .end local v3           #ecioAsuLevel:I
     :cond_7
     const/16 v5, -0x82
@@ -1135,7 +1532,7 @@
     .restart local v3       #ecioAsuLevel:I
     goto :goto_1
 
-    .line 633
+    .line 758
     .end local v3           #ecioAsuLevel:I
     :cond_8
     const/16 v5, -0x96
@@ -1147,7 +1544,7 @@
     .restart local v3       #ecioAsuLevel:I
     goto :goto_1
 
-    .line 634
+    .line 759
     .end local v3           #ecioAsuLevel:I
     :cond_9
     const/16 v3, 0x63
@@ -1158,7 +1555,7 @@
     :cond_a
     move v4, v3
 
-    .line 636
+    .line 761
     goto :goto_2
 .end method
 
@@ -1166,7 +1563,7 @@
     .locals 1
 
     .prologue
-    .line 382
+    .line 485
     iget v0, p0, Landroid/telephony/SignalStrength;->mCdmaDbm:I
 
     return v0
@@ -1176,7 +1573,7 @@
     .locals 1
 
     .prologue
-    .line 389
+    .line 492
     iget v0, p0, Landroid/telephony/SignalStrength;->mCdmaEcio:I
 
     return v0
@@ -1186,18 +1583,18 @@
     .locals 6
 
     .prologue
-    .line 587
+    .line 712
     invoke-virtual {p0}, Landroid/telephony/SignalStrength;->getCdmaDbm()I
 
     move-result v0
 
-    .line 588
+    .line 713
     .local v0, cdmaDbm:I
     invoke-virtual {p0}, Landroid/telephony/SignalStrength;->getCdmaEcio()I
 
     move-result v1
 
-    .line 592
+    .line 717
     .local v1, cdmaEcio:I
     const/16 v5, -0x4b
 
@@ -1205,7 +1602,7 @@
 
     const/4 v3, 0x4
 
-    .line 599
+    .line 724
     .local v3, levelDbm:I
     :goto_0
     const/16 v5, -0x5a
@@ -1214,19 +1611,19 @@
 
     const/4 v4, 0x4
 
-    .line 605
+    .line 730
     .local v4, levelEcio:I
     :goto_1
     if-ge v3, v4, :cond_8
 
     move v2, v3
 
-    .line 607
+    .line 732
     .local v2, level:I
     :goto_2
     return v2
 
-    .line 593
+    .line 718
     .end local v2           #level:I
     .end local v3           #levelDbm:I
     .end local v4           #levelEcio:I
@@ -1240,7 +1637,7 @@
     .restart local v3       #levelDbm:I
     goto :goto_0
 
-    .line 594
+    .line 719
     .end local v3           #levelDbm:I
     :cond_1
     const/16 v5, -0x5f
@@ -1252,7 +1649,7 @@
     .restart local v3       #levelDbm:I
     goto :goto_0
 
-    .line 595
+    .line 720
     .end local v3           #levelDbm:I
     :cond_2
     const/16 v5, -0x64
@@ -1264,7 +1661,7 @@
     .restart local v3       #levelDbm:I
     goto :goto_0
 
-    .line 596
+    .line 721
     .end local v3           #levelDbm:I
     :cond_3
     const/4 v3, 0x0
@@ -1272,7 +1669,7 @@
     .restart local v3       #levelDbm:I
     goto :goto_0
 
-    .line 600
+    .line 725
     :cond_4
     const/16 v5, -0x6e
 
@@ -1283,7 +1680,7 @@
     .restart local v4       #levelEcio:I
     goto :goto_1
 
-    .line 601
+    .line 726
     .end local v4           #levelEcio:I
     :cond_5
     const/16 v5, -0x82
@@ -1295,7 +1692,7 @@
     .restart local v4       #levelEcio:I
     goto :goto_1
 
-    .line 602
+    .line 727
     .end local v4           #levelEcio:I
     :cond_6
     const/16 v5, -0x96
@@ -1307,7 +1704,7 @@
     .restart local v4       #levelEcio:I
     goto :goto_1
 
-    .line 603
+    .line 728
     .end local v4           #levelEcio:I
     :cond_7
     const/4 v4, 0x0
@@ -1318,7 +1715,7 @@
     :cond_8
     move v2, v4
 
-    .line 605
+    .line 730
     goto :goto_2
 .end method
 
@@ -1328,30 +1725,30 @@
     .prologue
     const/16 v4, -0x78
 
-    .line 508
+    .line 611
     invoke-virtual {p0}, Landroid/telephony/SignalStrength;->isGsm()Z
 
     move-result v3
 
     if-eqz v3, :cond_1
 
-    .line 509
+    .line 612
     invoke-virtual {p0}, Landroid/telephony/SignalStrength;->getLteLevel()I
 
     move-result v3
 
     if-nez v3, :cond_0
 
-    .line 510
+    .line 613
     invoke-virtual {p0}, Landroid/telephony/SignalStrength;->getGsmDbm()I
 
     move-result v1
 
-    .line 522
+    .line 625
     :goto_0
     return v1
 
-    .line 512
+    .line 615
     :cond_0
     invoke-virtual {p0}, Landroid/telephony/SignalStrength;->getLteDbm()I
 
@@ -1360,20 +1757,20 @@
     .local v1, dBm:I
     goto :goto_0
 
-    .line 515
+    .line 618
     .end local v1           #dBm:I
     :cond_1
     invoke-virtual {p0}, Landroid/telephony/SignalStrength;->getCdmaDbm()I
 
     move-result v0
 
-    .line 516
+    .line 619
     .local v0, cdmaDbm:I
     invoke-virtual {p0}, Landroid/telephony/SignalStrength;->getEvdoDbm()I
 
     move-result v2
 
-    .line 518
+    .line 621
     .local v2, evdoDbm:I
     if-ne v2, v4, :cond_3
 
@@ -1404,18 +1801,18 @@
     .locals 6
 
     .prologue
-    .line 675
+    .line 800
     invoke-virtual {p0}, Landroid/telephony/SignalStrength;->getEvdoDbm()I
 
     move-result v0
 
-    .line 676
+    .line 801
     .local v0, evdoDbm:I
     invoke-virtual {p0}, Landroid/telephony/SignalStrength;->getEvdoSnr()I
 
     move-result v1
 
-    .line 680
+    .line 805
     .local v1, evdoSnr:I
     const/16 v5, -0x41
 
@@ -1423,7 +1820,7 @@
 
     const/16 v3, 0x10
 
-    .line 687
+    .line 812
     .local v3, levelEvdoDbm:I
     :goto_0
     const/4 v5, 0x7
@@ -1432,19 +1829,19 @@
 
     const/16 v4, 0x10
 
-    .line 694
+    .line 819
     .local v4, levelEvdoSnr:I
     :goto_1
     if-ge v3, v4, :cond_a
 
     move v2, v3
 
-    .line 696
+    .line 821
     .local v2, level:I
     :goto_2
     return v2
 
-    .line 681
+    .line 806
     .end local v2           #level:I
     .end local v3           #levelEvdoDbm:I
     .end local v4           #levelEvdoSnr:I
@@ -1458,7 +1855,7 @@
     .restart local v3       #levelEvdoDbm:I
     goto :goto_0
 
-    .line 682
+    .line 807
     .end local v3           #levelEvdoDbm:I
     :cond_1
     const/16 v5, -0x55
@@ -1470,7 +1867,7 @@
     .restart local v3       #levelEvdoDbm:I
     goto :goto_0
 
-    .line 683
+    .line 808
     .end local v3           #levelEvdoDbm:I
     :cond_2
     const/16 v5, -0x5f
@@ -1482,7 +1879,7 @@
     .restart local v3       #levelEvdoDbm:I
     goto :goto_0
 
-    .line 684
+    .line 809
     .end local v3           #levelEvdoDbm:I
     :cond_3
     const/16 v5, -0x69
@@ -1494,7 +1891,7 @@
     .restart local v3       #levelEvdoDbm:I
     goto :goto_0
 
-    .line 685
+    .line 810
     .end local v3           #levelEvdoDbm:I
     :cond_4
     const/16 v3, 0x63
@@ -1502,7 +1899,7 @@
     .restart local v3       #levelEvdoDbm:I
     goto :goto_0
 
-    .line 688
+    .line 813
     :cond_5
     const/4 v5, 0x6
 
@@ -1513,7 +1910,7 @@
     .restart local v4       #levelEvdoSnr:I
     goto :goto_1
 
-    .line 689
+    .line 814
     .end local v4           #levelEvdoSnr:I
     :cond_6
     const/4 v5, 0x5
@@ -1525,7 +1922,7 @@
     .restart local v4       #levelEvdoSnr:I
     goto :goto_1
 
-    .line 690
+    .line 815
     .end local v4           #levelEvdoSnr:I
     :cond_7
     const/4 v5, 0x3
@@ -1537,7 +1934,7 @@
     .restart local v4       #levelEvdoSnr:I
     goto :goto_1
 
-    .line 691
+    .line 816
     .end local v4           #levelEvdoSnr:I
     :cond_8
     const/4 v5, 0x1
@@ -1549,7 +1946,7 @@
     .restart local v4       #levelEvdoSnr:I
     goto :goto_1
 
-    .line 692
+    .line 817
     .end local v4           #levelEvdoSnr:I
     :cond_9
     const/16 v4, 0x63
@@ -1560,7 +1957,7 @@
     :cond_a
     move v2, v4
 
-    .line 694
+    .line 819
     goto :goto_2
 .end method
 
@@ -1568,7 +1965,7 @@
     .locals 1
 
     .prologue
-    .line 396
+    .line 499
     iget v0, p0, Landroid/telephony/SignalStrength;->mEvdoDbm:I
 
     return v0
@@ -1578,7 +1975,7 @@
     .locals 1
 
     .prologue
-    .line 403
+    .line 506
     iget v0, p0, Landroid/telephony/SignalStrength;->mEvdoEcio:I
 
     return v0
@@ -1588,18 +1985,18 @@
     .locals 6
 
     .prologue
-    .line 647
+    .line 772
     invoke-virtual {p0}, Landroid/telephony/SignalStrength;->getEvdoDbm()I
 
     move-result v0
 
-    .line 648
+    .line 773
     .local v0, evdoDbm:I
     invoke-virtual {p0}, Landroid/telephony/SignalStrength;->getEvdoSnr()I
 
     move-result v1
 
-    .line 652
+    .line 777
     .local v1, evdoSnr:I
     const/16 v5, -0x41
 
@@ -1607,7 +2004,7 @@
 
     const/4 v3, 0x4
 
-    .line 658
+    .line 783
     .local v3, levelEvdoDbm:I
     :goto_0
     const/4 v5, 0x7
@@ -1616,19 +2013,19 @@
 
     const/4 v4, 0x4
 
-    .line 664
+    .line 789
     .local v4, levelEvdoSnr:I
     :goto_1
     if-ge v3, v4, :cond_8
 
     move v2, v3
 
-    .line 666
+    .line 791
     .local v2, level:I
     :goto_2
     return v2
 
-    .line 653
+    .line 778
     .end local v2           #level:I
     .end local v3           #levelEvdoDbm:I
     .end local v4           #levelEvdoSnr:I
@@ -1642,7 +2039,7 @@
     .restart local v3       #levelEvdoDbm:I
     goto :goto_0
 
-    .line 654
+    .line 779
     .end local v3           #levelEvdoDbm:I
     :cond_1
     const/16 v5, -0x5a
@@ -1654,7 +2051,7 @@
     .restart local v3       #levelEvdoDbm:I
     goto :goto_0
 
-    .line 655
+    .line 780
     .end local v3           #levelEvdoDbm:I
     :cond_2
     const/16 v5, -0x69
@@ -1666,7 +2063,7 @@
     .restart local v3       #levelEvdoDbm:I
     goto :goto_0
 
-    .line 656
+    .line 781
     .end local v3           #levelEvdoDbm:I
     :cond_3
     const/4 v3, 0x0
@@ -1674,7 +2071,7 @@
     .restart local v3       #levelEvdoDbm:I
     goto :goto_0
 
-    .line 659
+    .line 784
     :cond_4
     const/4 v5, 0x5
 
@@ -1685,7 +2082,7 @@
     .restart local v4       #levelEvdoSnr:I
     goto :goto_1
 
-    .line 660
+    .line 785
     .end local v4           #levelEvdoSnr:I
     :cond_5
     const/4 v5, 0x3
@@ -1697,7 +2094,7 @@
     .restart local v4       #levelEvdoSnr:I
     goto :goto_1
 
-    .line 661
+    .line 786
     .end local v4           #levelEvdoSnr:I
     :cond_6
     const/4 v5, 0x1
@@ -1709,7 +2106,7 @@
     .restart local v4       #levelEvdoSnr:I
     goto :goto_1
 
-    .line 662
+    .line 787
     .end local v4           #levelEvdoSnr:I
     :cond_7
     const/4 v4, 0x0
@@ -1720,7 +2117,7 @@
     :cond_8
     move v2, v4
 
-    .line 664
+    .line 789
     goto :goto_2
 .end method
 
@@ -1728,7 +2125,7 @@
     .locals 1
 
     .prologue
-    .line 410
+    .line 513
     iget v0, p0, Landroid/telephony/SignalStrength;->mEvdoSnr:I
 
     return v0
@@ -1738,12 +2135,12 @@
     .locals 1
 
     .prologue
-    .line 576
+    .line 701
     invoke-virtual {p0}, Landroid/telephony/SignalStrength;->getGsmSignalStrength()I
 
     move-result v0
 
-    .line 578
+    .line 703
     .local v0, level:I
     return v0
 .end method
@@ -1752,42 +2149,49 @@
     .locals 1
 
     .prologue
-    .line 375
+    .line 478
     iget v0, p0, Landroid/telephony/SignalStrength;->mGsmBitErrorRate:I
 
     return v0
 .end method
 
 .method public getGsmDbm()I
-    .locals 5
+    .locals 6
 
     .prologue
-    const/4 v3, -0x1
+    const/4 v4, -0x1
 
-    .line 533
+    .line 636
     invoke-virtual {p0}, Landroid/telephony/SignalStrength;->getGsmSignalStrength()I
 
-    move-result v2
+    move-result v3
 
-    .line 534
-    .local v2, gsmSignalStrength:I
-    const/16 v4, 0x63
+    .line 637
+    .local v3, gsmSignalStrength:I
+    const/16 v5, 0x63
 
-    if-ne v2, v4, :cond_0
+    if-ne v3, v5, :cond_0
 
-    move v0, v3
+    move v0, v4
 
-    .line 535
+    .line 638
     .local v0, asu:I
     :goto_0
-    if-eq v0, v3, :cond_1
+    if-eq v0, v4, :cond_1
 
-    .line 536
-    mul-int/lit8 v3, v0, 0x2
+    .line 640
+    :try_start_0
+    sget-object v4, Landroid/telephony/SignalStrength;->mServiceStateExt:Lcom/mediatek/common/telephony/IServiceStateExt;
 
-    add-int/lit8 v1, v3, -0x71
+    iget v5, p0, Landroid/telephony/SignalStrength;->mGsmRscpQdbm:I
 
-    .line 541
+    invoke-interface {v4, v5, v0}, Lcom/mediatek/common/telephony/IServiceStateExt;->mapGsmSignalDbm(II)I
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v1
+
+    .line 648
     .local v1, dBm:I
     :goto_1
     return v1
@@ -1795,13 +2199,29 @@
     .end local v0           #asu:I
     .end local v1           #dBm:I
     :cond_0
-    move v0, v2
+    move v0, v3
 
-    .line 534
+    .line 637
     goto :goto_0
 
-    .line 538
+    .line 641
     .restart local v0       #asu:I
+    :catch_0
+    move-exception v2
+
+    .line 642
+    .local v2, e:Ljava/lang/Exception;
+    mul-int/lit8 v4, v0, 0x2
+
+    add-int/lit8 v1, v4, -0x71
+
+    .line 643
+    .restart local v1       #dBm:I
+    goto :goto_1
+
+    .line 645
+    .end local v1           #dBm:I
+    .end local v2           #e:Ljava/lang/Exception;
     :cond_1
     const/4 v1, -0x1
 
@@ -1809,151 +2229,324 @@
     goto :goto_1
 .end method
 
-.method public getGsmLevel()I
-    .locals 3
+.method public getGsmEcn0Qdbm()I
+    .locals 1
 
     .prologue
-    .line 556
+    .line 1167
+    iget v0, p0, Landroid/telephony/SignalStrength;->mGsmEcn0Qdbm:I
+
+    return v0
+.end method
+
+.method public getGsmLevel()I
+    .locals 7
+
+    .prologue
+    const/16 v6, 0x63
+
+    const/16 v5, 0xc
+
+    const/4 v4, 0x5
+
+    .line 663
     invoke-virtual {p0}, Landroid/telephony/SignalStrength;->getGsmSignalStrength()I
 
     move-result v0
 
-    .line 557
+    .line 667
     .local v0, asu:I
-    const/4 v2, 0x2
+    :try_start_0
+    sget-object v3, Landroid/telephony/SignalStrength;->mServiceStateExt:Lcom/mediatek/common/telephony/IServiceStateExt;
 
-    if-le v0, v2, :cond_0
+    invoke-interface {v3, v0}, Lcom/mediatek/common/telephony/IServiceStateExt;->mapGsmSignalLevel(I)I
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    const/16 v2, 0x63
+    move-result v2
 
-    if-ne v0, v2, :cond_1
+    .line 688
+    .local v2, level:I
+    :goto_0
+    return v2
+
+    .line 668
+    .end local v2           #level:I
+    :catch_0
+    move-exception v1
+
+    .line 670
+    .local v1, e:Ljava/lang/Exception;
+    iget v3, p0, Landroid/telephony/SignalStrength;->mGsmRscpQdbm:I
+
+    if-gez v3, :cond_5
+
+    .line 672
+    if-le v0, v4, :cond_0
+
+    if-ne v0, v6, :cond_1
 
     :cond_0
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    .line 563
-    .local v1, level:I
-    :goto_0
-    return v1
+    .restart local v2       #level:I
+    goto :goto_0
 
-    .line 558
-    .end local v1           #level:I
+    .line 673
+    .end local v2           #level:I
     :cond_1
-    const/16 v2, 0xc
+    const/16 v3, 0xf
 
-    if-lt v0, v2, :cond_2
+    if-lt v0, v3, :cond_2
 
-    const/4 v1, 0x4
+    const/4 v2, 0x4
 
-    .restart local v1       #level:I
+    .restart local v2       #level:I
     goto :goto_0
 
-    .line 559
-    .end local v1           #level:I
+    .line 674
+    .end local v2           #level:I
     :cond_2
-    const/16 v2, 0x8
+    if-lt v0, v5, :cond_3
 
-    if-lt v0, v2, :cond_3
+    const/4 v2, 0x3
 
-    const/4 v1, 0x3
-
-    .restart local v1       #level:I
+    .restart local v2       #level:I
     goto :goto_0
 
-    .line 560
-    .end local v1           #level:I
+    .line 675
+    .end local v2           #level:I
     :cond_3
-    const/4 v2, 0x5
+    const/16 v3, 0x9
 
-    if-lt v0, v2, :cond_4
+    if-lt v0, v3, :cond_4
 
-    const/4 v1, 0x2
+    const/4 v2, 0x2
 
-    .restart local v1       #level:I
+    .restart local v2       #level:I
     goto :goto_0
 
-    .line 561
-    .end local v1           #level:I
+    .line 676
+    .end local v2           #level:I
     :cond_4
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
-    .restart local v1       #level:I
+    .restart local v2       #level:I
     goto :goto_0
+
+    .line 680
+    .end local v2           #level:I
+    :cond_5
+    const/4 v3, 0x2
+
+    if-le v0, v3, :cond_6
+
+    if-ne v0, v6, :cond_7
+
+    :cond_6
+    const/4 v2, 0x0
+
+    .restart local v2       #level:I
+    goto :goto_0
+
+    .line 681
+    .end local v2           #level:I
+    :cond_7
+    if-lt v0, v5, :cond_8
+
+    const/4 v2, 0x4
+
+    .restart local v2       #level:I
+    goto :goto_0
+
+    .line 682
+    .end local v2           #level:I
+    :cond_8
+    const/16 v3, 0x8
+
+    if-lt v0, v3, :cond_9
+
+    const/4 v2, 0x3
+
+    .restart local v2       #level:I
+    goto :goto_0
+
+    .line 683
+    .end local v2           #level:I
+    :cond_9
+    if-lt v0, v4, :cond_a
+
+    const/4 v2, 0x2
+
+    .restart local v2       #level:I
+    goto :goto_0
+
+    .line 684
+    .end local v2           #level:I
+    :cond_a
+    const/4 v2, 0x1
+
+    .restart local v2       #level:I
+    goto :goto_0
+.end method
+
+.method public getGsmRscpQdbm()I
+    .locals 1
+
+    .prologue
+    .line 1158
+    iget v0, p0, Landroid/telephony/SignalStrength;->mGsmRscpQdbm:I
+
+    return v0
+.end method
+
+.method public getGsmRssiQdbm()I
+    .locals 1
+
+    .prologue
+    .line 1149
+    iget v0, p0, Landroid/telephony/SignalStrength;->mGsmRssiQdbm:I
+
+    return v0
 .end method
 
 .method public getGsmSignalStrength()I
     .locals 1
 
     .prologue
-    .line 368
+    .line 471
     iget v0, p0, Landroid/telephony/SignalStrength;->mGsmSignalStrength:I
 
     return v0
+.end method
+
+.method public getGsmSignalStrengthDbm()I
+    .locals 6
+
+    .prologue
+    const/4 v4, -0x1
+
+    .line 1176
+    const/4 v1, -0x1
+
+    .line 1177
+    .local v1, dBm:I
+    iget v3, p0, Landroid/telephony/SignalStrength;->mGsmSignalStrength:I
+
+    .line 1178
+    .local v3, gsmSignalStrength:I
+    const/16 v5, 0x63
+
+    if-ne v3, v5, :cond_1
+
+    move v0, v4
+
+    .line 1180
+    .local v0, asu:I
+    :goto_0
+    if-eq v0, v4, :cond_0
+
+    .line 1182
+    :try_start_0
+    sget-object v4, Landroid/telephony/SignalStrength;->mServiceStateExt:Lcom/mediatek/common/telephony/IServiceStateExt;
+
+    iget v5, p0, Landroid/telephony/SignalStrength;->mGsmRscpQdbm:I
+
+    invoke-interface {v4, v5, v0}, Lcom/mediatek/common/telephony/IServiceStateExt;->mapGsmSignalDbm(II)I
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v1
+
+    .line 1187
+    :cond_0
+    :goto_1
+    return v1
+
+    .end local v0           #asu:I
+    :cond_1
+    move v0, v3
+
+    .line 1178
+    goto :goto_0
+
+    .line 1183
+    .restart local v0       #asu:I
+    :catch_0
+    move-exception v2
+
+    .line 1184
+    .local v2, e:Ljava/lang/Exception;
+    mul-int/lit8 v4, v0, 0x2
+
+    add-int/lit8 v1, v4, -0x71
+
+    goto :goto_1
 .end method
 
 .method public getLevel()I
     .locals 4
 
     .prologue
-    .line 446
+    .line 549
     iget-boolean v3, p0, Landroid/telephony/SignalStrength;->isGsm:Z
 
     if-eqz v3, :cond_1
 
-    .line 447
+    .line 550
     invoke-virtual {p0}, Landroid/telephony/SignalStrength;->getLteLevel()I
 
     move-result v2
 
-    .line 448
+    .line 551
     .local v2, level:I
     if-nez v2, :cond_0
 
-    .line 449
+    .line 552
     invoke-virtual {p0}, Landroid/telephony/SignalStrength;->getGsmLevel()I
 
     move-result v2
 
-    .line 466
+    .line 569
     :cond_0
     :goto_0
     return v2
 
-    .line 452
+    .line 555
     .end local v2           #level:I
     :cond_1
     invoke-virtual {p0}, Landroid/telephony/SignalStrength;->getCdmaLevel()I
 
     move-result v0
 
-    .line 453
+    .line 556
     .local v0, cdmaLevel:I
     invoke-virtual {p0}, Landroid/telephony/SignalStrength;->getEvdoLevel()I
 
     move-result v1
 
-    .line 454
+    .line 557
     .local v1, evdoLevel:I
     if-nez v1, :cond_2
 
-    .line 456
+    .line 559
     move v2, v0
 
     .restart local v2       #level:I
     goto :goto_0
 
-    .line 457
+    .line 560
     .end local v2           #level:I
     :cond_2
     if-nez v0, :cond_3
 
-    .line 459
+    .line 562
     move v2, v1
 
     .restart local v2       #level:I
     goto :goto_0
 
-    .line 462
+    .line 565
     .end local v2           #level:I
     :cond_3
     if-ge v0, v1, :cond_4
@@ -1975,16 +2568,16 @@
     .locals 3
 
     .prologue
-    .line 778
+    .line 904
     const/16 v0, 0x63
 
-    .line 779
+    .line 905
     .local v0, lteAsuLevel:I
     invoke-virtual {p0}, Landroid/telephony/SignalStrength;->getLteDbm()I
 
     move-result v1
 
-    .line 793
+    .line 919
     .local v1, lteDbm:I
     const v2, 0x7fffffff
 
@@ -1992,11 +2585,11 @@
 
     const/16 v0, 0xff
 
-    .line 796
+    .line 922
     :goto_0
     return v0
 
-    .line 794
+    .line 920
     :cond_0
     add-int/lit16 v0, v1, 0x8c
 
@@ -2007,7 +2600,7 @@
     .locals 1
 
     .prologue
-    .line 435
+    .line 538
     iget v0, p0, Landroid/telephony/SignalStrength;->mLteCqi:I
 
     return v0
@@ -2017,7 +2610,7 @@
     .locals 1
 
     .prologue
-    .line 705
+    .line 830
     iget v0, p0, Landroid/telephony/SignalStrength;->mLteRsrp:I
 
     return v0
@@ -2029,7 +2622,7 @@
     .prologue
     const/4 v5, -0x1
 
-    .line 720
+    .line 845
     const/4 v1, 0x0
 
     .local v1, rssiIconLevel:I
@@ -2038,7 +2631,7 @@
     .local v0, rsrpIconLevel:I
     const/4 v2, -0x1
 
-    .line 722
+    .line 847
     .local v2, snrIconLevel:I
     iget v3, p0, Landroid/telephony/SignalStrength;->mLteRsrp:I
 
@@ -2048,7 +2641,7 @@
 
     const/4 v0, -0x1
 
-    .line 735
+    .line 860
     :cond_0
     :goto_0
     iget v3, p0, Landroid/telephony/SignalStrength;->mLteRssnr:I
@@ -2059,23 +2652,23 @@
 
     const/4 v2, -0x1
 
-    .line 747
+    .line 872
     :cond_1
     :goto_1
     if-eq v2, v5, :cond_e
 
     if-eq v0, v5, :cond_e
 
-    .line 753
+    .line 878
     if-ge v0, v2, :cond_d
 
-    .line 768
+    .line 893
     .end local v0           #rsrpIconLevel:I
     :cond_2
     :goto_2
     return v0
 
-    .line 723
+    .line 848
     .restart local v0       #rsrpIconLevel:I
     :cond_3
     iget v3, p0, Landroid/telephony/SignalStrength;->mLteRsrp:I
@@ -2088,7 +2681,7 @@
 
     goto :goto_0
 
-    .line 724
+    .line 849
     :cond_4
     iget v3, p0, Landroid/telephony/SignalStrength;->mLteRsrp:I
 
@@ -2100,7 +2693,7 @@
 
     goto :goto_0
 
-    .line 725
+    .line 850
     :cond_5
     iget v3, p0, Landroid/telephony/SignalStrength;->mLteRsrp:I
 
@@ -2112,7 +2705,7 @@
 
     goto :goto_0
 
-    .line 726
+    .line 851
     :cond_6
     iget v3, p0, Landroid/telephony/SignalStrength;->mLteRsrp:I
 
@@ -2124,7 +2717,7 @@
 
     goto :goto_0
 
-    .line 727
+    .line 852
     :cond_7
     iget v3, p0, Landroid/telephony/SignalStrength;->mLteRsrp:I
 
@@ -2136,7 +2729,7 @@
 
     goto :goto_0
 
-    .line 736
+    .line 861
     :cond_8
     iget v3, p0, Landroid/telephony/SignalStrength;->mLteRssnr:I
 
@@ -2148,7 +2741,7 @@
 
     goto :goto_1
 
-    .line 737
+    .line 862
     :cond_9
     iget v3, p0, Landroid/telephony/SignalStrength;->mLteRssnr:I
 
@@ -2160,7 +2753,7 @@
 
     goto :goto_1
 
-    .line 738
+    .line 863
     :cond_a
     iget v3, p0, Landroid/telephony/SignalStrength;->mLteRssnr:I
 
@@ -2172,7 +2765,7 @@
 
     goto :goto_1
 
-    .line 739
+    .line 864
     :cond_b
     iget v3, p0, Landroid/telephony/SignalStrength;->mLteRssnr:I
 
@@ -2184,7 +2777,7 @@
 
     goto :goto_1
 
-    .line 740
+    .line 865
     :cond_c
     iget v3, p0, Landroid/telephony/SignalStrength;->mLteRssnr:I
 
@@ -2192,7 +2785,7 @@
 
     if-lt v3, v4, :cond_1
 
-    .line 741
+    .line 866
     const/4 v2, 0x0
 
     goto :goto_1
@@ -2200,10 +2793,10 @@
     :cond_d
     move v0, v2
 
-    .line 753
+    .line 878
     goto :goto_2
 
-    .line 756
+    .line 881
     :cond_e
     if-eq v2, v5, :cond_f
 
@@ -2211,11 +2804,11 @@
 
     goto :goto_2
 
-    .line 758
+    .line 883
     :cond_f
     if-ne v0, v5, :cond_2
 
-    .line 761
+    .line 886
     iget v3, p0, Landroid/telephony/SignalStrength;->mLteSignalStrength:I
 
     const/16 v4, 0x3f
@@ -2228,10 +2821,10 @@
     :goto_3
     move v0, v1
 
-    .line 768
+    .line 893
     goto :goto_2
 
-    .line 762
+    .line 887
     :cond_11
     iget v3, p0, Landroid/telephony/SignalStrength;->mLteSignalStrength:I
 
@@ -2243,7 +2836,7 @@
 
     goto :goto_3
 
-    .line 763
+    .line 888
     :cond_12
     iget v3, p0, Landroid/telephony/SignalStrength;->mLteSignalStrength:I
 
@@ -2255,7 +2848,7 @@
 
     goto :goto_3
 
-    .line 764
+    .line 889
     :cond_13
     iget v3, p0, Landroid/telephony/SignalStrength;->mLteSignalStrength:I
 
@@ -2267,7 +2860,7 @@
 
     goto :goto_3
 
-    .line 765
+    .line 890
     :cond_14
     iget v3, p0, Landroid/telephony/SignalStrength;->mLteSignalStrength:I
 
@@ -2282,7 +2875,7 @@
     .locals 1
 
     .prologue
-    .line 420
+    .line 523
     iget v0, p0, Landroid/telephony/SignalStrength;->mLteRsrp:I
 
     return v0
@@ -2292,7 +2885,7 @@
     .locals 1
 
     .prologue
-    .line 425
+    .line 528
     iget v0, p0, Landroid/telephony/SignalStrength;->mLteRsrq:I
 
     return v0
@@ -2302,7 +2895,7 @@
     .locals 1
 
     .prologue
-    .line 430
+    .line 533
     iget v0, p0, Landroid/telephony/SignalStrength;->mLteRssnr:I
 
     return v0
@@ -2312,8 +2905,18 @@
     .locals 1
 
     .prologue
-    .line 415
+    .line 518
     iget v0, p0, Landroid/telephony/SignalStrength;->mLteSignalStrength:I
+
+    return v0
+.end method
+
+.method public getMySimId()I
+    .locals 1
+
+    .prologue
+    .line 1140
+    iget v0, p0, Landroid/telephony/SignalStrength;->mSimId:I
 
     return v0
 .end method
@@ -2322,10 +2925,10 @@
     .locals 3
 
     .prologue
-    .line 811
+    .line 937
     const/16 v0, 0x1f
 
-    .line 812
+    .line 938
     .local v0, primeNum:I
     iget v1, p0, Landroid/telephony/SignalStrength;->mGsmSignalStrength:I
 
@@ -2431,46 +3034,46 @@
     .parameter "gsm"
 
     .prologue
-    .line 218
+    .line 295
     iput p1, p0, Landroid/telephony/SignalStrength;->mGsmSignalStrength:I
 
-    .line 219
+    .line 296
     iput p2, p0, Landroid/telephony/SignalStrength;->mGsmBitErrorRate:I
 
-    .line 220
+    .line 297
     iput p3, p0, Landroid/telephony/SignalStrength;->mCdmaDbm:I
 
-    .line 221
+    .line 298
     iput p4, p0, Landroid/telephony/SignalStrength;->mCdmaEcio:I
 
-    .line 222
+    .line 299
     iput p5, p0, Landroid/telephony/SignalStrength;->mEvdoDbm:I
 
-    .line 223
+    .line 300
     iput p6, p0, Landroid/telephony/SignalStrength;->mEvdoEcio:I
 
-    .line 224
+    .line 301
     iput p7, p0, Landroid/telephony/SignalStrength;->mEvdoSnr:I
 
-    .line 225
+    .line 302
     iput p8, p0, Landroid/telephony/SignalStrength;->mLteSignalStrength:I
 
-    .line 226
+    .line 303
     iput p9, p0, Landroid/telephony/SignalStrength;->mLteRsrp:I
 
-    .line 227
+    .line 304
     iput p10, p0, Landroid/telephony/SignalStrength;->mLteRsrq:I
 
-    .line 228
+    .line 305
     iput p11, p0, Landroid/telephony/SignalStrength;->mLteRssnr:I
 
-    .line 229
+    .line 306
     iput p12, p0, Landroid/telephony/SignalStrength;->mLteCqi:I
 
-    .line 230
+    .line 307
     iput-boolean p13, p0, Landroid/telephony/SignalStrength;->isGsm:Z
 
-    .line 232
+    .line 309
     return-void
 .end method
 
@@ -2486,7 +3089,7 @@
     .parameter "gsm"
 
     .prologue
-    .line 189
+    .line 266
     const/16 v8, 0x63
 
     const v9, 0x7fffffff
@@ -2517,7 +3120,7 @@
 
     invoke-virtual/range {v0 .. v13}, Landroid/telephony/SignalStrength;->initialize(IIIIIIIIIIIIZ)V
 
-    .line 192
+    .line 269
     return-void
 .end method
 
@@ -2525,7 +3128,7 @@
     .locals 1
 
     .prologue
-    .line 803
+    .line 929
     iget-boolean v0, p0, Landroid/telephony/SignalStrength;->isGsm:Z
 
     return v0
@@ -2536,10 +3139,10 @@
     .parameter "gsmFlag"
 
     .prologue
-    .line 360
+    .line 463
     iput-boolean p1, p0, Landroid/telephony/SignalStrength;->isGsm:Z
 
-    .line 361
+    .line 464
     return-void
 .end method
 
@@ -2547,12 +3150,29 @@
     .locals 2
 
     .prologue
-    .line 858
+    .line 985
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "SignalStrength: "
+    const-string v1, "SignalStrength:"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v0, p0, Landroid/telephony/SignalStrength;->mSimId:I
+
+    if-nez v0, :cond_0
+
+    const-string v0, "SIM1"
+
+    :goto_0
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, " "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2704,12 +3324,48 @@
 
     iget-boolean v0, p0, Landroid/telephony/SignalStrength;->isGsm:Z
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     const-string v0, "gsm|lte"
 
-    :goto_0
+    :goto_1
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, " "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget v1, p0, Landroid/telephony/SignalStrength;->mGsmRssiQdbm:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, " "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget v1, p0, Landroid/telephony/SignalStrength;->mGsmRscpQdbm:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, " "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget v1, p0, Landroid/telephony/SignalStrength;->mGsmEcn0Qdbm:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -2720,9 +3376,14 @@
     return-object v0
 
     :cond_0
+    const-string v0, "SIM2"
+
+    goto/16 :goto_0
+
+    :cond_1
     const-string v0, "cdma"
 
-    goto :goto_0
+    goto :goto_1
 .end method
 
 .method public validateInput()V
@@ -2737,7 +3398,7 @@
 
     const v4, 0x7fffffff
 
-    .line 331
+    .line 434
     iget v0, p0, Landroid/telephony/SignalStrength;->mGsmSignalStrength:I
 
     if-ltz v0, :cond_4
@@ -2747,7 +3408,7 @@
     :goto_0
     iput v0, p0, Landroid/telephony/SignalStrength;->mGsmSignalStrength:I
 
-    .line 334
+    .line 437
     iget v0, p0, Landroid/telephony/SignalStrength;->mCdmaDbm:I
 
     if-lez v0, :cond_5
@@ -2759,7 +3420,7 @@
     :goto_1
     iput v0, p0, Landroid/telephony/SignalStrength;->mCdmaDbm:I
 
-    .line 335
+    .line 438
     iget v0, p0, Landroid/telephony/SignalStrength;->mCdmaEcio:I
 
     if-lez v0, :cond_6
@@ -2771,7 +3432,7 @@
     :goto_2
     iput v0, p0, Landroid/telephony/SignalStrength;->mCdmaEcio:I
 
-    .line 337
+    .line 440
     iget v0, p0, Landroid/telephony/SignalStrength;->mEvdoDbm:I
 
     if-lez v0, :cond_0
@@ -2783,7 +3444,7 @@
     :cond_0
     iput v2, p0, Landroid/telephony/SignalStrength;->mEvdoDbm:I
 
-    .line 338
+    .line 441
     iget v0, p0, Landroid/telephony/SignalStrength;->mEvdoEcio:I
 
     if-lez v0, :cond_7
@@ -2795,7 +3456,7 @@
     :goto_3
     iput v0, p0, Landroid/telephony/SignalStrength;->mEvdoEcio:I
 
-    .line 339
+    .line 442
     iget v0, p0, Landroid/telephony/SignalStrength;->mEvdoSnr:I
 
     if-lez v0, :cond_1
@@ -2811,7 +3472,7 @@
     :cond_1
     iput v3, p0, Landroid/telephony/SignalStrength;->mEvdoSnr:I
 
-    .line 342
+    .line 445
     iget v0, p0, Landroid/telephony/SignalStrength;->mLteSignalStrength:I
 
     if-ltz v0, :cond_2
@@ -2821,7 +3482,7 @@
     :cond_2
     iput v1, p0, Landroid/telephony/SignalStrength;->mLteSignalStrength:I
 
-    .line 343
+    .line 446
     iget v0, p0, Landroid/telephony/SignalStrength;->mLteRsrp:I
 
     const/16 v1, 0x2c
@@ -2841,7 +3502,7 @@
     :goto_4
     iput v0, p0, Landroid/telephony/SignalStrength;->mLteRsrp:I
 
-    .line 344
+    .line 447
     iget v0, p0, Landroid/telephony/SignalStrength;->mLteRsrq:I
 
     const/4 v1, 0x3
@@ -2861,7 +3522,7 @@
     :goto_5
     iput v0, p0, Landroid/telephony/SignalStrength;->mLteRsrq:I
 
-    .line 345
+    .line 448
     iget v0, p0, Landroid/telephony/SignalStrength;->mLteRssnr:I
 
     const/16 v1, -0xc8
@@ -2879,22 +3540,22 @@
     :cond_3
     iput v4, p0, Landroid/telephony/SignalStrength;->mLteRssnr:I
 
-    .line 349
+    .line 452
     return-void
 
     :cond_4
     move v0, v1
 
-    .line 331
+    .line 434
     goto :goto_0
 
     :cond_5
     move v0, v2
 
-    .line 334
+    .line 437
     goto :goto_1
 
-    .line 335
+    .line 438
     :cond_6
     const/16 v0, -0xa0
 
@@ -2903,19 +3564,19 @@
     :cond_7
     move v0, v3
 
-    .line 338
+    .line 441
     goto :goto_3
 
     :cond_8
     move v0, v4
 
-    .line 343
+    .line 446
     goto :goto_4
 
     :cond_9
     move v0, v4
 
-    .line 344
+    .line 447
     goto :goto_5
 .end method
 
@@ -2925,67 +3586,67 @@
     .parameter "flags"
 
     .prologue
-    .line 280
+    .line 373
     iget v0, p0, Landroid/telephony/SignalStrength;->mGsmSignalStrength:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 281
+    .line 374
     iget v0, p0, Landroid/telephony/SignalStrength;->mGsmBitErrorRate:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 282
+    .line 375
     iget v0, p0, Landroid/telephony/SignalStrength;->mCdmaDbm:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 283
+    .line 376
     iget v0, p0, Landroid/telephony/SignalStrength;->mCdmaEcio:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 284
+    .line 377
     iget v0, p0, Landroid/telephony/SignalStrength;->mEvdoDbm:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 285
+    .line 378
     iget v0, p0, Landroid/telephony/SignalStrength;->mEvdoEcio:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 286
+    .line 379
     iget v0, p0, Landroid/telephony/SignalStrength;->mEvdoSnr:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 287
+    .line 380
     iget v0, p0, Landroid/telephony/SignalStrength;->mLteSignalStrength:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 288
+    .line 381
     iget v0, p0, Landroid/telephony/SignalStrength;->mLteRsrp:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 289
+    .line 382
     iget v0, p0, Landroid/telephony/SignalStrength;->mLteRsrq:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 290
+    .line 383
     iget v0, p0, Landroid/telephony/SignalStrength;->mLteRssnr:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 291
+    .line 384
     iget v0, p0, Landroid/telephony/SignalStrength;->mLteCqi:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 292
+    .line 385
     iget-boolean v0, p0, Landroid/telephony/SignalStrength;->isGsm:Z
 
     if-eqz v0, :cond_0
@@ -2995,10 +3656,30 @@
     :goto_0
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 293
+    .line 387
+    iget v0, p0, Landroid/telephony/SignalStrength;->mSimId:I
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 391
+    iget v0, p0, Landroid/telephony/SignalStrength;->mGsmRssiQdbm:I
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 392
+    iget v0, p0, Landroid/telephony/SignalStrength;->mGsmRscpQdbm:I
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 393
+    iget v0, p0, Landroid/telephony/SignalStrength;->mGsmEcn0Qdbm:I
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 396
     return-void
 
-    .line 292
+    .line 385
     :cond_0
     const/4 v0, 0x0
 

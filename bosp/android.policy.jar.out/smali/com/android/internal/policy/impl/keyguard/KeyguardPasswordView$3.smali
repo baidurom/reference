@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 132
+    .line 143
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView$3;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -42,22 +42,22 @@
     .parameter "v"
 
     .prologue
-    .line 134
+    .line 145
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView$3;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;
 
-    iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
 
     const-wide/16 v1, 0x0
 
     invoke-interface {v0, v1, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;->userActivity(J)V
 
-    .line 135
+    .line 146
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView$3;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;->mImm:Landroid/view/inputmethod/InputMethodManager;
 
     invoke-virtual {v0}, Landroid/view/inputmethod/InputMethodManager;->showInputMethodPicker()V
 
-    .line 136
+    .line 147
     return-void
 .end method

@@ -37,10 +37,10 @@
     .parameter
 
     .prologue
-    .line 440
+    .line 474
     iput-object p1, p0, Lcom/baidu/themeanimation/util/FileUtil$TaskComparator;->this$0:Lcom/baidu/themeanimation/util/FileUtil;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -51,7 +51,7 @@
     .parameter "x1"
 
     .prologue
-    .line 440
+    .line 474
     invoke-direct {p0, p1}, Lcom/baidu/themeanimation/util/FileUtil$TaskComparator;-><init>(Lcom/baidu/themeanimation/util/FileUtil;)V
 
     return-void
@@ -65,7 +65,7 @@
     .parameter "rhs"
 
     .prologue
-    .line 444
+    .line 478
     invoke-virtual {p2}, Lcom/baidu/themeanimation/util/FileUtil$LoadBitmapTask;->getPriority()I
 
     move-result v0
@@ -85,7 +85,7 @@
     .parameter "x1"
 
     .prologue
-    .line 440
+    .line 474
     check-cast p1, Lcom/baidu/themeanimation/util/FileUtil$LoadBitmapTask;
 
     .end local p1

@@ -57,7 +57,7 @@
     const v0, 0x7fffffff
 
     .line 45
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 46
     iput v0, p0, Landroid/telephony/CellIdentityLte;->mMcc:I
@@ -88,7 +88,7 @@
 
     .prologue
     .line 63
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 64
     iput p1, p0, Landroid/telephony/CellIdentityLte;->mMcc:I
@@ -115,7 +115,7 @@
 
     .prologue
     .line 174
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 175
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
@@ -174,7 +174,7 @@
 
     .prologue
     .line 71
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 72
     iget v0, p1, Landroid/telephony/CellIdentityLte;->mMcc:I

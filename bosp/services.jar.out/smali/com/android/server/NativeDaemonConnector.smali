@@ -22,7 +22,7 @@
 # static fields
 .field private static final DEFAULT_TIMEOUT:I = 0xea60
 
-.field private static final LOGD:Z = false
+.field private static final LOGD:Z = true
 
 .field private static final WARN_EXECUTE_DELAY_MS:J = 0x1f4L
 
@@ -60,12 +60,12 @@
 
     .prologue
     .line 73
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 68
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/NativeDaemonConnector;->mDaemonLock:Ljava/lang/Object;
 
@@ -1100,6 +1100,11 @@
     .parameter "logstring"
 
     .prologue
+    .line 478
+    iget-object v0, p0, Lcom/android/server/NativeDaemonConnector;->TAG:Ljava/lang/String;
+
+    invoke-static {v0, p1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     .line 479
     iget-object v0, p0, Lcom/android/server/NativeDaemonConnector;->mLocalLog:Landroid/util/LocalLog;
 

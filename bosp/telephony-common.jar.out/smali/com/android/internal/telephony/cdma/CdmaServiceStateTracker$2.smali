@@ -25,7 +25,7 @@
     .parameter "x0"
 
     .prologue
-    .line 157
+    .line 233
     iput-object p1, p0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker$2;->this$0:Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -40,19 +40,49 @@
     .parameter "selfChange"
 
     .prologue
-    .line 160
+    .line 236
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker$2;->this$0:Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;
 
-    const-string v1, "Auto time zone state changed"
+    const-string v1, "Auto time state changed"
 
     invoke-virtual {v0, v1}, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->log(Ljava/lang/String;)V
 
-    .line 161
+    .line 240
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker$2;->this$0:Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;
 
-    #calls: Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->revertToNitzTimeZone()V
-    invoke-static {v0}, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->access$100(Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;)V
+    #calls: Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->getAutoTime()Z
+    invoke-static {v0}, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->access$100(Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;)Z
 
-    .line 162
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 241
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker$2;->this$0:Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;
+
+    const/4 v1, 0x1
+
+    #setter for: Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->mAutoTimeChanged:Z
+    invoke-static {v0, v1}, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->access$202(Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;Z)Z
+
+    .line 242
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker$2;->this$0:Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;
+
+    #calls: Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->queryCurrentNitzTime()V
+    invoke-static {v0}, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->access$300(Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;)V
+
+    .line 246
+    :goto_0
     return-void
+
+    .line 244
+    :cond_0
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker$2;->this$0:Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;
+
+    const/4 v1, 0x0
+
+    #setter for: Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->mAutoTimeChanged:Z
+    invoke-static {v0, v1}, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->access$202(Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;Z)Z
+
+    goto :goto_0
 .end method

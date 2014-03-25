@@ -102,7 +102,7 @@
     const-wide/16 v1, 0x0
 
     .line 121
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 81
     iput-wide v4, p0, Landroid/location/Location;->mTime:J
@@ -191,7 +191,7 @@
     const-wide/16 v1, 0x0
 
     .line 114
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 81
     iput-wide v4, p0, Landroid/location/Location;->mTime:J

@@ -393,7 +393,7 @@
     invoke-static {v6}, Ljava/util/Arrays;->sort([Ljava/lang/Object;)V
 
     .line 161
-    const-string v2, "layout_inflater"
+    const-string/jumbo v2, "layout_inflater"
 
     move-object/from16 v0, p0
 

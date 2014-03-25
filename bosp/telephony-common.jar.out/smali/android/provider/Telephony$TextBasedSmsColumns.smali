@@ -57,6 +57,8 @@
 
 .field public static final SERVICE_CENTER:Ljava/lang/String; = "service_center"
 
+.field public static final SIM_ID:Ljava/lang/String; = "sim_id"
+
 .field public static final STATUS:Ljava/lang/String; = "status"
 
 .field public static final STATUS_COMPLETE:I = 0x0
@@ -66,6 +68,8 @@
 .field public static final STATUS_NONE:I = -0x1
 
 .field public static final STATUS_PENDING:I = 0x20
+
+.field public static final STATUS_REPLACED_BY_SC:I = 0x2
 
 .field public static final SUBJECT:Ljava/lang/String; = "subject"
 

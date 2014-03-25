@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 110
+    .line 118
     iput-object p1, p0, Lcom/android/server/AppWidgetService$1;->this$0:Lcom/android/server/AppWidgetService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -42,7 +42,7 @@
     .prologue
     const/16 v2, -0x2710
 
-    .line 113
+    .line 121
     const-string v0, "android.intent.action.USER_REMOVED"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -55,7 +55,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 114
+    .line 122
     iget-object v0, p0, Lcom/android/server/AppWidgetService$1;->this$0:Lcom/android/server/AppWidgetService;
 
     const-string v1, "android.intent.extra.user_handle"
@@ -66,12 +66,12 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/AppWidgetService;->onUserRemoved(I)V
 
-    .line 120
+    .line 128
     :cond_0
     :goto_0
     return-void
 
-    .line 116
+    .line 124
     :cond_1
     const-string v0, "android.intent.action.USER_STOPPING"
 
@@ -85,7 +85,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 117
+    .line 125
     iget-object v0, p0, Lcom/android/server/AppWidgetService$1;->this$0:Lcom/android/server/AppWidgetService;
 
     const-string v1, "android.intent.extra.user_handle"

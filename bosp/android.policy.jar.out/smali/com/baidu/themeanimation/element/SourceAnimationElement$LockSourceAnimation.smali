@@ -66,7 +66,7 @@
 
     .local v0, i:I
     :goto_0
-    iget-object v2, p1, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v2, p1, Lcom/baidu/themeanimation/element/SourceAnimationElement;->mKeyFrames:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->size()I
 
@@ -75,7 +75,7 @@
     if-ge v0, v2, :cond_0
 
     .line 146
-    iget-object v2, p1, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v2, p1, Lcom/baidu/themeanimation/element/SourceAnimationElement;->mKeyFrames:Ljava/util/List;
 
     invoke-interface {v2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -167,7 +167,7 @@
     :cond_0
     iget-object v4, p0, Lcom/baidu/themeanimation/element/SourceAnimationElement$LockSourceAnimation;->this$0:Lcom/baidu/themeanimation/element/SourceAnimationElement;
 
-    iget-object v4, v4, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v4, v4, Lcom/baidu/themeanimation/element/SourceAnimationElement;->mKeyFrames:Ljava/util/List;
 
     iget v5, p0, Lcom/baidu/themeanimation/element/SourceAnimationElement$LockSourceAnimation;->mCurrentStage:I
 
@@ -197,7 +197,7 @@
     .line 171
     iget-object v4, p0, Lcom/baidu/themeanimation/element/SourceAnimationElement$LockSourceAnimation;->this$0:Lcom/baidu/themeanimation/element/SourceAnimationElement;
 
-    iget-object v4, v4, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v4, v4, Lcom/baidu/themeanimation/element/SourceAnimationElement;->mKeyFrames:Ljava/util/List;
 
     add-int/lit8 v5, v1, -0x1
 
@@ -294,7 +294,7 @@
 
     iget-object v4, p0, Lcom/baidu/themeanimation/element/SourceAnimationElement$LockSourceAnimation;->this$0:Lcom/baidu/themeanimation/element/SourceAnimationElement;
 
-    iget-object v4, v4, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v4, v4, Lcom/baidu/themeanimation/element/SourceAnimationElement;->mKeyFrames:Ljava/util/List;
 
     invoke-interface {v4, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -313,7 +313,7 @@
 
     iget-object v4, p0, Lcom/baidu/themeanimation/element/SourceAnimationElement$LockSourceAnimation;->this$0:Lcom/baidu/themeanimation/element/SourceAnimationElement;
 
-    iget-object v4, v4, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v4, v4, Lcom/baidu/themeanimation/element/SourceAnimationElement;->mKeyFrames:Ljava/util/List;
 
     invoke-interface {v4, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -355,7 +355,7 @@
     :goto_1
     iget-object v4, p0, Lcom/baidu/themeanimation/element/SourceAnimationElement$LockSourceAnimation;->this$0:Lcom/baidu/themeanimation/element/SourceAnimationElement;
 
-    iget-object v4, v4, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v4, v4, Lcom/baidu/themeanimation/element/SourceAnimationElement;->mKeyFrames:Ljava/util/List;
 
     invoke-interface {v4}, Ljava/util/List;->size()I
 
@@ -366,7 +366,7 @@
     .line 177
     iget-object v4, p0, Lcom/baidu/themeanimation/element/SourceAnimationElement$LockSourceAnimation;->this$0:Lcom/baidu/themeanimation/element/SourceAnimationElement;
 
-    iget-object v4, v4, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v4, v4, Lcom/baidu/themeanimation/element/SourceAnimationElement;->mKeyFrames:Ljava/util/List;
 
     invoke-interface {v4, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 

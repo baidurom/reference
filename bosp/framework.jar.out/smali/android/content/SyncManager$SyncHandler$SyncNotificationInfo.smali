@@ -31,7 +31,7 @@
     .line 1672
     iput-object p1, p0, Landroid/content/SyncManager$SyncHandler$SyncNotificationInfo;->this$1:Landroid/content/SyncManager$SyncHandler;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1674
     const/4 v0, 0x0
@@ -75,7 +75,7 @@
 
     .prologue
     .line 1681
-    const-string v0, "isActive "
+    const-string/jumbo v0, "isActive "
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

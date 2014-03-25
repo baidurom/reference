@@ -51,7 +51,7 @@
     const/4 v2, -0x1
 
     .line 1700
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1695
     new-instance v1, Landroid/graphics/Rect;
@@ -132,7 +132,7 @@
 
     iget v2, v2, Landroid/view/DisplayInfo;->logicalWidth:I
 
-    iput v2, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iput v2, v1, Landroid/view/WindowManager$LayoutParams;->width:I
 
     .line 1718
     iget-object v1, p0, Lcom/android/server/accessibility/ScreenMagnifier$Viewport$ViewportWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
@@ -143,7 +143,7 @@
 
     iget v2, v2, Landroid/view/DisplayInfo;->logicalHeight:I
 
-    iput v2, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iput v2, v1, Landroid/view/WindowManager$LayoutParams;->height:I
 
     .line 1719
     iget-object v1, p0, Lcom/android/server/accessibility/ScreenMagnifier$Viewport$ViewportWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
@@ -254,7 +254,7 @@
 
     iget v1, v1, Landroid/view/DisplayInfo;->logicalWidth:I
 
-    iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iput v1, v0, Landroid/view/WindowManager$LayoutParams;->width:I
 
     .line 1775
     iget-object v0, p0, Lcom/android/server/accessibility/ScreenMagnifier$Viewport$ViewportWindow;->mWindowParams:Landroid/view/WindowManager$LayoutParams;
@@ -267,7 +267,7 @@
 
     iget v1, v1, Landroid/view/DisplayInfo;->logicalHeight:I
 
-    iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iput v1, v0, Landroid/view/WindowManager$LayoutParams;->height:I
 
     .line 1776
     iget-boolean v0, p0, Lcom/android/server/accessibility/ScreenMagnifier$Viewport$ViewportWindow;->mShown:Z

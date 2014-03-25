@@ -41,7 +41,7 @@
 
     .prologue
     .line 46
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 26
     const/16 v0, 0x10
@@ -68,7 +68,7 @@
 
     .prologue
     .line 56
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 26
     const/16 v0, 0x10
@@ -154,7 +154,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "increase internal buffer size to "
+    const-string/jumbo v4, "increase internal buffer size to "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

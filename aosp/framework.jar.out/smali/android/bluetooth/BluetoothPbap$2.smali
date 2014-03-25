@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 298
+    .line 300
     iput-object p1, p0, Landroid/bluetooth/BluetoothPbap$2;->this$0:Landroid/bluetooth/BluetoothPbap;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -43,13 +43,13 @@
     .parameter "service"
 
     .prologue
-    .line 300
+    .line 302
     const-string v0, "Proxy object connected"
 
     #calls: Landroid/bluetooth/BluetoothPbap;->log(Ljava/lang/String;)V
     invoke-static {v0}, Landroid/bluetooth/BluetoothPbap;->access$300(Ljava/lang/String;)V
 
-    .line 301
+    .line 303
     iget-object v0, p0, Landroid/bluetooth/BluetoothPbap$2;->this$0:Landroid/bluetooth/BluetoothPbap;
 
     invoke-static {p2}, Landroid/bluetooth/IBluetoothPbap$Stub;->asInterface(Landroid/os/IBinder;)Landroid/bluetooth/IBluetoothPbap;
@@ -59,7 +59,7 @@
     #setter for: Landroid/bluetooth/BluetoothPbap;->mService:Landroid/bluetooth/IBluetoothPbap;
     invoke-static {v0, v1}, Landroid/bluetooth/BluetoothPbap;->access$102(Landroid/bluetooth/BluetoothPbap;Landroid/bluetooth/IBluetoothPbap;)Landroid/bluetooth/IBluetoothPbap;
 
-    .line 302
+    .line 304
     iget-object v0, p0, Landroid/bluetooth/BluetoothPbap$2;->this$0:Landroid/bluetooth/BluetoothPbap;
 
     #getter for: Landroid/bluetooth/BluetoothPbap;->mServiceListener:Landroid/bluetooth/BluetoothPbap$ServiceListener;
@@ -69,7 +69,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 303
+    .line 305
     iget-object v0, p0, Landroid/bluetooth/BluetoothPbap$2;->this$0:Landroid/bluetooth/BluetoothPbap;
 
     #getter for: Landroid/bluetooth/BluetoothPbap;->mServiceListener:Landroid/bluetooth/BluetoothPbap$ServiceListener;
@@ -81,7 +81,7 @@
 
     invoke-interface {v0, v1}, Landroid/bluetooth/BluetoothPbap$ServiceListener;->onServiceConnected(Landroid/bluetooth/BluetoothPbap;)V
 
-    .line 305
+    .line 307
     :cond_0
     return-void
 .end method
@@ -91,13 +91,13 @@
     .parameter "className"
 
     .prologue
-    .line 307
+    .line 309
     const-string v0, "Proxy object disconnected"
 
     #calls: Landroid/bluetooth/BluetoothPbap;->log(Ljava/lang/String;)V
     invoke-static {v0}, Landroid/bluetooth/BluetoothPbap;->access$300(Ljava/lang/String;)V
 
-    .line 308
+    .line 310
     iget-object v0, p0, Landroid/bluetooth/BluetoothPbap$2;->this$0:Landroid/bluetooth/BluetoothPbap;
 
     const/4 v1, 0x0
@@ -105,7 +105,7 @@
     #setter for: Landroid/bluetooth/BluetoothPbap;->mService:Landroid/bluetooth/IBluetoothPbap;
     invoke-static {v0, v1}, Landroid/bluetooth/BluetoothPbap;->access$102(Landroid/bluetooth/BluetoothPbap;Landroid/bluetooth/IBluetoothPbap;)Landroid/bluetooth/IBluetoothPbap;
 
-    .line 309
+    .line 311
     iget-object v0, p0, Landroid/bluetooth/BluetoothPbap$2;->this$0:Landroid/bluetooth/BluetoothPbap;
 
     #getter for: Landroid/bluetooth/BluetoothPbap;->mServiceListener:Landroid/bluetooth/BluetoothPbap$ServiceListener;
@@ -115,7 +115,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 310
+    .line 312
     iget-object v0, p0, Landroid/bluetooth/BluetoothPbap$2;->this$0:Landroid/bluetooth/BluetoothPbap;
 
     #getter for: Landroid/bluetooth/BluetoothPbap;->mServiceListener:Landroid/bluetooth/BluetoothPbap$ServiceListener;
@@ -125,7 +125,7 @@
 
     invoke-interface {v0}, Landroid/bluetooth/BluetoothPbap$ServiceListener;->onServiceDisconnected()V
 
-    .line 312
+    .line 314
     :cond_0
     return-void
 .end method

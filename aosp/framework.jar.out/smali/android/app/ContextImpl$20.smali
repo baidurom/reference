@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 386
+    .line 428
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -27,15 +27,15 @@
 
 
 # virtual methods
-.method public getService(Landroid/app/ContextImpl;)Ljava/lang/Object;
+.method public createService(Landroid/app/ContextImpl;)Ljava/lang/Object;
     .locals 1
     .parameter "ctx"
 
     .prologue
-    .line 392
-    new-instance v0, Landroid/app/KeyguardManager;
+    .line 430
+    invoke-static {p1}, Landroid/view/inputmethod/InputMethodManager;->getInstance(Landroid/content/Context;)Landroid/view/inputmethod/InputMethodManager;
 
-    invoke-direct {v0}, Landroid/app/KeyguardManager;-><init>()V
+    move-result-object v0
 
     return-object v0
 .end method

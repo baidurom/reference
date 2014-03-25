@@ -34,7 +34,7 @@
     .line 153
     iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$WaveViewMethods;->this$0:Lcom/baidu/internal/keyguard/slide/SmartLockScreen;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 154
     iput-object p2, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$WaveViewMethods;->mWaveView:Lcom/android/internal/widget/WaveView;

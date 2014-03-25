@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->onRemoveView(Landroid/view/View;Z)V
+    value = Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->onRemoveView(Landroid/view/View;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -30,12 +30,12 @@
     .parameter
 
     .prologue
-    .line 259
+    .line 253
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;
 
     iput p2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager$1;->val$appWidgetId:I
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -46,7 +46,7 @@
     .locals 2
 
     .prologue
-    .line 262
+    .line 256
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
@@ -58,6 +58,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/LockPatternUtils;->removeAppWidget(I)Z
 
-    .line 263
+    .line 257
     return-void
 .end method

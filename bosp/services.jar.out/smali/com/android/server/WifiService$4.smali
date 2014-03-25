@@ -1,101 +1,51 @@
-.class synthetic Lcom/android/server/WifiService$4;
-.super Ljava/lang/Object;
+.class Lcom/android/server/WifiService$4;
+.super Landroid/content/BroadcastReceiver;
 .source "WifiService.java"
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/server/WifiService;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/server/WifiService;->initializeExtra()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1008
+    accessFlags = 0x0
     name = null
 .end annotation
 
 
-# static fields
-.field static final synthetic $SwitchMap$android$net$NetworkInfo$DetailedState:[I
+# instance fields
+.field final synthetic this$0:Lcom/android/server/WifiService;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method constructor <init>(Lcom/android/server/WifiService;)V
+    .locals 0
+    .parameter
 
     .prologue
-    .line 416
-    invoke-static {}, Landroid/net/NetworkInfo$DetailedState;->values()[Landroid/net/NetworkInfo$DetailedState;
+    .line 2275
+    iput-object p1, p0, Lcom/android/server/WifiService$4;->this$0:Lcom/android/server/WifiService;
 
-    move-result-object v0
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
-    array-length v0, v0
-
-    new-array v0, v0, [I
-
-    sput-object v0, Lcom/android/server/WifiService$4;->$SwitchMap$android$net$NetworkInfo$DetailedState:[I
-
-    :try_start_0
-    sget-object v0, Lcom/android/server/WifiService$4;->$SwitchMap$android$net$NetworkInfo$DetailedState:[I
-
-    sget-object v1, Landroid/net/NetworkInfo$DetailedState;->CONNECTED:Landroid/net/NetworkInfo$DetailedState;
-
-    invoke-virtual {v1}, Landroid/net/NetworkInfo$DetailedState;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_2
-
-    :goto_0
-    :try_start_1
-    sget-object v0, Lcom/android/server/WifiService$4;->$SwitchMap$android$net$NetworkInfo$DetailedState:[I
-
-    sget-object v1, Landroid/net/NetworkInfo$DetailedState;->DISCONNECTED:Landroid/net/NetworkInfo$DetailedState;
-
-    invoke-virtual {v1}, Landroid/net/NetworkInfo$DetailedState;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
-
-    :goto_1
-    :try_start_2
-    sget-object v0, Lcom/android/server/WifiService$4;->$SwitchMap$android$net$NetworkInfo$DetailedState:[I
-
-    sget-object v1, Landroid/net/NetworkInfo$DetailedState;->CAPTIVE_PORTAL_CHECK:Landroid/net/NetworkInfo$DetailedState;
-
-    invoke-virtual {v1}, Landroid/net/NetworkInfo$DetailedState;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_0
-
-    :goto_2
     return-void
+.end method
 
-    :catch_0
-    move-exception v0
 
-    goto :goto_2
+# virtual methods
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 1
+    .parameter "context"
+    .parameter "intent"
 
-    :catch_1
-    move-exception v0
+    .prologue
+    .line 2278
+    iget-object v0, p0, Lcom/android/server/WifiService$4;->this$0:Lcom/android/server/WifiService;
 
-    goto :goto_1
+    #calls: Lcom/android/server/WifiService;->autoConnectEnableAllNetworks()V
+    invoke-static {v0}, Lcom/android/server/WifiService;->access$4200(Lcom/android/server/WifiService;)V
 
-    :catch_2
-    move-exception v0
-
-    goto :goto_0
+    .line 2279
+    return-void
 .end method

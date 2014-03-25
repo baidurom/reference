@@ -48,7 +48,7 @@
 
     .prologue
     .line 694
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -84,7 +84,7 @@
 
     aput-object v4, v2, v3
 
-    const-string v3, "key=?"
+    const-string/jumbo v3, "key=?"
 
     const/4 v4, 0x1
 
@@ -180,7 +180,7 @@
 
     .line 738
     .local v0, values:Landroid/content/ContentValues;
-    const-string v1, "key"
+    const-string/jumbo v1, "key"
 
     const-string/jumbo v2, "sync_enabled"
 

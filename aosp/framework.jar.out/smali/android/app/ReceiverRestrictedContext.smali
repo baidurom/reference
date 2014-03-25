@@ -9,10 +9,10 @@
     .parameter "base"
 
     .prologue
-    .line 125
+    .line 147
     invoke-direct {p0, p1}, Landroid/content/ContextWrapper;-><init>(Landroid/content/Context;)V
 
-    .line 126
+    .line 148
     return-void
 .end method
 
@@ -25,7 +25,7 @@
     .parameter "flags"
 
     .prologue
-    .line 161
+    .line 183
     new-instance v0, Landroid/content/ReceiverCallNotAllowedException;
 
     const-string v1, "BroadcastReceiver components are not allowed to bind to services"
@@ -43,7 +43,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 130
+    .line 152
     invoke-virtual {p0, p1, p2, v0, v0}, Landroid/app/ReceiverRestrictedContext;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
     move-result-object v0
@@ -59,10 +59,10 @@
     .parameter "scheduler"
 
     .prologue
-    .line 136
+    .line 158
     if-nez p1, :cond_0
 
-    .line 139
+    .line 161
     const/4 v0, 0x0
 
     invoke-super {p0, v0, p2, p3, p4}, Landroid/content/ContextWrapper;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
@@ -71,7 +71,7 @@
 
     return-object v0
 
-    .line 141
+    .line 163
     :cond_0
     new-instance v0, Landroid/content/ReceiverCallNotAllowedException;
 
@@ -91,10 +91,10 @@
     .parameter "scheduler"
 
     .prologue
-    .line 149
+    .line 171
     if-nez p1, :cond_0
 
-    .line 152
+    .line 174
     const/4 v1, 0x0
 
     move-object v0, p0
@@ -113,7 +113,7 @@
 
     return-object v0
 
-    .line 154
+    .line 176
     :cond_0
     new-instance v0, Landroid/content/ReceiverCallNotAllowedException;
 

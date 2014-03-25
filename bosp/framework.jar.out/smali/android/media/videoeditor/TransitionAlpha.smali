@@ -140,7 +140,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v5, v0, Landroid/media/videoeditor/Transition;->mNativeHelper:Landroid/media/videoeditor/MediaArtistNativeHelper;
+    iget-object v5, v0, Landroid/media/videoeditor/TransitionAlpha;->mNativeHelper:Landroid/media/videoeditor/MediaArtistNativeHelper;
 
     invoke-virtual {v5}, Landroid/media/videoeditor/MediaArtistNativeHelper;->getProjectPath()Ljava/lang/String;
 

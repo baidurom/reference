@@ -54,7 +54,7 @@
     const/4 v4, 0x0
 
     .line 74
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 57
     new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -334,7 +334,7 @@
 
     move-result-object v8
 
-    const-string v9, "ipaddress"
+    const-string/jumbo v9, "ipaddress"
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

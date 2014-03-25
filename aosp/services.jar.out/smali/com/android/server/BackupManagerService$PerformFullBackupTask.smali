@@ -72,7 +72,7 @@
     .line 2382
     iput-object p1, p0, Lcom/android/server/BackupManagerService$PerformFullBackupTask;->this$0:Lcom/android/server/BackupManagerService;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2383
     iput-object p2, p0, Lcom/android/server/BackupManagerService$PerformFullBackupTask;->mOutputFile:Landroid/os/ParcelFileDescriptor;
@@ -2124,7 +2124,7 @@
     if-eqz v17, :cond_8
 
     :try_start_2
-    throw v17
+    invoke-virtual/range {v17 .. v17}, Ljava/io/OutputStream;->close()V
 
     .line 2572
     :cond_8
@@ -2510,7 +2510,7 @@
     if-eqz v17, :cond_e
 
     :try_start_d
-    throw v17
+    invoke-virtual/range {v17 .. v17}, Ljava/io/OutputStream;->close()V
 
     .line 2572
     :cond_e

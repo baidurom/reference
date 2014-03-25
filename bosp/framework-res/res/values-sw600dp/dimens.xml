@@ -29,6 +29,7 @@
     <dimen name="kg_widget_pager_top_padding">0.0dip</dimen>
     <dimen name="kg_widget_pager_bottom_padding">0.0dip</dimen>
     <dimen name="kg_runway_lights_top_margin">-10.0dip</dimen>
+    <dimen name="keyguard_security_height">420.0dip</dimen>
     <dimen name="keyguard_security_view_margin">12.0dip</dimen>
     <dimen name="keyguard_muliuser_selector_margin">12.0dip</dimen>
     <dimen name="keyguard_pattern_unlock_clock_font_size">112.0sp</dimen>

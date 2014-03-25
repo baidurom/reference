@@ -130,7 +130,7 @@
     iput-object v2, p0, Landroid/app/MediaRouteButton;->mRouterCallback:Landroid/app/MediaRouteButton$MediaRouteCallback;
 
     .line 80
-    const-string/jumbo v2, "media_router"
+    const-string v2, "media_router"
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -1253,7 +1253,7 @@
     .line 412
     const-string v1, "MediaRouteButton"
 
-    const-string/jumbo v2, "showDialog(): Already showing!"
+    const-string v2, "showDialog(): Already showing!"
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 

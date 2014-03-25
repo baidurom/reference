@@ -3250,10 +3250,13 @@
         <item name="textSize">14.0sp</item>
         <item name="textStyle">bold</item>
         <item name="textColor">?textColorSecondary</item>
+        <item name="ellipsize">none</item>
         <item name="gravity">center_vertical</item>
         <item name="background">@drawable/dark_header_dither</item>
         <item name="layout_width">fill_parent</item>
         <item name="layout_height">wrap_content</item>
+        <item name="singleLine">true</item>
+        <item name="requiresFadingEdge">horizontal</item>
         <item name="paddingStart">8.0dip</item>
     </style>
     <style name="Widget.TextView.ListSeparator.White" parent="@style/Widget.TextView.ListSeparator">

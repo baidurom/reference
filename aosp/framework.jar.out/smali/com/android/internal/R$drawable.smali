@@ -223,6 +223,8 @@
 
 .field public static final ic_lock_power_off:I = #drawable@ic_lock_power_off#t
 
+.field public static final ic_lock_reboot:I = #drawable@ic_lock_reboot#t
+
 .field public static final ic_lock_silent_mode:I = #drawable@ic_lock_silent_mode#t
 
 .field public static final ic_lock_silent_mode_off:I = #drawable@ic_lock_silent_mode_off#t
@@ -374,6 +376,10 @@
 .field public static final ic_text_dot:I = #drawable@ic_text_dot#t
 
 .field public static final ic_volume:I = #drawable@ic_volume#t
+
+.field public static final ic_volume_off_small:I = #drawable@ic_volume_off_small#t
+
+.field public static final ic_volume_small:I = #drawable@ic_volume_small#t
 
 .field public static final indicator_code_lock_drag_direction_green_up:I = #drawable@indicator_code_lock_drag_direction_green_up#t
 
@@ -732,8 +738,8 @@
     .locals 0
 
     .prologue
-    .line 11610
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 11524
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

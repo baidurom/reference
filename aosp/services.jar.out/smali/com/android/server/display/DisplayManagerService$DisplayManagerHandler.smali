@@ -25,17 +25,17 @@
     .parameter "looper"
 
     .prologue
-    .line 979
+    .line 1114
     iput-object p1, p0, Lcom/android/server/display/DisplayManagerService$DisplayManagerHandler;->this$0:Lcom/android/server/display/DisplayManagerService;
 
-    .line 980
+    .line 1115
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
     invoke-direct {p0, p2, v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;Z)V
 
-    .line 981
+    .line 1116
     return-void
 .end method
 
@@ -46,16 +46,16 @@
     .parameter "msg"
 
     .prologue
-    .line 985
+    .line 1120
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1012
+    .line 1147
     :goto_0
     return-void
 
-    .line 987
+    .line 1122
     :pswitch_0
     iget-object v0, p0, Lcom/android/server/display/DisplayManagerService$DisplayManagerHandler;->this$0:Lcom/android/server/display/DisplayManagerService;
 
@@ -64,7 +64,7 @@
 
     goto :goto_0
 
-    .line 991
+    .line 1126
     :pswitch_1
     iget-object v0, p0, Lcom/android/server/display/DisplayManagerService$DisplayManagerHandler;->this$0:Lcom/android/server/display/DisplayManagerService;
 
@@ -73,7 +73,7 @@
 
     goto :goto_0
 
-    .line 995
+    .line 1130
     :pswitch_2
     iget-object v0, p0, Lcom/android/server/display/DisplayManagerService$DisplayManagerHandler;->this$0:Lcom/android/server/display/DisplayManagerService;
 
@@ -86,7 +86,7 @@
 
     goto :goto_0
 
-    .line 999
+    .line 1134
     :pswitch_3
     iget-object v0, p0, Lcom/android/server/display/DisplayManagerService$DisplayManagerHandler;->this$0:Lcom/android/server/display/DisplayManagerService;
 
@@ -99,7 +99,7 @@
 
     goto :goto_0
 
-    .line 1003
+    .line 1138
     :pswitch_4
     iget-object v0, p0, Lcom/android/server/display/DisplayManagerService$DisplayManagerHandler;->this$0:Lcom/android/server/display/DisplayManagerService;
 
@@ -110,7 +110,7 @@
 
     monitor-enter v1
 
-    .line 1004
+    .line 1139
     :try_start_0
     iget-object v0, p0, Lcom/android/server/display/DisplayManagerService$DisplayManagerHandler;->this$0:Lcom/android/server/display/DisplayManagerService;
 
@@ -128,7 +128,7 @@
 
     invoke-virtual {v0, v2}, Lcom/android/server/display/DisplayViewport;->copyFrom(Lcom/android/server/display/DisplayViewport;)V
 
-    .line 1005
+    .line 1140
     iget-object v0, p0, Lcom/android/server/display/DisplayManagerService$DisplayManagerHandler;->this$0:Lcom/android/server/display/DisplayManagerService;
 
     #getter for: Lcom/android/server/display/DisplayManagerService;->mTempExternalTouchViewport:Lcom/android/server/display/DisplayViewport;
@@ -145,12 +145,12 @@
 
     invoke-virtual {v0, v2}, Lcom/android/server/display/DisplayViewport;->copyFrom(Lcom/android/server/display/DisplayViewport;)V
 
-    .line 1006
+    .line 1141
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1007
+    .line 1142
     iget-object v0, p0, Lcom/android/server/display/DisplayManagerService$DisplayManagerHandler;->this$0:Lcom/android/server/display/DisplayManagerService;
 
     #getter for: Lcom/android/server/display/DisplayManagerService;->mInputManagerFuncs:Lcom/android/server/display/DisplayManagerService$InputManagerFuncs;
@@ -176,7 +176,7 @@
 
     goto :goto_0
 
-    .line 1006
+    .line 1141
     :catchall_0
     move-exception v0
 
@@ -187,7 +187,7 @@
 
     throw v0
 
-    .line 985
+    .line 1120
     nop
 
     :pswitch_data_0

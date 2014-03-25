@@ -41,7 +41,7 @@
 
     .prologue
     .line 511
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 491
     new-instance v0, Ljava/util/concurrent/ArrayBlockingQueue;

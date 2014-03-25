@@ -42,7 +42,7 @@
 
     .prologue
     .line 315
-    const-string/jumbo v0, "window"
+    const-string v0, "window"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

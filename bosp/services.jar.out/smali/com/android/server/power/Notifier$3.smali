@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 487
+    .line 516
     iput-object p1, p0, Lcom/android/server/power/Notifier$3;->this$0:Lcom/android/server/power/Notifier;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -44,7 +44,7 @@
 
     const/4 v3, 0x0
 
-    .line 490
+    .line 522
     const/16 v0, 0xaa6
 
     const/4 v1, 0x3
@@ -86,12 +86,12 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 492
+    .line 524
     iget-object v0, p0, Lcom/android/server/power/Notifier$3;->this$0:Lcom/android/server/power/Notifier;
 
     #calls: Lcom/android/server/power/Notifier;->sendNextBroadcast()V
     invoke-static {v0}, Lcom/android/server/power/Notifier;->access$500(Lcom/android/server/power/Notifier;)V
 
-    .line 493
+    .line 525
     return-void
 .end method

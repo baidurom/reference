@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 532
+    .line 575
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -27,29 +27,15 @@
 
 
 # virtual methods
-.method public getService(Landroid/app/ContextImpl;)Ljava/lang/Object;
-    .locals 3
+.method public createService(Landroid/app/ContextImpl;)Ljava/lang/Object;
+    .locals 1
     .parameter "ctx"
 
     .prologue
-    .line 534
-    const-string/jumbo v2, "user"
+    .line 577
+    new-instance v0, Landroid/os/SystemVibrator;
 
-    invoke-static {v2}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+    invoke-direct {v0}, Landroid/os/SystemVibrator;-><init>()V
 
-    move-result-object v0
-
-    .line 535
-    .local v0, b:Landroid/os/IBinder;
-    invoke-static {v0}, Landroid/os/IUserManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/os/IUserManager;
-
-    move-result-object v1
-
-    .line 536
-    .local v1, service:Landroid/os/IUserManager;
-    new-instance v2, Landroid/os/UserManager;
-
-    invoke-direct {v2, p1, v1}, Landroid/os/UserManager;-><init>(Landroid/content/Context;Landroid/os/IUserManager;)V
-
-    return-object v2
+    return-object v0
 .end method

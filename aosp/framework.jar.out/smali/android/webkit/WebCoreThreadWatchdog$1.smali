@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 145
+    .line 153
     iput-object p1, p0, Landroid/webkit/WebCoreThreadWatchdog$1;->this$0:Landroid/webkit/WebCoreThreadWatchdog;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,22 +39,22 @@
     .parameter "msg"
 
     .prologue
-    .line 148
+    .line 156
     iget v3, p1, Landroid/os/Message;->what:I
 
     packed-switch v3, :pswitch_data_0
 
-    .line 203
+    .line 215
     :goto_0
     return-void
 
-    .line 150
+    .line 158
     :pswitch_0
     const-class v4, Landroid/webkit/WebCoreThreadWatchdog;
 
     monitor-enter v4
 
-    .line 151
+    .line 159
     :try_start_0
     iget-object v3, p0, Landroid/webkit/WebCoreThreadWatchdog$1;->this$0:Landroid/webkit/WebCoreThreadWatchdog;
 
@@ -65,12 +65,12 @@
 
     if-eqz v3, :cond_0
 
-    .line 152
+    .line 160
     monitor-exit v4
 
     goto :goto_0
 
-    .line 162
+    .line 172
     :catchall_0
     move-exception v3
 
@@ -80,14 +80,21 @@
 
     throw v3
 
-    .line 156
+    .line 164
     :cond_0
     const/16 v3, 0x65
 
     :try_start_1
     invoke-virtual {p0, v3}, Landroid/webkit/WebCoreThreadWatchdog$1;->removeMessages(I)V
 
-    .line 157
+    .line 165
+    const-string/jumbo v3, "webkit/webcorewatchdog"
+
+    const-string/jumbo v5, "remove timed_out message: in createHandler->IS_ALIVE"
+
+    invoke-static {v3, v5}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 166
     const/16 v3, 0x65
 
     invoke-virtual {p0, v3}, Landroid/webkit/WebCoreThreadWatchdog$1;->obtainMessage(I)Landroid/os/Message;
@@ -98,7 +105,14 @@
 
     invoke-virtual {p0, v3, v5, v6}, Landroid/webkit/WebCoreThreadWatchdog$1;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 158
+    .line 167
+    const-string/jumbo v3, "webkit/webcorewatchdog"
+
+    const-string/jumbo v5, "reset timed_out message: in createHandler->IS_ALIVE"
+
+    invoke-static {v3, v5}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 168
     iget-object v3, p0, Landroid/webkit/WebCoreThreadWatchdog$1;->this$0:Landroid/webkit/WebCoreThreadWatchdog;
 
     #getter for: Landroid/webkit/WebCoreThreadWatchdog;->mWebCoreThreadHandler:Landroid/os/Handler;
@@ -136,24 +150,24 @@
 
     invoke-virtual {v3, v5, v6, v7}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 162
+    .line 172
     monitor-exit v4
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_0
 
-    .line 166
+    .line 176
     :pswitch_1
     const/4 v2, 0x0
 
-    .line 167
+    .line 177
     .local v2, postedDialog:Z
     const-class v4, Landroid/webkit/WebCoreThreadWatchdog;
 
     monitor-enter v4
 
-    .line 168
+    .line 178
     :try_start_2
     iget-object v3, p0, Landroid/webkit/WebCoreThreadWatchdog$1;->this$0:Landroid/webkit/WebCoreThreadWatchdog;
 
@@ -166,7 +180,7 @@
 
     move-result-object v1
 
-    .line 171
+    .line 181
     .local v1, it:Ljava/util/Iterator;,"Ljava/util/Iterator<Landroid/webkit/WebViewClassic;>;"
     :cond_1
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
@@ -175,7 +189,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 172
+    .line 182
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v3
@@ -186,7 +200,7 @@
 
     move-result-object v0
 
-    .line 174
+    .line 184
     .local v0, activeView:Landroid/webkit/WebView;
     invoke-virtual {v0}, Landroid/webkit/WebView;->getWindowToken()Landroid/os/IBinder;
 
@@ -200,7 +214,14 @@
 
     if-eqz v3, :cond_1
 
-    .line 176
+    .line 186
+    const-string/jumbo v3, "webkit/webcorewatchdog"
+
+    const-string/jumbo v5, "receive timed_out message: in createHandler->TIMED_OUT"
+
+    invoke-static {v3, v5}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 187
     new-instance v3, Landroid/webkit/WebCoreThreadWatchdog$PageNotRespondingRunnable;
 
     iget-object v5, p0, Landroid/webkit/WebCoreThreadWatchdog$1;->this$0:Landroid/webkit/WebCoreThreadWatchdog;
@@ -215,15 +236,15 @@
 
     move-result v2
 
-    .line 179
+    .line 190
     if-eqz v2, :cond_1
 
-    .line 192
+    .line 203
     .end local v0           #activeView:Landroid/webkit/WebView;
     :cond_2
     if-nez v2, :cond_3
 
-    .line 197
+    .line 208
     const/16 v3, 0x65
 
     invoke-virtual {p0, v3}, Landroid/webkit/WebCoreThreadWatchdog$1;->obtainMessage(I)Landroid/os/Message;
@@ -234,7 +255,14 @@
 
     invoke-virtual {p0, v3, v5, v6}, Landroid/webkit/WebCoreThreadWatchdog$1;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 200
+    .line 210
+    const-string/jumbo v3, "webkit/webcorewatchdog"
+
+    const-string/jumbo v5, "reset timed_out message: in createHandler->TIMED_OUT"
+
+    invoke-static {v3, v5}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 212
     :cond_3
     monitor-exit v4
 
@@ -250,7 +278,7 @@
 
     throw v3
 
-    .line 148
+    .line 156
     nop
 
     :pswitch_data_0

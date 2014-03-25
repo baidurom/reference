@@ -278,7 +278,7 @@
     .line 145
     new-instance v3, Ljava/lang/Object;
 
-    invoke-direct/range {v3 .. v3}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v3}, Ljava/lang/Object;-><init>()V
 
     invoke-virtual {v3}, Ljava/lang/Object;->hashCode()I
 

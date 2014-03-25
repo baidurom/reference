@@ -1,11 +1,14 @@
 .class Lcom/android/internal/policy/impl/GlobalActions$11;
-.super Landroid/content/BroadcastReceiver;
+.super Ljava/lang/Object;
 .source "GlobalActions.java"
+
+# interfaces
+.implements Landroid/content/ServiceConnection;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/internal/policy/impl/GlobalActions;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/internal/policy/impl/GlobalActions;->takeScreenShot(Landroid/content/Context;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,129 +20,162 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
+.field final synthetic val$context:Landroid/content/Context;
+
 
 # direct methods
-.method constructor <init>(Lcom/android/internal/policy/impl/GlobalActions;)V
+.method constructor <init>(Lcom/android/internal/policy/impl/GlobalActions;Landroid/content/Context;)V
     .locals 0
+    .parameter
     .parameter
 
     .prologue
-    .line 948
+    .line 556
     iput-object p1, p0, Lcom/android/internal/policy/impl/GlobalActions$11;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    iput-object p2, p0, Lcom/android/internal/policy/impl/GlobalActions$11;->val$context:Landroid/content/Context;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 4
-    .parameter "context"
-    .parameter "intent"
+.method public onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
+    .locals 7
+    .parameter "name"
+    .parameter "service"
 
     .prologue
-    const/4 v3, 0x0
+    .line 559
+    iget-object v4, p0, Lcom/android/internal/policy/impl/GlobalActions$11;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
-    .line 950
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mScreenshotLock:Ljava/lang/Object;
+    invoke-static {v4}, Lcom/android/internal/policy/impl/GlobalActions;->access$1200(Lcom/android/internal/policy/impl/GlobalActions;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v5
 
-    .line 951
-    .local v0, action:Ljava/lang/String;
-    const-string v2, "android.intent.action.CLOSE_SYSTEM_DIALOGS"
+    monitor-enter v5
 
-    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 560
+    :try_start_0
+    iget-object v4, p0, Lcom/android/internal/policy/impl/GlobalActions$11;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
-    move-result v2
+    #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mScreenshotConnection:Landroid/content/ServiceConnection;
+    invoke-static {v4}, Lcom/android/internal/policy/impl/GlobalActions;->access$1400(Lcom/android/internal/policy/impl/GlobalActions;)Landroid/content/ServiceConnection;
 
-    if-nez v2, :cond_0
+    move-result-object v4
 
-    const-string v2, "android.intent.action.SCREEN_OFF"
+    if-eq v4, p0, :cond_0
 
-    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 561
+    monitor-exit v5
 
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    .line 953
-    :cond_0
-    const-string v2, "reason"
-
-    invoke-virtual {p2, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 954
-    .local v1, reason:Ljava/lang/String;
-    const-string v2, "globalactions"
-
-    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_1
-
-    .line 955
-    iget-object v2, p0, Lcom/android/internal/policy/impl/GlobalActions$11;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
-
-    #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mHandler:Landroid/os/Handler;
-    invoke-static {v2}, Lcom/android/internal/policy/impl/GlobalActions;->access$800(Lcom/android/internal/policy/impl/GlobalActions;)Landroid/os/Handler;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v3}, Landroid/os/Handler;->sendEmptyMessage(I)Z
-
-    .line 966
-    .end local v1           #reason:Ljava/lang/String;
-    :cond_1
+    .line 586
     :goto_0
     return-void
 
-    .line 957
-    :cond_2
-    const-string v2, "android.intent.action.EMERGENCY_CALLBACK_MODE_CHANGED"
+    .line 563
+    :cond_0
+    new-instance v1, Landroid/os/Messenger;
 
-    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-direct {v1, p2}, Landroid/os/Messenger;-><init>(Landroid/os/IBinder;)V
 
-    move-result v2
+    .line 564
+    .local v1, messenger:Landroid/os/Messenger;
+    const/4 v4, 0x0
 
-    if-eqz v2, :cond_1
+    const/4 v6, 0x1
 
-    .line 960
-    const-string v2, "PHONE_IN_ECM_STATE"
+    invoke-static {v4, v6}, Landroid/os/Message;->obtain(Landroid/os/Handler;I)Landroid/os/Message;
 
-    invoke-virtual {p2, v2, v3}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+    move-result-object v2
 
-    move-result v2
+    .line 565
+    .local v2, msg:Landroid/os/Message;
+    move-object v3, p0
 
-    if-nez v2, :cond_1
+    .line 566
+    .local v3, myConn:Landroid/content/ServiceConnection;
+    new-instance v0, Lcom/android/internal/policy/impl/GlobalActions$11$1;
 
-    iget-object v2, p0, Lcom/android/internal/policy/impl/GlobalActions$11;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
+    iget-object v4, p0, Lcom/android/internal/policy/impl/GlobalActions$11;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
-    #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mIsWaitingForEcmExit:Z
-    invoke-static {v2}, Lcom/android/internal/policy/impl/GlobalActions;->access$100(Lcom/android/internal/policy/impl/GlobalActions;)Z
+    #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mScreenshotHandler:Landroid/os/Handler;
+    invoke-static {v4}, Lcom/android/internal/policy/impl/GlobalActions;->access$700(Lcom/android/internal/policy/impl/GlobalActions;)Landroid/os/Handler;
 
-    move-result v2
+    move-result-object v4
 
-    if-eqz v2, :cond_1
+    invoke-virtual {v4}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
 
-    .line 962
-    iget-object v2, p0, Lcom/android/internal/policy/impl/GlobalActions$11;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
+    move-result-object v4
 
-    #setter for: Lcom/android/internal/policy/impl/GlobalActions;->mIsWaitingForEcmExit:Z
-    invoke-static {v2, v3}, Lcom/android/internal/policy/impl/GlobalActions;->access$102(Lcom/android/internal/policy/impl/GlobalActions;Z)Z
+    invoke-direct {v0, p0, v4, v3}, Lcom/android/internal/policy/impl/GlobalActions$11$1;-><init>(Lcom/android/internal/policy/impl/GlobalActions$11;Landroid/os/Looper;Landroid/content/ServiceConnection;)V
 
-    .line 963
-    iget-object v2, p0, Lcom/android/internal/policy/impl/GlobalActions$11;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
+    .line 578
+    .local v0, h:Landroid/os/Handler;
+    new-instance v4, Landroid/os/Messenger;
 
-    const/4 v3, 0x1
+    invoke-direct {v4, v0}, Landroid/os/Messenger;-><init>(Landroid/os/Handler;)V
 
-    #calls: Lcom/android/internal/policy/impl/GlobalActions;->changeAirplaneModeSystemSetting(Z)V
-    invoke-static {v2, v3}, Lcom/android/internal/policy/impl/GlobalActions;->access$300(Lcom/android/internal/policy/impl/GlobalActions;Z)V
+    iput-object v4, v2, Landroid/os/Message;->replyTo:Landroid/os/Messenger;
+
+    .line 579
+    const/4 v4, 0x1
+
+    iput v4, v2, Landroid/os/Message;->arg1:I
+
+    .line 580
+    const/4 v4, 0x0
+
+    iput v4, v2, Landroid/os/Message;->arg2:I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 582
+    :try_start_1
+    invoke-virtual {v1, v2}, Landroid/os/Messenger;->send(Landroid/os/Message;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
+
+    .line 585
+    :goto_1
+    :try_start_2
+    monitor-exit v5
 
     goto :goto_0
+
+    .end local v0           #h:Landroid/os/Handler;
+    .end local v1           #messenger:Landroid/os/Messenger;
+    .end local v2           #msg:Landroid/os/Message;
+    .end local v3           #myConn:Landroid/content/ServiceConnection;
+    :catchall_0
+    move-exception v4
+
+    monitor-exit v5
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    throw v4
+
+    .line 583
+    .restart local v0       #h:Landroid/os/Handler;
+    .restart local v1       #messenger:Landroid/os/Messenger;
+    .restart local v2       #msg:Landroid/os/Message;
+    .restart local v3       #myConn:Landroid/content/ServiceConnection;
+    :catch_0
+    move-exception v4
+
+    goto :goto_1
+.end method
+
+.method public onServiceDisconnected(Landroid/content/ComponentName;)V
+    .locals 0
+    .parameter "name"
+
+    .prologue
+    .line 588
+    return-void
 .end method

@@ -27,7 +27,7 @@
 
     .prologue
     .line 30
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 26
     new-instance v0, Ljava/util/HashSet;
@@ -49,7 +49,7 @@
 
     .prologue
     .line 35
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 26
     new-instance v0, Ljava/util/HashSet;
@@ -103,12 +103,12 @@
 
     .prologue
     .line 45
-    const v0, 0x20040001
+    const v0, 0x60040001
 
     and-int/2addr v0, p1
 
     iput v0, p0, Lcom/android/server/pm/GrantedPermissions;->pkgFlags:I
 
-    .line 49
+    .line 50
     return-void
 .end method

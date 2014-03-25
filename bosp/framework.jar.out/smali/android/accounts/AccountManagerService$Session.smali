@@ -532,7 +532,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "initiating bind to authenticator type "
+    const-string/jumbo v2, "initiating bind to authenticator type "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -905,7 +905,7 @@
 
     if-eqz p1, :cond_3
 
-    const-string v5, "intent"
+    const-string/jumbo v5, "intent"
 
     invoke-virtual {p1, v5}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 

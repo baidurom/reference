@@ -38,6 +38,8 @@
 
 .field static final TRANSACTION_isDreaming:I = 0x7
 
+.field static final TRANSACTION_removeToken:I = 0x9
+
 .field static final TRANSACTION_setDreamComponents:I = 0x3
 
 .field static final TRANSACTION_testDream:I = 0x6
@@ -136,7 +138,7 @@
     .line 39
     sparse-switch p1, :sswitch_data_0
 
-    .line 123
+    .line 132
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v3
@@ -346,7 +348,30 @@
 
     goto/16 :goto_0
 
+    .line 124
+    .end local v0           #_arg0:Landroid/os/IBinder;
+    :sswitch_9
+    const-string v2, "android.service.dreams.IDreamManager"
+
+    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 126
+    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    .line 127
+    .restart local v0       #_arg0:Landroid/os/IBinder;
+    invoke-virtual {p0, v0}, Landroid/service/dreams/IDreamManager$Stub;->removeToken(Landroid/os/IBinder;)V
+
+    .line 128
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    goto/16 :goto_0
+
     .line 39
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
@@ -357,6 +382,7 @@
         0x6 -> :sswitch_6
         0x7 -> :sswitch_7
         0x8 -> :sswitch_8
+        0x9 -> :sswitch_9
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

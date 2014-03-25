@@ -61,9 +61,6 @@ CLASSPATH=/system/framework/android.test.runner.jar:${base}/framework/uiautomato
 
 # eventually args will be what get passed down to Java code
 args=
-# we also pass the list of jar files, so we can extract class names for tests
-# if they are not explicitly specified
-jars=
 
 # special case pre-processing for 'runtest' command
 if [ "${cmd}" == "runtest" ]; then
@@ -90,7 +87,7 @@ if [ "${cmd}" == "runtest" ]; then
       cmd="help"
       break
     fi
-    jars=${jars}:${jar}
+    CLASSPATH=${CLASSPATH}:${jar}
     # done processing current arg, moving on
     shift
   done
@@ -111,10 +108,6 @@ else
 fi
 
 args="${cmd} ${args}"
-if [ -n "${jars}" ]; then
-   args="${args} -e jars ${jars}"
-fi
 
-CLASSPATH=${CLASSPATH}:${jars}
 export CLASSPATH
 exec app_process ${base}/bin com.android.commands.uiautomator.Launcher ${args}

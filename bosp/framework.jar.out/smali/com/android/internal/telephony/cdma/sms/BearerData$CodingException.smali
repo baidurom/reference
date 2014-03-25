@@ -1,4 +1,4 @@
-.class Lcom/android/internal/telephony/cdma/sms/BearerData$CodingException;
+.class public Lcom/android/internal/telephony/cdma/sms/BearerData$CodingException;
 .super Ljava/lang/Exception;
 .source "BearerData.java"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
+    accessFlags = 0x9
     name = "CodingException"
 .end annotation
 

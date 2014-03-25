@@ -44,7 +44,7 @@
     iput-object p1, p0, Landroid/app/MediaRouteActionProvider;->mContext:Landroid/content/Context;
 
     .line 47
-    const-string/jumbo v0, "media_router"
+    const-string v0, "media_router"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -180,7 +180,7 @@
     :cond_0
     const-string v0, "MediaRouteActionProvider"
 
-    const-string/jumbo v1, "onCreateActionView: this ActionProvider is already associated with a menu item. Don\'t reuse MediaRouteActionProvider instances! Abandoning the old one..."
+    const-string v1, "onCreateActionView: this ActionProvider is already associated with a menu item. Don\'t reuse MediaRouteActionProvider instances! Abandoning the old one..."
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -267,7 +267,7 @@
     .line 100
     const-string v2, "MediaRouteActionProvider"
 
-    const-string/jumbo v3, "onPerformDefaultAction(): Chooser dialog already showing!"
+    const-string v3, "onPerformDefaultAction(): Chooser dialog already showing!"
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 

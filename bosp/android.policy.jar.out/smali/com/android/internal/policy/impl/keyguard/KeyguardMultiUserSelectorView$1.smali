@@ -37,10 +37,10 @@
     .parameter
 
     .prologue
-    .line 91
+    .line 95
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -53,7 +53,7 @@
     .parameter "rhs"
 
     .prologue
-    .line 94
+    .line 98
     iget v0, p1, Landroid/content/pm/UserInfo;->serialNumber:I
 
     iget v1, p2, Landroid/content/pm/UserInfo;->serialNumber:I
@@ -69,7 +69,7 @@
     .parameter "x1"
 
     .prologue
-    .line 91
+    .line 95
     check-cast p1, Landroid/content/pm/UserInfo;
 
     .end local p1

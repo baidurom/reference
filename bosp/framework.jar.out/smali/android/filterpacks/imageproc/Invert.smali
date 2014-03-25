@@ -34,7 +34,7 @@
 
     const-string v1, "filterpack_imageproc"
 
-    const-string v2, "invert"
+    const-string/jumbo v2, "invert"
 
     invoke-direct {v0, v1, v2}, Landroid/filterfw/core/NativeProgram;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 

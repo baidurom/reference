@@ -101,7 +101,7 @@
 
     const/16 v1, 0xc
 
-    const-string v2, "jkl5JKL"
+    const-string/jumbo v2, "jkl5JKL"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 

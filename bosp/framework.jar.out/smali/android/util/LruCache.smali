@@ -49,7 +49,7 @@
     .prologue
     .line 80
     .local p0, this:Landroid/util/LruCache;,"Landroid/util/LruCache<TK;TV;>;"
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 81
     if-gtz p1, :cond_0
@@ -270,7 +270,7 @@
     .line 113
     new-instance v2, Ljava/lang/NullPointerException;
 
-    const-string v3, "key == null"
+    const-string/jumbo v3, "key == null"
 
     invoke-direct {v2, v3}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
@@ -528,7 +528,7 @@
     :cond_0
     new-instance v1, Ljava/lang/NullPointerException;
 
-    const-string v2, "key == null || value == null"
+    const-string/jumbo v2, "key == null || value == null"
 
     invoke-direct {v1, v2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
@@ -658,7 +658,7 @@
     .line 232
     new-instance v1, Ljava/lang/NullPointerException;
 
-    const-string v2, "key == null"
+    const-string/jumbo v2, "key == null"
 
     invoke-direct {v1, v2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 

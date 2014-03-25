@@ -51,7 +51,7 @@
     .line 1121
     iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;->this$0:Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1117
     const/4 v0, 0x0

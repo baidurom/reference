@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 810
+    .line 840
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$3;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,7 +41,7 @@
     .locals 3
 
     .prologue
-    .line 814
+    .line 844
     :try_start_0
     const-string v1, "WindowManager"
 
@@ -49,7 +49,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 815
+    .line 845
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$3;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     const/4 v2, 0x0
@@ -57,14 +57,14 @@
     #setter for: Lcom/android/internal/policy/impl/PhoneWindowManager;->mPowerKeyCount:I
     invoke-static {v1, v2}, Lcom/android/internal/policy/impl/PhoneWindowManager;->access$202(Lcom/android/internal/policy/impl/PhoneWindowManager;I)I
 
-    .line 816
+    .line 846
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$3;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     iget-object v1, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mQuickBoot:Lcom/baidu/service/IQuickBootService;
 
     invoke-interface {v1}, Lcom/baidu/service/IQuickBootService;->notifyPowerShortPress()V
 
-    .line 819
+    .line 849
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$3;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     iget-object v1, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mQuickBootWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -73,15 +73,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 824
+    .line 854
     :goto_0
     return-void
 
-    .line 820
+    .line 850
     :catch_0
     move-exception v0
 
-    .line 821
+    .line 851
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "WindowManager"
 
@@ -89,7 +89,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 822
+    .line 852
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$3;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     iget-object v1, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mQuickBootWakeLock:Landroid/os/PowerManager$WakeLock;

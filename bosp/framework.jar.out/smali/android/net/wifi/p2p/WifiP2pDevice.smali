@@ -136,7 +136,7 @@
 
     .prologue
     .line 150
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 38
     const-string v0, ""
@@ -163,7 +163,7 @@
 
     .prologue
     .line 307
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 38
     const-string v0, ""
@@ -254,7 +254,7 @@
     const/4 v5, 0x4
 
     .line 170
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 38
     const-string v3, ""
@@ -435,7 +435,7 @@
 
     move-result-object v3
 
-    invoke-direct {p0, v3}, Landroid/net/wifi/p2p/WifiP2pDevice;->parseHex(Ljava/lang/String;)I
+    invoke-static {v3}, Landroid/net/wifi/p2p/WifiP2pDevice;->parseHex(Ljava/lang/String;)I
 
     move-result v3
 
@@ -448,7 +448,7 @@
 
     move-result-object v3
 
-    invoke-direct {p0, v3}, Landroid/net/wifi/p2p/WifiP2pDevice;->parseHex(Ljava/lang/String;)I
+    invoke-static {v3}, Landroid/net/wifi/p2p/WifiP2pDevice;->parseHex(Ljava/lang/String;)I
 
     move-result v3
 
@@ -459,7 +459,7 @@
 
     move-result-object v3
 
-    invoke-direct {p0, v3}, Landroid/net/wifi/p2p/WifiP2pDevice;->parseHex(Ljava/lang/String;)I
+    invoke-static {v3}, Landroid/net/wifi/p2p/WifiP2pDevice;->parseHex(Ljava/lang/String;)I
 
     move-result v3
 
@@ -489,7 +489,7 @@
 
     move-result-object v4
 
-    invoke-direct {p0, v4}, Landroid/net/wifi/p2p/WifiP2pDevice;->parseHex(Ljava/lang/String;)I
+    invoke-static {v4}, Landroid/net/wifi/p2p/WifiP2pDevice;->parseHex(Ljava/lang/String;)I
 
     move-result v4
 
@@ -497,7 +497,7 @@
 
     move-result-object v5
 
-    invoke-direct {p0, v5}, Landroid/net/wifi/p2p/WifiP2pDevice;->parseHex(Ljava/lang/String;)I
+    invoke-static {v5}, Landroid/net/wifi/p2p/WifiP2pDevice;->parseHex(Ljava/lang/String;)I
 
     move-result v5
 
@@ -507,7 +507,7 @@
 
     move-result-object v6
 
-    invoke-direct {p0, v6}, Landroid/net/wifi/p2p/WifiP2pDevice;->parseHex(Ljava/lang/String;)I
+    invoke-static {v6}, Landroid/net/wifi/p2p/WifiP2pDevice;->parseHex(Ljava/lang/String;)I
 
     move-result v6
 
@@ -542,19 +542,19 @@
     .end packed-switch
 .end method
 
-.method private parseHex(Ljava/lang/String;)I
+.method public static parseHex(Ljava/lang/String;)I
     .locals 5
     .parameter "hexString"
 
     .prologue
-    .line 365
+    .line 366
     const/4 v1, 0x0
 
-    .line 366
+    .line 367
     .local v1, num:I
     const-string v2, "0x"
 
-    invoke-virtual {p1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {p0, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v2
 
@@ -562,40 +562,40 @@
 
     const-string v2, "0X"
 
-    invoke-virtual {p1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {p0, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    .line 367
+    .line 368
     :cond_0
     const/4 v2, 0x2
 
-    invoke-virtual {p1, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    invoke-virtual {p0, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object p0
 
-    .line 371
+    .line 372
     :cond_1
     const/16 v2, 0x10
 
     :try_start_0
-    invoke-static {p1, v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;I)I
+    invoke-static {p0, v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;I)I
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v1
 
-    .line 375
+    .line 376
     :goto_0
     return v1
 
-    .line 372
+    .line 373
     :catch_0
     move-exception v0
 
-    .line 373
+    .line 374
     .local v0, e:Ljava/lang/NumberFormatException;
     const-string v2, "WifiP2pDevice"
 
@@ -609,7 +609,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 

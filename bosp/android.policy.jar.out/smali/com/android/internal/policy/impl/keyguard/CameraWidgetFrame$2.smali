@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 75
+    .line 74
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$2;->this$0:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,7 +41,7 @@
     .locals 5
 
     .prologue
-    .line 78
+    .line 77
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$2;->this$0:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mTransitioning:Z
@@ -51,11 +51,11 @@
 
     if-nez v1, :cond_0
 
-    .line 84
+    .line 83
     :goto_0
     return-void
 
-    .line 80
+    .line 79
     :cond_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$2;->this$0:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;
 
@@ -71,7 +71,7 @@
 
     move-result-object v0
 
-    .line 81
+    .line 80
     .local v0, worker:Landroid/os/Handler;
     :goto_1
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$2;->this$0:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;
@@ -83,7 +83,7 @@
     #setter for: Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mLaunchCameraStart:J
     invoke-static {v1, v2, v3}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->access$302(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;J)J
 
-    .line 82
+    .line 81
     invoke-static {}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->access$400()Z
 
     move-result v1
@@ -121,7 +121,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 83
+    .line 82
     :cond_1
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$2;->this$0:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;
 
@@ -141,7 +141,7 @@
 
     goto :goto_0
 
-    .line 80
+    .line 79
     .end local v0           #worker:Landroid/os/Handler;
     :cond_2
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$2;->this$0:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;

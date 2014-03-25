@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 4936
+    .line 5262
     iput-object p1, p0, Landroid/app/ActivityThread$2;->this$0:Landroid/app/ActivityThread;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -42,14 +42,14 @@
     .parameter "newConfig"
 
     .prologue
-    .line 4938
+    .line 5264
     iget-object v0, p0, Landroid/app/ActivityThread$2;->this$0:Landroid/app/ActivityThread;
 
     iget-object v1, v0, Landroid/app/ActivityThread;->mPackages:Ljava/util/HashMap;
 
     monitor-enter v1
 
-    .line 4942
+    .line 5268
     :try_start_0
     iget-object v0, p0, Landroid/app/ActivityThread$2;->this$0:Landroid/app/ActivityThread;
 
@@ -61,7 +61,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 4945
+    .line 5271
     iget-object v0, p0, Landroid/app/ActivityThread$2;->this$0:Landroid/app/ActivityThread;
 
     iget-object v0, v0, Landroid/app/ActivityThread;->mPendingConfiguration:Landroid/content/res/Configuration;
@@ -78,13 +78,13 @@
 
     if-eqz v0, :cond_1
 
-    .line 4947
+    .line 5273
     :cond_0
     iget-object v0, p0, Landroid/app/ActivityThread$2;->this$0:Landroid/app/ActivityThread;
 
     iput-object p1, v0, Landroid/app/ActivityThread;->mPendingConfiguration:Landroid/content/res/Configuration;
 
-    .line 4949
+    .line 5275
     iget-object v0, p0, Landroid/app/ActivityThread$2;->this$0:Landroid/app/ActivityThread;
 
     const/16 v2, 0x76
@@ -92,14 +92,14 @@
     #calls: Landroid/app/ActivityThread;->queueOrSendMessage(ILjava/lang/Object;)V
     invoke-static {v0, v2, p1}, Landroid/app/ActivityThread;->access$300(Landroid/app/ActivityThread;ILjava/lang/Object;)V
 
-    .line 4952
+    .line 5278
     :cond_1
     monitor-exit v1
 
-    .line 4953
+    .line 5279
     return-void
 
-    .line 4952
+    .line 5278
     :catchall_0
     move-exception v0
 
@@ -114,7 +114,7 @@
     .locals 0
 
     .prologue
-    .line 4955
+    .line 5281
     return-void
 .end method
 
@@ -123,6 +123,6 @@
     .parameter "level"
 
     .prologue
-    .line 4957
+    .line 5283
     return-void
 .end method

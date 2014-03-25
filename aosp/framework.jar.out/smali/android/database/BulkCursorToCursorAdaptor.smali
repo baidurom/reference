@@ -254,7 +254,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/database/AbstractCursor;->mRowIdColumnIndex:I
+    iput v0, p0, Landroid/database/BulkCursorToCursorAdaptor;->mRowIdColumnIndex:I
 
     .line 45
     iget-boolean v0, p1, Landroid/database/BulkCursorDescriptor;->wantsAllOnMoveCalls:Z
@@ -294,11 +294,11 @@
 
     .line 80
     :try_start_0
-    iget-object v2, p0, Landroid/database/AbstractWindowedCursor;->mWindow:Landroid/database/CursorWindow;
+    iget-object v2, p0, Landroid/database/BulkCursorToCursorAdaptor;->mWindow:Landroid/database/CursorWindow;
 
     if-eqz v2, :cond_0
 
-    iget-object v2, p0, Landroid/database/AbstractWindowedCursor;->mWindow:Landroid/database/CursorWindow;
+    iget-object v2, p0, Landroid/database/BulkCursorToCursorAdaptor;->mWindow:Landroid/database/CursorWindow;
 
     invoke-virtual {v2}, Landroid/database/CursorWindow;->getStartPosition()I
 
@@ -306,13 +306,13 @@
 
     if-lt p2, v2, :cond_0
 
-    iget-object v2, p0, Landroid/database/AbstractWindowedCursor;->mWindow:Landroid/database/CursorWindow;
+    iget-object v2, p0, Landroid/database/BulkCursorToCursorAdaptor;->mWindow:Landroid/database/CursorWindow;
 
     invoke-virtual {v2}, Landroid/database/CursorWindow;->getStartPosition()I
 
     move-result v2
 
-    iget-object v3, p0, Landroid/database/AbstractWindowedCursor;->mWindow:Landroid/database/CursorWindow;
+    iget-object v3, p0, Landroid/database/BulkCursorToCursorAdaptor;->mWindow:Landroid/database/CursorWindow;
 
     invoke-virtual {v3}, Landroid/database/CursorWindow;->getNumRows()I
 
@@ -337,7 +337,7 @@
     .line 94
     :cond_1
     :goto_0
-    iget-object v2, p0, Landroid/database/AbstractWindowedCursor;->mWindow:Landroid/database/CursorWindow;
+    iget-object v2, p0, Landroid/database/BulkCursorToCursorAdaptor;->mWindow:Landroid/database/CursorWindow;
 
     if-nez v2, :cond_3
 
@@ -416,7 +416,7 @@
     .line 138
     const/4 v2, -0x1
 
-    iput v2, p0, Landroid/database/AbstractCursor;->mPos:I
+    iput v2, p0, Landroid/database/BulkCursorToCursorAdaptor;->mPos:I
 
     .line 139
     invoke-virtual {p0}, Landroid/database/BulkCursorToCursorAdaptor;->closeWindow()V

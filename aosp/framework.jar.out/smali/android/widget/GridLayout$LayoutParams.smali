@@ -419,7 +419,7 @@
 
     move-result v2
 
-    iput v2, p0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iput v2, p0, Landroid/widget/GridLayout$LayoutParams;->leftMargin:I
 
     .line 1961
     const/4 v2, 0x4
@@ -428,7 +428,7 @@
 
     move-result v2
 
-    iput v2, p0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iput v2, p0, Landroid/widget/GridLayout$LayoutParams;->topMargin:I
 
     .line 1962
     const/4 v2, 0x5
@@ -437,7 +437,7 @@
 
     move-result v2
 
-    iput v2, p0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iput v2, p0, Landroid/widget/GridLayout$LayoutParams;->rightMargin:I
 
     .line 1963
     const/4 v2, 0x6
@@ -446,7 +446,7 @@
 
     move-result v2
 
-    iput v2, p0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+    iput v2, p0, Landroid/widget/GridLayout$LayoutParams;->bottomMargin:I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -584,14 +584,14 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iput v0, p0, Landroid/widget/GridLayout$LayoutParams;->width:I
 
     .line 2002
     invoke-virtual {p1, p3, v1}, Landroid/content/res/TypedArray;->getLayoutDimension(II)I
 
     move-result v0
 
-    iput v0, p0, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iput v0, p0, Landroid/widget/GridLayout$LayoutParams;->height:I
 
     .line 2003
     return-void

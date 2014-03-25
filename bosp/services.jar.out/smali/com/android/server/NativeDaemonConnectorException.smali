@@ -94,7 +94,7 @@
     .locals 1
 
     .prologue
-    .line 48
+    .line 53
     iget-object v0, p0, Lcom/android/server/NativeDaemonConnectorException;->mCmd:Ljava/lang/String;
 
     return-object v0
@@ -107,18 +107,30 @@
     .line 44
     iget-object v0, p0, Lcom/android/server/NativeDaemonConnectorException;->mEvent:Lcom/android/server/NativeDaemonEvent;
 
+    if-eqz v0, :cond_0
+
+    .line 45
+    iget-object v0, p0, Lcom/android/server/NativeDaemonConnectorException;->mEvent:Lcom/android/server/NativeDaemonEvent;
+
     invoke-virtual {v0}, Lcom/android/server/NativeDaemonEvent;->getCode()I
 
     move-result v0
 
+    .line 47
+    :goto_0
     return v0
+
+    :cond_0
+    const/4 v0, -0x1
+
+    goto :goto_0
 .end method
 
 .method public rethrowAsParcelableException()Ljava/lang/IllegalArgumentException;
     .locals 2
 
     .prologue
-    .line 56
+    .line 61
     new-instance v0, Ljava/lang/IllegalStateException;
 
     invoke-virtual {p0}, Lcom/android/server/NativeDaemonConnectorException;->getMessage()Ljava/lang/String;

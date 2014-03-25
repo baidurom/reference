@@ -57,13 +57,13 @@
     iput-object v0, p0, Landroid/widget/CalendarView$WeeksAdapter;->mSelectedDate:Ljava/util/Calendar;
 
     .line 1348
-    #setter for: Landroid/view/View;->mContext:Landroid/content/Context;
+    #setter for: Landroid/widget/CalendarView;->mContext:Landroid/content/Context;
     invoke-static {p1, p2}, Landroid/widget/CalendarView;->access$1402(Landroid/widget/CalendarView;Landroid/content/Context;)Landroid/content/Context;
 
     .line 1349
     new-instance v0, Landroid/view/GestureDetector;
 
-    #getter for: Landroid/view/View;->mContext:Landroid/content/Context;
+    #getter for: Landroid/widget/CalendarView;->mContext:Landroid/content/Context;
     invoke-static {p1}, Landroid/widget/CalendarView;->access$1500(Landroid/widget/CalendarView;)Landroid/content/Context;
 
     move-result-object v1
@@ -311,7 +311,7 @@
 
     iget-object v4, p0, Landroid/widget/CalendarView$WeeksAdapter;->this$0:Landroid/widget/CalendarView;
 
-    #getter for: Landroid/view/View;->mContext:Landroid/content/Context;
+    #getter for: Landroid/widget/CalendarView;->mContext:Landroid/content/Context;
     invoke-static {v4}, Landroid/widget/CalendarView;->access$2000(Landroid/widget/CalendarView;)Landroid/content/Context;
 
     move-result-object v4

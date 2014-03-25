@@ -1,5 +1,5 @@
-.class synthetic Lcom/android/internal/telephony/gsm/SIMRecords$1;
-.super Ljava/lang/Object;
+.class Lcom/android/internal/telephony/gsm/SIMRecords$1;
+.super Landroid/content/BroadcastReceiver;
 .source "SIMRecords.java"
 
 
@@ -9,114 +9,254 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1008
+    accessFlags = 0x0
     name = null
 .end annotation
 
 
-# static fields
-.field static final synthetic $SwitchMap$com$android$internal$telephony$gsm$SIMRecords$Get_Spn_Fsm_State:[I
+# instance fields
+.field final synthetic this$0:Lcom/android/internal/telephony/gsm/SIMRecords;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method constructor <init>(Lcom/android/internal/telephony/gsm/SIMRecords;)V
+    .locals 0
+    .parameter
 
     .prologue
-    .line 1503
-    invoke-static {}, Lcom/android/internal/telephony/gsm/SIMRecords$Get_Spn_Fsm_State;->values()[Lcom/android/internal/telephony/gsm/SIMRecords$Get_Spn_Fsm_State;
+    .line 2895
+    iput-object p1, p0, Lcom/android/internal/telephony/gsm/SIMRecords$1;->this$0:Lcom/android/internal/telephony/gsm/SIMRecords;
+
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 7
+    .parameter "context"
+    .parameter "intent"
+
+    .prologue
+    const/4 v6, 0x0
+
+    .line 2897
+    if-nez p2, :cond_1
+
+    .line 2925
+    :cond_0
+    :goto_0
+    return-void
+
+    .line 2898
+    :cond_1
+    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    array-length v0, v0
+    .line 2899
+    .local v0, action:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords$1;->this$0:Lcom/android/internal/telephony/gsm/SIMRecords;
 
-    new-array v0, v0, [I
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    sput-object v0, Lcom/android/internal/telephony/gsm/SIMRecords$1;->$SwitchMap$com$android$internal$telephony$gsm$SIMRecords$Get_Spn_Fsm_State:[I
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    :try_start_0
-    sget-object v0, Lcom/android/internal/telephony/gsm/SIMRecords$1;->$SwitchMap$com$android$internal$telephony$gsm$SIMRecords$Get_Spn_Fsm_State:[I
+    const-string v5, "mHandlePhbReadyReceiver Receive action "
 
-    sget-object v1, Lcom/android/internal/telephony/gsm/SIMRecords$Get_Spn_Fsm_State;->INIT:Lcom/android/internal/telephony/gsm/SIMRecords$Get_Spn_Fsm_State;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/SIMRecords$Get_Spn_Fsm_State;->ordinal()I
+    move-result-object v4
 
-    move-result v1
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v2, 0x1
+    move-result-object v4
 
-    aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_3
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    :goto_0
-    :try_start_1
-    sget-object v0, Lcom/android/internal/telephony/gsm/SIMRecords$1;->$SwitchMap$com$android$internal$telephony$gsm$SIMRecords$Get_Spn_Fsm_State:[I
+    move-result-object v4
 
-    sget-object v1, Lcom/android/internal/telephony/gsm/SIMRecords$Get_Spn_Fsm_State;->READ_SPN_3GPP:Lcom/android/internal/telephony/gsm/SIMRecords$Get_Spn_Fsm_State;
+    invoke-virtual {v3, v4}, Lcom/android/internal/telephony/gsm/SIMRecords;->log(Ljava/lang/String;)V
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/SIMRecords$Get_Spn_Fsm_State;->ordinal()I
+    .line 2900
+    const-string v3, "android.intent.action.SIM_INFO_UPDATE"
 
-    move-result v1
+    invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    const/4 v2, 0x2
+    move-result v3
 
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_2
+    if-eqz v3, :cond_2
 
-    :goto_1
-    :try_start_2
-    sget-object v0, Lcom/android/internal/telephony/gsm/SIMRecords$1;->$SwitchMap$com$android$internal$telephony$gsm$SIMRecords$Get_Spn_Fsm_State:[I
+    .line 2901
+    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords$1;->this$0:Lcom/android/internal/telephony/gsm/SIMRecords;
 
-    sget-object v1, Lcom/android/internal/telephony/gsm/SIMRecords$Get_Spn_Fsm_State;->READ_SPN_CPHS:Lcom/android/internal/telephony/gsm/SIMRecords$Get_Spn_Fsm_State;
+    #getter for: Lcom/android/internal/telephony/gsm/SIMRecords;->mContext:Landroid/content/Context;
+    invoke-static {v3}, Lcom/android/internal/telephony/gsm/SIMRecords;->access$200(Lcom/android/internal/telephony/gsm/SIMRecords;)Landroid/content/Context;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/SIMRecords$Get_Spn_Fsm_State;->ordinal()I
+    move-result-object v3
 
-    move-result v1
+    iget-object v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords$1;->this$0:Lcom/android/internal/telephony/gsm/SIMRecords;
 
-    const/4 v2, 0x3
+    #getter for: Lcom/android/internal/telephony/gsm/SIMRecords;->mHandlePhbReadyReceiver:Landroid/content/BroadcastReceiver;
+    invoke-static {v4}, Lcom/android/internal/telephony/gsm/SIMRecords;->access$100(Lcom/android/internal/telephony/gsm/SIMRecords;)Landroid/content/BroadcastReceiver;
 
-    aput v2, v0, v1
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_1
+    move-result-object v4
 
-    :goto_2
-    :try_start_3
-    sget-object v0, Lcom/android/internal/telephony/gsm/SIMRecords$1;->$SwitchMap$com$android$internal$telephony$gsm$SIMRecords$Get_Spn_Fsm_State:[I
+    invoke-virtual {v3, v4}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    sget-object v1, Lcom/android/internal/telephony/gsm/SIMRecords$Get_Spn_Fsm_State;->READ_SPN_SHORT_CPHS:Lcom/android/internal/telephony/gsm/SIMRecords$Get_Spn_Fsm_State;
+    .line 2902
+    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords$1;->this$0:Lcom/android/internal/telephony/gsm/SIMRecords;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/SIMRecords$Get_Spn_Fsm_State;->ordinal()I
+    const/4 v4, 0x1
 
-    move-result v1
+    #setter for: Lcom/android/internal/telephony/gsm/SIMRecords;->mSIMInfoReady:Z
+    invoke-static {v3, v4}, Lcom/android/internal/telephony/gsm/SIMRecords;->access$302(Lcom/android/internal/telephony/gsm/SIMRecords;Z)Z
 
-    const/4 v2, 0x4
+    .line 2905
+    new-instance v1, Landroid/content/IntentFilter;
 
-    aput v2, v0, v1
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_0
+    invoke-direct {v1}, Landroid/content/IntentFilter;-><init>()V
 
-    :goto_3
-    return-void
+    .line 2906
+    .local v1, phbFilter:Landroid/content/IntentFilter;
+    const-string v3, "android.intent.action.ACTION_SHUTDOWN_IPO"
 
-    :catch_0
-    move-exception v0
+    invoke-virtual {v1, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    goto :goto_3
+    .line 2907
+    const-string v3, "android.intent.action.IVSR_NOTIFY"
 
-    :catch_1
-    move-exception v0
+    invoke-virtual {v1, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    goto :goto_2
+    .line 2908
+    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords$1;->this$0:Lcom/android/internal/telephony/gsm/SIMRecords;
 
-    :catch_2
-    move-exception v0
+    #getter for: Lcom/android/internal/telephony/gsm/SIMRecords;->mContext:Landroid/content/Context;
+    invoke-static {v3}, Lcom/android/internal/telephony/gsm/SIMRecords;->access$400(Lcom/android/internal/telephony/gsm/SIMRecords;)Landroid/content/Context;
 
-    goto :goto_1
+    move-result-object v3
 
-    :catch_3
-    move-exception v0
+    iget-object v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords$1;->this$0:Lcom/android/internal/telephony/gsm/SIMRecords;
 
-    goto :goto_0
+    #getter for: Lcom/android/internal/telephony/gsm/SIMRecords;->mHandlePhbReadyReceiver:Landroid/content/BroadcastReceiver;
+    invoke-static {v4}, Lcom/android/internal/telephony/gsm/SIMRecords;->access$100(Lcom/android/internal/telephony/gsm/SIMRecords;)Landroid/content/BroadcastReceiver;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4, v1}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+
+    .line 2911
+    .end local v1           #phbFilter:Landroid/content/IntentFilter;
+    :cond_2
+    const-string v3, "android.intent.action.ACTION_SHUTDOWN_IPO"
+
+    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_3
+
+    .line 2912
+    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords$1;->this$0:Lcom/android/internal/telephony/gsm/SIMRecords;
+
+    const-string v4, "mHandlePhbReadyReceiver ACTION_SHUTDOWN_IPO: reset PHB_READY"
+
+    invoke-virtual {v3, v4}, Lcom/android/internal/telephony/gsm/SIMRecords;->log(Ljava/lang/String;)V
+
+    .line 2914
+    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords$1;->this$0:Lcom/android/internal/telephony/gsm/SIMRecords;
+
+    #setter for: Lcom/android/internal/telephony/gsm/SIMRecords;->mPhbReady:Z
+    invoke-static {v3, v6}, Lcom/android/internal/telephony/gsm/SIMRecords;->access$502(Lcom/android/internal/telephony/gsm/SIMRecords;Z)Z
+
+    .line 2917
+    :cond_3
+    const-string v3, "android.intent.action.IVSR_NOTIFY"
+
+    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    .line 2918
+    const-string v3, "simId"
+
+    invoke-virtual {p2, v3, v6}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+
+    move-result v2
+
+    .line 2919
+    .local v2, simId:I
+    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords$1;->this$0:Lcom/android/internal/telephony/gsm/SIMRecords;
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "mHandlePhbReadyReceiver ACTION_IVSR_NOTIFY: reset SIM "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, " PHB_READY"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Lcom/android/internal/telephony/gsm/SIMRecords;->log(Ljava/lang/String;)V
+
+    .line 2920
+    sget-object v3, Lcom/android/internal/telephony/gsm/SIMRecords;->SIMRECORD_PROPERTY_RIL_PHB_READY:[Ljava/lang/String;
+
+    iget-object v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords$1;->this$0:Lcom/android/internal/telephony/gsm/SIMRecords;
+
+    #getter for: Lcom/android/internal/telephony/gsm/SIMRecords;->mParentApp:Lcom/android/internal/telephony/UiccCardApplication;
+    invoke-static {v4}, Lcom/android/internal/telephony/gsm/SIMRecords;->access$600(Lcom/android/internal/telephony/gsm/SIMRecords;)Lcom/android/internal/telephony/UiccCardApplication;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Lcom/android/internal/telephony/UiccCardApplication;->getMySimId()I
+
+    move-result v4
+
+    aget-object v3, v3, v4
+
+    const-string v4, "false"
+
+    invoke-static {v3, v4}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 2921
+    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords$1;->this$0:Lcom/android/internal/telephony/gsm/SIMRecords;
+
+    #getter for: Lcom/android/internal/telephony/gsm/SIMRecords;->mParentApp:Lcom/android/internal/telephony/UiccCardApplication;
+    invoke-static {v3}, Lcom/android/internal/telephony/gsm/SIMRecords;->access$700(Lcom/android/internal/telephony/gsm/SIMRecords;)Lcom/android/internal/telephony/UiccCardApplication;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/android/internal/telephony/UiccCardApplication;->getMySimId()I
+
+    move-result v3
+
+    if-ne v2, v3, :cond_0
+
+    .line 2922
+    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords$1;->this$0:Lcom/android/internal/telephony/gsm/SIMRecords;
+
+    #setter for: Lcom/android/internal/telephony/gsm/SIMRecords;->mPhbReady:Z
+    invoke-static {v3, v6}, Lcom/android/internal/telephony/gsm/SIMRecords;->access$502(Lcom/android/internal/telephony/gsm/SIMRecords;Z)Z
+
+    goto/16 :goto_0
 .end method

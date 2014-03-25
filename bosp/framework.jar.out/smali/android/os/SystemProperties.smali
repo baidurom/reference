@@ -40,7 +40,7 @@
 
     .prologue
     .line 30
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -188,7 +188,7 @@
     .line 52
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "key.length > 31"
+    const-string/jumbo v1, "key.length > 31"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -221,7 +221,7 @@
     .line 64
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "key.length > 31"
+    const-string/jumbo v1, "key.length > 31"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -254,7 +254,7 @@
     .line 114
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "key.length > 31"
+    const-string/jumbo v1, "key.length > 31"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -287,7 +287,7 @@
     .line 79
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "key.length > 31"
+    const-string/jumbo v1, "key.length > 31"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -320,7 +320,7 @@
     .line 94
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "key.length > 31"
+    const-string/jumbo v1, "key.length > 31"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -374,7 +374,7 @@
     .line 126
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "key.length > 31"
+    const-string/jumbo v1, "key.length > 31"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

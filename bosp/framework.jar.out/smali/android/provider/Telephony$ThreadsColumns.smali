@@ -24,9 +24,17 @@
 
 .field public static final HAS_ATTACHMENT:Ljava/lang/String; = "has_attachment"
 
+.field public static final LATEST_IMPORTANT_DATE:Ljava/lang/String; = "li_date"
+
+.field public static final LATEST_IMPORTANT_SNIPPET:Ljava/lang/String; = "li_snippet"
+
+.field public static final LATEST_IMPORTANT_SNIPPET_CHARSET:Ljava/lang/String; = "li_snippet_cs"
+
 .field public static final MESSAGE_COUNT:Ljava/lang/String; = "message_count"
 
 .field public static final READ:Ljava/lang/String; = "read"
+
+.field public static final READCOUNT:Ljava/lang/String; = "readcount"
 
 .field public static final RECIPIENT_IDS:Ljava/lang/String; = "recipient_ids"
 

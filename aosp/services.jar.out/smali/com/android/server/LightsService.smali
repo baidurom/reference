@@ -66,7 +66,7 @@
     const/16 v4, 0x8
 
     .line 175
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 58
     new-array v1, v4, [Lcom/android/server/LightsService$Light;

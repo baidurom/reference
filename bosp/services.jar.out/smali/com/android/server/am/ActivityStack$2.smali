@@ -1,11 +1,14 @@
 .class Lcom/android/server/am/ActivityStack$2;
-.super Landroid/app/IThumbnailRetriever$Stub;
+.super Ljava/lang/Object;
 .source "ActivityStack.java"
+
+# interfaces
+.implements Lcom/mediatek/common/amsplus/IAmsPlusProcessRecord;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/am/ActivityStack;->getTaskAccessInfoLocked(IZ)Lcom/android/server/am/TaskAccessInfo;
+    value = Lcom/android/server/am/ActivityStack;->convertProcessRecord(Lcom/android/server/am/ProcessRecord;)Lcom/mediatek/common/amsplus/IAmsPlusProcessRecord;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,96 +20,135 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/server/am/ActivityStack;
 
-.field final synthetic val$thumbs:Lcom/android/server/am/TaskAccessInfo;
+.field final synthetic val$pr:Lcom/android/server/am/ProcessRecord;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/server/am/ActivityStack;Lcom/android/server/am/TaskAccessInfo;)V
+.method constructor <init>(Lcom/android/server/am/ActivityStack;Lcom/android/server/am/ProcessRecord;)V
     .locals 0
     .parameter
     .parameter
 
     .prologue
-    .line 4562
+    .line 898
     iput-object p1, p0, Lcom/android/server/am/ActivityStack$2;->this$0:Lcom/android/server/am/ActivityStack;
 
-    iput-object p2, p0, Lcom/android/server/am/ActivityStack$2;->val$thumbs:Lcom/android/server/am/TaskAccessInfo;
+    iput-object p2, p0, Lcom/android/server/am/ActivityStack$2;->val$pr:Lcom/android/server/am/ProcessRecord;
 
-    invoke-direct {p0}, Landroid/app/IThumbnailRetriever$Stub;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getThumbnail(I)Landroid/graphics/Bitmap;
-    .locals 4
-    .parameter "index"
+.method public getAdj()I
+    .locals 1
 
     .prologue
-    .line 4564
-    if-ltz p1, :cond_0
+    .line 906
+    iget-object v0, p0, Lcom/android/server/am/ActivityStack$2;->val$pr:Lcom/android/server/am/ProcessRecord;
 
-    iget-object v2, p0, Lcom/android/server/am/ActivityStack$2;->val$thumbs:Lcom/android/server/am/TaskAccessInfo;
+    iget v0, v0, Lcom/android/server/am/ProcessRecord;->setAdj:I
 
-    iget-object v2, v2, Lcom/android/server/am/TaskAccessInfo;->subtasks:Ljava/util/ArrayList;
+    return v0
+.end method
 
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+.method public getPackageName()Ljava/lang/String;
+    .locals 1
 
-    move-result v2
+    .prologue
+    .line 900
+    iget-object v0, p0, Lcom/android/server/am/ActivityStack$2;->val$pr:Lcom/android/server/am/ProcessRecord;
 
-    if-lt p1, v2, :cond_1
+    iget-object v0, v0, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
 
-    .line 4565
-    :cond_0
-    const/4 v2, 0x0
+    iget-object v0, v0, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
 
-    .line 4572
-    :goto_0
-    return-object v2
+    return-object v0
+.end method
 
-    .line 4567
-    :cond_1
-    iget-object v2, p0, Lcom/android/server/am/ActivityStack$2;->val$thumbs:Lcom/android/server/am/TaskAccessInfo;
+.method public getPause3DUsage()J
+    .locals 2
 
-    iget-object v2, v2, Lcom/android/server/am/TaskAccessInfo;->subtasks:Ljava/util/ArrayList;
+    .prologue
+    .line 923
+    iget-object v0, p0, Lcom/android/server/am/ActivityStack$2;->val$pr:Lcom/android/server/am/ProcessRecord;
 
-    invoke-virtual {v2, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    iget-wide v0, v0, Lcom/android/server/am/ProcessRecord;->pause3DUsage:J
 
-    move-result-object v1
+    return-wide v0
+.end method
 
-    check-cast v1, Lcom/android/server/am/TaskAccessInfo$SubTask;
+.method public getPauseAppMemUsage()J
+    .locals 2
 
-    .line 4568
-    .local v1, sub:Lcom/android/server/am/TaskAccessInfo$SubTask;
-    iget-object v2, p0, Lcom/android/server/am/ActivityStack$2;->this$0:Lcom/android/server/am/ActivityStack;
+    .prologue
+    .line 920
+    iget-object v0, p0, Lcom/android/server/am/ActivityStack$2;->val$pr:Lcom/android/server/am/ProcessRecord;
 
-    iget-object v0, v2, Lcom/android/server/am/ActivityStack;->mResumedActivity:Lcom/android/server/am/ActivityRecord;
+    iget-wide v0, v0, Lcom/android/server/am/ProcessRecord;->pauseAppMemUsage:J
 
-    .line 4569
-    .local v0, resumed:Lcom/android/server/am/ActivityRecord;
-    if-eqz v0, :cond_2
+    return-wide v0
+.end method
 
-    iget-object v2, v0, Lcom/android/server/am/ActivityRecord;->thumbHolder:Lcom/android/server/am/ThumbnailHolder;
+.method public getPid()I
+    .locals 1
 
-    iget-object v3, v1, Lcom/android/server/am/TaskAccessInfo$SubTask;->holder:Lcom/android/server/am/ThumbnailHolder;
+    .prologue
+    .line 903
+    iget-object v0, p0, Lcom/android/server/am/ActivityStack$2;->val$pr:Lcom/android/server/am/ProcessRecord;
 
-    if-ne v2, v3, :cond_2
+    iget v0, v0, Lcom/android/server/am/ProcessRecord;->pid:I
 
-    .line 4570
-    iget-object v2, v0, Lcom/android/server/am/ActivityRecord;->stack:Lcom/android/server/am/ActivityStack;
+    return v0
+.end method
 
-    invoke-virtual {v2, v0}, Lcom/android/server/am/ActivityStack;->screenshotActivities(Lcom/android/server/am/ActivityRecord;)Landroid/graphics/Bitmap;
+.method public isLowMemory()Z
+    .locals 4
 
-    move-result-object v2
+    .prologue
+    const-wide/16 v2, 0x40
 
-    goto :goto_0
+    .line 913
+    const-string v1, "isLowMemory"
 
-    .line 4572
-    :cond_2
-    iget-object v2, v1, Lcom/android/server/am/TaskAccessInfo$SubTask;->holder:Lcom/android/server/am/ThumbnailHolder;
+    invoke-static {v2, v3, v1}, Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V
 
-    iget-object v2, v2, Lcom/android/server/am/ThumbnailHolder;->lastThumbnail:Landroid/graphics/Bitmap;
+    .line 914
+    new-instance v0, Landroid/app/ActivityManager$MemoryInfo;
 
-    goto :goto_0
+    invoke-direct {v0}, Landroid/app/ActivityManager$MemoryInfo;-><init>()V
+
+    .line 915
+    .local v0, outInfo:Landroid/app/ActivityManager$MemoryInfo;
+    iget-object v1, p0, Lcom/android/server/am/ActivityStack$2;->this$0:Lcom/android/server/am/ActivityStack;
+
+    iget-object v1, v1, Lcom/android/server/am/ActivityStack;->mService:Lcom/android/server/am/ActivityManagerService;
+
+    invoke-virtual {v1, v0}, Lcom/android/server/am/ActivityManagerService;->getMemoryInfo(Landroid/app/ActivityManager$MemoryInfo;)V
+
+    .line 916
+    invoke-static {v2, v3}, Landroid/os/Trace;->traceEnd(J)V
+
+    .line 917
+    iget-boolean v1, v0, Landroid/app/ActivityManager$MemoryInfo;->lowMemory:Z
+
+    return v1
+.end method
+
+.method public setKilledLTK(Z)I
+    .locals 1
+    .parameter "kill"
+
+    .prologue
+    .line 909
+    iget-object v0, p0, Lcom/android/server/am/ActivityStack$2;->val$pr:Lcom/android/server/am/ProcessRecord;
+
+    iput-boolean p1, v0, Lcom/android/server/am/ProcessRecord;->killedLTK:Z
+
+    .line 910
+    const/4 v0, 0x0
+
+    return v0
 .end method

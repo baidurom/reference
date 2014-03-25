@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 86
+    .line 85
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$3;->this$0:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -38,26 +38,15 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .locals 1
 
     .prologue
-    .line 89
+    .line 88
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$3;->this$0:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;
 
-    #getter for: Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mHandler:Landroid/os/Handler;
-    invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->access$200(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;)Landroid/os/Handler;
+    #calls: Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->recover()V
+    invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->access$800(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;)V
 
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$3;->this$0:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;
-
-    #getter for: Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mTransitionToCameraEndAction:Ljava/lang/Runnable;
-    invoke-static {v1}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->access$800(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;)Ljava/lang/Runnable;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    .line 90
+    .line 89
     return-void
 .end method

@@ -45,7 +45,7 @@
 
     .prologue
     .line 74
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 83
     new-instance v0, Ljava/util/Stack;
@@ -512,7 +512,7 @@
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v9, "insert to uri "
+    const-string/jumbo v9, "insert to uri "
 
     invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

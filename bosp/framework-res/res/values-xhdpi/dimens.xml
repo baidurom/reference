@@ -3,6 +3,7 @@
     <dimen name="password_keyboard_key_height_numeric">60.0dip</dimen>
     <dimen name="password_keyboard_verticalGap">0.0dip</dimen>
     <dimen name="keyguard_lockscreen_clock_font_size">70.0dip</dimen>
+    <dimen name="keyguard_security_height">400.0dip</dimen>
     <dimen name="yi_magnifier_range_padding">4.0dip</dimen>
     <dimen name="yi_lockscreen_password_top_padding">6.0dip</dimen>
     <dimen name="yi_lockscreen_pin_top_padding">52.0dip</dimen>

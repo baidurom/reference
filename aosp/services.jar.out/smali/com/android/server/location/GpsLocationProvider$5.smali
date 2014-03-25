@@ -1,14 +1,11 @@
 .class Lcom/android/server/location/GpsLocationProvider$5;
-.super Ljava/lang/Object;
+.super Landroid/location/INetInitiatedListener$Stub;
 .source "GpsLocationProvider.java"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/location/GpsLocationProvider;->handleDownloadXtraData()V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/android/server/location/GpsLocationProvider;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,113 +24,63 @@
     .parameter
 
     .prologue
-    .line 657
+    .line 1504
     iput-object p1, p0, Lcom/android/server/location/GpsLocationProvider$5;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/location/INetInitiatedListener$Stub;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .locals 6
+.method public sendNiResponse(II)Z
+    .locals 3
+    .parameter "notificationId"
+    .parameter "userResponse"
 
     .prologue
-    .line 660
-    new-instance v1, Lcom/android/server/location/GpsXtraDownloader;
+    .line 1511
+    const-string v0, "GpsLocationProvider"
 
-    iget-object v2, p0, Lcom/android/server/location/GpsLocationProvider$5;->this$0:Lcom/android/server/location/GpsLocationProvider;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    #getter for: Lcom/android/server/location/GpsLocationProvider;->mContext:Landroid/content/Context;
-    invoke-static {v2}, Lcom/android/server/location/GpsLocationProvider;->access$600(Lcom/android/server/location/GpsLocationProvider;)Landroid/content/Context;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result-object v2
+    const-string v2, "sendNiResponse, notifId: "
 
-    iget-object v3, p0, Lcom/android/server/location/GpsLocationProvider$5;->this$0:Lcom/android/server/location/GpsLocationProvider;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    #getter for: Lcom/android/server/location/GpsLocationProvider;->mProperties:Ljava/util/Properties;
-    invoke-static {v3}, Lcom/android/server/location/GpsLocationProvider;->access$1400(Lcom/android/server/location/GpsLocationProvider;)Ljava/util/Properties;
+    move-result-object v1
 
-    move-result-object v3
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-direct {v1, v2, v3}, Lcom/android/server/location/GpsXtraDownloader;-><init>(Landroid/content/Context;Ljava/util/Properties;)V
+    move-result-object v1
 
-    .line 661
-    .local v1, xtraDownloader:Lcom/android/server/location/GpsXtraDownloader;
-    invoke-virtual {v1}, Lcom/android/server/location/GpsXtraDownloader;->downloadXtraData()[B
+    const-string v2, ", response: "
 
-    move-result-object v0
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 662
-    .local v0, data:[B
-    if-eqz v0, :cond_1
+    move-result-object v1
 
-    .line 663
-    invoke-static {}, Lcom/android/server/location/GpsLocationProvider;->access$100()Z
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result v2
+    move-result-object v1
 
-    if-eqz v2, :cond_0
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 664
-    const-string v2, "GpsLocationProvider"
+    move-result-object v1
 
-    const-string v3, "calling native_inject_xtra_data"
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    .line 1513
+    iget-object v0, p0, Lcom/android/server/location/GpsLocationProvider$5;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
-    .line 666
-    :cond_0
-    iget-object v2, p0, Lcom/android/server/location/GpsLocationProvider$5;->this$0:Lcom/android/server/location/GpsLocationProvider;
+    #calls: Lcom/android/server/location/GpsLocationProvider;->native_send_ni_response(II)V
+    invoke-static {v0, p1, p2}, Lcom/android/server/location/GpsLocationProvider;->access$1200(Lcom/android/server/location/GpsLocationProvider;II)V
 
-    array-length v3, v0
+    .line 1514
+    const/4 v0, 0x1
 
-    #calls: Lcom/android/server/location/GpsLocationProvider;->native_inject_xtra_data([BI)V
-    invoke-static {v2, v0, v3}, Lcom/android/server/location/GpsLocationProvider;->access$1500(Lcom/android/server/location/GpsLocationProvider;[BI)V
-
-    .line 669
-    :cond_1
-    iget-object v2, p0, Lcom/android/server/location/GpsLocationProvider$5;->this$0:Lcom/android/server/location/GpsLocationProvider;
-
-    const/16 v3, 0xb
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    #calls: Lcom/android/server/location/GpsLocationProvider;->sendMessage(IILjava/lang/Object;)V
-    invoke-static {v2, v3, v4, v5}, Lcom/android/server/location/GpsLocationProvider;->access$1100(Lcom/android/server/location/GpsLocationProvider;IILjava/lang/Object;)V
-
-    .line 671
-    if-nez v0, :cond_2
-
-    .line 674
-    iget-object v2, p0, Lcom/android/server/location/GpsLocationProvider$5;->this$0:Lcom/android/server/location/GpsLocationProvider;
-
-    #getter for: Lcom/android/server/location/GpsLocationProvider;->mHandler:Landroid/os/Handler;
-    invoke-static {v2}, Lcom/android/server/location/GpsLocationProvider;->access$800(Lcom/android/server/location/GpsLocationProvider;)Landroid/os/Handler;
-
-    move-result-object v2
-
-    const/4 v3, 0x6
-
-    const-wide/32 v4, 0x493e0
-
-    invoke-virtual {v2, v3, v4, v5}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
-
-    .line 678
-    :cond_2
-    iget-object v2, p0, Lcom/android/server/location/GpsLocationProvider$5;->this$0:Lcom/android/server/location/GpsLocationProvider;
-
-    #getter for: Lcom/android/server/location/GpsLocationProvider;->mWakeLock:Landroid/os/PowerManager$WakeLock;
-    invoke-static {v2}, Lcom/android/server/location/GpsLocationProvider;->access$1300(Lcom/android/server/location/GpsLocationProvider;)Landroid/os/PowerManager$WakeLock;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/os/PowerManager$WakeLock;->release()V
-
-    .line 679
-    return-void
+    return v0
 .end method

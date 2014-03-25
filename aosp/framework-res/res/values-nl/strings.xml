@@ -271,7 +271,7 @@
     <string name="permgrouplab_display">Gebruikersinterface van andere applicaties</string>
     <string name="permgroupdesc_display">De gebruikersinterface van andere applicaties beïnvloeden.</string>
     <string name="permgrouplab_storage">Opslagruimte</string>
-    <string name="permgroupdesc_storage">Toegang krijgen tot USB-opslag.</string>
+    <string name="permgroupdesc_storage">Toegang tot de SD-kaart.</string>
     <string name="permlab_statusBar">statusbalk uitschakelen of wijzigen</string>
     <string name="permdesc_statusBar">Hiermee kan de app de statusbalk uitschakelen of systeempictogrammen toevoegen en verwijderen.</string>
     <string name="permlab_statusBarService">statusbalk</string>
@@ -486,9 +486,9 @@
     <string name="permdesc_brick">Hiermee kan de app de gehele telefoon permanent uitschakelen. Dit is erg gevaarlijk.</string>
     <string name="permlab_reboot">telefoon nu opnieuw opstarten</string>
     <string name="permdesc_reboot">Hiermee kan de app de telefoon opnieuw laten opstarten.</string>
-    <string name="permlab_mount_unmount_filesystems">bestandssysteem van USB-opslag openen</string>
+    <string name="permlab_mount_unmount_filesystems">bestandssysteem van SD-kaart openen</string>
     <string name="permdesc_mount_unmount_filesystems">Hiermee kan de app bestandssystemen koppelen en ontkoppelen voor verwisselbare opslagruimte.</string>
-    <string name="permlab_mount_format_filesystems">USB-opslag wissen</string>
+    <string name="permlab_mount_format_filesystems">SD-kaart wissen</string>
     <string name="permdesc_mount_format_filesystems">Hiermee kan de app de externe opslag formatteren.</string>
     <string name="permlab_asec_access">informatie over de interne opslag verkrijgen</string>
     <string name="permdesc_asec_access">Hiermee kan de app informatie over de interne opslag verkrijgen.</string>
@@ -597,9 +597,9 @@
     <string name="permlab_writeDictionary">woorden toevoegen aan het gebruikerswoordenboek</string>
     <string name="permdesc_writeDictionary">Hiermee kan de app nieuwe woorden schrijven naar het gebruikerswoordenboek.</string>
     <string name="permlab_sdcardRead">testtoegang tot beveiligde opslag</string>
-    <string name="permdesc_sdcardRead">Hiermee kan de app toestemming testen voor USB-opslag op toekomstige apparaten.</string>
-    <string name="permlab_sdcardWrite">de inhoud van uw USB-opslag aanpassen of verwijderen</string>
-    <string name="permdesc_sdcardWrite">Hiermee kan de app schrijven naar de USB-opslag.</string>
+    <string name="permdesc_sdcardRead">Hiermee kan de app toestemming testen voor de SD-kaart die beschikbaar komt op toekomstige apparaten.</string>
+    <string name="permlab_sdcardWrite">de inhoud van uw SD-kaart aanpassen of verwijderen</string>
+    <string name="permdesc_sdcardWrite">Hiermee kan de app schrijven naar de SD-kaart.</string>
     <string name="permlab_mediaStorageWrite">inh. mediaopsl. wijz./verw.</string>
     <string name="permdesc_mediaStorageWrite">Hiermee kan de app de inhoud van de interne mediaopslag aanpassen.</string>
     <string name="permlab_sdcardAccessAll">toegang tot externe opslag van alle gebruikers</string>
@@ -733,7 +733,7 @@
     <string name="lockscreen_missing_sim_message">Geen SIM-kaart in telefoon.</string>
     <string name="lockscreen_missing_sim_instructions">Plaats een simkaart.</string>
     <string name="lockscreen_missing_sim_instructions_long">De simkaart ontbreekt of kan niet worden gelezen. Plaats een simkaart.</string>
-    <string name="lockscreen_permanent_disabled_sim_message_short">Onbruikbare simkaart.</string>
+    <string name="lockscreen_permanent_disabled_sim_message_short">Onbruikbare simkaart</string>
     <string name="lockscreen_permanent_disabled_sim_instructions">"Uw simkaart is permanent uitgeschakeld.
  Neem contact op met uw mobiele serviceprovider voor een nieuwe simkaart."</string>
     <string name="lockscreen_transport_prev_description">Knop voor vorig nummer</string>
@@ -743,9 +743,9 @@
     <string name="lockscreen_transport_stop_description">Knop voor stoppen</string>
     <string name="emergency_calls_only">Alleen noodoproepen</string>
     <string name="lockscreen_network_locked_message">Netwerk vergrendeld</string>
-    <string name="lockscreen_sim_puk_locked_message">SIM-kaart is vergrendeld met PUK-code.</string>
+    <string name="lockscreen_sim_puk_locked_message">SIM-kaart is vergrendeld met PUK-code</string>
     <string name="lockscreen_sim_puk_locked_instructions">Raadpleeg de gebruikershandleiding of neem contact op met de klantenservice.</string>
-    <string name="lockscreen_sim_locked_message">SIM-kaart is vergrendeld.</string>
+    <string name="lockscreen_sim_locked_message">SIM-kaart is vergrendeld</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">SIM-kaart ontgrendelen...</string>
     <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"U heeft uw ontgrendelingspatroon %d keer onjuist getekend. 
 
@@ -1030,15 +1030,15 @@ Wilt u de pagina sluiten?"</string>
     <string name="perm_costs_money">hieraan kunnen kosten zijn verbonden</string>
     <string name="usb_storage_activity_title">USB-massaopslag</string>
     <string name="usb_storage_title">USB-verbinding</string>
-    <string name="usb_storage_message">U heeft uw telefoon via USB op uw computer aangesloten. Raak de knop hieronder aan als u bestanden tussen uw computer en de USB-opslag van uw Android wilt kopiëren.</string>
+    <string name="usb_storage_message">U heeft uw telefoon via USB op uw computer aangesloten. Raak de onderstaande knop aan als u bestanden tussen uw computer en de SD-kaart van uw Android wilt kopiëren.</string>
     <string name="usb_storage_button_mount">USB-opslag inschakelen</string>
-    <string name="usb_storage_error_message">Er is een probleem bij het gebruik van uw USB-opslag voor USB-massaopslag.</string>
+    <string name="usb_storage_error_message">Er is een probleem bij het gebruik van uw SD-kaart voor USB-massaopslag.</string>
     <string name="usb_storage_notification_title">USB-verbinding</string>
     <string name="usb_storage_notification_message">Raak aan om bestanden naar/van uw computer te kopiëren.</string>
     <string name="usb_storage_stop_notification_title">USB-opslag uitschakelen</string>
     <string name="usb_storage_stop_notification_message">Raak aan om USB-opslag uit te schakelen.</string>
     <string name="usb_storage_stop_title">USB-opslag in gebruik</string>
-    <string name="usb_storage_stop_message">"Voordat u USB-opslag uitschakelt, moet u de USB-opslag van uw Android ontkoppelen van uw computer ('uitwerpen')."</string>
+    <string name="usb_storage_stop_message">"Voordat u USB-opslag uitschakelt, moet u de SD-kaart van uw Android ontkoppelen van uw computer ('uitwerpen')."</string>
     <string name="usb_storage_stop_button_mount">USB-opslag uitschakelen</string>
     <string name="usb_storage_stop_error_message">Er is een probleem opgetreden tijdens het uitschakelen van de USB-opslag. Controleer of u de USB-host heeft losgekoppeld en probeer het opnieuw.</string>
     <string name="dlg_confirm_kill_storage_users_title">USB-opslag inschakelen</string>
@@ -1050,8 +1050,8 @@ Wilt u de pagina sluiten?"</string>
     <string name="usb_cd_installer_notification_title">Gekoppeld als installatieprogramma</string>
     <string name="usb_accessory_notification_title">Aangesloten op een USB-accessoire</string>
     <string name="usb_notification_message">Raak aan voor andere USB-opties.</string>
-    <string name="extmedia_format_title">USB-opslag formatteren?</string>
-    <string name="extmedia_format_message">Alle bestanden die in uw USB-opslag zijn opgeslagen, worden gewist. Deze actie kan niet ongedaan worden gemaakt.</string>
+    <string name="extmedia_format_title">SD-kaart formatteren?</string>
+    <string name="extmedia_format_message">Alle gegevens op uw kaart worden gewist.</string>
     <string name="extmedia_format_button_format">Formatteren</string>
     <string name="adb_active_notification_title">USB-foutopsporing verbonden</string>
     <string name="adb_active_notification_message">Tik om USB-foutopsporing uit te schakelen.</string>
@@ -1064,18 +1064,18 @@ Wilt u de pagina sluiten?"</string>
     <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="candidates_style"><u>kandidaten</u></string>
-    <string name="ext_media_checking_notification_title">USB-opslag voorbereiden</string>
+    <string name="ext_media_checking_notification_title">%s voorbereiden</string>
     <string name="ext_media_checking_notification_message">Controleren op fouten.</string>
-    <string name="ext_media_nofs_notification_title">Lege USB-opslag</string>
-    <string name="ext_media_nofs_notification_message">USB-opslag is leeg of heeft een niet-ondersteund bestandssysteem.</string>
-    <string name="ext_media_unmountable_notification_title">USB-opslag beschadigd</string>
-    <string name="ext_media_unmountable_notification_message">USB-opslag is beschadigd. Probeer deze opnieuw te formatteren.</string>
-    <string name="ext_media_badremoval_notification_title">USB-opslag onverwachts verwijderd</string>
-    <string name="ext_media_badremoval_notification_message">Ontkoppel de USB-opslag voordat u deze verwijdert om gegevensverlies te voorkomen.</string>
-    <string name="ext_media_safe_unmount_notification_title">USB-opslag veilig verwijderen</string>
-    <string name="ext_media_safe_unmount_notification_message">U kunt de USB-opslag veilig verwijderen.</string>
-    <string name="ext_media_nomedia_notification_title">USB-opslag verwijderd</string>
-    <string name="ext_media_nomedia_notification_message">USB-opslag verwijderd. Plaats nieuw medium.</string>
+    <string name="ext_media_nofs_notification_title">%s is leeg</string>
+    <string name="ext_media_nofs_notification_message">%s is leeg of bestandssysteem niet ondersteund.</string>
+    <string name="ext_media_unmountable_notification_title">%s beschadigd</string>
+    <string name="ext_media_unmountable_notification_message">%s beschadigd. . Formatteer het eventueel opnieuw.</string>
+    <string name="ext_media_badremoval_notification_title">%s onverwacht verwijderd</string>
+    <string name="ext_media_badremoval_notification_message">Ontkoppel %s voor verwijderen om gegevensverlies te vermijden.</string>
+    <string name="ext_media_safe_unmount_notification_title">%s kan worden verwijderd</string>
+    <string name="ext_media_safe_unmount_notification_message">U kunt %s veilig verwijderen.</string>
+    <string name="ext_media_nomedia_notification_title">%s is verwijderd</string>
+    <string name="ext_media_nomedia_notification_message">%s is verwijderd. Plaats een nieuwe.</string>
     <string name="activity_list_empty">Geen overeenkomende activiteiten gevonden.</string>
     <string name="permlab_pkgUsageStats">gebruiksstatistieken van component bijwerken</string>
     <string name="permdesc_pkgUsageStats">Hiermee kan de app verzamelde gebruiksstatistieken van componenten wijzigen. Niet voor gebruik door normale apps.</string>
@@ -1135,13 +1135,13 @@ voor account %s."</string>
     <string name="no_matches">Geen overeenkomsten</string>
     <string name="find_on_page">Zoeken op pagina</string>
     <string name="action_mode_done">Gereed</string>
-    <string name="progress_unmounting">USB-opslag ontkoppelen...</string>
-    <string name="progress_erasing">USB-opslag wissen...</string>
-    <string name="format_error">Kan USB-opslag niet wissen.</string>
+    <string name="progress_unmounting">SD-kaart ontkoppelen...</string>
+    <string name="progress_erasing">SD-kaart wissen...</string>
+    <string name="format_error">Kan SD-kaart niet wissen.</string>
     <string name="media_bad_removal">SD-kaart is verwijderd voordat deze is ontkoppeld.</string>
-    <string name="media_checking">USB-opslag wordt momenteel gecontroleerd.</string>
+    <string name="media_checking">SD-kaart wordt momenteel gecontroleerd.</string>
     <string name="media_removed">SD-kaart is verwijderd.</string>
-    <string name="media_shared">USB-opslag wordt momenteel gebruikt door een computer.</string>
+    <string name="media_shared">SD-kaart wordt momenteel gebruikt door een computer.</string>
     <string name="media_unknown_state">Extern medium heeft onbekende status.</string>
     <string name="share">Delen</string>
     <string name="find">Vinden</string>
@@ -1315,4 +1315,7 @@ Te lang luisteren op een te hoog volume kan leiden tot gehoorbeschadiging."</str
     <string name="enable_accessibility_canceled">Toegankelijkheid geannuleerd.</string>
     <string name="user_switched">Huidige gebruiker %1$s.</string>
     <string name="owner_name">Eigenaar</string>
+    <string name="storage_phone">Telefoongeheugen</string>
+    <string name="storage_external_usb">Externe USB-opslag</string>
+    <string name="zz_keyguard_accessibility_voice_unlock">Stemontgrendeling.</string>
 </resources>

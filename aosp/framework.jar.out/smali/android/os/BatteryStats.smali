@@ -296,7 +296,7 @@
 
     const/16 v1, 0xd
 
-    const-string v2, "lte"
+    const-string/jumbo v2, "lte"
 
     aput-object v2, v0, v1
 
@@ -575,7 +575,7 @@
 
     .prologue
     .line 41
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 150
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1099,7 +1099,7 @@
     invoke-virtual {p0, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     .line 1051
-    const-string v8, "m "
+    const-string/jumbo v8, "m "
 
     invoke-virtual {p0, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1894,7 +1894,7 @@
     :cond_4
     const/4 v5, 0x0
 
-    const-string v8, "m"
+    const-string/jumbo v8, "m"
 
     const/16 v9, 0xa
 
@@ -2070,7 +2070,7 @@
     invoke-static {v0, v5, v1, v8, v12}, Landroid/os/BatteryStats;->dumpLine(Ljava/io/PrintWriter;ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
     .line 1273
-    const/4 v5, 0x5
+    const/4 v5, 0x6
 
     new-array v12, v5, [Ljava/lang/Object;
 
@@ -2078,7 +2078,7 @@
     const/16 v30, 0x0
 
     :goto_4
-    const/4 v5, 0x5
+    const/4 v5, 0x6
 
     move/from16 v0, v30
 
@@ -2161,7 +2161,7 @@
     const/16 v30, 0x0
 
     :goto_5
-    const/4 v5, 0x5
+    const/4 v5, 0x6
 
     move/from16 v0, v30
 
@@ -2308,7 +2308,7 @@
     .line 1297
     const/4 v5, 0x0
 
-    const-string v8, "lv"
+    const-string/jumbo v8, "lv"
 
     const/4 v9, 0x2
 
@@ -3686,7 +3686,7 @@
 
     .line 2260
     :cond_2
-    iget-object v0, v6, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
+    iget-object v0, v6, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
 
     move-object/from16 v19, v0
 
@@ -5379,7 +5379,7 @@
     const/16 v53, 0x0
 
     :goto_6
-    const/4 v5, 0x5
+    const/4 v5, 0x6
 
     move/from16 v0, v53
 

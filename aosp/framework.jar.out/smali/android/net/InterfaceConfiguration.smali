@@ -60,7 +60,7 @@
 
     .prologue
     .line 31
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 34
     invoke-static {}, Lcom/google/android/collect/Sets;->newHashSet()Ljava/util/HashSet;
@@ -412,7 +412,7 @@
 
     .line 42
     .local v0, builder:Ljava/lang/StringBuilder;
-    const-string v1, "mHwAddr="
+    const-string/jumbo v1, "mHwAddr="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

@@ -26,7 +26,7 @@
     .parameter
 
     .prologue
-    .line 111
+    .line 113
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$7;->this$0:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;
 
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitorCallback;-><init>()V
@@ -41,26 +41,26 @@
     .parameter "showing"
 
     .prologue
-    .line 114
+    .line 116
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$7;->mShowing:Z
 
     if-ne v0, p1, :cond_0
 
-    .line 118
+    .line 120
     :goto_0
     return-void
 
-    .line 116
+    .line 118
     :cond_0
     iput-boolean p1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$7;->mShowing:Z
 
-    .line 117
+    .line 119
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$7;->this$0:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;
 
     iget-boolean v1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$7;->mShowing:Z
 
     #calls: Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->onKeyguardVisibilityChanged(Z)V
-    invoke-static {v0, v1}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->access$1200(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;Z)V
+    invoke-static {v0, v1}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->access$1300(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;Z)V
 
     goto :goto_0
 .end method

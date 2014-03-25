@@ -271,7 +271,7 @@
     <string name="permgrouplab_display">其他應用程式使用者介面</string>
     <string name="permgroupdesc_display">影響其他應用程式的使用者介面。</string>
     <string name="permgrouplab_storage">儲存</string>
-    <string name="permgroupdesc_storage">存取 USB 儲存裝置。</string>
+    <string name="permgroupdesc_storage">存取 SD 卡。</string>
     <string name="permlab_statusBar">停用或變更狀態列</string>
     <string name="permdesc_statusBar">允許應用程式停用狀態列，並可新增或移除系統圖示。</string>
     <string name="permlab_statusBarService">狀態列</string>
@@ -486,9 +486,9 @@
     <string name="permdesc_brick">允許應用程式永久停用手機所有功能 (這類權限具有高度風險)。</string>
     <string name="permlab_reboot">強制重開機</string>
     <string name="permdesc_reboot">允許應用程式強制重新啟動手機。</string>
-    <string name="permlab_mount_unmount_filesystems">存取 USB 儲存裝置檔案系統</string>
+    <string name="permlab_mount_unmount_filesystems">存取 SD 卡檔案系統</string>
     <string name="permdesc_mount_unmount_filesystems">允許應用程式掛接及卸載移除式儲存裝置的檔案系統。</string>
-    <string name="permlab_mount_format_filesystems">清除 USB 儲存裝置</string>
+    <string name="permlab_mount_format_filesystems">清除 SD 卡</string>
     <string name="permdesc_mount_format_filesystems">允許應用程式將卸除式儲存裝置格式化。</string>
     <string name="permlab_asec_access">取得內部儲存空間的資訊</string>
     <string name="permdesc_asec_access">允許應用程式取得內部儲存空間的資訊。</string>
@@ -597,9 +597,9 @@
     <string name="permlab_writeDictionary">將字詞加入使用者定義的字典</string>
     <string name="permdesc_writeDictionary">允許應用程式將新字詞寫入使用者的字典。</string>
     <string name="permlab_sdcardRead">測試能否存取受保護的儲存裝置</string>
-    <string name="permdesc_sdcardRead">允許應用程式測試未來裝置將支援的 USB 儲存權限。</string>
-    <string name="permlab_sdcardWrite">修改或刪除 USB 儲存裝置的內容</string>
-    <string name="permdesc_sdcardWrite">允許應用程式寫入 USB 儲存裝置。</string>
+    <string name="permdesc_sdcardRead">允許應用程式測試未來裝置將支援的 SD 卡權限。</string>
+    <string name="permlab_sdcardWrite">修改或刪除 SD 卡的內容</string>
+    <string name="permdesc_sdcardWrite">允許應用程式寫入 SD 卡。</string>
     <string name="permlab_mediaStorageWrite">修改/刪除內部媒體儲存裝置內容</string>
     <string name="permdesc_mediaStorageWrite">允許應用程式修改內部媒體儲存空間的內容。</string>
     <string name="permlab_sdcardAccessAll">存取外部儲存空間 (所有使用者)</string>
@@ -714,7 +714,7 @@
     <string name="keyguard_password_wrong_pin_code">PIN 碼不正確。</string>
     <string name="keyguard_label_text">如要解鎖，請按 Menu 鍵，然後按 0。</string>
     <string name="emergency_call_dialog_number_for_display">緊急電話號碼</string>
-    <string name="lockscreen_carrier_default">沒有服務。</string>
+    <string name="lockscreen_carrier_default">沒有服務</string>
     <string name="lockscreen_screen_locked">螢幕已鎖定。</string>
     <string name="lockscreen_instructions_when_pattern_enabled">按下 [Menu] 解鎖或撥打緊急電話。</string>
     <string name="lockscreen_instructions_when_pattern_disabled">按下 Menu 鍵解鎖。</string>
@@ -733,7 +733,7 @@
     <string name="lockscreen_missing_sim_message">手機未插入 SIM 卡。</string>
     <string name="lockscreen_missing_sim_instructions">插入 SIM 卡。</string>
     <string name="lockscreen_missing_sim_instructions_long">找不到或無法讀取 SIM 卡。請插入 SIM 卡。</string>
-    <string name="lockscreen_permanent_disabled_sim_message_short">SIM 卡無法使用。</string>
+    <string name="lockscreen_permanent_disabled_sim_message_short">SIM 卡無法使用</string>
     <string name="lockscreen_permanent_disabled_sim_instructions">"您的 SIM 卡已遭永久停用。
 請與您的無線網路服務供應商聯絡，以取得其他 SIM 卡。"</string>
     <string name="lockscreen_transport_prev_description">[上一首曲目] 按鈕</string>
@@ -743,9 +743,9 @@
     <string name="lockscreen_transport_stop_description">[停止] 按鈕</string>
     <string name="emergency_calls_only">僅可撥打緊急電話</string>
     <string name="lockscreen_network_locked_message">網路已鎖定</string>
-    <string name="lockscreen_sim_puk_locked_message">SIM 的 PUK 已鎖定。</string>
+    <string name="lockscreen_sim_puk_locked_message">SIM 的 PUK 已鎖定</string>
     <string name="lockscreen_sim_puk_locked_instructions">參閱《使用者指南》或與客戶服務中心聯絡。</string>
-    <string name="lockscreen_sim_locked_message">SIM 卡已鎖定。</string>
+    <string name="lockscreen_sim_locked_message">SIM 卡已鎖定</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">解鎖 SIM 卡中…</string>
     <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"您的解鎖圖形已畫錯 %d 次。
 
@@ -1030,15 +1030,15 @@
     <string name="perm_costs_money">這可能需要付費</string>
     <string name="usb_storage_activity_title">USB 大量儲存裝置</string>
     <string name="usb_storage_title">USB 已連接</string>
-    <string name="usb_storage_message">您已透過 USB 與電腦建立連線。如要在電腦和 Android 的 USB 儲存裝置之間複製檔案，請輕觸下方按鈕。</string>
+    <string name="usb_storage_message">您已透過 USB 與電腦建立連線。如要在電腦和 Android 的 SD 卡之間複製檔案，請輕觸下方按鈕。</string>
     <string name="usb_storage_button_mount">開啟 USB 儲存裝置</string>
-    <string name="usb_storage_error_message">使用 USB 儲存裝置做為 USB 大量儲存裝置時發生問題。</string>
+    <string name="usb_storage_error_message">使用 SD 卡做為 USB 大量儲存裝置時發生問題。</string>
     <string name="usb_storage_notification_title">USB 已連接</string>
     <string name="usb_storage_notification_message">輕觸即可將檔案複製到電腦或複製電腦中的檔案。</string>
     <string name="usb_storage_stop_notification_title">關閉 USB 儲存裝置</string>
     <string name="usb_storage_stop_notification_message">輕觸即可關閉 USB 儲存裝置。</string>
     <string name="usb_storage_stop_title">USB 儲存空間使用中</string>
-    <string name="usb_storage_stop_message">關閉 USB 儲存裝置前，請先從電腦卸載 (退出) Android 手機的 USB 儲存裝置。</string>
+    <string name="usb_storage_stop_message">關閉 USB 儲存裝置前，請先從電腦卸載 (退出) Android 手機的 SD 卡。</string>
     <string name="usb_storage_stop_button_mount">關閉 USB 儲存裝置</string>
     <string name="usb_storage_stop_error_message">關閉 USB 儲存裝置時發生問題。請檢查您是否已卸載 USB Host，然後再試一次。</string>
     <string name="dlg_confirm_kill_storage_users_title">開啟 USB 儲存裝置</string>
@@ -1050,8 +1050,8 @@
     <string name="usb_cd_installer_notification_title">已視為安裝程式連線</string>
     <string name="usb_accessory_notification_title">已連接 USB 配件</string>
     <string name="usb_notification_message">輕觸即可顯示其他 USB 選項。</string>
-    <string name="extmedia_format_title">將 USB 儲存裝置格式化？</string>
-    <string name="extmedia_format_message">USB 儲存裝置上儲存的所有檔案即將遭到清除。這項動作無法復原！</string>
+    <string name="extmedia_format_title">將 SD 卡格式化？</string>
+    <string name="extmedia_format_message">儲存卡上的所有資料都會消失。</string>
     <string name="extmedia_format_button_format">格式化</string>
     <string name="adb_active_notification_title">已連接 USB 偵錯工具</string>
     <string name="adb_active_notification_message">輕觸即可停用 USB 偵錯。</string>
@@ -1064,18 +1064,18 @@
     <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="candidates_style"><u>待選項目</u></string>
-    <string name="ext_media_checking_notification_title">正在準備 USB 儲存裝置</string>
+    <string name="ext_media_checking_notification_title">正在準備%s</string>
     <string name="ext_media_checking_notification_message">正在檢查錯誤。</string>
-    <string name="ext_media_nofs_notification_title">USB 儲存裝置無內容</string>
-    <string name="ext_media_nofs_notification_message">USB 儲存裝置無內容，或使用不受支援的檔案系統。</string>
-    <string name="ext_media_unmountable_notification_title">USB 儲存裝置已毀損</string>
-    <string name="ext_media_unmountable_notification_message">USB 儲存裝置已損壞。請嘗試將儲存裝置重新格式化。</string>
-    <string name="ext_media_badremoval_notification_title">USB 儲存裝置未正常移除</string>
-    <string name="ext_media_badremoval_notification_message">請先卸載 USB 儲存裝置，再將其移除，以免資料遺失。</string>
-    <string name="ext_media_safe_unmount_notification_title">USB 儲存裝置已可安全移除</string>
-    <string name="ext_media_safe_unmount_notification_message">您現在可以安全地移除 USB 儲存裝置。</string>
-    <string name="ext_media_nomedia_notification_title">USB 儲存裝置已移除</string>
-    <string name="ext_media_nomedia_notification_message">USB 儲存裝置已移除，請插入新媒體。</string>
+    <string name="ext_media_nofs_notification_title">%s為空白</string>
+    <string name="ext_media_nofs_notification_message">%s無內容，或使用不受支援的檔案系統。</string>
+    <string name="ext_media_unmountable_notification_title">%s已損壞</string>
+    <string name="ext_media_unmountable_notification_message">%s已毀損，您可能必須重新格式化。</string>
+    <string name="ext_media_badremoval_notification_title">%s未正常移除</string>
+    <string name="ext_media_badremoval_notification_message">請先卸載%s，再將其移除，以免資料遺失。</string>
+    <string name="ext_media_safe_unmount_notification_title">可安全移除%s</string>
+    <string name="ext_media_safe_unmount_notification_message">您現在可以安全地移除%s。</string>
+    <string name="ext_media_nomedia_notification_title">已移除%s</string>
+    <string name="ext_media_nomedia_notification_message">%s已移除，請插入新的。</string>
     <string name="activity_list_empty">找不到相符的活動。</string>
     <string name="permlab_pkgUsageStats">更新元件使用統計資料</string>
     <string name="permdesc_pkgUsageStats">允許應用程式修改收集到的元件使用統計資料 (不建議一般應用程式使用)。</string>
@@ -1135,13 +1135,13 @@
     <string name="no_matches">沒有相符項目</string>
     <string name="find_on_page">在頁面中尋找</string>
     <string name="action_mode_done">完成</string>
-    <string name="progress_unmounting">正在卸載 USB 儲存裝置…</string>
-    <string name="progress_erasing">正在清除 USB 儲存裝置的資料…</string>
-    <string name="format_error">無法清除 USB 儲存裝置。</string>
+    <string name="progress_unmounting">正在卸載 SD 卡…</string>
+    <string name="progress_erasing">正在清除 SD 卡的資料…</string>
+    <string name="format_error">無法清除 SD 卡。</string>
     <string name="media_bad_removal">SD 卡尚未卸載就已移除。</string>
-    <string name="media_checking">USB 儲存裝置目前正在接受檢查。</string>
+    <string name="media_checking">SD 卡目前正在接受檢查。</string>
     <string name="media_removed">SD 卡已移除。</string>
-    <string name="media_shared">電腦目前正在使用 USB 儲存裝置。</string>
+    <string name="media_shared">電腦目前正在使用 SD 卡。</string>
     <string name="media_unknown_state">外部媒體狀態不明。</string>
     <string name="share">分享</string>
     <string name="find">尋找</string>
@@ -1315,4 +1315,10 @@
     <string name="enable_accessibility_canceled">協助工具已取消。</string>
     <string name="user_switched">目前的使用者是 %1$s。</string>
     <string name="owner_name">擁有者</string>
+    <string name="storage_phone">手機儲存</string>
+    <string name="storage_external_usb">外部 USB 儲存裝置</string>
+    <string name="zz_keyguard_accessibility_voice_unlock">語音解鎖。</string>
+    <string name="global_action_reboot">重啟</string>
+    <string name="reboot_confirm_question">您要關重嗎？</string>
+    <string name="reboot_confirm">手機即將重啟。</string>
 </resources>

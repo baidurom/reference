@@ -228,7 +228,7 @@
 
     const/4 v1, 0x5
 
-    const-string v2, "location"
+    const-string/jumbo v2, "location"
 
     aput-object v2, v0, v1
 
@@ -276,7 +276,7 @@
 
     const/16 v1, 0xd
 
-    const-string v2, "last-modified"
+    const-string/jumbo v2, "last-modified"
 
     aput-object v2, v0, v1
 
@@ -322,7 +322,7 @@
     const/4 v2, 0x4
 
     .line 154
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 125
     new-instance v0, Ljava/util/ArrayList;
@@ -1000,7 +1000,7 @@
 
     .line 227
     :sswitch_5
-    const-string v5, "location"
+    const-string/jumbo v5, "location"
 
     invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1202,7 +1202,7 @@
 
     .line 275
     :sswitch_d
-    const-string v5, "last-modified"
+    const-string/jumbo v5, "last-modified"
 
     invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

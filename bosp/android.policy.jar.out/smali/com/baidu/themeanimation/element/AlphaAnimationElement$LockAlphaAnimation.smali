@@ -78,7 +78,7 @@
     :cond_0
     iget-object v6, p0, Lcom/baidu/themeanimation/element/AlphaAnimationElement$LockAlphaAnimation;->this$0:Lcom/baidu/themeanimation/element/AlphaAnimationElement;
 
-    iget-object v6, v6, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v6, v6, Lcom/baidu/themeanimation/element/AlphaAnimationElement;->mKeyFrames:Ljava/util/List;
 
     iget v7, p0, Lcom/baidu/themeanimation/element/AlphaAnimationElement$LockAlphaAnimation;->mCurrentStage:I
 
@@ -108,7 +108,7 @@
     .line 127
     iget-object v6, p0, Lcom/baidu/themeanimation/element/AlphaAnimationElement$LockAlphaAnimation;->this$0:Lcom/baidu/themeanimation/element/AlphaAnimationElement;
 
-    iget-object v6, v6, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v6, v6, Lcom/baidu/themeanimation/element/AlphaAnimationElement;->mKeyFrames:Ljava/util/List;
 
     add-int/lit8 v7, v3, -0x1
 
@@ -141,7 +141,7 @@
     :cond_2
     iget-object v6, p0, Lcom/baidu/themeanimation/element/AlphaAnimationElement$LockAlphaAnimation;->this$0:Lcom/baidu/themeanimation/element/AlphaAnimationElement;
 
-    iget-object v6, v6, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v6, v6, Lcom/baidu/themeanimation/element/AlphaAnimationElement;->mKeyFrames:Ljava/util/List;
 
     add-int/lit8 v7, v3, -0x1
 
@@ -161,7 +161,7 @@
     .local v2, fromAlpha:F
     iget-object v6, p0, Lcom/baidu/themeanimation/element/AlphaAnimationElement$LockAlphaAnimation;->this$0:Lcom/baidu/themeanimation/element/AlphaAnimationElement;
 
-    iget-object v6, v6, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v6, v6, Lcom/baidu/themeanimation/element/AlphaAnimationElement;->mKeyFrames:Ljava/util/List;
 
     invoke-interface {v6, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -180,7 +180,7 @@
     .local v5, toAlpha:F
     iget-object v6, p0, Lcom/baidu/themeanimation/element/AlphaAnimationElement$LockAlphaAnimation;->this$0:Lcom/baidu/themeanimation/element/AlphaAnimationElement;
 
-    iget-object v6, v6, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v6, v6, Lcom/baidu/themeanimation/element/AlphaAnimationElement;->mKeyFrames:Ljava/util/List;
 
     add-int/lit8 v7, v3, -0x1
 
@@ -200,7 +200,7 @@
 
     iget-object v6, p0, Lcom/baidu/themeanimation/element/AlphaAnimationElement$LockAlphaAnimation;->this$0:Lcom/baidu/themeanimation/element/AlphaAnimationElement;
 
-    iget-object v6, v6, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v6, v6, Lcom/baidu/themeanimation/element/AlphaAnimationElement;->mKeyFrames:Ljava/util/List;
 
     invoke-interface {v6, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -214,7 +214,7 @@
 
     iget-object v6, p0, Lcom/baidu/themeanimation/element/AlphaAnimationElement$LockAlphaAnimation;->this$0:Lcom/baidu/themeanimation/element/AlphaAnimationElement;
 
-    iget-object v6, v6, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v6, v6, Lcom/baidu/themeanimation/element/AlphaAnimationElement;->mKeyFrames:Ljava/util/List;
 
     add-int/lit8 v10, v3, -0x1
 
@@ -269,7 +269,7 @@
     :goto_1
     iget-object v6, p0, Lcom/baidu/themeanimation/element/AlphaAnimationElement$LockAlphaAnimation;->this$0:Lcom/baidu/themeanimation/element/AlphaAnimationElement;
 
-    iget-object v6, v6, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v6, v6, Lcom/baidu/themeanimation/element/AlphaAnimationElement;->mKeyFrames:Ljava/util/List;
 
     invoke-interface {v6}, Ljava/util/List;->size()I
 
@@ -280,7 +280,7 @@
     .line 133
     iget-object v6, p0, Lcom/baidu/themeanimation/element/AlphaAnimationElement$LockAlphaAnimation;->this$0:Lcom/baidu/themeanimation/element/AlphaAnimationElement;
 
-    iget-object v6, v6, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v6, v6, Lcom/baidu/themeanimation/element/AlphaAnimationElement;->mKeyFrames:Ljava/util/List;
 
     invoke-interface {v6, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 

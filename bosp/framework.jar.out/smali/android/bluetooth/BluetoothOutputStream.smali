@@ -43,6 +43,24 @@
     return-void
 .end method
 
+.method public flush()V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .prologue
+    .line 96
+    iget-object v0, p0, Landroid/bluetooth/BluetoothOutputStream;->mSocket:Landroid/bluetooth/BluetoothSocket;
+
+    invoke-virtual {v0}, Landroid/bluetooth/BluetoothSocket;->flush()V
+
+    .line 97
+    return-void
+.end method
+
 .method public write(I)V
     .locals 4
     .parameter "oneByte"
@@ -115,7 +133,7 @@
     :cond_1
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
-    const-string v1, "invalid offset or length"
+    const-string/jumbo v1, "invalid offset or length"
 
     invoke-direct {v0, v1}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
 

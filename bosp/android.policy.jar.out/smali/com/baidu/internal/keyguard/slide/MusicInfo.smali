@@ -21,7 +21,7 @@
 
     .prologue
     .line 10
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 11
     const-string v0, ""
@@ -62,7 +62,7 @@
 
     .prologue
     .line 19
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 20
     iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/MusicInfo;->songname:Ljava/lang/String;

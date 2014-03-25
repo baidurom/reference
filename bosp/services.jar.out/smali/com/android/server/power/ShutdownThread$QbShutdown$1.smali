@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 476
+    .line 781
     iput-object p1, p0, Lcom/android/server/power/ShutdownThread$QbShutdown$1;->this$0:Lcom/android/server/power/ShutdownThread$QbShutdown;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -43,22 +43,22 @@
     .parameter "isChecked"
 
     .prologue
-    .line 482
+    .line 787
     iget-object v0, p0, Lcom/android/server/power/ShutdownThread$QbShutdown$1;->this$0:Lcom/android/server/power/ShutdownThread$QbShutdown;
 
     #getter for: Lcom/android/server/power/ShutdownThread$QbShutdown;->mTextViewInfo:Landroid/widget/TextView;
-    invoke-static {v0}, Lcom/android/server/power/ShutdownThread$QbShutdown;->access$400(Lcom/android/server/power/ShutdownThread$QbShutdown;)Landroid/widget/TextView;
+    invoke-static {v0}, Lcom/android/server/power/ShutdownThread$QbShutdown;->access$1000(Lcom/android/server/power/ShutdownThread$QbShutdown;)Landroid/widget/TextView;
 
     move-result-object v0
 
     invoke-virtual {v0, p2}, Landroid/widget/TextView;->setEnabled(Z)V
 
-    .line 483
+    .line 788
     iget-object v0, p0, Lcom/android/server/power/ShutdownThread$QbShutdown$1;->this$0:Lcom/android/server/power/ShutdownThread$QbShutdown;
 
     #calls: Lcom/android/server/power/ShutdownThread$QbShutdown;->updateConfirmView(Z)V
-    invoke-static {v0, p2}, Lcom/android/server/power/ShutdownThread$QbShutdown;->access$500(Lcom/android/server/power/ShutdownThread$QbShutdown;Z)V
+    invoke-static {v0, p2}, Lcom/android/server/power/ShutdownThread$QbShutdown;->access$1100(Lcom/android/server/power/ShutdownThread$QbShutdown;Z)V
 
-    .line 484
+    .line 789
     return-void
 .end method

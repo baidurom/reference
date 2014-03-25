@@ -43,7 +43,7 @@
     .line 93
     iget-object v0, p0, Lcom/baidu/ifttt/trigger/AlarmTrigger$1;->this$0:Lcom/baidu/ifttt/trigger/AlarmTrigger;
 
-    iget-object v0, v0, Lcom/baidu/ifttt/trigger/Trigger;->mHandler:Landroid/os/Handler;
+    iget-object v0, v0, Lcom/baidu/ifttt/trigger/AlarmTrigger;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/baidu/ifttt/trigger/AlarmTrigger$1$1;
 

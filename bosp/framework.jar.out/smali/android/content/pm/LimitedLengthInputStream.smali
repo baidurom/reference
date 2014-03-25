@@ -63,7 +63,7 @@
     .line 44
     new-instance v0, Ljava/io/IOException;
 
-    const-string v1, "length < 0"
+    const-string/jumbo v1, "length < 0"
 
     invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 

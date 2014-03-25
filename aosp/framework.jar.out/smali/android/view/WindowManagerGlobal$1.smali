@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 186
+    .line 188
     iput-object p1, p0, Landroid/view/WindowManagerGlobal$1;->this$0:Landroid/view/WindowManagerGlobal;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,7 +41,7 @@
     .locals 6
 
     .prologue
-    .line 188
+    .line 190
     iget-object v4, p0, Landroid/view/WindowManagerGlobal$1;->this$0:Landroid/view/WindowManagerGlobal;
 
     #getter for: Landroid/view/WindowManagerGlobal;->mLock:Ljava/lang/Object;
@@ -51,7 +51,7 @@
 
     monitor-enter v5
 
-    .line 189
+    .line 191
     :try_start_0
     iget-object v4, p0, Landroid/view/WindowManagerGlobal$1;->this$0:Landroid/view/WindowManagerGlobal;
 
@@ -72,24 +72,24 @@
 
     aget-object v3, v0, v1
 
-    .line 190
+    .line 192
     .local v3, viewRoot:Landroid/view/ViewRootImpl;
     invoke-virtual {v3}, Landroid/view/ViewRootImpl;->loadSystemProperties()V
 
-    .line 189
+    .line 191
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 192
+    .line 194
     .end local v3           #viewRoot:Landroid/view/ViewRootImpl;
     :cond_0
     monitor-exit v5
 
-    .line 193
+    .line 195
     return-void
 
-    .line 192
+    .line 194
     .end local v0           #arr$:[Landroid/view/ViewRootImpl;
     .end local v1           #i$:I
     .end local v2           #len$:I

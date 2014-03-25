@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 167
+    .line 179
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen$1;->this$0:Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -42,7 +42,7 @@
     .parameter "v"
 
     .prologue
-    .line 170
+    .line 182
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen$1;->this$0:Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
@@ -56,7 +56,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 171
+    .line 183
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen$1;->this$0:Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;->mContext:Landroid/content/Context;
@@ -72,13 +72,13 @@
 
     check-cast v0, Landroid/os/Vibrator;
 
-    .line 172
+    .line 184
     .local v0, vibrator:Landroid/os/Vibrator;
     const-wide/16 v1, 0x14
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Vibrator;->vibrate(J)V
 
-    .line 174
+    .line 186
     .end local v0           #vibrator:Landroid/os/Vibrator;
     :cond_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen$1;->this$0:Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;
@@ -86,6 +86,6 @@
     #calls: Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;->verifyPasswordAndUnlock()V
     invoke-static {v1}, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;->access$200(Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;)V
 
-    .line 175
+    .line 187
     return-void
 .end method

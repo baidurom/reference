@@ -36,7 +36,7 @@
     .line 60
     iput-object p1, p0, Landroid/webkit/WebIconDatabaseClassic$EventHandler$IconResult;->this$0:Landroid/webkit/WebIconDatabaseClassic$EventHandler;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 61
     iput-object p2, p0, Landroid/webkit/WebIconDatabaseClassic$EventHandler$IconResult;->mUrl:Ljava/lang/String;

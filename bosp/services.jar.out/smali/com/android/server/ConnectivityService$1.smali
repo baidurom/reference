@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 993
+    .line 1143
     iput-object p1, p0, Lcom/android/server/ConnectivityService$1;->this$0:Lcom/android/server/ConnectivityService;
 
     invoke-direct {p0}, Lcom/android/server/net/BaseNetworkObserver;-><init>()V
@@ -40,18 +40,18 @@
     .parameter "active"
 
     .prologue
-    .line 996
+    .line 1146
     invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 997
+    .line 1147
     .local v0, deviceType:I
     iget-object v1, p0, Lcom/android/server/ConnectivityService$1;->this$0:Lcom/android/server/ConnectivityService;
 
     #calls: Lcom/android/server/ConnectivityService;->sendDataActivityBroadcast(IZ)V
-    invoke-static {v1, v0, p2}, Lcom/android/server/ConnectivityService;->access$200(Lcom/android/server/ConnectivityService;IZ)V
+    invoke-static {v1, v0, p2}, Lcom/android/server/ConnectivityService;->access$300(Lcom/android/server/ConnectivityService;IZ)V
 
-    .line 998
+    .line 1148
     return-void
 .end method

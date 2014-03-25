@@ -71,7 +71,7 @@
 
     .prologue
     .line 49
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -192,7 +192,7 @@
     invoke-virtual {v3, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
     .line 174
-    const-string v5, "locale"
+    const-string/jumbo v5, "locale"
 
     if-nez p4, :cond_3
 

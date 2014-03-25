@@ -33,11 +33,27 @@
 
 .field private mIsBouncing:Z
 
+.field private mKeyguardLayerBackground:Lcom/mediatek/common/policy/IKeyguardLayer;
+
+.field private mKeyguardLayerBackgroundLayout:Landroid/widget/FrameLayout;
+
+.field private mKeyguardLayerBackgroundView:Landroid/view/View;
+
+.field private mKeyguardLayerForeground:Lcom/mediatek/common/policy/IKeyguardLayer;
+
+.field private mKeyguardLayerForegroundLayout:Landroid/widget/FrameLayout;
+
+.field private mKeyguardLayerForegroundView:Landroid/view/View;
+
 .field final mOrientation:I
 
 .field private final mScrimClickListener:Landroid/view/View$OnClickListener;
 
 .field private mScrimView:Landroid/view/View;
+
+.field private mShowKeyguardLayer:Z
+
+.field private mShowKeyguardLayerRunnable:Ljava/lang/Runnable;
 
 .field private final mTempRect:Landroid/graphics/Rect;
 
@@ -52,12 +68,12 @@
     .parameter "context"
 
     .prologue
-    .line 63
+    .line 71
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 64
+    .line 72
     return-void
 .end method
 
@@ -67,12 +83,12 @@
     .parameter "attrs"
 
     .prologue
-    .line 67
+    .line 75
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 68
+    .line 76
     return-void
 .end method
 
@@ -85,38 +101,45 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 71
+    .line 79
     invoke-direct {p0, p1, p2, p3}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 50
+    .line 58
     new-instance v2, Landroid/graphics/Rect;
 
     invoke-direct {v2}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v2, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mTempRect:Landroid/graphics/Rect;
 
-    .line 51
+    .line 59
     new-instance v2, Landroid/graphics/Rect;
 
     invoke-direct {v2}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v2, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mZeroPadding:Landroid/graphics/Rect;
 
-    .line 55
+    .line 63
     new-instance v2, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$1;
 
     invoke-direct {v2, p0}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$1;-><init>(Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;)V
 
     iput-object v2, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mScrimClickListener:Landroid/view/View$OnClickListener;
 
-    .line 73
+    .line 611
+    new-instance v2, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$4;
+
+    invoke-direct {v2, p0}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$4;-><init>(Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;)V
+
+    iput-object v2, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mShowKeyguardLayerRunnable:Ljava/lang/Runnable;
+
+    .line 81
     sget-object v2, Lcom/android/internal/R$styleable;->MultiPaneChallengeLayout:[I
 
     invoke-virtual {p1, p2, v2, p3, v3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 75
+    .line 83
     .local v0, a:Landroid/content/res/TypedArray;
     invoke-virtual {v0, v3, v3}, Landroid/content/res/TypedArray;->getInt(II)I
 
@@ -124,15 +147,15 @@
 
     iput v2, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mOrientation:I
 
-    .line 77
+    .line 85
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 79
+    .line 87
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    .line 80
+    .line 88
     .local v1, res:Landroid/content/res/Resources;
     invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
@@ -140,12 +163,12 @@
 
     iput-object v2, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mDisplayMetrics:Landroid/util/DisplayMetrics;
 
-    .line 82
+    .line 90
     const/16 v2, 0x100
 
     invoke-virtual {p0, v2}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->setSystemUiVisibility(I)V
 
-    .line 83
+    .line 91
     return-void
 .end method
 
@@ -154,8 +177,53 @@
     .parameter "x0"
 
     .prologue
-    .line 35
+    .line 43
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mScrimView:Landroid/view/View;
+
+    return-object v0
+.end method
+
+.method static synthetic access$100(Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;)Z
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 43
+    iget-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mShowKeyguardLayer:Z
+
+    return v0
+.end method
+
+.method static synthetic access$200(Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;Z)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 43
+    invoke-direct {p0, p1}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->updateKeyguardLayerView(Z)V
+
+    return-void
+.end method
+
+.method static synthetic access$300(Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;)Landroid/widget/FrameLayout;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 43
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mKeyguardLayerForegroundLayout:Landroid/widget/FrameLayout;
+
+    return-object v0
+.end method
+
+.method static synthetic access$400(Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;)Landroid/widget/FrameLayout;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 43
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mKeyguardLayerBackgroundLayout:Landroid/widget/FrameLayout;
 
     return-object v0
 .end method
@@ -167,20 +235,20 @@
     .parameter "heightUsed"
 
     .prologue
-    .line 184
+    .line 206
     move v1, p2
 
-    .line 185
+    .line 207
     .local v1, virtualHeight:I
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->getRootView()Landroid/view/View;
 
     move-result-object v0
 
-    .line 186
+    .line 208
     .local v0, root:Landroid/view/View;
     if-eqz v0, :cond_0
 
-    .line 190
+    .line 212
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mDisplayMetrics:Landroid/util/DisplayMetrics;
 
     iget v2, v2, Landroid/util/DisplayMetrics;->heightPixels:I
@@ -191,7 +259,7 @@
 
     sub-int v1, v2, v3
 
-    .line 192
+    .line 214
     :cond_0
     iget v2, p1, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;->childType:I
 
@@ -205,17 +273,17 @@
 
     if-ne v2, v3, :cond_3
 
-    .line 197
+    .line 219
     :cond_1
     sub-int p2, v1, p3
 
-    .line 201
+    .line 223
     .end local p2
     :cond_2
     :goto_0
     return p2
 
-    .line 198
+    .line 220
     .restart local p2
     :cond_3
     iget v2, p1, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;->childType:I
@@ -224,7 +292,7 @@
 
     if-eq v2, v3, :cond_2
 
-    .line 201
+    .line 223
     sub-int v2, v1, p3
 
     invoke-static {v2, p2}, Ljava/lang/Math;->min(II)I
@@ -243,14 +311,14 @@
     .parameter "adjustPadding"
 
     .prologue
-    .line 362
+    .line 393
     invoke-virtual/range {p3 .. p3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v16
 
     check-cast v16, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;
 
-    .line 364
+    .line 395
     .local v16, lp:Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;
     move-object/from16 v0, p4
 
@@ -278,7 +346,7 @@
 
     sub-int v12, v21, v22
 
-    .line 365
+    .line 396
     .local v12, heightUsed:I
     move-object/from16 v0, p0
 
@@ -290,7 +358,7 @@
 
     move-result p2
 
-    .line 367
+    .line 398
     move-object/from16 v0, v16
 
     iget v0, v0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;->gravity:I
@@ -305,7 +373,7 @@
 
     move-result v11
 
-    .line 369
+    .line 400
     .local v11, gravity:I
     move-object/from16 v0, v16
 
@@ -321,7 +389,7 @@
 
     const/4 v9, 0x1
 
-    .line 370
+    .line 401
     .local v9, fixedLayoutSize:Z
     :goto_0
     if-eqz v9, :cond_3
@@ -336,7 +404,7 @@
 
     const/4 v8, 0x1
 
-    .line 371
+    .line 402
     .local v8, fixedLayoutHorizontal:Z
     :goto_1
     if-eqz v9, :cond_4
@@ -357,12 +425,12 @@
 
     const/4 v10, 0x1
 
-    .line 375
+    .line 406
     .local v10, fixedLayoutVertical:Z
     :goto_2
     if-eqz v8, :cond_5
 
-    .line 376
+    .line 407
     move-object/from16 v0, p4
 
     iget v0, v0, Landroid/graphics/Rect;->left:I
@@ -379,7 +447,7 @@
 
     sub-int v18, v21, v22
 
-    .line 377
+    .line 408
     .local v18, paddedWidth:I
     move/from16 v0, v18
 
@@ -403,11 +471,11 @@
 
     float-to-int v4, v0
 
-    .line 378
+    .line 409
     .local v4, adjustedWidth:I
     move/from16 v3, p2
 
-    .line 388
+    .line 419
     .end local v18           #paddedWidth:I
     .local v3, adjustedHeight:I
     :goto_3
@@ -415,31 +483,31 @@
 
     move-result v14
 
-    .line 389
+    .line 420
     .local v14, isVertical:Z
     invoke-static {v11}, Landroid/view/Gravity;->isHorizontal(I)Z
 
     move-result v13
 
-    .line 390
+    .line 421
     .local v13, isHorizontal:Z
     invoke-virtual/range {p3 .. p3}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v7
 
-    .line 391
+    .line 422
     .local v7, childWidth:I
     invoke-virtual/range {p3 .. p3}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v6
 
-    .line 393
+    .line 424
     .local v6, childHeight:I
     move-object/from16 v0, p4
 
     iget v15, v0, Landroid/graphics/Rect;->left:I
 
-    .line 394
+    .line 425
     .local v15, left:I
     move-object/from16 v0, p4
 
@@ -447,28 +515,28 @@
 
     move/from16 v20, v0
 
-    .line 395
+    .line 426
     .local v20, top:I
     add-int v19, v15, v7
 
-    .line 396
+    .line 427
     .local v19, right:I
     add-int v5, v20, v6
 
-    .line 397
+    .line 428
     .local v5, bottom:I
     and-int/lit8 v21, v11, 0x70
 
     sparse-switch v21, :sswitch_data_0
 
-    .line 422
+    .line 453
     :cond_0
     :goto_4
     and-int/lit8 v21, v11, 0x7
 
     packed-switch v21, :pswitch_data_0
 
-    .line 448
+    .line 479
     :cond_1
     :goto_5
     :pswitch_0
@@ -480,10 +548,10 @@
 
     invoke-virtual {v0, v15, v1, v2, v5}, Landroid/view/View;->layout(IIII)V
 
-    .line 449
+    .line 480
     return-void
 
-    .line 369
+    .line 400
     .end local v3           #adjustedHeight:I
     .end local v4           #adjustedWidth:I
     .end local v5           #bottom:I
@@ -502,26 +570,26 @@
 
     goto :goto_0
 
-    .line 370
+    .line 401
     .restart local v9       #fixedLayoutSize:Z
     :cond_3
     const/4 v8, 0x0
 
     goto :goto_1
 
-    .line 371
+    .line 402
     .restart local v8       #fixedLayoutHorizontal:Z
     :cond_4
     const/4 v10, 0x0
 
     goto :goto_2
 
-    .line 379
+    .line 410
     .restart local v10       #fixedLayoutVertical:Z
     :cond_5
     if-eqz v10, :cond_6
 
-    .line 380
+    .line 411
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->getPaddingTop()I
 
     move-result v21
@@ -534,11 +602,11 @@
 
     sub-int v17, v21, v22
 
-    .line 381
+    .line 412
     .local v17, paddedHeight:I
     move/from16 v4, p1
 
-    .line 382
+    .line 413
     .restart local v4       #adjustedWidth:I
     move/from16 v0, v17
 
@@ -562,25 +630,25 @@
 
     float-to-int v3, v0
 
-    .line 383
+    .line 414
     .restart local v3       #adjustedHeight:I
     goto :goto_3
 
-    .line 384
+    .line 415
     .end local v3           #adjustedHeight:I
     .end local v4           #adjustedWidth:I
     .end local v17           #paddedHeight:I
     :cond_6
     move/from16 v4, p1
 
-    .line 385
+    .line 416
     .restart local v4       #adjustedWidth:I
     move/from16 v3, p2
 
     .restart local v3       #adjustedHeight:I
     goto :goto_3
 
-    .line 399
+    .line 430
     .restart local v5       #bottom:I
     .restart local v6       #childHeight:I
     .restart local v7       #childWidth:I
@@ -604,21 +672,21 @@
 
     add-int v20, v21, v22
 
-    .line 401
+    .line 432
     :goto_6
     add-int v5, v20, v6
 
-    .line 402
+    .line 433
     if-eqz p5, :cond_0
 
     if-eqz v14, :cond_0
 
-    .line 403
+    .line 434
     move-object/from16 v0, p4
 
     iput v5, v0, Landroid/graphics/Rect;->top:I
 
-    .line 404
+    .line 435
     move-object/from16 v0, p4
 
     iget v0, v0, Landroid/graphics/Rect;->bottom:I
@@ -637,7 +705,7 @@
 
     goto :goto_4
 
-    .line 399
+    .line 430
     :cond_7
     move-object/from16 v0, p4
 
@@ -647,7 +715,7 @@
 
     goto :goto_6
 
-    .line 408
+    .line 439
     :sswitch_1
     if-eqz v10, :cond_8
 
@@ -665,16 +733,16 @@
 
     sub-int v5, v21, v22
 
-    .line 411
+    .line 442
     :goto_7
     sub-int v20, v5, v6
 
-    .line 412
+    .line 443
     if-eqz p5, :cond_0
 
     if-eqz v14, :cond_0
 
-    .line 413
+    .line 444
     sub-int v21, p2, v20
 
     move/from16 v0, v21
@@ -683,7 +751,7 @@
 
     iput v0, v1, Landroid/graphics/Rect;->bottom:I
 
-    .line 414
+    .line 445
     move-object/from16 v0, p4
 
     iget v0, v0, Landroid/graphics/Rect;->top:I
@@ -702,7 +770,7 @@
 
     goto/16 :goto_4
 
-    .line 408
+    .line 439
     :cond_8
     move-object/from16 v0, p4
 
@@ -714,7 +782,7 @@
 
     goto :goto_7
 
-    .line 418
+    .line 449
     :sswitch_2
     move-object/from16 v0, p4
 
@@ -728,12 +796,12 @@
 
     add-int v20, v21, v22
 
-    .line 419
+    .line 450
     add-int v5, v20, v6
 
     goto/16 :goto_4
 
-    .line 424
+    .line 455
     :pswitch_1
     if-eqz v8, :cond_9
 
@@ -749,25 +817,25 @@
 
     add-int v15, v21, v22
 
-    .line 426
+    .line 457
     :goto_8
     add-int v19, v15, v7
 
-    .line 427
+    .line 458
     if-eqz p5, :cond_1
 
     if-eqz v13, :cond_1
 
     if-nez v14, :cond_1
 
-    .line 428
+    .line 459
     move/from16 v0, v19
 
     move-object/from16 v1, p4
 
     iput v0, v1, Landroid/graphics/Rect;->left:I
 
-    .line 429
+    .line 460
     move-object/from16 v0, p4
 
     iget v0, v0, Landroid/graphics/Rect;->right:I
@@ -786,7 +854,7 @@
 
     goto/16 :goto_5
 
-    .line 424
+    .line 455
     :cond_9
     move-object/from16 v0, p4
 
@@ -794,7 +862,7 @@
 
     goto :goto_8
 
-    .line 433
+    .line 464
     :pswitch_2
     if-eqz v8, :cond_a
 
@@ -812,18 +880,18 @@
 
     sub-int v19, v21, v22
 
-    .line 436
+    .line 467
     :goto_9
     sub-int v15, v19, v7
 
-    .line 437
+    .line 468
     if-eqz p5, :cond_1
 
     if-eqz v13, :cond_1
 
     if-nez v14, :cond_1
 
-    .line 438
+    .line 469
     sub-int v21, p1, v15
 
     move/from16 v0, v21
@@ -832,7 +900,7 @@
 
     iput v0, v1, Landroid/graphics/Rect;->right:I
 
-    .line 439
+    .line 470
     move-object/from16 v0, p4
 
     iget v0, v0, Landroid/graphics/Rect;->left:I
@@ -851,7 +919,7 @@
 
     goto/16 :goto_5
 
-    .line 433
+    .line 464
     :cond_a
     move-object/from16 v0, p4
 
@@ -863,7 +931,7 @@
 
     goto :goto_9
 
-    .line 443
+    .line 474
     :pswitch_3
     move-object/from16 v0, p4
 
@@ -881,18 +949,18 @@
 
     sub-int v18, v21, v22
 
-    .line 444
+    .line 475
     .restart local v18       #paddedWidth:I
     sub-int v21, v18, v7
 
     div-int/lit8 v15, v21, 0x2
 
-    .line 445
+    .line 476
     add-int v19, v15, v7
 
     goto/16 :goto_5
 
-    .line 397
+    .line 428
     :sswitch_data_0
     .sparse-switch
         0x10 -> :sswitch_2
@@ -900,7 +968,7 @@
         0x50 -> :sswitch_1
     .end sparse-switch
 
-    .line 422
+    .line 453
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_3
@@ -911,6 +979,291 @@
     .end packed-switch
 .end method
 
+.method private updateKeyguardLayerPosition(I)V
+    .locals 4
+    .parameter "bottom"
+
+    .prologue
+    .line 702
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mKeyguardLayerForegroundLayout:Landroid/widget/FrameLayout;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
+
+    if-eqz v0, :cond_0
+
+    .line 703
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mKeyguardLayerForegroundLayout:Landroid/widget/FrameLayout;
+
+    iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mKeyguardLayerForegroundLayout:Landroid/widget/FrameLayout;
+
+    invoke-virtual {v1}, Landroid/widget/FrameLayout;->getLeft()I
+
+    move-result v1
+
+    iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mKeyguardLayerForegroundLayout:Landroid/widget/FrameLayout;
+
+    invoke-virtual {v2}, Landroid/widget/FrameLayout;->getHeight()I
+
+    move-result v2
+
+    sub-int v2, p1, v2
+
+    iget-object v3, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mKeyguardLayerForegroundLayout:Landroid/widget/FrameLayout;
+
+    invoke-virtual {v3}, Landroid/widget/FrameLayout;->getRight()I
+
+    move-result v3
+
+    invoke-virtual {v0, v1, v2, v3, p1}, Landroid/widget/FrameLayout;->layout(IIII)V
+
+    .line 719
+    :cond_0
+    return-void
+.end method
+
+.method private updateKeyguardLayerView(Z)V
+    .locals 12
+    .parameter "show"
+
+    .prologue
+    .line 645
+    const-string v8, "MultiPaneChallengeLayout"
+
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v10, "updateDataUsageView show="
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v8, v9}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 646
+    if-eqz p1, :cond_1
+
+    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mKeyguardLayerBackgroundView:Landroid/view/View;
+
+    if-nez v8, :cond_1
+
+    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mKeyguardLayerForegroundView:Landroid/view/View;
+
+    if-nez v8, :cond_1
+
+    .line 648
+    :try_start_0
+    const-class v8, Lcom/mediatek/common/pluginmanager/IPluginManager;
+
+    const/4 v9, 0x4
+
+    new-array v9, v9, [Ljava/lang/Object;
+
+    const/4 v10, 0x0
+
+    const-string v11, "create"
+
+    aput-object v11, v9, v10
+
+    const/4 v10, 0x1
+
+    iget-object v11, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mContext:Landroid/content/Context;
+
+    aput-object v11, v9, v10
+
+    const/4 v10, 0x2
+
+    const-class v11, Lcom/mediatek/common/policy/IKeyguardLayer;
+
+    invoke-virtual {v11}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v11
+
+    aput-object v11, v9, v10
+
+    const/4 v10, 0x3
+
+    const/4 v11, 0x0
+
+    aput-object v11, v9, v10
+
+    invoke-static {v8, v9}, Lcom/mediatek/common/MediatekClassFactory;->createInstance(Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lcom/mediatek/common/pluginmanager/IPluginManager;
+
+    .line 653
+    .local v5, plugManager:Lcom/mediatek/common/pluginmanager/IPluginManager;
+    invoke-interface {v5}, Lcom/mediatek/common/pluginmanager/IPluginManager;->getPluginCount()I
+
+    move-result v7
+
+    .line 654
+    .local v7, pluginCount:I
+    if-eqz v7, :cond_2
+
+    .line 658
+    const/4 v1, 0x0
+
+    .local v1, i:I
+    :goto_0
+    if-ge v1, v7, :cond_2
+
+    .line 659
+    invoke-interface {v5, v1}, Lcom/mediatek/common/pluginmanager/IPluginManager;->getPlugin(I)Lcom/mediatek/common/pluginmanager/IPlugin;
+
+    move-result-object v6
+
+    .line 660
+    .local v6, plugin:Lcom/mediatek/common/pluginmanager/IPlugin;
+    invoke-interface {v6}, Lcom/mediatek/common/pluginmanager/IPlugin;->createObject()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/mediatek/common/policy/IKeyguardLayer;
+
+    .line 661
+    .local v2, keyguardLayer:Lcom/mediatek/common/policy/IKeyguardLayer;
+    invoke-interface {v2}, Lcom/mediatek/common/policy/IKeyguardLayer;->create()Landroid/view/View;
+
+    move-result-object v3
+
+    .line 662
+    .local v3, keyguardLayerView:Landroid/view/View;
+    invoke-interface {v2}, Lcom/mediatek/common/policy/IKeyguardLayer;->getKeyguardLayerInfo()Lcom/mediatek/common/policy/KeyguardLayerInfo;
+
+    move-result-object v8
+
+    if-eqz v8, :cond_0
+
+    .line 663
+    iput-object v2, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mKeyguardLayerBackground:Lcom/mediatek/common/policy/IKeyguardLayer;
+
+    .line 664
+    iput-object v3, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mKeyguardLayerBackgroundView:Landroid/view/View;
+
+    .line 658
+    :goto_1
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    .line 666
+    :cond_0
+    iput-object v2, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mKeyguardLayerForeground:Lcom/mediatek/common/policy/IKeyguardLayer;
+
+    .line 667
+    iput-object v3, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mKeyguardLayerForegroundView:Landroid/view/View;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_1
+
+    .line 683
+    .end local v1           #i:I
+    .end local v2           #keyguardLayer:Lcom/mediatek/common/policy/IKeyguardLayer;
+    .end local v3           #keyguardLayerView:Landroid/view/View;
+    .end local v5           #plugManager:Lcom/mediatek/common/pluginmanager/IPluginManager;
+    .end local v6           #plugin:Lcom/mediatek/common/pluginmanager/IPlugin;
+    .end local v7           #pluginCount:I
+    :catch_0
+    move-exception v0
+
+    .line 684
+    .local v0, e:Ljava/lang/Exception;
+    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
+
+    .line 687
+    .end local v0           #e:Ljava/lang/Exception;
+    :cond_1
+    :goto_2
+    return-void
+
+    .line 672
+    .restart local v5       #plugManager:Lcom/mediatek/common/pluginmanager/IPluginManager;
+    .restart local v7       #pluginCount:I
+    :cond_2
+    :try_start_1
+    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mKeyguardLayerForegroundLayout:Landroid/widget/FrameLayout;
+
+    if-eqz v8, :cond_3
+
+    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mKeyguardLayerForegroundView:Landroid/view/View;
+
+    if-eqz v8, :cond_3
+
+    .line 673
+    new-instance v4, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;
+
+    const/4 v8, -0x1
+
+    const/4 v9, -0x1
+
+    invoke-direct {v4, v8, v9}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;-><init>(II)V
+
+    .line 674
+    .local v4, layoutParam:Landroid/view/ViewGroup$LayoutParams;
+    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mKeyguardLayerForegroundView:Landroid/view/View;
+
+    invoke-virtual {v8, v4}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 675
+    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mKeyguardLayerForegroundLayout:Landroid/widget/FrameLayout;
+
+    iget-object v9, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mKeyguardLayerForegroundView:Landroid/view/View;
+
+    invoke-virtual {v8, v9}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
+
+    .line 678
+    .end local v4           #layoutParam:Landroid/view/ViewGroup$LayoutParams;
+    :cond_3
+    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mKeyguardLayerBackgroundLayout:Landroid/widget/FrameLayout;
+
+    if-eqz v8, :cond_1
+
+    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mKeyguardLayerBackgroundView:Landroid/view/View;
+
+    if-eqz v8, :cond_1
+
+    .line 679
+    new-instance v4, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;
+
+    const/4 v8, -0x1
+
+    const/4 v9, -0x1
+
+    invoke-direct {v4, v8, v9}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;-><init>(II)V
+
+    .line 680
+    .restart local v4       #layoutParam:Landroid/view/ViewGroup$LayoutParams;
+    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mKeyguardLayerBackgroundView:Landroid/view/View;
+
+    invoke-virtual {v8, v4}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 681
+    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mKeyguardLayerBackgroundLayout:Landroid/widget/FrameLayout;
+
+    iget-object v9, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mKeyguardLayerBackgroundView:Landroid/view/View;
+
+    invoke-virtual {v8, v9}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+
+    goto :goto_2
+.end method
+
 
 # virtual methods
 .method protected checkLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Z
@@ -918,7 +1271,7 @@
     .parameter "p"
 
     .prologue
-    .line 470
+    .line 501
     instance-of v0, p1, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;
 
     return v0
@@ -928,7 +1281,7 @@
     .locals 1
 
     .prologue
-    .line 465
+    .line 496
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;
 
     invoke-direct {v0}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;-><init>()V
@@ -941,7 +1294,7 @@
     .parameter "attrs"
 
     .prologue
-    .line 453
+    .line 484
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;
 
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->getContext()Landroid/content/Context;
@@ -958,7 +1311,7 @@
     .parameter "p"
 
     .prologue
-    .line 458
+    .line 489
     instance-of v0, p1, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;
 
     if-eqz v0, :cond_0
@@ -1001,7 +1354,7 @@
     .locals 1
 
     .prologue
-    .line 101
+    .line 109
     const/16 v0, 0x15e
 
     return v0
@@ -1013,38 +1366,38 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 130
+    .line 138
     iget-boolean v1, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mIsBouncing:Z
 
     if-nez v1, :cond_1
 
-    .line 150
+    .line 158
     :cond_0
     :goto_0
     return-void
 
-    .line 131
+    .line 139
     :cond_1
     iput-boolean v5, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mIsBouncing:Z
 
-    .line 132
+    .line 140
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mScrimView:Landroid/view/View;
 
     if-eqz v1, :cond_3
 
-    .line 133
+    .line 141
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     if-eqz v1, :cond_2
 
-    .line 134
+    .line 142
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     const/16 v2, 0x15e
 
     invoke-virtual {v1, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;->hideBouncer(I)V
 
-    .line 137
+    .line 145
     :cond_2
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mScrimView:Landroid/view/View;
 
@@ -1062,30 +1415,30 @@
 
     move-result-object v0
 
-    .line 138
+    .line 146
     .local v0, anim:Landroid/animation/Animator;
     const-wide/16 v1, 0x15e
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
 
-    .line 139
+    .line 147
     new-instance v1, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$3;
 
     invoke-direct {v1, p0}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$3;-><init>(Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;)V
 
-    invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 145
-    invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
+    .line 153
+    invoke-virtual {v0}, Landroid/animation/Animator;->start()V
 
-    .line 147
+    .line 155
     .end local v0           #anim:Landroid/animation/Animator;
     :cond_3
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mBouncerListener:Lcom/android/internal/policy/impl/keyguard/ChallengeLayout$OnBouncerStateChangedListener;
 
     if-eqz v1, :cond_0
 
-    .line 148
+    .line 156
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mBouncerListener:Lcom/android/internal/policy/impl/keyguard/ChallengeLayout$OnBouncerStateChangedListener;
 
     invoke-interface {v1, v5}, Lcom/android/internal/policy/impl/keyguard/ChallengeLayout$OnBouncerStateChangedListener;->onBouncerStateChanged(Z)V
@@ -1097,7 +1450,7 @@
     .locals 1
 
     .prologue
-    .line 154
+    .line 162
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mIsBouncing:Z
 
     return v0
@@ -1107,7 +1460,7 @@
     .locals 1
 
     .prologue
-    .line 92
+    .line 100
     const/4 v0, 0x0
 
     return v0
@@ -1117,14 +1470,164 @@
     .locals 1
 
     .prologue
-    .line 87
+    .line 95
     const/4 v0, 0x1
 
     return v0
 .end method
 
+.method public onDetachedFromWindow()V
+    .locals 2
+
+    .prologue
+    const/4 v1, 0x0
+
+    .line 173
+    invoke-super {p0}, Landroid/view/ViewGroup;->onDetachedFromWindow()V
+
+    .line 175
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mKeyguardLayerBackground:Lcom/mediatek/common/policy/IKeyguardLayer;
+
+    if-eqz v0, :cond_0
+
+    .line 176
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mKeyguardLayerBackground:Lcom/mediatek/common/policy/IKeyguardLayer;
+
+    invoke-interface {v0}, Lcom/mediatek/common/policy/IKeyguardLayer;->destroy()V
+
+    .line 177
+    iput-object v1, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mKeyguardLayerBackground:Lcom/mediatek/common/policy/IKeyguardLayer;
+
+    .line 179
+    :cond_0
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mKeyguardLayerForeground:Lcom/mediatek/common/policy/IKeyguardLayer;
+
+    if-eqz v0, :cond_1
+
+    .line 180
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mKeyguardLayerForeground:Lcom/mediatek/common/policy/IKeyguardLayer;
+
+    invoke-interface {v0}, Lcom/mediatek/common/policy/IKeyguardLayer;->destroy()V
+
+    .line 181
+    iput-object v1, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mKeyguardLayerForeground:Lcom/mediatek/common/policy/IKeyguardLayer;
+
+    .line 183
+    :cond_1
+    return-void
+.end method
+
+.method public onFinishInflate()V
+    .locals 6
+
+    .prologue
+    .line 625
+    invoke-super {p0}, Landroid/view/ViewGroup;->onFinishInflate()V
+
+    .line 626
+    invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->getChildCount()I
+
+    move-result v1
+
+    .line 627
+    .local v1, count:I
+    const/4 v2, 0x0
+
+    .local v2, i:I
+    :goto_0
+    if-ge v2, v1, :cond_4
+
+    .line 628
+    invoke-virtual {p0, v2}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v0
+
+    .line 629
+    .local v0, child:Landroid/view/View;
+    invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;
+
+    .line 630
+    .local v3, lp:Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;
+    iget v4, v3, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;->childType:I
+
+    const/16 v5, 0x8
+
+    if-ne v4, v5, :cond_1
+
+    .line 631
+    check-cast v0, Landroid/widget/FrameLayout;
+
+    .end local v0           #child:Landroid/view/View;
+    iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mKeyguardLayerForegroundLayout:Landroid/widget/FrameLayout;
+
+    .line 627
+    :cond_0
+    :goto_1
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    .line 632
+    .restart local v0       #child:Landroid/view/View;
+    :cond_1
+    iget v4, v3, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;->childType:I
+
+    const/16 v5, 0x9
+
+    if-ne v4, v5, :cond_2
+
+    .line 633
+    check-cast v0, Landroid/widget/FrameLayout;
+
+    .end local v0           #child:Landroid/view/View;
+    iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mKeyguardLayerBackgroundLayout:Landroid/widget/FrameLayout;
+
+    goto :goto_1
+
+    .line 634
+    .restart local v0       #child:Landroid/view/View;
+    :cond_2
+    iget v4, v3, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;->childType:I
+
+    const/4 v5, 0x2
+
+    if-ne v4, v5, :cond_0
+
+    .line 635
+    iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
+
+    if-eqz v4, :cond_3
+
+    .line 636
+    new-instance v4, Ljava/lang/IllegalStateException;
+
+    const-string v5, "There may only be one child with layout_isChallenge=\"true\""
+
+    invoke-direct {v4, v5}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v4
+
+    .line 639
+    :cond_3
+    check-cast v0, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
+
+    .end local v0           #child:Landroid/view/View;
+    iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
+
+    goto :goto_1
+
+    .line 642
+    .end local v3           #lp:Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;
+    :cond_4
+    return-void
+.end method
+
 .method protected onLayout(ZIIII)V
-    .locals 14
+    .locals 18
     .parameter "changed"
     .parameter "l"
     .parameter "t"
@@ -1132,172 +1635,269 @@
     .parameter "b"
 
     .prologue
-    .line 326
-    iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mTempRect:Landroid/graphics/Rect;
+    .line 348
+    move-object/from16 v0, p0
 
-    .line 327
-    .local v4, padding:Landroid/graphics/Rect;
-    invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->getPaddingLeft()I
+    iget-object v8, v0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mTempRect:Landroid/graphics/Rect;
 
-    move-result v0
+    .line 349
+    .local v8, padding:Landroid/graphics/Rect;
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->getPaddingLeft()I
 
-    iput v0, v4, Landroid/graphics/Rect;->left:I
+    move-result v4
 
-    .line 328
-    invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->getPaddingTop()I
+    iput v4, v8, Landroid/graphics/Rect;->left:I
 
-    move-result v0
+    .line 350
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->getPaddingTop()I
 
-    iput v0, v4, Landroid/graphics/Rect;->top:I
+    move-result v4
 
-    .line 329
-    invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->getPaddingRight()I
+    iput v4, v8, Landroid/graphics/Rect;->top:I
 
-    move-result v0
+    .line 351
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->getPaddingRight()I
 
-    iput v0, v4, Landroid/graphics/Rect;->right:I
+    move-result v4
 
-    .line 330
-    invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->getPaddingBottom()I
+    iput v4, v8, Landroid/graphics/Rect;->right:I
 
-    move-result v0
+    .line 352
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->getPaddingBottom()I
 
-    iput v0, v4, Landroid/graphics/Rect;->bottom:I
+    move-result v4
 
-    .line 331
-    sub-int v1, p4, p2
+    iput v4, v8, Landroid/graphics/Rect;->bottom:I
 
-    .line 332
-    .local v1, width:I
-    sub-int v2, p5, p3
+    .line 353
+    sub-int v5, p4, p2
 
-    .line 336
-    .local v2, height:I
-    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mUserSwitcherView:Landroid/view/View;
+    .line 354
+    .local v5, width:I
+    sub-int v6, p5, p3
 
-    if-eqz v0, :cond_0
+    .line 358
+    .local v6, height:I
+    move-object/from16 v0, p0
 
-    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mUserSwitcherView:Landroid/view/View;
+    iget-object v4, v0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mUserSwitcherView:Landroid/view/View;
 
-    invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
+    if-eqz v4, :cond_0
 
-    move-result v0
+    move-object/from16 v0, p0
 
-    const/16 v3, 0x8
+    iget-object v4, v0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mUserSwitcherView:Landroid/view/View;
 
-    if-eq v0, v3, :cond_0
+    invoke-virtual {v4}, Landroid/view/View;->getVisibility()I
 
-    .line 337
-    iget-object v3, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mUserSwitcherView:Landroid/view/View;
+    move-result v4
 
-    const/4 v5, 0x1
+    const/16 v7, 0x8
 
-    move-object v0, p0
+    if-eq v4, v7, :cond_0
 
-    invoke-direct/range {v0 .. v5}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->layoutWithGravity(IILandroid/view/View;Landroid/graphics/Rect;Z)V
+    .line 359
+    move-object/from16 v0, p0
 
-    .line 340
+    iget-object v7, v0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mUserSwitcherView:Landroid/view/View;
+
+    const/4 v9, 0x1
+
+    move-object/from16 v4, p0
+
+    invoke-direct/range {v4 .. v9}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->layoutWithGravity(IILandroid/view/View;Landroid/graphics/Rect;Z)V
+
+    .line 362
     :cond_0
-    invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->getChildCount()I
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->getChildCount()I
 
-    move-result v11
+    move-result v15
 
-    .line 341
-    .local v11, count:I
-    const/4 v12, 0x0
+    .line 363
+    .local v15, count:I
+    const/16 v16, 0x0
 
-    .local v12, i:I
+    .local v16, i:I
     :goto_0
-    if-ge v12, v11, :cond_5
+    move/from16 v0, v16
 
-    .line 342
-    invoke-virtual {p0, v12}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->getChildAt(I)Landroid/view/View;
+    if-ge v0, v15, :cond_7
 
-    move-result-object v8
+    .line 364
+    move-object/from16 v0, p0
 
-    .line 343
-    .local v8, child:Landroid/view/View;
-    invoke-virtual {v8}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    move/from16 v1, v16
 
-    move-result-object v13
+    invoke-virtual {v0, v1}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->getChildAt(I)Landroid/view/View;
 
-    check-cast v13, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;
+    move-result-object v12
 
-    .line 346
-    .local v13, lp:Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;
-    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mUserSwitcherView:Landroid/view/View;
+    .line 365
+    .local v12, child:Landroid/view/View;
+    invoke-virtual {v12}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    if-eq v8, v0, :cond_1
+    move-result-object v17
 
-    invoke-virtual {v8}, Landroid/view/View;->getVisibility()I
+    check-cast v17, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;
 
-    move-result v0
+    .line 368
+    .local v17, lp:Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;
+    move-object/from16 v0, p0
 
-    const/16 v3, 0x8
+    iget-object v4, v0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mUserSwitcherView:Landroid/view/View;
 
-    if-ne v0, v3, :cond_2
+    if-eq v12, v4, :cond_1
 
-    .line 341
+    invoke-virtual {v12}, Landroid/view/View;->getVisibility()I
+
+    move-result v4
+
+    const/16 v7, 0x8
+
+    if-ne v4, v7, :cond_2
+
+    .line 363
     :cond_1
     :goto_1
-    add-int/lit8 v12, v12, 0x1
+    add-int/lit8 v16, v16, 0x1
 
     goto :goto_0
 
-    .line 348
+    .line 370
     :cond_2
-    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mScrimView:Landroid/view/View;
+    move-object/from16 v0, p0
 
-    if-ne v8, v0, :cond_3
+    iget-object v4, v0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mScrimView:Landroid/view/View;
 
-    .line 349
-    const/4 v0, 0x0
+    if-ne v12, v4, :cond_3
 
-    const/4 v3, 0x0
+    .line 371
+    const/4 v4, 0x0
 
-    invoke-virtual {v8, v0, v3, v1, v2}, Landroid/view/View;->layout(IIII)V
+    const/4 v7, 0x0
+
+    invoke-virtual {v12, v4, v7, v5, v6}, Landroid/view/View;->layout(IIII)V
 
     goto :goto_1
 
-    .line 351
+    .line 373
     :cond_3
-    iget v0, v13, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;->childType:I
+    move-object/from16 v0, v17
 
-    const/4 v3, 0x7
+    iget v4, v0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;->childType:I
 
-    if-ne v0, v3, :cond_4
+    const/4 v7, 0x7
 
-    .line 352
-    iget-object v9, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mZeroPadding:Landroid/graphics/Rect;
+    if-ne v4, v7, :cond_4
 
-    const/4 v10, 0x0
+    .line 374
+    move-object/from16 v0, p0
 
-    move-object v5, p0
+    iget-object v13, v0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mZeroPadding:Landroid/graphics/Rect;
 
-    move v6, v1
+    const/4 v14, 0x0
 
-    move v7, v2
+    move-object/from16 v9, p0
 
-    invoke-direct/range {v5 .. v10}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->layoutWithGravity(IILandroid/view/View;Landroid/graphics/Rect;Z)V
+    move v10, v5
+
+    move v11, v6
+
+    invoke-direct/range {v9 .. v14}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->layoutWithGravity(IILandroid/view/View;Landroid/graphics/Rect;Z)V
 
     goto :goto_1
 
-    .line 356
+    .line 376
     :cond_4
-    const/4 v5, 0x0
+    move-object/from16 v0, v17
 
-    move-object v0, p0
+    iget v4, v0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;->childType:I
 
-    move-object v3, v8
+    const/16 v7, 0x8
 
-    invoke-direct/range {v0 .. v5}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->layoutWithGravity(IILandroid/view/View;Landroid/graphics/Rect;Z)V
+    if-eq v4, v7, :cond_1
+
+    .line 378
+    move-object/from16 v0, v17
+
+    iget v4, v0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;->childType:I
+
+    const/16 v7, 0x9
+
+    if-ne v4, v7, :cond_5
+
+    .line 379
+    move/from16 v0, p2
+
+    move/from16 v1, p3
+
+    move/from16 v2, p4
+
+    move/from16 v3, p5
+
+    invoke-virtual {v12, v0, v1, v2, v3}, Landroid/view/View;->layout(IIII)V
+
+    .line 382
+    :cond_5
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mKeyguardLayerForegroundLayout:Landroid/widget/FrameLayout;
+
+    if-eqz v4, :cond_6
+
+    .line 384
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mKeyguardLayerForegroundLayout:Landroid/widget/FrameLayout;
+
+    move-object/from16 v0, p0
+
+    iget-object v7, v0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
+
+    invoke-virtual {v7}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;->getBottom()I
+
+    move-result v7
+
+    move-object/from16 v0, p0
+
+    iget-object v9, v0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mKeyguardLayerForegroundLayout:Landroid/widget/FrameLayout;
+
+    invoke-virtual {v9}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
+
+    move-result v9
+
+    sub-int/2addr v7, v9
+
+    move-object/from16 v0, p0
+
+    iget-object v9, v0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
+
+    invoke-virtual {v9}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;->getBottom()I
+
+    move-result v9
+
+    move/from16 v0, p2
+
+    move/from16 v1, p4
+
+    invoke-virtual {v4, v0, v7, v1, v9}, Landroid/widget/FrameLayout;->layout(IIII)V
+
+    .line 387
+    :cond_6
+    const/4 v9, 0x0
+
+    move-object/from16 v4, p0
+
+    move-object v7, v12
+
+    invoke-direct/range {v4 .. v9}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->layoutWithGravity(IILandroid/view/View;Landroid/graphics/Rect;Z)V
 
     goto :goto_1
 
-    .line 358
-    .end local v8           #child:Landroid/view/View;
-    .end local v13           #lp:Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;
-    :cond_5
+    .line 389
+    .end local v12           #child:Landroid/view/View;
+    .end local v17           #lp:Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;
+    :cond_7
     return-void
 .end method
 
@@ -1307,7 +1907,7 @@
     .parameter "heightSpec"
 
     .prologue
-    .line 206
+    .line 228
     invoke-static/range {p1 .. p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v2
@@ -1324,7 +1924,7 @@
 
     if-eq v2, v5, :cond_1
 
-    .line 208
+    .line 230
     :cond_0
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
@@ -1334,32 +1934,32 @@
 
     throw v2
 
-    .line 212
+    .line 234
     :cond_1
     invoke-static/range {p1 .. p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v14
 
-    .line 213
+    .line 235
     .local v14, width:I
     invoke-static/range {p2 .. p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v9
 
-    .line 214
+    .line 236
     .local v9, height:I
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v14, v9}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->setMeasuredDimension(II)V
 
-    .line 216
+    .line 238
     const/4 v15, 0x0
 
-    .line 217
+    .line 239
     .local v15, widthUsed:I
     const/4 v10, 0x0
 
-    .line 221
+    .line 243
     .local v10, heightUsed:I
     const/4 v2, 0x0
 
@@ -1367,19 +1967,19 @@
 
     iput-object v2, v0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
-    .line 222
+    .line 244
     const/4 v2, 0x0
 
     move-object/from16 v0, p0
 
     iput-object v2, v0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mUserSwitcherView:Landroid/view/View;
 
-    .line 223
+    .line 245
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->getChildCount()I
 
     move-result v8
 
-    .line 224
+    .line 246
     .local v8, count:I
     const/4 v11, 0x0
 
@@ -1387,14 +1987,14 @@
     :goto_0
     if-ge v11, v8, :cond_b
 
-    .line 225
+    .line 247
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v11}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 226
+    .line 248
     .local v3, child:Landroid/view/View;
     invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -1402,7 +2002,7 @@
 
     check-cast v12, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;
 
-    .line 228
+    .line 250
     .local v12, lp:Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;
     iget v2, v12, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;->childType:I
 
@@ -1410,14 +2010,14 @@
 
     if-ne v2, v5, :cond_5
 
-    .line 229
+    .line 251
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     if-eqz v2, :cond_2
 
-    .line 230
+    .line 252
     new-instance v2, Ljava/lang/IllegalStateException;
 
     const-string v5, "There may only be one child of type challenge"
@@ -1426,13 +2026,13 @@
 
     throw v2
 
-    .line 233
+    .line 255
     :cond_2
     instance-of v2, v3, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     if-nez v2, :cond_3
 
-    .line 234
+    .line 256
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
     const-string v5, "Challenge must be a KeyguardSecurityContainer"
@@ -1441,7 +2041,7 @@
 
     throw v2
 
-    .line 237
+    .line 259
     :cond_3
     check-cast v3, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
@@ -1450,14 +2050,14 @@
 
     iput-object v3, v0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
-    .line 224
+    .line 246
     :cond_4
     :goto_1
     add-int/lit8 v11, v11, 0x1
 
     goto :goto_0
 
-    .line 238
+    .line 260
     .restart local v3       #child:Landroid/view/View;
     :cond_5
     iget v2, v12, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;->childType:I
@@ -1466,14 +2066,14 @@
 
     if-ne v2, v5, :cond_a
 
-    .line 239
+    .line 261
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mUserSwitcherView:Landroid/view/View;
 
     if-eqz v2, :cond_6
 
-    .line 240
+    .line 262
     new-instance v2, Ljava/lang/IllegalStateException;
 
     const-string v5, "There may only be one child of type userSwitcher"
@@ -1482,13 +2082,13 @@
 
     throw v2
 
-    .line 243
+    .line 265
     :cond_6
     move-object/from16 v0, p0
 
     iput-object v3, v0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mUserSwitcherView:Landroid/view/View;
 
-    .line 245
+    .line 267
     invoke-virtual {v3}, Landroid/view/View;->getVisibility()I
 
     move-result v2
@@ -1497,20 +2097,20 @@
 
     if-eq v2, v5, :cond_4
 
-    .line 247
+    .line 269
     move/from16 v4, p1
 
-    .line 248
+    .line 270
     .local v4, adjustedWidthSpec:I
     move/from16 v6, p2
 
-    .line 249
+    .line 271
     .local v6, adjustedHeightSpec:I
     iget v2, v12, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;->maxWidth:I
 
     if-ltz v2, :cond_7
 
-    .line 250
+    .line 272
     iget v2, v12, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;->maxWidth:I
 
     invoke-static {v2, v14}, Ljava/lang/Math;->min(II)I
@@ -1523,13 +2123,13 @@
 
     move-result v4
 
-    .line 253
+    .line 275
     :cond_7
     iget v2, v12, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;->maxHeight:I
 
     if-ltz v2, :cond_8
 
-    .line 254
+    .line 276
     iget v2, v12, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;->maxHeight:I
 
     invoke-static {v2, v9}, Ljava/lang/Math;->min(II)I
@@ -1542,7 +2142,7 @@
 
     move-result v6
 
-    .line 258
+    .line 280
     :cond_8
     const/4 v5, 0x0
 
@@ -1552,7 +2152,7 @@
 
     invoke-virtual/range {v2 .. v7}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->measureChildWithMargins(Landroid/view/View;IIII)V
 
-    .line 262
+    .line 284
     iget v2, v12, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;->gravity:I
 
     invoke-static {v2}, Landroid/view/Gravity;->isVertical(I)Z
@@ -1561,7 +2161,7 @@
 
     if-eqz v2, :cond_9
 
-    .line 263
+    .line 285
     int-to-float v2, v10
 
     invoke-virtual {v3}, Landroid/view/View;->getMeasuredHeight()I
@@ -1580,7 +2180,7 @@
 
     goto :goto_1
 
-    .line 264
+    .line 286
     :cond_9
     iget v2, v12, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;->gravity:I
 
@@ -1590,7 +2190,7 @@
 
     if-eqz v2, :cond_4
 
-    .line 265
+    .line 287
     int-to-float v2, v15
 
     invoke-virtual {v3}, Landroid/view/View;->getMeasuredWidth()I
@@ -1609,7 +2209,7 @@
 
     goto :goto_1
 
-    .line 267
+    .line 289
     .end local v4           #adjustedWidthSpec:I
     .end local v6           #adjustedHeightSpec:I
     :cond_a
@@ -1619,12 +2219,12 @@
 
     if-ne v2, v5, :cond_4
 
-    .line 268
+    .line 290
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v3}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->setScrimView(Landroid/view/View;)V
 
-    .line 269
+    .line 291
     move/from16 v0, p1
 
     move/from16 v1, p2
@@ -1633,7 +2233,7 @@
 
     goto/16 :goto_1
 
-    .line 274
+    .line 296
     .end local v3           #child:Landroid/view/View;
     .end local v12           #lp:Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;
     :cond_b
@@ -1642,14 +2242,14 @@
     :goto_2
     if-ge v11, v8, :cond_12
 
-    .line 275
+    .line 297
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v11}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 276
+    .line 298
     .restart local v3       #child:Landroid/view/View;
     invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -1657,7 +2257,7 @@
 
     check-cast v12, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;
 
-    .line 278
+    .line 300
     .restart local v12       #lp:Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;
     iget v2, v12, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;->childType:I
 
@@ -1679,14 +2279,14 @@
 
     if-ne v2, v5, :cond_d
 
-    .line 274
+    .line 296
     :cond_c
     :goto_3
     add-int/lit8 v11, v11, 0x1
 
     goto :goto_2
 
-    .line 285
+    .line 307
     :cond_d
     move-object/from16 v0, p0
 
@@ -1694,7 +2294,7 @@
 
     move-result v13
 
-    .line 289
+    .line 311
     .local v13, virtualHeight:I
     iget v2, v12, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;->centerWithinArea:F
 
@@ -1704,14 +2304,14 @@
 
     if-lez v2, :cond_11
 
-    .line 290
+    .line 312
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mOrientation:I
 
     if-nez v2, :cond_10
 
-    .line 291
+    .line 313
     sub-int v2, v14, v15
 
     int-to-float v2, v2
@@ -1732,7 +2332,7 @@
 
     move-result v4
 
-    .line 294
+    .line 316
     .restart local v4       #adjustedWidthSpec:I
     const/high16 v2, 0x4000
 
@@ -1740,14 +2340,14 @@
 
     move-result v6
 
-    .line 309
+    .line 331
     .restart local v6       #adjustedHeightSpec:I
     :goto_4
     iget v2, v12, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;->maxWidth:I
 
     if-ltz v2, :cond_e
 
-    .line 310
+    .line 332
     iget v2, v12, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;->maxWidth:I
 
     invoke-static {v4}, Landroid/view/View$MeasureSpec;->getSize(I)I
@@ -1764,13 +2364,13 @@
 
     move-result v4
 
-    .line 314
+    .line 336
     :cond_e
     iget v2, v12, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;->maxHeight:I
 
     if-ltz v2, :cond_f
 
-    .line 315
+    .line 337
     iget v2, v12, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$LayoutParams;->maxHeight:I
 
     invoke-static {v6}, Landroid/view/View$MeasureSpec;->getSize(I)I
@@ -1787,7 +2387,7 @@
 
     move-result v6
 
-    .line 320
+    .line 342
     :cond_f
     const/4 v5, 0x0
 
@@ -1799,7 +2399,7 @@
 
     goto :goto_3
 
-    .line 297
+    .line 319
     .end local v4           #adjustedWidthSpec:I
     .end local v6           #adjustedHeightSpec:I
     :cond_10
@@ -1811,7 +2411,7 @@
 
     move-result v4
 
-    .line 299
+    .line 321
     .restart local v4       #adjustedWidthSpec:I
     int-to-float v2, v13
 
@@ -1834,7 +2434,7 @@
     .restart local v6       #adjustedHeightSpec:I
     goto :goto_4
 
-    .line 304
+    .line 326
     .end local v4           #adjustedWidthSpec:I
     .end local v6           #adjustedHeightSpec:I
     :cond_11
@@ -1846,7 +2446,7 @@
 
     move-result v4
 
-    .line 306
+    .line 328
     .restart local v4       #adjustedWidthSpec:I
     const/high16 v2, 0x4000
 
@@ -1857,7 +2457,7 @@
     .restart local v6       #adjustedHeightSpec:I
     goto :goto_4
 
-    .line 322
+    .line 344
     .end local v3           #child:Landroid/view/View;
     .end local v4           #adjustedWidthSpec:I
     .end local v6           #adjustedHeightSpec:I
@@ -1873,7 +2473,7 @@
     .parameter "focused"
 
     .prologue
-    .line 164
+    .line 186
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mIsBouncing:Z
 
     if-eqz v0, :cond_0
@@ -1882,14 +2482,37 @@
 
     if-eq p1, v0, :cond_0
 
-    .line 167
+    .line 189
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->hideBouncer()V
 
-    .line 169
+    .line 191
     :cond_0
     invoke-super {p0, p1, p2}, Landroid/view/ViewGroup;->requestChildFocus(Landroid/view/View;Landroid/view/View;)V
 
-    .line 170
+    .line 192
+    return-void
+.end method
+
+.method public setClipChildrenForNewEventView(Z)V
+    .locals 1
+    .parameter "clipChildren"
+
+    .prologue
+    .line 722
+    invoke-virtual {p0, p1}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->setClipChildren(Z)V
+
+    .line 723
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
+
+    if-eqz v0, :cond_0
+
+    .line 724
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
+
+    invoke-virtual {v0, p1}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;->setClipChildrenForNewEventView(Z)V
+
+    .line 726
+    :cond_0
     return-void
 .end method
 
@@ -1898,10 +2521,10 @@
     .parameter "listener"
 
     .prologue
-    .line 159
+    .line 167
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mBouncerListener:Lcom/android/internal/policy/impl/keyguard/ChallengeLayout$OnBouncerStateChangedListener;
 
-    .line 160
+    .line 168
     return-void
 .end method
 
@@ -1910,23 +2533,23 @@
     .parameter "scrim"
 
     .prologue
-    .line 173
+    .line 195
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mScrimView:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    .line 174
+    .line 196
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mScrimView:Landroid/view/View;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 176
+    .line 198
     :cond_0
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mScrimView:Landroid/view/View;
 
-    .line 177
+    .line 199
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mScrimView:Landroid/view/View;
 
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mIsBouncing:Z
@@ -1938,7 +2561,7 @@
     :goto_0
     invoke-virtual {v1, v0}, Landroid/view/View;->setAlpha(F)V
 
-    .line 178
+    .line 200
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mScrimView:Landroid/view/View;
 
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mIsBouncing:Z
@@ -1950,34 +2573,56 @@
     :goto_1
     invoke-virtual {v1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 179
+    .line 201
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mScrimView:Landroid/view/View;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setFocusable(Z)V
 
-    .line 180
+    .line 202
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mScrimView:Landroid/view/View;
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mScrimClickListener:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 181
+    .line 203
     return-void
 
-    .line 177
+    .line 199
     :cond_1
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 178
+    .line 200
     :cond_2
     const/4 v0, 0x4
 
     goto :goto_1
+.end method
+
+.method public setTouchRecepientForKeyguardLayer(Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;)V
+    .locals 1
+    .parameter "glowPadView"
+
+    .prologue
+    .line 696
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mKeyguardLayerForegroundLayout:Landroid/widget/FrameLayout;
+
+    if-eqz v0, :cond_0
+
+    if-eqz p1, :cond_0
+
+    .line 697
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mKeyguardLayerForegroundLayout:Landroid/widget/FrameLayout;
+
+    invoke-virtual {p1, v0}, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->setTouchRecepient(Landroid/view/View;)V
+
+    .line 699
+    :cond_0
+    return-void
 .end method
 
 .method public showBouncer()V
@@ -1986,38 +2631,38 @@
     .prologue
     const/4 v6, 0x1
 
-    .line 106
+    .line 114
     iget-boolean v1, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mIsBouncing:Z
 
     if-eqz v1, :cond_1
 
-    .line 126
+    .line 134
     :cond_0
     :goto_0
     return-void
 
-    .line 107
+    .line 115
     :cond_1
     iput-boolean v6, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mIsBouncing:Z
 
-    .line 108
+    .line 116
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mScrimView:Landroid/view/View;
 
     if-eqz v1, :cond_3
 
-    .line 109
+    .line 117
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     if-eqz v1, :cond_2
 
-    .line 110
+    .line 118
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mChallengeView:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;
 
     const/16 v2, 0x15e
 
     invoke-virtual {v1, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;->showBouncer(I)V
 
-    .line 113
+    .line 121
     :cond_2
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mScrimView:Landroid/view/View;
 
@@ -2035,30 +2680,30 @@
 
     move-result-object v0
 
-    .line 114
+    .line 122
     .local v0, anim:Landroid/animation/Animator;
     const-wide/16 v1, 0x15e
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
 
-    .line 115
+    .line 123
     new-instance v1, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$2;
 
     invoke-direct {v1, p0}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$2;-><init>(Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;)V
 
-    invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 121
-    invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
+    .line 129
+    invoke-virtual {v0}, Landroid/animation/Animator;->start()V
 
-    .line 123
+    .line 131
     .end local v0           #anim:Landroid/animation/Animator;
     :cond_3
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mBouncerListener:Lcom/android/internal/policy/impl/keyguard/ChallengeLayout$OnBouncerStateChangedListener;
 
     if-eqz v1, :cond_0
 
-    .line 124
+    .line 132
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mBouncerListener:Lcom/android/internal/policy/impl/keyguard/ChallengeLayout$OnBouncerStateChangedListener;
 
     invoke-interface {v1, v6}, Lcom/android/internal/policy/impl/keyguard/ChallengeLayout$OnBouncerStateChangedListener;->onBouncerStateChanged(Z)V
@@ -2071,6 +2716,28 @@
     .parameter "b"
 
     .prologue
-    .line 97
+    .line 105
+    return-void
+.end method
+
+.method public updateKeyguardLayerVisibility(Z)V
+    .locals 1
+    .parameter "show"
+
+    .prologue
+    .line 690
+    iput-boolean p1, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mShowKeyguardLayer:Z
+
+    .line 691
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mShowKeyguardLayerRunnable:Ljava/lang/Runnable;
+
+    invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->removeCallbacks(Ljava/lang/Runnable;)Z
+
+    .line 692
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mShowKeyguardLayerRunnable:Ljava/lang/Runnable;
+
+    invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->post(Ljava/lang/Runnable;)Z
+
+    .line 693
     return-void
 .end method

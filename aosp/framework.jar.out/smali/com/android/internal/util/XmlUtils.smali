@@ -9,7 +9,7 @@
 
     .prologue
     .line 38
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -1740,7 +1740,7 @@
     .line 805
     .end local v1           #res:Ljava/lang/Integer;
     :cond_8
-    const-string v5, "long"
+    const-string/jumbo v5, "long"
 
     invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -3028,7 +3028,7 @@
     if-eqz v1, :cond_6
 
     .line 431
-    const-string v0, "long"
+    const-string/jumbo v0, "long"
 
     .restart local v0       #typeStr:Ljava/lang/String;
     goto :goto_1

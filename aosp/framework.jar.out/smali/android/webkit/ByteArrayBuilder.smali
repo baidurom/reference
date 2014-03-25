@@ -14,6 +14,8 @@
 # static fields
 .field private static final DEFAULT_CAPACITY:I = 0x2000
 
+.field private static final XLOGTAG:Ljava/lang/String; = "webkit/ByteArrayBuilder"
+
 .field private static final sPool:Ljava/util/LinkedList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -57,14 +59,14 @@
     .locals 1
 
     .prologue
-    .line 34
+    .line 39
     new-instance v0, Ljava/util/LinkedList;
 
     invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
     sput-object v0, Landroid/webkit/ByteArrayBuilder;->sPool:Ljava/util/LinkedList;
 
-    .line 37
+    .line 42
     new-instance v0, Ljava/lang/ref/ReferenceQueue;
 
     invoke-direct {v0}, Ljava/lang/ref/ReferenceQueue;-><init>()V
@@ -78,17 +80,17 @@
     .locals 1
 
     .prologue
-    .line 42
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 47
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 43
+    .line 48
     new-instance v0, Ljava/util/LinkedList;
 
     invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
     iput-object v0, p0, Landroid/webkit/ByteArrayBuilder;->mChunks:Ljava/util/LinkedList;
 
-    .line 44
+    .line 49
     return-void
 .end method
 
@@ -96,7 +98,7 @@
     .locals 1
 
     .prologue
-    .line 29
+    .line 32
     sget-object v0, Landroid/webkit/ByteArrayBuilder;->sPool:Ljava/util/LinkedList;
 
     return-object v0
@@ -106,7 +108,7 @@
     .locals 1
 
     .prologue
-    .line 29
+    .line 32
     sget-object v0, Landroid/webkit/ByteArrayBuilder;->sQueue:Ljava/lang/ref/ReferenceQueue;
 
     return-object v0
@@ -117,25 +119,25 @@
     .parameter "length"
 
     .prologue
-    .line 113
+    .line 126
     const/16 v1, 0x2000
 
     if-ge p1, v1, :cond_0
 
-    .line 114
+    .line 127
     const/16 p1, 0x2000
 
-    .line 116
+    .line 129
     :cond_0
     sget-object v2, Landroid/webkit/ByteArrayBuilder;->sPool:Ljava/util/LinkedList;
 
     monitor-enter v2
 
-    .line 118
+    .line 131
     :try_start_0
     invoke-direct {p0}, Landroid/webkit/ByteArrayBuilder;->processPoolLocked()V
 
-    .line 119
+    .line 132
     sget-object v1, Landroid/webkit/ByteArrayBuilder;->sPool:Ljava/util/LinkedList;
 
     invoke-virtual {v1}, Ljava/util/LinkedList;->isEmpty()Z
@@ -144,7 +146,7 @@
 
     if-nez v1, :cond_1
 
-    .line 120
+    .line 133
     sget-object v1, Landroid/webkit/ByteArrayBuilder;->sPool:Ljava/util/LinkedList;
 
     invoke-virtual {v1}, Ljava/util/LinkedList;->removeFirst()Ljava/lang/Object;
@@ -159,14 +161,14 @@
 
     check-cast v0, Landroid/webkit/ByteArrayBuilder$Chunk;
 
-    .line 123
+    .line 136
     .local v0, c:Landroid/webkit/ByteArrayBuilder$Chunk;
     if-eqz v0, :cond_1
 
-    .line 124
+    .line 137
     monitor-exit v2
 
-    .line 127
+    .line 140
     .end local v0           #c:Landroid/webkit/ByteArrayBuilder$Chunk;
     :goto_0
     return-object v0
@@ -180,7 +182,7 @@
 
     goto :goto_0
 
-    .line 128
+    .line 141
     :catchall_0
     move-exception v1
 
@@ -195,7 +197,7 @@
     .locals 2
 
     .prologue
-    .line 103
+    .line 116
     :goto_0
     sget-object v1, Landroid/webkit/ByteArrayBuilder;->sQueue:Ljava/lang/ref/ReferenceQueue;
 
@@ -205,14 +207,14 @@
 
     check-cast v0, Ljava/lang/ref/SoftReference;
 
-    .line 104
+    .line 117
     .local v0, entry:Ljava/lang/ref/SoftReference;,"Ljava/lang/ref/SoftReference<Landroid/webkit/ByteArrayBuilder$Chunk;>;"
     if-nez v0, :cond_0
 
-    .line 109
+    .line 122
     return-void
 
-    .line 107
+    .line 120
     :cond_0
     sget-object v1, Landroid/webkit/ByteArrayBuilder;->sPool:Ljava/util/LinkedList;
 
@@ -230,123 +232,144 @@
     .parameter "length"
 
     .prologue
-    .line 47
+    .line 53
     monitor-enter p0
 
-    :goto_0
-    if-lez p3, :cond_2
-
-    .line 48
-    const/4 v2, 0x0
-
-    .line 49
-    .local v2, c:Landroid/webkit/ByteArrayBuilder$Chunk;
     :try_start_0
-    iget-object v3, p0, Landroid/webkit/ByteArrayBuilder;->mChunks:Ljava/util/LinkedList;
+    const-string/jumbo v2, "webkit/ByteArrayBuilder"
 
-    invoke-virtual {v3}, Ljava/util/LinkedList;->isEmpty()Z
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    move-result v3
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    if-eqz v3, :cond_1
+    const-string v4, "ByteArrayBuilder append length: "
 
-    .line 50
-    invoke-direct {p0, p3}, Landroid/webkit/ByteArrayBuilder;->obtainChunk(I)Landroid/webkit/ByteArrayBuilder$Chunk;
-
-    move-result-object v2
-
-    .line 51
-    iget-object v3, p0, Landroid/webkit/ByteArrayBuilder;->mChunks:Ljava/util/LinkedList;
-
-    invoke-virtual {v3, v2}, Ljava/util/LinkedList;->addLast(Ljava/lang/Object;)V
-
-    .line 59
-    :cond_0
-    :goto_1
-    iget-object v3, v2, Landroid/webkit/ByteArrayBuilder$Chunk;->mArray:[B
-
-    array-length v3, v3
-
-    iget v4, v2, Landroid/webkit/ByteArrayBuilder$Chunk;->mLength:I
-
-    sub-int/2addr v3, v4
-
-    invoke-static {p3, v3}, Ljava/lang/Math;->min(II)I
-
-    move-result v1
-
-    .line 60
-    .local v1, amount:I
-    iget-object v3, v2, Landroid/webkit/ByteArrayBuilder$Chunk;->mArray:[B
-
-    iget v4, v2, Landroid/webkit/ByteArrayBuilder$Chunk;->mLength:I
-
-    invoke-static {p1, p2, v3, v4, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 61
-    iget v3, v2, Landroid/webkit/ByteArrayBuilder$Chunk;->mLength:I
-
-    add-int/2addr v3, v1
-
-    iput v3, v2, Landroid/webkit/ByteArrayBuilder$Chunk;->mLength:I
-
-    .line 62
-    sub-int/2addr p3, v1
-
-    .line 63
-    add-int/2addr p2, v1
-
-    .line 64
-    goto :goto_0
-
-    .line 53
-    .end local v1           #amount:I
-    :cond_1
-    iget-object v3, p0, Landroid/webkit/ByteArrayBuilder;->mChunks:Ljava/util/LinkedList;
-
-    invoke-virtual {v3}, Ljava/util/LinkedList;->getLast()Ljava/lang/Object;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
-    move-object v0, v3
+    invoke-virtual {v3, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    check-cast v0, Landroid/webkit/ByteArrayBuilder$Chunk;
+    move-result-object v3
 
-    move-object v2, v0
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 54
-    iget v3, v2, Landroid/webkit/ByteArrayBuilder$Chunk;->mLength:I
-
-    iget-object v4, v2, Landroid/webkit/ByteArrayBuilder$Chunk;->mArray:[B
-
-    array-length v4, v4
-
-    if-ne v3, v4, :cond_0
+    :goto_0
+    if-lez p3, :cond_2
 
     .line 55
-    invoke-direct {p0, p3}, Landroid/webkit/ByteArrayBuilder;->obtainChunk(I)Landroid/webkit/ByteArrayBuilder$Chunk;
-
-    move-result-object v2
+    const/4 v1, 0x0
 
     .line 56
-    iget-object v3, p0, Landroid/webkit/ByteArrayBuilder;->mChunks:Ljava/util/LinkedList;
+    .local v1, c:Landroid/webkit/ByteArrayBuilder$Chunk;
+    iget-object v2, p0, Landroid/webkit/ByteArrayBuilder;->mChunks:Ljava/util/LinkedList;
 
-    invoke-virtual {v3, v2}, Ljava/util/LinkedList;->addLast(Ljava/lang/Object;)V
+    invoke-virtual {v2}, Ljava/util/LinkedList;->isEmpty()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    .line 57
+    invoke-direct {p0, p3}, Landroid/webkit/ByteArrayBuilder;->obtainChunk(I)Landroid/webkit/ByteArrayBuilder$Chunk;
+
+    move-result-object v1
+
+    .line 58
+    iget-object v2, p0, Landroid/webkit/ByteArrayBuilder;->mChunks:Ljava/util/LinkedList;
+
+    invoke-virtual {v2, v1}, Ljava/util/LinkedList;->addLast(Ljava/lang/Object;)V
+
+    .line 66
+    :cond_0
+    :goto_1
+    iget-object v2, v1, Landroid/webkit/ByteArrayBuilder$Chunk;->mArray:[B
+
+    array-length v2, v2
+
+    iget v3, v1, Landroid/webkit/ByteArrayBuilder$Chunk;->mLength:I
+
+    sub-int/2addr v2, v3
+
+    invoke-static {p3, v2}, Ljava/lang/Math;->min(II)I
+
+    move-result v0
+
+    .line 67
+    .local v0, amount:I
+    iget-object v2, v1, Landroid/webkit/ByteArrayBuilder$Chunk;->mArray:[B
+
+    iget v3, v1, Landroid/webkit/ByteArrayBuilder$Chunk;->mLength:I
+
+    invoke-static {p1, p2, v2, v3, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 68
+    iget v2, v1, Landroid/webkit/ByteArrayBuilder$Chunk;->mLength:I
+
+    add-int/2addr v2, v0
+
+    iput v2, v1, Landroid/webkit/ByteArrayBuilder$Chunk;->mLength:I
+
+    .line 69
+    sub-int/2addr p3, v0
+
+    .line 70
+    add-int/2addr p2, v0
+
+    .line 71
+    goto :goto_0
+
+    .line 60
+    .end local v0           #amount:I
+    :cond_1
+    iget-object v2, p0, Landroid/webkit/ByteArrayBuilder;->mChunks:Ljava/util/LinkedList;
+
+    invoke-virtual {v2}, Ljava/util/LinkedList;->getLast()Ljava/lang/Object;
+
+    move-result-object v1
+
+    .end local v1           #c:Landroid/webkit/ByteArrayBuilder$Chunk;
+    check-cast v1, Landroid/webkit/ByteArrayBuilder$Chunk;
+
+    .line 61
+    .restart local v1       #c:Landroid/webkit/ByteArrayBuilder$Chunk;
+    iget v2, v1, Landroid/webkit/ByteArrayBuilder$Chunk;->mLength:I
+
+    iget-object v3, v1, Landroid/webkit/ByteArrayBuilder$Chunk;->mArray:[B
+
+    array-length v3, v3
+
+    if-ne v2, v3, :cond_0
+
+    .line 62
+    invoke-direct {p0, p3}, Landroid/webkit/ByteArrayBuilder;->obtainChunk(I)Landroid/webkit/ByteArrayBuilder$Chunk;
+
+    move-result-object v1
+
+    .line 63
+    iget-object v2, p0, Landroid/webkit/ByteArrayBuilder;->mChunks:Ljava/util/LinkedList;
+
+    invoke-virtual {v2, v1}, Ljava/util/LinkedList;->addLast(Ljava/lang/Object;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_1
 
-    .line 47
+    .line 53
+    .end local v1           #c:Landroid/webkit/ByteArrayBuilder$Chunk;
     :catchall_0
-    move-exception v3
+    move-exception v2
 
     monitor-exit p0
 
-    throw v3
+    throw v2
 
-    .line 65
-    .end local v2           #c:Landroid/webkit/ByteArrayBuilder$Chunk;
+    .line 72
     :cond_2
     monitor-exit p0
 
@@ -354,26 +377,56 @@
 .end method
 
 .method public declared-synchronized clear()V
-    .locals 2
+    .locals 4
 
     .prologue
-    .line 93
+    .line 103
     monitor-enter p0
 
     :try_start_0
+    const-string/jumbo v1, "webkit/ByteArrayBuilder"
+
+    const-string v2, "ByteArrayBuilder clear()"
+
+    invoke-static {v1, v2}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 104
     invoke-virtual {p0}, Landroid/webkit/ByteArrayBuilder;->getFirstChunk()Landroid/webkit/ByteArrayBuilder$Chunk;
 
     move-result-object v0
 
-    .line 94
+    .line 105
     .local v0, c:Landroid/webkit/ByteArrayBuilder$Chunk;
     :goto_0
     if-eqz v0, :cond_0
 
-    .line 95
+    .line 107
+    const-string/jumbo v1, "webkit/ByteArrayBuilder"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "ByteArrayBuilder clear() chunk release:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 108
     invoke-virtual {v0}, Landroid/webkit/ByteArrayBuilder$Chunk;->release()V
 
-    .line 96
+    .line 109
     invoke-virtual {p0}, Landroid/webkit/ByteArrayBuilder;->getFirstChunk()Landroid/webkit/ByteArrayBuilder$Chunk;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -382,13 +435,13 @@
 
     goto :goto_0
 
-    .line 98
+    .line 111
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 93
+    .line 103
     .end local v0           #c:Landroid/webkit/ByteArrayBuilder$Chunk;
     :catchall_0
     move-exception v1
@@ -399,15 +452,15 @@
 .end method
 
 .method public declared-synchronized getByteSize()I
-    .locals 5
+    .locals 6
 
     .prologue
-    .line 83
+    .line 90
     monitor-enter p0
 
     const/4 v2, 0x0
 
-    .line 84
+    .line 91
     .local v2, total:I
     :try_start_0
     iget-object v3, p0, Landroid/webkit/ByteArrayBuilder;->mChunks:Ljava/util/LinkedList;
@@ -418,7 +471,7 @@
 
     move-result-object v1
 
-    .line 85
+    .line 92
     .local v1, it:Ljava/util/ListIterator;,"Ljava/util/ListIterator<Landroid/webkit/ByteArrayBuilder$Chunk;>;"
     :goto_0
     invoke-interface {v1}, Ljava/util/ListIterator;->hasNext()Z
@@ -427,32 +480,61 @@
 
     if-eqz v3, :cond_0
 
-    .line 86
+    .line 93
     invoke-interface {v1}, Ljava/util/ListIterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/webkit/ByteArrayBuilder$Chunk;
 
-    .line 87
+    .line 94
     .local v0, c:Landroid/webkit/ByteArrayBuilder$Chunk;
     iget v3, v0, Landroid/webkit/ByteArrayBuilder$Chunk;->mLength:I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     add-int/2addr v2, v3
 
-    .line 88
+    .line 95
     goto :goto_0
 
-    .line 89
+    .line 97
     .end local v0           #c:Landroid/webkit/ByteArrayBuilder$Chunk;
     :cond_0
+    const-string/jumbo v3, "webkit/ByteArrayBuilder"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "ByteArrayBuilder mChunks.size(): "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    iget-object v5, p0, Landroid/webkit/ByteArrayBuilder;->mChunks:Ljava/util/LinkedList;
+
+    invoke-virtual {v5}, Ljava/util/LinkedList;->size()I
+
+    move-result v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 98
     monitor-exit p0
 
     return v2
 
-    .line 83
+    .line 90
     .end local v1           #it:Ljava/util/ListIterator;,"Ljava/util/ListIterator<Landroid/webkit/ByteArrayBuilder$Chunk;>;"
     :catchall_0
     move-exception v3
@@ -466,7 +548,7 @@
     .locals 1
 
     .prologue
-    .line 74
+    .line 81
     monitor-enter p0
 
     :try_start_0
@@ -482,7 +564,7 @@
 
     const/4 v0, 0x0
 
-    .line 75
+    .line 82
     :goto_0
     monitor-exit p0
 
@@ -502,7 +584,7 @@
 
     goto :goto_0
 
-    .line 74
+    .line 81
     :catchall_0
     move-exception v0
 
@@ -515,7 +597,7 @@
     .locals 1
 
     .prologue
-    .line 79
+    .line 86
     monitor-enter p0
 
     :try_start_0

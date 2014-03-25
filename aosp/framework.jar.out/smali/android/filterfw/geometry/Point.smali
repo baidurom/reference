@@ -15,7 +15,7 @@
 
     .prologue
     .line 30
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 31
     return-void
@@ -28,7 +28,7 @@
 
     .prologue
     .line 33
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 34
     iput p1, p0, Landroid/filterfw/geometry/Point;->x:F

@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 205
+    .line 239
     iput-object p1, p0, Landroid/net/wifi/SupplicantStateTracker$InactiveState;->this$0:Landroid/net/wifi/SupplicantStateTracker;
 
     invoke-direct {p0}, Lcom/android/internal/util/State;-><init>()V
@@ -35,9 +35,44 @@
 
 # virtual methods
 .method public enter()V
-    .locals 0
+    .locals 2
 
     .prologue
-    .line 209
+    const/4 v1, 0x0
+
+    .line 243
+    iget-object v0, p0, Landroid/net/wifi/SupplicantStateTracker$InactiveState;->this$0:Landroid/net/wifi/SupplicantStateTracker;
+
+    #getter for: Landroid/net/wifi/SupplicantStateTracker;->mDoingWps:Z
+    invoke-static {v0}, Landroid/net/wifi/SupplicantStateTracker;->access$900(Landroid/net/wifi/SupplicantStateTracker;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 244
+    iget-object v0, p0, Landroid/net/wifi/SupplicantStateTracker$InactiveState;->this$0:Landroid/net/wifi/SupplicantStateTracker;
+
+    #getter for: Landroid/net/wifi/SupplicantStateTracker;->mWifiConfigStore:Landroid/net/wifi/WifiConfigStore;
+    invoke-static {v0}, Landroid/net/wifi/SupplicantStateTracker;->access$1100(Landroid/net/wifi/SupplicantStateTracker;)Landroid/net/wifi/WifiConfigStore;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/net/wifi/WifiConfigStore;->enableAllNetworks()V
+
+    .line 245
+    iget-object v0, p0, Landroid/net/wifi/SupplicantStateTracker$InactiveState;->this$0:Landroid/net/wifi/SupplicantStateTracker;
+
+    #setter for: Landroid/net/wifi/SupplicantStateTracker;->mDoingWps:Z
+    invoke-static {v0, v1}, Landroid/net/wifi/SupplicantStateTracker;->access$902(Landroid/net/wifi/SupplicantStateTracker;Z)Z
+
+    .line 247
+    :cond_0
+    iget-object v0, p0, Landroid/net/wifi/SupplicantStateTracker$InactiveState;->this$0:Landroid/net/wifi/SupplicantStateTracker;
+
+    #setter for: Landroid/net/wifi/SupplicantStateTracker;->mConnecting:Z
+    invoke-static {v0, v1}, Landroid/net/wifi/SupplicantStateTracker;->access$1002(Landroid/net/wifi/SupplicantStateTracker;Z)Z
+
+    .line 248
     return-void
 .end method

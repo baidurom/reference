@@ -29,7 +29,7 @@
     const/16 v1, 0x14
 
     .line 35
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 32
     iput v1, p0, Lcom/android/internal/util/LocalLog;->mMaxLines:I

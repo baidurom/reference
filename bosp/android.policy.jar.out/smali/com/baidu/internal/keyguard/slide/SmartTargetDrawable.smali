@@ -146,7 +146,7 @@
     const/high16 v0, 0x3f80
 
     .line 63
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 22
     iput v1, p0, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->mTranslationX:F

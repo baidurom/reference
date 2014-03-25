@@ -30,12 +30,12 @@
     .parameter
 
     .prologue
-    .line 135
+    .line 139
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView;
 
     iput-object p2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView$2;->val$avatar:Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserAvatar;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -48,7 +48,7 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 138
+    .line 142
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView;
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView$2;->val$avatar:Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserAvatar;
@@ -56,7 +56,7 @@
     #setter for: Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView;->mActiveUserAvatar:Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserAvatar;
     invoke-static {v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView;->access$002(Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView;Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserAvatar;)Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserAvatar;
 
-    .line 139
+    .line 143
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView;->mActiveUserAvatar:Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserAvatar;
@@ -70,6 +70,6 @@
 
     invoke-virtual {v0, v2, v2, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserAvatar;->setActive(ZZLjava/lang/Runnable;)V
 
-    .line 154
+    .line 158
     return-void
 .end method

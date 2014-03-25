@@ -33,14 +33,14 @@
     .parameter
 
     .prologue
-    .line 430
+    .line 464
     iput-object p1, p0, Lcom/baidu/themeanimation/util/FileUtil$LoadBitmapTask$3;->this$1:Lcom/baidu/themeanimation/util/FileUtil$LoadBitmapTask;
 
     iput-object p2, p0, Lcom/baidu/themeanimation/util/FileUtil$LoadBitmapTask$3;->val$imageview:Landroid/widget/ImageView;
 
     iput-object p3, p0, Lcom/baidu/themeanimation/util/FileUtil$LoadBitmapTask$3;->val$bmp:Landroid/graphics/Bitmap;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -51,13 +51,13 @@
     .locals 2
 
     .prologue
-    .line 433
+    .line 467
     iget-object v0, p0, Lcom/baidu/themeanimation/util/FileUtil$LoadBitmapTask$3;->val$imageview:Landroid/widget/ImageView;
 
     iget-object v1, p0, Lcom/baidu/themeanimation/util/FileUtil$LoadBitmapTask$3;->val$bmp:Landroid/graphics/Bitmap;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 434
+    .line 468
     return-void
 .end method

@@ -366,21 +366,8 @@
 
     invoke-virtual {v0}, Lcom/baidu/themeanimation/element/LockScreenElement;->startAnimations()V
 
-    .line 191
-    :cond_0
-    invoke-static {}, Lcom/baidu/themeanimation/util/FileUtil;->getInstance()Lcom/baidu/themeanimation/util/FileUtil;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
-
-    invoke-virtual {v1}, Lcom/android/internal/widget/LockPatternUtils;->isTactileFeedbackEnabled()Z
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Lcom/baidu/themeanimation/util/FileUtil;->setTactileFeedbackEnabled(Z)V
-
     .line 192
+    :cond_0
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mCategory:I

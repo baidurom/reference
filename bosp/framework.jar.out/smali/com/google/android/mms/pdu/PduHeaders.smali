@@ -54,6 +54,8 @@
 
 .field public static final DATE:I = 0x85
 
+.field public static final DATE_SENT:I = 0xc9
+
 .field public static final DELIVERY_REPORT:I = 0x86
 
 .field public static final DELIVERY_TIME:I = 0x87
@@ -409,7 +411,7 @@
 
     .prologue
     .line 330
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 325
     const/4 v0, 0x0
@@ -821,7 +823,7 @@
     .line 703
     sparse-switch p3, :sswitch_data_0
 
-    .line 717
+    .line 718
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Invalid header field!"
@@ -830,7 +832,7 @@
 
     throw v0
 
-    .line 719
+    .line 720
     :sswitch_0
     iget-object v0, p0, Lcom/google/android/mms/pdu/PduHeaders;->mHeaderMap:Ljava/util/HashMap;
 
@@ -844,7 +846,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 720
+    .line 721
     return-void
 
     .line 703
@@ -862,6 +864,7 @@
         0xad -> :sswitch_0
         0xaf -> :sswitch_0
         0xb3 -> :sswitch_0
+        0xc9 -> :sswitch_0
     .end sparse-switch
 .end method
 

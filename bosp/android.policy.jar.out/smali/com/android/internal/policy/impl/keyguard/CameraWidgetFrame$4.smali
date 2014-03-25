@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 92
+    .line 91
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$4;->this$0:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,12 +41,36 @@
     .locals 1
 
     .prologue
-    .line 95
+    .line 94
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$4;->this$0:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;
 
-    #calls: Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->recover()V
-    invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->access$900(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;)V
+    #getter for: Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mRecovering:Z
+    invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->access$900(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 98
+    :goto_0
+    return-void
 
     .line 96
-    return-void
+    :cond_0
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$4;->this$0:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;
+
+    #getter for: Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->mCallbacks:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$Callbacks;
+    invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->access$1000(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;)Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$Callbacks;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$Callbacks;->onCameraLaunchedUnsuccessfully()V
+
+    .line 97
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame$4;->this$0:Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;
+
+    #calls: Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->reset()V
+    invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;->access$1100(Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;)V
+
+    goto :goto_0
 .end method

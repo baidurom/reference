@@ -6,7 +6,7 @@
 # static fields
 .field private static final BLACKLIST_CONFIG_NAME:Ljava/lang/String; = "locationPackagePrefixBlacklist"
 
-.field private static final D:Z = false
+.field private static final D:Z = true
 
 .field private static final TAG:Ljava/lang/String; = "LocationBlacklist"
 
@@ -40,7 +40,7 @@
     .line 47
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/location/LocationBlacklist;->mLock:Ljava/lang/Object;
 
@@ -465,7 +465,7 @@
 .end method
 
 .method public isBlacklisted(Ljava/lang/String;)Z
-    .locals 6
+    .locals 8
     .parameter "packageName"
 
     .prologue
@@ -511,8 +511,41 @@
 
     goto :goto_0
 
-    .line 94
+    .line 92
     :cond_1
+    const-string v4, "LocationBlacklist"
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v7, "dropping location (blacklisted): "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    const-string v7, " matches "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v4, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 94
     const/4 v4, 0x1
 
     monitor-exit v5

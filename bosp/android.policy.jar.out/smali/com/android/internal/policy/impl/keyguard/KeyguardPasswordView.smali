@@ -8,10 +8,16 @@
 .implements Landroid/text/TextWatcher;
 
 
+# static fields
+.field private static final TAG:Ljava/lang/String; = "KeyguardPasswordView"
+
+
 # instance fields
 .field mImm:Landroid/view/inputmethod/InputMethodManager;
 
 .field private final mShowImeAtScreenOn:Z
+
+.field private mTempLocation:[I
 
 
 # direct methods
@@ -20,12 +26,12 @@
     .parameter "context"
 
     .prologue
-    .line 52
+    .line 54
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 53
+    .line 55
     return-void
 .end method
 
@@ -35,10 +41,17 @@
     .parameter "attrs"
 
     .prologue
-    .line 56
+    .line 58
     invoke-direct {p0, p1, p2}, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 57
+    .line 221
+    const/4 v0, 0x2
+
+    new-array v0, v0, [I
+
+    iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;->mTempLocation:[I
+
+    .line 59
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -51,7 +64,7 @@
 
     iput-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;->mShowImeAtScreenOn:Z
 
-    .line 59
+    .line 61
     return-void
 .end method
 
@@ -65,16 +78,16 @@
 
     const/4 v10, 0x1
 
-    .line 161
+    .line 172
     invoke-virtual {p1}, Landroid/view/inputmethod/InputMethodManager;->getEnabledInputMethodList()Ljava/util/List;
 
     move-result-object v1
 
-    .line 164
+    .line 175
     .local v1, enabledImis:Ljava/util/List;,"Ljava/util/List<Landroid/view/inputmethod/InputMethodInfo;>;"
     const/4 v2, 0x0
 
-    .line 166
+    .line 177
     .local v2, filteredImisCount:I
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -94,23 +107,23 @@
 
     check-cast v5, Landroid/view/inputmethod/InputMethodInfo;
 
-    .line 168
+    .line 179
     .local v5, imi:Landroid/view/inputmethod/InputMethodInfo;
     if-le v2, v10, :cond_1
 
-    .line 194
+    .line 205
     .end local v5           #imi:Landroid/view/inputmethod/InputMethodInfo;
     :goto_1
     return v10
 
-    .line 169
+    .line 180
     .restart local v5       #imi:Landroid/view/inputmethod/InputMethodInfo;
     :cond_1
     invoke-virtual {p1, v5, v10}, Landroid/view/inputmethod/InputMethodManager;->getEnabledInputMethodSubtypeList(Landroid/view/inputmethod/InputMethodInfo;Z)Ljava/util/List;
 
     move-result-object v8
 
-    .line 172
+    .line 183
     .local v8, subtypes:Ljava/util/List;,"Ljava/util/List<Landroid/view/inputmethod/InputMethodSubtype;>;"
     invoke-interface {v8}, Ljava/util/List;->isEmpty()Z
 
@@ -118,17 +131,17 @@
 
     if-eqz v11, :cond_2
 
-    .line 173
+    .line 184
     add-int/lit8 v2, v2, 0x1
 
-    .line 174
+    .line 185
     goto :goto_0
 
-    .line 177
+    .line 188
     :cond_2
     const/4 v0, 0x0
 
-    .line 178
+    .line 189
     .local v0, auxCount:I
     invoke-interface {v8}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -149,7 +162,7 @@
 
     check-cast v7, Landroid/view/inputmethod/InputMethodSubtype;
 
-    .line 179
+    .line 190
     .local v7, subtype:Landroid/view/inputmethod/InputMethodSubtype;
     invoke-virtual {v7}, Landroid/view/inputmethod/InputMethodSubtype;->isAuxiliary()Z
 
@@ -157,12 +170,12 @@
 
     if-eqz v11, :cond_3
 
-    .line 180
+    .line 191
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_2
 
-    .line 183
+    .line 194
     .end local v7           #subtype:Landroid/view/inputmethod/InputMethodSubtype;
     :cond_4
     invoke-interface {v8}, Ljava/util/List;->size()I
@@ -171,7 +184,7 @@
 
     sub-int v6, v11, v0
 
-    .line 188
+    .line 199
     .local v6, nonAuxCount:I
     if-gtz v6, :cond_5
 
@@ -179,14 +192,14 @@
 
     if-le v0, v10, :cond_0
 
-    .line 189
+    .line 200
     :cond_5
     add-int/lit8 v2, v2, 0x1
 
-    .line 190
+    .line 201
     goto :goto_0
 
-    .line 194
+    .line 205
     .end local v0           #auxCount:I
     .end local v4           #i$:Ljava/util/Iterator;
     .end local v5           #imi:Landroid/view/inputmethod/InputMethodInfo;
@@ -222,7 +235,7 @@
     .locals 1
 
     .prologue
-    .line 68
+    .line 70
     const v0, #id@passwordEntry#t
 
     return v0
@@ -232,7 +245,7 @@
     .locals 1
 
     .prologue
-    .line 206
+    .line 217
     const v0, #string@kg_wrong_password#t
 
     return v0
@@ -242,7 +255,7 @@
     .locals 1
 
     .prologue
-    .line 73
+    .line 75
     const/4 v0, 0x1
 
     return v0
@@ -254,13 +267,13 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 93
+    .line 104
     invoke-super {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;->onFinishInflate()V
 
-    .line 95
+    .line 106
     const/4 v0, 0x0
 
-    .line 97
+    .line 108
     .local v0, imeOrDeleteButtonVisible:Z
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;->getContext()Landroid/content/Context;
 
@@ -276,8 +289,8 @@
 
     iput-object v4, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;->mImm:Landroid/view/inputmethod/InputMethodManager;
 
-    .line 100
-    iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;->mPasswordEntry:Landroid/widget/TextView;
+    .line 111
+    iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;->mPasswordEntry:Landroid/widget/TextView;
 
     invoke-static {}, Landroid/text/method/TextKeyListener;->getInstance()Landroid/text/method/TextKeyListener;
 
@@ -285,15 +298,15 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setKeyListener(Landroid/text/method/KeyListener;)V
 
-    .line 101
-    iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;->mPasswordEntry:Landroid/widget/TextView;
+    .line 112
+    iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;->mPasswordEntry:Landroid/widget/TextView;
 
     const/16 v5, 0x81
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setInputType(I)V
 
-    .line 105
-    iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;->mPasswordEntry:Landroid/widget/TextView;
+    .line 116
+    iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;->mPasswordEntry:Landroid/widget/TextView;
 
     new-instance v5, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView$1;
 
@@ -301,8 +314,8 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 111
-    iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;->mPasswordEntry:Landroid/widget/TextView;
+    .line 122
+    iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;->mPasswordEntry:Landroid/widget/TextView;
 
     new-instance v5, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView$2;
 
@@ -310,19 +323,19 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    .line 125
-    iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;->mPasswordEntry:Landroid/widget/TextView;
+    .line 136
+    iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;->mPasswordEntry:Landroid/widget/TextView;
 
     invoke-virtual {v4}, Landroid/widget/TextView;->requestFocus()Z
 
-    .line 128
+    .line 139
     const v4, #id@switch_ime_button#t
 
     invoke-virtual {p0, v4}, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;->findViewById(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 129
+    .line 140
     .local v3, switchImeButton:Landroid/view/View;
     if-eqz v3, :cond_0
 
@@ -334,31 +347,31 @@
 
     if-eqz v4, :cond_0
 
-    .line 130
+    .line 141
     invoke-virtual {v3, v6}, Landroid/view/View;->setVisibility(I)V
 
-    .line 131
+    .line 142
     const/4 v0, 0x1
 
-    .line 132
+    .line 143
     new-instance v4, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView$3;
 
     invoke-direct {v4, p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView$3;-><init>(Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;)V
 
     invoke-virtual {v3, v4}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 142
+    .line 153
     :cond_0
     if-nez v0, :cond_1
 
-    .line 143
-    iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;->mPasswordEntry:Landroid/widget/TextView;
+    .line 154
+    iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;->mPasswordEntry:Landroid/widget/TextView;
 
     invoke-virtual {v4}, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v2
 
-    .line 144
+    .line 155
     .local v2, params:Landroid/view/ViewGroup$LayoutParams;
     instance-of v4, v2, Landroid/view/ViewGroup$MarginLayoutParams;
 
@@ -366,19 +379,19 @@
 
     move-object v1, v2
 
-    .line 145
+    .line 156
     check-cast v1, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    .line 146
+    .line 157
     .local v1, mlp:Landroid/view/ViewGroup$MarginLayoutParams;
     invoke-virtual {v1, v6}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginStart(I)V
 
-    .line 147
-    iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;->mPasswordEntry:Landroid/widget/TextView;
+    .line 158
+    iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;->mPasswordEntry:Landroid/widget/TextView;
 
     invoke-virtual {v4, v2}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 150
+    .line 161
     .end local v1           #mlp:Landroid/view/ViewGroup$MarginLayoutParams;
     .end local v2           #params:Landroid/view/ViewGroup$LayoutParams;
     :cond_1
@@ -389,10 +402,10 @@
     .locals 3
 
     .prologue
-    .line 87
+    .line 98
     invoke-super {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;->onPause()V
 
-    .line 88
+    .line 99
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;->mImm:Landroid/view/inputmethod/InputMethodManager;
 
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;->getWindowToken()Landroid/os/IBinder;
@@ -403,51 +416,141 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/inputmethod/InputMethodManager;->hideSoftInputFromWindow(Landroid/os/IBinder;I)Z
 
-    .line 89
+    .line 100
     return-void
 .end method
 
 .method public onResume(I)V
-    .locals 3
+    .locals 5
     .parameter "reason"
 
     .prologue
-    const/4 v2, 0x1
-
-    .line 78
-    invoke-super {p0, p1}, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;->onResume(I)V
-
-    .line 79
-    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;->mPasswordEntry:Landroid/widget/TextView;
-
-    invoke-virtual {v0}, Landroid/widget/TextView;->requestFocus()Z
+    const/4 v1, 0x1
 
     .line 80
-    if-ne p1, v2, :cond_0
+    invoke-super {p0, p1}, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;->onResume(I)V
 
-    iget-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;->mShowImeAtScreenOn:Z
+    .line 81
+    iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;->mPasswordEntry:Landroid/widget/TextView;
+
+    invoke-virtual {v2}, Landroid/widget/TextView;->requestFocus()Z
+
+    .line 83
+    iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;->mPasswordEntry:Landroid/widget/TextView;
+
+    iget-object v3, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;->mTempLocation:[I
+
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->getLocationOnScreen([I)V
+
+    .line 84
+    iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;->mTempLocation:[I
+
+    aget v2, v2, v1
+
+    if-ltz v2, :cond_2
+
+    iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;->mTempLocation:[I
+
+    aget v2, v2, v1
+
+    iget-object v3, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v3
+
+    iget v3, v3, Landroid/util/DisplayMetrics;->heightPixels:I
+
+    if-gt v2, v3, :cond_2
+
+    move v0, v1
+
+    .line 87
+    .local v0, passwordEntryVisible:Z
+    :goto_0
+    const-string v2, "KeyguardPasswordView"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "reason="
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", mShowImeAtScreenOn="
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-boolean v4, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;->mShowImeAtScreenOn:Z
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", passwordEntryVisible="
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 91
+    if-ne p1, v1, :cond_0
+
+    iget-boolean v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;->mShowImeAtScreenOn:Z
+
+    if-eqz v2, :cond_1
 
     if-eqz v0, :cond_1
 
-    .line 81
+    .line 92
     :cond_0
-    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;->mImm:Landroid/view/inputmethod/InputMethodManager;
+    iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;->mImm:Landroid/view/inputmethod/InputMethodManager;
 
-    iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;->mPasswordEntry:Landroid/widget/TextView;
+    iget-object v3, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;->mPasswordEntry:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/inputmethod/InputMethodManager;->showSoftInput(Landroid/view/View;I)Z
+    invoke-virtual {v2, v3, v1}, Landroid/view/inputmethod/InputMethodManager;->showSoftInput(Landroid/view/View;I)Z
 
-    .line 83
+    .line 94
     :cond_1
     return-void
+
+    .line 84
+    .end local v0           #passwordEntryVisible:Z
+    :cond_2
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 .method protected resetState()V
     .locals 3
 
     .prologue
-    .line 62
-    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;->mSecurityMessageDisplay:Lcom/android/internal/policy/impl/keyguard/SecurityMessageDisplay;
+    .line 64
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;->mSecurityMessageDisplay:Lcom/android/internal/policy/impl/keyguard/SecurityMessageDisplay;
 
     const v1, #string@kg_password_instructions#t
 
@@ -455,14 +558,14 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/internal/policy/impl/keyguard/SecurityMessageDisplay;->setMessage(IZ)V
 
-    .line 63
-    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;->mPasswordEntry:Landroid/widget/TextView;
+    .line 65
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;->mPasswordEntry:Landroid/widget/TextView;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setEnabled(Z)V
 
-    .line 64
+    .line 66
     return-void
 .end method
 
@@ -470,6 +573,6 @@
     .locals 0
 
     .prologue
-    .line 202
+    .line 213
     return-void
 .end method

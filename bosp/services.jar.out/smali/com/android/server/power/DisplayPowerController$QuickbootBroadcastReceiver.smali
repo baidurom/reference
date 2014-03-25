@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2
+    accessFlags = 0x0
     name = "QuickbootBroadcastReceiver"
 .end annotation
 
@@ -19,27 +19,15 @@
 
 
 # direct methods
-.method private constructor <init>(Lcom/android/server/power/DisplayPowerController;)V
+.method constructor <init>(Lcom/android/server/power/DisplayPowerController;)V
     .locals 0
     .parameter
 
     .prologue
-    .line 442
+    .line 500
     iput-object p1, p0, Lcom/android/server/power/DisplayPowerController$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/power/DisplayPowerController;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
-
-    return-void
-.end method
-
-.method synthetic constructor <init>(Lcom/android/server/power/DisplayPowerController;Lcom/android/server/power/DisplayPowerController$1;)V
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 442
-    invoke-direct {p0, p1}, Lcom/android/server/power/DisplayPowerController$QuickbootBroadcastReceiver;-><init>(Lcom/android/server/power/DisplayPowerController;)V
 
     return-void
 .end method
@@ -52,14 +40,14 @@
     .parameter "intent"
 
     .prologue
-    .line 444
+    .line 503
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 445
+    .line 504
     .local v0, action:Ljava/lang/String;
-    const-string v1, "DisplayPowerController"
+    const-string v1, "PowerManagerDisplayController"
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -81,7 +69,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 447
+    .line 506
     const-string v1, "android.intent.action.ACTION_QUICKBOOT_SHUTDOWN"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -90,30 +78,30 @@
 
     if-eqz v1, :cond_0
 
-    .line 449
+    .line 508
     iget-object v1, p0, Lcom/android/server/power/DisplayPowerController$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/power/DisplayPowerController;
 
     iget-object v2, p0, Lcom/android/server/power/DisplayPowerController$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/power/DisplayPowerController;
 
     #getter for: Lcom/android/server/power/DisplayPowerController;->mElectronBeamFadesConfig:Z
-    invoke-static {v2}, Lcom/android/server/power/DisplayPowerController;->access$200(Lcom/android/server/power/DisplayPowerController;)Z
+    invoke-static {v2}, Lcom/android/server/power/DisplayPowerController;->access$300(Lcom/android/server/power/DisplayPowerController;)Z
 
     move-result v2
 
     #setter for: Lcom/android/server/power/DisplayPowerController;->mElectronBeamFadesConfigOrigin:Z
-    invoke-static {v1, v2}, Lcom/android/server/power/DisplayPowerController;->access$102(Lcom/android/server/power/DisplayPowerController;Z)Z
+    invoke-static {v1, v2}, Lcom/android/server/power/DisplayPowerController;->access$202(Lcom/android/server/power/DisplayPowerController;Z)Z
 
-    .line 450
+    .line 509
     iget-object v1, p0, Lcom/android/server/power/DisplayPowerController$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/power/DisplayPowerController;
 
     const/4 v2, 0x1
 
     #setter for: Lcom/android/server/power/DisplayPowerController;->mElectronBeamFadesConfig:Z
-    invoke-static {v1, v2}, Lcom/android/server/power/DisplayPowerController;->access$202(Lcom/android/server/power/DisplayPowerController;Z)Z
+    invoke-static {v1, v2}, Lcom/android/server/power/DisplayPowerController;->access$302(Lcom/android/server/power/DisplayPowerController;Z)Z
 
-    .line 456
+    .line 515
     :goto_0
-    const-string v1, "DisplayPowerController"
+    const-string v1, "PowerManagerDisplayController"
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -128,7 +116,7 @@
     iget-object v3, p0, Lcom/android/server/power/DisplayPowerController$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/power/DisplayPowerController;
 
     #getter for: Lcom/android/server/power/DisplayPowerController;->mElectronBeamFadesConfig:Z
-    invoke-static {v3}, Lcom/android/server/power/DisplayPowerController;->access$200(Lcom/android/server/power/DisplayPowerController;)Z
+    invoke-static {v3}, Lcom/android/server/power/DisplayPowerController;->access$300(Lcom/android/server/power/DisplayPowerController;)Z
 
     move-result v3
 
@@ -142,10 +130,10 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 457
+    .line 516
     return-void
 
-    .line 451
+    .line 510
     :cond_0
     const-string v1, "android.intent.action.ACTION_QUICKBOOT_BOOT"
 
@@ -155,24 +143,24 @@
 
     if-eqz v1, :cond_1
 
-    .line 452
+    .line 511
     iget-object v1, p0, Lcom/android/server/power/DisplayPowerController$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/power/DisplayPowerController;
 
     iget-object v2, p0, Lcom/android/server/power/DisplayPowerController$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/power/DisplayPowerController;
 
     #getter for: Lcom/android/server/power/DisplayPowerController;->mElectronBeamFadesConfigOrigin:Z
-    invoke-static {v2}, Lcom/android/server/power/DisplayPowerController;->access$100(Lcom/android/server/power/DisplayPowerController;)Z
+    invoke-static {v2}, Lcom/android/server/power/DisplayPowerController;->access$200(Lcom/android/server/power/DisplayPowerController;)Z
 
     move-result v2
 
     #setter for: Lcom/android/server/power/DisplayPowerController;->mElectronBeamFadesConfig:Z
-    invoke-static {v1, v2}, Lcom/android/server/power/DisplayPowerController;->access$202(Lcom/android/server/power/DisplayPowerController;Z)Z
+    invoke-static {v1, v2}, Lcom/android/server/power/DisplayPowerController;->access$302(Lcom/android/server/power/DisplayPowerController;Z)Z
 
     goto :goto_0
 
-    .line 454
+    .line 513
     :cond_1
-    const-string v1, "DisplayPowerController"
+    const-string v1, "PowerManagerDisplayController"
 
     const-string v2, "Receive Fake Intent"
 

@@ -4,6 +4,8 @@
 
 
 # instance fields
+.field private PHONE_SUBINFO_SERVICE:[Ljava/lang/String;
+
 .field private mPhoneSubInfo:Lcom/android/internal/telephony/PhoneSubInfo;
 
 
@@ -13,14 +15,62 @@
     .parameter "phoneSubInfo"
 
     .prologue
-    .line 30
+    .line 75
+    const/4 v0, 0x0
+
+    invoke-direct {p0, p1, v0}, Lcom/android/internal/telephony/PhoneSubInfoProxy;-><init>(Lcom/android/internal/telephony/PhoneSubInfo;I)V
+
+    .line 76
+    return-void
+.end method
+
+.method public constructor <init>(Lcom/android/internal/telephony/PhoneSubInfo;I)V
+    .locals 3
+    .parameter "phoneSubInfo"
+    .parameter "simId"
+
+    .prologue
+    .line 78
     invoke-direct {p0}, Lcom/android/internal/telephony/IPhoneSubInfo$Stub;-><init>()V
 
-    .line 31
+    .line 64
+    const/4 v0, 0x4
+
+    new-array v0, v0, [Ljava/lang/String;
+
+    const/4 v1, 0x0
+
+    const-string v2, "iphonesubinfo"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x1
+
+    const-string v2, "iphonesubinfo2"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x2
+
+    const-string v2, "iphonesubinfo3"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x3
+
+    const-string v2, "iphonesubinfo4"
+
+    aput-object v2, v0, v1
+
+    iput-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfoProxy;->PHONE_SUBINFO_SERVICE:[Ljava/lang/String;
+
+    .line 79
     iput-object p1, p0, Lcom/android/internal/telephony/PhoneSubInfoProxy;->mPhoneSubInfo:Lcom/android/internal/telephony/PhoneSubInfo;
 
-    .line 32
-    const-string v0, "iphonesubinfo"
+    .line 81
+    iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfoProxy;->PHONE_SUBINFO_SERVICE:[Ljava/lang/String;
+
+    aget-object v0, v0, p2
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
@@ -28,12 +78,14 @@
 
     if-nez v0, :cond_0
 
-    .line 33
-    const-string v0, "iphonesubinfo"
+    .line 82
+    iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfoProxy;->PHONE_SUBINFO_SERVICE:[Ljava/lang/String;
+
+    aget-object v0, v0, p2
 
     invoke-static {v0, p0}, Landroid/os/ServiceManager;->addService(Ljava/lang/String;Landroid/os/IBinder;)V
 
-    .line 35
+    .line 84
     :cond_0
     return-void
 .end method
@@ -47,12 +99,12 @@
     .parameter "args"
 
     .prologue
-    .line 138
+    .line 181
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfoProxy;->mPhoneSubInfo:Lcom/android/internal/telephony/PhoneSubInfo;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/android/internal/telephony/PhoneSubInfo;->dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
 
-    .line 139
+    .line 182
     return-void
 .end method
 
@@ -60,7 +112,7 @@
     .locals 1
 
     .prologue
-    .line 95
+    .line 145
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfoProxy;->mPhoneSubInfo:Lcom/android/internal/telephony/PhoneSubInfo;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/PhoneSubInfo;->getCompleteVoiceMailNumber()Ljava/lang/String;
@@ -74,7 +126,7 @@
     .locals 1
 
     .prologue
-    .line 42
+    .line 92
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfoProxy;->mPhoneSubInfo:Lcom/android/internal/telephony/PhoneSubInfo;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/PhoneSubInfo;->getDeviceId()Ljava/lang/String;
@@ -88,24 +140,10 @@
     .locals 1
 
     .prologue
-    .line 46
+    .line 96
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfoProxy;->mPhoneSubInfo:Lcom/android/internal/telephony/PhoneSubInfo;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/PhoneSubInfo;->getDeviceSvn()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getIccCardType()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 134
-    iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfoProxy;->mPhoneSubInfo:Lcom/android/internal/telephony/PhoneSubInfo;
-
-    invoke-virtual {v0}, Lcom/android/internal/telephony/PhoneSubInfo;->getIccCardType()Ljava/lang/String;
 
     move-result-object v0
 
@@ -116,7 +154,7 @@
     .locals 1
 
     .prologue
-    .line 60
+    .line 110
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfoProxy;->mPhoneSubInfo:Lcom/android/internal/telephony/PhoneSubInfo;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/PhoneSubInfo;->getIccSerialNumber()Ljava/lang/String;
@@ -130,7 +168,7 @@
     .locals 1
 
     .prologue
-    .line 118
+    .line 168
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfoProxy;->mPhoneSubInfo:Lcom/android/internal/telephony/PhoneSubInfo;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/PhoneSubInfo;->getIsimDomain()Ljava/lang/String;
@@ -144,7 +182,7 @@
     .locals 1
 
     .prologue
-    .line 110
+    .line 160
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfoProxy;->mPhoneSubInfo:Lcom/android/internal/telephony/PhoneSubInfo;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/PhoneSubInfo;->getIsimImpi()Ljava/lang/String;
@@ -158,7 +196,7 @@
     .locals 1
 
     .prologue
-    .line 127
+    .line 177
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfoProxy;->mPhoneSubInfo:Lcom/android/internal/telephony/PhoneSubInfo;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/PhoneSubInfo;->getIsimImpu()[Ljava/lang/String;
@@ -172,7 +210,7 @@
     .locals 1
 
     .prologue
-    .line 74
+    .line 124
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfoProxy;->mPhoneSubInfo:Lcom/android/internal/telephony/PhoneSubInfo;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/PhoneSubInfo;->getLine1AlphaTag()Ljava/lang/String;
@@ -186,7 +224,7 @@
     .locals 1
 
     .prologue
-    .line 67
+    .line 117
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfoProxy;->mPhoneSubInfo:Lcom/android/internal/telephony/PhoneSubInfo;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/PhoneSubInfo;->getLine1Number()Ljava/lang/String;
@@ -200,7 +238,7 @@
     .locals 1
 
     .prologue
-    .line 81
+    .line 131
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfoProxy;->mPhoneSubInfo:Lcom/android/internal/telephony/PhoneSubInfo;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/PhoneSubInfo;->getMsisdn()Ljava/lang/String;
@@ -214,7 +252,7 @@
     .locals 1
 
     .prologue
-    .line 53
+    .line 103
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfoProxy;->mPhoneSubInfo:Lcom/android/internal/telephony/PhoneSubInfo;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/PhoneSubInfo;->getSubscriberId()Ljava/lang/String;
@@ -228,7 +266,7 @@
     .locals 1
 
     .prologue
-    .line 102
+    .line 152
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfoProxy;->mPhoneSubInfo:Lcom/android/internal/telephony/PhoneSubInfo;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/PhoneSubInfo;->getVoiceMailAlphaTag()Ljava/lang/String;
@@ -242,7 +280,7 @@
     .locals 1
 
     .prologue
-    .line 88
+    .line 138
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfoProxy;->mPhoneSubInfo:Lcom/android/internal/telephony/PhoneSubInfo;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/PhoneSubInfo;->getVoiceMailNumber()Ljava/lang/String;
@@ -257,9 +295,9 @@
     .parameter "phoneSubInfo"
 
     .prologue
-    .line 38
+    .line 88
     iput-object p1, p0, Lcom/android/internal/telephony/PhoneSubInfoProxy;->mPhoneSubInfo:Lcom/android/internal/telephony/PhoneSubInfo;
 
-    .line 39
+    .line 89
     return-void
 .end method

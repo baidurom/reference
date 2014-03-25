@@ -32,8 +32,8 @@
     .locals 0
 
     .prologue
-    .line 163
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 168
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -45,18 +45,18 @@
     .parameter "in"
 
     .prologue
-    .line 165
+    .line 170
     new-instance v1, Landroid/net/wifi/p2p/WifiP2pDeviceList;
 
     invoke-direct {v1}, Landroid/net/wifi/p2p/WifiP2pDeviceList;-><init>()V
 
-    .line 167
+    .line 172
     .local v1, deviceList:Landroid/net/wifi/p2p/WifiP2pDeviceList;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 168
+    .line 173
     .local v0, deviceCount:I
     const/4 v2, 0x0
 
@@ -64,7 +64,7 @@
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 169
+    .line 174
     const/4 v3, 0x0
 
     invoke-virtual {p1, v3}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
@@ -75,12 +75,12 @@
 
     invoke-virtual {v1, v3}, Landroid/net/wifi/p2p/WifiP2pDeviceList;->update(Landroid/net/wifi/p2p/WifiP2pDevice;)V
 
-    .line 168
+    .line 173
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 171
+    .line 176
     :cond_0
     return-object v1
 .end method
@@ -90,7 +90,7 @@
     .parameter "x0"
 
     .prologue
-    .line 163
+    .line 168
     invoke-virtual {p0, p1}, Landroid/net/wifi/p2p/WifiP2pDeviceList$1;->createFromParcel(Landroid/os/Parcel;)Landroid/net/wifi/p2p/WifiP2pDeviceList;
 
     move-result-object v0
@@ -103,7 +103,7 @@
     .parameter "size"
 
     .prologue
-    .line 175
+    .line 180
     new-array v0, p1, [Landroid/net/wifi/p2p/WifiP2pDeviceList;
 
     return-object v0
@@ -114,7 +114,7 @@
     .parameter "x0"
 
     .prologue
-    .line 163
+    .line 168
     invoke-virtual {p0, p1}, Landroid/net/wifi/p2p/WifiP2pDeviceList$1;->newArray(I)[Landroid/net/wifi/p2p/WifiP2pDeviceList;
 
     move-result-object v0

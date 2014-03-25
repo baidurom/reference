@@ -26,11 +26,13 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.net.INetworkStatsSession"
 
-.field static final TRANSACTION_close:I = 0x5
+.field static final TRANSACTION_close:I = 0x6
 
 .field static final TRANSACTION_getHistoryForNetwork:I = 0x2
 
 .field static final TRANSACTION_getHistoryForUid:I = 0x4
+
+.field static final TRANSACTION_getMobileTotalBytes:I = 0x5
 
 .field static final TRANSACTION_getSummaryForAllUid:I = 0x3
 
@@ -111,7 +113,7 @@
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 15
+    .locals 16
     .parameter "code"
     .parameter "data"
     .parameter "reply"
@@ -126,7 +128,7 @@
     .line 39
     sparse-switch p1, :sswitch_data_0
 
-    .line 158
+    .line 172
     invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
@@ -187,7 +189,7 @@
     move-result-wide v5
 
     .local v5, _arg2:J
-    move-object v1, p0
+    move-object/from16 v1, p0
 
     .line 60
     invoke-virtual/range {v1 .. v6}, Landroid/net/INetworkStatsSession$Stub;->getSummaryForNetwork(Landroid/net/NetworkTemplate;JJ)Landroid/net/NetworkStats;
@@ -284,7 +286,9 @@
 
     .line 83
     .local v3, _arg1:I
-    invoke-virtual {p0, v2, v3}, Landroid/net/INetworkStatsSession$Stub;->getHistoryForNetwork(Landroid/net/NetworkTemplate;I)Landroid/net/NetworkStatsHistory;
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v2, v3}, Landroid/net/INetworkStatsSession$Stub;->getHistoryForNetwork(Landroid/net/NetworkTemplate;I)Landroid/net/NetworkStatsHistory;
 
     move-result-object v14
 
@@ -391,7 +395,7 @@
 
     .local v7, _arg3:Z
     :goto_6
-    move-object v1, p0
+    move-object/from16 v1, p0
 
     .line 110
     invoke-virtual/range {v1 .. v7}, Landroid/net/INetworkStatsSession$Stub;->getSummaryForAllUid(Landroid/net/NetworkTemplate;JJZ)Landroid/net/NetworkStats;
@@ -514,7 +518,7 @@
     move-result v13
 
     .local v13, _arg4:I
-    move-object v8, p0
+    move-object/from16 v8, p0
 
     move-object v9, v2
 
@@ -598,20 +602,69 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 153
-    invoke-virtual {p0}, Landroid/net/INetworkStatsSession$Stub;->close()V
-
     .line 154
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v2
+
+    .line 156
+    .local v2, _arg0:I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readLong()J
+
+    move-result-wide v3
+
+    .line 158
+    .local v3, _arg1:J
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readLong()J
+
+    move-result-wide v5
+
+    .local v5, _arg2:J
+    move-object/from16 v1, p0
+
+    .line 159
+    invoke-virtual/range {v1 .. v6}, Landroid/net/INetworkStatsSession$Stub;->getMobileTotalBytes(IJJ)J
+
+    move-result-wide v14
+
+    .line 160
+    .local v14, _result:J
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 155
+    .line 161
+    move-object/from16 v0, p3
+
+    invoke-virtual {v0, v14, v15}, Landroid/os/Parcel;->writeLong(J)V
+
+    .line 162
+    const/4 v1, 0x1
+
+    goto/16 :goto_0
+
+    .line 166
+    .end local v2           #_arg0:I
+    .end local v3           #_arg1:J
+    .end local v5           #_arg2:J
+    .end local v14           #_result:J
+    :sswitch_6
+    const-string v1, "android.net.INetworkStatsSession"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 167
+    invoke-virtual/range {p0 .. p0}, Landroid/net/INetworkStatsSession$Stub;->close()V
+
+    .line 168
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 169
     const/4 v1, 0x1
 
     goto/16 :goto_0
 
     .line 39
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
@@ -619,6 +672,7 @@
         0x3 -> :sswitch_3
         0x4 -> :sswitch_4
         0x5 -> :sswitch_5
+        0x6 -> :sswitch_6
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

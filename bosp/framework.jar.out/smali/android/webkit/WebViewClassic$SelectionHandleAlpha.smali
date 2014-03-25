@@ -30,15 +30,15 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 4694
+    .line 5181
     iput-object p1, p0, Landroid/webkit/WebViewClassic$SelectionHandleAlpha;->this$0:Landroid/webkit/WebViewClassic;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4695
+    .line 5182
     iput v0, p0, Landroid/webkit/WebViewClassic$SelectionHandleAlpha;->mAlpha:I
 
-    .line 4696
+    .line 5183
     iput v0, p0, Landroid/webkit/WebViewClassic$SelectionHandleAlpha;->mTargetAlpha:I
 
     return-void
@@ -50,7 +50,7 @@
     .parameter "x1"
 
     .prologue
-    .line 4694
+    .line 5181
     invoke-direct {p0, p1}, Landroid/webkit/WebViewClassic$SelectionHandleAlpha;-><init>(Landroid/webkit/WebViewClassic;)V
 
     return-void
@@ -62,7 +62,7 @@
     .locals 1
 
     .prologue
-    .line 4705
+    .line 5192
     iget v0, p0, Landroid/webkit/WebViewClassic$SelectionHandleAlpha;->mAlpha:I
 
     return v0
@@ -72,7 +72,7 @@
     .locals 1
 
     .prologue
-    .line 4713
+    .line 5200
     iget v0, p0, Landroid/webkit/WebViewClassic$SelectionHandleAlpha;->mTargetAlpha:I
 
     return v0
@@ -83,15 +83,15 @@
     .parameter "alpha"
 
     .prologue
-    .line 4699
+    .line 5186
     iput p1, p0, Landroid/webkit/WebViewClassic$SelectionHandleAlpha;->mAlpha:I
 
-    .line 4701
+    .line 5188
     iget-object v0, p0, Landroid/webkit/WebViewClassic$SelectionHandleAlpha;->this$0:Landroid/webkit/WebViewClassic;
 
     invoke-virtual {v0}, Landroid/webkit/WebViewClassic;->invalidate()V
 
-    .line 4702
+    .line 5189
     return-void
 .end method
 
@@ -100,9 +100,9 @@
     .parameter "alpha"
 
     .prologue
-    .line 4709
+    .line 5196
     iput p1, p0, Landroid/webkit/WebViewClassic$SelectionHandleAlpha;->mTargetAlpha:I
 
-    .line 4710
+    .line 5197
     return-void
 .end method

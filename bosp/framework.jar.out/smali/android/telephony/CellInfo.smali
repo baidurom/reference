@@ -65,7 +65,7 @@
     const/4 v0, 0x0
 
     .line 59
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 60
     iput-boolean v0, p0, Landroid/telephony/CellInfo;->mRegistered:Z
@@ -90,7 +90,7 @@
     const/4 v0, 0x1
 
     .line 189
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 190
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
@@ -132,7 +132,7 @@
 
     .prologue
     .line 66
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 67
     iget-boolean v0, p1, Landroid/telephony/CellInfo;->mRegistered:Z
@@ -187,13 +187,11 @@
 
     .line 141
     :pswitch_3
-    const-string v0, "java_ril"
+    const-string/jumbo v0, "java_ril"
 
     goto :goto_0
 
     .line 133
-    nop
-
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

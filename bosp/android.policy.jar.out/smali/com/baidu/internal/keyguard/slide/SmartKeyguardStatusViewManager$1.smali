@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 188
+    .line 200
     iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$1;->this$0:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -42,7 +42,7 @@
     .parameter "self"
 
     .prologue
-    .line 230
+    .line 242
     invoke-virtual {p1}, Landroid/view/View;->getVisibility()I
 
     move-result v0
@@ -65,8 +65,8 @@
     .parameter "state"
 
     .prologue
-    .line 218
-    const-string v0, "KeyguardStatusViewManager"
+    .line 230
+    const-string v0, "SmartKeyguardStatusViewManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -88,7 +88,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 219
+    .line 231
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$1;->this$0:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;
 
     #getter for: Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;->mPlayState:I
@@ -98,13 +98,13 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 220
+    .line 232
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$1;->this$0:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;
 
     #setter for: Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;->mPlayState:I
     invoke-static {v0, p1}, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;->access$702(Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;I)I
 
-    .line 221
+    .line 233
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$1;->this$0:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;
 
     #getter for: Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;->mHorizontalScrollView:Lcom/baidu/internal/keyguard/slide/SnapHorizontalScrollView;
@@ -114,7 +114,7 @@
 
     invoke-virtual {v0, p1}, Lcom/baidu/internal/keyguard/slide/SnapHorizontalScrollView;->onPlayStateChanged(I)V
 
-    .line 223
+    .line 235
     :cond_0
     return-void
 .end method
@@ -126,8 +126,8 @@
     .prologue
     const/16 v3, 0x8
 
-    .line 204
-    const-string v0, "KeyguardStatusViewManager"
+    .line 216
+    const-string v0, "SmartKeyguardStatusViewManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -155,10 +155,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 205
+    .line 217
     invoke-virtual {p1, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 207
+    .line 219
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$1;->this$0:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;
 
     #getter for: Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;->mFlipperTransportView:Landroid/widget/RelativeLayout;
@@ -172,7 +172,7 @@
 
     if-eq v0, v3, :cond_0
 
-    .line 208
+    .line 220
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$1;->this$0:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;
 
     #getter for: Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;->mFlipperTransportView:Landroid/widget/RelativeLayout;
@@ -182,7 +182,7 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    .line 209
+    .line 221
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$1;->this$0:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;
 
     #getter for: Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;->mFlipperTransportView:Landroid/widget/RelativeLayout;
@@ -194,7 +194,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setBackgroundColor(I)V
 
-    .line 211
+    .line 223
     :cond_0
     return-void
 .end method
@@ -206,8 +206,8 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 195
-    const-string v0, "KeyguardStatusViewManager"
+    .line 207
+    const-string v0, "SmartKeyguardStatusViewManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -235,10 +235,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 196
+    .line 208
     invoke-virtual {p1, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 198
+    .line 210
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$1;->this$0:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;
 
     #getter for: Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;->mFlipperTransportView:Landroid/widget/RelativeLayout;
@@ -252,7 +252,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 199
+    .line 211
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$1;->this$0:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;
 
     #getter for: Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;->mFlipperTransportView:Landroid/widget/RelativeLayout;
@@ -262,7 +262,7 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    .line 201
+    .line 213
     :cond_0
     return-void
 .end method
@@ -272,7 +272,7 @@
     .parameter "bitmap"
 
     .prologue
-    .line 214
+    .line 226
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$1;->this$0:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;
 
     #getter for: Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;->mAlbumView:Landroid/widget/ImageView;
@@ -282,7 +282,7 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 215
+    .line 227
     return-void
 .end method
 
@@ -291,7 +291,7 @@
     .parameter "self"
 
     .prologue
-    .line 191
+    .line 203
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$1;->this$0:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;
 
     #getter for: Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
@@ -303,6 +303,6 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;->userActivity(J)V
 
-    .line 192
+    .line 204
     return-void
 .end method

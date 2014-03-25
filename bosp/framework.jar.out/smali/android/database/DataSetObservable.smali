@@ -32,13 +32,13 @@
 
     .prologue
     .line 31
-    iget-object v2, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
+    iget-object v2, p0, Landroid/database/DataSetObservable;->mObservers:Ljava/util/ArrayList;
 
     monitor-enter v2
 
     .line 36
     :try_start_0
-    iget-object v1, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
+    iget-object v1, p0, Landroid/database/DataSetObservable;->mObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -51,7 +51,7 @@
     if-ltz v0, :cond_0
 
     .line 37
-    iget-object v1, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
+    iget-object v1, p0, Landroid/database/DataSetObservable;->mObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -90,13 +90,13 @@
 
     .prologue
     .line 48
-    iget-object v2, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
+    iget-object v2, p0, Landroid/database/DataSetObservable;->mObservers:Ljava/util/ArrayList;
 
     monitor-enter v2
 
     .line 49
     :try_start_0
-    iget-object v1, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
+    iget-object v1, p0, Landroid/database/DataSetObservable;->mObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -109,7 +109,7 @@
     if-ltz v0, :cond_0
 
     .line 50
-    iget-object v1, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
+    iget-object v1, p0, Landroid/database/DataSetObservable;->mObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 

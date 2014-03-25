@@ -178,7 +178,7 @@
     const/4 v0, 0x0
 
     .line 338
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 236
     iput-object v0, p0, Landroid/content/IntentFilter;->mCategories:Ljava/util/ArrayList;
@@ -220,7 +220,7 @@
     const/4 v0, 0x0
 
     .line 385
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 236
     iput-object v0, p0, Landroid/content/IntentFilter;->mCategories:Ljava/util/ArrayList;
@@ -350,7 +350,7 @@
     const/4 v3, 0x0
 
     .line 1413
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 236
     iput-object v3, p0, Landroid/content/IntentFilter;->mCategories:Ljava/util/ArrayList;
@@ -564,7 +564,7 @@
     const/4 v0, 0x0
 
     .line 350
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 236
     iput-object v0, p0, Landroid/content/IntentFilter;->mCategories:Ljava/util/ArrayList;
@@ -617,7 +617,7 @@
     const/4 v0, 0x0
 
     .line 373
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 236
     iput-object v0, p0, Landroid/content/IntentFilter;->mCategories:Ljava/util/ArrayList;
@@ -2059,7 +2059,7 @@
     .line 1324
     invoke-virtual {v5, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v6, "mPriority="
+    const-string/jumbo v6, "mPriority="
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

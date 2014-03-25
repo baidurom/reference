@@ -445,6 +445,20 @@
     return-object v0
 .end method
 
+.method public isSmartBookPluggedIn()Z
+    .locals 1
+
+    .prologue
+    .line 284
+    iget-object v0, p0, Landroid/hardware/display/DisplayManager;->mGlobal:Landroid/hardware/display/DisplayManagerGlobal;
+
+    invoke-virtual {v0}, Landroid/hardware/display/DisplayManagerGlobal;->isSmartBookPluggedIn()Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public registerDisplayListener(Landroid/hardware/display/DisplayManager$DisplayListener;Landroid/os/Handler;)V
     .locals 1
     .parameter "listener"

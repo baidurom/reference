@@ -1,14 +1,11 @@
 .class Lcom/android/internal/widget/ActionBarContextView$1;
-.super Ljava/lang/Object;
+.super Landroid/os/Handler;
 .source "ActionBarContextView.java"
-
-# interfaces
-.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/internal/widget/ActionBarContextView;->initForMode(Landroid/view/ActionMode;)V
+    value = Lcom/android/internal/widget/ActionBarContextView;->initTitle()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,38 +17,43 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/internal/widget/ActionBarContextView;
 
-.field final synthetic val$mode:Landroid/view/ActionMode;
-
 
 # direct methods
-.method constructor <init>(Lcom/android/internal/widget/ActionBarContextView;Landroid/view/ActionMode;)V
+.method constructor <init>(Lcom/android/internal/widget/ActionBarContextView;)V
     .locals 0
-    .parameter
     .parameter
 
     .prologue
-    .line 213
+    .line 199
     iput-object p1, p0, Lcom/android/internal/widget/ActionBarContextView$1;->this$0:Lcom/android/internal/widget/ActionBarContextView;
 
-    iput-object p2, p0, Lcom/android/internal/widget/ActionBarContextView$1;->val$mode:Landroid/view/ActionMode;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .locals 1
-    .parameter "v"
+.method public handleMessage(Landroid/os/Message;)V
+    .locals 2
+    .parameter "msg"
 
     .prologue
-    .line 215
-    iget-object v0, p0, Lcom/android/internal/widget/ActionBarContextView$1;->val$mode:Landroid/view/ActionMode;
+    .line 202
+    iget-object v1, p0, Lcom/android/internal/widget/ActionBarContextView$1;->this$0:Lcom/android/internal/widget/ActionBarContextView;
 
-    invoke-virtual {v0}, Landroid/view/ActionMode;->finish()V
+    invoke-virtual {v1}, Lcom/android/internal/widget/ActionBarContextView;->getParent()Landroid/view/ViewParent;
 
-    .line 216
+    move-result-object v0
+
+    .line 203
+    .local v0, viewParent:Landroid/view/ViewParent;
+    if-eqz v0, :cond_0
+
+    .line 204
+    invoke-interface {v0}, Landroid/view/ViewParent;->requestLayout()V
+
+    .line 206
+    :cond_0
     return-void
 .end method

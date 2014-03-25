@@ -154,7 +154,7 @@
 
     .line 97
     :pswitch_0
-    iget-object v0, p0, Landroid/nfc/tech/BasicTagTechnology;->mTag:Landroid/nfc/Tag;
+    iget-object v0, p0, Landroid/nfc/tech/NfcBarcode;->mTag:Landroid/nfc/Tag;
 
     invoke-virtual {v0}, Landroid/nfc/Tag;->getId()[B
 

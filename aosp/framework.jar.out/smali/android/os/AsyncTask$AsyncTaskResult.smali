@@ -52,7 +52,7 @@
     .line 662
     .local p0, this:Landroid/os/AsyncTask$AsyncTaskResult;,"Landroid/os/AsyncTask$AsyncTaskResult<TData;>;"
     .local p2, data:[Ljava/lang/Object;,"[TData;"
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 663
     iput-object p1, p0, Landroid/os/AsyncTask$AsyncTaskResult;->mTask:Landroid/os/AsyncTask;

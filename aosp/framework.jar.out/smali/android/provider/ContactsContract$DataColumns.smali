@@ -47,6 +47,8 @@
 
 .field public static final DATA_VERSION:Ljava/lang/String; = "data_version"
 
+.field public static final IS_ADDITIONAL_NUMBER:Ljava/lang/String; = "is_additional_number"
+
 .field public static final IS_PRIMARY:Ljava/lang/String; = "is_primary"
 
 .field public static final IS_READ_ONLY:Ljava/lang/String; = "is_read_only"
@@ -58,6 +60,10 @@
 .field public static final RAW_CONTACT_ID:Ljava/lang/String; = "raw_contact_id"
 
 .field public static final RES_PACKAGE:Ljava/lang/String; = "res_package"
+
+.field public static final SIM_ASSOCIATION_ID:Ljava/lang/String; = "sim_id"
+
+.field public static final SIM_ID:Ljava/lang/String; = "sim_id"
 
 .field public static final SYNC1:Ljava/lang/String; = "data_sync1"
 

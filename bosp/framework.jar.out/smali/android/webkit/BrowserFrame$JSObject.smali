@@ -30,17 +30,17 @@
     .parameter "requireAnnotation"
 
     .prologue
-    .line 97
+    .line 103
     iput-object p1, p0, Landroid/webkit/BrowserFrame$JSObject;->this$0:Landroid/webkit/BrowserFrame;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 98
+    .line 104
     iput-object p2, p0, Landroid/webkit/BrowserFrame$JSObject;->object:Ljava/lang/Object;
 
-    .line 99
+    .line 105
     iput-boolean p3, p0, Landroid/webkit/BrowserFrame$JSObject;->requireAnnotation:Z
 
-    .line 100
+    .line 106
     return-void
 .end method

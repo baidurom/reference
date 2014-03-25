@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 1225
+    .line 1242
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,7 +34,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1225
+    .line 1242
     invoke-direct {p0}, Landroid/webkit/WebViewInputDispatcher$TouchStream;-><init>()V
 
     return-void
@@ -45,17 +45,17 @@
     .parameter "event"
 
     .prologue
-    .line 1292
+    .line 1309
     iget-object v0, p0, Landroid/webkit/WebViewInputDispatcher$TouchStream;->mLastEvent:Landroid/view/MotionEvent;
 
     if-eqz v0, :cond_0
 
-    .line 1293
+    .line 1310
     iget-object v0, p0, Landroid/webkit/WebViewInputDispatcher$TouchStream;->mLastEvent:Landroid/view/MotionEvent;
 
     invoke-virtual {v0}, Landroid/view/MotionEvent;->recycle()V
 
-    .line 1295
+    .line 1312
     :cond_0
     if-eqz p1, :cond_1
 
@@ -66,10 +66,10 @@
     :goto_0
     iput-object v0, p0, Landroid/webkit/WebViewInputDispatcher$TouchStream;->mLastEvent:Landroid/view/MotionEvent;
 
-    .line 1296
+    .line 1313
     return-void
 
-    .line 1295
+    .line 1312
     :cond_1
     const/4 v0, 0x0
 
@@ -82,7 +82,7 @@
     .locals 1
 
     .prologue
-    .line 1233
+    .line 1250
     iget-object v0, p0, Landroid/webkit/WebViewInputDispatcher$TouchStream;->mLastEvent:Landroid/view/MotionEvent;
 
     return-object v0
@@ -94,7 +94,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 1288
+    .line 1305
     iget-object v1, p0, Landroid/webkit/WebViewInputDispatcher$TouchStream;->mLastEvent:Landroid/view/MotionEvent;
 
     if-eqz v1, :cond_0
@@ -123,39 +123,39 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 1244
+    .line 1261
     if-nez p1, :cond_2
 
-    .line 1245
+    .line 1262
     invoke-virtual {p0}, Landroid/webkit/WebViewInputDispatcher$TouchStream;->isCancelNeeded()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 1246
+    .line 1263
     iget-object p1, p0, Landroid/webkit/WebViewInputDispatcher$TouchStream;->mLastEvent:Landroid/view/MotionEvent;
 
-    .line 1247
+    .line 1264
     if-eqz p1, :cond_0
 
-    .line 1248
+    .line 1265
     const/4 v1, 0x3
 
     invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->setAction(I)V
 
-    .line 1249
+    .line 1266
     iput-object v0, p0, Landroid/webkit/WebViewInputDispatcher$TouchStream;->mLastEvent:Landroid/view/MotionEvent;
 
     :cond_0
     move-object v0, p1
 
-    .line 1279
+    .line 1296
     :cond_1
     :goto_0
     return-object v0
 
-    .line 1255
+    .line 1272
     :cond_2
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
@@ -166,16 +166,16 @@
     :pswitch_0
     goto :goto_0
 
-    .line 1268
+    .line 1285
     :pswitch_1
     invoke-direct {p0, p1}, Landroid/webkit/WebViewInputDispatcher$TouchStream;->updateLastEvent(Landroid/view/MotionEvent;)V
 
     move-object v0, p1
 
-    .line 1269
+    .line 1286
     goto :goto_0
 
-    .line 1260
+    .line 1277
     :pswitch_2
     iget-object v1, p0, Landroid/webkit/WebViewInputDispatcher$TouchStream;->mLastEvent:Landroid/view/MotionEvent;
 
@@ -191,29 +191,29 @@
 
     if-eq v1, v2, :cond_1
 
-    .line 1264
+    .line 1281
     invoke-direct {p0, p1}, Landroid/webkit/WebViewInputDispatcher$TouchStream;->updateLastEvent(Landroid/view/MotionEvent;)V
 
     move-object v0, p1
 
-    .line 1265
+    .line 1282
     goto :goto_0
 
-    .line 1272
+    .line 1289
     :pswitch_3
     iget-object v1, p0, Landroid/webkit/WebViewInputDispatcher$TouchStream;->mLastEvent:Landroid/view/MotionEvent;
 
     if-eqz v1, :cond_1
 
-    .line 1275
+    .line 1292
     invoke-direct {p0, v0}, Landroid/webkit/WebViewInputDispatcher$TouchStream;->updateLastEvent(Landroid/view/MotionEvent;)V
 
     move-object v0, p1
 
-    .line 1276
+    .line 1293
     goto :goto_0
 
-    .line 1255
+    .line 1272
     nop
 
     :pswitch_data_0

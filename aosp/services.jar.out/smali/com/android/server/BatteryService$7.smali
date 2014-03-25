@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/BatteryService;->sendIntentLocked()V
+    value = Lcom/android/server/BatteryService;->processValuesLocked()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,22 +20,17 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/server/BatteryService;
 
-.field final synthetic val$intent:Landroid/content/Intent;
-
 
 # direct methods
-.method constructor <init>(Lcom/android/server/BatteryService;Landroid/content/Intent;)V
+.method constructor <init>(Lcom/android/server/BatteryService;)V
     .locals 0
-    .parameter
     .parameter
 
     .prologue
-    .line 494
+    .line 496
     iput-object p1, p0, Lcom/android/server/BatteryService$7;->this$0:Lcom/android/server/BatteryService;
 
-    iput-object p2, p0, Lcom/android/server/BatteryService$7;->val$intent:Landroid/content/Intent;
-
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -46,15 +41,31 @@
     .locals 3
 
     .prologue
-    .line 497
-    iget-object v0, p0, Lcom/android/server/BatteryService$7;->val$intent:Landroid/content/Intent;
+    .line 499
+    new-instance v0, Landroid/content/Intent;
 
-    const/4 v1, 0x0
+    const-string v1, "android.intent.action.BATTERY_OKAY"
 
-    const/4 v2, -0x1
+    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v0, v1, v2}, Landroid/app/ActivityManagerNative;->broadcastStickyIntent(Landroid/content/Intent;Ljava/lang/String;I)V
+    .line 500
+    .local v0, statusIntent:Landroid/content/Intent;
+    const/high16 v1, 0x800
 
-    .line 498
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+
+    .line 501
+    iget-object v1, p0, Lcom/android/server/BatteryService$7;->this$0:Lcom/android/server/BatteryService;
+
+    #getter for: Lcom/android/server/BatteryService;->mContext:Landroid/content/Context;
+    invoke-static {v1}, Lcom/android/server/BatteryService;->access$500(Lcom/android/server/BatteryService;)Landroid/content/Context;
+
+    move-result-object v1
+
+    sget-object v2, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
+
+    invoke-virtual {v1, v0, v2}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
+
+    .line 502
     return-void
 .end method

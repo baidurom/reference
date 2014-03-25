@@ -8627,7 +8627,7 @@
 
     .prologue
     .line 286
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 287
     iput-boolean p1, p0, Lcom/android/internal/util/HanziToPinyin;->mHasChinaCollator:Z

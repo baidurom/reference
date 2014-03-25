@@ -112,7 +112,7 @@
     const/4 v5, 0x0
 
     .line 379
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 81
     new-instance v1, Ljava/util/HashMap;
@@ -145,7 +145,7 @@
     .line 93
     new-instance v1, Ljava/lang/Object;
 
-    invoke-direct/range {v1 .. v1}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
 
     iput-object v1, p0, Lcom/android/server/usb/UsbSettingsManager;->mLock:Ljava/lang/Object;
 
@@ -1945,7 +1945,7 @@
 
     iget-object v9, v6, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v9, v9, Landroid/content/pm/ComponentInfo;->packageName:Ljava/lang/String;
+    iget-object v9, v9, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
 
     invoke-virtual {p3, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1984,11 +1984,11 @@
 
     iget-object v10, v2, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v10, v10, Landroid/content/pm/ComponentInfo;->packageName:Ljava/lang/String;
+    iget-object v10, v10, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
 
     iget-object v11, v2, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v11, v11, Landroid/content/pm/ComponentInfo;->name:Ljava/lang/String;
+    iget-object v11, v11, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
 
     invoke-direct {v9, v10, v11}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 

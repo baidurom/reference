@@ -53,7 +53,7 @@
 
     .line 32
     :try_start_0
-    const-string v1, "intent"
+    const-string/jumbo v1, "intent"
 
     invoke-virtual {p1, v1}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
@@ -110,7 +110,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/baidu/ifttt/trigger/Trigger;->mExtra:Landroid/os/Bundle;
+    iput-object v0, p0, Lcom/baidu/ifttt/trigger/BroadcastTrigger;->mExtra:Landroid/os/Bundle;
 
     .line 77
     const/4 v0, 0x1
@@ -186,7 +186,7 @@
     .line 67
     .end local v3           #it:Ljava/util/Iterator;,"Ljava/util/Iterator<Ljava/lang/String;>;"
     :cond_1
-    iget-object v4, p0, Lcom/baidu/ifttt/trigger/Trigger;->mContext:Landroid/content/Context;
+    iget-object v4, p0, Lcom/baidu/ifttt/trigger/BroadcastTrigger;->mContext:Landroid/content/Context;
 
     iget-object v5, p0, Lcom/baidu/ifttt/trigger/BroadcastTrigger;->mReceiver:Landroid/content/BroadcastReceiver;
 
@@ -207,7 +207,7 @@
     .line 43
     .local v0, jsonObject:Lorg/json/JSONObject;
     :try_start_0
-    const-string v1, "intent"
+    const-string/jumbo v1, "intent"
 
     iget-object v2, p0, Lcom/baidu/ifttt/trigger/BroadcastTrigger;->mIntent:Landroid/content/Intent;
 
@@ -240,7 +240,7 @@
 
     .prologue
     .line 72
-    iget-object v0, p0, Lcom/baidu/ifttt/trigger/Trigger;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/baidu/ifttt/trigger/BroadcastTrigger;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/baidu/ifttt/trigger/BroadcastTrigger;->mReceiver:Landroid/content/BroadcastReceiver;
 

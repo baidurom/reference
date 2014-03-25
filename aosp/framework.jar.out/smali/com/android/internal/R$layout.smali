@@ -357,14 +357,16 @@
 
 .field public static final zoom_magnify:I = #layout@zoom_magnify#t
 
+.field public static final zz_keyguard_voice_unlock_view:I = #layout@zz_keyguard_voice_unlock_view#t
+
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 12713
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 12638
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

@@ -26,7 +26,7 @@
     .parameter "x1"
 
     .prologue
-    .line 445
+    .line 457
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen$7;->this$0:Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;
 
     invoke-direct {p0, p2, p3, p4, p5}, Landroid/os/CountDownTimer;-><init>(JJ)V
@@ -44,7 +44,7 @@
 
     const/4 v1, 0x0
 
-    .line 458
+    .line 470
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen$7;->this$0:Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;->mUpdateMonitor:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
@@ -54,13 +54,13 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->setmIsPasswordLock(Z)V
 
-    .line 459
+    .line 471
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen$7;->this$0:Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;
 
     #setter for: Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;->mIsLock:Z
     invoke-static {v0, v1}, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;->access$902(Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;Z)Z
 
-    .line 460
+    .line 472
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen$7;->this$0:Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;->mPasswordEntry:Landroid/widget/EditText;
@@ -70,7 +70,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/EditText;->setEnabled(Z)V
 
-    .line 461
+    .line 473
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen$7;->this$0:Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;->mKeyboardView:Lcom/android/internal/widget/PasswordEntryKeyboardView;
@@ -80,7 +80,7 @@
 
     invoke-virtual {v0, v2}, Lcom/android/internal/widget/PasswordEntryKeyboardView;->setEnabled(Z)V
 
-    .line 462
+    .line 474
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen$7;->this$0:Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;->mStatusViewManager:Lcom/android/internal/policy/impl/keyguard/KeyguardStatusViewManager;
@@ -90,7 +90,7 @@
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardStatusViewManager;->resetStatusInfo()V
 
-    .line 463
+    .line 475
     return-void
 .end method
 
@@ -99,14 +99,14 @@
     .parameter "millisUntilFinished"
 
     .prologue
-    .line 449
+    .line 461
     const-wide/16 v2, 0x3e8
 
     div-long v2, p1, v2
 
     long-to-int v1, v2
 
-    .line 450
+    .line 462
     .local v1, secondsRemaining:I
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen$7;->this$0:Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;
 
@@ -132,7 +132,7 @@
 
     move-result-object v0
 
-    .line 453
+    .line 465
     .local v0, instructions:Ljava/lang/String;
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen$7;->this$0:Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;
 
@@ -143,6 +143,6 @@
 
     invoke-virtual {v2, v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardStatusViewManager;->setInstructionText(Ljava/lang/String;)V
 
-    .line 454
+    .line 466
     return-void
 .end method

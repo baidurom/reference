@@ -20,7 +20,7 @@
 
     .prologue
     .line 40
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 41
     return-void
@@ -377,7 +377,7 @@
     .line 115
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "invalid Bitmap format"
+    const-string/jumbo v1, "invalid Bitmap format"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -438,7 +438,7 @@
     .line 141
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "invalid Bitmap format"
+    const-string/jumbo v1, "invalid Bitmap format"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -509,7 +509,7 @@
     .line 163
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "invalid Bitmap format"
+    const-string/jumbo v1, "invalid Bitmap format"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -587,7 +587,7 @@
     .line 199
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "invalid Bitmap format"
+    const-string/jumbo v1, "invalid Bitmap format"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -649,7 +649,7 @@
     .line 223
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "invalid Bitmap format"
+    const-string/jumbo v1, "invalid Bitmap format"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

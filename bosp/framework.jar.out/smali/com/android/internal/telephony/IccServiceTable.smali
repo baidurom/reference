@@ -14,7 +14,7 @@
 
     .prologue
     .line 27
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 28
     iput-object p1, p0, Lcom/android/internal/telephony/IccServiceTable;->mServiceTable:[B
@@ -60,7 +60,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "isAvailable for service "
+    const-string/jumbo v5, "isAvailable for service "
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

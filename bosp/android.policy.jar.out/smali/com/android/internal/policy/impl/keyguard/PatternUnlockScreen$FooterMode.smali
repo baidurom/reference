@@ -44,7 +44,7 @@
 
     const/4 v2, 0x0
 
-    .line 103
+    .line 106
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/PatternUnlockScreen$FooterMode;
 
     const-string v1, "Normal"
@@ -53,7 +53,7 @@
 
     sput-object v0, Lcom/android/internal/policy/impl/keyguard/PatternUnlockScreen$FooterMode;->Normal:Lcom/android/internal/policy/impl/keyguard/PatternUnlockScreen$FooterMode;
 
-    .line 104
+    .line 107
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/PatternUnlockScreen$FooterMode;
 
     const-string v1, "ForgotLockPattern"
@@ -62,7 +62,7 @@
 
     sput-object v0, Lcom/android/internal/policy/impl/keyguard/PatternUnlockScreen$FooterMode;->ForgotLockPattern:Lcom/android/internal/policy/impl/keyguard/PatternUnlockScreen$FooterMode;
 
-    .line 105
+    .line 108
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/PatternUnlockScreen$FooterMode;
 
     const-string v1, "VerifyUnlocked"
@@ -71,7 +71,7 @@
 
     sput-object v0, Lcom/android/internal/policy/impl/keyguard/PatternUnlockScreen$FooterMode;->VerifyUnlocked:Lcom/android/internal/policy/impl/keyguard/PatternUnlockScreen$FooterMode;
 
-    .line 102
+    .line 105
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/android/internal/policy/impl/keyguard/PatternUnlockScreen$FooterMode;
@@ -104,7 +104,7 @@
     .end annotation
 
     .prologue
-    .line 102
+    .line 105
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -115,7 +115,7 @@
     .parameter "name"
 
     .prologue
-    .line 102
+    .line 105
     const-class v0, Lcom/android/internal/policy/impl/keyguard/PatternUnlockScreen$FooterMode;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -131,7 +131,7 @@
     .locals 1
 
     .prologue
-    .line 102
+    .line 105
     sget-object v0, Lcom/android/internal/policy/impl/keyguard/PatternUnlockScreen$FooterMode;->$VALUES:[Lcom/android/internal/policy/impl/keyguard/PatternUnlockScreen$FooterMode;
 
     invoke-virtual {v0}, [Lcom/android/internal/policy/impl/keyguard/PatternUnlockScreen$FooterMode;->clone()Ljava/lang/Object;

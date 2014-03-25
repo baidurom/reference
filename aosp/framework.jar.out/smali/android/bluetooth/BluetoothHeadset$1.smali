@@ -65,6 +65,13 @@
     .line 229
     if-nez p1, :cond_0
 
+    .line 230
+    const-string v1, "BluetoothHeadset"
+
+    const-string v2, "Unbinding service..."
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     .line 231
     iget-object v1, p0, Landroid/bluetooth/BluetoothHeadset$1;->this$0:Landroid/bluetooth/BluetoothHeadset;
 
@@ -159,6 +166,13 @@
     move-result-object v1
 
     if-nez v1, :cond_1
+
+    .line 243
+    const-string v1, "BluetoothHeadset"
+
+    const-string v3, "Binding service..."
+
+    invoke-static {v1, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 244
     iget-object v1, p0, Landroid/bluetooth/BluetoothHeadset$1;->this$0:Landroid/bluetooth/BluetoothHeadset;

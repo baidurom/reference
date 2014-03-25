@@ -54,7 +54,7 @@
 
     .prologue
     .line 555
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 556
     iput-wide p1, p0, Landroid/webkit/AccessibilityInjectorFallback$AccessibilityWebContentKeyBinding;->mKeyCodeAndModifiers:J

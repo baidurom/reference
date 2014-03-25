@@ -118,21 +118,60 @@
 
 .field private static final JID_RESOURCE_PREFIX:Ljava/lang/String; = "android"
 
+#the value of this static final field might be set in the static constructor
 .field private static final LOCAL_LOGV:Z = false
 
-.field private static final TAG:Ljava/lang/String; = "Settings"
+.field private static final TAG:Ljava/lang/String; = "Provider/Settings"
 
 
 # direct methods
+.method static constructor <clinit>()V
+    .locals 2
+
+    .prologue
+    .line 698
+    sget-object v0, Landroid/os/Build;->TYPE:Ljava/lang/String;
+
+    const-string v1, "eng"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    sput-boolean v0, Landroid/provider/Settings;->LOCAL_LOGV:Z
+
+    return-void
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
 .method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 64
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 67
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 5650
+    .line 6968
     return-void
+.end method
+
+.method static synthetic access$000()Z
+    .locals 1
+
+    .prologue
+    .line 67
+    sget-boolean v0, Landroid/provider/Settings;->LOCAL_LOGV:Z
+
+    return v0
 .end method
 
 .method public static getGTalkDeviceId(J)Ljava/lang/String;
@@ -140,7 +179,7 @@
     .parameter "androidId"
 
     .prologue
-    .line 5855
+    .line 7173
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

@@ -342,7 +342,7 @@
     iput v3, p0, Lcom/android/internal/widget/RotarySelector;->mInnerRadius:I
 
     .line 202
-    iget-object v3, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v3, p0, Lcom/android/internal/widget/RotarySelector;->mContext:Landroid/content/Context;
 
     invoke-static {v3}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
@@ -854,7 +854,7 @@
     monitor-enter p0
 
     :try_start_0
-    iget-object v1, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/android/internal/widget/RotarySelector;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -1840,7 +1840,7 @@
     .local v8, dimpleRight:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/view/View;->mRight:I
+    iget v0, v0, Lcom/android/internal/widget/RotarySelector;->mRight:I
 
     move/from16 v17, v0
 

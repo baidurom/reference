@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 762
+    .line 769
     iput-object p1, p0, Landroid/service/dreams/DreamService$DreamServiceWrapper$2;->this$1:Landroid/service/dreams/DreamService$DreamServiceWrapper;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,7 +41,7 @@
     .locals 1
 
     .prologue
-    .line 765
+    .line 772
     iget-object v0, p0, Landroid/service/dreams/DreamService$DreamServiceWrapper$2;->this$1:Landroid/service/dreams/DreamService$DreamServiceWrapper;
 
     iget-object v0, v0, Landroid/service/dreams/DreamService$DreamServiceWrapper;->this$0:Landroid/service/dreams/DreamService;
@@ -49,6 +49,6 @@
     #calls: Landroid/service/dreams/DreamService;->detach()V
     invoke-static {v0}, Landroid/service/dreams/DreamService;->access$500(Landroid/service/dreams/DreamService;)V
 
-    .line 766
+    .line 773
     return-void
 .end method

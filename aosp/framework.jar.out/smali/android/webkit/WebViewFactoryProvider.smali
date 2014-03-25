@@ -21,6 +21,9 @@
 .method public abstract getGeolocationPermissions()Landroid/webkit/GeolocationPermissions;
 .end method
 
+.method public abstract getNotificationPermissions()Landroid/webkit/NotificationPermissions;
+.end method
+
 .method public abstract getStatics()Landroid/webkit/WebViewFactoryProvider$Statics;
 .end method
 

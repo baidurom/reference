@@ -385,7 +385,7 @@
     if-ne v3, v4, :cond_1
 
     .line 420
-    const-string v3, "low_battery_sound"
+    const-string/jumbo v3, "low_battery_sound"
 
     invoke-static {v0, v3}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
@@ -994,7 +994,7 @@
     .line 218
     const-string v10, "SmartPowerService"
 
-    const-string v11, "low battery policy trigger!!!"
+    const-string/jumbo v11, "low battery policy trigger!!!"
 
     invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -1145,6 +1145,8 @@
     goto/16 :goto_0
 
     .line 196
+    nop
+
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

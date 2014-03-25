@@ -130,7 +130,7 @@
     .local v1, lp:Landroid/widget/FrameLayout$LayoutParams;
     if-eqz p3, :cond_0
 
-    iget v2, v1, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v2, v1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
     iget v3, p2, Landroid/graphics/Rect;->left:I
 
@@ -142,13 +142,13 @@
     .line 134
     iget v2, p2, Landroid/graphics/Rect;->left:I
 
-    iput v2, v1, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iput v2, v1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
     .line 136
     :cond_0
     if-eqz p4, :cond_1
 
-    iget v2, v1, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iget v2, v1, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
     iget v3, p2, Landroid/graphics/Rect;->top:I
 
@@ -160,13 +160,13 @@
     .line 138
     iget v2, p2, Landroid/graphics/Rect;->top:I
 
-    iput v2, v1, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iput v2, v1, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
     .line 140
     :cond_1
     if-eqz p6, :cond_2
 
-    iget v2, v1, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iget v2, v1, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
     iget v3, p2, Landroid/graphics/Rect;->right:I
 
@@ -178,13 +178,13 @@
     .line 142
     iget v2, p2, Landroid/graphics/Rect;->right:I
 
-    iput v2, v1, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iput v2, v1, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
     .line 144
     :cond_2
     if-eqz p5, :cond_3
 
-    iget v2, v1, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+    iget v2, v1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
     iget v3, p2, Landroid/graphics/Rect;->bottom:I
 
@@ -196,7 +196,7 @@
     .line 146
     iget v2, p2, Landroid/graphics/Rect;->bottom:I
 
-    iput v2, v1, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+    iput v2, v1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
     .line 148
     :cond_3

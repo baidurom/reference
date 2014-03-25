@@ -73,7 +73,7 @@
     .prologue
     .line 94
     .local p1, queryList:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 95
     if-nez p1, :cond_0

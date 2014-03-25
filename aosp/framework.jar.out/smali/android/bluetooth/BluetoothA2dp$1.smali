@@ -65,6 +65,13 @@
     .line 116
     if-nez p1, :cond_0
 
+    .line 117
+    const-string v1, "BluetoothA2dp"
+
+    const-string v2, "Unbinding service..."
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     .line 118
     iget-object v1, p0, Landroid/bluetooth/BluetoothA2dp$1;->this$0:Landroid/bluetooth/BluetoothA2dp;
 
@@ -159,6 +166,13 @@
     move-result-object v1
 
     if-nez v1, :cond_1
+
+    .line 130
+    const-string v1, "BluetoothA2dp"
+
+    const-string v3, "Binding service..."
+
+    invoke-static {v1, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 131
     iget-object v1, p0, Landroid/bluetooth/BluetoothA2dp$1;->this$0:Landroid/bluetooth/BluetoothA2dp;

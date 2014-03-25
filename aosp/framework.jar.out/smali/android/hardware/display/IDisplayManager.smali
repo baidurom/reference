@@ -63,6 +63,14 @@
     .end annotation
 .end method
 
+.method public abstract isSmartBookPluggedIn()Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract registerCallback(Landroid/hardware/display/IDisplayManagerCallback;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

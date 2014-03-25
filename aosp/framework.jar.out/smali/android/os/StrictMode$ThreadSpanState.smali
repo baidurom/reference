@@ -29,8 +29,8 @@
     .locals 0
 
     .prologue
-    .line 1777
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 1821
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -40,7 +40,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1777
+    .line 1821
     invoke-direct {p0}, Landroid/os/StrictMode$ThreadSpanState;-><init>()V
 
     return-void

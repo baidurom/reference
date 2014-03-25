@@ -128,7 +128,7 @@
 
     .line 1143
     .local v7, bundle:Landroid/os/Bundle;
-    const-string v0, "intent"
+    const-string/jumbo v0, "intent"
 
     invoke-virtual {v7, v0, v4}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
@@ -201,7 +201,7 @@
     .line 1157
     iget-object v0, p0, Landroid/accounts/AccountManagerService$4;->this$0:Landroid/accounts/AccountManagerService;
 
-    iget-object v1, p0, Landroid/accounts/AccountManagerService$Session;->mAccounts:Landroid/accounts/AccountManagerService$UserAccounts;
+    iget-object v1, p0, Landroid/accounts/AccountManagerService$4;->mAccounts:Landroid/accounts/AccountManagerService$UserAccounts;
 
     new-instance v2, Landroid/accounts/Account;
 
@@ -216,7 +216,7 @@
     .end local v8           #name:Ljava/lang/String;
     .end local v9           #type:Ljava/lang/String;
     :cond_3
-    const-string v0, "intent"
+    const-string/jumbo v0, "intent"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
 
@@ -239,7 +239,7 @@
     .line 1164
     iget-object v0, p0, Landroid/accounts/AccountManagerService$4;->this$0:Landroid/accounts/AccountManagerService;
 
-    iget-object v1, p0, Landroid/accounts/AccountManagerService$Session;->mAccounts:Landroid/accounts/AccountManagerService$UserAccounts;
+    iget-object v1, p0, Landroid/accounts/AccountManagerService$4;->mAccounts:Landroid/accounts/AccountManagerService$UserAccounts;
 
     iget-object v2, p0, Landroid/accounts/AccountManagerService$4;->val$account:Landroid/accounts/Account;
 
@@ -283,7 +283,7 @@
     if-nez v0, :cond_0
 
     .line 1129
-    iget-object v0, p0, Landroid/accounts/AccountManagerService$Session;->mAuthenticator:Landroid/accounts/IAccountAuthenticator;
+    iget-object v0, p0, Landroid/accounts/AccountManagerService$4;->mAuthenticator:Landroid/accounts/IAccountAuthenticator;
 
     iget-object v1, p0, Landroid/accounts/AccountManagerService$4;->val$authTokenType:Ljava/lang/String;
 
@@ -295,7 +295,7 @@
 
     .line 1131
     :cond_0
-    iget-object v0, p0, Landroid/accounts/AccountManagerService$Session;->mAuthenticator:Landroid/accounts/IAccountAuthenticator;
+    iget-object v0, p0, Landroid/accounts/AccountManagerService$4;->mAuthenticator:Landroid/accounts/IAccountAuthenticator;
 
     iget-object v1, p0, Landroid/accounts/AccountManagerService$4;->val$account:Landroid/accounts/Account;
 

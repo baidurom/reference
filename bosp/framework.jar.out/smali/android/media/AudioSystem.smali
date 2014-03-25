@@ -174,6 +174,10 @@
 
 .field public static final MODE_IN_CALL:I = 0x2
 
+.field public static final MODE_IN_CALL_2:I = 0x4
+
+.field public static final MODE_IN_CALL_EXTERNAL:I = 0x5
+
 .field public static final MODE_IN_COMMUNICATION:I = 0x3
 
 .field public static final MODE_NORMAL:I = 0x0
@@ -186,11 +190,11 @@
 
 .field private static final NUM_FORCE_USE:I = 0x5
 
-.field public static final NUM_MODES:I = 0x4
+.field public static final NUM_MODES:I = 0x6
 
 .field public static final NUM_STREAMS:I = 0x5
 
-.field private static final NUM_STREAM_TYPES:I = 0xa
+.field private static final NUM_STREAM_TYPES:I = 0xc
 
 .field public static final PHONE_STATE_INCALL:I = 0x2
 
@@ -239,6 +243,10 @@
 
 .field public static final STREAM_DTMF:I = 0x8
 
+.field public static final STREAM_FM:I = 0xa
+
+.field public static final STREAM_MATV:I = 0xb
+
 .field public static final STREAM_MUSIC:I = 0x3
 
 .field public static final STREAM_NOTIFICATION:I = 0x5
@@ -266,7 +274,7 @@
 
     .prologue
     .line 28
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -276,41 +284,41 @@
     .parameter "error"
 
     .prologue
-    .line 182
+    .line 196
     const/4 v0, 0x0
 
-    .line 183
+    .line 197
     .local v0, errorCallback:Landroid/media/AudioSystem$ErrorCallback;
     const-class v2, Landroid/media/AudioSystem;
 
     monitor-enter v2
 
-    .line 184
+    .line 198
     :try_start_0
     sget-object v1, Landroid/media/AudioSystem;->mErrorCallback:Landroid/media/AudioSystem$ErrorCallback;
 
     if-eqz v1, :cond_0
 
-    .line 185
+    .line 199
     sget-object v0, Landroid/media/AudioSystem;->mErrorCallback:Landroid/media/AudioSystem$ErrorCallback;
 
-    .line 187
+    .line 201
     :cond_0
     monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 188
+    .line 202
     if-eqz v0, :cond_1
 
-    .line 189
+    .line 203
     invoke-interface {v0, p0}, Landroid/media/AudioSystem$ErrorCallback;->onError(I)V
 
-    .line 191
+    .line 205
     :cond_1
     return-void
 
-    .line 187
+    .line 201
     :catchall_0
     move-exception v1
 
@@ -322,6 +330,12 @@
     throw v1
 .end method
 
+.method public static native getAudioCommand(I)I
+.end method
+
+.method public static native getAudioData(II[B)I
+.end method
+
 .method public static native getDeviceConnectionState(ILjava/lang/String;)I
 .end method
 
@@ -330,112 +344,112 @@
     .parameter "device"
 
     .prologue
-    .line 307
+    .line 320
     sparse-switch p0, :sswitch_data_0
 
-    .line 342
+    .line 355
     const-string v0, ""
 
     :goto_0
     return-object v0
 
-    .line 309
+    .line 322
     :sswitch_0
     const-string v0, "earpiece"
 
     goto :goto_0
 
-    .line 311
+    .line 324
     :sswitch_1
     const-string/jumbo v0, "speaker"
 
     goto :goto_0
 
-    .line 313
+    .line 326
     :sswitch_2
     const-string v0, "headset"
 
     goto :goto_0
 
-    .line 315
+    .line 328
     :sswitch_3
     const-string v0, "headphone"
 
     goto :goto_0
 
-    .line 317
+    .line 330
     :sswitch_4
     const-string v0, "bt_sco"
 
     goto :goto_0
 
-    .line 319
+    .line 332
     :sswitch_5
     const-string v0, "bt_sco_hs"
 
     goto :goto_0
 
-    .line 321
+    .line 334
     :sswitch_6
     const-string v0, "bt_sco_carkit"
 
     goto :goto_0
 
-    .line 323
+    .line 336
     :sswitch_7
     const-string v0, "bt_a2dp"
 
     goto :goto_0
 
-    .line 325
+    .line 338
     :sswitch_8
     const-string v0, "bt_a2dp_hp"
 
     goto :goto_0
 
-    .line 327
+    .line 340
     :sswitch_9
     const-string v0, "bt_a2dp_spk"
 
     goto :goto_0
 
-    .line 329
+    .line 342
     :sswitch_a
     const-string v0, "aux_digital"
 
     goto :goto_0
 
-    .line 331
+    .line 344
     :sswitch_b
     const-string v0, "analog_dock"
 
     goto :goto_0
 
-    .line 333
+    .line 346
     :sswitch_c
     const-string v0, "digital_dock"
 
     goto :goto_0
 
-    .line 335
+    .line 348
     :sswitch_d
     const-string/jumbo v0, "usb_accessory"
 
     goto :goto_0
 
-    .line 337
+    .line 350
     :sswitch_e
     const-string/jumbo v0, "usb_device"
 
     goto :goto_0
 
-    .line 339
+    .line 352
     :sswitch_f
     const-string/jumbo v0, "remote_submix"
 
     goto :goto_0
 
-    .line 307
+    .line 320
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_0
@@ -460,6 +474,9 @@
 .method public static native getDevicesForStream(I)I
 .end method
 
+.method public static native getEmParameter([BI)I
+.end method
+
 .method public static native getForceUse(I)I
 .end method
 
@@ -473,8 +490,8 @@
     .locals 1
 
     .prologue
-    .line 62
-    const/16 v0, 0xa
+    .line 68
+    const/16 v0, 0xc
 
     return v0
 .end method
@@ -506,7 +523,16 @@
 .method public static native muteMicrophone(Z)I
 .end method
 
+.method public static native setAudioCommand(II)I
+.end method
+
+.method public static native setAudioData(II[B)I
+.end method
+
 .method public static native setDeviceConnectionState(IILjava/lang/String;)I
+.end method
+
+.method public static native setEmParameter([BI)I
 .end method
 
 .method public static setErrorCallback(Landroid/media/AudioSystem$ErrorCallback;)V
@@ -514,27 +540,27 @@
     .parameter "cb"
 
     .prologue
-    .line 170
+    .line 184
     const-class v1, Landroid/media/AudioSystem;
 
     monitor-enter v1
 
-    .line 171
+    .line 185
     :try_start_0
     sput-object p0, Landroid/media/AudioSystem;->mErrorCallback:Landroid/media/AudioSystem$ErrorCallback;
 
-    .line 172
+    .line 186
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 177
+    .line 191
     invoke-static {}, Landroid/media/AudioSystem;->isMicrophoneMuted()Z
 
-    .line 178
+    .line 192
     return-void
 
-    .line 172
+    .line 186
     :catchall_0
     move-exception v0
 

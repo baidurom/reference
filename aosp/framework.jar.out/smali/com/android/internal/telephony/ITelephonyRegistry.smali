@@ -23,6 +23,14 @@
     .end annotation
 .end method
 
+.method public abstract notifyAllDataConnection(IZLjava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;IZLjava/lang/String;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract notifyCallForwardingChanged(Z)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -114,6 +122,14 @@
 .end method
 
 .method public abstract notifySignalStrength(Landroid/telephony/SignalStrength;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract updateRegistryCellLocation()V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

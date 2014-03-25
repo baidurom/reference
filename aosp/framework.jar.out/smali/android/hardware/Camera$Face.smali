@@ -35,23 +35,23 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1346
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 1638
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1406
+    .line 1698
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/hardware/Camera$Face;->id:I
 
-    .line 1415
+    .line 1707
     iput-object v1, p0, Landroid/hardware/Camera$Face;->leftEye:Landroid/graphics/Point;
 
-    .line 1424
+    .line 1716
     iput-object v1, p0, Landroid/hardware/Camera$Face;->rightEye:Landroid/graphics/Point;
 
-    .line 1433
+    .line 1725
     iput-object v1, p0, Landroid/hardware/Camera$Face;->mouth:Landroid/graphics/Point;
 
-    .line 1347
+    .line 1639
     return-void
 .end method

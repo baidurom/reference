@@ -154,7 +154,7 @@
     invoke-virtual {p0, v7}, Lcom/android/internal/widget/PointerLocationView;->setFocusableInTouchMode(Z)V
 
     .line 124
-    const-string v2, "input"
+    const-string/jumbo v2, "input"
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 

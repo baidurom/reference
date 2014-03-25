@@ -1331,9 +1331,9 @@
 
     move-result-object v0
 
-    iget-wide v1, p0, Landroid/media/videoeditor/Overlay;->mStartTimeMs:J
+    iget-wide v1, p0, Landroid/media/videoeditor/OverlayFrame;->mStartTimeMs:J
 
-    iget-wide v3, p0, Landroid/media/videoeditor/Overlay;->mDurationMs:J
+    iget-wide v3, p0, Landroid/media/videoeditor/OverlayFrame;->mDurationMs:J
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/media/videoeditor/MediaItem;->invalidateTransitions(JJ)V
 

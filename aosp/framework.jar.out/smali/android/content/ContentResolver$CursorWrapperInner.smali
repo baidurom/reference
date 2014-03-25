@@ -36,30 +36,30 @@
     .parameter "icp"
 
     .prologue
-    .line 1852
+    .line 1880
     iput-object p1, p0, Landroid/content/ContentResolver$CursorWrapperInner;->this$0:Landroid/content/ContentResolver;
 
-    .line 1853
+    .line 1881
     invoke-direct {p0, p2}, Landroid/database/CrossProcessCursorWrapper;-><init>(Landroid/database/Cursor;)V
 
-    .line 1849
+    .line 1877
     invoke-static {}, Ldalvik/system/CloseGuard;->get()Ldalvik/system/CloseGuard;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/content/ContentResolver$CursorWrapperInner;->mCloseGuard:Ldalvik/system/CloseGuard;
 
-    .line 1854
+    .line 1882
     iput-object p3, p0, Landroid/content/ContentResolver$CursorWrapperInner;->mContentProvider:Landroid/content/IContentProvider;
 
-    .line 1855
+    .line 1883
     iget-object v0, p0, Landroid/content/ContentResolver$CursorWrapperInner;->mCloseGuard:Ldalvik/system/CloseGuard;
 
     const-string v1, "close"
 
     invoke-virtual {v0, v1}, Ldalvik/system/CloseGuard;->open(Ljava/lang/String;)V
 
-    .line 1856
+    .line 1884
     return-void
 .end method
 
@@ -69,32 +69,41 @@
     .locals 2
 
     .prologue
-    .line 1860
+    .line 1888
     invoke-super {p0}, Landroid/database/CrossProcessCursorWrapper;->close()V
 
-    .line 1861
+    .line 1890
+    iget-object v0, p0, Landroid/content/ContentResolver$CursorWrapperInner;->this$0:Landroid/content/ContentResolver;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/content/ContentResolver;->RemoveFromQueryHistory(I)V
+
+    .line 1892
     iget-object v0, p0, Landroid/content/ContentResolver$CursorWrapperInner;->this$0:Landroid/content/ContentResolver;
 
     iget-object v1, p0, Landroid/content/ContentResolver$CursorWrapperInner;->mContentProvider:Landroid/content/IContentProvider;
 
     invoke-virtual {v0, v1}, Landroid/content/ContentResolver;->releaseProvider(Landroid/content/IContentProvider;)Z
 
-    .line 1862
+    .line 1893
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/content/ContentResolver$CursorWrapperInner;->mProviderReleased:Z
 
-    .line 1864
+    .line 1895
     iget-object v0, p0, Landroid/content/ContentResolver$CursorWrapperInner;->mCloseGuard:Ldalvik/system/CloseGuard;
 
     if-eqz v0, :cond_0
 
-    .line 1865
+    .line 1896
     iget-object v0, p0, Landroid/content/ContentResolver$CursorWrapperInner;->mCloseGuard:Ldalvik/system/CloseGuard;
 
     invoke-virtual {v0}, Ldalvik/system/CloseGuard;->close()V
 
-    .line 1867
+    .line 1898
     :cond_0
     return-void
 .end method
@@ -108,18 +117,18 @@
     .end annotation
 
     .prologue
-    .line 1872
+    .line 1903
     :try_start_0
     iget-object v0, p0, Landroid/content/ContentResolver$CursorWrapperInner;->mCloseGuard:Ldalvik/system/CloseGuard;
 
     if-eqz v0, :cond_0
 
-    .line 1873
+    .line 1904
     iget-object v0, p0, Landroid/content/ContentResolver$CursorWrapperInner;->mCloseGuard:Ldalvik/system/CloseGuard;
 
     invoke-virtual {v0}, Ldalvik/system/CloseGuard;->warnIfOpen()V
 
-    .line 1876
+    .line 1907
     :cond_0
     iget-boolean v0, p0, Landroid/content/ContentResolver$CursorWrapperInner;->mProviderReleased:Z
 
@@ -129,14 +138,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 1879
+    .line 1910
     const-string v0, "CursorWrapperInner"
 
     const-string v1, "Cursor finalized without prior close()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1880
+    .line 1911
     iget-object v0, p0, Landroid/content/ContentResolver$CursorWrapperInner;->this$0:Landroid/content/ContentResolver;
 
     iget-object v1, p0, Landroid/content/ContentResolver$CursorWrapperInner;->mContentProvider:Landroid/content/IContentProvider;
@@ -145,14 +154,14 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1883
+    .line 1914
     :cond_1
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 1885
+    .line 1916
     return-void
 
-    .line 1883
+    .line 1914
     :catchall_0
     move-exception v0
 

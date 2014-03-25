@@ -105,7 +105,7 @@
     .line 203
     iget-object v6, p0, Landroid/widget/AppSecurityPermissions$PermissionItemView;->mPerm:Landroid/widget/AppSecurityPermissions$MyPermissionInfo;
 
-    iget v6, v6, Landroid/content/pm/PermissionInfo;->descriptionRes:I
+    iget v6, v6, Landroid/widget/AppSecurityPermissions$MyPermissionInfo;->descriptionRes:I
 
     if-eqz v6, :cond_2
 
@@ -156,7 +156,7 @@
     :try_start_0
     iget-object v6, p0, Landroid/widget/AppSecurityPermissions$PermissionItemView;->mPerm:Landroid/widget/AppSecurityPermissions$MyPermissionInfo;
 
-    iget-object v6, v6, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
+    iget-object v6, v6, Landroid/widget/AppSecurityPermissions$MyPermissionInfo;->packageName:Ljava/lang/String;
 
     const/4 v7, 0x0
 
@@ -208,7 +208,7 @@
     .line 217
     iget-object v6, p0, Landroid/widget/AppSecurityPermissions$PermissionItemView;->mPerm:Landroid/widget/AppSecurityPermissions$MyPermissionInfo;
 
-    iget-object v6, v6, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
+    iget-object v6, v6, Landroid/widget/AppSecurityPermissions$MyPermissionInfo;->name:Ljava/lang/String;
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -231,7 +231,7 @@
     .local v3, e:Landroid/content/pm/PackageManager$NameNotFoundException;
     iget-object v6, p0, Landroid/widget/AppSecurityPermissions$PermissionItemView;->mPerm:Landroid/widget/AppSecurityPermissions$MyPermissionInfo;
 
-    iget-object v1, v6, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
+    iget-object v1, v6, Landroid/widget/AppSecurityPermissions$MyPermissionInfo;->packageName:Ljava/lang/String;
 
     .restart local v1       #appName:Ljava/lang/CharSequence;
     goto :goto_1

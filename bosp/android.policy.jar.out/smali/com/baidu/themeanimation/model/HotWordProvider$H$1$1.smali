@@ -30,7 +30,7 @@
     .line 144
     iput-object p1, p0, Lcom/baidu/themeanimation/model/HotWordProvider$H$1$1;->this$2:Lcom/baidu/themeanimation/model/HotWordProvider$H$1;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

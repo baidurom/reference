@@ -135,7 +135,7 @@
 
     float-to-int v8, v8
 
-    iput v8, v1, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+    iput v8, v1, Landroid/widget/LinearLayout$LayoutParams;->bottomMargin:I
 
     .line 65
     new-instance v6, Landroid/widget/TextView;

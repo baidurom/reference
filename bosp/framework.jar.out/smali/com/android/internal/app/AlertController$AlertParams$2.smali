@@ -37,7 +37,7 @@
     .parameter
 
     .prologue
-    .line 924
+    .line 948
     iput-object p1, p0, Lcom/android/internal/app/AlertController$AlertParams$2;->this$0:Lcom/android/internal/app/AlertController$AlertParams;
 
     iput-object p5, p0, Lcom/android/internal/app/AlertController$AlertParams$2;->val$listView:Lcom/android/internal/app/AlertController$RecycleListView;
@@ -46,12 +46,12 @@
 
     invoke-direct {p0, p2, p3, p4}, Landroid/widget/CursorAdapter;-><init>(Landroid/content/Context;Landroid/database/Cursor;Z)V
 
-    .line 929
+    .line 953
     invoke-virtual {p0}, Lcom/android/internal/app/AlertController$AlertParams$2;->getCursor()Landroid/database/Cursor;
 
     move-result-object v0
 
-    .line 930
+    .line 954
     .local v0, cursor:Landroid/database/Cursor;
     iget-object v1, p0, Lcom/android/internal/app/AlertController$AlertParams$2;->this$0:Lcom/android/internal/app/AlertController$AlertParams;
 
@@ -63,7 +63,7 @@
 
     iput v1, p0, Lcom/android/internal/app/AlertController$AlertParams$2;->mLabelIndex:I
 
-    .line 931
+    .line 955
     iget-object v1, p0, Lcom/android/internal/app/AlertController$AlertParams$2;->this$0:Lcom/android/internal/app/AlertController$AlertParams;
 
     iget-object v1, v1, Lcom/android/internal/app/AlertController$AlertParams;->mIsCheckedColumn:Ljava/lang/String;
@@ -74,7 +74,7 @@
 
     iput v1, p0, Lcom/android/internal/app/AlertController$AlertParams$2;->mIsCheckedIndex:I
 
-    .line 932
+    .line 956
     return-void
 .end method
 
@@ -89,7 +89,7 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 936
+    .line 960
     const v2, #id@text1#t
 
     invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -98,7 +98,7 @@
 
     check-cast v0, Landroid/widget/CheckedTextView;
 
-    .line 937
+    .line 961
     .local v0, text:Landroid/widget/CheckedTextView;
     iget v2, p0, Lcom/android/internal/app/AlertController$AlertParams$2;->mLabelIndex:I
 
@@ -108,7 +108,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/CheckedTextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 938
+    .line 962
     iget-object v2, p0, Lcom/android/internal/app/AlertController$AlertParams$2;->val$listView:Lcom/android/internal/app/AlertController$RecycleListView;
 
     invoke-interface {p3}, Landroid/database/Cursor;->getPosition()I
@@ -126,10 +126,10 @@
     :goto_0
     invoke-virtual {v2, v3, v1}, Lcom/android/internal/app/AlertController$RecycleListView;->setItemChecked(IZ)V
 
-    .line 940
+    .line 964
     return-void
 
-    .line 938
+    .line 962
     :cond_0
     const/4 v1, 0x0
 
@@ -143,7 +143,7 @@
     .parameter "parent"
 
     .prologue
-    .line 944
+    .line 968
     iget-object v0, p0, Lcom/android/internal/app/AlertController$AlertParams$2;->this$0:Lcom/android/internal/app/AlertController$AlertParams;
 
     iget-object v0, v0, Lcom/android/internal/app/AlertController$AlertParams;->mInflater:Landroid/view/LayoutInflater;

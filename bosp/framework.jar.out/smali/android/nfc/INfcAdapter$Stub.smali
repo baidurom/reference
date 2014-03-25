@@ -36,6 +36,8 @@
 
 .field static final TRANSACTION_enableNdefPush:I = 0x6
 
+.field static final TRANSACTION_getModeFlag:I = 0xd
+
 .field static final TRANSACTION_getNfcAdapterExtrasInterface:I = 0x2
 
 .field static final TRANSACTION_getNfcTagInterface:I = 0x1
@@ -45,6 +47,8 @@
 .field static final TRANSACTION_isNdefPushEnabled:I = 0x8
 
 .field static final TRANSACTION_setForegroundDispatch:I = 0x9
+
+.field static final TRANSACTION_setModeFlag:I = 0xe
 
 .field static final TRANSACTION_setNdefPushCallback:I = 0xa
 
@@ -146,7 +150,7 @@
     .line 41
     sparse-switch p1, :sswitch_data_0
 
-    .line 174
+    .line 195
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v5
@@ -567,6 +571,62 @@
 
     goto/16 :goto_0
 
+    .line 175
+    .end local v0           #_arg0:I
+    .end local v1           #_arg1:I
+    :sswitch_d
+    const-string v4, "android.nfc.INfcAdapter"
+
+    invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 177
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    .line 178
+    .restart local v0       #_arg0:I
+    invoke-virtual {p0, v0}, Landroid/nfc/INfcAdapter$Stub;->getModeFlag(I)I
+
+    move-result v3
+
+    .line 179
+    .local v3, _result:I
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 180
+    invoke-virtual {p3, v3}, Landroid/os/Parcel;->writeInt(I)V
+
+    goto/16 :goto_0
+
+    .line 185
+    .end local v0           #_arg0:I
+    .end local v3           #_result:I
+    :sswitch_e
+    const-string v4, "android.nfc.INfcAdapter"
+
+    invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 187
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    .line 189
+    .restart local v0       #_arg0:I
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v1
+
+    .line 190
+    .restart local v1       #_arg1:I
+    invoke-virtual {p0, v0, v1}, Landroid/nfc/INfcAdapter$Stub;->setModeFlag(II)V
+
+    .line 191
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    goto/16 :goto_0
+
     .line 41
     :sswitch_data_0
     .sparse-switch
@@ -582,6 +642,8 @@
         0xa -> :sswitch_a
         0xb -> :sswitch_b
         0xc -> :sswitch_c
+        0xd -> :sswitch_d
+        0xe -> :sswitch_e
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

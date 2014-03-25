@@ -42,7 +42,7 @@
     .prologue
     .line 108
     .local p0, this:Lcom/google/android/mms/util/AbstractCache$CacheEntry;,"Lcom/google/android/mms/util/AbstractCache$CacheEntry<TV;>;"
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

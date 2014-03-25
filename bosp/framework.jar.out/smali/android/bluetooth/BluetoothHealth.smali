@@ -57,7 +57,7 @@
 
 .field private static final TAG:Ljava/lang/String; = "BluetoothHealth"
 
-.field private static final VDBG:Z
+.field private static final VDBG:Z = true
 
 
 # instance fields
@@ -82,7 +82,7 @@
 
     .prologue
     .line 473
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 101
     new-instance v2, Landroid/bluetooth/BluetoothHealth$1;
@@ -91,7 +91,7 @@
 
     iput-object v2, p0, Landroid/bluetooth/BluetoothHealth;->mBluetoothStateChangeCallback:Landroid/bluetooth/IBluetoothStateChangeCallback;
 
-    .line 515
+    .line 517
     new-instance v2, Landroid/bluetooth/BluetoothHealth$2;
 
     invoke-direct {v2, p0}, Landroid/bluetooth/BluetoothHealth$2;-><init>(Landroid/bluetooth/BluetoothHealth;)V
@@ -124,13 +124,38 @@
 
     .line 480
     :try_start_0
+    const-string v2, "BluetoothHealth"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "Register mBluetoothStateChangeCallback = "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, p0, Landroid/bluetooth/BluetoothHealth;->mBluetoothStateChangeCallback:Landroid/bluetooth/IBluetoothStateChangeCallback;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 481
     iget-object v2, p0, Landroid/bluetooth/BluetoothHealth;->mBluetoothStateChangeCallback:Landroid/bluetooth/IBluetoothStateChangeCallback;
 
     invoke-interface {v1, v2}, Landroid/bluetooth/IBluetoothManager;->registerStateChangeCallback(Landroid/bluetooth/IBluetoothStateChangeCallback;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 486
+    .line 487
     :cond_0
     :goto_0
     new-instance v2, Landroid/content/Intent;
@@ -153,22 +178,22 @@
 
     if-nez v2, :cond_1
 
-    .line 487
+    .line 488
     const-string v2, "BluetoothHealth"
 
     const-string v3, "Could not bind to Bluetooth Health Service"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 489
+    .line 490
     :cond_1
     return-void
 
-    .line 481
+    .line 482
     :catch_0
     move-exception v0
 
-    .line 482
+    .line 483
     .local v0, e:Landroid/os/RemoteException;
     const-string v2, "BluetoothHealth"
 
@@ -249,7 +274,7 @@
 
     const/4 v1, 0x1
 
-    .line 550
+    .line 552
     if-eqz p1, :cond_2
 
     if-eq p2, v1, :cond_0
@@ -272,12 +297,12 @@
     :cond_1
     if-nez p4, :cond_3
 
-    .line 557
+    .line 559
     :cond_2
     :goto_0
     return v0
 
-    .line 556
+    .line 558
     :cond_3
     if-ne p2, v1, :cond_4
 
@@ -286,7 +311,7 @@
     :cond_4
     move v0, v1
 
-    .line 557
+    .line 559
     goto :goto_0
 .end method
 
@@ -294,12 +319,12 @@
     .locals 3
 
     .prologue
-    .line 534
+    .line 536
     invoke-static {}, Landroid/bluetooth/BluetoothAdapter;->getDefaultAdapter()Landroid/bluetooth/BluetoothAdapter;
 
     move-result-object v0
 
-    .line 536
+    .line 538
     .local v0, adapter:Landroid/bluetooth/BluetoothAdapter;
     if-eqz v0, :cond_0
 
@@ -313,17 +338,17 @@
 
     const/4 v1, 0x1
 
-    .line 538
+    .line 540
     :goto_0
     return v1
 
-    .line 537
+    .line 539
     :cond_0
     const-string v1, "Bluetooth is Not enabled"
 
     invoke-static {v1}, Landroid/bluetooth/BluetoothHealth;->log(Ljava/lang/String;)V
 
-    .line 538
+    .line 540
     const/4 v1, 0x0
 
     goto :goto_0
@@ -336,15 +361,15 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 542
+    .line 544
     if-nez p1, :cond_1
 
-    .line 545
+    .line 547
     :cond_0
     :goto_0
     return v0
 
-    .line 544
+    .line 546
     :cond_1
     invoke-virtual {p1}, Landroid/bluetooth/BluetoothDevice;->getAddress()Ljava/lang/String;
 
@@ -366,12 +391,12 @@
     .parameter "msg"
 
     .prologue
-    .line 561
+    .line 563
     const-string v0, "BluetoothHealth"
 
     invoke-static {v0, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 562
+    .line 564
     return-void
 .end method
 
@@ -384,32 +409,62 @@
     const/4 v6, 0x0
 
     .line 493
+    const-string v3, "close()"
+
+    invoke-static {v3}, Landroid/bluetooth/BluetoothHealth;->log(Ljava/lang/String;)V
+
+    .line 494
     iget-object v3, p0, Landroid/bluetooth/BluetoothHealth;->mAdapter:Landroid/bluetooth/BluetoothAdapter;
 
     invoke-virtual {v3}, Landroid/bluetooth/BluetoothAdapter;->getBluetoothManager()Landroid/bluetooth/IBluetoothManager;
 
     move-result-object v1
 
-    .line 494
+    .line 495
     .local v1, mgr:Landroid/bluetooth/IBluetoothManager;
     if-eqz v1, :cond_0
 
-    .line 496
+    .line 497
     :try_start_0
+    const-string v3, "BluetoothHealth"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "Unregister mBluetoothStateChangeCallback = "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    iget-object v5, p0, Landroid/bluetooth/BluetoothHealth;->mBluetoothStateChangeCallback:Landroid/bluetooth/IBluetoothStateChangeCallback;
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 498
     iget-object v3, p0, Landroid/bluetooth/BluetoothHealth;->mBluetoothStateChangeCallback:Landroid/bluetooth/IBluetoothStateChangeCallback;
 
     invoke-interface {v1, v3}, Landroid/bluetooth/IBluetoothManager;->unregisterStateChangeCallback(Landroid/bluetooth/IBluetoothStateChangeCallback;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 502
+    .line 504
     :cond_0
     :goto_0
     iget-object v4, p0, Landroid/bluetooth/BluetoothHealth;->mConnection:Landroid/content/ServiceConnection;
 
     monitor-enter v4
 
-    .line 503
+    .line 505
     :try_start_1
     iget-object v3, p0, Landroid/bluetooth/BluetoothHealth;->mService:Landroid/bluetooth/IBluetoothHealth;
     :try_end_1
@@ -417,13 +472,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 505
+    .line 507
     const/4 v3, 0x0
 
     :try_start_2
     iput-object v3, p0, Landroid/bluetooth/BluetoothHealth;->mService:Landroid/bluetooth/IBluetoothHealth;
 
-    .line 506
+    .line 508
     iget-object v3, p0, Landroid/bluetooth/BluetoothHealth;->mContext:Landroid/content/Context;
 
     iget-object v5, p0, Landroid/bluetooth/BluetoothHealth;->mConnection:Landroid/content/ServiceConnection;
@@ -433,7 +488,7 @@
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
-    .line 511
+    .line 513
     :cond_1
     :goto_1
     :try_start_3
@@ -441,17 +496,17 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 512
+    .line 514
     iput-object v6, p0, Landroid/bluetooth/BluetoothHealth;->mServiceListener:Landroid/bluetooth/BluetoothProfile$ServiceListener;
 
-    .line 513
+    .line 515
     return-void
 
-    .line 497
+    .line 499
     :catch_0
     move-exception v0
 
-    .line 498
+    .line 500
     .local v0, e:Ljava/lang/Exception;
     const-string v3, "BluetoothHealth"
 
@@ -461,12 +516,12 @@
 
     goto :goto_0
 
-    .line 507
+    .line 509
     .end local v0           #e:Ljava/lang/Exception;
     :catch_1
     move-exception v2
 
-    .line 508
+    .line 510
     .local v2, re:Ljava/lang/Exception;
     :try_start_4
     const-string v3, "BluetoothHealth"
@@ -477,7 +532,7 @@
 
     goto :goto_1
 
-    .line 511
+    .line 513
     .end local v2           #re:Ljava/lang/Exception;
     :catchall_0
     move-exception v3
@@ -1150,10 +1205,47 @@
     :goto_0
     return v3
 
-    .line 179
+    .line 178
     .end local v3           #result:I
     .restart local v2       #result:Z
     :cond_1
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v6, "registerApplication("
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    const-string v6, ":"
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    const-string v6, ")"
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v5}, Landroid/bluetooth/BluetoothHealth;->log(Ljava/lang/String;)V
+
+    .line 179
     new-instance v4, Landroid/bluetooth/BluetoothHealth$BluetoothHealthCallbackWrapper;
 
     invoke-direct {v4, p5}, Landroid/bluetooth/BluetoothHealth$BluetoothHealthCallbackWrapper;-><init>(Landroid/bluetooth/BluetoothHealthCallback;)V
@@ -1252,7 +1344,45 @@
     :goto_0
     return v0
 
+    .line 152
     :cond_1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v1, "registerSinkApplication("
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ":"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ")"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/bluetooth/BluetoothHealth;->log(Ljava/lang/String;)V
+
+    .line 153
     const/4 v3, 0x2
 
     const/16 v4, 0xc

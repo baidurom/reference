@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 4442
+    .line 4645
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$22;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,83 +35,64 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 5
+    .locals 4
     .parameter "context"
     .parameter "intent"
 
     .prologue
-    .line 4444
+    .line 4647
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 4445
+    .line 4648
     .local v0, action:Ljava/lang/String;
-    const-string v2, "WindowManager"
+    const-string v1, "WindowManager"
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "Receive the package add and remove boradcast: "
+    const-string v3, "Receive the flashlight changed boradcast: "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4446
-    const-string v2, "android.intent.action.PACKAGE_REMOVED"
+    .line 4649
+    const-string v1, "com.baidu.action.FLASHLIGHT_STATE_CHANGED"
 
-    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_0
+    if-eqz v1, :cond_0
 
-    const-string v2, "android.intent.action.PACKAGE_ADDED"
+    .line 4650
+    iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$22;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
-    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    .line 4447
-    :cond_0
-    invoke-virtual {p2}, Landroid/content/Intent;->getDataString()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 4448
-    .local v1, packageName:Ljava/lang/String;
-    const-string v2, "package:com.baidu.flashlight"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    .line 4449
-    iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$22;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
+    const-string v2, "state"
 
     const/4 v3, 0x0
 
-    #setter for: Lcom/android/internal/policy/impl/PhoneWindowManager;->mIsFlashlightOn:Z
-    invoke-static {v2, v3}, Lcom/android/internal/policy/impl/PhoneWindowManager;->access$702(Lcom/android/internal/policy/impl/PhoneWindowManager;Z)Z
+    invoke-virtual {p2, v2, v3}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
-    .line 4452
-    .end local v1           #packageName:Ljava/lang/String;
-    :cond_1
+    move-result v2
+
+    #setter for: Lcom/android/internal/policy/impl/PhoneWindowManager;->mIsFlashlightOn:Z
+    invoke-static {v1, v2}, Lcom/android/internal/policy/impl/PhoneWindowManager;->access$702(Lcom/android/internal/policy/impl/PhoneWindowManager;Z)Z
+
+    .line 4652
+    :cond_0
     return-void
 .end method

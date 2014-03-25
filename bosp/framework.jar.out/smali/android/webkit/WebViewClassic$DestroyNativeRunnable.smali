@@ -27,13 +27,13 @@
     .parameter "nativePtr"
 
     .prologue
-    .line 2227
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 2427
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2228
+    .line 2428
     iput p1, p0, Landroid/webkit/WebViewClassic$DestroyNativeRunnable;->mNativePtr:I
 
-    .line 2229
+    .line 2429
     return-void
 .end method
 
@@ -43,12 +43,12 @@
     .locals 1
 
     .prologue
-    .line 2234
+    .line 2434
     iget v0, p0, Landroid/webkit/WebViewClassic$DestroyNativeRunnable;->mNativePtr:I
 
     #calls: Landroid/webkit/WebViewClassic;->nativeDestroy(I)V
-    invoke-static {v0}, Landroid/webkit/WebViewClassic;->access$1900(I)V
+    invoke-static {v0}, Landroid/webkit/WebViewClassic;->access$2000(I)V
 
-    .line 2235
+    .line 2435
     return-void
 .end method

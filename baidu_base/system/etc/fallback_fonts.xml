@@ -88,6 +88,16 @@
     </family>
     <family>
         <fileset>
+            <file>Mondulkiri.ttf</file>
+        </fileset>
+    </family>
+    <family>
+        <fileset>
+            <file>Padauk.ttf</file>
+        </fileset>
+    </family>
+    <family>
+        <fileset>
             <file>Lohit-Kannada.ttf</file>
         </fileset>
     </family>

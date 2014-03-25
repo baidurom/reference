@@ -37,7 +37,7 @@
 
     .prologue
     .line 111
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 112
     iput p1, p0, Lcom/android/server/usb/UsbSettingsManager$DeviceFilter;->mVendorId:I
@@ -64,7 +64,7 @@
 
     .prologue
     .line 119
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 120
     invoke-virtual {p1}, Landroid/hardware/usb/UsbDevice;->getVendorId()I

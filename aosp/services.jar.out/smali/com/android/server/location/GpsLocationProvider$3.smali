@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 473
+    .line 515
     iput-object p1, p0, Lcom/android/server/location/GpsLocationProvider$3;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,11 +41,11 @@
     .locals 8
 
     .prologue
-    .line 476
+    .line 518
     iget-object v1, p0, Lcom/android/server/location/GpsLocationProvider$3;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
     #getter for: Lcom/android/server/location/GpsLocationProvider;->mContext:Landroid/content/Context;
-    invoke-static {v1}, Lcom/android/server/location/GpsLocationProvider;->access$600(Lcom/android/server/location/GpsLocationProvider;)Landroid/content/Context;
+    invoke-static {v1}, Lcom/android/server/location/GpsLocationProvider;->access$500(Lcom/android/server/location/GpsLocationProvider;)Landroid/content/Context;
 
     move-result-object v1
 
@@ -57,7 +57,7 @@
 
     check-cast v0, Landroid/location/LocationManager;
 
-    .line 478
+    .line 520
     .local v0, locManager:Landroid/location/LocationManager;
     const-string v1, "passive"
 
@@ -76,7 +76,7 @@
     iget-object v6, p0, Lcom/android/server/location/GpsLocationProvider$3;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
     #getter for: Lcom/android/server/location/GpsLocationProvider;->mHandler:Landroid/os/Handler;
-    invoke-static {v6}, Lcom/android/server/location/GpsLocationProvider;->access$800(Lcom/android/server/location/GpsLocationProvider;)Landroid/os/Handler;
+    invoke-static {v6}, Lcom/android/server/location/GpsLocationProvider;->access$700(Lcom/android/server/location/GpsLocationProvider;)Landroid/os/Handler;
 
     move-result-object v6
 
@@ -86,6 +86,6 @@
 
     invoke-virtual/range {v0 .. v6}, Landroid/location/LocationManager;->requestLocationUpdates(Ljava/lang/String;JFLandroid/location/LocationListener;Landroid/os/Looper;)V
 
-    .line 480
+    .line 522
     return-void
 .end method

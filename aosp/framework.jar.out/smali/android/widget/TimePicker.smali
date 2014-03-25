@@ -682,7 +682,7 @@
     if-eqz v0, :cond_0
 
     .line 561
-    iget-object v1, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Landroid/widget/TimePicker;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, p3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1178,7 +1178,7 @@
     invoke-virtual {v2, v3, v4}, Ljava/util/Calendar;->set(II)V
 
     .line 482
-    iget-object v2, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Landroid/widget/TimePicker;->mContext:Landroid/content/Context;
 
     iget-object v3, p0, Landroid/widget/TimePicker;->mTempCalendar:Ljava/util/Calendar;
 

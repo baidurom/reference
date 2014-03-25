@@ -1139,7 +1139,7 @@
 
     .line 402
     :cond_5
-    const-string v0, "loop"
+    const-string/jumbo v0, "loop"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1811,7 +1811,7 @@
 
     const-string v3, "MediaSource"
 
-    const-string v5, "interrupted"
+    const-string/jumbo v5, "interrupted"
 
     invoke-static {v3, v5}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -2260,8 +2260,6 @@
     goto/16 :goto_1
 
     .line 303
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x5a -> :sswitch_0

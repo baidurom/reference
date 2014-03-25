@@ -741,7 +741,7 @@
     .line 555
     const/16 v6, 0xa0
 
-    .line 568
+    .line 581
     :cond_0
     :goto_0
     iget-object v0, p0, Landroid/media/videoeditor/MediaVideoItem;->mMANativeHelper:Landroid/media/videoeditor/MediaArtistNativeHelper;
@@ -756,10 +756,10 @@
 
     invoke-virtual/range {v0 .. v8}, Landroid/media/videoeditor/MediaArtistNativeHelper;->generateAudioGraph(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IIILandroid/media/videoeditor/ExtractAudioWaveformProgressListener;Z)V
 
-    .line 579
+    .line 592
     iput-object v3, p0, Landroid/media/videoeditor/MediaVideoItem;->mAudioWaveformFilename:Ljava/lang/String;
 
-    .line 581
+    .line 594
     .end local v3           #mAudioWaveFileName:Ljava/lang/String;
     :cond_1
     new-instance v0, Ljava/lang/ref/SoftReference;
@@ -774,7 +774,7 @@
 
     iput-object v0, p0, Landroid/media/videoeditor/MediaVideoItem;->mWaveformData:Ljava/lang/ref/SoftReference;
 
-    .line 583
+    .line 596
     return-void
 
     .line 556
@@ -810,13 +810,57 @@
 
     move-result v0
 
-    if-ne v0, v5, :cond_0
+    if-ne v0, v5, :cond_4
 
     .line 563
     const/16 v4, 0x20
 
     .line 565
     const/16 v6, 0x400
+
+    goto :goto_0
+
+    .line 568
+    :cond_4
+    iget-object v0, p0, Landroid/media/videoeditor/MediaVideoItem;->mMANativeHelper:Landroid/media/videoeditor/MediaArtistNativeHelper;
+
+    iget v1, p0, Landroid/media/videoeditor/MediaVideoItem;->mAudioType:I
+
+    invoke-virtual {v0, v1}, Landroid/media/videoeditor/MediaArtistNativeHelper;->getAudioCodecType(I)I
+
+    move-result v0
+
+    const/4 v1, 0x3
+
+    if-ne v0, v1, :cond_5
+
+    .line 570
+    const/16 v4, 0x40
+
+    .line 572
+    const/16 v6, 0x800
+
+    goto :goto_0
+
+    .line 573
+    :cond_5
+    iget-object v0, p0, Landroid/media/videoeditor/MediaVideoItem;->mMANativeHelper:Landroid/media/videoeditor/MediaArtistNativeHelper;
+
+    iget v1, p0, Landroid/media/videoeditor/MediaVideoItem;->mAudioType:I
+
+    invoke-virtual {v0, v1}, Landroid/media/videoeditor/MediaArtistNativeHelper;->getAudioCodecType(I)I
+
+    move-result v0
+
+    const/4 v1, 0x4
+
+    if-ne v0, v1, :cond_0
+
+    .line 575
+    const/16 v4, 0x40
+
+    .line 577
+    const/16 v6, 0x800
 
     goto :goto_0
 .end method
@@ -835,7 +879,7 @@
     .locals 1
 
     .prologue
-    .line 712
+    .line 725
     iget v0, p0, Landroid/media/videoeditor/MediaVideoItem;->mAudioBitrate:I
 
     return v0
@@ -845,7 +889,7 @@
     .locals 1
 
     .prologue
-    .line 733
+    .line 746
     iget v0, p0, Landroid/media/videoeditor/MediaVideoItem;->mAudioChannels:I
 
     return v0
@@ -855,7 +899,7 @@
     .locals 1
 
     .prologue
-    .line 740
+    .line 753
     iget v0, p0, Landroid/media/videoeditor/MediaVideoItem;->mAudioSamplingFrequency:I
 
     return v0
@@ -865,7 +909,7 @@
     .locals 1
 
     .prologue
-    .line 726
+    .line 739
     iget v0, p0, Landroid/media/videoeditor/MediaVideoItem;->mAudioType:I
 
     return v0
@@ -875,7 +919,7 @@
     .locals 1
 
     .prologue
-    .line 597
+    .line 610
     iget-object v0, p0, Landroid/media/videoeditor/MediaVideoItem;->mAudioWaveformFilename:Ljava/lang/String;
 
     return-object v0
@@ -925,7 +969,7 @@
     .locals 1
 
     .prologue
-    .line 719
+    .line 732
     iget v0, p0, Landroid/media/videoeditor/MediaVideoItem;->mFps:I
 
     return v0
@@ -1204,7 +1248,7 @@
     .locals 1
 
     .prologue
-    .line 705
+    .line 718
     iget v0, p0, Landroid/media/videoeditor/MediaVideoItem;->mVideoBitrate:I
 
     return v0
@@ -1214,12 +1258,12 @@
     .locals 3
 
     .prologue
-    .line 748
+    .line 761
     new-instance v0, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;
 
     invoke-direct {v0}, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;-><init>()V
 
-    .line 749
+    .line 762
     .local v0, clipSettings:Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaVideoItem;->getFilename()Ljava/lang/String;
 
@@ -1227,7 +1271,7 @@
 
     iput-object v1, v0, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->clipPath:Ljava/lang/String;
 
-    .line 750
+    .line 763
     iget-object v1, p0, Landroid/media/videoeditor/MediaVideoItem;->mMANativeHelper:Landroid/media/videoeditor/MediaArtistNativeHelper;
 
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaVideoItem;->getFileType()I
@@ -1240,7 +1284,7 @@
 
     iput v1, v0, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->fileType:I
 
-    .line 751
+    .line 764
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaVideoItem;->getBoundaryBeginTime()J
 
     move-result-wide v1
@@ -1249,7 +1293,7 @@
 
     iput v1, v0, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->beginCutTime:I
 
-    .line 752
+    .line 765
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaVideoItem;->getBoundaryEndTime()J
 
     move-result-wide v1
@@ -1258,7 +1302,7 @@
 
     iput v1, v0, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->endCutTime:I
 
-    .line 753
+    .line 766
     iget-object v1, p0, Landroid/media/videoeditor/MediaVideoItem;->mMANativeHelper:Landroid/media/videoeditor/MediaArtistNativeHelper;
 
     invoke-virtual {p0}, Landroid/media/videoeditor/MediaVideoItem;->getRenderingMode()I
@@ -1271,12 +1315,12 @@
 
     iput v1, v0, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->mediaRendering:I
 
-    .line 754
+    .line 767
     iget v1, p0, Landroid/media/videoeditor/MediaVideoItem;->mVideoRotationDegree:I
 
     iput v1, v0, Landroid/media/videoeditor/MediaArtistNativeHelper$ClipSettings;->rotationDegree:I
 
-    .line 756
+    .line 769
     return-object v0
 .end method
 
@@ -1284,7 +1328,7 @@
     .locals 1
 
     .prologue
-    .line 698
+    .line 711
     iget v0, p0, Landroid/media/videoeditor/MediaVideoItem;->mVideoLevel:I
 
     return v0
@@ -1294,7 +1338,7 @@
     .locals 1
 
     .prologue
-    .line 691
+    .line 704
     iget v0, p0, Landroid/media/videoeditor/MediaVideoItem;->mVideoProfile:I
 
     return v0
@@ -1304,7 +1348,7 @@
     .locals 1
 
     .prologue
-    .line 684
+    .line 697
     iget v0, p0, Landroid/media/videoeditor/MediaVideoItem;->mVideoType:I
 
     return v0
@@ -1314,7 +1358,7 @@
     .locals 1
 
     .prologue
-    .line 656
+    .line 669
     iget v0, p0, Landroid/media/videoeditor/MediaVideoItem;->mVolumePercentage:I
 
     return v0
@@ -1331,19 +1375,19 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 614
+    .line 627
     iget-object v3, p0, Landroid/media/videoeditor/MediaVideoItem;->mWaveformData:Ljava/lang/ref/SoftReference;
 
     if-nez v3, :cond_1
 
     move-object v1, v2
 
-    .line 630
+    .line 643
     :cond_0
     :goto_0
     return-object v1
 
-    .line 618
+    .line 631
     :cond_1
     iget-object v3, p0, Landroid/media/videoeditor/MediaVideoItem;->mWaveformData:Ljava/lang/ref/SoftReference;
 
@@ -1353,16 +1397,16 @@
 
     check-cast v1, Landroid/media/videoeditor/WaveformData;
 
-    .line 619
+    .line 632
     .local v1, waveformData:Landroid/media/videoeditor/WaveformData;
     if-nez v1, :cond_0
 
-    .line 621
+    .line 634
     iget-object v3, p0, Landroid/media/videoeditor/MediaVideoItem;->mAudioWaveformFilename:Ljava/lang/String;
 
     if-eqz v3, :cond_2
 
-    .line 623
+    .line 636
     :try_start_0
     new-instance v1, Landroid/media/videoeditor/WaveformData;
 
@@ -1373,7 +1417,7 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 627
+    .line 640
     .restart local v1       #waveformData:Landroid/media/videoeditor/WaveformData;
     new-instance v2, Ljava/lang/ref/SoftReference;
 
@@ -1383,12 +1427,12 @@
 
     goto :goto_0
 
-    .line 624
+    .line 637
     .end local v1           #waveformData:Landroid/media/videoeditor/WaveformData;
     :catch_0
     move-exception v0
 
-    .line 625
+    .line 638
     .local v0, e:Ljava/io/IOException;
     throw v0
 
@@ -1397,7 +1441,7 @@
     :cond_2
     move-object v1, v2
 
-    .line 630
+    .line 643
     goto :goto_0
 .end method
 
@@ -1436,12 +1480,12 @@
     .locals 2
 
     .prologue
-    .line 604
+    .line 617
     iget-object v0, p0, Landroid/media/videoeditor/MediaVideoItem;->mAudioWaveformFilename:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
-    .line 605
+    .line 618
     new-instance v0, Ljava/io/File;
 
     iget-object v1, p0, Landroid/media/videoeditor/MediaVideoItem;->mAudioWaveformFilename:Ljava/lang/String;
@@ -1450,12 +1494,12 @@
 
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
-    .line 606
+    .line 619
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/media/videoeditor/MediaVideoItem;->mAudioWaveformFilename:Ljava/lang/String;
 
-    .line 608
+    .line 621
     :cond_0
     return-void
 .end method
@@ -1736,7 +1780,7 @@
     .locals 1
 
     .prologue
-    .line 677
+    .line 690
     iget-boolean v0, p0, Landroid/media/videoeditor/MediaVideoItem;->mMuted:Z
 
     return v0
@@ -1982,38 +2026,38 @@
     .parameter "muted"
 
     .prologue
-    .line 663
+    .line 676
     iget-object v0, p0, Landroid/media/videoeditor/MediaVideoItem;->mMANativeHelper:Landroid/media/videoeditor/MediaArtistNativeHelper;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/media/videoeditor/MediaArtistNativeHelper;->setGeneratePreview(Z)V
 
-    .line 664
+    .line 677
     iput-boolean p1, p0, Landroid/media/videoeditor/MediaVideoItem;->mMuted:Z
 
-    .line 665
+    .line 678
     iget-object v0, p0, Landroid/media/videoeditor/MediaVideoItem;->mBeginTransition:Landroid/media/videoeditor/Transition;
 
     if-eqz v0, :cond_0
 
-    .line 666
+    .line 679
     iget-object v0, p0, Landroid/media/videoeditor/MediaVideoItem;->mBeginTransition:Landroid/media/videoeditor/Transition;
 
     invoke-virtual {v0}, Landroid/media/videoeditor/Transition;->invalidate()V
 
-    .line 668
+    .line 681
     :cond_0
     iget-object v0, p0, Landroid/media/videoeditor/MediaVideoItem;->mEndTransition:Landroid/media/videoeditor/Transition;
 
     if-eqz v0, :cond_1
 
-    .line 669
+    .line 682
     iget-object v0, p0, Landroid/media/videoeditor/MediaVideoItem;->mEndTransition:Landroid/media/videoeditor/Transition;
 
     invoke-virtual {v0}, Landroid/media/videoeditor/Transition;->invalidate()V
 
-    .line 671
+    .line 684
     :cond_1
     return-void
 .end method
@@ -2023,14 +2067,14 @@
     .parameter "volumePercent"
 
     .prologue
-    .line 642
+    .line 655
     if-ltz p1, :cond_0
 
     const/16 v0, 0x64
 
     if-le p1, v0, :cond_1
 
-    .line 643
+    .line 656
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -2040,10 +2084,10 @@
 
     throw v0
 
-    .line 646
+    .line 659
     :cond_1
     iput p1, p0, Landroid/media/videoeditor/MediaVideoItem;->mVolumePercentage:I
 
-    .line 647
+    .line 660
     return-void
 .end method

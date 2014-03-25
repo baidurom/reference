@@ -26,6 +26,8 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.net.INetworkPolicyManager"
 
+.field static final TRANSACTION_checkDataConnOverLimit:I = 0x10
+
 .field static final TRANSACTION_getNetworkPolicies:I = 0x8
 
 .field static final TRANSACTION_getNetworkQuotaInfo:I = 0xc
@@ -36,13 +38,19 @@
 
 .field static final TRANSACTION_getUidsWithPolicy:I = 0x3
 
+.field static final TRANSACTION_isDataConnOverLimit:I = 0xf
+
 .field static final TRANSACTION_isNetworkMetered:I = 0xd
+
+.field static final TRANSACTION_isPolicyModified:I = 0xe
 
 .field static final TRANSACTION_isUidForeground:I = 0x4
 
 .field static final TRANSACTION_registerListener:I = 0x5
 
 .field static final TRANSACTION_setNetworkPolicies:I = 0x7
+
+.field static final TRANSACTION_setNetworkPoliciesForWifi:I = 0x11
 
 .field static final TRANSACTION_setRestrictBackground:I = 0xa
 
@@ -146,7 +154,7 @@
     .line 43
     sparse-switch p1, :sswitch_data_0
 
-    .line 194
+    .line 229
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v4
@@ -588,7 +596,119 @@
     .restart local v0       #_arg0:Landroid/net/NetworkState;
     goto :goto_4
 
+    .line 195
+    .end local v0           #_arg0:Landroid/net/NetworkState;
+    :sswitch_e
+    const-string v5, "android.net.INetworkPolicyManager"
+
+    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 196
+    invoke-virtual {p0}, Landroid/net/INetworkPolicyManager$Stub;->isPolicyModified()Z
+
+    move-result v2
+
+    .line 197
+    .restart local v2       #_result:Z
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 198
+    if-eqz v2, :cond_8
+
+    move v3, v4
+
+    :cond_8
+    invoke-virtual {p3, v3}, Landroid/os/Parcel;->writeInt(I)V
+
+    goto/16 :goto_0
+
+    .line 203
+    .end local v2           #_result:Z
+    :sswitch_f
+    const-string v5, "android.net.INetworkPolicyManager"
+
+    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 205
+    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 206
+    .local v0, _arg0:Ljava/lang/String;
+    invoke-virtual {p0, v0}, Landroid/net/INetworkPolicyManager$Stub;->isDataConnOverLimit(Ljava/lang/String;)Z
+
+    move-result v2
+
+    .line 207
+    .restart local v2       #_result:Z
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 208
+    if-eqz v2, :cond_9
+
+    move v3, v4
+
+    :cond_9
+    invoke-virtual {p3, v3}, Landroid/os/Parcel;->writeInt(I)V
+
+    goto/16 :goto_0
+
+    .line 213
+    .end local v0           #_arg0:Ljava/lang/String;
+    .end local v2           #_result:Z
+    :sswitch_10
+    const-string v5, "android.net.INetworkPolicyManager"
+
+    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 214
+    invoke-virtual {p0}, Landroid/net/INetworkPolicyManager$Stub;->checkDataConnOverLimit()Z
+
+    move-result v2
+
+    .line 215
+    .restart local v2       #_result:Z
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 216
+    if-eqz v2, :cond_a
+
+    move v3, v4
+
+    :cond_a
+    invoke-virtual {p3, v3}, Landroid/os/Parcel;->writeInt(I)V
+
+    goto/16 :goto_0
+
+    .line 221
+    .end local v2           #_result:Z
+    :sswitch_11
+    const-string v3, "android.net.INetworkPolicyManager"
+
+    invoke-virtual {p2, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 223
+    sget-object v3, Landroid/net/NetworkPolicy;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-virtual {p2, v3}, Landroid/os/Parcel;->createTypedArray(Landroid/os/Parcelable$Creator;)[Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Landroid/net/NetworkPolicy;
+
+    .line 224
+    .local v0, _arg0:[Landroid/net/NetworkPolicy;
+    invoke-virtual {p0, v0}, Landroid/net/INetworkPolicyManager$Stub;->setNetworkPoliciesForWifi([Landroid/net/NetworkPolicy;)V
+
+    .line 225
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    goto/16 :goto_0
+
     .line 43
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
@@ -604,6 +724,10 @@
         0xb -> :sswitch_b
         0xc -> :sswitch_c
         0xd -> :sswitch_d
+        0xe -> :sswitch_e
+        0xf -> :sswitch_f
+        0x10 -> :sswitch_10
+        0x11 -> :sswitch_11
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

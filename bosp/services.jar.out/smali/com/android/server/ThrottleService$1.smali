@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 327
+    .line 330
     iput-object p1, p0, Lcom/android/server/ThrottleService$1;->this$0:Lcom/android/server/ThrottleService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,11 +40,11 @@
     .parameter "intent"
 
     .prologue
-    .line 330
+    .line 333
     iget-object v0, p0, Lcom/android/server/ThrottleService$1;->this$0:Lcom/android/server/ThrottleService;
 
     invoke-virtual {v0}, Lcom/android/server/ThrottleService;->dispatchPoll()V
 
-    .line 331
+    .line 334
     return-void
 .end method

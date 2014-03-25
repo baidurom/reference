@@ -1399,6 +1399,19 @@
     return-void
 .end method
 
+.method public progressConnectingCallState(IIZLjava/lang/String;I)V
+    .locals 0
+    .parameter "index"
+    .parameter "msgType"
+    .parameter "isMT"
+    .parameter "number"
+    .parameter "TOA"
+
+    .prologue
+    .line 746
+    return-void
+.end method
+
 .method public progressConnectingToActive()V
     .locals 1
 

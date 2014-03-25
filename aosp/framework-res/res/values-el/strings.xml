@@ -271,7 +271,7 @@
     <string name="permgrouplab_display">Άλλες διεπαφές εφαρμογών</string>
     <string name="permgroupdesc_display">Επιρροή διεπαφής άλλων εφαρμογών.</string>
     <string name="permgrouplab_storage">Αποθηκευτικός χώρος</string>
-    <string name="permgroupdesc_storage">Πρόσβαση στον χώρο αποθ. USB.</string>
+    <string name="permgroupdesc_storage">Πρόσβαση στην κάρτα SD.</string>
     <string name="permlab_statusBar">απενεργοποίηση ή τροποποίηση γραμμής κατάστασης</string>
     <string name="permdesc_statusBar">Επιτρέπει στην εφαρμογή να απενεργοποιεί τη γραμμή κατάστασης ή να προσθέτει και να αφαιρεί εικονίδια συστήματος.</string>
     <string name="permlab_statusBarService">γραμμή κατάστασης</string>
@@ -486,9 +486,9 @@
     <string name="permdesc_brick">Επιτρέπει στην εφαρμογή τη μόνιμη απενεργοποίηση όλων των λειτουργιών του τηλεφώνου, το οποίο είναι εξαιρετικά επικίνδυνο.</string>
     <string name="permlab_reboot">αναγκαστική επανεκκίνηση τηλεφώνου</string>
     <string name="permdesc_reboot">Επιτρέπει στην εφαρμογή να προκαλέσει αναγκαστική επανεκκίνηση του τηλεφώνου.</string>
-    <string name="permlab_mount_unmount_filesystems">πρόσβ. σε σύστ.αρχ.αποθ.χώρ.USB</string>
+    <string name="permlab_mount_unmount_filesystems">πρόσβαση στο σύστημα αρχείων της κάρτας SD</string>
     <string name="permdesc_mount_unmount_filesystems">Επιτρέπει στην εφαρμογή τη σύνδεση και αποσύνδεση συστημάτων αρχείων για αφαιρούμενο χώρο αποθήκευσης.</string>
-    <string name="permlab_mount_format_filesystems">διαγραφή αποθ. χώρου USB</string>
+    <string name="permlab_mount_format_filesystems">διαγραφή κάρτας SD</string>
     <string name="permdesc_mount_format_filesystems">Επιτρέπει στην εφαρμογή τη διαμόρφωση αφαιρούμενου χώρου αποθήκευσης.</string>
     <string name="permlab_asec_access">λήψη πληροφοριών στον εσωτερικό χώρο αποθήκευσης</string>
     <string name="permdesc_asec_access">Επιτρέπει στην εφαρμογή τη λήψη πληροφοριών στον εσωτερικό χώρο αποθήκευσης.</string>
@@ -597,9 +597,9 @@
     <string name="permlab_writeDictionary">προσθήκη λέξεων στο καθορισμένο από το χρήστη λεξικό</string>
     <string name="permdesc_writeDictionary">Επιτρέπει στην εφαρμογή την εγγραφή νέων λέξεων στο λεξικό χρήστη.</string>
     <string name="permlab_sdcardRead">δοκιμή πρόσβασης σε προστατευμένο χώρο αποθήκευσης</string>
-    <string name="permdesc_sdcardRead">Επιτρέπει USB για άλλες συσκ.</string>
-    <string name="permlab_sdcardWrite">τροπ. ή διαγρ. περιεχ. αποθ. χώρ. USB</string>
-    <string name="permdesc_sdcardWrite">Επιτρέπει στην εφαρμογή την εγγραφή στον αποθηκευτικό χώρο USB.</string>
+    <string name="permdesc_sdcardRead">Επιτρέπει στην εφαρμογή τη δοκιμή μια άδειας για την κάρτα SD που θα διατίθεται σε μελλοντικές συσκευές.</string>
+    <string name="permlab_sdcardWrite">τροποποίηση ή διαγραφή των περιεχομένων της κάρτας SD</string>
+    <string name="permdesc_sdcardWrite">Επιτρέπει στην εφαρμογή την εγγραφή στην κάρτα SD.</string>
     <string name="permlab_mediaStorageWrite">τροπ./διαγ. περ. απ. εσ. μνήμ.</string>
     <string name="permdesc_mediaStorageWrite">Επιτρέπει στην εφαρμογή να τροποποιήσει τα περιεχόμενα των εσωτερικών μέσων αποθήκευσης.</string>
     <string name="permlab_sdcardAccessAll">πρόσβ.εξωτ.χωρ. αποθ. όλων των χρηστ.</string>
@@ -714,7 +714,7 @@
     <string name="keyguard_password_wrong_pin_code">Εσφαλμένος κωδικός PIN.</string>
     <string name="keyguard_label_text">Για ξεκλείδωμα, πατήστε το πλήκτρο Menu και, στη συνέχεια, το πλήκτρο 0.</string>
     <string name="emergency_call_dialog_number_for_display">Αριθμός έκτακτης ανάγκης</string>
-    <string name="lockscreen_carrier_default">Καμία υπηρεσία.</string>
+    <string name="lockscreen_carrier_default">Καμία υπηρεσία</string>
     <string name="lockscreen_screen_locked">Η οθόνη κλειδώθηκε.</string>
     <string name="lockscreen_instructions_when_pattern_enabled">Πατήστε \"Menu\" για ξεκλείδωμα ή για κλήση έκτακτης ανάγκης.</string>
     <string name="lockscreen_instructions_when_pattern_disabled">Πατήστε \"Μενού\" για ξεκλείδωμα.</string>
@@ -733,7 +733,7 @@
     <string name="lockscreen_missing_sim_message">Δεν υπάρχει κάρτα SIM στο τηλέφωνο.</string>
     <string name="lockscreen_missing_sim_instructions">Τοποθετήστε μια κάρτα SIM.</string>
     <string name="lockscreen_missing_sim_instructions_long">Η κάρτα SIM δεν υπάρχει ή δεν είναι δυνατή η ανάγνωσή της. Τοποθετήστε μια κάρτα SIM.</string>
-    <string name="lockscreen_permanent_disabled_sim_message_short">Η κάρτα SIM δεν μπορεί να χρησιμοποιηθεί.</string>
+    <string name="lockscreen_permanent_disabled_sim_message_short">Η κάρτα SIM δεν μπορεί να χρησιμοποιηθεί</string>
     <string name="lockscreen_permanent_disabled_sim_instructions">"Η κάρτα SIM έχει απενεργοποιηθεί οριστικά.
  Επικοινωνήστε με τον παροχέα υπηρεσιών ασύρματου δικτύου για να λάβετε μια νέα κάρτα SIM."</string>
     <string name="lockscreen_transport_prev_description">Κουμπί προηγούμενου κομματιού</string>
@@ -743,9 +743,9 @@
     <string name="lockscreen_transport_stop_description">Κουμπί διακοπής</string>
     <string name="emergency_calls_only">Μόνο κλήσεις έκτακτης ανάγκης</string>
     <string name="lockscreen_network_locked_message">Το δίκτυο κλειδώθηκε</string>
-    <string name="lockscreen_sim_puk_locked_message">Η κάρτα SIM είναι κλειδωμένη με κωδικό PUK.</string>
+    <string name="lockscreen_sim_puk_locked_message">Η κάρτα SIM είναι κλειδωμένη με κωδικό PUK</string>
     <string name="lockscreen_sim_puk_locked_instructions">Ανατρέξτε στον Οδηγό χρήσης ή επικοινωνήστε με την Εξυπηρέτηση πελατών.</string>
-    <string name="lockscreen_sim_locked_message">Η κάρτα SIM είναι κλειδωμένη.</string>
+    <string name="lockscreen_sim_locked_message">Η κάρτα SIM είναι κλειδωμένη</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">Ξεκλείδωμα κάρτας SIM...</string>
     <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"Σχεδιάσατε εσφαλμένα το μοτίβο ξεκλειδώματος%d φορές. 
 
@@ -1030,15 +1030,15 @@
     <string name="perm_costs_money">ενδέχεται να χρεωθείτε</string>
     <string name="usb_storage_activity_title">Μαζική αποθήκευση USB</string>
     <string name="usb_storage_title">Το USB είναι συνδεδεμένο</string>
-    <string name="usb_storage_message">Συνδεθήκατε στον υπολογιστή σας μέσω USB. Αγγίξτε το παρακάτω κουμπί, αν θέλετε να κάνετε αντιγραφή αρχείων μεταξύ του υπολογιστή και του χώρου αποθήκευσης USB του Android.</string>
+    <string name="usb_storage_message">Συνδεθήκατε στον υπολογιστή σας μέσω USB. Αγγίξτε το παρακάτω κουμπί, αν θέλετε να κάνετε αντιγραφή αρχείων μεταξύ του υπολογιστή και της κάρτας SD του Android.</string>
     <string name="usb_storage_button_mount">Ενεργοποίηση αποθηκευτικού χώρου USB</string>
-    <string name="usb_storage_error_message">Παρουσιάστηκε κάποιο πρόβλημα κατά τη χρήση του χώρου αποθήκευσης USB για χώρο μαζικής αποθήκευσης USB.</string>
+    <string name="usb_storage_error_message">Παρουσιάστηκε κάποιο πρόβλημα κατά τη χρήση της κάρτας SD για χώρο μαζικής αποθήκευσης USB.</string>
     <string name="usb_storage_notification_title">Το USB είναι συνδεδεμένο</string>
     <string name="usb_storage_notification_message">Αγγίξτε για αντιγραφή αρχείων προς/από τον υπολογιστή σας.</string>
     <string name="usb_storage_stop_notification_title">Απενεργοποίηση αποθηκευτικού χώρου USB</string>
     <string name="usb_storage_stop_notification_message">Αγγίξτε για να απενεργοποιήσετε τον χώρο αποθήκευσης USB.</string>
     <string name="usb_storage_stop_title">Χώρος αποθήκευσης USB σε χρήση</string>
-    <string name="usb_storage_stop_message">Πριν από την απενεργοποίηση του χώρου αποθήκευσης USB, αποσυνδέστε (\"αφαιρέστε\") τον χώρο αποθήκευσης USB του Android από τον υπολογιστή σας.</string>
+    <string name="usb_storage_stop_message">"Πριν απενεργοποιήσετε τον χώρο αποθήκευσης USB, αποσυνδέστε (\"αφαιρέστε\") την κάρτα SD του  Android από τον υπολογιστή σας."</string>
     <string name="usb_storage_stop_button_mount">Απενεργοποίηση χώρου αποθήκευσης USB</string>
     <string name="usb_storage_stop_error_message">Παρουσιάστηκε κάποιο πρόβλημα κατά την απενεργοποίηση του χώρου αποθήκευσης USB. Βεβαιωθείτε ότι έχετε αποσυνδέσει τον κεντρικό ελεγκτή USB και προσπαθήστε ξανά.</string>
     <string name="dlg_confirm_kill_storage_users_title">Ενεργοποίηση αποθηκευτικού χώρου USB</string>
@@ -1050,8 +1050,8 @@
     <string name="usb_cd_installer_notification_title">Συνδεδεμένο ως πρόγραμμα εγκατάστασης</string>
     <string name="usb_accessory_notification_title">Σύνδεση σε αξεσουάρ USB</string>
     <string name="usb_notification_message">Αγγίξτε για άλλες επιλογές USB.</string>
-    <string name="extmedia_format_title">Μορφοπ.χώρ.αποθ.USB;</string>
-    <string name="extmedia_format_message">Όλα τα αρχεία που είναι αποθηκευμένα στον αποθηκευτικό σας χώρο USB θα διαγραφούν. Αυτή η ενέργεια δεν είναι αναστρέψιμη!</string>
+    <string name="extmedia_format_title">Να γίνει διαμόρφωση της κάρτας SD;</string>
+    <string name="extmedia_format_message">Όλα τα δεδομένα που υπάρχουν στην κάρτα σας θα χαθούν.</string>
     <string name="extmedia_format_button_format">Διαμόρφωση</string>
     <string name="adb_active_notification_title">Συνδέθηκε ο εντοπισμός σφαλμάτων USB</string>
     <string name="adb_active_notification_message">Αγγίξτε για απενεργοποίηση του εντοπισμού σφαλμάτων USB.</string>
@@ -1064,18 +1064,18 @@
     <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="candidates_style"><u>υποψήφιοι</u></string>
-    <string name="ext_media_checking_notification_title">Προετοιμασία αποθ. χώρου USB</string>
+    <string name="ext_media_checking_notification_title">Προετοιμασία του στοιχείου %s</string>
     <string name="ext_media_checking_notification_message">Έλεγχος για σφάλματα.</string>
-    <string name="ext_media_nofs_notification_title">Κενός αποθηκευτικός χώρος USB</string>
-    <string name="ext_media_nofs_notification_message">Ο χώρος αποθήκευσης USB είναι κενός ή διαθέτει μη υποστηριζόμενο σύστημα αρχείων.</string>
-    <string name="ext_media_unmountable_notification_title">Βλάβη αποθηκευτικού χώρου USB</string>
-    <string name="ext_media_unmountable_notification_message">Ο χώρος αποθήκευσης USB είναι κατεστραμμένος. Δοκιμάστε να τον διαμορφώσετε ξανά.</string>
-    <string name="ext_media_badremoval_notification_title">Μη αναμ. κατάργ. απ. χώρου USB</string>
-    <string name="ext_media_badremoval_notification_message">Αποπροσαρτήστε τον αποθηκευτικό χώρο USB πριν τον αφαιρέσετε για την αποφυγή απώλειας δεδομένων.</string>
-    <string name="ext_media_safe_unmount_notification_title">Ασφαλ. κατάργ. αποθ. χώρου USB</string>
-    <string name="ext_media_safe_unmount_notification_message">Μπορείτε να καταργήσετε τον αποθηκευτικό χώρο USB με ασφάλεια.</string>
-    <string name="ext_media_nomedia_notification_title">Ο αποθ. χώρος USB καταργήθηκε</string>
-    <string name="ext_media_nomedia_notification_message">Ο αποθηκευτικός χώρος USB καταργήθηκε. Εισαγάγετε νέα πολυμέσα.</string>
+    <string name="ext_media_nofs_notification_title">Κενό στοιχείο %s</string>
+    <string name="ext_media_nofs_notification_message">Το στοιχείο %s είναι κενό ή διαθέτει αρχείο συστήματος που δεν υποστηρίζεται.</string>
+    <string name="ext_media_unmountable_notification_title">Κατεστραμμένο στοιχείο %s</string>
+    <string name="ext_media_unmountable_notification_message">Το στοιχείο %s είναι κατεστραμμένο. Ίσως χρειάζεται αναδιαμόρφωση.</string>
+    <string name="ext_media_badremoval_notification_title">Το στοιχείο %s καταργήθηκε απροσδόκητα</string>
+    <string name="ext_media_badremoval_notification_message">Αποσυνδέστε το στοιχείο %s πριν από την κατάργηση για να αποφύγετε την απώλεια δεδομένων.</string>
+    <string name="ext_media_safe_unmount_notification_title">Ασφαλής κατάργηση του στοιχείου %s</string>
+    <string name="ext_media_safe_unmount_notification_message">Μπορείτε να καταργήσετε με ασφάλεια το στοιχείο %s.</string>
+    <string name="ext_media_nomedia_notification_title">Το στοιχείο %s έχει καταργηθεί</string>
+    <string name="ext_media_nomedia_notification_message">Το στοιχείο %s έχει καταργηθεί. Εισαγάγετε νέο στοιχείο.</string>
     <string name="activity_list_empty">Δεν βρέθηκαν δραστηριότητες που να συμφωνούν με τα κριτήρια.</string>
     <string name="permlab_pkgUsageStats">ενημέρωση στατιστικών χρήσης στοιχείου</string>
     <string name="permdesc_pkgUsageStats">Επιτρέπει στην εφαρμογή την τροποποίηση της συλλογής των στατιστικών στοιχείων χρήσης. Δεν προορίζεται για χρήση από συνήθεις εφαρμογές.</string>
@@ -1135,13 +1135,13 @@
     <string name="no_matches">Δεν υπάρχουν αποτελέσματα</string>
     <string name="find_on_page">Εύρεση στη σελίδα</string>
     <string name="action_mode_done">Ολοκληρώθηκε</string>
-    <string name="progress_unmounting">Αποσύνδεση του χώρου αποθήκευσης USB...</string>
-    <string name="progress_erasing">Διαγραφή χώρου αποθήκευσης USB...</string>
-    <string name="format_error">Δεν ήταν δυνατή η διαγραφή του χώρου αποθήκευσης USB.</string>
+    <string name="progress_unmounting">Αφαίρεση κάρτας SD...</string>
+    <string name="progress_erasing">Διαγραφή κάρτας SD...</string>
+    <string name="format_error">Δεν ήταν δυνατή η διαγραφή της κάρτας SD.</string>
     <string name="media_bad_removal">Η κάρτα SD καταργήθηκε πριν την αποπροσάρτησή της.</string>
-    <string name="media_checking">Αυτή τη στιγμή γίνεται έλεγχος του αποθηκευτικού χώρου USB.</string>
+    <string name="media_checking">Γίνεται έλεγχος της κάρτας SD.</string>
     <string name="media_removed">Η κάρτα SD έχει αφαιρεθεί.</string>
-    <string name="media_shared">Αυτή τη στιγμή ο αποθηκευτικός χώρος USB χρησιμοποιείται από κάποιον υπολογιστή.</string>
+    <string name="media_shared">Αυτή τη στιγμή η κάρτα SD χρησιμοποιείται από κάποιον υπολογιστή.</string>
     <string name="media_unknown_state">Το εξωτερικό μέσο είναι σε άγνωστη κατάσταση.</string>
     <string name="share">Κοινή χρ.</string>
     <string name="find">Εύρεση</string>
@@ -1315,4 +1315,7 @@
     <string name="enable_accessibility_canceled">Η λειτουργία προσβασιμότητας ακυρώθηκε.</string>
     <string name="user_switched">Τρέχων χρήστης %1$s.</string>
     <string name="owner_name">Κάτοχος</string>
+    <string name="storage_phone">Αποθηκευτικός χώρος τηλεφώνου</string>
+    <string name="storage_external_usb">Εξωτερικός χώρος αποθήκευσης USB</string>
+    <string name="zz_keyguard_accessibility_voice_unlock">Φωνητικό ξεκλείδωμα.</string>
 </resources>

@@ -28,10 +28,10 @@
     .parameter "user"
 
     .prologue
-    .line 1980
+    .line 2083
     invoke-direct {p0, p1}, Landroid/content/ContentResolver;-><init>(Landroid/content/Context;)V
 
-    .line 1981
+    .line 2084
     invoke-static {p2}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -40,7 +40,7 @@
 
     iput-object v0, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
 
-    .line 1982
+    .line 2085
     invoke-static {p3}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -49,19 +49,50 @@
 
     iput-object v0, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mUser:Landroid/os/UserHandle;
 
-    .line 1983
+    .line 2086
     return-void
 .end method
 
 
 # virtual methods
+.method public AddToQueryHistory(Ljava/lang/String;Ljava/lang/Throwable;I)Z
+    .locals 1
+    .parameter "uri"
+    .parameter "stackTrace"
+    .parameter "cursorHashCode"
+
+    .prologue
+    .line 2128
+    iget-object v0, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
+
+    invoke-virtual {v0, p1, p2, p3}, Landroid/app/ActivityThread;->AddToQueryHistory(Ljava/lang/String;Ljava/lang/Throwable;I)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public RemoveFromQueryHistory(I)V
+    .locals 1
+    .parameter "cursorHashCode"
+
+    .prologue
+    .line 2138
+    iget-object v0, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
+
+    invoke-virtual {v0, p1}, Landroid/app/ActivityThread;->RemoveFromQueryHistory(I)V
+
+    .line 2139
+    return-void
+.end method
+
 .method protected acquireExistingProvider(Landroid/content/Context;Ljava/lang/String;)Landroid/content/IContentProvider;
     .locals 3
     .parameter "context"
     .parameter "auth"
 
     .prologue
-    .line 1992
+    .line 2095
     iget-object v0, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
 
     iget-object v1, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mUser:Landroid/os/UserHandle;
@@ -85,7 +116,7 @@
     .parameter "auth"
 
     .prologue
-    .line 1987
+    .line 2090
     iget-object v0, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
 
     iget-object v1, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mUser:Landroid/os/UserHandle;
@@ -109,7 +140,7 @@
     .parameter "auth"
 
     .prologue
-    .line 2002
+    .line 2105
     iget-object v0, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
 
     iget-object v1, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mUser:Landroid/os/UserHandle;
@@ -132,7 +163,7 @@
     .parameter "provider"
 
     .prologue
-    .line 1997
+    .line 2100
     iget-object v0, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
 
     const/4 v1, 0x1
@@ -149,7 +180,7 @@
     .parameter "icp"
 
     .prologue
-    .line 2007
+    .line 2110
     iget-object v0, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
 
     const/4 v1, 0x0
@@ -166,7 +197,7 @@
     .parameter "icp"
 
     .prologue
-    .line 2012
+    .line 2115
     iget-object v0, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
 
     invoke-interface {p1}, Landroid/content/IContentProvider;->asBinder()Landroid/os/IBinder;
@@ -177,6 +208,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/app/ActivityThread;->handleUnstableProviderDied(Landroid/os/IBinder;Z)V
 
-    .line 2013
+    .line 2116
     return-void
 .end method

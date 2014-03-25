@@ -82,12 +82,12 @@
 
     .prologue
     .line 173
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 63
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/hardware/input/InputManager;->mInputDevicesLock:Ljava/lang/Object;
 
@@ -1311,6 +1311,43 @@
     goto :goto_0
 .end method
 
+.method public isPointerPrimaryKeyChanged(Landroid/content/Context;)Z
+    .locals 4
+    .parameter "context"
+
+    .prologue
+    const/4 v1, 0x0
+
+    .line 733
+    const/4 v0, 0x0
+
+    .line 734
+    .local v0, changePrimaryKey:Z
+    invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v2
+
+    const-string v3, "change_pointer_primary_key"
+
+    invoke-static {v2, v3, v1}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    const/4 v0, 0x1
+
+    .line 737
+    :goto_0
+    return v0
+
+    :cond_0
+    move v0, v1
+
+    .line 734
+    goto :goto_0
+.end method
+
 .method public registerInputDeviceListener(Landroid/hardware/input/InputManager$InputDeviceListener;Landroid/os/Handler;)V
     .locals 4
     .parameter "listener"
@@ -1487,6 +1524,36 @@
     const-string v2, "Could not set current keyboard layout for input device."
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto :goto_0
+.end method
+
+.method public setPointerPrimaryKey(Landroid/content/Context;Z)V
+    .locals 3
+    .parameter "context"
+    .parameter "changePrimaryKey"
+
+    .prologue
+    .line 752
+    invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const-string v2, "change_pointer_primary_key"
+
+    if-eqz p2, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    invoke-static {v1, v2, v0}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+
+    .line 754
+    return-void
+
+    .line 752
+    :cond_0
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method

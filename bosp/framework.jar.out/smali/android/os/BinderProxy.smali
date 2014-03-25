@@ -19,17 +19,17 @@
     .locals 1
 
     .prologue
-    .line 415
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 418
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 416
+    .line 419
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p0}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Landroid/os/BinderProxy;->mSelf:Ljava/lang/ref/WeakReference;
 
-    .line 417
+    .line 420
     return-void
 .end method
 
@@ -41,21 +41,21 @@
     .parameter "recipient"
 
     .prologue
-    .line 433
+    .line 436
     :try_start_0
     invoke-interface {p0}, Landroid/os/IBinder$DeathRecipient;->binderDied()V
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 439
+    .line 442
     :goto_0
     return-void
 
-    .line 435
+    .line 438
     :catch_0
     move-exception v0
 
-    .line 436
+    .line 439
     .local v0, exc:Ljava/lang/RuntimeException;
     const-string v1, "BinderNative"
 
@@ -79,25 +79,25 @@
     .end annotation
 
     .prologue
-    .line 388
+    .line 391
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 389
+    .line 392
     .local v0, data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 390
+    .line 393
     .local v1, reply:Landroid/os/Parcel;
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeFileDescriptor(Ljava/io/FileDescriptor;)V
 
-    .line 391
+    .line 394
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeStringArray([Ljava/lang/String;)V
 
-    .line 393
+    .line 396
     const v2, 0x5f444d50
 
     const/4 v3, 0x0
@@ -105,27 +105,27 @@
     :try_start_0
     invoke-virtual {p0, v2, v0, v1, v3}, Landroid/os/BinderProxy;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 394
+    .line 397
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 396
+    .line 399
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 397
+    .line 400
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 399
+    .line 402
     return-void
 
-    .line 396
+    .line 399
     :catchall_0
     move-exception v2
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 397
+    .line 400
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
     throw v2
@@ -142,25 +142,25 @@
     .end annotation
 
     .prologue
-    .line 402
+    .line 405
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 403
+    .line 406
     .local v0, data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 404
+    .line 407
     .local v1, reply:Landroid/os/Parcel;
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeFileDescriptor(Ljava/io/FileDescriptor;)V
 
-    .line 405
+    .line 408
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeStringArray([Ljava/lang/String;)V
 
-    .line 407
+    .line 410
     const v2, 0x5f444d50
 
     const/4 v3, 0x1
@@ -168,27 +168,27 @@
     :try_start_0
     invoke-virtual {p0, v2, v0, v1, v3}, Landroid/os/BinderProxy;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 408
+    .line 411
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 410
+    .line 413
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 411
+    .line 414
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 413
+    .line 416
     return-void
 
-    .line 410
+    .line 413
     :catchall_0
     move-exception v2
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 411
+    .line 414
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
     throw v2
@@ -203,19 +203,19 @@
     .end annotation
 
     .prologue
-    .line 422
+    .line 425
     :try_start_0
     invoke-direct {p0}, Landroid/os/BinderProxy;->destroy()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 424
+    .line 427
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 426
+    .line 429
     return-void
 
-    .line 424
+    .line 427
     :catchall_0
     move-exception v0
 
@@ -251,7 +251,7 @@
     .parameter "descriptor"
 
     .prologue
-    .line 377
+    .line 380
     const/4 v0, 0x0
 
     return-object v0

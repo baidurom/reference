@@ -43,7 +43,7 @@
     .prologue
     .line 795
     .local p0, this:Landroid/view/ViewTreeObserver$CopyOnWriteArray$Access;,"Landroid/view/ViewTreeObserver$CopyOnWriteArray$Access<TT;>;"
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

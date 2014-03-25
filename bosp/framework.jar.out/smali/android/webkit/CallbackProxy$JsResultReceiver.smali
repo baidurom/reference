@@ -33,12 +33,12 @@
     .parameter
 
     .prologue
-    .line 146
+    .line 157
     iput-object p1, p0, Landroid/webkit/CallbackProxy$JsResultReceiver;->this$0:Landroid/webkit/CallbackProxy;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 154
+    .line 165
     new-instance v0, Landroid/webkit/JsPromptResult;
 
     invoke-direct {v0, p0}, Landroid/webkit/JsPromptResult;-><init>(Landroid/webkit/JsResult$ResultReceiver;)V
@@ -54,7 +54,7 @@
     .parameter "x1"
 
     .prologue
-    .line 146
+    .line 157
     invoke-direct {p0, p1}, Landroid/webkit/CallbackProxy$JsResultReceiver;-><init>(Landroid/webkit/CallbackProxy;)V
 
     return-void
@@ -64,24 +64,24 @@
     .locals 2
 
     .prologue
-    .line 174
+    .line 185
     iget-object v1, p0, Landroid/webkit/CallbackProxy$JsResultReceiver;->this$0:Landroid/webkit/CallbackProxy;
 
     monitor-enter v1
 
-    .line 175
+    .line 186
     :try_start_0
     iget-object v0, p0, Landroid/webkit/CallbackProxy$JsResultReceiver;->this$0:Landroid/webkit/CallbackProxy;
 
     invoke-virtual {v0}, Ljava/lang/Object;->notify()V
 
-    .line 176
+    .line 187
     monitor-exit v1
 
-    .line 177
+    .line 188
     return-void
 
-    .line 176
+    .line 187
     :catchall_0
     move-exception v0
 
@@ -99,19 +99,19 @@
     .parameter "result"
 
     .prologue
-    .line 166
+    .line 177
     iget-boolean v0, p0, Landroid/webkit/CallbackProxy$JsResultReceiver;->mReady:Z
 
     if-eqz v0, :cond_0
 
-    .line 167
+    .line 178
     invoke-direct {p0}, Landroid/webkit/CallbackProxy$JsResultReceiver;->notifyCallbackProxy()V
 
-    .line 171
+    .line 182
     :goto_0
     return-void
 
-    .line 169
+    .line 180
     :cond_0
     const/4 v0, 0x1
 
@@ -124,20 +124,20 @@
     .locals 1
 
     .prologue
-    .line 157
+    .line 168
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/webkit/CallbackProxy$JsResultReceiver;->mReady:Z
 
-    .line 158
+    .line 169
     iget-boolean v0, p0, Landroid/webkit/CallbackProxy$JsResultReceiver;->mTriedToNotifyBeforeReady:Z
 
     if-eqz v0, :cond_0
 
-    .line 159
+    .line 170
     invoke-direct {p0}, Landroid/webkit/CallbackProxy$JsResultReceiver;->notifyCallbackProxy()V
 
-    .line 161
+    .line 172
     :cond_0
     return-void
 .end method

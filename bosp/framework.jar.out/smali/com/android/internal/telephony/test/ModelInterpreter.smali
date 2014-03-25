@@ -483,12 +483,12 @@
 
     .prologue
     .line 168
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 158
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/test/ModelInterpreter;->pausedResponseMonitor:Ljava/lang/Object;
 
@@ -516,12 +516,12 @@
 
     .prologue
     .line 177
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 158
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/test/ModelInterpreter;->pausedResponseMonitor:Ljava/lang/Object;
 
@@ -1396,6 +1396,19 @@
     invoke-virtual {v0}, Lcom/android/internal/telephony/test/SimulatedGsmCallState;->progressConnectingCallState()V
 
     .line 295
+    return-void
+.end method
+
+.method public progressConnectingCallState(IIZLjava/lang/String;I)V
+    .locals 0
+    .parameter "index"
+    .parameter "msgType"
+    .parameter "isMT"
+    .parameter "number"
+    .parameter "TOA"
+
+    .prologue
+    .line 746
     return-void
 .end method
 

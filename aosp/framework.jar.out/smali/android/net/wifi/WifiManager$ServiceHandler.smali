@@ -9,29 +9,21 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2
+    accessFlags = 0xa
     name = "ServiceHandler"
 .end annotation
 
 
-# instance fields
-.field final synthetic this$0:Landroid/net/wifi/WifiManager;
-
-
 # direct methods
-.method constructor <init>(Landroid/net/wifi/WifiManager;Landroid/os/Looper;)V
+.method constructor <init>(Landroid/os/Looper;)V
     .locals 0
-    .parameter
     .parameter "looper"
 
     .prologue
-    .line 1254
-    iput-object p1, p0, Landroid/net/wifi/WifiManager$ServiceHandler;->this$0:Landroid/net/wifi/WifiManager;
+    .line 1354
+    invoke-direct {p0, p1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 1255
-    invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
-
-    .line 1256
+    .line 1355
     return-void
 .end method
 
@@ -44,41 +36,36 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 1260
-    iget-object v3, p0, Landroid/net/wifi/WifiManager$ServiceHandler;->this$0:Landroid/net/wifi/WifiManager;
-
-    iget v4, p1, Landroid/os/Message;->arg2:I
+    .line 1359
+    iget v3, p1, Landroid/os/Message;->arg2:I
 
     #calls: Landroid/net/wifi/WifiManager;->removeListener(I)Ljava/lang/Object;
-    invoke-static {v3, v4}, Landroid/net/wifi/WifiManager;->access$000(Landroid/net/wifi/WifiManager;I)Ljava/lang/Object;
+    invoke-static {v3}, Landroid/net/wifi/WifiManager;->access$000(I)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 1261
+    .line 1360
     .local v1, listener:Ljava/lang/Object;
     iget v3, p1, Landroid/os/Message;->what:I
 
     sparse-switch v3, :sswitch_data_0
 
-    .line 1341
+    .line 1454
     .end local v1           #listener:Ljava/lang/Object;
     :cond_0
     :goto_0
     :sswitch_0
     return-void
 
-    .line 1263
+    .line 1362
     .restart local v1       #listener:Ljava/lang/Object;
     :sswitch_1
     iget v3, p1, Landroid/os/Message;->arg1:I
 
     if-nez v3, :cond_1
 
-    .line 1264
-    iget-object v3, p0, Landroid/net/wifi/WifiManager$ServiceHandler;->this$0:Landroid/net/wifi/WifiManager;
-
-    #getter for: Landroid/net/wifi/WifiManager;->mAsyncChannel:Lcom/android/internal/util/AsyncChannel;
-    invoke-static {v3}, Landroid/net/wifi/WifiManager;->access$100(Landroid/net/wifi/WifiManager;)Lcom/android/internal/util/AsyncChannel;
+    .line 1363
+    invoke-static {}, Landroid/net/wifi/WifiManager;->access$100()Lcom/android/internal/util/AsyncChannel;
 
     move-result-object v3
 
@@ -86,12 +73,9 @@
 
     invoke-virtual {v3, v4}, Lcom/android/internal/util/AsyncChannel;->sendMessage(I)V
 
-    .line 1271
+    .line 1376
     :goto_1
-    iget-object v3, p0, Landroid/net/wifi/WifiManager$ServiceHandler;->this$0:Landroid/net/wifi/WifiManager;
-
-    #getter for: Landroid/net/wifi/WifiManager;->mConnected:Ljava/util/concurrent/CountDownLatch;
-    invoke-static {v3}, Landroid/net/wifi/WifiManager;->access$200(Landroid/net/wifi/WifiManager;)Ljava/util/concurrent/CountDownLatch;
+    invoke-static {}, Landroid/net/wifi/WifiManager;->access$200()Ljava/util/concurrent/CountDownLatch;
 
     move-result-object v3
 
@@ -99,7 +83,7 @@
 
     goto :goto_0
 
-    .line 1266
+    .line 1365
     :cond_1
     const-string v3, "WifiManager"
 
@@ -107,15 +91,43 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1269
-    iget-object v3, p0, Landroid/net/wifi/WifiManager$ServiceHandler;->this$0:Landroid/net/wifi/WifiManager;
+    .line 1368
+    invoke-static {}, Landroid/net/wifi/WifiManager;->access$100()Lcom/android/internal/util/AsyncChannel;
 
-    #setter for: Landroid/net/wifi/WifiManager;->mAsyncChannel:Lcom/android/internal/util/AsyncChannel;
-    invoke-static {v3, v5}, Landroid/net/wifi/WifiManager;->access$102(Landroid/net/wifi/WifiManager;Lcom/android/internal/util/AsyncChannel;)Lcom/android/internal/util/AsyncChannel;
+    move-result-object v3
+
+    if-eqz v3, :cond_2
+
+    .line 1369
+    const-string v3, "WifiManager"
+
+    const-string v4, "Disconnect sAsyncChannel for failed to set up!"
+
+    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 1370
+    invoke-static {}, Landroid/net/wifi/WifiManager;->access$100()Lcom/android/internal/util/AsyncChannel;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/android/internal/util/AsyncChannel;->disconnect()V
+
+    .line 1371
+    invoke-static {v5}, Landroid/net/wifi/WifiManager;->access$102(Lcom/android/internal/util/AsyncChannel;)Lcom/android/internal/util/AsyncChannel;
 
     goto :goto_1
 
-    .line 1277
+    .line 1373
+    :cond_2
+    const-string v3, "WifiManager"
+
+    const-string/jumbo v4, "sAsyncChannel is null when failed to set up!"
+
+    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_1
+
+    .line 1382
     :sswitch_2
     const-string v3, "WifiManager"
 
@@ -123,13 +135,32 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1280
-    iget-object v3, p0, Landroid/net/wifi/WifiManager$ServiceHandler;->this$0:Landroid/net/wifi/WifiManager;
+    .line 1385
+    invoke-static {}, Landroid/net/wifi/WifiManager;->access$100()Lcom/android/internal/util/AsyncChannel;
 
-    #setter for: Landroid/net/wifi/WifiManager;->mAsyncChannel:Lcom/android/internal/util/AsyncChannel;
-    invoke-static {v3, v5}, Landroid/net/wifi/WifiManager;->access$102(Landroid/net/wifi/WifiManager;Lcom/android/internal/util/AsyncChannel;)Lcom/android/internal/util/AsyncChannel;
+    move-result-object v3
 
-    .line 1281
+    if-eqz v3, :cond_3
+
+    .line 1386
+    const-string v3, "WifiManager"
+
+    const-string v4, "Disconnect sAsyncChannel for channel connection lost!"
+
+    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 1387
+    invoke-static {}, Landroid/net/wifi/WifiManager;->access$100()Lcom/android/internal/util/AsyncChannel;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/android/internal/util/AsyncChannel;->disconnect()V
+
+    .line 1388
+    invoke-static {v5}, Landroid/net/wifi/WifiManager;->access$102(Lcom/android/internal/util/AsyncChannel;)Lcom/android/internal/util/AsyncChannel;
+
+    .line 1392
+    :goto_2
     invoke-virtual {p0}, Landroid/net/wifi/WifiManager$ServiceHandler;->getLooper()Landroid/os/Looper;
 
     move-result-object v3
@@ -138,11 +169,21 @@
 
     goto :goto_0
 
-    .line 1289
+    .line 1390
+    :cond_3
+    const-string v3, "WifiManager"
+
+    const-string/jumbo v4, "sAsyncChannel is null when channel connection lost!"
+
+    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_2
+
+    .line 1401
     :sswitch_3
     if-eqz v1, :cond_0
 
-    .line 1290
+    .line 1402
     check-cast v1, Landroid/net/wifi/WifiManager$ActionListener;
 
     .end local v1           #listener:Ljava/lang/Object;
@@ -152,12 +193,12 @@
 
     goto :goto_0
 
-    .line 1299
+    .line 1412
     .restart local v1       #listener:Ljava/lang/Object;
     :sswitch_4
     if-eqz v1, :cond_0
 
-    .line 1300
+    .line 1413
     check-cast v1, Landroid/net/wifi/WifiManager$ActionListener;
 
     .end local v1           #listener:Ljava/lang/Object;
@@ -165,12 +206,12 @@
 
     goto :goto_0
 
-    .line 1304
+    .line 1417
     .restart local v1       #listener:Ljava/lang/Object;
     :sswitch_5
     if-eqz v1, :cond_0
 
-    .line 1305
+    .line 1418
     iget-object v2, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v2, Landroid/net/wifi/WpsResult;
@@ -178,29 +219,23 @@
     .local v2, result:Landroid/net/wifi/WpsResult;
     move-object v3, v1
 
-    .line 1306
+    .line 1419
     check-cast v3, Landroid/net/wifi/WifiManager$WpsListener;
 
     iget-object v4, v2, Landroid/net/wifi/WpsResult;->pin:Ljava/lang/String;
 
     invoke-interface {v3, v4}, Landroid/net/wifi/WifiManager$WpsListener;->onStartSuccess(Ljava/lang/String;)V
 
-    .line 1308
-    iget-object v3, p0, Landroid/net/wifi/WifiManager$ServiceHandler;->this$0:Landroid/net/wifi/WifiManager;
-
-    #getter for: Landroid/net/wifi/WifiManager;->mListenerMapLock:Ljava/lang/Object;
-    invoke-static {v3}, Landroid/net/wifi/WifiManager;->access$300(Landroid/net/wifi/WifiManager;)Ljava/lang/Object;
+    .line 1421
+    invoke-static {}, Landroid/net/wifi/WifiManager;->access$300()Ljava/lang/Object;
 
     move-result-object v4
 
     monitor-enter v4
 
-    .line 1309
+    .line 1422
     :try_start_0
-    iget-object v3, p0, Landroid/net/wifi/WifiManager$ServiceHandler;->this$0:Landroid/net/wifi/WifiManager;
-
-    #getter for: Landroid/net/wifi/WifiManager;->mListenerMap:Landroid/util/SparseArray;
-    invoke-static {v3}, Landroid/net/wifi/WifiManager;->access$400(Landroid/net/wifi/WifiManager;)Landroid/util/SparseArray;
+    invoke-static {}, Landroid/net/wifi/WifiManager;->access$400()Landroid/util/SparseArray;
 
     move-result-object v3
 
@@ -208,10 +243,10 @@
 
     invoke-virtual {v3, v5, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 1310
+    .line 1423
     monitor-exit v4
 
-    goto :goto_0
+    goto/16 :goto_0
 
     :catchall_0
     move-exception v3
@@ -222,25 +257,25 @@
 
     throw v3
 
-    .line 1314
+    .line 1427
     .end local v2           #result:Landroid/net/wifi/WpsResult;
     :sswitch_6
     if-eqz v1, :cond_0
 
-    .line 1315
+    .line 1428
     check-cast v1, Landroid/net/wifi/WifiManager$WpsListener;
 
     .end local v1           #listener:Ljava/lang/Object;
     invoke-interface {v1}, Landroid/net/wifi/WifiManager$WpsListener;->onCompletion()V
 
-    goto :goto_0
+    goto/16 :goto_0
 
-    .line 1319
+    .line 1432
     .restart local v1       #listener:Ljava/lang/Object;
     :sswitch_7
     if-eqz v1, :cond_0
 
-    .line 1320
+    .line 1433
     check-cast v1, Landroid/net/wifi/WifiManager$WpsListener;
 
     .end local v1           #listener:Ljava/lang/Object;
@@ -250,21 +285,21 @@
 
     goto/16 :goto_0
 
-    .line 1324
+    .line 1437
     .restart local v1       #listener:Ljava/lang/Object;
     :sswitch_8
     if-eqz v1, :cond_0
 
-    .line 1325
+    .line 1438
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/net/wifi/RssiPacketCountInfo;
 
-    .line 1326
+    .line 1439
     .local v0, info:Landroid/net/wifi/RssiPacketCountInfo;
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_4
 
-    .line 1327
+    .line 1440
     check-cast v1, Landroid/net/wifi/WifiManager$TxPacketCountListener;
 
     .end local v1           #listener:Ljava/lang/Object;
@@ -278,9 +313,9 @@
 
     goto/16 :goto_0
 
-    .line 1329
+    .line 1442
     .restart local v1       #listener:Ljava/lang/Object;
-    :cond_2
+    :cond_4
     check-cast v1, Landroid/net/wifi/WifiManager$TxPacketCountListener;
 
     .end local v1           #listener:Ljava/lang/Object;
@@ -290,13 +325,13 @@
 
     goto/16 :goto_0
 
-    .line 1333
+    .line 1446
     .end local v0           #info:Landroid/net/wifi/RssiPacketCountInfo;
     .restart local v1       #listener:Ljava/lang/Object;
     :sswitch_9
     if-eqz v1, :cond_0
 
-    .line 1334
+    .line 1447
     check-cast v1, Landroid/net/wifi/WifiManager$TxPacketCountListener;
 
     .end local v1           #listener:Ljava/lang/Object;
@@ -306,7 +341,7 @@
 
     goto/16 :goto_0
 
-    .line 1261
+    .line 1360
     nop
 
     :sswitch_data_0
@@ -329,5 +364,7 @@
         0x25013 -> :sswitch_4
         0x25015 -> :sswitch_8
         0x25016 -> :sswitch_9
+        0x25018 -> :sswitch_3
+        0x25019 -> :sswitch_4
     .end sparse-switch
 .end method

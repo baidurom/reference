@@ -47,7 +47,7 @@
 
     .prologue
     .line 233
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 234
     iput-object p1, p0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->mRS:Landroid/renderscript/RenderScript;
@@ -790,7 +790,7 @@
 
     .line 318
     .local v6, pf:Landroid/renderscript/ProgramFragmentFixedFunction;
-    iput v13, v6, Landroid/renderscript/Program;->mTextureCount:I
+    iput v13, v6, Landroid/renderscript/ProgramFragmentFixedFunction;->mTextureCount:I
 
     .line 319
     iget-boolean v9, p0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->mVaryingColorEnable:Z

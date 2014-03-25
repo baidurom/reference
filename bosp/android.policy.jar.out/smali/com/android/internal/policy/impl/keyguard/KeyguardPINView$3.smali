@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 93
+    .line 99
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPINView$3;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardPINView;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -42,10 +42,10 @@
     .parameter "v"
 
     .prologue
-    .line 96
+    .line 102
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPINView$3;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardPINView;
 
-    iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;->mPasswordEntry:Landroid/widget/TextView;
+    iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardPINView;->mPasswordEntry:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->isEnabled()Z
 
@@ -53,22 +53,22 @@
 
     if-eqz v0, :cond_0
 
-    .line 97
+    .line 103
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPINView$3;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardPINView;
 
-    iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;->mPasswordEntry:Landroid/widget/TextView;
+    iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardPINView;->mPasswordEntry:Landroid/widget/TextView;
 
     const-string v1, ""
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 99
+    .line 105
     :cond_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPINView$3;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardPINView;
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardPINView;->doHapticKeyClick()V
 
-    .line 100
+    .line 106
     const/4 v0, 0x1
 
     return v0

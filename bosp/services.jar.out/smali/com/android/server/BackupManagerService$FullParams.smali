@@ -37,7 +37,7 @@
     .line 363
     iput-object p1, p0, Lcom/android/server/BackupManagerService$FullParams;->this$0:Lcom/android/server/BackupManagerService;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 364
     new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;

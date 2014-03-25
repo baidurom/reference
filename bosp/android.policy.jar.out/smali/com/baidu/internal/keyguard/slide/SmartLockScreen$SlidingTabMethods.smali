@@ -34,7 +34,7 @@
     .line 92
     iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SlidingTabMethods;->this$0:Lcom/baidu/internal/keyguard/slide/SmartLockScreen;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 93
     iput-object p2, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SlidingTabMethods;->mSlidingTab:Lcom/android/internal/widget/SlidingTab;

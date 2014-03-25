@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 111
+    .line 122
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -42,23 +42,23 @@
     .parameter "s"
 
     .prologue
-    .line 119
+    .line 130
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;
 
-    iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
 
     if-eqz v0, :cond_0
 
-    .line 120
+    .line 131
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;
 
-    iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
 
     const-wide/16 v1, 0x0
 
     invoke-interface {v0, v1, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;->userActivity(J)V
 
-    .line 122
+    .line 133
     :cond_0
     return-void
 .end method
@@ -71,7 +71,7 @@
     .parameter "after"
 
     .prologue
-    .line 116
+    .line 127
     return-void
 .end method
 
@@ -83,6 +83,6 @@
     .parameter "count"
 
     .prologue
-    .line 113
+    .line 124
     return-void
 .end method

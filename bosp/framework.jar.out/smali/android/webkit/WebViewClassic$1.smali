@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 1283
+    .line 1434
     iput-object p1, p0, Landroid/webkit/WebViewClassic$1;->this$0:Landroid/webkit/WebViewClassic;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,12 +40,12 @@
     .parameter "intent"
 
     .prologue
-    .line 1285
+    .line 1436
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1286
+    .line 1437
     .local v0, action:Ljava/lang/String;
     const-string v1, "android.intent.action.THEME_CHANGED"
 
@@ -55,17 +55,17 @@
 
     if-eqz v1, :cond_0
 
-    .line 1287
+    .line 1438
     iget-object v1, p0, Landroid/webkit/WebViewClassic$1;->this$0:Landroid/webkit/WebViewClassic;
 
     #getter for: Landroid/webkit/WebViewClassic;->mWebViewCore:Landroid/webkit/WebViewCore;
-    invoke-static {v1}, Landroid/webkit/WebViewClassic;->access$1000(Landroid/webkit/WebViewClassic;)Landroid/webkit/WebViewCore;
+    invoke-static {v1}, Landroid/webkit/WebViewClassic;->access$1100(Landroid/webkit/WebViewClassic;)Landroid/webkit/WebViewCore;
 
     move-result-object v1
 
     invoke-virtual {v1}, Landroid/webkit/WebViewCore;->purgeFontCache()V
 
-    .line 1289
+    .line 1440
     :cond_0
     return-void
 .end method

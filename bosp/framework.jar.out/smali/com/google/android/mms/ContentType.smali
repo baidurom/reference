@@ -20,6 +20,8 @@
 
 .field public static final AUDIO_AMR:Ljava/lang/String; = "audio/amr"
 
+.field public static final AUDIO_AWB:Ljava/lang/String; = "audio/amr-wb"
+
 .field public static final AUDIO_IMELODY:Ljava/lang/String; = "audio/imelody"
 
 .field public static final AUDIO_MID:Ljava/lang/String; = "audio/mid"
@@ -40,6 +42,12 @@
 
 .field public static final AUDIO_UNSPECIFIED:Ljava/lang/String; = "audio/*"
 
+.field public static final AUDIO_VORBIS:Ljava/lang/String; = "audio/vorbis"
+
+.field public static final AUDIO_WAV:Ljava/lang/String; = "audio/x-wav"
+
+.field public static final AUDIO_WMA:Ljava/lang/String; = "audio/x-ms-wma"
+
 .field public static final AUDIO_X_MID:Ljava/lang/String; = "audio/x-mid"
 
 .field public static final AUDIO_X_MIDI:Ljava/lang/String; = "audio/x-midi"
@@ -54,6 +62,8 @@
 
 .field public static final AUDIO_X_WAV:Ljava/lang/String; = "audio/x-wav"
 
+.field public static final IMAGE_BMP:Ljava/lang/String; = "image/x-ms-bmp"
+
 .field public static final IMAGE_GIF:Ljava/lang/String; = "image/gif"
 
 .field public static final IMAGE_JPEG:Ljava/lang/String; = "image/jpeg"
@@ -65,6 +75,8 @@
 .field public static final IMAGE_UNSPECIFIED:Ljava/lang/String; = "image/*"
 
 .field public static final IMAGE_WBMP:Ljava/lang/String; = "image/vnd.wap.wbmp"
+
+.field public static final IMAGE_XBMP:Ljava/lang/String; = "image/bmp"
 
 .field public static final IMAGE_X_MS_BMP:Ljava/lang/String; = "image/x-ms-bmp"
 
@@ -82,6 +94,8 @@
 
 .field public static final TEXT_PLAIN:Ljava/lang/String; = "text/plain"
 
+.field public static final TEXT_TS:Ljava/lang/String; = "text/texmacs"
+
 .field public static final TEXT_VCALENDAR:Ljava/lang/String; = "text/x-vCalendar"
 
 .field public static final TEXT_VCARD:Ljava/lang/String; = "text/x-vCard"
@@ -94,7 +108,20 @@
 
 .field public static final VIDEO_MP4:Ljava/lang/String; = "video/mp4"
 
+.field public static final VIDEO_TS:Ljava/lang/String; = "video/mp2ts"
+
 .field public static final VIDEO_UNSPECIFIED:Ljava/lang/String; = "video/*"
+
+.field private static final sRestrictedContentTypes:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field private static final sSupportedAudioTypes:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
@@ -643,7 +670,238 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 163
+    .line 243
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    sput-object v0, Lcom/google/android/mms/ContentType;->sRestrictedContentTypes:Ljava/util/ArrayList;
+
+    .line 248
+    sget-object v0, Lcom/google/android/mms/ContentType;->sSupportedContentTypes:Ljava/util/ArrayList;
+
+    const-string/jumbo v1, "text/texmacs"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 251
+    sget-object v0, Lcom/google/android/mms/ContentType;->sSupportedContentTypes:Ljava/util/ArrayList;
+
+    const-string v1, "image/x-ms-bmp"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 252
+    sget-object v0, Lcom/google/android/mms/ContentType;->sSupportedContentTypes:Ljava/util/ArrayList;
+
+    const-string v1, "image/bmp"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 255
+    sget-object v0, Lcom/google/android/mms/ContentType;->sSupportedContentTypes:Ljava/util/ArrayList;
+
+    const-string v1, "audio/x-wav"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 256
+    sget-object v0, Lcom/google/android/mms/ContentType;->sSupportedContentTypes:Ljava/util/ArrayList;
+
+    const-string v1, "audio/amr-wb"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 257
+    sget-object v0, Lcom/google/android/mms/ContentType;->sSupportedContentTypes:Ljava/util/ArrayList;
+
+    const-string v1, "audio/x-ms-wma"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 258
+    sget-object v0, Lcom/google/android/mms/ContentType;->sSupportedContentTypes:Ljava/util/ArrayList;
+
+    const-string v1, "audio/vorbis"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 261
+    sget-object v0, Lcom/google/android/mms/ContentType;->sSupportedContentTypes:Ljava/util/ArrayList;
+
+    const-string/jumbo v1, "video/mp2ts"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 264
+    sget-object v0, Lcom/google/android/mms/ContentType;->sRestrictedContentTypes:Ljava/util/ArrayList;
+
+    const-string v1, "image/jpeg"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 265
+    sget-object v0, Lcom/google/android/mms/ContentType;->sRestrictedContentTypes:Ljava/util/ArrayList;
+
+    const-string v1, "image/jpg"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 266
+    sget-object v0, Lcom/google/android/mms/ContentType;->sRestrictedContentTypes:Ljava/util/ArrayList;
+
+    const-string v1, "image/vnd.wap.wbmp"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 267
+    sget-object v0, Lcom/google/android/mms/ContentType;->sRestrictedContentTypes:Ljava/util/ArrayList;
+
+    const-string v1, "image/gif"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 268
+    sget-object v0, Lcom/google/android/mms/ContentType;->sRestrictedContentTypes:Ljava/util/ArrayList;
+
+    const-string/jumbo v1, "text/plain"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 269
+    sget-object v0, Lcom/google/android/mms/ContentType;->sRestrictedContentTypes:Ljava/util/ArrayList;
+
+    const-string/jumbo v1, "text/texmacs"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 270
+    sget-object v0, Lcom/google/android/mms/ContentType;->sRestrictedContentTypes:Ljava/util/ArrayList;
+
+    const-string v1, "audio/mid"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 271
+    sget-object v0, Lcom/google/android/mms/ContentType;->sRestrictedContentTypes:Ljava/util/ArrayList;
+
+    const-string v1, "audio/midi"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 272
+    sget-object v0, Lcom/google/android/mms/ContentType;->sRestrictedContentTypes:Ljava/util/ArrayList;
+
+    const-string v1, "audio/amr"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 273
+    sget-object v0, Lcom/google/android/mms/ContentType;->sRestrictedContentTypes:Ljava/util/ArrayList;
+
+    const-string v1, "audio/vorbis"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 274
+    sget-object v0, Lcom/google/android/mms/ContentType;->sRestrictedContentTypes:Ljava/util/ArrayList;
+
+    const-string v1, "audio/x-mid"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 275
+    sget-object v0, Lcom/google/android/mms/ContentType;->sRestrictedContentTypes:Ljava/util/ArrayList;
+
+    const-string v1, "audio/x-midi"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 276
+    sget-object v0, Lcom/google/android/mms/ContentType;->sRestrictedContentTypes:Ljava/util/ArrayList;
+
+    const-string/jumbo v1, "video/3gpp"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 277
+    sget-object v0, Lcom/google/android/mms/ContentType;->sRestrictedContentTypes:Ljava/util/ArrayList;
+
+    const-string/jumbo v1, "video/3gpp2"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 278
+    sget-object v0, Lcom/google/android/mms/ContentType;->sRestrictedContentTypes:Ljava/util/ArrayList;
+
+    const-string/jumbo v1, "video/mp4"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 279
+    sget-object v0, Lcom/google/android/mms/ContentType;->sRestrictedContentTypes:Ljava/util/ArrayList;
+
+    const-string/jumbo v1, "video/mp2ts"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 282
+    sget-object v0, Lcom/google/android/mms/ContentType;->sSupportedImageTypes:Ljava/util/ArrayList;
+
+    const-string v1, "image/x-ms-bmp"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 283
+    sget-object v0, Lcom/google/android/mms/ContentType;->sSupportedImageTypes:Ljava/util/ArrayList;
+
+    const-string v1, "image/bmp"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 286
+    sget-object v0, Lcom/google/android/mms/ContentType;->sSupportedAudioTypes:Ljava/util/ArrayList;
+
+    const-string v1, "audio/x-wav"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 287
+    sget-object v0, Lcom/google/android/mms/ContentType;->sSupportedAudioTypes:Ljava/util/ArrayList;
+
+    const-string v1, "audio/amr-wb"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 288
+    sget-object v0, Lcom/google/android/mms/ContentType;->sSupportedAudioTypes:Ljava/util/ArrayList;
+
+    const-string v1, "audio/x-ms-wma"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 289
+    sget-object v0, Lcom/google/android/mms/ContentType;->sSupportedAudioTypes:Ljava/util/ArrayList;
+
+    const-string v1, "audio/vorbis"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 292
+    sget-object v0, Lcom/google/android/mms/ContentType;->sSupportedVideoTypes:Ljava/util/ArrayList;
+
+    const-string/jumbo v1, "video/mp2ts"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 293
+    sget-object v0, Lcom/google/android/mms/ContentType;->sSupportedVideoTypes:Ljava/util/ArrayList;
+
+    const-string/jumbo v1, "text/texmacs"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 295
     return-void
 .end method
 
@@ -652,7 +910,7 @@
 
     .prologue
     .line 166
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 167
     return-void
@@ -832,6 +1090,33 @@
     const-string v0, "image/"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public static isRestrictedType(Ljava/lang/String;)Z
+    .locals 1
+    .parameter "contentType"
+
+    .prologue
+    .line 298
+    if-eqz p0, :cond_0
+
+    sget-object v0, Lcom/google/android/mms/ContentType;->sRestrictedContentTypes:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, p0}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
     move-result v0
 

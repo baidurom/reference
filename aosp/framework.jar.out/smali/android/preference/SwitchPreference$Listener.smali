@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 44
+    .line 45
     iput-object p1, p0, Landroid/preference/SwitchPreference$Listener;->this$0:Landroid/preference/SwitchPreference;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,7 +41,7 @@
     .parameter "x1"
 
     .prologue
-    .line 44
+    .line 45
     invoke-direct {p0, p1}, Landroid/preference/SwitchPreference$Listener;-><init>(Landroid/preference/SwitchPreference;)V
 
     return-void
@@ -55,7 +55,7 @@
     .parameter "isChecked"
 
     .prologue
-    .line 47
+    .line 48
     iget-object v0, p0, Landroid/preference/SwitchPreference$Listener;->this$0:Landroid/preference/SwitchPreference;
 
     invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -68,7 +68,7 @@
 
     if-nez v0, :cond_1
 
-    .line 50
+    .line 51
     if-nez p2, :cond_0
 
     const/4 v0, 0x1
@@ -76,17 +76,17 @@
     :goto_0
     invoke-virtual {p1, v0}, Landroid/widget/CompoundButton;->setChecked(Z)V
 
-    .line 55
+    .line 56
     :goto_1
     return-void
 
-    .line 50
+    .line 51
     :cond_0
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 54
+    .line 55
     :cond_1
     iget-object v0, p0, Landroid/preference/SwitchPreference$Listener;->this$0:Landroid/preference/SwitchPreference;
 

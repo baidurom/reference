@@ -50,6 +50,8 @@
 
 .field static final DUMP_DOMTREE:I = 0xaa
 
+.field static final DUMP_MEMORYUSAGE:I = 0xac
+
 .field static final DUMP_RENDERTREE:I = 0xab
 
 .field static final EXECUTE_JS:I = 0xc2
@@ -90,11 +92,19 @@
 
 .field static final MODIFY_SELECTION:I = 0xbe
 
+.field static final NOTIFICATION_ID_BACK:I = 0xe8
+
+.field static final NOTIFICATION_PERMISSIONS_PROVIDE:I = 0xe9
+
+.field static final NOTIFICATION_RESPONSE_BACK:I = 0xea
+
 .field static final NOTIFY_ANIMATION_STARTED:I = 0xc4
 
 .field static final ON_PAUSE:I = 0x8f
 
 .field static final ON_RESUME:I = 0x90
+
+.field static final PAGE_VISIBILITY_CHANGED:I = 0xe6
 
 .field static final PASS_TO_JS:I = 0x73
 
@@ -140,6 +150,10 @@
 
 .field static final SELECT_ALL:I = 0xd7
 
+.field static final SELECT_COLOR:I = 0xec
+
+.field static final SELECT_DATALIST_OPTION:I = 0xeb
+
 .field static final SELECT_TEXT:I = 0xd5
 
 .field static final SELECT_WORD_AT:I = 0xd6
@@ -173,6 +187,8 @@
 .field static final STOP_LOADING:I = 0x65
 
 .field static final TRUST_STORAGE_UPDATED:I = 0xdc
+
+.field static final UPDATE_SCREEN_SIZE:I = 0xe7
 
 .field static final VIEW_SIZE_CHANGED:I = 0x69
 
@@ -224,41 +240,41 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 1223
+    .line 1378
     iput-object p1, p0, Landroid/webkit/WebViewCore$EventHub;->this$0:Landroid/webkit/WebViewCore;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1202
+    .line 1357
     new-instance v0, Ljava/util/LinkedList;
 
     invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
     iput-object v0, p0, Landroid/webkit/WebViewCore$EventHub;->mMessages:Ljava/util/LinkedList;
 
-    .line 1212
+    .line 1367
     iput v1, p0, Landroid/webkit/WebViewCore$EventHub;->mLastSuccSelectTextX:I
 
-    .line 1213
+    .line 1368
     iput v1, p0, Landroid/webkit/WebViewCore$EventHub;->mLastSuccSelectTextY:I
 
-    .line 1214
+    .line 1369
     iput v1, p0, Landroid/webkit/WebViewCore$EventHub;->mLastSelectTextX:I
 
-    .line 1215
+    .line 1370
     iput v1, p0, Landroid/webkit/WebViewCore$EventHub;->mLastSelectTextY:I
 
-    .line 1216
+    .line 1371
     const/16 v0, 0xa
 
     iput v0, p0, Landroid/webkit/WebViewCore$EventHub;->SELECT_DY:I
 
-    .line 1217
+    .line 1372
     const/16 v0, 0x384
 
     iput v0, p0, Landroid/webkit/WebViewCore$EventHub;->SELECT_DISTANCE:I
 
-    .line 1223
+    .line 1378
     return-void
 .end method
 
@@ -268,7 +284,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1069
+    .line 1206
     invoke-direct {p0, p1}, Landroid/webkit/WebViewCore$EventHub;-><init>(Landroid/webkit/WebViewCore;)V
 
     return-void
@@ -279,7 +295,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1069
+    .line 1206
     iget-boolean v0, p0, Landroid/webkit/WebViewCore$EventHub;->mDestroying:Z
 
     return v0
@@ -291,7 +307,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1069
+    .line 1206
     iput-boolean p1, p0, Landroid/webkit/WebViewCore$EventHub;->mDestroying:Z
 
     return p1
@@ -302,79 +318,10 @@
     .parameter "x0"
 
     .prologue
-    .line 1069
+    .line 1206
     invoke-direct {p0}, Landroid/webkit/WebViewCore$EventHub;->transferMessages()V
 
     return-void
-.end method
-
-.method static synthetic access$6200(Landroid/webkit/WebViewCore$EventHub;)I
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 1069
-    iget v0, p0, Landroid/webkit/WebViewCore$EventHub;->mLastSelectTextX:I
-
-    return v0
-.end method
-
-.method static synthetic access$6202(Landroid/webkit/WebViewCore$EventHub;I)I
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 1069
-    iput p1, p0, Landroid/webkit/WebViewCore$EventHub;->mLastSelectTextX:I
-
-    return p1
-.end method
-
-.method static synthetic access$6300(Landroid/webkit/WebViewCore$EventHub;)I
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 1069
-    iget v0, p0, Landroid/webkit/WebViewCore$EventHub;->mLastSelectTextY:I
-
-    return v0
-.end method
-
-.method static synthetic access$6302(Landroid/webkit/WebViewCore$EventHub;I)I
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 1069
-    iput p1, p0, Landroid/webkit/WebViewCore$EventHub;->mLastSelectTextY:I
-
-    return p1
-.end method
-
-.method static synthetic access$6500(Landroid/webkit/WebViewCore$EventHub;)I
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 1069
-    iget v0, p0, Landroid/webkit/WebViewCore$EventHub;->mLastSuccSelectTextY:I
-
-    return v0
-.end method
-
-.method static synthetic access$6502(Landroid/webkit/WebViewCore$EventHub;I)I
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 1069
-    iput p1, p0, Landroid/webkit/WebViewCore$EventHub;->mLastSuccSelectTextY:I
-
-    return p1
 .end method
 
 .method static synthetic access$6600(Landroid/webkit/WebViewCore$EventHub;)I
@@ -382,10 +329,22 @@
     .parameter "x0"
 
     .prologue
-    .line 1069
-    iget v0, p0, Landroid/webkit/WebViewCore$EventHub;->SELECT_DY:I
+    .line 1206
+    iget v0, p0, Landroid/webkit/WebViewCore$EventHub;->mLastSelectTextX:I
 
     return v0
+.end method
+
+.method static synthetic access$6602(Landroid/webkit/WebViewCore$EventHub;I)I
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 1206
+    iput p1, p0, Landroid/webkit/WebViewCore$EventHub;->mLastSelectTextX:I
+
+    return p1
 .end method
 
 .method static synthetic access$6700(Landroid/webkit/WebViewCore$EventHub;)I
@@ -393,8 +352,8 @@
     .parameter "x0"
 
     .prologue
-    .line 1069
-    iget v0, p0, Landroid/webkit/WebViewCore$EventHub;->mLastSuccSelectTextX:I
+    .line 1206
+    iget v0, p0, Landroid/webkit/WebViewCore$EventHub;->mLastSelectTextY:I
 
     return v0
 .end method
@@ -405,45 +364,78 @@
     .parameter "x1"
 
     .prologue
-    .line 1069
+    .line 1206
+    iput p1, p0, Landroid/webkit/WebViewCore$EventHub;->mLastSelectTextY:I
+
+    return p1
+.end method
+
+.method static synthetic access$6900(Landroid/webkit/WebViewCore$EventHub;)I
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 1206
+    iget v0, p0, Landroid/webkit/WebViewCore$EventHub;->mLastSuccSelectTextY:I
+
+    return v0
+.end method
+
+.method static synthetic access$6902(Landroid/webkit/WebViewCore$EventHub;I)I
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 1206
+    iput p1, p0, Landroid/webkit/WebViewCore$EventHub;->mLastSuccSelectTextY:I
+
+    return p1
+.end method
+
+.method static synthetic access$7000(Landroid/webkit/WebViewCore$EventHub;)I
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 1206
+    iget v0, p0, Landroid/webkit/WebViewCore$EventHub;->SELECT_DY:I
+
+    return v0
+.end method
+
+.method static synthetic access$7100(Landroid/webkit/WebViewCore$EventHub;)I
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 1206
+    iget v0, p0, Landroid/webkit/WebViewCore$EventHub;->mLastSuccSelectTextX:I
+
+    return v0
+.end method
+
+.method static synthetic access$7102(Landroid/webkit/WebViewCore$EventHub;I)I
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 1206
     iput p1, p0, Landroid/webkit/WebViewCore$EventHub;->mLastSuccSelectTextX:I
 
     return p1
 .end method
 
-.method static synthetic access$6800(Landroid/webkit/WebViewCore$EventHub;)I
+.method static synthetic access$7200(Landroid/webkit/WebViewCore$EventHub;)I
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 1069
+    .line 1206
     iget v0, p0, Landroid/webkit/WebViewCore$EventHub;->SELECT_DISTANCE:I
 
     return v0
-.end method
-
-.method static synthetic access$7800(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;)V
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 1069
-    invoke-direct {p0, p1}, Landroid/webkit/WebViewCore$EventHub;->sendMessage(Landroid/os/Message;)V
-
-    return-void
-.end method
-
-.method static synthetic access$7900(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;)V
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 1069
-    invoke-direct {p0, p1}, Landroid/webkit/WebViewCore$EventHub;->sendMessageAtFrontOfQueue(Landroid/os/Message;)V
-
-    return-void
 .end method
 
 .method static synthetic access$800(Landroid/webkit/WebViewCore$EventHub;)I
@@ -451,23 +443,10 @@
     .parameter "x0"
 
     .prologue
-    .line 1069
+    .line 1206
     iget v0, p0, Landroid/webkit/WebViewCore$EventHub;->mSavedPriority:I
 
     return v0
-.end method
-
-.method static synthetic access$8000(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;J)V
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-    .parameter "x2"
-
-    .prologue
-    .line 1069
-    invoke-direct {p0, p1, p2, p3}, Landroid/webkit/WebViewCore$EventHub;->sendMessageDelayed(Landroid/os/Message;J)V
-
-    return-void
 .end method
 
 .method static synthetic access$802(Landroid/webkit/WebViewCore$EventHub;I)I
@@ -476,42 +455,57 @@
     .parameter "x1"
 
     .prologue
-    .line 1069
+    .line 1206
     iput p1, p0, Landroid/webkit/WebViewCore$EventHub;->mSavedPriority:I
 
     return p1
 .end method
 
-.method static synthetic access$8100(Landroid/webkit/WebViewCore$EventHub;I)V
+.method static synthetic access$8600(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 1069
+    .line 1206
+    invoke-direct {p0, p1}, Landroid/webkit/WebViewCore$EventHub;->sendMessage(Landroid/os/Message;)V
+
+    return-void
+.end method
+
+.method static synthetic access$8700(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 1206
+    invoke-direct {p0, p1}, Landroid/webkit/WebViewCore$EventHub;->sendMessageAtFrontOfQueue(Landroid/os/Message;)V
+
+    return-void
+.end method
+
+.method static synthetic access$8800(Landroid/webkit/WebViewCore$EventHub;Landroid/os/Message;J)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+    .parameter "x2"
+
+    .prologue
+    .line 1206
+    invoke-direct {p0, p1, p2, p3}, Landroid/webkit/WebViewCore$EventHub;->sendMessageDelayed(Landroid/os/Message;J)V
+
+    return-void
+.end method
+
+.method static synthetic access$8900(Landroid/webkit/WebViewCore$EventHub;I)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 1206
     invoke-direct {p0, p1}, Landroid/webkit/WebViewCore$EventHub;->removeMessages(I)V
-
-    return-void
-.end method
-
-.method static synthetic access$8200(Landroid/webkit/WebViewCore$EventHub;)V
-    .locals 0
-    .parameter "x0"
-
-    .prologue
-    .line 1069
-    invoke-direct {p0}, Landroid/webkit/WebViewCore$EventHub;->removeMessages()V
-
-    return-void
-.end method
-
-.method static synthetic access$8300(Landroid/webkit/WebViewCore$EventHub;)V
-    .locals 0
-    .parameter "x0"
-
-    .prologue
-    .line 1069
-    invoke-direct {p0}, Landroid/webkit/WebViewCore$EventHub;->blockMessages()V
 
     return-void
 .end method
@@ -521,17 +515,39 @@
     .parameter "x0"
 
     .prologue
-    .line 1069
+    .line 1206
     iget v0, p0, Landroid/webkit/WebViewCore$EventHub;->mTid:I
 
     return v0
+.end method
+
+.method static synthetic access$9000(Landroid/webkit/WebViewCore$EventHub;)V
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    .line 1206
+    invoke-direct {p0}, Landroid/webkit/WebViewCore$EventHub;->removeMessages()V
+
+    return-void
+.end method
+
+.method static synthetic access$9100(Landroid/webkit/WebViewCore$EventHub;)V
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    .line 1206
+    invoke-direct {p0}, Landroid/webkit/WebViewCore$EventHub;->blockMessages()V
+
+    return-void
 .end method
 
 .method private declared-synchronized blockMessages()V
     .locals 1
 
     .prologue
-    .line 1930
+    .line 2139
     monitor-enter p0
 
     const/4 v0, 0x1
@@ -541,12 +557,12 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1931
+    .line 2140
     monitor-exit p0
 
     return-void
 
-    .line 1930
+    .line 2139
     :catchall_0
     move-exception v0
 
@@ -559,7 +575,7 @@
     .locals 2
 
     .prologue
-    .line 1918
+    .line 2127
     monitor-enter p0
 
     :try_start_0
@@ -568,27 +584,27 @@
     const/4 v1, 0x0
 
     #setter for: Landroid/webkit/WebViewCore;->mDrawIsScheduled:Z
-    invoke-static {v0, v1}, Landroid/webkit/WebViewCore;->access$7702(Landroid/webkit/WebViewCore;Z)Z
+    invoke-static {v0, v1}, Landroid/webkit/WebViewCore;->access$8502(Landroid/webkit/WebViewCore;Z)Z
 
-    .line 1919
+    .line 2128
     iget-object v0, p0, Landroid/webkit/WebViewCore$EventHub;->mMessages:Ljava/util/LinkedList;
 
     if-eqz v0, :cond_0
 
-    .line 1920
+    .line 2129
     iget-object v0, p0, Landroid/webkit/WebViewCore$EventHub;->mMessages:Ljava/util/LinkedList;
 
     invoke-virtual {v0}, Ljava/util/LinkedList;->clear()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1924
+    .line 2133
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 1922
+    .line 2131
     :cond_0
     :try_start_1
     iget-object v0, p0, Landroid/webkit/WebViewCore$EventHub;->mHandler:Landroid/os/Handler;
@@ -601,7 +617,7 @@
 
     goto :goto_0
 
-    .line 1918
+    .line 2127
     :catchall_0
     move-exception v0
 
@@ -615,7 +631,7 @@
     .parameter "what"
 
     .prologue
-    .line 1873
+    .line 2082
     monitor-enter p0
 
     :try_start_0
@@ -625,42 +641,42 @@
 
     if-eqz v2, :cond_1
 
-    .line 1890
+    .line 2099
     :cond_0
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 1876
+    .line 2085
     :cond_1
     const/16 v2, 0x82
 
     if-ne p1, v2, :cond_2
 
-    .line 1877
+    .line 2086
     :try_start_1
     iget-object v2, p0, Landroid/webkit/WebViewCore$EventHub;->this$0:Landroid/webkit/WebViewCore;
 
     const/4 v3, 0x0
 
     #setter for: Landroid/webkit/WebViewCore;->mDrawIsScheduled:Z
-    invoke-static {v2, v3}, Landroid/webkit/WebViewCore;->access$7702(Landroid/webkit/WebViewCore;Z)Z
+    invoke-static {v2, v3}, Landroid/webkit/WebViewCore;->access$8502(Landroid/webkit/WebViewCore;Z)Z
 
-    .line 1879
+    .line 2088
     :cond_2
     iget-object v2, p0, Landroid/webkit/WebViewCore$EventHub;->mMessages:Ljava/util/LinkedList;
 
     if-eqz v2, :cond_4
 
-    .line 1880
+    .line 2089
     iget-object v2, p0, Landroid/webkit/WebViewCore$EventHub;->mMessages:Ljava/util/LinkedList;
 
     invoke-virtual {v2}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    .line 1881
+    .line 2090
     .local v0, iter:Ljava/util/Iterator;,"Ljava/util/Iterator<Landroid/os/Message;>;"
     :cond_3
     :goto_1
@@ -670,27 +686,27 @@
 
     if-eqz v2, :cond_0
 
-    .line 1882
+    .line 2091
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/os/Message;
 
-    .line 1883
+    .line 2092
     .local v1, m:Landroid/os/Message;
     iget v2, v1, Landroid/os/Message;->what:I
 
     if-ne v2, p1, :cond_3
 
-    .line 1884
+    .line 2093
     invoke-interface {v0}, Ljava/util/Iterator;->remove()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_1
 
-    .line 1873
+    .line 2082
     .end local v0           #iter:Ljava/util/Iterator;,"Ljava/util/Iterator<Landroid/os/Message;>;"
     .end local v1           #m:Landroid/os/Message;
     :catchall_0
@@ -700,7 +716,7 @@
 
     throw v2
 
-    .line 1888
+    .line 2097
     :cond_4
     :try_start_2
     iget-object v2, p0, Landroid/webkit/WebViewCore$EventHub;->mHandler:Landroid/os/Handler;
@@ -717,7 +733,7 @@
     .parameter "msg"
 
     .prologue
-    .line 1862
+    .line 2071
     monitor-enter p0
 
     :try_start_0
@@ -727,20 +743,20 @@
 
     if-eqz v0, :cond_0
 
-    .line 1870
+    .line 2079
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 1865
+    .line 2074
     :cond_0
     :try_start_1
     iget-object v0, p0, Landroid/webkit/WebViewCore$EventHub;->mMessages:Ljava/util/LinkedList;
 
     if-eqz v0, :cond_1
 
-    .line 1866
+    .line 2075
     iget-object v0, p0, Landroid/webkit/WebViewCore$EventHub;->mMessages:Ljava/util/LinkedList;
 
     invoke-virtual {v0, p1}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
@@ -749,7 +765,7 @@
 
     goto :goto_0
 
-    .line 1862
+    .line 2071
     :catchall_0
     move-exception v0
 
@@ -757,7 +773,7 @@
 
     throw v0
 
-    .line 1868
+    .line 2077
     :cond_1
     :try_start_2
     iget-object v0, p0, Landroid/webkit/WebViewCore$EventHub;->mHandler:Landroid/os/Handler;
@@ -774,7 +790,7 @@
     .parameter "msg"
 
     .prologue
-    .line 1903
+    .line 2112
     monitor-enter p0
 
     :try_start_0
@@ -784,20 +800,20 @@
 
     if-eqz v0, :cond_0
 
-    .line 1911
+    .line 2120
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 1906
+    .line 2115
     :cond_0
     :try_start_1
     iget-object v0, p0, Landroid/webkit/WebViewCore$EventHub;->mMessages:Ljava/util/LinkedList;
 
     if-eqz v0, :cond_1
 
-    .line 1907
+    .line 2116
     iget-object v0, p0, Landroid/webkit/WebViewCore$EventHub;->mMessages:Ljava/util/LinkedList;
 
     const/4 v1, 0x0
@@ -808,7 +824,7 @@
 
     goto :goto_0
 
-    .line 1903
+    .line 2112
     :catchall_0
     move-exception v0
 
@@ -816,7 +832,7 @@
 
     throw v0
 
-    .line 1909
+    .line 2118
     :cond_1
     :try_start_2
     iget-object v0, p0, Landroid/webkit/WebViewCore$EventHub;->mHandler:Landroid/os/Handler;
@@ -834,7 +850,7 @@
     .parameter "delay"
 
     .prologue
-    .line 1893
+    .line 2102
     monitor-enter p0
 
     :try_start_0
@@ -844,13 +860,13 @@
 
     if-eqz v0, :cond_0
 
-    .line 1897
+    .line 2106
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 1896
+    .line 2105
     :cond_0
     :try_start_1
     iget-object v0, p0, Landroid/webkit/WebViewCore$EventHub;->mHandler:Landroid/os/Handler;
@@ -861,7 +877,7 @@
 
     goto :goto_0
 
-    .line 1893
+    .line 2102
     :catchall_0
     move-exception v0
 
@@ -874,14 +890,14 @@
     .locals 4
 
     .prologue
-    .line 1232
+    .line 1387
     invoke-static {}, Landroid/os/Process;->myTid()I
 
     move-result v2
 
     iput v2, p0, Landroid/webkit/WebViewCore$EventHub;->mTid:I
 
-    .line 1233
+    .line 1388
     iget v2, p0, Landroid/webkit/WebViewCore$EventHub;->mTid:I
 
     invoke-static {v2}, Landroid/os/Process;->getThreadPriority(I)I
@@ -890,17 +906,17 @@
 
     iput v2, p0, Landroid/webkit/WebViewCore$EventHub;->mSavedPriority:I
 
-    .line 1235
+    .line 1390
     new-instance v2, Landroid/webkit/WebViewCore$EventHub$1;
 
     invoke-direct {v2, p0}, Landroid/webkit/WebViewCore$EventHub$1;-><init>(Landroid/webkit/WebViewCore$EventHub;)V
 
     iput-object v2, p0, Landroid/webkit/WebViewCore$EventHub;->mHandler:Landroid/os/Handler;
 
-    .line 1798
+    .line 2007
     monitor-enter p0
 
-    .line 1799
+    .line 2008
     :try_start_0
     iget-object v2, p0, Landroid/webkit/WebViewCore$EventHub;->mMessages:Ljava/util/LinkedList;
 
@@ -908,7 +924,7 @@
 
     move-result v1
 
-    .line 1800
+    .line 2009
     .local v1, size:I
     const/4 v0, 0x0
 
@@ -916,7 +932,7 @@
     :goto_0
     if-ge v0, v1, :cond_0
 
-    .line 1801
+    .line 2010
     iget-object v3, p0, Landroid/webkit/WebViewCore$EventHub;->mHandler:Landroid/os/Handler;
 
     iget-object v2, p0, Landroid/webkit/WebViewCore$EventHub;->mMessages:Ljava/util/LinkedList;
@@ -929,24 +945,24 @@
 
     invoke-virtual {v3, v2}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 1800
+    .line 2009
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 1803
+    .line 2012
     :cond_0
     const/4 v2, 0x0
 
     iput-object v2, p0, Landroid/webkit/WebViewCore$EventHub;->mMessages:Ljava/util/LinkedList;
 
-    .line 1804
+    .line 2013
     monitor-exit p0
 
-    .line 1805
+    .line 2014
     return-void
 
-    .line 1804
+    .line 2013
     .end local v0           #i:I
     .end local v1           #size:I
     :catchall_0
@@ -969,7 +985,7 @@
     .parameter "flags"
 
     .prologue
-    .line 1815
+    .line 2024
     iget-object v1, p0, Landroid/webkit/WebViewCore$EventHub;->this$0:Landroid/webkit/WebViewCore;
 
     #getter for: Landroid/webkit/WebViewCore;->mNativeClass:I
@@ -979,23 +995,23 @@
 
     if-nez v1, :cond_0
 
-    .line 1816
+    .line 2025
     const/4 v1, 0x0
 
-    .line 1854
+    .line 2063
     :goto_0
     return v1
 
-    .line 1818
+    .line 2027
     :cond_0
     sparse-switch p3, :sswitch_data_0
 
-    .line 1854
+    .line 2063
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 1820
+    .line 2029
     :sswitch_0
     invoke-virtual/range {p2 .. p2}, Landroid/view/MotionEvent;->getX()F
 
@@ -1005,7 +1021,7 @@
 
     move-result v13
 
-    .line 1821
+    .line 2030
     .local v13, x:I
     invoke-virtual/range {p2 .. p2}, Landroid/view/MotionEvent;->getY()F
 
@@ -1015,7 +1031,7 @@
 
     move-result v14
 
-    .line 1822
+    .line 2031
     .local v14, y:I
     iget-object v1, p0, Landroid/webkit/WebViewCore$EventHub;->this$0:Landroid/webkit/WebViewCore;
 
@@ -1037,7 +1053,7 @@
 
     move-result-object v10
 
-    .line 1824
+    .line 2033
     .local v10, hit:Landroid/webkit/WebViewCore$WebKitHitTest;
     iget-object v1, p0, Landroid/webkit/WebViewCore$EventHub;->this$0:Landroid/webkit/WebViewCore;
 
@@ -1056,12 +1072,12 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1826
+    .line 2035
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 1829
+    .line 2038
     .end local v10           #hit:Landroid/webkit/WebViewCore$WebKitHitTest;
     .end local v13           #x:I
     .end local v14           #y:I
@@ -1076,31 +1092,31 @@
     move-result v2
 
     #calls: Landroid/webkit/WebViewCore;->nativeMouseClick(I)Z
-    invoke-static {v1, v2}, Landroid/webkit/WebViewCore;->access$7500(Landroid/webkit/WebViewCore;I)Z
+    invoke-static {v1, v2}, Landroid/webkit/WebViewCore;->access$8300(Landroid/webkit/WebViewCore;I)Z
 
     move-result v1
 
     goto :goto_0
 
-    .line 1832
+    .line 2041
     :sswitch_2
     invoke-virtual/range {p2 .. p2}, Landroid/view/MotionEvent;->getPointerCount()I
 
     move-result v7
 
-    .line 1833
+    .line 2042
     .local v7, count:I
     new-array v4, v7, [I
 
-    .line 1834
+    .line 2043
     .local v4, idArray:[I
     new-array v5, v7, [I
 
-    .line 1835
+    .line 2044
     .local v5, xArray:[I
     new-array v6, v7, [I
 
-    .line 1836
+    .line 2045
     .local v6, yArray:[I
     const/4 v11, 0x0
 
@@ -1108,7 +1124,7 @@
     :goto_1
     if-ge v11, v7, :cond_1
 
-    .line 1837
+    .line 2046
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v11}, Landroid/view/MotionEvent;->getPointerId(I)I
@@ -1117,7 +1133,7 @@
 
     aput v1, v4, v11
 
-    .line 1838
+    .line 2047
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v11}, Landroid/view/MotionEvent;->getX(I)F
@@ -1128,7 +1144,7 @@
 
     aput v1, v5, v11
 
-    .line 1839
+    .line 2048
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v11}, Landroid/view/MotionEvent;->getY(I)F
@@ -1139,12 +1155,12 @@
 
     aput v1, v6, v11
 
-    .line 1836
+    .line 2045
     add-int/lit8 v11, v11, 0x1
 
     goto :goto_1
 
-    .line 1841
+    .line 2050
     :cond_1
     iget-object v1, p0, Landroid/webkit/WebViewCore$EventHub;->this$0:Landroid/webkit/WebViewCore;
 
@@ -1168,11 +1184,11 @@
     move-result v9
 
     #calls: Landroid/webkit/WebViewCore;->nativeHandleTouchEvent(II[I[I[IIII)I
-    invoke-static/range {v1 .. v9}, Landroid/webkit/WebViewCore;->access$7600(Landroid/webkit/WebViewCore;II[I[I[IIII)I
+    invoke-static/range {v1 .. v9}, Landroid/webkit/WebViewCore;->access$8400(Landroid/webkit/WebViewCore;II[I[I[IIII)I
 
     move-result v12
 
-    .line 1845
+    .line 2054
     .local v12, touchFlags:I
     if-nez v12, :cond_2
 
@@ -1188,10 +1204,10 @@
 
     if-nez v1, :cond_2
 
-    .line 1848
+    .line 2057
     invoke-virtual/range {p1 .. p1}, Landroid/webkit/WebViewInputDispatcher;->skipWebkitForRemainingTouchStream()V
 
-    .line 1850
+    .line 2059
     :cond_2
     and-int/lit8 v1, v12, 0x2
 
@@ -1206,7 +1222,7 @@
 
     goto/16 :goto_0
 
-    .line 1818
+    .line 2027
     :sswitch_data_0
     .sparse-switch
         0x0 -> :sswitch_2
@@ -1219,7 +1235,7 @@
     .locals 1
 
     .prologue
-    .line 1809
+    .line 2018
     iget-object v0, p0, Landroid/webkit/WebViewCore$EventHub;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;

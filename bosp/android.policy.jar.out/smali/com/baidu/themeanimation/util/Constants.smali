@@ -50,9 +50,13 @@
 
 .field public static final DEFAULT_SCREEN_HEIGHT_XH:I = 0x500
 
+.field public static final DEFAULT_SCREEN_HEIGHT_XXH:I = 0x780
+
 .field public static final DEFAULT_SCREEN_WIDTH:I = 0x1e0
 
 .field public static final DEFAULT_SCREEN_WIDTH_XH:I = 0x2d0
+
+.field public static final DEFAULT_SCREEN_WIDTH_XXH:I = 0x438
 
 .field public static final FULL_BATTERY_LEVEL:I = 0x64
 
@@ -365,7 +369,7 @@
 
     .prologue
     .line 4
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

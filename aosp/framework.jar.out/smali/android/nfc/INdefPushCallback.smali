@@ -31,6 +31,14 @@
     .end annotation
 .end method
 
+.method public abstract getUseCase()Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract onNdefPushComplete()V
     .annotation system Ldalvik/annotation/Throws;
         value = {

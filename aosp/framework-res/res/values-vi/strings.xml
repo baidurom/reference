@@ -271,7 +271,7 @@
     <string name="permgrouplab_display">Giao diện người dùng của ứng dụng khác</string>
     <string name="permgroupdesc_display">Ảnh hưởng tới giao diện người dùng của các ứng dụng khác.</string>
     <string name="permgrouplab_storage">Dung lượng</string>
-    <string name="permgroupdesc_storage">Truy cập bộ nhớ USB.</string>
+    <string name="permgroupdesc_storage">Truy cập thẻ SD.</string>
     <string name="permlab_statusBar">vô hiệu hóa hoặc sửa đổi thanh trạng thái</string>
     <string name="permdesc_statusBar">Cho phép ứng dụng vô hiệu hóa thanh trạng thái hoặc thêm và xóa biểu tượng hệ thống.</string>
     <string name="permlab_statusBarService">thanh trạng thái</string>
@@ -486,9 +486,9 @@
     <string name="permdesc_brick">Cho phép ứng dụng vô hiệu hóa vĩnh viễn toàn bộ điện thoại. Điều này rất nguy hiểm.</string>
     <string name="permlab_reboot">buộc khởi động lại điện thoại</string>
     <string name="permdesc_reboot">Cho phép ứng dụng buộc điện thoại khởi động lại.</string>
-    <string name="permlab_mount_unmount_filesystems">truy cập hệ thống tệp của bộ lưu trữ USB</string>
+    <string name="permlab_mount_unmount_filesystems">truy cập hệ thống tệp Thẻ SD</string>
     <string name="permdesc_mount_unmount_filesystems">Cho phép ứng dụng cài và gỡ các hệ thống tệp của bộ nhớ di động.</string>
-    <string name="permlab_mount_format_filesystems">xóa bộ lưu trữ USB</string>
+    <string name="permlab_mount_format_filesystems">xóa Thẻ SD</string>
     <string name="permdesc_mount_format_filesystems">Cho phép ứng dụng định dạng bộ nhớ di động.</string>
     <string name="permlab_asec_access">nhận thông tin trên bộ nhớ trong</string>
     <string name="permdesc_asec_access">Cho phép ứng dụng lấy thông tin trên bộ nhớ trong.</string>
@@ -597,9 +597,9 @@
     <string name="permlab_writeDictionary">thêm từ vào từ điển do người dùng xác định</string>
     <string name="permdesc_writeDictionary">Cho phép ứng dụng ghi từ mới vào từ điển của người dùng.</string>
     <string name="permlab_sdcardRead">kiểm tra quyền truy cập vào bộ nhớ được bảo vệ</string>
-    <string name="permdesc_sdcardRead">Cho phép ứng dụng kiểm tra quyền của bộ lưu trữ USB trên các thiết bị trong tương lai.</string>
-    <string name="permlab_sdcardWrite">sửa đổi hoặc xóa nội dung của bộ lưu trữ USB của bạn</string>
-    <string name="permdesc_sdcardWrite">Cho phép ứng dụng ghi vào bộ lưu trữ USB.</string>
+    <string name="permdesc_sdcardRead">Cho phép ứng dụng kiểm tra quyền cho thẻ SD sẽ các thiết bị trong tương lai.</string>
+    <string name="permlab_sdcardWrite">sửa đổi hoặc xóa nội dung của thẻ SD của bạn</string>
+    <string name="permdesc_sdcardWrite">Cho phép ứng dụng ghi vào thẻ SD.</string>
     <string name="permlab_mediaStorageWrite">sửa đổi/xóa nội dung trên bộ nhớ phương tiện cục bộ</string>
     <string name="permdesc_mediaStorageWrite">Cho phép ứng dụng sửa đổi nội dung của bộ lưu trữ phương tiện nội bộ.</string>
     <string name="permlab_sdcardAccessAll">truy cập bộ nhớ ngoài của tất cả người dùng</string>
@@ -714,7 +714,7 @@
     <string name="keyguard_password_wrong_pin_code">Mã PIN không chính xác.</string>
     <string name="keyguard_label_text">Để mở khóa, hãy nhấn vào Trình đơn sau đó nhấn 0.</string>
     <string name="emergency_call_dialog_number_for_display">Số khẩn cấp</string>
-    <string name="lockscreen_carrier_default">Không có dịch vụ nào.</string>
+    <string name="lockscreen_carrier_default">Không có dịch vụ nào</string>
     <string name="lockscreen_screen_locked">Màn hình đã khóa.</string>
     <string name="lockscreen_instructions_when_pattern_enabled">Nhấn vào Trình đơn để mở khóa hoặc thực hiện cuộc gọi khẩn cấp.</string>
     <string name="lockscreen_instructions_when_pattern_disabled">Nhấn vào Trình đơn để mở khóa.</string>
@@ -733,7 +733,7 @@
     <string name="lockscreen_missing_sim_message">Không có thẻ SIM nào trong điện thoại.</string>
     <string name="lockscreen_missing_sim_instructions">Hãy lắp thẻ SIM.</string>
     <string name="lockscreen_missing_sim_instructions_long">Thẻ SIM bị thiếu hoặc không thể đọc được. Vui lòng lắp thẻ SIM.</string>
-    <string name="lockscreen_permanent_disabled_sim_message_short">Thẻ SIM không sử dụng được.</string>
+    <string name="lockscreen_permanent_disabled_sim_message_short">Thẻ SIM không sử dụng được</string>
     <string name="lockscreen_permanent_disabled_sim_instructions">"Thẻ SIM của bạn đã bị vô hiệu hóa vĩnh viễn .
  Hãy liên hệ với nhà cung cấp dịch vụ không dây của bạn để lấy thẻ SIM khác."</string>
     <string name="lockscreen_transport_prev_description">Nút bài hát trước</string>
@@ -743,9 +743,9 @@
     <string name="lockscreen_transport_stop_description">Nút dừng</string>
     <string name="emergency_calls_only">Chỉ cuộc gọi khẩn cấp</string>
     <string name="lockscreen_network_locked_message">Mạng đã khóa</string>
-    <string name="lockscreen_sim_puk_locked_message">Thẻ SIM đã bị khóa PUK.</string>
+    <string name="lockscreen_sim_puk_locked_message">Thẻ SIM đã bị khóa PUK</string>
     <string name="lockscreen_sim_puk_locked_instructions">Vui lòng xem Hướng dẫn người dùng hoặc liên hệ với Bộ phận chăm sóc khách hàng.</string>
-    <string name="lockscreen_sim_locked_message">Thẻ SIM đã bị khóa.</string>
+    <string name="lockscreen_sim_locked_message">Thẻ SIM đã bị khóa</string>
     <string name="lockscreen_sim_unlock_progress_dialog_message">Đang mở khóa thẻ SIM…</string>
     <string name="lockscreen_too_many_failed_attempts_dialog_message" formatted="false">"Bạn đã %d lần vẽ không chính xác hình mở khóa của mình. 
 
@@ -1030,15 +1030,15 @@ Bạn có muốn đóng trang không?"</string>
     <string name="perm_costs_money">bạn có thể mất tiền vì điều này</string>
     <string name="usb_storage_activity_title">Bộ nhớ dung lượng lớn USB</string>
     <string name="usb_storage_title">USB đã kết nối</string>
-    <string name="usb_storage_message">Bạn đã kết nối với máy tính của mình qua USB. Hãy chạm vào nút bên dưới nếu bạn muốn sao chép các tệp giữa máy tính và bộ lưu trữ USB của Android của bạn.</string>
+    <string name="usb_storage_message">Bạn đã kết nối với máy tính của mình qua USB. Hãy chạm vào nút bên dưới nếu bạn muốn sao chép các tệp giữa máy tính và thẻ SD của Android của bạn.</string>
     <string name="usb_storage_button_mount">Bật bộ lưu trữ USB</string>
-    <string name="usb_storage_error_message">Đã xảy ra sự cố khi sử dụng bộ lưu trữ USB của bạn cho bộ nhớ dung lượng lớn USB.</string>
+    <string name="usb_storage_error_message">Đã xảy ra sự cố khi sử dụng thẻ SD của bạn cho bộ nhớ dung lượng lớn USB.</string>
     <string name="usb_storage_notification_title">USB đã kết nối</string>
     <string name="usb_storage_notification_message">Chạm để sao chép tệp đến/từ máy tính của bạn.</string>
     <string name="usb_storage_stop_notification_title">Tắt bộ lưu trữ USB</string>
     <string name="usb_storage_stop_notification_message">Chạm để tắt bộ lưu trữ USB.</string>
     <string name="usb_storage_stop_title">Bộ lưu trữ USB đang được sử dụng</string>
-    <string name="usb_storage_stop_message">Trước khi tắt bộ nhớ USB, hãy ngắt kết nối (\"đẩy\") bộ lưu trữ USB của Android khỏi máy tính của bạn.</string>
+    <string name="usb_storage_stop_message">Trước khi tắt bộ lưu trữ USB, hãy ngắt kết nối (\"đẩy\") thẻ SD của Android khỏi máy tính của bạn.</string>
     <string name="usb_storage_stop_button_mount">Tắt bộ lưu trữ USB</string>
     <string name="usb_storage_stop_error_message">Đã có sự cố khi tắt bộ lưu trữ USB. Hãy kiểm tra rằng bạn đã ngắt kết nối thiết bị lưu trữ USB, rồi thử lại.</string>
     <string name="dlg_confirm_kill_storage_users_title">Bật bộ lưu trữ USB</string>
@@ -1050,8 +1050,8 @@ Bạn có muốn đóng trang không?"</string>
     <string name="usb_cd_installer_notification_title">Được kết nối như trình cài đặt</string>
     <string name="usb_accessory_notification_title">Đã kết nối với phụ kiện USB</string>
     <string name="usb_notification_message">Chạm để có các tùy chọn USB khác.</string>
-    <string name="extmedia_format_title">Định dạng USB?</string>
-    <string name="extmedia_format_message">Tất cả các tệp được lưu trữ trong bộ lưu trữ USB sẽ bị xóa. Không thể hoàn nguyên tác vụ này!</string>
+    <string name="extmedia_format_title">Định dạng thẻ SD?</string>
+    <string name="extmedia_format_message">Tất cả dữ liệu trên thẻ của bạn sẽ bị mất.</string>
     <string name="extmedia_format_button_format">Định dạng</string>
     <string name="adb_active_notification_title">Gỡ lỗi USB đã được kết nối</string>
     <string name="adb_active_notification_message">Chạm để vô hiệu hóa gỡ lỗi USB.</string>
@@ -1064,18 +1064,18 @@ Bạn có muốn đóng trang không?"</string>
     <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="candidates_style"><u>ứng viên</u></string>
-    <string name="ext_media_checking_notification_title">Đang chuẩn bị bộ nhớ USB</string>
+    <string name="ext_media_checking_notification_title">Đang chuẩn bị %s</string>
     <string name="ext_media_checking_notification_message">Đang kiểm tra lỗi.</string>
-    <string name="ext_media_nofs_notification_title">Bộ nhớ USB trống</string>
-    <string name="ext_media_nofs_notification_message">Bộ lưu trữ USB trống hoặc có hệ thống tệp không được hỗ trợ.</string>
-    <string name="ext_media_unmountable_notification_title">Bộ nhớ USB bị hỏng</string>
-    <string name="ext_media_unmountable_notification_message">Bộ lưu trữ USB bị hỏng. Hãy thử định dạng lại.</string>
-    <string name="ext_media_badremoval_notification_title">Bộ nhớ USB bị tháo đột ngột</string>
-    <string name="ext_media_badremoval_notification_message">Ngắt kết nối USB trước khi tháo nhằm tránh mất dữ liệu.</string>
-    <string name="ext_media_safe_unmount_notification_title">Bộ nhớ USB an toàn để tháo</string>
-    <string name="ext_media_safe_unmount_notification_message">Bạn có thể tháo an toàn bộ nhớ USB.</string>
-    <string name="ext_media_nomedia_notification_title">Bộ nhớ USB đã tháo</string>
-    <string name="ext_media_nomedia_notification_message">Bộ nhớ USB bị tháo. Hãy lắp phương tiện mới.</string>
+    <string name="ext_media_nofs_notification_title">%s trống</string>
+    <string name="ext_media_nofs_notification_message">%s trống hoặc có hệ thống không hỗ trợ.</string>
+    <string name="ext_media_unmountable_notification_title">%s bị hỏng</string>
+    <string name="ext_media_unmountable_notification_message">Đã hỏng %s. Bạn có thể phải định dạng lại nó.</string>
+    <string name="ext_media_badremoval_notification_title">Đã tháo %s đột ngột</string>
+    <string name="ext_media_badremoval_notification_message">Hãy ngắt %s trước khi tháo để tránh mất dữ liệu.</string>
+    <string name="ext_media_safe_unmount_notification_title">%s đã an toàn để tháo</string>
+    <string name="ext_media_safe_unmount_notification_message">Bạn có thể tháo an toàn %s.</string>
+    <string name="ext_media_nomedia_notification_title">%s đã tháo</string>
+    <string name="ext_media_nomedia_notification_message">Đã tháo %s. Lắp thẻ mới.</string>
     <string name="activity_list_empty">Không tìm thấy hoạt động nào phù hợp.</string>
     <string name="permlab_pkgUsageStats">cập nhật thống kê sử dụng thành phần</string>
     <string name="permdesc_pkgUsageStats">Cho phép ứng dụng sửa đổi các số liệu thống kê sử dụng cấu phần đã thu thập. Không dành cho ứng dụng thông thường.</string>
@@ -1135,13 +1135,13 @@ cho tài khoản %s."</string>
     <string name="no_matches">Không có kết quả nào phù hợp</string>
     <string name="find_on_page">Tìm kiếm trên trang</string>
     <string name="action_mode_done">Xong</string>
-    <string name="progress_unmounting">Đang ngắt kết nối bộ lưu trữ USB...</string>
-    <string name="progress_erasing">Đang xóa bộ lưu trữ USB...</string>
-    <string name="format_error">Không thể xóa bộ nhớ USB.</string>
+    <string name="progress_unmounting">Đang ngắt kết nối thẻ SD...</string>
+    <string name="progress_erasing">Đang xóa thẻ SD...</string>
+    <string name="format_error">Không thể xóa thẻ SD.</string>
     <string name="media_bad_removal">Thẻ SD bị tháo trước khi được ngắt kết nối.</string>
-    <string name="media_checking">Bộ nhớ USB hiện đang được kiểm tra.</string>
+    <string name="media_checking">Thẻ SD hiện đang được kiểm tra.</string>
     <string name="media_removed">Thẻ SD đã được tháo.</string>
-    <string name="media_shared">Bộ nhớ USB hiện đang được máy tính sử dụng.</string>
+    <string name="media_shared">Thẻ SD hiện đang được máy tính sử dụng.</string>
     <string name="media_unknown_state">Phương tiện bên ngoài ở trạng thái không xác định.</string>
     <string name="share">Chia sẻ</string>
     <string name="find">Tìm</string>
@@ -1315,4 +1315,7 @@ Nghe ở âm lượng cao trong thời gian dài có thể gây hại cho thính
     <string name="enable_accessibility_canceled">Đã hủy trợ năng.</string>
     <string name="user_switched">Người dùng hiện tại %1$s.</string>
     <string name="owner_name">Chủ sở hữu</string>
+    <string name="storage_phone">Bộ nhớ điện thoại</string>
+    <string name="storage_external_usb">Thiết bị l.trữ USB ngoài</string>
+    <string name="zz_keyguard_accessibility_voice_unlock">Mở khóa thoại.</string>
 </resources>

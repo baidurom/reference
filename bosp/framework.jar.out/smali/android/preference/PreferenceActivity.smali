@@ -1412,7 +1412,7 @@
     .restart local v5       #innerDepth:I
     .restart local v6       #innerNodeName:Ljava/lang/String;
     :cond_11
-    const-string v13, "intent"
+    const-string/jumbo v13, "intent"
 
     invoke-virtual {v6, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

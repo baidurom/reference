@@ -4,6 +4,7 @@
 
 # interfaces
 .implements Landroid/provider/MediaStore$MediaColumns;
+.implements Landroid/provider/MediaStore$FileExtensionColumns;
 
 
 # annotations

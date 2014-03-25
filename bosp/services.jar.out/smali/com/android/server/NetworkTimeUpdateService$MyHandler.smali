@@ -25,48 +25,89 @@
     .parameter "l"
 
     .prologue
-    .line 262
+    .line 346
     iput-object p1, p0, Lcom/android/server/NetworkTimeUpdateService$MyHandler;->this$0:Lcom/android/server/NetworkTimeUpdateService;
 
-    .line 263
+    .line 347
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 264
+    .line 348
     return-void
 .end method
 
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .locals 2
+    .locals 4
     .parameter "msg"
 
     .prologue
-    .line 268
-    iget v0, p1, Landroid/os/Message;->what:I
+    .line 352
+    iget v1, p1, Landroid/os/Message;->what:I
 
-    packed-switch v0, :pswitch_data_0
+    packed-switch v1, :pswitch_data_0
 
-    .line 275
+    .line 367
     :goto_0
     return-void
 
-    .line 272
+    .line 356
     :pswitch_0
-    iget-object v0, p0, Lcom/android/server/NetworkTimeUpdateService$MyHandler;->this$0:Lcom/android/server/NetworkTimeUpdateService;
+    iget-object v1, p0, Lcom/android/server/NetworkTimeUpdateService$MyHandler;->this$0:Lcom/android/server/NetworkTimeUpdateService;
 
-    iget v1, p1, Landroid/os/Message;->what:I
+    iget v2, p1, Landroid/os/Message;->what:I
 
     #calls: Lcom/android/server/NetworkTimeUpdateService;->onPollNetworkTime(I)V
-    invoke-static {v0, v1}, Lcom/android/server/NetworkTimeUpdateService;->access$300(Lcom/android/server/NetworkTimeUpdateService;I)V
+    invoke-static {v1, v2}, Lcom/android/server/NetworkTimeUpdateService;->access$400(Lcom/android/server/NetworkTimeUpdateService;I)V
 
     goto :goto_0
 
-    .line 268
+    .line 361
+    :pswitch_1
+    iget-object v1, p0, Lcom/android/server/NetworkTimeUpdateService$MyHandler;->this$0:Lcom/android/server/NetworkTimeUpdateService;
+
+    #calls: Lcom/android/server/NetworkTimeUpdateService;->getGpsTimeSyncState()Z
+    invoke-static {v1}, Lcom/android/server/NetworkTimeUpdateService;->access$500(Lcom/android/server/NetworkTimeUpdateService;)Z
+
+    move-result v0
+
+    .line 362
+    .local v0, gpsTimeSyncStatus:Z
+    const-string v1, "NetworkTimeUpdateService"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "GPS Time sync is changed to "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 363
+    iget-object v1, p0, Lcom/android/server/NetworkTimeUpdateService$MyHandler;->this$0:Lcom/android/server/NetworkTimeUpdateService;
+
+    invoke-virtual {v1, v0}, Lcom/android/server/NetworkTimeUpdateService;->onGpsTimeChanged(Z)V
+
+    goto :goto_0
+
+    .line 352
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
         :pswitch_0
         :pswitch_0
+        :pswitch_1
     .end packed-switch
 .end method

@@ -34,10 +34,10 @@
     .parameter
 
     .prologue
-    .line 2135
+    .line 2181
     iput-object p1, p0, Lcom/android/server/accessibility/AccessibilityManagerService$SecurityPolicy;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -48,7 +48,7 @@
     .parameter "x1"
 
     .prologue
-    .line 2135
+    .line 2181
     invoke-direct {p0, p1}, Lcom/android/server/accessibility/AccessibilityManagerService$SecurityPolicy;->canDispatchAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)Z
 
     move-result v0
@@ -63,7 +63,7 @@
     .parameter "x2"
 
     .prologue
-    .line 2135
+    .line 2181
     invoke-direct {p0, p1, p2}, Lcom/android/server/accessibility/AccessibilityManagerService$SecurityPolicy;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
@@ -74,7 +74,7 @@
     .parameter "x0"
 
     .prologue
-    .line 2135
+    .line 2181
     iget v0, p0, Lcom/android/server/accessibility/AccessibilityManagerService$SecurityPolicy;->mActiveWindowId:I
 
     return v0
@@ -87,16 +87,16 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 2171
+    .line 2217
     invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityEvent;->getEventType()I
 
     move-result v0
 
-    .line 2172
+    .line 2218
     .local v0, eventType:I
     sparse-switch v0, :sswitch_data_0
 
-    .line 2193
+    .line 2239
     invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityEvent;->getWindowId()I
 
     move-result v2
@@ -114,7 +114,7 @@
 
     goto :goto_0
 
-    .line 2172
+    .line 2218
     nop
 
     :sswitch_data_0
@@ -138,7 +138,7 @@
     .parameter "function"
 
     .prologue
-    .line 2311
+    .line 2357
     invoke-static {}, Lcom/android/server/accessibility/AccessibilityManagerService;->access$3400()I
 
     move-result v0
@@ -149,11 +149,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 2318
+    .line 2364
     :cond_0
     return-void
 
-    .line 2314
+    .line 2360
     :cond_1
     invoke-direct {p0, p1}, Lcom/android/server/accessibility/AccessibilityManagerService$SecurityPolicy;->hasPermission(Ljava/lang/String;)Z
 
@@ -161,7 +161,7 @@
 
     if-nez v0, :cond_0
 
-    .line 2315
+    .line 2361
     new-instance v0, Ljava/lang/SecurityException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -201,7 +201,7 @@
     .locals 4
 
     .prologue
-    .line 2329
+    .line 2375
     :try_start_0
     iget-object v2, p0, Lcom/android/server/accessibility/AccessibilityManagerService$SecurityPolicy;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
 
@@ -214,11 +214,11 @@
 
     move-result-object v0
 
-    .line 2330
+    .line 2376
     .local v0, token:Landroid/os/IBinder;
     if-eqz v0, :cond_1
 
-    .line 2331
+    .line 2377
     iget-object v2, p0, Lcom/android/server/accessibility/AccessibilityManagerService$SecurityPolicy;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
 
     #getter for: Lcom/android/server/accessibility/AccessibilityManagerService;->mLock:Ljava/lang/Object;
@@ -230,7 +230,7 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2332
+    .line 2378
     :try_start_1
     iget-object v2, p0, Lcom/android/server/accessibility/AccessibilityManagerService$SecurityPolicy;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
 
@@ -243,11 +243,11 @@
 
     move-result v1
 
-    .line 2333
+    .line 2379
     .local v1, windowId:I
     if-gez v1, :cond_0
 
-    .line 2334
+    .line 2380
     iget-object v2, p0, Lcom/android/server/accessibility/AccessibilityManagerService$SecurityPolicy;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
 
     #calls: Lcom/android/server/accessibility/AccessibilityManagerService;->getCurrentUserStateLocked()Lcom/android/server/accessibility/AccessibilityManagerService$UserState;
@@ -261,17 +261,17 @@
 
     move-result v1
 
-    .line 2337
+    .line 2383
     :cond_0
     monitor-exit v3
 
-    .line 2343
+    .line 2389
     .end local v0           #token:Landroid/os/IBinder;
     .end local v1           #windowId:I
     :goto_0
     return v1
 
-    .line 2338
+    .line 2384
     .restart local v0       #token:Landroid/os/IBinder;
     :catchall_0
     move-exception v2
@@ -285,12 +285,12 @@
     :try_end_2
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 2340
+    .line 2386
     .end local v0           #token:Landroid/os/IBinder;
     :catch_0
     move-exception v2
 
-    .line 2343
+    .line 2389
     :cond_1
     const/4 v1, -0x1
 
@@ -313,13 +313,13 @@
     .end annotation
 
     .prologue
-    .line 2347
+    .line 2393
     .local p2, windows:Landroid/util/SparseArray;,"Landroid/util/SparseArray<Landroid/os/IBinder;>;"
     invoke-virtual {p2}, Landroid/util/SparseArray;->size()I
 
     move-result v1
 
-    .line 2348
+    .line 2394
     .local v1, windowCount:I
     const/4 v0, 0x0
 
@@ -327,29 +327,29 @@
     :goto_0
     if-ge v0, v1, :cond_1
 
-    .line 2349
+    .line 2395
     invoke-virtual {p2, v0}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v2
 
     if-ne v2, p1, :cond_0
 
-    .line 2350
+    .line 2396
     invoke-virtual {p2, v0}, Landroid/util/SparseArray;->keyAt(I)I
 
     move-result v2
 
-    .line 2353
+    .line 2399
     :goto_1
     return v2
 
-    .line 2348
+    .line 2394
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 2353
+    .line 2399
     :cond_1
     const/4 v2, -0x1
 
@@ -361,7 +361,7 @@
     .parameter "permission"
 
     .prologue
-    .line 2321
+    .line 2367
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityManagerService$SecurityPolicy;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
 
     #getter for: Lcom/android/server/accessibility/AccessibilityManagerService;->mContext:Landroid/content/Context;
@@ -391,7 +391,7 @@
     .parameter "action"
 
     .prologue
-    .line 2307
+    .line 2353
     and-int/lit16 v0, p1, 0x3fff
 
     if-eqz v0, :cond_0
@@ -412,7 +412,7 @@
     .parameter "windowId"
 
     .prologue
-    .line 2303
+    .line 2349
     iget v0, p0, Lcom/android/server/accessibility/AccessibilityManagerService$SecurityPolicy;->mActiveWindowId:I
 
     if-ne v0, p1, :cond_0
@@ -436,7 +436,7 @@
     .parameter "windowId"
 
     .prologue
-    .line 2247
+    .line 2293
     invoke-virtual {p0, p1}, Lcom/android/server/accessibility/AccessibilityManagerService$SecurityPolicy;->canRetrieveWindowContent(Lcom/android/server/accessibility/AccessibilityManagerService$Service;)Z
 
     move-result v0
@@ -468,7 +468,7 @@
     .parameter "arguments"
 
     .prologue
-    .line 2252
+    .line 2298
     invoke-virtual {p0, p1}, Lcom/android/server/accessibility/AccessibilityManagerService$SecurityPolicy;->canRetrieveWindowContent(Lcom/android/server/accessibility/AccessibilityManagerService$Service;)Z
 
     move-result v0
@@ -503,7 +503,7 @@
     .parameter "service"
 
     .prologue
-    .line 2258
+    .line 2304
     iget-boolean v0, p1, Lcom/android/server/accessibility/AccessibilityManagerService$Service;->mCanRetrieveScreenContent:Z
 
     return v0
@@ -519,14 +519,14 @@
     .end annotation
 
     .prologue
-    .line 2263
+    .line 2309
     invoke-virtual {p0, p1}, Lcom/android/server/accessibility/AccessibilityManagerService$SecurityPolicy;->canRetrieveWindowContent(Lcom/android/server/accessibility/AccessibilityManagerService$Service;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 2264
+    .line 2310
     const-string v0, "AccessibilityManagerService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -563,14 +563,14 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2266
+    .line 2312
     new-instance v0, Landroid/os/RemoteException;
 
     invoke-direct {v0}, Landroid/os/RemoteException;-><init>()V
 
     throw v0
 
-    .line 2268
+    .line 2314
     :cond_0
     return-void
 .end method
@@ -579,7 +579,7 @@
     .locals 1
 
     .prologue
-    .line 2243
+    .line 2289
     iget v0, p0, Lcom/android/server/accessibility/AccessibilityManagerService$SecurityPolicy;->mActiveWindowId:I
 
     return v0
@@ -590,12 +590,12 @@
     .parameter "userId"
 
     .prologue
-    .line 2295
+    .line 2341
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v0
 
-    .line 2296
+    .line 2342
     .local v0, callingUid:I
     invoke-static {}, Landroid/os/Binder;->getCallingPid()I
 
@@ -635,19 +635,19 @@
     .locals 1
 
     .prologue
-    .line 2230
+    .line 2276
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/accessibility/AccessibilityManagerService$SecurityPolicy;->mTouchInteractionInProgress:Z
 
-    .line 2239
+    .line 2285
     invoke-direct {p0}, Lcom/android/server/accessibility/AccessibilityManagerService$SecurityPolicy;->getFocusedWindowId()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/server/accessibility/AccessibilityManagerService$SecurityPolicy;->mActiveWindowId:I
 
-    .line 2240
+    .line 2286
     return-void
 .end method
 
@@ -655,12 +655,12 @@
     .locals 1
 
     .prologue
-    .line 2226
+    .line 2272
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/accessibility/AccessibilityManagerService$SecurityPolicy;->mTouchInteractionInProgress:Z
 
-    .line 2227
+    .line 2273
     return-void
 .end method
 
@@ -669,12 +669,12 @@
     .parameter "userId"
 
     .prologue
-    .line 2271
+    .line 2317
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v0
 
-    .line 2272
+    .line 2318
     .local v0, callingUid:I
     const/16 v2, 0x3e8
 
@@ -684,7 +684,7 @@
 
     if-ne v0, v2, :cond_2
 
-    .line 2274
+    .line 2320
     :cond_0
     iget-object v2, p0, Lcom/android/server/accessibility/AccessibilityManagerService$SecurityPolicy;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
 
@@ -693,24 +693,24 @@
 
     move-result p1
 
-    .line 2288
+    .line 2334
     .end local p1
     :cond_1
     :goto_0
     return p1
 
-    .line 2276
+    .line 2322
     .restart local p1
     :cond_2
     invoke-static {v0}, Landroid/os/UserHandle;->getUserId(I)I
 
     move-result v1
 
-    .line 2277
+    .line 2323
     .local v1, callingUserId:I
     if-eq v1, p1, :cond_1
 
-    .line 2280
+    .line 2326
     const-string v2, "android.permission.INTERACT_ACROSS_USERS"
 
     invoke-direct {p0, v2}, Lcom/android/server/accessibility/AccessibilityManagerService$SecurityPolicy;->hasPermission(Ljava/lang/String;)Z
@@ -727,7 +727,7 @@
 
     if-nez v2, :cond_3
 
-    .line 2282
+    .line 2328
     new-instance v2, Ljava/lang/SecurityException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -774,7 +774,7 @@
 
     throw v2
 
-    .line 2286
+    .line 2332
     :cond_3
     const/4 v2, -0x2
 
@@ -784,7 +784,7 @@
 
     if-ne p1, v2, :cond_5
 
-    .line 2288
+    .line 2334
     :cond_4
     iget-object v2, p0, Lcom/android/server/accessibility/AccessibilityManagerService$SecurityPolicy;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
 
@@ -795,7 +795,7 @@
 
     goto :goto_0
 
-    .line 2290
+    .line 2336
     :cond_5
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
@@ -812,15 +812,15 @@
     .parameter "eventType"
 
     .prologue
-    .line 2209
+    .line 2255
     sparse-switch p2, :sswitch_data_0
 
-    .line 2223
+    .line 2269
     :cond_0
     :goto_0
     return-void
 
-    .line 2211
+    .line 2257
     :sswitch_0
     invoke-direct {p0}, Lcom/android/server/accessibility/AccessibilityManagerService$SecurityPolicy;->getFocusedWindowId()I
 
@@ -828,23 +828,23 @@
 
     if-ne v0, p1, :cond_0
 
-    .line 2212
+    .line 2258
     iput p1, p0, Lcom/android/server/accessibility/AccessibilityManagerService$SecurityPolicy;->mActiveWindowId:I
 
     goto :goto_0
 
-    .line 2218
+    .line 2264
     :sswitch_1
     iget-boolean v0, p0, Lcom/android/server/accessibility/AccessibilityManagerService$SecurityPolicy;->mTouchInteractionInProgress:Z
 
     if-eqz v0, :cond_0
 
-    .line 2219
+    .line 2265
     iput p1, p0, Lcom/android/server/accessibility/AccessibilityManagerService$SecurityPolicy;->mActiveWindowId:I
 
     goto :goto_0
 
-    .line 2209
+    .line 2255
     :sswitch_data_0
     .sparse-switch
         0x20 -> :sswitch_0
@@ -857,7 +857,7 @@
     .parameter "event"
 
     .prologue
-    .line 2198
+    .line 2244
     invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityEvent;->getEventType()I
 
     move-result v0
@@ -868,12 +868,12 @@
 
     if-nez v0, :cond_0
 
-    .line 2199
+    .line 2245
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setSource(Landroid/view/View;)V
 
-    .line 2201
+    .line 2247
     :cond_0
     return-void
 .end method

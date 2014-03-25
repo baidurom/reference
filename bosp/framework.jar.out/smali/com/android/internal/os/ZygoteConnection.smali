@@ -76,7 +76,7 @@
 
     .prologue
     .line 96
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 97
     iput-object p1, p0, Lcom/android/internal/os/ZygoteConnection;->mSocket:Landroid/net/LocalSocket;
@@ -1552,14 +1552,14 @@
     .local v1, ex:Ljava/lang/NumberFormatException;
     const-string v5, "Zygote"
 
-    const-string v6, "invalid Zygote wire format: non-int at argc"
+    const-string/jumbo v6, "invalid Zygote wire format: non-int at argc"
 
     invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 581
     new-instance v5, Ljava/io/IOException;
 
-    const-string v6, "invalid wire format"
+    const-string/jumbo v6, "invalid wire format"
 
     invoke-direct {v5, v6}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 

@@ -38,6 +38,8 @@
 
 .field static final TRANSACTION_disable:I = 0x6
 
+.field static final TRANSACTION_hideSIMIndicator:I = 0x12
+
 .field static final TRANSACTION_preloadRecentApps:I = 0xf
 
 .field static final TRANSACTION_removeIcon:I = 0x2
@@ -51,6 +53,10 @@
 .field static final TRANSACTION_setImeWindowStatus:I = 0xc
 
 .field static final TRANSACTION_setSystemUiVisibility:I = 0xa
+
+.field static final TRANSACTION_showApplicationGuide:I = 0x13
+
+.field static final TRANSACTION_showSIMIndicator:I = 0x11
 
 .field static final TRANSACTION_toggleRecentApps:I = 0xe
 
@@ -152,7 +158,7 @@
     .line 39
     sparse-switch p1, :sswitch_data_0
 
-    .line 192
+    .line 214
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v3
@@ -558,6 +564,52 @@
 
     goto/16 :goto_0
 
+    .line 193
+    :sswitch_11
+    const-string v4, "com.android.internal.statusbar.IStatusBar"
+
+    invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 195
+    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 196
+    .local v0, _arg0:Ljava/lang/String;
+    invoke-virtual {p0, v0}, Lcom/android/internal/statusbar/IStatusBar$Stub;->showSIMIndicator(Ljava/lang/String;)V
+
+    goto/16 :goto_0
+
+    .line 201
+    .end local v0           #_arg0:Ljava/lang/String;
+    :sswitch_12
+    const-string v4, "com.android.internal.statusbar.IStatusBar"
+
+    invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 202
+    invoke-virtual {p0}, Lcom/android/internal/statusbar/IStatusBar$Stub;->hideSIMIndicator()V
+
+    goto/16 :goto_0
+
+    .line 207
+    :sswitch_13
+    const-string v4, "com.android.internal.statusbar.IStatusBar"
+
+    invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 209
+    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 210
+    .restart local v0       #_arg0:Ljava/lang/String;
+    invoke-virtual {p0, v0}, Lcom/android/internal/statusbar/IStatusBar$Stub;->showApplicationGuide(Ljava/lang/String;)V
+
+    goto/16 :goto_0
+
     .line 39
     :sswitch_data_0
     .sparse-switch
@@ -577,6 +629,9 @@
         0xe -> :sswitch_e
         0xf -> :sswitch_f
         0x10 -> :sswitch_10
+        0x11 -> :sswitch_11
+        0x12 -> :sswitch_12
+        0x13 -> :sswitch_13
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

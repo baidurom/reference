@@ -190,7 +190,7 @@
 
     .prologue
     .line 191
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 192
     invoke-virtual {p0, p1}, Landroid/text/format/Time;->set(Landroid/text/format/Time;)V
@@ -205,7 +205,7 @@
 
     .prologue
     .line 165
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 166
     if-nez p1, :cond_0

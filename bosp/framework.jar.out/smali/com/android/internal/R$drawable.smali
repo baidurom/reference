@@ -445,6 +445,10 @@
 
 .field public static final ic_volume:I = #drawable@ic_volume#t
 
+.field public static final ic_volume_off_small:I = #drawable@ic_volume_off_small#t
+
+.field public static final ic_volume_small:I = #drawable@ic_volume_small#t
+
 .field public static final indicator_code_lock_drag_direction_green_up:I = #drawable@indicator_code_lock_drag_direction_green_up#t
 
 .field public static final indicator_code_lock_drag_direction_red_up:I = #drawable@indicator_code_lock_drag_direction_red_up#t
@@ -856,8 +860,8 @@
     .locals 0
 
     .prologue
-    .line 11752
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 11671
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

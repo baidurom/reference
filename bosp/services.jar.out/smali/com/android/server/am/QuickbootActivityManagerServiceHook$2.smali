@@ -30,7 +30,7 @@
     .line 227
     iput-object p1, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook$2;->this$0:Lcom/android/server/am/QuickbootActivityManagerServiceHook;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -372,7 +372,7 @@
 
     const-string v11, "android.permission.RECEIVE_BOOT_COMPLETED"
 
-    invoke-virtual/range {v2 .. v13}, Lcom/android/server/am/ActivityManagerService;->broadcastSpecificIntentLocked(Lcom/android/server/am/ProcessRecord;Ljava/lang/String;Landroid/content/Intent;Ljava/lang/String;Landroid/content/IIntentReceiver;ILjava/lang/String;Landroid/os/Bundle;Ljava/lang/String;Ljava/util/List;Ljava/util/List;)I
+    invoke-virtual/range {v2 .. v13}, Lcom/android/server/am/ActivityManagerService;->broadcastSpecificIntentLockedForQb(Lcom/android/server/am/ProcessRecord;Ljava/lang/String;Landroid/content/Intent;Ljava/lang/String;Landroid/content/IIntentReceiver;ILjava/lang/String;Landroid/os/Bundle;Ljava/lang/String;Ljava/util/List;Ljava/util/List;)I
 
     .line 273
     monitor-exit v23

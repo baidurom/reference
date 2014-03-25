@@ -551,7 +551,7 @@
 
     .line 218
     .restart local v12       #lp:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityViewFlipper$LayoutParams;
-    iget v0, v12, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iget v0, v12, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityViewFlipper$LayoutParams;->width:I
 
     move/from16 v19, v0
 
@@ -565,7 +565,7 @@
 
     .line 219
     .local v5, childWidthSpec:I
-    iget v0, v12, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iget v0, v12, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityViewFlipper$LayoutParams;->height:I
 
     move/from16 v19, v0
 
@@ -833,6 +833,18 @@
 
     .line 100
     :cond_0
+    return-void
+.end method
+
+.method public setClipChildrenForNewEventView(Z)V
+    .locals 0
+    .parameter "clipChildren"
+
+    .prologue
+    .line 282
+    invoke-virtual {p0, p1}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityViewFlipper;->setClipChildren(Z)V
+
+    .line 283
     return-void
 .end method
 

@@ -25,7 +25,7 @@
     .parameter "x0"
 
     .prologue
-    .line 674
+    .line 800
     iput-object p1, p0, Landroid/net/wifi/WifiStateMachine$5;->this$0:Landroid/net/wifi/WifiStateMachine;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -42,7 +42,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 677
+    .line 803
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine$5;->this$0:Landroid/net/wifi/WifiStateMachine;
 
     #getter for: Landroid/net/wifi/WifiStateMachine;->mUserWantsSuspendOpt:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -72,10 +72,10 @@
     :goto_0
     invoke-virtual {v1, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    .line 679
+    .line 805
     return-void
 
-    .line 677
+    .line 803
     :cond_0
     const/4 v0, 0x0
 

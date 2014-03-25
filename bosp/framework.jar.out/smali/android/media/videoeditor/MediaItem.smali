@@ -86,7 +86,7 @@
     const/4 v5, 0x0
 
     .line 130
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 113
     iput-boolean v6, p0, Landroid/media/videoeditor/MediaItem;->mBlankFrameGenerated:Z

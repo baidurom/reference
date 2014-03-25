@@ -29,7 +29,7 @@
 
     .prologue
     .line 46
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 47
     new-instance v0, Landroid/net/wifi/p2p/WifiP2pDevice;
@@ -61,7 +61,7 @@
     const/4 v3, 0x0
 
     .line 61
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 62
     const-string v1, " "

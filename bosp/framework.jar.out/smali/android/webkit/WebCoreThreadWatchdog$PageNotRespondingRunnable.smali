@@ -34,7 +34,7 @@
     .locals 1
 
     .prologue
-    .line 227
+    .line 240
     const-class v0, Landroid/webkit/WebCoreThreadWatchdog;
 
     invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
@@ -63,18 +63,18 @@
     .parameter "watchdogHandler"
 
     .prologue
-    .line 231
+    .line 244
     iput-object p1, p0, Landroid/webkit/WebCoreThreadWatchdog$PageNotRespondingRunnable;->this$0:Landroid/webkit/WebCoreThreadWatchdog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 232
+    .line 245
     iput-object p2, p0, Landroid/webkit/WebCoreThreadWatchdog$PageNotRespondingRunnable;->mContext:Landroid/content/Context;
 
-    .line 233
+    .line 246
     iput-object p3, p0, Landroid/webkit/WebCoreThreadWatchdog$PageNotRespondingRunnable;->mWatchdogHandler:Landroid/os/Handler;
 
-    .line 234
+    .line 247
     return-void
 .end method
 
@@ -83,7 +83,7 @@
     .parameter "x0"
 
     .prologue
-    .line 227
+    .line 240
     iget-object v0, p0, Landroid/webkit/WebCoreThreadWatchdog$PageNotRespondingRunnable;->mWatchdogHandler:Landroid/os/Handler;
 
     return-object v0
@@ -95,7 +95,7 @@
     .locals 3
 
     .prologue
-    .line 239
+    .line 252
     sget-boolean v0, Landroid/webkit/WebCoreThreadWatchdog$PageNotRespondingRunnable;->$assertionsDisabled:Z
 
     if-nez v0, :cond_0
@@ -120,7 +120,7 @@
 
     throw v0
 
-    .line 240
+    .line 253
     :cond_0
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
@@ -170,6 +170,6 @@
 
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
 
-    .line 275
+    .line 292
     return-void
 .end method

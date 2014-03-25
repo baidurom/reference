@@ -46,10 +46,10 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 907
+    .line 928
     iput-object p1, p0, Landroid/opengl/GLSurfaceView$ComponentSizeChooser;->this$0:Landroid/opengl/GLSurfaceView;
 
-    .line 908
+    .line 929
     const/16 v0, 0xd
 
     new-array v0, v0, [I
@@ -120,30 +120,30 @@
 
     invoke-direct {p0, p1, v0}, Landroid/opengl/GLSurfaceView$BaseConfigChooser;-><init>(Landroid/opengl/GLSurfaceView;[I)V
 
-    .line 916
+    .line 937
     new-array v0, v3, [I
 
     iput-object v0, p0, Landroid/opengl/GLSurfaceView$ComponentSizeChooser;->mValue:[I
 
-    .line 917
+    .line 938
     iput p2, p0, Landroid/opengl/GLSurfaceView$ComponentSizeChooser;->mRedSize:I
 
-    .line 918
+    .line 939
     iput p3, p0, Landroid/opengl/GLSurfaceView$ComponentSizeChooser;->mGreenSize:I
 
-    .line 919
+    .line 940
     iput p4, p0, Landroid/opengl/GLSurfaceView$ComponentSizeChooser;->mBlueSize:I
 
-    .line 920
+    .line 941
     iput p5, p0, Landroid/opengl/GLSurfaceView$ComponentSizeChooser;->mAlphaSize:I
 
-    .line 921
+    .line 942
     iput p6, p0, Landroid/opengl/GLSurfaceView$ComponentSizeChooser;->mDepthSize:I
 
-    .line 922
+    .line 943
     iput p7, p0, Landroid/opengl/GLSurfaceView$ComponentSizeChooser;->mStencilSize:I
 
-    .line 923
+    .line 944
     return-void
 .end method
 
@@ -156,7 +156,7 @@
     .parameter "defaultValue"
 
     .prologue
-    .line 954
+    .line 975
     iget-object v0, p0, Landroid/opengl/GLSurfaceView$ComponentSizeChooser;->mValue:[I
 
     invoke-interface {p1, p2, p3, p4, v0}, Ljavax/microedition/khronos/egl/EGL10;->eglGetConfigAttrib(Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLConfig;I[I)Z
@@ -165,14 +165,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 955
+    .line 976
     iget-object v0, p0, Landroid/opengl/GLSurfaceView$ComponentSizeChooser;->mValue:[I
 
     const/4 v1, 0x0
 
     aget p5, v0, v1
 
-    .line 957
+    .line 978
     .end local p5
     :cond_0
     return p5
@@ -187,7 +187,7 @@
     .parameter "configs"
 
     .prologue
-    .line 928
+    .line 949
     move-object/from16 v7, p3
 
     .local v7, arr$:[Ljavax/microedition/khronos/egl/EGLConfig;
@@ -202,7 +202,7 @@
 
     aget-object v3, v7, v11
 
-    .line 929
+    .line 950
     .local v3, config:Ljavax/microedition/khronos/egl/EGLConfig;
     const/16 v4, 0x3025
 
@@ -218,7 +218,7 @@
 
     move-result v9
 
-    .line 931
+    .line 952
     .local v9, d:I
     const/16 v4, 0x3026
 
@@ -234,7 +234,7 @@
 
     move-result v14
 
-    .line 933
+    .line 954
     .local v14, s:I
     iget v0, p0, Landroid/opengl/GLSurfaceView$ComponentSizeChooser;->mDepthSize:I
 
@@ -244,7 +244,7 @@
 
     if-lt v14, v0, :cond_0
 
-    .line 934
+    .line 955
     const/16 v4, 0x3024
 
     const/4 v5, 0x0
@@ -259,7 +259,7 @@
 
     move-result v13
 
-    .line 936
+    .line 957
     .local v13, r:I
     const/16 v4, 0x3023
 
@@ -275,7 +275,7 @@
 
     move-result v10
 
-    .line 938
+    .line 959
     .local v10, g:I
     const/16 v4, 0x3022
 
@@ -291,7 +291,7 @@
 
     move-result v8
 
-    .line 940
+    .line 961
     .local v8, b:I
     const/16 v4, 0x3021
 
@@ -307,7 +307,7 @@
 
     move-result v6
 
-    .line 942
+    .line 963
     .local v6, a:I
     iget v0, p0, Landroid/opengl/GLSurfaceView$ComponentSizeChooser;->mRedSize:I
 
@@ -325,7 +325,7 @@
 
     if-ne v6, v0, :cond_0
 
-    .line 948
+    .line 969
     .end local v3           #config:Ljavax/microedition/khronos/egl/EGLConfig;
     .end local v6           #a:I
     .end local v8           #b:I
@@ -336,7 +336,7 @@
     :goto_1
     return-object v3
 
-    .line 928
+    .line 949
     .restart local v3       #config:Ljavax/microedition/khronos/egl/EGLConfig;
     .restart local v9       #d:I
     .restart local v14       #s:I
@@ -345,7 +345,7 @@
 
     goto :goto_0
 
-    .line 948
+    .line 969
     .end local v3           #config:Ljavax/microedition/khronos/egl/EGLConfig;
     .end local v9           #d:I
     .end local v14           #s:I

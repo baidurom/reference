@@ -1,7 +1,16 @@
 #!/system/bin/sh
-if ! applypatch -c EMMC:/dev/block/platform/omap/omap_hsmmc.0/by-name/recovery:6254592:eb24c07ad4326ce2387c19b642155f00ee8ea08c; then
+  echo 1 > /sys/module/sec/parameters/recovery_done		#tony
+if ! applypatch -c EMMC:/dev/recovery:6230016:a0318156ffe79831a27949527db67f394da35b8a; then
   log -t recovery "Installing new recovery image"
-  applypatch -b /system/etc/recovery-resource.dat EMMC:/dev/block/platform/omap/omap_hsmmc.0/by-name/boot:4878336:2e88b917e87f75394ef91474ea89fd3d48a76c85 EMMC:/dev/block/platform/omap/omap_hsmmc.0/by-name/recovery eb24c07ad4326ce2387c19b642155f00ee8ea08c 6254592 2e88b917e87f75394ef91474ea89fd3d48a76c85:/system/recovery-from-boot.p
+  applypatch -b /system/etc/recovery-resource.dat EMMC:/dev/bootimg:5189632:1d7eb765f4c4e4372e546ba8ae66363e1c87e062 EMMC:/dev/recovery a0318156ffe79831a27949527db67f394da35b8a 6230016 1d7eb765f4c4e4372e546ba8ae66363e1c87e062:/system/recovery-from-boot.p
+  if applypatch -c EMMC:/dev/recovery:6230016:a0318156ffe79831a27949527db67f394da35b8a; then		#tony
+	echo 0 > /sys/module/sec/parameters/recovery_done		#tony
+        log -t recovery "Install new recovery image completed"
+  else
+	echo 2 > /sys/module/sec/parameters/recovery_done		#tony
+        log -t recovery "Install new recovery image not completed"
+  fi
 else
+  echo 0 > /sys/module/sec/parameters/recovery_done              #tony
   log -t recovery "Recovery image already installed"
 fi

@@ -103,7 +103,7 @@
     const/4 v3, -0x1
 
     .line 131
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 134
     iput v3, p0, Landroid/drm/mobile1/DrmRawContent;->id:I
@@ -140,7 +140,7 @@
     .line 146
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    const-string v2, "len must be > 0"
+    const-string/jumbo v2, "len must be > 0"
 
     invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

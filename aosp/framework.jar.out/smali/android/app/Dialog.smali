@@ -117,7 +117,7 @@
     const/4 v2, 0x0
 
     .line 150
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 94
     iput-boolean v4, p0, Landroid/app/Dialog;->mCancelable:Z
@@ -180,7 +180,7 @@
 
     .line 163
     :goto_0
-    const-string/jumbo v2, "window"
+    const-string v2, "window"
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -1538,7 +1538,7 @@
     .line 949
     iget-object v4, p0, Landroid/app/Dialog;->mContext:Landroid/content/Context;
 
-    const-string/jumbo v5, "search"
+    const-string v5, "search"
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 

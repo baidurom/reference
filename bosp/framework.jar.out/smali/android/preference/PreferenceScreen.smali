@@ -64,7 +64,7 @@
 
     .line 165
     :cond_0
-    const-string v5, "layout_inflater"
+    const-string/jumbo v5, "layout_inflater"
 
     invoke-virtual {v1, v5}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 

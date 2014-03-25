@@ -828,11 +828,11 @@
 
     move-result v4
 
-    iget v5, v1, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iget v5, v1, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
     add-int/2addr v4, v5
 
-    iget v5, v1, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+    iget v5, v1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
     add-int v0, v4, v5
 

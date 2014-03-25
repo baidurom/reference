@@ -382,14 +382,14 @@
 
     .prologue
     .line 159
-    iget-object v1, p1, Lcom/android/server/pm/GrantedPermissions;->grantedPermissions:Ljava/util/HashSet;
+    iget-object v1, p1, Lcom/android/server/pm/PackageSettingBase;->grantedPermissions:Ljava/util/HashSet;
 
-    iput-object v1, p0, Lcom/android/server/pm/GrantedPermissions;->grantedPermissions:Ljava/util/HashSet;
+    iput-object v1, p0, Lcom/android/server/pm/PackageSettingBase;->grantedPermissions:Ljava/util/HashSet;
 
     .line 160
-    iget-object v1, p1, Lcom/android/server/pm/GrantedPermissions;->gids:[I
+    iget-object v1, p1, Lcom/android/server/pm/PackageSettingBase;->gids:[I
 
-    iput-object v1, p0, Lcom/android/server/pm/GrantedPermissions;->gids:[I
+    iput-object v1, p0, Lcom/android/server/pm/PackageSettingBase;->gids:[I
 
     .line 162
     iget-wide v1, p1, Lcom/android/server/pm/PackageSettingBase;->timeStamp:J

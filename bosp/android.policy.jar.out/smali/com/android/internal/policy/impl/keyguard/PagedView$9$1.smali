@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 2386
+    .line 2384
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView$9$1;->this$1:Lcom/android/internal/policy/impl/keyguard/PagedView$9;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -39,12 +39,12 @@
     .parameter "animation"
 
     .prologue
-    .line 2389
+    .line 2387
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/PagedView$9$1$1;
 
     invoke-direct {v0, p0}, Lcom/android/internal/policy/impl/keyguard/PagedView$9$1$1;-><init>(Lcom/android/internal/policy/impl/keyguard/PagedView$9$1;)V
 
-    .line 2397
+    .line 2394
     .local v0, onCompleteRunnable:Ljava/lang/Runnable;
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/PagedView$9$1;->this$1:Lcom/android/internal/policy/impl/keyguard/PagedView$9;
 
@@ -52,6 +52,6 @@
 
     invoke-virtual {v1, v0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->zoomIn(Ljava/lang/Runnable;)Z
 
-    .line 2398
+    .line 2395
     return-void
 .end method

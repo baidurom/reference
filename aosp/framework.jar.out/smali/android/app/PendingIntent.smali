@@ -62,7 +62,7 @@
 
     .prologue
     .line 889
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 890
     iput-object p1, p0, Landroid/app/PendingIntent;->mTarget:Landroid/content/IIntentSender;
@@ -77,7 +77,7 @@
 
     .prologue
     .line 893
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 894
     invoke-static {p1}, Landroid/content/IIntentSender$Stub;->asInterface(Landroid/os/IBinder;)Landroid/content/IIntentSender;

@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 273
+    .line 279
     iput-object p1, p0, Lcom/android/server/input/InputManagerService$1;->this$0:Lcom/android/server/input/InputManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,16 +40,21 @@
     .parameter "intent"
 
     .prologue
-    .line 276
+    .line 282
     iget-object v0, p0, Lcom/android/server/input/InputManagerService$1;->this$0:Lcom/android/server/input/InputManagerService;
 
     invoke-virtual {v0}, Lcom/android/server/input/InputManagerService;->updatePointerSpeedFromSettings()V
 
-    .line 277
+    .line 283
     iget-object v0, p0, Lcom/android/server/input/InputManagerService$1;->this$0:Lcom/android/server/input/InputManagerService;
 
     invoke-virtual {v0}, Lcom/android/server/input/InputManagerService;->updateShowTouchesFromSettings()V
 
-    .line 278
+    .line 285
+    iget-object v0, p0, Lcom/android/server/input/InputManagerService$1;->this$0:Lcom/android/server/input/InputManagerService;
+
+    invoke-virtual {v0}, Lcom/android/server/input/InputManagerService;->updatePointerPrimaryKeyFromSettings()V
+
+    .line 286
     return-void
 .end method

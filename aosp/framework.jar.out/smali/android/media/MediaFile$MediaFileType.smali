@@ -27,15 +27,15 @@
     .parameter "mimeType"
 
     .prologue
-    .line 117
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 150
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 118
+    .line 151
     iput p1, p0, Landroid/media/MediaFile$MediaFileType;->fileType:I
 
-    .line 119
+    .line 152
     iput-object p2, p0, Landroid/media/MediaFile$MediaFileType;->mimeType:Ljava/lang/String;
 
-    .line 120
+    .line 153
     return-void
 .end method

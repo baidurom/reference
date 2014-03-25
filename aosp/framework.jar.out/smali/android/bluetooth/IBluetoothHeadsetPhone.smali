@@ -39,6 +39,14 @@
     .end annotation
 .end method
 
+.method public abstract getDefaultSIM()I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract getNetworkOperator()Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -80,6 +88,14 @@
 .end method
 
 .method public abstract queryPhoneState()Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract restrictMultitalks()V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

@@ -40,7 +40,7 @@
 
     const/4 v2, 0x0
 
-    .line 76
+    .line 79
     new-instance v0, Landroid/net/DhcpStateMachine$DhcpAction;
 
     const-string v1, "START"
@@ -49,7 +49,7 @@
 
     sput-object v0, Landroid/net/DhcpStateMachine$DhcpAction;->START:Landroid/net/DhcpStateMachine$DhcpAction;
 
-    .line 77
+    .line 80
     new-instance v0, Landroid/net/DhcpStateMachine$DhcpAction;
 
     const-string v1, "RENEW"
@@ -58,7 +58,7 @@
 
     sput-object v0, Landroid/net/DhcpStateMachine$DhcpAction;->RENEW:Landroid/net/DhcpStateMachine$DhcpAction;
 
-    .line 75
+    .line 78
     const/4 v0, 0x2
 
     new-array v0, v0, [Landroid/net/DhcpStateMachine$DhcpAction;
@@ -87,7 +87,7 @@
     .end annotation
 
     .prologue
-    .line 75
+    .line 78
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -98,7 +98,7 @@
     .parameter "name"
 
     .prologue
-    .line 75
+    .line 78
     const-class v0, Landroid/net/DhcpStateMachine$DhcpAction;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -114,7 +114,7 @@
     .locals 1
 
     .prologue
-    .line 75
+    .line 78
     sget-object v0, Landroid/net/DhcpStateMachine$DhcpAction;->$VALUES:[Landroid/net/DhcpStateMachine$DhcpAction;
 
     invoke-virtual {v0}, [Landroid/net/DhcpStateMachine$DhcpAction;->clone()Ljava/lang/Object;

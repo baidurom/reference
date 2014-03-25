@@ -167,6 +167,14 @@
     .end annotation
 .end method
 
+.method public abstract getRemoteType(Landroid/bluetooth/BluetoothDevice;)I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract getRemoteUuids(Landroid/bluetooth/BluetoothDevice;)[Landroid/os/ParcelUuid;
     .annotation system Ldalvik/annotation/Throws;
         value = {

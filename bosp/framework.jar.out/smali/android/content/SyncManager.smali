@@ -3514,13 +3514,11 @@
 
     .line 1249
     :pswitch_7
-    const-string v0, "internal error"
+    const-string/jumbo v0, "internal error"
 
     goto :goto_0
 
     .line 1226
-    nop
-
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -7521,7 +7519,7 @@
 
     .line 625
     .local v7, newExtras:Landroid/os/Bundle;
-    const-string v2, "initialize"
+    const-string/jumbo v2, "initialize"
 
     const/4 v3, 0x1
 

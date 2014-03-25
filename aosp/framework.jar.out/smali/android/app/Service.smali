@@ -141,7 +141,7 @@
 
     .prologue
     .line 680
-    const-string/jumbo v0, "nothing to dump"
+    const-string v0, "nothing to dump"
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
@@ -295,7 +295,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "setForeground: ignoring old API call on "
+    const-string v2, "setForeground: ignoring old API call on "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

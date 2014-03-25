@@ -52,53 +52,53 @@
     .prologue
     const/4 v1, 0x2
 
-    .line 427
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 732
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 412
+    .line 717
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mPoweroffAlarmArray:[Landroid/app/AlarmManager$PoweroffAlarm;
 
-    .line 413
+    .line 718
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mAlarmIdx:I
 
-    .line 414
+    .line 719
     new-array v0, v1, [I
 
     fill-array-data v0, :array_0
 
     iput-object v0, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mAlarmInfoArray:[I
 
-    .line 419
+    .line 724
     new-array v0, v1, [I
 
     fill-array-data v0, :array_1
 
     iput-object v0, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mAlarmWarnArray:[I
 
-    .line 428
+    .line 733
     iput-object p2, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mQbConfirmView:Landroid/view/View;
 
-    .line 429
+    .line 734
     iput-object p1, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mContext:Landroid/content/Context;
 
-    .line 430
+    .line 735
     invoke-direct {p0}, Lcom/android/server/power/ShutdownThread$QbShutdown;->init()V
 
-    .line 431
+    .line 736
     return-void
 
-    .line 414
+    .line 719
     :array_0
     .array-data 0x4
         #string@quickboot_poweroff_alarm#a
         #string@quickboot_schedule_pwonoff#a
     .end array-data
 
-    .line 419
+    .line 724
     :array_1
     .array-data 0x4
         #string@quickboot_lowbat_poweroff#a
@@ -106,24 +106,24 @@
     .end array-data
 .end method
 
-.method static synthetic access$400(Lcom/android/server/power/ShutdownThread$QbShutdown;)Landroid/widget/TextView;
+.method static synthetic access$1000(Lcom/android/server/power/ShutdownThread$QbShutdown;)Landroid/widget/TextView;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 404
+    .line 709
     iget-object v0, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mTextViewInfo:Landroid/widget/TextView;
 
     return-object v0
 .end method
 
-.method static synthetic access$500(Lcom/android/server/power/ShutdownThread$QbShutdown;Z)V
+.method static synthetic access$1100(Lcom/android/server/power/ShutdownThread$QbShutdown;Z)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 404
+    .line 709
     invoke-direct {p0, p1}, Lcom/android/server/power/ShutdownThread$QbShutdown;->updateConfirmView(Z)V
 
     return-void
@@ -133,18 +133,18 @@
     .locals 4
 
     .prologue
-    .line 564
+    .line 869
     iget-object v2, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mCheckBox:Landroid/widget/CheckBox;
 
     invoke-virtual {v2}, Landroid/widget/CheckBox;->isChecked()Z
 
     move-result v0
 
-    .line 565
+    .line 870
     .local v0, isQbShutdown:Z
     const/4 v1, 0x0
 
-    .line 567
+    .line 872
     .local v1, pwoffAlarm:Landroid/app/AlarmManager$PoweroffAlarm;
     iget v2, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mAlarmIdx:I
 
@@ -154,34 +154,34 @@
 
     if-eqz v2, :cond_1
 
-    .line 568
+    .line 873
     if-eqz v0, :cond_0
 
-    .line 569
+    .line 874
     iget-object v2, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mPoweroffAlarmArray:[Landroid/app/AlarmManager$PoweroffAlarm;
 
     iget v3, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mAlarmIdx:I
 
     aget-object v1, v2, v3
 
-    .line 575
+    .line 880
     :cond_0
     :goto_0
-    invoke-static {v1}, Lcom/android/server/power/ShutdownThread;->access$702(Landroid/app/AlarmManager$PoweroffAlarm;)Landroid/app/AlarmManager$PoweroffAlarm;
+    invoke-static {v1}, Lcom/android/server/power/ShutdownThread;->access$1302(Landroid/app/AlarmManager$PoweroffAlarm;)Landroid/app/AlarmManager$PoweroffAlarm;
 
-    .line 576
-    invoke-static {v0}, Lcom/android/server/power/ShutdownThread;->access$802(Z)Z
+    .line 881
+    invoke-static {v0}, Lcom/android/server/power/ShutdownThread;->access$1402(Z)Z
 
-    .line 578
+    .line 883
     iget-object v2, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mContext:Landroid/content/Context;
 
     #calls: Lcom/android/server/power/ShutdownThread;->beginShutdownSequence(Landroid/content/Context;)V
-    invoke-static {v2}, Lcom/android/server/power/ShutdownThread;->access$000(Landroid/content/Context;)V
+    invoke-static {v2}, Lcom/android/server/power/ShutdownThread;->access$400(Landroid/content/Context;)V
 
-    .line 579
+    .line 884
     return-void
 
-    .line 572
+    .line 877
     :cond_1
     iget-object v2, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mContext:Landroid/content/Context;
 
@@ -195,23 +195,23 @@
     .parameter "date"
 
     .prologue
-    .line 489
+    .line 794
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v0
 
-    .line 490
+    .line 795
     .local v0, calendar:Ljava/util/Calendar;
     invoke-virtual {v0, p1}, Ljava/util/Calendar;->setTime(Ljava/util/Date;)V
 
-    .line 491
+    .line 796
     const/4 v3, 0x7
 
     invoke-virtual {v0, v3}, Ljava/util/Calendar;->get(I)I
 
     move-result v1
 
-    .line 493
+    .line 798
     .local v1, dayIndex:I
     iget-object v3, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mContext:Landroid/content/Context;
 
@@ -225,7 +225,7 @@
 
     move-result-object v2
 
-    .line 496
+    .line 801
     .local v2, dayOfWeekArray:[Ljava/lang/String;
     const/4 v3, 0x1
 
@@ -235,11 +235,11 @@
 
     if-le v1, v3, :cond_1
 
-    .line 497
+    .line 802
     :cond_0
     const/4 v3, 0x0
 
-    .line 500
+    .line 805
     :goto_0
     return-object v3
 
@@ -257,18 +257,18 @@
     .parameter "nowRTC"
 
     .prologue
-    .line 434
+    .line 739
     const/4 v4, -0x1
 
-    .line 435
+    .line 740
     .local v4, nextPwoffIdx:I
     const-wide v2, 0x7fffffffffffffffL
 
-    .line 437
+    .line 742
     .local v2, nextPwoffAlarmTime:J
     if-eqz p0, :cond_1
 
-    .line 438
+    .line 743
     const/4 v1, 0x0
 
     .local v1, idx:I
@@ -277,10 +277,10 @@
 
     if-ge v1, v5, :cond_1
 
-    .line 439
+    .line 744
     aget-object v0, p0, v1
 
-    .line 440
+    .line 745
     .local v0, alarm:Landroid/app/AlarmManager$PoweroffAlarm;
     iget-wide v5, v0, Landroid/app/AlarmManager$PoweroffAlarm;->when:J
 
@@ -294,19 +294,19 @@
 
     if-gez v5, :cond_0
 
-    .line 441
+    .line 746
     iget-wide v2, v0, Landroid/app/AlarmManager$PoweroffAlarm;->when:J
 
-    .line 442
+    .line 747
     move v4, v1
 
-    .line 438
+    .line 743
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 446
+    .line 751
     .end local v0           #alarm:Landroid/app/AlarmManager$PoweroffAlarm;
     .end local v1           #idx:I
     :cond_1
@@ -318,7 +318,7 @@
     .parameter "context"
 
     .prologue
-    .line 454
+    .line 759
     const-string v4, "alarm"
 
     invoke-virtual {p0, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -327,19 +327,19 @@
 
     check-cast v0, Landroid/app/AlarmManager;
 
-    .line 456
+    .line 761
     .local v0, am:Landroid/app/AlarmManager;
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
 
-    .line 457
+    .line 762
     .local v1, nowRTC:J
     invoke-virtual {v0, v1, v2}, Landroid/app/AlarmManager;->getPoweroffAlarm(J)[Landroid/app/AlarmManager$PoweroffAlarm;
 
     move-result-object v3
 
-    .line 460
+    .line 765
     .local v3, pwoffAlarmArray:[Landroid/app/AlarmManager$PoweroffAlarm;
     invoke-static {v3, v1, v2}, Lcom/android/server/power/ShutdownThread$QbShutdown;->getLastAlarmIdx([Landroid/app/AlarmManager$PoweroffAlarm;J)I
 
@@ -356,18 +356,18 @@
     .locals 4
 
     .prologue
-    .line 504
+    .line 809
     invoke-virtual {p0}, Lcom/android/server/power/ShutdownThread$QbShutdown;->isAvaliable()Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 523
+    .line 828
     :goto_0
     return-void
 
-    .line 508
+    .line 813
     :cond_0
     iget-object v1, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mQbConfirmView:Landroid/view/View;
 
@@ -381,7 +381,7 @@
 
     iput-object v1, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mTextViewInfo:Landroid/widget/TextView;
 
-    .line 510
+    .line 815
     iget-object v1, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mQbConfirmView:Landroid/view/View;
 
     const v2, #id@quickboot_dialog_text_warn#t
@@ -394,7 +394,7 @@
 
     iput-object v1, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mTextViewWarn:Landroid/widget/TextView;
 
-    .line 513
+    .line 818
     iget-object v1, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mQbConfirmView:Landroid/view/View;
 
     const v2, #id@quickboot_dialog_checkbox#t
@@ -407,7 +407,7 @@
 
     iput-object v1, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mCheckBox:Landroid/widget/CheckBox;
 
-    .line 516
+    .line 821
     iget-object v1, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mContext:Landroid/content/Context;
 
     const-string v2, "alarm"
@@ -418,7 +418,7 @@
 
     check-cast v0, Landroid/app/AlarmManager;
 
-    .line 518
+    .line 823
     .local v0, am:Landroid/app/AlarmManager;
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -426,7 +426,7 @@
 
     iput-wide v1, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mNowRTC:J
 
-    .line 519
+    .line 824
     iget-wide v1, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mNowRTC:J
 
     invoke-virtual {v0, v1, v2}, Landroid/app/AlarmManager;->getPoweroffAlarm(J)[Landroid/app/AlarmManager$PoweroffAlarm;
@@ -435,7 +435,7 @@
 
     iput-object v1, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mPoweroffAlarmArray:[Landroid/app/AlarmManager$PoweroffAlarm;
 
-    .line 520
+    .line 825
     iget-object v1, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mPoweroffAlarmArray:[Landroid/app/AlarmManager$PoweroffAlarm;
 
     iget-wide v2, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mNowRTC:J
@@ -446,7 +446,7 @@
 
     iput v1, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mAlarmIdx:I
 
-    .line 522
+    .line 827
     invoke-direct {p0}, Lcom/android/server/power/ShutdownThread$QbShutdown;->initConfirmView()V
 
     goto :goto_0
@@ -460,7 +460,7 @@
 
     const/4 v7, 0x0
 
-    .line 526
+    .line 831
     iget v3, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mAlarmIdx:I
 
     invoke-static {v3}, Lcom/android/server/power/ShutdownThread$QbShutdown;->isAvaliableAlarmIdx(I)Z
@@ -469,17 +469,17 @@
 
     if-eqz v3, :cond_0
 
-    .line 527
+    .line 832
     iget-object v3, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mCheckBox:Landroid/widget/CheckBox;
 
     invoke-virtual {v3, v8}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    .line 528
+    .line 833
     iget-object v3, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mTextViewWarn:Landroid/widget/TextView;
 
     invoke-virtual {v3, v7}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 530
+    .line 835
     new-instance v1, Ljava/util/Date;
 
     iget-object v3, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mPoweroffAlarmArray:[Landroid/app/AlarmManager$PoweroffAlarm;
@@ -492,7 +492,7 @@
 
     invoke-direct {v1, v3, v4}, Ljava/util/Date;-><init>(J)V
 
-    .line 532
+    .line 837
     .local v1, pwoffDate:Ljava/util/Date;
     iget-object v3, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mTextViewInfo:Landroid/widget/TextView;
 
@@ -526,7 +526,7 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 536
+    .line 841
     iget-object v3, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mTextViewWarn:Landroid/widget/TextView;
 
     iget-object v4, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mContext:Landroid/content/Context;
@@ -543,7 +543,7 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 539
+    .line 844
     iget-object v3, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mTextViewInfo:Landroid/widget/TextView;
 
     invoke-virtual {v3}, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -552,56 +552,56 @@
 
     check-cast v0, Landroid/widget/RelativeLayout$LayoutParams;
 
-    .line 541
+    .line 846
     .local v0, lp:Landroid/widget/RelativeLayout$LayoutParams;
     const/16 v3, 0xf
 
     invoke-virtual {v0, v3, v7}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    .line 542
+    .line 847
     const/16 v3, 0xa
 
     invoke-virtual {v0, v3}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
 
-    .line 543
+    .line 848
     iget-object v3, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mTextViewInfo:Landroid/widget/TextView;
 
     invoke-virtual {v3, v0}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 553
+    .line 858
     .end local v0           #lp:Landroid/widget/RelativeLayout$LayoutParams;
     .end local v1           #pwoffDate:Ljava/util/Date;
     :goto_0
     return-void
 
-    .line 545
+    .line 850
     :cond_0
     iget-object v3, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mContext:Landroid/content/Context;
 
     #calls: Lcom/android/server/power/ShutdownThread;->isQuickBootEnabled(Landroid/content/Context;)Z
-    invoke-static {v3}, Lcom/android/server/power/ShutdownThread;->access$600(Landroid/content/Context;)Z
+    invoke-static {v3}, Lcom/android/server/power/ShutdownThread;->access$1200(Landroid/content/Context;)Z
 
     move-result v2
 
-    .line 546
+    .line 851
     .local v2, qbEnable:Z
     iget-object v3, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mCheckBox:Landroid/widget/CheckBox;
 
     invoke-virtual {v3, v2}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    .line 547
+    .line 852
     iget-object v3, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mTextViewInfo:Landroid/widget/TextView;
 
     invoke-virtual {v3, v2}, Landroid/widget/TextView;->setEnabled(Z)V
 
-    .line 549
+    .line 854
     iget-object v3, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mTextViewWarn:Landroid/widget/TextView;
 
     const/16 v4, 0x8
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 550
+    .line 855
     iget-object v3, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mTextViewInfo:Landroid/widget/TextView;
 
     const v4, #string@quick_boot_text_info#t
@@ -616,7 +616,7 @@
     .parameter "alarmIdx"
 
     .prologue
-    .line 450
+    .line 755
     if-ltz p0, :cond_0
 
     const/4 v0, 0x2
@@ -640,15 +640,15 @@
     .parameter "enable"
 
     .prologue
-    .line 465
+    .line 770
     #calls: Lcom/android/server/power/ShutdownThread;->isQuickBootSupport(Landroid/content/Context;)Z
-    invoke-static {p1}, Lcom/android/server/power/ShutdownThread;->access$300(Landroid/content/Context;)Z
+    invoke-static {p1}, Lcom/android/server/power/ShutdownThread;->access$900(Landroid/content/Context;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 466
+    .line 771
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -662,11 +662,11 @@
     :goto_0
     invoke-static {v1, v2, v0}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 469
+    .line 774
     :cond_0
     return-void
 
-    .line 466
+    .line 771
     :cond_1
     const/4 v0, 0x0
 
@@ -678,7 +678,7 @@
     .parameter "isQbChecked"
 
     .prologue
-    .line 556
+    .line 861
     iget v0, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mAlarmIdx:I
 
     invoke-static {v0}, Lcom/android/server/power/ShutdownThread$QbShutdown;->isAvaliableAlarmIdx(I)Z
@@ -687,7 +687,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 557
+    .line 862
     iget-object v1, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mTextViewWarn:Landroid/widget/TextView;
 
     if-eqz p1, :cond_1
@@ -701,11 +701,11 @@
     :goto_0
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(I)V
 
-    .line 561
+    .line 866
     :cond_0
     return-void
 
-    .line 557
+    .line 862
     :cond_1
     const v0, #string@quickboot_real_shutdown#t
 
@@ -718,7 +718,7 @@
     .locals 1
 
     .prologue
-    .line 472
+    .line 777
     iget-object v0, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mQbConfirmView:Landroid/view/View;
 
     if-eqz v0, :cond_0
@@ -744,10 +744,10 @@
     .parameter "which"
 
     .prologue
-    .line 584
+    .line 889
     invoke-direct {p0}, Lcom/android/server/power/ShutdownThread$QbShutdown;->beginQbShutdown()V
 
-    .line 585
+    .line 890
     return-void
 .end method
 
@@ -755,7 +755,7 @@
     .locals 2
 
     .prologue
-    .line 476
+    .line 781
     iget-object v0, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mCheckBox:Landroid/widget/CheckBox;
 
     new-instance v1, Lcom/android/server/power/ShutdownThread$QbShutdown$1;
@@ -764,6 +764,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
-    .line 486
+    .line 791
     return-void
 .end method

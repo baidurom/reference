@@ -26,12 +26,12 @@
     .parameter "context"
 
     .prologue
-    .line 97
+    .line 104
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Landroid/preference/SwitchPreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 98
+    .line 105
     return-void
 .end method
 
@@ -41,12 +41,12 @@
     .parameter "attrs"
 
     .prologue
-    .line 88
+    .line 95
     const v0, #attr@switchPreferenceStyle#t
 
     invoke-direct {p0, p1, p2, v0}, Landroid/preference/SwitchPreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 89
+    .line 96
     return-void
 .end method
 
@@ -59,10 +59,10 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 66
+    .line 67
     invoke-direct {p0, p1, p2, p3}, Landroid/preference/TwoStatePreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 42
+    .line 43
     new-instance v1, Landroid/preference/SwitchPreference$Listener;
 
     const/4 v2, 0x0
@@ -71,14 +71,14 @@
 
     iput-object v1, p0, Landroid/preference/SwitchPreference;->mListener:Landroid/preference/SwitchPreference$Listener;
 
-    .line 68
+    .line 69
     sget-object v1, Lcom/android/internal/R$styleable;->SwitchPreference:[I
 
     invoke-virtual {p1, p2, v1, p3, v3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 70
+    .line 71
     .local v0, a:Landroid/content/res/TypedArray;
     invoke-virtual {v0, v3}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
@@ -86,7 +86,7 @@
 
     invoke-virtual {p0, v1}, Landroid/preference/SwitchPreference;->setSummaryOn(Ljava/lang/CharSequence;)V
 
-    .line 71
+    .line 72
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
@@ -95,7 +95,7 @@
 
     invoke-virtual {p0, v1}, Landroid/preference/SwitchPreference;->setSummaryOff(Ljava/lang/CharSequence;)V
 
-    .line 72
+    .line 73
     const/4 v1, 0x3
 
     invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
@@ -104,7 +104,7 @@
 
     invoke-virtual {p0, v1}, Landroid/preference/SwitchPreference;->setSwitchTextOn(Ljava/lang/CharSequence;)V
 
-    .line 74
+    .line 75
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
@@ -113,7 +113,7 @@
 
     invoke-virtual {p0, v1}, Landroid/preference/SwitchPreference;->setSwitchTextOff(Ljava/lang/CharSequence;)V
 
-    .line 76
+    .line 77
     const/4 v1, 0x2
 
     invoke-virtual {v0, v1, v3}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
@@ -122,10 +122,10 @@
 
     invoke-virtual {p0, v1}, Landroid/preference/SwitchPreference;->setDisableDependentsState(Z)V
 
-    .line 78
+    .line 79
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 79
+    .line 80
     return-void
 .end method
 
@@ -135,7 +135,7 @@
     .locals 1
 
     .prologue
-    .line 174
+    .line 180
     iget-object v0, p0, Landroid/preference/SwitchPreference;->mSwitchOff:Ljava/lang/CharSequence;
 
     return-object v0
@@ -145,7 +145,7 @@
     .locals 1
 
     .prologue
-    .line 167
+    .line 173
     iget-object v0, p0, Landroid/preference/SwitchPreference;->mSwitchOn:Ljava/lang/CharSequence;
 
     return-object v0
@@ -156,17 +156,17 @@
     .parameter "view"
 
     .prologue
-    .line 102
+    .line 109
     invoke-super {p0, p1}, Landroid/preference/TwoStatePreference;->onBindView(Landroid/view/View;)V
 
-    .line 104
-    const v2, #id@switchWidget#t
+    .line 111
+    const v2, 0x2100020
 
     invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 105
+    .line 112
     .local v0, checkableView:Landroid/view/View;
     if-eqz v0, :cond_0
 
@@ -176,49 +176,62 @@
 
     move-object v2, v0
 
-    .line 106
+    .line 113
     check-cast v2, Landroid/widget/Checkable;
 
-    iget-boolean v3, p0, Landroid/preference/TwoStatePreference;->mChecked:Z
+    iget-boolean v3, p0, Landroid/preference/SwitchPreference;->mChecked:Z
 
     invoke-interface {v2, v3}, Landroid/widget/Checkable;->setChecked(Z)V
 
-    .line 108
+    .line 115
     invoke-virtual {p0, v0}, Landroid/preference/SwitchPreference;->sendAccessibilityEvent(Landroid/view/View;)V
 
-    .line 110
+    .line 117
     instance-of v2, v0, Landroid/widget/Switch;
 
     if-eqz v2, :cond_0
 
     move-object v1, v0
 
-    .line 111
+    .line 118
     check-cast v1, Landroid/widget/Switch;
 
-    .line 112
+    .line 119
     .local v1, switchView:Landroid/widget/Switch;
-    iget-object v2, p0, Landroid/preference/SwitchPreference;->mSwitchOn:Ljava/lang/CharSequence;
+    const/4 v2, 0x0
 
-    invoke-virtual {v1, v2}, Landroid/widget/Switch;->setTextOn(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v2}, Landroid/widget/Switch;->setFocusable(Z)V
 
-    .line 113
-    iget-object v2, p0, Landroid/preference/SwitchPreference;->mSwitchOff:Ljava/lang/CharSequence;
-
-    invoke-virtual {v1, v2}, Landroid/widget/Switch;->setTextOff(Ljava/lang/CharSequence;)V
-
-    .line 114
+    .line 120
     iget-object v2, p0, Landroid/preference/SwitchPreference;->mListener:Landroid/preference/SwitchPreference$Listener;
 
     invoke-virtual {v1, v2}, Landroid/widget/Switch;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
-    .line 118
+    .line 124
     .end local v1           #switchView:Landroid/widget/Switch;
     :cond_0
     invoke-virtual {p0, p1}, Landroid/preference/SwitchPreference;->syncSummaryView(Landroid/view/View;)V
 
-    .line 119
+    .line 125
     return-void
+.end method
+
+.method protected onCreateView(Landroid/view/ViewGroup;)Landroid/view/View;
+    .locals 1
+    .parameter "parent"
+
+    .prologue
+    .line 84
+    const v0, 0x207000b
+
+    invoke-virtual {p0, v0}, Landroid/preference/SwitchPreference;->setWidgetLayoutResource(I)V
+
+    .line 85
+    invoke-super {p0, p1}, Landroid/preference/TwoStatePreference;->onCreateView(Landroid/view/ViewGroup;)Landroid/view/View;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public setSwitchTextOff(I)V
@@ -226,7 +239,7 @@
     .parameter "resId"
 
     .prologue
-    .line 160
+    .line 166
     invoke-virtual {p0}, Landroid/preference/SwitchPreference;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -237,7 +250,7 @@
 
     invoke-virtual {p0, v0}, Landroid/preference/SwitchPreference;->setSwitchTextOff(Ljava/lang/CharSequence;)V
 
-    .line 161
+    .line 167
     return-void
 .end method
 
@@ -246,13 +259,13 @@
     .parameter "offText"
 
     .prologue
-    .line 139
+    .line 145
     iput-object p1, p0, Landroid/preference/SwitchPreference;->mSwitchOff:Ljava/lang/CharSequence;
 
-    .line 140
+    .line 146
     invoke-virtual {p0}, Landroid/preference/SwitchPreference;->notifyChanged()V
 
-    .line 141
+    .line 147
     return-void
 .end method
 
@@ -261,7 +274,7 @@
     .parameter "resId"
 
     .prologue
-    .line 150
+    .line 156
     invoke-virtual {p0}, Landroid/preference/SwitchPreference;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -272,7 +285,7 @@
 
     invoke-virtual {p0, v0}, Landroid/preference/SwitchPreference;->setSwitchTextOn(Ljava/lang/CharSequence;)V
 
-    .line 151
+    .line 157
     return-void
 .end method
 
@@ -281,12 +294,12 @@
     .parameter "onText"
 
     .prologue
-    .line 128
+    .line 134
     iput-object p1, p0, Landroid/preference/SwitchPreference;->mSwitchOn:Ljava/lang/CharSequence;
 
-    .line 129
+    .line 135
     invoke-virtual {p0}, Landroid/preference/SwitchPreference;->notifyChanged()V
 
-    .line 130
+    .line 136
     return-void
 .end method

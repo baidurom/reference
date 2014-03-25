@@ -39,6 +39,14 @@
     .end annotation
 .end method
 
+.method public abstract dispatchStatusBarKeyEvent(Landroid/view/KeyEvent;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract expandNotificationsPanel()V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -48,6 +56,14 @@
 .end method
 
 .method public abstract expandSettingsPanel()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract hideSimIndicator()V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -180,6 +196,22 @@
 .end method
 
 .method public abstract setSystemUiVisibility(II)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract showApplicationGuide(Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract showSimIndicator(Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

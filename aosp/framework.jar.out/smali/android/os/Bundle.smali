@@ -92,7 +92,7 @@
     const/4 v1, 0x1
 
     .line 67
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 46
     iput-object v0, p0, Landroid/os/Bundle;->mMap:Ljava/util/Map;
@@ -143,7 +143,7 @@
     const/4 v1, 0x1
 
     .line 104
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 46
     iput-object v0, p0, Landroid/os/Bundle;->mMap:Ljava/util/Map;
@@ -196,7 +196,7 @@
     const/4 v3, 0x0
 
     .line 115
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 46
     iput-object v3, p0, Landroid/os/Bundle;->mMap:Ljava/util/Map;
@@ -300,7 +300,7 @@
     const/4 v1, 0x1
 
     .line 78
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 46
     iput-object v0, p0, Landroid/os/Bundle;->mMap:Ljava/util/Map;
@@ -337,7 +337,7 @@
     const/4 v1, 0x1
 
     .line 82
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 46
     iput-object v0, p0, Landroid/os/Bundle;->mMap:Ljava/util/Map;
@@ -373,7 +373,7 @@
     const/4 v1, 0x1
 
     .line 93
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 46
     iput-object v0, p0, Landroid/os/Bundle;->mMap:Ljava/util/Map;
@@ -2025,7 +2025,7 @@
 
     .line 1468
     .local v1, e:Ljava/lang/ClassCastException;
-    const-string v3, "long[]"
+    const-string/jumbo v3, "long[]"
 
     invoke-direct {p0, p1, v2, v3, v1}, Landroid/os/Bundle;->typeWarning(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/ClassCastException;)V
 

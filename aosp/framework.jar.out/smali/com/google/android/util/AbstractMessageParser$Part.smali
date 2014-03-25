@@ -35,7 +35,7 @@
 
     .prologue
     .line 1433
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1434
     new-instance v0, Ljava/util/ArrayList;
@@ -73,7 +73,7 @@
     if-eqz v0, :cond_1
 
     .line 1445
-    const-string v0, "m"
+    const-string/jumbo v0, "m"
 
     goto :goto_0
 

@@ -1,50 +1,110 @@
-.class Lcom/android/server/power/ShutdownThread$3;
-.super Landroid/content/BroadcastReceiver;
+.class final Lcom/android/server/power/ShutdownThread$3;
+.super Ljava/lang/Object;
 .source "ShutdownThread.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/power/ShutdownThread;->run()V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/android/server/power/ShutdownThread;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x8
     name = null
 .end annotation
 
 
-# instance fields
-.field final synthetic this$0:Lcom/android/server/power/ShutdownThread;
-
-
 # direct methods
-.method constructor <init>(Lcom/android/server/power/ShutdownThread;)V
+.method constructor <init>()V
     .locals 0
-    .parameter
 
     .prologue
-    .line 271
-    iput-object p1, p0, Lcom/android/server/power/ShutdownThread$3;->this$0:Lcom/android/server/power/ShutdownThread;
-
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    .line 317
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 1
-    .parameter "context"
-    .parameter "intent"
+.method public run()V
+    .locals 2
 
     .prologue
-    .line 274
-    iget-object v0, p0, Lcom/android/server/power/ShutdownThread$3;->this$0:Lcom/android/server/power/ShutdownThread;
+    .line 319
+    const-string v0, "ShutdownThread"
 
-    invoke-virtual {v0}, Lcom/android/server/power/ShutdownThread;->actionDone()V
+    const-string v1, "setBacklightBrightness: Off"
 
-    .line 275
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 320
+    invoke-static {}, Lcom/android/server/power/ShutdownThread;->access$500()Lcom/android/server/power/ShutdownThread;
+
+    move-result-object v0
+
+    #getter for: Lcom/android/server/power/ShutdownThread;->mScreenWakeLock:Landroid/os/PowerManager$WakeLock;
+    invoke-static {v0}, Lcom/android/server/power/ShutdownThread;->access$600(Lcom/android/server/power/ShutdownThread;)Landroid/os/PowerManager$WakeLock;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-static {}, Lcom/android/server/power/ShutdownThread;->access$500()Lcom/android/server/power/ShutdownThread;
+
+    move-result-object v0
+
+    #getter for: Lcom/android/server/power/ShutdownThread;->mScreenWakeLock:Landroid/os/PowerManager$WakeLock;
+    invoke-static {v0}, Lcom/android/server/power/ShutdownThread;->access$600(Lcom/android/server/power/ShutdownThread;)Landroid/os/PowerManager$WakeLock;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->isHeld()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 321
+    invoke-static {}, Lcom/android/server/power/ShutdownThread;->access$500()Lcom/android/server/power/ShutdownThread;
+
+    move-result-object v0
+
+    #getter for: Lcom/android/server/power/ShutdownThread;->mScreenWakeLock:Landroid/os/PowerManager$WakeLock;
+    invoke-static {v0}, Lcom/android/server/power/ShutdownThread;->access$600(Lcom/android/server/power/ShutdownThread;)Landroid/os/PowerManager$WakeLock;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
+
+    .line 322
+    invoke-static {}, Lcom/android/server/power/ShutdownThread;->access$500()Lcom/android/server/power/ShutdownThread;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    #setter for: Lcom/android/server/power/ShutdownThread;->mScreenWakeLock:Landroid/os/PowerManager$WakeLock;
+    invoke-static {v0, v1}, Lcom/android/server/power/ShutdownThread;->access$602(Lcom/android/server/power/ShutdownThread;Landroid/os/PowerManager$WakeLock;)Landroid/os/PowerManager$WakeLock;
+
+    .line 324
+    :cond_0
+    invoke-static {}, Lcom/android/server/power/ShutdownThread;->access$500()Lcom/android/server/power/ShutdownThread;
+
+    move-result-object v0
+
+    #getter for: Lcom/android/server/power/ShutdownThread;->mPowerManager:Landroid/os/PowerManager;
+    invoke-static {v0}, Lcom/android/server/power/ShutdownThread;->access$700(Lcom/android/server/power/ShutdownThread;)Landroid/os/PowerManager;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Landroid/os/PowerManager;->setBacklightBrightnessOff(Z)V
+
+    .line 325
     return-void
 .end method

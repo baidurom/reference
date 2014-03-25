@@ -33,23 +33,23 @@
     .parameter "newS"
 
     .prologue
-    .line 244
+    .line 254
     iput-object p1, p0, Landroid/os/storage/StorageManager$StorageStateChangedStorageEvent;->this$0:Landroid/os/storage/StorageManager;
 
-    .line 245
+    .line 255
     const/4 v0, 0x2
 
     invoke-direct {p0, p1, v0}, Landroid/os/storage/StorageManager$StorageEvent;-><init>(Landroid/os/storage/StorageManager;I)V
 
-    .line 246
+    .line 256
     iput-object p2, p0, Landroid/os/storage/StorageManager$StorageStateChangedStorageEvent;->path:Ljava/lang/String;
 
-    .line 247
+    .line 257
     iput-object p3, p0, Landroid/os/storage/StorageManager$StorageStateChangedStorageEvent;->oldState:Ljava/lang/String;
 
-    .line 248
+    .line 258
     iput-object p4, p0, Landroid/os/storage/StorageManager$StorageStateChangedStorageEvent;->newState:Ljava/lang/String;
 
-    .line 249
+    .line 259
     return-void
 .end method

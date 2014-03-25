@@ -37,7 +37,7 @@
 
     .prologue
     .line 79
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 80
     if-nez p2, :cond_0
@@ -45,7 +45,7 @@
     .line 81
     new-instance v1, Ljava/lang/NullPointerException;
 
-    const-string v2, "locale == null"
+    const-string/jumbo v2, "locale == null"
 
     invoke-direct {v1, v2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
@@ -60,7 +60,7 @@
     iput-object v1, p0, Landroid/location/Geocoder;->mParams:Landroid/location/GeocoderParams;
 
     .line 84
-    const-string v1, "location"
+    const-string/jumbo v1, "location"
 
     invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
@@ -83,7 +83,7 @@
 
     .prologue
     .line 60
-    const-string v3, "location"
+    const-string/jumbo v3, "location"
 
     invoke-static {v3}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
@@ -116,7 +116,7 @@
     .local v1, e:Landroid/os/RemoteException;
     const-string v3, "Geocoder"
 
-    const-string v4, "isPresent: got RemoteException"
+    const-string/jumbo v4, "isPresent: got RemoteException"
 
     invoke-static {v3, v4, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
@@ -171,7 +171,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "latitude == "
+    const-string/jumbo v2, "latitude == "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -211,7 +211,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "longitude == "
+    const-string/jumbo v2, "longitude == "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -316,7 +316,7 @@
     .line 171
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "locationName == null"
+    const-string/jumbo v1, "locationName == null"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -419,7 +419,7 @@
     .line 227
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
-    const-string v3, "locationName == null"
+    const-string/jumbo v3, "locationName == null"
 
     invoke-direct {v2, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -447,7 +447,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "lowerLeftLatitude == "
+    const-string/jumbo v4, "lowerLeftLatitude == "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -489,7 +489,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "lowerLeftLongitude == "
+    const-string/jumbo v4, "lowerLeftLongitude == "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

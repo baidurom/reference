@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 327
+    .line 359
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -28,24 +28,69 @@
 
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Ljava/lang/Object;
-    .locals 3
+    .locals 8
     .parameter "ctx"
 
     .prologue
-    .line 329
-    new-instance v0, Landroid/content/ClipboardManager;
+    .line 361
+    const/4 v3, 0x0
 
-    invoke-virtual {p1}, Landroid/app/ContextImpl;->getOuterContext()Landroid/content/Context;
+    .line 363
+    .local v3, mobileMgr:Lcom/mediatek/common/mom/IMobileManager;
+    :try_start_0
+    const-string v5, "mobile"
+
+    invoke-static {v5}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v1
 
-    iget-object v2, p1, Landroid/app/ContextImpl;->mMainThread:Landroid/app/ActivityThread;
+    .line 364
+    .local v1, b:Landroid/os/IBinder;
+    invoke-static {v1}, Lcom/mediatek/common/mom/IMobileManagerService$Stub;->asInterface(Landroid/os/IBinder;)Lcom/mediatek/common/mom/IMobileManagerService;
 
-    invoke-virtual {v2}, Landroid/app/ActivityThread;->getHandler()Landroid/os/Handler;
+    move-result-object v4
 
-    move-result-object v2
+    .line 365
+    .local v4, service:Lcom/mediatek/common/mom/IMobileManagerService;
+    const-class v5, Lcom/mediatek/common/mom/IMobileManager;
 
-    invoke-direct {v0, v1, v2}, Landroid/content/ClipboardManager;-><init>(Landroid/content/Context;Landroid/os/Handler;)V
+    const/4 v6, 0x2
 
-    return-object v0
+    new-array v6, v6, [Ljava/lang/Object;
+
+    const/4 v7, 0x0
+
+    aput-object p1, v6, v7
+
+    const/4 v7, 0x1
+
+    aput-object v4, v6, v7
+
+    invoke-static {v5, v6}, Lcom/mediatek/common/MediatekClassFactory;->createInstance(Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v5
+
+    move-object v0, v5
+
+    check-cast v0, Lcom/mediatek/common/mom/IMobileManager;
+
+    move-object v3, v0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 369
+    .end local v1           #b:Landroid/os/IBinder;
+    .end local v4           #service:Lcom/mediatek/common/mom/IMobileManagerService;
+    :goto_0
+    return-object v3
+
+    .line 366
+    :catch_0
+    move-exception v2
+
+    .line 367
+    .local v2, e:Ljava/lang/Exception;
+    invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
+
+    goto :goto_0
 .end method

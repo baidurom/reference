@@ -47,9 +47,9 @@
     .line 68
     sget-object v0, Landroid/util/CharsetUtils;->sVendorShiftJisMap:Ljava/util/Map;
 
-    const-string v1, "kddi"
+    const-string/jumbo v1, "kddi"
 
-    const-string v2, "kddi-shift_jis-2007"
+    const-string/jumbo v2, "kddi-shift_jis-2007"
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -71,7 +71,7 @@
 
     .prologue
     .line 75
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 77
     return-void

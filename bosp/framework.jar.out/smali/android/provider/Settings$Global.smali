@@ -15,6 +15,8 @@
 
 
 # static fields
+.field public static final ACM_ENABLED:Ljava/lang/String; = "acm_enabled"
+
 .field public static final ADB_ENABLED:Ljava/lang/String; = "adb_enabled"
 
 .field public static final AIRPLANE_MODE_ON:Ljava/lang/String; = "airplane_mode_on"
@@ -33,6 +35,8 @@
 
 .field public static final AUTO_TIME:Ljava/lang/String; = "auto_time"
 
+.field public static final AUTO_TIME_GPS:Ljava/lang/String; = "auto_time_gps"
+
 .field public static final AUTO_TIME_ZONE:Ljava/lang/String; = "auto_time_zone"
 
 .field public static final BATTERY_DISCHARGE_DURATION_THRESHOLD:Ljava/lang/String; = "battery_discharge_duration_threshold"
@@ -46,6 +50,8 @@
 .field public static final BLUETOOTH_INPUT_DEVICE_PRIORITY_PREFIX:Ljava/lang/String; = "bluetooth_input_device_priority_"
 
 .field public static final BLUETOOTH_ON:Ljava/lang/String; = "bluetooth_on"
+
+.field public static final BLUETOOTH_STATE:Ljava/lang/String; = "bluetooth_state"
 
 .field public static final CALL_AUTO_RETRY:Ljava/lang/String; = "call_auto_retry"
 
@@ -74,6 +80,12 @@
 .field public static final DATA_ACTIVITY_TIMEOUT_WIFI:Ljava/lang/String; = "data_activity_timeout_wifi"
 
 .field public static final DATA_ROAMING:Ljava/lang/String; = "data_roaming"
+
+.field public static final DATA_ROAMING_2:Ljava/lang/String; = "data_roaming_2"
+
+.field public static final DATA_ROAMING_3:Ljava/lang/String; = "data_roaming_3"
+
+.field public static final DATA_ROAMING_4:Ljava/lang/String; = "data_roaming_4"
 
 .field public static final DATA_STALL_ALARM_AGGRESSIVE_DELAY_IN_MS:Ljava/lang/String; = "data_stall_alarm_aggressive_delay_in_ms"
 
@@ -189,6 +201,20 @@
 
 .field public static final NETWORK_PREFERENCE:Ljava/lang/String; = "network_preference"
 
+.field public static final NFC_MULTISE_ACTIVE:Ljava/lang/String; = "nfc_multise_active"
+
+.field public static final NFC_MULTISE_IN_SWITCHING:Ljava/lang/String; = "nfc_multise_in_switching"
+
+.field public static final NFC_MULTISE_IN_TRANSACTION:Ljava/lang/String; = "nfc_multise_in_transation"
+
+.field public static final NFC_MULTISE_LIST:Ljava/lang/String; = "nfc_multise_list"
+
+.field public static final NFC_MULTISE_ON:Ljava/lang/String; = "nfc_multise_on"
+
+.field public static final NFC_MULTISE_PREVIOUS:Ljava/lang/String; = "nfc_multise_previous"
+
+.field public static final NFC_ON:Ljava/lang/String; = "nfc_on"
+
 .field public static final NITZ_UPDATE_DIFF:Ljava/lang/String; = "nitz_update_diff"
 
 .field public static final NITZ_UPDATE_SPACING:Ljava/lang/String; = "nitz_update_spacing"
@@ -228,6 +254,8 @@
 .field public static final PREFERRED_CDMA_SUBSCRIPTION:Ljava/lang/String; = "preferred_cdma_subscription"
 
 .field public static final PREFERRED_NETWORK_MODE:Ljava/lang/String; = "preferred_network_mode"
+
+.field public static final PREFERRED_NETWORK_MODE_2:Ljava/lang/String; = "preferred_network_mode_2"
 
 .field public static final RADIO_BLUETOOTH:Ljava/lang/String; = "bluetooth"
 
@@ -313,13 +341,47 @@
 
 .field public static final WEB_AUTOFILL_QUERY_URL:Ljava/lang/String; = "web_autofill_query_url"
 
+.field public static final WIFI_AP_OPERATIONAL_BAND:Ljava/lang/String; = "wifi_ap_operational_band"
+
 .field public static final WIFI_COUNTRY_CODE:Ljava/lang/String; = "wifi_country_code"
 
+.field public static final WIFI_DISPLAY_AUTO_CHANNEL_SELECTION:Ljava/lang/String; = "wifi_display_auto_channel_selection"
+
+.field public static final WIFI_DISPLAY_CHOSEN_CAPABILITY:Ljava/lang/String; = "wifi_display_chosen_capability"
+
+.field public static final WIFI_DISPLAY_DISPLAY_NOTIFICATION_TIME:Ljava/lang/String; = "wifi_display_notification_time"
+
+.field public static final WIFI_DISPLAY_DISPLAY_TOAST_TIME:Ljava/lang/String; = "wifi_display_display_toast_time"
+
+.field public static final WIFI_DISPLAY_LATENCY_PROFILING:Ljava/lang/String; = "wifi_display_latency_profiling"
+
 .field public static final WIFI_DISPLAY_ON:Ljava/lang/String; = "wifi_display_on"
+
+.field public static final WIFI_DISPLAY_POWER_SAVING_DELAY:Ljava/lang/String; = "wifi_display_power_saving_delay"
+
+.field public static final WIFI_DISPLAY_POWER_SAVING_OPTION:Ljava/lang/String; = "wifi_display_power_saving_option"
+
+.field public static final WIFI_DISPLAY_QE_ON:Ljava/lang/String; = "wifi_display_qe_on"
+
+.field public static final WIFI_DISPLAY_RESOLUTION:Ljava/lang/String; = "wifi_display_max_resolution"
+
+.field public static final WIFI_DISPLAY_RESOLUTION_DONOT_REMIND:Ljava/lang/String; = "wifi_display_change_resolution_remind"
+
+.field public static final WIFI_DISPLAY_SECURITY_OPTION:Ljava/lang/String; = "wifi_display_security_option"
+
+.field public static final WIFI_DISPLAY_SOUND_PATH_DONOT_REMIND:Ljava/lang/String; = "wifi_display_sound_path_do_not_remind"
+
+.field public static final WIFI_DISPLAY_SQC_INFO_ON:Ljava/lang/String; = "wifi_display_sqc_info_on"
+
+.field public static final WIFI_DISPLAY_WFD_LATENCY:Ljava/lang/String; = "wifi_display_wfd_latency"
+
+.field public static final WIFI_DISPLAY_WIFI_INFO:Ljava/lang/String; = "wifi_display_wifi_info"
 
 .field public static final WIFI_FRAMEWORK_SCAN_INTERVAL_MS:Ljava/lang/String; = "wifi_framework_scan_interval_ms"
 
 .field public static final WIFI_FREQUENCY_BAND:Ljava/lang/String; = "wifi_frequency_band"
+
+.field public static final WIFI_HOTSPOT_SUSPEND_OPTIMIZATIONS_ENABLED:Ljava/lang/String; = "wifi_hotspot_suspend_optimizations_enabled"
 
 .field public static final WIFI_IDLE_MS:Ljava/lang/String; = "wifi_idle_ms"
 
@@ -336,6 +398,8 @@
 .field public static final WIFI_ON:Ljava/lang/String; = "wifi_on"
 
 .field public static final WIFI_P2P_DEVICE_NAME:Ljava/lang/String; = "wifi_p2p_device_name"
+
+.field public static final WIFI_PASSPOINT_ON:Ljava/lang/String; = "wifi_passpoint_on"
 
 .field public static final WIFI_SAVED_STATE:Ljava/lang/String; = "wifi_saved_state"
 
@@ -363,6 +427,10 @@
 
 .field public static final WIRELESS_CHARGING_STARTED_SOUND:Ljava/lang/String; = "wireless_charging_started_sound"
 
+.field public static final WORLD_PHONE_AUTO_SELECT_MODE:Ljava/lang/String; = "world_phone_auto_select_mode"
+
+.field public static final WORLD_PHONE_FDD_MODEM_TIMER:Ljava/lang/String; = "world_phone_fdd_modem_timer"
+
 .field public static final WTF_IS_FATAL:Ljava/lang/String; = "wtf_is_fatal"
 
 .field private static sNameValueCache:Landroid/provider/Settings$NameValueCache;
@@ -373,7 +441,7 @@
     .locals 5
 
     .prologue
-    .line 4278
+    .line 5375
     const-string v0, "content://settings/global"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -382,7 +450,7 @@
 
     sput-object v0, Landroid/provider/Settings$Global;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 5494
+    .line 6861
     const/16 v0, 0xf
 
     new-array v0, v0, [Ljava/lang/String;
@@ -479,7 +547,7 @@
 
     sput-object v0, Landroid/provider/Settings$Global;->SETTINGS_TO_BACKUP:[Ljava/lang/String;
 
-    .line 5513
+    .line 6880
     new-instance v0, Landroid/provider/Settings$NameValueCache;
 
     const-string/jumbo v1, "sys.settings_global_version"
@@ -501,7 +569,7 @@
     .locals 0
 
     .prologue
-    .line 4272
+    .line 5369
     invoke-direct {p0}, Landroid/provider/Settings$NameValueTable;-><init>()V
 
     return-void
@@ -512,7 +580,7 @@
     .parameter "address"
 
     .prologue
-    .line 5355
+    .line 6656
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -543,7 +611,7 @@
     .parameter "address"
 
     .prologue
-    .line 5347
+    .line 6648
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -574,7 +642,7 @@
     .parameter "address"
 
     .prologue
-    .line 5363
+    .line 6664
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -611,23 +679,23 @@
     .end annotation
 
     .prologue
-    .line 5747
+    .line 7114
     invoke-static {p0, p1}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 5748
+    .line 7115
     .local v1, v:Ljava/lang/String;
     if-nez v1, :cond_0
 
-    .line 5749
+    .line 7116
     new-instance v2, Landroid/provider/Settings$SettingNotFoundException;
 
     invoke-direct {v2, p1}, Landroid/provider/Settings$SettingNotFoundException;-><init>(Ljava/lang/String;)V
 
     throw v2
 
-    .line 5752
+    .line 7119
     :cond_0
     :try_start_0
     invoke-static {v1}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
@@ -638,11 +706,11 @@
 
     return v2
 
-    .line 5753
+    .line 7120
     :catch_0
     move-exception v0
 
-    .line 5754
+    .line 7121
     .local v0, e:Ljava/lang/NumberFormatException;
     new-instance v2, Landroid/provider/Settings$SettingNotFoundException;
 
@@ -658,12 +726,12 @@
     .parameter "def"
 
     .prologue
-    .line 5719
+    .line 7086
     invoke-static {p0, p1}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 5721
+    .line 7088
     .local v1, v:Ljava/lang/String;
     if-eqz v1, :cond_0
 
@@ -674,18 +742,18 @@
 
     move-result p2
 
-    .line 5723
+    .line 7090
     .end local p2
     :cond_0
     :goto_0
     return p2
 
-    .line 5722
+    .line 7089
     .restart local p2
     :catch_0
     move-exception v0
 
-    .line 5723
+    .line 7090
     .local v0, e:Ljava/lang/NumberFormatException;
     goto :goto_0
 .end method
@@ -701,12 +769,12 @@
     .end annotation
 
     .prologue
-    .line 5610
+    .line 6977
     invoke-static {p0, p1}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 5612
+    .line 6979
     .local v1, v:Ljava/lang/String;
     :try_start_0
     invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -717,11 +785,11 @@
 
     return v2
 
-    .line 5613
+    .line 6980
     :catch_0
     move-exception v0
 
-    .line 5614
+    .line 6981
     .local v0, e:Ljava/lang/NumberFormatException;
     new-instance v2, Landroid/provider/Settings$SettingNotFoundException;
 
@@ -737,12 +805,12 @@
     .parameter "def"
 
     .prologue
-    .line 5582
+    .line 6949
     invoke-static {p0, p1}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 5584
+    .line 6951
     .local v1, v:Ljava/lang/String;
     if-eqz v1, :cond_0
 
@@ -753,18 +821,18 @@
 
     move-result p2
 
-    .line 5586
+    .line 6953
     .end local p2
     :cond_0
     :goto_0
     return p2
 
-    .line 5585
+    .line 6952
     .restart local p2
     :catch_0
     move-exception v0
 
-    .line 5586
+    .line 6953
     .local v0, e:Ljava/lang/NumberFormatException;
     goto :goto_0
 .end method
@@ -780,12 +848,12 @@
     .end annotation
 
     .prologue
-    .line 5679
+    .line 7046
     invoke-static {p0, p1}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 5681
+    .line 7048
     .local v1, valString:Ljava/lang/String;
     :try_start_0
     invoke-static {v1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
@@ -796,11 +864,11 @@
 
     return-wide v2
 
-    .line 5682
+    .line 7049
     :catch_0
     move-exception v0
 
-    .line 5683
+    .line 7050
     .local v0, e:Ljava/lang/NumberFormatException;
     new-instance v2, Landroid/provider/Settings$SettingNotFoundException;
 
@@ -816,12 +884,12 @@
     .parameter "def"
 
     .prologue
-    .line 5650
+    .line 7017
     invoke-static {p0, p1}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 5653
+    .line 7020
     .local v1, valString:Ljava/lang/String;
     if-eqz v1, :cond_0
 
@@ -832,7 +900,7 @@
 
     move-result-wide v2
 
-    .line 5657
+    .line 7024
     .local v2, value:J
     :goto_0
     return-wide v2
@@ -841,14 +909,14 @@
     :cond_0
     move-wide v2, p2
 
-    .line 5653
+    .line 7020
     goto :goto_0
 
-    .line 5654
+    .line 7021
     :catch_0
     move-exception v0
 
-    .line 5655
+    .line 7022
     .local v0, e:Ljava/lang/NumberFormatException;
     move-wide v2, p2
 
@@ -862,7 +930,7 @@
     .parameter "name"
 
     .prologue
-    .line 5526
+    .line 6893
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -881,7 +949,7 @@
     .parameter "userHandle"
 
     .prologue
-    .line 5532
+    .line 6899
     sget-object v0, Landroid/provider/Settings$Global;->sNameValueCache:Landroid/provider/Settings$NameValueCache;
 
     invoke-virtual {v0, p0, p1, p2}, Landroid/provider/Settings$NameValueCache;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
@@ -896,7 +964,7 @@
     .parameter "name"
 
     .prologue
-    .line 5564
+    .line 6931
     sget-object v0, Landroid/provider/Settings$Global;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-static {v0, p0}, Landroid/provider/Settings$Global;->getUriFor(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
@@ -913,7 +981,7 @@
     .parameter "value"
 
     .prologue
-    .line 5772
+    .line 7139
     invoke-static {p2}, Ljava/lang/Float;->toString(F)Ljava/lang/String;
 
     move-result-object v0
@@ -932,7 +1000,7 @@
     .parameter "value"
 
     .prologue
-    .line 5632
+    .line 6999
     invoke-static {p2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
@@ -951,7 +1019,7 @@
     .parameter "value"
 
     .prologue
-    .line 5701
+    .line 7068
     invoke-static {p2, p3}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
     move-result-object v0
@@ -970,7 +1038,7 @@
     .parameter "value"
 
     .prologue
-    .line 5544
+    .line 6911
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -983,14 +1051,65 @@
 .end method
 
 .method public static putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
-    .locals 1
+    .locals 3
     .parameter "resolver"
     .parameter "name"
     .parameter "value"
     .parameter "userHandle"
 
     .prologue
-    .line 5554
+    .line 6917
+    invoke-static {}, Landroid/provider/Settings;->access$000()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 6918
+    const-string v0, "Provider/Settings"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Global.putString(name="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ", value="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " for "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 6921
+    :cond_0
     sget-object v0, Landroid/provider/Settings$Global;->sNameValueCache:Landroid/provider/Settings$NameValueCache;
 
     invoke-virtual {v0, p0, p1, p2, p3}, Landroid/provider/Settings$NameValueCache;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z

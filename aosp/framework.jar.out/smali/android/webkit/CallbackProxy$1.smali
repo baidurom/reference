@@ -30,12 +30,12 @@
     .parameter
 
     .prologue
-    .line 594
+    .line 640
     iput-object p1, p0, Landroid/webkit/CallbackProxy$1;->this$0:Landroid/webkit/CallbackProxy;
 
     iput-object p2, p0, Landroid/webkit/CallbackProxy$1;->val$res:Landroid/webkit/JsResult;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -43,15 +43,23 @@
 
 # virtual methods
 .method public onCancel(Landroid/content/DialogInterface;)V
-    .locals 1
+    .locals 2
     .parameter "dialog"
 
     .prologue
-    .line 597
+    .line 643
     iget-object v0, p0, Landroid/webkit/CallbackProxy$1;->val$res:Landroid/webkit/JsResult;
 
     invoke-virtual {v0}, Landroid/webkit/JsResult;->cancel()V
 
-    .line 598
+    .line 645
+    iget-object v0, p0, Landroid/webkit/CallbackProxy$1;->this$0:Landroid/webkit/CallbackProxy;
+
+    const/4 v1, 0x0
+
+    #calls: Landroid/webkit/CallbackProxy;->setPreventWatchdogResume(Z)V
+    invoke-static {v0, v1}, Landroid/webkit/CallbackProxy;->access$000(Landroid/webkit/CallbackProxy;Z)V
+
+    .line 646
     return-void
 .end method

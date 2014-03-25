@@ -35,10 +35,10 @@
     .locals 1
 
     .prologue
-    .line 3810
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 3857
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3811
+    .line 3858
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/widget/Editor$InputContentType;->imeOptions:I

@@ -19,6 +19,8 @@
 
 .field public static final AsecPathResult:I = 0xd3
 
+.field public static final CdromStatusResult:I = 0xd6
+
 .field public static final OpFailedMediaBlank:I = 0x192
 
 .field public static final OpFailedMediaCorrupt:I = 0x193
@@ -43,9 +45,13 @@
 
 .field public static final VolumeDiskRemoved:I = 0x277
 
+.field public static final VolumeEjectBeforeSwap:I = 0x279
+
 .field public static final VolumeListResult:I = 0x6e
 
 .field public static final VolumeStateChange:I = 0x25d
+
+.field public static final VolumeUnmountable:I = 0x27a
 
 
 # instance fields
@@ -58,10 +64,10 @@
     .parameter
 
     .prologue
-    .line 142
+    .line 169
     iput-object p1, p0, Lcom/android/server/MountService$VoldResponseCode;->this$0:Lcom/android/server/MountService;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

@@ -62,7 +62,7 @@
 
     .prologue
     .line 72
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 73
     iput-object p1, p0, Landroid/content/pm/VerificationParams;->mVerificationURI:Landroid/net/Uri;
@@ -94,7 +94,7 @@
 
     .prologue
     .line 217
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 218
     const-class v0, Landroid/net/Uri;
@@ -590,7 +590,7 @@
 
     .line 189
     .local v0, sb:Ljava/lang/StringBuilder;
-    const-string v1, "mVerificationURI="
+    const-string/jumbo v1, "mVerificationURI="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

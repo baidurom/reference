@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 658
+    .line 674
     iput-object p1, p0, Lcom/android/internal/view/menu/ActionMenuPresenter$PopupPresenterCallback;->this$0:Lcom/android/internal/view/menu/ActionMenuPresenter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .parameter "x1"
 
     .prologue
-    .line 658
+    .line 674
     invoke-direct {p0, p1}, Lcom/android/internal/view/menu/ActionMenuPresenter$PopupPresenterCallback;-><init>(Lcom/android/internal/view/menu/ActionMenuPresenter;)V
 
     return-void
@@ -55,12 +55,12 @@
     .parameter "allMenusAreClosing"
 
     .prologue
-    .line 670
+    .line 686
     instance-of v0, p1, Lcom/android/internal/view/menu/SubMenuBuilder;
 
     if-eqz v0, :cond_0
 
-    .line 671
+    .line 687
     check-cast p1, Lcom/android/internal/view/menu/SubMenuBuilder;
 
     .end local p1
@@ -72,7 +72,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/view/menu/MenuBuilder;->close(Z)V
 
-    .line 673
+    .line 689
     :cond_0
     return-void
 .end method
@@ -84,15 +84,15 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 662
+    .line 678
     if-nez p1, :cond_0
 
-    .line 665
+    .line 681
     .end local p1
     :goto_0
     return v2
 
-    .line 664
+    .line 680
     .restart local p1
     :cond_0
     iget-object v0, p0, Lcom/android/internal/view/menu/ActionMenuPresenter$PopupPresenterCallback;->this$0:Lcom/android/internal/view/menu/ActionMenuPresenter;

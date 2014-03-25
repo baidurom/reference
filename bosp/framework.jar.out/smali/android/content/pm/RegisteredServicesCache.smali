@@ -112,12 +112,12 @@
     const/4 v4, 0x0
 
     .line 114
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 80
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/content/pm/RegisteredServicesCache;->mServicesLock:Ljava/lang/Object;
 
@@ -1350,9 +1350,9 @@
     .local v9, si:Landroid/content/pm/ServiceInfo;
     new-instance v3, Landroid/content/ComponentName;
 
-    iget-object v13, v9, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
+    iget-object v13, v9, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
 
-    iget-object v14, v9, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
+    iget-object v14, v9, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
 
     invoke-direct {v3, v13, v14}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -1441,7 +1441,7 @@
 
     move-result-object v14
 
-    iget-object v15, v9, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
+    iget-object v15, v9, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
 
     invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1547,13 +1547,13 @@
 
     .line 456
     :cond_4
-    iget-object v13, v9, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v13, v9, Landroid/content/pm/ServiceInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     invoke-virtual {v7, v13}, Landroid/content/pm/PackageManager;->getResourcesForApplication(Landroid/content/pm/ApplicationInfo;)Landroid/content/res/Resources;
 
     move-result-object v13
 
-    iget-object v14, v9, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
+    iget-object v14, v9, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
 
     move-object/from16 v0, p0
 
@@ -1589,7 +1589,7 @@
 
     .line 462
     .local v8, serviceInfo:Landroid/content/pm/ServiceInfo;
-    iget-object v1, v8, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v1, v8, Landroid/content/pm/ServiceInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     .line 463
     .local v1, applicationInfo:Landroid/content/pm/ApplicationInfo;
@@ -1673,7 +1673,7 @@
 
     .line 520
     :try_start_1
-    throw v2
+    invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 

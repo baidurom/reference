@@ -139,7 +139,7 @@
 
     const/16 v1, 0x13
 
-    const-string v2, "intent.action.HOME_ACTIVITY_CHANGED"
+    const-string/jumbo v2, "intent.action.HOME_ACTIVITY_CHANGED"
 
     aput-object v2, v0, v1
 
@@ -852,7 +852,7 @@
 
     .prologue
     .line 7
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

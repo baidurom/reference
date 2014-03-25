@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 335
+    .line 343
     iput-object p1, p0, Lcom/android/server/accessibility/AccessibilityManagerService$2;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -42,12 +42,12 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 338
+    .line 346
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 339
+    .line 347
     .local v0, action:Ljava/lang/String;
     const-string v1, "android.intent.action.USER_SWITCHED"
 
@@ -57,7 +57,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 340
+    .line 348
     iget-object v1, p0, Lcom/android/server/accessibility/AccessibilityManagerService$2;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
 
     const-string v2, "android.intent.extra.user_handle"
@@ -69,12 +69,12 @@
     #calls: Lcom/android/server/accessibility/AccessibilityManagerService;->switchUser(I)V
     invoke-static {v1, v2}, Lcom/android/server/accessibility/AccessibilityManagerService;->access$1300(Lcom/android/server/accessibility/AccessibilityManagerService;I)V
 
-    .line 346
+    .line 354
     :cond_0
     :goto_0
     return-void
 
-    .line 341
+    .line 349
     :cond_1
     const-string v1, "android.intent.action.USER_REMOVED"
 
@@ -84,7 +84,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 342
+    .line 350
     iget-object v1, p0, Lcom/android/server/accessibility/AccessibilityManagerService$2;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
 
     const-string v2, "android.intent.extra.user_handle"
@@ -98,7 +98,7 @@
 
     goto :goto_0
 
-    .line 343
+    .line 351
     :cond_2
     const-string v1, "android.intent.action.USER_PRESENT"
 
@@ -108,7 +108,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 344
+    .line 352
     iget-object v1, p0, Lcom/android/server/accessibility/AccessibilityManagerService$2;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
 
     #calls: Lcom/android/server/accessibility/AccessibilityManagerService;->restoreStateFromMementoIfNeeded()V

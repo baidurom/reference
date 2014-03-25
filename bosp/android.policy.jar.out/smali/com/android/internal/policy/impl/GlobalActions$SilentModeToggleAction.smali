@@ -24,10 +24,10 @@
     .parameter
 
     .prologue
-    .line 853
+    .line 958
     iput-object p1, p0, Lcom/android/internal/policy/impl/GlobalActions$SilentModeToggleAction;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
-    .line 854
+    .line 959
     const v1, #drawable@ic_audio_vol_mute#t
 
     const v2, #drawable@ic_audio_vol#t
@@ -42,7 +42,7 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;-><init>(IIIII)V
 
-    .line 859
+    .line 964
     return-void
 .end method
 
@@ -53,14 +53,14 @@
     .parameter "on"
 
     .prologue
-    .line 862
+    .line 967
     if-eqz p1, :cond_0
 
-    .line 863
+    .line 968
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$SilentModeToggleAction;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mAudioManager:Landroid/media/AudioManager;
-    invoke-static {v0}, Lcom/android/internal/policy/impl/GlobalActions;->access$1700(Lcom/android/internal/policy/impl/GlobalActions;)Landroid/media/AudioManager;
+    invoke-static {v0}, Lcom/android/internal/policy/impl/GlobalActions;->access$1800(Lcom/android/internal/policy/impl/GlobalActions;)Landroid/media/AudioManager;
 
     move-result-object v0
 
@@ -68,16 +68,16 @@
 
     invoke-virtual {v0, v1}, Landroid/media/AudioManager;->setRingerMode(I)V
 
-    .line 867
+    .line 972
     :goto_0
     return-void
 
-    .line 865
+    .line 970
     :cond_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$SilentModeToggleAction;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mAudioManager:Landroid/media/AudioManager;
-    invoke-static {v0}, Lcom/android/internal/policy/impl/GlobalActions;->access$1700(Lcom/android/internal/policy/impl/GlobalActions;)Landroid/media/AudioManager;
+    invoke-static {v0}, Lcom/android/internal/policy/impl/GlobalActions;->access$1800(Lcom/android/internal/policy/impl/GlobalActions;)Landroid/media/AudioManager;
 
     move-result-object v0
 
@@ -92,7 +92,7 @@
     .locals 1
 
     .prologue
-    .line 874
+    .line 979
     const/4 v0, 0x0
 
     return v0
@@ -102,7 +102,7 @@
     .locals 1
 
     .prologue
-    .line 870
+    .line 975
     const/4 v0, 0x1
 
     return v0

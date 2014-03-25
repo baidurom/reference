@@ -49,7 +49,7 @@
 
     .prologue
     .line 43
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 44
     iput-object p1, p0, Landroid/content/SyncOperation;->account:Landroid/accounts/Account;
@@ -180,7 +180,7 @@
 
     .prologue
     .line 78
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 79
     iget-object v0, p1, Landroid/content/SyncOperation;->account:Landroid/accounts/Account;
@@ -694,7 +694,7 @@
     .line 121
     iget-object v0, p0, Landroid/content/SyncOperation;->extras:Landroid/os/Bundle;
 
-    const-string v1, "initialize"
+    const-string/jumbo v1, "initialize"
 
     const/4 v2, 0x0
 

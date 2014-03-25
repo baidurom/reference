@@ -465,28 +465,28 @@
 
     move-result v1
 
-    iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iput v1, v0, Landroid/widget/RelativeLayout$LayoutParams;->width:I
 
     .line 670
     invoke-virtual {p0}, Lcom/baidu/themeanimation/element/VisibleElement;->getH()I
 
     move-result v1
 
-    iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iput v1, v0, Landroid/widget/RelativeLayout$LayoutParams;->height:I
 
     .line 671
     invoke-virtual {p0}, Lcom/baidu/themeanimation/element/VisibleElement;->getX()I
 
     move-result v1
 
-    iput v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iput v1, v0, Landroid/widget/RelativeLayout$LayoutParams;->leftMargin:I
 
     .line 672
     invoke-virtual {p0}, Lcom/baidu/themeanimation/element/VisibleElement;->getY()I
 
     move-result v1
 
-    iput v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iput v1, v0, Landroid/widget/RelativeLayout$LayoutParams;->topMargin:I
 
     .line 674
     invoke-virtual {p0}, Lcom/baidu/themeanimation/element/VisibleElement;->hasW()Z
@@ -503,15 +503,15 @@
     if-ne v1, v3, :cond_2
 
     .line 676
-    iget v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v1, v0, Landroid/widget/RelativeLayout$LayoutParams;->leftMargin:I
 
-    iget v2, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iget v2, v0, Landroid/widget/RelativeLayout$LayoutParams;->width:I
 
     div-int/lit8 v2, v2, 0x2
 
     sub-int/2addr v1, v2
 
-    iput v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iput v1, v0, Landroid/widget/RelativeLayout$LayoutParams;->leftMargin:I
 
     .line 682
     :cond_0
@@ -530,15 +530,15 @@
     if-ne v1, v3, :cond_3
 
     .line 684
-    iget v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iget v1, v0, Landroid/widget/RelativeLayout$LayoutParams;->topMargin:I
 
-    iget v2, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iget v2, v0, Landroid/widget/RelativeLayout$LayoutParams;->height:I
 
     div-int/lit8 v2, v2, 0x2
 
     sub-int/2addr v1, v2
 
-    iput v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iput v1, v0, Landroid/widget/RelativeLayout$LayoutParams;->topMargin:I
 
     .line 690
     :cond_1
@@ -556,13 +556,13 @@
     if-ne v1, v2, :cond_0
 
     .line 678
-    iget v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v1, v0, Landroid/widget/RelativeLayout$LayoutParams;->leftMargin:I
 
-    iget v2, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iget v2, v0, Landroid/widget/RelativeLayout$LayoutParams;->width:I
 
     sub-int/2addr v1, v2
 
-    iput v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iput v1, v0, Landroid/widget/RelativeLayout$LayoutParams;->leftMargin:I
 
     goto :goto_0
 
@@ -577,13 +577,13 @@
     if-ne v1, v2, :cond_1
 
     .line 686
-    iget v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iget v1, v0, Landroid/widget/RelativeLayout$LayoutParams;->topMargin:I
 
-    iget v2, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iget v2, v0, Landroid/widget/RelativeLayout$LayoutParams;->height:I
 
     sub-int/2addr v1, v2
 
-    iput v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iput v1, v0, Landroid/widget/RelativeLayout$LayoutParams;->topMargin:I
 
     goto :goto_1
 .end method
@@ -915,7 +915,7 @@
 
     add-int/2addr v2, p2
 
-    iput v2, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iput v2, v0, Landroid/widget/RelativeLayout$LayoutParams;->topMargin:I
 
     .line 159
     invoke-virtual {p0}, Lcom/baidu/themeanimation/element/VisibleElement;->getX()I
@@ -924,7 +924,7 @@
 
     add-int/2addr v2, p1
 
-    iput v2, v0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iput v2, v0, Landroid/widget/RelativeLayout$LayoutParams;->leftMargin:I
 
     .line 160
     invoke-virtual {v1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V

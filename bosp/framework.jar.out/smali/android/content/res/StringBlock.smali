@@ -49,7 +49,7 @@
 
     .prologue
     .line 418
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 43
     const/4 v0, 0x0
@@ -80,7 +80,7 @@
 
     .prologue
     .line 53
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 43
     const/4 v0, 0x0
@@ -113,7 +113,7 @@
 
     .prologue
     .line 45
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 43
     const/4 v0, 0x0
@@ -1708,7 +1708,7 @@
 
     .line 126
     :cond_f
-    const-string v7, "li"
+    const-string/jumbo v7, "li"
 
     invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

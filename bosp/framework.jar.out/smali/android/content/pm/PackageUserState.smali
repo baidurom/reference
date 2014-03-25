@@ -41,7 +41,7 @@
 
     .prologue
     .line 36
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 37
     const/4 v0, 0x1
@@ -65,7 +65,7 @@
     const/4 v1, 0x0
 
     .line 41
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 42
     iget-boolean v0, p1, Landroid/content/pm/PackageUserState;->installed:Z

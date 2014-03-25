@@ -118,13 +118,13 @@
 
     move-result-object v1
 
-    const-string/jumbo v2, "that host multiple applications. You should explicitly "
+    const-string v2, "that host multiple applications. You should explicitly "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    const-string/jumbo v2, "specify a context class loader. For example: "
+    const-string v2, "specify a context class loader. For example: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -294,7 +294,7 @@
 
     .prologue
     .line 430
-    const-string/jumbo v0, "setClassAssertionStatus"
+    const-string v0, "setClassAssertionStatus"
 
     invoke-direct {p0, v0}, Landroid/app/LoadedApk$WarningContextClassLoader;->warn(Ljava/lang/String;)V
 
@@ -315,7 +315,7 @@
 
     .prologue
     .line 440
-    const-string/jumbo v0, "setDefaultAssertionStatus"
+    const-string v0, "setDefaultAssertionStatus"
 
     invoke-direct {p0, v0}, Landroid/app/LoadedApk$WarningContextClassLoader;->warn(Ljava/lang/String;)V
 
@@ -337,7 +337,7 @@
 
     .prologue
     .line 435
-    const-string/jumbo v0, "setPackageAssertionStatus"
+    const-string v0, "setPackageAssertionStatus"
 
     invoke-direct {p0, v0}, Landroid/app/LoadedApk$WarningContextClassLoader;->warn(Ljava/lang/String;)V
 

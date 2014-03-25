@@ -38,6 +38,8 @@
 
 .field static final TRANSACTION_getWifiDisplayStatus:I = 0x9
 
+.field static final TRANSACTION_isSmartBookPluggedIn:I = 0xa
+
 .field static final TRANSACTION_registerCallback:I = 0x3
 
 .field static final TRANSACTION_renameWifiDisplay:I = 0x7
@@ -131,34 +133,34 @@
     .end annotation
 
     .prologue
-    const/4 v5, 0x0
+    const/4 v3, 0x0
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
     .line 39
     sparse-switch p1, :sswitch_data_0
 
-    .line 137
+    .line 145
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    move-result v3
+    move-result v4
 
     :goto_0
-    return v3
+    return v4
 
     .line 43
     :sswitch_0
-    const-string v4, "android.hardware.display.IDisplayManager"
+    const-string v3, "android.hardware.display.IDisplayManager"
 
-    invoke-virtual {p3, v4}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    invoke-virtual {p3, v3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     goto :goto_0
 
     .line 48
     :sswitch_1
-    const-string v4, "android.hardware.display.IDisplayManager"
+    const-string v5, "android.hardware.display.IDisplayManager"
 
-    invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 50
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
@@ -179,16 +181,16 @@
     if-eqz v2, :cond_0
 
     .line 54
-    invoke-virtual {p3, v3}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {p3, v4}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 55
-    invoke-virtual {v2, p3, v3}, Landroid/view/DisplayInfo;->writeToParcel(Landroid/os/Parcel;I)V
+    invoke-virtual {v2, p3, v4}, Landroid/view/DisplayInfo;->writeToParcel(Landroid/os/Parcel;I)V
 
     goto :goto_0
 
     .line 58
     :cond_0
-    invoke-virtual {p3, v5}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {p3, v3}, Landroid/os/Parcel;->writeInt(I)V
 
     goto :goto_0
 
@@ -196,9 +198,9 @@
     .end local v0           #_arg0:I
     .end local v2           #_result:Landroid/view/DisplayInfo;
     :sswitch_2
-    const-string v4, "android.hardware.display.IDisplayManager"
+    const-string v3, "android.hardware.display.IDisplayManager"
 
-    invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 65
     invoke-virtual {p0}, Landroid/hardware/display/IDisplayManager$Stub;->getDisplayIds()[I
@@ -217,16 +219,16 @@
     .line 72
     .end local v2           #_result:[I
     :sswitch_3
-    const-string v4, "android.hardware.display.IDisplayManager"
+    const-string v3, "android.hardware.display.IDisplayManager"
 
-    invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 74
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-static {v4}, Landroid/hardware/display/IDisplayManagerCallback$Stub;->asInterface(Landroid/os/IBinder;)Landroid/hardware/display/IDisplayManagerCallback;
+    invoke-static {v3}, Landroid/hardware/display/IDisplayManagerCallback$Stub;->asInterface(Landroid/os/IBinder;)Landroid/hardware/display/IDisplayManagerCallback;
 
     move-result-object v0
 
@@ -242,9 +244,9 @@
     .line 81
     .end local v0           #_arg0:Landroid/hardware/display/IDisplayManagerCallback;
     :sswitch_4
-    const-string v4, "android.hardware.display.IDisplayManager"
+    const-string v3, "android.hardware.display.IDisplayManager"
 
-    invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 82
     invoke-virtual {p0}, Landroid/hardware/display/IDisplayManager$Stub;->scanWifiDisplays()V
@@ -256,9 +258,9 @@
 
     .line 88
     :sswitch_5
-    const-string v4, "android.hardware.display.IDisplayManager"
+    const-string v3, "android.hardware.display.IDisplayManager"
 
-    invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 90
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -277,9 +279,9 @@
     .line 97
     .end local v0           #_arg0:Ljava/lang/String;
     :sswitch_6
-    const-string v4, "android.hardware.display.IDisplayManager"
+    const-string v3, "android.hardware.display.IDisplayManager"
 
-    invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 98
     invoke-virtual {p0}, Landroid/hardware/display/IDisplayManager$Stub;->disconnectWifiDisplay()V
@@ -291,9 +293,9 @@
 
     .line 104
     :sswitch_7
-    const-string v4, "android.hardware.display.IDisplayManager"
+    const-string v3, "android.hardware.display.IDisplayManager"
 
-    invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 106
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -319,9 +321,9 @@
     .end local v0           #_arg0:Ljava/lang/String;
     .end local v1           #_arg1:Ljava/lang/String;
     :sswitch_8
-    const-string v4, "android.hardware.display.IDisplayManager"
+    const-string v3, "android.hardware.display.IDisplayManager"
 
-    invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 117
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -340,9 +342,9 @@
     .line 124
     .end local v0           #_arg0:Ljava/lang/String;
     :sswitch_9
-    const-string v4, "android.hardware.display.IDisplayManager"
+    const-string v5, "android.hardware.display.IDisplayManager"
 
-    invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 125
     invoke-virtual {p0}, Landroid/hardware/display/IDisplayManager$Stub;->getWifiDisplayStatus()Landroid/hardware/display/WifiDisplayStatus;
@@ -357,16 +359,42 @@
     if-eqz v2, :cond_1
 
     .line 128
-    invoke-virtual {p3, v3}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {p3, v4}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 129
-    invoke-virtual {v2, p3, v3}, Landroid/hardware/display/WifiDisplayStatus;->writeToParcel(Landroid/os/Parcel;I)V
+    invoke-virtual {v2, p3, v4}, Landroid/hardware/display/WifiDisplayStatus;->writeToParcel(Landroid/os/Parcel;I)V
 
     goto/16 :goto_0
 
     .line 132
     :cond_1
-    invoke-virtual {p3, v5}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {p3, v3}, Landroid/os/Parcel;->writeInt(I)V
+
+    goto/16 :goto_0
+
+    .line 138
+    .end local v2           #_result:Landroid/hardware/display/WifiDisplayStatus;
+    :sswitch_a
+    const-string v5, "android.hardware.display.IDisplayManager"
+
+    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 139
+    invoke-virtual {p0}, Landroid/hardware/display/IDisplayManager$Stub;->isSmartBookPluggedIn()Z
+
+    move-result v2
+
+    .line 140
+    .local v2, _result:Z
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 141
+    if-eqz v2, :cond_2
+
+    move v3, v4
+
+    :cond_2
+    invoke-virtual {p3, v3}, Landroid/os/Parcel;->writeInt(I)V
 
     goto/16 :goto_0
 
@@ -382,6 +410,7 @@
         0x7 -> :sswitch_7
         0x8 -> :sswitch_8
         0x9 -> :sswitch_9
+        0xa -> :sswitch_a
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method
