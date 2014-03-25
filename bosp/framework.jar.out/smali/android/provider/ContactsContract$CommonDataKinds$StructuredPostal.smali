@@ -124,26 +124,26 @@
     packed-switch p0, :pswitch_data_0
 
     .line 5875
-    const v0, 0x10402b4
+    const v0, #string@postalTypeCustom#t
 
     :goto_0
     return v0
 
     .line 5872
     :pswitch_0
-    const v0, 0x10402b5
+    const v0, #string@postalTypeHome#t
 
     goto :goto_0
 
     .line 5873
     :pswitch_1
-    const v0, 0x10402b6
+    const v0, #string@postalTypeWork#t
 
     goto :goto_0
 
     .line 5874
     :pswitch_2
-    const v0, 0x10402b7
+    const v0, #string@postalTypeOther#t
 
     goto :goto_0
 

@@ -128,13 +128,13 @@
 
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x10403de
+    const v1, #string@webpage_unresponsive#t
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
-    const v1, 0x10403db
+    const v1, #string@force_close#t
 
     new-instance v2, Landroid/webkit/WebCoreThreadWatchdog$PageNotRespondingRunnable$3;
 
@@ -144,7 +144,7 @@
 
     move-result-object v0
 
-    const v1, 0x10403dd
+    const v1, #string@wait#t
 
     new-instance v2, Landroid/webkit/WebCoreThreadWatchdog$PageNotRespondingRunnable$2;
 
@@ -162,7 +162,7 @@
 
     move-result-object v0
 
-    const v1, 0x1080027
+    const v1, #drawable@ic_dialog_alert#t
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
 

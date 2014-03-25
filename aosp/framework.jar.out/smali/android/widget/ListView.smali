@@ -99,7 +99,7 @@
 
     .prologue
     .line 139
-    const v0, 0x1010074
+    const v0, #attr@listViewStyle#t
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/ListView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -177,7 +177,7 @@
     .line 151
     new-instance v6, Landroid/widget/ArrayAdapter;
 
-    const v7, 0x1090003
+    const v7, #layout@simple_list_item_1#t
 
     invoke-direct {v6, p1, v7, v3}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;I[Ljava/lang/Object;)V
 

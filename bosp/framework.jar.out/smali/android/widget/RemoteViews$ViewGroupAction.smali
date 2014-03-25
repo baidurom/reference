@@ -40,7 +40,7 @@
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews$Action;-><init>(Landroid/widget/RemoteViews$1;)V
 
     .line 1186
-    iput p2, p0, Landroid/widget/RemoteViews$Action;->viewId:I
+    iput p2, p0, Landroid/widget/RemoteViews$ViewGroupAction;->viewId:I
 
     .line 1187
     iput-object p3, p0, Landroid/widget/RemoteViews$ViewGroupAction;->nestedViews:Landroid/widget/RemoteViews;
@@ -76,7 +76,7 @@
 
     move-result v1
 
-    iput v1, p0, Landroid/widget/RemoteViews$Action;->viewId:I
+    iput v1, p0, Landroid/widget/RemoteViews$ViewGroupAction;->viewId:I
 
     .line 1195
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
@@ -134,7 +134,7 @@
 
     .line 1218
     .local v0, context:Landroid/content/Context;
-    iget v2, p0, Landroid/widget/RemoteViews$Action;->viewId:I
+    iget v2, p0, Landroid/widget/RemoteViews$ViewGroupAction;->viewId:I
 
     invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -279,7 +279,7 @@
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 1205
-    iget v0, p0, Landroid/widget/RemoteViews$Action;->viewId:I
+    iget v0, p0, Landroid/widget/RemoteViews$ViewGroupAction;->viewId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 

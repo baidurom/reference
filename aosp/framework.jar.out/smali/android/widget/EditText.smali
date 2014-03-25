@@ -25,7 +25,7 @@
 
     .prologue
     .line 56
-    const v0, 0x101006e
+    const v0, #attr@editTextStyle#t
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/EditText;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

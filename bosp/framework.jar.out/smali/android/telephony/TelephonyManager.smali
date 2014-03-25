@@ -1603,6 +1603,47 @@
     goto :goto_0
 .end method
 
+.method public getIccCardType()Ljava/lang/String;
+    .locals 3
+
+    .prologue
+    const/4 v1, 0x0
+
+    .line 1293
+    :try_start_0
+    invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubscriberInfo()Lcom/android/internal/telephony/IPhoneSubInfo;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Lcom/android/internal/telephony/IPhoneSubInfo;->getIccCardType()Ljava/lang/String;
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_1
+
+    move-result-object v1
+
+    .line 1298
+    :goto_0
+    return-object v1
+
+    .line 1294
+    :catch_0
+    move-exception v0
+
+    .line 1295
+    .local v0, ex:Landroid/os/RemoteException;
+    goto :goto_0
+
+    .line 1296
+    .end local v0           #ex:Landroid/os/RemoteException;
+    :catch_1
+    move-exception v0
+
+    .line 1298
+    .local v0, ex:Ljava/lang/NullPointerException;
+    goto :goto_0
+.end method
+
 .method public getIsimDomain()Ljava/lang/String;
     .locals 3
 
@@ -2497,7 +2538,7 @@
 
     move-result-object v0
 
-    const v1, 0x1110030
+    const v1, #bool@config_sms_capable#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -2528,7 +2569,7 @@
 
     move-result-object v0
 
-    const v1, 0x111002f
+    const v1, #bool@config_voice_capable#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -2616,45 +2657,4 @@
     move-exception v2
 
     goto :goto_2
-.end method
-
-.method public getIccCardType()Ljava/lang/String;
-    .locals 3
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 1148
-    :try_start_0
-    invoke-direct {p0}, Landroid/telephony/TelephonyManager;->getSubscriberInfo()Lcom/android/internal/telephony/IPhoneSubInfo;
-
-    move-result-object v2
-
-    invoke-interface {v2}, Lcom/android/internal/telephony/IPhoneSubInfo;->getIccCardType()Ljava/lang/String;
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_1
-
-    move-result-object v1
-
-    .line 1153
-    :goto_0
-    return-object v1
-
-    .line 1149
-    :catch_0
-    move-exception v0
-
-    .line 1150
-    .local v0, ex:Landroid/os/RemoteException;
-    goto :goto_0
-
-    .line 1151
-    .end local v0           #ex:Landroid/os/RemoteException;
-    :catch_1
-    move-exception v0
-
-    .line 1153
-    .local v0, ex:Ljava/lang/NullPointerException;
-    goto :goto_0
 .end method

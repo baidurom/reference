@@ -274,10 +274,6 @@
     move-result-object v3
 
     .line 1493
-    invoke-interface {v6}, Landroid/database/Cursor;->close()V
-
-    goto :goto_0
-
     .end local v7           #contactId:J
     .end local v9           #lookupKey:Ljava/lang/String;
     :cond_1
@@ -363,10 +359,6 @@
     move-result-object v3
 
     .line 1528
-    invoke-interface {v6}, Landroid/database/Cursor;->close()V
-
-    goto :goto_0
-
     .end local v7           #contactId:J
     :cond_2
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
@@ -479,7 +471,7 @@
 
     move-result-object v3
 
-    .line 1989
+    .line 1986
     .end local v8           #displayPhotoUri:Landroid/net/Uri;
     .end local v9           #fd:Landroid/content/res/AssetFileDescriptor;
     :cond_0
@@ -541,6 +533,7 @@
     if-eqz v6, :cond_0
 
     .line 1989
+    :goto_1
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     goto :goto_0
@@ -551,8 +544,6 @@
 
     :try_start_2
     invoke-interface {v6, v0}, Landroid/database/Cursor;->getBlob(I)[B
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     move-result-object v7
 
@@ -563,29 +554,21 @@
     .line 1988
     if-eqz v6, :cond_0
 
-    .line 1989
-    invoke-interface {v6}, Landroid/database/Cursor;->close()V
-
-    goto :goto_0
+    goto :goto_1
 
     .line 1986
     :cond_4
-    :try_start_3
     new-instance v3, Ljava/io/ByteArrayInputStream;
 
     invoke-direct {v3, v7}, Ljava/io/ByteArrayInputStream;-><init>([B)V
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 1988
     if-eqz v6, :cond_0
 
-    .line 1989
-    invoke-interface {v6}, Landroid/database/Cursor;->close()V
+    goto :goto_1
 
-    goto :goto_0
-
-    .line 1988
     .end local v7           #data:[B
     :catchall_0
     move-exception v0
@@ -595,6 +578,7 @@
     .line 1989
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
+    .line 1988
     :cond_5
     throw v0
 .end method

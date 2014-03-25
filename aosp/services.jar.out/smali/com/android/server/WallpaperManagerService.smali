@@ -1476,7 +1476,7 @@
 
     iget-object v3, v0, Lcom/android/server/WallpaperManagerService;->mContext:Landroid/content/Context;
 
-    const v4, 0x104001d
+    const v4, #string@default_wallpaper_component#t
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1906,7 +1906,7 @@
     .line 881
     const-string v3, "android.intent.extra.client_label"
 
-    const v4, 0x1040484
+    const v4, #string@wallpaper_binding_label#t
 
     invoke-virtual {v12, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
@@ -1929,7 +1929,7 @@
 
     iget-object v6, v0, Lcom/android/server/WallpaperManagerService;->mContext:Landroid/content/Context;
 
-    const v7, 0x1040485
+    const v7, #string@chooser_wallpaper#t
 
     invoke-virtual {v6, v7}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 

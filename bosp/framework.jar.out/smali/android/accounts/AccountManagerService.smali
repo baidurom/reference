@@ -1333,7 +1333,7 @@
     .local v8, authTokenLabel:Ljava/lang/String;
     new-instance v11, Landroid/app/Notification;
 
-    const v2, 0x108008a
+    const v2, #drawable@stat_sys_warning#t
 
     const/4 v3, 0x0
 
@@ -1347,7 +1347,7 @@
 
     iget-object v2, v0, Landroid/accounts/AccountManagerService;->mContext:Landroid/content/Context;
 
-    const v3, 0x1040480
+    const v3, #string@permission_request_notification_with_subtitle#t
 
     const/4 v4, 0x1
 
@@ -1588,7 +1588,7 @@
     .line 2145
     new-instance v12, Landroid/app/Notification;
 
-    const v4, 0x108008a
+    const v4, #drawable@stat_sys_warning#t
 
     const/4 v5, 0x0
 
@@ -1610,7 +1610,7 @@
 
     iget-object v4, v0, Landroid/accounts/AccountManagerService;->mContext:Landroid/content/Context;
 
-    const v5, 0x10400ce
+    const v5, #string@notification_title#t
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -6054,7 +6054,7 @@
     .restart local v22       #i$:Ljava/util/Iterator;
     :cond_3
     :try_start_3
-    invoke-virtual/range {v16 .. v17}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual/range {v16 .. v17}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v15
 
@@ -6076,7 +6076,7 @@
 
     move-object/from16 v1, v17
 
-    invoke-virtual {v0, v1, v15}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1, v15}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 361
     :cond_4
@@ -6090,7 +6090,7 @@
     .end local v15           #accountNames:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     .end local v17           #accountType:Ljava/lang/String;
     :cond_5
-    invoke-virtual/range {v16 .. v16}, Ljava/util/LinkedHashMap;->entrySet()Ljava/util/Set;
+    invoke-virtual/range {v16 .. v16}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
     move-result-object v3
 

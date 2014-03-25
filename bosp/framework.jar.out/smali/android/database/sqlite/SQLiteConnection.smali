@@ -1769,7 +1769,7 @@
     const/4 v3, 0x1
 
     .line 383
-    if-eqz v3, :cond_3
+    if-eqz v3, :cond_4
 
     :try_start_2
     const-string v4, "COMMIT"
@@ -1841,17 +1841,12 @@
     .end local v0           #ex:Ljava/lang/RuntimeException;
     .restart local v2       #oldLocale:Ljava/lang/String;
     .restart local v3       #success:Z
-    :cond_3
-    :try_start_3
-    const-string v4, "ROLLBACK"
-
-    goto :goto_1
-
     :catchall_0
     move-exception v4
 
-    if-eqz v3, :cond_4
+    if-eqz v3, :cond_3
 
+    :try_start_3
     const-string v5, "COMMIT"
 
     :goto_2
@@ -1863,12 +1858,17 @@
 
     throw v4
 
-    :cond_4
+    :cond_3
     const-string v5, "ROLLBACK"
+
+    goto :goto_2
+
+    :cond_4
+    const-string v4, "ROLLBACK"
     :try_end_3
     .catch Ljava/lang/RuntimeException; {:try_start_3 .. :try_end_3} :catch_0
 
-    goto :goto_2
+    goto :goto_1
 .end method
 
 .method private setPageSize()V
@@ -2430,31 +2430,26 @@
 
     .line 1142
     .end local v12           #label:Ljava/lang/String;
+    .end local v21           #i:I
     .end local v22           #name:Ljava/lang/String;
     .end local v23           #path:Ljava/lang/String;
-    :cond_1
-    invoke-virtual {v10}, Landroid/database/CursorWindow;->close()V
-
-    .line 1144
-    .end local v21           #i:I
-    :goto_3
-    return-void
-
-    .line 1139
-    :catch_0
-    move-exception v1
-
-    .line 1142
-    invoke-virtual {v10}, Landroid/database/CursorWindow;->close()V
-
-    goto :goto_3
-
     :catchall_0
     move-exception v1
 
     invoke-virtual {v10}, Landroid/database/CursorWindow;->close()V
 
     throw v1
+
+    .line 1139
+    :catch_0
+    move-exception v1
+
+    .line 1142
+    :cond_1
+    invoke-virtual {v10}, Landroid/database/CursorWindow;->close()V
+
+    .line 1144
+    return-void
 
     .line 1130
     .restart local v21       #i:I
@@ -2899,9 +2894,9 @@
 
     invoke-virtual {v5, v0}, Landroid/database/sqlite/SQLiteConnection$OperationLog;->endOperation(I)V
 
+    .line 682
     return-object v4
 
-    .line 682
     :cond_1
     const/4 v4, 0x0
 
@@ -3076,6 +3071,7 @@
 
     invoke-virtual {v4, v1, v5}, Landroid/database/sqlite/SQLiteConnection$OperationLog;->logOperation(ILjava/lang/String;)V
 
+    .line 729
     :cond_1
     return v0
 
@@ -3155,6 +3151,7 @@
 
     invoke-virtual {v5, v1, v6}, Landroid/database/sqlite/SQLiteConnection$OperationLog;->logOperation(ILjava/lang/String;)V
 
+    .line 740
     :cond_2
     throw v4
 .end method
@@ -3418,6 +3415,7 @@
     :cond_2
     invoke-virtual/range {p3 .. p3}, Landroid/database/CursorWindow;->releaseReference()V
 
+    .line 845
     return v10
 
     .line 847
@@ -3554,6 +3552,7 @@
 
     invoke-virtual {v3, v9, v4}, Landroid/database/sqlite/SQLiteConnection$OperationLog;->logOperation(ILjava/lang/String;)V
 
+    .line 856
     :cond_3
     throw v2
     :try_end_a
@@ -3654,6 +3653,7 @@
 
     invoke-virtual {v5, v0}, Landroid/database/sqlite/SQLiteConnection$OperationLog;->endOperation(I)V
 
+    .line 775
     return-wide v3
 
     .line 778
@@ -3793,6 +3793,7 @@
 
     invoke-virtual {v5, v0}, Landroid/database/sqlite/SQLiteConnection$OperationLog;->endOperation(I)V
 
+    .line 591
     return-wide v3
 
     .line 593
@@ -3932,6 +3933,7 @@
 
     invoke-virtual {v4, v0}, Landroid/database/sqlite/SQLiteConnection$OperationLog;->endOperation(I)V
 
+    .line 634
     return-object v3
 
     .line 636

@@ -70,7 +70,7 @@
 
     move-result-object v0
 
-    const v1, 0x10900e7
+    const v1, #layout@webview_find#t
 
     const/4 v2, 0x0
 
@@ -83,7 +83,7 @@
     .line 52
     iget-object v0, p0, Landroid/webkit/FindActionModeCallback;->mCustomView:Landroid/view/View;
 
-    const v1, 0x1020003
+    const v1, #id@edit#t
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -115,7 +115,7 @@
     .line 57
     iget-object v0, p0, Landroid/webkit/FindActionModeCallback;->mCustomView:Landroid/view/View;
 
-    const v1, 0x10203a9
+    const v1, #id@matches#t
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -211,7 +211,7 @@
     .line 166
     iget-object v0, p0, Landroid/webkit/FindActionModeCallback;->mMatches:Landroid/widget/TextView;
 
-    const v1, 0x104049e
+    const v1, #string@no_matches#t
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -230,7 +230,7 @@
 
     iget-object v1, p0, Landroid/webkit/FindActionModeCallback;->mResources:Landroid/content/res/Resources;
 
-    const v2, 0x1130016
+    const v2, #plurals@matches_found#t
 
     iget v3, p0, Landroid/webkit/FindActionModeCallback;->mNumberOfMatches:I
 
@@ -511,7 +511,7 @@
 
     .line 226
     :pswitch_data_0
-    .packed-switch 0x10203b8
+    .packed-switch #id@find_prev#t
         :pswitch_0
         :pswitch_1
     .end packed-switch
@@ -561,7 +561,7 @@
 
     move-result-object v2
 
-    const v3, 0x1140001
+    const v3, #menu@webview_find#t
 
     invoke-virtual {v2, v3, p2}, Landroid/view/MenuInflater;->inflate(ILandroid/view/Menu;)V
 

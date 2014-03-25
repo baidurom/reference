@@ -61,7 +61,7 @@
 
     .line 53
     .local v0, result:F
-    const v1, 0x104006c
+    const v1, #string@byteShort#t
 
     .line 54
     .local v1, suffix:I
@@ -70,7 +70,7 @@
     if-lez v3, :cond_1
 
     .line 55
-    const v1, 0x104006d
+    const v1, #string@kilobyteShort#t
 
     .line 56
     div-float/2addr v0, v5
@@ -82,7 +82,7 @@
     if-lez v3, :cond_2
 
     .line 59
-    const v1, 0x104006e
+    const v1, #string@megabyteShort#t
 
     .line 60
     div-float/2addr v0, v5
@@ -94,7 +94,7 @@
     if-lez v3, :cond_3
 
     .line 63
-    const v1, 0x104006f
+    const v1, #string@gigabyteShort#t
 
     .line 64
     div-float/2addr v0, v5
@@ -106,7 +106,7 @@
     if-lez v3, :cond_4
 
     .line 67
-    const v1, 0x1040070
+    const v1, #string@terabyteShort#t
 
     .line 68
     div-float/2addr v0, v5
@@ -118,7 +118,7 @@
     if-lez v3, :cond_5
 
     .line 71
-    const v1, 0x1040071
+    const v1, #string@petabyteShort#t
 
     .line 72
     div-float/2addr v0, v5
@@ -153,7 +153,7 @@
 
     move-result-object v3
 
-    const v4, 0x1040072
+    const v4, #string@fileSizeSuffix#t
 
     const/4 v5, 0x2
 

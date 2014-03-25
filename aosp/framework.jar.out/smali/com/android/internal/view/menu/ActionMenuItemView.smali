@@ -84,7 +84,7 @@
 
     .line 66
     .local v2, res:Landroid/content/res/Resources;
-    const v3, 0x111003d
+    const v3, #bool@config_allowActionMenuItemTextWithIcon#t
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -425,7 +425,7 @@
 
     move-result-object v0
 
-    const v1, 0x111003d
+    const v1, #bool@config_allowActionMenuItemTextWithIcon#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 

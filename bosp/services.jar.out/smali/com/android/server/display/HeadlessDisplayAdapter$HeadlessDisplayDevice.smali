@@ -71,7 +71,7 @@
 
     move-result-object v1
 
-    const v2, 0x104051b
+    const v2, #string@display_manager_built_in_display_name#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

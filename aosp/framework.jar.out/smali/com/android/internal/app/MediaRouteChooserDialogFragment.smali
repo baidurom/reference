@@ -76,11 +76,11 @@
 
     :array_0
     .array-data 0x4
-        0x89t 0x0t 0x9t 0x1t
-        0x88t 0x0t 0x9t 0x1t
-        0x85t 0x0t 0x9t 0x1t
-        0x86t 0x0t 0x9t 0x1t
-        0x87t 0x0t 0x9t 0x1t
+        #layout@media_route_list_item_top_header#a
+        #layout@media_route_list_item_section_header#a
+        #layout@media_route_list_item#a
+        #layout@media_route_list_item_checkable#a
+        #layout@media_route_list_item_collapse_group#a
     .end array-data
 .end method
 
@@ -108,7 +108,7 @@
     .line 90
     const/4 v0, 0x1
 
-    const v1, 0x103012e
+    const v1, #style@Theme.DeviceDefault.Dialog#t
 
     invoke-virtual {p0, v0, v1}, Lcom/android/internal/app/MediaRouteChooserDialogFragment;->setStyle(II)V
 
@@ -334,7 +334,7 @@
     iput-object p1, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment;->mInflater:Landroid/view/LayoutInflater;
 
     .line 176
-    const v3, 0x1090084
+    const v3, #layout@media_route_chooser_layout#t
 
     invoke-virtual {p1, v3, p2, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -342,7 +342,7 @@
 
     .line 178
     .local v1, layout:Landroid/view/View;
-    const v3, 0x1020319
+    const v3, #id@volume_icon#t
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -353,7 +353,7 @@
     iput-object v3, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment;->mVolumeIcon:Landroid/widget/ImageView;
 
     .line 179
-    const v3, 0x102031a
+    const v3, #id@volume_slider#t
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -381,7 +381,7 @@
     if-eqz v3, :cond_0
 
     .line 184
-    const v3, 0x102031b
+    const v3, #id@extended_settings#t
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -399,7 +399,7 @@
     .line 189
     .end local v0           #extendedSettingsButton:Landroid/view/View;
     :cond_0
-    const v3, 0x102000a
+    const v3, #id@list#t
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -634,7 +634,7 @@
     if-nez v1, :cond_3
 
     :cond_1
-    const v1, 0x10802a2
+    const v1, #drawable@ic_audio_vol#t
 
     :goto_1
     invoke-virtual {v2, v1}, Landroid/widget/ImageView;->setImageResource(I)V
@@ -675,7 +675,7 @@
 
     .line 139
     :cond_3
-    const v1, 0x1080319
+    const v1, #drawable@ic_media_route_on_holo_dark#t
 
     goto :goto_1
 

@@ -111,62 +111,62 @@
     packed-switch p0, :pswitch_data_0
 
     .line 6047
-    const v0, 0x10402bc
+    const v0, #string@imProtocolCustom#t
 
     :goto_0
     return v0
 
     .line 6038
     :pswitch_0
-    const v0, 0x10402bd
+    const v0, #string@imProtocolAim#t
 
     goto :goto_0
 
     .line 6039
     :pswitch_1
-    const v0, 0x10402be
+    const v0, #string@imProtocolMsn#t
 
     goto :goto_0
 
     .line 6040
     :pswitch_2
-    const v0, 0x10402bf
+    const v0, #string@imProtocolYahoo#t
 
     goto :goto_0
 
     .line 6041
     :pswitch_3
-    const v0, 0x10402c0
+    const v0, #string@imProtocolSkype#t
 
     goto :goto_0
 
     .line 6042
     :pswitch_4
-    const v0, 0x10402c1
+    const v0, #string@imProtocolQq#t
 
     goto :goto_0
 
     .line 6043
     :pswitch_5
-    const v0, 0x10402c2
+    const v0, #string@imProtocolGoogleTalk#t
 
     goto :goto_0
 
     .line 6044
     :pswitch_6
-    const v0, 0x10402c3
+    const v0, #string@imProtocolIcq#t
 
     goto :goto_0
 
     .line 6045
     :pswitch_7
-    const v0, 0x10402c4
+    const v0, #string@imProtocolJabber#t
 
     goto :goto_0
 
     .line 6046
     :pswitch_8
-    const v0, 0x10402c5
+    const v0, #string@imProtocolNetMeeting#t
 
     goto :goto_0
 
@@ -233,26 +233,26 @@
     packed-switch p0, :pswitch_data_0
 
     .line 6013
-    const v0, 0x10402b8
+    const v0, #string@imTypeCustom#t
 
     :goto_0
     return v0
 
     .line 6010
     :pswitch_0
-    const v0, 0x10402b9
+    const v0, #string@imTypeHome#t
 
     goto :goto_0
 
     .line 6011
     :pswitch_1
-    const v0, 0x10402ba
+    const v0, #string@imTypeWork#t
 
     goto :goto_0
 
     .line 6012
     :pswitch_2
-    const v0, 0x10402bb
+    const v0, #string@imTypeOther#t
 
     goto :goto_0
 

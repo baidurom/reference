@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 8319
+    .line 8668
     iput-object p1, p0, Landroid/webkit/WebViewClassic$InvokeListBox$2;->this$1:Landroid/webkit/WebViewClassic$InvokeListBox;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -43,13 +43,13 @@
     .parameter "which"
 
     .prologue
-    .line 8322
+    .line 8671
     iget-object v0, p0, Landroid/webkit/WebViewClassic$InvokeListBox$2;->this$1:Landroid/webkit/WebViewClassic$InvokeListBox;
 
     iget-object v0, v0, Landroid/webkit/WebViewClassic$InvokeListBox;->this$0:Landroid/webkit/WebViewClassic;
 
     #getter for: Landroid/webkit/WebViewClassic;->mWebViewCore:Landroid/webkit/WebViewCore;
-    invoke-static {v0}, Landroid/webkit/WebViewClassic;->access$1600(Landroid/webkit/WebViewClassic;)Landroid/webkit/WebViewCore;
+    invoke-static {v0}, Landroid/webkit/WebViewClassic;->access$1000(Landroid/webkit/WebViewClassic;)Landroid/webkit/WebViewCore;
 
     move-result-object v0
 
@@ -61,6 +61,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/webkit/WebViewCore;->sendMessage(III)V
 
-    .line 8324
+    .line 8673
     return-void
 .end method

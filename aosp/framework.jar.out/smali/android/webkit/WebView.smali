@@ -56,7 +56,7 @@
 
     .prologue
     .line 450
-    const v0, 0x1010085
+    const v0, #attr@webViewStyle#t
 
     invoke-direct {p0, p1, p2, v0}, Landroid/webkit/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

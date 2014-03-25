@@ -1006,7 +1006,7 @@
 
     .line 981
     :pswitch_0
-    const v2, 0x1100004
+    const v2, #raw@nodomain#t
 
     .line 1013
     .local v2, resid:I
@@ -1067,7 +1067,7 @@
     .end local v2           #resid:I
     .end local v3           #value:Landroid/util/TypedValue;
     :pswitch_1
-    const v2, 0x1100003
+    const v2, #raw@loaderror#t
 
     .line 986
     .restart local v2       #resid:I
@@ -1076,7 +1076,7 @@
     .line 990
     .end local v2           #resid:I
     :pswitch_2
-    const v2, 0x10800e1
+    const v2, #drawable@btn_check_off#t
 
     .line 991
     .restart local v2       #resid:I
@@ -1089,7 +1089,7 @@
 
     move-result-object v4
 
-    const v5, 0x104048f
+    const v5, #string@upload_file#t
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1103,7 +1103,7 @@
 
     move-result-object v4
 
-    const v5, 0x1040491
+    const v5, #string@reset#t
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1117,7 +1117,7 @@
 
     move-result-object v4
 
-    const v5, 0x1040492
+    const v5, #string@submit#t
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1131,7 +1131,7 @@
 
     move-result-object v4
 
-    const v5, 0x1040490
+    const v5, #string@no_file_chosen#t
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2450,7 +2450,7 @@
     if-eqz v0, :cond_0
 
     .line 430
-    invoke-virtual {v0}, Landroid/webkit/WebHistoryItemClassic;->getUrl()Ljava/lang/String;
+    invoke-virtual {v0}, Landroid/webkit/WebHistoryItem;->getUrl()Ljava/lang/String;
 
     move-result-object v2
 
@@ -2661,7 +2661,7 @@
 
     .line 867
     .local v3, res:Landroid/content/res/Resources;
-    const v6, 0x1100002
+    const v6, #raw@incognito_mode_start_page#t
 
     invoke-virtual {v3, v6}, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;
 
@@ -2735,7 +2735,7 @@
     .local v0, h:Landroid/webkit/WebHistoryItem;
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0}, Landroid/webkit/WebHistoryItemClassic;->getUrl()Ljava/lang/String;
+    invoke-virtual {v0}, Landroid/webkit/WebHistoryItem;->getUrl()Ljava/lang/String;
 
     move-result-object v2
 
@@ -3165,7 +3165,7 @@
     .line 502
     new-instance v3, Landroid/net/WebAddress;
 
-    invoke-virtual {v0}, Landroid/webkit/WebHistoryItemClassic;->getUrl()Ljava/lang/String;
+    invoke-virtual {v0}, Landroid/webkit/WebHistoryItem;->getUrl()Ljava/lang/String;
 
     move-result-object v4
 

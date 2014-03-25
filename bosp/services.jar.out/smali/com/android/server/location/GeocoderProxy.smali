@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static final SERVICE_ACTION:Ljava/lang/String; = "com.android.location.service.GeocodeProvider"
+.field private static final SERVICE_ACTION:Ljava/lang/String; = "com.google.android.location.GeocodeProvider"
 
 .field private static final TAG:Ljava/lang/String; = "GeocoderProxy"
 
@@ -49,7 +49,7 @@
 
     const-string v2, "GeocoderProxy"
 
-    const-string v3, "com.android.location.service.GeocodeProvider"
+    const-string v3, "com.google.android.location.GeocodeProvider"
 
     move-object v4, p2
 

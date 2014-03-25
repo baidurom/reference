@@ -322,7 +322,7 @@
 
     .line 640
     .local v3, resources:Landroid/content/res/Resources;
-    const v5, 0x106006b
+    const v5, #color@config_defaultNotificationColor#t
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -331,7 +331,7 @@
     iput v5, p0, Lcom/android/server/NotificationManagerService;->mDefaultNotificationColor:I
 
     .line 642
-    const v5, 0x10e001c
+    const v5, #integer@config_defaultNotificationLedOn#t
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -340,7 +340,7 @@
     iput v5, p0, Lcom/android/server/NotificationManagerService;->mDefaultNotificationLedOn:I
 
     .line 644
-    const v5, 0x10e001d
+    const v5, #integer@config_defaultNotificationLedOff#t
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -349,7 +349,7 @@
     iput v5, p0, Lcom/android/server/NotificationManagerService;->mDefaultNotificationLedOff:I
 
     .line 647
-    const v5, 0x1070032
+    const v5, #array@config_defaultNotificationVibePattern#t
 
     sget-object v6, Lcom/android/server/NotificationManagerService;->DEFAULT_VIBRATE_PATTERN:[J
 
@@ -360,7 +360,7 @@
     iput-object v5, p0, Lcom/android/server/NotificationManagerService;->mDefaultVibrationPattern:[J
 
     .line 652
-    const v5, 0x1070033
+    const v5, #array@config_notificationFallbackVibePattern#t
 
     sget-object v6, Lcom/android/server/NotificationManagerService;->DEFAULT_VIBRATE_PATTERN:[J
 

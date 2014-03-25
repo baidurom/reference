@@ -46,7 +46,7 @@
     .parameter "type"
 
     .prologue
-    const v0, 0x10402ae
+    const v0, #string@eventTypeOther#t
 
     .line 6433
     if-nez p0, :cond_0
@@ -65,19 +65,19 @@
     packed-switch v1, :pswitch_data_0
 
     .line 6441
-    const v0, 0x10402ab
+    const v0, #string@eventTypeCustom#t
 
     goto :goto_0
 
     .line 6438
     :pswitch_1
-    const v0, 0x10402ad
+    const v0, #string@eventTypeAnniversary#t
 
     goto :goto_0
 
     .line 6439
     :pswitch_2
-    const v0, 0x10402ac
+    const v0, #string@eventTypeBirthday#t
 
     goto :goto_0
 

@@ -51,7 +51,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x1090013
+    const v0, #layout@select_dialog_multichoice#t
 
     :goto_0
     #getter for: Landroid/webkit/WebViewClassic$InvokeListBox;->mContainers:[Landroid/webkit/WebViewClassic$InvokeListBox$Container;
@@ -66,7 +66,7 @@
 
     .line 8130
     :cond_0
-    const v0, 0x10900e8
+    const v0, #layout@webview_select_singlechoice#t
 
     goto :goto_0
 .end method
@@ -153,7 +153,7 @@
     .prologue
     const/4 v7, 0x0
 
-    const v6, 0x1080012
+    const v6, #drawable@divider_horizontal_bright#t
 
     const/4 v5, 0x1
 

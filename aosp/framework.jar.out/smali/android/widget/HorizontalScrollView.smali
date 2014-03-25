@@ -77,7 +77,7 @@
 
     .prologue
     .line 141
-    const v0, 0x1010353
+    const v0, #attr@horizontalScrollViewStyle#t
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/HorizontalScrollView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

@@ -1535,7 +1535,7 @@
 
     move-result-object v0
 
-    const v1, 0x111002e
+    const v1, #bool@config_bluetooth_address_validation#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 

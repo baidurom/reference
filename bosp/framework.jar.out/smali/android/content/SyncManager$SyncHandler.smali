@@ -822,7 +822,7 @@
 
     move-result-object v2
 
-    const v3, 0x10400d1
+    const v3, #string@contentServiceTooManyDeletesNotificationDesc#t
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -832,7 +832,7 @@
     .local v12, tooManyDeletesDescFormat:Ljava/lang/CharSequence;
     new-instance v9, Landroid/app/Notification;
 
-    const v2, 0x1080523
+    const v2, #drawable@stat_notify_sync_error#t
 
     iget-object v3, p0, Landroid/content/SyncManager$SyncHandler;->this$0:Landroid/content/SyncManager;
 
@@ -841,7 +841,7 @@
 
     move-result-object v3
 
-    const v5, 0x10400cf
+    const v5, #string@contentServiceSync#t
 
     invoke-virtual {v3, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -869,7 +869,7 @@
 
     move-result-object v3
 
-    const v5, 0x10400d0
+    const v5, #string@contentServiceSyncNotificationTitle#t
 
     invoke-virtual {v3, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -981,7 +981,7 @@
     .local v4, resolveInfo:Landroid/content/pm/ResolveInfo;
     iget-object v6, v4, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v6, v6, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v6, v6, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     iget v6, v6, Landroid/content/pm/ApplicationInfo;->flags:I
 

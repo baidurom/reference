@@ -35,7 +35,7 @@
 
     iput-object p2, p0, Landroid/widget/RemoteViews$SetPendingIntentTemplate$1;->val$handler:Landroid/widget/RemoteViews$OnClickHandler;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -121,7 +121,7 @@
 
     move-result-object v9
 
-    const v10, 0x1020244
+    const v10, #id@fillInIntent#t
 
     invoke-virtual {v9, v10}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 

@@ -25,7 +25,7 @@
 
 .field private static final DEFAULT_IDLE_MS:J = 0xdbba0L
 
-.field private static final ICON_NETWORKS_AVAILABLE:I = 0x1080524
+.field private static final ICON_NETWORKS_AVAILABLE:I = #drawable@stat_notify_wifi_in_range#t
 
 .field private static final IDLE_REQUEST:I = 0x0
 
@@ -2291,7 +2291,7 @@
 
     const/4 v8, 0x0
 
-    const v7, 0x1080524
+    const v7, #drawable@stat_notify_wifi_in_range#t
 
     .line 1749
     if-nez p1, :cond_1
@@ -2400,7 +2400,7 @@
 
     move-result-object v3
 
-    const v4, 0x1130014
+    const v4, #plurals@wifi_available#t
 
     invoke-virtual {v3, v4, p2}, Landroid/content/res/Resources;->getQuantityText(II)Ljava/lang/CharSequence;
 
@@ -2414,7 +2414,7 @@
 
     move-result-object v3
 
-    const v4, 0x1130015
+    const v4, #plurals@wifi_available_detailed#t
 
     invoke-virtual {v3, v4, p2}, Landroid/content/res/Resources;->getQuantityText(II)Ljava/lang/CharSequence;
 
@@ -4081,7 +4081,7 @@
 
     move-result-object v0
 
-    const v1, 0x1110015
+    const v1, #bool@config_wifi_dual_band_support#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 

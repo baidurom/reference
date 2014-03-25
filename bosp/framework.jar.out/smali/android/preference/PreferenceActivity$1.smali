@@ -97,7 +97,7 @@
     .line 228
     iget-object v3, p0, Landroid/preference/PreferenceActivity$1;->this$0:Landroid/preference/PreferenceActivity;
 
-    #getter for: Landroid/app/ListActivity;->mAdapter:Landroid/widget/ListAdapter;
+    #getter for: Landroid/preference/PreferenceActivity;->mAdapter:Landroid/widget/ListAdapter;
     invoke-static {v3}, Landroid/preference/PreferenceActivity;->access$200(Landroid/preference/PreferenceActivity;)Landroid/widget/ListAdapter;
 
     move-result-object v3
@@ -109,7 +109,7 @@
     .line 229
     iget-object v3, p0, Landroid/preference/PreferenceActivity$1;->this$0:Landroid/preference/PreferenceActivity;
 
-    #getter for: Landroid/app/ListActivity;->mAdapter:Landroid/widget/ListAdapter;
+    #getter for: Landroid/preference/PreferenceActivity;->mAdapter:Landroid/widget/ListAdapter;
     invoke-static {v3}, Landroid/preference/PreferenceActivity;->access$300(Landroid/preference/PreferenceActivity;)Landroid/widget/ListAdapter;
 
     move-result-object v3

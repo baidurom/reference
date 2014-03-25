@@ -62,7 +62,7 @@
 
     .prologue
     .line 84
-    const v0, 0x1030089
+    const v0, #style@Widget.FragmentBreadCrumbs#t
 
     invoke-direct {p0, p1, p2, v0}, Landroid/app/FragmentBreadCrumbs;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -611,7 +611,7 @@
     .line 106
     iget-object v0, p0, Landroid/app/FragmentBreadCrumbs;->mInflater:Landroid/view/LayoutInflater;
 
-    const v1, 0x1090043
+    const v1, #layout@fragment_bread_crumbs#t
 
     const/4 v2, 0x0
 
@@ -881,7 +881,7 @@
 
     move-object/from16 v18, v0
 
-    const v19, 0x1090042
+    const v19, #layout@fragment_bread_crumb_item#t
 
     const/16 v20, 0x0
 
@@ -899,7 +899,7 @@
 
     .line 306
     .local v8, item:Landroid/view/View;
-    const v18, 0x1020016
+    const v18, #id@title#t
 
     move/from16 v0, v18
 
@@ -926,7 +926,7 @@
     if-nez v7, :cond_3
 
     .line 310
-    const v18, 0x102023d
+    const v18, #id@left_icon#t
 
     move/from16 v0, v18
 
@@ -1030,7 +1030,7 @@
 
     .line 326
     .local v5, child:Landroid/view/View;
-    const v18, 0x1020016
+    const v18, #id@title#t
 
     move/from16 v0, v18
 
@@ -1083,7 +1083,7 @@
     invoke-virtual {v5, v0}, Landroid/view/View;->setVisibility(I)V
 
     .line 330
-    const v18, 0x102023d
+    const v18, #id@left_icon#t
 
     move/from16 v0, v18
 

@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 653
+    .line 762
     iput-object p1, p0, Lcom/android/server/BatteryService$8;->this$0:Lcom/android/server/BatteryService;
 
     invoke-direct {p0}, Landroid/os/UEventObserver;-><init>()V
@@ -39,30 +39,30 @@
     .parameter "event"
 
     .prologue
-    .line 656
+    .line 765
     iget-object v0, p0, Lcom/android/server/BatteryService$8;->this$0:Lcom/android/server/BatteryService;
 
     #getter for: Lcom/android/server/BatteryService;->mLock:Ljava/lang/Object;
-    invoke-static {v0}, Lcom/android/server/BatteryService;->access$100(Lcom/android/server/BatteryService;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/android/server/BatteryService;->access$1000(Lcom/android/server/BatteryService;)Ljava/lang/Object;
 
     move-result-object v1
 
     monitor-enter v1
 
-    .line 657
+    .line 766
     :try_start_0
     iget-object v0, p0, Lcom/android/server/BatteryService$8;->this$0:Lcom/android/server/BatteryService;
 
     #calls: Lcom/android/server/BatteryService;->updateLocked()V
-    invoke-static {v0}, Lcom/android/server/BatteryService;->access$200(Lcom/android/server/BatteryService;)V
+    invoke-static {v0}, Lcom/android/server/BatteryService;->access$800(Lcom/android/server/BatteryService;)V
 
-    .line 658
+    .line 767
     monitor-exit v1
 
-    .line 659
+    .line 768
     return-void
 
-    .line 658
+    .line 767
     :catchall_0
     move-exception v0
 

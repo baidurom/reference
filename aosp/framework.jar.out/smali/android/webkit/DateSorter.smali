@@ -159,7 +159,7 @@
     aput-object v7, v6, v11
 
     .line 77
-    const v4, 0x1130003
+    const v4, #plurals@last_num_days#t
 
     .line 78
     .local v4, resId:I
@@ -190,7 +190,7 @@
 
     const/4 v7, 0x3
 
-    const v8, 0x10403a9
+    const v8, #string@last_month#t
 
     invoke-virtual {p1, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -203,7 +203,7 @@
 
     const/4 v7, 0x4
 
-    const v8, 0x10403aa
+    const v8, #string@older#t
 
     invoke-virtual {p1, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

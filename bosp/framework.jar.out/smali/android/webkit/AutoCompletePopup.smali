@@ -50,7 +50,7 @@
 
     .prologue
     .line 55
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 56
     iput-object p2, p0, Landroid/webkit/AutoCompletePopup;->mInputConnection:Landroid/webkit/WebViewClassic$WebViewInputConnection;
@@ -801,11 +801,11 @@
 
     if-ne v8, v6, :cond_4
 
-    iget v8, v3, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iget v8, v3, Landroid/widget/AbsoluteLayout$LayoutParams;->width:I
 
     if-ne v8, v7, :cond_4
 
-    iget v8, v3, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iget v8, v3, Landroid/widget/AbsoluteLayout$LayoutParams;->height:I
 
     if-eq v8, v1, :cond_0
 
@@ -820,10 +820,10 @@
     iput v6, v3, Landroid/widget/AbsoluteLayout$LayoutParams;->y:I
 
     .line 155
-    iput v7, v3, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iput v7, v3, Landroid/widget/AbsoluteLayout$LayoutParams;->width:I
 
     .line 156
-    iput v1, v3, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iput v1, v3, Landroid/widget/AbsoluteLayout$LayoutParams;->height:I
 
     goto :goto_0
 .end method

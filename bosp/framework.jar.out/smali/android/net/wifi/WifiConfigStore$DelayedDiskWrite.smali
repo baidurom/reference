@@ -434,7 +434,7 @@
     :try_start_9
     invoke-virtual {v9}, Ljava/io/DataOutputStream;->close()V
     :try_end_9
-    .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_9} :catch_4
+    .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_9} :catch_2
 
     .line 820
     :cond_3
@@ -476,8 +476,9 @@
     :cond_4
     monitor-exit v15
     :try_end_a
-    .catchall {:try_start_a .. :try_end_a} :catchall_3
+    .catchall {:try_start_a .. :try_end_a} :catchall_1
 
+    .line 813
     throw v14
 
     .line 738
@@ -763,7 +764,7 @@
     :try_start_c
     invoke-virtual {v10}, Ljava/io/DataOutputStream;->close()V
     :try_end_c
-    .catch Ljava/lang/Exception; {:try_start_c .. :try_end_c} :catch_2
+    .catch Ljava/lang/Exception; {:try_start_c .. :try_end_c} :catch_4
 
     .line 820
     :cond_b
@@ -804,6 +805,8 @@
     .line 826
     :cond_c
     monitor-exit v15
+    :try_end_d
+    .catchall {:try_start_d .. :try_end_d} :catchall_3
 
     move-object v9, v10
 
@@ -812,65 +815,64 @@
     .restart local v9       #out:Ljava/io/DataOutputStream;
     goto/16 :goto_6
 
+    .line 816
+    :catch_2
+    move-exception v15
+
+    goto/16 :goto_9
+
     .line 826
-    .end local v9           #out:Ljava/io/DataOutputStream;
-    .restart local v10       #out:Ljava/io/DataOutputStream;
     :catchall_1
-    move-exception v14
-
-    monitor-exit v15
-    :try_end_d
-    .catchall {:try_start_d .. :try_end_d} :catchall_1
-
-    throw v14
-
-    .end local v10           #out:Ljava/io/DataOutputStream;
-    .local v2, e:Ljava/io/IOException;
-    .restart local v9       #out:Ljava/io/DataOutputStream;
-    :catchall_2
     move-exception v14
 
     :try_start_e
     monitor-exit v15
     :try_end_e
-    .catchall {:try_start_e .. :try_end_e} :catchall_2
-
-    throw v14
-
-    .end local v2           #e:Ljava/io/IOException;
-    :catchall_3
-    move-exception v14
-
-    :try_start_f
-    monitor-exit v15
-    :try_end_f
-    .catchall {:try_start_f .. :try_end_f} :catchall_3
+    .catchall {:try_start_e .. :try_end_e} :catchall_1
 
     throw v14
 
     .line 816
-    .end local v9           #out:Ljava/io/DataOutputStream;
-    .restart local v10       #out:Ljava/io/DataOutputStream;
-    :catch_2
-    move-exception v14
-
-    goto :goto_d
-
-    .end local v10           #out:Ljava/io/DataOutputStream;
-    .restart local v2       #e:Ljava/io/IOException;
-    .restart local v9       #out:Ljava/io/DataOutputStream;
+    .local v2, e:Ljava/io/IOException;
     :catch_3
     move-exception v14
 
     goto/16 :goto_5
 
-    .end local v2           #e:Ljava/io/IOException;
-    :catch_4
-    move-exception v15
+    .line 826
+    :catchall_2
+    move-exception v14
 
-    goto/16 :goto_9
+    :try_start_f
+    monitor-exit v15
+    :try_end_f
+    .catchall {:try_start_f .. :try_end_f} :catchall_2
+
+    throw v14
+
+    .line 816
+    .end local v2           #e:Ljava/io/IOException;
+    .end local v9           #out:Ljava/io/DataOutputStream;
+    .restart local v10       #out:Ljava/io/DataOutputStream;
+    :catch_4
+    move-exception v14
+
+    goto :goto_d
+
+    .line 826
+    :catchall_3
+    move-exception v14
+
+    :try_start_10
+    monitor-exit v15
+    :try_end_10
+    .catchall {:try_start_10 .. :try_end_10} :catchall_3
+
+    throw v14
 
     .line 813
+    .end local v10           #out:Ljava/io/DataOutputStream;
+    .restart local v9       #out:Ljava/io/DataOutputStream;
     :catchall_4
     move-exception v14
 

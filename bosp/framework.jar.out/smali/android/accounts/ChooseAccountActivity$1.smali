@@ -30,7 +30,7 @@
     .line 84
     iput-object p1, p0, Landroid/accounts/ChooseAccountActivity$1;->this$0:Landroid/accounts/ChooseAccountActivity;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

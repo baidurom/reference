@@ -2835,7 +2835,7 @@
 
     .line 1137
     .local v24, resources:Landroid/content/res/Resources;
-    const v19, 0x10f000e
+    const v19, #xml@storage_list#t
 
     .line 1138
     .local v19, id:I

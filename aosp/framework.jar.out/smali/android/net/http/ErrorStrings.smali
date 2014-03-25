@@ -23,7 +23,7 @@
     .parameter "errorCode"
 
     .prologue
-    const v0, 0x10400c1
+    const v0, #string@httpError#t
 
     .line 45
     packed-switch p0, :pswitch_data_0
@@ -58,91 +58,91 @@
 
     .line 47
     :pswitch_1
-    const v0, 0x10400c0
+    const v0, #string@httpErrorOk#t
 
     goto :goto_0
 
     .line 53
     :pswitch_2
-    const v0, 0x10400c2
+    const v0, #string@httpErrorLookup#t
 
     goto :goto_0
 
     .line 56
     :pswitch_3
-    const v0, 0x10400c3
+    const v0, #string@httpErrorUnsupportedAuthScheme#t
 
     goto :goto_0
 
     .line 59
     :pswitch_4
-    const v0, 0x10400c4
+    const v0, #string@httpErrorAuth#t
 
     goto :goto_0
 
     .line 62
     :pswitch_5
-    const v0, 0x10400c5
+    const v0, #string@httpErrorProxyAuth#t
 
     goto :goto_0
 
     .line 65
     :pswitch_6
-    const v0, 0x10400c6
+    const v0, #string@httpErrorConnect#t
 
     goto :goto_0
 
     .line 68
     :pswitch_7
-    const v0, 0x10400c7
+    const v0, #string@httpErrorIO#t
 
     goto :goto_0
 
     .line 71
     :pswitch_8
-    const v0, 0x10400c8
+    const v0, #string@httpErrorTimeout#t
 
     goto :goto_0
 
     .line 74
     :pswitch_9
-    const v0, 0x10400c9
+    const v0, #string@httpErrorRedirectLoop#t
 
     goto :goto_0
 
     .line 77
     :pswitch_a
-    const v0, 0x1040008
+    const v0, #string@httpErrorUnsupportedScheme#t
 
     goto :goto_0
 
     .line 80
     :pswitch_b
-    const v0, 0x10400ca
+    const v0, #string@httpErrorFailedSslHandshake#t
 
     goto :goto_0
 
     .line 83
     :pswitch_c
-    const v0, 0x1040007
+    const v0, #string@httpErrorBadUrl#t
 
     goto :goto_0
 
     .line 86
     :pswitch_d
-    const v0, 0x10400cb
+    const v0, #string@httpErrorFile#t
 
     goto :goto_0
 
     .line 89
     :pswitch_e
-    const v0, 0x10400cc
+    const v0, #string@httpErrorFileNotFound#t
 
     goto :goto_0
 
     .line 92
     :pswitch_f
-    const v0, 0x10400cd
+    const v0, #string@httpErrorTooManyRequests#t
 
     goto :goto_0
 

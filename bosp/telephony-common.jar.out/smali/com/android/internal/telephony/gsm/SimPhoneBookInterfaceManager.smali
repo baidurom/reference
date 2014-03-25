@@ -96,7 +96,7 @@
     invoke-virtual {p0, v3}, Lcom/android/internal/telephony/gsm/SimPhoneBookInterfaceManager;->logd(Ljava/lang/String;)V
 
     .line 56
-    iget-object v4, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->mLock:Ljava/lang/Object;
+    iget-object v4, p0, Lcom/android/internal/telephony/gsm/SimPhoneBookInterfaceManager;->mLock:Ljava/lang/Object;
 
     monitor-enter v4
 
@@ -109,7 +109,7 @@
 
     new-array v3, v3, [I
 
-    iput-object v3, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->recordSize:[I
+    iput-object v3, p0, Lcom/android/internal/telephony/gsm/SimPhoneBookInterfaceManager;->recordSize:[I
 
     .line 61
     new-instance v2, Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -120,7 +120,7 @@
 
     .line 62
     .local v2, status:Ljava/util/concurrent/atomic/AtomicBoolean;
-    iget-object v3, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->mBaseHandler:Landroid/os/Handler;
+    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SimPhoneBookInterfaceManager;->mBaseHandler:Landroid/os/Handler;
 
     const/4 v5, 0x1
 
@@ -130,7 +130,7 @@
 
     .line 64
     .local v1, response:Landroid/os/Message;
-    iget-object v3, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SimPhoneBookInterfaceManager;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v3}, Lcom/android/internal/telephony/PhoneBase;->getIccFileHandler()Lcom/android/internal/telephony/IccFileHandler;
 
@@ -153,7 +153,7 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 71
-    iget-object v3, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->recordSize:[I
+    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SimPhoneBookInterfaceManager;->recordSize:[I
 
     return-object v3
 

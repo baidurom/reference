@@ -741,11 +741,11 @@
     .line 574
     iget v7, p0, Landroid/widget/SlidingDrawer;->mBottomOffset:I
 
-    iget v8, p0, Landroid/view/View;->mBottom:I
+    iget v8, p0, Landroid/widget/SlidingDrawer;->mBottom:I
 
     add-int/2addr v7, v8
 
-    iget v8, p0, Landroid/view/View;->mTop:I
+    iget v8, p0, Landroid/widget/SlidingDrawer;->mTop:I
 
     sub-int/2addr v7, v8
 
@@ -855,11 +855,11 @@
     :cond_3
     iget v7, p0, Landroid/widget/SlidingDrawer;->mBottomOffset:I
 
-    iget v8, p0, Landroid/view/View;->mBottom:I
+    iget v8, p0, Landroid/widget/SlidingDrawer;->mBottom:I
 
     add-int/2addr v7, v8
 
-    iget v8, p0, Landroid/view/View;->mTop:I
+    iget v8, p0, Landroid/widget/SlidingDrawer;->mTop:I
 
     sub-int/2addr v7, v8
 
@@ -874,11 +874,11 @@
     .line 583
     iget v7, p0, Landroid/widget/SlidingDrawer;->mBottomOffset:I
 
-    iget v8, p0, Landroid/view/View;->mBottom:I
+    iget v8, p0, Landroid/widget/SlidingDrawer;->mBottom:I
 
     add-int/2addr v7, v8
 
-    iget v8, p0, Landroid/view/View;->mTop:I
+    iget v8, p0, Landroid/widget/SlidingDrawer;->mTop:I
 
     sub-int/2addr v7, v8
 
@@ -919,11 +919,11 @@
     .line 604
     iget v7, p0, Landroid/widget/SlidingDrawer;->mBottomOffset:I
 
-    iget v8, p0, Landroid/view/View;->mRight:I
+    iget v8, p0, Landroid/widget/SlidingDrawer;->mRight:I
 
     add-int/2addr v7, v8
 
-    iget v8, p0, Landroid/view/View;->mLeft:I
+    iget v8, p0, Landroid/widget/SlidingDrawer;->mLeft:I
 
     sub-int/2addr v7, v8
 
@@ -1033,11 +1033,11 @@
     :cond_8
     iget v7, p0, Landroid/widget/SlidingDrawer;->mBottomOffset:I
 
-    iget v8, p0, Landroid/view/View;->mRight:I
+    iget v8, p0, Landroid/widget/SlidingDrawer;->mRight:I
 
     add-int/2addr v7, v8
 
-    iget v8, p0, Landroid/view/View;->mLeft:I
+    iget v8, p0, Landroid/widget/SlidingDrawer;->mLeft:I
 
     sub-int/2addr v7, v8
 
@@ -1052,11 +1052,11 @@
     .line 613
     iget v7, p0, Landroid/widget/SlidingDrawer;->mBottomOffset:I
 
-    iget v8, p0, Landroid/view/View;->mRight:I
+    iget v8, p0, Landroid/widget/SlidingDrawer;->mRight:I
 
     add-int/2addr v7, v8
 
-    iget v8, p0, Landroid/view/View;->mLeft:I
+    iget v8, p0, Landroid/widget/SlidingDrawer;->mLeft:I
 
     sub-int/2addr v7, v8
 
@@ -1383,9 +1383,9 @@
 
     .line 643
     .local v0, childHeight:I
-    iget v5, p0, Landroid/view/View;->mBottom:I
+    iget v5, p0, Landroid/widget/SlidingDrawer;->mBottom:I
 
-    iget v6, p0, Landroid/view/View;->mTop:I
+    iget v6, p0, Landroid/widget/SlidingDrawer;->mTop:I
 
     sub-int/2addr v5, v6
 
@@ -1397,9 +1397,9 @@
 
     .line 644
     .local v3, height:I
-    iget v5, p0, Landroid/view/View;->mRight:I
+    iget v5, p0, Landroid/widget/SlidingDrawer;->mRight:I
 
-    iget v6, p0, Landroid/view/View;->mLeft:I
+    iget v6, p0, Landroid/widget/SlidingDrawer;->mLeft:I
 
     sub-int/2addr v5, v6
 
@@ -1472,9 +1472,9 @@
 
     .line 650
     .local v1, childWidth:I
-    iget v5, p0, Landroid/view/View;->mRight:I
+    iget v5, p0, Landroid/widget/SlidingDrawer;->mRight:I
 
-    iget v6, p0, Landroid/view/View;->mLeft:I
+    iget v6, p0, Landroid/widget/SlidingDrawer;->mLeft:I
 
     sub-int/2addr v5, v6
 
@@ -1490,9 +1490,9 @@
 
     move-result v5
 
-    iget v6, p0, Landroid/view/View;->mBottom:I
+    iget v6, p0, Landroid/widget/SlidingDrawer;->mBottom:I
 
-    iget v7, p0, Landroid/view/View;->mTop:I
+    iget v7, p0, Landroid/widget/SlidingDrawer;->mTop:I
 
     sub-int/2addr v6, v7
 
@@ -2873,11 +2873,11 @@
 
     iget v9, p0, Landroid/widget/SlidingDrawer;->mBottomOffset:I
 
-    iget v10, p0, Landroid/view/View;->mBottom:I
+    iget v10, p0, Landroid/widget/SlidingDrawer;->mBottom:I
 
     add-int/2addr v9, v10
 
-    iget v10, p0, Landroid/view/View;->mTop:I
+    iget v10, p0, Landroid/widget/SlidingDrawer;->mTop:I
 
     sub-int/2addr v9, v10
 
@@ -2996,11 +2996,11 @@
 
     iget v9, p0, Landroid/widget/SlidingDrawer;->mBottomOffset:I
 
-    iget v10, p0, Landroid/view/View;->mRight:I
+    iget v10, p0, Landroid/widget/SlidingDrawer;->mRight:I
 
     add-int/2addr v9, v10
 
-    iget v10, p0, Landroid/view/View;->mLeft:I
+    iget v10, p0, Landroid/widget/SlidingDrawer;->mLeft:I
 
     sub-int/2addr v9, v10
 

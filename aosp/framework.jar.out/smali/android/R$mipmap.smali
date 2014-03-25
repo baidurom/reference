@@ -15,7 +15,7 @@
 
 
 # static fields
-.field public static final sym_def_app_icon:I = 0x10d0000
+.field public static final sym_def_app_icon:I = #mipmap@sym_def_app_icon#t
 
 
 # direct methods

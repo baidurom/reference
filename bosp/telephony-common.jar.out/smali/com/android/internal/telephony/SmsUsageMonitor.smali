@@ -128,7 +128,7 @@
 
     .prologue
     .line 262
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 116
     new-instance v1, Ljava/util/HashMap;
@@ -678,7 +678,7 @@
 
     .prologue
     .line 308
-    const v0, 0x10f000d
+    const v0, #xml@sms_short_codes#t
 
     .line 309
     .local v0, id:I

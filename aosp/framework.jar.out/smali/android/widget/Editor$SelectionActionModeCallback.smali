@@ -145,7 +145,7 @@
 
     move-result-object v5
 
-    const v6, 0x111003d
+    const v6, #bool@config_allowActionMenuItemTextWithIcon#t
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -164,7 +164,7 @@
 
     move-result-object v5
 
-    const v6, 0x10403c3
+    const v6, #string@textSelectionCABTitle#t
 
     invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -196,9 +196,9 @@
 
     .line 2714
     :cond_0
-    const v5, 0x102001f
+    const v5, #id@selectAll#t
 
-    const v6, 0x104000d
+    const v6, #string@selectAll#t
 
     invoke-interface {p2, v3, v5, v3, v6}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -231,9 +231,9 @@
     if-eqz v5, :cond_1
 
     .line 2721
-    const v5, 0x1020020
+    const v5, #id@cut#t
 
-    const v6, 0x1040003
+    const v6, #string@cut#t
 
     invoke-interface {p2, v3, v5, v3, v6}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -271,9 +271,9 @@
     if-eqz v5, :cond_2
 
     .line 2730
-    const v5, 0x1020021
+    const v5, #id@copy#t
 
-    const v6, 0x1040001
+    const v6, #string@copy#t
 
     invoke-interface {p2, v3, v5, v3, v6}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -311,9 +311,9 @@
     if-eqz v5, :cond_3
 
     .line 2739
-    const v5, 0x1020022
+    const v5, #id@paste#t
 
-    const v6, 0x104000b
+    const v6, #string@paste#t
 
     invoke-interface {p2, v3, v5, v3, v6}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 

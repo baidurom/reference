@@ -6,8 +6,8 @@
     <integer name="status_bar_notification_info_maxnum">999</integer>
     <integer name="config_soundEffectVolumeDb">-6</integer>
     <integer name="config_lockSoundVolumeDb">-6</integer>
-    <integer name="config_activityShortDur">150</integer>
-    <integer name="config_activityDefaultDur">220</integer>
+    <integer name="config_activityShortDur">130</integer>
+    <integer name="config_activityDefaultDur">330</integer>
     <integer name="config_radioScanningTimeout">0</integer>
     <integer name="config_networkTransitionTimeout">60000</integer>
     <integer name="config_max_pan_devices">5</integer>
@@ -67,4 +67,6 @@
     <integer name="kg_security_flip_duration">100</integer>
     <integer name="kg_security_fade_duration">100</integer>
     <integer name="kg_glowpad_rotation_offset">0</integer>
+    <integer name="config_automatic_rotate_delay">2</integer>
+    <integer name="zz_lockscreen_unlock_widget_distance">50</integer>
 </resources>

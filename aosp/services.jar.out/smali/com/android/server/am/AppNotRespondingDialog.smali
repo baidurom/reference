@@ -106,7 +106,7 @@
     if-eqz v1, :cond_3
 
     .line 60
-    const v4, 0x10403d7
+    const v4, #string@anr_activity_application#t
 
     .line 76
     .local v4, resid:I
@@ -137,7 +137,7 @@
     .line 80
     const/4 v5, -0x1
 
-    const v6, 0x10403db
+    const v6, #string@force_close#t
 
     invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -154,7 +154,7 @@
     .line 83
     const/4 v5, -0x2
 
-    const v6, 0x10403dd
+    const v6, #string@wait#t
 
     invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -176,7 +176,7 @@
     .line 88
     const/4 v5, -0x3
 
-    const v6, 0x10403dc
+    const v6, #string@report#t
 
     invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -194,7 +194,7 @@
 
     .line 93
     :cond_0
-    const v5, 0x10403d6
+    const v5, #string@anr_title#t
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -294,7 +294,7 @@
     iget-object v2, p3, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
 
     .line 64
-    const v4, 0x10403d9
+    const v4, #string@anr_application_process#t
 
     .restart local v4       #resid:I
     goto/16 :goto_1
@@ -308,7 +308,7 @@
     iget-object v2, p3, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
 
     .line 69
-    const v4, 0x10403d8
+    const v4, #string@anr_activity_process#t
 
     .restart local v4       #resid:I
     goto/16 :goto_1
@@ -319,7 +319,7 @@
     iget-object v1, p3, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
 
     .line 72
-    const v4, 0x10403da
+    const v4, #string@anr_process#t
 
     .restart local v4       #resid:I
     goto/16 :goto_1

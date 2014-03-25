@@ -105,7 +105,7 @@
     .line 162
     const/4 v0, 0x0
 
-    const v1, 0x10102ff
+    const v1, #attr@listPopupWindowStyle#t
 
     const/4 v2, 0x0
 
@@ -122,7 +122,7 @@
 
     .prologue
     .line 173
-    const v0, 0x10102ff
+    const v0, #attr@listPopupWindowStyle#t
 
     const/4 v1, 0x0
 

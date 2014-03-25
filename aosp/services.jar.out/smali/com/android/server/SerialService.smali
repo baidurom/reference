@@ -26,7 +26,7 @@
 
     move-result-object v0
 
-    const v1, 0x1070022
+    const v1, #array@config_serialPorts#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 

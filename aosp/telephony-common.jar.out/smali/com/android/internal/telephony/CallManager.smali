@@ -1384,7 +1384,7 @@
 
     move-result-object v8
 
-    const v9, 0x111004b
+    const v9, #bool@config_speed_up_audio_on_mt_calls#t
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getBoolean(I)Z
 

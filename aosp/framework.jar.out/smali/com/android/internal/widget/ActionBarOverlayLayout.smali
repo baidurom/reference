@@ -41,7 +41,7 @@
 
     const/4 v1, 0x0
 
-    const v2, 0x10102eb
+    const v2, #attr@actionBarSize#t
 
     aput v2, v0, v1
 
@@ -636,7 +636,7 @@
     if-nez v0, :cond_0
 
     .line 207
-    const v0, 0x1020002
+    const v0, #id@content#t
 
     invoke-virtual {p0, v0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->findViewById(I)Landroid/view/View;
 
@@ -645,7 +645,7 @@
     iput-object v0, p0, Lcom/android/internal/widget/ActionBarOverlayLayout;->mContent:Landroid/view/View;
 
     .line 208
-    const v0, 0x102035e
+    const v0, #id@top_action_bar#t
 
     invoke-virtual {p0, v0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->findViewById(I)Landroid/view/View;
 
@@ -654,7 +654,7 @@
     iput-object v0, p0, Lcom/android/internal/widget/ActionBarOverlayLayout;->mActionBarTop:Landroid/view/View;
 
     .line 209
-    const v0, 0x1020359
+    const v0, #id@action_bar_container#t
 
     invoke-virtual {p0, v0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->findViewById(I)Landroid/view/View;
 
@@ -665,7 +665,7 @@
     iput-object v0, p0, Lcom/android/internal/widget/ActionBarOverlayLayout;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
 
     .line 211
-    const v0, 0x102035a
+    const v0, #id@action_bar#t
 
     invoke-virtual {p0, v0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->findViewById(I)Landroid/view/View;
 
@@ -676,7 +676,7 @@
     iput-object v0, p0, Lcom/android/internal/widget/ActionBarOverlayLayout;->mActionView:Lcom/android/internal/widget/ActionBarView;
 
     .line 212
-    const v0, 0x102035c
+    const v0, #id@split_action_bar#t
 
     invoke-virtual {p0, v0}, Lcom/android/internal/widget/ActionBarOverlayLayout;->findViewById(I)Landroid/view/View;
 

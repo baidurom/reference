@@ -36,7 +36,7 @@
 
     const/4 v1, 0x0
 
-    const v2, 0x10100a0
+    const v2, #attr@state_checked#t
 
     aput v2, v0, v1
 
@@ -66,7 +66,7 @@
 
     .prologue
     .line 58
-    const v0, 0x10103c8
+    const v0, #attr@checkedTextViewStyle#t
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/CheckedTextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -134,7 +134,7 @@
     if-eqz p1, :cond_0
 
     .line 206
-    iget v0, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v0, p0, Landroid/widget/CheckedTextView;->mPaddingLeft:I
 
     iput v0, p0, Landroid/widget/CheckedTextView;->mBasePadding:I
 
@@ -144,7 +144,7 @@
 
     .line 208
     :cond_0
-    iget v0, p0, Landroid/view/View;->mPaddingRight:I
+    iget v0, p0, Landroid/widget/CheckedTextView;->mPaddingRight:I
 
     iput v0, p0, Landroid/widget/CheckedTextView;->mBasePadding:I
 
@@ -185,7 +185,7 @@
     .line 192
     iget-boolean v3, p0, Landroid/widget/CheckedTextView;->mNeedRequestlayout:Z
 
-    iget v4, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v4, p0, Landroid/widget/CheckedTextView;->mPaddingLeft:I
 
     if-eq v4, v0, :cond_2
 
@@ -195,7 +195,7 @@
     iput-boolean v1, p0, Landroid/widget/CheckedTextView;->mNeedRequestlayout:Z
 
     .line 193
-    iput v0, p0, Landroid/view/View;->mPaddingLeft:I
+    iput v0, p0, Landroid/widget/CheckedTextView;->mPaddingLeft:I
 
     .line 198
     :goto_2
@@ -231,7 +231,7 @@
     :cond_3
     iget-boolean v3, p0, Landroid/widget/CheckedTextView;->mNeedRequestlayout:Z
 
-    iget v4, p0, Landroid/view/View;->mPaddingRight:I
+    iget v4, p0, Landroid/widget/CheckedTextView;->mPaddingRight:I
 
     if-eq v4, v0, :cond_4
 
@@ -241,7 +241,7 @@
     iput-boolean v1, p0, Landroid/widget/CheckedTextView;->mNeedRequestlayout:Z
 
     .line 196
-    iput v0, p0, Landroid/view/View;->mPaddingRight:I
+    iput v0, p0, Landroid/widget/CheckedTextView;->mPaddingRight:I
 
     goto :goto_2
 

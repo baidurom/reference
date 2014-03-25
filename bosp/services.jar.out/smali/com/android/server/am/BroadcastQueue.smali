@@ -22,9 +22,11 @@
 
 .field static final DEBUG_MU:Z = false
 
-.field static final MAX_BROADCAST_HISTORY:I = 0x19
+#the value of this static final field might be set in the static constructor
+.field static final MAX_BROADCAST_HISTORY:I = 0x0
 
-.field static final MAX_BROADCAST_SUMMARY_HISTORY:I = 0x64
+#the value of this static final field might be set in the static constructor
+.field static final MAX_BROADCAST_SUMMARY_HISTORY:I = 0x0
 
 .field static final TAG:Ljava/lang/String; = "BroadcastQueue"
 
@@ -76,6 +78,49 @@
 
 
 # direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    .prologue
+    .line 57
+    invoke-static {}, Landroid/app/ActivityManager;->isLowRamDeviceStatic()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/16 v0, 0xa
+
+    :goto_0
+    sput v0, Lcom/android/server/am/BroadcastQueue;->MAX_BROADCAST_HISTORY:I
+
+    .line 58
+    invoke-static {}, Landroid/app/ActivityManager;->isLowRamDeviceStatic()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    const/16 v0, 0x19
+
+    :goto_1
+    sput v0, Lcom/android/server/am/BroadcastQueue;->MAX_BROADCAST_SUMMARY_HISTORY:I
+
+    return-void
+
+    .line 57
+    :cond_0
+    const/16 v0, 0x14
+
+    goto :goto_0
+
+    .line 58
+    :cond_1
+    const/16 v0, 0x64
+
+    goto :goto_1
+.end method
+
 .method constructor <init>(Lcom/android/server/am/ActivityManagerService;Ljava/lang/String;J)V
     .locals 1
     .parameter "service"
@@ -101,14 +146,14 @@
     iput-object v0, p0, Lcom/android/server/am/BroadcastQueue;->mOrderedBroadcasts:Ljava/util/ArrayList;
 
     .line 94
-    const/16 v0, 0x19
+    sget v0, Lcom/android/server/am/BroadcastQueue;->MAX_BROADCAST_HISTORY:I
 
     new-array v0, v0, [Lcom/android/server/am/BroadcastRecord;
 
     iput-object v0, p0, Lcom/android/server/am/BroadcastQueue;->mBroadcastHistory:[Lcom/android/server/am/BroadcastRecord;
 
     .line 100
-    const/16 v0, 0x64
+    sget v0, Lcom/android/server/am/BroadcastQueue;->MAX_BROADCAST_SUMMARY_HISTORY:I
 
     new-array v0, v0, [Landroid/content/Intent;
 
@@ -168,7 +213,9 @@
 
     iget-object v1, p0, Lcom/android/server/am/BroadcastQueue;->mBroadcastHistory:[Lcom/android/server/am/BroadcastRecord;
 
-    const/16 v2, 0x18
+    sget v2, Lcom/android/server/am/BroadcastQueue;->MAX_BROADCAST_HISTORY:I
+
+    add-int/lit8 v2, v2, -0x1
 
     invoke-static {v0, v3, v1, v4, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
@@ -189,7 +236,9 @@
 
     iget-object v1, p0, Lcom/android/server/am/BroadcastQueue;->mBroadcastSummaryHistory:[Landroid/content/Intent;
 
-    const/16 v2, 0x63
+    sget v2, Lcom/android/server/am/BroadcastQueue;->MAX_BROADCAST_SUMMARY_HISTORY:I
+
+    add-int/lit8 v2, v2, -0x1
 
     invoke-static {v0, v3, v1, v4, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
@@ -1727,7 +1776,7 @@
 
     .restart local v3       #i:I
     :goto_5
-    const/16 v7, 0x19
+    sget v7, Lcom/android/server/am/BroadcastQueue;->MAX_BROADCAST_HISTORY:I
 
     if-ge v3, v7, :cond_c
 
@@ -1757,7 +1806,7 @@
     .line 1073
     :cond_d
     :goto_6
-    const/16 v7, 0x64
+    sget v7, Lcom/android/server/am/BroadcastQueue;->MAX_BROADCAST_SUMMARY_HISTORY:I
 
     if-ge v3, v7, :cond_e
 

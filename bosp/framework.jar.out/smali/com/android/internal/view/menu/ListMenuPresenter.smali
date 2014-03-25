@@ -51,7 +51,7 @@
 
     .prologue
     .line 74
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 75
     iput p1, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mItemLayoutRes:I
@@ -193,7 +193,7 @@
     .line 99
     iget-object v0, p0, Lcom/android/internal/view/menu/ListMenuPresenter;->mInflater:Landroid/view/LayoutInflater;
 
-    const v1, 0x1090041
+    const v1, #layout@expanded_menu_layout#t
 
     const/4 v2, 0x0
 

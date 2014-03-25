@@ -428,7 +428,7 @@
     if-eqz v3, :cond_2
 
     :cond_0
-    iget-object v3, p0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
+    iget-object v3, p0, Landroid/animation/ValueAnimator;->mListeners:Ljava/util/ArrayList;
 
     if-eqz v3, :cond_2
 
@@ -442,7 +442,7 @@
 
     .line 1008
     :cond_1
-    iget-object v3, p0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
+    iget-object v3, p0, Landroid/animation/ValueAnimator;->mListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->clone()Ljava/lang/Object;
 
@@ -593,7 +593,7 @@
 
     .prologue
     .line 876
-    iget-object v3, p0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
+    iget-object v3, p0, Landroid/animation/ValueAnimator;->mListeners:Ljava/util/ArrayList;
 
     if-eqz v3, :cond_0
 
@@ -602,7 +602,7 @@
     if-nez v3, :cond_0
 
     .line 877
-    iget-object v3, p0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
+    iget-object v3, p0, Landroid/animation/ValueAnimator;->mListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->clone()Ljava/lang/Object;
 
@@ -860,7 +860,7 @@
 
     if-lez v0, :cond_0
 
-    iget-object v0, p0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/animation/ValueAnimator;->mListeners:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_0
 
@@ -1047,12 +1047,12 @@
 
     .line 1082
     :cond_0
-    iget-object v4, p0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
+    iget-object v4, p0, Landroid/animation/ValueAnimator;->mListeners:Ljava/util/ArrayList;
 
     if-eqz v4, :cond_2
 
     .line 1083
-    iget-object v4, p0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
+    iget-object v4, p0, Landroid/animation/ValueAnimator;->mListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
@@ -1067,7 +1067,7 @@
     if-ge v2, v3, :cond_2
 
     .line 1085
-    iget-object v4, p0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
+    iget-object v4, p0, Landroid/animation/ValueAnimator;->mListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -1223,7 +1223,7 @@
     if-eqz v4, :cond_3
 
     :cond_1
-    iget-object v4, p0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
+    iget-object v4, p0, Landroid/animation/ValueAnimator;->mListeners:Ljava/util/ArrayList;
 
     if-eqz v4, :cond_3
 
@@ -1237,7 +1237,7 @@
 
     .line 940
     :cond_2
-    iget-object v4, p0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
+    iget-object v4, p0, Landroid/animation/ValueAnimator;->mListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->clone()Ljava/lang/Object;
 

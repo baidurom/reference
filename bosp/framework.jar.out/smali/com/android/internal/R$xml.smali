@@ -15,31 +15,35 @@
 
 
 # static fields
-.field public static final apns:I = 0x10f0000
+.field public static final apns:I = #xml@apns#t
 
-.field public static final autotext:I = 0x10f0001
+.field public static final autotext:I = #xml@autotext#t
 
-.field public static final eri:I = 0x10f0002
+.field public static final eri:I = #xml@eri#t
 
-.field public static final kg_password_kbd_numeric:I = 0x10f0003
+.field public static final kg_password_kbd_numeric:I = #xml@kg_password_kbd_numeric#t
 
-.field public static final password_kbd_numeric:I = 0x10f0005
+.field public static final modes:I = #xml@modes#t
 
-.field public static final password_kbd_qwerty:I = 0x10f0007
+.field public static final password_kbd_numeric:I = #xml@password_kbd_numeric#t
 
-.field public static final password_kbd_qwerty_shifted:I = 0x10f0008
+.field public static final password_kbd_qwerty:I = #xml@password_kbd_qwerty#t
 
-.field public static final password_kbd_symbols:I = 0x10f0009
+.field public static final password_kbd_qwerty_shifted:I = #xml@password_kbd_qwerty_shifted#t
 
-.field public static final password_kbd_symbols_shift:I = 0x10f000a
+.field public static final password_kbd_symbols:I = #xml@password_kbd_symbols#t
 
-.field public static final power_profile:I = 0x10f000b
+.field public static final password_kbd_symbols_shift:I = #xml@password_kbd_symbols_shift#t
 
-.field public static final sms_short_codes:I = 0x10f000d
+.field public static final policys:I = #xml@policys#t
 
-.field public static final storage_list:I = 0x10f000e
+.field public static final power_profile:I = #xml@power_profile#t
 
-.field public static final time_zones_by_country:I = 0x10f000f
+.field public static final sms_short_codes:I = #xml@sms_short_codes#t
+
+.field public static final storage_list:I = #xml@storage_list#t
+
+.field public static final time_zones_by_country:I = #xml@time_zones_by_country#t
 
 
 # direct methods
@@ -47,7 +51,7 @@
     .locals 0
 
     .prologue
-    .line 16282
+    .line 16789
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

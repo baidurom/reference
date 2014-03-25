@@ -584,7 +584,7 @@
 
     .line 149
     :cond_0
-    const v4, 0x10404a1
+    const v4, #string@progress_unmounting#t
 
     invoke-virtual {p0, v4}, Lcom/android/internal/os/storage/ExternalStorageFormatter;->updateProgressDialog(I)V
 
@@ -700,7 +700,7 @@
 
     .line 163
     :cond_4
-    const v4, 0x10404a2
+    const v4, #string@progress_erasing#t
 
     invoke-virtual {p0, v4}, Lcom/android/internal/os/storage/ExternalStorageFormatter;->updateProgressDialog(I)V
 
@@ -772,7 +772,7 @@
     if-eqz v4, :cond_8
 
     .line 207
-    const v4, 0x10404a4
+    const v4, #string@media_bad_removal#t
 
     invoke-virtual {p0, v4}, Lcom/android/internal/os/storage/ExternalStorageFormatter;->fail(I)V
 
@@ -789,7 +789,7 @@
     if-eqz v4, :cond_9
 
     .line 209
-    const v4, 0x10404a5
+    const v4, #string@media_checking#t
 
     invoke-virtual {p0, v4}, Lcom/android/internal/os/storage/ExternalStorageFormatter;->fail(I)V
 
@@ -806,7 +806,7 @@
     if-eqz v4, :cond_a
 
     .line 211
-    const v4, 0x10404a6
+    const v4, #string@media_removed#t
 
     invoke-virtual {p0, v4}, Lcom/android/internal/os/storage/ExternalStorageFormatter;->fail(I)V
 
@@ -823,7 +823,7 @@
     if-eqz v4, :cond_b
 
     .line 213
-    const v4, 0x10404a7
+    const v4, #string@media_shared#t
 
     invoke-virtual {p0, v4}, Lcom/android/internal/os/storage/ExternalStorageFormatter;->fail(I)V
 
@@ -831,7 +831,7 @@
 
     .line 215
     :cond_b
-    const v4, 0x10404a8
+    const v4, #string@media_unknown_state#t
 
     invoke-virtual {p0, v4}, Lcom/android/internal/os/storage/ExternalStorageFormatter;->fail(I)V
 

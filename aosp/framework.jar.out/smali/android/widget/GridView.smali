@@ -68,7 +68,7 @@
 
     .prologue
     .line 106
-    const v0, 0x1010071
+    const v0, #attr@gridViewStyle#t
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/GridView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

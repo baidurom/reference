@@ -36,7 +36,7 @@
 
     const/4 v1, 0x0
 
-    const v2, 0x10100a0
+    const v2, #attr@state_checked#t
 
     aput v2, v0, v1
 
@@ -66,7 +66,7 @@
 
     .prologue
     .line 58
-    const v0, 0x10103c8
+    const v0, #attr@checkedTextViewStyle#t
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/CheckedTextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

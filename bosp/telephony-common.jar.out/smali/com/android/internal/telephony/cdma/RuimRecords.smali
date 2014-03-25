@@ -102,20 +102,20 @@
     .line 102
     new-instance v0, Lcom/android/internal/telephony/AdnRecordCache;
 
-    iget-object v1, p0, Lcom/android/internal/telephony/IccRecords;->mFh:Lcom/android/internal/telephony/IccFileHandler;
+    iget-object v1, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mFh:Lcom/android/internal/telephony/IccFileHandler;
 
     invoke-direct {v0, v1}, Lcom/android/internal/telephony/AdnRecordCache;-><init>(Lcom/android/internal/telephony/IccFileHandler;)V
 
-    iput-object v0, p0, Lcom/android/internal/telephony/IccRecords;->adnCache:Lcom/android/internal/telephony/AdnRecordCache;
+    iput-object v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->adnCache:Lcom/android/internal/telephony/AdnRecordCache;
 
     .line 104
-    iput-boolean v2, p0, Lcom/android/internal/telephony/IccRecords;->recordsRequested:Z
+    iput-boolean v2, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->recordsRequested:Z
 
     .line 107
-    iput v2, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
+    iput v2, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->recordsToLoad:I
 
     .line 110
-    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->mCi:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     const/16 v1, 0x1f
 
@@ -125,7 +125,7 @@
     invoke-virtual {p0}, Lcom/android/internal/telephony/cdma/RuimRecords;->resetRecords()V
 
     .line 115
-    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->mParentApp:Lcom/android/internal/telephony/UiccCardApplication;
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mParentApp:Lcom/android/internal/telephony/UiccCardApplication;
 
     const/4 v1, 0x1
 
@@ -247,7 +247,7 @@
 
     .prologue
     .line 62
-    iput-object p1, p0, Lcom/android/internal/telephony/IccRecords;->spn:Ljava/lang/String;
+    iput-object p1, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->spn:Ljava/lang/String;
 
     return-object p1
 .end method
@@ -259,7 +259,7 @@
 
     .prologue
     .line 62
-    iput-object p1, p0, Lcom/android/internal/telephony/IccRecords;->spn:Ljava/lang/String;
+    iput-object p1, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->spn:Ljava/lang/String;
 
     return-object p1
 .end method
@@ -271,7 +271,7 @@
 
     .prologue
     .line 62
-    iput-object p1, p0, Lcom/android/internal/telephony/IccRecords;->spn:Ljava/lang/String;
+    iput-object p1, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->spn:Ljava/lang/String;
 
     return-object p1
 .end method
@@ -283,7 +283,7 @@
 
     .prologue
     .line 62
-    iput-object p1, p0, Lcom/android/internal/telephony/IccRecords;->spn:Ljava/lang/String;
+    iput-object p1, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->spn:Ljava/lang/String;
 
     return-object p1
 .end method
@@ -294,7 +294,7 @@
 
     .prologue
     .line 62
-    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->spn:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->spn:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -305,7 +305,7 @@
 
     .prologue
     .line 62
-    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->spn:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->spn:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -398,7 +398,7 @@
     const/16 v4, 0x64
 
     .line 641
-    iput-boolean v3, p0, Lcom/android/internal/telephony/IccRecords;->recordsRequested:Z
+    iput-boolean v3, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->recordsRequested:Z
 
     .line 643
     new-instance v0, Ljava/lang/StringBuilder;
@@ -411,7 +411,7 @@
 
     move-result-object v0
 
-    iget v1, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
+    iget v1, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->recordsToLoad:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -424,9 +424,9 @@
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cdma/RuimRecords;->log(Ljava/lang/String;)V
 
     .line 645
-    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->mCi:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
-    iget-object v1, p0, Lcom/android/internal/telephony/IccRecords;->mParentApp:Lcom/android/internal/telephony/UiccCardApplication;
+    iget-object v1, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mParentApp:Lcom/android/internal/telephony/UiccCardApplication;
 
     invoke-virtual {v1}, Lcom/android/internal/telephony/UiccCardApplication;->getAid()Ljava/lang/String;
 
@@ -441,14 +441,14 @@
     invoke-interface {v0, v1, v2}, Lcom/android/internal/telephony/CommandsInterface;->getIMSIForApp(Ljava/lang/String;Landroid/os/Message;)V
 
     .line 646
-    iget v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
+    iget v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->recordsToLoad:I
 
     add-int/lit8 v0, v0, 0x1
 
-    iput v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
+    iput v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->recordsToLoad:I
 
     .line 648
-    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->mFh:Lcom/android/internal/telephony/IccFileHandler;
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mFh:Lcom/android/internal/telephony/IccFileHandler;
 
     const/16 v1, 0x2fe2
 
@@ -461,14 +461,14 @@
     invoke-virtual {v0, v1, v2}, Lcom/android/internal/telephony/IccFileHandler;->loadEFTransparent(ILandroid/os/Message;)V
 
     .line 650
-    iget v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
+    iget v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->recordsToLoad:I
 
     add-int/lit8 v0, v0, 0x1
 
-    iput v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
+    iput v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->recordsToLoad:I
 
     .line 652
-    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->mFh:Lcom/android/internal/telephony/IccFileHandler;
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mFh:Lcom/android/internal/telephony/IccFileHandler;
 
     const/16 v1, 0x2f05
 
@@ -483,14 +483,14 @@
     invoke-virtual {v0, v1, v2}, Lcom/android/internal/telephony/IccFileHandler;->loadEFTransparent(ILandroid/os/Message;)V
 
     .line 654
-    iget v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
+    iget v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->recordsToLoad:I
 
     add-int/lit8 v0, v0, 0x1
 
-    iput v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
+    iput v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->recordsToLoad:I
 
     .line 656
-    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->mFh:Lcom/android/internal/telephony/IccFileHandler;
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mFh:Lcom/android/internal/telephony/IccFileHandler;
 
     const/16 v1, 0x6f3a
 
@@ -505,14 +505,14 @@
     invoke-virtual {v0, v1, v2}, Lcom/android/internal/telephony/IccFileHandler;->loadEFTransparent(ILandroid/os/Message;)V
 
     .line 658
-    iget v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
+    iget v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->recordsToLoad:I
 
     add-int/lit8 v0, v0, 0x1
 
-    iput v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
+    iput v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->recordsToLoad:I
 
     .line 660
-    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->mFh:Lcom/android/internal/telephony/IccFileHandler;
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mFh:Lcom/android/internal/telephony/IccFileHandler;
 
     const/16 v1, 0x6f41
 
@@ -527,14 +527,14 @@
     invoke-virtual {v0, v1, v2}, Lcom/android/internal/telephony/IccFileHandler;->loadEFTransparent(ILandroid/os/Message;)V
 
     .line 662
-    iget v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
+    iget v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->recordsToLoad:I
 
     add-int/lit8 v0, v0, 0x1
 
-    iput v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
+    iput v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->recordsToLoad:I
 
     .line 664
-    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->mFh:Lcom/android/internal/telephony/IccFileHandler;
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mFh:Lcom/android/internal/telephony/IccFileHandler;
 
     const/16 v1, 0x6f44
 
@@ -549,14 +549,14 @@
     invoke-virtual {v0, v1, v3, v2}, Lcom/android/internal/telephony/IccFileHandler;->loadEFLinearFixed(IILandroid/os/Message;)V
 
     .line 666
-    iget v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
+    iget v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->recordsToLoad:I
 
     add-int/lit8 v0, v0, 0x1
 
-    iput v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
+    iput v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->recordsToLoad:I
 
     .line 668
-    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->mFh:Lcom/android/internal/telephony/IccFileHandler;
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mFh:Lcom/android/internal/telephony/IccFileHandler;
 
     const/16 v1, 0x6f22
 
@@ -571,14 +571,14 @@
     invoke-virtual {v0, v1, v2}, Lcom/android/internal/telephony/IccFileHandler;->loadEFTransparent(ILandroid/os/Message;)V
 
     .line 670
-    iget v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
+    iget v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->recordsToLoad:I
 
     add-int/lit8 v0, v0, 0x1
 
-    iput v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
+    iput v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->recordsToLoad:I
 
     .line 672
-    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->mFh:Lcom/android/internal/telephony/IccFileHandler;
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mFh:Lcom/android/internal/telephony/IccFileHandler;
 
     const/16 v1, 0x6f28
 
@@ -593,14 +593,14 @@
     invoke-virtual {v0, v1, v2}, Lcom/android/internal/telephony/IccFileHandler;->loadEFLinearFixedAll(ILandroid/os/Message;)V
 
     .line 674
-    iget v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
+    iget v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->recordsToLoad:I
 
     add-int/lit8 v0, v0, 0x1
 
-    iput v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
+    iput v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->recordsToLoad:I
 
     .line 678
-    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->mFh:Lcom/android/internal/telephony/IccFileHandler;
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mFh:Lcom/android/internal/telephony/IccFileHandler;
 
     const/16 v1, 0x6f5a
 
@@ -617,11 +617,11 @@
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/internal/telephony/IccFileHandler;->loadEFTransparent(IILandroid/os/Message;)V
 
     .line 680
-    iget v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
+    iget v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->recordsToLoad:I
 
     add-int/lit8 v0, v0, 0x1
 
-    iput v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
+    iput v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->recordsToLoad:I
 
     .line 682
     new-instance v0, Ljava/lang/StringBuilder;
@@ -634,7 +634,7 @@
 
     move-result-object v0
 
-    iget v1, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
+    iget v1, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->recordsToLoad:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -646,7 +646,7 @@
 
     move-result-object v0
 
-    iget-boolean v1, p0, Lcom/android/internal/telephony/IccRecords;->recordsRequested:Z
+    iget-boolean v1, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->recordsRequested:Z
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
@@ -676,7 +676,7 @@
 
     .line 549
     .local v0, bestMatch:Ljava/lang/String;
-    iget-object v7, p0, Lcom/android/internal/telephony/IccRecords;->mContext:Landroid/content/Context;
+    iget-object v7, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mContext:Landroid/content/Context;
 
     invoke-virtual {v7}, Landroid/content/Context;->getAssets()Landroid/content/res/AssetManager;
 
@@ -825,7 +825,7 @@
 
     iget-object v0, p1, Lcom/android/internal/telephony/IccRefreshResponse;->aid:Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/android/internal/telephony/IccRecords;->mParentApp:Lcom/android/internal/telephony/UiccCardApplication;
+    iget-object v1, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mParentApp:Lcom/android/internal/telephony/UiccCardApplication;
 
     invoke-virtual {v1}, Lcom/android/internal/telephony/UiccCardApplication;->getAid()Ljava/lang/String;
 
@@ -857,7 +857,7 @@
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cdma/RuimRecords;->log(Ljava/lang/String;)V
 
     .line 755
-    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->adnCache:Lcom/android/internal/telephony/AdnRecordCache;
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->adnCache:Lcom/android/internal/telephony/AdnRecordCache;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/AdnRecordCache;->reset()V
 
@@ -884,7 +884,7 @@
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cdma/RuimRecords;->log(Ljava/lang/String;)V
 
     .line 765
-    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->mCi:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     const/4 v1, 0x0
 
@@ -1096,7 +1096,7 @@
     invoke-virtual {p0, v3}, Lcom/android/internal/telephony/cdma/RuimRecords;->log(Ljava/lang/String;)V
 
     .line 590
-    iget-object v3, p0, Lcom/android/internal/telephony/IccRecords;->mContext:Landroid/content/Context;
+    iget-object v3, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mContext:Landroid/content/Context;
 
     invoke-static {v3, v2, v0}, Lcom/android/internal/telephony/MccTable;->setSystemLocale(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
 
@@ -1143,12 +1143,12 @@
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cdma/RuimRecords;->log(Ljava/lang/String;)V
 
     .line 122
-    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->mCi:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-interface {v0, p0}, Lcom/android/internal/telephony/CommandsInterface;->unregisterForIccRefresh(Landroid/os/Handler;)V
 
     .line 123
-    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->mParentApp:Lcom/android/internal/telephony/UiccCardApplication;
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mParentApp:Lcom/android/internal/telephony/UiccCardApplication;
 
     invoke-virtual {v0, p0}, Lcom/android/internal/telephony/UiccCardApplication;->unregisterForReady(Landroid/os/Handler;)V
 
@@ -1211,7 +1211,7 @@
 
     .prologue
     .line 154
-    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->mImsi:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mImsi:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -1273,7 +1273,7 @@
     const/4 v3, 0x0
 
     .line 208
-    iget-object v1, p0, Lcom/android/internal/telephony/IccRecords;->mImsi:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mImsi:Ljava/lang/String;
 
     if-nez v1, :cond_0
 
@@ -1286,20 +1286,20 @@
 
     .line 212
     :cond_0
-    iget v1, p0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
+    iget v1, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mncLength:I
 
     const/4 v2, -0x1
 
     if-eq v1, v2, :cond_1
 
-    iget v1, p0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
+    iget v1, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mncLength:I
 
     if-eqz v1, :cond_1
 
     .line 215
-    iget-object v1, p0, Lcom/android/internal/telephony/IccRecords;->mImsi:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mImsi:Ljava/lang/String;
 
-    iget v2, p0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
+    iget v2, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mncLength:I
 
     add-int/lit8 v2, v2, 0x3
 
@@ -1311,7 +1311,7 @@
 
     .line 221
     :cond_1
-    iget-object v1, p0, Lcom/android/internal/telephony/IccRecords;->mImsi:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mImsi:Ljava/lang/String;
 
     const/4 v2, 0x3
 
@@ -1325,7 +1325,7 @@
 
     .line 222
     .local v0, mcc:I
-    iget-object v1, p0, Lcom/android/internal/telephony/IccRecords;->mImsi:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mImsi:Ljava/lang/String;
 
     invoke-static {v0}, Lcom/android/internal/telephony/MccTable;->smallestDigitsMccForMnc(I)I
 
@@ -1362,7 +1362,7 @@
 
     .line 431
     .local v4, isRecordLoadResponse:Z
-    iget-object v7, p0, Lcom/android/internal/telephony/IccRecords;->mDestroyed:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget-object v7, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mDestroyed:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {v7}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
@@ -1541,14 +1541,14 @@
 
     check-cast v7, Ljava/lang/String;
 
-    iput-object v7, p0, Lcom/android/internal/telephony/IccRecords;->mImsi:Ljava/lang/String;
+    iput-object v7, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mImsi:Ljava/lang/String;
 
     .line 460
-    iget-object v7, p0, Lcom/android/internal/telephony/IccRecords;->mImsi:Ljava/lang/String;
+    iget-object v7, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mImsi:Ljava/lang/String;
 
     if-eqz v7, :cond_6
 
-    iget-object v7, p0, Lcom/android/internal/telephony/IccRecords;->mImsi:Ljava/lang/String;
+    iget-object v7, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mImsi:Ljava/lang/String;
 
     invoke-virtual {v7}, Ljava/lang/String;->length()I
 
@@ -1556,7 +1556,7 @@
 
     if-lt v7, v11, :cond_5
 
-    iget-object v7, p0, Lcom/android/internal/telephony/IccRecords;->mImsi:Ljava/lang/String;
+    iget-object v7, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mImsi:Ljava/lang/String;
 
     invoke-virtual {v7}, Ljava/lang/String;->length()I
 
@@ -1578,7 +1578,7 @@
 
     move-result-object v7
 
-    iget-object v8, p0, Lcom/android/internal/telephony/IccRecords;->mImsi:Ljava/lang/String;
+    iget-object v8, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mImsi:Ljava/lang/String;
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1593,7 +1593,7 @@
     .line 462
     const/4 v7, 0x0
 
-    iput-object v7, p0, Lcom/android/internal/telephony/IccRecords;->mImsi:Ljava/lang/String;
+    iput-object v7, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mImsi:Ljava/lang/String;
 
     .line 465
     :cond_6
@@ -1607,7 +1607,7 @@
 
     move-result-object v7
 
-    iget-object v8, p0, Lcom/android/internal/telephony/IccRecords;->mImsi:Ljava/lang/String;
+    iget-object v8, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mImsi:Ljava/lang/String;
 
     const/4 v9, 0x0
 
@@ -1650,7 +1650,7 @@
     if-gt v7, v11, :cond_2
 
     .line 470
-    iget-object v7, p0, Lcom/android/internal/telephony/IccRecords;->mContext:Landroid/content/Context;
+    iget-object v7, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mContext:Landroid/content/Context;
 
     invoke-static {v7, v6}, Lcom/android/internal/telephony/MccTable;->updateMccMncConfiguration(Landroid/content/Context;Ljava/lang/String;)V
 
@@ -1778,7 +1778,7 @@
 
     move-result-object v7
 
-    iput-object v7, p0, Lcom/android/internal/telephony/IccRecords;->iccid:Ljava/lang/String;
+    iput-object v7, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->iccid:Ljava/lang/String;
 
     .line 502
     new-instance v7, Ljava/lang/StringBuilder;
@@ -1791,7 +1791,7 @@
 
     move-result-object v7
 
-    iget-object v8, p0, Lcom/android/internal/telephony/IccRecords;->iccid:Ljava/lang/String;
+    iget-object v8, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->iccid:Ljava/lang/String;
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1938,7 +1938,7 @@
 
     .line 709
     :cond_1
-    iget-object v2, p0, Lcom/android/internal/telephony/IccRecords;->mParentApp:Lcom/android/internal/telephony/UiccCardApplication;
+    iget-object v2, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mParentApp:Lcom/android/internal/telephony/UiccCardApplication;
 
     if-nez v2, :cond_2
 
@@ -1949,7 +1949,7 @@
 
     .line 713
     :cond_2
-    iget-object v2, p0, Lcom/android/internal/telephony/IccRecords;->mParentApp:Lcom/android/internal/telephony/UiccCardApplication;
+    iget-object v2, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mParentApp:Lcom/android/internal/telephony/UiccCardApplication;
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/UiccCardApplication;->getType()Lcom/android/internal/telephony/IccCardApplicationStatus$AppType;
 
@@ -2088,14 +2088,14 @@
     invoke-static {v1, v0}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 622
-    iget-object v1, p0, Lcom/android/internal/telephony/IccRecords;->mImsi:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mImsi:Ljava/lang/String;
 
     if-eqz v1, :cond_0
 
     .line 623
     const-string v1, "gsm.sim.operator.iso-country"
 
-    iget-object v2, p0, Lcom/android/internal/telephony/IccRecords;->mImsi:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mImsi:Ljava/lang/String;
 
     const/4 v3, 0x0
 
@@ -2120,7 +2120,7 @@
     invoke-direct {p0}, Lcom/android/internal/telephony/cdma/RuimRecords;->setLocaleFromCsim()V
 
     .line 628
-    iget-object v1, p0, Lcom/android/internal/telephony/IccRecords;->recordsLoadedRegistrants:Landroid/os/RegistrantList;
+    iget-object v1, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->recordsLoadedRegistrants:Landroid/os/RegistrantList;
 
     new-instance v2, Landroid/os/AsyncResult;
 
@@ -2140,7 +2140,7 @@
     invoke-direct {p0}, Lcom/android/internal/telephony/cdma/RuimRecords;->fetchRuimRecords()V
 
     .line 636
-    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->mCi:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     const/16 v1, 0xa
 
@@ -2159,11 +2159,11 @@
 
     .prologue
     .line 600
-    iget v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
+    iget v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->recordsToLoad:I
 
     add-int/lit8 v0, v0, -0x1
 
-    iput v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
+    iput v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->recordsToLoad:I
 
     .line 601
     new-instance v0, Ljava/lang/StringBuilder;
@@ -2176,7 +2176,7 @@
 
     move-result-object v0
 
-    iget v1, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
+    iget v1, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->recordsToLoad:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -2188,7 +2188,7 @@
 
     move-result-object v0
 
-    iget-boolean v1, p0, Lcom/android/internal/telephony/IccRecords;->recordsRequested:Z
+    iget-boolean v1, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->recordsRequested:Z
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
@@ -2201,11 +2201,11 @@
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cdma/RuimRecords;->log(Ljava/lang/String;)V
 
     .line 603
-    iget v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
+    iget v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->recordsToLoad:I
 
     if-nez v0, :cond_1
 
-    iget-boolean v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsRequested:Z
+    iget-boolean v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->recordsRequested:Z
 
     const/4 v1, 0x1
 
@@ -2221,7 +2221,7 @@
 
     .line 605
     :cond_1
-    iget v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
+    iget v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->recordsToLoad:I
 
     if-gez v0, :cond_0
 
@@ -2233,7 +2233,7 @@
     .line 607
     const/4 v0, 0x0
 
-    iput v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
+    iput v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->recordsToLoad:I
 
     goto :goto_0
 .end method
@@ -2262,25 +2262,25 @@
     const/4 v1, 0x0
 
     .line 134
-    iput v1, p0, Lcom/android/internal/telephony/IccRecords;->countVoiceMessages:I
+    iput v1, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->countVoiceMessages:I
 
     .line 135
     const/4 v0, -0x1
 
-    iput v0, p0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
+    iput v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mncLength:I
 
     .line 136
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/android/internal/telephony/IccRecords;->iccid:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->iccid:Ljava/lang/String;
 
     .line 138
-    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->adnCache:Lcom/android/internal/telephony/AdnRecordCache;
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->adnCache:Lcom/android/internal/telephony/AdnRecordCache;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/AdnRecordCache;->reset()V
 
     .line 149
-    iput-boolean v1, p0, Lcom/android/internal/telephony/IccRecords;->recordsRequested:Z
+    iput-boolean v1, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->recordsRequested:Z
 
     .line 150
     return-void
@@ -2343,10 +2343,10 @@
     .line 735
     :cond_1
     :goto_1
-    iput p2, p0, Lcom/android/internal/telephony/IccRecords;->countVoiceMessages:I
+    iput p2, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->countVoiceMessages:I
 
     .line 737
-    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->mRecordsEventsRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mRecordsEventsRegistrants:Landroid/os/RegistrantList;
 
     const/4 v1, 0x0
 

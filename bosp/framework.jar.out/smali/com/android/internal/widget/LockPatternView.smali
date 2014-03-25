@@ -343,7 +343,7 @@
     invoke-virtual {v7, v8}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
 
     .line 268
-    const v7, 0x1080115
+    const v7, #drawable@btn_code_lock_default_holo#t
 
     invoke-direct {p0, v7}, Lcom/android/internal/widget/LockPatternView;->getBitmapFor(I)Landroid/graphics/Bitmap;
 
@@ -352,7 +352,7 @@
     iput-object v7, p0, Lcom/android/internal/widget/LockPatternView;->mBitmapBtnDefault:Landroid/graphics/Bitmap;
 
     .line 269
-    const v7, 0x1080117
+    const v7, #drawable@btn_code_lock_touched_holo#t
 
     invoke-direct {p0, v7}, Lcom/android/internal/widget/LockPatternView;->getBitmapFor(I)Landroid/graphics/Bitmap;
 
@@ -361,7 +361,7 @@
     iput-object v7, p0, Lcom/android/internal/widget/LockPatternView;->mBitmapBtnTouched:Landroid/graphics/Bitmap;
 
     .line 270
-    const v7, 0x1080372
+    const v7, #drawable@indicator_code_lock_point_area_default_holo#t
 
     invoke-direct {p0, v7}, Lcom/android/internal/widget/LockPatternView;->getBitmapFor(I)Landroid/graphics/Bitmap;
 
@@ -370,7 +370,7 @@
     iput-object v7, p0, Lcom/android/internal/widget/LockPatternView;->mBitmapCircleDefault:Landroid/graphics/Bitmap;
 
     .line 271
-    const v7, 0x1080374
+    const v7, #drawable@indicator_code_lock_point_area_green_holo#t
 
     invoke-direct {p0, v7}, Lcom/android/internal/widget/LockPatternView;->getBitmapFor(I)Landroid/graphics/Bitmap;
 
@@ -379,7 +379,7 @@
     iput-object v7, p0, Lcom/android/internal/widget/LockPatternView;->mBitmapCircleGreen:Landroid/graphics/Bitmap;
 
     .line 272
-    const v7, 0x1080376
+    const v7, #drawable@indicator_code_lock_point_area_red_holo#t
 
     invoke-direct {p0, v7}, Lcom/android/internal/widget/LockPatternView;->getBitmapFor(I)Landroid/graphics/Bitmap;
 
@@ -388,7 +388,7 @@
     iput-object v7, p0, Lcom/android/internal/widget/LockPatternView;->mBitmapCircleRed:Landroid/graphics/Bitmap;
 
     .line 274
-    const v7, 0x108036f
+    const v7, #drawable@indicator_code_lock_drag_direction_green_up#t
 
     invoke-direct {p0, v7}, Lcom/android/internal/widget/LockPatternView;->getBitmapFor(I)Landroid/graphics/Bitmap;
 
@@ -397,7 +397,7 @@
     iput-object v7, p0, Lcom/android/internal/widget/LockPatternView;->mBitmapArrowGreenUp:Landroid/graphics/Bitmap;
 
     .line 275
-    const v7, 0x1080370
+    const v7, #drawable@indicator_code_lock_drag_direction_red_up#t
 
     invoke-direct {p0, v7}, Lcom/android/internal/widget/LockPatternView;->getBitmapFor(I)Landroid/graphics/Bitmap;
 
@@ -1644,7 +1644,7 @@
 
     .prologue
     .line 853
-    iget v0, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v0, p0, Lcom/android/internal/widget/LockPatternView;->mPaddingLeft:I
 
     int-to-float v0, v0
 
@@ -1673,7 +1673,7 @@
 
     .prologue
     .line 857
-    iget v0, p0, Landroid/view/View;->mPaddingTop:I
+    iget v0, p0, Lcom/android/internal/widget/LockPatternView;->mPaddingTop:I
 
     int-to-float v0, v0
 
@@ -1712,7 +1712,7 @@
 
     .line 608
     .local v1, hitSize:F
-    iget v5, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v5, p0, Lcom/android/internal/widget/LockPatternView;->mPaddingLeft:I
 
     int-to-float v5, v5
 
@@ -1791,7 +1791,7 @@
 
     .line 588
     .local v0, hitSize:F
-    iget v5, p0, Landroid/view/View;->mPaddingTop:I
+    iget v5, p0, Lcom/android/internal/widget/LockPatternView;->mPaddingTop:I
 
     int-to-float v5, v5
 
@@ -2756,7 +2756,7 @@
 
     .prologue
     .line 375
-    const v0, 0x104031c
+    const v0, #string@lockscreen_access_pattern_cell_added#t
 
     invoke-direct {p0, v0}, Lcom/android/internal/widget/LockPatternView;->sendAccessEvent(I)V
 
@@ -2782,7 +2782,7 @@
 
     .prologue
     .line 396
-    const v0, 0x104031b
+    const v0, #string@lockscreen_access_pattern_cleared#t
 
     invoke-direct {p0, v0}, Lcom/android/internal/widget/LockPatternView;->sendAccessEvent(I)V
 
@@ -2806,7 +2806,7 @@
 
     .prologue
     .line 389
-    const v0, 0x104031d
+    const v0, #string@lockscreen_access_pattern_detected#t
 
     invoke-direct {p0, v0}, Lcom/android/internal/widget/LockPatternView;->sendAccessEvent(I)V
 
@@ -2832,7 +2832,7 @@
 
     .prologue
     .line 382
-    const v0, 0x104031a
+    const v0, #string@lockscreen_access_pattern_start#t
 
     invoke-direct {p0, v0}, Lcom/android/internal/widget/LockPatternView;->sendAccessEvent(I)V
 
@@ -2937,7 +2937,7 @@
 
     .prologue
     .line 801
-    iget-object v0, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/android/internal/widget/LockPatternView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0, p1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -3330,7 +3330,7 @@
     .line 918
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/view/View;->mPaddingTop:I
+    iget v0, v0, Lcom/android/internal/widget/LockPatternView;->mPaddingTop:I
 
     move/from16 v27, v0
 
@@ -3338,7 +3338,7 @@
     .local v27, paddingTop:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/view/View;->mPaddingLeft:I
+    iget v0, v0, Lcom/android/internal/widget/LockPatternView;->mPaddingLeft:I
 
     move/from16 v26, v0
 
@@ -3755,7 +3755,7 @@
 
     .prologue
     .line 621
-    iget-object v1, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/android/internal/widget/LockPatternView;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Landroid/view/accessibility/AccessibilityManager;->getInstance(Landroid/content/Context;)Landroid/view/accessibility/AccessibilityManager;
 
@@ -4029,11 +4029,11 @@
     const/high16 v4, 0x4040
 
     .line 447
-    iget v2, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v2, p0, Lcom/android/internal/widget/LockPatternView;->mPaddingLeft:I
 
     sub-int v2, p1, v2
 
-    iget v3, p0, Landroid/view/View;->mPaddingRight:I
+    iget v3, p0, Lcom/android/internal/widget/LockPatternView;->mPaddingRight:I
 
     sub-int v1, v2, v3
 
@@ -4046,11 +4046,11 @@
     iput v2, p0, Lcom/android/internal/widget/LockPatternView;->mSquareWidth:F
 
     .line 450
-    iget v2, p0, Landroid/view/View;->mPaddingTop:I
+    iget v2, p0, Lcom/android/internal/widget/LockPatternView;->mPaddingTop:I
 
     sub-int v2, p2, v2
 
-    iget v3, p0, Landroid/view/View;->mPaddingBottom:I
+    iget v3, p0, Lcom/android/internal/widget/LockPatternView;->mPaddingBottom:I
 
     sub-int v0, v2, v3
 

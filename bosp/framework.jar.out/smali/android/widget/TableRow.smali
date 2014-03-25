@@ -84,7 +84,7 @@
 
     .prologue
     .line 78
-    iget-object v0, p0, Landroid/view/ViewGroup;->mOnHierarchyChangeListener:Landroid/view/ViewGroup$OnHierarchyChangeListener;
+    iget-object v0, p0, Landroid/widget/TableRow;->mOnHierarchyChangeListener:Landroid/view/ViewGroup$OnHierarchyChangeListener;
 
     .line 79
     .local v0, oldListener:Landroid/view/ViewGroup$OnHierarchyChangeListener;
@@ -425,12 +425,12 @@
     if-ne v7, v8, :cond_2
 
     .line 302
-    iget v7, v3, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iget v7, v3, Landroid/widget/TableRow$LayoutParams;->width:I
 
     packed-switch v7, :pswitch_data_0
 
     .line 310
-    iget v7, v3, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iget v7, v3, Landroid/widget/TableRow$LayoutParams;->width:I
 
     const/high16 v8, 0x4000
 
@@ -448,11 +448,11 @@
 
     move-result v7
 
-    iget v8, v3, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v8, v3, Landroid/widget/TableRow$LayoutParams;->leftMargin:I
 
     add-int/2addr v7, v8
 
-    iget v8, v3, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iget v8, v3, Landroid/widget/TableRow$LayoutParams;->rightMargin:I
 
     add-int v6, v7, v8
 
@@ -693,7 +693,7 @@
 
     .line 206
     :cond_0
-    iget v7, v11, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
+    iget v7, v11, Landroid/widget/TableRow$LayoutParams;->gravity:I
 
     .line 207
     .local v7, gravity:I
@@ -712,11 +712,11 @@
     :cond_1
     const/4 v14, 0x0
 
-    iget v15, v11, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v15, v11, Landroid/widget/TableRow$LayoutParams;->leftMargin:I
 
     sub-int v15, v5, v15
 
-    iget v0, v11, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iget v0, v11, Landroid/widget/TableRow$LayoutParams;->rightMargin:I
 
     move/from16 v16, v0
 
@@ -734,25 +734,25 @@
     .local v4, childWidthMeasureSpec:I
     move-object/from16 v0, p0
 
-    iget v14, v0, Landroid/view/View;->mPaddingTop:I
+    iget v14, v0, Landroid/widget/TableRow;->mPaddingTop:I
 
     move-object/from16 v0, p0
 
-    iget v15, v0, Landroid/view/View;->mPaddingBottom:I
+    iget v15, v0, Landroid/widget/TableRow;->mPaddingBottom:I
 
     add-int/2addr v14, v15
 
-    iget v15, v11, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iget v15, v11, Landroid/widget/TableRow$LayoutParams;->topMargin:I
 
     add-int/2addr v14, v15
 
-    iget v15, v11, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+    iget v15, v11, Landroid/widget/TableRow$LayoutParams;->bottomMargin:I
 
     add-int/2addr v14, v15
 
     add-int v14, v14, p6
 
-    iget v15, v11, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iget v15, v11, Landroid/widget/TableRow$LayoutParams;->height:I
 
     move/from16 v0, p5
 

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.baidu.internal.keyguard.slide.TransportControlView android:id="@id/transport_controls"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="bottom" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <RelativeLayout android:gravity="bottom" android:id="@id/relativeLayout1" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="23.0dip" android:layout_marginRight="23.0dip">
+                <TextView android:textAppearance="?textAppearanceMedium" android:textSize="14.0dip" android:typeface="sans" android:textColor="#ffffffff" android:ellipsize="none" android:id="@id/title" android:fadingEdgeLength="20.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:shadowColor="#99000000" android:shadowDx="1.2" android:shadowDy="1.2" android:shadowRadius="3.0" android:layout_centerHorizontal="true" android:requiresFadingEdge="horizontal" />
+                <TextView android:textAppearance="?textAppearanceMedium" android:textSize="12.0dip" android:typeface="sans" android:textColor="#99ffffff" android:ellipsize="none" android:id="@id/album" android:fadingEdgeLength="20.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:shadowColor="#99000000" android:shadowDx="1.2" android:shadowDy="1.2" android:shadowRadius="3.0" android:layout_below="@id/title" android:layout_centerHorizontal="true" android:requiresFadingEdge="horizontal" />
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip">
+            <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <Button android:layout_gravity="center" android:id="@id/btn_prev" android:background="@drawable/zz_lockscreen_music_prev" android:clickable="true" android:layout_width="52.0dip" android:layout_height="49.0dip" android:contentDescription="@string/lockscreen_transport_prev_description" />
+            </FrameLayout>
+            <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <Button android:layout_gravity="center" android:id="@id/btn_play" android:background="@drawable/zz_lockscreen_music_play" android:clickable="true" android:layout_width="56.0dip" android:layout_height="59.0dip" android:layout_marginBottom="8.0dip" android:contentDescription="@string/lockscreen_transport_play_description" />
+            </FrameLayout>
+            <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <Button android:layout_gravity="center" android:id="@id/btn_next" android:background="@drawable/zz_lockscreen_music_next" android:clickable="true" android:layout_width="52.0dip" android:layout_height="49.0dip" android:contentDescription="@string/lockscreen_transport_next_description" />
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+</com.baidu.internal.keyguard.slide.TransportControlView>

@@ -21168,7 +21168,7 @@
 
     .line 1422
     .local v1, context:Landroid/content/Context;
-    const v4, 0x103006b
+    const v4, #style@Theme.Holo#t
 
     invoke-virtual {v1, v4}, Landroid/content/Context;->setTheme(I)V
 
@@ -61025,7 +61025,7 @@
 
     move-result-object v2
 
-    const v3, 0x10900b4
+    const v3, #layout@safe_mode#t
 
     const/4 v4, 0x0
 
@@ -64792,9 +64792,9 @@
 
     iget-object v3, v0, Lcom/android/server/am/ActivityManagerService;->mWindowManager:Lcom/android/server/wm/WindowManagerService;
 
-    const v4, 0x10a0050
+    const v4, #anim@screen_user_exit#t
 
-    const v5, 0x10a004f
+    const v5, #anim@screen_user_enter#t
 
     invoke-virtual {v3, v4, v5}, Lcom/android/server/wm/WindowManagerService;->startFreezingScreen(II)V
 
@@ -66317,7 +66317,7 @@
 
     move-result-object v3
 
-    const v4, 0x104033c
+    const v4, #string@factorytest_not_system#t
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -66337,7 +66337,7 @@
 
     move-result-object v3
 
-    const v4, 0x104033d
+    const v4, #string@factorytest_no_action#t
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 

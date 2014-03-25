@@ -4631,7 +4631,7 @@
 
     move-result-object v2
 
-    const v3, 0x10103f8
+    const v3, #attr@accessibilityFocusedDrawable#t
 
     const/4 v4, 0x1
 
@@ -5606,7 +5606,7 @@
 
     .line 1055
     .local v4, packageMetrics:Landroid/util/DisplayMetrics;
-    const v6, 0x1050007
+    const v6, #dimen@config_prefDialogWidth#t
 
     iget-object v7, p0, Landroid/view/ViewRootImpl;->mTmpValue:Landroid/util/TypedValue;
 
@@ -7695,7 +7695,7 @@
 
     move-result-object v4
 
-    const v10, 0x10e0001
+    const v10, #integer@config_mediumAnimTime#t
 
     invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getInteger(I)I
 

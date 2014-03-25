@@ -11205,6 +11205,14 @@
 
     if-nez v4, :cond_6
 
+    const-string/jumbo v4, "yi"
+
+    invoke-virtual {v4, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_6
+
     .line 814
     new-instance v4, Ljava/lang/StringBuilder;
 

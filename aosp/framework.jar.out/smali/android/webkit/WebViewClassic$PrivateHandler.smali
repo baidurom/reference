@@ -1897,7 +1897,7 @@
 
     move-result-object v40
 
-    const v41, 0x10900e6
+    const v41, #layout@web_text_view_dropdown#t
 
     move-object/from16 v0, v40
 

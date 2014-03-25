@@ -234,8 +234,16 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_3
 
+    .line 87
     throw v2
 
+    .line 83
+    :catch_0
+    move-exception v2
+
+    goto :goto_1
+
+    .line 90
     :catchall_3
     move-exception v2
 
@@ -245,12 +253,6 @@
     .catchall {:try_start_6 .. :try_end_6} :catchall_3
 
     throw v2
-
-    .line 83
-    :catch_0
-    move-exception v2
-
-    goto :goto_1
 .end method
 
 .method public isCanceled()Z

@@ -135,7 +135,7 @@
 
     float-to-int v8, v8
 
-    iput v8, v1, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+    iput v8, v1, Landroid/widget/LinearLayout$LayoutParams;->bottomMargin:I
 
     .line 65
     new-instance v6, Landroid/widget/TextView;
@@ -303,7 +303,7 @@
     .line 95
     iget-object v2, p0, Lcom/android/internal/app/PlatLogoActivity;->mContent:Landroid/widget/ImageView;
 
-    const v3, 0x108045f
+    const v3, #drawable@platlogo_alt#t
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setImageResource(I)V
 

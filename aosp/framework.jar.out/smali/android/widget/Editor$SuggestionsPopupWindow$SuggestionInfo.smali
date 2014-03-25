@@ -64,7 +64,7 @@
 
     move-result-object v1
 
-    const v2, 0x1030118
+    const v2, #style@TextAppearance.SuggestionHighlight#t
 
     invoke-direct {v0, v1, v2}, Landroid/text/style/TextAppearanceSpan;-><init>(Landroid/content/Context;I)V
 

@@ -131,7 +131,7 @@
 
     const/4 v1, 0x0
 
-    const v2, 0x10100aa
+    const v2, #attr@state_above_anchor#t
 
     aput v2, v0, v1
 
@@ -191,7 +191,7 @@
 
     .prologue
     .line 162
-    const v0, 0x1010076
+    const v0, #attr@popupWindowStyle#t
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/PopupWindow;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -351,7 +351,7 @@
 
     .line 190
     .local v2, animStyle:I
-    const v7, 0x10301ee
+    const v7, #style@Animation.PopupWindow#t
 
     if-ne v2, v7, :cond_0
 
@@ -752,7 +752,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x10301e8
+    const v0, #style@Animation.DropDownUp#t
 
     .line 1090
     :goto_0
@@ -760,7 +760,7 @@
 
     .line 1084
     :cond_0
-    const v0, 0x10301e7
+    const v0, #style@Animation.DropDownDown#t
 
     goto :goto_0
 

@@ -947,11 +947,11 @@
 
     .prologue
     .line 123
-    const v0, 0x1030005
+    const v0, #style@Theme#t
 
-    const v1, 0x103006b
+    const v1, #style@Theme.Holo#t
 
-    const v2, 0x1030128
+    const v2, #style@Theme.DeviceDefault#t
 
     invoke-static {p0, p1, v0, v1, v2}, Landroid/content/res/Resources;->selectSystemTheme(IIIII)I
 

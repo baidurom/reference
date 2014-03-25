@@ -27,27 +27,27 @@
     .parameter "looper"
 
     .prologue
-    .line 65
+    .line 66
     invoke-direct {p0}, Landroid/location/ICountryListener$Stub;-><init>()V
 
-    .line 66
+    .line 67
     iput-object p1, p0, Landroid/location/CountryDetector$ListenerTransport;->mListener:Landroid/location/CountryListener;
 
-    .line 67
+    .line 68
     if-eqz p2, :cond_0
 
-    .line 68
+    .line 69
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
     iput-object v0, p0, Landroid/location/CountryDetector$ListenerTransport;->mHandler:Landroid/os/Handler;
 
-    .line 72
+    .line 73
     :goto_0
     return-void
 
-    .line 70
+    .line 71
     :cond_0
     new-instance v0, Landroid/os/Handler;
 
@@ -63,7 +63,7 @@
     .parameter "x0"
 
     .prologue
-    .line 59
+    .line 60
     iget-object v0, p0, Landroid/location/CountryDetector$ListenerTransport;->mListener:Landroid/location/CountryListener;
 
     return-object v0
@@ -76,7 +76,7 @@
     .parameter "country"
 
     .prologue
-    .line 75
+    .line 76
     iget-object v0, p0, Landroid/location/CountryDetector$ListenerTransport;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Landroid/location/CountryDetector$ListenerTransport$1;
@@ -85,6 +85,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 80
+    .line 81
     return-void
 .end method

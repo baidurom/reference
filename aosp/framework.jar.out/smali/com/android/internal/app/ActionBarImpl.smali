@@ -203,7 +203,7 @@
     if-nez v2, :cond_0
 
     .line 156
-    const v2, 0x1020002
+    const v2, #id@content#t
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -730,7 +730,7 @@
     iput-object v3, p0, Lcom/android/internal/app/ActionBarImpl;->mContext:Landroid/content/Context;
 
     .line 167
-    const v3, 0x102035d
+    const v3, #id@action_bar_overlay_layout#t
 
     invoke-virtual {p1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -752,7 +752,7 @@
 
     .line 172
     :cond_0
-    const v3, 0x102035a
+    const v3, #id@action_bar#t
 
     invoke-virtual {p1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -763,7 +763,7 @@
     iput-object v3, p0, Lcom/android/internal/app/ActionBarImpl;->mActionView:Lcom/android/internal/widget/ActionBarView;
 
     .line 173
-    const v3, 0x102035b
+    const v3, #id@action_context_bar#t
 
     invoke-virtual {p1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -774,7 +774,7 @@
     iput-object v3, p0, Lcom/android/internal/app/ActionBarImpl;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
 
     .line 175
-    const v3, 0x1020359
+    const v3, #id@action_bar_container#t
 
     invoke-virtual {p1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -785,7 +785,7 @@
     iput-object v3, p0, Lcom/android/internal/app/ActionBarImpl;->mContainerView:Lcom/android/internal/widget/ActionBarContainer;
 
     .line 177
-    const v3, 0x102035e
+    const v3, #id@top_action_bar#t
 
     invoke-virtual {p1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -807,7 +807,7 @@
 
     .line 182
     :cond_1
-    const v3, 0x102035c
+    const v3, #id@split_action_bar#t
 
     invoke-virtual {p1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1645,7 +1645,7 @@
     :cond_4
     iget-object v4, p0, Lcom/android/internal/app/ActionBarImpl;->mContext:Landroid/content/Context;
 
-    const v5, 0x10c0002
+    const v5, #interpolator@accelerate_cubic#t
 
     invoke-static {v4, v5}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
 
@@ -1875,7 +1875,7 @@
     :cond_4
     iget-object v4, p0, Lcom/android/internal/app/ActionBarImpl;->mContext:Landroid/content/Context;
 
-    const v5, 0x10c0003
+    const v5, #interpolator@decelerate_cubic#t
 
     invoke-static {v4, v5}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
 
@@ -2230,7 +2230,7 @@
 
     .line 791
     .local v0, currentTheme:Landroid/content/res/Resources$Theme;
-    const v3, 0x1010397
+    const v3, #attr@actionBarWidgetTheme#t
 
     const/4 v4, 0x1
 

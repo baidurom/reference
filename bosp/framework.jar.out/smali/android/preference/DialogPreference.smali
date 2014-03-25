@@ -44,7 +44,7 @@
 
     .prologue
     .line 90
-    const v0, 0x1010091
+    const v0, #attr@dialogPreferenceStyle#t
 
     invoke-direct {p0, p1, p2, v0}, Landroid/preference/DialogPreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -285,7 +285,7 @@
 
     .prologue
     .line 354
-    const v3, 0x102000b
+    const v3, #id@message#t
 
     invoke-virtual {p1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -861,7 +861,7 @@
     if-eqz p1, :cond_0
 
     .line 302
-    invoke-virtual {v2, p1}, Landroid/app/AlertDialog;->onRestoreInstanceState(Landroid/os/Bundle;)V
+    invoke-virtual {v2, p1}, Landroid/app/Dialog;->onRestoreInstanceState(Landroid/os/Bundle;)V
 
     .line 304
     :cond_0
@@ -876,10 +876,10 @@
 
     .line 307
     :cond_1
-    invoke-virtual {v2, p0}, Landroid/app/AlertDialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
+    invoke-virtual {v2, p0}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
     .line 308
-    invoke-virtual {v2}, Landroid/app/AlertDialog;->show()V
+    invoke-virtual {v2}, Landroid/app/Dialog;->show()V
 
     .line 309
     return-void

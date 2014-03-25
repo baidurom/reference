@@ -56,7 +56,7 @@
 
     .prologue
     .line 450
-    const v0, 0x1010085
+    const v0, #attr@webViewStyle#t
 
     invoke-direct {p0, p1, p2, v0}, Landroid/webkit/WebView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -183,7 +183,7 @@
 
     .prologue
     .line 262
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-super {p0, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     return-void
 .end method
@@ -311,7 +311,7 @@
 
     .prologue
     .line 262
-    iput p1, p0, Landroid/view/View;->mScrollX:I
+    iput p1, p0, Landroid/webkit/WebView;->mScrollX:I
 
     return p1
 .end method
@@ -323,7 +323,7 @@
 
     .prologue
     .line 262
-    iput p1, p0, Landroid/view/View;->mScrollY:I
+    iput p1, p0, Landroid/webkit/WebView;->mScrollY:I
 
     return p1
 .end method

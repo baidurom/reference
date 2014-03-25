@@ -49,7 +49,7 @@
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews$Action;-><init>(Landroid/widget/RemoteViews$1;)V
 
     .line 1357
-    iput p2, p0, Landroid/widget/RemoteViews$Action;->viewId:I
+    iput p2, p0, Landroid/widget/RemoteViews$ViewPaddingAction;->viewId:I
 
     .line 1358
     iput p3, p0, Landroid/widget/RemoteViews$ViewPaddingAction;->left:I
@@ -85,7 +85,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/widget/RemoteViews$Action;->viewId:I
+    iput v0, p0, Landroid/widget/RemoteViews$ViewPaddingAction;->viewId:I
 
     .line 1366
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
@@ -135,7 +135,7 @@
 
     .line 1384
     .local v0, context:Landroid/content/Context;
-    iget v2, p0, Landroid/widget/RemoteViews$Action;->viewId:I
+    iget v2, p0, Landroid/widget/RemoteViews$ViewPaddingAction;->viewId:I
 
     invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -186,7 +186,7 @@
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 1374
-    iget v0, p0, Landroid/widget/RemoteViews$Action;->viewId:I
+    iget v0, p0, Landroid/widget/RemoteViews$ViewPaddingAction;->viewId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 

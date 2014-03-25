@@ -123,7 +123,7 @@
     .line 123
     iput-object p1, p0, Landroid/service/wallpaper/WallpaperService$Engine;->this$0:Landroid/service/wallpaper/WallpaperService;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 131
     iput-boolean v0, p0, Landroid/service/wallpaper/WallpaperService$Engine;->mInitializing:Z
@@ -189,7 +189,7 @@
     .line 165
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/service/wallpaper/WallpaperService$Engine;->mLock:Ljava/lang/Object;
 
@@ -920,7 +920,7 @@
     .line 506
     invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    const-string v0, "mVisible="
+    const-string/jumbo v0, "mVisible="
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -1025,7 +1025,7 @@
     .line 517
     invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    const-string v0, "mType="
+    const-string/jumbo v0, "mType="
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -1072,7 +1072,7 @@
     .line 522
     invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    const-string v0, "mVisibleInsets="
+    const-string/jumbo v0, "mVisibleInsets="
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -1142,7 +1142,7 @@
     :try_start_0
     invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    const-string v0, "mPendingXOffset="
+    const-string/jumbo v0, "mPendingXOffset="
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -1162,7 +1162,7 @@
     .line 531
     invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    const-string v0, "mPendingXOffsetStep="
+    const-string/jumbo v0, "mPendingXOffsetStep="
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -1209,7 +1209,7 @@
     .line 538
     invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    const-string v0, "mPendingMove="
+    const-string/jumbo v0, "mPendingMove="
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -1876,7 +1876,7 @@
 
     move/from16 v0, v26
 
-    iput v0, v2, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iput v0, v2, Landroid/view/WindowManager$LayoutParams;->width:I
 
     .line 592
     move-object/from16 v0, p0
@@ -1885,7 +1885,7 @@
 
     move/from16 v0, v25
 
-    iput v0, v2, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iput v0, v2, Landroid/view/WindowManager$LayoutParams;->height:I
 
     .line 594
     move-object/from16 v0, p0
@@ -2019,7 +2019,7 @@
 
     iget-object v2, v0, Landroid/service/wallpaper/WallpaperService$Engine;->mLayout:Landroid/view/WindowManager$LayoutParams;
 
-    const v3, 0x10301ec
+    const v3, #style@Animation.Wallpaper#t
 
     iput v3, v2, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 

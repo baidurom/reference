@@ -87,7 +87,7 @@
     .line 1708
     iget-object v1, p0, Lcom/android/server/accessibility/ScreenMagnifier$Viewport$ViewportWindow;->mWindowContent:Lcom/android/server/accessibility/ScreenMagnifier$Viewport$ViewportWindow$ContentView;
 
-    const v2, 0x106000d
+    const v2, #color@transparent#t
 
     invoke-virtual {v1, v2}, Lcom/android/server/accessibility/ScreenMagnifier$Viewport$ViewportWindow$ContentView;->setBackgroundColor(I)V
 

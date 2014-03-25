@@ -474,7 +474,7 @@
 
     move-result-object v2
 
-    const v3, 0x104051d
+    const v3, #string@display_manager_overlay_display_name#t
 
     const/16 v18, 0x1
 

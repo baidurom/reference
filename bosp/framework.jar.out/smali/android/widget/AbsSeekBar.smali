@@ -163,12 +163,12 @@
 
     .prologue
     .line 459
-    iget-object v0, p0, Landroid/view/View;->mParent:Landroid/view/ViewParent;
+    iget-object v0, p0, Landroid/widget/AbsSeekBar;->mParent:Landroid/view/ViewParent;
 
     if-eqz v0, :cond_0
 
     .line 460
-    iget-object v0, p0, Landroid/view/View;->mParent:Landroid/view/ViewParent;
+    iget-object v0, p0, Landroid/widget/AbsSeekBar;->mParent:Landroid/view/ViewParent;
 
     const/4 v1, 0x1
 
@@ -188,11 +188,11 @@
 
     .prologue
     .line 287
-    iget v8, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v8, p0, Landroid/widget/AbsSeekBar;->mPaddingLeft:I
 
     sub-int v8, p1, v8
 
-    iget v9, p0, Landroid/view/View;->mPaddingRight:I
+    iget v9, p0, Landroid/widget/AbsSeekBar;->mPaddingRight:I
 
     sub-int v0, v8, v9
 
@@ -300,11 +300,11 @@
 
     .line 425
     .local v4, width:I
-    iget v6, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v6, p0, Landroid/widget/AbsSeekBar;->mPaddingLeft:I
 
     sub-int v6, v4, v6
 
-    iget v7, p0, Landroid/view/View;->mPaddingRight:I
+    iget v7, p0, Landroid/widget/AbsSeekBar;->mPaddingRight:I
 
     sub-int v0, v6, v7
 
@@ -329,7 +329,7 @@
     if-eqz v6, :cond_2
 
     .line 430
-    iget v6, p0, Landroid/view/View;->mPaddingRight:I
+    iget v6, p0, Landroid/widget/AbsSeekBar;->mPaddingRight:I
 
     sub-int v6, v4, v6
 
@@ -367,7 +367,7 @@
     .end local v1           #max:I
     .end local v3           #scale:F
     :cond_0
-    iget v6, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v6, p0, Landroid/widget/AbsSeekBar;->mPaddingLeft:I
 
     if-ge v5, v6, :cond_1
 
@@ -382,7 +382,7 @@
     :cond_1
     sub-int v6, v0, v5
 
-    iget v7, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v7, p0, Landroid/widget/AbsSeekBar;->mPaddingLeft:I
 
     add-int/2addr v6, v7
 
@@ -401,7 +401,7 @@
     .line 439
     .end local v3           #scale:F
     :cond_2
-    iget v6, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v6, p0, Landroid/widget/AbsSeekBar;->mPaddingLeft:I
 
     if-ge v5, v6, :cond_3
 
@@ -414,7 +414,7 @@
     .line 441
     .end local v3           #scale:F
     :cond_3
-    iget v6, p0, Landroid/view/View;->mPaddingRight:I
+    iget v6, p0, Landroid/widget/AbsSeekBar;->mPaddingRight:I
 
     sub-int v6, v4, v6
 
@@ -429,7 +429,7 @@
     .line 444
     .end local v3           #scale:F
     :cond_4
-    iget v6, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v6, p0, Landroid/widget/AbsSeekBar;->mPaddingLeft:I
 
     sub-int v6, v5, v6
 
@@ -472,13 +472,13 @@
     .line 254
     .local v6, thumbHeight:I
     :goto_0
-    iget v9, p0, Landroid/widget/ProgressBar;->mMaxHeight:I
+    iget v9, p0, Landroid/widget/AbsSeekBar;->mMaxHeight:I
 
-    iget v10, p0, Landroid/view/View;->mPaddingTop:I
+    iget v10, p0, Landroid/widget/AbsSeekBar;->mPaddingTop:I
 
     sub-int v10, p2, v10
 
-    iget v11, p0, Landroid/view/View;->mPaddingBottom:I
+    iget v11, p0, Landroid/widget/AbsSeekBar;->mPaddingBottom:I
 
     sub-int/2addr v10, v11
 
@@ -528,21 +528,21 @@
     if-eqz v0, :cond_1
 
     .line 266
-    iget v9, p0, Landroid/view/View;->mPaddingRight:I
+    iget v9, p0, Landroid/widget/AbsSeekBar;->mPaddingRight:I
 
     sub-int v9, p1, v9
 
-    iget v10, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v10, p0, Landroid/widget/AbsSeekBar;->mPaddingLeft:I
 
     sub-int/2addr v9, v10
 
-    iget v10, p0, Landroid/view/View;->mPaddingBottom:I
+    iget v10, p0, Landroid/widget/AbsSeekBar;->mPaddingBottom:I
 
     sub-int v10, p2, v10
 
     sub-int/2addr v10, v2
 
-    iget v11, p0, Landroid/view/View;->mPaddingTop:I
+    iget v11, p0, Landroid/widget/AbsSeekBar;->mPaddingTop:I
 
     sub-int/2addr v10, v11
 
@@ -581,19 +581,19 @@
     if-eqz v0, :cond_5
 
     .line 273
-    iget v9, p0, Landroid/view/View;->mPaddingRight:I
+    iget v9, p0, Landroid/widget/AbsSeekBar;->mPaddingRight:I
 
     sub-int v9, p1, v9
 
-    iget v10, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v10, p0, Landroid/widget/AbsSeekBar;->mPaddingLeft:I
 
     sub-int/2addr v9, v10
 
-    iget v10, p0, Landroid/view/View;->mPaddingBottom:I
+    iget v10, p0, Landroid/widget/AbsSeekBar;->mPaddingBottom:I
 
     sub-int v10, p2, v10
 
-    iget v11, p0, Landroid/view/View;->mPaddingTop:I
+    iget v11, p0, Landroid/widget/AbsSeekBar;->mPaddingTop:I
 
     sub-int/2addr v10, v11
 
@@ -759,7 +759,7 @@
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     .line 331
-    iget v0, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v0, p0, Landroid/widget/AbsSeekBar;->mPaddingLeft:I
 
     iget v1, p0, Landroid/widget/AbsSeekBar;->mThumbOffset:I
 
@@ -767,7 +767,7 @@
 
     int-to-float v0, v0
 
-    iget v1, p0, Landroid/view/View;->mPaddingTop:I
+    iget v1, p0, Landroid/widget/AbsSeekBar;->mPaddingTop:I
 
     int-to-float v1, v1
 
@@ -999,9 +999,9 @@
     if-eqz v0, :cond_0
 
     .line 345
-    iget v4, p0, Landroid/widget/ProgressBar;->mMinWidth:I
+    iget v4, p0, Landroid/widget/AbsSeekBar;->mMinWidth:I
 
-    iget v5, p0, Landroid/widget/ProgressBar;->mMaxWidth:I
+    iget v5, p0, Landroid/widget/AbsSeekBar;->mMaxWidth:I
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
@@ -1016,9 +1016,9 @@
     move-result v2
 
     .line 346
-    iget v4, p0, Landroid/widget/ProgressBar;->mMinHeight:I
+    iget v4, p0, Landroid/widget/AbsSeekBar;->mMinHeight:I
 
-    iget v5, p0, Landroid/widget/ProgressBar;->mMaxHeight:I
+    iget v5, p0, Landroid/widget/AbsSeekBar;->mMaxHeight:I
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
@@ -1039,18 +1039,18 @@
 
     .line 349
     :cond_0
-    iget v4, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v4, p0, Landroid/widget/AbsSeekBar;->mPaddingLeft:I
 
-    iget v5, p0, Landroid/view/View;->mPaddingRight:I
+    iget v5, p0, Landroid/widget/AbsSeekBar;->mPaddingRight:I
 
     add-int/2addr v4, v5
 
     add-int/2addr v2, v4
 
     .line 350
-    iget v4, p0, Landroid/view/View;->mPaddingTop:I
+    iget v4, p0, Landroid/widget/AbsSeekBar;->mPaddingTop:I
 
-    iget v5, p0, Landroid/view/View;->mPaddingBottom:I
+    iget v5, p0, Landroid/widget/AbsSeekBar;->mPaddingBottom:I
 
     add-int/2addr v4, v5
 

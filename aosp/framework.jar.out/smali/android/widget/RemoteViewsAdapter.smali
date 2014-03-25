@@ -664,7 +664,7 @@
     if-eqz p1, :cond_0
 
     .line 1129
-    const v2, 0x1020245
+    const v2, #id@rowTypeId#t
 
     invoke-virtual {p1, v2}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
@@ -2148,7 +2148,7 @@
 
     .line 1200
     .local v20, newView:Landroid/view/View;
-    const v3, 0x1020245
+    const v3, #id@rowTypeId#t
 
     new-instance v4, Ljava/lang/Integer;
 

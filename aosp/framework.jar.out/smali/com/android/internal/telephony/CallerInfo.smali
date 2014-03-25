@@ -1272,7 +1272,7 @@
 
     .prologue
     .line 387
-    const v0, 0x10402e5
+    const v0, #string@emergency_call_dialog_number_for_display#t
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1281,7 +1281,7 @@
     iput-object v0, p0, Lcom/android/internal/telephony/CallerInfo;->phoneNumber:Ljava/lang/String;
 
     .line 389
-    const v0, 0x108045d
+    const v0, #drawable@picture_emergency#t
 
     iput v0, p0, Lcom/android/internal/telephony/CallerInfo;->photoResource:I
 

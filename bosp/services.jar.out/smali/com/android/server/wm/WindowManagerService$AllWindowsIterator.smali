@@ -47,19 +47,19 @@
     .parameter
 
     .prologue
-    .line 11086
+    .line 11148
     iput-object p1, p0, Lcom/android/server/wm/WindowManagerService$AllWindowsIterator;->this$0:Lcom/android/server/wm/WindowManagerService;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 11087
+    .line 11149
     new-instance v0, Lcom/android/server/wm/WindowManagerService$DisplayContentsIterator;
 
     invoke-direct {v0, p1}, Lcom/android/server/wm/WindowManagerService$DisplayContentsIterator;-><init>(Lcom/android/server/wm/WindowManagerService;)V
 
     iput-object v0, p0, Lcom/android/server/wm/WindowManagerService$AllWindowsIterator;->mDisplayContentsIterator:Lcom/android/server/wm/WindowManagerService$DisplayContentsIterator;
 
-    .line 11088
+    .line 11150
     iget-object v0, p0, Lcom/android/server/wm/WindowManagerService$AllWindowsIterator;->mDisplayContentsIterator:Lcom/android/server/wm/WindowManagerService$DisplayContentsIterator;
 
     invoke-virtual {v0}, Lcom/android/server/wm/WindowManagerService$DisplayContentsIterator;->next()Lcom/android/server/wm/DisplayContent;
@@ -68,7 +68,7 @@
 
     iput-object v0, p0, Lcom/android/server/wm/WindowManagerService$AllWindowsIterator;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
 
-    .line 11089
+    .line 11151
     iget-object v0, p0, Lcom/android/server/wm/WindowManagerService$AllWindowsIterator;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
 
     invoke-virtual {v0}, Lcom/android/server/wm/DisplayContent;->getWindowList()Lcom/android/server/wm/WindowList;
@@ -77,7 +77,7 @@
 
     iput-object v0, p0, Lcom/android/server/wm/WindowManagerService$AllWindowsIterator;->mWindowList:Lcom/android/server/wm/WindowList;
 
-    .line 11090
+    .line 11152
     return-void
 .end method
 
@@ -87,13 +87,13 @@
     .parameter "reverse"
 
     .prologue
-    .line 11093
+    .line 11155
     invoke-direct {p0, p1}, Lcom/android/server/wm/WindowManagerService$AllWindowsIterator;-><init>(Lcom/android/server/wm/WindowManagerService;)V
 
-    .line 11094
+    .line 11156
     iput-boolean p2, p0, Lcom/android/server/wm/WindowManagerService$AllWindowsIterator;->mReverse:Z
 
-    .line 11095
+    .line 11157
     if-eqz p2, :cond_0
 
     iget-object v0, p0, Lcom/android/server/wm/WindowManagerService$AllWindowsIterator;->mWindowList:Lcom/android/server/wm/WindowList;
@@ -107,10 +107,10 @@
     :goto_0
     iput v0, p0, Lcom/android/server/wm/WindowManagerService$AllWindowsIterator;->mWindowListIndex:I
 
-    .line 11096
+    .line 11158
     return-void
 
-    .line 11095
+    .line 11157
     :cond_0
     const/4 v0, 0x0
 
@@ -127,17 +127,17 @@
 
     const/4 v1, 0x0
 
-    .line 11100
+    .line 11162
     iget-boolean v2, p0, Lcom/android/server/wm/WindowManagerService$AllWindowsIterator;->mReverse:Z
 
     if-eqz v2, :cond_2
 
-    .line 11101
+    .line 11163
     iget v2, p0, Lcom/android/server/wm/WindowManagerService$AllWindowsIterator;->mWindowListIndex:I
 
     if-ltz v2, :cond_1
 
-    .line 11103
+    .line 11165
     :cond_0
     :goto_0
     return v0
@@ -145,10 +145,10 @@
     :cond_1
     move v0, v1
 
-    .line 11101
+    .line 11163
     goto :goto_0
 
-    .line 11103
+    .line 11165
     :cond_2
     iget v2, p0, Lcom/android/server/wm/WindowManagerService$AllWindowsIterator;->mWindowListIndex:I
 
@@ -169,14 +169,14 @@
     .locals 3
 
     .prologue
-    .line 11108
+    .line 11170
     invoke-virtual {p0}, Lcom/android/server/wm/WindowManagerService$AllWindowsIterator;->hasNext()Z
 
     move-result v1
 
     if-eqz v1, :cond_2
 
-    .line 11109
+    .line 11171
     iget-object v1, p0, Lcom/android/server/wm/WindowManagerService$AllWindowsIterator;->mWindowList:Lcom/android/server/wm/WindowList;
 
     iget v2, p0, Lcom/android/server/wm/WindowManagerService$AllWindowsIterator;->mWindowListIndex:I
@@ -187,20 +187,20 @@
 
     check-cast v0, Lcom/android/server/wm/WindowState;
 
-    .line 11110
+    .line 11172
     .local v0, win:Lcom/android/server/wm/WindowState;
     iget-boolean v1, p0, Lcom/android/server/wm/WindowManagerService$AllWindowsIterator;->mReverse:Z
 
     if-eqz v1, :cond_1
 
-    .line 11111
+    .line 11173
     iget v1, p0, Lcom/android/server/wm/WindowManagerService$AllWindowsIterator;->mWindowListIndex:I
 
     add-int/lit8 v1, v1, -0x1
 
     iput v1, p0, Lcom/android/server/wm/WindowManagerService$AllWindowsIterator;->mWindowListIndex:I
 
-    .line 11112
+    .line 11174
     iget v1, p0, Lcom/android/server/wm/WindowManagerService$AllWindowsIterator;->mWindowListIndex:I
 
     if-gez v1, :cond_0
@@ -213,7 +213,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 11113
+    .line 11175
     iget-object v1, p0, Lcom/android/server/wm/WindowManagerService$AllWindowsIterator;->mDisplayContentsIterator:Lcom/android/server/wm/WindowManagerService$DisplayContentsIterator;
 
     invoke-virtual {v1}, Lcom/android/server/wm/WindowManagerService$DisplayContentsIterator;->next()Lcom/android/server/wm/DisplayContent;
@@ -222,7 +222,7 @@
 
     iput-object v1, p0, Lcom/android/server/wm/WindowManagerService$AllWindowsIterator;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
 
-    .line 11114
+    .line 11176
     iget-object v1, p0, Lcom/android/server/wm/WindowManagerService$AllWindowsIterator;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
 
     invoke-virtual {v1}, Lcom/android/server/wm/DisplayContent;->getWindowList()Lcom/android/server/wm/WindowList;
@@ -231,7 +231,7 @@
 
     iput-object v1, p0, Lcom/android/server/wm/WindowManagerService$AllWindowsIterator;->mWindowList:Lcom/android/server/wm/WindowList;
 
-    .line 11115
+    .line 11177
     iget-object v1, p0, Lcom/android/server/wm/WindowManagerService$AllWindowsIterator;->mWindowList:Lcom/android/server/wm/WindowList;
 
     invoke-virtual {v1}, Lcom/android/server/wm/WindowList;->size()I
@@ -242,12 +242,12 @@
 
     iput v1, p0, Lcom/android/server/wm/WindowManagerService$AllWindowsIterator;->mWindowListIndex:I
 
-    .line 11126
+    .line 11188
     :cond_0
     :goto_0
     return-object v0
 
-    .line 11118
+    .line 11180
     :cond_1
     iget v1, p0, Lcom/android/server/wm/WindowManagerService$AllWindowsIterator;->mWindowListIndex:I
 
@@ -255,7 +255,7 @@
 
     iput v1, p0, Lcom/android/server/wm/WindowManagerService$AllWindowsIterator;->mWindowListIndex:I
 
-    .line 11119
+    .line 11181
     iget v1, p0, Lcom/android/server/wm/WindowManagerService$AllWindowsIterator;->mWindowListIndex:I
 
     iget-object v2, p0, Lcom/android/server/wm/WindowManagerService$AllWindowsIterator;->mWindowList:Lcom/android/server/wm/WindowList;
@@ -274,7 +274,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 11121
+    .line 11183
     iget-object v1, p0, Lcom/android/server/wm/WindowManagerService$AllWindowsIterator;->mDisplayContentsIterator:Lcom/android/server/wm/WindowManagerService$DisplayContentsIterator;
 
     invoke-virtual {v1}, Lcom/android/server/wm/WindowManagerService$DisplayContentsIterator;->next()Lcom/android/server/wm/DisplayContent;
@@ -283,7 +283,7 @@
 
     iput-object v1, p0, Lcom/android/server/wm/WindowManagerService$AllWindowsIterator;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
 
-    .line 11122
+    .line 11184
     iget-object v1, p0, Lcom/android/server/wm/WindowManagerService$AllWindowsIterator;->mDisplayContent:Lcom/android/server/wm/DisplayContent;
 
     invoke-virtual {v1}, Lcom/android/server/wm/DisplayContent;->getWindowList()Lcom/android/server/wm/WindowList;
@@ -292,14 +292,14 @@
 
     iput-object v1, p0, Lcom/android/server/wm/WindowManagerService$AllWindowsIterator;->mWindowList:Lcom/android/server/wm/WindowList;
 
-    .line 11123
+    .line 11185
     const/4 v1, 0x0
 
     iput v1, p0, Lcom/android/server/wm/WindowManagerService$AllWindowsIterator;->mWindowListIndex:I
 
     goto :goto_0
 
-    .line 11128
+    .line 11190
     .end local v0           #win:Lcom/android/server/wm/WindowState;
     :cond_2
     new-instance v1, Ljava/util/NoSuchElementException;
@@ -313,7 +313,7 @@
     .locals 1
 
     .prologue
-    .line 11079
+    .line 11141
     invoke-virtual {p0}, Lcom/android/server/wm/WindowManagerService$AllWindowsIterator;->next()Lcom/android/server/wm/WindowState;
 
     move-result-object v0
@@ -325,7 +325,7 @@
     .locals 2
 
     .prologue
-    .line 11133
+    .line 11195
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "AllWindowsIterator.remove not implemented"

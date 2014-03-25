@@ -126,7 +126,7 @@
     const/4 v1, 0x0
 
     .line 85
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 46
     iput v1, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardMode:I
@@ -219,11 +219,11 @@
     .line 65
     :array_0
     .array-data 0x4
-        0x5t 0x0t 0xft 0x1t
-        0x7t 0x0t 0xft 0x1t
-        0x8t 0x0t 0xft 0x1t
-        0x9t 0x0t 0xft 0x1t
-        0xat 0x0t 0xft 0x1t
+        #xml@password_kbd_numeric#a
+        #xml@password_kbd_qwerty#a
+        #xml@password_kbd_qwerty_shifted#a
+        #xml@password_kbd_symbols#a
+        #xml@password_kbd_symbols_shift#a
     .end array-data
 .end method
 
@@ -231,7 +231,7 @@
     .locals 6
 
     .prologue
-    const v5, 0x10203b3
+    const v5, #id@mode_normal#t
 
     const/4 v4, 0x1
 
@@ -348,7 +348,7 @@
     .parameter "height"
 
     .prologue
-    const v3, 0x10203b3
+    const v3, #id@mode_normal#t
 
     const/4 v6, 0x1
 

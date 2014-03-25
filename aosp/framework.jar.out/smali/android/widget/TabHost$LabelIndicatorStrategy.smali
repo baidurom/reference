@@ -102,7 +102,7 @@
 
     .line 602
     .local v2, tabIndicator:Landroid/view/View;
-    const v4, 0x1020016
+    const v4, #id@title#t
 
     invoke-virtual {v2, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -128,7 +128,7 @@
     if-gt v4, v5, :cond_0
 
     .line 607
-    const v4, 0x10805b1
+    const v4, #drawable@tab_indicator_v4#t
 
     invoke-virtual {v2, v4}, Landroid/view/View;->setBackgroundResource(I)V
 
@@ -137,7 +137,7 @@
 
     move-result-object v4
 
-    const v5, 0x106007d
+    const v5, #color@tab_indicator_text_v4#t
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getColorStateList(I)Landroid/content/res/ColorStateList;
 

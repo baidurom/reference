@@ -70,6 +70,16 @@
     .end annotation
 .end field
 
+.field public static final BATTERY_LIGHT_ENABLED:Ljava/lang/String; = "battery_light_enabled"
+
+.field public static final BATTERY_LIGHT_FULL_COLOR:Ljava/lang/String; = "battery_light_full_color"
+
+.field public static final BATTERY_LIGHT_LOW_COLOR:Ljava/lang/String; = "battery_light_low_color"
+
+.field public static final BATTERY_LIGHT_MEDIUM_COLOR:Ljava/lang/String; = "battery_light_medium_color"
+
+.field public static final BATTERY_LIGHT_PULSE:Ljava/lang/String; = "battery_light_pulse"
+
 .field public static final BLUETOOTH_DISCOVERABILITY:Ljava/lang/String; = "bluetooth_discoverability"
 
 .field public static final BLUETOOTH_DISCOVERABILITY_TIMEOUT:Ljava/lang/String; = "bluetooth_discoverability_timeout"
@@ -78,6 +88,8 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 .end field
+
+.field public static final BUTTON_LIGHT_OFF:Ljava/lang/String; = "button_light_off"
 
 .field public static final CAR_DOCK_SOUND:Ljava/lang/String; = "car_dock_sound"
     .annotation runtime Ljava/lang/Deprecated;
@@ -137,6 +149,8 @@
 .field public static final DTMF_TONE_TYPE_WHEN_DIALING:Ljava/lang/String; = "dtmf_tone_type"
 
 .field public static final DTMF_TONE_WHEN_DIALING:Ljava/lang/String; = "dtmf_tone"
+
+.field public static final ENABLE_MWI_NOTIFICATION:Ljava/lang/String; = "enable_mwi_notification"
 
 .field public static final END_BUTTON_BEHAVIOR:Ljava/lang/String; = "end_button_behavior"
 
@@ -261,6 +275,16 @@
 
 .field public static final NOTIFICATION_LIGHT_PULSE:Ljava/lang/String; = "notification_light_pulse"
 
+.field public static final NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE:Ljava/lang/String; = "notification_light_pulse_custom_enable"
+
+.field public static final NOTIFICATION_LIGHT_PULSE_CUSTOM_VALUES:Ljava/lang/String; = "notification_light_pulse_custom_values"
+
+.field public static final NOTIFICATION_LIGHT_PULSE_DEFAULT_COLOR:Ljava/lang/String; = "notification_light_pulse_default_color"
+
+.field public static final NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_OFF:Ljava/lang/String; = "notification_light_pulse_default_led_off"
+
+.field public static final NOTIFICATION_LIGHT_PULSE_DEFAULT_LED_ON:Ljava/lang/String; = "notification_light_pulse_default_led_on"
+
 .field public static final NOTIFICATION_SOUND:Ljava/lang/String; = "notification_sound"
 
 .field public static final PARENTAL_CONTROL_ENABLED:Ljava/lang/String; = "parental_control_enabled"
@@ -286,6 +310,14 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 .end field
+
+.field public static final PREVENT_WAKEUP:Ljava/lang/String; = "prevent_wakeup"
+
+.field public static final PRE_SET_ALARM_ALERT:Ljava/lang/String; = "pre_set_alarm_alert"
+
+.field public static final PRE_SET_NOTIFICATION_SOUND:Ljava/lang/String; = "pre_set_notification_sound"
+
+.field public static final PRE_SET_RINGTONE:Ljava/lang/String; = "pre_set_ringtone"
 
 .field public static final RADIO_BLUETOOTH:Ljava/lang/String; = "bluetooth"
     .annotation runtime Ljava/lang/Deprecated;
@@ -421,6 +453,8 @@
 .field public static final VOLUME_MUSIC:Ljava/lang/String; = "volume_music"
 
 .field public static final VOLUME_NOTIFICATION:Ljava/lang/String; = "volume_notification"
+
+.field public static final VOLUME_REVOKE:Ljava/lang/String; = "volume_revoke"
 
 .field public static final VOLUME_RING:Ljava/lang/String; = "volume_ring"
 
@@ -1127,7 +1161,7 @@
 
     sput-object v0, Landroid/provider/Settings$System;->VOLUME_SETTINGS:[Ljava/lang/String;
 
-    .line 1878
+    .line 1888
     const-string/jumbo v0, "ringtone"
 
     invoke-static {v0}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -1136,7 +1170,7 @@
 
     sput-object v0, Landroid/provider/Settings$System;->DEFAULT_RINGTONE_URI:Landroid/net/Uri;
 
-    .line 1894
+    .line 1914
     const-string/jumbo v0, "notification_sound"
 
     invoke-static {v0}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -1145,7 +1179,7 @@
 
     sput-object v0, Landroid/provider/Settings$System;->DEFAULT_NOTIFICATION_URI:Landroid/net/Uri;
 
-    .line 1910
+    .line 1940
     const-string v0, "alarm_alert"
 
     invoke-static {v0}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -1154,8 +1188,8 @@
 
     sput-object v0, Landroid/provider/Settings$System;->DEFAULT_ALARM_ALERT_URI:Landroid/net/Uri;
 
-    .line 2287
-    const/16 v0, 0x37
+    .line 2406
+    const/16 v0, 0x39
 
     new-array v0, v0, [Ljava/lang/String;
 
@@ -1475,7 +1509,19 @@
 
     const/16 v1, 0x36
 
+    const-string/jumbo v2, "volume_revoke"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x37
+
     const-string/jumbo v2, "vibrate_when_ringing"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x38
+
+    const-string/jumbo v2, "prevent_wakeup"
 
     aput-object v2, v0, v1
 

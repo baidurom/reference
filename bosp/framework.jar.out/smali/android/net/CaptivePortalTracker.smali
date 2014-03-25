@@ -854,9 +854,9 @@
     .parameter "visible"
 
     .prologue
-    const v12, 0x1040409
+    const v12, #string@network_available_sign_in_detailed#t
 
-    const v9, 0x1040408
+    const v9, #string@network_available_sign_in#t
 
     const/4 v11, 0x1
 
@@ -935,7 +935,7 @@
 
     .line 352
     .local v0, details:Ljava/lang/CharSequence;
-    const v1, 0x1080520
+    const v1, #drawable@stat_notify_rssi_in_range#t
 
     .line 356
     .local v1, icon:I
@@ -1014,7 +1014,7 @@
 
     .line 336
     :pswitch_0
-    const v7, 0x1040407
+    const v7, #string@wifi_available_sign_in#t
 
     new-array v8, v11, [Ljava/lang/Object;
 
@@ -1046,7 +1046,7 @@
 
     .line 339
     .restart local v0       #details:Ljava/lang/CharSequence;
-    const v1, 0x1080524
+    const v1, #drawable@stat_notify_wifi_in_range#t
 
     .line 340
     .restart local v1       #icon:I
@@ -1079,7 +1079,7 @@
 
     .line 346
     .restart local v0       #details:Ljava/lang/CharSequence;
-    const v1, 0x1080520
+    const v1, #drawable@stat_notify_rssi_in_range#t
 
     .line 347
     .restart local v1       #icon:I

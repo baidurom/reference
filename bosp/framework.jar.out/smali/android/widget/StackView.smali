@@ -139,7 +139,7 @@
 
     .prologue
     .line 164
-    const v0, 0x10103dd
+    const v0, #attr@stackViewStyle#t
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/StackView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -309,7 +309,7 @@
     invoke-virtual {p0, v7}, Landroid/widget/StackView;->requestDisallowInterceptTouchEvent(Z)V
 
     .line 657
-    iget-object v10, p0, Landroid/widget/AdapterViewAnimator;->mAdapter:Landroid/widget/Adapter;
+    iget-object v10, p0, Landroid/widget/StackView;->mAdapter:Landroid/widget/Adapter;
 
     if-nez v10, :cond_2
 
@@ -346,7 +346,7 @@
     .line 667
     .local v0, activeIndex:I
     :goto_2
-    iget-boolean v10, p0, Landroid/widget/AdapterViewAnimator;->mLoopViews:Z
+    iget-boolean v10, p0, Landroid/widget/StackView;->mLoopViews:Z
 
     if-eqz v10, :cond_a
 
@@ -371,7 +371,7 @@
     .line 670
     .local v3, endOfStack:Z
     :goto_3
-    iget-boolean v10, p0, Landroid/widget/AdapterViewAnimator;->mLoopViews:Z
+    iget-boolean v10, p0, Landroid/widget/StackView;->mLoopViews:Z
 
     if-eqz v10, :cond_b
 
@@ -396,7 +396,7 @@
     .line 675
     .local v2, beginningOfStack:Z
     :goto_4
-    iget-boolean v8, p0, Landroid/widget/AdapterViewAnimator;->mLoopViews:Z
+    iget-boolean v8, p0, Landroid/widget/StackView;->mLoopViews:Z
 
     if-eqz v8, :cond_c
 
@@ -479,7 +479,7 @@
     .line 677
     .restart local v2       #beginningOfStack:Z
     :cond_c
-    iget v8, p0, Landroid/widget/AdapterViewAnimator;->mCurrentWindowStartUnbounded:I
+    iget v8, p0, Landroid/widget/StackView;->mCurrentWindowStartUnbounded:I
 
     add-int/2addr v8, v0
 
@@ -502,7 +502,7 @@
     .line 680
     .end local v4           #stackMode:I
     :cond_e
-    iget v8, p0, Landroid/widget/AdapterViewAnimator;->mCurrentWindowStartUnbounded:I
+    iget v8, p0, Landroid/widget/StackView;->mCurrentWindowStartUnbounded:I
 
     add-int/2addr v8, v0
 
@@ -1147,7 +1147,7 @@
     .line 204
     new-instance v2, Landroid/widget/StackView$HolographicHelper;
 
-    iget-object v3, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v3, p0, Landroid/widget/StackView;->mContext:Landroid/content/Context;
 
     invoke-direct {v2, v3}, Landroid/widget/StackView$HolographicHelper;-><init>(Landroid/content/Context;)V
 
@@ -1164,10 +1164,10 @@
     iput v6, p0, Landroid/widget/StackView;->mStackMode:I
 
     .line 215
-    iput v5, p0, Landroid/widget/AdapterViewAnimator;->mWhichChild:I
+    iput v5, p0, Landroid/widget/StackView;->mWhichChild:I
 
     .line 219
-    iget-object v2, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Landroid/widget/StackView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -1232,11 +1232,11 @@
 
     move-result v11
 
-    iget v12, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v12, p0, Landroid/widget/StackView;->mPaddingLeft:I
 
     sub-int/2addr v11, v12
 
-    iget v12, p0, Landroid/view/View;->mPaddingRight:I
+    iget v12, p0, Landroid/widget/StackView;->mPaddingRight:I
 
     sub-int v4, v11, v12
 
@@ -1252,11 +1252,11 @@
 
     move-result v11
 
-    iget v12, p0, Landroid/view/View;->mPaddingTop:I
+    iget v12, p0, Landroid/widget/StackView;->mPaddingTop:I
 
     sub-int/2addr v11, v12
 
-    iget v12, p0, Landroid/view/View;->mPaddingBottom:I
+    iget v12, p0, Landroid/widget/StackView;->mPaddingBottom:I
 
     sub-int v1, v11, v12
 
@@ -1838,7 +1838,7 @@
     .line 318
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/AdapterViewAnimator;->mMaxNumActiveViews:I
+    iget v0, v0, Landroid/widget/StackView;->mMaxNumActiveViews:I
 
     move/from16 v17, v0
 
@@ -1849,7 +1849,7 @@
     .line 319
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/AdapterViewAnimator;->mMaxNumActiveViews:I
+    iget v0, v0, Landroid/widget/StackView;->mMaxNumActiveViews:I
 
     move/from16 v17, v0
 
@@ -1878,7 +1878,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/widget/AdapterViewAnimator;->mMaxNumActiveViews:I
+    iget v0, v0, Landroid/widget/StackView;->mMaxNumActiveViews:I
 
     move/from16 v18, v0
 
@@ -2260,7 +2260,7 @@
 
     .line 1116
     .local v1, timeSinceLastInteraction:J
-    iget-object v3, p0, Landroid/widget/AdapterViewAnimator;->mAdapter:Landroid/widget/Adapter;
+    iget-object v3, p0, Landroid/widget/StackView;->mAdapter:Landroid/widget/Adapter;
 
     if-nez v3, :cond_1
 
@@ -2281,7 +2281,7 @@
 
     if-ne v0, v3, :cond_2
 
-    iget-boolean v3, p0, Landroid/widget/AdapterViewAnimator;->mLoopViews:Z
+    iget-boolean v3, p0, Landroid/widget/StackView;->mLoopViews:Z
 
     if-nez v3, :cond_0
 
@@ -2357,10 +2357,10 @@
     invoke-virtual {v1, v3}, Landroid/widget/StackView$LayoutParams;->setVerticalOffset(I)V
 
     .line 1086
-    iput v3, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iput v3, v1, Landroid/widget/StackView$LayoutParams;->width:I
 
     .line 1087
-    iput v3, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iput v3, v1, Landroid/widget/StackView$LayoutParams;->width:I
 
     .line 1090
     .end local v1           #lp:Landroid/widget/StackView$LayoutParams;
@@ -2517,7 +2517,7 @@
     .line 514
     new-instance v0, Landroid/widget/StackView$StackFrame;
 
-    iget-object v1, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Landroid/widget/StackView;->mContext:Landroid/content/Context;
 
     invoke-direct {v0, v1}, Landroid/widget/StackView$StackFrame;-><init>(Landroid/content/Context;)V
 
@@ -2897,7 +2897,7 @@
 
     .line 1101
     .local v0, child:Landroid/view/View;
-    iget v6, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v6, p0, Landroid/widget/StackView;->mPaddingLeft:I
 
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -2907,7 +2907,7 @@
 
     .line 1102
     .local v3, childRight:I
-    iget v6, p0, Landroid/view/View;->mPaddingTop:I
+    iget v6, p0, Landroid/widget/StackView;->mPaddingTop:I
 
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredHeight()I
 
@@ -2925,13 +2925,13 @@
 
     .line 1105
     .local v5, lp:Landroid/widget/StackView$LayoutParams;
-    iget v6, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v6, p0, Landroid/widget/StackView;->mPaddingLeft:I
 
     iget v7, v5, Landroid/widget/StackView$LayoutParams;->horizontalOffset:I
 
     add-int/2addr v6, v7
 
-    iget v7, p0, Landroid/view/View;->mPaddingTop:I
+    iget v7, p0, Landroid/widget/StackView;->mPaddingTop:I
 
     iget v8, v5, Landroid/widget/StackView$LayoutParams;->verticalOffset:I
 
@@ -2995,13 +2995,13 @@
 
     .line 1177
     .local v4, heightSpecMode:I
-    iget v9, p0, Landroid/widget/AdapterViewAnimator;->mReferenceChildWidth:I
+    iget v9, p0, Landroid/widget/StackView;->mReferenceChildWidth:I
 
     const/4 v10, -0x1
 
     if-eq v9, v10, :cond_2
 
-    iget v9, p0, Landroid/widget/AdapterViewAnimator;->mReferenceChildHeight:I
+    iget v9, p0, Landroid/widget/StackView;->mReferenceChildHeight:I
 
     const/4 v10, -0x1
 
@@ -3021,7 +3021,7 @@
     .line 1183
     if-eqz v2, :cond_3
 
-    iget v9, p0, Landroid/widget/AdapterViewAnimator;->mReferenceChildHeight:I
+    iget v9, p0, Landroid/widget/StackView;->mReferenceChildHeight:I
 
     int-to-float v9, v9
 
@@ -3035,11 +3035,11 @@
 
     move-result v9
 
-    iget v10, p0, Landroid/view/View;->mPaddingTop:I
+    iget v10, p0, Landroid/widget/StackView;->mPaddingTop:I
 
     add-int/2addr v9, v10
 
-    iget v10, p0, Landroid/view/View;->mPaddingBottom:I
+    iget v10, p0, Landroid/widget/StackView;->mPaddingBottom:I
 
     add-int v5, v9, v10
 
@@ -3055,7 +3055,7 @@
     .line 1203
     if-eqz v2, :cond_7
 
-    iget v9, p0, Landroid/widget/AdapterViewAnimator;->mReferenceChildWidth:I
+    iget v9, p0, Landroid/widget/StackView;->mReferenceChildWidth:I
 
     int-to-float v9, v9
 
@@ -3069,11 +3069,11 @@
 
     move-result v9
 
-    iget v10, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v10, p0, Landroid/widget/StackView;->mPaddingLeft:I
 
     add-int/2addr v9, v10
 
-    iget v10, p0, Landroid/view/View;->mPaddingRight:I
+    iget v10, p0, Landroid/widget/StackView;->mPaddingRight:I
 
     add-int v8, v9, v10
 
@@ -3115,7 +3115,7 @@
     if-eqz v2, :cond_6
 
     .line 1188
-    iget v9, p0, Landroid/widget/AdapterViewAnimator;->mReferenceChildHeight:I
+    iget v9, p0, Landroid/widget/StackView;->mReferenceChildHeight:I
 
     int-to-float v9, v9
 
@@ -3129,11 +3129,11 @@
 
     move-result v9
 
-    iget v10, p0, Landroid/view/View;->mPaddingTop:I
+    iget v10, p0, Landroid/widget/StackView;->mPaddingTop:I
 
     add-int/2addr v9, v10
 
-    iget v10, p0, Landroid/view/View;->mPaddingBottom:I
+    iget v10, p0, Landroid/widget/StackView;->mPaddingBottom:I
 
     add-int v3, v9, v10
 
@@ -3178,13 +3178,13 @@
     if-eqz v2, :cond_a
 
     .line 1208
-    iget v9, p0, Landroid/widget/AdapterViewAnimator;->mReferenceChildWidth:I
+    iget v9, p0, Landroid/widget/StackView;->mReferenceChildWidth:I
 
-    iget v10, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v10, p0, Landroid/widget/StackView;->mPaddingLeft:I
 
     add-int/2addr v9, v10
 
-    iget v10, p0, Landroid/view/View;->mPaddingRight:I
+    iget v10, p0, Landroid/widget/StackView;->mPaddingRight:I
 
     add-int v6, v9, v10
 
@@ -3628,11 +3628,11 @@
     invoke-super {p0, p1, p2}, Landroid/widget/AdapterViewAnimator;->showOnly(IZ)V
 
     .line 422
-    iget v0, p0, Landroid/widget/AdapterViewAnimator;->mCurrentWindowEnd:I
+    iget v0, p0, Landroid/widget/StackView;->mCurrentWindowEnd:I
 
     .local v0, i:I
     :goto_0
-    iget v4, p0, Landroid/widget/AdapterViewAnimator;->mCurrentWindowStart:I
+    iget v4, p0, Landroid/widget/StackView;->mCurrentWindowStart:I
 
     if-lt v0, v4, :cond_1
 
@@ -3647,7 +3647,7 @@
 
     .line 424
     .local v1, index:I
-    iget-object v4, p0, Landroid/widget/AdapterViewAnimator;->mViewsMap:Ljava/util/HashMap;
+    iget-object v4, p0, Landroid/widget/StackView;->mViewsMap:Ljava/util/HashMap;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -3664,7 +3664,7 @@
     if-eqz v3, :cond_0
 
     .line 426
-    iget-object v4, p0, Landroid/widget/AdapterViewAnimator;->mViewsMap:Ljava/util/HashMap;
+    iget-object v4, p0, Landroid/widget/StackView;->mViewsMap:Ljava/util/HashMap;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 

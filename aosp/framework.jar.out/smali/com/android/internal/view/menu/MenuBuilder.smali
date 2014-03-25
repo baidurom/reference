@@ -942,7 +942,7 @@
 
     iget-object v1, p0, Lcom/android/internal/view/menu/MenuBuilder;->mResources:Landroid/content/res/Resources;
 
-    const v2, 0x1110035
+    const v2, #bool@config_showMenuShortcutsWhenKeyboardPresent#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getBoolean(I)Z
 

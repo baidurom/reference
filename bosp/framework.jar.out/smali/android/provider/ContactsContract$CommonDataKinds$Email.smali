@@ -139,32 +139,32 @@
     packed-switch p0, :pswitch_data_0
 
     .line 5668
-    const v0, 0x10402af
+    const v0, #string@emailTypeCustom#t
 
     :goto_0
     return v0
 
     .line 5664
     :pswitch_0
-    const v0, 0x10402b0
+    const v0, #string@emailTypeHome#t
 
     goto :goto_0
 
     .line 5665
     :pswitch_1
-    const v0, 0x10402b1
+    const v0, #string@emailTypeWork#t
 
     goto :goto_0
 
     .line 5666
     :pswitch_2
-    const v0, 0x10402b2
+    const v0, #string@emailTypeOther#t
 
     goto :goto_0
 
     .line 5667
     :pswitch_3
-    const v0, 0x10402b3
+    const v0, #string@emailTypeMobile#t
 
     goto :goto_0
 

@@ -92,7 +92,7 @@
 
     .prologue
     .line 196
-    const v0, 0x1010070
+    const v0, #attr@galleryStyle#t
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/Gallery;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

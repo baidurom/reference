@@ -652,7 +652,7 @@
 
     move-result-object v9
 
-    const v10, 0x111004a
+    const v10, #bool@config_dontPreferApn#t
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getBoolean(I)Z
     :try_end_0
@@ -8529,7 +8529,7 @@
 
     move-result-object v9
 
-    const v10, 0x1070015
+    const v10, #array@networkAttributes#t
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 

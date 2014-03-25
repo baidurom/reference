@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 474
+    .line 475
     iput-object p1, p0, Lcom/android/server/net/NetworkPolicyManagerService$5;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -42,12 +42,12 @@
     .prologue
     const/4 v3, -0x1
 
-    .line 480
+    .line 481
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 481
+    .line 482
     .local v0, action:Ljava/lang/String;
     const-string v2, "android.intent.extra.user_handle"
 
@@ -55,22 +55,22 @@
 
     move-result v1
 
-    .line 482
+    .line 483
     .local v1, userId:I
     if-ne v1, v3, :cond_0
 
-    .line 492
+    .line 493
     :goto_0
     return-void
 
-    .line 486
+    .line 487
     :cond_0
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$5;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     #calls: Lcom/android/server/net/NetworkPolicyManagerService;->removePoliciesForUserLocked(I)V
     invoke-static {v2, v1}, Lcom/android/server/net/NetworkPolicyManagerService;->access$500(Lcom/android/server/net/NetworkPolicyManagerService;I)V
 
-    .line 489
+    .line 490
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$5;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     #getter for: Lcom/android/server/net/NetworkPolicyManagerService;->mRulesLock:Ljava/lang/Object;
@@ -80,14 +80,14 @@
 
     monitor-enter v3
 
-    .line 490
+    .line 491
     :try_start_0
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$5;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     #calls: Lcom/android/server/net/NetworkPolicyManagerService;->updateRulesForRestrictBackgroundLocked()V
     invoke-static {v2}, Lcom/android/server/net/NetworkPolicyManagerService;->access$600(Lcom/android/server/net/NetworkPolicyManagerService;)V
 
-    .line 491
+    .line 492
     monitor-exit v3
 
     goto :goto_0

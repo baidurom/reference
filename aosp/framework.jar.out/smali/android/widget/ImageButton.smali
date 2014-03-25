@@ -30,7 +30,7 @@
 
     .prologue
     .line 83
-    const v0, 0x1010072
+    const v0, #attr@imageButtonStyle#t
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/ImageButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

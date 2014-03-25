@@ -28,7 +28,7 @@
 
     .prologue
     .line 167
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 168
     iput-object p1, p0, Landroid/net/sip/ISipService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
@@ -112,6 +112,7 @@
     .line 240
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 239
     throw v2
 .end method
 
@@ -222,6 +223,7 @@
     .line 316
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 315
     throw v3
 
     .line 309
@@ -311,6 +313,7 @@
     .line 351
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 350
     throw v3
 .end method
 
@@ -388,6 +391,7 @@
     .line 334
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 333
     throw v3
 .end method
 
@@ -468,6 +472,7 @@
     .line 257
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 256
     throw v3
 .end method
 
@@ -548,6 +553,7 @@
     .line 275
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 274
     throw v3
 .end method
 
@@ -636,6 +642,7 @@
     .line 196
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 195
     throw v2
 .end method
 
@@ -750,6 +757,7 @@
     .line 225
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 224
     throw v2
 
     .line 217
@@ -850,5 +858,6 @@
     .line 292
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 291
     throw v2
 .end method

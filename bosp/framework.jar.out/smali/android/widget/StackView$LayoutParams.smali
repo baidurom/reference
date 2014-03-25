@@ -83,10 +83,10 @@
     iput v1, p0, Landroid/widget/StackView$LayoutParams;->verticalOffset:I
 
     .line 1290
-    iput v1, p0, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iput v1, p0, Landroid/widget/StackView$LayoutParams;->width:I
 
     .line 1291
-    iput v1, p0, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iput v1, p0, Landroid/widget/StackView$LayoutParams;->height:I
 
     .line 1292
     return-void
@@ -135,10 +135,10 @@
     iput-object v0, p0, Landroid/widget/StackView$LayoutParams;->globalInvalidateRect:Landroid/graphics/Rect;
 
     .line 1279
-    iput v1, p0, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iput v1, p0, Landroid/widget/StackView$LayoutParams;->width:I
 
     .line 1280
-    iput v1, p0, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iput v1, p0, Landroid/widget/StackView$LayoutParams;->height:I
 
     .line 1281
     iput v1, p0, Landroid/widget/StackView$LayoutParams;->horizontalOffset:I

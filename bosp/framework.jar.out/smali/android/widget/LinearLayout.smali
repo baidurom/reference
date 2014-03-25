@@ -419,14 +419,14 @@
 
     .line 1351
     .local v7, lp:Landroid/widget/LinearLayout$LayoutParams;
-    iget v0, v7, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iget v0, v7, Landroid/widget/LinearLayout$LayoutParams;->height:I
 
     const/4 v2, -0x1
 
     if-ne v0, v2, :cond_0
 
     .line 1354
-    iget v8, v7, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iget v8, v7, Landroid/widget/LinearLayout$LayoutParams;->width:I
 
     .line 1355
     .local v8, oldWidth:I
@@ -434,7 +434,7 @@
 
     move-result v0
 
-    iput v0, v7, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iput v0, v7, Landroid/widget/LinearLayout$LayoutParams;->width:I
 
     move-object v0, p0
 
@@ -446,7 +446,7 @@
     invoke-virtual/range {v0 .. v5}, Landroid/widget/LinearLayout;->measureChildWithMargins(Landroid/view/View;IIII)V
 
     .line 1359
-    iput v8, v7, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iput v8, v7, Landroid/widget/LinearLayout$LayoutParams;->width:I
 
     .line 1346
     .end local v7           #lp:Landroid/widget/LinearLayout$LayoutParams;
@@ -513,14 +513,14 @@
 
     .line 933
     .local v7, lp:Landroid/widget/LinearLayout$LayoutParams;
-    iget v0, v7, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iget v0, v7, Landroid/widget/LinearLayout$LayoutParams;->width:I
 
     const/4 v4, -0x1
 
     if-ne v0, v4, :cond_0
 
     .line 936
-    iget v8, v7, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iget v8, v7, Landroid/widget/LinearLayout$LayoutParams;->height:I
 
     .line 937
     .local v8, oldHeight:I
@@ -528,7 +528,7 @@
 
     move-result v0
 
-    iput v0, v7, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iput v0, v7, Landroid/widget/LinearLayout$LayoutParams;->height:I
 
     move-object v0, p0
 
@@ -540,7 +540,7 @@
     invoke-virtual/range {v0 .. v5}, Landroid/widget/LinearLayout;->measureChildWithMargins(Landroid/view/View;IIII)V
 
     .line 941
-    iput v8, v7, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iput v8, v7, Landroid/widget/LinearLayout$LayoutParams;->height:I
 
     .line 928
     .end local v7           #lp:Landroid/widget/LinearLayout$LayoutParams;
@@ -653,7 +653,7 @@
 
     move-result v6
 
-    iget v7, v4, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iget v7, v4, Landroid/widget/LinearLayout$LayoutParams;->rightMargin:I
 
     add-int v5, v6, v7
 
@@ -677,7 +677,7 @@
 
     move-result v6
 
-    iget v7, v4, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v7, v4, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
 
     sub-int/2addr v6, v7
 
@@ -767,7 +767,7 @@
 
     move-result v6
 
-    iget v7, v4, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v7, v4, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
 
     sub-int/2addr v6, v7
 
@@ -785,7 +785,7 @@
 
     move-result v6
 
-    iget v7, v4, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iget v7, v4, Landroid/widget/LinearLayout$LayoutParams;->rightMargin:I
 
     add-int v5, v6, v7
 
@@ -848,7 +848,7 @@
 
     move-result v6
 
-    iget v7, v4, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iget v7, v4, Landroid/widget/LinearLayout$LayoutParams;->topMargin:I
 
     sub-int/2addr v6, v7
 
@@ -933,7 +933,7 @@
 
     move-result v6
 
-    iget v7, v4, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+    iget v7, v4, Landroid/widget/LinearLayout$LayoutParams;->bottomMargin:I
 
     add-int v0, v6, v7
 
@@ -1254,7 +1254,7 @@
 
     .line 504
     .local v3, lp:Landroid/widget/LinearLayout$LayoutParams;
-    iget v5, v3, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iget v5, v3, Landroid/widget/LinearLayout$LayoutParams;->topMargin:I
 
     add-int/2addr v5, v2
 
@@ -1266,13 +1266,13 @@
     .end local v3           #lp:Landroid/widget/LinearLayout$LayoutParams;
     .restart local v4       #majorGravity:I
     :sswitch_0
-    iget v5, p0, Landroid/view/View;->mBottom:I
+    iget v5, p0, Landroid/widget/LinearLayout;->mBottom:I
 
-    iget v6, p0, Landroid/view/View;->mTop:I
+    iget v6, p0, Landroid/widget/LinearLayout;->mTop:I
 
     sub-int/2addr v5, v6
 
-    iget v6, p0, Landroid/view/View;->mPaddingBottom:I
+    iget v6, p0, Landroid/widget/LinearLayout;->mPaddingBottom:I
 
     sub-int/2addr v5, v6
 
@@ -1285,17 +1285,17 @@
 
     .line 496
     :sswitch_1
-    iget v5, p0, Landroid/view/View;->mBottom:I
+    iget v5, p0, Landroid/widget/LinearLayout;->mBottom:I
 
-    iget v6, p0, Landroid/view/View;->mTop:I
-
-    sub-int/2addr v5, v6
-
-    iget v6, p0, Landroid/view/View;->mPaddingTop:I
+    iget v6, p0, Landroid/widget/LinearLayout;->mTop:I
 
     sub-int/2addr v5, v6
 
-    iget v6, p0, Landroid/view/View;->mPaddingBottom:I
+    iget v6, p0, Landroid/widget/LinearLayout;->mPaddingTop:I
+
+    sub-int/2addr v5, v6
+
+    iget v6, p0, Landroid/widget/LinearLayout;->mPaddingBottom:I
 
     sub-int/2addr v5, v6
 
@@ -1584,7 +1584,7 @@
     .local v20, isLayoutRtl:Z
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/view/View;->mPaddingTop:I
+    iget v0, v0, Landroid/widget/LinearLayout;->mPaddingTop:I
 
     move/from16 v27, v0
 
@@ -1592,11 +1592,11 @@
     .local v27, paddingTop:I
     move-object/from16 v0, p0
 
-    iget v2, v0, Landroid/view/View;->mBottom:I
+    iget v2, v0, Landroid/widget/LinearLayout;->mBottom:I
 
     move-object/from16 v0, p0
 
-    iget v4, v0, Landroid/view/View;->mTop:I
+    iget v4, v0, Landroid/widget/LinearLayout;->mTop:I
 
     sub-int v18, v2, v4
 
@@ -1604,7 +1604,7 @@
     .local v18, height:I
     move-object/from16 v0, p0
 
-    iget v2, v0, Landroid/view/View;->mPaddingBottom:I
+    iget v2, v0, Landroid/widget/LinearLayout;->mPaddingBottom:I
 
     sub-int v10, v18, v2
 
@@ -1614,7 +1614,7 @@
 
     move-object/from16 v0, p0
 
-    iget v4, v0, Landroid/view/View;->mPaddingBottom:I
+    iget v4, v0, Landroid/widget/LinearLayout;->mPaddingBottom:I
 
     sub-int v13, v2, v4
 
@@ -1685,7 +1685,7 @@
     .line 1576
     move-object/from16 v0, p0
 
-    iget v12, v0, Landroid/view/View;->mPaddingLeft:I
+    iget v12, v0, Landroid/widget/LinearLayout;->mPaddingLeft:I
 
     .line 1580
     .local v12, childLeft:I
@@ -1759,17 +1759,17 @@
     :sswitch_0
     move-object/from16 v0, p0
 
-    iget v2, v0, Landroid/view/View;->mPaddingLeft:I
+    iget v2, v0, Landroid/widget/LinearLayout;->mPaddingLeft:I
 
     move-object/from16 v0, p0
 
-    iget v4, v0, Landroid/view/View;->mRight:I
+    iget v4, v0, Landroid/widget/LinearLayout;->mRight:I
 
     add-int/2addr v2, v4
 
     move-object/from16 v0, p0
 
-    iget v4, v0, Landroid/view/View;->mLeft:I
+    iget v4, v0, Landroid/widget/LinearLayout;->mLeft:I
 
     sub-int/2addr v2, v4
 
@@ -1788,15 +1788,15 @@
     :sswitch_1
     move-object/from16 v0, p0
 
-    iget v2, v0, Landroid/view/View;->mPaddingLeft:I
+    iget v2, v0, Landroid/widget/LinearLayout;->mPaddingLeft:I
 
     move-object/from16 v0, p0
 
-    iget v4, v0, Landroid/view/View;->mRight:I
+    iget v4, v0, Landroid/widget/LinearLayout;->mRight:I
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/view/View;->mLeft:I
+    iget v0, v0, Landroid/widget/LinearLayout;->mLeft:I
 
     move/from16 v29, v0
 
@@ -1862,7 +1862,7 @@
 
     move-object/from16 v0, v22
 
-    iget v2, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iget v2, v0, Landroid/widget/LinearLayout$LayoutParams;->height:I
 
     const/4 v4, -0x1
 
@@ -1920,7 +1920,7 @@
     :cond_6
     move-object/from16 v0, v22
 
-    iget v2, v0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v2, v0, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
 
     add-int/2addr v12, v2
 
@@ -1940,7 +1940,7 @@
     .line 1654
     move-object/from16 v0, v22
 
-    iget v2, v0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iget v2, v0, Landroid/widget/LinearLayout$LayoutParams;->rightMargin:I
 
     add-int/2addr v2, v6
 
@@ -1970,7 +1970,7 @@
     :sswitch_2
     move-object/from16 v0, v22
 
-    iget v2, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iget v2, v0, Landroid/widget/LinearLayout$LayoutParams;->topMargin:I
 
     add-int v5, v27, v2
 
@@ -2002,13 +2002,13 @@
 
     move-object/from16 v0, v22
 
-    iget v4, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iget v4, v0, Landroid/widget/LinearLayout$LayoutParams;->topMargin:I
 
     add-int/2addr v2, v4
 
     move-object/from16 v0, v22
 
-    iget v4, v0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+    iget v4, v0, Landroid/widget/LinearLayout$LayoutParams;->bottomMargin:I
 
     sub-int v5, v2, v4
 
@@ -2023,7 +2023,7 @@
 
     move-object/from16 v0, v22
 
-    iget v4, v0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+    iget v4, v0, Landroid/widget/LinearLayout$LayoutParams;->bottomMargin:I
 
     sub-int v5, v2, v4
 
@@ -2089,7 +2089,7 @@
     .line 1449
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/view/View;->mPaddingLeft:I
+    iget v0, v0, Landroid/widget/LinearLayout;->mPaddingLeft:I
 
     move/from16 v18, v0
 
@@ -2097,11 +2097,11 @@
     .local v18, paddingLeft:I
     move-object/from16 v0, p0
 
-    iget v1, v0, Landroid/view/View;->mRight:I
+    iget v1, v0, Landroid/widget/LinearLayout;->mRight:I
 
     move-object/from16 v0, p0
 
-    iget v4, v0, Landroid/view/View;->mLeft:I
+    iget v4, v0, Landroid/widget/LinearLayout;->mLeft:I
 
     sub-int v19, v1, v4
 
@@ -2109,7 +2109,7 @@
     .local v19, width:I
     move-object/from16 v0, p0
 
-    iget v1, v0, Landroid/view/View;->mPaddingRight:I
+    iget v1, v0, Landroid/widget/LinearLayout;->mPaddingRight:I
 
     sub-int v8, v19, v1
 
@@ -2119,7 +2119,7 @@
 
     move-object/from16 v0, p0
 
-    iget v4, v0, Landroid/view/View;->mPaddingRight:I
+    iget v4, v0, Landroid/widget/LinearLayout;->mPaddingRight:I
 
     sub-int v9, v1, v4
 
@@ -2154,7 +2154,7 @@
     .line 1479
     move-object/from16 v0, p0
 
-    iget v10, v0, Landroid/view/View;->mPaddingTop:I
+    iget v10, v0, Landroid/widget/LinearLayout;->mPaddingTop:I
 
     .line 1483
     .local v10, childTop:I
@@ -2199,17 +2199,17 @@
     :sswitch_0
     move-object/from16 v0, p0
 
-    iget v1, v0, Landroid/view/View;->mPaddingTop:I
+    iget v1, v0, Landroid/widget/LinearLayout;->mPaddingTop:I
 
     move-object/from16 v0, p0
 
-    iget v4, v0, Landroid/view/View;->mBottom:I
+    iget v4, v0, Landroid/widget/LinearLayout;->mBottom:I
 
     add-int/2addr v1, v4
 
     move-object/from16 v0, p0
 
-    iget v4, v0, Landroid/view/View;->mTop:I
+    iget v4, v0, Landroid/widget/LinearLayout;->mTop:I
 
     sub-int/2addr v1, v4
 
@@ -2228,15 +2228,15 @@
     :sswitch_1
     move-object/from16 v0, p0
 
-    iget v1, v0, Landroid/view/View;->mPaddingTop:I
+    iget v1, v0, Landroid/widget/LinearLayout;->mPaddingTop:I
 
     move-object/from16 v0, p0
 
-    iget v4, v0, Landroid/view/View;->mBottom:I
+    iget v4, v0, Landroid/widget/LinearLayout;->mBottom:I
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/view/View;->mTop:I
+    iget v0, v0, Landroid/widget/LinearLayout;->mTop:I
 
     move/from16 v20, v0
 
@@ -2319,7 +2319,7 @@
     sparse-switch v1, :sswitch_data_1
 
     .line 1512
-    iget v1, v15, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v1, v15, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
 
     add-int v3, v18, v1
 
@@ -2343,7 +2343,7 @@
 
     .line 1520
     :cond_3
-    iget v1, v15, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iget v1, v15, Landroid/widget/LinearLayout$LayoutParams;->topMargin:I
 
     add-int/2addr v10, v1
 
@@ -2361,7 +2361,7 @@
     invoke-direct/range {v1 .. v6}, Landroid/widget/LinearLayout;->setChildFrame(Landroid/view/View;IIII)V
 
     .line 1523
-    iget v1, v15, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+    iget v1, v15, Landroid/widget/LinearLayout$LayoutParams;->bottomMargin:I
 
     add-int/2addr v1, v6
 
@@ -2395,11 +2395,11 @@
 
     add-int v1, v1, v18
 
-    iget v4, v15, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v4, v15, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
 
     add-int/2addr v1, v4
 
-    iget v4, v15, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iget v4, v15, Landroid/widget/LinearLayout$LayoutParams;->rightMargin:I
 
     sub-int v3, v1, v4
 
@@ -2412,7 +2412,7 @@
     :sswitch_3
     sub-int v1, v8, v5
 
-    iget v4, v15, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iget v4, v15, Landroid/widget/LinearLayout$LayoutParams;->rightMargin:I
 
     sub-int v3, v1, v4
 
@@ -2782,7 +2782,7 @@
 
     move-object/from16 v0, v29
 
-    iget v3, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iget v3, v0, Landroid/widget/LinearLayout$LayoutParams;->width:I
 
     if-nez v3, :cond_a
 
@@ -2806,11 +2806,11 @@
 
     move-object/from16 v0, v29
 
-    iget v6, v0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v6, v0, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
 
     move-object/from16 v0, v29
 
-    iget v7, v0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iget v7, v0, Landroid/widget/LinearLayout$LayoutParams;->rightMargin:I
 
     add-int/2addr v6, v7
 
@@ -2857,7 +2857,7 @@
 
     move-object/from16 v0, v29
 
-    iget v3, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iget v3, v0, Landroid/widget/LinearLayout$LayoutParams;->height:I
 
     const/4 v6, -0x1
 
@@ -2873,11 +2873,11 @@
     :cond_7
     move-object/from16 v0, v29
 
-    iget v3, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iget v3, v0, Landroid/widget/LinearLayout$LayoutParams;->topMargin:I
 
     move-object/from16 v0, v29
 
-    iget v6, v0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+    iget v6, v0, Landroid/widget/LinearLayout$LayoutParams;->bottomMargin:I
 
     add-int v30, v3, v6
 
@@ -2976,7 +2976,7 @@
 
     move-object/from16 v0, v29
 
-    iget v3, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iget v3, v0, Landroid/widget/LinearLayout$LayoutParams;->height:I
 
     const/4 v6, -0x1
 
@@ -3035,13 +3035,13 @@
     .local v38, totalLength:I
     move-object/from16 v0, v29
 
-    iget v3, v0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v3, v0, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
 
     add-int v3, v3, v38
 
     move-object/from16 v0, v29
 
-    iget v6, v0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iget v6, v0, Landroid/widget/LinearLayout$LayoutParams;->rightMargin:I
 
     add-int/2addr v3, v6
 
@@ -3066,7 +3066,7 @@
     .local v36, oldWidth:I
     move-object/from16 v0, v29
 
-    iget v3, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iget v3, v0, Landroid/widget/LinearLayout$LayoutParams;->width:I
 
     if-nez v3, :cond_b
 
@@ -3088,7 +3088,7 @@
 
     move-object/from16 v0, v29
 
-    iput v3, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iput v3, v0, Landroid/widget/LinearLayout$LayoutParams;->width:I
 
     .line 1052
     :cond_b
@@ -3125,7 +3125,7 @@
 
     move-object/from16 v1, v29
 
-    iput v0, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iput v0, v1, Landroid/widget/LinearLayout$LayoutParams;->width:I
 
     .line 1060
     :cond_c
@@ -3144,13 +3144,13 @@
 
     move-object/from16 v0, v29
 
-    iget v6, v0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v6, v0, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
 
     add-int v6, v6, v19
 
     move-object/from16 v0, v29
 
-    iget v7, v0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iget v7, v0, Landroid/widget/LinearLayout$LayoutParams;->rightMargin:I
 
     add-int/2addr v6, v7
 
@@ -3205,13 +3205,13 @@
 
     move-object/from16 v0, v29
 
-    iget v6, v0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v6, v0, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
 
     add-int/2addr v3, v6
 
     move-object/from16 v0, v29
 
-    iget v6, v0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iget v6, v0, Landroid/widget/LinearLayout$LayoutParams;->rightMargin:I
 
     add-int/2addr v3, v6
 
@@ -3530,13 +3530,13 @@
 
     move-object/from16 v0, v29
 
-    iget v6, v0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v6, v0, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
 
     add-int v6, v6, v28
 
     move-object/from16 v0, v29
 
-    iget v7, v0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iget v7, v0, Landroid/widget/LinearLayout$LayoutParams;->rightMargin:I
 
     add-int/2addr v6, v7
 
@@ -3570,13 +3570,13 @@
 
     move-object/from16 v0, v29
 
-    iget v6, v0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v6, v0, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
 
     add-int/2addr v3, v6
 
     move-object/from16 v0, v29
 
-    iget v6, v0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iget v6, v0, Landroid/widget/LinearLayout$LayoutParams;->rightMargin:I
 
     add-int/2addr v3, v6
 
@@ -3611,11 +3611,11 @@
 
     move-object/from16 v0, p0
 
-    iget v6, v0, Landroid/view/View;->mPaddingLeft:I
+    iget v6, v0, Landroid/widget/LinearLayout;->mPaddingLeft:I
 
     move-object/from16 v0, p0
 
-    iget v7, v0, Landroid/view/View;->mPaddingRight:I
+    iget v7, v0, Landroid/widget/LinearLayout;->mPaddingRight:I
 
     add-int/2addr v6, v7
 
@@ -3834,29 +3834,29 @@
     .line 1211
     move-object/from16 v0, p0
 
-    iget v3, v0, Landroid/view/View;->mPaddingTop:I
+    iget v3, v0, Landroid/widget/LinearLayout;->mPaddingTop:I
 
     move-object/from16 v0, p0
 
-    iget v6, v0, Landroid/view/View;->mPaddingBottom:I
+    iget v6, v0, Landroid/widget/LinearLayout;->mPaddingBottom:I
 
     add-int/2addr v3, v6
 
     move-object/from16 v0, v29
 
-    iget v6, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iget v6, v0, Landroid/widget/LinearLayout$LayoutParams;->topMargin:I
 
     add-int/2addr v3, v6
 
     move-object/from16 v0, v29
 
-    iget v6, v0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+    iget v6, v0, Landroid/widget/LinearLayout$LayoutParams;->bottomMargin:I
 
     add-int/2addr v3, v6
 
     move-object/from16 v0, v29
 
-    iget v6, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iget v6, v0, Landroid/widget/LinearLayout$LayoutParams;->height:I
 
     move/from16 v0, p2
 
@@ -3868,7 +3868,7 @@
     .local v17, childHeightMeasureSpec:I
     move-object/from16 v0, v29
 
-    iget v3, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iget v3, v0, Landroid/widget/LinearLayout$LayoutParams;->width:I
 
     if-nez v3, :cond_20
 
@@ -3941,13 +3941,13 @@
 
     move-object/from16 v0, v29
 
-    iget v7, v0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v7, v0, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
 
     add-int/2addr v6, v7
 
     move-object/from16 v0, v29
 
-    iget v7, v0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iget v7, v0, Landroid/widget/LinearLayout$LayoutParams;->rightMargin:I
 
     add-int/2addr v6, v7
 
@@ -3975,7 +3975,7 @@
 
     move-object/from16 v0, v29
 
-    iget v3, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iget v3, v0, Landroid/widget/LinearLayout$LayoutParams;->height:I
 
     const/4 v6, -0x1
 
@@ -3988,11 +3988,11 @@
     :goto_13
     move-object/from16 v0, v29
 
-    iget v3, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iget v3, v0, Landroid/widget/LinearLayout$LayoutParams;->topMargin:I
 
     move-object/from16 v0, v29
 
-    iget v6, v0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+    iget v6, v0, Landroid/widget/LinearLayout$LayoutParams;->bottomMargin:I
 
     add-int v30, v3, v6
 
@@ -4030,7 +4030,7 @@
 
     move-object/from16 v0, v29
 
-    iget v3, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iget v3, v0, Landroid/widget/LinearLayout$LayoutParams;->height:I
 
     const/4 v6, -0x1
 
@@ -4151,13 +4151,13 @@
 
     move-object/from16 v0, v29
 
-    iget v6, v0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v6, v0, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
 
     add-int/2addr v3, v6
 
     move-object/from16 v0, v29
 
-    iget v6, v0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iget v6, v0, Landroid/widget/LinearLayout$LayoutParams;->rightMargin:I
 
     add-int/2addr v3, v6
 
@@ -4227,11 +4227,11 @@
 
     move-object/from16 v0, p0
 
-    iget v6, v0, Landroid/view/View;->mPaddingLeft:I
+    iget v6, v0, Landroid/widget/LinearLayout;->mPaddingLeft:I
 
     move-object/from16 v0, p0
 
-    iget v7, v0, Landroid/view/View;->mPaddingRight:I
+    iget v7, v0, Landroid/widget/LinearLayout;->mPaddingRight:I
 
     add-int/2addr v6, v7
 
@@ -4364,11 +4364,11 @@
     :cond_2d
     move-object/from16 v0, p0
 
-    iget v3, v0, Landroid/view/View;->mPaddingTop:I
+    iget v3, v0, Landroid/widget/LinearLayout;->mPaddingTop:I
 
     move-object/from16 v0, p0
 
-    iget v6, v0, Landroid/view/View;->mPaddingBottom:I
+    iget v6, v0, Landroid/widget/LinearLayout;->mPaddingBottom:I
 
     add-int/2addr v3, v6
 
@@ -4722,7 +4722,7 @@
 
     move-object/from16 v0, v23
 
-    iget v3, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iget v3, v0, Landroid/widget/LinearLayout$LayoutParams;->height:I
 
     if-nez v3, :cond_5
 
@@ -4747,13 +4747,13 @@
     .local v31, totalLength:I
     move-object/from16 v0, v23
 
-    iget v3, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iget v3, v0, Landroid/widget/LinearLayout$LayoutParams;->topMargin:I
 
     add-int v3, v3, v31
 
     move-object/from16 v0, v23
 
-    iget v6, v0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+    iget v6, v0, Landroid/widget/LinearLayout$LayoutParams;->bottomMargin:I
 
     add-int/2addr v3, v6
 
@@ -4817,7 +4817,7 @@
     .local v29, oldHeight:I
     move-object/from16 v0, v23
 
-    iget v3, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iget v3, v0, Landroid/widget/LinearLayout$LayoutParams;->height:I
 
     if-nez v3, :cond_6
 
@@ -4839,7 +4839,7 @@
 
     move-object/from16 v0, v23
 
-    iput v3, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iput v3, v0, Landroid/widget/LinearLayout$LayoutParams;->height:I
 
     .line 695
     :cond_6
@@ -4876,7 +4876,7 @@
 
     move-object/from16 v1, v23
 
-    iput v0, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iput v0, v1, Landroid/widget/LinearLayout$LayoutParams;->height:I
 
     .line 703
     :cond_7
@@ -4898,13 +4898,13 @@
 
     move-object/from16 v0, v23
 
-    iget v6, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iget v6, v0, Landroid/widget/LinearLayout$LayoutParams;->topMargin:I
 
     add-int/2addr v3, v6
 
     move-object/from16 v0, v23
 
-    iget v6, v0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+    iget v6, v0, Landroid/widget/LinearLayout$LayoutParams;->bottomMargin:I
 
     add-int/2addr v3, v6
 
@@ -4962,7 +4962,7 @@
 
     move-object/from16 v0, v23
 
-    iget v3, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iget v3, v0, Landroid/widget/LinearLayout$LayoutParams;->width:I
 
     const/4 v6, -0x1
 
@@ -4978,11 +4978,11 @@
     :cond_a
     move-object/from16 v0, v23
 
-    iget v3, v0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v3, v0, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
 
     move-object/from16 v0, v23
 
-    iget v6, v0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iget v6, v0, Landroid/widget/LinearLayout$LayoutParams;->rightMargin:I
 
     add-int v24, v3, v6
 
@@ -5014,7 +5014,7 @@
 
     move-object/from16 v0, v23
 
-    iget v3, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iget v3, v0, Landroid/widget/LinearLayout$LayoutParams;->width:I
 
     const/4 v6, -0x1
 
@@ -5237,13 +5237,13 @@
 
     move-object/from16 v0, v23
 
-    iget v6, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iget v6, v0, Landroid/widget/LinearLayout$LayoutParams;->topMargin:I
 
     add-int/2addr v3, v6
 
     move-object/from16 v0, v23
 
-    iget v6, v0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+    iget v6, v0, Landroid/widget/LinearLayout$LayoutParams;->bottomMargin:I
 
     add-int/2addr v3, v6
 
@@ -5278,11 +5278,11 @@
 
     move-object/from16 v0, p0
 
-    iget v6, v0, Landroid/view/View;->mPaddingTop:I
+    iget v6, v0, Landroid/widget/LinearLayout;->mPaddingTop:I
 
     move-object/from16 v0, p0
 
-    iget v7, v0, Landroid/view/View;->mPaddingBottom:I
+    iget v7, v0, Landroid/widget/LinearLayout;->mPaddingBottom:I
 
     add-int/2addr v6, v7
 
@@ -5457,29 +5457,29 @@
     .line 828
     move-object/from16 v0, p0
 
-    iget v3, v0, Landroid/view/View;->mPaddingLeft:I
+    iget v3, v0, Landroid/widget/LinearLayout;->mPaddingLeft:I
 
     move-object/from16 v0, p0
 
-    iget v6, v0, Landroid/view/View;->mPaddingRight:I
+    iget v6, v0, Landroid/widget/LinearLayout;->mPaddingRight:I
 
     add-int/2addr v3, v6
 
     move-object/from16 v0, v23
 
-    iget v6, v0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v6, v0, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
 
     add-int/2addr v3, v6
 
     move-object/from16 v0, v23
 
-    iget v6, v0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iget v6, v0, Landroid/widget/LinearLayout$LayoutParams;->rightMargin:I
 
     add-int/2addr v3, v6
 
     move-object/from16 v0, v23
 
-    iget v6, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iget v6, v0, Landroid/widget/LinearLayout$LayoutParams;->width:I
 
     move/from16 v0, p1
 
@@ -5491,7 +5491,7 @@
     .local v16, childWidthMeasureSpec:I
     move-object/from16 v0, v23
 
-    iget v3, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iget v3, v0, Landroid/widget/LinearLayout$LayoutParams;->height:I
 
     if-nez v3, :cond_17
 
@@ -5547,11 +5547,11 @@
     :cond_19
     move-object/from16 v0, v23
 
-    iget v3, v0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v3, v0, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
 
     move-object/from16 v0, v23
 
-    iget v6, v0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iget v6, v0, Landroid/widget/LinearLayout$LayoutParams;->rightMargin:I
 
     add-int v24, v3, v6
 
@@ -5578,7 +5578,7 @@
 
     move-object/from16 v0, v23
 
-    iget v3, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iget v3, v0, Landroid/widget/LinearLayout$LayoutParams;->width:I
 
     const/4 v6, -0x1
 
@@ -5604,7 +5604,7 @@
 
     move-object/from16 v0, v23
 
-    iget v3, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iget v3, v0, Landroid/widget/LinearLayout$LayoutParams;->width:I
 
     const/4 v6, -0x1
 
@@ -5630,13 +5630,13 @@
 
     move-object/from16 v0, v23
 
-    iget v6, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iget v6, v0, Landroid/widget/LinearLayout$LayoutParams;->topMargin:I
 
     add-int/2addr v3, v6
 
     move-object/from16 v0, v23
 
-    iget v6, v0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+    iget v6, v0, Landroid/widget/LinearLayout$LayoutParams;->bottomMargin:I
 
     add-int/2addr v3, v6
 
@@ -5728,11 +5728,11 @@
 
     move-object/from16 v0, p0
 
-    iget v6, v0, Landroid/view/View;->mPaddingTop:I
+    iget v6, v0, Landroid/widget/LinearLayout;->mPaddingTop:I
 
     move-object/from16 v0, p0
 
-    iget v7, v0, Landroid/view/View;->mPaddingBottom:I
+    iget v7, v0, Landroid/widget/LinearLayout;->mPaddingBottom:I
 
     add-int/2addr v6, v7
 
@@ -5760,11 +5760,11 @@
     :cond_21
     move-object/from16 v0, p0
 
-    iget v3, v0, Landroid/view/View;->mPaddingLeft:I
+    iget v3, v0, Landroid/widget/LinearLayout;->mPaddingLeft:I
 
     move-object/from16 v0, p0
 
-    iget v6, v0, Landroid/view/View;->mPaddingRight:I
+    iget v6, v0, Landroid/widget/LinearLayout;->mPaddingRight:I
 
     add-int/2addr v3, v6
 

@@ -137,7 +137,7 @@
     .line 82
     sget-object v1, Lcom/android/internal/R$styleable;->TabWidget:[I
 
-    const v2, 0x1010083
+    const v2, #attr@tabWidgetStyle#t
 
     invoke-virtual {p1, p2, v1, v2, v3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
@@ -162,7 +162,7 @@
     if-nez v1, :cond_0
 
     .line 92
-    const v1, 0x10900d2
+    const v1, #layout@tab_indicator_holo#t
 
     iput v1, p0, Landroid/widget/TabHost;->mTabLayoutId:I
 
@@ -1129,7 +1129,7 @@
 
     .prologue
     .line 126
-    const v0, 0x1020013
+    const v0, #id@tabs#t
 
     invoke-virtual {p0, v0}, Landroid/widget/TabHost;->findViewById(I)Landroid/view/View;
 
@@ -1171,7 +1171,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TabWidget;->setTabSelectionListener(Landroid/widget/TabWidget$OnTabSelectionChanged;)V
 
     .line 161
-    const v0, 0x1020011
+    const v0, #id@tabcontent#t
 
     invoke-virtual {p0, v0}, Landroid/widget/TabHost;->findViewById(I)Landroid/view/View;
 

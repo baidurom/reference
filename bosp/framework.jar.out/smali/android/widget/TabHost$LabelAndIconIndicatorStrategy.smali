@@ -36,7 +36,7 @@
     .line 623
     iput-object p1, p0, Landroid/widget/TabHost$LabelAndIconIndicatorStrategy;->this$0:Landroid/widget/TabHost;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 624
     iput-object p2, p0, Landroid/widget/TabHost$LabelAndIconIndicatorStrategy;->mLabel:Ljava/lang/CharSequence;
@@ -111,7 +111,7 @@
 
     .line 636
     .local v5, tabIndicator:Landroid/view/View;
-    const v8, 0x1020016
+    const v8, #id@title#t
 
     invoke-virtual {v5, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -121,7 +121,7 @@
 
     .line 637
     .local v6, tv:Landroid/widget/TextView;
-    const v8, 0x1020006
+    const v8, #id@icon#t
 
     invoke-virtual {v5, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -190,7 +190,7 @@
     if-gt v7, v8, :cond_2
 
     .line 652
-    const v7, 0x10805b1
+    const v7, #drawable@tab_indicator_v4#t
 
     invoke-virtual {v5, v7}, Landroid/view/View;->setBackgroundResource(I)V
 
@@ -199,7 +199,7 @@
 
     move-result-object v7
 
-    const v8, 0x106007d
+    const v8, #color@tab_indicator_text_v4#t
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getColorStateList(I)Landroid/content/res/ColorStateList;
 

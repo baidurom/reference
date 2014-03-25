@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@id/background" android:drawable="@drawable/yi_scrubber_track_baidu_dark" />
+    <item android:id="@id/secondaryProgress">
+        <scale android:drawable="@drawable/yi_scrubber_secondary_baidu" android:scaleWidth="100%" />
+    </item>
+    <item android:id="@id/progress">
+        <scale android:drawable="@drawable/yi_scrubber_primary_baidu" android:scaleWidth="100%" />
+    </item>
+</layer-list>

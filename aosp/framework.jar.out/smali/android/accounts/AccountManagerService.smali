@@ -1333,7 +1333,7 @@
     .local v8, authTokenLabel:Ljava/lang/String;
     new-instance v11, Landroid/app/Notification;
 
-    const v2, 0x108008a
+    const v2, #drawable@stat_sys_warning#t
 
     const/4 v3, 0x0
 
@@ -1347,7 +1347,7 @@
 
     iget-object v2, v0, Landroid/accounts/AccountManagerService;->mContext:Landroid/content/Context;
 
-    const v3, 0x1040480
+    const v3, #string@permission_request_notification_with_subtitle#t
 
     const/4 v4, 0x1
 
@@ -1588,7 +1588,7 @@
     .line 2145
     new-instance v12, Landroid/app/Notification;
 
-    const v4, 0x108008a
+    const v4, #drawable@stat_sys_warning#t
 
     const/4 v5, 0x0
 
@@ -1610,7 +1610,7 @@
 
     iget-object v4, v0, Landroid/accounts/AccountManagerService;->mContext:Landroid/content/Context;
 
-    const v5, 0x10400ce
+    const v5, #string@notification_title#t
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 

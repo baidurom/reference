@@ -106,7 +106,7 @@
     .line 62
     sget-object v2, Lcom/android/internal/R$styleable;->ActionBar:[I
 
-    const v3, 0x10102ce
+    const v3, #attr@actionBarStyle#t
 
     invoke-virtual {p1, p2, v2, v3, v4}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
@@ -622,7 +622,7 @@
 
     move-object/from16 v1, v23
 
-    iput v0, v1, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iput v0, v1, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;->leftMargin:I
 
     .line 182
     const/16 v38, 0x0
@@ -631,7 +631,7 @@
 
     move-object/from16 v1, v23
 
-    iput v0, v1, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iput v0, v1, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;->rightMargin:I
 
     .line 183
     if-eqz v21, :cond_7
@@ -1409,7 +1409,7 @@
 
     move-object/from16 v1, v23
 
-    iput v0, v1, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iput v0, v1, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;->leftMargin:I
 
     .line 296
     :cond_1c
@@ -1452,7 +1452,7 @@
 
     move-object/from16 v1, v23
 
-    iput v0, v1, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iput v0, v1, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;->rightMargin:I
 
     .line 301
     const/16 v30, 0x1
@@ -1470,7 +1470,7 @@
 
     move-object/from16 v1, v23
 
-    iput v0, v1, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iput v0, v1, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;->leftMargin:I
 
     .line 309
     :cond_1f
@@ -1489,7 +1489,7 @@
 
     move-object/from16 v1, v23
 
-    iput v0, v1, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iput v0, v1, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;->rightMargin:I
 
     goto/16 :goto_d
 
@@ -1697,7 +1697,7 @@
     .local v0, params:Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;
     const/16 v1, 0x10
 
-    iput v1, v0, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
+    iput v1, v0, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;->gravity:I
 
     .line 513
     return-object v0
@@ -1795,14 +1795,14 @@
     .line 527
     .local v0, result:Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;
     :goto_0
-    iget v1, v0, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
+    iget v1, v0, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;->gravity:I
 
     if-gtz v1, :cond_0
 
     .line 528
     const/16 v1, 0x10
 
-    iput v1, v0, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
+    iput v1, v0, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;->gravity:I
 
     .line 532
     .end local v0           #result:Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;
@@ -2211,7 +2211,7 @@
 
     move-object/from16 v0, v19
 
-    iget v0, v0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v0, v0, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;->leftMargin:I
 
     move/from16 v31, v0
 
@@ -2269,7 +2269,7 @@
 
     move-object/from16 v0, v19
 
-    iget v0, v0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iget v0, v0, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;->rightMargin:I
 
     move/from16 v31, v0
 
@@ -2293,7 +2293,7 @@
 
     move-object/from16 v0, v19
 
-    iget v0, v0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v0, v0, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;->leftMargin:I
 
     move/from16 v31, v0
 
@@ -2301,7 +2301,7 @@
 
     move-object/from16 v0, v19
 
-    iget v0, v0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iget v0, v0, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;->rightMargin:I
 
     move/from16 v31, v0
 
@@ -2524,7 +2524,7 @@
     .restart local v25       #startRight:I
     .restart local v27       #v:Landroid/view/View;
     :cond_c
-    iget v0, v13, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iget v0, v13, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;->rightMargin:I
 
     move/from16 v30, v0
 
@@ -2566,7 +2566,7 @@
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/view/View;->layout(IIII)V
 
     .line 473
-    iget v0, v13, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v0, v13, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;->leftMargin:I
 
     move/from16 v30, v0
 
@@ -2641,7 +2641,7 @@
 
     .line 484
     :cond_f
-    iget v0, v13, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v0, v13, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;->leftMargin:I
 
     move/from16 v30, v0
 
@@ -2683,7 +2683,7 @@
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/view/View;->layout(IIII)V
 
     .line 489
-    iget v0, v13, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iget v0, v13, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;->rightMargin:I
 
     move/from16 v30, v0
 
@@ -2810,9 +2810,9 @@
 
     .line 118
     .local v3, lp:Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;
-    iput v8, v3, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iput v8, v3, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;->rightMargin:I
 
-    iput v8, v3, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iput v8, v3, Lcom/android/internal/view/menu/ActionMenuView$LayoutParams;->leftMargin:I
 
     .line 115
     add-int/lit8 v2, v2, 0x1

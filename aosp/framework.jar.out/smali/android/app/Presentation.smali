@@ -185,7 +185,7 @@
 
     move-result-object v4
 
-    const v5, 0x10103c0
+    const v5, #attr@presentationTheme#t
 
     const/4 v6, 0x1
 

@@ -39,7 +39,7 @@
 
     .prologue
     .line 64
-    const v0, 0x101004b
+    const v0, #attr@buttonStyleToggle#t
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/ToggleButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -164,7 +164,7 @@
 
     .line 140
     .local v0, layerDrawable:Landroid/graphics/drawable/LayerDrawable;
-    const v1, 0x1020017
+    const v1, #id@toggle#t
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/LayerDrawable;->findDrawableByLayerId(I)Landroid/graphics/drawable/Drawable;
 

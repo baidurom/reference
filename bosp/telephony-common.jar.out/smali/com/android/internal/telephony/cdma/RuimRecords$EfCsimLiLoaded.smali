@@ -30,7 +30,7 @@
     .line 238
     iput-object p1, p0, Lcom/android/internal/telephony/cdma/RuimRecords$EfCsimLiLoaded;->this$0:Lcom/android/internal/telephony/cdma/RuimRecords;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

@@ -20,7 +20,7 @@
 
     .prologue
     .line 29
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 32
     const/4 v0, 0x1
@@ -37,19 +37,19 @@
     .parameter "resourceId"
 
     .prologue
-    .line 144
+    .line 145
     invoke-interface {p1, p3}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
     move-result-object v0
 
-    .line 145
+    .line 146
     .local v0, item:Landroid/view/MenuItem;
     if-eqz v0, :cond_0
 
-    .line 146
+    .line 147
     invoke-interface {v0, p2}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
 
-    .line 148
+    .line 149
     :cond_0
     return-void
 .end method
@@ -76,46 +76,44 @@
 .end method
 
 .method public onActionItemClicked(Landroid/view/ActionMode;Landroid/view/MenuItem;)Z
-    .locals 6
+    .locals 4
     .parameter "mode"
     .parameter "item"
 
     .prologue
-    const/4 v4, 0x1
-
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     .line 90
     invoke-interface {p2}, Landroid/view/MenuItem;->getItemId()I
 
-    move-result v5
+    move-result v3
 
-    sparse-switch v5, :sswitch_data_0
+    sparse-switch v3, :sswitch_data_0
 
-    .line 135
+    .line 136
     :goto_0
-    return v3
+    return v2
 
     .line 92
     :sswitch_0
-    iget-object v3, p0, Landroid/webkit/SelectActionModeCallback;->mWebView:Landroid/webkit/WebViewClassic;
+    iget-object v2, p0, Landroid/webkit/SelectActionModeCallback;->mWebView:Landroid/webkit/WebViewClassic;
 
-    invoke-virtual {v3}, Landroid/webkit/WebViewClassic;->cutSelection()V
+    invoke-virtual {v2}, Landroid/webkit/WebViewClassic;->cutSelection()V
 
     .line 93
     invoke-virtual {p1}, Landroid/view/ActionMode;->finish()V
 
+    .line 136
     :goto_1
-    move v3, v4
+    const/4 v2, 0x1
 
-    .line 135
     goto :goto_0
 
     .line 97
     :sswitch_1
-    iget-object v3, p0, Landroid/webkit/SelectActionModeCallback;->mWebView:Landroid/webkit/WebViewClassic;
+    iget-object v2, p0, Landroid/webkit/SelectActionModeCallback;->mWebView:Landroid/webkit/WebViewClassic;
 
-    invoke-virtual {v3}, Landroid/webkit/WebViewClassic;->copySelection()Z
+    invoke-virtual {v2}, Landroid/webkit/WebViewClassic;->copySelection()Z
 
     .line 98
     invoke-virtual {p1}, Landroid/view/ActionMode;->finish()V
@@ -124,9 +122,9 @@
 
     .line 102
     :sswitch_2
-    iget-object v3, p0, Landroid/webkit/SelectActionModeCallback;->mWebView:Landroid/webkit/WebViewClassic;
+    iget-object v2, p0, Landroid/webkit/SelectActionModeCallback;->mWebView:Landroid/webkit/WebViewClassic;
 
-    invoke-virtual {v3}, Landroid/webkit/WebViewClassic;->pasteFromClipboard()V
+    invoke-virtual {v2}, Landroid/webkit/WebViewClassic;->pasteFromClipboard()V
 
     .line 103
     invoke-virtual {p1}, Landroid/view/ActionMode;->finish()V
@@ -135,21 +133,21 @@
 
     .line 107
     :sswitch_3
-    iget-object v3, p0, Landroid/webkit/SelectActionModeCallback;->mWebView:Landroid/webkit/WebViewClassic;
+    iget-object v2, p0, Landroid/webkit/SelectActionModeCallback;->mWebView:Landroid/webkit/WebViewClassic;
 
-    invoke-virtual {v3}, Landroid/webkit/WebViewClassic;->getSelection()Ljava/lang/String;
+    invoke-virtual {v2}, Landroid/webkit/WebViewClassic;->getSelection()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 108
+    .local v1, selection:Ljava/lang/String;
+    iget-object v2, p0, Landroid/webkit/SelectActionModeCallback;->mWebView:Landroid/webkit/WebViewClassic;
+
+    invoke-virtual {v2}, Landroid/webkit/WebViewClassic;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
-    .line 108
-    .local v2, selection:Ljava/lang/String;
-    iget-object v3, p0, Landroid/webkit/SelectActionModeCallback;->mWebView:Landroid/webkit/WebViewClassic;
-
-    invoke-virtual {v3}, Landroid/webkit/WebViewClassic;->getContext()Landroid/content/Context;
-
-    move-result-object v3
-
-    invoke-static {v3, v2}, Landroid/provider/Browser;->sendString(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-static {v2, v1}, Landroid/provider/Browser;->sendString(Landroid/content/Context;Ljava/lang/String;)V
 
     .line 109
     invoke-virtual {p1}, Landroid/view/ActionMode;->finish()V
@@ -157,87 +155,30 @@
     goto :goto_1
 
     .line 113
-    .end local v2           #selection:Ljava/lang/String;
+    .end local v1           #selection:Ljava/lang/String;
     :sswitch_4
-    iget-object v3, p0, Landroid/webkit/SelectActionModeCallback;->mWebView:Landroid/webkit/WebViewClassic;
+    iget-object v2, p0, Landroid/webkit/SelectActionModeCallback;->mWebView:Landroid/webkit/WebViewClassic;
 
-    invoke-virtual {v3}, Landroid/webkit/WebViewClassic;->selectAll()V
+    invoke-virtual {v2}, Landroid/webkit/WebViewClassic;->selectAll()V
 
     goto :goto_1
 
     .line 117
     :sswitch_5
-    iget-object v5, p0, Landroid/webkit/SelectActionModeCallback;->mWebView:Landroid/webkit/WebViewClassic;
+    iget-object v3, p0, Landroid/webkit/SelectActionModeCallback;->mWebView:Landroid/webkit/WebViewClassic;
 
-    invoke-virtual {v5}, Landroid/webkit/WebViewClassic;->getSelection()Ljava/lang/String;
+    invoke-virtual {v3}, Landroid/webkit/WebViewClassic;->getSelection()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 118
-    .local v1, sel:Ljava/lang/String;
+    .local v0, sel:Ljava/lang/String;
     invoke-virtual {p1}, Landroid/view/ActionMode;->finish()V
 
     .line 119
-    iget-object v5, p0, Landroid/webkit/SelectActionModeCallback;->mWebView:Landroid/webkit/WebViewClassic;
-
-    invoke-virtual {v5, v1, v3}, Landroid/webkit/WebViewClassic;->showFindDialog(Ljava/lang/String;Z)Z
-
-    goto :goto_1
-
-    .line 122
-    .end local v1           #sel:Ljava/lang/String;
-    :sswitch_6
-    invoke-virtual {p1}, Landroid/view/ActionMode;->finish()V
-
-    .line 123
-    new-instance v0, Landroid/content/Intent;
-
-    const-string v3, "android.intent.action.WEB_SEARCH"
-
-    invoke-direct {v0, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    .line 124
-    .local v0, i:Landroid/content/Intent;
-    const-string/jumbo v3, "new_search"
-
-    invoke-virtual {v0, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
-
-    .line 125
-    const-string/jumbo v3, "query"
-
-    iget-object v5, p0, Landroid/webkit/SelectActionModeCallback;->mWebView:Landroid/webkit/WebViewClassic;
-
-    invoke-virtual {v5}, Landroid/webkit/WebViewClassic;->getSelection()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v3, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 126
     iget-object v3, p0, Landroid/webkit/SelectActionModeCallback;->mWebView:Landroid/webkit/WebViewClassic;
 
-    invoke-virtual {v3}, Landroid/webkit/WebViewClassic;->getContext()Landroid/content/Context;
-
-    move-result-object v3
-
-    instance-of v3, v3, Landroid/app/Activity;
-
-    if-nez v3, :cond_0
-
-    .line 127
-    const/high16 v3, 0x1000
-
-    invoke-virtual {v0, v3}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
-
-    .line 129
-    :cond_0
-    iget-object v3, p0, Landroid/webkit/SelectActionModeCallback;->mWebView:Landroid/webkit/WebViewClassic;
-
-    invoke-virtual {v3}, Landroid/webkit/WebViewClassic;->getContext()Landroid/content/Context;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+    invoke-virtual {v3, v0, v2}, Landroid/webkit/WebViewClassic;->showFindDialog(Ljava/lang/String;Z)Z
 
     goto :goto_1
 
@@ -246,13 +187,12 @@
 
     :sswitch_data_0
     .sparse-switch
-        0x1020020 -> :sswitch_0
-        0x1020021 -> :sswitch_1
-        0x1020022 -> :sswitch_2
-        0x10203b4 -> :sswitch_4
-        0x10203b5 -> :sswitch_3
-        0x10203b6 -> :sswitch_5
-        0x10203b7 -> :sswitch_6
+        #id@cut#t -> :sswitch_0
+        #id@copy#t -> :sswitch_1
+        #id@paste#t -> :sswitch_2
+        #id@select_all#t -> :sswitch_4
+        #id@share#t -> :sswitch_3
+        #id@find#t -> :sswitch_5
     .end sparse-switch
 .end method
 
@@ -284,7 +224,7 @@
 
     .line 57
     .local v6, context:Landroid/content/Context;
-    const v9, 0x10403c3
+    const v9, #string@textSelectionCABTitle#t
 
     invoke-virtual {v6, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -369,27 +309,27 @@
 
     .line 74
     .local v4, canWebSearch:Z
-    const v9, 0x10203b6
+    const v9, #id@find#t
 
     invoke-direct {p0, p2, v2, v9}, Landroid/webkit/SelectActionModeCallback;->setMenuVisibility(Landroid/view/Menu;ZI)V
 
     .line 75
-    const v9, 0x1020022
+    const v9, #id@paste#t
 
     invoke-direct {p0, p2, v3, v9}, Landroid/webkit/SelectActionModeCallback;->setMenuVisibility(Landroid/view/Menu;ZI)V
 
     .line 76
-    const v9, 0x1020020
+    const v9, #id@cut#t
 
     invoke-direct {p0, p2, v1, v9}, Landroid/webkit/SelectActionModeCallback;->setMenuVisibility(Landroid/view/Menu;ZI)V
 
     .line 77
-    const v9, 0x1020021
+    const v9, #id@copy#t
 
     invoke-direct {p0, p2, v0, v9}, Landroid/webkit/SelectActionModeCallback;->setMenuVisibility(Landroid/view/Menu;ZI)V
 
     .line 78
-    const v9, 0x10203b7
+    const v9, #id@websearch#t
 
     invoke-direct {p0, p2, v4, v9}, Landroid/webkit/SelectActionModeCallback;->setMenuVisibility(Landroid/view/Menu;ZI)V
 
@@ -423,12 +363,12 @@
     .parameter "mode"
 
     .prologue
-    .line 140
+    .line 141
     iget-object v0, p0, Landroid/webkit/SelectActionModeCallback;->mWebView:Landroid/webkit/WebViewClassic;
 
     invoke-virtual {v0}, Landroid/webkit/WebViewClassic;->selectionDone()V
 
-    .line 141
+    .line 142
     return-void
 .end method
 

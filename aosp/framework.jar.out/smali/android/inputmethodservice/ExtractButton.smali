@@ -25,7 +25,7 @@
 
     .prologue
     .line 32
-    const v0, 0x1010048
+    const v0, #attr@buttonStyle#t
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/Button;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

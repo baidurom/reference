@@ -165,7 +165,7 @@
     const/4 v1, 0x0
 
     .line 214
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 77
     const/4 v0, 0x1
@@ -1068,7 +1068,7 @@
 
     .line 1087
     .local v0, newZoomOverviewWidth:I
-    invoke-virtual {v1}, Landroid/webkit/WebSettingsClassic;->getUseWideViewPort()Z
+    invoke-virtual {v1}, Landroid/webkit/WebSettings;->getUseWideViewPort()Z
 
     move-result v2
 
@@ -2390,7 +2390,7 @@
     .local v0, settings:Landroid/webkit/WebSettings;
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0}, Landroid/webkit/WebSettingsClassic;->getUseWideViewPort()Z
+    invoke-virtual {v0}, Landroid/webkit/WebSettings;->getUseWideViewPort()Z
 
     move-result v1
 
@@ -3944,13 +3944,13 @@
     if-eqz v2, :cond_5
 
     :cond_1
-    invoke-virtual {v1}, Landroid/webkit/WebSettingsClassic;->supportZoom()Z
+    invoke-virtual {v1}, Landroid/webkit/WebSettings;->supportZoom()Z
 
     move-result v2
 
     if-eqz v2, :cond_5
 
-    invoke-virtual {v1}, Landroid/webkit/WebSettingsClassic;->getBuiltInZoomControls()Z
+    invoke-virtual {v1}, Landroid/webkit/WebSettings;->getBuiltInZoomControls()Z
 
     move-result v2
 

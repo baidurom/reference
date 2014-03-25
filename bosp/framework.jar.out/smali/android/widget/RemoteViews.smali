@@ -137,7 +137,7 @@
     const/4 v4, 0x1
 
     .line 1504
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 78
     invoke-static {}, Landroid/os/Process;->myUserHandle()Landroid/os/UserHandle;
@@ -547,7 +547,7 @@
     const/4 v2, 0x0
 
     .line 1472
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 78
     invoke-static {}, Landroid/os/Process;->myUserHandle()Landroid/os/UserHandle;
@@ -669,7 +669,7 @@
     const/4 v1, 0x0
 
     .line 1446
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 78
     invoke-static {}, Landroid/os/Process;->myUserHandle()Landroid/os/UserHandle;

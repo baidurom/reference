@@ -315,7 +315,7 @@
 
     .prologue
     .line 134
-    const v0, 0x10103db
+    const v0, #attr@gestureOverlayViewStyle#t
 
     invoke-direct {p0, p1, p2, v0}, Landroid/gesture/GestureOverlayView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

@@ -15,13 +15,13 @@
 
 
 # static fields
-.field public static final config_longAnimTime:I = 0x10e0002
+.field public static final config_longAnimTime:I = #integer@config_longAnimTime#t
 
-.field public static final config_mediumAnimTime:I = 0x10e0001
+.field public static final config_mediumAnimTime:I = #integer@config_mediumAnimTime#t
 
-.field public static final config_shortAnimTime:I = 0x10e0000
+.field public static final config_shortAnimTime:I = #integer@config_shortAnimTime#t
 
-.field public static final status_bar_notification_info_maxnum:I = 0x10e0003
+.field public static final status_bar_notification_info_maxnum:I = #integer@status_bar_notification_info_maxnum#t
 
 
 # direct methods

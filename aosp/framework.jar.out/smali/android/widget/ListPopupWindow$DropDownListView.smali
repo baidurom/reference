@@ -34,7 +34,7 @@
     .line 1181
     const/4 v0, 0x0
 
-    const v1, 0x101006d
+    const v1, #attr@dropDownListViewStyle#t
 
     invoke-direct {p0, p1, v0, v1}, Landroid/widget/ListView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

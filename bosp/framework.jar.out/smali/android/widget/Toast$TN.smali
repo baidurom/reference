@@ -88,10 +88,10 @@
 
     .line 341
     .local v0, params:Landroid/view/WindowManager$LayoutParams;
-    iput v2, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iput v2, v0, Landroid/view/WindowManager$LayoutParams;->height:I
 
     .line 342
-    iput v2, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iput v2, v0, Landroid/view/WindowManager$LayoutParams;->width:I
 
     .line 343
     const/16 v1, 0x98
@@ -104,7 +104,7 @@
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->format:I
 
     .line 347
-    const v1, 0x1030004
+    const v1, #style@Animation.Toast#t
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 

@@ -184,7 +184,7 @@
     if-ne p2, v2, :cond_3
 
     .line 393
-    const v0, 0x1040015
+    const v0, #string@VideoView_error_text_invalid_progressive_playback#t
 
     .line 398
     .local v0, messageId:I
@@ -204,7 +204,7 @@
 
     move-result-object v2
 
-    const v3, 0x1040010
+    const v3, #string@VideoView_error_button#t
 
     new-instance v4, Landroid/widget/VideoView$4$1;
 
@@ -227,7 +227,7 @@
     .line 395
     .end local v0           #messageId:I
     :cond_3
-    const v0, 0x1040011
+    const v0, #string@VideoView_error_text_unknown#t
 
     .restart local v0       #messageId:I
     goto :goto_1

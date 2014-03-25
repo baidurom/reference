@@ -316,7 +316,7 @@
 
     move-result-object v1
 
-    const v3, 0x10900c3
+    const v3, #layout@select_dialog#t
 
     const/4 v9, 0x0
 
@@ -364,7 +364,7 @@
     if-eqz v1, :cond_2
 
     .line 8310
-    const v1, 0x104000a
+    const v1, #string@ok#t
 
     new-instance v3, Landroid/webkit/WebViewClassic$InvokeListBox$1;
 

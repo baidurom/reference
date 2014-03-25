@@ -419,7 +419,7 @@
 
     .prologue
     .line 52
-    iget-object v0, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Landroid/widget/VideoView;->mContext:Landroid/content/Context;
 
     return-object v0
 .end method
@@ -430,7 +430,7 @@
 
     .prologue
     .line 52
-    iget-object v0, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Landroid/widget/VideoView;->mContext:Landroid/content/Context;
 
     return-object v0
 .end method
@@ -763,7 +763,7 @@
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 222
-    iget-object v2, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Landroid/widget/VideoView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2, v1}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
@@ -828,7 +828,7 @@
     .line 236
     iget-object v2, p0, Landroid/widget/VideoView;->mMediaPlayer:Landroid/media/MediaPlayer;
 
-    iget-object v3, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v3, p0, Landroid/widget/VideoView;->mContext:Landroid/content/Context;
 
     iget-object v4, p0, Landroid/widget/VideoView;->mUri:Landroid/net/Uri;
 

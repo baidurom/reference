@@ -1165,7 +1165,7 @@
 
     move-result-object v9
 
-    const v11, 0x10403e9
+    const v11, #string@android_upgrading_starting_apps#t
 
     invoke-virtual {v9, v11}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -1904,7 +1904,7 @@
 
     move-result-object v7
 
-    const v9, 0x111002b
+    const v9, #bool@config_enableWallpaperService#t
 
     invoke-virtual {v7, v9}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -2347,7 +2347,7 @@
 
     move-result-object v7
 
-    const v9, 0x111003f
+    const v9, #bool@config_dreamsSupported#t
 
     invoke-virtual {v7, v9}, Landroid/content/res/Resources;->getBoolean(I)Z
 

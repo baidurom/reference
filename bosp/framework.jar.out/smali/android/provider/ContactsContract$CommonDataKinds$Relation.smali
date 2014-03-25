@@ -109,92 +109,92 @@
     packed-switch p0, :pswitch_data_0
 
     .line 6346
-    const v0, 0x10402c8
+    const v0, #string@orgTypeCustom#t
 
     :goto_0
     return v0
 
     .line 6330
     :pswitch_0
-    const v0, 0x10402ca
+    const v0, #string@relationTypeAssistant#t
 
     goto :goto_0
 
     .line 6331
     :pswitch_1
-    const v0, 0x10402cb
+    const v0, #string@relationTypeBrother#t
 
     goto :goto_0
 
     .line 6332
     :pswitch_2
-    const v0, 0x10402cc
+    const v0, #string@relationTypeChild#t
 
     goto :goto_0
 
     .line 6334
     :pswitch_3
-    const v0, 0x10402cd
+    const v0, #string@relationTypeDomesticPartner#t
 
     goto :goto_0
 
     .line 6335
     :pswitch_4
-    const v0, 0x10402ce
+    const v0, #string@relationTypeFather#t
 
     goto :goto_0
 
     .line 6336
     :pswitch_5
-    const v0, 0x10402cf
+    const v0, #string@relationTypeFriend#t
 
     goto :goto_0
 
     .line 6337
     :pswitch_6
-    const v0, 0x10402d0
+    const v0, #string@relationTypeManager#t
 
     goto :goto_0
 
     .line 6338
     :pswitch_7
-    const v0, 0x10402d1
+    const v0, #string@relationTypeMother#t
 
     goto :goto_0
 
     .line 6339
     :pswitch_8
-    const v0, 0x10402d2
+    const v0, #string@relationTypeParent#t
 
     goto :goto_0
 
     .line 6340
     :pswitch_9
-    const v0, 0x10402d3
+    const v0, #string@relationTypePartner#t
 
     goto :goto_0
 
     .line 6342
     :pswitch_a
-    const v0, 0x10402d4
+    const v0, #string@relationTypeReferredBy#t
 
     goto :goto_0
 
     .line 6343
     :pswitch_b
-    const v0, 0x10402d5
+    const v0, #string@relationTypeRelative#t
 
     goto :goto_0
 
     .line 6344
     :pswitch_c
-    const v0, 0x10402d6
+    const v0, #string@relationTypeSister#t
 
     goto :goto_0
 
     .line 6345
     :pswitch_d
-    const v0, 0x10402d7
+    const v0, #string@relationTypeSpouse#t
 
     goto :goto_0
 

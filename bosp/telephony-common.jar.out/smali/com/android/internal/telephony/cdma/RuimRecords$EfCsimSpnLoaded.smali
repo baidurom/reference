@@ -30,7 +30,7 @@
     .line 264
     iput-object p1, p0, Lcom/android/internal/telephony/cdma/RuimRecords$EfCsimSpnLoaded;->this$0:Lcom/android/internal/telephony/cdma/RuimRecords;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -180,7 +180,7 @@
 
     const-string v8, ""
 
-    #setter for: Lcom/android/internal/telephony/IccRecords;->spn:Ljava/lang/String;
+    #setter for: Lcom/android/internal/telephony/cdma/RuimRecords;->spn:Ljava/lang/String;
     invoke-static {v7, v8}, Lcom/android/internal/telephony/cdma/RuimRecords;->access$202(Lcom/android/internal/telephony/cdma/RuimRecords;Ljava/lang/String;)Ljava/lang/String;
 
     .line 315
@@ -240,7 +240,7 @@
 
     iget-object v9, p0, Lcom/android/internal/telephony/cdma/RuimRecords$EfCsimSpnLoaded;->this$0:Lcom/android/internal/telephony/cdma/RuimRecords;
 
-    #getter for: Lcom/android/internal/telephony/IccRecords;->spn:Ljava/lang/String;
+    #getter for: Lcom/android/internal/telephony/cdma/RuimRecords;->spn:Ljava/lang/String;
     invoke-static {v9}, Lcom/android/internal/telephony/cdma/RuimRecords;->access$600(Lcom/android/internal/telephony/cdma/RuimRecords;)Ljava/lang/String;
 
     move-result-object v9
@@ -287,7 +287,7 @@
 
     iget-object v8, p0, Lcom/android/internal/telephony/cdma/RuimRecords$EfCsimSpnLoaded;->this$0:Lcom/android/internal/telephony/cdma/RuimRecords;
 
-    #getter for: Lcom/android/internal/telephony/IccRecords;->spn:Ljava/lang/String;
+    #getter for: Lcom/android/internal/telephony/cdma/RuimRecords;->spn:Ljava/lang/String;
     invoke-static {v8}, Lcom/android/internal/telephony/cdma/RuimRecords;->access$700(Lcom/android/internal/telephony/cdma/RuimRecords;)Ljava/lang/String;
 
     move-result-object v8
@@ -309,7 +309,7 @@
 
     invoke-direct {v8, v6, v9, v5, v10}, Ljava/lang/String;-><init>([BIILjava/lang/String;)V
 
-    #setter for: Lcom/android/internal/telephony/IccRecords;->spn:Ljava/lang/String;
+    #setter for: Lcom/android/internal/telephony/cdma/RuimRecords;->spn:Ljava/lang/String;
     invoke-static {v7, v8}, Lcom/android/internal/telephony/cdma/RuimRecords;->access$302(Lcom/android/internal/telephony/cdma/RuimRecords;Ljava/lang/String;)Ljava/lang/String;
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
@@ -362,7 +362,7 @@
 
     move-result-object v8
 
-    #setter for: Lcom/android/internal/telephony/IccRecords;->spn:Ljava/lang/String;
+    #setter for: Lcom/android/internal/telephony/cdma/RuimRecords;->spn:Ljava/lang/String;
     invoke-static {v7, v8}, Lcom/android/internal/telephony/cdma/RuimRecords;->access$402(Lcom/android/internal/telephony/cdma/RuimRecords;Ljava/lang/String;)Ljava/lang/String;
 
     goto :goto_3
@@ -379,7 +379,7 @@
 
     invoke-direct {v8, v6, v9, v5, v10}, Ljava/lang/String;-><init>([BIILjava/lang/String;)V
 
-    #setter for: Lcom/android/internal/telephony/IccRecords;->spn:Ljava/lang/String;
+    #setter for: Lcom/android/internal/telephony/cdma/RuimRecords;->spn:Ljava/lang/String;
     invoke-static {v7, v8}, Lcom/android/internal/telephony/cdma/RuimRecords;->access$502(Lcom/android/internal/telephony/cdma/RuimRecords;Ljava/lang/String;)Ljava/lang/String;
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0

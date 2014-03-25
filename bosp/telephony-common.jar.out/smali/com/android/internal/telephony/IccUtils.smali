@@ -13,7 +13,7 @@
 
     .prologue
     .line 33
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -345,7 +345,7 @@
 
     .line 260
     .local v2, defaultCharset:Ljava/lang/String;
-    const v10, 0x1040020
+    const v10, #string@gsm_alphabet_default_charset#t
 
     :try_start_1
     invoke-virtual {v6, v10}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;

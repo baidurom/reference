@@ -12,9 +12,9 @@
 
 
 # static fields
-.field static final CHRONOMETER_ID:I = 0x1020014
+.field static final CHRONOMETER_ID:I = #id@text1#t
 
-.field static final PROGRESSBAR_ID:I = 0x102000d
+.field static final PROGRESSBAR_ID:I = #id@progress#t
 
 .field public static final TAG:Ljava/lang/String; = "TextProgressBar"
 
@@ -170,7 +170,7 @@
 
     .line 83
     .local v0, childId:I
-    const v1, 0x1020014
+    const v1, #id@text1#t
 
     if-ne v0, v1, :cond_2
 
@@ -228,7 +228,7 @@
     .line 92
     .restart local p1
     :cond_2
-    const v1, 0x102000d
+    const v1, #id@progress#t
 
     if-ne v0, v1, :cond_0
 
@@ -323,9 +323,9 @@
 
     move-result v9
 
-    iget v10, v5, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v10, v5, Landroid/widget/RelativeLayout$LayoutParams;->leftMargin:I
 
-    iget v11, v5, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iget v11, v5, Landroid/widget/RelativeLayout$LayoutParams;->rightMargin:I
 
     add-int/2addr v10, v11
 
@@ -349,7 +349,7 @@
 
     div-int/2addr v9, v10
 
-    iget v10, v5, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v10, v5, Landroid/widget/RelativeLayout$LayoutParams;->leftMargin:I
 
     add-int v2, v9, v10
 
@@ -382,7 +382,7 @@
     add-int/2addr v2, v0
 
     .line 166
-    iget v9, v5, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iget v9, v5, Landroid/widget/RelativeLayout$LayoutParams;->rightMargin:I
 
     sub-int v9, v1, v9
 
@@ -390,12 +390,12 @@
 
     .line 167
     .local v7, rightLimit:I
-    iget v9, v5, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v9, v5, Landroid/widget/RelativeLayout$LayoutParams;->leftMargin:I
 
     if-ge v2, v9, :cond_6
 
     .line 168
-    iget v2, v5, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v2, v5, Landroid/widget/RelativeLayout$LayoutParams;->leftMargin:I
 
     .line 173
     :cond_3
@@ -411,7 +411,7 @@
 
     .line 174
     .restart local v5       #params:Landroid/widget/RelativeLayout$LayoutParams;
-    iput v2, v5, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iput v2, v5, Landroid/widget/RelativeLayout$LayoutParams;->leftMargin:I
 
     .line 177
     iget-object v9, p0, Lcom/android/internal/widget/TextProgressBar;->mChronometer:Landroid/widget/Chronometer;

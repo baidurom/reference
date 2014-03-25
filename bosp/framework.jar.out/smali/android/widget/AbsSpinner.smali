@@ -166,13 +166,13 @@
     .line 76
     new-instance v1, Landroid/widget/ArrayAdapter;
 
-    const v3, 0x1090008
+    const v3, #layout@simple_spinner_item#t
 
     invoke-direct {v1, p1, v3, v2}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;I[Ljava/lang/Object;)V
 
     .line 79
     .local v1, adapter:Landroid/widget/ArrayAdapter;,"Landroid/widget/ArrayAdapter<Ljava/lang/CharSequence;>;"
-    const v3, 0x1090009
+    const v3, #layout@simple_spinner_dropdown_item#t
 
     invoke-virtual {v1, v3}, Landroid/widget/ArrayAdapter;->setDropDownViewResource(I)V
 
@@ -290,7 +290,7 @@
 
     .prologue
     .line 333
-    iget v0, p0, Landroid/widget/AdapterView;->mItemCount:I
+    iget v0, p0, Landroid/widget/AbsSpinner;->mItemCount:I
 
     return v0
 .end method
@@ -300,18 +300,18 @@
 
     .prologue
     .line 306
-    iget v0, p0, Landroid/widget/AdapterView;->mItemCount:I
+    iget v0, p0, Landroid/widget/AbsSpinner;->mItemCount:I
 
     if-lez v0, :cond_0
 
-    iget v0, p0, Landroid/widget/AdapterView;->mSelectedPosition:I
+    iget v0, p0, Landroid/widget/AbsSpinner;->mSelectedPosition:I
 
     if-ltz v0, :cond_0
 
     .line 307
-    iget v0, p0, Landroid/widget/AdapterView;->mSelectedPosition:I
+    iget v0, p0, Landroid/widget/AbsSpinner;->mSelectedPosition:I
 
-    iget v1, p0, Landroid/widget/AdapterView;->mFirstPosition:I
+    iget v1, p0, Landroid/widget/AbsSpinner;->mFirstPosition:I
 
     sub-int/2addr v0, v1
 
@@ -393,13 +393,13 @@
     .local v6, widthMode:I
     iget-object v9, p0, Landroid/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
-    iget v8, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v8, p0, Landroid/widget/AbsSpinner;->mPaddingLeft:I
 
     iget v10, p0, Landroid/widget/AbsSpinner;->mSelectionLeftPadding:I
 
     if-le v8, v10, :cond_6
 
-    iget v8, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v8, p0, Landroid/widget/AbsSpinner;->mPaddingLeft:I
 
     :goto_0
     iput v8, v9, Landroid/graphics/Rect;->left:I
@@ -407,13 +407,13 @@
     .line 172
     iget-object v9, p0, Landroid/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
-    iget v8, p0, Landroid/view/View;->mPaddingTop:I
+    iget v8, p0, Landroid/widget/AbsSpinner;->mPaddingTop:I
 
     iget v10, p0, Landroid/widget/AbsSpinner;->mSelectionTopPadding:I
 
     if-le v8, v10, :cond_7
 
-    iget v8, p0, Landroid/view/View;->mPaddingTop:I
+    iget v8, p0, Landroid/widget/AbsSpinner;->mPaddingTop:I
 
     :goto_1
     iput v8, v9, Landroid/graphics/Rect;->top:I
@@ -421,13 +421,13 @@
     .line 174
     iget-object v9, p0, Landroid/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
-    iget v8, p0, Landroid/view/View;->mPaddingRight:I
+    iget v8, p0, Landroid/widget/AbsSpinner;->mPaddingRight:I
 
     iget v10, p0, Landroid/widget/AbsSpinner;->mSelectionRightPadding:I
 
     if-le v8, v10, :cond_8
 
-    iget v8, p0, Landroid/view/View;->mPaddingRight:I
+    iget v8, p0, Landroid/widget/AbsSpinner;->mPaddingRight:I
 
     :goto_2
     iput v8, v9, Landroid/graphics/Rect;->right:I
@@ -435,19 +435,19 @@
     .line 176
     iget-object v9, p0, Landroid/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
-    iget v8, p0, Landroid/view/View;->mPaddingBottom:I
+    iget v8, p0, Landroid/widget/AbsSpinner;->mPaddingBottom:I
 
     iget v10, p0, Landroid/widget/AbsSpinner;->mSelectionBottomPadding:I
 
     if-le v8, v10, :cond_9
 
-    iget v8, p0, Landroid/view/View;->mPaddingBottom:I
+    iget v8, p0, Landroid/widget/AbsSpinner;->mPaddingBottom:I
 
     :goto_3
     iput v8, v9, Landroid/graphics/Rect;->bottom:I
 
     .line 179
-    iget-boolean v8, p0, Landroid/widget/AdapterView;->mDataChanged:Z
+    iget-boolean v8, p0, Landroid/widget/AbsSpinner;->mDataChanged:Z
 
     if-eqz v8, :cond_0
 
@@ -539,7 +539,7 @@
     if-nez v8, :cond_3
 
     .line 207
-    iput-boolean v12, p0, Landroid/widget/AdapterView;->mBlockLayoutRequests:Z
+    iput-boolean v12, p0, Landroid/widget/AbsSpinner;->mBlockLayoutRequests:Z
 
     .line 208
     invoke-virtual {p0}, Landroid/widget/AbsSpinner;->generateDefaultLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -549,7 +549,7 @@
     invoke-virtual {v5, v8}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 209
-    iput-boolean v11, p0, Landroid/widget/AdapterView;->mBlockLayoutRequests:Z
+    iput-boolean v11, p0, Landroid/widget/AbsSpinner;->mBlockLayoutRequests:Z
 
     .line 211
     :cond_3
@@ -726,25 +726,25 @@
     if-ltz v1, :cond_0
 
     .line 431
-    iput-boolean v5, p0, Landroid/widget/AdapterView;->mDataChanged:Z
+    iput-boolean v5, p0, Landroid/widget/AbsSpinner;->mDataChanged:Z
 
     .line 432
-    iput-boolean v5, p0, Landroid/widget/AdapterView;->mNeedSync:Z
+    iput-boolean v5, p0, Landroid/widget/AbsSpinner;->mNeedSync:Z
 
     .line 433
     iget-wide v1, v0, Landroid/widget/AbsSpinner$SavedState;->selectedId:J
 
-    iput-wide v1, p0, Landroid/widget/AdapterView;->mSyncRowId:J
+    iput-wide v1, p0, Landroid/widget/AbsSpinner;->mSyncRowId:J
 
     .line 434
     iget v1, v0, Landroid/widget/AbsSpinner$SavedState;->position:I
 
-    iput v1, p0, Landroid/widget/AdapterView;->mSyncPosition:I
+    iput v1, p0, Landroid/widget/AbsSpinner;->mSyncPosition:I
 
     .line 435
     const/4 v1, 0x0
 
-    iput v1, p0, Landroid/widget/AdapterView;->mSyncMode:I
+    iput v1, p0, Landroid/widget/AbsSpinner;->mSyncMode:I
 
     .line 436
     invoke-virtual {p0}, Landroid/widget/AbsSpinner;->requestLayout()V
@@ -867,7 +867,7 @@
     if-eqz v4, :cond_1
 
     .line 357
-    iget v4, p0, Landroid/widget/AdapterView;->mFirstPosition:I
+    iget v4, p0, Landroid/widget/AbsSpinner;->mFirstPosition:I
 
     add-int/2addr v4, v3
 
@@ -906,7 +906,7 @@
 
     .line 257
     .local v4, recycleBin:Landroid/widget/AbsSpinner$RecycleBin;
-    iget v3, p0, Landroid/widget/AdapterView;->mFirstPosition:I
+    iget v3, p0, Landroid/widget/AbsSpinner;->mFirstPosition:I
 
     .line 260
     .local v3, position:I
@@ -946,7 +946,7 @@
 
     .prologue
     .line 321
-    iget-boolean v0, p0, Landroid/widget/AdapterView;->mBlockLayoutRequests:Z
+    iget-boolean v0, p0, Landroid/widget/AbsSpinner;->mBlockLayoutRequests:Z
 
     if-nez v0, :cond_0
 
@@ -967,21 +967,21 @@
     const/4 v2, -0x1
 
     .line 144
-    iput-boolean v0, p0, Landroid/widget/AdapterView;->mDataChanged:Z
+    iput-boolean v0, p0, Landroid/widget/AbsSpinner;->mDataChanged:Z
 
     .line 145
-    iput-boolean v0, p0, Landroid/widget/AdapterView;->mNeedSync:Z
+    iput-boolean v0, p0, Landroid/widget/AbsSpinner;->mNeedSync:Z
 
     .line 147
     invoke-virtual {p0}, Landroid/widget/AbsSpinner;->removeAllViewsInLayout()V
 
     .line 148
-    iput v2, p0, Landroid/widget/AdapterView;->mOldSelectedPosition:I
+    iput v2, p0, Landroid/widget/AbsSpinner;->mOldSelectedPosition:I
 
     .line 149
     const-wide/high16 v0, -0x8000
 
-    iput-wide v0, p0, Landroid/widget/AdapterView;->mOldSelectedRowId:J
+    iput-wide v0, p0, Landroid/widget/AbsSpinner;->mOldSelectedRowId:J
 
     .line 151
     invoke-virtual {p0, v2}, Landroid/widget/AbsSpinner;->setSelectedPositionInt(I)V
@@ -1037,12 +1037,12 @@
     iput-object p1, p0, Landroid/widget/AbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     .line 109
-    iput v0, p0, Landroid/widget/AdapterView;->mOldSelectedPosition:I
+    iput v0, p0, Landroid/widget/AbsSpinner;->mOldSelectedPosition:I
 
     .line 110
     const-wide/high16 v1, -0x8000
 
-    iput-wide v1, p0, Landroid/widget/AdapterView;->mOldSelectedRowId:J
+    iput-wide v1, p0, Landroid/widget/AbsSpinner;->mOldSelectedRowId:J
 
     .line 112
     iget-object v1, p0, Landroid/widget/AbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
@@ -1050,9 +1050,9 @@
     if-eqz v1, :cond_3
 
     .line 113
-    iget v1, p0, Landroid/widget/AdapterView;->mItemCount:I
+    iget v1, p0, Landroid/widget/AbsSpinner;->mItemCount:I
 
-    iput v1, p0, Landroid/widget/AdapterView;->mOldItemCount:I
+    iput v1, p0, Landroid/widget/AbsSpinner;->mOldItemCount:I
 
     .line 114
     iget-object v1, p0, Landroid/widget/AbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
@@ -1061,7 +1061,7 @@
 
     move-result v1
 
-    iput v1, p0, Landroid/widget/AdapterView;->mItemCount:I
+    iput v1, p0, Landroid/widget/AbsSpinner;->mItemCount:I
 
     .line 115
     invoke-virtual {p0}, Landroid/widget/AbsSpinner;->checkFocus()V
@@ -1081,7 +1081,7 @@
     invoke-interface {v1, v2}, Landroid/widget/SpinnerAdapter;->registerDataSetObserver(Landroid/database/DataSetObserver;)V
 
     .line 120
-    iget v1, p0, Landroid/widget/AdapterView;->mItemCount:I
+    iget v1, p0, Landroid/widget/AbsSpinner;->mItemCount:I
 
     if-lez v1, :cond_1
 
@@ -1096,7 +1096,7 @@
     invoke-virtual {p0, v0}, Landroid/widget/AbsSpinner;->setNextSelectedPositionInt(I)V
 
     .line 125
-    iget v1, p0, Landroid/widget/AdapterView;->mItemCount:I
+    iget v1, p0, Landroid/widget/AbsSpinner;->mItemCount:I
 
     if-nez v1, :cond_2
 
@@ -1152,11 +1152,11 @@
     .line 272
     if-eqz p2, :cond_0
 
-    iget v1, p0, Landroid/widget/AdapterView;->mFirstPosition:I
+    iget v1, p0, Landroid/widget/AbsSpinner;->mFirstPosition:I
 
     if-gt v1, p1, :cond_0
 
-    iget v1, p0, Landroid/widget/AdapterView;->mFirstPosition:I
+    iget v1, p0, Landroid/widget/AbsSpinner;->mFirstPosition:I
 
     invoke-virtual {p0}, Landroid/widget/AbsSpinner;->getChildCount()I
 
@@ -1193,17 +1193,17 @@
 
     .prologue
     .line 293
-    iget v1, p0, Landroid/widget/AdapterView;->mOldSelectedPosition:I
+    iget v1, p0, Landroid/widget/AbsSpinner;->mOldSelectedPosition:I
 
     if-eq p1, v1, :cond_0
 
     .line 294
     const/4 v1, 0x1
 
-    iput-boolean v1, p0, Landroid/widget/AdapterView;->mBlockLayoutRequests:Z
+    iput-boolean v1, p0, Landroid/widget/AbsSpinner;->mBlockLayoutRequests:Z
 
     .line 295
-    iget v1, p0, Landroid/widget/AdapterView;->mSelectedPosition:I
+    iget v1, p0, Landroid/widget/AbsSpinner;->mSelectedPosition:I
 
     sub-int v0, p1, v1
 
@@ -1217,7 +1217,7 @@
     .line 298
     const/4 v1, 0x0
 
-    iput-boolean v1, p0, Landroid/widget/AdapterView;->mBlockLayoutRequests:Z
+    iput-boolean v1, p0, Landroid/widget/AbsSpinner;->mBlockLayoutRequests:Z
 
     .line 300
     .end local v0           #delta:I

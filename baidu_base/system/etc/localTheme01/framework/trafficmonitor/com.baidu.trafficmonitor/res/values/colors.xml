@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_text">#d1d4e1</color>
+    <color name="compress_open_text_color">#acb0b6</color>
+    <color name="compress_close_text_color">#55595d</color>
+    <color name="in_progressbar_text">#fefefe</color>
+    <color name="compress_open_blue">#2456a0</color>
+    <color name="compress_open_green">#367f31</color>
+    <color name="traffic_bg_line_color">#31333a</color>
+
+    <color name="widget_color_tv_used_rate">#ffffffff</color>
+    <color name="widget_color_shadow">#ffd5d5d5</color>
+    <color name="widget_color_tv_used_rate_exceed">#ffffffff</color>
+    <color name="widget_color_traffic">#ffffffff</color>
+</resources>
+

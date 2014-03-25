@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="file_path_text_color">#b6c2cd</color>
+    <color name="file_list_item_text1">#b6c2cd</color>
+    <color name="file_list_item_text2">#7b8690</color>
+</resources>

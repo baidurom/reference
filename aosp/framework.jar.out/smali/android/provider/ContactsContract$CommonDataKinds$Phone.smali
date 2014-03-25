@@ -210,128 +210,128 @@
     packed-switch p0, :pswitch_data_0
 
     .line 5517
-    const v0, 0x1040296
+    const v0, #string@phoneTypeCustom#t
 
     :goto_0
     return v0
 
     .line 5497
     :pswitch_0
-    const v0, 0x1040297
+    const v0, #string@phoneTypeHome#t
 
     goto :goto_0
 
     .line 5498
     :pswitch_1
-    const v0, 0x1040298
+    const v0, #string@phoneTypeMobile#t
 
     goto :goto_0
 
     .line 5499
     :pswitch_2
-    const v0, 0x1040299
+    const v0, #string@phoneTypeWork#t
 
     goto :goto_0
 
     .line 5500
     :pswitch_3
-    const v0, 0x104029a
+    const v0, #string@phoneTypeFaxWork#t
 
     goto :goto_0
 
     .line 5501
     :pswitch_4
-    const v0, 0x104029b
+    const v0, #string@phoneTypeFaxHome#t
 
     goto :goto_0
 
     .line 5502
     :pswitch_5
-    const v0, 0x104029c
+    const v0, #string@phoneTypePager#t
 
     goto :goto_0
 
     .line 5503
     :pswitch_6
-    const v0, 0x104029d
+    const v0, #string@phoneTypeOther#t
 
     goto :goto_0
 
     .line 5504
     :pswitch_7
-    const v0, 0x104029e
+    const v0, #string@phoneTypeCallback#t
 
     goto :goto_0
 
     .line 5505
     :pswitch_8
-    const v0, 0x104029f
+    const v0, #string@phoneTypeCar#t
 
     goto :goto_0
 
     .line 5506
     :pswitch_9
-    const v0, 0x10402a0
+    const v0, #string@phoneTypeCompanyMain#t
 
     goto :goto_0
 
     .line 5507
     :pswitch_a
-    const v0, 0x10402a1
+    const v0, #string@phoneTypeIsdn#t
 
     goto :goto_0
 
     .line 5508
     :pswitch_b
-    const v0, 0x10402a2
+    const v0, #string@phoneTypeMain#t
 
     goto :goto_0
 
     .line 5509
     :pswitch_c
-    const v0, 0x10402a3
+    const v0, #string@phoneTypeOtherFax#t
 
     goto :goto_0
 
     .line 5510
     :pswitch_d
-    const v0, 0x10402a4
+    const v0, #string@phoneTypeRadio#t
 
     goto :goto_0
 
     .line 5511
     :pswitch_e
-    const v0, 0x10402a5
+    const v0, #string@phoneTypeTelex#t
 
     goto :goto_0
 
     .line 5512
     :pswitch_f
-    const v0, 0x10402a6
+    const v0, #string@phoneTypeTtyTdd#t
 
     goto :goto_0
 
     .line 5513
     :pswitch_10
-    const v0, 0x10402a7
+    const v0, #string@phoneTypeWorkMobile#t
 
     goto :goto_0
 
     .line 5514
     :pswitch_11
-    const v0, 0x10402a8
+    const v0, #string@phoneTypeWorkPager#t
 
     goto :goto_0
 
     .line 5515
     :pswitch_12
-    const v0, 0x10402a9
+    const v0, #string@phoneTypeAssistant#t
 
     goto :goto_0
 
     .line 5516
     :pswitch_13
-    const v0, 0x10402aa
+    const v0, #string@phoneTypeMms#t
 
     goto :goto_0
 

@@ -2955,7 +2955,7 @@
     :cond_0
     iget-object v2, p0, Lcom/android/internal/telephony/PhoneBase;->mContext:Landroid/content/Context;
 
-    const v3, 0x1040004
+    const v3, #string@defaultVoiceMailAlphaTag#t
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 

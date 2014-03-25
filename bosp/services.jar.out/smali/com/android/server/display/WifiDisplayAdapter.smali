@@ -132,7 +132,7 @@
 
     move-result-object v0
 
-    const v1, 0x1110048
+    const v1, #bool@config_wifiDisplaySupportsProtectedBuffers#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -765,7 +765,7 @@
 
     const/4 v4, 0x0
 
-    const v11, 0x104051f
+    const v11, #string@wifi_display_notification_title#t
 
     const/4 v1, 0x0
 
@@ -900,7 +900,7 @@
 
     move-result-object v1
 
-    const v3, 0x1040520
+    const v3, #string@wifi_display_notification_message#t
 
     invoke-virtual {v9, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -916,7 +916,7 @@
 
     move-result-object v1
 
-    const v3, 0x1080354
+    const v3, #drawable@ic_notify_wifidisplay#t
 
     invoke-virtual {v1, v3}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 
@@ -926,9 +926,9 @@
 
     move-result-object v1
 
-    const v3, 0x1080038
+    const v3, #drawable@ic_menu_close_clear_cancel#t
 
-    const v5, 0x1040521
+    const v5, #string@wifi_display_notification_disconnect#t
 
     invoke-virtual {v9, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

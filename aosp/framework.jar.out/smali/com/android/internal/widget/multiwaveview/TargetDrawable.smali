@@ -80,23 +80,23 @@
     .line 30
     :array_0
     .array-data 0x4
-        0x9et 0x0t 0x1t 0x1t
-        0xa2t 0x0t 0x1t 0x1t
+        #attr@state_enabled#a
+        #attr@state_active#a
     .end array-data
 
     .line 32
     :array_1
     .array-data 0x4
-        0x9et 0x0t 0x1t 0x1t
+        #attr@state_enabled#a
         0x5et 0xfft 0xfet 0xfet
     .end array-data
 
     .line 34
     :array_2
     .array-data 0x4
-        0x9et 0x0t 0x1t 0x1t
+        #attr@state_enabled#a
         0x5et 0xfft 0xfet 0xfet
-        0x9ct 0x0t 0x1t 0x1t
+        #attr@state_focused#a
     .end array-data
 .end method
 
@@ -653,7 +653,7 @@
     .line 128
     aget v3, v2, v1
 
-    const v4, 0x101009c
+    const v4, #attr@state_focused#t
 
     if-ne v3, v4, :cond_0
 

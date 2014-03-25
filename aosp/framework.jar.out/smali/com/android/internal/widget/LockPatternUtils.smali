@@ -2525,7 +2525,7 @@
 
     move-result-object v0
 
-    const v1, 0x111002f
+    const v1, #bool@config_voice_capable#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -2545,7 +2545,7 @@
 
     move-result-object v0
 
-    const v1, 0x1110029
+    const v1, #bool@config_enable_emergency_call_while_sim_locked#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -2828,7 +2828,7 @@
 
     move-result-object v0
 
-    const v1, 0x1110028
+    const v1, #bool@config_enable_puk_unlock_screen#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -4458,13 +4458,13 @@
     if-ne p2, v6, :cond_2
 
     .line 1262
-    const v3, 0x10402ec
+    const v3, #string@lockscreen_return_to_call#t
 
     .line 1263
     .local v3, textId:I
     if-eqz p5, :cond_1
 
-    const v2, 0x1080084
+    const v2, #drawable@stat_sys_phone_call#t
 
     .line 1264
     .local v2, phoneCallIcon:I
@@ -4529,13 +4529,13 @@
     .line 1266
     .end local v3           #textId:I
     :cond_2
-    const v3, 0x10402eb
+    const v3, #string@lockscreen_emergency_call#t
 
     .line 1267
     .restart local v3       #textId:I
     if-eqz p5, :cond_3
 
-    const v0, 0x10802c9
+    const v0, #drawable@ic_emergency#t
 
     .line 1268
     .local v0, emergencyIcon:I

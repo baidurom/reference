@@ -450,7 +450,7 @@
     .prologue
     .line 900
     .local p0, this:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<TT;>;"
-    iget-object v1, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Landroid/widget/AdapterView;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Landroid/view/accessibility/AccessibilityManager;->getInstance(Landroid/content/Context;)Landroid/view/accessibility/AccessibilityManager;
 
@@ -529,13 +529,13 @@
     if-eqz v0, :cond_1
 
     .line 747
-    iget v2, p0, Landroid/view/View;->mLeft:I
+    iget v2, p0, Landroid/widget/AdapterView;->mLeft:I
 
-    iget v3, p0, Landroid/view/View;->mTop:I
+    iget v3, p0, Landroid/widget/AdapterView;->mTop:I
 
-    iget v4, p0, Landroid/view/View;->mRight:I
+    iget v4, p0, Landroid/widget/AdapterView;->mRight:I
 
-    iget v5, p0, Landroid/view/View;->mBottom:I
+    iget v5, p0, Landroid/widget/AdapterView;->mBottom:I
 
     move-object v0, p0
 
@@ -2042,7 +2042,7 @@
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Landroid/widget/AdapterView;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/view/accessibility/AccessibilityManager;->getInstance(Landroid/content/Context;)Landroid/view/accessibility/AccessibilityManager;
 

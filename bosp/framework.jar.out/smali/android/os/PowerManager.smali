@@ -187,7 +187,7 @@
 
     move-result-object v0
 
-    const v1, 0x10e0026
+    const v1, #integer@config_screenBrightnessSettingDefault#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -207,7 +207,7 @@
 
     move-result-object v0
 
-    const v1, 0x10e0025
+    const v1, #integer@config_screenBrightnessSettingMaximum#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -227,7 +227,7 @@
 
     move-result-object v0
 
-    const v1, 0x10e0024
+    const v1, #integer@config_screenBrightnessSettingMinimum#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -266,7 +266,7 @@
     .locals 2
 
     .prologue
-    .line 586
+    .line 599
     :try_start_0
     iget-object v1, p0, Landroid/os/PowerManager;->mService:Landroid/os/IPowerManager;
 
@@ -276,15 +276,15 @@
 
     move-result v1
 
-    .line 588
+    .line 601
     :goto_0
     return v1
 
-    .line 587
+    .line 600
     :catch_0
     move-exception v0
 
-    .line 588
+    .line 601
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -296,7 +296,7 @@
     .parameter "level"
 
     .prologue
-    .line 565
+    .line 578
     :try_start_0
     iget-object v1, p0, Landroid/os/PowerManager;->mService:Landroid/os/IPowerManager;
 
@@ -306,15 +306,15 @@
 
     move-result v1
 
-    .line 567
+    .line 580
     :goto_0
     return v1
 
-    .line 566
+    .line 579
     :catch_0
     move-exception v0
 
-    .line 567
+    .line 580
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -367,7 +367,7 @@
     .parameter "reason"
 
     .prologue
-    .line 603
+    .line 616
     :try_start_0
     iget-object v0, p0, Landroid/os/PowerManager;->mService:Landroid/os/IPowerManager;
 
@@ -379,11 +379,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 606
+    .line 619
     :goto_0
     return-void
 
-    .line 604
+    .line 617
     :catch_0
     move-exception v0
 
@@ -408,6 +408,30 @@
     return-void
 
     .line 551
+    :catch_0
+    move-exception v0
+
+    goto :goto_0
+.end method
+
+.method public setButtonLight(I)V
+    .locals 1
+    .parameter "brightness"
+
+    .prologue
+    .line 564
+    :try_start_0
+    iget-object v0, p0, Landroid/os/PowerManager;->mService:Landroid/os/IPowerManager;
+
+    invoke-interface {v0, p1}, Landroid/os/IPowerManager;->setButtonLight(I)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 567
+    :goto_0
+    return-void
+
+    .line 565
     :catch_0
     move-exception v0
 

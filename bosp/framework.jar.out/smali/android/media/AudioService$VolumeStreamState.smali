@@ -84,7 +84,7 @@
     .line 2648
     iput-object p1, p0, Landroid/media/AudioService$VolumeStreamState;->this$0:Landroid/media/AudioService;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2642
     new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;

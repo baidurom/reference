@@ -180,7 +180,7 @@
     .line 902
     iget-object v2, p0, Landroid/webkit/CallbackProxy;->mContext:Landroid/content/Context;
 
-    const v3, 0x1040342
+    const v3, #string@js_dialog_title_default#t
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -201,7 +201,7 @@
     .local v0, aUrl:Ljava/net/URL;
     iget-object v2, p0, Landroid/webkit/CallbackProxy;->mContext:Landroid/content/Context;
 
-    const v3, 0x1040341
+    const v3, #string@js_dialog_title#t
 
     const/4 v4, 0x1
 
@@ -2302,7 +2302,7 @@
 
     move-result-object v4
 
-    const v10, 0x104000a
+    const v10, #string@ok#t
 
     new-instance v11, Landroid/webkit/CallbackProxy$2;
 
@@ -2454,7 +2454,7 @@
 
     move-result-object v4
 
-    const v10, 0x104000a
+    const v10, #string@ok#t
 
     new-instance v11, Landroid/webkit/CallbackProxy$5;
 
@@ -2618,7 +2618,7 @@
 
     .line 667
     .local v37, factory:Landroid/view/LayoutInflater;
-    const v4, 0x109004d
+    const v4, #layout@js_prompt#t
 
     const/4 v10, 0x0
 
@@ -2630,7 +2630,7 @@
 
     .line 669
     .local v64, view:Landroid/view/View;
-    const v4, 0x102029f
+    const v4, #id@value#t
 
     move-object/from16 v0, v64
 
@@ -2649,7 +2649,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 672
-    const v4, 0x102000b
+    const v4, #id@message#t
 
     move-object/from16 v0, v64
 
@@ -2688,7 +2688,7 @@
 
     move-result-object v4
 
-    const v10, 0x104000a
+    const v10, #string@ok#t
 
     new-instance v11, Landroid/webkit/CallbackProxy$8;
 
@@ -2840,7 +2840,7 @@
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mContext:Landroid/content/Context;
 
-    const v10, 0x1040343
+    const v10, #string@js_dialog_before_unload#t
 
     const/4 v11, 0x1
 
@@ -2870,7 +2870,7 @@
 
     move-result-object v4
 
-    const v10, 0x104000a
+    const v10, #string@ok#t
 
     new-instance v11, Landroid/webkit/CallbackProxy$11;
 

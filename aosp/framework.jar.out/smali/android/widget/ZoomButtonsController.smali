@@ -363,7 +363,7 @@
     iput v3, v2, Landroid/view/WindowManager$LayoutParams;->format:I
 
     .line 254
-    const v3, 0x10301eb
+    const v3, #style@Animation.ZoomButtons#t
 
     iput v3, v2, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
@@ -399,12 +399,12 @@
 
     .line 263
     .local v1, inflater:Landroid/view/LayoutInflater;
-    const v3, 0x10900ec
+    const v3, #layout@zoom_container#t
 
     invoke-virtual {v1, v3, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     .line 265
-    const v3, 0x10203af
+    const v3, #id@zoomControls#t
 
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 

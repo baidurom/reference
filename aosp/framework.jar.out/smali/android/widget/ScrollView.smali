@@ -81,7 +81,7 @@
 
     .prologue
     .line 157
-    const v0, 0x1010080
+    const v0, #attr@scrollViewStyle#t
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

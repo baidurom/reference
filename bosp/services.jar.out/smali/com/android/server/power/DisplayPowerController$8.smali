@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1305
+    .line 1351
     iput-object p1, p0, Lcom/android/server/power/DisplayPowerController$8;->this$0:Lcom/android/server/power/DisplayPowerController;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .parameter "accuracy"
 
     .prologue
-    .line 1318
+    .line 1364
     return-void
 .end method
 
@@ -52,22 +52,22 @@
     .parameter "event"
 
     .prologue
-    .line 1308
+    .line 1354
     iget-object v3, p0, Lcom/android/server/power/DisplayPowerController$8;->this$0:Lcom/android/server/power/DisplayPowerController;
 
     #getter for: Lcom/android/server/power/DisplayPowerController;->mLightSensorEnabled:Z
-    invoke-static {v3}, Lcom/android/server/power/DisplayPowerController;->access$900(Lcom/android/server/power/DisplayPowerController;)Z
+    invoke-static {v3}, Lcom/android/server/power/DisplayPowerController;->access$1200(Lcom/android/server/power/DisplayPowerController;)Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    .line 1309
+    .line 1355
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v1
 
-    .line 1310
+    .line 1356
     .local v1, time:J
     iget-object v3, p1, Landroid/hardware/SensorEvent;->values:[F
 
@@ -75,14 +75,14 @@
 
     aget v0, v3, v4
 
-    .line 1311
+    .line 1357
     .local v0, lux:F
     iget-object v3, p0, Lcom/android/server/power/DisplayPowerController$8;->this$0:Lcom/android/server/power/DisplayPowerController;
 
     #calls: Lcom/android/server/power/DisplayPowerController;->handleLightSensorEvent(JF)V
-    invoke-static {v3, v1, v2, v0}, Lcom/android/server/power/DisplayPowerController;->access$1000(Lcom/android/server/power/DisplayPowerController;JF)V
+    invoke-static {v3, v1, v2, v0}, Lcom/android/server/power/DisplayPowerController;->access$1300(Lcom/android/server/power/DisplayPowerController;JF)V
 
-    .line 1313
+    .line 1359
     .end local v0           #lux:F
     .end local v1           #time:J
     :cond_0

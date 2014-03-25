@@ -288,7 +288,7 @@
 
     move-result-object v1
 
-    const v2, 0x1050048
+    const v2, #dimen@default_gap#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 

@@ -68,7 +68,7 @@
     .line 110
     const/4 v0, 0x0
 
-    const v1, 0x1010081
+    const v1, #attr@spinnerStyle#t
 
     invoke-direct {p0, p1, v0, v1, p2}, Landroid/widget/Spinner;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
@@ -83,7 +83,7 @@
 
     .prologue
     .line 121
-    const v0, 0x1010081
+    const v0, #attr@spinnerStyle#t
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/Spinner;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

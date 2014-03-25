@@ -123,7 +123,7 @@
     if-nez v0, :cond_0
 
     .line 268
-    iget-object v0, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/android/internal/view/menu/ListMenuItemView;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
@@ -149,7 +149,7 @@
 
     .line 252
     .local v0, inflater:Landroid/view/LayoutInflater;
-    const v1, 0x109007e
+    const v1, #layout@list_menu_item_checkbox#t
 
     const/4 v2, 0x0
 
@@ -183,7 +183,7 @@
 
     .line 237
     .local v0, inflater:Landroid/view/LayoutInflater;
-    const v1, 0x109007f
+    const v1, #layout@list_menu_item_icon#t
 
     invoke-virtual {v0, v1, p0, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -213,7 +213,7 @@
 
     .line 244
     .local v0, inflater:Landroid/view/LayoutInflater;
-    const v1, 0x1090081
+    const v1, #layout@list_menu_item_radio#t
 
     const/4 v2, 0x0
 
@@ -332,7 +332,7 @@
     invoke-virtual {p0, v0}, Lcom/android/internal/view/menu/ListMenuItemView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 84
-    const v0, 0x1020016
+    const v0, #id@title#t
 
     invoke-virtual {p0, v0}, Lcom/android/internal/view/menu/ListMenuItemView;->findViewById(I)Landroid/view/View;
 
@@ -360,7 +360,7 @@
 
     .line 90
     :cond_0
-    const v0, 0x1020310
+    const v0, #id@shortcut#t
 
     invoke-virtual {p0, v0}, Lcom/android/internal/view/menu/ListMenuItemView;->findViewById(I)Landroid/view/View;
 
@@ -410,14 +410,14 @@
 
     if-lez v2, :cond_0
 
-    iget v2, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iget v2, v0, Landroid/widget/LinearLayout$LayoutParams;->width:I
 
     if-gtz v2, :cond_0
 
     .line 229
     iget v2, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    iput v2, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iput v2, v0, Landroid/widget/LinearLayout$LayoutParams;->width:I
 
     .line 232
     .end local v0           #iconLp:Landroid/widget/LinearLayout$LayoutParams;

@@ -111,7 +111,7 @@
     if-ltz p3, :cond_0
 
     .line 99
-    const v4, 0x1030005
+    const v4, #style@Theme#t
 
     sget-object v5, Lcom/android/internal/R$styleable;->Theme:[I
 

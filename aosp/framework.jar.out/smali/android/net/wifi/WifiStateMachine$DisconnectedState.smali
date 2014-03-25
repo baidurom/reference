@@ -724,7 +724,7 @@
 
     move-result-object v6
 
-    const v7, 0x10e000c
+    const v7, #integer@config_wifi_scan_interval_p2p_connected#t
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getInteger(I)I
 

@@ -265,7 +265,7 @@
     .line 342
     sget-object v6, Lcom/android/internal/R$styleable;->CalendarView:[I
 
-    const v7, 0x101035d
+    const v7, #attr@calendarViewStyle#t
 
     const/4 v8, 0x0
 
@@ -471,7 +471,7 @@
     .line 373
     const/16 v6, 0xc
 
-    const v7, 0x1030046
+    const v7, #style@TextAppearance.Small#t
 
     invoke-virtual {v0, v6, v7}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -572,7 +572,7 @@
     iput v6, p0, Landroid/widget/CalendarView;->mWeekSeperatorLineWidth:I
 
     .line 394
-    iget-object v6, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v6, p0, Landroid/widget/CalendarView;->mContext:Landroid/content/Context;
 
     const-string v7, "layout_inflater"
 
@@ -584,7 +584,7 @@
 
     .line 396
     .local v3, layoutInflater:Landroid/view/LayoutInflater;
-    const v6, 0x1090030
+    const v6, #layout@calendar_view#t
 
     const/4 v7, 0x0
 
@@ -599,7 +599,7 @@
     invoke-virtual {p0, v1}, Landroid/widget/CalendarView;->addView(Landroid/view/View;)V
 
     .line 399
-    const v6, 0x102000a
+    const v6, #id@list#t
 
     invoke-virtual {p0, v6}, Landroid/widget/CalendarView;->findViewById(I)Landroid/view/View;
 
@@ -610,7 +610,7 @@
     iput-object v6, p0, Landroid/widget/CalendarView;->mListView:Landroid/widget/ListView;
 
     .line 400
-    const v6, 0x1020272
+    const v6, #id@day_names#t
 
     invoke-virtual {v1, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -621,7 +621,7 @@
     iput-object v6, p0, Landroid/widget/CalendarView;->mDayNamesHeader:Landroid/view/ViewGroup;
 
     .line 401
-    const v6, 0x1020271
+    const v6, #id@month_name#t
 
     invoke-virtual {v1, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -782,7 +782,7 @@
 
     .prologue
     .line 76
-    iput-object p1, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iput-object p1, p0, Landroid/widget/CalendarView;->mContext:Landroid/content/Context;
 
     return-object p1
 .end method
@@ -793,7 +793,7 @@
 
     .prologue
     .line 76
-    iget-object v0, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Landroid/widget/CalendarView;->mContext:Landroid/content/Context;
 
     return-object v0
 .end method
@@ -851,7 +851,7 @@
 
     .prologue
     .line 76
-    iget-object v0, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Landroid/widget/CalendarView;->mContext:Landroid/content/Context;
 
     return-object v0
 .end method
@@ -2019,7 +2019,7 @@
 
     .line 1258
     .local v1, millis:J
-    iget-object v0, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Landroid/widget/CalendarView;->mContext:Landroid/content/Context;
 
     const/16 v5, 0x34
 
@@ -2210,7 +2210,7 @@
     if-le v4, v5, :cond_2
 
     .line 1047
-    iget-object v4, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v4, p0, Landroid/widget/CalendarView;->mContext:Landroid/content/Context;
 
     iget v5, p0, Landroid/widget/CalendarView;->mWeekDayTextAppearanceResId:I
 

@@ -2243,13 +2243,13 @@
 
     invoke-direct {v2, v4}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v4, 0x1080027
+    const v4, #drawable@ic_dialog_alert#t
 
     invoke-virtual {v2, v4}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v2
 
-    const v4, 0x104000a
+    const v4, #string@ok#t
 
     new-instance v5, Lcom/android/server/accessibility/AccessibilityManagerService$4;
 
@@ -2269,7 +2269,7 @@
 
     move-result-object v2
 
-    const v4, 0x10403a5
+    const v4, #string@enable_explore_by_touch_warning_title#t
 
     invoke-virtual {v2, v4}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -2277,7 +2277,7 @@
 
     iget-object v4, p0, Lcom/android/server/accessibility/AccessibilityManagerService;->mContext:Landroid/content/Context;
 
-    const v5, 0x10403a6
+    const v5, #string@enable_explore_by_touch_warning_message#t
 
     const/4 v6, 0x1
 

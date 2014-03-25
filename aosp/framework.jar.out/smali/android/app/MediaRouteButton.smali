@@ -59,7 +59,7 @@
     .line 61
     new-array v0, v3, [I
 
-    const v1, 0x10100a0
+    const v1, #attr@state_checked#t
 
     aput v1, v0, v2
 
@@ -68,7 +68,7 @@
     .line 65
     new-array v0, v3, [I
 
-    const v1, 0x10102fe
+    const v1, #attr@state_activated#t
 
     aput v1, v0, v2
 
@@ -98,7 +98,7 @@
 
     .prologue
     .line 74
-    const v0, 0x10103ad
+    const v0, #attr@mediaRouteButtonStyle#t
 
     invoke-direct {p0, p1, p2, v0}, Landroid/app/MediaRouteButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

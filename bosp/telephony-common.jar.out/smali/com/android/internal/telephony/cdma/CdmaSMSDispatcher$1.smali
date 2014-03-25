@@ -240,7 +240,7 @@
     invoke-virtual {v3, v11}, Ljava/io/DataOutputStream;->write(I)V
 
     .line 482
-    iget v11, v2, Lcom/android/internal/telephony/SmsAddress;->ton:I
+    iget v11, v2, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->ton:I
 
     invoke-virtual {v3, v11}, Ljava/io/DataOutputStream;->write(I)V
 
@@ -255,11 +255,11 @@
     invoke-virtual {v3, v11}, Ljava/io/DataOutputStream;->write(I)V
 
     .line 485
-    iget-object v11, v2, Lcom/android/internal/telephony/SmsAddress;->origBytes:[B
+    iget-object v11, v2, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->origBytes:[B
 
     const/4 v12, 0x0
 
-    iget-object v13, v2, Lcom/android/internal/telephony/SmsAddress;->origBytes:[B
+    iget-object v13, v2, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->origBytes:[B
 
     array-length v13, v13
 
@@ -295,7 +295,7 @@
     .line 493
     iget-object v11, p0, Lcom/android/internal/telephony/cdma/CdmaSMSDispatcher$1;->this$0:Lcom/android/internal/telephony/cdma/CdmaSMSDispatcher;
 
-    #getter for: Lcom/android/internal/telephony/SMSDispatcher;->mCm:Lcom/android/internal/telephony/CommandsInterface;
+    #getter for: Lcom/android/internal/telephony/cdma/CdmaSMSDispatcher;->mCm:Lcom/android/internal/telephony/CommandsInterface;
     invoke-static {v11}, Lcom/android/internal/telephony/cdma/CdmaSMSDispatcher;->access$000(Lcom/android/internal/telephony/cdma/CdmaSMSDispatcher;)Lcom/android/internal/telephony/CommandsInterface;
 
     move-result-object v11

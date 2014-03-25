@@ -33,7 +33,7 @@
 
     .prologue
     .line 39
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 40
     iput-object p2, p0, Landroid/os/UserManager;->mService:Landroid/os/IUserManager;
@@ -73,7 +73,7 @@
 
     move-result-object v1
 
-    const v2, 0x10e0038
+    const v2, #integer@config_multiuserMaximumUsers#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 

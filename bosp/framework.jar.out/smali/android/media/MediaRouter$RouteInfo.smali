@@ -679,28 +679,28 @@
     .line 1024
     .restart local v0       #resId:I
     :pswitch_0
-    const v0, 0x1040517
+    const v0, #string@media_route_status_scanning#t
 
     .line 1025
     goto :goto_0
 
     .line 1027
     :pswitch_1
-    const v0, 0x1040518
+    const v0, #string@media_route_status_connecting#t
 
     .line 1028
     goto :goto_0
 
     .line 1030
     :pswitch_2
-    const v0, 0x1040519
+    const v0, #string@media_route_status_available#t
 
     .line 1031
     goto :goto_0
 
     .line 1033
     :pswitch_3
-    const v0, 0x104051a
+    const v0, #string@media_route_status_not_available#t
 
     goto :goto_0
 

@@ -20,7 +20,7 @@
 # instance fields
 .field final synthetic this$0:Landroid/webkit/WebViewClassic;
 
-.field final synthetic val$remember:Landroid/os/Message;
+.field final synthetic val$neverRemember:Landroid/os/Message;
 
 
 # direct methods
@@ -30,10 +30,10 @@
     .parameter
 
     .prologue
-    .line 1868
+    .line 1938
     iput-object p1, p0, Landroid/webkit/WebViewClassic$4;->this$0:Landroid/webkit/WebViewClassic;
 
-    iput-object p2, p0, Landroid/webkit/WebViewClassic$4;->val$remember:Landroid/os/Message;
+    iput-object p2, p0, Landroid/webkit/WebViewClassic$4;->val$neverRemember:Landroid/os/Message;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -50,7 +50,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1871
+    .line 1941
     iget-object v0, p0, Landroid/webkit/WebViewClassic$4;->this$0:Landroid/webkit/WebViewClassic;
 
     #getter for: Landroid/webkit/WebViewClassic;->mResumeMsg:Landroid/os/Message;
@@ -60,24 +60,24 @@
 
     if-eqz v0, :cond_0
 
-    .line 1872
-    iget-object v0, p0, Landroid/webkit/WebViewClassic$4;->val$remember:Landroid/os/Message;
+    .line 1942
+    iget-object v0, p0, Landroid/webkit/WebViewClassic$4;->val$neverRemember:Landroid/os/Message;
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1873
+    .line 1943
     iget-object v0, p0, Landroid/webkit/WebViewClassic$4;->this$0:Landroid/webkit/WebViewClassic;
 
     #setter for: Landroid/webkit/WebViewClassic;->mResumeMsg:Landroid/os/Message;
     invoke-static {v0, v1}, Landroid/webkit/WebViewClassic;->access$1702(Landroid/webkit/WebViewClassic;Landroid/os/Message;)Landroid/os/Message;
 
-    .line 1875
+    .line 1945
     :cond_0
     iget-object v0, p0, Landroid/webkit/WebViewClassic$4;->this$0:Landroid/webkit/WebViewClassic;
 
     #setter for: Landroid/webkit/WebViewClassic;->mSavePasswordDialog:Landroid/app/AlertDialog;
     invoke-static {v0, v1}, Landroid/webkit/WebViewClassic;->access$1802(Landroid/webkit/WebViewClassic;Landroid/app/AlertDialog;)Landroid/app/AlertDialog;
 
-    .line 1876
+    .line 1946
     return-void
 .end method

@@ -76,7 +76,7 @@
 
     .line 57
     .local v4, resolver:Landroid/content/ContentResolver;
-    const v9, 0x1040026
+    const v9, #string@config_ntpServer#t
 
     invoke-virtual {v3, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -84,7 +84,7 @@
 
     .line 59
     .local v0, defaultServer:Ljava/lang/String;
-    const v9, 0x10e0035
+    const v9, #integer@config_ntpTimeout#t
 
     invoke-virtual {v3, v9}, Landroid/content/res/Resources;->getInteger(I)I
 

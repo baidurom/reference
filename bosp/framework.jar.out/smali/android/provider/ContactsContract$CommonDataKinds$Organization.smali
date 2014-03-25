@@ -99,20 +99,20 @@
     packed-switch p0, :pswitch_data_0
 
     .line 6220
-    const v0, 0x10402c8
+    const v0, #string@orgTypeCustom#t
 
     :goto_0
     return v0
 
     .line 6218
     :pswitch_0
-    const v0, 0x10402c6
+    const v0, #string@orgTypeWork#t
 
     goto :goto_0
 
     .line 6219
     :pswitch_1
-    const v0, 0x10402c7
+    const v0, #string@orgTypeOther#t
 
     goto :goto_0
 

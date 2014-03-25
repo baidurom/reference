@@ -15,7 +15,7 @@
 
 
 # static fields
-.field public static final sym_def_app_icon:I = 0x10d0000
+.field public static final sym_def_app_icon:I = #mipmap@sym_def_app_icon#t
 
 
 # direct methods
@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 12906
+    .line 13220
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

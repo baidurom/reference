@@ -162,7 +162,7 @@
 
     .line 118
     .local v5, lp:Landroid/widget/AbsoluteLayout$LayoutParams;
-    iget v6, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v6, p0, Landroid/widget/AbsoluteLayout;->mPaddingLeft:I
 
     iget v7, v5, Landroid/widget/AbsoluteLayout$LayoutParams;->x:I
 
@@ -170,7 +170,7 @@
 
     .line 119
     .local v1, childLeft:I
-    iget v6, p0, Landroid/view/View;->mPaddingTop:I
+    iget v6, p0, Landroid/widget/AbsoluteLayout;->mPaddingTop:I
 
     iget v7, v5, Landroid/widget/AbsoluteLayout$LayoutParams;->y:I
 
@@ -304,18 +304,18 @@
     .line 84
     .end local v0           #child:Landroid/view/View;
     :cond_1
-    iget v8, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v8, p0, Landroid/widget/AbsoluteLayout;->mPaddingLeft:I
 
-    iget v9, p0, Landroid/view/View;->mPaddingRight:I
+    iget v9, p0, Landroid/widget/AbsoluteLayout;->mPaddingRight:I
 
     add-int/2addr v8, v9
 
     add-int/2addr v7, v8
 
     .line 85
-    iget v8, p0, Landroid/view/View;->mPaddingTop:I
+    iget v8, p0, Landroid/widget/AbsoluteLayout;->mPaddingTop:I
 
-    iget v9, p0, Landroid/view/View;->mPaddingBottom:I
+    iget v9, p0, Landroid/widget/AbsoluteLayout;->mPaddingBottom:I
 
     add-int/2addr v8, v9
 

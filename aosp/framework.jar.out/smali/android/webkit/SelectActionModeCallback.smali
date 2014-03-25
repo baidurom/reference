@@ -246,13 +246,13 @@
 
     :sswitch_data_0
     .sparse-switch
-        0x1020020 -> :sswitch_0
-        0x1020021 -> :sswitch_1
-        0x1020022 -> :sswitch_2
-        0x10203b4 -> :sswitch_4
-        0x10203b5 -> :sswitch_3
-        0x10203b6 -> :sswitch_5
-        0x10203b7 -> :sswitch_6
+        #id@cut#t -> :sswitch_0
+        #id@copy#t -> :sswitch_1
+        #id@paste#t -> :sswitch_2
+        #id@select_all#t -> :sswitch_4
+        #id@share#t -> :sswitch_3
+        #id@find#t -> :sswitch_5
+        #id@websearch#t -> :sswitch_6
     .end sparse-switch
 .end method
 
@@ -284,7 +284,7 @@
 
     .line 57
     .local v6, context:Landroid/content/Context;
-    const v9, 0x10403c3
+    const v9, #string@textSelectionCABTitle#t
 
     invoke-virtual {v6, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -369,27 +369,27 @@
 
     .line 74
     .local v4, canWebSearch:Z
-    const v9, 0x10203b6
+    const v9, #id@find#t
 
     invoke-direct {p0, p2, v2, v9}, Landroid/webkit/SelectActionModeCallback;->setMenuVisibility(Landroid/view/Menu;ZI)V
 
     .line 75
-    const v9, 0x1020022
+    const v9, #id@paste#t
 
     invoke-direct {p0, p2, v3, v9}, Landroid/webkit/SelectActionModeCallback;->setMenuVisibility(Landroid/view/Menu;ZI)V
 
     .line 76
-    const v9, 0x1020020
+    const v9, #id@cut#t
 
     invoke-direct {p0, p2, v1, v9}, Landroid/webkit/SelectActionModeCallback;->setMenuVisibility(Landroid/view/Menu;ZI)V
 
     .line 77
-    const v9, 0x1020021
+    const v9, #id@copy#t
 
     invoke-direct {p0, p2, v0, v9}, Landroid/webkit/SelectActionModeCallback;->setMenuVisibility(Landroid/view/Menu;ZI)V
 
     .line 78
-    const v9, 0x10203b7
+    const v9, #id@websearch#t
 
     invoke-direct {p0, p2, v4, v9}, Landroid/webkit/SelectActionModeCallback;->setMenuVisibility(Landroid/view/Menu;ZI)V
 

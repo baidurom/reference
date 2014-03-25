@@ -27,10 +27,10 @@
     .parameter "collection"
 
     .prologue
-    .line 269
+    .line 272
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 270
+    .line 273
     const-string v0, "missing NetworkStatsCollection"
 
     invoke-static {p1, v0}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -41,7 +41,7 @@
 
     iput-object v0, p0, Lcom/android/server/net/NetworkStatsRecorder$CombiningRewriter;->mCollection:Lcom/android/server/net/NetworkStatsCollection;
 
-    .line 271
+    .line 274
     return-void
 .end method
 
@@ -57,12 +57,12 @@
     .end annotation
 
     .prologue
-    .line 280
+    .line 283
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsRecorder$CombiningRewriter;->mCollection:Lcom/android/server/net/NetworkStatsCollection;
 
     invoke-virtual {v0, p1}, Lcom/android/server/net/NetworkStatsCollection;->read(Ljava/io/InputStream;)V
 
-    .line 281
+    .line 284
     return-void
 .end method
 
@@ -70,7 +70,7 @@
     .locals 0
 
     .prologue
-    .line 276
+    .line 279
     return-void
 .end method
 
@@ -78,7 +78,7 @@
     .locals 1
 
     .prologue
-    .line 285
+    .line 288
     const/4 v0, 0x1
 
     return v0
@@ -94,7 +94,7 @@
     .end annotation
 
     .prologue
-    .line 290
+    .line 293
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsRecorder$CombiningRewriter;->mCollection:Lcom/android/server/net/NetworkStatsCollection;
 
     new-instance v1, Ljava/io/DataOutputStream;
@@ -103,11 +103,11 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/net/NetworkStatsCollection;->write(Ljava/io/DataOutputStream;)V
 
-    .line 291
+    .line 294
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsRecorder$CombiningRewriter;->mCollection:Lcom/android/server/net/NetworkStatsCollection;
 
     invoke-virtual {v0}, Lcom/android/server/net/NetworkStatsCollection;->reset()V
 
-    .line 292
+    .line 295
     return-void
 .end method

@@ -35,7 +35,7 @@
     if-eqz v0, :cond_0
 
     .line 49
-    const v0, 0x10400d2
+    const v0, #string@low_memory#t
 
     const/4 v1, 0x0
 

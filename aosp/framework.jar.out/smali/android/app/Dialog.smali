@@ -162,7 +162,7 @@
 
     move-result-object v2
 
-    const v3, 0x1010308
+    const v3, #attr@dialogTheme#t
 
     invoke-virtual {v2, v3, v0, v4}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 

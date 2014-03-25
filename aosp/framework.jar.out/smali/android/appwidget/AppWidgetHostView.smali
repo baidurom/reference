@@ -80,7 +80,7 @@
     .line 96
     const/high16 v0, 0x10a
 
-    const v1, 0x10a0001
+    const v1, #anim@fade_out#t
 
     invoke-direct {p0, p1, v0, v1}, Landroid/appwidget/AppWidgetHostView;-><init>(Landroid/content/Context;II)V
 
@@ -148,7 +148,7 @@
     .line 103
     const/high16 v0, 0x10a
 
-    const v1, 0x10a0001
+    const v1, #anim@fade_out#t
 
     invoke-direct {p0, p1, v0, v1}, Landroid/appwidget/AppWidgetHostView;-><init>(Landroid/content/Context;II)V
 
@@ -236,7 +236,7 @@
 
     .line 195
     .local v3, r:Landroid/content/res/Resources;
-    const v4, 0x105004e
+    const v4, #dimen@default_app_widget_padding_left#t
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -245,7 +245,7 @@
     iput v4, p2, Landroid/graphics/Rect;->left:I
 
     .line 197
-    const v4, 0x1050050
+    const v4, #dimen@default_app_widget_padding_right#t
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -254,7 +254,7 @@
     iput v4, p2, Landroid/graphics/Rect;->right:I
 
     .line 199
-    const v4, 0x105004f
+    const v4, #dimen@default_app_widget_padding_top#t
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -263,7 +263,7 @@
     iput v4, p2, Landroid/graphics/Rect;->top:I
 
     .line 201
-    const v4, 0x1050051
+    const v4, #dimen@default_app_widget_padding_bottom#t
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -870,7 +870,7 @@
 
     .line 598
     .local v0, tv:Landroid/widget/TextView;
-    const v1, 0x1040470
+    const v1, #string@gadget_host_error_inflating#t
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 

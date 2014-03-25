@@ -90,7 +90,7 @@
     const/4 v1, 0x1
 
     .line 902
-    const v2, 0x1020014
+    const v2, #id@text1#t
 
     invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

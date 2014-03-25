@@ -3244,7 +3244,7 @@
 
     .line 352
     .local v3, providerPackageNames:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
-    const v0, 0x107002d
+    const v0, #array@config_locationProviderPackageNames#t
 
     invoke-virtual {v11, v0}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 

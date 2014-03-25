@@ -35,26 +35,26 @@
     .parameter "removeEncryption"
 
     .prologue
-    .line 345
+    .line 381
     iput-object p1, p0, Lcom/android/server/MountService$UnmountCallBack;->this$0:Lcom/android/server/MountService;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 346
+    .line 382
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/MountService$UnmountCallBack;->retries:I
 
-    .line 347
+    .line 383
     iput-object p2, p0, Lcom/android/server/MountService$UnmountCallBack;->path:Ljava/lang/String;
 
-    .line 348
+    .line 384
     iput-boolean p3, p0, Lcom/android/server/MountService$UnmountCallBack;->force:Z
 
-    .line 349
+    .line 385
     iput-boolean p4, p0, Lcom/android/server/MountService$UnmountCallBack;->removeEncryption:Z
 
-    .line 350
+    .line 386
     return-void
 .end method
 
@@ -64,7 +64,7 @@
     .locals 4
 
     .prologue
-    .line 354
+    .line 390
     iget-object v0, p0, Lcom/android/server/MountService$UnmountCallBack;->this$0:Lcom/android/server/MountService;
 
     iget-object v1, p0, Lcom/android/server/MountService$UnmountCallBack;->path:Ljava/lang/String;
@@ -76,6 +76,6 @@
     #calls: Lcom/android/server/MountService;->doUnmountVolume(Ljava/lang/String;ZZ)I
     invoke-static {v0, v1, v2, v3}, Lcom/android/server/MountService;->access$100(Lcom/android/server/MountService;Ljava/lang/String;ZZ)I
 
-    .line 355
+    .line 391
     return-void
 .end method

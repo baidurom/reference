@@ -7,9 +7,17 @@
 
 
 # static fields
+.field private static final DEBUG:Z = true
+
 .field static final EVENT_LOAD_ALL_ADN_LIKE_DONE:I = 0x1
 
 .field static final EVENT_UPDATE_ADN_DONE:I = 0x2
+
+.field static final EVENT_UPDATE_USIM_ADN_DONE:I = 0x3
+
+.field private static final USIM_EFANR_TAG:I = 0xc4
+
+.field private static final USIM_EFEMAIL_TAG:I = 0xca
 
 
 # instance fields
@@ -61,34 +69,34 @@
     .parameter "fh"
 
     .prologue
-    .line 59
+    .line 64
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
-    .line 40
+    .line 41
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/AdnRecordCache;->adnLikeFiles:Landroid/util/SparseArray;
 
-    .line 44
+    .line 45
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/AdnRecordCache;->adnLikeWaiters:Landroid/util/SparseArray;
 
-    .line 48
+    .line 49
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/AdnRecordCache;->userWriteResponse:Landroid/util/SparseArray;
 
-    .line 60
+    .line 65
     iput-object p1, p0, Lcom/android/internal/telephony/AdnRecordCache;->mFh:Lcom/android/internal/telephony/IccFileHandler;
 
-    .line 61
+    .line 66
     new-instance v0, Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;
 
     iget-object v1, p0, Lcom/android/internal/telephony/AdnRecordCache;->mFh:Lcom/android/internal/telephony/IccFileHandler;
@@ -97,7 +105,7 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/AdnRecordCache;->mUsimPhoneBookManager:Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;
 
-    .line 62
+    .line 67
     return-void
 .end method
 
@@ -105,14 +113,14 @@
     .locals 4
 
     .prologue
-    .line 89
+    .line 94
     iget-object v2, p0, Lcom/android/internal/telephony/AdnRecordCache;->userWriteResponse:Landroid/util/SparseArray;
 
     invoke-virtual {v2}, Landroid/util/SparseArray;->size()I
 
     move-result v1
 
-    .line 90
+    .line 95
     .local v1, size:I
     const/4 v0, 0x0
 
@@ -120,7 +128,7 @@
     :goto_0
     if-ge v0, v1, :cond_0
 
-    .line 91
+    .line 96
     iget-object v2, p0, Lcom/android/internal/telephony/AdnRecordCache;->userWriteResponse:Landroid/util/SparseArray;
 
     invoke-virtual {v2, v0}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -133,18 +141,18 @@
 
     invoke-direct {p0, v2, v3}, Lcom/android/internal/telephony/AdnRecordCache;->sendErrorResponse(Landroid/os/Message;Ljava/lang/String;)V
 
-    .line 90
+    .line 95
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 93
+    .line 98
     :cond_0
     iget-object v2, p0, Lcom/android/internal/telephony/AdnRecordCache;->userWriteResponse:Landroid/util/SparseArray;
 
     invoke-virtual {v2}, Landroid/util/SparseArray;->clear()V
 
-    .line 94
+    .line 99
     return-void
 .end method
 
@@ -154,14 +162,14 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 79
+    .line 84
     iget-object v4, p0, Lcom/android/internal/telephony/AdnRecordCache;->adnLikeWaiters:Landroid/util/SparseArray;
 
     invoke-virtual {v4}, Landroid/util/SparseArray;->size()I
 
     move-result v2
 
-    .line 80
+    .line 85
     .local v2, size:I
     const/4 v1, 0x0
 
@@ -169,7 +177,7 @@
     :goto_0
     if-ge v1, v2, :cond_0
 
-    .line 81
+    .line 86
     iget-object v4, p0, Lcom/android/internal/telephony/AdnRecordCache;->adnLikeWaiters:Landroid/util/SparseArray;
 
     invoke-virtual {v4, v1}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -178,7 +186,7 @@
 
     check-cast v3, Ljava/util/ArrayList;
 
-    .line 82
+    .line 87
     .local v3, waiters:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/os/Message;>;"
     new-instance v0, Landroid/os/AsyncResult;
 
@@ -190,16 +198,16 @@
 
     invoke-direct {v0, v6, v6, v4}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
 
-    .line 83
+    .line 88
     .local v0, ar:Landroid/os/AsyncResult;
     invoke-direct {p0, v3, v0}, Lcom/android/internal/telephony/AdnRecordCache;->notifyWaiters(Ljava/util/ArrayList;Landroid/os/AsyncResult;)V
 
-    .line 80
+    .line 85
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 85
+    .line 90
     .end local v0           #ar:Landroid/os/AsyncResult;
     .end local v3           #waiters:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/os/Message;>;"
     :cond_0
@@ -207,7 +215,21 @@
 
     invoke-virtual {v4}, Landroid/util/SparseArray;->clear()V
 
-    .line 86
+    .line 91
+    return-void
+.end method
+
+.method private log(Ljava/lang/String;)V
+    .locals 1
+    .parameter "msg"
+
+    .prologue
+    .line 566
+    const-string v0, "GSM"
+
+    invoke-static {v0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 567
     return-void
 .end method
 
@@ -228,15 +250,15 @@
     .end annotation
 
     .prologue
-    .line 308
+    .line 436
     .local p1, waiters:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/os/Message;>;"
     if-nez p1, :cond_1
 
-    .line 318
+    .line 449
     :cond_0
     return-void
 
-    .line 312
+    .line 440
     :cond_1
     const/4 v0, 0x0
 
@@ -249,28 +271,35 @@
     :goto_0
     if-ge v0, v1, :cond_0
 
-    .line 313
+    .line 441
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Landroid/os/Message;
 
-    .line 315
+    .line 442
     .local v2, waiter:Landroid/os/Message;
+    if-nez v2, :cond_2
+
+    .line 440
+    :goto_1
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    .line 446
+    :cond_2
     iget-object v3, p2, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
 
     iget-object v4, p2, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
     invoke-static {v2, v3, v4}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 316
+    .line 447
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 312
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
+    goto :goto_1
 .end method
 
 .method private sendErrorResponse(Landroid/os/Message;Ljava/lang/String;)V
@@ -279,15 +308,15 @@
     .parameter "errString"
 
     .prologue
-    .line 124
+    .line 132
     if-eqz p1, :cond_0
 
-    .line 125
+    .line 133
     new-instance v0, Ljava/lang/RuntimeException;
 
     invoke-direct {v0, p2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    .line 126
+    .line 134
     .local v0, e:Ljava/lang/Exception;
     invoke-static {p1}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;)Landroid/os/AsyncResult;
 
@@ -295,13 +324,104 @@
 
     iput-object v0, v1, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
-    .line 127
+    .line 135
     invoke-virtual {p1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 129
+    .line 137
     .end local v0           #e:Ljava/lang/Exception;
     :cond_0
     return-void
+.end method
+
+.method private updateUSIMRecord(ILcom/android/internal/telephony/AdnRecord;Lcom/android/internal/telephony/AdnRecord;ILjava/lang/String;Landroid/os/Message;)V
+    .locals 8
+    .parameter "efid"
+    .parameter "oldAdn"
+    .parameter "newAdn"
+    .parameter "index"
+    .parameter "pin2"
+    .parameter "response"
+
+    .prologue
+    .line 544
+    const/4 v7, 0x0
+
+    .line 545
+    .local v7, success:Z
+    iget-object v0, p0, Lcom/android/internal/telephony/AdnRecordCache;->mUsimPhoneBookManager:Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;
+
+    const/16 v1, 0xca
+
+    invoke-virtual {v0, p2, p3, p4, v1}, Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;->updateUsimRecord(Lcom/android/internal/telephony/AdnRecord;Lcom/android/internal/telephony/AdnRecord;II)Z
+
+    move-result v7
+
+    .line 547
+    if-eqz v7, :cond_0
+
+    .line 548
+    iget-object v0, p0, Lcom/android/internal/telephony/AdnRecordCache;->mUsimPhoneBookManager:Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;
+
+    const/16 v1, 0xc4
+
+    invoke-virtual {v0, p2, p3, p4, v1}, Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;->updateUsimRecord(Lcom/android/internal/telephony/AdnRecord;Lcom/android/internal/telephony/AdnRecord;II)Z
+
+    move-result v7
+
+    .line 554
+    if-eqz v7, :cond_1
+
+    .line 555
+    iget-object v0, p0, Lcom/android/internal/telephony/AdnRecordCache;->userWriteResponse:Landroid/util/SparseArray;
+
+    invoke-virtual {v0, p1, p6}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+
+    .line 556
+    new-instance v0, Lcom/android/internal/telephony/AdnRecordLoader;
+
+    iget-object v1, p0, Lcom/android/internal/telephony/AdnRecordCache;->mFh:Lcom/android/internal/telephony/IccFileHandler;
+
+    invoke-direct {v0, v1}, Lcom/android/internal/telephony/AdnRecordLoader;-><init>(Lcom/android/internal/telephony/IccFileHandler;)V
+
+    iget v2, p3, Lcom/android/internal/telephony/AdnRecord;->efid:I
+
+    iget v3, p3, Lcom/android/internal/telephony/AdnRecord;->extRecord:I
+
+    iget v4, p3, Lcom/android/internal/telephony/AdnRecord;->recordNumber:I
+
+    const/4 v1, 0x3
+
+    iget v5, p3, Lcom/android/internal/telephony/AdnRecord;->recordNumber:I
+
+    invoke-virtual {p0, v1, p1, v5, p3}, Lcom/android/internal/telephony/AdnRecordCache;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v6
+
+    move-object v1, p3
+
+    move-object v5, p5
+
+    invoke-virtual/range {v0 .. v6}, Lcom/android/internal/telephony/AdnRecordLoader;->updateEF(Lcom/android/internal/telephony/AdnRecord;IIILjava/lang/String;Landroid/os/Message;)V
+
+    .line 563
+    :goto_0
+    return-void
+
+    .line 550
+    :cond_0
+    const-string v0, "update email failed"
+
+    invoke-direct {p0, p6, v0}, Lcom/android/internal/telephony/AdnRecordCache;->sendErrorResponse(Landroid/os/Message;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    .line 560
+    :cond_1
+    const-string v0, "update anr failed"
+
+    invoke-direct {p0, p6, v0}, Lcom/android/internal/telephony/AdnRecordCache;->sendErrorResponse(Landroid/os/Message;Ljava/lang/String;)V
+
+    goto :goto_0
 .end method
 
 
@@ -313,41 +433,41 @@
     .prologue
     const/16 v0, 0x6f4a
 
-    .line 112
+    .line 120
     sparse-switch p1, :sswitch_data_0
 
-    .line 119
+    .line 127
     const/4 v0, -0x1
 
     :goto_0
     :sswitch_0
     return v0
 
-    .line 113
+    .line 121
     :sswitch_1
     const/16 v0, 0x6fc8
 
     goto :goto_0
 
-    .line 115
+    .line 123
     :sswitch_2
     const/16 v0, 0x6f4c
 
     goto :goto_0
 
-    .line 116
+    .line 124
     :sswitch_3
     const/16 v0, 0x6f4b
 
     goto :goto_0
 
-    .line 118
+    .line 126
     :sswitch_4
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 112
+    .line 120
     :sswitch_data_0
     .sparse-switch
         0x4f30 -> :sswitch_4
@@ -360,7 +480,7 @@
 .end method
 
 .method public getRecordsIfLoaded(I)Ljava/util/ArrayList;
-    .locals 1
+    .locals 2
     .parameter "efid"
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -373,7 +493,24 @@
     .end annotation
 
     .prologue
-    .line 102
+    .line 107
+    iget-object v0, p0, Lcom/android/internal/telephony/AdnRecordCache;->adnLikeFiles:Landroid/util/SparseArray;
+
+    invoke-virtual {v0}, Landroid/util/SparseArray;->size()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 108
+    const-string v0, "GSM"
+
+    const-string v1, "adnLikeFile not loaded"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 110
+    :cond_0
     iget-object v0, p0, Lcom/android/internal/telephony/AdnRecordCache;->adnLikeFiles:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -385,150 +522,351 @@
     return-object v0
 .end method
 
+.method public getUsimAdnRecordsSize()[I
+    .locals 1
+
+    .prologue
+    .line 360
+    iget-object v0, p0, Lcom/android/internal/telephony/AdnRecordCache;->mUsimPhoneBookManager:Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;
+
+    invoke-virtual {v0}, Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;->getUsimAdnRecordsSize()[I
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public handleMessage(Landroid/os/Message;)V
-    .locals 8
+    .locals 13
     .parameter "msg"
 
     .prologue
-    .line 327
-    iget v6, p1, Landroid/os/Message;->what:I
+    .line 456
+    const/4 v4, -0x1
 
-    packed-switch v6, :pswitch_data_0
+    .line 457
+    .local v4, efid:I
+    const/4 v5, -0x1
 
-    .line 361
+    .line 461
+    .local v5, index:I
+    iget v11, p1, Landroid/os/Message;->what:I
+
+    packed-switch v11, :pswitch_data_0
+
+    .line 533
+    :cond_0
     :goto_0
     return-void
 
-    .line 330
+    .line 464
     :pswitch_0
-    iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+    iget-object v3, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    check-cast v1, Landroid/os/AsyncResult;
+    check-cast v3, Landroid/os/AsyncResult;
 
-    .line 331
-    .local v1, ar:Landroid/os/AsyncResult;
-    iget v2, p1, Landroid/os/Message;->arg1:I
+    .line 465
+    .local v3, ar:Landroid/os/AsyncResult;
+    iget v4, p1, Landroid/os/Message;->arg1:I
 
-    .line 334
-    .local v2, efid:I
-    iget-object v6, p0, Lcom/android/internal/telephony/AdnRecordCache;->adnLikeWaiters:Landroid/util/SparseArray;
+    .line 468
+    iget-object v11, p0, Lcom/android/internal/telephony/AdnRecordCache;->adnLikeWaiters:Landroid/util/SparseArray;
 
-    invoke-virtual {v6, v2}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+    invoke-virtual {v11, v4}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v10
 
-    check-cast v5, Ljava/util/ArrayList;
+    check-cast v10, Ljava/util/ArrayList;
 
-    .line 335
-    .local v5, waiters:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/os/Message;>;"
-    iget-object v6, p0, Lcom/android/internal/telephony/AdnRecordCache;->adnLikeWaiters:Landroid/util/SparseArray;
+    .line 469
+    .local v10, waiters:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/os/Message;>;"
+    iget-object v11, p0, Lcom/android/internal/telephony/AdnRecordCache;->adnLikeWaiters:Landroid/util/SparseArray;
 
-    invoke-virtual {v6, v2}, Landroid/util/SparseArray;->delete(I)V
+    invoke-virtual {v11, v4}, Landroid/util/SparseArray;->delete(I)V
 
-    .line 337
-    iget-object v6, v1, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
+    .line 471
+    iget-object v11, v3, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
-    if-nez v6, :cond_0
+    if-nez v11, :cond_1
 
-    .line 338
-    iget-object v7, p0, Lcom/android/internal/telephony/AdnRecordCache;->adnLikeFiles:Landroid/util/SparseArray;
+    .line 472
+    iget-object v12, p0, Lcom/android/internal/telephony/AdnRecordCache;->adnLikeFiles:Landroid/util/SparseArray;
 
-    iget-object v6, v1, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
+    iget-object v11, v3, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
 
-    check-cast v6, Ljava/util/ArrayList;
+    check-cast v11, Ljava/util/ArrayList;
 
-    invoke-virtual {v7, v2, v6}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+    invoke-virtual {v12, v4, v11}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 340
-    :cond_0
-    invoke-direct {p0, v5, v1}, Lcom/android/internal/telephony/AdnRecordCache;->notifyWaiters(Ljava/util/ArrayList;Landroid/os/AsyncResult;)V
+    .line 474
+    :cond_1
+    invoke-direct {p0, v10, v3}, Lcom/android/internal/telephony/AdnRecordCache;->notifyWaiters(Ljava/util/ArrayList;Landroid/os/AsyncResult;)V
 
     goto :goto_0
 
-    .line 343
-    .end local v1           #ar:Landroid/os/AsyncResult;
-    .end local v2           #efid:I
-    .end local v5           #waiters:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/os/Message;>;"
+    .line 477
+    .end local v3           #ar:Landroid/os/AsyncResult;
+    .end local v10           #waiters:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/os/Message;>;"
     :pswitch_1
-    iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+    iget-object v3, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    check-cast v1, Landroid/os/AsyncResult;
+    check-cast v3, Landroid/os/AsyncResult;
 
-    .line 344
-    .restart local v1       #ar:Landroid/os/AsyncResult;
-    iget v2, p1, Landroid/os/Message;->arg1:I
+    .line 478
+    .restart local v3       #ar:Landroid/os/AsyncResult;
+    iget v4, p1, Landroid/os/Message;->arg1:I
 
-    .line 345
-    .restart local v2       #efid:I
-    iget v3, p1, Landroid/os/Message;->arg2:I
+    .line 479
+    iget v5, p1, Landroid/os/Message;->arg2:I
 
-    .line 346
-    .local v3, index:I
-    iget-object v6, v1, Landroid/os/AsyncResult;->userObj:Ljava/lang/Object;
+    .line 480
+    iget-object v11, v3, Landroid/os/AsyncResult;->userObj:Ljava/lang/Object;
 
-    check-cast v6, Lcom/android/internal/telephony/AdnRecord;
+    check-cast v11, Lcom/android/internal/telephony/AdnRecord;
 
-    move-object v0, v6
+    move-object v0, v11
 
     check-cast v0, Lcom/android/internal/telephony/AdnRecord;
 
-    .line 348
+    .line 482
     .local v0, adn:Lcom/android/internal/telephony/AdnRecord;
-    iget-object v6, v1, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
+    iget-object v11, v3, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
-    if-nez v6, :cond_1
+    if-nez v11, :cond_3
 
-    .line 349
-    iget-object v6, p0, Lcom/android/internal/telephony/AdnRecordCache;->adnLikeFiles:Landroid/util/SparseArray;
+    .line 483
+    iget-object v11, p0, Lcom/android/internal/telephony/AdnRecordCache;->adnLikeFiles:Landroid/util/SparseArray;
 
-    invoke-virtual {v6, v2}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+    invoke-virtual {v11, v4}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v11
 
-    check-cast v6, Ljava/util/ArrayList;
+    if-eqz v11, :cond_2
 
-    add-int/lit8 v7, v3, -0x1
+    .line 484
+    iget-object v11, p0, Lcom/android/internal/telephony/AdnRecordCache;->adnLikeFiles:Landroid/util/SparseArray;
 
-    invoke-virtual {v6, v7, v0}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v11, v4}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
-    .line 350
-    iget-object v6, p0, Lcom/android/internal/telephony/AdnRecordCache;->mUsimPhoneBookManager:Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;
+    move-result-object v11
 
-    invoke-virtual {v6}, Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;->invalidateCache()V
+    check-cast v11, Ljava/util/ArrayList;
 
-    .line 353
-    :cond_1
-    iget-object v6, p0, Lcom/android/internal/telephony/AdnRecordCache;->userWriteResponse:Landroid/util/SparseArray;
+    add-int/lit8 v12, v5, -0x1
 
-    invoke-virtual {v6, v2}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+    invoke-virtual {v11, v12, v0}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v4
+    .line 486
+    :cond_2
+    iget-object v11, p0, Lcom/android/internal/telephony/AdnRecordCache;->mUsimPhoneBookManager:Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;
 
-    check-cast v4, Landroid/os/Message;
+    invoke-virtual {v11}, Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;->invalidateCache()V
 
-    .line 354
-    .local v4, response:Landroid/os/Message;
-    iget-object v6, p0, Lcom/android/internal/telephony/AdnRecordCache;->userWriteResponse:Landroid/util/SparseArray;
+    .line 489
+    :cond_3
+    iget-object v11, p0, Lcom/android/internal/telephony/AdnRecordCache;->userWriteResponse:Landroid/util/SparseArray;
 
-    invoke-virtual {v6, v2}, Landroid/util/SparseArray;->delete(I)V
+    invoke-virtual {v11, v4}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
-    .line 356
-    const/4 v6, 0x0
+    move-result-object v9
 
-    iget-object v7, v1, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
+    check-cast v9, Landroid/os/Message;
 
-    invoke-static {v4, v6, v7}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
+    .line 490
+    .local v9, response:Landroid/os/Message;
+    iget-object v11, p0, Lcom/android/internal/telephony/AdnRecordCache;->userWriteResponse:Landroid/util/SparseArray;
 
-    .line 357
-    invoke-virtual {v4}, Landroid/os/Message;->sendToTarget()V
+    invoke-virtual {v11, v4}, Landroid/util/SparseArray;->delete(I)V
+
+    .line 492
+    add-int/lit8 v11, v5, -0x1
+
+    invoke-static {v11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v11
+
+    iget-object v12, v3, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
+
+    invoke-static {v9, v11, v12}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
+
+    .line 493
+    invoke-virtual {v9}, Landroid/os/Message;->sendToTarget()V
 
     goto :goto_0
 
-    .line 327
+    .line 496
+    .end local v0           #adn:Lcom/android/internal/telephony/AdnRecord;
+    .end local v3           #ar:Landroid/os/AsyncResult;
+    .end local v9           #response:Landroid/os/Message;
+    :pswitch_2
+    iget-object v3, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v3, Landroid/os/AsyncResult;
+
+    .line 497
+    .restart local v3       #ar:Landroid/os/AsyncResult;
+    iget v4, p1, Landroid/os/Message;->arg1:I
+
+    .line 498
+    iget v5, p1, Landroid/os/Message;->arg2:I
+
+    .line 499
+    iget-object v11, v3, Landroid/os/AsyncResult;->userObj:Ljava/lang/Object;
+
+    check-cast v11, Lcom/android/internal/telephony/AdnRecord;
+
+    move-object v0, v11
+
+    check-cast v0, Lcom/android/internal/telephony/AdnRecord;
+
+    .line 500
+    .restart local v0       #adn:Lcom/android/internal/telephony/AdnRecord;
+    const/4 v8, -0x1
+
+    .line 501
+    .local v8, recNum:I
+    const/4 v7, 0x0
+
+    .local v7, num:I
+    :goto_1
+    iget-object v11, p0, Lcom/android/internal/telephony/AdnRecordCache;->mUsimPhoneBookManager:Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;
+
+    invoke-virtual {v11}, Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;->getNumRecs()I
+
+    move-result v11
+
+    if-ge v7, v11, :cond_4
+
+    .line 502
+    iget-object v11, p0, Lcom/android/internal/telephony/AdnRecordCache;->mUsimPhoneBookManager:Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;
+
+    invoke-virtual {v11, v7}, Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;->findEFInfo(I)I
+
+    move-result v1
+
+    .line 503
+    .local v1, adnEF:I
+    if-ne v4, v1, :cond_6
+
+    .line 504
+    move v8, v7
+
+    .line 508
+    .end local v1           #adnEF:I
+    :cond_4
+    iget-object v11, p0, Lcom/android/internal/telephony/AdnRecordCache;->mUsimPhoneBookManager:Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;
+
+    invoke-virtual {v11}, Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;->getAdnRecordSizeArray()[I
+
+    move-result-object v6
+
+    .line 510
+    .local v6, mAdnRecordSizeArray:[I
+    const/4 v11, -0x1
+
+    if-eq v8, v11, :cond_0
+
+    .line 512
+    if-nez v8, :cond_7
+
+    .line 513
+    add-int/lit8 v2, v5, -0x1
+
+    .line 518
+    .local v2, adnRecNum:I
+    :goto_2
+    iget-object v11, v3, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
+
+    if-nez v11, :cond_5
+
+    .line 519
+    iget-object v11, p0, Lcom/android/internal/telephony/AdnRecordCache;->mUsimPhoneBookManager:Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;
+
+    invoke-virtual {v11, v2, v0}, Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;->setPhoneBookRecords(ILcom/android/internal/telephony/AdnRecord;)V
+
+    .line 520
+    iget-object v11, p0, Lcom/android/internal/telephony/AdnRecordCache;->adnLikeFiles:Landroid/util/SparseArray;
+
+    invoke-virtual {v11, v4}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v11
+
+    if-eqz v11, :cond_5
+
+    .line 521
+    iget-object v11, p0, Lcom/android/internal/telephony/AdnRecordCache;->adnLikeFiles:Landroid/util/SparseArray;
+
+    invoke-virtual {v11, v4}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v11
+
+    check-cast v11, Ljava/util/ArrayList;
+
+    add-int/lit8 v12, v5, -0x1
+
+    invoke-virtual {v11, v12, v0}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
+
+    .line 525
+    :cond_5
+    iget-object v11, p0, Lcom/android/internal/telephony/AdnRecordCache;->userWriteResponse:Landroid/util/SparseArray;
+
+    invoke-virtual {v11, v4}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v9
+
+    check-cast v9, Landroid/os/Message;
+
+    .line 526
+    .restart local v9       #response:Landroid/os/Message;
+    iget-object v11, p0, Lcom/android/internal/telephony/AdnRecordCache;->userWriteResponse:Landroid/util/SparseArray;
+
+    invoke-virtual {v11, v4}, Landroid/util/SparseArray;->delete(I)V
+
+    .line 528
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v11
+
+    iget-object v12, v3, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
+
+    invoke-static {v9, v11, v12}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
+
+    .line 529
+    invoke-virtual {v9}, Landroid/os/Message;->sendToTarget()V
+
+    goto/16 :goto_0
+
+    .line 501
+    .end local v2           #adnRecNum:I
+    .end local v6           #mAdnRecordSizeArray:[I
+    .end local v9           #response:Landroid/os/Message;
+    .restart local v1       #adnEF:I
+    :cond_6
+    add-int/lit8 v7, v7, 0x1
+
+    goto :goto_1
+
+    .line 515
+    .end local v1           #adnEF:I
+    .restart local v6       #mAdnRecordSizeArray:[I
+    :cond_7
+    add-int/lit8 v11, v8, -0x1
+
+    aget v11, v6, v11
+
+    add-int/2addr v11, v5
+
+    add-int/lit8 v2, v11, -0x1
+
+    .restart local v2       #adnRecNum:I
+    goto :goto_2
+
+    .line 461
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
         :pswitch_1
+        :pswitch_2
     .end packed-switch
 .end method
 
@@ -539,52 +877,64 @@
     .parameter "response"
 
     .prologue
-    .line 251
+    .line 372
     const/16 v2, 0x4f30
 
     if-ne p1, v2, :cond_1
 
-    .line 252
+    .line 373
     iget-object v2, p0, Lcom/android/internal/telephony/AdnRecordCache;->mUsimPhoneBookManager:Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;->loadEfFilesFromUsim()Ljava/util/ArrayList;
 
     move-result-object v0
 
-    .line 258
+    .line 376
     .local v0, result:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/telephony/AdnRecord;>;"
-    :goto_0
-    if-eqz v0, :cond_2
-
-    .line 259
     if-eqz p3, :cond_0
 
-    .line 260
+    .line 377
     invoke-static {p3}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;)Landroid/os/AsyncResult;
 
     move-result-object v2
 
     iput-object v0, v2, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
 
-    .line 261
+    .line 378
     invoke-virtual {p3}, Landroid/os/Message;->sendToTarget()V
 
-    .line 301
+    .line 429
     :cond_0
-    :goto_1
+    :goto_0
     return-void
 
-    .line 254
+    .line 382
     .end local v0           #result:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/telephony/AdnRecord;>;"
     :cond_1
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/AdnRecordCache;->getRecordsIfLoaded(I)Ljava/util/ArrayList;
 
     move-result-object v0
 
+    .line 386
     .restart local v0       #result:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/telephony/AdnRecord;>;"
+    if-eqz v0, :cond_2
+
+    .line 387
+    if-eqz p3, :cond_0
+
+    .line 388
+    invoke-static {p3}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;)Landroid/os/AsyncResult;
+
+    move-result-object v2
+
+    iput-object v0, v2, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
+
+    .line 389
+    invoke-virtual {p3}, Landroid/os/Message;->sendToTarget()V
+
     goto :goto_0
 
-    .line 269
+    .line 397
     :cond_2
     iget-object v2, p0, Lcom/android/internal/telephony/AdnRecordCache;->adnLikeWaiters:Landroid/util/SparseArray;
 
@@ -594,38 +944,38 @@
 
     check-cast v1, Ljava/util/ArrayList;
 
-    .line 271
+    .line 399
     .local v1, waiters:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/os/Message;>;"
     if-eqz v1, :cond_3
 
-    .line 275
+    .line 403
     invoke-virtual {v1, p3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_1
+    goto :goto_0
 
-    .line 281
+    .line 409
     :cond_3
     new-instance v1, Ljava/util/ArrayList;
 
     .end local v1           #waiters:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/os/Message;>;"
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 282
+    .line 410
     .restart local v1       #waiters:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/os/Message;>;"
     invoke-virtual {v1, p3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 284
+    .line 412
     iget-object v2, p0, Lcom/android/internal/telephony/AdnRecordCache;->adnLikeWaiters:Landroid/util/SparseArray;
 
     invoke-virtual {v2, p1, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 287
+    .line 415
     if-gez p2, :cond_4
 
-    .line 290
+    .line 418
     if-eqz p3, :cond_0
 
-    .line 291
+    .line 419
     invoke-static {p3}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;)Landroid/os/AsyncResult;
 
     move-result-object v2
@@ -654,12 +1004,12 @@
 
     iput-object v3, v2, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
-    .line 293
+    .line 421
     invoke-virtual {p3}, Landroid/os/Message;->sendToTarget()V
 
-    goto :goto_1
+    goto :goto_0
 
-    .line 299
+    .line 427
     :cond_4
     new-instance v2, Lcom/android/internal/telephony/AdnRecordLoader;
 
@@ -677,30 +1027,30 @@
 
     invoke-virtual {v2, p1, p2, v3}, Lcom/android/internal/telephony/AdnRecordLoader;->loadAllFromEF(IILandroid/os/Message;)V
 
-    goto :goto_1
+    goto :goto_0
 .end method
 
 .method public reset()V
     .locals 1
 
     .prologue
-    .line 70
+    .line 75
     iget-object v0, p0, Lcom/android/internal/telephony/AdnRecordCache;->adnLikeFiles:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->clear()V
 
-    .line 71
+    .line 76
     iget-object v0, p0, Lcom/android/internal/telephony/AdnRecordCache;->mUsimPhoneBookManager:Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;->reset()V
 
-    .line 73
+    .line 78
     invoke-direct {p0}, Lcom/android/internal/telephony/AdnRecordCache;->clearWaiters()V
 
-    .line 74
+    .line 79
     invoke-direct {p0}, Lcom/android/internal/telephony/AdnRecordCache;->clearUserWriters()V
 
-    .line 76
+    .line 81
     return-void
 .end method
 
@@ -713,16 +1063,19 @@
     .parameter "response"
 
     .prologue
-    .line 144
+    .line 152
+    add-int/lit8 p3, p3, 0x1
+
+    .line 153
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/AdnRecordCache;->extensionEfForEf(I)I
 
     move-result v3
 
-    .line 145
+    .line 154
     .local v3, extensionEF:I
     if-gez v3, :cond_0
 
-    .line 146
+    .line 155
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -743,11 +1096,11 @@
 
     invoke-direct {p0, p5, v0}, Lcom/android/internal/telephony/AdnRecordCache;->sendErrorResponse(Landroid/os/Message;Ljava/lang/String;)V
 
-    .line 161
+    .line 170
     :goto_0
     return-void
 
-    .line 150
+    .line 159
     :cond_0
     iget-object v0, p0, Lcom/android/internal/telephony/AdnRecordCache;->userWriteResponse:Landroid/util/SparseArray;
 
@@ -757,11 +1110,11 @@
 
     check-cast v7, Landroid/os/Message;
 
-    .line 151
+    .line 160
     .local v7, pendingResponse:Landroid/os/Message;
     if-eqz v7, :cond_1
 
-    .line 152
+    .line 161
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -784,13 +1137,13 @@
 
     goto :goto_0
 
-    .line 156
+    .line 165
     :cond_1
     iget-object v0, p0, Lcom/android/internal/telephony/AdnRecordCache;->userWriteResponse:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1, p5}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 158
+    .line 167
     new-instance v0, Lcom/android/internal/telephony/AdnRecordLoader;
 
     iget-object v1, p0, Lcom/android/internal/telephony/AdnRecordCache;->mFh:Lcom/android/internal/telephony/IccFileHandler;
@@ -825,16 +1178,16 @@
     .parameter "response"
 
     .prologue
-    .line 181
+    .line 234
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/AdnRecordCache;->extensionEfForEf(I)I
 
     move-result v4
 
-    .line 183
+    .line 236
     .local v4, extensionEF:I
     if-gez v4, :cond_0
 
-    .line 184
+    .line 237
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -857,29 +1210,29 @@
 
     invoke-direct {p0, v0, v1}, Lcom/android/internal/telephony/AdnRecordCache;->sendErrorResponse(Landroid/os/Message;Ljava/lang/String;)V
 
-    .line 239
+    .line 292
     :goto_0
     return-void
 
-    .line 190
+    .line 243
     :cond_0
     const/16 v1, 0x4f30
 
     if-ne p1, v1, :cond_1
 
-    .line 191
+    .line 244
     iget-object v1, p0, Lcom/android/internal/telephony/AdnRecordCache;->mUsimPhoneBookManager:Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;
 
     invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;->loadEfFilesFromUsim()Ljava/util/ArrayList;
 
     move-result-object v11
 
-    .line 196
+    .line 249
     .local v11, oldAdnList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/telephony/AdnRecord;>;"
     :goto_1
     if-nez v11, :cond_2
 
-    .line 197
+    .line 250
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -904,7 +1257,7 @@
 
     goto :goto_0
 
-    .line 193
+    .line 246
     .end local v11           #oldAdnList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/telephony/AdnRecord;>;"
     :cond_1
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/AdnRecordCache;->getRecordsIfLoaded(I)Ljava/util/ArrayList;
@@ -914,15 +1267,15 @@
     .restart local v11       #oldAdnList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/telephony/AdnRecord;>;"
     goto :goto_1
 
-    .line 201
+    .line 254
     :cond_2
     const/4 v5, -0x1
 
-    .line 202
+    .line 255
     .local v5, index:I
     const/4 v8, 0x1
 
-    .line 203
+    .line 256
     .local v8, count:I
     invoke-virtual {v11}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -936,7 +1289,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 204
+    .line 257
     invoke-interface {v10}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
@@ -949,16 +1302,16 @@
 
     if-eqz v1, :cond_4
 
-    .line 205
+    .line 258
     move v5, v8
 
-    .line 211
+    .line 264
     :cond_3
     const/4 v1, -0x1
 
     if-ne v5, v1, :cond_5
 
-    .line 212
+    .line 265
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -983,19 +1336,19 @@
 
     goto :goto_0
 
-    .line 208
+    .line 261
     :cond_4
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_2
 
-    .line 216
+    .line 269
     :cond_5
     const/16 v1, 0x4f30
 
     if-ne p1, v1, :cond_6
 
-    .line 217
+    .line 270
     add-int/lit8 v1, v5, -0x1
 
     invoke-virtual {v11, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1004,32 +1357,32 @@
 
     check-cast v9, Lcom/android/internal/telephony/AdnRecord;
 
-    .line 218
+    .line 271
     .local v9, foundAdn:Lcom/android/internal/telephony/AdnRecord;
     iget p1, v9, Lcom/android/internal/telephony/AdnRecord;->efid:I
 
-    .line 219
+    .line 272
     iget v4, v9, Lcom/android/internal/telephony/AdnRecord;->extRecord:I
 
-    .line 220
+    .line 273
     iget v5, v9, Lcom/android/internal/telephony/AdnRecord;->recordNumber:I
 
-    .line 222
+    .line 275
     move-object/from16 v0, p3
 
     iput p1, v0, Lcom/android/internal/telephony/AdnRecord;->efid:I
 
-    .line 223
+    .line 276
     move-object/from16 v0, p3
 
     iput v4, v0, Lcom/android/internal/telephony/AdnRecord;->extRecord:I
 
-    .line 224
+    .line 277
     move-object/from16 v0, p3
 
     iput v5, v0, Lcom/android/internal/telephony/AdnRecord;->recordNumber:I
 
-    .line 227
+    .line 280
     .end local v9           #foundAdn:Lcom/android/internal/telephony/AdnRecord;
     :cond_6
     iget-object v1, p0, Lcom/android/internal/telephony/AdnRecordCache;->userWriteResponse:Landroid/util/SparseArray;
@@ -1040,11 +1393,11 @@
 
     check-cast v12, Landroid/os/Message;
 
-    .line 229
+    .line 282
     .local v12, pendingResponse:Landroid/os/Message;
     if-eqz v12, :cond_7
 
-    .line 230
+    .line 283
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1069,7 +1422,7 @@
 
     goto/16 :goto_0
 
-    .line 234
+    .line 287
     :cond_7
     iget-object v1, p0, Lcom/android/internal/telephony/AdnRecordCache;->userWriteResponse:Landroid/util/SparseArray;
 
@@ -1077,7 +1430,7 @@
 
     invoke-virtual {v1, p1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 236
+    .line 289
     new-instance v1, Lcom/android/internal/telephony/AdnRecordLoader;
 
     iget-object v2, p0, Lcom/android/internal/telephony/AdnRecordCache;->mFh:Lcom/android/internal/telephony/IccFileHandler;
@@ -1101,4 +1454,660 @@
     invoke-virtual/range {v1 .. v7}, Lcom/android/internal/telephony/AdnRecordLoader;->updateEF(Lcom/android/internal/telephony/AdnRecord;IIILjava/lang/String;Landroid/os/Message;)V
 
     goto/16 :goto_0
+.end method
+
+.method public updateUSIMAdnByIndex(ILcom/android/internal/telephony/AdnRecord;ILjava/lang/String;Landroid/os/Message;)V
+    .locals 13
+    .parameter "efid"
+    .parameter "newAdn"
+    .parameter "recordIndex"
+    .parameter "pin2"
+    .parameter "response"
+
+    .prologue
+    .line 182
+    iget-object v1, p0, Lcom/android/internal/telephony/AdnRecordCache;->mUsimPhoneBookManager:Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;
+
+    invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;->loadEfFilesFromUsim()Ljava/util/ArrayList;
+
+    move-result-object v8
+
+    .line 183
+    .local v8, AdnList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/telephony/AdnRecord;>;"
+    if-nez v8, :cond_0
+
+    .line 184
+    const-string v1, "Adn list not loaded!"
+
+    move-object/from16 v0, p5
+
+    invoke-direct {p0, v0, v1}, Lcom/android/internal/telephony/AdnRecordCache;->sendErrorResponse(Landroid/os/Message;Ljava/lang/String;)V
+
+    .line 214
+    :goto_0
+    return-void
+
+    .line 187
+    :cond_0
+    move/from16 v0, p3
+
+    invoke-virtual {v8, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/android/internal/telephony/AdnRecord;
+
+    .line 188
+    .local v3, oldAdn:Lcom/android/internal/telephony/AdnRecord;
+    if-nez v3, :cond_1
+
+    .line 189
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Adn record not existed for index:"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    move/from16 v0, p3
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    move-object/from16 v0, p5
+
+    invoke-direct {p0, v0, v1}, Lcom/android/internal/telephony/AdnRecordCache;->sendErrorResponse(Landroid/os/Message;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    .line 192
+    :cond_1
+    iget-object v1, p0, Lcom/android/internal/telephony/AdnRecordCache;->mUsimPhoneBookManager:Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;
+
+    move/from16 v0, p3
+
+    invoke-virtual {v1, v0}, Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;->getPbrIndexBy(I)I
+
+    move-result v11
+
+    .line 193
+    .local v11, pbrIndex:I
+    iget-object v1, p0, Lcom/android/internal/telephony/AdnRecordCache;->mUsimPhoneBookManager:Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;
+
+    invoke-virtual {v1, v11}, Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;->setUpdateAdnIndex(I)V
+
+    .line 194
+    iget-object v1, p0, Lcom/android/internal/telephony/AdnRecordCache;->mUsimPhoneBookManager:Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;
+
+    invoke-virtual {v1, v11}, Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;->findEFInfo(I)I
+
+    move-result p1
+
+    .line 195
+    iget-object v1, p0, Lcom/android/internal/telephony/AdnRecordCache;->mUsimPhoneBookManager:Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;
+
+    invoke-virtual {v1, v11}, Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;->findExtensionEFInfo(I)I
+
+    move-result v9
+
+    .line 197
+    .local v9, extensionEF:I
+    if-ltz p1, :cond_2
+
+    if-gez v9, :cond_3
+
+    .line 198
+    :cond_2
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "EF is not known ADN-like EF:"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    move-object/from16 v0, p5
+
+    invoke-direct {p0, v0, v1}, Lcom/android/internal/telephony/AdnRecordCache;->sendErrorResponse(Landroid/os/Message;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    .line 202
+    :cond_3
+    iget-object v1, p0, Lcom/android/internal/telephony/AdnRecordCache;->userWriteResponse:Landroid/util/SparseArray;
+
+    invoke-virtual {v1, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v12
+
+    check-cast v12, Landroid/os/Message;
+
+    .line 203
+    .local v12, pendingResponse:Landroid/os/Message;
+    if-eqz v12, :cond_4
+
+    .line 204
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Have pending update for EF:"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    move-object/from16 v0, p5
+
+    invoke-direct {p0, v0, v1}, Lcom/android/internal/telephony/AdnRecordCache;->sendErrorResponse(Landroid/os/Message;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    .line 208
+    :cond_4
+    add-int/lit8 v1, p3, 0x1
+
+    rem-int/lit16 v1, v1, 0xfa
+
+    if-nez v1, :cond_6
+
+    const/16 v10, 0xfa
+
+    .line 209
+    .local v10, iccIndex:I
+    :goto_1
+    iput p1, p2, Lcom/android/internal/telephony/AdnRecord;->efid:I
+
+    .line 210
+    iput v9, p2, Lcom/android/internal/telephony/AdnRecord;->extRecord:I
+
+    .line 211
+    iget v1, v3, Lcom/android/internal/telephony/AdnRecord;->recordNumber:I
+
+    const/4 v2, 0x1
+
+    if-lt v1, v2, :cond_5
+
+    iget v10, v3, Lcom/android/internal/telephony/AdnRecord;->recordNumber:I
+
+    .end local v10           #iccIndex:I
+    :cond_5
+    iput v10, p2, Lcom/android/internal/telephony/AdnRecord;->recordNumber:I
+
+    .line 212
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "updateUSIMAdnByIndex newAdn:"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ", oldAdn:"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {p0, v1}, Lcom/android/internal/telephony/AdnRecordCache;->log(Ljava/lang/String;)V
+
+    .line 213
+    iget v5, p2, Lcom/android/internal/telephony/AdnRecord;->recordNumber:I
+
+    move-object v1, p0
+
+    move v2, p1
+
+    move-object v4, p2
+
+    move-object/from16 v6, p4
+
+    move-object/from16 v7, p5
+
+    invoke-direct/range {v1 .. v7}, Lcom/android/internal/telephony/AdnRecordCache;->updateUSIMRecord(ILcom/android/internal/telephony/AdnRecord;Lcom/android/internal/telephony/AdnRecord;ILjava/lang/String;Landroid/os/Message;)V
+
+    goto/16 :goto_0
+
+    .line 208
+    :cond_6
+    add-int/lit8 v1, p3, 0x1
+
+    rem-int/lit16 v10, v1, 0xfa
+
+    goto :goto_1
+.end method
+
+.method public updateUSIMAdnBySearch(ILcom/android/internal/telephony/AdnRecord;Lcom/android/internal/telephony/AdnRecord;Ljava/lang/String;Landroid/os/Message;)V
+    .locals 16
+    .parameter "efid"
+    .parameter "oldAdn"
+    .parameter "newAdn"
+    .parameter "pin2"
+    .parameter "response"
+
+    .prologue
+    .line 301
+    const/4 v10, -0x1
+
+    .line 302
+    .local v10, extensionEF:I
+    const/4 v6, -0x1
+
+    .line 304
+    .local v6, index:I
+    const/4 v13, 0x0
+
+    .local v13, num:I
+    :goto_0
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/internal/telephony/AdnRecordCache;->mUsimPhoneBookManager:Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;
+
+    invoke-virtual {v2}, Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;->getNumRecs()I
+
+    move-result v2
+
+    if-ge v13, v2, :cond_4
+
+    .line 306
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/internal/telephony/AdnRecordCache;->mUsimPhoneBookManager:Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;
+
+    invoke-virtual {v2, v13}, Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;->findEFInfo(I)I
+
+    move-result p1
+
+    .line 307
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/internal/telephony/AdnRecordCache;->mUsimPhoneBookManager:Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;
+
+    invoke-virtual {v2, v13}, Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;->findExtensionEFInfo(I)I
+
+    move-result v10
+
+    .line 309
+    if-ltz p1, :cond_0
+
+    if-gez v10, :cond_1
+
+    .line 310
+    :cond_0
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "updateUSIMAdnBySearch EF is not known ADN-like EF:efid"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    move/from16 v0, p1
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, ",extensionEF="
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p5
+
+    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/AdnRecordCache;->sendErrorResponse(Landroid/os/Message;Ljava/lang/String;)V
+
+    .line 357
+    :goto_1
+    return-void
+
+    .line 314
+    :cond_1
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/internal/telephony/AdnRecordCache;->mUsimPhoneBookManager:Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;
+
+    invoke-virtual {v2}, Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;->loadEfFilesFromUsim()Ljava/util/ArrayList;
+
+    .line 315
+    invoke-virtual/range {p0 .. p1}, Lcom/android/internal/telephony/AdnRecordCache;->getRecordsIfLoaded(I)Ljava/util/ArrayList;
+
+    move-result-object v14
+
+    .line 317
+    .local v14, oldAdnList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/telephony/AdnRecord;>;"
+    if-nez v14, :cond_2
+
+    .line 318
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "updateUSIMAdnBySearch Adn list not exist for EF:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    move/from16 v0, p1
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p5
+
+    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/AdnRecordCache;->sendErrorResponse(Landroid/os/Message;Ljava/lang/String;)V
+
+    goto :goto_1
+
+    .line 322
+    :cond_2
+    const/4 v9, 0x1
+
+    .line 323
+    .local v9, count:I
+    const/4 v11, 0x0
+
+    .line 324
+    .local v11, find_index:Z
+    invoke-virtual {v14}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v12
+
+    .local v12, it:Ljava/util/Iterator;,"Ljava/util/Iterator<Lcom/android/internal/telephony/AdnRecord;>;"
+    :goto_2
+    invoke-interface {v12}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    .line 325
+    invoke-interface {v12}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/android/internal/telephony/AdnRecord;
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v2}, Lcom/android/internal/telephony/AdnRecord;->isEqual(Lcom/android/internal/telephony/AdnRecord;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_5
+
+    .line 326
+    const-string v2, "GSM"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "we got the index "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 327
+    const/4 v11, 0x1
+
+    .line 328
+    move v6, v9
+
+    .line 334
+    :cond_3
+    if-eqz v11, :cond_6
+
+    .line 335
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/internal/telephony/AdnRecordCache;->mUsimPhoneBookManager:Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;
+
+    invoke-virtual {v2, v13}, Lcom/android/internal/telephony/gsm/UsimPhoneBookManager;->setUpdateAdnIndex(I)V
+
+    .line 336
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "find the index(in Usim card):"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, ",pbrIndex:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v13}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v2}, Lcom/android/internal/telephony/AdnRecordCache;->log(Ljava/lang/String;)V
+
+    .line 341
+    .end local v9           #count:I
+    .end local v11           #find_index:Z
+    .end local v12           #it:Ljava/util/Iterator;,"Ljava/util/Iterator<Lcom/android/internal/telephony/AdnRecord;>;"
+    .end local v14           #oldAdnList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/telephony/AdnRecord;>;"
+    :cond_4
+    const/4 v2, -0x1
+
+    if-ne v6, v2, :cond_7
+
+    .line 342
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "updateUSIMAdnBySearch Adn record don\'t exist for "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p5
+
+    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/AdnRecordCache;->sendErrorResponse(Landroid/os/Message;Ljava/lang/String;)V
+
+    goto/16 :goto_1
+
+    .line 331
+    .restart local v9       #count:I
+    .restart local v11       #find_index:Z
+    .restart local v12       #it:Ljava/util/Iterator;,"Ljava/util/Iterator<Lcom/android/internal/telephony/AdnRecord;>;"
+    .restart local v14       #oldAdnList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/telephony/AdnRecord;>;"
+    :cond_5
+    add-int/lit8 v9, v9, 0x1
+
+    goto :goto_2
+
+    .line 304
+    :cond_6
+    add-int/lit8 v13, v13, 0x1
+
+    goto/16 :goto_0
+
+    .line 345
+    .end local v9           #count:I
+    .end local v11           #find_index:Z
+    .end local v12           #it:Ljava/util/Iterator;,"Ljava/util/Iterator<Lcom/android/internal/telephony/AdnRecord;>;"
+    .end local v14           #oldAdnList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/telephony/AdnRecord;>;"
+    :cond_7
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/android/internal/telephony/AdnRecordCache;->userWriteResponse:Landroid/util/SparseArray;
+
+    move/from16 v0, p1
+
+    invoke-virtual {v2, v0}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v15
+
+    check-cast v15, Landroid/os/Message;
+
+    .line 347
+    .local v15, pendingResponse:Landroid/os/Message;
+    if-eqz v15, :cond_8
+
+    .line 348
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Have pending update for EF:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    move/from16 v0, p1
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p5
+
+    invoke-direct {v0, v1, v2}, Lcom/android/internal/telephony/AdnRecordCache;->sendErrorResponse(Landroid/os/Message;Ljava/lang/String;)V
+
+    goto/16 :goto_1
+
+    .line 352
+    :cond_8
+    move/from16 v0, p1
+
+    move-object/from16 v1, p3
+
+    iput v0, v1, Lcom/android/internal/telephony/AdnRecord;->efid:I
+
+    .line 353
+    move-object/from16 v0, p3
+
+    iput v10, v0, Lcom/android/internal/telephony/AdnRecord;->extRecord:I
+
+    .line 354
+    move-object/from16 v0, p3
+
+    iput v6, v0, Lcom/android/internal/telephony/AdnRecord;->recordNumber:I
+
+    move-object/from16 v2, p0
+
+    move/from16 v3, p1
+
+    move-object/from16 v4, p2
+
+    move-object/from16 v5, p3
+
+    move-object/from16 v7, p4
+
+    move-object/from16 v8, p5
+
+    .line 355
+    invoke-direct/range {v2 .. v8}, Lcom/android/internal/telephony/AdnRecordCache;->updateUSIMRecord(ILcom/android/internal/telephony/AdnRecord;Lcom/android/internal/telephony/AdnRecord;ILjava/lang/String;Landroid/os/Message;)V
+
+    goto/16 :goto_1
 .end method

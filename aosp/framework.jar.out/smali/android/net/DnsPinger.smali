@@ -319,7 +319,7 @@
 
     move-result-object v2
 
-    const v3, 0x104001f
+    const v3, #string@config_default_dns_server#t
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

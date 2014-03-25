@@ -708,7 +708,7 @@
     .locals 15
 
     .prologue
-    const v14, 0x1040450
+    const v14, #string@adb_active_notification_title#t
 
     const/4 v1, 0x0
 
@@ -731,7 +731,7 @@
 
     .line 715
     :cond_1
-    const v6, 0x1040450
+    const v6, #string@adb_active_notification_title#t
 
     .line 716
     .local v6, id:I
@@ -788,7 +788,7 @@
 
     .line 722
     .local v11, title:Ljava/lang/CharSequence;
-    const v0, 0x1040451
+    const v0, #string@adb_active_notification_message#t
 
     invoke-virtual {v10, v0}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -802,7 +802,7 @@
 
     .line 726
     .local v8, notification:Landroid/app/Notification;
-    const v0, 0x1080525
+    const v0, #drawable@stat_sys_adb#t
 
     iput v0, v8, Landroid/app/Notification;->icon:I
 
@@ -1312,7 +1312,7 @@
     if-eqz v0, :cond_4
 
     .line 663
-    const v6, 0x1040448
+    const v6, #string@usb_mtp_notification_title#t
 
     .line 678
     :cond_2
@@ -1348,7 +1348,7 @@
     if-eqz v6, :cond_0
 
     .line 686
-    const v0, 0x104044c
+    const v0, #string@usb_notification_message#t
 
     invoke-virtual {v10, v0}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -1368,7 +1368,7 @@
 
     .line 691
     .local v8, notification:Landroid/app/Notification;
-    const v0, 0x1080543
+    const v0, #drawable@stat_sys_data_usb#t
 
     iput v0, v8, Landroid/app/Notification;->icon:I
 
@@ -1476,7 +1476,7 @@
     if-eqz v0, :cond_5
 
     .line 665
-    const v6, 0x1040449
+    const v6, #string@usb_ptp_notification_title#t
 
     goto :goto_1
 
@@ -1494,7 +1494,7 @@
     if-eqz v0, :cond_6
 
     .line 668
-    const v6, 0x104044a
+    const v6, #string@usb_cd_installer_notification_title#t
 
     goto/16 :goto_1
 
@@ -1512,7 +1512,7 @@
     if-eqz v0, :cond_2
 
     .line 670
-    const v6, 0x104044b
+    const v6, #string@usb_accessory_notification_title#t
 
     goto/16 :goto_1
 .end method

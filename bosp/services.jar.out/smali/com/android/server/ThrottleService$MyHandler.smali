@@ -466,16 +466,16 @@
 
     move-result-object v21
 
-    const v22, 0x1080567
+    const v22, #drawable@stat_sys_throttled#t
 
     invoke-virtual/range {v21 .. v22}, Landroid/app/NotificationManager;->cancel(I)V
 
     .line 617
-    const v21, 0x104049c
+    const v21, #string@throttled_notification_title#t
 
-    const v22, 0x104049d
+    const v22, #string@throttled_notification_message#t
 
-    const v23, 0x1080567
+    const v23, #drawable@stat_sys_throttled#t
 
     const/16 v24, 0x2
 
@@ -712,16 +712,16 @@
 
     move-result-object v21
 
-    const v22, 0x1080567
+    const v22, #drawable@stat_sys_throttled#t
 
     invoke-virtual/range {v21 .. v22}, Landroid/app/NotificationManager;->cancel(I)V
 
     .line 652
-    const v21, 0x104049a
+    const v21, #string@throttle_warning_notification_title#t
 
-    const v22, 0x104049b
+    const v22, #string@throttle_warning_notification_message#t
 
-    const v23, 0x1080567
+    const v23, #drawable@stat_sys_throttled#t
 
     const/16 v24, 0x0
 
@@ -772,7 +772,7 @@
 
     move-result-object v21
 
-    const v22, 0x1080567
+    const v22, #drawable@stat_sys_throttled#t
 
     invoke-virtual/range {v21 .. v22}, Landroid/app/NotificationManager;->cancel(I)V
 
@@ -883,7 +883,7 @@
 
     const/4 v3, 0x0
 
-    const v4, 0x1080567
+    const v4, #drawable@stat_sys_throttled#t
 
     sget-object v5, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
 
@@ -1082,7 +1082,7 @@
 
     move-result-object v13
 
-    const v14, 0x10e002a
+    const v14, #integer@config_datause_polling_period_sec#t
 
     invoke-virtual {v13, v14}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1130,7 +1130,7 @@
 
     move-result-object v13
 
-    const v14, 0x10e002b
+    const v14, #integer@config_datause_threshold_bytes#t
 
     invoke-virtual {v13, v14}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1153,7 +1153,7 @@
 
     move-result-object v13
 
-    const v14, 0x10e002c
+    const v14, #integer@config_datause_throttle_kbitsps#t
 
     invoke-virtual {v13, v14}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1416,7 +1416,7 @@
 
     move-result-object v13
 
-    const v14, 0x10e002d
+    const v14, #integer@config_datause_notification_type#t
 
     invoke-virtual {v13, v14}, Landroid/content/res/Resources;->getInteger(I)I
 

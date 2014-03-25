@@ -165,7 +165,7 @@
     .line 96
     new-instance v1, Landroid/media/MediaRouter$RouteCategory;
 
-    const v2, 0x1040513
+    const v2, #string@default_audio_route_category_name#t
 
     const/4 v3, 0x3
 
@@ -333,7 +333,7 @@
     .line 105
     iget-object v1, p0, Landroid/media/MediaRouter$Static;->mDefaultAudioVideo:Landroid/media/MediaRouter$RouteInfo;
 
-    const v2, 0x104050f
+    const v2, #string@default_audio_route_name#t
 
     iput v2, v1, Landroid/media/MediaRouter$RouteInfo;->mNameResId:I
 
@@ -496,7 +496,7 @@
 
     .line 146
     :cond_0
-    const v4, 0x1040510
+    const v4, #string@default_audio_route_name_headphones#t
 
     .line 154
     .local v4, name:I
@@ -640,7 +640,7 @@
     if-eqz v5, :cond_5
 
     .line 148
-    const v4, 0x1040511
+    const v4, #string@default_audio_route_name_dock_speakers#t
 
     .restart local v4       #name:I
     goto :goto_0
@@ -655,7 +655,7 @@
     if-eqz v5, :cond_6
 
     .line 150
-    const v4, 0x1040512
+    const v4, #string@default_media_route_name_hdmi#t
 
     .restart local v4       #name:I
     goto :goto_0
@@ -663,7 +663,7 @@
     .line 152
     .end local v4           #name:I
     :cond_6
-    const v4, 0x104050f
+    const v4, #string@default_audio_route_name#t
 
     .restart local v4       #name:I
     goto :goto_0

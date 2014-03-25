@@ -15,9 +15,9 @@
 
 
 # static fields
-.field public static final fade_in:I = 0x10b0000
+.field public static final fade_in:I = #animator@fade_in#t
 
-.field public static final fade_out:I = 0x10b0001
+.field public static final fade_out:I = #animator@fade_out#t
 
 
 # direct methods

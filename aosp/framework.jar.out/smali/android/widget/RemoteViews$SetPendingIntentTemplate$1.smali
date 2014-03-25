@@ -121,7 +121,7 @@
 
     move-result-object v9
 
-    const v10, 0x1020244
+    const v10, #id@fillInIntent#t
 
     invoke-virtual {v9, v10}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 

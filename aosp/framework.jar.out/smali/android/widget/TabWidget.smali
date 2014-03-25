@@ -58,7 +58,7 @@
 
     .prologue
     .line 74
-    const v0, 0x1010083
+    const v0, #attr@tabWidgetStyle#t
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/TabWidget;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -188,7 +188,7 @@
     if-nez v2, :cond_0
 
     .line 126
-    const v2, 0x10805a8
+    const v2, #drawable@tab_bottom_left_v4#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -203,7 +203,7 @@
     if-nez v2, :cond_1
 
     .line 130
-    const v2, 0x10805aa
+    const v2, #drawable@tab_bottom_right_v4#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -229,7 +229,7 @@
     if-nez v2, :cond_3
 
     .line 136
-    const v2, 0x10805a7
+    const v2, #drawable@tab_bottom_left#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -244,7 +244,7 @@
     if-nez v2, :cond_1
 
     .line 140
-    const v2, 0x10805a9
+    const v2, #drawable@tab_bottom_right#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

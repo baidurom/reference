@@ -134,7 +134,7 @@
     if-ne v1, p1, :cond_3
 
     .line 348
-    const v2, 0x1020244
+    const v2, #id@fillInIntent#t
 
     iget-object v3, p0, Landroid/widget/RemoteViews$SetOnClickFillInIntent;->fillInIntent:Landroid/content/Intent;
 

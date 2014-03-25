@@ -84,7 +84,7 @@
 
     .line 47
     .local v11, response:Landroid/os/Message;
-    iget-object v1, p0, Lcom/android/internal/telephony/IccFileHandler;->mCi:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v1, p0, Lcom/android/internal/telephony/cdma/RuimFileHandler;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     const/16 v2, 0xc0
 
@@ -100,7 +100,7 @@
 
     const/4 v9, 0x0
 
-    iget-object v10, p0, Lcom/android/internal/telephony/IccFileHandler;->mAid:Ljava/lang/String;
+    iget-object v10, p0, Lcom/android/internal/telephony/cdma/RuimFileHandler;->mAid:Ljava/lang/String;
 
     move v3, p1
 

@@ -25,8 +25,8 @@
     .locals 0
 
     .prologue
-    .line 538
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 540
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -36,7 +36,7 @@
     .parameter "x0"
 
     .prologue
-    .line 538
+    .line 540
     invoke-direct {p0}, Lcom/android/internal/telephony/cdma/sms/BearerData$Gsm7bitCodingResult;-><init>()V
 
     return-void

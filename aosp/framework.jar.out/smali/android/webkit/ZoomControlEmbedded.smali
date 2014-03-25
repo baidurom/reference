@@ -260,7 +260,7 @@
 
     move-result-object v2
 
-    const v3, 0x1040345
+    const v3, #string@double_tap_toast#t
 
     invoke-static {v2, v3, v4}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 

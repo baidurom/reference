@@ -48,7 +48,7 @@
 
     move-result-object v1
 
-    const v2, 0x1040021
+    const v2, #string@db_default_journal_mode#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -125,7 +125,7 @@
 
     move-result-object v1
 
-    const v2, 0x1040022
+    const v2, #string@db_default_sync_mode#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -149,7 +149,7 @@
 
     move-result-object v1
 
-    const v2, 0x10e002f
+    const v2, #integer@db_journal_size_limit#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -173,7 +173,7 @@
 
     move-result-object v2
 
-    const v3, 0x10e0030
+    const v3, #integer@db_wal_autocheckpoint#t
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -205,7 +205,7 @@
 
     move-result-object v2
 
-    const v3, 0x10e002e
+    const v3, #integer@db_connection_pool_size#t
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -237,7 +237,7 @@
 
     move-result-object v1
 
-    const v2, 0x1040023
+    const v2, #string@db_wal_sync_mode#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

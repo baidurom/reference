@@ -480,7 +480,7 @@
 
     if-ge v3, v4, :cond_9
 
-    const v3, 0x1030005
+    const v3, #style@Theme#t
 
     :goto_2
     iput v3, p0, Lcom/android/server/am/ActivityRecord;->realTheme:I
@@ -770,7 +770,7 @@
 
     .line 386
     :cond_9
-    const v3, 0x103006b
+    const v3, #style@Theme.Holo#t
 
     goto/16 :goto_2
 

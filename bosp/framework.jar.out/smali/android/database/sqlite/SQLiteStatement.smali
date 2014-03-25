@@ -121,6 +121,7 @@
     .line 92
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteStatement;->releaseReference()V
 
+    .line 86
     return-wide v1
 
     .line 88
@@ -184,6 +185,7 @@
     .line 70
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteStatement;->releaseReference()V
 
+    .line 64
     return v1
 
     .line 66
@@ -247,6 +249,7 @@
     .line 155
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteStatement;->releaseReference()V
 
+    .line 149
     return-object v1
 
     .line 151
@@ -310,6 +313,7 @@
     .line 113
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteStatement;->releaseReference()V
 
+    .line 107
     return-wide v1
 
     .line 109
@@ -373,6 +377,7 @@
     .line 134
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteStatement;->releaseReference()V
 
+    .line 128
     return-object v1
 
     .line 130

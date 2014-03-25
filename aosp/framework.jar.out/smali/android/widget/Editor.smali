@@ -515,7 +515,7 @@
 
     move-result-object v1
 
-    const v2, 0x105004c
+    const v2, #dimen@textview_error_popup_default_width#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -2306,7 +2306,7 @@
 
     move-result-object v2
 
-    const v3, 0x10900d3
+    const v3, #layout@text_drag_thumbnail#t
 
     const/4 v4, 0x0
 
@@ -3523,7 +3523,7 @@
 
     .line 274
     .local v1, inflater:Landroid/view/LayoutInflater;
-    const v4, 0x10900db
+    const v4, #layout@textview_hint#t
 
     const/4 v5, 0x0
 

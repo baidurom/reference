@@ -74,5 +74,10 @@
     <bool name="config_camera_sound_forced">false</bool>
     <bool name="config_dontPreferApn">false</bool>
     <bool name="config_speed_up_audio_on_mt_calls">false</bool>
+    <bool name="config_wakeup_by_volume_key">true</bool>
     <bool name="lockscreen_isPortrait">true</bool>
+    <bool name="config_pbap_support">false</bool>
+    <bool name="config_quickbootSupport">true</bool>
+    <bool name="config_poweron_by_twice_press">true</bool>
+    <bool name="config_close_button_backlight">false</bool>
 </resources>

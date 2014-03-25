@@ -69,9 +69,9 @@
 
     .prologue
     .line 72
-    const v0, 0x109001c
+    const v0, #layout@action_menu_layout#t
 
-    const v1, 0x109001b
+    const v1, #layout@action_menu_item_layout#t
 
     invoke-direct {p0, p1, v0, v1}, Lcom/android/internal/view/menu/BaseMenuPresenter;-><init>(Landroid/content/Context;II)V
 
@@ -1404,7 +1404,7 @@
 
     move-result-object v0
 
-    const v1, 0x10e003a
+    const v1, #integer@max_action_buttons#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 

@@ -24,7 +24,7 @@
     .locals 0
 
     .prologue
-    .line 1013
+    .line 1033
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -37,28 +37,28 @@
     .locals 3
 
     .prologue
-    .line 1068
+    .line 1088
     const-string v1, "SystemServer"
 
     const-string v2, "Entered the Android system server!"
 
     invoke-static {v1, v2}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1069
+    .line 1089
     new-instance v0, Lcom/android/server/ServerThread;
 
     invoke-direct {v0}, Lcom/android/server/ServerThread;-><init>()V
 
-    .line 1070
+    .line 1090
     .local v0, thr:Ljava/lang/Thread;
     const-string v1, "android.server.ServerThread"
 
     invoke-virtual {v0, v1}, Ljava/lang/Thread;->setName(Ljava/lang/String;)V
 
-    .line 1071
+    .line 1091
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
-    .line 1072
+    .line 1092
     return-void
 .end method
 
@@ -71,7 +71,7 @@
 
     const-wide/32 v2, 0x36ee80
 
-    .line 1035
+    .line 1055
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -80,17 +80,17 @@
 
     if-gez v0, :cond_0
 
-    .line 1041
+    .line 1061
     const-string v0, "SystemServer"
 
     const-string v1, "System clock is before 1970; setting to 1970."
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1042
+    .line 1062
     invoke-static {v4, v5}, Landroid/os/SystemClock;->setCurrentTimeMillis(J)Z
 
-    .line 1045
+    .line 1065
     :cond_0
     invoke-static {}, Lcom/android/internal/os/SamplingProfilerIntegration;->isEnabled()Z
 
@@ -98,17 +98,17 @@
 
     if-eqz v0, :cond_1
 
-    .line 1046
+    .line 1066
     invoke-static {}, Lcom/android/internal/os/SamplingProfilerIntegration;->start()V
 
-    .line 1047
+    .line 1067
     new-instance v0, Ljava/util/Timer;
 
     invoke-direct {v0}, Ljava/util/Timer;-><init>()V
 
     sput-object v0, Lcom/android/server/SystemServer;->timer:Ljava/util/Timer;
 
-    .line 1048
+    .line 1068
     sget-object v0, Lcom/android/server/SystemServer;->timer:Ljava/util/Timer;
 
     new-instance v1, Lcom/android/server/SystemServer$1;
@@ -119,7 +119,7 @@
 
     invoke-virtual/range {v0 .. v5}, Ljava/util/Timer;->schedule(Ljava/util/TimerTask;JJ)V
 
-    .line 1057
+    .line 1077
     :cond_1
     invoke-static {}, Ldalvik/system/VMRuntime;->getRuntime()Ldalvik/system/VMRuntime;
 
@@ -127,7 +127,7 @@
 
     invoke-virtual {v0}, Ldalvik/system/VMRuntime;->clearGrowthLimit()V
 
-    .line 1061
+    .line 1081
     invoke-static {}, Ldalvik/system/VMRuntime;->getRuntime()Ldalvik/system/VMRuntime;
 
     move-result-object v0
@@ -136,14 +136,14 @@
 
     invoke-virtual {v0, v1}, Ldalvik/system/VMRuntime;->setTargetHeapUtilization(F)F
 
-    .line 1063
+    .line 1083
     const-string v0, "android_servers"
 
     invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 
-    .line 1064
+    .line 1084
     invoke-static {p0}, Lcom/android/server/SystemServer;->init1([Ljava/lang/String;)V
 
-    .line 1065
+    .line 1085
     return-void
 .end method

@@ -137,7 +137,7 @@
 
     .prologue
     .line 123
-    iget-object v0, p0, Landroid/app/ListActivity;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v0, p0, Landroid/preference/PreferenceActivity;->mAdapter:Landroid/widget/ListAdapter;
 
     return-object v0
 .end method
@@ -148,7 +148,7 @@
 
     .prologue
     .line 123
-    iget-object v0, p0, Landroid/app/ListActivity;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v0, p0, Landroid/preference/PreferenceActivity;->mAdapter:Landroid/widget/ListAdapter;
 
     return-object v0
 .end method
@@ -246,7 +246,7 @@
     if-nez v0, :cond_1
 
     .line 1349
-    iget-object v0, p0, Landroid/app/ListActivity;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v0, p0, Landroid/preference/PreferenceActivity;->mAdapter:Landroid/widget/ListAdapter;
 
     if-nez v0, :cond_0
 
@@ -314,7 +314,7 @@
     invoke-virtual {v1, v2}, Landroid/app/FragmentTransaction;->setTransition(I)Landroid/app/FragmentTransaction;
 
     .line 1141
-    const v2, 0x1020343
+    const v2, #id@prefs#t
 
     invoke-virtual {v1, v2, v0}, Landroid/app/FragmentTransaction;->replace(ILandroid/app/Fragment;)Landroid/app/FragmentTransaction;
 
@@ -1614,7 +1614,7 @@
     invoke-super/range {p0 .. p1}, Landroid/app/ListActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 510
-    const v17, 0x10900a6
+    const v17, #layout@preference_list_content#t
 
     move-object/from16 v0, p0
 
@@ -1623,7 +1623,7 @@
     invoke-virtual {v0, v1}, Landroid/preference/PreferenceActivity;->setContentView(I)V
 
     .line 512
-    const v17, 0x1020341
+    const v17, #id@list_footer#t
 
     move-object/from16 v0, p0
 
@@ -1642,7 +1642,7 @@
     iput-object v0, v1, Landroid/preference/PreferenceActivity;->mListFooter:Landroid/widget/FrameLayout;
 
     .line 513
-    const v17, 0x1020342
+    const v17, #id@prefs_frame#t
 
     move-object/from16 v0, p0
 
@@ -1836,7 +1836,7 @@
     if-eqz v17, :cond_c
 
     .line 571
-    const v17, 0x1020340
+    const v17, #id@headers#t
 
     move-object/from16 v0, p0
 
@@ -1914,7 +1914,7 @@
     if-eqz v17, :cond_5
 
     .line 603
-    const v17, 0x1020278
+    const v17, #id@button_bar#t
 
     move-object/from16 v0, p0
 
@@ -1929,7 +1929,7 @@
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->setVisibility(I)V
 
     .line 605
-    const v17, 0x1020344
+    const v17, #id@back_button#t
 
     move-object/from16 v0, p0
 
@@ -1956,7 +1956,7 @@
     invoke-virtual {v3, v0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 612
-    const v17, 0x1020345
+    const v17, #id@skip_button#t
 
     move-object/from16 v0, p0
 
@@ -1981,7 +1981,7 @@
     invoke-virtual/range {v16 .. v17}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 619
-    const v17, 0x1020346
+    const v17, #id@next_button#t
 
     move-object/from16 v0, p0
 
@@ -2353,7 +2353,7 @@
 
     .line 592
     :cond_e
-    const v17, 0x10900a7
+    const v17, #layout@preference_list_content_single#t
 
     move-object/from16 v0, p0
 
@@ -2362,7 +2362,7 @@
     invoke-virtual {v0, v1}, Landroid/preference/PreferenceActivity;->setContentView(I)V
 
     .line 593
-    const v17, 0x1020341
+    const v17, #id@list_footer#t
 
     move-object/from16 v0, p0
 
@@ -2381,7 +2381,7 @@
     iput-object v0, v1, Landroid/preference/PreferenceActivity;->mListFooter:Landroid/widget/FrameLayout;
 
     .line 594
-    const v17, 0x1020343
+    const v17, #id@prefs#t
 
     move-object/from16 v0, p0
 
@@ -2611,7 +2611,7 @@
 
     move-result-object v1
 
-    const v2, 0x1110007
+    const v2, #bool@preferences_prefer_dual_pane#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -2634,12 +2634,12 @@
     invoke-super/range {p0 .. p5}, Landroid/app/ListActivity;->onListItemClick(Landroid/widget/ListView;Landroid/view/View;IJ)V
 
     .line 970
-    iget-object v1, p0, Landroid/app/ListActivity;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v1, p0, Landroid/preference/PreferenceActivity;->mAdapter:Landroid/widget/ListAdapter;
 
     if-eqz v1, :cond_0
 
     .line 971
-    iget-object v1, p0, Landroid/app/ListActivity;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v1, p0, Landroid/preference/PreferenceActivity;->mAdapter:Landroid/widget/ListAdapter;
 
     invoke-interface {v1, p3}, Landroid/widget/ListAdapter;->getItem(I)Ljava/lang/Object;
 
@@ -3111,7 +3111,7 @@
     if-nez v3, :cond_3
 
     .line 1073
-    const v3, 0x1020016
+    const v3, #id@title#t
 
     invoke-virtual {p0, v3}, Landroid/preference/PreferenceActivity;->findViewById(I)Landroid/view/View;
 
@@ -3164,7 +3164,7 @@
     invoke-virtual {v3, v4}, Landroid/app/FragmentBreadCrumbs;->setVisibility(I)V
 
     .line 1089
-    const v3, 0x1020270
+    const v3, #id@breadcrumb_section#t
 
     invoke-virtual {p0, v3}, Landroid/preference/PreferenceActivity;->findViewById(I)Landroid/view/View;
 
@@ -3221,7 +3221,7 @@
 
     .line 1230
     .local v0, transaction:Landroid/app/FragmentTransaction;
-    const v1, 0x1020343
+    const v1, #id@prefs#t
 
     invoke-virtual {v0, v1, p1}, Landroid/app/FragmentTransaction;->replace(ILandroid/app/Fragment;)Landroid/app/FragmentTransaction;
 
@@ -3315,7 +3315,7 @@
 
     .line 1269
     .local v8, transaction:Landroid/app/FragmentTransaction;
-    const v0, 0x1020343
+    const v0, #id@prefs#t
 
     invoke-virtual {v8, v0, v7}, Landroid/app/FragmentTransaction;->replace(ILandroid/app/Fragment;)Landroid/app/FragmentTransaction;
 

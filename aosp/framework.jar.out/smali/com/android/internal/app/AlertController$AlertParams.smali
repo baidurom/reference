@@ -156,7 +156,7 @@
     .parameter "dialog"
 
     .prologue
-    const v4, 0x1020014
+    const v4, #id@text1#t
 
     const/4 v9, 0x1
 

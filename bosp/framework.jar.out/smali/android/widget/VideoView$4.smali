@@ -30,7 +30,7 @@
     .line 367
     iput-object p1, p0, Landroid/widget/VideoView$4;->this$0:Landroid/widget/VideoView;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -168,7 +168,7 @@
     .line 389
     iget-object v2, p0, Landroid/widget/VideoView$4;->this$0:Landroid/widget/VideoView;
 
-    #getter for: Landroid/view/View;->mContext:Landroid/content/Context;
+    #getter for: Landroid/widget/VideoView;->mContext:Landroid/content/Context;
     invoke-static {v2}, Landroid/widget/VideoView;->access$1600(Landroid/widget/VideoView;)Landroid/content/Context;
 
     move-result-object v2
@@ -184,7 +184,7 @@
     if-ne p2, v2, :cond_3
 
     .line 393
-    const v0, 0x1040015
+    const v0, #string@VideoView_error_text_invalid_progressive_playback#t
 
     .line 398
     .local v0, messageId:I
@@ -193,7 +193,7 @@
 
     iget-object v3, p0, Landroid/widget/VideoView$4;->this$0:Landroid/widget/VideoView;
 
-    #getter for: Landroid/view/View;->mContext:Landroid/content/Context;
+    #getter for: Landroid/widget/VideoView;->mContext:Landroid/content/Context;
     invoke-static {v3}, Landroid/widget/VideoView;->access$1700(Landroid/widget/VideoView;)Landroid/content/Context;
 
     move-result-object v3
@@ -204,7 +204,7 @@
 
     move-result-object v2
 
-    const v3, 0x1040010
+    const v3, #string@VideoView_error_button#t
 
     new-instance v4, Landroid/widget/VideoView$4$1;
 
@@ -227,7 +227,7 @@
     .line 395
     .end local v0           #messageId:I
     :cond_3
-    const v0, 0x1040011
+    const v0, #string@VideoView_error_text_unknown#t
 
     .restart local v0       #messageId:I
     goto :goto_1

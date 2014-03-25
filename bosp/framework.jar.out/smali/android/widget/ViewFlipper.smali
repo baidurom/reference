@@ -272,7 +272,7 @@
     if-eqz v1, :cond_2
 
     .line 176
-    iget v3, p0, Landroid/widget/ViewAnimator;->mWhichChild:I
+    iget v3, p0, Landroid/widget/ViewFlipper;->mWhichChild:I
 
     invoke-virtual {p0, v3, p1}, Landroid/widget/ViewFlipper;->showOnly(IZ)V
 

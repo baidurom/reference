@@ -50,7 +50,7 @@
 
     .prologue
     .line 121
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 122
     iput-object p1, p0, Landroid/telephony/SmsMessage;->mWrappedSmsMessage:Lcom/android/internal/telephony/SmsMessageBase;
@@ -623,6 +623,98 @@
 
     .line 346
     goto/16 :goto_3
+.end method
+
+.method public static getIccSmsPdus(Ljava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;JI)Ljava/util/ArrayList;
+    .locals 4
+    .parameter "scAddress"
+    .parameter "address"
+    .parameter
+    .parameter "timeStamp"
+    .parameter "status"
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;JI)",
+            "Ljava/util/ArrayList",
+            "<[B>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 696
+    .local p2, msgs:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
+    invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/telephony/TelephonyManager;->getCurrentPhoneType()I
+
+    move-result v0
+
+    .line 697
+    .local v0, activePhone:I
+    const-string v2, "SMS"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "getIccSmsPdus,activePhone="
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_0
+
+    const-string v1, "GSM"
+
+    :goto_0
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v2, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 698
+    const/4 v1, 0x2
+
+    if-ne v1, v0, :cond_1
+
+    .line 699
+    invoke-static {p1, p2, p3, p4, p5}, Lcom/android/internal/telephony/cdma/SmsMessage;->getIccSmsPdus(Ljava/lang/String;Ljava/util/ArrayList;JI)Ljava/util/ArrayList;
+
+    move-result-object v1
+
+    .line 701
+    :goto_1
+    return-object v1
+
+    .line 697
+    :cond_0
+    const-string v1, "CDMA"
+
+    goto :goto_0
+
+    .line 701
+    :cond_1
+    invoke-static/range {p0 .. p5}, Lcom/android/internal/telephony/gsm/SmsMessage;->getIccSmsPdus(Ljava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;JI)Ljava/util/ArrayList;
+
+    move-result-object v1
+
+    goto :goto_1
 .end method
 
 .method public static getSubmitPdu(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Landroid/telephony/SmsMessage$SubmitPdu;

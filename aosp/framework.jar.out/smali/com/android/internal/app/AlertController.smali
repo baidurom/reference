@@ -143,7 +143,7 @@
 
     sget-object v2, Lcom/android/internal/R$styleable;->AlertDialog:[I
 
-    const v3, 0x101005d
+    const v3, #attr@alertDialogStyle#t
 
     invoke-virtual {p1, v1, v2, v3, v4}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
@@ -153,7 +153,7 @@
     .local v0, a:Landroid/content/res/TypedArray;
     const/16 v1, 0xa
 
-    const v2, 0x1090024
+    const v2, #layout@alert_dialog#t
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -164,7 +164,7 @@
     .line 194
     const/16 v1, 0xb
 
-    const v2, 0x10900c3
+    const v2, #layout@select_dialog#t
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -175,7 +175,7 @@
     .line 197
     const/16 v1, 0xc
 
-    const v2, 0x1090013
+    const v2, #layout@select_dialog_multichoice#t
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -186,7 +186,7 @@
     .line 200
     const/16 v1, 0xd
 
-    const v2, 0x1090012
+    const v2, #layout@select_dialog_singlechoice#t
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -197,7 +197,7 @@
     .line 203
     const/16 v1, 0xe
 
-    const v2, 0x1090011
+    const v2, #layout@select_dialog_item#t
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -483,7 +483,7 @@
     .line 589
     iget-object v3, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
 
-    const v4, 0x102025b
+    const v4, #id@leftSpacer#t
 
     invoke-virtual {v3, v4}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
 
@@ -500,7 +500,7 @@
     :cond_0
     iget-object v3, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
 
-    const v4, 0x102025c
+    const v4, #id@rightSpacer#t
 
     invoke-virtual {v3, v4}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
 
@@ -532,7 +532,7 @@
     .line 604
     const/16 v19, 0x0
 
-    const v20, 0x108046f
+    const v20, #drawable@popup_full_dark#t
 
     move-object/from16 v0, p5
 
@@ -548,7 +548,7 @@
     .local v9, fullDark:I
     const/16 v19, 0x1
 
-    const v20, 0x1080477
+    const v20, #drawable@popup_top_dark#t
 
     move-object/from16 v0, p5
 
@@ -564,7 +564,7 @@
     .local v16, topDark:I
     const/16 v19, 0x2
 
-    const v20, 0x108046c
+    const v20, #drawable@popup_center_dark#t
 
     move-object/from16 v0, p5
 
@@ -580,7 +580,7 @@
     .local v7, centerDark:I
     const/16 v19, 0x3
 
-    const v20, 0x1080469
+    const v20, #drawable@popup_bottom_dark#t
 
     move-object/from16 v0, p5
 
@@ -596,7 +596,7 @@
     .local v4, bottomDark:I
     const/16 v19, 0x4
 
-    const v20, 0x108046e
+    const v20, #drawable@popup_full_bright#t
 
     move-object/from16 v0, p5
 
@@ -612,7 +612,7 @@
     .local v8, fullBright:I
     const/16 v19, 0x5
 
-    const v20, 0x1080476
+    const v20, #drawable@popup_top_bright#t
 
     move-object/from16 v0, p5
 
@@ -628,7 +628,7 @@
     .local v15, topBright:I
     const/16 v19, 0x6
 
-    const v20, 0x108046b
+    const v20, #drawable@popup_center_bright#t
 
     move-object/from16 v0, p5
 
@@ -644,7 +644,7 @@
     .local v6, centerBright:I
     const/16 v19, 0x7
 
-    const v20, 0x1080468
+    const v20, #drawable@popup_bottom_bright#t
 
     move-object/from16 v0, p5
 
@@ -660,7 +660,7 @@
     .local v3, bottomBright:I
     const/16 v19, 0x8
 
-    const v20, 0x108046a
+    const v20, #drawable@popup_bottom_medium#t
 
     move-object/from16 v0, p5
 
@@ -1040,7 +1040,7 @@
     .local v3, whichButtons:I
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
 
-    const v6, 0x1020019
+    const v6, #id@button1#t
 
     invoke-virtual {v4, v6}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
 
@@ -1075,7 +1075,7 @@
     :goto_0
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
 
-    const v6, 0x102001a
+    const v6, #id@button2#t
 
     invoke-virtual {v4, v6}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
 
@@ -1110,7 +1110,7 @@
     :goto_1
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
 
-    const v6, 0x102001b
+    const v6, #id@button3#t
 
     invoke-virtual {v4, v6}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
 
@@ -1257,7 +1257,7 @@
     .parameter "contentPanel"
 
     .prologue
-    const v5, 0x102025e
+    const v5, #id@scrollView#t
 
     const/16 v4, 0x8
 
@@ -1284,7 +1284,7 @@
     .line 505
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
 
-    const v1, 0x102000b
+    const v1, #id@message#t
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
 
@@ -1377,7 +1377,7 @@
     .parameter "topPanel"
 
     .prologue
-    const v6, 0x1020257
+    const v6, #id@title_template#t
 
     const/4 v0, 0x0
 
@@ -1442,7 +1442,7 @@
     :cond_2
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
 
-    const v5, 0x1020006
+    const v5, #id@icon#t
 
     invoke-virtual {v4, v5}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
 
@@ -1458,7 +1458,7 @@
     .line 464
     iget-object v4, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
 
-    const v5, 0x1020258
+    const v5, #id@alertTitle#t
 
     invoke-virtual {v4, v5}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
 
@@ -1579,7 +1579,7 @@
     .line 394
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
 
-    const v10, 0x102025d
+    const v10, #id@contentPanel#t
 
     invoke-virtual {v0, v10}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
 
@@ -1600,7 +1600,7 @@
     .local v4, hasButtons:Z
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
 
-    const v10, 0x1020256
+    const v10, #id@topPanel#t
 
     invoke-virtual {v0, v10}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
 
@@ -1616,7 +1616,7 @@
 
     sget-object v11, Lcom/android/internal/R$styleable;->AlertDialog:[I
 
-    const v12, 0x101005d
+    const v12, #attr@alertDialogStyle#t
 
     const/4 v13, 0x0
 
@@ -1634,7 +1634,7 @@
     .local v6, hasTitle:Z
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
 
-    const v10, 0x102025a
+    const v10, #id@buttonPanel#t
 
     invoke-virtual {v0, v10}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
 
@@ -1669,7 +1669,7 @@
     .line 411
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
 
-    const v10, 0x102025f
+    const v10, #id@customPanel#t
 
     invoke-virtual {v0, v10}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
 
@@ -1682,7 +1682,7 @@
     .restart local v3       #customPanel:Landroid/widget/FrameLayout;
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
 
-    const v10, 0x102002b
+    const v10, #id@custom#t
 
     invoke-virtual {v0, v10}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
 
@@ -1764,7 +1764,7 @@
     :cond_3
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
 
-    const v10, 0x1020259
+    const v10, #id@titleDivider#t
 
     invoke-virtual {v0, v10}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
 
@@ -1796,7 +1796,7 @@
     :cond_5
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
 
-    const v10, 0x102025f
+    const v10, #id@customPanel#t
 
     invoke-virtual {v0, v10}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
 
@@ -1813,7 +1813,7 @@
     :cond_6
     iget-object v0, p0, Lcom/android/internal/app/AlertController;->mWindow:Landroid/view/Window;
 
-    const v10, 0x1020260
+    const v10, #id@titleDividerTop#t
 
     invoke-virtual {v0, v10}, Landroid/view/Window;->findViewById(I)Landroid/view/View;
 
@@ -1840,7 +1840,7 @@
 
     move-result-object v2
 
-    const v3, 0x10103d7
+    const v3, #attr@alertDialogCenterButtons#t
 
     invoke-virtual {v2, v3, v0, v1}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 

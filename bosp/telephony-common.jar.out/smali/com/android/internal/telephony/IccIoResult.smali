@@ -38,7 +38,7 @@
 
     .prologue
     .line 29
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 30
     iput p1, p0, Lcom/android/internal/telephony/IccIoResult;->sw1:I

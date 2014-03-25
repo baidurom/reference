@@ -100,9 +100,9 @@
 
     sget-object v7, Landroid/R$styleable;->TextAppearance:[I
 
-    const v8, 0x1010041
+    const v8, #attr@textAppearanceMedium#t
 
-    const v9, 0x1030044
+    const v9, #style@TextAppearance.Medium#t
 
     invoke-virtual {v5, v6, v7, v8, v9}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 

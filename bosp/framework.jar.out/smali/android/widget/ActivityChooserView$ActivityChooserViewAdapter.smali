@@ -311,9 +311,9 @@
     .parameter "parent"
 
     .prologue
-    const v11, 0x1090020
+    const v11, #layout@activity_chooser_view_list_item#t
 
-    const v10, 0x1020016
+    const v10, #id@title#t
 
     const/4 v9, 0x1
 
@@ -375,12 +375,12 @@
     .local v5, titleView:Landroid/widget/TextView;
     iget-object v6, p0, Landroid/widget/ActivityChooserView$ActivityChooserViewAdapter;->this$0:Landroid/widget/ActivityChooserView;
 
-    #getter for: Landroid/view/View;->mContext:Landroid/content/Context;
+    #getter for: Landroid/widget/ActivityChooserView;->mContext:Landroid/content/Context;
     invoke-static {v6}, Landroid/widget/ActivityChooserView;->access$1400(Landroid/widget/ActivityChooserView;)Landroid/content/Context;
 
     move-result-object v6
 
-    const v7, 0x1040505
+    const v7, #string@activity_chooser_view_see_all#t
 
     invoke-virtual {v6, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -408,7 +408,7 @@
 
     move-result v6
 
-    const v7, 0x1020254
+    const v7, #id@list_item#t
 
     if-eq v6, v7, :cond_3
 
@@ -432,7 +432,7 @@
     :cond_3
     iget-object v6, p0, Landroid/widget/ActivityChooserView$ActivityChooserViewAdapter;->this$0:Landroid/widget/ActivityChooserView;
 
-    #getter for: Landroid/view/View;->mContext:Landroid/content/Context;
+    #getter for: Landroid/widget/ActivityChooserView;->mContext:Landroid/content/Context;
     invoke-static {v6}, Landroid/widget/ActivityChooserView;->access$1500(Landroid/widget/ActivityChooserView;)Landroid/content/Context;
 
     move-result-object v6
@@ -443,7 +443,7 @@
 
     .line 710
     .local v4, packageManager:Landroid/content/pm/PackageManager;
-    const v6, 0x1020006
+    const v6, #id@icon#t
 
     invoke-virtual {p2, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

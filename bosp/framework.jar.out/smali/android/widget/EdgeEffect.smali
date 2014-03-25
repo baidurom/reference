@@ -120,7 +120,7 @@
     const/high16 v3, 0x3f00
 
     .line 135
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 120
     const/4 v1, 0x0
@@ -141,7 +141,7 @@
 
     .line 137
     .local v0, res:Landroid/content/res/Resources;
-    const v1, 0x1080436
+    const v1, #drawable@overscroll_edge#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -150,7 +150,7 @@
     iput-object v1, p0, Landroid/widget/EdgeEffect;->mEdge:Landroid/graphics/drawable/Drawable;
 
     .line 138
-    const v1, 0x1080437
+    const v1, #drawable@overscroll_glow#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

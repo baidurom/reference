@@ -678,7 +678,7 @@
 
     .prologue
     .line 308
-    const v0, 0x10f000d
+    const v0, #xml@sms_short_codes#t
 
     .line 309
     .local v0, id:I

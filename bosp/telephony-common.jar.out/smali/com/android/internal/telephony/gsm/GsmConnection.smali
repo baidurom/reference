@@ -143,12 +143,12 @@
     .line 131
     iget-object v0, p2, Lcom/android/internal/telephony/DriverCall;->name:Ljava/lang/String;
 
-    iput-object v0, p0, Lcom/android/internal/telephony/Connection;->cnapName:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->cnapName:Ljava/lang/String;
 
     .line 132
     iget v0, p2, Lcom/android/internal/telephony/DriverCall;->namePresentation:I
 
-    iput v0, p0, Lcom/android/internal/telephony/Connection;->cnapNamePresentation:I
+    iput v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->cnapNamePresentation:I
 
     .line 133
     iget v0, p2, Lcom/android/internal/telephony/DriverCall;->numberPresentation:I
@@ -259,12 +259,12 @@
     .line 159
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/android/internal/telephony/Connection;->cnapName:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->cnapName:Ljava/lang/String;
 
     .line 160
     sget v0, Lcom/android/internal/telephony/PhoneConstants;->PRESENTATION_ALLOWED:I
 
-    iput v0, p0, Lcom/android/internal/telephony/Connection;->cnapNamePresentation:I
+    iput v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->cnapNamePresentation:I
 
     .line 161
     sget v0, Lcom/android/internal/telephony/PhoneConstants;->PRESENTATION_ALLOWED:I
@@ -408,7 +408,7 @@
 
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->parent:Lcom/android/internal/telephony/gsm/GsmCall;
 
-    iget-object v0, v0, Lcom/android/internal/telephony/Call;->state:Lcom/android/internal/telephony/Call$State;
+    iget-object v0, v0, Lcom/android/internal/telephony/gsm/GsmCall;->state:Lcom/android/internal/telephony/Call$State;
 
     sget-object v1, Lcom/android/internal/telephony/Call$State;->DIALING:Lcom/android/internal/telephony/Call$State;
 
@@ -416,7 +416,7 @@
 
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->parent:Lcom/android/internal/telephony/gsm/GsmCall;
 
-    iget-object v0, v0, Lcom/android/internal/telephony/Call;->state:Lcom/android/internal/telephony/Call$State;
+    iget-object v0, v0, Lcom/android/internal/telephony/gsm/GsmCall;->state:Lcom/android/internal/telephony/Call$State;
 
     sget-object v1, Lcom/android/internal/telephony/Call$State;->ALERTING:Lcom/android/internal/telephony/Call$State;
 
@@ -744,7 +744,7 @@
     .line 565
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->owner:Lcom/android/internal/telephony/gsm/GsmCallTracker;
 
-    iget-object v1, v1, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v1, v1, Lcom/android/internal/telephony/gsm/GsmCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     iget-object v2, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->h:Landroid/os/Handler;
 
@@ -1157,7 +1157,7 @@
     .line 389
     iget-object v4, v1, Lcom/android/internal/telephony/gsm/GSMPhone;->mSST:Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;
 
-    iget-object v4, v4, Lcom/android/internal/telephony/ServiceStateTracker;->mRestrictedState:Lcom/android/internal/telephony/RestrictedState;
+    iget-object v4, v4, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->mRestrictedState:Lcom/android/internal/telephony/RestrictedState;
 
     invoke-virtual {v4}, Lcom/android/internal/telephony/RestrictedState;->isCsRestricted()Z
 
@@ -1174,7 +1174,7 @@
     :cond_5
     iget-object v4, v1, Lcom/android/internal/telephony/gsm/GSMPhone;->mSST:Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;
 
-    iget-object v4, v4, Lcom/android/internal/telephony/ServiceStateTracker;->mRestrictedState:Lcom/android/internal/telephony/RestrictedState;
+    iget-object v4, v4, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->mRestrictedState:Lcom/android/internal/telephony/RestrictedState;
 
     invoke-virtual {v4}, Lcom/android/internal/telephony/RestrictedState;->isCsEmergencyRestricted()Z
 
@@ -1191,7 +1191,7 @@
     :cond_6
     iget-object v4, v1, Lcom/android/internal/telephony/gsm/GSMPhone;->mSST:Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;
 
-    iget-object v4, v4, Lcom/android/internal/telephony/ServiceStateTracker;->mRestrictedState:Lcom/android/internal/telephony/RestrictedState;
+    iget-object v4, v4, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->mRestrictedState:Lcom/android/internal/telephony/RestrictedState;
 
     invoke-virtual {v4}, Lcom/android/internal/telephony/RestrictedState;->isCsNormalRestricted()Z
 
@@ -2067,7 +2067,7 @@
     if-eqz v7, :cond_6
 
     .line 455
-    iget-object v7, p0, Lcom/android/internal/telephony/Connection;->cnapName:Ljava/lang/String;
+    iget-object v7, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->cnapName:Ljava/lang/String;
 
     invoke-static {v7}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -2081,7 +2081,7 @@
     .line 457
     const-string v7, ""
 
-    iput-object v7, p0, Lcom/android/internal/telephony/Connection;->cnapName:Ljava/lang/String;
+    iput-object v7, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->cnapName:Ljava/lang/String;
 
     .line 464
     :cond_1
@@ -2096,7 +2096,7 @@
 
     move-result-object v7
 
-    iget-object v8, p0, Lcom/android/internal/telephony/Connection;->cnapName:Ljava/lang/String;
+    iget-object v8, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->cnapName:Ljava/lang/String;
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2111,7 +2111,7 @@
     .line 465
     iget v7, p1, Lcom/android/internal/telephony/DriverCall;->namePresentation:I
 
-    iput v7, p0, Lcom/android/internal/telephony/Connection;->cnapNamePresentation:I
+    iput v7, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->cnapNamePresentation:I
 
     .line 466
     iget v7, p1, Lcom/android/internal/telephony/DriverCall;->numberPresentation:I
@@ -2273,7 +2273,7 @@
     :cond_6
     iget-object v7, p1, Lcom/android/internal/telephony/DriverCall;->name:Ljava/lang/String;
 
-    iget-object v8, p0, Lcom/android/internal/telephony/Connection;->cnapName:Ljava/lang/String;
+    iget-object v8, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->cnapName:Ljava/lang/String;
 
     invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2287,7 +2287,7 @@
     .line 461
     iget-object v7, p1, Lcom/android/internal/telephony/DriverCall;->name:Ljava/lang/String;
 
-    iput-object v7, p0, Lcom/android/internal/telephony/Connection;->cnapName:Ljava/lang/String;
+    iput-object v7, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->cnapName:Ljava/lang/String;
 
     goto/16 :goto_1
 

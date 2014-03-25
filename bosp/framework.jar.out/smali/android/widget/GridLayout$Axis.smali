@@ -139,7 +139,7 @@
     .line 1198
     iput-object p1, p0, Landroid/widget/GridLayout$Axis;->this$0:Landroid/widget/GridLayout;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1169
     iput v0, p0, Landroid/widget/GridLayout$Axis;->definedCount:I

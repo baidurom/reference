@@ -241,7 +241,7 @@
 
     move-result-object v4
 
-    const v5, 0x1070020
+    const v5, #array@config_cdma_dun_supported_types#t
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 

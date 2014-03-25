@@ -8338,7 +8338,7 @@
 
     move-result-object v23
 
-    const v24, 0x10400b8
+    const v24, #string@roamingTextSearching#t
 
     invoke-virtual/range {v23 .. v24}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 

@@ -124,7 +124,7 @@
 
     .prologue
     .line 298
-    const v0, 0x101008e
+    const v0, #attr@preferenceStyle#t
 
     invoke-direct {p0, p1, p2, v0}, Landroid/preference/Preference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -144,7 +144,7 @@
     const/4 v5, 0x1
 
     .line 209
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 98
     const v3, 0x7fffffff
@@ -167,7 +167,7 @@
     iput-boolean v5, p0, Landroid/preference/Preference;->mShouldDisableView:Z
 
     .line 124
-    const v3, 0x109009d
+    const v3, #layout@preference#t
 
     iput v3, p0, Landroid/preference/Preference;->mLayoutResId:I
 
@@ -1744,7 +1744,7 @@
     const/4 v5, 0x0
 
     .line 507
-    const v7, 0x1020016
+    const v7, #id@title#t
 
     invoke-virtual {p1, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1779,7 +1779,7 @@
     .end local v3           #title:Ljava/lang/CharSequence;
     :cond_0
     :goto_0
-    const v7, 0x1020010
+    const v7, #id@summary#t
 
     invoke-virtual {p1, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1814,7 +1814,7 @@
     .end local v1           #summary:Ljava/lang/CharSequence;
     :cond_1
     :goto_1
-    const v7, 0x1020006
+    const v7, #id@icon#t
 
     invoke-virtual {p1, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1958,7 +1958,7 @@
 
     .line 483
     .local v0, layout:Landroid/view/View;
-    const v3, 0x1020018
+    const v3, #id@widget_frame#t
 
     invoke-virtual {v0, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

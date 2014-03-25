@@ -439,7 +439,7 @@
     .end local v5           #dr:Landroid/graphics/drawable/Drawable;
     .restart local v12       #stateResId:I
     :cond_3
-    const v15, 0x1010199
+    const v15, #attr@drawable#t
 
     if-ne v12, v15, :cond_4
 

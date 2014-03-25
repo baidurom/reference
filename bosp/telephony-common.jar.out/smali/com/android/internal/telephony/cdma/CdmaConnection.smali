@@ -139,12 +139,12 @@
     .line 134
     iget-object v0, p2, Lcom/android/internal/telephony/DriverCall;->name:Ljava/lang/String;
 
-    iput-object v0, p0, Lcom/android/internal/telephony/Connection;->cnapName:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaConnection;->cnapName:Ljava/lang/String;
 
     .line 135
     iget v0, p2, Lcom/android/internal/telephony/DriverCall;->namePresentation:I
 
-    iput v0, p0, Lcom/android/internal/telephony/Connection;->cnapNamePresentation:I
+    iput v0, p0, Lcom/android/internal/telephony/cdma/CdmaConnection;->cnapNamePresentation:I
 
     .line 136
     iget v0, p2, Lcom/android/internal/telephony/DriverCall;->numberPresentation:I
@@ -233,12 +233,12 @@
     .line 191
     iget-object v0, p2, Lcom/android/internal/telephony/cdma/CdmaCallWaitingNotification;->name:Ljava/lang/String;
 
-    iput-object v0, p0, Lcom/android/internal/telephony/Connection;->cnapName:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaConnection;->cnapName:Ljava/lang/String;
 
     .line 192
     iget v0, p2, Lcom/android/internal/telephony/cdma/CdmaCallWaitingNotification;->namePresentation:I
 
-    iput v0, p0, Lcom/android/internal/telephony/Connection;->cnapNamePresentation:I
+    iput v0, p0, Lcom/android/internal/telephony/cdma/CdmaConnection;->cnapNamePresentation:I
 
     .line 193
     const/4 v0, -0x1
@@ -403,12 +403,12 @@
     .line 164
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/android/internal/telephony/Connection;->cnapName:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaConnection;->cnapName:Ljava/lang/String;
 
     .line 165
     sget v0, Lcom/android/internal/telephony/PhoneConstants;->PRESENTATION_ALLOWED:I
 
-    iput v0, p0, Lcom/android/internal/telephony/Connection;->cnapNamePresentation:I
+    iput v0, p0, Lcom/android/internal/telephony/cdma/CdmaConnection;->cnapNamePresentation:I
 
     .line 166
     sget v0, Lcom/android/internal/telephony/PhoneConstants;->PRESENTATION_ALLOWED:I
@@ -1080,7 +1080,7 @@
     .line 620
     iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaConnection;->owner:Lcom/android/internal/telephony/cdma/CdmaCallTracker;
 
-    iget-object v1, v1, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v1, v1, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaConnection;->h:Landroid/os/Handler;
 
@@ -2673,7 +2673,7 @@
     if-eqz v7, :cond_6
 
     .line 501
-    iget-object v7, p0, Lcom/android/internal/telephony/Connection;->cnapName:Ljava/lang/String;
+    iget-object v7, p0, Lcom/android/internal/telephony/cdma/CdmaConnection;->cnapName:Ljava/lang/String;
 
     invoke-static {v7}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -2687,7 +2687,7 @@
     .line 503
     const-string v7, ""
 
-    iput-object v7, p0, Lcom/android/internal/telephony/Connection;->cnapName:Ljava/lang/String;
+    iput-object v7, p0, Lcom/android/internal/telephony/cdma/CdmaConnection;->cnapName:Ljava/lang/String;
 
     .line 510
     :cond_1
@@ -2702,7 +2702,7 @@
 
     move-result-object v7
 
-    iget-object v8, p0, Lcom/android/internal/telephony/Connection;->cnapName:Ljava/lang/String;
+    iget-object v8, p0, Lcom/android/internal/telephony/cdma/CdmaConnection;->cnapName:Ljava/lang/String;
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2717,7 +2717,7 @@
     .line 511
     iget v7, p1, Lcom/android/internal/telephony/DriverCall;->namePresentation:I
 
-    iput v7, p0, Lcom/android/internal/telephony/Connection;->cnapNamePresentation:I
+    iput v7, p0, Lcom/android/internal/telephony/cdma/CdmaConnection;->cnapNamePresentation:I
 
     .line 512
     iget v7, p1, Lcom/android/internal/telephony/DriverCall;->numberPresentation:I
@@ -2852,7 +2852,7 @@
     :cond_6
     iget-object v7, p1, Lcom/android/internal/telephony/DriverCall;->name:Ljava/lang/String;
 
-    iget-object v8, p0, Lcom/android/internal/telephony/Connection;->cnapName:Ljava/lang/String;
+    iget-object v8, p0, Lcom/android/internal/telephony/cdma/CdmaConnection;->cnapName:Ljava/lang/String;
 
     invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2866,7 +2866,7 @@
     .line 507
     iget-object v7, p1, Lcom/android/internal/telephony/DriverCall;->name:Ljava/lang/String;
 
-    iput-object v7, p0, Lcom/android/internal/telephony/Connection;->cnapName:Ljava/lang/String;
+    iput-object v7, p0, Lcom/android/internal/telephony/cdma/CdmaConnection;->cnapName:Ljava/lang/String;
 
     goto/16 :goto_1
 

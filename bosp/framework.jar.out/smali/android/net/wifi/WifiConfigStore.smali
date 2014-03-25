@@ -2391,8 +2391,8 @@
     invoke-direct {v9, v0}, Ljava/io/DataInputStream;-><init>(Ljava/io/InputStream;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
-    .catch Ljava/io/EOFException; {:try_start_0 .. :try_end_0} :catch_8
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_7
+    .catch Ljava/io/EOFException; {:try_start_0 .. :try_end_0} :catch_7
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_6
 
     .line 842
     .end local v8           #in:Ljava/io/DataInputStream;
@@ -2874,13 +2874,7 @@
     :try_start_a
     invoke-virtual {v8}, Ljava/io/DataInputStream;->close()V
     :try_end_a
-    .catch Ljava/lang/Exception; {:try_start_a .. :try_end_a} :catch_4
-
-    goto/16 :goto_1
-
-    .line 957
-    :catch_4
-    move-exception v19
+    .catch Ljava/lang/Exception; {:try_start_a .. :try_end_a} :catch_2
 
     goto/16 :goto_1
 
@@ -3019,9 +3013,9 @@
     :try_start_c
     invoke-virtual {v8}, Ljava/io/DataInputStream;->close()V
     :try_end_c
-    .catch Ljava/lang/Exception; {:try_start_c .. :try_end_c} :catch_6
+    .catch Ljava/lang/Exception; {:try_start_c .. :try_end_c} :catch_4
 
-    .line 957
+    .line 954
     :cond_b
     :goto_8
     throw v19
@@ -3253,44 +3247,52 @@
     .end local v2           #config:Landroid/net/wifi/WifiConfiguration;
     .end local v5           #exclusionList:Ljava/lang/String;
     .end local v7           #id:I
+    .end local v9           #in:Ljava/io/DataInputStream;
     .end local v10           #ipAssignment:Landroid/net/wifi/WifiConfiguration$IpAssignment;
     .end local v11           #key:Ljava/lang/String;
     .end local v13           #linkProperties:Landroid/net/LinkProperties;
     .end local v14           #proxyHost:Ljava/lang/String;
     .end local v15           #proxyPort:I
     .end local v17           #proxySettings:Landroid/net/wifi/WifiConfiguration$ProxySettings;
+    .end local v18           #version:I
+    .restart local v8       #in:Ljava/io/DataInputStream;
+    :catch_4
+    move-exception v20
+
+    goto/16 :goto_8
+
+    .end local v8           #in:Ljava/io/DataInputStream;
+    .restart local v9       #in:Ljava/io/DataInputStream;
+    .restart local v18       #version:I
     :catch_5
     move-exception v19
 
     goto/16 :goto_0
 
+    .line 954
     .end local v9           #in:Ljava/io/DataInputStream;
     .end local v18           #version:I
     .restart local v8       #in:Ljava/io/DataInputStream;
-    :catch_6
-    move-exception v20
-
-    goto/16 :goto_8
-
-    .line 954
     :catchall_1
     move-exception v19
 
     goto/16 :goto_7
 
     .line 951
-    :catch_7
+    :catch_6
     move-exception v4
 
     goto/16 :goto_6
 
     .line 950
-    :catch_8
+    :catch_7
     move-exception v19
 
     goto/16 :goto_4
 
     .line 915
+    nop
+
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_2

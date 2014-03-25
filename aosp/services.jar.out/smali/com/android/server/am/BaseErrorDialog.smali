@@ -18,7 +18,7 @@
     const/high16 v3, 0x2
 
     .line 31
-    const v1, 0x10302fb
+    const v1, #style@Theme.Dialog.AppError#t
 
     invoke-direct {p0, p1, v1}, Landroid/app/AlertDialog;-><init>(Landroid/content/Context;I)V
 
@@ -73,7 +73,7 @@
     invoke-virtual {v1, v0}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
     .line 39
-    const v1, 0x1010355
+    const v1, #attr@alertDialogIcon#t
 
     invoke-virtual {p0, v1}, Lcom/android/server/am/BaseErrorDialog;->setIconAttribute(I)V
 
@@ -111,7 +111,7 @@
 
     .prologue
     .line 58
-    const v1, 0x1020019
+    const v1, #id@button1#t
 
     invoke-virtual {p0, v1}, Lcom/android/server/am/BaseErrorDialog;->findViewById(I)Landroid/view/View;
 
@@ -128,7 +128,7 @@
 
     .line 62
     :cond_0
-    const v1, 0x102001a
+    const v1, #id@button2#t
 
     invoke-virtual {p0, v1}, Lcom/android/server/am/BaseErrorDialog;->findViewById(I)Landroid/view/View;
 
@@ -146,7 +146,7 @@
 
     .line 66
     :cond_1
-    const v1, 0x102001b
+    const v1, #id@button3#t
 
     invoke-virtual {p0, v1}, Lcom/android/server/am/BaseErrorDialog;->findViewById(I)Landroid/view/View;
 

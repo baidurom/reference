@@ -25,13 +25,13 @@
     .parameter "looper"
 
     .prologue
-    .line 237
+    .line 238
     iput-object p1, p0, Lcom/android/server/WifiService$AsyncServiceHandler;->this$0:Lcom/android/server/WifiService;
 
-    .line 238
+    .line 239
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 239
+    .line 240
     return-void
 .end method
 
@@ -50,12 +50,12 @@
 
     const/4 v2, 0x0
 
-    .line 243
+    .line 244
     iget v3, p1, Landroid/os/Message;->what:I
 
     sparse-switch v3, :sswitch_data_0
 
-    .line 314
+    .line 315
     const-string v1, "WifiService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -78,18 +78,18 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 318
+    .line 319
     :cond_0
     :goto_0
     return-void
 
-    .line 245
+    .line 246
     :sswitch_0
     iget v1, p1, Landroid/os/Message;->arg1:I
 
     if-nez v1, :cond_1
 
-    .line 247
+    .line 248
     iget-object v1, p0, Lcom/android/server/WifiService$AsyncServiceHandler;->this$0:Lcom/android/server/WifiService;
 
     #getter for: Lcom/android/server/WifiService;->mClients:Ljava/util/List;
@@ -105,7 +105,7 @@
 
     goto :goto_0
 
-    .line 249
+    .line 250
     :cond_1
     const-string v1, "WifiService"
 
@@ -133,7 +133,7 @@
 
     goto :goto_0
 
-    .line 254
+    .line 255
     :sswitch_1
     iget v1, p1, Landroid/os/Message;->arg1:I
 
@@ -141,7 +141,7 @@
 
     if-ne v1, v2, :cond_2
 
-    .line 259
+    .line 260
     :cond_2
     iget-object v1, p0, Lcom/android/server/WifiService$AsyncServiceHandler;->this$0:Lcom/android/server/WifiService;
 
@@ -158,13 +158,13 @@
 
     goto :goto_0
 
-    .line 263
+    .line 264
     :sswitch_2
     new-instance v0, Lcom/android/internal/util/AsyncChannel;
 
     invoke-direct {v0}, Lcom/android/internal/util/AsyncChannel;-><init>()V
 
-    .line 264
+    .line 265
     .local v0, ac:Lcom/android/internal/util/AsyncChannel;
     iget-object v1, p0, Lcom/android/server/WifiService$AsyncServiceHandler;->this$0:Lcom/android/server/WifiService;
 
@@ -179,7 +179,7 @@
 
     goto :goto_0
 
-    .line 268
+    .line 269
     .end local v0           #ac:Lcom/android/internal/util/AsyncChannel;
     :sswitch_3
     iget-object v3, p0, Lcom/android/server/WifiService$AsyncServiceHandler;->this$0:Lcom/android/server/WifiService;
@@ -192,12 +192,12 @@
     #setter for: Lcom/android/server/WifiService;->mEnableTrafficStatsPoll:Z
     invoke-static {v3, v1}, Lcom/android/server/WifiService;->access$302(Lcom/android/server/WifiService;Z)Z
 
-    .line 269
+    .line 270
     iget-object v1, p0, Lcom/android/server/WifiService$AsyncServiceHandler;->this$0:Lcom/android/server/WifiService;
 
     invoke-static {v1}, Lcom/android/server/WifiService;->access$408(Lcom/android/server/WifiService;)I
 
-    .line 270
+    .line 271
     iget-object v1, p0, Lcom/android/server/WifiService$AsyncServiceHandler;->this$0:Lcom/android/server/WifiService;
 
     #getter for: Lcom/android/server/WifiService;->mEnableTrafficStatsPoll:Z
@@ -207,13 +207,13 @@
 
     if-eqz v1, :cond_0
 
-    .line 271
+    .line 272
     iget-object v1, p0, Lcom/android/server/WifiService$AsyncServiceHandler;->this$0:Lcom/android/server/WifiService;
 
     #calls: Lcom/android/server/WifiService;->notifyOnDataActivity()V
     invoke-static {v1}, Lcom/android/server/WifiService;->access$500(Lcom/android/server/WifiService;)V
 
-    .line 272
+    .line 273
     iget-object v1, p0, Lcom/android/server/WifiService$AsyncServiceHandler;->this$0:Lcom/android/server/WifiService;
 
     #getter for: Lcom/android/server/WifiService;->mTrafficStatsPollToken:I
@@ -232,10 +232,10 @@
     :cond_3
     move v1, v2
 
-    .line 268
+    .line 269
     goto :goto_1
 
-    .line 278
+    .line 279
     :sswitch_4
     iget v1, p1, Landroid/os/Message;->arg1:I
 
@@ -248,13 +248,13 @@
 
     if-ne v1, v3, :cond_0
 
-    .line 279
+    .line 280
     iget-object v1, p0, Lcom/android/server/WifiService$AsyncServiceHandler;->this$0:Lcom/android/server/WifiService;
 
     #calls: Lcom/android/server/WifiService;->notifyOnDataActivity()V
     invoke-static {v1}, Lcom/android/server/WifiService;->access$500(Lcom/android/server/WifiService;)V
 
-    .line 280
+    .line 281
     iget-object v1, p0, Lcom/android/server/WifiService$AsyncServiceHandler;->this$0:Lcom/android/server/WifiService;
 
     #getter for: Lcom/android/server/WifiService;->mTrafficStatsPollToken:I
@@ -270,7 +270,7 @@
 
     goto/16 :goto_0
 
-    .line 286
+    .line 287
     :sswitch_5
     iget-object v1, p0, Lcom/android/server/WifiService$AsyncServiceHandler;->this$0:Lcom/android/server/WifiService;
 
@@ -287,7 +287,7 @@
 
     goto/16 :goto_0
 
-    .line 290
+    .line 291
     :sswitch_6
     iget-object v1, p0, Lcom/android/server/WifiService$AsyncServiceHandler;->this$0:Lcom/android/server/WifiService;
 
@@ -304,7 +304,7 @@
 
     goto/16 :goto_0
 
-    .line 294
+    .line 295
     :sswitch_7
     iget-object v1, p0, Lcom/android/server/WifiService$AsyncServiceHandler;->this$0:Lcom/android/server/WifiService;
 
@@ -321,7 +321,7 @@
 
     goto/16 :goto_0
 
-    .line 298
+    .line 299
     :sswitch_8
     iget-object v1, p0, Lcom/android/server/WifiService$AsyncServiceHandler;->this$0:Lcom/android/server/WifiService;
 
@@ -338,7 +338,7 @@
 
     goto/16 :goto_0
 
-    .line 302
+    .line 303
     :sswitch_9
     iget-object v1, p0, Lcom/android/server/WifiService$AsyncServiceHandler;->this$0:Lcom/android/server/WifiService;
 
@@ -355,7 +355,7 @@
 
     goto/16 :goto_0
 
-    .line 306
+    .line 307
     :sswitch_a
     iget-object v1, p0, Lcom/android/server/WifiService$AsyncServiceHandler;->this$0:Lcom/android/server/WifiService;
 
@@ -372,7 +372,7 @@
 
     goto/16 :goto_0
 
-    .line 310
+    .line 311
     :sswitch_b
     iget-object v1, p0, Lcom/android/server/WifiService$AsyncServiceHandler;->this$0:Lcom/android/server/WifiService;
 
@@ -389,7 +389,7 @@
 
     goto/16 :goto_0
 
-    .line 243
+    .line 244
     :sswitch_data_0
     .sparse-switch
         0x11000 -> :sswitch_0

@@ -136,7 +136,7 @@
 
     move-result-object v1
 
-    const v2, 0x1030216
+    const v2, #style@TextAppearance.SlidingTabNormal#t
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextAppearance(Landroid/content/Context;I)V
 
@@ -989,7 +989,7 @@
 
     move-result-object v6
 
-    const v7, 0x1030216
+    const v7, #style@TextAppearance.SlidingTabNormal#t
 
     invoke-virtual {v5, v6, v7}, Landroid/widget/TextView;->setTextAppearance(Landroid/content/Context;I)V
 
@@ -1268,7 +1268,7 @@
     .line 270
     new-array v0, v2, [I
 
-    const v1, 0x10100a2
+    const v1, #attr@state_active#t
 
     aput v1, v0, v3
 
@@ -1328,7 +1328,7 @@
 
     move-result-object v2
 
-    const v3, 0x1030217
+    const v3, #style@TextAppearance.SlidingTabActive#t
 
     invoke-virtual {v1, v2, v3}, Landroid/widget/TextView;->setTextAppearance(Landroid/content/Context;I)V
 
@@ -1362,7 +1362,7 @@
 
     move-result-object v2
 
-    const v3, 0x1030216
+    const v3, #style@TextAppearance.SlidingTabNormal#t
 
     invoke-virtual {v1, v2, v3}, Landroid/widget/TextView;->setTextAppearance(Landroid/content/Context;I)V
 

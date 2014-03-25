@@ -38,7 +38,7 @@
 
     move-result-object v0
 
-    const v1, 0x1080401
+    const v1, #drawable@magnified_region_frame#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

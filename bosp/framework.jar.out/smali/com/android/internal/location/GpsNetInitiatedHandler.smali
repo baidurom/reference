@@ -99,7 +99,7 @@
 
     .prologue
     .line 129
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 92
     const/4 v0, 0x0
@@ -534,7 +534,7 @@
 
     .prologue
     .line 407
-    const v1, 0x10404b0
+    const v1, #string@gpsNotifMessage#t
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -588,7 +588,7 @@
 
     .prologue
     .line 391
-    const v1, 0x10404ae
+    const v1, #string@gpsNotifTicker#t
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -642,7 +642,7 @@
 
     .prologue
     .line 400
-    const v1, 0x10404af
+    const v1, #string@gpsNotifTitle#t
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -839,7 +839,7 @@
     .line 198
     iget-object v5, p0, Lcom/android/internal/location/GpsNetInitiatedHandler;->mNiNotification:Landroid/app/Notification;
 
-    const v6, 0x108054d
+    const v6, #drawable@stat_sys_gps_on#t
 
     iput v6, v5, Landroid/app/Notification;->icon:I
 

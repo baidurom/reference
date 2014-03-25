@@ -275,7 +275,7 @@
     :try_start_0
     const-class v0, Landroid/filterpacks/imageproc/ImageCombineFilter;
 
-    const-string v1, "mProgram"
+    const-string/jumbo v1, "mProgram"
 
     invoke-virtual {v0, v1}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 

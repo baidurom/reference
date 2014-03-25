@@ -129,14 +129,14 @@
 
     .line 2669
     .local v10, lookupUri:Landroid/net/Uri;
-    if-eqz v8, :cond_1
+    if-eqz v8, :cond_2
 
     :try_start_0
     invoke-interface {v8}, Landroid/database/Cursor;->moveToFirst()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     .line 2670
     const/4 v0, 0x0
@@ -165,33 +165,31 @@
     .end local v10           #lookupUri:Landroid/net/Uri;
     if-eqz v8, :cond_0
 
+    .end local v6           #contactId:J
+    .end local v9           #lookupKey:Ljava/lang/String;
+    :goto_0
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
     .line 2677
-    .end local v6           #contactId:J
-    .end local v9           #lookupKey:Ljava/lang/String;
     :cond_0
-    :goto_0
     return-object v10
 
     .line 2675
     .restart local v10       #lookupUri:Landroid/net/Uri;
-    :cond_1
-    if-eqz v8, :cond_0
-
-    invoke-interface {v8}, Landroid/database/Cursor;->close()V
-
-    goto :goto_0
-
     :catchall_0
     move-exception v0
 
-    if-eqz v8, :cond_2
+    if-eqz v8, :cond_1
 
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
-    :cond_2
+    :cond_1
     throw v0
+
+    :cond_2
+    if-eqz v8, :cond_0
+
+    goto :goto_0
 .end method
 
 .method public static newEntityIterator(Landroid/database/Cursor;)Landroid/content/EntityIterator;

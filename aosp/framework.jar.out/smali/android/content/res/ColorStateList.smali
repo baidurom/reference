@@ -550,7 +550,7 @@
     .line 208
     .restart local v18       #stateResId:I
     :cond_7
-    const v22, 0x10101a5
+    const v22, #attr@color#t
 
     move/from16 v0, v18
 

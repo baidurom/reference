@@ -681,7 +681,7 @@
 
     move-result-object v0
 
-    const v1, 0x10802bf
+    const v1, #drawable@ic_contact_picture#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

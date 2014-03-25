@@ -78,11 +78,11 @@
     .parameter "layoutId"
 
     .prologue
-    const v8, 0x102032b
+    const v8, #id@overflow_divider#t
 
-    const v7, 0x1020326
+    const v7, #id@line3#t
 
-    const v6, 0x1020324
+    const v6, #id@line1#t
 
     const/16 v5, 0x8
 
@@ -145,7 +145,7 @@
     if-eqz v1, :cond_3
 
     .line 1711
-    const v2, 0x1020046
+    const v2, #id@text#t
 
     invoke-virtual {v0, v2, v1}, Landroid/widget/RemoteViews;->setTextViewText(ILjava/lang/CharSequence;)V
 

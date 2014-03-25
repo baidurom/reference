@@ -1027,7 +1027,7 @@
 
     move-result-object v8
 
-    const v9, 0x1040018
+    const v9, #string@config_ethernet_iface_regex#t
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

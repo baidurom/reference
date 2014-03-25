@@ -247,7 +247,18 @@
 .method public static native freeCaches()V
 .end method
 
-.method public static native freeTextLayoutCaches()V
+.method public static freeTextLayoutCaches()V
+    .locals 0
+
+    .prologue
+    .line 1624
+    invoke-static {}, Landroid/graphics/Canvas;->freeTextLayoutCachesJNI()V
+
+    .line 1625
+    return-void
+.end method
+
+.method private static native freeTextLayoutCachesJNI()V
 .end method
 
 .method private static native initRaster(I)I

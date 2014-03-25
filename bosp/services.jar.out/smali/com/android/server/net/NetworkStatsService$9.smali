@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 826
+    .line 861
     iput-object p1, p0, Lcom/android/server/net/NetworkStatsService$9;->this$0:Lcom/android/server/net/NetworkStatsService;
 
     invoke-direct {p0}, Landroid/telephony/PhoneStateListener;-><init>()V
@@ -44,11 +44,11 @@
 
     const/4 v3, 0x0
 
-    .line 829
+    .line 864
     iget-object v4, p0, Lcom/android/server/net/NetworkStatsService$9;->this$0:Lcom/android/server/net/NetworkStatsService;
 
     #getter for: Lcom/android/server/net/NetworkStatsService;->mLastPhoneState:I
-    invoke-static {v4}, Lcom/android/server/net/NetworkStatsService;->access$1500(Lcom/android/server/net/NetworkStatsService;)I
+    invoke-static {v4}, Lcom/android/server/net/NetworkStatsService;->access$1700(Lcom/android/server/net/NetworkStatsService;)I
 
     move-result v4
 
@@ -56,13 +56,13 @@
 
     move v1, v2
 
-    .line 830
+    .line 865
     .local v1, stateChanged:Z
     :goto_0
     iget-object v4, p0, Lcom/android/server/net/NetworkStatsService$9;->this$0:Lcom/android/server/net/NetworkStatsService;
 
     #getter for: Lcom/android/server/net/NetworkStatsService;->mLastPhoneNetworkType:I
-    invoke-static {v4}, Lcom/android/server/net/NetworkStatsService;->access$1600(Lcom/android/server/net/NetworkStatsService;)I
+    invoke-static {v4}, Lcom/android/server/net/NetworkStatsService;->access$1800(Lcom/android/server/net/NetworkStatsService;)I
 
     move-result v4
 
@@ -70,25 +70,25 @@
 
     move v0, v2
 
-    .line 832
+    .line 867
     .local v0, networkTypeChanged:Z
     :goto_1
     if-eqz v0, :cond_0
 
     if-nez v1, :cond_0
 
-    .line 839
+    .line 874
     iget-object v2, p0, Lcom/android/server/net/NetworkStatsService$9;->this$0:Lcom/android/server/net/NetworkStatsService;
 
     #getter for: Lcom/android/server/net/NetworkStatsService;->mHandler:Landroid/os/Handler;
-    invoke-static {v2}, Lcom/android/server/net/NetworkStatsService;->access$1400(Lcom/android/server/net/NetworkStatsService;)Landroid/os/Handler;
+    invoke-static {v2}, Lcom/android/server/net/NetworkStatsService;->access$1600(Lcom/android/server/net/NetworkStatsService;)Landroid/os/Handler;
 
     move-result-object v2
 
     iget-object v3, p0, Lcom/android/server/net/NetworkStatsService$9;->this$0:Lcom/android/server/net/NetworkStatsService;
 
     #getter for: Lcom/android/server/net/NetworkStatsService;->mHandler:Landroid/os/Handler;
-    invoke-static {v3}, Lcom/android/server/net/NetworkStatsService;->access$1400(Lcom/android/server/net/NetworkStatsService;)Landroid/os/Handler;
+    invoke-static {v3}, Lcom/android/server/net/NetworkStatsService;->access$1600(Lcom/android/server/net/NetworkStatsService;)Landroid/os/Handler;
 
     move-result-object v3
 
@@ -102,20 +102,20 @@
 
     invoke-virtual {v2, v3, v4, v5}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 843
+    .line 878
     :cond_0
     iget-object v2, p0, Lcom/android/server/net/NetworkStatsService$9;->this$0:Lcom/android/server/net/NetworkStatsService;
 
     #setter for: Lcom/android/server/net/NetworkStatsService;->mLastPhoneState:I
-    invoke-static {v2, p1}, Lcom/android/server/net/NetworkStatsService;->access$1502(Lcom/android/server/net/NetworkStatsService;I)I
+    invoke-static {v2, p1}, Lcom/android/server/net/NetworkStatsService;->access$1702(Lcom/android/server/net/NetworkStatsService;I)I
 
-    .line 844
+    .line 879
     iget-object v2, p0, Lcom/android/server/net/NetworkStatsService$9;->this$0:Lcom/android/server/net/NetworkStatsService;
 
     #setter for: Lcom/android/server/net/NetworkStatsService;->mLastPhoneNetworkType:I
-    invoke-static {v2, p2}, Lcom/android/server/net/NetworkStatsService;->access$1602(Lcom/android/server/net/NetworkStatsService;I)I
+    invoke-static {v2, p2}, Lcom/android/server/net/NetworkStatsService;->access$1802(Lcom/android/server/net/NetworkStatsService;I)I
 
-    .line 845
+    .line 880
     return-void
 
     .end local v0           #networkTypeChanged:Z
@@ -123,13 +123,13 @@
     :cond_1
     move v1, v3
 
-    .line 829
+    .line 864
     goto :goto_0
 
     .restart local v1       #stateChanged:Z
     :cond_2
     move v0, v3
 
-    .line 830
+    .line 865
     goto :goto_1
 .end method

@@ -51,9 +51,9 @@
 
     .prologue
     .line 88
-    const v0, 0x1090082
+    const v0, #layout@locale_picker_item#t
 
-    const v1, 0x1020176
+    const v1, #id@locale#t
 
     invoke-static {p0, v0, v1}, Lcom/android/internal/app/LocalePicker;->constructAdapter(Landroid/content/Context;II)Landroid/widget/ArrayAdapter;
 
@@ -101,7 +101,7 @@
 
     .line 95
     .local v18, locales:[Ljava/lang/String;
-    const v2, 0x1070007
+    const v2, #array@special_locale_codes#t
 
     move-object/from16 v0, v21
 
@@ -111,7 +111,7 @@
 
     .line 96
     .local v23, specialLocaleCodes:[Ljava/lang/String;
-    const v2, 0x1070008
+    const v2, #array@special_locale_names#t
 
     move-object/from16 v0, v21
 

@@ -1137,7 +1137,7 @@
 
     move-result-object v6
 
-    const v7, 0x10e000d
+    const v7, #integer@config_wifi_framework_scan_interval#t
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1152,7 +1152,7 @@
 
     move-result-object v6
 
-    const v7, 0x10e000e
+    const v7, #integer@config_wifi_driver_stop_delay#t
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1167,7 +1167,7 @@
 
     move-result-object v6
 
-    const v7, 0x1110017
+    const v7, #bool@config_wifi_background_scan_support#t
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -1182,7 +1182,7 @@
 
     move-result-object v6
 
-    const v7, 0x104001a
+    const v7, #string@config_wifi_p2p_device_type#t
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -8446,7 +8446,7 @@
     invoke-virtual {v2, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
     .line 1177
-    const-string v2, "mReconnectCount "
+    const-string/jumbo v2, "mReconnectCount "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
@@ -8476,7 +8476,7 @@
     invoke-virtual {v2, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
     .line 1179
-    const-string v2, "mUserWantsSuspendOpt "
+    const-string/jumbo v2, "mUserWantsSuspendOpt "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
@@ -8491,7 +8491,7 @@
     invoke-virtual {v2, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
     .line 1180
-    const-string v2, "mSuspendOptNeedsDisabled "
+    const-string/jumbo v2, "mSuspendOptNeedsDisabled "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 

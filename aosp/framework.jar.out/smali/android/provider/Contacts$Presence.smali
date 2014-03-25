@@ -72,32 +72,32 @@
     packed-switch p0, :pswitch_data_0
 
     .line 1659
-    const v0, 0x108006a
+    const v0, #drawable@presence_offline#t
 
     :goto_0
     return v0
 
     .line 1645
     :pswitch_0
-    const v0, 0x108006b
+    const v0, #drawable@presence_online#t
 
     goto :goto_0
 
     .line 1649
     :pswitch_1
-    const v0, 0x1080067
+    const v0, #drawable@presence_away#t
 
     goto :goto_0
 
     .line 1652
     :pswitch_2
-    const v0, 0x1080068
+    const v0, #drawable@presence_busy#t
 
     goto :goto_0
 
     .line 1655
     :pswitch_3
-    const v0, 0x1080069
+    const v0, #drawable@presence_invisible#t
 
     goto :goto_0
 

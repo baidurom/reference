@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 456
+    .line 457
     iput-object p1, p0, Lcom/android/server/net/NetworkPolicyManagerService$4;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -42,22 +42,22 @@
     .prologue
     const/4 v2, -0x1
 
-    .line 461
+    .line 462
     const-string v1, "android.intent.extra.UID"
 
     invoke-virtual {p2, v1, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v0
 
-    .line 462
+    .line 463
     .local v0, uid:I
     if-ne v0, v2, :cond_0
 
-    .line 471
+    .line 472
     :goto_0
     return-void
 
-    .line 466
+    .line 467
     :cond_0
     iget-object v1, p0, Lcom/android/server/net/NetworkPolicyManagerService$4;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
@@ -68,7 +68,7 @@
 
     monitor-enter v2
 
-    .line 467
+    .line 468
     :try_start_0
     iget-object v1, p0, Lcom/android/server/net/NetworkPolicyManagerService$4;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
@@ -79,19 +79,19 @@
 
     invoke-virtual {v1, v0}, Landroid/util/SparseIntArray;->delete(I)V
 
-    .line 468
+    .line 469
     iget-object v1, p0, Lcom/android/server/net/NetworkPolicyManagerService$4;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     #calls: Lcom/android/server/net/NetworkPolicyManagerService;->updateRulesForUidLocked(I)V
     invoke-static {v1, v0}, Lcom/android/server/net/NetworkPolicyManagerService;->access$200(Lcom/android/server/net/NetworkPolicyManagerService;I)V
 
-    .line 469
+    .line 470
     iget-object v1, p0, Lcom/android/server/net/NetworkPolicyManagerService$4;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     #calls: Lcom/android/server/net/NetworkPolicyManagerService;->writePolicyLocked()V
     invoke-static {v1}, Lcom/android/server/net/NetworkPolicyManagerService;->access$400(Lcom/android/server/net/NetworkPolicyManagerService;)V
 
-    .line 470
+    .line 471
     monitor-exit v2
 
     goto :goto_0

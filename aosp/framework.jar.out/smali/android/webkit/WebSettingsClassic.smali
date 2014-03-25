@@ -452,7 +452,7 @@
     iput-object p2, p0, Landroid/webkit/WebSettingsClassic;->mWebView:Landroid/webkit/WebViewClassic;
 
     .line 280
-    const v1, 0x1040069
+    const v1, #string@default_text_encoding#t
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1043,7 +1043,7 @@
 
     move-result-object v8
 
-    const v9, 0x1040340
+    const v9, #string@web_user_agent_target_content#t
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -1059,7 +1059,7 @@
 
     move-result-object v8
 
-    const v9, 0x104033f
+    const v9, #string@web_user_agent#t
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 

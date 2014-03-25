@@ -188,7 +188,7 @@
 
     move-result-object v6
 
-    const v7, 0x1040434
+    const v7, #string@perms_description_app#t
 
     new-array v8, v9, [Ljava/lang/Object;
 
@@ -276,7 +276,7 @@
     iput-object p2, p0, Landroid/widget/AppSecurityPermissions$PermissionItemView;->mPerm:Landroid/widget/AppSecurityPermissions$MyPermissionInfo;
 
     .line 165
-    const v8, 0x1020268
+    const v8, #id@perm_icon#t
 
     invoke-virtual {p0, v8}, Landroid/widget/AppSecurityPermissions$PermissionItemView;->findViewById(I)Landroid/view/View;
 
@@ -286,7 +286,7 @@
 
     .line 166
     .local v5, permGrpIcon:Landroid/widget/ImageView;
-    const v8, 0x1020269
+    const v8, #id@perm_name#t
 
     invoke-virtual {p0, v8}, Landroid/widget/AppSecurityPermissions$PermissionItemView;->findViewById(I)Landroid/view/View;
 

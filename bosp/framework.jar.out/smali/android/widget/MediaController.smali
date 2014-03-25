@@ -535,7 +535,7 @@
     const/16 v3, 0x8
 
     .line 244
-    const v1, 0x1020314
+    const v1, #id@pause#t
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -564,7 +564,7 @@
 
     .line 250
     :cond_0
-    const v1, 0x1020315
+    const v1, #id@ffwd#t
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -605,7 +605,7 @@
 
     .line 258
     :cond_1
-    const v1, 0x1020313
+    const v1, #id@rew#t
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -644,7 +644,7 @@
 
     .line 267
     :cond_2
-    const v1, 0x1020316
+    const v1, #id@next#t
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -674,7 +674,7 @@
 
     .line 271
     :cond_3
-    const v1, 0x1020312
+    const v1, #id@prev#t
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -704,7 +704,7 @@
 
     .line 276
     :cond_4
-    const v1, 0x1020318
+    const v1, #id@mediacontroller_progress#t
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -748,7 +748,7 @@
 
     .line 285
     :cond_6
-    const v1, 0x1020064
+    const v1, #id@time#t
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -759,7 +759,7 @@
     iput-object v1, p0, Landroid/widget/MediaController;->mEndTime:Landroid/widget/TextView;
 
     .line 286
-    const v1, 0x1020317
+    const v1, #id@time_current#t
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -874,7 +874,7 @@
     .line 134
     iget-object v0, p0, Landroid/widget/MediaController;->mWindow:Landroid/view/Window;
 
-    const v1, 0x106000d
+    const v1, #color@transparent#t
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->setBackgroundDrawableResource(I)V
 
@@ -928,7 +928,7 @@
     .line 153
     const/4 v1, -0x2
 
-    iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iput v1, v0, Landroid/view/WindowManager$LayoutParams;->height:I
 
     .line 154
     iput v3, v0, Landroid/view/WindowManager$LayoutParams;->x:I
@@ -1285,7 +1285,7 @@
 
     move-result v2
 
-    iput v2, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iput v2, v1, Landroid/view/WindowManager$LayoutParams;->width:I
 
     .line 172
     const/4 v2, 0x1
@@ -1337,7 +1337,7 @@
     .line 507
     iget-object v0, p0, Landroid/widget/MediaController;->mPauseButton:Landroid/widget/ImageButton;
 
-    const v1, 0x1080023
+    const v1, #drawable@ic_media_pause#t
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageButton;->setImageResource(I)V
 
@@ -1347,7 +1347,7 @@
     :cond_2
     iget-object v0, p0, Landroid/widget/MediaController;->mPauseButton:Landroid/widget/ImageButton;
 
-    const v1, 0x1080024
+    const v1, #drawable@ic_media_play#t
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageButton;->setImageResource(I)V
 
@@ -1643,7 +1643,7 @@
 
     .line 236
     .local v0, inflate:Landroid/view/LayoutInflater;
-    const v1, 0x1090083
+    const v1, #layout@media_controller#t
 
     const/4 v2, 0x0
 
