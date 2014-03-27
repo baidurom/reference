@@ -33,6 +33,8 @@
 
 .field public static final DEBUG_LOG_GL_CALLS:I = 0x2
 
+.field private static final DRAW_TWICE_AFTER_SIZE_CHANGED:Z = true
+
 .field private static final LOG_ATTACH_DETACH:Z = false
 
 .field private static final LOG_EGL:Z = false
@@ -77,16 +79,7 @@
 
 .field private mRenderer:Landroid/opengl/GLSurfaceView$Renderer;
 
-.field private final mThisWeakRef:Ljava/lang/ref/WeakReference;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/lang/ref/WeakReference",
-            "<",
-            "Landroid/opengl/GLSurfaceView;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private mSizeChanged:Z
 
 
 # direct methods
@@ -94,7 +87,7 @@
     .locals 2
 
     .prologue
-    .line 1915
+    .line 1836
     new-instance v0, Landroid/opengl/GLSurfaceView$GLThreadManager;
 
     const/4 v1, 0x0
@@ -111,20 +104,18 @@
     .parameter "context"
 
     .prologue
-    .line 213
+    .line 215
     invoke-direct {p0, p1}, Landroid/view/SurfaceView;-><init>(Landroid/content/Context;)V
 
-    .line 1917
-    new-instance v0, Ljava/lang/ref/WeakReference;
+    .line 1837
+    const/4 v0, 0x1
 
-    invoke-direct {v0, p0}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+    iput-boolean v0, p0, Landroid/opengl/GLSurfaceView;->mSizeChanged:Z
 
-    iput-object v0, p0, Landroid/opengl/GLSurfaceView;->mThisWeakRef:Ljava/lang/ref/WeakReference;
-
-    .line 214
+    .line 216
     invoke-direct {p0}, Landroid/opengl/GLSurfaceView;->init()V
 
-    .line 215
+    .line 217
     return-void
 .end method
 
@@ -134,30 +125,51 @@
     .parameter "attrs"
 
     .prologue
-    .line 222
+    .line 224
     invoke-direct {p0, p1, p2}, Landroid/view/SurfaceView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 1917
-    new-instance v0, Ljava/lang/ref/WeakReference;
+    .line 1837
+    const/4 v0, 0x1
 
-    invoke-direct {v0, p0}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+    iput-boolean v0, p0, Landroid/opengl/GLSurfaceView;->mSizeChanged:Z
 
-    iput-object v0, p0, Landroid/opengl/GLSurfaceView;->mThisWeakRef:Ljava/lang/ref/WeakReference;
-
-    .line 223
+    .line 225
     invoke-direct {p0}, Landroid/opengl/GLSurfaceView;->init()V
 
-    .line 224
+    .line 226
     return-void
 .end method
 
-.method static synthetic access$1000(Landroid/opengl/GLSurfaceView;)Landroid/opengl/GLSurfaceView$Renderer;
+.method static synthetic access$1000(Landroid/opengl/GLSurfaceView;)Z
     .locals 1
     .parameter "x0"
 
     .prologue
     .line 163
-    iget-object v0, p0, Landroid/opengl/GLSurfaceView;->mRenderer:Landroid/opengl/GLSurfaceView$Renderer;
+    iget-boolean v0, p0, Landroid/opengl/GLSurfaceView;->mSizeChanged:Z
+
+    return v0
+.end method
+
+.method static synthetic access$1002(Landroid/opengl/GLSurfaceView;Z)Z
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 163
+    iput-boolean p1, p0, Landroid/opengl/GLSurfaceView;->mSizeChanged:Z
+
+    return p1
+.end method
+
+.method static synthetic access$1100(Landroid/opengl/GLSurfaceView;)Landroid/opengl/GLSurfaceView$GLThread;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 163
+    iget-object v0, p0, Landroid/opengl/GLSurfaceView;->mGLThread:Landroid/opengl/GLSurfaceView$GLThread;
 
     return-object v0
 .end method
@@ -253,12 +265,12 @@
     .locals 2
 
     .prologue
-    .line 1794
+    .line 1719
     iget-object v0, p0, Landroid/opengl/GLSurfaceView;->mGLThread:Landroid/opengl/GLSurfaceView$GLThread;
 
     if-eqz v0, :cond_0
 
-    .line 1795
+    .line 1720
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string/jumbo v1, "setRenderer has already been called for this instance."
@@ -267,7 +279,7 @@
 
     throw v0
 
-    .line 1798
+    .line 1723
     :cond_0
     return-void
 .end method
@@ -276,64 +288,26 @@
     .locals 1
 
     .prologue
-    .line 242
+    .line 231
     invoke-virtual {p0}, Landroid/opengl/GLSurfaceView;->getHolder()Landroid/view/SurfaceHolder;
 
     move-result-object v0
 
-    .line 243
+    .line 232
     .local v0, holder:Landroid/view/SurfaceHolder;
     invoke-interface {v0, p0}, Landroid/view/SurfaceHolder;->addCallback(Landroid/view/SurfaceHolder$Callback;)V
 
-    .line 251
+    .line 240
     return-void
 .end method
 
 
 # virtual methods
-.method protected finalize()V
-    .locals 1
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/Throwable;
-        }
-    .end annotation
-
-    .prologue
-    .line 229
-    :try_start_0
-    iget-object v0, p0, Landroid/opengl/GLSurfaceView;->mGLThread:Landroid/opengl/GLSurfaceView$GLThread;
-
-    if-eqz v0, :cond_0
-
-    .line 232
-    iget-object v0, p0, Landroid/opengl/GLSurfaceView;->mGLThread:Landroid/opengl/GLSurfaceView$GLThread;
-
-    invoke-virtual {v0}, Landroid/opengl/GLSurfaceView$GLThread;->requestExitAndWait()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 235
-    :cond_0
-    invoke-super {p0}, Ljava/lang/Object;->finalize()V
-
-    .line 237
-    return-void
-
-    .line 235
-    :catchall_0
-    move-exception v0
-
-    invoke-super {p0}, Ljava/lang/Object;->finalize()V
-
-    throw v0
-.end method
-
 .method public getDebugFlags()I
     .locals 1
 
     .prologue
-    .line 288
+    .line 277
     iget v0, p0, Landroid/opengl/GLSurfaceView;->mDebugFlags:I
 
     return v0
@@ -343,7 +317,7 @@
     .locals 1
 
     .prologue
-    .line 317
+    .line 306
     iget-boolean v0, p0, Landroid/opengl/GLSurfaceView;->mPreserveEGLContextOnPause:Z
 
     return v0
@@ -353,7 +327,7 @@
     .locals 1
 
     .prologue
-    .line 504
+    .line 493
     iget-object v0, p0, Landroid/opengl/GLSurfaceView;->mGLThread:Landroid/opengl/GLSurfaceView$GLThread;
 
     invoke-virtual {v0}, Landroid/opengl/GLSurfaceView$GLThread;->getRenderMode()I
@@ -367,10 +341,10 @@
     .locals 3
 
     .prologue
-    .line 580
+    .line 569
     invoke-super {p0}, Landroid/view/SurfaceView;->onAttachedToWindow()V
 
-    .line 584
+    .line 573
     iget-boolean v1, p0, Landroid/opengl/GLSurfaceView;->mDetached:Z
 
     if-eqz v1, :cond_2
@@ -379,56 +353,56 @@
 
     if-eqz v1, :cond_2
 
-    .line 585
+    .line 574
     const/4 v0, 0x1
 
-    .line 586
+    .line 575
     .local v0, renderMode:I
     iget-object v1, p0, Landroid/opengl/GLSurfaceView;->mGLThread:Landroid/opengl/GLSurfaceView$GLThread;
 
     if-eqz v1, :cond_0
 
-    .line 587
+    .line 576
     iget-object v1, p0, Landroid/opengl/GLSurfaceView;->mGLThread:Landroid/opengl/GLSurfaceView$GLThread;
 
     invoke-virtual {v1}, Landroid/opengl/GLSurfaceView$GLThread;->getRenderMode()I
 
     move-result v0
 
-    .line 589
+    .line 578
     :cond_0
     new-instance v1, Landroid/opengl/GLSurfaceView$GLThread;
 
-    iget-object v2, p0, Landroid/opengl/GLSurfaceView;->mThisWeakRef:Ljava/lang/ref/WeakReference;
+    iget-object v2, p0, Landroid/opengl/GLSurfaceView;->mRenderer:Landroid/opengl/GLSurfaceView$Renderer;
 
-    invoke-direct {v1, v2}, Landroid/opengl/GLSurfaceView$GLThread;-><init>(Ljava/lang/ref/WeakReference;)V
+    invoke-direct {v1, p0, v2}, Landroid/opengl/GLSurfaceView$GLThread;-><init>(Landroid/opengl/GLSurfaceView;Landroid/opengl/GLSurfaceView$Renderer;)V
 
     iput-object v1, p0, Landroid/opengl/GLSurfaceView;->mGLThread:Landroid/opengl/GLSurfaceView$GLThread;
 
-    .line 590
+    .line 579
     const/4 v1, 0x1
 
     if-eq v0, v1, :cond_1
 
-    .line 591
+    .line 580
     iget-object v1, p0, Landroid/opengl/GLSurfaceView;->mGLThread:Landroid/opengl/GLSurfaceView$GLThread;
 
     invoke-virtual {v1, v0}, Landroid/opengl/GLSurfaceView$GLThread;->setRenderMode(I)V
 
-    .line 593
+    .line 582
     :cond_1
     iget-object v1, p0, Landroid/opengl/GLSurfaceView;->mGLThread:Landroid/opengl/GLSurfaceView$GLThread;
 
     invoke-virtual {v1}, Landroid/opengl/GLSurfaceView$GLThread;->start()V
 
-    .line 595
+    .line 584
     .end local v0           #renderMode:I
     :cond_2
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Landroid/opengl/GLSurfaceView;->mDetached:Z
 
-    .line 596
+    .line 585
     return-void
 .end method
 
@@ -436,26 +410,26 @@
     .locals 1
 
     .prologue
-    .line 608
+    .line 597
     iget-object v0, p0, Landroid/opengl/GLSurfaceView;->mGLThread:Landroid/opengl/GLSurfaceView$GLThread;
 
     if-eqz v0, :cond_0
 
-    .line 609
+    .line 598
     iget-object v0, p0, Landroid/opengl/GLSurfaceView;->mGLThread:Landroid/opengl/GLSurfaceView$GLThread;
 
     invoke-virtual {v0}, Landroid/opengl/GLSurfaceView$GLThread;->requestExitAndWait()V
 
-    .line 611
+    .line 600
     :cond_0
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/opengl/GLSurfaceView;->mDetached:Z
 
-    .line 612
+    .line 601
     invoke-super {p0}, Landroid/view/SurfaceView;->onDetachedFromWindow()V
 
-    .line 613
+    .line 602
     return-void
 .end method
 
@@ -463,12 +437,12 @@
     .locals 1
 
     .prologue
-    .line 550
+    .line 539
     iget-object v0, p0, Landroid/opengl/GLSurfaceView;->mGLThread:Landroid/opengl/GLSurfaceView$GLThread;
 
     invoke-virtual {v0}, Landroid/opengl/GLSurfaceView$GLThread;->onPause()V
 
-    .line 551
+    .line 540
     return-void
 .end method
 
@@ -476,12 +450,12 @@
     .locals 1
 
     .prologue
-    .line 561
+    .line 550
     iget-object v0, p0, Landroid/opengl/GLSurfaceView;->mGLThread:Landroid/opengl/GLSurfaceView$GLThread;
 
     invoke-virtual {v0}, Landroid/opengl/GLSurfaceView$GLThread;->onResume()V
 
-    .line 562
+    .line 551
     return-void
 .end method
 
@@ -490,12 +464,12 @@
     .parameter "r"
 
     .prologue
-    .line 571
+    .line 560
     iget-object v0, p0, Landroid/opengl/GLSurfaceView;->mGLThread:Landroid/opengl/GLSurfaceView$GLThread;
 
     invoke-virtual {v0, p1}, Landroid/opengl/GLSurfaceView$GLThread;->queueEvent(Ljava/lang/Runnable;)V
 
-    .line 572
+    .line 561
     return-void
 .end method
 
@@ -503,12 +477,12 @@
     .locals 1
 
     .prologue
-    .line 515
+    .line 504
     iget-object v0, p0, Landroid/opengl/GLSurfaceView;->mGLThread:Landroid/opengl/GLSurfaceView$GLThread;
 
     invoke-virtual {v0}, Landroid/opengl/GLSurfaceView$GLThread;->requestRender()V
 
-    .line 516
+    .line 505
     return-void
 .end method
 
@@ -517,10 +491,10 @@
     .parameter "debugFlags"
 
     .prologue
-    .line 280
+    .line 269
     iput p1, p0, Landroid/opengl/GLSurfaceView;->mDebugFlags:I
 
-    .line 281
+    .line 270
     return-void
 .end method
 
@@ -534,7 +508,7 @@
     .parameter "stencilSize"
 
     .prologue
-    .line 441
+    .line 430
     new-instance v0, Landroid/opengl/GLSurfaceView$ComponentSizeChooser;
 
     move-object v1, p0
@@ -555,7 +529,7 @@
 
     invoke-virtual {p0, v0}, Landroid/opengl/GLSurfaceView;->setEGLConfigChooser(Landroid/opengl/GLSurfaceView$EGLConfigChooser;)V
 
-    .line 443
+    .line 432
     return-void
 .end method
 
@@ -564,13 +538,13 @@
     .parameter "configChooser"
 
     .prologue
-    .line 404
+    .line 393
     invoke-direct {p0}, Landroid/opengl/GLSurfaceView;->checkRenderThreadState()V
 
-    .line 405
+    .line 394
     iput-object p1, p0, Landroid/opengl/GLSurfaceView;->mEGLConfigChooser:Landroid/opengl/GLSurfaceView$EGLConfigChooser;
 
-    .line 406
+    .line 395
     return-void
 .end method
 
@@ -579,14 +553,14 @@
     .parameter "needDepth"
 
     .prologue
-    .line 423
+    .line 412
     new-instance v0, Landroid/opengl/GLSurfaceView$SimpleEGLConfigChooser;
 
     invoke-direct {v0, p0, p1}, Landroid/opengl/GLSurfaceView$SimpleEGLConfigChooser;-><init>(Landroid/opengl/GLSurfaceView;Z)V
 
     invoke-virtual {p0, v0}, Landroid/opengl/GLSurfaceView;->setEGLConfigChooser(Landroid/opengl/GLSurfaceView$EGLConfigChooser;)V
 
-    .line 424
+    .line 413
     return-void
 .end method
 
@@ -595,13 +569,13 @@
     .parameter "version"
 
     .prologue
-    .line 472
+    .line 461
     invoke-direct {p0}, Landroid/opengl/GLSurfaceView;->checkRenderThreadState()V
 
-    .line 473
+    .line 462
     iput p1, p0, Landroid/opengl/GLSurfaceView;->mEGLContextClientVersion:I
 
-    .line 474
+    .line 463
     return-void
 .end method
 
@@ -610,13 +584,13 @@
     .parameter "factory"
 
     .prologue
-    .line 373
+    .line 362
     invoke-direct {p0}, Landroid/opengl/GLSurfaceView;->checkRenderThreadState()V
 
-    .line 374
+    .line 363
     iput-object p1, p0, Landroid/opengl/GLSurfaceView;->mEGLContextFactory:Landroid/opengl/GLSurfaceView$EGLContextFactory;
 
-    .line 375
+    .line 364
     return-void
 .end method
 
@@ -625,13 +599,13 @@
     .parameter "factory"
 
     .prologue
-    .line 387
+    .line 376
     invoke-direct {p0}, Landroid/opengl/GLSurfaceView;->checkRenderThreadState()V
 
-    .line 388
+    .line 377
     iput-object p1, p0, Landroid/opengl/GLSurfaceView;->mEGLWindowSurfaceFactory:Landroid/opengl/GLSurfaceView$EGLWindowSurfaceFactory;
 
-    .line 389
+    .line 378
     return-void
 .end method
 
@@ -640,10 +614,10 @@
     .parameter "glWrapper"
 
     .prologue
-    .line 267
+    .line 256
     iput-object p1, p0, Landroid/opengl/GLSurfaceView;->mGLWrapper:Landroid/opengl/GLSurfaceView$GLWrapper;
 
-    .line 268
+    .line 257
     return-void
 .end method
 
@@ -652,10 +626,10 @@
     .parameter "preserveOnPause"
 
     .prologue
-    .line 310
+    .line 299
     iput-boolean p1, p0, Landroid/opengl/GLSurfaceView;->mPreserveEGLContextOnPause:Z
 
-    .line 311
+    .line 300
     return-void
 .end method
 
@@ -664,12 +638,12 @@
     .parameter "renderMode"
 
     .prologue
-    .line 493
+    .line 482
     iget-object v0, p0, Landroid/opengl/GLSurfaceView;->mGLThread:Landroid/opengl/GLSurfaceView$GLThread;
 
     invoke-virtual {v0, p1}, Landroid/opengl/GLSurfaceView$GLThread;->setRenderMode(I)V
 
-    .line 494
+    .line 483
     return-void
 .end method
 
@@ -680,15 +654,15 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 347
+    .line 336
     invoke-direct {p0}, Landroid/opengl/GLSurfaceView;->checkRenderThreadState()V
 
-    .line 348
+    .line 337
     iget-object v0, p0, Landroid/opengl/GLSurfaceView;->mEGLConfigChooser:Landroid/opengl/GLSurfaceView$EGLConfigChooser;
 
     if-nez v0, :cond_0
 
-    .line 349
+    .line 338
     new-instance v0, Landroid/opengl/GLSurfaceView$SimpleEGLConfigChooser;
 
     const/4 v1, 0x1
@@ -697,51 +671,49 @@
 
     iput-object v0, p0, Landroid/opengl/GLSurfaceView;->mEGLConfigChooser:Landroid/opengl/GLSurfaceView$EGLConfigChooser;
 
-    .line 351
+    .line 340
     :cond_0
     iget-object v0, p0, Landroid/opengl/GLSurfaceView;->mEGLContextFactory:Landroid/opengl/GLSurfaceView$EGLContextFactory;
 
     if-nez v0, :cond_1
 
-    .line 352
+    .line 341
     new-instance v0, Landroid/opengl/GLSurfaceView$DefaultContextFactory;
 
     invoke-direct {v0, p0, v2}, Landroid/opengl/GLSurfaceView$DefaultContextFactory;-><init>(Landroid/opengl/GLSurfaceView;Landroid/opengl/GLSurfaceView$1;)V
 
     iput-object v0, p0, Landroid/opengl/GLSurfaceView;->mEGLContextFactory:Landroid/opengl/GLSurfaceView$EGLContextFactory;
 
-    .line 354
+    .line 343
     :cond_1
     iget-object v0, p0, Landroid/opengl/GLSurfaceView;->mEGLWindowSurfaceFactory:Landroid/opengl/GLSurfaceView$EGLWindowSurfaceFactory;
 
     if-nez v0, :cond_2
 
-    .line 355
+    .line 344
     new-instance v0, Landroid/opengl/GLSurfaceView$DefaultWindowSurfaceFactory;
 
     invoke-direct {v0, v2}, Landroid/opengl/GLSurfaceView$DefaultWindowSurfaceFactory;-><init>(Landroid/opengl/GLSurfaceView$1;)V
 
     iput-object v0, p0, Landroid/opengl/GLSurfaceView;->mEGLWindowSurfaceFactory:Landroid/opengl/GLSurfaceView$EGLWindowSurfaceFactory;
 
-    .line 357
+    .line 346
     :cond_2
     iput-object p1, p0, Landroid/opengl/GLSurfaceView;->mRenderer:Landroid/opengl/GLSurfaceView$Renderer;
 
-    .line 358
+    .line 347
     new-instance v0, Landroid/opengl/GLSurfaceView$GLThread;
 
-    iget-object v1, p0, Landroid/opengl/GLSurfaceView;->mThisWeakRef:Ljava/lang/ref/WeakReference;
-
-    invoke-direct {v0, v1}, Landroid/opengl/GLSurfaceView$GLThread;-><init>(Ljava/lang/ref/WeakReference;)V
+    invoke-direct {v0, p0, p1}, Landroid/opengl/GLSurfaceView$GLThread;-><init>(Landroid/opengl/GLSurfaceView;Landroid/opengl/GLSurfaceView$Renderer;)V
 
     iput-object v0, p0, Landroid/opengl/GLSurfaceView;->mGLThread:Landroid/opengl/GLSurfaceView$GLThread;
 
-    .line 359
+    .line 348
     iget-object v0, p0, Landroid/opengl/GLSurfaceView;->mGLThread:Landroid/opengl/GLSurfaceView$GLThread;
 
     invoke-virtual {v0}, Landroid/opengl/GLSurfaceView$GLThread;->start()V
 
-    .line 360
+    .line 349
     return-void
 .end method
 
@@ -753,12 +725,12 @@
     .parameter "h"
 
     .prologue
-    .line 540
+    .line 529
     iget-object v0, p0, Landroid/opengl/GLSurfaceView;->mGLThread:Landroid/opengl/GLSurfaceView$GLThread;
 
     invoke-virtual {v0, p3, p4}, Landroid/opengl/GLSurfaceView$GLThread;->onWindowResize(II)V
 
-    .line 541
+    .line 530
     return-void
 .end method
 
@@ -767,12 +739,12 @@
     .parameter "holder"
 
     .prologue
-    .line 523
+    .line 512
     iget-object v0, p0, Landroid/opengl/GLSurfaceView;->mGLThread:Landroid/opengl/GLSurfaceView$GLThread;
 
     invoke-virtual {v0}, Landroid/opengl/GLSurfaceView$GLThread;->surfaceCreated()V
 
-    .line 524
+    .line 513
     return-void
 .end method
 
@@ -781,11 +753,11 @@
     .parameter "holder"
 
     .prologue
-    .line 532
+    .line 521
     iget-object v0, p0, Landroid/opengl/GLSurfaceView;->mGLThread:Landroid/opengl/GLSurfaceView$GLThread;
 
     invoke-virtual {v0}, Landroid/opengl/GLSurfaceView$GLThread;->surfaceDestroyed()V
 
-    .line 533
+    .line 522
     return-void
 .end method

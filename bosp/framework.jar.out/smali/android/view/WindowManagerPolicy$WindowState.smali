@@ -66,15 +66,6 @@
 .method public abstract hideLw(Z)Z
 .end method
 
-.method public abstract isAlive()Z
-.end method
-
-.method public abstract isAnimatingLw()Z
-.end method
-
-.method public abstract isDefaultDisplay()Z
-.end method
-
 .method public abstract isDisplayedLw()Z
 .end method
 

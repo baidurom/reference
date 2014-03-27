@@ -35,7 +35,7 @@
     .parameter
 
     .prologue
-    .line 142
+    .line 128
     iput-object p1, p0, Lcom/android/server/BootReceiver$2;->this$0:Lcom/android/server/BootReceiver;
 
     iput-object p4, p0, Lcom/android/server/BootReceiver$2;->val$db:Landroid/os/DropBoxManager;
@@ -57,7 +57,7 @@
     .parameter "path"
 
     .prologue
-    .line 146
+    .line 132
     :try_start_0
     new-instance v0, Ljava/io/File;
 
@@ -71,7 +71,7 @@
 
     move-result-object v3
 
-    .line 147
+    .line 133
     .local v3, filename:Ljava/lang/String;
     iget-object v0, p0, Lcom/android/server/BootReceiver$2;->val$db:Landroid/os/DropBoxManager;
 
@@ -79,27 +79,25 @@
 
     iget-object v2, p0, Lcom/android/server/BootReceiver$2;->val$headers:Ljava/lang/String;
 
-    invoke-static {}, Lcom/android/server/BootReceiver;->access$300()I
-
-    move-result v4
+    const/high16 v4, 0x1
 
     const-string v5, "SYSTEM_TOMBSTONE"
 
     #calls: Lcom/android/server/BootReceiver;->addFileToDropBox(Landroid/os/DropBoxManager;Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V
-    invoke-static/range {v0 .. v5}, Lcom/android/server/BootReceiver;->access$400(Landroid/os/DropBoxManager;Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V
+    invoke-static/range {v0 .. v5}, Lcom/android/server/BootReceiver;->access$300(Landroid/os/DropBoxManager;Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 151
+    .line 137
     .end local v3           #filename:Ljava/lang/String;
     :goto_0
     return-void
 
-    .line 148
+    .line 134
     :catch_0
     move-exception v6
 
-    .line 149
+    .line 135
     .local v6, e:Ljava/io/IOException;
     const-string v0, "BootReceiver"
 

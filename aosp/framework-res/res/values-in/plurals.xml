@@ -67,18 +67,6 @@
         <item quantity="other">dalam %d hari</item>
         <item quantity="one">besok</item>
     </plurals>
-    <plurals name="duration_seconds">
-        <item quantity="other">%d detik</item>
-        <item quantity="one">1 detik</item>
-    </plurals>
-    <plurals name="duration_minutes">
-        <item quantity="other">%d menit</item>
-        <item quantity="one">1 menit</item>
-    </plurals>
-    <plurals name="duration_hours">
-        <item quantity="other">%d jam</item>
-        <item quantity="one">1 jam</item>
-    </plurals>
     <plurals name="wifi_available">
         <item quantity="other">Jaringan Wi-Fi</item>
         <item quantity="one">Jaringan Wi-Fi tersedia</item>

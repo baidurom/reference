@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/additional_cdma_call_settings"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:settings="http://schemas.android.com/apk/res/com.android.phone">
+    <com.android.phone.CdmaVoicePrivacyCheckBoxPreference android:persistent="false" android:title="@string/voice_privacy" android:key="button_voice_privacy_key" android:summary="@string/voice_privacy_summary" />
+    <EditTextPreference android:maxLength="4" android:title="@string/change_internation_num" android:key="change_internation_num_key" android:summary="@string/change_internation_num_summary" android:inputType="number" />
+    <PreferenceScreen android:persistent="false" android:title="@string/labelCF" android:key="button_cf_expand_key">
+        <intent android:targetPackage="com.android.phone" android:action="android.intent.action.MAIN" android:targetClass="com.android.phone.CdmaUmtsCallForwardOptions" />
+    </PreferenceScreen>
+    <ListPreference android:persistent="true" android:entries="@array/cdma_wait_list" android:title="@string/labelCW" android:key="button_cw_key" android:defaultValue="Enable" android:entryValues="@array/cdma_wait_value" />
+</PreferenceScreen>

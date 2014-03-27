@@ -1,6 +1,9 @@
 .class Lcom/android/server/net/NetworkStatsService$8;
-.super Lcom/android/server/net/BaseNetworkObserver;
+.super Ljava/lang/Object;
 .source "NetworkStatsService.java"
+
+# interfaces
+.implements Landroid/os/Handler$Callback;
 
 
 # annotations
@@ -24,85 +27,61 @@
     .parameter
 
     .prologue
-    .line 801
+    .line 1663
     iput-object p1, p0, Lcom/android/server/net/NetworkStatsService$8;->this$0:Lcom/android/server/net/NetworkStatsService;
 
-    invoke-direct {p0}, Lcom/android/server/net/BaseNetworkObserver;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public limitReached(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 5
-    .parameter "limitName"
-    .parameter "iface"
+.method public handleMessage(Landroid/os/Message;)Z
+    .locals 3
+    .parameter "msg"
 
     .prologue
-    const/4 v4, 0x1
+    const/4 v1, 0x1
 
-    .line 805
-    iget-object v1, p0, Lcom/android/server/net/NetworkStatsService$8;->this$0:Lcom/android/server/net/NetworkStatsService;
+    .line 1666
+    iget v2, p1, Landroid/os/Message;->what:I
 
-    #getter for: Lcom/android/server/net/NetworkStatsService;->mContext:Landroid/content/Context;
-    invoke-static {v1}, Lcom/android/server/net/NetworkStatsService;->access$1300(Lcom/android/server/net/NetworkStatsService;)Landroid/content/Context;
+    packed-switch v2, :pswitch_data_0
 
-    move-result-object v1
+    .line 1677
+    const/4 v1, 0x0
 
-    const-string v2, "android.permission.CONNECTIVITY_INTERNAL"
+    :goto_0
+    return v1
 
-    const-string v3, "NetworkStats"
+    .line 1668
+    :pswitch_0
+    iget v0, p1, Landroid/os/Message;->arg1:I
 
-    invoke-virtual {v1, v2, v3}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 807
-    const-string v1, "globalAlert"
-
-    invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 810
-    const/4 v0, 0x1
-
-    .line 811
+    .line 1669
     .local v0, flags:I
-    iget-object v1, p0, Lcom/android/server/net/NetworkStatsService$8;->this$0:Lcom/android/server/net/NetworkStatsService;
+    iget-object v2, p0, Lcom/android/server/net/NetworkStatsService$8;->this$0:Lcom/android/server/net/NetworkStatsService;
 
-    #getter for: Lcom/android/server/net/NetworkStatsService;->mHandler:Landroid/os/Handler;
-    invoke-static {v1}, Lcom/android/server/net/NetworkStatsService;->access$1400(Lcom/android/server/net/NetworkStatsService;)Landroid/os/Handler;
+    #calls: Lcom/android/server/net/NetworkStatsService;->performPoll(I)V
+    invoke-static {v2, v0}, Lcom/android/server/net/NetworkStatsService;->access$400(Lcom/android/server/net/NetworkStatsService;I)V
 
-    move-result-object v1
+    goto :goto_0
 
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v4, v4, v2}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
-
-    .line 814
-    iget-object v1, p0, Lcom/android/server/net/NetworkStatsService$8;->this$0:Lcom/android/server/net/NetworkStatsService;
-
-    #getter for: Lcom/android/server/net/NetworkStatsService;->mHandler:Landroid/os/Handler;
-    invoke-static {v1}, Lcom/android/server/net/NetworkStatsService;->access$1400(Lcom/android/server/net/NetworkStatsService;)Landroid/os/Handler;
-
-    move-result-object v1
-
-    const/4 v2, 0x3
-
-    invoke-virtual {v1, v2}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
-
-    .line 816
+    .line 1673
     .end local v0           #flags:I
-    :cond_0
-    return-void
+    :pswitch_1
+    iget-object v2, p0, Lcom/android/server/net/NetworkStatsService$8;->this$0:Lcom/android/server/net/NetworkStatsService;
+
+    #calls: Lcom/android/server/net/NetworkStatsService;->updateIfaces()V
+    invoke-static {v2}, Lcom/android/server/net/NetworkStatsService;->access$300(Lcom/android/server/net/NetworkStatsService;)V
+
+    goto :goto_0
+
+    .line 1666
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+        :pswitch_1
+    .end packed-switch
 .end method

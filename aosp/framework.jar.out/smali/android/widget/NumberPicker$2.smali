@@ -3,7 +3,7 @@
 .source "NumberPicker.java"
 
 # interfaces
-.implements Landroid/view/View$OnLongClickListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 638
+    .line 590
     iput-object p1, p0, Landroid/widget/NumberPicker$2;->this$0:Landroid/widget/NumberPicker;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -37,58 +37,82 @@
 
 
 # virtual methods
-.method public onLongClick(Landroid/view/View;)Z
-    .locals 5
+.method public onClick(Landroid/view/View;)V
+    .locals 4
     .parameter "v"
 
     .prologue
-    const-wide/16 v3, 0x0
+    const/4 v3, 0x0
 
-    const/4 v2, 0x1
-
-    .line 640
-    iget-object v0, p0, Landroid/widget/NumberPicker$2;->this$0:Landroid/widget/NumberPicker;
-
-    #calls: Landroid/widget/NumberPicker;->hideSoftInput()V
-    invoke-static {v0}, Landroid/widget/NumberPicker;->access$000(Landroid/widget/NumberPicker;)V
-
-    .line 641
-    iget-object v0, p0, Landroid/widget/NumberPicker$2;->this$0:Landroid/widget/NumberPicker;
-
-    #getter for: Landroid/widget/NumberPicker;->mInputText:Landroid/widget/EditText;
-    invoke-static {v0}, Landroid/widget/NumberPicker;->access$100(Landroid/widget/NumberPicker;)Landroid/widget/EditText;
+    .line 592
+    invoke-static {}, Landroid/view/inputmethod/InputMethodManager;->peekInstance()Landroid/view/inputmethod/InputMethodManager;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/widget/EditText;->clearFocus()V
+    .line 593
+    .local v0, inputMethodManager:Landroid/view/inputmethod/InputMethodManager;
+    if-eqz v0, :cond_0
 
-    .line 642
+    iget-object v1, p0, Landroid/widget/NumberPicker$2;->this$0:Landroid/widget/NumberPicker;
+
+    #getter for: Landroid/widget/NumberPicker;->mInputText:Landroid/widget/EditText;
+    invoke-static {v1}, Landroid/widget/NumberPicker;->access$000(Landroid/widget/NumberPicker;)Landroid/widget/EditText;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/view/inputmethod/InputMethodManager;->isActive(Landroid/view/View;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 594
+    iget-object v1, p0, Landroid/widget/NumberPicker$2;->this$0:Landroid/widget/NumberPicker;
+
+    invoke-virtual {v1}, Landroid/widget/NumberPicker;->getWindowToken()Landroid/os/IBinder;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1, v3}, Landroid/view/inputmethod/InputMethodManager;->hideSoftInputFromWindow(Landroid/os/IBinder;I)Z
+
+    .line 596
+    :cond_0
+    iget-object v1, p0, Landroid/widget/NumberPicker$2;->this$0:Landroid/widget/NumberPicker;
+
+    #getter for: Landroid/widget/NumberPicker;->mInputText:Landroid/widget/EditText;
+    invoke-static {v1}, Landroid/widget/NumberPicker;->access$000(Landroid/widget/NumberPicker;)Landroid/widget/EditText;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/widget/EditText;->clearFocus()V
+
+    .line 597
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 
-    move-result v0
+    move-result v1
 
-    const v1, 0x1020335
+    const v2, #id@increment#t
 
-    if-ne v0, v1, :cond_0
+    if-ne v1, v2, :cond_1
 
-    .line 643
-    iget-object v0, p0, Landroid/widget/NumberPicker$2;->this$0:Landroid/widget/NumberPicker;
+    .line 598
+    iget-object v1, p0, Landroid/widget/NumberPicker$2;->this$0:Landroid/widget/NumberPicker;
 
-    #calls: Landroid/widget/NumberPicker;->postChangeCurrentByOneFromLongPress(ZJ)V
-    invoke-static {v0, v2, v3, v4}, Landroid/widget/NumberPicker;->access$300(Landroid/widget/NumberPicker;ZJ)V
+    const/4 v2, 0x1
 
-    .line 647
+    #calls: Landroid/widget/NumberPicker;->changeCurrentByOne(Z)V
+    invoke-static {v1, v2}, Landroid/widget/NumberPicker;->access$100(Landroid/widget/NumberPicker;Z)V
+
+    .line 602
     :goto_0
-    return v2
+    return-void
 
-    .line 645
-    :cond_0
-    iget-object v0, p0, Landroid/widget/NumberPicker$2;->this$0:Landroid/widget/NumberPicker;
+    .line 600
+    :cond_1
+    iget-object v1, p0, Landroid/widget/NumberPicker$2;->this$0:Landroid/widget/NumberPicker;
 
-    const/4 v1, 0x0
-
-    #calls: Landroid/widget/NumberPicker;->postChangeCurrentByOneFromLongPress(ZJ)V
-    invoke-static {v0, v1, v3, v4}, Landroid/widget/NumberPicker;->access$300(Landroid/widget/NumberPicker;ZJ)V
+    #calls: Landroid/widget/NumberPicker;->changeCurrentByOne(Z)V
+    invoke-static {v1, v3}, Landroid/widget/NumberPicker;->access$100(Landroid/widget/NumberPicker;Z)V
 
     goto :goto_0
 .end method

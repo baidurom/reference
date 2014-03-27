@@ -83,29 +83,29 @@
     .locals 2
 
     .prologue
-    .line 98
+    .line 87
     iget-boolean v0, p0, Lcom/android/internal/view/StandaloneActionMode;->mFinished:Z
 
     if-eqz v0, :cond_0
 
-    .line 105
+    .line 94
     :goto_0
     return-void
 
-    .line 101
+    .line 90
     :cond_0
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/view/StandaloneActionMode;->mFinished:Z
 
-    .line 103
+    .line 92
     iget-object v0, p0, Lcom/android/internal/view/StandaloneActionMode;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
 
     const/16 v1, 0x20
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/ActionBarContextView;->sendAccessibilityEvent(I)V
 
-    .line 104
+    .line 93
     iget-object v0, p0, Lcom/android/internal/view/StandaloneActionMode;->mCallback:Landroid/view/ActionMode$Callback;
 
     invoke-interface {v0, p0}, Landroid/view/ActionMode$Callback;->onDestroyActionMode(Landroid/view/ActionMode;)V
@@ -117,7 +117,7 @@
     .locals 1
 
     .prologue
-    .line 124
+    .line 113
     iget-object v0, p0, Lcom/android/internal/view/StandaloneActionMode;->mCustomView:Ljava/lang/ref/WeakReference;
 
     if-eqz v0, :cond_0
@@ -143,7 +143,7 @@
     .locals 1
 
     .prologue
-    .line 109
+    .line 98
     iget-object v0, p0, Lcom/android/internal/view/StandaloneActionMode;->mMenu:Lcom/android/internal/view/menu/MenuBuilder;
 
     return-object v0
@@ -153,7 +153,7 @@
     .locals 2
 
     .prologue
-    .line 129
+    .line 118
     new-instance v0, Landroid/view/MenuInflater;
 
     iget-object v1, p0, Lcom/android/internal/view/StandaloneActionMode;->mContext:Landroid/content/Context;
@@ -167,7 +167,7 @@
     .locals 1
 
     .prologue
-    .line 119
+    .line 108
     iget-object v0, p0, Lcom/android/internal/view/StandaloneActionMode;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/ActionBarContextView;->getSubtitle()Ljava/lang/CharSequence;
@@ -181,7 +181,7 @@
     .locals 1
 
     .prologue
-    .line 114
+    .line 103
     iget-object v0, p0, Lcom/android/internal/view/StandaloneActionMode;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/ActionBarContextView;->getTitle()Ljava/lang/CharSequence;
@@ -195,36 +195,22 @@
     .locals 2
 
     .prologue
-    .line 93
+    .line 82
     iget-object v0, p0, Lcom/android/internal/view/StandaloneActionMode;->mCallback:Landroid/view/ActionMode$Callback;
 
     iget-object v1, p0, Lcom/android/internal/view/StandaloneActionMode;->mMenu:Lcom/android/internal/view/menu/MenuBuilder;
 
     invoke-interface {v0, p0, v1}, Landroid/view/ActionMode$Callback;->onPrepareActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
 
-    .line 94
+    .line 83
     return-void
-.end method
-
-.method public isTitleOptional()Z
-    .locals 1
-
-    .prologue
-    .line 82
-    iget-object v0, p0, Lcom/android/internal/view/StandaloneActionMode;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
-
-    invoke-virtual {v0}, Lcom/android/internal/widget/ActionBarContextView;->isTitleOptional()Z
-
-    move-result v0
-
-    return v0
 .end method
 
 .method public isUiFocusable()Z
     .locals 1
 
     .prologue
-    .line 157
+    .line 146
     iget-boolean v0, p0, Lcom/android/internal/view/StandaloneActionMode;->mFocusable:Z
 
     return v0
@@ -236,7 +222,7 @@
     .parameter "allMenusAreClosing"
 
     .prologue
-    .line 137
+    .line 126
     return-void
 .end method
 
@@ -245,7 +231,7 @@
     .parameter "menu"
 
     .prologue
-    .line 149
+    .line 138
     return-void
 .end method
 
@@ -255,7 +241,7 @@
     .parameter "item"
 
     .prologue
-    .line 133
+    .line 122
     iget-object v0, p0, Lcom/android/internal/view/StandaloneActionMode;->mCallback:Landroid/view/ActionMode$Callback;
 
     invoke-interface {v0, p0, p2}, Landroid/view/ActionMode$Callback;->onActionItemClicked(Landroid/view/ActionMode;Landroid/view/MenuItem;)Z
@@ -270,15 +256,15 @@
     .parameter "menu"
 
     .prologue
-    .line 152
+    .line 141
     invoke-virtual {p0}, Lcom/android/internal/view/StandaloneActionMode;->invalidate()V
 
-    .line 153
+    .line 142
     iget-object v0, p0, Lcom/android/internal/view/StandaloneActionMode;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/ActionBarContextView;->showOverflowMenu()Z
 
-    .line 154
+    .line 143
     return-void
 .end method
 
@@ -289,18 +275,18 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 140
+    .line 129
     invoke-virtual {p1}, Lcom/android/internal/view/menu/SubMenuBuilder;->hasVisibleItems()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 145
+    .line 134
     :goto_0
     return v2
 
-    .line 144
+    .line 133
     :cond_0
     new-instance v0, Lcom/android/internal/view/menu/MenuPopupHelper;
 
@@ -318,12 +304,12 @@
     .parameter "view"
 
     .prologue
-    .line 87
+    .line 76
     iget-object v0, p0, Lcom/android/internal/view/StandaloneActionMode;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/widget/ActionBarContextView;->setCustomView(Landroid/view/View;)V
 
-    .line 88
+    .line 77
     if-eqz p1, :cond_0
 
     new-instance v0, Ljava/lang/ref/WeakReference;
@@ -333,10 +319,10 @@
     :goto_0
     iput-object v0, p0, Lcom/android/internal/view/StandaloneActionMode;->mCustomView:Ljava/lang/ref/WeakReference;
 
-    .line 89
+    .line 78
     return-void
 
-    .line 88
+    .line 77
     :cond_0
     const/4 v0, 0x0
 
@@ -404,22 +390,5 @@
     invoke-virtual {v0, p1}, Lcom/android/internal/widget/ActionBarContextView;->setTitle(Ljava/lang/CharSequence;)V
 
     .line 57
-    return-void
-.end method
-
-.method public setTitleOptionalHint(Z)V
-    .locals 1
-    .parameter "titleOptional"
-
-    .prologue
-    .line 76
-    invoke-super {p0, p1}, Landroid/view/ActionMode;->setTitleOptionalHint(Z)V
-
-    .line 77
-    iget-object v0, p0, Lcom/android/internal/view/StandaloneActionMode;->mContextView:Lcom/android/internal/widget/ActionBarContextView;
-
-    invoke-virtual {v0, p1}, Lcom/android/internal/widget/ActionBarContextView;->setTitleOptional(Z)V
-
-    .line 78
     return-void
 .end method

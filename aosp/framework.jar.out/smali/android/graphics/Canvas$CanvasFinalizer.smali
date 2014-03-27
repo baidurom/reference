@@ -24,13 +24,13 @@
     .parameter "nativeCanvas"
 
     .prologue
-    .line 88
+    .line 94
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 89
+    .line 95
     iput p1, p0, Landroid/graphics/Canvas$CanvasFinalizer;->mNativeCanvas:I
 
-    .line 90
+    .line 96
     return-void
 .end method
 
@@ -45,13 +45,13 @@
     .end annotation
 
     .prologue
-    .line 95
+    .line 101
     :try_start_0
     iget v0, p0, Landroid/graphics/Canvas$CanvasFinalizer;->mNativeCanvas:I
 
     if-eqz v0, :cond_0
 
-    .line 96
+    .line 102
     iget v0, p0, Landroid/graphics/Canvas$CanvasFinalizer;->mNativeCanvas:I
 
     #calls: Landroid/graphics/Canvas;->finalizer(I)V
@@ -59,14 +59,14 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 99
+    .line 105
     :cond_0
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 101
+    .line 107
     return-void
 
-    .line 99
+    .line 105
     :catchall_0
     move-exception v0
 

@@ -15,14 +15,6 @@
 
 
 # virtual methods
-.method public abstract captivePortalCheckComplete(Landroid/net/NetworkInfo;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract establishVpn(Lcom/android/internal/net/VpnConfig;)Landroid/os/ParcelFileDescriptor;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -199,14 +191,6 @@
     .end annotation
 .end method
 
-.method public abstract isActiveNetworkMetered()Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract isNetworkSupported(I)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -335,7 +319,7 @@
     .end annotation
 .end method
 
-.method public abstract startLegacyVpn(Lcom/android/internal/net/VpnProfile;)V
+.method public abstract startLegacyVpn(Lcom/android/internal/net/VpnConfig;[Ljava/lang/String;[Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -368,14 +352,6 @@
 .end method
 
 .method public abstract untether(Ljava/lang/String;)I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract updateLockdownVpn()Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

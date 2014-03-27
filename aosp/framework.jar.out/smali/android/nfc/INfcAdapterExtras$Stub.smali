@@ -32,8 +32,6 @@
 
 .field static final TRANSACTION_getCardEmulationRoute:I = 0x4
 
-.field static final TRANSACTION_getDriverName:I = 0x7
-
 .field static final TRANSACTION_open:I = 0x1
 
 .field static final TRANSACTION_setCardEmulationRoute:I = 0x5
@@ -134,7 +132,7 @@
     .line 41
     sparse-switch p1, :sswitch_data_0
 
-    .line 145
+    .line 135
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v3
@@ -373,35 +371,9 @@
 
     goto/16 :goto_0
 
-    .line 136
-    .end local v0           #_arg0:Ljava/lang/String;
-    .end local v1           #_arg1:[B
-    :sswitch_7
-    const-string v4, "android.nfc.INfcAdapterExtras"
-
-    invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 138
-    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 139
-    .restart local v0       #_arg0:Ljava/lang/String;
-    invoke-virtual {p0, v0}, Landroid/nfc/INfcAdapterExtras$Stub;->getDriverName(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 140
-    .local v2, _result:Ljava/lang/String;
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 141
-    invoke-virtual {p3, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    goto/16 :goto_0
-
     .line 41
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
@@ -410,7 +382,6 @@
         0x4 -> :sswitch_4
         0x5 -> :sswitch_5
         0x6 -> :sswitch_6
-        0x7 -> :sswitch_7
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

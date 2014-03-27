@@ -46,7 +46,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 356
+    .line 354
     invoke-direct {p0}, Landroid/graphics/drawable/DrawableContainer;-><init>()V
 
     .line 83
@@ -54,27 +54,27 @@
 
     iput v1, p0, Landroid/graphics/drawable/AnimationDrawable;->mCurFrame:I
 
-    .line 357
+    .line 355
     new-instance v0, Landroid/graphics/drawable/AnimationDrawable$AnimationState;
 
     invoke-direct {v0, p1, p0, p2}, Landroid/graphics/drawable/AnimationDrawable$AnimationState;-><init>(Landroid/graphics/drawable/AnimationDrawable$AnimationState;Landroid/graphics/drawable/AnimationDrawable;Landroid/content/res/Resources;)V
 
-    .line 358
+    .line 356
     .local v0, as:Landroid/graphics/drawable/AnimationDrawable$AnimationState;
     iput-object v0, p0, Landroid/graphics/drawable/AnimationDrawable;->mAnimationState:Landroid/graphics/drawable/AnimationDrawable$AnimationState;
 
-    .line 359
+    .line 357
     invoke-virtual {p0, v0}, Landroid/graphics/drawable/AnimationDrawable;->setConstantState(Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;)V
 
-    .line 360
+    .line 358
     if-eqz p1, :cond_0
 
-    .line 361
+    .line 359
     const/4 v1, 0x1
 
     invoke-direct {p0, v2, v1, v2}, Landroid/graphics/drawable/AnimationDrawable;->setFrame(IZZ)V
 
-    .line 363
+    .line 361
     :cond_0
     return-void
 .end method
@@ -164,7 +164,7 @@
 
     if-lt p1, v0, :cond_1
 
-    .line 233
+    .line 231
     :cond_0
     :goto_0
     return-void
@@ -186,10 +186,7 @@
     :cond_2
     if-eqz p3, :cond_0
 
-    .line 230
-    iput p1, p0, Landroid/graphics/drawable/AnimationDrawable;->mCurFrame:I
-
-    .line 231
+    .line 229
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
@@ -310,18 +307,18 @@
 
     const/4 v9, 0x0
 
-    .line 239
+    .line 237
     sget-object v7, Lcom/android/internal/R$styleable;->AnimationDrawable:[I
 
     invoke-virtual {p1, p3, v7}, Landroid/content/res/Resources;->obtainAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 242
+    .line 240
     .local v0, a:Landroid/content/res/TypedArray;
     invoke-super {p0, p1, p2, v0, v9}, Landroid/graphics/drawable/DrawableContainer;->inflateWithAttributes(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/content/res/TypedArray;I)V
 
-    .line 245
+    .line 243
     iget-object v7, p0, Landroid/graphics/drawable/AnimationDrawable;->mAnimationState:Landroid/graphics/drawable/AnimationDrawable$AnimationState;
 
     invoke-virtual {v0, v10, v9}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
@@ -330,7 +327,7 @@
 
     invoke-virtual {v7, v8}, Landroid/graphics/drawable/AnimationDrawable$AnimationState;->setVariablePadding(Z)V
 
-    .line 248
+    .line 246
     iget-object v7, p0, Landroid/graphics/drawable/AnimationDrawable;->mAnimationState:Landroid/graphics/drawable/AnimationDrawable$AnimationState;
 
     invoke-virtual {v0, v11, v9}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
@@ -340,17 +337,17 @@
     #setter for: Landroid/graphics/drawable/AnimationDrawable$AnimationState;->mOneShot:Z
     invoke-static {v7, v8}, Landroid/graphics/drawable/AnimationDrawable$AnimationState;->access$102(Landroid/graphics/drawable/AnimationDrawable$AnimationState;Z)Z
 
-    .line 251
+    .line 249
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 255
+    .line 253
     invoke-interface {p2}, Lorg/xmlpull/v1/XmlPullParser;->getDepth()I
 
     move-result v7
 
     add-int/lit8 v5, v7, 0x1
 
-    .line 257
+    .line 255
     .local v5, innerDepth:I
     :cond_0
     :goto_0
@@ -372,11 +369,11 @@
 
     if-eq v6, v7, :cond_5
 
-    .line 259
+    .line 257
     :cond_1
     if-ne v6, v11, :cond_0
 
-    .line 263
+    .line 261
     if-gt v1, v5, :cond_0
 
     invoke-interface {p2}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
@@ -391,25 +388,25 @@
 
     if-eqz v7, :cond_0
 
-    .line 267
+    .line 265
     sget-object v7, Lcom/android/internal/R$styleable;->AnimationDrawableItem:[I
 
     invoke-virtual {p1, p3, v7}, Landroid/content/res/Resources;->obtainAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 268
+    .line 266
     const/4 v7, -0x1
 
     invoke-virtual {v0, v9, v7}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result v4
 
-    .line 270
+    .line 268
     .local v4, duration:I
     if-gez v4, :cond_2
 
-    .line 271
+    .line 269
     new-instance v7, Lorg/xmlpull/v1/XmlPullParserException;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -438,40 +435,40 @@
 
     throw v7
 
-    .line 275
+    .line 273
     :cond_2
     invoke-virtual {v0, v10, v9}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v3
 
-    .line 278
+    .line 276
     .local v3, drawableRes:I
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 281
+    .line 279
     if-eqz v3, :cond_3
 
-    .line 282
+    .line 280
     invoke-virtual {p1, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
-    .line 295
+    .line 293
     .local v2, dr:Landroid/graphics/drawable/Drawable;
     :goto_1
     iget-object v7, p0, Landroid/graphics/drawable/AnimationDrawable;->mAnimationState:Landroid/graphics/drawable/AnimationDrawable$AnimationState;
 
     invoke-virtual {v7, v2, v4}, Landroid/graphics/drawable/AnimationDrawable$AnimationState;->addFrame(Landroid/graphics/drawable/Drawable;I)V
 
-    .line 296
+    .line 294
     if-eqz v2, :cond_0
 
-    .line 297
+    .line 295
     invoke-virtual {v2, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
     goto :goto_0
 
-    .line 284
+    .line 282
     .end local v2           #dr:Landroid/graphics/drawable/Drawable;
     :cond_3
     invoke-interface {p2}, Lorg/xmlpull/v1/XmlPullParser;->next()I
@@ -482,10 +479,10 @@
 
     if-eq v6, v7, :cond_3
 
-    .line 287
+    .line 285
     if-eq v6, v11, :cond_4
 
-    .line 288
+    .line 286
     new-instance v7, Lorg/xmlpull/v1/XmlPullParserException;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -520,7 +517,7 @@
 
     throw v7
 
-    .line 292
+    .line 290
     :cond_4
     invoke-static {p1, p2, p3}, Landroid/graphics/drawable/Drawable;->createFromXmlInner(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;)Landroid/graphics/drawable/Drawable;
 
@@ -529,7 +526,7 @@
     .restart local v2       #dr:Landroid/graphics/drawable/Drawable;
     goto :goto_1
 
-    .line 301
+    .line 299
     .end local v1           #depth:I
     .end local v2           #dr:Landroid/graphics/drawable/Drawable;
     .end local v3           #drawableRes:I
@@ -537,7 +534,7 @@
     :cond_5
     invoke-direct {p0, v9, v10, v9}, Landroid/graphics/drawable/AnimationDrawable;->setFrame(IZZ)V
 
-    .line 302
+    .line 300
     return-void
 .end method
 
@@ -582,7 +579,7 @@
     .locals 2
 
     .prologue
-    .line 306
+    .line 304
     iget-boolean v0, p0, Landroid/graphics/drawable/AnimationDrawable;->mMutated:Z
 
     if-nez v0, :cond_0
@@ -593,7 +590,7 @@
 
     if-ne v0, p0, :cond_0
 
-    .line 307
+    .line 305
     iget-object v1, p0, Landroid/graphics/drawable/AnimationDrawable;->mAnimationState:Landroid/graphics/drawable/AnimationDrawable$AnimationState;
 
     iget-object v0, p0, Landroid/graphics/drawable/AnimationDrawable;->mAnimationState:Landroid/graphics/drawable/AnimationDrawable$AnimationState;
@@ -612,12 +609,12 @@
     #setter for: Landroid/graphics/drawable/AnimationDrawable$AnimationState;->mDurations:[I
     invoke-static {v1, v0}, Landroid/graphics/drawable/AnimationDrawable$AnimationState;->access$002(Landroid/graphics/drawable/AnimationDrawable$AnimationState;[I)[I
 
-    .line 308
+    .line 306
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/graphics/drawable/AnimationDrawable;->mMutated:Z
 
-    .line 310
+    .line 308
     :cond_0
     return-object p0
 .end method

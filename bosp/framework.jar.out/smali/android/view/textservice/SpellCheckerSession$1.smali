@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 108
+    .line 107
     iput-object p1, p0, Landroid/view/textservice/SpellCheckerSession$1;->this$0:Landroid/view/textservice/SpellCheckerSession;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,16 +39,16 @@
     .parameter "msg"
 
     .prologue
-    .line 111
+    .line 110
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 119
+    .line 115
     :goto_0
     return-void
 
-    .line 113
+    .line 112
     :pswitch_0
     iget-object v1, p0, Landroid/view/textservice/SpellCheckerSession$1;->this$0:Landroid/view/textservice/SpellCheckerSession;
 
@@ -63,25 +63,9 @@
 
     goto :goto_0
 
-    .line 116
-    :pswitch_1
-    iget-object v1, p0, Landroid/view/textservice/SpellCheckerSession$1;->this$0:Landroid/view/textservice/SpellCheckerSession;
-
-    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v0, [Landroid/view/textservice/SentenceSuggestionsInfo;
-
-    check-cast v0, [Landroid/view/textservice/SentenceSuggestionsInfo;
-
-    #calls: Landroid/view/textservice/SpellCheckerSession;->handleOnGetSentenceSuggestionsMultiple([Landroid/view/textservice/SentenceSuggestionsInfo;)V
-    invoke-static {v1, v0}, Landroid/view/textservice/SpellCheckerSession;->access$100(Landroid/view/textservice/SpellCheckerSession;[Landroid/view/textservice/SentenceSuggestionsInfo;)V
-
-    goto :goto_0
-
-    .line 111
+    .line 110
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
-        :pswitch_1
     .end packed-switch
 .end method

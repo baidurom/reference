@@ -98,7 +98,7 @@
     .line 296
     new-array v0, v3, [I
 
-    const v1, 0x101009f
+    const v1, #attr@state_checkable#t
 
     aput v1, v0, v2
 
@@ -119,7 +119,7 @@
     .line 308
     new-array v0, v3, [I
 
-    const v1, 0x10100a7
+    const v1, #attr@state_pressed#t
 
     aput v1, v0, v2
 
@@ -130,23 +130,23 @@
     .line 285
     :array_0
     .array-data 0x4
-        0x9ft 0x0t 0x1t 0x1t
-        0xa0t 0x0t 0x1t 0x1t
+        #attr@state_checkable#a
+        #attr@state_checked#a
     .end array-data
 
     .line 290
     :array_1
     .array-data 0x4
-        0xa7t 0x0t 0x1t 0x1t
-        0x9ft 0x0t 0x1t 0x1t
-        0xa0t 0x0t 0x1t 0x1t
+        #attr@state_pressed#a
+        #attr@state_checkable#a
+        #attr@state_checked#a
     .end array-data
 
     .line 300
     :array_2
     .array-data 0x4
-        0xa7t 0x0t 0x1t 0x1t
-        0x9ft 0x0t 0x1t 0x1t
+        #attr@state_pressed#a
+        #attr@state_checkable#a
     .end array-data
 .end method
 

@@ -315,12 +315,12 @@
     .locals 3
 
     .prologue
-    .line 133
+    .line 129
     sget-object v1, Landroid/widget/ExpandableListPosition;->sPool:Ljava/util/ArrayList;
 
     monitor-enter v1
 
-    .line 134
+    .line 130
     :try_start_0
     sget-object v0, Landroid/widget/ExpandableListPosition;->sPool:Ljava/util/ArrayList;
 
@@ -332,19 +332,19 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 135
+    .line 131
     sget-object v0, Landroid/widget/ExpandableListPosition;->sPool:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 137
+    .line 133
     :cond_0
     monitor-exit v1
 
-    .line 138
+    .line 134
     return-void
 
-    .line 137
+    .line 133
     :catchall_0
     move-exception v0
 

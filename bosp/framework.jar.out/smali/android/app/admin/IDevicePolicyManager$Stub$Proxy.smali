@@ -27,13 +27,13 @@
     .parameter "remote"
 
     .prologue
-    .line 862
+    .line 735
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 863
+    .line 736
     iput-object p1, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    .line 864
+    .line 737
     return-void
 .end method
 
@@ -43,18 +43,17 @@
     .locals 1
 
     .prologue
-    .line 867
+    .line 740
     iget-object v0, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     return-object v0
 .end method
 
-.method public getActiveAdmins(I)Ljava/util/List;
+.method public getActiveAdmins()Ljava/util/List;
     .locals 6
-    .parameter "userHandle"
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(I)",
+            "()",
             "Ljava/util/List",
             "<",
             "Landroid/content/ComponentName;",
@@ -69,40 +68,37 @@
     .end annotation
 
     .prologue
-    .line 1830
+    .line 1617
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1831
+    .line 1618
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1834
+    .line 1621
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "android.app.admin.IDevicePolicyManager"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1835
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1836
+    .line 1622
     iget-object v3, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x2a
+    const/16 v4, 0x28
 
     const/4 v5, 0x0
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1837
+    .line 1623
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1838
+    .line 1624
     sget-object v3, Landroid/content/ComponentName;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-virtual {v1, v3}, Landroid/os/Parcel;->createTypedArrayList(Landroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
@@ -111,33 +107,32 @@
 
     move-result-object v2
 
-    .line 1841
+    .line 1627
     .local v2, _result:Ljava/util/List;,"Ljava/util/List<Landroid/content/ComponentName;>;"
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1842
+    .line 1628
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1844
+    .line 1630
     return-object v2
 
-    .line 1841
+    .line 1627
     .end local v2           #_result:Ljava/util/List;,"Ljava/util/List<Landroid/content/ComponentName;>;"
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1842
+    .line 1628
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
 .end method
 
-.method public getCameraDisabled(Landroid/content/ComponentName;I)Z
+.method public getCameraDisabled(Landroid/content/ComponentName;)Z
     .locals 7
     .parameter "who"
-    .parameter "userHandle"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -149,42 +144,39 @@
 
     const/4 v3, 0x0
 
-    .line 1709
+    .line 1547
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1710
+    .line 1548
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1713
+    .line 1551
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v4, "android.app.admin.IDevicePolicyManager"
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1714
+    .line 1552
     if-eqz p1, :cond_0
 
-    .line 1715
+    .line 1553
     const/4 v4, 0x1
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1716
+    .line 1554
     const/4 v4, 0x0
 
     invoke-virtual {p1, v0, v4}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1721
+    .line 1559
     :goto_0
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1722
     iget-object v4, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v5, 0x25
@@ -193,10 +185,10 @@
 
     invoke-interface {v4, v5, v0, v1, v6}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1723
+    .line 1560
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1724
+    .line 1561
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -205,18 +197,18 @@
 
     if-eqz v4, :cond_1
 
-    .line 1727
+    .line 1564
     .local v2, _result:Z
     :goto_1
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1728
+    .line 1565
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1730
+    .line 1567
     return v2
 
-    .line 1719
+    .line 1557
     .end local v2           #_result:Z
     :cond_0
     const/4 v4, 0x0
@@ -228,13 +220,13 @@
 
     goto :goto_0
 
-    .line 1727
+    .line 1564
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1728
+    .line 1565
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -242,13 +234,12 @@
     :cond_1
     move v2, v3
 
-    .line 1724
+    .line 1561
     goto :goto_1
 .end method
 
-.method public getCurrentFailedPasswordAttempts(I)I
+.method public getCurrentFailedPasswordAttempts()I
     .locals 6
-    .parameter "userHandle"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -256,28 +247,25 @@
     .end annotation
 
     .prologue
-    .line 1398
+    .line 1249
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1399
+    .line 1250
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1402
+    .line 1253
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "android.app.admin.IDevicePolicyManager"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1403
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1404
+    .line 1254
     iget-object v3, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x17
@@ -286,42 +274,41 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1405
+    .line 1255
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1406
+    .line 1256
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 1409
+    .line 1259
     .local v2, _result:I
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1410
+    .line 1260
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1412
+    .line 1262
     return v2
 
-    .line 1409
+    .line 1259
     .end local v2           #_result:I
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1410
+    .line 1260
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
 .end method
 
-.method public getGlobalProxyAdmin(I)Landroid/content/ComponentName;
+.method public getGlobalProxyAdmin()Landroid/content/ComponentName;
     .locals 6
-    .parameter "userHandle"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -329,28 +316,25 @@
     .end annotation
 
     .prologue
-    .line 1594
+    .line 1437
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1595
+    .line 1438
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1598
+    .line 1441
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "android.app.admin.IDevicePolicyManager"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1599
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1600
+    .line 1442
     iget-object v3, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x20
@@ -359,17 +343,17 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1601
+    .line 1443
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1602
+    .line 1444
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    .line 1603
+    .line 1445
     sget-object v3, Landroid/content/ComponentName;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v3, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -380,18 +364,18 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1610
+    .line 1452
     .local v2, _result:Landroid/content/ComponentName;
     :goto_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1611
+    .line 1453
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1613
+    .line 1455
     return-object v2
 
-    .line 1606
+    .line 1448
     .end local v2           #_result:Landroid/content/ComponentName;
     :cond_0
     const/4 v2, 0x0
@@ -399,14 +383,14 @@
     .restart local v2       #_result:Landroid/content/ComponentName;
     goto :goto_0
 
-    .line 1610
+    .line 1452
     .end local v2           #_result:Landroid/content/ComponentName;
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1611
+    .line 1453
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -416,115 +400,15 @@
     .locals 1
 
     .prologue
-    .line 871
+    .line 744
     const-string v0, "android.app.admin.IDevicePolicyManager"
 
     return-object v0
 .end method
 
-.method public getKeyguardDisabledFeatures(Landroid/content/ComponentName;I)I
-    .locals 6
-    .parameter "who"
-    .parameter "userHandle"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 1757
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 1758
-    .local v0, _data:Landroid/os/Parcel;
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    .line 1761
-    .local v1, _reply:Landroid/os/Parcel;
-    :try_start_0
-    const-string v3, "android.app.admin.IDevicePolicyManager"
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 1762
-    if-eqz p1, :cond_0
-
-    .line 1763
-    const/4 v3, 0x1
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1764
-    const/4 v3, 0x0
-
-    invoke-virtual {p1, v0, v3}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
-
-    .line 1769
-    :goto_0
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1770
-    iget-object v3, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/16 v4, 0x27
-
-    const/4 v5, 0x0
-
-    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 1771
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-
-    .line 1772
-    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result v2
-
-    .line 1775
-    .local v2, _result:I
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1776
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 1778
-    return v2
-
-    .line 1767
-    .end local v2           #_result:I
-    :cond_0
-    const/4 v3, 0x0
-
-    :try_start_1
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-
-    .line 1775
-    :catchall_0
-    move-exception v3
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1776
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    throw v3
-.end method
-
-.method public getMaximumFailedPasswordsForWipe(Landroid/content/ComponentName;I)I
+.method public getMaximumFailedPasswordsForWipe(Landroid/content/ComponentName;)I
     .locals 6
     .parameter "admin"
-    .parameter "userHandle"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -532,42 +416,39 @@
     .end annotation
 
     .prologue
-    .line 1439
+    .line 1288
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1440
+    .line 1289
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1443
+    .line 1292
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "android.app.admin.IDevicePolicyManager"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1444
+    .line 1293
     if-eqz p1, :cond_0
 
-    .line 1445
+    .line 1294
     const/4 v3, 0x1
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1446
+    .line 1295
     const/4 v3, 0x0
 
     invoke-virtual {p1, v0, v3}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1451
+    .line 1300
     :goto_0
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1452
     iget-object v3, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x19
@@ -576,27 +457,27 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1453
+    .line 1301
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1454
+    .line 1302
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 1457
+    .line 1305
     .local v2, _result:I
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1458
+    .line 1306
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1460
+    .line 1308
     return v2
 
-    .line 1449
+    .line 1298
     .end local v2           #_result:I
     :cond_0
     const/4 v3, 0x0
@@ -608,22 +489,21 @@
 
     goto :goto_0
 
-    .line 1457
+    .line 1305
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1458
+    .line 1306
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
 .end method
 
-.method public getMaximumTimeToLock(Landroid/content/ComponentName;I)J
+.method public getMaximumTimeToLock(Landroid/content/ComponentName;)J
     .locals 7
     .parameter "who"
-    .parameter "userHandle"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -631,42 +511,39 @@
     .end annotation
 
     .prologue
-    .line 1507
+    .line 1353
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1508
+    .line 1354
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1511
+    .line 1357
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v4, "android.app.admin.IDevicePolicyManager"
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1512
+    .line 1358
     if-eqz p1, :cond_0
 
-    .line 1513
+    .line 1359
     const/4 v4, 0x1
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1514
+    .line 1360
     const/4 v4, 0x0
 
     invoke-virtual {p1, v0, v4}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1519
+    .line 1365
     :goto_0
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1520
     iget-object v4, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v5, 0x1c
@@ -675,27 +552,27 @@
 
     invoke-interface {v4, v5, v0, v1, v6}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1521
+    .line 1366
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1522
+    .line 1367
     invoke-virtual {v1}, Landroid/os/Parcel;->readLong()J
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-wide v2
 
-    .line 1525
+    .line 1370
     .local v2, _result:J
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1526
+    .line 1371
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1528
+    .line 1373
     return-wide v2
 
-    .line 1517
+    .line 1363
     .end local v2           #_result:J
     :cond_0
     const/4 v4, 0x0
@@ -707,22 +584,21 @@
 
     goto :goto_0
 
-    .line 1525
+    .line 1370
     :catchall_0
     move-exception v4
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1526
+    .line 1371
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v4
 .end method
 
-.method public getPasswordExpiration(Landroid/content/ComponentName;I)J
+.method public getPasswordExpiration(Landroid/content/ComponentName;)J
     .locals 7
     .parameter "who"
-    .parameter "userHandle"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -730,42 +606,39 @@
     .end annotation
 
     .prologue
-    .line 1355
+    .line 1208
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1356
+    .line 1209
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1359
+    .line 1212
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v4, "android.app.admin.IDevicePolicyManager"
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1360
+    .line 1213
     if-eqz p1, :cond_0
 
-    .line 1361
+    .line 1214
     const/4 v4, 0x1
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1362
+    .line 1215
     const/4 v4, 0x0
 
     invoke-virtual {p1, v0, v4}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1367
+    .line 1220
     :goto_0
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1368
     iget-object v4, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v5, 0x15
@@ -774,27 +647,27 @@
 
     invoke-interface {v4, v5, v0, v1, v6}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1369
+    .line 1221
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1370
+    .line 1222
     invoke-virtual {v1}, Landroid/os/Parcel;->readLong()J
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-wide v2
 
-    .line 1373
+    .line 1225
     .local v2, _result:J
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1374
+    .line 1226
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1376
+    .line 1228
     return-wide v2
 
-    .line 1365
+    .line 1218
     .end local v2           #_result:J
     :cond_0
     const/4 v4, 0x0
@@ -806,22 +679,21 @@
 
     goto :goto_0
 
-    .line 1373
+    .line 1225
     :catchall_0
     move-exception v4
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1374
+    .line 1226
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v4
 .end method
 
-.method public getPasswordExpirationTimeout(Landroid/content/ComponentName;I)J
+.method public getPasswordExpirationTimeout(Landroid/content/ComponentName;)J
     .locals 7
     .parameter "who"
-    .parameter "userHandle"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -829,42 +701,39 @@
     .end annotation
 
     .prologue
-    .line 1330
+    .line 1184
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1331
+    .line 1185
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1334
+    .line 1188
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v4, "android.app.admin.IDevicePolicyManager"
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1335
+    .line 1189
     if-eqz p1, :cond_0
 
-    .line 1336
+    .line 1190
     const/4 v4, 0x1
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1337
+    .line 1191
     const/4 v4, 0x0
 
     invoke-virtual {p1, v0, v4}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1342
+    .line 1196
     :goto_0
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1343
     iget-object v4, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v5, 0x14
@@ -873,27 +742,27 @@
 
     invoke-interface {v4, v5, v0, v1, v6}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1344
+    .line 1197
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1345
+    .line 1198
     invoke-virtual {v1}, Landroid/os/Parcel;->readLong()J
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-wide v2
 
-    .line 1348
+    .line 1201
     .local v2, _result:J
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1349
+    .line 1202
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1351
+    .line 1204
     return-wide v2
 
-    .line 1340
+    .line 1194
     .end local v2           #_result:J
     :cond_0
     const/4 v4, 0x0
@@ -905,517 +774,21 @@
 
     goto :goto_0
 
-    .line 1348
+    .line 1201
     :catchall_0
     move-exception v4
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1349
+    .line 1202
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v4
 .end method
 
-.method public getPasswordHistoryLength(Landroid/content/ComponentName;I)I
+.method public getPasswordHistoryLength(Landroid/content/ComponentName;)I
     .locals 6
     .parameter "who"
-    .parameter "userHandle"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 1282
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 1283
-    .local v0, _data:Landroid/os/Parcel;
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    .line 1286
-    .local v1, _reply:Landroid/os/Parcel;
-    :try_start_0
-    const-string v3, "android.app.admin.IDevicePolicyManager"
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 1287
-    if-eqz p1, :cond_0
-
-    .line 1288
-    const/4 v3, 0x1
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1289
-    const/4 v3, 0x0
-
-    invoke-virtual {p1, v0, v3}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
-
-    .line 1294
-    :goto_0
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1295
-    iget-object v3, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/16 v4, 0x12
-
-    const/4 v5, 0x0
-
-    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 1296
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-
-    .line 1297
-    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result v2
-
-    .line 1300
-    .local v2, _result:I
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1301
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 1303
-    return v2
-
-    .line 1292
-    .end local v2           #_result:I
-    :cond_0
-    const/4 v3, 0x0
-
-    :try_start_1
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-
-    .line 1300
-    :catchall_0
-    move-exception v3
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1301
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    throw v3
-.end method
-
-.method public getPasswordMinimumLength(Landroid/content/ComponentName;I)I
-    .locals 6
-    .parameter "who"
-    .parameter "userHandle"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 946
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 947
-    .local v0, _data:Landroid/os/Parcel;
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    .line 950
-    .local v1, _reply:Landroid/os/Parcel;
-    :try_start_0
-    const-string v3, "android.app.admin.IDevicePolicyManager"
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 951
-    if-eqz p1, :cond_0
-
-    .line 952
-    const/4 v3, 0x1
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 953
-    const/4 v3, 0x0
-
-    invoke-virtual {p1, v0, v3}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
-
-    .line 958
-    :goto_0
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 959
-    iget-object v3, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/4 v4, 0x4
-
-    const/4 v5, 0x0
-
-    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 960
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-
-    .line 961
-    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result v2
-
-    .line 964
-    .local v2, _result:I
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 965
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 967
-    return v2
-
-    .line 956
-    .end local v2           #_result:I
-    :cond_0
-    const/4 v3, 0x0
-
-    :try_start_1
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-
-    .line 964
-    :catchall_0
-    move-exception v3
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 965
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    throw v3
-.end method
-
-.method public getPasswordMinimumLetters(Landroid/content/ComponentName;I)I
-    .locals 6
-    .parameter "who"
-    .parameter "userHandle"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 1090
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 1091
-    .local v0, _data:Landroid/os/Parcel;
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    .line 1094
-    .local v1, _reply:Landroid/os/Parcel;
-    :try_start_0
-    const-string v3, "android.app.admin.IDevicePolicyManager"
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 1095
-    if-eqz p1, :cond_0
-
-    .line 1096
-    const/4 v3, 0x1
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1097
-    const/4 v3, 0x0
-
-    invoke-virtual {p1, v0, v3}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
-
-    .line 1102
-    :goto_0
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1103
-    iget-object v3, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/16 v4, 0xa
-
-    const/4 v5, 0x0
-
-    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 1104
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-
-    .line 1105
-    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result v2
-
-    .line 1108
-    .local v2, _result:I
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1109
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 1111
-    return v2
-
-    .line 1100
-    .end local v2           #_result:I
-    :cond_0
-    const/4 v3, 0x0
-
-    :try_start_1
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-
-    .line 1108
-    :catchall_0
-    move-exception v3
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1109
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    throw v3
-.end method
-
-.method public getPasswordMinimumLowerCase(Landroid/content/ComponentName;I)I
-    .locals 6
-    .parameter "who"
-    .parameter "userHandle"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 1042
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 1043
-    .local v0, _data:Landroid/os/Parcel;
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    .line 1046
-    .local v1, _reply:Landroid/os/Parcel;
-    :try_start_0
-    const-string v3, "android.app.admin.IDevicePolicyManager"
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 1047
-    if-eqz p1, :cond_0
-
-    .line 1048
-    const/4 v3, 0x1
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1049
-    const/4 v3, 0x0
-
-    invoke-virtual {p1, v0, v3}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
-
-    .line 1054
-    :goto_0
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1055
-    iget-object v3, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/16 v4, 0x8
-
-    const/4 v5, 0x0
-
-    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 1056
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-
-    .line 1057
-    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result v2
-
-    .line 1060
-    .local v2, _result:I
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1061
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 1063
-    return v2
-
-    .line 1052
-    .end local v2           #_result:I
-    :cond_0
-    const/4 v3, 0x0
-
-    :try_start_1
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-
-    .line 1060
-    :catchall_0
-    move-exception v3
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1061
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    throw v3
-.end method
-
-.method public getPasswordMinimumNonLetter(Landroid/content/ComponentName;I)I
-    .locals 6
-    .parameter "who"
-    .parameter "userHandle"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 1234
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 1235
-    .local v0, _data:Landroid/os/Parcel;
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    .line 1238
-    .local v1, _reply:Landroid/os/Parcel;
-    :try_start_0
-    const-string v3, "android.app.admin.IDevicePolicyManager"
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 1239
-    if-eqz p1, :cond_0
-
-    .line 1240
-    const/4 v3, 0x1
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1241
-    const/4 v3, 0x0
-
-    invoke-virtual {p1, v0, v3}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
-
-    .line 1246
-    :goto_0
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1247
-    iget-object v3, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/16 v4, 0x10
-
-    const/4 v5, 0x0
-
-    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 1248
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-
-    .line 1249
-    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result v2
-
-    .line 1252
-    .local v2, _result:I
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1253
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 1255
-    return v2
-
-    .line 1244
-    .end local v2           #_result:I
-    :cond_0
-    const/4 v3, 0x0
-
-    :try_start_1
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-
-    .line 1252
-    :catchall_0
-    move-exception v3
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1253
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    throw v3
-.end method
-
-.method public getPasswordMinimumNumeric(Landroid/content/ComponentName;I)I
-    .locals 6
-    .parameter "who"
-    .parameter "userHandle"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -1456,35 +829,32 @@
 
     .line 1150
     :goto_0
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1151
     iget-object v3, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0xc
+    const/16 v4, 0x12
 
     const/4 v5, 0x0
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1152
+    .line 1151
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1153
+    .line 1152
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 1156
+    .line 1155
     .local v2, _result:I
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1157
+    .line 1156
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1159
+    .line 1158
     return v2
 
     .line 1148
@@ -1499,22 +869,21 @@
 
     goto :goto_0
 
-    .line 1156
+    .line 1155
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1157
+    .line 1156
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
 .end method
 
-.method public getPasswordMinimumSymbols(Landroid/content/ComponentName;I)I
+.method public getPasswordMinimumLength(Landroid/content/ComponentName;)I
     .locals 6
     .parameter "who"
-    .parameter "userHandle"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -1522,42 +891,514 @@
     .end annotation
 
     .prologue
-    .line 1186
+    .line 816
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1187
+    .line 817
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1190
+    .line 820
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "android.app.admin.IDevicePolicyManager"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1191
+    .line 821
     if-eqz p1, :cond_0
 
-    .line 1192
+    .line 822
     const/4 v3, 0x1
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1193
+    .line 823
     const/4 v3, 0x0
 
     invoke-virtual {p1, v0, v3}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1198
+    .line 828
     :goto_0
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
+    iget-object v3, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    .line 1199
+    const/4 v4, 0x4
+
+    const/4 v5, 0x0
+
+    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    .line 829
+    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
+
+    .line 830
+    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result v2
+
+    .line 833
+    .local v2, _result:I
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 834
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 836
+    return v2
+
+    .line 826
+    .end local v2           #_result:I
+    :cond_0
+    const/4 v3, 0x0
+
+    :try_start_1
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    .line 833
+    :catchall_0
+    move-exception v3
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 834
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    throw v3
+.end method
+
+.method public getPasswordMinimumLetters(Landroid/content/ComponentName;)I
+    .locals 6
+    .parameter "who"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 954
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 955
+    .local v0, _data:Landroid/os/Parcel;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v1
+
+    .line 958
+    .local v1, _reply:Landroid/os/Parcel;
+    :try_start_0
+    const-string v3, "android.app.admin.IDevicePolicyManager"
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 959
+    if-eqz p1, :cond_0
+
+    .line 960
+    const/4 v3, 0x1
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 961
+    const/4 v3, 0x0
+
+    invoke-virtual {p1, v0, v3}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
+
+    .line 966
+    :goto_0
+    iget-object v3, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+
+    const/16 v4, 0xa
+
+    const/4 v5, 0x0
+
+    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    .line 967
+    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
+
+    .line 968
+    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result v2
+
+    .line 971
+    .local v2, _result:I
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 972
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 974
+    return v2
+
+    .line 964
+    .end local v2           #_result:I
+    :cond_0
+    const/4 v3, 0x0
+
+    :try_start_1
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    .line 971
+    :catchall_0
+    move-exception v3
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 972
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    throw v3
+.end method
+
+.method public getPasswordMinimumLowerCase(Landroid/content/ComponentName;)I
+    .locals 6
+    .parameter "who"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 908
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 909
+    .local v0, _data:Landroid/os/Parcel;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v1
+
+    .line 912
+    .local v1, _reply:Landroid/os/Parcel;
+    :try_start_0
+    const-string v3, "android.app.admin.IDevicePolicyManager"
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 913
+    if-eqz p1, :cond_0
+
+    .line 914
+    const/4 v3, 0x1
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 915
+    const/4 v3, 0x0
+
+    invoke-virtual {p1, v0, v3}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
+
+    .line 920
+    :goto_0
+    iget-object v3, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+
+    const/16 v4, 0x8
+
+    const/4 v5, 0x0
+
+    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    .line 921
+    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
+
+    .line 922
+    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result v2
+
+    .line 925
+    .local v2, _result:I
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 926
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 928
+    return v2
+
+    .line 918
+    .end local v2           #_result:I
+    :cond_0
+    const/4 v3, 0x0
+
+    :try_start_1
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    .line 925
+    :catchall_0
+    move-exception v3
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 926
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    throw v3
+.end method
+
+.method public getPasswordMinimumNonLetter(Landroid/content/ComponentName;)I
+    .locals 6
+    .parameter "who"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 1092
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 1093
+    .local v0, _data:Landroid/os/Parcel;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v1
+
+    .line 1096
+    .local v1, _reply:Landroid/os/Parcel;
+    :try_start_0
+    const-string v3, "android.app.admin.IDevicePolicyManager"
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 1097
+    if-eqz p1, :cond_0
+
+    .line 1098
+    const/4 v3, 0x1
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 1099
+    const/4 v3, 0x0
+
+    invoke-virtual {p1, v0, v3}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
+
+    .line 1104
+    :goto_0
+    iget-object v3, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+
+    const/16 v4, 0x10
+
+    const/4 v5, 0x0
+
+    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    .line 1105
+    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
+
+    .line 1106
+    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result v2
+
+    .line 1109
+    .local v2, _result:I
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 1110
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 1112
+    return v2
+
+    .line 1102
+    .end local v2           #_result:I
+    :cond_0
+    const/4 v3, 0x0
+
+    :try_start_1
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    .line 1109
+    :catchall_0
+    move-exception v3
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 1110
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    throw v3
+.end method
+
+.method public getPasswordMinimumNumeric(Landroid/content/ComponentName;)I
+    .locals 6
+    .parameter "who"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 1000
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 1001
+    .local v0, _data:Landroid/os/Parcel;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v1
+
+    .line 1004
+    .local v1, _reply:Landroid/os/Parcel;
+    :try_start_0
+    const-string v3, "android.app.admin.IDevicePolicyManager"
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 1005
+    if-eqz p1, :cond_0
+
+    .line 1006
+    const/4 v3, 0x1
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 1007
+    const/4 v3, 0x0
+
+    invoke-virtual {p1, v0, v3}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
+
+    .line 1012
+    :goto_0
+    iget-object v3, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+
+    const/16 v4, 0xc
+
+    const/4 v5, 0x0
+
+    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    .line 1013
+    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
+
+    .line 1014
+    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result v2
+
+    .line 1017
+    .local v2, _result:I
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 1018
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 1020
+    return v2
+
+    .line 1010
+    .end local v2           #_result:I
+    :cond_0
+    const/4 v3, 0x0
+
+    :try_start_1
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    .line 1017
+    :catchall_0
+    move-exception v3
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 1018
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    throw v3
+.end method
+
+.method public getPasswordMinimumSymbols(Landroid/content/ComponentName;)I
+    .locals 6
+    .parameter "who"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 1046
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 1047
+    .local v0, _data:Landroid/os/Parcel;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v1
+
+    .line 1050
+    .local v1, _reply:Landroid/os/Parcel;
+    :try_start_0
+    const-string v3, "android.app.admin.IDevicePolicyManager"
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 1051
+    if-eqz p1, :cond_0
+
+    .line 1052
+    const/4 v3, 0x1
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 1053
+    const/4 v3, 0x0
+
+    invoke-virtual {p1, v0, v3}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
+
+    .line 1058
+    :goto_0
     iget-object v3, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0xe
@@ -1566,27 +1407,27 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1200
+    .line 1059
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1201
+    .line 1060
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 1204
+    .line 1063
     .local v2, _result:I
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1205
+    .line 1064
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1207
+    .line 1066
     return v2
 
-    .line 1196
+    .line 1056
     .end local v2           #_result:I
     :cond_0
     const/4 v3, 0x0
@@ -1598,22 +1439,21 @@
 
     goto :goto_0
 
-    .line 1204
+    .line 1063
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1205
+    .line 1064
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
 .end method
 
-.method public getPasswordMinimumUpperCase(Landroid/content/ComponentName;I)I
+.method public getPasswordMinimumUpperCase(Landroid/content/ComponentName;)I
     .locals 6
     .parameter "who"
-    .parameter "userHandle"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -1621,42 +1461,39 @@
     .end annotation
 
     .prologue
-    .line 994
+    .line 862
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 995
+    .line 863
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 998
+    .line 866
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "android.app.admin.IDevicePolicyManager"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 999
+    .line 867
     if-eqz p1, :cond_0
 
-    .line 1000
+    .line 868
     const/4 v3, 0x1
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1001
+    .line 869
     const/4 v3, 0x0
 
     invoke-virtual {p1, v0, v3}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1006
+    .line 874
     :goto_0
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1007
     iget-object v3, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v4, 0x6
@@ -1665,27 +1502,27 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1008
+    .line 875
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1009
+    .line 876
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 1012
+    .line 879
     .local v2, _result:I
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1013
+    .line 880
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1015
+    .line 882
     return v2
 
-    .line 1004
+    .line 872
     .end local v2           #_result:I
     :cond_0
     const/4 v3, 0x0
@@ -1697,22 +1534,21 @@
 
     goto :goto_0
 
-    .line 1012
+    .line 879
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1013
+    .line 880
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
 .end method
 
-.method public getPasswordQuality(Landroid/content/ComponentName;I)I
+.method public getPasswordQuality(Landroid/content/ComponentName;)I
     .locals 6
     .parameter "who"
-    .parameter "userHandle"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -1720,42 +1556,39 @@
     .end annotation
 
     .prologue
-    .line 898
+    .line 770
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 899
+    .line 771
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 902
+    .line 774
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "android.app.admin.IDevicePolicyManager"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 903
+    .line 775
     if-eqz p1, :cond_0
 
-    .line 904
+    .line 776
     const/4 v3, 0x1
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 905
+    .line 777
     const/4 v3, 0x0
 
     invoke-virtual {p1, v0, v3}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 910
+    .line 782
     :goto_0
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 911
     iget-object v3, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v4, 0x2
@@ -1764,27 +1597,27 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 912
+    .line 783
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 913
+    .line 784
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 916
+    .line 787
     .local v2, _result:I
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 917
+    .line 788
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 919
+    .line 790
     return v2
 
-    .line 908
+    .line 780
     .end local v2           #_result:I
     :cond_0
     const/4 v3, 0x0
@@ -1796,23 +1629,22 @@
 
     goto :goto_0
 
-    .line 916
+    .line 787
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 917
+    .line 788
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
 .end method
 
-.method public getRemoveWarning(Landroid/content/ComponentName;Landroid/os/RemoteCallback;I)V
+.method public getRemoveWarning(Landroid/content/ComponentName;Landroid/os/RemoteCallback;)V
     .locals 5
     .parameter "policyReceiver"
     .parameter "result"
-    .parameter "userHandle"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -1820,79 +1652,76 @@
     .end annotation
 
     .prologue
-    .line 1867
+    .line 1652
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1868
+    .line 1653
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1870
+    .line 1655
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "android.app.admin.IDevicePolicyManager"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1871
+    .line 1656
     if-eqz p1, :cond_0
 
-    .line 1872
+    .line 1657
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1873
+    .line 1658
     const/4 v2, 0x0
 
     invoke-virtual {p1, v0, v2}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1878
+    .line 1663
     :goto_0
     if-eqz p2, :cond_1
 
-    .line 1879
+    .line 1664
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1880
+    .line 1665
     const/4 v2, 0x0
 
     invoke-virtual {p2, v0, v2}, Landroid/os/RemoteCallback;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1885
+    .line 1670
     :goto_1
-    invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1886
     iget-object v2, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x2c
+    const/16 v3, 0x2a
 
     const/4 v4, 0x0
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1887
+    .line 1671
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1890
+    .line 1674
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1891
+    .line 1675
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1893
+    .line 1677
     return-void
 
-    .line 1876
+    .line 1661
     :cond_0
     const/4 v2, 0x0
 
@@ -1903,18 +1732,18 @@
 
     goto :goto_0
 
-    .line 1890
+    .line 1674
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1891
+    .line 1675
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
 
-    .line 1883
+    .line 1668
     :cond_1
     const/4 v2, 0x0
 
@@ -1926,10 +1755,9 @@
     goto :goto_1
 .end method
 
-.method public getStorageEncryption(Landroid/content/ComponentName;I)Z
+.method public getStorageEncryption(Landroid/content/ComponentName;)Z
     .locals 7
     .parameter "who"
-    .parameter "userHandle"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -1941,42 +1769,39 @@
 
     const/4 v3, 0x0
 
-    .line 1643
+    .line 1484
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1644
+    .line 1485
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1647
+    .line 1488
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v4, "android.app.admin.IDevicePolicyManager"
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1648
+    .line 1489
     if-eqz p1, :cond_0
 
-    .line 1649
+    .line 1490
     const/4 v4, 0x1
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1650
+    .line 1491
     const/4 v4, 0x0
 
     invoke-virtual {p1, v0, v4}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1655
+    .line 1496
     :goto_0
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1656
     iget-object v4, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v5, 0x22
@@ -1985,10 +1810,10 @@
 
     invoke-interface {v4, v5, v0, v1, v6}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1657
+    .line 1497
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1658
+    .line 1498
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -1997,18 +1822,18 @@
 
     if-eqz v4, :cond_1
 
-    .line 1661
+    .line 1501
     .local v2, _result:Z
     :goto_1
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1662
+    .line 1502
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1664
+    .line 1504
     return v2
 
-    .line 1653
+    .line 1494
     .end local v2           #_result:Z
     :cond_0
     const/4 v4, 0x0
@@ -2020,13 +1845,13 @@
 
     goto :goto_0
 
-    .line 1661
+    .line 1501
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1662
+    .line 1502
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -2034,13 +1859,12 @@
     :cond_1
     move v2, v3
 
-    .line 1658
+    .line 1498
     goto :goto_1
 .end method
 
-.method public getStorageEncryptionStatus(I)I
+.method public getStorageEncryptionStatus()I
     .locals 6
-    .parameter "userHandle"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -2048,28 +1872,25 @@
     .end annotation
 
     .prologue
-    .line 1668
+    .line 1508
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1669
+    .line 1509
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1672
+    .line 1512
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "android.app.admin.IDevicePolicyManager"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1673
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1674
+    .line 1513
     iget-object v3, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x23
@@ -2078,44 +1899,43 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1675
+    .line 1514
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1676
+    .line 1515
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 1679
+    .line 1518
     .local v2, _result:I
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1680
+    .line 1519
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1682
+    .line 1521
     return v2
 
-    .line 1679
+    .line 1518
     .end local v2           #_result:I
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1680
+    .line 1519
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
 .end method
 
-.method public hasGrantedPolicy(Landroid/content/ComponentName;II)Z
+.method public hasGrantedPolicy(Landroid/content/ComponentName;I)Z
     .locals 7
     .parameter "policyReceiver"
     .parameter "usesPolicy"
-    .parameter "userHandle"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -2127,57 +1947,54 @@
 
     const/4 v3, 0x0
 
-    .line 1918
+    .line 1701
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1919
+    .line 1702
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1922
+    .line 1705
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v4, "android.app.admin.IDevicePolicyManager"
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1923
+    .line 1706
     if-eqz p1, :cond_0
 
-    .line 1924
+    .line 1707
     const/4 v4, 0x1
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1925
+    .line 1708
     const/4 v4, 0x0
 
     invoke-virtual {p1, v0, v4}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1930
+    .line 1713
     :goto_0
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1931
-    invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1932
+    .line 1714
     iget-object v4, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v5, 0x2e
+    const/16 v5, 0x2c
 
     const/4 v6, 0x0
 
     invoke-interface {v4, v5, v0, v1, v6}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1933
+    .line 1715
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1934
+    .line 1716
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -2186,18 +2003,18 @@
 
     if-eqz v4, :cond_1
 
-    .line 1937
+    .line 1719
     .local v2, _result:Z
     :goto_1
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1938
+    .line 1720
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1940
+    .line 1722
     return v2
 
-    .line 1928
+    .line 1711
     .end local v2           #_result:Z
     :cond_0
     const/4 v4, 0x0
@@ -2209,13 +2026,13 @@
 
     goto :goto_0
 
-    .line 1937
+    .line 1719
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1938
+    .line 1720
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -2223,13 +2040,12 @@
     :cond_1
     move v2, v3
 
-    .line 1934
+    .line 1716
     goto :goto_1
 .end method
 
-.method public isActivePasswordSufficient(I)Z
+.method public isActivePasswordSufficient()Z
     .locals 6
-    .parameter "userHandle"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -2239,28 +2055,25 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1380
+    .line 1232
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1381
+    .line 1233
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1384
+    .line 1236
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "android.app.admin.IDevicePolicyManager"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1385
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1386
+    .line 1237
     iget-object v3, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x16
@@ -2269,10 +2082,10 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1387
+    .line 1238
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1388
+    .line 1239
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -2283,34 +2096,33 @@
 
     const/4 v2, 0x1
 
-    .line 1391
+    .line 1242
     .local v2, _result:Z
     :cond_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1392
+    .line 1243
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1394
+    .line 1245
     return v2
 
-    .line 1391
+    .line 1242
     .end local v2           #_result:Z
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1392
+    .line 1243
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
 .end method
 
-.method public isAdminActive(Landroid/content/ComponentName;I)Z
+.method public isAdminActive(Landroid/content/ComponentName;)Z
     .locals 7
     .parameter "policyReceiver"
-    .parameter "userHandle"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -2322,54 +2134,51 @@
 
     const/4 v3, 0x0
 
-    .line 1805
+    .line 1593
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1806
+    .line 1594
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1809
+    .line 1597
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v4, "android.app.admin.IDevicePolicyManager"
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1810
+    .line 1598
     if-eqz p1, :cond_0
 
-    .line 1811
+    .line 1599
     const/4 v4, 0x1
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1812
+    .line 1600
     const/4 v4, 0x0
 
     invoke-virtual {p1, v0, v4}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1817
+    .line 1605
     :goto_0
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1818
     iget-object v4, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v5, 0x29
+    const/16 v5, 0x27
 
     const/4 v6, 0x0
 
     invoke-interface {v4, v5, v0, v1, v6}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1819
+    .line 1606
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1820
+    .line 1607
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -2378,18 +2187,18 @@
 
     if-eqz v4, :cond_1
 
-    .line 1823
+    .line 1610
     .local v2, _result:Z
     :goto_1
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1824
+    .line 1611
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1826
+    .line 1613
     return v2
 
-    .line 1815
+    .line 1603
     .end local v2           #_result:Z
     :cond_0
     const/4 v4, 0x0
@@ -2401,13 +2210,13 @@
 
     goto :goto_0
 
-    .line 1823
+    .line 1610
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1824
+    .line 1611
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -2415,7 +2224,7 @@
     :cond_1
     move v2, v3
 
-    .line 1820
+    .line 1607
     goto :goto_1
 .end method
 
@@ -2428,25 +2237,25 @@
     .end annotation
 
     .prologue
-    .line 1532
+    .line 1377
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1533
+    .line 1378
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1535
+    .line 1380
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "android.app.admin.IDevicePolicyManager"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1536
+    .line 1381
     iget-object v2, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0x1d
@@ -2455,36 +2264,35 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1537
+    .line 1382
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1540
+    .line 1385
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1541
+    .line 1386
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1543
+    .line 1388
     return-void
 
-    .line 1540
+    .line 1385
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1541
+    .line 1386
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
 .end method
 
-.method public packageHasActiveAdmins(Ljava/lang/String;I)Z
+.method public packageHasActiveAdmins(Ljava/lang/String;)Z
     .locals 6
     .parameter "packageName"
-    .parameter "userHandle"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -2494,43 +2302,40 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1848
+    .line 1634
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1849
+    .line 1635
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1852
+    .line 1638
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "android.app.admin.IDevicePolicyManager"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1853
+    .line 1639
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1854
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1855
+    .line 1640
     iget-object v3, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x2b
+    const/16 v4, 0x29
 
     const/4 v5, 0x0
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1856
+    .line 1641
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1857
+    .line 1642
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -2541,34 +2346,33 @@
 
     const/4 v2, 0x1
 
-    .line 1860
+    .line 1645
     .local v2, _result:Z
     :cond_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1861
+    .line 1646
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1863
+    .line 1648
     return v2
 
-    .line 1860
+    .line 1645
     .end local v2           #_result:Z
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1861
+    .line 1646
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
 .end method
 
-.method public removeActiveAdmin(Landroid/content/ComponentName;I)V
+.method public removeActiveAdmin(Landroid/content/ComponentName;)V
     .locals 5
     .parameter "policyReceiver"
-    .parameter "userHandle"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -2576,65 +2380,62 @@
     .end annotation
 
     .prologue
-    .line 1896
+    .line 1680
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1897
+    .line 1681
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1899
+    .line 1683
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "android.app.admin.IDevicePolicyManager"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1900
+    .line 1684
     if-eqz p1, :cond_0
 
-    .line 1901
+    .line 1685
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1902
+    .line 1686
     const/4 v2, 0x0
 
     invoke-virtual {p1, v0, v2}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1907
+    .line 1691
     :goto_0
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1908
     iget-object v2, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x2d
+    const/16 v3, 0x2b
 
     const/4 v4, 0x0
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1909
+    .line 1692
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1912
+    .line 1695
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1913
+    .line 1696
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1915
+    .line 1698
     return-void
 
-    .line 1905
+    .line 1689
     :cond_0
     const/4 v2, 0x0
 
@@ -2645,21 +2446,20 @@
 
     goto :goto_0
 
-    .line 1912
+    .line 1695
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1913
+    .line 1696
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
 .end method
 
-.method public reportFailedPasswordAttempt(I)V
+.method public reportFailedPasswordAttempt()V
     .locals 5
-    .parameter "userHandle"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -2667,65 +2467,61 @@
     .end annotation
 
     .prologue
-    .line 1967
+    .line 1748
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1968
+    .line 1749
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1970
+    .line 1751
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "android.app.admin.IDevicePolicyManager"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1971
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1972
+    .line 1752
     iget-object v2, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x30
+    const/16 v3, 0x2e
 
     const/4 v4, 0x0
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1973
+    .line 1753
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1976
+    .line 1756
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1977
+    .line 1757
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1979
+    .line 1759
     return-void
 
-    .line 1976
+    .line 1756
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1977
+    .line 1757
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
 .end method
 
-.method public reportSuccessfulPasswordAttempt(I)V
+.method public reportSuccessfulPasswordAttempt()V
     .locals 5
-    .parameter "userHandle"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -2733,67 +2529,63 @@
     .end annotation
 
     .prologue
-    .line 1982
+    .line 1762
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1983
+    .line 1763
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1985
+    .line 1765
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "android.app.admin.IDevicePolicyManager"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1986
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1987
+    .line 1766
     iget-object v2, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x31
+    const/16 v3, 0x2f
 
     const/4 v4, 0x0
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1988
+    .line 1767
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1991
+    .line 1770
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1992
+    .line 1771
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1994
+    .line 1773
     return-void
 
-    .line 1991
+    .line 1770
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1992
+    .line 1771
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
 .end method
 
-.method public resetPassword(Ljava/lang/String;II)Z
+.method public resetPassword(Ljava/lang/String;I)Z
     .locals 6
     .parameter "password"
     .parameter "flags"
-    .parameter "userHandle"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -2803,34 +2595,31 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1464
+    .line 1312
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1465
+    .line 1313
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1468
+    .line 1316
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "android.app.admin.IDevicePolicyManager"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1469
+    .line 1317
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1470
+    .line 1318
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1471
-    invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1472
+    .line 1319
     iget-object v3, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x1a
@@ -2839,10 +2628,10 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1473
+    .line 1320
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1474
+    .line 1321
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -2853,35 +2642,34 @@
 
     const/4 v2, 0x1
 
-    .line 1477
+    .line 1324
     .local v2, _result:Z
     :cond_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1478
+    .line 1325
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1480
+    .line 1327
     return v2
 
-    .line 1477
+    .line 1324
     .end local v2           #_result:Z
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1478
+    .line 1325
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
 .end method
 
-.method public setActiveAdmin(Landroid/content/ComponentName;ZI)V
+.method public setActiveAdmin(Landroid/content/ComponentName;Z)V
     .locals 5
     .parameter "policyReceiver"
     .parameter "refreshing"
-    .parameter "userHandle"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -2893,71 +2681,68 @@
 
     const/4 v3, 0x0
 
-    .line 1782
+    .line 1571
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1783
+    .line 1572
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1785
+    .line 1574
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v4, "android.app.admin.IDevicePolicyManager"
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1786
+    .line 1575
     if-eqz p1, :cond_0
 
-    .line 1787
+    .line 1576
     const/4 v4, 0x1
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1788
+    .line 1577
     const/4 v4, 0x0
 
     invoke-virtual {p1, v0, v4}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1793
+    .line 1582
     :goto_0
     if-eqz p2, :cond_1
 
     :goto_1
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1794
-    invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1795
+    .line 1583
     iget-object v2, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x28
+    const/16 v3, 0x26
 
     const/4 v4, 0x0
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1796
+    .line 1584
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1799
+    .line 1587
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1800
+    .line 1588
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1802
+    .line 1590
     return-void
 
-    .line 1791
+    .line 1580
     :cond_0
     const/4 v4, 0x0
 
@@ -2968,13 +2753,13 @@
 
     goto :goto_0
 
-    .line 1799
+    .line 1587
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1800
+    .line 1588
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
@@ -2982,11 +2767,11 @@
     :cond_1
     move v2, v3
 
-    .line 1793
+    .line 1582
     goto :goto_1
 .end method
 
-.method public setActivePasswordState(IIIIIIIII)V
+.method public setActivePasswordState(IIIIIIII)V
     .locals 5
     .parameter "quality"
     .parameter "length"
@@ -2996,7 +2781,6 @@
     .parameter "numbers"
     .parameter "symbols"
     .parameter "nonletter"
-    .parameter "userHandle"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -3004,91 +2788,87 @@
     .end annotation
 
     .prologue
-    .line 1944
+    .line 1726
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1945
+    .line 1727
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1947
+    .line 1729
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "android.app.admin.IDevicePolicyManager"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1948
+    .line 1730
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1949
+    .line 1731
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1950
+    .line 1732
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1951
+    .line 1733
     invoke-virtual {v0, p4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1952
+    .line 1734
     invoke-virtual {v0, p5}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1953
+    .line 1735
     invoke-virtual {v0, p6}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1954
+    .line 1736
     invoke-virtual {v0, p7}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1955
+    .line 1737
     invoke-virtual {v0, p8}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1956
-    invoke-virtual {v0, p9}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1957
+    .line 1738
     iget-object v2, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0x2f
+    const/16 v3, 0x2d
 
     const/4 v4, 0x0
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1958
+    .line 1739
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1961
+    .line 1742
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1962
+    .line 1743
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1964
+    .line 1745
     return-void
 
-    .line 1961
+    .line 1742
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1962
+    .line 1743
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
 .end method
 
-.method public setCameraDisabled(Landroid/content/ComponentName;ZI)V
+.method public setCameraDisabled(Landroid/content/ComponentName;Z)V
     .locals 5
     .parameter "who"
     .parameter "disabled"
-    .parameter "userHandle"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -3100,48 +2880,45 @@
 
     const/4 v3, 0x0
 
-    .line 1686
+    .line 1525
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1687
+    .line 1526
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1689
+    .line 1528
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v4, "android.app.admin.IDevicePolicyManager"
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1690
+    .line 1529
     if-eqz p1, :cond_0
 
-    .line 1691
+    .line 1530
     const/4 v4, 0x1
 
     invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1692
+    .line 1531
     const/4 v4, 0x0
 
     invoke-virtual {p1, v0, v4}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1697
+    .line 1536
     :goto_0
     if-eqz p2, :cond_1
 
     :goto_1
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1698
-    invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1699
+    .line 1537
     iget-object v2, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0x24
@@ -3150,21 +2927,21 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1700
+    .line 1538
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1703
+    .line 1541
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1704
+    .line 1542
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1706
+    .line 1544
     return-void
 
-    .line 1695
+    .line 1534
     :cond_0
     const/4 v4, 0x0
 
@@ -3175,13 +2952,13 @@
 
     goto :goto_0
 
-    .line 1703
+    .line 1541
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1704
+    .line 1542
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
@@ -3189,16 +2966,15 @@
     :cond_1
     move v2, v3
 
-    .line 1697
+    .line 1536
     goto :goto_1
 .end method
 
-.method public setGlobalProxy(Landroid/content/ComponentName;Ljava/lang/String;Ljava/lang/String;I)Landroid/content/ComponentName;
+.method public setGlobalProxy(Landroid/content/ComponentName;Ljava/lang/String;Ljava/lang/String;)Landroid/content/ComponentName;
     .locals 6
     .parameter "admin"
     .parameter "proxySpec"
     .parameter "exclusionList"
-    .parameter "userHandle"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -3206,48 +2982,45 @@
     .end annotation
 
     .prologue
-    .line 1562
+    .line 1406
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1563
+    .line 1407
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1566
+    .line 1410
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "android.app.admin.IDevicePolicyManager"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1567
+    .line 1411
     if-eqz p1, :cond_0
 
-    .line 1568
+    .line 1412
     const/4 v3, 0x1
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1569
+    .line 1413
     const/4 v3, 0x0
 
     invoke-virtual {p1, v0, v3}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1574
+    .line 1418
     :goto_0
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1575
+    .line 1419
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1576
-    invoke-virtual {v0, p4}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1577
+    .line 1420
     iget-object v3, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x1f
@@ -3256,17 +3029,17 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1578
+    .line 1421
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1579
+    .line 1422
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
     if-eqz v3, :cond_1
 
-    .line 1580
+    .line 1423
     sget-object v3, Landroid/content/ComponentName;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v3, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -3277,18 +3050,18 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1587
+    .line 1430
     .local v2, _result:Landroid/content/ComponentName;
     :goto_1
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1588
+    .line 1431
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1590
+    .line 1433
     return-object v2
 
-    .line 1572
+    .line 1416
     .end local v2           #_result:Landroid/content/ComponentName;
     :cond_0
     const/4 v3, 0x0
@@ -3300,18 +3073,18 @@
 
     goto :goto_0
 
-    .line 1587
+    .line 1430
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1588
+    .line 1431
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
 
-    .line 1583
+    .line 1426
     :cond_1
     const/4 v2, 0x0
 
@@ -3319,107 +3092,10 @@
     goto :goto_1
 .end method
 
-.method public setKeyguardDisabledFeatures(Landroid/content/ComponentName;II)V
-    .locals 5
-    .parameter "who"
-    .parameter "which"
-    .parameter "userHandle"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 1734
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 1735
-    .local v0, _data:Landroid/os/Parcel;
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    .line 1737
-    .local v1, _reply:Landroid/os/Parcel;
-    :try_start_0
-    const-string v2, "android.app.admin.IDevicePolicyManager"
-
-    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 1738
-    if-eqz p1, :cond_0
-
-    .line 1739
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1740
-    const/4 v2, 0x0
-
-    invoke-virtual {p1, v0, v2}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
-
-    .line 1745
-    :goto_0
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1746
-    invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1747
-    iget-object v2, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/16 v3, 0x26
-
-    const/4 v4, 0x0
-
-    invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 1748
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 1751
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1752
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 1754
-    return-void
-
-    .line 1743
-    :cond_0
-    const/4 v2, 0x0
-
-    :try_start_1
-    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-
-    .line 1751
-    :catchall_0
-    move-exception v2
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1752
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    throw v2
-.end method
-
-.method public setMaximumFailedPasswordsForWipe(Landroid/content/ComponentName;II)V
+.method public setMaximumFailedPasswordsForWipe(Landroid/content/ComponentName;I)V
     .locals 5
     .parameter "admin"
     .parameter "num"
-    .parameter "userHandle"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -3427,45 +3103,42 @@
     .end annotation
 
     .prologue
-    .line 1416
+    .line 1266
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1417
+    .line 1267
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1419
+    .line 1269
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "android.app.admin.IDevicePolicyManager"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1420
+    .line 1270
     if-eqz p1, :cond_0
 
-    .line 1421
+    .line 1271
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1422
+    .line 1272
     const/4 v2, 0x0
 
     invoke-virtual {p1, v0, v2}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1427
+    .line 1277
     :goto_0
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1428
-    invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1429
+    .line 1278
     iget-object v2, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0x18
@@ -3474,21 +3147,21 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1430
+    .line 1279
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1433
+    .line 1282
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1434
+    .line 1283
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1436
+    .line 1285
     return-void
 
-    .line 1425
+    .line 1275
     :cond_0
     const/4 v2, 0x0
 
@@ -3499,23 +3172,22 @@
 
     goto :goto_0
 
-    .line 1433
+    .line 1282
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1434
+    .line 1283
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
 .end method
 
-.method public setMaximumTimeToLock(Landroid/content/ComponentName;JI)V
+.method public setMaximumTimeToLock(Landroid/content/ComponentName;J)V
     .locals 5
     .parameter "who"
     .parameter "timeMs"
-    .parameter "userHandle"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -3523,45 +3195,42 @@
     .end annotation
 
     .prologue
-    .line 1484
+    .line 1331
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1485
+    .line 1332
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1487
+    .line 1334
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "android.app.admin.IDevicePolicyManager"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1488
+    .line 1335
     if-eqz p1, :cond_0
 
-    .line 1489
+    .line 1336
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1490
+    .line 1337
     const/4 v2, 0x0
 
     invoke-virtual {p1, v0, v2}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1495
+    .line 1342
     :goto_0
     invoke-virtual {v0, p2, p3}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 1496
-    invoke-virtual {v0, p4}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1497
+    .line 1343
     iget-object v2, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0x1b
@@ -3570,21 +3239,21 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1498
+    .line 1344
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1501
+    .line 1347
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1502
+    .line 1348
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1504
+    .line 1350
     return-void
 
-    .line 1493
+    .line 1340
     :cond_0
     const/4 v2, 0x0
 
@@ -3595,23 +3264,22 @@
 
     goto :goto_0
 
-    .line 1501
+    .line 1347
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1502
+    .line 1348
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
 .end method
 
-.method public setPasswordExpirationTimeout(Landroid/content/ComponentName;JI)V
+.method public setPasswordExpirationTimeout(Landroid/content/ComponentName;J)V
     .locals 5
     .parameter "who"
     .parameter "expiration"
-    .parameter "userHandle"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -3619,45 +3287,42 @@
     .end annotation
 
     .prologue
-    .line 1307
+    .line 1162
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1308
+    .line 1163
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1310
+    .line 1165
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "android.app.admin.IDevicePolicyManager"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1311
+    .line 1166
     if-eqz p1, :cond_0
 
-    .line 1312
+    .line 1167
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1313
+    .line 1168
     const/4 v2, 0x0
 
     invoke-virtual {p1, v0, v2}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1318
+    .line 1173
     :goto_0
     invoke-virtual {v0, p2, p3}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 1319
-    invoke-virtual {v0, p4}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1320
+    .line 1174
     iget-object v2, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0x13
@@ -3666,21 +3331,21 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1321
+    .line 1175
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1324
+    .line 1178
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1325
+    .line 1179
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1327
+    .line 1181
     return-void
 
-    .line 1316
+    .line 1171
     :cond_0
     const/4 v2, 0x0
 
@@ -3691,23 +3356,22 @@
 
     goto :goto_0
 
-    .line 1324
+    .line 1178
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1325
+    .line 1179
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
 .end method
 
-.method public setPasswordHistoryLength(Landroid/content/ComponentName;II)V
+.method public setPasswordHistoryLength(Landroid/content/ComponentName;I)V
     .locals 5
     .parameter "who"
     .parameter "length"
-    .parameter "userHandle"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -3715,528 +3379,45 @@
     .end annotation
 
     .prologue
-    .line 1259
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 1260
-    .local v0, _data:Landroid/os/Parcel;
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    .line 1262
-    .local v1, _reply:Landroid/os/Parcel;
-    :try_start_0
-    const-string v2, "android.app.admin.IDevicePolicyManager"
-
-    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 1263
-    if-eqz p1, :cond_0
-
-    .line 1264
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1265
-    const/4 v2, 0x0
-
-    invoke-virtual {p1, v0, v2}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
-
-    .line 1270
-    :goto_0
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1271
-    invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1272
-    iget-object v2, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/16 v3, 0x11
-
-    const/4 v4, 0x0
-
-    invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 1273
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 1276
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1277
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 1279
-    return-void
-
-    .line 1268
-    :cond_0
-    const/4 v2, 0x0
-
-    :try_start_1
-    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-
-    .line 1276
-    :catchall_0
-    move-exception v2
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1277
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    throw v2
-.end method
-
-.method public setPasswordMinimumLength(Landroid/content/ComponentName;II)V
-    .locals 5
-    .parameter "who"
-    .parameter "length"
-    .parameter "userHandle"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 923
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 924
-    .local v0, _data:Landroid/os/Parcel;
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    .line 926
-    .local v1, _reply:Landroid/os/Parcel;
-    :try_start_0
-    const-string v2, "android.app.admin.IDevicePolicyManager"
-
-    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 927
-    if-eqz p1, :cond_0
-
-    .line 928
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 929
-    const/4 v2, 0x0
-
-    invoke-virtual {p1, v0, v2}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
-
-    .line 934
-    :goto_0
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 935
-    invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 936
-    iget-object v2, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/4 v3, 0x3
-
-    const/4 v4, 0x0
-
-    invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 937
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 940
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 941
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 943
-    return-void
-
-    .line 932
-    :cond_0
-    const/4 v2, 0x0
-
-    :try_start_1
-    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-
-    .line 940
-    :catchall_0
-    move-exception v2
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 941
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    throw v2
-.end method
-
-.method public setPasswordMinimumLetters(Landroid/content/ComponentName;II)V
-    .locals 5
-    .parameter "who"
-    .parameter "length"
-    .parameter "userHandle"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 1067
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 1068
-    .local v0, _data:Landroid/os/Parcel;
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    .line 1070
-    .local v1, _reply:Landroid/os/Parcel;
-    :try_start_0
-    const-string v2, "android.app.admin.IDevicePolicyManager"
-
-    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 1071
-    if-eqz p1, :cond_0
-
-    .line 1072
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1073
-    const/4 v2, 0x0
-
-    invoke-virtual {p1, v0, v2}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
-
-    .line 1078
-    :goto_0
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1079
-    invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1080
-    iget-object v2, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/16 v3, 0x9
-
-    const/4 v4, 0x0
-
-    invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 1081
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 1084
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1085
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 1087
-    return-void
-
-    .line 1076
-    :cond_0
-    const/4 v2, 0x0
-
-    :try_start_1
-    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-
-    .line 1084
-    :catchall_0
-    move-exception v2
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1085
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    throw v2
-.end method
-
-.method public setPasswordMinimumLowerCase(Landroid/content/ComponentName;II)V
-    .locals 5
-    .parameter "who"
-    .parameter "length"
-    .parameter "userHandle"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 1019
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 1020
-    .local v0, _data:Landroid/os/Parcel;
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    .line 1022
-    .local v1, _reply:Landroid/os/Parcel;
-    :try_start_0
-    const-string v2, "android.app.admin.IDevicePolicyManager"
-
-    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 1023
-    if-eqz p1, :cond_0
-
-    .line 1024
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1025
-    const/4 v2, 0x0
-
-    invoke-virtual {p1, v0, v2}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
-
-    .line 1030
-    :goto_0
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1031
-    invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1032
-    iget-object v2, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/4 v3, 0x7
-
-    const/4 v4, 0x0
-
-    invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 1033
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 1036
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1037
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 1039
-    return-void
-
-    .line 1028
-    :cond_0
-    const/4 v2, 0x0
-
-    :try_start_1
-    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-
-    .line 1036
-    :catchall_0
-    move-exception v2
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1037
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    throw v2
-.end method
-
-.method public setPasswordMinimumNonLetter(Landroid/content/ComponentName;II)V
-    .locals 5
-    .parameter "who"
-    .parameter "length"
-    .parameter "userHandle"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 1211
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 1212
-    .local v0, _data:Landroid/os/Parcel;
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    .line 1214
-    .local v1, _reply:Landroid/os/Parcel;
-    :try_start_0
-    const-string v2, "android.app.admin.IDevicePolicyManager"
-
-    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 1215
-    if-eqz p1, :cond_0
-
-    .line 1216
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1217
-    const/4 v2, 0x0
-
-    invoke-virtual {p1, v0, v2}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
-
-    .line 1222
-    :goto_0
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1223
-    invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1224
-    iget-object v2, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/16 v3, 0xf
-
-    const/4 v4, 0x0
-
-    invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 1225
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 1228
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1229
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 1231
-    return-void
-
-    .line 1220
-    :cond_0
-    const/4 v2, 0x0
-
-    :try_start_1
-    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-
-    .line 1228
-    :catchall_0
-    move-exception v2
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1229
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    throw v2
-.end method
-
-.method public setPasswordMinimumNumeric(Landroid/content/ComponentName;II)V
-    .locals 5
-    .parameter "who"
-    .parameter "length"
-    .parameter "userHandle"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 1115
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
     .line 1116
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 1117
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
-
-    .line 1118
-    .local v1, _reply:Landroid/os/Parcel;
-    :try_start_0
-    const-string v2, "android.app.admin.IDevicePolicyManager"
-
-    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
     .line 1119
-    if-eqz p1, :cond_0
+    .local v1, _reply:Landroid/os/Parcel;
+    :try_start_0
+    const-string v2, "android.app.admin.IDevicePolicyManager"
+
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
     .line 1120
+    if-eqz p1, :cond_0
+
+    .line 1121
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1121
+    .line 1122
     const/4 v2, 0x0
 
     invoke-virtual {p1, v0, v2}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1126
+    .line 1127
     :goto_0
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1127
-    invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 1128
     iget-object v2, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v3, 0xb
+    const/16 v3, 0x11
 
     const/4 v4, 0x0
 
@@ -4256,7 +3437,7 @@
     .line 1135
     return-void
 
-    .line 1124
+    .line 1125
     :cond_0
     const/4 v2, 0x0
 
@@ -4279,11 +3460,10 @@
     throw v2
 .end method
 
-.method public setPasswordMinimumSymbols(Landroid/content/ComponentName;II)V
+.method public setPasswordMinimumLength(Landroid/content/ComponentName;I)V
     .locals 5
     .parameter "who"
     .parameter "length"
-    .parameter "userHandle"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -4291,45 +3471,502 @@
     .end annotation
 
     .prologue
-    .line 1163
+    .line 794
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1164
+    .line 795
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1166
+    .line 797
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "android.app.admin.IDevicePolicyManager"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1167
+    .line 798
     if-eqz p1, :cond_0
 
-    .line 1168
+    .line 799
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1169
+    .line 800
     const/4 v2, 0x0
 
     invoke-virtual {p1, v0, v2}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1174
+    .line 805
     :goto_0
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1175
-    invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
+    .line 806
+    iget-object v2, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    .line 1176
+    const/4 v3, 0x3
+
+    const/4 v4, 0x0
+
+    invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    .line 807
+    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 810
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 811
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 813
+    return-void
+
+    .line 803
+    :cond_0
+    const/4 v2, 0x0
+
+    :try_start_1
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    .line 810
+    :catchall_0
+    move-exception v2
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 811
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    throw v2
+.end method
+
+.method public setPasswordMinimumLetters(Landroid/content/ComponentName;I)V
+    .locals 5
+    .parameter "who"
+    .parameter "length"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 932
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 933
+    .local v0, _data:Landroid/os/Parcel;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v1
+
+    .line 935
+    .local v1, _reply:Landroid/os/Parcel;
+    :try_start_0
+    const-string v2, "android.app.admin.IDevicePolicyManager"
+
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 936
+    if-eqz p1, :cond_0
+
+    .line 937
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 938
+    const/4 v2, 0x0
+
+    invoke-virtual {p1, v0, v2}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
+
+    .line 943
+    :goto_0
+    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 944
+    iget-object v2, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+
+    const/16 v3, 0x9
+
+    const/4 v4, 0x0
+
+    invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    .line 945
+    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 948
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 949
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 951
+    return-void
+
+    .line 941
+    :cond_0
+    const/4 v2, 0x0
+
+    :try_start_1
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    .line 948
+    :catchall_0
+    move-exception v2
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 949
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    throw v2
+.end method
+
+.method public setPasswordMinimumLowerCase(Landroid/content/ComponentName;I)V
+    .locals 5
+    .parameter "who"
+    .parameter "length"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 886
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 887
+    .local v0, _data:Landroid/os/Parcel;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v1
+
+    .line 889
+    .local v1, _reply:Landroid/os/Parcel;
+    :try_start_0
+    const-string v2, "android.app.admin.IDevicePolicyManager"
+
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 890
+    if-eqz p1, :cond_0
+
+    .line 891
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 892
+    const/4 v2, 0x0
+
+    invoke-virtual {p1, v0, v2}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
+
+    .line 897
+    :goto_0
+    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 898
+    iget-object v2, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+
+    const/4 v3, 0x7
+
+    const/4 v4, 0x0
+
+    invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    .line 899
+    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 902
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 903
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 905
+    return-void
+
+    .line 895
+    :cond_0
+    const/4 v2, 0x0
+
+    :try_start_1
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    .line 902
+    :catchall_0
+    move-exception v2
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 903
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    throw v2
+.end method
+
+.method public setPasswordMinimumNonLetter(Landroid/content/ComponentName;I)V
+    .locals 5
+    .parameter "who"
+    .parameter "length"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 1070
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 1071
+    .local v0, _data:Landroid/os/Parcel;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v1
+
+    .line 1073
+    .local v1, _reply:Landroid/os/Parcel;
+    :try_start_0
+    const-string v2, "android.app.admin.IDevicePolicyManager"
+
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 1074
+    if-eqz p1, :cond_0
+
+    .line 1075
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 1076
+    const/4 v2, 0x0
+
+    invoke-virtual {p1, v0, v2}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
+
+    .line 1081
+    :goto_0
+    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 1082
+    iget-object v2, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+
+    const/16 v3, 0xf
+
+    const/4 v4, 0x0
+
+    invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    .line 1083
+    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 1086
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 1087
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 1089
+    return-void
+
+    .line 1079
+    :cond_0
+    const/4 v2, 0x0
+
+    :try_start_1
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    .line 1086
+    :catchall_0
+    move-exception v2
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 1087
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    throw v2
+.end method
+
+.method public setPasswordMinimumNumeric(Landroid/content/ComponentName;I)V
+    .locals 5
+    .parameter "who"
+    .parameter "length"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 978
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 979
+    .local v0, _data:Landroid/os/Parcel;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v1
+
+    .line 981
+    .local v1, _reply:Landroid/os/Parcel;
+    :try_start_0
+    const-string v2, "android.app.admin.IDevicePolicyManager"
+
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 982
+    if-eqz p1, :cond_0
+
+    .line 983
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 984
+    const/4 v2, 0x0
+
+    invoke-virtual {p1, v0, v2}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
+
+    .line 989
+    :goto_0
+    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 990
+    iget-object v2, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+
+    const/16 v3, 0xb
+
+    const/4 v4, 0x0
+
+    invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    .line 991
+    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 994
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 995
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 997
+    return-void
+
+    .line 987
+    :cond_0
+    const/4 v2, 0x0
+
+    :try_start_1
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    .line 994
+    :catchall_0
+    move-exception v2
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 995
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    throw v2
+.end method
+
+.method public setPasswordMinimumSymbols(Landroid/content/ComponentName;I)V
+    .locals 5
+    .parameter "who"
+    .parameter "length"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 1024
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 1025
+    .local v0, _data:Landroid/os/Parcel;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v1
+
+    .line 1027
+    .local v1, _reply:Landroid/os/Parcel;
+    :try_start_0
+    const-string v2, "android.app.admin.IDevicePolicyManager"
+
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 1028
+    if-eqz p1, :cond_0
+
+    .line 1029
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 1030
+    const/4 v2, 0x0
+
+    invoke-virtual {p1, v0, v2}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
+
+    .line 1035
+    :goto_0
+    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 1036
     iget-object v2, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0xd
@@ -4338,21 +3975,21 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1177
+    .line 1037
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1180
+    .line 1040
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1181
+    .line 1041
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1183
+    .line 1043
     return-void
 
-    .line 1172
+    .line 1033
     :cond_0
     const/4 v2, 0x0
 
@@ -4363,23 +4000,22 @@
 
     goto :goto_0
 
-    .line 1180
+    .line 1040
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1181
+    .line 1041
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
 .end method
 
-.method public setPasswordMinimumUpperCase(Landroid/content/ComponentName;II)V
+.method public setPasswordMinimumUpperCase(Landroid/content/ComponentName;I)V
     .locals 5
     .parameter "who"
     .parameter "length"
-    .parameter "userHandle"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -4387,45 +4023,42 @@
     .end annotation
 
     .prologue
-    .line 971
+    .line 840
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 972
+    .line 841
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 974
+    .line 843
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "android.app.admin.IDevicePolicyManager"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 975
+    .line 844
     if-eqz p1, :cond_0
 
-    .line 976
+    .line 845
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 977
+    .line 846
     const/4 v2, 0x0
 
     invoke-virtual {p1, v0, v2}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 982
+    .line 851
     :goto_0
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 983
-    invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 984
+    .line 852
     iget-object v2, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v3, 0x5
@@ -4434,21 +4067,21 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 985
+    .line 853
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 988
+    .line 856
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 989
+    .line 857
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 991
+    .line 859
     return-void
 
-    .line 980
+    .line 849
     :cond_0
     const/4 v2, 0x0
 
@@ -4459,23 +4092,22 @@
 
     goto :goto_0
 
-    .line 988
+    .line 856
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 989
+    .line 857
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
 .end method
 
-.method public setPasswordQuality(Landroid/content/ComponentName;II)V
+.method public setPasswordQuality(Landroid/content/ComponentName;I)V
     .locals 5
     .parameter "who"
     .parameter "quality"
-    .parameter "userHandle"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -4483,45 +4115,42 @@
     .end annotation
 
     .prologue
-    .line 875
+    .line 748
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 876
+    .line 749
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 878
+    .line 751
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "android.app.admin.IDevicePolicyManager"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 879
+    .line 752
     if-eqz p1, :cond_0
 
-    .line 880
+    .line 753
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 881
+    .line 754
     const/4 v2, 0x0
 
     invoke-virtual {p1, v0, v2}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 886
+    .line 759
     :goto_0
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 887
-    invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 888
+    .line 760
     iget-object v2, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v3, 0x1
@@ -4530,21 +4159,21 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 889
+    .line 761
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 892
+    .line 764
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 893
+    .line 765
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 895
+    .line 767
     return-void
 
-    .line 884
+    .line 757
     :cond_0
     const/4 v2, 0x0
 
@@ -4555,23 +4184,22 @@
 
     goto :goto_0
 
-    .line 892
+    .line 764
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 893
+    .line 765
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
 .end method
 
-.method public setStorageEncryption(Landroid/content/ComponentName;ZI)I
+.method public setStorageEncryption(Landroid/content/ComponentName;Z)I
     .locals 6
     .parameter "who"
     .parameter "encrypt"
-    .parameter "userHandle"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -4583,48 +4211,45 @@
 
     const/4 v4, 0x0
 
-    .line 1617
+    .line 1459
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1618
+    .line 1460
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1621
+    .line 1463
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v5, "android.app.admin.IDevicePolicyManager"
 
     invoke-virtual {v0, v5}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1622
+    .line 1464
     if-eqz p1, :cond_0
 
-    .line 1623
+    .line 1465
     const/4 v5, 0x1
 
     invoke-virtual {v0, v5}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1624
+    .line 1466
     const/4 v5, 0x0
 
     invoke-virtual {p1, v0, v5}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1629
+    .line 1471
     :goto_0
     if-eqz p2, :cond_1
 
     :goto_1
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1630
-    invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1631
+    .line 1472
     iget-object v3, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x21
@@ -4633,27 +4258,27 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1632
+    .line 1473
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1633
+    .line 1474
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 1636
+    .line 1477
     .local v2, _result:I
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1637
+    .line 1478
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1639
+    .line 1480
     return v2
 
-    .line 1627
+    .line 1469
     .end local v2           #_result:I
     :cond_0
     const/4 v5, 0x0
@@ -4665,13 +4290,13 @@
 
     goto :goto_0
 
-    .line 1636
+    .line 1477
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1637
+    .line 1478
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -4679,14 +4304,13 @@
     :cond_1
     move v3, v4
 
-    .line 1629
+    .line 1471
     goto :goto_1
 .end method
 
-.method public wipeData(II)V
+.method public wipeData(I)V
     .locals 5
     .parameter "flags"
-    .parameter "userHandle"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -4694,31 +4318,28 @@
     .end annotation
 
     .prologue
-    .line 1546
+    .line 1391
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1547
+    .line 1392
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1549
+    .line 1394
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "android.app.admin.IDevicePolicyManager"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1550
+    .line 1395
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1551
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1552
+    .line 1396
     iget-object v2, p0, Landroid/app/admin/IDevicePolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0x1e
@@ -4727,27 +4348,27 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1553
+    .line 1397
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1556
+    .line 1400
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1557
+    .line 1401
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1559
+    .line 1403
     return-void
 
-    .line 1556
+    .line 1400
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1557
+    .line 1401
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2

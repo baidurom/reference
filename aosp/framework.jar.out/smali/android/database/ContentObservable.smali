@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 26
+    .line 23
     invoke-direct {p0}, Landroid/database/Observable;-><init>()V
 
     return-void
@@ -28,33 +28,16 @@
 
 # virtual methods
 .method public dispatchChange(Z)V
-    .locals 1
-    .parameter "selfChange"
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    .prologue
-    .line 50
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, p1, v0}, Landroid/database/ContentObservable;->dispatchChange(ZLandroid/net/Uri;)V
-
-    .line 51
-    return-void
-.end method
-
-.method public dispatchChange(ZLandroid/net/Uri;)V
     .locals 4
     .parameter "selfChange"
-    .parameter "uri"
 
     .prologue
-    .line 67
+    .line 36
     iget-object v3, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
 
     monitor-enter v3
 
-    .line 68
+    .line 37
     :try_start_0
     iget-object v2, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
 
@@ -77,7 +60,7 @@
 
     check-cast v1, Landroid/database/ContentObserver;
 
-    .line 69
+    .line 38
     .local v1, observer:Landroid/database/ContentObserver;
     if-eqz p1, :cond_1
 
@@ -87,13 +70,13 @@
 
     if-eqz v2, :cond_0
 
-    .line 70
+    .line 39
     :cond_1
-    invoke-virtual {v1, p1, p2}, Landroid/database/ContentObserver;->dispatchChange(ZLandroid/net/Uri;)V
+    invoke-virtual {v1, p1}, Landroid/database/ContentObserver;->dispatchChange(Z)V
 
     goto :goto_0
 
-    .line 73
+    .line 42
     .end local v0           #i$:Ljava/util/Iterator;
     .end local v1           #observer:Landroid/database/ContentObserver;
     :catchall_0
@@ -112,23 +95,21 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 74
+    .line 43
     return-void
 .end method
 
 .method public notifyChange(Z)V
     .locals 4
     .parameter "selfChange"
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
 
     .prologue
-    .line 85
+    .line 50
     iget-object v3, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
 
     monitor-enter v3
 
-    .line 86
+    .line 51
     :try_start_0
     iget-object v2, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
 
@@ -150,15 +131,13 @@
 
     check-cast v1, Landroid/database/ContentObserver;
 
-    .line 87
+    .line 52
     .local v1, observer:Landroid/database/ContentObserver;
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, p1, v2}, Landroid/database/ContentObserver;->onChange(ZLandroid/net/Uri;)V
+    invoke-virtual {v1, p1}, Landroid/database/ContentObserver;->onChange(Z)V
 
     goto :goto_0
 
-    .line 89
+    .line 54
     .end local v0           #i$:Ljava/util/Iterator;
     .end local v1           #observer:Landroid/database/ContentObserver;
     :catchall_0
@@ -177,7 +156,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 90
+    .line 55
     return-void
 .end method
 
@@ -186,10 +165,10 @@
     .parameter "observer"
 
     .prologue
-    .line 32
+    .line 27
     invoke-super {p0, p1}, Landroid/database/Observable;->registerObserver(Ljava/lang/Object;)V
 
-    .line 33
+    .line 28
     return-void
 .end method
 
@@ -198,7 +177,7 @@
     .parameter "x0"
 
     .prologue
-    .line 26
+    .line 23
     check-cast p1, Landroid/database/ContentObserver;
 
     .end local p1

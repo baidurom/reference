@@ -616,7 +616,7 @@
 
     const/4 v4, 0x0
 
-    invoke-virtual {v2, v3, v4}, Landroid/content/Context;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v2, v3, v4}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 98
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
@@ -1157,6 +1157,150 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
+.end method
+
+.method public noteScanWifiLockAcquired(I)V
+    .locals 2
+    .parameter "uid"
+
+    .prologue
+    .line 351
+    invoke-virtual {p0}, Lcom/android/server/am/BatteryStatsService;->enforceCallingPermission()V
+
+    .line 352
+    iget-object v1, p0, Lcom/android/server/am/BatteryStatsService;->mStats:Lcom/android/internal/os/BatteryStatsImpl;
+
+    monitor-enter v1
+
+    .line 353
+    :try_start_0
+    iget-object v0, p0, Lcom/android/server/am/BatteryStatsService;->mStats:Lcom/android/internal/os/BatteryStatsImpl;
+
+    invoke-virtual {v0, p1}, Lcom/android/internal/os/BatteryStatsImpl;->noteScanWifiLockAcquiredLocked(I)V
+
+    .line 354
+    monitor-exit v1
+
+    .line 355
+    return-void
+
+    .line 354
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public noteScanWifiLockAcquiredFromSource(Landroid/os/WorkSource;)V
+    .locals 2
+    .parameter "ws"
+
+    .prologue
+    .line 393
+    invoke-virtual {p0}, Lcom/android/server/am/BatteryStatsService;->enforceCallingPermission()V
+
+    .line 394
+    iget-object v1, p0, Lcom/android/server/am/BatteryStatsService;->mStats:Lcom/android/internal/os/BatteryStatsImpl;
+
+    monitor-enter v1
+
+    .line 395
+    :try_start_0
+    iget-object v0, p0, Lcom/android/server/am/BatteryStatsService;->mStats:Lcom/android/internal/os/BatteryStatsImpl;
+
+    invoke-virtual {v0, p1}, Lcom/android/internal/os/BatteryStatsImpl;->noteScanWifiLockAcquiredFromSourceLocked(Landroid/os/WorkSource;)V
+
+    .line 396
+    monitor-exit v1
+
+    .line 397
+    return-void
+
+    .line 396
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public noteScanWifiLockReleased(I)V
+    .locals 2
+    .parameter "uid"
+
+    .prologue
+    .line 358
+    invoke-virtual {p0}, Lcom/android/server/am/BatteryStatsService;->enforceCallingPermission()V
+
+    .line 359
+    iget-object v1, p0, Lcom/android/server/am/BatteryStatsService;->mStats:Lcom/android/internal/os/BatteryStatsImpl;
+
+    monitor-enter v1
+
+    .line 360
+    :try_start_0
+    iget-object v0, p0, Lcom/android/server/am/BatteryStatsService;->mStats:Lcom/android/internal/os/BatteryStatsImpl;
+
+    invoke-virtual {v0, p1}, Lcom/android/internal/os/BatteryStatsImpl;->noteScanWifiLockReleasedLocked(I)V
+
+    .line 361
+    monitor-exit v1
+
+    .line 362
+    return-void
+
+    .line 361
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public noteScanWifiLockReleasedFromSource(Landroid/os/WorkSource;)V
+    .locals 2
+    .parameter "ws"
+
+    .prologue
+    .line 400
+    invoke-virtual {p0}, Lcom/android/server/am/BatteryStatsService;->enforceCallingPermission()V
+
+    .line 401
+    iget-object v1, p0, Lcom/android/server/am/BatteryStatsService;->mStats:Lcom/android/internal/os/BatteryStatsImpl;
+
+    monitor-enter v1
+
+    .line 402
+    :try_start_0
+    iget-object v0, p0, Lcom/android/server/am/BatteryStatsService;->mStats:Lcom/android/internal/os/BatteryStatsImpl;
+
+    invoke-virtual {v0, p1}, Lcom/android/internal/os/BatteryStatsImpl;->noteScanWifiLockReleasedFromSourceLocked(Landroid/os/WorkSource;)V
+
+    .line 403
+    monitor-exit v1
+
+    .line 404
+    return-void
+
+    .line 403
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method
 
 .method public noteScreenBrightness(I)V
@@ -2035,150 +2179,6 @@
     throw v0
 .end method
 
-.method public noteWifiScanStarted(I)V
-    .locals 2
-    .parameter "uid"
-
-    .prologue
-    .line 351
-    invoke-virtual {p0}, Lcom/android/server/am/BatteryStatsService;->enforceCallingPermission()V
-
-    .line 352
-    iget-object v1, p0, Lcom/android/server/am/BatteryStatsService;->mStats:Lcom/android/internal/os/BatteryStatsImpl;
-
-    monitor-enter v1
-
-    .line 353
-    :try_start_0
-    iget-object v0, p0, Lcom/android/server/am/BatteryStatsService;->mStats:Lcom/android/internal/os/BatteryStatsImpl;
-
-    invoke-virtual {v0, p1}, Lcom/android/internal/os/BatteryStatsImpl;->noteWifiScanStartedLocked(I)V
-
-    .line 354
-    monitor-exit v1
-
-    .line 355
-    return-void
-
-    .line 354
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method public noteWifiScanStartedFromSource(Landroid/os/WorkSource;)V
-    .locals 2
-    .parameter "ws"
-
-    .prologue
-    .line 393
-    invoke-virtual {p0}, Lcom/android/server/am/BatteryStatsService;->enforceCallingPermission()V
-
-    .line 394
-    iget-object v1, p0, Lcom/android/server/am/BatteryStatsService;->mStats:Lcom/android/internal/os/BatteryStatsImpl;
-
-    monitor-enter v1
-
-    .line 395
-    :try_start_0
-    iget-object v0, p0, Lcom/android/server/am/BatteryStatsService;->mStats:Lcom/android/internal/os/BatteryStatsImpl;
-
-    invoke-virtual {v0, p1}, Lcom/android/internal/os/BatteryStatsImpl;->noteWifiScanStartedFromSourceLocked(Landroid/os/WorkSource;)V
-
-    .line 396
-    monitor-exit v1
-
-    .line 397
-    return-void
-
-    .line 396
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method public noteWifiScanStopped(I)V
-    .locals 2
-    .parameter "uid"
-
-    .prologue
-    .line 358
-    invoke-virtual {p0}, Lcom/android/server/am/BatteryStatsService;->enforceCallingPermission()V
-
-    .line 359
-    iget-object v1, p0, Lcom/android/server/am/BatteryStatsService;->mStats:Lcom/android/internal/os/BatteryStatsImpl;
-
-    monitor-enter v1
-
-    .line 360
-    :try_start_0
-    iget-object v0, p0, Lcom/android/server/am/BatteryStatsService;->mStats:Lcom/android/internal/os/BatteryStatsImpl;
-
-    invoke-virtual {v0, p1}, Lcom/android/internal/os/BatteryStatsImpl;->noteWifiScanStoppedLocked(I)V
-
-    .line 361
-    monitor-exit v1
-
-    .line 362
-    return-void
-
-    .line 361
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method public noteWifiScanStoppedFromSource(Landroid/os/WorkSource;)V
-    .locals 2
-    .parameter "ws"
-
-    .prologue
-    .line 400
-    invoke-virtual {p0}, Lcom/android/server/am/BatteryStatsService;->enforceCallingPermission()V
-
-    .line 401
-    iget-object v1, p0, Lcom/android/server/am/BatteryStatsService;->mStats:Lcom/android/internal/os/BatteryStatsImpl;
-
-    monitor-enter v1
-
-    .line 402
-    :try_start_0
-    iget-object v0, p0, Lcom/android/server/am/BatteryStatsService;->mStats:Lcom/android/internal/os/BatteryStatsImpl;
-
-    invoke-virtual {v0, p1}, Lcom/android/internal/os/BatteryStatsImpl;->noteWifiScanStoppedFromSourceLocked(Landroid/os/WorkSource;)V
-
-    .line 403
-    monitor-exit v1
-
-    .line 404
-    return-void
-
-    .line 403
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
 .method public noteWifiStopped(Landroid/os/WorkSource;)V
     .locals 2
     .parameter "ws"
@@ -2256,7 +2256,7 @@
 
     move-result-object v1
 
-    const v2, 0x10e0008
+    const v2, #integer@config_radioScanningTimeout#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 

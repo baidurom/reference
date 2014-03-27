@@ -67,18 +67,6 @@
         <item quantity="other">over %d dagen</item>
         <item quantity="one">morgen</item>
     </plurals>
-    <plurals name="duration_seconds">
-        <item quantity="other">%d seconden</item>
-        <item quantity="one">1 seconde</item>
-    </plurals>
-    <plurals name="duration_minutes">
-        <item quantity="other">%d minuten</item>
-        <item quantity="one">1 minuut</item>
-    </plurals>
-    <plurals name="duration_hours">
-        <item quantity="other">%d uur</item>
-        <item quantity="one">1 uur</item>
-    </plurals>
     <plurals name="wifi_available">
         <item quantity="other">Wi-Fi-netwerken beschikbaar</item>
         <item quantity="one">Wi-Fi-netwerk beschikbaar</item>

@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 295
+    .line 229
     iput-object p1, p0, Landroid/view/VolumePanel$3;->this$0:Landroid/view/VolumePanel;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -42,31 +42,31 @@
     .parameter "dialog"
 
     .prologue
-    .line 297
+    .line 231
     iget-object v0, p0, Landroid/view/VolumePanel$3;->this$0:Landroid/view/VolumePanel;
 
     const/4 v1, -0x1
 
     #setter for: Landroid/view/VolumePanel;->mActiveStreamType:I
-    invoke-static {v0, v1}, Landroid/view/VolumePanel;->access$402(Landroid/view/VolumePanel;I)I
+    invoke-static {v0, v1}, Landroid/view/VolumePanel;->access$202(Landroid/view/VolumePanel;I)I
 
-    .line 298
+    .line 232
     iget-object v0, p0, Landroid/view/VolumePanel$3;->this$0:Landroid/view/VolumePanel;
 
     #getter for: Landroid/view/VolumePanel;->mAudioManager:Landroid/media/AudioManager;
-    invoke-static {v0}, Landroid/view/VolumePanel;->access$500(Landroid/view/VolumePanel;)Landroid/media/AudioManager;
+    invoke-static {v0}, Landroid/view/VolumePanel;->access$300(Landroid/view/VolumePanel;)Landroid/media/AudioManager;
 
     move-result-object v0
 
     iget-object v1, p0, Landroid/view/VolumePanel$3;->this$0:Landroid/view/VolumePanel;
 
     #getter for: Landroid/view/VolumePanel;->mActiveStreamType:I
-    invoke-static {v1}, Landroid/view/VolumePanel;->access$400(Landroid/view/VolumePanel;)I
+    invoke-static {v1}, Landroid/view/VolumePanel;->access$200(Landroid/view/VolumePanel;)I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/media/AudioManager;->forceVolumeControlStream(I)V
 
-    .line 299
+    .line 233
     return-void
 .end method

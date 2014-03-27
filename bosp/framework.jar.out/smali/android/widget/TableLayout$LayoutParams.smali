@@ -19,14 +19,14 @@
     .locals 2
 
     .prologue
-    .line 715
+    .line 695
     const/4 v0, -0x1
 
     const/4 v1, -0x2
 
     invoke-direct {p0, v0, v1}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
 
-    .line 716
+    .line 696
     return-void
 .end method
 
@@ -36,12 +36,12 @@
     .parameter "h"
 
     .prologue
-    .line 699
+    .line 679
     const/4 v0, -0x1
 
     invoke-direct {p0, v0, p2}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
 
-    .line 700
+    .line 680
     return-void
 .end method
 
@@ -52,12 +52,12 @@
     .parameter "initWeight"
 
     .prologue
-    .line 706
+    .line 686
     const/4 v0, -0x1
 
     invoke-direct {p0, v0, p2, p3}, Landroid/widget/LinearLayout$LayoutParams;-><init>(IIF)V
 
-    .line 707
+    .line 687
     return-void
 .end method
 
@@ -67,10 +67,10 @@
     .parameter "attrs"
 
     .prologue
-    .line 692
+    .line 672
     invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout$LayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 693
+    .line 673
     return-void
 .end method
 
@@ -79,10 +79,10 @@
     .parameter "p"
 
     .prologue
-    .line 722
+    .line 702
     invoke-direct {p0, p1}, Landroid/widget/LinearLayout$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 723
+    .line 703
     return-void
 .end method
 
@@ -91,10 +91,10 @@
     .parameter "source"
 
     .prologue
-    .line 729
+    .line 709
     invoke-direct {p0, p1}, Landroid/widget/LinearLayout$LayoutParams;-><init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
 
-    .line 730
+    .line 710
     return-void
 .end method
 
@@ -107,19 +107,19 @@
     .parameter "heightAttr"
 
     .prologue
-    .line 746
+    .line 726
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 747
+    .line 727
     invoke-virtual {p1, p3}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 748
+    .line 728
     const-string v0, "layout_height"
 
     invoke-virtual {p1, p3, v0}, Landroid/content/res/TypedArray;->getLayoutDimension(ILjava/lang/String;)I
@@ -128,11 +128,11 @@
 
     iput v0, p0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 752
+    .line 732
     :goto_0
     return-void
 
-    .line 750
+    .line 730
     :cond_0
     const/4 v0, -0x2
 

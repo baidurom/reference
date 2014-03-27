@@ -35,21 +35,21 @@
     .parameter "sequentialWords"
 
     .prologue
-    .line 250
+    .line 226
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 251
+    .line 227
     iput p1, p0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl$SpellCheckerParams;->mWhat:I
 
-    .line 252
+    .line 228
     iput-object p2, p0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl$SpellCheckerParams;->mTextInfos:[Landroid/view/textservice/TextInfo;
 
-    .line 253
+    .line 229
     iput p3, p0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl$SpellCheckerParams;->mSuggestionsLimit:I
 
-    .line 254
+    .line 230
     iput-boolean p4, p0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl$SpellCheckerParams;->mSequentialWords:Z
 
-    .line 255
+    .line 231
     return-void
 .end method

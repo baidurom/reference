@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/ip_call_setting_category_title"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <SwitchPreference android:persistent="false" android:title="@string/ip_call_on_title" android:key="button_ip_enable" />
+    <ListPreference android:persistent="true" android:entries="@array/ip_prefix_all" android:title="@string/ip_call_prefix_input" android:key="ip_prefix_list_key" android:dependency="button_ip_enable" android:dialogTitle="@string/ip_call_prefix_input" android:entryValues="@array/ip_prefix_all_values" />
+    <PreferenceScreen android:persistent="false" android:title="@string/ip_call_self_location_title" android:key="ip_call_self_location_city" android:summary="@string/ip_call_self_location_default_summary" android:dependency="button_ip_enable" />
+    <SwitchPreference android:persistent="false" android:title="@string/ip_call_auto_switch_title" android:key="ip_call_auto_enable" android:dependency="button_ip_enable" android:defaultValue="true" />
+    <PreferenceScreen android:title="@string/ip_call_white_list_title" android:key="ip_call_white_list" android:summary="@string/ip_call_white_list_summary" android:dependency="button_ip_enable">
+        <intent android:targetPackage="com.android.phone" android:action="android.intent.action.MAIN" android:targetClass="com.android.phone.IPCallWhiteListActivity" />
+    </PreferenceScreen>
+</PreferenceScreen>

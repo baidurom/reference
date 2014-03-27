@@ -53,7 +53,7 @@
 
 .field final mFileLock:Ljava/lang/Object;
 
-.field private mHistoryFile:Landroid/util/AtomicFile;
+.field private mHistoryFile:Lcom/android/internal/os/AtomicFile;
 
 .field private mIsResumed:Z
 
@@ -341,7 +341,7 @@
     iput-object v4, p0, Lcom/android/server/am/UsageStatsService;->mFile:Ljava/io/File;
 
     .line 272
-    new-instance v4, Landroid/util/AtomicFile;
+    new-instance v4, Lcom/android/internal/os/AtomicFile;
 
     new-instance v5, Ljava/io/File;
 
@@ -351,9 +351,9 @@
 
     invoke-direct {v5, v6, v7}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    invoke-direct {v4, v5}, Landroid/util/AtomicFile;-><init>(Ljava/io/File;)V
+    invoke-direct {v4, v5}, Lcom/android/internal/os/AtomicFile;-><init>(Ljava/io/File;)V
 
-    iput-object v4, p0, Lcom/android/server/am/UsageStatsService;->mHistoryFile:Landroid/util/AtomicFile;
+    iput-object v4, p0, Lcom/android/server/am/UsageStatsService;->mHistoryFile:Lcom/android/internal/os/AtomicFile;
 
     .line 273
     invoke-direct {p0}, Lcom/android/server/am/UsageStatsService;->readStatsFromFile()V
@@ -1774,7 +1774,7 @@
     goto :goto_0
 .end method
 
-.method private readHistoryStatsFLOCK(Landroid/util/AtomicFile;)V
+.method private readHistoryStatsFLOCK(Lcom/android/internal/os/AtomicFile;)V
     .locals 15
     .parameter "file"
 
@@ -1785,9 +1785,9 @@
     .line 365
     .local v4, fis:Ljava/io/FileInputStream;
     :try_start_0
-    iget-object v12, p0, Lcom/android/server/am/UsageStatsService;->mHistoryFile:Landroid/util/AtomicFile;
+    iget-object v12, p0, Lcom/android/server/am/UsageStatsService;->mHistoryFile:Lcom/android/internal/os/AtomicFile;
 
-    invoke-virtual {v12}, Landroid/util/AtomicFile;->openRead()Ljava/io/FileInputStream;
+    invoke-virtual {v12}, Lcom/android/internal/os/AtomicFile;->openRead()Ljava/io/FileInputStream;
 
     move-result-object v4
 
@@ -2226,9 +2226,9 @@
 
     .line 356
     :try_start_0
-    iget-object v0, p0, Lcom/android/server/am/UsageStatsService;->mHistoryFile:Landroid/util/AtomicFile;
+    iget-object v0, p0, Lcom/android/server/am/UsageStatsService;->mHistoryFile:Lcom/android/internal/os/AtomicFile;
 
-    invoke-virtual {v0}, Landroid/util/AtomicFile;->getBaseFile()Ljava/io/File;
+    invoke-virtual {v0}, Lcom/android/internal/os/AtomicFile;->getBaseFile()Ljava/io/File;
 
     move-result-object v0
 
@@ -2239,9 +2239,9 @@
     if-eqz v0, :cond_0
 
     .line 357
-    iget-object v0, p0, Lcom/android/server/am/UsageStatsService;->mHistoryFile:Landroid/util/AtomicFile;
+    iget-object v0, p0, Lcom/android/server/am/UsageStatsService;->mHistoryFile:Lcom/android/internal/os/AtomicFile;
 
-    invoke-direct {p0, v0}, Lcom/android/server/am/UsageStatsService;->readHistoryStatsFLOCK(Landroid/util/AtomicFile;)V
+    invoke-direct {p0, v0}, Lcom/android/server/am/UsageStatsService;->readHistoryStatsFLOCK(Lcom/android/internal/os/AtomicFile;)V
 
     .line 359
     :cond_0
@@ -2575,7 +2575,7 @@
     goto :goto_0
 .end method
 
-.method private writeHistoryStatsFLOCK(Landroid/util/AtomicFile;)V
+.method private writeHistoryStatsFLOCK(Lcom/android/internal/os/AtomicFile;)V
     .locals 11
     .parameter "historyFile"
 
@@ -2586,7 +2586,7 @@
     .line 610
     .local v2, fos:Ljava/io/FileOutputStream;
     :try_start_0
-    invoke-virtual {p1}, Landroid/util/AtomicFile;->startWrite()Ljava/io/FileOutputStream;
+    invoke-virtual {p1}, Lcom/android/internal/os/AtomicFile;->startWrite()Ljava/io/FileOutputStream;
 
     move-result-object v2
 
@@ -2804,7 +2804,7 @@
     if-eqz v2, :cond_0
 
     .line 636
-    invoke-virtual {p1, v2}, Landroid/util/AtomicFile;->failWrite(Ljava/io/FileOutputStream;)V
+    invoke-virtual {p1, v2}, Lcom/android/internal/os/AtomicFile;->failWrite(Ljava/io/FileOutputStream;)V
 
     .line 639
     .end local v1           #e:Ljava/io/IOException;
@@ -2846,7 +2846,7 @@
     invoke-interface {v5}, Lorg/xmlpull/v1/XmlSerializer;->endDocument()V
 
     .line 632
-    invoke-virtual {p1, v2}, Landroid/util/AtomicFile;->finishWrite(Ljava/io/FileOutputStream;)V
+    invoke-virtual {p1, v2}, Lcom/android/internal/os/AtomicFile;->finishWrite(Ljava/io/FileOutputStream;)V
     :try_end_4
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_0
 
@@ -3219,9 +3219,9 @@
 
     .line 546
     :cond_7
-    iget-object v6, p0, Lcom/android/server/am/UsageStatsService;->mHistoryFile:Landroid/util/AtomicFile;
+    iget-object v6, p0, Lcom/android/server/am/UsageStatsService;->mHistoryFile:Lcom/android/internal/os/AtomicFile;
 
-    invoke-direct {p0, v6}, Lcom/android/server/am/UsageStatsService;->writeHistoryStatsFLOCK(Landroid/util/AtomicFile;)V
+    invoke-direct {p0, v6}, Lcom/android/server/am/UsageStatsService;->writeHistoryStatsFLOCK(Lcom/android/internal/os/AtomicFile;)V
 
     .line 550
     :cond_8
@@ -3978,7 +3978,7 @@
 .end method
 
 .method public monitorPackages()V
-    .locals 4
+    .locals 3
 
     .prologue
     .line 651
@@ -3993,11 +3993,9 @@
 
     iget-object v1, p0, Lcom/android/server/am/UsageStatsService;->mContext:Landroid/content/Context;
 
-    const/4 v2, 0x0
+    const/4 v2, 0x1
 
-    const/4 v3, 0x1
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/android/internal/content/PackageMonitor;->register(Landroid/content/Context;Landroid/os/Looper;Z)V
+    invoke-virtual {v0, v1, v2}, Lcom/android/internal/content/PackageMonitor;->register(Landroid/content/Context;Z)V
 
     .line 660
     invoke-direct {p0}, Lcom/android/server/am/UsageStatsService;->filterHistoryStats()V

@@ -23,10 +23,10 @@
     .locals 1
 
     .prologue
-    .line 208
+    .line 174
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 209
+    .line 175
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/app/ContextImpl$ServiceFetcher;->mContextCacheIndex:I
@@ -41,7 +41,7 @@
     .parameter "ctx"
 
     .prologue
-    .line 243
+    .line 209
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Not implemented"
@@ -56,14 +56,14 @@
     .parameter "ctx"
 
     .prologue
-    .line 215
+    .line 181
     iget-object v0, p1, Landroid/app/ContextImpl;->mServiceCache:Ljava/util/ArrayList;
 
-    .line 217
+    .line 183
     .local v0, cache:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Object;>;"
     monitor-enter v0
 
-    .line 218
+    .line 184
     :try_start_0
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -71,7 +71,7 @@
 
     if-nez v4, :cond_0
 
-    .line 223
+    .line 189
     const/4 v1, 0x0
 
     .local v1, i:I
@@ -82,17 +82,17 @@
 
     if-ge v1, v4, :cond_1
 
-    .line 224
+    .line 190
     const/4 v4, 0x0
 
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 223
+    .line 189
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 227
+    .line 193
     .end local v1           #i:I
     :cond_0
     iget v4, p0, Landroid/app/ContextImpl$ServiceFetcher;->mContextCacheIndex:I
@@ -101,35 +101,35 @@
 
     move-result-object v2
 
-    .line 228
+    .line 194
     .local v2, service:Ljava/lang/Object;
     if-eqz v2, :cond_1
 
-    .line 229
+    .line 195
     monitor-exit v0
 
     move-object v3, v2
 
-    .line 234
+    .line 200
     .end local v2           #service:Ljava/lang/Object;
     .local v3, service:Ljava/lang/Object;
     :goto_1
     return-object v3
 
-    .line 232
+    .line 198
     .end local v3           #service:Ljava/lang/Object;
     :cond_1
     invoke-virtual {p0, p1}, Landroid/app/ContextImpl$ServiceFetcher;->createService(Landroid/app/ContextImpl;)Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 233
+    .line 199
     .restart local v2       #service:Ljava/lang/Object;
     iget v4, p0, Landroid/app/ContextImpl$ServiceFetcher;->mContextCacheIndex:I
 
     invoke-virtual {v0, v4, v2}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 234
+    .line 200
     monitor-exit v0
 
     move-object v3, v2
@@ -138,7 +138,7 @@
     .restart local v3       #service:Ljava/lang/Object;
     goto :goto_1
 
-    .line 235
+    .line 201
     .end local v3           #service:Ljava/lang/Object;
     :catchall_0
     move-exception v4

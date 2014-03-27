@@ -10,7 +10,7 @@
 
 
 # instance fields
-.field private final mBuf:[B
+.field private mBuf:[B
 
 .field private mBufIn:I
 

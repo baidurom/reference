@@ -15,6 +15,14 @@
 
 
 # virtual methods
+.method public abstract getPoweroffAlarm(J)[J
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract remove(Landroid/app/PendingIntent;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

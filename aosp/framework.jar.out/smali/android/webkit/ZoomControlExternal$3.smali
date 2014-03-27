@@ -83,12 +83,12 @@
     .line 110
     iget-object v0, p0, Landroid/webkit/ZoomControlExternal$3;->this$0:Landroid/webkit/ZoomControlExternal;
 
-    #getter for: Landroid/webkit/ZoomControlExternal;->mWebView:Landroid/webkit/WebViewClassic;
-    invoke-static {v0}, Landroid/webkit/ZoomControlExternal;->access$400(Landroid/webkit/ZoomControlExternal;)Landroid/webkit/WebViewClassic;
+    #getter for: Landroid/webkit/ZoomControlExternal;->mWebView:Landroid/webkit/WebView;
+    invoke-static {v0}, Landroid/webkit/ZoomControlExternal;->access$400(Landroid/webkit/ZoomControlExternal;)Landroid/webkit/WebView;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/webkit/WebViewClassic;->zoomOut()Z
+    invoke-virtual {v0}, Landroid/webkit/WebView;->zoomOut()Z
 
     .line 111
     return-void

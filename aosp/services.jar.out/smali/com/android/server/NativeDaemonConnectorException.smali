@@ -1,90 +1,96 @@
 .class public Lcom/android/server/NativeDaemonConnectorException;
-.super Ljava/lang/Exception;
+.super Ljava/lang/RuntimeException;
 .source "NativeDaemonConnectorException.java"
 
 
 # instance fields
 .field private mCmd:Ljava/lang/String;
 
-.field private mEvent:Lcom/android/server/NativeDaemonEvent;
+.field private mCode:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 0
-    .parameter "detailMessage"
+.method public constructor <init>()V
+    .locals 1
 
     .prologue
-    .line 30
-    invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
+    .line 27
+    invoke-direct {p0}, Ljava/lang/RuntimeException;-><init>()V
 
-    .line 31
+    .line 24
+    const/4 v0, -0x1
+
+    iput v0, p0, Lcom/android/server/NativeDaemonConnectorException;->mCode:I
+
+    .line 27
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;Lcom/android/server/NativeDaemonEvent;)V
-    .locals 2
+.method public constructor <init>(ILjava/lang/String;Ljava/lang/String;)V
+    .locals 4
+    .parameter "code"
     .parameter "cmd"
-    .parameter "event"
+    .parameter "error"
 
     .prologue
+    .line 36
+    const-string v0, "Cmd {%s} failed with code %d : {%s}"
+
+    const/4 v1, 0x3
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    aput-object p2, v1, v2
+
+    const/4 v2, 0x1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x2
+
+    aput-object p3, v1, v2
+
+    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    .line 24
+    const/4 v0, -0x1
+
+    iput v0, p0, Lcom/android/server/NativeDaemonConnectorException;->mCode:I
+
+    .line 37
+    iput p1, p0, Lcom/android/server/NativeDaemonConnectorException;->mCode:I
+
     .line 38
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "command \'"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "\' failed with \'"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "\'"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
+    iput-object p2, p0, Lcom/android/server/NativeDaemonConnectorException;->mCmd:Ljava/lang/String;
 
     .line 39
-    iput-object p1, p0, Lcom/android/server/NativeDaemonConnectorException;->mCmd:Ljava/lang/String;
-
-    .line 40
-    iput-object p2, p0, Lcom/android/server/NativeDaemonConnectorException;->mEvent:Lcom/android/server/NativeDaemonEvent;
-
-    .line 41
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-    .locals 0
-    .parameter "detailMessage"
-    .parameter "throwable"
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 1
+    .parameter "error"
 
     .prologue
-    .line 34
-    invoke-direct {p0, p1, p2}, Ljava/lang/Exception;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    .line 31
+    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    .line 35
+    .line 24
+    const/4 v0, -0x1
+
+    iput v0, p0, Lcom/android/server/NativeDaemonConnectorException;->mCode:I
+
+    .line 32
     return-void
 .end method
 
@@ -94,7 +100,7 @@
     .locals 1
 
     .prologue
-    .line 48
+    .line 46
     iget-object v0, p0, Lcom/android/server/NativeDaemonConnectorException;->mCmd:Ljava/lang/String;
 
     return-object v0
@@ -104,28 +110,8 @@
     .locals 1
 
     .prologue
-    .line 44
-    iget-object v0, p0, Lcom/android/server/NativeDaemonConnectorException;->mEvent:Lcom/android/server/NativeDaemonEvent;
-
-    invoke-virtual {v0}, Lcom/android/server/NativeDaemonEvent;->getCode()I
-
-    move-result v0
+    .line 42
+    iget v0, p0, Lcom/android/server/NativeDaemonConnectorException;->mCode:I
 
     return v0
-.end method
-
-.method public rethrowAsParcelableException()Ljava/lang/IllegalArgumentException;
-    .locals 2
-
-    .prologue
-    .line 56
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    invoke-virtual {p0}, Lcom/android/server/NativeDaemonConnectorException;->getMessage()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw v0
 .end method

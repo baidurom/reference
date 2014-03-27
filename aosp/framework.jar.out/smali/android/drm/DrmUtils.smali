@@ -39,7 +39,7 @@
     return-object v0
 .end method
 
-.method private static quietlyDispose(Ljava/io/InputStream;)V
+.method private static quiteDispose(Ljava/io/InputStream;)V
     .locals 1
     .parameter "stream"
 
@@ -65,7 +65,7 @@
     goto :goto_0
 .end method
 
-.method private static quietlyDispose(Ljava/io/OutputStream;)V
+.method private static quiteDispose(Ljava/io/OutputStream;)V
     .locals 1
     .parameter "stream"
 
@@ -137,10 +137,10 @@
 
     .line 58
     :cond_0
-    invoke-static {v0}, Landroid/drm/DrmUtils;->quietlyDispose(Ljava/io/InputStream;)V
+    invoke-static {v0}, Landroid/drm/DrmUtils;->quiteDispose(Ljava/io/InputStream;)V
 
     .line 59
-    invoke-static {v2}, Landroid/drm/DrmUtils;->quietlyDispose(Ljava/io/InputStream;)V
+    invoke-static {v2}, Landroid/drm/DrmUtils;->quiteDispose(Ljava/io/InputStream;)V
 
     .line 61
     return-object v1
@@ -150,10 +150,10 @@
     :catchall_0
     move-exception v4
 
-    invoke-static {v0}, Landroid/drm/DrmUtils;->quietlyDispose(Ljava/io/InputStream;)V
+    invoke-static {v0}, Landroid/drm/DrmUtils;->quiteDispose(Ljava/io/InputStream;)V
 
     .line 59
-    invoke-static {v2}, Landroid/drm/DrmUtils;->quietlyDispose(Ljava/io/InputStream;)V
+    invoke-static {v2}, Landroid/drm/DrmUtils;->quiteDispose(Ljava/io/InputStream;)V
 
     throw v4
 .end method
@@ -242,7 +242,7 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 73
-    invoke-static {v1}, Landroid/drm/DrmUtils;->quietlyDispose(Ljava/io/OutputStream;)V
+    invoke-static {v1}, Landroid/drm/DrmUtils;->quiteDispose(Ljava/io/OutputStream;)V
 
     move-object v0, v1
 
@@ -257,7 +257,7 @@
     move-exception v2
 
     :goto_0
-    invoke-static {v0}, Landroid/drm/DrmUtils;->quietlyDispose(Ljava/io/OutputStream;)V
+    invoke-static {v0}, Landroid/drm/DrmUtils;->quiteDispose(Ljava/io/OutputStream;)V
 
     throw v2
 

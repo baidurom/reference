@@ -1,5 +1,5 @@
 .class Lcom/android/server/net/NetworkPolicyManagerService$6;
-.super Landroid/content/BroadcastReceiver;
+.super Lcom/android/server/net/NetworkAlertObserver;
 .source "NetworkPolicyManagerService.java"
 
 
@@ -24,64 +24,62 @@
     .parameter
 
     .prologue
-    .line 499
+    .line 422
     iput-object p1, p0, Lcom/android/server/net/NetworkPolicyManagerService$6;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    invoke-direct {p0}, Lcom/android/server/net/NetworkAlertObserver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 2
-    .parameter "context"
-    .parameter "intent"
+.method public limitReached(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 3
+    .parameter "limitName"
+    .parameter "iface"
 
     .prologue
-    .line 505
+    .line 426
     iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$6;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
-    #calls: Lcom/android/server/net/NetworkPolicyManagerService;->maybeRefreshTrustedTime()V
-    invoke-static {v0}, Lcom/android/server/net/NetworkPolicyManagerService;->access$700(Lcom/android/server/net/NetworkPolicyManagerService;)V
+    #getter for: Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
+    invoke-static {v0}, Lcom/android/server/net/NetworkPolicyManagerService;->access$900(Lcom/android/server/net/NetworkPolicyManagerService;)Landroid/content/Context;
 
-    .line 506
+    move-result-object v0
+
+    const-string v1, "android.permission.CONNECTIVITY_INTERNAL"
+
+    const-string v2, "NetworkPolicy"
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 428
+    const-string v0, "globalAlert"
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 429
     iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$6;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
-    #getter for: Lcom/android/server/net/NetworkPolicyManagerService;->mRulesLock:Ljava/lang/Object;
-    invoke-static {v0}, Lcom/android/server/net/NetworkPolicyManagerService;->access$100(Lcom/android/server/net/NetworkPolicyManagerService;)Ljava/lang/Object;
+    #getter for: Lcom/android/server/net/NetworkPolicyManagerService;->mHandler:Landroid/os/Handler;
+    invoke-static {v0}, Lcom/android/server/net/NetworkPolicyManagerService;->access$000(Lcom/android/server/net/NetworkPolicyManagerService;)Landroid/os/Handler;
 
-    move-result-object v1
+    move-result-object v0
 
-    monitor-enter v1
+    const/4 v1, 0x5
 
-    .line 507
-    :try_start_0
-    iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$6;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
+    invoke-virtual {v0, v1, p2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
-    #calls: Lcom/android/server/net/NetworkPolicyManagerService;->updateNetworkEnabledLocked()V
-    invoke-static {v0}, Lcom/android/server/net/NetworkPolicyManagerService;->access$800(Lcom/android/server/net/NetworkPolicyManagerService;)V
+    move-result-object v0
 
-    .line 508
-    iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$6;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
+    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    #calls: Lcom/android/server/net/NetworkPolicyManagerService;->updateNotificationsLocked()V
-    invoke-static {v0}, Lcom/android/server/net/NetworkPolicyManagerService;->access$900(Lcom/android/server/net/NetworkPolicyManagerService;)V
-
-    .line 509
-    monitor-exit v1
-
-    .line 510
+    .line 431
+    :cond_0
     return-void
-
-    .line 509
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
 .end method

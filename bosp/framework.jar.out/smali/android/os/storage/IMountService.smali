@@ -33,7 +33,7 @@
     .end annotation
 .end method
 
-.method public abstract createSecureContainer(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;IZ)I
+.method public abstract createSecureContainer(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;I)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -74,14 +74,6 @@
 .end method
 
 .method public abstract finishMediaUpdate()V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract fixPermissionsSecureContainer(Ljava/lang/String;ILjava/lang/String;)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -145,7 +137,7 @@
     .end annotation
 .end method
 
-.method public abstract getVolumeList()[Landroid/os/storage/StorageVolume;
+.method public abstract getVolumeList()[Landroid/os/Parcelable;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -201,7 +193,7 @@
     .end annotation
 .end method
 
-.method public abstract mountObb(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/storage/IObbActionListener;I)V
+.method public abstract mountObb(Ljava/lang/String;Ljava/lang/String;Landroid/os/storage/IObbActionListener;I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

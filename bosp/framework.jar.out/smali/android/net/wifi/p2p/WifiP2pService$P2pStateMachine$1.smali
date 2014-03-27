@@ -3,12 +3,12 @@
 .source "WifiP2pService.java"
 
 # interfaces
-.implements Landroid/net/wifi/p2p/WifiP2pGroupList$GroupDeleteListener;
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;->notifyP2pGoNegotationRequest(Landroid/net/wifi/p2p/WifiP2pConfig;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 395
+    .line 1183
     iput-object p1, p0, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine$1;->this$1:Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -37,37 +37,19 @@
 
 
 # virtual methods
-.method public onDeleteGroup(I)V
-    .locals 1
-    .parameter "netId"
+.method public onClick(Landroid/content/DialogInterface;I)V
+    .locals 2
+    .parameter "dialog"
+    .parameter "which"
 
     .prologue
-    .line 399
+    .line 1187
     iget-object v0, p0, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine$1;->this$1:Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;
 
-    #getter for: Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;->mWifiNative:Landroid/net/wifi/WifiNative;
-    invoke-static {v0}, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;->access$100(Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;)Landroid/net/wifi/WifiNative;
+    const v1, 0x23007
 
-    move-result-object v0
+    invoke-virtual {v0, v1}, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;->sendMessage(I)V
 
-    invoke-virtual {v0, p1}, Landroid/net/wifi/WifiNative;->removeNetwork(I)Z
-
-    .line 400
-    iget-object v0, p0, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine$1;->this$1:Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;
-
-    #getter for: Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;->mWifiNative:Landroid/net/wifi/WifiNative;
-    invoke-static {v0}, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;->access$100(Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;)Landroid/net/wifi/WifiNative;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/net/wifi/WifiNative;->saveConfig()Z
-
-    .line 401
-    iget-object v0, p0, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine$1;->this$1:Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;
-
-    #calls: Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;->sendP2pPersistentGroupsChangedBroadcast()V
-    invoke-static {v0}, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;->access$200(Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;)V
-
-    .line 402
+    .line 1188
     return-void
 .end method

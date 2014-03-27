@@ -13,49 +13,28 @@
     name = "NetworkStatsSettings"
 .end annotation
 
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/android/server/net/NetworkStatsService$NetworkStatsSettings$Config;
-    }
-.end annotation
-
 
 # virtual methods
-.method public abstract getDevConfig()Lcom/android/server/net/NetworkStatsService$NetworkStatsSettings$Config;
+.method public abstract getNetworkBucketDuration()J
 .end method
 
-.method public abstract getDevPersistBytes(J)J
+.method public abstract getNetworkMaxHistory()J
 .end method
 
-.method public abstract getGlobalAlertBytes(J)J
+.method public abstract getPersistThreshold()J
 .end method
 
 .method public abstract getPollInterval()J
 .end method
 
-.method public abstract getReportXtOverDev()Z
-.end method
-
-.method public abstract getSampleEnabled()Z
+.method public abstract getTagMaxHistory()J
 .end method
 
 .method public abstract getTimeCacheMaxAge()J
 .end method
 
-.method public abstract getUidConfig()Lcom/android/server/net/NetworkStatsService$NetworkStatsSettings$Config;
+.method public abstract getUidBucketDuration()J
 .end method
 
-.method public abstract getUidPersistBytes(J)J
-.end method
-
-.method public abstract getUidTagConfig()Lcom/android/server/net/NetworkStatsService$NetworkStatsSettings$Config;
-.end method
-
-.method public abstract getUidTagPersistBytes(J)J
-.end method
-
-.method public abstract getXtConfig()Lcom/android/server/net/NetworkStatsService$NetworkStatsSettings$Config;
-.end method
-
-.method public abstract getXtPersistBytes(J)J
+.method public abstract getUidMaxHistory()J
 .end method

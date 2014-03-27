@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 119
+    .line 112
     iput-object p1, p0, Landroid/preference/PreferenceFragment$1;->this$0:Landroid/preference/PreferenceFragment;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,16 +39,16 @@
     .parameter "msg"
 
     .prologue
-    .line 122
+    .line 115
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 128
+    .line 121
     :goto_0
     return-void
 
-    .line 125
+    .line 118
     :pswitch_0
     iget-object v0, p0, Landroid/preference/PreferenceFragment$1;->this$0:Landroid/preference/PreferenceFragment;
 
@@ -57,7 +57,7 @@
 
     goto :goto_0
 
-    .line 122
+    .line 115
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

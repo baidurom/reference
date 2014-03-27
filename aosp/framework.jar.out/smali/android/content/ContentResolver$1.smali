@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 1744
+    .line 1471
     iput-object p1, p0, Landroid/content/ContentResolver$1;->val$callback:Landroid/content/SyncStatusObserver;
 
     invoke-direct {p0}, Landroid/content/ISyncStatusObserver$Stub;-><init>()V
@@ -44,11 +44,11 @@
     .end annotation
 
     .prologue
-    .line 1746
+    .line 1473
     iget-object v0, p0, Landroid/content/ContentResolver$1;->val$callback:Landroid/content/SyncStatusObserver;
 
     invoke-interface {v0, p1}, Landroid/content/SyncStatusObserver;->onStatusChanged(I)V
 
-    .line 1747
+    .line 1474
     return-void
 .end method

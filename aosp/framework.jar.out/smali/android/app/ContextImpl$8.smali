@@ -1,5 +1,5 @@
 .class final Landroid/app/ContextImpl$8;
-.super Landroid/app/ContextImpl$ServiceFetcher;
+.super Landroid/app/ContextImpl$StaticServiceFetcher;
 .source "ContextImpl.java"
 
 
@@ -19,23 +19,34 @@
     .locals 0
 
     .prologue
-    .line 322
-    invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
+    .line 289
+    invoke-direct {p0}, Landroid/app/ContextImpl$StaticServiceFetcher;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public createService(Landroid/app/ContextImpl;)Ljava/lang/Object;
-    .locals 1
-    .parameter "ctx"
+.method public createStaticService()Ljava/lang/Object;
+    .locals 3
 
     .prologue
-    .line 324
-    invoke-static {}, Landroid/bluetooth/BluetoothAdapter;->getDefaultAdapter()Landroid/bluetooth/BluetoothAdapter;
+    .line 291
+    const-string v1, "connectivity"
+
+    invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    return-object v0
+    .line 292
+    .local v0, b:Landroid/os/IBinder;
+    new-instance v1, Landroid/net/ConnectivityManager;
+
+    invoke-static {v0}, Landroid/net/IConnectivityManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/net/IConnectivityManager;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2}, Landroid/net/ConnectivityManager;-><init>(Landroid/net/IConnectivityManager;)V
+
+    return-object v1
 .end method

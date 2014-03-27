@@ -15,101 +15,103 @@
 
 
 # static fields
-.field public static final carrier_properties:I = 0x1070038
+.field public static final carrier_properties:I = #array@carrier_properties#t
 
-.field public static final common_nicknames:I = 0x1070036
+.field public static final common_nicknames:I = #array@common_nicknames#t
 
-.field public static final config_autoBrightnessButtonBacklightValues:I = 0x107002b
+.field public static final config_autoBrightnessButtonBacklightValues:I = #array@config_autoBrightnessButtonBacklightValues#t
 
-.field public static final config_autoBrightnessKeyboardBacklightValues:I = 0x107002c
+.field public static final config_autoBrightnessKeyboardBacklightValues:I = #array@config_autoBrightnessKeyboardBacklightValues#t
 
-.field public static final config_autoBrightnessLcdBacklightValues:I = 0x107002a
+.field public static final config_autoBrightnessLcdBacklightValues:I = #array@config_autoBrightnessLcdBacklightValues#t
 
-.field public static final config_autoBrightnessLevels:I = 0x1070029
+.field public static final config_autoBrightnessLevels:I = #array@config_autoBrightnessLevels#t
 
-.field public static final config_cdma_dun_supported_types:I = 0x1070020
+.field public static final config_cdma_dun_supported_types:I = #array@config_cdma_dun_supported_types#t
 
-.field public static final config_data_usage_network_types:I = 0x1070018
+.field public static final config_data_usage_network_types:I = #array@config_data_usage_network_types#t
 
-.field public static final config_defaultNotificationVibePattern:I = 0x1070032
+.field public static final config_keyboardTapVibePattern:I = #array@config_keyboardTapVibePattern#t
 
-.field public static final config_keyboardTapVibePattern:I = 0x1070025
+.field public static final config_longPressVibePattern:I = #array@config_longPressVibePattern#t
 
-.field public static final config_locationProviderPackageNames:I = 0x107002d
+.field public static final config_mobile_hotspot_provision_app:I = #array@config_mobile_hotspot_provision_app#t
 
-.field public static final config_longPressVibePattern:I = 0x1070023
+.field public static final config_oemUsbModeOverride:I = #array@config_oemUsbModeOverride#t
 
-.field public static final config_masterVolumeRamp:I = 0x1070014
+.field public static final config_protectedNetworks:I = #array@config_protectedNetworks#t
 
-.field public static final config_mobile_hotspot_provision_app:I = 0x107001e
+.field public static final config_safeModeDisabledVibePattern:I = #array@config_safeModeDisabledVibePattern#t
 
-.field public static final config_notificationFallbackVibePattern:I = 0x1070033
+.field public static final config_safeModeEnabledVibePattern:I = #array@config_safeModeEnabledVibePattern#t
 
-.field public static final config_oemUsbModeOverride:I = 0x1070031
+.field public static final config_scrollBarrierVibePattern:I = #array@config_scrollBarrierVibePattern#t
 
-.field public static final config_protectedNetworks:I = 0x1070016
+.field public static final config_sms_enabled_locking_shift_tables:I = #array@config_sms_enabled_locking_shift_tables#t
 
-.field public static final config_safeModeDisabledVibePattern:I = 0x1070026
+.field public static final config_sms_enabled_single_shift_tables:I = #array@config_sms_enabled_single_shift_tables#t
 
-.field public static final config_safeModeEnabledVibePattern:I = 0x1070027
+.field public static final config_statusBarIcons:I = #array@config_statusBarIcons#t
 
-.field public static final config_serialPorts:I = 0x1070022
+.field public static final config_tether_bluetooth_regexs:I = #array@config_tether_bluetooth_regexs#t
 
-.field public static final config_sms_enabled_locking_shift_tables:I = 0x1070030
+.field public static final config_tether_dhcp_range:I = #array@config_tether_dhcp_range#t
 
-.field public static final config_sms_enabled_single_shift_tables:I = 0x107002f
+.field public static final config_tether_upstream_types:I = #array@config_tether_upstream_types#t
 
-.field public static final config_statusBarIcons:I = 0x1070013
+.field public static final config_tether_usb_regexs:I = #array@config_tether_usb_regexs#t
 
-.field public static final config_tether_bluetooth_regexs:I = 0x107001c
+.field public static final config_tether_wifi_regexs:I = #array@config_tether_wifi_regexs#t
 
-.field public static final config_tether_dhcp_range:I = 0x107001d
+.field public static final config_tether_wimax_regexs:I = #array@config_tether_wimax_regexs#t
 
-.field public static final config_tether_upstream_types:I = 0x107001f
+.field public static final config_twoDigitNumberPattern:I = #array@config_twoDigitNumberPattern#t
 
-.field public static final config_tether_usb_regexs:I = 0x1070019
+.field public static final config_usbHostBlacklist:I = #array@config_usbHostBlacklist#t
 
-.field public static final config_tether_wifi_regexs:I = 0x107001a
+.field public static final config_virtualKeyVibePattern:I = #array@config_virtualKeyVibePattern#t
 
-.field public static final config_twoDigitNumberPattern:I = 0x107002e
+.field public static final emailAddressTypes:I = #array@emailAddressTypes#t
 
-.field public static final config_usbHostBlacklist:I = 0x1070021
+.field public static final imAddressTypes:I = #array@imAddressTypes#t
 
-.field public static final config_virtualKeyVibePattern:I = 0x1070024
+.field public static final imProtocols:I = #array@imProtocols#t
 
-.field public static final emailAddressTypes:I = 0x1070000
+.field public static final lockscreen_direction_descriptions:I = #array@lockscreen_direction_descriptions#t
 
-.field public static final imProtocols:I = 0x1070001
+.field public static final lockscreen_target_descriptions_when_silent:I = #array@lockscreen_target_descriptions_when_silent#t
 
-.field public static final lockscreen_num_pad_klondike:I = 0x1070012
+.field public static final lockscreen_target_descriptions_when_soundon:I = #array@lockscreen_target_descriptions_when_soundon#t
 
-.field public static final lockscreen_targets_when_silent:I = 0x1070009
+.field public static final lockscreen_target_descriptions_with_camera:I = #array@lockscreen_target_descriptions_with_camera#t
 
-.field public static final lockscreen_targets_when_soundon:I = 0x107000c
+.field public static final lockscreen_targets_when_silent:I = #array@lockscreen_targets_when_silent#t
 
-.field public static final lockscreen_targets_with_camera:I = 0x107000e
+.field public static final lockscreen_targets_when_soundon:I = #array@lockscreen_targets_when_soundon#t
 
-.field public static final maps_starting_lat_lng:I = 0x1070034
+.field public static final lockscreen_targets_with_camera:I = #array@lockscreen_targets_with_camera#t
 
-.field public static final maps_starting_zoom:I = 0x1070035
+.field public static final maps_starting_lat_lng:I = #array@maps_starting_lat_lng#t
 
-.field public static final networkAttributes:I = 0x1070015
+.field public static final maps_starting_zoom:I = #array@maps_starting_zoom#t
 
-.field public static final organizationTypes:I = 0x1070002
+.field public static final networkAttributes:I = #array@networkAttributes#t
 
-.field public static final phoneTypes:I = 0x1070003
+.field public static final organizationTypes:I = #array@organizationTypes#t
 
-.field public static final postalAddressTypes:I = 0x1070004
+.field public static final phoneTypes:I = #array@phoneTypes#t
 
-.field public static final preloaded_color_state_lists:I = 0x1070006
+.field public static final postalAddressTypes:I = #array@postalAddressTypes#t
 
-.field public static final preloaded_drawables:I = 0x1070005
+.field public static final preloaded_color_state_lists:I = #array@preloaded_color_state_lists#t
 
-.field public static final radioAttributes:I = 0x1070017
+.field public static final preloaded_drawables:I = #array@preloaded_drawables#t
 
-.field public static final special_locale_codes:I = 0x1070007
+.field public static final radioAttributes:I = #array@radioAttributes#t
 
-.field public static final special_locale_names:I = 0x1070008
+.field public static final special_locale_codes:I = #array@special_locale_codes#t
+
+.field public static final special_locale_names:I = #array@special_locale_names#t
 
 
 # direct methods
@@ -117,7 +119,7 @@
     .locals 0
 
     .prologue
-    .line 83
+    .line 114
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 356
+    .line 259
     iput-object p1, p0, Landroid/net/wifi/WifiWatchdogStateMachine$1;->this$0:Landroid/net/wifi/WifiWatchdogStateMachine;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,19 +35,19 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 5
+    .locals 6
     .parameter "context"
     .parameter "intent"
 
     .prologue
-    .line 359
+    .line 262
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 360
+    .line 263
     .local v0, action:Ljava/lang/String;
-    const-string v1, "android.net.wifi.RSSI_CHANGED"
+    const-string v1, "android.net.wifi.STATE_CHANGE"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -55,35 +55,21 @@
 
     if-eqz v1, :cond_1
 
-    .line 361
+    .line 264
     iget-object v1, p0, Landroid/net/wifi/WifiWatchdogStateMachine$1;->this$0:Landroid/net/wifi/WifiWatchdogStateMachine;
 
-    const v2, 0x21003
+    const v2, 0x21002
 
-    const-string/jumbo v3, "newRssi"
+    invoke-virtual {v1, v2, p2}, Landroid/net/wifi/WifiWatchdogStateMachine;->sendMessage(ILjava/lang/Object;)V
 
-    const/16 v4, -0xc8
-
-    invoke-virtual {p2, v3, v4}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
-
-    move-result v3
-
-    const/4 v4, 0x0
-
-    invoke-virtual {v1, v2, v3, v4}, Landroid/net/wifi/WifiWatchdogStateMachine;->obtainMessage(III)Landroid/os/Message;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
-
-    .line 375
+    .line 275
     :cond_0
     :goto_0
     return-void
 
-    .line 363
+    .line 265
     :cond_1
-    const-string v1, "android.net.wifi.supplicant.STATE_CHANGE"
+    const-string v1, "android.net.wifi.RSSI_CHANGED"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -91,18 +77,37 @@
 
     if-eqz v1, :cond_2
 
-    .line 364
+    .line 266
     iget-object v1, p0, Landroid/net/wifi/WifiWatchdogStateMachine$1;->this$0:Landroid/net/wifi/WifiWatchdogStateMachine;
 
-    const v2, 0x21004
+    const v2, 0x21003
 
-    invoke-virtual {v1, v2, p2}, Landroid/net/wifi/WifiWatchdogStateMachine;->sendMessage(ILjava/lang/Object;)V
+    iget-object v3, p0, Landroid/net/wifi/WifiWatchdogStateMachine$1;->this$0:Landroid/net/wifi/WifiWatchdogStateMachine;
+
+    #getter for: Landroid/net/wifi/WifiWatchdogStateMachine;->mNetEventCounter:I
+    invoke-static {v3}, Landroid/net/wifi/WifiWatchdogStateMachine;->access$000(Landroid/net/wifi/WifiWatchdogStateMachine;)I
+
+    move-result v3
+
+    const-string/jumbo v4, "newRssi"
+
+    const/16 v5, -0xc8
+
+    invoke-virtual {p2, v4, v5}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+
+    move-result v4
+
+    invoke-virtual {v1, v2, v3, v4}, Landroid/net/wifi/WifiWatchdogStateMachine;->obtainMessage(III)Landroid/os/Message;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
     goto :goto_0
 
-    .line 365
+    .line 268
     :cond_2
-    const-string v1, "android.net.wifi.STATE_CHANGE"
+    const-string v1, "android.net.wifi.SCAN_RESULTS"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -110,55 +115,17 @@
 
     if-eqz v1, :cond_3
 
-    .line 366
+    .line 269
     iget-object v1, p0, Landroid/net/wifi/WifiWatchdogStateMachine$1;->this$0:Landroid/net/wifi/WifiWatchdogStateMachine;
 
-    const v2, 0x21002
+    const v2, 0x21004
 
-    invoke-virtual {v1, v2, p2}, Landroid/net/wifi/WifiWatchdogStateMachine;->sendMessage(ILjava/lang/Object;)V
+    invoke-virtual {v1, v2}, Landroid/net/wifi/WifiWatchdogStateMachine;->sendMessage(I)V
 
     goto :goto_0
 
-    .line 367
+    .line 270
     :cond_3
-    const-string v1, "android.intent.action.SCREEN_ON"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_4
-
-    .line 368
-    iget-object v1, p0, Landroid/net/wifi/WifiWatchdogStateMachine$1;->this$0:Landroid/net/wifi/WifiWatchdogStateMachine;
-
-    const v2, 0x21008
-
-    invoke-virtual {v1, v2}, Landroid/net/wifi/WifiWatchdogStateMachine;->sendMessage(I)V
-
-    goto :goto_0
-
-    .line 369
-    :cond_4
-    const-string v1, "android.intent.action.SCREEN_OFF"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_5
-
-    .line 370
-    iget-object v1, p0, Landroid/net/wifi/WifiWatchdogStateMachine$1;->this$0:Landroid/net/wifi/WifiWatchdogStateMachine;
-
-    const v2, 0x21009
-
-    invoke-virtual {v1, v2}, Landroid/net/wifi/WifiWatchdogStateMachine;->sendMessage(I)V
-
-    goto :goto_0
-
-    .line 371
-    :cond_5
     const-string v1, "android.net.wifi.WIFI_STATE_CHANGED"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -167,7 +134,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 372
+    .line 271
     iget-object v1, p0, Landroid/net/wifi/WifiWatchdogStateMachine$1;->this$0:Landroid/net/wifi/WifiWatchdogStateMachine;
 
     const v2, 0x21005

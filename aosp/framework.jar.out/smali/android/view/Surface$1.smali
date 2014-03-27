@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 44
+    .line 491
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,38 +45,37 @@
     .parameter "source"
 
     .prologue
-    .line 47
+    const/4 v2, 0x0
+
+    .line 494
     :try_start_0
     new-instance v1, Landroid/view/Surface;
 
-    invoke-direct {v1}, Landroid/view/Surface;-><init>()V
+    const/4 v3, 0x0
 
-    .line 48
-    .local v1, s:Landroid/view/Surface;
-    invoke-virtual {v1, p1}, Landroid/view/Surface;->readFromParcel(Landroid/os/Parcel;)V
+    invoke-direct {v1, p1, v3}, Landroid/view/Surface;-><init>(Landroid/os/Parcel;Landroid/view/Surface$1;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 52
-    .end local v1           #s:Landroid/view/Surface;
+    .line 498
     :goto_0
     return-object v1
 
-    .line 50
+    .line 495
     :catch_0
     move-exception v0
 
-    .line 51
+    .line 496
     .local v0, e:Ljava/lang/Exception;
-    const-string v2, "Surface"
+    const-string v1, "Surface"
 
     const-string v3, "Exception creating surface from parcel"
 
-    invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v1, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 52
-    const/4 v1, 0x0
+    move-object v1, v2
 
+    .line 498
     goto :goto_0
 .end method
 
@@ -85,7 +84,7 @@
     .parameter "x0"
 
     .prologue
-    .line 44
+    .line 491
     invoke-virtual {p0, p1}, Landroid/view/Surface$1;->createFromParcel(Landroid/os/Parcel;)Landroid/view/Surface;
 
     move-result-object v0
@@ -98,7 +97,7 @@
     .parameter "size"
 
     .prologue
-    .line 57
+    .line 502
     new-array v0, p1, [Landroid/view/Surface;
 
     return-object v0
@@ -109,7 +108,7 @@
     .parameter "x0"
 
     .prologue
-    .line 44
+    .line 491
     invoke-virtual {p0, p1}, Landroid/view/Surface$1;->newArray(I)[Landroid/view/Surface;
 
     move-result-object v0

@@ -17,16 +17,6 @@
 
 .field private static final KEYBOARD_STATE_SHIFTED:I = 0x1
 
-.field private static final NUMERIC:I = 0x0
-
-.field private static final QWERTY:I = 0x1
-
-.field private static final QWERTY_SHIFTED:I = 0x2
-
-.field private static final SYMBOLS:I = 0x3
-
-.field private static final SYMBOLS_SHIFTED:I = 0x4
-
 .field private static final TAG:Ljava/lang/String; = "PasswordEntryKeyboardHelper"
 
 
@@ -41,8 +31,6 @@
 
 .field private final mKeyboardView:Landroid/inputmethodservice/KeyboardView;
 
-.field mLayouts:[I
-
 .field private mNumericKeyboard:Lcom/android/internal/widget/PasswordEntryKeyboard;
 
 .field private mQwertyKeyboard:Lcom/android/internal/widget/PasswordEntryKeyboard;
@@ -55,326 +43,232 @@
 
 .field private final mTargetView:Landroid/view/View;
 
-.field private mUsingScreenWidth:Z
-
 .field private mVibratePattern:[J
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/inputmethodservice/KeyboardView;Landroid/view/View;)V
-    .locals 6
+    .locals 1
     .parameter "context"
     .parameter "keyboardView"
     .parameter "targetView"
 
     .prologue
-    .line 76
-    const/4 v4, 0x1
+    .line 59
+    const/4 v0, 0x1
 
-    const/4 v5, 0x0
+    invoke-direct {p0, p1, p2, p3, v0}, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;-><init>(Landroid/content/Context;Landroid/inputmethodservice/KeyboardView;Landroid/view/View;Z)V
 
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move-object v2, p2
-
-    move-object v3, p3
-
-    invoke-direct/range {v0 .. v5}, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;-><init>(Landroid/content/Context;Landroid/inputmethodservice/KeyboardView;Landroid/view/View;Z[I)V
-
-    .line 77
+    .line 60
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/inputmethodservice/KeyboardView;Landroid/view/View;Z)V
-    .locals 6
+    .locals 2
     .parameter "context"
     .parameter "keyboardView"
     .parameter "targetView"
     .parameter "useFullScreenWidth"
 
     .prologue
-    .line 81
-    const/4 v5, 0x0
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move-object v2, p2
-
-    move-object v3, p3
-
-    move v4, p4
-
-    invoke-direct/range {v0 .. v5}, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;-><init>(Landroid/content/Context;Landroid/inputmethodservice/KeyboardView;Landroid/view/View;Z[I)V
-
-    .line 82
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;Landroid/inputmethodservice/KeyboardView;Landroid/view/View;Z[I)V
-    .locals 3
-    .parameter "context"
-    .parameter "keyboardView"
-    .parameter "targetView"
-    .parameter "useFullScreenWidth"
-    .parameter "layouts"
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 85
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-
-    .line 46
-    iput v1, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardMode:I
-
-    .line 47
-    iput v1, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardState:I
-
-    .line 57
-    iput-boolean v1, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mEnableHaptics:Z
-
-    .line 65
-    const/4 v1, 0x5
-
-    new-array v1, v1, [I
-
-    fill-array-data v1, :array_0
-
-    iput-object v1, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mLayouts:[I
-
-    .line 86
-    iput-object p1, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mContext:Landroid/content/Context;
-
-    .line 87
-    iput-object p3, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mTargetView:Landroid/view/View;
-
-    .line 88
-    iput-object p2, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardView:Landroid/inputmethodservice/KeyboardView;
-
-    .line 89
-    iget-object v1, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardView:Landroid/inputmethodservice/KeyboardView;
-
-    invoke-virtual {v1, p0}, Landroid/inputmethodservice/KeyboardView;->setOnKeyboardActionListener(Landroid/inputmethodservice/KeyboardView$OnKeyboardActionListener;)V
-
-    .line 90
-    iput-boolean p4, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mUsingScreenWidth:Z
-
-    .line 91
-    if-eqz p5, :cond_1
-
-    .line 92
-    array-length v1, p5
-
-    iget-object v2, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mLayouts:[I
-
-    array-length v2, v2
-
-    if-eq v1, v2, :cond_0
-
-    .line 93
-    new-instance v1, Ljava/lang/RuntimeException;
-
-    const-string v2, "Wrong number of layouts"
-
-    invoke-direct {v1, v2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    .line 95
-    :cond_0
     const/4 v0, 0x0
 
-    .local v0, i:I
-    :goto_0
-    iget-object v1, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mLayouts:[I
+    .line 63
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    array-length v1, v1
+    .line 45
+    iput v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardMode:I
 
-    if-ge v0, v1, :cond_1
+    .line 46
+    iput v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardState:I
 
-    .line 96
-    iget-object v1, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mLayouts:[I
+    .line 56
+    iput-boolean v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mEnableHaptics:Z
 
-    aget v2, p5, v0
-
-    aput v2, v1, v0
-
-    .line 95
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    .line 99
-    .end local v0           #i:I
-    :cond_1
-    invoke-virtual {p0}, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->createKeyboards()V
-
-    .line 100
-    return-void
+    .line 64
+    iput-object p1, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mContext:Landroid/content/Context;
 
     .line 65
-    :array_0
-    .array-data 0x4
-        0x5t 0x0t 0xft 0x1t
-        0x7t 0x0t 0xft 0x1t
-        0x8t 0x0t 0xft 0x1t
-        0x9t 0x0t 0xft 0x1t
-        0xat 0x0t 0xft 0x1t
-    .end array-data
+    iput-object p3, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mTargetView:Landroid/view/View;
+
+    .line 66
+    iput-object p2, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardView:Landroid/inputmethodservice/KeyboardView;
+
+    .line 67
+    if-nez p4, :cond_0
+
+    iget-object v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardView:Landroid/inputmethodservice/KeyboardView;
+
+    invoke-virtual {v0}, Landroid/inputmethodservice/KeyboardView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v0
+
+    iget v0, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
+
+    const/4 v1, -0x1
+
+    if-ne v0, v1, :cond_1
+
+    .line 69
+    :cond_0
+    invoke-direct {p0}, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->createKeyboards()V
+
+    .line 74
+    :goto_0
+    iget-object v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardView:Landroid/inputmethodservice/KeyboardView;
+
+    invoke-virtual {v0, p0}, Landroid/inputmethodservice/KeyboardView;->setOnKeyboardActionListener(Landroid/inputmethodservice/KeyboardView$OnKeyboardActionListener;)V
+
+    .line 75
+    return-void
+
+    .line 71
+    :cond_1
+    iget-object v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardView:Landroid/inputmethodservice/KeyboardView;
+
+    invoke-virtual {v0}, Landroid/inputmethodservice/KeyboardView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v0
+
+    iget v0, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
+
+    iget-object v1, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardView:Landroid/inputmethodservice/KeyboardView;
+
+    invoke-virtual {v1}, Landroid/inputmethodservice/KeyboardView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v1
+
+    iget v1, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
+
+    invoke-direct {p0, v0, v1}, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->createKeyboardsWithSpecificSize(II)V
+
+    goto :goto_0
 .end method
 
-.method private createKeyboardsWithDefaultWidth()V
-    .locals 6
+.method private createKeyboards()V
+    .locals 5
 
     .prologue
-    const v5, 0x10203b3
+    const v4, #id@mode_normal#t
 
-    const/4 v4, 0x1
+    const/4 v3, 0x1
 
-    .line 140
+    .line 109
     new-instance v0, Lcom/android/internal/widget/PasswordEntryKeyboard;
 
     iget-object v1, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mContext:Landroid/content/Context;
 
-    iget-object v2, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mLayouts:[I
-
-    const/4 v3, 0x0
-
-    aget v2, v2, v3
+    const v2, #xml@password_kbd_numeric#t
 
     invoke-direct {v0, v1, v2}, Lcom/android/internal/widget/PasswordEntryKeyboard;-><init>(Landroid/content/Context;I)V
 
     iput-object v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mNumericKeyboard:Lcom/android/internal/widget/PasswordEntryKeyboard;
 
-    .line 141
+    .line 110
     new-instance v0, Lcom/android/internal/widget/PasswordEntryKeyboard;
 
     iget-object v1, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mContext:Landroid/content/Context;
 
-    iget-object v2, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mLayouts:[I
+    const v2, #xml@password_kbd_qwerty#t
 
-    aget v2, v2, v4
-
-    invoke-direct {v0, v1, v2, v5}, Lcom/android/internal/widget/PasswordEntryKeyboard;-><init>(Landroid/content/Context;II)V
+    invoke-direct {v0, v1, v2, v4}, Lcom/android/internal/widget/PasswordEntryKeyboard;-><init>(Landroid/content/Context;II)V
 
     iput-object v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mQwertyKeyboard:Lcom/android/internal/widget/PasswordEntryKeyboard;
 
-    .line 142
+    .line 112
     iget-object v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mQwertyKeyboard:Lcom/android/internal/widget/PasswordEntryKeyboard;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/PasswordEntryKeyboard;->enableShiftLock()V
 
-    .line 144
+    .line 114
     new-instance v0, Lcom/android/internal/widget/PasswordEntryKeyboard;
 
     iget-object v1, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mContext:Landroid/content/Context;
 
-    iget-object v2, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mLayouts:[I
+    const v2, #xml@password_kbd_qwerty_shifted#t
 
-    const/4 v3, 0x2
-
-    aget v2, v2, v3
-
-    invoke-direct {v0, v1, v2, v5}, Lcom/android/internal/widget/PasswordEntryKeyboard;-><init>(Landroid/content/Context;II)V
+    invoke-direct {v0, v1, v2, v4}, Lcom/android/internal/widget/PasswordEntryKeyboard;-><init>(Landroid/content/Context;II)V
 
     iput-object v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mQwertyKeyboardShifted:Lcom/android/internal/widget/PasswordEntryKeyboard;
 
-    .line 146
+    .line 117
     iget-object v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mQwertyKeyboardShifted:Lcom/android/internal/widget/PasswordEntryKeyboard;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/PasswordEntryKeyboard;->enableShiftLock()V
 
-    .line 147
+    .line 118
     iget-object v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mQwertyKeyboardShifted:Lcom/android/internal/widget/PasswordEntryKeyboard;
 
-    invoke-virtual {v0, v4}, Lcom/android/internal/widget/PasswordEntryKeyboard;->setShifted(Z)Z
-
-    .line 149
-    new-instance v0, Lcom/android/internal/widget/PasswordEntryKeyboard;
-
-    iget-object v1, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mContext:Landroid/content/Context;
-
-    iget-object v2, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mLayouts:[I
-
-    const/4 v3, 0x3
-
-    aget v2, v2, v3
-
-    invoke-direct {v0, v1, v2}, Lcom/android/internal/widget/PasswordEntryKeyboard;-><init>(Landroid/content/Context;I)V
-
-    iput-object v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mSymbolsKeyboard:Lcom/android/internal/widget/PasswordEntryKeyboard;
-
-    .line 150
-    iget-object v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mSymbolsKeyboard:Lcom/android/internal/widget/PasswordEntryKeyboard;
-
-    invoke-virtual {v0}, Lcom/android/internal/widget/PasswordEntryKeyboard;->enableShiftLock()V
-
-    .line 152
-    new-instance v0, Lcom/android/internal/widget/PasswordEntryKeyboard;
-
-    iget-object v1, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mContext:Landroid/content/Context;
-
-    iget-object v2, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mLayouts:[I
-
-    const/4 v3, 0x4
-
-    aget v2, v2, v3
-
-    invoke-direct {v0, v1, v2}, Lcom/android/internal/widget/PasswordEntryKeyboard;-><init>(Landroid/content/Context;I)V
-
-    iput-object v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mSymbolsKeyboardShifted:Lcom/android/internal/widget/PasswordEntryKeyboard;
-
-    .line 153
-    iget-object v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mSymbolsKeyboardShifted:Lcom/android/internal/widget/PasswordEntryKeyboard;
-
-    invoke-virtual {v0}, Lcom/android/internal/widget/PasswordEntryKeyboard;->enableShiftLock()V
-
-    .line 154
-    iget-object v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mSymbolsKeyboardShifted:Lcom/android/internal/widget/PasswordEntryKeyboard;
-
-    invoke-virtual {v0, v4}, Lcom/android/internal/widget/PasswordEntryKeyboard;->setShifted(Z)Z
-
-    .line 155
-    return-void
-.end method
-
-.method private createKeyboardsWithSpecificSize(II)V
-    .locals 7
-    .parameter "width"
-    .parameter "height"
-
-    .prologue
-    const v3, 0x10203b3
-
-    const/4 v6, 0x1
+    invoke-virtual {v0, v3}, Lcom/android/internal/widget/PasswordEntryKeyboard;->setShifted(Z)Z
 
     .line 120
     new-instance v0, Lcom/android/internal/widget/PasswordEntryKeyboard;
 
     iget-object v1, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mContext:Landroid/content/Context;
 
-    iget-object v2, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mLayouts:[I
+    const v2, #xml@password_kbd_symbols#t
 
-    const/4 v4, 0x0
+    invoke-direct {v0, v1, v2}, Lcom/android/internal/widget/PasswordEntryKeyboard;-><init>(Landroid/content/Context;I)V
 
-    aget v2, v2, v4
+    iput-object v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mSymbolsKeyboard:Lcom/android/internal/widget/PasswordEntryKeyboard;
+
+    .line 121
+    iget-object v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mSymbolsKeyboard:Lcom/android/internal/widget/PasswordEntryKeyboard;
+
+    invoke-virtual {v0}, Lcom/android/internal/widget/PasswordEntryKeyboard;->enableShiftLock()V
+
+    .line 123
+    new-instance v0, Lcom/android/internal/widget/PasswordEntryKeyboard;
+
+    iget-object v1, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mContext:Landroid/content/Context;
+
+    const v2, #xml@password_kbd_symbols_shift#t
+
+    invoke-direct {v0, v1, v2}, Lcom/android/internal/widget/PasswordEntryKeyboard;-><init>(Landroid/content/Context;I)V
+
+    iput-object v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mSymbolsKeyboardShifted:Lcom/android/internal/widget/PasswordEntryKeyboard;
+
+    .line 125
+    iget-object v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mSymbolsKeyboardShifted:Lcom/android/internal/widget/PasswordEntryKeyboard;
+
+    invoke-virtual {v0}, Lcom/android/internal/widget/PasswordEntryKeyboard;->enableShiftLock()V
+
+    .line 126
+    iget-object v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mSymbolsKeyboardShifted:Lcom/android/internal/widget/PasswordEntryKeyboard;
+
+    invoke-virtual {v0, v3}, Lcom/android/internal/widget/PasswordEntryKeyboard;->setShifted(Z)Z
+
+    .line 127
+    return-void
+.end method
+
+.method private createKeyboardsWithSpecificSize(II)V
+    .locals 7
+    .parameter "viewWidth"
+    .parameter "viewHeight"
+
+    .prologue
+    const v3, #id@mode_normal#t
+
+    const/4 v6, 0x1
+
+    .line 86
+    new-instance v0, Lcom/android/internal/widget/PasswordEntryKeyboard;
+
+    iget-object v1, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mContext:Landroid/content/Context;
+
+    const v2, #xml@password_kbd_numeric#t
 
     invoke-direct {v0, v1, v2, p1, p2}, Lcom/android/internal/widget/PasswordEntryKeyboard;-><init>(Landroid/content/Context;III)V
 
     iput-object v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mNumericKeyboard:Lcom/android/internal/widget/PasswordEntryKeyboard;
 
-    .line 121
+    .line 88
     new-instance v0, Lcom/android/internal/widget/PasswordEntryKeyboard;
 
     iget-object v1, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mContext:Landroid/content/Context;
 
-    iget-object v2, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mLayouts:[I
-
-    aget v2, v2, v6
+    const v2, #xml@password_kbd_qwerty#t
 
     move v4, p1
 
@@ -384,21 +278,17 @@
 
     iput-object v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mQwertyKeyboard:Lcom/android/internal/widget/PasswordEntryKeyboard;
 
-    .line 123
+    .line 90
     iget-object v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mQwertyKeyboard:Lcom/android/internal/widget/PasswordEntryKeyboard;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/PasswordEntryKeyboard;->enableShiftLock()V
 
-    .line 125
+    .line 92
     new-instance v0, Lcom/android/internal/widget/PasswordEntryKeyboard;
 
     iget-object v1, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mContext:Landroid/content/Context;
 
-    iget-object v2, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mLayouts:[I
-
-    const/4 v4, 0x2
-
-    aget v2, v2, v4
+    const v2, #xml@password_kbd_qwerty_shifted#t
 
     move v4, p1
 
@@ -408,62 +298,54 @@
 
     iput-object v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mQwertyKeyboardShifted:Lcom/android/internal/widget/PasswordEntryKeyboard;
 
-    .line 127
+    .line 95
     iget-object v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mQwertyKeyboardShifted:Lcom/android/internal/widget/PasswordEntryKeyboard;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/PasswordEntryKeyboard;->enableShiftLock()V
 
-    .line 128
+    .line 96
     iget-object v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mQwertyKeyboardShifted:Lcom/android/internal/widget/PasswordEntryKeyboard;
 
     invoke-virtual {v0, v6}, Lcom/android/internal/widget/PasswordEntryKeyboard;->setShifted(Z)Z
 
-    .line 130
+    .line 98
     new-instance v0, Lcom/android/internal/widget/PasswordEntryKeyboard;
 
     iget-object v1, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mContext:Landroid/content/Context;
 
-    iget-object v2, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mLayouts:[I
-
-    const/4 v3, 0x3
-
-    aget v2, v2, v3
+    const v2, #xml@password_kbd_symbols#t
 
     invoke-direct {v0, v1, v2, p1, p2}, Lcom/android/internal/widget/PasswordEntryKeyboard;-><init>(Landroid/content/Context;III)V
 
     iput-object v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mSymbolsKeyboard:Lcom/android/internal/widget/PasswordEntryKeyboard;
 
-    .line 131
+    .line 100
     iget-object v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mSymbolsKeyboard:Lcom/android/internal/widget/PasswordEntryKeyboard;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/PasswordEntryKeyboard;->enableShiftLock()V
 
-    .line 133
+    .line 102
     new-instance v0, Lcom/android/internal/widget/PasswordEntryKeyboard;
 
     iget-object v1, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mContext:Landroid/content/Context;
 
-    iget-object v2, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mLayouts:[I
-
-    const/4 v3, 0x4
-
-    aget v2, v2, v3
+    const v2, #xml@password_kbd_symbols_shift#t
 
     invoke-direct {v0, v1, v2, p1, p2}, Lcom/android/internal/widget/PasswordEntryKeyboard;-><init>(Landroid/content/Context;III)V
 
     iput-object v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mSymbolsKeyboardShifted:Lcom/android/internal/widget/PasswordEntryKeyboard;
 
-    .line 135
+    .line 104
     iget-object v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mSymbolsKeyboardShifted:Lcom/android/internal/widget/PasswordEntryKeyboard;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/PasswordEntryKeyboard;->enableShiftLock()V
 
-    .line 136
+    .line 105
     iget-object v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mSymbolsKeyboardShifted:Lcom/android/internal/widget/PasswordEntryKeyboard;
 
     invoke-virtual {v0, v6}, Lcom/android/internal/widget/PasswordEntryKeyboard;->setShifted(Z)Z
 
-    .line 137
+    .line 106
     return-void
 .end method
 
@@ -473,7 +355,7 @@
     .parameter "keyCodes"
 
     .prologue
-    .line 297
+    .line 269
     iget-object v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardView:Landroid/inputmethodservice/KeyboardView;
 
     invoke-virtual {v0}, Landroid/inputmethodservice/KeyboardView;->isShifted()Z
@@ -490,16 +372,16 @@
 
     if-eq p1, v0, :cond_0
 
-    .line 298
+    .line 270
     invoke-static {p1}, Ljava/lang/Character;->toUpperCase(I)I
 
     move-result p1
 
-    .line 300
+    .line 272
     :cond_0
     invoke-direct {p0, p1}, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->sendKeyEventsToTarget(I)V
 
-    .line 301
+    .line 273
     return-void
 .end method
 
@@ -507,7 +389,7 @@
     .locals 0
 
     .prologue
-    .line 305
+    .line 277
     return-void
 .end method
 
@@ -515,18 +397,18 @@
     .locals 3
 
     .prologue
-    .line 250
+    .line 222
     iget-object v2, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardView:Landroid/inputmethodservice/KeyboardView;
 
     invoke-virtual {v2}, Landroid/inputmethodservice/KeyboardView;->getKeyboard()Landroid/inputmethodservice/Keyboard;
 
     move-result-object v0
 
-    .line 251
+    .line 223
     .local v0, current:Landroid/inputmethodservice/Keyboard;
     const/4 v1, 0x0
 
-    .line 252
+    .line 224
     .local v1, next:Landroid/inputmethodservice/Keyboard;
     iget-object v2, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mQwertyKeyboard:Lcom/android/internal/widget/PasswordEntryKeyboard;
 
@@ -536,30 +418,30 @@
 
     if-ne v0, v2, :cond_3
 
-    .line 253
+    .line 225
     :cond_0
     iget-object v1, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mSymbolsKeyboard:Lcom/android/internal/widget/PasswordEntryKeyboard;
 
-    .line 257
+    .line 229
     :cond_1
     :goto_0
     if-eqz v1, :cond_2
 
-    .line 258
+    .line 230
     iget-object v2, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardView:Landroid/inputmethodservice/KeyboardView;
 
     invoke-virtual {v2, v1}, Landroid/inputmethodservice/KeyboardView;->setKeyboard(Landroid/inputmethodservice/Keyboard;)V
 
-    .line 259
+    .line 231
     const/4 v2, 0x0
 
     iput v2, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardState:I
 
-    .line 261
+    .line 233
     :cond_2
     return-void
 
-    .line 254
+    .line 226
     :cond_3
     iget-object v2, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mSymbolsKeyboard:Lcom/android/internal/widget/PasswordEntryKeyboard;
 
@@ -569,7 +451,7 @@
 
     if-ne v0, v2, :cond_1
 
-    .line 255
+    .line 227
     :cond_4
     iget-object v1, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mQwertyKeyboard:Lcom/android/internal/widget/PasswordEntryKeyboard;
 
@@ -586,17 +468,17 @@
 
     const/4 v4, 0x1
 
-    .line 269
+    .line 241
     iget-object v5, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardView:Landroid/inputmethodservice/KeyboardView;
 
     if-nez v5, :cond_1
 
-    .line 293
+    .line 265
     :cond_0
     :goto_0
     return-void
 
-    .line 272
+    .line 244
     :cond_1
     iget-object v5, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardView:Landroid/inputmethodservice/KeyboardView;
 
@@ -604,11 +486,11 @@
 
     move-result-object v0
 
-    .line 273
+    .line 245
     .local v0, current:Landroid/inputmethodservice/Keyboard;
     const/4 v2, 0x0
 
-    .line 274
+    .line 246
     .local v2, next:Lcom/android/internal/widget/PasswordEntryKeyboard;
     iget-object v5, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mQwertyKeyboard:Lcom/android/internal/widget/PasswordEntryKeyboard;
 
@@ -621,14 +503,14 @@
     :cond_2
     move v1, v4
 
-    .line 276
+    .line 248
     .local v1, isAlphaMode:Z
     :goto_1
     iget v5, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardState:I
 
     if-nez v5, :cond_8
 
-    .line 277
+    .line 249
     if-eqz v1, :cond_6
 
     move v5, v4
@@ -636,25 +518,25 @@
     :goto_2
     iput v5, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardState:I
 
-    .line 278
+    .line 250
     if-eqz v1, :cond_7
 
     iget-object v2, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mQwertyKeyboardShifted:Lcom/android/internal/widget/PasswordEntryKeyboard;
 
-    .line 286
+    .line 258
     :cond_3
     :goto_3
     if-eqz v2, :cond_0
 
-    .line 287
+    .line 259
     if-eq v2, v0, :cond_4
 
-    .line 288
+    .line 260
     iget-object v5, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardView:Landroid/inputmethodservice/KeyboardView;
 
     invoke-virtual {v5, v2}, Landroid/inputmethodservice/KeyboardView;->setKeyboard(Landroid/inputmethodservice/Keyboard;)V
 
-    .line 290
+    .line 262
     :cond_4
     iget v5, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardState:I
 
@@ -665,7 +547,7 @@
     :goto_4
     invoke-virtual {v2, v5}, Lcom/android/internal/widget/PasswordEntryKeyboard;->setShiftLocked(Z)V
 
-    .line 291
+    .line 263
     iget-object v5, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardView:Landroid/inputmethodservice/KeyboardView;
 
     iget v6, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardState:I
@@ -681,32 +563,32 @@
     :cond_5
     move v1, v3
 
-    .line 274
+    .line 246
     goto :goto_1
 
     .restart local v1       #isAlphaMode:Z
     :cond_6
     move v5, v6
 
-    .line 277
+    .line 249
     goto :goto_2
 
-    .line 278
+    .line 250
     :cond_7
     iget-object v2, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mSymbolsKeyboardShifted:Lcom/android/internal/widget/PasswordEntryKeyboard;
 
     goto :goto_3
 
-    .line 279
+    .line 251
     :cond_8
     iget v5, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardState:I
 
     if-ne v5, v4, :cond_a
 
-    .line 280
+    .line 252
     iput v6, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardState:I
 
-    .line 281
+    .line 253
     if-eqz v1, :cond_9
 
     iget-object v2, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mQwertyKeyboardShifted:Lcom/android/internal/widget/PasswordEntryKeyboard;
@@ -719,16 +601,16 @@
 
     goto :goto_6
 
-    .line 282
+    .line 254
     :cond_a
     iget v5, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardState:I
 
     if-ne v5, v6, :cond_3
 
-    .line 283
+    .line 255
     iput v3, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardState:I
 
-    .line 284
+    .line 256
     if-eqz v1, :cond_b
 
     iget-object v2, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mQwertyKeyboard:Lcom/android/internal/widget/PasswordEntryKeyboard;
@@ -744,13 +626,13 @@
     :cond_c
     move v5, v3
 
-    .line 290
+    .line 262
     goto :goto_4
 
     :cond_d
     move v4, v3
 
-    .line 291
+    .line 263
     goto :goto_5
 .end method
 
@@ -758,12 +640,12 @@
     .locals 3
 
     .prologue
-    .line 312
+    .line 284
     iget-boolean v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mEnableHaptics:Z
 
     if-eqz v0, :cond_0
 
-    .line 313
+    .line 285
     iget-object v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardView:Landroid/inputmethodservice/KeyboardView;
 
     const/4 v1, 0x1
@@ -772,7 +654,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/inputmethodservice/KeyboardView;->performHapticFeedback(II)Z
 
-    .line 317
+    .line 289
     :cond_0
     return-void
 .end method
@@ -782,15 +664,15 @@
     .parameter "character"
 
     .prologue
-    .line 178
+    .line 150
     iget-object v5, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mTargetView:Landroid/view/View;
 
-    invoke-virtual {v5}, Landroid/view/View;->getViewRootImpl()Landroid/view/ViewRootImpl;
+    invoke-virtual {v5}, Landroid/view/View;->getHandler()Landroid/os/Handler;
 
-    move-result-object v4
+    move-result-object v3
 
-    .line 179
-    .local v4, viewRootImpl:Landroid/view/ViewRootImpl;
+    .line 151
+    .local v3, handler:Landroid/os/Handler;
     const/4 v5, -0x1
 
     invoke-static {v5}, Landroid/view/KeyCharacterMap;->load(I)Landroid/view/KeyCharacterMap;
@@ -811,25 +693,25 @@
 
     move-result-object v2
 
-    .line 181
+    .line 153
     .local v2, events:[Landroid/view/KeyEvent;
     if-eqz v2, :cond_0
 
-    .line 182
+    .line 154
     array-length v0, v2
 
-    .line 183
+    .line 155
     .local v0, N:I
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    .local v3, i:I
+    .local v4, i:I
     :goto_0
-    if-ge v3, v0, :cond_0
+    if-ge v4, v0, :cond_0
 
-    .line 184
-    aget-object v1, v2, v3
+    .line 156
+    aget-object v1, v2, v4
 
-    .line 185
+    .line 157
     .local v1, event:Landroid/view/KeyEvent;
     invoke-virtual {v1}, Landroid/view/KeyEvent;->getFlags()I
 
@@ -843,79 +725,43 @@
 
     move-result-object v1
 
-    .line 187
-    invoke-virtual {v4, v1}, Landroid/view/ViewRootImpl;->dispatchKey(Landroid/view/KeyEvent;)V
+    .line 159
+    const/16 v5, 0x3ed
 
-    .line 183
-    add-int/lit8 v3, v3, 0x1
+    invoke-virtual {v3, v5, v1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v5
+
+    invoke-virtual {v3, v5}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+
+    .line 155
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 190
+    .line 162
     .end local v0           #N:I
     .end local v1           #event:Landroid/view/KeyEvent;
-    .end local v3           #i:I
+    .end local v4           #i:I
     :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public createKeyboards()V
-    .locals 3
-
-    .prologue
-    .line 103
-    iget-object v1, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardView:Landroid/inputmethodservice/KeyboardView;
-
-    invoke-virtual {v1}, Landroid/inputmethodservice/KeyboardView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v0
-
-    .line 104
-    .local v0, lp:Landroid/view/ViewGroup$LayoutParams;
-    iget-boolean v1, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mUsingScreenWidth:Z
-
-    if-nez v1, :cond_0
-
-    iget v1, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
-
-    const/4 v2, -0x1
-
-    if-ne v1, v2, :cond_1
-
-    .line 105
-    :cond_0
-    invoke-direct {p0}, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->createKeyboardsWithDefaultWidth()V
-
-    .line 109
-    :goto_0
-    return-void
-
-    .line 107
-    :cond_1
-    iget v1, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
-
-    iget v2, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
-
-    invoke-direct {p0, v1, v2}, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->createKeyboardsWithSpecificSize(II)V
-
-    goto :goto_0
-.end method
-
 .method public handleBackspace()V
     .locals 1
 
     .prologue
-    .line 264
+    .line 236
     const/16 v0, 0x43
 
     invoke-virtual {p0, v0}, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->sendDownUpKeyEvents(I)V
 
-    .line 265
+    .line 237
     invoke-direct {p0}, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->performHapticFeedback()V
 
-    .line 266
+    .line 238
     return-void
 .end method
 
@@ -923,7 +769,7 @@
     .locals 1
 
     .prologue
-    .line 116
+    .line 82
     iget v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardMode:I
 
     if-nez v0, :cond_0
@@ -945,42 +791,42 @@
     .parameter "keyCodes"
 
     .prologue
-    .line 206
+    .line 178
     const/4 v0, -0x5
 
     if-ne p1, v0, :cond_1
 
-    .line 207
+    .line 179
     invoke-virtual {p0}, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->handleBackspace()V
 
-    .line 224
+    .line 196
     :cond_0
     :goto_0
     return-void
 
-    .line 208
+    .line 180
     :cond_1
     const/4 v0, -0x1
 
     if-ne p1, v0, :cond_2
 
-    .line 209
+    .line 181
     invoke-direct {p0}, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->handleShift()V
 
     goto :goto_0
 
-    .line 210
+    .line 182
     :cond_2
     const/4 v0, -0x3
 
     if-ne p1, v0, :cond_3
 
-    .line 211
+    .line 183
     invoke-direct {p0}, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->handleClose()V
 
     goto :goto_0
 
-    .line 213
+    .line 185
     :cond_3
     const/4 v0, -0x2
 
@@ -990,28 +836,28 @@
 
     if-eqz v0, :cond_4
 
-    .line 214
+    .line 186
     invoke-direct {p0}, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->handleModeChange()V
 
     goto :goto_0
 
-    .line 216
+    .line 188
     :cond_4
     invoke-direct {p0, p1, p2}, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->handleCharacter(I[I)V
 
-    .line 218
+    .line 190
     iget v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardState:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 220
+    .line 192
     const/4 v0, 0x2
 
     iput v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardState:I
 
-    .line 221
+    .line 193
     invoke-direct {p0}, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->handleShift()V
 
     goto :goto_0
@@ -1022,10 +868,10 @@
     .parameter "primaryCode"
 
     .prologue
-    .line 308
+    .line 280
     invoke-direct {p0}, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->performHapticFeedback()V
 
-    .line 309
+    .line 281
     return-void
 .end method
 
@@ -1034,7 +880,7 @@
     .parameter "primaryCode"
 
     .prologue
-    .line 321
+    .line 293
     return-void
 .end method
 
@@ -1043,30 +889,32 @@
     .parameter "text"
 
     .prologue
-    .line 325
+    .line 297
     return-void
 .end method
 
 .method public sendDownUpKeyEvents(I)V
-    .locals 13
+    .locals 14
     .parameter "keyEventCode"
 
     .prologue
-    .line 193
+    .line 165
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v1
 
-    .line 194
+    .line 166
     .local v1, eventTime:J
     iget-object v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mTargetView:Landroid/view/View;
 
-    invoke-virtual {v0}, Landroid/view/View;->getViewRootImpl()Landroid/view/ViewRootImpl;
+    invoke-virtual {v0}, Landroid/view/View;->getHandler()Landroid/os/Handler;
 
     move-result-object v12
 
-    .line 195
-    .local v12, viewRootImpl:Landroid/view/ViewRootImpl;
+    .line 167
+    .local v12, handler:Landroid/os/Handler;
+    const/16 v13, 0x3f3
+
     new-instance v0, Landroid/view/KeyEvent;
 
     const/4 v5, 0x0
@@ -1087,9 +935,15 @@
 
     invoke-direct/range {v0 .. v11}, Landroid/view/KeyEvent;-><init>(JJIIIIIII)V
 
-    invoke-virtual {v12, v0}, Landroid/view/ViewRootImpl;->dispatchKeyFromIme(Landroid/view/KeyEvent;)V
+    invoke-virtual {v12, v13, v0}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
-    .line 199
+    move-result-object v0
+
+    invoke-virtual {v12, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+
+    .line 171
+    const/16 v13, 0x3f3
+
     new-instance v0, Landroid/view/KeyEvent;
 
     const/4 v5, 0x1
@@ -1110,9 +964,13 @@
 
     invoke-direct/range {v0 .. v11}, Landroid/view/KeyEvent;-><init>(JJIIIIIII)V
 
-    invoke-virtual {v12, v0}, Landroid/view/ViewRootImpl;->dispatchKeyFromIme(Landroid/view/KeyEvent;)V
+    invoke-virtual {v12, v13, v0}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
-    .line 203
+    move-result-object v0
+
+    invoke-virtual {v12, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+
+    .line 175
     return-void
 .end method
 
@@ -1121,10 +979,10 @@
     .parameter "enabled"
 
     .prologue
-    .line 112
+    .line 78
     iput-boolean p1, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mEnableHaptics:Z
 
-    .line 113
+    .line 79
     return-void
 .end method
 
@@ -1137,17 +995,17 @@
 
     const/4 v2, 0x0
 
-    .line 158
+    .line 130
     packed-switch p1, :pswitch_data_0
 
-    .line 174
+    .line 146
     :goto_0
     iput p1, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardMode:I
 
-    .line 175
+    .line 147
     return-void
 
-    .line 160
+    .line 132
     :pswitch_0
     iget-object v3, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardView:Landroid/inputmethodservice/KeyboardView;
 
@@ -1155,10 +1013,10 @@
 
     invoke-virtual {v3, v4}, Landroid/inputmethodservice/KeyboardView;->setKeyboard(Landroid/inputmethodservice/Keyboard;)V
 
-    .line 161
+    .line 133
     iput v2, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardState:I
 
-    .line 162
+    .line 134
     iget-object v3, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1173,12 +1031,12 @@
 
     if-eqz v3, :cond_1
 
-    .line 165
+    .line 137
     .local v1, visiblePassword:Z
     :goto_1
     const/4 v0, 0x0
 
-    .line 166
+    .line 138
     .local v0, enablePreview:Z
     iget-object v3, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardView:Landroid/inputmethodservice/KeyboardView;
 
@@ -1194,10 +1052,10 @@
     :cond_1
     move v1, v2
 
-    .line 162
+    .line 134
     goto :goto_1
 
-    .line 169
+    .line 141
     :pswitch_1
     iget-object v3, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardView:Landroid/inputmethodservice/KeyboardView;
 
@@ -1205,17 +1063,17 @@
 
     invoke-virtual {v3, v4}, Landroid/inputmethodservice/KeyboardView;->setKeyboard(Landroid/inputmethodservice/Keyboard;)V
 
-    .line 170
+    .line 142
     iput v2, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardState:I
 
-    .line 171
+    .line 143
     iget-object v3, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mKeyboardView:Landroid/inputmethodservice/KeyboardView;
 
     invoke-virtual {v3, v2}, Landroid/inputmethodservice/KeyboardView;->setPreviewEnabled(Z)V
 
     goto :goto_0
 
-    .line 158
+    .line 130
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -1228,10 +1086,10 @@
     .parameter "id"
 
     .prologue
-    .line 231
+    .line 203
     const/4 v2, 0x0
 
-    .line 233
+    .line 205
     .local v2, tmpArray:[I
     :try_start_0
     iget-object v3, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mContext:Landroid/content/Context;
@@ -1246,29 +1104,29 @@
 
     move-result-object v2
 
-    .line 239
+    .line 211
     :cond_0
     :goto_0
     if-nez v2, :cond_2
 
-    .line 240
+    .line 212
     const/4 v3, 0x0
 
     iput-object v3, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mVibratePattern:[J
 
-    .line 247
+    .line 219
     :cond_1
     return-void
 
-    .line 234
+    .line 206
     :catch_0
     move-exception v0
 
-    .line 235
+    .line 207
     .local v0, e:Landroid/content/res/Resources$NotFoundException;
     if-eqz p1, :cond_0
 
-    .line 236
+    .line 208
     const-string v3, "PasswordEntryKeyboardHelper"
 
     const-string v4, "Vibrate pattern missing"
@@ -1277,7 +1135,7 @@
 
     goto :goto_0
 
-    .line 243
+    .line 215
     .end local v0           #e:Landroid/content/res/Resources$NotFoundException;
     :cond_2
     array-length v3, v2
@@ -1286,7 +1144,7 @@
 
     iput-object v3, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mVibratePattern:[J
 
-    .line 244
+    .line 216
     const/4 v1, 0x0
 
     .local v1, i:I
@@ -1295,7 +1153,7 @@
 
     if-ge v1, v3, :cond_1
 
-    .line 245
+    .line 217
     iget-object v3, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mVibratePattern:[J
 
     aget v4, v2, v1
@@ -1304,7 +1162,7 @@
 
     aput-wide v4, v3, v1
 
-    .line 244
+    .line 216
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
@@ -1314,7 +1172,7 @@
     .locals 0
 
     .prologue
-    .line 329
+    .line 301
     return-void
 .end method
 
@@ -1322,7 +1180,7 @@
     .locals 0
 
     .prologue
-    .line 333
+    .line 305
     return-void
 .end method
 
@@ -1330,7 +1188,7 @@
     .locals 0
 
     .prologue
-    .line 337
+    .line 309
     return-void
 .end method
 
@@ -1338,6 +1196,6 @@
     .locals 0
 
     .prologue
-    .line 341
+    .line 313
     return-void
 .end method

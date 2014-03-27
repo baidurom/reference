@@ -67,18 +67,6 @@
         <item quantity="other">%d日後</item>
         <item quantity="one">明日</item>
     </plurals>
-    <plurals name="duration_seconds">
-        <item quantity="other">%d秒</item>
-        <item quantity="one">1秒</item>
-    </plurals>
-    <plurals name="duration_minutes">
-        <item quantity="other">%d分</item>
-        <item quantity="one">1分</item>
-    </plurals>
-    <plurals name="duration_hours">
-        <item quantity="other">%d時間</item>
-        <item quantity="one">1時間</item>
-    </plurals>
     <plurals name="wifi_available">
         <item quantity="other">Wi-Fiを利用できます</item>
         <item quantity="one">Wi-Fiを利用できます</item>

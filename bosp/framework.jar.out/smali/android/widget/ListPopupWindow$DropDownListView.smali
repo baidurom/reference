@@ -31,22 +31,22 @@
     .parameter "hijackFocus"
 
     .prologue
-    .line 1181
+    .line 1153
     const/4 v0, 0x0
 
-    const v1, 0x101006d
+    const v1, #attr@dropDownListViewStyle#t
 
     invoke-direct {p0, p1, v0, v1}, Landroid/widget/ListView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 1182
+    .line 1154
     iput-boolean p2, p0, Landroid/widget/ListPopupWindow$DropDownListView;->mHijackFocus:Z
 
-    .line 1184
+    .line 1156
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Landroid/widget/ListPopupWindow$DropDownListView;->setCacheColorHint(I)V
 
-    .line 1185
+    .line 1157
     return-void
 .end method
 
@@ -56,7 +56,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1138
+    .line 1110
     iput-boolean p1, p0, Landroid/widget/ListPopupWindow$DropDownListView;->mListSelectionHidden:Z
 
     return p1
@@ -68,7 +68,7 @@
     .locals 1
 
     .prologue
-    .line 1238
+    .line 1210
     iget-boolean v0, p0, Landroid/widget/ListPopupWindow$DropDownListView;->mHijackFocus:Z
 
     if-nez v0, :cond_0
@@ -95,7 +95,7 @@
     .locals 1
 
     .prologue
-    .line 1218
+    .line 1190
     iget-boolean v0, p0, Landroid/widget/ListPopupWindow$DropDownListView;->mHijackFocus:Z
 
     if-nez v0, :cond_0
@@ -122,7 +122,7 @@
     .locals 1
 
     .prologue
-    .line 1228
+    .line 1200
     iget-boolean v0, p0, Landroid/widget/ListPopupWindow$DropDownListView;->mHijackFocus:Z
 
     if-nez v0, :cond_0
@@ -149,7 +149,7 @@
     .locals 1
 
     .prologue
-    .line 1208
+    .line 1180
     iget-boolean v0, p0, Landroid/widget/ListPopupWindow$DropDownListView;->mHijackFocus:Z
 
     if-eqz v0, :cond_0
@@ -183,12 +183,12 @@
     .parameter "isScrap"
 
     .prologue
-    .line 1196
+    .line 1168
     invoke-super {p0, p1, p2}, Landroid/widget/ListView;->obtainView(I[Z)Landroid/view/View;
 
     move-result-object v0
 
-    .line 1198
+    .line 1170
     .local v0, view:Landroid/view/View;
     instance-of v1, v0, Landroid/widget/TextView;
 
@@ -196,14 +196,14 @@
 
     move-object v1, v0
 
-    .line 1199
+    .line 1171
     check-cast v1, Landroid/widget/TextView;
 
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setHorizontallyScrolling(Z)V
 
-    .line 1202
+    .line 1174
     :cond_0
     return-object v0
 .end method

@@ -12,7 +12,7 @@
 
 .field private mEdgeGlowTop:Landroid/widget/EdgeEffect;
 
-.field private mHostView:Landroid/webkit/WebViewClassic;
+.field private mHostView:Landroid/webkit/WebView;
 
 .field private mOverScrollDeltaX:I
 
@@ -20,7 +20,7 @@
 
 
 # direct methods
-.method public constructor <init>(Landroid/webkit/WebViewClassic;)V
+.method public constructor <init>(Landroid/webkit/WebView;)V
     .locals 2
     .parameter "host"
 
@@ -29,10 +29,10 @@
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 43
-    iput-object p1, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebViewClassic;
+    iput-object p1, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebView;
 
     .line 44
-    invoke-virtual {p1}, Landroid/webkit/WebViewClassic;->getContext()Landroid/content/Context;
+    invoke-virtual {p1}, Landroid/webkit/WebView;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -84,11 +84,7 @@
     .line 123
     if-gtz p6, :cond_0
 
-    iget-object v0, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebViewClassic;
-
-    invoke-virtual {v0}, Landroid/webkit/WebViewClassic;->getWebView()Landroid/webkit/WebView;
-
-    move-result-object v0
+    iget-object v0, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebView;
 
     invoke-virtual {v0}, Landroid/webkit/WebView;->getOverScrollMode()I
 
@@ -105,9 +101,9 @@
     .line 125
     iget-object v0, p0, Landroid/webkit/OverScrollGlow;->mEdgeGlowTop:Landroid/widget/EdgeEffect;
 
-    iget-object v1, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebViewClassic;
+    iget-object v1, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebView;
 
-    iget-object v1, v1, Landroid/webkit/WebViewClassic;->mScroller:Landroid/widget/OverScroller;
+    iget-object v1, v1, Landroid/webkit/WebView;->mScroller:Landroid/widget/OverScroller;
 
     invoke-virtual {v1}, Landroid/widget/OverScroller;->getCurrVelocity()F
 
@@ -144,9 +140,9 @@
     .line 139
     iget-object v0, p0, Landroid/webkit/OverScrollGlow;->mEdgeGlowLeft:Landroid/widget/EdgeEffect;
 
-    iget-object v1, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebViewClassic;
+    iget-object v1, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebView;
 
-    iget-object v1, v1, Landroid/webkit/WebViewClassic;->mScroller:Landroid/widget/OverScroller;
+    iget-object v1, v1, Landroid/webkit/WebView;->mScroller:Landroid/widget/OverScroller;
 
     invoke-virtual {v1}, Landroid/widget/OverScroller;->getCurrVelocity()F
 
@@ -184,9 +180,9 @@
     .line 130
     iget-object v0, p0, Landroid/webkit/OverScrollGlow;->mEdgeGlowBottom:Landroid/widget/EdgeEffect;
 
-    iget-object v1, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebViewClassic;
+    iget-object v1, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebView;
 
-    iget-object v1, v1, Landroid/webkit/WebViewClassic;->mScroller:Landroid/widget/OverScroller;
+    iget-object v1, v1, Landroid/webkit/WebView;->mScroller:Landroid/widget/OverScroller;
 
     invoke-virtual {v1}, Landroid/widget/OverScroller;->getCurrVelocity()F
 
@@ -221,9 +217,9 @@
     .line 144
     iget-object v0, p0, Landroid/webkit/OverScrollGlow;->mEdgeGlowRight:Landroid/widget/EdgeEffect;
 
-    iget-object v1, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebViewClassic;
+    iget-object v1, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebView;
 
-    iget-object v1, v1, Landroid/webkit/WebViewClassic;->mScroller:Landroid/widget/OverScroller;
+    iget-object v1, v1, Landroid/webkit/WebView;->mScroller:Landroid/widget/OverScroller;
 
     invoke-virtual {v1}, Landroid/widget/OverScroller;->getCurrVelocity()F
 
@@ -258,33 +254,33 @@
     const/4 v9, 0x0
 
     .line 159
-    iget-object v6, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebViewClassic;
+    iget-object v6, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebView;
 
-    invoke-virtual {v6}, Landroid/webkit/WebViewClassic;->getScrollX()I
+    invoke-virtual {v6}, Landroid/webkit/WebView;->getScrollX()I
 
     move-result v3
 
     .line 160
     .local v3, scrollX:I
-    iget-object v6, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebViewClassic;
+    iget-object v6, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebView;
 
-    invoke-virtual {v6}, Landroid/webkit/WebViewClassic;->getScrollY()I
+    invoke-virtual {v6}, Landroid/webkit/WebView;->getScrollY()I
 
     move-result v4
 
     .line 161
     .local v4, scrollY:I
-    iget-object v6, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebViewClassic;
+    iget-object v6, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebView;
 
-    invoke-virtual {v6}, Landroid/webkit/WebViewClassic;->getWidth()I
+    invoke-virtual {v6}, Landroid/webkit/WebView;->getWidth()I
 
     move-result v5
 
     .line 162
     .local v5, width:I
-    iget-object v6, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebViewClassic;
+    iget-object v6, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebView;
 
-    invoke-virtual {v6}, Landroid/webkit/WebViewClassic;->getHeight()I
+    invoke-virtual {v6}, Landroid/webkit/WebView;->getHeight()I
 
     move-result v0
 
@@ -311,9 +307,9 @@
     .local v2, restoreCount:I
     int-to-float v6, v3
 
-    iget-object v7, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebViewClassic;
+    iget-object v7, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebView;
 
-    invoke-virtual {v7}, Landroid/webkit/WebViewClassic;->getVisibleTitleHeight()I
+    invoke-virtual {v7}, Landroid/webkit/WebView;->getVisibleTitleHeight()I
 
     move-result v7
 
@@ -368,9 +364,9 @@
 
     int-to-float v6, v6
 
-    iget-object v7, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebViewClassic;
+    iget-object v7, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebView;
 
-    invoke-virtual {v7}, Landroid/webkit/WebViewClassic;->computeMaxScrollY()I
+    invoke-virtual {v7}, Landroid/webkit/WebView;->computeMaxScrollY()I
 
     move-result v7
 
@@ -489,9 +485,9 @@
     .line 196
     int-to-float v6, v4
 
-    iget-object v7, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebViewClassic;
+    iget-object v7, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebView;
 
-    invoke-virtual {v7}, Landroid/webkit/WebViewClassic;->computeMaxScrollX()I
+    invoke-virtual {v7}, Landroid/webkit/WebView;->computeMaxScrollX()I
 
     move-result v7
 
@@ -592,17 +588,17 @@
     const/4 v5, 0x0
 
     .line 64
-    iget-object v2, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebViewClassic;
+    iget-object v2, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebView;
 
-    invoke-virtual {v2}, Landroid/webkit/WebViewClassic;->getScrollX()I
+    invoke-virtual {v2}, Landroid/webkit/WebView;->getScrollX()I
 
     move-result v2
 
     if-ne p3, v2, :cond_4
 
-    iget-object v2, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebViewClassic;
+    iget-object v2, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebView;
 
-    invoke-virtual {v2}, Landroid/webkit/WebViewClassic;->getScrollY()I
+    invoke-virtual {v2}, Landroid/webkit/WebView;->getScrollY()I
 
     move-result v2
 
@@ -627,9 +623,9 @@
 
     int-to-float v3, v3
 
-    iget-object v4, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebViewClassic;
+    iget-object v4, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebView;
 
-    invoke-virtual {v4}, Landroid/webkit/WebViewClassic;->getWidth()I
+    invoke-virtual {v4}, Landroid/webkit/WebView;->getWidth()I
 
     move-result v4
 
@@ -663,11 +659,7 @@
     :cond_1
     if-gtz p6, :cond_2
 
-    iget-object v2, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebViewClassic;
-
-    invoke-virtual {v2}, Landroid/webkit/WebViewClassic;->getWebView()Landroid/webkit/WebView;
-
-    move-result-object v2
+    iget-object v2, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebView;
 
     invoke-virtual {v2}, Landroid/webkit/WebView;->getOverScrollMode()I
 
@@ -692,9 +684,9 @@
 
     int-to-float v3, v3
 
-    iget-object v4, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebViewClassic;
+    iget-object v4, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebView;
 
-    invoke-virtual {v4}, Landroid/webkit/WebViewClassic;->getHeight()I
+    invoke-virtual {v4}, Landroid/webkit/WebView;->getHeight()I
 
     move-result v4
 
@@ -740,9 +732,9 @@
 
     int-to-float v3, v3
 
-    iget-object v4, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebViewClassic;
+    iget-object v4, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebView;
 
-    invoke-virtual {v4}, Landroid/webkit/WebViewClassic;->getWidth()I
+    invoke-virtual {v4}, Landroid/webkit/WebView;->getWidth()I
 
     move-result v4
 
@@ -781,9 +773,9 @@
 
     int-to-float v3, v3
 
-    iget-object v4, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebViewClassic;
+    iget-object v4, p0, Landroid/webkit/OverScrollGlow;->mHostView:Landroid/webkit/WebView;
 
-    invoke-virtual {v4}, Landroid/webkit/WebViewClassic;->getHeight()I
+    invoke-virtual {v4}, Landroid/webkit/WebView;->getHeight()I
 
     move-result v4
 

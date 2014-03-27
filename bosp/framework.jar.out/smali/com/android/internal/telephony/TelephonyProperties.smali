@@ -26,8 +26,6 @@
 
 .field public static final PROPERTY_IDP_STRING:Ljava/lang/String; = "ro.cdma.idpstring"
 
-.field public static final PROPERTY_IGNORE_NITZ:Ljava/lang/String; = "telephony.test.ignore.nitz"
-
 .field public static final PROPERTY_INECM_MODE:Ljava/lang/String; = "ril.cdma.inecmmode"
 
 .field public static final PROPERTY_LTE_ON_CDMA_DEVICE:Ljava/lang/String; = "telephony.lteOnCdmaDevice"

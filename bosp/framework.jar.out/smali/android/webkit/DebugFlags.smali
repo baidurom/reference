@@ -14,13 +14,13 @@
 
 .field public static final COOKIE_SYNC_MANAGER:Z
 
+.field public static final DRAW_WEBTEXTVIEW:Z
+
 .field public static final FRAME_LOADER:Z
 
 .field public static final J_WEB_CORE_JAVA_BRIDGE:Z
 
 .field public static final LOAD_LISTENER:Z
-
-.field public static final MEASURE_PAGE_SWAP_FPS:Z
 
 .field public static final NETWORK:Z
 
@@ -35,6 +35,8 @@
 .field public static final WEB_SETTINGS:Z
 
 .field public static final WEB_SYNC_MANAGER:Z
+
+.field public static final WEB_TEXT_VIEW:Z
 
 .field public static final WEB_VIEW:Z
 

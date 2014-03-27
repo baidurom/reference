@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 87
+    .line 80
     iput-object p1, p0, Landroid/os/storage/StorageManager$MountServiceBinderListener;->this$0:Landroid/os/storage/StorageManager;
 
     invoke-direct {p0}, Landroid/os/storage/IMountServiceListener$Stub;-><init>()V
@@ -38,7 +38,7 @@
     .parameter "x1"
 
     .prologue
-    .line 87
+    .line 80
     invoke-direct {p0, p1}, Landroid/os/storage/StorageManager$MountServiceBinderListener;-><init>(Landroid/os/storage/StorageManager;)V
 
     return-void
@@ -51,57 +51,6 @@
     .parameter "path"
     .parameter "oldState"
     .parameter "newState"
-
-    .prologue
-    .line 96
-    iget-object v2, p0, Landroid/os/storage/StorageManager$MountServiceBinderListener;->this$0:Landroid/os/storage/StorageManager;
-
-    #getter for: Landroid/os/storage/StorageManager;->mListeners:Ljava/util/List;
-    invoke-static {v2}, Landroid/os/storage/StorageManager;->access$000(Landroid/os/storage/StorageManager;)Ljava/util/List;
-
-    move-result-object v2
-
-    invoke-interface {v2}, Ljava/util/List;->size()I
-
-    move-result v1
-
-    .line 97
-    .local v1, size:I
-    const/4 v0, 0x0
-
-    .local v0, i:I
-    :goto_0
-    if-ge v0, v1, :cond_0
-
-    .line 98
-    iget-object v2, p0, Landroid/os/storage/StorageManager$MountServiceBinderListener;->this$0:Landroid/os/storage/StorageManager;
-
-    #getter for: Landroid/os/storage/StorageManager;->mListeners:Ljava/util/List;
-    invoke-static {v2}, Landroid/os/storage/StorageManager;->access$000(Landroid/os/storage/StorageManager;)Ljava/util/List;
-
-    move-result-object v2
-
-    invoke-interface {v2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/os/storage/StorageManager$ListenerDelegate;
-
-    invoke-virtual {v2, p1, p2, p3}, Landroid/os/storage/StorageManager$ListenerDelegate;->sendStorageStateChanged(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 97
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    .line 100
-    :cond_0
-    return-void
-.end method
-
-.method public onUsbMassStorageConnectionChanged(Z)V
-    .locals 3
-    .parameter "available"
 
     .prologue
     .line 89
@@ -138,7 +87,7 @@
 
     check-cast v2, Landroid/os/storage/StorageManager$ListenerDelegate;
 
-    invoke-virtual {v2, p1}, Landroid/os/storage/StorageManager$ListenerDelegate;->sendShareAvailabilityChanged(Z)V
+    invoke-virtual {v2, p1, p2, p3}, Landroid/os/storage/StorageManager$ListenerDelegate;->sendStorageStateChanged(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 90
     add-int/lit8 v0, v0, 0x1
@@ -146,6 +95,57 @@
     goto :goto_0
 
     .line 93
+    :cond_0
+    return-void
+.end method
+
+.method public onUsbMassStorageConnectionChanged(Z)V
+    .locals 3
+    .parameter "available"
+
+    .prologue
+    .line 82
+    iget-object v2, p0, Landroid/os/storage/StorageManager$MountServiceBinderListener;->this$0:Landroid/os/storage/StorageManager;
+
+    #getter for: Landroid/os/storage/StorageManager;->mListeners:Ljava/util/List;
+    invoke-static {v2}, Landroid/os/storage/StorageManager;->access$000(Landroid/os/storage/StorageManager;)Ljava/util/List;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    .line 83
+    .local v1, size:I
+    const/4 v0, 0x0
+
+    .local v0, i:I
+    :goto_0
+    if-ge v0, v1, :cond_0
+
+    .line 84
+    iget-object v2, p0, Landroid/os/storage/StorageManager$MountServiceBinderListener;->this$0:Landroid/os/storage/StorageManager;
+
+    #getter for: Landroid/os/storage/StorageManager;->mListeners:Ljava/util/List;
+    invoke-static {v2}, Landroid/os/storage/StorageManager;->access$000(Landroid/os/storage/StorageManager;)Ljava/util/List;
+
+    move-result-object v2
+
+    invoke-interface {v2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/os/storage/StorageManager$ListenerDelegate;
+
+    invoke-virtual {v2, p1}, Landroid/os/storage/StorageManager$ListenerDelegate;->sendShareAvailabilityChanged(Z)V
+
+    .line 83
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    .line 86
     :cond_0
     return-void
 .end method

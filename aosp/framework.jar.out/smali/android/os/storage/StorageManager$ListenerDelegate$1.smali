@@ -28,7 +28,7 @@
     .parameter
 
     .prologue
-    .line 261
+    .line 254
     iput-object p1, p0, Landroid/os/storage/StorageManager$ListenerDelegate$1;->this$1:Landroid/os/storage/StorageManager$ListenerDelegate;
 
     iput-object p3, p0, Landroid/os/storage/StorageManager$ListenerDelegate$1;->val$this$0:Landroid/os/storage/StorageManager;
@@ -45,12 +45,12 @@
     .parameter "msg"
 
     .prologue
-    .line 264
+    .line 257
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/os/storage/StorageManager$StorageEvent;
 
-    .line 266
+    .line 259
     .local v0, e:Landroid/os/storage/StorageManager$StorageEvent;
     iget v2, p1, Landroid/os/Message;->what:I
 
@@ -60,10 +60,10 @@
 
     move-object v1, v0
 
-    .line 267
+    .line 260
     check-cast v1, Landroid/os/storage/StorageManager$UmsConnectionChangedStorageEvent;
 
-    .line 268
+    .line 261
     .local v1, ev:Landroid/os/storage/StorageManager$UmsConnectionChangedStorageEvent;
     iget-object v2, p0, Landroid/os/storage/StorageManager$ListenerDelegate$1;->this$1:Landroid/os/storage/StorageManager$ListenerDelegate;
 
@@ -73,12 +73,12 @@
 
     invoke-virtual {v2, v3}, Landroid/os/storage/StorageEventListener;->onUsbMassStorageConnectionChanged(Z)V
 
-    .line 275
+    .line 268
     .end local v1           #ev:Landroid/os/storage/StorageManager$UmsConnectionChangedStorageEvent;
     :goto_0
     return-void
 
-    .line 269
+    .line 262
     :cond_0
     iget v2, p1, Landroid/os/Message;->what:I
 
@@ -88,10 +88,10 @@
 
     move-object v1, v0
 
-    .line 270
+    .line 263
     check-cast v1, Landroid/os/storage/StorageManager$StorageStateChangedStorageEvent;
 
-    .line 271
+    .line 264
     .local v1, ev:Landroid/os/storage/StorageManager$StorageStateChangedStorageEvent;
     iget-object v2, p0, Landroid/os/storage/StorageManager$ListenerDelegate$1;->this$1:Landroid/os/storage/StorageManager$ListenerDelegate;
 
@@ -107,7 +107,7 @@
 
     goto :goto_0
 
-    .line 273
+    .line 266
     .end local v1           #ev:Landroid/os/storage/StorageManager$StorageStateChangedStorageEvent;
     :cond_1
     const-string v2, "StorageManager"

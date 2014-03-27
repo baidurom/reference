@@ -67,18 +67,6 @@
         <item quantity="other">%d 天內</item>
         <item quantity="one">明天</item>
     </plurals>
-    <plurals name="duration_seconds">
-        <item quantity="other">%d 秒</item>
-        <item quantity="one">1 秒</item>
-    </plurals>
-    <plurals name="duration_minutes">
-        <item quantity="other">%d 分鐘</item>
-        <item quantity="one">1 分鐘</item>
-    </plurals>
-    <plurals name="duration_hours">
-        <item quantity="other">%d 小時</item>
-        <item quantity="one">1 小時</item>
-    </plurals>
     <plurals name="wifi_available">
         <item quantity="other">已偵測到 Wi-Fi 網路</item>
         <item quantity="one">已偵測到 Wi-Fi 網路</item>

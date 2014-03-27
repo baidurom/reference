@@ -1,4 +1,4 @@
-.class final Landroid/view/Surface$CompatibleCanvas;
+.class Landroid/view/Surface$CompatibleCanvas;
 .super Landroid/graphics/Canvas;
 .source "Surface.java"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x12
+    accessFlags = 0x2
     name = "CompatibleCanvas"
 .end annotation
 
@@ -26,12 +26,12 @@
     .parameter
 
     .prologue
-    .line 842
+    .line 323
     iput-object p1, p0, Landroid/view/Surface$CompatibleCanvas;->this$0:Landroid/view/Surface;
 
     invoke-direct {p0}, Landroid/graphics/Canvas;-><init>()V
 
-    .line 844
+    .line 325
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/view/Surface$CompatibleCanvas;->mOrigMatrix:Landroid/graphics/Matrix;
@@ -45,7 +45,7 @@
     .parameter "x1"
 
     .prologue
-    .line 842
+    .line 323
     invoke-direct {p0, p1}, Landroid/view/Surface$CompatibleCanvas;-><init>(Landroid/view/Surface;)V
 
     return-void
@@ -57,12 +57,12 @@
     .locals 3
 
     .prologue
-    .line 857
+    .line 338
     invoke-super {p0}, Landroid/graphics/Canvas;->getHeight()I
 
     move-result v0
 
-    .line 858
+    .line 339
     .local v0, h:I
     iget-object v1, p0, Landroid/view/Surface$CompatibleCanvas;->this$0:Landroid/view/Surface;
 
@@ -73,7 +73,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 859
+    .line 340
     int-to-float v1, v0
 
     iget-object v2, p0, Landroid/view/Surface$CompatibleCanvas;->this$0:Landroid/view/Surface;
@@ -93,7 +93,7 @@
 
     float-to-int v0, v1
 
-    .line 861
+    .line 342
     :cond_0
     return v0
 .end method
@@ -103,28 +103,28 @@
     .parameter "m"
 
     .prologue
-    .line 879
+    .line 360
     invoke-super {p0, p1}, Landroid/graphics/Canvas;->getMatrix(Landroid/graphics/Matrix;)V
 
-    .line 880
+    .line 361
     iget-object v0, p0, Landroid/view/Surface$CompatibleCanvas;->mOrigMatrix:Landroid/graphics/Matrix;
 
     if-nez v0, :cond_0
 
-    .line 881
+    .line 362
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
     iput-object v0, p0, Landroid/view/Surface$CompatibleCanvas;->mOrigMatrix:Landroid/graphics/Matrix;
 
-    .line 883
+    .line 364
     :cond_0
     iget-object v0, p0, Landroid/view/Surface$CompatibleCanvas;->mOrigMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Matrix;->set(Landroid/graphics/Matrix;)V
 
-    .line 884
+    .line 365
     return-void
 .end method
 
@@ -132,12 +132,12 @@
     .locals 3
 
     .prologue
-    .line 848
+    .line 329
     invoke-super {p0}, Landroid/graphics/Canvas;->getWidth()I
 
     move-result v0
 
-    .line 849
+    .line 330
     .local v0, w:I
     iget-object v1, p0, Landroid/view/Surface$CompatibleCanvas;->this$0:Landroid/view/Surface;
 
@@ -148,7 +148,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 850
+    .line 331
     int-to-float v1, v0
 
     iget-object v2, p0, Landroid/view/Surface$CompatibleCanvas;->this$0:Landroid/view/Surface;
@@ -168,7 +168,7 @@
 
     float-to-int v0, v1
 
-    .line 852
+    .line 333
     :cond_0
     return v0
 .end method
@@ -178,7 +178,7 @@
     .parameter "matrix"
 
     .prologue
-    .line 866
+    .line 347
     iget-object v1, p0, Landroid/view/Surface$CompatibleCanvas;->this$0:Landroid/view/Surface;
 
     #getter for: Landroid/view/Surface;->mCompatibleMatrix:Landroid/graphics/Matrix;
@@ -200,15 +200,15 @@
 
     if-eqz v1, :cond_1
 
-    .line 869
+    .line 350
     :cond_0
     invoke-super {p0, p1}, Landroid/graphics/Canvas;->setMatrix(Landroid/graphics/Matrix;)V
 
-    .line 875
+    .line 356
     :goto_0
     return-void
 
-    .line 871
+    .line 352
     :cond_1
     new-instance v0, Landroid/graphics/Matrix;
 
@@ -221,11 +221,11 @@
 
     invoke-direct {v0, v1}, Landroid/graphics/Matrix;-><init>(Landroid/graphics/Matrix;)V
 
-    .line 872
+    .line 353
     .local v0, m:Landroid/graphics/Matrix;
     invoke-virtual {v0, p1}, Landroid/graphics/Matrix;->preConcat(Landroid/graphics/Matrix;)Z
 
-    .line 873
+    .line 354
     invoke-super {p0, v0}, Landroid/graphics/Canvas;->setMatrix(Landroid/graphics/Matrix;)V
 
     goto :goto_0

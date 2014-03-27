@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 743
+    .line 709
     iput-object p1, p0, Landroid/widget/AutoCompleteTextView$MyWatcher;->this$0:Landroid/widget/AutoCompleteTextView;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .parameter "x1"
 
     .prologue
-    .line 743
+    .line 709
     invoke-direct {p0, p1}, Landroid/widget/AutoCompleteTextView$MyWatcher;-><init>(Landroid/widget/AutoCompleteTextView;)V
 
     return-void
@@ -54,12 +54,12 @@
     .parameter "s"
 
     .prologue
-    .line 745
+    .line 711
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView$MyWatcher;->this$0:Landroid/widget/AutoCompleteTextView;
 
     invoke-virtual {v0}, Landroid/widget/AutoCompleteTextView;->doAfterTextChanged()V
 
-    .line 746
+    .line 712
     return-void
 .end method
 
@@ -71,12 +71,12 @@
     .parameter "after"
 
     .prologue
-    .line 748
+    .line 714
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView$MyWatcher;->this$0:Landroid/widget/AutoCompleteTextView;
 
     invoke-virtual {v0}, Landroid/widget/AutoCompleteTextView;->doBeforeTextChanged()V
 
-    .line 749
+    .line 715
     return-void
 .end method
 
@@ -88,6 +88,6 @@
     .parameter "count"
 
     .prologue
-    .line 751
+    .line 717
     return-void
 .end method

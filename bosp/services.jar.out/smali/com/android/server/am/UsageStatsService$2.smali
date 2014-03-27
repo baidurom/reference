@@ -34,7 +34,7 @@
 
 
 # virtual methods
-.method public onPackageRemovedAllUsers(Ljava/lang/String;I)V
+.method public onPackageRemoved(Ljava/lang/String;I)V
     .locals 2
     .parameter "packageName"
     .parameter "uid"

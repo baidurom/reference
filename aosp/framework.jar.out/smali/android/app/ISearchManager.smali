@@ -15,14 +15,6 @@
 
 
 # virtual methods
-.method public abstract getAssistIntent(I)Landroid/content/ComponentName;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract getGlobalSearchActivities()Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {

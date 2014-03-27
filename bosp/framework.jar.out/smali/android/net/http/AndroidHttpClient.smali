@@ -201,7 +201,7 @@
     invoke-virtual {v2, p0}, Ljava/io/OutputStream;->write([B)V
 
     .line 310
-    invoke-virtual {v2}, Ljava/io/OutputStream;->close()V
+    invoke-virtual {v2}, Ljava/util/zip/GZIPOutputStream;->close()V
 
     .line 311
     new-instance v1, Lorg/apache/http/entity/ByteArrayEntity;

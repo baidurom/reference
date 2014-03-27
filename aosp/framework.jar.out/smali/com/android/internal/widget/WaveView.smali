@@ -134,12 +134,12 @@
     .parameter "context"
 
     .prologue
-    .line 107
+    .line 105
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/internal/widget/WaveView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 108
+    .line 106
     return-void
 .end method
 
@@ -153,10 +153,10 @@
 
     const/4 v2, 0x0
 
-    .line 111
+    .line 109
     invoke-direct {p0, p1, p2}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 86
+    .line 84
     new-instance v0, Ljava/util/ArrayList;
 
     const/4 v1, 0x3
@@ -165,61 +165,61 @@
 
     iput-object v0, p0, Lcom/android/internal/widget/WaveView;->mDrawables:Ljava/util/ArrayList;
 
-    .line 87
+    .line 85
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0, v3}, Ljava/util/ArrayList;-><init>(I)V
 
     iput-object v0, p0, Lcom/android/internal/widget/WaveView;->mLightWaves:Ljava/util/ArrayList;
 
-    .line 88
+    .line 86
     iput-boolean v2, p0, Lcom/android/internal/widget/WaveView;->mFingerDown:Z
 
-    .line 89
+    .line 87
     const/high16 v0, 0x4336
 
     iput v0, p0, Lcom/android/internal/widget/WaveView;->mRingRadius:F
 
-    .line 90
+    .line 88
     const/16 v0, 0x88
 
     iput v0, p0, Lcom/android/internal/widget/WaveView;->mSnapRadius:I
 
-    .line 91
+    .line 89
     iput v3, p0, Lcom/android/internal/widget/WaveView;->mWaveCount:I
 
-    .line 92
+    .line 90
     const-wide/16 v0, 0x64
 
     iput-wide v0, p0, Lcom/android/internal/widget/WaveView;->mWaveTimerDelay:J
 
-    .line 93
+    .line 91
     iput v2, p0, Lcom/android/internal/widget/WaveView;->mCurrentWave:I
 
-    .line 101
+    .line 99
     iput v2, p0, Lcom/android/internal/widget/WaveView;->mLockState:I
 
-    .line 102
+    .line 100
     iput v2, p0, Lcom/android/internal/widget/WaveView;->mGrabbedState:I
 
-    .line 414
+    .line 412
     new-instance v0, Lcom/android/internal/widget/WaveView$1;
 
     invoke-direct {v0, p0}, Lcom/android/internal/widget/WaveView$1;-><init>(Lcom/android/internal/widget/WaveView;)V
 
     iput-object v0, p0, Lcom/android/internal/widget/WaveView;->mLockTimerActions:Ljava/lang/Runnable;
 
-    .line 431
+    .line 429
     new-instance v0, Lcom/android/internal/widget/WaveView$2;
 
     invoke-direct {v0, p0}, Lcom/android/internal/widget/WaveView$2;-><init>(Lcom/android/internal/widget/WaveView;)V
 
     iput-object v0, p0, Lcom/android/internal/widget/WaveView;->mAddWaveAction:Ljava/lang/Runnable;
 
-    .line 117
+    .line 115
     invoke-direct {p0}, Lcom/android/internal/widget/WaveView;->initDrawables()V
 
-    .line 118
+    .line 116
     return-void
 .end method
 
@@ -228,7 +228,7 @@
     .parameter "x0"
 
     .prologue
-    .line 45
+    .line 43
     iget v0, p0, Lcom/android/internal/widget/WaveView;->mLockState:I
 
     return v0
@@ -240,7 +240,7 @@
     .parameter "x1"
 
     .prologue
-    .line 45
+    .line 43
     iput p1, p0, Lcom/android/internal/widget/WaveView;->mLockState:I
 
     return p1
@@ -251,7 +251,7 @@
     .parameter "x0"
 
     .prologue
-    .line 45
+    .line 43
     iget v0, p0, Lcom/android/internal/widget/WaveView;->mMouseX:F
 
     return v0
@@ -262,7 +262,7 @@
     .parameter "x0"
 
     .prologue
-    .line 45
+    .line 43
     iget-boolean v0, p0, Lcom/android/internal/widget/WaveView;->mFinishWaves:Z
 
     return v0
@@ -274,7 +274,7 @@
     .parameter "x1"
 
     .prologue
-    .line 45
+    .line 43
     iput-boolean p1, p0, Lcom/android/internal/widget/WaveView;->mWavesRunning:Z
 
     return p1
@@ -285,7 +285,7 @@
     .parameter "x0"
 
     .prologue
-    .line 45
+    .line 43
     iget-object v0, p0, Lcom/android/internal/widget/WaveView;->mAddWaveAction:Ljava/lang/Runnable;
 
     return-object v0
@@ -296,7 +296,7 @@
     .parameter "x0"
 
     .prologue
-    .line 45
+    .line 43
     iget v0, p0, Lcom/android/internal/widget/WaveView;->mLockCenterX:F
 
     return v0
@@ -307,7 +307,7 @@
     .parameter "x0"
 
     .prologue
-    .line 45
+    .line 43
     iget v0, p0, Lcom/android/internal/widget/WaveView;->mMouseY:F
 
     return v0
@@ -318,7 +318,7 @@
     .parameter "x0"
 
     .prologue
-    .line 45
+    .line 43
     iget v0, p0, Lcom/android/internal/widget/WaveView;->mLockCenterY:F
 
     return v0
@@ -329,7 +329,7 @@
     .parameter "x0"
 
     .prologue
-    .line 45
+    .line 43
     iget v0, p0, Lcom/android/internal/widget/WaveView;->mSnapRadius:I
 
     return v0
@@ -340,7 +340,7 @@
     .parameter "x0"
 
     .prologue
-    .line 45
+    .line 43
     iget-wide v0, p0, Lcom/android/internal/widget/WaveView;->mWaveTimerDelay:J
 
     return-wide v0
@@ -352,7 +352,7 @@
     .parameter "x1"
 
     .prologue
-    .line 45
+    .line 43
     iput-wide p1, p0, Lcom/android/internal/widget/WaveView;->mWaveTimerDelay:J
 
     return-wide p1
@@ -364,7 +364,7 @@
     .parameter "x1"
 
     .prologue
-    .line 45
+    .line 43
     iget-wide v0, p0, Lcom/android/internal/widget/WaveView;->mWaveTimerDelay:J
 
     add-long/2addr v0, p1
@@ -379,7 +379,7 @@
     .parameter "x0"
 
     .prologue
-    .line 45
+    .line 43
     iget v0, p0, Lcom/android/internal/widget/WaveView;->mCurrentWave:I
 
     return v0
@@ -391,7 +391,7 @@
     .parameter "x1"
 
     .prologue
-    .line 45
+    .line 43
     iput p1, p0, Lcom/android/internal/widget/WaveView;->mCurrentWave:I
 
     return p1
@@ -402,7 +402,7 @@
     .parameter "x0"
 
     .prologue
-    .line 45
+    .line 43
     iget-object v0, p0, Lcom/android/internal/widget/WaveView;->mLightWaves:Ljava/util/ArrayList;
 
     return-object v0
@@ -413,7 +413,7 @@
     .parameter "x0"
 
     .prologue
-    .line 45
+    .line 43
     iget v0, p0, Lcom/android/internal/widget/WaveView;->mWaveCount:I
 
     return v0
@@ -423,10 +423,10 @@
     .locals 2
 
     .prologue
-    .line 569
+    .line 567
     iget-object v0, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
-    const v1, 0x10404df
+    const v1, #string@description_target_unlock_tablet#t
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -434,17 +434,17 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/widget/WaveView;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 570
+    .line 568
     const/16 v0, 0x8
 
     invoke-virtual {p0, v0}, Lcom/android/internal/widget/WaveView;->sendAccessibilityEvent(I)V
 
-    .line 571
+    .line 569
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/internal/widget/WaveView;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 572
+    .line 570
     return-void
 .end method
 
@@ -453,22 +453,22 @@
     .parameter "whichHandle"
 
     .prologue
-    .line 604
+    .line 597
     const-wide/16 v0, 0x14
 
     invoke-direct {p0, v0, v1}, Lcom/android/internal/widget/WaveView;->vibrate(J)V
 
-    .line 605
+    .line 598
     iget-object v0, p0, Lcom/android/internal/widget/WaveView;->mOnTriggerListener:Lcom/android/internal/widget/WaveView$OnTriggerListener;
 
     if-eqz v0, :cond_0
 
-    .line 606
+    .line 599
     iget-object v0, p0, Lcom/android/internal/widget/WaveView;->mOnTriggerListener:Lcom/android/internal/widget/WaveView$OnTriggerListener;
 
     invoke-interface {v0, p0, p1}, Lcom/android/internal/widget/WaveView$OnTriggerListener;->onTrigger(Landroid/view/View;I)V
 
-    .line 608
+    .line 601
     :cond_0
     return-void
 .end method
@@ -477,7 +477,7 @@
     .locals 2
 
     .prologue
-    .line 558
+    .line 556
     iget-object v0, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/view/accessibility/AccessibilityManager;->getInstance(Landroid/content/Context;)Landroid/view/accessibility/AccessibilityManager;
@@ -490,7 +490,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 559
+    .line 557
     const/high16 v0, 0x3f80
 
     iget-object v1, p0, Lcom/android/internal/widget/WaveView;->mUnlockHalo:Lcom/android/internal/widget/DrawableHolder;
@@ -503,7 +503,7 @@
 
     mul-float/2addr v0, v1
 
-    .line 561
+    .line 559
     :goto_0
     return v0
 
@@ -531,10 +531,10 @@
 
     const v5, 0x3dcccccd
 
-    .line 168
+    .line 166
     new-instance v3, Lcom/android/internal/widget/DrawableHolder;
 
-    const v4, 0x1080607
+    const v4, #drawable@unlock_ring#t
 
     invoke-virtual {p0, v4}, Lcom/android/internal/widget/WaveView;->createDrawable(I)Landroid/graphics/drawable/BitmapDrawable;
 
@@ -544,46 +544,46 @@
 
     iput-object v3, p0, Lcom/android/internal/widget/WaveView;->mUnlockRing:Lcom/android/internal/widget/DrawableHolder;
 
-    .line 169
+    .line 167
     iget-object v3, p0, Lcom/android/internal/widget/WaveView;->mUnlockRing:Lcom/android/internal/widget/DrawableHolder;
 
     iget v4, p0, Lcom/android/internal/widget/WaveView;->mLockCenterX:F
 
     invoke-virtual {v3, v4}, Lcom/android/internal/widget/DrawableHolder;->setX(F)V
 
-    .line 170
+    .line 168
     iget-object v3, p0, Lcom/android/internal/widget/WaveView;->mUnlockRing:Lcom/android/internal/widget/DrawableHolder;
 
     iget v4, p0, Lcom/android/internal/widget/WaveView;->mLockCenterY:F
 
     invoke-virtual {v3, v4}, Lcom/android/internal/widget/DrawableHolder;->setY(F)V
 
-    .line 171
+    .line 169
     iget-object v3, p0, Lcom/android/internal/widget/WaveView;->mUnlockRing:Lcom/android/internal/widget/DrawableHolder;
 
     invoke-virtual {v3, v5}, Lcom/android/internal/widget/DrawableHolder;->setScaleX(F)V
 
-    .line 172
+    .line 170
     iget-object v3, p0, Lcom/android/internal/widget/WaveView;->mUnlockRing:Lcom/android/internal/widget/DrawableHolder;
 
     invoke-virtual {v3, v5}, Lcom/android/internal/widget/DrawableHolder;->setScaleY(F)V
 
-    .line 173
+    .line 171
     iget-object v3, p0, Lcom/android/internal/widget/WaveView;->mUnlockRing:Lcom/android/internal/widget/DrawableHolder;
 
     invoke-virtual {v3, v6}, Lcom/android/internal/widget/DrawableHolder;->setAlpha(F)V
 
-    .line 174
+    .line 172
     iget-object v3, p0, Lcom/android/internal/widget/WaveView;->mDrawables:Ljava/util/ArrayList;
 
     iget-object v4, p0, Lcom/android/internal/widget/WaveView;->mUnlockRing:Lcom/android/internal/widget/DrawableHolder;
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 176
+    .line 174
     new-instance v3, Lcom/android/internal/widget/DrawableHolder;
 
-    const v4, 0x1080605
+    const v4, #drawable@unlock_default#t
 
     invoke-virtual {p0, v4}, Lcom/android/internal/widget/WaveView;->createDrawable(I)Landroid/graphics/drawable/BitmapDrawable;
 
@@ -593,46 +593,46 @@
 
     iput-object v3, p0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
 
-    .line 177
+    .line 175
     iget-object v3, p0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
 
     iget v4, p0, Lcom/android/internal/widget/WaveView;->mLockCenterX:F
 
     invoke-virtual {v3, v4}, Lcom/android/internal/widget/DrawableHolder;->setX(F)V
 
-    .line 178
+    .line 176
     iget-object v3, p0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
 
     iget v4, p0, Lcom/android/internal/widget/WaveView;->mLockCenterY:F
 
     invoke-virtual {v3, v4}, Lcom/android/internal/widget/DrawableHolder;->setY(F)V
 
-    .line 179
+    .line 177
     iget-object v3, p0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
 
     invoke-virtual {v3, v5}, Lcom/android/internal/widget/DrawableHolder;->setScaleX(F)V
 
-    .line 180
+    .line 178
     iget-object v3, p0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
 
     invoke-virtual {v3, v5}, Lcom/android/internal/widget/DrawableHolder;->setScaleY(F)V
 
-    .line 181
+    .line 179
     iget-object v3, p0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
 
     invoke-virtual {v3, v6}, Lcom/android/internal/widget/DrawableHolder;->setAlpha(F)V
 
-    .line 182
+    .line 180
     iget-object v3, p0, Lcom/android/internal/widget/WaveView;->mDrawables:Ljava/util/ArrayList;
 
     iget-object v4, p0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 184
+    .line 182
     new-instance v3, Lcom/android/internal/widget/DrawableHolder;
 
-    const v4, 0x1080606
+    const v4, #drawable@unlock_halo#t
 
     invoke-virtual {p0, v4}, Lcom/android/internal/widget/WaveView;->createDrawable(I)Landroid/graphics/drawable/BitmapDrawable;
 
@@ -642,50 +642,50 @@
 
     iput-object v3, p0, Lcom/android/internal/widget/WaveView;->mUnlockHalo:Lcom/android/internal/widget/DrawableHolder;
 
-    .line 185
+    .line 183
     iget-object v3, p0, Lcom/android/internal/widget/WaveView;->mUnlockHalo:Lcom/android/internal/widget/DrawableHolder;
 
     iget v4, p0, Lcom/android/internal/widget/WaveView;->mLockCenterX:F
 
     invoke-virtual {v3, v4}, Lcom/android/internal/widget/DrawableHolder;->setX(F)V
 
-    .line 186
+    .line 184
     iget-object v3, p0, Lcom/android/internal/widget/WaveView;->mUnlockHalo:Lcom/android/internal/widget/DrawableHolder;
 
     iget v4, p0, Lcom/android/internal/widget/WaveView;->mLockCenterY:F
 
     invoke-virtual {v3, v4}, Lcom/android/internal/widget/DrawableHolder;->setY(F)V
 
-    .line 187
+    .line 185
     iget-object v3, p0, Lcom/android/internal/widget/WaveView;->mUnlockHalo:Lcom/android/internal/widget/DrawableHolder;
 
     invoke-virtual {v3, v5}, Lcom/android/internal/widget/DrawableHolder;->setScaleX(F)V
 
-    .line 188
+    .line 186
     iget-object v3, p0, Lcom/android/internal/widget/WaveView;->mUnlockHalo:Lcom/android/internal/widget/DrawableHolder;
 
     invoke-virtual {v3, v5}, Lcom/android/internal/widget/DrawableHolder;->setScaleY(F)V
 
-    .line 189
+    .line 187
     iget-object v3, p0, Lcom/android/internal/widget/WaveView;->mUnlockHalo:Lcom/android/internal/widget/DrawableHolder;
 
     invoke-virtual {v3, v6}, Lcom/android/internal/widget/DrawableHolder;->setAlpha(F)V
 
-    .line 190
+    .line 188
     iget-object v3, p0, Lcom/android/internal/widget/WaveView;->mDrawables:Ljava/util/ArrayList;
 
     iget-object v4, p0, Lcom/android/internal/widget/WaveView;->mUnlockHalo:Lcom/android/internal/widget/DrawableHolder;
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 192
-    const v3, 0x1080608
+    .line 190
+    const v3, #drawable@unlock_wave#t
 
     invoke-virtual {p0, v3}, Lcom/android/internal/widget/WaveView;->createDrawable(I)Landroid/graphics/drawable/BitmapDrawable;
 
     move-result-object v2
 
-    .line 193
+    .line 191
     .local v2, wave:Landroid/graphics/drawable/BitmapDrawable;
     const/4 v1, 0x0
 
@@ -695,26 +695,26 @@
 
     if-ge v1, v3, :cond_0
 
-    .line 194
+    .line 192
     new-instance v0, Lcom/android/internal/widget/DrawableHolder;
 
     invoke-direct {v0, v2}, Lcom/android/internal/widget/DrawableHolder;-><init>(Landroid/graphics/drawable/BitmapDrawable;)V
 
-    .line 195
+    .line 193
     .local v0, holder:Lcom/android/internal/widget/DrawableHolder;
     iget-object v3, p0, Lcom/android/internal/widget/WaveView;->mLightWaves:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 196
+    .line 194
     invoke-virtual {v0, v6}, Lcom/android/internal/widget/DrawableHolder;->setAlpha(F)V
 
-    .line 193
+    .line 191
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 198
+    .line 196
     .end local v0           #holder:Lcom/android/internal/widget/DrawableHolder;
     :cond_0
     return-void
@@ -725,27 +725,27 @@
     .parameter "newState"
 
     .prologue
-    .line 615
+    .line 608
     iget v0, p0, Lcom/android/internal/widget/WaveView;->mGrabbedState:I
 
     if-eq p1, v0, :cond_0
 
-    .line 616
+    .line 609
     iput p1, p0, Lcom/android/internal/widget/WaveView;->mGrabbedState:I
 
-    .line 617
+    .line 610
     iget-object v0, p0, Lcom/android/internal/widget/WaveView;->mOnTriggerListener:Lcom/android/internal/widget/WaveView$OnTriggerListener;
 
     if-eqz v0, :cond_0
 
-    .line 618
+    .line 611
     iget-object v0, p0, Lcom/android/internal/widget/WaveView;->mOnTriggerListener:Lcom/android/internal/widget/WaveView$OnTriggerListener;
 
     iget v1, p0, Lcom/android/internal/widget/WaveView;->mGrabbedState:I
 
     invoke-interface {v0, p0, v1}, Lcom/android/internal/widget/WaveView$OnTriggerListener;->onGrabbedStateChange(Landroid/view/View;I)V
 
-    .line 621
+    .line 614
     :cond_0
     return-void
 .end method
@@ -755,7 +755,7 @@
     .parameter "event"
 
     .prologue
-    .line 539
+    .line 537
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v3
@@ -768,7 +768,7 @@
 
     sub-float v1, v3, v4
 
-    .line 540
+    .line 538
     .local v1, dx:F
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
@@ -782,7 +782,7 @@
 
     sub-float v2, v3, v4
 
-    .line 541
+    .line 539
     .local v2, dy:F
     float-to-double v3, v1
 
@@ -794,7 +794,7 @@
 
     double-to-float v0, v3
 
-    .line 542
+    .line 540
     .local v0, dist:F
     invoke-direct {p0}, Lcom/android/internal/widget/WaveView;->getScaledGrabHandleRadius()F
 
@@ -804,24 +804,24 @@
 
     if-gtz v3, :cond_0
 
-    .line 543
+    .line 541
     const/16 v3, 0xa
 
     invoke-direct {p0, v3}, Lcom/android/internal/widget/WaveView;->setGrabbedState(I)V
 
-    .line 544
+    .line 542
     iget v3, p0, Lcom/android/internal/widget/WaveView;->mLockState:I
 
     const/4 v4, 0x1
 
     if-ne v3, v4, :cond_0
 
-    .line 545
+    .line 543
     const/4 v3, 0x2
 
     iput v3, p0, Lcom/android/internal/widget/WaveView;->mLockState:I
 
-    .line 546
+    .line 544
     iget-object v3, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     invoke-static {v3}, Landroid/view/accessibility/AccessibilityManager;->getInstance(Landroid/content/Context;)Landroid/view/accessibility/AccessibilityManager;
@@ -834,95 +834,62 @@
 
     if-eqz v3, :cond_0
 
-    .line 547
+    .line 545
     invoke-direct {p0}, Lcom/android/internal/widget/WaveView;->announceUnlockHandle()V
 
-    .line 551
+    .line 549
     :cond_0
     return-void
 .end method
 
 .method private declared-synchronized vibrate(J)V
-    .locals 5
+    .locals 2
     .parameter "duration"
 
     .prologue
-    const/4 v0, 0x1
-
-    .line 578
+    .line 576
     monitor-enter p0
 
     :try_start_0
-    iget-object v1, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/android/internal/widget/WaveView;->mVibrator:Landroid/os/Vibrator;
 
-    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    if-nez v0, :cond_0
 
-    move-result-object v1
-
-    const-string v2, "haptic_feedback_enabled"
-
-    const/4 v3, 0x1
-
-    const/4 v4, -0x2
-
-    invoke-static {v1, v2, v3, v4}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    .line 581
-    .local v0, hapticEnabled:Z
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 582
-    iget-object v1, p0, Lcom/android/internal/widget/WaveView;->mVibrator:Landroid/os/Vibrator;
-
-    if-nez v1, :cond_0
-
-    .line 583
+    .line 577
     invoke-virtual {p0}, Lcom/android/internal/widget/WaveView;->getContext()Landroid/content/Context;
 
-    move-result-object v1
+    move-result-object v0
 
-    const-string/jumbo v2, "vibrator"
+    const-string/jumbo v1, "vibrator"
 
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Landroid/os/Vibrator;
+    check-cast v0, Landroid/os/Vibrator;
 
-    iput-object v1, p0, Lcom/android/internal/widget/WaveView;->mVibrator:Landroid/os/Vibrator;
+    iput-object v0, p0, Lcom/android/internal/widget/WaveView;->mVibrator:Landroid/os/Vibrator;
 
-    .line 586
+    .line 580
     :cond_0
-    iget-object v1, p0, Lcom/android/internal/widget/WaveView;->mVibrator:Landroid/os/Vibrator;
+    iget-object v0, p0, Lcom/android/internal/widget/WaveView;->mVibrator:Landroid/os/Vibrator;
 
-    invoke-virtual {v1, p1, p2}, Landroid/os/Vibrator;->vibrate(J)V
+    invoke-virtual {v0, p1, p2}, Landroid/os/Vibrator;->vibrate(J)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 588
-    :cond_1
+    .line 581
     monitor-exit p0
 
     return-void
 
-    .line 578
-    .end local v0           #hapticEnabled:Z
-    :cond_2
-    const/4 v0, 0x0
-
-    goto :goto_0
-
+    .line 576
     :catchall_0
-    move-exception v1
+    move-exception v0
 
     monitor-exit p0
 
-    throw v1
+    throw v0
 .end method
 
 .method private waveUpdateFrame(FFZ)V
@@ -932,7 +899,7 @@
     .parameter "fingerDown"
 
     .prologue
-    .line 201
+    .line 199
     move-object/from16 v0, p0
 
     iget v4, v0, Lcom/android/internal/widget/WaveView;->mLockCenterX:F
@@ -943,7 +910,7 @@
 
     move-wide/from16 v25, v0
 
-    .line 202
+    .line 200
     .local v25, distX:D
     move-object/from16 v0, p0
 
@@ -955,7 +922,7 @@
 
     move-wide/from16 v27, v0
 
-    .line 203
+    .line 201
     .local v27, distY:D
     invoke-static/range {v25 .. v28}, Ljava/lang/Math;->hypot(DD)D
 
@@ -969,13 +936,13 @@
 
     move/from16 v29, v0
 
-    .line 204
+    .line 202
     .local v29, dragDistance:I
     invoke-static/range {v25 .. v28}, Ljava/lang/Math;->atan2(DD)D
 
     move-result-wide v32
 
-    .line 205
+    .line 203
     .local v32, touchA:D
     move-object/from16 v0, p0
 
@@ -999,7 +966,7 @@
 
     double-to-float v9, v4
 
-    .line 206
+    .line 204
     .local v9, ringX:F
     move-object/from16 v0, p0
 
@@ -1025,7 +992,7 @@
 
     move/from16 v16, v0
 
-    .line 208
+    .line 206
     .local v16, ringY:F
     move-object/from16 v0, p0
 
@@ -1033,7 +1000,7 @@
 
     packed-switch v4, :pswitch_data_0
 
-    .line 392
+    .line 390
     .end local v9           #ringX:F
     :goto_0
     move-object/from16 v0, p0
@@ -1044,7 +1011,7 @@
 
     invoke-virtual {v4, v0}, Lcom/android/internal/widget/DrawableHolder;->startAnimations(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 393
+    .line 391
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockHalo:Lcom/android/internal/widget/DrawableHolder;
@@ -1053,7 +1020,7 @@
 
     invoke-virtual {v4, v0}, Lcom/android/internal/widget/DrawableHolder;->startAnimations(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 394
+    .line 392
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockRing:Lcom/android/internal/widget/DrawableHolder;
@@ -1062,10 +1029,10 @@
 
     invoke-virtual {v4, v0}, Lcom/android/internal/widget/DrawableHolder;->startAnimations(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 395
+    .line 393
     return-void
 
-    .line 211
+    .line 209
     .restart local v9       #ringX:F
     :pswitch_0
     const-wide/16 v4, 0x64
@@ -1074,7 +1041,7 @@
 
     iput-wide v4, v0, Lcom/android/internal/widget/WaveView;->mWaveTimerDelay:J
 
-    .line 212
+    .line 210
     const/16 v30, 0x0
 
     .end local v9           #ringX:F
@@ -1092,7 +1059,7 @@
 
     if-ge v0, v4, :cond_0
 
-    .line 213
+    .line 211
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mLightWaves:Ljava/util/ArrayList;
@@ -1105,7 +1072,7 @@
 
     check-cast v2, Lcom/android/internal/widget/DrawableHolder;
 
-    .line 214
+    .line 212
     .local v2, holder:Lcom/android/internal/widget/DrawableHolder;
     const-wide/16 v3, 0x12c
 
@@ -1119,12 +1086,12 @@
 
     invoke-virtual/range {v2 .. v9}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 212
+    .line 210
     add-int/lit8 v30, v30, 0x1
 
     goto :goto_1
 
-    .line 216
+    .line 214
     .end local v2           #holder:Lcom/android/internal/widget/DrawableHolder;
     :cond_0
     const/16 v30, 0x0
@@ -1142,7 +1109,7 @@
 
     if-ge v0, v4, :cond_1
 
-    .line 217
+    .line 215
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mLightWaves:Ljava/util/ArrayList;
@@ -1159,12 +1126,12 @@
 
     invoke-virtual {v4, v0}, Lcom/android/internal/widget/DrawableHolder;->startAnimations(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 216
+    .line 214
     add-int/lit8 v30, v30, 0x1
 
     goto :goto_2
 
-    .line 220
+    .line 218
     :cond_1
     move-object/from16 v0, p0
 
@@ -1184,7 +1151,7 @@
 
     invoke-virtual/range {v3 .. v10}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 221
+    .line 219
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/internal/widget/WaveView;->mUnlockRing:Lcom/android/internal/widget/DrawableHolder;
@@ -1203,7 +1170,7 @@
 
     invoke-virtual/range {v3 .. v10}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 222
+    .line 220
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/internal/widget/WaveView;->mUnlockRing:Lcom/android/internal/widget/DrawableHolder;
@@ -1220,7 +1187,7 @@
 
     invoke-virtual/range {v3 .. v10}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 223
+    .line 221
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/internal/widget/WaveView;->mUnlockRing:Lcom/android/internal/widget/DrawableHolder;
@@ -1237,7 +1204,7 @@
 
     invoke-virtual/range {v3 .. v10}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 224
+    .line 222
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/internal/widget/WaveView;->mUnlockRing:Lcom/android/internal/widget/DrawableHolder;
@@ -1254,7 +1221,7 @@
 
     invoke-virtual/range {v3 .. v10}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 226
+    .line 224
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -1263,7 +1230,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/DrawableHolder;->removeAnimationFor(Ljava/lang/String;)V
 
-    .line 227
+    .line 225
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -1272,7 +1239,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/DrawableHolder;->removeAnimationFor(Ljava/lang/String;)V
 
-    .line 228
+    .line 226
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -1281,7 +1248,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/DrawableHolder;->removeAnimationFor(Ljava/lang/String;)V
 
-    .line 229
+    .line 227
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -1290,7 +1257,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/DrawableHolder;->removeAnimationFor(Ljava/lang/String;)V
 
-    .line 230
+    .line 228
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -1299,7 +1266,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/DrawableHolder;->removeAnimationFor(Ljava/lang/String;)V
 
-    .line 231
+    .line 229
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -1310,7 +1277,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/DrawableHolder;->setX(F)V
 
-    .line 232
+    .line 230
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -1321,7 +1288,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/DrawableHolder;->setY(F)V
 
-    .line 233
+    .line 231
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -1330,7 +1297,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/DrawableHolder;->setScaleX(F)V
 
-    .line 234
+    .line 232
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -1339,7 +1306,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/DrawableHolder;->setScaleY(F)V
 
-    .line 235
+    .line 233
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -1348,7 +1315,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/DrawableHolder;->setAlpha(F)V
 
-    .line 236
+    .line 234
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -1365,7 +1332,7 @@
 
     invoke-virtual/range {v3 .. v10}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 237
+    .line 235
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -1382,7 +1349,7 @@
 
     invoke-virtual/range {v3 .. v10}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 238
+    .line 236
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -1399,7 +1366,7 @@
 
     invoke-virtual/range {v3 .. v10}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 240
+    .line 238
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockHalo:Lcom/android/internal/widget/DrawableHolder;
@@ -1408,7 +1375,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/DrawableHolder;->removeAnimationFor(Ljava/lang/String;)V
 
-    .line 241
+    .line 239
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockHalo:Lcom/android/internal/widget/DrawableHolder;
@@ -1417,7 +1384,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/DrawableHolder;->removeAnimationFor(Ljava/lang/String;)V
 
-    .line 242
+    .line 240
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockHalo:Lcom/android/internal/widget/DrawableHolder;
@@ -1426,7 +1393,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/DrawableHolder;->removeAnimationFor(Ljava/lang/String;)V
 
-    .line 243
+    .line 241
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockHalo:Lcom/android/internal/widget/DrawableHolder;
@@ -1435,7 +1402,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/DrawableHolder;->removeAnimationFor(Ljava/lang/String;)V
 
-    .line 244
+    .line 242
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockHalo:Lcom/android/internal/widget/DrawableHolder;
@@ -1444,7 +1411,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/DrawableHolder;->removeAnimationFor(Ljava/lang/String;)V
 
-    .line 245
+    .line 243
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockHalo:Lcom/android/internal/widget/DrawableHolder;
@@ -1455,7 +1422,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/DrawableHolder;->setX(F)V
 
-    .line 246
+    .line 244
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockHalo:Lcom/android/internal/widget/DrawableHolder;
@@ -1466,7 +1433,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/DrawableHolder;->setY(F)V
 
-    .line 247
+    .line 245
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockHalo:Lcom/android/internal/widget/DrawableHolder;
@@ -1475,7 +1442,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/DrawableHolder;->setScaleX(F)V
 
-    .line 248
+    .line 246
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockHalo:Lcom/android/internal/widget/DrawableHolder;
@@ -1484,7 +1451,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/DrawableHolder;->setScaleY(F)V
 
-    .line 249
+    .line 247
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockHalo:Lcom/android/internal/widget/DrawableHolder;
@@ -1493,7 +1460,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/DrawableHolder;->setAlpha(F)V
 
-    .line 250
+    .line 248
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/internal/widget/WaveView;->mUnlockHalo:Lcom/android/internal/widget/DrawableHolder;
@@ -1512,7 +1479,7 @@
 
     invoke-virtual/range {v3 .. v10}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 251
+    .line 249
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/internal/widget/WaveView;->mUnlockHalo:Lcom/android/internal/widget/DrawableHolder;
@@ -1531,7 +1498,7 @@
 
     invoke-virtual/range {v3 .. v10}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 252
+    .line 250
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/internal/widget/WaveView;->mUnlockHalo:Lcom/android/internal/widget/DrawableHolder;
@@ -1548,7 +1515,7 @@
 
     invoke-virtual/range {v3 .. v10}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 253
+    .line 251
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/internal/widget/WaveView;->mUnlockHalo:Lcom/android/internal/widget/DrawableHolder;
@@ -1565,7 +1532,7 @@
 
     invoke-virtual/range {v3 .. v10}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 254
+    .line 252
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/internal/widget/WaveView;->mUnlockHalo:Lcom/android/internal/widget/DrawableHolder;
@@ -1582,7 +1549,7 @@
 
     invoke-virtual/range {v3 .. v10}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 256
+    .line 254
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mLockTimerActions:Ljava/lang/Runnable;
@@ -1591,7 +1558,7 @@
 
     invoke-virtual {v0, v4}, Lcom/android/internal/widget/WaveView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 258
+    .line 256
     const/4 v4, 0x1
 
     move-object/from16 v0, p0
@@ -1600,7 +1567,7 @@
 
     goto/16 :goto_0
 
-    .line 263
+    .line 261
     .end local v30           #i:I
     .restart local v9       #ringX:F
     :pswitch_1
@@ -1612,7 +1579,7 @@
 
     goto/16 :goto_0
 
-    .line 268
+    .line 266
     :pswitch_2
     move-object/from16 v0, p0
 
@@ -1622,7 +1589,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/DrawableHolder;->removeAnimationFor(Ljava/lang/String;)V
 
-    .line 269
+    .line 267
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -1631,7 +1598,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/DrawableHolder;->removeAnimationFor(Ljava/lang/String;)V
 
-    .line 270
+    .line 268
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -1640,7 +1607,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/DrawableHolder;->removeAnimationFor(Ljava/lang/String;)V
 
-    .line 271
+    .line 269
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -1649,7 +1616,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/DrawableHolder;->removeAnimationFor(Ljava/lang/String;)V
 
-    .line 272
+    .line 270
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -1658,7 +1625,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/DrawableHolder;->removeAnimationFor(Ljava/lang/String;)V
 
-    .line 273
+    .line 271
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -1673,7 +1640,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/DrawableHolder;->setX(F)V
 
-    .line 274
+    .line 272
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -1684,7 +1651,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/DrawableHolder;->setY(F)V
 
-    .line 275
+    .line 273
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -1693,7 +1660,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/DrawableHolder;->setScaleX(F)V
 
-    .line 276
+    .line 274
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -1702,7 +1669,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/DrawableHolder;->setScaleY(F)V
 
-    .line 277
+    .line 275
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -1711,7 +1678,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/DrawableHolder;->setAlpha(F)V
 
-    .line 279
+    .line 277
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -1728,7 +1695,7 @@
 
     invoke-virtual/range {v3 .. v10}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 280
+    .line 278
     .end local v9           #ringX:F
     move-object/from16 v0, p0
 
@@ -1746,7 +1713,7 @@
 
     invoke-virtual/range {v3 .. v10}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 281
+    .line 279
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -1763,7 +1730,7 @@
 
     invoke-virtual/range {v3 .. v10}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 283
+    .line 281
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/internal/widget/WaveView;->mUnlockRing:Lcom/android/internal/widget/DrawableHolder;
@@ -1780,7 +1747,7 @@
 
     invoke-virtual/range {v3 .. v10}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 284
+    .line 282
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/internal/widget/WaveView;->mUnlockRing:Lcom/android/internal/widget/DrawableHolder;
@@ -1797,7 +1764,7 @@
 
     invoke-virtual/range {v3 .. v10}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 285
+    .line 283
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/internal/widget/WaveView;->mUnlockRing:Lcom/android/internal/widget/DrawableHolder;
@@ -1814,7 +1781,7 @@
 
     invoke-virtual/range {v3 .. v10}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 287
+    .line 285
     const/4 v4, 0x3
 
     move-object/from16 v0, p0
@@ -1823,7 +1790,7 @@
 
     goto/16 :goto_0
 
-    .line 292
+    .line 290
     .restart local v9       #ringX:F
     :pswitch_3
     move-object/from16 v0, p0
@@ -1834,17 +1801,17 @@
 
     if-le v0, v4, :cond_3
 
-    .line 293
+    .line 291
     const/4 v4, 0x1
 
     move-object/from16 v0, p0
 
     iput-boolean v4, v0, Lcom/android/internal/widget/WaveView;->mFinishWaves:Z
 
-    .line 294
+    .line 292
     if-eqz p3, :cond_2
 
-    .line 295
+    .line 293
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/internal/widget/WaveView;->mUnlockHalo:Lcom/android/internal/widget/DrawableHolder;
@@ -1859,7 +1826,7 @@
 
     invoke-virtual/range {v3 .. v10}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 296
+    .line 294
     move-object/from16 v0, p0
 
     iget-object v10, v0, Lcom/android/internal/widget/WaveView;->mUnlockHalo:Lcom/android/internal/widget/DrawableHolder;
@@ -1874,7 +1841,7 @@
 
     invoke-virtual/range {v10 .. v17}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 297
+    .line 295
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/WaveView;->mUnlockHalo:Lcom/android/internal/widget/DrawableHolder;
@@ -1893,7 +1860,7 @@
 
     invoke-virtual/range {v17 .. v24}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 298
+    .line 296
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/WaveView;->mUnlockHalo:Lcom/android/internal/widget/DrawableHolder;
@@ -1912,7 +1879,7 @@
 
     invoke-virtual/range {v17 .. v24}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 299
+    .line 297
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/WaveView;->mUnlockHalo:Lcom/android/internal/widget/DrawableHolder;
@@ -1933,7 +1900,7 @@
 
     goto/16 :goto_0
 
-    .line 302
+    .line 300
     :cond_2
     const/4 v4, 0x4
 
@@ -1943,7 +1910,7 @@
 
     goto/16 :goto_0
 
-    .line 306
+    .line 304
     :cond_3
     move-object/from16 v0, p0
 
@@ -1951,21 +1918,21 @@
 
     if-nez v4, :cond_4
 
-    .line 307
+    .line 305
     const/4 v4, 0x1
 
     move-object/from16 v0, p0
 
     iput-boolean v4, v0, Lcom/android/internal/widget/WaveView;->mWavesRunning:Z
 
-    .line 308
+    .line 306
     const/4 v4, 0x0
 
     move-object/from16 v0, p0
 
     iput-boolean v4, v0, Lcom/android/internal/widget/WaveView;->mFinishWaves:Z
 
-    .line 310
+    .line 308
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mAddWaveAction:Ljava/lang/Runnable;
@@ -1978,7 +1945,7 @@
 
     invoke-virtual {v0, v4, v10, v11}, Lcom/android/internal/widget/WaveView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 312
+    .line 310
     :cond_4
     move-object/from16 v0, p0
 
@@ -1998,7 +1965,7 @@
 
     invoke-virtual/range {v17 .. v24}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 313
+    .line 311
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/WaveView;->mUnlockHalo:Lcom/android/internal/widget/DrawableHolder;
@@ -2017,7 +1984,7 @@
 
     invoke-virtual/range {v17 .. v24}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 314
+    .line 312
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/WaveView;->mUnlockHalo:Lcom/android/internal/widget/DrawableHolder;
@@ -2036,7 +2003,7 @@
 
     invoke-virtual/range {v17 .. v24}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 315
+    .line 313
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/WaveView;->mUnlockHalo:Lcom/android/internal/widget/DrawableHolder;
@@ -2055,7 +2022,7 @@
 
     invoke-virtual/range {v17 .. v24}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 316
+    .line 314
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/WaveView;->mUnlockHalo:Lcom/android/internal/widget/DrawableHolder;
@@ -2076,7 +2043,7 @@
 
     goto/16 :goto_0
 
-    .line 322
+    .line 320
     :pswitch_4
     move-object/from16 v0, p0
 
@@ -2086,7 +2053,7 @@
 
     if-le v0, v4, :cond_7
 
-    .line 323
+    .line 321
     const/16 v31, 0x0
 
     .local v31, n:I
@@ -2103,7 +2070,7 @@
 
     if-ge v0, v4, :cond_5
 
-    .line 324
+    .line 322
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mLightWaves:Ljava/util/ArrayList;
@@ -2116,7 +2083,7 @@
 
     check-cast v3, Lcom/android/internal/widget/DrawableHolder;
 
-    .line 325
+    .line 323
     .local v3, wave:Lcom/android/internal/widget/DrawableHolder;
     const-wide/16 v4, 0x3e8
 
@@ -2136,7 +2103,7 @@
 
     div-long v6, v4, v10
 
-    .line 326
+    .line 324
     .local v6, delay:J
     const-wide/16 v4, 0xc8
 
@@ -2146,7 +2113,7 @@
 
     invoke-virtual/range {v3 .. v10}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 327
+    .line 325
     const-wide/16 v11, 0xc8
 
     const-string/jumbo v15, "y"
@@ -2159,7 +2126,7 @@
 
     invoke-virtual/range {v10 .. v17}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 328
+    .line 326
     const-wide/16 v18, 0xc8
 
     const-string/jumbo v22, "scaleX"
@@ -2174,7 +2141,7 @@
 
     invoke-virtual/range {v17 .. v24}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 329
+    .line 327
     const-wide/16 v18, 0xc8
 
     const-string/jumbo v22, "scaleY"
@@ -2189,7 +2156,7 @@
 
     invoke-virtual/range {v17 .. v24}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 330
+    .line 328
     const-wide/16 v18, 0xc8
 
     const-string v22, "alpha"
@@ -2204,12 +2171,12 @@
 
     invoke-virtual/range {v17 .. v24}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 323
+    .line 321
     add-int/lit8 v31, v31, 0x1
 
     goto :goto_3
 
-    .line 332
+    .line 330
     .end local v3           #wave:Lcom/android/internal/widget/DrawableHolder;
     .end local v6           #delay:J
     :cond_5
@@ -2229,7 +2196,7 @@
 
     if-ge v0, v4, :cond_6
 
-    .line 333
+    .line 331
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mLightWaves:Ljava/util/ArrayList;
@@ -2246,12 +2213,12 @@
 
     invoke-virtual {v4, v0}, Lcom/android/internal/widget/DrawableHolder;->startAnimations(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 332
+    .line 330
     add-int/lit8 v30, v30, 0x1
 
     goto :goto_4
 
-    .line 336
+    .line 334
     :cond_6
     move-object/from16 v0, p0
 
@@ -2271,7 +2238,7 @@
 
     invoke-virtual/range {v17 .. v24}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 337
+    .line 335
     move-object/from16 v0, p0
 
     iget-object v10, v0, Lcom/android/internal/widget/WaveView;->mUnlockRing:Lcom/android/internal/widget/DrawableHolder;
@@ -2286,7 +2253,7 @@
 
     invoke-virtual/range {v10 .. v17}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 338
+    .line 336
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/WaveView;->mUnlockRing:Lcom/android/internal/widget/DrawableHolder;
@@ -2305,7 +2272,7 @@
 
     invoke-virtual/range {v17 .. v24}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 339
+    .line 337
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/WaveView;->mUnlockRing:Lcom/android/internal/widget/DrawableHolder;
@@ -2324,7 +2291,7 @@
 
     invoke-virtual/range {v17 .. v24}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 340
+    .line 338
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/WaveView;->mUnlockRing:Lcom/android/internal/widget/DrawableHolder;
@@ -2343,7 +2310,7 @@
 
     invoke-virtual/range {v17 .. v24}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 342
+    .line 340
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/WaveView;->mUnlockRing:Lcom/android/internal/widget/DrawableHolder;
@@ -2362,7 +2329,7 @@
 
     invoke-virtual/range {v17 .. v24}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 344
+    .line 342
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -2371,7 +2338,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/DrawableHolder;->removeAnimationFor(Ljava/lang/String;)V
 
-    .line 345
+    .line 343
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -2380,7 +2347,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/DrawableHolder;->removeAnimationFor(Ljava/lang/String;)V
 
-    .line 346
+    .line 344
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -2389,7 +2356,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/DrawableHolder;->removeAnimationFor(Ljava/lang/String;)V
 
-    .line 347
+    .line 345
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -2398,7 +2365,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/DrawableHolder;->removeAnimationFor(Ljava/lang/String;)V
 
-    .line 348
+    .line 346
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -2407,14 +2374,14 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/DrawableHolder;->removeAnimationFor(Ljava/lang/String;)V
 
-    .line 349
+    .line 347
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
 
     invoke-virtual {v4, v9}, Lcom/android/internal/widget/DrawableHolder;->setX(F)V
 
-    .line 350
+    .line 348
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -2423,7 +2390,7 @@
 
     invoke-virtual {v4, v0}, Lcom/android/internal/widget/DrawableHolder;->setY(F)V
 
-    .line 351
+    .line 349
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -2432,7 +2399,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/DrawableHolder;->setScaleX(F)V
 
-    .line 352
+    .line 350
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -2441,7 +2408,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/DrawableHolder;->setScaleY(F)V
 
-    .line 353
+    .line 351
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -2450,7 +2417,7 @@
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/DrawableHolder;->setAlpha(F)V
 
-    .line 355
+    .line 353
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -2469,7 +2436,7 @@
 
     invoke-virtual/range {v17 .. v24}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 356
+    .line 354
     move-object/from16 v0, p0
 
     iget-object v10, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -2484,7 +2451,7 @@
 
     invoke-virtual/range {v10 .. v17}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 357
+    .line 355
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -2503,7 +2470,7 @@
 
     invoke-virtual/range {v17 .. v24}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 358
+    .line 356
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -2515,6 +2482,25 @@
     const-wide/16 v20, 0x0
 
     const-string/jumbo v22, "scaleY"
+
+    const/high16 v23, 0x3f80
+
+    const/16 v24, 0x1
+
+    invoke-virtual/range {v17 .. v24}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
+
+    .line 357
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
+
+    move-object/from16 v17, v0
+
+    const-wide/16 v18, 0xc8
+
+    const-wide/16 v20, 0x0
+
+    const-string v22, "alpha"
 
     const/high16 v23, 0x3f80
 
@@ -2531,25 +2517,6 @@
 
     const-wide/16 v18, 0xc8
 
-    const-wide/16 v20, 0x0
-
-    const-string v22, "alpha"
-
-    const/high16 v23, 0x3f80
-
-    const/16 v24, 0x1
-
-    invoke-virtual/range {v17 .. v24}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
-
-    .line 361
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
-
-    move-object/from16 v17, v0
-
-    const-wide/16 v18, 0xc8
-
     const-wide/16 v20, 0xc8
 
     const-string/jumbo v22, "scaleX"
@@ -2560,7 +2527,7 @@
 
     invoke-virtual/range {v17 .. v24}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 362
+    .line 360
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -2579,7 +2546,7 @@
 
     invoke-virtual/range {v17 .. v24}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 363
+    .line 361
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/WaveView;->mUnlockDefault:Lcom/android/internal/widget/DrawableHolder;
@@ -2598,7 +2565,7 @@
 
     invoke-virtual/range {v17 .. v24}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 365
+    .line 363
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/WaveView;->mUnlockHalo:Lcom/android/internal/widget/DrawableHolder;
@@ -2617,7 +2584,7 @@
 
     invoke-virtual/range {v17 .. v24}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 366
+    .line 364
     move-object/from16 v0, p0
 
     iget-object v10, v0, Lcom/android/internal/widget/WaveView;->mUnlockHalo:Lcom/android/internal/widget/DrawableHolder;
@@ -2632,7 +2599,7 @@
 
     invoke-virtual/range {v10 .. v17}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 368
+    .line 366
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/WaveView;->mUnlockHalo:Lcom/android/internal/widget/DrawableHolder;
@@ -2651,7 +2618,7 @@
 
     invoke-virtual/range {v17 .. v24}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 369
+    .line 367
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/WaveView;->mUnlockHalo:Lcom/android/internal/widget/DrawableHolder;
@@ -2670,7 +2637,7 @@
 
     invoke-virtual/range {v17 .. v24}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 370
+    .line 368
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/WaveView;->mUnlockHalo:Lcom/android/internal/widget/DrawableHolder;
@@ -2689,7 +2656,7 @@
 
     invoke-virtual/range {v17 .. v24}, Lcom/android/internal/widget/DrawableHolder;->addAnimTo(JJLjava/lang/String;FZ)Landroid/animation/ObjectAnimator;
 
-    .line 372
+    .line 370
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mLockTimerActions:Ljava/lang/Runnable;
@@ -2698,7 +2665,7 @@
 
     invoke-virtual {v0, v4}, Lcom/android/internal/widget/WaveView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 374
+    .line 372
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/widget/WaveView;->mLockTimerActions:Ljava/lang/Runnable;
@@ -2709,14 +2676,14 @@
 
     invoke-virtual {v0, v4, v10, v11}, Lcom/android/internal/widget/WaveView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 376
+    .line 374
     const/16 v4, 0xa
 
     move-object/from16 v0, p0
 
     invoke-direct {v0, v4}, Lcom/android/internal/widget/WaveView;->dispatchTriggerEvent(I)V
 
-    .line 377
+    .line 375
     const/4 v4, 0x5
 
     move-object/from16 v0, p0
@@ -2725,7 +2692,7 @@
 
     goto/16 :goto_0
 
-    .line 379
+    .line 377
     .end local v30           #i:I
     .end local v31           #n:I
     :cond_7
@@ -2737,7 +2704,7 @@
 
     goto/16 :goto_0
 
-    .line 385
+    .line 383
     :pswitch_5
     move-object/from16 v0, p0
 
@@ -2749,7 +2716,7 @@
 
     goto/16 :goto_0
 
-    .line 208
+    .line 206
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -2768,18 +2735,18 @@
     .parameter "resId"
 
     .prologue
-    .line 398
+    .line 396
     invoke-virtual {p0}, Lcom/android/internal/widget/WaveView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    .line 399
+    .line 397
     .local v1, res:Landroid/content/res/Resources;
     invoke-static {v1, p1}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 400
+    .line 398
     .local v0, bitmap:Landroid/graphics/Bitmap;
     new-instance v2, Landroid/graphics/drawable/BitmapDrawable;
 
@@ -2792,7 +2759,7 @@
     .locals 2
 
     .prologue
-    .line 136
+    .line 134
     iget-object v0, p0, Lcom/android/internal/widget/WaveView;->mUnlockRing:Lcom/android/internal/widget/DrawableHolder;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/DrawableHolder;->getHeight()I
@@ -2814,7 +2781,7 @@
     .locals 2
 
     .prologue
-    .line 130
+    .line 128
     iget-object v0, p0, Lcom/android/internal/widget/WaveView;->mUnlockRing:Lcom/android/internal/widget/DrawableHolder;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/DrawableHolder;->getWidth()I
@@ -2837,10 +2804,10 @@
     .parameter "animation"
 
     .prologue
-    .line 650
+    .line 643
     invoke-virtual {p0}, Lcom/android/internal/widget/WaveView;->invalidate()V
 
-    .line 651
+    .line 644
     return-void
 .end method
 
@@ -2849,7 +2816,7 @@
     .parameter "canvas"
 
     .prologue
-    .line 405
+    .line 403
     iget v1, p0, Lcom/android/internal/widget/WaveView;->mMouseX:F
 
     iget v2, p0, Lcom/android/internal/widget/WaveView;->mMouseY:F
@@ -2858,7 +2825,7 @@
 
     invoke-direct {p0, v1, v2, v3}, Lcom/android/internal/widget/WaveView;->waveUpdateFrame(FFZ)V
 
-    .line 406
+    .line 404
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -2871,7 +2838,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 407
+    .line 405
     iget-object v1, p0, Lcom/android/internal/widget/WaveView;->mDrawables:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2882,12 +2849,12 @@
 
     invoke-virtual {v1, p1}, Lcom/android/internal/widget/DrawableHolder;->draw(Landroid/graphics/Canvas;)V
 
-    .line 406
+    .line 404
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 409
+    .line 407
     :cond_0
     const/4 v0, 0x0
 
@@ -2900,7 +2867,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 410
+    .line 408
     iget-object v1, p0, Lcom/android/internal/widget/WaveView;->mLightWaves:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2911,12 +2878,12 @@
 
     invoke-virtual {v1, p1}, Lcom/android/internal/widget/DrawableHolder;->draw(Landroid/graphics/Canvas;)V
 
-    .line 409
+    .line 407
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 412
+    .line 410
     :cond_1
     return-void
 .end method
@@ -2926,7 +2893,7 @@
     .parameter "event"
 
     .prologue
-    .line 472
+    .line 470
     iget-object v1, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Landroid/view/accessibility/AccessibilityManager;->getInstance(Landroid/content/Context;)Landroid/view/accessibility/AccessibilityManager;
@@ -2939,24 +2906,24 @@
 
     if-eqz v1, :cond_0
 
-    .line 473
+    .line 471
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    .line 474
+    .line 472
     .local v0, action:I
     packed-switch v0, :pswitch_data_0
 
-    .line 485
+    .line 483
     :goto_0
     :pswitch_0
     invoke-virtual {p0, p1}, Lcom/android/internal/widget/WaveView;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 486
+    .line 484
     invoke-virtual {p1, v0}, Landroid/view/MotionEvent;->setAction(I)V
 
-    .line 488
+    .line 486
     .end local v0           #action:I
     :cond_0
     invoke-super {p0, p1}, Landroid/view/View;->onHoverEvent(Landroid/view/MotionEvent;)Z
@@ -2965,7 +2932,7 @@
 
     return v1
 
-    .line 476
+    .line 474
     .restart local v0       #action:I
     :pswitch_1
     const/4 v1, 0x0
@@ -2974,7 +2941,7 @@
 
     goto :goto_0
 
-    .line 479
+    .line 477
     :pswitch_2
     const/4 v1, 0x2
 
@@ -2982,7 +2949,7 @@
 
     goto :goto_0
 
-    .line 482
+    .line 480
     :pswitch_3
     const/4 v1, 0x1
 
@@ -2990,7 +2957,7 @@
 
     goto :goto_0
 
-    .line 474
+    .line 472
     nop
 
     :pswitch_data_0
@@ -3012,34 +2979,34 @@
 
     const/high16 v7, -0x8000
 
-    .line 141
+    .line 139
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v4
 
-    .line 142
+    .line 140
     .local v4, widthSpecMode:I
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v1
 
-    .line 143
+    .line 141
     .local v1, heightSpecMode:I
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v5
 
-    .line 144
+    .line 142
     .local v5, widthSpecSize:I
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v2
 
-    .line 148
+    .line 146
     .local v2, heightSpecSize:I
     if-ne v4, v7, :cond_0
 
-    .line 149
+    .line 147
     invoke-virtual {p0}, Lcom/android/internal/widget/WaveView;->getSuggestedMinimumWidth()I
 
     move-result v6
@@ -3048,12 +3015,12 @@
 
     move-result v3
 
-    .line 156
+    .line 154
     .local v3, width:I
     :goto_0
     if-ne v1, v7, :cond_2
 
-    .line 157
+    .line 155
     invoke-virtual {p0}, Lcom/android/internal/widget/WaveView;->getSuggestedMinimumWidth()I
 
     move-result v6
@@ -3062,27 +3029,27 @@
 
     move-result v0
 
-    .line 164
+    .line 162
     .local v0, height:I
     :goto_1
     invoke-virtual {p0, v3, v0}, Lcom/android/internal/widget/WaveView;->setMeasuredDimension(II)V
 
-    .line 165
+    .line 163
     return-void
 
-    .line 150
+    .line 148
     .end local v0           #height:I
     .end local v3           #width:I
     :cond_0
     if-ne v4, v8, :cond_1
 
-    .line 151
+    .line 149
     move v3, v5
 
     .restart local v3       #width:I
     goto :goto_0
 
-    .line 153
+    .line 151
     .end local v3           #width:I
     :cond_1
     invoke-virtual {p0}, Lcom/android/internal/widget/WaveView;->getSuggestedMinimumWidth()I
@@ -3092,17 +3059,17 @@
     .restart local v3       #width:I
     goto :goto_0
 
-    .line 158
+    .line 156
     :cond_2
     if-ne v1, v8, :cond_3
 
-    .line 159
+    .line 157
     move v0, v2
 
     .restart local v0       #height:I
     goto :goto_1
 
-    .line 161
+    .line 159
     .end local v0           #height:I
     :cond_3
     invoke-virtual {p0}, Lcom/android/internal/widget/WaveView;->getSuggestedMinimumHeight()I
@@ -3123,24 +3090,24 @@
     .prologue
     const/high16 v1, 0x3f00
 
-    .line 122
+    .line 120
     int-to-float v0, p1
 
     mul-float/2addr v0, v1
 
     iput v0, p0, Lcom/android/internal/widget/WaveView;->mLockCenterX:F
 
-    .line 123
+    .line 121
     int-to-float v0, p2
 
     mul-float/2addr v0, v1
 
     iput v0, p0, Lcom/android/internal/widget/WaveView;->mLockCenterY:F
 
-    .line 124
+    .line 122
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->onSizeChanged(IIII)V
 
-    .line 125
+    .line 123
     return-void
 .end method
 
@@ -3153,12 +3120,12 @@
 
     const/4 v6, 0x0
 
-    .line 493
+    .line 491
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    .line 494
+    .line 492
     .local v0, action:I
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
@@ -3166,73 +3133,73 @@
 
     iput v3, p0, Lcom/android/internal/widget/WaveView;->mMouseX:F
 
-    .line 495
+    .line 493
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v3
 
     iput v3, p0, Lcom/android/internal/widget/WaveView;->mMouseY:F
 
-    .line 496
+    .line 494
     const/4 v1, 0x0
 
-    .line 497
+    .line 495
     .local v1, handled:Z
     packed-switch v0, :pswitch_data_0
 
-    .line 529
+    .line 527
     :goto_0
     invoke-virtual {p0}, Lcom/android/internal/widget/WaveView;->invalidate()V
 
-    .line 530
+    .line 528
     if-eqz v1, :cond_0
 
     :goto_1
     return v2
 
-    .line 499
+    .line 497
     :pswitch_0
     iget-object v3, p0, Lcom/android/internal/widget/WaveView;->mLockTimerActions:Ljava/lang/Runnable;
 
     invoke-virtual {p0, v3}, Lcom/android/internal/widget/WaveView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 500
+    .line 498
     iput-boolean v2, p0, Lcom/android/internal/widget/WaveView;->mFingerDown:Z
 
-    .line 501
+    .line 499
     invoke-direct {p0, p1}, Lcom/android/internal/widget/WaveView;->tryTransitionToStartAttemptState(Landroid/view/MotionEvent;)V
 
-    .line 502
+    .line 500
     const/4 v1, 0x1
 
-    .line 503
+    .line 501
     goto :goto_0
 
-    .line 506
+    .line 504
     :pswitch_1
     invoke-direct {p0, p1}, Lcom/android/internal/widget/WaveView;->tryTransitionToStartAttemptState(Landroid/view/MotionEvent;)V
 
-    .line 507
+    .line 505
     const/4 v1, 0x1
 
-    .line 508
+    .line 506
     goto :goto_0
 
-    .line 512
+    .line 510
     :pswitch_2
     iput-boolean v6, p0, Lcom/android/internal/widget/WaveView;->mFingerDown:Z
 
-    .line 513
+    .line 511
     iget-object v3, p0, Lcom/android/internal/widget/WaveView;->mLockTimerActions:Ljava/lang/Runnable;
 
     const-wide/16 v4, 0xbb8
 
     invoke-virtual {p0, v3, v4, v5}, Lcom/android/internal/widget/WaveView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 514
+    .line 512
     invoke-direct {p0, v6}, Lcom/android/internal/widget/WaveView;->setGrabbedState(I)V
 
-    .line 520
+    .line 518
     iget v3, p0, Lcom/android/internal/widget/WaveView;->mMouseX:F
 
     iget v4, p0, Lcom/android/internal/widget/WaveView;->mMouseY:F
@@ -3241,22 +3208,22 @@
 
     invoke-direct {p0, v3, v4, v5}, Lcom/android/internal/widget/WaveView;->waveUpdateFrame(FFZ)V
 
-    .line 521
+    .line 519
     const/4 v1, 0x1
 
-    .line 522
+    .line 520
     goto :goto_0
 
-    .line 525
+    .line 523
     :pswitch_3
     iput-boolean v6, p0, Lcom/android/internal/widget/WaveView;->mFingerDown:Z
 
-    .line 526
+    .line 524
     const/4 v1, 0x1
 
     goto :goto_0
 
-    .line 530
+    .line 528
     :cond_0
     invoke-super {p0, p1}, Landroid/view/View;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -3264,7 +3231,7 @@
 
     goto :goto_1
 
-    .line 497
+    .line 495
     nop
 
     :pswitch_data_0
@@ -3280,15 +3247,15 @@
     .locals 1
 
     .prologue
-    .line 655
+    .line 648
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/widget/WaveView;->mLockState:I
 
-    .line 656
+    .line 649
     invoke-virtual {p0}, Lcom/android/internal/widget/WaveView;->invalidate()V
 
-    .line 657
+    .line 650
     return-void
 .end method
 
@@ -3297,9 +3264,9 @@
     .parameter "listener"
 
     .prologue
-    .line 596
+    .line 589
     iput-object p1, p0, Lcom/android/internal/widget/WaveView;->mOnTriggerListener:Lcom/android/internal/widget/WaveView$OnTriggerListener;
 
-    .line 597
+    .line 590
     return-void
 .end method

@@ -22,30 +22,29 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/android/server/am/ActivityManagerService;Landroid/content/Context;Lcom/android/server/am/ProcessRecord;Lcom/android/server/am/ActivityRecord;Z)V
-    .locals 10
+.method public constructor <init>(Lcom/android/server/am/ActivityManagerService;Landroid/content/Context;Lcom/android/server/am/ProcessRecord;Lcom/android/server/am/ActivityRecord;)V
+    .locals 9
     .parameter "service"
     .parameter "context"
     .parameter "app"
     .parameter "activity"
-    .parameter "aboveSystem"
 
     .prologue
-    const/4 v9, 0x2
+    const/4 v8, 0x2
 
-    const/4 v7, 0x0
+    const/4 v6, 0x0
 
-    const/4 v8, 0x1
+    const/4 v7, 0x1
 
     .line 44
     invoke-direct {p0, p2}, Lcom/android/server/am/BaseErrorDialog;-><init>(Landroid/content/Context;)V
 
-    .line 107
-    new-instance v5, Lcom/android/server/am/AppNotRespondingDialog$1;
+    .line 101
+    new-instance v4, Lcom/android/server/am/AppNotRespondingDialog$1;
 
-    invoke-direct {v5, p0}, Lcom/android/server/am/AppNotRespondingDialog$1;-><init>(Lcom/android/server/am/AppNotRespondingDialog;)V
+    invoke-direct {v4, p0}, Lcom/android/server/am/AppNotRespondingDialog$1;-><init>(Lcom/android/server/am/AppNotRespondingDialog;)V
 
-    iput-object v5, p0, Lcom/android/server/am/AppNotRespondingDialog;->mHandler:Landroid/os/Handler;
+    iput-object v4, p0, Lcom/android/server/am/AppNotRespondingDialog;->mHandler:Landroid/os/Handler;
 
     .line 46
     iput-object p1, p0, Lcom/android/server/am/AppNotRespondingDialog;->mService:Lcom/android/server/am/ActivityManagerService;
@@ -56,185 +55,160 @@
     .line 48
     invoke-virtual {p2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v3
+    move-result-object v2
 
     .line 50
-    .local v3, res:Landroid/content/res/Resources;
-    invoke-virtual {p0, v7}, Lcom/android/server/am/AppNotRespondingDialog;->setCancelable(Z)V
+    .local v2, res:Landroid/content/res/Resources;
+    invoke-virtual {p0, v6}, Lcom/android/server/am/AppNotRespondingDialog;->setCancelable(Z)V
 
     .line 53
-    if-eqz p4, :cond_2
+    if-eqz p4, :cond_0
 
-    iget-object v5, p4, Lcom/android/server/am/ActivityRecord;->info:Landroid/content/pm/ActivityInfo;
+    iget-object v4, p4, Lcom/android/server/am/ActivityRecord;->info:Landroid/content/pm/ActivityInfo;
 
     invoke-virtual {p2}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v5, v6}, Landroid/content/pm/ActivityInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
+    invoke-virtual {v4, v5}, Landroid/content/pm/ActivityInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
+
+    move-result-object v0
+
+    .line 56
+    .local v0, name1:Ljava/lang/CharSequence;
+    :goto_0
+    const/4 v1, 0x0
+
+    .line 57
+    .local v1, name2:Ljava/lang/CharSequence;
+    iget-object v4, p3, Lcom/android/server/am/ProcessRecord;->pkgList:Ljava/util/HashSet;
+
+    invoke-virtual {v4}, Ljava/util/HashSet;->size()I
+
+    move-result v4
+
+    if-ne v4, v7, :cond_2
+
+    invoke-virtual {p2}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v4
+
+    iget-object v5, p3, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+
+    invoke-virtual {v4, v5}, Landroid/content/pm/PackageManager;->getApplicationLabel(Landroid/content/pm/ApplicationInfo;)Ljava/lang/CharSequence;
 
     move-result-object v1
 
-    .line 56
-    .local v1, name1:Ljava/lang/CharSequence;
-    :goto_0
-    const/4 v2, 0x0
+    if-eqz v1, :cond_2
 
-    .line 57
-    .local v2, name2:Ljava/lang/CharSequence;
-    iget-object v5, p3, Lcom/android/server/am/ProcessRecord;->pkgList:Ljava/util/HashSet;
+    .line 59
+    if-eqz v0, :cond_1
 
-    invoke-virtual {v5}, Ljava/util/HashSet;->size()I
+    .line 60
+    const v3, #string@anr_activity_application#t
 
-    move-result v5
+    .line 76
+    .local v3, resid:I
+    :goto_1
+    if-eqz v1, :cond_4
 
-    if-ne v5, v8, :cond_4
+    new-array v4, v8, [Ljava/lang/Object;
 
-    invoke-virtual {p2}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v5
 
-    iget-object v6, p3, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
-
-    invoke-virtual {v5, v6}, Landroid/content/pm/PackageManager;->getApplicationLabel(Landroid/content/pm/ApplicationInfo;)Ljava/lang/CharSequence;
-
-    move-result-object v2
-
-    if-eqz v2, :cond_4
-
-    .line 59
-    if-eqz v1, :cond_3
-
-    .line 60
-    const v4, 0x10403d7
-
-    .line 76
-    .local v4, resid:I
-    :goto_1
-    if-eqz v2, :cond_6
-
-    new-array v5, v9, [Ljava/lang/Object;
+    aput-object v5, v4, v6
 
     invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v6
-
-    aput-object v6, v5, v7
-
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    aput-object v6, v5, v8
-
-    invoke-virtual {v3, v4, v5}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
-
     move-result-object v5
+
+    aput-object v5, v4, v7
+
+    invoke-virtual {v2, v3, v4}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
 
     :goto_2
-    invoke-virtual {p0, v5}, Lcom/android/server/am/AppNotRespondingDialog;->setMessage(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v4}, Lcom/android/server/am/AppNotRespondingDialog;->setMessage(Ljava/lang/CharSequence;)V
 
     .line 80
-    const/4 v5, -0x1
+    const/4 v4, -0x2
 
-    const v6, 0x10403db
+    const v5, #string@force_close#t
 
-    invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
-
-    move-result-object v6
-
-    iget-object v7, p0, Lcom/android/server/am/AppNotRespondingDialog;->mHandler:Landroid/os/Handler;
-
-    invoke-virtual {v7, v8}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
-
-    move-result-object v7
-
-    invoke-virtual {p0, v5, v6, v7}, Lcom/android/server/am/AppNotRespondingDialog;->setButton(ILjava/lang/CharSequence;Landroid/os/Message;)V
-
-    .line 83
-    const/4 v5, -0x2
-
-    const v6, 0x10403dd
-
-    invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
-
-    move-result-object v6
-
-    iget-object v7, p0, Lcom/android/server/am/AppNotRespondingDialog;->mHandler:Landroid/os/Handler;
-
-    invoke-virtual {v7, v9}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
-
-    move-result-object v7
-
-    invoke-virtual {p0, v5, v6, v7}, Lcom/android/server/am/AppNotRespondingDialog;->setButton(ILjava/lang/CharSequence;Landroid/os/Message;)V
-
-    .line 87
-    iget-object v5, p3, Lcom/android/server/am/ProcessRecord;->errorReportReceiver:Landroid/content/ComponentName;
-
-    if-eqz v5, :cond_0
-
-    .line 88
-    const/4 v5, -0x3
-
-    const v6, 0x10403dc
-
-    invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
-
-    move-result-object v6
-
-    iget-object v7, p0, Lcom/android/server/am/AppNotRespondingDialog;->mHandler:Landroid/os/Handler;
-
-    const/4 v8, 0x3
-
-    invoke-virtual {v7, v8}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
-
-    move-result-object v7
-
-    invoke-virtual {p0, v5, v6, v7}, Lcom/android/server/am/AppNotRespondingDialog;->setButton(ILjava/lang/CharSequence;Landroid/os/Message;)V
-
-    .line 93
-    :cond_0
-    const v5, 0x10403d6
-
-    invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
+    invoke-virtual {v2, v5}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v5
 
-    invoke-virtual {p0, v5}, Lcom/android/server/am/AppNotRespondingDialog;->setTitle(Ljava/lang/CharSequence;)V
+    iget-object v6, p0, Lcom/android/server/am/AppNotRespondingDialog;->mHandler:Landroid/os/Handler;
+
+    invoke-virtual {v6, v7}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
+
+    move-result-object v6
+
+    invoke-virtual {p0, v4, v5, v6}, Lcom/android/server/am/AppNotRespondingDialog;->setButton(ILjava/lang/CharSequence;Landroid/os/Message;)V
+
+    .line 83
+    const/4 v4, -0x3
+
+    const v5, #string@wait#t
+
+    invoke-virtual {v2, v5}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
+
+    move-result-object v5
+
+    iget-object v6, p0, Lcom/android/server/am/AppNotRespondingDialog;->mHandler:Landroid/os/Handler;
+
+    invoke-virtual {v6, v8}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
+
+    move-result-object v6
+
+    invoke-virtual {p0, v4, v5, v6}, Lcom/android/server/am/AppNotRespondingDialog;->setButton(ILjava/lang/CharSequence;Landroid/os/Message;)V
+
+    .line 88
+    const/4 v4, -0x1
+
+    const v5, #string@report#t
+
+    invoke-virtual {v2, v5}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
+
+    move-result-object v5
+
+    iget-object v6, p0, Lcom/android/server/am/AppNotRespondingDialog;->mHandler:Landroid/os/Handler;
+
+    const/4 v7, 0x3
+
+    invoke-virtual {v6, v7}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
+
+    move-result-object v6
+
+    invoke-virtual {p0, v4, v5, v6}, Lcom/android/server/am/AppNotRespondingDialog;->setButton(ILjava/lang/CharSequence;Landroid/os/Message;)V
+
+    .line 93
+    const v4, #string@anr_title#t
+
+    invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
+
+    move-result-object v4
+
+    invoke-virtual {p0, v4}, Lcom/android/server/am/AppNotRespondingDialog;->setTitle(Ljava/lang/CharSequence;)V
 
     .line 94
-    if-eqz p5, :cond_1
+    invoke-virtual {p0}, Lcom/android/server/am/AppNotRespondingDialog;->getWindow()Landroid/view/Window;
+
+    move-result-object v4
+
+    const/high16 v5, 0x4000
+
+    invoke-virtual {v4, v5}, Landroid/view/Window;->addFlags(I)V
 
     .line 95
     invoke-virtual {p0}, Lcom/android/server/am/AppNotRespondingDialog;->getWindow()Landroid/view/Window;
 
-    move-result-object v5
+    move-result-object v4
 
-    const/16 v6, 0x7da
-
-    invoke-virtual {v5, v6}, Landroid/view/Window;->setType(I)V
-
-    .line 97
-    :cond_1
-    invoke-virtual {p0}, Lcom/android/server/am/AppNotRespondingDialog;->getWindow()Landroid/view/Window;
-
-    move-result-object v5
-
-    const/high16 v6, 0x4000
-
-    invoke-virtual {v5, v6}, Landroid/view/Window;->addFlags(I)V
-
-    .line 98
-    invoke-virtual {p0}, Lcom/android/server/am/AppNotRespondingDialog;->getWindow()Landroid/view/Window;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
-
-    move-result-object v0
-
-    .line 99
-    .local v0, attrs:Landroid/view/WindowManager$LayoutParams;
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -257,86 +231,73 @@
 
     move-result-object v5
 
-    invoke-virtual {v0, v5}, Landroid/view/WindowManager$LayoutParams;->setTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {v4, v5}, Landroid/view/Window;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 100
-    const/16 v5, 0x10
-
-    iput v5, v0, Landroid/view/WindowManager$LayoutParams;->privateFlags:I
-
-    .line 101
-    invoke-virtual {p0}, Lcom/android/server/am/AppNotRespondingDialog;->getWindow()Landroid/view/Window;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v0}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
-
-    .line 102
+    .line 96
     return-void
 
     .line 53
-    .end local v0           #attrs:Landroid/view/WindowManager$LayoutParams;
-    .end local v1           #name1:Ljava/lang/CharSequence;
-    .end local v2           #name2:Ljava/lang/CharSequence;
-    .end local v4           #resid:I
-    :cond_2
-    const/4 v1, 0x0
+    .end local v0           #name1:Ljava/lang/CharSequence;
+    .end local v1           #name2:Ljava/lang/CharSequence;
+    .end local v3           #resid:I
+    :cond_0
+    const/4 v0, 0x0
 
     goto/16 :goto_0
 
     .line 62
-    .restart local v1       #name1:Ljava/lang/CharSequence;
-    .restart local v2       #name2:Ljava/lang/CharSequence;
-    :cond_3
-    move-object v1, v2
+    .restart local v0       #name1:Ljava/lang/CharSequence;
+    .restart local v1       #name2:Ljava/lang/CharSequence;
+    :cond_1
+    move-object v0, v1
 
     .line 63
-    iget-object v2, p3, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
+    iget-object v1, p3, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
 
     .line 64
-    const v4, 0x10403d9
+    const v3, #string@anr_application_process#t
 
-    .restart local v4       #resid:I
+    .restart local v3       #resid:I
     goto/16 :goto_1
 
     .line 67
-    .end local v4           #resid:I
-    :cond_4
-    if-eqz v1, :cond_5
+    .end local v3           #resid:I
+    :cond_2
+    if-eqz v0, :cond_3
 
     .line 68
-    iget-object v2, p3, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
+    iget-object v1, p3, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
 
     .line 69
-    const v4, 0x10403d8
+    const v3, #string@anr_activity_process#t
 
-    .restart local v4       #resid:I
+    .restart local v3       #resid:I
     goto/16 :goto_1
 
     .line 71
-    .end local v4           #resid:I
-    :cond_5
-    iget-object v1, p3, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
+    .end local v3           #resid:I
+    :cond_3
+    iget-object v0, p3, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
 
     .line 72
-    const v4, 0x10403da
+    const v3, #string@anr_process#t
 
-    .restart local v4       #resid:I
+    .restart local v3       #resid:I
     goto/16 :goto_1
 
     .line 76
-    :cond_6
-    new-array v5, v8, [Ljava/lang/Object;
+    :cond_4
+    new-array v4, v7, [Ljava/lang/Object;
 
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    aput-object v6, v5, v7
-
-    invoke-virtual {v3, v4, v5}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v5
+
+    aput-object v5, v4, v6
+
+    invoke-virtual {v2, v3, v4}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
 
     goto/16 :goto_2
 .end method
@@ -369,6 +330,6 @@
     .locals 0
 
     .prologue
-    .line 105
+    .line 99
     return-void
 .end method

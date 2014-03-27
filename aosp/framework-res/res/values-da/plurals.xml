@@ -67,18 +67,6 @@
         <item quantity="other">om %d dage</item>
         <item quantity="one">i morgen</item>
     </plurals>
-    <plurals name="duration_seconds">
-        <item quantity="other">%d sekunder</item>
-        <item quantity="one">Ét sekund</item>
-    </plurals>
-    <plurals name="duration_minutes">
-        <item quantity="other">%d minutter</item>
-        <item quantity="one">Ét minut</item>
-    </plurals>
-    <plurals name="duration_hours">
-        <item quantity="other">%d timer</item>
-        <item quantity="one">Én time</item>
-    </plurals>
     <plurals name="wifi_available">
         <item quantity="other">Tilgængelige Wi-Fi-netværk</item>
         <item quantity="one">Wi-Fi-netværk tilgængeligt</item>

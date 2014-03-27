@@ -93,32 +93,32 @@
     .prologue
     const/4 v12, -0x1
 
-    .line 520
+    .line 518
     iget-object v2, p0, Landroid/widget/ExpandableListConnector;->mExpGroupMetadataList:Ljava/util/ArrayList;
 
-    .line 521
+    .line 519
     .local v2, egml:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/widget/ExpandableListConnector$GroupMetadata;>;"
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
-    .line 522
+    .line 520
     .local v3, egmlSize:I
     const/4 v0, 0x0
 
-    .line 525
+    .line 523
     .local v0, curFlPos:I
     const/4 v9, 0x0
 
     iput v9, p0, Landroid/widget/ExpandableListConnector;->mTotalExpChildrenCount:I
 
-    .line 527
+    .line 525
     if-eqz p2, :cond_3
 
-    .line 529
+    .line 527
     const/4 v8, 0x0
 
-    .line 531
+    .line 529
     .local v8, positionsChanged:Z
     add-int/lit8 v5, v3, -0x1
 
@@ -126,14 +126,14 @@
     :goto_0
     if-ltz v5, :cond_2
 
-    .line 532
+    .line 530
     invoke-virtual {v2, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/widget/ExpandableListConnector$GroupMetadata;
 
-    .line 533
+    .line 531
     .local v1, curGm:Landroid/widget/ExpandableListConnector$GroupMetadata;
     iget-wide v9, v1, Landroid/widget/ExpandableListConnector$GroupMetadata;->gId:J
 
@@ -143,52 +143,52 @@
 
     move-result v7
 
-    .line 534
+    .line 532
     .local v7, newGPos:I
     iget v9, v1, Landroid/widget/ExpandableListConnector$GroupMetadata;->gPos:I
 
     if-eq v7, v9, :cond_1
 
-    .line 535
+    .line 533
     if-ne v7, v12, :cond_0
 
-    .line 537
+    .line 535
     invoke-virtual {v2, v5}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 538
+    .line 536
     add-int/lit8 v3, v3, -0x1
 
-    .line 541
+    .line 539
     :cond_0
     iput v7, v1, Landroid/widget/ExpandableListConnector$GroupMetadata;->gPos:I
 
-    .line 542
+    .line 540
     if-nez v8, :cond_1
 
     const/4 v8, 0x1
 
-    .line 531
+    .line 529
     :cond_1
     add-int/lit8 v5, v5, -0x1
 
     goto :goto_0
 
-    .line 546
+    .line 544
     .end local v1           #curGm:Landroid/widget/ExpandableListConnector$GroupMetadata;
     .end local v7           #newGPos:I
     :cond_2
     if-eqz v8, :cond_3
 
-    .line 548
+    .line 546
     invoke-static {v2}, Ljava/util/Collections;->sort(Ljava/util/List;)V
 
-    .line 553
+    .line 551
     .end local v5           #i:I
     .end local v8           #positionsChanged:Z
     :cond_3
     const/4 v6, 0x0
 
-    .line 554
+    .line 552
     .local v6, lastGPos:I
     const/4 v5, 0x0
 
@@ -196,14 +196,14 @@
     :goto_1
     if-ge v5, v3, :cond_6
 
-    .line 556
+    .line 554
     invoke-virtual {v2, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/widget/ExpandableListConnector$GroupMetadata;
 
-    .line 562
+    .line 560
     .restart local v1       #curGm:Landroid/widget/ExpandableListConnector$GroupMetadata;
     iget v9, v1, Landroid/widget/ExpandableListConnector$GroupMetadata;->lastChildFlPos:I
 
@@ -211,7 +211,7 @@
 
     if-eqz p1, :cond_5
 
-    .line 563
+    .line 561
     :cond_4
     iget-object v9, p0, Landroid/widget/ExpandableListConnector;->mExpandableListAdapter:Landroid/widget/ExpandableListAdapter;
 
@@ -221,7 +221,7 @@
 
     move-result v4
 
-    .line 572
+    .line 570
     .local v4, gChildrenCount:I
     :goto_2
     iget v9, p0, Landroid/widget/ExpandableListConnector;->mTotalExpChildrenCount:I
@@ -230,31 +230,31 @@
 
     iput v9, p0, Landroid/widget/ExpandableListConnector;->mTotalExpChildrenCount:I
 
-    .line 579
+    .line 577
     iget v9, v1, Landroid/widget/ExpandableListConnector$GroupMetadata;->gPos:I
 
     sub-int/2addr v9, v6
 
     add-int/2addr v0, v9
 
-    .line 580
+    .line 578
     iget v6, v1, Landroid/widget/ExpandableListConnector$GroupMetadata;->gPos:I
 
-    .line 583
+    .line 581
     iput v0, v1, Landroid/widget/ExpandableListConnector$GroupMetadata;->flPos:I
 
-    .line 584
+    .line 582
     add-int/2addr v0, v4
 
-    .line 585
+    .line 583
     iput v0, v1, Landroid/widget/ExpandableListConnector$GroupMetadata;->lastChildFlPos:I
 
-    .line 554
+    .line 552
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_1
 
-    .line 568
+    .line 566
     .end local v4           #gChildrenCount:I
     :cond_5
     iget v9, v1, Landroid/widget/ExpandableListConnector$GroupMetadata;->lastChildFlPos:I
@@ -266,7 +266,7 @@
     .restart local v4       #gChildrenCount:I
     goto :goto_2
 
-    .line 587
+    .line 585
     .end local v1           #curGm:Landroid/widget/ExpandableListConnector$GroupMetadata;
     .end local v4           #gChildrenCount:I
     :cond_6
@@ -290,47 +290,42 @@
 .end method
 
 .method collapseGroup(I)Z
-    .locals 5
+    .locals 4
     .parameter "groupPos"
 
     .prologue
-    const/4 v4, -0x1
+    const/4 v3, -0x1
 
-    .line 595
-    const/4 v3, 0x2
+    .line 593
+    const/4 v2, 0x2
 
-    invoke-static {v3, p1, v4, v4}, Landroid/widget/ExpandableListPosition;->obtain(IIII)Landroid/widget/ExpandableListPosition;
+    invoke-static {v2, p1, v3, v3}, Landroid/widget/ExpandableListPosition;->obtain(IIII)Landroid/widget/ExpandableListPosition;
+
+    move-result-object v2
+
+    invoke-virtual {p0, v2}, Landroid/widget/ExpandableListConnector;->getFlattenedPos(Landroid/widget/ExpandableListPosition;)Landroid/widget/ExpandableListConnector$PositionMetadata;
 
     move-result-object v0
 
-    .line 597
-    .local v0, elGroupPos:Landroid/widget/ExpandableListPosition;
-    invoke-virtual {p0, v0}, Landroid/widget/ExpandableListConnector;->getFlattenedPos(Landroid/widget/ExpandableListPosition;)Landroid/widget/ExpandableListConnector$PositionMetadata;
+    .line 595
+    .local v0, pm:Landroid/widget/ExpandableListConnector$PositionMetadata;
+    if-nez v0, :cond_0
 
-    move-result-object v1
-
-    .line 598
-    .local v1, pm:Landroid/widget/ExpandableListConnector$PositionMetadata;
-    invoke-virtual {v0}, Landroid/widget/ExpandableListPosition;->recycle()V
+    const/4 v1, 0x0
 
     .line 599
-    if-nez v1, :cond_0
-
-    const/4 v2, 0x0
-
-    .line 603
     :goto_0
-    return v2
+    return v1
 
-    .line 601
+    .line 597
     :cond_0
-    invoke-virtual {p0, v1}, Landroid/widget/ExpandableListConnector;->collapseGroup(Landroid/widget/ExpandableListConnector$PositionMetadata;)Z
+    invoke-virtual {p0, v0}, Landroid/widget/ExpandableListConnector;->collapseGroup(Landroid/widget/ExpandableListConnector$PositionMetadata;)Z
 
-    move-result v2
+    move-result v1
 
-    .line 602
-    .local v2, retValue:Z
-    invoke-virtual {v1}, Landroid/widget/ExpandableListConnector$PositionMetadata;->recycle()V
+    .line 598
+    .local v1, retValue:Z
+    invoke-virtual {v0}, Landroid/widget/ExpandableListConnector$PositionMetadata;->recycle()V
 
     goto :goto_0
 .end method
@@ -342,16 +337,16 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 616
+    .line 612
     iget-object v1, p1, Landroid/widget/ExpandableListConnector$PositionMetadata;->groupMetadata:Landroid/widget/ExpandableListConnector$GroupMetadata;
 
     if-nez v1, :cond_0
 
-    .line 630
+    .line 626
     :goto_0
     return v0
 
-    .line 619
+    .line 615
     :cond_0
     iget-object v1, p0, Landroid/widget/ExpandableListConnector;->mExpGroupMetadataList:Ljava/util/ArrayList;
 
@@ -359,13 +354,13 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 622
+    .line 618
     invoke-direct {p0, v0, v0}, Landroid/widget/ExpandableListConnector;->refreshExpGroupMetadataList(ZZ)V
 
-    .line 625
+    .line 621
     invoke-virtual {p0}, Landroid/widget/ExpandableListConnector;->notifyDataSetChanged()V
 
-    .line 628
+    .line 624
     iget-object v0, p0, Landroid/widget/ExpandableListConnector;->mExpandableListAdapter:Landroid/widget/ExpandableListAdapter;
 
     iget-object v1, p1, Landroid/widget/ExpandableListConnector$PositionMetadata;->groupMetadata:Landroid/widget/ExpandableListConnector$GroupMetadata;
@@ -374,47 +369,42 @@
 
     invoke-interface {v0, v1}, Landroid/widget/ExpandableListAdapter;->onGroupCollapsed(I)V
 
-    .line 630
+    .line 626
     const/4 v0, 0x1
 
     goto :goto_0
 .end method
 
 .method expandGroup(I)Z
-    .locals 5
+    .locals 4
     .parameter "groupPos"
 
     .prologue
-    const/4 v4, -0x1
+    const/4 v3, -0x1
 
-    .line 638
-    const/4 v3, 0x2
+    .line 634
+    const/4 v2, 0x2
 
-    invoke-static {v3, p1, v4, v4}, Landroid/widget/ExpandableListPosition;->obtain(IIII)Landroid/widget/ExpandableListPosition;
+    invoke-static {v2, p1, v3, v3}, Landroid/widget/ExpandableListPosition;->obtain(IIII)Landroid/widget/ExpandableListPosition;
+
+    move-result-object v2
+
+    invoke-virtual {p0, v2}, Landroid/widget/ExpandableListConnector;->getFlattenedPos(Landroid/widget/ExpandableListPosition;)Landroid/widget/ExpandableListConnector$PositionMetadata;
 
     move-result-object v0
 
-    .line 640
-    .local v0, elGroupPos:Landroid/widget/ExpandableListPosition;
-    invoke-virtual {p0, v0}, Landroid/widget/ExpandableListConnector;->getFlattenedPos(Landroid/widget/ExpandableListPosition;)Landroid/widget/ExpandableListConnector$PositionMetadata;
+    .line 636
+    .local v0, pm:Landroid/widget/ExpandableListConnector$PositionMetadata;
+    invoke-virtual {p0, v0}, Landroid/widget/ExpandableListConnector;->expandGroup(Landroid/widget/ExpandableListConnector$PositionMetadata;)Z
 
-    move-result-object v1
+    move-result v1
 
-    .line 641
-    .local v1, pm:Landroid/widget/ExpandableListConnector$PositionMetadata;
-    invoke-virtual {v0}, Landroid/widget/ExpandableListPosition;->recycle()V
+    .line 637
+    .local v1, retValue:Z
+    invoke-virtual {v0}, Landroid/widget/ExpandableListConnector$PositionMetadata;->recycle()V
 
-    .line 642
-    invoke-virtual {p0, v1}, Landroid/widget/ExpandableListConnector;->expandGroup(Landroid/widget/ExpandableListConnector$PositionMetadata;)Z
-
-    move-result v2
-
-    .line 643
-    .local v2, retValue:Z
-    invoke-virtual {v1}, Landroid/widget/ExpandableListConnector$PositionMetadata;->recycle()V
-
-    .line 644
-    return v2
+    .line 638
+    return v1
 .end method
 
 .method expandGroup(Landroid/widget/ExpandableListConnector$PositionMetadata;)Z
@@ -426,14 +416,14 @@
 
     const/4 v3, 0x0
 
-    .line 652
+    .line 646
     iget-object v4, p1, Landroid/widget/ExpandableListConnector$PositionMetadata;->position:Landroid/widget/ExpandableListPosition;
 
     iget v4, v4, Landroid/widget/ExpandableListPosition;->groupPos:I
 
     if-gez v4, :cond_0
 
-    .line 654
+    .line 648
     new-instance v3, Ljava/lang/RuntimeException;
 
     const-string v4, "Need group"
@@ -442,24 +432,24 @@
 
     throw v3
 
-    .line 657
+    .line 651
     :cond_0
     iget v4, p0, Landroid/widget/ExpandableListConnector;->mMaxExpGroupCount:I
 
     if-nez v4, :cond_2
 
-    .line 696
+    .line 690
     :cond_1
     :goto_0
     return v3
 
-    .line 660
+    .line 654
     :cond_2
     iget-object v4, p1, Landroid/widget/ExpandableListConnector$PositionMetadata;->groupMetadata:Landroid/widget/ExpandableListConnector$GroupMetadata;
 
     if-nez v4, :cond_1
 
-    .line 663
+    .line 657
     iget-object v4, p0, Landroid/widget/ExpandableListConnector;->mExpGroupMetadataList:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
@@ -470,7 +460,7 @@
 
     if-lt v4, v5, :cond_3
 
-    .line 667
+    .line 661
     iget-object v4, p0, Landroid/widget/ExpandableListConnector;->mExpGroupMetadataList:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -479,7 +469,7 @@
 
     check-cast v0, Landroid/widget/ExpandableListConnector$GroupMetadata;
 
-    .line 669
+    .line 663
     .local v0, collapsedGm:Landroid/widget/ExpandableListConnector$GroupMetadata;
     iget-object v4, p0, Landroid/widget/ExpandableListConnector;->mExpGroupMetadataList:Ljava/util/ArrayList;
 
@@ -487,25 +477,25 @@
 
     move-result v1
 
-    .line 671
+    .line 665
     .local v1, collapsedIndex:I
     iget v4, v0, Landroid/widget/ExpandableListConnector$GroupMetadata;->gPos:I
 
     invoke-virtual {p0, v4}, Landroid/widget/ExpandableListConnector;->collapseGroup(I)Z
 
-    .line 674
+    .line 668
     iget v4, p1, Landroid/widget/ExpandableListConnector$PositionMetadata;->groupInsertIndex:I
 
     if-le v4, v1, :cond_3
 
-    .line 675
+    .line 669
     iget v4, p1, Landroid/widget/ExpandableListConnector$PositionMetadata;->groupInsertIndex:I
 
     add-int/lit8 v4, v4, -0x1
 
     iput v4, p1, Landroid/widget/ExpandableListConnector$PositionMetadata;->groupInsertIndex:I
 
-    .line 679
+    .line 673
     .end local v0           #collapsedGm:Landroid/widget/ExpandableListConnector$GroupMetadata;
     .end local v1           #collapsedIndex:I
     :cond_3
@@ -527,7 +517,7 @@
 
     move-result-object v2
 
-    .line 685
+    .line 679
     .local v2, expandedGm:Landroid/widget/ExpandableListConnector$GroupMetadata;
     iget-object v4, p0, Landroid/widget/ExpandableListConnector;->mExpGroupMetadataList:Ljava/util/ArrayList;
 
@@ -535,20 +525,20 @@
 
     invoke-virtual {v4, v5, v2}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 688
+    .line 682
     invoke-direct {p0, v3, v3}, Landroid/widget/ExpandableListConnector;->refreshExpGroupMetadataList(ZZ)V
 
-    .line 691
+    .line 685
     invoke-virtual {p0}, Landroid/widget/ExpandableListConnector;->notifyDataSetChanged()V
 
-    .line 694
+    .line 688
     iget-object v3, p0, Landroid/widget/ExpandableListConnector;->mExpandableListAdapter:Landroid/widget/ExpandableListAdapter;
 
     iget v4, v2, Landroid/widget/ExpandableListConnector$GroupMetadata;->gPos:I
 
     invoke-interface {v3, v4}, Landroid/widget/ExpandableListAdapter;->onGroupExpanded(I)V
 
-    .line 696
+    .line 690
     const/4 v3, 0x1
 
     goto :goto_0
@@ -560,7 +550,7 @@
     .parameter "seedGroupPosition"
 
     .prologue
-    .line 779
+    .line 773
     move-object/from16 v0, p0
 
     iget-object v12, v0, Landroid/widget/ExpandableListConnector;->mExpandableListAdapter:Landroid/widget/ExpandableListAdapter;
@@ -569,18 +559,18 @@
 
     move-result v2
 
-    .line 781
+    .line 775
     .local v2, count:I
     if-nez v2, :cond_0
 
-    .line 782
+    .line 776
     const/4 v12, -0x1
 
-    .line 851
+    .line 845
     :goto_0
     return v12
 
-    .line 786
+    .line 780
     :cond_0
     const-wide/high16 v12, -0x8000
 
@@ -588,12 +578,12 @@
 
     if-nez v12, :cond_1
 
-    .line 787
+    .line 781
     const/4 v12, -0x1
 
     goto :goto_0
 
-    .line 791
+    .line 785
     :cond_1
     const/4 v12, 0x0
 
@@ -603,7 +593,7 @@
 
     move-result p3
 
-    .line 792
+    .line 786
     add-int/lit8 v12, v2, -0x1
 
     move/from16 v0, p3
@@ -612,7 +602,7 @@
 
     move-result p3
 
-    .line 794
+    .line 788
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v12
@@ -621,34 +611,34 @@
 
     add-long v3, v12, v14
 
-    .line 799
+    .line 793
     .local v3, endTime:J
     move/from16 v5, p3
 
-    .line 802
+    .line 796
     .local v5, first:I
     move/from16 v8, p3
 
-    .line 805
+    .line 799
     .local v8, last:I
     const/4 v9, 0x0
 
-    .line 815
+    .line 809
     .local v9, next:Z
     invoke-virtual/range {p0 .. p0}, Landroid/widget/ExpandableListConnector;->getAdapter()Landroid/widget/ExpandableListAdapter;
 
     move-result-object v1
 
-    .line 816
+    .line 810
     .local v1, adapter:Landroid/widget/ExpandableListAdapter;
     if-nez v1, :cond_4
 
-    .line 817
+    .line 811
     const/4 v12, -0x1
 
     goto :goto_0
 
-    .line 835
+    .line 829
     .local v6, hitFirst:Z
     .local v7, hitLast:Z
     .local v10, rowId:J
@@ -659,17 +649,17 @@
 
     if-nez v7, :cond_9
 
-    .line 837
+    .line 831
     :cond_3
     add-int/lit8 v8, v8, 0x1
 
-    .line 838
+    .line 832
     move/from16 p3, v8
 
-    .line 840
+    .line 834
     const/4 v9, 0x0
 
-    .line 820
+    .line 814
     .end local v6           #hitFirst:Z
     .end local v7           #hitLast:Z
     .end local v10           #rowId:J
@@ -683,14 +673,14 @@
 
     if-gtz v12, :cond_6
 
-    .line 821
+    .line 815
     move/from16 v0, p3
 
     invoke-interface {v1, v0}, Landroid/widget/ExpandableListAdapter;->getGroupId(I)J
 
     move-result-wide v10
 
-    .line 822
+    .line 816
     .restart local v10       #rowId:J
     cmp-long v12, v10, p1
 
@@ -698,10 +688,10 @@
 
     move/from16 v12, p3
 
-    .line 824
+    .line 818
     goto :goto_0
 
-    .line 827
+    .line 821
     :cond_5
     add-int/lit8 v12, v2, -0x1
 
@@ -709,21 +699,21 @@
 
     const/4 v7, 0x1
 
-    .line 828
+    .line 822
     .restart local v7       #hitLast:Z
     :goto_2
     if-nez v5, :cond_8
 
     const/4 v6, 0x1
 
-    .line 830
+    .line 824
     .restart local v6       #hitFirst:Z
     :goto_3
     if-eqz v7, :cond_2
 
     if-eqz v6, :cond_2
 
-    .line 851
+    .line 845
     .end local v6           #hitFirst:Z
     .end local v7           #hitLast:Z
     .end local v10           #rowId:J
@@ -732,21 +722,21 @@
 
     goto :goto_0
 
-    .line 827
+    .line 821
     .restart local v10       #rowId:J
     :cond_7
     const/4 v7, 0x0
 
     goto :goto_2
 
-    .line 828
+    .line 822
     .restart local v7       #hitLast:Z
     :cond_8
     const/4 v6, 0x0
 
     goto :goto_3
 
-    .line 841
+    .line 835
     .restart local v6       #hitFirst:Z
     :cond_9
     if-nez v7, :cond_a
@@ -755,14 +745,14 @@
 
     if-nez v6, :cond_4
 
-    .line 843
+    .line 837
     :cond_a
     add-int/lit8 v5, v5, -0x1
 
-    .line 844
+    .line 838
     move/from16 p3, v5
 
-    .line 846
+    .line 840
     const/4 v9, 0x1
 
     goto :goto_1
@@ -772,7 +762,7 @@
     .locals 1
 
     .prologue
-    .line 725
+    .line 719
     iget-object v0, p0, Landroid/widget/ExpandableListConnector;->mExpandableListAdapter:Landroid/widget/ExpandableListAdapter;
 
     return-object v0
@@ -782,7 +772,7 @@
     .locals 2
 
     .prologue
-    .line 397
+    .line 396
     iget-object v0, p0, Landroid/widget/ExpandableListConnector;->mExpandableListAdapter:Landroid/widget/ExpandableListAdapter;
 
     invoke-interface {v0}, Landroid/widget/ExpandableListAdapter;->getGroupCount()I
@@ -809,7 +799,7 @@
     .end annotation
 
     .prologue
-    .line 738
+    .line 732
     iget-object v0, p0, Landroid/widget/ExpandableListConnector;->mExpGroupMetadataList:Ljava/util/ArrayList;
 
     return-object v0
@@ -819,18 +809,18 @@
     .locals 2
 
     .prologue
-    .line 729
+    .line 723
     invoke-virtual {p0}, Landroid/widget/ExpandableListConnector;->getAdapter()Landroid/widget/ExpandableListAdapter;
 
     move-result-object v0
 
-    .line 730
+    .line 724
     .local v0, adapter:Landroid/widget/ExpandableListAdapter;
     instance-of v1, v0, Landroid/widget/Filterable;
 
     if-eqz v1, :cond_0
 
-    .line 731
+    .line 725
     check-cast v0, Landroid/widget/Filterable;
 
     .end local v0           #adapter:Landroid/widget/ExpandableListAdapter;
@@ -838,7 +828,7 @@
 
     move-result-object v1
 
-    .line 733
+    .line 727
     :goto_0
     return-object v1
 
@@ -1215,12 +1205,12 @@
     .parameter "flatListPos"
 
     .prologue
-    .line 401
+    .line 400
     invoke-virtual {p0, p1}, Landroid/widget/ExpandableListConnector;->getUnflattenedPos(I)Landroid/widget/ExpandableListConnector$PositionMetadata;
 
     move-result-object v0
 
-    .line 404
+    .line 403
     .local v0, posMetadata:Landroid/widget/ExpandableListConnector$PositionMetadata;
     iget-object v2, v0, Landroid/widget/ExpandableListConnector$PositionMetadata;->position:Landroid/widget/ExpandableListPosition;
 
@@ -1230,7 +1220,7 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 405
+    .line 404
     iget-object v2, p0, Landroid/widget/ExpandableListConnector;->mExpandableListAdapter:Landroid/widget/ExpandableListAdapter;
 
     iget-object v3, v0, Landroid/widget/ExpandableListConnector$PositionMetadata;->position:Landroid/widget/ExpandableListPosition;
@@ -1241,15 +1231,15 @@
 
     move-result-object v1
 
-    .line 415
+    .line 414
     .local v1, retValue:Ljava/lang/Object;
     :goto_0
     invoke-virtual {v0}, Landroid/widget/ExpandableListConnector$PositionMetadata;->recycle()V
 
-    .line 417
+    .line 416
     return-object v1
 
-    .line 407
+    .line 406
     .end local v1           #retValue:Ljava/lang/Object;
     :cond_0
     iget-object v2, v0, Landroid/widget/ExpandableListConnector$PositionMetadata;->position:Landroid/widget/ExpandableListPosition;
@@ -1260,7 +1250,7 @@
 
     if-ne v2, v3, :cond_1
 
-    .line 408
+    .line 407
     iget-object v2, p0, Landroid/widget/ExpandableListConnector;->mExpandableListAdapter:Landroid/widget/ExpandableListAdapter;
 
     iget-object v3, v0, Landroid/widget/ExpandableListConnector$PositionMetadata;->position:Landroid/widget/ExpandableListPosition;
@@ -1278,7 +1268,7 @@
     .restart local v1       #retValue:Ljava/lang/Object;
     goto :goto_0
 
-    .line 412
+    .line 411
     .end local v1           #retValue:Ljava/lang/Object;
     :cond_1
     new-instance v2, Ljava/lang/RuntimeException;
@@ -1295,12 +1285,12 @@
     .parameter "flatListPos"
 
     .prologue
-    .line 421
+    .line 420
     invoke-virtual {p0, p1}, Landroid/widget/ExpandableListConnector;->getUnflattenedPos(I)Landroid/widget/ExpandableListConnector$PositionMetadata;
 
     move-result-object v4
 
-    .line 422
+    .line 421
     .local v4, posMetadata:Landroid/widget/ExpandableListConnector$PositionMetadata;
     iget-object v7, p0, Landroid/widget/ExpandableListConnector;->mExpandableListAdapter:Landroid/widget/ExpandableListAdapter;
 
@@ -1312,7 +1302,7 @@
 
     move-result-wide v2
 
-    .line 425
+    .line 424
     .local v2, groupId:J
     iget-object v7, v4, Landroid/widget/ExpandableListConnector$PositionMetadata;->position:Landroid/widget/ExpandableListPosition;
 
@@ -1322,22 +1312,22 @@
 
     if-ne v7, v8, :cond_0
 
-    .line 426
+    .line 425
     iget-object v7, p0, Landroid/widget/ExpandableListConnector;->mExpandableListAdapter:Landroid/widget/ExpandableListAdapter;
 
     invoke-interface {v7, v2, v3}, Landroid/widget/ExpandableListAdapter;->getCombinedGroupId(J)J
 
     move-result-wide v5
 
-    .line 436
+    .line 435
     .local v5, retValue:J
     :goto_0
     invoke-virtual {v4}, Landroid/widget/ExpandableListConnector$PositionMetadata;->recycle()V
 
-    .line 438
+    .line 437
     return-wide v5
 
-    .line 427
+    .line 426
     .end local v5           #retValue:J
     :cond_0
     iget-object v7, v4, Landroid/widget/ExpandableListConnector$PositionMetadata;->position:Landroid/widget/ExpandableListPosition;
@@ -1348,7 +1338,7 @@
 
     if-ne v7, v8, :cond_1
 
-    .line 428
+    .line 427
     iget-object v7, p0, Landroid/widget/ExpandableListConnector;->mExpandableListAdapter:Landroid/widget/ExpandableListAdapter;
 
     iget-object v8, v4, Landroid/widget/ExpandableListConnector$PositionMetadata;->position:Landroid/widget/ExpandableListPosition;
@@ -1363,7 +1353,7 @@
 
     move-result-wide v0
 
-    .line 430
+    .line 429
     .local v0, childId:J
     iget-object v7, p0, Landroid/widget/ExpandableListConnector;->mExpandableListAdapter:Landroid/widget/ExpandableListAdapter;
 
@@ -1371,11 +1361,11 @@
 
     move-result-wide v5
 
-    .line 431
+    .line 430
     .restart local v5       #retValue:J
     goto :goto_0
 
-    .line 433
+    .line 432
     .end local v0           #childId:J
     .end local v5           #retValue:J
     :cond_1
@@ -1389,100 +1379,98 @@
 .end method
 
 .method public getItemViewType(I)I
-    .locals 7
+    .locals 6
     .parameter "flatListPos"
 
     .prologue
-    const/4 v6, 0x2
+    const/4 v5, 0x2
 
-    .line 465
+    .line 464
     invoke-virtual {p0, p1}, Landroid/widget/ExpandableListConnector;->getUnflattenedPos(I)Landroid/widget/ExpandableListConnector$PositionMetadata;
 
-    move-result-object v2
+    move-result-object v4
 
-    .line 466
-    .local v2, metadata:Landroid/widget/ExpandableListConnector$PositionMetadata;
-    iget-object v3, v2, Landroid/widget/ExpandableListConnector$PositionMetadata;->position:Landroid/widget/ExpandableListPosition;
+    iget-object v2, v4, Landroid/widget/ExpandableListConnector$PositionMetadata;->position:Landroid/widget/ExpandableListPosition;
 
-    .line 469
-    .local v3, pos:Landroid/widget/ExpandableListPosition;
-    iget-object v5, p0, Landroid/widget/ExpandableListConnector;->mExpandableListAdapter:Landroid/widget/ExpandableListAdapter;
+    .line 467
+    .local v2, pos:Landroid/widget/ExpandableListPosition;
+    iget-object v4, p0, Landroid/widget/ExpandableListConnector;->mExpandableListAdapter:Landroid/widget/ExpandableListAdapter;
 
-    instance-of v5, v5, Landroid/widget/HeterogeneousExpandableList;
+    instance-of v4, v4, Landroid/widget/HeterogeneousExpandableList;
 
-    if-eqz v5, :cond_1
+    if-eqz v4, :cond_1
 
-    .line 470
+    .line 468
     iget-object v0, p0, Landroid/widget/ExpandableListConnector;->mExpandableListAdapter:Landroid/widget/ExpandableListAdapter;
 
     check-cast v0, Landroid/widget/HeterogeneousExpandableList;
 
-    .line 472
+    .line 470
     .local v0, adapter:Landroid/widget/HeterogeneousExpandableList;
-    iget v5, v3, Landroid/widget/ExpandableListPosition;->type:I
+    iget v4, v2, Landroid/widget/ExpandableListPosition;->type:I
 
-    if-ne v5, v6, :cond_0
+    if-ne v4, v5, :cond_0
 
-    .line 473
-    iget v5, v3, Landroid/widget/ExpandableListPosition;->groupPos:I
+    .line 471
+    iget v4, v2, Landroid/widget/ExpandableListPosition;->groupPos:I
 
-    invoke-interface {v0, v5}, Landroid/widget/HeterogeneousExpandableList;->getGroupType(I)I
+    invoke-interface {v0, v4}, Landroid/widget/HeterogeneousExpandableList;->getGroupType(I)I
 
-    move-result v4
+    move-result v3
+
+    .line 484
+    .end local v0           #adapter:Landroid/widget/HeterogeneousExpandableList;
+    .local v3, retValue:I
+    :goto_0
+    invoke-virtual {v2}, Landroid/widget/ExpandableListPosition;->recycle()V
 
     .line 486
-    .end local v0           #adapter:Landroid/widget/HeterogeneousExpandableList;
-    .local v4, retValue:I
-    :goto_0
-    invoke-virtual {v2}, Landroid/widget/ExpandableListConnector$PositionMetadata;->recycle()V
+    return v3
 
-    .line 488
-    return v4
-
-    .line 475
-    .end local v4           #retValue:I
+    .line 473
+    .end local v3           #retValue:I
     .restart local v0       #adapter:Landroid/widget/HeterogeneousExpandableList;
     :cond_0
-    iget v5, v3, Landroid/widget/ExpandableListPosition;->groupPos:I
+    iget v4, v2, Landroid/widget/ExpandableListPosition;->groupPos:I
 
-    iget v6, v3, Landroid/widget/ExpandableListPosition;->childPos:I
+    iget v5, v2, Landroid/widget/ExpandableListPosition;->childPos:I
 
-    invoke-interface {v0, v5, v6}, Landroid/widget/HeterogeneousExpandableList;->getChildType(II)I
+    invoke-interface {v0, v4, v5}, Landroid/widget/HeterogeneousExpandableList;->getChildType(II)I
 
     move-result v1
 
-    .line 476
+    .line 474
     .local v1, childType:I
     invoke-interface {v0}, Landroid/widget/HeterogeneousExpandableList;->getGroupTypeCount()I
 
-    move-result v5
+    move-result v4
 
-    add-int v4, v5, v1
+    add-int v3, v4, v1
 
-    .restart local v4       #retValue:I
+    .restart local v3       #retValue:I
     goto :goto_0
 
-    .line 479
+    .line 477
     .end local v0           #adapter:Landroid/widget/HeterogeneousExpandableList;
     .end local v1           #childType:I
-    .end local v4           #retValue:I
+    .end local v3           #retValue:I
     :cond_1
-    iget v5, v3, Landroid/widget/ExpandableListPosition;->type:I
+    iget v4, v2, Landroid/widget/ExpandableListPosition;->type:I
 
-    if-ne v5, v6, :cond_2
+    if-ne v4, v5, :cond_2
 
-    .line 480
-    const/4 v4, 0x0
+    .line 478
+    const/4 v3, 0x0
 
-    .restart local v4       #retValue:I
+    .restart local v3       #retValue:I
     goto :goto_0
 
-    .line 482
-    .end local v4           #retValue:I
+    .line 480
+    .end local v3           #retValue:I
     :cond_2
-    const/4 v4, 0x1
+    const/4 v3, 0x1
 
-    .restart local v4       #retValue:I
+    .restart local v3       #retValue:I
     goto :goto_0
 .end method
 
@@ -1764,12 +1752,12 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 442
+    .line 441
     invoke-virtual {p0, p1}, Landroid/widget/ExpandableListConnector;->getUnflattenedPos(I)Landroid/widget/ExpandableListConnector$PositionMetadata;
 
     move-result-object v6
 
-    .line 445
+    .line 444
     .local v6, posMetadata:Landroid/widget/ExpandableListConnector$PositionMetadata;
     iget-object v0, v6, Landroid/widget/ExpandableListConnector$PositionMetadata;->position:Landroid/widget/ExpandableListPosition;
 
@@ -1779,7 +1767,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 446
+    .line 445
     iget-object v0, p0, Landroid/widget/ExpandableListConnector;->mExpandableListAdapter:Landroid/widget/ExpandableListAdapter;
 
     iget-object v1, v6, Landroid/widget/ExpandableListConnector$PositionMetadata;->position:Landroid/widget/ExpandableListPosition;
@@ -1794,15 +1782,15 @@
 
     move-result-object v7
 
-    .line 458
+    .line 457
     .local v7, retValue:Landroid/view/View;
     :goto_0
     invoke-virtual {v6}, Landroid/widget/ExpandableListConnector$PositionMetadata;->recycle()V
 
-    .line 460
+    .line 459
     return-object v7
 
-    .line 448
+    .line 447
     .end local v7           #retValue:Landroid/view/View;
     :cond_0
     iget-object v0, v6, Landroid/widget/ExpandableListConnector$PositionMetadata;->position:Landroid/widget/ExpandableListPosition;
@@ -1811,14 +1799,14 @@
 
     if-ne v0, v3, :cond_2
 
-    .line 449
+    .line 448
     iget-object v0, v6, Landroid/widget/ExpandableListConnector$PositionMetadata;->groupMetadata:Landroid/widget/ExpandableListConnector$GroupMetadata;
 
     iget v0, v0, Landroid/widget/ExpandableListConnector$GroupMetadata;->lastChildFlPos:I
 
     if-ne v0, p1, :cond_1
 
-    .line 451
+    .line 450
     .local v3, isLastChild:Z
     :goto_1
     iget-object v0, p0, Landroid/widget/ExpandableListConnector;->mExpandableListAdapter:Landroid/widget/ExpandableListAdapter;
@@ -1839,11 +1827,11 @@
 
     move-result-object v7
 
-    .line 453
+    .line 452
     .restart local v7       #retValue:Landroid/view/View;
     goto :goto_0
 
-    .line 449
+    .line 448
     .end local v3           #isLastChild:Z
     .end local v7           #retValue:Landroid/view/View;
     :cond_1
@@ -1851,7 +1839,7 @@
 
     goto :goto_1
 
-    .line 455
+    .line 454
     :cond_2
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -1866,19 +1854,19 @@
     .locals 3
 
     .prologue
-    .line 493
+    .line 491
     iget-object v1, p0, Landroid/widget/ExpandableListConnector;->mExpandableListAdapter:Landroid/widget/ExpandableListAdapter;
 
     instance-of v1, v1, Landroid/widget/HeterogeneousExpandableList;
 
     if-eqz v1, :cond_0
 
-    .line 494
+    .line 492
     iget-object v0, p0, Landroid/widget/ExpandableListConnector;->mExpandableListAdapter:Landroid/widget/ExpandableListAdapter;
 
     check-cast v0, Landroid/widget/HeterogeneousExpandableList;
 
-    .line 496
+    .line 494
     .local v0, adapter:Landroid/widget/HeterogeneousExpandableList;
     invoke-interface {v0}, Landroid/widget/HeterogeneousExpandableList;->getGroupTypeCount()I
 
@@ -1890,7 +1878,7 @@
 
     add-int/2addr v1, v2
 
-    .line 498
+    .line 496
     .end local v0           #adapter:Landroid/widget/HeterogeneousExpandableList;
     :goto_0
     return v1
@@ -1905,7 +1893,7 @@
     .locals 1
 
     .prologue
-    .line 504
+    .line 502
     iget-object v0, p0, Landroid/widget/ExpandableListConnector;->mExpandableListAdapter:Landroid/widget/ExpandableListAdapter;
 
     invoke-interface {v0}, Landroid/widget/ExpandableListAdapter;->hasStableIds()Z
@@ -1919,12 +1907,12 @@
     .locals 2
 
     .prologue
-    .line 763
+    .line 757
     invoke-virtual {p0}, Landroid/widget/ExpandableListConnector;->getAdapter()Landroid/widget/ExpandableListAdapter;
 
     move-result-object v0
 
-    .line 764
+    .line 758
     .local v0, adapter:Landroid/widget/ExpandableListAdapter;
     if-eqz v0, :cond_0
 
@@ -1942,52 +1930,50 @@
 .end method
 
 .method public isEnabled(I)Z
-    .locals 6
+    .locals 5
     .parameter "flatListPos"
 
     .prologue
     .line 375
     invoke-virtual {p0, p1}, Landroid/widget/ExpandableListConnector;->getUnflattenedPos(I)Landroid/widget/ExpandableListConnector$PositionMetadata;
 
-    move-result-object v0
+    move-result-object v2
 
-    .line 376
-    .local v0, metadata:Landroid/widget/ExpandableListConnector$PositionMetadata;
-    iget-object v1, v0, Landroid/widget/ExpandableListConnector$PositionMetadata;->position:Landroid/widget/ExpandableListPosition;
+    iget-object v0, v2, Landroid/widget/ExpandableListConnector$PositionMetadata;->position:Landroid/widget/ExpandableListPosition;
+
+    .line 378
+    .local v0, pos:Landroid/widget/ExpandableListPosition;
+    iget v2, v0, Landroid/widget/ExpandableListPosition;->type:I
+
+    const/4 v3, 0x1
+
+    if-ne v2, v3, :cond_0
 
     .line 379
-    .local v1, pos:Landroid/widget/ExpandableListPosition;
-    iget v3, v1, Landroid/widget/ExpandableListPosition;->type:I
+    iget-object v2, p0, Landroid/widget/ExpandableListConnector;->mExpandableListAdapter:Landroid/widget/ExpandableListAdapter;
 
-    const/4 v4, 0x1
+    iget v3, v0, Landroid/widget/ExpandableListPosition;->groupPos:I
 
-    if-ne v3, v4, :cond_0
+    iget v4, v0, Landroid/widget/ExpandableListPosition;->childPos:I
 
-    .line 380
-    iget-object v3, p0, Landroid/widget/ExpandableListConnector;->mExpandableListAdapter:Landroid/widget/ExpandableListAdapter;
+    invoke-interface {v2, v3, v4}, Landroid/widget/ExpandableListAdapter;->isChildSelectable(II)Z
 
-    iget v4, v1, Landroid/widget/ExpandableListPosition;->groupPos:I
+    move-result v1
 
-    iget v5, v1, Landroid/widget/ExpandableListPosition;->childPos:I
-
-    invoke-interface {v3, v4, v5}, Landroid/widget/ExpandableListAdapter;->isChildSelectable(II)Z
-
-    move-result v2
-
-    .line 386
-    .local v2, retValue:Z
+    .line 385
+    .local v1, retValue:Z
     :goto_0
-    invoke-virtual {v0}, Landroid/widget/ExpandableListConnector$PositionMetadata;->recycle()V
+    invoke-virtual {v0}, Landroid/widget/ExpandableListPosition;->recycle()V
 
-    .line 388
-    return v2
+    .line 387
+    return v1
 
-    .line 383
-    .end local v2           #retValue:Z
+    .line 382
+    .end local v1           #retValue:Z
     :cond_0
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    .restart local v2       #retValue:Z
+    .restart local v1       #retValue:Z
     goto :goto_0
 .end method
 
@@ -1996,7 +1982,7 @@
     .parameter "groupPosition"
 
     .prologue
-    .line 706
+    .line 700
     iget-object v2, p0, Landroid/widget/ExpandableListConnector;->mExpGroupMetadataList:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
@@ -2009,7 +1995,7 @@
     :goto_0
     if-ltz v1, :cond_1
 
-    .line 707
+    .line 701
     iget-object v2, p0, Landroid/widget/ExpandableListConnector;->mExpGroupMetadataList:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2018,28 +2004,28 @@
 
     check-cast v0, Landroid/widget/ExpandableListConnector$GroupMetadata;
 
-    .line 709
+    .line 703
     .local v0, groupMetadata:Landroid/widget/ExpandableListConnector$GroupMetadata;
     iget v2, v0, Landroid/widget/ExpandableListConnector$GroupMetadata;->gPos:I
 
     if-ne v2, p1, :cond_0
 
-    .line 710
+    .line 704
     const/4 v2, 0x1
 
-    .line 714
+    .line 708
     .end local v0           #groupMetadata:Landroid/widget/ExpandableListConnector$GroupMetadata;
     :goto_1
     return v2
 
-    .line 706
+    .line 700
     .restart local v0       #groupMetadata:Landroid/widget/ExpandableListConnector$GroupMetadata;
     :cond_0
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_0
 
-    .line 714
+    .line 708
     .end local v0           #groupMetadata:Landroid/widget/ExpandableListConnector$GroupMetadata;
     :cond_1
     const/4 v2, 0x0
@@ -2091,7 +2077,7 @@
     .end annotation
 
     .prologue
-    .line 743
+    .line 737
     .local p1, expandedGroupMetadataList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/widget/ExpandableListConnector$GroupMetadata;>;"
     if-eqz p1, :cond_0
 
@@ -2099,12 +2085,12 @@
 
     if-nez v2, :cond_1
 
-    .line 759
+    .line 753
     :cond_0
     :goto_0
     return-void
 
-    .line 749
+    .line 743
     :cond_1
     iget-object v2, p0, Landroid/widget/ExpandableListConnector;->mExpandableListAdapter:Landroid/widget/ExpandableListAdapter;
 
@@ -2112,7 +2098,7 @@
 
     move-result v1
 
-    .line 750
+    .line 744
     .local v1, numGroups:I
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -2124,7 +2110,7 @@
     :goto_1
     if-ltz v0, :cond_2
 
-    .line 751
+    .line 745
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -2135,16 +2121,16 @@
 
     if-ge v2, v1, :cond_0
 
-    .line 750
+    .line 744
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_1
 
-    .line 757
+    .line 751
     :cond_2
     iput-object p1, p0, Landroid/widget/ExpandableListConnector;->mExpGroupMetadataList:Ljava/util/ArrayList;
 
-    .line 758
+    .line 752
     const/4 v2, 0x1
 
     const/4 v3, 0x0
@@ -2159,9 +2145,9 @@
     .parameter "maxExpGroupCount"
 
     .prologue
-    .line 721
+    .line 715
     iput p1, p0, Landroid/widget/ExpandableListConnector;->mMaxExpGroupCount:I
 
-    .line 722
+    .line 716
     return-void
 .end method

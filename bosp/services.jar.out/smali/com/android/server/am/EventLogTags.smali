@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final AM_ACTIVITY_LAUNCH_TIME:I = 0x7539
+.field public static final ACTIVITY_LAUNCH_TIME:I = 0x7539
 
 .field public static final AM_ANR:I = 0x7538
 
@@ -70,8 +70,6 @@
 
 .field public static final AM_SERVICE_CRASHED_TOO_MUCH:I = 0x7552
 
-.field public static final AM_SWITCH_USER:I = 0x7559
-
 .field public static final AM_TASK_TO_FRONT:I = 0x7532
 
 .field public static final AM_WTF:I = 0x7558
@@ -96,1463 +94,15 @@
     return-void
 .end method
 
-.method public static writeAmActivityLaunchTime(IILjava/lang/String;J)V
+.method public static writeActivityLaunchTime(ILjava/lang/String;J)V
     .locals 4
-    .parameter "user"
     .parameter "token"
     .parameter "componentName"
     .parameter "time"
 
     .prologue
-    .line 182
-    const/16 v0, 0x7539
-
-    const/4 v1, 0x4
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x1
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x2
-
-    aput-object p2, v1, v2
-
-    const/4 v2, 0x3
-
-    invoke-static {p3, p4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
-
-    .line 183
-    return-void
-.end method
-
-.method public static writeAmAnr(IILjava/lang/String;ILjava/lang/String;)V
-    .locals 4
-    .parameter "user"
-    .parameter "pid"
-    .parameter "packageName"
-    .parameter "flags"
-    .parameter "reason"
-
-    .prologue
-    .line 178
-    const/16 v0, 0x7538
-
-    const/4 v1, 0x5
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x1
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x2
-
-    aput-object p2, v1, v2
-
-    const/4 v2, 0x3
-
-    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x4
-
-    aput-object p4, v1, v2
-
-    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
-
     .line 179
-    return-void
-.end method
-
-.method public static writeAmBroadcastDiscardApp(IILjava/lang/String;ILjava/lang/String;)V
-    .locals 4
-    .parameter "user"
-    .parameter "broadcast"
-    .parameter "action"
-    .parameter "receiverNumber"
-    .parameter "app"
-
-    .prologue
-    .line 246
-    const/16 v0, 0x7549
-
-    const/4 v1, 0x5
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x1
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x2
-
-    aput-object p2, v1, v2
-
-    const/4 v2, 0x3
-
-    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x4
-
-    aput-object p4, v1, v2
-
-    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
-
-    .line 247
-    return-void
-.end method
-
-.method public static writeAmBroadcastDiscardFilter(IILjava/lang/String;II)V
-    .locals 4
-    .parameter "user"
-    .parameter "broadcast"
-    .parameter "action"
-    .parameter "receiverNumber"
-    .parameter "broadcastfilter"
-
-    .prologue
-    .line 242
-    const/16 v0, 0x7548
-
-    const/4 v1, 0x5
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x1
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x2
-
-    aput-object p2, v1, v2
-
-    const/4 v2, 0x3
-
-    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x4
-
-    invoke-static {p4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
-
-    .line 243
-    return-void
-.end method
-
-.method public static writeAmCrash(IILjava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
-    .locals 4
-    .parameter "user"
-    .parameter "pid"
-    .parameter "processName"
-    .parameter "flags"
-    .parameter "exception"
-    .parameter "message"
-    .parameter "file"
-    .parameter "line"
-
-    .prologue
-    .line 282
-    const/16 v0, 0x7557
-
-    const/16 v1, 0x8
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x1
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x2
-
-    aput-object p2, v1, v2
-
-    const/4 v2, 0x3
-
-    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x4
-
-    aput-object p4, v1, v2
-
-    const/4 v2, 0x5
-
-    aput-object p5, v1, v2
-
-    const/4 v2, 0x6
-
-    aput-object p6, v1, v2
-
-    const/4 v2, 0x7
-
-    invoke-static {p7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
-
-    .line 283
-    return-void
-.end method
-
-.method public static writeAmCreateActivity(IIILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
-    .locals 4
-    .parameter "user"
-    .parameter "token"
-    .parameter "taskId"
-    .parameter "componentName"
-    .parameter "action"
-    .parameter "mimeType"
-    .parameter "uri"
-    .parameter "flags"
-
-    .prologue
-    .line 166
-    const/16 v0, 0x7535
-
-    const/16 v1, 0x8
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x1
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x2
-
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x3
-
-    aput-object p3, v1, v2
-
-    const/4 v2, 0x4
-
-    aput-object p4, v1, v2
-
-    const/4 v2, 0x5
-
-    aput-object p5, v1, v2
-
-    const/4 v2, 0x6
-
-    aput-object p6, v1, v2
-
-    const/4 v2, 0x7
-
-    invoke-static {p7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
-
-    .line 167
-    return-void
-.end method
-
-.method public static writeAmCreateService(IILjava/lang/String;I)V
-    .locals 4
-    .parameter "user"
-    .parameter "serviceRecord"
-    .parameter "name"
-    .parameter "pid"
-
-    .prologue
-    .line 250
-    const/16 v0, 0x754e
-
-    const/4 v1, 0x4
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x1
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x2
-
-    aput-object p2, v1, v2
-
-    const/4 v2, 0x3
-
-    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
-
-    .line 251
-    return-void
-.end method
-
-.method public static writeAmCreateTask(II)V
-    .locals 4
-    .parameter "user"
-    .parameter "taskId"
-
-    .prologue
-    .line 162
-    const/16 v0, 0x7534
-
-    const/4 v1, 0x2
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x1
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
-
-    .line 163
-    return-void
-.end method
-
-.method public static writeAmDestroyActivity(IIILjava/lang/String;Ljava/lang/String;)V
-    .locals 4
-    .parameter "user"
-    .parameter "token"
-    .parameter "taskId"
-    .parameter "componentName"
-    .parameter "reason"
-
-    .prologue
-    .line 218
-    const/16 v0, 0x7542
-
-    const/4 v1, 0x5
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x1
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x2
-
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x3
-
-    aput-object p3, v1, v2
-
-    const/4 v2, 0x4
-
-    aput-object p4, v1, v2
-
-    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
-
-    .line 219
-    return-void
-.end method
-
-.method public static writeAmDestroyService(III)V
-    .locals 4
-    .parameter "user"
-    .parameter "serviceRecord"
-    .parameter "pid"
-
-    .prologue
-    .line 254
-    const/16 v0, 0x754f
-
-    const/4 v1, 0x3
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x1
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x2
-
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
-
-    .line 255
-    return-void
-.end method
-
-.method public static writeAmDropProcess(I)V
-    .locals 1
-    .parameter "pid"
-
-    .prologue
-    .line 262
-    const/16 v0, 0x7551
-
-    invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(II)I
-
-    .line 263
-    return-void
-.end method
-
-.method public static writeAmFailedToPause(IILjava/lang/String;Ljava/lang/String;)V
-    .locals 4
-    .parameter "user"
-    .parameter "token"
-    .parameter "wantingToPause"
-    .parameter "currentlyPausing"
-
-    .prologue
-    .line 194
-    const/16 v0, 0x753c
-
-    const/4 v1, 0x4
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x1
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x2
-
-    aput-object p2, v1, v2
-
-    const/4 v2, 0x3
-
-    aput-object p3, v1, v2
-
-    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
-
-    .line 195
-    return-void
-.end method
-
-.method public static writeAmFinishActivity(IIILjava/lang/String;Ljava/lang/String;)V
-    .locals 4
-    .parameter "user"
-    .parameter "token"
-    .parameter "taskId"
-    .parameter "componentName"
-    .parameter "reason"
-
-    .prologue
-    .line 150
-    const/16 v0, 0x7531
-
-    const/4 v1, 0x5
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x1
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x2
-
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x3
-
-    aput-object p3, v1, v2
-
-    const/4 v2, 0x4
-
-    aput-object p4, v1, v2
-
-    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
-
-    .line 151
-    return-void
-.end method
-
-.method public static writeAmKill(IILjava/lang/String;ILjava/lang/String;)V
-    .locals 4
-    .parameter "user"
-    .parameter "pid"
-    .parameter "processName"
-    .parameter "oomadj"
-    .parameter "reason"
-
-    .prologue
-    .line 238
-    const/16 v0, 0x7547
-
-    const/4 v1, 0x5
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x1
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x2
-
-    aput-object p2, v1, v2
-
-    const/4 v2, 0x3
-
-    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x4
-
-    aput-object p4, v1, v2
-
-    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
-
-    .line 239
-    return-void
-.end method
-
-.method public static writeAmLowMemory(I)V
-    .locals 1
-    .parameter "numProcesses"
-
-    .prologue
-    .line 214
-    const/16 v0, 0x7541
-
-    invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(II)I
-
-    .line 215
-    return-void
-.end method
-
-.method public static writeAmNewIntent(IIILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
-    .locals 4
-    .parameter "user"
-    .parameter "token"
-    .parameter "taskId"
-    .parameter "componentName"
-    .parameter "action"
-    .parameter "mimeType"
-    .parameter "uri"
-    .parameter "flags"
-
-    .prologue
-    .line 158
-    const/16 v0, 0x7533
-
-    const/16 v1, 0x8
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x1
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x2
-
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x3
-
-    aput-object p3, v1, v2
-
-    const/4 v2, 0x4
-
-    aput-object p4, v1, v2
-
-    const/4 v2, 0x5
-
-    aput-object p5, v1, v2
-
-    const/4 v2, 0x6
-
-    aput-object p6, v1, v2
-
-    const/4 v2, 0x7
-
-    invoke-static {p7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
-
-    .line 159
-    return-void
-.end method
-
-.method public static writeAmOnPausedCalled(ILjava/lang/String;)V
-    .locals 4
-    .parameter "user"
-    .parameter "componentName"
-
-    .prologue
-    .line 230
-    const/16 v0, 0x7545
-
-    const/4 v1, 0x2
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x1
-
-    aput-object p1, v1, v2
-
-    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
-
-    .line 231
-    return-void
-.end method
-
-.method public static writeAmOnResumeCalled(ILjava/lang/String;)V
-    .locals 4
-    .parameter "user"
-    .parameter "componentName"
-
-    .prologue
-    .line 234
-    const/16 v0, 0x7546
-
-    const/4 v1, 0x2
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x1
-
-    aput-object p1, v1, v2
-
-    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
-
-    .line 235
-    return-void
-.end method
-
-.method public static writeAmPauseActivity(IILjava/lang/String;)V
-    .locals 4
-    .parameter "user"
-    .parameter "token"
-    .parameter "componentName"
-
-    .prologue
-    .line 198
-    const/16 v0, 0x753d
-
-    const/4 v1, 0x3
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x1
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x2
-
-    aput-object p2, v1, v2
-
-    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
-
-    .line 199
-    return-void
-.end method
-
-.method public static writeAmProcBad(IILjava/lang/String;)V
-    .locals 4
-    .parameter "user"
-    .parameter "uid"
-    .parameter "processName"
-
-    .prologue
-    .line 206
-    const/16 v0, 0x753f
-
-    const/4 v1, 0x3
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x1
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x2
-
-    aput-object p2, v1, v2
-
-    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
-
-    .line 207
-    return-void
-.end method
-
-.method public static writeAmProcBound(IILjava/lang/String;)V
-    .locals 4
-    .parameter "user"
-    .parameter "pid"
-    .parameter "processName"
-
-    .prologue
-    .line 186
-    const/16 v0, 0x753a
-
-    const/4 v1, 0x3
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x1
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x2
-
-    aput-object p2, v1, v2
-
-    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
-
-    .line 187
-    return-void
-.end method
-
-.method public static writeAmProcDied(IILjava/lang/String;)V
-    .locals 4
-    .parameter "user"
-    .parameter "pid"
-    .parameter "processName"
-
-    .prologue
-    .line 190
-    const/16 v0, 0x753b
-
-    const/4 v1, 0x3
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x1
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x2
-
-    aput-object p2, v1, v2
-
-    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
-
-    .line 191
-    return-void
-.end method
-
-.method public static writeAmProcGood(IILjava/lang/String;)V
-    .locals 4
-    .parameter "user"
-    .parameter "uid"
-    .parameter "processName"
-
-    .prologue
-    .line 210
-    const/16 v0, 0x7540
-
-    const/4 v1, 0x3
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x1
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x2
-
-    aput-object p2, v1, v2
-
-    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
-
-    .line 211
-    return-void
-.end method
-
-.method public static writeAmProcStart(IIILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 4
-    .parameter "user"
-    .parameter "pid"
-    .parameter "uid"
-    .parameter "processName"
-    .parameter "type"
-    .parameter "component"
-
-    .prologue
-    .line 202
-    const/16 v0, 0x753e
-
-    const/4 v1, 0x6
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x1
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x2
-
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x3
-
-    aput-object p3, v1, v2
-
-    const/4 v2, 0x4
-
-    aput-object p4, v1, v2
-
-    const/4 v2, 0x5
-
-    aput-object p5, v1, v2
-
-    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
-
-    .line 203
-    return-void
-.end method
-
-.method public static writeAmProcessCrashedTooMuch(ILjava/lang/String;I)V
-    .locals 4
-    .parameter "user"
-    .parameter "name"
-    .parameter "pid"
-
-    .prologue
-    .line 258
-    const/16 v0, 0x7550
-
-    const/4 v1, 0x3
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x1
-
-    aput-object p1, v1, v2
-
-    const/4 v2, 0x2
-
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
-
-    .line 259
-    return-void
-.end method
-
-.method public static writeAmProcessStartTimeout(IIILjava/lang/String;)V
-    .locals 4
-    .parameter "user"
-    .parameter "pid"
-    .parameter "uid"
-    .parameter "processName"
-
-    .prologue
-    .line 278
-    const/16 v0, 0x7555
-
-    const/4 v1, 0x4
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x1
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x2
-
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x3
-
-    aput-object p3, v1, v2
-
-    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
-
-    .line 279
-    return-void
-.end method
-
-.method public static writeAmProviderLostProcess(ILjava/lang/String;ILjava/lang/String;)V
-    .locals 4
-    .parameter "user"
-    .parameter "packageName"
-    .parameter "uid"
-    .parameter "name"
-
-    .prologue
-    .line 274
-    const/16 v0, 0x7554
-
-    const/4 v1, 0x4
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x1
-
-    aput-object p1, v1, v2
-
-    const/4 v2, 0x2
-
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x3
-
-    aput-object p3, v1, v2
-
-    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
-
-    .line 275
-    return-void
-.end method
-
-.method public static writeAmRelaunchActivity(IIILjava/lang/String;)V
-    .locals 4
-    .parameter "user"
-    .parameter "token"
-    .parameter "taskId"
-    .parameter "componentName"
-
-    .prologue
-    .line 226
-    const/16 v0, 0x7544
-
-    const/4 v1, 0x4
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x1
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x2
-
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x3
-
-    aput-object p3, v1, v2
-
-    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
-
-    .line 227
-    return-void
-.end method
-
-.method public static writeAmRelaunchResumeActivity(IIILjava/lang/String;)V
-    .locals 4
-    .parameter "user"
-    .parameter "token"
-    .parameter "taskId"
-    .parameter "componentName"
-
-    .prologue
-    .line 222
-    const/16 v0, 0x7543
-
-    const/4 v1, 0x4
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x1
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x2
-
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x3
-
-    aput-object p3, v1, v2
-
-    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
-
-    .line 223
-    return-void
-.end method
-
-.method public static writeAmRestartActivity(IIILjava/lang/String;)V
-    .locals 4
-    .parameter "user"
-    .parameter "token"
-    .parameter "taskId"
-    .parameter "componentName"
-
-    .prologue
-    .line 170
-    const/16 v0, 0x7536
-
-    const/4 v1, 0x4
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x1
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x2
-
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x3
-
-    aput-object p3, v1, v2
-
-    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
-
-    .line 171
-    return-void
-.end method
-
-.method public static writeAmResumeActivity(IIILjava/lang/String;)V
-    .locals 4
-    .parameter "user"
-    .parameter "token"
-    .parameter "taskId"
-    .parameter "componentName"
-
-    .prologue
-    .line 174
-    const/16 v0, 0x7537
-
-    const/4 v1, 0x4
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x1
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x2
-
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x3
-
-    aput-object p3, v1, v2
-
-    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
-
-    .line 175
-    return-void
-.end method
-
-.method public static writeAmScheduleServiceRestart(ILjava/lang/String;J)V
-    .locals 4
-    .parameter "user"
-    .parameter "componentName"
-    .parameter "time"
-
-    .prologue
-    .line 270
-    const/16 v0, 0x7553
+    const/16 v0, 0x7539
 
     const/4 v1, 0x3
 
@@ -1580,20 +130,346 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 271
+    .line 180
     return-void
 .end method
 
-.method public static writeAmServiceCrashedTooMuch(IILjava/lang/String;I)V
+.method public static writeAmAnr(ILjava/lang/String;ILjava/lang/String;)V
     .locals 4
-    .parameter "user"
-    .parameter "crashCount"
+    .parameter "pid"
+    .parameter "packageName"
+    .parameter "flags"
+    .parameter "reason"
+
+    .prologue
+    .line 175
+    const/16 v0, 0x7538
+
+    const/4 v1, 0x4
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x1
+
+    aput-object p1, v1, v2
+
+    const/4 v2, 0x2
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x3
+
+    aput-object p3, v1, v2
+
+    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
+
+    .line 176
+    return-void
+.end method
+
+.method public static writeAmBroadcastDiscardApp(ILjava/lang/String;ILjava/lang/String;)V
+    .locals 4
+    .parameter "broadcast"
+    .parameter "action"
+    .parameter "receiverNumber"
+    .parameter "app"
+
+    .prologue
+    .line 243
+    const/16 v0, 0x7549
+
+    const/4 v1, 0x4
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x1
+
+    aput-object p1, v1, v2
+
+    const/4 v2, 0x2
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x3
+
+    aput-object p3, v1, v2
+
+    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
+
+    .line 244
+    return-void
+.end method
+
+.method public static writeAmBroadcastDiscardFilter(ILjava/lang/String;II)V
+    .locals 4
+    .parameter "broadcast"
+    .parameter "action"
+    .parameter "receiverNumber"
+    .parameter "broadcastfilter"
+
+    .prologue
+    .line 239
+    const/16 v0, 0x7548
+
+    const/4 v1, 0x4
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x1
+
+    aput-object p1, v1, v2
+
+    const/4 v2, 0x2
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x3
+
+    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
+
+    .line 240
+    return-void
+.end method
+
+.method public static writeAmCrash(ILjava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
+    .locals 4
+    .parameter "pid"
+    .parameter "processName"
+    .parameter "flags"
+    .parameter "exception"
+    .parameter "message"
+    .parameter "file"
+    .parameter "line"
+
+    .prologue
+    .line 279
+    const/16 v0, 0x7557
+
+    const/4 v1, 0x7
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x1
+
+    aput-object p1, v1, v2
+
+    const/4 v2, 0x2
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x3
+
+    aput-object p3, v1, v2
+
+    const/4 v2, 0x4
+
+    aput-object p4, v1, v2
+
+    const/4 v2, 0x5
+
+    aput-object p5, v1, v2
+
+    const/4 v2, 0x6
+
+    invoke-static {p6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
+
+    .line 280
+    return-void
+.end method
+
+.method public static writeAmCreateActivity(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
+    .locals 4
+    .parameter "token"
+    .parameter "taskId"
     .parameter "componentName"
+    .parameter "action"
+    .parameter "mimeType"
+    .parameter "uri"
+    .parameter "flags"
+
+    .prologue
+    .line 163
+    const/16 v0, 0x7535
+
+    const/4 v1, 0x7
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x2
+
+    aput-object p2, v1, v2
+
+    const/4 v2, 0x3
+
+    aput-object p3, v1, v2
+
+    const/4 v2, 0x4
+
+    aput-object p4, v1, v2
+
+    const/4 v2, 0x5
+
+    aput-object p5, v1, v2
+
+    const/4 v2, 0x6
+
+    invoke-static {p6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
+
+    .line 164
+    return-void
+.end method
+
+.method public static writeAmCreateService(ILjava/lang/String;Ljava/lang/String;I)V
+    .locals 4
+    .parameter "serviceRecord"
+    .parameter "name"
+    .parameter "intent"
     .parameter "pid"
 
     .prologue
-    .line 266
-    const/16 v0, 0x7552
+    .line 247
+    const/16 v0, 0x754e
+
+    const/4 v1, 0x4
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x1
+
+    aput-object p1, v1, v2
+
+    const/4 v2, 0x2
+
+    aput-object p2, v1, v2
+
+    const/4 v2, 0x3
+
+    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
+
+    .line 248
+    return-void
+.end method
+
+.method public static writeAmCreateTask(I)V
+    .locals 1
+    .parameter "taskId"
+
+    .prologue
+    .line 159
+    const/16 v0, 0x7534
+
+    invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(II)I
+
+    .line 160
+    return-void
+.end method
+
+.method public static writeAmDestroyActivity(IILjava/lang/String;Ljava/lang/String;)V
+    .locals 4
+    .parameter "token"
+    .parameter "taskId"
+    .parameter "componentName"
+    .parameter "reason"
+
+    .prologue
+    .line 215
+    const/16 v0, 0x7542
 
     const/4 v1, 0x4
 
@@ -1621,42 +497,25 @@
 
     const/4 v2, 0x3
 
-    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
+    aput-object p3, v1, v2
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 267
+    .line 216
     return-void
 .end method
 
-.method public static writeAmSwitchUser(I)V
-    .locals 1
-    .parameter "id"
-
-    .prologue
-    .line 290
-    const/16 v0, 0x7559
-
-    invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(II)I
-
-    .line 291
-    return-void
-.end method
-
-.method public static writeAmTaskToFront(II)V
+.method public static writeAmDestroyService(ILjava/lang/String;I)V
     .locals 4
-    .parameter "user"
-    .parameter "task"
+    .parameter "serviceRecord"
+    .parameter "name"
+    .parameter "pid"
 
     .prologue
-    .line 154
-    const/16 v0, 0x7532
+    .line 251
+    const/16 v0, 0x754f
 
-    const/4 v1, 0x2
+    const/4 v1, 0x3
 
     new-array v1, v1, [Ljava/lang/Object;
 
@@ -1670,7 +529,11 @@
 
     const/4 v2, 0x1
 
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    aput-object p1, v1, v2
+
+    const/4 v2, 0x2
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
@@ -1678,24 +541,72 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 155
+    .line 252
     return-void
 .end method
 
-.method public static writeAmWtf(IILjava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
-    .locals 4
-    .parameter "user"
+.method public static writeAmDropProcess(I)V
+    .locals 1
     .parameter "pid"
-    .parameter "processName"
-    .parameter "flags"
-    .parameter "tag"
-    .parameter "message"
 
     .prologue
-    .line 286
-    const/16 v0, 0x7558
+    .line 259
+    const/16 v0, 0x7551
 
-    const/4 v1, 0x6
+    invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(II)I
+
+    .line 260
+    return-void
+.end method
+
+.method public static writeAmFailedToPause(ILjava/lang/String;Ljava/lang/String;)V
+    .locals 4
+    .parameter "token"
+    .parameter "wantingToPause"
+    .parameter "currentlyPausing"
+
+    .prologue
+    .line 191
+    const/16 v0, 0x753c
+
+    const/4 v1, 0x3
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x1
+
+    aput-object p1, v1, v2
+
+    const/4 v2, 0x2
+
+    aput-object p2, v1, v2
+
+    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
+
+    .line 192
+    return-void
+.end method
+
+.method public static writeAmFinishActivity(IILjava/lang/String;Ljava/lang/String;)V
+    .locals 4
+    .parameter "token"
+    .parameter "taskId"
+    .parameter "componentName"
+    .parameter "reason"
+
+    .prologue
+    .line 147
+    const/16 v0, 0x7531
+
+    const/4 v1, 0x4
 
     new-array v1, v1, [Ljava/lang/Object;
 
@@ -1721,11 +632,114 @@
 
     const/4 v2, 0x3
 
-    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    aput-object p3, v1, v2
+
+    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
+
+    .line 148
+    return-void
+.end method
+
+.method public static writeAmKill(ILjava/lang/String;ILjava/lang/String;)V
+    .locals 4
+    .parameter "pid"
+    .parameter "processName"
+    .parameter "oomadj"
+    .parameter "reason"
+
+    .prologue
+    .line 235
+    const/16 v0, 0x7547
+
+    const/4 v1, 0x4
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
     aput-object v3, v1, v2
+
+    const/4 v2, 0x1
+
+    aput-object p1, v1, v2
+
+    const/4 v2, 0x2
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x3
+
+    aput-object p3, v1, v2
+
+    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
+
+    .line 236
+    return-void
+.end method
+
+.method public static writeAmLowMemory(I)V
+    .locals 1
+    .parameter "numProcesses"
+
+    .prologue
+    .line 211
+    const/16 v0, 0x7541
+
+    invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(II)I
+
+    .line 212
+    return-void
+.end method
+
+.method public static writeAmNewIntent(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
+    .locals 4
+    .parameter "token"
+    .parameter "taskId"
+    .parameter "componentName"
+    .parameter "action"
+    .parameter "mimeType"
+    .parameter "uri"
+    .parameter "flags"
+
+    .prologue
+    .line 155
+    const/16 v0, 0x7533
+
+    const/4 v1, 0x7
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x2
+
+    aput-object p2, v1, v2
+
+    const/4 v2, 0x3
+
+    aput-object p3, v1, v2
 
     const/4 v2, 0x4
 
@@ -1735,9 +749,652 @@
 
     aput-object p5, v1, v2
 
+    const/4 v2, 0x6
+
+    invoke-static {p6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 287
+    .line 156
+    return-void
+.end method
+
+.method public static writeAmOnPausedCalled(Ljava/lang/String;)V
+    .locals 1
+    .parameter "componentName"
+
+    .prologue
+    .line 227
+    const/16 v0, 0x7545
+
+    invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(ILjava/lang/String;)I
+
+    .line 228
+    return-void
+.end method
+
+.method public static writeAmOnResumeCalled(Ljava/lang/String;)V
+    .locals 1
+    .parameter "componentName"
+
+    .prologue
+    .line 231
+    const/16 v0, 0x7546
+
+    invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(ILjava/lang/String;)I
+
+    .line 232
+    return-void
+.end method
+
+.method public static writeAmPauseActivity(ILjava/lang/String;)V
+    .locals 4
+    .parameter "token"
+    .parameter "componentName"
+
+    .prologue
+    .line 195
+    const/16 v0, 0x753d
+
+    const/4 v1, 0x2
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x1
+
+    aput-object p1, v1, v2
+
+    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
+
+    .line 196
+    return-void
+.end method
+
+.method public static writeAmProcBad(ILjava/lang/String;)V
+    .locals 4
+    .parameter "uid"
+    .parameter "processName"
+
+    .prologue
+    .line 203
+    const/16 v0, 0x753f
+
+    const/4 v1, 0x2
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x1
+
+    aput-object p1, v1, v2
+
+    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
+
+    .line 204
+    return-void
+.end method
+
+.method public static writeAmProcBound(ILjava/lang/String;)V
+    .locals 4
+    .parameter "pid"
+    .parameter "processName"
+
+    .prologue
+    .line 183
+    const/16 v0, 0x753a
+
+    const/4 v1, 0x2
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x1
+
+    aput-object p1, v1, v2
+
+    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
+
+    .line 184
+    return-void
+.end method
+
+.method public static writeAmProcDied(ILjava/lang/String;)V
+    .locals 4
+    .parameter "pid"
+    .parameter "processName"
+
+    .prologue
+    .line 187
+    const/16 v0, 0x753b
+
+    const/4 v1, 0x2
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x1
+
+    aput-object p1, v1, v2
+
+    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
+
+    .line 188
+    return-void
+.end method
+
+.method public static writeAmProcGood(ILjava/lang/String;)V
+    .locals 4
+    .parameter "uid"
+    .parameter "processName"
+
+    .prologue
+    .line 207
+    const/16 v0, 0x7540
+
+    const/4 v1, 0x2
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x1
+
+    aput-object p1, v1, v2
+
+    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
+
+    .line 208
+    return-void
+.end method
+
+.method public static writeAmProcStart(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 4
+    .parameter "pid"
+    .parameter "uid"
+    .parameter "processName"
+    .parameter "type"
+    .parameter "component"
+
+    .prologue
+    .line 199
+    const/16 v0, 0x753e
+
+    const/4 v1, 0x5
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x2
+
+    aput-object p2, v1, v2
+
+    const/4 v2, 0x3
+
+    aput-object p3, v1, v2
+
+    const/4 v2, 0x4
+
+    aput-object p4, v1, v2
+
+    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
+
+    .line 200
+    return-void
+.end method
+
+.method public static writeAmProcessCrashedTooMuch(Ljava/lang/String;I)V
+    .locals 4
+    .parameter "name"
+    .parameter "pid"
+
+    .prologue
+    .line 255
+    const/16 v0, 0x7550
+
+    const/4 v1, 0x2
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    aput-object p0, v1, v2
+
+    const/4 v2, 0x1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
+
+    .line 256
+    return-void
+.end method
+
+.method public static writeAmProcessStartTimeout(IILjava/lang/String;)V
+    .locals 4
+    .parameter "pid"
+    .parameter "uid"
+    .parameter "processName"
+
+    .prologue
+    .line 275
+    const/16 v0, 0x7555
+
+    const/4 v1, 0x3
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x2
+
+    aput-object p2, v1, v2
+
+    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
+
+    .line 276
+    return-void
+.end method
+
+.method public static writeAmProviderLostProcess(Ljava/lang/String;ILjava/lang/String;)V
+    .locals 4
+    .parameter "packageName"
+    .parameter "uid"
+    .parameter "name"
+
+    .prologue
+    .line 271
+    const/16 v0, 0x7554
+
+    const/4 v1, 0x3
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    aput-object p0, v1, v2
+
+    const/4 v2, 0x1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x2
+
+    aput-object p2, v1, v2
+
+    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
+
+    .line 272
+    return-void
+.end method
+
+.method public static writeAmRelaunchActivity(IILjava/lang/String;)V
+    .locals 4
+    .parameter "token"
+    .parameter "taskId"
+    .parameter "componentName"
+
+    .prologue
+    .line 223
+    const/16 v0, 0x7544
+
+    const/4 v1, 0x3
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x2
+
+    aput-object p2, v1, v2
+
+    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
+
+    .line 224
+    return-void
+.end method
+
+.method public static writeAmRelaunchResumeActivity(IILjava/lang/String;)V
+    .locals 4
+    .parameter "token"
+    .parameter "taskId"
+    .parameter "componentName"
+
+    .prologue
+    .line 219
+    const/16 v0, 0x7543
+
+    const/4 v1, 0x3
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x2
+
+    aput-object p2, v1, v2
+
+    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
+
+    .line 220
+    return-void
+.end method
+
+.method public static writeAmRestartActivity(IILjava/lang/String;)V
+    .locals 4
+    .parameter "token"
+    .parameter "taskId"
+    .parameter "componentName"
+
+    .prologue
+    .line 167
+    const/16 v0, 0x7536
+
+    const/4 v1, 0x3
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x2
+
+    aput-object p2, v1, v2
+
+    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
+
+    .line 168
+    return-void
+.end method
+
+.method public static writeAmResumeActivity(IILjava/lang/String;)V
+    .locals 4
+    .parameter "token"
+    .parameter "taskId"
+    .parameter "componentName"
+
+    .prologue
+    .line 171
+    const/16 v0, 0x7537
+
+    const/4 v1, 0x3
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x2
+
+    aput-object p2, v1, v2
+
+    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
+
+    .line 172
+    return-void
+.end method
+
+.method public static writeAmScheduleServiceRestart(Ljava/lang/String;J)V
+    .locals 4
+    .parameter "componentName"
+    .parameter "time"
+
+    .prologue
+    .line 267
+    const/16 v0, 0x7553
+
+    const/4 v1, 0x2
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    aput-object p0, v1, v2
+
+    const/4 v2, 0x1
+
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
+
+    .line 268
+    return-void
+.end method
+
+.method public static writeAmServiceCrashedTooMuch(ILjava/lang/String;I)V
+    .locals 4
+    .parameter "crashCount"
+    .parameter "componentName"
+    .parameter "pid"
+
+    .prologue
+    .line 263
+    const/16 v0, 0x7552
+
+    const/4 v1, 0x3
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x1
+
+    aput-object p1, v1, v2
+
+    const/4 v2, 0x2
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
+
+    .line 264
+    return-void
+.end method
+
+.method public static writeAmTaskToFront(I)V
+    .locals 1
+    .parameter "task"
+
+    .prologue
+    .line 151
+    const/16 v0, 0x7532
+
+    invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(II)I
+
+    .line 152
+    return-void
+.end method
+
+.method public static writeAmWtf(ILjava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
+    .locals 4
+    .parameter "pid"
+    .parameter "processName"
+    .parameter "flags"
+    .parameter "tag"
+    .parameter "message"
+
+    .prologue
+    .line 283
+    const/16 v0, 0x7558
+
+    const/4 v1, 0x5
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x1
+
+    aput-object p1, v1, v2
+
+    const/4 v2, 0x2
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x3
+
+    aput-object p3, v1, v2
+
+    const/4 v2, 0x4
+
+    aput-object p4, v1, v2
+
+    invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
+
+    .line 284
     return-void
 .end method
 
@@ -1746,12 +1403,12 @@
     .parameter "time"
 
     .prologue
-    .line 142
+    .line 139
     const/16 v0, 0xbe0
 
     invoke-static {v0, p0, p1}, Landroid/util/EventLog;->writeEvent(IJ)I
 
-    .line 143
+    .line 140
     return-void
 .end method
 
@@ -1760,12 +1417,12 @@
     .parameter "time"
 
     .prologue
-    .line 146
+    .line 143
     const/16 v0, 0xbea
 
     invoke-static {v0, p0, p1}, Landroid/util/EventLog;->writeEvent(IJ)I
 
-    .line 147
+    .line 144
     return-void
 .end method
 
@@ -1774,12 +1431,12 @@
     .parameter "configMask"
 
     .prologue
-    .line 134
+    .line 131
     const/16 v0, 0xa9f
 
     invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(II)I
 
-    .line 135
+    .line 132
     return-void
 .end method
 
@@ -1793,7 +1450,7 @@
     .parameter "softirq"
 
     .prologue
-    .line 138
+    .line 135
     const/16 v0, 0xaa1
 
     const/4 v1, 0x6
@@ -1850,6 +1507,6 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 139
+    .line 136
     return-void
 .end method

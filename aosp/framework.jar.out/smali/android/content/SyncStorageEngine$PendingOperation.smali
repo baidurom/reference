@@ -29,57 +29,51 @@
 
 .field final syncSource:I
 
-.field final userId:I
-
 
 # direct methods
-.method constructor <init>(Landroid/accounts/Account;IILjava/lang/String;Landroid/os/Bundle;Z)V
+.method constructor <init>(Landroid/accounts/Account;ILjava/lang/String;Landroid/os/Bundle;Z)V
     .locals 1
     .parameter "account"
-    .parameter "userId"
     .parameter "source"
     .parameter "authority"
     .parameter "extras"
     .parameter "expedited"
 
     .prologue
-    .line 159
+    .line 145
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 160
+    .line 146
     iput-object p1, p0, Landroid/content/SyncStorageEngine$PendingOperation;->account:Landroid/accounts/Account;
 
-    .line 161
-    iput p2, p0, Landroid/content/SyncStorageEngine$PendingOperation;->userId:I
+    .line 147
+    iput p2, p0, Landroid/content/SyncStorageEngine$PendingOperation;->syncSource:I
 
-    .line 162
-    iput p3, p0, Landroid/content/SyncStorageEngine$PendingOperation;->syncSource:I
+    .line 148
+    iput-object p3, p0, Landroid/content/SyncStorageEngine$PendingOperation;->authority:Ljava/lang/String;
 
-    .line 163
-    iput-object p4, p0, Landroid/content/SyncStorageEngine$PendingOperation;->authority:Ljava/lang/String;
-
-    .line 164
-    if-eqz p5, :cond_0
+    .line 149
+    if-eqz p4, :cond_0
 
     new-instance v0, Landroid/os/Bundle;
 
-    invoke-direct {v0, p5}, Landroid/os/Bundle;-><init>(Landroid/os/Bundle;)V
+    invoke-direct {v0, p4}, Landroid/os/Bundle;-><init>(Landroid/os/Bundle;)V
 
-    move-object p5, v0
+    move-object p4, v0
 
-    .end local p5
+    .end local p4
     :cond_0
-    iput-object p5, p0, Landroid/content/SyncStorageEngine$PendingOperation;->extras:Landroid/os/Bundle;
+    iput-object p4, p0, Landroid/content/SyncStorageEngine$PendingOperation;->extras:Landroid/os/Bundle;
 
-    .line 165
-    iput-boolean p6, p0, Landroid/content/SyncStorageEngine$PendingOperation;->expedited:Z
+    .line 150
+    iput-boolean p5, p0, Landroid/content/SyncStorageEngine$PendingOperation;->expedited:Z
 
-    .line 166
+    .line 151
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/content/SyncStorageEngine$PendingOperation;->authorityId:I
 
-    .line 167
+    .line 152
     return-void
 .end method
 
@@ -88,44 +82,39 @@
     .parameter "other"
 
     .prologue
-    .line 169
+    .line 154
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 170
+    .line 155
     iget-object v0, p1, Landroid/content/SyncStorageEngine$PendingOperation;->account:Landroid/accounts/Account;
 
     iput-object v0, p0, Landroid/content/SyncStorageEngine$PendingOperation;->account:Landroid/accounts/Account;
 
-    .line 171
-    iget v0, p1, Landroid/content/SyncStorageEngine$PendingOperation;->userId:I
-
-    iput v0, p0, Landroid/content/SyncStorageEngine$PendingOperation;->userId:I
-
-    .line 172
+    .line 156
     iget v0, p1, Landroid/content/SyncStorageEngine$PendingOperation;->syncSource:I
 
     iput v0, p0, Landroid/content/SyncStorageEngine$PendingOperation;->syncSource:I
 
-    .line 173
+    .line 157
     iget-object v0, p1, Landroid/content/SyncStorageEngine$PendingOperation;->authority:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/content/SyncStorageEngine$PendingOperation;->authority:Ljava/lang/String;
 
-    .line 174
+    .line 158
     iget-object v0, p1, Landroid/content/SyncStorageEngine$PendingOperation;->extras:Landroid/os/Bundle;
 
     iput-object v0, p0, Landroid/content/SyncStorageEngine$PendingOperation;->extras:Landroid/os/Bundle;
 
-    .line 175
+    .line 159
     iget v0, p1, Landroid/content/SyncStorageEngine$PendingOperation;->authorityId:I
 
     iput v0, p0, Landroid/content/SyncStorageEngine$PendingOperation;->authorityId:I
 
-    .line 176
+    .line 160
     iget-boolean v0, p1, Landroid/content/SyncStorageEngine$PendingOperation;->expedited:Z
 
     iput-boolean v0, p0, Landroid/content/SyncStorageEngine$PendingOperation;->expedited:Z
 
-    .line 177
+    .line 161
     return-void
 .end method

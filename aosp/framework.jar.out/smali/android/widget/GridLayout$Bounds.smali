@@ -27,13 +27,13 @@
     .locals 0
 
     .prologue
-    .line 2187
+    .line 2048
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2188
+    .line 2049
     invoke-virtual {p0}, Landroid/widget/GridLayout$Bounds;->reset()V
 
-    .line 2189
+    .line 2050
     return-void
 .end method
 
@@ -42,7 +42,7 @@
     .parameter "x0"
 
     .prologue
-    .line 2182
+    .line 2043
     invoke-direct {p0}, Landroid/widget/GridLayout$Bounds;-><init>()V
 
     return-void
@@ -50,23 +50,17 @@
 
 
 # virtual methods
-.method protected getOffset(Landroid/widget/GridLayout;Landroid/view/View;Landroid/widget/GridLayout$Alignment;IZ)I
+.method protected getOffset(Landroid/view/View;Landroid/widget/GridLayout$Alignment;I)I
     .locals 2
-    .parameter "gl"
     .parameter "c"
-    .parameter "a"
+    .parameter "alignment"
     .parameter "size"
-    .parameter "horizontal"
 
     .prologue
-    .line 2212
+    .line 2073
     iget v0, p0, Landroid/widget/GridLayout$Bounds;->before:I
 
-    invoke-virtual {p1}, Landroid/widget/GridLayout;->getLayoutMode()I
-
-    move-result v1
-
-    invoke-virtual {p3, p2, p4, v1}, Landroid/widget/GridLayout$Alignment;->getAlignmentValue(Landroid/view/View;II)I
+    invoke-virtual {p2, p1, p3}, Landroid/widget/GridLayout$Alignment;->getAlignmentValue(Landroid/view/View;I)I
 
     move-result v1
 
@@ -81,7 +75,7 @@
     .parameter "after"
 
     .prologue
-    .line 2198
+    .line 2059
     iget v0, p0, Landroid/widget/GridLayout$Bounds;->before:I
 
     invoke-static {v0, p1}, Ljava/lang/Math;->max(II)I
@@ -90,7 +84,7 @@
 
     iput v0, p0, Landroid/widget/GridLayout$Bounds;->before:I
 
-    .line 2199
+    .line 2060
     iget v0, p0, Landroid/widget/GridLayout$Bounds;->after:I
 
     invoke-static {v0, p2}, Ljava/lang/Math;->max(II)I
@@ -99,63 +93,59 @@
 
     iput v0, p0, Landroid/widget/GridLayout$Bounds;->after:I
 
-    .line 2200
+    .line 2061
     return-void
 .end method
 
-.method protected final include(Landroid/widget/GridLayout;Landroid/view/View;Landroid/widget/GridLayout$Spec;Landroid/widget/GridLayout$Axis;)V
-    .locals 6
-    .parameter "gl"
+.method protected final include(Landroid/view/View;Landroid/widget/GridLayout$Spec;Landroid/widget/GridLayout;Landroid/widget/GridLayout$Axis;)V
+    .locals 5
     .parameter "c"
     .parameter "spec"
+    .parameter "gridLayout"
     .parameter "axis"
 
     .prologue
-    .line 2216
-    iget v4, p0, Landroid/widget/GridLayout$Bounds;->flexibility:I
+    .line 2077
+    iget v3, p0, Landroid/widget/GridLayout$Bounds;->flexibility:I
 
-    invoke-virtual {p3}, Landroid/widget/GridLayout$Spec;->getFlexibility()I
-
-    move-result v5
-
-    and-int/2addr v4, v5
-
-    iput v4, p0, Landroid/widget/GridLayout$Bounds;->flexibility:I
-
-    .line 2217
-    iget-boolean v2, p4, Landroid/widget/GridLayout$Axis;->horizontal:Z
-
-    .line 2218
-    .local v2, horizontal:Z
-    invoke-virtual {p1, p2, v2}, Landroid/widget/GridLayout;->getMeasurementIncludingMargin(Landroid/view/View;Z)I
-
-    move-result v3
-
-    .line 2219
-    .local v3, size:I
-    iget-object v4, p3, Landroid/widget/GridLayout$Spec;->alignment:Landroid/widget/GridLayout$Alignment;
-
-    invoke-virtual {p1, v4, v2}, Landroid/widget/GridLayout;->getAlignment(Landroid/widget/GridLayout$Alignment;Z)Landroid/widget/GridLayout$Alignment;
-
-    move-result-object v0
-
-    .line 2221
-    .local v0, alignment:Landroid/widget/GridLayout$Alignment;
-    invoke-virtual {p1}, Landroid/widget/GridLayout;->getLayoutMode()I
+    invoke-virtual {p2}, Landroid/widget/GridLayout$Spec;->getFlexibility()I
 
     move-result v4
 
-    invoke-virtual {v0, p2, v3, v4}, Landroid/widget/GridLayout$Alignment;->getAlignmentValue(Landroid/view/View;II)I
+    and-int/2addr v3, v4
+
+    iput v3, p0, Landroid/widget/GridLayout$Bounds;->flexibility:I
+
+    .line 2078
+    iget-boolean v3, p4, Landroid/widget/GridLayout$Axis;->horizontal:Z
+
+    invoke-virtual {p3, p1, v3}, Landroid/widget/GridLayout;->getMeasurementIncludingMargin(Landroid/view/View;Z)I
+
+    move-result v2
+
+    .line 2079
+    .local v2, size:I
+    iget-object v3, p2, Landroid/widget/GridLayout$Spec;->alignment:Landroid/widget/GridLayout$Alignment;
+
+    iget-boolean v4, p4, Landroid/widget/GridLayout$Axis;->horizontal:Z
+
+    invoke-virtual {p3, v3, v4}, Landroid/widget/GridLayout;->getAlignment(Landroid/widget/GridLayout$Alignment;Z)Landroid/widget/GridLayout$Alignment;
+
+    move-result-object v0
+
+    .line 2081
+    .local v0, alignment:Landroid/widget/GridLayout$Alignment;
+    invoke-virtual {v0, p1, v2}, Landroid/widget/GridLayout$Alignment;->getAlignmentValue(Landroid/view/View;I)I
 
     move-result v1
 
-    .line 2222
+    .line 2082
     .local v1, before:I
-    sub-int v4, v3, v1
+    sub-int v3, v2, v1
 
-    invoke-virtual {p0, v1, v4}, Landroid/widget/GridLayout$Bounds;->include(II)V
+    invoke-virtual {p0, v1, v3}, Landroid/widget/GridLayout$Bounds;->include(II)V
 
-    .line 2223
+    .line 2083
     return-void
 .end method
 
@@ -165,18 +155,18 @@
     .prologue
     const/high16 v0, -0x8000
 
-    .line 2192
+    .line 2053
     iput v0, p0, Landroid/widget/GridLayout$Bounds;->before:I
 
-    .line 2193
+    .line 2054
     iput v0, p0, Landroid/widget/GridLayout$Bounds;->after:I
 
-    .line 2194
+    .line 2055
     const/4 v0, 0x2
 
     iput v0, p0, Landroid/widget/GridLayout$Bounds;->flexibility:I
 
-    .line 2195
+    .line 2056
     return-void
 .end method
 
@@ -185,10 +175,10 @@
     .parameter "min"
 
     .prologue
-    .line 2203
+    .line 2064
     if-nez p1, :cond_0
 
-    .line 2204
+    .line 2065
     iget v0, p0, Landroid/widget/GridLayout$Bounds;->flexibility:I
 
     invoke-static {v0}, Landroid/widget/GridLayout;->canStretch(I)Z
@@ -197,10 +187,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 2205
+    .line 2066
     const v0, 0x186a0
 
-    .line 2208
+    .line 2069
     :goto_0
     return v0
 
@@ -218,7 +208,7 @@
     .locals 2
 
     .prologue
-    .line 2227
+    .line 2087
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

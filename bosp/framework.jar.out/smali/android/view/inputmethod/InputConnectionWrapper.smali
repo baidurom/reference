@@ -111,8 +111,8 @@
 
 .method public deleteSurroundingText(II)Z
     .locals 1
-    .parameter "beforeLength"
-    .parameter "afterLength"
+    .parameter "leftLength"
+    .parameter "rightLength"
 
     .prologue
     .line 66

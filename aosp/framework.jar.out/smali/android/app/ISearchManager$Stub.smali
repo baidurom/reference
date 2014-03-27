@@ -26,8 +26,6 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.app.ISearchManager"
 
-.field static final TRANSACTION_getAssistIntent:I = 0x6
-
 .field static final TRANSACTION_getGlobalSearchActivities:I = 0x3
 
 .field static final TRANSACTION_getGlobalSearchActivity:I = 0x4
@@ -132,7 +130,7 @@
     .line 39
     sparse-switch p1, :sswitch_data_0
 
-    .line 128
+    .line 112
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v4
@@ -317,48 +315,7 @@
 
     goto/16 :goto_0
 
-    .line 113
-    .end local v1           #_result:Landroid/content/ComponentName;
-    :sswitch_6
-    const-string v5, "android.app.ISearchManager"
-
-    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 115
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    .line 116
-    .local v0, _arg0:I
-    invoke-virtual {p0, v0}, Landroid/app/ISearchManager$Stub;->getAssistIntent(I)Landroid/content/ComponentName;
-
-    move-result-object v1
-
-    .line 117
-    .restart local v1       #_result:Landroid/content/ComponentName;
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 118
-    if-eqz v1, :cond_4
-
-    .line 119
-    invoke-virtual {p3, v4}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 120
-    invoke-virtual {v1, p3, v4}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
-
-    goto/16 :goto_0
-
-    .line 123
-    :cond_4
-    invoke-virtual {p3, v6}, Landroid/os/Parcel;->writeInt(I)V
-
-    goto/16 :goto_0
-
     .line 39
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
@@ -366,7 +323,6 @@
         0x3 -> :sswitch_3
         0x4 -> :sswitch_4
         0x5 -> :sswitch_5
-        0x6 -> :sswitch_6
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

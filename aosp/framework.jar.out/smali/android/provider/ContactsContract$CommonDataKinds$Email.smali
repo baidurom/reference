@@ -47,7 +47,7 @@
     .locals 2
 
     .prologue
-    .line 5600
+    .line 5547
     sget-object v0, Landroid/provider/ContactsContract$Data;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v1, "emails"
@@ -58,7 +58,7 @@
 
     sput-object v0, Landroid/provider/ContactsContract$CommonDataKinds$Email;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 5618
+    .line 5565
     sget-object v0, Landroid/provider/ContactsContract$CommonDataKinds$Email;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v1, "lookup"
@@ -69,7 +69,7 @@
 
     sput-object v0, Landroid/provider/ContactsContract$CommonDataKinds$Email;->CONTENT_LOOKUP_URI:Landroid/net/Uri;
 
-    .line 5638
+    .line 5585
     sget-object v0, Landroid/provider/ContactsContract$CommonDataKinds$Email;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v1, "filter"
@@ -87,7 +87,7 @@
     .locals 0
 
     .prologue
-    .line 5585
+    .line 5532
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -100,7 +100,7 @@
     .parameter "label"
 
     .prologue
-    .line 5679
+    .line 5626
     if-nez p1, :cond_0
 
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -109,19 +109,19 @@
 
     if-nez v1, :cond_0
 
-    .line 5683
+    .line 5630
     .end local p2
     :goto_0
     return-object p2
 
-    .line 5682
+    .line 5629
     .restart local p2
     :cond_0
     invoke-static {p1}, Landroid/provider/ContactsContract$CommonDataKinds$Email;->getTypeLabelResource(I)I
 
     move-result v0
 
-    .line 5683
+    .line 5630
     .local v0, labelRes:I
     invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -135,40 +135,40 @@
     .parameter "type"
 
     .prologue
-    .line 5663
+    .line 5610
     packed-switch p0, :pswitch_data_0
 
-    .line 5668
-    const v0, 0x10402af
+    .line 5615
+    const v0, #string@emailTypeCustom#t
 
     :goto_0
     return v0
 
-    .line 5664
+    .line 5611
     :pswitch_0
-    const v0, 0x10402b0
+    const v0, #string@emailTypeHome#t
 
     goto :goto_0
 
-    .line 5665
+    .line 5612
     :pswitch_1
-    const v0, 0x10402b1
+    const v0, #string@emailTypeWork#t
 
     goto :goto_0
 
-    .line 5666
+    .line 5613
     :pswitch_2
-    const v0, 0x10402b2
+    const v0, #string@emailTypeOther#t
 
     goto :goto_0
 
-    .line 5667
+    .line 5614
     :pswitch_3
-    const v0, 0x10402b3
+    const v0, #string@emailTypeMobile#t
 
     goto :goto_0
 
-    .line 5663
+    .line 5610
     nop
 
     :pswitch_data_0

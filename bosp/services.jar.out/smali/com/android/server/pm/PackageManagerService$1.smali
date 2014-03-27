@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 1861
+    .line 1700
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$1;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iput-wide p2, p0, Lcom/android/server/pm/PackageManagerService$1;->val$freeStorageSize:J
@@ -48,62 +48,49 @@
 
 # virtual methods
 .method public run()V
-    .locals 6
+    .locals 5
 
     .prologue
-    .line 1863
+    .line 1702
     iget-object v2, p0, Lcom/android/server/pm/PackageManagerService$1;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v2, v2, Lcom/android/server/pm/PackageManagerService;->mHandler:Lcom/android/server/pm/PackageManagerService$PackageHandler;
 
     invoke-virtual {v2, p0}, Lcom/android/server/pm/PackageManagerService$PackageHandler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 1864
+    .line 1703
     const/4 v1, -0x1
 
-    .line 1865
+    .line 1704
     .local v1, retCode:I
-    iget-object v2, p0, Lcom/android/server/pm/PackageManagerService$1;->this$0:Lcom/android/server/pm/PackageManagerService;
-
-    iget-object v3, v2, Lcom/android/server/pm/PackageManagerService;->mInstallLock:Ljava/lang/Object;
-
-    monitor-enter v3
-
-    .line 1866
-    :try_start_0
     iget-object v2, p0, Lcom/android/server/pm/PackageManagerService$1;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v2, v2, Lcom/android/server/pm/PackageManagerService;->mInstaller:Lcom/android/server/pm/Installer;
 
-    iget-wide v4, p0, Lcom/android/server/pm/PackageManagerService$1;->val$freeStorageSize:J
+    iget-wide v3, p0, Lcom/android/server/pm/PackageManagerService$1;->val$freeStorageSize:J
 
-    invoke-virtual {v2, v4, v5}, Lcom/android/server/pm/Installer;->freeCache(J)I
+    invoke-virtual {v2, v3, v4}, Lcom/android/server/pm/Installer;->freeCache(J)I
 
     move-result v1
 
-    .line 1867
+    .line 1705
     if-gez v1, :cond_0
 
-    .line 1868
+    .line 1706
     const-string v2, "PackageManager"
 
-    const-string v4, "Couldn\'t clear application caches"
+    const-string v3, "Couldn\'t clear application caches"
 
-    invoke-static {v2, v4}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1870
+    .line 1708
     :cond_0
-    monitor-exit v3
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 1871
     iget-object v2, p0, Lcom/android/server/pm/PackageManagerService$1;->val$observer:Landroid/content/pm/IPackageDataObserver;
 
     if-eqz v2, :cond_1
 
-    .line 1873
-    :try_start_1
+    .line 1710
+    :try_start_0
     iget-object v3, p0, Lcom/android/server/pm/PackageManagerService$1;->val$observer:Landroid/content/pm/IPackageDataObserver;
 
     const/4 v4, 0x0
@@ -114,36 +101,25 @@
 
     :goto_0
     invoke-interface {v3, v4, v2}, Landroid/content/pm/IPackageDataObserver;->onRemoveCompleted(Ljava/lang/String;Z)V
-    :try_end_1
-    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1878
+    .line 1715
     :cond_1
     :goto_1
     return-void
 
-    .line 1870
-    :catchall_0
-    move-exception v2
-
-    :try_start_2
-    monitor-exit v3
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    throw v2
-
-    .line 1873
+    .line 1710
     :cond_2
     const/4 v2, 0x0
 
     goto :goto_0
 
-    .line 1874
+    .line 1711
     :catch_0
     move-exception v0
 
-    .line 1875
+    .line 1712
     .local v0, e:Landroid/os/RemoteException;
     const-string v2, "PackageManager"
 

@@ -621,12 +621,12 @@
 
     .line 100
     :cond_6
-    const v10, 0x1090035
+    const v10, #layout@choose_account_type#t
 
     invoke-virtual {p0, v10}, Landroid/accounts/ChooseAccountTypeActivity;->setContentView(I)V
 
     .line 102
-    const v10, 0x102000a
+    const v10, #id@list#t
 
     invoke-virtual {p0, v10}, Landroid/accounts/ChooseAccountTypeActivity;->findViewById(I)Landroid/view/View;
 
@@ -638,7 +638,7 @@
     .local v6, list:Landroid/widget/ListView;
     new-instance v10, Landroid/accounts/ChooseAccountTypeActivity$AccountArrayAdapter;
 
-    const v11, 0x1090003
+    const v11, #layout@simple_list_item_1#t
 
     iget-object v12, p0, Landroid/accounts/ChooseAccountTypeActivity;->mAuthenticatorInfosToDisplay:Ljava/util/ArrayList;
 

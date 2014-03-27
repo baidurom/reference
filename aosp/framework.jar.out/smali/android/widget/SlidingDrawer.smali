@@ -15,9 +15,6 @@
     }
 .end annotation
 
-.annotation runtime Ljava/lang/Deprecated;
-.end annotation
-
 
 # static fields
 .field private static final ANIMATION_FRAME_DURATION:I = 0x10
@@ -122,12 +119,12 @@
     .parameter "attrs"
 
     .prologue
-    .line 187
+    .line 181
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/SlidingDrawer;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 188
+    .line 182
     return-void
 .end method
 
@@ -146,24 +143,24 @@
 
     const/high16 v9, 0x3f00
 
-    .line 198
+    .line 192
     invoke-direct {p0, p1, p2, p3}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 109
+    .line 103
     new-instance v5, Landroid/graphics/Rect;
 
     invoke-direct {v5}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v5, p0, Landroid/widget/SlidingDrawer;->mFrame:Landroid/graphics/Rect;
 
-    .line 110
+    .line 104
     new-instance v5, Landroid/graphics/Rect;
 
     invoke-direct {v5}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v5, p0, Landroid/widget/SlidingDrawer;->mInvalidate:Landroid/graphics/Rect;
 
-    .line 127
+    .line 121
     new-instance v5, Landroid/widget/SlidingDrawer$SlidingHandler;
 
     const/4 v8, 0x0
@@ -172,20 +169,20 @@
 
     iput-object v5, p0, Landroid/widget/SlidingDrawer;->mHandler:Landroid/os/Handler;
 
-    .line 199
+    .line 193
     sget-object v5, Landroid/R$styleable;->SlidingDrawer:[I
 
     invoke-virtual {p1, p2, v5, p3, v7}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 201
+    .line 195
     .local v0, a:Landroid/content/res/TypedArray;
     invoke-virtual {v0, v7, v6}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result v4
 
-    .line 202
+    .line 196
     .local v4, orientation:I
     if-ne v4, v6, :cond_0
 
@@ -194,7 +191,7 @@
     :goto_0
     iput-boolean v5, p0, Landroid/widget/SlidingDrawer;->mVertical:Z
 
-    .line 203
+    .line 197
     invoke-virtual {v0, v6, v10}, Landroid/content/res/TypedArray;->getDimension(IF)F
 
     move-result v5
@@ -203,7 +200,7 @@
 
     iput v5, p0, Landroid/widget/SlidingDrawer;->mBottomOffset:I
 
-    .line 204
+    .line 198
     const/4 v5, 0x2
 
     invoke-virtual {v0, v5, v10}, Landroid/content/res/TypedArray;->getDimension(IF)F
@@ -214,7 +211,7 @@
 
     iput v5, p0, Landroid/widget/SlidingDrawer;->mTopOffset:I
 
-    .line 205
+    .line 199
     const/4 v5, 0x3
 
     invoke-virtual {v0, v5, v6}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
@@ -223,7 +220,7 @@
 
     iput-boolean v5, p0, Landroid/widget/SlidingDrawer;->mAllowSingleTap:Z
 
-    .line 206
+    .line 200
     const/4 v5, 0x6
 
     invoke-virtual {v0, v5, v6}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
@@ -232,18 +229,18 @@
 
     iput-boolean v5, p0, Landroid/widget/SlidingDrawer;->mAnimateOnClick:Z
 
-    .line 208
+    .line 202
     const/4 v5, 0x4
 
     invoke-virtual {v0, v5, v7}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v3
 
-    .line 209
+    .line 203
     .local v3, handleId:I
     if-nez v3, :cond_1
 
-    .line 210
+    .line 204
     new-instance v5, Ljava/lang/IllegalArgumentException;
 
     const-string v6, "The handle attribute is required and must refer to a valid child."
@@ -256,10 +253,10 @@
     :cond_0
     move v5, v7
 
-    .line 202
+    .line 196
     goto :goto_0
 
-    .line 214
+    .line 208
     .restart local v3       #handleId:I
     :cond_1
     const/4 v5, 0x5
@@ -268,11 +265,11 @@
 
     move-result v1
 
-    .line 215
+    .line 209
     .local v1, contentId:I
     if-nez v1, :cond_2
 
-    .line 216
+    .line 210
     new-instance v5, Ljava/lang/IllegalArgumentException;
 
     const-string v6, "The content attribute is required and must refer to a valid child."
@@ -281,11 +278,11 @@
 
     throw v5
 
-    .line 220
+    .line 214
     :cond_2
     if-ne v3, v1, :cond_3
 
-    .line 221
+    .line 215
     new-instance v5, Ljava/lang/IllegalArgumentException;
 
     const-string v6, "The content and handle attributes must refer to different children."
@@ -294,14 +291,14 @@
 
     throw v5
 
-    .line 225
+    .line 219
     :cond_3
     iput v3, p0, Landroid/widget/SlidingDrawer;->mHandleId:I
 
-    .line 226
+    .line 220
     iput v1, p0, Landroid/widget/SlidingDrawer;->mContentId:I
 
-    .line 228
+    .line 222
     invoke-virtual {p0}, Landroid/widget/SlidingDrawer;->getResources()Landroid/content/res/Resources;
 
     move-result-object v5
@@ -312,7 +309,7 @@
 
     iget v2, v5, Landroid/util/DisplayMetrics;->density:F
 
-    .line 229
+    .line 223
     .local v2, density:F
     const/high16 v5, 0x40c0
 
@@ -324,7 +321,7 @@
 
     iput v5, p0, Landroid/widget/SlidingDrawer;->mTapThreshold:I
 
-    .line 230
+    .line 224
     const/high16 v5, 0x42c8
 
     mul-float/2addr v5, v2
@@ -335,7 +332,7 @@
 
     iput v5, p0, Landroid/widget/SlidingDrawer;->mMaximumTapVelocity:I
 
-    .line 231
+    .line 225
     const/high16 v5, 0x4316
 
     mul-float/2addr v5, v2
@@ -346,7 +343,7 @@
 
     iput v5, p0, Landroid/widget/SlidingDrawer;->mMaximumMinorVelocity:I
 
-    .line 232
+    .line 226
     const/high16 v5, 0x4348
 
     mul-float/2addr v5, v2
@@ -357,7 +354,7 @@
 
     iput v5, p0, Landroid/widget/SlidingDrawer;->mMaximumMajorVelocity:I
 
-    .line 233
+    .line 227
     const/high16 v5, 0x44fa
 
     mul-float/2addr v5, v2
@@ -368,7 +365,7 @@
 
     iput v5, p0, Landroid/widget/SlidingDrawer;->mMaximumAcceleration:I
 
-    .line 234
+    .line 228
     const/high16 v5, 0x447a
 
     mul-float/2addr v5, v2
@@ -379,13 +376,13 @@
 
     iput v5, p0, Landroid/widget/SlidingDrawer;->mVelocityUnits:I
 
-    .line 236
+    .line 230
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 238
+    .line 232
     invoke-virtual {p0, v7}, Landroid/widget/SlidingDrawer;->setAlwaysDrawnWithCacheEnabled(Z)V
 
-    .line 239
+    .line 233
     return-void
 .end method
 
@@ -394,7 +391,7 @@
     .parameter "x0"
 
     .prologue
-    .line 87
+    .line 81
     iget-boolean v0, p0, Landroid/widget/SlidingDrawer;->mLocked:Z
 
     return v0
@@ -405,7 +402,7 @@
     .parameter "x0"
 
     .prologue
-    .line 87
+    .line 81
     iget-boolean v0, p0, Landroid/widget/SlidingDrawer;->mAnimateOnClick:Z
 
     return v0
@@ -416,7 +413,7 @@
     .parameter "x0"
 
     .prologue
-    .line 87
+    .line 81
     invoke-direct {p0}, Landroid/widget/SlidingDrawer;->doAnimation()V
 
     return-void
@@ -427,10 +424,10 @@
     .parameter "position"
 
     .prologue
-    .line 483
+    .line 477
     invoke-direct {p0, p1}, Landroid/widget/SlidingDrawer;->prepareTracking(I)V
 
-    .line 484
+    .line 478
     iget v0, p0, Landroid/widget/SlidingDrawer;->mMaximumAcceleration:I
 
     int-to-float v0, v0
@@ -439,7 +436,7 @@
 
     invoke-direct {p0, p1, v0, v1}, Landroid/widget/SlidingDrawer;->performFling(IFZ)V
 
-    .line 485
+    .line 479
     return-void
 .end method
 
@@ -448,10 +445,10 @@
     .parameter "position"
 
     .prologue
-    .line 488
+    .line 482
     invoke-direct {p0, p1}, Landroid/widget/SlidingDrawer;->prepareTracking(I)V
 
-    .line 489
+    .line 483
     iget v0, p0, Landroid/widget/SlidingDrawer;->mMaximumAcceleration:I
 
     neg-int v0, v0
@@ -462,7 +459,7 @@
 
     invoke-direct {p0, p1, v0, v1}, Landroid/widget/SlidingDrawer;->performFling(IFZ)V
 
-    .line 490
+    .line 484
     return-void
 .end method
 
@@ -470,45 +467,45 @@
     .locals 2
 
     .prologue
-    .line 832
+    .line 814
     const/16 v0, -0x2712
 
     invoke-direct {p0, v0}, Landroid/widget/SlidingDrawer;->moveHandle(I)V
 
-    .line 833
+    .line 815
     iget-object v0, p0, Landroid/widget/SlidingDrawer;->mContent:Landroid/view/View;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 834
+    .line 816
     iget-object v0, p0, Landroid/widget/SlidingDrawer;->mContent:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->destroyDrawingCache()V
 
-    .line 836
+    .line 818
     iget-boolean v0, p0, Landroid/widget/SlidingDrawer;->mExpanded:Z
 
     if-nez v0, :cond_1
 
-    .line 844
+    .line 826
     :cond_0
     :goto_0
     return-void
 
-    .line 840
+    .line 822
     :cond_1
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/widget/SlidingDrawer;->mExpanded:Z
 
-    .line 841
+    .line 823
     iget-object v0, p0, Landroid/widget/SlidingDrawer;->mOnDrawerCloseListener:Landroid/widget/SlidingDrawer$OnDrawerCloseListener;
 
     if-eqz v0, :cond_0
 
-    .line 842
+    .line 824
     iget-object v0, p0, Landroid/widget/SlidingDrawer;->mOnDrawerCloseListener:Landroid/widget/SlidingDrawer$OnDrawerCloseListener;
 
     invoke-interface {v0}, Landroid/widget/SlidingDrawer$OnDrawerCloseListener;->onDrawerClosed()V
@@ -522,15 +519,15 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 681
+    .line 675
     iget-boolean v0, p0, Landroid/widget/SlidingDrawer;->mAnimating:Z
 
     if-eqz v0, :cond_0
 
-    .line 682
+    .line 676
     invoke-direct {p0}, Landroid/widget/SlidingDrawer;->incrementAnimation()V
 
-    .line 683
+    .line 677
     iget v1, p0, Landroid/widget/SlidingDrawer;->mAnimationPosition:F
 
     iget v2, p0, Landroid/widget/SlidingDrawer;->mBottomOffset:I
@@ -554,18 +551,18 @@
 
     if-ltz v0, :cond_2
 
-    .line 684
+    .line 678
     iput-boolean v3, p0, Landroid/widget/SlidingDrawer;->mAnimating:Z
 
-    .line 685
+    .line 679
     invoke-direct {p0}, Landroid/widget/SlidingDrawer;->closeDrawer()V
 
-    .line 696
+    .line 690
     :cond_0
     :goto_1
     return-void
 
-    .line 683
+    .line 677
     :cond_1
     invoke-virtual {p0}, Landroid/widget/SlidingDrawer;->getWidth()I
 
@@ -573,7 +570,7 @@
 
     goto :goto_0
 
-    .line 686
+    .line 680
     :cond_2
     iget v0, p0, Landroid/widget/SlidingDrawer;->mAnimationPosition:F
 
@@ -585,15 +582,15 @@
 
     if-gez v0, :cond_3
 
-    .line 687
+    .line 681
     iput-boolean v3, p0, Landroid/widget/SlidingDrawer;->mAnimating:Z
 
-    .line 688
+    .line 682
     invoke-direct {p0}, Landroid/widget/SlidingDrawer;->openDrawer()V
 
     goto :goto_1
 
-    .line 690
+    .line 684
     :cond_3
     iget v0, p0, Landroid/widget/SlidingDrawer;->mAnimationPosition:F
 
@@ -601,7 +598,7 @@
 
     invoke-direct {p0, v0}, Landroid/widget/SlidingDrawer;->moveHandle(I)V
 
-    .line 691
+    .line 685
     iget-wide v0, p0, Landroid/widget/SlidingDrawer;->mCurrentAnimationTime:J
 
     const-wide/16 v2, 0x10
@@ -610,7 +607,7 @@
 
     iput-wide v0, p0, Landroid/widget/SlidingDrawer;->mCurrentAnimationTime:J
 
-    .line 692
+    .line 686
     iget-object v0, p0, Landroid/widget/SlidingDrawer;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Landroid/widget/SlidingDrawer;->mHandler:Landroid/os/Handler;
@@ -632,12 +629,12 @@
     .locals 8
 
     .prologue
-    .line 699
+    .line 693
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v1
 
-    .line 700
+    .line 694
     .local v1, now:J
     iget-wide v6, p0, Landroid/widget/SlidingDrawer;->mAnimationLastTime:J
 
@@ -649,19 +646,19 @@
 
     div-float v4, v6, v7
 
-    .line 701
+    .line 695
     .local v4, t:F
     iget v3, p0, Landroid/widget/SlidingDrawer;->mAnimationPosition:F
 
-    .line 702
+    .line 696
     .local v3, position:F
     iget v5, p0, Landroid/widget/SlidingDrawer;->mAnimatedVelocity:F
 
-    .line 703
+    .line 697
     .local v5, v:F
     iget v0, p0, Landroid/widget/SlidingDrawer;->mAnimatedAcceleration:F
 
-    .line 704
+    .line 698
     .local v0, a:F
     mul-float v6, v5, v4
 
@@ -679,17 +676,17 @@
 
     iput v6, p0, Landroid/widget/SlidingDrawer;->mAnimationPosition:F
 
-    .line 705
+    .line 699
     mul-float v6, v0, v4
 
     add-float/2addr v6, v5
 
     iput v6, p0, Landroid/widget/SlidingDrawer;->mAnimatedVelocity:F
 
-    .line 706
+    .line 700
     iput-wide v1, p0, Landroid/widget/SlidingDrawer;->mAnimationLastTime:J
 
-    .line 707
+    .line 701
     return-void
 .end method
 
@@ -704,19 +701,19 @@
 
     const/16 v8, -0x2712
 
-    .line 567
+    .line 561
     iget-object v3, p0, Landroid/widget/SlidingDrawer;->mHandle:Landroid/view/View;
 
-    .line 569
+    .line 563
     .local v3, handle:Landroid/view/View;
     iget-boolean v7, p0, Landroid/widget/SlidingDrawer;->mVertical:Z
 
     if-eqz v7, :cond_4
 
-    .line 570
+    .line 564
     if-ne p1, v9, :cond_0
 
-    .line 571
+    .line 565
     iget v7, p0, Landroid/widget/SlidingDrawer;->mTopOffset:I
 
     invoke-virtual {v3}, Landroid/view/View;->getTop()I
@@ -727,18 +724,18 @@
 
     invoke-virtual {v3, v7}, Landroid/view/View;->offsetTopAndBottom(I)V
 
-    .line 572
+    .line 566
     invoke-virtual {p0}, Landroid/widget/SlidingDrawer;->invalidate()V
 
-    .line 630
+    .line 624
     :goto_0
     return-void
 
-    .line 573
+    .line 567
     :cond_0
     if-ne p1, v8, :cond_1
 
-    .line 574
+    .line 568
     iget v7, p0, Landroid/widget/SlidingDrawer;->mBottomOffset:I
 
     iget v8, p0, Landroid/view/View;->mBottom:I
@@ -761,52 +758,52 @@
 
     invoke-virtual {v3, v7}, Landroid/view/View;->offsetTopAndBottom(I)V
 
-    .line 576
+    .line 570
     invoke-virtual {p0}, Landroid/widget/SlidingDrawer;->invalidate()V
 
     goto :goto_0
 
-    .line 578
+    .line 572
     :cond_1
     invoke-virtual {v3}, Landroid/view/View;->getTop()I
 
     move-result v6
 
-    .line 579
+    .line 573
     .local v6, top:I
     sub-int v1, p1, v6
 
-    .line 580
+    .line 574
     .local v1, deltaY:I
     iget v7, p0, Landroid/widget/SlidingDrawer;->mTopOffset:I
 
     if-ge p1, v7, :cond_3
 
-    .line 581
+    .line 575
     iget v7, p0, Landroid/widget/SlidingDrawer;->mTopOffset:I
 
     sub-int v1, v7, v6
 
-    .line 585
+    .line 579
     :cond_2
     :goto_1
     invoke-virtual {v3, v1}, Landroid/view/View;->offsetTopAndBottom(I)V
 
-    .line 587
+    .line 581
     iget-object v2, p0, Landroid/widget/SlidingDrawer;->mFrame:Landroid/graphics/Rect;
 
-    .line 588
+    .line 582
     .local v2, frame:Landroid/graphics/Rect;
     iget-object v5, p0, Landroid/widget/SlidingDrawer;->mInvalidate:Landroid/graphics/Rect;
 
-    .line 590
+    .line 584
     .local v5, region:Landroid/graphics/Rect;
     invoke-virtual {v3, v2}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
 
-    .line 591
+    .line 585
     invoke-virtual {v5, v2}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 593
+    .line 587
     iget v7, v2, Landroid/graphics/Rect;->left:I
 
     iget v8, v2, Landroid/graphics/Rect;->top:I
@@ -821,7 +818,7 @@
 
     invoke-virtual {v5, v7, v8, v9, v10}, Landroid/graphics/Rect;->union(IIII)V
 
-    .line 594
+    .line 588
     iget v7, v2, Landroid/graphics/Rect;->bottom:I
 
     sub-int/2addr v7, v1
@@ -844,12 +841,12 @@
 
     invoke-virtual {v5, v11, v7, v8, v9}, Landroid/graphics/Rect;->union(IIII)V
 
-    .line 597
+    .line 591
     invoke-virtual {p0, v5}, Landroid/widget/SlidingDrawer;->invalidate(Landroid/graphics/Rect;)V
 
     goto :goto_0
 
-    .line 582
+    .line 576
     .end local v2           #frame:Landroid/graphics/Rect;
     .end local v5           #region:Landroid/graphics/Rect;
     :cond_3
@@ -871,7 +868,7 @@
 
     if-le v1, v7, :cond_2
 
-    .line 583
+    .line 577
     iget v7, p0, Landroid/widget/SlidingDrawer;->mBottomOffset:I
 
     iget v8, p0, Landroid/view/View;->mBottom:I
@@ -890,13 +887,13 @@
 
     goto :goto_1
 
-    .line 600
+    .line 594
     .end local v1           #deltaY:I
     .end local v6           #top:I
     :cond_4
     if-ne p1, v9, :cond_5
 
-    .line 601
+    .line 595
     iget v7, p0, Landroid/widget/SlidingDrawer;->mTopOffset:I
 
     invoke-virtual {v3}, Landroid/view/View;->getLeft()I
@@ -907,16 +904,16 @@
 
     invoke-virtual {v3, v7}, Landroid/view/View;->offsetLeftAndRight(I)V
 
-    .line 602
+    .line 596
     invoke-virtual {p0}, Landroid/widget/SlidingDrawer;->invalidate()V
 
     goto/16 :goto_0
 
-    .line 603
+    .line 597
     :cond_5
     if-ne p1, v8, :cond_6
 
-    .line 604
+    .line 598
     iget v7, p0, Landroid/widget/SlidingDrawer;->mBottomOffset:I
 
     iget v8, p0, Landroid/view/View;->mRight:I
@@ -939,52 +936,52 @@
 
     invoke-virtual {v3, v7}, Landroid/view/View;->offsetLeftAndRight(I)V
 
-    .line 606
+    .line 600
     invoke-virtual {p0}, Landroid/widget/SlidingDrawer;->invalidate()V
 
     goto/16 :goto_0
 
-    .line 608
+    .line 602
     :cond_6
     invoke-virtual {v3}, Landroid/view/View;->getLeft()I
 
     move-result v4
 
-    .line 609
+    .line 603
     .local v4, left:I
     sub-int v0, p1, v4
 
-    .line 610
+    .line 604
     .local v0, deltaX:I
     iget v7, p0, Landroid/widget/SlidingDrawer;->mTopOffset:I
 
     if-ge p1, v7, :cond_8
 
-    .line 611
+    .line 605
     iget v7, p0, Landroid/widget/SlidingDrawer;->mTopOffset:I
 
     sub-int v0, v7, v4
 
-    .line 615
+    .line 609
     :cond_7
     :goto_2
     invoke-virtual {v3, v0}, Landroid/view/View;->offsetLeftAndRight(I)V
 
-    .line 617
+    .line 611
     iget-object v2, p0, Landroid/widget/SlidingDrawer;->mFrame:Landroid/graphics/Rect;
 
-    .line 618
+    .line 612
     .restart local v2       #frame:Landroid/graphics/Rect;
     iget-object v5, p0, Landroid/widget/SlidingDrawer;->mInvalidate:Landroid/graphics/Rect;
 
-    .line 620
+    .line 614
     .restart local v5       #region:Landroid/graphics/Rect;
     invoke-virtual {v3, v2}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
 
-    .line 621
+    .line 615
     invoke-virtual {v5, v2}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 623
+    .line 617
     iget v7, v2, Landroid/graphics/Rect;->left:I
 
     sub-int/2addr v7, v0
@@ -999,7 +996,7 @@
 
     invoke-virtual {v5, v7, v8, v9, v10}, Landroid/graphics/Rect;->union(IIII)V
 
-    .line 624
+    .line 618
     iget v7, v2, Landroid/graphics/Rect;->right:I
 
     sub-int/2addr v7, v0
@@ -1022,12 +1019,12 @@
 
     invoke-virtual {v5, v7, v11, v8, v9}, Landroid/graphics/Rect;->union(IIII)V
 
-    .line 627
+    .line 621
     invoke-virtual {p0, v5}, Landroid/widget/SlidingDrawer;->invalidate(Landroid/graphics/Rect;)V
 
     goto/16 :goto_0
 
-    .line 612
+    .line 606
     .end local v2           #frame:Landroid/graphics/Rect;
     .end local v5           #region:Landroid/graphics/Rect;
     :cond_8
@@ -1049,7 +1046,7 @@
 
     if-le v0, v7, :cond_7
 
-    .line 613
+    .line 607
     iget v7, p0, Landroid/widget/SlidingDrawer;->mBottomOffset:I
 
     iget v8, p0, Landroid/view/View;->mRight:I
@@ -1073,40 +1070,40 @@
     .locals 2
 
     .prologue
-    .line 847
+    .line 829
     const/16 v0, -0x2711
 
     invoke-direct {p0, v0}, Landroid/widget/SlidingDrawer;->moveHandle(I)V
 
-    .line 848
+    .line 830
     iget-object v0, p0, Landroid/widget/SlidingDrawer;->mContent:Landroid/view/View;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 850
+    .line 832
     iget-boolean v0, p0, Landroid/widget/SlidingDrawer;->mExpanded:Z
 
     if-eqz v0, :cond_1
 
-    .line 859
+    .line 841
     :cond_0
     :goto_0
     return-void
 
-    .line 854
+    .line 836
     :cond_1
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/widget/SlidingDrawer;->mExpanded:Z
 
-    .line 856
+    .line 838
     iget-object v0, p0, Landroid/widget/SlidingDrawer;->mOnDrawerOpenListener:Landroid/widget/SlidingDrawer$OnDrawerOpenListener;
 
     if-eqz v0, :cond_0
 
-    .line 857
+    .line 839
     iget-object v0, p0, Landroid/widget/SlidingDrawer;->mOnDrawerOpenListener:Landroid/widget/SlidingDrawer$OnDrawerOpenListener;
 
     invoke-interface {v0}, Landroid/widget/SlidingDrawer$OnDrawerOpenListener;->onDrawerOpened()V
@@ -1125,20 +1122,20 @@
 
     const/4 v4, 0x0
 
-    .line 493
+    .line 487
     int-to-float v2, p1
 
     iput v2, p0, Landroid/widget/SlidingDrawer;->mAnimationPosition:F
 
-    .line 494
+    .line 488
     iput p2, p0, Landroid/widget/SlidingDrawer;->mAnimatedVelocity:F
 
-    .line 496
+    .line 490
     iget-boolean v2, p0, Landroid/widget/SlidingDrawer;->mExpanded:Z
 
     if-eqz v2, :cond_4
 
-    .line 497
+    .line 491
     if-nez p3, :cond_0
 
     iget v2, p0, Landroid/widget/SlidingDrawer;->mMaximumMajorVelocity:I
@@ -1172,7 +1169,7 @@
 
     if-lez v2, :cond_3
 
-    .line 502
+    .line 496
     :cond_0
     iget v2, p0, Landroid/widget/SlidingDrawer;->mMaximumAcceleration:I
 
@@ -1180,43 +1177,43 @@
 
     iput v2, p0, Landroid/widget/SlidingDrawer;->mAnimatedAcceleration:F
 
-    .line 503
+    .line 497
     cmpg-float v2, p2, v4
 
     if-gez v2, :cond_1
 
-    .line 504
+    .line 498
     iput v4, p0, Landroid/widget/SlidingDrawer;->mAnimatedVelocity:F
 
-    .line 532
+    .line 526
     :cond_1
     :goto_1
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
-    .line 533
+    .line 527
     .local v0, now:J
     iput-wide v0, p0, Landroid/widget/SlidingDrawer;->mAnimationLastTime:J
 
-    .line 534
+    .line 528
     const-wide/16 v2, 0x10
 
     add-long/2addr v2, v0
 
     iput-wide v2, p0, Landroid/widget/SlidingDrawer;->mCurrentAnimationTime:J
 
-    .line 535
+    .line 529
     const/4 v2, 0x1
 
     iput-boolean v2, p0, Landroid/widget/SlidingDrawer;->mAnimating:Z
 
-    .line 536
+    .line 530
     iget-object v2, p0, Landroid/widget/SlidingDrawer;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v2, v5}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 537
+    .line 531
     iget-object v2, p0, Landroid/widget/SlidingDrawer;->mHandler:Landroid/os/Handler;
 
     iget-object v3, p0, Landroid/widget/SlidingDrawer;->mHandler:Landroid/os/Handler;
@@ -1229,20 +1226,20 @@
 
     invoke-virtual {v2, v3, v4, v5}, Landroid/os/Handler;->sendMessageAtTime(Landroid/os/Message;J)Z
 
-    .line 538
+    .line 532
     invoke-direct {p0}, Landroid/widget/SlidingDrawer;->stopTracking()V
 
-    .line 539
+    .line 533
     return-void
 
-    .line 497
+    .line 491
     .end local v0           #now:J
     :cond_2
     iget v2, p0, Landroid/widget/SlidingDrawer;->mHandleWidth:I
 
     goto :goto_0
 
-    .line 508
+    .line 502
     :cond_3
     iget v2, p0, Landroid/widget/SlidingDrawer;->mMaximumAcceleration:I
 
@@ -1252,17 +1249,17 @@
 
     iput v2, p0, Landroid/widget/SlidingDrawer;->mAnimatedAcceleration:F
 
-    .line 509
+    .line 503
     cmpl-float v2, p2, v4
 
     if-lez v2, :cond_1
 
-    .line 510
+    .line 504
     iput v4, p0, Landroid/widget/SlidingDrawer;->mAnimatedVelocity:F
 
     goto :goto_1
 
-    .line 514
+    .line 508
     :cond_4
     if-nez p3, :cond_7
 
@@ -1297,7 +1294,7 @@
 
     if-lez v2, :cond_7
 
-    .line 518
+    .line 512
     :cond_5
     iget v2, p0, Landroid/widget/SlidingDrawer;->mMaximumAcceleration:I
 
@@ -1305,17 +1302,17 @@
 
     iput v2, p0, Landroid/widget/SlidingDrawer;->mAnimatedAcceleration:F
 
-    .line 519
+    .line 513
     cmpg-float v2, p2, v4
 
     if-gez v2, :cond_1
 
-    .line 520
+    .line 514
     iput v4, p0, Landroid/widget/SlidingDrawer;->mAnimatedVelocity:F
 
     goto :goto_1
 
-    .line 514
+    .line 508
     :cond_6
     invoke-virtual {p0}, Landroid/widget/SlidingDrawer;->getWidth()I
 
@@ -1323,7 +1320,7 @@
 
     goto :goto_2
 
-    .line 525
+    .line 519
     :cond_7
     iget v2, p0, Landroid/widget/SlidingDrawer;->mMaximumAcceleration:I
 
@@ -1333,12 +1330,12 @@
 
     iput v2, p0, Landroid/widget/SlidingDrawer;->mAnimatedAcceleration:F
 
-    .line 526
+    .line 520
     cmpl-float v2, p2, v4
 
     if-lez v2, :cond_1
 
-    .line 527
+    .line 521
     iput v4, p0, Landroid/widget/SlidingDrawer;->mAnimatedVelocity:F
 
     goto :goto_1
@@ -1352,20 +1349,20 @@
 
     const/high16 v8, 0x4000
 
-    .line 633
+    .line 627
     iget-boolean v5, p0, Landroid/widget/SlidingDrawer;->mAnimating:Z
 
     if-eqz v5, :cond_0
 
-    .line 664
+    .line 658
     :goto_0
     return-void
 
-    .line 639
+    .line 633
     :cond_0
     iget-object v2, p0, Landroid/widget/SlidingDrawer;->mContent:Landroid/view/View;
 
-    .line 640
+    .line 634
     .local v2, content:Landroid/view/View;
     invoke-virtual {v2}, Landroid/view/View;->isLayoutRequested()Z
 
@@ -1373,15 +1370,15 @@
 
     if-eqz v5, :cond_1
 
-    .line 641
+    .line 635
     iget-boolean v5, p0, Landroid/widget/SlidingDrawer;->mVertical:Z
 
     if-eqz v5, :cond_3
 
-    .line 642
+    .line 636
     iget v0, p0, Landroid/widget/SlidingDrawer;->mHandleHeight:I
 
-    .line 643
+    .line 637
     .local v0, childHeight:I
     iget v5, p0, Landroid/view/View;->mBottom:I
 
@@ -1395,7 +1392,7 @@
 
     sub-int v3, v5, v6
 
-    .line 644
+    .line 638
     .local v3, height:I
     iget v5, p0, Landroid/view/View;->mRight:I
 
@@ -1413,7 +1410,7 @@
 
     invoke-virtual {v2, v5, v6}, Landroid/view/View;->measure(II)V
 
-    .line 646
+    .line 640
     iget v5, p0, Landroid/widget/SlidingDrawer;->mTopOffset:I
 
     add-int/2addr v5, v0
@@ -1434,7 +1431,7 @@
 
     invoke-virtual {v2, v9, v5, v6, v7}, Landroid/view/View;->layout(IIII)V
 
-    .line 660
+    .line 654
     .end local v0           #childHeight:I
     .end local v3           #height:I
     :cond_1
@@ -1445,7 +1442,7 @@
 
     invoke-virtual {v5}, Landroid/view/ViewTreeObserver;->dispatchOnPreDraw()Z
 
-    .line 661
+    .line 655
     invoke-virtual {v2}, Landroid/view/View;->isHardwareAccelerated()Z
 
     move-result v5
@@ -1454,7 +1451,7 @@
 
     invoke-virtual {v2}, Landroid/view/View;->buildDrawingCache()V
 
-    .line 663
+    .line 657
     :cond_2
     const/16 v5, 0x8
 
@@ -1462,7 +1459,7 @@
 
     goto :goto_0
 
-    .line 649
+    .line 643
     :cond_3
     iget-object v5, p0, Landroid/widget/SlidingDrawer;->mHandle:Landroid/view/View;
 
@@ -1470,7 +1467,7 @@
 
     move-result v1
 
-    .line 650
+    .line 644
     .local v1, childWidth:I
     iget v5, p0, Landroid/view/View;->mRight:I
 
@@ -1484,7 +1481,7 @@
 
     sub-int v4, v5, v6
 
-    .line 651
+    .line 645
     .local v4, width:I
     invoke-static {v4, v8}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -1502,7 +1499,7 @@
 
     invoke-virtual {v2, v5, v6}, Landroid/view/View;->measure(II)V
 
-    .line 653
+    .line 647
     iget v5, p0, Landroid/widget/SlidingDrawer;->mTopOffset:I
 
     add-int/2addr v5, v1
@@ -1537,43 +1534,43 @@
 
     const/4 v4, 0x1
 
-    .line 542
+    .line 536
     iput-boolean v4, p0, Landroid/widget/SlidingDrawer;->mTracking:Z
 
-    .line 543
+    .line 537
     invoke-static {}, Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
 
     move-result-object v5
 
     iput-object v5, p0, Landroid/widget/SlidingDrawer;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    .line 544
+    .line 538
     iget-boolean v5, p0, Landroid/widget/SlidingDrawer;->mExpanded:Z
 
     if-nez v5, :cond_0
 
     move v2, v4
 
-    .line 545
+    .line 539
     .local v2, opening:Z
     :goto_0
     if-eqz v2, :cond_2
 
-    .line 546
+    .line 540
     iget v3, p0, Landroid/widget/SlidingDrawer;->mMaximumAcceleration:I
 
     int-to-float v3, v3
 
     iput v3, p0, Landroid/widget/SlidingDrawer;->mAnimatedAcceleration:F
 
-    .line 547
+    .line 541
     iget v3, p0, Landroid/widget/SlidingDrawer;->mMaximumMajorVelocity:I
 
     int-to-float v3, v3
 
     iput v3, p0, Landroid/widget/SlidingDrawer;->mAnimatedVelocity:F
 
-    .line 548
+    .line 542
     iget v5, p0, Landroid/widget/SlidingDrawer;->mBottomOffset:I
 
     iget-boolean v3, p0, Landroid/widget/SlidingDrawer;->mVertical:Z
@@ -1595,41 +1592,41 @@
 
     iput v3, p0, Landroid/widget/SlidingDrawer;->mAnimationPosition:F
 
-    .line 550
+    .line 544
     iget v3, p0, Landroid/widget/SlidingDrawer;->mAnimationPosition:F
 
     float-to-int v3, v3
 
     invoke-direct {p0, v3}, Landroid/widget/SlidingDrawer;->moveHandle(I)V
 
-    .line 551
+    .line 545
     iput-boolean v4, p0, Landroid/widget/SlidingDrawer;->mAnimating:Z
 
-    .line 552
+    .line 546
     iget-object v3, p0, Landroid/widget/SlidingDrawer;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v3, v7}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 553
+    .line 547
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
-    .line 554
+    .line 548
     .local v0, now:J
     iput-wide v0, p0, Landroid/widget/SlidingDrawer;->mAnimationLastTime:J
 
-    .line 555
+    .line 549
     const-wide/16 v5, 0x10
 
     add-long/2addr v5, v0
 
     iput-wide v5, p0, Landroid/widget/SlidingDrawer;->mCurrentAnimationTime:J
 
-    .line 556
+    .line 550
     iput-boolean v4, p0, Landroid/widget/SlidingDrawer;->mAnimating:Z
 
-    .line 564
+    .line 558
     .end local v0           #now:J
     :goto_2
     return-void
@@ -1638,10 +1635,10 @@
     :cond_0
     move v2, v3
 
-    .line 544
+    .line 538
     goto :goto_0
 
-    .line 548
+    .line 542
     .restart local v2       #opening:Z
     :cond_1
     invoke-virtual {p0}, Landroid/widget/SlidingDrawer;->getWidth()I
@@ -1654,21 +1651,21 @@
 
     goto :goto_1
 
-    .line 558
+    .line 552
     :cond_2
     iget-boolean v4, p0, Landroid/widget/SlidingDrawer;->mAnimating:Z
 
     if-eqz v4, :cond_3
 
-    .line 559
+    .line 553
     iput-boolean v3, p0, Landroid/widget/SlidingDrawer;->mAnimating:Z
 
-    .line 560
+    .line 554
     iget-object v3, p0, Landroid/widget/SlidingDrawer;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v3, v7}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 562
+    .line 556
     :cond_3
     invoke-direct {p0, p1}, Landroid/widget/SlidingDrawer;->moveHandle(I)V
 
@@ -1681,41 +1678,41 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 667
+    .line 661
     iget-object v0, p0, Landroid/widget/SlidingDrawer;->mHandle:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setPressed(Z)V
 
-    .line 668
+    .line 662
     iput-boolean v1, p0, Landroid/widget/SlidingDrawer;->mTracking:Z
 
-    .line 670
+    .line 664
     iget-object v0, p0, Landroid/widget/SlidingDrawer;->mOnDrawerScrollListener:Landroid/widget/SlidingDrawer$OnDrawerScrollListener;
 
     if-eqz v0, :cond_0
 
-    .line 671
+    .line 665
     iget-object v0, p0, Landroid/widget/SlidingDrawer;->mOnDrawerScrollListener:Landroid/widget/SlidingDrawer$OnDrawerScrollListener;
 
     invoke-interface {v0}, Landroid/widget/SlidingDrawer$OnDrawerScrollListener;->onScrollEnded()V
 
-    .line 674
+    .line 668
     :cond_0
     iget-object v0, p0, Landroid/widget/SlidingDrawer;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     if-eqz v0, :cond_1
 
-    .line 675
+    .line 669
     iget-object v0, p0, Landroid/widget/SlidingDrawer;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v0}, Landroid/view/VelocityTracker;->recycle()V
 
-    .line 676
+    .line 670
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/widget/SlidingDrawer;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    .line 678
+    .line 672
     :cond_1
     return-void
 .end method
@@ -1726,20 +1723,20 @@
     .locals 2
 
     .prologue
-    .line 783
+    .line 777
     invoke-direct {p0}, Landroid/widget/SlidingDrawer;->prepareContent()V
 
-    .line 784
+    .line 778
     iget-object v0, p0, Landroid/widget/SlidingDrawer;->mOnDrawerScrollListener:Landroid/widget/SlidingDrawer$OnDrawerScrollListener;
 
-    .line 785
+    .line 779
     .local v0, scrollListener:Landroid/widget/SlidingDrawer$OnDrawerScrollListener;
     if-eqz v0, :cond_0
 
-    .line 786
+    .line 780
     invoke-interface {v0}, Landroid/widget/SlidingDrawer$OnDrawerScrollListener;->onScrollStarted()V
 
-    .line 788
+    .line 782
     :cond_0
     iget-boolean v1, p0, Landroid/widget/SlidingDrawer;->mVertical:Z
 
@@ -1754,17 +1751,17 @@
     :goto_0
     invoke-direct {p0, v1}, Landroid/widget/SlidingDrawer;->animateClose(I)V
 
-    .line 790
+    .line 784
     if-eqz v0, :cond_1
 
-    .line 791
+    .line 785
     invoke-interface {v0}, Landroid/widget/SlidingDrawer$OnDrawerScrollListener;->onScrollEnded()V
 
-    .line 793
+    .line 787
     :cond_1
     return-void
 
-    .line 788
+    .line 782
     :cond_2
     iget-object v1, p0, Landroid/widget/SlidingDrawer;->mHandle:Landroid/view/View;
 
@@ -1779,20 +1776,20 @@
     .locals 2
 
     .prologue
-    .line 805
+    .line 799
     invoke-direct {p0}, Landroid/widget/SlidingDrawer;->prepareContent()V
 
-    .line 806
+    .line 800
     iget-object v0, p0, Landroid/widget/SlidingDrawer;->mOnDrawerScrollListener:Landroid/widget/SlidingDrawer$OnDrawerScrollListener;
 
-    .line 807
+    .line 801
     .local v0, scrollListener:Landroid/widget/SlidingDrawer$OnDrawerScrollListener;
     if-eqz v0, :cond_0
 
-    .line 808
+    .line 802
     invoke-interface {v0}, Landroid/widget/SlidingDrawer$OnDrawerScrollListener;->onScrollStarted()V
 
-    .line 810
+    .line 804
     :cond_0
     iget-boolean v1, p0, Landroid/widget/SlidingDrawer;->mVertical:Z
 
@@ -1807,22 +1804,22 @@
     :goto_0
     invoke-direct {p0, v1}, Landroid/widget/SlidingDrawer;->animateOpen(I)V
 
-    .line 812
+    .line 806
     const/16 v1, 0x20
 
     invoke-virtual {p0, v1}, Landroid/widget/SlidingDrawer;->sendAccessibilityEvent(I)V
 
-    .line 814
+    .line 808
     if-eqz v0, :cond_1
 
-    .line 815
+    .line 809
     invoke-interface {v0}, Landroid/widget/SlidingDrawer$OnDrawerScrollListener;->onScrollEnded()V
 
-    .line 817
+    .line 811
     :cond_1
     return-void
 
-    .line 810
+    .line 804
     :cond_2
     iget-object v1, p0, Landroid/widget/SlidingDrawer;->mHandle:Landroid/view/View;
 
@@ -1837,19 +1834,19 @@
     .locals 1
 
     .prologue
-    .line 738
+    .line 732
     iget-boolean v0, p0, Landroid/widget/SlidingDrawer;->mExpanded:Z
 
     if-nez v0, :cond_0
 
-    .line 739
+    .line 733
     invoke-virtual {p0}, Landroid/widget/SlidingDrawer;->animateOpen()V
 
-    .line 743
+    .line 737
     :goto_0
     return-void
 
-    .line 741
+    .line 735
     :cond_0
     invoke-virtual {p0}, Landroid/widget/SlidingDrawer;->animateClose()V
 
@@ -1860,16 +1857,16 @@
     .locals 0
 
     .prologue
-    .line 768
+    .line 762
     invoke-direct {p0}, Landroid/widget/SlidingDrawer;->closeDrawer()V
 
-    .line 769
+    .line 763
     invoke-virtual {p0}, Landroid/widget/SlidingDrawer;->invalidate()V
 
-    .line 770
+    .line 764
     invoke-virtual {p0}, Landroid/widget/SlidingDrawer;->requestLayout()V
 
-    .line 771
+    .line 765
     return-void
 .end method
 
@@ -1882,24 +1879,24 @@
 
     const/4 v5, 0x0
 
-    .line 288
+    .line 282
     invoke-virtual {p0}, Landroid/widget/SlidingDrawer;->getDrawingTime()J
 
     move-result-wide v1
 
-    .line 289
+    .line 283
     .local v1, drawingTime:J
     iget-object v3, p0, Landroid/widget/SlidingDrawer;->mHandle:Landroid/view/View;
 
-    .line 290
+    .line 284
     .local v3, handle:Landroid/view/View;
     iget-boolean v4, p0, Landroid/widget/SlidingDrawer;->mVertical:Z
 
-    .line 292
+    .line 286
     .local v4, isVertical:Z
     invoke-virtual {p0, p1, v3, v1, v2}, Landroid/widget/SlidingDrawer;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
-    .line 294
+    .line 288
     iget-boolean v6, p0, Landroid/widget/SlidingDrawer;->mTracking:Z
 
     if-nez v6, :cond_0
@@ -1908,7 +1905,7 @@
 
     if-eqz v6, :cond_6
 
-    .line 295
+    .line 289
     :cond_0
     iget-object v6, p0, Landroid/widget/SlidingDrawer;->mContent:Landroid/view/View;
 
@@ -1916,14 +1913,14 @@
 
     move-result-object v0
 
-    .line 296
+    .line 290
     .local v0, cache:Landroid/graphics/Bitmap;
     if-eqz v0, :cond_3
 
-    .line 297
+    .line 291
     if-eqz v4, :cond_2
 
-    .line 298
+    .line 292
     invoke-virtual {v3}, Landroid/view/View;->getBottom()I
 
     move-result v6
@@ -1932,13 +1929,13 @@
 
     invoke-virtual {p1, v0, v5, v6, v7}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 312
+    .line 306
     .end local v0           #cache:Landroid/graphics/Bitmap;
     :cond_1
     :goto_0
     return-void
 
-    .line 300
+    .line 294
     .restart local v0       #cache:Landroid/graphics/Bitmap;
     :cond_2
     invoke-virtual {v3}, Landroid/view/View;->getRight()I
@@ -1951,11 +1948,11 @@
 
     goto :goto_0
 
-    .line 303
+    .line 297
     :cond_3
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 304
+    .line 298
     if-eqz v4, :cond_5
 
     move v6, v5
@@ -1976,17 +1973,17 @@
     :cond_4
     invoke-virtual {p1, v6, v5}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 306
+    .line 300
     iget-object v5, p0, Landroid/widget/SlidingDrawer;->mContent:Landroid/view/View;
 
     invoke-virtual {p0, p1, v5, v1, v2}, Landroid/widget/SlidingDrawer;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
-    .line 307
+    .line 301
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_0
 
-    .line 304
+    .line 298
     :cond_5
     invoke-virtual {v3}, Landroid/view/View;->getLeft()I
 
@@ -2000,14 +1997,14 @@
 
     goto :goto_1
 
-    .line 309
+    .line 303
     .end local v0           #cache:Landroid/graphics/Bitmap;
     :cond_6
     iget-boolean v5, p0, Landroid/widget/SlidingDrawer;->mExpanded:Z
 
     if-eqz v5, :cond_1
 
-    .line 310
+    .line 304
     iget-object v5, p0, Landroid/widget/SlidingDrawer;->mContent:Landroid/view/View;
 
     invoke-virtual {p0, p1, v5, v1, v2}, Landroid/widget/SlidingDrawer;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
@@ -2019,7 +2016,7 @@
     .locals 1
 
     .prologue
-    .line 908
+    .line 890
     iget-object v0, p0, Landroid/widget/SlidingDrawer;->mContent:Landroid/view/View;
 
     return-object v0
@@ -2029,7 +2026,7 @@
     .locals 1
 
     .prologue
-    .line 898
+    .line 880
     iget-object v0, p0, Landroid/widget/SlidingDrawer;->mHandle:Landroid/view/View;
 
     return-object v0
@@ -2039,7 +2036,7 @@
     .locals 1
 
     .prologue
-    .line 944
+    .line 926
     iget-boolean v0, p0, Landroid/widget/SlidingDrawer;->mTracking:Z
 
     if-nez v0, :cond_0
@@ -2064,7 +2061,7 @@
     .locals 1
 
     .prologue
-    .line 935
+    .line 917
     iget-boolean v0, p0, Landroid/widget/SlidingDrawer;->mExpanded:Z
 
     return v0
@@ -2074,12 +2071,12 @@
     .locals 1
 
     .prologue
-    .line 926
+    .line 908
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/widget/SlidingDrawer;->mLocked:Z
 
-    .line 927
+    .line 909
     return-void
 .end method
 
@@ -2087,7 +2084,7 @@
     .locals 3
 
     .prologue
-    .line 243
+    .line 237
     iget v0, p0, Landroid/widget/SlidingDrawer;->mHandleId:I
 
     invoke-virtual {p0, v0}, Landroid/widget/SlidingDrawer;->findViewById(I)Landroid/view/View;
@@ -2096,12 +2093,12 @@
 
     iput-object v0, p0, Landroid/widget/SlidingDrawer;->mHandle:Landroid/view/View;
 
-    .line 244
+    .line 238
     iget-object v0, p0, Landroid/widget/SlidingDrawer;->mHandle:Landroid/view/View;
 
     if-nez v0, :cond_0
 
-    .line 245
+    .line 239
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "The handle attribute is must refer to an existing child."
@@ -2110,7 +2107,7 @@
 
     throw v0
 
-    .line 248
+    .line 242
     :cond_0
     iget-object v0, p0, Landroid/widget/SlidingDrawer;->mHandle:Landroid/view/View;
 
@@ -2122,7 +2119,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 250
+    .line 244
     iget v0, p0, Landroid/widget/SlidingDrawer;->mContentId:I
 
     invoke-virtual {p0, v0}, Landroid/widget/SlidingDrawer;->findViewById(I)Landroid/view/View;
@@ -2131,12 +2128,12 @@
 
     iput-object v0, p0, Landroid/widget/SlidingDrawer;->mContent:Landroid/view/View;
 
-    .line 251
+    .line 245
     iget-object v0, p0, Landroid/widget/SlidingDrawer;->mContent:Landroid/view/View;
 
     if-nez v0, :cond_1
 
-    .line 252
+    .line 246
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "The content attribute is must refer to an existing child."
@@ -2145,7 +2142,7 @@
 
     throw v0
 
-    .line 255
+    .line 249
     :cond_1
     iget-object v0, p0, Landroid/widget/SlidingDrawer;->mContent:Landroid/view/View;
 
@@ -2153,49 +2150,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 256
-    return-void
-.end method
-
-.method public onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
-    .locals 1
-    .parameter "event"
-
-    .prologue
-    .line 821
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
-
-    .line 822
-    const-class v0, Landroid/widget/SlidingDrawer;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
-
-    .line 823
-    return-void
-.end method
-
-.method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
-    .locals 1
-    .parameter "info"
-
-    .prologue
-    .line 827
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
-
-    .line 828
-    const-class v0, Landroid/widget/SlidingDrawer;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
-
-    .line 829
+    .line 250
     return-void
 .end method
 
@@ -2208,47 +2163,47 @@
 
     const/4 v8, 0x1
 
-    .line 355
+    .line 349
     iget-boolean v9, p0, Landroid/widget/SlidingDrawer;->mLocked:Z
 
     if-eqz v9, :cond_1
 
-    .line 396
+    .line 390
     :cond_0
     :goto_0
     return v7
 
-    .line 359
+    .line 353
     :cond_1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    .line 361
+    .line 355
     .local v0, action:I
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v5
 
-    .line 362
+    .line 356
     .local v5, x:F
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v6
 
-    .line 364
+    .line 358
     .local v6, y:F
     iget-object v1, p0, Landroid/widget/SlidingDrawer;->mFrame:Landroid/graphics/Rect;
 
-    .line 365
+    .line 359
     .local v1, frame:Landroid/graphics/Rect;
     iget-object v2, p0, Landroid/widget/SlidingDrawer;->mHandle:Landroid/view/View;
 
-    .line 367
+    .line 361
     .local v2, handle:Landroid/view/View;
     invoke-virtual {v2, v1}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
 
-    .line 368
+    .line 362
     iget-boolean v9, p0, Landroid/widget/SlidingDrawer;->mTracking:Z
 
     if-nez v9, :cond_2
@@ -2263,43 +2218,43 @@
 
     if-eqz v9, :cond_0
 
-    .line 372
+    .line 366
     :cond_2
     if-nez v0, :cond_4
 
-    .line 373
+    .line 367
     iput-boolean v8, p0, Landroid/widget/SlidingDrawer;->mTracking:Z
 
-    .line 375
+    .line 369
     invoke-virtual {v2, v8}, Landroid/view/View;->setPressed(Z)V
 
-    .line 377
+    .line 371
     invoke-direct {p0}, Landroid/widget/SlidingDrawer;->prepareContent()V
 
-    .line 380
+    .line 374
     iget-object v7, p0, Landroid/widget/SlidingDrawer;->mOnDrawerScrollListener:Landroid/widget/SlidingDrawer$OnDrawerScrollListener;
 
     if-eqz v7, :cond_3
 
-    .line 381
+    .line 375
     iget-object v7, p0, Landroid/widget/SlidingDrawer;->mOnDrawerScrollListener:Landroid/widget/SlidingDrawer$OnDrawerScrollListener;
 
     invoke-interface {v7}, Landroid/widget/SlidingDrawer$OnDrawerScrollListener;->onScrollStarted()V
 
-    .line 384
+    .line 378
     :cond_3
     iget-boolean v7, p0, Landroid/widget/SlidingDrawer;->mVertical:Z
 
     if-eqz v7, :cond_5
 
-    .line 385
+    .line 379
     iget-object v7, p0, Landroid/widget/SlidingDrawer;->mHandle:Landroid/view/View;
 
     invoke-virtual {v7}, Landroid/view/View;->getTop()I
 
     move-result v4
 
-    .line 386
+    .line 380
     .local v4, top:I
     float-to-int v7, v6
 
@@ -2307,10 +2262,10 @@
 
     iput v7, p0, Landroid/widget/SlidingDrawer;->mTouchDelta:I
 
-    .line 387
+    .line 381
     invoke-direct {p0, v4}, Landroid/widget/SlidingDrawer;->prepareTracking(I)V
 
-    .line 393
+    .line 387
     .end local v4           #top:I
     :goto_1
     iget-object v7, p0, Landroid/widget/SlidingDrawer;->mVelocityTracker:Landroid/view/VelocityTracker;
@@ -2320,10 +2275,10 @@
     :cond_4
     move v7, v8
 
-    .line 396
+    .line 390
     goto :goto_0
 
-    .line 389
+    .line 383
     :cond_5
     iget-object v7, p0, Landroid/widget/SlidingDrawer;->mHandle:Landroid/view/View;
 
@@ -2331,7 +2286,7 @@
 
     move-result v3
 
-    .line 390
+    .line 384
     .local v3, left:I
     float-to-int v7, v5
 
@@ -2339,7 +2294,7 @@
 
     iput v7, p0, Landroid/widget/SlidingDrawer;->mTouchDelta:I
 
-    .line 391
+    .line 385
     invoke-direct {p0, v3}, Landroid/widget/SlidingDrawer;->prepareTracking(I)V
 
     goto :goto_1
@@ -2354,55 +2309,55 @@
     .parameter "b"
 
     .prologue
-    .line 316
+    .line 310
     iget-boolean v8, p0, Landroid/widget/SlidingDrawer;->mTracking:Z
 
     if-eqz v8, :cond_0
 
-    .line 351
+    .line 345
     :goto_0
     return-void
 
-    .line 320
+    .line 314
     :cond_0
     sub-int v7, p4, p2
 
-    .line 321
+    .line 315
     .local v7, width:I
     sub-int v6, p5, p3
 
-    .line 323
+    .line 317
     .local v6, height:I
     iget-object v5, p0, Landroid/widget/SlidingDrawer;->mHandle:Landroid/view/View;
 
-    .line 325
+    .line 319
     .local v5, handle:Landroid/view/View;
     invoke-virtual {v5}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v3
 
-    .line 326
+    .line 320
     .local v3, childWidth:I
     invoke-virtual {v5}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v0
 
-    .line 331
+    .line 325
     .local v0, childHeight:I
     iget-object v4, p0, Landroid/widget/SlidingDrawer;->mContent:Landroid/view/View;
 
-    .line 333
+    .line 327
     .local v4, content:Landroid/view/View;
     iget-boolean v8, p0, Landroid/widget/SlidingDrawer;->mVertical:Z
 
     if-eqz v8, :cond_2
 
-    .line 334
+    .line 328
     sub-int v8, v7, v3
 
     div-int/lit8 v1, v8, 0x2
 
-    .line 335
+    .line 329
     .local v1, childLeft:I
     iget-boolean v8, p0, Landroid/widget/SlidingDrawer;->mExpanded:Z
 
@@ -2410,7 +2365,7 @@
 
     iget v2, p0, Landroid/widget/SlidingDrawer;->mTopOffset:I
 
-    .line 337
+    .line 331
     .local v2, childTop:I
     :goto_1
     const/4 v8, 0x0
@@ -2435,7 +2390,7 @@
 
     invoke-virtual {v4, v8, v9, v10, v11}, Landroid/view/View;->layout(IIII)V
 
-    .line 348
+    .line 342
     :goto_2
     add-int v8, v1, v3
 
@@ -2443,14 +2398,14 @@
 
     invoke-virtual {v5, v1, v2, v8, v9}, Landroid/view/View;->layout(IIII)V
 
-    .line 349
+    .line 343
     invoke-virtual {v5}, Landroid/view/View;->getHeight()I
 
     move-result v8
 
     iput v8, p0, Landroid/widget/SlidingDrawer;->mHandleHeight:I
 
-    .line 350
+    .line 344
     invoke-virtual {v5}, Landroid/view/View;->getWidth()I
 
     move-result v8
@@ -2459,7 +2414,7 @@
 
     goto :goto_0
 
-    .line 335
+    .line 329
     .end local v2           #childTop:I
     :cond_1
     sub-int v8, v6, v0
@@ -2470,7 +2425,7 @@
 
     goto :goto_1
 
-    .line 340
+    .line 334
     .end local v1           #childLeft:I
     :cond_2
     iget-boolean v8, p0, Landroid/widget/SlidingDrawer;->mExpanded:Z
@@ -2479,14 +2434,14 @@
 
     iget v1, p0, Landroid/widget/SlidingDrawer;->mTopOffset:I
 
-    .line 341
+    .line 335
     .restart local v1       #childLeft:I
     :goto_3
     sub-int v8, v6, v0
 
     div-int/lit8 v2, v8, 0x2
 
-    .line 343
+    .line 337
     .restart local v2       #childTop:I
     iget v8, p0, Landroid/widget/SlidingDrawer;->mTopOffset:I
 
@@ -2512,7 +2467,7 @@
 
     goto :goto_2
 
-    .line 340
+    .line 334
     .end local v1           #childLeft:I
     .end local v2           #childTop:I
     :cond_3
@@ -2533,36 +2488,36 @@
     .prologue
     const/high16 v9, 0x4000
 
-    .line 260
+    .line 254
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v5
 
-    .line 261
+    .line 255
     .local v5, widthSpecMode:I
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v6
 
-    .line 263
+    .line 257
     .local v6, widthSpecSize:I
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v2
 
-    .line 264
+    .line 258
     .local v2, heightSpecMode:I
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v3
 
-    .line 266
+    .line 260
     .local v3, heightSpecSize:I
     if-eqz v5, :cond_0
 
     if-nez v2, :cond_1
 
-    .line 267
+    .line 261
     :cond_0
     new-instance v7, Ljava/lang/RuntimeException;
 
@@ -2572,20 +2527,20 @@
 
     throw v7
 
-    .line 270
+    .line 264
     :cond_1
     iget-object v0, p0, Landroid/widget/SlidingDrawer;->mHandle:Landroid/view/View;
 
-    .line 271
+    .line 265
     .local v0, handle:Landroid/view/View;
     invoke-virtual {p0, v0, p1, p2}, Landroid/widget/SlidingDrawer;->measureChild(Landroid/view/View;II)V
 
-    .line 273
+    .line 267
     iget-boolean v7, p0, Landroid/widget/SlidingDrawer;->mVertical:Z
 
     if-eqz v7, :cond_2
 
-    .line 274
+    .line 268
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v7
@@ -2596,7 +2551,7 @@
 
     sub-int v1, v7, v8
 
-    .line 275
+    .line 269
     .local v1, height:I
     iget-object v7, p0, Landroid/widget/SlidingDrawer;->mContent:Landroid/view/View;
 
@@ -2610,15 +2565,15 @@
 
     invoke-virtual {v7, v8, v9}, Landroid/view/View;->measure(II)V
 
-    .line 283
+    .line 277
     .end local v1           #height:I
     :goto_0
     invoke-virtual {p0, v6, v3}, Landroid/widget/SlidingDrawer;->setMeasuredDimension(II)V
 
-    .line 284
+    .line 278
     return-void
 
-    .line 278
+    .line 272
     :cond_2
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -2630,7 +2585,7 @@
 
     sub-int v4, v7, v8
 
-    .line 279
+    .line 273
     .local v4, width:I
     iget-object v7, p0, Landroid/widget/SlidingDrawer;->mContent:Landroid/view/View;
 
@@ -2652,39 +2607,39 @@
     .parameter "event"
 
     .prologue
-    .line 401
+    .line 395
     iget-boolean v9, p0, Landroid/widget/SlidingDrawer;->mLocked:Z
 
     if-eqz v9, :cond_0
 
-    .line 402
+    .line 396
     const/4 v9, 0x1
 
-    .line 479
+    .line 473
     :goto_0
     return v9
 
-    .line 405
+    .line 399
     :cond_0
     iget-boolean v9, p0, Landroid/widget/SlidingDrawer;->mTracking:Z
 
     if-eqz v9, :cond_1
 
-    .line 406
+    .line 400
     iget-object v9, p0, Landroid/widget/SlidingDrawer;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v9, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
-    .line 407
+    .line 401
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    .line 408
+    .line 402
     .local v0, action:I
     packed-switch v0, :pswitch_data_0
 
-    .line 479
+    .line 473
     .end local v0           #action:I
     :cond_1
     :goto_1
@@ -2707,7 +2662,7 @@
 
     goto :goto_0
 
-    .line 410
+    .line 404
     .restart local v0       #action:I
     :pswitch_0
     iget-boolean v9, p0, Landroid/widget/SlidingDrawer;->mVertical:Z
@@ -2736,36 +2691,36 @@
 
     goto :goto_2
 
-    .line 414
+    .line 408
     :pswitch_1
     iget-object v5, p0, Landroid/widget/SlidingDrawer;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    .line 415
+    .line 409
     .local v5, velocityTracker:Landroid/view/VelocityTracker;
     iget v9, p0, Landroid/widget/SlidingDrawer;->mVelocityUnits:I
 
     invoke-virtual {v5, v9}, Landroid/view/VelocityTracker;->computeCurrentVelocity(I)V
 
-    .line 417
+    .line 411
     invoke-virtual {v5}, Landroid/view/VelocityTracker;->getYVelocity()F
 
     move-result v8
 
-    .line 418
+    .line 412
     .local v8, yVelocity:F
     invoke-virtual {v5}, Landroid/view/VelocityTracker;->getXVelocity()F
 
     move-result v7
 
-    .line 421
+    .line 415
     .local v7, xVelocity:F
     iget-boolean v6, p0, Landroid/widget/SlidingDrawer;->mVertical:Z
 
-    .line 422
+    .line 416
     .local v6, vertical:Z
     if-eqz v6, :cond_a
 
-    .line 423
+    .line 417
     const/4 v9, 0x0
 
     cmpg-float v9, v8, v9
@@ -2774,7 +2729,7 @@
 
     const/4 v2, 0x1
 
-    .line 424
+    .line 418
     .local v2, negative:Z
     :goto_3
     const/4 v9, 0x0
@@ -2783,10 +2738,10 @@
 
     if-gez v9, :cond_4
 
-    .line 425
+    .line 419
     neg-float v7, v7
 
-    .line 427
+    .line 421
     :cond_4
     iget v9, p0, Landroid/widget/SlidingDrawer;->mMaximumMinorVelocity:I
 
@@ -2796,12 +2751,12 @@
 
     if-lez v9, :cond_5
 
-    .line 428
+    .line 422
     iget v9, p0, Landroid/widget/SlidingDrawer;->mMaximumMinorVelocity:I
 
     int-to-float v7, v9
 
-    .line 440
+    .line 434
     :cond_5
     :goto_4
     float-to-double v9, v7
@@ -2814,14 +2769,14 @@
 
     double-to-float v4, v9
 
-    .line 441
+    .line 435
     .local v4, velocity:F
     if-eqz v2, :cond_6
 
-    .line 442
+    .line 436
     neg-float v4, v4
 
-    .line 445
+    .line 439
     :cond_6
     iget-object v9, p0, Landroid/widget/SlidingDrawer;->mHandle:Landroid/view/View;
 
@@ -2829,7 +2784,7 @@
 
     move-result v3
 
-    .line 446
+    .line 440
     .local v3, top:I
     iget-object v9, p0, Landroid/widget/SlidingDrawer;->mHandle:Landroid/view/View;
 
@@ -2837,7 +2792,7 @@
 
     move-result v1
 
-    .line 448
+    .line 442
     .local v1, left:I
     invoke-static {v4}, Ljava/lang/Math;->abs(F)F
 
@@ -2851,7 +2806,7 @@
 
     if-gez v9, :cond_16
 
-    .line 449
+    .line 443
     if-eqz v6, :cond_d
 
     iget-boolean v9, p0, Landroid/widget/SlidingDrawer;->mExpanded:Z
@@ -2891,23 +2846,23 @@
 
     if-le v3, v9, :cond_f
 
-    .line 456
+    .line 450
     :cond_8
     iget-boolean v9, p0, Landroid/widget/SlidingDrawer;->mAllowSingleTap:Z
 
     if-eqz v9, :cond_13
 
-    .line 457
+    .line 451
     const/4 v9, 0x0
 
     invoke-virtual {p0, v9}, Landroid/widget/SlidingDrawer;->playSoundEffect(I)V
 
-    .line 459
+    .line 453
     iget-boolean v9, p0, Landroid/widget/SlidingDrawer;->mExpanded:Z
 
     if-eqz v9, :cond_11
 
-    .line 460
+    .line 454
     if-eqz v6, :cond_10
 
     .end local v3           #top:I
@@ -2916,7 +2871,7 @@
 
     goto/16 :goto_1
 
-    .line 423
+    .line 417
     .end local v1           #left:I
     .end local v2           #negative:Z
     .end local v4           #velocity:F
@@ -2925,7 +2880,7 @@
 
     goto :goto_3
 
-    .line 431
+    .line 425
     :cond_a
     const/4 v9, 0x0
 
@@ -2935,7 +2890,7 @@
 
     const/4 v2, 0x1
 
-    .line 432
+    .line 426
     .restart local v2       #negative:Z
     :goto_6
     const/4 v9, 0x0
@@ -2944,10 +2899,10 @@
 
     if-gez v9, :cond_b
 
-    .line 433
+    .line 427
     neg-float v8, v8
 
-    .line 435
+    .line 429
     :cond_b
     iget v9, p0, Landroid/widget/SlidingDrawer;->mMaximumMinorVelocity:I
 
@@ -2957,21 +2912,21 @@
 
     if-lez v9, :cond_5
 
-    .line 436
+    .line 430
     iget v9, p0, Landroid/widget/SlidingDrawer;->mMaximumMinorVelocity:I
 
     int-to-float v8, v9
 
     goto :goto_4
 
-    .line 431
+    .line 425
     .end local v2           #negative:Z
     :cond_c
     const/4 v2, 0x0
 
     goto :goto_6
 
-    .line 449
+    .line 443
     .restart local v1       #left:I
     .restart local v2       #negative:Z
     .restart local v3       #top:I
@@ -3014,7 +2969,7 @@
 
     if-gt v1, v9, :cond_8
 
-    .line 469
+    .line 463
     :cond_f
     if-eqz v6, :cond_15
 
@@ -3030,10 +2985,10 @@
     :cond_10
     move v3, v1
 
-    .line 460
+    .line 454
     goto :goto_5
 
-    .line 462
+    .line 456
     :cond_11
     if-eqz v6, :cond_12
 
@@ -3049,7 +3004,7 @@
 
     goto :goto_8
 
-    .line 465
+    .line 459
     :cond_13
     if-eqz v6, :cond_14
 
@@ -3070,10 +3025,10 @@
     :cond_15
     move v3, v1
 
-    .line 469
+    .line 463
     goto :goto_7
 
-    .line 472
+    .line 466
     :cond_16
     if-eqz v6, :cond_17
 
@@ -3091,7 +3046,7 @@
 
     goto :goto_a
 
-    .line 479
+    .line 473
     .end local v0           #action:I
     .end local v1           #left:I
     .end local v2           #negative:Z
@@ -3106,7 +3061,7 @@
 
     goto/16 :goto_0
 
-    .line 408
+    .line 402
     nop
 
     :pswitch_data_0
@@ -3121,21 +3076,21 @@
     .locals 1
 
     .prologue
-    .line 753
+    .line 747
     invoke-direct {p0}, Landroid/widget/SlidingDrawer;->openDrawer()V
 
-    .line 754
+    .line 748
     invoke-virtual {p0}, Landroid/widget/SlidingDrawer;->invalidate()V
 
-    .line 755
+    .line 749
     invoke-virtual {p0}, Landroid/widget/SlidingDrawer;->requestLayout()V
 
-    .line 757
+    .line 751
     const/16 v0, 0x20
 
     invoke-virtual {p0, v0}, Landroid/widget/SlidingDrawer;->sendAccessibilityEvent(I)V
 
-    .line 758
+    .line 752
     return-void
 .end method
 
@@ -3144,10 +3099,10 @@
     .parameter "onDrawerCloseListener"
 
     .prologue
-    .line 876
+    .line 858
     iput-object p1, p0, Landroid/widget/SlidingDrawer;->mOnDrawerCloseListener:Landroid/widget/SlidingDrawer$OnDrawerCloseListener;
 
-    .line 877
+    .line 859
     return-void
 .end method
 
@@ -3156,10 +3111,10 @@
     .parameter "onDrawerOpenListener"
 
     .prologue
-    .line 867
+    .line 849
     iput-object p1, p0, Landroid/widget/SlidingDrawer;->mOnDrawerOpenListener:Landroid/widget/SlidingDrawer$OnDrawerOpenListener;
 
-    .line 868
+    .line 850
     return-void
 .end method
 
@@ -3168,10 +3123,10 @@
     .parameter "onDrawerScrollListener"
 
     .prologue
-    .line 888
+    .line 870
     iput-object p1, p0, Landroid/widget/SlidingDrawer;->mOnDrawerScrollListener:Landroid/widget/SlidingDrawer$OnDrawerScrollListener;
 
-    .line 889
+    .line 871
     return-void
 .end method
 
@@ -3179,25 +3134,25 @@
     .locals 1
 
     .prologue
-    .line 719
+    .line 713
     iget-boolean v0, p0, Landroid/widget/SlidingDrawer;->mExpanded:Z
 
     if-nez v0, :cond_0
 
-    .line 720
+    .line 714
     invoke-direct {p0}, Landroid/widget/SlidingDrawer;->openDrawer()V
 
-    .line 724
+    .line 718
     :goto_0
     invoke-virtual {p0}, Landroid/widget/SlidingDrawer;->invalidate()V
 
-    .line 725
+    .line 719
     invoke-virtual {p0}, Landroid/widget/SlidingDrawer;->requestLayout()V
 
-    .line 726
+    .line 720
     return-void
 
-    .line 722
+    .line 716
     :cond_0
     invoke-direct {p0}, Landroid/widget/SlidingDrawer;->closeDrawer()V
 
@@ -3208,11 +3163,11 @@
     .locals 1
 
     .prologue
-    .line 917
+    .line 899
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/widget/SlidingDrawer;->mLocked:Z
 
-    .line 918
+    .line 900
     return-void
 .end method

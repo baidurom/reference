@@ -28,9 +28,7 @@
 
 .field static final TRANSACTION_createMessage:I = 0x1
 
-.field static final TRANSACTION_getUris:I = 0x2
-
-.field static final TRANSACTION_onNdefPushComplete:I = 0x3
+.field static final TRANSACTION_onNdefPushComplete:I = 0x2
 
 
 # direct methods
@@ -124,7 +122,7 @@
     .line 41
     sparse-switch p1, :sswitch_data_0
 
-    .line 78
+    .line 70
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
@@ -182,30 +180,9 @@
     invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 65
-    invoke-virtual {p0}, Landroid/nfc/INdefPushCallback$Stub;->getUris()[Landroid/net/Uri;
-
-    move-result-object v0
-
-    .line 66
-    .local v0, _result:[Landroid/net/Uri;
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 67
-    invoke-virtual {p3, v0, v1}, Landroid/os/Parcel;->writeTypedArray([Landroid/os/Parcelable;I)V
-
-    goto :goto_0
-
-    .line 72
-    .end local v0           #_result:[Landroid/net/Uri;
-    :sswitch_3
-    const-string v2, "android.nfc.INdefPushCallback"
-
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 73
     invoke-virtual {p0}, Landroid/nfc/INdefPushCallback$Stub;->onNdefPushComplete()V
 
-    .line 74
+    .line 66
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     goto :goto_0
@@ -217,7 +194,6 @@
     .sparse-switch
         0x1 -> :sswitch_1
         0x2 -> :sswitch_2
-        0x3 -> :sswitch_3
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

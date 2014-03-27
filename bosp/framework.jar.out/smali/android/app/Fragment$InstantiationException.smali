@@ -21,9 +21,9 @@
     .parameter "cause"
 
     .prologue
-    .line 531
+    .line 520
     invoke-direct {p0, p1, p2}, Landroid/util/AndroidRuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 532
+    .line 521
     return-void
 .end method

@@ -31,14 +31,6 @@
     .end annotation
 .end method
 
-.method public abstract onGetSentenceSuggestionsMultiple([Landroid/view/textservice/TextInfo;I)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract onGetSuggestionsMultiple([Landroid/view/textservice/TextInfo;IZ)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

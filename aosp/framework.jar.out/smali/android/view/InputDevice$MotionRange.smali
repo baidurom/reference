@@ -39,28 +39,28 @@
     .parameter "fuzz"
 
     .prologue
-    .line 611
+    .line 447
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 612
+    .line 448
     iput p1, p0, Landroid/view/InputDevice$MotionRange;->mAxis:I
 
-    .line 613
+    .line 449
     iput p2, p0, Landroid/view/InputDevice$MotionRange;->mSource:I
 
-    .line 614
+    .line 450
     iput p3, p0, Landroid/view/InputDevice$MotionRange;->mMin:F
 
-    .line 615
+    .line 451
     iput p4, p0, Landroid/view/InputDevice$MotionRange;->mMax:F
 
-    .line 616
+    .line 452
     iput p5, p0, Landroid/view/InputDevice$MotionRange;->mFlat:F
 
-    .line 617
+    .line 453
     iput p6, p0, Landroid/view/InputDevice$MotionRange;->mFuzz:F
 
-    .line 618
+    .line 454
     return-void
 .end method
 
@@ -75,10 +75,21 @@
     .parameter "x6"
 
     .prologue
-    .line 603
+    .line 439
     invoke-direct/range {p0 .. p6}, Landroid/view/InputDevice$MotionRange;-><init>(IIFFFF)V
 
     return-void
+.end method
+
+.method static synthetic access$000(Landroid/view/InputDevice$MotionRange;)I
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 439
+    iget v0, p0, Landroid/view/InputDevice$MotionRange;->mAxis:I
+
+    return v0
 .end method
 
 .method static synthetic access$100(Landroid/view/InputDevice$MotionRange;)I
@@ -86,30 +97,8 @@
     .parameter "x0"
 
     .prologue
-    .line 603
-    iget v0, p0, Landroid/view/InputDevice$MotionRange;->mAxis:I
-
-    return v0
-.end method
-
-.method static synthetic access$200(Landroid/view/InputDevice$MotionRange;)I
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 603
+    .line 439
     iget v0, p0, Landroid/view/InputDevice$MotionRange;->mSource:I
-
-    return v0
-.end method
-
-.method static synthetic access$400(Landroid/view/InputDevice$MotionRange;)F
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 603
-    iget v0, p0, Landroid/view/InputDevice$MotionRange;->mMin:F
 
     return v0
 .end method
@@ -119,8 +108,8 @@
     .parameter "x0"
 
     .prologue
-    .line 603
-    iget v0, p0, Landroid/view/InputDevice$MotionRange;->mMax:F
+    .line 439
+    iget v0, p0, Landroid/view/InputDevice$MotionRange;->mMin:F
 
     return v0
 .end method
@@ -130,8 +119,8 @@
     .parameter "x0"
 
     .prologue
-    .line 603
-    iget v0, p0, Landroid/view/InputDevice$MotionRange;->mFlat:F
+    .line 439
+    iget v0, p0, Landroid/view/InputDevice$MotionRange;->mMax:F
 
     return v0
 .end method
@@ -141,7 +130,18 @@
     .parameter "x0"
 
     .prologue
-    .line 603
+    .line 439
+    iget v0, p0, Landroid/view/InputDevice$MotionRange;->mFlat:F
+
+    return v0
+.end method
+
+.method static synthetic access$800(Landroid/view/InputDevice$MotionRange;)F
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 439
     iget v0, p0, Landroid/view/InputDevice$MotionRange;->mFuzz:F
 
     return v0
@@ -153,7 +153,7 @@
     .locals 1
 
     .prologue
-    .line 625
+    .line 461
     iget v0, p0, Landroid/view/InputDevice$MotionRange;->mAxis:I
 
     return v0
@@ -163,7 +163,7 @@
     .locals 1
 
     .prologue
-    .line 669
+    .line 505
     iget v0, p0, Landroid/view/InputDevice$MotionRange;->mFlat:F
 
     return v0
@@ -173,7 +173,7 @@
     .locals 1
 
     .prologue
-    .line 681
+    .line 517
     iget v0, p0, Landroid/view/InputDevice$MotionRange;->mFuzz:F
 
     return v0
@@ -183,7 +183,7 @@
     .locals 1
 
     .prologue
-    .line 649
+    .line 485
     iget v0, p0, Landroid/view/InputDevice$MotionRange;->mMax:F
 
     return v0
@@ -193,7 +193,7 @@
     .locals 1
 
     .prologue
-    .line 641
+    .line 477
     iget v0, p0, Landroid/view/InputDevice$MotionRange;->mMin:F
 
     return v0
@@ -203,7 +203,7 @@
     .locals 2
 
     .prologue
-    .line 657
+    .line 493
     iget v0, p0, Landroid/view/InputDevice$MotionRange;->mMax:F
 
     iget v1, p0, Landroid/view/InputDevice$MotionRange;->mMin:F
@@ -217,7 +217,7 @@
     .locals 1
 
     .prologue
-    .line 633
+    .line 469
     iget v0, p0, Landroid/view/InputDevice$MotionRange;->mSource:I
 
     return v0

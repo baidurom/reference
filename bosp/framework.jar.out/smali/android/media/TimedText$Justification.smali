@@ -1,4 +1,4 @@
-.class public final Landroid/media/TimedText$Justification;
+.class public Landroid/media/TimedText$Justification;
 .super Ljava/lang/Object;
 .source "TimedText.java"
 
@@ -9,33 +9,38 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
+    accessFlags = 0x1
     name = "Justification"
 .end annotation
 
 
 # instance fields
-.field public final horizontalJustification:I
+.field public horizontalJustification:I
 
-.field public final verticalJustification:I
+.field final synthetic this$0:Landroid/media/TimedText;
+
+.field public verticalJustification:I
 
 
 # direct methods
-.method public constructor <init>(II)V
-    .locals 0
-    .parameter "horizontal"
-    .parameter "vertical"
+.method public constructor <init>(Landroid/media/TimedText;)V
+    .locals 1
+    .parameter
 
     .prologue
-    .line 160
+    const/4 v0, -0x1
+
+    .line 174
+    iput-object p1, p0, Landroid/media/TimedText$Justification;->this$0:Landroid/media/TimedText;
+
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 161
-    iput p1, p0, Landroid/media/TimedText$Justification;->horizontalJustification:I
+    .line 167
+    iput v0, p0, Landroid/media/TimedText$Justification;->horizontalJustification:I
 
-    .line 162
-    iput p2, p0, Landroid/media/TimedText$Justification;->verticalJustification:I
+    .line 172
+    iput v0, p0, Landroid/media/TimedText$Justification;->verticalJustification:I
 
-    .line 163
+    .line 174
     return-void
 .end method

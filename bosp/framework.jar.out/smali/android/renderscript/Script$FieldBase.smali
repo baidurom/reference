@@ -25,10 +25,10 @@
     .locals 0
 
     .prologue
-    .line 302
+    .line 195
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 303
+    .line 196
     return-void
 .end method
 
@@ -38,7 +38,7 @@
     .locals 1
 
     .prologue
-    .line 314
+    .line 207
     iget-object v0, p0, Landroid/renderscript/Script$FieldBase;->mAllocation:Landroid/renderscript/Allocation;
 
     return-object v0
@@ -48,7 +48,7 @@
     .locals 1
 
     .prologue
-    .line 306
+    .line 199
     iget-object v0, p0, Landroid/renderscript/Script$FieldBase;->mElement:Landroid/renderscript/Element;
 
     return-object v0
@@ -58,7 +58,7 @@
     .locals 1
 
     .prologue
-    .line 310
+    .line 203
     iget-object v0, p0, Landroid/renderscript/Script$FieldBase;->mAllocation:Landroid/renderscript/Allocation;
 
     invoke-virtual {v0}, Landroid/renderscript/Allocation;->getType()Landroid/renderscript/Type;
@@ -74,7 +74,7 @@
     .parameter "dimx"
 
     .prologue
-    .line 295
+    .line 188
     iget-object v0, p0, Landroid/renderscript/Script$FieldBase;->mElement:Landroid/renderscript/Element;
 
     const/4 v1, 0x1
@@ -85,7 +85,7 @@
 
     iput-object v0, p0, Landroid/renderscript/Script$FieldBase;->mAllocation:Landroid/renderscript/Allocation;
 
-    .line 296
+    .line 189
     return-void
 .end method
 
@@ -96,7 +96,7 @@
     .parameter "usages"
 
     .prologue
-    .line 299
+    .line 192
     iget-object v0, p0, Landroid/renderscript/Script$FieldBase;->mElement:Landroid/renderscript/Element;
 
     or-int/lit8 v1, p3, 0x1
@@ -107,7 +107,7 @@
 
     iput-object v0, p0, Landroid/renderscript/Script$FieldBase;->mAllocation:Landroid/renderscript/Allocation;
 
-    .line 300
+    .line 193
     return-void
 .end method
 
@@ -115,6 +115,6 @@
     .locals 0
 
     .prologue
-    .line 319
+    .line 212
     return-void
 .end method

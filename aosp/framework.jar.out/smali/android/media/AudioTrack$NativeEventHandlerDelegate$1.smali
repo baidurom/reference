@@ -28,7 +28,7 @@
     .parameter
 
     .prologue
-    .line 1142
+    .line 1084
     iput-object p1, p0, Landroid/media/AudioTrack$NativeEventHandlerDelegate$1;->this$1:Landroid/media/AudioTrack$NativeEventHandlerDelegate;
 
     iput-object p3, p0, Landroid/media/AudioTrack$NativeEventHandlerDelegate$1;->val$this$0:Landroid/media/AudioTrack;
@@ -45,7 +45,7 @@
     .parameter "msg"
 
     .prologue
-    .line 1145
+    .line 1087
     iget-object v1, p0, Landroid/media/AudioTrack$NativeEventHandlerDelegate$1;->this$1:Landroid/media/AudioTrack$NativeEventHandlerDelegate;
 
     #getter for: Landroid/media/AudioTrack$NativeEventHandlerDelegate;->mAudioTrack:Landroid/media/AudioTrack;
@@ -55,16 +55,16 @@
 
     if-nez v1, :cond_1
 
-    .line 1168
+    .line 1110
     :cond_0
     :goto_0
     return-void
 
-    .line 1148
+    .line 1090
     :cond_1
     const/4 v0, 0x0
 
-    .line 1149
+    .line 1091
     .local v0, listener:Landroid/media/AudioTrack$OnPlaybackPositionUpdateListener;
     iget-object v1, p0, Landroid/media/AudioTrack$NativeEventHandlerDelegate$1;->this$1:Landroid/media/AudioTrack$NativeEventHandlerDelegate;
 
@@ -77,7 +77,7 @@
 
     monitor-enter v2
 
-    .line 1150
+    .line 1092
     :try_start_0
     iget-object v1, p0, Landroid/media/AudioTrack$NativeEventHandlerDelegate$1;->this$1:Landroid/media/AudioTrack$NativeEventHandlerDelegate;
 
@@ -91,17 +91,17 @@
 
     move-result-object v0
 
-    .line 1151
+    .line 1093
     monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1152
+    .line 1094
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 1164
+    .line 1106
     const-string v1, "AudioTrack-Java"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -128,7 +128,7 @@
 
     goto :goto_0
 
-    .line 1151
+    .line 1093
     :catchall_0
     move-exception v1
 
@@ -139,11 +139,11 @@
 
     throw v1
 
-    .line 1154
+    .line 1096
     :pswitch_0
     if-eqz v0, :cond_0
 
-    .line 1155
+    .line 1097
     iget-object v1, p0, Landroid/media/AudioTrack$NativeEventHandlerDelegate$1;->this$1:Landroid/media/AudioTrack$NativeEventHandlerDelegate;
 
     #getter for: Landroid/media/AudioTrack$NativeEventHandlerDelegate;->mAudioTrack:Landroid/media/AudioTrack;
@@ -155,11 +155,11 @@
 
     goto :goto_0
 
-    .line 1159
+    .line 1101
     :pswitch_1
     if-eqz v0, :cond_0
 
-    .line 1160
+    .line 1102
     iget-object v1, p0, Landroid/media/AudioTrack$NativeEventHandlerDelegate$1;->this$1:Landroid/media/AudioTrack$NativeEventHandlerDelegate;
 
     #getter for: Landroid/media/AudioTrack$NativeEventHandlerDelegate;->mAudioTrack:Landroid/media/AudioTrack;
@@ -171,7 +171,7 @@
 
     goto :goto_0
 
-    .line 1152
+    .line 1094
     nop
 
     :pswitch_data_0

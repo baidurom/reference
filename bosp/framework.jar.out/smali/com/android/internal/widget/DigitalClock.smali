@@ -127,7 +127,18 @@
     return-object p1
 .end method
 
-.method static synthetic access$100(Lcom/android/internal/widget/DigitalClock;)Landroid/os/Handler;
+.method static synthetic access$100(Lcom/android/internal/widget/DigitalClock;)V
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    .line 42
+    invoke-direct {p0}, Lcom/android/internal/widget/DigitalClock;->updateTime()V
+
+    return-void
+.end method
+
+.method static synthetic access$200(Lcom/android/internal/widget/DigitalClock;)Landroid/os/Handler;
     .locals 1
     .parameter "x0"
 
@@ -138,7 +149,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$200(Lcom/android/internal/widget/DigitalClock;)V
+.method static synthetic access$300(Lcom/android/internal/widget/DigitalClock;)V
     .locals 0
     .parameter "x0"
 
@@ -188,6 +199,67 @@
     .line 241
     :cond_0
     const-string v0, "h:mm"
+
+    goto :goto_0
+.end method
+
+.method private updateTime()V
+    .locals 4
+
+    .prologue
+    .line 232
+    iget-object v1, p0, Lcom/android/internal/widget/DigitalClock;->mCalendar:Ljava/util/Calendar;
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v2
+
+    invoke-virtual {v1, v2, v3}, Ljava/util/Calendar;->setTimeInMillis(J)V
+
+    .line 234
+    iget-object v1, p0, Lcom/android/internal/widget/DigitalClock;->mFormat:Ljava/lang/String;
+
+    iget-object v2, p0, Lcom/android/internal/widget/DigitalClock;->mCalendar:Ljava/util/Calendar;
+
+    invoke-static {v1, v2}, Landroid/text/format/DateFormat;->format(Ljava/lang/CharSequence;Ljava/util/Calendar;)Ljava/lang/CharSequence;
+
+    move-result-object v0
+
+    .line 235
+    .local v0, newTime:Ljava/lang/CharSequence;
+    iget-object v1, p0, Lcom/android/internal/widget/DigitalClock;->mTimeDisplayBackground:Landroid/widget/TextView;
+
+    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 236
+    iget-object v1, p0, Lcom/android/internal/widget/DigitalClock;->mTimeDisplayForeground:Landroid/widget/TextView;
+
+    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 237
+    iget-object v2, p0, Lcom/android/internal/widget/DigitalClock;->mAmPm:Lcom/android/internal/widget/DigitalClock$AmPm;
+
+    iget-object v1, p0, Lcom/android/internal/widget/DigitalClock;->mCalendar:Ljava/util/Calendar;
+
+    const/16 v3, 0x9
+
+    invoke-virtual {v1, v3}, Ljava/util/Calendar;->get(I)I
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    const/4 v1, 0x1
+
+    :goto_0
+    invoke-virtual {v2, v1}, Lcom/android/internal/widget/DigitalClock$AmPm;->setIsMorning(Z)V
+
+    .line 238
+    return-void
+
+    .line 237
+    :cond_0
+    const/4 v1, 0x0
 
     goto :goto_0
 .end method
@@ -242,7 +314,7 @@
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
     .line 195
-    iget-object v1, p0, Lcom/android/internal/widget/DigitalClock;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     iget-object v2, p0, Lcom/android/internal/widget/DigitalClock;->mIntentReceiver:Landroid/content/BroadcastReceiver;
 
@@ -263,7 +335,7 @@
     iput-object v1, p0, Lcom/android/internal/widget/DigitalClock;->mFormatChangeObserver:Landroid/database/ContentObserver;
 
     .line 201
-    iget-object v1, p0, Lcom/android/internal/widget/DigitalClock;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -279,7 +351,7 @@
 
     .line 205
     :cond_1
-    invoke-virtual {p0}, Lcom/android/internal/widget/DigitalClock;->updateTime()V
+    invoke-direct {p0}, Lcom/android/internal/widget/DigitalClock;->updateTime()V
 
     .line 206
     return-void
@@ -307,7 +379,7 @@
     if-eqz v0, :cond_0
 
     .line 215
-    iget-object v0, p0, Lcom/android/internal/widget/DigitalClock;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/internal/widget/DigitalClock;->mIntentReceiver:Landroid/content/BroadcastReceiver;
 
@@ -320,7 +392,7 @@
     if-eqz v0, :cond_1
 
     .line 218
-    iget-object v0, p0, Lcom/android/internal/widget/DigitalClock;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -414,67 +486,6 @@
     return-void
 .end method
 
-.method public updateTime()V
-    .locals 4
-
-    .prologue
-    .line 232
-    iget-object v1, p0, Lcom/android/internal/widget/DigitalClock;->mCalendar:Ljava/util/Calendar;
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v2
-
-    invoke-virtual {v1, v2, v3}, Ljava/util/Calendar;->setTimeInMillis(J)V
-
-    .line 234
-    iget-object v1, p0, Lcom/android/internal/widget/DigitalClock;->mFormat:Ljava/lang/String;
-
-    iget-object v2, p0, Lcom/android/internal/widget/DigitalClock;->mCalendar:Ljava/util/Calendar;
-
-    invoke-static {v1, v2}, Landroid/text/format/DateFormat;->format(Ljava/lang/CharSequence;Ljava/util/Calendar;)Ljava/lang/CharSequence;
-
-    move-result-object v0
-
-    .line 235
-    .local v0, newTime:Ljava/lang/CharSequence;
-    iget-object v1, p0, Lcom/android/internal/widget/DigitalClock;->mTimeDisplayBackground:Landroid/widget/TextView;
-
-    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 236
-    iget-object v1, p0, Lcom/android/internal/widget/DigitalClock;->mTimeDisplayForeground:Landroid/widget/TextView;
-
-    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 237
-    iget-object v2, p0, Lcom/android/internal/widget/DigitalClock;->mAmPm:Lcom/android/internal/widget/DigitalClock$AmPm;
-
-    iget-object v1, p0, Lcom/android/internal/widget/DigitalClock;->mCalendar:Ljava/util/Calendar;
-
-    const/16 v3, 0x9
-
-    invoke-virtual {v1, v3}, Ljava/util/Calendar;->get(I)I
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    const/4 v1, 0x1
-
-    :goto_0
-    invoke-virtual {v2, v1}, Lcom/android/internal/widget/DigitalClock$AmPm;->setIsMorning(Z)V
-
-    .line 238
-    return-void
-
-    .line 237
-    :cond_0
-    const/4 v1, 0x0
-
-    goto :goto_0
-.end method
-
 .method updateTime(Ljava/util/Calendar;)V
     .locals 0
     .parameter "c"
@@ -484,7 +495,7 @@
     iput-object p1, p0, Lcom/android/internal/widget/DigitalClock;->mCalendar:Ljava/util/Calendar;
 
     .line 228
-    invoke-virtual {p0}, Lcom/android/internal/widget/DigitalClock;->updateTime()V
+    invoke-direct {p0}, Lcom/android/internal/widget/DigitalClock;->updateTime()V
 
     .line 229
     return-void

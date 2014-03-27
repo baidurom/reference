@@ -143,6 +143,38 @@
     .end annotation
 .end method
 
+.method public abstract noteScanWifiLockAcquired(I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract noteScanWifiLockAcquiredFromSource(Landroid/os/WorkSource;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract noteScanWifiLockReleased(I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract noteScanWifiLockReleasedFromSource(Landroid/os/WorkSource;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract noteScreenBrightness(I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -296,38 +328,6 @@
 .end method
 
 .method public abstract noteWifiRunningChanged(Landroid/os/WorkSource;Landroid/os/WorkSource;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract noteWifiScanStarted(I)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract noteWifiScanStartedFromSource(Landroid/os/WorkSource;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract noteWifiScanStopped(I)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract noteWifiScanStoppedFromSource(Landroid/os/WorkSource;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

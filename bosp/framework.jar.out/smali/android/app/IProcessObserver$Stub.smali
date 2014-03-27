@@ -28,9 +28,7 @@
 
 .field static final TRANSACTION_onForegroundActivitiesChanged:I = 0x1
 
-.field static final TRANSACTION_onImportanceChanged:I = 0x2
-
-.field static final TRANSACTION_onProcessDied:I = 0x3
+.field static final TRANSACTION_onProcessDied:I = 0x2
 
 
 # direct methods
@@ -124,7 +122,7 @@
     .line 39
     sparse-switch p1, :sswitch_data_0
 
-    .line 81
+    .line 69
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v3
@@ -200,52 +198,17 @@
 
     move-result v1
 
-    .line 66
-    .restart local v1       #_arg1:I
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v2
-
-    .line 67
-    .local v2, _arg2:I
-    invoke-virtual {p0, v0, v1, v2}, Landroid/app/IProcessObserver$Stub;->onImportanceChanged(III)V
-
-    goto :goto_0
-
-    .line 72
-    .end local v0           #_arg0:I
-    .end local v1           #_arg1:I
-    .end local v2           #_arg2:I
-    :sswitch_3
-    const-string v4, "android.app.IProcessObserver"
-
-    invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 74
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    .line 76
-    .restart local v0       #_arg0:I
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v1
-
-    .line 77
+    .line 65
     .restart local v1       #_arg1:I
     invoke-virtual {p0, v0, v1}, Landroid/app/IProcessObserver$Stub;->onProcessDied(II)V
 
     goto :goto_0
 
     .line 39
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
         0x2 -> :sswitch_2
-        0x3 -> :sswitch_3
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

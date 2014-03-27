@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 316
+    .line 522
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,13 +45,19 @@
     .parameter "in"
 
     .prologue
-    .line 318
+    .line 524
     new-instance v0, Landroid/view/InputDevice;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p1, v1}, Landroid/view/InputDevice;-><init>(Landroid/os/Parcel;Landroid/view/InputDevice$1;)V
+    invoke-direct {v0, v1}, Landroid/view/InputDevice;-><init>(Landroid/view/InputDevice$1;)V
 
+    .line 525
+    .local v0, result:Landroid/view/InputDevice;
+    #calls: Landroid/view/InputDevice;->readFromParcel(Landroid/os/Parcel;)V
+    invoke-static {v0, p1}, Landroid/view/InputDevice;->access$400(Landroid/view/InputDevice;Landroid/os/Parcel;)V
+
+    .line 526
     return-object v0
 .end method
 
@@ -60,7 +66,7 @@
     .parameter "x0"
 
     .prologue
-    .line 316
+    .line 522
     invoke-virtual {p0, p1}, Landroid/view/InputDevice$1;->createFromParcel(Landroid/os/Parcel;)Landroid/view/InputDevice;
 
     move-result-object v0
@@ -73,7 +79,7 @@
     .parameter "size"
 
     .prologue
-    .line 321
+    .line 530
     new-array v0, p1, [Landroid/view/InputDevice;
 
     return-object v0
@@ -84,7 +90,7 @@
     .parameter "x0"
 
     .prologue
-    .line 316
+    .line 522
     invoke-virtual {p0, p1}, Landroid/view/InputDevice$1;->newArray(I)[Landroid/view/InputDevice;
 
     move-result-object v0

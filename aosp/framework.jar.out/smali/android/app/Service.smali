@@ -47,30 +47,30 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 295
+    .line 283
     invoke-direct {p0, v0}, Landroid/content/ContextWrapper;-><init>(Landroid/content/Context;)V
 
-    .line 707
+    .line 695
     iput-object v0, p0, Landroid/app/Service;->mThread:Landroid/app/ActivityThread;
 
-    .line 708
+    .line 696
     iput-object v0, p0, Landroid/app/Service;->mClassName:Ljava/lang/String;
 
-    .line 709
+    .line 697
     iput-object v0, p0, Landroid/app/Service;->mToken:Landroid/os/IBinder;
 
-    .line 710
+    .line 698
     iput-object v0, p0, Landroid/app/Service;->mApplication:Landroid/app/Application;
 
-    .line 711
+    .line 699
     iput-object v0, p0, Landroid/app/Service;->mActivityManager:Landroid/app/IActivityManager;
 
-    .line 712
+    .line 700
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/app/Service;->mStartCompatibility:Z
 
-    .line 296
+    .line 284
     return-void
 .end method
 
@@ -86,28 +86,28 @@
     .parameter "activityManager"
 
     .prologue
-    .line 692
+    .line 680
     invoke-virtual {p0, p1}, Landroid/app/Service;->attachBaseContext(Landroid/content/Context;)V
 
-    .line 693
+    .line 681
     iput-object p2, p0, Landroid/app/Service;->mThread:Landroid/app/ActivityThread;
 
-    .line 694
+    .line 682
     iput-object p3, p0, Landroid/app/Service;->mClassName:Ljava/lang/String;
 
-    .line 695
+    .line 683
     iput-object p4, p0, Landroid/app/Service;->mToken:Landroid/os/IBinder;
 
-    .line 696
+    .line 684
     iput-object p5, p0, Landroid/app/Service;->mApplication:Landroid/app/Application;
 
-    .line 697
+    .line 685
     check-cast p6, Landroid/app/IActivityManager;
 
     .end local p6
     iput-object p6, p0, Landroid/app/Service;->mActivityManager:Landroid/app/IActivityManager;
 
-    .line 698
+    .line 686
     invoke-virtual {p0}, Landroid/app/Service;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
 
     move-result-object v0
@@ -123,10 +123,10 @@
     :goto_0
     iput-boolean v0, p0, Landroid/app/Service;->mStartCompatibility:Z
 
-    .line 700
+    .line 688
     return-void
 
-    .line 698
+    .line 686
     :cond_0
     const/4 v0, 0x0
 
@@ -140,12 +140,12 @@
     .parameter "args"
 
     .prologue
-    .line 680
+    .line 668
     const-string/jumbo v0, "nothing to dump"
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 681
+    .line 669
     return-void
 .end method
 
@@ -153,7 +153,7 @@
     .locals 1
 
     .prologue
-    .line 300
+    .line 288
     iget-object v0, p0, Landroid/app/Service;->mApplication:Landroid/app/Application;
 
     return-object v0
@@ -163,7 +163,7 @@
     .locals 1
 
     .prologue
-    .line 703
+    .line 691
     iget-object v0, p0, Landroid/app/Service;->mClassName:Ljava/lang/String;
 
     return-object v0
@@ -177,7 +177,7 @@
     .parameter "newConfig"
 
     .prologue
-    .line 464
+    .line 452
     return-void
 .end method
 
@@ -185,7 +185,7 @@
     .locals 0
 
     .prologue
-    .line 307
+    .line 295
     return-void
 .end method
 
@@ -193,7 +193,7 @@
     .locals 0
 
     .prologue
-    .line 461
+    .line 449
     return-void
 .end method
 
@@ -201,7 +201,7 @@
     .locals 0
 
     .prologue
-    .line 467
+    .line 455
     return-void
 .end method
 
@@ -210,7 +210,7 @@
     .parameter "intent"
 
     .prologue
-    .line 524
+    .line 512
     return-void
 .end method
 
@@ -222,7 +222,7 @@
     .end annotation
 
     .prologue
-    .line 314
+    .line 302
     return-void
 .end method
 
@@ -233,10 +233,10 @@
     .parameter "startId"
 
     .prologue
-    .line 450
+    .line 438
     invoke-virtual {p0, p1, p3}, Landroid/app/Service;->onStart(Landroid/content/Intent;I)V
 
-    .line 451
+    .line 439
     iget-boolean v0, p0, Landroid/app/Service;->mStartCompatibility:Z
 
     if-eqz v0, :cond_0
@@ -257,7 +257,7 @@
     .parameter "rootIntent"
 
     .prologue
-    .line 537
+    .line 525
     return-void
 .end method
 
@@ -266,7 +266,7 @@
     .parameter "level"
 
     .prologue
-    .line 470
+    .line 458
     return-void
 .end method
 
@@ -275,7 +275,7 @@
     .parameter "intent"
 
     .prologue
-    .line 509
+    .line 497
     const/4 v0, 0x0
 
     return v0
@@ -288,7 +288,7 @@
     .end annotation
 
     .prologue
-    .line 614
+    .line 602
     const-string v0, "Service"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -319,7 +319,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 615
+    .line 603
     return-void
 .end method
 
@@ -329,7 +329,7 @@
     .parameter "notification"
 
     .prologue
-    .line 643
+    .line 631
     :try_start_0
     iget-object v0, p0, Landroid/app/Service;->mActivityManager:Landroid/app/IActivityManager;
 
@@ -351,11 +351,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 648
+    .line 636
     :goto_0
     return-void
 
-    .line 646
+    .line 634
     :catch_0
     move-exception v0
 
@@ -367,7 +367,7 @@
     .parameter "removeNotification"
 
     .prologue
-    .line 660
+    .line 648
     :try_start_0
     iget-object v0, p0, Landroid/app/Service;->mActivityManager:Landroid/app/IActivityManager;
 
@@ -389,11 +389,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 665
+    .line 653
     :goto_0
     return-void
 
-    .line 663
+    .line 651
     :catch_0
     move-exception v0
 
@@ -404,12 +404,12 @@
     .locals 1
 
     .prologue
-    .line 546
+    .line 534
     const/4 v0, -0x1
 
     invoke-virtual {p0, v0}, Landroid/app/Service;->stopSelf(I)V
 
-    .line 547
+    .line 535
     return-void
 .end method
 
@@ -418,16 +418,16 @@
     .parameter "startId"
 
     .prologue
-    .line 555
+    .line 543
     iget-object v0, p0, Landroid/app/Service;->mActivityManager:Landroid/app/IActivityManager;
 
     if-nez v0, :cond_0
 
-    .line 563
+    .line 551
     :goto_0
     return-void
 
-    .line 559
+    .line 547
     :cond_0
     :try_start_0
     iget-object v0, p0, Landroid/app/Service;->mActivityManager:Landroid/app/IActivityManager;
@@ -446,7 +446,7 @@
 
     goto :goto_0
 
-    .line 561
+    .line 549
     :catch_0
     move-exception v0
 
@@ -460,16 +460,16 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 587
+    .line 575
     iget-object v1, p0, Landroid/app/Service;->mActivityManager:Landroid/app/IActivityManager;
 
     if-nez v1, :cond_0
 
-    .line 595
+    .line 583
     :goto_0
     return v0
 
-    .line 591
+    .line 579
     :cond_0
     :try_start_0
     iget-object v1, p0, Landroid/app/Service;->mActivityManager:Landroid/app/IActivityManager;
@@ -490,7 +490,7 @@
 
     goto :goto_0
 
-    .line 593
+    .line 581
     :catch_0
     move-exception v1
 

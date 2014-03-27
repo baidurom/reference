@@ -17,10 +17,6 @@
 # static fields
 .field public static final ATTENDEE_EMAIL:Ljava/lang/String; = "attendeeEmail"
 
-.field public static final ATTENDEE_IDENTITY:Ljava/lang/String; = "attendeeIdentity"
-
-.field public static final ATTENDEE_ID_NAMESPACE:Ljava/lang/String; = "attendeeIdNamespace"
-
 .field public static final ATTENDEE_NAME:Ljava/lang/String; = "attendeeName"
 
 .field public static final ATTENDEE_RELATIONSHIP:Ljava/lang/String; = "attendeeRelationship"

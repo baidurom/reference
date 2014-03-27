@@ -72,7 +72,7 @@
     .locals 2
 
     .prologue
-    .line 444
+    .line 442
     sget-object v0, Landroid/provider/ContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string v1, "directories"
@@ -90,10 +90,10 @@
     .locals 0
 
     .prologue
-    .line 437
+    .line 435
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 438
+    .line 436
     return-void
 .end method
 
@@ -104,17 +104,17 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 618
+    .line 616
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
-    .line 619
+    .line 617
     .local v0, contentValues:Landroid/content/ContentValues;
     sget-object v1, Landroid/provider/ContactsContract$Directory;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-virtual {p0, v1, v0, v2, v2}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 620
+    .line 618
     return-void
 .end method

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/accounts/ChooseTypeAndAccountActivity;->populateUIAccountList([Ljava/lang/String;)V
+    value = Landroid/accounts/ChooseTypeAndAccountActivity;->onCreate(Landroid/os/Bundle;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 521
+    .line 203
     iput-object p1, p0, Landroid/accounts/ChooseTypeAndAccountActivity$1;->this$0:Landroid/accounts/ChooseTypeAndAccountActivity;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .locals 2
+    .locals 6
     .parameter
     .parameter "v"
     .parameter "position"
@@ -54,25 +54,22 @@
     .end annotation
 
     .prologue
-    .line 524
+    .line 205
     .local p1, parent:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     iget-object v0, p0, Landroid/accounts/ChooseTypeAndAccountActivity$1;->this$0:Landroid/accounts/ChooseTypeAndAccountActivity;
 
-    #setter for: Landroid/accounts/ChooseTypeAndAccountActivity;->mSelectedItemIndex:I
-    invoke-static {v0, p3}, Landroid/accounts/ChooseTypeAndAccountActivity;->access$002(Landroid/accounts/ChooseTypeAndAccountActivity;I)I
+    move-object v1, p1
 
-    .line 525
-    iget-object v0, p0, Landroid/accounts/ChooseTypeAndAccountActivity$1;->this$0:Landroid/accounts/ChooseTypeAndAccountActivity;
+    check-cast v1, Landroid/widget/ListView;
 
-    #getter for: Landroid/accounts/ChooseTypeAndAccountActivity;->mOkButton:Landroid/widget/Button;
-    invoke-static {v0}, Landroid/accounts/ChooseTypeAndAccountActivity;->access$100(Landroid/accounts/ChooseTypeAndAccountActivity;)Landroid/widget/Button;
+    move-object v2, p2
 
-    move-result-object v0
+    move v3, p3
 
-    const/4 v1, 0x1
+    move-wide v4, p4
 
-    invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
+    invoke-virtual/range {v0 .. v5}, Landroid/accounts/ChooseTypeAndAccountActivity;->onListItemClick(Landroid/widget/ListView;Landroid/view/View;IJ)V
 
-    .line 526
+    .line 206
     return-void
 .end method

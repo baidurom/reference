@@ -23,8 +23,8 @@
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Intent;ILjava/lang/String;Landroid/os/Bundle;ZZLandroid/os/IBinder;I)V
-    .locals 9
+.method public constructor <init>(Landroid/content/Intent;ILjava/lang/String;Landroid/os/Bundle;ZZLandroid/os/IBinder;)V
+    .locals 8
     .parameter "intent"
     .parameter "resultCode"
     .parameter "resultData"
@@ -32,10 +32,9 @@
     .parameter "ordered"
     .parameter "sticky"
     .parameter "token"
-    .parameter "sendingUser"
 
     .prologue
-    .line 354
+    .line 305
     const/4 v4, 0x0
 
     move-object v0, p0
@@ -50,16 +49,14 @@
 
     move v6, p6
 
-    move-object/from16 v7, p7
+    move-object v7, p7
 
-    move/from16 v8, p8
+    invoke-direct/range {v0 .. v7}, Landroid/content/BroadcastReceiver$PendingResult;-><init>(ILjava/lang/String;Landroid/os/Bundle;IZZLandroid/os/IBinder;)V
 
-    invoke-direct/range {v0 .. v8}, Landroid/content/BroadcastReceiver$PendingResult;-><init>(ILjava/lang/String;Landroid/os/Bundle;IZZLandroid/os/IBinder;I)V
-
-    .line 356
+    .line 306
     iput-object p1, p0, Landroid/app/ActivityThread$ReceiverData;->intent:Landroid/content/Intent;
 
-    .line 357
+    .line 307
     return-void
 .end method
 
@@ -69,7 +66,7 @@
     .locals 2
 
     .prologue
-    .line 363
+    .line 313
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

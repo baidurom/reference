@@ -22,10 +22,10 @@
     .locals 0
 
     .prologue
-    .line 30
+    .line 29
     invoke-direct {p0}, Landroid/view/HardwareLayer;-><init>()V
 
-    .line 31
+    .line 30
     return-void
 .end method
 
@@ -36,39 +36,21 @@
     .parameter "opaque"
 
     .prologue
-    .line 34
+    .line 33
     invoke-direct {p0, p1, p2, p3}, Landroid/view/HardwareLayer;-><init>(IIZ)V
 
-    .line 35
+    .line 34
     return-void
 .end method
 
 
 # virtual methods
-.method clearStorage()V
-    .locals 1
-
-    .prologue
-    .line 71
-    iget v0, p0, Landroid/view/GLES20Layer;->mLayer:I
-
-    if-eqz v0, :cond_0
-
-    iget v0, p0, Landroid/view/GLES20Layer;->mLayer:I
-
-    invoke-static {v0}, Landroid/view/GLES20Canvas;->nClearLayerTexture(I)V
-
-    .line 72
-    :cond_0
-    return-void
-.end method
-
 .method copyInto(Landroid/graphics/Bitmap;)Z
     .locals 2
     .parameter "bitmap"
 
     .prologue
-    .line 57
+    .line 47
     iget v0, p0, Landroid/view/GLES20Layer;->mLayer:I
 
     iget v1, p1, Landroid/graphics/Bitmap;->mNativeBitmap:I
@@ -84,28 +66,28 @@
     .locals 1
 
     .prologue
-    .line 62
+    .line 57
     iget-object v0, p0, Landroid/view/GLES20Layer;->mFinalizer:Landroid/view/GLES20Layer$Finalizer;
 
     if-eqz v0, :cond_0
 
-    .line 63
+    .line 58
     iget-object v0, p0, Landroid/view/GLES20Layer;->mFinalizer:Landroid/view/GLES20Layer$Finalizer;
 
     invoke-virtual {v0}, Landroid/view/GLES20Layer$Finalizer;->destroy()V
 
-    .line 64
+    .line 59
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/view/GLES20Layer;->mFinalizer:Landroid/view/GLES20Layer$Finalizer;
 
-    .line 66
+    .line 61
     :cond_0
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/view/GLES20Layer;->mLayer:I
 
-    .line 67
+    .line 62
     return-void
 .end method
 
@@ -113,52 +95,22 @@
     .locals 1
 
     .prologue
-    .line 43
+    .line 42
     iget v0, p0, Landroid/view/GLES20Layer;->mLayer:I
 
     return v0
 .end method
 
-.method setLayerPaint(Landroid/graphics/Paint;)V
-    .locals 2
-    .parameter "paint"
+.method update(IIZ)V
+    .locals 0
+    .parameter "width"
+    .parameter "height"
+    .parameter "isOpaque"
 
     .prologue
-    .line 48
-    if-eqz p1, :cond_0
-
-    .line 49
-    iget v0, p0, Landroid/view/GLES20Layer;->mLayer:I
-
-    iget v1, p1, Landroid/graphics/Paint;->mNativePaint:I
-
-    invoke-static {v0, v1}, Landroid/view/GLES20Canvas;->nSetLayerPaint(II)V
-
-    .line 50
-    iget v1, p0, Landroid/view/GLES20Layer;->mLayer:I
-
-    invoke-virtual {p1}, Landroid/graphics/Paint;->getColorFilter()Landroid/graphics/ColorFilter;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {p1}, Landroid/graphics/Paint;->getColorFilter()Landroid/graphics/ColorFilter;
-
-    move-result-object v0
-
-    iget v0, v0, Landroid/graphics/ColorFilter;->nativeColorFilter:I
-
-    :goto_0
-    invoke-static {v1, v0}, Landroid/view/GLES20Canvas;->nSetLayerColorFilter(II)V
+    .line 52
+    invoke-super {p0, p1, p2, p3}, Landroid/view/HardwareLayer;->update(IIZ)V
 
     .line 53
-    :cond_0
     return-void
-
-    .line 50
-    :cond_1
-    const/4 v0, 0x0
-
-    goto :goto_0
 .end method

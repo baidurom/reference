@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 483
+    .line 453
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -27,15 +27,19 @@
 
 
 # virtual methods
-.method public createService(Landroid/app/ContextImpl;)Ljava/lang/Object;
+.method public getService(Landroid/app/ContextImpl;)Ljava/lang/Object;
     .locals 1
     .parameter "ctx"
 
     .prologue
-    .line 485
-    new-instance v0, Landroid/app/UiModeManager;
+    .line 455
+    iget-object v0, p1, Landroid/app/ContextImpl;->mPackageInfo:Landroid/app/LoadedApk;
 
-    invoke-direct {v0}, Landroid/app/UiModeManager;-><init>()V
+    iget-object v0, v0, Landroid/app/LoadedApk;->mCompatibilityInfo:Landroid/view/CompatibilityInfoHolder;
+
+    invoke-static {v0}, Landroid/view/WindowManagerImpl;->getDefault(Landroid/view/CompatibilityInfoHolder;)Landroid/view/WindowManager;
+
+    move-result-object v0
 
     return-object v0
 .end method

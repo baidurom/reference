@@ -1,5 +1,5 @@
 .class final Landroid/app/ContextImpl$10;
-.super Landroid/app/ContextImpl$StaticServiceFetcher;
+.super Landroid/app/ContextImpl$ServiceFetcher;
 .source "ContextImpl.java"
 
 
@@ -19,34 +19,29 @@
     .locals 0
 
     .prologue
-    .line 333
-    invoke-direct {p0}, Landroid/app/ContextImpl$StaticServiceFetcher;-><init>()V
+    .line 303
+    invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public createStaticService()Ljava/lang/Object;
-    .locals 3
+.method public createService(Landroid/app/ContextImpl;)Ljava/lang/Object;
+    .locals 1
+    .parameter "ctx"
 
     .prologue
-    .line 335
-    const-string v1, "connectivity"
+    .line 305
+    iget-object v0, p1, Landroid/app/ContextImpl;->mMainThread:Landroid/app/ActivityThread;
 
-    invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+    invoke-virtual {v0}, Landroid/app/ActivityThread;->getHandler()Landroid/os/Handler;
 
     move-result-object v0
 
-    .line 336
-    .local v0, b:Landroid/os/IBinder;
-    new-instance v1, Landroid/net/ConnectivityManager;
+    invoke-static {p1, v0}, Landroid/app/admin/DevicePolicyManager;->create(Landroid/content/Context;Landroid/os/Handler;)Landroid/app/admin/DevicePolicyManager;
 
-    invoke-static {v0}, Landroid/net/IConnectivityManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/net/IConnectivityManager;
+    move-result-object v0
 
-    move-result-object v2
-
-    invoke-direct {v1, v2}, Landroid/net/ConnectivityManager;-><init>(Landroid/net/IConnectivityManager;)V
-
-    return-object v1
+    return-object v0
 .end method

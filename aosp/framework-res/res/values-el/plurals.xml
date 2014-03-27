@@ -67,18 +67,6 @@
         <item quantity="other">σε %d ημέρες</item>
         <item quantity="one">αύριο</item>
     </plurals>
-    <plurals name="duration_seconds">
-        <item quantity="other">%d δευτερόλεπτα</item>
-        <item quantity="one">1 δευτερόλεπτο</item>
-    </plurals>
-    <plurals name="duration_minutes">
-        <item quantity="other">%d λεπτά</item>
-        <item quantity="one">1 λεπτό</item>
-    </plurals>
-    <plurals name="duration_hours">
-        <item quantity="other">%d ώρες</item>
-        <item quantity="one">1 ώρα</item>
-    </plurals>
     <plurals name="wifi_available">
         <item quantity="other">Υπάρχουν διαθέσιμα δίκτυα Wi-Fi</item>
         <item quantity="one">Υπάρχει διαθέσιμο δίκτυο Wi-Fi</item>

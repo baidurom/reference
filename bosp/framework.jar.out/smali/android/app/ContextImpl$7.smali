@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 317
+    .line 285
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -28,14 +28,24 @@
 
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Ljava/lang/Object;
-    .locals 1
+    .locals 3
     .parameter "ctx"
 
     .prologue
-    .line 319
-    new-instance v0, Landroid/media/MediaRouter;
+    .line 287
+    new-instance v0, Landroid/content/ClipboardManager;
 
-    invoke-direct {v0, p1}, Landroid/media/MediaRouter;-><init>(Landroid/content/Context;)V
+    invoke-virtual {p1}, Landroid/app/ContextImpl;->getOuterContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    iget-object v2, p1, Landroid/app/ContextImpl;->mMainThread:Landroid/app/ActivityThread;
+
+    invoke-virtual {v2}, Landroid/app/ActivityThread;->getHandler()Landroid/os/Handler;
+
+    move-result-object v2
+
+    invoke-direct {v0, v1, v2}, Landroid/content/ClipboardManager;-><init>(Landroid/content/Context;Landroid/os/Handler;)V
 
     return-object v0
 .end method

@@ -34,7 +34,7 @@
     .locals 1
 
     .prologue
-    .line 1267
+    .line 1163
     const-string v0, "content://com.android.calendar/event_entities"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -50,7 +50,7 @@
     .locals 0
 
     .prologue
-    .line 1273
+    .line 1169
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -62,7 +62,7 @@
     .parameter "provider"
 
     .prologue
-    .line 1297
+    .line 1193
     new-instance v0, Landroid/provider/CalendarContract$EventsEntity$EntityIteratorImpl;
 
     invoke-direct {v0, p0, p1}, Landroid/provider/CalendarContract$EventsEntity$EntityIteratorImpl;-><init>(Landroid/database/Cursor;Landroid/content/ContentProviderClient;)V
@@ -76,7 +76,7 @@
     .parameter "resolver"
 
     .prologue
-    .line 1284
+    .line 1180
     new-instance v0, Landroid/provider/CalendarContract$EventsEntity$EntityIteratorImpl;
 
     invoke-direct {v0, p0, p1}, Landroid/provider/CalendarContract$EventsEntity$EntityIteratorImpl;-><init>(Landroid/database/Cursor;Landroid/content/ContentResolver;)V

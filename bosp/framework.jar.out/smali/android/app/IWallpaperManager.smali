@@ -55,14 +55,6 @@
     .end annotation
 .end method
 
-.method public abstract hasNamedWallpaper(Ljava/lang/String;)Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract setDimensionHints(II)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

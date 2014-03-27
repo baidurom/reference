@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 279
+    .line 264
     iput-object p1, p0, Landroid/widget/VideoView$1;->this$0:Landroid/widget/VideoView;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
     .parameter "height"
 
     .prologue
-    .line 281
+    .line 266
     iget-object v0, p0, Landroid/widget/VideoView$1;->this$0:Landroid/widget/VideoView;
 
     invoke-virtual {p1}, Landroid/media/MediaPlayer;->getVideoWidth()I
@@ -54,7 +54,7 @@
     #setter for: Landroid/widget/VideoView;->mVideoWidth:I
     invoke-static {v0, v1}, Landroid/widget/VideoView;->access$002(Landroid/widget/VideoView;I)I
 
-    .line 282
+    .line 267
     iget-object v0, p0, Landroid/widget/VideoView$1;->this$0:Landroid/widget/VideoView;
 
     invoke-virtual {p1}, Landroid/media/MediaPlayer;->getVideoHeight()I
@@ -64,7 +64,7 @@
     #setter for: Landroid/widget/VideoView;->mVideoHeight:I
     invoke-static {v0, v1}, Landroid/widget/VideoView;->access$102(Landroid/widget/VideoView;I)I
 
-    .line 283
+    .line 268
     iget-object v0, p0, Landroid/widget/VideoView$1;->this$0:Landroid/widget/VideoView;
 
     #getter for: Landroid/widget/VideoView;->mVideoWidth:I
@@ -83,7 +83,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 284
+    .line 269
     iget-object v0, p0, Landroid/widget/VideoView$1;->this$0:Landroid/widget/VideoView;
 
     invoke-virtual {v0}, Landroid/widget/VideoView;->getHolder()Landroid/view/SurfaceHolder;
@@ -106,12 +106,7 @@
 
     invoke-interface {v0, v1, v2}, Landroid/view/SurfaceHolder;->setFixedSize(II)V
 
-    .line 285
-    iget-object v0, p0, Landroid/widget/VideoView$1;->this$0:Landroid/widget/VideoView;
-
-    invoke-virtual {v0}, Landroid/widget/VideoView;->requestLayout()V
-
-    .line 287
+    .line 271
     :cond_0
     return-void
 .end method

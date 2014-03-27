@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 309
+    .line 294
     iput-object p1, p0, Landroid/net/DhcpStateMachine$WaitBeforeRenewalState;->this$0:Landroid/net/DhcpStateMachine;
 
     invoke-direct {p0}, Lcom/android/internal/util/State;-><init>()V
@@ -38,7 +38,7 @@
     .locals 0
 
     .prologue
-    .line 313
+    .line 298
     return-void
 .end method
 
@@ -46,7 +46,7 @@
     .locals 1
 
     .prologue
-    .line 345
+    .line 330
     iget-object v0, p0, Landroid/net/DhcpStateMachine$WaitBeforeRenewalState;->this$0:Landroid/net/DhcpStateMachine;
 
     #getter for: Landroid/net/DhcpStateMachine;->mDhcpRenewWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -56,7 +56,7 @@
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 346
+    .line 331
     return-void
 .end method
 
@@ -65,25 +65,26 @@
     .parameter "message"
 
     .prologue
-    .line 317
+    .line 302
     const/4 v0, 0x1
 
-    .line 319
+    .line 304
     .local v0, retValue:Z
     iget v1, p1, Landroid/os/Message;->what:I
 
-    sparse-switch v1, :sswitch_data_0
+    packed-switch v1, :pswitch_data_0
 
-    .line 338
+    .line 323
+    :pswitch_0
     const/4 v0, 0x0
 
-    .line 341
+    .line 326
     :goto_0
-    :sswitch_0
+    :pswitch_1
     return v0
 
-    .line 321
-    :sswitch_1
+    .line 306
+    :pswitch_2
     iget-object v1, p0, Landroid/net/DhcpStateMachine$WaitBeforeRenewalState;->this$0:Landroid/net/DhcpStateMachine;
 
     #getter for: Landroid/net/DhcpStateMachine;->mAlarmManager:Landroid/app/AlarmManager;
@@ -100,11 +101,11 @@
 
     invoke-virtual {v1, v2}, Landroid/app/AlarmManager;->cancel(Landroid/app/PendingIntent;)V
 
-    .line 322
+    .line 307
     iget-object v1, p0, Landroid/net/DhcpStateMachine$WaitBeforeRenewalState;->this$0:Landroid/net/DhcpStateMachine;
 
     #getter for: Landroid/net/DhcpStateMachine;->mInterfaceName:Ljava/lang/String;
-    invoke-static {v1}, Landroid/net/DhcpStateMachine;->access$300(Landroid/net/DhcpStateMachine;)Ljava/lang/String;
+    invoke-static {v1}, Landroid/net/DhcpStateMachine;->access$100(Landroid/net/DhcpStateMachine;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -114,7 +115,7 @@
 
     if-nez v1, :cond_0
 
-    .line 323
+    .line 308
     const-string v1, "DhcpStateMachine"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -130,7 +131,7 @@
     iget-object v3, p0, Landroid/net/DhcpStateMachine$WaitBeforeRenewalState;->this$0:Landroid/net/DhcpStateMachine;
 
     #getter for: Landroid/net/DhcpStateMachine;->mInterfaceName:Ljava/lang/String;
-    invoke-static {v3}, Landroid/net/DhcpStateMachine;->access$300(Landroid/net/DhcpStateMachine;)Ljava/lang/String;
+    invoke-static {v3}, Landroid/net/DhcpStateMachine;->access$100(Landroid/net/DhcpStateMachine;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -144,7 +145,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 325
+    .line 310
     :cond_0
     iget-object v1, p0, Landroid/net/DhcpStateMachine$WaitBeforeRenewalState;->this$0:Landroid/net/DhcpStateMachine;
 
@@ -160,8 +161,8 @@
 
     goto :goto_0
 
-    .line 328
-    :sswitch_2
+    .line 313
+    :pswitch_3
     iget-object v1, p0, Landroid/net/DhcpStateMachine$WaitBeforeRenewalState;->this$0:Landroid/net/DhcpStateMachine;
 
     sget-object v2, Landroid/net/DhcpStateMachine$DhcpAction;->RENEW:Landroid/net/DhcpStateMachine$DhcpAction;
@@ -173,7 +174,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 329
+    .line 314
     iget-object v1, p0, Landroid/net/DhcpStateMachine$WaitBeforeRenewalState;->this$0:Landroid/net/DhcpStateMachine;
 
     iget-object v2, p0, Landroid/net/DhcpStateMachine$WaitBeforeRenewalState;->this$0:Landroid/net/DhcpStateMachine;
@@ -188,7 +189,7 @@
 
     goto :goto_0
 
-    .line 331
+    .line 316
     :cond_1
     iget-object v1, p0, Landroid/net/DhcpStateMachine$WaitBeforeRenewalState;->this$0:Landroid/net/DhcpStateMachine;
 
@@ -204,13 +205,16 @@
 
     goto :goto_0
 
-    .line 319
+    .line 304
     nop
 
-    :sswitch_data_0
-    .sparse-switch
-        0x30001 -> :sswitch_0
-        0x30002 -> :sswitch_1
-        0x30007 -> :sswitch_2
-    .end sparse-switch
+    :pswitch_data_0
+    .packed-switch 0x30001
+        :pswitch_1
+        :pswitch_2
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_3
+    .end packed-switch
 .end method

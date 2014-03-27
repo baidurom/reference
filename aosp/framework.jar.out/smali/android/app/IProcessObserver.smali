@@ -23,14 +23,6 @@
     .end annotation
 .end method
 
-.method public abstract onImportanceChanged(III)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract onProcessDied(II)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

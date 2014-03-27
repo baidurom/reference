@@ -28,7 +28,7 @@
     .locals 2
 
     .prologue
-    .line 2555
+    .line 2434
     sget-object v0, Landroid/provider/CalendarContract;->CONTENT_URI:Landroid/net/Uri;
 
     const-string/jumbo v1, "syncstate"
@@ -46,7 +46,7 @@
     .locals 0
 
     .prologue
-    .line 2547
+    .line 2426
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

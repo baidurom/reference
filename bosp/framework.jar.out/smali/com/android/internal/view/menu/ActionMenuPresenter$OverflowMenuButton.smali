@@ -18,43 +18,71 @@
 
 
 # instance fields
+.field mMenuItem:Landroid/view/MenuItem;
+
 .field final synthetic this$0:Lcom/android/internal/view/menu/ActionMenuPresenter;
 
 
 # direct methods
 .method public constructor <init>(Lcom/android/internal/view/menu/ActionMenuPresenter;Landroid/content/Context;)V
-    .locals 3
+    .locals 8
     .parameter
     .parameter "context"
 
     .prologue
-    const/4 v2, 0x1
+    const/4 v6, 0x0
 
-    .line 555
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    .line 554
     iput-object p1, p0, Lcom/android/internal/view/menu/ActionMenuPresenter$OverflowMenuButton;->this$0:Lcom/android/internal/view/menu/ActionMenuPresenter;
 
-    .line 556
-    const/4 v0, 0x0
+    .line 555
+    const v0, #attr@actionOverflowButtonStyle#t
 
-    const v1, 0x10102f6
+    invoke-direct {p0, p2, v6, v0}, Landroid/widget/ImageButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    invoke-direct {p0, p2, v0, v1}, Landroid/widget/ImageButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    .line 553
+    iput-object v6, p0, Lcom/android/internal/view/menu/ActionMenuPresenter$OverflowMenuButton;->mMenuItem:Landroid/view/MenuItem;
+
+    .line 557
+    invoke-virtual {p0, v1}, Lcom/android/internal/view/menu/ActionMenuPresenter$OverflowMenuButton;->setClickable(Z)V
 
     .line 558
-    invoke-virtual {p0, v2}, Lcom/android/internal/view/menu/ActionMenuPresenter$OverflowMenuButton;->setClickable(Z)V
+    invoke-virtual {p0, v1}, Lcom/android/internal/view/menu/ActionMenuPresenter$OverflowMenuButton;->setFocusable(Z)V
 
     .line 559
-    invoke-virtual {p0, v2}, Lcom/android/internal/view/menu/ActionMenuPresenter$OverflowMenuButton;->setFocusable(Z)V
+    invoke-virtual {p0, v2}, Lcom/android/internal/view/menu/ActionMenuPresenter$OverflowMenuButton;->setVisibility(I)V
 
     .line 560
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, v0}, Lcom/android/internal/view/menu/ActionMenuPresenter$OverflowMenuButton;->setVisibility(I)V
-
-    .line 561
-    invoke-virtual {p0, v2}, Lcom/android/internal/view/menu/ActionMenuPresenter$OverflowMenuButton;->setEnabled(Z)V
+    invoke-virtual {p0, v1}, Lcom/android/internal/view/menu/ActionMenuPresenter$OverflowMenuButton;->setEnabled(Z)V
 
     .line 562
+    iget-object v0, p1, Lcom/android/internal/view/menu/BaseMenuPresenter;->mMenu:Lcom/android/internal/view/menu/MenuBuilder;
+
+    if-eqz v0, :cond_0
+
+    .line 563
+    new-instance v0, Lcom/android/internal/view/menu/MenuItemImpl;
+
+    iget-object v1, p1, Lcom/android/internal/view/menu/BaseMenuPresenter;->mMenu:Lcom/android/internal/view/menu/MenuBuilder;
+
+    const v3, #id@overflow_menu_presenter#t
+
+    move v4, v2
+
+    move v5, v2
+
+    move v7, v2
+
+    invoke-direct/range {v0 .. v7}, Lcom/android/internal/view/menu/MenuItemImpl;-><init>(Lcom/android/internal/view/menu/MenuBuilder;IIIILjava/lang/CharSequence;I)V
+
+    iput-object v0, p0, Lcom/android/internal/view/menu/ActionMenuPresenter$OverflowMenuButton;->mMenuItem:Landroid/view/MenuItem;
+
+    .line 565
+    :cond_0
     return-void
 .end method
 
@@ -64,7 +92,7 @@
     .locals 1
 
     .prologue
-    .line 580
+    .line 590
     const/4 v0, 0x0
 
     return v0
@@ -74,73 +102,62 @@
     .locals 1
 
     .prologue
-    .line 576
+    .line 586
     const/4 v0, 0x0
 
     return v0
 .end method
 
-.method protected onMeasure(II)V
-    .locals 2
-    .parameter "widthMeasureSpec"
-    .parameter "heightMeasureSpec"
-
-    .prologue
-    .line 585
-    invoke-static {p2}, Landroid/view/View$MeasureSpec;->getMode(I)I
-
-    move-result v0
-
-    const/high16 v1, -0x8000
-
-    if-ne v0, v1, :cond_0
-
-    .line 587
-    invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
-
-    move-result v0
-
-    const/high16 v1, 0x4000
-
-    invoke-static {v0, v1}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
-
-    move-result p2
-
-    .line 590
-    :cond_0
-    invoke-super {p0, p1, p2}, Landroid/widget/ImageButton;->onMeasure(II)V
-
-    .line 591
-    return-void
-.end method
-
 .method public performClick()Z
-    .locals 2
+    .locals 4
 
     .prologue
-    const/4 v1, 0x1
+    const/4 v3, 0x1
 
-    .line 566
+    .line 569
     invoke-super {p0}, Landroid/widget/ImageButton;->performClick()Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
-    .line 572
+    .line 582
     :goto_0
-    return v1
+    return v3
 
-    .line 570
+    .line 574
     :cond_0
-    const/4 v0, 0x0
+    iget-object v1, p0, Lcom/android/internal/view/menu/ActionMenuPresenter$OverflowMenuButton;->this$0:Lcom/android/internal/view/menu/ActionMenuPresenter;
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/view/menu/ActionMenuPresenter$OverflowMenuButton;->playSoundEffect(I)V
+    iget-object v1, v1, Lcom/android/internal/view/menu/BaseMenuPresenter;->mMenu:Lcom/android/internal/view/menu/MenuBuilder;
 
-    .line 571
-    iget-object v0, p0, Lcom/android/internal/view/menu/ActionMenuPresenter$OverflowMenuButton;->this$0:Lcom/android/internal/view/menu/ActionMenuPresenter;
+    invoke-virtual {v1}, Lcom/android/internal/view/menu/MenuBuilder;->getCallback()Lcom/android/internal/view/menu/MenuBuilder$Callback;
 
-    invoke-virtual {v0}, Lcom/android/internal/view/menu/ActionMenuPresenter;->showOverflowMenu()Z
+    move-result-object v0
+
+    .line 575
+    .local v0, callback:Lcom/android/internal/view/menu/MenuBuilder$Callback;
+    if-eqz v0, :cond_1
+
+    .line 576
+    iget-object v1, p0, Lcom/android/internal/view/menu/ActionMenuPresenter$OverflowMenuButton;->this$0:Lcom/android/internal/view/menu/ActionMenuPresenter;
+
+    iget-object v1, v1, Lcom/android/internal/view/menu/BaseMenuPresenter;->mMenu:Lcom/android/internal/view/menu/MenuBuilder;
+
+    iget-object v2, p0, Lcom/android/internal/view/menu/ActionMenuPresenter$OverflowMenuButton;->mMenuItem:Landroid/view/MenuItem;
+
+    invoke-interface {v0, v1, v2}, Lcom/android/internal/view/menu/MenuBuilder$Callback;->onMenuItemSelected(Lcom/android/internal/view/menu/MenuBuilder;Landroid/view/MenuItem;)Z
+
+    .line 580
+    :cond_1
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v1}, Lcom/android/internal/view/menu/ActionMenuPresenter$OverflowMenuButton;->playSoundEffect(I)V
+
+    .line 581
+    iget-object v1, p0, Lcom/android/internal/view/menu/ActionMenuPresenter$OverflowMenuButton;->this$0:Lcom/android/internal/view/menu/ActionMenuPresenter;
+
+    invoke-virtual {v1}, Lcom/android/internal/view/menu/ActionMenuPresenter;->showOverflowMenu()Z
 
     goto :goto_0
 .end method

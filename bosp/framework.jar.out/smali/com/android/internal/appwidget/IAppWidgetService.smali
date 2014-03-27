@@ -23,7 +23,7 @@
     .end annotation
 .end method
 
-.method public abstract bindAppWidgetId(ILandroid/content/ComponentName;Landroid/os/Bundle;)V
+.method public abstract bindAppWidgetId(ILandroid/content/ComponentName;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -31,15 +31,7 @@
     .end annotation
 .end method
 
-.method public abstract bindAppWidgetIdIfAllowed(Ljava/lang/String;ILandroid/content/ComponentName;Landroid/os/Bundle;)Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract bindRemoteViewsService(ILandroid/content/Intent;Landroid/os/IBinder;I)V
+.method public abstract bindRemoteViewsService(ILandroid/content/Intent;Landroid/os/IBinder;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -79,23 +71,7 @@
     .end annotation
 .end method
 
-.method public abstract getAppWidgetIdsForHost(I)[I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract getAppWidgetInfo(I)Landroid/appwidget/AppWidgetProviderInfo;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract getAppWidgetOptions(I)Landroid/os/Bundle;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -111,10 +87,10 @@
     .end annotation
 .end method
 
-.method public abstract getInstalledProviders(I)Ljava/util/List;
+.method public abstract getInstalledProviders()Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(I)",
+            "()",
             "Ljava/util/List",
             "<",
             "Landroid/appwidget/AppWidgetProviderInfo;",
@@ -122,14 +98,6 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract hasBindAppWidgetPermission(Ljava/lang/String;)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -146,14 +114,6 @@
 .end method
 
 .method public abstract partiallyUpdateAppWidgetIds([ILandroid/widget/RemoteViews;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setBindAppWidgetPermission(Ljava/lang/String;Z)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -182,27 +142,6 @@
     .end annotation
 .end method
 
-.method public abstract startListeningAsUser(Lcom/android/internal/appwidget/IAppWidgetHost;Ljava/lang/String;ILjava/util/List;I)[I
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/android/internal/appwidget/IAppWidgetHost;",
-            "Ljava/lang/String;",
-            "I",
-            "Ljava/util/List",
-            "<",
-            "Landroid/widget/RemoteViews;",
-            ">;I)[I"
-        }
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract stopListening(I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -211,15 +150,7 @@
     .end annotation
 .end method
 
-.method public abstract stopListeningAsUser(II)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract unbindRemoteViewsService(ILandroid/content/Intent;I)V
+.method public abstract unbindRemoteViewsService(ILandroid/content/Intent;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -228,14 +159,6 @@
 .end method
 
 .method public abstract updateAppWidgetIds([ILandroid/widget/RemoteViews;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract updateAppWidgetOptions(ILandroid/os/Bundle;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

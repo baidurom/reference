@@ -16,7 +16,7 @@
 
 .method public static round(F)I
     .locals 5
-    .parameter "value"
+    .parameter "x"
 
     .prologue
     .line 30

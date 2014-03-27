@@ -53,8 +53,6 @@
 
 .field public static final CAN_ORGANIZER_RESPOND:Ljava/lang/String; = "canOrganizerRespond"
 
-.field public static final IS_PRIMARY:Ljava/lang/String; = "isPrimary"
-
 .field public static final MAX_REMINDERS:Ljava/lang/String; = "maxReminders"
 
 .field public static final OWNER_ACCOUNT:Ljava/lang/String; = "ownerAccount"

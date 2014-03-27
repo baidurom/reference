@@ -70,7 +70,7 @@
 
     const/4 v2, 0x0
 
-    .line 18007
+    .line 14715
     new-array v0, v3, [F
 
     const/high16 v1, 0x437f
@@ -79,7 +79,7 @@
 
     sput-object v0, Landroid/view/View$ScrollabilityCache;->OPAQUE:[F
 
-    .line 18008
+    .line 14716
     new-array v0, v3, [F
 
     const/4 v1, 0x0
@@ -101,10 +101,10 @@
 
     const/4 v1, 0x0
 
-    .line 18024
+    .line 14732
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 18005
+    .line 14713
     new-instance v0, Landroid/graphics/Interpolator;
 
     const/4 v2, 0x1
@@ -115,52 +115,52 @@
 
     iput-object v0, p0, Landroid/view/View$ScrollabilityCache;->scrollBarInterpolator:Landroid/graphics/Interpolator;
 
-    .line 18020
+    .line 14728
     iput v6, p0, Landroid/view/View$ScrollabilityCache;->state:I
 
-    .line 18025
+    .line 14733
     invoke-virtual {p1}, Landroid/view/ViewConfiguration;->getScaledFadingEdgeLength()I
 
     move-result v0
 
     iput v0, p0, Landroid/view/View$ScrollabilityCache;->fadingEdgeLength:I
 
-    .line 18026
+    .line 14734
     invoke-virtual {p1}, Landroid/view/ViewConfiguration;->getScaledScrollBarSize()I
 
     move-result v0
 
     iput v0, p0, Landroid/view/View$ScrollabilityCache;->scrollBarSize:I
 
-    .line 18027
+    .line 14735
     invoke-static {}, Landroid/view/ViewConfiguration;->getScrollDefaultDelay()I
 
     move-result v0
 
     iput v0, p0, Landroid/view/View$ScrollabilityCache;->scrollBarDefaultDelayBeforeFade:I
 
-    .line 18028
+    .line 14736
     invoke-static {}, Landroid/view/ViewConfiguration;->getScrollBarFadeDuration()I
 
     move-result v0
 
     iput v0, p0, Landroid/view/View$ScrollabilityCache;->scrollBarFadeDuration:I
 
-    .line 18030
+    .line 14738
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Landroid/view/View$ScrollabilityCache;->paint:Landroid/graphics/Paint;
 
-    .line 18031
+    .line 14739
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
     iput-object v0, p0, Landroid/view/View$ScrollabilityCache;->matrix:Landroid/graphics/Matrix;
 
-    .line 18034
+    .line 14742
     new-instance v0, Landroid/graphics/LinearGradient;
 
     const/high16 v4, 0x3f80
@@ -177,14 +177,14 @@
 
     iput-object v0, p0, Landroid/view/View$ScrollabilityCache;->shader:Landroid/graphics/Shader;
 
-    .line 18035
+    .line 14744
     iget-object v0, p0, Landroid/view/View$ScrollabilityCache;->paint:Landroid/graphics/Paint;
 
     iget-object v1, p0, Landroid/view/View$ScrollabilityCache;->shader:Landroid/graphics/Shader;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 18036
+    .line 14745
     iget-object v0, p0, Landroid/view/View$ScrollabilityCache;->paint:Landroid/graphics/Paint;
 
     new-instance v1, Landroid/graphics/PorterDuffXfermode;
@@ -195,10 +195,10 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    .line 18038
+    .line 14746
     iput-object p2, p0, Landroid/view/View$ScrollabilityCache;->host:Landroid/view/View;
 
-    .line 18039
+    .line 14747
     return-void
 .end method
 
@@ -208,12 +208,12 @@
     .locals 8
 
     .prologue
-    .line 18060
+    .line 14764
     invoke-static {}, Landroid/view/animation/AnimationUtils;->currentAnimationTimeMillis()J
 
     move-result-wide v4
 
-    .line 18061
+    .line 14765
     .local v4, now:J
     iget-wide v6, p0, Landroid/view/View$ScrollabilityCache;->fadeStartTime:J
 
@@ -221,18 +221,18 @@
 
     if-ltz v6, :cond_0
 
-    .line 18066
+    .line 14770
     long-to-int v3, v4
 
-    .line 18067
+    .line 14771
     .local v3, nextFrame:I
     const/4 v0, 0x0
 
-    .line 18069
+    .line 14773
     .local v0, framesCount:I
     iget-object v2, p0, Landroid/view/View$ScrollabilityCache;->scrollBarInterpolator:Landroid/graphics/Interpolator;
 
-    .line 18072
+    .line 14776
     .local v2, interpolator:Landroid/graphics/Interpolator;
     add-int/lit8 v1, v0, 0x1
 
@@ -242,29 +242,29 @@
 
     invoke-virtual {v2, v0, v3, v6}, Landroid/graphics/Interpolator;->setKeyFrame(II[F)V
 
-    .line 18075
+    .line 14779
     iget v6, p0, Landroid/view/View$ScrollabilityCache;->scrollBarFadeDuration:I
 
     add-int/2addr v3, v6
 
-    .line 18076
+    .line 14780
     sget-object v6, Landroid/view/View$ScrollabilityCache;->TRANSPARENT:[F
 
     invoke-virtual {v2, v1, v3, v6}, Landroid/graphics/Interpolator;->setKeyFrame(II[F)V
 
-    .line 18078
+    .line 14782
     const/4 v6, 0x2
 
     iput v6, p0, Landroid/view/View$ScrollabilityCache;->state:I
 
-    .line 18081
+    .line 14785
     iget-object v6, p0, Landroid/view/View$ScrollabilityCache;->host:Landroid/view/View;
 
     const/4 v7, 0x1
 
     invoke-virtual {v6, v7}, Landroid/view/View;->invalidate(Z)V
 
-    .line 18083
+    .line 14787
     .end local v1           #framesCount:I
     .end local v2           #interpolator:Landroid/graphics/Interpolator;
     .end local v3           #nextFrame:I
@@ -277,27 +277,29 @@
     .parameter "color"
 
     .prologue
-    const/high16 v5, -0x100
-
-    const/high16 v4, 0x3f80
+    const/high16 v2, -0x100
 
     const/4 v1, 0x0
 
-    .line 18042
+    .line 14750
+    if-eqz p1, :cond_0
+
     iget v0, p0, Landroid/view/View$ScrollabilityCache;->mLastColor:I
 
     if-eq p1, v0, :cond_0
 
-    .line 18043
+    .line 14751
     iput p1, p0, Landroid/view/View$ScrollabilityCache;->mLastColor:I
 
-    .line 18045
-    if-eqz p1, :cond_1
+    .line 14752
+    or-int/2addr p1, v2
 
-    .line 18046
+    .line 14754
     new-instance v0, Landroid/graphics/LinearGradient;
 
-    or-int/2addr v5, p1
+    const/high16 v4, 0x3f80
+
+    or-int v5, p1, v2
 
     const v2, 0xffffff
 
@@ -313,58 +315,21 @@
 
     iput-object v0, p0, Landroid/view/View$ScrollabilityCache;->shader:Landroid/graphics/Shader;
 
-    .line 18048
+    .line 14757
     iget-object v0, p0, Landroid/view/View$ScrollabilityCache;->paint:Landroid/graphics/Paint;
 
     iget-object v1, p0, Landroid/view/View$ScrollabilityCache;->shader:Landroid/graphics/Shader;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 18050
+    .line 14759
     iget-object v0, p0, Landroid/view/View$ScrollabilityCache;->paint:Landroid/graphics/Paint;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    .line 18057
+    .line 14761
     :cond_0
-    :goto_0
     return-void
-
-    .line 18052
-    :cond_1
-    new-instance v0, Landroid/graphics/LinearGradient;
-
-    const/4 v6, 0x0
-
-    sget-object v7, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
-
-    move v2, v1
-
-    move v3, v1
-
-    invoke-direct/range {v0 .. v7}, Landroid/graphics/LinearGradient;-><init>(FFFFIILandroid/graphics/Shader$TileMode;)V
-
-    iput-object v0, p0, Landroid/view/View$ScrollabilityCache;->shader:Landroid/graphics/Shader;
-
-    .line 18053
-    iget-object v0, p0, Landroid/view/View$ScrollabilityCache;->paint:Landroid/graphics/Paint;
-
-    iget-object v1, p0, Landroid/view/View$ScrollabilityCache;->shader:Landroid/graphics/Shader;
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
-
-    .line 18054
-    iget-object v0, p0, Landroid/view/View$ScrollabilityCache;->paint:Landroid/graphics/Paint;
-
-    new-instance v1, Landroid/graphics/PorterDuffXfermode;
-
-    sget-object v2, Landroid/graphics/PorterDuff$Mode;->DST_OUT:Landroid/graphics/PorterDuff$Mode;
-
-    invoke-direct {v1, v2}, Landroid/graphics/PorterDuffXfermode;-><init>(Landroid/graphics/PorterDuff$Mode;)V
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
-
-    goto :goto_0
 .end method

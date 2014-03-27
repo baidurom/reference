@@ -1,5 +1,5 @@
 .class Lcom/android/server/net/NetworkStatsService$6;
-.super Landroid/content/BroadcastReceiver;
+.super Lcom/android/server/net/NetworkAlertObserver;
 .source "NetworkStatsService.java"
 
 
@@ -24,112 +24,75 @@
     .parameter
 
     .prologue
-    .line 768
+    .line 670
     iput-object p1, p0, Lcom/android/server/net/NetworkStatsService$6;->this$0:Lcom/android/server/net/NetworkStatsService;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    invoke-direct {p0}, Lcom/android/server/net/NetworkAlertObserver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 4
-    .parameter "context"
-    .parameter "intent"
+.method public limitReached(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 5
+    .parameter "limitName"
+    .parameter "iface"
 
     .prologue
-    const/4 v2, -0x1
+    const/4 v4, 0x1
 
-    .line 774
-    const-string v1, "android.intent.extra.user_handle"
+    .line 674
+    iget-object v1, p0, Lcom/android/server/net/NetworkStatsService$6;->this$0:Lcom/android/server/net/NetworkStatsService;
 
-    invoke-virtual {p2, v1, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    #getter for: Lcom/android/server/net/NetworkStatsService;->mContext:Landroid/content/Context;
+    invoke-static {v1}, Lcom/android/server/net/NetworkStatsService;->access$700(Lcom/android/server/net/NetworkStatsService;)Landroid/content/Context;
 
-    move-result v0
+    move-result-object v1
 
-    .line 775
-    .local v0, userId:I
-    if-ne v0, v2, :cond_0
+    const-string v2, "android.permission.CONNECTIVITY_INTERNAL"
 
-    .line 785
-    :goto_0
-    return-void
+    const-string v3, "NetworkStats"
 
-    .line 777
+    invoke-virtual {v1, v2, v3}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 676
+    const-string v1, "globalAlert"
+
+    invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 679
+    const/4 v0, 0x1
+
+    .line 680
+    .local v0, flags:I
+    iget-object v1, p0, Lcom/android/server/net/NetworkStatsService$6;->this$0:Lcom/android/server/net/NetworkStatsService;
+
+    #getter for: Lcom/android/server/net/NetworkStatsService;->mHandler:Landroid/os/Handler;
+    invoke-static {v1}, Lcom/android/server/net/NetworkStatsService;->access$800(Lcom/android/server/net/NetworkStatsService;)Landroid/os/Handler;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v4, v4, v2}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
+
+    .line 683
+    iget-object v1, p0, Lcom/android/server/net/NetworkStatsService$6;->this$0:Lcom/android/server/net/NetworkStatsService;
+
+    #calls: Lcom/android/server/net/NetworkStatsService;->registerGlobalAlert()V
+    invoke-static {v1}, Lcom/android/server/net/NetworkStatsService;->access$200(Lcom/android/server/net/NetworkStatsService;)V
+
+    .line 685
+    .end local v0           #flags:I
     :cond_0
-    iget-object v1, p0, Lcom/android/server/net/NetworkStatsService$6;->this$0:Lcom/android/server/net/NetworkStatsService;
-
-    #getter for: Lcom/android/server/net/NetworkStatsService;->mStatsLock:Ljava/lang/Object;
-    invoke-static {v1}, Lcom/android/server/net/NetworkStatsService;->access$100(Lcom/android/server/net/NetworkStatsService;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    monitor-enter v2
-
-    .line 778
-    :try_start_0
-    iget-object v1, p0, Lcom/android/server/net/NetworkStatsService$6;->this$0:Lcom/android/server/net/NetworkStatsService;
-
-    #getter for: Lcom/android/server/net/NetworkStatsService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
-    invoke-static {v1}, Lcom/android/server/net/NetworkStatsService;->access$900(Lcom/android/server/net/NetworkStatsService;)Landroid/os/PowerManager$WakeLock;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/os/PowerManager$WakeLock;->acquire()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 780
-    :try_start_1
-    iget-object v1, p0, Lcom/android/server/net/NetworkStatsService$6;->this$0:Lcom/android/server/net/NetworkStatsService;
-
-    #calls: Lcom/android/server/net/NetworkStatsService;->removeUserLocked(I)V
-    invoke-static {v1, v0}, Lcom/android/server/net/NetworkStatsService;->access$1100(Lcom/android/server/net/NetworkStatsService;I)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    .line 782
-    :try_start_2
-    iget-object v1, p0, Lcom/android/server/net/NetworkStatsService$6;->this$0:Lcom/android/server/net/NetworkStatsService;
-
-    #getter for: Lcom/android/server/net/NetworkStatsService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
-    invoke-static {v1}, Lcom/android/server/net/NetworkStatsService;->access$900(Lcom/android/server/net/NetworkStatsService;)Landroid/os/PowerManager$WakeLock;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/os/PowerManager$WakeLock;->release()V
-
-    .line 784
-    monitor-exit v2
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v2
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    throw v1
-
-    .line 782
-    :catchall_1
-    move-exception v1
-
-    :try_start_3
-    iget-object v3, p0, Lcom/android/server/net/NetworkStatsService$6;->this$0:Lcom/android/server/net/NetworkStatsService;
-
-    #getter for: Lcom/android/server/net/NetworkStatsService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
-    invoke-static {v3}, Lcom/android/server/net/NetworkStatsService;->access$900(Lcom/android/server/net/NetworkStatsService;)Landroid/os/PowerManager$WakeLock;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/os/PowerManager$WakeLock;->release()V
-
-    throw v1
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    return-void
 .end method

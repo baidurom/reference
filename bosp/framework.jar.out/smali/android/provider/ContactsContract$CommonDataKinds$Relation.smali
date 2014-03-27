@@ -57,7 +57,7 @@
     .locals 0
 
     .prologue
-    .line 6298
+    .line 6263
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -70,7 +70,7 @@
     .parameter "label"
 
     .prologue
-    .line 6357
+    .line 6322
     if-nez p1, :cond_0
 
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -79,19 +79,19 @@
 
     if-nez v1, :cond_0
 
-    .line 6361
+    .line 6326
     .end local p2
     :goto_0
     return-object p2
 
-    .line 6360
+    .line 6325
     .restart local p2
     :cond_0
     invoke-static {p1}, Landroid/provider/ContactsContract$CommonDataKinds$Relation;->getTypeLabelResource(I)I
 
     move-result v0
 
-    .line 6361
+    .line 6326
     .local v0, labelRes:I
     invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -105,100 +105,100 @@
     .parameter "type"
 
     .prologue
-    .line 6329
+    .line 6294
     packed-switch p0, :pswitch_data_0
 
-    .line 6346
-    const v0, 0x10402c8
+    .line 6311
+    const v0, #string@orgTypeCustom#t
 
     :goto_0
     return v0
 
-    .line 6330
+    .line 6295
     :pswitch_0
-    const v0, 0x10402ca
+    const v0, #string@relationTypeAssistant#t
 
     goto :goto_0
 
-    .line 6331
+    .line 6296
     :pswitch_1
-    const v0, 0x10402cb
+    const v0, #string@relationTypeBrother#t
 
     goto :goto_0
 
-    .line 6332
+    .line 6297
     :pswitch_2
-    const v0, 0x10402cc
+    const v0, #string@relationTypeChild#t
 
     goto :goto_0
 
-    .line 6334
+    .line 6299
     :pswitch_3
-    const v0, 0x10402cd
+    const v0, #string@relationTypeDomesticPartner#t
 
     goto :goto_0
 
-    .line 6335
+    .line 6300
     :pswitch_4
-    const v0, 0x10402ce
+    const v0, #string@relationTypeFather#t
 
     goto :goto_0
 
-    .line 6336
+    .line 6301
     :pswitch_5
-    const v0, 0x10402cf
+    const v0, #string@relationTypeFriend#t
 
     goto :goto_0
 
-    .line 6337
+    .line 6302
     :pswitch_6
-    const v0, 0x10402d0
+    const v0, #string@relationTypeManager#t
 
     goto :goto_0
 
-    .line 6338
+    .line 6303
     :pswitch_7
-    const v0, 0x10402d1
+    const v0, #string@relationTypeMother#t
 
     goto :goto_0
 
-    .line 6339
+    .line 6304
     :pswitch_8
-    const v0, 0x10402d2
+    const v0, #string@relationTypeParent#t
 
     goto :goto_0
 
-    .line 6340
+    .line 6305
     :pswitch_9
-    const v0, 0x10402d3
+    const v0, #string@relationTypePartner#t
 
     goto :goto_0
 
-    .line 6342
+    .line 6307
     :pswitch_a
-    const v0, 0x10402d4
+    const v0, #string@relationTypeReferredBy#t
 
     goto :goto_0
 
-    .line 6343
+    .line 6308
     :pswitch_b
-    const v0, 0x10402d5
+    const v0, #string@relationTypeRelative#t
 
     goto :goto_0
 
-    .line 6344
+    .line 6309
     :pswitch_c
-    const v0, 0x10402d6
+    const v0, #string@relationTypeSister#t
 
     goto :goto_0
 
-    .line 6345
+    .line 6310
     :pswitch_d
-    const v0, 0x10402d7
+    const v0, #string@relationTypeSpouse#t
 
     goto :goto_0
 
-    .line 6329
+    .line 6294
     nop
 
     :pswitch_data_0

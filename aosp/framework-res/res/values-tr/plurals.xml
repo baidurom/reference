@@ -67,18 +67,6 @@
         <item quantity="other">%d gün içinde</item>
         <item quantity="one">yarın</item>
     </plurals>
-    <plurals name="duration_seconds">
-        <item quantity="other">%d saniye</item>
-        <item quantity="one">1 saniye</item>
-    </plurals>
-    <plurals name="duration_minutes">
-        <item quantity="other">%d dakika</item>
-        <item quantity="one">1 dakika</item>
-    </plurals>
-    <plurals name="duration_hours">
-        <item quantity="other">%d saat</item>
-        <item quantity="one">1 saat</item>
-    </plurals>
     <plurals name="wifi_available">
         <item quantity="other">Kablosuz ağlar var</item>
         <item quantity="one">Kablosuz ağ var</item>

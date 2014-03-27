@@ -67,18 +67,6 @@
         <item quantity="other">след %d дни</item>
         <item quantity="one">утре</item>
     </plurals>
-    <plurals name="duration_seconds">
-        <item quantity="other">%d секунди</item>
-        <item quantity="one">1 секунда</item>
-    </plurals>
-    <plurals name="duration_minutes">
-        <item quantity="other">%d минути</item>
-        <item quantity="one">1 минута</item>
-    </plurals>
-    <plurals name="duration_hours">
-        <item quantity="other">%d часа</item>
-        <item quantity="one">1 час</item>
-    </plurals>
     <plurals name="wifi_available">
         <item quantity="other">Има достъпни Wi-Fi мрежи</item>
         <item quantity="one">Има достъпна Wi-Fi мрежа</item>

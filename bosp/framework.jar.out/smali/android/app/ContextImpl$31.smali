@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 472
+    .line 439
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -28,18 +28,34 @@
 
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Ljava/lang/Object;
-    .locals 2
+    .locals 4
     .parameter "ctx"
 
     .prologue
-    .line 474
-    new-instance v0, Landroid/telephony/TelephonyManager;
+    .line 441
+    const-string/jumbo v2, "wifi"
 
-    invoke-virtual {p1}, Landroid/app/ContextImpl;->getOuterContext()Landroid/content/Context;
+    invoke-static {v2}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+
+    move-result-object v0
+
+    .line 442
+    .local v0, b:Landroid/os/IBinder;
+    invoke-static {v0}, Landroid/net/wifi/IWifiManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/net/wifi/IWifiManager;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Landroid/telephony/TelephonyManager;-><init>(Landroid/content/Context;)V
+    .line 443
+    .local v1, service:Landroid/net/wifi/IWifiManager;
+    new-instance v2, Landroid/net/wifi/WifiManager;
 
-    return-object v0
+    iget-object v3, p1, Landroid/app/ContextImpl;->mMainThread:Landroid/app/ActivityThread;
+
+    invoke-virtual {v3}, Landroid/app/ActivityThread;->getHandler()Landroid/os/Handler;
+
+    move-result-object v3
+
+    invoke-direct {v2, v1, v3}, Landroid/net/wifi/WifiManager;-><init>(Landroid/net/wifi/IWifiManager;Landroid/os/Handler;)V
+
+    return-object v2
 .end method

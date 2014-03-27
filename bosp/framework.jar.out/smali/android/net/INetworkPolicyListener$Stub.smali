@@ -28,8 +28,6 @@
 
 .field static final TRANSACTION_onMeteredIfacesChanged:I = 0x2
 
-.field static final TRANSACTION_onRestrictBackgroundChanged:I = 0x3
-
 .field static final TRANSACTION_onUidRulesChanged:I = 0x1
 
 
@@ -124,7 +122,7 @@
     .line 39
     sparse-switch p1, :sswitch_data_0
 
-    .line 73
+    .line 65
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v2
@@ -182,36 +180,6 @@
 
     goto :goto_0
 
-    .line 66
-    .end local v0           #_arg0:[Ljava/lang/String;
-    :sswitch_3
-    const-string v3, "android.net.INetworkPolicyListener"
-
-    invoke-virtual {p2, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 68
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    move v0, v2
-
-    .line 69
-    .local v0, _arg0:Z
-    :goto_1
-    invoke-virtual {p0, v0}, Landroid/net/INetworkPolicyListener$Stub;->onRestrictBackgroundChanged(Z)V
-
-    goto :goto_0
-
-    .line 68
-    .end local v0           #_arg0:Z
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_1
-
     .line 39
     nop
 
@@ -219,7 +187,6 @@
     .sparse-switch
         0x1 -> :sswitch_1
         0x2 -> :sswitch_2
-        0x3 -> :sswitch_3
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

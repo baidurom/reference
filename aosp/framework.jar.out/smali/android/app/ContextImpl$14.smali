@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 355
+    .line 321
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -32,10 +32,10 @@
     .parameter "ctx"
 
     .prologue
-    .line 357
-    new-instance v0, Landroid/nfc/NfcManager;
+    .line 323
+    invoke-static {p1}, Landroid/view/inputmethod/InputMethodManager;->getInstance(Landroid/content/Context;)Landroid/view/inputmethod/InputMethodManager;
 
-    invoke-direct {v0, p1}, Landroid/nfc/NfcManager;-><init>(Landroid/content/Context;)V
+    move-result-object v0
 
     return-object v0
 .end method

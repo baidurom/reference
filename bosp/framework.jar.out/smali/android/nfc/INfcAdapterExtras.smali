@@ -39,14 +39,6 @@
     .end annotation
 .end method
 
-.method public abstract getDriverName(Ljava/lang/String;)Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract open(Ljava/lang/String;Landroid/os/IBinder;)Landroid/os/Bundle;
     .annotation system Ldalvik/annotation/Throws;
         value = {

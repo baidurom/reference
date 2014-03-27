@@ -16,7 +16,7 @@
 
 
 # instance fields
-.field private final mWebView:Landroid/webkit/WebViewClassic;
+.field private final mWebView:Landroid/webkit/WebView;
 
 .field private mZoomButtonsController:Landroid/widget/ZoomButtonsController;
 
@@ -24,7 +24,7 @@
 
 
 # direct methods
-.method public constructor <init>(Landroid/webkit/ZoomManager;Landroid/webkit/WebViewClassic;)V
+.method public constructor <init>(Landroid/webkit/ZoomManager;Landroid/webkit/WebView;)V
     .locals 0
     .parameter "zoomManager"
     .parameter "webView"
@@ -37,19 +37,19 @@
     iput-object p1, p0, Landroid/webkit/ZoomControlEmbedded;->mZoomManager:Landroid/webkit/ZoomManager;
 
     .line 35
-    iput-object p2, p0, Landroid/webkit/ZoomControlEmbedded;->mWebView:Landroid/webkit/WebViewClassic;
+    iput-object p2, p0, Landroid/webkit/ZoomControlEmbedded;->mWebView:Landroid/webkit/WebView;
 
     .line 36
     return-void
 .end method
 
-.method static synthetic access$100(Landroid/webkit/ZoomControlEmbedded;)Landroid/webkit/WebViewClassic;
+.method static synthetic access$100(Landroid/webkit/ZoomControlEmbedded;)Landroid/webkit/WebView;
     .locals 1
     .parameter "x0"
 
     .prologue
     .line 25
-    iget-object v0, p0, Landroid/webkit/ZoomControlEmbedded;->mWebView:Landroid/webkit/WebViewClassic;
+    iget-object v0, p0, Landroid/webkit/ZoomControlEmbedded;->mWebView:Landroid/webkit/WebView;
 
     return-object v0
 .end method
@@ -77,11 +77,7 @@
     .line 85
     new-instance v2, Landroid/widget/ZoomButtonsController;
 
-    iget-object v3, p0, Landroid/webkit/ZoomControlEmbedded;->mWebView:Landroid/webkit/WebViewClassic;
-
-    invoke-virtual {v3}, Landroid/webkit/WebViewClassic;->getWebView()Landroid/webkit/WebView;
-
-    move-result-object v3
+    iget-object v3, p0, Landroid/webkit/ZoomControlEmbedded;->mWebView:Landroid/webkit/WebView;
 
     invoke-direct {v2, v3}, Landroid/widget/ZoomButtonsController;-><init>(Landroid/view/View;)V
 
@@ -121,7 +117,7 @@
     check-cast v1, Landroid/widget/FrameLayout$LayoutParams;
 
     .end local v1           #params:Landroid/view/ViewGroup$LayoutParams;
-    const v2, 0x800005
+    const/4 v2, 0x5
 
     iput v2, v1, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
@@ -224,15 +220,15 @@
     if-eqz v2, :cond_0
 
     .line 44
-    iget-object v2, p0, Landroid/webkit/ZoomControlEmbedded;->mWebView:Landroid/webkit/WebViewClassic;
+    iget-object v2, p0, Landroid/webkit/ZoomControlEmbedded;->mWebView:Landroid/webkit/WebView;
 
-    invoke-virtual {v2}, Landroid/webkit/WebViewClassic;->getSettings()Landroid/webkit/WebSettingsClassic;
+    invoke-virtual {v2}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
 
     move-result-object v1
 
     .line 45
-    .local v1, settings:Landroid/webkit/WebSettingsClassic;
-    invoke-virtual {v1}, Landroid/webkit/WebSettingsClassic;->getDoubleTapToastCount()I
+    .local v1, settings:Landroid/webkit/WebSettings;
+    invoke-virtual {v1}, Landroid/webkit/WebSettings;->getDoubleTapToastCount()I
 
     move-result v0
 
@@ -251,16 +247,16 @@
     .line 47
     add-int/lit8 v0, v0, -0x1
 
-    invoke-virtual {v1, v0}, Landroid/webkit/WebSettingsClassic;->setDoubleTapToastCount(I)V
+    invoke-virtual {v1, v0}, Landroid/webkit/WebSettings;->setDoubleTapToastCount(I)V
 
     .line 48
-    iget-object v2, p0, Landroid/webkit/ZoomControlEmbedded;->mWebView:Landroid/webkit/WebViewClassic;
+    iget-object v2, p0, Landroid/webkit/ZoomControlEmbedded;->mWebView:Landroid/webkit/WebView;
 
-    invoke-virtual {v2}, Landroid/webkit/WebViewClassic;->getContext()Landroid/content/Context;
+    invoke-virtual {v2}, Landroid/webkit/WebView;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
-    const v3, 0x1040345
+    const v3, #string@double_tap_toast#t
 
     invoke-static {v2, v3, v4}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -270,7 +266,7 @@
 
     .line 54
     .end local v0           #count:I
-    .end local v1           #settings:Landroid/webkit/WebSettingsClassic;
+    .end local v1           #settings:Landroid/webkit/WebSettings;
     :cond_0
     return-void
 .end method

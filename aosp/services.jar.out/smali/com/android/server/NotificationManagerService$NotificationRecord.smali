@@ -23,7 +23,7 @@
 
 .field final pkg:Ljava/lang/String;
 
-.field final score:I
+.field final priority:I
 
 .field statusBarKey:Landroid/os/IBinder;
 
@@ -31,50 +31,44 @@
 
 .field final uid:I
 
-.field final userId:I
-
 
 # direct methods
-.method constructor <init>(Ljava/lang/String;Ljava/lang/String;IIIIILandroid/app/Notification;)V
+.method constructor <init>(Ljava/lang/String;Ljava/lang/String;IIIILandroid/app/Notification;)V
     .locals 0
     .parameter "pkg"
     .parameter "tag"
     .parameter "id"
     .parameter "uid"
     .parameter "initialPid"
-    .parameter "userId"
-    .parameter "score"
+    .parameter "priority"
     .parameter "notification"
 
     .prologue
-    .line 336
+    .line 154
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 337
+    .line 155
     iput-object p1, p0, Lcom/android/server/NotificationManagerService$NotificationRecord;->pkg:Ljava/lang/String;
 
-    .line 338
+    .line 156
     iput-object p2, p0, Lcom/android/server/NotificationManagerService$NotificationRecord;->tag:Ljava/lang/String;
 
-    .line 339
+    .line 157
     iput p3, p0, Lcom/android/server/NotificationManagerService$NotificationRecord;->id:I
 
-    .line 340
+    .line 158
     iput p4, p0, Lcom/android/server/NotificationManagerService$NotificationRecord;->uid:I
 
-    .line 341
+    .line 159
     iput p5, p0, Lcom/android/server/NotificationManagerService$NotificationRecord;->initialPid:I
 
-    .line 342
-    iput p6, p0, Lcom/android/server/NotificationManagerService$NotificationRecord;->userId:I
+    .line 160
+    iput p6, p0, Lcom/android/server/NotificationManagerService$NotificationRecord;->priority:I
 
-    .line 343
-    iput p7, p0, Lcom/android/server/NotificationManagerService$NotificationRecord;->score:I
+    .line 161
+    iput-object p7, p0, Lcom/android/server/NotificationManagerService$NotificationRecord;->notification:Landroid/app/Notification;
 
-    .line 344
-    iput-object p8, p0, Lcom/android/server/NotificationManagerService$NotificationRecord;->notification:Landroid/app/Notification;
-
-    .line 345
+    .line 162
     return-void
 .end method
 
@@ -87,7 +81,7 @@
     .parameter "baseContext"
 
     .prologue
-    .line 348
+    .line 165
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -106,7 +100,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 349
+    .line 166
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -160,63 +154,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 351
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "  pri="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/server/NotificationManagerService$NotificationRecord;->notification:Landroid/app/Notification;
-
-    iget v1, v1, Landroid/app/Notification;->priority:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    .line 352
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "  score="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Lcom/android/server/NotificationManagerService$NotificationRecord;->score:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    .line 353
+    .line 168
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -245,7 +183,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 354
+    .line 169
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -274,7 +212,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 355
+    .line 170
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -303,7 +241,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 356
+    .line 171
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -332,46 +270,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 357
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "  uid="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Lcom/android/server/NotificationManagerService$NotificationRecord;->uid:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " userId="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Lcom/android/server/NotificationManagerService$NotificationRecord;->userId:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    .line 358
+    .line 172
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -404,7 +303,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 359
+    .line 173
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -437,7 +336,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 360
+    .line 174
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -466,7 +365,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 361
+    .line 175
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -499,7 +398,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 362
+    .line 176
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -560,7 +459,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 365
+    .line 179
     return-void
 .end method
 
@@ -568,7 +467,7 @@
     .locals 2
 
     .prologue
-    .line 370
+    .line 184
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -631,13 +530,13 @@
 
     move-result-object v0
 
-    const-string v1, " score="
+    const-string v1, " pri="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    iget v1, p0, Lcom/android/server/NotificationManagerService$NotificationRecord;->score:I
+    iget v1, p0, Lcom/android/server/NotificationManagerService$NotificationRecord;->priority:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 

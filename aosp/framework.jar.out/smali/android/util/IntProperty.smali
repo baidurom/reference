@@ -55,7 +55,11 @@
 
     move-result v0
 
-    invoke-virtual {p0, p1, v0}, Landroid/util/IntProperty;->setValue(Ljava/lang/Object;I)V
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    invoke-virtual {p0, p1, v0}, Landroid/util/IntProperty;->set(Ljava/lang/Object;Ljava/lang/Integer;)V
 
     .line 46
     return-void

@@ -24,12 +24,12 @@
 
 
 # instance fields
-.field private final mCallerToCallback:Ljava/util/HashMap;
+.field private final mAppToCallback:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/HashMap",
             "<",
-            "Landroid/os/IBinder;",
+            "Ljava/lang/String;",
             "Landroid/speech/tts/ITextToSpeechCallback;",
             ">;"
         }
@@ -45,17 +45,17 @@
     .parameter
 
     .prologue
-    .line 856
+    .line 864
     iput-object p1, p0, Landroid/speech/tts/TextToSpeechService$CallbackMap;->this$0:Landroid/speech/tts/TextToSpeechService;
 
     invoke-direct {p0}, Landroid/os/RemoteCallbackList;-><init>()V
 
-    .line 857
+    .line 866
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Landroid/speech/tts/TextToSpeechService$CallbackMap;->mCallerToCallback:Ljava/util/HashMap;
+    iput-object v0, p0, Landroid/speech/tts/TextToSpeechService$CallbackMap;->mAppToCallback:Ljava/util/HashMap;
 
     return-void
 .end method
@@ -66,79 +66,73 @@
     .parameter "x1"
 
     .prologue
-    .line 856
+    .line 864
     invoke-direct {p0, p1}, Landroid/speech/tts/TextToSpeechService$CallbackMap;-><init>(Landroid/speech/tts/TextToSpeechService;)V
 
     return-void
 .end method
 
-.method private getCallbackFor(Ljava/lang/Object;)Landroid/speech/tts/ITextToSpeechCallback;
-    .locals 4
-    .parameter "caller"
+.method private getCallbackFor(Ljava/lang/String;)Landroid/speech/tts/ITextToSpeechCallback;
+    .locals 3
+    .parameter "packageName"
 
     .prologue
-    .line 925
-    move-object v0, p1
+    .line 934
+    iget-object v2, p0, Landroid/speech/tts/TextToSpeechService$CallbackMap;->mAppToCallback:Ljava/util/HashMap;
 
-    check-cast v0, Landroid/os/IBinder;
+    monitor-enter v2
 
-    .line 926
-    .local v0, asBinder:Landroid/os/IBinder;
-    iget-object v3, p0, Landroid/speech/tts/TextToSpeechService$CallbackMap;->mCallerToCallback:Ljava/util/HashMap;
-
-    monitor-enter v3
-
-    .line 927
+    .line 935
     :try_start_0
-    iget-object v2, p0, Landroid/speech/tts/TextToSpeechService$CallbackMap;->mCallerToCallback:Ljava/util/HashMap;
+    iget-object v1, p0, Landroid/speech/tts/TextToSpeechService$CallbackMap;->mAppToCallback:Ljava/util/HashMap;
 
-    invoke-virtual {v2, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Landroid/speech/tts/ITextToSpeechCallback;
+    check-cast v0, Landroid/speech/tts/ITextToSpeechCallback;
 
-    .line 928
-    .local v1, cb:Landroid/speech/tts/ITextToSpeechCallback;
-    monitor-exit v3
+    .line 936
+    .local v0, cb:Landroid/speech/tts/ITextToSpeechCallback;
+    monitor-exit v2
 
-    .line 930
-    return-object v1
+    .line 938
+    return-object v0
 
-    .line 928
-    .end local v1           #cb:Landroid/speech/tts/ITextToSpeechCallback;
+    .line 936
+    .end local v0           #cb:Landroid/speech/tts/ITextToSpeechCallback;
     :catchall_0
-    move-exception v2
+    move-exception v1
 
-    monitor-exit v3
+    monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v2
+    throw v1
 .end method
 
 
 # virtual methods
-.method public dispatchOnDone(Ljava/lang/Object;Ljava/lang/String;)V
+.method public dispatchOnDone(Ljava/lang/String;Ljava/lang/String;)V
     .locals 5
-    .parameter "callerIdentity"
+    .parameter "packageName"
     .parameter "utteranceId"
 
     .prologue
-    .line 876
-    invoke-direct {p0, p1}, Landroid/speech/tts/TextToSpeechService$CallbackMap;->getCallbackFor(Ljava/lang/Object;)Landroid/speech/tts/ITextToSpeechCallback;
+    .line 885
+    invoke-direct {p0, p1}, Landroid/speech/tts/TextToSpeechService$CallbackMap;->getCallbackFor(Ljava/lang/String;)Landroid/speech/tts/ITextToSpeechCallback;
 
     move-result-object v0
 
-    .line 877
+    .line 886
     .local v0, cb:Landroid/speech/tts/ITextToSpeechCallback;
     if-nez v0, :cond_0
 
-    .line 883
+    .line 892
     :goto_0
     return-void
 
-    .line 879
+    .line 888
     :cond_0
     :try_start_0
     invoke-interface {v0, p2}, Landroid/speech/tts/ITextToSpeechCallback;->onDone(Ljava/lang/String;)V
@@ -147,11 +141,11 @@
 
     goto :goto_0
 
-    .line 880
+    .line 889
     :catch_0
     move-exception v1
 
-    .line 881
+    .line 890
     .local v1, e:Landroid/os/RemoteException;
     const-string v2, "TextToSpeechService"
 
@@ -178,26 +172,26 @@
     goto :goto_0
 .end method
 
-.method public dispatchOnError(Ljava/lang/Object;Ljava/lang/String;)V
+.method public dispatchOnError(Ljava/lang/String;Ljava/lang/String;)V
     .locals 5
-    .parameter "callerIdentity"
+    .parameter "packageName"
     .parameter "utteranceId"
 
     .prologue
-    .line 897
-    invoke-direct {p0, p1}, Landroid/speech/tts/TextToSpeechService$CallbackMap;->getCallbackFor(Ljava/lang/Object;)Landroid/speech/tts/ITextToSpeechCallback;
+    .line 906
+    invoke-direct {p0, p1}, Landroid/speech/tts/TextToSpeechService$CallbackMap;->getCallbackFor(Ljava/lang/String;)Landroid/speech/tts/ITextToSpeechCallback;
 
     move-result-object v0
 
-    .line 898
+    .line 907
     .local v0, cb:Landroid/speech/tts/ITextToSpeechCallback;
     if-nez v0, :cond_0
 
-    .line 904
+    .line 913
     :goto_0
     return-void
 
-    .line 900
+    .line 909
     :cond_0
     :try_start_0
     invoke-interface {v0, p2}, Landroid/speech/tts/ITextToSpeechCallback;->onError(Ljava/lang/String;)V
@@ -206,11 +200,11 @@
 
     goto :goto_0
 
-    .line 901
+    .line 910
     :catch_0
     move-exception v1
 
-    .line 902
+    .line 911
     .local v1, e:Landroid/os/RemoteException;
     const-string v2, "TextToSpeechService"
 
@@ -237,26 +231,26 @@
     goto :goto_0
 .end method
 
-.method public dispatchOnStart(Ljava/lang/Object;Ljava/lang/String;)V
+.method public dispatchOnStart(Ljava/lang/String;Ljava/lang/String;)V
     .locals 5
-    .parameter "callerIdentity"
+    .parameter "packageName"
     .parameter "utteranceId"
 
     .prologue
-    .line 886
-    invoke-direct {p0, p1}, Landroid/speech/tts/TextToSpeechService$CallbackMap;->getCallbackFor(Ljava/lang/Object;)Landroid/speech/tts/ITextToSpeechCallback;
+    .line 895
+    invoke-direct {p0, p1}, Landroid/speech/tts/TextToSpeechService$CallbackMap;->getCallbackFor(Ljava/lang/String;)Landroid/speech/tts/ITextToSpeechCallback;
 
     move-result-object v0
 
-    .line 887
+    .line 896
     .local v0, cb:Landroid/speech/tts/ITextToSpeechCallback;
     if-nez v0, :cond_0
 
-    .line 894
+    .line 903
     :goto_0
     return-void
 
-    .line 889
+    .line 898
     :cond_0
     :try_start_0
     invoke-interface {v0, p2}, Landroid/speech/tts/ITextToSpeechCallback;->onStart(Ljava/lang/String;)V
@@ -265,11 +259,11 @@
 
     goto :goto_0
 
-    .line 890
+    .line 899
     :catch_0
     move-exception v1
 
-    .line 891
+    .line 900
     .local v1, e:Landroid/os/RemoteException;
     const-string v2, "TextToSpeechService"
 
@@ -300,27 +294,27 @@
     .locals 2
 
     .prologue
-    .line 917
-    iget-object v1, p0, Landroid/speech/tts/TextToSpeechService$CallbackMap;->mCallerToCallback:Ljava/util/HashMap;
+    .line 926
+    iget-object v1, p0, Landroid/speech/tts/TextToSpeechService$CallbackMap;->mAppToCallback:Ljava/util/HashMap;
 
     monitor-enter v1
 
-    .line 918
+    .line 927
     :try_start_0
-    iget-object v0, p0, Landroid/speech/tts/TextToSpeechService$CallbackMap;->mCallerToCallback:Ljava/util/HashMap;
+    iget-object v0, p0, Landroid/speech/tts/TextToSpeechService$CallbackMap;->mAppToCallback:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
-    .line 919
+    .line 928
     invoke-super {p0}, Landroid/os/RemoteCallbackList;->kill()V
 
-    .line 920
+    .line 929
     monitor-exit v1
 
-    .line 921
+    .line 930
     return-void
 
-    .line 920
+    .line 929
     :catchall_0
     move-exception v0
 
@@ -337,7 +331,7 @@
     .parameter "x1"
 
     .prologue
-    .line 856
+    .line 864
     check-cast p1, Landroid/speech/tts/ITextToSpeechCallback;
 
     .end local p1
@@ -352,29 +346,29 @@
     .parameter "cookie"
 
     .prologue
-    .line 908
+    .line 917
     move-object v0, p2
 
-    check-cast v0, Landroid/os/IBinder;
+    check-cast v0, Ljava/lang/String;
 
-    .line 909
-    .local v0, caller:Landroid/os/IBinder;
-    iget-object v2, p0, Landroid/speech/tts/TextToSpeechService$CallbackMap;->mCallerToCallback:Ljava/util/HashMap;
+    .line 918
+    .local v0, packageName:Ljava/lang/String;
+    iget-object v2, p0, Landroid/speech/tts/TextToSpeechService$CallbackMap;->mAppToCallback:Ljava/util/HashMap;
 
     monitor-enter v2
 
-    .line 910
+    .line 919
     :try_start_0
-    iget-object v1, p0, Landroid/speech/tts/TextToSpeechService$CallbackMap;->mCallerToCallback:Ljava/util/HashMap;
+    iget-object v1, p0, Landroid/speech/tts/TextToSpeechService$CallbackMap;->mAppToCallback:Ljava/util/HashMap;
 
     invoke-virtual {v1, v0}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 911
+    .line 920
     monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 912
+    .line 921
     iget-object v1, p0, Landroid/speech/tts/TextToSpeechService$CallbackMap;->this$0:Landroid/speech/tts/TextToSpeechService;
 
     #getter for: Landroid/speech/tts/TextToSpeechService;->mSynthHandler:Landroid/speech/tts/TextToSpeechService$SynthHandler;
@@ -382,12 +376,12 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, Landroid/speech/tts/TextToSpeechService$SynthHandler;->stopForApp(Ljava/lang/Object;)I
+    invoke-virtual {v1, v0}, Landroid/speech/tts/TextToSpeechService$SynthHandler;->stopForApp(Ljava/lang/String;)I
 
-    .line 913
+    .line 922
     return-void
 
-    .line 911
+    .line 920
     :catchall_0
     move-exception v1
 
@@ -399,26 +393,26 @@
     throw v1
 .end method
 
-.method public setCallback(Landroid/os/IBinder;Landroid/speech/tts/ITextToSpeechCallback;)V
+.method public setCallback(Ljava/lang/String;Landroid/speech/tts/ITextToSpeechCallback;)V
     .locals 3
-    .parameter "caller"
+    .parameter "packageName"
     .parameter "cb"
 
     .prologue
-    .line 861
-    iget-object v2, p0, Landroid/speech/tts/TextToSpeechService$CallbackMap;->mCallerToCallback:Ljava/util/HashMap;
+    .line 870
+    iget-object v2, p0, Landroid/speech/tts/TextToSpeechService$CallbackMap;->mAppToCallback:Ljava/util/HashMap;
 
     monitor-enter v2
 
-    .line 863
+    .line 872
     if-eqz p2, :cond_1
 
-    .line 864
+    .line 873
     :try_start_0
     invoke-virtual {p0, p2, p1}, Landroid/speech/tts/TextToSpeechService$CallbackMap;->register(Landroid/os/IInterface;Ljava/lang/Object;)Z
 
-    .line 865
-    iget-object v1, p0, Landroid/speech/tts/TextToSpeechService$CallbackMap;->mCallerToCallback:Ljava/util/HashMap;
+    .line 874
+    iget-object v1, p0, Landroid/speech/tts/TextToSpeechService$CallbackMap;->mAppToCallback:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -426,27 +420,27 @@
 
     check-cast v0, Landroid/speech/tts/ITextToSpeechCallback;
 
-    .line 869
+    .line 878
     .local v0, old:Landroid/speech/tts/ITextToSpeechCallback;
     :goto_0
     if-eqz v0, :cond_0
 
     if-eq v0, p2, :cond_0
 
-    .line 870
+    .line 879
     invoke-virtual {p0, v0}, Landroid/speech/tts/TextToSpeechService$CallbackMap;->unregister(Landroid/os/IInterface;)Z
 
-    .line 872
+    .line 881
     :cond_0
     monitor-exit v2
 
-    .line 873
+    .line 882
     return-void
 
-    .line 867
+    .line 876
     .end local v0           #old:Landroid/speech/tts/ITextToSpeechCallback;
     :cond_1
-    iget-object v1, p0, Landroid/speech/tts/TextToSpeechService$CallbackMap;->mCallerToCallback:Ljava/util/HashMap;
+    iget-object v1, p0, Landroid/speech/tts/TextToSpeechService$CallbackMap;->mAppToCallback:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -457,7 +451,7 @@
     .restart local v0       #old:Landroid/speech/tts/ITextToSpeechCallback;
     goto :goto_0
 
-    .line 872
+    .line 881
     .end local v0           #old:Landroid/speech/tts/ITextToSpeechCallback;
     :catchall_0
     move-exception v1

@@ -31,8 +31,6 @@
 
 .field public static final FLAG_CANT_SAVE_STATE:I = 0x1
 
-.field public static final FLAG_HAS_ACTIVITIES:I = 0x4
-
 .field public static final FLAG_PERSISTENT:I = 0x2
 
 .field public static final IMPORTANCE_BACKGROUND:I = 0x190
@@ -44,8 +42,6 @@
 .field public static final IMPORTANCE_FOREGROUND:I = 0x64
 
 .field public static final IMPORTANCE_PERCEPTIBLE:I = 0x82
-
-.field public static final IMPORTANCE_PERSISTENT:I = 0x32
 
 .field public static final IMPORTANCE_SERVICE:I = 0x12c
 
@@ -71,8 +67,6 @@
 
 .field public importanceReasonPid:I
 
-.field public lastTrimLevel:I
-
 .field public lru:I
 
 .field public pid:I
@@ -89,7 +83,7 @@
     .locals 1
 
     .prologue
-    .line 1590
+    .line 1306
     new-instance v0, Landroid/app/ActivityManager$RunningAppProcessInfo$1;
 
     invoke-direct {v0}, Landroid/app/ActivityManager$RunningAppProcessInfo$1;-><init>()V
@@ -103,20 +97,20 @@
     .locals 1
 
     .prologue
-    .line 1545
+    .line 1263
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1546
+    .line 1264
     const/16 v0, 0x64
 
     iput v0, p0, Landroid/app/ActivityManager$RunningAppProcessInfo;->importance:I
 
-    .line 1547
+    .line 1265
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/app/ActivityManager$RunningAppProcessInfo;->importanceReasonCode:I
 
-    .line 1548
+    .line 1266
     return-void
 .end method
 
@@ -125,13 +119,13 @@
     .parameter "source"
 
     .prologue
-    .line 1600
+    .line 1316
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1601
+    .line 1317
     invoke-virtual {p0, p1}, Landroid/app/ActivityManager$RunningAppProcessInfo;->readFromParcel(Landroid/os/Parcel;)V
 
-    .line 1602
+    .line 1318
     return-void
 .end method
 
@@ -141,7 +135,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1366
+    .line 1105
     invoke-direct {p0, p1}, Landroid/app/ActivityManager$RunningAppProcessInfo;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -154,19 +148,19 @@
     .parameter "pArr"
 
     .prologue
-    .line 1550
+    .line 1268
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1551
+    .line 1269
     iput-object p1, p0, Landroid/app/ActivityManager$RunningAppProcessInfo;->processName:Ljava/lang/String;
 
-    .line 1552
+    .line 1270
     iput p2, p0, Landroid/app/ActivityManager$RunningAppProcessInfo;->pid:I
 
-    .line 1553
+    .line 1271
     iput-object p3, p0, Landroid/app/ActivityManager$RunningAppProcessInfo;->pkgList:[Ljava/lang/String;
 
-    .line 1554
+    .line 1272
     return-void
 .end method
 
@@ -176,7 +170,7 @@
     .locals 1
 
     .prologue
-    .line 1557
+    .line 1275
     const/4 v0, 0x0
 
     return v0
@@ -187,91 +181,84 @@
     .parameter "source"
 
     .prologue
-    .line 1576
+    .line 1293
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/ActivityManager$RunningAppProcessInfo;->processName:Ljava/lang/String;
 
-    .line 1577
+    .line 1294
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/app/ActivityManager$RunningAppProcessInfo;->pid:I
 
-    .line 1578
+    .line 1295
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/app/ActivityManager$RunningAppProcessInfo;->uid:I
 
-    .line 1579
+    .line 1296
     invoke-virtual {p1}, Landroid/os/Parcel;->readStringArray()[Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/ActivityManager$RunningAppProcessInfo;->pkgList:[Ljava/lang/String;
 
-    .line 1580
+    .line 1297
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/app/ActivityManager$RunningAppProcessInfo;->flags:I
 
-    .line 1581
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    iput v0, p0, Landroid/app/ActivityManager$RunningAppProcessInfo;->lastTrimLevel:I
-
-    .line 1582
+    .line 1298
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/app/ActivityManager$RunningAppProcessInfo;->importance:I
 
-    .line 1583
+    .line 1299
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/app/ActivityManager$RunningAppProcessInfo;->lru:I
 
-    .line 1584
+    .line 1300
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/app/ActivityManager$RunningAppProcessInfo;->importanceReasonCode:I
 
-    .line 1585
+    .line 1301
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/app/ActivityManager$RunningAppProcessInfo;->importanceReasonPid:I
 
-    .line 1586
+    .line 1302
     invoke-static {p1}, Landroid/content/ComponentName;->readFromParcel(Landroid/os/Parcel;)Landroid/content/ComponentName;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/ActivityManager$RunningAppProcessInfo;->importanceReasonComponent:Landroid/content/ComponentName;
 
-    .line 1587
+    .line 1303
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/app/ActivityManager$RunningAppProcessInfo;->importanceReasonImportance:I
 
-    .line 1588
+    .line 1304
     return-void
 .end method
 
@@ -281,66 +268,61 @@
     .parameter "flags"
 
     .prologue
-    .line 1561
+    .line 1279
     iget-object v0, p0, Landroid/app/ActivityManager$RunningAppProcessInfo;->processName:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1562
+    .line 1280
     iget v0, p0, Landroid/app/ActivityManager$RunningAppProcessInfo;->pid:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1563
+    .line 1281
     iget v0, p0, Landroid/app/ActivityManager$RunningAppProcessInfo;->uid:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1564
+    .line 1282
     iget-object v0, p0, Landroid/app/ActivityManager$RunningAppProcessInfo;->pkgList:[Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeStringArray([Ljava/lang/String;)V
 
-    .line 1565
+    .line 1283
     iget v0, p0, Landroid/app/ActivityManager$RunningAppProcessInfo;->flags:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1566
-    iget v0, p0, Landroid/app/ActivityManager$RunningAppProcessInfo;->lastTrimLevel:I
-
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1567
+    .line 1284
     iget v0, p0, Landroid/app/ActivityManager$RunningAppProcessInfo;->importance:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1568
+    .line 1285
     iget v0, p0, Landroid/app/ActivityManager$RunningAppProcessInfo;->lru:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1569
+    .line 1286
     iget v0, p0, Landroid/app/ActivityManager$RunningAppProcessInfo;->importanceReasonCode:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1570
+    .line 1287
     iget v0, p0, Landroid/app/ActivityManager$RunningAppProcessInfo;->importanceReasonPid:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1571
+    .line 1288
     iget-object v0, p0, Landroid/app/ActivityManager$RunningAppProcessInfo;->importanceReasonComponent:Landroid/content/ComponentName;
 
     invoke-static {v0, p1}, Landroid/content/ComponentName;->writeToParcel(Landroid/content/ComponentName;Landroid/os/Parcel;)V
 
-    .line 1572
+    .line 1289
     iget v0, p0, Landroid/app/ActivityManager$RunningAppProcessInfo;->importanceReasonImportance:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1573
+    .line 1290
     return-void
 .end method

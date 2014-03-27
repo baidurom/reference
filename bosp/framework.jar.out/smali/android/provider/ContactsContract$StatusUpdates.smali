@@ -33,7 +33,7 @@
     .locals 2
 
     .prologue
-    .line 4926
+    .line 4888
     sget-object v0, Landroid/provider/ContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string/jumbo v1, "status_updates"
@@ -44,7 +44,7 @@
 
     sput-object v0, Landroid/provider/ContactsContract$StatusUpdates;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 4931
+    .line 4893
     sget-object v0, Landroid/provider/ContactsContract$Profile;->CONTENT_URI:Landroid/net/Uri;
 
     const-string/jumbo v1, "status_updates"
@@ -62,7 +62,7 @@
     .locals 0
 
     .prologue
-    .line 4921
+    .line 4883
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -73,7 +73,7 @@
     .parameter "x0"
 
     .prologue
-    .line 4916
+    .line 4878
     invoke-direct {p0}, Landroid/provider/ContactsContract$StatusUpdates;-><init>()V
 
     return-void
@@ -84,40 +84,40 @@
     .parameter "status"
 
     .prologue
-    .line 4941
+    .line 4903
     packed-switch p0, :pswitch_data_0
 
-    .line 4953
-    const v0, 0x108006a
+    .line 4915
+    const v0, #drawable@presence_offline#t
 
     :goto_0
     return v0
 
-    .line 4943
+    .line 4905
     :pswitch_0
-    const v0, 0x108006b
+    const v0, #drawable@presence_online#t
 
     goto :goto_0
 
-    .line 4946
+    .line 4908
     :pswitch_1
-    const v0, 0x1080067
+    const v0, #drawable@presence_away#t
 
     goto :goto_0
 
-    .line 4948
+    .line 4910
     :pswitch_2
-    const v0, 0x1080068
+    const v0, #drawable@presence_busy#t
 
     goto :goto_0
 
-    .line 4950
+    .line 4912
     :pswitch_3
-    const v0, 0x1080069
+    const v0, #drawable@presence_invisible#t
 
     goto :goto_0
 
-    .line 4941
+    .line 4903
     nop
 
     :pswitch_data_0
@@ -135,6 +135,6 @@
     .parameter "status"
 
     .prologue
-    .line 4966
+    .line 4928
     return p0
 .end method

@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 457
+    .line 424
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -28,18 +28,26 @@
 
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Ljava/lang/Object;
-    .locals 2
+    .locals 3
     .parameter "ctx"
 
     .prologue
-    .line 459
-    new-instance v0, Landroid/app/StatusBarManager;
+    .line 426
+    const-string/jumbo v1, "usb"
 
-    invoke-virtual {p1}, Landroid/app/ContextImpl;->getOuterContext()Landroid/content/Context;
+    invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-direct {v0, v1}, Landroid/app/StatusBarManager;-><init>(Landroid/content/Context;)V
+    .line 427
+    .local v0, b:Landroid/os/IBinder;
+    new-instance v1, Landroid/hardware/usb/UsbManager;
 
-    return-object v0
+    invoke-static {v0}, Landroid/hardware/usb/IUsbManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/hardware/usb/IUsbManager;
+
+    move-result-object v2
+
+    invoke-direct {v1, p1, v2}, Landroid/hardware/usb/UsbManager;-><init>(Landroid/content/Context;Landroid/hardware/usb/IUsbManager;)V
+
+    return-object v1
 .end method

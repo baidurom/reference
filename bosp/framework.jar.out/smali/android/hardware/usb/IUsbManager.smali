@@ -15,23 +15,7 @@
 
 
 # virtual methods
-.method public abstract allowUsbDebugging(ZLjava/lang/String;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract clearDefaults(Ljava/lang/String;I)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract denyUsbDebugging()V
+.method public abstract clearDefaults(Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -79,7 +63,7 @@
     .end annotation
 .end method
 
-.method public abstract hasDefaults(Ljava/lang/String;I)Z
+.method public abstract hasDefaults(Ljava/lang/String;)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -127,7 +111,7 @@
     .end annotation
 .end method
 
-.method public abstract setAccessoryPackage(Landroid/hardware/usb/UsbAccessory;Ljava/lang/String;I)V
+.method public abstract setAccessoryPackage(Landroid/hardware/usb/UsbAccessory;Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -143,7 +127,7 @@
     .end annotation
 .end method
 
-.method public abstract setDevicePackage(Landroid/hardware/usb/UsbDevice;Ljava/lang/String;I)V
+.method public abstract setDevicePackage(Landroid/hardware/usb/UsbDevice;Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

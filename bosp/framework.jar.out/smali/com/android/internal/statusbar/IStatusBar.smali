@@ -23,7 +23,7 @@
     .end annotation
 .end method
 
-.method public abstract animateCollapsePanels()V
+.method public abstract animateCollapse()V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -31,23 +31,7 @@
     .end annotation
 .end method
 
-.method public abstract animateExpandNotificationsPanel()V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract animateExpandSettingsPanel()V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract cancelPreloadRecentApps()V
+.method public abstract animateExpand()V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -56,14 +40,6 @@
 .end method
 
 .method public abstract disable(I)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract preloadRecentApps()V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -111,7 +87,7 @@
     .end annotation
 .end method
 
-.method public abstract setSystemUiVisibility(II)V
+.method public abstract setSystemUiVisibility(I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

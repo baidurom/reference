@@ -40,22 +40,22 @@
     .locals 1
 
     .prologue
-    .line 121
+    .line 112
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 97
+    .line 88
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/content/ContentProvider;->mContext:Landroid/content/Context;
 
-    .line 104
+    .line 95
     new-instance v0, Landroid/content/ContentProvider$Transport;
 
     invoke-direct {v0, p0}, Landroid/content/ContentProvider$Transport;-><init>(Landroid/content/ContentProvider;)V
 
     iput-object v0, p0, Landroid/content/ContentProvider;->mTransport:Landroid/content/ContentProvider$Transport;
 
-    .line 122
+    .line 113
     return-void
 .end method
 
@@ -67,34 +67,34 @@
     .parameter "pathPermissions"
 
     .prologue
-    .line 141
+    .line 132
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 97
+    .line 88
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/content/ContentProvider;->mContext:Landroid/content/Context;
 
-    .line 104
+    .line 95
     new-instance v0, Landroid/content/ContentProvider$Transport;
 
     invoke-direct {v0, p0}, Landroid/content/ContentProvider$Transport;-><init>(Landroid/content/ContentProvider;)V
 
     iput-object v0, p0, Landroid/content/ContentProvider;->mTransport:Landroid/content/ContentProvider$Transport;
 
-    .line 142
+    .line 133
     iput-object p1, p0, Landroid/content/ContentProvider;->mContext:Landroid/content/Context;
 
-    .line 143
+    .line 134
     iput-object p2, p0, Landroid/content/ContentProvider;->mReadPermission:Ljava/lang/String;
 
-    .line 144
+    .line 135
     iput-object p3, p0, Landroid/content/ContentProvider;->mWritePermission:Ljava/lang/String;
 
-    .line 145
+    .line 136
     iput-object p4, p0, Landroid/content/ContentProvider;->mPathPermissions:[Landroid/content/pm/PathPermission;
 
-    .line 146
+    .line 137
     return-void
 .end method
 
@@ -103,7 +103,7 @@
     .parameter "x0"
 
     .prologue
-    .line 89
+    .line 80
     iget v0, p0, Landroid/content/ContentProvider;->mMyUid:I
 
     return v0
@@ -114,7 +114,7 @@
     .parameter "x0"
 
     .prologue
-    .line 89
+    .line 80
     iget-boolean v0, p0, Landroid/content/ContentProvider;->mExported:Z
 
     return v0
@@ -125,12 +125,12 @@
     .parameter "abstractInterface"
 
     .prologue
-    .line 163
+    .line 154
     instance-of v0, p0, Landroid/content/ContentProvider$Transport;
 
     if-eqz v0, :cond_0
 
-    .line 164
+    .line 155
     check-cast p0, Landroid/content/ContentProvider$Transport;
 
     .end local p0
@@ -138,7 +138,7 @@
 
     move-result-object v0
 
-    .line 166
+    .line 157
     :goto_0
     return-object v0
 
@@ -172,17 +172,17 @@
     .end annotation
 
     .prologue
-    .line 1081
+    .line 967
     .local p1, operations:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/content/ContentProviderOperation;>;"
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .line 1082
+    .line 968
     .local v1, numOperations:I
     new-array v2, v1, [Landroid/content/ContentProviderResult;
 
-    .line 1083
+    .line 969
     .local v2, results:[Landroid/content/ContentProviderResult;
     const/4 v0, 0x0
 
@@ -190,7 +190,7 @@
     :goto_0
     if-ge v0, v1, :cond_0
 
-    .line 1084
+    .line 970
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -203,12 +203,12 @@
 
     aput-object v3, v2, v0
 
-    .line 1083
+    .line 969
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 1086
+    .line 972
     :cond_0
     return-object v2
 .end method
@@ -219,52 +219,52 @@
     .parameter "info"
 
     .prologue
-    .line 1043
+    .line 929
     invoke-static {}, Landroid/os/AsyncTask;->init()V
 
-    .line 1049
+    .line 935
     iget-object v0, p0, Landroid/content/ContentProvider;->mContext:Landroid/content/Context;
 
     if-nez v0, :cond_1
 
-    .line 1050
+    .line 936
     iput-object p1, p0, Landroid/content/ContentProvider;->mContext:Landroid/content/Context;
 
-    .line 1051
+    .line 937
     invoke-static {}, Landroid/os/Process;->myUid()I
 
     move-result v0
 
     iput v0, p0, Landroid/content/ContentProvider;->mMyUid:I
 
-    .line 1052
+    .line 938
     if-eqz p2, :cond_0
 
-    .line 1053
+    .line 939
     iget-object v0, p2, Landroid/content/pm/ProviderInfo;->readPermission:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Landroid/content/ContentProvider;->setReadPermission(Ljava/lang/String;)V
 
-    .line 1054
+    .line 940
     iget-object v0, p2, Landroid/content/pm/ProviderInfo;->writePermission:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Landroid/content/ContentProvider;->setWritePermission(Ljava/lang/String;)V
 
-    .line 1055
+    .line 941
     iget-object v0, p2, Landroid/content/pm/ProviderInfo;->pathPermissions:[Landroid/content/pm/PathPermission;
 
     invoke-virtual {p0, v0}, Landroid/content/ContentProvider;->setPathPermissions([Landroid/content/pm/PathPermission;)V
 
-    .line 1056
+    .line 942
     iget-boolean v0, p2, Landroid/content/pm/ComponentInfo;->exported:Z
 
     iput-boolean v0, p0, Landroid/content/ContentProvider;->mExported:Z
 
-    .line 1058
+    .line 944
     :cond_0
     invoke-virtual {p0}, Landroid/content/ContentProvider;->onCreate()Z
 
-    .line 1060
+    .line 946
     :cond_1
     return-void
 .end method
@@ -275,10 +275,10 @@
     .parameter "values"
 
     .prologue
-    .line 703
+    .line 589
     array-length v1, p2
 
-    .line 704
+    .line 590
     .local v1, numValues:I
     const/4 v0, 0x0
 
@@ -286,17 +286,17 @@
     :goto_0
     if-ge v0, v1, :cond_0
 
-    .line 705
+    .line 591
     aget-object v2, p2, v0
 
     invoke-virtual {p0, p1, v2}, Landroid/content/ContentProvider;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
 
-    .line 704
+    .line 590
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 707
+    .line 593
     :cond_0
     return v1
 .end method
@@ -308,7 +308,7 @@
     .parameter "extras"
 
     .prologue
-    .line 1101
+    .line 987
     const/4 v0, 0x0
 
     return-object v0
@@ -317,27 +317,11 @@
 .method public abstract delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
 .end method
 
-.method public dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
-    .locals 1
-    .parameter "fd"
-    .parameter "writer"
-    .parameter "args"
-
-    .prologue
-    .line 1143
-    const-string/jumbo v0, "nothing to dump"
-
-    invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    .line 1144
-    return-void
-.end method
-
 .method public final getContext()Landroid/content/Context;
     .locals 1
 
     .prologue
-    .line 405
+    .line 360
     iget-object v0, p0, Landroid/content/ContentProvider;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -347,7 +331,7 @@
     .locals 1
 
     .prologue
-    .line 1028
+    .line 914
     iget-object v0, p0, Landroid/content/ContentProvider;->mTransport:Landroid/content/ContentProvider$Transport;
 
     return-object v0
@@ -357,7 +341,7 @@
     .locals 1
 
     .prologue
-    .line 471
+    .line 426
     iget-object v0, p0, Landroid/content/ContentProvider;->mPathPermissions:[Landroid/content/pm/PathPermission;
 
     return-object v0
@@ -367,7 +351,7 @@
     .locals 1
 
     .prologue
-    .line 427
+    .line 382
     iget-object v0, p0, Landroid/content/ContentProvider;->mReadPermission:Ljava/lang/String;
 
     return-object v0
@@ -379,7 +363,7 @@
     .parameter "mimeTypeFilter"
 
     .prologue
-    .line 895
+    .line 781
     const/4 v0, 0x0
 
     return-object v0
@@ -392,7 +376,7 @@
     .locals 1
 
     .prologue
-    .line 449
+    .line 404
     iget-object v0, p0, Landroid/content/ContentProvider;->mWritePermission:Ljava/lang/String;
 
     return-object v0
@@ -405,7 +389,7 @@
     .locals 1
 
     .prologue
-    .line 1018
+    .line 904
     const/4 v0, 0x0
 
     return v0
@@ -416,7 +400,7 @@
     .parameter "newConfig"
 
     .prologue
-    .line 512
+    .line 467
     return-void
 .end method
 
@@ -427,7 +411,7 @@
     .locals 0
 
     .prologue
-    .line 523
+    .line 478
     return-void
 .end method
 
@@ -436,7 +420,7 @@
     .parameter "level"
 
     .prologue
-    .line 526
+    .line 481
     return-void
 .end method
 
@@ -451,12 +435,12 @@
     .end annotation
 
     .prologue
-    .line 829
+    .line 715
     invoke-virtual {p0, p1, p2}, Landroid/content/ContentProvider;->openFile(Landroid/net/Uri;Ljava/lang/String;)Landroid/os/ParcelFileDescriptor;
 
     move-result-object v1
 
-    .line 830
+    .line 716
     .local v1, fd:Landroid/os/ParcelFileDescriptor;
     if-eqz v1, :cond_0
 
@@ -488,7 +472,7 @@
     .end annotation
 
     .prologue
-    .line 785
+    .line 671
     new-instance v0, Ljava/io/FileNotFoundException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -531,7 +515,7 @@
 
     const/4 v3, 0x0
 
-    .line 849
+    .line 735
     new-array v2, v11, [Ljava/lang/String;
 
     const-string v0, "_data"
@@ -550,7 +534,7 @@
 
     move-result-object v6
 
-    .line 850
+    .line 736
     .local v6, c:Landroid/database/Cursor;
     if-eqz v6, :cond_0
 
@@ -558,22 +542,22 @@
 
     move-result v7
 
-    .line 851
+    .line 737
     .local v7, count:I
     :cond_0
     if-eq v7, v11, :cond_3
 
-    .line 854
+    .line 740
     if-eqz v6, :cond_1
 
-    .line 855
+    .line 741
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 857
+    .line 743
     :cond_1
     if-nez v7, :cond_2
 
-    .line 858
+    .line 744
     new-instance v0, Ljava/io/FileNotFoundException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -598,7 +582,7 @@
 
     throw v0
 
-    .line 860
+    .line 746
     :cond_2
     new-instance v0, Ljava/io/FileNotFoundException;
 
@@ -624,18 +608,18 @@
 
     throw v0
 
-    .line 863
+    .line 749
     :cond_3
     invoke-interface {v6}, Landroid/database/Cursor;->moveToFirst()Z
 
-    .line 864
+    .line 750
     const-string v0, "_data"
 
     invoke-interface {v6, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v8
 
-    .line 865
+    .line 751
     .local v8, i:I
     if-ltz v8, :cond_4
 
@@ -643,15 +627,15 @@
 
     move-result-object v10
 
-    .line 866
+    .line 752
     .local v10, path:Ljava/lang/String;
     :goto_0
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 867
+    .line 753
     if-nez v10, :cond_5
 
-    .line 868
+    .line 754
     new-instance v0, Ljava/io/FileNotFoundException;
 
     const-string v1, "Column _data not found."
@@ -664,17 +648,17 @@
     :cond_4
     move-object v10, v3
 
-    .line 865
+    .line 751
     goto :goto_0
 
-    .line 871
+    .line 757
     .restart local v10       #path:Ljava/lang/String;
     :cond_5
     invoke-static {p1, p2}, Landroid/content/ContentResolver;->modeToMode(Landroid/net/Uri;Ljava/lang/String;)I
 
     move-result v9
 
-    .line 872
+    .line 758
     .local v9, modeBits:I
     new-instance v0, Ljava/io/File;
 
@@ -716,7 +700,7 @@
     .end annotation
 
     .prologue
-    .line 991
+    .line 877
     .local p4, args:Ljava/lang/Object;,"TT;"
     .local p5, func:Landroid/content/ContentProvider$PipeDataWriter;,"Landroid/content/ContentProvider$PipeDataWriter<TT;>;"
     :try_start_0
@@ -724,7 +708,7 @@
 
     move-result-object v3
 
-    .line 993
+    .line 879
     .local v3, fds:[Landroid/os/ParcelFileDescriptor;
     new-instance v0, Landroid/content/ContentProvider$1;
 
@@ -742,7 +726,7 @@
 
     invoke-direct/range {v0 .. v7}, Landroid/content/ContentProvider$1;-><init>(Landroid/content/ContentProvider;Landroid/content/ContentProvider$PipeDataWriter;[Landroid/os/ParcelFileDescriptor;Landroid/net/Uri;Ljava/lang/String;Landroid/os/Bundle;Ljava/lang/Object;)V
 
-    .line 1005
+    .line 891
     .local v0, task:Landroid/os/AsyncTask;,"Landroid/os/AsyncTask<Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;>;"
     sget-object v2, Landroid/os/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
 
@@ -752,7 +736,7 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/os/AsyncTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 1007
+    .line 893
     const/4 v1, 0x0
 
     aget-object v1, v3, v1
@@ -761,13 +745,13 @@
 
     return-object v1
 
-    .line 1008
+    .line 894
     .end local v0           #task:Landroid/os/AsyncTask;,"Landroid/os/AsyncTask<Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;>;"
     .end local v3           #fds:[Landroid/os/ParcelFileDescriptor;
     :catch_0
     move-exception v8
 
-    .line 1009
+    .line 895
     .local v8, e:Ljava/io/IOException;
     new-instance v1, Ljava/io/FileNotFoundException;
 
@@ -790,7 +774,7 @@
     .end annotation
 
     .prologue
-    .line 935
+    .line 821
     const-string v1, "*/*"
 
     invoke-virtual {v1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -799,24 +783,24 @@
 
     if-eqz v1, :cond_0
 
-    .line 937
+    .line 823
     const-string/jumbo v1, "r"
 
     invoke-virtual {p0, p1, v1}, Landroid/content/ContentProvider;->openAssetFile(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/res/AssetFileDescriptor;
 
     move-result-object v1
 
-    .line 943
+    .line 829
     :goto_0
     return-object v1
 
-    .line 939
+    .line 825
     :cond_0
     invoke-virtual {p0, p1}, Landroid/content/ContentProvider;->getType(Landroid/net/Uri;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 940
+    .line 826
     .local v0, baseType:Ljava/lang/String;
     if-eqz v0, :cond_1
 
@@ -826,7 +810,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 943
+    .line 829
     const-string/jumbo v1, "r"
 
     invoke-virtual {p0, p1, v1}, Landroid/content/ContentProvider;->openAssetFile(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/res/AssetFileDescriptor;
@@ -835,7 +819,7 @@
 
     goto :goto_0
 
-    .line 945
+    .line 831
     :cond_1
     new-instance v1, Ljava/io/FileNotFoundException;
 
@@ -875,33 +859,15 @@
 .method public abstract query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 .end method
 
-.method public query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/database/Cursor;
-    .locals 1
-    .parameter "uri"
-    .parameter "projection"
-    .parameter "selection"
-    .parameter "selectionArgs"
-    .parameter "sortOrder"
-    .parameter "cancellationSignal"
-
-    .prologue
-    .line 652
-    invoke-virtual/range {p0 .. p5}, Landroid/content/ContentProvider;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
 .method protected final setPathPermissions([Landroid/content/pm/PathPermission;)V
     .locals 0
     .parameter "permissions"
 
     .prologue
-    .line 460
+    .line 415
     iput-object p1, p0, Landroid/content/ContentProvider;->mPathPermissions:[Landroid/content/pm/PathPermission;
 
-    .line 461
+    .line 416
     return-void
 .end method
 
@@ -910,10 +876,10 @@
     .parameter "permission"
 
     .prologue
-    .line 416
+    .line 371
     iput-object p1, p0, Landroid/content/ContentProvider;->mReadPermission:Ljava/lang/String;
 
-    .line 417
+    .line 372
     return-void
 .end method
 
@@ -922,10 +888,10 @@
     .parameter "permission"
 
     .prologue
-    .line 438
+    .line 393
     iput-object p1, p0, Landroid/content/ContentProvider;->mWritePermission:Ljava/lang/String;
 
-    .line 439
+    .line 394
     return-void
 .end method
 
@@ -933,14 +899,14 @@
     .locals 2
 
     .prologue
-    .line 1127
+    .line 1013
     const-string v0, "ContentProvider"
 
     const-string v1, "implement ContentProvider shutdown() to make sure all database connections are gracefully shutdown"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1129
+    .line 1015
     return-void
 .end method
 

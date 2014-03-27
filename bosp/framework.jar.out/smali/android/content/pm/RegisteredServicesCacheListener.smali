@@ -15,10 +15,10 @@
 
 
 # virtual methods
-.method public abstract onServiceChanged(Ljava/lang/Object;IZ)V
+.method public abstract onServiceChanged(Ljava/lang/Object;Z)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(TV;IZ)V"
+            "(TV;Z)V"
         }
     .end annotation
 .end method

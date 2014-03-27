@@ -25,15 +25,15 @@
 
     const/4 v2, 0x0
 
-    .line 35
+    .line 34
     invoke-direct {p0, p1, p2, p3}, Landroid/view/GLES20Layer;-><init>(IIZ)V
 
-    .line 37
+    .line 36
     const/4 v3, 0x2
 
     new-array v0, v3, [I
 
-    .line 38
+    .line 37
     .local v0, layerInfo:[I
     invoke-static {p1, p2, p3, v0}, Landroid/view/GLES20Canvas;->nCreateLayer(IIZ[I)I
 
@@ -41,22 +41,22 @@
 
     iput v3, p0, Landroid/view/GLES20Layer;->mLayer:I
 
-    .line 39
+    .line 38
     iget v3, p0, Landroid/view/GLES20Layer;->mLayer:I
 
     if-eqz v3, :cond_1
 
-    .line 40
+    .line 39
     aget v3, v0, v2
 
     iput v3, p0, Landroid/view/GLES20RenderLayer;->mLayerWidth:I
 
-    .line 41
+    .line 40
     aget v3, v0, v1
 
     iput v3, p0, Landroid/view/GLES20RenderLayer;->mLayerHeight:I
 
-    .line 43
+    .line 42
     new-instance v3, Landroid/view/GLES20Canvas;
 
     iget v4, p0, Landroid/view/GLES20Layer;->mLayer:I
@@ -68,7 +68,7 @@
 
     iput-object v3, p0, Landroid/view/GLES20RenderLayer;->mCanvas:Landroid/view/GLES20Canvas;
 
-    .line 44
+    .line 43
     new-instance v1, Landroid/view/GLES20Layer$Finalizer;
 
     iget v2, p0, Landroid/view/GLES20Layer;->mLayer:I
@@ -77,21 +77,21 @@
 
     iput-object v1, p0, Landroid/view/GLES20Layer;->mFinalizer:Landroid/view/GLES20Layer$Finalizer;
 
-    .line 49
+    .line 48
     :goto_1
     return-void
 
     :cond_0
     move v1, v2
 
-    .line 43
+    .line 42
     goto :goto_0
 
-    .line 46
+    .line 45
     :cond_1
     iput-object v4, p0, Landroid/view/GLES20RenderLayer;->mCanvas:Landroid/view/GLES20Canvas;
 
-    .line 47
+    .line 46
     iput-object v4, p0, Landroid/view/GLES20Layer;->mFinalizer:Landroid/view/GLES20Layer$Finalizer;
 
     goto :goto_1
@@ -104,18 +104,18 @@
     .parameter "currentCanvas"
 
     .prologue
-    .line 92
+    .line 79
     instance-of v0, p1, Landroid/view/GLES20Canvas;
 
     if-eqz v0, :cond_0
 
-    .line 93
+    .line 80
     check-cast p1, Landroid/view/GLES20Canvas;
 
     .end local p1
     invoke-virtual {p1}, Landroid/view/GLES20Canvas;->resume()V
 
-    .line 95
+    .line 82
     :cond_0
     return-void
 .end method
@@ -124,7 +124,7 @@
     .locals 1
 
     .prologue
-    .line 87
+    .line 74
     iget-object v0, p0, Landroid/view/GLES20RenderLayer;->mCanvas:Landroid/view/GLES20Canvas;
 
     return-object v0
@@ -134,7 +134,7 @@
     .locals 1
 
     .prologue
-    .line 53
+    .line 52
     iget v0, p0, Landroid/view/GLES20Layer;->mLayer:I
 
     if-eqz v0, :cond_0
@@ -158,99 +158,59 @@
     goto :goto_0
 .end method
 
-.method redrawLater(Landroid/view/DisplayList;Landroid/graphics/Rect;)V
-    .locals 7
-    .parameter "displayList"
-    .parameter "dirtyRect"
-
-    .prologue
-    .line 114
-    iget v0, p0, Landroid/view/GLES20Layer;->mLayer:I
-
-    iget-object v1, p0, Landroid/view/GLES20RenderLayer;->mCanvas:Landroid/view/GLES20Canvas;
-
-    invoke-virtual {v1}, Landroid/view/GLES20Canvas;->getRenderer()I
-
-    move-result v1
-
-    check-cast p1, Landroid/view/GLES20DisplayList;
-
-    .end local p1
-    invoke-virtual {p1}, Landroid/view/GLES20DisplayList;->getNativeDisplayList()I
-
-    move-result v2
-
-    iget v3, p2, Landroid/graphics/Rect;->left:I
-
-    iget v4, p2, Landroid/graphics/Rect;->top:I
-
-    iget v5, p2, Landroid/graphics/Rect;->right:I
-
-    iget v6, p2, Landroid/graphics/Rect;->bottom:I
-
-    invoke-static/range {v0 .. v6}, Landroid/view/GLES20Canvas;->nUpdateRenderLayer(IIIIIII)V
-
-    .line 117
-    return-void
-.end method
-
-.method resize(II)Z
-    .locals 3
+.method resize(II)V
+    .locals 2
     .parameter "width"
     .parameter "height"
 
     .prologue
-    const/4 v1, 0x0
-
-    .line 58
+    .line 57
     invoke-virtual {p0}, Landroid/view/GLES20RenderLayer;->isValid()Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_0
+    if-eqz v1, :cond_0
 
     if-lez p1, :cond_0
 
     if-gtz p2, :cond_1
 
-    .line 76
+    .line 70
     :cond_0
     :goto_0
-    return v1
+    return-void
 
-    .line 60
+    .line 59
     :cond_1
     iput p1, p0, Landroid/view/HardwareLayer;->mWidth:I
 
-    .line 61
+    .line 60
     iput p2, p0, Landroid/view/HardwareLayer;->mHeight:I
 
+    .line 62
+    iget v1, p0, Landroid/view/GLES20RenderLayer;->mLayerWidth:I
+
+    if-ne p1, v1, :cond_2
+
+    iget v1, p0, Landroid/view/GLES20RenderLayer;->mLayerHeight:I
+
+    if-eq p2, v1, :cond_0
+
     .line 63
-    iget v2, p0, Landroid/view/GLES20RenderLayer;->mLayerWidth:I
-
-    if-ne p1, v2, :cond_2
-
-    iget v2, p0, Landroid/view/GLES20RenderLayer;->mLayerHeight:I
-
-    if-eq p2, v2, :cond_3
-
-    .line 64
     :cond_2
-    const/4 v2, 0x2
+    const/4 v1, 0x2
 
-    new-array v0, v2, [I
+    new-array v0, v1, [I
 
-    .line 66
+    .line 65
     .local v0, layerInfo:[I
-    iget v2, p0, Landroid/view/GLES20Layer;->mLayer:I
+    iget v1, p0, Landroid/view/GLES20Layer;->mLayer:I
 
-    invoke-static {v2, p1, p2, v0}, Landroid/view/GLES20Canvas;->nResizeLayer(III[I)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_4
+    invoke-static {v1, p1, p2, v0}, Landroid/view/GLES20Canvas;->nResizeLayer(III[I)V
 
     .line 67
+    const/4 v1, 0x0
+
     aget v1, v0, v1
 
     iput v1, p0, Landroid/view/GLES20RenderLayer;->mLayerWidth:I
@@ -262,45 +222,7 @@
 
     iput v1, p0, Landroid/view/GLES20RenderLayer;->mLayerHeight:I
 
-    .line 76
-    .end local v0           #layerInfo:[I
-    :cond_3
-    :goto_1
-    invoke-virtual {p0}, Landroid/view/GLES20RenderLayer;->isValid()Z
-
-    move-result v1
-
     goto :goto_0
-
-    .line 71
-    .restart local v0       #layerInfo:[I
-    :cond_4
-    iput v1, p0, Landroid/view/GLES20Layer;->mLayer:I
-
-    .line 72
-    iput v1, p0, Landroid/view/GLES20RenderLayer;->mLayerWidth:I
-
-    .line 73
-    iput v1, p0, Landroid/view/GLES20RenderLayer;->mLayerHeight:I
-
-    goto :goto_1
-.end method
-
-.method setOpaque(Z)V
-    .locals 1
-    .parameter "isOpaque"
-
-    .prologue
-    .line 81
-    iput-boolean p1, p0, Landroid/view/HardwareLayer;->mOpaque:Z
-
-    .line 82
-    iget v0, p0, Landroid/view/GLES20Layer;->mLayer:I
-
-    invoke-static {v0, p1}, Landroid/view/GLES20Canvas;->nSetOpaqueLayer(IZ)V
-
-    .line 83
-    return-void
 .end method
 
 .method setTransform(Landroid/graphics/Matrix;)V
@@ -308,7 +230,7 @@
     .parameter "matrix"
 
     .prologue
-    .line 110
+    .line 97
     return-void
 .end method
 
@@ -317,18 +239,18 @@
     .parameter "currentCanvas"
 
     .prologue
-    .line 99
+    .line 86
     instance-of v0, p1, Landroid/view/GLES20Canvas;
 
     if-eqz v0, :cond_0
 
-    .line 100
+    .line 87
     check-cast p1, Landroid/view/GLES20Canvas;
 
     .end local p1
     invoke-virtual {p1}, Landroid/view/GLES20Canvas;->interrupt()V
 
-    .line 102
+    .line 89
     :cond_0
     invoke-virtual {p0}, Landroid/view/GLES20RenderLayer;->getCanvas()Landroid/view/HardwareCanvas;
 

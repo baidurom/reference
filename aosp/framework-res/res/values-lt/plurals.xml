@@ -67,18 +67,6 @@
         <item quantity="other">po %d d.</item>
         <item quantity="one">rytoj</item>
     </plurals>
-    <plurals name="duration_seconds">
-        <item quantity="other">%d sek.</item>
-        <item quantity="one">1 sek.</item>
-    </plurals>
-    <plurals name="duration_minutes">
-        <item quantity="other">%d min.</item>
-        <item quantity="one">1 min.</item>
-    </plurals>
-    <plurals name="duration_hours">
-        <item quantity="other">%d val.</item>
-        <item quantity="one">1 val.</item>
-    </plurals>
     <plurals name="wifi_available">
         <item quantity="other">galimi „Wi-Fi“ tinklai</item>
         <item quantity="one">Galimas „Wi-Fi“ tinklas</item>

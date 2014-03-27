@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 127
+    .line 125
     iput-object p1, p0, Landroid/net/DhcpStateMachine$1;->this$0:Landroid/net/DhcpStateMachine;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,7 +40,7 @@
     .parameter "intent"
 
     .prologue
-    .line 133
+    .line 131
     iget-object v0, p0, Landroid/net/DhcpStateMachine$1;->this$0:Landroid/net/DhcpStateMachine;
 
     #getter for: Landroid/net/DhcpStateMachine;->mDhcpRenewWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -52,13 +52,13 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/PowerManager$WakeLock;->acquire(J)V
 
-    .line 134
+    .line 132
     iget-object v0, p0, Landroid/net/DhcpStateMachine$1;->this$0:Landroid/net/DhcpStateMachine;
 
     const v1, 0x30003
 
     invoke-virtual {v0, v1}, Landroid/net/DhcpStateMachine;->sendMessage(I)V
 
-    .line 135
+    .line 133
     return-void
 .end method

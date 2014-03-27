@@ -15,15 +15,13 @@
 
 
 # static fields
-.field public static final accessibility_gestures:I = 0x1100000
+.field public static final fallbackring:I = #raw@fallbackring#t
 
-.field public static final fallbackring:I = 0x1100001
+.field public static final incognito_mode_start_page:I = #raw@incognito_mode_start_page#t
 
-.field public static final incognito_mode_start_page:I = 0x1100002
+.field public static final loaderror:I = #raw@loaderror#t
 
-.field public static final loaderror:I = 0x1100003
-
-.field public static final nodomain:I = 0x1100004
+.field public static final nodomain:I = #raw@nodomain#t
 
 
 # direct methods
@@ -31,7 +29,7 @@
     .locals 0
 
     .prologue
-    .line 12983
+    .line 16062
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -33,7 +33,7 @@
     .locals 2
 
     .prologue
-    .line 209
+    .line 196
     const-string v0, "persist.baidu.sdcard.type"
 
     const-string v1, "0"
@@ -51,7 +51,7 @@
     .locals 0
 
     .prologue
-    .line 183
+    .line 170
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

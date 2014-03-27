@@ -17,7 +17,7 @@
 # static fields
 .field public static final AAC:I = 0x3
 
-.field public static final AAC_ELD:I = 0x5
+.field public static final AAC_PLUS:I = 0x4
 
 .field public static final AMR_NB:I = 0x1
 
@@ -25,7 +25,7 @@
 
 .field public static final DEFAULT:I = 0x0
 
-.field public static final HE_AAC:I = 0x4
+.field public static final EAAC_PLUS:I = 0x5
 
 
 # instance fields
@@ -38,7 +38,7 @@
     .parameter
 
     .prologue
-    .line 254
+    .line 233
     iput-object p1, p0, Landroid/media/MediaRecorder$AudioEncoder;->this$0:Landroid/media/MediaRecorder;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V

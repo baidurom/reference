@@ -346,7 +346,7 @@
     iput-boolean v0, p0, Lcom/android/internal/os/ProcessStats;->mFirst:Z
 
     .line 157
-    const/16 v0, 0x1000
+    const/16 v0, 0x100
 
     new-array v0, v0, [B
 
@@ -1275,7 +1275,7 @@
     .parameter "out"
 
     .prologue
-    const/16 v13, 0x3c
+    const/16 v13, 0x14
 
     const/4 v12, 0x0
 
@@ -1288,7 +1288,7 @@
 
     .line 559
     .local v5, tempSpeeds:[J
-    const/16 v0, 0x3c
+    const/16 v0, 0x14
 
     .line 560
     .local v0, MAX_SPEEDS:I
@@ -2104,24 +2104,24 @@
     .prologue
     const/4 v8, 0x1
 
-    .line 630
+    .line 627
     iget-boolean v6, p0, Lcom/android/internal/os/ProcessStats;->mWorkingProcsSorted:Z
 
     if-nez v6, :cond_4
 
-    .line 631
+    .line 628
     iget-object v6, p0, Lcom/android/internal/os/ProcessStats;->mWorkingProcs:Ljava/util/ArrayList;
 
     invoke-virtual {v6}, Ljava/util/ArrayList;->clear()V
 
-    .line 632
+    .line 629
     iget-object v6, p0, Lcom/android/internal/os/ProcessStats;->mProcStats:Ljava/util/ArrayList;
 
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .line 633
+    .line 630
     .local v1, N:I
     const/4 v2, 0x0
 
@@ -2129,7 +2129,7 @@
     :goto_0
     if-ge v2, v1, :cond_3
 
-    .line 634
+    .line 631
     iget-object v6, p0, Lcom/android/internal/os/ProcessStats;->mProcStats:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2138,18 +2138,18 @@
 
     check-cast v4, Lcom/android/internal/os/ProcessStats$Stats;
 
-    .line 635
+    .line 632
     .local v4, stats:Lcom/android/internal/os/ProcessStats$Stats;
     iget-boolean v6, v4, Lcom/android/internal/os/ProcessStats$Stats;->working:Z
 
     if-eqz v6, :cond_2
 
-    .line 636
+    .line 633
     iget-object v6, p0, Lcom/android/internal/os/ProcessStats;->mWorkingProcs:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 637
+    .line 634
     iget-object v6, v4, Lcom/android/internal/os/ProcessStats$Stats;->threadStats:Ljava/util/ArrayList;
 
     if-eqz v6, :cond_2
@@ -2162,19 +2162,19 @@
 
     if-le v6, v8, :cond_2
 
-    .line 638
+    .line 635
     iget-object v6, v4, Lcom/android/internal/os/ProcessStats$Stats;->workingThreads:Ljava/util/ArrayList;
 
     invoke-virtual {v6}, Ljava/util/ArrayList;->clear()V
 
-    .line 639
+    .line 636
     iget-object v6, v4, Lcom/android/internal/os/ProcessStats$Stats;->threadStats:Ljava/util/ArrayList;
 
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 640
+    .line 637
     .local v0, M:I
     const/4 v3, 0x0
 
@@ -2182,7 +2182,7 @@
     :goto_1
     if-ge v3, v0, :cond_1
 
-    .line 641
+    .line 638
     iget-object v6, v4, Lcom/android/internal/os/ProcessStats$Stats;->threadStats:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2191,24 +2191,24 @@
 
     check-cast v5, Lcom/android/internal/os/ProcessStats$Stats;
 
-    .line 642
+    .line 639
     .local v5, tstats:Lcom/android/internal/os/ProcessStats$Stats;
     iget-boolean v6, v5, Lcom/android/internal/os/ProcessStats$Stats;->working:Z
 
     if-eqz v6, :cond_0
 
-    .line 643
+    .line 640
     iget-object v6, v4, Lcom/android/internal/os/ProcessStats$Stats;->workingThreads:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 640
+    .line 637
     :cond_0
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
-    .line 646
+    .line 643
     .end local v5           #tstats:Lcom/android/internal/os/ProcessStats$Stats;
     :cond_1
     iget-object v6, v4, Lcom/android/internal/os/ProcessStats$Stats;->workingThreads:Ljava/util/ArrayList;
@@ -2217,7 +2217,7 @@
 
     invoke-static {v6, v7}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 633
+    .line 630
     .end local v0           #M:I
     .end local v3           #j:I
     :cond_2
@@ -2225,7 +2225,7 @@
 
     goto :goto_0
 
-    .line 650
+    .line 647
     .end local v4           #stats:Lcom/android/internal/os/ProcessStats$Stats;
     :cond_3
     iget-object v6, p0, Lcom/android/internal/os/ProcessStats;->mWorkingProcs:Ljava/util/ArrayList;
@@ -2234,10 +2234,10 @@
 
     invoke-static {v6, v7}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 651
+    .line 648
     iput-boolean v8, p0, Lcom/android/internal/os/ProcessStats;->mWorkingProcsSorted:Z
 
-    .line 653
+    .line 650
     .end local v1           #N:I
     .end local v2           #i:I
     :cond_4
@@ -2248,7 +2248,7 @@
     .locals 1
 
     .prologue
-    .line 656
+    .line 653
     iget-object v0, p0, Lcom/android/internal/os/ProcessStats;->mProcStats:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -2262,10 +2262,10 @@
     .locals 1
 
     .prologue
-    .line 664
+    .line 661
     invoke-virtual {p0}, Lcom/android/internal/os/ProcessStats;->buildWorkingProcs()V
 
-    .line 665
+    .line 662
     iget-object v0, p0, Lcom/android/internal/os/ProcessStats;->mWorkingProcs:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -2512,7 +2512,7 @@
     .parameter "index"
 
     .prologue
-    .line 660
+    .line 657
     iget-object v0, p0, Lcom/android/internal/os/ProcessStats;->mProcStats:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2529,6 +2529,22 @@
 
     .prologue
     .line 622
+    iget v0, p0, Lcom/android/internal/os/ProcessStats;->mRelUserTime:I
+
+    iget v1, p0, Lcom/android/internal/os/ProcessStats;->mRelSystemTime:I
+
+    add-int/2addr v0, v1
+
+    iget v1, p0, Lcom/android/internal/os/ProcessStats;->mRelIrqTime:I
+
+    add-int/2addr v0, v1
+
+    int-to-float v0, v0
+
+    const/high16 v1, 0x42c8
+
+    mul-float/2addr v0, v1
+
     iget v1, p0, Lcom/android/internal/os/ProcessStats;->mRelUserTime:I
 
     iget v2, p0, Lcom/android/internal/os/ProcessStats;->mRelSystemTime:I
@@ -2541,41 +2557,13 @@
 
     iget v2, p0, Lcom/android/internal/os/ProcessStats;->mRelIdleTime:I
 
-    add-int v0, v1, v2
-
-    .line 623
-    .local v0, denom:I
-    if-gtz v0, :cond_0
-
-    .line 624
-    const/4 v1, 0x0
-
-    .line 626
-    :goto_0
-    return v1
-
-    :cond_0
-    iget v1, p0, Lcom/android/internal/os/ProcessStats;->mRelUserTime:I
-
-    iget v2, p0, Lcom/android/internal/os/ProcessStats;->mRelSystemTime:I
-
-    add-int/2addr v1, v2
-
-    iget v2, p0, Lcom/android/internal/os/ProcessStats;->mRelIrqTime:I
-
     add-int/2addr v1, v2
 
     int-to-float v1, v1
 
-    const/high16 v2, 0x42c8
+    div-float/2addr v0, v1
 
-    mul-float/2addr v1, v2
-
-    int-to-float v2, v0
-
-    div-float/2addr v1, v2
-
-    goto :goto_0
+    return v0
 .end method
 
 .method public final getWorkingStats(I)Lcom/android/internal/os/ProcessStats$Stats;
@@ -2583,7 +2571,7 @@
     .parameter "index"
 
     .prologue
-    .line 669
+    .line 666
     iget-object v0, p0, Lcom/android/internal/os/ProcessStats;->mWorkingProcs:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2637,49 +2625,49 @@
     .locals 3
 
     .prologue
-    .line 673
+    .line 670
     new-instance v1, Ljava/io/StringWriter;
 
     invoke-direct {v1}, Ljava/io/StringWriter;-><init>()V
 
-    .line 674
+    .line 671
     .local v1, sw:Ljava/io/StringWriter;
     new-instance v0, Ljava/io/PrintWriter;
 
     invoke-direct {v0, v1}, Ljava/io/PrintWriter;-><init>(Ljava/io/Writer;)V
 
-    .line 675
+    .line 672
     .local v0, pw:Ljava/io/PrintWriter;
     const-string v2, "Load: "
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 676
+    .line 673
     iget v2, p0, Lcom/android/internal/os/ProcessStats;->mLoad1:F
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->print(F)V
 
-    .line 677
+    .line 674
     const-string v2, " / "
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 678
+    .line 675
     iget v2, p0, Lcom/android/internal/os/ProcessStats;->mLoad5:F
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->print(F)V
 
-    .line 679
+    .line 676
     const-string v2, " / "
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 680
+    .line 677
     iget v2, p0, Lcom/android/internal/os/ProcessStats;->mLoad15:F
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(F)V
 
-    .line 681
+    .line 678
     invoke-virtual {v1}, Ljava/io/StringWriter;->toString()Ljava/lang/String;
 
     move-result-object v2
@@ -2692,15 +2680,15 @@
     .parameter "now"
 
     .prologue
-    .line 685
+    .line 682
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/os/ProcessStats;->buildWorkingProcs()V
 
-    .line 687
+    .line 684
     new-instance v26, Ljava/io/StringWriter;
 
     invoke-direct/range {v26 .. v26}, Ljava/io/StringWriter;-><init>()V
 
-    .line 688
+    .line 685
     .local v26, sw:Ljava/io/StringWriter;
     new-instance v3, Ljava/io/PrintWriter;
 
@@ -2708,13 +2696,13 @@
 
     invoke-direct {v3, v0}, Ljava/io/PrintWriter;-><init>(Ljava/io/Writer;)V
 
-    .line 690
+    .line 687
     .local v3, pw:Ljava/io/PrintWriter;
     const-string v2, "CPU usage from "
 
     invoke-virtual {v3, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 691
+    .line 688
     move-object/from16 v0, p0
 
     iget-wide v4, v0, Lcom/android/internal/os/ProcessStats;->mLastSampleTime:J
@@ -2723,7 +2711,7 @@
 
     if-lez v2, :cond_1
 
-    .line 692
+    .line 689
     move-object/from16 v0, p0
 
     iget-wide v4, v0, Lcom/android/internal/os/ProcessStats;->mLastSampleTime:J
@@ -2732,12 +2720,12 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/io/PrintWriter;->print(J)V
 
-    .line 693
+    .line 690
     const-string/jumbo v2, "ms to "
 
     invoke-virtual {v3, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 694
+    .line 691
     move-object/from16 v0, p0
 
     iget-wide v4, v0, Lcom/android/internal/os/ProcessStats;->mCurrentSampleTime:J
@@ -2746,12 +2734,12 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/io/PrintWriter;->print(J)V
 
-    .line 695
+    .line 692
     const-string/jumbo v2, "ms ago"
 
     invoke-virtual {v3, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 703
+    .line 700
     :goto_0
     move-object/from16 v0, p0
 
@@ -2773,16 +2761,15 @@
 
     iget-wide v6, v0, Lcom/android/internal/os/ProcessStats;->mLastSampleRealTime:J
 
-    sub-long v21, v4, v6
+    cmp-long v2, v4, v6
+
+    if-nez v2, :cond_2
+
+    const-wide/16 v21, 0x1f4
 
     .line 705
     .local v21, sampleRealTime:J
-    const-wide/16 v4, 0x0
-
-    cmp-long v2, v21, v4
-
-    if-lez v2, :cond_2
-
+    :goto_1
     const-wide/16 v4, 0x64
 
     mul-long v4, v4, v23
@@ -2791,7 +2778,6 @@
 
     .line 706
     .local v19, percAwake:J
-    :goto_1
     const-wide/16 v4, 0x64
 
     cmp-long v2, v19, v4
@@ -3049,7 +3035,7 @@
 
     goto :goto_4
 
-    .line 697
+    .line 694
     .end local v15           #M:I
     .end local v16           #N:I
     .end local v17           #i:I
@@ -3069,12 +3055,12 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/io/PrintWriter;->print(J)V
 
-    .line 698
+    .line 695
     const-string/jumbo v2, "ms to "
 
     invoke-virtual {v3, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 699
+    .line 696
     move-object/from16 v0, p0
 
     iget-wide v4, v0, Lcom/android/internal/os/ProcessStats;->mCurrentSampleTime:J
@@ -3083,18 +3069,25 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/io/PrintWriter;->print(J)V
 
-    .line 700
+    .line 697
     const-string/jumbo v2, "ms later"
 
     invoke-virtual {v3, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     goto/16 :goto_0
 
-    .line 705
-    .restart local v21       #sampleRealTime:J
+    .line 704
     .restart local v23       #sampleTime:J
     :cond_2
-    const-wide/16 v19, 0x0
+    move-object/from16 v0, p0
+
+    iget-wide v4, v0, Lcom/android/internal/os/ProcessStats;->mCurrentSampleRealTime:J
+
+    move-object/from16 v0, p0
+
+    iget-wide v6, v0, Lcom/android/internal/os/ProcessStats;->mLastSampleRealTime:J
+
+    sub-long v21, v4, v6
 
     goto/16 :goto_1
 
@@ -3102,6 +3095,7 @@
     .restart local v16       #N:I
     .restart local v17       #i:I
     .restart local v19       #percAwake:J
+    .restart local v21       #sampleRealTime:J
     .restart local v25       #st:Lcom/android/internal/os/ProcessStats$Stats;
     .restart local v27       #totalTime:I
     :cond_3

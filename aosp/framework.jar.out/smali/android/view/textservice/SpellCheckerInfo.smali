@@ -56,7 +56,7 @@
 
     sput-object v0, Landroid/view/textservice/SpellCheckerInfo;->TAG:Ljava/lang/String;
 
-    .line 189
+    .line 190
     new-instance v0, Landroid/view/textservice/SpellCheckerInfo$1;
 
     invoke-direct {v0}, Landroid/view/textservice/SpellCheckerInfo$1;-><init>()V
@@ -581,7 +581,7 @@
     .locals 1
 
     .prologue
-    .line 264
+    .line 265
     const/4 v0, 0x0
 
     return v0
@@ -591,7 +591,7 @@
     .locals 3
 
     .prologue
-    .line 159
+    .line 160
     new-instance v0, Landroid/content/ComponentName;
 
     iget-object v1, p0, Landroid/view/textservice/SpellCheckerInfo;->mService:Landroid/content/pm/ResolveInfo;
@@ -625,7 +625,7 @@
     .locals 1
 
     .prologue
-    .line 167
+    .line 168
     iget-object v0, p0, Landroid/view/textservice/SpellCheckerInfo;->mService:Landroid/content/pm/ResolveInfo;
 
     iget-object v0, v0, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
@@ -639,7 +639,7 @@
     .locals 1
 
     .prologue
-    .line 227
+    .line 228
     iget-object v0, p0, Landroid/view/textservice/SpellCheckerInfo;->mService:Landroid/content/pm/ResolveInfo;
 
     iget-object v0, v0, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
@@ -651,7 +651,7 @@
     .locals 1
 
     .prologue
-    .line 240
+    .line 241
     iget-object v0, p0, Landroid/view/textservice/SpellCheckerInfo;->mSettingsActivityName:Ljava/lang/String;
 
     return-object v0
@@ -662,7 +662,7 @@
     .parameter "index"
 
     .prologue
-    .line 256
+    .line 257
     iget-object v0, p0, Landroid/view/textservice/SpellCheckerInfo;->mSubtypes:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -678,7 +678,7 @@
     .locals 1
 
     .prologue
-    .line 247
+    .line 248
     iget-object v0, p0, Landroid/view/textservice/SpellCheckerInfo;->mSubtypes:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -693,7 +693,7 @@
     .parameter "pm"
 
     .prologue
-    .line 218
+    .line 219
     iget-object v0, p0, Landroid/view/textservice/SpellCheckerInfo;->mService:Landroid/content/pm/ResolveInfo;
 
     invoke-virtual {v0, p1}, Landroid/content/pm/ResolveInfo;->loadIcon(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
@@ -708,7 +708,7 @@
     .parameter "pm"
 
     .prologue
-    .line 208
+    .line 209
     iget v0, p0, Landroid/view/textservice/SpellCheckerInfo;->mLabel:I
 
     if-eqz v0, :cond_0
@@ -718,7 +718,7 @@
     :cond_0
     const-string v0, ""
 
-    .line 209
+    .line 210
     :goto_0
     return-object v0
 
@@ -748,31 +748,31 @@
     .parameter "flags"
 
     .prologue
-    .line 178
+    .line 179
     iget v0, p0, Landroid/view/textservice/SpellCheckerInfo;->mLabel:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 179
+    .line 180
     iget-object v0, p0, Landroid/view/textservice/SpellCheckerInfo;->mId:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 180
+    .line 181
     iget-object v0, p0, Landroid/view/textservice/SpellCheckerInfo;->mSettingsActivityName:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 181
+    .line 182
     iget-object v0, p0, Landroid/view/textservice/SpellCheckerInfo;->mService:Landroid/content/pm/ResolveInfo;
 
     invoke-virtual {v0, p1, p2}, Landroid/content/pm/ResolveInfo;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 182
+    .line 183
     iget-object v0, p0, Landroid/view/textservice/SpellCheckerInfo;->mSubtypes:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
 
-    .line 183
+    .line 184
     return-void
 .end method

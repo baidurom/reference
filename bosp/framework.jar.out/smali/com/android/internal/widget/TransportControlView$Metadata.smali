@@ -32,7 +32,7 @@
     .parameter
 
     .prologue
-    .line 252
+    .line 253
     iput-object p1, p0, Lcom/android/internal/widget/TransportControlView$Metadata;->this$0:Lcom/android/internal/widget/TransportControlView;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -45,8 +45,8 @@
     .parameter "x0"
 
     .prologue
-    .line 252
-    iget-object v0, p0, Lcom/android/internal/widget/TransportControlView$Metadata;->trackTitle:Ljava/lang/String;
+    .line 253
+    iget-object v0, p0, Lcom/android/internal/widget/TransportControlView$Metadata;->albumTitle:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -57,30 +57,7 @@
     .parameter "x1"
 
     .prologue
-    .line 252
-    iput-object p1, p0, Lcom/android/internal/widget/TransportControlView$Metadata;->trackTitle:Ljava/lang/String;
-
-    return-object p1
-.end method
-
-.method static synthetic access$1100(Lcom/android/internal/widget/TransportControlView$Metadata;)Ljava/lang/String;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 252
-    iget-object v0, p0, Lcom/android/internal/widget/TransportControlView$Metadata;->albumTitle:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method static synthetic access$1102(Lcom/android/internal/widget/TransportControlView$Metadata;Ljava/lang/String;)Ljava/lang/String;
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 252
+    .line 253
     iput-object p1, p0, Lcom/android/internal/widget/TransportControlView$Metadata;->albumTitle:Ljava/lang/String;
 
     return-object p1
@@ -91,7 +68,7 @@
     .parameter "x0"
 
     .prologue
-    .line 252
+    .line 253
     iget-object v0, p0, Lcom/android/internal/widget/TransportControlView$Metadata;->bitmap:Landroid/graphics/Bitmap;
 
     return-object v0
@@ -103,8 +80,31 @@
     .parameter "x1"
 
     .prologue
-    .line 252
+    .line 253
     iput-object p1, p0, Lcom/android/internal/widget/TransportControlView$Metadata;->bitmap:Landroid/graphics/Bitmap;
+
+    return-object p1
+.end method
+
+.method static synthetic access$800(Lcom/android/internal/widget/TransportControlView$Metadata;)Ljava/lang/String;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 253
+    iget-object v0, p0, Lcom/android/internal/widget/TransportControlView$Metadata;->artist:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method static synthetic access$802(Lcom/android/internal/widget/TransportControlView$Metadata;Ljava/lang/String;)Ljava/lang/String;
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 253
+    iput-object p1, p0, Lcom/android/internal/widget/TransportControlView$Metadata;->artist:Ljava/lang/String;
 
     return-object p1
 .end method
@@ -114,8 +114,8 @@
     .parameter "x0"
 
     .prologue
-    .line 252
-    iget-object v0, p0, Lcom/android/internal/widget/TransportControlView$Metadata;->artist:Ljava/lang/String;
+    .line 253
+    iget-object v0, p0, Lcom/android/internal/widget/TransportControlView$Metadata;->trackTitle:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -126,8 +126,8 @@
     .parameter "x1"
 
     .prologue
-    .line 252
-    iput-object p1, p0, Lcom/android/internal/widget/TransportControlView$Metadata;->artist:Ljava/lang/String;
+    .line 253
+    iput-object p1, p0, Lcom/android/internal/widget/TransportControlView$Metadata;->trackTitle:Ljava/lang/String;
 
     return-object p1
 .end method
@@ -138,7 +138,7 @@
     .locals 2
 
     .prologue
-    .line 259
+    .line 260
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

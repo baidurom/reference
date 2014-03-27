@@ -21,8 +21,6 @@
     .end annotation
 .end field
 
-.field itemId:J
-
 .field recycledHeaderFooter:Z
     .annotation runtime Landroid/view/ViewDebug$ExportedProperty;
         category = "list"
@@ -50,76 +48,56 @@
 
 # direct methods
 .method public constructor <init>(II)V
-    .locals 2
+    .locals 0
     .parameter "w"
     .parameter "h"
 
     .prologue
-    .line 6097
+    .line 5722
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
-    .line 6090
-    const-wide/16 v0, -0x1
-
-    iput-wide v0, p0, Landroid/widget/AbsListView$LayoutParams;->itemId:J
-
-    .line 6098
+    .line 5723
     return-void
 .end method
 
 .method public constructor <init>(III)V
-    .locals 2
+    .locals 0
     .parameter "w"
     .parameter "h"
     .parameter "viewType"
 
     .prologue
-    .line 6101
+    .line 5726
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
-    .line 6090
-    const-wide/16 v0, -0x1
-
-    iput-wide v0, p0, Landroid/widget/AbsListView$LayoutParams;->itemId:J
-
-    .line 6102
+    .line 5727
     iput p3, p0, Landroid/widget/AbsListView$LayoutParams;->viewType:I
 
-    .line 6103
+    .line 5728
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 2
+    .locals 0
     .parameter "c"
     .parameter "attrs"
 
     .prologue
-    .line 6093
+    .line 5718
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$LayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 6090
-    const-wide/16 v0, -0x1
-
-    iput-wide v0, p0, Landroid/widget/AbsListView$LayoutParams;->itemId:J
-
-    .line 6094
+    .line 5719
     return-void
 .end method
 
 .method public constructor <init>(Landroid/view/ViewGroup$LayoutParams;)V
-    .locals 2
+    .locals 0
     .parameter "source"
 
     .prologue
-    .line 6106
+    .line 5731
     invoke-direct {p0, p1}, Landroid/view/ViewGroup$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 6090
-    const-wide/16 v0, -0x1
-
-    iput-wide v0, p0, Landroid/widget/AbsListView$LayoutParams;->itemId:J
-
-    .line 6107
+    .line 5732
     return-void
 .end method

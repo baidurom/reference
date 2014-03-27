@@ -32,8 +32,6 @@
 
 .field public static final COLUMN_ALLOWED_NETWORK_TYPES:Ljava/lang/String; = "allowed_network_types"
 
-.field public static final COLUMN_ALLOW_METERED:Ljava/lang/String; = "allow_metered"
-
 .field public static final COLUMN_ALLOW_ROAMING:Ljava/lang/String; = "allow_roaming"
 
 .field public static final COLUMN_APP_DATA:Ljava/lang/String; = "entity"
@@ -141,9 +139,6 @@
 .field public static final STATUS_BAD_REQUEST:I = 0x190
 
 .field public static final STATUS_BLOCKED:I = 0x1f2
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end field
 
 .field public static final STATUS_CANCELED:I = 0x1ea
 
@@ -203,7 +198,7 @@
     .locals 1
 
     .prologue
-    .line 89
+    .line 88
     const-string v0, "content://downloads/my_downloads"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -212,7 +207,7 @@
 
     sput-object v0, Landroid/provider/Downloads$Impl;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 96
+    .line 95
     const-string v0, "content://downloads/all_downloads"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -221,7 +216,7 @@
 
     sput-object v0, Landroid/provider/Downloads$Impl;->ALL_DOWNLOADS_CONTENT_URI:Landroid/net/Uri;
 
-    .line 106
+    .line 105
     const-string v0, "content://downloads/public_downloads"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -237,7 +232,7 @@
     .locals 0
 
     .prologue
-    .line 42
+    .line 41
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -250,7 +245,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 547
+    .line 538
     if-eq p0, v0, :cond_0
 
     const/4 v1, 0x3
@@ -272,7 +267,7 @@
     .parameter "status"
 
     .prologue
-    .line 530
+    .line 521
     const/16 v0, 0x190
 
     if-lt p0, v0, :cond_0
@@ -297,7 +292,7 @@
     .parameter "status"
 
     .prologue
-    .line 556
+    .line 547
     const/16 v0, 0xc8
 
     if-lt p0, v0, :cond_0
@@ -332,7 +327,7 @@
     .parameter "status"
 
     .prologue
-    .line 523
+    .line 514
     const/16 v0, 0x190
 
     if-lt p0, v0, :cond_0
@@ -357,7 +352,7 @@
     .parameter "status"
 
     .prologue
-    .line 509
+    .line 500
     const/16 v0, 0x64
 
     if-lt p0, v0, :cond_0
@@ -382,7 +377,7 @@
     .parameter "status"
 
     .prologue
-    .line 537
+    .line 528
     const/16 v0, 0x1f4
 
     if-lt p0, v0, :cond_0
@@ -407,7 +402,7 @@
     .parameter "status"
 
     .prologue
-    .line 516
+    .line 507
     const/16 v0, 0xc8
 
     if-lt p0, v0, :cond_0
@@ -425,194 +420,4 @@
     const/4 v0, 0x0
 
     goto :goto_0
-.end method
-
-.method public static statusToString(I)Ljava/lang/String;
-    .locals 1
-    .parameter "status"
-
-    .prologue
-    .line 720
-    sparse-switch p0, :sswitch_data_0
-
-    .line 745
-    invoke-static {p0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_0
-    return-object v0
-
-    .line 721
-    :sswitch_0
-    const-string v0, "PENDING"
-
-    goto :goto_0
-
-    .line 722
-    :sswitch_1
-    const-string v0, "RUNNING"
-
-    goto :goto_0
-
-    .line 723
-    :sswitch_2
-    const-string v0, "PAUSED_BY_APP"
-
-    goto :goto_0
-
-    .line 724
-    :sswitch_3
-    const-string v0, "WAITING_TO_RETRY"
-
-    goto :goto_0
-
-    .line 725
-    :sswitch_4
-    const-string v0, "WAITING_FOR_NETWORK"
-
-    goto :goto_0
-
-    .line 726
-    :sswitch_5
-    const-string v0, "QUEUED_FOR_WIFI"
-
-    goto :goto_0
-
-    .line 727
-    :sswitch_6
-    const-string v0, "INSUFFICIENT_SPACE_ERROR"
-
-    goto :goto_0
-
-    .line 728
-    :sswitch_7
-    const-string v0, "DEVICE_NOT_FOUND_ERROR"
-
-    goto :goto_0
-
-    .line 729
-    :sswitch_8
-    const-string v0, "SUCCESS"
-
-    goto :goto_0
-
-    .line 730
-    :sswitch_9
-    const-string v0, "BAD_REQUEST"
-
-    goto :goto_0
-
-    .line 731
-    :sswitch_a
-    const-string v0, "NOT_ACCEPTABLE"
-
-    goto :goto_0
-
-    .line 732
-    :sswitch_b
-    const-string v0, "LENGTH_REQUIRED"
-
-    goto :goto_0
-
-    .line 733
-    :sswitch_c
-    const-string v0, "PRECONDITION_FAILED"
-
-    goto :goto_0
-
-    .line 734
-    :sswitch_d
-    const-string v0, "FILE_ALREADY_EXISTS_ERROR"
-
-    goto :goto_0
-
-    .line 735
-    :sswitch_e
-    const-string v0, "CANNOT_RESUME"
-
-    goto :goto_0
-
-    .line 736
-    :sswitch_f
-    const-string v0, "CANCELED"
-
-    goto :goto_0
-
-    .line 737
-    :sswitch_10
-    const-string v0, "UNKNOWN_ERROR"
-
-    goto :goto_0
-
-    .line 738
-    :sswitch_11
-    const-string v0, "FILE_ERROR"
-
-    goto :goto_0
-
-    .line 739
-    :sswitch_12
-    const-string v0, "UNHANDLED_REDIRECT"
-
-    goto :goto_0
-
-    .line 740
-    :sswitch_13
-    const-string v0, "UNHANDLED_HTTP_CODE"
-
-    goto :goto_0
-
-    .line 741
-    :sswitch_14
-    const-string v0, "HTTP_DATA_ERROR"
-
-    goto :goto_0
-
-    .line 742
-    :sswitch_15
-    const-string v0, "HTTP_EXCEPTION"
-
-    goto :goto_0
-
-    .line 743
-    :sswitch_16
-    const-string v0, "TOO_MANY_REDIRECTS"
-
-    goto :goto_0
-
-    .line 744
-    :sswitch_17
-    const-string v0, "BLOCKED"
-
-    goto :goto_0
-
-    .line 720
-    :sswitch_data_0
-    .sparse-switch
-        0xbe -> :sswitch_0
-        0xc0 -> :sswitch_1
-        0xc1 -> :sswitch_2
-        0xc2 -> :sswitch_3
-        0xc3 -> :sswitch_4
-        0xc4 -> :sswitch_5
-        0xc6 -> :sswitch_6
-        0xc7 -> :sswitch_7
-        0xc8 -> :sswitch_8
-        0x190 -> :sswitch_9
-        0x196 -> :sswitch_a
-        0x19b -> :sswitch_b
-        0x19c -> :sswitch_c
-        0x1e8 -> :sswitch_d
-        0x1e9 -> :sswitch_e
-        0x1ea -> :sswitch_f
-        0x1eb -> :sswitch_10
-        0x1ec -> :sswitch_11
-        0x1ed -> :sswitch_12
-        0x1ee -> :sswitch_13
-        0x1ef -> :sswitch_14
-        0x1f0 -> :sswitch_15
-        0x1f1 -> :sswitch_16
-        0x1f2 -> :sswitch_17
-    .end sparse-switch
 .end method

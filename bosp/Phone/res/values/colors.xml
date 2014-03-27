@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="dialer_matchHighlight">#ffeecf6a</color>
+    <color name="incall_callTypeSip">#ff99ce3f</color>
+    <color name="incall_call_banner_background">#a0000000</color>
+    <color name="incall_call_state_label_background">#662b7cef</color>
+    <color name="incall_call_banner_text_color">#ffffffff</color>
+    <color name="incall_call_state_label_end_background">#80ad0a0a</color>
+    <color name="incall_call_state_label_hold_background">#80aaaa00</color>
+    <color name="dtmf_dialer_display_text">#ffffffff</color>
+    <color name="people_app_theme_color">#ff33b5e5</color>
+    <color name="incall_bottom_pannel">#88090a0a</color>
+    <color name="incall_lock_background">#88000000</color>
+    <color name="radio_text_color">#ffffffff</color>
+    <color name="transparent">#00000000</color>
+    <color name="dim_foreground_disabled_holo_dark">#80bebebe</color>
+    <color name="dim_foreground_holo_dark">#ffbebebe</color>
+    <color name="bright_foreground_holo_dark">#fff3f3f3</color>
+    <color name="settings_bg">#ffebf0f8</color>
+    <color name="primary_text">#ff373737</color>
+    <color name="second_text">#ff8c8c8c</color>
+    <color name="settings_ab_text">#ff000000</color>
+</resources>

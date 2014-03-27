@@ -22,7 +22,7 @@
     .locals 0
 
     .prologue
-    .line 236
+    .line 223
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -36,21 +36,21 @@
     .parameter "cursor"
 
     .prologue
-    .line 251
+    .line 238
     move v0, p2
 
-    .line 252
+    .line 239
     .local v0, i:I
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     move-result v1
 
-    .line 254
+    .line 241
     .local v1, len:I
     :goto_0
     if-ge v0, v1, :cond_1
 
-    .line 255
+    .line 242
     invoke-interface {p1, v0}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v2
@@ -59,12 +59,12 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 262
+    .line 249
     .end local v0           #i:I
     :goto_1
     return v0
 
-    .line 258
+    .line 245
     .restart local v0       #i:I
     :cond_0
     add-int/lit8 v0, v0, 0x1
@@ -74,7 +74,7 @@
     :cond_1
     move v0, v1
 
-    .line 262
+    .line 249
     goto :goto_1
 .end method
 
@@ -84,10 +84,10 @@
     .parameter "cursor"
 
     .prologue
-    .line 238
+    .line 225
     move v0, p2
 
-    .line 240
+    .line 227
     .local v0, i:I
     :goto_0
     if-lez v0, :cond_0
@@ -102,12 +102,12 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 241
+    .line 228
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    .line 243
+    .line 230
     :cond_0
     :goto_1
     if-ge v0, p2, :cond_1
@@ -120,12 +120,12 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 244
+    .line 231
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 247
+    .line 234
     :cond_1
     return v0
 .end method
@@ -137,12 +137,12 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 266
+    .line 253
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     move-result v6
 
-    .line 268
+    .line 255
     .local v6, i:I
     :goto_0
     if-lez v6, :cond_0
@@ -157,12 +157,12 @@
 
     if-ne v0, v2, :cond_0
 
-    .line 269
+    .line 256
     add-int/lit8 v6, v6, -0x1
 
     goto :goto_0
 
-    .line 272
+    .line 259
     :cond_0
     if-lez v6, :cond_1
 
@@ -176,19 +176,19 @@
 
     if-ne v0, v2, :cond_1
 
-    .line 281
+    .line 268
     .end local p1
     :goto_1
     return-object p1
 
-    .line 275
+    .line 262
     .restart local p1
     :cond_1
     instance-of v0, p1, Landroid/text/Spanned;
 
     if-eqz v0, :cond_2
 
-    .line 276
+    .line 263
     new-instance v4, Landroid/text/SpannableString;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -214,7 +214,7 @@
     .local v4, sp:Landroid/text/SpannableString;
     move-object v0, p1
 
-    .line 277
+    .line 264
     check-cast v0, Landroid/text/Spanned;
 
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
@@ -229,10 +229,10 @@
 
     move-object p1, v4
 
-    .line 279
+    .line 266
     goto :goto_1
 
-    .line 281
+    .line 268
     .end local v4           #sp:Landroid/text/SpannableString;
     :cond_2
     new-instance v0, Ljava/lang/StringBuilder;

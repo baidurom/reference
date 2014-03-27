@@ -106,7 +106,7 @@
 
     move-result-object v1
 
-    const v2, 0x1090032
+    const v2, #layout@character_picker_button#t
 
     const/4 v3, 0x0
 

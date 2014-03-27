@@ -88,6 +88,8 @@
 
 .field public static final PASSWORD_INCORRECT:I = 0x3
 
+.field public static final PREFERRED_CDMA_SUBSCRIPTION:I = 0x1
+
 .field public static final PREFERRED_NETWORK_MODE:I = 0x0
 
 .field public static final RADIO_NOT_AVAILABLE:I = 0x1
@@ -308,8 +310,6 @@
 
 .field public static final RIL_REQUEST_UDUB:I = 0x11
 
-.field public static final RIL_REQUEST_VOICE_RADIO_TECH:I = 0x6c
-
 .field public static final RIL_REQUEST_VOICE_REGISTRATION_STATE:I = 0x14
 
 .field public static final RIL_REQUEST_WRITE_SMS_TO_SIM:I = 0x3f
@@ -394,8 +394,6 @@
 
 .field public static final RIL_UNSOL_SUPP_SVC_NOTIFICATION:I = 0x3f3
 
-.field public static final RIL_UNSOL_VOICE_RADIO_TECH_CHANGED:I = 0x40b
-
 .field public static final RIL_UNSOl_CDMA_PRL_CHANGED:I = 0x408
 
 .field public static final SETUP_DATA_AUTH_CHAP:I = 0x2
@@ -425,6 +423,10 @@
 .field public static final SIP_PHONE:I = 0x3
 
 .field public static final SMS_SEND_FAIL_RETRY:I = 0xa
+
+.field public static final SUBSCRIPTION_FROM_NV:I = 0x1
+
+.field public static final SUBSCRIPTION_FROM_RUIM:I = 0x0
 
 .field public static final SUBSCRIPTION_NOT_AVAILABLE:I = 0xc
 

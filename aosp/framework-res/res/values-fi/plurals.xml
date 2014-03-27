@@ -67,18 +67,6 @@
         <item quantity="other">%d päivän kuluttua</item>
         <item quantity="one">huomenna</item>
     </plurals>
-    <plurals name="duration_seconds">
-        <item quantity="other">%d sekuntia</item>
-        <item quantity="one">1 sekunti</item>
-    </plurals>
-    <plurals name="duration_minutes">
-        <item quantity="other">%d minuuttia</item>
-        <item quantity="one">1 minuutti</item>
-    </plurals>
-    <plurals name="duration_hours">
-        <item quantity="other">%d tuntia</item>
-        <item quantity="one">1 tunti</item>
-    </plurals>
     <plurals name="wifi_available">
         <item quantity="other">Wifi-verkkoja käytettävissä</item>
         <item quantity="one">Wifi-verkko käytettävissä</item>

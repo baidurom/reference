@@ -345,22 +345,13 @@
 .end method
 
 .method protected dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
-    .locals 3
+    .locals 0
     .parameter "fd"
     .parameter "fout"
     .parameter "args"
 
     .prologue
     .line 215
-    iget-object v0, p0, Lcom/android/server/CountryDetectorService;->mContext:Landroid/content/Context;
-
-    const-string v1, "android.permission.DUMP"
-
-    const-string v2, "CountryDetector"
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 217
     return-void
 .end method
 

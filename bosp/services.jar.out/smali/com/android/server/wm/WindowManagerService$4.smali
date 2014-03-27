@@ -3,12 +3,12 @@
 .source "WindowManagerService.java"
 
 # interfaces
-.implements Landroid/view/animation/Interpolator;
+.implements Landroid/view/WindowManagerPolicy$OnKeyguardExitResult;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/wm/WindowManagerService;->createThumbnailAnimationLocked(IZZZ)Landroid/view/animation/Animation;
+    value = Lcom/android/server/wm/WindowManagerService;->exitKeyguardSecurely(Landroid/view/IOnKeyguardExitResult;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,15 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/server/wm/WindowManagerService;
 
+.field final synthetic val$callback:Landroid/view/IOnKeyguardExitResult;
+
 
 # direct methods
-.method constructor <init>(Lcom/android/server/wm/WindowManagerService;)V
+.method constructor <init>(Lcom/android/server/wm/WindowManagerService;Landroid/view/IOnKeyguardExitResult;)V
     .locals 0
+    .parameter
     .parameter
 
     .prologue
-    .line 3396
+    .line 4626
     iput-object p1, p0, Lcom/android/server/wm/WindowManagerService$4;->this$0:Lcom/android/server/wm/WindowManagerService;
+
+    iput-object p2, p0, Lcom/android/server/wm/WindowManagerService$4;->val$callback:Landroid/view/IOnKeyguardExitResult;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -37,27 +42,26 @@
 
 
 # virtual methods
-.method public getInterpolation(F)F
-    .locals 2
-    .parameter "input"
+.method public onKeyguardExitResult(Z)V
+    .locals 1
+    .parameter "success"
 
     .prologue
-    const/high16 v1, 0x3e80
+    .line 4629
+    :try_start_0
+    iget-object v0, p0, Lcom/android/server/wm/WindowManagerService$4;->val$callback:Landroid/view/IOnKeyguardExitResult;
 
-    .line 3399
-    cmpg-float v0, p1, v1
+    invoke-interface {v0, p1}, Landroid/view/IOnKeyguardExitResult;->onKeyguardExitResult(Z)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    if-gez v0, :cond_0
-
-    .line 3401
-    div-float v0, p1, v1
-
-    .line 3404
+    .line 4633
     :goto_0
-    return v0
+    return-void
 
-    :cond_0
-    const/high16 v0, 0x3f80
+    .line 4630
+    :catch_0
+    move-exception v0
 
     goto :goto_0
 .end method

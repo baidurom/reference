@@ -67,18 +67,6 @@
         <item quantity="other">בעוד %d ימים</item>
         <item quantity="one">מחר</item>
     </plurals>
-    <plurals name="duration_seconds">
-        <item quantity="other">%d שניות</item>
-        <item quantity="one">שנייה אחת</item>
-    </plurals>
-    <plurals name="duration_minutes">
-        <item quantity="other">%d דקות</item>
-        <item quantity="one">דקה אחת</item>
-    </plurals>
-    <plurals name="duration_hours">
-        <item quantity="other">%d שעות</item>
-        <item quantity="one">שעה אחת</item>
-    </plurals>
     <plurals name="wifi_available">
         <item quantity="other">רשתות Wi-Fi זמינות</item>
         <item quantity="one">רשת Wi-Fi זמינה</item>

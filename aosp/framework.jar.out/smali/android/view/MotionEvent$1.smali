@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 3137
+    .line 3035
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,10 +45,10 @@
     .parameter "in"
 
     .prologue
-    .line 3139
+    .line 3037
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    .line 3140
+    .line 3038
     invoke-static {p1}, Landroid/view/MotionEvent;->createFromParcelBody(Landroid/os/Parcel;)Landroid/view/MotionEvent;
 
     move-result-object v0
@@ -61,7 +61,7 @@
     .parameter "x0"
 
     .prologue
-    .line 3137
+    .line 3035
     invoke-virtual {p0, p1}, Landroid/view/MotionEvent$1;->createFromParcel(Landroid/os/Parcel;)Landroid/view/MotionEvent;
 
     move-result-object v0
@@ -74,7 +74,7 @@
     .parameter "size"
 
     .prologue
-    .line 3144
+    .line 3042
     new-array v0, p1, [Landroid/view/MotionEvent;
 
     return-object v0
@@ -85,7 +85,7 @@
     .parameter "x0"
 
     .prologue
-    .line 3137
+    .line 3035
     invoke-virtual {p0, p1}, Landroid/view/MotionEvent$1;->newArray(I)[Landroid/view/MotionEvent;
 
     move-result-object v0

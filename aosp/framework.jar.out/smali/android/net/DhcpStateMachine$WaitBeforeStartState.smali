@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 236
+    .line 221
     iput-object p1, p0, Landroid/net/DhcpStateMachine$WaitBeforeStartState;->this$0:Landroid/net/DhcpStateMachine;
 
     invoke-direct {p0}, Lcom/android/internal/util/State;-><init>()V
@@ -38,7 +38,7 @@
     .locals 0
 
     .prologue
-    .line 240
+    .line 225
     return-void
 .end method
 
@@ -47,25 +47,26 @@
     .parameter "message"
 
     .prologue
-    .line 244
+    .line 229
     const/4 v0, 0x1
 
-    .line 246
+    .line 231
     .local v0, retValue:Z
     iget v1, p1, Landroid/os/Message;->what:I
 
-    sparse-switch v1, :sswitch_data_0
+    packed-switch v1, :pswitch_data_0
 
-    .line 261
+    .line 246
+    :pswitch_0
     const/4 v0, 0x0
 
-    .line 264
+    .line 249
     :goto_0
-    :sswitch_0
+    :pswitch_1
     return v0
 
-    .line 248
-    :sswitch_1
+    .line 233
+    :pswitch_2
     iget-object v1, p0, Landroid/net/DhcpStateMachine$WaitBeforeStartState;->this$0:Landroid/net/DhcpStateMachine;
 
     sget-object v2, Landroid/net/DhcpStateMachine$DhcpAction;->START:Landroid/net/DhcpStateMachine$DhcpAction;
@@ -77,7 +78,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 249
+    .line 234
     iget-object v1, p0, Landroid/net/DhcpStateMachine$WaitBeforeStartState;->this$0:Landroid/net/DhcpStateMachine;
 
     iget-object v2, p0, Landroid/net/DhcpStateMachine$WaitBeforeStartState;->this$0:Landroid/net/DhcpStateMachine;
@@ -92,7 +93,7 @@
 
     goto :goto_0
 
-    .line 251
+    .line 236
     :cond_0
     iget-object v1, p0, Landroid/net/DhcpStateMachine$WaitBeforeStartState;->this$0:Landroid/net/DhcpStateMachine;
 
@@ -108,8 +109,8 @@
 
     goto :goto_0
 
-    .line 255
-    :sswitch_2
+    .line 240
+    :pswitch_3
     iget-object v1, p0, Landroid/net/DhcpStateMachine$WaitBeforeStartState;->this$0:Landroid/net/DhcpStateMachine;
 
     iget-object v2, p0, Landroid/net/DhcpStateMachine$WaitBeforeStartState;->this$0:Landroid/net/DhcpStateMachine;
@@ -124,11 +125,14 @@
 
     goto :goto_0
 
-    .line 246
-    :sswitch_data_0
-    .sparse-switch
-        0x30001 -> :sswitch_0
-        0x30002 -> :sswitch_2
-        0x30007 -> :sswitch_1
-    .end sparse-switch
+    .line 231
+    :pswitch_data_0
+    .packed-switch 0x30001
+        :pswitch_1
+        :pswitch_3
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_2
+    .end packed-switch
 .end method

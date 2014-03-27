@@ -47,22 +47,6 @@
     .end annotation
 .end method
 
-.method public abstract getUidsWithPolicy(I)[I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract isNetworkMetered(Landroid/net/NetworkState;)Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract isUidForeground(I)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -103,7 +87,7 @@
     .end annotation
 .end method
 
-.method public abstract snoozeLimit(Landroid/net/NetworkTemplate;)V
+.method public abstract snoozePolicy(Landroid/net/NetworkTemplate;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

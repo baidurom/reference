@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 312
+    .line 293
     iput-object p1, p0, Lcom/android/server/location/GpsLocationProvider$1;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
     invoke-direct {p0}, Landroid/location/IGpsStatusProvider$Stub;-><init>()V
@@ -44,10 +44,10 @@
     .end annotation
 
     .prologue
-    .line 315
+    .line 295
     if-nez p1, :cond_0
 
-    .line 316
+    .line 296
     new-instance v5, Ljava/lang/NullPointerException;
 
     const-string v6, "listener is null in addGpsStatusListener"
@@ -56,7 +56,7 @@
 
     throw v5
 
-    .line 319
+    .line 299
     :cond_0
     iget-object v5, p0, Lcom/android/server/location/GpsLocationProvider$1;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
@@ -67,13 +67,13 @@
 
     monitor-enter v6
 
-    .line 320
+    .line 300
     :try_start_0
     invoke-interface {p1}, Landroid/location/IGpsStatusListener;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 321
+    .line 301
     .local v0, binder:Landroid/os/IBinder;
     iget-object v5, p0, Lcom/android/server/location/GpsLocationProvider$1;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
@@ -86,7 +86,7 @@
 
     move-result v3
 
-    .line 322
+    .line 302
     .local v3, size:I
     const/4 v1, 0x0
 
@@ -94,7 +94,7 @@
     :goto_0
     if-ge v1, v3, :cond_2
 
-    .line 323
+    .line 303
     iget-object v5, p0, Lcom/android/server/location/GpsLocationProvider$1;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
     #getter for: Lcom/android/server/location/GpsLocationProvider;->mListeners:Ljava/util/ArrayList;
@@ -108,7 +108,7 @@
 
     check-cast v4, Lcom/android/server/location/GpsLocationProvider$Listener;
 
-    .line 324
+    .line 304
     .local v4, test:Lcom/android/server/location/GpsLocationProvider$Listener;
     iget-object v5, v4, Lcom/android/server/location/GpsLocationProvider$Listener;->mListener:Landroid/location/IGpsStatusListener;
 
@@ -122,22 +122,22 @@
 
     if-eqz v5, :cond_1
 
-    .line 326
+    .line 306
     monitor-exit v6
 
-    .line 334
+    .line 314
     .end local v4           #test:Lcom/android/server/location/GpsLocationProvider$Listener;
     :goto_1
     return-void
 
-    .line 322
+    .line 302
     .restart local v4       #test:Lcom/android/server/location/GpsLocationProvider$Listener;
     :cond_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 330
+    .line 310
     .end local v4           #test:Lcom/android/server/location/GpsLocationProvider$Listener;
     :cond_2
     new-instance v2, Lcom/android/server/location/GpsLocationProvider$Listener;
@@ -146,13 +146,13 @@
 
     invoke-direct {v2, v5, p1}, Lcom/android/server/location/GpsLocationProvider$Listener;-><init>(Lcom/android/server/location/GpsLocationProvider;Landroid/location/IGpsStatusListener;)V
 
-    .line 331
+    .line 311
     .local v2, l:Lcom/android/server/location/GpsLocationProvider$Listener;
     const/4 v5, 0x0
 
     invoke-interface {v0, v2, v5}, Landroid/os/IBinder;->linkToDeath(Landroid/os/IBinder$DeathRecipient;I)V
 
-    .line 332
+    .line 312
     iget-object v5, p0, Lcom/android/server/location/GpsLocationProvider$1;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
     #getter for: Lcom/android/server/location/GpsLocationProvider;->mListeners:Ljava/util/ArrayList;
@@ -162,7 +162,7 @@
 
     invoke-virtual {v5, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 333
+    .line 313
     monitor-exit v6
 
     goto :goto_1
@@ -186,10 +186,10 @@
     .parameter "listener"
 
     .prologue
-    .line 338
+    .line 317
     if-nez p1, :cond_0
 
-    .line 339
+    .line 318
     new-instance v5, Ljava/lang/NullPointerException;
 
     const-string v6, "listener is null in addGpsStatusListener"
@@ -198,7 +198,7 @@
 
     throw v5
 
-    .line 342
+    .line 321
     :cond_0
     iget-object v5, p0, Lcom/android/server/location/GpsLocationProvider$1;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
@@ -209,17 +209,17 @@
 
     monitor-enter v6
 
-    .line 343
+    .line 322
     :try_start_0
     invoke-interface {p1}, Landroid/location/IGpsStatusListener;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 344
+    .line 323
     .local v0, binder:Landroid/os/IBinder;
     const/4 v2, 0x0
 
-    .line 345
+    .line 324
     .local v2, l:Lcom/android/server/location/GpsLocationProvider$Listener;
     iget-object v5, p0, Lcom/android/server/location/GpsLocationProvider$1;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
@@ -232,7 +232,7 @@
 
     move-result v3
 
-    .line 346
+    .line 325
     .local v3, size:I
     const/4 v1, 0x0
 
@@ -242,7 +242,7 @@
 
     if-nez v2, :cond_2
 
-    .line 347
+    .line 326
     iget-object v5, p0, Lcom/android/server/location/GpsLocationProvider$1;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
     #getter for: Lcom/android/server/location/GpsLocationProvider;->mListeners:Ljava/util/ArrayList;
@@ -256,7 +256,7 @@
 
     check-cast v4, Lcom/android/server/location/GpsLocationProvider$Listener;
 
-    .line 348
+    .line 327
     .local v4, test:Lcom/android/server/location/GpsLocationProvider$Listener;
     iget-object v5, v4, Lcom/android/server/location/GpsLocationProvider$Listener;->mListener:Landroid/location/IGpsStatusListener;
 
@@ -270,21 +270,21 @@
 
     if-eqz v5, :cond_1
 
-    .line 349
+    .line 328
     move-object v2, v4
 
-    .line 346
+    .line 325
     :cond_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 353
+    .line 332
     .end local v4           #test:Lcom/android/server/location/GpsLocationProvider$Listener;
     :cond_2
     if-eqz v2, :cond_3
 
-    .line 354
+    .line 333
     iget-object v5, p0, Lcom/android/server/location/GpsLocationProvider$1;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
     #getter for: Lcom/android/server/location/GpsLocationProvider;->mListeners:Ljava/util/ArrayList;
@@ -294,19 +294,19 @@
 
     invoke-virtual {v5, v2}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 355
+    .line 334
     const/4 v5, 0x0
 
     invoke-interface {v0, v2, v5}, Landroid/os/IBinder;->unlinkToDeath(Landroid/os/IBinder$DeathRecipient;I)Z
 
-    .line 357
+    .line 336
     :cond_3
     monitor-exit v6
 
-    .line 358
+    .line 337
     return-void
 
-    .line 357
+    .line 336
     .end local v0           #binder:Landroid/os/IBinder;
     .end local v1           #i:I
     .end local v2           #l:Lcom/android/server/location/GpsLocationProvider$Listener;

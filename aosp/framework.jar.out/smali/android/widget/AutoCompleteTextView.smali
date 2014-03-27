@@ -9,9 +9,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/widget/AutoCompleteTextView$1;,
         Landroid/widget/AutoCompleteTextView$PopupDataSetObserver;,
         Landroid/widget/AutoCompleteTextView$PassThroughClickListener;,
-        Landroid/widget/AutoCompleteTextView$OnDismissListener;,
         Landroid/widget/AutoCompleteTextView$Validator;,
         Landroid/widget/AutoCompleteTextView$DropDownItemClickListener;,
         Landroid/widget/AutoCompleteTextView$MyWatcher;
@@ -87,7 +87,7 @@
 
     .prologue
     .line 133
-    const v0, 0x101006b
+    const v0, #attr@autoCompleteTextViewStyle#t
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/AutoCompleteTextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -130,7 +130,7 @@
     .line 139
     new-instance v2, Landroid/widget/ListPopupWindow;
 
-    const v3, 0x101006b
+    const v3, #attr@autoCompleteTextViewStyle#t
 
     invoke-direct {v2, p1, p2, v3}, Landroid/widget/ListPopupWindow;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -238,7 +238,7 @@
     invoke-virtual {v2, v3}, Landroid/widget/ListPopupWindow;->setHeight(I)V
 
     .line 173
-    const v2, 0x10900c8
+    const v2, #layout@simple_dropdown_hint#t
 
     invoke-virtual {v0, v4, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -365,23 +365,23 @@
     .prologue
     const/4 v12, 0x0
 
-    .line 1112
+    .line 1078
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mAdapter:Landroid/widget/ListAdapter;
 
-    .line 1113
+    .line 1079
     .local v0, adapter:Landroid/widget/ListAdapter;
     if-eqz v0, :cond_3
 
-    .line 1114
+    .line 1080
     invoke-static {}, Landroid/view/inputmethod/InputMethodManager;->peekInstance()Landroid/view/inputmethod/InputMethodManager;
 
     move-result-object v6
 
-    .line 1115
+    .line 1081
     .local v6, imm:Landroid/view/inputmethod/InputMethodManager;
     if-eqz v6, :cond_3
 
-    .line 1116
+    .line 1082
     invoke-interface {v0}, Landroid/widget/ListAdapter;->getCount()I
 
     move-result v10
@@ -392,15 +392,15 @@
 
     move-result v2
 
-    .line 1117
+    .line 1083
     .local v2, count:I
     new-array v1, v2, [Landroid/view/inputmethod/CompletionInfo;
 
-    .line 1118
+    .line 1084
     .local v1, completions:[Landroid/view/inputmethod/CompletionInfo;
     const/4 v8, 0x0
 
-    .line 1120
+    .line 1086
     .local v8, realCount:I
     const/4 v3, 0x0
 
@@ -408,25 +408,28 @@
     :goto_0
     if-ge v3, v2, :cond_1
 
-    .line 1121
+    .line 1087
     invoke-interface {v0, v3}, Landroid/widget/ListAdapter;->isEnabled(I)Z
 
     move-result v10
 
     if-eqz v10, :cond_0
 
-    .line 1122
+    .line 1088
+    add-int/lit8 v8, v8, 0x1
+
+    .line 1089
     invoke-interface {v0, v3}, Landroid/widget/ListAdapter;->getItem(I)Ljava/lang/Object;
 
     move-result-object v7
 
-    .line 1123
+    .line 1090
     .local v7, item:Ljava/lang/Object;
     invoke-interface {v0, v3}, Landroid/widget/ListAdapter;->getItemId(I)J
 
     move-result-wide v4
 
-    .line 1124
+    .line 1091
     .local v4, id:J
     new-instance v10, Landroid/view/inputmethod/CompletionInfo;
 
@@ -434,14 +437,11 @@
 
     move-result-object v11
 
-    invoke-direct {v10, v4, v5, v8, v11}, Landroid/view/inputmethod/CompletionInfo;-><init>(JILjava/lang/CharSequence;)V
+    invoke-direct {v10, v4, v5, v3, v11}, Landroid/view/inputmethod/CompletionInfo;-><init>(JILjava/lang/CharSequence;)V
 
-    aput-object v10, v1, v8
+    aput-object v10, v1, v3
 
-    .line 1126
-    add-int/lit8 v8, v8, 0x1
-
-    .line 1120
+    .line 1086
     .end local v4           #id:J
     .end local v7           #item:Ljava/lang/Object;
     :cond_0
@@ -449,26 +449,26 @@
 
     goto :goto_0
 
-    .line 1130
+    .line 1095
     :cond_1
     if-eq v8, v2, :cond_2
 
-    .line 1131
+    .line 1096
     new-array v9, v8, [Landroid/view/inputmethod/CompletionInfo;
 
-    .line 1132
+    .line 1097
     .local v9, tmp:[Landroid/view/inputmethod/CompletionInfo;
     invoke-static {v1, v12, v9, v12, v8}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 1133
+    .line 1098
     move-object v1, v9
 
-    .line 1136
+    .line 1101
     .end local v9           #tmp:[Landroid/view/inputmethod/CompletionInfo;
     :cond_2
     invoke-virtual {v6, p0, v1}, Landroid/view/inputmethod/InputMethodManager;->displayCompletions(Landroid/view/View;[Landroid/view/inputmethod/CompletionInfo;)V
 
-    .line 1139
+    .line 1104
     .end local v1           #completions:[Landroid/view/inputmethod/CompletionInfo;
     .end local v2           #count:I
     .end local v3           #i:I
@@ -506,42 +506,42 @@
     .parameter "id"
 
     .prologue
-    .line 878
+    .line 844
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->isPopupShowing()Z
 
     move-result v0
 
     if-eqz v0, :cond_5
 
-    .line 880
+    .line 846
     if-gez p2, :cond_1
 
-    .line 881
+    .line 847
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/ListPopupWindow;->getSelectedItem()Ljava/lang/Object;
 
     move-result-object v7
 
-    .line 885
+    .line 851
     .local v7, selectedItem:Ljava/lang/Object;
     :goto_0
     if-nez v7, :cond_2
 
-    .line 886
+    .line 852
     const-string v0, "AutoCompleteTextView"
 
     const-string/jumbo v1, "performCompletion: no selected item"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 909
+    .line 875
     .end local v7           #selectedItem:Ljava/lang/Object;
     :cond_0
     :goto_1
     return-void
 
-    .line 883
+    .line 849
     :cond_1
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mAdapter:Landroid/widget/ListAdapter;
 
@@ -552,55 +552,55 @@
     .restart local v7       #selectedItem:Ljava/lang/Object;
     goto :goto_0
 
-    .line 890
+    .line 856
     :cond_2
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/widget/AutoCompleteTextView;->mBlockCompletion:Z
 
-    .line 891
+    .line 857
     invoke-virtual {p0, v7}, Landroid/widget/AutoCompleteTextView;->convertSelectionToString(Ljava/lang/Object;)Ljava/lang/CharSequence;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Landroid/widget/AutoCompleteTextView;->replaceText(Ljava/lang/CharSequence;)V
 
-    .line 892
+    .line 858
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/widget/AutoCompleteTextView;->mBlockCompletion:Z
 
-    .line 894
+    .line 860
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mItemClickListener:Landroid/widget/AdapterView$OnItemClickListener;
 
     if-eqz v0, :cond_5
 
-    .line 895
+    .line 861
     iget-object v6, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
-    .line 897
+    .line 863
     .local v6, list:Landroid/widget/ListPopupWindow;
     if-eqz p1, :cond_3
 
     if-gez p2, :cond_4
 
-    .line 898
+    .line 864
     :cond_3
     invoke-virtual {v6}, Landroid/widget/ListPopupWindow;->getSelectedView()Landroid/view/View;
 
     move-result-object p1
 
-    .line 899
+    .line 865
     invoke-virtual {v6}, Landroid/widget/ListPopupWindow;->getSelectedItemPosition()I
 
     move-result p2
 
-    .line 900
+    .line 866
     invoke-virtual {v6}, Landroid/widget/ListPopupWindow;->getSelectedItemId()J
 
     move-result-wide p3
 
-    .line 902
+    .line 868
     :cond_4
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mItemClickListener:Landroid/widget/AdapterView$OnItemClickListener;
 
@@ -616,7 +616,7 @@
 
     invoke-interface/range {v0 .. v5}, Landroid/widget/AdapterView$OnItemClickListener;->onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
 
-    .line 906
+    .line 872
     .end local v6           #list:Landroid/widget/ListPopupWindow;
     .end local v7           #selectedItem:Ljava/lang/Object;
     :cond_5
@@ -632,7 +632,7 @@
 
     if-nez v0, :cond_0
 
-    .line 907
+    .line 873
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->dismissDropDown()V
 
     goto :goto_1
@@ -643,7 +643,7 @@
     .parameter "count"
 
     .prologue
-    .line 958
+    .line 926
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->getWindowVisibility()I
 
     move-result v2
@@ -652,12 +652,12 @@
 
     if-ne v2, v3, :cond_1
 
-    .line 980
+    .line 948
     :cond_0
     :goto_0
     return-void
 
-    .line 967
+    .line 935
     :cond_1
     iget-object v2, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
@@ -665,13 +665,13 @@
 
     move-result v0
 
-    .line 968
+    .line 936
     .local v0, dropDownAlwaysVisible:Z
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->enoughToFilter()Z
 
     move-result v1
 
-    .line 969
+    .line 937
     .local v1, enoughToFilter:Z
     if-gtz p1, :cond_2
 
@@ -680,7 +680,7 @@
     :cond_2
     if-eqz v1, :cond_3
 
-    .line 970
+    .line 938
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->hasFocus()Z
 
     move-result v2
@@ -697,12 +697,12 @@
 
     if-eqz v2, :cond_0
 
-    .line 971
+    .line 939
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->showDropDown()V
 
     goto :goto_0
 
-    .line 973
+    .line 941
     :cond_3
     if-nez v0, :cond_0
 
@@ -712,10 +712,10 @@
 
     if-eqz v2, :cond_0
 
-    .line 974
+    .line 942
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->dismissDropDown()V
 
-    .line 978
+    .line 946
     const/4 v2, 0x1
 
     iput-boolean v2, p0, Landroid/widget/AutoCompleteTextView;->mPopupCanBeUpdated:Z
@@ -729,12 +729,12 @@
     .locals 1
 
     .prologue
-    .line 820
+    .line 786
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/ListPopupWindow;->clearListSelection()V
 
-    .line 821
+    .line 787
     return-void
 .end method
 
@@ -743,7 +743,7 @@
     .parameter "selectedItem"
 
     .prologue
-    .line 812
+    .line 778
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mFilter:Landroid/widget/Filter;
 
     invoke-virtual {v0, p1}, Landroid/widget/Filter;->convertResultToString(Ljava/lang/Object;)Ljava/lang/CharSequence;
@@ -757,32 +757,32 @@
     .locals 2
 
     .prologue
-    .line 1029
+    .line 997
     invoke-static {}, Landroid/view/inputmethod/InputMethodManager;->peekInstance()Landroid/view/inputmethod/InputMethodManager;
 
     move-result-object v0
 
-    .line 1030
+    .line 998
     .local v0, imm:Landroid/view/inputmethod/InputMethodManager;
     if-eqz v0, :cond_0
 
-    .line 1031
+    .line 999
     const/4 v1, 0x0
 
     invoke-virtual {v0, p0, v1}, Landroid/view/inputmethod/InputMethodManager;->displayCompletions(Landroid/view/View;[Landroid/view/inputmethod/CompletionInfo;)V
 
-    .line 1033
+    .line 1001
     :cond_0
     iget-object v1, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v1}, Landroid/widget/ListPopupWindow;->dismiss()V
 
-    .line 1034
+    .line 1002
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Landroid/widget/AutoCompleteTextView;->mPopupCanBeUpdated:Z
 
-    .line 1035
+    .line 1003
     return-void
 .end method
 
@@ -790,17 +790,17 @@
     .locals 2
 
     .prologue
-    .line 764
+    .line 730
     iget-boolean v0, p0, Landroid/widget/AutoCompleteTextView;->mBlockCompletion:Z
 
     if-eqz v0, :cond_1
 
-    .line 792
+    .line 758
     :cond_0
     :goto_0
     return-void
 
-    .line 771
+    .line 737
     :cond_1
     iget-boolean v0, p0, Landroid/widget/AutoCompleteTextView;->mOpenBefore:Z
 
@@ -812,7 +812,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 777
+    .line 743
     :cond_2
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->enoughToFilter()Z
 
@@ -820,17 +820,17 @@
 
     if-eqz v0, :cond_3
 
-    .line 778
+    .line 744
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mFilter:Landroid/widget/Filter;
 
     if-eqz v0, :cond_0
 
-    .line 779
+    .line 745
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/widget/AutoCompleteTextView;->mPopupCanBeUpdated:Z
 
-    .line 780
+    .line 746
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->getText()Landroid/text/Editable;
 
     move-result-object v0
@@ -841,7 +841,7 @@
 
     goto :goto_0
 
-    .line 785
+    .line 751
     :cond_3
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
@@ -851,16 +851,16 @@
 
     if-nez v0, :cond_4
 
-    .line 786
+    .line 752
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->dismissDropDown()V
 
-    .line 788
+    .line 754
     :cond_4
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mFilter:Landroid/widget/Filter;
 
     if-eqz v0, :cond_0
 
-    .line 789
+    .line 755
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mFilter:Landroid/widget/Filter;
 
     const/4 v1, 0x0
@@ -874,16 +874,16 @@
     .locals 1
 
     .prologue
-    .line 755
+    .line 721
     iget-boolean v0, p0, Landroid/widget/AutoCompleteTextView;->mBlockCompletion:Z
 
     if-eqz v0, :cond_0
 
-    .line 761
+    .line 727
     :goto_0
     return-void
 
-    .line 759
+    .line 725
     :cond_0
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->isPopupShowing()Z
 
@@ -898,7 +898,7 @@
     .locals 2
 
     .prologue
-    .line 735
+    .line 701
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->getText()Landroid/text/Editable;
 
     move-result-object v0
@@ -927,45 +927,24 @@
     .parameter "visible"
 
     .prologue
-    .line 1064
+    .line 1032
     iget-object v1, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
-    if-eqz p1, :cond_2
+    if-eqz p1, :cond_0
 
     const/4 v0, 0x1
 
     :goto_0
     invoke-virtual {v1, v0}, Landroid/widget/ListPopupWindow;->setInputMethodMode(I)V
 
-    .line 1066
-    iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
-
-    invoke-virtual {v0}, Landroid/widget/ListPopupWindow;->isDropDownAlwaysVisible()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mFilter:Landroid/widget/Filter;
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->enoughToFilter()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 1067
-    :cond_0
+    .line 1034
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->showDropDown()V
 
-    .line 1069
-    :cond_1
+    .line 1035
     return-void
 
-    .line 1064
-    :cond_2
+    .line 1032
+    :cond_0
     const/4 v0, 0x2
 
     goto :goto_0
@@ -975,18 +954,8 @@
     .locals 1
 
     .prologue
-    .line 604
+    .line 570
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mAdapter:Landroid/widget/ListAdapter;
-
-    return-object v0
-.end method
-
-.method public getCompletionHint()Ljava/lang/CharSequence;
-    .locals 1
-
-    .prologue
-    .line 253
-    iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mHintText:Ljava/lang/CharSequence;
 
     return-object v0
 .end method
@@ -995,7 +964,7 @@
     .locals 1
 
     .prologue
-    .line 318
+    .line 303
     iget v0, p0, Landroid/widget/AutoCompleteTextView;->mDropDownAnchorId:I
 
     return v0
@@ -1005,7 +974,7 @@
     .locals 1
 
     .prologue
-    .line 429
+    .line 414
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/ListPopupWindow;->getAnimationStyle()I
@@ -1019,7 +988,7 @@
     .locals 1
 
     .prologue
-    .line 343
+    .line 328
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/ListPopupWindow;->getBackground()Landroid/graphics/drawable/Drawable;
@@ -1033,7 +1002,7 @@
     .locals 1
 
     .prologue
-    .line 293
+    .line 278
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/ListPopupWindow;->getHeight()I
@@ -1047,7 +1016,7 @@
     .locals 1
 
     .prologue
-    .line 401
+    .line 386
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/ListPopupWindow;->getHorizontalOffset()I
@@ -1061,7 +1030,7 @@
     .locals 1
 
     .prologue
-    .line 383
+    .line 368
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/ListPopupWindow;->getVerticalOffset()I
@@ -1075,7 +1044,7 @@
     .locals 1
 
     .prologue
-    .line 266
+    .line 251
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/ListPopupWindow;->getWidth()I
@@ -1089,7 +1058,7 @@
     .locals 1
 
     .prologue
-    .line 1187
+    .line 1152
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mFilter:Landroid/widget/Filter;
 
     return-object v0
@@ -1101,7 +1070,7 @@
     .end annotation
 
     .prologue
-    .line 545
+    .line 528
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mItemClickListener:Landroid/widget/AdapterView$OnItemClickListener;
 
     return-object v0
@@ -1113,7 +1082,7 @@
     .end annotation
 
     .prologue
-    .line 558
+    .line 541
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mItemSelectedListener:Landroid/widget/AdapterView$OnItemSelectedListener;
 
     return-object v0
@@ -1123,7 +1092,7 @@
     .locals 1
 
     .prologue
-    .line 843
+    .line 809
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/ListPopupWindow;->getSelectedItemPosition()I
@@ -1137,7 +1106,7 @@
     .locals 1
 
     .prologue
-    .line 568
+    .line 551
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mItemClickListener:Landroid/widget/AdapterView$OnItemClickListener;
 
     return-object v0
@@ -1147,7 +1116,7 @@
     .locals 1
 
     .prologue
-    .line 578
+    .line 561
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mItemSelectedListener:Landroid/widget/AdapterView$OnItemSelectedListener;
 
     return-object v0
@@ -1157,7 +1126,7 @@
     .locals 1
 
     .prologue
-    .line 490
+    .line 473
     iget v0, p0, Landroid/widget/AutoCompleteTextView;->mThreshold:I
 
     return v0
@@ -1167,7 +1136,7 @@
     .locals 1
 
     .prologue
-    .line 1161
+    .line 1126
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mValidator:Landroid/widget/AutoCompleteTextView$Validator;
 
     return-object v0
@@ -1177,7 +1146,7 @@
     .locals 1
 
     .prologue
-    .line 438
+    .line 423
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/ListPopupWindow;->isDropDownAlwaysVisible()Z
@@ -1191,7 +1160,7 @@
     .locals 1
 
     .prologue
-    .line 464
+    .line 449
     iget-boolean v0, p0, Landroid/widget/AutoCompleteTextView;->mDropDownDismissedOnCompletion:Z
 
     return v0
@@ -1201,7 +1170,7 @@
     .locals 2
 
     .prologue
-    .line 1075
+    .line 1041
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/ListPopupWindow;->getInputMethodMode()I
@@ -1227,7 +1196,7 @@
     .locals 1
 
     .prologue
-    .line 916
+    .line 882
     iget-boolean v0, p0, Landroid/widget/AutoCompleteTextView;->mBlockCompletion:Z
 
     return v0
@@ -1237,7 +1206,7 @@
     .locals 1
 
     .prologue
-    .line 800
+    .line 766
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/ListPopupWindow;->isShowing()Z
@@ -1251,10 +1220,10 @@
     .locals 0
 
     .prologue
-    .line 1016
+    .line 984
     invoke-super {p0}, Landroid/widget/EditText;->onAttachedToWindow()V
 
-    .line 1017
+    .line 985
     return-void
 .end method
 
@@ -1263,14 +1232,14 @@
     .parameter "completion"
 
     .prologue
-    .line 872
+    .line 838
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->isPopupShowing()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 873
+    .line 839
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {p1}, Landroid/view/inputmethod/CompletionInfo;->getPosition()I
@@ -1279,7 +1248,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ListPopupWindow;->performItemClick(I)Z
 
-    .line 875
+    .line 841
     :cond_0
     return-void
 .end method
@@ -1288,13 +1257,13 @@
     .locals 0
 
     .prologue
-    .line 1021
+    .line 989
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->dismissDropDown()V
 
-    .line 1022
+    .line 990
     invoke-super {p0}, Landroid/widget/EditText;->onDetachedFromWindow()V
 
-    .line 1023
+    .line 991
     return-void
 .end method
 
@@ -1303,18 +1272,18 @@
     .parameter "hint"
 
     .prologue
-    .line 992
+    .line 960
     invoke-super {p0, p1}, Landroid/widget/EditText;->onDisplayHint(I)V
 
-    .line 993
+    .line 961
     packed-switch p1, :pswitch_data_0
 
-    .line 1000
+    .line 968
     :cond_0
     :goto_0
     return-void
 
-    .line 995
+    .line 963
     :pswitch_0
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
@@ -1324,12 +1293,12 @@
 
     if-nez v0, :cond_0
 
-    .line 996
+    .line 964
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->dismissDropDown()V
 
     goto :goto_0
 
-    .line 993
+    .line 961
     nop
 
     :pswitch_data_0
@@ -1343,10 +1312,10 @@
     .parameter "count"
 
     .prologue
-    .line 953
+    .line 921
     invoke-direct {p0, p1}, Landroid/widget/AutoCompleteTextView;->updateDropDownForFilter(I)V
 
-    .line 954
+    .line 922
     return-void
 .end method
 
@@ -1357,16 +1326,16 @@
     .parameter "previouslyFocusedRect"
 
     .prologue
-    .line 1004
+    .line 972
     invoke-super {p0, p1, p2, p3}, Landroid/widget/EditText;->onFocusChanged(ZILandroid/graphics/Rect;)V
 
-    .line 1006
+    .line 974
     if-nez p1, :cond_0
 
-    .line 1007
+    .line 975
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->performValidation()V
 
-    .line 1009
+    .line 977
     :cond_0
     if-nez p1, :cond_1
 
@@ -1378,10 +1347,10 @@
 
     if-nez v0, :cond_1
 
-    .line 1010
+    .line 978
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->dismissDropDown()V
 
-    .line 1012
+    .line 980
     :cond_1
     return-void
 .end method
@@ -1394,7 +1363,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 698
+    .line 664
     iget-object v1, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v1, p1, p2}, Landroid/widget/ListPopupWindow;->onKeyDown(ILandroid/view/KeyEvent;)Z
@@ -1403,12 +1372,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 723
+    .line 689
     :cond_0
     :goto_0
     return v0
 
-    .line 702
+    .line 668
     :cond_1
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->isPopupShowing()Z
 
@@ -1416,10 +1385,10 @@
 
     if-nez v1, :cond_2
 
-    .line 703
+    .line 669
     packed-switch p1, :pswitch_data_0
 
-    .line 711
+    .line 677
     :cond_2
     :goto_1
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->isPopupShowing()Z
@@ -1438,22 +1407,22 @@
 
     if-nez v1, :cond_0
 
-    .line 715
+    .line 681
     :cond_3
     iput p1, p0, Landroid/widget/AutoCompleteTextView;->mLastKeyCode:I
 
-    .line 716
+    .line 682
     invoke-super {p0, p1, p2}, Landroid/widget/EditText;->onKeyDown(ILandroid/view/KeyEvent;)Z
 
     move-result v0
 
-    .line 717
+    .line 683
     .local v0, handled:Z
     const/4 v1, 0x0
 
     iput v1, p0, Landroid/widget/AutoCompleteTextView;->mLastKeyCode:I
 
-    .line 719
+    .line 685
     if-eqz v0, :cond_0
 
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->isPopupShowing()Z
@@ -1462,12 +1431,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 720
+    .line 686
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->clearListSelection()V
 
     goto :goto_0
 
-    .line 705
+    .line 671
     .end local v0           #handled:Z
     :pswitch_0
     invoke-virtual {p2}, Landroid/view/KeyEvent;->hasNoModifiers()Z
@@ -1476,12 +1445,12 @@
 
     if-eqz v1, :cond_2
 
-    .line 706
+    .line 672
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->performValidation()V
 
     goto :goto_1
 
-    .line 703
+    .line 669
     :pswitch_data_0
     .packed-switch 0x14
         :pswitch_0
@@ -1496,7 +1465,7 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 646
+    .line 612
     const/4 v2, 0x4
 
     if-ne p1, v2, :cond_3
@@ -1515,7 +1484,7 @@
 
     if-nez v2, :cond_3
 
-    .line 650
+    .line 616
     invoke-virtual {p2}, Landroid/view/KeyEvent;->getAction()I
 
     move-result v2
@@ -1528,25 +1497,25 @@
 
     if-nez v2, :cond_1
 
-    .line 651
+    .line 617
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->getKeyDispatcherState()Landroid/view/KeyEvent$DispatcherState;
 
     move-result-object v0
 
-    .line 652
+    .line 618
     .local v0, state:Landroid/view/KeyEvent$DispatcherState;
     if-eqz v0, :cond_0
 
-    .line 653
+    .line 619
     invoke-virtual {v0, p2, p0}, Landroid/view/KeyEvent$DispatcherState;->startTracking(Landroid/view/KeyEvent;Ljava/lang/Object;)V
 
-    .line 667
+    .line 633
     .end local v0           #state:Landroid/view/KeyEvent$DispatcherState;
     :cond_0
     :goto_0
     return v1
 
-    .line 656
+    .line 622
     :cond_1
     invoke-virtual {p2}, Landroid/view/KeyEvent;->getAction()I
 
@@ -1554,19 +1523,19 @@
 
     if-ne v2, v1, :cond_3
 
-    .line 657
+    .line 623
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->getKeyDispatcherState()Landroid/view/KeyEvent$DispatcherState;
 
     move-result-object v0
 
-    .line 658
+    .line 624
     .restart local v0       #state:Landroid/view/KeyEvent$DispatcherState;
     if-eqz v0, :cond_2
 
-    .line 659
+    .line 625
     invoke-virtual {v0, p2}, Landroid/view/KeyEvent$DispatcherState;->handleUpEvent(Landroid/view/KeyEvent;)V
 
-    .line 661
+    .line 627
     :cond_2
     invoke-virtual {p2}, Landroid/view/KeyEvent;->isTracking()Z
 
@@ -1580,12 +1549,12 @@
 
     if-nez v2, :cond_3
 
-    .line 662
+    .line 628
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->dismissDropDown()V
 
     goto :goto_0
 
-    .line 667
+    .line 633
     .end local v0           #state:Landroid/view/KeyEvent$DispatcherState;
     :cond_3
     invoke-super {p0, p1, p2}, Landroid/widget/EditText;->onKeyPreIme(ILandroid/view/KeyEvent;)Z
@@ -1603,21 +1572,21 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 672
+    .line 638
     iget-object v2, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v2, p1, p2}, Landroid/widget/ListPopupWindow;->onKeyUp(ILandroid/view/KeyEvent;)Z
 
     move-result v0
 
-    .line 673
+    .line 639
     .local v0, consumed:Z
     if-eqz v0, :cond_0
 
-    .line 674
+    .line 640
     sparse-switch p1, :sswitch_data_0
 
-    .line 688
+    .line 654
     :cond_0
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->isPopupShowing()Z
 
@@ -1635,15 +1604,15 @@
 
     if-eqz v2, :cond_2
 
-    .line 689
+    .line 655
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->performCompletion()V
 
-    .line 693
+    .line 659
     :cond_1
     :goto_0
     return v1
 
-    .line 681
+    .line 647
     :sswitch_0
     invoke-virtual {p2}, Landroid/view/KeyEvent;->hasNoModifiers()Z
 
@@ -1651,12 +1620,12 @@
 
     if-eqz v2, :cond_1
 
-    .line 682
+    .line 648
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->performCompletion()V
 
     goto :goto_0
 
-    .line 693
+    .line 659
     :cond_2
     invoke-super {p0, p1, p2}, Landroid/widget/EditText;->onKeyUp(ILandroid/view/KeyEvent;)Z
 
@@ -1664,7 +1633,7 @@
 
     goto :goto_0
 
-    .line 674
+    .line 640
     nop
 
     :sswitch_data_0
@@ -1680,10 +1649,10 @@
     .parameter "hasWindowFocus"
 
     .prologue
-    .line 984
+    .line 952
     invoke-super {p0, p1}, Landroid/widget/EditText;->onWindowFocusChanged(Z)V
 
-    .line 985
+    .line 953
     if-nez p1, :cond_0
 
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
@@ -1694,10 +1663,10 @@
 
     if-nez v0, :cond_0
 
-    .line 986
+    .line 954
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->dismissDropDown()V
 
-    .line 988
+    .line 956
     :cond_0
     return-void
 .end method
@@ -1706,7 +1675,7 @@
     .locals 4
 
     .prologue
-    .line 867
+    .line 833
     const/4 v0, 0x0
 
     const/4 v1, -0x1
@@ -1715,7 +1684,7 @@
 
     invoke-direct {p0, v0, v1, v2, v3}, Landroid/widget/AutoCompleteTextView;->performCompletion(Landroid/view/View;IJ)V
 
-    .line 868
+    .line 834
     return-void
 .end method
 
@@ -1725,12 +1694,12 @@
     .parameter "keyCode"
 
     .prologue
-    .line 858
+    .line 824
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mFilter:Landroid/widget/Filter;
 
     invoke-virtual {v0, p1, p0}, Landroid/widget/Filter;->filter(Ljava/lang/CharSequence;Landroid/widget/Filter$FilterListener;)V
 
-    .line 859
+    .line 825
     return-void
 .end method
 
@@ -1738,23 +1707,23 @@
     .locals 2
 
     .prologue
-    .line 1172
+    .line 1137
     iget-object v1, p0, Landroid/widget/AutoCompleteTextView;->mValidator:Landroid/widget/AutoCompleteTextView$Validator;
 
     if-nez v1, :cond_1
 
-    .line 1179
+    .line 1144
     :cond_0
     :goto_0
     return-void
 
-    .line 1174
+    .line 1139
     :cond_1
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->getText()Landroid/text/Editable;
 
     move-result-object v0
 
-    .line 1176
+    .line 1141
     .local v0, text:Ljava/lang/CharSequence;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -1770,7 +1739,7 @@
 
     if-nez v1, :cond_0
 
-    .line 1177
+    .line 1142
     iget-object v1, p0, Landroid/widget/AutoCompleteTextView;->mValidator:Landroid/widget/AutoCompleteTextView$Validator;
 
     invoke-interface {v1, v0}, Landroid/widget/AutoCompleteTextView$Validator;->fixText(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
@@ -1787,18 +1756,18 @@
     .parameter "text"
 
     .prologue
-    .line 943
+    .line 911
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->clearComposingText()V
 
-    .line 945
+    .line 913
     invoke-virtual {p0, p1}, Landroid/widget/AutoCompleteTextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 947
+    .line 915
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->getText()Landroid/text/Editable;
 
     move-result-object v0
 
-    .line 948
+    .line 916
     .local v0, spannable:Landroid/text/Editable;
     invoke-interface {v0}, Landroid/text/Editable;->length()I
 
@@ -1806,7 +1775,7 @@
 
     invoke-static {v0, v1}, Landroid/text/Selection;->setSelection(Landroid/text/Spannable;I)V
 
-    .line 949
+    .line 917
     return-void
 .end method
 
@@ -1827,29 +1796,29 @@
     .local p1, adapter:Landroid/widget/ListAdapter;,"TT;"
     const/4 v2, 0x0
 
-    .line 627
+    .line 593
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mObserver:Landroid/widget/AutoCompleteTextView$PopupDataSetObserver;
 
     if-nez v0, :cond_1
 
-    .line 628
+    .line 594
     new-instance v0, Landroid/widget/AutoCompleteTextView$PopupDataSetObserver;
 
     invoke-direct {v0, p0, v2}, Landroid/widget/AutoCompleteTextView$PopupDataSetObserver;-><init>(Landroid/widget/AutoCompleteTextView;Landroid/widget/AutoCompleteTextView$1;)V
 
     iput-object v0, p0, Landroid/widget/AutoCompleteTextView;->mObserver:Landroid/widget/AutoCompleteTextView$PopupDataSetObserver;
 
-    .line 632
+    .line 598
     :cond_0
     :goto_0
     iput-object p1, p0, Landroid/widget/AutoCompleteTextView;->mAdapter:Landroid/widget/ListAdapter;
 
-    .line 633
+    .line 599
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mAdapter:Landroid/widget/ListAdapter;
 
     if-eqz v0, :cond_2
 
-    .line 635
+    .line 601
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mAdapter:Landroid/widget/ListAdapter;
 
     check-cast v0, Landroid/widget/Filterable;
@@ -1860,12 +1829,12 @@
 
     iput-object v0, p0, Landroid/widget/AutoCompleteTextView;->mFilter:Landroid/widget/Filter;
 
-    .line 636
+    .line 602
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mObserver:Landroid/widget/AutoCompleteTextView$PopupDataSetObserver;
 
     invoke-interface {p1, v0}, Landroid/widget/Adapter;->registerDataSetObserver(Landroid/database/DataSetObserver;)V
 
-    .line 641
+    .line 607
     :goto_1
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
@@ -1873,16 +1842,16 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ListPopupWindow;->setAdapter(Landroid/widget/ListAdapter;)V
 
-    .line 642
+    .line 608
     return-void
 
-    .line 629
+    .line 595
     :cond_1
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mAdapter:Landroid/widget/ListAdapter;
 
     if-eqz v0, :cond_0
 
-    .line 630
+    .line 596
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mAdapter:Landroid/widget/ListAdapter;
 
     iget-object v1, p0, Landroid/widget/AutoCompleteTextView;->mObserver:Landroid/widget/AutoCompleteTextView$PopupDataSetObserver;
@@ -1891,7 +1860,7 @@
 
     goto :goto_0
 
-    .line 638
+    .line 604
     :cond_2
     iput-object v2, p0, Landroid/widget/AutoCompleteTextView;->mFilter:Landroid/widget/Filter;
 
@@ -1905,18 +1874,18 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 226
+    .line 224
     iput-object p1, p0, Landroid/widget/AutoCompleteTextView;->mHintText:Ljava/lang/CharSequence;
 
-    .line 227
+    .line 225
     if-eqz p1, :cond_1
 
-    .line 228
+    .line 226
     iget-object v1, p0, Landroid/widget/AutoCompleteTextView;->mHintView:Landroid/widget/TextView;
 
     if-nez v1, :cond_0
 
-    .line 229
+    .line 227
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -1931,7 +1900,7 @@
 
     move-result-object v1
 
-    const v2, 0x1020014
+    const v2, #id@text1#t
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1939,26 +1908,26 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    .line 231
+    .line 229
     .local v0, hintView:Landroid/widget/TextView;
     iget-object v1, p0, Landroid/widget/AutoCompleteTextView;->mHintText:Ljava/lang/CharSequence;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 232
+    .line 230
     iput-object v0, p0, Landroid/widget/AutoCompleteTextView;->mHintView:Landroid/widget/TextView;
 
-    .line 233
+    .line 231
     iget-object v1, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v1, v0}, Landroid/widget/ListPopupWindow;->setPromptView(Landroid/view/View;)V
 
-    .line 241
+    .line 239
     .end local v0           #hintView:Landroid/widget/TextView;
     :goto_0
     return-void
 
-    .line 235
+    .line 233
     :cond_0
     iget-object v1, p0, Landroid/widget/AutoCompleteTextView;->mHintView:Landroid/widget/TextView;
 
@@ -1966,13 +1935,13 @@
 
     goto :goto_0
 
-    .line 238
+    .line 236
     :cond_1
     iget-object v1, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v1, v3}, Landroid/widget/ListPopupWindow;->setPromptView(Landroid/view/View;)V
 
-    .line 239
+    .line 237
     iput-object v3, p0, Landroid/widget/AutoCompleteTextView;->mHintView:Landroid/widget/TextView;
 
     goto :goto_0
@@ -1983,12 +1952,12 @@
     .parameter "dropDownAlwaysVisible"
 
     .prologue
-    .line 455
+    .line 440
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v0, p1}, Landroid/widget/ListPopupWindow;->setDropDownAlwaysVisible(Z)V
 
-    .line 456
+    .line 441
     return-void
 .end method
 
@@ -1997,17 +1966,17 @@
     .parameter "id"
 
     .prologue
-    .line 331
+    .line 316
     iput p1, p0, Landroid/widget/AutoCompleteTextView;->mDropDownAnchorId:I
 
-    .line 332
+    .line 317
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/ListPopupWindow;->setAnchorView(Landroid/view/View;)V
 
-    .line 333
+    .line 318
     return-void
 .end method
 
@@ -2016,12 +1985,12 @@
     .parameter "animationStyle"
 
     .prologue
-    .line 417
+    .line 402
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v0, p1}, Landroid/widget/ListPopupWindow;->setAnimationStyle(I)V
 
-    .line 418
+    .line 403
     return-void
 .end method
 
@@ -2030,12 +1999,12 @@
     .parameter "d"
 
     .prologue
-    .line 354
+    .line 339
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v0, p1}, Landroid/widget/ListPopupWindow;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 355
+    .line 340
     return-void
 .end method
 
@@ -2044,7 +2013,7 @@
     .parameter "id"
 
     .prologue
-    .line 365
+    .line 350
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->getResources()Landroid/content/res/Resources;
@@ -2057,7 +2026,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ListPopupWindow;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 366
+    .line 351
     return-void
 .end method
 
@@ -2066,10 +2035,10 @@
     .parameter "dropDownDismissedOnCompletion"
 
     .prologue
-    .line 476
+    .line 461
     iput-boolean p1, p0, Landroid/widget/AutoCompleteTextView;->mDropDownDismissedOnCompletion:Z
 
-    .line 477
+    .line 462
     return-void
 .end method
 
@@ -2078,12 +2047,12 @@
     .parameter "height"
 
     .prologue
-    .line 307
+    .line 292
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v0, p1}, Landroid/widget/ListPopupWindow;->setHeight(I)V
 
-    .line 308
+    .line 293
     return-void
 .end method
 
@@ -2092,12 +2061,12 @@
     .parameter "offset"
 
     .prologue
-    .line 392
+    .line 377
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v0, p1}, Landroid/widget/ListPopupWindow;->setHorizontalOffset(I)V
 
-    .line 393
+    .line 378
     return-void
 .end method
 
@@ -2106,12 +2075,12 @@
     .parameter "offset"
 
     .prologue
-    .line 374
+    .line 359
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v0, p1}, Landroid/widget/ListPopupWindow;->setVerticalOffset(I)V
 
-    .line 375
+    .line 360
     return-void
 .end method
 
@@ -2120,12 +2089,12 @@
     .parameter "width"
 
     .prologue
-    .line 279
+    .line 264
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v0, p1}, Landroid/widget/ListPopupWindow;->setWidth(I)V
 
-    .line 280
+    .line 265
     return-void
 .end method
 
@@ -2134,12 +2103,12 @@
     .parameter "forceIgnoreOutsideTouch"
 
     .prologue
-    .line 1108
+    .line 1074
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v0, p1}, Landroid/widget/ListPopupWindow;->setForceIgnoreOutsideTouch(Z)V
 
-    .line 1109
+    .line 1075
     return-void
 .end method
 
@@ -2151,12 +2120,12 @@
     .parameter "b"
 
     .prologue
-    .line 1039
+    .line 1007
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/EditText;->setFrame(IIII)Z
 
     move-result v0
 
-    .line 1041
+    .line 1009
     .local v0, result:Z
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->isPopupShowing()Z
 
@@ -2164,10 +2133,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 1042
+    .line 1010
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->showDropDown()V
 
-    .line 1045
+    .line 1013
     :cond_0
     return v0
 .end method
@@ -2177,12 +2146,12 @@
     .parameter "position"
 
     .prologue
-    .line 829
+    .line 795
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v0, p1}, Landroid/widget/ListPopupWindow;->setSelection(I)V
 
-    .line 830
+    .line 796
     return-void
 .end method
 
@@ -2201,44 +2170,15 @@
     return-void
 .end method
 
-.method public setOnDismissListener(Landroid/widget/AutoCompleteTextView$OnDismissListener;)V
-    .locals 2
-    .parameter "dismissListener"
-
-    .prologue
-    .line 587
-    const/4 v0, 0x0
-
-    .line 588
-    .local v0, wrappedListener:Landroid/widget/PopupWindow$OnDismissListener;
-    if-eqz p1, :cond_0
-
-    .line 589
-    new-instance v0, Landroid/widget/AutoCompleteTextView$1;
-
-    .end local v0           #wrappedListener:Landroid/widget/PopupWindow$OnDismissListener;
-    invoke-direct {v0, p0, p1}, Landroid/widget/AutoCompleteTextView$1;-><init>(Landroid/widget/AutoCompleteTextView;Landroid/widget/AutoCompleteTextView$OnDismissListener;)V
-
-    .line 595
-    .restart local v0       #wrappedListener:Landroid/widget/PopupWindow$OnDismissListener;
-    :cond_0
-    iget-object v1, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
-
-    invoke-virtual {v1, v0}, Landroid/widget/ListPopupWindow;->setOnDismissListener(Landroid/widget/PopupWindow$OnDismissListener;)V
-
-    .line 596
-    return-void
-.end method
-
 .method public setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
     .locals 0
     .parameter "l"
 
     .prologue
-    .line 522
+    .line 505
     iput-object p1, p0, Landroid/widget/AutoCompleteTextView;->mItemClickListener:Landroid/widget/AdapterView$OnItemClickListener;
 
-    .line 523
+    .line 506
     return-void
 .end method
 
@@ -2247,10 +2187,10 @@
     .parameter "l"
 
     .prologue
-    .line 532
+    .line 515
     iput-object p1, p0, Landroid/widget/AutoCompleteTextView;->mItemSelectedListener:Landroid/widget/AdapterView$OnItemSelectedListener;
 
-    .line 533
+    .line 516
     return-void
 .end method
 
@@ -2260,26 +2200,26 @@
     .parameter "filter"
 
     .prologue
-    .line 926
+    .line 894
     if-eqz p2, :cond_0
 
-    .line 927
+    .line 895
     invoke-virtual {p0, p1}, Landroid/widget/AutoCompleteTextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 933
+    .line 901
     :goto_0
     return-void
 
-    .line 929
+    .line 897
     :cond_0
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/widget/AutoCompleteTextView;->mBlockCompletion:Z
 
-    .line 930
+    .line 898
     invoke-virtual {p0, p1}, Landroid/widget/AutoCompleteTextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 931
+    .line 899
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/widget/AutoCompleteTextView;->mBlockCompletion:Z
@@ -2292,17 +2232,17 @@
     .parameter "threshold"
 
     .prologue
-    .line 508
+    .line 491
     if-gtz p1, :cond_0
 
-    .line 509
+    .line 492
     const/4 p1, 0x1
 
-    .line 512
+    .line 495
     :cond_0
     iput p1, p0, Landroid/widget/AutoCompleteTextView;->mThreshold:I
 
-    .line 513
+    .line 496
     return-void
 .end method
 
@@ -2311,10 +2251,10 @@
     .parameter "validator"
 
     .prologue
-    .line 1150
+    .line 1115
     iput-object p1, p0, Landroid/widget/AutoCompleteTextView;->mValidator:Landroid/widget/AutoCompleteTextView$Validator;
 
-    .line 1151
+    .line 1116
     return-void
 .end method
 
@@ -2322,10 +2262,10 @@
     .locals 3
 
     .prologue
-    .line 1082
+    .line 1048
     invoke-direct {p0}, Landroid/widget/AutoCompleteTextView;->buildImeCompletions()V
 
-    .line 1084
+    .line 1050
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/ListPopupWindow;->getAnchorView()Landroid/view/View;
@@ -2334,14 +2274,14 @@
 
     if-nez v0, :cond_0
 
-    .line 1085
+    .line 1051
     iget v0, p0, Landroid/widget/AutoCompleteTextView;->mDropDownAnchorId:I
 
     const/4 v1, -0x1
 
     if-eq v0, v1, :cond_2
 
-    .line 1086
+    .line 1052
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->getRootView()Landroid/view/View;
@@ -2356,7 +2296,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ListPopupWindow;->setAnchorView(Landroid/view/View;)V
 
-    .line 1091
+    .line 1057
     :cond_0
     :goto_0
     invoke-virtual {p0}, Landroid/widget/AutoCompleteTextView;->isPopupShowing()Z
@@ -2365,27 +2305,27 @@
 
     if-nez v0, :cond_1
 
-    .line 1093
+    .line 1059
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/widget/ListPopupWindow;->setInputMethodMode(I)V
 
-    .line 1094
+    .line 1060
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
     const/4 v1, 0x3
 
     invoke-virtual {v0, v1}, Landroid/widget/ListPopupWindow;->setListItemExpandMax(I)V
 
-    .line 1096
+    .line 1062
     :cond_1
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/ListPopupWindow;->show()V
 
-    .line 1097
+    .line 1063
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/ListPopupWindow;->getListView()Landroid/widget/ListView;
@@ -2396,10 +2336,10 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->setOverScrollMode(I)V
 
-    .line 1098
+    .line 1064
     return-void
 
-    .line 1088
+    .line 1054
     :cond_2
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
@@ -2412,11 +2352,11 @@
     .locals 1
 
     .prologue
-    .line 1054
+    .line 1022
     iget-object v0, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/ListPopupWindow;->postShow()V
 
-    .line 1055
+    .line 1023
     return-void
 .end method

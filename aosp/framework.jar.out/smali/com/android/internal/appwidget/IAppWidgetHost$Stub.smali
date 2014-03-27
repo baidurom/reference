@@ -28,11 +28,9 @@
 
 .field static final TRANSACTION_providerChanged:I = 0x2
 
-.field static final TRANSACTION_providersChanged:I = 0x3
-
 .field static final TRANSACTION_updateAppWidget:I = 0x1
 
-.field static final TRANSACTION_viewDataChanged:I = 0x4
+.field static final TRANSACTION_viewDataChanged:I = 0x3
 
 
 # direct methods
@@ -126,7 +124,7 @@
     .line 39
     sparse-switch p1, :sswitch_data_0
 
-    .line 93
+    .line 87
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v2
@@ -238,43 +236,29 @@
 
     invoke-virtual {p2, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 79
-    invoke-virtual {p0}, Lcom/android/internal/appwidget/IAppWidgetHost$Stub;->providersChanged()V
-
-    goto :goto_0
-
-    .line 84
-    :sswitch_4
-    const-string v3, "com.android.internal.appwidget.IAppWidgetHost"
-
-    invoke-virtual {p2, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 86
+    .line 80
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 88
+    .line 82
     .restart local v0       #_arg0:I
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 89
+    .line 83
     .local v1, _arg1:I
     invoke-virtual {p0, v0, v1}, Lcom/android/internal/appwidget/IAppWidgetHost$Stub;->viewDataChanged(II)V
 
     goto :goto_0
 
     .line 39
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
         0x2 -> :sswitch_2
         0x3 -> :sswitch_3
-        0x4 -> :sswitch_4
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

@@ -23,14 +23,6 @@
     .end annotation
 .end method
 
-.method public abstract onRestrictBackgroundChanged(Z)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract onUidRulesChanged(II)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

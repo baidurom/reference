@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 150
+    .line 149
     iput-object p1, p0, Landroid/widget/SearchView$2;->this$0:Landroid/widget/SearchView;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -41,12 +41,12 @@
     .locals 1
 
     .prologue
-    .line 152
+    .line 151
     iget-object v0, p0, Landroid/widget/SearchView$2;->this$0:Landroid/widget/SearchView;
 
     #calls: Landroid/widget/SearchView;->updateFocusedState()V
     invoke-static {v0}, Landroid/widget/SearchView;->access$000(Landroid/widget/SearchView;)V
 
-    .line 153
+    .line 152
     return-void
 .end method

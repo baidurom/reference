@@ -297,7 +297,7 @@
 
     const-string v3, "default_dns_server"
 
-    invoke-static {v2, v3}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v3}, Landroid/provider/Settings$Secure;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -319,7 +319,7 @@
 
     move-result-object v2
 
-    const v3, 0x104001f
+    const v3, #string@config_default_dns_server#t
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

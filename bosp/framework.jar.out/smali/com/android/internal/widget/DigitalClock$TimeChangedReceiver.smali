@@ -91,7 +91,7 @@
 
     .line 86
     #getter for: Lcom/android/internal/widget/DigitalClock;->mHandler:Landroid/os/Handler;
-    invoke-static {v0}, Lcom/android/internal/widget/DigitalClock;->access$100(Lcom/android/internal/widget/DigitalClock;)Landroid/os/Handler;
+    invoke-static {v0}, Lcom/android/internal/widget/DigitalClock;->access$200(Lcom/android/internal/widget/DigitalClock;)Landroid/os/Handler;
 
     move-result-object v2
 

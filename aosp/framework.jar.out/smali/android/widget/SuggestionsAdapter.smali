@@ -100,7 +100,7 @@
     const/4 v3, -0x1
 
     .line 100
-    const v1, 0x10900c0
+    const v1, #layout@search_dropdown_item_icons_2line#t
 
     const/4 v2, 0x0
 
@@ -250,7 +250,7 @@
 
     move-result-object v0
 
-    const v3, 0x1010267
+    const v3, #attr@textColorSearchUrl#t
 
     const/4 v4, 0x1
 
@@ -831,7 +831,7 @@
     .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_3
     .catch Ljava/io/FileNotFoundException; {:try_start_7 .. :try_end_7} :catch_1
 
-    .line 579
+    .line 583
     :goto_1
     :try_start_8
     throw v5

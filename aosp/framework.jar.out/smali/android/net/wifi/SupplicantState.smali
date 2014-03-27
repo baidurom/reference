@@ -434,7 +434,7 @@
     .end packed-switch
 .end method
 
-.method public static isHandshakeState(Landroid/net/wifi/SupplicantState;)Z
+.method static isHandshakeState(Landroid/net/wifi/SupplicantState;)Z
     .locals 2
     .parameter "state"
 

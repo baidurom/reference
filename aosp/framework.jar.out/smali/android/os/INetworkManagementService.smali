@@ -15,14 +15,6 @@
 
 
 # virtual methods
-.method public abstract addIdleTimer(Ljava/lang/String;ILjava/lang/String;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract addRoute(Ljava/lang/String;Landroid/net/RouteInfo;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -159,15 +151,7 @@
     .end annotation
 .end method
 
-.method public abstract getNetworkStatsSummaryDev()Landroid/net/NetworkStats;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract getNetworkStatsSummaryXt()Landroid/net/NetworkStats;
+.method public abstract getNetworkStatsSummary()Landroid/net/NetworkStats;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -200,14 +184,6 @@
 .end method
 
 .method public abstract isBandwidthControlEnabled()Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract isFirewallEnabled()Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -255,14 +231,6 @@
     .end annotation
 .end method
 
-.method public abstract removeIdleTimer(Ljava/lang/String;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract removeInterfaceAlert(Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -295,7 +263,7 @@
     .end annotation
 .end method
 
-.method public abstract setAccessPoint(Landroid/net/wifi/WifiConfiguration;Ljava/lang/String;)V
+.method public abstract setAccessPoint(Landroid/net/wifi/WifiConfiguration;Ljava/lang/String;Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -320,46 +288,6 @@
 .end method
 
 .method public abstract setDnsServersForInterface(Ljava/lang/String;[Ljava/lang/String;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setFirewallEgressDestRule(Ljava/lang/String;IZ)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setFirewallEgressSourceRule(Ljava/lang/String;Z)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setFirewallEnabled(Z)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setFirewallInterfaceRule(Ljava/lang/String;Z)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setFirewallUidRule(IZ)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -455,15 +383,7 @@
     .end annotation
 .end method
 
-.method public abstract startAccessPoint(Landroid/net/wifi/WifiConfiguration;Ljava/lang/String;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract startReverseTethering(Ljava/lang/String;)V
+.method public abstract startAccessPoint(Landroid/net/wifi/WifiConfiguration;Ljava/lang/String;Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -480,14 +400,6 @@
 .end method
 
 .method public abstract stopAccessPoint(Ljava/lang/String;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract stopReverseTethering()V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

@@ -44,35 +44,35 @@
     .parameter "_needFullBackup"
 
     .prologue
-    .line 313
+    .line 276
     iput-object p1, p0, Lcom/android/server/BackupManagerService$RestoreParams;->this$0:Lcom/android/server/BackupManagerService;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 314
+    .line 277
     iput-object p2, p0, Lcom/android/server/BackupManagerService$RestoreParams;->transport:Lcom/android/internal/backup/IBackupTransport;
 
-    .line 315
+    .line 278
     iput-object p3, p0, Lcom/android/server/BackupManagerService$RestoreParams;->observer:Landroid/app/backup/IRestoreObserver;
 
-    .line 316
+    .line 279
     iput-wide p4, p0, Lcom/android/server/BackupManagerService$RestoreParams;->token:J
 
-    .line 317
+    .line 280
     iput-object p6, p0, Lcom/android/server/BackupManagerService$RestoreParams;->pkgInfo:Landroid/content/pm/PackageInfo;
 
-    .line 318
+    .line 281
     iput p7, p0, Lcom/android/server/BackupManagerService$RestoreParams;->pmToken:I
 
-    .line 319
+    .line 282
     iput-boolean p8, p0, Lcom/android/server/BackupManagerService$RestoreParams;->needFullBackup:Z
 
-    .line 320
+    .line 283
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/BackupManagerService$RestoreParams;->filterSet:[Ljava/lang/String;
 
-    .line 321
+    .line 284
     return-void
 .end method
 
@@ -87,35 +87,35 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 324
+    .line 287
     iput-object p1, p0, Lcom/android/server/BackupManagerService$RestoreParams;->this$0:Lcom/android/server/BackupManagerService;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 325
+    .line 288
     iput-object p2, p0, Lcom/android/server/BackupManagerService$RestoreParams;->transport:Lcom/android/internal/backup/IBackupTransport;
 
-    .line 326
+    .line 289
     iput-object p3, p0, Lcom/android/server/BackupManagerService$RestoreParams;->observer:Landroid/app/backup/IRestoreObserver;
 
-    .line 327
+    .line 290
     iput-wide p4, p0, Lcom/android/server/BackupManagerService$RestoreParams;->token:J
 
-    .line 328
+    .line 291
     iput-object v1, p0, Lcom/android/server/BackupManagerService$RestoreParams;->pkgInfo:Landroid/content/pm/PackageInfo;
 
-    .line 329
+    .line 292
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/BackupManagerService$RestoreParams;->pmToken:I
 
-    .line 330
+    .line 293
     iput-boolean p6, p0, Lcom/android/server/BackupManagerService$RestoreParams;->needFullBackup:Z
 
-    .line 331
+    .line 294
     iput-object v1, p0, Lcom/android/server/BackupManagerService$RestoreParams;->filterSet:[Ljava/lang/String;
 
-    .line 332
+    .line 295
     return-void
 .end method
 
@@ -129,36 +129,36 @@
     .parameter "_needFullBackup"
 
     .prologue
-    .line 335
+    .line 298
     iput-object p1, p0, Lcom/android/server/BackupManagerService$RestoreParams;->this$0:Lcom/android/server/BackupManagerService;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 336
+    .line 299
     iput-object p2, p0, Lcom/android/server/BackupManagerService$RestoreParams;->transport:Lcom/android/internal/backup/IBackupTransport;
 
-    .line 337
+    .line 300
     iput-object p3, p0, Lcom/android/server/BackupManagerService$RestoreParams;->observer:Landroid/app/backup/IRestoreObserver;
 
-    .line 338
+    .line 301
     iput-wide p4, p0, Lcom/android/server/BackupManagerService$RestoreParams;->token:J
 
-    .line 339
+    .line 302
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/BackupManagerService$RestoreParams;->pkgInfo:Landroid/content/pm/PackageInfo;
 
-    .line 340
+    .line 303
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/BackupManagerService$RestoreParams;->pmToken:I
 
-    .line 341
+    .line 304
     iput-boolean p7, p0, Lcom/android/server/BackupManagerService$RestoreParams;->needFullBackup:Z
 
-    .line 342
+    .line 305
     iput-object p6, p0, Lcom/android/server/BackupManagerService$RestoreParams;->filterSet:[Ljava/lang/String;
 
-    .line 343
+    .line 306
     return-void
 .end method

@@ -27,13 +27,13 @@
     .parameter "remote"
 
     .prologue
-    .line 222
+    .line 161
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 223
+    .line 162
     iput-object p1, p0, Landroid/accessibilityservice/IAccessibilityServiceConnection$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    .line 224
+    .line 163
     return-void
 .end method
 
@@ -43,19 +43,18 @@
     .locals 1
 
     .prologue
-    .line 227
+    .line 166
     iget-object v0, p0, Landroid/accessibilityservice/IAccessibilityServiceConnection$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     return-object v0
 .end method
 
-.method public findAccessibilityNodeInfoByAccessibilityId(IJILandroid/view/accessibility/IAccessibilityInteractionConnectionCallback;IJ)F
+.method public findAccessibilityNodeInfoByAccessibilityId(IIILandroid/view/accessibility/IAccessibilityInteractionConnectionCallback;J)F
     .locals 6
     .parameter "accessibilityWindowId"
-    .parameter "accessibilityNodeId"
+    .parameter "accessibilityViewId"
     .parameter "interactionId"
     .parameter "callback"
-    .parameter "flags"
     .parameter "threadId"
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -64,50 +63,47 @@
     .end annotation
 
     .prologue
-    .line 272
+    .line 205
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 273
+    .line 206
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 276
+    .line 209
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "android.accessibilityservice.IAccessibilityServiceConnection"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 277
+    .line 210
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 278
-    invoke-virtual {v0, p2, p3}, Landroid/os/Parcel;->writeLong(J)V
+    .line 211
+    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 279
-    invoke-virtual {v0, p4}, Landroid/os/Parcel;->writeInt(I)V
+    .line 212
+    invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 280
-    if-eqz p5, :cond_0
+    .line 213
+    if-eqz p4, :cond_0
 
-    invoke-interface {p5}, Landroid/view/accessibility/IAccessibilityInteractionConnectionCallback;->asBinder()Landroid/os/IBinder;
+    invoke-interface {p4}, Landroid/view/accessibility/IAccessibilityInteractionConnectionCallback;->asBinder()Landroid/os/IBinder;
 
     move-result-object v3
 
     :goto_0
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 281
-    invoke-virtual {v0, p6}, Landroid/os/Parcel;->writeInt(I)V
+    .line 214
+    invoke-virtual {v0, p5, p6}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 282
-    invoke-virtual {v0, p7, p8}, Landroid/os/Parcel;->writeLong(J)V
-
-    .line 283
+    .line 215
     iget-object v3, p0, Landroid/accessibilityservice/IAccessibilityServiceConnection$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v4, 0x2
@@ -116,49 +112,47 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 284
+    .line 216
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 285
+    .line 217
     invoke-virtual {v1}, Landroid/os/Parcel;->readFloat()F
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 288
+    .line 220
     .local v2, _result:F
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 289
+    .line 221
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 291
+    .line 223
     return v2
 
-    .line 280
+    .line 213
     .end local v2           #_result:F
     :cond_0
     const/4 v3, 0x0
 
     goto :goto_0
 
-    .line 288
+    .line 220
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 289
+    .line 221
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
 .end method
 
-.method public findAccessibilityNodeInfoByViewId(IJIILandroid/view/accessibility/IAccessibilityInteractionConnectionCallback;J)F
+.method public findAccessibilityNodeInfoByViewIdInActiveWindow(IILandroid/view/accessibility/IAccessibilityInteractionConnectionCallback;J)F
     .locals 6
-    .parameter "accessibilityWindowId"
-    .parameter "accessibilityNodeId"
     .parameter "viewId"
     .parameter "interactionId"
     .parameter "callback"
@@ -170,101 +164,199 @@
     .end annotation
 
     .prologue
-    .line 354
+    .line 309
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 355
+    .line 310
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 358
+    .line 313
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "android.accessibilityservice.IAccessibilityServiceConnection"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 359
+    .line 314
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 360
-    invoke-virtual {v0, p2, p3}, Landroid/os/Parcel;->writeLong(J)V
+    .line 315
+    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 361
-    invoke-virtual {v0, p4}, Landroid/os/Parcel;->writeInt(I)V
+    .line 316
+    if-eqz p3, :cond_0
 
-    .line 362
-    invoke-virtual {v0, p5}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 363
-    if-eqz p6, :cond_0
-
-    invoke-interface {p6}, Landroid/view/accessibility/IAccessibilityInteractionConnectionCallback;->asBinder()Landroid/os/IBinder;
+    invoke-interface {p3}, Landroid/view/accessibility/IAccessibilityInteractionConnectionCallback;->asBinder()Landroid/os/IBinder;
 
     move-result-object v3
 
     :goto_0
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 364
-    invoke-virtual {v0, p7, p8}, Landroid/os/Parcel;->writeLong(J)V
+    .line 317
+    invoke-virtual {v0, p4, p5}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 365
+    .line 318
     iget-object v3, p0, Landroid/accessibilityservice/IAccessibilityServiceConnection$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/4 v4, 0x4
+    const/4 v4, 0x5
 
     const/4 v5, 0x0
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 366
+    .line 319
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 367
+    .line 320
     invoke-virtual {v1}, Landroid/os/Parcel;->readFloat()F
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 370
+    .line 323
     .local v2, _result:F
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 371
+    .line 324
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 373
+    .line 326
     return v2
 
-    .line 363
+    .line 316
     .end local v2           #_result:F
     :cond_0
     const/4 v3, 0x0
 
     goto :goto_0
 
-    .line 370
+    .line 323
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 371
+    .line 324
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
 .end method
 
-.method public findAccessibilityNodeInfosByText(IJLjava/lang/String;ILandroid/view/accessibility/IAccessibilityInteractionConnectionCallback;J)F
+.method public findAccessibilityNodeInfosByViewText(Ljava/lang/String;IIILandroid/view/accessibility/IAccessibilityInteractionConnectionCallback;J)F
     .locals 6
+    .parameter "text"
     .parameter "accessibilityWindowId"
-    .parameter "accessibilityNodeId"
+    .parameter "accessibilityViewId"
+    .parameter "interractionId"
+    .parameter "callback"
+    .parameter "threadId"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 242
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 243
+    .local v0, _data:Landroid/os/Parcel;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v1
+
+    .line 246
+    .local v1, _reply:Landroid/os/Parcel;
+    :try_start_0
+    const-string v3, "android.accessibilityservice.IAccessibilityServiceConnection"
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 247
+    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    .line 248
+    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 249
+    invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 250
+    invoke-virtual {v0, p4}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 251
+    if-eqz p5, :cond_0
+
+    invoke-interface {p5}, Landroid/view/accessibility/IAccessibilityInteractionConnectionCallback;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v3
+
+    :goto_0
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+
+    .line 252
+    invoke-virtual {v0, p6, p7}, Landroid/os/Parcel;->writeLong(J)V
+
+    .line 253
+    iget-object v3, p0, Landroid/accessibilityservice/IAccessibilityServiceConnection$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+
+    const/4 v4, 0x3
+
+    const/4 v5, 0x0
+
+    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    .line 254
+    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
+
+    .line 255
+    invoke-virtual {v1}, Landroid/os/Parcel;->readFloat()F
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result v2
+
+    .line 258
+    .local v2, _result:F
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 259
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 261
+    return v2
+
+    .line 251
+    .end local v2           #_result:F
+    :cond_0
+    const/4 v3, 0x0
+
+    goto :goto_0
+
+    .line 258
+    :catchall_0
+    move-exception v3
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 259
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    throw v3
+.end method
+
+.method public findAccessibilityNodeInfosByViewTextInActiveWindow(Ljava/lang/String;ILandroid/view/accessibility/IAccessibilityInteractionConnectionCallback;J)F
+    .locals 6
     .parameter "text"
     .parameter "interactionId"
     .parameter "callback"
@@ -276,304 +368,86 @@
     .end annotation
 
     .prologue
-    .line 313
+    .line 278
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 314
+    .line 279
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 317
+    .line 282
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "android.accessibilityservice.IAccessibilityServiceConnection"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 318
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
+    .line 283
+    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 319
-    invoke-virtual {v0, p2, p3}, Landroid/os/Parcel;->writeLong(J)V
+    .line 284
+    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 320
-    invoke-virtual {v0, p4}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    .line 285
+    if-eqz p3, :cond_0
 
-    .line 321
-    invoke-virtual {v0, p5}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 322
-    if-eqz p6, :cond_0
-
-    invoke-interface {p6}, Landroid/view/accessibility/IAccessibilityInteractionConnectionCallback;->asBinder()Landroid/os/IBinder;
+    invoke-interface {p3}, Landroid/view/accessibility/IAccessibilityInteractionConnectionCallback;->asBinder()Landroid/os/IBinder;
 
     move-result-object v3
 
     :goto_0
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 323
-    invoke-virtual {v0, p7, p8}, Landroid/os/Parcel;->writeLong(J)V
+    .line 286
+    invoke-virtual {v0, p4, p5}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 324
+    .line 287
     iget-object v3, p0, Landroid/accessibilityservice/IAccessibilityServiceConnection$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/4 v4, 0x3
+    const/4 v4, 0x4
 
     const/4 v5, 0x0
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 325
+    .line 288
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 326
+    .line 289
     invoke-virtual {v1}, Landroid/os/Parcel;->readFloat()F
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 329
+    .line 292
     .local v2, _result:F
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 330
+    .line 293
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 332
+    .line 295
     return v2
 
-    .line 322
+    .line 285
     .end local v2           #_result:F
     :cond_0
     const/4 v3, 0x0
 
     goto :goto_0
 
-    .line 329
+    .line 292
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 330
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    throw v3
-.end method
-
-.method public findFocus(IJIILandroid/view/accessibility/IAccessibilityInteractionConnectionCallback;J)F
-    .locals 6
-    .parameter "accessibilityWindowId"
-    .parameter "accessibilityNodeId"
-    .parameter "focusType"
-    .parameter "interactionId"
-    .parameter "callback"
-    .parameter "threadId"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 395
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 396
-    .local v0, _data:Landroid/os/Parcel;
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    .line 399
-    .local v1, _reply:Landroid/os/Parcel;
-    :try_start_0
-    const-string v3, "android.accessibilityservice.IAccessibilityServiceConnection"
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 400
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 401
-    invoke-virtual {v0, p2, p3}, Landroid/os/Parcel;->writeLong(J)V
-
-    .line 402
-    invoke-virtual {v0, p4}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 403
-    invoke-virtual {v0, p5}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 404
-    if-eqz p6, :cond_0
-
-    invoke-interface {p6}, Landroid/view/accessibility/IAccessibilityInteractionConnectionCallback;->asBinder()Landroid/os/IBinder;
-
-    move-result-object v3
-
-    :goto_0
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
-
-    .line 405
-    invoke-virtual {v0, p7, p8}, Landroid/os/Parcel;->writeLong(J)V
-
-    .line 406
-    iget-object v3, p0, Landroid/accessibilityservice/IAccessibilityServiceConnection$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/4 v4, 0x5
-
-    const/4 v5, 0x0
-
-    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 407
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-
-    .line 408
-    invoke-virtual {v1}, Landroid/os/Parcel;->readFloat()F
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result v2
-
-    .line 411
-    .local v2, _result:F
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 412
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 414
-    return v2
-
-    .line 404
-    .end local v2           #_result:F
-    :cond_0
-    const/4 v3, 0x0
-
-    goto :goto_0
-
-    .line 411
-    :catchall_0
-    move-exception v3
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 412
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    throw v3
-.end method
-
-.method public focusSearch(IJIILandroid/view/accessibility/IAccessibilityInteractionConnectionCallback;J)F
-    .locals 6
-    .parameter "accessibilityWindowId"
-    .parameter "accessibilityNodeId"
-    .parameter "direction"
-    .parameter "interactionId"
-    .parameter "callback"
-    .parameter "threadId"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 436
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 437
-    .local v0, _data:Landroid/os/Parcel;
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    .line 440
-    .local v1, _reply:Landroid/os/Parcel;
-    :try_start_0
-    const-string v3, "android.accessibilityservice.IAccessibilityServiceConnection"
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 441
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 442
-    invoke-virtual {v0, p2, p3}, Landroid/os/Parcel;->writeLong(J)V
-
-    .line 443
-    invoke-virtual {v0, p4}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 444
-    invoke-virtual {v0, p5}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 445
-    if-eqz p6, :cond_0
-
-    invoke-interface {p6}, Landroid/view/accessibility/IAccessibilityInteractionConnectionCallback;->asBinder()Landroid/os/IBinder;
-
-    move-result-object v3
-
-    :goto_0
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
-
-    .line 446
-    invoke-virtual {v0, p7, p8}, Landroid/os/Parcel;->writeLong(J)V
-
-    .line 447
-    iget-object v3, p0, Landroid/accessibilityservice/IAccessibilityServiceConnection$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/4 v4, 0x6
-
-    const/4 v5, 0x0
-
-    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 448
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-
-    .line 449
-    invoke-virtual {v1}, Landroid/os/Parcel;->readFloat()F
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result v2
-
-    .line 452
-    .local v2, _result:F
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 453
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 455
-    return v2
-
-    .line 445
-    .end local v2           #_result:F
-    :cond_0
-    const/4 v3, 0x0
-
-    goto :goto_0
-
-    .line 452
-    :catchall_0
-    move-exception v3
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 453
+    .line 293
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -583,107 +457,17 @@
     .locals 1
 
     .prologue
-    .line 231
+    .line 170
     const-string v0, "android.accessibilityservice.IAccessibilityServiceConnection"
 
     return-object v0
 .end method
 
-.method public getServiceInfo()Landroid/accessibilityservice/AccessibilityServiceInfo;
-    .locals 6
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 510
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 511
-    .local v0, _data:Landroid/os/Parcel;
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    .line 514
-    .local v1, _reply:Landroid/os/Parcel;
-    :try_start_0
-    const-string v3, "android.accessibilityservice.IAccessibilityServiceConnection"
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 515
-    iget-object v3, p0, Landroid/accessibilityservice/IAccessibilityServiceConnection$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/16 v4, 0x8
-
-    const/4 v5, 0x0
-
-    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 516
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-
-    .line 517
-    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    .line 518
-    sget-object v3, Landroid/accessibilityservice/AccessibilityServiceInfo;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-interface {v3, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/accessibilityservice/AccessibilityServiceInfo;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 525
-    .local v2, _result:Landroid/accessibilityservice/AccessibilityServiceInfo;
-    :goto_0
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 526
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 528
-    return-object v2
-
-    .line 521
-    .end local v2           #_result:Landroid/accessibilityservice/AccessibilityServiceInfo;
-    :cond_0
-    const/4 v2, 0x0
-
-    .restart local v2       #_result:Landroid/accessibilityservice/AccessibilityServiceInfo;
-    goto :goto_0
-
-    .line 525
-    .end local v2           #_result:Landroid/accessibilityservice/AccessibilityServiceInfo;
-    :catchall_0
-    move-exception v3
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 526
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    throw v3
-.end method
-
-.method public performAccessibilityAction(IJILandroid/os/Bundle;ILandroid/view/accessibility/IAccessibilityInteractionConnectionCallback;J)Z
+.method public performAccessibilityAction(IIIILandroid/view/accessibility/IAccessibilityInteractionConnectionCallback;J)Z
     .locals 6
     .parameter "accessibilityWindowId"
-    .parameter "accessibilityNodeId"
+    .parameter "accessibilityViewId"
     .parameter "action"
-    .parameter "arguments"
     .parameter "interactionId"
     .parameter "callback"
     .parameter "threadId"
@@ -694,179 +478,64 @@
     .end annotation
 
     .prologue
-    .line 477
+    const/4 v2, 0x0
+
+    .line 341
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 478
+    .line 342
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 481
+    .line 345
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "android.accessibilityservice.IAccessibilityServiceConnection"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 482
+    .line 346
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 483
-    invoke-virtual {v0, p2, p3}, Landroid/os/Parcel;->writeLong(J)V
+    .line 347
+    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 484
+    .line 348
+    invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 349
     invoke-virtual {v0, p4}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 485
-    if-eqz p5, :cond_0
+    .line 350
+    if-eqz p5, :cond_1
 
-    .line 486
-    const/4 v3, 0x1
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 487
-    const/4 v3, 0x0
-
-    invoke-virtual {p5, v0, v3}, Landroid/os/Bundle;->writeToParcel(Landroid/os/Parcel;I)V
-
-    .line 492
-    :goto_0
-    invoke-virtual {v0, p6}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 493
-    if-eqz p7, :cond_1
-
-    invoke-interface {p7}, Landroid/view/accessibility/IAccessibilityInteractionConnectionCallback;->asBinder()Landroid/os/IBinder;
+    invoke-interface {p5}, Landroid/view/accessibility/IAccessibilityInteractionConnectionCallback;->asBinder()Landroid/os/IBinder;
 
     move-result-object v3
 
-    :goto_1
+    :goto_0
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 494
-    invoke-virtual {v0, p8, p9}, Landroid/os/Parcel;->writeLong(J)V
+    .line 351
+    invoke-virtual {v0, p6, p7}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 495
+    .line 352
     iget-object v3, p0, Landroid/accessibilityservice/IAccessibilityServiceConnection$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/4 v4, 0x7
+    const/4 v4, 0x6
 
     const/4 v5, 0x0
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 496
+    .line 353
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 497
-    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    const/4 v2, 0x1
-
-    .line 500
-    .local v2, _result:Z
-    :goto_2
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 501
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 503
-    return v2
-
-    .line 490
-    .end local v2           #_result:Z
-    :cond_0
-    const/4 v3, 0x0
-
-    :try_start_1
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-
-    .line 500
-    :catchall_0
-    move-exception v3
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 501
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    throw v3
-
-    .line 493
-    :cond_1
-    const/4 v3, 0x0
-
-    goto :goto_1
-
-    .line 497
-    :cond_2
-    const/4 v2, 0x0
-
-    goto :goto_2
-.end method
-
-.method public performGlobalAction(I)Z
-    .locals 6
-    .parameter "action"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    const/4 v2, 0x0
-
-    .line 538
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 539
-    .local v0, _data:Landroid/os/Parcel;
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    .line 542
-    .local v1, _reply:Landroid/os/Parcel;
-    :try_start_0
-    const-string v3, "android.accessibilityservice.IAccessibilityServiceConnection"
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 543
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 544
-    iget-object v3, p0, Landroid/accessibilityservice/IAccessibilityServiceConnection$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/16 v4, 0x9
-
-    const/4 v5, 0x0
-
-    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 545
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-
-    .line 546
+    .line 354
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -877,25 +546,31 @@
 
     const/4 v2, 0x1
 
-    .line 549
+    .line 357
     .local v2, _result:Z
     :cond_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 550
+    .line 358
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 552
+    .line 360
     return v2
 
-    .line 549
+    .line 350
     .end local v2           #_result:Z
+    :cond_1
+    const/4 v3, 0x0
+
+    goto :goto_0
+
+    .line 357
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 550
+    .line 358
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -911,38 +586,38 @@
     .end annotation
 
     .prologue
-    .line 235
+    .line 174
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 236
+    .line 175
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 238
+    .line 177
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "android.accessibilityservice.IAccessibilityServiceConnection"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 239
+    .line 178
     if-eqz p1, :cond_0
 
-    .line 240
+    .line 179
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 241
+    .line 180
     const/4 v2, 0x0
 
     invoke-virtual {p1, v0, v2}, Landroid/accessibilityservice/AccessibilityServiceInfo;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 246
+    .line 185
     :goto_0
     iget-object v2, p0, Landroid/accessibilityservice/IAccessibilityServiceConnection$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
@@ -952,21 +627,21 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 247
+    .line 186
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 250
+    .line 189
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 251
+    .line 190
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 253
+    .line 192
     return-void
 
-    .line 244
+    .line 183
     :cond_0
     const/4 v2, 0x0
 
@@ -977,13 +652,13 @@
 
     goto :goto_0
 
-    .line 250
+    .line 189
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 251
+    .line 190
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2

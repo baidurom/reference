@@ -70,7 +70,8 @@
     :cond_0
     iget-object v0, p0, Lcom/android/internal/widget/DigitalClock$TimeChangedReceiver$1;->val$clock:Lcom/android/internal/widget/DigitalClock;
 
-    invoke-virtual {v0}, Lcom/android/internal/widget/DigitalClock;->updateTime()V
+    #calls: Lcom/android/internal/widget/DigitalClock;->updateTime()V
+    invoke-static {v0}, Lcom/android/internal/widget/DigitalClock;->access$100(Lcom/android/internal/widget/DigitalClock;)V
 
     .line 92
     return-void

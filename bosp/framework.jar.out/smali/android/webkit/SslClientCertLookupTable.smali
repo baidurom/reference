@@ -36,8 +36,7 @@
             "Ljava/util/Map",
             "<",
             "Ljava/lang/String;",
-            "Ljava/security/PrivateKey;",
-            ">;"
+            "[B>;"
         }
     .end annotation
 .end field
@@ -48,31 +47,31 @@
     .locals 1
 
     .prologue
-    .line 41
+    .line 40
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 42
+    .line 41
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/webkit/SslClientCertLookupTable;->privateKeys:Ljava/util/Map;
 
-    .line 43
+    .line 42
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/webkit/SslClientCertLookupTable;->certificateChains:Ljava/util/Map;
 
-    .line 44
+    .line 43
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     iput-object v0, p0, Landroid/webkit/SslClientCertLookupTable;->denied:Ljava/util/Set;
 
-    .line 45
+    .line 44
     return-void
 .end method
 
@@ -80,7 +79,7 @@
     .locals 2
 
     .prologue
-    .line 35
+    .line 34
     const-class v1, Landroid/webkit/SslClientCertLookupTable;
 
     monitor-enter v1
@@ -90,14 +89,14 @@
 
     if-nez v0, :cond_0
 
-    .line 36
+    .line 35
     new-instance v0, Landroid/webkit/SslClientCertLookupTable;
 
     invoke-direct {v0}, Landroid/webkit/SslClientCertLookupTable;-><init>()V
 
     sput-object v0, Landroid/webkit/SslClientCertLookupTable;->sTable:Landroid/webkit/SslClientCertLookupTable;
 
-    .line 38
+    .line 37
     :cond_0
     sget-object v0, Landroid/webkit/SslClientCertLookupTable;->sTable:Landroid/webkit/SslClientCertLookupTable;
     :try_end_0
@@ -107,7 +106,7 @@
 
     return-object v0
 
-    .line 35
+    .line 34
     :catchall_0
     move-exception v0
 
@@ -118,29 +117,29 @@
 
 
 # virtual methods
-.method public Allow(Ljava/lang/String;Ljava/security/PrivateKey;[[B)V
+.method public Allow(Ljava/lang/String;[B[[B)V
     .locals 1
     .parameter "host_and_port"
     .parameter "privateKey"
     .parameter "chain"
 
     .prologue
-    .line 48
+    .line 47
     iget-object v0, p0, Landroid/webkit/SslClientCertLookupTable;->privateKeys:Ljava/util/Map;
 
     invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 49
+    .line 48
     iget-object v0, p0, Landroid/webkit/SslClientCertLookupTable;->certificateChains:Ljava/util/Map;
 
     invoke-interface {v0, p1, p3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 50
+    .line 49
     iget-object v0, p0, Landroid/webkit/SslClientCertLookupTable;->denied:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 51
+    .line 50
     return-void
 .end method
 
@@ -149,7 +148,7 @@
     .parameter "host_and_port"
 
     .prologue
-    .line 72
+    .line 71
     iget-object v0, p0, Landroid/webkit/SslClientCertLookupTable;->certificateChains:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -166,22 +165,22 @@
     .parameter "host_and_port"
 
     .prologue
-    .line 54
+    .line 53
     iget-object v0, p0, Landroid/webkit/SslClientCertLookupTable;->privateKeys:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 55
+    .line 54
     iget-object v0, p0, Landroid/webkit/SslClientCertLookupTable;->certificateChains:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 56
+    .line 55
     iget-object v0, p0, Landroid/webkit/SslClientCertLookupTable;->denied:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 57
+    .line 56
     return-void
 .end method
 
@@ -190,7 +189,7 @@
     .parameter "host_and_port"
 
     .prologue
-    .line 60
+    .line 59
     iget-object v0, p0, Landroid/webkit/SslClientCertLookupTable;->privateKeys:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
@@ -205,7 +204,7 @@
     .parameter "host_and_port"
 
     .prologue
-    .line 64
+    .line 63
     iget-object v0, p0, Landroid/webkit/SslClientCertLookupTable;->denied:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
@@ -215,19 +214,19 @@
     return v0
 .end method
 
-.method public PrivateKey(Ljava/lang/String;)Ljava/security/PrivateKey;
+.method public PrivateKey(Ljava/lang/String;)[B
     .locals 1
     .parameter "host_and_port"
 
     .prologue
-    .line 68
+    .line 67
     iget-object v0, p0, Landroid/webkit/SslClientCertLookupTable;->privateKeys:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ljava/security/PrivateKey;
+    check-cast v0, [B
 
     return-object v0
 .end method

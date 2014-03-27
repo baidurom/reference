@@ -45,7 +45,7 @@
     .locals 1
 
     .prologue
-    .line 1141
+    .line 1136
     new-instance v0, Landroid/widget/ExpandableListView$SavedState$1;
 
     invoke-direct {v0}, Landroid/widget/ExpandableListView$SavedState$1;-><init>()V
@@ -60,17 +60,17 @@
     .parameter "in"
 
     .prologue
-    .line 1130
+    .line 1125
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcel;)V
 
-    .line 1131
+    .line 1126
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/widget/ExpandableListView$SavedState;->expandedGroupMetadataList:Ljava/util/ArrayList;
 
-    .line 1132
+    .line 1127
     iget-object v0, p0, Landroid/widget/ExpandableListView$SavedState;->expandedGroupMetadataList:Ljava/util/ArrayList;
 
     const-class v1, Landroid/widget/ExpandableListConnector;
@@ -81,7 +81,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->readList(Ljava/util/List;Ljava/lang/ClassLoader;)V
 
-    .line 1133
+    .line 1128
     return-void
 .end method
 
@@ -91,7 +91,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1113
+    .line 1108
     invoke-direct {p0, p1}, Landroid/widget/ExpandableListView$SavedState;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -113,14 +113,14 @@
     .end annotation
 
     .prologue
-    .line 1122
+    .line 1117
     .local p2, expandedGroupMetadataList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/widget/ExpandableListConnector$GroupMetadata;>;"
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcelable;)V
 
-    .line 1123
+    .line 1118
     iput-object p2, p0, Landroid/widget/ExpandableListView$SavedState;->expandedGroupMetadataList:Ljava/util/ArrayList;
 
-    .line 1124
+    .line 1119
     return-void
 .end method
 
@@ -132,14 +132,14 @@
     .parameter "flags"
 
     .prologue
-    .line 1137
+    .line 1132
     invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1138
+    .line 1133
     iget-object v0, p0, Landroid/widget/ExpandableListView$SavedState;->expandedGroupMetadataList:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeList(Ljava/util/List;)V
 
-    .line 1139
+    .line 1134
     return-void
 .end method

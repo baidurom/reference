@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 3999
+    .line 2718
     iput-object p1, p0, Landroid/media/AudioService$3;->this$0:Landroid/media/AudioService;
 
     invoke-direct {p0}, Landroid/telephony/PhoneStateListener;-><init>()V
@@ -42,34 +42,34 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 4002
+    .line 2721
     if-ne p1, v0, :cond_1
 
-    .line 4004
-    invoke-static {}, Landroid/media/AudioService;->access$8800()Ljava/lang/Object;
+    .line 2723
+    invoke-static {}, Landroid/media/AudioService;->access$6400()Ljava/lang/Object;
 
     move-result-object v1
 
     monitor-enter v1
 
-    .line 4005
+    .line 2724
     :try_start_0
     iget-object v0, p0, Landroid/media/AudioService$3;->this$0:Landroid/media/AudioService;
 
     const/4 v2, 0x1
 
     #setter for: Landroid/media/AudioService;->mIsRinging:Z
-    invoke-static {v0, v2}, Landroid/media/AudioService;->access$8902(Landroid/media/AudioService;Z)Z
+    invoke-static {v0, v2}, Landroid/media/AudioService;->access$6502(Landroid/media/AudioService;Z)Z
 
-    .line 4006
+    .line 2725
     monitor-exit v1
 
-    .line 4013
+    .line 2732
     :cond_0
     :goto_0
     return-void
 
-    .line 4006
+    .line 2725
     :catchall_0
     move-exception v0
 
@@ -79,7 +79,7 @@
 
     throw v0
 
-    .line 4007
+    .line 2726
     :cond_1
     const/4 v0, 0x2
 
@@ -87,24 +87,24 @@
 
     if-nez p1, :cond_0
 
-    .line 4009
+    .line 2728
     :cond_2
-    invoke-static {}, Landroid/media/AudioService;->access$8800()Ljava/lang/Object;
+    invoke-static {}, Landroid/media/AudioService;->access$6400()Ljava/lang/Object;
 
     move-result-object v1
 
     monitor-enter v1
 
-    .line 4010
+    .line 2729
     :try_start_1
     iget-object v0, p0, Landroid/media/AudioService$3;->this$0:Landroid/media/AudioService;
 
     const/4 v2, 0x0
 
     #setter for: Landroid/media/AudioService;->mIsRinging:Z
-    invoke-static {v0, v2}, Landroid/media/AudioService;->access$8902(Landroid/media/AudioService;Z)Z
+    invoke-static {v0, v2}, Landroid/media/AudioService;->access$6502(Landroid/media/AudioService;Z)Z
 
-    .line 4011
+    .line 2730
     monitor-exit v1
 
     goto :goto_0

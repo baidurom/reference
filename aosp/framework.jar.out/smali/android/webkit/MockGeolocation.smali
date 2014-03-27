@@ -3,99 +3,74 @@
 .source "MockGeolocation.java"
 
 
-# instance fields
-.field private mWebViewCore:Landroid/webkit/WebViewCore;
+# static fields
+.field private static sMockGeolocation:Landroid/webkit/MockGeolocation;
 
 
 # direct methods
-.method public constructor <init>(Landroid/webkit/WebViewCore;)V
+.method public constructor <init>()V
     .locals 0
-    .parameter "webViewCore"
 
     .prologue
-    .line 26
+    .line 24
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 27
-    iput-object p1, p0, Landroid/webkit/MockGeolocation;->mWebViewCore:Landroid/webkit/WebViewCore;
-
-    .line 28
     return-void
 .end method
 
-.method private static native nativeSetError(Landroid/webkit/WebViewCore;ILjava/lang/String;)V
+.method public static getInstance()Landroid/webkit/MockGeolocation;
+    .locals 1
+
+    .prologue
+    .line 50
+    sget-object v0, Landroid/webkit/MockGeolocation;->sMockGeolocation:Landroid/webkit/MockGeolocation;
+
+    if-nez v0, :cond_0
+
+    .line 51
+    new-instance v0, Landroid/webkit/MockGeolocation;
+
+    invoke-direct {v0}, Landroid/webkit/MockGeolocation;-><init>()V
+
+    sput-object v0, Landroid/webkit/MockGeolocation;->sMockGeolocation:Landroid/webkit/MockGeolocation;
+
+    .line 53
+    :cond_0
+    sget-object v0, Landroid/webkit/MockGeolocation;->sMockGeolocation:Landroid/webkit/MockGeolocation;
+
+    return-object v0
 .end method
 
-.method private static native nativeSetPermission(Landroid/webkit/WebViewCore;Z)V
+.method private static native nativeSetError(ILjava/lang/String;)V
 .end method
 
-.method private static native nativeSetPosition(Landroid/webkit/WebViewCore;DDD)V
-.end method
-
-.method private static native nativeSetUseMock(Landroid/webkit/WebViewCore;)V
+.method private static native nativeSetPosition(DDD)V
 .end method
 
 
 # virtual methods
 .method public setError(ILjava/lang/String;)V
-    .locals 1
+    .locals 0
     .parameter "code"
     .parameter "message"
 
     .prologue
-    .line 50
-    iget-object v0, p0, Landroid/webkit/MockGeolocation;->mWebViewCore:Landroid/webkit/WebViewCore;
-
-    invoke-static {v0, p1, p2}, Landroid/webkit/MockGeolocation;->nativeSetError(Landroid/webkit/WebViewCore;ILjava/lang/String;)V
-
-    .line 51
-    return-void
-.end method
-
-.method public setPermission(Z)V
-    .locals 1
-    .parameter "allow"
-
-    .prologue
-    .line 55
-    iget-object v0, p0, Landroid/webkit/MockGeolocation;->mWebViewCore:Landroid/webkit/WebViewCore;
-
-    invoke-static {v0, p1}, Landroid/webkit/MockGeolocation;->nativeSetPermission(Landroid/webkit/WebViewCore;Z)V
-
-    .line 56
-    return-void
-.end method
-
-.method public setPosition(DDD)V
-    .locals 7
-    .parameter "latitude"
-    .parameter "longitude"
-    .parameter "accuracy"
-
-    .prologue
     .line 42
-    iget-object v0, p0, Landroid/webkit/MockGeolocation;->mWebViewCore:Landroid/webkit/WebViewCore;
-
-    move-wide v1, p1
-
-    move-wide v3, p3
-
-    move-wide v5, p5
-
-    invoke-static/range {v0 .. v6}, Landroid/webkit/MockGeolocation;->nativeSetPosition(Landroid/webkit/WebViewCore;DDD)V
+    invoke-static {p1, p2}, Landroid/webkit/MockGeolocation;->nativeSetError(ILjava/lang/String;)V
 
     .line 43
     return-void
 .end method
 
-.method public setUseMock()V
-    .locals 1
+.method public setPosition(DDD)V
+    .locals 0
+    .parameter "latitude"
+    .parameter "longitude"
+    .parameter "accuracy"
 
     .prologue
     .line 34
-    iget-object v0, p0, Landroid/webkit/MockGeolocation;->mWebViewCore:Landroid/webkit/WebViewCore;
-
-    invoke-static {v0}, Landroid/webkit/MockGeolocation;->nativeSetUseMock(Landroid/webkit/WebViewCore;)V
+    invoke-static/range {p1 .. p6}, Landroid/webkit/MockGeolocation;->nativeSetPosition(DDD)V
 
     .line 35
     return-void

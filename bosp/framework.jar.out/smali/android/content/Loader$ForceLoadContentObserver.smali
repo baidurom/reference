@@ -24,18 +24,18 @@
     .parameter
 
     .prologue
-    .line 70
+    .line 69
     .local p0, this:Landroid/content/Loader$ForceLoadContentObserver;,"Landroid/content/Loader<TD;>.ForceLoadContentObserver;"
     iput-object p1, p0, Landroid/content/Loader$ForceLoadContentObserver;->this$0:Landroid/content/Loader;
 
-    .line 71
+    .line 70
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     invoke-direct {p0, v0}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 72
+    .line 71
     return-void
 .end method
 
@@ -45,7 +45,7 @@
     .locals 1
 
     .prologue
-    .line 76
+    .line 75
     .local p0, this:Landroid/content/Loader$ForceLoadContentObserver;,"Landroid/content/Loader<TD;>.ForceLoadContentObserver;"
     const/4 v0, 0x1
 
@@ -57,12 +57,12 @@
     .parameter "selfChange"
 
     .prologue
-    .line 81
+    .line 80
     .local p0, this:Landroid/content/Loader$ForceLoadContentObserver;,"Landroid/content/Loader<TD;>.ForceLoadContentObserver;"
     iget-object v0, p0, Landroid/content/Loader$ForceLoadContentObserver;->this$0:Landroid/content/Loader;
 
     invoke-virtual {v0}, Landroid/content/Loader;->onContentChanged()V
 
-    .line 82
+    .line 81
     return-void
 .end method

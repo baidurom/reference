@@ -336,25 +336,25 @@
 
     move v0, v2
 
-    .line 229
+    .line 227
     .local v0, changeBounds:Z
     :cond_1
     if-eqz v0, :cond_2
 
-    invoke-virtual {p1}, Landroid/view/animation/Animation;->willChangeBounds()Z
+    invoke-virtual {p1}, Landroid/view/animation/Animation;->willChangeTransformationMatrix()Z
 
     move-result v3
 
     if-eqz v3, :cond_2
 
-    .line 230
+    .line 228
     iget v3, p0, Landroid/view/animation/AnimationSet;->mFlags:I
 
     or-int/lit16 v3, v3, 0x80
 
     iput v3, p0, Landroid/view/animation/AnimationSet;->mFlags:I
 
-    .line 233
+    .line 231
     :cond_2
     iget v3, p0, Landroid/view/animation/AnimationSet;->mFlags:I
 
@@ -364,7 +364,7 @@
 
     if-ne v3, v4, :cond_4
 
-    .line 234
+    .line 232
     iget-wide v3, p0, Landroid/view/animation/Animation;->mStartOffset:J
 
     iget-wide v5, p0, Landroid/view/animation/Animation;->mDuration:J
@@ -373,11 +373,11 @@
 
     iput-wide v3, p0, Landroid/view/animation/AnimationSet;->mLastEnd:J
 
-    .line 245
+    .line 243
     :goto_1
     iput-boolean v2, p0, Landroid/view/animation/AnimationSet;->mDirty:Z
 
-    .line 246
+    .line 244
     return-void
 
     .end local v0           #changeBounds:Z
@@ -388,7 +388,7 @@
     .line 221
     goto :goto_0
 
-    .line 236
+    .line 234
     .restart local v0       #changeBounds:Z
     .restart local v1       #noMatrix:Z
     :cond_4
@@ -400,7 +400,7 @@
 
     if-ne v3, v2, :cond_5
 
-    .line 237
+    .line 235
     invoke-virtual {p1}, Landroid/view/animation/Animation;->getStartOffset()J
 
     move-result-wide v3
@@ -413,7 +413,7 @@
 
     iput-wide v3, p0, Landroid/view/animation/Animation;->mDuration:J
 
-    .line 238
+    .line 236
     iget-wide v3, p0, Landroid/view/animation/Animation;->mStartOffset:J
 
     iget-wide v5, p0, Landroid/view/animation/Animation;->mDuration:J
@@ -424,7 +424,7 @@
 
     goto :goto_1
 
-    .line 240
+    .line 238
     :cond_5
     iget-wide v3, p0, Landroid/view/animation/AnimationSet;->mLastEnd:J
 
@@ -444,7 +444,7 @@
 
     iput-wide v3, p0, Landroid/view/animation/AnimationSet;->mLastEnd:J
 
-    .line 241
+    .line 239
     iget-wide v3, p0, Landroid/view/animation/AnimationSet;->mLastEnd:J
 
     iget-wide v5, p0, Landroid/view/animation/Animation;->mStartOffset:J
@@ -569,10 +569,10 @@
     .locals 8
 
     .prologue
-    .line 324
+    .line 322
     const-wide/16 v4, 0x0
 
-    .line 325
+    .line 323
     .local v4, duration:J
     iget-object v7, p0, Landroid/view/animation/AnimationSet;->mAnimations:Ljava/util/ArrayList;
 
@@ -580,11 +580,11 @@
 
     move-result v1
 
-    .line 326
+    .line 324
     .local v1, count:I
     iget-object v0, p0, Landroid/view/animation/AnimationSet;->mAnimations:Ljava/util/ArrayList;
 
-    .line 327
+    .line 325
     .local v0, animations:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/animation/Animation;>;"
     add-int/lit8 v6, v1, -0x1
 
@@ -592,7 +592,7 @@
     :goto_0
     if-ltz v6, :cond_1
 
-    .line 328
+    .line 326
     invoke-virtual {v0, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v7
@@ -603,7 +603,7 @@
 
     move-result-wide v2
 
-    .line 329
+    .line 327
     .local v2, d:J
     cmp-long v7, v2, v4
 
@@ -611,13 +611,13 @@
 
     move-wide v4, v2
 
-    .line 327
+    .line 325
     :cond_0
     add-int/lit8 v6, v6, -0x1
 
     goto :goto_0
 
-    .line 331
+    .line 329
     .end local v2           #d:J
     :cond_1
     return-wide v4
@@ -636,7 +636,7 @@
     .end annotation
 
     .prologue
-    .line 512
+    .line 509
     iget-object v0, p0, Landroid/view/animation/AnimationSet;->mAnimations:Ljava/util/ArrayList;
 
     return-object v0
@@ -646,20 +646,20 @@
     .locals 8
 
     .prologue
-    .line 301
+    .line 299
     iget-object v0, p0, Landroid/view/animation/AnimationSet;->mAnimations:Ljava/util/ArrayList;
 
-    .line 302
+    .line 300
     .local v0, animations:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/animation/Animation;>;"
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .line 303
+    .line 301
     .local v1, count:I
     const-wide/16 v2, 0x0
 
-    .line 305
+    .line 303
     .local v2, duration:J
     iget v6, p0, Landroid/view/animation/AnimationSet;->mFlags:I
 
@@ -671,26 +671,26 @@
 
     const/4 v4, 0x1
 
-    .line 306
+    .line 304
     .local v4, durationSet:Z
     :goto_0
     if-eqz v4, :cond_2
 
-    .line 307
+    .line 305
     iget-wide v2, p0, Landroid/view/animation/Animation;->mDuration:J
 
-    .line 314
+    .line 312
     :cond_0
     return-wide v2
 
-    .line 305
+    .line 303
     .end local v4           #durationSet:Z
     :cond_1
     const/4 v4, 0x0
 
     goto :goto_0
 
-    .line 309
+    .line 307
     .restart local v4       #durationSet:Z
     :cond_2
     const/4 v5, 0x0
@@ -699,7 +699,7 @@
     :goto_1
     if-ge v5, v1, :cond_0
 
-    .line 310
+    .line 308
     invoke-virtual {v0, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
@@ -714,7 +714,7 @@
 
     move-result-wide v2
 
-    .line 309
+    .line 307
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_1
@@ -724,10 +724,10 @@
     .locals 8
 
     .prologue
-    .line 268
+    .line 266
     const-wide v4, 0x7fffffffffffffffL
 
-    .line 270
+    .line 268
     .local v4, startTime:J
     iget-object v6, p0, Landroid/view/animation/AnimationSet;->mAnimations:Ljava/util/ArrayList;
 
@@ -735,11 +735,11 @@
 
     move-result v2
 
-    .line 271
+    .line 269
     .local v2, count:I
     iget-object v1, p0, Landroid/view/animation/AnimationSet;->mAnimations:Ljava/util/ArrayList;
 
-    .line 273
+    .line 271
     .local v1, animations:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/animation/Animation;>;"
     const/4 v3, 0x0
 
@@ -747,14 +747,14 @@
     :goto_0
     if-ge v3, v2, :cond_0
 
-    .line 274
+    .line 272
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/view/animation/Animation;
 
-    .line 275
+    .line 273
     .local v0, a:Landroid/view/animation/Animation;
     invoke-virtual {v0}, Landroid/view/animation/Animation;->getStartTime()J
 
@@ -764,12 +764,12 @@
 
     move-result-wide v4
 
-    .line 273
+    .line 271
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 278
+    .line 276
     .end local v0           #a:Landroid/view/animation/Animation;
     :cond_0
     return-wide v4
@@ -785,56 +785,56 @@
 
     const/4 v9, 0x1
 
-    .line 370
+    .line 367
     iget-object v10, p0, Landroid/view/animation/AnimationSet;->mAnimations:Ljava/util/ArrayList;
 
     invoke-virtual {v10}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    .line 371
+    .line 368
     .local v2, count:I
     iget-object v1, p0, Landroid/view/animation/AnimationSet;->mAnimations:Ljava/util/ArrayList;
 
-    .line 372
+    .line 369
     .local v1, animations:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/animation/Animation;>;"
     iget-object v7, p0, Landroid/view/animation/AnimationSet;->mTempTransformation:Landroid/view/animation/Transformation;
 
-    .line 374
+    .line 371
     .local v7, temp:Landroid/view/animation/Transformation;
     const/4 v5, 0x0
 
-    .line 375
+    .line 372
     .local v5, more:Z
     const/4 v6, 0x0
 
-    .line 376
+    .line 373
     .local v6, started:Z
     const/4 v3, 0x1
 
-    .line 378
+    .line 375
     .local v3, ended:Z
     invoke-virtual {p3}, Landroid/view/animation/Transformation;->clear()V
 
-    .line 380
+    .line 377
     add-int/lit8 v4, v2, -0x1
 
     .local v4, i:I
     :goto_0
     if-ltz v4, :cond_5
 
-    .line 381
+    .line 378
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/view/animation/Animation;
 
-    .line 383
+    .line 380
     .local v0, a:Landroid/view/animation/Animation;
     invoke-virtual {v7}, Landroid/view/animation/Transformation;->clear()V
 
-    .line 384
+    .line 381
     invoke-virtual {p0}, Landroid/view/animation/AnimationSet;->getScaleFactor()F
 
     move-result v10
@@ -850,11 +850,11 @@
     :cond_0
     move v5, v9
 
-    .line 385
+    .line 382
     :goto_1
     invoke-virtual {p3, v7}, Landroid/view/animation/Transformation;->compose(Landroid/view/animation/Transformation;)V
 
-    .line 387
+    .line 384
     if-nez v6, :cond_1
 
     invoke-virtual {v0}, Landroid/view/animation/Animation;->hasStarted()Z
@@ -866,7 +866,7 @@
     :cond_1
     move v6, v9
 
-    .line 388
+    .line 385
     :goto_2
     invoke-virtual {v0}, Landroid/view/animation/Animation;->hasEnded()Z
 
@@ -878,7 +878,7 @@
 
     move v3, v9
 
-    .line 380
+    .line 377
     :goto_3
     add-int/lit8 v4, v4, -0x1
 
@@ -887,22 +887,22 @@
     :cond_2
     move v5, v8
 
-    .line 384
+    .line 381
     goto :goto_1
 
     :cond_3
     move v6, v8
 
-    .line 387
+    .line 384
     goto :goto_2
 
     :cond_4
     move v3, v8
 
-    .line 388
+    .line 385
     goto :goto_3
 
-    .line 391
+    .line 388
     .end local v0           #a:Landroid/view/animation/Animation;
     :cond_5
     if-eqz v6, :cond_7
@@ -911,41 +911,41 @@
 
     if-nez v8, :cond_7
 
-    .line 392
+    .line 389
     iget-object v8, p0, Landroid/view/animation/Animation;->mListener:Landroid/view/animation/Animation$AnimationListener;
 
     if-eqz v8, :cond_6
 
-    .line 393
+    .line 390
     iget-object v8, p0, Landroid/view/animation/Animation;->mListener:Landroid/view/animation/Animation$AnimationListener;
 
     invoke-interface {v8, p0}, Landroid/view/animation/Animation$AnimationListener;->onAnimationStart(Landroid/view/animation/Animation;)V
 
-    .line 395
+    .line 392
     :cond_6
     iput-boolean v9, p0, Landroid/view/animation/Animation;->mStarted:Z
 
-    .line 398
+    .line 395
     :cond_7
     iget-boolean v8, p0, Landroid/view/animation/Animation;->mEnded:Z
 
     if-eq v3, v8, :cond_9
 
-    .line 399
+    .line 396
     iget-object v8, p0, Landroid/view/animation/Animation;->mListener:Landroid/view/animation/Animation$AnimationListener;
 
     if-eqz v8, :cond_8
 
-    .line 400
+    .line 397
     iget-object v8, p0, Landroid/view/animation/Animation;->mListener:Landroid/view/animation/Animation$AnimationListener;
 
     invoke-interface {v8, p0}, Landroid/view/animation/Animation$AnimationListener;->onAnimationEnd(Landroid/view/animation/Animation;)V
 
-    .line 402
+    .line 399
     :cond_8
     iput-boolean v3, p0, Landroid/view/animation/Animation;->mEnded:Z
 
-    .line 405
+    .line 402
     :cond_9
     return v5
 .end method
@@ -1030,10 +1030,10 @@
     .parameter "parentHeight"
 
     .prologue
-    .line 425
+    .line 422
     invoke-super/range {p0 .. p4}, Landroid/view/animation/Animation;->initialize(IIII)V
 
-    .line 427
+    .line 424
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/view/animation/AnimationSet;->mFlags:I
@@ -1052,7 +1052,7 @@
 
     const/4 v9, 0x1
 
-    .line 428
+    .line 425
     .local v9, durationSet:Z
     :goto_0
     move-object/from16 v0, p0
@@ -1073,7 +1073,7 @@
 
     const/4 v11, 0x1
 
-    .line 429
+    .line 426
     .local v11, fillAfterSet:Z
     :goto_1
     move-object/from16 v0, p0
@@ -1094,7 +1094,7 @@
 
     const/4 v13, 0x1
 
-    .line 430
+    .line 427
     .local v13, fillBeforeSet:Z
     :goto_2
     move-object/from16 v0, p0
@@ -1115,7 +1115,7 @@
 
     const/16 v19, 0x1
 
-    .line 431
+    .line 428
     .local v19, repeatModeSet:Z
     :goto_3
     move-object/from16 v0, p0
@@ -1136,7 +1136,7 @@
 
     const/16 v20, 0x1
 
-    .line 433
+    .line 430
     .local v20, shareInterpolator:Z
     :goto_4
     move-object/from16 v0, p0
@@ -1157,45 +1157,45 @@
 
     const/16 v23, 0x1
 
-    .line 436
+    .line 433
     .local v23, startOffsetSet:Z
     :goto_5
     if-eqz v20, :cond_0
 
-    .line 437
+    .line 434
     invoke-virtual/range {p0 .. p0}, Landroid/view/animation/AnimationSet;->ensureInterpolator()V
 
-    .line 440
+    .line 437
     :cond_0
     move-object/from16 v0, p0
 
     iget-object v5, v0, Landroid/view/animation/AnimationSet;->mAnimations:Ljava/util/ArrayList;
 
-    .line 441
+    .line 438
     .local v5, children:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/animation/Animation;>;"
     invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
     move-result v6
 
-    .line 443
+    .line 440
     .local v6, count:I
     move-object/from16 v0, p0
 
     iget-wide v7, v0, Landroid/view/animation/Animation;->mDuration:J
 
-    .line 444
+    .line 441
     .local v7, duration:J
     move-object/from16 v0, p0
 
     iget-boolean v10, v0, Landroid/view/animation/Animation;->mFillAfter:Z
 
-    .line 445
+    .line 442
     .local v10, fillAfter:Z
     move-object/from16 v0, p0
 
     iget-boolean v12, v0, Landroid/view/animation/Animation;->mFillBefore:Z
 
-    .line 446
+    .line 443
     .local v12, fillBefore:Z
     move-object/from16 v0, p0
 
@@ -1203,13 +1203,13 @@
 
     move/from16 v18, v0
 
-    .line 447
+    .line 444
     .local v18, repeatMode:I
     move-object/from16 v0, p0
 
     iget-object v15, v0, Landroid/view/animation/Animation;->mInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 448
+    .line 445
     .local v15, interpolator:Landroid/view/animation/Interpolator;
     move-object/from16 v0, p0
 
@@ -1217,7 +1217,7 @@
 
     move-wide/from16 v21, v0
 
-    .line 451
+    .line 448
     .local v21, startOffset:J
     move-object/from16 v0, p0
 
@@ -1225,11 +1225,11 @@
 
     move-object/from16 v24, v0
 
-    .line 452
+    .line 449
     .local v24, storedOffsets:[J
     if-eqz v23, :cond_f
 
-    .line 453
+    .line 450
     if-eqz v24, :cond_1
 
     move-object/from16 v0, v24
@@ -1242,7 +1242,7 @@
 
     if-eq v0, v6, :cond_2
 
-    .line 454
+    .line 451
     :cond_1
     new-array v0, v6, [J
 
@@ -1255,7 +1255,7 @@
 
     iput-object v0, v1, Landroid/view/animation/AnimationSet;->mStoredOffsets:[J
 
-    .line 460
+    .line 457
     .restart local v24       #storedOffsets:[J
     :cond_2
     :goto_6
@@ -1265,60 +1265,60 @@
     :goto_7
     if-ge v14, v6, :cond_10
 
-    .line 461
+    .line 458
     invoke-virtual {v5, v14}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Landroid/view/animation/Animation;
 
-    .line 462
+    .line 459
     .local v4, a:Landroid/view/animation/Animation;
     if-eqz v9, :cond_3
 
-    .line 463
+    .line 460
     invoke-virtual {v4, v7, v8}, Landroid/view/animation/Animation;->setDuration(J)V
 
-    .line 465
+    .line 462
     :cond_3
     if-eqz v11, :cond_4
 
-    .line 466
+    .line 463
     invoke-virtual {v4, v10}, Landroid/view/animation/Animation;->setFillAfter(Z)V
 
-    .line 468
+    .line 465
     :cond_4
     if-eqz v13, :cond_5
 
-    .line 469
+    .line 466
     invoke-virtual {v4, v12}, Landroid/view/animation/Animation;->setFillBefore(Z)V
 
-    .line 471
+    .line 468
     :cond_5
     if-eqz v19, :cond_6
 
-    .line 472
+    .line 469
     move/from16 v0, v18
 
     invoke-virtual {v4, v0}, Landroid/view/animation/Animation;->setRepeatMode(I)V
 
-    .line 474
+    .line 471
     :cond_6
     if-eqz v20, :cond_7
 
-    .line 475
+    .line 472
     invoke-virtual {v4, v15}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
-    .line 477
+    .line 474
     :cond_7
     if-eqz v23, :cond_8
 
-    .line 478
+    .line 475
     invoke-virtual {v4}, Landroid/view/animation/Animation;->getStartOffset()J
 
     move-result-wide v16
 
-    .line 479
+    .line 476
     .local v16, offset:J
     add-long v25, v16, v21
 
@@ -1326,10 +1326,10 @@
 
     invoke-virtual {v4, v0, v1}, Landroid/view/animation/Animation;->setStartOffset(J)V
 
-    .line 480
+    .line 477
     aput-wide v16, v24, v14
 
-    .line 482
+    .line 479
     .end local v16           #offset:J
     :cond_8
     move/from16 v0, p1
@@ -1342,12 +1342,12 @@
 
     invoke-virtual {v4, v0, v1, v2, v3}, Landroid/view/animation/Animation;->initialize(IIII)V
 
-    .line 460
+    .line 457
     add-int/lit8 v14, v14, 0x1
 
     goto :goto_7
 
-    .line 427
+    .line 424
     .end local v4           #a:Landroid/view/animation/Animation;
     .end local v5           #children:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/animation/Animation;>;"
     .end local v6           #count:I
@@ -1370,42 +1370,42 @@
 
     goto/16 :goto_0
 
-    .line 428
+    .line 425
     .restart local v9       #durationSet:Z
     :cond_a
     const/4 v11, 0x0
 
     goto/16 :goto_1
 
-    .line 429
+    .line 426
     .restart local v11       #fillAfterSet:Z
     :cond_b
     const/4 v13, 0x0
 
     goto/16 :goto_2
 
-    .line 430
+    .line 427
     .restart local v13       #fillBeforeSet:Z
     :cond_c
     const/16 v19, 0x0
 
     goto/16 :goto_3
 
-    .line 431
+    .line 428
     .restart local v19       #repeatModeSet:Z
     :cond_d
     const/16 v20, 0x0
 
     goto/16 :goto_4
 
-    .line 433
+    .line 430
     .restart local v20       #shareInterpolator:Z
     :cond_e
     const/16 v23, 0x0
 
     goto/16 :goto_5
 
-    .line 456
+    .line 453
     .restart local v5       #children:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/animation/Animation;>;"
     .restart local v6       #count:I
     .restart local v7       #duration:J
@@ -1419,7 +1419,7 @@
     :cond_f
     if-eqz v24, :cond_2
 
-    .line 457
+    .line 454
     const/16 v24, 0x0
 
     move-object/from16 v0, v24
@@ -1430,7 +1430,7 @@
 
     goto :goto_6
 
-    .line 484
+    .line 481
     .restart local v14       #i:I
     :cond_10
     return-void
@@ -1444,10 +1444,10 @@
     .parameter "bottom"
 
     .prologue
-    .line 338
+    .line 336
     iget-object v7, p0, Landroid/view/animation/Animation;->mPreviousRegion:Landroid/graphics/RectF;
 
-    .line 339
+    .line 337
     .local v7, region:Landroid/graphics/RectF;
     int-to-float v9, p1
 
@@ -1463,86 +1463,62 @@
 
     invoke-virtual {v7, v9, v10, v11, v12}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 340
+    .line 338
     const/high16 v9, -0x4080
 
     const/high16 v10, -0x4080
 
     invoke-virtual {v7, v9, v10}, Landroid/graphics/RectF;->inset(FF)V
 
-    .line 342
+    .line 340
     iget-boolean v9, p0, Landroid/view/animation/Animation;->mFillBefore:Z
 
-    if-eqz v9, :cond_3
+    if-eqz v9, :cond_1
 
-    .line 343
+    .line 341
     iget-object v9, p0, Landroid/view/animation/AnimationSet;->mAnimations:Ljava/util/ArrayList;
 
     invoke-virtual {v9}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
-    .line 344
+    .line 342
     .local v3, count:I
     iget-object v2, p0, Landroid/view/animation/AnimationSet;->mAnimations:Ljava/util/ArrayList;
 
-    .line 345
+    .line 343
     .local v2, animations:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/animation/Animation;>;"
     iget-object v8, p0, Landroid/view/animation/AnimationSet;->mTempTransformation:Landroid/view/animation/Transformation;
 
-    .line 347
+    .line 345
     .local v8, temp:Landroid/view/animation/Transformation;
     iget-object v6, p0, Landroid/view/animation/Animation;->mPreviousTransformation:Landroid/view/animation/Transformation;
 
-    .line 349
+    .line 347
     .local v6, previousTransformation:Landroid/view/animation/Transformation;
     add-int/lit8 v4, v3, -0x1
 
     .local v4, i:I
     :goto_0
-    if-ltz v4, :cond_3
+    if-ltz v4, :cond_1
 
-    .line 350
+    .line 348
     invoke-virtual {v2, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/view/animation/Animation;
 
-    .line 351
+    .line 350
     .local v1, a:Landroid/view/animation/Animation;
-    invoke-virtual {v1}, Landroid/view/animation/Animation;->isFillEnabled()Z
-
-    move-result v9
-
-    if-eqz v9, :cond_0
-
-    invoke-virtual {v1}, Landroid/view/animation/Animation;->getFillBefore()Z
-
-    move-result v9
-
-    if-nez v9, :cond_0
-
-    invoke-virtual {v1}, Landroid/view/animation/Animation;->getStartOffset()J
-
-    move-result-wide v9
-
-    const-wide/16 v11, 0x0
-
-    cmp-long v9, v9, v11
-
-    if-nez v9, :cond_1
-
-    .line 352
-    :cond_0
     invoke-virtual {v8}, Landroid/view/animation/Transformation;->clear()V
 
-    .line 353
+    .line 351
     iget-object v5, v1, Landroid/view/animation/Animation;->mInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 354
+    .line 352
     .local v5, interpolator:Landroid/view/animation/Interpolator;
-    if-eqz v5, :cond_2
+    if-eqz v5, :cond_0
 
     const/4 v9, 0x0
 
@@ -1553,24 +1529,21 @@
     :goto_1
     invoke-virtual {v1, v9, v8}, Landroid/view/animation/Animation;->applyTransformation(FLandroid/view/animation/Transformation;)V
 
-    .line 356
+    .line 354
     invoke-virtual {v6, v8}, Landroid/view/animation/Transformation;->compose(Landroid/view/animation/Transformation;)V
 
-    .line 349
-    .end local v5           #interpolator:Landroid/view/animation/Interpolator;
-    :cond_1
+    .line 347
     add-int/lit8 v4, v4, -0x1
 
     goto :goto_0
 
-    .line 354
-    .restart local v5       #interpolator:Landroid/view/animation/Interpolator;
-    :cond_2
+    .line 352
+    :cond_0
     const/4 v9, 0x0
 
     goto :goto_1
 
-    .line 360
+    .line 357
     .end local v1           #a:Landroid/view/animation/Animation;
     .end local v2           #animations:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/animation/Animation;>;"
     .end local v3           #count:I
@@ -1578,7 +1551,7 @@
     .end local v5           #interpolator:Landroid/view/animation/Interpolator;
     .end local v6           #previousTransformation:Landroid/view/animation/Transformation;
     .end local v8           #temp:Landroid/view/animation/Transformation;
-    :cond_3
+    :cond_1
     return-void
 .end method
 
@@ -1586,13 +1559,13 @@
     .locals 0
 
     .prologue
-    .line 488
+    .line 485
     invoke-super {p0}, Landroid/view/animation/Animation;->reset()V
 
-    .line 489
+    .line 486
     invoke-virtual {p0}, Landroid/view/animation/AnimationSet;->restoreChildrenStartOffset()V
 
-    .line 490
+    .line 487
     return-void
 .end method
 
@@ -1600,28 +1573,28 @@
     .locals 7
 
     .prologue
-    .line 496
+    .line 493
     iget-object v3, p0, Landroid/view/animation/AnimationSet;->mStoredOffsets:[J
 
-    .line 497
+    .line 494
     .local v3, offsets:[J
     if-nez v3, :cond_1
 
-    .line 505
+    .line 502
     :cond_0
     return-void
 
-    .line 499
+    .line 496
     :cond_1
     iget-object v0, p0, Landroid/view/animation/AnimationSet;->mAnimations:Ljava/util/ArrayList;
 
-    .line 500
+    .line 497
     .local v0, children:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/animation/Animation;>;"
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .line 502
+    .line 499
     .local v1, count:I
     const/4 v2, 0x0
 
@@ -1629,7 +1602,7 @@
     :goto_0
     if-ge v2, v1, :cond_0
 
-    .line 503
+    .line 500
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -1640,7 +1613,7 @@
 
     invoke-virtual {v4, v5, v6}, Landroid/view/animation/Animation;->setStartOffset(J)V
 
-    .line 502
+    .line 499
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
@@ -1651,19 +1624,19 @@
     .parameter "durationMillis"
 
     .prologue
-    .line 283
+    .line 281
     invoke-super {p0, p1, p2}, Landroid/view/animation/Animation;->restrictDuration(J)V
 
-    .line 285
+    .line 283
     iget-object v0, p0, Landroid/view/animation/AnimationSet;->mAnimations:Ljava/util/ArrayList;
 
-    .line 286
+    .line 284
     .local v0, animations:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/animation/Animation;>;"
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .line 288
+    .line 286
     .local v1, count:I
     const/4 v2, 0x0
 
@@ -1671,7 +1644,7 @@
     :goto_0
     if-ge v2, v1, :cond_0
 
-    .line 289
+    .line 287
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -1680,12 +1653,12 @@
 
     invoke-virtual {v3, p1, p2}, Landroid/view/animation/Animation;->restrictDuration(J)V
 
-    .line 288
+    .line 286
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 291
+    .line 289
     :cond_0
     return-void
 .end method
@@ -1695,16 +1668,16 @@
     .parameter "scale"
 
     .prologue
-    .line 413
+    .line 410
     iget-object v0, p0, Landroid/view/animation/AnimationSet;->mAnimations:Ljava/util/ArrayList;
 
-    .line 414
+    .line 411
     .local v0, animations:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/animation/Animation;>;"
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .line 415
+    .line 412
     .local v1, count:I
     const/4 v2, 0x0
 
@@ -1712,7 +1685,7 @@
     :goto_0
     if-ge v2, v1, :cond_0
 
-    .line 416
+    .line 413
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -1721,12 +1694,12 @@
 
     invoke-virtual {v3, p1}, Landroid/view/animation/Animation;->scaleCurrentDuration(F)V
 
-    .line 415
+    .line 412
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 418
+    .line 415
     :cond_0
     return-void
 .end method
@@ -1840,21 +1813,21 @@
     .parameter "startTimeMillis"
 
     .prologue
-    .line 255
+    .line 253
     invoke-super {p0, p1, p2}, Landroid/view/animation/Animation;->setStartTime(J)V
 
-    .line 257
+    .line 255
     iget-object v4, p0, Landroid/view/animation/AnimationSet;->mAnimations:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    .line 258
+    .line 256
     .local v2, count:I
     iget-object v1, p0, Landroid/view/animation/AnimationSet;->mAnimations:Ljava/util/ArrayList;
 
-    .line 260
+    .line 258
     .local v1, animations:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/view/animation/Animation;>;"
     const/4 v3, 0x0
 
@@ -1862,23 +1835,23 @@
     :goto_0
     if-ge v3, v2, :cond_0
 
-    .line 261
+    .line 259
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/view/animation/Animation;
 
-    .line 262
+    .line 260
     .local v0, a:Landroid/view/animation/Animation;
     invoke-virtual {v0, p1, p2}, Landroid/view/animation/Animation;->setStartTime(J)V
 
-    .line 260
+    .line 258
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 264
+    .line 262
     .end local v0           #a:Landroid/view/animation/Animation;
     :cond_0
     return-void
@@ -1888,7 +1861,7 @@
     .locals 2
 
     .prologue
-    .line 522
+    .line 519
     iget v0, p0, Landroid/view/animation/AnimationSet;->mFlags:I
 
     and-int/lit16 v0, v0, 0x80
@@ -1912,7 +1885,7 @@
     .locals 2
 
     .prologue
-    .line 517
+    .line 514
     iget v0, p0, Landroid/view/animation/AnimationSet;->mFlags:I
 
     and-int/lit8 v0, v0, 0x40

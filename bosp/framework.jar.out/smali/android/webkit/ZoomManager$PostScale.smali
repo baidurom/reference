@@ -36,21 +36,21 @@
     .parameter "inPortraitMode"
 
     .prologue
-    .line 969
+    .line 967
     iput-object p1, p0, Landroid/webkit/ZoomManager$PostScale;->this$0:Landroid/webkit/ZoomManager;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 970
+    .line 968
     iput-boolean p2, p0, Landroid/webkit/ZoomManager$PostScale;->mUpdateTextWrap:Z
 
-    .line 971
+    .line 969
     iput-boolean p3, p0, Landroid/webkit/ZoomManager$PostScale;->mInZoomOverviewBeforeSizeChange:Z
 
-    .line 972
+    .line 970
     iput-boolean p4, p0, Landroid/webkit/ZoomManager$PostScale;->mInPortraitMode:Z
 
-    .line 973
+    .line 971
     return-void
 .end method
 
@@ -60,21 +60,21 @@
     .locals 4
 
     .prologue
-    .line 976
+    .line 974
     iget-object v1, p0, Landroid/webkit/ZoomManager$PostScale;->this$0:Landroid/webkit/ZoomManager;
 
-    #getter for: Landroid/webkit/ZoomManager;->mWebView:Landroid/webkit/WebViewClassic;
-    invoke-static {v1}, Landroid/webkit/ZoomManager;->access$600(Landroid/webkit/ZoomManager;)Landroid/webkit/WebViewClassic;
+    #getter for: Landroid/webkit/ZoomManager;->mWebView:Landroid/webkit/WebView;
+    invoke-static {v1}, Landroid/webkit/ZoomManager;->access$600(Landroid/webkit/ZoomManager;)Landroid/webkit/WebView;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/webkit/WebViewClassic;->getWebViewCore()Landroid/webkit/WebViewCore;
+    invoke-virtual {v1}, Landroid/webkit/WebView;->getWebViewCore()Landroid/webkit/WebViewCore;
 
     move-result-object v1
 
     if-eqz v1, :cond_1
 
-    .line 980
+    .line 978
     iget-object v1, p0, Landroid/webkit/ZoomManager$PostScale;->this$0:Landroid/webkit/ZoomManager;
 
     #getter for: Landroid/webkit/ZoomManager;->mActualScale:F
@@ -82,20 +82,20 @@
 
     move-result v0
 
-    .line 981
+    .line 979
     .local v0, newScale:F
     iget-object v1, p0, Landroid/webkit/ZoomManager$PostScale;->this$0:Landroid/webkit/ZoomManager;
 
-    #getter for: Landroid/webkit/ZoomManager;->mWebView:Landroid/webkit/WebViewClassic;
-    invoke-static {v1}, Landroid/webkit/ZoomManager;->access$600(Landroid/webkit/ZoomManager;)Landroid/webkit/WebViewClassic;
+    #getter for: Landroid/webkit/ZoomManager;->mWebView:Landroid/webkit/WebView;
+    invoke-static {v1}, Landroid/webkit/ZoomManager;->access$600(Landroid/webkit/ZoomManager;)Landroid/webkit/WebView;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/webkit/WebViewClassic;->getSettings()Landroid/webkit/WebSettingsClassic;
+    invoke-virtual {v1}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/webkit/WebSettingsClassic;->getUseWideViewPort()Z
+    invoke-virtual {v1}, Landroid/webkit/WebSettings;->getUseWideViewPort()Z
 
     move-result v1
 
@@ -109,14 +109,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 984
+    .line 982
     iget-object v1, p0, Landroid/webkit/ZoomManager$PostScale;->this$0:Landroid/webkit/ZoomManager;
 
     invoke-virtual {v1}, Landroid/webkit/ZoomManager;->getZoomOverviewScale()F
 
     move-result v0
 
-    .line 986
+    .line 984
     :cond_0
     iget-object v1, p0, Landroid/webkit/ZoomManager$PostScale;->this$0:Landroid/webkit/ZoomManager;
 
@@ -127,12 +127,12 @@
     #calls: Landroid/webkit/ZoomManager;->setZoomScale(FZZ)V
     invoke-static {v1, v0, v2, v3}, Landroid/webkit/ZoomManager;->access$1700(Landroid/webkit/ZoomManager;FZZ)V
 
-    .line 988
+    .line 986
     iget-object v1, p0, Landroid/webkit/ZoomManager$PostScale;->this$0:Landroid/webkit/ZoomManager;
 
     invoke-virtual {v1}, Landroid/webkit/ZoomManager;->updateZoomPicker()V
 
-    .line 990
+    .line 988
     .end local v0           #newScale:F
     :cond_1
     return-void

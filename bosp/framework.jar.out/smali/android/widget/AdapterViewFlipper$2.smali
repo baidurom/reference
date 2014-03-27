@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 265
+    .line 249
     iput-object p1, p0, Landroid/widget/AdapterViewFlipper$2;->this$0:Landroid/widget/AdapterViewFlipper;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,14 +39,14 @@
     .parameter "msg"
 
     .prologue
-    .line 268
+    .line 252
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 269
+    .line 253
     iget-object v0, p0, Landroid/widget/AdapterViewFlipper$2;->this$0:Landroid/widget/AdapterViewFlipper;
 
     #getter for: Landroid/widget/AdapterViewFlipper;->mRunning:Z
@@ -56,12 +56,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 270
+    .line 254
     iget-object v0, p0, Landroid/widget/AdapterViewFlipper$2;->this$0:Landroid/widget/AdapterViewFlipper;
 
     invoke-virtual {v0}, Landroid/widget/AdapterViewFlipper;->showNext()V
 
-    .line 273
+    .line 257
     :cond_0
     return-void
 .end method

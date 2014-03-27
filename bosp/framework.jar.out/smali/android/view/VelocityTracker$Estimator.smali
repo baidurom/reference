@@ -15,7 +15,7 @@
 
 
 # static fields
-.field private static final MAX_DEGREE:I = 0x4
+.field private static final MAX_DEGREE:I = 0x2
 
 
 # instance fields
@@ -33,17 +33,17 @@
     .locals 2
 
     .prologue
-    const/4 v1, 0x5
+    const/4 v1, 0x3
 
-    .line 275
+    .line 258
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 282
+    .line 265
     new-array v0, v1, [F
 
     iput-object v0, p0, Landroid/view/VelocityTracker$Estimator;->xCoeff:[F
 
-    .line 287
+    .line 270
     new-array v0, v1, [F
 
     iput-object v0, p0, Landroid/view/VelocityTracker$Estimator;->yCoeff:[F
@@ -57,14 +57,14 @@
     .parameter "c"
 
     .prologue
-    .line 336
+    .line 301
     const/4 v0, 0x0
 
-    .line 337
+    .line 302
     .local v0, a:F
     const/high16 v2, 0x3f80
 
-    .line 338
+    .line 303
     .local v2, scale:F
     const/4 v1, 0x0
 
@@ -74,22 +74,22 @@
 
     if-gt v1, v3, :cond_0
 
-    .line 339
+    .line 304
     aget v3, p2, v1
 
     mul-float/2addr v3, v2
 
     add-float/2addr v0, v3
 
-    .line 340
+    .line 305
     mul-float/2addr v2, p1
 
-    .line 338
+    .line 303
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 342
+    .line 307
     :cond_0
     return v0
 .end method
@@ -101,7 +101,7 @@
     .parameter "time"
 
     .prologue
-    .line 305
+    .line 288
     iget-object v0, p0, Landroid/view/VelocityTracker$Estimator;->xCoeff:[F
 
     invoke-direct {p0, p1, v0}, Landroid/view/VelocityTracker$Estimator;->estimate(F[F)F
@@ -116,7 +116,7 @@
     .parameter "time"
 
     .prologue
-    .line 314
+    .line 297
     iget-object v0, p0, Landroid/view/VelocityTracker$Estimator;->yCoeff:[F
 
     invoke-direct {p0, p1, v0}, Landroid/view/VelocityTracker$Estimator;->estimate(F[F)F
@@ -124,50 +124,4 @@
     move-result v0
 
     return v0
-.end method
-
-.method public getXCoeff(I)F
-    .locals 1
-    .parameter "index"
-
-    .prologue
-    .line 323
-    iget v0, p0, Landroid/view/VelocityTracker$Estimator;->degree:I
-
-    if-gt p1, v0, :cond_0
-
-    iget-object v0, p0, Landroid/view/VelocityTracker$Estimator;->xCoeff:[F
-
-    aget v0, v0, p1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public getYCoeff(I)F
-    .locals 1
-    .parameter "index"
-
-    .prologue
-    .line 332
-    iget v0, p0, Landroid/view/VelocityTracker$Estimator;->degree:I
-
-    if-gt p1, v0, :cond_0
-
-    iget-object v0, p0, Landroid/view/VelocityTracker$Estimator;->yCoeff:[F
-
-    aget v0, v0, p1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
 .end method

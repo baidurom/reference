@@ -293,7 +293,7 @@
     .line 153
     iget-object v1, p0, Landroid/app/LauncherActivity$ActivityAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    const v2, 0x1090022
+    const v2, #layout@activity_list_item_2#t
 
     const/4 v3, 0x0
 

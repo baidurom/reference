@@ -24,8 +24,6 @@
 
 .field public static final DISPLAY_SHOW_TITLE:I = 0x8
 
-.field public static final DISPLAY_TITLE_MULTIPLE_LINES:I = 0x20
-
 .field public static final DISPLAY_USE_LOGO:I = 0x1
 
 .field public static final NAVIGATION_MODE_LIST:I = 0x1
@@ -43,7 +41,7 @@
     .line 59
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 923
+    .line 898
     return-void
 .end method
 
@@ -98,7 +96,7 @@
     .locals 1
 
     .prologue
-    .line 686
+    .line 670
     const/4 v0, 0x0
 
     return-object v0
@@ -111,16 +109,6 @@
 .end method
 
 .method public abstract isShowing()Z
-.end method
-
-.method public isTitleTruncated()Z
-    .locals 1
-
-    .prologue
-    .line 695
-    const/4 v0, 0x0
-
-    return v0
 .end method
 
 .method public abstract newTab()Landroid/app/ActionBar$Tab;
@@ -179,7 +167,7 @@
     .parameter "enabled"
 
     .prologue
-    .line 675
+    .line 659
     return-void
 .end method
 
@@ -209,7 +197,7 @@
     .parameter "d"
 
     .prologue
-    .line 452
+    .line 446
     return-void
 .end method
 
@@ -218,7 +206,7 @@
     .parameter "d"
 
     .prologue
-    .line 442
+    .line 436
     return-void
 .end method
 

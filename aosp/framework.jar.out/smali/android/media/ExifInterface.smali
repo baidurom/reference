@@ -70,7 +70,7 @@
 
 .field private static sFormatter:Ljava/text/SimpleDateFormat;
 
-.field private static final sLock:Ljava/lang/Object;
+.field private static sLock:Ljava/lang/Object;
 
 
 # instance fields
@@ -97,7 +97,7 @@
 
     .prologue
     .line 101
-    const-string v0, "exif_jni"
+    const-string v0, "exif"
 
     invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 

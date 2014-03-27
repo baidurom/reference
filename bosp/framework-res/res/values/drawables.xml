@@ -9,7 +9,7 @@
     <item type="drawable" name="menu_full_frame">@drawable/menu_background_fill_parent_width</item>
     <item type="drawable" name="stat_notify_sync_noanim">@drawable/stat_notify_sync_anim0</item>
     <item type="drawable" name="stat_sys_download_done">@drawable/stat_sys_download_done_static</item>
-    <item type="drawable" name="stat_sys_upload_done">@drawable/stat_sys_upload_anim0</item>
+    <item type="drawable" name="stat_sys_upload_done">@drawable/stat_sys_upload_done_static</item>
     <item type="drawable" name="screen_background_dark">#ff000000</item>
     <item type="drawable" name="screen_background_light">#ffffffff</item>
     <item type="drawable" name="screen_background_dark_transparent">#80000000</item>
@@ -18,8 +18,6 @@
     <item type="drawable" name="dialog_holo_light_frame">@drawable/dialog_full_holo_light</item>
     <item type="drawable" name="status_bar_closed_default_background">#ff000000</item>
     <item type="drawable" name="status_bar_opened_default_background">#ff000000</item>
-    <item type="drawable" name="notification_item_background_color">#ff111111</item>
-    <item type="drawable" name="notification_item_background_color_pressed">#ff257390</item>
     <item type="drawable" name="search_bar_default_color">#ff000000</item>
     <item type="drawable" name="safe_mode_background">#60000000</item>
     <item type="drawable" name="input_method_fullscreen_background">#fff9f9f9</item>
@@ -27,7 +25,111 @@
     <item type="drawable" name="selected_day_background">#ff0092f4</item>
     <item type="drawable" name="screen_background_holo_light">#fff3f3f3</item>
     <item type="drawable" name="screen_background_holo_dark">#ff000000</item>
-    <item type="drawable" name="notification_template_icon_bg">#3333b5e5</item>
-    <item type="drawable" name="notification_template_icon_low_bg">#0cffffff</item>
-    <item type="drawable" name="APKTOOL_DUMMY_058d">false</item>
+    <item type="drawable" name="yi_dialog_baidu_dark_frame">@drawable/yi_dialog_full_baidu_dark</item>
+    <item type="drawable" name="yi_dialog_baidu_light_frame">@drawable/yi_dialog_full_baidu_light</item>
+    <item type="drawable" name="yi_input_method_fullscreen_background_baidu">@drawable/yi_screen_background_baidu_dark</item>
+    <item type="drawable" name="yi_screen_background_baidu_light">#fff3f3f3</item>
+    <item type="drawable" name="yi_screen_background_baidu_dark">#ff000000</item>
+    <item type="drawable" name="APKTOOL_DUMMY_02fd">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_034d">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_034e">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_034f">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0350">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0351">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0352">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0353">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0354">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0355">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0356">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0357">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0358">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0359">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_035a">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_035b">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_035c">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_035d">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_035e">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_035f">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0360">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0361">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0362">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0363">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0364">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0365">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0366">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0367">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0368">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0369">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_036a">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_036b">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_04ef">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_04f0">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_04f1">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_04f2">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_04f3">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_04f4">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_04f5">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_04f6">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0555">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0556">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0557">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0576">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_057b">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_057c">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_057d">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_062b">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_06a9">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_06b2">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_06bc">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_06be">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_06c1">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_06d1">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_06d2">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_06d9">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_06df">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_06e0">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_06ec">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0728">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0729">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_072a">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0731">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0732">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0791">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0792">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_079e">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_079f">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_07a0">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_07a8">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_07b3">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_07b5">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_07bd">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_07bf">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_07c3">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_07c4">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_07d2">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_07d5">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_07dd">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_07de">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_07e1">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_07e3">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_07ec">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_07f5">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_07fa">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0822">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0823">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0824">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0842">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0845">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0846">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0849">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_084c">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0851">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0874">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_087d">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0885">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0886">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0887">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0888">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0889">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_088a">false</item>
 </resources>

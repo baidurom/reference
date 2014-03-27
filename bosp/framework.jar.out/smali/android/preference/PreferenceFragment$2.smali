@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 131
+    .line 124
     iput-object p1, p0, Landroid/preference/PreferenceFragment$2;->this$0:Landroid/preference/PreferenceFragment;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 2
 
     .prologue
-    .line 133
+    .line 126
     iget-object v0, p0, Landroid/preference/PreferenceFragment$2;->this$0:Landroid/preference/PreferenceFragment;
 
     #getter for: Landroid/preference/PreferenceFragment;->mList:Landroid/widget/ListView;
@@ -58,6 +58,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->focusableViewAvailable(Landroid/view/View;)V
 
-    .line 134
+    .line 127
     return-void
 .end method

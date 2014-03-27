@@ -29,21 +29,21 @@
     .end annotation
 
     .prologue
-    .line 175
+    .line 172
     invoke-virtual {p1}, Landroid/content/res/AssetFileDescriptor;->getParcelFileDescriptor()Landroid/os/ParcelFileDescriptor;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;-><init>(Landroid/os/ParcelFileDescriptor;)V
 
-    .line 176
+    .line 173
     invoke-virtual {p1}, Landroid/content/res/AssetFileDescriptor;->getStartOffset()J
 
     move-result-wide v0
 
     invoke-super {p0, v0, v1}, Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;->skip(J)J
 
-    .line 177
+    .line 174
     invoke-virtual {p1}, Landroid/content/res/AssetFileDescriptor;->getLength()J
 
     move-result-wide v0
@@ -54,7 +54,7 @@
 
     iput-wide v0, p0, Landroid/content/res/AssetFileDescriptor$AutoCloseInputStream;->mRemaining:J
 
-    .line 178
+    .line 175
     return-void
 .end method
 
@@ -69,7 +69,7 @@
     .end annotation
 
     .prologue
-    .line 182
+    .line 179
     iget-wide v0, p0, Landroid/content/res/AssetFileDescriptor$AutoCloseInputStream;->mRemaining:J
 
     const-wide/16 v2, 0x0
@@ -111,7 +111,7 @@
     .parameter "readlimit"
 
     .prologue
-    .line 227
+    .line 224
     iget-wide v0, p0, Landroid/content/res/AssetFileDescriptor$AutoCloseInputStream;->mRemaining:J
 
     const-wide/16 v2, 0x0
@@ -120,11 +120,11 @@
 
     if-ltz v0, :cond_0
 
-    .line 232
+    .line 229
     :goto_0
     return-void
 
-    .line 231
+    .line 228
     :cond_0
     invoke-super {p0, p1}, Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;->mark(I)V
 
@@ -135,7 +135,7 @@
     .locals 4
 
     .prologue
-    .line 236
+    .line 233
     iget-wide v0, p0, Landroid/content/res/AssetFileDescriptor$AutoCloseInputStream;->mRemaining:J
 
     const-wide/16 v2, 0x0
@@ -144,10 +144,10 @@
 
     if-ltz v0, :cond_0
 
-    .line 237
+    .line 234
     const/4 v0, 0x0
 
-    .line 239
+    .line 236
     :goto_0
     return v0
 
@@ -174,16 +174,16 @@
 
     const/4 v2, -0x1
 
-    .line 189
+    .line 186
     new-array v0, v4, [B
 
-    .line 190
+    .line 187
     .local v0, buffer:[B
     invoke-virtual {p0, v0, v3, v4}, Landroid/content/res/AssetFileDescriptor$AutoCloseInputStream;->read([BII)I
 
     move-result v1
 
-    .line 191
+    .line 188
     .local v1, result:I
     if-ne v1, v2, :cond_0
 
@@ -208,7 +208,7 @@
     .end annotation
 
     .prologue
-    .line 209
+    .line 206
     const/4 v0, 0x0
 
     array-length v1, p1
@@ -234,14 +234,14 @@
     .prologue
     const-wide/16 v3, 0x0
 
-    .line 196
+    .line 193
     iget-wide v1, p0, Landroid/content/res/AssetFileDescriptor$AutoCloseInputStream;->mRemaining:J
 
     cmp-long v1, v1, v3
 
     if-ltz v1, :cond_3
 
-    .line 197
+    .line 194
     iget-wide v1, p0, Landroid/content/res/AssetFileDescriptor$AutoCloseInputStream;->mRemaining:J
 
     cmp-long v1, v1, v3
@@ -250,12 +250,12 @@
 
     const/4 v0, -0x1
 
-    .line 204
+    .line 201
     :cond_0
     :goto_0
     return v0
 
-    .line 198
+    .line 195
     :cond_1
     int-to-long v1, p3
 
@@ -269,13 +269,13 @@
 
     long-to-int p3, v1
 
-    .line 199
+    .line 196
     :cond_2
     invoke-super {p0, p1, p2, p3}, Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;->read([BII)I
 
     move-result v0
 
-    .line 200
+    .line 197
     .local v0, res:I
     if-ltz v0, :cond_0
 
@@ -289,7 +289,7 @@
 
     goto :goto_0
 
-    .line 204
+    .line 201
     .end local v0           #res:I
     :cond_3
     invoke-super {p0, p1, p2, p3}, Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;->read([BII)I
@@ -308,7 +308,7 @@
     .end annotation
 
     .prologue
-    .line 244
+    .line 241
     monitor-enter p0
 
     :try_start_0
@@ -322,13 +322,13 @@
 
     if-ltz v0, :cond_0
 
-    .line 249
+    .line 246
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 248
+    .line 245
     :cond_0
     :try_start_1
     invoke-super {p0}, Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;->reset()V
@@ -337,7 +337,7 @@
 
     goto :goto_0
 
-    .line 244
+    .line 241
     :catchall_0
     move-exception v0
 
@@ -358,14 +358,14 @@
     .prologue
     const-wide/16 v4, 0x0
 
-    .line 214
+    .line 211
     iget-wide v2, p0, Landroid/content/res/AssetFileDescriptor$AutoCloseInputStream;->mRemaining:J
 
     cmp-long v2, v2, v4
 
     if-ltz v2, :cond_3
 
-    .line 215
+    .line 212
     iget-wide v2, p0, Landroid/content/res/AssetFileDescriptor$AutoCloseInputStream;->mRemaining:J
 
     cmp-long v2, v2, v4
@@ -374,12 +374,12 @@
 
     const-wide/16 v0, -0x1
 
-    .line 222
+    .line 219
     :cond_0
     :goto_0
     return-wide v0
 
-    .line 216
+    .line 213
     :cond_1
     iget-wide v2, p0, Landroid/content/res/AssetFileDescriptor$AutoCloseInputStream;->mRemaining:J
 
@@ -389,13 +389,13 @@
 
     iget-wide p1, p0, Landroid/content/res/AssetFileDescriptor$AutoCloseInputStream;->mRemaining:J
 
-    .line 217
+    .line 214
     :cond_2
     invoke-super {p0, p1, p2}, Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;->skip(J)J
 
     move-result-wide v0
 
-    .line 218
+    .line 215
     .local v0, res:J
     cmp-long v2, v0, v4
 
@@ -409,7 +409,7 @@
 
     goto :goto_0
 
-    .line 222
+    .line 219
     .end local v0           #res:J
     :cond_3
     invoke-super {p0, p1, p2}, Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;->skip(J)J

@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .locals 4
+    .locals 3
     .parameter "v"
 
     .prologue
@@ -54,9 +54,7 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
-
-    invoke-interface {v0, v1, v2, v3}, Landroid/app/IActivityManager;->moveTaskToFront(IILandroid/os/Bundle;)V
+    invoke-interface {v0, v1, v2}, Landroid/app/IActivityManager;->moveTaskToFront(II)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 

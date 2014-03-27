@@ -18,7 +18,7 @@
     const/4 v8, 0x1
 
     .line 31
-    const v3, 0x10302fd
+    const v3, #style@Theme.Toast#t
 
     invoke-direct {p0, p1, v3}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
@@ -44,12 +44,12 @@
     invoke-virtual {v3, v4}, Landroid/view/Window;->addFlags(I)V
 
     .line 38
-    const v3, 0x109007b
+    const v3, #layout@launch_warning#t
 
     invoke-virtual {p0, v3}, Lcom/android/server/am/LaunchWarningWindow;->setContentView(I)V
 
     .line 39
-    const v3, 0x10403df
+    const v3, #string@launch_warning_title#t
 
     invoke-virtual {p1, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -72,7 +72,7 @@
 
     move-result-object v3
 
-    const v4, 0x1010355
+    const v4, #attr@alertDialogIcon#t
 
     invoke-virtual {v3, v4, v1, v8}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 
@@ -86,7 +86,7 @@
     invoke-virtual {v3, v5, v4}, Landroid/view/Window;->setFeatureDrawableResource(II)V
 
     .line 45
-    const v3, 0x1020309
+    const v3, #id@replace_app_icon#t
 
     invoke-virtual {p0, v3}, Lcom/android/server/am/LaunchWarningWindow;->findViewById(I)Landroid/view/View;
 
@@ -111,7 +111,7 @@
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 47
-    const v3, 0x102030a
+    const v3, #id@replace_message#t
 
     invoke-virtual {p0, v3}, Lcom/android/server/am/LaunchWarningWindow;->findViewById(I)Landroid/view/View;
 
@@ -125,7 +125,7 @@
 
     move-result-object v3
 
-    const v4, 0x10403e0
+    const v4, #string@launch_warning_replace#t
 
     new-array v5, v8, [Ljava/lang/Object;
 
@@ -154,7 +154,7 @@
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 50
-    const v3, 0x102030b
+    const v3, #id@original_app_icon#t
 
     invoke-virtual {p0, v3}, Lcom/android/server/am/LaunchWarningWindow;->findViewById(I)Landroid/view/View;
 
@@ -180,7 +180,7 @@
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 52
-    const v3, 0x102030c
+    const v3, #id@original_message#t
 
     invoke-virtual {p0, v3}, Lcom/android/server/am/LaunchWarningWindow;->findViewById(I)Landroid/view/View;
 
@@ -195,7 +195,7 @@
 
     move-result-object v3
 
-    const v4, 0x10403e1
+    const v4, #string@launch_warning_original#t
 
     new-array v5, v8, [Ljava/lang/Object;
 

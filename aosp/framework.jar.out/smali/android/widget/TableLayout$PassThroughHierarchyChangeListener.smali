@@ -29,7 +29,7 @@
     .parameter
 
     .prologue
-    .line 760
+    .line 740
     iput-object p1, p0, Landroid/widget/TableLayout$PassThroughHierarchyChangeListener;->this$0:Landroid/widget/TableLayout;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .parameter "x1"
 
     .prologue
-    .line 760
+    .line 740
     invoke-direct {p0, p1}, Landroid/widget/TableLayout$PassThroughHierarchyChangeListener;-><init>(Landroid/widget/TableLayout;)V
 
     return-void
@@ -55,7 +55,7 @@
     .parameter "x1"
 
     .prologue
-    .line 760
+    .line 740
     iput-object p1, p0, Landroid/widget/TableLayout$PassThroughHierarchyChangeListener;->mOnHierarchyChangeListener:Landroid/view/ViewGroup$OnHierarchyChangeListener;
 
     return-object p1
@@ -69,23 +69,23 @@
     .parameter "child"
 
     .prologue
-    .line 768
+    .line 748
     iget-object v0, p0, Landroid/widget/TableLayout$PassThroughHierarchyChangeListener;->this$0:Landroid/widget/TableLayout;
 
     #calls: Landroid/widget/TableLayout;->trackCollapsedColumns(Landroid/view/View;)V
     invoke-static {v0, p2}, Landroid/widget/TableLayout;->access$200(Landroid/widget/TableLayout;Landroid/view/View;)V
 
-    .line 770
+    .line 750
     iget-object v0, p0, Landroid/widget/TableLayout$PassThroughHierarchyChangeListener;->mOnHierarchyChangeListener:Landroid/view/ViewGroup$OnHierarchyChangeListener;
 
     if-eqz v0, :cond_0
 
-    .line 771
+    .line 751
     iget-object v0, p0, Landroid/widget/TableLayout$PassThroughHierarchyChangeListener;->mOnHierarchyChangeListener:Landroid/view/ViewGroup$OnHierarchyChangeListener;
 
     invoke-interface {v0, p1, p2}, Landroid/view/ViewGroup$OnHierarchyChangeListener;->onChildViewAdded(Landroid/view/View;Landroid/view/View;)V
 
-    .line 773
+    .line 753
     :cond_0
     return-void
 .end method
@@ -96,17 +96,17 @@
     .parameter "child"
 
     .prologue
-    .line 779
+    .line 759
     iget-object v0, p0, Landroid/widget/TableLayout$PassThroughHierarchyChangeListener;->mOnHierarchyChangeListener:Landroid/view/ViewGroup$OnHierarchyChangeListener;
 
     if-eqz v0, :cond_0
 
-    .line 780
+    .line 760
     iget-object v0, p0, Landroid/widget/TableLayout$PassThroughHierarchyChangeListener;->mOnHierarchyChangeListener:Landroid/view/ViewGroup$OnHierarchyChangeListener;
 
     invoke-interface {v0, p1, p2}, Landroid/view/ViewGroup$OnHierarchyChangeListener;->onChildViewRemoved(Landroid/view/View;Landroid/view/View;)V
 
-    .line 782
+    .line 762
     :cond_0
     return-void
 .end method

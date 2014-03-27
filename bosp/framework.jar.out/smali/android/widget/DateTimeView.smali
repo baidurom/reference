@@ -206,7 +206,7 @@
     if-eqz v3, :cond_0
 
     .line 195
-    const v2, 0x1040031
+    const v2, #string@twenty_four_hour_time_format#t
 
     .line 199
     .local v2, res:I
@@ -227,7 +227,7 @@
     .end local v1           #format:Ljava/lang/String;
     .end local v2           #res:I
     :cond_0
-    const v2, 0x1040030
+    const v2, #string@twelve_hour_time_format#t
 
     .restart local v2       #res:I
     goto :goto_0

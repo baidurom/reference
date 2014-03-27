@@ -52,21 +52,21 @@
     .end annotation
 
     .prologue
-    .line 230
+    .line 186
     .local p0, this:Landroid/content/pm/RegisteredServicesCache$ServiceInfo;,"Landroid/content/pm/RegisteredServicesCache$ServiceInfo<TV;>;"
     .local p1, type:Ljava/lang/Object;,"TV;"
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 231
+    .line 187
     iput-object p1, p0, Landroid/content/pm/RegisteredServicesCache$ServiceInfo;->type:Ljava/lang/Object;
 
-    .line 232
+    .line 188
     iput-object p2, p0, Landroid/content/pm/RegisteredServicesCache$ServiceInfo;->componentName:Landroid/content/ComponentName;
 
-    .line 233
+    .line 189
     iput p3, p0, Landroid/content/pm/RegisteredServicesCache$ServiceInfo;->uid:I
 
-    .line 234
+    .line 190
     return-void
 .end method
 
@@ -76,7 +76,7 @@
     .locals 2
 
     .prologue
-    .line 238
+    .line 194
     .local p0, this:Landroid/content/pm/RegisteredServicesCache$ServiceInfo;,"Landroid/content/pm/RegisteredServicesCache$ServiceInfo<TV;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 

@@ -1,6 +1,9 @@
 .class final Landroid/bluetooth/BluetoothDevice$1;
-.super Landroid/bluetooth/IBluetoothManagerCallback$Stub;
+.super Ljava/lang/Object;
 .source "BluetoothDevice.java"
+
+# interfaces
+.implements Landroid/os/Parcelable$Creator;
 
 
 # annotations
@@ -13,89 +16,80 @@
     name = null
 .end annotation
 
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Landroid/os/Parcelable$Creator",
+        "<",
+        "Landroid/bluetooth/BluetoothDevice;",
+        ">;"
+    }
+.end annotation
+
 
 # direct methods
 .method constructor <init>()V
     .locals 0
 
     .prologue
-    .line 494
-    invoke-direct {p0}, Landroid/bluetooth/IBluetoothManagerCallback$Stub;-><init>()V
+    .line 533
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onBluetoothServiceDown()V
+.method public createFromParcel(Landroid/os/Parcel;)Landroid/bluetooth/BluetoothDevice;
     .locals 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
+    .parameter "in"
 
     .prologue
-    .line 505
-    const-class v1, Landroid/bluetooth/BluetoothDevice;
+    .line 535
+    new-instance v0, Landroid/bluetooth/BluetoothDevice;
 
-    monitor-enter v1
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
-    .line 506
-    const/4 v0, 0x0
+    move-result-object v1
 
-    :try_start_0
-    invoke-static {v0}, Landroid/bluetooth/BluetoothDevice;->access$002(Landroid/bluetooth/IBluetooth;)Landroid/bluetooth/IBluetooth;
+    invoke-direct {v0, v1}, Landroid/bluetooth/BluetoothDevice;-><init>(Ljava/lang/String;)V
 
-    .line 507
-    monitor-exit v1
-
-    .line 508
-    return-void
-
-    .line 507
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
+    return-object v0
 .end method
 
-.method public onBluetoothServiceUp(Landroid/bluetooth/IBluetooth;)V
-    .locals 2
-    .parameter "bluetoothService"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
+.method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 1
+    .parameter "x0"
 
     .prologue
-    .line 498
-    const-class v1, Landroid/bluetooth/BluetoothDevice;
+    .line 533
+    invoke-virtual {p0, p1}, Landroid/bluetooth/BluetoothDevice$1;->createFromParcel(Landroid/os/Parcel;)Landroid/bluetooth/BluetoothDevice;
 
-    monitor-enter v1
+    move-result-object v0
 
-    .line 499
-    :try_start_0
-    invoke-static {p1}, Landroid/bluetooth/BluetoothDevice;->access$002(Landroid/bluetooth/IBluetooth;)Landroid/bluetooth/IBluetooth;
+    return-object v0
+.end method
 
-    .line 500
-    monitor-exit v1
+.method public newArray(I)[Landroid/bluetooth/BluetoothDevice;
+    .locals 1
+    .parameter "size"
 
-    .line 501
-    return-void
+    .prologue
+    .line 538
+    new-array v0, p1, [Landroid/bluetooth/BluetoothDevice;
 
-    .line 500
-    :catchall_0
-    move-exception v0
+    return-object v0
+.end method
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+.method public bridge synthetic newArray(I)[Ljava/lang/Object;
+    .locals 1
+    .parameter "x0"
 
-    throw v0
+    .prologue
+    .line 533
+    invoke-virtual {p0, p1}, Landroid/bluetooth/BluetoothDevice$1;->newArray(I)[Landroid/bluetooth/BluetoothDevice;
+
+    move-result-object v0
+
+    return-object v0
 .end method

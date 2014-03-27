@@ -31,24 +31,6 @@
     .end annotation
 .end method
 
-.method public abstract onCellInfoChanged(Ljava/util/List;)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List",
-            "<",
-            "Landroid/telephony/CellInfo;",
-            ">;)V"
-        }
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract onCellLocationChanged(Landroid/os/Bundle;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

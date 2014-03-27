@@ -24,8 +24,6 @@
 # static fields
 .field public static final ACTION_GET_MULTIPLE_PHONES:Ljava/lang/String; = "com.android.contacts.action.GET_MULTIPLE_PHONES"
 
-.field public static final ACTION_PROFILE_CHANGED:Ljava/lang/String; = "android.provider.Contacts.PROFILE_CHANGED"
-
 .field public static final ATTACH_IMAGE:Ljava/lang/String; = "com.android.contacts.action.ATTACH_IMAGE"
 
 .field public static final EXTRA_CREATE_DESCRIPTION:Ljava/lang/String; = "com.android.contacts.action.CREATE_DESCRIPTION"
@@ -80,9 +78,9 @@
     .locals 0
 
     .prologue
-    .line 7840
+    .line 7709
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 8112
+    .line 7971
     return-void
 .end method

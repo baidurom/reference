@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 169
+    .line 164
     iput-object p1, p0, Landroid/view/SurfaceView$3;->this$0:Landroid/view/SurfaceView;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +45,7 @@
 
     const/4 v2, 0x0
 
-    .line 173
+    .line 168
     iget-object v3, p0, Landroid/view/SurfaceView$3;->this$0:Landroid/view/SurfaceView;
 
     iget-object v0, p0, Landroid/view/SurfaceView$3;->this$0:Landroid/view/SurfaceView;
@@ -69,18 +69,18 @@
     :goto_0
     iput-boolean v0, v3, Landroid/view/SurfaceView;->mHaveFrame:Z
 
-    .line 174
+    .line 169
     iget-object v0, p0, Landroid/view/SurfaceView$3;->this$0:Landroid/view/SurfaceView;
 
     #calls: Landroid/view/SurfaceView;->updateWindow(ZZ)V
     invoke-static {v0, v2, v2}, Landroid/view/SurfaceView;->access$000(Landroid/view/SurfaceView;ZZ)V
 
-    .line 175
+    .line 170
     return v1
 
     :cond_0
     move v0, v2
 
-    .line 173
+    .line 168
     goto :goto_0
 .end method

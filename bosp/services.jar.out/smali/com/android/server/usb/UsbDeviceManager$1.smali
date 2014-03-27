@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 136
+    .line 124
     iput-object p1, p0, Lcom/android/server/usb/UsbDeviceManager$1;->this$0:Lcom/android/server/usb/UsbDeviceManager;
 
     invoke-direct {p0}, Landroid/os/UEventObserver;-><init>()V
@@ -35,18 +35,18 @@
 
 # virtual methods
 .method public onUEvent(Landroid/os/UEventObserver$UEvent;)V
-    .locals 3
+    .locals 5
     .parameter "event"
 
     .prologue
-    .line 141
+    .line 129
     const-string v2, "USB_STATE"
 
     invoke-virtual {p1, v2}, Landroid/os/UEventObserver$UEvent;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 142
+    .line 130
     .local v1, state:Ljava/lang/String;
     const-string v2, "ACCESSORY"
 
@@ -54,11 +54,11 @@
 
     move-result-object v0
 
-    .line 143
+    .line 131
     .local v0, accessory:Ljava/lang/String;
     if-eqz v1, :cond_1
 
-    .line 144
+    .line 132
     iget-object v2, p0, Lcom/android/server/usb/UsbDeviceManager$1;->this$0:Lcom/android/server/usb/UsbDeviceManager;
 
     #getter for: Lcom/android/server/usb/UsbDeviceManager;->mHandler:Lcom/android/server/usb/UsbDeviceManager$UsbHandler;
@@ -68,12 +68,12 @@
 
     invoke-virtual {v2, v1}, Lcom/android/server/usb/UsbDeviceManager$UsbHandler;->updateState(Ljava/lang/String;)V
 
-    .line 149
+    .line 137
     :cond_0
     :goto_0
     return-void
 
-    .line 145
+    .line 133
     :cond_1
     const-string v2, "START"
 
@@ -83,11 +83,14 @@
 
     if-eqz v2, :cond_0
 
-    .line 147
+    .line 135
     iget-object v2, p0, Lcom/android/server/usb/UsbDeviceManager$1;->this$0:Lcom/android/server/usb/UsbDeviceManager;
 
-    #calls: Lcom/android/server/usb/UsbDeviceManager;->startAccessoryMode()V
-    invoke-static {v2}, Lcom/android/server/usb/UsbDeviceManager;->access$200(Lcom/android/server/usb/UsbDeviceManager;)V
+    const-string v3, "accessory"
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v2, v3, v4}, Lcom/android/server/usb/UsbDeviceManager;->setCurrentFunction(Ljava/lang/String;Z)V
 
     goto :goto_0
 .end method

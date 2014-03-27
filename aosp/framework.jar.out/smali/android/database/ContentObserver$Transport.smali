@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field private mContentObserver:Landroid/database/ContentObserver;
+.field mContentObserver:Landroid/database/ContentObserver;
 
 
 # direct methods
@@ -24,35 +24,60 @@
     .parameter "contentObserver"
 
     .prologue
-    .line 187
+    .line 50
     invoke-direct {p0}, Landroid/database/IContentObserver$Stub;-><init>()V
 
-    .line 188
+    .line 51
     iput-object p1, p0, Landroid/database/ContentObserver$Transport;->mContentObserver:Landroid/database/ContentObserver;
 
-    .line 189
+    .line 52
     return-void
 .end method
 
 
 # virtual methods
-.method public onChange(ZLandroid/net/Uri;)V
-    .locals 1
-    .parameter "selfChange"
-    .parameter "uri"
+.method public deliverSelfNotifications()Z
+    .locals 2
 
     .prologue
-    .line 193
+    .line 55
     iget-object v0, p0, Landroid/database/ContentObserver$Transport;->mContentObserver:Landroid/database/ContentObserver;
 
-    .line 194
+    .line 56
     .local v0, contentObserver:Landroid/database/ContentObserver;
     if-eqz v0, :cond_0
 
-    .line 195
-    invoke-virtual {v0, p1, p2}, Landroid/database/ContentObserver;->dispatchChange(ZLandroid/net/Uri;)V
+    .line 57
+    invoke-virtual {v0}, Landroid/database/ContentObserver;->deliverSelfNotifications()Z
 
-    .line 197
+    move-result v1
+
+    .line 59
+    :goto_0
+    return v1
+
+    :cond_0
+    const/4 v1, 0x0
+
+    goto :goto_0
+.end method
+
+.method public onChange(Z)V
+    .locals 1
+    .parameter "selfChange"
+
+    .prologue
+    .line 63
+    iget-object v0, p0, Landroid/database/ContentObserver$Transport;->mContentObserver:Landroid/database/ContentObserver;
+
+    .line 64
+    .local v0, contentObserver:Landroid/database/ContentObserver;
+    if-eqz v0, :cond_0
+
+    .line 65
+    invoke-virtual {v0, p1}, Landroid/database/ContentObserver;->dispatchChange(Z)V
+
+    .line 67
     :cond_0
     return-void
 .end method
@@ -61,11 +86,11 @@
     .locals 1
 
     .prologue
-    .line 200
+    .line 70
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/database/ContentObserver$Transport;->mContentObserver:Landroid/database/ContentObserver;
 
-    .line 201
+    .line 71
     return-void
 .end method

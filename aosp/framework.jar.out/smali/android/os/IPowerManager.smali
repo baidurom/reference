@@ -15,7 +15,15 @@
 
 
 # virtual methods
-.method public abstract acquireWakeLock(Landroid/os/IBinder;ILjava/lang/String;Landroid/os/WorkSource;)V
+.method public abstract acquireWakeLock(ILandroid/os/IBinder;Ljava/lang/String;Landroid/os/WorkSource;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract clearUserActivityTimeout(JJ)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -31,7 +39,23 @@
     .end annotation
 .end method
 
-.method public abstract goToSleep(JI)V
+.method public abstract getSupportedWakeLockFlags()I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract goToSleep(J)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract goToSleepWithReason(JI)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -47,7 +71,7 @@
     .end annotation
 .end method
 
-.method public abstract isWakeLockLevelSupported(I)Z
+.method public abstract preventScreenOn(Z)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -55,15 +79,7 @@
     .end annotation
 .end method
 
-.method public abstract nap(J)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract reboot(ZLjava/lang/String;Z)V
+.method public abstract reboot(Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -87,7 +103,23 @@
     .end annotation
 .end method
 
-.method public abstract setMaximumScreenOffTimeoutFromDeviceAdmin(I)V
+.method public abstract setBacklightBrightness(I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract setMaximumScreenOffTimeount(I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract setPokeLock(ILandroid/os/IBinder;Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -103,30 +135,6 @@
     .end annotation
 .end method
 
-.method public abstract setTemporaryScreenAutoBrightnessAdjustmentSettingOverride(F)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setTemporaryScreenBrightnessSettingOverride(I)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract shutdown(ZZ)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract updateWakeLockWorkSource(Landroid/os/IBinder;Landroid/os/WorkSource;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -135,7 +143,7 @@
     .end annotation
 .end method
 
-.method public abstract userActivity(JII)V
+.method public abstract userActivity(JZ)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -143,7 +151,7 @@
     .end annotation
 .end method
 
-.method public abstract wakeUp(J)V
+.method public abstract userActivityWithForce(JZZ)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

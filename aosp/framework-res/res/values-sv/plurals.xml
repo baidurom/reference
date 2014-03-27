@@ -67,18 +67,6 @@
         <item quantity="other">om %d dagar</item>
         <item quantity="one">imorgon</item>
     </plurals>
-    <plurals name="duration_seconds">
-        <item quantity="other">%d sekunder</item>
-        <item quantity="one">1 sekund</item>
-    </plurals>
-    <plurals name="duration_minutes">
-        <item quantity="other">%d minuter</item>
-        <item quantity="one">1 minut</item>
-    </plurals>
-    <plurals name="duration_hours">
-        <item quantity="other">%d timmar</item>
-        <item quantity="one">1 timme</item>
-    </plurals>
     <plurals name="wifi_available">
         <item quantity="other">Wi-Fi-nätverk är tillgängliga</item>
         <item quantity="one">Wi-Fi-nätverk är tillgängliga</item>

@@ -22,7 +22,7 @@
 
 
 # instance fields
-.field private final mCmdQueue:Ljava/util/LinkedList;
+.field private mCmdQueue:Ljava/util/LinkedList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/LinkedList",

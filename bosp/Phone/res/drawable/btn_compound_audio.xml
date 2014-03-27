@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@id/compoundBackgroundItem" android:drawable="@color/transparent" />
+    <item android:id="@id/moreIndicatorItem">
+        <selector
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:state_checked="true" android:drawable="@drawable/ic_more_indicator_holo_dark_press" />
+            <item android:state_checked="false" android:drawable="@drawable/ic_more_indicator_holo_dark" />
+        </selector>
+    </item>
+    <item android:id="@id/bluetoothItem">
+        <selector
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:state_checked="true" android:drawable="@drawable/ic_sound_bluetooth_holo_dark_press" />
+            <item android:state_checked="false" android:drawable="@drawable/ic_sound_bluetooth_holo_dark" />
+        </selector>
+    </item>
+    <item android:id="@id/handsetItem">
+        <selector
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:state_checked="true" android:drawable="@drawable/ic_sound_handset_holo_dark_press" />
+            <item android:state_checked="false" android:drawable="@drawable/ic_sound_handset_holo_dark" />
+        </selector>
+    </item>
+    <item android:id="@id/speakerphoneItem">
+        <selector
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:state_checked="true" android:drawable="@drawable/ic_sound_speakerphone_holo_dark_press" />
+            <item android:state_checked="false" android:drawable="@drawable/ic_sound_speakerphone_holo_dark" />
+        </selector>
+    </item>
+    <item android:id="@id/wiredHeadsetItem">
+        <selector
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:state_checked="true" android:drawable="@drawable/ic_sound_wired_headset_holo_dark_press" />
+            <item android:state_checked="false" android:drawable="@drawable/ic_sound_wired_headset_holo_dark" />
+        </selector>
+    </item>
+</layer-list>

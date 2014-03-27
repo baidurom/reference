@@ -153,7 +153,7 @@
 
     move-result-object v3
 
-    const v4, 0x1070003
+    const v4, #array@phoneTypes#t
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getTextArray(I)[Ljava/lang/CharSequence;
 

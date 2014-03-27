@@ -24,18 +24,6 @@
 
 .field public static final ACTION_SIM_STATE_CHANGED:Ljava/lang/String; = "android.intent.action.SIM_STATE_CHANGED"
 
-.field public static final EXTRA_PLMN:Ljava/lang/String; = "plmn"
-
-.field public static final EXTRA_SHOW_PLMN:Ljava/lang/String; = "showPlmn"
-
-.field public static final EXTRA_SHOW_SPN:Ljava/lang/String; = "showSpn"
-
-.field public static final EXTRA_SPN:Ljava/lang/String; = "spn"
-
-.field public static final SECRET_CODE_ACTION:Ljava/lang/String; = "android.provider.Telephony.SECRET_CODE"
-
-.field public static final SPN_STRINGS_UPDATED_ACTION:Ljava/lang/String; = "android.provider.Telephony.SPN_STRINGS_UPDATED"
-
 
 # direct methods
 .method public constructor <init>()V

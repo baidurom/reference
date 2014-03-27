@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="drawable" name="sms_reject_dialog_text_color">@drawable/sms_reject_dialog_list</item>
+    <item type="drawable" name="separator_red">#ffae1200</item>
+    <item type="drawable" name="separator_green">#ff008115</item>
+    <item type="drawable" name="grayBg">#ff333333</item>
+    <item type="drawable" name="APKTOOL_DUMMY_008e">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0091">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_009a">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_009f">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_00a2">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_00bc">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_00c7">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_00ca">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_00cd">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_00d1">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_00d3">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_00d6">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_00d7">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_00da">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_00dd">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_00e1">false</item>
+</resources>

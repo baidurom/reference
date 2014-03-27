@@ -20,20 +20,15 @@
 # instance fields
 .field final synthetic this$1:Lcom/android/server/DevicePolicyManagerService$1;
 
-.field final synthetic val$userHandle:I
-
 
 # direct methods
-.method constructor <init>(Lcom/android/server/DevicePolicyManagerService$1;I)V
+.method constructor <init>(Lcom/android/server/DevicePolicyManagerService$1;)V
     .locals 0
-    .parameter
     .parameter
 
     .prologue
-    .line 151
+    .line 127
     iput-object p1, p0, Lcom/android/server/DevicePolicyManagerService$1$1;->this$1:Lcom/android/server/DevicePolicyManagerService$1;
-
-    iput p2, p0, Lcom/android/server/DevicePolicyManagerService$1$1;->val$userHandle:I
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -43,27 +38,17 @@
 
 # virtual methods
 .method public run()V
-    .locals 3
+    .locals 1
 
     .prologue
-    .line 153
+    .line 129
     iget-object v0, p0, Lcom/android/server/DevicePolicyManagerService$1$1;->this$1:Lcom/android/server/DevicePolicyManagerService$1;
 
     iget-object v0, v0, Lcom/android/server/DevicePolicyManagerService$1;->this$0:Lcom/android/server/DevicePolicyManagerService;
 
-    iget-object v1, p0, Lcom/android/server/DevicePolicyManagerService$1$1;->this$1:Lcom/android/server/DevicePolicyManagerService$1;
+    #calls: Lcom/android/server/DevicePolicyManagerService;->handlePasswordExpirationNotification()V
+    invoke-static {v0}, Lcom/android/server/DevicePolicyManagerService;->access$000(Lcom/android/server/DevicePolicyManagerService;)V
 
-    iget-object v1, v1, Lcom/android/server/DevicePolicyManagerService$1;->this$0:Lcom/android/server/DevicePolicyManagerService;
-
-    iget v2, p0, Lcom/android/server/DevicePolicyManagerService$1$1;->val$userHandle:I
-
-    invoke-virtual {v1, v2}, Lcom/android/server/DevicePolicyManagerService;->getUserData(I)Lcom/android/server/DevicePolicyManagerService$DevicePolicyData;
-
-    move-result-object v1
-
-    #calls: Lcom/android/server/DevicePolicyManagerService;->handlePasswordExpirationNotification(Lcom/android/server/DevicePolicyManagerService$DevicePolicyData;)V
-    invoke-static {v0, v1}, Lcom/android/server/DevicePolicyManagerService;->access$000(Lcom/android/server/DevicePolicyManagerService;Lcom/android/server/DevicePolicyManagerService$DevicePolicyData;)V
-
-    .line 154
+    .line 130
     return-void
 .end method

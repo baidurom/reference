@@ -128,185 +128,185 @@
 
     const/4 v2, -0x1
 
-    .line 181
+    .line 176
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 90
+    .line 85
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mCallbacks:Ljava/util/ArrayList;
 
-    .line 93
+    .line 88
     const/4 v0, 0x2
 
     new-array v0, v0, [I
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mLocation:[I
 
-    .line 95
+    .line 90
     new-instance v0, Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-direct {v0}, Ljava/util/concurrent/locks/ReentrantLock;-><init>()V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
 
-    .line 96
+    .line 91
     new-instance v0, Landroid/view/Surface;
 
     invoke-direct {v0}, Landroid/view/Surface;-><init>()V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mSurface:Landroid/view/Surface;
 
-    .line 97
+    .line 92
     new-instance v0, Landroid/view/Surface;
 
     invoke-direct {v0}, Landroid/view/Surface;-><init>()V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mNewSurface:Landroid/view/Surface;
 
-    .line 98
+    .line 93
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/view/SurfaceView;->mDrawingStopped:Z
 
-    .line 100
+    .line 95
     new-instance v0, Landroid/view/WindowManager$LayoutParams;
 
     invoke-direct {v0}, Landroid/view/WindowManager$LayoutParams;-><init>()V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mLayout:Landroid/view/WindowManager$LayoutParams;
 
-    .line 104
+    .line 99
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mVisibleInsets:Landroid/graphics/Rect;
 
-    .line 105
+    .line 100
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mWinFrame:Landroid/graphics/Rect;
 
-    .line 106
+    .line 101
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mContentInsets:Landroid/graphics/Rect;
 
-    .line 107
+    .line 102
     new-instance v0, Landroid/content/res/Configuration;
 
     invoke-direct {v0}, Landroid/content/res/Configuration;-><init>()V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mConfiguration:Landroid/content/res/Configuration;
 
-    .line 113
+    .line 108
     const/16 v0, 0x3e9
 
     iput v0, p0, Landroid/view/SurfaceView;->mWindowType:I
 
-    .line 115
+    .line 110
     iput-boolean v3, p0, Landroid/view/SurfaceView;->mIsCreating:Z
 
-    .line 117
+    .line 112
     new-instance v0, Landroid/view/SurfaceView$1;
 
     invoke-direct {v0, p0}, Landroid/view/SurfaceView$1;-><init>(Landroid/view/SurfaceView;)V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mHandler:Landroid/os/Handler;
 
-    .line 134
+    .line 129
     new-instance v0, Landroid/view/SurfaceView$2;
 
     invoke-direct {v0, p0}, Landroid/view/SurfaceView$2;-><init>(Landroid/view/SurfaceView;)V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mScrollChangedListener:Landroid/view/ViewTreeObserver$OnScrollChangedListener;
 
-    .line 141
+    .line 136
     iput-boolean v3, p0, Landroid/view/SurfaceView;->mRequestedVisible:Z
 
-    .line 142
+    .line 137
     iput-boolean v3, p0, Landroid/view/SurfaceView;->mWindowVisibility:Z
 
-    .line 143
+    .line 138
     iput-boolean v3, p0, Landroid/view/SurfaceView;->mViewVisibility:Z
 
-    .line 144
+    .line 139
     iput v2, p0, Landroid/view/SurfaceView;->mRequestedWidth:I
 
-    .line 145
+    .line 140
     iput v2, p0, Landroid/view/SurfaceView;->mRequestedHeight:I
 
-    .line 149
+    .line 144
     const/4 v0, 0x4
 
     iput v0, p0, Landroid/view/SurfaceView;->mRequestedFormat:I
 
-    .line 151
+    .line 146
     iput-boolean v3, p0, Landroid/view/SurfaceView;->mHaveFrame:Z
 
-    .line 152
+    .line 147
     iput-boolean v3, p0, Landroid/view/SurfaceView;->mSurfaceCreated:Z
 
-    .line 153
+    .line 148
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Landroid/view/SurfaceView;->mLastLockTime:J
 
-    .line 155
+    .line 150
     iput-boolean v3, p0, Landroid/view/SurfaceView;->mVisible:Z
 
-    .line 156
+    .line 151
     iput v2, p0, Landroid/view/SurfaceView;->mLeft:I
 
-    .line 157
+    .line 152
     iput v2, p0, Landroid/view/SurfaceView;->mTop:I
 
-    .line 158
+    .line 153
     iput v2, p0, Landroid/view/SurfaceView;->mWidth:I
 
-    .line 159
+    .line 154
     iput v2, p0, Landroid/view/SurfaceView;->mHeight:I
 
-    .line 160
+    .line 155
     iput v2, p0, Landroid/view/SurfaceView;->mFormat:I
 
-    .line 161
+    .line 156
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mSurfaceFrame:Landroid/graphics/Rect;
 
-    .line 163
+    .line 158
     iput v2, p0, Landroid/view/SurfaceView;->mLastSurfaceWidth:I
 
     iput v2, p0, Landroid/view/SurfaceView;->mLastSurfaceHeight:I
 
-    .line 168
+    .line 163
     new-instance v0, Landroid/view/SurfaceView$3;
 
     invoke-direct {v0, p0}, Landroid/view/SurfaceView$3;-><init>(Landroid/view/SurfaceView;)V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mDrawListener:Landroid/view/ViewTreeObserver$OnPreDrawListener;
 
-    .line 692
+    .line 655
     new-instance v0, Landroid/view/SurfaceView$4;
 
     invoke-direct {v0, p0}, Landroid/view/SurfaceView$4;-><init>(Landroid/view/SurfaceView;)V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mSurfaceHolder:Landroid/view/SurfaceHolder;
 
-    .line 182
+    .line 177
     invoke-direct {p0}, Landroid/view/SurfaceView;->init()V
 
-    .line 183
+    .line 178
     return-void
 .end method
 
@@ -320,185 +320,185 @@
 
     const/4 v2, -0x1
 
-    .line 186
+    .line 181
     invoke-direct {p0, p1, p2}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 90
+    .line 85
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mCallbacks:Ljava/util/ArrayList;
 
-    .line 93
+    .line 88
     const/4 v0, 0x2
 
     new-array v0, v0, [I
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mLocation:[I
 
-    .line 95
+    .line 90
     new-instance v0, Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-direct {v0}, Ljava/util/concurrent/locks/ReentrantLock;-><init>()V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
 
-    .line 96
+    .line 91
     new-instance v0, Landroid/view/Surface;
 
     invoke-direct {v0}, Landroid/view/Surface;-><init>()V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mSurface:Landroid/view/Surface;
 
-    .line 97
+    .line 92
     new-instance v0, Landroid/view/Surface;
 
     invoke-direct {v0}, Landroid/view/Surface;-><init>()V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mNewSurface:Landroid/view/Surface;
 
-    .line 98
+    .line 93
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/view/SurfaceView;->mDrawingStopped:Z
 
-    .line 100
+    .line 95
     new-instance v0, Landroid/view/WindowManager$LayoutParams;
 
     invoke-direct {v0}, Landroid/view/WindowManager$LayoutParams;-><init>()V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mLayout:Landroid/view/WindowManager$LayoutParams;
 
-    .line 104
+    .line 99
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mVisibleInsets:Landroid/graphics/Rect;
 
-    .line 105
+    .line 100
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mWinFrame:Landroid/graphics/Rect;
 
-    .line 106
+    .line 101
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mContentInsets:Landroid/graphics/Rect;
 
-    .line 107
+    .line 102
     new-instance v0, Landroid/content/res/Configuration;
 
     invoke-direct {v0}, Landroid/content/res/Configuration;-><init>()V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mConfiguration:Landroid/content/res/Configuration;
 
-    .line 113
+    .line 108
     const/16 v0, 0x3e9
 
     iput v0, p0, Landroid/view/SurfaceView;->mWindowType:I
 
-    .line 115
+    .line 110
     iput-boolean v3, p0, Landroid/view/SurfaceView;->mIsCreating:Z
 
-    .line 117
+    .line 112
     new-instance v0, Landroid/view/SurfaceView$1;
 
     invoke-direct {v0, p0}, Landroid/view/SurfaceView$1;-><init>(Landroid/view/SurfaceView;)V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mHandler:Landroid/os/Handler;
 
-    .line 134
+    .line 129
     new-instance v0, Landroid/view/SurfaceView$2;
 
     invoke-direct {v0, p0}, Landroid/view/SurfaceView$2;-><init>(Landroid/view/SurfaceView;)V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mScrollChangedListener:Landroid/view/ViewTreeObserver$OnScrollChangedListener;
 
-    .line 141
+    .line 136
     iput-boolean v3, p0, Landroid/view/SurfaceView;->mRequestedVisible:Z
 
-    .line 142
+    .line 137
     iput-boolean v3, p0, Landroid/view/SurfaceView;->mWindowVisibility:Z
 
-    .line 143
+    .line 138
     iput-boolean v3, p0, Landroid/view/SurfaceView;->mViewVisibility:Z
 
-    .line 144
+    .line 139
     iput v2, p0, Landroid/view/SurfaceView;->mRequestedWidth:I
 
-    .line 145
+    .line 140
     iput v2, p0, Landroid/view/SurfaceView;->mRequestedHeight:I
 
-    .line 149
+    .line 144
     const/4 v0, 0x4
 
     iput v0, p0, Landroid/view/SurfaceView;->mRequestedFormat:I
 
-    .line 151
+    .line 146
     iput-boolean v3, p0, Landroid/view/SurfaceView;->mHaveFrame:Z
 
-    .line 152
+    .line 147
     iput-boolean v3, p0, Landroid/view/SurfaceView;->mSurfaceCreated:Z
 
-    .line 153
+    .line 148
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Landroid/view/SurfaceView;->mLastLockTime:J
 
-    .line 155
+    .line 150
     iput-boolean v3, p0, Landroid/view/SurfaceView;->mVisible:Z
 
-    .line 156
+    .line 151
     iput v2, p0, Landroid/view/SurfaceView;->mLeft:I
 
-    .line 157
+    .line 152
     iput v2, p0, Landroid/view/SurfaceView;->mTop:I
 
-    .line 158
+    .line 153
     iput v2, p0, Landroid/view/SurfaceView;->mWidth:I
 
-    .line 159
+    .line 154
     iput v2, p0, Landroid/view/SurfaceView;->mHeight:I
 
-    .line 160
+    .line 155
     iput v2, p0, Landroid/view/SurfaceView;->mFormat:I
 
-    .line 161
+    .line 156
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mSurfaceFrame:Landroid/graphics/Rect;
 
-    .line 163
+    .line 158
     iput v2, p0, Landroid/view/SurfaceView;->mLastSurfaceWidth:I
 
     iput v2, p0, Landroid/view/SurfaceView;->mLastSurfaceHeight:I
 
-    .line 168
+    .line 163
     new-instance v0, Landroid/view/SurfaceView$3;
 
     invoke-direct {v0, p0}, Landroid/view/SurfaceView$3;-><init>(Landroid/view/SurfaceView;)V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mDrawListener:Landroid/view/ViewTreeObserver$OnPreDrawListener;
 
-    .line 692
+    .line 655
     new-instance v0, Landroid/view/SurfaceView$4;
 
     invoke-direct {v0, p0}, Landroid/view/SurfaceView$4;-><init>(Landroid/view/SurfaceView;)V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mSurfaceHolder:Landroid/view/SurfaceHolder;
 
-    .line 187
+    .line 182
     invoke-direct {p0}, Landroid/view/SurfaceView;->init()V
 
-    .line 188
+    .line 183
     return-void
 .end method
 
@@ -513,185 +513,185 @@
 
     const/4 v2, -0x1
 
-    .line 191
+    .line 186
     invoke-direct {p0, p1, p2, p3}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 90
+    .line 85
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mCallbacks:Ljava/util/ArrayList;
 
-    .line 93
+    .line 88
     const/4 v0, 0x2
 
     new-array v0, v0, [I
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mLocation:[I
 
-    .line 95
+    .line 90
     new-instance v0, Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-direct {v0}, Ljava/util/concurrent/locks/ReentrantLock;-><init>()V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
 
-    .line 96
+    .line 91
     new-instance v0, Landroid/view/Surface;
 
     invoke-direct {v0}, Landroid/view/Surface;-><init>()V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mSurface:Landroid/view/Surface;
 
-    .line 97
+    .line 92
     new-instance v0, Landroid/view/Surface;
 
     invoke-direct {v0}, Landroid/view/Surface;-><init>()V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mNewSurface:Landroid/view/Surface;
 
-    .line 98
+    .line 93
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/view/SurfaceView;->mDrawingStopped:Z
 
-    .line 100
+    .line 95
     new-instance v0, Landroid/view/WindowManager$LayoutParams;
 
     invoke-direct {v0}, Landroid/view/WindowManager$LayoutParams;-><init>()V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mLayout:Landroid/view/WindowManager$LayoutParams;
 
-    .line 104
+    .line 99
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mVisibleInsets:Landroid/graphics/Rect;
 
-    .line 105
+    .line 100
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mWinFrame:Landroid/graphics/Rect;
 
-    .line 106
+    .line 101
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mContentInsets:Landroid/graphics/Rect;
 
-    .line 107
+    .line 102
     new-instance v0, Landroid/content/res/Configuration;
 
     invoke-direct {v0}, Landroid/content/res/Configuration;-><init>()V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mConfiguration:Landroid/content/res/Configuration;
 
-    .line 113
+    .line 108
     const/16 v0, 0x3e9
 
     iput v0, p0, Landroid/view/SurfaceView;->mWindowType:I
 
-    .line 115
+    .line 110
     iput-boolean v3, p0, Landroid/view/SurfaceView;->mIsCreating:Z
 
-    .line 117
+    .line 112
     new-instance v0, Landroid/view/SurfaceView$1;
 
     invoke-direct {v0, p0}, Landroid/view/SurfaceView$1;-><init>(Landroid/view/SurfaceView;)V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mHandler:Landroid/os/Handler;
 
-    .line 134
+    .line 129
     new-instance v0, Landroid/view/SurfaceView$2;
 
     invoke-direct {v0, p0}, Landroid/view/SurfaceView$2;-><init>(Landroid/view/SurfaceView;)V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mScrollChangedListener:Landroid/view/ViewTreeObserver$OnScrollChangedListener;
 
-    .line 141
+    .line 136
     iput-boolean v3, p0, Landroid/view/SurfaceView;->mRequestedVisible:Z
 
-    .line 142
+    .line 137
     iput-boolean v3, p0, Landroid/view/SurfaceView;->mWindowVisibility:Z
 
-    .line 143
+    .line 138
     iput-boolean v3, p0, Landroid/view/SurfaceView;->mViewVisibility:Z
 
-    .line 144
+    .line 139
     iput v2, p0, Landroid/view/SurfaceView;->mRequestedWidth:I
 
-    .line 145
+    .line 140
     iput v2, p0, Landroid/view/SurfaceView;->mRequestedHeight:I
 
-    .line 149
+    .line 144
     const/4 v0, 0x4
 
     iput v0, p0, Landroid/view/SurfaceView;->mRequestedFormat:I
 
-    .line 151
+    .line 146
     iput-boolean v3, p0, Landroid/view/SurfaceView;->mHaveFrame:Z
 
-    .line 152
+    .line 147
     iput-boolean v3, p0, Landroid/view/SurfaceView;->mSurfaceCreated:Z
 
-    .line 153
+    .line 148
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Landroid/view/SurfaceView;->mLastLockTime:J
 
-    .line 155
+    .line 150
     iput-boolean v3, p0, Landroid/view/SurfaceView;->mVisible:Z
 
-    .line 156
+    .line 151
     iput v2, p0, Landroid/view/SurfaceView;->mLeft:I
 
-    .line 157
+    .line 152
     iput v2, p0, Landroid/view/SurfaceView;->mTop:I
 
-    .line 158
+    .line 153
     iput v2, p0, Landroid/view/SurfaceView;->mWidth:I
 
-    .line 159
+    .line 154
     iput v2, p0, Landroid/view/SurfaceView;->mHeight:I
 
-    .line 160
+    .line 155
     iput v2, p0, Landroid/view/SurfaceView;->mFormat:I
 
-    .line 161
+    .line 156
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mSurfaceFrame:Landroid/graphics/Rect;
 
-    .line 163
+    .line 158
     iput v2, p0, Landroid/view/SurfaceView;->mLastSurfaceWidth:I
 
     iput v2, p0, Landroid/view/SurfaceView;->mLastSurfaceHeight:I
 
-    .line 168
+    .line 163
     new-instance v0, Landroid/view/SurfaceView$3;
 
     invoke-direct {v0, p0}, Landroid/view/SurfaceView$3;-><init>(Landroid/view/SurfaceView;)V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mDrawListener:Landroid/view/ViewTreeObserver$OnPreDrawListener;
 
-    .line 692
+    .line 655
     new-instance v0, Landroid/view/SurfaceView$4;
 
     invoke-direct {v0, p0}, Landroid/view/SurfaceView$4;-><init>(Landroid/view/SurfaceView;)V
 
     iput-object v0, p0, Landroid/view/SurfaceView;->mSurfaceHolder:Landroid/view/SurfaceHolder;
 
-    .line 192
+    .line 187
     invoke-direct {p0}, Landroid/view/SurfaceView;->init()V
 
-    .line 193
+    .line 188
     return-void
 .end method
 
@@ -702,7 +702,7 @@
     .parameter "x2"
 
     .prologue
-    .line 86
+    .line 81
     invoke-direct {p0, p1, p2}, Landroid/view/SurfaceView;->updateWindow(ZZ)V
 
     return-void
@@ -712,12 +712,12 @@
     .locals 3
 
     .prologue
-    .line 615
+    .line 579
     iget-object v2, p0, Landroid/view/SurfaceView;->mCallbacks:Ljava/util/ArrayList;
 
     monitor-enter v2
 
-    .line 616
+    .line 580
     :try_start_0
     iget-object v1, p0, Landroid/view/SurfaceView;->mCallbacks:Ljava/util/ArrayList;
 
@@ -727,19 +727,19 @@
 
     new-array v0, v1, [Landroid/view/SurfaceHolder$Callback;
 
-    .line 617
+    .line 581
     .local v0, callbacks:[Landroid/view/SurfaceHolder$Callback;
     iget-object v1, p0, Landroid/view/SurfaceView;->mCallbacks:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
-    .line 618
+    .line 582
     monitor-exit v2
 
-    .line 619
+    .line 583
     return-object v0
 
-    .line 618
+    .line 582
     .end local v0           #callbacks:[Landroid/view/SurfaceHolder$Callback;
     :catchall_0
     move-exception v1
@@ -755,45 +755,51 @@
     .locals 1
 
     .prologue
-    .line 196
+    .line 191
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Landroid/view/SurfaceView;->setWillNotDraw(Z)V
 
-    .line 197
+    .line 192
     return-void
 .end method
 
 .method private updateWindow(ZZ)V
-    .locals 37
+    .locals 36
     .parameter "force"
     .parameter "redrawNeeded"
 
     .prologue
-    .line 419
+    .line 384
     move-object/from16 v0, p0
 
     iget-boolean v3, v0, Landroid/view/SurfaceView;->mHaveFrame:Z
 
     if-nez v3, :cond_1
 
-    .line 611
+    .line 575
     :cond_0
     :goto_0
     return-void
 
-    .line 422
+    .line 387
     :cond_1
-    invoke-virtual/range {p0 .. p0}, Landroid/view/SurfaceView;->getViewRootImpl()Landroid/view/ViewRootImpl;
+    invoke-virtual/range {p0 .. p0}, Landroid/view/SurfaceView;->getRootView()Landroid/view/View;
 
-    move-result-object v34
+    move-result-object v3
 
-    .line 423
-    .local v34, viewRoot:Landroid/view/ViewRootImpl;
-    if-eqz v34, :cond_2
+    invoke-virtual {v3}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
-    .line 424
-    move-object/from16 v0, v34
+    move-result-object v33
+
+    check-cast v33, Landroid/view/ViewRootImpl;
+
+    .line 388
+    .local v33, viewRoot:Landroid/view/ViewRootImpl;
+    if-eqz v33, :cond_2
+
+    .line 389
+    move-object/from16 v0, v33
 
     iget-object v3, v0, Landroid/view/ViewRootImpl;->mTranslator:Landroid/content/res/CompatibilityInfo$Translator;
 
@@ -801,7 +807,7 @@
 
     iput-object v3, v0, Landroid/view/SurfaceView;->mTranslator:Landroid/content/res/CompatibilityInfo$Translator;
 
-    .line 427
+    .line 392
     :cond_2
     move-object/from16 v0, p0
 
@@ -809,7 +815,7 @@
 
     if-eqz v3, :cond_3
 
-    .line 428
+    .line 393
     move-object/from16 v0, p0
 
     iget-object v3, v0, Landroid/view/SurfaceView;->mSurface:Landroid/view/Surface;
@@ -820,39 +826,39 @@
 
     invoke-virtual {v3, v4}, Landroid/view/Surface;->setCompatibilityTranslator(Landroid/content/res/CompatibilityInfo$Translator;)V
 
-    .line 431
+    .line 396
     :cond_3
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/view/SurfaceView;->mRequestedWidth:I
 
-    move/from16 v26, v0
+    move/from16 v25, v0
 
-    .line 432
-    .local v26, myWidth:I
-    if-gtz v26, :cond_4
+    .line 397
+    .local v25, myWidth:I
+    if-gtz v25, :cond_4
 
     invoke-virtual/range {p0 .. p0}, Landroid/view/SurfaceView;->getWidth()I
 
-    move-result v26
+    move-result v25
 
-    .line 433
+    .line 398
     :cond_4
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/view/SurfaceView;->mRequestedHeight:I
 
-    move/from16 v25, v0
+    move/from16 v24, v0
 
-    .line 434
-    .local v25, myHeight:I
-    if-gtz v25, :cond_5
+    .line 399
+    .local v24, myHeight:I
+    if-gtz v24, :cond_5
 
     invoke-virtual/range {p0 .. p0}, Landroid/view/SurfaceView;->getHeight()I
 
-    move-result v25
+    move-result v24
 
-    .line 436
+    .line 401
     :cond_5
     move-object/from16 v0, p0
 
@@ -862,7 +868,7 @@
 
     invoke-virtual {v0, v3}, Landroid/view/SurfaceView;->getLocationInWindow([I)V
 
-    .line 437
+    .line 402
     move-object/from16 v0, p0
 
     iget-object v3, v0, Landroid/view/SurfaceView;->mWindow:Landroid/view/SurfaceView$MyWindow;
@@ -871,7 +877,7 @@
 
     const/16 v20, 0x1
 
-    .line 438
+    .line 403
     .local v20, creating:Z
     :goto_1
     move-object/from16 v0, p0
@@ -884,16 +890,16 @@
 
     if-eq v3, v4, :cond_f
 
-    const/16 v22, 0x1
+    const/16 v21, 0x1
 
-    .line 439
-    .local v22, formatChanged:Z
+    .line 404
+    .local v21, formatChanged:Z
     :goto_2
     move-object/from16 v0, p0
 
     iget v3, v0, Landroid/view/SurfaceView;->mWidth:I
 
-    move/from16 v0, v26
+    move/from16 v0, v25
 
     if-ne v3, v0, :cond_6
 
@@ -901,15 +907,15 @@
 
     iget v3, v0, Landroid/view/SurfaceView;->mHeight:I
 
-    move/from16 v0, v25
+    move/from16 v0, v24
 
     if-eq v3, v0, :cond_10
 
     :cond_6
-    const/16 v30, 0x1
+    const/16 v29, 0x1
 
-    .line 440
-    .local v30, sizeChanged:Z
+    .line 405
+    .local v29, sizeChanged:Z
     :goto_3
     move-object/from16 v0, p0
 
@@ -921,20 +927,20 @@
 
     if-eq v3, v4, :cond_11
 
-    const/16 v36, 0x1
+    const/16 v35, 0x1
 
-    .line 442
-    .local v36, visibleChanged:Z
+    .line 407
+    .local v35, visibleChanged:Z
     :goto_4
     if-nez p1, :cond_7
 
     if-nez v20, :cond_7
 
-    if-nez v22, :cond_7
+    if-nez v21, :cond_7
 
-    if-nez v30, :cond_7
+    if-nez v29, :cond_7
 
-    if-nez v36, :cond_7
+    if-nez v35, :cond_7
 
     move-object/from16 v0, p0
 
@@ -978,23 +984,23 @@
 
     if-eqz p2, :cond_0
 
-    .line 453
+    .line 418
     :cond_7
     :try_start_0
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Landroid/view/SurfaceView;->mRequestedVisible:Z
 
-    move/from16 v35, v0
+    move/from16 v34, v0
 
-    move/from16 v0, v35
+    move/from16 v0, v34
 
     move-object/from16 v1, p0
 
     iput-boolean v0, v1, Landroid/view/SurfaceView;->mVisible:Z
 
-    .line 454
-    .local v35, visible:Z
+    .line 419
+    .local v34, visible:Z
     move-object/from16 v0, p0
 
     iget-object v3, v0, Landroid/view/SurfaceView;->mLocation:[I
@@ -1007,7 +1013,7 @@
 
     iput v3, v0, Landroid/view/SurfaceView;->mLeft:I
 
-    .line 455
+    .line 420
     move-object/from16 v0, p0
 
     iget-object v3, v0, Landroid/view/SurfaceView;->mLocation:[I
@@ -1020,21 +1026,21 @@
 
     iput v3, v0, Landroid/view/SurfaceView;->mTop:I
 
-    .line 456
-    move/from16 v0, v26
+    .line 421
+    move/from16 v0, v25
 
     move-object/from16 v1, p0
 
     iput v0, v1, Landroid/view/SurfaceView;->mWidth:I
 
-    .line 457
-    move/from16 v0, v25
+    .line 422
+    move/from16 v0, v24
 
     move-object/from16 v1, p0
 
     iput v0, v1, Landroid/view/SurfaceView;->mHeight:I
 
-    .line 458
+    .line 423
     move-object/from16 v0, p0
 
     iget v3, v0, Landroid/view/SurfaceView;->mRequestedFormat:I
@@ -1043,7 +1049,7 @@
 
     iput v3, v0, Landroid/view/SurfaceView;->mFormat:I
 
-    .line 463
+    .line 428
     move-object/from16 v0, p0
 
     iget-object v3, v0, Landroid/view/SurfaceView;->mLayout:Landroid/view/WindowManager$LayoutParams;
@@ -1054,7 +1060,7 @@
 
     iput v4, v3, Landroid/view/WindowManager$LayoutParams;->x:I
 
-    .line 464
+    .line 429
     move-object/from16 v0, p0
 
     iget-object v3, v0, Landroid/view/SurfaceView;->mLayout:Landroid/view/WindowManager$LayoutParams;
@@ -1065,7 +1071,7 @@
 
     iput v4, v3, Landroid/view/WindowManager$LayoutParams;->y:I
 
-    .line 465
+    .line 430
     move-object/from16 v0, p0
 
     iget-object v3, v0, Landroid/view/SurfaceView;->mLayout:Landroid/view/WindowManager$LayoutParams;
@@ -1076,7 +1082,7 @@
 
     iput v4, v3, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 466
+    .line 431
     move-object/from16 v0, p0
 
     iget-object v3, v0, Landroid/view/SurfaceView;->mLayout:Landroid/view/WindowManager$LayoutParams;
@@ -1087,14 +1093,14 @@
 
     iput v4, v3, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 467
+    .line 432
     move-object/from16 v0, p0
 
     iget-object v3, v0, Landroid/view/SurfaceView;->mTranslator:Landroid/content/res/CompatibilityInfo$Translator;
 
     if-eqz v3, :cond_8
 
-    .line 468
+    .line 433
     move-object/from16 v0, p0
 
     iget-object v3, v0, Landroid/view/SurfaceView;->mTranslator:Landroid/content/res/CompatibilityInfo$Translator;
@@ -1105,7 +1111,7 @@
 
     invoke-virtual {v3, v4}, Landroid/content/res/CompatibilityInfo$Translator;->translateLayoutParamsInAppWindowToScreen(Landroid/view/WindowManager$LayoutParams;)V
 
-    .line 471
+    .line 436
     :cond_8
     move-object/from16 v0, p0
 
@@ -1117,7 +1123,7 @@
 
     iput v4, v3, Landroid/view/WindowManager$LayoutParams;->format:I
 
-    .line 472
+    .line 437
     move-object/from16 v0, p0
 
     iget-object v3, v0, Landroid/view/SurfaceView;->mLayout:Landroid/view/WindowManager$LayoutParams;
@@ -1128,7 +1134,7 @@
 
     iput v4, v3, Landroid/view/WindowManager$LayoutParams;->flags:I
 
-    .line 479
+    .line 444
     invoke-virtual/range {p0 .. p0}, Landroid/view/SurfaceView;->getContext()Landroid/content/Context;
 
     move-result-object v3
@@ -1147,7 +1153,7 @@
 
     if-nez v3, :cond_9
 
-    .line 480
+    .line 445
     move-object/from16 v0, p0
 
     iget-object v3, v0, Landroid/view/SurfaceView;->mLayout:Landroid/view/WindowManager$LayoutParams;
@@ -1160,7 +1166,7 @@
 
     iput v4, v3, Landroid/view/WindowManager$LayoutParams;->flags:I
 
-    .line 483
+    .line 448
     :cond_9
     move-object/from16 v0, p0
 
@@ -1168,13 +1174,7 @@
 
     if-nez v3, :cond_a
 
-    .line 484
-    invoke-virtual/range {p0 .. p0}, Landroid/view/SurfaceView;->getDisplay()Landroid/view/Display;
-
-    move-result-object v21
-
-    .line 485
-    .local v21, display:Landroid/view/Display;
+    .line 449
     new-instance v3, Landroid/view/SurfaceView$MyWindow;
 
     move-object/from16 v0, p0
@@ -1185,7 +1185,7 @@
 
     iput-object v3, v0, Landroid/view/SurfaceView;->mWindow:Landroid/view/SurfaceView$MyWindow;
 
-    .line 486
+    .line 450
     move-object/from16 v0, p0
 
     iget-object v3, v0, Landroid/view/SurfaceView;->mLayout:Landroid/view/WindowManager$LayoutParams;
@@ -1196,16 +1196,16 @@
 
     iput v4, v3, Landroid/view/WindowManager$LayoutParams;->type:I
 
-    .line 487
+    .line 451
     move-object/from16 v0, p0
 
     iget-object v3, v0, Landroid/view/SurfaceView;->mLayout:Landroid/view/WindowManager$LayoutParams;
 
-    const v4, 0x800033
+    const/16 v4, 0x33
 
     iput v4, v3, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 488
+    .line 452
     move-object/from16 v0, p0
 
     iget-object v3, v0, Landroid/view/SurfaceView;->mSession:Landroid/view/IWindowSession;
@@ -1233,18 +1233,13 @@
     const/4 v7, 0x0
 
     :goto_5
-    invoke-virtual/range {v21 .. v21}, Landroid/view/Display;->getDisplayId()I
-
-    move-result v8
-
     move-object/from16 v0, p0
 
-    iget-object v9, v0, Landroid/view/SurfaceView;->mContentInsets:Landroid/graphics/Rect;
+    iget-object v8, v0, Landroid/view/SurfaceView;->mContentInsets:Landroid/graphics/Rect;
 
-    invoke-interface/range {v3 .. v9}, Landroid/view/IWindowSession;->addToDisplayWithoutInputChannel(Landroid/view/IWindow;ILandroid/view/WindowManager$LayoutParams;IILandroid/graphics/Rect;)I
+    invoke-interface/range {v3 .. v8}, Landroid/view/IWindowSession;->addWithoutInputChannel(Landroid/view/IWindow;ILandroid/view/WindowManager$LayoutParams;ILandroid/graphics/Rect;)I
 
-    .line 497
-    .end local v21           #display:Landroid/view/Display;
+    .line 461
     :cond_a
     move-object/from16 v0, p0
 
@@ -1254,7 +1249,7 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 499
+    .line 463
     const/4 v3, 0x0
 
     :try_start_1
@@ -1262,23 +1257,23 @@
 
     iput-boolean v3, v0, Landroid/view/SurfaceView;->mUpdateWindowNeeded:Z
 
-    .line 500
+    .line 464
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Landroid/view/SurfaceView;->mReportDrawNeeded:Z
 
-    move/from16 v29, v0
+    move/from16 v28, v0
 
-    .line 501
-    .local v29, reportDrawNeeded:Z
+    .line 465
+    .local v28, reportDrawNeeded:Z
     const/4 v3, 0x0
 
     move-object/from16 v0, p0
 
     iput-boolean v3, v0, Landroid/view/SurfaceView;->mReportDrawNeeded:Z
 
-    .line 502
-    if-nez v35, :cond_13
+    .line 466
+    if-nez v34, :cond_13
 
     const/4 v3, 0x1
 
@@ -1287,7 +1282,7 @@
 
     iput-boolean v3, v0, Landroid/view/SurfaceView;->mDrawingStopped:Z
 
-    .line 506
+    .line 470
     move-object/from16 v0, p0
 
     iget-object v3, v0, Landroid/view/SurfaceView;->mSession:Landroid/view/IWindowSession;
@@ -1314,7 +1309,7 @@
 
     iget v8, v0, Landroid/view/SurfaceView;->mHeight:I
 
-    if-eqz v35, :cond_14
+    if-eqz v34, :cond_14
 
     const/4 v9, 0x0
 
@@ -1343,22 +1338,22 @@
 
     invoke-interface/range {v3 .. v15}, Landroid/view/IWindowSession;->relayout(Landroid/view/IWindow;ILandroid/view/WindowManager$LayoutParams;IIIILandroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/content/res/Configuration;Landroid/view/Surface;)I
 
-    move-result v28
+    move-result v27
 
-    .line 512
-    .local v28, relayoutResult:I
-    and-int/lit8 v3, v28, 0x2
+    .line 476
+    .local v27, relayoutResult:I
+    and-int/lit8 v3, v27, 0x2
 
     if-eqz v3, :cond_b
 
-    .line 513
+    .line 477
     const/4 v3, 0x1
 
     move-object/from16 v0, p0
 
     iput-boolean v3, v0, Landroid/view/SurfaceView;->mReportDrawNeeded:Z
 
-    .line 519
+    .line 483
     :cond_b
     move-object/from16 v0, p0
 
@@ -1368,7 +1363,7 @@
 
     iput v4, v3, Landroid/graphics/Rect;->left:I
 
-    .line 520
+    .line 484
     move-object/from16 v0, p0
 
     iget-object v3, v0, Landroid/view/SurfaceView;->mSurfaceFrame:Landroid/graphics/Rect;
@@ -1377,14 +1372,14 @@
 
     iput v4, v3, Landroid/graphics/Rect;->top:I
 
-    .line 521
+    .line 485
     move-object/from16 v0, p0
 
     iget-object v3, v0, Landroid/view/SurfaceView;->mTranslator:Landroid/content/res/CompatibilityInfo$Translator;
 
     if-nez v3, :cond_15
 
-    .line 522
+    .line 486
     move-object/from16 v0, p0
 
     iget-object v3, v0, Landroid/view/SurfaceView;->mSurfaceFrame:Landroid/graphics/Rect;
@@ -1399,7 +1394,7 @@
 
     iput v4, v3, Landroid/graphics/Rect;->right:I
 
-    .line 523
+    .line 487
     move-object/from16 v0, p0
 
     iget-object v3, v0, Landroid/view/SurfaceView;->mSurfaceFrame:Landroid/graphics/Rect;
@@ -1414,7 +1409,7 @@
 
     iput v4, v3, Landroid/graphics/Rect;->bottom:I
 
-    .line 530
+    .line 494
     :goto_8
     move-object/from16 v0, p0
 
@@ -1422,25 +1417,25 @@
 
     iget v0, v3, Landroid/graphics/Rect;->right:I
 
-    move/from16 v33, v0
+    move/from16 v32, v0
 
-    .line 531
-    .local v33, surfaceWidth:I
+    .line 495
+    .local v32, surfaceWidth:I
     move-object/from16 v0, p0
 
     iget-object v3, v0, Landroid/view/SurfaceView;->mSurfaceFrame:Landroid/graphics/Rect;
 
     iget v0, v3, Landroid/graphics/Rect;->bottom:I
 
-    move/from16 v32, v0
+    move/from16 v31, v0
 
-    .line 532
-    .local v32, surfaceHeight:I
+    .line 496
+    .local v31, surfaceHeight:I
     move-object/from16 v0, p0
 
     iget v3, v0, Landroid/view/SurfaceView;->mLastSurfaceWidth:I
 
-    move/from16 v0, v33
+    move/from16 v0, v32
 
     if-ne v3, v0, :cond_c
 
@@ -1448,24 +1443,24 @@
 
     iget v3, v0, Landroid/view/SurfaceView;->mLastSurfaceHeight:I
 
-    move/from16 v0, v32
+    move/from16 v0, v31
 
     if-eq v3, v0, :cond_16
 
     :cond_c
-    const/16 v27, 0x1
+    const/16 v26, 0x1
 
-    .line 534
-    .local v27, realSizeChanged:Z
+    .line 498
+    .local v26, realSizeChanged:Z
     :goto_9
-    move/from16 v0, v33
+    move/from16 v0, v32
 
     move-object/from16 v1, p0
 
     iput v0, v1, Landroid/view/SurfaceView;->mLastSurfaceWidth:I
 
-    .line 535
-    move/from16 v0, v32
+    .line 499
+    move/from16 v0, v31
 
     move-object/from16 v1, p0
 
@@ -1473,7 +1468,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 537
+    .line 501
     :try_start_2
     move-object/from16 v0, p0
 
@@ -1483,24 +1478,24 @@
     :try_end_2
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 541
-    or-int v3, v20, v29
+    .line 505
+    or-int v3, v20, v28
 
     or-int p2, p2, v3
 
-    .line 543
+    .line 507
     const/16 v19, 0x0
 
-    .line 545
+    .line 509
     .local v19, callbacks:[Landroid/view/SurfaceHolder$Callback;
-    and-int/lit8 v3, v28, 0x4
+    and-int/lit8 v3, v27, 0x4
 
     if-eqz v3, :cond_17
 
-    const/16 v31, 0x1
+    const/16 v30, 0x1
 
-    .line 547
-    .local v31, surfaceChanged:Z
+    .line 511
+    .local v30, surfaceChanged:Z
     :goto_a
     :try_start_3
     move-object/from16 v0, p0
@@ -1509,13 +1504,13 @@
 
     if-eqz v3, :cond_18
 
-    if-nez v31, :cond_d
+    if-nez v30, :cond_d
 
-    if-nez v35, :cond_18
+    if-nez v34, :cond_18
 
-    if-eqz v36, :cond_18
+    if-eqz v35, :cond_18
 
-    .line 548
+    .line 512
     :cond_d
     const/4 v3, 0x0
 
@@ -1523,7 +1518,7 @@
 
     iput-boolean v3, v0, Landroid/view/SurfaceView;->mSurfaceCreated:Z
 
-    .line 549
+    .line 513
     move-object/from16 v0, p0
 
     iget-object v3, v0, Landroid/view/SurfaceView;->mSurface:Landroid/view/Surface;
@@ -1534,12 +1529,12 @@
 
     if-eqz v3, :cond_18
 
-    .line 551
+    .line 515
     invoke-direct/range {p0 .. p0}, Landroid/view/SurfaceView;->getSurfaceCallbacks()[Landroid/view/SurfaceHolder$Callback;
 
     move-result-object v19
 
-    .line 552
+    .line 516
     move-object/from16 v17, v19
 
     .local v17, arr$:[Landroid/view/SurfaceHolder$Callback;
@@ -1547,22 +1542,22 @@
 
     array-length v0, v0
 
-    move/from16 v24, v0
+    move/from16 v23, v0
 
-    .local v24, len$:I
-    const/16 v23, 0x0
+    .local v23, len$:I
+    const/16 v22, 0x0
 
-    .local v23, i$:I
+    .local v22, i$:I
     :goto_b
-    move/from16 v0, v23
+    move/from16 v0, v22
 
-    move/from16 v1, v24
+    move/from16 v1, v23
 
     if-ge v0, v1, :cond_18
 
-    aget-object v18, v17, v23
+    aget-object v18, v17, v22
 
-    .line 553
+    .line 517
     .local v18, c:Landroid/view/SurfaceHolder$Callback;
     move-object/from16 v0, p0
 
@@ -1574,79 +1569,77 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    .line 552
-    add-int/lit8 v23, v23, 0x1
+    .line 516
+    add-int/lit8 v22, v22, 0x1
 
     goto :goto_b
 
-    .line 437
+    .line 402
     .end local v17           #arr$:[Landroid/view/SurfaceHolder$Callback;
     .end local v18           #c:Landroid/view/SurfaceHolder$Callback;
     .end local v19           #callbacks:[Landroid/view/SurfaceHolder$Callback;
     .end local v20           #creating:Z
-    .end local v22           #formatChanged:Z
-    .end local v23           #i$:I
-    .end local v24           #len$:I
-    .end local v27           #realSizeChanged:Z
-    .end local v28           #relayoutResult:I
-    .end local v29           #reportDrawNeeded:Z
-    .end local v30           #sizeChanged:Z
-    .end local v31           #surfaceChanged:Z
-    .end local v32           #surfaceHeight:I
-    .end local v33           #surfaceWidth:I
-    .end local v35           #visible:Z
-    .end local v36           #visibleChanged:Z
+    .end local v21           #formatChanged:Z
+    .end local v22           #i$:I
+    .end local v23           #len$:I
+    .end local v26           #realSizeChanged:Z
+    .end local v27           #relayoutResult:I
+    .end local v28           #reportDrawNeeded:Z
+    .end local v29           #sizeChanged:Z
+    .end local v30           #surfaceChanged:Z
+    .end local v31           #surfaceHeight:I
+    .end local v32           #surfaceWidth:I
+    .end local v34           #visible:Z
+    .end local v35           #visibleChanged:Z
     :cond_e
     const/16 v20, 0x0
 
     goto/16 :goto_1
 
-    .line 438
+    .line 403
     .restart local v20       #creating:Z
     :cond_f
-    const/16 v22, 0x0
+    const/16 v21, 0x0
 
     goto/16 :goto_2
 
-    .line 439
-    .restart local v22       #formatChanged:Z
+    .line 404
+    .restart local v21       #formatChanged:Z
     :cond_10
-    const/16 v30, 0x0
+    const/16 v29, 0x0
 
     goto/16 :goto_3
 
-    .line 440
-    .restart local v30       #sizeChanged:Z
+    .line 405
+    .restart local v29       #sizeChanged:Z
     :cond_11
-    const/16 v36, 0x0
+    const/16 v35, 0x0
 
     goto/16 :goto_4
 
-    .line 488
-    .restart local v21       #display:Landroid/view/Display;
-    .restart local v35       #visible:Z
-    .restart local v36       #visibleChanged:Z
+    .line 452
+    .restart local v34       #visible:Z
+    .restart local v35       #visibleChanged:Z
     :cond_12
     const/16 v7, 0x8
 
     goto/16 :goto_5
 
-    .line 502
-    .end local v21           #display:Landroid/view/Display;
-    .restart local v29       #reportDrawNeeded:Z
+    .line 466
+    .restart local v28       #reportDrawNeeded:Z
     :cond_13
     const/4 v3, 0x0
 
     goto/16 :goto_6
 
-    .line 506
+    .line 470
     :cond_14
     const/16 v9, 0x8
 
     goto/16 :goto_7
 
-    .line 525
-    .restart local v28       #relayoutResult:I
+    .line 489
+    .restart local v27       #relayoutResult:I
     :cond_15
     :try_start_4
     move-object/from16 v0, p0
@@ -1657,7 +1650,7 @@
 
     move/from16 v16, v0
 
-    .line 526
+    .line 490
     .local v16, appInvertedScale:F
     move-object/from16 v0, p0
 
@@ -1683,7 +1676,7 @@
 
     iput v4, v3, Landroid/graphics/Rect;->right:I
 
-    .line 527
+    .line 491
     move-object/from16 v0, p0
 
     iget-object v3, v0, Landroid/view/SurfaceView;->mSurfaceFrame:Landroid/graphics/Rect;
@@ -1712,10 +1705,10 @@
 
     goto/16 :goto_8
 
-    .line 537
+    .line 501
     .end local v16           #appInvertedScale:F
-    .end local v28           #relayoutResult:I
-    .end local v29           #reportDrawNeeded:Z
+    .end local v27           #relayoutResult:I
+    .end local v28           #reportDrawNeeded:Z
     :catchall_0
     move-exception v3
 
@@ -1730,34 +1723,34 @@
     :try_end_5
     .catch Landroid/os/RemoteException; {:try_start_5 .. :try_end_5} :catch_0
 
-    .line 604
-    .end local v35           #visible:Z
+    .line 568
+    .end local v34           #visible:Z
     :catch_0
     move-exception v3
 
     goto/16 :goto_0
 
-    .line 532
-    .restart local v28       #relayoutResult:I
-    .restart local v29       #reportDrawNeeded:Z
-    .restart local v32       #surfaceHeight:I
-    .restart local v33       #surfaceWidth:I
-    .restart local v35       #visible:Z
+    .line 496
+    .restart local v27       #relayoutResult:I
+    .restart local v28       #reportDrawNeeded:Z
+    .restart local v31       #surfaceHeight:I
+    .restart local v32       #surfaceWidth:I
+    .restart local v34       #visible:Z
     :cond_16
-    const/16 v27, 0x0
+    const/16 v26, 0x0
 
     goto/16 :goto_9
 
-    .line 545
+    .line 509
     .restart local v19       #callbacks:[Landroid/view/SurfaceHolder$Callback;
-    .restart local v27       #realSizeChanged:Z
+    .restart local v26       #realSizeChanged:Z
     :cond_17
-    const/16 v31, 0x0
+    const/16 v30, 0x0
 
     goto/16 :goto_a
 
-    .line 558
-    .restart local v31       #surfaceChanged:Z
+    .line 522
+    .restart local v30       #surfaceChanged:Z
     :cond_18
     :try_start_6
     move-object/from16 v0, p0
@@ -1770,31 +1763,21 @@
 
     invoke-virtual {v3, v4}, Landroid/view/Surface;->transferFrom(Landroid/view/Surface;)V
 
-    .line 560
-    if-eqz v35, :cond_22
+    .line 524
+    if-eqz v34, :cond_21
 
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Landroid/view/SurfaceView;->mSurface:Landroid/view/Surface;
-
-    invoke-virtual {v3}, Landroid/view/Surface;->isValid()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_22
-
-    .line 561
+    .line 525
     move-object/from16 v0, p0
 
     iget-boolean v3, v0, Landroid/view/SurfaceView;->mSurfaceCreated:Z
 
     if-nez v3, :cond_1b
 
-    if-nez v31, :cond_19
+    if-nez v30, :cond_19
 
-    if-eqz v36, :cond_1b
+    if-eqz v35, :cond_1b
 
-    .line 562
+    .line 526
     :cond_19
     const/4 v3, 0x1
 
@@ -1802,22 +1785,22 @@
 
     iput-boolean v3, v0, Landroid/view/SurfaceView;->mSurfaceCreated:Z
 
-    .line 563
+    .line 527
     const/4 v3, 0x1
 
     move-object/from16 v0, p0
 
     iput-boolean v3, v0, Landroid/view/SurfaceView;->mIsCreating:Z
 
-    .line 565
+    .line 529
     if-nez v19, :cond_1a
 
-    .line 566
+    .line 530
     invoke-direct/range {p0 .. p0}, Landroid/view/SurfaceView;->getSurfaceCallbacks()[Landroid/view/SurfaceHolder$Callback;
 
     move-result-object v19
 
-    .line 568
+    .line 532
     :cond_1a
     move-object/from16 v17, v19
 
@@ -1826,22 +1809,22 @@
 
     array-length v0, v0
 
-    move/from16 v24, v0
+    move/from16 v23, v0
 
-    .restart local v24       #len$:I
-    const/16 v23, 0x0
+    .restart local v23       #len$:I
+    const/16 v22, 0x0
 
-    .restart local v23       #i$:I
+    .restart local v22       #i$:I
     :goto_c
-    move/from16 v0, v23
+    move/from16 v0, v22
 
-    move/from16 v1, v24
+    move/from16 v1, v23
 
     if-ge v0, v1, :cond_1b
 
-    aget-object v18, v17, v23
+    aget-object v18, v17, v22
 
-    .line 569
+    .line 533
     .restart local v18       #c:Landroid/view/SurfaceHolder$Callback;
     move-object/from16 v0, p0
 
@@ -1851,37 +1834,37 @@
 
     invoke-interface {v0, v3}, Landroid/view/SurfaceHolder$Callback;->surfaceCreated(Landroid/view/SurfaceHolder;)V
 
-    .line 568
-    add-int/lit8 v23, v23, 0x1
+    .line 532
+    add-int/lit8 v22, v22, 0x1
 
     goto :goto_c
 
-    .line 572
+    .line 536
     .end local v17           #arr$:[Landroid/view/SurfaceHolder$Callback;
     .end local v18           #c:Landroid/view/SurfaceHolder$Callback;
-    .end local v23           #i$:I
-    .end local v24           #len$:I
+    .end local v22           #i$:I
+    .end local v23           #len$:I
     :cond_1b
     if-nez v20, :cond_1c
 
-    if-nez v22, :cond_1c
+    if-nez v21, :cond_1c
 
-    if-nez v30, :cond_1c
+    if-nez v29, :cond_1c
 
-    if-nez v36, :cond_1c
+    if-nez v35, :cond_1c
 
-    if-eqz v27, :cond_1e
+    if-eqz v26, :cond_1e
 
-    .line 576
+    .line 540
     :cond_1c
     if-nez v19, :cond_1d
 
-    .line 577
+    .line 541
     invoke-direct/range {p0 .. p0}, Landroid/view/SurfaceView;->getSurfaceCallbacks()[Landroid/view/SurfaceHolder$Callback;
 
     move-result-object v19
 
-    .line 579
+    .line 543
     :cond_1d
     move-object/from16 v17, v19
 
@@ -1890,22 +1873,22 @@
 
     array-length v0, v0
 
-    move/from16 v24, v0
+    move/from16 v23, v0
 
-    .restart local v24       #len$:I
-    const/16 v23, 0x0
+    .restart local v23       #len$:I
+    const/16 v22, 0x0
 
-    .restart local v23       #i$:I
+    .restart local v22       #i$:I
     :goto_d
-    move/from16 v0, v23
+    move/from16 v0, v22
 
-    move/from16 v1, v24
+    move/from16 v1, v23
 
     if-ge v0, v1, :cond_1e
 
-    aget-object v18, v17, v23
+    aget-object v18, v17, v22
 
-    .line 580
+    .line 544
     .restart local v18       #c:Landroid/view/SurfaceHolder$Callback;
     move-object/from16 v0, p0
 
@@ -1917,34 +1900,34 @@
 
     move-object/from16 v0, v18
 
-    move/from16 v1, v26
+    move/from16 v1, v25
 
-    move/from16 v2, v25
+    move/from16 v2, v24
 
     invoke-interface {v0, v3, v4, v1, v2}, Landroid/view/SurfaceHolder$Callback;->surfaceChanged(Landroid/view/SurfaceHolder;III)V
 
-    .line 579
-    add-int/lit8 v23, v23, 0x1
+    .line 543
+    add-int/lit8 v22, v22, 0x1
 
     goto :goto_d
 
-    .line 583
+    .line 547
     .end local v17           #arr$:[Landroid/view/SurfaceHolder$Callback;
     .end local v18           #c:Landroid/view/SurfaceHolder$Callback;
-    .end local v23           #i$:I
-    .end local v24           #len$:I
+    .end local v22           #i$:I
+    .end local v23           #len$:I
     :cond_1e
-    if-eqz p2, :cond_22
+    if-eqz p2, :cond_21
 
-    .line 585
+    .line 549
     if-nez v19, :cond_1f
 
-    .line 586
+    .line 550
     invoke-direct/range {p0 .. p0}, Landroid/view/SurfaceView;->getSurfaceCallbacks()[Landroid/view/SurfaceHolder$Callback;
 
     move-result-object v19
 
-    .line 588
+    .line 552
     :cond_1f
     move-object/from16 v17, v19
 
@@ -1953,22 +1936,22 @@
 
     array-length v0, v0
 
-    move/from16 v24, v0
+    move/from16 v23, v0
 
-    .restart local v24       #len$:I
-    const/16 v23, 0x0
+    .restart local v23       #len$:I
+    const/16 v22, 0x0
 
-    .restart local v23       #i$:I
+    .restart local v22       #i$:I
     :goto_e
-    move/from16 v0, v23
+    move/from16 v0, v22
 
-    move/from16 v1, v24
+    move/from16 v1, v23
 
-    if-ge v0, v1, :cond_22
+    if-ge v0, v1, :cond_21
 
-    aget-object v18, v17, v23
+    aget-object v18, v17, v22
 
-    .line 589
+    .line 553
     .restart local v18       #c:Landroid/view/SurfaceHolder$Callback;
     move-object/from16 v0, v18
 
@@ -1976,7 +1959,7 @@
 
     if-eqz v3, :cond_20
 
-    .line 590
+    .line 554
     check-cast v18, Landroid/view/SurfaceHolder$Callback2;
 
     .end local v18           #c:Landroid/view/SurfaceHolder$Callback;
@@ -1990,66 +1973,28 @@
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_1
 
-    .line 588
+    .line 552
     :cond_20
-    add-int/lit8 v23, v23, 0x1
+    add-int/lit8 v22, v22, 0x1
 
     goto :goto_e
 
-    .line 597
+    .line 561
     .end local v17           #arr$:[Landroid/view/SurfaceHolder$Callback;
-    .end local v23           #i$:I
-    .end local v24           #len$:I
-    :catchall_1
-    move-exception v3
-
-    const/4 v4, 0x0
+    .end local v22           #i$:I
+    .end local v23           #len$:I
+    :cond_21
+    const/4 v3, 0x0
 
     :try_start_7
     move-object/from16 v0, p0
 
-    iput-boolean v4, v0, Landroid/view/SurfaceView;->mIsCreating:Z
-
-    .line 598
-    if-eqz p2, :cond_21
-
-    .line 600
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Landroid/view/SurfaceView;->mSession:Landroid/view/IWindowSession;
-
-    move-object/from16 v0, p0
-
-    iget-object v5, v0, Landroid/view/SurfaceView;->mWindow:Landroid/view/SurfaceView$MyWindow;
-
-    invoke-interface {v4, v5}, Landroid/view/IWindowSession;->finishDrawing(Landroid/view/IWindow;)V
-
-    .line 602
-    :cond_21
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Landroid/view/SurfaceView;->mSession:Landroid/view/IWindowSession;
-
-    move-object/from16 v0, p0
-
-    iget-object v5, v0, Landroid/view/SurfaceView;->mWindow:Landroid/view/SurfaceView$MyWindow;
-
-    invoke-interface {v4, v5}, Landroid/view/IWindowSession;->performDeferredDestroy(Landroid/view/IWindow;)V
-
-    .line 597
-    throw v3
-
-    :cond_22
-    const/4 v3, 0x0
-
-    move-object/from16 v0, p0
-
     iput-boolean v3, v0, Landroid/view/SurfaceView;->mIsCreating:Z
 
-    .line 598
-    if-eqz p2, :cond_23
+    .line 562
+    if-eqz p2, :cond_22
 
-    .line 600
+    .line 564
     move-object/from16 v0, p0
 
     iget-object v3, v0, Landroid/view/SurfaceView;->mSession:Landroid/view/IWindowSession;
@@ -2060,8 +2005,8 @@
 
     invoke-interface {v3, v4}, Landroid/view/IWindowSession;->finishDrawing(Landroid/view/IWindow;)V
 
-    .line 602
-    :cond_23
+    .line 566
+    :cond_22
     move-object/from16 v0, p0
 
     iget-object v3, v0, Landroid/view/SurfaceView;->mSession:Landroid/view/IWindowSession;
@@ -2071,10 +2016,48 @@
     iget-object v4, v0, Landroid/view/SurfaceView;->mWindow:Landroid/view/SurfaceView$MyWindow;
 
     invoke-interface {v3, v4}, Landroid/view/IWindowSession;->performDeferredDestroy(Landroid/view/IWindow;)V
-    :try_end_7
-    .catch Landroid/os/RemoteException; {:try_start_7 .. :try_end_7} :catch_0
 
     goto/16 :goto_0
+
+    .line 561
+    :catchall_1
+    move-exception v3
+
+    const/4 v4, 0x0
+
+    move-object/from16 v0, p0
+
+    iput-boolean v4, v0, Landroid/view/SurfaceView;->mIsCreating:Z
+
+    .line 562
+    if-eqz p2, :cond_23
+
+    .line 564
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Landroid/view/SurfaceView;->mSession:Landroid/view/IWindowSession;
+
+    move-object/from16 v0, p0
+
+    iget-object v5, v0, Landroid/view/SurfaceView;->mWindow:Landroid/view/SurfaceView$MyWindow;
+
+    invoke-interface {v4, v5}, Landroid/view/IWindowSession;->finishDrawing(Landroid/view/IWindow;)V
+
+    .line 566
+    :cond_23
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Landroid/view/SurfaceView;->mSession:Landroid/view/IWindowSession;
+
+    move-object/from16 v0, p0
+
+    iget-object v5, v0, Landroid/view/SurfaceView;->mWindow:Landroid/view/SurfaceView$MyWindow;
+
+    invoke-interface {v4, v5}, Landroid/view/IWindowSession;->performDeferredDestroy(Landroid/view/IWindow;)V
+
+    throw v3
+    :try_end_7
+    .catch Landroid/os/RemoteException; {:try_start_7 .. :try_end_7} :catch_0
 .end method
 
 
@@ -2084,14 +2067,14 @@
     .parameter "canvas"
 
     .prologue
-    .line 338
+    .line 323
     iget v0, p0, Landroid/view/SurfaceView;->mWindowType:I
 
     const/16 v1, 0x3e8
 
     if-eq v0, v1, :cond_0
 
-    .line 340
+    .line 325
     iget v0, p0, Landroid/view/View;->mPrivateFlags:I
 
     and-int/lit16 v0, v0, 0x80
@@ -2100,18 +2083,18 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 342
+    .line 327
     const/4 v0, 0x0
 
     sget-object v1, Landroid/graphics/PorterDuff$Mode;->CLEAR:Landroid/graphics/PorterDuff$Mode;
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->drawColor(ILandroid/graphics/PorterDuff$Mode;)V
 
-    .line 345
+    .line 330
     :cond_0
     invoke-super {p0, p1}, Landroid/view/View;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 346
+    .line 331
     return-void
 .end method
 
@@ -2120,32 +2103,32 @@
     .parameter "canvas"
 
     .prologue
-    .line 326
+    .line 311
     iget v0, p0, Landroid/view/SurfaceView;->mWindowType:I
 
     const/16 v1, 0x3e8
 
     if-eq v0, v1, :cond_0
 
-    .line 328
+    .line 313
     iget v0, p0, Landroid/view/View;->mPrivateFlags:I
 
     and-int/lit16 v0, v0, 0x80
 
     if-nez v0, :cond_0
 
-    .line 330
+    .line 315
     const/4 v0, 0x0
 
     sget-object v1, Landroid/graphics/PorterDuff$Mode;->CLEAR:Landroid/graphics/PorterDuff$Mode;
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->drawColor(ILandroid/graphics/PorterDuff$Mode;)V
 
-    .line 333
+    .line 318
     :cond_0
     invoke-super {p0, p1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
-    .line 334
+    .line 319
     return-void
 .end method
 
@@ -2154,28 +2137,28 @@
     .parameter "region"
 
     .prologue
-    .line 299
+    .line 284
     iget v0, p0, Landroid/view/SurfaceView;->mWindowType:I
 
     const/16 v3, 0x3e8
 
     if-ne v0, v3, :cond_1
 
-    .line 300
+    .line 285
     invoke-super {p0, p1}, Landroid/view/View;->gatherTransparentRegion(Landroid/graphics/Region;)Z
 
     move-result v7
 
-    .line 321
+    .line 306
     :cond_0
     :goto_0
     return v7
 
-    .line 303
+    .line 288
     :cond_1
     const/4 v7, 0x1
 
-    .line 304
+    .line 289
     .local v7, opaque:Z
     iget v0, p0, Landroid/view/View;->mPrivateFlags:I
 
@@ -2183,12 +2166,12 @@
 
     if-nez v0, :cond_3
 
-    .line 306
+    .line 291
     invoke-super {p0, p1}, Landroid/view/View;->gatherTransparentRegion(Landroid/graphics/Region;)Z
 
     move-result v7
 
-    .line 318
+    .line 303
     :cond_2
     :goto_1
     iget v0, p0, Landroid/view/SurfaceView;->mRequestedFormat:I
@@ -2199,45 +2182,45 @@
 
     if-eqz v0, :cond_0
 
-    .line 319
+    .line 304
     const/4 v7, 0x0
 
     goto :goto_0
 
-    .line 307
+    .line 292
     :cond_3
     if-eqz p1, :cond_2
 
-    .line 308
+    .line 293
     invoke-virtual {p0}, Landroid/view/SurfaceView;->getWidth()I
 
     move-result v8
 
-    .line 309
+    .line 294
     .local v8, w:I
     invoke-virtual {p0}, Landroid/view/SurfaceView;->getHeight()I
 
     move-result v6
 
-    .line 310
+    .line 295
     .local v6, h:I
     if-lez v8, :cond_2
 
     if-lez v6, :cond_2
 
-    .line 311
+    .line 296
     iget-object v0, p0, Landroid/view/SurfaceView;->mLocation:[I
 
     invoke-virtual {p0, v0}, Landroid/view/SurfaceView;->getLocationInWindow([I)V
 
-    .line 313
+    .line 298
     iget-object v0, p0, Landroid/view/SurfaceView;->mLocation:[I
 
     const/4 v3, 0x0
 
     aget v1, v0, v3
 
-    .line 314
+    .line 299
     .local v1, l:I
     iget-object v0, p0, Landroid/view/SurfaceView;->mLocation:[I
 
@@ -2245,7 +2228,7 @@
 
     aget v2, v0, v3
 
-    .line 315
+    .line 300
     .local v2, t:I
     add-int v3, v1, v8
 
@@ -2264,7 +2247,7 @@
     .locals 1
 
     .prologue
-    .line 206
+    .line 201
     iget-object v0, p0, Landroid/view/SurfaceView;->mSurfaceHolder:Landroid/view/SurfaceHolder;
 
     return-object v0
@@ -2276,10 +2259,10 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 623
+    .line 587
     invoke-direct {p0, v0, v0}, Landroid/view/SurfaceView;->updateWindow(ZZ)V
 
-    .line 624
+    .line 588
     return-void
 .end method
 
@@ -2289,7 +2272,7 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 634
+    .line 598
     iget v0, p0, Landroid/view/SurfaceView;->mRequestedWidth:I
 
     if-ne v0, v1, :cond_0
@@ -2316,22 +2299,22 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 211
+    .line 206
     invoke-super {p0}, Landroid/view/View;->onAttachedToWindow()V
 
-    .line 212
+    .line 207
     iget-object v1, p0, Landroid/view/View;->mParent:Landroid/view/ViewParent;
 
     invoke-interface {v1, p0}, Landroid/view/ViewParent;->requestTransparentRegion(Landroid/view/View;)V
 
-    .line 213
+    .line 208
     invoke-virtual {p0}, Landroid/view/SurfaceView;->getWindowSession()Landroid/view/IWindowSession;
 
     move-result-object v1
 
     iput-object v1, p0, Landroid/view/SurfaceView;->mSession:Landroid/view/IWindowSession;
 
-    .line 214
+    .line 209
     iget-object v1, p0, Landroid/view/SurfaceView;->mLayout:Landroid/view/WindowManager$LayoutParams;
 
     invoke-virtual {p0}, Landroid/view/SurfaceView;->getWindowToken()Landroid/os/IBinder;
@@ -2340,14 +2323,14 @@
 
     iput-object v3, v1, Landroid/view/WindowManager$LayoutParams;->token:Landroid/os/IBinder;
 
-    .line 215
+    .line 210
     iget-object v1, p0, Landroid/view/SurfaceView;->mLayout:Landroid/view/WindowManager$LayoutParams;
 
     const-string v3, "SurfaceView"
 
     invoke-virtual {v1, v3}, Landroid/view/WindowManager$LayoutParams;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 216
+    .line 211
     invoke-virtual {p0}, Landroid/view/SurfaceView;->getVisibility()I
 
     move-result v1
@@ -2359,36 +2342,36 @@
     :goto_0
     iput-boolean v1, p0, Landroid/view/SurfaceView;->mViewVisibility:Z
 
-    .line 218
+    .line 213
     iget-boolean v1, p0, Landroid/view/SurfaceView;->mGlobalListenersAdded:Z
 
     if-nez v1, :cond_0
 
-    .line 219
+    .line 214
     invoke-virtual {p0}, Landroid/view/SurfaceView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v0
 
-    .line 220
+    .line 215
     .local v0, observer:Landroid/view/ViewTreeObserver;
     iget-object v1, p0, Landroid/view/SurfaceView;->mScrollChangedListener:Landroid/view/ViewTreeObserver$OnScrollChangedListener;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->addOnScrollChangedListener(Landroid/view/ViewTreeObserver$OnScrollChangedListener;)V
 
-    .line 221
+    .line 216
     iget-object v1, p0, Landroid/view/SurfaceView;->mDrawListener:Landroid/view/ViewTreeObserver$OnPreDrawListener;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->addOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 222
+    .line 217
     iput-boolean v2, p0, Landroid/view/SurfaceView;->mGlobalListenersAdded:Z
 
-    .line 224
+    .line 219
     .end local v0           #observer:Landroid/view/ViewTreeObserver;
     :cond_0
     return-void
 
-    .line 216
+    .line 211
     :cond_1
     const/4 v1, 0x0
 
@@ -2403,47 +2386,47 @@
 
     const/4 v2, 0x0
 
-    .line 254
+    .line 239
     iget-boolean v1, p0, Landroid/view/SurfaceView;->mGlobalListenersAdded:Z
 
     if-eqz v1, :cond_0
 
-    .line 255
+    .line 240
     invoke-virtual {p0}, Landroid/view/SurfaceView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v0
 
-    .line 256
+    .line 241
     .local v0, observer:Landroid/view/ViewTreeObserver;
     iget-object v1, p0, Landroid/view/SurfaceView;->mScrollChangedListener:Landroid/view/ViewTreeObserver$OnScrollChangedListener;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->removeOnScrollChangedListener(Landroid/view/ViewTreeObserver$OnScrollChangedListener;)V
 
-    .line 257
+    .line 242
     iget-object v1, p0, Landroid/view/SurfaceView;->mDrawListener:Landroid/view/ViewTreeObserver$OnPreDrawListener;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 258
+    .line 243
     iput-boolean v2, p0, Landroid/view/SurfaceView;->mGlobalListenersAdded:Z
 
-    .line 261
+    .line 246
     .end local v0           #observer:Landroid/view/ViewTreeObserver;
     :cond_0
     iput-boolean v2, p0, Landroid/view/SurfaceView;->mRequestedVisible:Z
 
-    .line 262
+    .line 247
     invoke-direct {p0, v2, v2}, Landroid/view/SurfaceView;->updateWindow(ZZ)V
 
-    .line 263
+    .line 248
     iput-boolean v2, p0, Landroid/view/SurfaceView;->mHaveFrame:Z
 
-    .line 264
+    .line 249
     iget-object v1, p0, Landroid/view/SurfaceView;->mWindow:Landroid/view/SurfaceView$MyWindow;
 
     if-eqz v1, :cond_1
 
-    .line 266
+    .line 251
     :try_start_0
     iget-object v1, p0, Landroid/view/SurfaceView;->mSession:Landroid/view/IWindowSession;
 
@@ -2453,26 +2436,26 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 270
+    .line 255
     :goto_0
     iput-object v3, p0, Landroid/view/SurfaceView;->mWindow:Landroid/view/SurfaceView$MyWindow;
 
-    .line 272
+    .line 257
     :cond_1
     iput-object v3, p0, Landroid/view/SurfaceView;->mSession:Landroid/view/IWindowSession;
 
-    .line 273
+    .line 258
     iget-object v1, p0, Landroid/view/SurfaceView;->mLayout:Landroid/view/WindowManager$LayoutParams;
 
     iput-object v3, v1, Landroid/view/WindowManager$LayoutParams;->token:Landroid/os/IBinder;
 
-    .line 275
+    .line 260
     invoke-super {p0}, Landroid/view/View;->onDetachedFromWindow()V
 
-    .line 276
+    .line 261
     return-void
 
-    .line 267
+    .line 252
     :catch_0
     move-exception v1
 
@@ -2487,7 +2470,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 280
+    .line 265
     iget v2, p0, Landroid/view/SurfaceView;->mRequestedWidth:I
 
     if-ltz v2, :cond_0
@@ -2498,7 +2481,7 @@
 
     move-result v1
 
-    .line 283
+    .line 268
     .local v1, width:I
     :goto_0
     iget v2, p0, Landroid/view/SurfaceView;->mRequestedHeight:I
@@ -2511,15 +2494,15 @@
 
     move-result v0
 
-    .line 286
+    .line 271
     .local v0, height:I
     :goto_1
     invoke-virtual {p0, v1, v0}, Landroid/view/SurfaceView;->setMeasuredDimension(II)V
 
-    .line 287
+    .line 272
     return-void
 
-    .line 280
+    .line 265
     .end local v0           #height:I
     .end local v1           #width:I
     :cond_0
@@ -2529,7 +2512,7 @@
 
     goto :goto_0
 
-    .line 283
+    .line 268
     .restart local v1       #width:I
     :cond_1
     invoke-static {v3, p2}, Landroid/view/SurfaceView;->getDefaultSize(II)I
@@ -2548,10 +2531,10 @@
 
     const/4 v2, 0x0
 
-    .line 228
+    .line 223
     invoke-super {p0, p1}, Landroid/view/View;->onWindowVisibilityChanged(I)V
 
-    .line 229
+    .line 224
     if-nez p1, :cond_0
 
     move v0, v1
@@ -2559,7 +2542,7 @@
     :goto_0
     iput-boolean v0, p0, Landroid/view/SurfaceView;->mWindowVisibility:Z
 
-    .line 230
+    .line 225
     iget-boolean v0, p0, Landroid/view/SurfaceView;->mWindowVisibility:Z
 
     if-eqz v0, :cond_1
@@ -2571,22 +2554,22 @@
     :goto_1
     iput-boolean v1, p0, Landroid/view/SurfaceView;->mRequestedVisible:Z
 
-    .line 231
+    .line 226
     invoke-direct {p0, v2, v2}, Landroid/view/SurfaceView;->updateWindow(ZZ)V
 
-    .line 232
+    .line 227
     return-void
 
     :cond_0
     move v0, v2
 
-    .line 229
+    .line 224
     goto :goto_0
 
     :cond_1
     move v1, v2
 
-    .line 230
+    .line 225
     goto :goto_1
 .end method
 
@@ -2600,115 +2583,67 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 292
+    .line 277
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->setFrame(IIII)Z
 
     move-result v0
 
-    .line 293
+    .line 278
     .local v0, result:Z
     invoke-direct {p0, v1, v1}, Landroid/view/SurfaceView;->updateWindow(ZZ)V
 
-    .line 294
+    .line 279
     return v0
 .end method
 
-.method public setSecure(Z)V
-    .locals 2
-    .parameter "isSecure"
-
-    .prologue
-    .line 402
-    if-eqz p1, :cond_0
-
-    .line 403
-    iget-object v0, p0, Landroid/view/SurfaceView;->mLayout:Landroid/view/WindowManager$LayoutParams;
-
-    iget v1, v0, Landroid/view/WindowManager$LayoutParams;->flags:I
-
-    or-int/lit16 v1, v1, 0x2000
-
-    iput v1, v0, Landroid/view/WindowManager$LayoutParams;->flags:I
-
-    .line 407
-    :goto_0
-    return-void
-
-    .line 405
-    :cond_0
-    iget-object v0, p0, Landroid/view/SurfaceView;->mLayout:Landroid/view/WindowManager$LayoutParams;
-
-    iget v1, v0, Landroid/view/WindowManager$LayoutParams;->flags:I
-
-    and-int/lit16 v1, v1, -0x2001
-
-    iput v1, v0, Landroid/view/WindowManager$LayoutParams;->flags:I
-
-    goto :goto_0
-.end method
-
 .method public setVisibility(I)V
-    .locals 4
+    .locals 3
     .parameter "visibility"
 
     .prologue
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    .line 236
+    .line 231
     invoke-super {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 237
-    if-nez p1, :cond_1
+    .line 232
+    if-nez p1, :cond_0
 
-    move v1, v2
+    move v0, v1
 
     :goto_0
-    iput-boolean v1, p0, Landroid/view/SurfaceView;->mViewVisibility:Z
+    iput-boolean v0, p0, Landroid/view/SurfaceView;->mViewVisibility:Z
 
-    .line 238
-    iget-boolean v1, p0, Landroid/view/SurfaceView;->mWindowVisibility:Z
+    .line 233
+    iget-boolean v0, p0, Landroid/view/SurfaceView;->mWindowVisibility:Z
 
-    if-eqz v1, :cond_2
+    if-eqz v0, :cond_1
 
-    iget-boolean v1, p0, Landroid/view/SurfaceView;->mViewVisibility:Z
+    iget-boolean v0, p0, Landroid/view/SurfaceView;->mViewVisibility:Z
 
-    if-eqz v1, :cond_2
+    if-eqz v0, :cond_1
 
-    move v0, v2
-
-    .line 239
-    .local v0, newRequestedVisible:Z
     :goto_1
-    iget-boolean v1, p0, Landroid/view/SurfaceView;->mRequestedVisible:Z
+    iput-boolean v1, p0, Landroid/view/SurfaceView;->mRequestedVisible:Z
 
-    if-eq v0, v1, :cond_0
+    .line 234
+    invoke-direct {p0, v2, v2}, Landroid/view/SurfaceView;->updateWindow(ZZ)V
 
-    .line 246
-    invoke-virtual {p0}, Landroid/view/SurfaceView;->requestLayout()V
-
-    .line 248
-    :cond_0
-    iput-boolean v0, p0, Landroid/view/SurfaceView;->mRequestedVisible:Z
-
-    .line 249
-    invoke-direct {p0, v3, v3}, Landroid/view/SurfaceView;->updateWindow(ZZ)V
-
-    .line 250
+    .line 235
     return-void
 
-    .end local v0           #newRequestedVisible:Z
-    :cond_1
-    move v1, v3
+    :cond_0
+    move v0, v2
 
-    .line 237
+    .line 232
     goto :goto_0
 
-    :cond_2
-    move v0, v3
+    :cond_1
+    move v1, v2
 
-    .line 238
+    .line 233
     goto :goto_1
 .end method
 
@@ -2717,10 +2652,10 @@
     .parameter "type"
 
     .prologue
-    .line 415
+    .line 380
     iput p1, p0, Landroid/view/SurfaceView;->mWindowType:I
 
-    .line 416
+    .line 381
     return-void
 .end method
 
@@ -2729,7 +2664,7 @@
     .parameter "isMediaOverlay"
 
     .prologue
-    .line 360
+    .line 345
     if-eqz p1, :cond_0
 
     const/16 v0, 0x3ec
@@ -2737,10 +2672,10 @@
     :goto_0
     iput v0, p0, Landroid/view/SurfaceView;->mWindowType:I
 
-    .line 363
+    .line 348
     return-void
 
-    .line 360
+    .line 345
     :cond_0
     const/16 v0, 0x3e9
 
@@ -2752,15 +2687,15 @@
     .parameter "onTop"
 
     .prologue
-    .line 379
+    .line 364
     if-eqz p1, :cond_0
 
-    .line 380
+    .line 365
     const/16 v0, 0x3e8
 
     iput v0, p0, Landroid/view/SurfaceView;->mWindowType:I
 
-    .line 382
+    .line 367
     iget-object v0, p0, Landroid/view/SurfaceView;->mLayout:Landroid/view/WindowManager$LayoutParams;
 
     iget v1, v0, Landroid/view/WindowManager$LayoutParams;->flags:I
@@ -2771,17 +2706,17 @@
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->flags:I
 
-    .line 387
+    .line 372
     :goto_0
     return-void
 
-    .line 384
+    .line 369
     :cond_0
     const/16 v0, 0x3e9
 
     iput v0, p0, Landroid/view/SurfaceView;->mWindowType:I
 
-    .line 385
+    .line 370
     iget-object v0, p0, Landroid/view/SurfaceView;->mLayout:Landroid/view/WindowManager$LayoutParams;
 
     iget v1, v0, Landroid/view/WindowManager$LayoutParams;->flags:I

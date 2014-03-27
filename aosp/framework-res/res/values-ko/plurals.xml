@@ -67,18 +67,6 @@
         <item quantity="other">%d일 후</item>
         <item quantity="one">내일</item>
     </plurals>
-    <plurals name="duration_seconds">
-        <item quantity="other">%d초</item>
-        <item quantity="one">1초</item>
-    </plurals>
-    <plurals name="duration_minutes">
-        <item quantity="other">%d분</item>
-        <item quantity="one">1분</item>
-    </plurals>
-    <plurals name="duration_hours">
-        <item quantity="other">%d시간</item>
-        <item quantity="one">1시간</item>
-    </plurals>
     <plurals name="wifi_available">
         <item quantity="other">Wi-Fi 네트워크 사용 가능</item>
         <item quantity="one">Wi-Fi 네트워크 사용 가능</item>

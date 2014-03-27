@@ -32,7 +32,7 @@
 
 .field public static final META_SELECTING:I = 0x800
 
-.field private static final META_SHIFT_MASK:J = 0x1010100000101L
+.field private static final META_SHIFT_MASK:J = #attr@transcriptMode#t000101L
 
 .field public static final META_SHIFT_ON:I = 0x1
 
@@ -151,7 +151,7 @@
     .parameter "state"
 
     .prologue
-    const-wide v2, -0x1010100000102L
+    const-wide v2, -#attr@transcriptMode#t000102L
 
     const-wide v8, -0x2020200000203L
 
@@ -773,7 +773,7 @@
     :cond_0
     const/4 v2, 0x1
 
-    const-wide v3, 0x1010100000101L
+    const-wide v3, #attr@transcriptMode#t000101L
 
     const-wide/16 v5, 0x100
 
@@ -880,7 +880,7 @@
     :cond_0
     const/4 v2, 0x1
 
-    const-wide v3, 0x1010100000101L
+    const-wide v3, #attr@transcriptMode#t000101L
 
     const-wide v5, 0x10000000000L
 
@@ -1361,7 +1361,7 @@
     if-eqz v0, :cond_0
 
     .line 375
-    const-wide v0, -0x1010100000102L
+    const-wide v0, -#attr@transcriptMode#t000102L
 
     and-long/2addr p0, v0
 
@@ -1516,7 +1516,7 @@
     if-eqz v0, :cond_0
 
     .line 565
-    const-wide v0, -0x1010100000102L
+    const-wide v0, -#attr@transcriptMode#t000102L
 
     and-long/2addr p1, v0
 

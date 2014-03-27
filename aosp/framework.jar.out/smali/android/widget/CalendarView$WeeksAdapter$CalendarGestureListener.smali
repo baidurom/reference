@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 1471
+    .line 1157
     iput-object p1, p0, Landroid/widget/CalendarView$WeeksAdapter$CalendarGestureListener;->this$1:Landroid/widget/CalendarView$WeeksAdapter;
 
     invoke-direct {p0}, Landroid/view/GestureDetector$SimpleOnGestureListener;-><init>()V
@@ -39,7 +39,7 @@
     .parameter "e"
 
     .prologue
-    .line 1474
+    .line 1160
     const/4 v0, 0x1
 
     return v0

@@ -28,7 +28,7 @@
     .locals 2
 
     .prologue
-    .line 648
+    .line 646
     sget-object v0, Landroid/provider/ContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string/jumbo v1, "syncstate"
@@ -46,7 +46,7 @@
     .locals 0
 
     .prologue
-    .line 640
+    .line 638
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -63,7 +63,7 @@
     .end annotation
 
     .prologue
-    .line 656
+    .line 654
     sget-object v0, Landroid/provider/ContactsContract$SyncState;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-static {p0, v0, p1}, Landroid/provider/SyncStateContract$Helpers;->get(Landroid/content/ContentProviderClient;Landroid/net/Uri;Landroid/accounts/Account;)[B
@@ -97,7 +97,7 @@
     .end annotation
 
     .prologue
-    .line 664
+    .line 662
     sget-object v0, Landroid/provider/ContactsContract$SyncState;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-static {p0, v0, p1}, Landroid/provider/SyncStateContract$Helpers;->getWithUri(Landroid/content/ContentProviderClient;Landroid/net/Uri;Landroid/accounts/Account;)Landroid/util/Pair;
@@ -113,7 +113,7 @@
     .parameter "data"
 
     .prologue
-    .line 679
+    .line 677
     sget-object v0, Landroid/provider/ContactsContract$SyncState;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-static {v0, p0, p1}, Landroid/provider/SyncStateContract$Helpers;->newSetOperation(Landroid/net/Uri;Landroid/accounts/Account;[B)Landroid/content/ContentProviderOperation;
@@ -135,11 +135,11 @@
     .end annotation
 
     .prologue
-    .line 672
+    .line 670
     sget-object v0, Landroid/provider/ContactsContract$SyncState;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-static {p0, v0, p1, p2}, Landroid/provider/SyncStateContract$Helpers;->set(Landroid/content/ContentProviderClient;Landroid/net/Uri;Landroid/accounts/Account;[B)V
 
-    .line 673
+    .line 671
     return-void
 .end method

@@ -23,11 +23,7 @@
 
 .field private mFocusDay:[Z
 
-.field private mHasFocusedDay:Z
-
 .field private mHasSelectedDay:Z
-
-.field private mHasUnfocusedDay:Z
 
 .field private mHeight:I
 
@@ -63,279 +59,217 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 1541
+    .line 1221
     iput-object p1, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
 
-    .line 1542
+    .line 1222
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 1489
+    .line 1175
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/widget/CalendarView$WeekView;->mTempRect:Landroid/graphics/Rect;
 
-    .line 1491
+    .line 1177
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Landroid/widget/CalendarView$WeekView;->mDrawPaint:Landroid/graphics/Paint;
 
-    .line 1493
+    .line 1179
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Landroid/widget/CalendarView$WeekView;->mMonthNumDrawPaint:Landroid/graphics/Paint;
 
-    .line 1511
+    .line 1191
     iput v1, p0, Landroid/widget/CalendarView$WeekView;->mMonthOfFirstWeekDay:I
 
-    .line 1514
+    .line 1194
     iput v1, p0, Landroid/widget/CalendarView$WeekView;->mLastWeekDayMonth:I
 
-    .line 1518
+    .line 1198
     iput v1, p0, Landroid/widget/CalendarView$WeekView;->mWeek:I
 
-    .line 1527
+    .line 1207
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/widget/CalendarView$WeekView;->mHasSelectedDay:Z
 
-    .line 1530
+    .line 1210
     iput v1, p0, Landroid/widget/CalendarView$WeekView;->mSelectedDay:I
 
-    .line 1536
+    .line 1216
     iput v1, p0, Landroid/widget/CalendarView$WeekView;->mSelectedLeft:I
 
-    .line 1539
+    .line 1219
     iput v1, p0, Landroid/widget/CalendarView$WeekView;->mSelectedRight:I
 
-    .line 1545
-    invoke-direct {p0}, Landroid/widget/CalendarView$WeekView;->initilaizePaints()V
+    .line 1224
+    #getter for: Landroid/widget/CalendarView;->mListView:Landroid/widget/ListView;
+    invoke-static {p1}, Landroid/widget/CalendarView;->access$1800(Landroid/widget/CalendarView;)Landroid/widget/ListView;
 
-    .line 1546
-    return-void
-.end method
+    move-result-object v0
 
-.method static synthetic access$100(Landroid/widget/CalendarView$WeekView;)Z
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 1487
-    iget-boolean v0, p0, Landroid/widget/CalendarView$WeekView;->mHasSelectedDay:Z
-
-    return v0
-.end method
-
-.method static synthetic access$200(Landroid/widget/CalendarView$WeekView;)Z
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 1487
-    iget-boolean v0, p0, Landroid/widget/CalendarView$WeekView;->mHasFocusedDay:Z
-
-    return v0
-.end method
-
-.method static synthetic access$300(Landroid/widget/CalendarView$WeekView;)Z
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 1487
-    iget-boolean v0, p0, Landroid/widget/CalendarView$WeekView;->mHasUnfocusedDay:Z
-
-    return v0
-.end method
-
-.method private drawBackground(Landroid/graphics/Canvas;)V
-    .locals 5
-    .parameter "canvas"
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 1708
-    iget-boolean v2, p0, Landroid/widget/CalendarView$WeekView;->mHasSelectedDay:Z
-
-    if-nez v2, :cond_0
-
-    .line 1735
-    :goto_0
-    return-void
-
-    .line 1711
-    :cond_0
-    iget-object v2, p0, Landroid/widget/CalendarView$WeekView;->mDrawPaint:Landroid/graphics/Paint;
-
-    iget-object v3, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
-
-    #getter for: Landroid/widget/CalendarView;->mSelectedWeekBackgroundColor:I
-    invoke-static {v3}, Landroid/widget/CalendarView;->access$2700(Landroid/widget/CalendarView;)I
-
-    move-result v3
-
-    invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setColor(I)V
-
-    .line 1713
-    iget-object v2, p0, Landroid/widget/CalendarView$WeekView;->mTempRect:Landroid/graphics/Rect;
-
-    iget-object v3, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
-
-    #getter for: Landroid/widget/CalendarView;->mWeekSeperatorLineWidth:I
-    invoke-static {v3}, Landroid/widget/CalendarView;->access$2800(Landroid/widget/CalendarView;)I
-
-    move-result v3
-
-    iput v3, v2, Landroid/graphics/Rect;->top:I
-
-    .line 1714
-    iget-object v2, p0, Landroid/widget/CalendarView$WeekView;->mTempRect:Landroid/graphics/Rect;
-
-    iget v3, p0, Landroid/widget/CalendarView$WeekView;->mHeight:I
-
-    iput v3, v2, Landroid/graphics/Rect;->bottom:I
-
-    .line 1716
-    invoke-virtual {p0}, Landroid/widget/CalendarView$WeekView;->isLayoutRtl()Z
+    invoke-virtual {v0}, Landroid/widget/ListView;->getHeight()I
 
     move-result v0
 
-    .line 1718
-    .local v0, isLayoutRtl:Z
-    if-eqz v0, :cond_1
+    #getter for: Landroid/widget/CalendarView;->mListView:Landroid/widget/ListView;
+    invoke-static {p1}, Landroid/widget/CalendarView;->access$1800(Landroid/widget/CalendarView;)Landroid/widget/ListView;
 
-    .line 1719
-    iget-object v2, p0, Landroid/widget/CalendarView$WeekView;->mTempRect:Landroid/graphics/Rect;
+    move-result-object v1
 
-    iput v1, v2, Landroid/graphics/Rect;->left:I
-
-    .line 1720
-    iget-object v1, p0, Landroid/widget/CalendarView$WeekView;->mTempRect:Landroid/graphics/Rect;
-
-    iget v2, p0, Landroid/widget/CalendarView$WeekView;->mSelectedLeft:I
-
-    add-int/lit8 v2, v2, -0x2
-
-    iput v2, v1, Landroid/graphics/Rect;->right:I
-
-    .line 1725
-    :goto_1
-    iget-object v1, p0, Landroid/widget/CalendarView$WeekView;->mTempRect:Landroid/graphics/Rect;
-
-    iget-object v2, p0, Landroid/widget/CalendarView$WeekView;->mDrawPaint:Landroid/graphics/Paint;
-
-    invoke-virtual {p1, v1, v2}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/Rect;Landroid/graphics/Paint;)V
-
-    .line 1727
-    if-eqz v0, :cond_4
-
-    .line 1728
-    iget-object v1, p0, Landroid/widget/CalendarView$WeekView;->mTempRect:Landroid/graphics/Rect;
-
-    iget v2, p0, Landroid/widget/CalendarView$WeekView;->mSelectedRight:I
-
-    add-int/lit8 v2, v2, 0x3
-
-    iput v2, v1, Landroid/graphics/Rect;->left:I
-
-    .line 1729
-    iget-object v2, p0, Landroid/widget/CalendarView$WeekView;->mTempRect:Landroid/graphics/Rect;
-
-    iget-object v1, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
-
-    #getter for: Landroid/widget/CalendarView;->mShowWeekNumber:Z
-    invoke-static {v1}, Landroid/widget/CalendarView;->access$2400(Landroid/widget/CalendarView;)Z
+    invoke-virtual {v1}, Landroid/widget/ListView;->getPaddingTop()I
 
     move-result v1
 
-    if-eqz v1, :cond_3
+    sub-int/2addr v0, v1
+
+    #getter for: Landroid/widget/CalendarView;->mListView:Landroid/widget/ListView;
+    invoke-static {p1}, Landroid/widget/CalendarView;->access$1800(Landroid/widget/CalendarView;)Landroid/widget/ListView;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/widget/ListView;->getPaddingBottom()I
+
+    move-result v1
+
+    sub-int/2addr v0, v1
+
+    #getter for: Landroid/widget/CalendarView;->mShownWeekCount:I
+    invoke-static {p1}, Landroid/widget/CalendarView;->access$2100(Landroid/widget/CalendarView;)I
+
+    move-result v1
+
+    div-int/2addr v0, v1
+
+    iput v0, p0, Landroid/widget/CalendarView$WeekView;->mHeight:I
+
+    .line 1228
+    invoke-direct {p0}, Landroid/widget/CalendarView$WeekView;->setPaintProperties()V
+
+    .line 1229
+    return-void
+.end method
+
+.method private drawBackground(Landroid/graphics/Canvas;)V
+    .locals 3
+    .parameter "canvas"
+
+    .prologue
+    .line 1369
+    iget-boolean v0, p0, Landroid/widget/CalendarView$WeekView;->mHasSelectedDay:Z
+
+    if-nez v0, :cond_0
+
+    .line 1383
+    :goto_0
+    return-void
+
+    .line 1372
+    :cond_0
+    iget-object v0, p0, Landroid/widget/CalendarView$WeekView;->mDrawPaint:Landroid/graphics/Paint;
+
+    iget-object v1, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
+
+    #getter for: Landroid/widget/CalendarView;->mSelectedWeekBackgroundColor:I
+    invoke-static {v1}, Landroid/widget/CalendarView;->access$2600(Landroid/widget/CalendarView;)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
+
+    .line 1374
+    iget-object v0, p0, Landroid/widget/CalendarView$WeekView;->mTempRect:Landroid/graphics/Rect;
+
+    iget-object v1, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
+
+    #getter for: Landroid/widget/CalendarView;->mWeekSeperatorLineWidth:I
+    invoke-static {v1}, Landroid/widget/CalendarView;->access$2700(Landroid/widget/CalendarView;)I
+
+    move-result v1
+
+    iput v1, v0, Landroid/graphics/Rect;->top:I
+
+    .line 1375
+    iget-object v0, p0, Landroid/widget/CalendarView$WeekView;->mTempRect:Landroid/graphics/Rect;
+
+    iget v1, p0, Landroid/widget/CalendarView$WeekView;->mHeight:I
+
+    iput v1, v0, Landroid/graphics/Rect;->bottom:I
+
+    .line 1376
+    iget-object v1, p0, Landroid/widget/CalendarView$WeekView;->mTempRect:Landroid/graphics/Rect;
+
+    iget-object v0, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
+
+    #getter for: Landroid/widget/CalendarView;->mShowWeekNumber:Z
+    invoke-static {v0}, Landroid/widget/CalendarView;->access$2200(Landroid/widget/CalendarView;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget v0, p0, Landroid/widget/CalendarView$WeekView;->mWidth:I
+
+    iget v2, p0, Landroid/widget/CalendarView$WeekView;->mNumCells:I
+
+    div-int/2addr v0, v2
+
+    :goto_1
+    iput v0, v1, Landroid/graphics/Rect;->left:I
+
+    .line 1377
+    iget-object v0, p0, Landroid/widget/CalendarView$WeekView;->mTempRect:Landroid/graphics/Rect;
+
+    iget v1, p0, Landroid/widget/CalendarView$WeekView;->mSelectedLeft:I
+
+    add-int/lit8 v1, v1, -0x2
+
+    iput v1, v0, Landroid/graphics/Rect;->right:I
+
+    .line 1378
+    iget-object v0, p0, Landroid/widget/CalendarView$WeekView;->mTempRect:Landroid/graphics/Rect;
+
+    iget-object v1, p0, Landroid/widget/CalendarView$WeekView;->mDrawPaint:Landroid/graphics/Paint;
+
+    invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/Rect;Landroid/graphics/Paint;)V
+
+    .line 1380
+    iget-object v0, p0, Landroid/widget/CalendarView$WeekView;->mTempRect:Landroid/graphics/Rect;
+
+    iget v1, p0, Landroid/widget/CalendarView$WeekView;->mSelectedRight:I
+
+    add-int/lit8 v1, v1, 0x3
+
+    iput v1, v0, Landroid/graphics/Rect;->left:I
+
+    .line 1381
+    iget-object v0, p0, Landroid/widget/CalendarView$WeekView;->mTempRect:Landroid/graphics/Rect;
 
     iget v1, p0, Landroid/widget/CalendarView$WeekView;->mWidth:I
 
-    iget v3, p0, Landroid/widget/CalendarView$WeekView;->mWidth:I
+    iput v1, v0, Landroid/graphics/Rect;->right:I
 
-    iget v4, p0, Landroid/widget/CalendarView$WeekView;->mNumCells:I
+    .line 1382
+    iget-object v0, p0, Landroid/widget/CalendarView$WeekView;->mTempRect:Landroid/graphics/Rect;
 
-    div-int/2addr v3, v4
+    iget-object v1, p0, Landroid/widget/CalendarView$WeekView;->mDrawPaint:Landroid/graphics/Paint;
 
-    sub-int/2addr v1, v3
-
-    :goto_2
-    iput v1, v2, Landroid/graphics/Rect;->right:I
-
-    .line 1734
-    :goto_3
-    iget-object v1, p0, Landroid/widget/CalendarView$WeekView;->mTempRect:Landroid/graphics/Rect;
-
-    iget-object v2, p0, Landroid/widget/CalendarView$WeekView;->mDrawPaint:Landroid/graphics/Paint;
-
-    invoke-virtual {p1, v1, v2}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/Rect;Landroid/graphics/Paint;)V
+    invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/Rect;Landroid/graphics/Paint;)V
 
     goto :goto_0
 
-    .line 1722
+    .line 1376
     :cond_1
-    iget-object v2, p0, Landroid/widget/CalendarView$WeekView;->mTempRect:Landroid/graphics/Rect;
-
-    iget-object v3, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
-
-    #getter for: Landroid/widget/CalendarView;->mShowWeekNumber:Z
-    invoke-static {v3}, Landroid/widget/CalendarView;->access$2400(Landroid/widget/CalendarView;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    iget v1, p0, Landroid/widget/CalendarView$WeekView;->mWidth:I
-
-    iget v3, p0, Landroid/widget/CalendarView$WeekView;->mNumCells:I
-
-    div-int/2addr v1, v3
-
-    :cond_2
-    iput v1, v2, Landroid/graphics/Rect;->left:I
-
-    .line 1723
-    iget-object v1, p0, Landroid/widget/CalendarView$WeekView;->mTempRect:Landroid/graphics/Rect;
-
-    iget v2, p0, Landroid/widget/CalendarView$WeekView;->mSelectedLeft:I
-
-    add-int/lit8 v2, v2, -0x2
-
-    iput v2, v1, Landroid/graphics/Rect;->right:I
+    const/4 v0, 0x0
 
     goto :goto_1
-
-    .line 1729
-    :cond_3
-    iget v1, p0, Landroid/widget/CalendarView$WeekView;->mWidth:I
-
-    goto :goto_2
-
-    .line 1731
-    :cond_4
-    iget-object v1, p0, Landroid/widget/CalendarView$WeekView;->mTempRect:Landroid/graphics/Rect;
-
-    iget v2, p0, Landroid/widget/CalendarView$WeekView;->mSelectedRight:I
-
-    add-int/lit8 v2, v2, 0x3
-
-    iput v2, v1, Landroid/graphics/Rect;->left:I
-
-    .line 1732
-    iget-object v1, p0, Landroid/widget/CalendarView$WeekView;->mTempRect:Landroid/graphics/Rect;
-
-    iget v2, p0, Landroid/widget/CalendarView$WeekView;->mWidth:I
-
-    iput v2, v1, Landroid/graphics/Rect;->right:I
-
-    goto :goto_3
 .end method
 
 .method private drawSelectedDateVerticalBars(Landroid/graphics/Canvas;)V
@@ -343,21 +277,21 @@
     .parameter "canvas"
 
     .prologue
-    .line 1815
+    .line 1438
     iget-boolean v0, p0, Landroid/widget/CalendarView$WeekView;->mHasSelectedDay:Z
 
     if-nez v0, :cond_0
 
-    .line 1826
+    .line 1449
     :goto_0
     return-void
 
-    .line 1818
+    .line 1441
     :cond_0
     iget-object v0, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
 
     #getter for: Landroid/widget/CalendarView;->mSelectedDateVerticalBar:Landroid/graphics/drawable/Drawable;
-    invoke-static {v0}, Landroid/widget/CalendarView;->access$3400(Landroid/widget/CalendarView;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0}, Landroid/widget/CalendarView;->access$3200(Landroid/widget/CalendarView;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -366,7 +300,7 @@
     iget-object v2, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
 
     #getter for: Landroid/widget/CalendarView;->mSelectedDateVerticalBarWidth:I
-    invoke-static {v2}, Landroid/widget/CalendarView;->access$3300(Landroid/widget/CalendarView;)I
+    invoke-static {v2}, Landroid/widget/CalendarView;->access$3100(Landroid/widget/CalendarView;)I
 
     move-result v2
 
@@ -377,7 +311,7 @@
     iget-object v2, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
 
     #getter for: Landroid/widget/CalendarView;->mWeekSeperatorLineWidth:I
-    invoke-static {v2}, Landroid/widget/CalendarView;->access$2800(Landroid/widget/CalendarView;)I
+    invoke-static {v2}, Landroid/widget/CalendarView;->access$2700(Landroid/widget/CalendarView;)I
 
     move-result v2
 
@@ -386,7 +320,7 @@
     iget-object v4, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
 
     #getter for: Landroid/widget/CalendarView;->mSelectedDateVerticalBarWidth:I
-    invoke-static {v4}, Landroid/widget/CalendarView;->access$3300(Landroid/widget/CalendarView;)I
+    invoke-static {v4}, Landroid/widget/CalendarView;->access$3100(Landroid/widget/CalendarView;)I
 
     move-result v4
 
@@ -398,21 +332,21 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 1821
+    .line 1444
     iget-object v0, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
 
     #getter for: Landroid/widget/CalendarView;->mSelectedDateVerticalBar:Landroid/graphics/drawable/Drawable;
-    invoke-static {v0}, Landroid/widget/CalendarView;->access$3400(Landroid/widget/CalendarView;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0}, Landroid/widget/CalendarView;->access$3200(Landroid/widget/CalendarView;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1822
+    .line 1445
     iget-object v0, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
 
     #getter for: Landroid/widget/CalendarView;->mSelectedDateVerticalBar:Landroid/graphics/drawable/Drawable;
-    invoke-static {v0}, Landroid/widget/CalendarView;->access$3400(Landroid/widget/CalendarView;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0}, Landroid/widget/CalendarView;->access$3200(Landroid/widget/CalendarView;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -421,7 +355,7 @@
     iget-object v2, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
 
     #getter for: Landroid/widget/CalendarView;->mSelectedDateVerticalBarWidth:I
-    invoke-static {v2}, Landroid/widget/CalendarView;->access$3300(Landroid/widget/CalendarView;)I
+    invoke-static {v2}, Landroid/widget/CalendarView;->access$3100(Landroid/widget/CalendarView;)I
 
     move-result v2
 
@@ -432,7 +366,7 @@
     iget-object v2, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
 
     #getter for: Landroid/widget/CalendarView;->mWeekSeperatorLineWidth:I
-    invoke-static {v2}, Landroid/widget/CalendarView;->access$2800(Landroid/widget/CalendarView;)I
+    invoke-static {v2}, Landroid/widget/CalendarView;->access$2700(Landroid/widget/CalendarView;)I
 
     move-result v2
 
@@ -441,7 +375,7 @@
     iget-object v4, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
 
     #getter for: Landroid/widget/CalendarView;->mSelectedDateVerticalBarWidth:I
-    invoke-static {v4}, Landroid/widget/CalendarView;->access$3300(Landroid/widget/CalendarView;)I
+    invoke-static {v4}, Landroid/widget/CalendarView;->access$3100(Landroid/widget/CalendarView;)I
 
     move-result v4
 
@@ -453,11 +387,11 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 1825
+    .line 1448
     iget-object v0, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
 
     #getter for: Landroid/widget/CalendarView;->mSelectedDateVerticalBar:Landroid/graphics/drawable/Drawable;
-    invoke-static {v0}, Landroid/widget/CalendarView;->access$3400(Landroid/widget/CalendarView;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0}, Landroid/widget/CalendarView;->access$3200(Landroid/widget/CalendarView;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -466,21 +400,19 @@
     goto :goto_0
 .end method
 
-.method private drawWeekNumbersAndDates(Landroid/graphics/Canvas;)V
-    .locals 11
+.method private drawWeekNumbers(Landroid/graphics/Canvas;)V
+    .locals 10
     .parameter "canvas"
 
     .prologue
-    const/4 v10, 0x0
-
-    .line 1743
+    .line 1391
     iget-object v6, p0, Landroid/widget/CalendarView$WeekView;->mDrawPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v6}, Landroid/graphics/Paint;->getTextSize()F
 
     move-result v3
 
-    .line 1744
+    .line 1392
     .local v3, textHeight:F
     iget v6, p0, Landroid/widget/CalendarView$WeekView;->mHeight:I
 
@@ -497,96 +429,64 @@
     iget-object v7, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
 
     #getter for: Landroid/widget/CalendarView;->mWeekSeperatorLineWidth:I
-    invoke-static {v7}, Landroid/widget/CalendarView;->access$2800(Landroid/widget/CalendarView;)I
+    invoke-static {v7}, Landroid/widget/CalendarView;->access$2700(Landroid/widget/CalendarView;)I
 
     move-result v7
 
     sub-int v5, v6, v7
 
-    .line 1745
+    .line 1393
     .local v5, y:I
     iget v2, p0, Landroid/widget/CalendarView$WeekView;->mNumCells:I
 
-    .line 1746
+    .line 1395
     .local v2, nDays:I
-    mul-int/lit8 v0, v2, 0x2
-
-    .line 1748
-    .local v0, divisor:I
     iget-object v6, p0, Landroid/widget/CalendarView$WeekView;->mDrawPaint:Landroid/graphics/Paint;
 
     sget-object v7, Landroid/graphics/Paint$Align;->CENTER:Landroid/graphics/Paint$Align;
 
     invoke-virtual {v6, v7}, Landroid/graphics/Paint;->setTextAlign(Landroid/graphics/Paint$Align;)V
 
-    .line 1749
+    .line 1396
+    const/4 v1, 0x0
+
+    .line 1397
+    .local v1, i:I
+    mul-int/lit8 v0, v2, 0x2
+
+    .line 1398
+    .local v0, divisor:I
+    iget-object v6, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
+
+    #getter for: Landroid/widget/CalendarView;->mShowWeekNumber:Z
+    invoke-static {v6}, Landroid/widget/CalendarView;->access$2200(Landroid/widget/CalendarView;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_0
+
+    .line 1399
     iget-object v6, p0, Landroid/widget/CalendarView$WeekView;->mDrawPaint:Landroid/graphics/Paint;
 
     iget-object v7, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
 
-    #getter for: Landroid/widget/CalendarView;->mDateTextSize:I
-    invoke-static {v7}, Landroid/widget/CalendarView;->access$2600(Landroid/widget/CalendarView;)I
+    #getter for: Landroid/widget/CalendarView;->mWeekNumberColor:I
+    invoke-static {v7}, Landroid/widget/CalendarView;->access$2800(Landroid/widget/CalendarView;)I
 
     move-result v7
 
-    int-to-float v7, v7
+    invoke-virtual {v6, v7}, Landroid/graphics/Paint;->setColor(I)V
 
-    invoke-virtual {v6, v7}, Landroid/graphics/Paint;->setTextSize(F)V
-
-    .line 1751
-    const/4 v1, 0x0
-
-    .line 1753
-    .local v1, i:I
-    invoke-virtual {p0}, Landroid/widget/CalendarView$WeekView;->isLayoutRtl()Z
-
-    move-result v6
-
-    if-eqz v6, :cond_3
-
-    .line 1754
-    :goto_0
-    add-int/lit8 v6, v2, -0x1
-
-    if-ge v1, v6, :cond_1
-
-    .line 1755
-    iget-object v7, p0, Landroid/widget/CalendarView$WeekView;->mMonthNumDrawPaint:Landroid/graphics/Paint;
-
-    iget-object v6, p0, Landroid/widget/CalendarView$WeekView;->mFocusDay:[Z
-
-    aget-boolean v6, v6, v1
-
-    if-eqz v6, :cond_0
-
-    iget-object v6, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
-
-    #getter for: Landroid/widget/CalendarView;->mFocusedMonthDateColor:I
-    invoke-static {v6}, Landroid/widget/CalendarView;->access$2900(Landroid/widget/CalendarView;)I
-
-    move-result v6
-
-    :goto_1
-    invoke-virtual {v7, v6}, Landroid/graphics/Paint;->setColor(I)V
-
-    .line 1757
-    mul-int/lit8 v6, v1, 0x2
-
-    add-int/lit8 v6, v6, 0x1
-
-    iget v7, p0, Landroid/widget/CalendarView$WeekView;->mWidth:I
-
-    mul-int/2addr v6, v7
+    .line 1400
+    iget v6, p0, Landroid/widget/CalendarView$WeekView;->mWidth:I
 
     div-int v4, v6, v0
 
-    .line 1758
+    .line 1401
     .local v4, x:I
     iget-object v6, p0, Landroid/widget/CalendarView$WeekView;->mDayNumbers:[Ljava/lang/String;
 
-    add-int/lit8 v7, v2, -0x1
-
-    sub-int/2addr v7, v1
+    const/4 v7, 0x0
 
     aget-object v6, v6, v7
 
@@ -594,149 +494,39 @@
 
     int-to-float v8, v5
 
-    iget-object v9, p0, Landroid/widget/CalendarView$WeekView;->mMonthNumDrawPaint:Landroid/graphics/Paint;
+    iget-object v9, p0, Landroid/widget/CalendarView$WeekView;->mDrawPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v6, v7, v8, v9}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 1754
+    .line 1402
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_0
-
-    .line 1755
+    .line 1404
     .end local v4           #x:I
     :cond_0
-    iget-object v6, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
-
-    #getter for: Landroid/widget/CalendarView;->mUnfocusedMonthDateColor:I
-    invoke-static {v6}, Landroid/widget/CalendarView;->access$3000(Landroid/widget/CalendarView;)I
-
-    move-result v6
-
-    goto :goto_1
-
-    .line 1760
-    :cond_1
-    iget-object v6, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
-
-    #getter for: Landroid/widget/CalendarView;->mShowWeekNumber:Z
-    invoke-static {v6}, Landroid/widget/CalendarView;->access$2400(Landroid/widget/CalendarView;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_2
-
-    .line 1761
-    iget-object v6, p0, Landroid/widget/CalendarView$WeekView;->mDrawPaint:Landroid/graphics/Paint;
-
-    iget-object v7, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
-
-    #getter for: Landroid/widget/CalendarView;->mWeekNumberColor:I
-    invoke-static {v7}, Landroid/widget/CalendarView;->access$3100(Landroid/widget/CalendarView;)I
-
-    move-result v7
-
-    invoke-virtual {v6, v7}, Landroid/graphics/Paint;->setColor(I)V
-
-    .line 1762
-    iget v6, p0, Landroid/widget/CalendarView$WeekView;->mWidth:I
-
-    iget v7, p0, Landroid/widget/CalendarView$WeekView;->mWidth:I
-
-    div-int/2addr v7, v0
-
-    sub-int v4, v6, v7
-
-    .line 1763
-    .restart local v4       #x:I
-    iget-object v6, p0, Landroid/widget/CalendarView$WeekView;->mDayNumbers:[Ljava/lang/String;
-
-    aget-object v6, v6, v10
-
-    int-to-float v7, v4
-
-    int-to-float v8, v5
-
-    iget-object v9, p0, Landroid/widget/CalendarView$WeekView;->mDrawPaint:Landroid/graphics/Paint;
-
-    invoke-virtual {p1, v6, v7, v8, v9}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
-
-    .line 1779
-    .end local v4           #x:I
-    :cond_2
-    return-void
-
-    .line 1766
-    :cond_3
-    iget-object v6, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
-
-    #getter for: Landroid/widget/CalendarView;->mShowWeekNumber:Z
-    invoke-static {v6}, Landroid/widget/CalendarView;->access$2400(Landroid/widget/CalendarView;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_4
-
-    .line 1767
-    iget-object v6, p0, Landroid/widget/CalendarView$WeekView;->mDrawPaint:Landroid/graphics/Paint;
-
-    iget-object v7, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
-
-    #getter for: Landroid/widget/CalendarView;->mWeekNumberColor:I
-    invoke-static {v7}, Landroid/widget/CalendarView;->access$3100(Landroid/widget/CalendarView;)I
-
-    move-result v7
-
-    invoke-virtual {v6, v7}, Landroid/graphics/Paint;->setColor(I)V
-
-    .line 1768
-    iget v6, p0, Landroid/widget/CalendarView$WeekView;->mWidth:I
-
-    div-int v4, v6, v0
-
-    .line 1769
-    .restart local v4       #x:I
-    iget-object v6, p0, Landroid/widget/CalendarView$WeekView;->mDayNumbers:[Ljava/lang/String;
-
-    aget-object v6, v6, v10
-
-    int-to-float v7, v4
-
-    int-to-float v8, v5
-
-    iget-object v9, p0, Landroid/widget/CalendarView$WeekView;->mDrawPaint:Landroid/graphics/Paint;
-
-    invoke-virtual {p1, v6, v7, v8, v9}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
-
-    .line 1770
-    add-int/lit8 v1, v1, 0x1
-
-    .line 1772
-    .end local v4           #x:I
-    :cond_4
-    :goto_2
+    :goto_0
     if-ge v1, v2, :cond_2
 
-    .line 1773
+    .line 1405
     iget-object v7, p0, Landroid/widget/CalendarView$WeekView;->mMonthNumDrawPaint:Landroid/graphics/Paint;
 
     iget-object v6, p0, Landroid/widget/CalendarView$WeekView;->mFocusDay:[Z
 
     aget-boolean v6, v6, v1
 
-    if-eqz v6, :cond_5
+    if-eqz v6, :cond_1
 
     iget-object v6, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
 
     #getter for: Landroid/widget/CalendarView;->mFocusedMonthDateColor:I
-    invoke-static {v6}, Landroid/widget/CalendarView;->access$2900(Landroid/widget/CalendarView;)I
+    invoke-static {v6}, Landroid/widget/CalendarView;->access$2500(Landroid/widget/CalendarView;)I
 
     move-result v6
 
-    :goto_3
+    :goto_1
     invoke-virtual {v7, v6}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1775
+    .line 1407
     mul-int/lit8 v6, v1, 0x2
 
     add-int/lit8 v6, v6, 0x1
@@ -747,7 +537,7 @@
 
     div-int v4, v6, v0
 
-    .line 1776
+    .line 1408
     .restart local v4       #x:I
     iget-object v6, p0, Landroid/widget/CalendarView$WeekView;->mDayNumbers:[Ljava/lang/String;
 
@@ -761,22 +551,26 @@
 
     invoke-virtual {p1, v6, v7, v8, v9}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 1772
+    .line 1404
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
-    .line 1773
+    .line 1405
     .end local v4           #x:I
-    :cond_5
+    :cond_1
     iget-object v6, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
 
     #getter for: Landroid/widget/CalendarView;->mUnfocusedMonthDateColor:I
-    invoke-static {v6}, Landroid/widget/CalendarView;->access$3000(Landroid/widget/CalendarView;)I
+    invoke-static {v6}, Landroid/widget/CalendarView;->access$2900(Landroid/widget/CalendarView;)I
 
     move-result v6
 
-    goto :goto_3
+    goto :goto_1
+
+    .line 1410
+    :cond_2
+    return-void
 .end method
 
 .method private drawWeekSeparators(Landroid/graphics/Canvas;)V
@@ -786,11 +580,11 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1788
+    .line 1419
     iget-object v0, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
 
     #getter for: Landroid/widget/CalendarView;->mListView:Landroid/widget/ListView;
-    invoke-static {v0}, Landroid/widget/CalendarView;->access$2100(Landroid/widget/CalendarView;)Landroid/widget/ListView;
+    invoke-static {v0}, Landroid/widget/CalendarView;->access$1800(Landroid/widget/CalendarView;)Landroid/widget/ListView;
 
     move-result-object v0
 
@@ -798,18 +592,18 @@
 
     move-result v6
 
-    .line 1789
+    .line 1420
     .local v6, firstFullyVisiblePosition:I
     iget-object v0, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
 
     #getter for: Landroid/widget/CalendarView;->mListView:Landroid/widget/ListView;
-    invoke-static {v0}, Landroid/widget/CalendarView;->access$2100(Landroid/widget/CalendarView;)Landroid/widget/ListView;
+    invoke-static {v0}, Landroid/widget/CalendarView;->access$1800(Landroid/widget/CalendarView;)Landroid/widget/ListView;
 
     move-result-object v0
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
-    invoke-virtual {v0, v4}, Landroid/widget/ListView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v0, v3}, Landroid/widget/ListView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -819,62 +613,51 @@
 
     if-gez v0, :cond_0
 
-    .line 1790
+    .line 1421
     add-int/lit8 v6, v6, 0x1
 
-    .line 1792
+    .line 1423
     :cond_0
     iget v0, p0, Landroid/widget/CalendarView$WeekView;->mWeek:I
 
     if-ne v6, v0, :cond_1
 
-    .line 1807
+    .line 1430
     :goto_0
     return-void
 
-    .line 1795
+    .line 1426
     :cond_1
     iget-object v0, p0, Landroid/widget/CalendarView$WeekView;->mDrawPaint:Landroid/graphics/Paint;
 
-    iget-object v4, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
+    iget-object v3, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
 
     #getter for: Landroid/widget/CalendarView;->mWeekSeparatorLineColor:I
-    invoke-static {v4}, Landroid/widget/CalendarView;->access$3200(Landroid/widget/CalendarView;)I
+    invoke-static {v3}, Landroid/widget/CalendarView;->access$3000(Landroid/widget/CalendarView;)I
 
-    move-result v4
+    move-result v3
 
-    invoke-virtual {v0, v4}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {v0, v3}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1796
+    .line 1427
     iget-object v0, p0, Landroid/widget/CalendarView$WeekView;->mDrawPaint:Landroid/graphics/Paint;
 
-    iget-object v4, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
+    iget-object v3, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
 
     #getter for: Landroid/widget/CalendarView;->mWeekSeperatorLineWidth:I
-    invoke-static {v4}, Landroid/widget/CalendarView;->access$2800(Landroid/widget/CalendarView;)I
+    invoke-static {v3}, Landroid/widget/CalendarView;->access$2700(Landroid/widget/CalendarView;)I
 
-    move-result v4
+    move-result v3
 
-    int-to-float v4, v4
+    int-to-float v3, v3
 
-    invoke-virtual {v0, v4}, Landroid/graphics/Paint;->setStrokeWidth(F)V
+    invoke-virtual {v0, v3}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 1799
-    invoke-virtual {p0}, Landroid/widget/CalendarView$WeekView;->isLayoutRtl()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    .line 1800
-    const/4 v1, 0x0
-
-    .line 1801
-    .local v1, startX:F
+    .line 1428
     iget-object v0, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
 
     #getter for: Landroid/widget/CalendarView;->mShowWeekNumber:Z
-    invoke-static {v0}, Landroid/widget/CalendarView;->access$2400(Landroid/widget/CalendarView;)Z
+    invoke-static {v0}, Landroid/widget/CalendarView;->access$2200(Landroid/widget/CalendarView;)Z
 
     move-result v0
 
@@ -882,19 +665,19 @@
 
     iget v0, p0, Landroid/widget/CalendarView$WeekView;->mWidth:I
 
-    iget v4, p0, Landroid/widget/CalendarView$WeekView;->mWidth:I
+    iget v3, p0, Landroid/widget/CalendarView$WeekView;->mNumCells:I
 
-    iget v5, p0, Landroid/widget/CalendarView$WeekView;->mNumCells:I
+    div-int/2addr v0, v3
 
-    div-int/2addr v4, v5
+    int-to-float v1, v0
 
-    sub-int/2addr v0, v4
+    .line 1429
+    .local v1, x:F
+    :goto_1
+    iget v0, p0, Landroid/widget/CalendarView$WeekView;->mWidth:I
 
     int-to-float v3, v0
 
-    .line 1806
-    .local v3, stopX:F
-    :goto_1
     iget-object v5, p0, Landroid/widget/CalendarView$WeekView;->mDrawPaint:Landroid/graphics/Paint;
 
     move-object v0, p1
@@ -905,110 +688,39 @@
 
     goto :goto_0
 
-    .line 1801
-    .end local v3           #stopX:F
+    .end local v1           #x:F
     :cond_2
-    iget v0, p0, Landroid/widget/CalendarView$WeekView;->mWidth:I
-
-    int-to-float v3, v0
-
-    goto :goto_1
-
-    .line 1803
-    .end local v1           #startX:F
-    :cond_3
-    iget-object v0, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
-
-    #getter for: Landroid/widget/CalendarView;->mShowWeekNumber:Z
-    invoke-static {v0}, Landroid/widget/CalendarView;->access$2400(Landroid/widget/CalendarView;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    iget v0, p0, Landroid/widget/CalendarView$WeekView;->mWidth:I
-
-    iget v4, p0, Landroid/widget/CalendarView$WeekView;->mNumCells:I
-
-    div-int/2addr v0, v4
-
-    int-to-float v1, v0
-
-    .line 1804
-    .restart local v1       #startX:F
-    :goto_2
-    iget v0, p0, Landroid/widget/CalendarView$WeekView;->mWidth:I
-
-    int-to-float v3, v0
-
-    .restart local v3       #stopX:F
-    goto :goto_1
-
-    .end local v1           #startX:F
-    .end local v3           #stopX:F
-    :cond_4
     move v1, v2
 
-    .line 1803
-    goto :goto_2
+    .line 1428
+    goto :goto_1
 .end method
 
-.method private initilaizePaints()V
+.method private setPaintProperties()V
     .locals 3
 
     .prologue
     const/4 v2, 0x1
 
-    .line 1617
+    .line 1294
     iget-object v0, p0, Landroid/widget/CalendarView$WeekView;->mDrawPaint:Landroid/graphics/Paint;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setFakeBoldText(Z)V
 
-    .line 1618
+    .line 1295
     iget-object v0, p0, Landroid/widget/CalendarView$WeekView;->mDrawPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    .line 1619
+    .line 1296
     iget-object v0, p0, Landroid/widget/CalendarView$WeekView;->mDrawPaint:Landroid/graphics/Paint;
-
-    sget-object v1, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
-
-    .line 1621
-    iget-object v0, p0, Landroid/widget/CalendarView$WeekView;->mMonthNumDrawPaint:Landroid/graphics/Paint;
-
-    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setFakeBoldText(Z)V
-
-    .line 1622
-    iget-object v0, p0, Landroid/widget/CalendarView$WeekView;->mMonthNumDrawPaint:Landroid/graphics/Paint;
-
-    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setAntiAlias(Z)V
-
-    .line 1623
-    iget-object v0, p0, Landroid/widget/CalendarView$WeekView;->mMonthNumDrawPaint:Landroid/graphics/Paint;
-
-    sget-object v1, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
-
-    .line 1624
-    iget-object v0, p0, Landroid/widget/CalendarView$WeekView;->mMonthNumDrawPaint:Landroid/graphics/Paint;
-
-    sget-object v1, Landroid/graphics/Paint$Align;->CENTER:Landroid/graphics/Paint$Align;
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setTextAlign(Landroid/graphics/Paint$Align;)V
-
-    .line 1625
-    iget-object v0, p0, Landroid/widget/CalendarView$WeekView;->mMonthNumDrawPaint:Landroid/graphics/Paint;
 
     iget-object v1, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
 
     #getter for: Landroid/widget/CalendarView;->mDateTextSize:I
-    invoke-static {v1}, Landroid/widget/CalendarView;->access$2600(Landroid/widget/CalendarView;)I
+    invoke-static {v1}, Landroid/widget/CalendarView;->access$2400(Landroid/widget/CalendarView;)I
 
     move-result v1
 
@@ -1016,290 +728,243 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setTextSize(F)V
 
-    .line 1626
+    .line 1297
+    iget-object v0, p0, Landroid/widget/CalendarView$WeekView;->mDrawPaint:Landroid/graphics/Paint;
+
+    sget-object v1, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+
+    .line 1299
+    iget-object v0, p0, Landroid/widget/CalendarView$WeekView;->mMonthNumDrawPaint:Landroid/graphics/Paint;
+
+    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setFakeBoldText(Z)V
+
+    .line 1300
+    iget-object v0, p0, Landroid/widget/CalendarView$WeekView;->mMonthNumDrawPaint:Landroid/graphics/Paint;
+
+    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setAntiAlias(Z)V
+
+    .line 1301
+    iget-object v0, p0, Landroid/widget/CalendarView$WeekView;->mMonthNumDrawPaint:Landroid/graphics/Paint;
+
+    iget-object v1, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
+
+    #getter for: Landroid/widget/CalendarView;->mDateTextSize:I
+    invoke-static {v1}, Landroid/widget/CalendarView;->access$2400(Landroid/widget/CalendarView;)I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setTextSize(F)V
+
+    .line 1302
+    iget-object v0, p0, Landroid/widget/CalendarView$WeekView;->mMonthNumDrawPaint:Landroid/graphics/Paint;
+
+    iget-object v1, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
+
+    #getter for: Landroid/widget/CalendarView;->mFocusedMonthDateColor:I
+    invoke-static {v1}, Landroid/widget/CalendarView;->access$2500(Landroid/widget/CalendarView;)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
+
+    .line 1303
+    iget-object v0, p0, Landroid/widget/CalendarView$WeekView;->mMonthNumDrawPaint:Landroid/graphics/Paint;
+
+    sget-object v1, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+
+    .line 1304
+    iget-object v0, p0, Landroid/widget/CalendarView$WeekView;->mMonthNumDrawPaint:Landroid/graphics/Paint;
+
+    sget-object v1, Landroid/graphics/Paint$Align;->CENTER:Landroid/graphics/Paint$Align;
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setTextAlign(Landroid/graphics/Paint$Align;)V
+
+    .line 1305
     return-void
 .end method
 
 .method private updateSelectionPositions()V
-    .locals 5
+    .locals 3
 
     .prologue
-    .line 1838
-    iget-boolean v2, p0, Landroid/widget/CalendarView$WeekView;->mHasSelectedDay:Z
+    .line 1461
+    iget-boolean v1, p0, Landroid/widget/CalendarView$WeekView;->mHasSelectedDay:Z
 
-    if-eqz v2, :cond_2
+    if-eqz v1, :cond_2
 
-    .line 1839
-    invoke-virtual {p0}, Landroid/widget/CalendarView$WeekView;->isLayoutRtl()Z
+    .line 1462
+    iget v1, p0, Landroid/widget/CalendarView$WeekView;->mSelectedDay:I
 
-    move-result v0
-
-    .line 1840
-    .local v0, isLayoutRtl:Z
-    iget v2, p0, Landroid/widget/CalendarView$WeekView;->mSelectedDay:I
-
-    iget-object v3, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
+    iget-object v2, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
 
     #getter for: Landroid/widget/CalendarView;->mFirstDayOfWeek:I
-    invoke-static {v3}, Landroid/widget/CalendarView;->access$1900(Landroid/widget/CalendarView;)I
+    invoke-static {v2}, Landroid/widget/CalendarView;->access$1600(Landroid/widget/CalendarView;)I
 
-    move-result v3
+    move-result v2
 
-    sub-int v1, v2, v3
+    sub-int v0, v1, v2
 
-    .line 1841
-    .local v1, selectedPosition:I
-    if-gez v1, :cond_0
+    .line 1463
+    .local v0, selectedPosition:I
+    if-gez v0, :cond_0
 
-    .line 1842
-    add-int/lit8 v1, v1, 0x7
+    .line 1464
+    add-int/lit8 v0, v0, 0x7
 
-    .line 1844
+    .line 1466
     :cond_0
-    iget-object v2, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
+    iget-object v1, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
 
     #getter for: Landroid/widget/CalendarView;->mShowWeekNumber:Z
-    invoke-static {v2}, Landroid/widget/CalendarView;->access$2400(Landroid/widget/CalendarView;)Z
+    invoke-static {v1}, Landroid/widget/CalendarView;->access$2200(Landroid/widget/CalendarView;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_1
+    if-eqz v1, :cond_1
 
-    if-nez v0, :cond_1
+    .line 1467
+    add-int/lit8 v0, v0, 0x1
 
-    .line 1845
-    add-int/lit8 v1, v1, 0x1
-
-    .line 1847
+    .line 1469
     :cond_1
-    if-eqz v0, :cond_3
+    iget v1, p0, Landroid/widget/CalendarView$WeekView;->mWidth:I
 
-    .line 1848
-    iget-object v2, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
+    mul-int/2addr v1, v0
 
-    #getter for: Landroid/widget/CalendarView;->mDaysPerWeek:I
-    invoke-static {v2}, Landroid/widget/CalendarView;->access$2500(Landroid/widget/CalendarView;)I
+    iget v2, p0, Landroid/widget/CalendarView$WeekView;->mNumCells:I
 
-    move-result v2
+    div-int/2addr v1, v2
 
-    add-int/lit8 v2, v2, -0x1
+    iput v1, p0, Landroid/widget/CalendarView$WeekView;->mSelectedLeft:I
 
-    sub-int/2addr v2, v1
+    .line 1470
+    add-int/lit8 v1, v0, 0x1
 
-    iget v3, p0, Landroid/widget/CalendarView$WeekView;->mWidth:I
-
-    mul-int/2addr v2, v3
-
-    iget v3, p0, Landroid/widget/CalendarView$WeekView;->mNumCells:I
-
-    div-int/2addr v2, v3
-
-    iput v2, p0, Landroid/widget/CalendarView$WeekView;->mSelectedLeft:I
-
-    .line 1853
-    :goto_0
-    iget v2, p0, Landroid/widget/CalendarView$WeekView;->mSelectedLeft:I
-
-    iget v3, p0, Landroid/widget/CalendarView$WeekView;->mWidth:I
-
-    iget v4, p0, Landroid/widget/CalendarView$WeekView;->mNumCells:I
-
-    div-int/2addr v3, v4
-
-    add-int/2addr v2, v3
-
-    iput v2, p0, Landroid/widget/CalendarView$WeekView;->mSelectedRight:I
-
-    .line 1855
-    .end local v0           #isLayoutRtl:Z
-    .end local v1           #selectedPosition:I
-    :cond_2
-    return-void
-
-    .line 1851
-    .restart local v0       #isLayoutRtl:Z
-    .restart local v1       #selectedPosition:I
-    :cond_3
     iget v2, p0, Landroid/widget/CalendarView$WeekView;->mWidth:I
 
-    mul-int/2addr v2, v1
+    mul-int/2addr v1, v2
 
-    iget v3, p0, Landroid/widget/CalendarView$WeekView;->mNumCells:I
+    iget v2, p0, Landroid/widget/CalendarView$WeekView;->mNumCells:I
 
-    div-int/2addr v2, v3
+    div-int/2addr v1, v2
 
-    iput v2, p0, Landroid/widget/CalendarView$WeekView;->mSelectedLeft:I
+    iput v1, p0, Landroid/widget/CalendarView$WeekView;->mSelectedRight:I
 
-    goto :goto_0
+    .line 1472
+    .end local v0           #selectedPosition:I
+    :cond_2
+    return-void
 .end method
 
 
 # virtual methods
 .method public getDayFromLocation(FLjava/util/Calendar;)Z
-    .locals 8
+    .locals 5
     .parameter "x"
     .parameter "outCalendar"
 
     .prologue
-    const/4 v4, 0x0
+    const/4 v2, 0x0
 
-    .line 1663
-    invoke-virtual {p0}, Landroid/widget/CalendarView$WeekView;->isLayoutRtl()Z
-
-    move-result v2
-
-    .line 1668
-    .local v2, isLayoutRtl:Z
-    if-eqz v2, :cond_2
-
-    .line 1669
-    const/4 v3, 0x0
-
-    .line 1670
-    .local v3, start:I
-    iget-object v5, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
+    .line 1342
+    iget-object v3, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
 
     #getter for: Landroid/widget/CalendarView;->mShowWeekNumber:Z
-    invoke-static {v5}, Landroid/widget/CalendarView;->access$2400(Landroid/widget/CalendarView;)Z
+    invoke-static {v3}, Landroid/widget/CalendarView;->access$2200(Landroid/widget/CalendarView;)Z
 
-    move-result v5
+    move-result v3
 
-    if-eqz v5, :cond_1
+    if-eqz v3, :cond_1
 
-    iget v5, p0, Landroid/widget/CalendarView$WeekView;->mWidth:I
+    iget v3, p0, Landroid/widget/CalendarView$WeekView;->mWidth:I
 
-    iget v6, p0, Landroid/widget/CalendarView$WeekView;->mWidth:I
+    iget v4, p0, Landroid/widget/CalendarView$WeekView;->mNumCells:I
 
-    iget v7, p0, Landroid/widget/CalendarView$WeekView;->mNumCells:I
+    div-int v1, v3, v4
 
-    div-int/2addr v6, v7
-
-    sub-int v1, v5, v6
-
-    .line 1676
-    .local v1, end:I
+    .line 1343
+    .local v1, dayStart:I
     :goto_0
-    int-to-float v5, v3
+    int-to-float v3, v1
 
-    cmpg-float v5, p1, v5
+    cmpg-float v3, p1, v3
 
-    if-ltz v5, :cond_0
+    if-ltz v3, :cond_0
 
-    int-to-float v5, v1
+    iget v3, p0, Landroid/widget/CalendarView$WeekView;->mWidth:I
 
-    cmpl-float v5, p1, v5
+    int-to-float v3, v3
 
-    if-lez v5, :cond_4
+    cmpl-float v3, p1, v3
 
-    .line 1677
+    if-lez v3, :cond_2
+
+    .line 1344
     :cond_0
     invoke-virtual {p2}, Ljava/util/Calendar;->clear()V
 
-    .line 1691
+    .line 1352
     :goto_1
-    return v4
+    return v2
 
-    .line 1670
-    .end local v1           #end:I
+    .end local v1           #dayStart:I
     :cond_1
-    iget v1, p0, Landroid/widget/CalendarView$WeekView;->mWidth:I
+    move v1, v2
 
+    .line 1342
     goto :goto_0
 
-    .line 1672
-    .end local v3           #start:I
+    .line 1348
+    .restart local v1       #dayStart:I
     :cond_2
-    iget-object v5, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
+    int-to-float v2, v1
 
-    #getter for: Landroid/widget/CalendarView;->mShowWeekNumber:Z
-    invoke-static {v5}, Landroid/widget/CalendarView;->access$2400(Landroid/widget/CalendarView;)Z
+    sub-float v2, p1, v2
 
-    move-result v5
-
-    if-eqz v5, :cond_3
-
-    iget v5, p0, Landroid/widget/CalendarView$WeekView;->mWidth:I
-
-    iget v6, p0, Landroid/widget/CalendarView$WeekView;->mNumCells:I
-
-    div-int v3, v5, v6
-
-    .line 1673
-    .restart local v3       #start:I
-    :goto_2
-    iget v1, p0, Landroid/widget/CalendarView$WeekView;->mWidth:I
-
-    .restart local v1       #end:I
-    goto :goto_0
-
-    .end local v1           #end:I
-    .end local v3           #start:I
-    :cond_3
-    move v3, v4
-
-    .line 1672
-    goto :goto_2
-
-    .line 1682
-    .restart local v1       #end:I
-    .restart local v3       #start:I
-    :cond_4
-    int-to-float v4, v3
-
-    sub-float v4, p1, v4
-
-    iget-object v5, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
+    iget-object v3, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
 
     #getter for: Landroid/widget/CalendarView;->mDaysPerWeek:I
-    invoke-static {v5}, Landroid/widget/CalendarView;->access$2500(Landroid/widget/CalendarView;)I
+    invoke-static {v3}, Landroid/widget/CalendarView;->access$2300(Landroid/widget/CalendarView;)I
 
-    move-result v5
+    move-result v3
 
-    int-to-float v5, v5
+    int-to-float v3, v3
 
-    mul-float/2addr v4, v5
+    mul-float/2addr v2, v3
 
-    sub-int v5, v1, v3
+    iget v3, p0, Landroid/widget/CalendarView$WeekView;->mWidth:I
 
-    int-to-float v5, v5
+    sub-int/2addr v3, v1
 
-    div-float/2addr v4, v5
+    int-to-float v3, v3
 
-    float-to-int v0, v4
+    div-float/2addr v2, v3
 
-    .line 1684
+    float-to-int v0, v2
+
+    .line 1350
     .local v0, dayPosition:I
-    if-eqz v2, :cond_5
+    iget-object v2, p0, Landroid/widget/CalendarView$WeekView;->mFirstDay:Ljava/util/Calendar;
 
-    .line 1685
-    iget-object v4, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
+    invoke-virtual {v2}, Ljava/util/Calendar;->getTimeInMillis()J
 
-    #getter for: Landroid/widget/CalendarView;->mDaysPerWeek:I
-    invoke-static {v4}, Landroid/widget/CalendarView;->access$2500(Landroid/widget/CalendarView;)I
+    move-result-wide v2
 
-    move-result v4
+    invoke-virtual {p2, v2, v3}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
-    add-int/lit8 v4, v4, -0x1
+    .line 1351
+    const/4 v2, 0x5
 
-    sub-int v0, v4, v0
+    invoke-virtual {p2, v2, v0}, Ljava/util/Calendar;->add(II)V
 
-    .line 1688
-    :cond_5
-    iget-object v4, p0, Landroid/widget/CalendarView$WeekView;->mFirstDay:Ljava/util/Calendar;
-
-    invoke-virtual {v4}, Ljava/util/Calendar;->getTimeInMillis()J
-
-    move-result-wide v4
-
-    invoke-virtual {p2, v4, v5}, Ljava/util/Calendar;->setTimeInMillis(J)V
-
-    .line 1689
-    const/4 v4, 0x5
-
-    invoke-virtual {p2, v4, v0}, Ljava/util/Calendar;->add(II)V
-
-    .line 1691
-    const/4 v4, 0x1
+    .line 1352
+    const/4 v2, 0x1
 
     goto :goto_1
 .end method
@@ -1308,7 +973,7 @@
     .locals 1
 
     .prologue
-    .line 1652
+    .line 1331
     iget-object v0, p0, Landroid/widget/CalendarView$WeekView;->mFirstDay:Ljava/util/Calendar;
 
     return-object v0
@@ -1318,7 +983,7 @@
     .locals 1
 
     .prologue
-    .line 1634
+    .line 1313
     iget v0, p0, Landroid/widget/CalendarView$WeekView;->mMonthOfFirstWeekDay:I
 
     return v0
@@ -1328,510 +993,423 @@
     .locals 1
 
     .prologue
-    .line 1643
+    .line 1322
     iget v0, p0, Landroid/widget/CalendarView$WeekView;->mLastWeekDayMonth:I
 
     return v0
 .end method
 
 .method public init(III)V
-    .locals 11
+    .locals 10
     .parameter "weekNumber"
     .parameter "selectedWeekDay"
     .parameter "focusedMonth"
 
     .prologue
-    .line 1560
-    iput p2, p0, Landroid/widget/CalendarView$WeekView;->mSelectedDay:I
+    const/4 v9, -0x1
 
-    .line 1561
-    iget v3, p0, Landroid/widget/CalendarView$WeekView;->mSelectedDay:I
-
-    const/4 v4, -0x1
-
-    if-eq v3, v4, :cond_2
-
-    const/4 v3, 0x1
-
-    :goto_0
-    iput-boolean v3, p0, Landroid/widget/CalendarView$WeekView;->mHasSelectedDay:Z
-
-    .line 1562
-    iget-object v3, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
-
-    #getter for: Landroid/widget/CalendarView;->mShowWeekNumber:Z
-    invoke-static {v3}, Landroid/widget/CalendarView;->access$2400(Landroid/widget/CalendarView;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_3
-
-    iget-object v3, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
-
-    #getter for: Landroid/widget/CalendarView;->mDaysPerWeek:I
-    invoke-static {v3}, Landroid/widget/CalendarView;->access$2500(Landroid/widget/CalendarView;)I
-
-    move-result v3
-
-    add-int/lit8 v3, v3, 0x1
-
-    :goto_1
-    iput v3, p0, Landroid/widget/CalendarView$WeekView;->mNumCells:I
-
-    .line 1563
-    iput p1, p0, Landroid/widget/CalendarView$WeekView;->mWeek:I
-
-    .line 1564
-    iget-object v3, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
-
-    #getter for: Landroid/widget/CalendarView;->mTempDate:Ljava/util/Calendar;
-    invoke-static {v3}, Landroid/widget/CalendarView;->access$2200(Landroid/widget/CalendarView;)Ljava/util/Calendar;
-
-    move-result-object v3
-
-    iget-object v4, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
-
-    #getter for: Landroid/widget/CalendarView;->mMinDate:Ljava/util/Calendar;
-    invoke-static {v4}, Landroid/widget/CalendarView;->access$1800(Landroid/widget/CalendarView;)Ljava/util/Calendar;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/util/Calendar;->getTimeInMillis()J
-
-    move-result-wide v4
-
-    invoke-virtual {v3, v4, v5}, Ljava/util/Calendar;->setTimeInMillis(J)V
-
-    .line 1566
-    iget-object v3, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
-
-    #getter for: Landroid/widget/CalendarView;->mTempDate:Ljava/util/Calendar;
-    invoke-static {v3}, Landroid/widget/CalendarView;->access$2200(Landroid/widget/CalendarView;)Ljava/util/Calendar;
-
-    move-result-object v3
-
-    const/4 v4, 0x3
-
-    iget v5, p0, Landroid/widget/CalendarView$WeekView;->mWeek:I
-
-    invoke-virtual {v3, v4, v5}, Ljava/util/Calendar;->add(II)V
-
-    .line 1567
-    iget-object v3, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
-
-    #getter for: Landroid/widget/CalendarView;->mTempDate:Ljava/util/Calendar;
-    invoke-static {v3}, Landroid/widget/CalendarView;->access$2200(Landroid/widget/CalendarView;)Ljava/util/Calendar;
-
-    move-result-object v3
-
-    iget-object v4, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
-
-    #getter for: Landroid/widget/CalendarView;->mFirstDayOfWeek:I
-    invoke-static {v4}, Landroid/widget/CalendarView;->access$1900(Landroid/widget/CalendarView;)I
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Ljava/util/Calendar;->setFirstDayOfWeek(I)V
-
-    .line 1570
-    iget v3, p0, Landroid/widget/CalendarView$WeekView;->mNumCells:I
-
-    new-array v3, v3, [Ljava/lang/String;
-
-    iput-object v3, p0, Landroid/widget/CalendarView$WeekView;->mDayNumbers:[Ljava/lang/String;
-
-    .line 1571
-    iget v3, p0, Landroid/widget/CalendarView$WeekView;->mNumCells:I
-
-    new-array v3, v3, [Z
-
-    iput-object v3, p0, Landroid/widget/CalendarView$WeekView;->mFocusDay:[Z
-
-    .line 1574
-    const/4 v1, 0x0
-
-    .line 1575
-    .local v1, i:I
-    iget-object v3, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
-
-    #getter for: Landroid/widget/CalendarView;->mShowWeekNumber:Z
-    invoke-static {v3}, Landroid/widget/CalendarView;->access$2400(Landroid/widget/CalendarView;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    .line 1576
-    iget-object v3, p0, Landroid/widget/CalendarView$WeekView;->mDayNumbers:[Ljava/lang/String;
+    const/4 v8, 0x2
 
     const/4 v4, 0x0
 
-    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
-
-    move-result-object v5
-
-    const-string v6, "%d"
-
-    const/4 v7, 0x1
-
-    new-array v7, v7, [Ljava/lang/Object;
-
-    const/4 v8, 0x0
-
-    iget-object v9, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
-
-    #getter for: Landroid/widget/CalendarView;->mTempDate:Ljava/util/Calendar;
-    invoke-static {v9}, Landroid/widget/CalendarView;->access$2200(Landroid/widget/CalendarView;)Ljava/util/Calendar;
-
-    move-result-object v9
-
-    const/4 v10, 0x3
-
-    invoke-virtual {v9, v10}, Ljava/util/Calendar;->get(I)I
-
-    move-result v9
-
-    invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v9
-
-    aput-object v9, v7, v8
-
-    invoke-static {v5, v6, v7}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v5
-
-    aput-object v5, v3, v4
-
-    .line 1578
-    add-int/lit8 v1, v1, 0x1
-
-    .line 1582
-    :cond_0
-    iget-object v3, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
-
-    #getter for: Landroid/widget/CalendarView;->mFirstDayOfWeek:I
-    invoke-static {v3}, Landroid/widget/CalendarView;->access$1900(Landroid/widget/CalendarView;)I
-
-    move-result v3
-
-    iget-object v4, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
-
-    #getter for: Landroid/widget/CalendarView;->mTempDate:Ljava/util/Calendar;
-    invoke-static {v4}, Landroid/widget/CalendarView;->access$2200(Landroid/widget/CalendarView;)Ljava/util/Calendar;
-
-    move-result-object v4
-
-    const/4 v5, 0x7
-
-    invoke-virtual {v4, v5}, Ljava/util/Calendar;->get(I)I
-
-    move-result v4
-
-    sub-int v0, v3, v4
-
-    .line 1583
-    .local v0, diff:I
-    iget-object v3, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
-
-    #getter for: Landroid/widget/CalendarView;->mTempDate:Ljava/util/Calendar;
-    invoke-static {v3}, Landroid/widget/CalendarView;->access$2200(Landroid/widget/CalendarView;)Ljava/util/Calendar;
-
-    move-result-object v3
-
-    const/4 v4, 0x5
-
-    invoke-virtual {v3, v4, v0}, Ljava/util/Calendar;->add(II)V
-
-    .line 1585
-    iget-object v3, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
-
-    #getter for: Landroid/widget/CalendarView;->mTempDate:Ljava/util/Calendar;
-    invoke-static {v3}, Landroid/widget/CalendarView;->access$2200(Landroid/widget/CalendarView;)Ljava/util/Calendar;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/util/Calendar;->clone()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/util/Calendar;
-
-    iput-object v3, p0, Landroid/widget/CalendarView$WeekView;->mFirstDay:Ljava/util/Calendar;
-
-    .line 1586
-    iget-object v3, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
-
-    #getter for: Landroid/widget/CalendarView;->mTempDate:Ljava/util/Calendar;
-    invoke-static {v3}, Landroid/widget/CalendarView;->access$2200(Landroid/widget/CalendarView;)Ljava/util/Calendar;
-
-    move-result-object v3
-
-    const/4 v4, 0x2
-
-    invoke-virtual {v3, v4}, Ljava/util/Calendar;->get(I)I
-
-    move-result v3
-
-    iput v3, p0, Landroid/widget/CalendarView$WeekView;->mMonthOfFirstWeekDay:I
-
-    .line 1588
     const/4 v3, 0x1
 
-    iput-boolean v3, p0, Landroid/widget/CalendarView$WeekView;->mHasUnfocusedDay:Z
+    const/4 v7, 0x5
 
-    .line 1589
-    :goto_2
-    iget v3, p0, Landroid/widget/CalendarView$WeekView;->mNumCells:I
+    .line 1243
+    iput p2, p0, Landroid/widget/CalendarView$WeekView;->mSelectedDay:I
 
-    if-ge v1, v3, :cond_7
+    .line 1244
+    iget v2, p0, Landroid/widget/CalendarView$WeekView;->mSelectedDay:I
 
-    .line 1590
-    iget-object v3, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
+    if-eq v2, v9, :cond_2
 
-    #getter for: Landroid/widget/CalendarView;->mTempDate:Ljava/util/Calendar;
-    invoke-static {v3}, Landroid/widget/CalendarView;->access$2200(Landroid/widget/CalendarView;)Ljava/util/Calendar;
+    move v2, v3
 
-    move-result-object v3
+    :goto_0
+    iput-boolean v2, p0, Landroid/widget/CalendarView$WeekView;->mHasSelectedDay:Z
 
-    const/4 v4, 0x2
+    .line 1245
+    iget-object v2, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
 
-    invoke-virtual {v3, v4}, Ljava/util/Calendar;->get(I)I
+    #getter for: Landroid/widget/CalendarView;->mShowWeekNumber:Z
+    invoke-static {v2}, Landroid/widget/CalendarView;->access$2200(Landroid/widget/CalendarView;)Z
 
-    move-result v3
+    move-result v2
 
-    if-ne v3, p3, :cond_4
+    if-eqz v2, :cond_3
 
-    const/4 v2, 0x1
+    iget-object v2, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
 
-    .line 1591
-    .local v2, isFocusedDay:Z
-    :goto_3
-    iget-object v3, p0, Landroid/widget/CalendarView$WeekView;->mFocusDay:[Z
+    #getter for: Landroid/widget/CalendarView;->mDaysPerWeek:I
+    invoke-static {v2}, Landroid/widget/CalendarView;->access$2300(Landroid/widget/CalendarView;)I
 
-    aput-boolean v2, v3, v1
+    move-result v2
 
-    .line 1592
-    iget-boolean v3, p0, Landroid/widget/CalendarView$WeekView;->mHasFocusedDay:Z
+    add-int/lit8 v2, v2, 0x1
 
-    or-int/2addr v3, v2
+    :goto_1
+    iput v2, p0, Landroid/widget/CalendarView$WeekView;->mNumCells:I
 
-    iput-boolean v3, p0, Landroid/widget/CalendarView$WeekView;->mHasFocusedDay:Z
+    .line 1246
+    iput p1, p0, Landroid/widget/CalendarView$WeekView;->mWeek:I
 
-    .line 1593
-    iget-boolean v4, p0, Landroid/widget/CalendarView$WeekView;->mHasUnfocusedDay:Z
-
-    if-nez v2, :cond_5
-
-    const/4 v3, 0x1
-
-    :goto_4
-    and-int/2addr v3, v4
-
-    iput-boolean v3, p0, Landroid/widget/CalendarView$WeekView;->mHasUnfocusedDay:Z
-
-    .line 1595
-    iget-object v3, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
+    .line 1247
+    iget-object v2, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
 
     #getter for: Landroid/widget/CalendarView;->mTempDate:Ljava/util/Calendar;
-    invoke-static {v3}, Landroid/widget/CalendarView;->access$2200(Landroid/widget/CalendarView;)Ljava/util/Calendar;
+    invoke-static {v2}, Landroid/widget/CalendarView;->access$1900(Landroid/widget/CalendarView;)Ljava/util/Calendar;
 
-    move-result-object v3
+    move-result-object v2
 
-    iget-object v4, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
+    iget-object v5, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
 
     #getter for: Landroid/widget/CalendarView;->mMinDate:Ljava/util/Calendar;
-    invoke-static {v4}, Landroid/widget/CalendarView;->access$1800(Landroid/widget/CalendarView;)Ljava/util/Calendar;
+    invoke-static {v5}, Landroid/widget/CalendarView;->access$1500(Landroid/widget/CalendarView;)Ljava/util/Calendar;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-virtual {v3, v4}, Ljava/util/Calendar;->before(Ljava/lang/Object;)Z
+    invoke-virtual {v5}, Ljava/util/Calendar;->getTimeInMillis()J
 
-    move-result v3
+    move-result-wide v5
 
-    if-nez v3, :cond_1
+    invoke-virtual {v2, v5, v6}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
-    iget-object v3, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
+    .line 1249
+    iget-object v2, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
 
     #getter for: Landroid/widget/CalendarView;->mTempDate:Ljava/util/Calendar;
-    invoke-static {v3}, Landroid/widget/CalendarView;->access$2200(Landroid/widget/CalendarView;)Ljava/util/Calendar;
+    invoke-static {v2}, Landroid/widget/CalendarView;->access$1900(Landroid/widget/CalendarView;)Ljava/util/Calendar;
 
-    move-result-object v3
+    move-result-object v2
 
-    iget-object v4, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
+    const/4 v5, 0x3
+
+    iget v6, p0, Landroid/widget/CalendarView$WeekView;->mWeek:I
+
+    invoke-virtual {v2, v5, v6}, Ljava/util/Calendar;->add(II)V
+
+    .line 1250
+    iget-object v2, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
+
+    #getter for: Landroid/widget/CalendarView;->mTempDate:Ljava/util/Calendar;
+    invoke-static {v2}, Landroid/widget/CalendarView;->access$1900(Landroid/widget/CalendarView;)Ljava/util/Calendar;
+
+    move-result-object v2
+
+    iget-object v5, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
+
+    #getter for: Landroid/widget/CalendarView;->mFirstDayOfWeek:I
+    invoke-static {v5}, Landroid/widget/CalendarView;->access$1600(Landroid/widget/CalendarView;)I
+
+    move-result v5
+
+    invoke-virtual {v2, v5}, Ljava/util/Calendar;->setFirstDayOfWeek(I)V
+
+    .line 1253
+    iget v2, p0, Landroid/widget/CalendarView$WeekView;->mNumCells:I
+
+    new-array v2, v2, [Ljava/lang/String;
+
+    iput-object v2, p0, Landroid/widget/CalendarView$WeekView;->mDayNumbers:[Ljava/lang/String;
+
+    .line 1254
+    iget v2, p0, Landroid/widget/CalendarView$WeekView;->mNumCells:I
+
+    new-array v2, v2, [Z
+
+    iput-object v2, p0, Landroid/widget/CalendarView$WeekView;->mFocusDay:[Z
+
+    .line 1257
+    const/4 v1, 0x0
+
+    .line 1258
+    .local v1, i:I
+    iget-object v2, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
+
+    #getter for: Landroid/widget/CalendarView;->mShowWeekNumber:Z
+    invoke-static {v2}, Landroid/widget/CalendarView;->access$2200(Landroid/widget/CalendarView;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    .line 1259
+    iget-object v2, p0, Landroid/widget/CalendarView$WeekView;->mDayNumbers:[Ljava/lang/String;
+
+    iget-object v5, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
+
+    #getter for: Landroid/widget/CalendarView;->mTempDate:Ljava/util/Calendar;
+    invoke-static {v5}, Landroid/widget/CalendarView;->access$1900(Landroid/widget/CalendarView;)Ljava/util/Calendar;
+
+    move-result-object v5
+
+    const/4 v6, 0x3
+
+    invoke-virtual {v5, v6}, Ljava/util/Calendar;->get(I)I
+
+    move-result v5
+
+    invoke-static {v5}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    aput-object v5, v2, v4
+
+    .line 1260
+    add-int/lit8 v1, v1, 0x1
+
+    .line 1264
+    :cond_0
+    iget-object v2, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
+
+    #getter for: Landroid/widget/CalendarView;->mFirstDayOfWeek:I
+    invoke-static {v2}, Landroid/widget/CalendarView;->access$1600(Landroid/widget/CalendarView;)I
+
+    move-result v2
+
+    iget-object v5, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
+
+    #getter for: Landroid/widget/CalendarView;->mTempDate:Ljava/util/Calendar;
+    invoke-static {v5}, Landroid/widget/CalendarView;->access$1900(Landroid/widget/CalendarView;)Ljava/util/Calendar;
+
+    move-result-object v5
+
+    const/4 v6, 0x7
+
+    invoke-virtual {v5, v6}, Ljava/util/Calendar;->get(I)I
+
+    move-result v5
+
+    sub-int v0, v2, v5
+
+    .line 1265
+    .local v0, diff:I
+    iget-object v2, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
+
+    #getter for: Landroid/widget/CalendarView;->mTempDate:Ljava/util/Calendar;
+    invoke-static {v2}, Landroid/widget/CalendarView;->access$1900(Landroid/widget/CalendarView;)Ljava/util/Calendar;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v7, v0}, Ljava/util/Calendar;->add(II)V
+
+    .line 1267
+    iget-object v2, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
+
+    #getter for: Landroid/widget/CalendarView;->mTempDate:Ljava/util/Calendar;
+    invoke-static {v2}, Landroid/widget/CalendarView;->access$1900(Landroid/widget/CalendarView;)Ljava/util/Calendar;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/util/Calendar;->clone()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/util/Calendar;
+
+    iput-object v2, p0, Landroid/widget/CalendarView$WeekView;->mFirstDay:Ljava/util/Calendar;
+
+    .line 1268
+    iget-object v2, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
+
+    #getter for: Landroid/widget/CalendarView;->mTempDate:Ljava/util/Calendar;
+    invoke-static {v2}, Landroid/widget/CalendarView;->access$1900(Landroid/widget/CalendarView;)Ljava/util/Calendar;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v8}, Ljava/util/Calendar;->get(I)I
+
+    move-result v2
+
+    iput v2, p0, Landroid/widget/CalendarView$WeekView;->mMonthOfFirstWeekDay:I
+
+    .line 1270
+    :goto_2
+    iget v2, p0, Landroid/widget/CalendarView$WeekView;->mNumCells:I
+
+    if-ge v1, v2, :cond_6
+
+    .line 1271
+    iget-object v5, p0, Landroid/widget/CalendarView$WeekView;->mFocusDay:[Z
+
+    iget-object v2, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
+
+    #getter for: Landroid/widget/CalendarView;->mTempDate:Ljava/util/Calendar;
+    invoke-static {v2}, Landroid/widget/CalendarView;->access$1900(Landroid/widget/CalendarView;)Ljava/util/Calendar;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v8}, Ljava/util/Calendar;->get(I)I
+
+    move-result v2
+
+    if-ne v2, p3, :cond_4
+
+    move v2, v3
+
+    :goto_3
+    aput-boolean v2, v5, v1
+
+    .line 1273
+    iget-object v2, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
+
+    #getter for: Landroid/widget/CalendarView;->mTempDate:Ljava/util/Calendar;
+    invoke-static {v2}, Landroid/widget/CalendarView;->access$1900(Landroid/widget/CalendarView;)Ljava/util/Calendar;
+
+    move-result-object v2
+
+    iget-object v5, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
+
+    #getter for: Landroid/widget/CalendarView;->mMinDate:Ljava/util/Calendar;
+    invoke-static {v5}, Landroid/widget/CalendarView;->access$1500(Landroid/widget/CalendarView;)Ljava/util/Calendar;
+
+    move-result-object v5
+
+    invoke-virtual {v2, v5}, Ljava/util/Calendar;->before(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_1
+
+    iget-object v2, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
+
+    #getter for: Landroid/widget/CalendarView;->mTempDate:Ljava/util/Calendar;
+    invoke-static {v2}, Landroid/widget/CalendarView;->access$1900(Landroid/widget/CalendarView;)Ljava/util/Calendar;
+
+    move-result-object v2
+
+    iget-object v5, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
 
     #getter for: Landroid/widget/CalendarView;->mMaxDate:Ljava/util/Calendar;
-    invoke-static {v4}, Landroid/widget/CalendarView;->access$1700(Landroid/widget/CalendarView;)Ljava/util/Calendar;
+    invoke-static {v5}, Landroid/widget/CalendarView;->access$1400(Landroid/widget/CalendarView;)Ljava/util/Calendar;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-virtual {v3, v4}, Ljava/util/Calendar;->after(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v5}, Ljava/util/Calendar;->after(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_6
+    if-eqz v2, :cond_5
 
-    .line 1596
+    .line 1274
     :cond_1
-    iget-object v3, p0, Landroid/widget/CalendarView$WeekView;->mDayNumbers:[Ljava/lang/String;
+    iget-object v2, p0, Landroid/widget/CalendarView$WeekView;->mDayNumbers:[Ljava/lang/String;
 
-    const-string v4, ""
+    const-string v5, ""
 
-    aput-object v4, v3, v1
+    aput-object v5, v2, v1
 
-    .line 1601
-    :goto_5
-    iget-object v3, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
+    .line 1278
+    :goto_4
+    iget-object v2, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
 
     #getter for: Landroid/widget/CalendarView;->mTempDate:Ljava/util/Calendar;
-    invoke-static {v3}, Landroid/widget/CalendarView;->access$2200(Landroid/widget/CalendarView;)Ljava/util/Calendar;
+    invoke-static {v2}, Landroid/widget/CalendarView;->access$1900(Landroid/widget/CalendarView;)Ljava/util/Calendar;
 
-    move-result-object v3
+    move-result-object v2
 
-    const/4 v4, 0x5
+    invoke-virtual {v2, v7, v3}, Ljava/util/Calendar;->add(II)V
 
-    const/4 v5, 0x1
-
-    invoke-virtual {v3, v4, v5}, Ljava/util/Calendar;->add(II)V
-
-    .line 1589
+    .line 1270
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_2
 
-    .line 1561
     .end local v0           #diff:I
     .end local v1           #i:I
-    .end local v2           #isFocusedDay:Z
     :cond_2
-    const/4 v3, 0x0
+    move v2, v4
 
+    .line 1244
     goto/16 :goto_0
 
-    .line 1562
+    .line 1245
     :cond_3
-    iget-object v3, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
+    iget-object v2, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
 
     #getter for: Landroid/widget/CalendarView;->mDaysPerWeek:I
-    invoke-static {v3}, Landroid/widget/CalendarView;->access$2500(Landroid/widget/CalendarView;)I
+    invoke-static {v2}, Landroid/widget/CalendarView;->access$2300(Landroid/widget/CalendarView;)I
 
-    move-result v3
+    move-result v2
 
     goto/16 :goto_1
 
-    .line 1590
     .restart local v0       #diff:I
     .restart local v1       #i:I
     :cond_4
-    const/4 v2, 0x0
+    move v2, v4
 
+    .line 1271
     goto :goto_3
 
-    .line 1593
-    .restart local v2       #isFocusedDay:Z
+    .line 1276
     :cond_5
-    const/4 v3, 0x0
+    iget-object v2, p0, Landroid/widget/CalendarView$WeekView;->mDayNumbers:[Ljava/lang/String;
+
+    iget-object v5, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
+
+    #getter for: Landroid/widget/CalendarView;->mTempDate:Ljava/util/Calendar;
+    invoke-static {v5}, Landroid/widget/CalendarView;->access$1900(Landroid/widget/CalendarView;)Ljava/util/Calendar;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v7}, Ljava/util/Calendar;->get(I)I
+
+    move-result v5
+
+    invoke-static {v5}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    aput-object v5, v2, v1
 
     goto :goto_4
 
-    .line 1598
+    .line 1282
     :cond_6
-    iget-object v3, p0, Landroid/widget/CalendarView$WeekView;->mDayNumbers:[Ljava/lang/String;
-
-    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
-
-    move-result-object v4
-
-    const-string v5, "%d"
-
-    const/4 v6, 0x1
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
-
-    iget-object v8, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
+    iget-object v2, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
 
     #getter for: Landroid/widget/CalendarView;->mTempDate:Ljava/util/Calendar;
-    invoke-static {v8}, Landroid/widget/CalendarView;->access$2200(Landroid/widget/CalendarView;)Ljava/util/Calendar;
+    invoke-static {v2}, Landroid/widget/CalendarView;->access$1900(Landroid/widget/CalendarView;)Ljava/util/Calendar;
 
-    move-result-object v8
+    move-result-object v2
 
-    const/4 v9, 0x5
+    invoke-virtual {v2, v7}, Ljava/util/Calendar;->get(I)I
 
-    invoke-virtual {v8, v9}, Ljava/util/Calendar;->get(I)I
+    move-result v2
 
-    move-result v8
+    if-ne v2, v3, :cond_7
 
-    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    .line 1283
+    iget-object v2, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
 
-    move-result-object v8
+    #getter for: Landroid/widget/CalendarView;->mTempDate:Ljava/util/Calendar;
+    invoke-static {v2}, Landroid/widget/CalendarView;->access$1900(Landroid/widget/CalendarView;)Ljava/util/Calendar;
 
-    aput-object v8, v6, v7
+    move-result-object v2
 
-    invoke-static {v4, v5, v6}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v2, v7, v9}, Ljava/util/Calendar;->add(II)V
 
-    move-result-object v4
-
-    aput-object v4, v3, v1
-
-    goto :goto_5
-
-    .line 1605
-    .end local v2           #isFocusedDay:Z
+    .line 1285
     :cond_7
-    iget-object v3, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
+    iget-object v2, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
 
     #getter for: Landroid/widget/CalendarView;->mTempDate:Ljava/util/Calendar;
-    invoke-static {v3}, Landroid/widget/CalendarView;->access$2200(Landroid/widget/CalendarView;)Ljava/util/Calendar;
+    invoke-static {v2}, Landroid/widget/CalendarView;->access$1900(Landroid/widget/CalendarView;)Ljava/util/Calendar;
 
-    move-result-object v3
+    move-result-object v2
 
-    const/4 v4, 0x5
+    invoke-virtual {v2, v8}, Ljava/util/Calendar;->get(I)I
 
-    invoke-virtual {v3, v4}, Ljava/util/Calendar;->get(I)I
+    move-result v2
 
-    move-result v3
+    iput v2, p0, Landroid/widget/CalendarView$WeekView;->mLastWeekDayMonth:I
 
-    const/4 v4, 0x1
-
-    if-ne v3, v4, :cond_8
-
-    .line 1606
-    iget-object v3, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
-
-    #getter for: Landroid/widget/CalendarView;->mTempDate:Ljava/util/Calendar;
-    invoke-static {v3}, Landroid/widget/CalendarView;->access$2200(Landroid/widget/CalendarView;)Ljava/util/Calendar;
-
-    move-result-object v3
-
-    const/4 v4, 0x5
-
-    const/4 v5, -0x1
-
-    invoke-virtual {v3, v4, v5}, Ljava/util/Calendar;->add(II)V
-
-    .line 1608
-    :cond_8
-    iget-object v3, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
-
-    #getter for: Landroid/widget/CalendarView;->mTempDate:Ljava/util/Calendar;
-    invoke-static {v3}, Landroid/widget/CalendarView;->access$2200(Landroid/widget/CalendarView;)Ljava/util/Calendar;
-
-    move-result-object v3
-
-    const/4 v4, 0x2
-
-    invoke-virtual {v3, v4}, Ljava/util/Calendar;->get(I)I
-
-    move-result v3
-
-    iput v3, p0, Landroid/widget/CalendarView$WeekView;->mLastWeekDayMonth:I
-
-    .line 1610
+    .line 1287
     invoke-direct {p0}, Landroid/widget/CalendarView$WeekView;->updateSelectionPositions()V
 
-    .line 1611
+    .line 1288
     return-void
 .end method
 
@@ -1840,19 +1418,19 @@
     .parameter "canvas"
 
     .prologue
-    .line 1696
+    .line 1357
     invoke-direct {p0, p1}, Landroid/widget/CalendarView$WeekView;->drawBackground(Landroid/graphics/Canvas;)V
 
-    .line 1697
-    invoke-direct {p0, p1}, Landroid/widget/CalendarView$WeekView;->drawWeekNumbersAndDates(Landroid/graphics/Canvas;)V
+    .line 1358
+    invoke-direct {p0, p1}, Landroid/widget/CalendarView$WeekView;->drawWeekNumbers(Landroid/graphics/Canvas;)V
 
-    .line 1698
+    .line 1359
     invoke-direct {p0, p1}, Landroid/widget/CalendarView$WeekView;->drawWeekSeparators(Landroid/graphics/Canvas;)V
 
-    .line 1699
+    .line 1360
     invoke-direct {p0, p1}, Landroid/widget/CalendarView$WeekView;->drawSelectedDateVerticalBars(Landroid/graphics/Canvas;)V
 
-    .line 1700
+    .line 1361
     return-void
 .end method
 
@@ -1862,56 +1440,7 @@
     .parameter "heightMeasureSpec"
 
     .prologue
-    .line 1859
-    iget-object v0, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
-
-    #getter for: Landroid/widget/CalendarView;->mListView:Landroid/widget/ListView;
-    invoke-static {v0}, Landroid/widget/CalendarView;->access$2100(Landroid/widget/CalendarView;)Landroid/widget/ListView;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/widget/ListView;->getHeight()I
-
-    move-result v0
-
-    iget-object v1, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
-
-    #getter for: Landroid/widget/CalendarView;->mListView:Landroid/widget/ListView;
-    invoke-static {v1}, Landroid/widget/CalendarView;->access$2100(Landroid/widget/CalendarView;)Landroid/widget/ListView;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/widget/ListView;->getPaddingTop()I
-
-    move-result v1
-
-    sub-int/2addr v0, v1
-
-    iget-object v1, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
-
-    #getter for: Landroid/widget/CalendarView;->mListView:Landroid/widget/ListView;
-    invoke-static {v1}, Landroid/widget/CalendarView;->access$2100(Landroid/widget/CalendarView;)Landroid/widget/ListView;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/widget/ListView;->getPaddingBottom()I
-
-    move-result v1
-
-    sub-int/2addr v0, v1
-
-    iget-object v1, p0, Landroid/widget/CalendarView$WeekView;->this$0:Landroid/widget/CalendarView;
-
-    #getter for: Landroid/widget/CalendarView;->mShownWeekCount:I
-    invoke-static {v1}, Landroid/widget/CalendarView;->access$3500(Landroid/widget/CalendarView;)I
-
-    move-result v1
-
-    div-int/2addr v0, v1
-
-    iput v0, p0, Landroid/widget/CalendarView$WeekView;->mHeight:I
-
-    .line 1861
+    .line 1476
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
@@ -1920,7 +1449,7 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/widget/CalendarView$WeekView;->setMeasuredDimension(II)V
 
-    .line 1862
+    .line 1477
     return-void
 .end method
 
@@ -1932,12 +1461,12 @@
     .parameter "oldh"
 
     .prologue
-    .line 1830
+    .line 1453
     iput p1, p0, Landroid/widget/CalendarView$WeekView;->mWidth:I
 
-    .line 1831
+    .line 1454
     invoke-direct {p0}, Landroid/widget/CalendarView$WeekView;->updateSelectionPositions()V
 
-    .line 1832
+    .line 1455
     return-void
 .end method

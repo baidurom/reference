@@ -66,10 +66,10 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 166
-    :goto_0
     iput-object v3, p0, Landroid/app/backup/RestoreSession;->mBinder:Landroid/app/backup/IRestoreSession;
 
     .line 168
+    :goto_0
     return-void
 
     .line 163
@@ -87,9 +87,11 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    .line 166
+    iput-object v3, p0, Landroid/app/backup/RestoreSession;->mBinder:Landroid/app/backup/IRestoreSession;
+
     goto :goto_0
 
-    .line 166
     .end local v0           #e:Landroid/os/RemoteException;
     :catchall_0
     move-exception v1

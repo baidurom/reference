@@ -23,14 +23,6 @@
     .end annotation
 .end method
 
-.method public abstract getUris()[Landroid/net/Uri;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract onNdefPushComplete()V
     .annotation system Ldalvik/annotation/Throws;
         value = {

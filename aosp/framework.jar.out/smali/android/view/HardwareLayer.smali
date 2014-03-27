@@ -8,8 +8,6 @@
 
 
 # instance fields
-.field mDisplayList:Landroid/view/DisplayList;
-
 .field mHeight:I
 
 .field mOpaque:Z
@@ -24,12 +22,12 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 48
+    .line 45
     const/4 v0, 0x0
 
     invoke-direct {p0, v1, v1, v0}, Landroid/view/HardwareLayer;-><init>(IIZ)V
 
-    .line 49
+    .line 46
     return-void
 .end method
 
@@ -40,27 +38,24 @@
     .parameter "isOpaque"
 
     .prologue
-    .line 59
+    .line 56
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 60
+    .line 57
     iput p1, p0, Landroid/view/HardwareLayer;->mWidth:I
 
-    .line 61
+    .line 58
     iput p2, p0, Landroid/view/HardwareLayer;->mHeight:I
 
-    .line 62
+    .line 59
     iput-boolean p3, p0, Landroid/view/HardwareLayer;->mOpaque:Z
 
-    .line 63
+    .line 60
     return-void
 .end method
 
 
 # virtual methods
-.method abstract clearStorage()V
-.end method
-
 .method abstract copyInto(Landroid/graphics/Bitmap;)Z
 .end method
 
@@ -73,21 +68,11 @@
 .method abstract getCanvas()Landroid/view/HardwareCanvas;
 .end method
 
-.method getDisplayList()Landroid/view/DisplayList;
-    .locals 1
-
-    .prologue
-    .line 97
-    iget-object v0, p0, Landroid/view/HardwareLayer;->mDisplayList:Landroid/view/DisplayList;
-
-    return-object v0
-.end method
-
 .method getHeight()I
     .locals 1
 
     .prologue
-    .line 88
+    .line 77
     iget v0, p0, Landroid/view/HardwareLayer;->mHeight:I
 
     return v0
@@ -97,7 +82,7 @@
     .locals 1
 
     .prologue
-    .line 79
+    .line 68
     iget v0, p0, Landroid/view/HardwareLayer;->mWidth:I
 
     return v0
@@ -107,7 +92,7 @@
     .locals 1
 
     .prologue
-    .line 115
+    .line 86
     iget-boolean v0, p0, Landroid/view/HardwareLayer;->mOpaque:Z
 
     return v0
@@ -116,34 +101,7 @@
 .method abstract isValid()Z
 .end method
 
-.method abstract redrawLater(Landroid/view/DisplayList;Landroid/graphics/Rect;)V
-.end method
-
-.method abstract resize(II)Z
-.end method
-
-.method setDisplayList(Landroid/view/DisplayList;)V
-    .locals 0
-    .parameter "displayList"
-
-    .prologue
-    .line 106
-    iput-object p1, p0, Landroid/view/HardwareLayer;->mDisplayList:Landroid/view/DisplayList;
-
-    .line 107
-    return-void
-.end method
-
-.method setLayerPaint(Landroid/graphics/Paint;)V
-    .locals 0
-    .parameter "paint"
-
-    .prologue
-    .line 71
-    return-void
-.end method
-
-.method abstract setOpaque(Z)V
+.method abstract resize(II)V
 .end method
 
 .method abstract setTransform(Landroid/graphics/Matrix;)V
@@ -159,15 +117,15 @@
     .parameter "isOpaque"
 
     .prologue
-    .line 187
+    .line 150
     iput p1, p0, Landroid/view/HardwareLayer;->mWidth:I
 
-    .line 188
+    .line 151
     iput p2, p0, Landroid/view/HardwareLayer;->mHeight:I
 
-    .line 189
+    .line 152
     iput-boolean p3, p0, Landroid/view/HardwareLayer;->mOpaque:Z
 
-    .line 190
+    .line 153
     return-void
 .end method

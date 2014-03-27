@@ -67,18 +67,6 @@
         <item quantity="other">sa %d (na) araw</item>
         <item quantity="one">bukas</item>
     </plurals>
-    <plurals name="duration_seconds">
-        <item quantity="other">%d (na) segundo</item>
-        <item quantity="one">1 segundo</item>
-    </plurals>
-    <plurals name="duration_minutes">
-        <item quantity="other">%d (na) minuto</item>
-        <item quantity="one">1 minuto</item>
-    </plurals>
-    <plurals name="duration_hours">
-        <item quantity="other">%d (na) oras</item>
-        <item quantity="one">1 oras</item>
-    </plurals>
     <plurals name="wifi_available">
         <item quantity="other">Available ang mga Wi-Fi network</item>
         <item quantity="one">Available ang Wi-Fi network</item>

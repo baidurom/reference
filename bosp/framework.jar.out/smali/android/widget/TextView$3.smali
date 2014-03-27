@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/widget/TextView;->updateTextServicesLocaleAsync()V
+    value = Landroid/widget/TextView;->showPopup(Landroid/widget/TextView;Landroid/view/View;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,15 +20,20 @@
 # instance fields
 .field final synthetic this$0:Landroid/widget/TextView;
 
+.field final synthetic val$magnifierView:Landroid/widget/MagnifierView2;
+
 
 # direct methods
-.method constructor <init>(Landroid/widget/TextView;)V
+.method constructor <init>(Landroid/widget/TextView;Landroid/widget/MagnifierView2;)V
     .locals 0
+    .parameter
     .parameter
 
     .prologue
-    .line 7855
+    .line 12580
     iput-object p1, p0, Landroid/widget/TextView$3;->this$0:Landroid/widget/TextView;
+
+    iput-object p2, p0, Landroid/widget/TextView$3;->val$magnifierView:Landroid/widget/MagnifierView2;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,58 +43,28 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .locals 3
 
     .prologue
-    .line 7858
-    iget-object v0, p0, Landroid/widget/TextView$3;->this$0:Landroid/widget/TextView;
-
-    #getter for: Landroid/widget/TextView;->mCurrentTextServicesLocaleLock:Ljava/util/concurrent/locks/ReentrantLock;
-    invoke-static {v0}, Landroid/widget/TextView;->access$200(Landroid/widget/TextView;)Ljava/util/concurrent/locks/ReentrantLock;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->tryLock()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 7860
-    :try_start_0
-    iget-object v0, p0, Landroid/widget/TextView$3;->this$0:Landroid/widget/TextView;
-
-    #calls: Landroid/widget/TextView;->updateTextServicesLocaleLocked()V
-    invoke-static {v0}, Landroid/widget/TextView;->access$300(Landroid/widget/TextView;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 7862
-    iget-object v0, p0, Landroid/widget/TextView$3;->this$0:Landroid/widget/TextView;
-
-    #getter for: Landroid/widget/TextView;->mCurrentTextServicesLocaleLock:Ljava/util/concurrent/locks/ReentrantLock;
-    invoke-static {v0}, Landroid/widget/TextView;->access$200(Landroid/widget/TextView;)Ljava/util/concurrent/locks/ReentrantLock;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
-
-    .line 7865
-    :cond_0
-    return-void
-
-    .line 7862
-    :catchall_0
-    move-exception v0
+    .line 12583
+    iget-object v0, p0, Landroid/widget/TextView$3;->val$magnifierView:Landroid/widget/MagnifierView2;
 
     iget-object v1, p0, Landroid/widget/TextView$3;->this$0:Landroid/widget/TextView;
 
-    #getter for: Landroid/widget/TextView;->mCurrentTextServicesLocaleLock:Ljava/util/concurrent/locks/ReentrantLock;
-    invoke-static {v1}, Landroid/widget/TextView;->access$200(Landroid/widget/TextView;)Ljava/util/concurrent/locks/ReentrantLock;
+    #getter for: Landroid/widget/TextView;->mMagnifierPositionX:I
+    invoke-static {v1}, Landroid/widget/TextView;->access$10400(Landroid/widget/TextView;)I
 
-    move-result-object v1
+    move-result v1
 
-    invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+    iget-object v2, p0, Landroid/widget/TextView$3;->this$0:Landroid/widget/TextView;
 
-    throw v0
+    #getter for: Landroid/widget/TextView;->mMagnifierPositionY:I
+    invoke-static {v2}, Landroid/widget/TextView;->access$10500(Landroid/widget/TextView;)I
+
+    move-result v2
+
+    invoke-virtual {v0, v1, v2}, Landroid/widget/MagnifierView2;->updateMagnifierPosition(II)V
+
+    .line 12584
+    return-void
 .end method

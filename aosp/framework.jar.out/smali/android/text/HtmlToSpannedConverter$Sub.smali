@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 818
+    .line 794
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,7 +30,7 @@
     .parameter "x0"
 
     .prologue
-    .line 818
+    .line 794
     invoke-direct {p0}, Landroid/text/HtmlToSpannedConverter$Sub;-><init>()V
 
     return-void

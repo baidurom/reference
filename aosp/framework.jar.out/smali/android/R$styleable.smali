@@ -225,8 +225,6 @@
 
 .field public static final AndroidManifestActivityAlias_name:I = 0x2
 
-.field public static final AndroidManifestActivityAlias_parentActivityName:I = 0x9
-
 .field public static final AndroidManifestActivityAlias_permission:I = 0x3
 
 .field public static final AndroidManifestActivityAlias_targetActivity:I = 0x7
@@ -269,17 +267,11 @@
 
 .field public static final AndroidManifestActivity_noHistory:I = 0x15
 
-.field public static final AndroidManifestActivity_parentActivityName:I = 0x1b
-
 .field public static final AndroidManifestActivity_permission:I = 0x4
 
 .field public static final AndroidManifestActivity_process:I = 0x7
 
 .field public static final AndroidManifestActivity_screenOrientation:I = 0xf
-
-.field public static final AndroidManifestActivity_showOnLockScreen:I = 0x1d
-
-.field public static final AndroidManifestActivity_singleUser:I = 0x1c
 
 .field public static final AndroidManifestActivity_stateNotNeeded:I = 0xc
 
@@ -337,8 +329,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 .end field
-
-.field public static final AndroidManifestApplication_supportsRtl:I = 0x1a
 
 .field public static final AndroidManifestApplication_taskAffinity:I = 0xc
 
@@ -446,19 +436,15 @@
 
 .field public static final AndroidManifestPermissionGroup:[I = null
 
-.field public static final AndroidManifestPermissionGroup_description:I = 0x4
+.field public static final AndroidManifestPermissionGroup_description:I = 0x3
 
 .field public static final AndroidManifestPermissionGroup_icon:I = 0x1
 
 .field public static final AndroidManifestPermissionGroup_label:I = 0x0
 
-.field public static final AndroidManifestPermissionGroup_logo:I = 0x5
+.field public static final AndroidManifestPermissionGroup_logo:I = 0x4
 
 .field public static final AndroidManifestPermissionGroup_name:I = 0x2
-
-.field public static final AndroidManifestPermissionGroup_permissionGroupFlags:I = 0x6
-
-.field public static final AndroidManifestPermissionGroup_priority:I = 0x3
 
 .field public static final AndroidManifestPermissionTree:[I = null
 
@@ -479,8 +465,6 @@
 .field public static final AndroidManifestPermission_logo:I = 0x6
 
 .field public static final AndroidManifestPermission_name:I = 0x2
-
-.field public static final AndroidManifestPermission_permissionFlags:I = 0x7
 
 .field public static final AndroidManifestPermission_permissionGroup:I = 0x4
 
@@ -520,8 +504,6 @@
 
 .field public static final AndroidManifestProvider_readPermission:I = 0x4
 
-.field public static final AndroidManifestProvider_singleUser:I = 0x10
-
 .field public static final AndroidManifestProvider_syncable:I = 0xb
 
 .field public static final AndroidManifestProvider_writePermission:I = 0x5
@@ -546,8 +528,6 @@
 
 .field public static final AndroidManifestReceiver_process:I = 0x6
 
-.field public static final AndroidManifestReceiver_singleUser:I = 0x9
-
 .field public static final AndroidManifestService:[I = null
 
 .field public static final AndroidManifestService_description:I = 0x7
@@ -558,8 +538,6 @@
 
 .field public static final AndroidManifestService_icon:I = 0x1
 
-.field public static final AndroidManifestService_isolatedProcess:I = 0xa
-
 .field public static final AndroidManifestService_label:I = 0x0
 
 .field public static final AndroidManifestService_logo:I = 0x8
@@ -569,8 +547,6 @@
 .field public static final AndroidManifestService_permission:I = 0x3
 
 .field public static final AndroidManifestService_process:I = 0x6
-
-.field public static final AndroidManifestService_singleUser:I = 0xb
 
 .field public static final AndroidManifestService_stopWithTask:I = 0x9
 
@@ -742,8 +718,6 @@
 
 .field public static final AppWidgetProviderInfo_configure:I = 0x4
 
-.field public static final AppWidgetProviderInfo_initialKeyguardLayout:I = 0xa
-
 .field public static final AppWidgetProviderInfo_initialLayout:I = 0x3
 
 .field public static final AppWidgetProviderInfo_minHeight:I = 0x1
@@ -759,8 +733,6 @@
 .field public static final AppWidgetProviderInfo_resizeMode:I = 0x7
 
 .field public static final AppWidgetProviderInfo_updatePeriodMillis:I = 0x2
-
-.field public static final AppWidgetProviderInfo_widgetCategory:I = 0xb
 
 .field public static final AutoCompleteTextView:[I = null
 
@@ -884,23 +856,19 @@
 
 .field public static final DatePicker:[I = null
 
-.field public static final DatePicker_calendarViewShown:I = 0x5
+.field public static final DatePicker_calendarViewShown:I = 0x6
 
-.field public static final DatePicker_endYear:I = 0x1
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end field
+.field public static final DatePicker_endYear:I = 0x2
 
-.field public static final DatePicker_maxDate:I = 0x3
+.field public static final DatePicker_layout:I = 0x0
 
-.field public static final DatePicker_minDate:I = 0x2
+.field public static final DatePicker_maxDate:I = 0x4
 
-.field public static final DatePicker_spinnersShown:I = 0x4
+.field public static final DatePicker_minDate:I = 0x3
 
-.field public static final DatePicker_startYear:I = 0x0
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end field
+.field public static final DatePicker_spinnersShown:I = 0x5
+
+.field public static final DatePicker_startYear:I = 0x1
 
 .field public static final DecelerateInterpolator:[I = null
 
@@ -976,10 +944,6 @@
 
 .field public static final Drawable_visible:I = 0x0
 
-.field public static final Dream:[I = null
-
-.field public static final Dream_settingsActivity:I = 0x0
-
 .field public static final EditText:[I = null
 
 .field public static final ExpandableListChildIndicatorState:[I = null
@@ -1029,10 +993,6 @@
 .field public static final FragmentAnimation_fragmentOpenEnterAnimation:I = 0x0
 
 .field public static final FragmentAnimation_fragmentOpenExitAnimation:I = 0x1
-
-.field public static final FragmentBreadCrumbs:[I = null
-
-.field public static final FragmentBreadCrumbs_gravity:I = 0x0
 
 .field public static final Fragment_id:I = 0x1
 
@@ -1087,16 +1047,6 @@
 .field public static final GestureOverlayView_orientation:I = 0x0
 
 .field public static final GestureOverlayView_uncertainGestureColor:I = 0x3
-
-.field public static final GlowPadView:[I = null
-
-.field public static final GlowPadView_directionDescriptions:I = 0x3
-
-.field public static final GlowPadView_gravity:I = 0x0
-
-.field public static final GlowPadView_innerRadius:I = 0x1
-
-.field public static final GlowPadView_targetDescriptions:I = 0x2
 
 .field public static final GradientDrawable:[I = null
 
@@ -1292,8 +1242,6 @@
 
 .field public static final InputMethod_Subtype_overridesImplicitlyEnabledSubtype:I = 0x6
 
-.field public static final InputMethod_Subtype_subtypeId:I = 0x7
-
 .field public static final InputMethod_isDefault:I = 0x0
 
 .field public static final InputMethod_settingsActivity:I = 0x1
@@ -1329,14 +1277,6 @@
 .field public static final Intent_targetPackage:I = 0x0
 
 .field public static final Keyboard:[I = null
-
-.field public static final KeyboardLayout:[I = null
-
-.field public static final KeyboardLayout_keyboardLayout:I = 0x2
-
-.field public static final KeyboardLayout_label:I = 0x0
-
-.field public static final KeyboardLayout_name:I = 0x1
 
 .field public static final KeyboardView:[I = null
 
@@ -1405,10 +1345,6 @@
 .field public static final Keyboard_keyWidth:I = 0x0
 
 .field public static final Keyboard_verticalGap:I = 0x3
-
-.field public static final KeyguardGlowStripView:[I = null
-
-.field public static final KeyguardSecurityViewFlipper_Layout:[I = null
 
 .field public static final LayerDrawable:[I = null
 
@@ -1503,14 +1439,6 @@
 .field public static final MapView:[I = null
 
 .field public static final MapView_apiKey:I = 0x0
-
-.field public static final MediaRouteButton:[I = null
-
-.field public static final MediaRouteButton_mediaRouteTypes:I = 0x2
-
-.field public static final MediaRouteButton_minHeight:I = 0x1
-
-.field public static final MediaRouteButton_minWidth:I = 0x0
 
 .field public static final Menu:[I = null
 
@@ -1608,14 +1536,6 @@
 
 .field public static final MipmapDrawableItem_drawable:I = 0x0
 
-.field public static final MultiPaneChallengeLayout:[I = null
-
-.field public static final MultiPaneChallengeLayout_Layout:[I = null
-
-.field public static final MultiPaneChallengeLayout_Layout_layout_gravity:I = 0x0
-
-.field public static final MultiPaneChallengeLayout_orientation:I = 0x0
-
 .field public static final MultiSelectListPreference:[I = null
 
 .field public static final MultiSelectListPreference_entries:I = 0x0
@@ -1634,17 +1554,21 @@
 
 .field public static final NinePatchDrawable_src:I = 0x0
 
-.field public static final NumPadKey:[I = null
-
 .field public static final NumberPicker:[I = null
 
-.field public static final NumberPicker_solidColor:I = 0x0
+.field public static final NumberPicker_maxHeight:I = 0x1
+
+.field public static final NumberPicker_maxWidth:I = 0x0
+
+.field public static final NumberPicker_minHeight:I = 0x3
+
+.field public static final NumberPicker_minWidth:I = 0x2
+
+.field public static final NumberPicker_solidColor:I = 0x4
 
 .field public static final OvershootInterpolator:[I = null
 
 .field public static final OvershootInterpolator_tension:I = 0x0
-
-.field public static final PagedView:[I = null
 
 .field public static final Pointer:[I = null
 
@@ -1717,9 +1641,6 @@
 .field public static final ProgressBar:[I = null
 
 .field public static final ProgressBar_animationResolution:I = 0xe
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end field
 
 .field public static final ProgressBar_indeterminate:I = 0x5
 
@@ -1785,25 +1706,17 @@
 
 .field public static final RelativeLayout_Layout_layout_alignBottom:I = 0x8
 
-.field public static final RelativeLayout_Layout_layout_alignEnd:I = 0x14
-
 .field public static final RelativeLayout_Layout_layout_alignLeft:I = 0x5
 
 .field public static final RelativeLayout_Layout_layout_alignParentBottom:I = 0xc
-
-.field public static final RelativeLayout_Layout_layout_alignParentEnd:I = 0x16
 
 .field public static final RelativeLayout_Layout_layout_alignParentLeft:I = 0x9
 
 .field public static final RelativeLayout_Layout_layout_alignParentRight:I = 0xb
 
-.field public static final RelativeLayout_Layout_layout_alignParentStart:I = 0x15
-
 .field public static final RelativeLayout_Layout_layout_alignParentTop:I = 0xa
 
 .field public static final RelativeLayout_Layout_layout_alignRight:I = 0x7
-
-.field public static final RelativeLayout_Layout_layout_alignStart:I = 0x13
 
 .field public static final RelativeLayout_Layout_layout_alignTop:I = 0x6
 
@@ -1817,13 +1730,9 @@
 
 .field public static final RelativeLayout_Layout_layout_centerVertical:I = 0xf
 
-.field public static final RelativeLayout_Layout_layout_toEndOf:I = 0x12
-
 .field public static final RelativeLayout_Layout_layout_toLeftOf:I = 0x0
 
 .field public static final RelativeLayout_Layout_layout_toRightOf:I = 0x1
-
-.field public static final RelativeLayout_Layout_layout_toStartOf:I = 0x11
 
 .field public static final RelativeLayout_gravity:I = 0x0
 
@@ -2002,12 +1911,6 @@
 
 .field public static final ShapeDrawable_width:I = 0x2
 
-.field public static final SizeAdaptiveLayout:[I = null
-
-.field public static final SizeAdaptiveLayout_Layout:[I = null
-
-.field public static final SlidingChallengeLayout_Layout:[I = null
-
 .field public static final SlidingDrawer:[I = null
 
 .field public static final SlidingDrawer_allowSingleTap:I = 0x3
@@ -2154,8 +2057,6 @@
 
 .field public static final TextAppearance:[I = null
 
-.field public static final TextAppearance_fontFamily:I = 0x8
-
 .field public static final TextAppearance_textAllCaps:I = 0x7
 
 .field public static final TextAppearance_textColor:I = 0x3
@@ -2171,14 +2072,6 @@
 .field public static final TextAppearance_textStyle:I = 0x2
 
 .field public static final TextAppearance_typeface:I = 0x1
-
-.field public static final TextClock:[I = null
-
-.field public static final TextClock_format12Hour:I = 0x0
-
-.field public static final TextClock_format24Hour:I = 0x1
-
-.field public static final TextClock_timeZone:I = 0x2
 
 .field public static final TextSwitcher:[I = null
 
@@ -2240,8 +2133,9 @@
 .field public static final TextView_ems:I = 0x1b
 
 .field public static final TextView_enabled:I = 0x0
-
-.field public static final TextView_fontFamily:I = 0x4b
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 .field public static final TextView_freezesText:I = 0x2f
 
@@ -2458,8 +2352,6 @@
 
 .field public static final Theme_checkboxStyle:I = 0x35
 
-.field public static final Theme_checkedTextViewStyle:I = 0xd9
-
 .field public static final Theme_colorActivatedHighlight:I = 0xc8
 
 .field public static final Theme_colorBackground:I = 0x1
@@ -2568,13 +2460,9 @@
 
 .field public static final Theme_listPreferredItemHeightSmall:I = 0xc3
 
-.field public static final Theme_listPreferredItemPaddingEnd:I = 0xd6
-
 .field public static final Theme_listPreferredItemPaddingLeft:I = 0xd1
 
 .field public static final Theme_listPreferredItemPaddingRight:I = 0xd2
-
-.field public static final Theme_listPreferredItemPaddingStart:I = 0xd5
 
 .field public static final Theme_listSeparatorTextViewStyle:I = 0x60
 
@@ -2583,8 +2471,6 @@
 .field public static final Theme_listViewWhiteStyle:I = 0x3e
 
 .field public static final Theme_mapViewStyle:I = 0x52
-
-.field public static final Theme_mediaRouteButtonStyle:I = 0xd4
 
 .field public static final Theme_panelBackground:I = 0x2e
 
@@ -2609,8 +2495,6 @@
 .field public static final Theme_preferenceScreenStyle:I = 0x53
 
 .field public static final Theme_preferenceStyle:I = 0x56
-
-.field public static final Theme_presentationTheme:I = 0xd7
 
 .field public static final Theme_progressBarStyle:I = 0x40
 
@@ -2806,6 +2690,8 @@
 
 .field public static final TimePicker:[I = null
 
+.field public static final TimePicker_layout:I = 0x0
+
 .field public static final ToggleButton:[I = null
 
 .field public static final ToggleButton_disabledAlpha:I = 0x0
@@ -2886,13 +2772,9 @@
 
 .field public static final ViewGroup_MarginLayout_layout_marginBottom:I = 0x6
 
-.field public static final ViewGroup_MarginLayout_layout_marginEnd:I = 0x8
-
 .field public static final ViewGroup_MarginLayout_layout_marginLeft:I = 0x3
 
 .field public static final ViewGroup_MarginLayout_layout_marginRight:I = 0x5
-
-.field public static final ViewGroup_MarginLayout_layout_marginStart:I = 0x7
 
 .field public static final ViewGroup_MarginLayout_layout_marginTop:I = 0x4
 
@@ -2941,6 +2823,9 @@
 .field public static final View_fadeScrollbars:I = 0x2c
 
 .field public static final View_fadingEdge:I = 0x17
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 .field public static final View_fadingEdgeLength:I = 0x18
 
@@ -2956,17 +2841,11 @@
 
 .field public static final View_id:I = 0x8
 
-.field public static final View_importantForAccessibility:I = 0x3d
-
 .field public static final View_isScrollContainer:I = 0x26
 
 .field public static final View_keepScreenOn:I = 0x25
 
-.field public static final View_labelFor:I = 0x43
-
 .field public static final View_layerType:I = 0x3b
-
-.field public static final View_layoutDirection:I = 0x40
 
 .field public static final View_longClickable:I = 0x1e
 
@@ -2992,13 +2871,9 @@
 
 .field public static final View_paddingBottom:I = 0x11
 
-.field public static final View_paddingEnd:I = 0x42
-
 .field public static final View_paddingLeft:I = 0xe
 
 .field public static final View_paddingRight:I = 0x10
-
-.field public static final View_paddingStart:I = 0x41
 
 .field public static final View_paddingTop:I = 0xf
 
@@ -3045,10 +2920,6 @@
 .field public static final View_soundEffectsEnabled:I = 0x24
 
 .field public static final View_tag:I = 0x9
-
-.field public static final View_textAlignment:I = 0x3f
-
-.field public static final View_textDirection:I = 0x3e
 
 .field public static final View_transformPivotX:I = 0x30
 
@@ -3194,7 +3065,7 @@
 
     const/4 v2, 0x0
 
-    .line 11730
+    .line 11238
     const/16 v0, 0xb
 
     new-array v0, v0, [I
@@ -3203,32 +3074,32 @@
 
     sput-object v0, Landroid/R$styleable;->AbsListView:[I
 
-    .line 11957
+    .line 11465
     new-array v0, v3, [I
 
-    const v1, 0x10100b2
+    const v1, #attr@entries#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->AbsSpinner:[I
 
-    .line 11985
+    .line 11493
     new-array v0, v4, [I
 
     fill-array-data v0, :array_1
 
     sput-object v0, Landroid/R$styleable;->AbsoluteLayout_Layout:[I
 
-    .line 12030
+    .line 11538
     new-array v0, v3, [I
 
-    const v1, 0x10101d3
+    const v1, #attr@factor#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->AccelerateInterpolator:[I
 
-    .line 12083
+    .line 11591
     const/16 v0, 0x8
 
     new-array v0, v0, [I
@@ -3237,7 +3108,7 @@
 
     sput-object v0, Landroid/R$styleable;->AccessibilityService:[I
 
-    .line 12279
+    .line 11785
     const/4 v0, 0x6
 
     new-array v0, v0, [I
@@ -3246,7 +3117,7 @@
 
     sput-object v0, Landroid/R$styleable;->AccountAuthenticator:[I
 
-    .line 12413
+    .line 11919
     const/16 v0, 0x13
 
     new-array v0, v0, [I
@@ -3255,25 +3126,25 @@
 
     sput-object v0, Landroid/R$styleable;->ActionBar:[I
 
-    .line 12713
+    .line 12218
     new-array v0, v3, [I
 
-    const v1, 0x10100b3
+    const v1, #attr@layout_gravity#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->ActionBar_LayoutParams:[I
 
-    .line 12764
+    .line 12269
     new-array v0, v3, [I
 
-    const v1, 0x101013f
+    const v1, #attr@minWidth#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->ActionMenuItemView:[I
 
-    .line 12801
+    .line 12306
     const/4 v0, 0x5
 
     new-array v0, v0, [I
@@ -3282,28 +3153,28 @@
 
     sput-object v0, Landroid/R$styleable;->ActionMode:[I
 
-    .line 12883
+    .line 12388
     new-array v0, v4, [I
 
     fill-array-data v0, :array_6
 
     sput-object v0, Landroid/R$styleable;->ActivityChooserView:[I
 
-    .line 12904
+    .line 12409
     new-array v0, v5, [I
 
     fill-array-data v0, :array_7
 
     sput-object v0, Landroid/R$styleable;->AdapterViewAnimator:[I
 
-    .line 12977
+    .line 12482
     new-array v0, v4, [I
 
     fill-array-data v0, :array_8
 
     sput-object v0, Landroid/R$styleable;->AdapterViewFlipper:[I
 
-    .line 13041
+    .line 12546
     const/16 v0, 0x11
 
     new-array v0, v0, [I
@@ -3312,21 +3183,21 @@
 
     sput-object v0, Landroid/R$styleable;->AlertDialog:[I
 
-    .line 13194
+    .line 12699
     new-array v0, v4, [I
 
     fill-array-data v0, :array_a
 
     sput-object v0, Landroid/R$styleable;->AlphaAnimation:[I
 
-    .line 13239
+    .line 12744
     new-array v0, v6, [I
 
     fill-array-data v0, :array_b
 
     sput-object v0, Landroid/R$styleable;->AnalogClock:[I
 
-    .line 13309
+    .line 12814
     const/4 v0, 0x5
 
     new-array v0, v0, [I
@@ -3335,17 +3206,17 @@
 
     sput-object v0, Landroid/R$styleable;->AndroidManifest:[I
 
-    .line 13430
+    .line 12935
     new-array v0, v3, [I
 
-    const v1, 0x1010003
+    const v1, #attr@name#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestAction:[I
 
-    .line 13553
-    const/16 v0, 0x1f
+    .line 13050
+    const/16 v0, 0x1b
 
     new-array v0, v0, [I
 
@@ -3353,8 +3224,8 @@
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestActivity:[I
 
-    .line 14441
-    const/16 v0, 0xa
+    .line 13875
+    const/16 v0, 0x9
 
     new-array v0, v0, [I
 
@@ -3362,8 +3233,8 @@
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestActivityAlias:[I
 
-    .line 14745
-    const/16 v0, 0x1d
+    .line 14161
+    const/16 v0, 0x1c
 
     new-array v0, v0, [I
 
@@ -3371,23 +3242,23 @@
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestApplication:[I
 
-    .line 15345
+    .line 14743
     new-array v0, v3, [I
 
-    const v1, 0x1010003
+    const v1, #attr@name#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestCategory:[I
 
-    .line 15386
+    .line 14784
     new-array v0, v4, [I
 
     fill-array-data v0, :array_10
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestCompatibleScreensScreen:[I
 
-    .line 15487
+    .line 14885
     const/4 v0, 0x7
 
     new-array v0, v0, [I
@@ -3396,14 +3267,14 @@
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestData:[I
 
-    .line 15660
+    .line 15058
     new-array v0, v6, [I
 
     fill-array-data v0, :array_12
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestGrantUriPermission:[I
 
-    .line 15754
+    .line 15152
     const/4 v0, 0x7
 
     new-array v0, v0, [I
@@ -3412,37 +3283,37 @@
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestInstrumentation:[I
 
-    .line 15941
+    .line 15339
     new-array v0, v5, [I
 
     fill-array-data v0, :array_14
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestIntentFilter:[I
 
-    .line 16072
+    .line 15470
     new-array v0, v6, [I
 
     fill-array-data v0, :array_15
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestMetaData:[I
 
-    .line 16152
+    .line 15550
     new-array v0, v3, [I
 
-    const v1, 0x1010003
+    const v1, #attr@name#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestOriginalPackage:[I
 
-    .line 16187
+    .line 15585
     new-array v0, v4, [I
 
     fill-array-data v0, :array_16
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestPackageVerifier:[I
 
-    .line 16257
+    .line 15655
     const/4 v0, 0x6
 
     new-array v0, v0, [I
@@ -3451,8 +3322,8 @@
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestPathPermission:[I
 
-    .line 16416
-    const/16 v0, 0x8
+    .line 15812
+    const/4 v0, 0x7
 
     new-array v0, v0, [I
 
@@ -3460,8 +3331,8 @@
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestPermission:[I
 
-    .line 16662
-    const/4 v0, 0x7
+    .line 16022
+    const/4 v0, 0x5
 
     new-array v0, v0, [I
 
@@ -3469,24 +3340,24 @@
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestPermissionGroup:[I
 
-    .line 16852
+    .line 16164
     new-array v0, v5, [I
 
     fill-array-data v0, :array_1a
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestPermissionTree:[I
 
-    .line 16963
+    .line 16275
     new-array v0, v3, [I
 
-    const v1, 0x1010003
+    const v1, #attr@name#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestProtectedBroadcast:[I
 
-    .line 17048
-    const/16 v0, 0x11
+    .line 16357
+    const/16 v0, 0x10
 
     new-array v0, v0, [I
 
@@ -3494,8 +3365,8 @@
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestProvider:[I
 
-    .line 17471
-    const/16 v0, 0xa
+    .line 16750
+    const/16 v0, 0x9
 
     new-array v0, v0, [I
 
@@ -3503,8 +3374,8 @@
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestReceiver:[I
 
-    .line 17753
-    const/16 v0, 0xc
+    .line 17000
+    const/16 v0, 0xa
 
     new-array v0, v0, [I
 
@@ -3512,7 +3383,7 @@
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestService:[I
 
-    .line 18063
+    .line 17266
     const/16 v0, 0x9
 
     new-array v0, v0, [I
@@ -3521,7 +3392,7 @@
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestSupportsScreens:[I
 
-    .line 18292
+    .line 17495
     const/4 v0, 0x5
 
     new-array v0, v0, [I
@@ -3530,37 +3401,37 @@
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestUsesConfiguration:[I
 
-    .line 18413
+    .line 17616
     new-array v0, v6, [I
 
     fill-array-data v0, :array_20
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestUsesFeature:[I
 
-    .line 18489
+    .line 17692
     new-array v0, v4, [I
 
     fill-array-data v0, :array_21
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestUsesLibrary:[I
 
-    .line 18561
+    .line 17756
     new-array v0, v3, [I
 
-    const v1, 0x1010003
+    const v1, #attr@name#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestUsesPermission:[I
 
-    .line 18604
+    .line 17799
     new-array v0, v6, [I
 
     fill-array-data v0, :array_22
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestUsesSdk:[I
 
-    .line 18691
+    .line 17886
     const/4 v0, 0x6
 
     new-array v0, v0, [I
@@ -3569,7 +3440,7 @@
 
     sput-object v0, Landroid/R$styleable;->AnimatedRotateDrawable:[I
 
-    .line 18795
+    .line 17990
     const/16 v0, 0xb
 
     new-array v0, v0, [I
@@ -3578,21 +3449,21 @@
 
     sput-object v0, Landroid/R$styleable;->Animation:[I
 
-    .line 19012
+    .line 18207
     new-array v0, v6, [I
 
     fill-array-data v0, :array_25
 
     sput-object v0, Landroid/R$styleable;->AnimationDrawable:[I
 
-    .line 19084
+    .line 18279
     new-array v0, v4, [I
 
     fill-array-data v0, :array_26
 
     sput-object v0, Landroid/R$styleable;->AnimationDrawableItem:[I
 
-    .line 19139
+    .line 18334
     const/4 v0, 0x6
 
     new-array v0, v0, [I
@@ -3601,7 +3472,7 @@
 
     sput-object v0, Landroid/R$styleable;->AnimationSet:[I
 
-    .line 19269
+    .line 18464
     const/16 v0, 0x8
 
     new-array v0, v0, [I
@@ -3610,33 +3481,33 @@
 
     sput-object v0, Landroid/R$styleable;->Animator:[I
 
-    .line 19437
+    .line 18632
     new-array v0, v3, [I
 
-    const v1, 0x10102e2
+    const v1, #attr@ordering#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->AnimatorSet:[I
 
-    .line 19469
+    .line 18664
     new-array v0, v3, [I
 
-    const v1, 0x101026a
+    const v1, #attr@tension#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->AnticipateInterpolator:[I
 
-    .line 19500
+    .line 18695
     new-array v0, v4, [I
 
     fill-array-data v0, :array_29
 
     sput-object v0, Landroid/R$styleable;->AnticipateOvershootInterpolator:[I
 
-    .line 19572
-    const/16 v0, 0xc
+    .line 18762
+    const/16 v0, 0xa
 
     new-array v0, v0, [I
 
@@ -3644,7 +3515,7 @@
 
     sput-object v0, Landroid/R$styleable;->AppWidgetProviderInfo:[I
 
-    .line 19816
+    .line 18967
     const/16 v0, 0xa
 
     new-array v0, v0, [I
@@ -3653,7 +3524,7 @@
 
     sput-object v0, Landroid/R$styleable;->AutoCompleteTextView:[I
 
-    .line 20144
+    .line 19295
     const/4 v0, 0x6
 
     new-array v0, v0, [I
@@ -3662,12 +3533,12 @@
 
     sput-object v0, Landroid/R$styleable;->BitmapDrawable:[I
 
-    .line 20276
+    .line 19427
     new-array v0, v2, [I
 
     sput-object v0, Landroid/R$styleable;->Button:[I
 
-    .line 20313
+    .line 19464
     const/16 v0, 0xd
 
     new-array v0, v0, [I
@@ -3676,53 +3547,53 @@
 
     sput-object v0, Landroid/R$styleable;->CalendarView:[I
 
-    .line 20521
+    .line 19672
     new-array v0, v6, [I
 
     fill-array-data v0, :array_2e
 
     sput-object v0, Landroid/R$styleable;->CheckBoxPreference:[I
 
-    .line 20589
+    .line 19740
     new-array v0, v4, [I
 
     fill-array-data v0, :array_2f
 
     sput-object v0, Landroid/R$styleable;->CheckedTextView:[I
 
-    .line 20632
+    .line 19783
     new-array v0, v3, [I
 
-    const v1, 0x1010105
+    const v1, #attr@format#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->Chronometer:[I
 
-    .line 20669
+    .line 19820
     new-array v0, v6, [I
 
     fill-array-data v0, :array_30
 
     sput-object v0, Landroid/R$styleable;->ClipDrawable:[I
 
-    .line 20751
+    .line 19902
     new-array v0, v3, [I
 
-    const v1, 0x10101a5
+    const v1, #attr@color#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->ColorDrawable:[I
 
-    .line 20783
+    .line 19934
     new-array v0, v4, [I
 
     fill-array-data v0, :array_31
 
     sput-object v0, Landroid/R$styleable;->CompoundButton:[I
 
-    .line 20834
+    .line 19985
     const/4 v0, 0x6
 
     new-array v0, v0, [I
@@ -3731,16 +3602,16 @@
 
     sput-object v0, Landroid/R$styleable;->ContactsDataKind:[I
 
-    .line 20941
+    .line 20092
     new-array v0, v3, [I
 
-    const v1, 0x10101d4
+    const v1, #attr@cycles#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->CycleInterpolator:[I
 
-    .line 20978
+    .line 20131
     const/4 v0, 0x7
 
     new-array v0, v0, [I
@@ -3749,25 +3620,25 @@
 
     sput-object v0, Landroid/R$styleable;->DatePicker:[I
 
-    .line 21094
+    .line 20253
     new-array v0, v3, [I
 
-    const v1, 0x10101d3
+    const v1, #attr@factor#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->DecelerateInterpolator:[I
 
-    .line 21130
+    .line 20289
     new-array v0, v3, [I
 
-    const v1, 0x1010194
+    const v1, #attr@visible#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->DeviceAdmin:[I
 
-    .line 21172
+    .line 20331
     const/4 v0, 0x6
 
     new-array v0, v0, [I
@@ -3776,16 +3647,16 @@
 
     sput-object v0, Landroid/R$styleable;->DialogPreference:[I
 
-    .line 21278
+    .line 20437
     new-array v0, v3, [I
 
-    const v1, 0x1010194
+    const v1, #attr@visible#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->Drawable:[I
 
-    .line 21318
+    .line 20477
     const/4 v0, 0x5
 
     new-array v0, v0, [I
@@ -3794,8 +3665,8 @@
 
     sput-object v0, Landroid/R$styleable;->DrawableCorners:[I
 
-    .line 21494
-    const/16 v0, 0x12
+    .line 20652
+    const/16 v0, 0x11
 
     new-array v0, v0, [I
 
@@ -3803,37 +3674,28 @@
 
     sput-object v0, Landroid/R$styleable;->DrawableStates:[I
 
-    .line 21814
-    new-array v0, v3, [I
-
-    const v1, 0x1010225
-
-    aput v1, v0, v2
-
-    sput-object v0, Landroid/R$styleable;->Dream:[I
-
-    .line 21836
+    .line 20957
     new-array v0, v2, [I
 
     sput-object v0, Landroid/R$styleable;->EditText:[I
 
-    .line 21849
+    .line 20970
     new-array v0, v3, [I
 
-    const v1, 0x10100a6
+    const v1, #attr@state_last#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->ExpandableListChildIndicatorState:[I
 
-    .line 21880
+    .line 21001
     new-array v0, v4, [I
 
     fill-array-data v0, :array_37
 
     sput-object v0, Landroid/R$styleable;->ExpandableListGroupIndicatorState:[I
 
-    .line 21937
+    .line 21058
     const/4 v0, 0x7
 
     new-array v0, v0, [I
@@ -3842,21 +3704,21 @@
 
     sput-object v0, Landroid/R$styleable;->ExpandableListView:[I
 
-    .line 22068
+    .line 21189
     new-array v0, v4, [I
 
     fill-array-data v0, :array_39
 
     sput-object v0, Landroid/R$styleable;->Extra:[I
 
-    .line 22130
+    .line 21251
     new-array v0, v6, [I
 
     fill-array-data v0, :array_3a
 
     sput-object v0, Landroid/R$styleable;->Fragment:[I
 
-    .line 22210
+    .line 21331
     const/4 v0, 0x6
 
     new-array v0, v0, [I
@@ -3865,39 +3727,30 @@
 
     sput-object v0, Landroid/R$styleable;->FragmentAnimation:[I
 
-    .line 22286
-    new-array v0, v3, [I
-
-    const v1, 0x10100af
-
-    aput v1, v0, v2
-
-    sput-object v0, Landroid/R$styleable;->FragmentBreadCrumbs:[I
-
-    .line 22342
+    .line 21410
     new-array v0, v5, [I
 
     fill-array-data v0, :array_3c
 
     sput-object v0, Landroid/R$styleable;->FrameLayout:[I
 
-    .line 22424
+    .line 21492
     new-array v0, v3, [I
 
-    const v1, 0x10100b3
+    const v1, #attr@layout_gravity#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->FrameLayout_Layout:[I
 
-    .line 22483
+    .line 21551
     new-array v0, v5, [I
 
     fill-array-data v0, :array_3d
 
     sput-object v0, Landroid/R$styleable;->Gallery:[I
 
-    .line 22610
+    .line 21678
     const/16 v0, 0xc
 
     new-array v0, v0, [I
@@ -3906,3397 +3759,3164 @@
 
     sput-object v0, Landroid/R$styleable;->GestureOverlayView:[I
 
-    .line 22836
-    const/16 v0, 0x11
+    .line 21911
+    const/16 v0, 0x8
 
     new-array v0, v0, [I
 
     fill-array-data v0, :array_3f
 
-    sput-object v0, Landroid/R$styleable;->GlowPadView:[I
+    sput-object v0, Landroid/R$styleable;->GradientDrawable:[I
 
-    .line 22947
-    const/16 v0, 0x8
+    .line 22082
+    const/16 v0, 0x9
 
     new-array v0, v0, [I
 
     fill-array-data v0, :array_40
 
-    sput-object v0, Landroid/R$styleable;->GradientDrawable:[I
+    sput-object v0, Landroid/R$styleable;->GradientDrawableGradient:[I
 
-    .line 23118
-    const/16 v0, 0x9
-
-    new-array v0, v0, [I
+    .line 22262
+    new-array v0, v5, [I
 
     fill-array-data v0, :array_41
 
-    sput-object v0, Landroid/R$styleable;->GradientDrawableGradient:[I
+    sput-object v0, Landroid/R$styleable;->GradientDrawablePadding:[I
 
-    .line 23298
-    new-array v0, v5, [I
+    .line 22349
+    new-array v0, v4, [I
 
     fill-array-data v0, :array_42
 
-    sput-object v0, Landroid/R$styleable;->GradientDrawablePadding:[I
-
-    .line 23385
-    new-array v0, v4, [I
-
-    fill-array-data v0, :array_43
-
     sput-object v0, Landroid/R$styleable;->GradientDrawableSize:[I
 
-    .line 23434
+    .line 22398
     new-array v0, v3, [I
 
-    const v1, 0x10101a5
+    const v1, #attr@color#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->GradientDrawableSolid:[I
 
-    .line 23470
+    .line 22434
     new-array v0, v5, [I
 
-    fill-array-data v0, :array_44
+    fill-array-data v0, :array_43
 
     sput-object v0, Landroid/R$styleable;->GradientDrawableStroke:[I
 
-    .line 23570
+    .line 22534
     const/4 v0, 0x7
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_45
+    fill-array-data v0, :array_44
 
     sput-object v0, Landroid/R$styleable;->GridLayout:[I
 
-    .line 23732
+    .line 22696
     new-array v0, v5, [I
 
-    fill-array-data v0, :array_46
+    fill-array-data v0, :array_45
 
     sput-object v0, Landroid/R$styleable;->GridLayoutAnimation:[I
 
-    .line 23841
+    .line 22805
     const/4 v0, 0x5
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_46
+
+    sput-object v0, Landroid/R$styleable;->GridLayout_Layout:[I
+
+    .line 22940
+    const/4 v0, 0x6
 
     new-array v0, v0, [I
 
     fill-array-data v0, :array_47
 
-    sput-object v0, Landroid/R$styleable;->GridLayout_Layout:[I
-
-    .line 23976
-    const/4 v0, 0x6
-
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_48
-
     sput-object v0, Landroid/R$styleable;->GridView:[I
 
-    .line 24126
+    .line 23090
     new-array v0, v3, [I
 
-    const v1, 0x101017a
+    const v1, #attr@fillViewport#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->HorizontalScrollView:[I
 
-    .line 24160
+    .line 23124
     new-array v0, v4, [I
 
-    fill-array-data v0, :array_49
+    fill-array-data v0, :array_48
 
     sput-object v0, Landroid/R$styleable;->Icon:[I
 
-    .line 24218
+    .line 23182
     new-array v0, v3, [I
 
-    const v1, 0x1010002
+    const v1, #attr@icon#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->IconDefault:[I
 
-    .line 24260
+    .line 23224
     const/4 v0, 0x5
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_49
+
+    sput-object v0, Landroid/R$styleable;->IconMenuView:[I
+
+    .line 23292
+    new-array v0, v2, [I
+
+    sput-object v0, Landroid/R$styleable;->ImageSwitcher:[I
+
+    .line 23324
+    const/16 v0, 0xa
 
     new-array v0, v0, [I
 
     fill-array-data v0, :array_4a
 
-    sput-object v0, Landroid/R$styleable;->IconMenuView:[I
-
-    .line 24328
-    new-array v0, v2, [I
-
-    sput-object v0, Landroid/R$styleable;->ImageSwitcher:[I
-
-    .line 24360
-    const/16 v0, 0xa
-
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_4b
-
     sput-object v0, Landroid/R$styleable;->ImageView:[I
 
-    .line 24533
+    .line 23497
     new-array v0, v2, [I
 
     sput-object v0, Landroid/R$styleable;->InputExtras:[I
 
-    .line 24556
+    .line 23520
     new-array v0, v4, [I
 
-    fill-array-data v0, :array_4c
+    fill-array-data v0, :array_4b
 
     sput-object v0, Landroid/R$styleable;->InputMethod:[I
 
-    .line 24611
+    .line 23575
     new-array v0, v6, [I
 
-    fill-array-data v0, :array_4d
+    fill-array-data v0, :array_4c
 
     sput-object v0, Landroid/R$styleable;->InputMethodService:[I
 
-    .line 24686
-    const/16 v0, 0x8
+    .line 23648
+    const/4 v0, 0x7
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_4d
+
+    sput-object v0, Landroid/R$styleable;->InputMethod_Subtype:[I
+
+    .line 23789
+    const/4 v0, 0x6
 
     new-array v0, v0, [I
 
     fill-array-data v0, :array_4e
 
-    sput-object v0, Landroid/R$styleable;->InputMethod_Subtype:[I
+    sput-object v0, Landroid/R$styleable;->InsetDrawable:[I
 
-    .line 24847
-    const/4 v0, 0x6
+    .line 23913
+    const/4 v0, 0x5
 
     new-array v0, v0, [I
 
     fill-array-data v0, :array_4f
 
-    sput-object v0, Landroid/R$styleable;->InsetDrawable:[I
-
-    .line 24971
-    const/4 v0, 0x5
-
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_50
-
     sput-object v0, Landroid/R$styleable;->Intent:[I
 
-    .line 25078
+    .line 24020
     new-array v0, v3, [I
 
-    const v1, 0x1010003
+    const v1, #attr@name#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->IntentCategory:[I
 
-    .line 25113
+    .line 24055
     new-array v0, v5, [I
 
-    fill-array-data v0, :array_51
+    fill-array-data v0, :array_50
 
     sput-object v0, Landroid/R$styleable;->Keyboard:[I
 
-    .line 25222
-    new-array v0, v6, [I
-
-    fill-array-data v0, :array_52
-
-    sput-object v0, Landroid/R$styleable;->KeyboardLayout:[I
-
-    .line 25296
+    .line 24172
     const/16 v0, 0xc
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_53
+    fill-array-data v0, :array_51
 
     sput-object v0, Landroid/R$styleable;->KeyboardView:[I
 
-    .line 25490
+    .line 24366
     new-array v0, v3, [I
 
-    const v1, 0x101023c
+    const v1, #attr@state_long_pressable#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->KeyboardViewPreviewState:[I
 
-    .line 25542
+    .line 24418
     const/16 v0, 0xc
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_54
+    fill-array-data v0, :array_52
 
     sput-object v0, Landroid/R$styleable;->Keyboard_Key:[I
 
-    .line 25740
+    .line 24616
     new-array v0, v4, [I
 
-    fill-array-data v0, :array_55
+    fill-array-data v0, :array_53
 
     sput-object v0, Landroid/R$styleable;->Keyboard_Row:[I
 
-    .line 25783
-    new-array v0, v5, [I
-
-    fill-array-data v0, :array_56
-
-    sput-object v0, Landroid/R$styleable;->KeyguardGlowStripView:[I
-
-    .line 25794
-    new-array v0, v4, [I
-
-    fill-array-data v0, :array_57
-
-    sput-object v0, Landroid/R$styleable;->KeyguardSecurityViewFlipper_Layout:[I
-
-    .line 25808
+    .line 24662
     new-array v0, v3, [I
 
-    const v1, 0x101031e
+    const v1, #attr@opacity#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->LayerDrawable:[I
 
-    .line 25854
+    .line 24708
     const/4 v0, 0x6
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_58
+    fill-array-data v0, :array_54
 
     sput-object v0, Landroid/R$styleable;->LayerDrawableItem:[I
 
-    .line 25973
+    .line 24827
     new-array v0, v5, [I
 
-    fill-array-data v0, :array_59
+    fill-array-data v0, :array_55
 
     sput-object v0, Landroid/R$styleable;->LayoutAnimation:[I
 
-    .line 26055
+    .line 24909
     new-array v0, v6, [I
 
-    fill-array-data v0, :array_5a
+    fill-array-data v0, :array_56
 
     sput-object v0, Landroid/R$styleable;->LevelListDrawableItem:[I
 
-    .line 26135
+    .line 24989
     const/16 v0, 0x9
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_5b
+    fill-array-data v0, :array_57
 
     sput-object v0, Landroid/R$styleable;->LinearLayout:[I
 
-    .line 26342
+    .line 25196
     new-array v0, v5, [I
 
-    fill-array-data v0, :array_5c
+    fill-array-data v0, :array_58
 
     sput-object v0, Landroid/R$styleable;->LinearLayout_Layout:[I
 
-    .line 26478
+    .line 25332
     new-array v0, v4, [I
 
-    fill-array-data v0, :array_5d
+    fill-array-data v0, :array_59
 
     sput-object v0, Landroid/R$styleable;->ListPreference:[I
 
-    .line 26530
+    .line 25384
     const/4 v0, 0x7
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_5e
+    fill-array-data v0, :array_5a
 
     sput-object v0, Landroid/R$styleable;->ListView:[I
 
-    .line 26650
+    .line 25504
     new-array v0, v3, [I
 
-    const v1, 0x1010438
+    const v1, #attr@aspect#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->LockPatternView:[I
 
-    .line 26663
+    .line 25517
     new-array v0, v3, [I
 
-    const v1, 0x1010211
+    const v1, #attr@apiKey#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->MapView:[I
 
-    .line 26697
-    new-array v0, v5, [I
-
-    fill-array-data v0, :array_5f
-
-    sput-object v0, Landroid/R$styleable;->MediaRouteButton:[I
-
-    .line 26760
+    .line 25538
     new-array v0, v2, [I
 
     sput-object v0, Landroid/R$styleable;->Menu:[I
 
-    .line 26783
+    .line 25561
     const/4 v0, 0x6
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_60
+    fill-array-data v0, :array_5b
 
     sput-object v0, Landroid/R$styleable;->MenuGroup:[I
 
-    .line 26936
+    .line 25714
     const/16 v0, 0x11
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_61
+    fill-array-data v0, :array_5c
 
     sput-object v0, Landroid/R$styleable;->MenuItem:[I
 
-    .line 27253
+    .line 26031
     new-array v0, v6, [I
 
-    fill-array-data v0, :array_62
+    fill-array-data v0, :array_5d
 
     sput-object v0, Landroid/R$styleable;->MenuItemCheckedFocusedState:[I
 
-    .line 27322
+    .line 26100
     new-array v0, v4, [I
 
-    fill-array-data v0, :array_63
+    fill-array-data v0, :array_5e
 
     sput-object v0, Landroid/R$styleable;->MenuItemCheckedState:[I
 
-    .line 27375
+    .line 26153
     new-array v0, v4, [I
 
-    fill-array-data v0, :array_64
+    fill-array-data v0, :array_5f
 
     sput-object v0, Landroid/R$styleable;->MenuItemUncheckedFocusedState:[I
 
-    .line 27423
+    .line 26201
     new-array v0, v3, [I
 
-    const v1, 0x101009f
+    const v1, #attr@state_checkable#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->MenuItemUncheckedState:[I
 
-    .line 27466
+    .line 26244
     const/16 v0, 0x8
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_65
+    fill-array-data v0, :array_60
 
     sput-object v0, Landroid/R$styleable;->MenuView:[I
 
-    .line 27572
+    .line 26350
     new-array v0, v3, [I
 
-    const v1, 0x1010199
+    const v1, #attr@drawable#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->MipmapDrawableItem:[I
 
-    .line 27598
-    new-array v0, v3, [I
-
-    const v1, 0x10100c4
-
-    aput v1, v0, v2
-
-    sput-object v0, Landroid/R$styleable;->MultiPaneChallengeLayout:[I
-
-    .line 27630
-    const/4 v0, 0x5
-
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_66
-
-    sput-object v0, Landroid/R$styleable;->MultiPaneChallengeLayout_Layout:[I
-
-    .line 27685
+    .line 26379
     new-array v0, v4, [I
 
-    fill-array-data v0, :array_67
+    fill-array-data v0, :array_61
 
     sput-object v0, Landroid/R$styleable;->MultiSelectListPreference:[I
 
-    .line 27727
-    const/16 v0, 0xb
+    .line 26421
+    const/16 v0, 0x10
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_68
+    fill-array-data v0, :array_62
 
     sput-object v0, Landroid/R$styleable;->MultiWaveView:[I
 
-    .line 27770
+    .line 26465
     new-array v0, v4, [I
 
-    fill-array-data v0, :array_69
+    fill-array-data v0, :array_63
 
     sput-object v0, Landroid/R$styleable;->NinePatchDrawable:[I
 
-    .line 27813
-    new-array v0, v4, [I
-
-    fill-array-data v0, :array_6a
-
-    sput-object v0, Landroid/R$styleable;->NumPadKey:[I
-
-    .line 27826
-    const/16 v0, 0xa
+    .line 26518
+    const/16 v0, 0x8
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_6b
+    fill-array-data v0, :array_64
 
     sput-object v0, Landroid/R$styleable;->NumberPicker:[I
 
-    .line 27855
+    .line 26619
     new-array v0, v3, [I
 
-    const v1, 0x101026a
+    const v1, #attr@tension#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->OvershootInterpolator:[I
 
-    .line 27883
-    new-array v0, v6, [I
-
-    fill-array-data v0, :array_6c
-
-    sput-object v0, Landroid/R$styleable;->PagedView:[I
-
-    .line 27894
+    .line 26646
     new-array v0, v5, [I
 
-    fill-array-data v0, :array_6d
+    fill-array-data v0, :array_65
 
     sput-object v0, Landroid/R$styleable;->Pointer:[I
 
-    .line 27905
+    .line 26657
     new-array v0, v6, [I
 
-    fill-array-data v0, :array_6e
+    fill-array-data v0, :array_66
 
     sput-object v0, Landroid/R$styleable;->PointerIcon:[I
 
-    .line 27920
+    .line 26672
     new-array v0, v4, [I
 
-    fill-array-data v0, :array_6f
+    fill-array-data v0, :array_67
 
     sput-object v0, Landroid/R$styleable;->PopupWindow:[I
 
-    .line 27955
+    .line 26707
     new-array v0, v3, [I
 
-    const v1, 0x10100aa
+    const v1, #attr@state_above_anchor#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->PopupWindowBackgroundState:[I
 
-    .line 28014
+    .line 26766
     const/16 v0, 0xe
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_70
+    fill-array-data v0, :array_68
 
     sput-object v0, Landroid/R$styleable;->Preference:[I
 
-    .line 28250
+    .line 27002
     new-array v0, v5, [I
 
-    fill-array-data v0, :array_71
+    fill-array-data v0, :array_69
 
     sput-object v0, Landroid/R$styleable;->PreferenceFrameLayout:[I
 
-    .line 28261
+    .line 27013
     new-array v0, v3, [I
 
-    const v1, 0x101040b
+    const v1, #attr@layout_removeBorders#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->PreferenceFrameLayout_Layout:[I
 
-    .line 28274
+    .line 27026
     new-array v0, v3, [I
 
-    const v1, 0x10101e7
+    const v1, #attr@orderingFromXml#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->PreferenceGroup:[I
 
-    .line 28318
+    .line 27070
     const/4 v0, 0x7
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_72
+    fill-array-data v0, :array_6a
 
     sput-object v0, Landroid/R$styleable;->PreferenceHeader:[I
 
-    .line 28466
+    .line 27217
     const/16 v0, 0xf
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_73
+    fill-array-data v0, :array_6b
 
     sput-object v0, Landroid/R$styleable;->ProgressBar:[I
 
-    .line 28723
+    .line 27472
     new-array v0, v3, [I
 
-    const v1, 0x10102e1
+    const v1, #attr@propertyName#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->PropertyAnimator:[I
 
-    .line 28750
+    .line 27499
     new-array v0, v3, [I
 
-    const v1, 0x1010414
+    const v1, #attr@quickContactWindowSize#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->QuickContactBadge:[I
 
-    .line 28767
+    .line 27516
     new-array v0, v4, [I
 
-    fill-array-data v0, :array_74
+    fill-array-data v0, :array_6c
 
     sput-object v0, Landroid/R$styleable;->RadioGroup:[I
 
-    .line 28824
+    .line 27573
     new-array v0, v5, [I
 
-    fill-array-data v0, :array_75
+    fill-array-data v0, :array_6d
 
     sput-object v0, Landroid/R$styleable;->RatingBar:[I
 
-    .line 28905
+    .line 27654
     new-array v0, v3, [I
 
-    const v1, 0x1010225
+    const v1, #attr@settingsActivity#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->RecognitionService:[I
 
-    .line 28938
+    .line 27687
     new-array v0, v4, [I
 
-    fill-array-data v0, :array_76
+    fill-array-data v0, :array_6e
 
     sput-object v0, Landroid/R$styleable;->RelativeLayout:[I
 
-    .line 29046
-    const/16 v0, 0x17
+    .line 27783
+    const/16 v0, 0x11
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_77
+    fill-array-data v0, :array_6f
 
     sput-object v0, Landroid/R$styleable;->RelativeLayout_Layout:[I
 
-    .line 29403
+    .line 28053
     new-array v0, v6, [I
 
-    fill-array-data v0, :array_78
+    fill-array-data v0, :array_70
 
     sput-object v0, Landroid/R$styleable;->RingtonePreference:[I
 
-    .line 29470
+    .line 28120
     new-array v0, v3, [I
 
-    const v1, 0x10100c4
+    const v1, #attr@orientation#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->RotarySelector:[I
 
-    .line 29508
+    .line 28158
     new-array v0, v5, [I
 
-    fill-array-data v0, :array_79
+    fill-array-data v0, :array_71
 
     sput-object v0, Landroid/R$styleable;->RotateAnimation:[I
 
-    .line 29594
+    .line 28244
     const/4 v0, 0x6
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_7a
+    fill-array-data v0, :array_72
 
     sput-object v0, Landroid/R$styleable;->RotateDrawable:[I
 
-    .line 29711
+    .line 28361
     const/4 v0, 0x6
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_7b
+    fill-array-data v0, :array_73
 
     sput-object v0, Landroid/R$styleable;->ScaleAnimation:[I
 
-    .line 29847
+    .line 28497
     const/4 v0, 0x5
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_7c
+    fill-array-data v0, :array_74
 
     sput-object v0, Landroid/R$styleable;->ScaleDrawable:[I
 
-    .line 29963
+    .line 28611
     new-array v0, v3, [I
 
-    const v1, 0x101017a
+    const v1, #attr@fillViewport#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->ScrollView:[I
 
-    .line 30000
+    .line 28648
     const/4 v0, 0x5
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_7d
+    fill-array-data v0, :array_75
 
     sput-object v0, Landroid/R$styleable;->SearchView:[I
 
-    .line 30367
+    .line 29001
     const/16 v0, 0x16
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_7e
+    fill-array-data v0, :array_76
 
     sput-object v0, Landroid/R$styleable;->Searchable:[I
 
-    .line 31035
+    .line 29655
     new-array v0, v5, [I
 
-    fill-array-data v0, :array_7f
+    fill-array-data v0, :array_77
 
     sput-object v0, Landroid/R$styleable;->SearchableActionKey:[I
 
-    .line 31366
+    .line 29978
+    new-array v0, v4, [I
+
+    fill-array-data v0, :array_78
+
+    sput-object v0, Landroid/R$styleable;->SeekBar:[I
+
+    .line 30027
+    new-array v0, v5, [I
+
+    fill-array-data v0, :array_79
+
+    sput-object v0, Landroid/R$styleable;->SelectionModeDrawables:[I
+
+    .line 30094
+    new-array v0, v5, [I
+
+    fill-array-data v0, :array_7a
+
+    sput-object v0, Landroid/R$styleable;->ShapeDrawable:[I
+
+    .line 30182
+    new-array v0, v5, [I
+
+    fill-array-data v0, :array_7b
+
+    sput-object v0, Landroid/R$styleable;->ShapeDrawablePadding:[I
+
+    .line 30282
+    const/4 v0, 0x7
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_7c
+
+    sput-object v0, Landroid/R$styleable;->SlidingDrawer:[I
+
+    .line 30410
+    new-array v0, v3, [I
+
+    const v1, #attr@orientation#t
+
+    aput v1, v0, v2
+
+    sput-object v0, Landroid/R$styleable;->SlidingTab:[I
+
+    .line 30451
+    new-array v0, v4, [I
+
+    fill-array-data v0, :array_7d
+
+    sput-object v0, Landroid/R$styleable;->SpellChecker:[I
+
+    .line 30498
+    new-array v0, v6, [I
+
+    fill-array-data v0, :array_7e
+
+    sput-object v0, Landroid/R$styleable;->SpellChecker_Subtype:[I
+
+    .line 30575
+    const/16 v0, 0xa
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_7f
+
+    sput-object v0, Landroid/R$styleable;->Spinner:[I
+
+    .line 30754
     new-array v0, v4, [I
 
     fill-array-data v0, :array_80
 
-    sput-object v0, Landroid/R$styleable;->SeekBar:[I
+    sput-object v0, Landroid/R$styleable;->StackView:[I
 
-    .line 31415
-    new-array v0, v5, [I
+    .line 30783
+    const/4 v0, 0x6
+
+    new-array v0, v0, [I
 
     fill-array-data v0, :array_81
 
-    sput-object v0, Landroid/R$styleable;->SelectionModeDrawables:[I
+    sput-object v0, Landroid/R$styleable;->StateListDrawable:[I
 
-    .line 31482
-    new-array v0, v5, [I
+    .line 30901
+    const/16 v0, 0x8
+
+    new-array v0, v0, [I
 
     fill-array-data v0, :array_82
 
-    sput-object v0, Landroid/R$styleable;->ShapeDrawable:[I
+    sput-object v0, Landroid/R$styleable;->Storage:[I
 
-    .line 31570
-    new-array v0, v5, [I
+    .line 30913
+    new-array v0, v4, [I
 
     fill-array-data v0, :array_83
 
-    sput-object v0, Landroid/R$styleable;->ShapeDrawablePadding:[I
+    sput-object v0, Landroid/R$styleable;->SuggestionSpan:[I
 
-    .line 31647
-    new-array v0, v2, [I
+    .line 30940
+    const/16 v0, 0x8
 
-    sput-object v0, Landroid/R$styleable;->SizeAdaptiveLayout:[I
-
-    .line 31658
-    new-array v0, v4, [I
+    new-array v0, v0, [I
 
     fill-array-data v0, :array_84
 
-    sput-object v0, Landroid/R$styleable;->SizeAdaptiveLayout_Layout:[I
+    sput-object v0, Landroid/R$styleable;->Switch:[I
 
-    .line 31669
-    new-array v0, v4, [I
+    .line 31086
+    const/4 v0, 0x5
+
+    new-array v0, v0, [I
 
     fill-array-data v0, :array_85
 
-    sput-object v0, Landroid/R$styleable;->SlidingChallengeLayout_Layout:[I
+    sput-object v0, Landroid/R$styleable;->SwitchPreference:[I
 
-    .line 31697
+    .line 31203
     const/4 v0, 0x7
 
     new-array v0, v0, [I
 
     fill-array-data v0, :array_86
 
-    sput-object v0, Landroid/R$styleable;->SlidingDrawer:[I
+    sput-object v0, Landroid/R$styleable;->SyncAdapter:[I
 
-    .line 31825
-    new-array v0, v3, [I
+    .line 31341
+    const/4 v0, 0x5
 
-    const v1, 0x10100c4
-
-    aput v1, v0, v2
-
-    sput-object v0, Landroid/R$styleable;->SlidingTab:[I
-
-    .line 31866
-    new-array v0, v4, [I
+    new-array v0, v0, [I
 
     fill-array-data v0, :array_87
 
-    sput-object v0, Landroid/R$styleable;->SpellChecker:[I
+    sput-object v0, Landroid/R$styleable;->TabWidget:[I
 
-    .line 31913
+    .line 31413
     new-array v0, v6, [I
 
     fill-array-data v0, :array_88
 
-    sput-object v0, Landroid/R$styleable;->SpellChecker_Subtype:[I
-
-    .line 31990
-    const/16 v0, 0xa
-
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_89
-
-    sput-object v0, Landroid/R$styleable;->Spinner:[I
-
-    .line 32169
-    new-array v0, v4, [I
-
-    fill-array-data v0, :array_8a
-
-    sput-object v0, Landroid/R$styleable;->StackView:[I
-
-    .line 32198
-    const/4 v0, 0x6
-
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_8b
-
-    sput-object v0, Landroid/R$styleable;->StateListDrawable:[I
-
-    .line 32316
-    const/16 v0, 0x8
-
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_8c
-
-    sput-object v0, Landroid/R$styleable;->Storage:[I
-
-    .line 32328
-    new-array v0, v4, [I
-
-    fill-array-data v0, :array_8d
-
-    sput-object v0, Landroid/R$styleable;->SuggestionSpan:[I
-
-    .line 32355
-    const/16 v0, 0x8
-
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_8e
-
-    sput-object v0, Landroid/R$styleable;->Switch:[I
-
-    .line 32501
-    const/4 v0, 0x5
-
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_8f
-
-    sput-object v0, Landroid/R$styleable;->SwitchPreference:[I
-
-    .line 32618
-    const/4 v0, 0x7
-
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_90
-
-    sput-object v0, Landroid/R$styleable;->SyncAdapter:[I
-
-    .line 32756
-    const/4 v0, 0x5
-
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_91
-
-    sput-object v0, Landroid/R$styleable;->TabWidget:[I
-
-    .line 32828
-    new-array v0, v6, [I
-
-    fill-array-data v0, :array_92
-
     sput-object v0, Landroid/R$styleable;->TableLayout:[I
 
-    .line 32891
+    .line 31476
     new-array v0, v2, [I
 
     sput-object v0, Landroid/R$styleable;->TableRow:[I
 
-    .line 32906
+    .line 31491
     new-array v0, v4, [I
 
-    fill-array-data v0, :array_93
+    fill-array-data v0, :array_89
 
     sput-object v0, Landroid/R$styleable;->TableRow_Cell:[I
 
-    .line 32967
-    const/16 v0, 0x9
+    .line 31550
+    const/16 v0, 0x8
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_94
+    fill-array-data v0, :array_8a
 
     sput-object v0, Landroid/R$styleable;->TextAppearance:[I
 
-    .line 33135
-    new-array v0, v6, [I
-
-    fill-array-data v0, :array_95
-
-    sput-object v0, Landroid/R$styleable;->TextClock:[I
-
-    .line 33198
+    .line 31687
     new-array v0, v2, [I
 
     sput-object v0, Landroid/R$styleable;->TextSwitcher:[I
 
-    .line 33218
+    .line 31707
     new-array v0, v3, [I
 
-    const v1, 0x1010225
+    const v1, #attr@settingsActivity#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->TextToSpeechEngine:[I
 
-    .line 33436
-    const/16 v0, 0x4c
+    .line 31923
+    const/16 v0, 0x4b
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_96
+    fill-array-data v0, :array_8b
 
     sput-object v0, Landroid/R$styleable;->TextView:[I
 
-    .line 35016
+    .line 33465
     new-array v0, v3, [I
 
-    const v1, 0x1010034
+    const v1, #attr@textAppearance#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->TextViewAppearance:[I
 
-    .line 35041
+    .line 33490
     new-array v0, v3, [I
 
-    const v1, 0x101034d
+    const v1, #attr@state_multiline#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->TextViewMultiLineBackgroundState:[I
 
-    .line 35530
-    const/16 v0, 0x108
+    .line 33969
+    const/16 v0, 0x103
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_97
+    fill-array-data v0, :array_8c
 
     sput-object v0, Landroid/R$styleable;->Theme:[I
 
-    .line 38567
+    .line 36935
     new-array v0, v3, [I
 
-    const v1, 0x1010413
+    const v1, #attr@layout#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->TimePicker:[I
 
-    .line 38584
+    .line 36964
     new-array v0, v6, [I
 
-    fill-array-data v0, :array_98
+    fill-array-data v0, :array_8d
 
     sput-object v0, Landroid/R$styleable;->ToggleButton:[I
 
-    .line 38651
+    .line 37031
     new-array v0, v5, [I
 
-    fill-array-data v0, :array_99
+    fill-array-data v0, :array_8e
 
     sput-object v0, Landroid/R$styleable;->TranslateAnimation:[I
 
-    .line 38732
+    .line 37112
     new-array v0, v3, [I
 
-    const v1, 0x101017e
+    const v1, #attr@mode#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->TwoLineListItem:[I
 
-    .line 38764
+    .line 37144
     new-array v0, v3, [I
 
-    const v1, 0x1010193
+    const v1, #attr@layout_scale#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->VerticalSlider_Layout:[I
 
-    .line 38968
-    const/16 v0, 0x44
+    .line 37331
+    const/16 v0, 0x41
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_9a
+    fill-array-data v0, :array_8f
 
     sput-object v0, Landroid/R$styleable;->View:[I
 
-    .line 40296
+    .line 38482
     new-array v0, v6, [I
 
-    fill-array-data v0, :array_9b
+    fill-array-data v0, :array_90
 
     sput-object v0, Landroid/R$styleable;->ViewAnimator:[I
 
-    .line 40381
+    .line 38567
     const/16 v0, 0xa
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_9c
+    fill-array-data v0, :array_91
 
     sput-object v0, Landroid/R$styleable;->ViewDrawableStates:[I
 
-    .line 40577
+    .line 38763
     new-array v0, v4, [I
 
-    fill-array-data v0, :array_9d
+    fill-array-data v0, :array_92
 
     sput-object v0, Landroid/R$styleable;->ViewFlipper:[I
 
-    .line 40647
+    .line 38833
     const/16 v0, 0xa
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_9e
+    fill-array-data v0, :array_93
 
     sput-object v0, Landroid/R$styleable;->ViewGroup:[I
 
-    .line 40865
+    .line 39051
     new-array v0, v4, [I
 
-    fill-array-data v0, :array_9f
+    fill-array-data v0, :array_94
 
     sput-object v0, Landroid/R$styleable;->ViewGroup_Layout:[I
 
-    .line 40969
+    .line 39151
     const/16 v0, 0x9
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_a0
+    fill-array-data v0, :array_95
 
     sput-object v0, Landroid/R$styleable;->ViewGroup_MarginLayout:[I
 
-    .line 41189
+    .line 39333
     new-array v0, v4, [I
 
-    fill-array-data v0, :array_a1
+    fill-array-data v0, :array_96
 
     sput-object v0, Landroid/R$styleable;->ViewStub:[I
 
-    .line 41220
+    .line 39364
     new-array v0, v2, [I
 
     sput-object v0, Landroid/R$styleable;->ViewSwitcher:[I
 
-    .line 41233
+    .line 39377
     new-array v0, v3, [I
 
-    const v1, 0x1010209
+    const v1, #attr@streamType#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->VolumePreference:[I
 
-    .line 41281
+    .line 39425
     new-array v0, v5, [I
 
-    fill-array-data v0, :array_a2
+    fill-array-data v0, :array_97
 
     sput-object v0, Landroid/R$styleable;->Wallpaper:[I
 
-    .line 41348
+    .line 39492
     new-array v0, v3, [I
 
-    const v1, 0x1010331
+    const v1, #attr@staticWallpaperPreview#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->WallpaperPreviewInfo:[I
 
-    .line 41371
+    .line 39515
     new-array v0, v5, [I
 
-    fill-array-data v0, :array_a3
+    fill-array-data v0, :array_98
 
     sput-object v0, Landroid/R$styleable;->WeightedLinearLayout:[I
 
-    .line 41439
-    const/16 v0, 0x1b
+    .line 39583
+    const/16 v0, 0x17
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_a4
+    fill-array-data v0, :array_99
 
     sput-object v0, Landroid/R$styleable;->Window:[I
 
-    .line 41975
+    .line 40118
     const/16 v0, 0x18
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_a5
+    fill-array-data v0, :array_9a
 
     sput-object v0, Landroid/R$styleable;->WindowAnimation:[I
 
     return-void
 
-    .line 11730
-    nop
-
+    .line 11238
     :array_0
     .array-data 0x4
-        0xfbt 0x0t 0x1t 0x1t
-        0xfct 0x0t 0x1t 0x1t
-        0xfdt 0x0t 0x1t 0x1t
-        0xfet 0x0t 0x1t 0x1t
-        0xfft 0x0t 0x1t 0x1t
-        0x0t 0x1t 0x1t 0x1t
-        0x1t 0x1t 0x1t 0x1t
-        0x2bt 0x1t 0x1t 0x1t
-        0x26t 0x2t 0x1t 0x1t
-        0x31t 0x2t 0x1t 0x1t
-        0x35t 0x3t 0x1t 0x1t
+        #attr@listSelector#a
+        #attr@drawSelectorOnTop#a
+        #attr@stackFromBottom#a
+        #attr@scrollingCache#a
+        #attr@textFilterEnabled#a
+        #attr@transcriptMode#a
+        #attr@cacheColorHint#a
+        #attr@choiceMode#a
+        #attr@fastScrollEnabled#a
+        #attr@smoothScrollbar#a
+        #attr@fastScrollAlwaysVisible#a
     .end array-data
 
-    .line 11985
+    .line 11493
     :array_1
     .array-data 0x4
-        0x7ft 0x1t 0x1t 0x1t
-        0x80t 0x1t 0x1t 0x1t
+        #attr@layout_x#a
+        #attr@layout_y#a
     .end array-data
 
-    .line 12083
+    .line 11591
     :array_2
     .array-data 0x4
-        0x20t 0x0t 0x1t 0x1t
-        0x25t 0x2t 0x1t 0x1t
-        0x80t 0x3t 0x1t 0x1t
-        0x81t 0x3t 0x1t 0x1t
-        0x82t 0x3t 0x1t 0x1t
-        0x83t 0x3t 0x1t 0x1t
-        0x84t 0x3t 0x1t 0x1t
-        0x85t 0x3t 0x1t 0x1t
+        #attr@description#a
+        #attr@settingsActivity#a
+        #attr@accessibilityEventTypes#a
+        #attr@packageNames#a
+        #attr@accessibilityFeedbackType#a
+        #attr@notificationTimeout#a
+        #attr@accessibilityFlags#a
+        #attr@canRetrieveWindowContent#a
     .end array-data
 
-    .line 12279
+    .line 11785
     :array_3
     .array-data 0x4
-        0x1t 0x0t 0x1t 0x1t
-        0x2t 0x0t 0x1t 0x1t
-        0x8ft 0x2t 0x1t 0x1t
-        0x9et 0x2t 0x1t 0x1t
-        0x9ft 0x2t 0x1t 0x1t
-        0x3bt 0x3t 0x1t 0x1t
+        #attr@label#a
+        #attr@icon#a
+        #attr@accountType#a
+        #attr@smallIcon#a
+        #attr@accountPreferences#a
+        #attr@customTokens#a
     .end array-data
 
-    .line 12413
+    .line 11919
     :array_4
     .array-data 0x4
-        0x2t 0x0t 0x1t 0x1t
-        0x77t 0x0t 0x1t 0x1t
-        0xd4t 0x0t 0x1t 0x1t
-        0x29t 0x1t 0x1t 0x1t
-        0x55t 0x1t 0x1t 0x1t
-        0xe1t 0x1t 0x1t 0x1t
-        0xbet 0x2t 0x1t 0x1t
-        0xcft 0x2t 0x1t 0x1t
-        0xd0t 0x2t 0x1t 0x1t
-        0xd1t 0x2t 0x1t 0x1t
-        0xd2t 0x2t 0x1t 0x1t
-        0xf8t 0x2t 0x1t 0x1t
-        0xf9t 0x2t 0x1t 0x1t
-        0x18t 0x3t 0x1t 0x1t
-        0x19t 0x3t 0x1t 0x1t
-        0x1dt 0x3t 0x1t 0x1t
-        0x2dt 0x3t 0x1t 0x1t
-        0x8at 0x3t 0x1t 0x1t
-        0x8bt 0x3t 0x1t 0x1t
+        #attr@icon#a
+        #attr@progressBarStyle#a
+        #attr@background#a
+        #attr@divider#a
+        #attr@height#a
+        #attr@title#a
+        #attr@logo#a
+        #attr@navigationMode#a
+        #attr@displayOptions#a
+        #attr@subtitle#a
+        #attr@customNavigationLayout#a
+        #attr@titleTextStyle#a
+        #attr@subtitleTextStyle#a
+        #attr@indeterminateProgressStyle#a
+        #attr@progressBarPadding#a
+        #attr@homeLayout#a
+        #attr@itemPadding#a
+        #attr@backgroundStacked#a
+        #attr@backgroundSplit#a
     .end array-data
 
-    .line 12801
+    .line 12306
     :array_5
     .array-data 0x4
-        0xd4t 0x0t 0x1t 0x1t
-        0x55t 0x1t 0x1t 0x1t
-        0xf8t 0x2t 0x1t 0x1t
-        0xf9t 0x2t 0x1t 0x1t
-        0x8bt 0x3t 0x1t 0x1t
+        #attr@background#a
+        #attr@height#a
+        #attr@titleTextStyle#a
+        #attr@subtitleTextStyle#a
+        #attr@backgroundSplit#a
     .end array-data
 
-    .line 12883
+    .line 12388
     :array_6
     .array-data 0x4
-        0x24t 0x4t 0x1t 0x1t
-        0x25t 0x4t 0x1t 0x1t
+        #attr@initialActivityCount#a
+        #attr@expandActivityOverflowButtonDrawable#a
     .end array-data
 
-    .line 12904
+    .line 12409
     :array_7
     .array-data 0x4
-        0x77t 0x1t 0x1t 0x1t
-        0x78t 0x1t 0x1t 0x1t
-        0xd5t 0x2t 0x1t 0x1t
-        0x7t 0x3t 0x1t 0x1t
+        #attr@inAnimation#a
+        #attr@outAnimation#a
+        #attr@animateFirstView#a
+        #attr@loopViews#a
     .end array-data
 
-    .line 12977
+    .line 12482
     :array_8
     .array-data 0x4
-        0x79t 0x1t 0x1t 0x1t
-        0xb5t 0x2t 0x1t 0x1t
+        #attr@flipInterval#a
+        #attr@autoStart#a
     .end array-data
 
-    .line 13041
+    .line 12546
     :array_9
     .array-data 0x4
-        0xc6t 0x0t 0x1t 0x1t
-        0xc7t 0x0t 0x1t 0x1t
-        0xc8t 0x0t 0x1t 0x1t
-        0xc9t 0x0t 0x1t 0x1t
-        0xcat 0x0t 0x1t 0x1t
-        0xcbt 0x0t 0x1t 0x1t
-        0xcct 0x0t 0x1t 0x1t
-        0xcdt 0x0t 0x1t 0x1t
-        0xcet 0x0t 0x1t 0x1t
-        0xcft 0x0t 0x1t 0x1t
-        0xf2t 0x0t 0x1t 0x1t
-        0xfft 0x3t 0x1t 0x1t
-        0x0t 0x4t 0x1t 0x1t
-        0x1t 0x4t 0x1t 0x1t
-        0x2t 0x4t 0x1t 0x1t
-        0x3t 0x4t 0x1t 0x1t
-        0x4t 0x4t 0x1t 0x1t
+        #attr@fullDark#a
+        #attr@topDark#a
+        #attr@centerDark#a
+        #attr@bottomDark#a
+        #attr@fullBright#a
+        #attr@topBright#a
+        #attr@centerBright#a
+        #attr@bottomBright#a
+        #attr@bottomMedium#a
+        #attr@centerMedium#a
+        #attr@layout#a
+        #attr@listLayout#a
+        #attr@multiChoiceItemLayout#a
+        #attr@singleChoiceItemLayout#a
+        #attr@listItemLayout#a
+        #attr@progressLayout#a
+        #attr@horizontalProgressLayout#a
     .end array-data
 
-    .line 13194
+    .line 12699
     :array_a
     .array-data 0x4
-        0xcat 0x1t 0x1t 0x1t
-        0xcbt 0x1t 0x1t 0x1t
+        #attr@fromAlpha#a
+        #attr@toAlpha#a
     .end array-data
 
-    .line 13239
+    .line 12744
     :array_b
     .array-data 0x4
-        0x2t 0x1t 0x1t 0x1t
-        0x3t 0x1t 0x1t 0x1t
-        0x4t 0x1t 0x1t 0x1t
+        #attr@dial#a
+        #attr@hand_hour#a
+        #attr@hand_minute#a
     .end array-data
 
-    .line 13309
+    .line 12814
     :array_c
     .array-data 0x4
-        0xbt 0x0t 0x1t 0x1t
-        0x1bt 0x2t 0x1t 0x1t
-        0x1ct 0x2t 0x1t 0x1t
-        0x61t 0x2t 0x1t 0x1t
-        0xb7t 0x2t 0x1t 0x1t
+        #attr@sharedUserId#a
+        #attr@versionCode#a
+        #attr@versionName#a
+        #attr@sharedUserLabel#a
+        #attr@installLocation#a
     .end array-data
 
-    .line 13553
+    .line 13050
     :array_d
     .array-data 0x4
-        0x0t 0x0t 0x1t 0x1t
-        0x1t 0x0t 0x1t 0x1t
-        0x2t 0x0t 0x1t 0x1t
-        0x3t 0x0t 0x1t 0x1t
-        0x6t 0x0t 0x1t 0x1t
-        0xet 0x0t 0x1t 0x1t
-        0x10t 0x0t 0x1t 0x1t
-        0x11t 0x0t 0x1t 0x1t
-        0x12t 0x0t 0x1t 0x1t
-        0x13t 0x0t 0x1t 0x1t
-        0x14t 0x0t 0x1t 0x1t
-        0x15t 0x0t 0x1t 0x1t
-        0x16t 0x0t 0x1t 0x1t
-        0x17t 0x0t 0x1t 0x1t
-        0x1dt 0x0t 0x1t 0x1t
-        0x1et 0x0t 0x1t 0x1t
-        0x1ft 0x0t 0x1t 0x1t
-        0x20t 0x0t 0x1t 0x1t
-        0x3t 0x2t 0x1t 0x1t
-        0x4t 0x2t 0x1t 0x1t
-        0x2bt 0x2t 0x1t 0x1t
-        0x2dt 0x2t 0x1t 0x1t
-        0xa7t 0x2t 0x1t 0x1t
-        0xbet 0x2t 0x1t 0x1t
-        0xc0t 0x2t 0x1t 0x1t
-        0xd3t 0x2t 0x1t 0x1t
-        0x98t 0x3t 0x1t 0x1t
-        0xa7t 0x3t 0x1t 0x1t
-        0xbft 0x3t 0x1t 0x1t
-        0xc9t 0x3t 0x1t 0x1t
-        0x57t 0x4t 0x1t 0x1t
+        #attr@theme#a
+        #attr@label#a
+        #attr@icon#a
+        #attr@name#a
+        #attr@permission#a
+        #attr@enabled#a
+        #attr@exported#a
+        #attr@process#a
+        #attr@taskAffinity#a
+        #attr@multiprocess#a
+        #attr@finishOnTaskLaunch#a
+        #attr@clearTaskOnLaunch#a
+        #attr@stateNotNeeded#a
+        #attr@excludeFromRecents#a
+        #attr@launchMode#a
+        #attr@screenOrientation#a
+        #attr@configChanges#a
+        #attr@description#a
+        #attr@alwaysRetainTaskState#a
+        #attr@allowTaskReparenting#a
+        #attr@windowSoftInputMode#a
+        #attr@noHistory#a
+        #attr@finishOnCloseSystemDialogs#a
+        #attr@logo#a
+        #attr@immersive#a
+        #attr@hardwareAccelerated#a
+        #attr@uiOptions#a
     .end array-data
 
-    .line 14441
+    .line 13875
     :array_e
     .array-data 0x4
-        0x1t 0x0t 0x1t 0x1t
-        0x2t 0x0t 0x1t 0x1t
-        0x3t 0x0t 0x1t 0x1t
-        0x6t 0x0t 0x1t 0x1t
-        0xet 0x0t 0x1t 0x1t
-        0x10t 0x0t 0x1t 0x1t
-        0x20t 0x0t 0x1t 0x1t
-        0x2t 0x2t 0x1t 0x1t
-        0xbet 0x2t 0x1t 0x1t
-        0xa7t 0x3t 0x1t 0x1t
+        #attr@label#a
+        #attr@icon#a
+        #attr@name#a
+        #attr@permission#a
+        #attr@enabled#a
+        #attr@exported#a
+        #attr@description#a
+        #attr@targetActivity#a
+        #attr@logo#a
     .end array-data
 
-    .line 14745
+    .line 14161
     :array_f
     .array-data 0x4
-        0x0t 0x0t 0x1t 0x1t
-        0x1t 0x0t 0x1t 0x1t
-        0x2t 0x0t 0x1t 0x1t
-        0x3t 0x0t 0x1t 0x1t
-        0x4t 0x0t 0x1t 0x1t
-        0x5t 0x0t 0x1t 0x1t
-        0x6t 0x0t 0x1t 0x1t
-        0xct 0x0t 0x1t 0x1t
-        0xdt 0x0t 0x1t 0x1t
-        0xet 0x0t 0x1t 0x1t
-        0xft 0x0t 0x1t 0x1t
-        0x11t 0x0t 0x1t 0x1t
-        0x12t 0x0t 0x1t 0x1t
-        0x20t 0x0t 0x1t 0x1t
-        0x4t 0x2t 0x1t 0x1t
-        0x72t 0x2t 0x1t 0x1t
-        0x7ft 0x2t 0x1t 0x1t
-        0x80t 0x2t 0x1t 0x1t
-        0x9ct 0x2t 0x1t 0x1t
-        0x9dt 0x2t 0x1t 0x1t
-        0xb8t 0x2t 0x1t 0x1t
-        0xbat 0x2t 0x1t 0x1t
-        0xbet 0x2t 0x1t 0x1t
-        0xd3t 0x2t 0x1t 0x1t
-        0x5at 0x3t 0x1t 0x1t
-        0x98t 0x3t 0x1t 0x1t
-        0xaft 0x3t 0x1t 0x1t
-        0x55t 0x4t 0x1t 0x1t
-        0x56t 0x4t 0x1t 0x1t
+        #attr@theme#a
+        #attr@label#a
+        #attr@icon#a
+        #attr@name#a
+        #attr@manageSpaceActivity#a
+        #attr@allowClearUserData#a
+        #attr@permission#a
+        #attr@hasCode#a
+        #attr@persistent#a
+        #attr@enabled#a
+        #attr@debuggable#a
+        #attr@process#a
+        #attr@taskAffinity#a
+        #attr@description#a
+        #attr@allowTaskReparenting#a
+        #attr@testOnly#a
+        #attr@backupAgent#a
+        #attr@allowBackup#a
+        #attr@killAfterRestore#a
+        #attr@restoreNeedsApplication#a
+        #attr@vmSafeMode#a
+        #attr@restoreAnyVersion#a
+        #attr@logo#a
+        #attr@hardwareAccelerated#a
+        #attr@largeHeap#a
+        #attr@uiOptions#a
+        #attr@neverEncrypt#a
+        #attr@cantSaveState#a
     .end array-data
 
-    .line 15386
+    .line 14784
     :array_10
     .array-data 0x4
-        0xcat 0x2t 0x1t 0x1t
-        0xcbt 0x2t 0x1t 0x1t
+        #attr@screenSize#a
+        #attr@screenDensity#a
     .end array-data
 
-    .line 15487
+    .line 14885
     :array_11
     .array-data 0x4
-        0x26t 0x0t 0x1t 0x1t
-        0x27t 0x0t 0x1t 0x1t
-        0x28t 0x0t 0x1t 0x1t
-        0x29t 0x0t 0x1t 0x1t
-        0x2at 0x0t 0x1t 0x1t
-        0x2bt 0x0t 0x1t 0x1t
-        0x2ct 0x0t 0x1t 0x1t
+        #attr@mimeType#a
+        #attr@scheme#a
+        #attr@host#a
+        #attr@port#a
+        #attr@path#a
+        #attr@pathPrefix#a
+        #attr@pathPattern#a
     .end array-data
 
-    .line 15660
+    .line 15058
     :array_12
     .array-data 0x4
-        0x2at 0x0t 0x1t 0x1t
-        0x2bt 0x0t 0x1t 0x1t
-        0x2ct 0x0t 0x1t 0x1t
+        #attr@path#a
+        #attr@pathPrefix#a
+        #attr@pathPattern#a
     .end array-data
 
-    .line 15754
+    .line 15152
     :array_13
     .array-data 0x4
-        0x1t 0x0t 0x1t 0x1t
-        0x2t 0x0t 0x1t 0x1t
-        0x3t 0x0t 0x1t 0x1t
-        0x21t 0x0t 0x1t 0x1t
-        0x22t 0x0t 0x1t 0x1t
-        0x23t 0x0t 0x1t 0x1t
-        0xbet 0x2t 0x1t 0x1t
+        #attr@label#a
+        #attr@icon#a
+        #attr@name#a
+        #attr@targetPackage#a
+        #attr@handleProfiling#a
+        #attr@functionalTest#a
+        #attr@logo#a
     .end array-data
 
-    .line 15941
+    .line 15339
     :array_14
     .array-data 0x4
-        0x1t 0x0t 0x1t 0x1t
-        0x2t 0x0t 0x1t 0x1t
-        0x1ct 0x0t 0x1t 0x1t
-        0xbet 0x2t 0x1t 0x1t
+        #attr@label#a
+        #attr@icon#a
+        #attr@priority#a
+        #attr@logo#a
     .end array-data
 
-    .line 16072
+    .line 15470
     :array_15
     .array-data 0x4
-        0x3t 0x0t 0x1t 0x1t
-        0x24t 0x0t 0x1t 0x1t
-        0x25t 0x0t 0x1t 0x1t
+        #attr@name#a
+        #attr@value#a
+        #attr@resource#a
     .end array-data
 
-    .line 16187
+    .line 15585
     :array_16
     .array-data 0x4
-        0x3t 0x0t 0x1t 0x1t
-        0xa6t 0x3t 0x1t 0x1t
+        #attr@name#a
+        #attr@publicKey#a
     .end array-data
 
-    .line 16257
+    .line 15655
     :array_17
     .array-data 0x4
-        0x6t 0x0t 0x1t 0x1t
-        0x7t 0x0t 0x1t 0x1t
-        0x8t 0x0t 0x1t 0x1t
-        0x2at 0x0t 0x1t 0x1t
-        0x2bt 0x0t 0x1t 0x1t
-        0x2ct 0x0t 0x1t 0x1t
+        #attr@permission#a
+        #attr@readPermission#a
+        #attr@writePermission#a
+        #attr@path#a
+        #attr@pathPrefix#a
+        #attr@pathPattern#a
     .end array-data
 
-    .line 16416
+    .line 15812
     :array_18
     .array-data 0x4
-        0x1t 0x0t 0x1t 0x1t
-        0x2t 0x0t 0x1t 0x1t
-        0x3t 0x0t 0x1t 0x1t
-        0x9t 0x0t 0x1t 0x1t
-        0xat 0x0t 0x1t 0x1t
-        0x20t 0x0t 0x1t 0x1t
-        0xbet 0x2t 0x1t 0x1t
-        0xc7t 0x3t 0x1t 0x1t
+        #attr@label#a
+        #attr@icon#a
+        #attr@name#a
+        #attr@protectionLevel#a
+        #attr@permissionGroup#a
+        #attr@description#a
+        #attr@logo#a
     .end array-data
 
-    .line 16662
+    .line 16022
     :array_19
     .array-data 0x4
-        0x1t 0x0t 0x1t 0x1t
-        0x2t 0x0t 0x1t 0x1t
-        0x3t 0x0t 0x1t 0x1t
-        0x1ct 0x0t 0x1t 0x1t
-        0x20t 0x0t 0x1t 0x1t
-        0xbet 0x2t 0x1t 0x1t
-        0xc5t 0x3t 0x1t 0x1t
+        #attr@label#a
+        #attr@icon#a
+        #attr@name#a
+        #attr@description#a
+        #attr@logo#a
     .end array-data
 
-    .line 16852
+    .line 16164
     :array_1a
     .array-data 0x4
-        0x1t 0x0t 0x1t 0x1t
-        0x2t 0x0t 0x1t 0x1t
-        0x3t 0x0t 0x1t 0x1t
-        0xbet 0x2t 0x1t 0x1t
+        #attr@label#a
+        #attr@icon#a
+        #attr@name#a
+        #attr@logo#a
     .end array-data
 
-    .line 17048
+    .line 16357
     :array_1b
     .array-data 0x4
-        0x1t 0x0t 0x1t 0x1t
-        0x2t 0x0t 0x1t 0x1t
-        0x3t 0x0t 0x1t 0x1t
-        0x6t 0x0t 0x1t 0x1t
-        0x7t 0x0t 0x1t 0x1t
-        0x8t 0x0t 0x1t 0x1t
-        0xet 0x0t 0x1t 0x1t
-        0x10t 0x0t 0x1t 0x1t
-        0x11t 0x0t 0x1t 0x1t
-        0x13t 0x0t 0x1t 0x1t
-        0x18t 0x0t 0x1t 0x1t
-        0x19t 0x0t 0x1t 0x1t
-        0x1at 0x0t 0x1t 0x1t
-        0x1bt 0x0t 0x1t 0x1t
-        0x20t 0x0t 0x1t 0x1t
-        0xbet 0x2t 0x1t 0x1t
-        0xbft 0x3t 0x1t 0x1t
+        #attr@label#a
+        #attr@icon#a
+        #attr@name#a
+        #attr@permission#a
+        #attr@readPermission#a
+        #attr@writePermission#a
+        #attr@enabled#a
+        #attr@exported#a
+        #attr@process#a
+        #attr@multiprocess#a
+        #attr@authorities#a
+        #attr@syncable#a
+        #attr@initOrder#a
+        #attr@grantUriPermissions#a
+        #attr@description#a
+        #attr@logo#a
     .end array-data
 
-    .line 17471
+    .line 16750
     :array_1c
     .array-data 0x4
-        0x1t 0x0t 0x1t 0x1t
-        0x2t 0x0t 0x1t 0x1t
-        0x3t 0x0t 0x1t 0x1t
-        0x6t 0x0t 0x1t 0x1t
-        0xet 0x0t 0x1t 0x1t
-        0x10t 0x0t 0x1t 0x1t
-        0x11t 0x0t 0x1t 0x1t
-        0x20t 0x0t 0x1t 0x1t
-        0xbet 0x2t 0x1t 0x1t
-        0xbft 0x3t 0x1t 0x1t
+        #attr@label#a
+        #attr@icon#a
+        #attr@name#a
+        #attr@permission#a
+        #attr@enabled#a
+        #attr@exported#a
+        #attr@process#a
+        #attr@description#a
+        #attr@logo#a
     .end array-data
 
-    .line 17753
+    .line 17000
     :array_1d
     .array-data 0x4
-        0x1t 0x0t 0x1t 0x1t
-        0x2t 0x0t 0x1t 0x1t
-        0x3t 0x0t 0x1t 0x1t
-        0x6t 0x0t 0x1t 0x1t
-        0xet 0x0t 0x1t 0x1t
-        0x10t 0x0t 0x1t 0x1t
-        0x11t 0x0t 0x1t 0x1t
-        0x20t 0x0t 0x1t 0x1t
-        0xbet 0x2t 0x1t 0x1t
-        0x6at 0x3t 0x1t 0x1t
-        0xa9t 0x3t 0x1t 0x1t
-        0xbft 0x3t 0x1t 0x1t
+        #attr@label#a
+        #attr@icon#a
+        #attr@name#a
+        #attr@permission#a
+        #attr@enabled#a
+        #attr@exported#a
+        #attr@process#a
+        #attr@description#a
+        #attr@logo#a
+        #attr@stopWithTask#a
     .end array-data
 
-    .line 18063
+    .line 17266
     :array_1e
     .array-data 0x4
-        0x6ct 0x2t 0x1t 0x1t
-        0x84t 0x2t 0x1t 0x1t
-        0x85t 0x2t 0x1t 0x1t
-        0x86t 0x2t 0x1t 0x1t
-        0x8dt 0x2t 0x1t 0x1t
-        0xbft 0x2t 0x1t 0x1t
-        0x64t 0x3t 0x1t 0x1t
-        0x65t 0x3t 0x1t 0x1t
-        0x66t 0x3t 0x1t 0x1t
+        #attr@anyDensity#a
+        #attr@smallScreens#a
+        #attr@normalScreens#a
+        #attr@largeScreens#a
+        #attr@resizeable#a
+        #attr@xlargeScreens#a
+        #attr@requiresSmallestWidthDp#a
+        #attr@compatibleWidthLimitDp#a
+        #attr@largestWidthLimitDp#a
     .end array-data
 
-    .line 18292
+    .line 17495
     :array_1f
     .array-data 0x4
-        0x27t 0x2t 0x1t 0x1t
-        0x28t 0x2t 0x1t 0x1t
-        0x29t 0x2t 0x1t 0x1t
-        0x2at 0x2t 0x1t 0x1t
-        0x32t 0x2t 0x1t 0x1t
+        #attr@reqTouchScreen#a
+        #attr@reqKeyboardType#a
+        #attr@reqHardKeyboard#a
+        #attr@reqNavigation#a
+        #attr@reqFiveWayNav#a
     .end array-data
 
-    .line 18413
+    .line 17616
     :array_20
     .array-data 0x4
-        0x3t 0x0t 0x1t 0x1t
-        0x81t 0x2t 0x1t 0x1t
-        0x8et 0x2t 0x1t 0x1t
+        #attr@name#a
+        #attr@glEsVersion#a
+        #attr@required#a
     .end array-data
 
-    .line 18489
+    .line 17692
     :array_21
     .array-data 0x4
-        0x3t 0x0t 0x1t 0x1t
-        0x8et 0x2t 0x1t 0x1t
+        #attr@name#a
+        #attr@required#a
     .end array-data
 
-    .line 18604
+    .line 17799
     :array_22
     .array-data 0x4
-        0xct 0x2t 0x1t 0x1t
-        0x70t 0x2t 0x1t 0x1t
-        0x71t 0x2t 0x1t 0x1t
+        #attr@minSdkVersion#a
+        #attr@targetSdkVersion#a
+        #attr@maxSdkVersion#a
     .end array-data
 
-    .line 18691
+    .line 17886
     :array_23
     .array-data 0x4
-        0x94t 0x1t 0x1t 0x1t
-        0x99t 0x1t 0x1t 0x1t
-        0xb5t 0x1t 0x1t 0x1t
-        0xb6t 0x1t 0x1t 0x1t
-        0x21t 0x4t 0x1t 0x1t
-        0x22t 0x4t 0x1t 0x1t
+        #attr@visible#a
+        #attr@drawable#a
+        #attr@pivotX#a
+        #attr@pivotY#a
+        #attr@frameDuration#a
+        #attr@framesCount#a
     .end array-data
 
-    .line 18795
+    .line 17990
     :array_24
     .array-data 0x4
-        0xd4t 0x0t 0x1t 0x1t
-        0x41t 0x1t 0x1t 0x1t
-        0x98t 0x1t 0x1t 0x1t
-        0xbct 0x1t 0x1t 0x1t
-        0xbdt 0x1t 0x1t 0x1t
-        0xbet 0x1t 0x1t 0x1t
-        0xbft 0x1t 0x1t 0x1t
-        0xc0t 0x1t 0x1t 0x1t
-        0xc1t 0x1t 0x1t 0x1t
-        0x4ft 0x2t 0x1t 0x1t
-        0xa6t 0x2t 0x1t 0x1t
+        #attr@background#a
+        #attr@interpolator#a
+        #attr@duration#a
+        #attr@fillBefore#a
+        #attr@fillAfter#a
+        #attr@startOffset#a
+        #attr@repeatCount#a
+        #attr@repeatMode#a
+        #attr@zAdjustment#a
+        #attr@fillEnabled#a
+        #attr@detachWallpaper#a
     .end array-data
 
-    .line 19012
+    .line 18207
     :array_25
     .array-data 0x4
-        0x94t 0x1t 0x1t 0x1t
-        0x95t 0x1t 0x1t 0x1t
-        0x97t 0x1t 0x1t 0x1t
+        #attr@visible#a
+        #attr@variablePadding#a
+        #attr@oneshot#a
     .end array-data
 
-    .line 19084
+    .line 18279
     :array_26
     .array-data 0x4
-        0x98t 0x1t 0x1t 0x1t
-        0x99t 0x1t 0x1t 0x1t
+        #attr@duration#a
+        #attr@drawable#a
     .end array-data
 
-    .line 19139
+    .line 18334
     :array_27
     .array-data 0x4
-        0x98t 0x1t 0x1t 0x1t
-        0xbbt 0x1t 0x1t 0x1t
-        0xbct 0x1t 0x1t 0x1t
-        0xbdt 0x1t 0x1t 0x1t
-        0xbet 0x1t 0x1t 0x1t
-        0xc0t 0x1t 0x1t 0x1t
+        #attr@duration#a
+        #attr@shareInterpolator#a
+        #attr@fillBefore#a
+        #attr@fillAfter#a
+        #attr@startOffset#a
+        #attr@repeatMode#a
     .end array-data
 
-    .line 19269
+    .line 18464
     :array_28
     .array-data 0x4
-        0x41t 0x1t 0x1t 0x1t
-        0x98t 0x1t 0x1t 0x1t
-        0xbet 0x1t 0x1t 0x1t
-        0xbft 0x1t 0x1t 0x1t
-        0xc0t 0x1t 0x1t 0x1t
-        0xdet 0x2t 0x1t 0x1t
-        0xdft 0x2t 0x1t 0x1t
-        0xe0t 0x2t 0x1t 0x1t
+        #attr@interpolator#a
+        #attr@duration#a
+        #attr@startOffset#a
+        #attr@repeatCount#a
+        #attr@repeatMode#a
+        #attr@valueFrom#a
+        #attr@valueTo#a
+        #attr@valueType#a
     .end array-data
 
-    .line 19500
+    .line 18695
     :array_29
     .array-data 0x4
-        0x6at 0x2t 0x1t 0x1t
-        0x6bt 0x2t 0x1t 0x1t
+        #attr@tension#a
+        #attr@extraTension#a
     .end array-data
 
-    .line 19572
+    .line 18762
     :array_2a
     .array-data 0x4
-        0x3ft 0x1t 0x1t 0x1t
-        0x40t 0x1t 0x1t 0x1t
-        0x50t 0x2t 0x1t 0x1t
-        0x51t 0x2t 0x1t 0x1t
-        0x5dt 0x2t 0x1t 0x1t
-        0xdat 0x2t 0x1t 0x1t
-        0xft 0x3t 0x1t 0x1t
-        0x63t 0x3t 0x1t 0x1t
-        0x95t 0x3t 0x1t 0x1t
-        0x96t 0x3t 0x1t 0x1t
-        0xc2t 0x3t 0x1t 0x1t
-        0xc4t 0x3t 0x1t 0x1t
+        #attr@minWidth#a
+        #attr@minHeight#a
+        #attr@updatePeriodMillis#a
+        #attr@initialLayout#a
+        #attr@configure#a
+        #attr@previewImage#a
+        #attr@autoAdvanceViewId#a
+        #attr@resizeMode#a
+        #attr@minResizeWidth#a
+        #attr@minResizeHeight#a
     .end array-data
 
-    .line 19816
+    .line 18967
     :array_2b
     .array-data 0x4
-        0x72t 0x1t 0x1t 0x1t
-        0x73t 0x1t 0x1t 0x1t
-        0x74t 0x1t 0x1t 0x1t
-        0x75t 0x1t 0x1t 0x1t
-        0x20t 0x2t 0x1t 0x1t
-        0x62t 0x2t 0x1t 0x1t
-        0x63t 0x2t 0x1t 0x1t
-        0x83t 0x2t 0x1t 0x1t
-        0xact 0x2t 0x1t 0x1t
-        0xadt 0x2t 0x1t 0x1t
+        #attr@completionHint#a
+        #attr@completionHintView#a
+        #attr@completionThreshold#a
+        #attr@dropDownSelector#a
+        #attr@inputType#a
+        #attr@dropDownWidth#a
+        #attr@dropDownAnchor#a
+        #attr@dropDownHeight#a
+        #attr@dropDownHorizontalOffset#a
+        #attr@dropDownVerticalOffset#a
     .end array-data
 
-    .line 20144
+    .line 19295
     :array_2c
     .array-data 0x4
-        0xaft 0x0t 0x1t 0x1t
-        0x19t 0x1t 0x1t 0x1t
-        0x1at 0x1t 0x1t 0x1t
-        0x1bt 0x1t 0x1t 0x1t
-        0x1ct 0x1t 0x1t 0x1t
-        0x1t 0x2t 0x1t 0x1t
+        #attr@gravity#a
+        #attr@src#a
+        #attr@antialias#a
+        #attr@filter#a
+        #attr@dither#a
+        #attr@tileMode#a
     .end array-data
 
-    .line 20313
+    .line 19464
     :array_2d
     .array-data 0x4
-        0x3dt 0x3t 0x1t 0x1t
-        0x3et 0x3t 0x1t 0x1t
-        0x3ft 0x3t 0x1t 0x1t
-        0x40t 0x3t 0x1t 0x1t
-        0x41t 0x3t 0x1t 0x1t
-        0x42t 0x3t 0x1t 0x1t
-        0x43t 0x3t 0x1t 0x1t
-        0x44t 0x3t 0x1t 0x1t
-        0x45t 0x3t 0x1t 0x1t
-        0x46t 0x3t 0x1t 0x1t
-        0x47t 0x3t 0x1t 0x1t
-        0x48t 0x3t 0x1t 0x1t
-        0x49t 0x3t 0x1t 0x1t
+        #attr@firstDayOfWeek#a
+        #attr@showWeekNumber#a
+        #attr@minDate#a
+        #attr@maxDate#a
+        #attr@shownWeekCount#a
+        #attr@selectedWeekBackgroundColor#a
+        #attr@focusedMonthDateColor#a
+        #attr@unfocusedMonthDateColor#a
+        #attr@weekNumberColor#a
+        #attr@weekSeparatorLineColor#a
+        #attr@selectedDateVerticalBar#a
+        #attr@weekDayTextAppearance#a
+        #attr@dateTextAppearance#a
     .end array-data
 
-    .line 20521
+    .line 19672
     :array_2e
     .array-data 0x4
-        0xeft 0x1t 0x1t 0x1t
-        0xf0t 0x1t 0x1t 0x1t
-        0xf1t 0x1t 0x1t 0x1t
+        #attr@summaryOn#a
+        #attr@summaryOff#a
+        #attr@disableDependentsState#a
     .end array-data
 
-    .line 20589
+    .line 19740
     :array_2f
     .array-data 0x4
-        0x6t 0x1t 0x1t 0x1t
-        0x8t 0x1t 0x1t 0x1t
+        #attr@checked#a
+        #attr@checkMark#a
     .end array-data
 
-    .line 20669
+    .line 19820
     :array_30
     .array-data 0x4
-        0xaft 0x0t 0x1t 0x1t
-        0x99t 0x1t 0x1t 0x1t
-        0xat 0x2t 0x1t 0x1t
+        #attr@gravity#a
+        #attr@drawable#a
+        #attr@clipOrientation#a
     .end array-data
 
-    .line 20783
+    .line 19934
     :array_31
     .array-data 0x4
-        0x6t 0x1t 0x1t 0x1t
-        0x7t 0x1t 0x1t 0x1t
+        #attr@checked#a
+        #attr@button#a
     .end array-data
 
-    .line 20834
+    .line 19985
     :array_32
     .array-data 0x4
-        0x2t 0x0t 0x1t 0x1t
-        0x26t 0x0t 0x1t 0x1t
-        0xa2t 0x2t 0x1t 0x1t
-        0xa3t 0x2t 0x1t 0x1t
-        0xa4t 0x2t 0x1t 0x1t
-        0xcct 0x2t 0x1t 0x1t
+        #attr@icon#a
+        #attr@mimeType#a
+        #attr@summaryColumn#a
+        #attr@detailColumn#a
+        #attr@detailSocialSummary#a
+        #attr@allContactsName#a
     .end array-data
 
-    .line 20978
+    .line 20131
     :array_33
     .array-data 0x4
-        0x7ct 0x1t 0x1t 0x1t
-        0x7dt 0x1t 0x1t 0x1t
-        0x3ft 0x3t 0x1t 0x1t
-        0x40t 0x3t 0x1t 0x1t
-        0x4bt 0x3t 0x1t 0x1t
-        0x4ct 0x3t 0x1t 0x1t
-        0x13t 0x4t 0x1t 0x1t
+        #attr@layout#a
+        #attr@startYear#a
+        #attr@endYear#a
+        #attr@minDate#a
+        #attr@maxDate#a
+        #attr@spinnersShown#a
+        #attr@calendarViewShown#a
     .end array-data
 
-    .line 21172
+    .line 20331
     :array_34
     .array-data 0x4
-        0xf2t 0x1t 0x1t 0x1t
-        0xf3t 0x1t 0x1t 0x1t
-        0xf4t 0x1t 0x1t 0x1t
-        0xf5t 0x1t 0x1t 0x1t
-        0xf6t 0x1t 0x1t 0x1t
-        0xf7t 0x1t 0x1t 0x1t
+        #attr@dialogTitle#a
+        #attr@dialogMessage#a
+        #attr@dialogIcon#a
+        #attr@positiveButtonText#a
+        #attr@negativeButtonText#a
+        #attr@dialogLayout#a
     .end array-data
 
-    .line 21318
+    .line 20477
     :array_35
     .array-data 0x4
-        0xa8t 0x1t 0x1t 0x1t
-        0xa9t 0x1t 0x1t 0x1t
-        0xaat 0x1t 0x1t 0x1t
-        0xabt 0x1t 0x1t 0x1t
-        0xact 0x1t 0x1t 0x1t
+        #attr@radius#a
+        #attr@topLeftRadius#a
+        #attr@topRightRadius#a
+        #attr@bottomLeftRadius#a
+        #attr@bottomRightRadius#a
     .end array-data
 
-    .line 21494
+    .line 20652
     :array_36
     .array-data 0x4
-        0x9ct 0x0t 0x1t 0x1t
-        0x9dt 0x0t 0x1t 0x1t
-        0x9et 0x0t 0x1t 0x1t
-        0x9ft 0x0t 0x1t 0x1t
-        0xa0t 0x0t 0x1t 0x1t
-        0xa1t 0x0t 0x1t 0x1t
-        0xa2t 0x0t 0x1t 0x1t
-        0xa3t 0x0t 0x1t 0x1t
-        0xa4t 0x0t 0x1t 0x1t
-        0xa5t 0x0t 0x1t 0x1t
-        0xa6t 0x0t 0x1t 0x1t
-        0xa7t 0x0t 0x1t 0x1t
-        0xfet 0x2t 0x1t 0x1t
-        0x1bt 0x3t 0x1t 0x1t
-        0x67t 0x3t 0x1t 0x1t
-        0x68t 0x3t 0x1t 0x1t
-        0x69t 0x3t 0x1t 0x1t
-        0x23t 0x4t 0x1t 0x1t
+        #attr@state_focused#a
+        #attr@state_window_focused#a
+        #attr@state_enabled#a
+        #attr@state_checkable#a
+        #attr@state_checked#a
+        #attr@state_selected#a
+        #attr@state_active#a
+        #attr@state_single#a
+        #attr@state_first#a
+        #attr@state_middle#a
+        #attr@state_last#a
+        #attr@state_pressed#a
+        #attr@state_activated#a
+        #attr@state_accelerated#a
+        #attr@state_hovered#a
+        #attr@state_drag_can_accept#a
+        #attr@state_drag_hovered#a
     .end array-data
 
-    .line 21880
+    .line 21001
     :array_37
     .array-data 0x4
-        0xa8t 0x0t 0x1t 0x1t
-        0xa9t 0x0t 0x1t 0x1t
+        #attr@state_expanded#a
+        #attr@state_empty#a
     .end array-data
 
-    .line 21937
+    .line 21058
     :array_38
     .array-data 0x4
-        0xbt 0x1t 0x1t 0x1t
-        0xct 0x1t 0x1t 0x1t
-        0xdt 0x1t 0x1t 0x1t
-        0xet 0x1t 0x1t 0x1t
-        0xft 0x1t 0x1t 0x1t
-        0x10t 0x1t 0x1t 0x1t
-        0x11t 0x1t 0x1t 0x1t
+        #attr@groupIndicator#a
+        #attr@childIndicator#a
+        #attr@indicatorLeft#a
+        #attr@indicatorRight#a
+        #attr@childIndicatorLeft#a
+        #attr@childIndicatorRight#a
+        #attr@childDivider#a
     .end array-data
 
-    .line 22068
+    .line 21189
     :array_39
     .array-data 0x4
-        0x3t 0x0t 0x1t 0x1t
-        0x24t 0x0t 0x1t 0x1t
+        #attr@name#a
+        #attr@value#a
     .end array-data
 
-    .line 22130
+    .line 21251
     :array_3a
     .array-data 0x4
-        0x3t 0x0t 0x1t 0x1t
-        0xd0t 0x0t 0x1t 0x1t
-        0xd1t 0x0t 0x1t 0x1t
+        #attr@name#a
+        #attr@id#a
+        #attr@tag#a
     .end array-data
 
-    .line 22210
+    .line 21331
     :array_3b
     .array-data 0x4
-        0xe5t 0x2t 0x1t 0x1t
-        0xe6t 0x2t 0x1t 0x1t
-        0xe7t 0x2t 0x1t 0x1t
-        0xe8t 0x2t 0x1t 0x1t
-        0xe9t 0x2t 0x1t 0x1t
-        0xeat 0x2t 0x1t 0x1t
+        #attr@fragmentOpenEnterAnimation#a
+        #attr@fragmentOpenExitAnimation#a
+        #attr@fragmentCloseEnterAnimation#a
+        #attr@fragmentCloseExitAnimation#a
+        #attr@fragmentFadeEnterAnimation#a
+        #attr@fragmentFadeExitAnimation#a
     .end array-data
 
-    .line 22342
+    .line 21410
     :array_3c
     .array-data 0x4
-        0x9t 0x1t 0x1t 0x1t
-        0xat 0x1t 0x1t 0x1t
-        0x0t 0x2t 0x1t 0x1t
-        0x5t 0x4t 0x1t 0x1t
+        #attr@foreground#a
+        #attr@measureAllChildren#a
+        #attr@foregroundGravity#a
+        #attr@foregroundInsidePadding#a
     .end array-data
 
-    .line 22483
+    .line 21551
     :array_3d
     .array-data 0x4
-        0xaft 0x0t 0x1t 0x1t
-        0x12t 0x1t 0x1t 0x1t
-        0x13t 0x1t 0x1t 0x1t
-        0xet 0x2t 0x1t 0x1t
+        #attr@gravity#a
+        #attr@animationDuration#a
+        #attr@spacing#a
+        #attr@unselectedAlpha#a
     .end array-data
 
-    .line 22610
+    .line 21678
     :array_3e
     .array-data 0x4
-        0xc4t 0x0t 0x1t 0x1t
-        0x74t 0x2t 0x1t 0x1t
-        0x75t 0x2t 0x1t 0x1t
-        0x76t 0x2t 0x1t 0x1t
-        0x77t 0x2t 0x1t 0x1t
-        0x78t 0x2t 0x1t 0x1t
-        0x79t 0x2t 0x1t 0x1t
-        0x7at 0x2t 0x1t 0x1t
-        0x7bt 0x2t 0x1t 0x1t
-        0x7ct 0x2t 0x1t 0x1t
-        0x7dt 0x2t 0x1t 0x1t
-        0x7et 0x2t 0x1t 0x1t
+        #attr@orientation#a
+        #attr@gestureStrokeWidth#a
+        #attr@gestureColor#a
+        #attr@uncertainGestureColor#a
+        #attr@fadeOffset#a
+        #attr@fadeDuration#a
+        #attr@gestureStrokeType#a
+        #attr@gestureStrokeLengthThreshold#a
+        #attr@gestureStrokeSquarenessThreshold#a
+        #attr@gestureStrokeAngleThreshold#a
+        #attr@eventsInterceptionEnabled#a
+        #attr@fadeEnabled#a
     .end array-data
 
-    .line 22836
+    .line 21911
     :array_3f
     .array-data 0x4
-        0xaft 0x0t 0x1t 0x1t
-        0x5ft 0x2t 0x1t 0x1t
-        0xa0t 0x3t 0x1t 0x1t
-        0xa1t 0x3t 0x1t 0x1t
-        0x27t 0x4t 0x1t 0x1t
-        0x28t 0x4t 0x1t 0x1t
-        0x29t 0x4t 0x1t 0x1t
-        0x2at 0x4t 0x1t 0x1t
-        0x2bt 0x4t 0x1t 0x1t
-        0x2ct 0x4t 0x1t 0x1t
-        0x2dt 0x4t 0x1t 0x1t
-        0x2et 0x4t 0x1t 0x1t
-        0x31t 0x4t 0x1t 0x1t
-        0x32t 0x4t 0x1t 0x1t
-        0x33t 0x4t 0x1t 0x1t
-        0x34t 0x4t 0x1t 0x1t
-        0x35t 0x4t 0x1t 0x1t
+        #attr@dither#a
+        #attr@visible#a
+        #attr@shape#a
+        #attr@innerRadiusRatio#a
+        #attr@thicknessRatio#a
+        #attr@useLevel#a
+        #attr@innerRadius#a
+        #attr@thickness#a
     .end array-data
 
-    .line 22947
+    .line 22082
     :array_40
     .array-data 0x4
-        0x1ct 0x1t 0x1t 0x1t
-        0x94t 0x1t 0x1t 0x1t
-        0x9at 0x1t 0x1t 0x1t
-        0x9bt 0x1t 0x1t 0x1t
-        0x9ct 0x1t 0x1t 0x1t
-        0x9ft 0x1t 0x1t 0x1t
-        0x5ft 0x2t 0x1t 0x1t
-        0x60t 0x2t 0x1t 0x1t
+        #attr@startColor#a
+        #attr@endColor#a
+        #attr@useLevel#a
+        #attr@angle#a
+        #attr@type#a
+        #attr@centerX#a
+        #attr@centerY#a
+        #attr@gradientRadius#a
+        #attr@centerColor#a
     .end array-data
 
-    .line 23118
+    .line 22262
     :array_41
     .array-data 0x4
-        0x9dt 0x1t 0x1t 0x1t
-        0x9et 0x1t 0x1t 0x1t
-        0x9ft 0x1t 0x1t 0x1t
-        0xa0t 0x1t 0x1t 0x1t
-        0xa1t 0x1t 0x1t 0x1t
-        0xa2t 0x1t 0x1t 0x1t
-        0xa3t 0x1t 0x1t 0x1t
-        0xa4t 0x1t 0x1t 0x1t
-        0xbt 0x2t 0x1t 0x1t
+        #attr@left#a
+        #attr@top#a
+        #attr@right#a
+        #attr@bottom#a
     .end array-data
 
-    .line 23298
+    .line 22349
     :array_42
     .array-data 0x4
-        0xadt 0x1t 0x1t 0x1t
-        0xaet 0x1t 0x1t 0x1t
-        0xaft 0x1t 0x1t 0x1t
-        0xb0t 0x1t 0x1t 0x1t
+        #attr@height#a
+        #attr@width#a
     .end array-data
 
-    .line 23385
+    .line 22434
     :array_43
     .array-data 0x4
-        0x55t 0x1t 0x1t 0x1t
-        0x59t 0x1t 0x1t 0x1t
+        #attr@width#a
+        #attr@color#a
+        #attr@dashWidth#a
+        #attr@dashGap#a
     .end array-data
 
-    .line 23470
+    .line 22534
     :array_44
     .array-data 0x4
-        0x59t 0x1t 0x1t 0x1t
-        0xa5t 0x1t 0x1t 0x1t
-        0xa6t 0x1t 0x1t 0x1t
-        0xa7t 0x1t 0x1t 0x1t
+        #attr@orientation#a
+        #attr@rowCount#a
+        #attr@rowOrderPreserved#a
+        #attr@columnCount#a
+        #attr@columnOrderPreserved#a
+        #attr@useDefaultMargins#a
+        #attr@alignmentMode#a
     .end array-data
 
-    .line 23570
+    .line 22696
     :array_45
     .array-data 0x4
-        0xc4t 0x0t 0x1t 0x1t
-        0x75t 0x3t 0x1t 0x1t
-        0x76t 0x3t 0x1t 0x1t
-        0x77t 0x3t 0x1t 0x1t
-        0x78t 0x3t 0x1t 0x1t
-        0x79t 0x3t 0x1t 0x1t
-        0x7at 0x3t 0x1t 0x1t
+        #attr@columnDelay#a
+        #attr@rowDelay#a
+        #attr@direction#a
+        #attr@directionPriority#a
     .end array-data
 
-    .line 23732
+    .line 22805
     :array_46
     .array-data 0x4
-        0xcft 0x1t 0x1t 0x1t
-        0xd0t 0x1t 0x1t 0x1t
-        0xd1t 0x1t 0x1t 0x1t
-        0xd2t 0x1t 0x1t 0x1t
+        #attr@layout_gravity#a
+        #attr@layout_column#a
+        #attr@layout_row#a
+        #attr@layout_rowSpan#a
+        #attr@layout_columnSpan#a
     .end array-data
 
-    .line 23841
+    .line 22940
     :array_47
     .array-data 0x4
-        0xb3t 0x0t 0x1t 0x1t
-        0x4ct 0x1t 0x1t 0x1t
-        0x7bt 0x3t 0x1t 0x1t
-        0x7ct 0x3t 0x1t 0x1t
-        0x7dt 0x3t 0x1t 0x1t
+        #attr@gravity#a
+        #attr@horizontalSpacing#a
+        #attr@verticalSpacing#a
+        #attr@stretchMode#a
+        #attr@columnWidth#a
+        #attr@numColumns#a
     .end array-data
 
-    .line 23976
+    .line 23124
     :array_48
     .array-data 0x4
-        0xaft 0x0t 0x1t 0x1t
-        0x14t 0x1t 0x1t 0x1t
-        0x15t 0x1t 0x1t 0x1t
-        0x16t 0x1t 0x1t 0x1t
-        0x17t 0x1t 0x1t 0x1t
-        0x18t 0x1t 0x1t 0x1t
+        #attr@icon#a
+        #attr@mimeType#a
     .end array-data
 
-    .line 24160
+    .line 23224
     :array_49
     .array-data 0x4
-        0x2t 0x0t 0x1t 0x1t
-        0x26t 0x0t 0x1t 0x1t
+        #attr@rowHeight#a
+        #attr@maxRows#a
+        #attr@maxItemsPerRow#a
+        #attr@moreIcon#a
+        #attr@maxItems#a
     .end array-data
 
-    .line 24260
+    .line 23324
     :array_4a
     .array-data 0x4
-        0x32t 0x1t 0x1t 0x1t
-        0x33t 0x1t 0x1t 0x1t
-        0x34t 0x1t 0x1t 0x1t
-        0x35t 0x1t 0x1t 0x1t
-        0xdt 0x4t 0x1t 0x1t
+        #attr@src#a
+        #attr@scaleType#a
+        #attr@adjustViewBounds#a
+        #attr@maxWidth#a
+        #attr@maxHeight#a
+        #attr@tint#a
+        #attr@baselineAlignBottom#a
+        #attr@cropToPadding#a
+        #attr@baseline#a
+        #attr@drawableAlpha#a
     .end array-data
 
-    .line 24360
+    .line 23520
     :array_4b
     .array-data 0x4
-        0x19t 0x1t 0x1t 0x1t
-        0x1dt 0x1t 0x1t 0x1t
-        0x1et 0x1t 0x1t 0x1t
-        0x1ft 0x1t 0x1t 0x1t
-        0x20t 0x1t 0x1t 0x1t
-        0x21t 0x1t 0x1t 0x1t
-        0x22t 0x1t 0x1t 0x1t
-        0x23t 0x1t 0x1t 0x1t
-        0x1ct 0x3t 0x1t 0x1t
-        0x6t 0x4t 0x1t 0x1t
+        #attr@isDefault#a
+        #attr@settingsActivity#a
     .end array-data
 
-    .line 24556
+    .line 23575
     :array_4c
     .array-data 0x4
-        0x21t 0x2t 0x1t 0x1t
-        0x25t 0x2t 0x1t 0x1t
+        #attr@imeFullscreenBackground#a
+        #attr@imeExtractEnterAnimation#a
+        #attr@imeExtractExitAnimation#a
     .end array-data
 
-    .line 24611
+    .line 23648
     :array_4d
     .array-data 0x4
-        0x2ct 0x2t 0x1t 0x1t
-        0x68t 0x2t 0x1t 0x1t
-        0x69t 0x2t 0x1t 0x1t
+        #attr@label#a
+        #attr@icon#a
+        #attr@imeSubtypeLocale#a
+        #attr@imeSubtypeMode#a
+        #attr@imeSubtypeExtraValue#a
+        #attr@isAuxiliary#a
+        #attr@overridesImplicitlyEnabledSubtype#a
     .end array-data
 
-    .line 24686
+    .line 23789
     :array_4e
     .array-data 0x4
-        0x1t 0x0t 0x1t 0x1t
-        0x2t 0x0t 0x1t 0x1t
-        0xect 0x2t 0x1t 0x1t
-        0xedt 0x2t 0x1t 0x1t
-        0xeet 0x2t 0x1t 0x1t
-        0x7ft 0x3t 0x1t 0x1t
-        0xa2t 0x3t 0x1t 0x1t
-        0xc1t 0x3t 0x1t 0x1t
+        #attr@visible#a
+        #attr@drawable#a
+        #attr@insetLeft#a
+        #attr@insetRight#a
+        #attr@insetTop#a
+        #attr@insetBottom#a
     .end array-data
 
-    .line 24847
+    .line 23913
     :array_4f
     .array-data 0x4
-        0x94t 0x1t 0x1t 0x1t
-        0x99t 0x1t 0x1t 0x1t
-        0xb7t 0x1t 0x1t 0x1t
-        0xb8t 0x1t 0x1t 0x1t
-        0xb9t 0x1t 0x1t 0x1t
-        0xbat 0x1t 0x1t 0x1t
+        #attr@targetPackage#a
+        #attr@mimeType#a
+        #attr@action#a
+        #attr@data#a
+        #attr@targetClass#a
     .end array-data
 
-    .line 24971
+    .line 24055
     :array_50
     .array-data 0x4
-        0x21t 0x0t 0x1t 0x1t
-        0x26t 0x0t 0x1t 0x1t
-        0x2dt 0x0t 0x1t 0x1t
-        0x2et 0x0t 0x1t 0x1t
-        0x2ft 0x0t 0x1t 0x1t
+        #attr@keyWidth#a
+        #attr@keyHeight#a
+        #attr@horizontalGap#a
+        #attr@verticalGap#a
     .end array-data
 
-    .line 25113
+    .line 24172
     :array_51
     .array-data 0x4
-        0x3dt 0x2t 0x1t 0x1t
-        0x3et 0x2t 0x1t 0x1t
-        0x3ft 0x2t 0x1t 0x1t
-        0x40t 0x2t 0x1t 0x1t
+        #attr@shadowColor#a
+        #attr@shadowRadius#a
+        #attr@keyBackground#a
+        #attr@keyTextSize#a
+        #attr@labelTextSize#a
+        #attr@keyTextColor#a
+        #attr@keyPreviewLayout#a
+        #attr@keyPreviewOffset#a
+        #attr@keyPreviewHeight#a
+        #attr@verticalCorrection#a
+        #attr@popupLayout#a
+        #attr@keyboardViewStyle#a
     .end array-data
 
-    .line 25222
+    .line 24418
     :array_52
     .array-data 0x4
-        0x1t 0x0t 0x1t 0x1t
-        0x3t 0x0t 0x1t 0x1t
-        0xabt 0x3t 0x1t 0x1t
+        #attr@codes#a
+        #attr@popupKeyboard#a
+        #attr@popupCharacters#a
+        #attr@keyEdgeFlags#a
+        #attr@isModifier#a
+        #attr@isSticky#a
+        #attr@isRepeatable#a
+        #attr@iconPreview#a
+        #attr@keyOutputText#a
+        #attr@keyLabel#a
+        #attr@keyIcon#a
+        #attr@keyboardMode#a
     .end array-data
 
-    .line 25296
+    .line 24616
     :array_53
     .array-data 0x4
-        0x61t 0x1t 0x1t 0x1t
-        0x64t 0x1t 0x1t 0x1t
-        0x33t 0x2t 0x1t 0x1t
-        0x34t 0x2t 0x1t 0x1t
-        0x35t 0x2t 0x1t 0x1t
-        0x36t 0x2t 0x1t 0x1t
-        0x37t 0x2t 0x1t 0x1t
-        0x38t 0x2t 0x1t 0x1t
-        0x39t 0x2t 0x1t 0x1t
-        0x3at 0x2t 0x1t 0x1t
-        0x3bt 0x2t 0x1t 0x1t
-        0x26t 0x4t 0x1t 0x1t
+        #attr@rowEdgeFlags#a
+        #attr@keyboardMode#a
     .end array-data
 
-    .line 25542
+    .line 24708
     :array_54
     .array-data 0x4
-        0x42t 0x2t 0x1t 0x1t
-        0x43t 0x2t 0x1t 0x1t
-        0x44t 0x2t 0x1t 0x1t
-        0x45t 0x2t 0x1t 0x1t
-        0x46t 0x2t 0x1t 0x1t
-        0x47t 0x2t 0x1t 0x1t
-        0x48t 0x2t 0x1t 0x1t
-        0x49t 0x2t 0x1t 0x1t
-        0x4at 0x2t 0x1t 0x1t
-        0x4bt 0x2t 0x1t 0x1t
-        0x4ct 0x2t 0x1t 0x1t
-        0x4dt 0x2t 0x1t 0x1t
+        #attr@id#a
+        #attr@drawable#a
+        #attr@left#a
+        #attr@top#a
+        #attr@right#a
+        #attr@bottom#a
     .end array-data
 
-    .line 25740
+    .line 24827
     :array_55
     .array-data 0x4
-        0x41t 0x2t 0x1t 0x1t
-        0x4dt 0x2t 0x1t 0x1t
+        #attr@interpolator#a
+        #attr@delay#a
+        #attr@animation#a
+        #attr@animationOrder#a
     .end array-data
 
-    .line 25783
+    .line 24909
     :array_56
     .array-data 0x4
-        0x4ct 0x4t 0x1t 0x1t
-        0x4dt 0x4t 0x1t 0x1t
-        0x4et 0x4t 0x1t 0x1t
-        0x4ft 0x4t 0x1t 0x1t
+        #attr@drawable#a
+        #attr@minLevel#a
+        #attr@maxLevel#a
     .end array-data
 
-    .line 25794
+    .line 24989
     :array_57
     .array-data 0x4
-        0x36t 0x4t 0x1t 0x1t
-        0x52t 0x4t 0x1t 0x1t
+        #attr@gravity#a
+        #attr@orientation#a
+        #attr@baselineAligned#a
+        #attr@baselineAlignedChildIndex#a
+        #attr@weightSum#a
+        #attr@divider#a
+        #attr@measureWithLargestChild#a
+        #attr@showDividers#a
+        #attr@dividerPadding#a
     .end array-data
 
-    .line 25854
+    .line 25196
     :array_58
     .array-data 0x4
-        0xd0t 0x0t 0x1t 0x1t
-        0x99t 0x1t 0x1t 0x1t
-        0xadt 0x1t 0x1t 0x1t
-        0xaet 0x1t 0x1t 0x1t
-        0xaft 0x1t 0x1t 0x1t
-        0xb0t 0x1t 0x1t 0x1t
+        #attr@layout_gravity#a
+        #attr@layout_width#a
+        #attr@layout_height#a
+        #attr@layout_weight#a
     .end array-data
 
-    .line 25973
+    .line 25332
     :array_59
     .array-data 0x4
-        0x41t 0x1t 0x1t 0x1t
-        0xcct 0x1t 0x1t 0x1t
-        0xcdt 0x1t 0x1t 0x1t
-        0xcet 0x1t 0x1t 0x1t
+        #attr@entries#a
+        #attr@entryValues#a
     .end array-data
 
-    .line 26055
+    .line 25384
     :array_5a
     .array-data 0x4
-        0x99t 0x1t 0x1t 0x1t
-        0xb1t 0x1t 0x1t 0x1t
-        0xb2t 0x1t 0x1t 0x1t
+        #attr@entries#a
+        #attr@divider#a
+        #attr@dividerHeight#a
+        #attr@headerDividersEnabled#a
+        #attr@footerDividersEnabled#a
+        #attr@overScrollHeader#a
+        #attr@overScrollFooter#a
     .end array-data
 
-    .line 26135
+    .line 25561
     :array_5b
     .array-data 0x4
-        0xaft 0x0t 0x1t 0x1t
-        0xc4t 0x0t 0x1t 0x1t
-        0x26t 0x1t 0x1t 0x1t
-        0x27t 0x1t 0x1t 0x1t
-        0x28t 0x1t 0x1t 0x1t
-        0x29t 0x1t 0x1t 0x1t
-        0xd4t 0x2t 0x1t 0x1t
-        0x29t 0x3t 0x1t 0x1t
-        0x2at 0x3t 0x1t 0x1t
+        #attr@enabled#a
+        #attr@id#a
+        #attr@visible#a
+        #attr@menuCategory#a
+        #attr@orderInCategory#a
+        #attr@checkableBehavior#a
     .end array-data
 
-    .line 26342
+    .line 25714
     :array_5c
     .array-data 0x4
-        0xb3t 0x0t 0x1t 0x1t
-        0xf4t 0x0t 0x1t 0x1t
-        0xf5t 0x0t 0x1t 0x1t
-        0x81t 0x1t 0x1t 0x1t
+        #attr@icon#a
+        #attr@enabled#a
+        #attr@id#a
+        #attr@checked#a
+        #attr@visible#a
+        #attr@menuCategory#a
+        #attr@orderInCategory#a
+        #attr@title#a
+        #attr@titleCondensed#a
+        #attr@alphabeticShortcut#a
+        #attr@numericShortcut#a
+        #attr@checkable#a
+        #attr@onClick#a
+        #attr@showAsAction#a
+        #attr@actionLayout#a
+        #attr@actionViewClass#a
+        #attr@actionProviderClass#a
     .end array-data
 
-    .line 26478
+    .line 26031
     :array_5d
     .array-data 0x4
-        0xb2t 0x0t 0x1t 0x1t
-        0xf8t 0x1t 0x1t 0x1t
+        #attr@state_focused#a
+        #attr@state_checkable#a
+        #attr@state_checked#a
     .end array-data
 
-    .line 26530
+    .line 26100
     :array_5e
     .array-data 0x4
-        0xb2t 0x0t 0x1t 0x1t
-        0x29t 0x1t 0x1t 0x1t
-        0x2at 0x1t 0x1t 0x1t
-        0x2et 0x2t 0x1t 0x1t
-        0x2ft 0x2t 0x1t 0x1t
-        0xc2t 0x2t 0x1t 0x1t
-        0xc3t 0x2t 0x1t 0x1t
+        #attr@state_checkable#a
+        #attr@state_checked#a
     .end array-data
 
-    .line 26697
+    .line 26153
     :array_5f
     .array-data 0x4
-        0x3ft 0x1t 0x1t 0x1t
-        0x40t 0x1t 0x1t 0x1t
-        0xaet 0x3t 0x1t 0x1t
-        0x48t 0x4t 0x1t 0x1t
+        #attr@state_focused#a
+        #attr@state_checkable#a
     .end array-data
 
-    .line 26783
+    .line 26244
     :array_60
     .array-data 0x4
-        0xet 0x0t 0x1t 0x1t
-        0xd0t 0x0t 0x1t 0x1t
-        0x94t 0x1t 0x1t 0x1t
-        0xdet 0x1t 0x1t 0x1t
-        0xdft 0x1t 0x1t 0x1t
-        0xe0t 0x1t 0x1t 0x1t
+        #attr@windowAnimationStyle#a
+        #attr@itemTextAppearance#a
+        #attr@horizontalDivider#a
+        #attr@verticalDivider#a
+        #attr@headerBackground#a
+        #attr@itemBackground#a
+        #attr@itemIconDisabledAlpha#a
+        #attr@preserveIconSpacing#a
     .end array-data
 
-    .line 26936
+    .line 26379
     :array_61
     .array-data 0x4
-        0x2t 0x0t 0x1t 0x1t
-        0xet 0x0t 0x1t 0x1t
-        0xd0t 0x0t 0x1t 0x1t
-        0x6t 0x1t 0x1t 0x1t
-        0x94t 0x1t 0x1t 0x1t
-        0xdet 0x1t 0x1t 0x1t
-        0xdft 0x1t 0x1t 0x1t
-        0xe1t 0x1t 0x1t 0x1t
-        0xe2t 0x1t 0x1t 0x1t
-        0xe3t 0x1t 0x1t 0x1t
-        0xe4t 0x1t 0x1t 0x1t
-        0xe5t 0x1t 0x1t 0x1t
-        0x6ft 0x2t 0x1t 0x1t
-        0xd9t 0x2t 0x1t 0x1t
-        0xfbt 0x2t 0x1t 0x1t
-        0xfct 0x2t 0x1t 0x1t
-        0x89t 0x3t 0x1t 0x1t
+        #attr@entries#a
+        #attr@entryValues#a
     .end array-data
 
-    .line 27253
+    .line 26421
     :array_62
     .array-data 0x4
-        0x9ct 0x0t 0x1t 0x1t
-        0x9ft 0x0t 0x1t 0x1t
-        0xa0t 0x0t 0x1t 0x1t
+        #attr@targetDescriptions#a
+        #attr@directionDescriptions#a
+        #attr@targetDrawables#a
+        #attr@handleDrawable#a
+        #attr@leftChevronDrawable#a
+        #attr@rightChevronDrawable#a
+        #attr@topChevronDrawable#a
+        #attr@bottomChevronDrawable#a
+        #attr@waveDrawable#a
+        #attr@outerRadius#a
+        #attr@hitRadius#a
+        #attr@vibrationDuration#a
+        #attr@snapMargin#a
+        #attr@feedbackCount#a
+        #attr@verticalOffset#a
+        #attr@horizontalOffset#a
     .end array-data
 
-    .line 27322
+    .line 26465
     :array_63
     .array-data 0x4
-        0x9ft 0x0t 0x1t 0x1t
-        0xa0t 0x0t 0x1t 0x1t
+        #attr@src#a
+        #attr@dither#a
     .end array-data
 
-    .line 27375
+    .line 26518
     :array_64
     .array-data 0x4
-        0x9ct 0x0t 0x1t 0x1t
-        0x9ft 0x0t 0x1t 0x1t
+        #attr@maxWidth#a
+        #attr@maxHeight#a
+        #attr@minWidth#a
+        #attr@minHeight#a
+        #attr@solidColor#a
+        #attr@flingable#a
+        #attr@selectionDivider#a
+        #attr@selectionDividerHeight#a
     .end array-data
 
-    .line 27466
+    .line 26646
     :array_65
     .array-data 0x4
-        0xaet 0x0t 0x1t 0x1t
-        0x2ct 0x1t 0x1t 0x1t
-        0x2dt 0x1t 0x1t 0x1t
-        0x2et 0x1t 0x1t 0x1t
-        0x2ft 0x1t 0x1t 0x1t
-        0x30t 0x1t 0x1t 0x1t
-        0x31t 0x1t 0x1t 0x1t
-        0xct 0x4t 0x1t 0x1t
+        #attr@pointerIconArrow#a
+        #attr@pointerIconSpotHover#a
+        #attr@pointerIconSpotTouch#a
+        #attr@pointerIconSpotAnchor#a
     .end array-data
 
-    .line 27630
+    .line 26657
     :array_66
     .array-data 0x4
-        0xb3t 0x0t 0x1t 0x1t
-        0x36t 0x4t 0x1t 0x1t
-        0x50t 0x4t 0x1t 0x1t
-        0x51t 0x4t 0x1t 0x1t
-        0x52t 0x4t 0x1t 0x1t
+        #attr@bitmap#a
+        #attr@hotSpotX#a
+        #attr@hotSpotY#a
     .end array-data
 
-    .line 27685
+    .line 26672
     :array_67
     .array-data 0x4
-        0xb2t 0x0t 0x1t 0x1t
-        0xf8t 0x1t 0x1t 0x1t
+        #attr@popupBackground#a
+        #attr@popupAnimationStyle#a
     .end array-data
 
-    .line 27727
+    .line 26766
     :array_68
     .array-data 0x4
-        0xa0t 0x3t 0x1t 0x1t
-        0xa1t 0x3t 0x1t 0x1t
-        0x2dt 0x4t 0x1t 0x1t
-        0x2et 0x4t 0x1t 0x1t
-        0x2ft 0x4t 0x1t 0x1t
-        0x30t 0x4t 0x1t 0x1t
-        0x31t 0x4t 0x1t 0x1t
-        0x32t 0x4t 0x1t 0x1t
-        0x33t 0x4t 0x1t 0x1t
-        0x34t 0x4t 0x1t 0x1t
-        0x35t 0x4t 0x1t 0x1t
+        #attr@icon#a
+        #attr@persistent#a
+        #attr@enabled#a
+        #attr@layout#a
+        #attr@title#a
+        #attr@selectable#a
+        #attr@key#a
+        #attr@summary#a
+        #attr@order#a
+        #attr@widgetLayout#a
+        #attr@dependency#a
+        #attr@defaultValue#a
+        #attr@shouldDisableView#a
+        #attr@fragment#a
     .end array-data
 
-    .line 27770
+    .line 27002
     :array_69
     .array-data 0x4
-        0x19t 0x1t 0x1t 0x1t
-        0x1ct 0x1t 0x1t 0x1t
+        #attr@borderTop#a
+        #attr@borderBottom#a
+        #attr@borderLeft#a
+        #attr@borderRight#a
     .end array-data
 
-    .line 27813
+    .line 27070
     :array_6a
     .array-data 0x4
-        0x53t 0x4t 0x1t 0x1t
-        0x54t 0x4t 0x1t 0x1t
+        #attr@icon#a
+        #attr@id#a
+        #attr@title#a
+        #attr@summary#a
+        #attr@fragment#a
+        #attr@breadCrumbTitle#a
+        #attr@breadCrumbShortTitle#a
     .end array-data
 
-    .line 27826
+    .line 27217
     :array_6b
     .array-data 0x4
-        0x4at 0x3t 0x1t 0x1t
-        0x13t 0x4t 0x1t 0x1t
-        0x19t 0x4t 0x1t 0x1t
-        0x1at 0x4t 0x1t 0x1t
-        0x1bt 0x4t 0x1t 0x1t
-        0x1ct 0x4t 0x1t 0x1t
-        0x1dt 0x4t 0x1t 0x1t
-        0x1et 0x4t 0x1t 0x1t
-        0x1ft 0x4t 0x1t 0x1t
-        0x20t 0x4t 0x1t 0x1t
+        #attr@maxWidth#a
+        #attr@maxHeight#a
+        #attr@max#a
+        #attr@progress#a
+        #attr@secondaryProgress#a
+        #attr@indeterminate#a
+        #attr@indeterminateOnly#a
+        #attr@indeterminateDrawable#a
+        #attr@progressDrawable#a
+        #attr@indeterminateDuration#a
+        #attr@indeterminateBehavior#a
+        #attr@minWidth#a
+        #attr@minHeight#a
+        #attr@interpolator#a
+        #attr@animationResolution#a
     .end array-data
 
-    .line 27883
+    .line 27516
     :array_6c
     .array-data 0x4
-        0x49t 0x4t 0x1t 0x1t
-        0x4at 0x4t 0x1t 0x1t
-        0x4bt 0x4t 0x1t 0x1t
+        #attr@orientation#a
+        #attr@checkedButton#a
     .end array-data
 
-    .line 27894
+    .line 27573
     :array_6d
     .array-data 0x4
-        0x39t 0x4t 0x1t 0x1t
-        0x3at 0x4t 0x1t 0x1t
-        0x3bt 0x4t 0x1t 0x1t
-        0x3ct 0x4t 0x1t 0x1t
+        #attr@numStars#a
+        #attr@rating#a
+        #attr@stepSize#a
+        #attr@isIndicator#a
     .end array-data
 
-    .line 27905
+    .line 27687
     :array_6e
     .array-data 0x4
-        0x3dt 0x4t 0x1t 0x1t
-        0x3et 0x4t 0x1t 0x1t
-        0x3ft 0x4t 0x1t 0x1t
+        #attr@gravity#a
+        #attr@ignoreGravity#a
     .end array-data
 
-    .line 27920
+    .line 27783
     :array_6f
     .array-data 0x4
-        0x76t 0x1t 0x1t 0x1t
-        0xc9t 0x2t 0x1t 0x1t
+        #attr@layout_toLeftOf#a
+        #attr@layout_toRightOf#a
+        #attr@layout_above#a
+        #attr@layout_below#a
+        #attr@layout_alignBaseline#a
+        #attr@layout_alignLeft#a
+        #attr@layout_alignTop#a
+        #attr@layout_alignRight#a
+        #attr@layout_alignBottom#a
+        #attr@layout_alignParentLeft#a
+        #attr@layout_alignParentTop#a
+        #attr@layout_alignParentRight#a
+        #attr@layout_alignParentBottom#a
+        #attr@layout_centerInParent#a
+        #attr@layout_centerHorizontal#a
+        #attr@layout_centerVertical#a
+        #attr@layout_alignWithParentIfMissing#a
     .end array-data
 
-    .line 28014
+    .line 28053
     :array_70
     .array-data 0x4
-        0x2t 0x0t 0x1t 0x1t
-        0xdt 0x0t 0x1t 0x1t
-        0xet 0x0t 0x1t 0x1t
-        0xf2t 0x0t 0x1t 0x1t
-        0xe1t 0x1t 0x1t 0x1t
-        0xe6t 0x1t 0x1t 0x1t
-        0xe8t 0x1t 0x1t 0x1t
-        0xe9t 0x1t 0x1t 0x1t
-        0xeat 0x1t 0x1t 0x1t
-        0xebt 0x1t 0x1t 0x1t
-        0xect 0x1t 0x1t 0x1t
-        0xedt 0x1t 0x1t 0x1t
-        0xeet 0x1t 0x1t 0x1t
-        0xe3t 0x2t 0x1t 0x1t
+        #attr@ringtoneType#a
+        #attr@showDefault#a
+        #attr@showSilent#a
     .end array-data
 
-    .line 28250
+    .line 28158
     :array_71
     .array-data 0x4
-        0x7t 0x4t 0x1t 0x1t
-        0x8t 0x4t 0x1t 0x1t
-        0x9t 0x4t 0x1t 0x1t
-        0xat 0x4t 0x1t 0x1t
+        #attr@fromDegrees#a
+        #attr@toDegrees#a
+        #attr@pivotX#a
+        #attr@pivotY#a
     .end array-data
 
-    .line 28318
+    .line 28244
     :array_72
     .array-data 0x4
-        0x2t 0x0t 0x1t 0x1t
-        0xd0t 0x0t 0x1t 0x1t
-        0xe1t 0x1t 0x1t 0x1t
-        0xe9t 0x1t 0x1t 0x1t
-        0xe3t 0x2t 0x1t 0x1t
-        0x3t 0x3t 0x1t 0x1t
-        0x4t 0x3t 0x1t 0x1t
+        #attr@visible#a
+        #attr@drawable#a
+        #attr@fromDegrees#a
+        #attr@toDegrees#a
+        #attr@pivotX#a
+        #attr@pivotY#a
     .end array-data
 
-    .line 28466
+    .line 28361
     :array_73
     .array-data 0x4
-        0x1ft 0x1t 0x1t 0x1t
-        0x20t 0x1t 0x1t 0x1t
-        0x36t 0x1t 0x1t 0x1t
-        0x37t 0x1t 0x1t 0x1t
-        0x38t 0x1t 0x1t 0x1t
-        0x39t 0x1t 0x1t 0x1t
-        0x3at 0x1t 0x1t 0x1t
-        0x3bt 0x1t 0x1t 0x1t
-        0x3ct 0x1t 0x1t 0x1t
-        0x3dt 0x1t 0x1t 0x1t
-        0x3et 0x1t 0x1t 0x1t
-        0x3ft 0x1t 0x1t 0x1t
-        0x40t 0x1t 0x1t 0x1t
-        0x41t 0x1t 0x1t 0x1t
-        0x1at 0x3t 0x1t 0x1t
+        #attr@pivotX#a
+        #attr@pivotY#a
+        #attr@fromXScale#a
+        #attr@toXScale#a
+        #attr@fromYScale#a
+        #attr@toYScale#a
     .end array-data
 
-    .line 28767
+    .line 28497
     :array_74
     .array-data 0x4
-        0xc4t 0x0t 0x1t 0x1t
-        0x48t 0x1t 0x1t 0x1t
+        #attr@drawable#a
+        #attr@scaleWidth#a
+        #attr@scaleHeight#a
+        #attr@scaleGravity#a
+        #attr@useIntrinsicSizeAsMinimum#a
     .end array-data
 
-    .line 28824
+    .line 28648
     :array_75
     .array-data 0x4
-        0x44t 0x1t 0x1t 0x1t
-        0x45t 0x1t 0x1t 0x1t
-        0x46t 0x1t 0x1t 0x1t
-        0x47t 0x1t 0x1t 0x1t
+        #attr@maxWidth#a
+        #attr@inputType#a
+        #attr@imeOptions#a
+        #attr@iconifiedByDefault#a
+        #attr@queryHint#a
     .end array-data
 
-    .line 28938
+    .line 29001
     :array_76
     .array-data 0x4
-        0xaft 0x0t 0x1t 0x1t
-        0xfft 0x1t 0x1t 0x1t
+        #attr@label#a
+        #attr@icon#a
+        #attr@hint#a
+        #attr@searchMode#a
+        #attr@searchSuggestAuthority#a
+        #attr@searchSuggestPath#a
+        #attr@searchSuggestSelection#a
+        #attr@searchSuggestIntentAction#a
+        #attr@searchSuggestIntentData#a
+        #attr@searchButtonText#a
+        #attr@inputType#a
+        #attr@voiceSearchMode#a
+        #attr@voiceLanguageModel#a
+        #attr@voicePromptText#a
+        #attr@voiceLanguage#a
+        #attr@voiceMaxResults#a
+        #attr@imeOptions#a
+        #attr@searchSuggestThreshold#a
+        #attr@includeInGlobalSearch#a
+        #attr@queryAfterZeroResults#a
+        #attr@searchSettingsDescription#a
+        #attr@autoUrlDetect#a
     .end array-data
 
-    .line 29046
+    .line 29655
     :array_77
     .array-data 0x4
-        0x82t 0x1t 0x1t 0x1t
-        0x83t 0x1t 0x1t 0x1t
-        0x84t 0x1t 0x1t 0x1t
-        0x85t 0x1t 0x1t 0x1t
-        0x86t 0x1t 0x1t 0x1t
-        0x87t 0x1t 0x1t 0x1t
-        0x88t 0x1t 0x1t 0x1t
-        0x89t 0x1t 0x1t 0x1t
-        0x8at 0x1t 0x1t 0x1t
-        0x8bt 0x1t 0x1t 0x1t
-        0x8ct 0x1t 0x1t 0x1t
-        0x8dt 0x1t 0x1t 0x1t
-        0x8et 0x1t 0x1t 0x1t
-        0x8ft 0x1t 0x1t 0x1t
-        0x90t 0x1t 0x1t 0x1t
-        0x91t 0x1t 0x1t 0x1t
-        0x92t 0x1t 0x1t 0x1t
-        0xb7t 0x3t 0x1t 0x1t
-        0xb8t 0x3t 0x1t 0x1t
-        0xb9t 0x3t 0x1t 0x1t
-        0xbat 0x3t 0x1t 0x1t
-        0xbbt 0x3t 0x1t 0x1t
-        0xbct 0x3t 0x1t 0x1t
+        #attr@keycode#a
+        #attr@queryActionMsg#a
+        #attr@suggestActionMsg#a
+        #attr@suggestActionMsgColumn#a
     .end array-data
 
-    .line 29403
+    .line 29978
     :array_78
     .array-data 0x4
-        0xf9t 0x1t 0x1t 0x1t
-        0xfat 0x1t 0x1t 0x1t
-        0xfbt 0x1t 0x1t 0x1t
+        #attr@thumb#a
+        #attr@thumbOffset#a
     .end array-data
 
-    .line 29508
+    .line 30027
     :array_79
     .array-data 0x4
-        0xb3t 0x1t 0x1t 0x1t
-        0xb4t 0x1t 0x1t 0x1t
-        0xb5t 0x1t 0x1t 0x1t
-        0xb6t 0x1t 0x1t 0x1t
+        #attr@actionModeCutDrawable#a
+        #attr@actionModeCopyDrawable#a
+        #attr@actionModePasteDrawable#a
+        #attr@actionModeSelectAllDrawable#a
     .end array-data
 
-    .line 29594
+    .line 30094
     :array_7a
     .array-data 0x4
-        0x94t 0x1t 0x1t 0x1t
-        0x99t 0x1t 0x1t 0x1t
-        0xb3t 0x1t 0x1t 0x1t
-        0xb4t 0x1t 0x1t 0x1t
-        0xb5t 0x1t 0x1t 0x1t
-        0xb6t 0x1t 0x1t 0x1t
+        #attr@dither#a
+        #attr@height#a
+        #attr@width#a
+        #attr@color#a
     .end array-data
 
-    .line 29711
+    .line 30182
     :array_7b
     .array-data 0x4
-        0xb5t 0x1t 0x1t 0x1t
-        0xb6t 0x1t 0x1t 0x1t
-        0xc2t 0x1t 0x1t 0x1t
-        0xc3t 0x1t 0x1t 0x1t
-        0xc4t 0x1t 0x1t 0x1t
-        0xc5t 0x1t 0x1t 0x1t
+        #attr@left#a
+        #attr@top#a
+        #attr@right#a
+        #attr@bottom#a
     .end array-data
 
-    .line 29847
+    .line 30282
     :array_7c
     .array-data 0x4
-        0x99t 0x1t 0x1t 0x1t
-        0xfct 0x1t 0x1t 0x1t
-        0xfdt 0x1t 0x1t 0x1t
-        0xfet 0x1t 0x1t 0x1t
-        0x10t 0x3t 0x1t 0x1t
+        #attr@orientation#a
+        #attr@bottomOffset#a
+        #attr@topOffset#a
+        #attr@allowSingleTap#a
+        #attr@handle#a
+        #attr@content#a
+        #attr@animateOnClick#a
     .end array-data
 
-    .line 30000
+    .line 30451
     :array_7d
     .array-data 0x4
-        0x1ft 0x1t 0x1t 0x1t
-        0x20t 0x2t 0x1t 0x1t
-        0x64t 0x2t 0x1t 0x1t
-        0xfat 0x2t 0x1t 0x1t
-        0x58t 0x3t 0x1t 0x1t
+        #attr@label#a
+        #attr@settingsActivity#a
     .end array-data
 
-    .line 30367
+    .line 30498
     :array_7e
     .array-data 0x4
-        0x1t 0x0t 0x1t 0x1t
-        0x2t 0x0t 0x1t 0x1t
-        0x50t 0x1t 0x1t 0x1t
-        0xd5t 0x1t 0x1t 0x1t
-        0xd6t 0x1t 0x1t 0x1t
-        0xd7t 0x1t 0x1t 0x1t
-        0xd8t 0x1t 0x1t 0x1t
-        0xd9t 0x1t 0x1t 0x1t
-        0xdat 0x1t 0x1t 0x1t
-        0x5t 0x2t 0x1t 0x1t
-        0x20t 0x2t 0x1t 0x1t
-        0x52t 0x2t 0x1t 0x1t
-        0x53t 0x2t 0x1t 0x1t
-        0x54t 0x2t 0x1t 0x1t
-        0x55t 0x2t 0x1t 0x1t
-        0x56t 0x2t 0x1t 0x1t
-        0x64t 0x2t 0x1t 0x1t
-        0x6dt 0x2t 0x1t 0x1t
-        0x6et 0x2t 0x1t 0x1t
-        0x82t 0x2t 0x1t 0x1t
-        0x8at 0x2t 0x1t 0x1t
-        0x8ct 0x2t 0x1t 0x1t
+        #attr@label#a
+        #attr@subtypeLocale#a
+        #attr@subtypeExtraValue#a
     .end array-data
 
-    .line 31035
+    .line 30575
     :array_7f
     .array-data 0x4
-        0xc5t 0x0t 0x1t 0x1t
-        0xdbt 0x1t 0x1t 0x1t
-        0xdct 0x1t 0x1t 0x1t
-        0xddt 0x1t 0x1t 0x1t
+        #attr@gravity#a
+        #attr@dropDownSelector#a
+        #attr@popupBackground#a
+        #attr@prompt#a
+        #attr@dropDownWidth#a
+        #attr@dropDownHorizontalOffset#a
+        #attr@dropDownVerticalOffset#a
+        #attr@spinnerMode#a
+        #attr@popupPromptView#a
+        #attr@disableChildrenWhenDisabled#a
     .end array-data
 
-    .line 31366
+    .line 30754
     :array_80
     .array-data 0x4
-        0x42t 0x1t 0x1t 0x1t
-        0x43t 0x1t 0x1t 0x1t
+        #attr@resOutColor#a
+        #attr@clickColor#a
     .end array-data
 
-    .line 31415
+    .line 30783
     :array_81
     .array-data 0x4
-        0x11t 0x3t 0x1t 0x1t
-        0x12t 0x3t 0x1t 0x1t
-        0x13t 0x3t 0x1t 0x1t
-        0x7et 0x3t 0x1t 0x1t
+        #attr@dither#a
+        #attr@visible#a
+        #attr@variablePadding#a
+        #attr@constantSize#a
+        #attr@enterFadeDuration#a
+        #attr@exitFadeDuration#a
     .end array-data
 
-    .line 31482
+    .line 30901
     :array_82
     .array-data 0x4
-        0x1ct 0x1t 0x1t 0x1t
-        0x55t 0x1t 0x1t 0x1t
-        0x59t 0x1t 0x1t 0x1t
-        0xa5t 0x1t 0x1t 0x1t
+        #attr@mountPoint#a
+        #attr@storageDescription#a
+        #attr@primary#a
+        #attr@removable#a
+        #attr@emulated#a
+        #attr@mtpReserve#a
+        #attr@allowMassStorage#a
+        #attr@maxFileSize#a
     .end array-data
 
-    .line 31570
+    .line 30913
     :array_83
     .array-data 0x4
-        0xadt 0x1t 0x1t 0x1t
-        0xaet 0x1t 0x1t 0x1t
-        0xaft 0x1t 0x1t 0x1t
-        0xb0t 0x1t 0x1t 0x1t
+        #attr@textUnderlineColor#a
+        #attr@textUnderlineThickness#a
     .end array-data
 
-    .line 31658
+    .line 30940
     :array_84
     .array-data 0x4
-        0x36t 0x4t 0x1t 0x1t
-        0x37t 0x4t 0x1t 0x1t
+        #attr@textOn#a
+        #attr@textOff#a
+        #attr@thumb#a
+        #attr@switchTextAppearance#a
+        #attr@track#a
+        #attr@switchMinWidth#a
+        #attr@switchPadding#a
+        #attr@thumbTextPadding#a
     .end array-data
 
-    .line 31669
+    .line 31086
     :array_85
     .array-data 0x4
-        0x36t 0x4t 0x1t 0x1t
-        0x50t 0x4t 0x1t 0x1t
+        #attr@summaryOn#a
+        #attr@summaryOff#a
+        #attr@disableDependentsState#a
+        #attr@switchTextOn#a
+        #attr@switchTextOff#a
     .end array-data
 
-    .line 31697
+    .line 31203
     :array_86
     .array-data 0x4
-        0xc4t 0x0t 0x1t 0x1t
-        0x57t 0x2t 0x1t 0x1t
-        0x58t 0x2t 0x1t 0x1t
-        0x59t 0x2t 0x1t 0x1t
-        0x5at 0x2t 0x1t 0x1t
-        0x5bt 0x2t 0x1t 0x1t
-        0x5ct 0x2t 0x1t 0x1t
+        #attr@settingsActivity#a
+        #attr@accountType#a
+        #attr@contentAuthority#a
+        #attr@userVisible#a
+        #attr@supportsUploading#a
+        #attr@allowParallelSyncs#a
+        #attr@isAlwaysSyncable#a
     .end array-data
 
-    .line 31866
+    .line 31341
     :array_87
     .array-data 0x4
-        0x1t 0x0t 0x1t 0x1t
-        0x25t 0x2t 0x1t 0x1t
+        #attr@divider#a
+        #attr@tabStripLeft#a
+        #attr@tabStripRight#a
+        #attr@tabStripEnabled#a
+        #attr@tabLayout#a
     .end array-data
 
-    .line 31913
+    .line 31413
     :array_88
     .array-data 0x4
-        0x1t 0x0t 0x1t 0x1t
-        0x99t 0x3t 0x1t 0x1t
-        0x9at 0x3t 0x1t 0x1t
+        #attr@stretchColumns#a
+        #attr@shrinkColumns#a
+        #attr@collapseColumns#a
     .end array-data
 
-    .line 31990
+    .line 31491
     :array_89
     .array-data 0x4
-        0xaft 0x0t 0x1t 0x1t
-        0x75t 0x1t 0x1t 0x1t
-        0x76t 0x1t 0x1t 0x1t
-        0x7bt 0x1t 0x1t 0x1t
-        0x62t 0x2t 0x1t 0x1t
-        0xact 0x2t 0x1t 0x1t
-        0xadt 0x2t 0x1t 0x1t
-        0xf1t 0x2t 0x1t 0x1t
-        0x11t 0x4t 0x1t 0x1t
-        0x12t 0x4t 0x1t 0x1t
+        #attr@layout_column#a
+        #attr@layout_span#a
     .end array-data
 
-    .line 32169
+    .line 31550
     :array_8a
     .array-data 0x4
-        0xet 0x4t 0x1t 0x1t
-        0xft 0x4t 0x1t 0x1t
+        #attr@textSize#a
+        #attr@typeface#a
+        #attr@textStyle#a
+        #attr@textColor#a
+        #attr@textColorHighlight#a
+        #attr@textColorHint#a
+        #attr@textColorLink#a
+        #attr@textAllCaps#a
     .end array-data
 
-    .line 32198
+    .line 31923
     :array_8b
     .array-data 0x4
-        0x1ct 0x1t 0x1t 0x1t
-        0x94t 0x1t 0x1t 0x1t
-        0x95t 0x1t 0x1t 0x1t
-        0x96t 0x1t 0x1t 0x1t
-        0xct 0x3t 0x1t 0x1t
-        0xdt 0x3t 0x1t 0x1t
+        #attr@enabled#a
+        #attr@textAppearance#a
+        #attr@textSize#a
+        #attr@typeface#a
+        #attr@textStyle#a
+        #attr@textColor#a
+        #attr@textColorHighlight#a
+        #attr@textColorHint#a
+        #attr@textColorLink#a
+        #attr@ellipsize#a
+        #attr@gravity#a
+        #attr@autoLink#a
+        #attr@linksClickable#a
+        #attr@maxWidth#a
+        #attr@maxHeight#a
+        #attr@minWidth#a
+        #attr@minHeight#a
+        #attr@bufferType#a
+        #attr@text#a
+        #attr@hint#a
+        #attr@textScaleX#a
+        #attr@cursorVisible#a
+        #attr@maxLines#a
+        #attr@lines#a
+        #attr@height#a
+        #attr@minLines#a
+        #attr@maxEms#a
+        #attr@ems#a
+        #attr@width#a
+        #attr@minEms#a
+        #attr@scrollHorizontally#a
+        #attr@password#a
+        #attr@singleLine#a
+        #attr@selectAllOnFocus#a
+        #attr@includeFontPadding#a
+        #attr@maxLength#a
+        #attr@shadowColor#a
+        #attr@shadowDx#a
+        #attr@shadowDy#a
+        #attr@shadowRadius#a
+        #attr@numeric#a
+        #attr@digits#a
+        #attr@phoneNumber#a
+        #attr@inputMethod#a
+        #attr@capitalize#a
+        #attr@autoText#a
+        #attr@editable#a
+        #attr@freezesText#a
+        #attr@drawableTop#a
+        #attr@drawableBottom#a
+        #attr@drawableLeft#a
+        #attr@drawableRight#a
+        #attr@drawablePadding#a
+        #attr@lineSpacingExtra#a
+        #attr@lineSpacingMultiplier#a
+        #attr@marqueeRepeatLimit#a
+        #attr@inputType#a
+        #attr@privateImeOptions#a
+        #attr@editorExtras#a
+        #attr@imeOptions#a
+        #attr@imeActionLabel#a
+        #attr@imeActionId#a
+        #attr@textSelectHandleLeft#a
+        #attr@textSelectHandleRight#a
+        #attr@textSelectHandle#a
+        #attr@textEditPasteWindowLayout#a
+        #attr@textEditNoPasteWindowLayout#a
+        #attr@textIsSelectable#a
+        #attr@textEditSidePasteWindowLayout#a
+        #attr@textEditSideNoPasteWindowLayout#a
+        #attr@textCursorDrawable#a
+        #attr@textEditSuggestionItemLayout#a
+        #attr@textAllCaps#a
+        #attr@drawableStart#a
+        #attr@drawableEnd#a
     .end array-data
 
-    .line 32316
+    .line 33969
     :array_8c
     .array-data 0x4
-        0x40t 0x4t 0x1t 0x1t
-        0x41t 0x4t 0x1t 0x1t
-        0x42t 0x4t 0x1t 0x1t
-        0x43t 0x4t 0x1t 0x1t
-        0x44t 0x4t 0x1t 0x1t
-        0x45t 0x4t 0x1t 0x1t
-        0x46t 0x4t 0x1t 0x1t
-        0x47t 0x4t 0x1t 0x1t
+        #attr@colorForeground#a
+        #attr@colorBackground#a
+        #attr@backgroundDimAmount#a
+        #attr@disabledAlpha#a
+        #attr@textAppearance#a
+        #attr@textAppearanceInverse#a
+        #attr@textColorPrimary#a
+        #attr@textColorPrimaryDisableOnly#a
+        #attr@textColorSecondary#a
+        #attr@textColorPrimaryInverse#a
+        #attr@textColorSecondaryInverse#a
+        #attr@textColorPrimaryNoDisable#a
+        #attr@textColorSecondaryNoDisable#a
+        #attr@textColorPrimaryInverseNoDisable#a
+        #attr@textColorSecondaryInverseNoDisable#a
+        #attr@textColorHintInverse#a
+        #attr@textAppearanceLarge#a
+        #attr@textAppearanceMedium#a
+        #attr@textAppearanceSmall#a
+        #attr@textAppearanceLargeInverse#a
+        #attr@textAppearanceMediumInverse#a
+        #attr@textAppearanceSmallInverse#a
+        #attr@textCheckMark#a
+        #attr@textCheckMarkInverse#a
+        #attr@buttonStyle#a
+        #attr@buttonStyleSmall#a
+        #attr@buttonStyleInset#a
+        #attr@buttonStyleToggle#a
+        #attr@galleryItemBackground#a
+        #attr@listPreferredItemHeight#a
+        #attr@expandableListPreferredItemPaddingLeft#a
+        #attr@expandableListPreferredChildPaddingLeft#a
+        #attr@expandableListPreferredItemIndicatorLeft#a
+        #attr@expandableListPreferredItemIndicatorRight#a
+        #attr@expandableListPreferredChildIndicatorLeft#a
+        #attr@expandableListPreferredChildIndicatorRight#a
+        #attr@windowBackground#a
+        #attr@windowFrame#a
+        #attr@windowNoTitle#a
+        #attr@windowIsFloating#a
+        #attr@windowIsTranslucent#a
+        #attr@windowContentOverlay#a
+        #attr@windowTitleSize#a
+        #attr@windowTitleStyle#a
+        #attr@windowTitleBackgroundStyle#a
+        #attr@alertDialogStyle#a
+        #attr@panelBackground#a
+        #attr@panelFullBackground#a
+        #attr@panelColorForeground#a
+        #attr@panelColorBackground#a
+        #attr@panelTextAppearance#a
+        #attr@absListViewStyle#a
+        #attr@autoCompleteTextViewStyle#a
+        #attr@checkboxStyle#a
+        #attr@dropDownListViewStyle#a
+        #attr@editTextStyle#a
+        #attr@expandableListViewStyle#a
+        #attr@galleryStyle#a
+        #attr@gridViewStyle#a
+        #attr@imageButtonStyle#a
+        #attr@imageWellStyle#a
+        #attr@listViewStyle#a
+        #attr@listViewWhiteStyle#a
+        #attr@popupWindowStyle#a
+        #attr@progressBarStyle#a
+        #attr@progressBarStyleHorizontal#a
+        #attr@progressBarStyleSmall#a
+        #attr@progressBarStyleLarge#a
+        #attr@seekBarStyle#a
+        #attr@ratingBarStyle#a
+        #attr@ratingBarStyleSmall#a
+        #attr@radioButtonStyle#a
+        #attr@scrollViewStyle#a
+        #attr@spinnerStyle#a
+        #attr@starStyle#a
+        #attr@tabWidgetStyle#a
+        #attr@textViewStyle#a
+        #attr@webViewStyle#a
+        #attr@dropDownItemStyle#a
+        #attr@spinnerDropDownItemStyle#a
+        #attr@dropDownHintAppearance#a
+        #attr@spinnerItemStyle#a
+        #attr@mapViewStyle#a
+        #attr@preferenceScreenStyle#a
+        #attr@preferenceCategoryStyle#a
+        #attr@preferenceInformationStyle#a
+        #attr@preferenceStyle#a
+        #attr@checkBoxPreferenceStyle#a
+        #attr@yesNoPreferenceStyle#a
+        #attr@dialogPreferenceStyle#a
+        #attr@editTextPreferenceStyle#a
+        #attr@ringtonePreferenceStyle#a
+        #attr@preferenceLayoutChild#a
+        #attr@windowAnimationStyle#a
+        #attr@colorForegroundInverse#a
+        #attr@textAppearanceButton#a
+        #attr@listSeparatorTextViewStyle#a
+        #attr@windowFullscreen#a
+        #attr@progressBarStyleSmallTitle#a
+        #attr@ratingBarStyleIndicator#a
+        #attr@textColorTertiary#a
+        #attr@textColorTertiaryInverse#a
+        #attr@listDivider#a
+        #attr@listChoiceIndicatorSingle#a
+        #attr@listChoiceIndicatorMultiple#a
+        #attr@windowNoDisplay#a
+        #attr@backgroundDimEnabled#a
+        #attr@windowDisablePreview#a
+        #attr@windowSoftInputMode#a
+        #attr@candidatesTextStyleSpans#a
+        #attr@textColorSearchUrl#a
+        #attr@progressBarStyleInverse#a
+        #attr@progressBarStyleSmallInverse#a
+        #attr@progressBarStyleLargeInverse#a
+        #attr@textColorPrimaryInverseDisableOnly#a
+        #attr@windowShowWallpaper#a
+        #attr@textAppearanceSearchResultSubtitle#a
+        #attr@textAppearanceSearchResultTitle#a
+        #attr@colorBackgroundCacheHint#a
+        #attr@quickContactBadgeStyleWindowSmall#a
+        #attr@quickContactBadgeStyleWindowMedium#a
+        #attr@quickContactBadgeStyleWindowLarge#a
+        #attr@quickContactBadgeStyleSmallWindowSmall#a
+        #attr@quickContactBadgeStyleSmallWindowMedium#a
+        #attr@quickContactBadgeStyleSmallWindowLarge#a
+        #attr@expandableListViewWhiteStyle#a
+        #attr@webTextViewStyle#a
+        #attr@textSelectHandleLeft#a
+        #attr@textSelectHandleRight#a
+        #attr@textSelectHandle#a
+        #attr@textSelectHandleWindowStyle#a
+        #attr@windowActionBar#a
+        #attr@actionBarStyle#a
+        #attr@dropDownSpinnerStyle#a
+        #attr@actionDropDownStyle#a
+        #attr@actionButtonStyle#a
+        #attr@actionModeBackground#a
+        #attr@actionModeCloseDrawable#a
+        #attr@windowActionModeOverlay#a
+        #attr@windowActionBarOverlay#a
+        #attr@actionBarSize#a
+        #attr@listChoiceBackgroundIndicator#a
+        #attr@actionBarTabStyle#a
+        #attr@actionBarTabBarStyle#a
+        #attr@actionBarTabTextStyle#a
+        #attr@actionOverflowButtonStyle#a
+        #attr@actionModeCloseButtonStyle#a
+        #attr@activatedBackgroundIndicator#a
+        #attr@listPopupWindowStyle#a
+        #attr@popupMenuStyle#a
+        #attr@textAppearanceLargePopupMenu#a
+        #attr@textAppearanceSmallPopupMenu#a
+        #attr@listDividerAlertDialog#a
+        #attr@textColorAlertDialogListItem#a
+        #attr@dialogTheme#a
+        #attr@alertDialogTheme#a
+        #attr@dividerVertical#a
+        #attr@homeAsUpIndicator#a
+        #attr@selectableItemBackground#a
+        #attr@actionModeCutDrawable#a
+        #attr@actionModeCopyDrawable#a
+        #attr@actionModePasteDrawable#a
+        #attr@textEditPasteWindowLayout#a
+        #attr@textEditNoPasteWindowLayout#a
+        #attr@windowEnableSplitTouch#a
+        #attr@borderlessButtonStyle#a
+        #attr@dividerHorizontal#a
+        #attr@buttonBarStyle#a
+        #attr@buttonBarButtonStyle#a
+        #attr@segmentedButtonStyle#a
+        #attr@fastScrollThumbDrawable#a
+        #attr@fastScrollPreviewBackgroundLeft#a
+        #attr@fastScrollPreviewBackgroundRight#a
+        #attr@fastScrollTrackDrawable#a
+        #attr@fastScrollOverlayPosition#a
+        #attr@detailsElementBackground#a
+        #attr@textColorHighlightInverse#a
+        #attr@textColorLinkInverse#a
+        #attr@editTextColor#a
+        #attr@editTextBackground#a
+        #attr@horizontalScrollViewStyle#a
+        #attr@alertDialogIcon#a
+        #attr@fastScrollTextColor#a
+        #attr@windowCloseOnTouchOutside#a
+        #attr@datePickerStyle#a
+        #attr@calendarViewStyle#a
+        #attr@textEditSidePasteWindowLayout#a
+        #attr@textEditSideNoPasteWindowLayout#a
+        #attr@actionMenuTextAppearance#a
+        #attr@actionMenuTextColor#a
+        #attr@switchPreferenceStyle#a
+        #attr@textSuggestionsWindowStyle#a
+        #attr@textEditSuggestionItemLayout#a
+        #attr@actionModeSelectAllDrawable#a
+        #attr@listPreferredItemHeightLarge#a
+        #attr@listPreferredItemHeightSmall#a
+        #attr@actionBarSplitStyle#a
+        #attr@colorPressedHighlight#a
+        #attr@colorLongPressedHighlight#a
+        #attr@colorFocusedHighlight#a
+        #attr@colorActivatedHighlight#a
+        #attr@colorMultiSelectHighlight#a
+        #attr@actionModeStyle#a
+        #attr@actionBarWidgetTheme#a
+        #attr@actionBarDivider#a
+        #attr@actionBarItemBackground#a
+        #attr@actionModeSplitBackground#a
+        #attr@textAppearanceListItem#a
+        #attr@textAppearanceListItemSmall#a
+        #attr@listPreferredItemPaddingLeft#a
+        #attr@listPreferredItemPaddingRight#a
+        #attr@searchWidgetCorpusItemBackground#a
+        #attr@textAppearanceEasyCorrectSuggestion#a
+        #attr@textAppearanceMisspelledSuggestion#a
+        #attr@textAppearanceAutoCorrectionSuggestion#a
+        #attr@textUnderlineColor#a
+        #attr@textUnderlineThickness#a
+        #attr@errorMessageBackground#a
+        #attr@errorMessageAboveBackground#a
+        #attr@searchResultListItemHeight#a
+        #attr@dropdownListPreferredItemHeight#a
+        #attr@windowSplitActionBar#a
+        #attr@alertDialogButtonGroupStyle#a
+        #attr@alertDialogCenterButtons#a
+        #attr@panelMenuIsCompact#a
+        #attr@panelMenuListWidth#a
+        #attr@panelMenuListTheme#a
+        #attr@gestureOverlayViewStyle#a
+        #attr@quickContactBadgeOverlay#a
+        #attr@stackViewStyle#a
+        #attr@numberPickerStyle#a
+        #attr@numberPickerUpButtonStyle#a
+        #attr@numberPickerDownButtonStyle#a
+        #attr@numberPickerInputTextStyle#a
+        #attr@timePickerStyle#a
+        #attr@activityChooserViewStyle#a
+        #attr@actionModeShareDrawable#a
+        #attr@actionModeFindDrawable#a
+        #attr@actionModeWebSearchDrawable#a
+        #attr@actionModePopupWindowStyle#a
+        #attr@preferenceFragmentStyle#a
+        #attr@preferencePanelStyle#a
+        #attr@dialogTitleIconsDecorLayout#a
+        #attr@dialogCustomTitleDecorLayout#a
+        #attr@dialogTitleDecorLayout#a
+        #attr@toastFrameBackground#a
+        #attr@searchDropdownBackground#a
+        #attr@searchViewCloseIcon#a
+        #attr@searchViewGoIcon#a
+        #attr@searchViewSearchIcon#a
+        #attr@searchViewVoiceIcon#a
+        #attr@searchViewEditQuery#a
+        #attr@searchViewEditQueryBackground#a
+        #attr@searchViewTextField#a
+        #attr@searchViewTextFieldRight#a
+        #attr@searchDialogTheme#a
+        #attr@preferenceFrameLayoutStyle#a
+        #attr@switchStyle#a
+        #attr@pointerStyle#a
     .end array-data
 
-    .line 32328
+    .line 36964
     :array_8d
     .array-data 0x4
-        0xcft 0x3t 0x1t 0x1t
-        0xd0t 0x3t 0x1t 0x1t
+        #attr@disabledAlpha#a
+        #attr@textOn#a
+        #attr@textOff#a
     .end array-data
 
-    .line 32355
+    .line 37031
     :array_8e
     .array-data 0x4
-        0x24t 0x1t 0x1t 0x1t
-        0x25t 0x1t 0x1t 0x1t
-        0x42t 0x1t 0x1t 0x1t
-        0x6et 0x3t 0x1t 0x1t
-        0x6ft 0x3t 0x1t 0x1t
-        0x70t 0x3t 0x1t 0x1t
-        0x71t 0x3t 0x1t 0x1t
-        0x72t 0x3t 0x1t 0x1t
+        #attr@fromXDelta#a
+        #attr@toXDelta#a
+        #attr@fromYDelta#a
+        #attr@toYDelta#a
     .end array-data
 
-    .line 32501
+    .line 37331
     :array_8f
     .array-data 0x4
-        0xeft 0x1t 0x1t 0x1t
-        0xf0t 0x1t 0x1t 0x1t
-        0xf1t 0x1t 0x1t 0x1t
-        0x6bt 0x3t 0x1t 0x1t
-        0x6ct 0x3t 0x1t 0x1t
+        #attr@scrollbarSize#a
+        #attr@scrollbarThumbHorizontal#a
+        #attr@scrollbarThumbVertical#a
+        #attr@scrollbarTrackHorizontal#a
+        #attr@scrollbarTrackVertical#a
+        #attr@scrollbarAlwaysDrawHorizontalTrack#a
+        #attr@scrollbarAlwaysDrawVerticalTrack#a
+        #attr@scrollbarStyle#a
+        #attr@id#a
+        #attr@tag#a
+        #attr@scrollX#a
+        #attr@scrollY#a
+        #attr@background#a
+        #attr@padding#a
+        #attr@paddingLeft#a
+        #attr@paddingTop#a
+        #attr@paddingRight#a
+        #attr@paddingBottom#a
+        #attr@focusable#a
+        #attr@focusableInTouchMode#a
+        #attr@visibility#a
+        #attr@fitsSystemWindows#a
+        #attr@scrollbars#a
+        #attr@fadingEdge#a
+        #attr@fadingEdgeLength#a
+        #attr@nextFocusLeft#a
+        #attr@nextFocusRight#a
+        #attr@nextFocusUp#a
+        #attr@nextFocusDown#a
+        #attr@clickable#a
+        #attr@longClickable#a
+        #attr@saveEnabled#a
+        #attr@drawingCacheQuality#a
+        #attr@duplicateParentState#a
+        #attr@minWidth#a
+        #attr@minHeight#a
+        #attr@soundEffectsEnabled#a
+        #attr@keepScreenOn#a
+        #attr@isScrollContainer#a
+        #attr@hapticFeedbackEnabled#a
+        #attr@onClick#a
+        #attr@contentDescription#a
+        #attr@scrollbarFadeDuration#a
+        #attr@scrollbarDefaultDelayBeforeFade#a
+        #attr@fadeScrollbars#a
+        #attr@overScrollMode#a
+        #attr@filterTouchesWhenObscured#a
+        #attr@alpha#a
+        #attr@transformPivotX#a
+        #attr@transformPivotY#a
+        #attr@translationX#a
+        #attr@translationY#a
+        #attr@scaleX#a
+        #attr@scaleY#a
+        #attr@rotation#a
+        #attr@rotationX#a
+        #attr@rotationY#a
+        #attr@verticalScrollbarPosition#a
+        #attr@nextFocusForward#a
+        #attr@layerType#a
+        #attr@requiresFadingEdge#a
+        #attr@paddingStart#a
+        #attr@paddingEnd#a
+        #attr@layoutDirection#a
+        #attr@textDirection#a
     .end array-data
 
-    .line 32618
+    .line 38482
     :array_90
     .array-data 0x4
-        0x25t 0x2t 0x1t 0x1t
-        0x8ft 0x2t 0x1t 0x1t
-        0x90t 0x2t 0x1t 0x1t
-        0x91t 0x2t 0x1t 0x1t
-        0x9bt 0x2t 0x1t 0x1t
-        0x32t 0x3t 0x1t 0x1t
-        0x33t 0x3t 0x1t 0x1t
+        #attr@inAnimation#a
+        #attr@outAnimation#a
+        #attr@animateFirstView#a
     .end array-data
 
-    .line 32756
+    .line 38567
     :array_91
     .array-data 0x4
-        0x29t 0x1t 0x1t 0x1t
-        0xbbt 0x2t 0x1t 0x1t
-        0xbct 0x2t 0x1t 0x1t
-        0xbdt 0x2t 0x1t 0x1t
-        0x10t 0x4t 0x1t 0x1t
+        #attr@state_focused#a
+        #attr@state_window_focused#a
+        #attr@state_enabled#a
+        #attr@state_selected#a
+        #attr@state_pressed#a
+        #attr@state_activated#a
+        #attr@state_accelerated#a
+        #attr@state_hovered#a
+        #attr@state_drag_can_accept#a
+        #attr@state_drag_hovered#a
     .end array-data
 
-    .line 32828
+    .line 38763
     :array_92
     .array-data 0x4
-        0x49t 0x1t 0x1t 0x1t
-        0x4at 0x1t 0x1t 0x1t
-        0x4bt 0x1t 0x1t 0x1t
+        #attr@flipInterval#a
+        #attr@autoStart#a
     .end array-data
 
-    .line 32906
+    .line 38833
     :array_93
     .array-data 0x4
-        0x4ct 0x1t 0x1t 0x1t
-        0x4dt 0x1t 0x1t 0x1t
+        #attr@clipChildren#a
+        #attr@clipToPadding#a
+        #attr@layoutAnimation#a
+        #attr@animationCache#a
+        #attr@persistentDrawingCache#a
+        #attr@alwaysDrawnWithCache#a
+        #attr@addStatesFromChildren#a
+        #attr@descendantFocusability#a
+        #attr@splitMotionEvents#a
+        #attr@animateLayoutChanges#a
     .end array-data
 
-    .line 32967
+    .line 39051
     :array_94
     .array-data 0x4
-        0x95t 0x0t 0x1t 0x1t
-        0x96t 0x0t 0x1t 0x1t
-        0x97t 0x0t 0x1t 0x1t
-        0x98t 0x0t 0x1t 0x1t
-        0x99t 0x0t 0x1t 0x1t
-        0x9at 0x0t 0x1t 0x1t
-        0x9bt 0x0t 0x1t 0x1t
-        0x8ct 0x3t 0x1t 0x1t
-        0xact 0x3t 0x1t 0x1t
+        #attr@layout_width#a
+        #attr@layout_height#a
     .end array-data
 
-    .line 33135
+    .line 39151
     :array_95
     .array-data 0x4
-        0xcat 0x3t 0x1t 0x1t
-        0xcbt 0x3t 0x1t 0x1t
-        0xcct 0x3t 0x1t 0x1t
+        #attr@layout_width#a
+        #attr@layout_height#a
+        #attr@layout_margin#a
+        #attr@layout_marginLeft#a
+        #attr@layout_marginTop#a
+        #attr@layout_marginRight#a
+        #attr@layout_marginBottom#a
+        #attr@layout_marginStart#a
+        #attr@layout_marginEnd#a
     .end array-data
 
-    .line 33436
+    .line 39333
     :array_96
     .array-data 0x4
-        0xet 0x0t 0x1t 0x1t
-        0x34t 0x0t 0x1t 0x1t
-        0x95t 0x0t 0x1t 0x1t
-        0x96t 0x0t 0x1t 0x1t
-        0x97t 0x0t 0x1t 0x1t
-        0x98t 0x0t 0x1t 0x1t
-        0x99t 0x0t 0x1t 0x1t
-        0x9at 0x0t 0x1t 0x1t
-        0x9bt 0x0t 0x1t 0x1t
-        0xabt 0x0t 0x1t 0x1t
-        0xaft 0x0t 0x1t 0x1t
-        0xb0t 0x0t 0x1t 0x1t
-        0xb1t 0x0t 0x1t 0x1t
-        0x1ft 0x1t 0x1t 0x1t
-        0x20t 0x1t 0x1t 0x1t
-        0x3ft 0x1t 0x1t 0x1t
-        0x40t 0x1t 0x1t 0x1t
-        0x4et 0x1t 0x1t 0x1t
-        0x4ft 0x1t 0x1t 0x1t
-        0x50t 0x1t 0x1t 0x1t
-        0x51t 0x1t 0x1t 0x1t
-        0x52t 0x1t 0x1t 0x1t
-        0x53t 0x1t 0x1t 0x1t
-        0x54t 0x1t 0x1t 0x1t
-        0x55t 0x1t 0x1t 0x1t
-        0x56t 0x1t 0x1t 0x1t
-        0x57t 0x1t 0x1t 0x1t
-        0x58t 0x1t 0x1t 0x1t
-        0x59t 0x1t 0x1t 0x1t
-        0x5at 0x1t 0x1t 0x1t
-        0x5bt 0x1t 0x1t 0x1t
-        0x5ct 0x1t 0x1t 0x1t
-        0x5dt 0x1t 0x1t 0x1t
-        0x5et 0x1t 0x1t 0x1t
-        0x5ft 0x1t 0x1t 0x1t
-        0x60t 0x1t 0x1t 0x1t
-        0x61t 0x1t 0x1t 0x1t
-        0x62t 0x1t 0x1t 0x1t
-        0x63t 0x1t 0x1t 0x1t
-        0x64t 0x1t 0x1t 0x1t
-        0x65t 0x1t 0x1t 0x1t
-        0x66t 0x1t 0x1t 0x1t
-        0x67t 0x1t 0x1t 0x1t
-        0x68t 0x1t 0x1t 0x1t
-        0x69t 0x1t 0x1t 0x1t
-        0x6at 0x1t 0x1t 0x1t
-        0x6bt 0x1t 0x1t 0x1t
-        0x6ct 0x1t 0x1t 0x1t
-        0x6dt 0x1t 0x1t 0x1t
-        0x6et 0x1t 0x1t 0x1t
-        0x6ft 0x1t 0x1t 0x1t
-        0x70t 0x1t 0x1t 0x1t
-        0x71t 0x1t 0x1t 0x1t
-        0x17t 0x2t 0x1t 0x1t
-        0x18t 0x2t 0x1t 0x1t
-        0x1dt 0x2t 0x1t 0x1t
-        0x20t 0x2t 0x1t 0x1t
-        0x23t 0x2t 0x1t 0x1t
-        0x24t 0x2t 0x1t 0x1t
-        0x64t 0x2t 0x1t 0x1t
-        0x65t 0x2t 0x1t 0x1t
-        0x66t 0x2t 0x1t 0x1t
-        0xc5t 0x2t 0x1t 0x1t
-        0xc6t 0x2t 0x1t 0x1t
-        0xc7t 0x2t 0x1t 0x1t
-        0x14t 0x3t 0x1t 0x1t
-        0x15t 0x3t 0x1t 0x1t
-        0x16t 0x3t 0x1t 0x1t
-        0x5et 0x3t 0x1t 0x1t
-        0x5ft 0x3t 0x1t 0x1t
-        0x62t 0x3t 0x1t 0x1t
-        0x74t 0x3t 0x1t 0x1t
-        0x8ct 0x3t 0x1t 0x1t
-        0x92t 0x3t 0x1t 0x1t
-        0x93t 0x3t 0x1t 0x1t
-        0xact 0x3t 0x1t 0x1t
+        #attr@layout#a
+        #attr@inflatedId#a
     .end array-data
 
-    .line 35530
+    .line 39425
     :array_97
     .array-data 0x4
-        0x30t 0x0t 0x1t 0x1t
-        0x31t 0x0t 0x1t 0x1t
-        0x32t 0x0t 0x1t 0x1t
-        0x33t 0x0t 0x1t 0x1t
-        0x34t 0x0t 0x1t 0x1t
-        0x35t 0x0t 0x1t 0x1t
-        0x36t 0x0t 0x1t 0x1t
-        0x37t 0x0t 0x1t 0x1t
-        0x38t 0x0t 0x1t 0x1t
-        0x39t 0x0t 0x1t 0x1t
-        0x3at 0x0t 0x1t 0x1t
-        0x3bt 0x0t 0x1t 0x1t
-        0x3ct 0x0t 0x1t 0x1t
-        0x3dt 0x0t 0x1t 0x1t
-        0x3et 0x0t 0x1t 0x1t
-        0x3ft 0x0t 0x1t 0x1t
-        0x40t 0x0t 0x1t 0x1t
-        0x41t 0x0t 0x1t 0x1t
-        0x42t 0x0t 0x1t 0x1t
-        0x43t 0x0t 0x1t 0x1t
-        0x44t 0x0t 0x1t 0x1t
-        0x45t 0x0t 0x1t 0x1t
-        0x46t 0x0t 0x1t 0x1t
-        0x47t 0x0t 0x1t 0x1t
-        0x48t 0x0t 0x1t 0x1t
-        0x49t 0x0t 0x1t 0x1t
-        0x4at 0x0t 0x1t 0x1t
-        0x4bt 0x0t 0x1t 0x1t
-        0x4ct 0x0t 0x1t 0x1t
-        0x4dt 0x0t 0x1t 0x1t
-        0x4et 0x0t 0x1t 0x1t
-        0x4ft 0x0t 0x1t 0x1t
-        0x50t 0x0t 0x1t 0x1t
-        0x51t 0x0t 0x1t 0x1t
-        0x52t 0x0t 0x1t 0x1t
-        0x53t 0x0t 0x1t 0x1t
-        0x54t 0x0t 0x1t 0x1t
-        0x55t 0x0t 0x1t 0x1t
-        0x56t 0x0t 0x1t 0x1t
-        0x57t 0x0t 0x1t 0x1t
-        0x58t 0x0t 0x1t 0x1t
-        0x59t 0x0t 0x1t 0x1t
-        0x5at 0x0t 0x1t 0x1t
-        0x5bt 0x0t 0x1t 0x1t
-        0x5ct 0x0t 0x1t 0x1t
-        0x5dt 0x0t 0x1t 0x1t
-        0x5et 0x0t 0x1t 0x1t
-        0x5ft 0x0t 0x1t 0x1t
-        0x60t 0x0t 0x1t 0x1t
-        0x61t 0x0t 0x1t 0x1t
-        0x62t 0x0t 0x1t 0x1t
-        0x6at 0x0t 0x1t 0x1t
-        0x6bt 0x0t 0x1t 0x1t
-        0x6ct 0x0t 0x1t 0x1t
-        0x6dt 0x0t 0x1t 0x1t
-        0x6et 0x0t 0x1t 0x1t
-        0x6ft 0x0t 0x1t 0x1t
-        0x70t 0x0t 0x1t 0x1t
-        0x71t 0x0t 0x1t 0x1t
-        0x72t 0x0t 0x1t 0x1t
-        0x73t 0x0t 0x1t 0x1t
-        0x74t 0x0t 0x1t 0x1t
-        0x75t 0x0t 0x1t 0x1t
-        0x76t 0x0t 0x1t 0x1t
-        0x77t 0x0t 0x1t 0x1t
-        0x78t 0x0t 0x1t 0x1t
-        0x79t 0x0t 0x1t 0x1t
-        0x7at 0x0t 0x1t 0x1t
-        0x7bt 0x0t 0x1t 0x1t
-        0x7ct 0x0t 0x1t 0x1t
-        0x7dt 0x0t 0x1t 0x1t
-        0x7et 0x0t 0x1t 0x1t
-        0x80t 0x0t 0x1t 0x1t
-        0x81t 0x0t 0x1t 0x1t
-        0x82t 0x0t 0x1t 0x1t
-        0x83t 0x0t 0x1t 0x1t
-        0x84t 0x0t 0x1t 0x1t
-        0x85t 0x0t 0x1t 0x1t
-        0x86t 0x0t 0x1t 0x1t
-        0x87t 0x0t 0x1t 0x1t
-        0x88t 0x0t 0x1t 0x1t
-        0x89t 0x0t 0x1t 0x1t
-        0x8at 0x0t 0x1t 0x1t
-        0x8bt 0x0t 0x1t 0x1t
-        0x8ct 0x0t 0x1t 0x1t
-        0x8dt 0x0t 0x1t 0x1t
-        0x8et 0x0t 0x1t 0x1t
-        0x8ft 0x0t 0x1t 0x1t
-        0x90t 0x0t 0x1t 0x1t
-        0x91t 0x0t 0x1t 0x1t
-        0x92t 0x0t 0x1t 0x1t
-        0x93t 0x0t 0x1t 0x1t
-        0x94t 0x0t 0x1t 0x1t
-        0xaet 0x0t 0x1t 0x1t
-        0x6t 0x2t 0x1t 0x1t
-        0x7t 0x2t 0x1t 0x1t
-        0x8t 0x2t 0x1t 0x1t
-        0xdt 0x2t 0x1t 0x1t
-        0xft 0x2t 0x1t 0x1t
-        0x10t 0x2t 0x1t 0x1t
-        0x12t 0x2t 0x1t 0x1t
-        0x13t 0x2t 0x1t 0x1t
-        0x14t 0x2t 0x1t 0x1t
-        0x19t 0x2t 0x1t 0x1t
-        0x1at 0x2t 0x1t 0x1t
-        0x1et 0x2t 0x1t 0x1t
-        0x1ft 0x2t 0x1t 0x1t
-        0x22t 0x2t 0x1t 0x1t
-        0x2bt 0x2t 0x1t 0x1t
-        0x30t 0x2t 0x1t 0x1t
-        0x67t 0x2t 0x1t 0x1t
-        0x87t 0x2t 0x1t 0x1t
-        0x88t 0x2t 0x1t 0x1t
-        0x89t 0x2t 0x1t 0x1t
-        0x8bt 0x2t 0x1t 0x1t
-        0x92t 0x2t 0x1t 0x1t
-        0xa0t 0x2t 0x1t 0x1t
-        0xa1t 0x2t 0x1t 0x1t
-        0xabt 0x2t 0x1t 0x1t
-        0xaet 0x2t 0x1t 0x1t
-        0xaft 0x2t 0x1t 0x1t
-        0xb0t 0x2t 0x1t 0x1t
-        0xb1t 0x2t 0x1t 0x1t
-        0xb2t 0x2t 0x1t 0x1t
-        0xb3t 0x2t 0x1t 0x1t
-        0xb6t 0x2t 0x1t 0x1t
-        0xb9t 0x2t 0x1t 0x1t
-        0xc5t 0x2t 0x1t 0x1t
-        0xc6t 0x2t 0x1t 0x1t
-        0xc7t 0x2t 0x1t 0x1t
-        0xc8t 0x2t 0x1t 0x1t
-        0xcdt 0x2t 0x1t 0x1t
-        0xcet 0x2t 0x1t 0x1t
-        0xd6t 0x2t 0x1t 0x1t
-        0xd7t 0x2t 0x1t 0x1t
-        0xd8t 0x2t 0x1t 0x1t
-        0xdbt 0x2t 0x1t 0x1t
-        0xdct 0x2t 0x1t 0x1t
-        0xddt 0x2t 0x1t 0x1t
-        0xe4t 0x2t 0x1t 0x1t
-        0xebt 0x2t 0x1t 0x1t
-        0xf0t 0x2t 0x1t 0x1t
-        0xf3t 0x2t 0x1t 0x1t
-        0xf4t 0x2t 0x1t 0x1t
-        0xf5t 0x2t 0x1t 0x1t
-        0xf6t 0x2t 0x1t 0x1t
-        0xf7t 0x2t 0x1t 0x1t
-        0xfdt 0x2t 0x1t 0x1t
-        0xfft 0x2t 0x1t 0x1t
-        0x0t 0x3t 0x1t 0x1t
-        0x1t 0x3t 0x1t 0x1t
-        0x2t 0x3t 0x1t 0x1t
-        0x5t 0x3t 0x1t 0x1t
-        0x6t 0x3t 0x1t 0x1t
-        0x8t 0x3t 0x1t 0x1t
-        0x9t 0x3t 0x1t 0x1t
-        0xat 0x3t 0x1t 0x1t
-        0xbt 0x3t 0x1t 0x1t
-        0xet 0x3t 0x1t 0x1t
-        0x11t 0x3t 0x1t 0x1t
-        0x12t 0x3t 0x1t 0x1t
-        0x13t 0x3t 0x1t 0x1t
-        0x14t 0x3t 0x1t 0x1t
-        0x15t 0x3t 0x1t 0x1t
-        0x17t 0x3t 0x1t 0x1t
-        0x2bt 0x3t 0x1t 0x1t
-        0x2ct 0x3t 0x1t 0x1t
-        0x2et 0x3t 0x1t 0x1t
-        0x2ft 0x3t 0x1t 0x1t
-        0x30t 0x3t 0x1t 0x1t
-        0x36t 0x3t 0x1t 0x1t
-        0x37t 0x3t 0x1t 0x1t
-        0x38t 0x3t 0x1t 0x1t
-        0x39t 0x3t 0x1t 0x1t
-        0x3at 0x3t 0x1t 0x1t
-        0x4et 0x3t 0x1t 0x1t
-        0x4ft 0x3t 0x1t 0x1t
-        0x50t 0x3t 0x1t 0x1t
-        0x51t 0x3t 0x1t 0x1t
-        0x52t 0x3t 0x1t 0x1t
-        0x53t 0x3t 0x1t 0x1t
-        0x55t 0x3t 0x1t 0x1t
-        0x59t 0x3t 0x1t 0x1t
-        0x5bt 0x3t 0x1t 0x1t
-        0x5ct 0x3t 0x1t 0x1t
-        0x5dt 0x3t 0x1t 0x1t
-        0x5et 0x3t 0x1t 0x1t
-        0x5ft 0x3t 0x1t 0x1t
-        0x60t 0x3t 0x1t 0x1t
-        0x61t 0x3t 0x1t 0x1t
-        0x6dt 0x3t 0x1t 0x1t
-        0x73t 0x3t 0x1t 0x1t
-        0x74t 0x3t 0x1t 0x1t
-        0x7et 0x3t 0x1t 0x1t
-        0x86t 0x3t 0x1t 0x1t
-        0x87t 0x3t 0x1t 0x1t
-        0x88t 0x3t 0x1t 0x1t
-        0x8dt 0x3t 0x1t 0x1t
-        0x8et 0x3t 0x1t 0x1t
-        0x8ft 0x3t 0x1t 0x1t
-        0x90t 0x3t 0x1t 0x1t
-        0x91t 0x3t 0x1t 0x1t
-        0x94t 0x3t 0x1t 0x1t
-        0x97t 0x3t 0x1t 0x1t
-        0x9bt 0x3t 0x1t 0x1t
-        0x9ct 0x3t 0x1t 0x1t
-        0x9dt 0x3t 0x1t 0x1t
-        0x9et 0x3t 0x1t 0x1t
-        0x9ft 0x3t 0x1t 0x1t
-        0xa3t 0x3t 0x1t 0x1t
-        0xa4t 0x3t 0x1t 0x1t
-        0xa8t 0x3t 0x1t 0x1t
-        0xadt 0x3t 0x1t 0x1t
-        0xbdt 0x3t 0x1t 0x1t
-        0xbet 0x3t 0x1t 0x1t
-        0xc0t 0x3t 0x1t 0x1t
-        0xc3t 0x3t 0x1t 0x1t
-        0xc8t 0x3t 0x1t 0x1t
-        0xcdt 0x3t 0x1t 0x1t
-        0xcet 0x3t 0x1t 0x1t
-        0xcft 0x3t 0x1t 0x1t
-        0xd0t 0x3t 0x1t 0x1t
-        0xd1t 0x3t 0x1t 0x1t
-        0xd2t 0x3t 0x1t 0x1t
-        0xd3t 0x3t 0x1t 0x1t
-        0xd4t 0x3t 0x1t 0x1t
-        0xd5t 0x3t 0x1t 0x1t
-        0xd6t 0x3t 0x1t 0x1t
-        0xd7t 0x3t 0x1t 0x1t
-        0xd8t 0x3t 0x1t 0x1t
-        0xd9t 0x3t 0x1t 0x1t
-        0xdat 0x3t 0x1t 0x1t
-        0xdbt 0x3t 0x1t 0x1t
-        0xdct 0x3t 0x1t 0x1t
-        0xddt 0x3t 0x1t 0x1t
-        0xdet 0x3t 0x1t 0x1t
-        0xdft 0x3t 0x1t 0x1t
-        0xe0t 0x3t 0x1t 0x1t
-        0xe1t 0x3t 0x1t 0x1t
-        0xe2t 0x3t 0x1t 0x1t
-        0xe3t 0x3t 0x1t 0x1t
-        0xe4t 0x3t 0x1t 0x1t
-        0xe5t 0x3t 0x1t 0x1t
-        0xe6t 0x3t 0x1t 0x1t
-        0xe7t 0x3t 0x1t 0x1t
-        0xe8t 0x3t 0x1t 0x1t
-        0xe9t 0x3t 0x1t 0x1t
-        0xeat 0x3t 0x1t 0x1t
-        0xebt 0x3t 0x1t 0x1t
-        0xect 0x3t 0x1t 0x1t
-        0xedt 0x3t 0x1t 0x1t
-        0xeet 0x3t 0x1t 0x1t
-        0xeft 0x3t 0x1t 0x1t
-        0xf0t 0x3t 0x1t 0x1t
-        0xf1t 0x3t 0x1t 0x1t
-        0xf2t 0x3t 0x1t 0x1t
-        0xf3t 0x3t 0x1t 0x1t
-        0xf4t 0x3t 0x1t 0x1t
-        0xf5t 0x3t 0x1t 0x1t
-        0xf6t 0x3t 0x1t 0x1t
-        0xf7t 0x3t 0x1t 0x1t
-        0xf8t 0x3t 0x1t 0x1t
-        0xf9t 0x3t 0x1t 0x1t
-        0xfat 0x3t 0x1t 0x1t
+        #attr@description#a
+        #attr@settingsActivity#a
+        #attr@thumbnail#a
+        #attr@author#a
     .end array-data
 
-    .line 38584
+    .line 39515
     :array_98
     .array-data 0x4
-        0x33t 0x0t 0x1t 0x1t
-        0x24t 0x1t 0x1t 0x1t
-        0x25t 0x1t 0x1t 0x1t
+        #attr@majorWeightMin#a
+        #attr@minorWeightMin#a
+        #attr@majorWeightMax#a
+        #attr@minorWeightMax#a
     .end array-data
 
-    .line 38651
+    .line 39583
     :array_99
     .array-data 0x4
-        0xc6t 0x1t 0x1t 0x1t
-        0xc7t 0x1t 0x1t 0x1t
-        0xc8t 0x1t 0x1t 0x1t
-        0xc9t 0x1t 0x1t 0x1t
+        #attr@backgroundDimAmount#a
+        #attr@windowBackground#a
+        #attr@windowFrame#a
+        #attr@windowNoTitle#a
+        #attr@windowIsFloating#a
+        #attr@windowIsTranslucent#a
+        #attr@windowContentOverlay#a
+        #attr@textColor#a
+        #attr@windowAnimationStyle#a
+        #attr@windowFullscreen#a
+        #attr@windowNoDisplay#a
+        #attr@backgroundDimEnabled#a
+        #attr@windowDisablePreview#a
+        #attr@windowSoftInputMode#a
+        #attr@windowShowWallpaper#a
+        #attr@windowActionBar#a
+        #attr@windowActionModeOverlay#a
+        #attr@windowActionBarOverlay#a
+        #attr@windowEnableSplitTouch#a
+        #attr@windowMinWidthMajor#a
+        #attr@windowMinWidthMinor#a
+        #attr@windowCloseOnTouchOutside#a
+        #attr@windowSplitActionBar#a
     .end array-data
 
-    .line 38968
+    .line 40118
     :array_9a
     .array-data 0x4
-        0x63t 0x0t 0x1t 0x1t
-        0x64t 0x0t 0x1t 0x1t
-        0x65t 0x0t 0x1t 0x1t
-        0x66t 0x0t 0x1t 0x1t
-        0x67t 0x0t 0x1t 0x1t
-        0x68t 0x0t 0x1t 0x1t
-        0x69t 0x0t 0x1t 0x1t
-        0x7ft 0x0t 0x1t 0x1t
-        0xd0t 0x0t 0x1t 0x1t
-        0xd1t 0x0t 0x1t 0x1t
-        0xd2t 0x0t 0x1t 0x1t
-        0xd3t 0x0t 0x1t 0x1t
-        0xd4t 0x0t 0x1t 0x1t
-        0xd5t 0x0t 0x1t 0x1t
-        0xd6t 0x0t 0x1t 0x1t
-        0xd7t 0x0t 0x1t 0x1t
-        0xd8t 0x0t 0x1t 0x1t
-        0xd9t 0x0t 0x1t 0x1t
-        0xdat 0x0t 0x1t 0x1t
-        0xdbt 0x0t 0x1t 0x1t
-        0xdct 0x0t 0x1t 0x1t
-        0xddt 0x0t 0x1t 0x1t
-        0xdet 0x0t 0x1t 0x1t
-        0xdft 0x0t 0x1t 0x1t
-        0xe0t 0x0t 0x1t 0x1t
-        0xe1t 0x0t 0x1t 0x1t
-        0xe2t 0x0t 0x1t 0x1t
-        0xe3t 0x0t 0x1t 0x1t
-        0xe4t 0x0t 0x1t 0x1t
-        0xe5t 0x0t 0x1t 0x1t
-        0xe6t 0x0t 0x1t 0x1t
-        0xe7t 0x0t 0x1t 0x1t
-        0xe8t 0x0t 0x1t 0x1t
-        0xe9t 0x0t 0x1t 0x1t
-        0x3ft 0x1t 0x1t 0x1t
-        0x40t 0x1t 0x1t 0x1t
-        0x15t 0x2t 0x1t 0x1t
-        0x16t 0x2t 0x1t 0x1t
-        0x4et 0x2t 0x1t 0x1t
-        0x5et 0x2t 0x1t 0x1t
-        0x6ft 0x2t 0x1t 0x1t
-        0x73t 0x2t 0x1t 0x1t
-        0xa8t 0x2t 0x1t 0x1t
-        0xa9t 0x2t 0x1t 0x1t
-        0xaat 0x2t 0x1t 0x1t
-        0xc1t 0x2t 0x1t 0x1t
-        0xc4t 0x2t 0x1t 0x1t
-        0x1ft 0x3t 0x1t 0x1t
-        0x20t 0x3t 0x1t 0x1t
-        0x21t 0x3t 0x1t 0x1t
-        0x22t 0x3t 0x1t 0x1t
-        0x23t 0x3t 0x1t 0x1t
-        0x24t 0x3t 0x1t 0x1t
-        0x25t 0x3t 0x1t 0x1t
-        0x26t 0x3t 0x1t 0x1t
-        0x27t 0x3t 0x1t 0x1t
-        0x28t 0x3t 0x1t 0x1t
-        0x34t 0x3t 0x1t 0x1t
-        0x3ct 0x3t 0x1t 0x1t
-        0x54t 0x3t 0x1t 0x1t
-        0xa5t 0x3t 0x1t 0x1t
-        0xaat 0x3t 0x1t 0x1t
-        0xb0t 0x3t 0x1t 0x1t
-        0xb1t 0x3t 0x1t 0x1t
-        0xb2t 0x3t 0x1t 0x1t
-        0xb3t 0x3t 0x1t 0x1t
-        0xb4t 0x3t 0x1t 0x1t
-        0xc6t 0x3t 0x1t 0x1t
-    .end array-data
-
-    .line 40296
-    :array_9b
-    .array-data 0x4
-        0x77t 0x1t 0x1t 0x1t
-        0x78t 0x1t 0x1t 0x1t
-        0xd5t 0x2t 0x1t 0x1t
-    .end array-data
-
-    .line 40381
-    :array_9c
-    .array-data 0x4
-        0x9ct 0x0t 0x1t 0x1t
-        0x9dt 0x0t 0x1t 0x1t
-        0x9et 0x0t 0x1t 0x1t
-        0xa1t 0x0t 0x1t 0x1t
-        0xa7t 0x0t 0x1t 0x1t
-        0xfet 0x2t 0x1t 0x1t
-        0x1bt 0x3t 0x1t 0x1t
-        0x67t 0x3t 0x1t 0x1t
-        0x68t 0x3t 0x1t 0x1t
-        0x69t 0x3t 0x1t 0x1t
-    .end array-data
-
-    .line 40577
-    :array_9d
-    .array-data 0x4
-        0x79t 0x1t 0x1t 0x1t
-        0xb5t 0x2t 0x1t 0x1t
-    .end array-data
-
-    .line 40647
-    :array_9e
-    .array-data 0x4
-        0xeat 0x0t 0x1t 0x1t
-        0xebt 0x0t 0x1t 0x1t
-        0xect 0x0t 0x1t 0x1t
-        0xedt 0x0t 0x1t 0x1t
-        0xeet 0x0t 0x1t 0x1t
-        0xeft 0x0t 0x1t 0x1t
-        0xf0t 0x0t 0x1t 0x1t
-        0xf1t 0x0t 0x1t 0x1t
-        0xeft 0x2t 0x1t 0x1t
-        0xf2t 0x2t 0x1t 0x1t
-    .end array-data
-
-    .line 40865
-    :array_9f
-    .array-data 0x4
-        0xf4t 0x0t 0x1t 0x1t
-        0xf5t 0x0t 0x1t 0x1t
-    .end array-data
-
-    .line 40969
-    :array_a0
-    .array-data 0x4
-        0xf4t 0x0t 0x1t 0x1t
-        0xf5t 0x0t 0x1t 0x1t
-        0xf6t 0x0t 0x1t 0x1t
-        0xf7t 0x0t 0x1t 0x1t
-        0xf8t 0x0t 0x1t 0x1t
-        0xf9t 0x0t 0x1t 0x1t
-        0xfat 0x0t 0x1t 0x1t
-        0xb5t 0x3t 0x1t 0x1t
-        0xb6t 0x3t 0x1t 0x1t
-    .end array-data
-
-    .line 41189
-    :array_a1
-    .array-data 0x4
-        0xf2t 0x0t 0x1t 0x1t
-        0xf3t 0x0t 0x1t 0x1t
-    .end array-data
-
-    .line 41281
-    :array_a2
-    .array-data 0x4
-        0x20t 0x0t 0x1t 0x1t
-        0x25t 0x2t 0x1t 0x1t
-        0xa5t 0x2t 0x1t 0x1t
-        0xb4t 0x2t 0x1t 0x1t
-    .end array-data
-
-    .line 41371
-    :array_a3
-    .array-data 0x4
-        0x15t 0x4t 0x1t 0x1t
-        0x16t 0x4t 0x1t 0x1t
-        0x17t 0x4t 0x1t 0x1t
-        0x18t 0x4t 0x1t 0x1t
-    .end array-data
-
-    .line 41439
-    :array_a4
-    .array-data 0x4
-        0x32t 0x0t 0x1t 0x1t
-        0x54t 0x0t 0x1t 0x1t
-        0x55t 0x0t 0x1t 0x1t
-        0x56t 0x0t 0x1t 0x1t
-        0x57t 0x0t 0x1t 0x1t
-        0x58t 0x0t 0x1t 0x1t
-        0x59t 0x0t 0x1t 0x1t
-        0x98t 0x0t 0x1t 0x1t
-        0xaet 0x0t 0x1t 0x1t
-        0xdt 0x2t 0x1t 0x1t
-        0x1et 0x2t 0x1t 0x1t
-        0x1ft 0x2t 0x1t 0x1t
-        0x22t 0x2t 0x1t 0x1t
-        0x2bt 0x2t 0x1t 0x1t
-        0x92t 0x2t 0x1t 0x1t
-        0xcdt 0x2t 0x1t 0x1t
-        0xddt 0x2t 0x1t 0x1t
-        0xe4t 0x2t 0x1t 0x1t
-        0x17t 0x3t 0x1t 0x1t
-        0x56t 0x3t 0x1t 0x1t
-        0x57t 0x3t 0x1t 0x1t
-        0x5bt 0x3t 0x1t 0x1t
-        0xd5t 0x3t 0x1t 0x1t
-        0xfbt 0x3t 0x1t 0x1t
-        0xfct 0x3t 0x1t 0x1t
-        0xfdt 0x3t 0x1t 0x1t
-        0xfet 0x3t 0x1t 0x1t
-    .end array-data
-
-    .line 41975
-    :array_a5
-    .array-data 0x4
-        0xb4t 0x0t 0x1t 0x1t
-        0xb5t 0x0t 0x1t 0x1t
-        0xb6t 0x0t 0x1t 0x1t
-        0xb7t 0x0t 0x1t 0x1t
-        0xb8t 0x0t 0x1t 0x1t
-        0xb9t 0x0t 0x1t 0x1t
-        0xbat 0x0t 0x1t 0x1t
-        0xbbt 0x0t 0x1t 0x1t
-        0xbct 0x0t 0x1t 0x1t
-        0xbdt 0x0t 0x1t 0x1t
-        0xbet 0x0t 0x1t 0x1t
-        0xbft 0x0t 0x1t 0x1t
-        0xc0t 0x0t 0x1t 0x1t
-        0xc1t 0x0t 0x1t 0x1t
-        0xc2t 0x0t 0x1t 0x1t
-        0xc3t 0x0t 0x1t 0x1t
-        0x93t 0x2t 0x1t 0x1t
-        0x94t 0x2t 0x1t 0x1t
-        0x95t 0x2t 0x1t 0x1t
-        0x96t 0x2t 0x1t 0x1t
-        0x97t 0x2t 0x1t 0x1t
-        0x98t 0x2t 0x1t 0x1t
-        0x99t 0x2t 0x1t 0x1t
-        0x9at 0x2t 0x1t 0x1t
+        #attr@windowEnterAnimation#a
+        #attr@windowExitAnimation#a
+        #attr@windowShowAnimation#a
+        #attr@windowHideAnimation#a
+        #attr@activityOpenEnterAnimation#a
+        #attr@activityOpenExitAnimation#a
+        #attr@activityCloseEnterAnimation#a
+        #attr@activityCloseExitAnimation#a
+        #attr@taskOpenEnterAnimation#a
+        #attr@taskOpenExitAnimation#a
+        #attr@taskCloseEnterAnimation#a
+        #attr@taskCloseExitAnimation#a
+        #attr@taskToFrontEnterAnimation#a
+        #attr@taskToFrontExitAnimation#a
+        #attr@taskToBackEnterAnimation#a
+        #attr@taskToBackExitAnimation#a
+        #attr@wallpaperOpenEnterAnimation#a
+        #attr@wallpaperOpenExitAnimation#a
+        #attr@wallpaperCloseEnterAnimation#a
+        #attr@wallpaperCloseExitAnimation#a
+        #attr@wallpaperIntraOpenEnterAnimation#a
+        #attr@wallpaperIntraOpenExitAnimation#a
+        #attr@wallpaperIntraCloseEnterAnimation#a
+        #attr@wallpaperIntraCloseExitAnimation#a
     .end array-data
 .end method
 
@@ -7304,7 +6924,7 @@
     .locals 0
 
     .prologue
-    .line 11696
+    .line 11204
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

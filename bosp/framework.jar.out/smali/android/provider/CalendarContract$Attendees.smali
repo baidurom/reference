@@ -30,7 +30,7 @@
     .locals 1
 
     .prologue
-    .line 847
+    .line 784
     const-string v0, "content://com.android.calendar/attendees"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -46,7 +46,7 @@
     .locals 0
 
     .prologue
-    .line 853
+    .line 790
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -59,7 +59,7 @@
     .parameter "projection"
 
     .prologue
-    .line 865
+    .line 802
     const/4 v0, 0x1
 
     new-array v4, v0, [Ljava/lang/String;
@@ -72,7 +72,7 @@
 
     aput-object v1, v4, v0
 
-    .line 866
+    .line 803
     .local v4, attArgs:[Ljava/lang/String;
     sget-object v1, Landroid/provider/CalendarContract$Attendees;->CONTENT_URI:Landroid/net/Uri;
 

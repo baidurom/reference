@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 852
+    .line 798
     iput-object p1, p0, Landroid/widget/SearchView$6;->this$0:Landroid/widget/SearchView;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "v"
 
     .prologue
-    .line 855
+    .line 801
     iget-object v0, p0, Landroid/widget/SearchView$6;->this$0:Landroid/widget/SearchView;
 
     #getter for: Landroid/widget/SearchView;->mSearchButton:Landroid/view/View;
@@ -52,18 +52,18 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 856
+    .line 802
     iget-object v0, p0, Landroid/widget/SearchView$6;->this$0:Landroid/widget/SearchView;
 
     #calls: Landroid/widget/SearchView;->onSearchClicked()V
     invoke-static {v0}, Landroid/widget/SearchView;->access$500(Landroid/widget/SearchView;)V
 
-    .line 866
+    .line 812
     :cond_0
     :goto_0
     return-void
 
-    .line 857
+    .line 803
     :cond_1
     iget-object v0, p0, Landroid/widget/SearchView$6;->this$0:Landroid/widget/SearchView;
 
@@ -74,7 +74,7 @@
 
     if-ne p1, v0, :cond_2
 
-    .line 858
+    .line 804
     iget-object v0, p0, Landroid/widget/SearchView$6;->this$0:Landroid/widget/SearchView;
 
     #calls: Landroid/widget/SearchView;->onCloseClicked()V
@@ -82,7 +82,7 @@
 
     goto :goto_0
 
-    .line 859
+    .line 805
     :cond_2
     iget-object v0, p0, Landroid/widget/SearchView$6;->this$0:Landroid/widget/SearchView;
 
@@ -93,7 +93,7 @@
 
     if-ne p1, v0, :cond_3
 
-    .line 860
+    .line 806
     iget-object v0, p0, Landroid/widget/SearchView$6;->this$0:Landroid/widget/SearchView;
 
     #calls: Landroid/widget/SearchView;->onSubmitQuery()V
@@ -101,7 +101,7 @@
 
     goto :goto_0
 
-    .line 861
+    .line 807
     :cond_3
     iget-object v0, p0, Landroid/widget/SearchView$6;->this$0:Landroid/widget/SearchView;
 
@@ -112,7 +112,7 @@
 
     if-ne p1, v0, :cond_4
 
-    .line 862
+    .line 808
     iget-object v0, p0, Landroid/widget/SearchView$6;->this$0:Landroid/widget/SearchView;
 
     #calls: Landroid/widget/SearchView;->onVoiceClicked()V
@@ -120,7 +120,7 @@
 
     goto :goto_0
 
-    .line 863
+    .line 809
     :cond_4
     iget-object v0, p0, Landroid/widget/SearchView$6;->this$0:Landroid/widget/SearchView;
 
@@ -131,7 +131,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 864
+    .line 810
     iget-object v0, p0, Landroid/widget/SearchView$6;->this$0:Landroid/widget/SearchView;
 
     #calls: Landroid/widget/SearchView;->forceSuggestionQuery()V

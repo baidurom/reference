@@ -152,7 +152,7 @@
     .line 391
     .restart local v2       #root:Landroid/view/View;
     :cond_4
-    const v3, 0x102030f
+    const v3, #id@internalEmpty#t
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -168,7 +168,7 @@
     if-nez v3, :cond_5
 
     .line 394
-    const v3, 0x1020004
+    const v3, #id@empty#t
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -178,7 +178,7 @@
 
     .line 398
     :goto_3
-    const v3, 0x102030d
+    const v3, #id@progressContainer#t
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -187,7 +187,7 @@
     iput-object v3, p0, Landroid/app/ListFragment;->mProgressContainer:Landroid/view/View;
 
     .line 399
-    const v3, 0x102030e
+    const v3, #id@listContainer#t
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -196,7 +196,7 @@
     iput-object v3, p0, Landroid/app/ListFragment;->mListContainer:Landroid/view/View;
 
     .line 400
-    const v3, 0x102000a
+    const v3, #id@list#t
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -306,7 +306,7 @@
     .parameter "animate"
 
     .prologue
-    const v5, 0x10a0001
+    const v5, #anim@fade_out#t
 
     const/high16 v4, 0x10a
 
@@ -527,7 +527,7 @@
 
     .prologue
     .line 193
-    const v0, 0x1090014
+    const v0, #layout@list_content#t
 
     const/4 v1, 0x0
 

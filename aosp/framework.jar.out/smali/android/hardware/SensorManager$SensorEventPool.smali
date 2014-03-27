@@ -1,4 +1,4 @@
-.class public final Landroid/hardware/SensorManager$SensorEventPool;
+.class Landroid/hardware/SensorManager$SensorEventPool;
 .super Ljava/lang/Object;
 .source "SensorManager.java"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1c
+    accessFlags = 0x2
     name = "SensorEventPool"
 .end annotation
 
@@ -21,28 +21,33 @@
 
 .field private final mPoolSize:I
 
+.field final synthetic this$0:Landroid/hardware/SensorManager;
+
 
 # direct methods
-.method constructor <init>(I)V
+.method constructor <init>(Landroid/hardware/SensorManager;I)V
     .locals 1
+    .parameter
     .parameter "poolSize"
 
     .prologue
-    .line 1332
+    .line 393
+    iput-object p1, p0, Landroid/hardware/SensorManager$SensorEventPool;->this$0:Landroid/hardware/SensorManager;
+
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1333
-    iput p1, p0, Landroid/hardware/SensorManager$SensorEventPool;->mPoolSize:I
+    .line 394
+    iput p2, p0, Landroid/hardware/SensorManager$SensorEventPool;->mPoolSize:I
 
-    .line 1334
-    iput p1, p0, Landroid/hardware/SensorManager$SensorEventPool;->mNumItemsInPool:I
+    .line 395
+    iput p2, p0, Landroid/hardware/SensorManager$SensorEventPool;->mNumItemsInPool:I
 
-    .line 1335
-    new-array v0, p1, [Landroid/hardware/SensorEvent;
+    .line 396
+    new-array v0, p2, [Landroid/hardware/SensorEvent;
 
     iput-object v0, p0, Landroid/hardware/SensorManager$SensorEventPool;->mPool:[Landroid/hardware/SensorEvent;
 
-    .line 1336
+    .line 397
     return-void
 .end method
 
@@ -50,7 +55,7 @@
     .locals 2
 
     .prologue
-    .line 1329
+    .line 390
     new-instance v0, Landroid/hardware/SensorEvent;
 
     const/4 v1, 0x3
@@ -66,66 +71,66 @@
     .locals 4
 
     .prologue
-    .line 1339
+    .line 400
     const/4 v1, 0x0
 
-    .line 1340
+    .line 401
     .local v1, t:Landroid/hardware/SensorEvent;
     monitor-enter p0
 
-    .line 1341
+    .line 402
     :try_start_0
     iget v2, p0, Landroid/hardware/SensorManager$SensorEventPool;->mNumItemsInPool:I
 
     if-lez v2, :cond_0
 
-    .line 1343
+    .line 404
     iget v2, p0, Landroid/hardware/SensorManager$SensorEventPool;->mPoolSize:I
 
     iget v3, p0, Landroid/hardware/SensorManager$SensorEventPool;->mNumItemsInPool:I
 
     sub-int v0, v2, v3
 
-    .line 1344
+    .line 405
     .local v0, index:I
     iget-object v2, p0, Landroid/hardware/SensorManager$SensorEventPool;->mPool:[Landroid/hardware/SensorEvent;
 
     aget-object v1, v2, v0
 
-    .line 1345
+    .line 406
     iget-object v2, p0, Landroid/hardware/SensorManager$SensorEventPool;->mPool:[Landroid/hardware/SensorEvent;
 
     const/4 v3, 0x0
 
     aput-object v3, v2, v0
 
-    .line 1346
+    .line 407
     iget v2, p0, Landroid/hardware/SensorManager$SensorEventPool;->mNumItemsInPool:I
 
     add-int/lit8 v2, v2, -0x1
 
     iput v2, p0, Landroid/hardware/SensorManager$SensorEventPool;->mNumItemsInPool:I
 
-    .line 1348
+    .line 409
     .end local v0           #index:I
     :cond_0
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1349
+    .line 410
     if-nez v1, :cond_1
 
-    .line 1352
+    .line 413
     invoke-direct {p0}, Landroid/hardware/SensorManager$SensorEventPool;->createSensorEvent()Landroid/hardware/SensorEvent;
 
     move-result-object v1
 
-    .line 1354
+    .line 415
     :cond_1
     return-object v1
 
-    .line 1348
+    .line 409
     :catchall_0
     move-exception v2
 
@@ -142,10 +147,10 @@
     .parameter "t"
 
     .prologue
-    .line 1358
+    .line 419
     monitor-enter p0
 
-    .line 1360
+    .line 421
     :try_start_0
     iget v1, p0, Landroid/hardware/SensorManager$SensorEventPool;->mNumItemsInPool:I
 
@@ -153,35 +158,35 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 1362
+    .line 423
     iget v1, p0, Landroid/hardware/SensorManager$SensorEventPool;->mNumItemsInPool:I
 
     add-int/lit8 v1, v1, 0x1
 
     iput v1, p0, Landroid/hardware/SensorManager$SensorEventPool;->mNumItemsInPool:I
 
-    .line 1363
+    .line 424
     iget v1, p0, Landroid/hardware/SensorManager$SensorEventPool;->mPoolSize:I
 
     iget v2, p0, Landroid/hardware/SensorManager$SensorEventPool;->mNumItemsInPool:I
 
     sub-int v0, v1, v2
 
-    .line 1364
+    .line 425
     .local v0, index:I
     iget-object v1, p0, Landroid/hardware/SensorManager$SensorEventPool;->mPool:[Landroid/hardware/SensorEvent;
 
     aput-object p1, v1, v0
 
-    .line 1366
+    .line 427
     .end local v0           #index:I
     :cond_0
     monitor-exit p0
 
-    .line 1367
+    .line 428
     return-void
 
-    .line 1366
+    .line 427
     :catchall_0
     move-exception v1
 

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 533
+    .line 530
     iput-object p1, p0, Landroid/widget/MediaController$5;->this$0:Landroid/widget/MediaController;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -44,15 +44,15 @@
     .parameter "fromuser"
 
     .prologue
-    .line 548
+    .line 545
     if-nez p3, :cond_1
 
-    .line 559
+    .line 556
     :cond_0
     :goto_0
     return-void
 
-    .line 554
+    .line 551
     :cond_1
     iget-object v4, p0, Landroid/widget/MediaController$5;->this$0:Landroid/widget/MediaController;
 
@@ -67,7 +67,7 @@
 
     int-to-long v0, v4
 
-    .line 555
+    .line 552
     .local v0, duration:J
     int-to-long v4, p2
 
@@ -77,7 +77,7 @@
 
     div-long v2, v4, v6
 
-    .line 556
+    .line 553
     .local v2, newposition:J
     iget-object v4, p0, Landroid/widget/MediaController$5;->this$0:Landroid/widget/MediaController;
 
@@ -90,7 +90,7 @@
 
     invoke-interface {v4, v5}, Landroid/widget/MediaController$MediaPlayerControl;->seekTo(I)V
 
-    .line 557
+    .line 554
     iget-object v4, p0, Landroid/widget/MediaController$5;->this$0:Landroid/widget/MediaController;
 
     #getter for: Landroid/widget/MediaController;->mCurrentTime:Landroid/widget/TextView;
@@ -100,7 +100,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 558
+    .line 555
     iget-object v4, p0, Landroid/widget/MediaController$5;->this$0:Landroid/widget/MediaController;
 
     #getter for: Landroid/widget/MediaController;->mCurrentTime:Landroid/widget/TextView;
@@ -127,14 +127,14 @@
     .parameter "bar"
 
     .prologue
-    .line 535
+    .line 532
     iget-object v0, p0, Landroid/widget/MediaController$5;->this$0:Landroid/widget/MediaController;
 
     const v1, 0x36ee80
 
     invoke-virtual {v0, v1}, Landroid/widget/MediaController;->show(I)V
 
-    .line 537
+    .line 534
     iget-object v0, p0, Landroid/widget/MediaController$5;->this$0:Landroid/widget/MediaController;
 
     const/4 v1, 0x1
@@ -142,7 +142,7 @@
     #setter for: Landroid/widget/MediaController;->mDragging:Z
     invoke-static {v0, v1}, Landroid/widget/MediaController;->access$602(Landroid/widget/MediaController;Z)Z
 
-    .line 544
+    .line 541
     iget-object v0, p0, Landroid/widget/MediaController$5;->this$0:Landroid/widget/MediaController;
 
     #getter for: Landroid/widget/MediaController;->mHandler:Landroid/os/Handler;
@@ -154,7 +154,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 545
+    .line 542
     return-void
 .end method
 
@@ -163,7 +163,7 @@
     .parameter "bar"
 
     .prologue
-    .line 562
+    .line 559
     iget-object v0, p0, Landroid/widget/MediaController$5;->this$0:Landroid/widget/MediaController;
 
     const/4 v1, 0x0
@@ -171,26 +171,26 @@
     #setter for: Landroid/widget/MediaController;->mDragging:Z
     invoke-static {v0, v1}, Landroid/widget/MediaController;->access$602(Landroid/widget/MediaController;Z)Z
 
-    .line 563
+    .line 560
     iget-object v0, p0, Landroid/widget/MediaController$5;->this$0:Landroid/widget/MediaController;
 
     #calls: Landroid/widget/MediaController;->setProgress()I
     invoke-static {v0}, Landroid/widget/MediaController;->access$500(Landroid/widget/MediaController;)I
 
-    .line 564
+    .line 561
     iget-object v0, p0, Landroid/widget/MediaController$5;->this$0:Landroid/widget/MediaController;
 
     #calls: Landroid/widget/MediaController;->updatePausePlay()V
     invoke-static {v0}, Landroid/widget/MediaController;->access$1200(Landroid/widget/MediaController;)V
 
-    .line 565
+    .line 562
     iget-object v0, p0, Landroid/widget/MediaController$5;->this$0:Landroid/widget/MediaController;
 
     const/16 v1, 0xbb8
 
     invoke-virtual {v0, v1}, Landroid/widget/MediaController;->show(I)V
 
-    .line 570
+    .line 567
     iget-object v0, p0, Landroid/widget/MediaController$5;->this$0:Landroid/widget/MediaController;
 
     #getter for: Landroid/widget/MediaController;->mHandler:Landroid/os/Handler;
@@ -202,6 +202,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 571
+    .line 568
     return-void
 .end method

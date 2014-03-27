@@ -1534,7 +1534,7 @@
     .prologue
     const/4 v3, 0x3
 
-    .line 3929
+    .line 3928
     const-string v0, "MediaArtistNativeHelper"
 
     invoke-static {v0, v3}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
@@ -1543,7 +1543,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 3930
+    .line 3929
     const-string v0, "MediaArtistNativeHelper"
 
     const-string v1, "lock: grabbing semaphore"
@@ -1554,13 +1554,13 @@
 
     invoke-static {v0, v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 3932
+    .line 3931
     :cond_0
     iget-object v0, p0, Landroid/media/videoeditor/MediaArtistNativeHelper;->mLock:Ljava/util/concurrent/Semaphore;
 
     invoke-virtual {v0}, Ljava/util/concurrent/Semaphore;->acquire()V
 
-    .line 3933
+    .line 3932
     const-string v0, "MediaArtistNativeHelper"
 
     invoke-static {v0, v3}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
@@ -1569,14 +1569,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 3934
+    .line 3933
     const-string v0, "MediaArtistNativeHelper"
 
     const-string v1, "lock: grabbed semaphore"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3936
+    .line 3935
     :cond_1
     return-void
 .end method
@@ -2986,7 +2986,7 @@
     .locals 2
 
     .prologue
-    .line 3942
+    .line 3941
     const-string v0, "MediaArtistNativeHelper"
 
     const/4 v1, 0x3
@@ -2997,20 +2997,20 @@
 
     if-eqz v0, :cond_0
 
-    .line 3943
+    .line 3942
     const-string v0, "MediaArtistNativeHelper"
 
     const-string/jumbo v1, "unlock: releasing semaphore"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3945
+    .line 3944
     :cond_0
     iget-object v0, p0, Landroid/media/videoeditor/MediaArtistNativeHelper;->mLock:Ljava/util/concurrent/Semaphore;
 
     invoke-virtual {v0}, Ljava/util/concurrent/Semaphore;->release()V
 
-    .line 3946
+    .line 3945
     return-void
 .end method
 
@@ -3287,10 +3287,10 @@
     .parameter "surface"
 
     .prologue
-    .line 3920
+    .line 3919
     invoke-direct {p0, p1}, Landroid/media/videoeditor/MediaArtistNativeHelper;->nativeClearSurface(Landroid/view/Surface;)V
 
-    .line 3921
+    .line 3920
     return-void
 .end method
 
@@ -4254,13 +4254,13 @@
     .parameter "isVideo"
 
     .prologue
-    .line 3889
+    .line 3888
     iput-object p7, p0, Landroid/media/videoeditor/MediaArtistNativeHelper;->mExtractAudioWaveformProgressListener:Landroid/media/videoeditor/ExtractAudioWaveformProgressListener;
 
-    .line 3895
+    .line 3894
     if-eqz p8, :cond_2
 
-    .line 3896
+    .line 3895
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -4299,12 +4299,12 @@
 
     move-result-object v1
 
-    .line 3904
+    .line 3903
     .local v1, tempPCMFileName:Ljava/lang/String;
     :goto_0
     if-eqz p8, :cond_0
 
-    .line 3905
+    .line 3904
     invoke-direct {p0, p2, v1}, Landroid/media/videoeditor/MediaArtistNativeHelper;->nativeGenerateRawAudio(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
@@ -4318,24 +4318,24 @@
 
     move v5, p6
 
-    .line 3908
+    .line 3907
     invoke-direct/range {v0 .. v5}, Landroid/media/videoeditor/MediaArtistNativeHelper;->nativeGenerateAudioGraph(Ljava/lang/String;Ljava/lang/String;III)I
 
-    .line 3914
+    .line 3913
     if-eqz p8, :cond_1
 
-    .line 3915
+    .line 3914
     new-instance v0, Ljava/io/File;
 
     invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
-    .line 3917
+    .line 3916
     :cond_1
     return-void
 
-    .line 3898
+    .line 3897
     .end local v1           #tempPCMFileName:Ljava/lang/String;
     :cond_2
     iget-object v1, p0, Landroid/media/videoeditor/MediaArtistNativeHelper;->mAudioTrackPCMFilePath:Ljava/lang/String;
@@ -6519,13 +6519,13 @@
 
     invoke-direct/range {v12 .. v23}, Landroid/media/videoeditor/MediaArtistNativeHelper;->nativeGetPixelsList(Ljava/lang/String;[IIIIJJ[ILandroid/media/videoeditor/MediaArtistNativeHelper$NativeGetPixelsListCallback;)I
 
-    .line 3862
+    .line 3861
     if-eqz v9, :cond_2
 
-    .line 3863
+    .line 3862
     invoke-virtual {v9}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 3865
+    .line 3864
     :cond_2
     return-void
 

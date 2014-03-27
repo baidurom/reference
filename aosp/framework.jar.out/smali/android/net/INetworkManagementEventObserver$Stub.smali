@@ -28,8 +28,6 @@
 
 .field static final TRANSACTION_interfaceAdded:I = 0x3
 
-.field static final TRANSACTION_interfaceClassDataActivityChanged:I = 0x6
-
 .field static final TRANSACTION_interfaceLinkStateChanged:I = 0x2
 
 .field static final TRANSACTION_interfaceRemoved:I = 0x4
@@ -132,7 +130,7 @@
     .line 43
     sparse-switch p1, :sswitch_data_0
 
-    .line 113
+    .line 102
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v2
@@ -282,42 +280,7 @@
 
     goto :goto_0
 
-    .line 103
-    .end local v0           #_arg0:Ljava/lang/String;
-    .end local v1           #_arg1:Ljava/lang/String;
-    :sswitch_6
-    const-string v3, "android.net.INetworkManagementEventObserver"
-
-    invoke-virtual {p2, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 105
-    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 107
-    .restart local v0       #_arg0:Ljava/lang/String;
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    move v1, v2
-
-    .line 108
-    .local v1, _arg1:Z
-    :cond_2
-    invoke-virtual {p0, v0, v1}, Landroid/net/INetworkManagementEventObserver$Stub;->interfaceClassDataActivityChanged(Ljava/lang/String;Z)V
-
-    .line 109
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    goto :goto_0
-
     .line 43
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
@@ -325,7 +288,6 @@
         0x3 -> :sswitch_3
         0x4 -> :sswitch_4
         0x5 -> :sswitch_5
-        0x6 -> :sswitch_6
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

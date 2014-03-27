@@ -76,7 +76,7 @@
 
     .line 57
     .local v4, resolver:Landroid/content/ContentResolver;
-    const v9, 0x1040026
+    const v9, #string@config_ntpServer#t
 
     invoke-virtual {v3, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -84,7 +84,7 @@
 
     .line 59
     .local v0, defaultServer:Ljava/lang/String;
-    const v9, 0x10e0035
+    const v9, #integer@config_ntpTimeout#t
 
     invoke-virtual {v3, v9}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -96,7 +96,7 @@
     .local v1, defaultTimeout:J
     const-string/jumbo v9, "ntp_server"
 
-    invoke-static {v4, v9}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v4, v9}, Landroid/provider/Settings$Secure;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
@@ -104,7 +104,7 @@
     .local v5, secureServer:Ljava/lang/String;
     const-string/jumbo v9, "ntp_timeout"
 
-    invoke-static {v4, v9, v1, v2}, Landroid/provider/Settings$Global;->getLong(Landroid/content/ContentResolver;Ljava/lang/String;J)J
+    invoke-static {v4, v9, v1, v2}, Landroid/provider/Settings$Secure;->getLong(Landroid/content/ContentResolver;Ljava/lang/String;J)J
 
     move-result-wide v7
 

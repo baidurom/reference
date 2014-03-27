@@ -15,7 +15,7 @@
 
 
 # static fields
-.field private static final DEFAULT_CHILD_GRAVITY:I = 0x800033
+.field private static final DEFAULT_CHILD_GRAVITY:I = 0x33
 
 
 # instance fields
@@ -95,57 +95,57 @@
 
     const/4 v1, 0x0
 
-    .line 93
+    .line 91
     invoke-direct {p0, p1}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;)V
 
-    .line 60
+    .line 58
     iput-boolean v1, p0, Landroid/widget/FrameLayout;->mMeasureAllChildren:Z
 
-    .line 66
+    .line 64
     iput v1, p0, Landroid/widget/FrameLayout;->mForegroundPaddingLeft:I
 
-    .line 69
+    .line 67
     iput v1, p0, Landroid/widget/FrameLayout;->mForegroundPaddingTop:I
 
-    .line 72
+    .line 70
     iput v1, p0, Landroid/widget/FrameLayout;->mForegroundPaddingRight:I
 
-    .line 75
+    .line 73
     iput v1, p0, Landroid/widget/FrameLayout;->mForegroundPaddingBottom:I
 
-    .line 78
+    .line 76
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/widget/FrameLayout;->mSelfBounds:Landroid/graphics/Rect;
 
-    .line 79
+    .line 77
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/widget/FrameLayout;->mOverlayBounds:Landroid/graphics/Rect;
 
-    .line 81
+    .line 79
     const/16 v0, 0x77
 
     iput v0, p0, Landroid/widget/FrameLayout;->mForegroundGravity:I
 
-    .line 85
+    .line 83
     iput-boolean v2, p0, Landroid/widget/FrameLayout;->mForegroundInPadding:Z
 
-    .line 88
+    .line 86
     iput-boolean v1, p0, Landroid/widget/FrameLayout;->mForegroundBoundsChanged:Z
 
-    .line 90
+    .line 88
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0, v2}, Ljava/util/ArrayList;-><init>(I)V
 
     iput-object v0, p0, Landroid/widget/FrameLayout;->mMatchParentChildren:Ljava/util/ArrayList;
 
-    .line 94
+    .line 92
     return-void
 .end method
 
@@ -155,12 +155,12 @@
     .parameter "attrs"
 
     .prologue
-    .line 97
+    .line 95
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 98
+    .line 96
     return-void
 .end method
 
@@ -175,64 +175,64 @@
 
     const/4 v4, 0x0
 
-    .line 101
+    .line 99
     invoke-direct {p0, p1, p2, p3}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 60
+    .line 58
     iput-boolean v4, p0, Landroid/widget/FrameLayout;->mMeasureAllChildren:Z
 
-    .line 66
+    .line 64
     iput v4, p0, Landroid/widget/FrameLayout;->mForegroundPaddingLeft:I
 
-    .line 69
+    .line 67
     iput v4, p0, Landroid/widget/FrameLayout;->mForegroundPaddingTop:I
 
-    .line 72
+    .line 70
     iput v4, p0, Landroid/widget/FrameLayout;->mForegroundPaddingRight:I
 
-    .line 75
+    .line 73
     iput v4, p0, Landroid/widget/FrameLayout;->mForegroundPaddingBottom:I
 
-    .line 78
+    .line 76
     new-instance v2, Landroid/graphics/Rect;
 
     invoke-direct {v2}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v2, p0, Landroid/widget/FrameLayout;->mSelfBounds:Landroid/graphics/Rect;
 
-    .line 79
+    .line 77
     new-instance v2, Landroid/graphics/Rect;
 
     invoke-direct {v2}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v2, p0, Landroid/widget/FrameLayout;->mOverlayBounds:Landroid/graphics/Rect;
 
-    .line 81
+    .line 79
     const/16 v2, 0x77
 
     iput v2, p0, Landroid/widget/FrameLayout;->mForegroundGravity:I
 
-    .line 85
+    .line 83
     iput-boolean v5, p0, Landroid/widget/FrameLayout;->mForegroundInPadding:Z
 
-    .line 88
+    .line 86
     iput-boolean v4, p0, Landroid/widget/FrameLayout;->mForegroundBoundsChanged:Z
 
-    .line 90
+    .line 88
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2, v5}, Ljava/util/ArrayList;-><init>(I)V
 
     iput-object v2, p0, Landroid/widget/FrameLayout;->mMatchParentChildren:Ljava/util/ArrayList;
 
-    .line 103
+    .line 101
     sget-object v2, Lcom/android/internal/R$styleable;->FrameLayout:[I
 
     invoke-virtual {p1, p2, v2, p3, v4}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 106
+    .line 104
     .local v0, a:Landroid/content/res/TypedArray;
     const/4 v2, 0x2
 
@@ -244,19 +244,19 @@
 
     iput v2, p0, Landroid/widget/FrameLayout;->mForegroundGravity:I
 
-    .line 109
+    .line 107
     invoke-virtual {v0, v4}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
-    .line 110
+    .line 108
     .local v1, d:Landroid/graphics/drawable/Drawable;
     if-eqz v1, :cond_0
 
-    .line 111
+    .line 109
     invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->setForeground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 114
+    .line 112
     :cond_0
     invoke-virtual {v0, v5, v4}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
@@ -264,10 +264,10 @@
 
     if-eqz v2, :cond_1
 
-    .line 115
+    .line 113
     invoke-virtual {p0, v5}, Landroid/widget/FrameLayout;->setMeasureAllChildren(Z)V
 
-    .line 118
+    .line 116
     :cond_1
     const/4 v2, 0x3
 
@@ -277,10 +277,10 @@
 
     iput-boolean v2, p0, Landroid/widget/FrameLayout;->mForegroundInPadding:Z
 
-    .line 121
+    .line 119
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 122
+    .line 120
     return-void
 .end method
 
@@ -288,7 +288,7 @@
     .locals 2
 
     .prologue
-    .line 286
+    .line 269
     iget-boolean v0, p0, Landroid/widget/FrameLayout;->mForegroundInPadding:Z
 
     if-eqz v0, :cond_0
@@ -318,7 +318,7 @@
     .locals 2
 
     .prologue
-    .line 271
+    .line 254
     iget-boolean v0, p0, Landroid/widget/FrameLayout;->mForegroundInPadding:Z
 
     if-eqz v0, :cond_0
@@ -348,7 +348,7 @@
     .locals 2
 
     .prologue
-    .line 276
+    .line 259
     iget-boolean v0, p0, Landroid/widget/FrameLayout;->mForegroundInPadding:Z
 
     if-eqz v0, :cond_0
@@ -378,7 +378,7 @@
     .locals 2
 
     .prologue
-    .line 281
+    .line 264
     iget-boolean v0, p0, Landroid/widget/FrameLayout;->mForegroundInPadding:Z
 
     if-eqz v0, :cond_0
@@ -411,7 +411,7 @@
     .parameter "p"
 
     .prologue
-    .line 567
+    .line 550
     instance-of v0, p1, Landroid/widget/FrameLayout$LayoutParams;
 
     return v0
@@ -424,34 +424,34 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 467
+    .line 450
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->draw(Landroid/graphics/Canvas;)V
 
-    .line 469
+    .line 452
     iget-object v0, p0, Landroid/widget/FrameLayout;->mForeground:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_1
 
-    .line 470
+    .line 453
     iget-object v6, p0, Landroid/widget/FrameLayout;->mForeground:Landroid/graphics/drawable/Drawable;
 
-    .line 472
+    .line 455
     .local v6, foreground:Landroid/graphics/drawable/Drawable;
     iget-boolean v0, p0, Landroid/widget/FrameLayout;->mForegroundBoundsChanged:Z
 
     if-eqz v0, :cond_0
 
-    .line 473
+    .line 456
     iput-boolean v2, p0, Landroid/widget/FrameLayout;->mForegroundBoundsChanged:Z
 
-    .line 474
+    .line 457
     iget-object v3, p0, Landroid/widget/FrameLayout;->mSelfBounds:Landroid/graphics/Rect;
 
-    .line 475
+    .line 458
     .local v3, selfBounds:Landroid/graphics/Rect;
     iget-object v4, p0, Landroid/widget/FrameLayout;->mOverlayBounds:Landroid/graphics/Rect;
 
-    .line 477
+    .line 460
     .local v4, overlayBounds:Landroid/graphics/Rect;
     iget v0, p0, Landroid/view/View;->mRight:I
 
@@ -459,7 +459,7 @@
 
     sub-int v8, v0, v1
 
-    .line 478
+    .line 461
     .local v8, w:I
     iget v0, p0, Landroid/view/View;->mBottom:I
 
@@ -467,22 +467,22 @@
 
     sub-int v7, v0, v1
 
-    .line 480
+    .line 463
     .local v7, h:I
     iget-boolean v0, p0, Landroid/widget/FrameLayout;->mForegroundInPadding:Z
 
     if-eqz v0, :cond_2
 
-    .line 481
+    .line 464
     invoke-virtual {v3, v2, v2, v8, v7}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 486
+    .line 469
     :goto_0
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getLayoutDirection()I
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getResolvedLayoutDirection()I
 
     move-result v5
 
-    .line 487
+    .line 470
     .local v5, layoutDirection:I
     iget v0, p0, Landroid/widget/FrameLayout;->mForegroundGravity:I
 
@@ -496,10 +496,10 @@
 
     invoke-static/range {v0 .. v5}, Landroid/view/Gravity;->apply(IIILandroid/graphics/Rect;Landroid/graphics/Rect;I)V
 
-    .line 490
+    .line 473
     invoke-virtual {v6, v4}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 493
+    .line 476
     .end local v3           #selfBounds:Landroid/graphics/Rect;
     .end local v4           #overlayBounds:Landroid/graphics/Rect;
     .end local v5           #layoutDirection:I
@@ -508,12 +508,12 @@
     :cond_0
     invoke-virtual {v6, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 495
+    .line 478
     .end local v6           #foreground:Landroid/graphics/drawable/Drawable;
     :cond_1
     return-void
 
-    .line 483
+    .line 466
     .restart local v3       #selfBounds:Landroid/graphics/Rect;
     .restart local v4       #overlayBounds:Landroid/graphics/Rect;
     .restart local v6       #foreground:Landroid/graphics/drawable/Drawable;
@@ -541,10 +541,10 @@
     .locals 2
 
     .prologue
-    .line 198
+    .line 181
     invoke-super {p0}, Landroid/view/ViewGroup;->drawableStateChanged()V
 
-    .line 199
+    .line 182
     iget-object v0, p0, Landroid/widget/FrameLayout;->mForeground:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
@@ -557,7 +557,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 200
+    .line 183
     iget-object v0, p0, Landroid/widget/FrameLayout;->mForeground:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getDrawableState()[I
@@ -566,7 +566,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
-    .line 202
+    .line 185
     :cond_0
     return-void
 .end method
@@ -576,12 +576,12 @@
     .parameter "region"
 
     .prologue
-    .line 502
+    .line 485
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->gatherTransparentRegion(Landroid/graphics/Region;)Z
 
     move-result v0
 
-    .line 503
+    .line 486
     .local v0, opaque:Z
     if-eqz p1, :cond_0
 
@@ -589,12 +589,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 504
+    .line 487
     iget-object v1, p0, Landroid/widget/FrameLayout;->mForeground:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0, v1, p1}, Landroid/widget/FrameLayout;->applyDrawableToTransparentRegion(Landroid/graphics/drawable/Drawable;Landroid/graphics/Region;)V
 
-    .line 506
+    .line 489
     :cond_0
     return v0
 .end method
@@ -603,7 +603,7 @@
     .locals 1
 
     .prologue
-    .line 56
+    .line 54
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->generateDefaultLayoutParams()Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v0
@@ -617,7 +617,7 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 211
+    .line 194
     new-instance v0, Landroid/widget/FrameLayout$LayoutParams;
 
     invoke-direct {v0, v1, v1}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
@@ -630,7 +630,7 @@
     .parameter "x0"
 
     .prologue
-    .line 56
+    .line 54
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->generateLayoutParams(Landroid/util/AttributeSet;)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v0
@@ -643,7 +643,7 @@
     .parameter "p"
 
     .prologue
-    .line 572
+    .line 555
     new-instance v0, Landroid/widget/FrameLayout$LayoutParams;
 
     invoke-direct {v0, p1}, Landroid/widget/FrameLayout$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
@@ -656,7 +656,7 @@
     .parameter "attrs"
 
     .prologue
-    .line 554
+    .line 537
     new-instance v0, Landroid/widget/FrameLayout$LayoutParams;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -674,7 +674,7 @@
     .end annotation
 
     .prologue
-    .line 536
+    .line 519
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasureAllChildren()Z
 
     move-result v0
@@ -686,27 +686,17 @@
     .locals 1
 
     .prologue
-    .line 267
+    .line 250
     iget-object v0, p0, Landroid/widget/FrameLayout;->mForeground:Landroid/graphics/drawable/Drawable;
 
     return-object v0
-.end method
-
-.method public getForegroundGravity()I
-    .locals 1
-
-    .prologue
-    .line 134
-    iget v0, p0, Landroid/widget/FrameLayout;->mForegroundGravity:I
-
-    return v0
 .end method
 
 .method public getMeasureAllChildren()Z
     .locals 1
 
     .prologue
-    .line 546
+    .line 529
     iget-boolean v0, p0, Landroid/widget/FrameLayout;->mMeasureAllChildren:Z
 
     return v0
@@ -716,10 +706,10 @@
     .locals 1
 
     .prologue
-    .line 189
+    .line 172
     invoke-super {p0}, Landroid/view/ViewGroup;->jumpDrawablesToCurrentState()V
 
-    .line 190
+    .line 173
     iget-object v0, p0, Landroid/widget/FrameLayout;->mForeground:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
@@ -728,50 +718,8 @@
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->jumpToCurrentState()V
 
-    .line 191
+    .line 174
     :cond_0
-    return-void
-.end method
-
-.method public onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
-    .locals 1
-    .parameter "event"
-
-    .prologue
-    .line 578
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
-
-    .line 579
-    const-class v0, Landroid/widget/FrameLayout;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
-
-    .line 580
-    return-void
-.end method
-
-.method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
-    .locals 1
-    .parameter "info"
-
-    .prologue
-    .line 584
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
-
-    .line 585
-    const-class v0, Landroid/widget/FrameLayout;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
-
-    .line 586
     return-void
 .end method
 
@@ -784,18 +732,18 @@
     .parameter "bottom"
 
     .prologue
-    .line 388
+    .line 371
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getChildCount()I
 
     move-result v6
 
-    .line 390
+    .line 373
     .local v6, count:I
     invoke-direct/range {p0 .. p0}, Landroid/widget/FrameLayout;->getPaddingLeftWithForeground()I
 
     move-result v13
 
-    .line 391
+    .line 374
     .local v13, parentLeft:I
     sub-int v18, p4, p2
 
@@ -805,13 +753,13 @@
 
     sub-int v14, v18, v19
 
-    .line 393
+    .line 376
     .local v14, parentRight:I
     invoke-direct/range {p0 .. p0}, Landroid/widget/FrameLayout;->getPaddingTopWithForeground()I
 
     move-result v15
 
-    .line 394
+    .line 377
     .local v15, parentTop:I
     sub-int v18, p5, p3
 
@@ -821,7 +769,7 @@
 
     sub-int v12, v18, v19
 
-    .line 396
+    .line 379
     .local v12, parentBottom:I
     const/16 v18, 0x1
 
@@ -831,21 +779,21 @@
 
     iput-boolean v0, v1, Landroid/widget/FrameLayout;->mForegroundBoundsChanged:Z
 
-    .line 398
+    .line 381
     const/4 v9, 0x0
 
     .local v9, i:I
     :goto_0
     if-ge v9, v6, :cond_2
 
-    .line 399
+    .line 382
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v9}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 400
+    .line 383
     .local v3, child:Landroid/view/View;
     invoke-virtual {v3}, Landroid/view/View;->getVisibility()I
 
@@ -859,30 +807,30 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 401
+    .line 384
     invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v11
 
     check-cast v11, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 403
+    .line 386
     .local v11, lp:Landroid/widget/FrameLayout$LayoutParams;
     invoke-virtual {v3}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v17
 
-    .line 404
+    .line 387
     .local v17, width:I
     invoke-virtual {v3}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v8
 
-    .line 409
+    .line 392
     .local v8, height:I
     iget v7, v11, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 410
+    .line 393
     .local v7, gravity:I
     const/16 v18, -0x1
 
@@ -890,32 +838,32 @@
 
     if-ne v7, v0, :cond_0
 
-    .line 411
-    const v7, 0x800033
+    .line 394
+    const/16 v7, 0x33
 
-    .line 414
+    .line 397
     :cond_0
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getLayoutDirection()I
+    invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getResolvedLayoutDirection()I
 
     move-result v10
 
-    .line 415
+    .line 398
     .local v10, layoutDirection:I
     invoke-static {v7, v10}, Landroid/view/Gravity;->getAbsoluteGravity(II)I
 
     move-result v2
 
-    .line 416
+    .line 399
     .local v2, absoluteGravity:I
     and-int/lit8 v16, v7, 0x70
 
-    .line 418
+    .line 401
     .local v16, verticalGravity:I
     and-int/lit8 v18, v2, 0x7
 
     packed-switch v18, :pswitch_data_0
 
-    .line 430
+    .line 413
     :pswitch_0
     iget v0, v11, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
@@ -923,19 +871,19 @@
 
     add-int v4, v13, v18
 
-    .line 433
+    .line 416
     .local v4, childLeft:I
     :goto_1
     sparse-switch v16, :sswitch_data_0
 
-    .line 445
+    .line 428
     iget v0, v11, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
     move/from16 v18, v0
 
     add-int v5, v15, v18
 
-    .line 448
+    .line 431
     .local v5, childTop:I
     :goto_2
     add-int v18, v4, v17
@@ -948,7 +896,7 @@
 
     invoke-virtual {v3, v4, v5, v0, v1}, Landroid/view/View;->layout(IIII)V
 
-    .line 398
+    .line 381
     .end local v2           #absoluteGravity:I
     .end local v4           #childLeft:I
     .end local v5           #childTop:I
@@ -963,7 +911,7 @@
 
     goto :goto_0
 
-    .line 420
+    .line 403
     .restart local v2       #absoluteGravity:I
     .restart local v7       #gravity:I
     .restart local v8       #height:I
@@ -978,11 +926,11 @@
 
     add-int v4, v13, v18
 
-    .line 421
+    .line 404
     .restart local v4       #childLeft:I
     goto :goto_1
 
-    .line 423
+    .line 406
     .end local v4           #childLeft:I
     :pswitch_2
     sub-int v18, v14, v13
@@ -1005,11 +953,11 @@
 
     sub-int v4, v18, v19
 
-    .line 425
+    .line 408
     .restart local v4       #childLeft:I
     goto :goto_1
 
-    .line 427
+    .line 410
     .end local v4           #childLeft:I
     :pswitch_3
     sub-int v18, v14, v17
@@ -1020,11 +968,11 @@
 
     sub-int v4, v18, v19
 
-    .line 428
+    .line 411
     .restart local v4       #childLeft:I
     goto :goto_1
 
-    .line 435
+    .line 418
     :sswitch_0
     iget v0, v11, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
@@ -1032,11 +980,11 @@
 
     add-int v5, v15, v18
 
-    .line 436
+    .line 419
     .restart local v5       #childTop:I
     goto :goto_2
 
-    .line 438
+    .line 421
     .end local v5           #childTop:I
     :sswitch_1
     sub-int v18, v12, v15
@@ -1059,11 +1007,11 @@
 
     sub-int v5, v18, v19
 
-    .line 440
+    .line 423
     .restart local v5       #childTop:I
     goto :goto_2
 
-    .line 442
+    .line 425
     .end local v5           #childTop:I
     :sswitch_2
     sub-int v18, v12, v8
@@ -1074,11 +1022,11 @@
 
     sub-int v5, v18, v19
 
-    .line 443
+    .line 426
     .restart local v5       #childTop:I
     goto :goto_2
 
-    .line 451
+    .line 434
     .end local v2           #absoluteGravity:I
     .end local v3           #child:Landroid/view/View;
     .end local v4           #childLeft:I
@@ -1092,9 +1040,7 @@
     :cond_2
     return-void
 
-    .line 418
-    nop
-
+    .line 401
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_2
@@ -1104,7 +1050,7 @@
         :pswitch_3
     .end packed-switch
 
-    .line 433
+    .line 416
     :sswitch_data_0
     .sparse-switch
         0x10 -> :sswitch_1
@@ -1119,12 +1065,12 @@
     .parameter "heightMeasureSpec"
 
     .prologue
-    .line 296
+    .line 279
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getChildCount()I
 
     move-result v10
 
-    .line 298
+    .line 281
     .local v10, count:I
     invoke-static/range {p1 .. p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
@@ -1145,7 +1091,7 @@
     :cond_0
     const/16 v16, 0x1
 
-    .line 301
+    .line 284
     .local v16, measureMatchParentChildren:Z
     :goto_0
     move-object/from16 v0, p0
@@ -1154,18 +1100,18 @@
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
-    .line 303
+    .line 286
     const/4 v14, 0x0
 
-    .line 304
+    .line 287
     .local v14, maxHeight:I
     const/4 v15, 0x0
 
-    .line 305
+    .line 288
     .local v15, maxWidth:I
     const/4 v8, 0x0
 
-    .line 307
+    .line 290
     .local v8, childState:I
     const/4 v12, 0x0
 
@@ -1173,14 +1119,14 @@
     :goto_1
     if-ge v12, v10, :cond_5
 
-    .line 308
+    .line 291
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v12}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 309
+    .line 292
     .local v2, child:Landroid/view/View;
     move-object/from16 v0, p0
 
@@ -1196,7 +1142,7 @@
 
     if-eq v1, v3, :cond_3
 
-    .line 310
+    .line 293
     :cond_1
     const/4 v4, 0x0
 
@@ -1210,14 +1156,14 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/widget/FrameLayout;->measureChildWithMargins(Landroid/view/View;IIII)V
 
-    .line 311
+    .line 294
     invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v13
 
     check-cast v13, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 312
+    .line 295
     .local v13, lp:Landroid/widget/FrameLayout$LayoutParams;
     invoke-virtual {v2}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -1235,7 +1181,7 @@
 
     move-result v15
 
-    .line 314
+    .line 297
     invoke-virtual {v2}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v1
@@ -1252,7 +1198,7 @@
 
     move-result v14
 
-    .line 316
+    .line 299
     invoke-virtual {v2}, Landroid/view/View;->getMeasuredState()I
 
     move-result v1
@@ -1261,10 +1207,10 @@
 
     move-result v8
 
-    .line 317
+    .line 300
     if-eqz v16, :cond_3
 
-    .line 318
+    .line 301
     iget v1, v13, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     const/4 v3, -0x1
@@ -1277,7 +1223,7 @@
 
     if-ne v1, v3, :cond_3
 
-    .line 320
+    .line 303
     :cond_2
     move-object/from16 v0, p0
 
@@ -1285,14 +1231,14 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 307
+    .line 290
     .end local v13           #lp:Landroid/widget/FrameLayout$LayoutParams;
     :cond_3
     add-int/lit8 v12, v12, 0x1
 
     goto :goto_1
 
-    .line 298
+    .line 281
     .end local v2           #child:Landroid/view/View;
     .end local v8           #childState:I
     .end local v12           #i:I
@@ -1304,7 +1250,7 @@
 
     goto :goto_0
 
-    .line 327
+    .line 310
     .restart local v8       #childState:I
     .restart local v12       #i:I
     .restart local v14       #maxHeight:I
@@ -1323,7 +1269,7 @@
 
     add-int/2addr v15, v1
 
-    .line 328
+    .line 311
     invoke-direct/range {p0 .. p0}, Landroid/widget/FrameLayout;->getPaddingTopWithForeground()I
 
     move-result v1
@@ -1336,7 +1282,7 @@
 
     add-int/2addr v14, v1
 
-    .line 331
+    .line 314
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getSuggestedMinimumHeight()I
 
     move-result v1
@@ -1345,7 +1291,7 @@
 
     move-result v14
 
-    .line 332
+    .line 315
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getSuggestedMinimumWidth()I
 
     move-result v1
@@ -1354,16 +1300,16 @@
 
     move-result v15
 
-    .line 335
+    .line 318
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getForeground()Landroid/graphics/drawable/Drawable;
 
     move-result-object v11
 
-    .line 336
+    .line 319
     .local v11, drawable:Landroid/graphics/drawable/Drawable;
     if-eqz v11, :cond_6
 
-    .line 337
+    .line 320
     invoke-virtual {v11}, Landroid/graphics/drawable/Drawable;->getMinimumHeight()I
 
     move-result v1
@@ -1372,7 +1318,7 @@
 
     move-result v14
 
-    .line 338
+    .line 321
     invoke-virtual {v11}, Landroid/graphics/drawable/Drawable;->getMinimumWidth()I
 
     move-result v1
@@ -1381,7 +1327,7 @@
 
     move-result v15
 
-    .line 341
+    .line 324
     :cond_6
     move/from16 v0, p1
 
@@ -1401,7 +1347,7 @@
 
     invoke-virtual {v0, v1, v3}, Landroid/widget/FrameLayout;->setMeasuredDimension(II)V
 
-    .line 345
+    .line 328
     move-object/from16 v0, p0
 
     iget-object v1, v0, Landroid/widget/FrameLayout;->mMatchParentChildren:Ljava/util/ArrayList;
@@ -1410,18 +1356,18 @@
 
     move-result v10
 
-    .line 346
+    .line 329
     const/4 v1, 0x1
 
     if-le v10, v1, :cond_9
 
-    .line 347
+    .line 330
     const/4 v12, 0x0
 
     :goto_2
     if-ge v12, v10, :cond_9
 
-    .line 348
+    .line 331
     move-object/from16 v0, p0
 
     iget-object v1, v0, Landroid/widget/FrameLayout;->mMatchParentChildren:Ljava/util/ArrayList;
@@ -1432,7 +1378,7 @@
 
     check-cast v2, Landroid/view/View;
 
-    .line 350
+    .line 333
     .restart local v2       #child:Landroid/view/View;
     invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -1440,7 +1386,7 @@
 
     check-cast v13, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    .line 354
+    .line 337
     .local v13, lp:Landroid/view/ViewGroup$MarginLayoutParams;
     iget v1, v13, Landroid/view/ViewGroup$LayoutParams;->width:I
 
@@ -1448,7 +1394,7 @@
 
     if-ne v1, v3, :cond_7
 
-    .line 355
+    .line 338
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v1
@@ -1479,7 +1425,7 @@
 
     move-result v9
 
-    .line 366
+    .line 349
     .local v9, childWidthMeasureSpec:I
     :goto_3
     iget v1, v13, Landroid/view/ViewGroup$LayoutParams;->height:I
@@ -1488,7 +1434,7 @@
 
     if-ne v1, v3, :cond_8
 
-    .line 367
+    .line 350
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v1
@@ -1519,17 +1465,17 @@
 
     move-result v7
 
-    .line 378
+    .line 361
     .local v7, childHeightMeasureSpec:I
     :goto_4
     invoke-virtual {v2, v9, v7}, Landroid/view/View;->measure(II)V
 
-    .line 347
+    .line 330
     add-int/lit8 v12, v12, 0x1
 
     goto :goto_2
 
-    .line 360
+    .line 343
     .end local v7           #childHeightMeasureSpec:I
     .end local v9           #childWidthMeasureSpec:I
     :cond_7
@@ -1562,7 +1508,7 @@
     .restart local v9       #childWidthMeasureSpec:I
     goto :goto_3
 
-    .line 372
+    .line 355
     :cond_8
     invoke-direct/range {p0 .. p0}, Landroid/widget/FrameLayout;->getPaddingTopWithForeground()I
 
@@ -1593,7 +1539,7 @@
     .restart local v7       #childHeightMeasureSpec:I
     goto :goto_4
 
-    .line 381
+    .line 364
     .end local v2           #child:Landroid/view/View;
     .end local v7           #childHeightMeasureSpec:I
     .end local v9           #childWidthMeasureSpec:I
@@ -1610,15 +1556,15 @@
     .parameter "oldh"
 
     .prologue
-    .line 458
+    .line 441
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/ViewGroup;->onSizeChanged(IIII)V
 
-    .line 459
+    .line 442
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/widget/FrameLayout;->mForegroundBoundsChanged:Z
 
-    .line 460
+    .line 443
     return-void
 .end method
 
@@ -1629,68 +1575,68 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 225
+    .line 208
     iget-object v1, p0, Landroid/widget/FrameLayout;->mForeground:Landroid/graphics/drawable/Drawable;
 
     if-eq v1, p1, :cond_3
 
-    .line 226
+    .line 209
     iget-object v1, p0, Landroid/widget/FrameLayout;->mForeground:Landroid/graphics/drawable/Drawable;
 
     if-eqz v1, :cond_0
 
-    .line 227
+    .line 210
     iget-object v1, p0, Landroid/widget/FrameLayout;->mForeground:Landroid/graphics/drawable/Drawable;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 228
+    .line 211
     iget-object v1, p0, Landroid/widget/FrameLayout;->mForeground:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->unscheduleDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 231
+    .line 214
     :cond_0
     iput-object p1, p0, Landroid/widget/FrameLayout;->mForeground:Landroid/graphics/drawable/Drawable;
 
-    .line 232
+    .line 215
     iput v3, p0, Landroid/widget/FrameLayout;->mForegroundPaddingLeft:I
 
-    .line 233
+    .line 216
     iput v3, p0, Landroid/widget/FrameLayout;->mForegroundPaddingTop:I
 
-    .line 234
+    .line 217
     iput v3, p0, Landroid/widget/FrameLayout;->mForegroundPaddingRight:I
 
-    .line 235
+    .line 218
     iput v3, p0, Landroid/widget/FrameLayout;->mForegroundPaddingBottom:I
 
-    .line 237
+    .line 220
     if-eqz p1, :cond_4
 
-    .line 238
+    .line 221
     invoke-virtual {p0, v3}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
-    .line 239
+    .line 222
     invoke-virtual {p1, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 240
+    .line 223
     invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->isStateful()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 241
+    .line 224
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getDrawableState()[I
 
     move-result-object v1
 
     invoke-virtual {p1, v1}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
-    .line 243
+    .line 226
     :cond_1
     iget v1, p0, Landroid/widget/FrameLayout;->mForegroundGravity:I
 
@@ -1698,12 +1644,12 @@
 
     if-ne v1, v2, :cond_2
 
-    .line 244
+    .line 227
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    .line 245
+    .line 228
     .local v0, padding:Landroid/graphics/Rect;
     invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->getPadding(Landroid/graphics/Rect;)Z
 
@@ -1711,40 +1657,40 @@
 
     if-eqz v1, :cond_2
 
-    .line 246
+    .line 229
     iget v1, v0, Landroid/graphics/Rect;->left:I
 
     iput v1, p0, Landroid/widget/FrameLayout;->mForegroundPaddingLeft:I
 
-    .line 247
+    .line 230
     iget v1, v0, Landroid/graphics/Rect;->top:I
 
     iput v1, p0, Landroid/widget/FrameLayout;->mForegroundPaddingTop:I
 
-    .line 248
+    .line 231
     iget v1, v0, Landroid/graphics/Rect;->right:I
 
     iput v1, p0, Landroid/widget/FrameLayout;->mForegroundPaddingRight:I
 
-    .line 249
+    .line 232
     iget v1, v0, Landroid/graphics/Rect;->bottom:I
 
     iput v1, p0, Landroid/widget/FrameLayout;->mForegroundPaddingBottom:I
 
-    .line 255
+    .line 238
     .end local v0           #padding:Landroid/graphics/Rect;
     :cond_2
     :goto_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->requestLayout()V
 
-    .line 256
+    .line 239
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 258
+    .line 241
     :cond_3
     return-void
 
-    .line 253
+    .line 236
     :cond_4
     const/4 v1, 0x1
 
@@ -1762,37 +1708,37 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 148
+    .line 131
     iget v1, p0, Landroid/widget/FrameLayout;->mForegroundGravity:I
 
     if-eq v1, p1, :cond_3
 
-    .line 149
+    .line 132
     const v1, 0x800007
 
     and-int/2addr v1, p1
 
     if-nez v1, :cond_0
 
-    .line 150
+    .line 133
     const v1, 0x800003
 
     or-int/2addr p1, v1
 
-    .line 153
+    .line 136
     :cond_0
     and-int/lit8 v1, p1, 0x70
 
     if-nez v1, :cond_1
 
-    .line 154
+    .line 137
     or-int/lit8 p1, p1, 0x30
 
-    .line 157
+    .line 140
     :cond_1
     iput p1, p0, Landroid/widget/FrameLayout;->mForegroundGravity:I
 
-    .line 160
+    .line 143
     iget v1, p0, Landroid/widget/FrameLayout;->mForegroundGravity:I
 
     const/16 v2, 0x77
@@ -1803,12 +1749,12 @@
 
     if-eqz v1, :cond_4
 
-    .line 161
+    .line 144
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    .line 162
+    .line 145
     .local v0, padding:Landroid/graphics/Rect;
     iget-object v1, p0, Landroid/widget/FrameLayout;->mForeground:Landroid/graphics/drawable/Drawable;
 
@@ -1818,47 +1764,47 @@
 
     if-eqz v1, :cond_2
 
-    .line 163
+    .line 146
     iget v1, v0, Landroid/graphics/Rect;->left:I
 
     iput v1, p0, Landroid/widget/FrameLayout;->mForegroundPaddingLeft:I
 
-    .line 164
+    .line 147
     iget v1, v0, Landroid/graphics/Rect;->top:I
 
     iput v1, p0, Landroid/widget/FrameLayout;->mForegroundPaddingTop:I
 
-    .line 165
+    .line 148
     iget v1, v0, Landroid/graphics/Rect;->right:I
 
     iput v1, p0, Landroid/widget/FrameLayout;->mForegroundPaddingRight:I
 
-    .line 166
+    .line 149
     iget v1, v0, Landroid/graphics/Rect;->bottom:I
 
     iput v1, p0, Landroid/widget/FrameLayout;->mForegroundPaddingBottom:I
 
-    .line 175
+    .line 158
     .end local v0           #padding:Landroid/graphics/Rect;
     :cond_2
     :goto_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->requestLayout()V
 
-    .line 177
+    .line 160
     :cond_3
     return-void
 
-    .line 169
+    .line 152
     :cond_4
     iput v3, p0, Landroid/widget/FrameLayout;->mForegroundPaddingLeft:I
 
-    .line 170
+    .line 153
     iput v3, p0, Landroid/widget/FrameLayout;->mForegroundPaddingTop:I
 
-    .line 171
+    .line 154
     iput v3, p0, Landroid/widget/FrameLayout;->mForegroundPaddingRight:I
 
-    .line 172
+    .line 155
     iput v3, p0, Landroid/widget/FrameLayout;->mForegroundPaddingBottom:I
 
     goto :goto_0
@@ -1871,10 +1817,10 @@
     .end annotation
 
     .prologue
-    .line 520
+    .line 503
     iput-boolean p1, p0, Landroid/widget/FrameLayout;->mMeasureAllChildren:Z
 
-    .line 521
+    .line 504
     return-void
 .end method
 
@@ -1882,7 +1828,7 @@
     .locals 1
 
     .prologue
-    .line 559
+    .line 542
     const/4 v0, 0x0
 
     return v0
@@ -1893,7 +1839,7 @@
     .parameter "who"
 
     .prologue
-    .line 184
+    .line 167
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
 
     move-result v0

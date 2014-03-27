@@ -119,7 +119,7 @@
 
     move-result-object v1
 
-    const-string v2, " isGroupOwner: "
+    const-string v2, "isGroupOwner: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
@@ -131,7 +131,7 @@
 
     move-result-object v1
 
-    const-string v2, " groupOwnerAddress: "
+    const-string v2, "groupOwnerAddress: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 

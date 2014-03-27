@@ -15,7 +15,7 @@
 
 
 # virtual methods
-.method public abstract addAccessibilityInteractionConnection(Landroid/view/IWindow;Landroid/view/accessibility/IAccessibilityInteractionConnection;I)I
+.method public abstract addAccessibilityInteractionConnection(Landroid/view/IWindow;Landroid/view/accessibility/IAccessibilityInteractionConnection;)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -23,7 +23,7 @@
     .end annotation
 .end method
 
-.method public abstract addClient(Landroid/view/accessibility/IAccessibilityManagerClient;I)I
+.method public abstract addClient(Landroid/view/accessibility/IAccessibilityManagerClient;)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -31,25 +31,7 @@
     .end annotation
 .end method
 
-.method public abstract getEnabledAccessibilityServiceList(II)Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(II)",
-            "Ljava/util/List",
-            "<",
-            "Landroid/accessibilityservice/AccessibilityServiceInfo;",
-            ">;"
-        }
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract getInstalledAccessibilityServiceList(I)Ljava/util/List;
+.method public abstract getEnabledAccessibilityServiceList(I)Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -67,7 +49,17 @@
     .end annotation
 .end method
 
-.method public abstract interrupt(I)V
+.method public abstract getInstalledAccessibilityServiceList()Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List",
+            "<",
+            "Landroid/accessibilityservice/AccessibilityServiceInfo;",
+            ">;"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -75,7 +67,15 @@
     .end annotation
 .end method
 
-.method public abstract registerUiTestAutomationService(Landroid/accessibilityservice/IAccessibilityServiceClient;Landroid/accessibilityservice/AccessibilityServiceInfo;)V
+.method public abstract interrupt()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract registerEventListener(Landroid/accessibilityservice/IEventListener;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -91,23 +91,7 @@
     .end annotation
 .end method
 
-.method public abstract sendAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;I)Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract temporaryEnableAccessibilityStateUntilKeyguardRemoved(Landroid/content/ComponentName;Z)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract unregisterUiTestAutomationService(Landroid/accessibilityservice/IAccessibilityServiceClient;)V
+.method public abstract sendAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

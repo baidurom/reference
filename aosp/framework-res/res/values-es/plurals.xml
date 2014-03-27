@@ -67,18 +67,6 @@
         <item quantity="other">dentro de %d días</item>
         <item quantity="one">mañana</item>
     </plurals>
-    <plurals name="duration_seconds">
-        <item quantity="other">%d segundos</item>
-        <item quantity="one">1 segundo</item>
-    </plurals>
-    <plurals name="duration_minutes">
-        <item quantity="other">%d minutos</item>
-        <item quantity="one">1 minuto</item>
-    </plurals>
-    <plurals name="duration_hours">
-        <item quantity="other">%d horas</item>
-        <item quantity="one">1 hora</item>
-    </plurals>
     <plurals name="wifi_available">
         <item quantity="other">Redes Wi-Fi disponibles</item>
         <item quantity="one">Red Wi-Fi disponible</item>

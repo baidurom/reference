@@ -3,7 +3,7 @@
 .source "CallbackProxy.java"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnCancelListener;
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # annotations
@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 743
+    .line 705
     iput-object p1, p0, Landroid/webkit/CallbackProxy$9;->this$0:Landroid/webkit/CallbackProxy;
 
     iput-object p2, p0, Landroid/webkit/CallbackProxy$9;->val$res:Landroid/webkit/JsResult;
@@ -42,16 +42,17 @@
 
 
 # virtual methods
-.method public onCancel(Landroid/content/DialogInterface;)V
+.method public onClick(Landroid/content/DialogInterface;I)V
     .locals 1
     .parameter "dialog"
+    .parameter "which"
 
     .prologue
-    .line 747
+    .line 709
     iget-object v0, p0, Landroid/webkit/CallbackProxy$9;->val$res:Landroid/webkit/JsResult;
 
     invoke-virtual {v0}, Landroid/webkit/JsResult;->cancel()V
 
-    .line 748
+    .line 710
     return-void
 .end method

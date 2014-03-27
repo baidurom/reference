@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 625
+    .line 587
     iput-object p1, p0, Landroid/net/wifi/WifiStateMachine$1;->this$0:Landroid/net/wifi/WifiStateMachine;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,14 +40,14 @@
     .parameter "intent"
 
     .prologue
-    .line 628
+    .line 590
     const-string v2, "availableArray"
 
     invoke-virtual {p2, v2}, Landroid/content/Intent;->getStringArrayListExtra(Ljava/lang/String;)Ljava/util/ArrayList;
 
     move-result-object v1
 
-    .line 630
+    .line 592
     .local v1, available:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     const-string v2, "activeArray"
 
@@ -55,7 +55,7 @@
 
     move-result-object v0
 
-    .line 632
+    .line 594
     .local v0, active:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     iget-object v2, p0, Landroid/net/wifi/WifiStateMachine$1;->this$0:Landroid/net/wifi/WifiStateMachine;
 
@@ -69,6 +69,6 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/net/wifi/WifiStateMachine;->sendMessage(ILjava/lang/Object;)V
 
-    .line 633
+    .line 595
     return-void
 .end method

@@ -63,7 +63,7 @@
     .locals 0
 
     .prologue
-    .line 2925
+    .line 2321
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -74,7 +74,7 @@
     .parameter "x0"
 
     .prologue
-    .line 2925
+    .line 2321
     iget-object v0, p0, Landroid/view/View$ListenerInfo;->mOnLayoutChangeListeners:Ljava/util/ArrayList;
 
     return-object v0
@@ -86,7 +86,7 @@
     .parameter "x1"
 
     .prologue
-    .line 2925
+    .line 2321
     iput-object p1, p0, Landroid/view/View$ListenerInfo;->mOnLayoutChangeListeners:Ljava/util/ArrayList;
 
     return-object p1
@@ -97,33 +97,10 @@
     .parameter "x0"
 
     .prologue
-    .line 2925
+    .line 2321
     iget-object v0, p0, Landroid/view/View$ListenerInfo;->mOnAttachStateChangeListeners:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     return-object v0
-.end method
-
-.method static synthetic access$1000(Landroid/view/View$ListenerInfo;)Landroid/view/View$OnSystemUiVisibilityChangeListener;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 2925
-    iget-object v0, p0, Landroid/view/View$ListenerInfo;->mOnSystemUiVisibilityChangeListener:Landroid/view/View$OnSystemUiVisibilityChangeListener;
-
-    return-object v0
-.end method
-
-.method static synthetic access$1002(Landroid/view/View$ListenerInfo;Landroid/view/View$OnSystemUiVisibilityChangeListener;)Landroid/view/View$OnSystemUiVisibilityChangeListener;
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 2925
-    iput-object p1, p0, Landroid/view/View$ListenerInfo;->mOnSystemUiVisibilityChangeListener:Landroid/view/View$OnSystemUiVisibilityChangeListener;
-
-    return-object p1
 .end method
 
 .method static synthetic access$102(Landroid/view/View$ListenerInfo;Ljava/util/concurrent/CopyOnWriteArrayList;)Ljava/util/concurrent/CopyOnWriteArrayList;
@@ -132,7 +109,7 @@
     .parameter "x1"
 
     .prologue
-    .line 2925
+    .line 2321
     iput-object p1, p0, Landroid/view/View$ListenerInfo;->mOnAttachStateChangeListeners:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     return-object p1
@@ -143,7 +120,7 @@
     .parameter "x0"
 
     .prologue
-    .line 2925
+    .line 2321
     iget-object v0, p0, Landroid/view/View$ListenerInfo;->mOnKeyListener:Landroid/view/View$OnKeyListener;
 
     return-object v0
@@ -155,7 +132,7 @@
     .parameter "x1"
 
     .prologue
-    .line 2925
+    .line 2321
     iput-object p1, p0, Landroid/view/View$ListenerInfo;->mOnKeyListener:Landroid/view/View$OnKeyListener;
 
     return-object p1
@@ -166,7 +143,7 @@
     .parameter "x0"
 
     .prologue
-    .line 2925
+    .line 2321
     iget-object v0, p0, Landroid/view/View$ListenerInfo;->mOnTouchListener:Landroid/view/View$OnTouchListener;
 
     return-object v0
@@ -178,7 +155,7 @@
     .parameter "x1"
 
     .prologue
-    .line 2925
+    .line 2321
     iput-object p1, p0, Landroid/view/View$ListenerInfo;->mOnTouchListener:Landroid/view/View$OnTouchListener;
 
     return-object p1
@@ -189,7 +166,7 @@
     .parameter "x0"
 
     .prologue
-    .line 2925
+    .line 2321
     iget-object v0, p0, Landroid/view/View$ListenerInfo;->mOnGenericMotionListener:Landroid/view/View$OnGenericMotionListener;
 
     return-object v0
@@ -201,7 +178,7 @@
     .parameter "x1"
 
     .prologue
-    .line 2925
+    .line 2321
     iput-object p1, p0, Landroid/view/View$ListenerInfo;->mOnGenericMotionListener:Landroid/view/View$OnGenericMotionListener;
 
     return-object p1
@@ -212,7 +189,7 @@
     .parameter "x0"
 
     .prologue
-    .line 2925
+    .line 2321
     iget-object v0, p0, Landroid/view/View$ListenerInfo;->mOnHoverListener:Landroid/view/View$OnHoverListener;
 
     return-object v0
@@ -224,7 +201,7 @@
     .parameter "x1"
 
     .prologue
-    .line 2925
+    .line 2321
     iput-object p1, p0, Landroid/view/View$ListenerInfo;->mOnHoverListener:Landroid/view/View$OnHoverListener;
 
     return-object p1
@@ -235,7 +212,7 @@
     .parameter "x0"
 
     .prologue
-    .line 2925
+    .line 2321
     iget-object v0, p0, Landroid/view/View$ListenerInfo;->mOnDragListener:Landroid/view/View$OnDragListener;
 
     return-object v0
@@ -247,8 +224,31 @@
     .parameter "x1"
 
     .prologue
-    .line 2925
+    .line 2321
     iput-object p1, p0, Landroid/view/View$ListenerInfo;->mOnDragListener:Landroid/view/View$OnDragListener;
+
+    return-object p1
+.end method
+
+.method static synthetic access$700(Landroid/view/View$ListenerInfo;)Landroid/view/View$OnSystemUiVisibilityChangeListener;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 2321
+    iget-object v0, p0, Landroid/view/View$ListenerInfo;->mOnSystemUiVisibilityChangeListener:Landroid/view/View$OnSystemUiVisibilityChangeListener;
+
+    return-object v0
+.end method
+
+.method static synthetic access$702(Landroid/view/View$ListenerInfo;Landroid/view/View$OnSystemUiVisibilityChangeListener;)Landroid/view/View$OnSystemUiVisibilityChangeListener;
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 2321
+    iput-object p1, p0, Landroid/view/View$ListenerInfo;->mOnSystemUiVisibilityChangeListener:Landroid/view/View$OnSystemUiVisibilityChangeListener;
 
     return-object p1
 .end method

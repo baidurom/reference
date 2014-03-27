@@ -15,9 +15,6 @@
 .method public abstract appPrivateCommand(Ljava/lang/String;Landroid/os/Bundle;)V
 .end method
 
-.method public abstract dispatchGenericMotionEvent(ILandroid/view/MotionEvent;Landroid/view/inputmethod/InputMethodSession$EventCallback;)V
-.end method
-
 .method public abstract dispatchKeyEvent(ILandroid/view/KeyEvent;Landroid/view/inputmethod/InputMethodSession$EventCallback;)V
 .end method
 

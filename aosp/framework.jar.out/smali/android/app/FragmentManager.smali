@@ -33,10 +33,10 @@
     .parameter "enabled"
 
     .prologue
-    .line 342
+    .line 336
     sput-boolean p0, Landroid/app/FragmentManagerImpl;->DEBUG:Z
 
-    .line 343
+    .line 337
     return-void
 .end method
 
@@ -73,11 +73,8 @@
     .locals 0
 
     .prologue
-    .line 349
+    .line 343
     return-void
-.end method
-
-.method public abstract isDestroyed()Z
 .end method
 
 .method public openTransaction()Landroid/app/FragmentTransaction;

@@ -41,7 +41,7 @@
 
 .field private mKeyStateList:Landroid/view/InputEventConsistencyVerifier$KeyState;
 
-.field private mLastEventSeq:I
+.field private mLastEvent:Landroid/view/InputEvent;
 
 .field private mLastEventType:Ljava/lang/String;
 
@@ -156,21 +156,21 @@
     .parameter "keyCode"
 
     .prologue
-    .line 691
+    .line 690
     invoke-static {p1, p2, p3}, Landroid/view/InputEventConsistencyVerifier$KeyState;->obtain(III)Landroid/view/InputEventConsistencyVerifier$KeyState;
 
     move-result-object v0
 
-    .line 692
+    .line 691
     .local v0, state:Landroid/view/InputEventConsistencyVerifier$KeyState;
     iget-object v1, p0, Landroid/view/InputEventConsistencyVerifier;->mKeyStateList:Landroid/view/InputEventConsistencyVerifier$KeyState;
 
     iput-object v1, v0, Landroid/view/InputEventConsistencyVerifier$KeyState;->next:Landroid/view/InputEventConsistencyVerifier$KeyState;
 
-    .line 693
+    .line 692
     iput-object v0, p0, Landroid/view/InputEventConsistencyVerifier;->mKeyStateList:Landroid/view/InputEventConsistencyVerifier$KeyState;
 
-    .line 694
+    .line 693
     return-void
 .end method
 
@@ -182,7 +182,7 @@
     .parameter "unhandled"
 
     .prologue
-    .line 648
+    .line 647
     invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -199,24 +199,24 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 649
+    .line 648
     const-string v0, ", "
 
     invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 650
+    .line 649
     if-eqz p3, :cond_0
 
-    .line 651
+    .line 650
     const-string v0, "(unhandled) "
 
     invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 653
+    .line 652
     :cond_0
     invoke-virtual {p0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 654
+    .line 653
     return-void
 .end method
 
@@ -396,19 +396,19 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 669
+    .line 668
     const/4 v0, 0x0
 
-    .line 670
+    .line 669
     .local v0, last:Landroid/view/InputEventConsistencyVerifier$KeyState;
     iget-object v1, p0, Landroid/view/InputEventConsistencyVerifier;->mKeyStateList:Landroid/view/InputEventConsistencyVerifier$KeyState;
 
-    .line 671
+    .line 670
     .local v1, state:Landroid/view/InputEventConsistencyVerifier$KeyState;
     :goto_0
     if-eqz v1, :cond_3
 
-    .line 672
+    .line 671
     iget v3, v1, Landroid/view/InputEventConsistencyVerifier$KeyState;->deviceId:I
 
     if-ne v3, p1, :cond_2
@@ -421,28 +421,28 @@
 
     if-ne v3, p3, :cond_2
 
-    .line 674
+    .line 673
     if-eqz p4, :cond_0
 
-    .line 675
+    .line 674
     if-eqz v0, :cond_1
 
-    .line 676
+    .line 675
     iget-object v3, v1, Landroid/view/InputEventConsistencyVerifier$KeyState;->next:Landroid/view/InputEventConsistencyVerifier$KeyState;
 
     iput-object v3, v0, Landroid/view/InputEventConsistencyVerifier$KeyState;->next:Landroid/view/InputEventConsistencyVerifier$KeyState;
 
-    .line 680
+    .line 679
     :goto_1
     iput-object v2, v1, Landroid/view/InputEventConsistencyVerifier$KeyState;->next:Landroid/view/InputEventConsistencyVerifier$KeyState;
 
-    .line 687
+    .line 686
     .end local v1           #state:Landroid/view/InputEventConsistencyVerifier$KeyState;
     :cond_0
     :goto_2
     return-object v1
 
-    .line 678
+    .line 677
     .restart local v1       #state:Landroid/view/InputEventConsistencyVerifier$KeyState;
     :cond_1
     iget-object v3, v1, Landroid/view/InputEventConsistencyVerifier$KeyState;->next:Landroid/view/InputEventConsistencyVerifier$KeyState;
@@ -451,11 +451,11 @@
 
     goto :goto_1
 
-    .line 684
+    .line 683
     :cond_2
     move-object v0, v1
 
-    .line 685
+    .line 684
     iget-object v1, v1, Landroid/view/InputEventConsistencyVerifier$KeyState;->next:Landroid/view/InputEventConsistencyVerifier$KeyState;
 
     goto :goto_0
@@ -463,7 +463,7 @@
     :cond_3
     move-object v1, v2
 
-    .line 687
+    .line 686
     goto :goto_2
 .end method
 
@@ -477,7 +477,7 @@
 
     const/4 v6, 0x0
 
-    .line 598
+    .line 597
     iget-object v3, p0, Landroid/view/InputEventConsistencyVerifier;->mViolationMessage:Ljava/lang/StringBuilder;
 
     if-eqz v3, :cond_2
@@ -490,7 +490,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 599
+    .line 598
     iget-object v3, p0, Landroid/view/InputEventConsistencyVerifier;->mCurrentEvent:Landroid/view/InputEvent;
 
     invoke-virtual {v3}, Landroid/view/InputEvent;->isTainted()Z
@@ -499,7 +499,7 @@
 
     if-nez v3, :cond_1
 
-    .line 601
+    .line 600
     iget-object v3, p0, Landroid/view/InputEventConsistencyVerifier;->mViolationMessage:Ljava/lang/StringBuilder;
 
     const-string v4, "\n  in "
@@ -512,40 +512,40 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 602
+    .line 601
     iget-object v3, p0, Landroid/view/InputEventConsistencyVerifier;->mViolationMessage:Ljava/lang/StringBuilder;
 
     const-string v4, "\n  "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 603
+    .line 602
     iget-object v3, p0, Landroid/view/InputEventConsistencyVerifier;->mViolationMessage:Ljava/lang/StringBuilder;
 
     iget-object v4, p0, Landroid/view/InputEventConsistencyVerifier;->mCurrentEvent:Landroid/view/InputEvent;
 
     invoke-static {v3, v6, v4, v6}, Landroid/view/InputEventConsistencyVerifier;->appendEvent(Ljava/lang/StringBuilder;ILandroid/view/InputEvent;Z)V
 
-    .line 605
+    .line 604
     iget-object v3, p0, Landroid/view/InputEventConsistencyVerifier;->mRecentEvents:[Landroid/view/InputEvent;
 
     if-eqz v3, :cond_0
 
-    .line 606
+    .line 605
     iget-object v3, p0, Landroid/view/InputEventConsistencyVerifier;->mViolationMessage:Ljava/lang/StringBuilder;
 
     const-string v4, "\n  -- recent events --"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 607
+    .line 606
     const/4 v1, 0x0
 
     .local v1, i:I
     :goto_0
     if-ge v1, v7, :cond_0
 
-    .line 608
+    .line 607
     iget v3, p0, Landroid/view/InputEventConsistencyVerifier;->mMostRecentEventIndex:I
 
     add-int/lit8 v3, v3, 0x5
@@ -554,17 +554,17 @@
 
     rem-int/lit8 v2, v3, 0x5
 
-    .line 610
+    .line 609
     .local v2, index:I
     iget-object v3, p0, Landroid/view/InputEventConsistencyVerifier;->mRecentEvents:[Landroid/view/InputEvent;
 
     aget-object v0, v3, v2
 
-    .line 611
+    .line 610
     .local v0, event:Landroid/view/InputEvent;
     if-nez v0, :cond_5
 
-    .line 619
+    .line 618
     .end local v0           #event:Landroid/view/InputEvent;
     .end local v1           #i:I
     .end local v2           #index:I
@@ -579,36 +579,36 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 623
+    .line 622
     iget-object v3, p0, Landroid/view/InputEventConsistencyVerifier;->mCurrentEvent:Landroid/view/InputEvent;
 
     const/4 v4, 0x1
 
     invoke-virtual {v3, v4}, Landroid/view/InputEvent;->setTainted(Z)V
 
-    .line 625
+    .line 624
     :cond_1
     iget-object v3, p0, Landroid/view/InputEventConsistencyVerifier;->mViolationMessage:Ljava/lang/StringBuilder;
 
     invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 629
+    .line 628
     :cond_2
     iget-object v3, p0, Landroid/view/InputEventConsistencyVerifier;->mRecentEvents:[Landroid/view/InputEvent;
 
     if-nez v3, :cond_3
 
-    .line 630
+    .line 629
     new-array v3, v7, [Landroid/view/InputEvent;
 
     iput-object v3, p0, Landroid/view/InputEventConsistencyVerifier;->mRecentEvents:[Landroid/view/InputEvent;
 
-    .line 631
+    .line 630
     new-array v3, v7, [Z
 
     iput-object v3, p0, Landroid/view/InputEventConsistencyVerifier;->mRecentEventsUnhandled:[Z
 
-    .line 633
+    .line 632
     :cond_3
     iget v3, p0, Landroid/view/InputEventConsistencyVerifier;->mMostRecentEventIndex:I
 
@@ -616,25 +616,25 @@
 
     rem-int/lit8 v2, v3, 0x5
 
-    .line 634
+    .line 633
     .restart local v2       #index:I
     iput v2, p0, Landroid/view/InputEventConsistencyVerifier;->mMostRecentEventIndex:I
 
-    .line 635
+    .line 634
     iget-object v3, p0, Landroid/view/InputEventConsistencyVerifier;->mRecentEvents:[Landroid/view/InputEvent;
 
     aget-object v3, v3, v2
 
     if-eqz v3, :cond_4
 
-    .line 636
+    .line 635
     iget-object v3, p0, Landroid/view/InputEventConsistencyVerifier;->mRecentEvents:[Landroid/view/InputEvent;
 
     aget-object v3, v3, v2
 
     invoke-virtual {v3}, Landroid/view/InputEvent;->recycle()V
 
-    .line 638
+    .line 637
     :cond_4
     iget-object v3, p0, Landroid/view/InputEventConsistencyVerifier;->mRecentEvents:[Landroid/view/InputEvent;
 
@@ -646,21 +646,21 @@
 
     aput-object v4, v3, v2
 
-    .line 639
+    .line 638
     iget-object v3, p0, Landroid/view/InputEventConsistencyVerifier;->mRecentEventsUnhandled:[Z
 
     aput-boolean v6, v3, v2
 
-    .line 642
+    .line 641
     iput-object v8, p0, Landroid/view/InputEventConsistencyVerifier;->mCurrentEvent:Landroid/view/InputEvent;
 
-    .line 643
+    .line 642
     iput-object v8, p0, Landroid/view/InputEventConsistencyVerifier;->mCurrentEventType:Ljava/lang/String;
 
-    .line 644
+    .line 643
     return-void
 
-    .line 614
+    .line 613
     .restart local v0       #event:Landroid/view/InputEvent;
     .restart local v1       #i:I
     :cond_5
@@ -670,7 +670,7 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 615
+    .line 614
     iget-object v3, p0, Landroid/view/InputEventConsistencyVerifier;->mViolationMessage:Ljava/lang/StringBuilder;
 
     add-int/lit8 v4, v1, 0x1
@@ -681,7 +681,7 @@
 
     invoke-static {v3, v4, v0, v5}, Landroid/view/InputEventConsistencyVerifier;->appendEvent(Ljava/lang/StringBuilder;ILandroid/view/InputEvent;Z)V
 
-    .line 607
+    .line 606
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
@@ -702,19 +702,19 @@
     .parameter "message"
 
     .prologue
-    .line 657
+    .line 656
     iget-object v0, p0, Landroid/view/InputEventConsistencyVerifier;->mViolationMessage:Ljava/lang/StringBuilder;
 
     if-nez v0, :cond_0
 
-    .line 658
+    .line 657
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     iput-object v0, p0, Landroid/view/InputEventConsistencyVerifier;->mViolationMessage:Ljava/lang/StringBuilder;
 
-    .line 660
+    .line 659
     :cond_0
     iget-object v0, p0, Landroid/view/InputEventConsistencyVerifier;->mViolationMessage:Ljava/lang/StringBuilder;
 
@@ -724,7 +724,7 @@
 
     if-nez v0, :cond_1
 
-    .line 661
+    .line 660
     iget-object v0, p0, Landroid/view/InputEventConsistencyVerifier;->mViolationMessage:Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Landroid/view/InputEventConsistencyVerifier;->mCurrentEventType:Ljava/lang/String;
@@ -737,16 +737,16 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 665
+    .line 664
     :goto_0
     iget-object v0, p0, Landroid/view/InputEventConsistencyVerifier;->mViolationMessage:Ljava/lang/StringBuilder;
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 666
+    .line 665
     return-void
 
-    .line 663
+    .line 662
     :cond_1
     iget-object v0, p0, Landroid/view/InputEventConsistencyVerifier;->mViolationMessage:Ljava/lang/StringBuilder;
 
@@ -764,69 +764,61 @@
     .parameter "eventType"
 
     .prologue
-    const/4 v1, 0x0
+    const/4 v2, 0x0
+
+    const/4 v0, 0x0
 
     .line 576
-    invoke-virtual {p1}, Landroid/view/InputEvent;->getSequenceNumber()I
+    iget-object v1, p0, Landroid/view/InputEventConsistencyVerifier;->mLastEvent:Landroid/view/InputEvent;
 
-    move-result v0
+    if-ne p1, v1, :cond_0
 
-    .line 577
-    .local v0, seq:I
-    iget v2, p0, Landroid/view/InputEventConsistencyVerifier;->mLastEventSeq:I
+    iget v1, p0, Landroid/view/InputEventConsistencyVerifier;->mLastNestingLevel:I
 
-    if-ne v0, v2, :cond_0
+    if-ge p2, v1, :cond_0
 
-    iget v2, p0, Landroid/view/InputEventConsistencyVerifier;->mLastNestingLevel:I
+    iget-object v1, p0, Landroid/view/InputEventConsistencyVerifier;->mLastEventType:Ljava/lang/String;
 
-    if-ge p2, v2, :cond_0
+    if-ne p3, v1, :cond_0
 
-    iget-object v2, p0, Landroid/view/InputEventConsistencyVerifier;->mLastEventType:Ljava/lang/String;
-
-    if-ne p3, v2, :cond_0
-
-    .line 594
+    .line 593
     :goto_0
-    return v1
+    return v0
 
-    .line 582
+    .line 581
     :cond_0
     if-lez p2, :cond_1
 
-    .line 583
-    iput v0, p0, Landroid/view/InputEventConsistencyVerifier;->mLastEventSeq:I
+    .line 582
+    iput-object p1, p0, Landroid/view/InputEventConsistencyVerifier;->mLastEvent:Landroid/view/InputEvent;
 
-    .line 584
+    .line 583
     iput-object p3, p0, Landroid/view/InputEventConsistencyVerifier;->mLastEventType:Ljava/lang/String;
 
-    .line 585
+    .line 584
     iput p2, p0, Landroid/view/InputEventConsistencyVerifier;->mLastNestingLevel:I
 
-    .line 592
+    .line 591
     :goto_1
     iput-object p1, p0, Landroid/view/InputEventConsistencyVerifier;->mCurrentEvent:Landroid/view/InputEvent;
 
-    .line 593
+    .line 592
     iput-object p3, p0, Landroid/view/InputEventConsistencyVerifier;->mCurrentEventType:Ljava/lang/String;
 
-    .line 594
-    const/4 v1, 0x1
+    .line 593
+    const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 587
+    .line 586
     :cond_1
-    const/4 v2, -0x1
+    iput-object v2, p0, Landroid/view/InputEventConsistencyVerifier;->mLastEvent:Landroid/view/InputEvent;
 
-    iput v2, p0, Landroid/view/InputEventConsistencyVerifier;->mLastEventSeq:I
-
-    .line 588
-    const/4 v2, 0x0
-
+    .line 587
     iput-object v2, p0, Landroid/view/InputEventConsistencyVerifier;->mLastEventType:Ljava/lang/String;
 
-    .line 589
-    iput v1, p0, Landroid/view/InputEventConsistencyVerifier;->mLastNestingLevel:I
+    .line 588
+    iput v0, p0, Landroid/view/InputEventConsistencyVerifier;->mLastNestingLevel:I
 
     goto :goto_1
 .end method
@@ -1305,10 +1297,6 @@
     if-eqz v0, :cond_1
 
     const/4 v12, 0x3
-
-    if-eq v0, v12, :cond_1
-
-    const/4 v12, 0x4
 
     if-ne v0, v12, :cond_a
 
@@ -1982,6 +1970,8 @@
     goto/16 :goto_3
 
     .line 355
+    nop
+
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -2362,9 +2352,9 @@
     const/4 v2, 0x0
 
     .line 143
-    const/4 v1, -0x1
+    const/4 v1, 0x0
 
-    iput v1, p0, Landroid/view/InputEventConsistencyVerifier;->mLastEventSeq:I
+    iput-object v1, p0, Landroid/view/InputEventConsistencyVerifier;->mLastEvent:Landroid/view/InputEvent;
 
     .line 144
     iput v2, p0, Landroid/view/InputEventConsistencyVerifier;->mLastNestingLevel:I

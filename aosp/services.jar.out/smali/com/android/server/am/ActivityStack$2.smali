@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 4533
+    .line 4081
     iput-object p1, p0, Lcom/android/server/am/ActivityStack$2;->this$0:Lcom/android/server/am/ActivityStack;
 
     iput-object p2, p0, Lcom/android/server/am/ActivityStack$2;->val$thumbs:Lcom/android/server/am/TaskAccessInfo;
@@ -40,73 +40,43 @@
 
 # virtual methods
 .method public getThumbnail(I)Landroid/graphics/Bitmap;
-    .locals 4
+    .locals 1
     .parameter "index"
 
     .prologue
-    .line 4535
+    .line 4083
     if-ltz p1, :cond_0
 
-    iget-object v2, p0, Lcom/android/server/am/ActivityStack$2;->val$thumbs:Lcom/android/server/am/TaskAccessInfo;
+    iget-object v0, p0, Lcom/android/server/am/ActivityStack$2;->val$thumbs:Lcom/android/server/am/TaskAccessInfo;
 
-    iget-object v2, v2, Lcom/android/server/am/TaskAccessInfo;->subtasks:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/android/server/am/TaskAccessInfo;->subtasks:Ljava/util/ArrayList;
 
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
-    move-result v2
+    move-result v0
 
-    if-lt p1, v2, :cond_1
+    if-lt p1, v0, :cond_1
 
-    .line 4536
+    .line 4084
     :cond_0
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    .line 4543
+    .line 4086
     :goto_0
-    return-object v2
+    return-object v0
 
-    .line 4538
     :cond_1
-    iget-object v2, p0, Lcom/android/server/am/ActivityStack$2;->val$thumbs:Lcom/android/server/am/TaskAccessInfo;
+    iget-object v0, p0, Lcom/android/server/am/ActivityStack$2;->val$thumbs:Lcom/android/server/am/TaskAccessInfo;
 
-    iget-object v2, v2, Lcom/android/server/am/TaskAccessInfo;->subtasks:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/android/server/am/TaskAccessInfo;->subtasks:Ljava/util/ArrayList;
 
-    invoke-virtual {v2, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Lcom/android/server/am/TaskAccessInfo$SubTask;
+    check-cast v0, Lcom/android/server/am/TaskAccessInfo$SubTask;
 
-    .line 4539
-    .local v1, sub:Lcom/android/server/am/TaskAccessInfo$SubTask;
-    iget-object v2, p0, Lcom/android/server/am/ActivityStack$2;->this$0:Lcom/android/server/am/ActivityStack;
-
-    iget-object v0, v2, Lcom/android/server/am/ActivityStack;->mResumedActivity:Lcom/android/server/am/ActivityRecord;
-
-    .line 4540
-    .local v0, resumed:Lcom/android/server/am/ActivityRecord;
-    if-eqz v0, :cond_2
-
-    iget-object v2, v0, Lcom/android/server/am/ActivityRecord;->thumbHolder:Lcom/android/server/am/ThumbnailHolder;
-
-    iget-object v3, v1, Lcom/android/server/am/TaskAccessInfo$SubTask;->holder:Lcom/android/server/am/ThumbnailHolder;
-
-    if-ne v2, v3, :cond_2
-
-    .line 4541
-    iget-object v2, v0, Lcom/android/server/am/ActivityRecord;->stack:Lcom/android/server/am/ActivityStack;
-
-    invoke-virtual {v2, v0}, Lcom/android/server/am/ActivityStack;->screenshotActivities(Lcom/android/server/am/ActivityRecord;)Landroid/graphics/Bitmap;
-
-    move-result-object v2
-
-    goto :goto_0
-
-    .line 4543
-    :cond_2
-    iget-object v2, v1, Lcom/android/server/am/TaskAccessInfo$SubTask;->holder:Lcom/android/server/am/ThumbnailHolder;
-
-    iget-object v2, v2, Lcom/android/server/am/ThumbnailHolder;->lastThumbnail:Landroid/graphics/Bitmap;
+    iget-object v0, v0, Lcom/android/server/am/TaskAccessInfo$SubTask;->thumbnail:Landroid/graphics/Bitmap;
 
     goto :goto_0
 .end method

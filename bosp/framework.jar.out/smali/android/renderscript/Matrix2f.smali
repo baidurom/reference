@@ -63,8 +63,8 @@
 # virtual methods
 .method public get(II)F
     .locals 2
-    .parameter "x"
-    .parameter "y"
+    .parameter "i"
+    .parameter "j"
 
     .prologue
     .line 68
@@ -394,8 +394,8 @@
 
 .method public set(IIF)V
     .locals 2
-    .parameter "x"
-    .parameter "y"
+    .parameter "i"
+    .parameter "j"
     .parameter "v"
 
     .prologue

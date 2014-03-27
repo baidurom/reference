@@ -111,24 +111,6 @@
     .end annotation
 .end method
 
-.method public abstract getAllCellInfo()Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List",
-            "<",
-            "Landroid/telephony/CellInfo;",
-            ">;"
-        }
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract getCallState()I
     .annotation system Ldalvik/annotation/Throws;
         value = {

@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 379
+    .line 377
     iput-object p1, p0, Landroid/content/BroadcastReceiver$PendingResult$1;->this$0:Landroid/content/BroadcastReceiver$PendingResult;
 
     iput-object p2, p0, Landroid/content/BroadcastReceiver$PendingResult$1;->val$mgr:Landroid/app/IActivityManager;
@@ -46,13 +46,13 @@
     .locals 2
 
     .prologue
-    .line 383
+    .line 381
     iget-object v0, p0, Landroid/content/BroadcastReceiver$PendingResult$1;->this$0:Landroid/content/BroadcastReceiver$PendingResult;
 
     iget-object v1, p0, Landroid/content/BroadcastReceiver$PendingResult$1;->val$mgr:Landroid/app/IActivityManager;
 
     invoke-virtual {v0, v1}, Landroid/content/BroadcastReceiver$PendingResult;->sendFinished(Landroid/app/IActivityManager;)V
 
-    .line 384
+    .line 382
     return-void
 .end method

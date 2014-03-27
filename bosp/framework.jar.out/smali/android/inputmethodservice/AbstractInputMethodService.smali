@@ -49,7 +49,7 @@
     .parameter "args"
 
     .prologue
-    .line 193
+    .line 182
     return-void
 .end method
 
@@ -57,7 +57,7 @@
     .locals 1
 
     .prologue
-    .line 172
+    .line 161
     iget-object v0, p0, Landroid/inputmethodservice/AbstractInputMethodService;->mDispatcherState:Landroid/view/KeyEvent$DispatcherState;
 
     return-object v0
@@ -68,19 +68,19 @@
     .parameter "intent"
 
     .prologue
-    .line 197
+    .line 186
     iget-object v0, p0, Landroid/inputmethodservice/AbstractInputMethodService;->mInputMethod:Landroid/view/inputmethod/InputMethod;
 
     if-nez v0, :cond_0
 
-    .line 198
+    .line 187
     invoke-virtual {p0}, Landroid/inputmethodservice/AbstractInputMethodService;->onCreateInputMethodInterface()Landroid/inputmethodservice/AbstractInputMethodService$AbstractInputMethodImpl;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/inputmethodservice/AbstractInputMethodService;->mInputMethod:Landroid/view/inputmethod/InputMethod;
 
-    .line 200
+    .line 189
     :cond_0
     new-instance v0, Landroid/inputmethodservice/IInputMethodWrapper;
 
@@ -97,23 +97,12 @@
 .method public abstract onCreateInputMethodSessionInterface()Landroid/inputmethodservice/AbstractInputMethodService$AbstractInputMethodSessionImpl;
 .end method
 
-.method public onGenericMotionEvent(Landroid/view/MotionEvent;)Z
-    .locals 1
-    .parameter "event"
-
-    .prologue
-    .line 222
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
 .method public onTrackballEvent(Landroid/view/MotionEvent;)Z
     .locals 1
     .parameter "event"
 
     .prologue
-    .line 211
+    .line 193
     const/4 v0, 0x0
 
     return v0

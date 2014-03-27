@@ -37,7 +37,7 @@
 
     .prologue
     .line 40
-    const v0, 0x1010090
+    const v0, #attr@yesNoPreferenceStyle#t
 
     invoke-direct {p0, p1, p2, v0}, Lcom/android/internal/preference/YesNoPreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

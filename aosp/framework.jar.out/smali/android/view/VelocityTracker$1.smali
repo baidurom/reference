@@ -56,12 +56,12 @@
     .locals 2
 
     .prologue
-    const/4 v1, 0x0
-
     .line 38
     new-instance v0, Landroid/view/VelocityTracker;
 
-    invoke-direct {v0, v1, v1}, Landroid/view/VelocityTracker;-><init>(Ljava/lang/String;Landroid/view/VelocityTracker$1;)V
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Landroid/view/VelocityTracker;-><init>(Landroid/view/VelocityTracker$1;)V
 
     return-object v0
 .end method
@@ -85,7 +85,7 @@
     .parameter "element"
 
     .prologue
-    .line 43
+    .line 42
     return-void
 .end method
 
@@ -108,9 +108,9 @@
     .parameter "element"
 
     .prologue
-    .line 46
+    .line 45
     invoke-virtual {p1}, Landroid/view/VelocityTracker;->clear()V
 
-    .line 47
+    .line 46
     return-void
 .end method

@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 2629
+    .line 2450
     invoke-direct {p0}, Landroid/widget/GridLayout$Alignment;-><init>()V
 
     return-void
@@ -27,27 +27,50 @@
 
 
 # virtual methods
-.method public getAlignmentValue(Landroid/view/View;II)I
-    .locals 1
+.method public getAlignmentValue(Landroid/view/View;I)I
+    .locals 3
     .parameter "view"
     .parameter "viewSize"
-    .parameter "mode"
 
     .prologue
-    .line 2637
-    shr-int/lit8 v0, p2, 0x1
+    const/high16 v1, -0x8000
 
-    return v0
+    .line 2452
+    if-nez p1, :cond_0
+
+    .line 2456
+    :goto_0
+    return v1
+
+    .line 2455
+    :cond_0
+    invoke-virtual {p1}, Landroid/view/View;->getBaseline()I
+
+    move-result v0
+
+    .line 2456
+    .local v0, baseline:I
+    const/4 v2, -0x1
+
+    if-ne v0, v2, :cond_1
+
+    move v0, v1
+
+    .end local v0           #baseline:I
+    :cond_1
+    move v1, v0
+
+    goto :goto_0
 .end method
 
-.method getGravityOffset(Landroid/view/View;I)I
+.method public getBounds()Landroid/widget/GridLayout$Bounds;
     .locals 1
-    .parameter "view"
-    .parameter "cellDelta"
 
     .prologue
-    .line 2632
-    shr-int/lit8 v0, p2, 0x1
+    .line 2461
+    new-instance v0, Landroid/widget/GridLayout$5$1;
 
-    return v0
+    invoke-direct {v0, p0}, Landroid/widget/GridLayout$5$1;-><init>(Landroid/widget/GridLayout$5;)V
+
+    return-object v0
 .end method

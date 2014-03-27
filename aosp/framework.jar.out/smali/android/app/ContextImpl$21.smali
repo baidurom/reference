@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 395
+    .line 375
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -28,18 +28,34 @@
 
 # virtual methods
 .method public createService(Landroid/app/ContextImpl;)Ljava/lang/Object;
-    .locals 1
+    .locals 4
     .parameter "ctx"
 
     .prologue
-    .line 397
-    invoke-virtual {p1}, Landroid/app/ContextImpl;->getOuterContext()Landroid/content/Context;
+    .line 377
+    const-string/jumbo v2, "power"
+
+    invoke-static {v2}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/android/internal/policy/PolicyManager;->makeNewLayoutInflater(Landroid/content/Context;)Landroid/view/LayoutInflater;
+    .line 378
+    .local v0, b:Landroid/os/IBinder;
+    invoke-static {v0}, Landroid/os/IPowerManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/os/IPowerManager;
 
-    move-result-object v0
+    move-result-object v1
 
-    return-object v0
+    .line 379
+    .local v1, service:Landroid/os/IPowerManager;
+    new-instance v2, Landroid/os/PowerManager;
+
+    iget-object v3, p1, Landroid/app/ContextImpl;->mMainThread:Landroid/app/ActivityThread;
+
+    invoke-virtual {v3}, Landroid/app/ActivityThread;->getHandler()Landroid/os/Handler;
+
+    move-result-object v3
+
+    invoke-direct {v2, v1, v3}, Landroid/os/PowerManager;-><init>(Landroid/os/IPowerManager;Landroid/os/Handler;)V
+
+    return-object v2
 .end method

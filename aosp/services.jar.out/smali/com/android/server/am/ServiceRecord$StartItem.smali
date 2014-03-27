@@ -25,11 +25,11 @@
 
 .field final intent:Landroid/content/Intent;
 
-.field final neededGrants:Lcom/android/server/am/ActivityManagerService$NeededUriGrants;
-
 .field final sr:Lcom/android/server/am/ServiceRecord;
 
 .field stringName:Ljava/lang/String;
+
+.field final targetPermissionUid:I
 
 .field final taskRemoved:Z
 
@@ -37,34 +37,34 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/android/server/am/ServiceRecord;ZILandroid/content/Intent;Lcom/android/server/am/ActivityManagerService$NeededUriGrants;)V
+.method constructor <init>(Lcom/android/server/am/ServiceRecord;ZILandroid/content/Intent;I)V
     .locals 0
     .parameter "_sr"
     .parameter "_taskRemoved"
     .parameter "_id"
     .parameter "_intent"
-    .parameter "_neededGrants"
+    .parameter "_targetPermissionUid"
 
     .prologue
-    .line 119
+    .line 114
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 120
+    .line 115
     iput-object p1, p0, Lcom/android/server/am/ServiceRecord$StartItem;->sr:Lcom/android/server/am/ServiceRecord;
 
-    .line 121
+    .line 116
     iput-boolean p2, p0, Lcom/android/server/am/ServiceRecord$StartItem;->taskRemoved:Z
 
-    .line 122
+    .line 117
     iput p3, p0, Lcom/android/server/am/ServiceRecord$StartItem;->id:I
 
-    .line 123
+    .line 118
     iput-object p4, p0, Lcom/android/server/am/ServiceRecord$StartItem;->intent:Landroid/content/Intent;
 
-    .line 124
-    iput-object p5, p0, Lcom/android/server/am/ServiceRecord$StartItem;->neededGrants:Lcom/android/server/am/ActivityManagerService$NeededUriGrants;
+    .line 119
+    iput p5, p0, Lcom/android/server/am/ServiceRecord$StartItem;->targetPermissionUid:I
 
-    .line 125
+    .line 120
     return-void
 .end method
 
@@ -74,12 +74,12 @@
     .locals 2
 
     .prologue
-    .line 128
+    .line 123
     iget-object v0, p0, Lcom/android/server/am/ServiceRecord$StartItem;->uriPermissions:Lcom/android/server/am/UriPermissionOwner;
 
     if-nez v0, :cond_0
 
-    .line 129
+    .line 124
     new-instance v0, Lcom/android/server/am/UriPermissionOwner;
 
     iget-object v1, p0, Lcom/android/server/am/ServiceRecord$StartItem;->sr:Lcom/android/server/am/ServiceRecord;
@@ -90,7 +90,7 @@
 
     iput-object v0, p0, Lcom/android/server/am/ServiceRecord$StartItem;->uriPermissions:Lcom/android/server/am/UriPermissionOwner;
 
-    .line 131
+    .line 126
     :cond_0
     iget-object v0, p0, Lcom/android/server/am/ServiceRecord$StartItem;->uriPermissions:Lcom/android/server/am/UriPermissionOwner;
 
@@ -101,22 +101,22 @@
     .locals 1
 
     .prologue
-    .line 135
+    .line 130
     iget-object v0, p0, Lcom/android/server/am/ServiceRecord$StartItem;->uriPermissions:Lcom/android/server/am/UriPermissionOwner;
 
     if-eqz v0, :cond_0
 
-    .line 136
+    .line 131
     iget-object v0, p0, Lcom/android/server/am/ServiceRecord$StartItem;->uriPermissions:Lcom/android/server/am/UriPermissionOwner;
 
     invoke-virtual {v0}, Lcom/android/server/am/UriPermissionOwner;->removeUriPermissionsLocked()V
 
-    .line 137
+    .line 132
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/am/ServiceRecord$StartItem;->uriPermissions:Lcom/android/server/am/UriPermissionOwner;
 
-    .line 139
+    .line 134
     :cond_0
     return-void
 .end method
@@ -125,19 +125,19 @@
     .locals 3
 
     .prologue
-    .line 142
+    .line 137
     iget-object v1, p0, Lcom/android/server/am/ServiceRecord$StartItem;->stringName:Ljava/lang/String;
 
     if-eqz v1, :cond_0
 
-    .line 143
+    .line 138
     iget-object v1, p0, Lcom/android/server/am/ServiceRecord$StartItem;->stringName:Ljava/lang/String;
 
-    .line 152
+    .line 147
     :goto_0
     return-object v1
 
-    .line 145
+    .line 140
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -145,7 +145,7 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 146
+    .line 141
     .local v0, sb:Ljava/lang/StringBuilder;
     const-string v1, "ServiceRecord{"
 
@@ -215,7 +215,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 152
+    .line 147
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1

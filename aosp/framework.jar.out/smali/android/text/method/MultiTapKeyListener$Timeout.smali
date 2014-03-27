@@ -30,15 +30,15 @@
     .parameter "buffer"
 
     .prologue
-    .line 258
+    .line 254
     iput-object p1, p0, Landroid/text/method/MultiTapKeyListener$Timeout;->this$0:Landroid/text/method/MultiTapKeyListener;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
-    .line 259
+    .line 255
     iput-object p2, p0, Landroid/text/method/MultiTapKeyListener$Timeout;->mBuffer:Landroid/text/Editable;
 
-    .line 260
+    .line 256
     iget-object v0, p0, Landroid/text/method/MultiTapKeyListener$Timeout;->mBuffer:Landroid/text/Editable;
 
     const/4 v1, 0x0
@@ -53,7 +53,7 @@
 
     invoke-interface {v0, p0, v1, v2, v3}, Landroid/text/Editable;->setSpan(Ljava/lang/Object;III)V
 
-    .line 263
+    .line 259
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
@@ -64,7 +64,7 @@
 
     invoke-virtual {p0, p0, v0, v1}, Landroid/text/method/MultiTapKeyListener$Timeout;->postAtTime(Ljava/lang/Runnable;J)Z
 
-    .line 264
+    .line 260
     return-void
 .end method
 
@@ -74,7 +74,7 @@
     .parameter "x1"
 
     .prologue
-    .line 254
+    .line 250
     iput-object p1, p0, Landroid/text/method/MultiTapKeyListener$Timeout;->mBuffer:Landroid/text/Editable;
 
     return-object p1
@@ -86,25 +86,25 @@
     .locals 6
 
     .prologue
-    .line 267
+    .line 263
     iget-object v0, p0, Landroid/text/method/MultiTapKeyListener$Timeout;->mBuffer:Landroid/text/Editable;
 
-    .line 269
+    .line 265
     .local v0, buf:Landroid/text/Spannable;
     if-eqz v0, :cond_1
 
-    .line 270
+    .line 266
     invoke-static {v0}, Landroid/text/Selection;->getSelectionStart(Ljava/lang/CharSequence;)I
 
     move-result v3
 
-    .line 271
+    .line 267
     .local v3, st:I
     invoke-static {v0}, Landroid/text/Selection;->getSelectionEnd(Ljava/lang/CharSequence;)I
 
     move-result v1
 
-    .line 273
+    .line 269
     .local v1, en:I
     sget-object v5, Landroid/text/method/TextKeyListener;->ACTIVE:Ljava/lang/Object;
 
@@ -112,7 +112,7 @@
 
     move-result v4
 
-    .line 274
+    .line 270
     .local v4, start:I
     sget-object v5, Landroid/text/method/TextKeyListener;->ACTIVE:Ljava/lang/Object;
 
@@ -120,24 +120,24 @@
 
     move-result v2
 
-    .line 276
+    .line 272
     .local v2, end:I
     if-ne v3, v4, :cond_0
 
     if-ne v1, v2, :cond_0
 
-    .line 277
+    .line 273
     invoke-static {v0}, Landroid/text/Selection;->getSelectionEnd(Ljava/lang/CharSequence;)I
 
     move-result v5
 
     invoke-static {v0, v5}, Landroid/text/Selection;->setSelection(Landroid/text/Spannable;I)V
 
-    .line 280
+    .line 276
     :cond_0
     invoke-interface {v0, p0}, Landroid/text/Spannable;->removeSpan(Ljava/lang/Object;)V
 
-    .line 282
+    .line 278
     .end local v1           #en:I
     .end local v2           #end:I
     .end local v3           #st:I

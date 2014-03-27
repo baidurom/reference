@@ -67,18 +67,6 @@
         <item quantity="other">pēc %d dienas(-ām)</item>
         <item quantity="one">rītdien</item>
     </plurals>
-    <plurals name="duration_seconds">
-        <item quantity="other">%d s</item>
-        <item quantity="one">1 s</item>
-    </plurals>
-    <plurals name="duration_minutes">
-        <item quantity="other">%d min</item>
-        <item quantity="one">1 min</item>
-    </plurals>
-    <plurals name="duration_hours">
-        <item quantity="other">%d h</item>
-        <item quantity="one">1 h</item>
-    </plurals>
     <plurals name="wifi_available">
         <item quantity="other">Wi-Fi tīkli ir pieejami</item>
         <item quantity="one">Wi-Fi tīkls ir pieejams.</item>

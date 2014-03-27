@@ -47,14 +47,14 @@
     .parameter "maxSize"
 
     .prologue
-    .line 80
+    .line 76
     .local p0, this:Landroid/util/LruCache;,"Landroid/util/LruCache<TK;TV;>;"
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 81
+    .line 77
     if-gtz p1, :cond_0
 
-    .line 82
+    .line 78
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "maxSize <= 0"
@@ -63,11 +63,11 @@
 
     throw v0
 
-    .line 84
+    .line 80
     :cond_0
     iput p1, p0, Landroid/util/LruCache;->maxSize:I
 
-    .line 85
+    .line 81
     new-instance v0, Ljava/util/LinkedHashMap;
 
     const/4 v1, 0x0
@@ -80,7 +80,7 @@
 
     iput-object v0, p0, Landroid/util/LruCache;->map:Ljava/util/LinkedHashMap;
 
-    .line 86
+    .line 82
     return-void
 .end method
 
@@ -95,7 +95,7 @@
     .end annotation
 
     .prologue
-    .line 287
+    .line 263
     .local p0, this:Landroid/util/LruCache;,"Landroid/util/LruCache<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, value:Ljava/lang/Object;,"TV;"
@@ -103,11 +103,11 @@
 
     move-result v0
 
-    .line 288
+    .line 264
     .local v0, result:I
     if-gez v0, :cond_0
 
-    .line 289
+    .line 265
     new-instance v1, Ljava/lang/IllegalStateException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -142,9 +142,163 @@
 
     throw v1
 
-    .line 291
+    .line 267
     :cond_0
     return v0
+.end method
+
+.method private trimToSize(I)V
+    .locals 6
+    .parameter "maxSize"
+
+    .prologue
+    .line 175
+    .local p0, this:Landroid/util/LruCache;,"Landroid/util/LruCache<TK;TV;>;"
+    :goto_0
+    monitor-enter p0
+
+    .line 176
+    :try_start_0
+    iget v3, p0, Landroid/util/LruCache;->size:I
+
+    if-ltz v3, :cond_0
+
+    iget-object v3, p0, Landroid/util/LruCache;->map:Ljava/util/LinkedHashMap;
+
+    invoke-virtual {v3}, Ljava/util/LinkedHashMap;->isEmpty()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    iget v3, p0, Landroid/util/LruCache;->size:I
+
+    if-eqz v3, :cond_1
+
+    .line 177
+    :cond_0
+    new-instance v3, Ljava/lang/IllegalStateException;
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, ".sizeOf() is reporting inconsistent results!"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-direct {v3, v4}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v3
+
+    .line 195
+    :catchall_0
+    move-exception v3
+
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v3
+
+    .line 181
+    :cond_1
+    :try_start_1
+    iget v3, p0, Landroid/util/LruCache;->size:I
+
+    if-gt v3, p1, :cond_2
+
+    .line 182
+    monitor-exit p0
+
+    .line 199
+    :goto_1
+    return-void
+
+    .line 185
+    :cond_2
+    iget-object v3, p0, Landroid/util/LruCache;->map:Ljava/util/LinkedHashMap;
+
+    invoke-virtual {v3}, Ljava/util/LinkedHashMap;->eldest()Ljava/util/Map$Entry;
+
+    move-result-object v1
+
+    .line 186
+    .local v1, toEvict:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<TK;TV;>;"
+    if-nez v1, :cond_3
+
+    .line 187
+    monitor-exit p0
+
+    goto :goto_1
+
+    .line 190
+    :cond_3
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v0
+
+    .line 191
+    .local v0, key:Ljava/lang/Object;,"TK;"
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v2
+
+    .line 192
+    .local v2, value:Ljava/lang/Object;,"TV;"
+    iget-object v3, p0, Landroid/util/LruCache;->map:Ljava/util/LinkedHashMap;
+
+    invoke-virtual {v3, v0}, Ljava/util/LinkedHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 193
+    iget v3, p0, Landroid/util/LruCache;->size:I
+
+    invoke-direct {p0, v0, v2}, Landroid/util/LruCache;->safeSizeOf(Ljava/lang/Object;Ljava/lang/Object;)I
+
+    move-result v4
+
+    sub-int/2addr v3, v4
+
+    iput v3, p0, Landroid/util/LruCache;->size:I
+
+    .line 194
+    iget v3, p0, Landroid/util/LruCache;->evictionCount:I
+
+    add-int/lit8 v3, v3, 0x1
+
+    iput v3, p0, Landroid/util/LruCache;->evictionCount:I
+
+    .line 195
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 197
+    const/4 v3, 0x1
+
+    const/4 v4, 0x0
+
+    invoke-virtual {p0, v3, v0, v2, v4}, Landroid/util/LruCache;->entryRemoved(ZLjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+
+    goto :goto_0
 .end method
 
 
@@ -159,7 +313,7 @@
     .end annotation
 
     .prologue
-    .line 283
+    .line 259
     .local p0, this:Landroid/util/LruCache;,"Landroid/util/LruCache<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     const/4 v0, 0x0
@@ -171,7 +325,7 @@
     .locals 1
 
     .prologue
-    .line 350
+    .line 326
     .local p0, this:Landroid/util/LruCache;,"Landroid/util/LruCache<TK;TV;>;"
     monitor-enter p0
 
@@ -205,7 +359,7 @@
     .end annotation
 
     .prologue
-    .line 265
+    .line 241
     .local p0, this:Landroid/util/LruCache;,"Landroid/util/LruCache<TK;TV;>;"
     .local p2, key:Ljava/lang/Object;,"TK;"
     .local p3, oldValue:Ljava/lang/Object;,"TV;"
@@ -217,13 +371,13 @@
     .locals 1
 
     .prologue
-    .line 309
+    .line 285
     .local p0, this:Landroid/util/LruCache;,"Landroid/util/LruCache<TK;TV;>;"
     const/4 v0, -0x1
 
-    invoke-virtual {p0, v0}, Landroid/util/LruCache;->trimToSize(I)V
+    invoke-direct {p0, v0}, Landroid/util/LruCache;->trimToSize(I)V
 
-    .line 310
+    .line 286
     return-void
 .end method
 
@@ -231,7 +385,7 @@
     .locals 1
 
     .prologue
-    .line 364
+    .line 340
     .local p0, this:Landroid/util/LruCache;,"Landroid/util/LruCache<TK;TV;>;"
     monitor-enter p0
 
@@ -262,12 +416,12 @@
     .end annotation
 
     .prologue
-    .line 112
+    .line 91
     .local p0, this:Landroid/util/LruCache;,"Landroid/util/LruCache<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     if-nez p1, :cond_0
 
-    .line 113
+    .line 92
     new-instance v2, Ljava/lang/NullPointerException;
 
     const-string v3, "key == null"
@@ -276,11 +430,11 @@
 
     throw v2
 
-    .line 117
+    .line 96
     :cond_0
     monitor-enter p0
 
-    .line 118
+    .line 97
     :try_start_0
     iget-object v2, p0, Landroid/util/LruCache;->map:Ljava/util/LinkedHashMap;
 
@@ -288,27 +442,27 @@
 
     move-result-object v1
 
-    .line 119
+    .line 98
     .local v1, mapValue:Ljava/lang/Object;,"TV;"
     if-eqz v1, :cond_1
 
-    .line 120
+    .line 99
     iget v2, p0, Landroid/util/LruCache;->hitCount:I
 
     add-int/lit8 v2, v2, 0x1
 
     iput v2, p0, Landroid/util/LruCache;->hitCount:I
 
-    .line 121
+    .line 100
     monitor-exit p0
 
     move-object v0, v1
 
-    .line 155
+    .line 134
     :goto_0
     return-object v0
 
-    .line 123
+    .line 102
     :cond_1
     iget v2, p0, Landroid/util/LruCache;->missCount:I
 
@@ -316,26 +470,26 @@
 
     iput v2, p0, Landroid/util/LruCache;->missCount:I
 
-    .line 124
+    .line 103
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 133
+    .line 112
     invoke-virtual {p0, p1}, Landroid/util/LruCache;->create(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 134
+    .line 113
     .local v0, createdValue:Ljava/lang/Object;,"TV;"
     if-nez v0, :cond_2
 
-    .line 135
+    .line 114
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 124
+    .line 103
     .end local v0           #createdValue:Ljava/lang/Object;,"TV;"
     .end local v1           #mapValue:Ljava/lang/Object;,"TV;"
     :catchall_0
@@ -348,13 +502,13 @@
 
     throw v2
 
-    .line 138
+    .line 117
     .restart local v0       #createdValue:Ljava/lang/Object;,"TV;"
     .restart local v1       #mapValue:Ljava/lang/Object;,"TV;"
     :cond_2
     monitor-enter p0
 
-    .line 139
+    .line 118
     :try_start_2
     iget v2, p0, Landroid/util/LruCache;->createCount:I
 
@@ -362,41 +516,41 @@
 
     iput v2, p0, Landroid/util/LruCache;->createCount:I
 
-    .line 140
+    .line 119
     iget-object v2, p0, Landroid/util/LruCache;->map:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v2, p1, v0}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 142
+    .line 121
     if-eqz v1, :cond_3
 
-    .line 144
+    .line 123
     iget-object v2, p0, Landroid/util/LruCache;->map:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v2, p1, v1}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 148
+    .line 127
     :goto_1
     monitor-exit p0
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 150
+    .line 129
     if-eqz v1, :cond_4
 
-    .line 151
+    .line 130
     const/4 v2, 0x0
 
     invoke-virtual {p0, v2, p1, v0, v1}, Landroid/util/LruCache;->entryRemoved(ZLjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
     move-object v0, v1
 
-    .line 152
+    .line 131
     goto :goto_0
 
-    .line 146
+    .line 125
     :cond_3
     :try_start_3
     iget v2, p0, Landroid/util/LruCache;->size:I
@@ -411,7 +565,7 @@
 
     goto :goto_1
 
-    .line 148
+    .line 127
     :catchall_1
     move-exception v2
 
@@ -421,11 +575,11 @@
 
     throw v2
 
-    .line 154
+    .line 133
     :cond_4
     iget v2, p0, Landroid/util/LruCache;->maxSize:I
 
-    invoke-virtual {p0, v2}, Landroid/util/LruCache;->trimToSize(I)V
+    invoke-direct {p0, v2}, Landroid/util/LruCache;->trimToSize(I)V
 
     goto :goto_0
 .end method
@@ -434,7 +588,7 @@
     .locals 1
 
     .prologue
-    .line 335
+    .line 311
     .local p0, this:Landroid/util/LruCache;,"Landroid/util/LruCache<TK;TV;>;"
     monitor-enter p0
 
@@ -459,7 +613,7 @@
     .locals 1
 
     .prologue
-    .line 327
+    .line 303
     .local p0, this:Landroid/util/LruCache;,"Landroid/util/LruCache<TK;TV;>;"
     monitor-enter p0
 
@@ -484,7 +638,7 @@
     .locals 1
 
     .prologue
-    .line 343
+    .line 319
     .local p0, this:Landroid/util/LruCache;,"Landroid/util/LruCache<TK;TV;>;"
     monitor-enter p0
 
@@ -516,7 +670,7 @@
     .end annotation
 
     .prologue
-    .line 166
+    .line 145
     .local p0, this:Landroid/util/LruCache;,"Landroid/util/LruCache<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, value:Ljava/lang/Object;,"TV;"
@@ -524,7 +678,7 @@
 
     if-nez p2, :cond_1
 
-    .line 167
+    .line 146
     :cond_0
     new-instance v1, Ljava/lang/NullPointerException;
 
@@ -534,11 +688,11 @@
 
     throw v1
 
-    .line 171
+    .line 150
     :cond_1
     monitor-enter p0
 
-    .line 172
+    .line 151
     :try_start_0
     iget v1, p0, Landroid/util/LruCache;->putCount:I
 
@@ -546,7 +700,7 @@
 
     iput v1, p0, Landroid/util/LruCache;->putCount:I
 
-    .line 173
+    .line 152
     iget v1, p0, Landroid/util/LruCache;->size:I
 
     invoke-direct {p0, p1, p2}, Landroid/util/LruCache;->safeSizeOf(Ljava/lang/Object;Ljava/lang/Object;)I
@@ -557,18 +711,18 @@
 
     iput v1, p0, Landroid/util/LruCache;->size:I
 
-    .line 174
+    .line 153
     iget-object v1, p0, Landroid/util/LruCache;->map:Ljava/util/LinkedHashMap;
 
     invoke-virtual {v1, p1, p2}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 175
+    .line 154
     .local v0, previous:Ljava/lang/Object;,"TV;"
     if-eqz v0, :cond_2
 
-    .line 176
+    .line 155
     iget v1, p0, Landroid/util/LruCache;->size:I
 
     invoke-direct {p0, p1, v0}, Landroid/util/LruCache;->safeSizeOf(Ljava/lang/Object;Ljava/lang/Object;)I
@@ -579,30 +733,30 @@
 
     iput v1, p0, Landroid/util/LruCache;->size:I
 
-    .line 178
+    .line 157
     :cond_2
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 180
+    .line 159
     if-eqz v0, :cond_3
 
-    .line 181
+    .line 160
     const/4 v1, 0x0
 
     invoke-virtual {p0, v1, p1, v0, p2}, Landroid/util/LruCache;->entryRemoved(ZLjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 184
+    .line 163
     :cond_3
     iget v1, p0, Landroid/util/LruCache;->maxSize:I
 
-    invoke-virtual {p0, v1}, Landroid/util/LruCache;->trimToSize(I)V
+    invoke-direct {p0, v1}, Landroid/util/LruCache;->trimToSize(I)V
 
-    .line 185
+    .line 164
     return-object v0
 
-    .line 178
+    .line 157
     .end local v0           #previous:Ljava/lang/Object;,"TV;"
     :catchall_0
     move-exception v1
@@ -619,7 +773,7 @@
     .locals 1
 
     .prologue
-    .line 357
+    .line 333
     .local p0, this:Landroid/util/LruCache;,"Landroid/util/LruCache<TK;TV;>;"
     monitor-enter p0
 
@@ -650,12 +804,12 @@
     .end annotation
 
     .prologue
-    .line 231
+    .line 207
     .local p0, this:Landroid/util/LruCache;,"Landroid/util/LruCache<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     if-nez p1, :cond_0
 
-    .line 232
+    .line 208
     new-instance v1, Ljava/lang/NullPointerException;
 
     const-string v2, "key == null"
@@ -664,11 +818,11 @@
 
     throw v1
 
-    .line 236
+    .line 212
     :cond_0
     monitor-enter p0
 
-    .line 237
+    .line 213
     :try_start_0
     iget-object v1, p0, Landroid/util/LruCache;->map:Ljava/util/LinkedHashMap;
 
@@ -676,11 +830,11 @@
 
     move-result-object v0
 
-    .line 238
+    .line 214
     .local v0, previous:Ljava/lang/Object;,"TV;"
     if-eqz v0, :cond_1
 
-    .line 239
+    .line 215
     iget v1, p0, Landroid/util/LruCache;->size:I
 
     invoke-direct {p0, p1, v0}, Landroid/util/LruCache;->safeSizeOf(Ljava/lang/Object;Ljava/lang/Object;)I
@@ -691,27 +845,27 @@
 
     iput v1, p0, Landroid/util/LruCache;->size:I
 
-    .line 241
+    .line 217
     :cond_1
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 243
+    .line 219
     if-eqz v0, :cond_2
 
-    .line 244
+    .line 220
     const/4 v1, 0x0
 
     const/4 v2, 0x0
 
     invoke-virtual {p0, v1, p1, v0, v2}, Landroid/util/LruCache;->entryRemoved(ZLjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 247
+    .line 223
     :cond_2
     return-object v0
 
-    .line 241
+    .line 217
     .end local v0           #previous:Ljava/lang/Object;,"TV;"
     :catchall_0
     move-exception v1
@@ -724,60 +878,11 @@
     throw v1
 .end method
 
-.method public resize(I)V
-    .locals 2
-    .parameter "maxSize"
-
-    .prologue
-    .line 95
-    .local p0, this:Landroid/util/LruCache;,"Landroid/util/LruCache<TK;TV;>;"
-    if-gtz p1, :cond_0
-
-    .line 96
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string/jumbo v1, "maxSize <= 0"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 99
-    :cond_0
-    monitor-enter p0
-
-    .line 100
-    :try_start_0
-    iput p1, p0, Landroid/util/LruCache;->maxSize:I
-
-    .line 101
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 102
-    invoke-virtual {p0, p1}, Landroid/util/LruCache;->trimToSize(I)V
-
-    .line 103
-    return-void
-
-    .line 101
-    :catchall_0
-    move-exception v0
-
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v0
-.end method
-
 .method public final declared-synchronized size()I
     .locals 1
 
     .prologue
-    .line 318
+    .line 294
     .local p0, this:Landroid/util/LruCache;,"Landroid/util/LruCache<TK;TV;>;"
     monitor-enter p0
 
@@ -809,7 +914,7 @@
     .end annotation
 
     .prologue
-    .line 302
+    .line 278
     .local p0, this:Landroid/util/LruCache;,"Landroid/util/LruCache<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, value:Ljava/lang/Object;,"TV;"
@@ -829,7 +934,7 @@
     .end annotation
 
     .prologue
-    .line 372
+    .line 348
     .local p0, this:Landroid/util/LruCache;,"Landroid/util/LruCache<TK;TV;>;"
     monitor-enter p0
 
@@ -861,7 +966,7 @@
     .local p0, this:Landroid/util/LruCache;,"Landroid/util/LruCache<TK;TV;>;"
     const/4 v1, 0x0
 
-    .line 376
+    .line 352
     monitor-enter p0
 
     :try_start_0
@@ -871,7 +976,7 @@
 
     add-int v0, v2, v3
 
-    .line 377
+    .line 353
     .local v0, accesses:I
     if-eqz v0, :cond_0
 
@@ -881,7 +986,7 @@
 
     div-int v1, v2, v0
 
-    .line 378
+    .line 354
     .local v1, hitPercent:I
     :cond_0
     const-string v2, "LruCache[maxSize=%d,hits=%d,misses=%d,hitRate=%d%%]"
@@ -938,7 +1043,7 @@
 
     return-object v2
 
-    .line 376
+    .line 352
     .end local v0           #accesses:I
     .end local v1           #hitPercent:I
     :catchall_0
@@ -947,158 +1052,4 @@
     monitor-exit p0
 
     throw v2
-.end method
-
-.method public trimToSize(I)V
-    .locals 6
-    .parameter "maxSize"
-
-    .prologue
-    .line 199
-    .local p0, this:Landroid/util/LruCache;,"Landroid/util/LruCache<TK;TV;>;"
-    :goto_0
-    monitor-enter p0
-
-    .line 200
-    :try_start_0
-    iget v3, p0, Landroid/util/LruCache;->size:I
-
-    if-ltz v3, :cond_0
-
-    iget-object v3, p0, Landroid/util/LruCache;->map:Ljava/util/LinkedHashMap;
-
-    invoke-virtual {v3}, Ljava/util/LinkedHashMap;->isEmpty()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    iget v3, p0, Landroid/util/LruCache;->size:I
-
-    if-eqz v3, :cond_1
-
-    .line 201
-    :cond_0
-    new-instance v3, Ljava/lang/IllegalStateException;
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, ".sizeOf() is reporting inconsistent results!"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-direct {v3, v4}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v3
-
-    .line 219
-    :catchall_0
-    move-exception v3
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v3
-
-    .line 205
-    :cond_1
-    :try_start_1
-    iget v3, p0, Landroid/util/LruCache;->size:I
-
-    if-gt v3, p1, :cond_2
-
-    .line 206
-    monitor-exit p0
-
-    .line 223
-    :goto_1
-    return-void
-
-    .line 209
-    :cond_2
-    iget-object v3, p0, Landroid/util/LruCache;->map:Ljava/util/LinkedHashMap;
-
-    invoke-virtual {v3}, Ljava/util/LinkedHashMap;->eldest()Ljava/util/Map$Entry;
-
-    move-result-object v1
-
-    .line 210
-    .local v1, toEvict:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<TK;TV;>;"
-    if-nez v1, :cond_3
-
-    .line 211
-    monitor-exit p0
-
-    goto :goto_1
-
-    .line 214
-    :cond_3
-    invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v0
-
-    .line 215
-    .local v0, key:Ljava/lang/Object;,"TK;"
-    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v2
-
-    .line 216
-    .local v2, value:Ljava/lang/Object;,"TV;"
-    iget-object v3, p0, Landroid/util/LruCache;->map:Ljava/util/LinkedHashMap;
-
-    invoke-virtual {v3, v0}, Ljava/util/LinkedHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 217
-    iget v3, p0, Landroid/util/LruCache;->size:I
-
-    invoke-direct {p0, v0, v2}, Landroid/util/LruCache;->safeSizeOf(Ljava/lang/Object;Ljava/lang/Object;)I
-
-    move-result v4
-
-    sub-int/2addr v3, v4
-
-    iput v3, p0, Landroid/util/LruCache;->size:I
-
-    .line 218
-    iget v3, p0, Landroid/util/LruCache;->evictionCount:I
-
-    add-int/lit8 v3, v3, 0x1
-
-    iput v3, p0, Landroid/util/LruCache;->evictionCount:I
-
-    .line 219
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 221
-    const/4 v3, 0x1
-
-    const/4 v4, 0x0
-
-    invoke-virtual {p0, v3, v0, v2, v4}, Landroid/util/LruCache;->entryRemoved(ZLjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
-
-    goto :goto_0
 .end method

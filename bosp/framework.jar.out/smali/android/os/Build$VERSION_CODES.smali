@@ -47,10 +47,6 @@
 
 .field public static final ICE_CREAM_SANDWICH_MR1:I = 0xf
 
-.field public static final JELLY_BEAN:I = 0x10
-
-.field public static final JELLY_BEAN_MR1:I = 0x11
-
 
 # direct methods
 .method public constructor <init>()V

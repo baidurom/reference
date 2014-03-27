@@ -55,7 +55,7 @@
 
     sput-object v0, Landroid/view/textservice/SuggestionsInfo;->EMPTY:[Ljava/lang/String;
 
-    .line 165
+    .line 174
     new-instance v0, Landroid/view/textservice/SuggestionsInfo$1;
 
     invoke-direct {v0}, Landroid/view/textservice/SuggestionsInfo$1;-><init>()V
@@ -66,18 +66,50 @@
 .end method
 
 .method public constructor <init>(I[Ljava/lang/String;)V
-    .locals 1
+    .locals 2
     .parameter "suggestionsAttributes"
     .parameter "suggestions"
 
     .prologue
-    const/4 v0, 0x0
+    const/4 v1, 0x0
+
+    .line 59
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 60
-    invoke-direct {p0, p1, p2, v0, v0}, Landroid/view/textservice/SuggestionsInfo;-><init>(I[Ljava/lang/String;II)V
+    iput p1, p0, Landroid/view/textservice/SuggestionsInfo;->mSuggestionsAttributes:I
 
     .line 61
+    if-nez p2, :cond_0
+
+    .line 62
+    sget-object v0, Landroid/view/textservice/SuggestionsInfo;->EMPTY:[Ljava/lang/String;
+
+    iput-object v0, p0, Landroid/view/textservice/SuggestionsInfo;->mSuggestions:[Ljava/lang/String;
+
+    .line 63
+    iput-boolean v1, p0, Landroid/view/textservice/SuggestionsInfo;->mSuggestionsAvailable:Z
+
+    .line 68
+    :goto_0
+    iput v1, p0, Landroid/view/textservice/SuggestionsInfo;->mCookie:I
+
+    .line 69
+    iput v1, p0, Landroid/view/textservice/SuggestionsInfo;->mSequence:I
+
+    .line 70
     return-void
+
+    .line 65
+    :cond_0
+    iput-object p2, p0, Landroid/view/textservice/SuggestionsInfo;->mSuggestions:[Ljava/lang/String;
+
+    .line 66
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Landroid/view/textservice/SuggestionsInfo;->mSuggestionsAvailable:Z
+
+    goto :goto_0
 .end method
 
 .method public constructor <init>(I[Ljava/lang/String;II)V
@@ -88,40 +120,40 @@
     .parameter "sequence"
 
     .prologue
-    .line 71
+    .line 80
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 72
+    .line 81
     if-nez p2, :cond_0
 
-    .line 73
+    .line 82
     sget-object v0, Landroid/view/textservice/SuggestionsInfo;->EMPTY:[Ljava/lang/String;
 
     iput-object v0, p0, Landroid/view/textservice/SuggestionsInfo;->mSuggestions:[Ljava/lang/String;
 
-    .line 74
+    .line 83
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/view/textservice/SuggestionsInfo;->mSuggestionsAvailable:Z
 
-    .line 79
+    .line 88
     :goto_0
     iput p1, p0, Landroid/view/textservice/SuggestionsInfo;->mSuggestionsAttributes:I
 
-    .line 80
+    .line 89
     iput p3, p0, Landroid/view/textservice/SuggestionsInfo;->mCookie:I
 
-    .line 81
+    .line 90
     iput p4, p0, Landroid/view/textservice/SuggestionsInfo;->mSequence:I
 
-    .line 82
+    .line 91
     return-void
 
-    .line 76
+    .line 85
     :cond_0
     iput-object p2, p0, Landroid/view/textservice/SuggestionsInfo;->mSuggestions:[Ljava/lang/String;
 
-    .line 77
+    .line 86
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/view/textservice/SuggestionsInfo;->mSuggestionsAvailable:Z
@@ -136,38 +168,38 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 84
+    .line 93
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 85
+    .line 94
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, p0, Landroid/view/textservice/SuggestionsInfo;->mSuggestionsAttributes:I
 
-    .line 86
+    .line 95
     invoke-virtual {p1}, Landroid/os/Parcel;->readStringArray()[Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, p0, Landroid/view/textservice/SuggestionsInfo;->mSuggestions:[Ljava/lang/String;
 
-    .line 87
+    .line 96
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, p0, Landroid/view/textservice/SuggestionsInfo;->mCookie:I
 
-    .line 88
+    .line 97
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, p0, Landroid/view/textservice/SuggestionsInfo;->mSequence:I
 
-    .line 89
+    .line 98
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
@@ -177,10 +209,10 @@
     :goto_0
     iput-boolean v0, p0, Landroid/view/textservice/SuggestionsInfo;->mSuggestionsAvailable:Z
 
-    .line 90
+    .line 99
     return-void
 
-    .line 89
+    .line 98
     :cond_0
     const/4 v0, 0x0
 
@@ -193,7 +225,7 @@
     .locals 1
 
     .prologue
-    .line 183
+    .line 192
     const/4 v0, 0x0
 
     return v0
@@ -203,7 +235,7 @@
     .locals 1
 
     .prologue
-    .line 122
+    .line 131
     iget v0, p0, Landroid/view/textservice/SuggestionsInfo;->mCookie:I
 
     return v0
@@ -213,7 +245,7 @@
     .locals 1
 
     .prologue
-    .line 129
+    .line 138
     iget v0, p0, Landroid/view/textservice/SuggestionsInfo;->mSequence:I
 
     return v0
@@ -224,7 +256,7 @@
     .parameter "i"
 
     .prologue
-    .line 159
+    .line 168
     iget-object v0, p0, Landroid/view/textservice/SuggestionsInfo;->mSuggestions:[Ljava/lang/String;
 
     aget-object v0, v0, p1
@@ -236,7 +268,7 @@
     .locals 1
 
     .prologue
-    .line 138
+    .line 147
     iget v0, p0, Landroid/view/textservice/SuggestionsInfo;->mSuggestionsAttributes:I
 
     return v0
@@ -246,15 +278,15 @@
     .locals 1
 
     .prologue
-    .line 148
+    .line 157
     iget-boolean v0, p0, Landroid/view/textservice/SuggestionsInfo;->mSuggestionsAvailable:Z
 
     if-nez v0, :cond_0
 
-    .line 149
+    .line 158
     const/4 v0, -0x1
 
-    .line 151
+    .line 160
     :goto_0
     return v0
 
@@ -272,13 +304,13 @@
     .parameter "sequence"
 
     .prologue
-    .line 114
+    .line 123
     iput p1, p0, Landroid/view/textservice/SuggestionsInfo;->mCookie:I
 
-    .line 115
+    .line 124
     iput p2, p0, Landroid/view/textservice/SuggestionsInfo;->mSequence:I
 
-    .line 116
+    .line 125
     return-void
 .end method
 
@@ -288,27 +320,27 @@
     .parameter "flags"
 
     .prologue
-    .line 100
+    .line 109
     iget v0, p0, Landroid/view/textservice/SuggestionsInfo;->mSuggestionsAttributes:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 101
+    .line 110
     iget-object v0, p0, Landroid/view/textservice/SuggestionsInfo;->mSuggestions:[Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeStringArray([Ljava/lang/String;)V
 
-    .line 102
+    .line 111
     iget v0, p0, Landroid/view/textservice/SuggestionsInfo;->mCookie:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 103
+    .line 112
     iget v0, p0, Landroid/view/textservice/SuggestionsInfo;->mSequence:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 104
+    .line 113
     iget-boolean v0, p0, Landroid/view/textservice/SuggestionsInfo;->mSuggestionsAvailable:Z
 
     if-eqz v0, :cond_0
@@ -318,10 +350,10 @@
     :goto_0
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 105
+    .line 114
     return-void
 
-    .line 104
+    .line 113
     :cond_0
     const/4 v0, 0x0
 

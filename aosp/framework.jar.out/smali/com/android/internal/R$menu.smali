@@ -15,9 +15,9 @@
 
 
 # static fields
-.field public static final webview_copy:I = 0x1140000
+.field public static final webview_copy:I = #menu@webview_copy#t
 
-.field public static final webview_find:I = 0x1140001
+.field public static final webview_find:I = #menu@webview_find#t
 
 
 # direct methods
@@ -25,7 +25,7 @@
     .locals 0
 
     .prologue
-    .line 12902
+    .line 14801
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

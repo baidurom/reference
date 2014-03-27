@@ -38,9 +38,19 @@
         <item>Custom</item>
     </string-array>
     <array name="preloaded_drawables">
+        <item>@drawable/spinner_black_16</item>
+        <item>@drawable/spinner_black_20</item>
+        <item>@drawable/spinner_black_48</item>
+        <item>@drawable/spinner_black_76</item>
+        <item>@drawable/spinner_white_16</item>
+        <item>@drawable/spinner_white_48</item>
+        <item>@drawable/spinner_white_76</item>
+        <item>@drawable/toast_frame</item>
         <item>@drawable/toast_frame_holo</item>
+        <item>@drawable/btn_check_on_selected</item>
         <item>@drawable/btn_check_on_pressed_holo_light</item>
         <item>@drawable/btn_check_on_pressed_holo_dark</item>
+        <item>@drawable/btn_check_on_pressed</item>
         <item>@drawable/btn_check_on_holo_light</item>
         <item>@drawable/btn_check_on_holo_dark</item>
         <item>@drawable/btn_check_on_focused_holo_light</item>
@@ -49,8 +59,13 @@
         <item>@drawable/btn_check_on_disabled_holo_dark</item>
         <item>@drawable/btn_check_on_disabled_focused_holo_light</item>
         <item>@drawable/btn_check_on_disabled_focused_holo_dark</item>
+        <item>@drawable/btn_check_on_disable_focused</item>
+        <item>@drawable/btn_check_on_disable</item>
+        <item>@drawable/btn_check_on</item>
+        <item>@drawable/btn_check_off_selected</item>
         <item>@drawable/btn_check_off_pressed_holo_light</item>
         <item>@drawable/btn_check_off_pressed_holo_dark</item>
+        <item>@drawable/btn_check_off_pressed</item>
         <item>@drawable/btn_check_off_holo_light</item>
         <item>@drawable/btn_check_off_holo_dark</item>
         <item>@drawable/btn_check_off_focused_holo_light</item>
@@ -59,10 +74,16 @@
         <item>@drawable/btn_check_off_disabled_holo_dark</item>
         <item>@drawable/btn_check_off_disabled_focused_holo_light</item>
         <item>@drawable/btn_check_off_disabled_focused_holo_dark</item>
+        <item>@drawable/btn_check_off_disable_focused</item>
+        <item>@drawable/btn_check_off_disable</item>
+        <item>@drawable/btn_check_label_background</item>
         <item>@drawable/btn_check_holo_light</item>
         <item>@drawable/btn_check_holo_dark</item>
+        <item>@drawable/btn_check</item>
+        <item>@drawable/btn_radio_on_selected</item>
         <item>@drawable/btn_radio_on_pressed_holo_light</item>
         <item>@drawable/btn_radio_on_pressed_holo_dark</item>
+        <item>@drawable/btn_radio_on_pressed</item>
         <item>@drawable/btn_radio_on_holo_light</item>
         <item>@drawable/btn_radio_on_holo_dark</item>
         <item>@drawable/btn_radio_on_focused_holo_light</item>
@@ -71,8 +92,11 @@
         <item>@drawable/btn_radio_on_disabled_holo_dark</item>
         <item>@drawable/btn_radio_on_disabled_focused_holo_light</item>
         <item>@drawable/btn_radio_on_disabled_focused_holo_dark</item>
+        <item>@drawable/btn_radio_on</item>
+        <item>@drawable/btn_radio_off_selected</item>
         <item>@drawable/btn_radio_off_pressed_holo_light</item>
         <item>@drawable/btn_radio_off_pressed_holo_dark</item>
+        <item>@drawable/btn_radio_off_pressed</item>
         <item>@drawable/btn_radio_off_holo_light</item>
         <item>@drawable/btn_radio_off_holo_dark</item>
         <item>@drawable/btn_radio_off_focused_holo_light</item>
@@ -81,10 +105,23 @@
         <item>@drawable/btn_radio_off_disabled_holo_dark</item>
         <item>@drawable/btn_radio_off_disabled_focused_holo_light</item>
         <item>@drawable/btn_radio_off_disabled_focused_holo_dark</item>
+        <item>@drawable/btn_radio_label_background</item>
+        <item>@drawable/btn_radio</item>
+        <item>@drawable/btn_default_transparent_normal</item>
+        <item>@drawable/btn_default_small_selected</item>
+        <item>@drawable/btn_default_small_pressed</item>
+        <item>@drawable/btn_default_small_normal_disable_focused</item>
+        <item>@drawable/btn_default_small_normal_disable</item>
+        <item>@drawable/btn_default_small_normal</item>
+        <item>@drawable/btn_default_selected</item>
         <item>@drawable/btn_default_pressed_holo_light</item>
         <item>@drawable/btn_default_pressed_holo_dark</item>
+        <item>@drawable/btn_default_pressed</item>
         <item>@drawable/btn_default_normal_holo_light</item>
         <item>@drawable/btn_default_normal_holo_dark</item>
+        <item>@drawable/btn_default_normal_disable_focused</item>
+        <item>@drawable/btn_default_normal_disable</item>
+        <item>@drawable/btn_default_normal</item>
         <item>@drawable/btn_default_focused_holo_light</item>
         <item>@drawable/btn_default_focused_holo_dark</item>
         <item>@drawable/btn_default_disabled_holo_light</item>
@@ -93,6 +130,24 @@
         <item>@drawable/btn_default_disabled_focused_holo_dark</item>
         <item>@drawable/btn_default_holo_dark</item>
         <item>@drawable/btn_default_holo_light</item>
+        <item>@drawable/btn_default</item>
+        <item>@drawable/btn_default_small</item>
+        <item>@drawable/btn_dropdown_disabled</item>
+        <item>@drawable/btn_dropdown_disabled_focused</item>
+        <item>@drawable/btn_dropdown_normal</item>
+        <item>@drawable/btn_dropdown_pressed</item>
+        <item>@drawable/btn_dropdown_selected</item>
+        <item>@drawable/btn_star_label_background</item>
+        <item>@drawable/btn_star_big_off</item>
+        <item>@drawable/btn_star_big_on</item>
+        <item>@drawable/btn_star_big_on_disable</item>
+        <item>@drawable/btn_star_big_off_disable</item>
+        <item>@drawable/btn_star_big_on_pressed</item>
+        <item>@drawable/btn_star_big_off_pressed</item>
+        <item>@drawable/btn_star_big_on_selected</item>
+        <item>@drawable/btn_star_big_off_selected</item>
+        <item>@drawable/btn_star_big_on_disable_focused</item>
+        <item>@drawable/btn_star_big_off_disable_focused</item>
         <item>@drawable/btn_star_off_normal_holo_light</item>
         <item>@drawable/btn_star_on_normal_holo_light</item>
         <item>@drawable/btn_star_on_disabled_holo_light</item>
@@ -115,6 +170,7 @@
         <item>@drawable/btn_star_on_disabled_focused_holo_dark</item>
         <item>@drawable/btn_star_off_disabled_focused_holo_dark</item>
         <item>@drawable/btn_star_holo_dark</item>
+        <item>@drawable/btn_star</item>
         <item>@drawable/btn_toggle_on_pressed_holo_light</item>
         <item>@drawable/btn_toggle_on_pressed_holo_dark</item>
         <item>@drawable/btn_toggle_on_normal_holo_light</item>
@@ -125,6 +181,7 @@
         <item>@drawable/btn_toggle_on_disabled_holo_dark</item>
         <item>@drawable/btn_toggle_on_disabled_focused_holo_light</item>
         <item>@drawable/btn_toggle_on_disabled_focused_holo_dark</item>
+        <item>@drawable/btn_toggle_on</item>
         <item>@drawable/btn_toggle_off_pressed_holo_light</item>
         <item>@drawable/btn_toggle_off_pressed_holo_dark</item>
         <item>@drawable/btn_toggle_off_normal_holo_light</item>
@@ -135,10 +192,23 @@
         <item>@drawable/btn_toggle_off_disabled_holo_dark</item>
         <item>@drawable/btn_toggle_off_disabled_focused_holo_light</item>
         <item>@drawable/btn_toggle_off_disabled_focused_holo_dark</item>
+        <item>@drawable/btn_toggle_off</item>
         <item>@drawable/btn_toggle_holo_light</item>
         <item>@drawable/btn_toggle_holo_dark</item>
+        <item>@drawable/btn_toggle</item>
+        <item>@drawable/btn_toggle_bg</item>
+        <item>@drawable/btn_dropdown</item>
+        <item>@drawable/btn_dropdown</item>
+        <item>@drawable/light_header_dither</item>
+        <item>@drawable/divider_horizontal_textfield</item>
+        <item>@drawable/divider_horizontal_dark_opaque</item>
+        <item>@drawable/divider_horizontal_dark</item>
+        <item>@drawable/divider_horizontal_bright_opaque</item>
+        <item>@drawable/divider_horizontal_bright</item>
+        <item>@drawable/divider_vertical_dark</item>
         <item>@drawable/edit_text_holo_light</item>
         <item>@drawable/edit_text_holo_dark</item>
+        <item>@drawable/edit_text</item>
         <item>@drawable/text_cursor_holo_light</item>
         <item>@drawable/text_cursor_holo_dark</item>
         <item>@drawable/text_select_handle_left</item>
@@ -146,41 +216,70 @@
         <item>@drawable/text_edit_paste_window</item>
         <item>@drawable/expander_close_holo_dark</item>
         <item>@drawable/expander_close_holo_light</item>
+        <item>@drawable/expander_ic_maximized</item>
+        <item>@drawable/expander_ic_minimized</item>
+        <item>@drawable/expander_group</item>
         <item>@drawable/expander_group_holo_dark</item>
         <item>@drawable/expander_group_holo_light</item>
+        <item>@drawable/list_selector_background</item>
+        <item>@drawable/list_selector_background_light</item>
+        <item>@drawable/list_selector_background_longpress</item>
+        <item>@drawable/list_selector_background_longpress_light</item>
+        <item>@drawable/list_selector_background_pressed</item>
+        <item>@drawable/list_selector_background_pressed_light</item>
+        <item>@drawable/list_selector_background_selected</item>
         <item>@drawable/list_selector_holo_dark</item>
         <item>@drawable/list_selector_holo_light</item>
         <item>@drawable/list_section_divider_holo_light</item>
         <item>@drawable/list_section_divider_holo_dark</item>
+        <item>@drawable/menu_background</item>
+        <item>@drawable/menu_background_fill_parent_width</item>
         <item>@drawable/menu_hardkey_panel_holo_dark</item>
         <item>@drawable/menu_hardkey_panel_holo_light</item>
         <item>@drawable/menu_submenu_background</item>
+        <item>@drawable/menu_selector</item>
         <item>@drawable/menu_dropdown_panel_holo_light</item>
         <item>@drawable/menu_dropdown_panel_holo_dark</item>
         <item>@drawable/overscroll_edge</item>
         <item>@drawable/overscroll_glow</item>
-        <item>@drawable/spinner_16_outer_holo</item>
-        <item>@drawable/spinner_16_inner_holo</item>
-        <item>@drawable/spinner_48_outer_holo</item>
-        <item>@drawable/spinner_48_inner_holo</item>
-        <item>@drawable/spinner_76_outer_holo</item>
-        <item>@drawable/spinner_76_inner_holo</item>
+        <item>@drawable/panel_background</item>
+        <item>@drawable/popup_bottom_bright</item>
+        <item>@drawable/popup_bottom_dark</item>
+        <item>@drawable/popup_bottom_medium</item>
+        <item>@drawable/popup_center_bright</item>
+        <item>@drawable/popup_center_dark</item>
+        <item>@drawable/popup_center_medium</item>
+        <item>@drawable/popup_full_bright</item>
+        <item>@drawable/popup_full_dark</item>
+        <item>@drawable/popup_top_bright</item>
+        <item>@drawable/popup_top_dark</item>
+        <item>@drawable/popup_inline_error_above_holo_dark</item>
+        <item>@drawable/popup_inline_error_above_holo_light</item>
+        <item>@drawable/popup_inline_error_holo_dark</item>
+        <item>@drawable/popup_inline_error_holo_light</item>
         <item>@drawable/progress_bg_holo_dark</item>
         <item>@drawable/progress_bg_holo_light</item>
+        <item>@drawable/progress_horizontal</item>
         <item>@drawable/progress_horizontal_holo_dark</item>
         <item>@drawable/progress_horizontal_holo_light</item>
+        <item>@drawable/progress_indeterminate_horizontal</item>
         <item>@drawable/progress_indeterminate_horizontal_holo</item>
+        <item>@drawable/progress_large</item>
         <item>@drawable/progress_large_holo</item>
+        <item>@drawable/progress_large_white</item>
+        <item>@drawable/progress_medium</item>
         <item>@drawable/progress_medium_holo</item>
+        <item>@drawable/progress_medium_white</item>
         <item>@drawable/progress_primary_holo_dark</item>
         <item>@drawable/progress_primary_holo_light</item>
         <item>@drawable/progress_secondary_holo_dark</item>
         <item>@drawable/progress_secondary_holo_light</item>
+        <item>@drawable/progress_small</item>
         <item>@drawable/progress_small_holo</item>
+        <item>@drawable/progress_small_titlebar</item>
+        <item>@drawable/progress_small_white</item>
         <item>@drawable/scrubber_progress_horizontal_holo_dark</item>
         <item>@drawable/scrubber_progress_horizontal_holo_light</item>
-        <item>@drawable/background_holo_light</item>
-        <item>@drawable/background_holo_dark</item>
         <item>@drawable/screen_background_dark</item>
         <item>@drawable/screen_background_dark_transparent</item>
         <item>@drawable/screen_background_light</item>
@@ -189,6 +288,8 @@
         <item>@drawable/screen_background_selector_light</item>
         <item>@drawable/scrollbar_handle_holo_dark</item>
         <item>@drawable/scrollbar_handle_holo_light</item>
+        <item>@drawable/scrollbar_handle_horizontal</item>
+        <item>@drawable/scrollbar_handle_vertical</item>
         <item>@drawable/spinner_background_holo_dark</item>
         <item>@drawable/spinner_background_holo_light</item>
         <item>@drawable/spinner_ab_default_holo_dark</item>
@@ -205,6 +306,9 @@
         <item>@drawable/spinner_default_holo_light</item>
         <item>@drawable/spinner_disabled_holo_dark</item>
         <item>@drawable/spinner_disabled_holo_light</item>
+        <item>@drawable/spinner_dropdown_background</item>
+        <item>@drawable/spinner_dropdown_background_down</item>
+        <item>@drawable/spinner_dropdown_background_up</item>
         <item>@drawable/spinner_focused_holo_dark</item>
         <item>@drawable/spinner_focused_holo_light</item>
         <item>@drawable/spinner_pressed_holo_dark</item>
@@ -249,11 +353,14 @@
         <item>@drawable/dialog_middle_holo_light</item>
         <item>@drawable/dialog_top_holo_dark</item>
         <item>@drawable/dialog_top_holo_light</item>
+        <item>@drawable/ic_dialog_alert</item>
         <item>@drawable/ic_dialog_alert_holo_dark</item>
         <item>@drawable/ic_dialog_alert_holo_light</item>
         <item>@drawable/list_divider_holo_dark</item>
         <item>@drawable/list_divider_holo_light</item>
         <item>@drawable/list_divider_holo_light</item>
+        <item>@drawable/ic_lockscreen_chevron_left</item>
+        <item>@drawable/ic_lockscreen_chevron_right</item>
         <item>@drawable/ab_transparent_dark_holo</item>
         <item>@drawable/ab_stacked_transparent_dark_holo</item>
         <item>@drawable/ab_bottom_transparent_dark_holo</item>
@@ -269,6 +376,8 @@
         <item>@drawable/ab_solid_shadow_holo</item>
         <item>@drawable/item_background_holo_dark</item>
         <item>@drawable/item_background_holo_light</item>
+        <item>@drawable/ic_ab_back_holo_dark</item>
+        <item>@drawable/ic_ab_back_holo_light</item>
         <item>@drawable/fastscroll_thumb_holo</item>
         <item>@drawable/fastscroll_thumb_pressed_holo</item>
         <item>@drawable/fastscroll_thumb_default_holo</item>
@@ -342,6 +451,13 @@
         <item>#00000000</item>
         <item>#ffffffff</item>
     </array>
+    <integer-array name="maps_starting_lat_lng">
+        <item>36149777</item>
+        <item>-95993398</item>
+    </integer-array>
+    <integer-array name="maps_starting_zoom">
+        <item>3</item>
+    </integer-array>
     <string-array name="special_locale_codes">
         <item>zh_CN</item>
         <item>zh_TW</item>
@@ -352,64 +468,46 @@
     </string-array>
     <array name="lockscreen_targets_when_silent">
         <item>@drawable/ic_lockscreen_unlock</item>
-        <item>@drawable/ic_action_assist_generic</item>
+        <item>@null</item>
         <item>@drawable/ic_lockscreen_soundon</item>
         <item>@null</item>
     </array>
-    <string-array name="lockscreen_target_descriptions_when_silent">
+    <array name="lockscreen_target_descriptions_when_silent">
         <item>@string/description_target_unlock</item>
-        <item>@string/description_target_search</item>
+        <item>@null</item>
         <item>@string/description_target_soundon</item>
         <item>@null</item>
-    </string-array>
-    <string-array name="lockscreen_direction_descriptions">
+    </array>
+    <array name="lockscreen_direction_descriptions">
         <item>@string/description_direction_right</item>
-        <item>@string/description_direction_up</item>
+        <item>@null</item>
         <item>@string/description_direction_left</item>
         <item>@null</item>
-    </string-array>
+    </array>
     <array name="lockscreen_targets_when_soundon">
         <item>@drawable/ic_lockscreen_unlock</item>
-        <item>@drawable/ic_action_assist_generic</item>
+        <item>@null</item>
         <item>@drawable/ic_lockscreen_silent</item>
         <item>@null</item>
     </array>
-    <string-array name="lockscreen_target_descriptions_when_soundon">
+    <array name="lockscreen_target_descriptions_when_soundon">
         <item>@string/description_target_unlock</item>
-        <item>@string/description_target_search</item>
+        <item>@null</item>
         <item>@string/description_target_silent</item>
         <item>@null</item>
-    </string-array>
+    </array>
     <array name="lockscreen_targets_with_camera">
         <item>@drawable/ic_lockscreen_unlock</item>
-        <item>@drawable/ic_action_assist_generic</item>
+        <item>@null</item>
         <item>@drawable/ic_lockscreen_camera</item>
         <item>@null</item>
     </array>
-    <string-array name="lockscreen_target_descriptions_with_camera">
+    <array name="lockscreen_target_descriptions_with_camera">
         <item>@string/description_target_unlock</item>
-        <item>@string/description_target_search</item>
+        <item>@null</item>
         <item>@string/description_target_camera</item>
         <item>@null</item>
-    </string-array>
-    <string-array name="lockscreen_targets_unlock_only">
-        <item>@drawable/ic_lockscreen_unlock</item>
-    </string-array>
-    <string-array name="lockscreen_target_descriptions_unlock_only">
-        <item>@string/description_target_unlock</item>
-    </string-array>
-    <string-array name="lockscreen_num_pad_klondike">
-        <item></item>
-        <item></item>
-        <item>ABC</item>
-        <item>DEF</item>
-        <item>GHI</item>
-        <item>JKL</item>
-        <item>MNO</item>
-        <item>PQRS</item>
-        <item>TUV</item>
-        <item>WXYZ</item>
-    </string-array>
+    </array>
     <string-array name="config_statusBarIcons">
         <item>ime</item>
         <item>sync_failing</item>
@@ -431,20 +529,14 @@
         <item>secure</item>
         <item>clock</item>
     </string-array>
-    <integer-array name="config_masterVolumeRamp">
-        <item>0</item>
-        <item>5</item>
-    </integer-array>
     <string-array name="networkAttributes">
         <item>wifi,1,1,1,-1,true</item>
         <item>mobile,0,0,0,-1,true</item>
         <item>mobile_mms,2,0,2,60000,true</item>
         <item>mobile_supl,3,0,2,60000,true</item>
-        <item>mobile_dun,4,0,3,60000,true</item>
+        <item>mobile_dun,4,0,4,60000,true</item>
         <item>mobile_hipri,5,0,3,60000,true</item>
-        <item>mobile_bluetooth,7,7,1,-1,true</item>
-        <item>ethernet,9,9,1,-1,true</item>
-        <item>wifi_p2p,13,1,0,-1,true</item>
+        <item>bluetooth,7,7,0,-1,true</item>
     </string-array>
     <integer-array name="config_protectedNetworks">
         <item>10</item>
@@ -455,7 +547,6 @@
         <item>1,1</item>
         <item>0,1</item>
         <item>7,1</item>
-        <item>9,1</item>
     </string-array>
     <integer-array name="config_data_usage_network_types">
         <item>0</item>
@@ -471,11 +562,11 @@
         <item>rndis0</item>
     </string-array>
     <string-array name="config_tether_wifi_regexs">
-        <item>wlan0</item>
+        <item>wl0.1</item>
     </string-array>
     <array name="config_tether_wimax_regexs" />
     <string-array name="config_tether_bluetooth_regexs">
-        <item>bt-pan</item>
+        <item>bnep\\d</item>
     </string-array>
     <array name="config_tether_dhcp_range" />
     <array name="config_mobile_hotspot_provision_app" />
@@ -487,7 +578,6 @@
     </integer-array>
     <array name="config_cdma_dun_supported_types" />
     <array name="config_usbHostBlacklist" />
-    <array name="config_serialPorts" />
     <integer-array name="config_longPressVibePattern">
         <item>0</item>
         <item>1</item>
@@ -495,16 +585,16 @@
         <item>21</item>
     </integer-array>
     <integer-array name="config_virtualKeyVibePattern">
+        <item>0</item>
         <item>10</item>
+        <item>20</item>
+        <item>30</item>
     </integer-array>
     <integer-array name="config_keyboardTapVibePattern">
-        <item>40</item>
+        <item>30</item>
     </integer-array>
     <integer-array name="config_safeModeDisabledVibePattern">
-        <item>0</item>
         <item>1</item>
-        <item>20</item>
-        <item>21</item>
     </integer-array>
     <integer-array name="config_safeModeEnabledVibePattern">
         <item>0</item>
@@ -521,66 +611,24 @@
         <item>10</item>
     </integer-array>
     <integer-array name="config_autoBrightnessLevels">
-        <item>6</item>
-        <item>9</item>
-        <item>14</item>
-        <item>20</item>
-        <item>30</item>
-        <item>46</item>
-        <item>68</item>
-        <item>103</item>
-        <item>154</item>
-        <item>231</item>
-        <item>346</item>
-        <item>519</item>
-        <item>778</item>
-        <item>1168</item>
-        <item>1752</item>
-        <item>2627</item>
-        <item>3941</item>
-        <item>5912</item>
-        <item>8867</item>
+        <item>7</item>
+        <item>94</item>
+        <item>208</item>
+        <item>458</item>
+        <item>2223</item>
     </integer-array>
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>19</item>
-        <item>23</item>
-        <item>26</item>
-        <item>30</item>
-        <item>34</item>
-        <item>39</item>
-        <item>45</item>
-        <item>51</item>
-        <item>59</item>
-        <item>67</item>
-        <item>77</item>
-        <item>88</item>
-        <item>101</item>
-        <item>116</item>
-        <item>133</item>
-        <item>152</item>
-        <item>174</item>
-        <item>199</item>
-        <item>228</item>
+        <item>10</item>
+        <item>35</item>
+        <item>55</item>
+        <item>70</item>
+        <item>70</item>
         <item>250</item>
     </integer-array>
     <integer-array name="config_autoBrightnessButtonBacklightValues">
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
+        <item>255</item>
+        <item>255</item>
+        <item>255</item>
         <item>0</item>
         <item>0</item>
         <item>0</item>
@@ -592,48 +640,11 @@
         <item>0</item>
         <item>0</item>
         <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
     </integer-array>
-    <string-array name="config_locationProviderPackageNames">
-        <item>com.google.android.location</item>
-        <item>com.android.location.fused</item>
-    </string-array>
     <array name="config_twoDigitNumberPattern" />
     <array name="config_sms_enabled_single_shift_tables" />
     <array name="config_sms_enabled_locking_shift_tables" />
     <array name="config_oemUsbModeOverride" />
-    <integer-array name="config_defaultNotificationVibePattern">
-        <item>0</item>
-        <item>350</item>
-        <item>250</item>
-        <item>350</item>
-    </integer-array>
-    <integer-array name="config_notificationFallbackVibePattern">
-        <item>0</item>
-        <item>100</item>
-        <item>150</item>
-        <item>100</item>
-    </integer-array>
-    <integer-array name="maps_starting_lat_lng">
-        <item>36149777</item>
-        <item>-95993398</item>
-    </integer-array>
-    <integer-array name="maps_starting_zoom">
-        <item>3</item>
-    </integer-array>
     <array name="common_nicknames" />
     <string-array name="imAddressTypes">
         <item>Home</item>

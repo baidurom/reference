@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 406
+    .line 390
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -32,20 +32,20 @@
     .parameter "ctx"
 
     .prologue
-    .line 409
-    new-instance v0, Landroid/net/NetworkPolicyManager;
+    .line 392
+    new-instance v0, Landroid/hardware/SensorManager;
 
-    const-string/jumbo v1, "netpolicy"
+    iget-object v1, p1, Landroid/app/ContextImpl;->mMainThread:Landroid/app/ActivityThread;
 
-    invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
-
-    move-result-object v1
-
-    invoke-static {v1}, Landroid/net/INetworkPolicyManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/net/INetworkPolicyManager;
+    invoke-virtual {v1}, Landroid/app/ActivityThread;->getHandler()Landroid/os/Handler;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Landroid/net/NetworkPolicyManager;-><init>(Landroid/net/INetworkPolicyManager;)V
+    invoke-virtual {v1}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Landroid/hardware/SensorManager;-><init>(Landroid/os/Looper;)V
 
     return-object v0
 .end method

@@ -15,53 +15,53 @@
 
 
 # static fields
-.field public static final activity_list_item:I = 0x1090000
+.field public static final activity_list_item:I = #layout@activity_list_item#t
 
-.field public static final browser_link_context_header:I = 0x109000e
+.field public static final browser_link_context_header:I = #layout@browser_link_context_header#t
 
-.field public static final expandable_list_content:I = 0x1090001
+.field public static final expandable_list_content:I = #layout@expandable_list_content#t
 
-.field public static final list_content:I = 0x1090014
+.field public static final list_content:I = #layout@list_content#t
 
-.field public static final preference_category:I = 0x1090002
+.field public static final preference_category:I = #layout@preference_category#t
 
-.field public static final select_dialog_item:I = 0x1090011
+.field public static final select_dialog_item:I = #layout@select_dialog_item#t
 
-.field public static final select_dialog_multichoice:I = 0x1090013
+.field public static final select_dialog_multichoice:I = #layout@select_dialog_multichoice#t
 
-.field public static final select_dialog_singlechoice:I = 0x1090012
+.field public static final select_dialog_singlechoice:I = #layout@select_dialog_singlechoice#t
 
-.field public static final simple_dropdown_item_1line:I = 0x109000a
+.field public static final simple_dropdown_item_1line:I = #layout@simple_dropdown_item_1line#t
 
-.field public static final simple_expandable_list_item_1:I = 0x1090006
+.field public static final simple_expandable_list_item_1:I = #layout@simple_expandable_list_item_1#t
 
-.field public static final simple_expandable_list_item_2:I = 0x1090007
+.field public static final simple_expandable_list_item_2:I = #layout@simple_expandable_list_item_2#t
 
-.field public static final simple_gallery_item:I = 0x109000b
+.field public static final simple_gallery_item:I = #layout@simple_gallery_item#t
 
-.field public static final simple_list_item_1:I = 0x1090003
+.field public static final simple_list_item_1:I = #layout@simple_list_item_1#t
 
-.field public static final simple_list_item_2:I = 0x1090004
+.field public static final simple_list_item_2:I = #layout@simple_list_item_2#t
 
-.field public static final simple_list_item_activated_1:I = 0x1090016
+.field public static final simple_list_item_activated_1:I = #layout@simple_list_item_activated_1#t
 
-.field public static final simple_list_item_activated_2:I = 0x1090017
+.field public static final simple_list_item_activated_2:I = #layout@simple_list_item_activated_2#t
 
-.field public static final simple_list_item_checked:I = 0x1090005
+.field public static final simple_list_item_checked:I = #layout@simple_list_item_checked#t
 
-.field public static final simple_list_item_multiple_choice:I = 0x1090010
+.field public static final simple_list_item_multiple_choice:I = #layout@simple_list_item_multiple_choice#t
 
-.field public static final simple_list_item_single_choice:I = 0x109000f
+.field public static final simple_list_item_single_choice:I = #layout@simple_list_item_single_choice#t
 
-.field public static final simple_selectable_list_item:I = 0x1090015
+.field public static final simple_selectable_list_item:I = #layout@simple_selectable_list_item#t
 
-.field public static final simple_spinner_dropdown_item:I = 0x1090009
+.field public static final simple_spinner_dropdown_item:I = #layout@simple_spinner_dropdown_item#t
 
-.field public static final simple_spinner_item:I = 0x1090008
+.field public static final simple_spinner_item:I = #layout@simple_spinner_item#t
 
-.field public static final test_list_item:I = 0x109000c
+.field public static final test_list_item:I = #layout@test_list_item#t
 
-.field public static final two_line_list_item:I = 0x109000d
+.field public static final two_line_list_item:I = #layout@two_line_list_item#t
 
 
 # direct methods
@@ -69,7 +69,7 @@
     .locals 0
 
     .prologue
-    .line 10747
+    .line 10263
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

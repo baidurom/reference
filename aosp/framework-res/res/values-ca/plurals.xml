@@ -67,18 +67,6 @@
         <item quantity="other">"d'aquí a %d dies"</item>
         <item quantity="one">demà</item>
     </plurals>
-    <plurals name="duration_seconds">
-        <item quantity="other">%d segons</item>
-        <item quantity="one">1 segon</item>
-    </plurals>
-    <plurals name="duration_minutes">
-        <item quantity="other">%d minuts</item>
-        <item quantity="one">1 minut</item>
-    </plurals>
-    <plurals name="duration_hours">
-        <item quantity="other">%d hores</item>
-        <item quantity="one">1 hora</item>
-    </plurals>
     <plurals name="wifi_available">
         <item quantity="other">Xarxes Wi-fi disponibles</item>
         <item quantity="one">Xarxa Wi-fi disponible</item>

@@ -67,18 +67,6 @@
         <item quantity="other">%d nap múlva</item>
         <item quantity="one">holnap</item>
     </plurals>
-    <plurals name="duration_seconds">
-        <item quantity="other">%d másodperc</item>
-        <item quantity="one">1 másodperc</item>
-    </plurals>
-    <plurals name="duration_minutes">
-        <item quantity="other">%d perc</item>
-        <item quantity="one">1 perc</item>
-    </plurals>
-    <plurals name="duration_hours">
-        <item quantity="other">%d óra</item>
-        <item quantity="one">1 óra</item>
-    </plurals>
     <plurals name="wifi_available">
         <item quantity="other">Wi-Fi hálózatok elérhetők</item>
         <item quantity="one">Wi-Fi hálózat elérhető</item>

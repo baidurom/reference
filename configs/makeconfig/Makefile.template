@@ -20,6 +20,12 @@ DALVIK_VM_BUILD := 27
 DENSITY := hdpi
 
 ##############################################################################
+# Default RESOLUTION setting is nothing
+# this used to config the bootanimation
+#-----------------------------------------------------------------------------
+RESOLUTION :=
+
+##############################################################################
 # customize weather use prebuilt image or pack from BOOT/RECOVERY directory
 # Support Values:
 # vendor_modify_images := boot recovery
@@ -27,7 +33,7 @@ DENSITY := hdpi
 # NULL, check boot.img/recovery.img in project root directory, if it exists,
 # use a prebuilt boot.img/recovery.img, if not, nothing to do
 #-----------------------------------------------------------------------------
-vendor_modify_images := boot
+#vendor_modify_images := boot
 
 ##############################################################################
 # Directorys which you want to remove in vendor directory

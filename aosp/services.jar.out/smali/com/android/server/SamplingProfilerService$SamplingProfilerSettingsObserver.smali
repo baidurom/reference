@@ -27,23 +27,23 @@
     .parameter "contentResolver"
 
     .prologue
-    .line 107
+    .line 103
     iput-object p1, p0, Lcom/android/server/SamplingProfilerService$SamplingProfilerSettingsObserver;->this$0:Lcom/android/server/SamplingProfilerService;
 
-    .line 108
+    .line 104
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 109
+    .line 105
     iput-object p2, p0, Lcom/android/server/SamplingProfilerService$SamplingProfilerSettingsObserver;->mContentResolver:Landroid/content/ContentResolver;
 
-    .line 110
+    .line 106
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/server/SamplingProfilerService$SamplingProfilerSettingsObserver;->onChange(Z)V
 
-    .line 111
+    .line 107
     return-void
 .end method
 
@@ -54,14 +54,14 @@
     .parameter "selfChange"
 
     .prologue
-    .line 114
+    .line 110
     iget-object v1, p0, Lcom/android/server/SamplingProfilerService$SamplingProfilerSettingsObserver;->mContentResolver:Landroid/content/ContentResolver;
 
     const-string v2, "sampling_profiler_ms"
 
     const/4 v3, 0x0
 
-    invoke-static {v1, v2, v3}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    invoke-static {v1, v2, v3}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v1
 
@@ -69,7 +69,7 @@
 
     move-result-object v0
 
-    .line 118
+    .line 114
     .local v0, samplingProfilerMs:Ljava/lang/Integer;
     const-string v1, "persist.sys.profiler_ms"
 
@@ -79,6 +79,6 @@
 
     invoke-static {v1, v2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 119
+    .line 115
     return-void
 .end method

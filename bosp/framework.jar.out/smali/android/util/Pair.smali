@@ -46,19 +46,19 @@
     .end annotation
 
     .prologue
-    .line 36
+    .line 34
     .local p0, this:Landroid/util/Pair;,"Landroid/util/Pair<TF;TS;>;"
     .local p1, first:Ljava/lang/Object;,"TF;"
     .local p2, second:Ljava/lang/Object;,"TS;"
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 37
+    .line 35
     iput-object p1, p0, Landroid/util/Pair;->first:Ljava/lang/Object;
 
-    .line 38
+    .line 36
     iput-object p2, p0, Landroid/util/Pair;->second:Ljava/lang/Object;
 
-    .line 39
+    .line 37
     return-void
 .end method
 
@@ -79,7 +79,7 @@
     .end annotation
 
     .prologue
-    .line 75
+    .line 74
     .local p0, a:Ljava/lang/Object;,"TA;"
     .local p1, b:Ljava/lang/Object;,"TB;"
     new-instance v0, Landroid/util/Pair;
@@ -92,53 +92,80 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .locals 4
+    .locals 7
     .parameter "o"
 
     .prologue
     .local p0, this:Landroid/util/Pair;,"Landroid/util/Pair<TF;TS;>;"
-    const/4 v1, 0x0
+    const/4 v3, 0x1
 
-    .line 51
-    instance-of v2, p1, Landroid/util/Pair;
+    const/4 v4, 0x0
 
-    if-nez v2, :cond_1
+    .line 45
+    if-ne p1, p0, :cond_1
 
-    .line 55
+    .line 53
     :cond_0
     :goto_0
-    return v1
+    return v3
 
+    .line 46
     :cond_1
+    instance-of v5, p1, Landroid/util/Pair;
+
+    if-nez v5, :cond_2
+
+    move v3, v4
+
+    goto :goto_0
+
+    .line 49
+    :cond_2
+    :try_start_0
     move-object v0, p1
 
-    .line 54
     check-cast v0, Landroid/util/Pair;
 
-    .line 55
-    .local v0, p:Landroid/util/Pair;,"Landroid/util/Pair<**>;"
-    iget-object v2, v0, Landroid/util/Pair;->first:Ljava/lang/Object;
+    move-object v2, v0
+    :try_end_0
+    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
 
-    iget-object v3, p0, Landroid/util/Pair;->first:Ljava/lang/Object;
+    .line 53
+    .local v2, other:Landroid/util/Pair;,"Landroid/util/Pair<TF;TS;>;"
+    iget-object v5, p0, Landroid/util/Pair;->first:Ljava/lang/Object;
 
-    invoke-static {v2, v3}, Llibcore/util/Objects;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+    iget-object v6, v2, Landroid/util/Pair;->first:Ljava/lang/Object;
 
-    move-result v2
+    invoke-virtual {v5, v6}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    if-eqz v2, :cond_0
+    move-result v5
 
-    iget-object v2, v0, Landroid/util/Pair;->second:Ljava/lang/Object;
+    if-eqz v5, :cond_3
 
-    iget-object v3, p0, Landroid/util/Pair;->second:Ljava/lang/Object;
+    iget-object v5, p0, Landroid/util/Pair;->second:Ljava/lang/Object;
 
-    invoke-static {v2, v3}, Llibcore/util/Objects;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+    iget-object v6, v2, Landroid/util/Pair;->second:Ljava/lang/Object;
 
-    move-result v2
+    invoke-virtual {v5, v6}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    if-eqz v2, :cond_0
+    move-result v5
 
-    const/4 v1, 0x1
+    if-nez v5, :cond_0
 
+    :cond_3
+    move v3, v4
+
+    goto :goto_0
+
+    .line 50
+    .end local v2           #other:Landroid/util/Pair;,"Landroid/util/Pair<TF;TS;>;"
+    :catch_0
+    move-exception v1
+
+    .local v1, e:Ljava/lang/ClassCastException;
+    move v3, v4
+
+    .line 51
     goto :goto_0
 .end method
 
@@ -146,41 +173,31 @@
     .locals 3
 
     .prologue
+    .line 61
     .local p0, this:Landroid/util/Pair;,"Landroid/util/Pair<TF;TS;>;"
-    const/4 v1, 0x0
+    const/16 v0, 0x11
 
-    .line 65
-    iget-object v0, p0, Landroid/util/Pair;->first:Ljava/lang/Object;
-
-    if-nez v0, :cond_0
-
-    move v0, v1
-
-    :goto_0
-    iget-object v2, p0, Landroid/util/Pair;->second:Ljava/lang/Object;
-
-    if-nez v2, :cond_1
-
-    :goto_1
-    xor-int/2addr v0, v1
-
-    return v0
-
-    :cond_0
-    iget-object v0, p0, Landroid/util/Pair;->first:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    goto :goto_0
-
-    :cond_1
-    iget-object v1, p0, Landroid/util/Pair;->second:Ljava/lang/Object;
+    .line 62
+    .local v0, result:I
+    iget-object v1, p0, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
     move-result v1
 
-    goto :goto_1
+    add-int/lit16 v0, v1, 0x20f
+
+    .line 63
+    mul-int/lit8 v1, v0, 0x1f
+
+    iget-object v2, p0, Landroid/util/Pair;->second:Ljava/lang/Object;
+
+    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+
+    move-result v2
+
+    add-int v0, v1, v2
+
+    .line 64
+    return v0
 .end method

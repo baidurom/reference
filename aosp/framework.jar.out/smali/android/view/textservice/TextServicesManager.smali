@@ -125,7 +125,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 194
+    .line 193
     :try_start_0
     sget-object v2, Landroid/view/textservice/TextServicesManager;->sService:Lcom/android/internal/textservice/ITextServicesManager;
 
@@ -137,15 +137,15 @@
 
     move-result-object v1
 
-    .line 196
+    .line 195
     :goto_0
     return-object v1
 
-    .line 195
+    .line 194
     :catch_0
     move-exception v0
 
-    .line 196
+    .line 195
     .local v0, e:Landroid/os/RemoteException;
     goto :goto_0
 .end method
@@ -161,23 +161,6 @@
     :try_start_0
     sget-object v2, Landroid/view/textservice/TextServicesManager;->sService:Lcom/android/internal/textservice/ITextServicesManager;
 
-    if-nez v2, :cond_0
-
-    .line 223
-    sget-object v2, Landroid/view/textservice/TextServicesManager;->TAG:Ljava/lang/String;
-
-    const-string/jumbo v3, "sService is null."
-
-    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 230
-    :goto_0
-    return-object v1
-
-    .line 227
-    :cond_0
-    sget-object v2, Landroid/view/textservice/TextServicesManager;->sService:Lcom/android/internal/textservice/ITextServicesManager;
-
     const/4 v3, 0x0
 
     invoke-interface {v2, v3, p1}, Lcom/android/internal/textservice/ITextServicesManager;->getCurrentSpellCheckerSubtype(Ljava/lang/String;Z)Landroid/view/textservice/SpellCheckerSubtype;
@@ -186,13 +169,15 @@
 
     move-result-object v1
 
-    goto :goto_0
+    .line 223
+    :goto_0
+    return-object v1
 
-    .line 228
+    .line 221
     :catch_0
     move-exception v0
 
-    .line 229
+    .line 222
     .local v0, e:Landroid/os/RemoteException;
     sget-object v2, Landroid/view/textservice/TextServicesManager;->TAG:Ljava/lang/String;
 
@@ -223,7 +208,7 @@
     .locals 5
 
     .prologue
-    .line 177
+    .line 176
     :try_start_0
     sget-object v2, Landroid/view/textservice/TextServicesManager;->sService:Lcom/android/internal/textservice/ITextServicesManager;
 
@@ -233,15 +218,15 @@
 
     move-result-object v1
 
-    .line 184
+    .line 183
     :goto_0
     return-object v1
 
-    .line 182
+    .line 181
     :catch_0
     move-exception v0
 
-    .line 183
+    .line 182
     .local v0, e:Landroid/os/RemoteException;
     sget-object v2, Landroid/view/textservice/TextServicesManager;->TAG:Ljava/lang/String;
 
@@ -265,7 +250,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 184
+    .line 183
     const/4 v1, 0x0
 
     goto :goto_0
@@ -275,7 +260,7 @@
     .locals 4
 
     .prologue
-    .line 267
+    .line 260
     :try_start_0
     sget-object v1, Landroid/view/textservice/TextServicesManager;->sService:Lcom/android/internal/textservice/ITextServicesManager;
 
@@ -285,15 +270,15 @@
 
     move-result v1
 
-    .line 270
+    .line 263
     :goto_0
     return v1
 
-    .line 268
+    .line 261
     :catch_0
     move-exception v0
 
-    .line 269
+    .line 262
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/view/textservice/TextServicesManager;->TAG:Ljava/lang/String;
 
@@ -317,7 +302,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 270
+    .line 263
     const/4 v1, 0x0
 
     goto :goto_0
@@ -369,7 +354,7 @@
     .line 117
     const/4 v12, 0x0
 
-    .line 169
+    .line 168
     :goto_0
     return-object v12
 
@@ -602,9 +587,9 @@
 
     move-object/from16 v0, p3
 
-    invoke-direct {v12, v11, v1, v0, v14}, Landroid/view/textservice/SpellCheckerSession;-><init>(Landroid/view/textservice/SpellCheckerInfo;Lcom/android/internal/textservice/ITextServicesManager;Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListener;Landroid/view/textservice/SpellCheckerSubtype;)V
+    invoke-direct {v12, v11, v1, v0}, Landroid/view/textservice/SpellCheckerSession;-><init>(Landroid/view/textservice/SpellCheckerInfo;Lcom/android/internal/textservice/ITextServicesManager;Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListener;)V
 
-    .line 163
+    .line 162
     .local v12, session:Landroid/view/textservice/SpellCheckerSession;
     :try_start_1
     sget-object v1, Landroid/view/textservice/TextServicesManager;->sService:Lcom/android/internal/textservice/ITextServicesManager;
@@ -633,11 +618,11 @@
 
     goto/16 :goto_0
 
-    .line 166
+    .line 165
     :catch_1
     move-exception v7
 
-    .line 167
+    .line 166
     .restart local v7       #e:Landroid/os/RemoteException;
     const/4 v12, 0x0
 
@@ -649,10 +634,10 @@
     .parameter "sci"
 
     .prologue
-    .line 205
+    .line 204
     if-nez p1, :cond_0
 
-    .line 206
+    .line 205
     :try_start_0
     new-instance v1, Ljava/lang/NullPointerException;
 
@@ -664,11 +649,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 209
+    .line 208
     :catch_0
     move-exception v0
 
-    .line 210
+    .line 209
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/view/textservice/TextServicesManager;->TAG:Ljava/lang/String;
 
@@ -692,12 +677,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 212
+    .line 211
     .end local v0           #e:Landroid/os/RemoteException;
     :goto_0
     return-void
 
-    .line 208
+    .line 207
     :cond_0
     :try_start_1
     sget-object v1, Landroid/view/textservice/TextServicesManager;->sService:Lcom/android/internal/textservice/ITextServicesManager;
@@ -720,7 +705,7 @@
     .parameter "enabled"
 
     .prologue
-    .line 256
+    .line 249
     :try_start_0
     sget-object v1, Landroid/view/textservice/TextServicesManager;->sService:Lcom/android/internal/textservice/ITextServicesManager;
 
@@ -728,15 +713,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 260
+    .line 253
     :goto_0
     return-void
 
-    .line 257
+    .line 250
     :catch_0
     move-exception v0
 
-    .line 258
+    .line 251
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/view/textservice/TextServicesManager;->TAG:Ljava/lang/String;
 
@@ -768,13 +753,13 @@
     .parameter "subtype"
 
     .prologue
-    .line 240
+    .line 233
     if-nez p1, :cond_0
 
-    .line 241
+    .line 234
     const/4 v1, 0x0
 
-    .line 245
+    .line 238
     .local v1, hashCode:I
     :goto_0
     :try_start_0
@@ -784,12 +769,12 @@
 
     invoke-interface {v2, v3, v1}, Lcom/android/internal/textservice/ITextServicesManager;->setCurrentSpellCheckerSubtype(Ljava/lang/String;I)V
 
-    .line 249
+    .line 242
     .end local v1           #hashCode:I
     :goto_1
     return-void
 
-    .line 243
+    .line 236
     :cond_0
     invoke-virtual {p1}, Landroid/view/textservice/SpellCheckerSubtype;->hashCode()I
     :try_end_0
@@ -800,12 +785,12 @@
     .restart local v1       #hashCode:I
     goto :goto_0
 
-    .line 246
+    .line 239
     .end local v1           #hashCode:I
     :catch_0
     move-exception v0
 
-    .line 247
+    .line 240
     .local v0, e:Landroid/os/RemoteException;
     sget-object v2, Landroid/view/textservice/TextServicesManager;->TAG:Ljava/lang/String;
 

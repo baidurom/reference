@@ -15,9 +15,7 @@
 
 
 # static fields
-.field public static final DEFAULT_RELATIVE:I = -0x80000000
-
-.field private static LAYOUT_DIRECTION_UNDEFINED:I
+.field private static final DEFAULT_RELATIVE:I = -0x80000000
 
 
 # instance fields
@@ -27,17 +25,11 @@
     .end annotation
 .end field
 
-.field private endMargin:I
+.field protected endMargin:I
     .annotation runtime Landroid/view/ViewDebug$ExportedProperty;
         category = "layout"
     .end annotation
 .end field
-
-.field private initialLeftMargin:I
-
-.field private initialRightMargin:I
-
-.field private layoutDirection:I
 
 .field public leftMargin:I
     .annotation runtime Landroid/view/ViewDebug$ExportedProperty;
@@ -51,7 +43,7 @@
     .end annotation
 .end field
 
-.field private startMargin:I
+.field protected startMargin:I
     .annotation runtime Landroid/view/ViewDebug$ExportedProperty;
         category = "layout"
     .end annotation
@@ -65,18 +57,6 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    .prologue
-    .line 5739
-    const/4 v0, -0x1
-
-    sput v0, Landroid/view/ViewGroup$MarginLayoutParams;->LAYOUT_DIRECTION_UNDEFINED:I
-
-    return-void
-.end method
-
 .method public constructor <init>(II)V
     .locals 1
     .parameter "width"
@@ -85,21 +65,16 @@
     .prologue
     const/high16 v0, -0x8000
 
-    .line 5792
+    .line 5472
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
-    .line 5719
+    .line 5411
     iput v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->startMargin:I
 
-    .line 5727
+    .line 5419
     iput v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->endMargin:I
 
-    .line 5742
-    sget v0, Landroid/view/ViewGroup$MarginLayoutParams;->LAYOUT_DIRECTION_UNDEFINED:I
-
-    iput v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->layoutDirection:I
-
-    .line 5793
+    .line 5473
     return-void
 .end method
 
@@ -113,34 +88,29 @@
 
     const/4 v4, 0x0
 
-    .line 5753
+    .line 5436
     invoke-direct {p0}, Landroid/view/ViewGroup$LayoutParams;-><init>()V
 
-    .line 5719
+    .line 5411
     iput v5, p0, Landroid/view/ViewGroup$MarginLayoutParams;->startMargin:I
 
-    .line 5727
+    .line 5419
     iput v5, p0, Landroid/view/ViewGroup$MarginLayoutParams;->endMargin:I
 
-    .line 5742
-    sget v2, Landroid/view/ViewGroup$MarginLayoutParams;->LAYOUT_DIRECTION_UNDEFINED:I
-
-    iput v2, p0, Landroid/view/ViewGroup$MarginLayoutParams;->layoutDirection:I
-
-    .line 5755
+    .line 5438
     sget-object v2, Lcom/android/internal/R$styleable;->ViewGroup_MarginLayout:[I
 
     invoke-virtual {p1, p2, v2}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 5756
+    .line 5439
     .local v0, a:Landroid/content/res/TypedArray;
     const/4 v2, 0x1
 
     invoke-virtual {p0, v0, v4, v2}, Landroid/view/ViewGroup$MarginLayoutParams;->setBaseAttributes(Landroid/content/res/TypedArray;II)V
 
-    .line 5760
+    .line 5443
     const/4 v2, 0x2
 
     const/4 v3, -0x1
@@ -149,40 +119,30 @@
 
     move-result v1
 
-    .line 5762
+    .line 5445
     .local v1, margin:I
     if-ltz v1, :cond_0
 
-    .line 5763
+    .line 5446
     iput v1, p0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
-    .line 5764
+    .line 5447
     iput v1, p0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    .line 5765
+    .line 5448
     iput v1, p0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
-    .line 5766
+    .line 5449
     iput v1, p0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
-    .line 5782
+    .line 5465
     :goto_0
-    iget v2, p0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
-
-    iput v2, p0, Landroid/view/ViewGroup$MarginLayoutParams;->initialLeftMargin:I
-
-    .line 5783
-    iget v2, p0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
-
-    iput v2, p0, Landroid/view/ViewGroup$MarginLayoutParams;->initialRightMargin:I
-
-    .line 5785
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 5786
+    .line 5466
     return-void
 
-    .line 5768
+    .line 5451
     :cond_0
     const/4 v2, 0x3
 
@@ -192,7 +152,7 @@
 
     iput v2, p0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
-    .line 5770
+    .line 5453
     const/4 v2, 0x4
 
     invoke-virtual {v0, v2, v4}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
@@ -201,7 +161,7 @@
 
     iput v2, p0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    .line 5772
+    .line 5455
     const/4 v2, 0x5
 
     invoke-virtual {v0, v2, v4}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
@@ -210,7 +170,7 @@
 
     iput v2, p0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
-    .line 5774
+    .line 5457
     const/4 v2, 0x6
 
     invoke-virtual {v0, v2, v4}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
@@ -219,7 +179,7 @@
 
     iput v2, p0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
-    .line 5776
+    .line 5459
     const/4 v2, 0x7
 
     invoke-virtual {v0, v2, v5}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
@@ -228,7 +188,7 @@
 
     iput v2, p0, Landroid/view/ViewGroup$MarginLayoutParams;->startMargin:I
 
-    .line 5778
+    .line 5461
     const/16 v2, 0x8
 
     invoke-virtual {v0, v2, v5}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
@@ -247,21 +207,16 @@
     .prologue
     const/high16 v0, -0x8000
 
-    .line 5821
+    .line 5496
     invoke-direct {p0, p1}, Landroid/view/ViewGroup$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 5719
+    .line 5411
     iput v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->startMargin:I
 
-    .line 5727
+    .line 5419
     iput v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->endMargin:I
 
-    .line 5742
-    sget v0, Landroid/view/ViewGroup$MarginLayoutParams;->LAYOUT_DIRECTION_UNDEFINED:I
-
-    iput v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->layoutDirection:I
-
-    .line 5822
+    .line 5497
     return-void
 .end method
 
@@ -272,191 +227,79 @@
     .prologue
     const/high16 v0, -0x8000
 
-    .line 5800
+    .line 5480
     invoke-direct {p0}, Landroid/view/ViewGroup$LayoutParams;-><init>()V
 
-    .line 5719
+    .line 5411
     iput v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->startMargin:I
 
-    .line 5727
+    .line 5419
     iput v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->endMargin:I
 
-    .line 5742
-    sget v0, Landroid/view/ViewGroup$MarginLayoutParams;->LAYOUT_DIRECTION_UNDEFINED:I
-
-    iput v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->layoutDirection:I
-
-    .line 5801
+    .line 5481
     iget v0, p1, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     iput v0, p0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 5802
+    .line 5482
     iget v0, p1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     iput v0, p0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 5804
+    .line 5484
     iget v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
     iput v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
-    .line 5805
+    .line 5485
     iget v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
     iput v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    .line 5806
+    .line 5486
     iget v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
     iput v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
-    .line 5807
+    .line 5487
     iget v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
     iput v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
-    .line 5808
+    .line 5488
     iget v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->startMargin:I
 
     iput v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->startMargin:I
 
-    .line 5809
+    .line 5489
     iget v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->endMargin:I
 
     iput v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->endMargin:I
 
-    .line 5811
-    iget v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
-
-    iput v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->initialLeftMargin:I
-
-    .line 5812
-    iget v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
-
-    iput v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->initialRightMargin:I
-
-    .line 5814
-    iget v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->layoutDirection:I
-
-    invoke-virtual {p0, v0}, Landroid/view/ViewGroup$MarginLayoutParams;->setLayoutDirection(I)V
-
-    .line 5815
+    .line 5490
     return-void
 .end method
 
 
 # virtual methods
-.method public getLayoutDirection()I
+.method public getMarginEnd()I
     .locals 1
 
     .prologue
-    .line 5964
-    iget v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->layoutDirection:I
-
-    return v0
-.end method
-
-.method public getMarginEnd()I
-    .locals 2
-
-    .prologue
-    .line 5923
+    .line 5569
     iget v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->endMargin:I
 
-    const/high16 v1, -0x8000
-
-    if-eq v0, v1, :cond_0
-
-    iget v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->endMargin:I
-
-    .line 5929
-    :goto_0
     return v0
-
-    .line 5924
-    :cond_0
-    iget v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->layoutDirection:I
-
-    packed-switch v0, :pswitch_data_0
-
-    .line 5929
-    iget v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
-
-    goto :goto_0
-
-    .line 5926
-    :pswitch_0
-    iget v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
-
-    goto :goto_0
-
-    .line 5924
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
 .end method
 
 .method public getMarginStart()I
-    .locals 2
+    .locals 1
 
     .prologue
-    .line 5894
+    .line 5556
     iget v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->startMargin:I
 
-    const/high16 v1, -0x8000
-
-    if-eq v0, v1, :cond_0
-
-    iget v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->startMargin:I
-
-    .line 5900
-    :goto_0
     return v0
-
-    .line 5895
-    :cond_0
-    iget v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->layoutDirection:I
-
-    packed-switch v0, :pswitch_data_0
-
-    .line 5900
-    iget v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
-
-    goto :goto_0
-
-    .line 5897
-    :pswitch_0
-    iget v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
-
-    goto :goto_0
-
-    .line 5895
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public isLayoutRtl()Z
-    .locals 2
-
-    .prologue
-    const/4 v0, 0x1
-
-    .line 5994
-    iget v1, p0, Landroid/view/ViewGroup$MarginLayoutParams;->layoutDirection:I
-
-    if-ne v1, v0, :cond_0
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
 .end method
 
 .method public isMarginRelative()Z
@@ -465,7 +308,7 @@
     .prologue
     const/high16 v1, -0x8000
 
-    .line 5942
+    .line 5583
     iget v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->startMargin:I
 
     if-ne v0, v1, :cond_0
@@ -486,204 +329,94 @@
     goto :goto_0
 .end method
 
-.method public onDebugDraw(Landroid/view/View;Landroid/graphics/Canvas;)V
-    .locals 6
-    .parameter "view"
-    .parameter "canvas"
-
-    .prologue
-    .line 6002
-    invoke-virtual {p1}, Landroid/view/View;->getLeft()I
-
-    move-result v0
-
-    iget v1, p0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
-
-    sub-int v1, v0, v1
-
-    invoke-virtual {p1}, Landroid/view/View;->getTop()I
-
-    move-result v0
-
-    iget v2, p0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
-
-    sub-int v2, v0, v2
-
-    invoke-virtual {p1}, Landroid/view/View;->getRight()I
-
-    move-result v0
-
-    iget v3, p0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
-
-    add-int/2addr v3, v0
-
-    invoke-virtual {p1}, Landroid/view/View;->getBottom()I
-
-    move-result v0
-
-    iget v4, p0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
-
-    add-int/2addr v4, v0
-
-    const v5, -0xff01
-
-    move-object v0, p2
-
-    #calls: Landroid/view/ViewGroup;->drawRect(Landroid/graphics/Canvas;IIIII)V
-    invoke-static/range {v0 .. v5}, Landroid/view/ViewGroup;->access$500(Landroid/graphics/Canvas;IIIII)V
-
-    .line 6007
-    return-void
-.end method
-
-.method public resolveLayoutDirection(I)V
+.method protected resolveWithDirection(I)V
     .locals 2
     .parameter "layoutDirection"
 
     .prologue
     const/high16 v1, -0x8000
 
-    .line 5973
-    invoke-virtual {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;->setLayoutDirection(I)V
-
-    .line 5975
-    invoke-virtual {p0}, Landroid/view/ViewGroup$MarginLayoutParams;->isMarginRelative()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 5988
-    :goto_0
-    return-void
-
-    .line 5977
-    :cond_0
+    .line 5594
     packed-switch p1, :pswitch_data_0
 
-    .line 5984
-    iget v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->startMargin:I
-
-    if-le v0, v1, :cond_3
-
-    iget v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->startMargin:I
-
-    :goto_1
-    iput v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
-
-    .line 5985
-    iget v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->endMargin:I
-
-    if-le v0, v1, :cond_4
-
-    iget v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->endMargin:I
-
-    :goto_2
-    iput v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
-
-    goto :goto_0
-
-    .line 5979
-    :pswitch_0
-    iget v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->endMargin:I
-
-    if-le v0, v1, :cond_1
-
-    iget v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->endMargin:I
-
-    :goto_3
-    iput v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
-
-    .line 5980
+    .line 5601
     iget v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->startMargin:I
 
     if-le v0, v1, :cond_2
 
     iget v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->startMargin:I
 
+    :goto_0
+    iput v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+
+    .line 5602
+    iget v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->endMargin:I
+
+    if-le v0, v1, :cond_3
+
+    iget v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->endMargin:I
+
+    :goto_1
+    iput v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+
+    .line 5605
+    :goto_2
+    return-void
+
+    .line 5596
+    :pswitch_0
+    iget v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->endMargin:I
+
+    if-le v0, v1, :cond_0
+
+    iget v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->endMargin:I
+
+    :goto_3
+    iput v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+
+    .line 5597
+    iget v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->startMargin:I
+
+    if-le v0, v1, :cond_1
+
+    iget v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->startMargin:I
+
     :goto_4
     iput v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
-    goto :goto_0
+    goto :goto_2
 
-    .line 5979
-    :cond_1
-    iget v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->initialLeftMargin:I
+    .line 5596
+    :cond_0
+    iget v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
     goto :goto_3
 
-    .line 5980
-    :cond_2
-    iget v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->initialRightMargin:I
+    .line 5597
+    :cond_1
+    iget v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
     goto :goto_4
 
-    .line 5984
+    .line 5601
+    :cond_2
+    iget v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+
+    goto :goto_0
+
+    .line 5602
     :cond_3
-    iget v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->initialLeftMargin:I
+    iget v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
     goto :goto_1
 
-    .line 5985
-    :cond_4
-    iget v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->initialRightMargin:I
-
-    goto :goto_2
-
-    .line 5977
+    .line 5594
     nop
 
     :pswitch_data_0
-    .packed-switch 0x1
+    .packed-switch 0x40000000
         :pswitch_0
     .end packed-switch
-.end method
-
-.method public setLayoutDirection(I)V
-    .locals 1
-    .parameter "layoutDirection"
-
-    .prologue
-    .line 5952
-    if-eqz p1, :cond_0
-
-    const/4 v0, 0x1
-
-    if-eq p1, v0, :cond_0
-
-    .line 5955
-    :goto_0
-    return-void
-
-    .line 5954
-    :cond_0
-    iput p1, p0, Landroid/view/ViewGroup$MarginLayoutParams;->layoutDirection:I
-
-    goto :goto_0
-.end method
-
-.method public setMarginEnd(I)V
-    .locals 0
-    .parameter "end"
-
-    .prologue
-    .line 5912
-    iput p1, p0, Landroid/view/ViewGroup$MarginLayoutParams;->endMargin:I
-
-    .line 5913
-    return-void
-.end method
-
-.method public setMarginStart(I)V
-    .locals 0
-    .parameter "start"
-
-    .prologue
-    .line 5883
-    iput p1, p0, Landroid/view/ViewGroup$MarginLayoutParams;->startMargin:I
-
-    .line 5884
-    return-void
 .end method
 
 .method public setMargins(IIII)V
@@ -694,56 +427,42 @@
     .parameter "bottom"
 
     .prologue
-    .line 5840
+    .line 5515
     iput p1, p0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
-    .line 5841
+    .line 5516
     iput p2, p0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    .line 5842
+    .line 5517
     iput p3, p0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
-    .line 5843
+    .line 5518
     iput p4, p0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
-    .line 5844
-    iput p1, p0, Landroid/view/ViewGroup$MarginLayoutParams;->initialLeftMargin:I
-
-    .line 5845
-    iput p3, p0, Landroid/view/ViewGroup$MarginLayoutParams;->initialRightMargin:I
-
-    .line 5846
+    .line 5519
     return-void
 .end method
 
 .method public setMarginsRelative(IIII)V
-    .locals 1
+    .locals 0
     .parameter "start"
     .parameter "top"
     .parameter "end"
     .parameter "bottom"
 
     .prologue
-    const/4 v0, 0x0
-
-    .line 5867
+    .line 5540
     iput p1, p0, Landroid/view/ViewGroup$MarginLayoutParams;->startMargin:I
 
-    .line 5868
+    .line 5541
     iput p2, p0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    .line 5869
+    .line 5542
     iput p3, p0, Landroid/view/ViewGroup$MarginLayoutParams;->endMargin:I
 
-    .line 5870
+    .line 5543
     iput p4, p0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
-    .line 5871
-    iput v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->initialLeftMargin:I
-
-    .line 5872
-    iput v0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->initialRightMargin:I
-
-    .line 5873
+    .line 5544
     return-void
 .end method

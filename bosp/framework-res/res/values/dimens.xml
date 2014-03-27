@@ -1,24 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="app_icon_size">48.0dip</dimen>
-    <dimen name="thumbnail_height">145.0dip</dimen>
-    <dimen name="thumbnail_width">164.0dip</dimen>
+    <dimen name="thumbnail_height">120.0dip</dimen>
+    <dimen name="thumbnail_width">120.0dip</dimen>
     <item type="dimen" name="dialog_min_width_major">65.0%</item>
-    <item type="dimen" name="dialog_min_width_minor">95.00001%</item>
-    <dimen name="notification_large_icon_width">64.0dip</dimen>
+    <item type="dimen" name="dialog_min_width_minor">94.99999%</item>
+    <dimen name="notification_large_icon_width">58.0dip</dimen>
     <dimen name="notification_large_icon_height">64.0dip</dimen>
     <dimen name="config_prefDialogWidth">320.0dip</dimen>
     <dimen name="config_viewConfigurationTouchSlop">8.0dip</dimen>
-    <dimen name="config_minScalingSpan">27.0mm</dimen>
-    <dimen name="config_minScalingTouchMajor">48.0dip</dimen>
     <dimen name="toast_y_offset">64.0dip</dimen>
     <dimen name="status_bar_height">25.0dip</dimen>
+    <dimen name="system_bar_height">48.0dip</dimen>
     <dimen name="navigation_bar_height">48.0dip</dimen>
-    <dimen name="navigation_bar_height_landscape">48.0dip</dimen>
     <dimen name="navigation_bar_width">42.0dip</dimen>
     <dimen name="status_bar_icon_size">24.0dip</dimen>
     <dimen name="status_bar_content_number_size">48.0sp</dimen>
-    <item type="dimen" name="system_bar_height">@dimen/navigation_bar_height</item>
     <dimen name="system_bar_icon_size">32.0dip</dimen>
     <dimen name="status_bar_edge_ignore">5.0dip</dimen>
     <dimen name="fastscroll_overlay_size">104.0dip</dimen>
@@ -26,31 +23,26 @@
     <dimen name="fastscroll_thumb_height">52.0dip</dimen>
     <dimen name="min_xlarge_screen_width">800.0dip</dimen>
     <dimen name="password_keyboard_key_height_alpha">56.0dip</dimen>
-    <dimen name="password_keyboard_key_height_numeric">56.0dip</dimen>
+    <dimen name="password_keyboard_key_height_numeric">50.0dip</dimen>
     <dimen name="password_keyboard_spacebar_vertical_correction">4.0dip</dimen>
     <dimen name="password_keyboard_horizontalGap">3.0dip</dimen>
-    <dimen name="password_keyboard_verticalGap">9.0dip</dimen>
+    <dimen name="password_keyboard_verticalGap">0.0dip</dimen>
     <dimen name="keyguard_lockscreen_outerring_diameter">270.0dip</dimen>
-    <dimen name="glowpadview_target_placement_radius">135.0dip</dimen>
-    <dimen name="glowpadview_glow_radius">75.0dip</dimen>
-    <dimen name="glowpadview_snap_margin">40.0dip</dimen>
-    <dimen name="glowpadview_inner_radius">15.0dip</dimen>
+    <dimen name="multiwaveview_target_placement_radius">135.0dip</dimen>
+    <dimen name="multiwaveview_snap_margin">20.0dip</dimen>
+    <dimen name="multiwaveview_hit_radius">60.0dip</dimen>
     <dimen name="preference_screen_side_margin">0.0dip</dimen>
     <dimen name="preference_screen_side_margin_negative">0.0dip</dimen>
     <dimen name="preference_screen_top_margin">0.0dip</dimen>
     <dimen name="preference_screen_bottom_margin">0.0dip</dimen>
     <dimen name="preference_widget_width">48.0dip</dimen>
     <dimen name="preference_fragment_padding_bottom">0.0dip</dimen>
-    <dimen name="preference_fragment_padding_side">16.0dip</dimen>
+    <dimen name="preference_fragment_padding_side">0.0dip</dimen>
     <dimen name="preference_breadcrumb_paddingLeft">0.0dip</dimen>
     <dimen name="preference_breadcrumb_paddingRight">0.0dip</dimen>
     <dimen name="preference_icon_minWidth">0.0dip</dimen>
-    <dimen name="dialog_fixed_width_major">320.0dip</dimen>
-    <dimen name="dialog_fixed_width_minor">320.0dip</dimen>
-    <item type="dimen" name="dialog_fixed_height_major">80.00001%</item>
-    <item type="dimen" name="dialog_fixed_height_minor">100.0%</item>
     <dimen name="preference_screen_header_vertical_padding">0.0dip</dimen>
-    <dimen name="preference_screen_header_padding_side">16.0dip</dimen>
+    <dimen name="preference_screen_header_padding_side">0.0dip</dimen>
     <dimen name="preference_item_padding_side">8.0dip</dimen>
     <dimen name="preference_item_padding_inner">8.0dip</dimen>
     <dimen name="preference_child_padding_side">16.0dip</dimen>
@@ -64,15 +56,14 @@
     <dimen name="action_bar_subtitle_text_size">14.0dip</dimen>
     <dimen name="action_bar_subtitle_top_margin">-3.0dip</dimen>
     <dimen name="action_bar_subtitle_bottom_margin">5.0dip</dimen>
-    <dimen name="keyguard_lockscreen_clock_font_size">80.0dip</dimen>
+    <dimen name="keyguard_lockscreen_clock_font_size">70.0dip</dimen>
     <dimen name="keyguard_lockscreen_status_line_font_size">14.0dip</dimen>
     <dimen name="keyguard_lockscreen_status_line_font_right_margin">42.0dip</dimen>
     <dimen name="keyguard_lockscreen_status_line_clockfont_top_margin">22.0dip</dimen>
     <dimen name="keyguard_lockscreen_status_line_clockfont_bottom_margin">12.0dip</dimen>
     <dimen name="keyguard_lockscreen_pin_margin_left">40.0dip</dimen>
-    <dimen name="face_unlock_height">330.0dip</dimen>
     <dimen name="activity_chooser_popup_min_width">200.0dip</dimen>
-    <dimen name="default_gap">8.0dip</dimen>
+    <dimen name="default_gap">16.0dip</dimen>
     <dimen name="dropdownitem_text_padding_left">8.0dip</dimen>
     <dimen name="dropdownitem_text_padding_right">8.0dip</dimen>
     <dimen name="dropdownitem_icon_width">32.0dip</dimen>
@@ -83,41 +74,31 @@
     <dimen name="default_app_widget_padding_right">8.0dip</dimen>
     <dimen name="default_app_widget_padding_bottom">8.0dip</dimen>
     <dimen name="action_button_min_width">56.0dip</dimen>
-    <dimen name="action_bar_stacked_max_height">48.0dip</dimen>
-    <dimen name="action_bar_stacked_tab_max_width">180.0dip</dimen>
-    <dimen name="notification_text_size">14.0dip</dimen>
-    <dimen name="notification_title_text_size">18.0dip</dimen>
-    <dimen name="notification_subtext_size">12.0dip</dimen>
-    <dimen name="kg_security_panel_height">600.0dip</dimen>
-    <dimen name="kg_security_view_height">480.0dip</dimen>
-    <dimen name="kg_widget_view_width">0.0dip</dimen>
-    <dimen name="kg_widget_view_height">0.0dip</dimen>
-    <dimen name="kg_status_clock_font_size">75.0dip</dimen>
-    <dimen name="kg_status_date_font_size">15.0dip</dimen>
-    <dimen name="kg_status_line_font_size">13.0dip</dimen>
-    <dimen name="kg_status_line_font_right_margin">16.0dip</dimen>
-    <dimen name="kg_clock_top_margin">-16.0dip</dimen>
-    <dimen name="kg_key_horizontal_gap">0.0dip</dimen>
-    <dimen name="kg_key_vertical_gap">0.0dip</dimen>
-    <dimen name="kg_pin_key_height">60.0dip</dimen>
-    <dimen name="kg_secure_padding_height">46.0dip</dimen>
-    <dimen name="kg_runway_lights_height">7.0dip</dimen>
-    <dimen name="kg_runway_lights_vertical_padding">2.0dip</dimen>
-    <dimen name="kg_widget_pager_horizontal_padding">16.0dip</dimen>
-    <dimen name="kg_widget_pager_top_padding">0.0dip</dimen>
-    <dimen name="kg_widget_pager_bottom_padding">64.0dip</dimen>
-    <dimen name="kg_runway_lights_top_margin">0.0dip</dimen>
-    <dimen name="accessibility_touch_slop">80.0dip</dimen>
-    <dimen name="keyguard_security_width">320.0dip</dimen>
-    <dimen name="keyguard_security_height">400.0dip</dimen>
-    <dimen name="keyguard_security_view_margin">8.0dip</dimen>
-    <dimen name="keyguard_muliuser_selector_margin">8.0dip</dimen>
-    <dimen name="keyguard_avatar_frame_stroke_width">2.0dip</dimen>
-    <dimen name="keyguard_avatar_frame_shadow_radius">1.0dip</dimen>
-    <dimen name="keyguard_avatar_size">66.0dip</dimen>
-    <dimen name="keyguard_avatar_name_size">10.0sp</dimen>
-    <dimen name="kg_edge_swipe_region_size">24.0dip</dimen>
-    <dimen name="kg_squashed_layout_threshold">600.0dip</dimen>
-    <dimen name="kg_small_widget_height">160.0dip</dimen>
-    <item type="dimen" name="APKTOOL_DUMMY_0078">false</item>
+    <dimen name="yi_preference_item_padding_side">8.0dip</dimen>
+    <dimen name="yi_action_bar_default_height">44.0dip</dimen>
+    <dimen name="yi_list_item_header_height">32.0dip</dimen>
+    <dimen name="yi_floating_bar_divider_padding">12.0dip</dimen>
+    <dimen name="yi_magnifier_range_padding">2.0dip</dimen>
+    <dimen name="yi_lockscreen_password_top_padding">0.0dip</dimen>
+    <dimen name="yi_lockscreen_pin_top_padding">10.0dip</dimen>
+    <dimen name="yi_lockscreen_hotword1_padding">192.0dip</dimen>
+    <dimen name="yi_lockscreen_hotword2_padding">160.0dip</dimen>
+    <dimen name="yi_lockscreen_hotword3_padding">42.0dip</dimen>
+    <dimen name="yi_lockscreen_hotword4_padding">112.0dip</dimen>
+    <dimen name="yi_lockscreen_hotword5_padding">26.0dip</dimen>
+    <dimen name="yi_lockscreen_hotword6_padding">200.0dip</dimen>
+    <dimen name="yi_lockscreen_hotword7_padding">53.0dip</dimen>
+    <dimen name="yi_alert_dialog_title_height">42.0dip</dimen>
+    <dimen name="yi_alert_dialog_button_height">42.0dip</dimen>
+    <dimen name="yi_lockscreen_unlockwidget_margintop">238.0dip</dimen>
+    <dimen name="yi_lockscreen_password_height">306.0dip</dimen>
+    <dimen name="yi_lockscreen_voiceprint_height">306.0dip</dimen>
+    <dimen name="zz_smartmultiUnlockview_target_placement_radius">105.0dip</dimen>
+    <dimen name="zz_smartmultiunlockview_snap_margin">20.0dip</dimen>
+    <dimen name="zz_smartmultiunlockview_hit_radius">25.0dip</dimen>
+    <dimen name="zz_lockscreen_flipper_width">320.0dip</dimen>
+    <dimen name="zz_lockscreen_unlock_widget_margin_top">-20.0dip</dimen>
+    <dimen name="zz_lockscreen_unlock_widget_center_offset">20.0dip</dimen>
+    <dimen name="zz_lockscreen_status_height">280.0dip</dimen>
+    <item type="dimen" name="APKTOOL_DUMMY_004a">false</item>
 </resources>

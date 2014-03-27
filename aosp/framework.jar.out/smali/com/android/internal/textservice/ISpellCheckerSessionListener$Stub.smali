@@ -26,8 +26,6 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "com.android.internal.textservice.ISpellCheckerSessionListener"
 
-.field static final TRANSACTION_onGetSentenceSuggestions:I = 0x2
-
 .field static final TRANSACTION_onGetSuggestions:I = 0x1
 
 
@@ -122,7 +120,7 @@
     .line 41
     sparse-switch p1, :sswitch_data_0
 
-    .line 65
+    .line 57
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
@@ -159,35 +157,10 @@
 
     goto :goto_0
 
-    .line 58
-    .end local v0           #_arg0:[Landroid/view/textservice/SuggestionsInfo;
-    :sswitch_2
-    const-string v2, "com.android.internal.textservice.ISpellCheckerSessionListener"
-
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 60
-    sget-object v2, Landroid/view/textservice/SentenceSuggestionsInfo;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->createTypedArray(Landroid/os/Parcelable$Creator;)[Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Landroid/view/textservice/SentenceSuggestionsInfo;
-
-    .line 61
-    .local v0, _arg0:[Landroid/view/textservice/SentenceSuggestionsInfo;
-    invoke-virtual {p0, v0}, Lcom/android/internal/textservice/ISpellCheckerSessionListener$Stub;->onGetSentenceSuggestions([Landroid/view/textservice/SentenceSuggestionsInfo;)V
-
-    goto :goto_0
-
     .line 41
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
-        0x2 -> :sswitch_2
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

@@ -51,7 +51,7 @@
     .locals 1
 
     .prologue
-    .line 668
+    .line 464
     new-instance v0, Landroid/app/ActivityManager$RunningTaskInfo$1;
 
     invoke-direct {v0}, Landroid/app/ActivityManager$RunningTaskInfo$1;-><init>()V
@@ -65,10 +65,10 @@
     .locals 0
 
     .prologue
-    .line 631
+    .line 427
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 632
+    .line 428
     return-void
 .end method
 
@@ -77,13 +77,13 @@
     .parameter "source"
 
     .prologue
-    .line 677
+    .line 473
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 678
+    .line 474
     invoke-virtual {p0, p1}, Landroid/app/ActivityManager$RunningTaskInfo;->readFromParcel(Landroid/os/Parcel;)V
 
-    .line 679
+    .line 475
     return-void
 .end method
 
@@ -93,7 +93,7 @@
     .parameter "x1"
 
     .prologue
-    .line 591
+    .line 387
     invoke-direct {p0, p1}, Landroid/app/ActivityManager$RunningTaskInfo;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -105,7 +105,7 @@
     .locals 1
 
     .prologue
-    .line 635
+    .line 431
     const/4 v0, 0x0
 
     return v0
@@ -116,35 +116,35 @@
     .parameter "source"
 
     .prologue
-    .line 655
+    .line 451
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/app/ActivityManager$RunningTaskInfo;->id:I
 
-    .line 656
+    .line 452
     invoke-static {p1}, Landroid/content/ComponentName;->readFromParcel(Landroid/os/Parcel;)Landroid/content/ComponentName;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/ActivityManager$RunningTaskInfo;->baseActivity:Landroid/content/ComponentName;
 
-    .line 657
+    .line 453
     invoke-static {p1}, Landroid/content/ComponentName;->readFromParcel(Landroid/os/Parcel;)Landroid/content/ComponentName;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/ActivityManager$RunningTaskInfo;->topActivity:Landroid/content/ComponentName;
 
-    .line 658
+    .line 454
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 659
+    .line 455
     sget-object v0, Landroid/graphics/Bitmap;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v0, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -155,7 +155,7 @@
 
     iput-object v0, p0, Landroid/app/ActivityManager$RunningTaskInfo;->thumbnail:Landroid/graphics/Bitmap;
 
-    .line 663
+    .line 459
     :goto_0
     sget-object v0, Landroid/text/TextUtils;->CHAR_SEQUENCE_CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -167,24 +167,24 @@
 
     iput-object v0, p0, Landroid/app/ActivityManager$RunningTaskInfo;->description:Ljava/lang/CharSequence;
 
-    .line 664
+    .line 460
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/app/ActivityManager$RunningTaskInfo;->numActivities:I
 
-    .line 665
+    .line 461
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/app/ActivityManager$RunningTaskInfo;->numRunning:I
 
-    .line 666
+    .line 462
     return-void
 
-    .line 661
+    .line 457
     :cond_0
     const/4 v0, 0x0
 
@@ -203,54 +203,54 @@
 
     const/4 v1, 0x0
 
-    .line 639
+    .line 435
     iget v0, p0, Landroid/app/ActivityManager$RunningTaskInfo;->id:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 640
+    .line 436
     iget-object v0, p0, Landroid/app/ActivityManager$RunningTaskInfo;->baseActivity:Landroid/content/ComponentName;
 
     invoke-static {v0, p1}, Landroid/content/ComponentName;->writeToParcel(Landroid/content/ComponentName;Landroid/os/Parcel;)V
 
-    .line 641
+    .line 437
     iget-object v0, p0, Landroid/app/ActivityManager$RunningTaskInfo;->topActivity:Landroid/content/ComponentName;
 
     invoke-static {v0, p1}, Landroid/content/ComponentName;->writeToParcel(Landroid/content/ComponentName;Landroid/os/Parcel;)V
 
-    .line 642
+    .line 438
     iget-object v0, p0, Landroid/app/ActivityManager$RunningTaskInfo;->thumbnail:Landroid/graphics/Bitmap;
 
     if-eqz v0, :cond_0
 
-    .line 643
+    .line 439
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 644
+    .line 440
     iget-object v0, p0, Landroid/app/ActivityManager$RunningTaskInfo;->thumbnail:Landroid/graphics/Bitmap;
 
     invoke-virtual {v0, p1, v1}, Landroid/graphics/Bitmap;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 648
+    .line 444
     :goto_0
     iget-object v0, p0, Landroid/app/ActivityManager$RunningTaskInfo;->description:Ljava/lang/CharSequence;
 
     invoke-static {v0, p1, v2}, Landroid/text/TextUtils;->writeToParcel(Ljava/lang/CharSequence;Landroid/os/Parcel;I)V
 
-    .line 650
+    .line 446
     iget v0, p0, Landroid/app/ActivityManager$RunningTaskInfo;->numActivities:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 651
+    .line 447
     iget v0, p0, Landroid/app/ActivityManager$RunningTaskInfo;->numRunning:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 652
+    .line 448
     return-void
 
-    .line 646
+    .line 442
     :cond_0
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 

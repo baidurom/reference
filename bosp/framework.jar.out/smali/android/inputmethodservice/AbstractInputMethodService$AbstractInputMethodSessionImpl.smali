@@ -46,32 +46,6 @@
 
 
 # virtual methods
-.method public dispatchGenericMotionEvent(ILandroid/view/MotionEvent;Landroid/view/inputmethod/InputMethodSession$EventCallback;)V
-    .locals 2
-    .parameter "seq"
-    .parameter "event"
-    .parameter "callback"
-
-    .prologue
-    .line 158
-    iget-object v1, p0, Landroid/inputmethodservice/AbstractInputMethodService$AbstractInputMethodSessionImpl;->this$0:Landroid/inputmethodservice/AbstractInputMethodService;
-
-    invoke-virtual {v1, p2}, Landroid/inputmethodservice/AbstractInputMethodService;->onGenericMotionEvent(Landroid/view/MotionEvent;)Z
-
-    move-result v0
-
-    .line 159
-    .local v0, handled:Z
-    if-eqz p3, :cond_0
-
-    .line 160
-    invoke-interface {p3, p1, v0}, Landroid/view/inputmethod/InputMethodSession$EventCallback;->finishedEvent(IZ)V
-
-    .line 162
-    :cond_0
-    return-void
-.end method
-
 .method public dispatchKeyEvent(ILandroid/view/KeyEvent;Landroid/view/inputmethod/InputMethodSession$EventCallback;)V
     .locals 3
     .parameter "seq"

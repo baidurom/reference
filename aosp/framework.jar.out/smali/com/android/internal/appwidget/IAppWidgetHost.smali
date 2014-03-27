@@ -23,14 +23,6 @@
     .end annotation
 .end method
 
-.method public abstract providersChanged()V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract updateAppWidget(ILandroid/widget/RemoteViews;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

@@ -117,21 +117,21 @@
     .parameter "paint"
 
     .prologue
-    .line 87
+    .line 86
     if-eqz p1, :cond_0
 
-    .line 88
+    .line 87
     invoke-virtual {p1}, Landroid/graphics/Paint;->getShader()Landroid/graphics/Shader;
 
     move-result-object v0
 
-    .line 89
+    .line 88
     .local v0, shader:Landroid/graphics/Shader;
     instance-of v1, v0, Landroid/graphics/BitmapShader;
 
     if-eqz v1, :cond_0
 
-    .line 90
+    .line 89
     iget-object v1, p0, Landroid/view/GLES20RecordingCanvas;->mDisplayList:Landroid/view/GLES20DisplayList;
 
     iget-object v1, v1, Landroid/view/GLES20DisplayList;->mBitmaps:Ljava/util/ArrayList;
@@ -143,7 +143,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 93
+    .line 92
     :cond_0
     return-void
 .end method
@@ -158,17 +158,17 @@
     .parameter "paint"
 
     .prologue
-    .line 104
+    .line 103
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/GLES20Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 105
+    .line 104
     iget-object v0, p0, Landroid/view/GLES20RecordingCanvas;->mDisplayList:Landroid/view/GLES20DisplayList;
 
     iget-object v0, v0, Landroid/view/GLES20DisplayList;->mBitmaps:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 107
+    .line 106
     return-void
 .end method
 
@@ -179,17 +179,17 @@
     .parameter "paint"
 
     .prologue
-    .line 111
+    .line 110
     invoke-super {p0, p1, p2, p3}, Landroid/view/GLES20Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Matrix;Landroid/graphics/Paint;)V
 
-    .line 112
+    .line 111
     iget-object v0, p0, Landroid/view/GLES20RecordingCanvas;->mDisplayList:Landroid/view/GLES20DisplayList;
 
     iget-object v0, v0, Landroid/view/GLES20DisplayList;->mBitmaps:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 114
+    .line 113
     return-void
 .end method
 
@@ -201,17 +201,17 @@
     .parameter "paint"
 
     .prologue
-    .line 118
+    .line 117
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/GLES20Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
 
-    .line 119
+    .line 118
     iget-object v0, p0, Landroid/view/GLES20RecordingCanvas;->mDisplayList:Landroid/view/GLES20DisplayList;
 
     iget-object v0, v0, Landroid/view/GLES20DisplayList;->mBitmaps:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 121
+    .line 120
     return-void
 .end method
 
@@ -223,17 +223,17 @@
     .parameter "paint"
 
     .prologue
-    .line 125
+    .line 124
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/GLES20Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/RectF;Landroid/graphics/Paint;)V
 
-    .line 126
+    .line 125
     iget-object v0, p0, Landroid/view/GLES20RecordingCanvas;->mDisplayList:Landroid/view/GLES20DisplayList;
 
     iget-object v0, v0, Landroid/view/GLES20DisplayList;->mBitmaps:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 128
+    .line 127
     return-void
 .end method
 
@@ -250,10 +250,10 @@
     .parameter "paint"
 
     .prologue
-    .line 133
+    .line 132
     invoke-super/range {p0 .. p9}, Landroid/view/GLES20Canvas;->drawBitmap([IIIFFIIZLandroid/graphics/Paint;)V
 
-    .line 135
+    .line 134
     return-void
 .end method
 
@@ -270,10 +270,10 @@
     .parameter "paint"
 
     .prologue
-    .line 140
+    .line 139
     invoke-super/range {p0 .. p9}, Landroid/view/GLES20Canvas;->drawBitmap([IIIIIIIZLandroid/graphics/Paint;)V
 
-    .line 142
+    .line 141
     return-void
 .end method
 
@@ -289,17 +289,17 @@
     .parameter "paint"
 
     .prologue
-    .line 147
+    .line 146
     invoke-super/range {p0 .. p8}, Landroid/view/GLES20Canvas;->drawBitmapMesh(Landroid/graphics/Bitmap;II[FI[IILandroid/graphics/Paint;)V
 
-    .line 149
+    .line 148
     iget-object v0, p0, Landroid/view/GLES20RecordingCanvas;->mDisplayList:Landroid/view/GLES20DisplayList;
 
     iget-object v0, v0, Landroid/view/GLES20DisplayList;->mBitmaps:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 151
+    .line 150
     return-void
 .end method
 
@@ -311,38 +311,14 @@
     .parameter "paint"
 
     .prologue
-    .line 155
+    .line 154
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/GLES20Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 156
+    .line 155
     invoke-direct {p0, p4}, Landroid/view/GLES20RecordingCanvas;->recordShaderBitmap(Landroid/graphics/Paint;)V
 
-    .line 157
+    .line 156
     return-void
-.end method
-
-.method public drawDisplayList(Landroid/view/DisplayList;Landroid/graphics/Rect;I)I
-    .locals 2
-    .parameter "displayList"
-    .parameter "dirty"
-    .parameter "flags"
-
-    .prologue
-    .line 161
-    invoke-super {p0, p1, p2, p3}, Landroid/view/GLES20Canvas;->drawDisplayList(Landroid/view/DisplayList;Landroid/graphics/Rect;I)I
-
-    move-result v0
-
-    .line 162
-    .local v0, status:I
-    iget-object v1, p0, Landroid/view/GLES20RecordingCanvas;->mDisplayList:Landroid/view/GLES20DisplayList;
-
-    iget-object v1, v1, Landroid/view/GLES20DisplayList;->mChildDisplayLists:Ljava/util/ArrayList;
-
-    invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 163
-    return v0
 .end method
 
 .method public drawLine(FFFFLandroid/graphics/Paint;)V
@@ -354,13 +330,13 @@
     .parameter "paint"
 
     .prologue
-    .line 168
+    .line 160
     invoke-super/range {p0 .. p5}, Landroid/view/GLES20Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    .line 169
+    .line 161
     invoke-direct {p0, p5}, Landroid/view/GLES20RecordingCanvas;->recordShaderBitmap(Landroid/graphics/Paint;)V
 
-    .line 170
+    .line 162
     return-void
 .end method
 
@@ -372,13 +348,13 @@
     .parameter "paint"
 
     .prologue
-    .line 174
+    .line 166
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/GLES20Canvas;->drawLines([FIILandroid/graphics/Paint;)V
 
-    .line 175
+    .line 167
     invoke-direct {p0, p4}, Landroid/view/GLES20RecordingCanvas;->recordShaderBitmap(Landroid/graphics/Paint;)V
 
-    .line 176
+    .line 168
     return-void
 .end method
 
@@ -388,13 +364,13 @@
     .parameter "paint"
 
     .prologue
-    .line 180
+    .line 172
     invoke-super {p0, p1, p2}, Landroid/view/GLES20Canvas;->drawLines([FLandroid/graphics/Paint;)V
 
-    .line 181
+    .line 173
     invoke-direct {p0, p2}, Landroid/view/GLES20RecordingCanvas;->recordShaderBitmap(Landroid/graphics/Paint;)V
 
-    .line 182
+    .line 174
     return-void
 .end method
 
@@ -404,13 +380,13 @@
     .parameter "paint"
 
     .prologue
-    .line 186
+    .line 178
     invoke-super {p0, p1, p2}, Landroid/view/GLES20Canvas;->drawOval(Landroid/graphics/RectF;Landroid/graphics/Paint;)V
 
-    .line 187
+    .line 179
     invoke-direct {p0, p2}, Landroid/view/GLES20RecordingCanvas;->recordShaderBitmap(Landroid/graphics/Paint;)V
 
-    .line 188
+    .line 180
     return-void
 .end method
 
@@ -419,13 +395,13 @@
     .parameter "paint"
 
     .prologue
-    .line 192
+    .line 184
     invoke-super {p0, p1}, Landroid/view/GLES20Canvas;->drawPaint(Landroid/graphics/Paint;)V
 
-    .line 193
+    .line 185
     invoke-direct {p0, p1}, Landroid/view/GLES20RecordingCanvas;->recordShaderBitmap(Landroid/graphics/Paint;)V
 
-    .line 194
+    .line 186
     return-void
 .end method
 
@@ -437,17 +413,17 @@
     .parameter "paint"
 
     .prologue
-    .line 97
+    .line 96
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/GLES20Canvas;->drawPatch(Landroid/graphics/Bitmap;[BLandroid/graphics/RectF;Landroid/graphics/Paint;)V
 
-    .line 98
+    .line 97
     iget-object v0, p0, Landroid/view/GLES20RecordingCanvas;->mDisplayList:Landroid/view/GLES20DisplayList;
 
     iget-object v0, v0, Landroid/view/GLES20DisplayList;->mBitmaps:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 100
+    .line 99
     return-void
 .end method
 
@@ -457,13 +433,13 @@
     .parameter "paint"
 
     .prologue
-    .line 198
+    .line 190
     invoke-super {p0, p1, p2}, Landroid/view/GLES20Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 199
+    .line 191
     invoke-direct {p0, p2}, Landroid/view/GLES20RecordingCanvas;->recordShaderBitmap(Landroid/graphics/Paint;)V
 
-    .line 200
+    .line 192
     return-void
 .end method
 
@@ -474,13 +450,13 @@
     .parameter "paint"
 
     .prologue
-    .line 204
+    .line 196
     invoke-super {p0, p1, p2, p3}, Landroid/view/GLES20Canvas;->drawPoint(FFLandroid/graphics/Paint;)V
 
-    .line 205
+    .line 197
     invoke-direct {p0, p3}, Landroid/view/GLES20RecordingCanvas;->recordShaderBitmap(Landroid/graphics/Paint;)V
 
-    .line 206
+    .line 198
     return-void
 .end method
 
@@ -492,13 +468,13 @@
     .parameter "paint"
 
     .prologue
-    .line 210
+    .line 202
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/GLES20Canvas;->drawPoints([FIILandroid/graphics/Paint;)V
 
-    .line 211
+    .line 203
     invoke-direct {p0, p4}, Landroid/view/GLES20RecordingCanvas;->recordShaderBitmap(Landroid/graphics/Paint;)V
 
-    .line 212
+    .line 204
     return-void
 .end method
 
@@ -508,13 +484,13 @@
     .parameter "paint"
 
     .prologue
-    .line 216
+    .line 208
     invoke-super {p0, p1, p2}, Landroid/view/GLES20Canvas;->drawPoints([FLandroid/graphics/Paint;)V
 
-    .line 217
+    .line 209
     invoke-direct {p0, p2}, Landroid/view/GLES20RecordingCanvas;->recordShaderBitmap(Landroid/graphics/Paint;)V
 
-    .line 218
+    .line 210
     return-void
 .end method
 
@@ -525,13 +501,13 @@
     .parameter "paint"
 
     .prologue
-    .line 228
+    .line 220
     invoke-super {p0, p1, p2, p3}, Landroid/view/GLES20Canvas;->drawPosText(Ljava/lang/String;[FLandroid/graphics/Paint;)V
 
-    .line 229
+    .line 221
     invoke-direct {p0, p3}, Landroid/view/GLES20RecordingCanvas;->recordShaderBitmap(Landroid/graphics/Paint;)V
 
-    .line 230
+    .line 222
     return-void
 .end method
 
@@ -544,13 +520,13 @@
     .parameter "paint"
 
     .prologue
-    .line 222
+    .line 214
     invoke-super/range {p0 .. p5}, Landroid/view/GLES20Canvas;->drawPosText([CII[FLandroid/graphics/Paint;)V
 
-    .line 223
+    .line 215
     invoke-direct {p0, p5}, Landroid/view/GLES20RecordingCanvas;->recordShaderBitmap(Landroid/graphics/Paint;)V
 
-    .line 224
+    .line 216
     return-void
 .end method
 
@@ -563,13 +539,45 @@
     .parameter "paint"
 
     .prologue
-    .line 234
+    .line 226
     invoke-super/range {p0 .. p5}, Landroid/view/GLES20Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 235
+    .line 227
     invoke-direct {p0, p5}, Landroid/view/GLES20RecordingCanvas;->recordShaderBitmap(Landroid/graphics/Paint;)V
 
-    .line 236
+    .line 228
+    return-void
+.end method
+
+.method public drawRect(Landroid/graphics/Rect;Landroid/graphics/Paint;)V
+    .locals 0
+    .parameter "r"
+    .parameter "paint"
+
+    .prologue
+    .line 232
+    invoke-super {p0, p1, p2}, Landroid/view/GLES20Canvas;->drawRect(Landroid/graphics/Rect;Landroid/graphics/Paint;)V
+
+    .line 233
+    invoke-direct {p0, p2}, Landroid/view/GLES20RecordingCanvas;->recordShaderBitmap(Landroid/graphics/Paint;)V
+
+    .line 234
+    return-void
+.end method
+
+.method public drawRect(Landroid/graphics/RectF;Landroid/graphics/Paint;)V
+    .locals 0
+    .parameter "r"
+    .parameter "paint"
+
+    .prologue
+    .line 238
+    invoke-super {p0, p1, p2}, Landroid/view/GLES20Canvas;->drawRect(Landroid/graphics/RectF;Landroid/graphics/Paint;)V
+
+    .line 239
+    invoke-direct {p0, p2}, Landroid/view/GLES20RecordingCanvas;->recordShaderBitmap(Landroid/graphics/Paint;)V
+
+    .line 240
     return-void
 .end method
 
@@ -581,13 +589,13 @@
     .parameter "paint"
 
     .prologue
-    .line 240
+    .line 244
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/GLES20Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 241
+    .line 245
     invoke-direct {p0, p4}, Landroid/view/GLES20RecordingCanvas;->recordShaderBitmap(Landroid/graphics/Paint;)V
 
-    .line 242
+    .line 246
     return-void
 .end method
 
@@ -601,13 +609,13 @@
     .parameter "paint"
 
     .prologue
-    .line 252
+    .line 256
     invoke-super/range {p0 .. p6}, Landroid/view/GLES20Canvas;->drawText(Ljava/lang/CharSequence;IIFFLandroid/graphics/Paint;)V
 
-    .line 253
+    .line 257
     invoke-direct {p0, p6}, Landroid/view/GLES20RecordingCanvas;->recordShaderBitmap(Landroid/graphics/Paint;)V
 
-    .line 254
+    .line 258
     return-void
 .end method
 
@@ -619,13 +627,13 @@
     .parameter "paint"
 
     .prologue
-    .line 264
+    .line 268
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/GLES20Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 265
+    .line 269
     invoke-direct {p0, p4}, Landroid/view/GLES20RecordingCanvas;->recordShaderBitmap(Landroid/graphics/Paint;)V
 
-    .line 266
+    .line 270
     return-void
 .end method
 
@@ -639,13 +647,13 @@
     .parameter "paint"
 
     .prologue
-    .line 258
+    .line 262
     invoke-super/range {p0 .. p6}, Landroid/view/GLES20Canvas;->drawText(Ljava/lang/String;IIFFLandroid/graphics/Paint;)V
 
-    .line 259
+    .line 263
     invoke-direct {p0, p6}, Landroid/view/GLES20RecordingCanvas;->recordShaderBitmap(Landroid/graphics/Paint;)V
 
-    .line 260
+    .line 264
     return-void
 .end method
 
@@ -659,13 +667,13 @@
     .parameter "paint"
 
     .prologue
-    .line 246
+    .line 250
     invoke-super/range {p0 .. p6}, Landroid/view/GLES20Canvas;->drawText([CIIFFLandroid/graphics/Paint;)V
 
-    .line 247
+    .line 251
     invoke-direct {p0, p6}, Landroid/view/GLES20RecordingCanvas;->recordShaderBitmap(Landroid/graphics/Paint;)V
 
-    .line 248
+    .line 252
     return-void
 .end method
 
@@ -678,13 +686,13 @@
     .parameter "paint"
 
     .prologue
-    .line 277
+    .line 281
     invoke-super/range {p0 .. p5}, Landroid/view/GLES20Canvas;->drawTextOnPath(Ljava/lang/String;Landroid/graphics/Path;FFLandroid/graphics/Paint;)V
 
-    .line 278
+    .line 282
     invoke-direct {p0, p5}, Landroid/view/GLES20RecordingCanvas;->recordShaderBitmap(Landroid/graphics/Paint;)V
 
-    .line 279
+    .line 283
     return-void
 .end method
 
@@ -699,13 +707,13 @@
     .parameter "paint"
 
     .prologue
-    .line 271
+    .line 275
     invoke-super/range {p0 .. p7}, Landroid/view/GLES20Canvas;->drawTextOnPath([CIILandroid/graphics/Path;FFLandroid/graphics/Paint;)V
 
-    .line 272
+    .line 276
     invoke-direct {p0, p7}, Landroid/view/GLES20RecordingCanvas;->recordShaderBitmap(Landroid/graphics/Paint;)V
 
-    .line 273
+    .line 277
     return-void
 .end method
 
@@ -722,13 +730,13 @@
     .parameter "paint"
 
     .prologue
-    .line 291
+    .line 295
     invoke-super/range {p0 .. p9}, Landroid/view/GLES20Canvas;->drawTextRun(Ljava/lang/CharSequence;IIIIFFILandroid/graphics/Paint;)V
 
-    .line 292
+    .line 296
     invoke-direct {p0, p9}, Landroid/view/GLES20RecordingCanvas;->recordShaderBitmap(Landroid/graphics/Paint;)V
 
-    .line 293
+    .line 297
     return-void
 .end method
 
@@ -745,13 +753,13 @@
     .parameter "paint"
 
     .prologue
-    .line 284
+    .line 288
     invoke-super/range {p0 .. p9}, Landroid/view/GLES20Canvas;->drawTextRun([CIIIIFFILandroid/graphics/Paint;)V
 
-    .line 285
+    .line 289
     invoke-direct {p0, p9}, Landroid/view/GLES20RecordingCanvas;->recordShaderBitmap(Landroid/graphics/Paint;)V
 
-    .line 286
+    .line 290
     return-void
 .end method
 
@@ -771,13 +779,13 @@
     .parameter "paint"
 
     .prologue
-    .line 299
+    .line 303
     invoke-super/range {p0 .. p12}, Landroid/view/GLES20Canvas;->drawVertices(Landroid/graphics/Canvas$VertexMode;I[FI[FI[II[SIILandroid/graphics/Paint;)V
 
-    .line 301
+    .line 305
     invoke-direct {p0, p12}, Landroid/view/GLES20RecordingCanvas;->recordShaderBitmap(Landroid/graphics/Paint;)V
 
-    .line 302
+    .line 306
     return-void
 .end method
 
@@ -786,7 +794,7 @@
     .parameter "nativeDisplayList"
 
     .prologue
-    .line 83
+    .line 82
     invoke-virtual {p0, p1}, Landroid/view/GLES20RecordingCanvas;->getDisplayList(I)I
 
     move-result v0
@@ -798,7 +806,7 @@
     .locals 1
 
     .prologue
-    .line 306
+    .line 310
     iget-object v0, p0, Landroid/view/GLES20RecordingCanvas;->mNextPoolable:Landroid/view/GLES20RecordingCanvas;
 
     return-object v0
@@ -820,7 +828,7 @@
     .locals 1
 
     .prologue
-    .line 316
+    .line 320
     iget-boolean v0, p0, Landroid/view/GLES20RecordingCanvas;->mIsPooled:Z
 
     return v0
@@ -852,10 +860,10 @@
     .parameter "element"
 
     .prologue
-    .line 311
+    .line 315
     iput-object p1, p0, Landroid/view/GLES20RecordingCanvas;->mNextPoolable:Landroid/view/GLES20RecordingCanvas;
 
-    .line 312
+    .line 316
     return-void
 .end method
 
@@ -878,10 +886,10 @@
     .parameter "isPooled"
 
     .prologue
-    .line 321
+    .line 325
     iput-boolean p1, p0, Landroid/view/GLES20RecordingCanvas;->mIsPooled:Z
 
-    .line 322
+    .line 326
     return-void
 .end method
 
@@ -897,12 +905,5 @@
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
     .line 79
-    iget-object v0, p0, Landroid/view/GLES20RecordingCanvas;->mDisplayList:Landroid/view/GLES20DisplayList;
-
-    iget-object v0, v0, Landroid/view/GLES20DisplayList;->mChildDisplayLists:Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
-
-    .line 80
     return-void
 .end method

@@ -24,14 +24,6 @@
 
 .field public static final EXTRA_DEVICE_ADMIN:Ljava/lang/String; = "android.app.extra.DEVICE_ADMIN"
 
-.field public static final KEYGUARD_DISABLE_FEATURES_ALL:I = 0x7fffffff
-
-.field public static final KEYGUARD_DISABLE_FEATURES_NONE:I = 0x0
-
-.field public static final KEYGUARD_DISABLE_SECURE_CAMERA:I = 0x2
-
-.field public static final KEYGUARD_DISABLE_WIDGETS_ALL:I = 0x1
-
 .field public static final PASSWORD_QUALITY_ALPHABETIC:I = 0x40000
 
 .field public static final PASSWORD_QUALITY_ALPHANUMERIC:I = 0x50000
@@ -64,7 +56,7 @@
     .locals 1
 
     .prologue
-    .line 53
+    .line 52
     const-string v0, "DevicePolicyManager"
 
     sput-object v0, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
@@ -78,13 +70,13 @@
     .parameter "handler"
 
     .prologue
-    .line 58
+    .line 57
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 59
+    .line 58
     iput-object p1, p0, Landroid/app/admin/DevicePolicyManager;->mContext:Landroid/content/Context;
 
-    .line 60
+    .line 59
     const-string v0, "device_policy"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -97,7 +89,7 @@
 
     iput-object v0, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    .line 62
+    .line 61
     return-void
 .end method
 
@@ -107,12 +99,12 @@
     .parameter "handler"
 
     .prologue
-    .line 66
+    .line 65
     new-instance v0, Landroid/app/admin/DevicePolicyManager;
 
     invoke-direct {v0, p0, p1}, Landroid/app/admin/DevicePolicyManager;-><init>(Landroid/content/Context;Landroid/os/Handler;)V
 
-    .line 67
+    .line 66
     .local v0, me:Landroid/app/admin/DevicePolicyManager;
     iget-object v1, v0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
@@ -144,34 +136,30 @@
     .end annotation
 
     .prologue
-    .line 149
+    .line 148
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 151
+    .line 150
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v2
-
-    invoke-interface {v1, v2}, Landroid/app/admin/IDevicePolicyManager;->getActiveAdmins(I)Ljava/util/List;
+    invoke-interface {v1}, Landroid/app/admin/IDevicePolicyManager;->getActiveAdmins()Ljava/util/List;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v1
 
-    .line 156
+    .line 155
     :goto_0
     return-object v1
 
-    .line 152
+    .line 151
     :catch_0
     move-exception v0
 
-    .line 153
+    .line 152
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -179,7 +167,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 156
+    .line 155
     .end local v0           #e:Landroid/os/RemoteException;
     :cond_0
     const/4 v1, 0x0
@@ -194,7 +182,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 1442
+    .line 1304
     :try_start_0
     iget-object v3, p0, Landroid/app/admin/DevicePolicyManager;->mContext:Landroid/content/Context;
 
@@ -210,17 +198,17 @@
 
     move-result-object v0
 
-    .line 1449
+    .line 1311
     .local v0, ai:Landroid/content/pm/ActivityInfo;
     new-instance v2, Landroid/content/pm/ResolveInfo;
 
     invoke-direct {v2}, Landroid/content/pm/ResolveInfo;-><init>()V
 
-    .line 1450
+    .line 1312
     .local v2, ri:Landroid/content/pm/ResolveInfo;
     iput-object v0, v2, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    .line 1453
+    .line 1315
     :try_start_1
     new-instance v3, Landroid/app/admin/DeviceAdminInfo;
 
@@ -231,17 +219,17 @@
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_1 .. :try_end_1} :catch_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_2
 
-    .line 1459
+    .line 1321
     .end local v0           #ai:Landroid/content/pm/ActivityInfo;
     .end local v2           #ri:Landroid/content/pm/ResolveInfo;
     :goto_0
     return-object v3
 
-    .line 1444
+    .line 1306
     :catch_0
     move-exception v1
 
-    .line 1445
+    .line 1307
     .local v1, e:Landroid/content/pm/PackageManager$NameNotFoundException;
     sget-object v3, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -267,17 +255,17 @@
 
     move-object v3, v4
 
-    .line 1446
+    .line 1308
     goto :goto_0
 
-    .line 1454
+    .line 1316
     .end local v1           #e:Landroid/content/pm/PackageManager$NameNotFoundException;
     .restart local v0       #ai:Landroid/content/pm/ActivityInfo;
     .restart local v2       #ri:Landroid/content/pm/ResolveInfo;
     :catch_1
     move-exception v1
 
-    .line 1455
+    .line 1317
     .local v1, e:Lorg/xmlpull/v1/XmlPullParserException;
     sget-object v3, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -303,15 +291,15 @@
 
     move-object v3, v4
 
-    .line 1456
+    .line 1318
     goto :goto_0
 
-    .line 1457
+    .line 1319
     .end local v1           #e:Lorg/xmlpull/v1/XmlPullParserException;
     :catch_2
     move-exception v1
 
-    .line 1458
+    .line 1320
     .local v1, e:Ljava/io/IOException;
     sget-object v3, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -337,57 +325,39 @@
 
     move-object v3, v4
 
-    .line 1459
+    .line 1321
     goto :goto_0
 .end method
 
 .method public getCameraDisabled(Landroid/content/ComponentName;)Z
-    .locals 1
-    .parameter "admin"
-
-    .prologue
-    .line 1359
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v0
-
-    invoke-virtual {p0, p1, v0}, Landroid/app/admin/DevicePolicyManager;->getCameraDisabled(Landroid/content/ComponentName;I)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getCameraDisabled(Landroid/content/ComponentName;I)Z
     .locals 3
     .parameter "admin"
-    .parameter "userHandle"
 
     .prologue
-    .line 1364
+    .line 1274
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 1366
+    .line 1276
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-interface {v1, p1, p2}, Landroid/app/admin/IDevicePolicyManager;->getCameraDisabled(Landroid/content/ComponentName;I)Z
+    invoke-interface {v1, p1}, Landroid/app/admin/IDevicePolicyManager;->getCameraDisabled(Landroid/content/ComponentName;)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v1
 
-    .line 1371
+    .line 1281
     :goto_0
     return v1
 
-    .line 1367
+    .line 1277
     :catch_0
     move-exception v0
 
-    .line 1368
+    .line 1278
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -395,7 +365,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1371
+    .line 1281
     .end local v0           #e:Landroid/os/RemoteException;
     :cond_0
     const/4 v1, 0x0
@@ -407,34 +377,30 @@
     .locals 3
 
     .prologue
-    .line 896
+    .line 848
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 898
+    .line 850
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v2
-
-    invoke-interface {v1, v2}, Landroid/app/admin/IDevicePolicyManager;->getCurrentFailedPasswordAttempts(I)I
+    invoke-interface {v1}, Landroid/app/admin/IDevicePolicyManager;->getCurrentFailedPasswordAttempts()I
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v1
 
-    .line 903
+    .line 855
     :goto_0
     return v1
 
-    .line 899
+    .line 851
     :catch_0
     move-exception v0
 
-    .line 900
+    .line 852
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -442,7 +408,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 903
+    .line 855
     .end local v0           #e:Landroid/os/RemoteException;
     :cond_0
     const/4 v1, -0x1
@@ -454,34 +420,30 @@
     .locals 3
 
     .prologue
-    .line 1166
+    .line 1106
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 1168
+    .line 1108
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v2
-
-    invoke-interface {v1, v2}, Landroid/app/admin/IDevicePolicyManager;->getGlobalProxyAdmin(I)Landroid/content/ComponentName;
+    invoke-interface {v1}, Landroid/app/admin/IDevicePolicyManager;->getGlobalProxyAdmin()Landroid/content/ComponentName;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v1
 
-    .line 1173
+    .line 1113
     :goto_0
     return-object v1
 
-    .line 1169
+    .line 1109
     :catch_0
     move-exception v0
 
-    .line 1170
+    .line 1110
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -489,69 +451,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1173
-    .end local v0           #e:Landroid/os/RemoteException;
-    :cond_0
-    const/4 v1, 0x0
-
-    goto :goto_0
-.end method
-
-.method public getKeyguardDisabledFeatures(Landroid/content/ComponentName;)I
-    .locals 1
-    .parameter "admin"
-
-    .prologue
-    .line 1407
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v0
-
-    invoke-virtual {p0, p1, v0}, Landroid/app/admin/DevicePolicyManager;->getKeyguardDisabledFeatures(Landroid/content/ComponentName;I)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getKeyguardDisabledFeatures(Landroid/content/ComponentName;I)I
-    .locals 3
-    .parameter "admin"
-    .parameter "userHandle"
-
-    .prologue
-    .line 1412
-    iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
-
-    if-eqz v1, :cond_0
-
-    .line 1414
-    :try_start_0
-    iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
-
-    invoke-interface {v1, p1, p2}, Landroid/app/admin/IDevicePolicyManager;->getKeyguardDisabledFeatures(Landroid/content/ComponentName;I)I
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result v1
-
-    .line 1419
-    :goto_0
-    return v1
-
-    .line 1415
-    :catch_0
-    move-exception v0
-
-    .line 1416
-    .local v0, e:Landroid/os/RemoteException;
-    sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
-
-    const-string v2, "Failed talking with device policy service"
-
-    invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    .line 1419
+    .line 1113
     .end local v0           #e:Landroid/os/RemoteException;
     :cond_0
     const/4 v1, 0x0
@@ -560,52 +460,34 @@
 .end method
 
 .method public getMaximumFailedPasswordsForWipe(Landroid/content/ComponentName;)I
-    .locals 1
-    .parameter "admin"
-
-    .prologue
-    .line 943
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v0
-
-    invoke-virtual {p0, p1, v0}, Landroid/app/admin/DevicePolicyManager;->getMaximumFailedPasswordsForWipe(Landroid/content/ComponentName;I)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getMaximumFailedPasswordsForWipe(Landroid/content/ComponentName;I)I
     .locals 3
     .parameter "admin"
-    .parameter "userHandle"
 
     .prologue
-    .line 948
+    .line 895
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 950
+    .line 897
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-interface {v1, p1, p2}, Landroid/app/admin/IDevicePolicyManager;->getMaximumFailedPasswordsForWipe(Landroid/content/ComponentName;I)I
+    invoke-interface {v1, p1}, Landroid/app/admin/IDevicePolicyManager;->getMaximumFailedPasswordsForWipe(Landroid/content/ComponentName;)I
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v1
 
-    .line 955
+    .line 902
     :goto_0
     return v1
 
-    .line 951
+    .line 898
     :catch_0
     move-exception v0
 
-    .line 952
+    .line 899
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -613,7 +495,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 955
+    .line 902
     .end local v0           #e:Landroid/os/RemoteException;
     :cond_0
     const/4 v1, 0x0
@@ -622,52 +504,34 @@
 .end method
 
 .method public getMaximumTimeToLock(Landroid/content/ComponentName;)J
-    .locals 2
-    .parameter "admin"
-
-    .prologue
-    .line 1027
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v0
-
-    invoke-virtual {p0, p1, v0}, Landroid/app/admin/DevicePolicyManager;->getMaximumTimeToLock(Landroid/content/ComponentName;I)J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public getMaximumTimeToLock(Landroid/content/ComponentName;I)J
     .locals 3
     .parameter "admin"
-    .parameter "userHandle"
 
     .prologue
-    .line 1032
+    .line 974
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 1034
+    .line 976
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-interface {v1, p1, p2}, Landroid/app/admin/IDevicePolicyManager;->getMaximumTimeToLock(Landroid/content/ComponentName;I)J
+    invoke-interface {v1, p1}, Landroid/app/admin/IDevicePolicyManager;->getMaximumTimeToLock(Landroid/content/ComponentName;)J
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-wide v1
 
-    .line 1039
+    .line 981
     :goto_0
     return-wide v1
 
-    .line 1035
+    .line 977
     :catch_0
     move-exception v0
 
-    .line 1036
+    .line 978
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -675,7 +539,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1039
+    .line 981
     .end local v0           #e:Landroid/os/RemoteException;
     :cond_0
     const-wide/16 v1, 0x0
@@ -688,34 +552,30 @@
     .parameter "admin"
 
     .prologue
-    .line 820
+    .line 777
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 822
+    .line 779
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v2
-
-    invoke-interface {v1, p1, v2}, Landroid/app/admin/IDevicePolicyManager;->getPasswordExpiration(Landroid/content/ComponentName;I)J
+    invoke-interface {v1, p1}, Landroid/app/admin/IDevicePolicyManager;->getPasswordExpiration(Landroid/content/ComponentName;)J
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-wide v1
 
-    .line 827
+    .line 784
     :goto_0
     return-wide v1
 
-    .line 823
+    .line 780
     :catch_0
     move-exception v0
 
-    .line 824
+    .line 781
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -723,7 +583,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 827
+    .line 784
     .end local v0           #e:Landroid/os/RemoteException;
     :cond_0
     const-wide/16 v1, 0x0
@@ -736,34 +596,30 @@
     .parameter "admin"
 
     .prologue
-    .line 800
+    .line 757
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 802
+    .line 759
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v2
-
-    invoke-interface {v1, p1, v2}, Landroid/app/admin/IDevicePolicyManager;->getPasswordExpirationTimeout(Landroid/content/ComponentName;I)J
+    invoke-interface {v1, p1}, Landroid/app/admin/IDevicePolicyManager;->getPasswordExpirationTimeout(Landroid/content/ComponentName;)J
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-wide v1
 
-    .line 807
+    .line 764
     :goto_0
     return-wide v1
 
-    .line 803
+    .line 760
     :catch_0
     move-exception v0
 
-    .line 804
+    .line 761
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -771,7 +627,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 807
+    .line 764
     .end local v0           #e:Landroid/os/RemoteException;
     :cond_0
     const-wide/16 v1, 0x0
@@ -780,52 +636,34 @@
 .end method
 
 .method public getPasswordHistoryLength(Landroid/content/ComponentName;)I
-    .locals 1
-    .parameter "admin"
-
-    .prologue
-    .line 838
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v0
-
-    invoke-virtual {p0, p1, v0}, Landroid/app/admin/DevicePolicyManager;->getPasswordHistoryLength(Landroid/content/ComponentName;I)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getPasswordHistoryLength(Landroid/content/ComponentName;I)I
     .locals 3
     .parameter "admin"
-    .parameter "userHandle"
 
     .prologue
-    .line 843
+    .line 795
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 845
+    .line 797
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-interface {v1, p1, p2}, Landroid/app/admin/IDevicePolicyManager;->getPasswordHistoryLength(Landroid/content/ComponentName;I)I
+    invoke-interface {v1, p1}, Landroid/app/admin/IDevicePolicyManager;->getPasswordHistoryLength(Landroid/content/ComponentName;)I
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v1
 
-    .line 850
+    .line 802
     :goto_0
     return v1
 
-    .line 846
+    .line 798
     :catch_0
     move-exception v0
 
-    .line 847
+    .line 799
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -833,7 +671,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 850
+    .line 802
     .end local v0           #e:Landroid/os/RemoteException;
     :cond_0
     const/4 v1, 0x0
@@ -846,59 +684,41 @@
     .parameter "quality"
 
     .prologue
-    .line 861
+    .line 813
     const/16 v0, 0x10
 
     return v0
 .end method
 
 .method public getPasswordMinimumLength(Landroid/content/ComponentName;)I
-    .locals 1
-    .parameter "admin"
-
-    .prologue
-    .line 362
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v0
-
-    invoke-virtual {p0, p1, v0}, Landroid/app/admin/DevicePolicyManager;->getPasswordMinimumLength(Landroid/content/ComponentName;I)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getPasswordMinimumLength(Landroid/content/ComponentName;I)I
     .locals 3
     .parameter "admin"
-    .parameter "userHandle"
 
     .prologue
-    .line 367
+    .line 354
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 369
+    .line 356
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-interface {v1, p1, p2}, Landroid/app/admin/IDevicePolicyManager;->getPasswordMinimumLength(Landroid/content/ComponentName;I)I
+    invoke-interface {v1, p1}, Landroid/app/admin/IDevicePolicyManager;->getPasswordMinimumLength(Landroid/content/ComponentName;)I
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v1
 
-    .line 374
+    .line 361
     :goto_0
     return v1
 
-    .line 370
+    .line 357
     :catch_0
     move-exception v0
 
-    .line 371
+    .line 358
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -906,7 +726,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 374
+    .line 361
     .end local v0           #e:Landroid/os/RemoteException;
     :cond_0
     const/4 v1, 0x0
@@ -915,52 +735,34 @@
 .end method
 
 .method public getPasswordMinimumLetters(Landroid/content/ComponentName;)I
-    .locals 1
-    .parameter "admin"
-
-    .prologue
-    .line 540
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v0
-
-    invoke-virtual {p0, p1, v0}, Landroid/app/admin/DevicePolicyManager;->getPasswordMinimumLetters(Landroid/content/ComponentName;I)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getPasswordMinimumLetters(Landroid/content/ComponentName;I)I
     .locals 3
     .parameter "admin"
-    .parameter "userHandle"
 
     .prologue
-    .line 545
+    .line 517
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 547
+    .line 519
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-interface {v1, p1, p2}, Landroid/app/admin/IDevicePolicyManager;->getPasswordMinimumLetters(Landroid/content/ComponentName;I)I
+    invoke-interface {v1, p1}, Landroid/app/admin/IDevicePolicyManager;->getPasswordMinimumLetters(Landroid/content/ComponentName;)I
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v1
 
-    .line 552
+    .line 524
     :goto_0
     return v1
 
-    .line 548
+    .line 520
     :catch_0
     move-exception v0
 
-    .line 549
+    .line 521
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -968,7 +770,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 552
+    .line 524
     .end local v0           #e:Landroid/os/RemoteException;
     :cond_0
     const/4 v1, 0x0
@@ -977,52 +779,34 @@
 .end method
 
 .method public getPasswordMinimumLowerCase(Landroid/content/ComponentName;)I
-    .locals 1
-    .parameter "admin"
-
-    .prologue
-    .line 482
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v0
-
-    invoke-virtual {p0, p1, v0}, Landroid/app/admin/DevicePolicyManager;->getPasswordMinimumLowerCase(Landroid/content/ComponentName;I)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getPasswordMinimumLowerCase(Landroid/content/ComponentName;I)I
     .locals 3
     .parameter "admin"
-    .parameter "userHandle"
 
     .prologue
-    .line 487
+    .line 464
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 489
+    .line 466
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-interface {v1, p1, p2}, Landroid/app/admin/IDevicePolicyManager;->getPasswordMinimumLowerCase(Landroid/content/ComponentName;I)I
+    invoke-interface {v1, p1}, Landroid/app/admin/IDevicePolicyManager;->getPasswordMinimumLowerCase(Landroid/content/ComponentName;)I
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v1
 
-    .line 494
+    .line 471
     :goto_0
     return v1
 
-    .line 490
+    .line 467
     :catch_0
     move-exception v0
 
-    .line 491
+    .line 468
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -1030,7 +814,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 494
+    .line 471
     .end local v0           #e:Landroid/os/RemoteException;
     :cond_0
     const/4 v1, 0x0
@@ -1039,52 +823,34 @@
 .end method
 
 .method public getPasswordMinimumNonLetter(Landroid/content/ComponentName;)I
-    .locals 1
-    .parameter "admin"
-
-    .prologue
-    .line 714
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v0
-
-    invoke-virtual {p0, p1, v0}, Landroid/app/admin/DevicePolicyManager;->getPasswordMinimumNonLetter(Landroid/content/ComponentName;I)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getPasswordMinimumNonLetter(Landroid/content/ComponentName;I)I
     .locals 3
     .parameter "admin"
-    .parameter "userHandle"
 
     .prologue
-    .line 719
+    .line 676
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 721
+    .line 678
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-interface {v1, p1, p2}, Landroid/app/admin/IDevicePolicyManager;->getPasswordMinimumNonLetter(Landroid/content/ComponentName;I)I
+    invoke-interface {v1, p1}, Landroid/app/admin/IDevicePolicyManager;->getPasswordMinimumNonLetter(Landroid/content/ComponentName;)I
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v1
 
-    .line 726
+    .line 683
     :goto_0
     return v1
 
-    .line 722
+    .line 679
     :catch_0
     move-exception v0
 
-    .line 723
+    .line 680
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -1092,7 +858,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 726
+    .line 683
     .end local v0           #e:Landroid/os/RemoteException;
     :cond_0
     const/4 v1, 0x0
@@ -1101,52 +867,34 @@
 .end method
 
 .method public getPasswordMinimumNumeric(Landroid/content/ComponentName;)I
-    .locals 1
-    .parameter "admin"
-
-    .prologue
-    .line 598
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v0
-
-    invoke-virtual {p0, p1, v0}, Landroid/app/admin/DevicePolicyManager;->getPasswordMinimumNumeric(Landroid/content/ComponentName;I)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getPasswordMinimumNumeric(Landroid/content/ComponentName;I)I
     .locals 3
     .parameter "admin"
-    .parameter "userHandle"
 
     .prologue
-    .line 603
+    .line 570
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 605
+    .line 572
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-interface {v1, p1, p2}, Landroid/app/admin/IDevicePolicyManager;->getPasswordMinimumNumeric(Landroid/content/ComponentName;I)I
+    invoke-interface {v1, p1}, Landroid/app/admin/IDevicePolicyManager;->getPasswordMinimumNumeric(Landroid/content/ComponentName;)I
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v1
 
-    .line 610
+    .line 577
     :goto_0
     return v1
 
-    .line 606
+    .line 573
     :catch_0
     move-exception v0
 
-    .line 607
+    .line 574
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -1154,7 +902,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 610
+    .line 577
     .end local v0           #e:Landroid/os/RemoteException;
     :cond_0
     const/4 v1, 0x0
@@ -1163,52 +911,34 @@
 .end method
 
 .method public getPasswordMinimumSymbols(Landroid/content/ComponentName;)I
-    .locals 1
-    .parameter "admin"
-
-    .prologue
-    .line 656
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v0
-
-    invoke-virtual {p0, p1, v0}, Landroid/app/admin/DevicePolicyManager;->getPasswordMinimumSymbols(Landroid/content/ComponentName;I)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getPasswordMinimumSymbols(Landroid/content/ComponentName;I)I
     .locals 3
     .parameter "admin"
-    .parameter "userHandle"
 
     .prologue
-    .line 661
+    .line 623
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 663
+    .line 625
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-interface {v1, p1, p2}, Landroid/app/admin/IDevicePolicyManager;->getPasswordMinimumSymbols(Landroid/content/ComponentName;I)I
+    invoke-interface {v1, p1}, Landroid/app/admin/IDevicePolicyManager;->getPasswordMinimumSymbols(Landroid/content/ComponentName;)I
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v1
 
-    .line 668
+    .line 630
     :goto_0
     return v1
 
-    .line 664
+    .line 626
     :catch_0
     move-exception v0
 
-    .line 665
+    .line 627
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -1216,7 +946,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 668
+    .line 630
     .end local v0           #e:Landroid/os/RemoteException;
     :cond_0
     const/4 v1, 0x0
@@ -1225,52 +955,34 @@
 .end method
 
 .method public getPasswordMinimumUpperCase(Landroid/content/ComponentName;)I
-    .locals 1
-    .parameter "admin"
-
-    .prologue
-    .line 422
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v0
-
-    invoke-virtual {p0, p1, v0}, Landroid/app/admin/DevicePolicyManager;->getPasswordMinimumUpperCase(Landroid/content/ComponentName;I)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getPasswordMinimumUpperCase(Landroid/content/ComponentName;I)I
     .locals 3
     .parameter "admin"
-    .parameter "userHandle"
 
     .prologue
-    .line 427
+    .line 409
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 429
+    .line 411
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-interface {v1, p1, p2}, Landroid/app/admin/IDevicePolicyManager;->getPasswordMinimumUpperCase(Landroid/content/ComponentName;I)I
+    invoke-interface {v1, p1}, Landroid/app/admin/IDevicePolicyManager;->getPasswordMinimumUpperCase(Landroid/content/ComponentName;)I
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v1
 
-    .line 434
+    .line 416
     :goto_0
     return v1
 
-    .line 430
+    .line 412
     :catch_0
     move-exception v0
 
-    .line 431
+    .line 413
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -1278,7 +990,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 434
+    .line 416
     .end local v0           #e:Landroid/os/RemoteException;
     :cond_0
     const/4 v1, 0x0
@@ -1287,52 +999,34 @@
 .end method
 
 .method public getPasswordQuality(Landroid/content/ComponentName;)I
-    .locals 1
-    .parameter "admin"
-
-    .prologue
-    .line 309
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v0
-
-    invoke-virtual {p0, p1, v0}, Landroid/app/admin/DevicePolicyManager;->getPasswordQuality(Landroid/content/ComponentName;I)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getPasswordQuality(Landroid/content/ComponentName;I)I
     .locals 3
     .parameter "admin"
-    .parameter "userHandle"
 
     .prologue
-    .line 314
+    .line 306
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 316
+    .line 308
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-interface {v1, p1, p2}, Landroid/app/admin/IDevicePolicyManager;->getPasswordQuality(Landroid/content/ComponentName;I)I
+    invoke-interface {v1, p1}, Landroid/app/admin/IDevicePolicyManager;->getPasswordQuality(Landroid/content/ComponentName;)I
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v1
 
-    .line 321
+    .line 313
     :goto_0
     return v1
 
-    .line 317
+    .line 309
     :catch_0
     move-exception v0
 
-    .line 318
+    .line 310
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -1340,7 +1034,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 321
+    .line 313
     .end local v0           #e:Landroid/os/RemoteException;
     :cond_0
     const/4 v1, 0x0
@@ -1354,33 +1048,29 @@
     .parameter "result"
 
     .prologue
-    .line 1467
+    .line 1329
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 1469
+    .line 1331
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v2
-
-    invoke-interface {v1, p1, p2, v2}, Landroid/app/admin/IDevicePolicyManager;->getRemoveWarning(Landroid/content/ComponentName;Landroid/os/RemoteCallback;I)V
+    invoke-interface {v1, p1, p2}, Landroid/app/admin/IDevicePolicyManager;->getRemoveWarning(Landroid/content/ComponentName;Landroid/os/RemoteCallback;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1474
+    .line 1336
     :cond_0
     :goto_0
     return-void
 
-    .line 1470
+    .line 1332
     :catch_0
     move-exception v0
 
-    .line 1471
+    .line 1333
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -1396,34 +1086,30 @@
     .parameter "admin"
 
     .prologue
-    .line 1288
+    .line 1208
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 1290
+    .line 1210
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v2
-
-    invoke-interface {v1, p1, v2}, Landroid/app/admin/IDevicePolicyManager;->getStorageEncryption(Landroid/content/ComponentName;I)Z
+    invoke-interface {v1, p1}, Landroid/app/admin/IDevicePolicyManager;->getStorageEncryption(Landroid/content/ComponentName;)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v1
 
-    .line 1295
+    .line 1215
     :goto_0
     return v1
 
-    .line 1291
+    .line 1211
     :catch_0
     move-exception v0
 
-    .line 1292
+    .line 1212
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -1431,7 +1117,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1295
+    .line 1215
     .end local v0           #e:Landroid/os/RemoteException;
     :cond_0
     const/4 v1, 0x0
@@ -1440,50 +1126,33 @@
 .end method
 
 .method public getStorageEncryptionStatus()I
-    .locals 1
-
-    .prologue
-    .line 1315
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v0
-
-    invoke-virtual {p0, v0}, Landroid/app/admin/DevicePolicyManager;->getStorageEncryptionStatus(I)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getStorageEncryptionStatus(I)I
     .locals 3
-    .parameter "userHandle"
 
     .prologue
-    .line 1320
+    .line 1235
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 1322
+    .line 1237
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-interface {v1, p1}, Landroid/app/admin/IDevicePolicyManager;->getStorageEncryptionStatus(I)I
+    invoke-interface {v1}, Landroid/app/admin/IDevicePolicyManager;->getStorageEncryptionStatus()I
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v1
 
-    .line 1327
+    .line 1242
     :goto_0
     return v1
 
-    .line 1323
+    .line 1238
     :catch_0
     move-exception v0
 
-    .line 1324
+    .line 1239
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -1491,7 +1160,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1327
+    .line 1242
     .end local v0           #e:Landroid/os/RemoteException;
     :cond_0
     const/4 v1, 0x0
@@ -1505,34 +1174,30 @@
     .parameter "usesPolicy"
 
     .prologue
-    .line 201
+    .line 198
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 203
+    .line 200
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v2
-
-    invoke-interface {v1, p1, p2, v2}, Landroid/app/admin/IDevicePolicyManager;->hasGrantedPolicy(Landroid/content/ComponentName;II)Z
+    invoke-interface {v1, p1, p2}, Landroid/app/admin/IDevicePolicyManager;->hasGrantedPolicy(Landroid/content/ComponentName;I)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v1
 
-    .line 208
+    .line 205
     :goto_0
     return v1
 
-    .line 204
+    .line 201
     :catch_0
     move-exception v0
 
-    .line 205
+    .line 202
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -1540,7 +1205,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 208
+    .line 205
     .end local v0           #e:Landroid/os/RemoteException;
     :cond_0
     const/4 v1, 0x0
@@ -1552,34 +1217,30 @@
     .locals 3
 
     .prologue
-    .line 877
+    .line 829
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 879
+    .line 831
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v2
-
-    invoke-interface {v1, v2}, Landroid/app/admin/IDevicePolicyManager;->isActivePasswordSufficient(I)Z
+    invoke-interface {v1}, Landroid/app/admin/IDevicePolicyManager;->isActivePasswordSufficient()Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v1
 
-    .line 884
+    .line 836
     :goto_0
     return v1
 
-    .line 880
+    .line 832
     :catch_0
     move-exception v0
 
-    .line 881
+    .line 833
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -1587,7 +1248,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 884
+    .line 836
     .end local v0           #e:Landroid/os/RemoteException;
     :cond_0
     const/4 v1, 0x0
@@ -1600,34 +1261,30 @@
     .parameter "who"
 
     .prologue
-    .line 133
+    .line 132
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 135
+    .line 134
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v2
-
-    invoke-interface {v1, p1, v2}, Landroid/app/admin/IDevicePolicyManager;->isAdminActive(Landroid/content/ComponentName;I)Z
+    invoke-interface {v1, p1}, Landroid/app/admin/IDevicePolicyManager;->isAdminActive(Landroid/content/ComponentName;)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v1
 
-    .line 140
+    .line 139
     :goto_0
     return v1
 
-    .line 136
+    .line 135
     :catch_0
     move-exception v0
 
-    .line 137
+    .line 136
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -1635,7 +1292,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 140
+    .line 139
     .end local v0           #e:Landroid/os/RemoteException;
     :cond_0
     const/4 v1, 0x0
@@ -1647,12 +1304,12 @@
     .locals 3
 
     .prologue
-    .line 1051
+    .line 993
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 1053
+    .line 995
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
@@ -1660,16 +1317,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1058
+    .line 1000
     :cond_0
     :goto_0
     return-void
 
-    .line 1054
+    .line 996
     :catch_0
     move-exception v0
 
-    .line 1055
+    .line 997
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -1685,34 +1342,30 @@
     .parameter "packageName"
 
     .prologue
-    .line 165
+    .line 162
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 167
+    .line 164
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v2
-
-    invoke-interface {v1, p1, v2}, Landroid/app/admin/IDevicePolicyManager;->packageHasActiveAdmins(Ljava/lang/String;I)Z
+    invoke-interface {v1, p1}, Landroid/app/admin/IDevicePolicyManager;->packageHasActiveAdmins(Ljava/lang/String;)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v1
 
-    .line 172
+    .line 169
     :goto_0
     return v1
 
-    .line 168
+    .line 165
     :catch_0
     move-exception v0
 
-    .line 169
+    .line 166
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -1720,7 +1373,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 172
+    .line 169
     .end local v0           #e:Landroid/os/RemoteException;
     :cond_0
     const/4 v1, 0x0
@@ -1733,33 +1386,29 @@
     .parameter "who"
 
     .prologue
-    .line 182
+    .line 179
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 184
+    .line 181
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v2
-
-    invoke-interface {v1, p1, v2}, Landroid/app/admin/IDevicePolicyManager;->removeActiveAdmin(Landroid/content/ComponentName;I)V
+    invoke-interface {v1, p1}, Landroid/app/admin/IDevicePolicyManager;->removeActiveAdmin(Landroid/content/ComponentName;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 189
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 185
-    :catch_0
-    move-exception v0
 
     .line 186
+    :cond_0
+    :goto_0
+    return-void
+
+    .line 182
+    :catch_0
+    move-exception v0
+
+    .line 183
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -1770,34 +1419,33 @@
     goto :goto_0
 .end method
 
-.method public reportFailedPasswordAttempt(I)V
+.method public reportFailedPasswordAttempt()V
     .locals 3
-    .parameter "userHandle"
 
     .prologue
-    .line 1495
+    .line 1357
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 1497
+    .line 1359
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-interface {v1, p1}, Landroid/app/admin/IDevicePolicyManager;->reportFailedPasswordAttempt(I)V
+    invoke-interface {v1}, Landroid/app/admin/IDevicePolicyManager;->reportFailedPasswordAttempt()V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1502
+    .line 1364
     :cond_0
     :goto_0
     return-void
 
-    .line 1498
+    .line 1360
     :catch_0
     move-exception v0
 
-    .line 1499
+    .line 1361
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -1808,34 +1456,33 @@
     goto :goto_0
 .end method
 
-.method public reportSuccessfulPasswordAttempt(I)V
+.method public reportSuccessfulPasswordAttempt()V
     .locals 3
-    .parameter "userHandle"
 
     .prologue
-    .line 1508
+    .line 1370
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 1510
+    .line 1372
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-interface {v1, p1}, Landroid/app/admin/IDevicePolicyManager;->reportSuccessfulPasswordAttempt(I)V
+    invoke-interface {v1}, Landroid/app/admin/IDevicePolicyManager;->reportSuccessfulPasswordAttempt()V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1515
+    .line 1377
     :cond_0
     :goto_0
     return-void
 
-    .line 1511
+    .line 1373
     :catch_0
     move-exception v0
 
-    .line 1512
+    .line 1374
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -1852,34 +1499,30 @@
     .parameter "flags"
 
     .prologue
-    .line 987
+    .line 934
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 989
+    .line 936
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v2
-
-    invoke-interface {v1, p1, p2, v2}, Landroid/app/admin/IDevicePolicyManager;->resetPassword(Ljava/lang/String;II)Z
+    invoke-interface {v1, p1, p2}, Landroid/app/admin/IDevicePolicyManager;->resetPassword(Ljava/lang/String;I)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v1
 
-    .line 994
+    .line 941
     :goto_0
     return v1
 
-    .line 990
+    .line 937
     :catch_0
     move-exception v0
 
-    .line 991
+    .line 938
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -1887,7 +1530,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 994
+    .line 941
     .end local v0           #e:Landroid/os/RemoteException;
     :cond_0
     const/4 v1, 0x0
@@ -1901,33 +1544,29 @@
     .parameter "refreshing"
 
     .prologue
-    .line 1426
+    .line 1288
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 1428
+    .line 1290
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v2
-
-    invoke-interface {v1, p1, p2, v2}, Landroid/app/admin/IDevicePolicyManager;->setActiveAdmin(Landroid/content/ComponentName;ZI)V
+    invoke-interface {v1, p1, p2}, Landroid/app/admin/IDevicePolicyManager;->setActiveAdmin(Landroid/content/ComponentName;Z)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1433
+    .line 1295
     :cond_0
     :goto_0
     return-void
 
-    .line 1429
+    .line 1291
     :catch_0
     move-exception v0
 
-    .line 1430
+    .line 1292
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -1938,8 +1577,8 @@
     goto :goto_0
 .end method
 
-.method public setActivePasswordState(IIIIIIIII)V
-    .locals 11
+.method public setActivePasswordState(IIIIIIII)V
+    .locals 10
     .parameter "quality"
     .parameter "length"
     .parameter "letters"
@@ -1948,15 +1587,14 @@
     .parameter "numbers"
     .parameter "symbols"
     .parameter "nonletter"
-    .parameter "userHandle"
 
     .prologue
-    .line 1481
+    .line 1343
     iget-object v0, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v0, :cond_0
 
-    .line 1483
+    .line 1345
     :try_start_0
     iget-object v0, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
@@ -1968,7 +1606,7 @@
 
     move v4, p4
 
-    move/from16 v5, p5
+    move v5, p5
 
     move/from16 v6, p6
 
@@ -1976,28 +1614,26 @@
 
     move/from16 v8, p8
 
-    move/from16 v9, p9
-
-    invoke-interface/range {v0 .. v9}, Landroid/app/admin/IDevicePolicyManager;->setActivePasswordState(IIIIIIIII)V
+    invoke-interface/range {v0 .. v8}, Landroid/app/admin/IDevicePolicyManager;->setActivePasswordState(IIIIIIII)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1489
+    .line 1351
     :cond_0
     :goto_0
     return-void
 
-    .line 1485
+    .line 1347
     :catch_0
-    move-exception v10
+    move-exception v9
 
-    .line 1486
-    .local v10, e:Landroid/os/RemoteException;
+    .line 1348
+    .local v9, e:Landroid/os/RemoteException;
     sget-object v0, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
     const-string v1, "Failed talking with device policy service"
 
-    invoke-static {v0, v1, v10}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v0, v1, v9}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_0
 .end method
@@ -2008,33 +1644,29 @@
     .parameter "disabled"
 
     .prologue
-    .line 1343
+    .line 1258
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 1345
+    .line 1260
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v2
-
-    invoke-interface {v1, p1, p2, v2}, Landroid/app/admin/IDevicePolicyManager;->setCameraDisabled(Landroid/content/ComponentName;ZI)V
+    invoke-interface {v1, p1, p2}, Landroid/app/admin/IDevicePolicyManager;->setCameraDisabled(Landroid/content/ComponentName;Z)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1350
+    .line 1265
     :cond_0
     :goto_0
     return-void
 
-    .line 1346
+    .line 1261
     :catch_0
     move-exception v0
 
-    .line 1347
+    .line 1262
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -2064,24 +1696,24 @@
     .end annotation
 
     .prologue
-    .line 1114
+    .line 1054
     .local p3, exclusionList:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     if-nez p2, :cond_0
 
-    .line 1115
+    .line 1055
     new-instance v11, Ljava/lang/NullPointerException;
 
     invoke-direct {v11}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v11
 
-    .line 1117
+    .line 1057
     :cond_0
     iget-object v11, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v11, :cond_2
 
-    .line 1121
+    .line 1061
     :try_start_0
     sget-object v11, Ljava/net/Proxy;->NO_PROXY:Ljava/net/Proxy;
 
@@ -2091,33 +1723,29 @@
 
     if-eqz v11, :cond_1
 
-    .line 1122
+    .line 1062
     const/4 v6, 0x0
 
-    .line 1123
+    .line 1063
     .local v6, hostSpec:Ljava/lang/String;
     const/4 v2, 0x0
 
-    .line 1151
+    .line 1091
     .local v2, exclSpec:Ljava/lang/String;
     :goto_0
     iget-object v11, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v12
-
-    invoke-interface {v11, p1, v6, v2, v12}, Landroid/app/admin/IDevicePolicyManager;->setGlobalProxy(Landroid/content/ComponentName;Ljava/lang/String;Ljava/lang/String;I)Landroid/content/ComponentName;
+    invoke-interface {v11, p1, v6, v2}, Landroid/app/admin/IDevicePolicyManager;->setGlobalProxy(Landroid/content/ComponentName;Ljava/lang/String;Ljava/lang/String;)Landroid/content/ComponentName;
 
     move-result-object v11
 
-    .line 1156
+    .line 1096
     .end local v2           #exclSpec:Ljava/lang/String;
     .end local v6           #hostSpec:Ljava/lang/String;
     :goto_1
     return-object v11
 
-    .line 1125
+    .line 1065
     :cond_1
     invoke-virtual {p2}, Ljava/net/Proxy;->type()Ljava/net/Proxy$Type;
 
@@ -2131,7 +1759,7 @@
 
     if-nez v11, :cond_3
 
-    .line 1126
+    .line 1066
     new-instance v11, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {v11}, Ljava/lang/IllegalArgumentException;-><init>()V
@@ -2140,11 +1768,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1152
+    .line 1092
     :catch_0
     move-exception v0
 
-    .line 1153
+    .line 1093
     .local v0, e:Landroid/os/RemoteException;
     sget-object v11, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -2152,14 +1780,14 @@
 
     invoke-static {v11, v12, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1156
+    .line 1096
     .end local v0           #e:Landroid/os/RemoteException;
     :cond_2
     const/4 v11, 0x0
 
     goto :goto_1
 
-    .line 1128
+    .line 1068
     :cond_3
     :try_start_1
     invoke-virtual {p2}, Ljava/net/Proxy;->address()Ljava/net/SocketAddress;
@@ -2168,25 +1796,25 @@
 
     check-cast v10, Ljava/net/InetSocketAddress;
 
-    .line 1129
+    .line 1069
     .local v10, sa:Ljava/net/InetSocketAddress;
     invoke-virtual {v10}, Ljava/net/InetSocketAddress;->getHostName()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 1130
+    .line 1070
     .local v5, hostName:Ljava/lang/String;
     invoke-virtual {v10}, Ljava/net/InetSocketAddress;->getPort()I
 
     move-result v9
 
-    .line 1131
+    .line 1071
     .local v9, port:I
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 1132
+    .line 1072
     .local v4, hostBuilder:Ljava/lang/StringBuilder;
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2210,14 +1838,14 @@
 
     move-result-object v6
 
-    .line 1134
+    .line 1074
     .restart local v6       #hostSpec:Ljava/lang/String;
     if-nez p3, :cond_4
 
-    .line 1135
+    .line 1075
     const-string v2, ""
 
-    .line 1149
+    .line 1089
     .restart local v2       #exclSpec:Ljava/lang/String;
     :goto_2
     invoke-static {v9}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -2228,18 +1856,18 @@
 
     goto :goto_0
 
-    .line 1137
+    .line 1077
     .end local v2           #exclSpec:Ljava/lang/String;
     :cond_4
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 1138
+    .line 1078
     .local v8, listBuilder:Ljava/lang/StringBuilder;
     const/4 v3, 0x1
 
-    .line 1139
+    .line 1079
     .local v3, firstDomain:Z
     invoke-interface/range {p3 .. p3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -2259,18 +1887,18 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 1140
+    .line 1080
     .local v1, exclDomain:Ljava/lang/String;
     if-nez v3, :cond_5
 
-    .line 1141
+    .line 1081
     const-string v11, ","
 
     invoke-virtual {v8, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v8
 
-    .line 1145
+    .line 1085
     :goto_4
     invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
@@ -2282,13 +1910,13 @@
 
     goto :goto_3
 
-    .line 1143
+    .line 1083
     :cond_5
     const/4 v3, 0x0
 
     goto :goto_4
 
-    .line 1147
+    .line 1087
     .end local v1           #exclDomain:Ljava/lang/String;
     :cond_6
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -2301,82 +1929,35 @@
     goto :goto_2
 .end method
 
-.method public setKeyguardDisabledFeatures(Landroid/content/ComponentName;I)V
-    .locals 3
-    .parameter "admin"
-    .parameter "which"
-
-    .prologue
-    .line 1389
-    iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
-
-    if-eqz v1, :cond_0
-
-    .line 1391
-    :try_start_0
-    iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
-
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v2
-
-    invoke-interface {v1, p1, p2, v2}, Landroid/app/admin/IDevicePolicyManager;->setKeyguardDisabledFeatures(Landroid/content/ComponentName;II)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 1396
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 1392
-    :catch_0
-    move-exception v0
-
-    .line 1393
-    .local v0, e:Landroid/os/RemoteException;
-    sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
-
-    const-string v2, "Failed talking with device policy service"
-
-    invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto :goto_0
-.end method
-
 .method public setMaximumFailedPasswordsForWipe(Landroid/content/ComponentName;I)V
     .locals 3
     .parameter "admin"
     .parameter "num"
 
     .prologue
-    .line 926
+    .line 878
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 928
+    .line 880
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v2
-
-    invoke-interface {v1, p1, p2, v2}, Landroid/app/admin/IDevicePolicyManager;->setMaximumFailedPasswordsForWipe(Landroid/content/ComponentName;II)V
+    invoke-interface {v1, p1, p2}, Landroid/app/admin/IDevicePolicyManager;->setMaximumFailedPasswordsForWipe(Landroid/content/ComponentName;I)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 933
+    .line 885
     :cond_0
     :goto_0
     return-void
 
-    .line 929
+    .line 881
     :catch_0
     move-exception v0
 
-    .line 930
+    .line 882
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -2393,33 +1974,29 @@
     .parameter "timeMs"
 
     .prologue
-    .line 1011
+    .line 958
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 1013
+    .line 960
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v2
-
-    invoke-interface {v1, p1, p2, p3, v2}, Landroid/app/admin/IDevicePolicyManager;->setMaximumTimeToLock(Landroid/content/ComponentName;JI)V
+    invoke-interface {v1, p1, p2, p3}, Landroid/app/admin/IDevicePolicyManager;->setMaximumTimeToLock(Landroid/content/ComponentName;J)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1018
+    .line 965
     :cond_0
     :goto_0
     return-void
 
-    .line 1014
+    .line 961
     :catch_0
     move-exception v0
 
-    .line 1015
+    .line 962
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -2436,33 +2013,29 @@
     .parameter "timeout"
 
     .prologue
-    .line 781
+    .line 738
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 783
+    .line 740
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v2
-
-    invoke-interface {v1, p1, p2, p3, v2}, Landroid/app/admin/IDevicePolicyManager;->setPasswordExpirationTimeout(Landroid/content/ComponentName;JI)V
+    invoke-interface {v1, p1, p2, p3}, Landroid/app/admin/IDevicePolicyManager;->setPasswordExpirationTimeout(Landroid/content/ComponentName;J)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 788
+    .line 745
     :cond_0
     :goto_0
     return-void
 
-    .line 784
+    .line 741
     :catch_0
     move-exception v0
 
-    .line 785
+    .line 742
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -2479,33 +2052,29 @@
     .parameter "length"
 
     .prologue
-    .line 752
+    .line 709
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 754
+    .line 711
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v2
-
-    invoke-interface {v1, p1, p2, v2}, Landroid/app/admin/IDevicePolicyManager;->setPasswordHistoryLength(Landroid/content/ComponentName;II)V
+    invoke-interface {v1, p1, p2}, Landroid/app/admin/IDevicePolicyManager;->setPasswordHistoryLength(Landroid/content/ComponentName;I)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 759
+    .line 716
     :cond_0
     :goto_0
     return-void
 
-    .line 755
+    .line 712
     :catch_0
     move-exception v0
 
-    .line 756
+    .line 713
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -2522,33 +2091,29 @@
     .parameter "length"
 
     .prologue
-    .line 346
+    .line 338
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 348
+    .line 340
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v2
-
-    invoke-interface {v1, p1, p2, v2}, Landroid/app/admin/IDevicePolicyManager;->setPasswordMinimumLength(Landroid/content/ComponentName;II)V
+    invoke-interface {v1, p1, p2}, Landroid/app/admin/IDevicePolicyManager;->setPasswordMinimumLength(Landroid/content/ComponentName;I)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 353
+    .line 345
     :cond_0
     :goto_0
     return-void
 
-    .line 349
+    .line 341
     :catch_0
     move-exception v0
 
-    .line 350
+    .line 342
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -2565,33 +2130,29 @@
     .parameter "length"
 
     .prologue
-    .line 519
+    .line 496
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 521
+    .line 498
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v2
-
-    invoke-interface {v1, p1, p2, v2}, Landroid/app/admin/IDevicePolicyManager;->setPasswordMinimumLetters(Landroid/content/ComponentName;II)V
+    invoke-interface {v1, p1, p2}, Landroid/app/admin/IDevicePolicyManager;->setPasswordMinimumLetters(Landroid/content/ComponentName;I)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 526
+    .line 503
     :cond_0
     :goto_0
     return-void
 
-    .line 522
+    .line 499
     :catch_0
     move-exception v0
 
-    .line 523
+    .line 500
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -2608,33 +2169,29 @@
     .parameter "length"
 
     .prologue
-    .line 460
+    .line 442
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 462
+    .line 444
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v2
-
-    invoke-interface {v1, p1, p2, v2}, Landroid/app/admin/IDevicePolicyManager;->setPasswordMinimumLowerCase(Landroid/content/ComponentName;II)V
+    invoke-interface {v1, p1, p2}, Landroid/app/admin/IDevicePolicyManager;->setPasswordMinimumLowerCase(Landroid/content/ComponentName;I)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 467
+    .line 449
     :cond_0
     :goto_0
     return-void
 
-    .line 463
+    .line 445
     :catch_0
     move-exception v0
 
-    .line 464
+    .line 446
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -2651,33 +2208,29 @@
     .parameter "length"
 
     .prologue
-    .line 693
+    .line 655
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 695
+    .line 657
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v2
-
-    invoke-interface {v1, p1, p2, v2}, Landroid/app/admin/IDevicePolicyManager;->setPasswordMinimumNonLetter(Landroid/content/ComponentName;II)V
+    invoke-interface {v1, p1, p2}, Landroid/app/admin/IDevicePolicyManager;->setPasswordMinimumNonLetter(Landroid/content/ComponentName;I)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 700
+    .line 662
     :cond_0
     :goto_0
     return-void
 
-    .line 696
+    .line 658
     :catch_0
     move-exception v0
 
-    .line 697
+    .line 659
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -2694,33 +2247,29 @@
     .parameter "length"
 
     .prologue
-    .line 577
+    .line 549
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 579
+    .line 551
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v2
-
-    invoke-interface {v1, p1, p2, v2}, Landroid/app/admin/IDevicePolicyManager;->setPasswordMinimumNumeric(Landroid/content/ComponentName;II)V
+    invoke-interface {v1, p1, p2}, Landroid/app/admin/IDevicePolicyManager;->setPasswordMinimumNumeric(Landroid/content/ComponentName;I)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 584
+    .line 556
     :cond_0
     :goto_0
     return-void
 
-    .line 580
+    .line 552
     :catch_0
     move-exception v0
 
-    .line 581
+    .line 553
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -2737,33 +2286,29 @@
     .parameter "length"
 
     .prologue
-    .line 635
+    .line 602
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 637
+    .line 604
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v2
-
-    invoke-interface {v1, p1, p2, v2}, Landroid/app/admin/IDevicePolicyManager;->setPasswordMinimumSymbols(Landroid/content/ComponentName;II)V
+    invoke-interface {v1, p1, p2}, Landroid/app/admin/IDevicePolicyManager;->setPasswordMinimumSymbols(Landroid/content/ComponentName;I)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 642
+    .line 609
     :cond_0
     :goto_0
     return-void
 
-    .line 638
+    .line 605
     :catch_0
     move-exception v0
 
-    .line 639
+    .line 606
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -2780,33 +2325,29 @@
     .parameter "length"
 
     .prologue
-    .line 400
+    .line 387
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 402
+    .line 389
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v2
-
-    invoke-interface {v1, p1, p2, v2}, Landroid/app/admin/IDevicePolicyManager;->setPasswordMinimumUpperCase(Landroid/content/ComponentName;II)V
+    invoke-interface {v1, p1, p2}, Landroid/app/admin/IDevicePolicyManager;->setPasswordMinimumUpperCase(Landroid/content/ComponentName;I)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 407
+    .line 394
     :cond_0
     :goto_0
     return-void
 
-    .line 403
+    .line 390
     :catch_0
     move-exception v0
 
-    .line 404
+    .line 391
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -2823,33 +2364,29 @@
     .parameter "quality"
 
     .prologue
-    .line 293
+    .line 290
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 295
+    .line 292
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v2
-
-    invoke-interface {v1, p1, p2, v2}, Landroid/app/admin/IDevicePolicyManager;->setPasswordQuality(Landroid/content/ComponentName;II)V
+    invoke-interface {v1, p1, p2}, Landroid/app/admin/IDevicePolicyManager;->setPasswordQuality(Landroid/content/ComponentName;I)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 300
+    .line 297
     :cond_0
     :goto_0
     return-void
 
-    .line 296
+    .line 293
     :catch_0
     move-exception v0
 
-    .line 297
+    .line 294
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -2866,34 +2403,30 @@
     .parameter "encrypt"
 
     .prologue
-    .line 1268
+    .line 1188
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 1270
+    .line 1190
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v2
-
-    invoke-interface {v1, p1, p2, v2}, Landroid/app/admin/IDevicePolicyManager;->setStorageEncryption(Landroid/content/ComponentName;ZI)I
+    invoke-interface {v1, p1, p2}, Landroid/app/admin/IDevicePolicyManager;->setStorageEncryption(Landroid/content/ComponentName;Z)I
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v1
 
-    .line 1275
+    .line 1195
     :goto_0
     return v1
 
-    .line 1271
+    .line 1191
     :catch_0
     move-exception v0
 
-    .line 1272
+    .line 1192
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 
@@ -2901,7 +2434,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1275
+    .line 1195
     .end local v0           #e:Landroid/os/RemoteException;
     :cond_0
     const/4 v1, 0x0
@@ -2914,33 +2447,29 @@
     .parameter "flags"
 
     .prologue
-    .line 1080
+    .line 1020
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
     if-eqz v1, :cond_0
 
-    .line 1082
+    .line 1022
     :try_start_0
     iget-object v1, p0, Landroid/app/admin/DevicePolicyManager;->mService:Landroid/app/admin/IDevicePolicyManager;
 
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v2
-
-    invoke-interface {v1, p1, v2}, Landroid/app/admin/IDevicePolicyManager;->wipeData(II)V
+    invoke-interface {v1, p1}, Landroid/app/admin/IDevicePolicyManager;->wipeData(I)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1087
+    .line 1027
     :cond_0
     :goto_0
     return-void
 
-    .line 1083
+    .line 1023
     :catch_0
     move-exception v0
 
-    .line 1084
+    .line 1024
     .local v0, e:Landroid/os/RemoteException;
     sget-object v1, Landroid/app/admin/DevicePolicyManager;->TAG:Ljava/lang/String;
 

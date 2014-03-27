@@ -35,7 +35,7 @@
     .locals 1
 
     .prologue
-    .line 42
+    .line 48
     new-instance v0, Lcom/android/server/NetworkManagementSocketTagger$1;
 
     invoke-direct {v0}, Lcom/android/server/NetworkManagementSocketTagger$1;-><init>()V
@@ -49,10 +49,10 @@
     .locals 0
 
     .prologue
-    .line 31
+    .line 37
     invoke-direct {p0}, Ldalvik/system/SocketTagger;-><init>()V
 
-    .line 109
+    .line 113
     return-void
 .end method
 
@@ -60,7 +60,7 @@
     .locals 1
 
     .prologue
-    .line 58
+    .line 64
     sget-object v0, Lcom/android/server/NetworkManagementSocketTagger;->threadSocketTags:Ljava/lang/ThreadLocal;
 
     invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
@@ -78,14 +78,14 @@
     .locals 1
 
     .prologue
-    .line 50
+    .line 56
     new-instance v0, Lcom/android/server/NetworkManagementSocketTagger;
 
     invoke-direct {v0}, Lcom/android/server/NetworkManagementSocketTagger;-><init>()V
 
     invoke-static {v0}, Ldalvik/system/SocketTagger;->set(Ldalvik/system/SocketTagger;)V
 
-    .line 51
+    .line 57
     return-void
 .end method
 
@@ -94,37 +94,22 @@
     .parameter "string"
 
     .prologue
-    const/4 v1, 0x0
-
     .line 138
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
+    invoke-static {p0}, Ljava/lang/Long;->decode(Ljava/lang/String;)Ljava/lang/Long;
 
-    move-result v0
+    move-result-object v0
 
-    .line 139
-    .local v0, length:I
-    const/16 v2, 0xa
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
 
-    if-le v0, v2, :cond_0
+    move-result-wide v0
 
-    .line 140
-    add-int/lit8 v2, v0, -0x8
+    const/16 v2, 0x20
 
-    invoke-virtual {p0, v1, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    shr-long/2addr v0, v2
 
-    move-result-object v1
+    long-to-int v0, v0
 
-    invoke-static {v1}, Ljava/lang/Long;->decode(Ljava/lang/String;)Ljava/lang/Long;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Long;->intValue()I
-
-    move-result v1
-
-    .line 142
-    :cond_0
-    return v1
+    return v0
 .end method
 
 .method private static native native_deleteTagData(II)I
@@ -144,19 +129,10 @@
     .parameter "uid"
 
     .prologue
-    const/4 v2, 0x0
-
-    .line 125
-    const-string/jumbo v1, "net.qtaguid_enabled"
-
-    invoke-static {v1, v2}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
     .line 126
-    invoke-static {v2, p0}, Lcom/android/server/NetworkManagementSocketTagger;->native_deleteTagData(II)I
+    const/4 v1, 0x0
+
+    invoke-static {v1, p0}, Lcom/android/server/NetworkManagementSocketTagger;->native_deleteTagData(II)I
 
     move-result v0
 
@@ -197,8 +173,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 131
-    .end local v0           #errno:I
+    .line 130
     :cond_0
     return-void
 .end method
@@ -209,27 +184,16 @@
     .parameter "counterSet"
 
     .prologue
-    .line 115
-    const-string/jumbo v1, "net.qtaguid_enabled"
-
-    const/4 v2, 0x0
-
-    invoke-static {v1, v2}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 116
+    .line 119
     invoke-static {p1, p0}, Lcom/android/server/NetworkManagementSocketTagger;->native_setCounterSet(II)I
 
     move-result v0
 
-    .line 117
+    .line 120
     .local v0, errno:I
     if-gez v0, :cond_0
 
-    .line 118
+    .line 121
     const-string v1, "NetworkManagementSocketTagger"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -272,8 +236,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 122
-    .end local v0           #errno:I
+    .line 123
     :cond_0
     return-void
 .end method
@@ -283,7 +246,7 @@
     .parameter "tag"
 
     .prologue
-    .line 54
+    .line 60
     sget-object v0, Lcom/android/server/NetworkManagementSocketTagger;->threadSocketTags:Ljava/lang/ThreadLocal;
 
     invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
@@ -294,7 +257,7 @@
 
     iput p0, v0, Lcom/android/server/NetworkManagementSocketTagger$SocketTags;->statsTag:I
 
-    .line 55
+    .line 61
     return-void
 .end method
 
@@ -303,7 +266,7 @@
     .parameter "uid"
 
     .prologue
-    .line 62
+    .line 68
     sget-object v0, Lcom/android/server/NetworkManagementSocketTagger;->threadSocketTags:Ljava/lang/ThreadLocal;
 
     invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
@@ -314,7 +277,7 @@
 
     iput p0, v0, Lcom/android/server/NetworkManagementSocketTagger$SocketTags;->statsUid:I
 
-    .line 63
+    .line 69
     return-void
 .end method
 
@@ -327,38 +290,27 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 77
+    .line 84
     if-ne p2, v1, :cond_1
 
     if-ne p3, v1, :cond_1
 
-    .line 87
+    .line 92
     :cond_0
     :goto_0
     return-void
 
-    .line 79
+    .line 86
     :cond_1
-    const-string/jumbo v1, "net.qtaguid_enabled"
-
-    const/4 v2, 0x0
-
-    invoke-static {v1, v2}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 80
     invoke-static {p1, p2, p3}, Lcom/android/server/NetworkManagementSocketTagger;->native_tagSocketFd(Ljava/io/FileDescriptor;II)I
 
     move-result v0
 
-    .line 81
+    .line 87
     .local v0, errno:I
     if-gez v0, :cond_0
 
-    .line 82
+    .line 88
     const-string v1, "NetworkManagementSocketTagger"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -425,7 +377,7 @@
     .prologue
     const/4 v3, -0x1
 
-    .line 98
+    .line 103
     sget-object v2, Lcom/android/server/NetworkManagementSocketTagger;->threadSocketTags:Ljava/lang/ThreadLocal;
 
     invoke-virtual {v2}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
@@ -434,7 +386,7 @@
 
     check-cast v1, Lcom/android/server/NetworkManagementSocketTagger$SocketTags;
 
-    .line 99
+    .line 105
     .local v1, options:Lcom/android/server/NetworkManagementSocketTagger$SocketTags;
     iget v2, v1, Lcom/android/server/NetworkManagementSocketTagger$SocketTags;->statsTag:I
 
@@ -444,33 +396,22 @@
 
     if-ne v2, v3, :cond_1
 
-    .line 107
+    .line 111
     :cond_0
     :goto_0
     return-void
 
-    .line 101
+    .line 107
     :cond_1
-    const-string/jumbo v2, "net.qtaguid_enabled"
-
-    const/4 v3, 0x0
-
-    invoke-static {v2, v3}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    .line 102
     invoke-static {p1}, Lcom/android/server/NetworkManagementSocketTagger;->native_untagSocketFd(Ljava/io/FileDescriptor;)I
 
     move-result v0
 
-    .line 103
+    .line 108
     .local v0, errno:I
     if-gez v0, :cond_0
 
-    .line 104
+    .line 109
     const-string v2, "NetworkManagementSocketTagger"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -522,7 +463,7 @@
     .end annotation
 
     .prologue
-    .line 67
+    .line 73
     sget-object v1, Lcom/android/server/NetworkManagementSocketTagger;->threadSocketTags:Ljava/lang/ThreadLocal;
 
     invoke-virtual {v1}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
@@ -531,7 +472,7 @@
 
     check-cast v0, Lcom/android/server/NetworkManagementSocketTagger$SocketTags;
 
-    .line 73
+    .line 79
     .local v0, options:Lcom/android/server/NetworkManagementSocketTagger$SocketTags;
     iget v1, v0, Lcom/android/server/NetworkManagementSocketTagger$SocketTags;->statsTag:I
 
@@ -539,7 +480,7 @@
 
     invoke-direct {p0, p1, v1, v2}, Lcom/android/server/NetworkManagementSocketTagger;->tagSocketFd(Ljava/io/FileDescriptor;II)V
 
-    .line 74
+    .line 80
     return-void
 .end method
 
@@ -553,9 +494,9 @@
     .end annotation
 
     .prologue
-    .line 94
+    .line 99
     invoke-direct {p0, p1}, Lcom/android/server/NetworkManagementSocketTagger;->unTagSocketFd(Ljava/io/FileDescriptor;)V
 
-    .line 95
+    .line 100
     return-void
 .end method

@@ -24,7 +24,7 @@
 # instance fields
 .field private final mPrivateHandler:Landroid/os/Handler;
 
-.field private final mWebView:Landroid/webkit/WebViewClassic;
+.field private final mWebView:Landroid/webkit/WebView;
 
 .field private mZoomControlRunnable:Ljava/lang/Runnable;
 
@@ -46,7 +46,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/webkit/WebViewClassic;)V
+.method public constructor <init>(Landroid/webkit/WebView;)V
     .locals 1
     .parameter "webView"
 
@@ -62,7 +62,7 @@
     iput-object v0, p0, Landroid/webkit/ZoomControlExternal;->mPrivateHandler:Landroid/os/Handler;
 
     .line 41
-    iput-object p1, p0, Landroid/webkit/ZoomControlExternal;->mWebView:Landroid/webkit/WebViewClassic;
+    iput-object p1, p0, Landroid/webkit/ZoomControlExternal;->mWebView:Landroid/webkit/WebView;
 
     .line 42
     return-void
@@ -111,13 +111,13 @@
     return-wide v0
 .end method
 
-.method static synthetic access$400(Landroid/webkit/ZoomControlExternal;)Landroid/webkit/WebViewClassic;
+.method static synthetic access$400(Landroid/webkit/ZoomControlExternal;)Landroid/webkit/WebView;
     .locals 1
     .parameter "x0"
 
     .prologue
     .line 28
-    iget-object v0, p0, Landroid/webkit/ZoomControlExternal;->mWebView:Landroid/webkit/WebViewClassic;
+    iget-object v0, p0, Landroid/webkit/ZoomControlExternal;->mWebView:Landroid/webkit/WebView;
 
     return-object v0
 .end method
@@ -129,9 +129,9 @@
     .line 96
     new-instance v0, Landroid/webkit/ZoomControlExternal$ExtendedZoomControls;
 
-    iget-object v1, p0, Landroid/webkit/ZoomControlExternal;->mWebView:Landroid/webkit/WebViewClassic;
+    iget-object v1, p0, Landroid/webkit/ZoomControlExternal;->mWebView:Landroid/webkit/WebView;
 
-    invoke-virtual {v1}, Landroid/webkit/WebViewClassic;->getContext()Landroid/content/Context;
+    invoke-virtual {v1}, Landroid/webkit/WebView;->getContext()Landroid/content/Context;
 
     move-result-object v1
 

@@ -13,8 +13,6 @@
 
 .field public static final CALL_TRANSACTION:I = 0x15
 
-.field public static final CREATE_CANCELATION_SIGNAL_TRANSACTION:I = 0x18
-
 .field public static final DELETE_TRANSACTION:I = 0x4
 
 .field public static final GET_STREAM_TYPES_TRANSACTION:I = 0x16
@@ -66,14 +64,6 @@
 .end method
 
 .method public abstract call(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract createCancellationSignal()Landroid/os/ICancellationSignal;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -140,7 +130,7 @@
     .end annotation
 .end method
 
-.method public abstract query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Landroid/os/ICancellationSignal;)Landroid/database/Cursor;
+.method public abstract query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

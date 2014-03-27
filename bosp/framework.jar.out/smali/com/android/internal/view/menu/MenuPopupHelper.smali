@@ -14,13 +14,15 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/android/internal/view/menu/MenuPopupHelper$1;,
+        Lcom/android/internal/view/menu/MenuPopupHelper$ExpandedIndexObserver;,
         Lcom/android/internal/view/menu/MenuPopupHelper$MenuAdapter;
     }
 .end annotation
 
 
 # static fields
-.field static final ITEM_LAYOUT:I = 0x109009b
+.field static final ITEM_LAYOUT:I = #layout@popup_menu_item_layout#t
 
 .field private static final TAG:Ljava/lang/String; = "MenuPopupHelper"
 
@@ -127,7 +129,7 @@
 
     div-int/lit8 v1, v1, 0x2
 
-    const v2, 0x1050007
+    const v2, #dimen@config_prefDialogWidth#t
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -149,7 +151,7 @@
     return-void
 .end method
 
-.method static synthetic access$100(Lcom/android/internal/view/menu/MenuPopupHelper;)Z
+.method static synthetic access$200(Lcom/android/internal/view/menu/MenuPopupHelper;)Z
     .locals 1
     .parameter "x0"
 
@@ -160,7 +162,7 @@
     return v0
 .end method
 
-.method static synthetic access$200(Lcom/android/internal/view/menu/MenuPopupHelper;)Landroid/view/LayoutInflater;
+.method static synthetic access$300(Lcom/android/internal/view/menu/MenuPopupHelper;)Landroid/view/LayoutInflater;
     .locals 1
     .parameter "x0"
 
@@ -171,13 +173,24 @@
     return-object v0
 .end method
 
-.method static synthetic access$300(Lcom/android/internal/view/menu/MenuPopupHelper;)Lcom/android/internal/view/menu/MenuBuilder;
+.method static synthetic access$400(Lcom/android/internal/view/menu/MenuPopupHelper;)Lcom/android/internal/view/menu/MenuBuilder;
     .locals 1
     .parameter "x0"
 
     .prologue
     .line 43
     iget-object v0, p0, Lcom/android/internal/view/menu/MenuPopupHelper;->mMenu:Lcom/android/internal/view/menu/MenuBuilder;
+
+    return-object v0
+.end method
+
+.method static synthetic access$500(Lcom/android/internal/view/menu/MenuPopupHelper;)Lcom/android/internal/view/menu/MenuPopupHelper$MenuAdapter;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 43
+    iget-object v0, p0, Lcom/android/internal/view/menu/MenuPopupHelper;->mAdapter:Lcom/android/internal/view/menu/MenuPopupHelper$MenuAdapter;
 
     return-object v0
 .end method
@@ -876,7 +889,7 @@
 
     const/4 v5, 0x0
 
-    const v6, 0x1010300
+    const v6, #attr@popupMenuStyle#t
 
     invoke-direct {v3, v4, v5, v6}, Landroid/widget/ListPopupWindow;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

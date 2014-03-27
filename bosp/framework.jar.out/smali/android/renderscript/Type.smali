@@ -256,9 +256,7 @@
     .local v0, dataBuffer:[I
     iget-object v2, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
 
-    iget-object v5, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
-
-    invoke-virtual {p0, v5}, Landroid/renderscript/Type;->getID(Landroid/renderscript/RenderScript;)I
+    invoke-virtual {p0}, Landroid/renderscript/Type;->getID()I
 
     move-result v5
 

@@ -15,9 +15,21 @@
 
 
 # static fields
-.field public static final fade_in:I = 0x10b0000
+.field public static final fade_in:I = #animator@fade_in#t
 
-.field public static final fade_out:I = 0x10b0001
+.field public static final fade_out:I = #animator@fade_out#t
+
+.field public static final fragment_close_enter:I = #animator@fragment_close_enter#t
+
+.field public static final fragment_close_exit:I = #animator@fragment_close_exit#t
+
+.field public static final fragment_fade_enter:I = #animator@fragment_fade_enter#t
+
+.field public static final fragment_fade_exit:I = #animator@fragment_fade_exit#t
+
+.field public static final fragment_open_enter:I = #animator@fragment_open_enter#t
+
+.field public static final fragment_open_exit:I = #animator@fragment_open_exit#t
 
 
 # direct methods
@@ -25,7 +37,7 @@
     .locals 0
 
     .prologue
-    .line 75
+    .line 109
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

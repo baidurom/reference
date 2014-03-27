@@ -15,8 +15,6 @@
 
 
 # instance fields
-.field final layer:I
-
 .field final left:I
 
 .field final surface:Landroid/view/Surface;
@@ -27,8 +25,8 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/android/server/wm/BlackFrame;Landroid/view/SurfaceSession;IIIIII)V
-    .locals 7
+.method constructor <init>(Lcom/android/server/wm/BlackFrame;Landroid/view/SurfaceSession;IIIII)V
+    .locals 9
     .parameter
     .parameter "session"
     .parameter "layer"
@@ -36,7 +34,6 @@
     .parameter "t"
     .parameter "r"
     .parameter "b"
-    .parameter "layerStack"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/view/Surface$OutOfResourcesException;
@@ -44,66 +41,57 @@
     .end annotation
 
     .prologue
-    .line 39
+    .line 36
     iput-object p1, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->this$0:Lcom/android/server/wm/BlackFrame;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 40
+    .line 37
     iput p4, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->left:I
 
-    .line 41
+    .line 38
     iput p5, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->top:I
 
-    .line 42
-    iput p3, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->layer:I
+    .line 39
+    sub-int v5, p6, p4
 
-    .line 43
-    sub-int v3, p6, p4
+    .line 40
+    .local v5, w:I
+    sub-int v6, p7, p5
 
-    .line 44
-    .local v3, w:I
-    sub-int v4, p7, p5
-
-    .line 50
-    .local v4, h:I
+    .line 41
+    .local v6, h:I
     new-instance v0, Landroid/view/Surface;
 
-    const-string v2, "BlackSurface"
+    const/4 v2, 0x0
 
-    const/4 v5, -0x1
+    const-string v3, "BlackSurface"
 
-    const v6, 0x20004
+    const/4 v4, -0x1
+
+    const/4 v7, -0x1
+
+    const/high16 v8, 0x2
 
     move-object v1, p2
 
-    invoke-direct/range {v0 .. v6}, Landroid/view/Surface;-><init>(Landroid/view/SurfaceSession;Ljava/lang/String;IIII)V
+    invoke-direct/range {v0 .. v8}, Landroid/view/Surface;-><init>(Landroid/view/SurfaceSession;ILjava/lang/String;IIIII)V
 
     iput-object v0, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->surface:Landroid/view/Surface;
 
-    .line 53
+    .line 46
     iget-object v0, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->surface:Landroid/view/Surface;
 
     const/high16 v1, 0x3f80
 
     invoke-virtual {v0, v1}, Landroid/view/Surface;->setAlpha(F)V
 
-    .line 54
-    iget-object v0, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->surface:Landroid/view/Surface;
-
-    invoke-virtual {v0, p8}, Landroid/view/Surface;->setLayerStack(I)V
-
-    .line 55
+    .line 47
     iget-object v0, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->surface:Landroid/view/Surface;
 
     invoke-virtual {v0, p3}, Landroid/view/Surface;->setLayer(I)V
 
-    .line 56
-    iget-object v0, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->surface:Landroid/view/Surface;
-
-    invoke-virtual {v0}, Landroid/view/Surface;->show()V
-
-    .line 60
+    .line 48
     return-void
 .end method
 
@@ -117,12 +105,12 @@
 
     const/4 v1, 0x0
 
-    .line 83
+    .line 71
     iget-object v0, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->surface:Landroid/view/Surface;
 
     invoke-virtual {v0, v2, v1, v1, v2}, Landroid/view/Surface;->setMatrix(FFFF)V
 
-    .line 84
+    .line 72
     return-void
 .end method
 
@@ -131,7 +119,7 @@
     .parameter "matrix"
 
     .prologue
-    .line 63
+    .line 51
     iget-object v0, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->this$0:Lcom/android/server/wm/BlackFrame;
 
     iget-object v0, v0, Lcom/android/server/wm/BlackFrame;->mTmpMatrix:Landroid/graphics/Matrix;
@@ -146,14 +134,14 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Matrix;->setTranslate(FF)V
 
-    .line 64
+    .line 52
     iget-object v0, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->this$0:Lcom/android/server/wm/BlackFrame;
 
     iget-object v0, v0, Lcom/android/server/wm/BlackFrame;->mTmpMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Matrix;->postConcat(Landroid/graphics/Matrix;)Z
 
-    .line 65
+    .line 53
     iget-object v0, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->this$0:Lcom/android/server/wm/BlackFrame;
 
     iget-object v0, v0, Lcom/android/server/wm/BlackFrame;->mTmpMatrix:Landroid/graphics/Matrix;
@@ -164,7 +152,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Matrix;->getValues([F)V
 
-    .line 66
+    .line 54
     iget-object v0, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->surface:Landroid/view/Surface;
 
     iget-object v1, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->this$0:Lcom/android/server/wm/BlackFrame;
@@ -185,7 +173,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/Surface;->setPosition(FF)V
 
-    .line 68
+    .line 56
     iget-object v0, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->surface:Landroid/view/Surface;
 
     iget-object v1, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->this$0:Lcom/android/server/wm/BlackFrame;
@@ -222,6 +210,6 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/view/Surface;->setMatrix(FFFF)V
 
-    .line 80
+    .line 68
     return-void
 .end method

@@ -47,14 +47,6 @@
     .end annotation
 .end method
 
-.method public abstract captivePortalCheckComplete()V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract clearBlacklist()V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -137,6 +129,14 @@
     .end annotation
 .end method
 
+.method public abstract getMessenger()Landroid/os/Messenger;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract getScanResults()Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -172,22 +172,6 @@
 .end method
 
 .method public abstract getWifiEnabledState()I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract getWifiServiceMessenger()Landroid/os/Messenger;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract getWifiStateMachineMessenger()Landroid/os/Messenger;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

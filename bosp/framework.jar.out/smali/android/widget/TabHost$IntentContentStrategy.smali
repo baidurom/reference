@@ -35,18 +35,18 @@
     .parameter "intent"
 
     .prologue
-    .line 740
+    .line 673
     iput-object p1, p0, Landroid/widget/TabHost$IntentContentStrategy;->this$0:Landroid/widget/TabHost;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 741
+    .line 674
     iput-object p2, p0, Landroid/widget/TabHost$IntentContentStrategy;->mTag:Ljava/lang/String;
 
-    .line 742
+    .line 675
     iput-object p3, p0, Landroid/widget/TabHost$IntentContentStrategy;->mIntent:Landroid/content/Intent;
 
-    .line 743
+    .line 676
     return-void
 .end method
 
@@ -58,7 +58,7 @@
     .parameter "x3"
 
     .prologue
-    .line 733
+    .line 666
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/TabHost$IntentContentStrategy;-><init>(Landroid/widget/TabHost;Ljava/lang/String;Landroid/content/Intent;)V
 
     return-void
@@ -70,14 +70,14 @@
     .locals 5
 
     .prologue
-    .line 746
+    .line 679
     iget-object v2, p0, Landroid/widget/TabHost$IntentContentStrategy;->this$0:Landroid/widget/TabHost;
 
     iget-object v2, v2, Landroid/widget/TabHost;->mLocalActivityManager:Landroid/app/LocalActivityManager;
 
     if-nez v2, :cond_0
 
-    .line 747
+    .line 680
     new-instance v2, Ljava/lang/IllegalStateException;
 
     const-string v3, "Did you forget to call \'public void setup(LocalActivityManager activityGroup)\'?"
@@ -86,7 +86,7 @@
 
     throw v2
 
-    .line 749
+    .line 682
     :cond_0
     iget-object v2, p0, Landroid/widget/TabHost$IntentContentStrategy;->this$0:Landroid/widget/TabHost;
 
@@ -100,7 +100,7 @@
 
     move-result-object v0
 
-    .line 751
+    .line 684
     .local v0, w:Landroid/view/Window;
     if-eqz v0, :cond_3
 
@@ -108,7 +108,7 @@
 
     move-result-object v1
 
-    .line 752
+    .line 685
     .local v1, wd:Landroid/view/View;
     :goto_0
     iget-object v2, p0, Landroid/widget/TabHost$IntentContentStrategy;->mLaunchedView:Landroid/view/View;
@@ -119,7 +119,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 753
+    .line 686
     iget-object v2, p0, Landroid/widget/TabHost$IntentContentStrategy;->mLaunchedView:Landroid/view/View;
 
     invoke-virtual {v2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
@@ -128,7 +128,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 754
+    .line 687
     iget-object v2, p0, Landroid/widget/TabHost$IntentContentStrategy;->this$0:Landroid/widget/TabHost;
 
     #getter for: Landroid/widget/TabHost;->mTabContent:Landroid/widget/FrameLayout;
@@ -140,30 +140,30 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 757
+    .line 690
     :cond_1
     iput-object v1, p0, Landroid/widget/TabHost$IntentContentStrategy;->mLaunchedView:Landroid/view/View;
 
-    .line 765
+    .line 698
     iget-object v2, p0, Landroid/widget/TabHost$IntentContentStrategy;->mLaunchedView:Landroid/view/View;
 
     if-eqz v2, :cond_2
 
-    .line 766
+    .line 699
     iget-object v2, p0, Landroid/widget/TabHost$IntentContentStrategy;->mLaunchedView:Landroid/view/View;
 
     const/4 v3, 0x0
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 767
+    .line 700
     iget-object v2, p0, Landroid/widget/TabHost$IntentContentStrategy;->mLaunchedView:Landroid/view/View;
 
     const/4 v3, 0x1
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setFocusableInTouchMode(Z)V
 
-    .line 768
+    .line 701
     iget-object v2, p0, Landroid/widget/TabHost$IntentContentStrategy;->mLaunchedView:Landroid/view/View;
 
     check-cast v2, Landroid/view/ViewGroup;
@@ -172,13 +172,13 @@
 
     invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->setDescendantFocusability(I)V
 
-    .line 771
+    .line 704
     :cond_2
     iget-object v2, p0, Landroid/widget/TabHost$IntentContentStrategy;->mLaunchedView:Landroid/view/View;
 
     return-object v2
 
-    .line 751
+    .line 684
     .end local v1           #wd:Landroid/view/View;
     :cond_3
     const/4 v1, 0x0
@@ -190,19 +190,19 @@
     .locals 2
 
     .prologue
-    .line 775
+    .line 708
     iget-object v0, p0, Landroid/widget/TabHost$IntentContentStrategy;->mLaunchedView:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    .line 776
+    .line 709
     iget-object v0, p0, Landroid/widget/TabHost$IntentContentStrategy;->mLaunchedView:Landroid/view/View;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 778
+    .line 711
     :cond_0
     return-void
 .end method

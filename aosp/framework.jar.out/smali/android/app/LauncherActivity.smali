@@ -38,7 +38,7 @@
 
     .prologue
     .line 364
-    const v1, 0x1020258
+    const v1, #id@alertTitle#t
 
     invoke-virtual {p0, v1}, Landroid/app/LauncherActivity;->findViewById(I)Landroid/view/View;
 
@@ -67,7 +67,7 @@
 
     .prologue
     .line 371
-    const v1, 0x1020019
+    const v1, #id@button1#t
 
     invoke-virtual {p0, v1}, Landroid/app/LauncherActivity;->findViewById(I)Landroid/view/View;
 
@@ -156,18 +156,24 @@
     .end annotation
 
     .prologue
-    .line 455
+    .line 448
     iget-object v5, p0, Landroid/app/LauncherActivity;->mIntent:Landroid/content/Intent;
 
     invoke-virtual {p0, v5}, Landroid/app/LauncherActivity;->onQueryPackageManager(Landroid/content/Intent;)Ljava/util/List;
 
     move-result-object v1
 
-    .line 456
+    .line 449
     .local v1, list:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
-    invoke-virtual {p0, v1}, Landroid/app/LauncherActivity;->onSortResultList(Ljava/util/List;)V
+    new-instance v5, Landroid/content/pm/ResolveInfo$DisplayNameComparator;
 
-    .line 458
+    iget-object v6, p0, Landroid/app/LauncherActivity;->mPackageManager:Landroid/content/pm/PackageManager;
+
+    invoke-direct {v5, v6}, Landroid/content/pm/ResolveInfo$DisplayNameComparator;-><init>(Landroid/content/pm/PackageManager;)V
+
+    invoke-static {v1, v5}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
+
+    .line 451
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
@@ -176,13 +182,13 @@
 
     invoke-direct {v4, v5}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 459
+    .line 452
     .local v4, result:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/app/LauncherActivity$ListItem;>;"
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v2
 
-    .line 460
+    .line 453
     .local v2, listSize:I
     const/4 v0, 0x0
 
@@ -190,14 +196,14 @@
     :goto_0
     if-ge v0, v2, :cond_0
 
-    .line 461
+    .line 454
     invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Landroid/content/pm/ResolveInfo;
 
-    .line 462
+    .line 455
     .local v3, resolveInfo:Landroid/content/pm/ResolveInfo;
     new-instance v5, Landroid/app/LauncherActivity$ListItem;
 
@@ -209,12 +215,12 @@
 
     invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 460
+    .line 453
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 465
+    .line 458
     .end local v3           #resolveInfo:Landroid/content/pm/ResolveInfo;
     :cond_0
     return-object v4
@@ -313,7 +319,7 @@
     .locals 1
 
     .prologue
-    .line 474
+    .line 467
     const/4 v0, 0x1
 
     return v0
@@ -373,39 +379,11 @@
 
     .prologue
     .line 398
-    const v0, 0x1090021
+    const v0, #layout@activity_list#t
 
     invoke-virtual {p0, v0}, Landroid/app/LauncherActivity;->setContentView(I)V
 
     .line 399
-    return-void
-.end method
-
-.method protected onSortResultList(Ljava/util/List;)V
-    .locals 2
-    .parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List",
-            "<",
-            "Landroid/content/pm/ResolveInfo;",
-            ">;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 447
-    .local p1, results:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
-    new-instance v0, Landroid/content/pm/ResolveInfo$DisplayNameComparator;
-
-    iget-object v1, p0, Landroid/app/LauncherActivity;->mPackageManager:Landroid/content/pm/PackageManager;
-
-    invoke-direct {v0, v1}, Landroid/content/pm/ResolveInfo$DisplayNameComparator;-><init>(Landroid/content/pm/PackageManager;)V
-
-    invoke-static {p1, v0}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
-
-    .line 448
     return-void
 .end method
 

@@ -67,18 +67,6 @@
         <item quantity="other">în %d (de) zile</item>
         <item quantity="one">mâine</item>
     </plurals>
-    <plurals name="duration_seconds">
-        <item quantity="other">%d (de) secunde</item>
-        <item quantity="one">O secundă</item>
-    </plurals>
-    <plurals name="duration_minutes">
-        <item quantity="other">%d (de) minute</item>
-        <item quantity="one">Un minut</item>
-    </plurals>
-    <plurals name="duration_hours">
-        <item quantity="other">%d (de) ore</item>
-        <item quantity="one">O oră</item>
-    </plurals>
     <plurals name="wifi_available">
         <item quantity="other">Reţele Wi-Fi disponibile</item>
         <item quantity="one">Reţea Wi-Fi disponibilă</item>

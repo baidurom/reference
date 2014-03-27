@@ -111,24 +111,6 @@
     .end annotation
 .end method
 
-.method public abstract getAllCellInfo()Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List",
-            "<",
-            "Landroid/telephony/CellInfo;",
-            ">;"
-        }
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract getCallState()I
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -185,6 +167,14 @@
     .end annotation
 .end method
 
+.method public abstract getIccPinPukRetryTimes()I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract getLteOnCdmaMode()I
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -212,6 +202,14 @@
 .end method
 
 .method public abstract getNetworkType()I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract getScAddress()Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -300,6 +298,14 @@
 .end method
 
 .method public abstract setRadio(Z)Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract setScAddress(Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

@@ -15,19 +15,19 @@
 
 
 # static fields
-.field public static final app_icon_size:I = 0x1050000
+.field public static final app_icon_size:I = #dimen@app_icon_size#t
 
-.field public static final dialog_min_width_major:I = 0x1050003
+.field public static final dialog_min_width_major:I = #dimen@dialog_min_width_major#t
 
-.field public static final dialog_min_width_minor:I = 0x1050004
+.field public static final dialog_min_width_minor:I = #dimen@dialog_min_width_minor#t
 
-.field public static final notification_large_icon_height:I = 0x1050006
+.field public static final notification_large_icon_height:I = #dimen@notification_large_icon_height#t
 
-.field public static final notification_large_icon_width:I = 0x1050005
+.field public static final notification_large_icon_width:I = #dimen@notification_large_icon_width#t
 
-.field public static final thumbnail_height:I = 0x1050001
+.field public static final thumbnail_height:I = #dimen@thumbnail_height#t
 
-.field public static final thumbnail_width:I = 0x1050002
+.field public static final thumbnail_width:I = #dimen@thumbnail_width#t
 
 
 # direct methods
@@ -35,7 +35,7 @@
     .locals 0
 
     .prologue
-    .line 10348
+    .line 9864
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

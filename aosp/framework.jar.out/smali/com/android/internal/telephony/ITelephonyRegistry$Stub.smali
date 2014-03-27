@@ -32,8 +32,6 @@
 
 .field static final TRANSACTION_notifyCallState:I = 0x2
 
-.field static final TRANSACTION_notifyCellInfo:I = 0xc
-
 .field static final TRANSACTION_notifyCellLocation:I = 0xa
 
 .field static final TRANSACTION_notifyDataActivity:I = 0x7
@@ -125,7 +123,7 @@
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 11
+    .locals 10
     .parameter "code"
     .parameter "data"
     .parameter "reply"
@@ -140,7 +138,7 @@
     .line 38
     sparse-switch p1, :sswitch_data_0
 
-    .line 205
+    .line 196
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v0
@@ -684,32 +682,6 @@
 
     goto/16 :goto_0
 
-    .line 197
-    .end local v1           #_arg0:I
-    :sswitch_c
-    const-string v0, "com.android.internal.telephony.ITelephonyRegistry"
-
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 199
-    sget-object v0, Landroid/telephony/CellInfo;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->createTypedArrayList(Landroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
-
-    move-result-object v10
-
-    .line 200
-    .local v10, _arg0:Ljava/util/List;,"Ljava/util/List<Landroid/telephony/CellInfo;>;"
-    invoke-virtual {p0, v10}, Lcom/android/internal/telephony/ITelephonyRegistry$Stub;->notifyCellInfo(Ljava/util/List;)V
-
-    .line 201
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 202
-    const/4 v0, 0x1
-
-    goto/16 :goto_0
-
     .line 38
     nop
 
@@ -726,7 +698,6 @@
         0x9 -> :sswitch_9
         0xa -> :sswitch_a
         0xb -> :sswitch_b
-        0xc -> :sswitch_c
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

@@ -113,7 +113,7 @@
 
     .prologue
     .line 160
-    const v4, 0x10f000b
+    const v4, #xml@power_profile#t
 
     .line 161
     .local v4, id:I

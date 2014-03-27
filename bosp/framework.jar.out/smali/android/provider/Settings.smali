@@ -7,7 +7,6 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroid/provider/Settings$Bookmarks;,
-        Landroid/provider/Settings$Global;,
         Landroid/provider/Settings$Secure;,
         Landroid/provider/Settings$System;,
         Landroid/provider/Settings$NameValueCache;,
@@ -42,8 +41,6 @@
 
 .field public static final ACTION_DISPLAY_SETTINGS:Ljava/lang/String; = "android.settings.DISPLAY_SETTINGS"
 
-.field public static final ACTION_DREAM_SETTINGS:Ljava/lang/String; = "android.settings.DREAM_SETTINGS"
-
 .field public static final ACTION_INPUT_METHOD_SETTINGS:Ljava/lang/String; = "android.settings.INPUT_METHOD_SETTINGS"
 
 .field public static final ACTION_INPUT_METHOD_SUBTYPE_SETTINGS:Ljava/lang/String; = "android.settings.INPUT_METHOD_SUBTYPE_SETTINGS"
@@ -63,8 +60,6 @@
 .field public static final ACTION_NETWORK_OPERATOR_SETTINGS:Ljava/lang/String; = "android.settings.NETWORK_OPERATOR_SETTINGS"
 
 .field public static final ACTION_NFCSHARING_SETTINGS:Ljava/lang/String; = "android.settings.NFCSHARING_SETTINGS"
-
-.field public static final ACTION_NFC_SETTINGS:Ljava/lang/String; = "android.settings.NFC_SETTINGS"
 
 .field public static final ACTION_PRIVACY_SETTINGS:Ljava/lang/String; = "android.settings.PRIVACY_SETTINGS"
 
@@ -88,8 +83,6 @@
 
 .field public static final ACTION_USER_DICTIONARY_SETTINGS:Ljava/lang/String; = "android.settings.USER_DICTIONARY_SETTINGS"
 
-.field public static final ACTION_WIFI_DISPLAY_SETTINGS:Ljava/lang/String; = "android.settings.WIFI_DISPLAY_SETTINGS"
-
 .field public static final ACTION_WIFI_IP_SETTINGS:Ljava/lang/String; = "android.settings.WIFI_IP_SETTINGS"
 
 .field public static final ACTION_WIFI_SETTINGS:Ljava/lang/String; = "android.settings.WIFI_SETTINGS"
@@ -98,19 +91,9 @@
 
 .field public static final AUTHORITY:Ljava/lang/String; = "settings"
 
-.field public static final CALL_METHOD_GET_GLOBAL:Ljava/lang/String; = "GET_global"
-
 .field public static final CALL_METHOD_GET_SECURE:Ljava/lang/String; = "GET_secure"
 
 .field public static final CALL_METHOD_GET_SYSTEM:Ljava/lang/String; = "GET_system"
-
-.field public static final CALL_METHOD_PUT_GLOBAL:Ljava/lang/String; = "PUT_global"
-
-.field public static final CALL_METHOD_PUT_SECURE:Ljava/lang/String; = "PUT_secure"
-
-.field public static final CALL_METHOD_PUT_SYSTEM:Ljava/lang/String; = "PUT_system"
-
-.field public static final CALL_METHOD_USER_KEY:Ljava/lang/String; = "_user"
 
 .field public static final EXTRA_AUTHORITIES:Ljava/lang/String; = "authorities"
 
@@ -128,10 +111,10 @@
     .locals 0
 
     .prologue
-    .line 64
+    .line 54
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 5650
+    .line 4298
     return-void
 .end method
 
@@ -140,7 +123,7 @@
     .parameter "androidId"
 
     .prologue
-    .line 5855
+    .line 4503
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

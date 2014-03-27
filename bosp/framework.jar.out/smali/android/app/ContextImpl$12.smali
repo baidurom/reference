@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 345
+    .line 313
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -32,16 +32,10 @@
     .parameter "ctx"
 
     .prologue
-    .line 347
-    iget-object v0, p1, Landroid/app/ContextImpl;->mMainThread:Landroid/app/ActivityThread;
+    .line 315
+    new-instance v0, Landroid/nfc/NfcManager;
 
-    invoke-virtual {v0}, Landroid/app/ActivityThread;->getHandler()Landroid/os/Handler;
-
-    move-result-object v0
-
-    invoke-static {p1, v0}, Landroid/app/admin/DevicePolicyManager;->create(Landroid/content/Context;Landroid/os/Handler;)Landroid/app/admin/DevicePolicyManager;
-
-    move-result-object v0
+    invoke-direct {v0, p1}, Landroid/nfc/NfcManager;-><init>(Landroid/content/Context;)V
 
     return-object v0
 .end method

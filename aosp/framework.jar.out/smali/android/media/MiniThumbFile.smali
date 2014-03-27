@@ -12,7 +12,7 @@
 
 .field private static final TAG:Ljava/lang/String; = "MiniThumbFile"
 
-.field private static final sThumbFiles:Ljava/util/Hashtable;
+.field private static sThumbFiles:Ljava/util/Hashtable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Hashtable",

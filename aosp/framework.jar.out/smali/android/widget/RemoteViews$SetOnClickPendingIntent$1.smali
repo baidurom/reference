@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/widget/RemoteViews$SetOnClickPendingIntent;->apply(Landroid/view/View;Landroid/view/ViewGroup;Landroid/widget/RemoteViews$OnClickHandler;)V
+    value = Landroid/widget/RemoteViews$SetOnClickPendingIntent;->apply(Landroid/view/View;Landroid/view/ViewGroup;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,20 +20,15 @@
 # instance fields
 .field final synthetic this$1:Landroid/widget/RemoteViews$SetOnClickPendingIntent;
 
-.field final synthetic val$handler:Landroid/widget/RemoteViews$OnClickHandler;
-
 
 # direct methods
-.method constructor <init>(Landroid/widget/RemoteViews$SetOnClickPendingIntent;Landroid/widget/RemoteViews$OnClickHandler;)V
+.method constructor <init>(Landroid/widget/RemoteViews$SetOnClickPendingIntent;)V
     .locals 0
-    .parameter
     .parameter
 
     .prologue
-    .line 604
+    .line 453
     iput-object p1, p0, Landroid/widget/RemoteViews$SetOnClickPendingIntent$1;->this$1:Landroid/widget/RemoteViews$SetOnClickPendingIntent;
-
-    iput-object p2, p0, Landroid/widget/RemoteViews$SetOnClickPendingIntent$1;->val$handler:Landroid/widget/RemoteViews$OnClickHandler;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -53,7 +48,7 @@
 
     const/high16 v6, 0x3f00
 
-    .line 608
+    .line 457
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v4
@@ -68,22 +63,22 @@
 
     iget v0, v4, Landroid/content/res/CompatibilityInfo;->applicationScale:F
 
-    .line 610
+    .line 459
     .local v0, appScale:F
     const/4 v4, 0x2
 
     new-array v2, v4, [I
 
-    .line 611
+    .line 460
     .local v2, pos:[I
     invoke-virtual {p1, v2}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 613
+    .line 462
     new-instance v3, Landroid/graphics/Rect;
 
     invoke-direct {v3}, Landroid/graphics/Rect;-><init>()V
 
-    .line 614
+    .line 463
     .local v3, rect:Landroid/graphics/Rect;
     aget v4, v2, v5
 
@@ -97,7 +92,7 @@
 
     iput v4, v3, Landroid/graphics/Rect;->left:I
 
-    .line 615
+    .line 464
     aget v4, v2, v7
 
     int-to-float v4, v4
@@ -110,7 +105,7 @@
 
     iput v4, v3, Landroid/graphics/Rect;->top:I
 
-    .line 616
+    .line 465
     aget v4, v2, v5
 
     invoke-virtual {p1}, Landroid/view/View;->getWidth()I
@@ -129,7 +124,7 @@
 
     iput v4, v3, Landroid/graphics/Rect;->right:I
 
-    .line 617
+    .line 466
     aget v4, v2, v7
 
     invoke-virtual {p1}, Landroid/view/View;->getHeight()I
@@ -148,24 +143,28 @@
 
     iput v4, v3, Landroid/graphics/Rect;->bottom:I
 
-    .line 619
+    .line 468
     new-instance v1, Landroid/content/Intent;
 
     invoke-direct {v1}, Landroid/content/Intent;-><init>()V
 
-    .line 620
+    .line 469
     .local v1, intent:Landroid/content/Intent;
     invoke-virtual {v1, v3}, Landroid/content/Intent;->setSourceBounds(Landroid/graphics/Rect;)V
 
-    .line 621
-    iget-object v4, p0, Landroid/widget/RemoteViews$SetOnClickPendingIntent$1;->val$handler:Landroid/widget/RemoteViews$OnClickHandler;
+    .line 470
+    iget-object v4, p0, Landroid/widget/RemoteViews$SetOnClickPendingIntent$1;->this$1:Landroid/widget/RemoteViews$SetOnClickPendingIntent;
 
-    iget-object v5, p0, Landroid/widget/RemoteViews$SetOnClickPendingIntent$1;->this$1:Landroid/widget/RemoteViews$SetOnClickPendingIntent;
+    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    iget-object v5, v5, Landroid/widget/RemoteViews$SetOnClickPendingIntent;->pendingIntent:Landroid/app/PendingIntent;
+    move-result-object v5
 
-    invoke-virtual {v4, p1, v5, v1}, Landroid/widget/RemoteViews$OnClickHandler;->onClickHandler(Landroid/view/View;Landroid/app/PendingIntent;Landroid/content/Intent;)Z
+    iget-object v6, p0, Landroid/widget/RemoteViews$SetOnClickPendingIntent$1;->this$1:Landroid/widget/RemoteViews$SetOnClickPendingIntent;
 
-    .line 622
+    iget-object v6, v6, Landroid/widget/RemoteViews$SetOnClickPendingIntent;->pendingIntent:Landroid/app/PendingIntent;
+
+    invoke-virtual {v4, v5, v6, v1}, Landroid/widget/RemoteViews$SetOnClickPendingIntent;->startIntentSafely(Landroid/content/Context;Landroid/app/PendingIntent;Landroid/content/Intent;)Z
+
+    .line 471
     return-void
 .end method

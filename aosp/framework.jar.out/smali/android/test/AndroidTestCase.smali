@@ -282,7 +282,7 @@
     :try_end_0
     .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 142
+    .line 141
     :goto_0
     return-void
 
@@ -305,7 +305,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "error message should contain \""
+    const-string v2, "error message should contain "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -315,21 +315,7 @@
 
     move-result-object v1
 
-    const-string v2, "\". Got: \""
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v0}, Ljava/lang/SecurityException;->getMessage()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "\"."
+    const-string v2, "."
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -390,7 +376,7 @@
     .end annotation
 
     .prologue
-    .line 156
+    .line 155
     .local p1, testCaseClass:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -400,7 +386,7 @@
 
     move-result-object v4
 
-    .line 157
+    .line 156
     .local v4, fields:[Ljava/lang/reflect/Field;
     move-object v0, v4
 
@@ -416,13 +402,13 @@
 
     aget-object v2, v0, v5
 
-    .line 158
+    .line 157
     .local v2, field:Ljava/lang/reflect/Field;
     invoke-virtual {v2}, Ljava/lang/reflect/Field;->getDeclaringClass()Ljava/lang/Class;
 
     move-result-object v3
 
-    .line 159
+    .line 158
     .local v3, fieldClass:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     invoke-virtual {p1, v3}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
@@ -440,20 +426,20 @@
 
     if-nez v7, :cond_0
 
-    .line 161
+    .line 160
     const/4 v7, 0x1
 
     :try_start_0
     invoke-virtual {v2, v7}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
-    .line 162
+    .line 161
     const/4 v7, 0x0
 
     invoke-virtual {v2, p0, v7}, Ljava/lang/reflect/Field;->set(Ljava/lang/Object;Ljava/lang/Object;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 167
+    .line 166
     :goto_1
     invoke-virtual {v2, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -461,24 +447,24 @@
 
     if-eqz v7, :cond_0
 
-    .line 168
+    .line 167
     const-string v7, "TestCase"
 
     const-string v8, "Error: Could not nullify field!"
 
     invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 157
+    .line 156
     :cond_0
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_0
 
-    .line 163
+    .line 162
     :catch_0
     move-exception v1
 
-    .line 164
+    .line 163
     .local v1, e:Ljava/lang/Exception;
     const-string v7, "TestCase"
 
@@ -488,7 +474,7 @@
 
     goto :goto_1
 
-    .line 172
+    .line 171
     .end local v1           #e:Ljava/lang/Exception;
     .end local v2           #field:Ljava/lang/reflect/Field;
     .end local v3           #fieldClass:Ljava/lang/Class;,"Ljava/lang/Class<*>;"

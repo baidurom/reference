@@ -7,13 +7,7 @@
 .method public abstract bringChildToFront(Landroid/view/View;)V
 .end method
 
-.method public abstract childAccessibilityStateChanged(Landroid/view/View;)V
-.end method
-
 .method public abstract childDrawableStateChanged(Landroid/view/View;)V
-.end method
-
-.method public abstract childHasTransientStateChanged(Landroid/view/View;Z)V
 .end method
 
 .method public abstract clearChildFocus(Landroid/view/View;)V
@@ -32,9 +26,6 @@
 .end method
 
 .method public abstract getParent()Landroid/view/ViewParent;
-.end method
-
-.method public abstract getParentForAccessibility()Landroid/view/ViewParent;
 .end method
 
 .method public abstract invalidateChild(Landroid/view/View;Landroid/graphics/Rect;)V
@@ -56,9 +47,6 @@
 .end method
 
 .method public abstract requestDisallowInterceptTouchEvent(Z)V
-.end method
-
-.method public abstract requestFitSystemWindows()V
 .end method
 
 .method public abstract requestLayout()V

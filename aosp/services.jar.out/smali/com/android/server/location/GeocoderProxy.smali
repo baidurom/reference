@@ -3,160 +3,82 @@
 .source "GeocoderProxy.java"
 
 
-# static fields
-.field private static final SERVICE_ACTION:Ljava/lang/String; = "com.android.location.service.GeocodeProvider"
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/android/server/location/GeocoderProxy$1;,
+        Lcom/android/server/location/GeocoderProxy$Connection;
+    }
+.end annotation
 
+
+# static fields
 .field private static final TAG:Ljava/lang/String; = "GeocoderProxy"
 
 
 # instance fields
 .field private final mContext:Landroid/content/Context;
 
-.field private final mServiceWatcher:Lcom/android/server/ServiceWatcher;
+.field private final mIntent:Landroid/content/Intent;
+
+.field private final mMutex:Ljava/lang/Object;
+
+.field private mServiceConnection:Lcom/android/server/location/GeocoderProxy$Connection;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Ljava/util/List;I)V
-    .locals 8
+.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
+    .locals 4
     .parameter "context"
-    .parameter
-    .parameter "userId"
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/content/Context;",
-            "Ljava/util/List",
-            "<",
-            "Ljava/lang/String;",
-            ">;I)V"
-        }
-    .end annotation
+    .parameter "serviceName"
 
     .prologue
-    .local p2, initialPackageNames:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
-    const/4 v5, 0x0
-
-    .line 51
+    .line 47
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 52
+    .line 44
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Lcom/android/server/location/GeocoderProxy;->mMutex:Ljava/lang/Object;
+
+    .line 45
+    new-instance v0, Lcom/android/server/location/GeocoderProxy$Connection;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1}, Lcom/android/server/location/GeocoderProxy$Connection;-><init>(Lcom/android/server/location/GeocoderProxy;Lcom/android/server/location/GeocoderProxy$1;)V
+
+    iput-object v0, p0, Lcom/android/server/location/GeocoderProxy;->mServiceConnection:Lcom/android/server/location/GeocoderProxy$Connection;
+
+    .line 48
     iput-object p1, p0, Lcom/android/server/location/GeocoderProxy;->mContext:Landroid/content/Context;
 
-    .line 54
-    new-instance v0, Lcom/android/server/ServiceWatcher;
+    .line 49
+    new-instance v0, Landroid/content/Intent;
 
-    iget-object v1, p0, Lcom/android/server/location/GeocoderProxy;->mContext:Landroid/content/Context;
+    invoke-direct {v0, p2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    const-string v2, "GeocoderProxy"
+    iput-object v0, p0, Lcom/android/server/location/GeocoderProxy;->mIntent:Landroid/content/Intent;
 
-    const-string v3, "com.android.location.service.GeocodeProvider"
+    .line 50
+    iget-object v0, p0, Lcom/android/server/location/GeocoderProxy;->mContext:Landroid/content/Context;
 
-    move-object v4, p2
+    iget-object v1, p0, Lcom/android/server/location/GeocoderProxy;->mIntent:Landroid/content/Intent;
 
-    move-object v6, v5
+    iget-object v2, p0, Lcom/android/server/location/GeocoderProxy;->mServiceConnection:Lcom/android/server/location/GeocoderProxy$Connection;
 
-    move v7, p3
+    const/16 v3, 0x15
 
-    invoke-direct/range {v0 .. v7}, Lcom/android/server/ServiceWatcher;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/Runnable;Landroid/os/Handler;I)V
+    invoke-virtual {v0, v1, v2, v3}, Landroid/content/Context;->bindService(Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z
 
-    iput-object v0, p0, Lcom/android/server/location/GeocoderProxy;->mServiceWatcher:Lcom/android/server/ServiceWatcher;
-
-    .line 56
+    .line 53
     return-void
-.end method
-
-.method private bind()Z
-    .locals 1
-
-    .prologue
-    .line 59
-    iget-object v0, p0, Lcom/android/server/location/GeocoderProxy;->mServiceWatcher:Lcom/android/server/ServiceWatcher;
-
-    invoke-virtual {v0}, Lcom/android/server/ServiceWatcher;->start()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static createAndBind(Landroid/content/Context;Ljava/util/List;I)Lcom/android/server/location/GeocoderProxy;
-    .locals 2
-    .parameter "context"
-    .parameter
-    .parameter "userId"
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/content/Context;",
-            "Ljava/util/List",
-            "<",
-            "Ljava/lang/String;",
-            ">;I)",
-            "Lcom/android/server/location/GeocoderProxy;"
-        }
-    .end annotation
-
-    .prologue
-    .line 43
-    .local p1, initialPackageNames:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
-    new-instance v0, Lcom/android/server/location/GeocoderProxy;
-
-    invoke-direct {v0, p0, p1, p2}, Lcom/android/server/location/GeocoderProxy;-><init>(Landroid/content/Context;Ljava/util/List;I)V
-
-    .line 44
-    .local v0, proxy:Lcom/android/server/location/GeocoderProxy;
-    invoke-direct {v0}, Lcom/android/server/location/GeocoderProxy;->bind()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 47
-    .end local v0           #proxy:Lcom/android/server/location/GeocoderProxy;
-    :goto_0
-    return-object v0
-
-    .restart local v0       #proxy:Lcom/android/server/location/GeocoderProxy;
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method private getService()Landroid/location/IGeocodeProvider;
-    .locals 1
-
-    .prologue
-    .line 63
-    iget-object v0, p0, Lcom/android/server/location/GeocoderProxy;->mServiceWatcher:Lcom/android/server/ServiceWatcher;
-
-    invoke-virtual {v0}, Lcom/android/server/ServiceWatcher;->getBinder()Landroid/os/IBinder;
-
-    move-result-object v0
-
-    invoke-static {v0}, Landroid/location/IGeocodeProvider$Stub;->asInterface(Landroid/os/IBinder;)Landroid/location/IGeocodeProvider;
-
-    move-result-object v0
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public getConnectedPackageName()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 67
-    iget-object v0, p0, Lcom/android/server/location/GeocoderProxy;->mServiceWatcher:Lcom/android/server/ServiceWatcher;
-
-    invoke-virtual {v0}, Lcom/android/server/ServiceWatcher;->getBestPackageName()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
 .method public getFromLocation(DDILandroid/location/GeocoderParams;Ljava/util/List;)Ljava/lang/String;
     .locals 9
     .parameter "latitude"
@@ -177,14 +99,27 @@
     .end annotation
 
     .prologue
-    .line 72
+    .line 95
     .local p7, addrs:Ljava/util/List;,"Ljava/util/List<Landroid/location/Address;>;"
-    invoke-direct {p0}, Lcom/android/server/location/GeocoderProxy;->getService()Landroid/location/IGeocodeProvider;
+    iget-object v2, p0, Lcom/android/server/location/GeocoderProxy;->mMutex:Ljava/lang/Object;
+
+    monitor-enter v2
+
+    .line 96
+    :try_start_0
+    iget-object v1, p0, Lcom/android/server/location/GeocoderProxy;->mServiceConnection:Lcom/android/server/location/GeocoderProxy$Connection;
+
+    invoke-virtual {v1}, Lcom/android/server/location/GeocoderProxy$Connection;->getProvider()Landroid/location/IGeocodeProvider;
 
     move-result-object v0
 
-    .line 73
+    .line 97
     .local v0, provider:Landroid/location/IGeocodeProvider;
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 98
     if-eqz v0, :cond_0
 
     move-wide v1, p1
@@ -197,29 +132,44 @@
 
     move-object/from16 v7, p7
 
-    .line 75
-    :try_start_0
+    .line 100
+    :try_start_1
     invoke-interface/range {v0 .. v7}, Landroid/location/IGeocodeProvider;->getFromLocation(DDILandroid/location/GeocoderParams;Ljava/util/List;)Ljava/lang/String;
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_1
+    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
     move-result-object v1
 
-    .line 80
+    .line 106
     :goto_0
     return-object v1
 
-    .line 76
+    .line 97
+    .end local v0           #provider:Landroid/location/IGeocodeProvider;
+    :catchall_0
+    move-exception v1
+
+    :try_start_2
+    monitor-exit v2
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    throw v1
+
+    .line 102
+    .restart local v0       #provider:Landroid/location/IGeocodeProvider;
     :catch_0
     move-exception v8
 
-    .line 77
+    .line 103
     .local v8, e:Landroid/os/RemoteException;
     const-string v1, "GeocoderProxy"
 
-    invoke-static {v1, v8}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/Throwable;)I
+    const-string v2, "getFromLocation failed"
 
-    .line 80
+    invoke-static {v1, v2, v8}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    .line 106
     .end local v8           #e:Landroid/os/RemoteException;
     :cond_0
     const-string v1, "Service not Available"
@@ -252,14 +202,27 @@
     .end annotation
 
     .prologue
-    .line 87
+    .line 114
     .local p12, addrs:Ljava/util/List;,"Ljava/util/List<Landroid/location/Address;>;"
-    invoke-direct {p0}, Lcom/android/server/location/GeocoderProxy;->getService()Landroid/location/IGeocodeProvider;
+    iget-object v2, p0, Lcom/android/server/location/GeocoderProxy;->mMutex:Ljava/lang/Object;
+
+    monitor-enter v2
+
+    .line 115
+    :try_start_0
+    iget-object v1, p0, Lcom/android/server/location/GeocoderProxy;->mServiceConnection:Lcom/android/server/location/GeocoderProxy$Connection;
+
+    invoke-virtual {v1}, Lcom/android/server/location/GeocoderProxy$Connection;->getProvider()Landroid/location/IGeocodeProvider;
 
     move-result-object v0
 
-    .line 88
+    .line 116
     .local v0, provider:Landroid/location/IGeocodeProvider;
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 117
     if-eqz v0, :cond_0
 
     move-object v1, p1
@@ -278,32 +241,101 @@
 
     move-object/from16 v12, p12
 
-    .line 90
-    :try_start_0
+    .line 119
+    :try_start_1
     invoke-interface/range {v0 .. v12}, Landroid/location/IGeocodeProvider;->getFromLocationName(Ljava/lang/String;DDDDILandroid/location/GeocoderParams;Ljava/util/List;)Ljava/lang/String;
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_1
+    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
     move-result-object v1
 
-    .line 97
+    .line 126
     :goto_0
     return-object v1
 
-    .line 93
+    .line 116
+    .end local v0           #provider:Landroid/location/IGeocodeProvider;
+    :catchall_0
+    move-exception v1
+
+    :try_start_2
+    monitor-exit v2
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    throw v1
+
+    .line 122
+    .restart local v0       #provider:Landroid/location/IGeocodeProvider;
     :catch_0
     move-exception v13
 
-    .line 94
+    .line 123
     .local v13, e:Landroid/os/RemoteException;
     const-string v1, "GeocoderProxy"
 
-    invoke-static {v1, v13}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/Throwable;)I
+    const-string v2, "getFromLocationName failed"
 
-    .line 97
+    invoke-static {v1, v2, v13}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    .line 126
     .end local v13           #e:Landroid/os/RemoteException;
     :cond_0
     const-string v1, "Service not Available"
 
     goto :goto_0
+.end method
+
+.method public reconnect()V
+    .locals 5
+
+    .prologue
+    .line 60
+    iget-object v1, p0, Lcom/android/server/location/GeocoderProxy;->mMutex:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    .line 61
+    :try_start_0
+    iget-object v0, p0, Lcom/android/server/location/GeocoderProxy;->mContext:Landroid/content/Context;
+
+    iget-object v2, p0, Lcom/android/server/location/GeocoderProxy;->mServiceConnection:Lcom/android/server/location/GeocoderProxy$Connection;
+
+    invoke-virtual {v0, v2}, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
+
+    .line 62
+    new-instance v0, Lcom/android/server/location/GeocoderProxy$Connection;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, p0, v2}, Lcom/android/server/location/GeocoderProxy$Connection;-><init>(Lcom/android/server/location/GeocoderProxy;Lcom/android/server/location/GeocoderProxy$1;)V
+
+    iput-object v0, p0, Lcom/android/server/location/GeocoderProxy;->mServiceConnection:Lcom/android/server/location/GeocoderProxy$Connection;
+
+    .line 63
+    iget-object v0, p0, Lcom/android/server/location/GeocoderProxy;->mContext:Landroid/content/Context;
+
+    iget-object v2, p0, Lcom/android/server/location/GeocoderProxy;->mIntent:Landroid/content/Intent;
+
+    iget-object v3, p0, Lcom/android/server/location/GeocoderProxy;->mServiceConnection:Lcom/android/server/location/GeocoderProxy$Connection;
+
+    const/16 v4, 0x15
+
+    invoke-virtual {v0, v2, v3, v4}, Landroid/content/Context;->bindService(Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z
+
+    .line 66
+    monitor-exit v1
+
+    .line 67
+    return-void
+
+    .line 66
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method

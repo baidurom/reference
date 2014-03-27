@@ -1280,7 +1280,7 @@
 .end method
 
 .method public mutate()Landroid/graphics/drawable/Drawable;
-    .locals 6
+    .locals 4
 
     .prologue
     .line 577
@@ -1295,28 +1295,17 @@
     if-ne v3, p0, :cond_1
 
     .line 578
-    new-instance v3, Landroid/graphics/drawable/LayerDrawable$LayerState;
-
-    iget-object v4, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
-
-    const/4 v5, 0x0
-
-    invoke-direct {v3, v4, p0, v5}, Landroid/graphics/drawable/LayerDrawable$LayerState;-><init>(Landroid/graphics/drawable/LayerDrawable$LayerState;Landroid/graphics/drawable/LayerDrawable;Landroid/content/res/Resources;)V
-
-    iput-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
-
-    .line 579
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget-object v1, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
 
-    .line 580
+    .line 579
     .local v1, array:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget v0, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 581
+    .line 580
     .local v0, N:I
     const/4 v2, 0x0
 
@@ -1324,25 +1313,25 @@
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 582
+    .line 581
     aget-object v3, v1, v2
 
     iget-object v3, v3, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v3}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
 
-    .line 581
+    .line 580
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 584
+    .line 583
     :cond_0
     const/4 v3, 0x1
 
     iput-boolean v3, p0, Landroid/graphics/drawable/LayerDrawable;->mMutated:Z
 
-    .line 586
+    .line 585
     .end local v0           #N:I
     .end local v1           #array:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     .end local v2           #i:I
@@ -1924,60 +1913,6 @@
     iput p5, v0, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mInsetB:I
 
     .line 313
-    return-void
-.end method
-
-.method public setLayoutDirection(I)V
-    .locals 4
-    .parameter "layoutDirection"
-
-    .prologue
-    .line 592
-    invoke-virtual {p0}, Landroid/graphics/drawable/LayerDrawable;->getLayoutDirection()I
-
-    move-result v3
-
-    if-eq v3, p1, :cond_0
-
-    .line 593
-    iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
-
-    iget-object v1, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
-
-    .line 594
-    .local v1, array:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
-    iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
-
-    iget v0, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
-
-    .line 595
-    .local v0, N:I
-    const/4 v2, 0x0
-
-    .local v2, i:I
-    :goto_0
-    if-ge v2, v0, :cond_0
-
-    .line 596
-    aget-object v3, v1, v2
-
-    iget-object v3, v3, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v3, p1}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)V
-
-    .line 595
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    .line 599
-    .end local v0           #N:I
-    .end local v1           #array:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
-    .end local v2           #i:I
-    :cond_0
-    invoke-super {p0, p1}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)V
-
-    .line 600
     return-void
 .end method
 

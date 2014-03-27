@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 645
+    .line 633
     iput-object p1, p0, Landroid/widget/AdapterViewAnimator$1;->this$0:Landroid/widget/AdapterViewAnimator;
 
     iput-object p2, p0, Landroid/widget/AdapterViewAnimator$1;->val$v:Landroid/view/View;
@@ -51,14 +51,14 @@
     .locals 2
 
     .prologue
-    .line 647
+    .line 635
     iget-object v0, p0, Landroid/widget/AdapterViewAnimator$1;->this$0:Landroid/widget/AdapterViewAnimator;
 
     iget-object v1, p0, Landroid/widget/AdapterViewAnimator$1;->val$v:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Landroid/widget/AdapterViewAnimator;->hideTapFeedback(Landroid/view/View;)V
 
-    .line 648
+    .line 636
     iget-object v0, p0, Landroid/widget/AdapterViewAnimator$1;->this$0:Landroid/widget/AdapterViewAnimator;
 
     new-instance v1, Landroid/widget/AdapterViewAnimator$1$1;
@@ -67,6 +67,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/AdapterViewAnimator;->post(Ljava/lang/Runnable;)Z
 
-    .line 658
+    .line 646
     return-void
 .end method

@@ -23,26 +23,24 @@
 
 .field static final STATE_INITIALIZED:I = 0x0
 
+.field static final STATE_NOTPREPARED:I = 0x1
+
 .field static final STATE_PLAYING:I = 0x3
 
 .field static final STATE_PREPARED:I = 0x2
 
-.field static final STATE_PREPARING:I = 0x1
-
-.field static final STATE_RELEASED:I = 0x5
-
-.field static final STATE_RESETTED:I = 0x4
+.field static final STATE_RELEASED:I = 0x4
 
 .field private static final TIMEUPDATE_PERIOD:I = 0xfa
-
-.field protected static mCurrentState:I
-
-.field protected static mPlayer:Landroid/media/MediaPlayer;
 
 .field protected static mTimer:Ljava/util/Timer;
 
 
 # instance fields
+.field protected mAutostart:Z
+
+.field protected mCurrentState:I
+
 .field protected mHeaders:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -57,15 +55,13 @@
 
 .field protected mPauseDuringPreparing:Z
 
+.field protected mPlayer:Landroid/media/MediaPlayer;
+
 .field public mPlayerBuffering:Z
 
 .field protected mProxy:Landroid/webkit/HTML5VideoViewProxy;
 
 .field protected mSaveSeekTime:I
-
-.field private mSkipPrepare:Z
-
-.field private mStartWhenPrepared:Z
 
 .field protected mUri:Landroid/net/Uri;
 
@@ -73,42 +69,19 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    .prologue
-    .line 64
-    const/4 v0, 0x0
-
-    sput-object v0, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
-
-    .line 65
-    const/4 v0, -0x1
-
-    sput v0, Landroid/webkit/HTML5VideoView;->mCurrentState:I
-
-    return-void
-.end method
-
 .method protected constructor <init>()V
     .locals 1
 
     .prologue
-    const/4 v0, 0x0
-
-    .line 188
+    .line 164
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 79
-    iput-boolean v0, p0, Landroid/webkit/HTML5VideoView;->mSkipPrepare:Z
+    .line 310
+    const/4 v0, 0x0
 
-    .line 349
     iput-boolean v0, p0, Landroid/webkit/HTML5VideoView;->mPlayerBuffering:Z
 
-    .line 370
-    iput-boolean v0, p0, Landroid/webkit/HTML5VideoView;->mStartWhenPrepared:Z
-
-    .line 189
+    .line 165
     return-void
 .end method
 
@@ -131,16 +104,16 @@
     .end annotation
 
     .prologue
-    .line 193
-    invoke-virtual {p1}, Landroid/webkit/HTML5VideoViewProxy;->getWebView()Landroid/webkit/WebViewClassic;
+    .line 169
+    invoke-virtual {p1}, Landroid/webkit/HTML5VideoViewProxy;->getWebView()Landroid/webkit/WebView;
 
     move-result-object v3
 
-    invoke-virtual {v3}, Landroid/webkit/WebViewClassic;->isPrivateBrowsingEnabled()Z
+    invoke-virtual {v3}, Landroid/webkit/WebView;->isPrivateBrowsingEnabled()Z
 
     move-result v2
 
-    .line 194
+    .line 170
     .local v2, isPrivate:Z
     invoke-static {}, Landroid/webkit/CookieManager;->getInstance()Landroid/webkit/CookieManager;
 
@@ -150,68 +123,35 @@
 
     move-result-object v0
 
-    .line 195
+    .line 171
     .local v0, cookieValue:Ljava/lang/String;
     new-instance v1, Ljava/util/HashMap;
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
-    .line 196
+    .line 172
     .local v1, headers:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     if-eqz v0, :cond_0
 
-    .line 197
+    .line 173
     const-string v3, "Cookie"
 
     invoke-interface {v1, v3, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 199
+    .line 175
     :cond_0
     if-eqz v2, :cond_1
 
-    .line 200
+    .line 176
     const-string/jumbo v3, "x-hide-urls-from-log"
 
     const-string/jumbo v4, "true"
 
     invoke-interface {v1, v3, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 203
+    .line 179
     :cond_1
     return-object v1
-.end method
-
-.method public static release()V
-    .locals 2
-
-    .prologue
-    const/4 v1, 0x5
-
-    .line 155
-    sget-object v0, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
-
-    if-eqz v0, :cond_0
-
-    sget v0, Landroid/webkit/HTML5VideoView;->mCurrentState:I
-
-    if-eq v0, v1, :cond_0
-
-    .line 156
-    sget-object v0, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
-
-    invoke-virtual {v0}, Landroid/media/MediaPlayer;->release()V
-
-    .line 157
-    const/4 v0, 0x0
-
-    sput-object v0, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
-
-    .line 159
-    :cond_0
-    sput v1, Landroid/webkit/HTML5VideoView;->mCurrentState:I
-
-    .line 160
-    return-void
 .end method
 
 
@@ -220,7 +160,7 @@
     .locals 0
 
     .prologue
-    .line 335
+    .line 292
     return-void
 .end method
 
@@ -228,18 +168,18 @@
     .locals 0
 
     .prologue
-    .line 342
+    .line 303
     return-void
 .end method
 
-.method public enterFullScreenVideoState(ILandroid/webkit/HTML5VideoViewProxy;Landroid/webkit/WebViewClassic;)V
+.method public enterFullScreenVideoState(ILandroid/webkit/HTML5VideoViewProxy;Landroid/webkit/WebView;)V
     .locals 0
     .parameter "layerId"
     .parameter "proxy"
     .parameter "webView"
 
     .prologue
-    .line 328
+    .line 285
     return-void
 .end method
 
@@ -247,8 +187,18 @@
     .locals 1
 
     .prologue
-    .line 367
+    .line 333
     const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public getAutostart()Z
+    .locals 1
+
+    .prologue
+    .line 145
+    iget-boolean v0, p0, Landroid/webkit/HTML5VideoView;->mAutostart:Z
 
     return v0
 .end method
@@ -257,21 +207,21 @@
     .locals 2
 
     .prologue
-    .line 120
-    sget v0, Landroid/webkit/HTML5VideoView;->mCurrentState:I
+    .line 110
+    iget v0, p0, Landroid/webkit/HTML5VideoView;->mCurrentState:I
 
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_0
 
-    .line 121
-    sget-object v0, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
+    .line 111
+    iget-object v0, p0, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
 
     invoke-virtual {v0}, Landroid/media/MediaPlayer;->getCurrentPosition()I
 
     move-result v0
 
-    .line 123
+    .line 113
     :goto_0
     return v0
 
@@ -285,22 +235,22 @@
     .locals 1
 
     .prologue
-    .line 282
+    .line 239
     invoke-virtual {p0}, Landroid/webkit/HTML5VideoView;->isPlaying()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 283
+    .line 240
     const/4 v0, 0x3
 
-    .line 285
+    .line 242
     :goto_0
     return v0
 
     :cond_0
-    sget v0, Landroid/webkit/HTML5VideoView;->mCurrentState:I
+    iget v0, p0, Landroid/webkit/HTML5VideoView;->mCurrentState:I
 
     goto :goto_0
 .end method
@@ -309,21 +259,21 @@
     .locals 2
 
     .prologue
-    .line 112
-    sget v0, Landroid/webkit/HTML5VideoView;->mCurrentState:I
+    .line 102
+    iget v0, p0, Landroid/webkit/HTML5VideoView;->mCurrentState:I
 
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_0
 
-    .line 113
-    sget-object v0, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
+    .line 103
+    iget-object v0, p0, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
 
     invoke-virtual {v0}, Landroid/media/MediaPlayer;->getDuration()I
 
     move-result v0
 
-    .line 115
+    .line 105
     :goto_0
     return v0
 
@@ -337,7 +287,7 @@
     .locals 1
 
     .prologue
-    .line 167
+    .line 149
     iget-boolean v0, p0, Landroid/webkit/HTML5VideoView;->mPauseDuringPreparing:Z
 
     return v0
@@ -347,7 +297,7 @@
     .locals 1
 
     .prologue
-    .line 352
+    .line 313
     iget-boolean v0, p0, Landroid/webkit/HTML5VideoView;->mPlayerBuffering:Z
 
     return v0
@@ -357,27 +307,28 @@
     .locals 1
 
     .prologue
-    .line 338
+    .line 295
     const/4 v0, 0x0
 
     return v0
 .end method
 
-.method public getStartWhenPrepared()Z
+.method public getSurfaceTexture(I)Landroid/graphics/SurfaceTexture;
     .locals 1
+    .parameter "videoLayerId"
 
     .prologue
-    .line 377
-    iget-boolean v0, p0, Landroid/webkit/HTML5VideoView;->mStartWhenPrepared:Z
+    .line 299
+    const/4 v0, 0x0
 
-    return v0
+    return-object v0
 .end method
 
 .method public getTextureName()I
     .locals 1
 
     .prologue
-    .line 345
+    .line 306
     const/4 v0, 0x0
 
     return v0
@@ -387,7 +338,7 @@
     .locals 1
 
     .prologue
-    .line 277
+    .line 234
     iget v0, p0, Landroid/webkit/HTML5VideoView;->mVideoLayerId:I
 
     return v0
@@ -397,57 +348,42 @@
     .locals 3
     .parameter "videoLayerId"
     .parameter "position"
-    .parameter "skipPrepare"
+    .parameter "autoStart"
 
     .prologue
     const/4 v2, 0x0
 
     const/4 v1, 0x0
 
-    .line 172
-    sget-object v0, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
-
-    if-nez v0, :cond_0
-
-    .line 173
+    .line 154
     new-instance v0, Landroid/media/MediaPlayer;
 
     invoke-direct {v0}, Landroid/media/MediaPlayer;-><init>()V
 
-    sput-object v0, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
+    iput-object v0, p0, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
 
-    .line 174
-    sput v1, Landroid/webkit/HTML5VideoView;->mCurrentState:I
+    .line 155
+    iput v1, p0, Landroid/webkit/HTML5VideoView;->mCurrentState:I
 
-    .line 176
-    :cond_0
-    iput-boolean p3, p0, Landroid/webkit/HTML5VideoView;->mSkipPrepare:Z
-
-    .line 178
-    iget-boolean v0, p0, Landroid/webkit/HTML5VideoView;->mSkipPrepare:Z
-
-    if-nez v0, :cond_1
-
-    .line 179
-    sput v1, Landroid/webkit/HTML5VideoView;->mCurrentState:I
-
-    .line 181
-    :cond_1
+    .line 156
     iput-object v2, p0, Landroid/webkit/HTML5VideoView;->mProxy:Landroid/webkit/HTML5VideoViewProxy;
 
-    .line 182
+    .line 157
     iput p1, p0, Landroid/webkit/HTML5VideoView;->mVideoLayerId:I
 
-    .line 183
+    .line 158
     iput p2, p0, Landroid/webkit/HTML5VideoView;->mSaveSeekTime:I
 
-    .line 184
+    .line 159
+    iput-boolean p3, p0, Landroid/webkit/HTML5VideoView;->mAutostart:Z
+
+    .line 160
     sput-object v2, Landroid/webkit/HTML5VideoView;->mTimer:Ljava/util/Timer;
 
-    .line 185
+    .line 161
     iput-boolean v1, p0, Landroid/webkit/HTML5VideoView;->mPauseDuringPreparing:Z
 
-    .line 186
+    .line 162
     return-void
 .end method
 
@@ -455,7 +391,7 @@
     .locals 1
 
     .prologue
-    .line 331
+    .line 288
     const/4 v0, 0x0
 
     return v0
@@ -465,43 +401,21 @@
     .locals 2
 
     .prologue
-    .line 134
-    sget v0, Landroid/webkit/HTML5VideoView;->mCurrentState:I
+    .line 124
+    iget v0, p0, Landroid/webkit/HTML5VideoView;->mCurrentState:I
 
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_0
 
-    .line 135
-    sget-object v0, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
+    .line 125
+    iget-object v0, p0, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
 
     invoke-virtual {v0}, Landroid/media/MediaPlayer;->isPlaying()Z
 
     move-result v0
 
-    .line 137
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public isReleased()Z
-    .locals 2
-
-    .prologue
-    .line 163
-    sget v0, Landroid/webkit/HTML5VideoView;->mCurrentState:I
-
-    const/4 v1, 0x5
-
-    if-ne v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
+    .line 127
     :goto_0
     return v0
 
@@ -516,43 +430,43 @@
     .parameter "mp"
 
     .prologue
-    .line 304
+    .line 261
     const/4 v0, 0x2
 
-    sput v0, Landroid/webkit/HTML5VideoView;->mCurrentState:I
+    iput v0, p0, Landroid/webkit/HTML5VideoView;->mCurrentState:I
 
-    .line 305
+    .line 262
     iget v0, p0, Landroid/webkit/HTML5VideoView;->mSaveSeekTime:I
 
     invoke-virtual {p0, v0}, Landroid/webkit/HTML5VideoView;->seekTo(I)V
 
-    .line 306
+    .line 263
     iget-object v0, p0, Landroid/webkit/HTML5VideoView;->mProxy:Landroid/webkit/HTML5VideoViewProxy;
 
     if-eqz v0, :cond_0
 
-    .line 307
+    .line 264
     iget-object v0, p0, Landroid/webkit/HTML5VideoView;->mProxy:Landroid/webkit/HTML5VideoViewProxy;
 
     invoke-virtual {v0, p1}, Landroid/webkit/HTML5VideoViewProxy;->onPrepared(Landroid/media/MediaPlayer;)V
 
-    .line 309
+    .line 266
     :cond_0
     iget-boolean v0, p0, Landroid/webkit/HTML5VideoView;->mPauseDuringPreparing:Z
 
     if-eqz v0, :cond_1
 
-    .line 310
+    .line 267
     iget-object v0, p0, Landroid/webkit/HTML5VideoView;->mProxy:Landroid/webkit/HTML5VideoViewProxy;
 
     invoke-virtual {p0, v0}, Landroid/webkit/HTML5VideoView;->pauseAndDispatch(Landroid/webkit/HTML5VideoViewProxy;)V
 
-    .line 311
+    .line 268
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/webkit/HTML5VideoView;->mPauseDuringPreparing:Z
 
-    .line 313
+    .line 270
     :cond_1
     return-void
 .end method
@@ -563,51 +477,51 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 98
+    .line 88
     invoke-virtual {p0}, Landroid/webkit/HTML5VideoView;->isPlaying()Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    .line 99
-    sget-object v0, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
+    .line 89
+    iget-object v0, p0, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
 
     invoke-virtual {v0}, Landroid/media/MediaPlayer;->pause()V
 
-    .line 104
+    .line 94
     :cond_0
     :goto_0
     sget-object v0, Landroid/webkit/HTML5VideoView;->mTimer:Ljava/util/Timer;
 
     if-eqz v0, :cond_1
 
-    .line 105
+    .line 95
     sget-object v0, Landroid/webkit/HTML5VideoView;->mTimer:Ljava/util/Timer;
 
     invoke-virtual {v0}, Ljava/util/Timer;->purge()I
 
-    .line 106
+    .line 96
     sget-object v0, Landroid/webkit/HTML5VideoView;->mTimer:Ljava/util/Timer;
 
     invoke-virtual {v0}, Ljava/util/Timer;->cancel()V
 
-    .line 107
+    .line 97
     const/4 v0, 0x0
 
     sput-object v0, Landroid/webkit/HTML5VideoView;->mTimer:Ljava/util/Timer;
 
-    .line 109
+    .line 99
     :cond_1
     return-void
 
-    .line 100
+    .line 90
     :cond_2
-    sget v0, Landroid/webkit/HTML5VideoView;->mCurrentState:I
+    iget v0, p0, Landroid/webkit/HTML5VideoView;->mCurrentState:I
 
     if-ne v0, v1, :cond_0
 
-    .line 101
+    .line 91
     iput-boolean v1, p0, Landroid/webkit/HTML5VideoView;->mPauseDuringPreparing:Z
 
     goto :goto_0
@@ -618,67 +532,47 @@
     .parameter "proxy"
 
     .prologue
-    .line 317
+    .line 274
     invoke-virtual {p0}, Landroid/webkit/HTML5VideoView;->pause()V
 
-    .line 318
+    .line 275
     if-eqz p1, :cond_0
 
-    .line 319
+    .line 276
     invoke-virtual {p1}, Landroid/webkit/HTML5VideoViewProxy;->dispatchOnPaused()V
 
-    .line 321
+    .line 278
     :cond_0
     return-void
 .end method
 
 .method public prepareDataAndDisplayMode(Landroid/webkit/HTML5VideoViewProxy;)V
-    .locals 0
-    .parameter "proxy"
-
-    .prologue
-    .line 264
-    invoke-virtual {p0}, Landroid/webkit/HTML5VideoView;->decideDisplayMode()V
-
-    .line 266
-    invoke-virtual {p0, p1}, Landroid/webkit/HTML5VideoView;->setOnCompletionListener(Landroid/webkit/HTML5VideoViewProxy;)V
-
-    .line 267
-    invoke-virtual {p0, p1}, Landroid/webkit/HTML5VideoView;->setOnPreparedListener(Landroid/webkit/HTML5VideoViewProxy;)V
-
-    .line 268
-    invoke-virtual {p0, p1}, Landroid/webkit/HTML5VideoView;->setOnErrorListener(Landroid/webkit/HTML5VideoViewProxy;)V
-
-    .line 269
-    invoke-virtual {p0, p1}, Landroid/webkit/HTML5VideoView;->setOnInfoListener(Landroid/webkit/HTML5VideoViewProxy;)V
-
-    .line 271
-    invoke-virtual {p0, p1}, Landroid/webkit/HTML5VideoView;->prepareDataCommon(Landroid/webkit/HTML5VideoViewProxy;)V
-
-    .line 272
-    return-void
-.end method
-
-.method public prepareDataCommon(Landroid/webkit/HTML5VideoViewProxy;)V
     .locals 5
     .parameter "proxy"
 
     .prologue
-    .line 231
-    iget-boolean v1, p0, Landroid/webkit/HTML5VideoView;->mSkipPrepare:Z
+    .line 210
+    invoke-virtual {p0}, Landroid/webkit/HTML5VideoView;->decideDisplayMode()V
 
-    if-nez v1, :cond_0
+    .line 212
+    invoke-virtual {p0, p1}, Landroid/webkit/HTML5VideoView;->setOnCompletionListener(Landroid/webkit/HTML5VideoViewProxy;)V
 
-    .line 233
+    .line 213
+    invoke-virtual {p0, p1}, Landroid/webkit/HTML5VideoView;->setOnPreparedListener(Landroid/webkit/HTML5VideoViewProxy;)V
+
+    .line 214
+    invoke-virtual {p0, p1}, Landroid/webkit/HTML5VideoView;->setOnErrorListener(Landroid/webkit/HTML5VideoViewProxy;)V
+
+    .line 215
+    invoke-virtual {p0, p1}, Landroid/webkit/HTML5VideoView;->setOnInfoListener(Landroid/webkit/HTML5VideoViewProxy;)V
+
+    .line 219
     :try_start_0
-    sget-object v1, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
+    iget-object v1, p0, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
 
-    invoke-virtual {v1}, Landroid/media/MediaPlayer;->reset()V
+    iget-object v2, p0, Landroid/webkit/HTML5VideoView;->mProxy:Landroid/webkit/HTML5VideoViewProxy;
 
-    .line 234
-    sget-object v1, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
-
-    invoke-virtual {p1}, Landroid/webkit/HTML5VideoViewProxy;->getContext()Landroid/content/Context;
+    invoke-virtual {v2}, Landroid/webkit/HTML5VideoViewProxy;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
@@ -688,8 +582,8 @@
 
     invoke-virtual {v1, v2, v3, v4}, Landroid/media/MediaPlayer;->setDataSource(Landroid/content/Context;Landroid/net/Uri;Ljava/util/Map;)V
 
-    .line 235
-    sget-object v1, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
+    .line 220
+    iget-object v1, p0, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
 
     invoke-virtual {v1}, Landroid/media/MediaPlayer;->prepareAsync()V
     :try_end_0
@@ -697,109 +591,69 @@
     .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
 
-    .line 243
+    .line 228
     :goto_0
     const/4 v1, 0x1
 
-    sput v1, Landroid/webkit/HTML5VideoView;->mCurrentState:I
+    iput v1, p0, Landroid/webkit/HTML5VideoView;->mCurrentState:I
 
-    .line 253
-    :goto_1
+    .line 229
     return-void
 
-    .line 236
+    .line 221
     :catch_0
     move-exception v0
 
-    .line 237
+    .line 222
     .local v0, e:Ljava/lang/IllegalArgumentException;
     invoke-virtual {v0}, Ljava/lang/IllegalArgumentException;->printStackTrace()V
 
     goto :goto_0
 
-    .line 238
+    .line 223
     .end local v0           #e:Ljava/lang/IllegalArgumentException;
     :catch_1
     move-exception v0
 
-    .line 239
+    .line 224
     .local v0, e:Ljava/lang/IllegalStateException;
     invoke-virtual {v0}, Ljava/lang/IllegalStateException;->printStackTrace()V
 
     goto :goto_0
 
-    .line 240
+    .line 225
     .end local v0           #e:Ljava/lang/IllegalStateException;
     :catch_2
     move-exception v0
 
-    .line 241
+    .line 226
     .local v0, e:Ljava/io/IOException;
     invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
 
     goto :goto_0
-
-    .line 248
-    .end local v0           #e:Ljava/io/IOException;
-    :cond_0
-    sget v1, Landroid/webkit/HTML5VideoView;->mCurrentState:I
-
-    const/4 v2, 0x2
-
-    if-lt v1, v2, :cond_1
-
-    .line 249
-    sget-object v1, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
-
-    invoke-virtual {p0, v1}, Landroid/webkit/HTML5VideoView;->onPrepared(Landroid/media/MediaPlayer;)V
-
-    .line 251
-    :cond_1
-    const/4 v1, 0x0
-
-    iput-boolean v1, p0, Landroid/webkit/HTML5VideoView;->mSkipPrepare:Z
-
-    goto :goto_1
 .end method
 
-.method public reprepareData(Landroid/webkit/HTML5VideoViewProxy;)V
-    .locals 1
-    .parameter "proxy"
-
-    .prologue
-    .line 256
-    sget-object v0, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
-
-    invoke-virtual {v0}, Landroid/media/MediaPlayer;->reset()V
-
-    .line 257
-    invoke-virtual {p0, p1}, Landroid/webkit/HTML5VideoView;->prepareDataCommon(Landroid/webkit/HTML5VideoViewProxy;)V
-
-    .line 258
-    return-void
-.end method
-
-.method public reset()V
+.method public release()V
     .locals 2
 
     .prologue
     const/4 v1, 0x4
 
-    .line 142
-    sget v0, Landroid/webkit/HTML5VideoView;->mCurrentState:I
+    .line 132
+    iget v0, p0, Landroid/webkit/HTML5VideoView;->mCurrentState:I
 
-    if-ge v0, v1, :cond_0
+    if-eq v0, v1, :cond_0
 
-    .line 143
-    sget-object v0, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
+    .line 133
+    iget-object v0, p0, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
 
-    invoke-virtual {v0}, Landroid/media/MediaPlayer;->reset()V
+    invoke-virtual {v0}, Landroid/media/MediaPlayer;->release()V
 
-    .line 145
+    .line 135
     :cond_0
-    sput v1, Landroid/webkit/HTML5VideoView;->mCurrentState:I
+    iput v1, p0, Landroid/webkit/HTML5VideoView;->mCurrentState:I
 
-    .line 146
+    .line 136
     return-void
 .end method
 
@@ -808,23 +662,23 @@
     .parameter "pos"
 
     .prologue
-    .line 127
-    sget v0, Landroid/webkit/HTML5VideoView;->mCurrentState:I
+    .line 117
+    iget v0, p0, Landroid/webkit/HTML5VideoView;->mCurrentState:I
 
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_0
 
-    .line 128
-    sget-object v0, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
+    .line 118
+    iget-object v0, p0, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
 
     invoke-virtual {v0, p1}, Landroid/media/MediaPlayer;->seekTo(I)V
 
-    .line 131
+    .line 121
     :goto_0
     return-void
 
-    .line 130
+    .line 120
     :cond_0
     iput p1, p0, Landroid/webkit/HTML5VideoView;->mSaveSeekTime:I
 
@@ -836,12 +690,12 @@
     .parameter "proxy"
 
     .prologue
-    .line 214
-    sget-object v0, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
+    .line 190
+    iget-object v0, p0, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
 
     invoke-virtual {v0, p1}, Landroid/media/MediaPlayer;->setOnCompletionListener(Landroid/media/MediaPlayer$OnCompletionListener;)V
 
-    .line 215
+    .line 191
     return-void
 .end method
 
@@ -850,12 +704,12 @@
     .parameter "proxy"
 
     .prologue
-    .line 218
-    sget-object v0, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
+    .line 194
+    iget-object v0, p0, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
 
     invoke-virtual {v0, p1}, Landroid/media/MediaPlayer;->setOnErrorListener(Landroid/media/MediaPlayer$OnErrorListener;)V
 
-    .line 219
+    .line 195
     return-void
 .end method
 
@@ -864,12 +718,12 @@
     .parameter "proxy"
 
     .prologue
-    .line 227
-    sget-object v0, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
+    .line 203
+    iget-object v0, p0, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
 
     invoke-virtual {v0, p1}, Landroid/media/MediaPlayer;->setOnInfoListener(Landroid/media/MediaPlayer$OnInfoListener;)V
 
-    .line 228
+    .line 204
     return-void
 .end method
 
@@ -878,15 +732,15 @@
     .parameter "proxy"
 
     .prologue
-    .line 222
+    .line 198
     iput-object p1, p0, Landroid/webkit/HTML5VideoView;->mProxy:Landroid/webkit/HTML5VideoViewProxy;
 
-    .line 223
-    sget-object v0, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
+    .line 199
+    iget-object v0, p0, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
 
     invoke-virtual {v0, p0}, Landroid/media/MediaPlayer;->setOnPreparedListener(Landroid/media/MediaPlayer$OnPreparedListener;)V
 
-    .line 224
+    .line 200
     return-void
 .end method
 
@@ -895,25 +749,13 @@
     .parameter "playerBuffering"
 
     .prologue
-    .line 356
+    .line 317
     iput-boolean p1, p0, Landroid/webkit/HTML5VideoView;->mPlayerBuffering:Z
 
-    .line 357
+    .line 318
     invoke-virtual {p0, p1}, Landroid/webkit/HTML5VideoView;->switchProgressView(Z)V
 
-    .line 358
-    return-void
-.end method
-
-.method public setStartWhenPrepared(Z)V
-    .locals 0
-    .parameter "willPlay"
-
-    .prologue
-    .line 373
-    iput-boolean p1, p0, Landroid/webkit/HTML5VideoView;->mStartWhenPrepared:Z
-
-    .line 374
+    .line 319
     return-void
 .end method
 
@@ -923,29 +765,21 @@
     .parameter "proxy"
 
     .prologue
-    .line 208
+    .line 184
     invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/webkit/HTML5VideoView;->mUri:Landroid/net/Uri;
 
-    .line 209
+    .line 185
     invoke-static {p1, p2}, Landroid/webkit/HTML5VideoView;->generateHeaders(Ljava/lang/String;Landroid/webkit/HTML5VideoViewProxy;)Ljava/util/Map;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/webkit/HTML5VideoView;->mHeaders:Ljava/util/Map;
 
-    .line 210
-    return-void
-.end method
-
-.method public showControllerInFullScreen()V
-    .locals 0
-
-    .prologue
-    .line 381
+    .line 186
     return-void
 .end method
 
@@ -955,26 +789,26 @@
     .prologue
     const-wide/16 v2, 0xfa
 
-    .line 83
-    sget v0, Landroid/webkit/HTML5VideoView;->mCurrentState:I
+    .line 73
+    iget v0, p0, Landroid/webkit/HTML5VideoView;->mCurrentState:I
 
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_1
 
-    .line 86
+    .line 76
     sget-object v0, Landroid/webkit/HTML5VideoView;->mTimer:Ljava/util/Timer;
 
     if-nez v0, :cond_0
 
-    .line 88
+    .line 78
     new-instance v0, Ljava/util/Timer;
 
     invoke-direct {v0}, Ljava/util/Timer;-><init>()V
 
     sput-object v0, Landroid/webkit/HTML5VideoView;->mTimer:Ljava/util/Timer;
 
-    .line 89
+    .line 79
     sget-object v0, Landroid/webkit/HTML5VideoView;->mTimer:Ljava/util/Timer;
 
     new-instance v1, Landroid/webkit/HTML5VideoView$TimeupdateTask;
@@ -987,18 +821,18 @@
 
     invoke-virtual/range {v0 .. v5}, Ljava/util/Timer;->schedule(Ljava/util/TimerTask;JJ)V
 
-    .line 92
+    .line 82
     :cond_0
-    sget-object v0, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
+    iget-object v0, p0, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
 
     invoke-virtual {v0}, Landroid/media/MediaPlayer;->start()V
 
-    .line 93
+    .line 83
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Landroid/webkit/HTML5VideoView;->setPlayerBuffering(Z)V
 
-    .line 95
+    .line 85
     :cond_1
     return-void
 .end method
@@ -1007,21 +841,31 @@
     .locals 2
 
     .prologue
-    .line 149
-    sget v0, Landroid/webkit/HTML5VideoView;->mCurrentState:I
+    .line 139
+    iget v0, p0, Landroid/webkit/HTML5VideoView;->mCurrentState:I
 
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_0
 
-    .line 150
-    sget-object v0, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
+    .line 140
+    iget-object v0, p0, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
 
     invoke-virtual {v0}, Landroid/media/MediaPlayer;->stop()V
 
-    .line 152
+    .line 142
     :cond_0
     return-void
+.end method
+
+.method public surfaceTextureDeleted()Z
+    .locals 1
+
+    .prologue
+    .line 328
+    const/4 v0, 0x0
+
+    return v0
 .end method
 
 .method protected switchProgressView(Z)V
@@ -1029,6 +873,6 @@
     .parameter "playerBuffering"
 
     .prologue
-    .line 363
+    .line 324
     return-void
 .end method

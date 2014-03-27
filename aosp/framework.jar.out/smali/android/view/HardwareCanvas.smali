@@ -16,41 +16,21 @@
 
 
 # virtual methods
-.method abstract attachFunctor(I)V
-.end method
-
-.method public callDrawGLFunction(I)I
+.method public callDrawGLFunction(I)Z
     .locals 1
     .parameter "drawGLFunction"
 
     .prologue
-    .line 99
+    .line 94
     const/4 v0, 0x0
 
     return v0
 .end method
 
-.method abstract clearLayerUpdates()V
-.end method
-
-.method abstract detachFunctor(I)V
-.end method
-
-.method public abstract drawDisplayList(Landroid/view/DisplayList;Landroid/graphics/Rect;I)I
+.method abstract drawDisplayList(Landroid/view/DisplayList;IILandroid/graphics/Rect;)Z
 .end method
 
 .method abstract drawHardwareLayer(Landroid/view/HardwareLayer;FFLandroid/graphics/Paint;)V
-.end method
-
-.method public invokeFunctors(Landroid/graphics/Rect;)I
-    .locals 1
-    .parameter "dirty"
-
-    .prologue
-    .line 111
-    const/4 v0, 0x0
-
-    return v0
 .end method
 
 .method public isHardwareAccelerated()Z
@@ -63,16 +43,13 @@
     return v0
 .end method
 
-.method public abstract onPostDraw()V
+.method abstract onPostDraw()V
 .end method
 
-.method public abstract onPreDraw(Landroid/graphics/Rect;)I
+.method abstract onPreDraw(Landroid/graphics/Rect;)V
 .end method
 
 .method abstract outputDisplayList(Landroid/view/DisplayList;)V
-.end method
-
-.method abstract pushLayerUpdate(Landroid/view/HardwareLayer;)V
 .end method
 
 .method public setBitmap(Landroid/graphics/Bitmap;)V

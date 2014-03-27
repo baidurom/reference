@@ -2,9 +2,6 @@
 .super Landroid/view/View;
 .source "PointerLocationView.java"
 
-# interfaces
-.implements Landroid/hardware/input/InputManager$InputDeviceListener;
-
 
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
@@ -16,8 +13,6 @@
 
 
 # static fields
-.field private static final ALT_STRATEGY_PROPERY_KEY:Ljava/lang/String; = "debug.velocitytracker.alt"
-
 .field private static final TAG:Ljava/lang/String; = "Pointer"
 
 
@@ -30,15 +25,11 @@
 
 .field private mActivePointerId:I
 
-.field private final mAltVelocity:Landroid/view/VelocityTracker;
-
 .field private mCurDown:Z
 
 .field private mCurNumPointers:I
 
 .field private mHeaderBottom:I
-
-.field private final mIm:Landroid/hardware/input/InputManager;
 
 .field private mMaxNumPointers:I
 
@@ -82,325 +73,263 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .locals 9
+    .locals 8
     .parameter "c"
 
     .prologue
-    const/16 v8, 0xc0
+    const/16 v7, 0xc0
 
-    const/4 v7, 0x1
+    const/4 v6, 0x1
 
-    const/16 v6, 0xff
+    const/16 v5, 0xff
 
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
-    .line 121
+    .line 108
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 91
-    const/4 v2, 0x4
+    .line 81
+    const/4 v1, 0x4
 
-    iput v2, p0, Lcom/android/internal/widget/PointerLocationView;->ESTIMATE_PAST_POINTS:I
+    iput v1, p0, Lcom/android/internal/widget/PointerLocationView;->ESTIMATE_PAST_POINTS:I
+
+    .line 82
+    const/4 v1, 0x2
+
+    iput v1, p0, Lcom/android/internal/widget/PointerLocationView;->ESTIMATE_FUTURE_POINTS:I
+
+    .line 83
+    const v1, 0x3ca3d70a
+
+    iput v1, p0, Lcom/android/internal/widget/PointerLocationView;->ESTIMATE_INTERVAL:F
 
     .line 92
-    const/4 v2, 0x2
+    new-instance v1, Landroid/graphics/Paint$FontMetricsInt;
 
-    iput v2, p0, Lcom/android/internal/widget/PointerLocationView;->ESTIMATE_FUTURE_POINTS:I
+    invoke-direct {v1}, Landroid/graphics/Paint$FontMetricsInt;-><init>()V
 
-    .line 93
-    const v2, 0x3ca3d70a
+    iput-object v1, p0, Lcom/android/internal/widget/PointerLocationView;->mTextMetrics:Landroid/graphics/Paint$FontMetricsInt;
 
-    iput v2, p0, Lcom/android/internal/widget/PointerLocationView;->ESTIMATE_INTERVAL:F
+    .line 98
+    new-instance v1, Ljava/util/ArrayList;
 
-    .line 104
-    new-instance v2, Landroid/graphics/Paint$FontMetricsInt;
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-direct {v2}, Landroid/graphics/Paint$FontMetricsInt;-><init>()V
+    iput-object v1, p0, Lcom/android/internal/widget/PointerLocationView;->mPointers:Ljava/util/ArrayList;
 
-    iput-object v2, p0, Lcom/android/internal/widget/PointerLocationView;->mTextMetrics:Landroid/graphics/Paint$FontMetricsInt;
+    .line 99
+    new-instance v1, Landroid/view/MotionEvent$PointerCoords;
 
-    .line 110
-    new-instance v2, Ljava/util/ArrayList;
+    invoke-direct {v1}, Landroid/view/MotionEvent$PointerCoords;-><init>()V
 
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+    iput-object v1, p0, Lcom/android/internal/widget/PointerLocationView;->mTempCoords:Landroid/view/MotionEvent$PointerCoords;
 
-    iput-object v2, p0, Lcom/android/internal/widget/PointerLocationView;->mPointers:Ljava/util/ArrayList;
+    .line 103
+    new-instance v1, Lcom/android/internal/widget/PointerLocationView$FasterStringBuilder;
+
+    invoke-direct {v1}, Lcom/android/internal/widget/PointerLocationView$FasterStringBuilder;-><init>()V
+
+    iput-object v1, p0, Lcom/android/internal/widget/PointerLocationView;->mText:Lcom/android/internal/widget/PointerLocationView$FasterStringBuilder;
+
+    .line 105
+    iput-boolean v6, p0, Lcom/android/internal/widget/PointerLocationView;->mPrintCoords:Z
+
+    .line 176
+    new-instance v1, Landroid/graphics/RectF;
+
+    invoke-direct {v1}, Landroid/graphics/RectF;-><init>()V
+
+    iput-object v1, p0, Lcom/android/internal/widget/PointerLocationView;->mReusableOvalRect:Landroid/graphics/RectF;
+
+    .line 109
+    invoke-virtual {p0, v6}, Lcom/android/internal/widget/PointerLocationView;->setFocusableInTouchMode(Z)V
 
     .line 111
-    new-instance v2, Landroid/view/MotionEvent$PointerCoords;
-
-    invoke-direct {v2}, Landroid/view/MotionEvent$PointerCoords;-><init>()V
-
-    iput-object v2, p0, Lcom/android/internal/widget/PointerLocationView;->mTempCoords:Landroid/view/MotionEvent$PointerCoords;
-
-    .line 116
-    new-instance v2, Lcom/android/internal/widget/PointerLocationView$FasterStringBuilder;
-
-    invoke-direct {v2}, Lcom/android/internal/widget/PointerLocationView$FasterStringBuilder;-><init>()V
-
-    iput-object v2, p0, Lcom/android/internal/widget/PointerLocationView;->mText:Lcom/android/internal/widget/PointerLocationView$FasterStringBuilder;
-
-    .line 118
-    iput-boolean v7, p0, Lcom/android/internal/widget/PointerLocationView;->mPrintCoords:Z
-
-    .line 187
-    new-instance v2, Landroid/graphics/RectF;
-
-    invoke-direct {v2}, Landroid/graphics/RectF;-><init>()V
-
-    iput-object v2, p0, Lcom/android/internal/widget/PointerLocationView;->mReusableOvalRect:Landroid/graphics/RectF;
-
-    .line 122
-    invoke-virtual {p0, v7}, Lcom/android/internal/widget/PointerLocationView;->setFocusableInTouchMode(Z)V
-
-    .line 124
-    const-string v2, "input"
-
-    invoke-virtual {p1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/hardware/input/InputManager;
-
-    iput-object v2, p0, Lcom/android/internal/widget/PointerLocationView;->mIm:Landroid/hardware/input/InputManager;
-
-    .line 126
     invoke-static {p1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
-    move-result-object v2
+    move-result-object v1
 
-    iput-object v2, p0, Lcom/android/internal/widget/PointerLocationView;->mVC:Landroid/view/ViewConfiguration;
+    iput-object v1, p0, Lcom/android/internal/widget/PointerLocationView;->mVC:Landroid/view/ViewConfiguration;
 
-    .line 127
-    new-instance v2, Landroid/graphics/Paint;
+    .line 112
+    new-instance v1, Landroid/graphics/Paint;
 
-    invoke-direct {v2}, Landroid/graphics/Paint;-><init>()V
+    invoke-direct {v1}, Landroid/graphics/Paint;-><init>()V
 
-    iput-object v2, p0, Lcom/android/internal/widget/PointerLocationView;->mTextPaint:Landroid/graphics/Paint;
+    iput-object v1, p0, Lcom/android/internal/widget/PointerLocationView;->mTextPaint:Landroid/graphics/Paint;
 
-    .line 128
-    iget-object v2, p0, Lcom/android/internal/widget/PointerLocationView;->mTextPaint:Landroid/graphics/Paint;
+    .line 113
+    iget-object v1, p0, Lcom/android/internal/widget/PointerLocationView;->mTextPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v2, v7}, Landroid/graphics/Paint;->setAntiAlias(Z)V
+    invoke-virtual {v1, v6}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    .line 129
-    iget-object v2, p0, Lcom/android/internal/widget/PointerLocationView;->mTextPaint:Landroid/graphics/Paint;
+    .line 114
+    iget-object v1, p0, Lcom/android/internal/widget/PointerLocationView;->mTextPaint:Landroid/graphics/Paint;
 
-    const/high16 v3, 0x4120
+    const/high16 v2, 0x4120
 
     invoke-virtual {p0}, Lcom/android/internal/widget/PointerLocationView;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v4}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    invoke-virtual {v3}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    move-result-object v4
+    move-result-object v3
 
-    iget v4, v4, Landroid/util/DisplayMetrics;->density:F
+    iget v3, v3, Landroid/util/DisplayMetrics;->density:F
 
-    mul-float/2addr v3, v4
+    mul-float/2addr v2, v3
 
-    invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setTextSize(F)V
+    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setTextSize(F)V
+
+    .line 116
+    iget-object v1, p0, Lcom/android/internal/widget/PointerLocationView;->mTextPaint:Landroid/graphics/Paint;
+
+    invoke-virtual {v1, v5, v4, v4, v4}, Landroid/graphics/Paint;->setARGB(IIII)V
+
+    .line 117
+    new-instance v1, Landroid/graphics/Paint;
+
+    invoke-direct {v1}, Landroid/graphics/Paint;-><init>()V
+
+    iput-object v1, p0, Lcom/android/internal/widget/PointerLocationView;->mTextBackgroundPaint:Landroid/graphics/Paint;
+
+    .line 118
+    iget-object v1, p0, Lcom/android/internal/widget/PointerLocationView;->mTextBackgroundPaint:Landroid/graphics/Paint;
+
+    invoke-virtual {v1, v4}, Landroid/graphics/Paint;->setAntiAlias(Z)V
+
+    .line 119
+    iget-object v1, p0, Lcom/android/internal/widget/PointerLocationView;->mTextBackgroundPaint:Landroid/graphics/Paint;
+
+    const/16 v2, 0x80
+
+    invoke-virtual {v1, v2, v5, v5, v5}, Landroid/graphics/Paint;->setARGB(IIII)V
+
+    .line 120
+    new-instance v1, Landroid/graphics/Paint;
+
+    invoke-direct {v1}, Landroid/graphics/Paint;-><init>()V
+
+    iput-object v1, p0, Lcom/android/internal/widget/PointerLocationView;->mTextLevelPaint:Landroid/graphics/Paint;
+
+    .line 121
+    iget-object v1, p0, Lcom/android/internal/widget/PointerLocationView;->mTextLevelPaint:Landroid/graphics/Paint;
+
+    invoke-virtual {v1, v4}, Landroid/graphics/Paint;->setAntiAlias(Z)V
+
+    .line 122
+    iget-object v1, p0, Lcom/android/internal/widget/PointerLocationView;->mTextLevelPaint:Landroid/graphics/Paint;
+
+    invoke-virtual {v1, v7, v5, v4, v4}, Landroid/graphics/Paint;->setARGB(IIII)V
+
+    .line 123
+    new-instance v1, Landroid/graphics/Paint;
+
+    invoke-direct {v1}, Landroid/graphics/Paint;-><init>()V
+
+    iput-object v1, p0, Lcom/android/internal/widget/PointerLocationView;->mPaint:Landroid/graphics/Paint;
+
+    .line 124
+    iget-object v1, p0, Lcom/android/internal/widget/PointerLocationView;->mPaint:Landroid/graphics/Paint;
+
+    invoke-virtual {v1, v6}, Landroid/graphics/Paint;->setAntiAlias(Z)V
+
+    .line 125
+    iget-object v1, p0, Lcom/android/internal/widget/PointerLocationView;->mPaint:Landroid/graphics/Paint;
+
+    invoke-virtual {v1, v5, v5, v5, v5}, Landroid/graphics/Paint;->setARGB(IIII)V
+
+    .line 126
+    iget-object v1, p0, Lcom/android/internal/widget/PointerLocationView;->mPaint:Landroid/graphics/Paint;
+
+    sget-object v2, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
+
+    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+
+    .line 127
+    iget-object v1, p0, Lcom/android/internal/widget/PointerLocationView;->mPaint:Landroid/graphics/Paint;
+
+    const/high16 v2, 0x4000
+
+    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setStrokeWidth(F)V
+
+    .line 128
+    new-instance v1, Landroid/graphics/Paint;
+
+    invoke-direct {v1}, Landroid/graphics/Paint;-><init>()V
+
+    iput-object v1, p0, Lcom/android/internal/widget/PointerLocationView;->mTargetPaint:Landroid/graphics/Paint;
+
+    .line 129
+    iget-object v1, p0, Lcom/android/internal/widget/PointerLocationView;->mTargetPaint:Landroid/graphics/Paint;
+
+    invoke-virtual {v1, v4}, Landroid/graphics/Paint;->setAntiAlias(Z)V
+
+    .line 130
+    iget-object v1, p0, Lcom/android/internal/widget/PointerLocationView;->mTargetPaint:Landroid/graphics/Paint;
+
+    invoke-virtual {v1, v5, v4, v4, v7}, Landroid/graphics/Paint;->setARGB(IIII)V
 
     .line 131
-    iget-object v2, p0, Lcom/android/internal/widget/PointerLocationView;->mTextPaint:Landroid/graphics/Paint;
+    new-instance v1, Landroid/graphics/Paint;
 
-    invoke-virtual {v2, v6, v5, v5, v5}, Landroid/graphics/Paint;->setARGB(IIII)V
+    invoke-direct {v1}, Landroid/graphics/Paint;-><init>()V
+
+    iput-object v1, p0, Lcom/android/internal/widget/PointerLocationView;->mPathPaint:Landroid/graphics/Paint;
 
     .line 132
-    new-instance v2, Landroid/graphics/Paint;
+    iget-object v1, p0, Lcom/android/internal/widget/PointerLocationView;->mPathPaint:Landroid/graphics/Paint;
 
-    invoke-direct {v2}, Landroid/graphics/Paint;-><init>()V
-
-    iput-object v2, p0, Lcom/android/internal/widget/PointerLocationView;->mTextBackgroundPaint:Landroid/graphics/Paint;
+    invoke-virtual {v1, v4}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
     .line 133
-    iget-object v2, p0, Lcom/android/internal/widget/PointerLocationView;->mTextBackgroundPaint:Landroid/graphics/Paint;
+    iget-object v1, p0, Lcom/android/internal/widget/PointerLocationView;->mPathPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v2, v5}, Landroid/graphics/Paint;->setAntiAlias(Z)V
+    const/16 v2, 0x60
+
+    invoke-virtual {v1, v5, v4, v2, v5}, Landroid/graphics/Paint;->setARGB(IIII)V
 
     .line 134
-    iget-object v2, p0, Lcom/android/internal/widget/PointerLocationView;->mTextBackgroundPaint:Landroid/graphics/Paint;
+    iget-object v1, p0, Lcom/android/internal/widget/PointerLocationView;->mPaint:Landroid/graphics/Paint;
 
-    const/16 v3, 0x80
+    sget-object v2, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
-    invoke-virtual {v2, v3, v6, v6, v6}, Landroid/graphics/Paint;->setARGB(IIII)V
+    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
     .line 135
-    new-instance v2, Landroid/graphics/Paint;
+    iget-object v1, p0, Lcom/android/internal/widget/PointerLocationView;->mPaint:Landroid/graphics/Paint;
 
-    invoke-direct {v2}, Landroid/graphics/Paint;-><init>()V
+    const/high16 v2, 0x3f80
 
-    iput-object v2, p0, Lcom/android/internal/widget/PointerLocationView;->mTextLevelPaint:Landroid/graphics/Paint;
-
-    .line 136
-    iget-object v2, p0, Lcom/android/internal/widget/PointerLocationView;->mTextLevelPaint:Landroid/graphics/Paint;
-
-    invoke-virtual {v2, v5}, Landroid/graphics/Paint;->setAntiAlias(Z)V
+    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
     .line 137
-    iget-object v2, p0, Lcom/android/internal/widget/PointerLocationView;->mTextLevelPaint:Landroid/graphics/Paint;
+    new-instance v0, Lcom/android/internal/widget/PointerLocationView$PointerState;
 
-    invoke-virtual {v2, v8, v6, v5, v5}, Landroid/graphics/Paint;->setARGB(IIII)V
+    invoke-direct {v0}, Lcom/android/internal/widget/PointerLocationView$PointerState;-><init>()V
 
     .line 138
-    new-instance v2, Landroid/graphics/Paint;
+    .local v0, ps:Lcom/android/internal/widget/PointerLocationView$PointerState;
+    iget-object v1, p0, Lcom/android/internal/widget/PointerLocationView;->mPointers:Ljava/util/ArrayList;
 
-    invoke-direct {v2}, Landroid/graphics/Paint;-><init>()V
-
-    iput-object v2, p0, Lcom/android/internal/widget/PointerLocationView;->mPaint:Landroid/graphics/Paint;
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 139
-    iget-object v2, p0, Lcom/android/internal/widget/PointerLocationView;->mPaint:Landroid/graphics/Paint;
-
-    invoke-virtual {v2, v7}, Landroid/graphics/Paint;->setAntiAlias(Z)V
-
-    .line 140
-    iget-object v2, p0, Lcom/android/internal/widget/PointerLocationView;->mPaint:Landroid/graphics/Paint;
-
-    invoke-virtual {v2, v6, v6, v6, v6}, Landroid/graphics/Paint;->setARGB(IIII)V
+    iput v4, p0, Lcom/android/internal/widget/PointerLocationView;->mActivePointerId:I
 
     .line 141
-    iget-object v2, p0, Lcom/android/internal/widget/PointerLocationView;->mPaint:Landroid/graphics/Paint;
-
-    sget-object v3, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
-
-    invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
-
-    .line 142
-    iget-object v2, p0, Lcom/android/internal/widget/PointerLocationView;->mPaint:Landroid/graphics/Paint;
-
-    const/high16 v3, 0x4000
-
-    invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setStrokeWidth(F)V
-
-    .line 143
-    new-instance v2, Landroid/graphics/Paint;
-
-    invoke-direct {v2}, Landroid/graphics/Paint;-><init>()V
-
-    iput-object v2, p0, Lcom/android/internal/widget/PointerLocationView;->mTargetPaint:Landroid/graphics/Paint;
-
-    .line 144
-    iget-object v2, p0, Lcom/android/internal/widget/PointerLocationView;->mTargetPaint:Landroid/graphics/Paint;
-
-    invoke-virtual {v2, v5}, Landroid/graphics/Paint;->setAntiAlias(Z)V
-
-    .line 145
-    iget-object v2, p0, Lcom/android/internal/widget/PointerLocationView;->mTargetPaint:Landroid/graphics/Paint;
-
-    invoke-virtual {v2, v6, v5, v5, v8}, Landroid/graphics/Paint;->setARGB(IIII)V
-
-    .line 146
-    new-instance v2, Landroid/graphics/Paint;
-
-    invoke-direct {v2}, Landroid/graphics/Paint;-><init>()V
-
-    iput-object v2, p0, Lcom/android/internal/widget/PointerLocationView;->mPathPaint:Landroid/graphics/Paint;
-
-    .line 147
-    iget-object v2, p0, Lcom/android/internal/widget/PointerLocationView;->mPathPaint:Landroid/graphics/Paint;
-
-    invoke-virtual {v2, v5}, Landroid/graphics/Paint;->setAntiAlias(Z)V
-
-    .line 148
-    iget-object v2, p0, Lcom/android/internal/widget/PointerLocationView;->mPathPaint:Landroid/graphics/Paint;
-
-    const/16 v3, 0x60
-
-    invoke-virtual {v2, v6, v5, v3, v6}, Landroid/graphics/Paint;->setARGB(IIII)V
-
-    .line 149
-    iget-object v2, p0, Lcom/android/internal/widget/PointerLocationView;->mPaint:Landroid/graphics/Paint;
-
-    sget-object v3, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
-
-    invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
-
-    .line 150
-    iget-object v2, p0, Lcom/android/internal/widget/PointerLocationView;->mPaint:Landroid/graphics/Paint;
-
-    const/high16 v3, 0x3f80
-
-    invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setStrokeWidth(F)V
-
-    .line 152
-    new-instance v1, Lcom/android/internal/widget/PointerLocationView$PointerState;
-
-    invoke-direct {v1}, Lcom/android/internal/widget/PointerLocationView$PointerState;-><init>()V
-
-    .line 153
-    .local v1, ps:Lcom/android/internal/widget/PointerLocationView$PointerState;
-    iget-object v2, p0, Lcom/android/internal/widget/PointerLocationView;->mPointers:Ljava/util/ArrayList;
-
-    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 154
-    iput v5, p0, Lcom/android/internal/widget/PointerLocationView;->mActivePointerId:I
-
-    .line 156
     invoke-static {}, Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
 
-    move-result-object v2
+    move-result-object v1
 
-    iput-object v2, p0, Lcom/android/internal/widget/PointerLocationView;->mVelocity:Landroid/view/VelocityTracker;
+    iput-object v1, p0, Lcom/android/internal/widget/PointerLocationView;->mVelocity:Landroid/view/VelocityTracker;
 
-    .line 158
-    const-string v2, "debug.velocitytracker.alt"
+    .line 143
+    invoke-direct {p0}, Lcom/android/internal/widget/PointerLocationView;->logInputDeviceCapabilities()V
 
-    invoke-static {v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 159
-    .local v0, altStrategy:Ljava/lang/String;
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    .line 160
-    const-string v2, "Pointer"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "Comparing default velocity tracker strategy with "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 161
-    invoke-static {v0}, Landroid/view/VelocityTracker;->obtain(Ljava/lang/String;)Landroid/view/VelocityTracker;
-
-    move-result-object v2
-
-    iput-object v2, p0, Lcom/android/internal/widget/PointerLocationView;->mAltVelocity:Landroid/view/VelocityTracker;
-
-    .line 165
-    :goto_0
+    .line 144
     return-void
-
-    .line 163
-    :cond_0
-    const/4 v2, 0x0
-
-    iput-object v2, p0, Lcom/android/internal/widget/PointerLocationView;->mAltVelocity:Landroid/view/VelocityTracker;
-
-    goto :goto_0
 .end method
 
 .method private drawOval(Landroid/graphics/Canvas;FFFFFLandroid/graphics/Paint;)V
@@ -416,12 +345,12 @@
     .prologue
     const/high16 v4, 0x4000
 
-    .line 190
+    .line 179
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->save(I)I
 
-    .line 191
+    .line 180
     const/high16 v0, 0x4334
 
     mul-float/2addr v0, p6
@@ -436,7 +365,7 @@
 
     invoke-virtual {p1, v0, p2, p3}, Landroid/graphics/Canvas;->rotate(FFF)V
 
-    .line 192
+    .line 181
     iget-object v0, p0, Lcom/android/internal/widget/PointerLocationView;->mReusableOvalRect:Landroid/graphics/RectF;
 
     div-float v1, p5, v4
@@ -445,7 +374,7 @@
 
     iput v1, v0, Landroid/graphics/RectF;->left:F
 
-    .line 193
+    .line 182
     iget-object v0, p0, Lcom/android/internal/widget/PointerLocationView;->mReusableOvalRect:Landroid/graphics/RectF;
 
     div-float v1, p5, v4
@@ -454,7 +383,7 @@
 
     iput v1, v0, Landroid/graphics/RectF;->right:F
 
-    .line 194
+    .line 183
     iget-object v0, p0, Lcom/android/internal/widget/PointerLocationView;->mReusableOvalRect:Landroid/graphics/RectF;
 
     div-float v1, p4, v4
@@ -463,7 +392,7 @@
 
     iput v1, v0, Landroid/graphics/RectF;->top:F
 
-    .line 195
+    .line 184
     iget-object v0, p0, Lcom/android/internal/widget/PointerLocationView;->mReusableOvalRect:Landroid/graphics/RectF;
 
     div-float v1, p4, v4
@@ -472,15 +401,15 @@
 
     iput v1, v0, Landroid/graphics/RectF;->bottom:F
 
-    .line 196
+    .line 185
     iget-object v0, p0, Lcom/android/internal/widget/PointerLocationView;->mReusableOvalRect:Landroid/graphics/RectF;
 
     invoke-virtual {p1, v0, p7}, Landroid/graphics/Canvas;->drawOval(Landroid/graphics/RectF;Landroid/graphics/Paint;)V
 
-    .line 197
+    .line 186
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 198
+    .line 187
     return-void
 .end method
 
@@ -495,17 +424,17 @@
     .parameter "buttonState"
 
     .prologue
-    .line 418
+    .line 390
     and-int/lit16 v1, p2, 0xff
 
     packed-switch v1, :pswitch_data_0
 
-    .line 463
+    .line 435
     invoke-static {p2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 467
+    .line 439
     .local v0, prefix:Ljava/lang/String;
     :goto_0
     const-string v1, "Pointer"
@@ -810,55 +739,55 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 489
+    .line 461
     return-void
 
-    .line 420
+    .line 392
     .end local v0           #prefix:Ljava/lang/String;
     :pswitch_0
     const-string v0, "DOWN"
 
-    .line 421
+    .line 393
     .restart local v0       #prefix:Ljava/lang/String;
     goto/16 :goto_0
 
-    .line 423
+    .line 395
     .end local v0           #prefix:Ljava/lang/String;
     :pswitch_1
     const-string v0, "UP"
 
-    .line 424
+    .line 396
     .restart local v0       #prefix:Ljava/lang/String;
     goto/16 :goto_0
 
-    .line 426
+    .line 398
     .end local v0           #prefix:Ljava/lang/String;
     :pswitch_2
     const-string v0, "MOVE"
 
-    .line 427
+    .line 399
     .restart local v0       #prefix:Ljava/lang/String;
     goto/16 :goto_0
 
-    .line 429
+    .line 401
     .end local v0           #prefix:Ljava/lang/String;
     :pswitch_3
     const-string v0, "CANCEL"
 
-    .line 430
+    .line 402
     .restart local v0       #prefix:Ljava/lang/String;
     goto/16 :goto_0
 
-    .line 432
+    .line 404
     .end local v0           #prefix:Ljava/lang/String;
     :pswitch_4
     const-string v0, "OUTSIDE"
 
-    .line 433
+    .line 405
     .restart local v0       #prefix:Ljava/lang/String;
     goto/16 :goto_0
 
-    .line 435
+    .line 407
     .end local v0           #prefix:Ljava/lang/String;
     :pswitch_5
     const v1, 0xff00
@@ -869,22 +798,22 @@
 
     if-ne p3, v1, :cond_0
 
-    .line 437
+    .line 409
     const-string v0, "DOWN"
 
     .restart local v0       #prefix:Ljava/lang/String;
     goto/16 :goto_0
 
-    .line 439
+    .line 411
     .end local v0           #prefix:Ljava/lang/String;
     :cond_0
     const-string v0, "MOVE"
 
-    .line 441
+    .line 413
     .restart local v0       #prefix:Ljava/lang/String;
     goto/16 :goto_0
 
-    .line 443
+    .line 415
     .end local v0           #prefix:Ljava/lang/String;
     :pswitch_6
     const v1, 0xff00
@@ -895,58 +824,58 @@
 
     if-ne p3, v1, :cond_1
 
-    .line 445
+    .line 417
     const-string v0, "UP"
 
     .restart local v0       #prefix:Ljava/lang/String;
     goto/16 :goto_0
 
-    .line 447
+    .line 419
     .end local v0           #prefix:Ljava/lang/String;
     :cond_1
     const-string v0, "MOVE"
 
-    .line 449
+    .line 421
     .restart local v0       #prefix:Ljava/lang/String;
     goto/16 :goto_0
 
-    .line 451
+    .line 423
     .end local v0           #prefix:Ljava/lang/String;
     :pswitch_7
     const-string v0, "HOVER MOVE"
 
-    .line 452
+    .line 424
     .restart local v0       #prefix:Ljava/lang/String;
     goto/16 :goto_0
 
-    .line 454
+    .line 426
     .end local v0           #prefix:Ljava/lang/String;
     :pswitch_8
     const-string v0, "HOVER ENTER"
 
-    .line 455
+    .line 427
     .restart local v0       #prefix:Ljava/lang/String;
     goto/16 :goto_0
 
-    .line 457
+    .line 429
     .end local v0           #prefix:Ljava/lang/String;
     :pswitch_9
     const-string v0, "HOVER EXIT"
 
-    .line 458
+    .line 430
     .restart local v0       #prefix:Ljava/lang/String;
     goto/16 :goto_0
 
-    .line 460
+    .line 432
     .end local v0           #prefix:Ljava/lang/String;
     :pswitch_a
     const-string v0, "SCROLL"
 
-    .line 461
+    .line 433
     .restart local v0       #prefix:Ljava/lang/String;
     goto/16 :goto_0
 
-    .line 418
+    .line 390
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -963,118 +892,54 @@
     .end packed-switch
 .end method
 
-.method private logInputDeviceState(ILjava/lang/String;)V
-    .locals 4
-    .parameter "deviceId"
-    .parameter "state"
+.method private logInputDeviceCapabilities()V
+    .locals 5
 
     .prologue
-    .line 715
-    iget-object v1, p0, Lcom/android/internal/widget/PointerLocationView;->mIm:Landroid/hardware/input/InputManager;
+    .line 147
+    invoke-static {}, Landroid/view/InputDevice;->getDeviceIds()[I
 
-    invoke-virtual {v1, p1}, Landroid/hardware/input/InputManager;->getInputDevice(I)Landroid/view/InputDevice;
+    move-result-object v1
+
+    .line 148
+    .local v1, deviceIds:[I
+    const/4 v2, 0x0
+
+    .local v2, i:I
+    :goto_0
+    array-length v3, v1
+
+    if-ge v2, v3, :cond_1
+
+    .line 149
+    aget v3, v1, v2
+
+    invoke-static {v3}, Landroid/view/InputDevice;->getDevice(I)Landroid/view/InputDevice;
 
     move-result-object v0
 
-    .line 716
+    .line 150
     .local v0, device:Landroid/view/InputDevice;
     if-eqz v0, :cond_0
 
-    .line 717
-    const-string v1, "Pointer"
+    .line 151
+    const-string v3, "Pointer"
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Landroid/view/InputDevice;->toString()Ljava/lang/String;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v4
 
-    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result-object v2
-
-    const-string v3, ": "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 721
-    :goto_0
-    return-void
-
-    .line 719
+    .line 148
     :cond_0
-    const-string v1, "Pointer"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, ": "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
-.end method
-
-.method private logInputDevices()V
-    .locals 4
-
-    .prologue
-    .line 708
-    invoke-static {}, Landroid/view/InputDevice;->getDeviceIds()[I
-
-    move-result-object v0
-
-    .line 709
-    .local v0, deviceIds:[I
-    const/4 v1, 0x0
-
-    .local v1, i:I
-    :goto_0
-    array-length v2, v0
-
-    if-ge v1, v2, :cond_0
-
-    .line 710
-    aget v2, v0, v1
-
-    const-string v3, "Device Enumerated"
-
-    invoke-direct {p0, v2, v3}, Lcom/android/internal/widget/PointerLocationView;->logInputDeviceState(ILjava/lang/String;)V
-
-    .line 709
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 712
-    :cond_0
+    .line 154
+    .end local v0           #device:Landroid/view/InputDevice;
+    :cond_1
     return-void
 .end method
 
@@ -1084,24 +949,24 @@
     .parameter "event"
 
     .prologue
-    .line 396
+    .line 368
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v2
 
-    .line 397
+    .line 369
     .local v2, action:I
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getHistorySize()I
 
     move-result v8
 
-    .line 398
+    .line 370
     .local v8, N:I
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getPointerCount()I
 
     move-result v9
 
-    .line 399
+    .line 371
     .local v9, NI:I
     const/4 v10, 0x0
 
@@ -1109,25 +974,25 @@
     :goto_0
     if-ge v10, v8, :cond_1
 
-    .line 400
+    .line 372
     const/4 v3, 0x0
 
     .local v3, i:I
     :goto_1
     if-ge v3, v9, :cond_0
 
-    .line 401
+    .line 373
     invoke-virtual {p2, v3}, Landroid/view/MotionEvent;->getPointerId(I)I
 
     move-result v5
 
-    .line 402
+    .line 374
     .local v5, id:I
     iget-object v0, p0, Lcom/android/internal/widget/PointerLocationView;->mTempCoords:Landroid/view/MotionEvent$PointerCoords;
 
     invoke-virtual {p2, v3, v10, v0}, Landroid/view/MotionEvent;->getHistoricalPointerCoords(IILandroid/view/MotionEvent$PointerCoords;)V
 
-    .line 403
+    .line 375
     iget-object v4, p0, Lcom/android/internal/widget/PointerLocationView;->mTempCoords:Landroid/view/MotionEvent$PointerCoords;
 
     invoke-virtual {p2, v3}, Landroid/view/MotionEvent;->getToolType(I)I
@@ -1144,19 +1009,19 @@
 
     invoke-direct/range {v0 .. v7}, Lcom/android/internal/widget/PointerLocationView;->logCoords(Ljava/lang/String;IILandroid/view/MotionEvent$PointerCoords;III)V
 
-    .line 400
+    .line 372
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
-    .line 399
+    .line 371
     .end local v5           #id:I
     :cond_0
     add-int/lit8 v10, v10, 0x1
 
     goto :goto_0
 
-    .line 407
+    .line 379
     .end local v3           #i:I
     :cond_1
     const/4 v3, 0x0
@@ -1165,18 +1030,18 @@
     :goto_2
     if-ge v3, v9, :cond_2
 
-    .line 408
+    .line 380
     invoke-virtual {p2, v3}, Landroid/view/MotionEvent;->getPointerId(I)I
 
     move-result v5
 
-    .line 409
+    .line 381
     .restart local v5       #id:I
     iget-object v0, p0, Lcom/android/internal/widget/PointerLocationView;->mTempCoords:Landroid/view/MotionEvent$PointerCoords;
 
     invoke-virtual {p2, v3, v0}, Landroid/view/MotionEvent;->getPointerCoords(ILandroid/view/MotionEvent$PointerCoords;)V
 
-    .line 410
+    .line 382
     iget-object v4, p0, Lcom/android/internal/widget/PointerLocationView;->mTempCoords:Landroid/view/MotionEvent$PointerCoords;
 
     invoke-virtual {p2, v3}, Landroid/view/MotionEvent;->getToolType(I)I
@@ -1193,12 +1058,12 @@
 
     invoke-direct/range {v0 .. v7}, Lcom/android/internal/widget/PointerLocationView;->logCoords(Ljava/lang/String;IILandroid/view/MotionEvent$PointerCoords;III)V
 
-    .line 407
+    .line 379
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_2
 
-    .line 413
+    .line 385
     .end local v5           #id:I
     :cond_2
     return-void
@@ -1211,10 +1076,10 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 658
+    .line 620
     packed-switch p0, :pswitch_data_0
 
-    .line 666
+    .line 628
     invoke-static {p0}, Landroid/view/KeyEvent;->isGamepadButton(I)Z
 
     move-result v1
@@ -1237,7 +1102,7 @@
 
     goto :goto_0
 
-    .line 658
+    .line 620
     nop
 
     :pswitch_data_0
@@ -1253,16 +1118,26 @@
 
 # virtual methods
 .method public addPointerEvent(Landroid/view/MotionEvent;)V
-    .locals 16
+    .locals 17
     .parameter "event"
 
     .prologue
-    .line 492
+    .line 464
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/widget/PointerLocationView;->mPointers:Ljava/util/ArrayList;
+
+    move-object/from16 v16, v0
+
+    monitor-enter v16
+
+    .line 465
+    :try_start_0
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v3
 
-    .line 493
+    .line 466
     .local v3, action:I
     move-object/from16 v0, p0
 
@@ -1272,7 +1147,7 @@
 
     move-result v11
 
-    .line 495
+    .line 468
     .local v11, NP:I
     if-eqz v3, :cond_0
 
@@ -1282,7 +1157,7 @@
 
     if-ne v1, v2, :cond_7
 
-    .line 497
+    .line 470
     :cond_0
     const v1, 0xff00
 
@@ -1290,18 +1165,18 @@
 
     shr-int/lit8 v13, v1, 0x8
 
-    .line 499
+    .line 472
     .local v13, index:I
     if-nez v3, :cond_2
 
-    .line 500
+    .line 473
     const/4 v14, 0x0
 
     .local v14, p:I
     :goto_0
     if-ge v14, v11, :cond_1
 
-    .line 501
+    .line 474
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/internal/widget/PointerLocationView;->mPointers:Ljava/util/ArrayList;
@@ -1312,22 +1187,22 @@
 
     check-cast v15, Lcom/android/internal/widget/PointerLocationView$PointerState;
 
-    .line 502
+    .line 475
     .local v15, ps:Lcom/android/internal/widget/PointerLocationView$PointerState;
     invoke-virtual {v15}, Lcom/android/internal/widget/PointerLocationView$PointerState;->clearTrace()V
 
-    .line 503
+    .line 476
     const/4 v1, 0x0
 
     #setter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mCurDown:Z
     invoke-static {v15, v1}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$102(Lcom/android/internal/widget/PointerLocationView$PointerState;Z)Z
 
-    .line 500
+    .line 473
     add-int/lit8 v14, v14, 0x1
 
     goto :goto_0
 
-    .line 505
+    .line 478
     .end local v15           #ps:Lcom/android/internal/widget/PointerLocationView$PointerState;
     :cond_1
     const/4 v1, 0x1
@@ -1336,42 +1211,28 @@
 
     iput-boolean v1, v0, Lcom/android/internal/widget/PointerLocationView;->mCurDown:Z
 
-    .line 506
+    .line 479
     const/4 v1, 0x0
 
     move-object/from16 v0, p0
 
     iput v1, v0, Lcom/android/internal/widget/PointerLocationView;->mCurNumPointers:I
 
-    .line 507
+    .line 480
     const/4 v1, 0x0
 
     move-object/from16 v0, p0
 
     iput v1, v0, Lcom/android/internal/widget/PointerLocationView;->mMaxNumPointers:I
 
-    .line 508
+    .line 481
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/internal/widget/PointerLocationView;->mVelocity:Landroid/view/VelocityTracker;
 
     invoke-virtual {v1}, Landroid/view/VelocityTracker;->clear()V
 
-    .line 509
-    move-object/from16 v0, p0
-
-    iget-object v1, v0, Lcom/android/internal/widget/PointerLocationView;->mAltVelocity:Landroid/view/VelocityTracker;
-
-    if-eqz v1, :cond_2
-
-    .line 510
-    move-object/from16 v0, p0
-
-    iget-object v1, v0, Lcom/android/internal/widget/PointerLocationView;->mAltVelocity:Landroid/view/VelocityTracker;
-
-    invoke-virtual {v1}, Landroid/view/VelocityTracker;->clear()V
-
-    .line 514
+    .line 484
     .end local v14           #p:I
     :cond_2
     move-object/from16 v0, p0
@@ -1384,7 +1245,7 @@
 
     iput v1, v0, Lcom/android/internal/widget/PointerLocationView;->mCurNumPointers:I
 
-    .line 515
+    .line 485
     move-object/from16 v0, p0
 
     iget v1, v0, Lcom/android/internal/widget/PointerLocationView;->mMaxNumPointers:I
@@ -1395,7 +1256,7 @@
 
     if-ge v1, v2, :cond_3
 
-    .line 516
+    .line 486
     move-object/from16 v0, p0
 
     iget v1, v0, Lcom/android/internal/widget/PointerLocationView;->mCurNumPointers:I
@@ -1404,7 +1265,7 @@
 
     iput v1, v0, Lcom/android/internal/widget/PointerLocationView;->mMaxNumPointers:I
 
-    .line 519
+    .line 489
     :cond_3
     move-object/from16 v0, p1
 
@@ -1412,17 +1273,17 @@
 
     move-result v6
 
-    .line 520
+    .line 490
     .local v6, id:I
     :goto_1
     if-gt v11, v6, :cond_4
 
-    .line 521
+    .line 491
     new-instance v15, Lcom/android/internal/widget/PointerLocationView$PointerState;
 
     invoke-direct {v15}, Lcom/android/internal/widget/PointerLocationView$PointerState;-><init>()V
 
-    .line 522
+    .line 492
     .restart local v15       #ps:Lcom/android/internal/widget/PointerLocationView$PointerState;
     move-object/from16 v0, p0
 
@@ -1430,13 +1291,13 @@
 
     invoke-virtual {v1, v15}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 523
+    .line 493
     add-int/lit8 v11, v11, 0x1
 
-    .line 524
+    .line 494
     goto :goto_1
 
-    .line 526
+    .line 496
     .end local v15           #ps:Lcom/android/internal/widget/PointerLocationView$PointerState;
     :cond_4
     move-object/from16 v0, p0
@@ -1466,13 +1327,13 @@
 
     if-nez v1, :cond_6
 
-    .line 528
+    .line 498
     :cond_5
     move-object/from16 v0, p0
 
     iput v6, v0, Lcom/android/internal/widget/PointerLocationView;->mActivePointerId:I
 
-    .line 531
+    .line 501
     :cond_6
     move-object/from16 v0, p0
 
@@ -1484,14 +1345,14 @@
 
     check-cast v15, Lcom/android/internal/widget/PointerLocationView$PointerState;
 
-    .line 532
+    .line 502
     .restart local v15       #ps:Lcom/android/internal/widget/PointerLocationView$PointerState;
     const/4 v1, 0x1
 
     #setter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mCurDown:Z
     invoke-static {v15, v1}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$102(Lcom/android/internal/widget/PointerLocationView$PointerState;Z)Z
 
-    .line 535
+    .line 505
     .end local v6           #id:I
     .end local v13           #index:I
     .end local v15           #ps:Lcom/android/internal/widget/PointerLocationView$PointerState;
@@ -1500,7 +1361,7 @@
 
     move-result v10
 
-    .line 537
+    .line 507
     .local v10, NI:I
     move-object/from16 v0, p0
 
@@ -1510,7 +1371,7 @@
 
     invoke-virtual {v1, v0}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
-    .line 538
+    .line 508
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/internal/widget/PointerLocationView;->mVelocity:Landroid/view/VelocityTracker;
@@ -1519,66 +1380,40 @@
 
     invoke-virtual {v1, v2}, Landroid/view/VelocityTracker;->computeCurrentVelocity(I)V
 
-    .line 539
-    move-object/from16 v0, p0
-
-    iget-object v1, v0, Lcom/android/internal/widget/PointerLocationView;->mAltVelocity:Landroid/view/VelocityTracker;
-
-    if-eqz v1, :cond_8
-
-    .line 540
-    move-object/from16 v0, p0
-
-    iget-object v1, v0, Lcom/android/internal/widget/PointerLocationView;->mAltVelocity:Landroid/view/VelocityTracker;
-
-    move-object/from16 v0, p1
-
-    invoke-virtual {v1, v0}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
-
-    .line 541
-    move-object/from16 v0, p0
-
-    iget-object v1, v0, Lcom/android/internal/widget/PointerLocationView;->mAltVelocity:Landroid/view/VelocityTracker;
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v1, v2}, Landroid/view/VelocityTracker;->computeCurrentVelocity(I)V
-
-    .line 544
-    :cond_8
+    .line 510
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getHistorySize()I
 
     move-result v9
 
-    .line 545
+    .line 511
     .local v9, N:I
     const/4 v12, 0x0
 
     .local v12, historyPos:I
     :goto_2
-    if-ge v12, v9, :cond_e
+    if-ge v12, v9, :cond_d
 
-    .line 546
+    .line 512
     const/4 v4, 0x0
 
     .local v4, i:I
     :goto_3
-    if-ge v4, v10, :cond_d
+    if-ge v4, v10, :cond_c
 
-    .line 547
+    .line 513
     move-object/from16 v0, p1
 
     invoke-virtual {v0, v4}, Landroid/view/MotionEvent;->getPointerId(I)I
 
     move-result v6
 
-    .line 548
+    .line 514
     .restart local v6       #id:I
     move-object/from16 v0, p0
 
     iget-boolean v1, v0, Lcom/android/internal/widget/PointerLocationView;->mCurDown:Z
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_a
 
     move-object/from16 v0, p0
 
@@ -1592,31 +1427,31 @@
 
     move-object v15, v1
 
-    .line 549
+    .line 515
     .restart local v15       #ps:Lcom/android/internal/widget/PointerLocationView$PointerState;
     :goto_4
-    if-eqz v15, :cond_c
+    if-eqz v15, :cond_b
 
     #getter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mCoords:Landroid/view/MotionEvent$PointerCoords;
     invoke-static {v15}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$200(Lcom/android/internal/widget/PointerLocationView$PointerState;)Landroid/view/MotionEvent$PointerCoords;
 
     move-result-object v5
 
-    .line 550
+    .line 516
     .local v5, coords:Landroid/view/MotionEvent$PointerCoords;
     :goto_5
     move-object/from16 v0, p1
 
     invoke-virtual {v0, v4, v12, v5}, Landroid/view/MotionEvent;->getHistoricalPointerCoords(IILandroid/view/MotionEvent$PointerCoords;)V
 
-    .line 551
+    .line 517
     move-object/from16 v0, p0
 
     iget-boolean v1, v0, Lcom/android/internal/widget/PointerLocationView;->mPrintCoords:Z
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_8
 
-    .line 552
+    .line 518
     const-string v2, "Pointer"
 
     move-object/from16 v0, p1
@@ -1633,71 +1468,71 @@
 
     invoke-direct/range {v1 .. v8}, Lcom/android/internal/widget/PointerLocationView;->logCoords(Ljava/lang/String;IILandroid/view/MotionEvent$PointerCoords;III)V
 
-    .line 555
-    :cond_9
-    if-eqz v15, :cond_a
+    .line 521
+    :cond_8
+    if-eqz v15, :cond_9
 
-    .line 556
+    .line 522
     iget v1, v5, Landroid/view/MotionEvent$PointerCoords;->x:F
 
     iget v2, v5, Landroid/view/MotionEvent$PointerCoords;->y:F
 
     invoke-virtual {v15, v1, v2}, Lcom/android/internal/widget/PointerLocationView$PointerState;->addTrace(FF)V
 
-    .line 546
-    :cond_a
+    .line 512
+    :cond_9
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_3
 
-    .line 548
+    .line 514
     .end local v5           #coords:Landroid/view/MotionEvent$PointerCoords;
     .end local v15           #ps:Lcom/android/internal/widget/PointerLocationView$PointerState;
-    :cond_b
+    :cond_a
     const/4 v15, 0x0
 
     goto :goto_4
 
-    .line 549
+    .line 515
     .restart local v15       #ps:Lcom/android/internal/widget/PointerLocationView$PointerState;
-    :cond_c
+    :cond_b
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/android/internal/widget/PointerLocationView;->mTempCoords:Landroid/view/MotionEvent$PointerCoords;
 
     goto :goto_5
 
-    .line 545
+    .line 511
     .end local v6           #id:I
     .end local v15           #ps:Lcom/android/internal/widget/PointerLocationView$PointerState;
-    :cond_d
+    :cond_c
     add-int/lit8 v12, v12, 0x1
 
     goto :goto_2
 
-    .line 560
+    .line 526
     .end local v4           #i:I
-    :cond_e
+    :cond_d
     const/4 v4, 0x0
 
     .restart local v4       #i:I
     :goto_6
-    if-ge v4, v10, :cond_14
+    if-ge v4, v10, :cond_12
 
-    .line 561
+    .line 527
     move-object/from16 v0, p1
 
     invoke-virtual {v0, v4}, Landroid/view/MotionEvent;->getPointerId(I)I
 
     move-result v6
 
-    .line 562
+    .line 528
     .restart local v6       #id:I
     move-object/from16 v0, p0
 
     iget-boolean v1, v0, Lcom/android/internal/widget/PointerLocationView;->mCurDown:Z
 
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_10
 
     move-object/from16 v0, p0
 
@@ -1711,31 +1546,31 @@
 
     move-object v15, v1
 
-    .line 563
+    .line 529
     .restart local v15       #ps:Lcom/android/internal/widget/PointerLocationView$PointerState;
     :goto_7
-    if-eqz v15, :cond_13
+    if-eqz v15, :cond_11
 
     #getter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mCoords:Landroid/view/MotionEvent$PointerCoords;
     invoke-static {v15}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$200(Lcom/android/internal/widget/PointerLocationView$PointerState;)Landroid/view/MotionEvent$PointerCoords;
 
     move-result-object v5
 
-    .line 564
+    .line 530
     .restart local v5       #coords:Landroid/view/MotionEvent$PointerCoords;
     :goto_8
     move-object/from16 v0, p1
 
     invoke-virtual {v0, v4, v5}, Landroid/view/MotionEvent;->getPointerCoords(ILandroid/view/MotionEvent$PointerCoords;)V
 
-    .line 565
+    .line 531
     move-object/from16 v0, p0
 
     iget-boolean v1, v0, Lcom/android/internal/widget/PointerLocationView;->mPrintCoords:Z
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_e
 
-    .line 566
+    .line 532
     const-string v2, "Pointer"
 
     move-object/from16 v0, p1
@@ -1752,18 +1587,18 @@
 
     invoke-direct/range {v1 .. v8}, Lcom/android/internal/widget/PointerLocationView;->logCoords(Ljava/lang/String;IILandroid/view/MotionEvent$PointerCoords;III)V
 
-    .line 569
-    :cond_f
-    if-eqz v15, :cond_11
+    .line 535
+    :cond_e
+    if-eqz v15, :cond_f
 
-    .line 570
+    .line 536
     iget v1, v5, Landroid/view/MotionEvent$PointerCoords;->x:F
 
     iget v2, v5, Landroid/view/MotionEvent$PointerCoords;->y:F
 
     invoke-virtual {v15, v1, v2}, Lcom/android/internal/widget/PointerLocationView$PointerState;->addTrace(FF)V
 
-    .line 571
+    .line 537
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/internal/widget/PointerLocationView;->mVelocity:Landroid/view/VelocityTracker;
@@ -1775,7 +1610,7 @@
     #setter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mXVelocity:F
     invoke-static {v15, v1}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$502(Lcom/android/internal/widget/PointerLocationView$PointerState;F)F
 
-    .line 572
+    .line 538
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/internal/widget/PointerLocationView;->mVelocity:Landroid/view/VelocityTracker;
@@ -1787,63 +1622,23 @@
     #setter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mYVelocity:F
     invoke-static {v15, v1}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$602(Lcom/android/internal/widget/PointerLocationView$PointerState;F)F
 
-    .line 573
+    .line 539
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/internal/widget/PointerLocationView;->mVelocity:Landroid/view/VelocityTracker;
 
+    const/4 v2, -0x1
+
+    const/4 v7, -0x1
+
     #getter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mEstimator:Landroid/view/VelocityTracker$Estimator;
     invoke-static {v15}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$700(Lcom/android/internal/widget/PointerLocationView$PointerState;)Landroid/view/VelocityTracker$Estimator;
 
-    move-result-object v2
+    move-result-object v8
 
-    invoke-virtual {v1, v6, v2}, Landroid/view/VelocityTracker;->getEstimator(ILandroid/view/VelocityTracker$Estimator;)Z
+    invoke-virtual {v1, v6, v2, v7, v8}, Landroid/view/VelocityTracker;->getEstimator(IIILandroid/view/VelocityTracker$Estimator;)Z
 
-    .line 574
-    move-object/from16 v0, p0
-
-    iget-object v1, v0, Lcom/android/internal/widget/PointerLocationView;->mAltVelocity:Landroid/view/VelocityTracker;
-
-    if-eqz v1, :cond_10
-
-    .line 575
-    move-object/from16 v0, p0
-
-    iget-object v1, v0, Lcom/android/internal/widget/PointerLocationView;->mAltVelocity:Landroid/view/VelocityTracker;
-
-    invoke-virtual {v1, v6}, Landroid/view/VelocityTracker;->getXVelocity(I)F
-
-    move-result v1
-
-    #setter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mAltXVelocity:F
-    invoke-static {v15, v1}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$902(Lcom/android/internal/widget/PointerLocationView$PointerState;F)F
-
-    .line 576
-    move-object/from16 v0, p0
-
-    iget-object v1, v0, Lcom/android/internal/widget/PointerLocationView;->mAltVelocity:Landroid/view/VelocityTracker;
-
-    invoke-virtual {v1, v6}, Landroid/view/VelocityTracker;->getYVelocity(I)F
-
-    move-result v1
-
-    #setter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mAltYVelocity:F
-    invoke-static {v15, v1}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$1002(Lcom/android/internal/widget/PointerLocationView$PointerState;F)F
-
-    .line 577
-    move-object/from16 v0, p0
-
-    iget-object v1, v0, Lcom/android/internal/widget/PointerLocationView;->mAltVelocity:Landroid/view/VelocityTracker;
-
-    #getter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mAltEstimator:Landroid/view/VelocityTracker$Estimator;
-    invoke-static {v15}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$800(Lcom/android/internal/widget/PointerLocationView$PointerState;)Landroid/view/VelocityTracker$Estimator;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v6, v2}, Landroid/view/VelocityTracker;->getEstimator(ILandroid/view/VelocityTracker$Estimator;)Z
-
-    .line 579
-    :cond_10
+    .line 540
     move-object/from16 v0, p1
 
     invoke-virtual {v0, v4}, Landroid/view/MotionEvent;->getToolType(I)I
@@ -1851,58 +1646,58 @@
     move-result v1
 
     #setter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mToolType:I
-    invoke-static {v15, v1}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$1102(Lcom/android/internal/widget/PointerLocationView$PointerState;I)I
+    invoke-static {v15, v1}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$802(Lcom/android/internal/widget/PointerLocationView$PointerState;I)I
 
-    .line 560
-    :cond_11
+    .line 526
+    :cond_f
     add-int/lit8 v4, v4, 0x1
 
-    goto/16 :goto_6
+    goto :goto_6
 
-    .line 562
+    .line 528
     .end local v5           #coords:Landroid/view/MotionEvent$PointerCoords;
     .end local v15           #ps:Lcom/android/internal/widget/PointerLocationView$PointerState;
-    :cond_12
+    :cond_10
     const/4 v15, 0x0
 
-    goto/16 :goto_7
+    goto :goto_7
 
-    .line 563
+    .line 529
     .restart local v15       #ps:Lcom/android/internal/widget/PointerLocationView$PointerState;
-    :cond_13
+    :cond_11
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/android/internal/widget/PointerLocationView;->mTempCoords:Landroid/view/MotionEvent$PointerCoords;
 
-    goto/16 :goto_8
+    goto :goto_8
 
-    .line 583
+    .line 544
     .end local v6           #id:I
     .end local v15           #ps:Lcom/android/internal/widget/PointerLocationView$PointerState;
-    :cond_14
+    :cond_12
     const/4 v1, 0x1
 
-    if-eq v3, v1, :cond_15
+    if-eq v3, v1, :cond_13
 
     const/4 v1, 0x3
 
-    if-eq v3, v1, :cond_15
+    if-eq v3, v1, :cond_13
 
     and-int/lit16 v1, v3, 0xff
 
     const/4 v2, 0x6
 
-    if-ne v1, v2, :cond_17
+    if-ne v1, v2, :cond_15
 
-    .line 586
-    :cond_15
+    .line 547
+    :cond_13
     const v1, 0xff00
 
     and-int/2addr v1, v3
 
     shr-int/lit8 v13, v1, 0x8
 
-    .line 589
+    .line 550
     .restart local v13       #index:I
     move-object/from16 v0, p1
 
@@ -1910,7 +1705,7 @@
 
     move-result v6
 
-    .line 590
+    .line 551
     .restart local v6       #id:I
     move-object/from16 v0, p0
 
@@ -1922,53 +1717,56 @@
 
     check-cast v15, Lcom/android/internal/widget/PointerLocationView$PointerState;
 
-    .line 591
+    .line 552
     .restart local v15       #ps:Lcom/android/internal/widget/PointerLocationView$PointerState;
     const/4 v1, 0x0
 
     #setter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mCurDown:Z
     invoke-static {v15, v1}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$102(Lcom/android/internal/widget/PointerLocationView$PointerState;Z)Z
 
-    .line 593
+    .line 554
     const/4 v1, 0x1
 
-    if-eq v3, v1, :cond_16
+    if-eq v3, v1, :cond_14
 
     const/4 v1, 0x3
 
-    if-ne v3, v1, :cond_18
+    if-ne v3, v1, :cond_16
 
-    .line 595
-    :cond_16
+    .line 556
+    :cond_14
     const/4 v1, 0x0
 
     move-object/from16 v0, p0
 
     iput-boolean v1, v0, Lcom/android/internal/widget/PointerLocationView;->mCurDown:Z
 
-    .line 596
+    .line 557
     const/4 v1, 0x0
 
     move-object/from16 v0, p0
 
     iput v1, v0, Lcom/android/internal/widget/PointerLocationView;->mCurNumPointers:I
 
-    .line 606
+    .line 567
     .end local v6           #id:I
     .end local v13           #index:I
     .end local v15           #ps:Lcom/android/internal/widget/PointerLocationView$PointerState;
-    :cond_17
+    :cond_15
     :goto_9
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/widget/PointerLocationView;->invalidate()V
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/widget/PointerLocationView;->postInvalidate()V
 
-    .line 607
+    .line 568
+    monitor-exit v16
+
+    .line 569
     return-void
 
-    .line 598
+    .line 559
     .restart local v6       #id:I
     .restart local v13       #index:I
     .restart local v15       #ps:Lcom/android/internal/widget/PointerLocationView$PointerState;
-    :cond_18
+    :cond_16
     move-object/from16 v0, p0
 
     iget v1, v0, Lcom/android/internal/widget/PointerLocationView;->mCurNumPointers:I
@@ -1979,15 +1777,15 @@
 
     iput v1, v0, Lcom/android/internal/widget/PointerLocationView;->mCurNumPointers:I
 
-    .line 599
+    .line 560
     move-object/from16 v0, p0
 
     iget v1, v0, Lcom/android/internal/widget/PointerLocationView;->mActivePointerId:I
 
-    if-ne v1, v6, :cond_19
+    if-ne v1, v6, :cond_17
 
-    .line 600
-    if-nez v13, :cond_1a
+    .line 561
+    if-nez v13, :cond_18
 
     const/4 v1, 0x1
 
@@ -2002,8 +1800,8 @@
 
     iput v1, v0, Lcom/android/internal/widget/PointerLocationView;->mActivePointerId:I
 
-    .line 602
-    :cond_19
+    .line 563
+    :cond_17
     const/high16 v1, 0x7fc0
 
     const/high16 v2, 0x7fc0
@@ -2012,67 +1810,66 @@
 
     goto :goto_9
 
-    .line 600
-    :cond_1a
+    .line 568
+    .end local v3           #action:I
+    .end local v4           #i:I
+    .end local v6           #id:I
+    .end local v9           #N:I
+    .end local v10           #NI:I
+    .end local v11           #NP:I
+    .end local v12           #historyPos:I
+    .end local v13           #index:I
+    .end local v15           #ps:Lcom/android/internal/widget/PointerLocationView$PointerState;
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v16
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+
+    .line 561
+    .restart local v3       #action:I
+    .restart local v4       #i:I
+    .restart local v6       #id:I
+    .restart local v9       #N:I
+    .restart local v10       #NI:I
+    .restart local v11       #NP:I
+    .restart local v12       #historyPos:I
+    .restart local v13       #index:I
+    .restart local v15       #ps:Lcom/android/internal/widget/PointerLocationView$PointerState;
+    :cond_18
     const/4 v1, 0x0
 
     goto :goto_a
 .end method
 
-.method protected onAttachedToWindow()V
-    .locals 2
-
-    .prologue
-    .line 679
-    invoke-super {p0}, Landroid/view/View;->onAttachedToWindow()V
-
-    .line 681
-    iget-object v0, p0, Lcom/android/internal/widget/PointerLocationView;->mIm:Landroid/hardware/input/InputManager;
-
-    invoke-virtual {p0}, Lcom/android/internal/widget/PointerLocationView;->getHandler()Landroid/os/Handler;
-
-    move-result-object v1
-
-    invoke-virtual {v0, p0, v1}, Landroid/hardware/input/InputManager;->registerInputDeviceListener(Landroid/hardware/input/InputManager$InputDeviceListener;Landroid/os/Handler;)V
-
-    .line 682
-    invoke-direct {p0}, Lcom/android/internal/widget/PointerLocationView;->logInputDevices()V
-
-    .line 683
-    return-void
-.end method
-
-.method protected onDetachedFromWindow()V
-    .locals 1
-
-    .prologue
-    .line 687
-    invoke-super {p0}, Landroid/view/View;->onDetachedFromWindow()V
-
-    .line 689
-    iget-object v0, p0, Lcom/android/internal/widget/PointerLocationView;->mIm:Landroid/hardware/input/InputManager;
-
-    invoke-virtual {v0, p0}, Landroid/hardware/input/InputManager;->unregisterInputDeviceListener(Landroid/hardware/input/InputManager$InputDeviceListener;)V
-
-    .line 690
-    return-void
-.end method
-
 .method protected onDraw(Landroid/graphics/Canvas;)V
-    .locals 38
+    .locals 39
     .parameter "canvas"
 
     .prologue
-    .line 202
+    .line 191
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/widget/PointerLocationView;->mPointers:Ljava/util/ArrayList;
+
+    move-object/from16 v38, v0
+
+    monitor-enter v38
+
+    .line 192
+    :try_start_0
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/widget/PointerLocationView;->getWidth()I
 
     move-result v35
 
-    .line 203
+    .line 193
     .local v35, w:I
     div-int/lit8 v28, v35, 0x7
 
-    .line 204
+    .line 194
     .local v28, itemW:I
     move-object/from16 v0, p0
 
@@ -2084,7 +1881,7 @@
 
     add-int/lit8 v21, v2, 0x1
 
-    .line 205
+    .line 195
     .local v21, base:I
     move-object/from16 v0, p0
 
@@ -2092,7 +1889,7 @@
 
     move/from16 v22, v0
 
-    .line 207
+    .line 197
     .local v22, bottom:I
     move-object/from16 v0, p0
 
@@ -2102,7 +1899,7 @@
 
     move-result v19
 
-    .line 210
+    .line 200
     .local v19, NP:I
     move-object/from16 v0, p0
 
@@ -2110,7 +1907,7 @@
 
     if-ltz v2, :cond_2
 
-    .line 211
+    .line 201
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/widget/PointerLocationView;->mPointers:Ljava/util/ArrayList;
@@ -2125,7 +1922,7 @@
 
     check-cast v33, Lcom/android/internal/widget/PointerLocationView$PointerState;
 
-    .line 213
+    .line 203
     .local v33, ps:Lcom/android/internal/widget/PointerLocationView$PointerState;
     const/4 v3, 0x0
 
@@ -2147,7 +1944,7 @@
 
     invoke-virtual/range {v2 .. v7}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 214
+    .line 204
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/widget/PointerLocationView;->mText:Lcom/android/internal/widget/PointerLocationView$FasterStringBuilder;
@@ -2202,13 +1999,13 @@
 
     invoke-virtual {v0, v2, v7, v10, v11}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 219
+    .line 209
     #getter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mTraceCount:I
     invoke-static/range {v33 .. v33}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$000(Lcom/android/internal/widget/PointerLocationView$PointerState;)I
 
     move-result v18
 
-    .line 220
+    .line 210
     .local v18, N:I
     move-object/from16 v0, p0
 
@@ -2226,7 +2023,7 @@
     :cond_0
     if-nez v18, :cond_3
 
-    .line 221
+    .line 211
     :cond_1
     move/from16 v0, v28
 
@@ -2252,7 +2049,7 @@
 
     invoke-virtual/range {v2 .. v7}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 222
+    .line 212
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/widget/PointerLocationView;->mText:Lcom/android/internal/widget/PointerLocationView$FasterStringBuilder;
@@ -2300,7 +2097,7 @@
 
     invoke-virtual {v0, v2, v7, v10, v11}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 225
+    .line 215
     mul-int/lit8 v2, v28, 0x2
 
     int-to-float v3, v2
@@ -2325,7 +2122,7 @@
 
     invoke-virtual/range {v2 .. v7}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 226
+    .line 216
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/widget/PointerLocationView;->mText:Lcom/android/internal/widget/PointerLocationView$FasterStringBuilder;
@@ -2375,7 +2172,7 @@
 
     invoke-virtual {v0, v2, v7, v10, v11}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 246
+    .line 236
     :goto_0
     mul-int/lit8 v2, v28, 0x3
 
@@ -2401,7 +2198,7 @@
 
     invoke-virtual/range {v2 .. v7}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 247
+    .line 237
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/widget/PointerLocationView;->mText:Lcom/android/internal/widget/PointerLocationView$FasterStringBuilder;
@@ -2449,7 +2246,7 @@
 
     invoke-virtual {v0, v2, v7, v10, v11}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 251
+    .line 241
     mul-int/lit8 v2, v28, 0x4
 
     int-to-float v3, v2
@@ -2474,7 +2271,7 @@
 
     invoke-virtual/range {v2 .. v7}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 252
+    .line 242
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/widget/PointerLocationView;->mText:Lcom/android/internal/widget/PointerLocationView$FasterStringBuilder;
@@ -2522,7 +2319,7 @@
 
     invoke-virtual {v0, v2, v7, v10, v11}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 256
+    .line 246
     mul-int/lit8 v2, v28, 0x5
 
     int-to-float v3, v2
@@ -2547,7 +2344,7 @@
 
     invoke-virtual/range {v2 .. v7}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 257
+    .line 247
     mul-int/lit8 v2, v28, 0x5
 
     int-to-float v3, v2
@@ -2589,7 +2386,7 @@
 
     invoke-virtual/range {v2 .. v7}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 259
+    .line 249
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/widget/PointerLocationView;->mText:Lcom/android/internal/widget/PointerLocationView$FasterStringBuilder;
@@ -2639,7 +2436,7 @@
 
     invoke-virtual {v0, v2, v7, v10, v11}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 263
+    .line 253
     mul-int/lit8 v2, v28, 0x6
 
     int-to-float v3, v2
@@ -2662,7 +2459,7 @@
 
     invoke-virtual/range {v2 .. v7}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 264
+    .line 254
     mul-int/lit8 v2, v28, 0x6
 
     int-to-float v3, v2
@@ -2704,7 +2501,7 @@
 
     invoke-virtual/range {v2 .. v7}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 266
+    .line 256
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/widget/PointerLocationView;->mText:Lcom/android/internal/widget/PointerLocationView$FasterStringBuilder;
@@ -2754,7 +2551,7 @@
 
     invoke-virtual {v0, v2, v7, v10, v11}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 272
+    .line 262
     .end local v18           #N:I
     .end local v33           #ps:Lcom/android/internal/widget/PointerLocationView$PointerState;
     :cond_2
@@ -2766,9 +2563,9 @@
 
     move/from16 v1, v19
 
-    if-ge v0, v1, :cond_10
+    if-ge v0, v1, :cond_f
 
-    .line 273
+    .line 263
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/widget/PointerLocationView;->mPointers:Ljava/util/ArrayList;
@@ -2781,29 +2578,29 @@
 
     check-cast v33, Lcom/android/internal/widget/PointerLocationView$PointerState;
 
-    .line 276
+    .line 266
     .restart local v33       #ps:Lcom/android/internal/widget/PointerLocationView$PointerState;
     #getter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mTraceCount:I
     invoke-static/range {v33 .. v33}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$000(Lcom/android/internal/widget/PointerLocationView$PointerState;)I
 
     move-result v18
 
-    .line 277
+    .line 267
     .restart local v18       #N:I
     const/4 v3, 0x0
 
     .local v3, lastX:F
     const/4 v4, 0x0
 
-    .line 278
+    .line 268
     .local v4, lastY:F
     const/16 v26, 0x0
 
-    .line 279
+    .line 269
     .local v26, haveLast:Z
     const/16 v23, 0x0
 
-    .line 280
+    .line 270
     .local v23, drawn:Z
     move-object/from16 v0, p0
 
@@ -2819,7 +2616,7 @@
 
     invoke-virtual {v2, v7, v10, v11, v12}, Landroid/graphics/Paint;->setARGB(IIII)V
 
-    .line 281
+    .line 271
     const/16 v27, 0x0
 
     .local v27, i:I
@@ -2830,7 +2627,7 @@
 
     if-ge v0, v1, :cond_8
 
-    .line 282
+    .line 272
     #getter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mTraceX:[F
     invoke-static/range {v33 .. v33}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$300(Lcom/android/internal/widget/PointerLocationView$PointerState;)[F
 
@@ -2838,7 +2635,7 @@
 
     aget v5, v2, v27
 
-    .line 283
+    .line 273
     .local v5, x:F
     #getter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mTraceY:[F
     invoke-static/range {v33 .. v33}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$400(Lcom/android/internal/widget/PointerLocationView$PointerState;)[F
@@ -2847,7 +2644,7 @@
 
     aget v6, v2, v27
 
-    .line 284
+    .line 274
     .local v6, y:F
     invoke-static {v5}, Ljava/lang/Float;->isNaN(F)Z
 
@@ -2855,16 +2652,16 @@
 
     if-eqz v2, :cond_6
 
-    .line 285
+    .line 275
     const/16 v26, 0x0
 
-    .line 281
+    .line 271
     :goto_3
     add-int/lit8 v27, v27, 0x1
 
     goto :goto_2
 
-    .line 230
+    .line 220
     .end local v3           #lastX:F
     .end local v4           #lastY:F
     .end local v5           #x:F
@@ -2894,7 +2691,7 @@
 
     sub-float v24, v2, v7
 
-    .line 231
+    .line 221
     .local v24, dx:F
     #getter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mTraceY:[F
     invoke-static/range {v33 .. v33}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$400(Lcom/android/internal/widget/PointerLocationView$PointerState;)[F
@@ -2916,7 +2713,7 @@
 
     sub-float v25, v2, v7
 
-    .line 232
+    .line 222
     .local v25, dy:F
     move/from16 v0, v28
 
@@ -2961,7 +2758,7 @@
 
     invoke-virtual/range {v2 .. v7}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 235
+    .line 225
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/widget/PointerLocationView;->mText:Lcom/android/internal/widget/PointerLocationView$FasterStringBuilder;
@@ -3004,7 +2801,7 @@
 
     invoke-virtual {v0, v2, v7, v10, v11}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 238
+    .line 228
     mul-int/lit8 v2, v28, 0x2
 
     int-to-float v3, v2
@@ -3048,7 +2845,7 @@
 
     invoke-virtual/range {v2 .. v7}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 241
+    .line 231
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/widget/PointerLocationView;->mText:Lcom/android/internal/widget/PointerLocationView$FasterStringBuilder;
@@ -3095,15 +2892,44 @@
 
     goto/16 :goto_0
 
-    .line 232
+    .line 364
+    .end local v18           #N:I
+    .end local v19           #NP:I
+    .end local v21           #base:I
+    .end local v22           #bottom:I
+    .end local v24           #dx:F
+    .end local v25           #dy:F
+    .end local v28           #itemW:I
+    .end local v33           #ps:Lcom/android/internal/widget/PointerLocationView$PointerState;
+    .end local v35           #w:I
+    :catchall_0
+    move-exception v2
+
+    monitor-exit v38
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v2
+
+    .line 222
+    .restart local v18       #N:I
+    .restart local v19       #NP:I
+    .restart local v21       #base:I
+    .restart local v22       #bottom:I
+    .restart local v24       #dx:F
+    .restart local v25       #dy:F
+    .restart local v28       #itemW:I
+    .restart local v33       #ps:Lcom/android/internal/widget/PointerLocationView$PointerState;
+    .restart local v35       #w:I
     :cond_4
+    :try_start_1
     move-object/from16 v0, p0
 
     iget-object v7, v0, Lcom/android/internal/widget/PointerLocationView;->mTextLevelPaint:Landroid/graphics/Paint;
 
     goto/16 :goto_4
 
-    .line 238
+    .line 228
     :cond_5
     move-object/from16 v0, p0
 
@@ -3111,7 +2937,7 @@
 
     goto :goto_5
 
-    .line 288
+    .line 278
     .end local v24           #dx:F
     .end local v25           #dy:F
     .restart local v3       #lastX:F
@@ -3125,7 +2951,7 @@
     :cond_6
     if-eqz v26, :cond_7
 
-    .line 289
+    .line 279
     move-object/from16 v0, p0
 
     iget-object v7, v0, Lcom/android/internal/widget/PointerLocationView;->mPathPaint:Landroid/graphics/Paint;
@@ -3134,7 +2960,7 @@
 
     invoke-virtual/range {v2 .. v7}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    .line 290
+    .line 280
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/widget/PointerLocationView;->mPaint:Landroid/graphics/Paint;
@@ -3143,28 +2969,28 @@
 
     invoke-virtual {v0, v3, v4, v2}, Landroid/graphics/Canvas;->drawPoint(FFLandroid/graphics/Paint;)V
 
-    .line 291
+    .line 281
     const/16 v23, 0x1
 
-    .line 293
+    .line 283
     :cond_7
     move v3, v5
 
-    .line 294
+    .line 284
     move v4, v6
 
-    .line 295
+    .line 285
     const/16 v26, 0x1
 
     goto/16 :goto_3
 
-    .line 298
+    .line 288
     .end local v5           #x:F
     .end local v6           #y:F
     :cond_8
-    if-eqz v23, :cond_b
+    if-eqz v23, :cond_a
 
-    .line 300
+    .line 290
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/widget/PointerLocationView;->mPaint:Landroid/graphics/Paint;
@@ -3179,7 +3005,7 @@
 
     invoke-virtual {v2, v7, v10, v11, v12}, Landroid/graphics/Paint;->setARGB(IIII)V
 
-    .line 301
+    .line 291
     #getter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mEstimator:Landroid/view/VelocityTracker$Estimator;
     invoke-static/range {v33 .. v33}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$700(Lcom/android/internal/widget/PointerLocationView$PointerState;)Landroid/view/VelocityTracker$Estimator;
 
@@ -3191,7 +3017,7 @@
 
     move-result v8
 
-    .line 302
+    .line 292
     .local v8, lx:F
     #getter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mEstimator:Landroid/view/VelocityTracker$Estimator;
     invoke-static/range {v33 .. v33}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$700(Lcom/android/internal/widget/PointerLocationView$PointerState;)Landroid/view/VelocityTracker$Estimator;
@@ -3204,7 +3030,7 @@
 
     move-result v9
 
-    .line 303
+    .line 293
     .local v9, ly:F
     const/16 v27, -0x3
 
@@ -3215,7 +3041,7 @@
 
     if-gt v0, v2, :cond_9
 
-    .line 304
+    .line 294
     #getter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mEstimator:Landroid/view/VelocityTracker$Estimator;
     invoke-static/range {v33 .. v33}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$700(Lcom/android/internal/widget/PointerLocationView$PointerState;)Landroid/view/VelocityTracker$Estimator;
 
@@ -3233,7 +3059,7 @@
 
     move-result v5
 
-    .line 305
+    .line 295
     .restart local v5       #x:F
     #getter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mEstimator:Landroid/view/VelocityTracker$Estimator;
     invoke-static/range {v33 .. v33}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$700(Lcom/android/internal/widget/PointerLocationView$PointerState;)Landroid/view/VelocityTracker$Estimator;
@@ -3252,7 +3078,7 @@
 
     move-result v6
 
-    .line 306
+    .line 296
     .restart local v6       #y:F
     move-object/from16 v0, p0
 
@@ -3266,18 +3092,18 @@
 
     invoke-virtual/range {v7 .. v12}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    .line 307
+    .line 297
     move v8, v5
 
-    .line 308
+    .line 298
     move v9, v6
 
-    .line 303
+    .line 293
     add-int/lit8 v27, v27, 0x1
 
     goto :goto_6
 
-    .line 312
+    .line 302
     .end local v5           #x:F
     .end local v6           #y:F
     :cond_9
@@ -3295,7 +3121,7 @@
 
     invoke-virtual {v2, v7, v10, v11, v12}, Landroid/graphics/Paint;->setARGB(IIII)V
 
-    .line 313
+    .line 303
     #getter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mXVelocity:F
     invoke-static/range {v33 .. v33}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$500(Lcom/android/internal/widget/PointerLocationView$PointerState;)F
 
@@ -3305,7 +3131,7 @@
 
     mul-float v36, v2, v7
 
-    .line 314
+    .line 304
     .local v36, xVel:F
     #getter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mYVelocity:F
     invoke-static/range {v33 .. v33}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$600(Lcom/android/internal/widget/PointerLocationView$PointerState;)F
@@ -3316,7 +3142,7 @@
 
     mul-float v37, v2, v7
 
-    .line 315
+    .line 305
     .local v37, yVel:F
     add-float v13, v3, v36
 
@@ -3334,199 +3160,26 @@
 
     invoke-virtual/range {v10 .. v15}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    .line 318
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/android/internal/widget/PointerLocationView;->mAltVelocity:Landroid/view/VelocityTracker;
-
-    if-eqz v2, :cond_b
-
-    .line 319
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/android/internal/widget/PointerLocationView;->mPaint:Landroid/graphics/Paint;
-
-    const/16 v7, 0x80
-
-    const/4 v10, 0x0
-
-    const/16 v11, 0x80
-
-    const/16 v12, 0x80
-
-    invoke-virtual {v2, v7, v10, v11, v12}, Landroid/graphics/Paint;->setARGB(IIII)V
-
-    .line 320
-    #getter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mAltEstimator:Landroid/view/VelocityTracker$Estimator;
-    invoke-static/range {v33 .. v33}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$800(Lcom/android/internal/widget/PointerLocationView$PointerState;)Landroid/view/VelocityTracker$Estimator;
-
-    move-result-object v2
-
-    const v7, -0x425c28f6
-
-    invoke-virtual {v2, v7}, Landroid/view/VelocityTracker$Estimator;->estimateX(F)F
-
-    move-result v8
-
-    .line 321
-    #getter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mAltEstimator:Landroid/view/VelocityTracker$Estimator;
-    invoke-static/range {v33 .. v33}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$800(Lcom/android/internal/widget/PointerLocationView$PointerState;)Landroid/view/VelocityTracker$Estimator;
-
-    move-result-object v2
-
-    const v7, -0x425c28f6
-
-    invoke-virtual {v2, v7}, Landroid/view/VelocityTracker$Estimator;->estimateY(F)F
-
-    move-result v9
-
-    .line 322
-    const/16 v27, -0x3
-
-    :goto_7
-    const/4 v2, 0x2
-
-    move/from16 v0, v27
-
-    if-gt v0, v2, :cond_a
-
-    .line 323
-    #getter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mAltEstimator:Landroid/view/VelocityTracker$Estimator;
-    invoke-static/range {v33 .. v33}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$800(Lcom/android/internal/widget/PointerLocationView$PointerState;)Landroid/view/VelocityTracker$Estimator;
-
-    move-result-object v2
-
-    move/from16 v0, v27
-
-    int-to-float v7, v0
-
-    const v10, 0x3ca3d70a
-
-    mul-float/2addr v7, v10
-
-    invoke-virtual {v2, v7}, Landroid/view/VelocityTracker$Estimator;->estimateX(F)F
-
-    move-result v5
-
-    .line 324
-    .restart local v5       #x:F
-    #getter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mAltEstimator:Landroid/view/VelocityTracker$Estimator;
-    invoke-static/range {v33 .. v33}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$800(Lcom/android/internal/widget/PointerLocationView$PointerState;)Landroid/view/VelocityTracker$Estimator;
-
-    move-result-object v2
-
-    move/from16 v0, v27
-
-    int-to-float v7, v0
-
-    const v10, 0x3ca3d70a
-
-    mul-float/2addr v7, v10
-
-    invoke-virtual {v2, v7}, Landroid/view/VelocityTracker$Estimator;->estimateY(F)F
-
-    move-result v6
-
-    .line 325
-    .restart local v6       #y:F
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lcom/android/internal/widget/PointerLocationView;->mPaint:Landroid/graphics/Paint;
-
-    move-object/from16 v7, p1
-
-    move v10, v5
-
-    move v11, v6
-
-    invoke-virtual/range {v7 .. v12}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-
-    .line 326
-    move v8, v5
-
-    .line 327
-    move v9, v6
-
-    .line 322
-    add-int/lit8 v27, v27, 0x1
-
-    goto :goto_7
-
-    .line 330
-    .end local v5           #x:F
-    .end local v6           #y:F
-    :cond_a
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/android/internal/widget/PointerLocationView;->mPaint:Landroid/graphics/Paint;
-
-    const/16 v7, 0xff
-
-    const/16 v10, 0x40
-
-    const/16 v11, 0xff
-
-    const/16 v12, 0x80
-
-    invoke-virtual {v2, v7, v10, v11, v12}, Landroid/graphics/Paint;->setARGB(IIII)V
-
-    .line 331
-    #getter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mAltXVelocity:F
-    invoke-static/range {v33 .. v33}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$900(Lcom/android/internal/widget/PointerLocationView$PointerState;)F
-
-    move-result v2
-
-    const/high16 v7, 0x4180
-
-    mul-float v36, v2, v7
-
-    .line 332
-    #getter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mAltYVelocity:F
-    invoke-static/range {v33 .. v33}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$1000(Lcom/android/internal/widget/PointerLocationView$PointerState;)F
-
-    move-result v2
-
-    const/high16 v7, 0x4180
-
-    mul-float v37, v2, v7
-
-    .line 333
-    add-float v13, v3, v36
-
-    add-float v14, v4, v37
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcom/android/internal/widget/PointerLocationView;->mPaint:Landroid/graphics/Paint;
-
-    move-object/from16 v10, p1
-
-    move v11, v3
-
-    move v12, v4
-
-    invoke-virtual/range {v10 .. v15}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-
-    .line 337
+    .line 308
     .end local v8           #lx:F
     .end local v9           #ly:F
     .end local v36           #xVel:F
     .end local v37           #yVel:F
-    :cond_b
+    :cond_a
     move-object/from16 v0, p0
 
     iget-boolean v2, v0, Lcom/android/internal/widget/PointerLocationView;->mCurDown:Z
 
-    if-eqz v2, :cond_e
+    if-eqz v2, :cond_d
 
     #getter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mCurDown:Z
     invoke-static/range {v33 .. v33}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$100(Lcom/android/internal/widget/PointerLocationView$PointerState;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_e
+    if-eqz v2, :cond_d
 
-    .line 339
+    .line 310
     const/4 v11, 0x0
 
     #getter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mCoords:Landroid/view/MotionEvent$PointerCoords;
@@ -3557,7 +3210,7 @@
 
     invoke-virtual/range {v10 .. v15}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    .line 340
+    .line 311
     #getter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mCoords:Landroid/view/MotionEvent$PointerCoords;
     invoke-static/range {v33 .. v33}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$200(Lcom/android/internal/widget/PointerLocationView$PointerState;)Landroid/view/MotionEvent$PointerCoords;
 
@@ -3588,7 +3241,7 @@
 
     invoke-virtual/range {v10 .. v15}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    .line 343
+    .line 314
     #getter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mCoords:Landroid/view/MotionEvent$PointerCoords;
     invoke-static/range {v33 .. v33}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$200(Lcom/android/internal/widget/PointerLocationView$PointerState;)Landroid/view/MotionEvent$PointerCoords;
 
@@ -3604,7 +3257,7 @@
 
     move/from16 v32, v0
 
-    .line 344
+    .line 315
     .local v32, pressureLevel:I
     move-object/from16 v0, p0
 
@@ -3622,7 +3275,7 @@
 
     invoke-virtual {v2, v7, v0, v10, v11}, Landroid/graphics/Paint;->setARGB(IIII)V
 
-    .line 345
+    .line 316
     #getter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mCoords:Landroid/view/MotionEvent$PointerCoords;
     invoke-static/range {v33 .. v33}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$200(Lcom/android/internal/widget/PointerLocationView$PointerState;)Landroid/view/MotionEvent$PointerCoords;
 
@@ -3645,7 +3298,7 @@
 
     invoke-virtual {v0, v2, v7, v10}, Landroid/graphics/Canvas;->drawPoint(FFLandroid/graphics/Paint;)V
 
-    .line 348
+    .line 319
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/widget/PointerLocationView;->mPaint:Landroid/graphics/Paint;
@@ -3662,7 +3315,7 @@
 
     invoke-virtual {v2, v7, v0, v10, v11}, Landroid/graphics/Paint;->setARGB(IIII)V
 
-    .line 349
+    .line 320
     #getter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mCoords:Landroid/view/MotionEvent$PointerCoords;
     invoke-static/range {v33 .. v33}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$200(Lcom/android/internal/widget/PointerLocationView$PointerState;)Landroid/view/MotionEvent$PointerCoords;
 
@@ -3712,7 +3365,7 @@
 
     invoke-direct/range {v10 .. v17}, Lcom/android/internal/widget/PointerLocationView;->drawOval(Landroid/graphics/Canvas;FFFFFLandroid/graphics/Paint;)V
 
-    .line 353
+    .line 324
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/widget/PointerLocationView;->mPaint:Landroid/graphics/Paint;
@@ -3729,7 +3382,7 @@
 
     invoke-virtual {v2, v7, v0, v10, v11}, Landroid/graphics/Paint;->setARGB(IIII)V
 
-    .line 354
+    .line 325
     #getter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mCoords:Landroid/view/MotionEvent$PointerCoords;
     invoke-static/range {v33 .. v33}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$200(Lcom/android/internal/widget/PointerLocationView$PointerState;)Landroid/view/MotionEvent$PointerCoords;
 
@@ -3779,7 +3432,7 @@
 
     invoke-direct/range {v10 .. v17}, Lcom/android/internal/widget/PointerLocationView;->drawOval(Landroid/graphics/Canvas;FFFFFLandroid/graphics/Paint;)V
 
-    .line 358
+    .line 329
     #getter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mCoords:Landroid/view/MotionEvent$PointerCoords;
     invoke-static/range {v33 .. v33}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$200(Lcom/android/internal/widget/PointerLocationView$PointerState;)Landroid/view/MotionEvent$PointerCoords;
 
@@ -3791,19 +3444,19 @@
 
     mul-float v20, v2, v7
 
-    .line 359
+    .line 330
     .local v20, arrowSize:F
     const/high16 v2, 0x41a0
 
     cmpg-float v2, v20, v2
 
-    if-gez v2, :cond_c
+    if-gez v2, :cond_b
 
-    .line 360
+    .line 331
     const/high16 v20, 0x41a0
 
-    .line 362
-    :cond_c
+    .line 333
+    :cond_b
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/widget/PointerLocationView;->mPaint:Landroid/graphics/Paint;
@@ -3818,7 +3471,7 @@
 
     invoke-virtual {v2, v7, v0, v10, v11}, Landroid/graphics/Paint;->setARGB(IIII)V
 
-    .line 363
+    .line 334
     #getter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mCoords:Landroid/view/MotionEvent$PointerCoords;
     invoke-static/range {v33 .. v33}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$200(Lcom/android/internal/widget/PointerLocationView$PointerState;)Landroid/view/MotionEvent$PointerCoords;
 
@@ -3842,7 +3495,7 @@
 
     move/from16 v29, v0
 
-    .line 365
+    .line 336
     .local v29, orientationVectorX:F
     #getter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mCoords:Landroid/view/MotionEvent$PointerCoords;
     invoke-static/range {v33 .. v33}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$200(Lcom/android/internal/widget/PointerLocationView$PointerState;)Landroid/view/MotionEvent$PointerCoords;
@@ -3869,28 +3522,28 @@
 
     move/from16 v30, v0
 
-    .line 367
+    .line 338
     .local v30, orientationVectorY:F
     #getter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mToolType:I
-    invoke-static/range {v33 .. v33}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$1100(Lcom/android/internal/widget/PointerLocationView$PointerState;)I
+    invoke-static/range {v33 .. v33}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$800(Lcom/android/internal/widget/PointerLocationView$PointerState;)I
 
     move-result v2
 
     const/4 v7, 0x2
 
-    if-eq v2, v7, :cond_d
+    if-eq v2, v7, :cond_c
 
     #getter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mToolType:I
-    invoke-static/range {v33 .. v33}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$1100(Lcom/android/internal/widget/PointerLocationView$PointerState;)I
+    invoke-static/range {v33 .. v33}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$800(Lcom/android/internal/widget/PointerLocationView$PointerState;)I
 
     move-result v2
 
     const/4 v7, 0x4
 
-    if-ne v2, v7, :cond_f
+    if-ne v2, v7, :cond_e
 
-    .line 370
-    :cond_d
+    .line 341
+    :cond_c
     #getter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mCoords:Landroid/view/MotionEvent$PointerCoords;
     invoke-static/range {v33 .. v33}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$200(Lcom/android/internal/widget/PointerLocationView$PointerState;)Landroid/view/MotionEvent$PointerCoords;
 
@@ -3931,8 +3584,8 @@
 
     invoke-virtual/range {v10 .. v15}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    .line 385
-    :goto_8
+    .line 356
+    :goto_7
     #getter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mCoords:Landroid/view/MotionEvent$PointerCoords;
     invoke-static/range {v33 .. v33}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$200(Lcom/android/internal/widget/PointerLocationView$PointerState;)Landroid/view/MotionEvent$PointerCoords;
 
@@ -3954,7 +3607,7 @@
 
     move/from16 v34, v0
 
-    .line 387
+    .line 358
     .local v34, tiltScale:F
     #getter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mCoords:Landroid/view/MotionEvent$PointerCoords;
     invoke-static/range {v33 .. v33}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$200(Lcom/android/internal/widget/PointerLocationView$PointerState;)Landroid/view/MotionEvent$PointerCoords;
@@ -3988,23 +3641,23 @@
 
     invoke-virtual {v0, v2, v7, v10, v11}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 272
+    .line 262
     .end local v20           #arrowSize:F
     .end local v29           #orientationVectorX:F
     .end local v30           #orientationVectorY:F
     .end local v32           #pressureLevel:I
     .end local v34           #tiltScale:F
-    :cond_e
+    :cond_d
     add-int/lit8 v31, v31, 0x1
 
     goto/16 :goto_1
 
-    .line 376
+    .line 347
     .restart local v20       #arrowSize:F
     .restart local v29       #orientationVectorX:F
     .restart local v30       #orientationVectorY:F
     .restart local v32       #pressureLevel:I
-    :cond_f
+    :cond_e
     #getter for: Lcom/android/internal/widget/PointerLocationView$PointerState;->mCoords:Landroid/view/MotionEvent$PointerCoords;
     invoke-static/range {v33 .. v33}, Lcom/android/internal/widget/PointerLocationView$PointerState;->access$200(Lcom/android/internal/widget/PointerLocationView$PointerState;)Landroid/view/MotionEvent$PointerCoords;
 
@@ -4049,9 +3702,9 @@
 
     invoke-virtual/range {v10 .. v15}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    goto :goto_8
+    goto :goto_7
 
-    .line 393
+    .line 364
     .end local v3           #lastX:F
     .end local v4           #lastY:F
     .end local v18           #N:I
@@ -4063,7 +3716,12 @@
     .end local v30           #orientationVectorY:F
     .end local v32           #pressureLevel:I
     .end local v33           #ps:Lcom/android/internal/widget/PointerLocationView$PointerState;
-    :cond_10
+    :cond_f
+    monitor-exit v38
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 365
     return-void
 .end method
 
@@ -4072,53 +3730,53 @@
     .parameter "event"
 
     .prologue
-    .line 621
+    .line 583
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getSource()I
 
     move-result v0
 
-    .line 622
+    .line 584
     .local v0, source:I
     and-int/lit8 v1, v0, 0x2
 
     if-eqz v1, :cond_0
 
-    .line 623
+    .line 585
     invoke-virtual {p0, p1}, Lcom/android/internal/widget/PointerLocationView;->addPointerEvent(Landroid/view/MotionEvent;)V
 
-    .line 631
+    .line 593
     :goto_0
     const/4 v1, 0x1
 
     return v1
 
-    .line 624
+    .line 586
     :cond_0
     and-int/lit8 v1, v0, 0x10
 
     if-eqz v1, :cond_1
 
-    .line 625
+    .line 587
     const-string v1, "Joystick"
 
     invoke-direct {p0, v1, p1}, Lcom/android/internal/widget/PointerLocationView;->logMotionEvent(Ljava/lang/String;Landroid/view/MotionEvent;)V
 
     goto :goto_0
 
-    .line 626
+    .line 588
     :cond_1
     and-int/lit8 v1, v0, 0x8
 
     if-eqz v1, :cond_2
 
-    .line 627
+    .line 589
     const-string v1, "Position"
 
     invoke-direct {p0, v1, p1}, Lcom/android/internal/widget/PointerLocationView;->logMotionEvent(Ljava/lang/String;Landroid/view/MotionEvent;)V
 
     goto :goto_0
 
-    .line 629
+    .line 591
     :cond_2
     const-string v1, "Generic"
 
@@ -4127,71 +3785,29 @@
     goto :goto_0
 .end method
 
-.method public onInputDeviceAdded(I)V
-    .locals 1
-    .parameter "deviceId"
-
-    .prologue
-    .line 694
-    const-string v0, "Device Added"
-
-    invoke-direct {p0, p1, v0}, Lcom/android/internal/widget/PointerLocationView;->logInputDeviceState(ILjava/lang/String;)V
-
-    .line 695
-    return-void
-.end method
-
-.method public onInputDeviceChanged(I)V
-    .locals 1
-    .parameter "deviceId"
-
-    .prologue
-    .line 699
-    const-string v0, "Device Changed"
-
-    invoke-direct {p0, p1, v0}, Lcom/android/internal/widget/PointerLocationView;->logInputDeviceState(ILjava/lang/String;)V
-
-    .line 700
-    return-void
-.end method
-
-.method public onInputDeviceRemoved(I)V
-    .locals 1
-    .parameter "deviceId"
-
-    .prologue
-    .line 704
-    const-string v0, "Device Removed"
-
-    invoke-direct {p0, p1, v0}, Lcom/android/internal/widget/PointerLocationView;->logInputDeviceState(ILjava/lang/String;)V
-
-    .line 705
-    return-void
-.end method
-
 .method public onKeyDown(ILandroid/view/KeyEvent;)Z
     .locals 4
     .parameter "keyCode"
     .parameter "event"
 
     .prologue
-    .line 636
+    .line 598
     invoke-static {p1}, Lcom/android/internal/widget/PointerLocationView;->shouldLogKey(I)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 637
+    .line 599
     invoke-virtual {p2}, Landroid/view/KeyEvent;->getRepeatCount()I
 
     move-result v0
 
-    .line 638
+    .line 600
     .local v0, repeatCount:I
     if-nez v0, :cond_0
 
-    .line 639
+    .line 601
     const-string v1, "Pointer"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -4214,16 +3830,16 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 643
+    .line 605
     :goto_0
     const/4 v1, 0x1
 
-    .line 645
+    .line 607
     .end local v0           #repeatCount:I
     :goto_1
     return v1
 
-    .line 641
+    .line 603
     .restart local v0       #repeatCount:I
     :cond_0
     const-string v1, "Pointer"
@@ -4260,7 +3876,7 @@
 
     goto :goto_0
 
-    .line 645
+    .line 607
     .end local v0           #repeatCount:I
     :cond_1
     invoke-super {p0, p1, p2}, Landroid/view/View;->onKeyDown(ILandroid/view/KeyEvent;)Z
@@ -4276,14 +3892,14 @@
     .parameter "event"
 
     .prologue
-    .line 650
+    .line 612
     invoke-static {p1}, Lcom/android/internal/widget/PointerLocationView;->shouldLogKey(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 651
+    .line 613
     const-string v0, "Pointer"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4306,10 +3922,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 652
+    .line 614
     const/4 v0, 0x1
 
-    .line 654
+    .line 616
     :goto_0
     return v0
 
@@ -4327,17 +3943,17 @@
     .parameter "heightMeasureSpec"
 
     .prologue
-    .line 173
+    .line 162
     invoke-super {p0, p1, p2}, Landroid/view/View;->onMeasure(II)V
 
-    .line 174
+    .line 163
     iget-object v0, p0, Lcom/android/internal/widget/PointerLocationView;->mTextPaint:Landroid/graphics/Paint;
 
     iget-object v1, p0, Lcom/android/internal/widget/PointerLocationView;->mTextMetrics:Landroid/graphics/Paint$FontMetricsInt;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->getFontMetricsInt(Landroid/graphics/Paint$FontMetricsInt;)I
 
-    .line 175
+    .line 164
     iget-object v0, p0, Lcom/android/internal/widget/PointerLocationView;->mTextMetrics:Landroid/graphics/Paint$FontMetricsInt;
 
     iget v0, v0, Landroid/graphics/Paint$FontMetricsInt;->ascent:I
@@ -4354,7 +3970,7 @@
 
     iput v0, p0, Lcom/android/internal/widget/PointerLocationView;->mHeaderBottom:I
 
-    .line 183
+    .line 172
     return-void
 .end method
 
@@ -4363,10 +3979,10 @@
     .parameter "event"
 
     .prologue
-    .line 611
+    .line 573
     invoke-virtual {p0, p1}, Lcom/android/internal/widget/PointerLocationView;->addPointerEvent(Landroid/view/MotionEvent;)V
 
-    .line 613
+    .line 575
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
@@ -4379,10 +3995,10 @@
 
     if-nez v0, :cond_0
 
-    .line 614
+    .line 576
     invoke-virtual {p0}, Lcom/android/internal/widget/PointerLocationView;->requestFocus()Z
 
-    .line 616
+    .line 578
     :cond_0
     const/4 v0, 0x1
 
@@ -4394,12 +4010,12 @@
     .parameter "event"
 
     .prologue
-    .line 673
+    .line 635
     const-string v0, "Trackball"
 
     invoke-direct {p0, v0, p1}, Lcom/android/internal/widget/PointerLocationView;->logMotionEvent(Ljava/lang/String;Landroid/view/MotionEvent;)V
 
-    .line 674
+    .line 636
     const/4 v0, 0x1
 
     return v0
@@ -4410,9 +4026,9 @@
     .parameter "state"
 
     .prologue
-    .line 168
+    .line 157
     iput-boolean p1, p0, Lcom/android/internal/widget/PointerLocationView;->mPrintCoords:Z
 
-    .line 169
+    .line 158
     return-void
 .end method

@@ -17,24 +17,12 @@
 .end annotation
 
 
-# static fields
-.field public static final MERGE_APPEND:I = 0x1
-
-.field public static final MERGE_IGNORE:I = 0x2
-
-.field public static final MERGE_REPLACE:I
-
-
-# instance fields
-.field viewId:I
-
-
 # direct methods
 .method private constructor <init>()V
     .locals 0
 
     .prologue
-    .line 193
+    .line 127
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +33,7 @@
     .parameter "x0"
 
     .prologue
-    .line 193
+    .line 127
     invoke-direct {p0}, Landroid/widget/RemoteViews$Action;-><init>()V
 
     return-void
@@ -53,7 +41,7 @@
 
 
 # virtual methods
-.method public abstract apply(Landroid/view/View;Landroid/view/ViewGroup;Landroid/widget/RemoteViews$OnClickHandler;)V
+.method public abstract apply(Landroid/view/View;Landroid/view/ViewGroup;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/widget/RemoteViews$ActionException;
@@ -65,62 +53,82 @@
     .locals 1
 
     .prologue
-    .line 202
+    .line 131
     const/4 v0, 0x0
 
     return v0
 .end method
 
-.method public abstract getActionName()Ljava/lang/String;
-.end method
-
-.method public getUniqueKey()Ljava/lang/String;
-    .locals 2
+.method protected startIntentSafely(Landroid/content/Context;Landroid/app/PendingIntent;Landroid/content/Intent;)Z
+    .locals 8
+    .parameter "context"
+    .parameter "pendingIntent"
+    .parameter "fillInIntent"
 
     .prologue
-    .line 225
-    new-instance v0, Ljava/lang/StringBuilder;
+    const/4 v7, 0x0
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {p0}, Landroid/widget/RemoteViews$Action;->getActionName()Ljava/lang/String;
+    .line 147
+    :try_start_0
+    invoke-virtual {p2}, Landroid/app/PendingIntent;->getIntentSender()Landroid/content/IntentSender;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/high16 v3, 0x1000
 
-    move-result-object v0
+    const/high16 v4, 0x1000
 
-    iget v1, p0, Landroid/widget/RemoteViews$Action;->viewId:I
+    const/4 v5, 0x0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move-object v0, p1
 
-    move-result-object v0
+    move-object v2, p3
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v0 .. v5}, Landroid/content/Context;->startIntentSender(Landroid/content/IntentSender;Landroid/content/Intent;III)V
+    :try_end_0
+    .catch Landroid/content/IntentSender$SendIntentException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
-    move-result-object v0
+    .line 159
+    const/4 v0, 0x1
 
-    return-object v0
-.end method
-
-.method public mergeBehavior()I
-    .locals 1
-
-    .prologue
-    .line 219
-    const/4 v0, 0x0
-
+    :goto_0
     return v0
-.end method
 
-.method public setBitmapCache(Landroid/widget/RemoteViews$BitmapCache;)V
-    .locals 0
-    .parameter "bitmapCache"
+    .line 151
+    :catch_0
+    move-exception v6
 
-    .prologue
-    .line 216
-    return-void
+    .line 152
+    .local v6, e:Landroid/content/IntentSender$SendIntentException;
+    const-string v0, "RemoteViews"
+
+    const-string v1, "Cannot send pending intent: "
+
+    invoke-static {v0, v1, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    move v0, v7
+
+    .line 153
+    goto :goto_0
+
+    .line 154
+    .end local v6           #e:Landroid/content/IntentSender$SendIntentException;
+    :catch_1
+    move-exception v6
+
+    .line 155
+    .local v6, e:Ljava/lang/Exception;
+    const-string v0, "RemoteViews"
+
+    const-string v1, "Cannot send pending intent due to unknown exception: "
+
+    invoke-static {v0, v1, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    move v0, v7
+
+    .line 157
+    goto :goto_0
 .end method
 
 .method public updateMemoryUsageEstimate(Landroid/widget/RemoteViews$MemoryUsageCounter;)V
@@ -128,6 +136,6 @@
     .parameter "counter"
 
     .prologue
-    .line 211
+    .line 140
     return-void
 .end method

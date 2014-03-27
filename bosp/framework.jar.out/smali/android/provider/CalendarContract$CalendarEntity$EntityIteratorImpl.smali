@@ -20,10 +20,10 @@
     .parameter "cursor"
 
     .prologue
-    .line 511
+    .line 466
     invoke-direct {p0, p1}, Landroid/content/CursorEntityIterator;-><init>(Landroid/database/Cursor;)V
 
-    .line 512
+    .line 467
     return-void
 .end method
 
@@ -39,7 +39,7 @@
     .end annotation
 
     .prologue
-    .line 517
+    .line 472
     const-string v4, "_id"
 
     invoke-interface {p1, v4}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
@@ -50,13 +50,13 @@
 
     move-result-wide v0
 
-    .line 520
+    .line 475
     .local v0, calendarId:J
     new-instance v2, Landroid/content/ContentValues;
 
     invoke-direct {v2}, Landroid/content/ContentValues;-><init>()V
 
-    .line 521
+    .line 476
     .local v2, cv:Landroid/content/ContentValues;
     const-string v4, "_id"
 
@@ -66,160 +66,160 @@
 
     invoke-virtual {v2, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 523
+    .line 478
     const-string v4, "account_name"
 
     invoke-static {p1, v2, v4}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 524
+    .line 479
     const-string v4, "account_type"
 
     invoke-static {p1, v2, v4}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 526
+    .line 481
     const-string v4, "_sync_id"
 
     invoke-static {p1, v2, v4}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 527
+    .line 482
     const-string v4, "dirty"
 
     invoke-static {p1, v2, v4}, Landroid/database/DatabaseUtils;->cursorLongToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 529
+    .line 484
     const-string v4, "cal_sync1"
 
     invoke-static {p1, v2, v4}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 530
+    .line 485
     const-string v4, "cal_sync2"
 
     invoke-static {p1, v2, v4}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 531
+    .line 486
     const-string v4, "cal_sync3"
 
     invoke-static {p1, v2, v4}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 532
+    .line 487
     const-string v4, "cal_sync4"
 
     invoke-static {p1, v2, v4}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 533
+    .line 488
     const-string v4, "cal_sync5"
 
     invoke-static {p1, v2, v4}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 534
+    .line 489
     const-string v4, "cal_sync6"
 
     invoke-static {p1, v2, v4}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 535
+    .line 490
     const-string v4, "cal_sync7"
 
     invoke-static {p1, v2, v4}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 536
+    .line 491
     const-string v4, "cal_sync8"
 
     invoke-static {p1, v2, v4}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 537
+    .line 492
     const-string v4, "cal_sync9"
 
     invoke-static {p1, v2, v4}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 538
+    .line 493
     const-string v4, "cal_sync10"
 
     invoke-static {p1, v2, v4}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 540
+    .line 495
     const-string/jumbo v4, "name"
 
     invoke-static {p1, v2, v4}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 541
+    .line 496
     const-string v4, "calendar_displayName"
 
     invoke-static {p1, v2, v4}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 543
+    .line 498
     const-string v4, "calendar_color"
 
     invoke-static {p1, v2, v4}, Landroid/database/DatabaseUtils;->cursorIntToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 545
+    .line 500
     const-string v4, "calendar_access_level"
 
     invoke-static {p1, v2, v4}, Landroid/database/DatabaseUtils;->cursorIntToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 546
+    .line 501
     const-string/jumbo v4, "visible"
 
     invoke-static {p1, v2, v4}, Landroid/database/DatabaseUtils;->cursorIntToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 547
+    .line 502
     const-string/jumbo v4, "sync_events"
 
     invoke-static {p1, v2, v4}, Landroid/database/DatabaseUtils;->cursorIntToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 548
+    .line 503
     const-string v4, "calendar_location"
 
     invoke-static {p1, v2, v4}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 550
+    .line 505
     const-string v4, "calendar_timezone"
 
     invoke-static {p1, v2, v4}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 551
+    .line 506
     const-string/jumbo v4, "ownerAccount"
 
     invoke-static {p1, v2, v4}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 553
+    .line 508
     const-string v4, "canOrganizerRespond"
 
     invoke-static {p1, v2, v4}, Landroid/database/DatabaseUtils;->cursorIntToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 555
+    .line 510
     const-string v4, "canModifyTimeZone"
 
     invoke-static {p1, v2, v4}, Landroid/database/DatabaseUtils;->cursorIntToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 557
+    .line 512
     const-string/jumbo v4, "maxReminders"
 
     invoke-static {p1, v2, v4}, Landroid/database/DatabaseUtils;->cursorIntToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 559
+    .line 514
     const-string v4, "canPartiallyUpdate"
 
     invoke-static {p1, v2, v4}, Landroid/database/DatabaseUtils;->cursorIntToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 561
+    .line 516
     const-string v4, "allowedReminders"
 
     invoke-static {p1, v2, v4}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 564
+    .line 519
     const-string v4, "deleted"
 
     invoke-static {p1, v2, v4}, Landroid/database/DatabaseUtils;->cursorIntToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 567
+    .line 522
     new-instance v3, Landroid/content/Entity;
 
     invoke-direct {v3, v2}, Landroid/content/Entity;-><init>(Landroid/content/ContentValues;)V
 
-    .line 570
+    .line 525
     .local v3, entity:Landroid/content/Entity;
     invoke-interface {p1}, Landroid/database/Cursor;->moveToNext()Z
 
-    .line 573
+    .line 528
     return-object v3
 .end method

@@ -15,1019 +15,1547 @@
 
 
 # static fields
-.field public static final ActiveWallpaperSettings:I = 0x10302ef
+.field public static final ActiveWallpaperSettings:I = #style@ActiveWallpaperSettings#t
 
-.field public static final Animation:I = 0x1030000
+.field public static final AlertDialog:I = #style@AlertDialog#t
 
-.field public static final Animation_Activity:I = 0x1030001
+.field public static final AlertDialog_DeviceDefault:I = #style@AlertDialog.DeviceDefault#t
 
-.field public static final Animation_Dialog:I = 0x1030002
+.field public static final AlertDialog_DeviceDefault_Light:I = #style@AlertDialog.DeviceDefault.Light#t
 
-.field public static final Animation_Dream:I = 0x10301f1
+.field public static final AlertDialog_Holo:I = #style@AlertDialog.Holo#t
 
-.field public static final Animation_DropDownDown:I = 0x10301e7
+.field public static final AlertDialog_Holo_Light:I = #style@AlertDialog.Holo.Light#t
 
-.field public static final Animation_DropDownUp:I = 0x10301e8
+.field public static final Animation:I = #style@Animation#t
 
-.field public static final Animation_InputMethod:I = 0x1030056
+.field public static final Animation_Activity:I = #style@Animation.Activity#t
 
-.field public static final Animation_InputMethodFancy:I = 0x10301e9
+.field public static final Animation_DeviceDefault_Activity:I = #style@Animation.DeviceDefault.Activity#t
 
-.field public static final Animation_LockScreen:I = 0x10301e2
+.field public static final Animation_DeviceDefault_Dialog:I = #style@Animation.DeviceDefault.Dialog#t
 
-.field public static final Animation_PopupWindow:I = 0x10301ee
+.field public static final Animation_Dialog:I = #style@Animation.Dialog#t
 
-.field public static final Animation_RecentApplications:I = 0x10301ed
+.field public static final Animation_DropDownDown:I = #style@Animation.DropDownDown#t
 
-.field public static final Animation_Toast:I = 0x1030004
+.field public static final Animation_DropDownUp:I = #style@Animation.DropDownUp#t
 
-.field public static final Animation_Translucent:I = 0x1030003
+.field public static final Animation_Holo:I = #style@Animation.Holo#t
 
-.field public static final Animation_TypingFilter:I = 0x10301e5
+.field public static final Animation_Holo_Activity:I = #style@Animation.Holo.Activity#t
 
-.field public static final Animation_TypingFilterRestore:I = 0x10301e6
+.field public static final Animation_Holo_Dialog:I = #style@Animation.Holo.Dialog#t
 
-.field public static final Animation_Wallpaper:I = 0x10301ec
+.field public static final Animation_InputMethod:I = #style@Animation.InputMethod#t
 
-.field public static final Animation_ZoomButtons:I = 0x10301eb
+.field public static final Animation_InputMethodFancy:I = #style@Animation.InputMethodFancy#t
 
-.field public static final ButtonBar:I = 0x1030058
+.field public static final Animation_LockScreen:I = #style@Animation.LockScreen#t
 
-.field public static final DeviceDefault_ButtonBar:I = 0x10301cf
+.field public static final Animation_OptionsPanel:I = #style@Animation.OptionsPanel#t
 
-.field public static final DeviceDefault_ButtonBar_AlertDialog:I = 0x10301d0
+.field public static final Animation_PopupWindow:I = #style@Animation.PopupWindow#t
 
-.field public static final DeviceDefault_Light_ButtonBar:I = 0x10301d2
+.field public static final Animation_PopupWindow_ActionMode:I = #style@Animation.PopupWindow.ActionMode#t
 
-.field public static final DeviceDefault_Light_ButtonBar_AlertDialog:I = 0x10301d3
+.field public static final Animation_RecentApplications:I = #style@Animation.RecentApplications#t
 
-.field public static final DeviceDefault_Light_SegmentedButton:I = 0x10301d4
+.field public static final Animation_SearchBar:I = #style@Animation.SearchBar#t
 
-.field public static final DeviceDefault_SegmentedButton:I = 0x10301d1
+.field public static final Animation_SubMenuPanel:I = #style@Animation.SubMenuPanel#t
 
-.field public static final Holo_ButtonBar:I = 0x10300e5
+.field public static final Animation_TextSelectHandle:I = #style@Animation.TextSelectHandle#t
 
-.field public static final Holo_ButtonBar_AlertDialog:I = 0x10300e7
+.field public static final Animation_Toast:I = #style@Animation.Toast#t
 
-.field public static final Holo_Light_ButtonBar:I = 0x10300e6
+.field public static final Animation_Translucent:I = #style@Animation.Translucent#t
 
-.field public static final Holo_Light_ButtonBar_AlertDialog:I = 0x10300e8
+.field public static final Animation_TypingFilter:I = #style@Animation.TypingFilter#t
 
-.field public static final Holo_Light_SegmentedButton:I = 0x10300ea
+.field public static final Animation_TypingFilterRestore:I = #style@Animation.TypingFilterRestore#t
 
-.field public static final Holo_SegmentedButton:I = 0x10300e9
+.field public static final Animation_VolumePanel:I = #style@Animation.VolumePanel#t
 
-.field public static final MediaButton:I = 0x1030037
+.field public static final Animation_Wallpaper:I = #style@Animation.Wallpaper#t
 
-.field public static final MediaButton_Ffwd:I = 0x103003b
+.field public static final Animation_ZoomButtons:I = #style@Animation.ZoomButtons#t
 
-.field public static final MediaButton_Next:I = 0x1030039
+.field public static final ButtonBar:I = #style@ButtonBar#t
 
-.field public static final MediaButton_Pause:I = 0x103003d
+.field public static final DeviceDefault_ButtonBar:I = #style@DeviceDefault.ButtonBar#t
 
-.field public static final MediaButton_Play:I = 0x103003a
+.field public static final DeviceDefault_ButtonBar_AlertDialog:I = #style@DeviceDefault.ButtonBar.AlertDialog#t
 
-.field public static final MediaButton_Previous:I = 0x1030038
+.field public static final DeviceDefault_Light_ButtonBar:I = #style@DeviceDefault.Light.ButtonBar#t
 
-.field public static final MediaButton_Rew:I = 0x103003c
+.field public static final DeviceDefault_Light_ButtonBar_AlertDialog:I = #style@DeviceDefault.Light.ButtonBar.AlertDialog#t
 
-.field public static final PreviewWallpaperSettings:I = 0x10302f0
+.field public static final DeviceDefault_Light_SegmentedButton:I = #style@DeviceDefault.Light.SegmentedButton#t
 
-.field public static final TextAppearance:I = 0x103003e
+.field public static final DeviceDefault_SegmentedButton:I = #style@DeviceDefault.SegmentedButton#t
 
-.field public static final TextAppearance_DeviceDefault:I = 0x10301ad
+.field public static final DialogWindowTitle:I = #style@DialogWindowTitle#t
 
-.field public static final TextAppearance_DeviceDefault_DialogWindowTitle:I = 0x10301b8
+.field public static final DialogWindowTitle_DeviceDefault:I = #style@DialogWindowTitle.DeviceDefault#t
 
-.field public static final TextAppearance_DeviceDefault_Inverse:I = 0x10301ae
+.field public static final DialogWindowTitle_DeviceDefault_Light:I = #style@DialogWindowTitle.DeviceDefault.Light#t
 
-.field public static final TextAppearance_DeviceDefault_Large:I = 0x10301af
+.field public static final DialogWindowTitle_Holo:I = #style@DialogWindowTitle.Holo#t
 
-.field public static final TextAppearance_DeviceDefault_Large_Inverse:I = 0x10301b0
+.field public static final DialogWindowTitle_Holo_Light:I = #style@DialogWindowTitle.Holo.Light#t
 
-.field public static final TextAppearance_DeviceDefault_Medium:I = 0x10301b1
+.field public static final Holo:I = #style@Holo#t
 
-.field public static final TextAppearance_DeviceDefault_Medium_Inverse:I = 0x10301b2
+.field public static final Holo_ButtonBar:I = #style@Holo.ButtonBar#t
 
-.field public static final TextAppearance_DeviceDefault_SearchResult_Subtitle:I = 0x10301b6
+.field public static final Holo_ButtonBar_AlertDialog:I = #style@Holo.ButtonBar.AlertDialog#t
 
-.field public static final TextAppearance_DeviceDefault_SearchResult_Title:I = 0x10301b5
+.field public static final Holo_Light:I = #style@Holo.Light#t
 
-.field public static final TextAppearance_DeviceDefault_Small:I = 0x10301b3
+.field public static final Holo_Light_ButtonBar:I = #style@Holo.Light.ButtonBar#t
 
-.field public static final TextAppearance_DeviceDefault_Small_Inverse:I = 0x10301b4
+.field public static final Holo_Light_ButtonBar_AlertDialog:I = #style@Holo.Light.ButtonBar.AlertDialog#t
 
-.field public static final TextAppearance_DeviceDefault_Widget:I = 0x10301b9
+.field public static final Holo_Light_SegmentedButton:I = #style@Holo.Light.SegmentedButton#t
 
-.field public static final TextAppearance_DeviceDefault_Widget_ActionBar_Menu:I = 0x10301ce
+.field public static final Holo_SegmentedButton:I = #style@Holo.SegmentedButton#t
 
-.field public static final TextAppearance_DeviceDefault_Widget_ActionBar_Subtitle:I = 0x10301c7
+.field public static final MediaButton:I = #style@MediaButton#t
 
-.field public static final TextAppearance_DeviceDefault_Widget_ActionBar_Subtitle_Inverse:I = 0x10301cb
+.field public static final MediaButton_Ffwd:I = #style@MediaButton.Ffwd#t
 
-.field public static final TextAppearance_DeviceDefault_Widget_ActionBar_Title:I = 0x10301c6
+.field public static final MediaButton_Next:I = #style@MediaButton.Next#t
 
-.field public static final TextAppearance_DeviceDefault_Widget_ActionBar_Title_Inverse:I = 0x10301ca
+.field public static final MediaButton_Pause:I = #style@MediaButton.Pause#t
 
-.field public static final TextAppearance_DeviceDefault_Widget_ActionMode_Subtitle:I = 0x10301c9
+.field public static final MediaButton_Play:I = #style@MediaButton.Play#t
 
-.field public static final TextAppearance_DeviceDefault_Widget_ActionMode_Subtitle_Inverse:I = 0x10301cd
+.field public static final MediaButton_Previous:I = #style@MediaButton.Previous#t
 
-.field public static final TextAppearance_DeviceDefault_Widget_ActionMode_Title:I = 0x10301c8
+.field public static final MediaButton_Rew:I = #style@MediaButton.Rew#t
 
-.field public static final TextAppearance_DeviceDefault_Widget_ActionMode_Title_Inverse:I = 0x10301cc
+.field public static final Pointer:I = #style@Pointer#t
 
-.field public static final TextAppearance_DeviceDefault_Widget_Button:I = 0x10301ba
+.field public static final Preference:I = #style@Preference#t
 
-.field public static final TextAppearance_DeviceDefault_Widget_DropDownHint:I = 0x10301bf
+.field public static final PreferenceFragment:I = #style@PreferenceFragment#t
 
-.field public static final TextAppearance_DeviceDefault_Widget_DropDownItem:I = 0x10301c0
+.field public static final PreferenceFragment_Holo:I = #style@PreferenceFragment.Holo#t
 
-.field public static final TextAppearance_DeviceDefault_Widget_EditText:I = 0x10301c2
+.field public static final PreferencePanel:I = #style@PreferencePanel#t
 
-.field public static final TextAppearance_DeviceDefault_Widget_IconMenu_Item:I = 0x10301bb
+.field public static final PreferencePanel_Dialog:I = #style@PreferencePanel.Dialog#t
 
-.field public static final TextAppearance_DeviceDefault_Widget_PopupMenu:I = 0x10301c3
+.field public static final Preference_Category:I = #style@Preference.Category#t
 
-.field public static final TextAppearance_DeviceDefault_Widget_PopupMenu_Large:I = 0x10301c4
+.field public static final Preference_CheckBoxPreference:I = #style@Preference.CheckBoxPreference#t
 
-.field public static final TextAppearance_DeviceDefault_Widget_PopupMenu_Small:I = 0x10301c5
+.field public static final Preference_DeviceDefault:I = #style@Preference.DeviceDefault#t
 
-.field public static final TextAppearance_DeviceDefault_Widget_TabWidget:I = 0x10301bc
+.field public static final Preference_DeviceDefault_Category:I = #style@Preference.DeviceDefault.Category#t
 
-.field public static final TextAppearance_DeviceDefault_Widget_TextView:I = 0x10301bd
+.field public static final Preference_DeviceDefault_CheckBoxPreference:I = #style@Preference.DeviceDefault.CheckBoxPreference#t
 
-.field public static final TextAppearance_DeviceDefault_Widget_TextView_PopupMenu:I = 0x10301be
+.field public static final Preference_DeviceDefault_DialogPreference:I = #style@Preference.DeviceDefault.DialogPreference#t
 
-.field public static final TextAppearance_DeviceDefault_Widget_TextView_SpinnerItem:I = 0x10301c1
+.field public static final Preference_DeviceDefault_DialogPreference_EditTextPreference:I = #style@Preference.DeviceDefault.DialogPreference.EditTextPreference#t
 
-.field public static final TextAppearance_DeviceDefault_WindowTitle:I = 0x10301b7
+.field public static final Preference_DeviceDefault_DialogPreference_YesNoPreference:I = #style@Preference.DeviceDefault.DialogPreference.YesNoPreference#t
 
-.field public static final TextAppearance_DialogWindowTitle:I = 0x1030041
+.field public static final Preference_DeviceDefault_Information:I = #style@Preference.DeviceDefault.Information#t
 
-.field public static final TextAppearance_Holo:I = 0x10300fb
+.field public static final Preference_DeviceDefault_PreferenceScreen:I = #style@Preference.DeviceDefault.PreferenceScreen#t
 
-.field public static final TextAppearance_Holo_DialogWindowTitle:I = 0x1030117
+.field public static final Preference_DeviceDefault_RingtonePreference:I = #style@Preference.DeviceDefault.RingtonePreference#t
 
-.field public static final TextAppearance_Holo_Inverse:I = 0x10300fc
+.field public static final Preference_DeviceDefault_SwitchPreference:I = #style@Preference.DeviceDefault.SwitchPreference#t
 
-.field public static final TextAppearance_Holo_Large:I = 0x10300fd
+.field public static final Preference_DialogPreference:I = #style@Preference.DialogPreference#t
 
-.field public static final TextAppearance_Holo_Large_Inverse:I = 0x10300fe
+.field public static final Preference_DialogPreference_EditTextPreference:I = #style@Preference.DialogPreference.EditTextPreference#t
 
-.field public static final TextAppearance_Holo_Medium:I = 0x10300ff
+.field public static final Preference_DialogPreference_YesNoPreference:I = #style@Preference.DialogPreference.YesNoPreference#t
 
-.field public static final TextAppearance_Holo_Medium_Inverse:I = 0x1030100
+.field public static final Preference_Holo:I = #style@Preference.Holo#t
 
-.field public static final TextAppearance_Holo_SearchResult_Subtitle:I = 0x1030104
+.field public static final Preference_Holo_Category:I = #style@Preference.Holo.Category#t
 
-.field public static final TextAppearance_Holo_SearchResult_Title:I = 0x1030103
+.field public static final Preference_Holo_CheckBoxPreference:I = #style@Preference.Holo.CheckBoxPreference#t
 
-.field public static final TextAppearance_Holo_Small:I = 0x1030101
+.field public static final Preference_Holo_DialogPreference:I = #style@Preference.Holo.DialogPreference#t
 
-.field public static final TextAppearance_Holo_Small_Inverse:I = 0x1030102
+.field public static final Preference_Holo_DialogPreference_EditTextPreference:I = #style@Preference.Holo.DialogPreference.EditTextPreference#t
 
-.field public static final TextAppearance_Holo_Widget:I = 0x1030105
+.field public static final Preference_Holo_DialogPreference_YesNoPreference:I = #style@Preference.Holo.DialogPreference.YesNoPreference#t
 
-.field public static final TextAppearance_Holo_Widget_ActionBar_Menu:I = 0x1030120
+.field public static final Preference_Holo_Information:I = #style@Preference.Holo.Information#t
 
-.field public static final TextAppearance_Holo_Widget_ActionBar_Subtitle:I = 0x1030113
+.field public static final Preference_Holo_PreferenceScreen:I = #style@Preference.Holo.PreferenceScreen#t
 
-.field public static final TextAppearance_Holo_Widget_ActionBar_Subtitle_Inverse:I = 0x103011d
+.field public static final Preference_Holo_RingtonePreference:I = #style@Preference.Holo.RingtonePreference#t
 
-.field public static final TextAppearance_Holo_Widget_ActionBar_Title:I = 0x1030112
+.field public static final Preference_Holo_SwitchPreference:I = #style@Preference.Holo.SwitchPreference#t
 
-.field public static final TextAppearance_Holo_Widget_ActionBar_Title_Inverse:I = 0x103011c
+.field public static final Preference_Information:I = #style@Preference.Information#t
 
-.field public static final TextAppearance_Holo_Widget_ActionMode_Subtitle:I = 0x1030115
+.field public static final Preference_PreferenceScreen:I = #style@Preference.PreferenceScreen#t
 
-.field public static final TextAppearance_Holo_Widget_ActionMode_Subtitle_Inverse:I = 0x103011f
+.field public static final Preference_RingtonePreference:I = #style@Preference.RingtonePreference#t
 
-.field public static final TextAppearance_Holo_Widget_ActionMode_Title:I = 0x1030114
+.field public static final Preference_SwitchPreference:I = #style@Preference.SwitchPreference#t
 
-.field public static final TextAppearance_Holo_Widget_ActionMode_Title_Inverse:I = 0x103011e
+.field public static final PreviewWallpaperSettings:I = #style@PreviewWallpaperSettings#t
 
-.field public static final TextAppearance_Holo_Widget_Button:I = 0x1030106
+.field public static final SegmentedButton:I = #style@SegmentedButton#t
 
-.field public static final TextAppearance_Holo_Widget_DropDownHint:I = 0x103010b
+.field public static final TextAppearance:I = #style@TextAppearance#t
 
-.field public static final TextAppearance_Holo_Widget_DropDownItem:I = 0x103010c
+.field public static final TextAppearance_AutoCorrectionSuggestion:I = #style@TextAppearance.AutoCorrectionSuggestion#t
 
-.field public static final TextAppearance_Holo_Widget_EditText:I = 0x103010e
+.field public static final TextAppearance_DeviceDefault:I = #style@TextAppearance.DeviceDefault#t
 
-.field public static final TextAppearance_Holo_Widget_IconMenu_Item:I = 0x1030107
+.field public static final TextAppearance_DeviceDefault_DialogWindowTitle:I = #style@TextAppearance.DeviceDefault.DialogWindowTitle#t
 
-.field public static final TextAppearance_Holo_Widget_PopupMenu:I = 0x103010f
+.field public static final TextAppearance_DeviceDefault_Inverse:I = #style@TextAppearance.DeviceDefault.Inverse#t
 
-.field public static final TextAppearance_Holo_Widget_PopupMenu_Large:I = 0x1030110
+.field public static final TextAppearance_DeviceDefault_Large:I = #style@TextAppearance.DeviceDefault.Large#t
 
-.field public static final TextAppearance_Holo_Widget_PopupMenu_Small:I = 0x1030111
+.field public static final TextAppearance_DeviceDefault_Large_Inverse:I = #style@TextAppearance.DeviceDefault.Large.Inverse#t
 
-.field public static final TextAppearance_Holo_Widget_TabWidget:I = 0x1030108
+.field public static final TextAppearance_DeviceDefault_Light:I = #style@TextAppearance.DeviceDefault.Light#t
 
-.field public static final TextAppearance_Holo_Widget_TextView:I = 0x1030109
+.field public static final TextAppearance_DeviceDefault_Light_Inverse:I = #style@TextAppearance.DeviceDefault.Light.Inverse#t
 
-.field public static final TextAppearance_Holo_Widget_TextView_PopupMenu:I = 0x103010a
+.field public static final TextAppearance_DeviceDefault_Light_Large:I = #style@TextAppearance.DeviceDefault.Light.Large#t
 
-.field public static final TextAppearance_Holo_Widget_TextView_SpinnerItem:I = 0x103010d
+.field public static final TextAppearance_DeviceDefault_Light_Large_Inverse:I = #style@TextAppearance.DeviceDefault.Light.Large.Inverse#t
 
-.field public static final TextAppearance_Holo_WindowTitle:I = 0x1030116
+.field public static final TextAppearance_DeviceDefault_Light_Medium:I = #style@TextAppearance.DeviceDefault.Light.Medium#t
 
-.field public static final TextAppearance_Inverse:I = 0x103003f
+.field public static final TextAppearance_DeviceDefault_Light_Medium_Inverse:I = #style@TextAppearance.DeviceDefault.Light.Medium.Inverse#t
 
-.field public static final TextAppearance_Large:I = 0x1030042
+.field public static final TextAppearance_DeviceDefault_Light_SearchResult_Subtitle:I = #style@TextAppearance.DeviceDefault.Light.SearchResult.Subtitle#t
 
-.field public static final TextAppearance_Large_Inverse:I = 0x1030043
+.field public static final TextAppearance_DeviceDefault_Light_SearchResult_Title:I = #style@TextAppearance.DeviceDefault.Light.SearchResult.Title#t
 
-.field public static final TextAppearance_Medium:I = 0x1030044
+.field public static final TextAppearance_DeviceDefault_Light_Small:I = #style@TextAppearance.DeviceDefault.Light.Small#t
 
-.field public static final TextAppearance_Medium_Inverse:I = 0x1030045
+.field public static final TextAppearance_DeviceDefault_Light_Small_Inverse:I = #style@TextAppearance.DeviceDefault.Light.Small.Inverse#t
 
-.field public static final TextAppearance_NumPadKey:I = 0x10302a4
+.field public static final TextAppearance_DeviceDefault_Light_Widget_Button:I = #style@TextAppearance.DeviceDefault.Light.Widget.Button#t
 
-.field public static final TextAppearance_NumPadKey_Klondike:I = 0x10302a5
+.field public static final TextAppearance_DeviceDefault_Light_Widget_PopupMenu_Large:I = #style@TextAppearance.DeviceDefault.Light.Widget.PopupMenu.Large#t
 
-.field public static final TextAppearance_SearchResult_Subtitle:I = 0x1030064
+.field public static final TextAppearance_DeviceDefault_Light_Widget_PopupMenu_Small:I = #style@TextAppearance.DeviceDefault.Light.Widget.PopupMenu.Small#t
 
-.field public static final TextAppearance_SearchResult_Title:I = 0x1030063
+.field public static final TextAppearance_DeviceDefault_Medium:I = #style@TextAppearance.DeviceDefault.Medium#t
 
-.field public static final TextAppearance_SlidingTabActive:I = 0x1030217
+.field public static final TextAppearance_DeviceDefault_Medium_Inverse:I = #style@TextAppearance.DeviceDefault.Medium.Inverse#t
 
-.field public static final TextAppearance_SlidingTabNormal:I = 0x1030216
+.field public static final TextAppearance_DeviceDefault_SearchResult_Subtitle:I = #style@TextAppearance.DeviceDefault.SearchResult.Subtitle#t
 
-.field public static final TextAppearance_Small:I = 0x1030046
+.field public static final TextAppearance_DeviceDefault_SearchResult_Title:I = #style@TextAppearance.DeviceDefault.SearchResult.Title#t
 
-.field public static final TextAppearance_Small_Inverse:I = 0x1030047
+.field public static final TextAppearance_DeviceDefault_Small:I = #style@TextAppearance.DeviceDefault.Small#t
 
-.field public static final TextAppearance_StatusBar_EventContent:I = 0x1030067
+.field public static final TextAppearance_DeviceDefault_Small_Inverse:I = #style@TextAppearance.DeviceDefault.Small.Inverse#t
 
-.field public static final TextAppearance_StatusBar_EventContent_Title:I = 0x1030068
+.field public static final TextAppearance_DeviceDefault_Widget:I = #style@TextAppearance.DeviceDefault.Widget#t
 
-.field public static final TextAppearance_StatusBar_Icon:I = 0x1030066
+.field public static final TextAppearance_DeviceDefault_Widget_ActionBar_Menu:I = #style@TextAppearance.DeviceDefault.Widget.ActionBar.Menu#t
 
-.field public static final TextAppearance_StatusBar_Title:I = 0x1030065
+.field public static final TextAppearance_DeviceDefault_Widget_ActionBar_Subtitle:I = #style@TextAppearance.DeviceDefault.Widget.ActionBar.Subtitle#t
 
-.field public static final TextAppearance_SuggestionHighlight:I = 0x1030118
+.field public static final TextAppearance_DeviceDefault_Widget_ActionBar_Subtitle_Inverse:I = #style@TextAppearance.DeviceDefault.Widget.ActionBar.Subtitle.Inverse#t
 
-.field public static final TextAppearance_Theme:I = 0x1030040
+.field public static final TextAppearance_DeviceDefault_Widget_ActionBar_Title:I = #style@TextAppearance.DeviceDefault.Widget.ActionBar.Title#t
 
-.field public static final TextAppearance_Theme_Dialog:I = 0x1030048
+.field public static final TextAppearance_DeviceDefault_Widget_ActionBar_Title_Inverse:I = #style@TextAppearance.DeviceDefault.Widget.ActionBar.Title.Inverse#t
 
-.field public static final TextAppearance_Widget:I = 0x1030049
+.field public static final TextAppearance_DeviceDefault_Widget_ActionMode_Subtitle:I = #style@TextAppearance.DeviceDefault.Widget.ActionMode.Subtitle#t
 
-.field public static final TextAppearance_Widget_Button:I = 0x103004a
+.field public static final TextAppearance_DeviceDefault_Widget_ActionMode_Subtitle_Inverse:I = #style@TextAppearance.DeviceDefault.Widget.ActionMode.Subtitle.Inverse#t
 
-.field public static final TextAppearance_Widget_DropDownHint:I = 0x1030050
+.field public static final TextAppearance_DeviceDefault_Widget_ActionMode_Title:I = #style@TextAppearance.DeviceDefault.Widget.ActionMode.Title#t
 
-.field public static final TextAppearance_Widget_DropDownItem:I = 0x1030051
+.field public static final TextAppearance_DeviceDefault_Widget_ActionMode_Title_Inverse:I = #style@TextAppearance.DeviceDefault.Widget.ActionMode.Title.Inverse#t
 
-.field public static final TextAppearance_Widget_EditText:I = 0x103004c
+.field public static final TextAppearance_DeviceDefault_Widget_Button:I = #style@TextAppearance.DeviceDefault.Widget.Button#t
 
-.field public static final TextAppearance_Widget_IconMenu_Item:I = 0x103004b
+.field public static final TextAppearance_DeviceDefault_Widget_DropDownHint:I = #style@TextAppearance.DeviceDefault.Widget.DropDownHint#t
 
-.field public static final TextAppearance_Widget_PopupMenu_Large:I = 0x1030080
+.field public static final TextAppearance_DeviceDefault_Widget_DropDownItem:I = #style@TextAppearance.DeviceDefault.Widget.DropDownItem#t
 
-.field public static final TextAppearance_Widget_PopupMenu_Small:I = 0x1030081
+.field public static final TextAppearance_DeviceDefault_Widget_EditText:I = #style@TextAppearance.DeviceDefault.Widget.EditText#t
 
-.field public static final TextAppearance_Widget_TabWidget:I = 0x103004d
+.field public static final TextAppearance_DeviceDefault_Widget_IconMenu_Item:I = #style@TextAppearance.DeviceDefault.Widget.IconMenu.Item#t
 
-.field public static final TextAppearance_Widget_TextView:I = 0x103004e
+.field public static final TextAppearance_DeviceDefault_Widget_PopupMenu:I = #style@TextAppearance.DeviceDefault.Widget.PopupMenu#t
 
-.field public static final TextAppearance_Widget_TextView_PopupMenu:I = 0x103004f
+.field public static final TextAppearance_DeviceDefault_Widget_PopupMenu_Large:I = #style@TextAppearance.DeviceDefault.Widget.PopupMenu.Large#t
 
-.field public static final TextAppearance_Widget_TextView_SpinnerItem:I = 0x1030052
+.field public static final TextAppearance_DeviceDefault_Widget_PopupMenu_Small:I = #style@TextAppearance.DeviceDefault.Widget.PopupMenu.Small#t
 
-.field public static final TextAppearance_WindowTitle:I = 0x1030053
+.field public static final TextAppearance_DeviceDefault_Widget_TabWidget:I = #style@TextAppearance.DeviceDefault.Widget.TabWidget#t
 
-.field public static final Theme:I = 0x1030005
+.field public static final TextAppearance_DeviceDefault_Widget_TextView:I = #style@TextAppearance.DeviceDefault.Widget.TextView#t
 
-.field public static final Theme_Black:I = 0x1030008
+.field public static final TextAppearance_DeviceDefault_Widget_TextView_PopupMenu:I = #style@TextAppearance.DeviceDefault.Widget.TextView.PopupMenu#t
 
-.field public static final Theme_Black_NoTitleBar:I = 0x1030009
+.field public static final TextAppearance_DeviceDefault_Widget_TextView_SpinnerItem:I = #style@TextAppearance.DeviceDefault.Widget.TextView.SpinnerItem#t
 
-.field public static final Theme_Black_NoTitleBar_Fullscreen:I = 0x103000a
+.field public static final TextAppearance_DeviceDefault_WindowTitle:I = #style@TextAppearance.DeviceDefault.WindowTitle#t
 
-.field public static final Theme_DeviceDefault:I = 0x1030128
+.field public static final TextAppearance_DialogWindowTitle:I = #style@TextAppearance.DialogWindowTitle#t
 
-.field public static final Theme_DeviceDefault_Dialog:I = 0x103012e
+.field public static final TextAppearance_EasyCorrectSuggestion:I = #style@TextAppearance.EasyCorrectSuggestion#t
 
-.field public static final Theme_DeviceDefault_DialogWhenLarge:I = 0x1030136
+.field public static final TextAppearance_Holo:I = #style@TextAppearance.Holo#t
 
-.field public static final Theme_DeviceDefault_DialogWhenLarge_NoActionBar:I = 0x1030137
+.field public static final TextAppearance_Holo_CalendarViewWeekDayView:I = #style@TextAppearance.Holo.CalendarViewWeekDayView#t
 
-.field public static final Theme_DeviceDefault_Dialog_Alert:I = 0x103030e
+.field public static final TextAppearance_Holo_DialogWindowTitle:I = #style@TextAppearance.Holo.DialogWindowTitle#t
 
-.field public static final Theme_DeviceDefault_Dialog_MinWidth:I = 0x103012f
+.field public static final TextAppearance_Holo_Inverse:I = #style@TextAppearance.Holo.Inverse#t
 
-.field public static final Theme_DeviceDefault_Dialog_NoActionBar:I = 0x1030130
+.field public static final TextAppearance_Holo_Large:I = #style@TextAppearance.Holo.Large#t
 
-.field public static final Theme_DeviceDefault_Dialog_NoActionBar_MinWidth:I = 0x1030131
+.field public static final TextAppearance_Holo_Large_Inverse:I = #style@TextAppearance.Holo.Large.Inverse#t
 
-.field public static final Theme_DeviceDefault_Dialog_NoFrame:I = 0x1030312
+.field public static final TextAppearance_Holo_Light:I = #style@TextAppearance.Holo.Light#t
 
-.field public static final Theme_DeviceDefault_InputMethod:I = 0x103013e
+.field public static final TextAppearance_Holo_Light_CalendarViewWeekDayView:I = #style@TextAppearance.Holo.Light.CalendarViewWeekDayView#t
 
-.field public static final Theme_DeviceDefault_Light:I = 0x103012b
+.field public static final TextAppearance_Holo_Light_DialogWindowTitle:I = #style@TextAppearance.Holo.Light.DialogWindowTitle#t
 
-.field public static final Theme_DeviceDefault_Light_DarkActionBar:I = 0x103013f
+.field public static final TextAppearance_Holo_Light_Inverse:I = #style@TextAppearance.Holo.Light.Inverse#t
 
-.field public static final Theme_DeviceDefault_Light_Dialog:I = 0x1030132
+.field public static final TextAppearance_Holo_Light_Large:I = #style@TextAppearance.Holo.Light.Large#t
 
-.field public static final Theme_DeviceDefault_Light_DialogWhenLarge:I = 0x1030138
+.field public static final TextAppearance_Holo_Light_Large_Inverse:I = #style@TextAppearance.Holo.Light.Large.Inverse#t
 
-.field public static final Theme_DeviceDefault_Light_DialogWhenLarge_NoActionBar:I = 0x1030139
+.field public static final TextAppearance_Holo_Light_Medium:I = #style@TextAppearance.Holo.Light.Medium#t
 
-.field public static final Theme_DeviceDefault_Light_Dialog_Alert:I = 0x103030f
+.field public static final TextAppearance_Holo_Light_Medium_Inverse:I = #style@TextAppearance.Holo.Light.Medium.Inverse#t
 
-.field public static final Theme_DeviceDefault_Light_Dialog_MinWidth:I = 0x1030133
+.field public static final TextAppearance_Holo_Light_SearchResult:I = #style@TextAppearance.Holo.Light.SearchResult#t
 
-.field public static final Theme_DeviceDefault_Light_Dialog_NoActionBar:I = 0x1030134
+.field public static final TextAppearance_Holo_Light_SearchResult_Subtitle:I = #style@TextAppearance.Holo.Light.SearchResult.Subtitle#t
 
-.field public static final Theme_DeviceDefault_Light_Dialog_NoActionBar_MinWidth:I = 0x1030135
+.field public static final TextAppearance_Holo_Light_SearchResult_Title:I = #style@TextAppearance.Holo.Light.SearchResult.Title#t
 
-.field public static final Theme_DeviceDefault_Light_NoActionBar:I = 0x103012c
+.field public static final TextAppearance_Holo_Light_Small:I = #style@TextAppearance.Holo.Light.Small#t
 
-.field public static final Theme_DeviceDefault_Light_NoActionBar_Fullscreen:I = 0x103012d
+.field public static final TextAppearance_Holo_Light_Small_Inverse:I = #style@TextAppearance.Holo.Light.Small.Inverse#t
 
-.field public static final Theme_DeviceDefault_Light_Panel:I = 0x103013b
+.field public static final TextAppearance_Holo_Light_Widget:I = #style@TextAppearance.Holo.Light.Widget#t
 
-.field public static final Theme_DeviceDefault_NoActionBar:I = 0x1030129
+.field public static final TextAppearance_Holo_Light_Widget_ActionMode_Subtitle:I = #style@TextAppearance.Holo.Light.Widget.ActionMode.Subtitle#t
 
-.field public static final Theme_DeviceDefault_NoActionBar_Fullscreen:I = 0x103012a
+.field public static final TextAppearance_Holo_Light_Widget_ActionMode_Title:I = #style@TextAppearance.Holo.Light.Widget.ActionMode.Title#t
 
-.field public static final Theme_DeviceDefault_Panel:I = 0x103013a
+.field public static final TextAppearance_Holo_Light_Widget_Button:I = #style@TextAppearance.Holo.Light.Widget.Button#t
 
-.field public static final Theme_DeviceDefault_Wallpaper:I = 0x103013c
+.field public static final TextAppearance_Holo_Light_Widget_DropDownHint:I = #style@TextAppearance.Holo.Light.Widget.DropDownHint#t
 
-.field public static final Theme_DeviceDefault_Wallpaper_NoTitleBar:I = 0x103013d
+.field public static final TextAppearance_Holo_Light_Widget_EditText:I = #style@TextAppearance.Holo.Light.Widget.EditText#t
 
-.field public static final Theme_Dialog:I = 0x103000b
+.field public static final TextAppearance_Holo_Light_Widget_PopupMenu:I = #style@TextAppearance.Holo.Light.Widget.PopupMenu#t
 
-.field public static final Theme_Dialog_Alert:I = 0x10302f2
+.field public static final TextAppearance_Holo_Light_Widget_PopupMenu_Large:I = #style@TextAppearance.Holo.Light.Widget.PopupMenu.Large#t
 
-.field public static final Theme_Dialog_AppError:I = 0x10302fb
+.field public static final TextAppearance_Holo_Light_Widget_PopupMenu_Small:I = #style@TextAppearance.Holo.Light.Widget.PopupMenu.Small#t
 
-.field public static final Theme_Dialog_RecentApplications:I = 0x10302fc
+.field public static final TextAppearance_Holo_Light_WindowTitle:I = #style@TextAppearance.Holo.Light.WindowTitle#t
 
-.field public static final Theme_ExpandedMenu:I = 0x10302f8
+.field public static final TextAppearance_Holo_Medium:I = #style@TextAppearance.Holo.Medium#t
 
-.field public static final Theme_Holo:I = 0x103006b
+.field public static final TextAppearance_Holo_Medium_Inverse:I = #style@TextAppearance.Holo.Medium.Inverse#t
 
-.field public static final Theme_Holo_Dialog:I = 0x103006f
+.field public static final TextAppearance_Holo_SearchResult:I = #style@TextAppearance.Holo.SearchResult#t
 
-.field public static final Theme_Holo_DialogWhenLarge:I = 0x1030077
+.field public static final TextAppearance_Holo_SearchResult_Subtitle:I = #style@TextAppearance.Holo.SearchResult.Subtitle#t
 
-.field public static final Theme_Holo_DialogWhenLarge_NoActionBar:I = 0x1030078
+.field public static final TextAppearance_Holo_SearchResult_Title:I = #style@TextAppearance.Holo.SearchResult.Title#t
 
-.field public static final Theme_Holo_Dialog_Alert:I = 0x1030302
+.field public static final TextAppearance_Holo_Small:I = #style@TextAppearance.Holo.Small#t
 
-.field public static final Theme_Holo_Dialog_MinWidth:I = 0x1030070
+.field public static final TextAppearance_Holo_Small_Inverse:I = #style@TextAppearance.Holo.Small.Inverse#t
 
-.field public static final Theme_Holo_Dialog_NoActionBar:I = 0x1030071
+.field public static final TextAppearance_Holo_Widget:I = #style@TextAppearance.Holo.Widget#t
 
-.field public static final Theme_Holo_Dialog_NoActionBar_MinWidth:I = 0x1030072
+.field public static final TextAppearance_Holo_Widget_ActionBar_Menu:I = #style@TextAppearance.Holo.Widget.ActionBar.Menu#t
 
-.field public static final Theme_Holo_InputMethod:I = 0x103007f
+.field public static final TextAppearance_Holo_Widget_ActionBar_Subtitle:I = #style@TextAppearance.Holo.Widget.ActionBar.Subtitle#t
 
-.field public static final Theme_Holo_Light:I = 0x103006e
+.field public static final TextAppearance_Holo_Widget_ActionBar_Subtitle_Inverse:I = #style@TextAppearance.Holo.Widget.ActionBar.Subtitle.Inverse#t
 
-.field public static final Theme_Holo_Light_DarkActionBar:I = 0x1030119
+.field public static final TextAppearance_Holo_Widget_ActionBar_Title:I = #style@TextAppearance.Holo.Widget.ActionBar.Title#t
 
-.field public static final Theme_Holo_Light_Dialog:I = 0x1030073
+.field public static final TextAppearance_Holo_Widget_ActionBar_Title_Inverse:I = #style@TextAppearance.Holo.Widget.ActionBar.Title.Inverse#t
 
-.field public static final Theme_Holo_Light_DialogWhenLarge:I = 0x1030079
+.field public static final TextAppearance_Holo_Widget_ActionMode:I = #style@TextAppearance.Holo.Widget.ActionMode#t
 
-.field public static final Theme_Holo_Light_DialogWhenLarge_NoActionBar:I = 0x103007a
+.field public static final TextAppearance_Holo_Widget_ActionMode_Subtitle:I = #style@TextAppearance.Holo.Widget.ActionMode.Subtitle#t
 
-.field public static final Theme_Holo_Light_Dialog_Alert:I = 0x1030306
+.field public static final TextAppearance_Holo_Widget_ActionMode_Subtitle_Inverse:I = #style@TextAppearance.Holo.Widget.ActionMode.Subtitle.Inverse#t
 
-.field public static final Theme_Holo_Light_Dialog_MinWidth:I = 0x1030074
+.field public static final TextAppearance_Holo_Widget_ActionMode_Title:I = #style@TextAppearance.Holo.Widget.ActionMode.Title#t
 
-.field public static final Theme_Holo_Light_Dialog_NoActionBar:I = 0x1030075
+.field public static final TextAppearance_Holo_Widget_ActionMode_Title_Inverse:I = #style@TextAppearance.Holo.Widget.ActionMode.Title.Inverse#t
 
-.field public static final Theme_Holo_Light_Dialog_NoActionBar_MinWidth:I = 0x1030076
+.field public static final TextAppearance_Holo_Widget_Button:I = #style@TextAppearance.Holo.Widget.Button#t
 
-.field public static final Theme_Holo_Light_NoActionBar:I = 0x10300f0
+.field public static final TextAppearance_Holo_Widget_DropDownHint:I = #style@TextAppearance.Holo.Widget.DropDownHint#t
 
-.field public static final Theme_Holo_Light_NoActionBar_Fullscreen:I = 0x10300f1
+.field public static final TextAppearance_Holo_Widget_DropDownItem:I = #style@TextAppearance.Holo.Widget.DropDownItem#t
 
-.field public static final Theme_Holo_Light_Panel:I = 0x103007c
+.field public static final TextAppearance_Holo_Widget_EditText:I = #style@TextAppearance.Holo.Widget.EditText#t
 
-.field public static final Theme_Holo_NoActionBar:I = 0x103006c
+.field public static final TextAppearance_Holo_Widget_IconMenu_Item:I = #style@TextAppearance.Holo.Widget.IconMenu.Item#t
 
-.field public static final Theme_Holo_NoActionBar_Fullscreen:I = 0x103006d
+.field public static final TextAppearance_Holo_Widget_PopupMenu:I = #style@TextAppearance.Holo.Widget.PopupMenu#t
 
-.field public static final Theme_Holo_Panel:I = 0x103007b
+.field public static final TextAppearance_Holo_Widget_PopupMenu_Large:I = #style@TextAppearance.Holo.Widget.PopupMenu.Large#t
 
-.field public static final Theme_Holo_Wallpaper:I = 0x103007d
+.field public static final TextAppearance_Holo_Widget_PopupMenu_Small:I = #style@TextAppearance.Holo.Widget.PopupMenu.Small#t
 
-.field public static final Theme_Holo_Wallpaper_NoTitleBar:I = 0x103007e
+.field public static final TextAppearance_Holo_Widget_Switch:I = #style@TextAppearance.Holo.Widget.Switch#t
 
-.field public static final Theme_IconMenu:I = 0x10302f7
+.field public static final TextAppearance_Holo_Widget_TabWidget:I = #style@TextAppearance.Holo.Widget.TabWidget#t
 
-.field public static final Theme_InputMethod:I = 0x1030054
+.field public static final TextAppearance_Holo_Widget_TextView:I = #style@TextAppearance.Holo.Widget.TextView#t
 
-.field public static final Theme_Light:I = 0x103000c
+.field public static final TextAppearance_Holo_Widget_TextView_PopupMenu:I = #style@TextAppearance.Holo.Widget.TextView.PopupMenu#t
 
-.field public static final Theme_Light_NoTitleBar:I = 0x103000d
+.field public static final TextAppearance_Holo_Widget_TextView_SpinnerItem:I = #style@TextAppearance.Holo.Widget.TextView.SpinnerItem#t
 
-.field public static final Theme_Light_NoTitleBar_Fullscreen:I = 0x103000e
+.field public static final TextAppearance_Holo_WindowTitle:I = #style@TextAppearance.Holo.WindowTitle#t
 
-.field public static final Theme_Light_Panel:I = 0x103005a
+.field public static final TextAppearance_Inverse:I = #style@TextAppearance.Inverse#t
 
-.field public static final Theme_Light_WallpaperSettings:I = 0x1030062
+.field public static final TextAppearance_Large:I = #style@TextAppearance.Large#t
 
-.field public static final Theme_NoDisplay:I = 0x1030055
+.field public static final TextAppearance_Large_Inverse:I = #style@TextAppearance.Large.Inverse#t
 
-.field public static final Theme_NoTitleBar:I = 0x1030006
+.field public static final TextAppearance_Large_Inverse_NumberPickerInputText:I = #style@TextAppearance.Large.Inverse.NumberPickerInputText#t
 
-.field public static final Theme_NoTitleBar_Fullscreen:I = 0x1030007
+.field public static final TextAppearance_Medium:I = #style@TextAppearance.Medium#t
 
-.field public static final Theme_NoTitleBar_OverlayActionModes:I = 0x103006a
+.field public static final TextAppearance_Medium_Inverse:I = #style@TextAppearance.Medium.Inverse#t
 
-.field public static final Theme_Panel:I = 0x1030059
+.field public static final TextAppearance_MisspelledSuggestion:I = #style@TextAppearance.MisspelledSuggestion#t
 
-.field public static final Theme_Panel_Volume:I = 0x10302fe
+.field public static final TextAppearance_SearchResult:I = #style@TextAppearance.SearchResult#t
 
-.field public static final Theme_Toast:I = 0x10302fd
+.field public static final TextAppearance_SearchResult_Subtitle:I = #style@TextAppearance.SearchResult.Subtitle#t
 
-.field public static final Theme_Translucent:I = 0x103000f
+.field public static final TextAppearance_SearchResult_Title:I = #style@TextAppearance.SearchResult.Title#t
 
-.field public static final Theme_Translucent_NoTitleBar:I = 0x1030010
+.field public static final TextAppearance_SlidingTabActive:I = #style@TextAppearance.SlidingTabActive#t
 
-.field public static final Theme_Translucent_NoTitleBar_Fullscreen:I = 0x1030011
+.field public static final TextAppearance_SlidingTabNormal:I = #style@TextAppearance.SlidingTabNormal#t
 
-.field public static final Theme_Wallpaper:I = 0x103005e
+.field public static final TextAppearance_Small:I = #style@TextAppearance.Small#t
 
-.field public static final Theme_WallpaperSettings:I = 0x1030061
+.field public static final TextAppearance_Small_CalendarViewWeekDayView:I = #style@TextAppearance.Small.CalendarViewWeekDayView#t
 
-.field public static final Theme_Wallpaper_NoTitleBar:I = 0x103005f
+.field public static final TextAppearance_Small_Inverse:I = #style@TextAppearance.Small.Inverse#t
 
-.field public static final Theme_Wallpaper_NoTitleBar_Fullscreen:I = 0x1030060
+.field public static final TextAppearance_StatusBar:I = #style@TextAppearance.StatusBar#t
 
-.field public static final Theme_WithActionBar:I = 0x1030069
+.field public static final TextAppearance_StatusBar_EventContent:I = #style@TextAppearance.StatusBar.EventContent#t
 
-.field public static final Widget:I = 0x1030012
+.field public static final TextAppearance_StatusBar_EventContent_Info:I = #style@TextAppearance.StatusBar.EventContent.Info#t
 
-.field public static final Widget_AbsListView:I = 0x1030013
+.field public static final TextAppearance_StatusBar_EventContent_Line2:I = #style@TextAppearance.StatusBar.EventContent.Line2#t
 
-.field public static final Widget_ActionBar:I = 0x1030082
+.field public static final TextAppearance_StatusBar_EventContent_Time:I = #style@TextAppearance.StatusBar.EventContent.Time#t
 
-.field public static final Widget_ActionBar_TabBar:I = 0x10300f4
+.field public static final TextAppearance_StatusBar_EventContent_Title:I = #style@TextAppearance.StatusBar.EventContent.Title#t
 
-.field public static final Widget_ActionBar_TabText:I = 0x10300f3
+.field public static final TextAppearance_StatusBar_Icon:I = #style@TextAppearance.StatusBar.Icon#t
 
-.field public static final Widget_ActionBar_TabView:I = 0x10300f2
+.field public static final TextAppearance_StatusBar_Ticker:I = #style@TextAppearance.StatusBar.Ticker#t
 
-.field public static final Widget_ActionButton:I = 0x1030084
+.field public static final TextAppearance_StatusBar_Title:I = #style@TextAppearance.StatusBar.Title#t
 
-.field public static final Widget_ActionButton_CloseMode:I = 0x1030088
+.field public static final TextAppearance_Suggestion:I = #style@TextAppearance.Suggestion#t
 
-.field public static final Widget_ActionButton_Overflow:I = 0x1030087
+.field public static final TextAppearance_SuggestionHighlight:I = #style@TextAppearance.SuggestionHighlight#t
 
-.field public static final Widget_AutoCompleteTextView:I = 0x1030027
+.field public static final TextAppearance_Theme:I = #style@TextAppearance.Theme#t
 
-.field public static final Widget_Button:I = 0x1030014
+.field public static final TextAppearance_Theme_Dialog:I = #style@TextAppearance.Theme.Dialog#t
 
-.field public static final Widget_Button_Inset:I = 0x1030015
+.field public static final TextAppearance_Theme_Dialog_AppError:I = #style@TextAppearance.Theme.Dialog.AppError#t
 
-.field public static final Widget_Button_NumPadKey:I = 0x10302a3
+.field public static final TextAppearance_Widget:I = #style@TextAppearance.Widget#t
 
-.field public static final Widget_Button_Small:I = 0x1030016
+.field public static final TextAppearance_Widget_ActionBar_Subtitle:I = #style@TextAppearance.Widget.ActionBar.Subtitle#t
 
-.field public static final Widget_Button_Toggle:I = 0x1030017
+.field public static final TextAppearance_Widget_ActionBar_Title:I = #style@TextAppearance.Widget.ActionBar.Title#t
 
-.field public static final Widget_CalendarView:I = 0x10300eb
+.field public static final TextAppearance_Widget_ActionMode_Subtitle:I = #style@TextAppearance.Widget.ActionMode.Subtitle#t
 
-.field public static final Widget_CompoundButton:I = 0x1030018
+.field public static final TextAppearance_Widget_ActionMode_Title:I = #style@TextAppearance.Widget.ActionMode.Title#t
 
-.field public static final Widget_CompoundButton_CheckBox:I = 0x1030019
+.field public static final TextAppearance_Widget_Button:I = #style@TextAppearance.Widget.Button#t
 
-.field public static final Widget_CompoundButton_RadioButton:I = 0x103001a
+.field public static final TextAppearance_Widget_DropDownHint:I = #style@TextAppearance.Widget.DropDownHint#t
 
-.field public static final Widget_CompoundButton_Star:I = 0x103001b
+.field public static final TextAppearance_Widget_DropDownItem:I = #style@TextAppearance.Widget.DropDownItem#t
 
-.field public static final Widget_DatePicker:I = 0x10300ee
+.field public static final TextAppearance_Widget_EditText:I = #style@TextAppearance.Widget.EditText#t
 
-.field public static final Widget_DeviceDefault:I = 0x1030140
+.field public static final TextAppearance_Widget_IconMenu_Item:I = #style@TextAppearance.Widget.IconMenu.Item#t
 
-.field public static final Widget_DeviceDefault_ActionBar:I = 0x103016b
+.field public static final TextAppearance_Widget_PopupMenu:I = #style@TextAppearance.Widget.PopupMenu#t
 
-.field public static final Widget_DeviceDefault_ActionBar_Solid:I = 0x1030173
+.field public static final TextAppearance_Widget_PopupMenu_Large:I = #style@TextAppearance.Widget.PopupMenu.Large#t
 
-.field public static final Widget_DeviceDefault_ActionBar_TabBar:I = 0x1030172
+.field public static final TextAppearance_Widget_PopupMenu_Small:I = #style@TextAppearance.Widget.PopupMenu.Small#t
 
-.field public static final Widget_DeviceDefault_ActionBar_TabText:I = 0x1030171
+.field public static final TextAppearance_Widget_TabWidget:I = #style@TextAppearance.Widget.TabWidget#t
 
-.field public static final Widget_DeviceDefault_ActionBar_TabView:I = 0x1030170
+.field public static final TextAppearance_Widget_TextView:I = #style@TextAppearance.Widget.TextView#t
 
-.field public static final Widget_DeviceDefault_ActionButton:I = 0x1030166
+.field public static final TextAppearance_Widget_TextView_PopupMenu:I = #style@TextAppearance.Widget.TextView.PopupMenu#t
 
-.field public static final Widget_DeviceDefault_ActionButton_CloseMode:I = 0x103016a
+.field public static final TextAppearance_Widget_TextView_SpinnerItem:I = #style@TextAppearance.Widget.TextView.SpinnerItem#t
 
-.field public static final Widget_DeviceDefault_ActionButton_Overflow:I = 0x1030167
+.field public static final TextAppearance_WindowTitle:I = #style@TextAppearance.WindowTitle#t
 
-.field public static final Widget_DeviceDefault_ActionButton_TextButton:I = 0x1030168
+.field public static final Theme:I = #style@Theme#t
 
-.field public static final Widget_DeviceDefault_ActionMode:I = 0x1030169
+.field public static final Theme_Black:I = #style@Theme.Black#t
 
-.field public static final Widget_DeviceDefault_AutoCompleteTextView:I = 0x1030147
+.field public static final Theme_Black_NoTitleBar:I = #style@Theme.Black.NoTitleBar#t
 
-.field public static final Widget_DeviceDefault_Button:I = 0x1030141
+.field public static final Theme_Black_NoTitleBar_Fullscreen:I = #style@Theme.Black.NoTitleBar.Fullscreen#t
 
-.field public static final Widget_DeviceDefault_Button_Borderless:I = 0x103016c
+.field public static final Theme_DeviceDefault:I = #style@Theme.DeviceDefault#t
 
-.field public static final Widget_DeviceDefault_Button_Borderless_Small:I = 0x1030145
+.field public static final Theme_DeviceDefault_Dialog:I = #style@Theme.DeviceDefault.Dialog#t
 
-.field public static final Widget_DeviceDefault_Button_Inset:I = 0x1030143
+.field public static final Theme_DeviceDefault_DialogWhenLarge:I = #style@Theme.DeviceDefault.DialogWhenLarge#t
 
-.field public static final Widget_DeviceDefault_Button_Small:I = 0x1030142
+.field public static final Theme_DeviceDefault_DialogWhenLarge_NoActionBar:I = #style@Theme.DeviceDefault.DialogWhenLarge.NoActionBar#t
 
-.field public static final Widget_DeviceDefault_Button_Toggle:I = 0x1030144
+.field public static final Theme_DeviceDefault_Dialog_Alert:I = #style@Theme.DeviceDefault.Dialog.Alert#t
 
-.field public static final Widget_DeviceDefault_CalendarView:I = 0x103016e
+.field public static final Theme_DeviceDefault_Dialog_MinWidth:I = #style@Theme.DeviceDefault.Dialog.MinWidth#t
 
-.field public static final Widget_DeviceDefault_CheckedTextView:I = 0x10301db
+.field public static final Theme_DeviceDefault_Dialog_NoActionBar:I = #style@Theme.DeviceDefault.Dialog.NoActionBar#t
 
-.field public static final Widget_DeviceDefault_CompoundButton_CheckBox:I = 0x1030148
+.field public static final Theme_DeviceDefault_Dialog_NoActionBar_MinWidth:I = #style@Theme.DeviceDefault.Dialog.NoActionBar.MinWidth#t
 
-.field public static final Widget_DeviceDefault_CompoundButton_RadioButton:I = 0x1030159
+.field public static final Theme_DeviceDefault_Dialog_NoFrame:I = #style@Theme.DeviceDefault.Dialog.NoFrame#t
 
-.field public static final Widget_DeviceDefault_CompoundButton_Star:I = 0x103015d
+.field public static final Theme_DeviceDefault_InputMethod:I = #style@Theme.DeviceDefault.InputMethod#t
 
-.field public static final Widget_DeviceDefault_DatePicker:I = 0x103016f
+.field public static final Theme_DeviceDefault_Light:I = #style@Theme.DeviceDefault.Light#t
 
-.field public static final Widget_DeviceDefault_DropDownItem:I = 0x1030161
+.field public static final Theme_DeviceDefault_Light_DarkActionBar:I = #style@Theme.DeviceDefault.Light.DarkActionBar#t
 
-.field public static final Widget_DeviceDefault_DropDownItem_Spinner:I = 0x1030162
+.field public static final Theme_DeviceDefault_Light_Dialog:I = #style@Theme.DeviceDefault.Light.Dialog#t
 
-.field public static final Widget_DeviceDefault_EditText:I = 0x103014a
+.field public static final Theme_DeviceDefault_Light_DialogWhenLarge:I = #style@Theme.DeviceDefault.Light.DialogWhenLarge#t
 
-.field public static final Widget_DeviceDefault_ExpandableListView:I = 0x103014b
+.field public static final Theme_DeviceDefault_Light_DialogWhenLarge_NoActionBar:I = #style@Theme.DeviceDefault.Light.DialogWhenLarge.NoActionBar#t
 
-.field public static final Widget_DeviceDefault_GridView:I = 0x103014c
+.field public static final Theme_DeviceDefault_Light_Dialog_Alert:I = #style@Theme.DeviceDefault.Light.Dialog.Alert#t
 
-.field public static final Widget_DeviceDefault_HorizontalScrollView:I = 0x103015b
+.field public static final Theme_DeviceDefault_Light_Dialog_MinWidth:I = #style@Theme.DeviceDefault.Light.Dialog.MinWidth#t
 
-.field public static final Widget_DeviceDefault_ImageButton:I = 0x103014d
+.field public static final Theme_DeviceDefault_Light_Dialog_NoActionBar:I = #style@Theme.DeviceDefault.Light.Dialog.NoActionBar#t
 
-.field public static final Widget_DeviceDefault_Light:I = 0x1030174
+.field public static final Theme_DeviceDefault_Light_Dialog_NoActionBar_MinWidth:I = #style@Theme.DeviceDefault.Light.Dialog.NoActionBar.MinWidth#t
 
-.field public static final Widget_DeviceDefault_Light_ActionBar:I = 0x10301a3
+.field public static final Theme_DeviceDefault_Light_NoActionBar:I = #style@Theme.DeviceDefault.Light.NoActionBar#t
 
-.field public static final Widget_DeviceDefault_Light_ActionBar_Solid:I = 0x10301a7
+.field public static final Theme_DeviceDefault_Light_NoActionBar_Fullscreen:I = #style@Theme.DeviceDefault.Light.NoActionBar.Fullscreen#t
 
-.field public static final Widget_DeviceDefault_Light_ActionBar_Solid_Inverse:I = 0x10301a8
+.field public static final Theme_DeviceDefault_Light_Panel:I = #style@Theme.DeviceDefault.Light.Panel#t
 
-.field public static final Widget_DeviceDefault_Light_ActionBar_TabBar:I = 0x10301a6
+.field public static final Theme_DeviceDefault_Light_SearchBar:I = #style@Theme.DeviceDefault.Light.SearchBar#t
 
-.field public static final Widget_DeviceDefault_Light_ActionBar_TabBar_Inverse:I = 0x10301a9
+.field public static final Theme_DeviceDefault_NoActionBar:I = #style@Theme.DeviceDefault.NoActionBar#t
 
-.field public static final Widget_DeviceDefault_Light_ActionBar_TabText:I = 0x10301a5
+.field public static final Theme_DeviceDefault_NoActionBar_Fullscreen:I = #style@Theme.DeviceDefault.NoActionBar.Fullscreen#t
 
-.field public static final Widget_DeviceDefault_Light_ActionBar_TabText_Inverse:I = 0x10301ab
+.field public static final Theme_DeviceDefault_Panel:I = #style@Theme.DeviceDefault.Panel#t
 
-.field public static final Widget_DeviceDefault_Light_ActionBar_TabView:I = 0x10301a4
+.field public static final Theme_DeviceDefault_SearchBar:I = #style@Theme.DeviceDefault.SearchBar#t
 
-.field public static final Widget_DeviceDefault_Light_ActionBar_TabView_Inverse:I = 0x10301aa
+.field public static final Theme_DeviceDefault_Wallpaper:I = #style@Theme.DeviceDefault.Wallpaper#t
 
-.field public static final Widget_DeviceDefault_Light_ActionButton:I = 0x103019f
+.field public static final Theme_DeviceDefault_Wallpaper_NoTitleBar:I = #style@Theme.DeviceDefault.Wallpaper.NoTitleBar#t
 
-.field public static final Widget_DeviceDefault_Light_ActionButton_CloseMode:I = 0x10301a2
+.field public static final Theme_Dialog:I = #style@Theme.Dialog#t
 
-.field public static final Widget_DeviceDefault_Light_ActionButton_Overflow:I = 0x10301a0
+.field public static final Theme_Dialog_Alert:I = #style@Theme.Dialog.Alert#t
 
-.field public static final Widget_DeviceDefault_Light_ActionMode:I = 0x10301a1
+.field public static final Theme_Dialog_AppError:I = #style@Theme.Dialog.AppError#t
 
-.field public static final Widget_DeviceDefault_Light_ActionMode_Inverse:I = 0x10301ac
+.field public static final Theme_Dialog_NoFrame:I = #style@Theme.Dialog.NoFrame#t
 
-.field public static final Widget_DeviceDefault_Light_AutoCompleteTextView:I = 0x103017b
+.field public static final Theme_Dialog_RecentApplications:I = #style@Theme.Dialog.RecentApplications#t
 
-.field public static final Widget_DeviceDefault_Light_Button:I = 0x1030175
+.field public static final Theme_ExpandedMenu:I = #style@Theme.ExpandedMenu#t
 
-.field public static final Widget_DeviceDefault_Light_Button_Borderless_Small:I = 0x1030179
+.field public static final Theme_GlobalSearchBar:I = #style@Theme.GlobalSearchBar#t
 
-.field public static final Widget_DeviceDefault_Light_Button_Inset:I = 0x1030177
+.field public static final Theme_Holo:I = #style@Theme.Holo#t
 
-.field public static final Widget_DeviceDefault_Light_Button_Small:I = 0x1030176
+.field public static final Theme_Holo_CompactMenu:I = #style@Theme.Holo.CompactMenu#t
 
-.field public static final Widget_DeviceDefault_Light_Button_Toggle:I = 0x1030178
+.field public static final Theme_Holo_Dialog:I = #style@Theme.Holo.Dialog#t
 
-.field public static final Widget_DeviceDefault_Light_CalendarView:I = 0x103019e
+.field public static final Theme_Holo_DialogWhenLarge:I = #style@Theme.Holo.DialogWhenLarge#t
 
-.field public static final Widget_DeviceDefault_Light_CheckedTextView:I = 0x10301dc
+.field public static final Theme_Holo_DialogWhenLarge_NoActionBar:I = #style@Theme.Holo.DialogWhenLarge.NoActionBar#t
 
-.field public static final Widget_DeviceDefault_Light_CompoundButton_CheckBox:I = 0x103017c
+.field public static final Theme_Holo_Dialog_Alert:I = #style@Theme.Holo.Dialog.Alert#t
 
-.field public static final Widget_DeviceDefault_Light_CompoundButton_RadioButton:I = 0x1030190
+.field public static final Theme_Holo_Dialog_MinWidth:I = #style@Theme.Holo.Dialog.MinWidth#t
 
-.field public static final Widget_DeviceDefault_Light_CompoundButton_Star:I = 0x1030194
+.field public static final Theme_Holo_Dialog_NoActionBar:I = #style@Theme.Holo.Dialog.NoActionBar#t
 
-.field public static final Widget_DeviceDefault_Light_DropDownItem:I = 0x1030198
+.field public static final Theme_Holo_Dialog_NoActionBar_MinWidth:I = #style@Theme.Holo.Dialog.NoActionBar.MinWidth#t
 
-.field public static final Widget_DeviceDefault_Light_DropDownItem_Spinner:I = 0x1030199
+.field public static final Theme_Holo_Dialog_NoFrame:I = #style@Theme.Holo.Dialog.NoFrame#t
 
-.field public static final Widget_DeviceDefault_Light_EditText:I = 0x103017e
+.field public static final Theme_Holo_InputMethod:I = #style@Theme.Holo.InputMethod#t
 
-.field public static final Widget_DeviceDefault_Light_ExpandableListView:I = 0x103017f
+.field public static final Theme_Holo_Light:I = #style@Theme.Holo.Light#t
 
-.field public static final Widget_DeviceDefault_Light_GridView:I = 0x1030180
+.field public static final Theme_Holo_Light_CompactMenu:I = #style@Theme.Holo.Light.CompactMenu#t
 
-.field public static final Widget_DeviceDefault_Light_HorizontalScrollView:I = 0x1030192
+.field public static final Theme_Holo_Light_DarkActionBar:I = #style@Theme.Holo.Light.DarkActionBar#t
 
-.field public static final Widget_DeviceDefault_Light_ImageButton:I = 0x1030181
+.field public static final Theme_Holo_Light_Dialog:I = #style@Theme.Holo.Light.Dialog#t
 
-.field public static final Widget_DeviceDefault_Light_ListPopupWindow:I = 0x103019b
+.field public static final Theme_Holo_Light_DialogWhenLarge:I = #style@Theme.Holo.Light.DialogWhenLarge#t
 
-.field public static final Widget_DeviceDefault_Light_ListView:I = 0x1030182
+.field public static final Theme_Holo_Light_DialogWhenLarge_NoActionBar:I = #style@Theme.Holo.Light.DialogWhenLarge.NoActionBar#t
 
-.field public static final Widget_DeviceDefault_Light_ListView_DropDown:I = 0x103017d
+.field public static final Theme_Holo_Light_Dialog_Alert:I = #style@Theme.Holo.Light.Dialog.Alert#t
 
-.field public static final Widget_DeviceDefault_Light_MediaRouteButton:I = 0x10301d8
+.field public static final Theme_Holo_Light_Dialog_MinWidth:I = #style@Theme.Holo.Light.Dialog.MinWidth#t
 
-.field public static final Widget_DeviceDefault_Light_PopupMenu:I = 0x103019c
+.field public static final Theme_Holo_Light_Dialog_NoActionBar:I = #style@Theme.Holo.Light.Dialog.NoActionBar#t
 
-.field public static final Widget_DeviceDefault_Light_PopupWindow:I = 0x1030183
+.field public static final Theme_Holo_Light_Dialog_NoActionBar_MinWidth:I = #style@Theme.Holo.Light.Dialog.NoActionBar.MinWidth#t
 
-.field public static final Widget_DeviceDefault_Light_ProgressBar:I = 0x1030184
+.field public static final Theme_Holo_Light_NoActionBar:I = #style@Theme.Holo.Light.NoActionBar#t
 
-.field public static final Widget_DeviceDefault_Light_ProgressBar_Horizontal:I = 0x1030185
+.field public static final Theme_Holo_Light_NoActionBar_Fullscreen:I = #style@Theme.Holo.Light.NoActionBar.Fullscreen#t
 
-.field public static final Widget_DeviceDefault_Light_ProgressBar_Inverse:I = 0x1030189
+.field public static final Theme_Holo_Light_Panel:I = #style@Theme.Holo.Light.Panel#t
 
-.field public static final Widget_DeviceDefault_Light_ProgressBar_Large:I = 0x1030188
+.field public static final Theme_Holo_Light_SearchBar:I = #style@Theme.Holo.Light.SearchBar#t
 
-.field public static final Widget_DeviceDefault_Light_ProgressBar_Large_Inverse:I = 0x103018b
+.field public static final Theme_Holo_NoActionBar:I = #style@Theme.Holo.NoActionBar#t
 
-.field public static final Widget_DeviceDefault_Light_ProgressBar_Small:I = 0x1030186
+.field public static final Theme_Holo_NoActionBar_Fullscreen:I = #style@Theme.Holo.NoActionBar.Fullscreen#t
 
-.field public static final Widget_DeviceDefault_Light_ProgressBar_Small_Inverse:I = 0x103018a
+.field public static final Theme_Holo_Panel:I = #style@Theme.Holo.Panel#t
 
-.field public static final Widget_DeviceDefault_Light_ProgressBar_Small_Title:I = 0x1030187
+.field public static final Theme_Holo_SearchBar:I = #style@Theme.Holo.SearchBar#t
 
-.field public static final Widget_DeviceDefault_Light_RatingBar:I = 0x103018d
+.field public static final Theme_Holo_Wallpaper:I = #style@Theme.Holo.Wallpaper#t
 
-.field public static final Widget_DeviceDefault_Light_RatingBar_Indicator:I = 0x103018e
+.field public static final Theme_Holo_Wallpaper_NoTitleBar:I = #style@Theme.Holo.Wallpaper.NoTitleBar#t
 
-.field public static final Widget_DeviceDefault_Light_RatingBar_Small:I = 0x103018f
+.field public static final Theme_IconMenu:I = #style@Theme.IconMenu#t
 
-.field public static final Widget_DeviceDefault_Light_ScrollView:I = 0x1030191
+.field public static final Theme_InputMethod:I = #style@Theme.InputMethod#t
 
-.field public static final Widget_DeviceDefault_Light_SeekBar:I = 0x103018c
+.field public static final Theme_Light:I = #style@Theme.Light#t
 
-.field public static final Widget_DeviceDefault_Light_Spinner:I = 0x1030193
+.field public static final Theme_Light_NoTitleBar:I = #style@Theme.Light.NoTitleBar#t
 
-.field public static final Widget_DeviceDefault_Light_Tab:I = 0x103019d
+.field public static final Theme_Light_NoTitleBar_Fullscreen:I = #style@Theme.Light.NoTitleBar.Fullscreen#t
 
-.field public static final Widget_DeviceDefault_Light_TabWidget:I = 0x1030195
+.field public static final Theme_Light_Panel:I = #style@Theme.Light.Panel#t
 
-.field public static final Widget_DeviceDefault_Light_TextView:I = 0x103017a
+.field public static final Theme_Light_WallpaperSettings:I = #style@Theme.Light.WallpaperSettings#t
 
-.field public static final Widget_DeviceDefault_Light_TextView_SpinnerItem:I = 0x103019a
+.field public static final Theme_NoDisplay:I = #style@Theme.NoDisplay#t
 
-.field public static final Widget_DeviceDefault_Light_WebTextView:I = 0x1030196
+.field public static final Theme_NoTitleBar:I = #style@Theme.NoTitleBar#t
 
-.field public static final Widget_DeviceDefault_Light_WebView:I = 0x1030197
+.field public static final Theme_NoTitleBar_Fullscreen:I = #style@Theme.NoTitleBar.Fullscreen#t
 
-.field public static final Widget_DeviceDefault_ListPopupWindow:I = 0x1030164
+.field public static final Theme_NoTitleBar_OverlayActionModes:I = #style@Theme.NoTitleBar.OverlayActionModes#t
 
-.field public static final Widget_DeviceDefault_ListView:I = 0x103014e
+.field public static final Theme_Panel:I = #style@Theme.Panel#t
 
-.field public static final Widget_DeviceDefault_ListView_DropDown:I = 0x1030149
+.field public static final Theme_Panel_Volume:I = #style@Theme.Panel.Volume#t
 
-.field public static final Widget_DeviceDefault_MediaRouteButton:I = 0x10301d7
+.field public static final Theme_SearchBar:I = #style@Theme.SearchBar#t
 
-.field public static final Widget_DeviceDefault_PopupMenu:I = 0x1030165
+.field public static final Theme_Toast:I = #style@Theme.Toast#t
 
-.field public static final Widget_DeviceDefault_PopupWindow:I = 0x103014f
+.field public static final Theme_Translucent:I = #style@Theme.Translucent#t
 
-.field public static final Widget_DeviceDefault_ProgressBar:I = 0x1030150
+.field public static final Theme_Translucent_NoTitleBar:I = #style@Theme.Translucent.NoTitleBar#t
 
-.field public static final Widget_DeviceDefault_ProgressBar_Horizontal:I = 0x1030151
+.field public static final Theme_Translucent_NoTitleBar_Fullscreen:I = #style@Theme.Translucent.NoTitleBar.Fullscreen#t
 
-.field public static final Widget_DeviceDefault_ProgressBar_Large:I = 0x1030154
+.field public static final Theme_Wallpaper:I = #style@Theme.Wallpaper#t
 
-.field public static final Widget_DeviceDefault_ProgressBar_Small:I = 0x1030152
+.field public static final Theme_WallpaperSettings:I = #style@Theme.WallpaperSettings#t
 
-.field public static final Widget_DeviceDefault_ProgressBar_Small_Title:I = 0x1030153
+.field public static final Theme_Wallpaper_NoTitleBar:I = #style@Theme.Wallpaper.NoTitleBar#t
 
-.field public static final Widget_DeviceDefault_RatingBar:I = 0x1030156
+.field public static final Theme_Wallpaper_NoTitleBar_Fullscreen:I = #style@Theme.Wallpaper.NoTitleBar.Fullscreen#t
 
-.field public static final Widget_DeviceDefault_RatingBar_Indicator:I = 0x1030157
+.field public static final Theme_WithActionBar:I = #style@Theme.WithActionBar#t
 
-.field public static final Widget_DeviceDefault_RatingBar_Small:I = 0x1030158
+.field public static final Widget:I = #style@Widget#t
 
-.field public static final Widget_DeviceDefault_ScrollView:I = 0x103015a
+.field public static final Widget_AbsListView:I = #style@Widget.AbsListView#t
 
-.field public static final Widget_DeviceDefault_SeekBar:I = 0x1030155
+.field public static final Widget_ActionBar:I = #style@Widget.ActionBar#t
 
-.field public static final Widget_DeviceDefault_Spinner:I = 0x103015c
+.field public static final Widget_ActionBar_TabBar:I = #style@Widget.ActionBar.TabBar#t
 
-.field public static final Widget_DeviceDefault_Tab:I = 0x103016d
+.field public static final Widget_ActionBar_TabText:I = #style@Widget.ActionBar.TabText#t
 
-.field public static final Widget_DeviceDefault_TabWidget:I = 0x103015e
+.field public static final Widget_ActionBar_TabView:I = #style@Widget.ActionBar.TabView#t
 
-.field public static final Widget_DeviceDefault_TextView:I = 0x1030146
+.field public static final Widget_ActionButton:I = #style@Widget.ActionButton#t
 
-.field public static final Widget_DeviceDefault_TextView_SpinnerItem:I = 0x1030163
+.field public static final Widget_ActionButton_CloseMode:I = #style@Widget.ActionButton.CloseMode#t
 
-.field public static final Widget_DeviceDefault_WebTextView:I = 0x103015f
+.field public static final Widget_ActionButton_Overflow:I = #style@Widget.ActionButton.Overflow#t
 
-.field public static final Widget_DeviceDefault_WebView:I = 0x1030160
+.field public static final Widget_ActionMode:I = #style@Widget.ActionMode#t
 
-.field public static final Widget_DropDownItem:I = 0x103002b
+.field public static final Widget_ActivityChooserView:I = #style@Widget.ActivityChooserView#t
 
-.field public static final Widget_DropDownItem_Spinner:I = 0x103002c
+.field public static final Widget_AutoCompleteTextView:I = #style@Widget.AutoCompleteTextView#t
 
-.field public static final Widget_EditText:I = 0x1030023
+.field public static final Widget_Button:I = #style@Widget.Button#t
 
-.field public static final Widget_ExpandableListView:I = 0x1030024
+.field public static final Widget_Button_Inset:I = #style@Widget.Button.Inset#t
 
-.field public static final Widget_FragmentBreadCrumbs:I = 0x1030089
+.field public static final Widget_Button_Small:I = #style@Widget.Button.Small#t
 
-.field public static final Widget_Gallery:I = 0x1030035
+.field public static final Widget_Button_Toggle:I = #style@Widget.Button.Toggle#t
 
-.field public static final Widget_GridView:I = 0x1030032
+.field public static final Widget_Button_Transparent:I = #style@Widget.Button.Transparent#t
 
-.field public static final Widget_Holo:I = 0x103008a
+.field public static final Widget_CalendarView:I = #style@Widget.CalendarView#t
 
-.field public static final Widget_Holo_ActionBar:I = 0x10300b4
+.field public static final Widget_CompoundButton:I = #style@Widget.CompoundButton#t
 
-.field public static final Widget_Holo_ActionBar_Solid:I = 0x1030121
+.field public static final Widget_CompoundButton_CheckBox:I = #style@Widget.CompoundButton.CheckBox#t
 
-.field public static final Widget_Holo_ActionBar_TabBar:I = 0x10300f7
+.field public static final Widget_CompoundButton_RadioButton:I = #style@Widget.CompoundButton.RadioButton#t
 
-.field public static final Widget_Holo_ActionBar_TabText:I = 0x10300f6
+.field public static final Widget_CompoundButton_Star:I = #style@Widget.CompoundButton.Star#t
 
-.field public static final Widget_Holo_ActionBar_TabView:I = 0x10300f5
+.field public static final Widget_CompoundButton_Switch:I = #style@Widget.CompoundButton.Switch#t
 
-.field public static final Widget_Holo_ActionButton:I = 0x10300af
+.field public static final Widget_DatePicker:I = #style@Widget.DatePicker#t
 
-.field public static final Widget_Holo_ActionButton_CloseMode:I = 0x10300b3
+.field public static final Widget_DeviceDefault:I = #style@Widget.DeviceDefault#t
 
-.field public static final Widget_Holo_ActionButton_Overflow:I = 0x10300b0
+.field public static final Widget_DeviceDefault_AbsListView:I = #style@Widget.DeviceDefault.AbsListView#t
 
-.field public static final Widget_Holo_ActionButton_TextButton:I = 0x10300b1
+.field public static final Widget_DeviceDefault_ActionBar:I = #style@Widget.DeviceDefault.ActionBar#t
 
-.field public static final Widget_Holo_ActionMode:I = 0x10300b2
+.field public static final Widget_DeviceDefault_ActionBar_Solid:I = #style@Widget.DeviceDefault.ActionBar.Solid#t
 
-.field public static final Widget_Holo_AutoCompleteTextView:I = 0x1030090
+.field public static final Widget_DeviceDefault_ActionBar_TabBar:I = #style@Widget.DeviceDefault.ActionBar.TabBar#t
 
-.field public static final Widget_Holo_Button:I = 0x103008b
+.field public static final Widget_DeviceDefault_ActionBar_TabText:I = #style@Widget.DeviceDefault.ActionBar.TabText#t
 
-.field public static final Widget_Holo_Button_Borderless:I = 0x10300e2
+.field public static final Widget_DeviceDefault_ActionBar_TabView:I = #style@Widget.DeviceDefault.ActionBar.TabView#t
 
-.field public static final Widget_Holo_Button_Borderless_Small:I = 0x103011a
+.field public static final Widget_DeviceDefault_ActionButton:I = #style@Widget.DeviceDefault.ActionButton#t
 
-.field public static final Widget_Holo_Button_Inset:I = 0x103008d
+.field public static final Widget_DeviceDefault_ActionButton_CloseMode:I = #style@Widget.DeviceDefault.ActionButton.CloseMode#t
 
-.field public static final Widget_Holo_Button_Small:I = 0x103008c
+.field public static final Widget_DeviceDefault_ActionButton_Overflow:I = #style@Widget.DeviceDefault.ActionButton.Overflow#t
 
-.field public static final Widget_Holo_Button_Toggle:I = 0x103008e
+.field public static final Widget_DeviceDefault_ActionButton_TextButton:I = #style@Widget.DeviceDefault.ActionButton.TextButton#t
 
-.field public static final Widget_Holo_CalendarView:I = 0x10300ec
+.field public static final Widget_DeviceDefault_ActionMode:I = #style@Widget.DeviceDefault.ActionMode#t
 
-.field public static final Widget_Holo_CheckedTextView:I = 0x10301d9
+.field public static final Widget_DeviceDefault_AutoCompleteTextView:I = #style@Widget.DeviceDefault.AutoCompleteTextView#t
 
-.field public static final Widget_Holo_CompoundButton_CheckBox:I = 0x1030091
+.field public static final Widget_DeviceDefault_Button:I = #style@Widget.DeviceDefault.Button#t
 
-.field public static final Widget_Holo_CompoundButton_RadioButton:I = 0x10300a2
+.field public static final Widget_DeviceDefault_Button_Borderless:I = #style@Widget.DeviceDefault.Button.Borderless#t
 
-.field public static final Widget_Holo_CompoundButton_Star:I = 0x10300a6
+.field public static final Widget_DeviceDefault_Button_Borderless_Small:I = #style@Widget.DeviceDefault.Button.Borderless.Small#t
 
-.field public static final Widget_Holo_DatePicker:I = 0x10300ef
+.field public static final Widget_DeviceDefault_Button_Inset:I = #style@Widget.DeviceDefault.Button.Inset#t
 
-.field public static final Widget_Holo_DropDownItem:I = 0x10300aa
+.field public static final Widget_DeviceDefault_Button_Small:I = #style@Widget.DeviceDefault.Button.Small#t
 
-.field public static final Widget_Holo_DropDownItem_Spinner:I = 0x10300ab
+.field public static final Widget_DeviceDefault_Button_Toggle:I = #style@Widget.DeviceDefault.Button.Toggle#t
 
-.field public static final Widget_Holo_EditText:I = 0x1030093
+.field public static final Widget_DeviceDefault_CalendarView:I = #style@Widget.DeviceDefault.CalendarView#t
 
-.field public static final Widget_Holo_ExpandableListView:I = 0x1030094
+.field public static final Widget_DeviceDefault_CompoundButton_CheckBox:I = #style@Widget.DeviceDefault.CompoundButton.CheckBox#t
 
-.field public static final Widget_Holo_GridView:I = 0x1030095
+.field public static final Widget_DeviceDefault_CompoundButton_RadioButton:I = #style@Widget.DeviceDefault.CompoundButton.RadioButton#t
 
-.field public static final Widget_Holo_HorizontalScrollView:I = 0x10300a4
+.field public static final Widget_DeviceDefault_CompoundButton_Star:I = #style@Widget.DeviceDefault.CompoundButton.Star#t
 
-.field public static final Widget_Holo_ImageButton:I = 0x1030096
+.field public static final Widget_DeviceDefault_CompoundButton_Switch:I = #style@Widget.DeviceDefault.CompoundButton.Switch#t
 
-.field public static final Widget_Holo_Light:I = 0x10300b5
+.field public static final Widget_DeviceDefault_DatePicker:I = #style@Widget.DeviceDefault.DatePicker#t
 
-.field public static final Widget_Holo_Light_ActionBar:I = 0x10300e1
+.field public static final Widget_DeviceDefault_DropDownItem:I = #style@Widget.DeviceDefault.DropDownItem#t
 
-.field public static final Widget_Holo_Light_ActionBar_Solid:I = 0x1030122
+.field public static final Widget_DeviceDefault_DropDownItem_Spinner:I = #style@Widget.DeviceDefault.DropDownItem.Spinner#t
 
-.field public static final Widget_Holo_Light_ActionBar_Solid_Inverse:I = 0x1030123
+.field public static final Widget_DeviceDefault_EditText:I = #style@Widget.DeviceDefault.EditText#t
 
-.field public static final Widget_Holo_Light_ActionBar_TabBar:I = 0x10300fa
+.field public static final Widget_DeviceDefault_EditText_NumberPickerInputText:I = #style@Widget.DeviceDefault.EditText.NumberPickerInputText#t
 
-.field public static final Widget_Holo_Light_ActionBar_TabBar_Inverse:I = 0x1030124
+.field public static final Widget_DeviceDefault_ExpandableListView:I = #style@Widget.DeviceDefault.ExpandableListView#t
 
-.field public static final Widget_Holo_Light_ActionBar_TabText:I = 0x10300f9
+.field public static final Widget_DeviceDefault_ExpandableListView_White:I = #style@Widget.DeviceDefault.ExpandableListView.White#t
 
-.field public static final Widget_Holo_Light_ActionBar_TabText_Inverse:I = 0x1030126
+.field public static final Widget_DeviceDefault_Gallery:I = #style@Widget.DeviceDefault.Gallery#t
 
-.field public static final Widget_Holo_Light_ActionBar_TabView:I = 0x10300f8
+.field public static final Widget_DeviceDefault_GestureOverlayView:I = #style@Widget.DeviceDefault.GestureOverlayView#t
 
-.field public static final Widget_Holo_Light_ActionBar_TabView_Inverse:I = 0x1030125
+.field public static final Widget_DeviceDefault_GridView:I = #style@Widget.DeviceDefault.GridView#t
 
-.field public static final Widget_Holo_Light_ActionButton:I = 0x10300dd
+.field public static final Widget_DeviceDefault_HorizontalScrollView:I = #style@Widget.DeviceDefault.HorizontalScrollView#t
 
-.field public static final Widget_Holo_Light_ActionButton_CloseMode:I = 0x10300e0
+.field public static final Widget_DeviceDefault_ImageButton:I = #style@Widget.DeviceDefault.ImageButton#t
 
-.field public static final Widget_Holo_Light_ActionButton_Overflow:I = 0x10300de
+.field public static final Widget_DeviceDefault_ImageButton_NumberPickerDownButton:I = #style@Widget.DeviceDefault.ImageButton.NumberPickerDownButton#t
 
-.field public static final Widget_Holo_Light_ActionMode:I = 0x10300df
+.field public static final Widget_DeviceDefault_ImageButton_NumberPickerUpButton:I = #style@Widget.DeviceDefault.ImageButton.NumberPickerUpButton#t
 
-.field public static final Widget_Holo_Light_ActionMode_Inverse:I = 0x1030127
+.field public static final Widget_DeviceDefault_ImageWell:I = #style@Widget.DeviceDefault.ImageWell#t
 
-.field public static final Widget_Holo_Light_AutoCompleteTextView:I = 0x10300bb
+.field public static final Widget_DeviceDefault_KeyboardView:I = #style@Widget.DeviceDefault.KeyboardView#t
 
-.field public static final Widget_Holo_Light_Button:I = 0x10300b6
+.field public static final Widget_DeviceDefault_Light:I = #style@Widget.DeviceDefault.Light#t
 
-.field public static final Widget_Holo_Light_Button_Borderless_Small:I = 0x103011b
+.field public static final Widget_DeviceDefault_Light_AbsListView:I = #style@Widget.DeviceDefault.Light.AbsListView#t
 
-.field public static final Widget_Holo_Light_Button_Inset:I = 0x10300b8
+.field public static final Widget_DeviceDefault_Light_ActionBar:I = #style@Widget.DeviceDefault.Light.ActionBar#t
 
-.field public static final Widget_Holo_Light_Button_Small:I = 0x10300b7
+.field public static final Widget_DeviceDefault_Light_ActionBar_Solid:I = #style@Widget.DeviceDefault.Light.ActionBar.Solid#t
 
-.field public static final Widget_Holo_Light_Button_Toggle:I = 0x10300b9
+.field public static final Widget_DeviceDefault_Light_ActionBar_Solid_Inverse:I = #style@Widget.DeviceDefault.Light.ActionBar.Solid.Inverse#t
 
-.field public static final Widget_Holo_Light_CalendarView:I = 0x10300ed
+.field public static final Widget_DeviceDefault_Light_ActionBar_TabBar:I = #style@Widget.DeviceDefault.Light.ActionBar.TabBar#t
 
-.field public static final Widget_Holo_Light_CheckedTextView:I = 0x10301da
+.field public static final Widget_DeviceDefault_Light_ActionBar_TabBar_Inverse:I = #style@Widget.DeviceDefault.Light.ActionBar.TabBar.Inverse#t
 
-.field public static final Widget_Holo_Light_CompoundButton_CheckBox:I = 0x10300bc
+.field public static final Widget_DeviceDefault_Light_ActionBar_TabText:I = #style@Widget.DeviceDefault.Light.ActionBar.TabText#t
 
-.field public static final Widget_Holo_Light_CompoundButton_RadioButton:I = 0x10300d0
+.field public static final Widget_DeviceDefault_Light_ActionBar_TabText_Inverse:I = #style@Widget.DeviceDefault.Light.ActionBar.TabText.Inverse#t
 
-.field public static final Widget_Holo_Light_CompoundButton_Star:I = 0x10300d4
+.field public static final Widget_DeviceDefault_Light_ActionBar_TabView:I = #style@Widget.DeviceDefault.Light.ActionBar.TabView#t
 
-.field public static final Widget_Holo_Light_DropDownItem:I = 0x10300d8
+.field public static final Widget_DeviceDefault_Light_ActionBar_TabView_Inverse:I = #style@Widget.DeviceDefault.Light.ActionBar.TabView.Inverse#t
 
-.field public static final Widget_Holo_Light_DropDownItem_Spinner:I = 0x10300d9
+.field public static final Widget_DeviceDefault_Light_ActionButton:I = #style@Widget.DeviceDefault.Light.ActionButton#t
 
-.field public static final Widget_Holo_Light_EditText:I = 0x10300be
+.field public static final Widget_DeviceDefault_Light_ActionButton_CloseMode:I = #style@Widget.DeviceDefault.Light.ActionButton.CloseMode#t
 
-.field public static final Widget_Holo_Light_ExpandableListView:I = 0x10300bf
+.field public static final Widget_DeviceDefault_Light_ActionButton_Overflow:I = #style@Widget.DeviceDefault.Light.ActionButton.Overflow#t
 
-.field public static final Widget_Holo_Light_GridView:I = 0x10300c0
+.field public static final Widget_DeviceDefault_Light_ActionMode:I = #style@Widget.DeviceDefault.Light.ActionMode#t
 
-.field public static final Widget_Holo_Light_HorizontalScrollView:I = 0x10300d2
+.field public static final Widget_DeviceDefault_Light_ActionMode_Inverse:I = #style@Widget.DeviceDefault.Light.ActionMode.Inverse#t
 
-.field public static final Widget_Holo_Light_ImageButton:I = 0x10300c1
+.field public static final Widget_DeviceDefault_Light_AutoCompleteTextView:I = #style@Widget.DeviceDefault.Light.AutoCompleteTextView#t
 
-.field public static final Widget_Holo_Light_ListPopupWindow:I = 0x10300db
+.field public static final Widget_DeviceDefault_Light_Button:I = #style@Widget.DeviceDefault.Light.Button#t
 
-.field public static final Widget_Holo_Light_ListView:I = 0x10300c2
+.field public static final Widget_DeviceDefault_Light_Button_Borderless:I = #style@Widget.DeviceDefault.Light.Button.Borderless#t
 
-.field public static final Widget_Holo_Light_ListView_DropDown:I = 0x10300bd
+.field public static final Widget_DeviceDefault_Light_Button_Borderless_Small:I = #style@Widget.DeviceDefault.Light.Button.Borderless.Small#t
 
-.field public static final Widget_Holo_Light_MediaRouteButton:I = 0x10301d6
+.field public static final Widget_DeviceDefault_Light_Button_Inset:I = #style@Widget.DeviceDefault.Light.Button.Inset#t
 
-.field public static final Widget_Holo_Light_PopupMenu:I = 0x10300dc
+.field public static final Widget_DeviceDefault_Light_Button_Small:I = #style@Widget.DeviceDefault.Light.Button.Small#t
 
-.field public static final Widget_Holo_Light_PopupWindow:I = 0x10300c3
+.field public static final Widget_DeviceDefault_Light_Button_Toggle:I = #style@Widget.DeviceDefault.Light.Button.Toggle#t
 
-.field public static final Widget_Holo_Light_ProgressBar:I = 0x10300c4
+.field public static final Widget_DeviceDefault_Light_CalendarView:I = #style@Widget.DeviceDefault.Light.CalendarView#t
 
-.field public static final Widget_Holo_Light_ProgressBar_Horizontal:I = 0x10300c5
+.field public static final Widget_DeviceDefault_Light_CompoundButton_CheckBox:I = #style@Widget.DeviceDefault.Light.CompoundButton.CheckBox#t
 
-.field public static final Widget_Holo_Light_ProgressBar_Inverse:I = 0x10300c9
+.field public static final Widget_DeviceDefault_Light_CompoundButton_RadioButton:I = #style@Widget.DeviceDefault.Light.CompoundButton.RadioButton#t
 
-.field public static final Widget_Holo_Light_ProgressBar_Large:I = 0x10300c8
+.field public static final Widget_DeviceDefault_Light_CompoundButton_Star:I = #style@Widget.DeviceDefault.Light.CompoundButton.Star#t
 
-.field public static final Widget_Holo_Light_ProgressBar_Large_Inverse:I = 0x10300cb
+.field public static final Widget_DeviceDefault_Light_DatePicker:I = #style@Widget.DeviceDefault.Light.DatePicker#t
 
-.field public static final Widget_Holo_Light_ProgressBar_Small:I = 0x10300c6
+.field public static final Widget_DeviceDefault_Light_DropDownItem:I = #style@Widget.DeviceDefault.Light.DropDownItem#t
 
-.field public static final Widget_Holo_Light_ProgressBar_Small_Inverse:I = 0x10300ca
+.field public static final Widget_DeviceDefault_Light_DropDownItem_Spinner:I = #style@Widget.DeviceDefault.Light.DropDownItem.Spinner#t
 
-.field public static final Widget_Holo_Light_ProgressBar_Small_Title:I = 0x10300c7
+.field public static final Widget_DeviceDefault_Light_EditText:I = #style@Widget.DeviceDefault.Light.EditText#t
 
-.field public static final Widget_Holo_Light_RatingBar:I = 0x10300cd
+.field public static final Widget_DeviceDefault_Light_EditText_NumberPickerInputText:I = #style@Widget.DeviceDefault.Light.EditText.NumberPickerInputText#t
 
-.field public static final Widget_Holo_Light_RatingBar_Indicator:I = 0x10300ce
+.field public static final Widget_DeviceDefault_Light_ExpandableListView:I = #style@Widget.DeviceDefault.Light.ExpandableListView#t
 
-.field public static final Widget_Holo_Light_RatingBar_Small:I = 0x10300cf
+.field public static final Widget_DeviceDefault_Light_ExpandableListView_White:I = #style@Widget.DeviceDefault.Light.ExpandableListView.White#t
 
-.field public static final Widget_Holo_Light_ScrollView:I = 0x10300d1
+.field public static final Widget_DeviceDefault_Light_Gallery:I = #style@Widget.DeviceDefault.Light.Gallery#t
 
-.field public static final Widget_Holo_Light_SeekBar:I = 0x10300cc
+.field public static final Widget_DeviceDefault_Light_GestureOverlayView:I = #style@Widget.DeviceDefault.Light.GestureOverlayView#t
 
-.field public static final Widget_Holo_Light_Spinner:I = 0x10300d3
+.field public static final Widget_DeviceDefault_Light_GridView:I = #style@Widget.DeviceDefault.Light.GridView#t
 
-.field public static final Widget_Holo_Light_Tab:I = 0x10300e4
+.field public static final Widget_DeviceDefault_Light_HorizontalScrollView:I = #style@Widget.DeviceDefault.Light.HorizontalScrollView#t
 
-.field public static final Widget_Holo_Light_TabWidget:I = 0x10300d5
+.field public static final Widget_DeviceDefault_Light_ImageButton:I = #style@Widget.DeviceDefault.Light.ImageButton#t
 
-.field public static final Widget_Holo_Light_TextView:I = 0x10300ba
+.field public static final Widget_DeviceDefault_Light_ImageButton_NumberPickerDownButton:I = #style@Widget.DeviceDefault.Light.ImageButton.NumberPickerDownButton#t
 
-.field public static final Widget_Holo_Light_TextView_SpinnerItem:I = 0x10300da
+.field public static final Widget_DeviceDefault_Light_ImageButton_NumberPickerUpButton:I = #style@Widget.DeviceDefault.Light.ImageButton.NumberPickerUpButton#t
 
-.field public static final Widget_Holo_Light_WebTextView:I = 0x10300d6
+.field public static final Widget_DeviceDefault_Light_ImageWell:I = #style@Widget.DeviceDefault.Light.ImageWell#t
 
-.field public static final Widget_Holo_Light_WebView:I = 0x10300d7
+.field public static final Widget_DeviceDefault_Light_ListPopupWindow:I = #style@Widget.DeviceDefault.Light.ListPopupWindow#t
 
-.field public static final Widget_Holo_ListPopupWindow:I = 0x10300ad
+.field public static final Widget_DeviceDefault_Light_ListView:I = #style@Widget.DeviceDefault.Light.ListView#t
 
-.field public static final Widget_Holo_ListView:I = 0x1030097
+.field public static final Widget_DeviceDefault_Light_ListView_DropDown:I = #style@Widget.DeviceDefault.Light.ListView.DropDown#t
 
-.field public static final Widget_Holo_ListView_DropDown:I = 0x1030092
+.field public static final Widget_DeviceDefault_Light_ListView_White:I = #style@Widget.DeviceDefault.Light.ListView.White#t
 
-.field public static final Widget_Holo_MediaRouteButton:I = 0x10301d5
+.field public static final Widget_DeviceDefault_Light_NumberPicker:I = #style@Widget.DeviceDefault.Light.NumberPicker#t
 
-.field public static final Widget_Holo_PopupMenu:I = 0x10300ae
+.field public static final Widget_DeviceDefault_Light_PopupMenu:I = #style@Widget.DeviceDefault.Light.PopupMenu#t
 
-.field public static final Widget_Holo_PopupWindow:I = 0x1030098
+.field public static final Widget_DeviceDefault_Light_PopupWindow:I = #style@Widget.DeviceDefault.Light.PopupWindow#t
 
-.field public static final Widget_Holo_ProgressBar:I = 0x1030099
+.field public static final Widget_DeviceDefault_Light_PopupWindow_ActionMode:I = #style@Widget.DeviceDefault.Light.PopupWindow.ActionMode#t
 
-.field public static final Widget_Holo_ProgressBar_Horizontal:I = 0x103009a
+.field public static final Widget_DeviceDefault_Light_ProgressBar:I = #style@Widget.DeviceDefault.Light.ProgressBar#t
 
-.field public static final Widget_Holo_ProgressBar_Large:I = 0x103009d
+.field public static final Widget_DeviceDefault_Light_ProgressBar_Horizontal:I = #style@Widget.DeviceDefault.Light.ProgressBar.Horizontal#t
 
-.field public static final Widget_Holo_ProgressBar_Small:I = 0x103009b
+.field public static final Widget_DeviceDefault_Light_ProgressBar_Inverse:I = #style@Widget.DeviceDefault.Light.ProgressBar.Inverse#t
 
-.field public static final Widget_Holo_ProgressBar_Small_Title:I = 0x103009c
+.field public static final Widget_DeviceDefault_Light_ProgressBar_Large:I = #style@Widget.DeviceDefault.Light.ProgressBar.Large#t
 
-.field public static final Widget_Holo_RatingBar:I = 0x103009f
+.field public static final Widget_DeviceDefault_Light_ProgressBar_Large_Inverse:I = #style@Widget.DeviceDefault.Light.ProgressBar.Large.Inverse#t
 
-.field public static final Widget_Holo_RatingBar_Indicator:I = 0x10300a0
+.field public static final Widget_DeviceDefault_Light_ProgressBar_Small:I = #style@Widget.DeviceDefault.Light.ProgressBar.Small#t
 
-.field public static final Widget_Holo_RatingBar_Small:I = 0x10300a1
+.field public static final Widget_DeviceDefault_Light_ProgressBar_Small_Inverse:I = #style@Widget.DeviceDefault.Light.ProgressBar.Small.Inverse#t
 
-.field public static final Widget_Holo_ScrollView:I = 0x10300a3
+.field public static final Widget_DeviceDefault_Light_ProgressBar_Small_Title:I = #style@Widget.DeviceDefault.Light.ProgressBar.Small.Title#t
 
-.field public static final Widget_Holo_SeekBar:I = 0x103009e
+.field public static final Widget_DeviceDefault_Light_RatingBar:I = #style@Widget.DeviceDefault.Light.RatingBar#t
 
-.field public static final Widget_Holo_Spinner:I = 0x10300a5
+.field public static final Widget_DeviceDefault_Light_RatingBar_Indicator:I = #style@Widget.DeviceDefault.Light.RatingBar.Indicator#t
 
-.field public static final Widget_Holo_Tab:I = 0x10300e3
+.field public static final Widget_DeviceDefault_Light_RatingBar_Small:I = #style@Widget.DeviceDefault.Light.RatingBar.Small#t
 
-.field public static final Widget_Holo_TabWidget:I = 0x10300a7
+.field public static final Widget_DeviceDefault_Light_ScrollView:I = #style@Widget.DeviceDefault.Light.ScrollView#t
 
-.field public static final Widget_Holo_TextView:I = 0x103008f
+.field public static final Widget_DeviceDefault_Light_SeekBar:I = #style@Widget.DeviceDefault.Light.SeekBar#t
 
-.field public static final Widget_Holo_TextView_SpinnerItem:I = 0x10300ac
+.field public static final Widget_DeviceDefault_Light_Spinner:I = #style@Widget.DeviceDefault.Light.Spinner#t
 
-.field public static final Widget_Holo_WebTextView:I = 0x10300a8
+.field public static final Widget_DeviceDefault_Light_Spinner_DropDown:I = #style@Widget.DeviceDefault.Light.Spinner.DropDown#t
 
-.field public static final Widget_Holo_WebView:I = 0x10300a9
+.field public static final Widget_DeviceDefault_Light_Spinner_DropDown_ActionBar:I = #style@Widget.DeviceDefault.Light.Spinner.DropDown.ActionBar#t
 
-.field public static final Widget_ImageButton:I = 0x1030026
+.field public static final Widget_DeviceDefault_Light_Tab:I = #style@Widget.DeviceDefault.Light.Tab#t
 
-.field public static final Widget_ImageWell:I = 0x1030025
+.field public static final Widget_DeviceDefault_Light_TabWidget:I = #style@Widget.DeviceDefault.Light.TabWidget#t
 
-.field public static final Widget_KeyboardView:I = 0x1030057
+.field public static final Widget_DeviceDefault_Light_TextSuggestionsPopupWindow:I = #style@Widget.DeviceDefault.Light.TextSuggestionsPopupWindow#t
 
-.field public static final Widget_ListPopupWindow:I = 0x1030085
+.field public static final Widget_DeviceDefault_Light_TextView:I = #style@Widget.DeviceDefault.Light.TextView#t
 
-.field public static final Widget_ListView:I = 0x103002e
+.field public static final Widget_DeviceDefault_Light_TextView_ListSeparator:I = #style@Widget.DeviceDefault.Light.TextView.ListSeparator#t
 
-.field public static final Widget_ListView_DropDown:I = 0x1030030
+.field public static final Widget_DeviceDefault_Light_TextView_SpinnerItem:I = #style@Widget.DeviceDefault.Light.TextView.SpinnerItem#t
 
-.field public static final Widget_ListView_Menu:I = 0x1030031
+.field public static final Widget_DeviceDefault_Light_TimePicker:I = #style@Widget.DeviceDefault.Light.TimePicker#t
 
-.field public static final Widget_ListView_White:I = 0x103002f
+.field public static final Widget_DeviceDefault_Light_WebTextView:I = #style@Widget.DeviceDefault.Light.WebTextView#t
 
-.field public static final Widget_PopupMenu:I = 0x1030086
+.field public static final Widget_DeviceDefault_Light_WebView:I = #style@Widget.DeviceDefault.Light.WebView#t
 
-.field public static final Widget_PopupWindow:I = 0x1030036
+.field public static final Widget_DeviceDefault_ListPopupWindow:I = #style@Widget.DeviceDefault.ListPopupWindow#t
 
-.field public static final Widget_ProgressBar:I = 0x103001c
+.field public static final Widget_DeviceDefault_ListView:I = #style@Widget.DeviceDefault.ListView#t
 
-.field public static final Widget_ProgressBar_Horizontal:I = 0x103001f
+.field public static final Widget_DeviceDefault_ListView_DropDown:I = #style@Widget.DeviceDefault.ListView.DropDown#t
 
-.field public static final Widget_ProgressBar_Inverse:I = 0x103005b
+.field public static final Widget_DeviceDefault_ListView_White:I = #style@Widget.DeviceDefault.ListView.White#t
 
-.field public static final Widget_ProgressBar_Large:I = 0x103001d
+.field public static final Widget_DeviceDefault_NumberPicker:I = #style@Widget.DeviceDefault.NumberPicker#t
 
-.field public static final Widget_ProgressBar_Large_Inverse:I = 0x103005c
+.field public static final Widget_DeviceDefault_PopupMenu:I = #style@Widget.DeviceDefault.PopupMenu#t
 
-.field public static final Widget_ProgressBar_Small:I = 0x103001e
+.field public static final Widget_DeviceDefault_PopupWindow:I = #style@Widget.DeviceDefault.PopupWindow#t
 
-.field public static final Widget_ProgressBar_Small_Inverse:I = 0x103005d
+.field public static final Widget_DeviceDefault_PopupWindow_ActionMode:I = #style@Widget.DeviceDefault.PopupWindow.ActionMode#t
 
-.field public static final Widget_RatingBar:I = 0x1030021
+.field public static final Widget_DeviceDefault_PreferenceFrameLayout:I = #style@Widget.DeviceDefault.PreferenceFrameLayout#t
 
-.field public static final Widget_ScrollView:I = 0x103002d
+.field public static final Widget_DeviceDefault_ProgressBar:I = #style@Widget.DeviceDefault.ProgressBar#t
 
-.field public static final Widget_SeekBar:I = 0x1030020
+.field public static final Widget_DeviceDefault_ProgressBar_Horizontal:I = #style@Widget.DeviceDefault.ProgressBar.Horizontal#t
 
-.field public static final Widget_Spinner:I = 0x1030028
+.field public static final Widget_DeviceDefault_ProgressBar_Inverse:I = #style@Widget.DeviceDefault.ProgressBar.Inverse#t
 
-.field public static final Widget_Spinner_DropDown:I = 0x1030083
+.field public static final Widget_DeviceDefault_ProgressBar_Large:I = #style@Widget.DeviceDefault.ProgressBar.Large#t
 
-.field public static final Widget_TabWidget:I = 0x1030034
+.field public static final Widget_DeviceDefault_ProgressBar_Large_Inverse:I = #style@Widget.DeviceDefault.ProgressBar.Large.Inverse#t
 
-.field public static final Widget_TextView:I = 0x1030022
+.field public static final Widget_DeviceDefault_ProgressBar_Small:I = #style@Widget.DeviceDefault.ProgressBar.Small#t
 
-.field public static final Widget_TextView_PopupMenu:I = 0x1030029
+.field public static final Widget_DeviceDefault_ProgressBar_Small_Inverse:I = #style@Widget.DeviceDefault.ProgressBar.Small.Inverse#t
 
-.field public static final Widget_TextView_SpinnerItem:I = 0x103002a
+.field public static final Widget_DeviceDefault_ProgressBar_Small_Title:I = #style@Widget.DeviceDefault.ProgressBar.Small.Title#t
 
-.field public static final Widget_WebView:I = 0x1030033
+.field public static final Widget_DeviceDefault_QuickContactBadgeSmall_WindowLarge:I = #style@Widget.DeviceDefault.QuickContactBadgeSmall.WindowLarge#t
+
+.field public static final Widget_DeviceDefault_QuickContactBadgeSmall_WindowMedium:I = #style@Widget.DeviceDefault.QuickContactBadgeSmall.WindowMedium#t
+
+.field public static final Widget_DeviceDefault_QuickContactBadgeSmall_WindowSmall:I = #style@Widget.DeviceDefault.QuickContactBadgeSmall.WindowSmall#t
+
+.field public static final Widget_DeviceDefault_QuickContactBadge_WindowLarge:I = #style@Widget.DeviceDefault.QuickContactBadge.WindowLarge#t
+
+.field public static final Widget_DeviceDefault_QuickContactBadge_WindowMedium:I = #style@Widget.DeviceDefault.QuickContactBadge.WindowMedium#t
+
+.field public static final Widget_DeviceDefault_QuickContactBadge_WindowSmall:I = #style@Widget.DeviceDefault.QuickContactBadge.WindowSmall#t
+
+.field public static final Widget_DeviceDefault_RatingBar:I = #style@Widget.DeviceDefault.RatingBar#t
+
+.field public static final Widget_DeviceDefault_RatingBar_Indicator:I = #style@Widget.DeviceDefault.RatingBar.Indicator#t
+
+.field public static final Widget_DeviceDefault_RatingBar_Small:I = #style@Widget.DeviceDefault.RatingBar.Small#t
+
+.field public static final Widget_DeviceDefault_ScrollView:I = #style@Widget.DeviceDefault.ScrollView#t
+
+.field public static final Widget_DeviceDefault_SeekBar:I = #style@Widget.DeviceDefault.SeekBar#t
+
+.field public static final Widget_DeviceDefault_Spinner:I = #style@Widget.DeviceDefault.Spinner#t
+
+.field public static final Widget_DeviceDefault_Spinner_DropDown:I = #style@Widget.DeviceDefault.Spinner.DropDown#t
+
+.field public static final Widget_DeviceDefault_Spinner_DropDown_ActionBar:I = #style@Widget.DeviceDefault.Spinner.DropDown.ActionBar#t
+
+.field public static final Widget_DeviceDefault_StackView:I = #style@Widget.DeviceDefault.StackView#t
+
+.field public static final Widget_DeviceDefault_Tab:I = #style@Widget.DeviceDefault.Tab#t
+
+.field public static final Widget_DeviceDefault_TabWidget:I = #style@Widget.DeviceDefault.TabWidget#t
+
+.field public static final Widget_DeviceDefault_TextSelectHandle:I = #style@Widget.DeviceDefault.TextSelectHandle#t
+
+.field public static final Widget_DeviceDefault_TextSuggestionsPopupWindow:I = #style@Widget.DeviceDefault.TextSuggestionsPopupWindow#t
+
+.field public static final Widget_DeviceDefault_TextView:I = #style@Widget.DeviceDefault.TextView#t
+
+.field public static final Widget_DeviceDefault_TextView_ListSeparator:I = #style@Widget.DeviceDefault.TextView.ListSeparator#t
+
+.field public static final Widget_DeviceDefault_TextView_SpinnerItem:I = #style@Widget.DeviceDefault.TextView.SpinnerItem#t
+
+.field public static final Widget_DeviceDefault_TimePicker:I = #style@Widget.DeviceDefault.TimePicker#t
+
+.field public static final Widget_DeviceDefault_WebTextView:I = #style@Widget.DeviceDefault.WebTextView#t
+
+.field public static final Widget_DeviceDefault_WebView:I = #style@Widget.DeviceDefault.WebView#t
+
+.field public static final Widget_DropDownItem:I = #style@Widget.DropDownItem#t
+
+.field public static final Widget_DropDownItem_Spinner:I = #style@Widget.DropDownItem.Spinner#t
+
+.field public static final Widget_EditText:I = #style@Widget.EditText#t
+
+.field public static final Widget_EditText_NumberPickerInputText:I = #style@Widget.EditText.NumberPickerInputText#t
+
+.field public static final Widget_ExpandableListView:I = #style@Widget.ExpandableListView#t
+
+.field public static final Widget_ExpandableListView_White:I = #style@Widget.ExpandableListView.White#t
+
+.field public static final Widget_FragmentBreadCrumbs:I = #style@Widget.FragmentBreadCrumbs#t
+
+.field public static final Widget_Gallery:I = #style@Widget.Gallery#t
+
+.field public static final Widget_GenericQuickContactBadge:I = #style@Widget.GenericQuickContactBadge#t
+
+.field public static final Widget_GestureOverlayView:I = #style@Widget.GestureOverlayView#t
+
+.field public static final Widget_GestureOverlayView_White:I = #style@Widget.GestureOverlayView.White#t
+
+.field public static final Widget_GridView:I = #style@Widget.GridView#t
+
+.field public static final Widget_Holo:I = #style@Widget.Holo#t
+
+.field public static final Widget_Holo_AbsListView:I = #style@Widget.Holo.AbsListView#t
+
+.field public static final Widget_Holo_ActionBar:I = #style@Widget.Holo.ActionBar#t
+
+.field public static final Widget_Holo_ActionBar_Solid:I = #style@Widget.Holo.ActionBar.Solid#t
+
+.field public static final Widget_Holo_ActionBar_TabBar:I = #style@Widget.Holo.ActionBar.TabBar#t
+
+.field public static final Widget_Holo_ActionBar_TabText:I = #style@Widget.Holo.ActionBar.TabText#t
+
+.field public static final Widget_Holo_ActionBar_TabView:I = #style@Widget.Holo.ActionBar.TabView#t
+
+.field public static final Widget_Holo_ActionButton:I = #style@Widget.Holo.ActionButton#t
+
+.field public static final Widget_Holo_ActionButton_CloseMode:I = #style@Widget.Holo.ActionButton.CloseMode#t
+
+.field public static final Widget_Holo_ActionButton_Overflow:I = #style@Widget.Holo.ActionButton.Overflow#t
+
+.field public static final Widget_Holo_ActionButton_TextButton:I = #style@Widget.Holo.ActionButton.TextButton#t
+
+.field public static final Widget_Holo_ActionMode:I = #style@Widget.Holo.ActionMode#t
+
+.field public static final Widget_Holo_ActivityChooserView:I = #style@Widget.Holo.ActivityChooserView#t
+
+.field public static final Widget_Holo_AutoCompleteTextView:I = #style@Widget.Holo.AutoCompleteTextView#t
+
+.field public static final Widget_Holo_Button:I = #style@Widget.Holo.Button#t
+
+.field public static final Widget_Holo_ButtonBar:I = #style@Widget.Holo.ButtonBar#t
+
+.field public static final Widget_Holo_ButtonBar_Button:I = #style@Widget.Holo.ButtonBar.Button#t
+
+.field public static final Widget_Holo_Button_Borderless:I = #style@Widget.Holo.Button.Borderless#t
+
+.field public static final Widget_Holo_Button_Borderless_Small:I = #style@Widget.Holo.Button.Borderless.Small#t
+
+.field public static final Widget_Holo_Button_Inset:I = #style@Widget.Holo.Button.Inset#t
+
+.field public static final Widget_Holo_Button_Small:I = #style@Widget.Holo.Button.Small#t
+
+.field public static final Widget_Holo_Button_Toggle:I = #style@Widget.Holo.Button.Toggle#t
+
+.field public static final Widget_Holo_CalendarView:I = #style@Widget.Holo.CalendarView#t
+
+.field public static final Widget_Holo_CompoundButton:I = #style@Widget.Holo.CompoundButton#t
+
+.field public static final Widget_Holo_CompoundButton_CheckBox:I = #style@Widget.Holo.CompoundButton.CheckBox#t
+
+.field public static final Widget_Holo_CompoundButton_RadioButton:I = #style@Widget.Holo.CompoundButton.RadioButton#t
+
+.field public static final Widget_Holo_CompoundButton_Star:I = #style@Widget.Holo.CompoundButton.Star#t
+
+.field public static final Widget_Holo_CompoundButton_Switch:I = #style@Widget.Holo.CompoundButton.Switch#t
+
+.field public static final Widget_Holo_DatePicker:I = #style@Widget.Holo.DatePicker#t
+
+.field public static final Widget_Holo_DropDownItem:I = #style@Widget.Holo.DropDownItem#t
+
+.field public static final Widget_Holo_DropDownItem_Spinner:I = #style@Widget.Holo.DropDownItem.Spinner#t
+
+.field public static final Widget_Holo_EditText:I = #style@Widget.Holo.EditText#t
+
+.field public static final Widget_Holo_EditText_NumberPickerInputText:I = #style@Widget.Holo.EditText.NumberPickerInputText#t
+
+.field public static final Widget_Holo_ExpandableListView:I = #style@Widget.Holo.ExpandableListView#t
+
+.field public static final Widget_Holo_ExpandableListView_White:I = #style@Widget.Holo.ExpandableListView.White#t
+
+.field public static final Widget_Holo_Gallery:I = #style@Widget.Holo.Gallery#t
+
+.field public static final Widget_Holo_GestureOverlayView:I = #style@Widget.Holo.GestureOverlayView#t
+
+.field public static final Widget_Holo_GridView:I = #style@Widget.Holo.GridView#t
+
+.field public static final Widget_Holo_HorizontalScrollView:I = #style@Widget.Holo.HorizontalScrollView#t
+
+.field public static final Widget_Holo_ImageButton:I = #style@Widget.Holo.ImageButton#t
+
+.field public static final Widget_Holo_ImageButton_NumberPickerDownButton:I = #style@Widget.Holo.ImageButton.NumberPickerDownButton#t
+
+.field public static final Widget_Holo_ImageButton_NumberPickerUpButton:I = #style@Widget.Holo.ImageButton.NumberPickerUpButton#t
+
+.field public static final Widget_Holo_ImageWell:I = #style@Widget.Holo.ImageWell#t
+
+.field public static final Widget_Holo_KeyboardView:I = #style@Widget.Holo.KeyboardView#t
+
+.field public static final Widget_Holo_Light:I = #style@Widget.Holo.Light#t
+
+.field public static final Widget_Holo_Light_AbsListView:I = #style@Widget.Holo.Light.AbsListView#t
+
+.field public static final Widget_Holo_Light_ActionBar:I = #style@Widget.Holo.Light.ActionBar#t
+
+.field public static final Widget_Holo_Light_ActionBar_Solid:I = #style@Widget.Holo.Light.ActionBar.Solid#t
+
+.field public static final Widget_Holo_Light_ActionBar_Solid_Inverse:I = #style@Widget.Holo.Light.ActionBar.Solid.Inverse#t
+
+.field public static final Widget_Holo_Light_ActionBar_TabBar:I = #style@Widget.Holo.Light.ActionBar.TabBar#t
+
+.field public static final Widget_Holo_Light_ActionBar_TabBar_Inverse:I = #style@Widget.Holo.Light.ActionBar.TabBar.Inverse#t
+
+.field public static final Widget_Holo_Light_ActionBar_TabText:I = #style@Widget.Holo.Light.ActionBar.TabText#t
+
+.field public static final Widget_Holo_Light_ActionBar_TabText_Inverse:I = #style@Widget.Holo.Light.ActionBar.TabText.Inverse#t
+
+.field public static final Widget_Holo_Light_ActionBar_TabView:I = #style@Widget.Holo.Light.ActionBar.TabView#t
+
+.field public static final Widget_Holo_Light_ActionBar_TabView_Inverse:I = #style@Widget.Holo.Light.ActionBar.TabView.Inverse#t
+
+.field public static final Widget_Holo_Light_ActionButton:I = #style@Widget.Holo.Light.ActionButton#t
+
+.field public static final Widget_Holo_Light_ActionButton_CloseMode:I = #style@Widget.Holo.Light.ActionButton.CloseMode#t
+
+.field public static final Widget_Holo_Light_ActionButton_Overflow:I = #style@Widget.Holo.Light.ActionButton.Overflow#t
+
+.field public static final Widget_Holo_Light_ActionMode:I = #style@Widget.Holo.Light.ActionMode#t
+
+.field public static final Widget_Holo_Light_ActionMode_Inverse:I = #style@Widget.Holo.Light.ActionMode.Inverse#t
+
+.field public static final Widget_Holo_Light_ActivityChooserView:I = #style@Widget.Holo.Light.ActivityChooserView#t
+
+.field public static final Widget_Holo_Light_AutoCompleteTextView:I = #style@Widget.Holo.Light.AutoCompleteTextView#t
+
+.field public static final Widget_Holo_Light_Button:I = #style@Widget.Holo.Light.Button#t
+
+.field public static final Widget_Holo_Light_Button_Borderless:I = #style@Widget.Holo.Light.Button.Borderless#t
+
+.field public static final Widget_Holo_Light_Button_Borderless_Small:I = #style@Widget.Holo.Light.Button.Borderless.Small#t
+
+.field public static final Widget_Holo_Light_Button_Inset:I = #style@Widget.Holo.Light.Button.Inset#t
+
+.field public static final Widget_Holo_Light_Button_Small:I = #style@Widget.Holo.Light.Button.Small#t
+
+.field public static final Widget_Holo_Light_Button_Toggle:I = #style@Widget.Holo.Light.Button.Toggle#t
+
+.field public static final Widget_Holo_Light_CalendarView:I = #style@Widget.Holo.Light.CalendarView#t
+
+.field public static final Widget_Holo_Light_CompoundButton_CheckBox:I = #style@Widget.Holo.Light.CompoundButton.CheckBox#t
+
+.field public static final Widget_Holo_Light_CompoundButton_RadioButton:I = #style@Widget.Holo.Light.CompoundButton.RadioButton#t
+
+.field public static final Widget_Holo_Light_CompoundButton_Star:I = #style@Widget.Holo.Light.CompoundButton.Star#t
+
+.field public static final Widget_Holo_Light_CompoundButton_Switch:I = #style@Widget.Holo.Light.CompoundButton.Switch#t
+
+.field public static final Widget_Holo_Light_DatePicker:I = #style@Widget.Holo.Light.DatePicker#t
+
+.field public static final Widget_Holo_Light_DropDownItem:I = #style@Widget.Holo.Light.DropDownItem#t
+
+.field public static final Widget_Holo_Light_DropDownItem_Spinner:I = #style@Widget.Holo.Light.DropDownItem.Spinner#t
+
+.field public static final Widget_Holo_Light_EditText:I = #style@Widget.Holo.Light.EditText#t
+
+.field public static final Widget_Holo_Light_EditText_NumberPickerInputText:I = #style@Widget.Holo.Light.EditText.NumberPickerInputText#t
+
+.field public static final Widget_Holo_Light_ExpandableListView:I = #style@Widget.Holo.Light.ExpandableListView#t
+
+.field public static final Widget_Holo_Light_ExpandableListView_White:I = #style@Widget.Holo.Light.ExpandableListView.White#t
+
+.field public static final Widget_Holo_Light_Gallery:I = #style@Widget.Holo.Light.Gallery#t
+
+.field public static final Widget_Holo_Light_GestureOverlayView:I = #style@Widget.Holo.Light.GestureOverlayView#t
+
+.field public static final Widget_Holo_Light_GridView:I = #style@Widget.Holo.Light.GridView#t
+
+.field public static final Widget_Holo_Light_HorizontalScrollView:I = #style@Widget.Holo.Light.HorizontalScrollView#t
+
+.field public static final Widget_Holo_Light_ImageButton:I = #style@Widget.Holo.Light.ImageButton#t
+
+.field public static final Widget_Holo_Light_ImageButton_NumberPickerDownButton:I = #style@Widget.Holo.Light.ImageButton.NumberPickerDownButton#t
+
+.field public static final Widget_Holo_Light_ImageButton_NumberPickerUpButton:I = #style@Widget.Holo.Light.ImageButton.NumberPickerUpButton#t
+
+.field public static final Widget_Holo_Light_ImageWell:I = #style@Widget.Holo.Light.ImageWell#t
+
+.field public static final Widget_Holo_Light_KeyboardView:I = #style@Widget.Holo.Light.KeyboardView#t
+
+.field public static final Widget_Holo_Light_ListPopupWindow:I = #style@Widget.Holo.Light.ListPopupWindow#t
+
+.field public static final Widget_Holo_Light_ListView:I = #style@Widget.Holo.Light.ListView#t
+
+.field public static final Widget_Holo_Light_ListView_DropDown:I = #style@Widget.Holo.Light.ListView.DropDown#t
+
+.field public static final Widget_Holo_Light_ListView_White:I = #style@Widget.Holo.Light.ListView.White#t
+
+.field public static final Widget_Holo_Light_NumberPicker:I = #style@Widget.Holo.Light.NumberPicker#t
+
+.field public static final Widget_Holo_Light_PopupMenu:I = #style@Widget.Holo.Light.PopupMenu#t
+
+.field public static final Widget_Holo_Light_PopupWindow:I = #style@Widget.Holo.Light.PopupWindow#t
+
+.field public static final Widget_Holo_Light_PopupWindow_ActionMode:I = #style@Widget.Holo.Light.PopupWindow.ActionMode#t
+
+.field public static final Widget_Holo_Light_ProgressBar:I = #style@Widget.Holo.Light.ProgressBar#t
+
+.field public static final Widget_Holo_Light_ProgressBar_Horizontal:I = #style@Widget.Holo.Light.ProgressBar.Horizontal#t
+
+.field public static final Widget_Holo_Light_ProgressBar_Inverse:I = #style@Widget.Holo.Light.ProgressBar.Inverse#t
+
+.field public static final Widget_Holo_Light_ProgressBar_Large:I = #style@Widget.Holo.Light.ProgressBar.Large#t
+
+.field public static final Widget_Holo_Light_ProgressBar_Large_Inverse:I = #style@Widget.Holo.Light.ProgressBar.Large.Inverse#t
+
+.field public static final Widget_Holo_Light_ProgressBar_Small:I = #style@Widget.Holo.Light.ProgressBar.Small#t
+
+.field public static final Widget_Holo_Light_ProgressBar_Small_Inverse:I = #style@Widget.Holo.Light.ProgressBar.Small.Inverse#t
+
+.field public static final Widget_Holo_Light_ProgressBar_Small_Title:I = #style@Widget.Holo.Light.ProgressBar.Small.Title#t
+
+.field public static final Widget_Holo_Light_QuickContactBadgeSmall_WindowLarge:I = #style@Widget.Holo.Light.QuickContactBadgeSmall.WindowLarge#t
+
+.field public static final Widget_Holo_Light_QuickContactBadgeSmall_WindowMedium:I = #style@Widget.Holo.Light.QuickContactBadgeSmall.WindowMedium#t
+
+.field public static final Widget_Holo_Light_QuickContactBadgeSmall_WindowSmall:I = #style@Widget.Holo.Light.QuickContactBadgeSmall.WindowSmall#t
+
+.field public static final Widget_Holo_Light_QuickContactBadge_WindowLarge:I = #style@Widget.Holo.Light.QuickContactBadge.WindowLarge#t
+
+.field public static final Widget_Holo_Light_QuickContactBadge_WindowMedium:I = #style@Widget.Holo.Light.QuickContactBadge.WindowMedium#t
+
+.field public static final Widget_Holo_Light_QuickContactBadge_WindowSmall:I = #style@Widget.Holo.Light.QuickContactBadge.WindowSmall#t
+
+.field public static final Widget_Holo_Light_RatingBar:I = #style@Widget.Holo.Light.RatingBar#t
+
+.field public static final Widget_Holo_Light_RatingBar_Indicator:I = #style@Widget.Holo.Light.RatingBar.Indicator#t
+
+.field public static final Widget_Holo_Light_RatingBar_Small:I = #style@Widget.Holo.Light.RatingBar.Small#t
+
+.field public static final Widget_Holo_Light_ScrollView:I = #style@Widget.Holo.Light.ScrollView#t
+
+.field public static final Widget_Holo_Light_SeekBar:I = #style@Widget.Holo.Light.SeekBar#t
+
+.field public static final Widget_Holo_Light_Spinner:I = #style@Widget.Holo.Light.Spinner#t
+
+.field public static final Widget_Holo_Light_Spinner_DropDown:I = #style@Widget.Holo.Light.Spinner.DropDown#t
+
+.field public static final Widget_Holo_Light_Spinner_DropDown_ActionBar:I = #style@Widget.Holo.Light.Spinner.DropDown.ActionBar#t
+
+.field public static final Widget_Holo_Light_Tab:I = #style@Widget.Holo.Light.Tab#t
+
+.field public static final Widget_Holo_Light_TabWidget:I = #style@Widget.Holo.Light.TabWidget#t
+
+.field public static final Widget_Holo_Light_TextSelectHandle:I = #style@Widget.Holo.Light.TextSelectHandle#t
+
+.field public static final Widget_Holo_Light_TextSuggestionsPopupWindow:I = #style@Widget.Holo.Light.TextSuggestionsPopupWindow#t
+
+.field public static final Widget_Holo_Light_TextView:I = #style@Widget.Holo.Light.TextView#t
+
+.field public static final Widget_Holo_Light_TextView_ListSeparator:I = #style@Widget.Holo.Light.TextView.ListSeparator#t
+
+.field public static final Widget_Holo_Light_TextView_SpinnerItem:I = #style@Widget.Holo.Light.TextView.SpinnerItem#t
+
+.field public static final Widget_Holo_Light_TimePicker:I = #style@Widget.Holo.Light.TimePicker#t
+
+.field public static final Widget_Holo_Light_WebTextView:I = #style@Widget.Holo.Light.WebTextView#t
+
+.field public static final Widget_Holo_Light_WebView:I = #style@Widget.Holo.Light.WebView#t
+
+.field public static final Widget_Holo_ListPopupWindow:I = #style@Widget.Holo.ListPopupWindow#t
+
+.field public static final Widget_Holo_ListView:I = #style@Widget.Holo.ListView#t
+
+.field public static final Widget_Holo_ListView_DropDown:I = #style@Widget.Holo.ListView.DropDown#t
+
+.field public static final Widget_Holo_ListView_White:I = #style@Widget.Holo.ListView.White#t
+
+.field public static final Widget_Holo_NumberPicker:I = #style@Widget.Holo.NumberPicker#t
+
+.field public static final Widget_Holo_PopupMenu:I = #style@Widget.Holo.PopupMenu#t
+
+.field public static final Widget_Holo_PopupWindow:I = #style@Widget.Holo.PopupWindow#t
+
+.field public static final Widget_Holo_PopupWindow_ActionMode:I = #style@Widget.Holo.PopupWindow.ActionMode#t
+
+.field public static final Widget_Holo_PreferenceFrameLayout:I = #style@Widget.Holo.PreferenceFrameLayout#t
+
+.field public static final Widget_Holo_ProgressBar:I = #style@Widget.Holo.ProgressBar#t
+
+.field public static final Widget_Holo_ProgressBar_Horizontal:I = #style@Widget.Holo.ProgressBar.Horizontal#t
+
+.field public static final Widget_Holo_ProgressBar_Inverse:I = #style@Widget.Holo.ProgressBar.Inverse#t
+
+.field public static final Widget_Holo_ProgressBar_Large:I = #style@Widget.Holo.ProgressBar.Large#t
+
+.field public static final Widget_Holo_ProgressBar_Large_Inverse:I = #style@Widget.Holo.ProgressBar.Large.Inverse#t
+
+.field public static final Widget_Holo_ProgressBar_Small:I = #style@Widget.Holo.ProgressBar.Small#t
+
+.field public static final Widget_Holo_ProgressBar_Small_Inverse:I = #style@Widget.Holo.ProgressBar.Small.Inverse#t
+
+.field public static final Widget_Holo_ProgressBar_Small_Title:I = #style@Widget.Holo.ProgressBar.Small.Title#t
+
+.field public static final Widget_Holo_QuickContactBadgeSmall_WindowLarge:I = #style@Widget.Holo.QuickContactBadgeSmall.WindowLarge#t
+
+.field public static final Widget_Holo_QuickContactBadgeSmall_WindowMedium:I = #style@Widget.Holo.QuickContactBadgeSmall.WindowMedium#t
+
+.field public static final Widget_Holo_QuickContactBadgeSmall_WindowSmall:I = #style@Widget.Holo.QuickContactBadgeSmall.WindowSmall#t
+
+.field public static final Widget_Holo_QuickContactBadge_WindowLarge:I = #style@Widget.Holo.QuickContactBadge.WindowLarge#t
+
+.field public static final Widget_Holo_QuickContactBadge_WindowMedium:I = #style@Widget.Holo.QuickContactBadge.WindowMedium#t
+
+.field public static final Widget_Holo_QuickContactBadge_WindowSmall:I = #style@Widget.Holo.QuickContactBadge.WindowSmall#t
+
+.field public static final Widget_Holo_RatingBar:I = #style@Widget.Holo.RatingBar#t
+
+.field public static final Widget_Holo_RatingBar_Indicator:I = #style@Widget.Holo.RatingBar.Indicator#t
+
+.field public static final Widget_Holo_RatingBar_Small:I = #style@Widget.Holo.RatingBar.Small#t
+
+.field public static final Widget_Holo_ScrollView:I = #style@Widget.Holo.ScrollView#t
+
+.field public static final Widget_Holo_SeekBar:I = #style@Widget.Holo.SeekBar#t
+
+.field public static final Widget_Holo_Spinner:I = #style@Widget.Holo.Spinner#t
+
+.field public static final Widget_Holo_Spinner_DropDown:I = #style@Widget.Holo.Spinner.DropDown#t
+
+.field public static final Widget_Holo_Spinner_DropDown_ActionBar:I = #style@Widget.Holo.Spinner.DropDown.ActionBar#t
+
+.field public static final Widget_Holo_StackView:I = #style@Widget.Holo.StackView#t
+
+.field public static final Widget_Holo_Tab:I = #style@Widget.Holo.Tab#t
+
+.field public static final Widget_Holo_TabText:I = #style@Widget.Holo.TabText#t
+
+.field public static final Widget_Holo_TabWidget:I = #style@Widget.Holo.TabWidget#t
+
+.field public static final Widget_Holo_TextSelectHandle:I = #style@Widget.Holo.TextSelectHandle#t
+
+.field public static final Widget_Holo_TextSuggestionsPopupWindow:I = #style@Widget.Holo.TextSuggestionsPopupWindow#t
+
+.field public static final Widget_Holo_TextView:I = #style@Widget.Holo.TextView#t
+
+.field public static final Widget_Holo_TextView_ListSeparator:I = #style@Widget.Holo.TextView.ListSeparator#t
+
+.field public static final Widget_Holo_TextView_SpinnerItem:I = #style@Widget.Holo.TextView.SpinnerItem#t
+
+.field public static final Widget_Holo_TimePicker:I = #style@Widget.Holo.TimePicker#t
+
+.field public static final Widget_Holo_WebTextView:I = #style@Widget.Holo.WebTextView#t
+
+.field public static final Widget_Holo_WebView:I = #style@Widget.Holo.WebView#t
+
+.field public static final Widget_HorizontalScrollView:I = #style@Widget.HorizontalScrollView#t
+
+.field public static final Widget_ImageButton:I = #style@Widget.ImageButton#t
+
+.field public static final Widget_ImageButton_NumberPickerDownButton:I = #style@Widget.ImageButton.NumberPickerDownButton#t
+
+.field public static final Widget_ImageButton_NumberPickerUpButton:I = #style@Widget.ImageButton.NumberPickerUpButton#t
+
+.field public static final Widget_ImageWell:I = #style@Widget.ImageWell#t
+
+.field public static final Widget_KeyboardView:I = #style@Widget.KeyboardView#t
+
+.field public static final Widget_ListPopupWindow:I = #style@Widget.ListPopupWindow#t
+
+.field public static final Widget_ListView:I = #style@Widget.ListView#t
+
+.field public static final Widget_ListView_DropDown:I = #style@Widget.ListView.DropDown#t
+
+.field public static final Widget_ListView_Menu:I = #style@Widget.ListView.Menu#t
+
+.field public static final Widget_ListView_White:I = #style@Widget.ListView.White#t
+
+.field public static final Widget_NumberPicker:I = #style@Widget.NumberPicker#t
+
+.field public static final Widget_PopupMenu:I = #style@Widget.PopupMenu#t
+
+.field public static final Widget_PopupWindow:I = #style@Widget.PopupWindow#t
+
+.field public static final Widget_PreferenceFrameLayout:I = #style@Widget.PreferenceFrameLayout#t
+
+.field public static final Widget_ProgressBar:I = #style@Widget.ProgressBar#t
+
+.field public static final Widget_ProgressBar_Horizontal:I = #style@Widget.ProgressBar.Horizontal#t
+
+.field public static final Widget_ProgressBar_Inverse:I = #style@Widget.ProgressBar.Inverse#t
+
+.field public static final Widget_ProgressBar_Large:I = #style@Widget.ProgressBar.Large#t
+
+.field public static final Widget_ProgressBar_Large_Inverse:I = #style@Widget.ProgressBar.Large.Inverse#t
+
+.field public static final Widget_ProgressBar_Small:I = #style@Widget.ProgressBar.Small#t
+
+.field public static final Widget_ProgressBar_Small_Inverse:I = #style@Widget.ProgressBar.Small.Inverse#t
+
+.field public static final Widget_ProgressBar_Small_Title:I = #style@Widget.ProgressBar.Small.Title#t
+
+.field public static final Widget_QuickContactBadge:I = #style@Widget.QuickContactBadge#t
+
+.field public static final Widget_QuickContactBadgeSmall:I = #style@Widget.QuickContactBadgeSmall#t
+
+.field public static final Widget_QuickContactBadgeSmall_WindowLarge:I = #style@Widget.QuickContactBadgeSmall.WindowLarge#t
+
+.field public static final Widget_QuickContactBadgeSmall_WindowMedium:I = #style@Widget.QuickContactBadgeSmall.WindowMedium#t
+
+.field public static final Widget_QuickContactBadgeSmall_WindowSmall:I = #style@Widget.QuickContactBadgeSmall.WindowSmall#t
+
+.field public static final Widget_QuickContactBadge_WindowLarge:I = #style@Widget.QuickContactBadge.WindowLarge#t
+
+.field public static final Widget_QuickContactBadge_WindowMedium:I = #style@Widget.QuickContactBadge.WindowMedium#t
+
+.field public static final Widget_QuickContactBadge_WindowSmall:I = #style@Widget.QuickContactBadge.WindowSmall#t
+
+.field public static final Widget_RatingBar:I = #style@Widget.RatingBar#t
+
+.field public static final Widget_RatingBar_Indicator:I = #style@Widget.RatingBar.Indicator#t
+
+.field public static final Widget_RatingBar_Small:I = #style@Widget.RatingBar.Small#t
+
+.field public static final Widget_ScrollView:I = #style@Widget.ScrollView#t
+
+.field public static final Widget_SeekBar:I = #style@Widget.SeekBar#t
+
+.field public static final Widget_Spinner:I = #style@Widget.Spinner#t
+
+.field public static final Widget_Spinner_DropDown:I = #style@Widget.Spinner.DropDown#t
+
+.field public static final Widget_TabWidget:I = #style@Widget.TabWidget#t
+
+.field public static final Widget_TextSelectHandle:I = #style@Widget.TextSelectHandle#t
+
+.field public static final Widget_TextSuggestionsPopupWindow:I = #style@Widget.TextSuggestionsPopupWindow#t
+
+.field public static final Widget_TextView:I = #style@Widget.TextView#t
+
+.field public static final Widget_TextView_ListSeparator:I = #style@Widget.TextView.ListSeparator#t
+
+.field public static final Widget_TextView_ListSeparator_White:I = #style@Widget.TextView.ListSeparator.White#t
+
+.field public static final Widget_TextView_PopupMenu:I = #style@Widget.TextView.PopupMenu#t
+
+.field public static final Widget_TextView_SpinnerItem:I = #style@Widget.TextView.SpinnerItem#t
+
+.field public static final Widget_TimePicker:I = #style@Widget.TimePicker#t
+
+.field public static final Widget_WebTextView:I = #style@Widget.WebTextView#t
+
+.field public static final Widget_WebView:I = #style@Widget.WebView#t
+
+.field public static final WindowTitle:I = #style@WindowTitle#t
+
+.field public static final WindowTitleBackground:I = #style@WindowTitleBackground#t
+
+.field public static final WindowTitleBackground_DeviceDefault:I = #style@WindowTitleBackground.DeviceDefault#t
+
+.field public static final WindowTitleBackground_Holo:I = #style@WindowTitleBackground.Holo#t
+
+.field public static final WindowTitle_DeviceDefault:I = #style@WindowTitle.DeviceDefault#t
+
+.field public static final WindowTitle_Holo:I = #style@WindowTitle.Holo#t
+
+.field public static final ZoomControls:I = #style@ZoomControls#t
 
 
 # direct methods
@@ -1035,7 +1563,7 @@
     .locals 0
 
     .prologue
-    .line 15391
+    .line 18439
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

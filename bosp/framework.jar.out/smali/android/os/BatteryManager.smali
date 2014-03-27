@@ -20,11 +20,7 @@
 
 .field public static final BATTERY_PLUGGED_AC:I = 0x1
 
-.field public static final BATTERY_PLUGGED_ANY:I = 0x7
-
 .field public static final BATTERY_PLUGGED_USB:I = 0x2
-
-.field public static final BATTERY_PLUGGED_WIRELESS:I = 0x4
 
 .field public static final BATTERY_STATUS_CHARGING:I = 0x2
 

@@ -29,22 +29,22 @@
     .parameter
 
     .prologue
-    .line 232
+    .line 231
     iput-object p1, p0, Landroid/speech/tts/TextToSpeechService$SynthThread;->this$0:Landroid/speech/tts/TextToSpeechService;
 
-    .line 233
+    .line 232
     const-string v0, "SynthThread"
 
     const/4 v1, 0x0
 
     invoke-direct {p0, v0, v1}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;I)V
 
-    .line 230
+    .line 229
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/speech/tts/TextToSpeechService$SynthThread;->mFirstIdle:Z
 
-    .line 234
+    .line 233
     return-void
 .end method
 
@@ -52,20 +52,20 @@
     .locals 2
 
     .prologue
-    .line 252
+    .line 251
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.speech.tts.TTS_QUEUE_PROCESSING_COMPLETED"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 254
+    .line 253
     .local v0, i:Landroid/content/Intent;
     iget-object v1, p0, Landroid/speech/tts/TextToSpeechService$SynthThread;->this$0:Landroid/speech/tts/TextToSpeechService;
 
     invoke-virtual {v1, v0}, Landroid/speech/tts/TextToSpeechService;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 255
+    .line 254
     return-void
 .end method
 
@@ -75,7 +75,7 @@
     .locals 1
 
     .prologue
-    .line 238
+    .line 237
     invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$SynthThread;->getLooper()Landroid/os/Looper;
 
     move-result-object v0
@@ -86,7 +86,7 @@
 
     invoke-virtual {v0, p0}, Landroid/os/MessageQueue;->addIdleHandler(Landroid/os/MessageQueue$IdleHandler;)V
 
-    .line 239
+    .line 238
     return-void
 .end method
 
@@ -94,23 +94,23 @@
     .locals 1
 
     .prologue
-    .line 243
+    .line 242
     iget-boolean v0, p0, Landroid/speech/tts/TextToSpeechService$SynthThread;->mFirstIdle:Z
 
     if-eqz v0, :cond_0
 
-    .line 244
+    .line 243
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/speech/tts/TextToSpeechService$SynthThread;->mFirstIdle:Z
 
-    .line 248
+    .line 247
     :goto_0
     const/4 v0, 0x1
 
     return v0
 
-    .line 246
+    .line 245
     :cond_0
     invoke-direct {p0}, Landroid/speech/tts/TextToSpeechService$SynthThread;->broadcastTtsQueueProcessingCompleted()V
 

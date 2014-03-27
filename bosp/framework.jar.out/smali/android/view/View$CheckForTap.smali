@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 17345
+    .line 14098
     iput-object p1, p0, Landroid/view/View$CheckForTap;->this$0:Landroid/view/View;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .parameter "x1"
 
     .prologue
-    .line 17345
+    .line 14098
     invoke-direct {p0, p1}, Landroid/view/View$CheckForTap;-><init>(Landroid/view/View;)V
 
     return-void
@@ -53,7 +53,7 @@
     .locals 3
 
     .prologue
-    .line 17347
+    .line 14100
     iget-object v0, p0, Landroid/view/View$CheckForTap;->this$0:Landroid/view/View;
 
     iget v1, v0, Landroid/view/View;->mPrivateFlags:I
@@ -64,14 +64,21 @@
 
     iput v1, v0, Landroid/view/View;->mPrivateFlags:I
 
-    .line 17348
+    .line 14101
     iget-object v0, p0, Landroid/view/View$CheckForTap;->this$0:Landroid/view/View;
 
-    const/4 v1, 0x1
+    iget v1, v0, Landroid/view/View;->mPrivateFlags:I
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setPressed(Z)V
+    or-int/lit16 v1, v1, 0x4000
 
-    .line 17349
+    iput v1, v0, Landroid/view/View;->mPrivateFlags:I
+
+    .line 14102
+    iget-object v0, p0, Landroid/view/View$CheckForTap;->this$0:Landroid/view/View;
+
+    invoke-virtual {v0}, Landroid/view/View;->refreshDrawableState()V
+
+    .line 14103
     iget-object v0, p0, Landroid/view/View$CheckForTap;->this$0:Landroid/view/View;
 
     invoke-static {}, Landroid/view/ViewConfiguration;->getTapTimeout()I
@@ -79,8 +86,8 @@
     move-result v1
 
     #calls: Landroid/view/View;->checkForLongClick(I)V
-    invoke-static {v0, v1}, Landroid/view/View;->access$2400(Landroid/view/View;I)V
+    invoke-static {v0, v1}, Landroid/view/View;->access$2100(Landroid/view/View;I)V
 
-    .line 17350
+    .line 14104
     return-void
 .end method

@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 1764
+    .line 1747
     iput-object p1, p0, Lcom/android/server/BackupManagerService$ClearDataObserver;->this$0:Lcom/android/server/BackupManagerService;
 
     invoke-direct {p0}, Landroid/content/pm/IPackageDataObserver$Stub;-><init>()V
@@ -40,14 +40,14 @@
     .parameter "succeeded"
 
     .prologue
-    .line 1766
+    .line 1749
     iget-object v0, p0, Lcom/android/server/BackupManagerService$ClearDataObserver;->this$0:Lcom/android/server/BackupManagerService;
 
     iget-object v1, v0, Lcom/android/server/BackupManagerService;->mClearDataLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 1767
+    .line 1750
     :try_start_0
     iget-object v0, p0, Lcom/android/server/BackupManagerService$ClearDataObserver;->this$0:Lcom/android/server/BackupManagerService;
 
@@ -55,20 +55,20 @@
 
     iput-boolean v2, v0, Lcom/android/server/BackupManagerService;->mClearingData:Z
 
-    .line 1768
+    .line 1751
     iget-object v0, p0, Lcom/android/server/BackupManagerService$ClearDataObserver;->this$0:Lcom/android/server/BackupManagerService;
 
     iget-object v0, v0, Lcom/android/server/BackupManagerService;->mClearDataLock:Ljava/lang/Object;
 
     invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
 
-    .line 1769
+    .line 1752
     monitor-exit v1
 
-    .line 1770
+    .line 1753
     return-void
 
-    .line 1769
+    .line 1752
     :catchall_0
     move-exception v0
 

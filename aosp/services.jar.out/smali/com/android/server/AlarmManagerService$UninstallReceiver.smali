@@ -24,119 +24,114 @@
     .parameter
 
     .prologue
-    .line 988
+    .line 795
     iput-object p1, p0, Lcom/android/server/AlarmManagerService$UninstallReceiver;->this$0:Lcom/android/server/AlarmManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
-    .line 989
+    .line 796
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 990
+    .line 797
     .local v0, filter:Landroid/content/IntentFilter;
     const-string v2, "android.intent.action.PACKAGE_REMOVED"
 
     invoke-virtual {v0, v2}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 991
+    .line 798
     const-string v2, "android.intent.action.PACKAGE_RESTARTED"
 
     invoke-virtual {v0, v2}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 992
+    .line 799
     const-string v2, "android.intent.action.QUERY_PACKAGE_RESTART"
 
     invoke-virtual {v0, v2}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 993
+    .line 800
     const-string v2, "package"
 
     invoke-virtual {v0, v2}, Landroid/content/IntentFilter;->addDataScheme(Ljava/lang/String;)V
 
-    .line 994
+    .line 801
     #getter for: Lcom/android/server/AlarmManagerService;->mContext:Landroid/content/Context;
-    invoke-static {p1}, Lcom/android/server/AlarmManagerService;->access$500(Lcom/android/server/AlarmManagerService;)Landroid/content/Context;
+    invoke-static {p1}, Lcom/android/server/AlarmManagerService;->access$400(Lcom/android/server/AlarmManagerService;)Landroid/content/Context;
 
     move-result-object v2
 
     invoke-virtual {v2, p0, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 996
+    .line 803
     new-instance v1, Landroid/content/IntentFilter;
 
     invoke-direct {v1}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 997
+    .line 804
     .local v1, sdFilter:Landroid/content/IntentFilter;
     const-string v2, "android.intent.action.EXTERNAL_APPLICATIONS_UNAVAILABLE"
 
     invoke-virtual {v1, v2}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 998
-    const-string v2, "android.intent.action.USER_STOPPED"
-
-    invoke-virtual {v1, v2}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    .line 999
+    .line 805
     #getter for: Lcom/android/server/AlarmManagerService;->mContext:Landroid/content/Context;
-    invoke-static {p1}, Lcom/android/server/AlarmManagerService;->access$500(Lcom/android/server/AlarmManagerService;)Landroid/content/Context;
+    invoke-static {p1}, Lcom/android/server/AlarmManagerService;->access$400(Lcom/android/server/AlarmManagerService;)Landroid/content/Context;
 
     move-result-object v2
 
     invoke-virtual {v2, p0, v1}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 1000
+    .line 806
     return-void
 .end method
 
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 12
+    .locals 11
     .parameter "context"
     .parameter "intent"
 
     .prologue
-    .line 1004
-    iget-object v9, p0, Lcom/android/server/AlarmManagerService$UninstallReceiver;->this$0:Lcom/android/server/AlarmManagerService;
+    .line 810
+    iget-object v8, p0, Lcom/android/server/AlarmManagerService$UninstallReceiver;->this$0:Lcom/android/server/AlarmManagerService;
 
     #getter for: Lcom/android/server/AlarmManagerService;->mLock:Ljava/lang/Object;
-    invoke-static {v9}, Lcom/android/server/AlarmManagerService;->access$600(Lcom/android/server/AlarmManagerService;)Ljava/lang/Object;
+    invoke-static {v8}, Lcom/android/server/AlarmManagerService;->access$500(Lcom/android/server/AlarmManagerService;)Ljava/lang/Object;
 
-    move-result-object v10
+    move-result-object v9
 
-    monitor-enter v10
+    monitor-enter v9
 
-    .line 1005
+    .line 811
     :try_start_0
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1006
+    .line 812
     .local v0, action:Ljava/lang/String;
     const/4 v7, 0x0
 
-    .line 1007
+    .line 813
     .local v7, pkgList:[Ljava/lang/String;
-    const-string v9, "android.intent.action.QUERY_PACKAGE_RESTART"
+    const-string v8, "android.intent.action.QUERY_PACKAGE_RESTART"
 
-    invoke-virtual {v9, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v8, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_2
+    if-eqz v8, :cond_2
 
-    .line 1008
-    const-string v9, "android.intent.extra.PACKAGES"
+    .line 814
+    const-string v8, "android.intent.extra.PACKAGES"
 
-    invoke-virtual {p2, v9}, Landroid/content/Intent;->getStringArrayExtra(Ljava/lang/String;)[Ljava/lang/String;
+    invoke-virtual {p2, v8}, Landroid/content/Intent;->getStringArrayExtra(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v7
 
-    .line 1009
+    .line 815
     move-object v1, v7
 
     .local v1, arr$:[Ljava/lang/String;
@@ -151,25 +146,25 @@
 
     aget-object v5, v1, v3
 
-    .line 1010
+    .line 816
     .local v5, packageName:Ljava/lang/String;
-    iget-object v9, p0, Lcom/android/server/AlarmManagerService$UninstallReceiver;->this$0:Lcom/android/server/AlarmManagerService;
+    iget-object v8, p0, Lcom/android/server/AlarmManagerService$UninstallReceiver;->this$0:Lcom/android/server/AlarmManagerService;
 
-    invoke-virtual {v9, v5}, Lcom/android/server/AlarmManagerService;->lookForPackageLocked(Ljava/lang/String;)Z
+    invoke-virtual {v8, v5}, Lcom/android/server/AlarmManagerService;->lookForPackageLocked(Ljava/lang/String;)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_0
+    if-eqz v8, :cond_0
 
-    .line 1011
-    const/4 v9, -0x1
+    .line 817
+    const/4 v8, -0x1
 
-    invoke-virtual {p0, v9}, Lcom/android/server/AlarmManagerService$UninstallReceiver;->setResultCode(I)V
+    invoke-virtual {p0, v8}, Lcom/android/server/AlarmManagerService$UninstallReceiver;->setResultCode(I)V
 
-    .line 1012
-    monitor-exit v10
+    .line 818
+    monitor-exit v9
 
-    .line 1044
+    .line 845
     .end local v1           #arr$:[Ljava/lang/String;
     .end local v3           #i$:I
     .end local v4           #len$:I
@@ -177,7 +172,7 @@
     :goto_1
     return-void
 
-    .line 1009
+    .line 815
     .restart local v1       #arr$:[Ljava/lang/String;
     .restart local v3       #i$:I
     .restart local v4       #len$:I
@@ -187,58 +182,58 @@
 
     goto :goto_0
 
-    .line 1015
+    .line 821
     .end local v5           #packageName:Ljava/lang/String;
     :cond_1
-    monitor-exit v10
+    monitor-exit v9
 
     goto :goto_1
 
-    .line 1043
+    .line 844
     .end local v0           #action:Ljava/lang/String;
     .end local v1           #arr$:[Ljava/lang/String;
     .end local v3           #i$:I
     .end local v4           #len$:I
     .end local v7           #pkgList:[Ljava/lang/String;
     :catchall_0
-    move-exception v9
+    move-exception v8
 
-    monitor-exit v10
+    monitor-exit v9
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v9
+    throw v8
 
-    .line 1016
+    .line 822
     .restart local v0       #action:Ljava/lang/String;
     .restart local v7       #pkgList:[Ljava/lang/String;
     :cond_2
     :try_start_1
-    const-string v9, "android.intent.action.EXTERNAL_APPLICATIONS_UNAVAILABLE"
+    const-string v8, "android.intent.action.EXTERNAL_APPLICATIONS_UNAVAILABLE"
 
-    invoke-virtual {v9, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v8, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_4
+    if-eqz v8, :cond_4
 
-    .line 1017
-    const-string v9, "android.intent.extra.changed_package_list"
+    .line 823
+    const-string v8, "android.intent.extra.changed_package_list"
 
-    invoke-virtual {p2, v9}, Landroid/content/Intent;->getStringArrayExtra(Ljava/lang/String;)[Ljava/lang/String;
+    invoke-virtual {p2, v8}, Landroid/content/Intent;->getStringArrayExtra(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v7
 
-    .line 1037
+    .line 838
     :cond_3
     :goto_2
-    if-eqz v7, :cond_7
+    if-eqz v7, :cond_6
 
-    array-length v9, v7
+    array-length v8, v7
 
-    if-lez v9, :cond_7
+    if-lez v8, :cond_6
 
-    .line 1038
+    .line 839
     move-object v1, v7
 
     .restart local v1       #arr$:[Ljava/lang/String;
@@ -249,128 +244,97 @@
 
     .restart local v3       #i$:I
     :goto_3
-    if-ge v3, v4, :cond_7
+    if-ge v3, v4, :cond_6
 
     aget-object v6, v1, v3
 
-    .line 1039
+    .line 840
     .local v6, pkg:Ljava/lang/String;
-    iget-object v9, p0, Lcom/android/server/AlarmManagerService$UninstallReceiver;->this$0:Lcom/android/server/AlarmManagerService;
+    iget-object v8, p0, Lcom/android/server/AlarmManagerService$UninstallReceiver;->this$0:Lcom/android/server/AlarmManagerService;
 
-    invoke-virtual {v9, v6}, Lcom/android/server/AlarmManagerService;->removeLocked(Ljava/lang/String;)V
+    invoke-virtual {v8, v6}, Lcom/android/server/AlarmManagerService;->removeLocked(Ljava/lang/String;)V
 
-    .line 1040
-    iget-object v9, p0, Lcom/android/server/AlarmManagerService$UninstallReceiver;->this$0:Lcom/android/server/AlarmManagerService;
+    .line 841
+    iget-object v8, p0, Lcom/android/server/AlarmManagerService$UninstallReceiver;->this$0:Lcom/android/server/AlarmManagerService;
 
     #getter for: Lcom/android/server/AlarmManagerService;->mBroadcastStats:Ljava/util/HashMap;
-    invoke-static {v9}, Lcom/android/server/AlarmManagerService;->access$2000(Lcom/android/server/AlarmManagerService;)Ljava/util/HashMap;
+    invoke-static {v8}, Lcom/android/server/AlarmManagerService;->access$1900(Lcom/android/server/AlarmManagerService;)Ljava/util/HashMap;
 
-    move-result-object v9
+    move-result-object v8
 
-    invoke-virtual {v9, v6}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v8, v6}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1038
+    .line 839
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_3
 
-    .line 1018
+    .line 825
     .end local v1           #arr$:[Ljava/lang/String;
     .end local v3           #i$:I
     .end local v4           #len$:I
     .end local v6           #pkg:Ljava/lang/String;
     :cond_4
-    const-string v9, "android.intent.action.USER_STOPPED"
+    const-string v8, "android.intent.action.PACKAGE_REMOVED"
 
-    invoke-virtual {v9, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v9
-
-    if-eqz v9, :cond_5
-
-    .line 1019
-    const-string v9, "android.intent.extra.user_handle"
-
-    const/4 v11, -0x1
-
-    invoke-virtual {p2, v9, v11}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    invoke-virtual {v8, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v8
 
-    .line 1020
-    .local v8, userHandle:I
-    if-ltz v8, :cond_3
+    if-eqz v8, :cond_5
 
-    .line 1021
-    iget-object v9, p0, Lcom/android/server/AlarmManagerService$UninstallReceiver;->this$0:Lcom/android/server/AlarmManagerService;
+    const-string v8, "android.intent.extra.REPLACING"
 
-    invoke-virtual {v9, v8}, Lcom/android/server/AlarmManagerService;->removeUserLocked(I)V
+    const/4 v10, 0x0
 
-    goto :goto_2
+    invoke-virtual {p2, v8, v10}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
-    .line 1024
-    .end local v8           #userHandle:I
-    :cond_5
-    const-string v9, "android.intent.action.PACKAGE_REMOVED"
+    move-result v8
 
-    invoke-virtual {v9, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v8, :cond_5
 
-    move-result v9
-
-    if-eqz v9, :cond_6
-
-    const-string v9, "android.intent.extra.REPLACING"
-
-    const/4 v11, 0x0
-
-    invoke-virtual {p2, v9, v11}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
-
-    move-result v9
-
-    if-eqz v9, :cond_6
-
-    .line 1027
-    monitor-exit v10
+    .line 828
+    monitor-exit v9
 
     goto :goto_1
 
-    .line 1029
-    :cond_6
+    .line 830
+    :cond_5
     invoke-virtual {p2}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object v2
 
-    .line 1030
+    .line 831
     .local v2, data:Landroid/net/Uri;
     if-eqz v2, :cond_3
 
-    .line 1031
+    .line 832
     invoke-virtual {v2}, Landroid/net/Uri;->getSchemeSpecificPart()Ljava/lang/String;
 
     move-result-object v6
 
-    .line 1032
+    .line 833
     .restart local v6       #pkg:Ljava/lang/String;
     if-eqz v6, :cond_3
 
-    .line 1033
-    const/4 v9, 0x1
+    .line 834
+    const/4 v8, 0x1
 
-    new-array v7, v9, [Ljava/lang/String;
+    new-array v7, v8, [Ljava/lang/String;
 
     .end local v7           #pkgList:[Ljava/lang/String;
-    const/4 v9, 0x0
+    const/4 v8, 0x0
 
-    aput-object v6, v7, v9
+    aput-object v6, v7, v8
 
     .restart local v7       #pkgList:[Ljava/lang/String;
     goto :goto_2
 
-    .line 1043
+    .line 844
     .end local v2           #data:Landroid/net/Uri;
     .end local v6           #pkg:Ljava/lang/String;
-    :cond_7
-    monitor-exit v10
+    :cond_6
+    monitor-exit v9
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 

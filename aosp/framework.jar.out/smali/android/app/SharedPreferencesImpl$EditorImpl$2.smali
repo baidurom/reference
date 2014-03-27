@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 372
+    .line 352
     iput-object p1, p0, Landroid/app/SharedPreferencesImpl$EditorImpl$2;->this$1:Landroid/app/SharedPreferencesImpl$EditorImpl;
 
     iput-object p2, p0, Landroid/app/SharedPreferencesImpl$EditorImpl$2;->val$awaitCommit:Ljava/lang/Runnable;
@@ -46,16 +46,16 @@
     .locals 1
 
     .prologue
-    .line 374
+    .line 354
     iget-object v0, p0, Landroid/app/SharedPreferencesImpl$EditorImpl$2;->val$awaitCommit:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 375
+    .line 355
     iget-object v0, p0, Landroid/app/SharedPreferencesImpl$EditorImpl$2;->val$awaitCommit:Ljava/lang/Runnable;
 
     invoke-static {v0}, Landroid/app/QueuedWork;->remove(Ljava/lang/Runnable;)V
 
-    .line 376
+    .line 356
     return-void
 .end method

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 353
+    .line 337
     iput-object p1, p0, Landroid/widget/VideoView$3;->this$0:Landroid/widget/VideoView;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -44,19 +44,19 @@
     .prologue
     const/4 v1, 0x5
 
-    .line 355
+    .line 339
     iget-object v0, p0, Landroid/widget/VideoView$3;->this$0:Landroid/widget/VideoView;
 
     #setter for: Landroid/widget/VideoView;->mCurrentState:I
     invoke-static {v0, v1}, Landroid/widget/VideoView;->access$202(Landroid/widget/VideoView;I)I
 
-    .line 356
+    .line 340
     iget-object v0, p0, Landroid/widget/VideoView$3;->this$0:Landroid/widget/VideoView;
 
     #setter for: Landroid/widget/VideoView;->mTargetState:I
     invoke-static {v0, v1}, Landroid/widget/VideoView;->access$1202(Landroid/widget/VideoView;I)I
 
-    .line 357
+    .line 341
     iget-object v0, p0, Landroid/widget/VideoView$3;->this$0:Landroid/widget/VideoView;
 
     #getter for: Landroid/widget/VideoView;->mMediaController:Landroid/widget/MediaController;
@@ -66,7 +66,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 358
+    .line 342
     iget-object v0, p0, Landroid/widget/VideoView$3;->this$0:Landroid/widget/VideoView;
 
     #getter for: Landroid/widget/VideoView;->mMediaController:Landroid/widget/MediaController;
@@ -76,7 +76,7 @@
 
     invoke-virtual {v0}, Landroid/widget/MediaController;->hide()V
 
-    .line 360
+    .line 344
     :cond_0
     iget-object v0, p0, Landroid/widget/VideoView$3;->this$0:Landroid/widget/VideoView;
 
@@ -87,7 +87,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 361
+    .line 345
     iget-object v0, p0, Landroid/widget/VideoView$3;->this$0:Landroid/widget/VideoView;
 
     #getter for: Landroid/widget/VideoView;->mOnCompletionListener:Landroid/media/MediaPlayer$OnCompletionListener;
@@ -104,7 +104,7 @@
 
     invoke-interface {v0, v1}, Landroid/media/MediaPlayer$OnCompletionListener;->onCompletion(Landroid/media/MediaPlayer;)V
 
-    .line 363
+    .line 347
     :cond_1
     return-void
 .end method

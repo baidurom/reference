@@ -23,30 +23,30 @@
 
 
 # direct methods
-.method constructor <init>(Landroid/webkit/HTML5Audio;Landroid/os/Looper;Landroid/webkit/WebViewClassic;)V
+.method constructor <init>(Landroid/webkit/HTML5Audio;Landroid/os/Looper;Landroid/webkit/WebView;)V
     .locals 2
     .parameter
     .parameter "uiThreadLooper"
     .parameter "webView"
 
     .prologue
-    .line 97
+    .line 95
     iput-object p1, p0, Landroid/webkit/HTML5Audio$IsPrivateBrowsingEnabledGetter;->this$0:Landroid/webkit/HTML5Audio;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 98
+    .line 96
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
     new-instance v1, Landroid/webkit/HTML5Audio$IsPrivateBrowsingEnabledGetter$1;
 
-    invoke-direct {v1, p0, p1, p3}, Landroid/webkit/HTML5Audio$IsPrivateBrowsingEnabledGetter$1;-><init>(Landroid/webkit/HTML5Audio$IsPrivateBrowsingEnabledGetter;Landroid/webkit/HTML5Audio;Landroid/webkit/WebViewClassic;)V
+    invoke-direct {v1, p0, p1, p3}, Landroid/webkit/HTML5Audio$IsPrivateBrowsingEnabledGetter$1;-><init>(Landroid/webkit/HTML5Audio$IsPrivateBrowsingEnabledGetter;Landroid/webkit/HTML5Audio;Landroid/webkit/WebView;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 108
+    .line 106
     return-void
 .end method
 
@@ -56,7 +56,7 @@
     .parameter "x1"
 
     .prologue
-    .line 94
+    .line 92
     iput-boolean p1, p0, Landroid/webkit/HTML5Audio$IsPrivateBrowsingEnabledGetter;->mIsPrivateBrowsingEnabled:Z
 
     return p1
@@ -68,7 +68,7 @@
     .parameter "x1"
 
     .prologue
-    .line 94
+    .line 92
     iput-boolean p1, p0, Landroid/webkit/HTML5Audio$IsPrivateBrowsingEnabledGetter;->mIsReady:Z
 
     return p1
@@ -80,7 +80,7 @@
     .locals 1
 
     .prologue
-    .line 110
+    .line 108
     monitor-enter p0
 
     :goto_0
@@ -91,7 +91,7 @@
 
     if-nez v0, :cond_0
 
-    .line 112
+    .line 110
     :try_start_1
     invoke-virtual {p0}, Ljava/lang/Object;->wait()V
     :try_end_1
@@ -100,13 +100,13 @@
 
     goto :goto_0
 
-    .line 113
+    .line 111
     :catch_0
     move-exception v0
 
     goto :goto_0
 
-    .line 116
+    .line 114
     :cond_0
     :try_start_2
     iget-boolean v0, p0, Landroid/webkit/HTML5Audio$IsPrivateBrowsingEnabledGetter;->mIsPrivateBrowsingEnabled:Z
@@ -117,7 +117,7 @@
 
     return v0
 
-    .line 110
+    .line 108
     :catchall_0
     move-exception v0
 

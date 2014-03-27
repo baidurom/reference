@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_single="true" android:state_pressed="true" android:drawable="@drawable/yi_btn_keyboard_key_dark_pressed_baidu" />
+    <item android:state_single="true" android:drawable="@drawable/yi_btn_keyboard_key_dark_normal_baidu" />
+    <item android:state_checkable="true" android:state_checked="true" android:state_pressed="true" android:drawable="@drawable/yi_btn_keyboard_key_dark_pressed_on_baidu" />
+    <item android:state_checkable="true" android:state_pressed="true" android:drawable="@drawable/yi_btn_keyboard_key_dark_pressed_off_baidu" />
+    <item android:state_checkable="true" android:state_checked="true" android:drawable="@drawable/yi_btn_keyboard_key_dark_normal_on_baidu" />
+    <item android:state_checkable="true" android:drawable="@drawable/yi_btn_keyboard_key_dark_normal_off_baidu" />
+    <item android:state_pressed="true" android:drawable="@drawable/yi_btn_keyboard_key_light_pressed_baidu" />
+    <item android:drawable="@drawable/yi_btn_keyboard_key_light_normal_baidu" />
+</selector>

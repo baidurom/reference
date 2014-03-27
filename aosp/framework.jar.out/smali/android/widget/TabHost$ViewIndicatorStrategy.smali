@@ -30,15 +30,15 @@
     .parameter "view"
 
     .prologue
-    .line 667
+    .line 600
     iput-object p1, p0, Landroid/widget/TabHost$ViewIndicatorStrategy;->this$0:Landroid/widget/TabHost;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 668
+    .line 601
     iput-object p2, p0, Landroid/widget/TabHost$ViewIndicatorStrategy;->mView:Landroid/view/View;
 
-    .line 669
+    .line 602
     return-void
 .end method
 
@@ -49,7 +49,7 @@
     .parameter "x2"
 
     .prologue
-    .line 663
+    .line 596
     invoke-direct {p0, p1, p2}, Landroid/widget/TabHost$ViewIndicatorStrategy;-><init>(Landroid/widget/TabHost;Landroid/view/View;)V
 
     return-void
@@ -61,7 +61,7 @@
     .locals 1
 
     .prologue
-    .line 672
+    .line 605
     iget-object v0, p0, Landroid/widget/TabHost$ViewIndicatorStrategy;->mView:Landroid/view/View;
 
     return-object v0

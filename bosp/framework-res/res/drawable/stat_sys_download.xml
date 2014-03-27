@@ -7,4 +7,6 @@
     <item android:duration="200" android:drawable="@drawable/stat_sys_download_anim3" />
     <item android:duration="200" android:drawable="@drawable/stat_sys_download_anim4" />
     <item android:duration="200" android:drawable="@drawable/stat_sys_download_anim5" />
+    <item android:duration="200" android:drawable="@drawable/stat_sys_download_anim6" />
+    <item android:duration="200" android:drawable="@drawable/stat_sys_download_anim7" />
 </animation-list>
