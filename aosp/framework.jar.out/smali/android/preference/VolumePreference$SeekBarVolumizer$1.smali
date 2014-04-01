@@ -77,12 +77,33 @@
 
     move-result v2
 
-    invoke-virtual {v1, v2}, Landroid/media/AudioManager;->getStreamVolume(I)I
+    invoke-virtual {v1, v2}, Landroid/media/AudioManager;->isStreamMute(I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Landroid/preference/VolumePreference$SeekBarVolumizer$1;->this$1:Landroid/preference/VolumePreference$SeekBarVolumizer;
+
+    #getter for: Landroid/preference/VolumePreference$SeekBarVolumizer;->mAudioManager:Landroid/media/AudioManager;
+    invoke-static {v1}, Landroid/preference/VolumePreference$SeekBarVolumizer;->access$100(Landroid/preference/VolumePreference$SeekBarVolumizer;)Landroid/media/AudioManager;
+
+    move-result-object v1
+
+    iget-object v2, p0, Landroid/preference/VolumePreference$SeekBarVolumizer$1;->this$1:Landroid/preference/VolumePreference$SeekBarVolumizer;
+
+    #getter for: Landroid/preference/VolumePreference$SeekBarVolumizer;->mStreamType:I
+    invoke-static {v2}, Landroid/preference/VolumePreference$SeekBarVolumizer;->access$200(Landroid/preference/VolumePreference$SeekBarVolumizer;)I
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Landroid/media/AudioManager;->getLastAudibleStreamVolume(I)I
 
     move-result v0
 
-    .line 243
+    .line 245
     .local v0, volume:I
+    :goto_0
     iget-object v1, p0, Landroid/preference/VolumePreference$SeekBarVolumizer$1;->this$1:Landroid/preference/VolumePreference$SeekBarVolumizer;
 
     #getter for: Landroid/preference/VolumePreference$SeekBarVolumizer;->mSeekBar:Landroid/widget/SeekBar;
@@ -92,8 +113,30 @@
 
     invoke-virtual {v1, v0}, Landroid/widget/SeekBar;->setProgress(I)V
 
-    .line 245
+    .line 247
     .end local v0           #volume:I
     :cond_0
     return-void
+
+    .line 242
+    :cond_1
+    iget-object v1, p0, Landroid/preference/VolumePreference$SeekBarVolumizer$1;->this$1:Landroid/preference/VolumePreference$SeekBarVolumizer;
+
+    #getter for: Landroid/preference/VolumePreference$SeekBarVolumizer;->mAudioManager:Landroid/media/AudioManager;
+    invoke-static {v1}, Landroid/preference/VolumePreference$SeekBarVolumizer;->access$100(Landroid/preference/VolumePreference$SeekBarVolumizer;)Landroid/media/AudioManager;
+
+    move-result-object v1
+
+    iget-object v2, p0, Landroid/preference/VolumePreference$SeekBarVolumizer$1;->this$1:Landroid/preference/VolumePreference$SeekBarVolumizer;
+
+    #getter for: Landroid/preference/VolumePreference$SeekBarVolumizer;->mStreamType:I
+    invoke-static {v2}, Landroid/preference/VolumePreference$SeekBarVolumizer;->access$200(Landroid/preference/VolumePreference$SeekBarVolumizer;)I
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Landroid/media/AudioManager;->getStreamVolume(I)I
+
+    move-result v0
+
+    goto :goto_0
 .end method

@@ -23,7 +23,7 @@
 
 
 # virtual methods
-.method public abstract addService(Ljava/lang/String;Landroid/os/IBinder;Z)V
+.method public abstract addService(Ljava/lang/String;Landroid/os/IBinder;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

@@ -242,7 +242,7 @@
 
 # virtual methods
 .method closeConnection()V
-    .locals 2
+    .locals 3
 
     .prologue
     .line 382
@@ -286,8 +286,37 @@
     :catch_0
     move-exception v0
 
-    .line 395
+    .line 392
     .local v0, e:Ljava/io/IOException;
+    sget-boolean v1, Landroid/net/http/HttpLog;->LOGV:Z
+
+    if-eqz v1, :cond_2
+
+    .line 393
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "HttpsConnection.closeConnection(): failed closing connection "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Landroid/net/http/HttpsConnection;->mHost:Lorg/apache/http/HttpHost;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/net/http/HttpLog;->v(Ljava/lang/String;)V
+
+    .line 395
+    :cond_2
     invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
 
     goto :goto_0
@@ -500,7 +529,7 @@
 
     if-nez v26, :cond_0
 
-    const-string/jumbo v26, "keep-alive"
+    const-string v26, "keep-alive"
 
     move-object/from16 v0, v26
 
@@ -1177,6 +1206,16 @@
     move-object/from16 v1, p0
 
     iput-boolean v0, v1, Landroid/net/http/HttpsConnection;->mAborted:Z
+
+    .line 344
+    sget-boolean v26, Landroid/net/http/HttpLog;->LOGV:Z
+
+    if-eqz v26, :cond_10
+
+    .line 345
+    const-string v26, "HttpsConnection.openConnection(): SSL timeout expired and request was cancelled!!!"
+
+    invoke-static/range {v26 .. v26}, Landroid/net/http/HttpLog;->v(Ljava/lang/String;)V
     :try_end_a
     .catchall {:try_start_a .. :try_end_a} :catchall_1
     .catch Ljava/lang/InterruptedException; {:try_start_a .. :try_end_a} :catch_6
@@ -1309,7 +1348,34 @@
     .prologue
     const/4 v0, 0x0
 
+    .line 403
+    sget-boolean v1, Landroid/net/http/HttpLog;->LOGV:Z
+
+    if-eqz v1, :cond_0
+
+    .line 404
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "HttpsConnection.restartConnection(): proceed: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/net/http/HttpLog;->v(Ljava/lang/String;)V
+
     .line 408
+    :cond_0
     iget-object v1, p0, Landroid/net/http/HttpsConnection;->mSuspendLock:Ljava/lang/Object;
 
     monitor-enter v1
@@ -1318,7 +1384,7 @@
     :try_start_0
     iget-boolean v2, p0, Landroid/net/http/HttpsConnection;->mSuspended:Z
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_2
 
     .line 410
     const/4 v2, 0x0
@@ -1326,11 +1392,11 @@
     iput-boolean v2, p0, Landroid/net/http/HttpsConnection;->mSuspended:Z
 
     .line 411
-    if-nez p1, :cond_0
+    if-nez p1, :cond_1
 
     const/4 v0, 0x1
 
-    :cond_0
+    :cond_1
     iput-boolean v0, p0, Landroid/net/http/HttpsConnection;->mAborted:Z
 
     .line 412
@@ -1339,7 +1405,7 @@
     invoke-virtual {v0}, Ljava/lang/Object;->notify()V
 
     .line 414
-    :cond_1
+    :cond_2
     monitor-exit v1
 
     .line 415

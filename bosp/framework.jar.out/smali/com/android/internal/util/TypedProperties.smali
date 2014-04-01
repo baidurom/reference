@@ -262,7 +262,7 @@
 
     .line 119
     :cond_3
-    const-string/jumbo v0, "int"
+    const-string v0, "int"
 
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -718,7 +718,7 @@
     .line 250
     new-instance v7, Lcom/android/internal/util/TypedProperties$ParseException;
 
-    const-string/jumbo v8, "integer constant"
+    const-string v8, "integer constant"
 
     invoke-direct {v7, p0, v8}, Lcom/android/internal/util/TypedProperties$ParseException;-><init>(Ljava/io/StreamTokenizer;Ljava/lang/String;)V
 
@@ -785,7 +785,7 @@
     .local v2, ex:Ljava/lang/NumberFormatException;
     new-instance v7, Lcom/android/internal/util/TypedProperties$ParseException;
 
-    const-string/jumbo v8, "integer constant"
+    const-string v8, "integer constant"
 
     invoke-direct {v7, p0, v8}, Lcom/android/internal/util/TypedProperties$ParseException;-><init>(Ljava/io/StreamTokenizer;Ljava/lang/String;)V
 
@@ -1497,7 +1497,7 @@
     :cond_1
     new-instance v1, Lcom/android/internal/util/TypedProperties$TypeException;
 
-    const-string/jumbo v2, "int"
+    const-string v2, "int"
 
     invoke-direct {v1, p1, v0, v2}, Lcom/android/internal/util/TypedProperties$TypeException;-><init>(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/String;)V
 

@@ -38,6 +38,9 @@
 
     .line 67
     .local v0, extras:Landroid/os/Bundle;
+    if-eqz v0, :cond_0
+
+    .line 68
     const-string/jumbo v1, "respflags"
 
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->getByte(Ljava/lang/String;)B
@@ -46,7 +49,7 @@
 
     iput-byte v1, p0, Landroid/nfc/tech/NfcV;->mRespFlags:B
 
-    .line 68
+    .line 69
     const-string v1, "dsfid"
 
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->getByte(Ljava/lang/String;)B
@@ -55,7 +58,8 @@
 
     iput-byte v1, p0, Landroid/nfc/tech/NfcV;->mDsfId:B
 
-    .line 69
+    .line 71
+    :cond_0
     return-void
 .end method
 
@@ -137,7 +141,7 @@
     .locals 1
 
     .prologue
-    .line 90
+    .line 92
     iget-byte v0, p0, Landroid/nfc/tech/NfcV;->mDsfId:B
 
     return v0
@@ -147,7 +151,7 @@
     .locals 1
 
     .prologue
-    .line 124
+    .line 126
     invoke-virtual {p0}, Landroid/nfc/tech/NfcV;->getMaxTransceiveLengthInternal()I
 
     move-result v0
@@ -159,7 +163,7 @@
     .locals 1
 
     .prologue
-    .line 79
+    .line 81
     iget-byte v0, p0, Landroid/nfc/tech/NfcV;->mRespFlags:B
 
     return v0
@@ -214,7 +218,7 @@
     .end annotation
 
     .prologue
-    .line 115
+    .line 117
     const/4 v0, 0x1
 
     invoke-virtual {p0, p1, v0}, Landroid/nfc/tech/NfcV;->transceive([BZ)[B

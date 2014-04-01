@@ -6,7 +6,13 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/drm/DrmStore$DrmInfoType;,
+        Landroid/drm/DrmStore$NTPResult;,
+        Landroid/drm/DrmStore$DrmExtra;,
+        Landroid/drm/DrmStore$DrmMethod;,
+        Landroid/drm/DrmStore$DrmFileExt;,
+        Landroid/drm/DrmStore$DrmObjectMime;,
+        Landroid/drm/DrmStore$MetadataKey;,
+        Landroid/drm/DrmStore$MimePrefix;,
         Landroid/drm/DrmStore$RightsStatus;,
         Landroid/drm/DrmStore$Action;,
         Landroid/drm/DrmStore$Playback;,
@@ -21,8 +27,9 @@
     .locals 0
 
     .prologue
-    .line 291
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 25
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 317
     return-void
 .end method

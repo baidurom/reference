@@ -23,7 +23,7 @@
     .end annotation
 .end method
 
-.method public abstract animateCollapsePanels()V
+.method public abstract animateCollapse()V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -31,23 +31,7 @@
     .end annotation
 .end method
 
-.method public abstract animateExpandNotificationsPanel()V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract animateExpandSettingsPanel()V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract cancelPreloadRecentApps()V
+.method public abstract animateExpand()V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -63,23 +47,7 @@
     .end annotation
 .end method
 
-.method public abstract dispatchStatusBarKeyEvent(Landroid/view/KeyEvent;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract hideSimIndicator()V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract preloadRecentApps()V
+.method public abstract hideSIMIndicator()V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -127,7 +95,7 @@
     .end annotation
 .end method
 
-.method public abstract setSystemUiVisibility(II)V
+.method public abstract setSystemUiVisibility(I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -135,15 +103,7 @@
     .end annotation
 .end method
 
-.method public abstract showApplicationGuide(Ljava/lang/String;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract showSimIndicator(Ljava/lang/String;)V
+.method public abstract showSIMIndicator(Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

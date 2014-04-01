@@ -287,7 +287,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "scrollToFlipperViewById: 16909337, 16909341, : "
+    const-string v3, "scrollToFlipperViewById: 16909239, 16909242, : "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

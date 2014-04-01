@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 360
+    .line 351
     iput-object p1, p0, Lcom/android/server/usb/UsbSettingsManager$MyPackageMonitor;->this$0:Lcom/android/server/usb/UsbSettingsManager;
 
     invoke-direct {p0}, Lcom/android/internal/content/PackageMonitor;-><init>()V
@@ -38,7 +38,7 @@
     .parameter "x1"
 
     .prologue
-    .line 360
+    .line 351
     invoke-direct {p0, p1}, Lcom/android/server/usb/UsbSettingsManager$MyPackageMonitor;-><init>(Lcom/android/server/usb/UsbSettingsManager;)V
 
     return-void
@@ -52,13 +52,13 @@
     .parameter "uid"
 
     .prologue
-    .line 363
+    .line 354
     iget-object v0, p0, Lcom/android/server/usb/UsbSettingsManager$MyPackageMonitor;->this$0:Lcom/android/server/usb/UsbSettingsManager;
 
     #calls: Lcom/android/server/usb/UsbSettingsManager;->handlePackageUpdate(Ljava/lang/String;)V
     invoke-static {v0, p1}, Lcom/android/server/usb/UsbSettingsManager;->access$000(Lcom/android/server/usb/UsbSettingsManager;Ljava/lang/String;)V
 
-    .line 364
+    .line 355
     return-void
 .end method
 
@@ -69,13 +69,13 @@
     .parameter "components"
 
     .prologue
-    .line 368
+    .line 358
     iget-object v0, p0, Lcom/android/server/usb/UsbSettingsManager$MyPackageMonitor;->this$0:Lcom/android/server/usb/UsbSettingsManager;
 
     #calls: Lcom/android/server/usb/UsbSettingsManager;->handlePackageUpdate(Ljava/lang/String;)V
     invoke-static {v0, p1}, Lcom/android/server/usb/UsbSettingsManager;->access$000(Lcom/android/server/usb/UsbSettingsManager;Ljava/lang/String;)V
 
-    .line 369
+    .line 359
     return-void
 .end method
 
@@ -85,11 +85,11 @@
     .parameter "uid"
 
     .prologue
-    .line 373
+    .line 362
     iget-object v0, p0, Lcom/android/server/usb/UsbSettingsManager$MyPackageMonitor;->this$0:Lcom/android/server/usb/UsbSettingsManager;
 
     invoke-virtual {v0, p1}, Lcom/android/server/usb/UsbSettingsManager;->clearDefaults(Ljava/lang/String;)V
 
-    .line 374
+    .line 363
     return-void
 .end method

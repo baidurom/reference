@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/accounts/AccountManager;->confirmCredentialsAsUser(Landroid/accounts/Account;Landroid/os/Bundle;Landroid/app/Activity;Landroid/accounts/AccountManagerCallback;Landroid/os/Handler;Landroid/os/UserHandle;)Landroid/accounts/AccountManagerFuture;
+    value = Landroid/accounts/AccountManager;->updateCredentials(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;Landroid/app/Activity;Landroid/accounts/AccountManagerCallback;Landroid/os/Handler;)Landroid/accounts/AccountManagerFuture;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -21,13 +21,13 @@
 
 .field final synthetic val$activity:Landroid/app/Activity;
 
-.field final synthetic val$options:Landroid/os/Bundle;
+.field final synthetic val$authTokenType:Ljava/lang/String;
 
-.field final synthetic val$userId:I
+.field final synthetic val$options:Landroid/os/Bundle;
 
 
 # direct methods
-.method constructor <init>(Landroid/accounts/AccountManager;Landroid/app/Activity;Landroid/os/Handler;Landroid/accounts/AccountManagerCallback;Landroid/accounts/Account;Landroid/os/Bundle;Landroid/app/Activity;I)V
+.method constructor <init>(Landroid/accounts/AccountManager;Landroid/app/Activity;Landroid/os/Handler;Landroid/accounts/AccountManagerCallback;Landroid/accounts/Account;Ljava/lang/String;Landroid/app/Activity;Landroid/os/Bundle;)V
     .locals 0
     .parameter
     .parameter "x0"
@@ -39,17 +39,17 @@
     .parameter
 
     .prologue
-    .line 1200
+    .line 1190
     .local p4, x2:Landroid/accounts/AccountManagerCallback;,"Landroid/accounts/AccountManagerCallback<Landroid/os/Bundle;>;"
     iput-object p1, p0, Landroid/accounts/AccountManager$8;->this$0:Landroid/accounts/AccountManager;
 
     iput-object p5, p0, Landroid/accounts/AccountManager$8;->val$account:Landroid/accounts/Account;
 
-    iput-object p6, p0, Landroid/accounts/AccountManager$8;->val$options:Landroid/os/Bundle;
+    iput-object p6, p0, Landroid/accounts/AccountManager$8;->val$authTokenType:Ljava/lang/String;
 
     iput-object p7, p0, Landroid/accounts/AccountManager$8;->val$activity:Landroid/app/Activity;
 
-    iput p8, p0, Landroid/accounts/AccountManager$8;->val$userId:I
+    iput-object p8, p0, Landroid/accounts/AccountManager$8;->val$options:Landroid/os/Bundle;
 
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/accounts/AccountManager$AmsTask;-><init>(Landroid/accounts/AccountManager;Landroid/app/Activity;Landroid/os/Handler;Landroid/accounts/AccountManagerCallback;)V
 
@@ -67,7 +67,7 @@
     .end annotation
 
     .prologue
-    .line 1202
+    .line 1192
     iget-object v0, p0, Landroid/accounts/AccountManager$8;->this$0:Landroid/accounts/AccountManager;
 
     #getter for: Landroid/accounts/AccountManager;->mService:Landroid/accounts/IAccountManager;
@@ -79,7 +79,7 @@
 
     iget-object v2, p0, Landroid/accounts/AccountManager$8;->val$account:Landroid/accounts/Account;
 
-    iget-object v3, p0, Landroid/accounts/AccountManager$8;->val$options:Landroid/os/Bundle;
+    iget-object v3, p0, Landroid/accounts/AccountManager$8;->val$authTokenType:Ljava/lang/String;
 
     iget-object v4, p0, Landroid/accounts/AccountManager$8;->val$activity:Landroid/app/Activity;
 
@@ -88,14 +88,14 @@
     const/4 v4, 0x1
 
     :goto_0
-    iget v5, p0, Landroid/accounts/AccountManager$8;->val$userId:I
+    iget-object v5, p0, Landroid/accounts/AccountManager$8;->val$options:Landroid/os/Bundle;
 
-    invoke-interface/range {v0 .. v5}, Landroid/accounts/IAccountManager;->confirmCredentialsAsUser(Landroid/accounts/IAccountManagerResponse;Landroid/accounts/Account;Landroid/os/Bundle;ZI)V
+    invoke-interface/range {v0 .. v5}, Landroid/accounts/IAccountManager;->updateCredentials(Landroid/accounts/IAccountManagerResponse;Landroid/accounts/Account;Ljava/lang/String;ZLandroid/os/Bundle;)V
 
-    .line 1204
+    .line 1194
     return-void
 
-    .line 1202
+    .line 1192
     :cond_0
     const/4 v4, 0x0
 

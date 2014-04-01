@@ -28,10 +28,6 @@
 
 .field private static final BASE:I = 0x24000
 
-.field private static final CONFIG_AUTH_FAILURE:I = 0x12
-
-.field private static final CONFIG_MULTIPLE_PBC_DETECTED:I = 0xc
-
 .field private static final CONNECTED:I = 0x1
 
 .field private static final CONNECTED_STR:Ljava/lang/String; = "CONNECTED"
@@ -40,7 +36,7 @@
 
 .field private static final DISCONNECTED_STR:Ljava/lang/String; = "DISCONNECTED"
 
-.field public static final DRIVER_HUNG_EVENT:I = 0x2400c
+.field public static final DRIVER_HUNG_EVENT:I = 0x24009
 
 .field private static final DRIVER_STATE:I = 0x7
 
@@ -51,8 +47,6 @@
 .field private static final EAP_FAILURE:I = 0x8
 
 .field private static final EAP_FAILURE_STR:Ljava/lang/String; = "EAP-FAILURE"
-
-.field private static final EAP_FAST_NEW_PAC_UPDATED:Ljava/lang/String; = "EAP-FAST-NEW-PAC-UPDATED"
 
 #the value of this static final field might be set in the static constructor
 .field private static final EVENT_PREFIX_LEN_STR:I = 0x0
@@ -69,13 +63,21 @@
 
 .field private static final MONITOR_SOCKET_CLOSED_STR:Ljava/lang/String; = "connection closed"
 
+.field public static final MTK_WPS_NO_OEVELAP_EVENT:I = 0x24036
+
+.field public static final MTK_WPS_OEVELAP_EVENT:I = 0x24035
+
 .field public static final NETWORK_CONNECTION_EVENT:I = 0x24003
 
 .field public static final NETWORK_DISCONNECTION_EVENT:I = 0x24004
 
-.field public static final NEW_PAC_UPDATED_EVENT:I = 0x24034
-
 .field private static final NO_CERTIFICATION:I = 0x9
+
+.field private static final NO_CONNECTABLE_AP:I = 0xa
+
+.field public static final NO_CONNECTABLE_AP_EVENT:I = 0x2403b
+
+.field private static final NO_CONNECTABLE_AP_STRING:Ljava/lang/String; = "NO-SUITABLE-AP-FOUND"
 
 .field public static final P2P_DEVICE_FOUND_EVENT:I = 0x24015
 
@@ -86,10 +88,6 @@
 .field private static final P2P_DEVICE_LOST_STR:Ljava/lang/String; = "P2P-DEVICE-LOST"
 
 .field private static final P2P_EVENT_PREFIX_STR:Ljava/lang/String; = "P2P"
-
-.field public static final P2P_FIND_STOPPED_EVENT:I = 0x24025
-
-.field private static final P2P_FIND_STOPPED_STR:Ljava/lang/String; = "P2P-FIND-STOPPED"
 
 .field public static final P2P_GO_NEGOTIATION_FAILURE_EVENT:I = 0x2401a
 
@@ -127,37 +125,19 @@
 
 .field private static final P2P_INVITATION_RESULT_STR:Ljava/lang/String; = "P2P-INVITATION-RESULT"
 
-.field public static final P2P_PEER_DISCONNECT_EVENT:I = 0x24028
-
-.field public static final P2P_PROV_DISC_ENTER_PIN_EVENT:I = 0x24023
+.field public static final P2P_PROV_DISC_ENTER_PIN_EVENT:I = 0x24022
 
 .field private static final P2P_PROV_DISC_ENTER_PIN_STR:Ljava/lang/String; = "P2P-PROV-DISC-ENTER-PIN"
-
-.field public static final P2P_PROV_DISC_FAILURE_EVENT:I = 0x24027
-
-.field private static final P2P_PROV_DISC_FAILURE_STR:Ljava/lang/String; = "P2P-PROV-DISC-FAILURE"
 
 .field public static final P2P_PROV_DISC_PBC_REQ_EVENT:I = 0x24021
 
 .field private static final P2P_PROV_DISC_PBC_REQ_STR:Ljava/lang/String; = "P2P-PROV-DISC-PBC-REQ"
 
-.field public static final P2P_PROV_DISC_PBC_RSP_EVENT:I = 0x24022
-
-.field private static final P2P_PROV_DISC_PBC_RSP_STR:Ljava/lang/String; = "P2P-PROV-DISC-PBC-RESP"
-
-.field public static final P2P_PROV_DISC_SHOW_PIN_EVENT:I = 0x24024
+.field public static final P2P_PROV_DISC_SHOW_PIN_EVENT:I = 0x24023
 
 .field private static final P2P_PROV_DISC_SHOW_PIN_STR:Ljava/lang/String; = "P2P-PROV-DISC-SHOW-PIN"
 
-.field public static final P2P_SERV_DISC_RESP_EVENT:I = 0x24026
-
-.field private static final P2P_SERV_DISC_RESP_STR:Ljava/lang/String; = "P2P-SERV-DISC-RESP"
-
 .field private static final PASSWORD_MAY_BE_INCORRECT_STR:Ljava/lang/String; = "pre-shared key may be incorrect"
-
-.field private static final REASON_TKIP_ONLY_PROHIBITED:I = 0x1
-
-.field private static final REASON_WEP_PROHIBITED:I = 0x2
 
 .field private static final SCAN_RESULTS:I = 0x4
 
@@ -168,6 +148,8 @@
 .field private static final STATE_CHANGE:I = 0x3
 
 .field private static final STATE_CHANGE_STR:Ljava/lang/String; = "STATE-CHANGE"
+
+.field public static final SUPPLICANT_HUNG_EVENT:I = 0x2403c
 
 .field public static final SUPPLICANT_STATE_CHANGE_EVENT:I = 0x24006
 
@@ -181,53 +163,53 @@
 
 .field private static final TERMINATING_STR:Ljava/lang/String; = "TERMINATING"
 
-.field private static final UNKNOWN:I = 0xa
+.field private static final UNKNOWN:I = 0xb
 
-.field public static final WAPI_NO_CERTIFICATION_EVENT:I = 0x24033
+.field public static final WAPI_NO_CERTIFICATION_EVENT:I = 0x2403a
 
 .field private static final WAPI_NO_CERTIFICATION_STRING:Ljava/lang/String; = "EAP-NO-CERTIFICATION"
-
-.field public static final WHOLE_CHIP_RESET_FAIL_EVENT:I = 0x24035
-
-.field private static final WHOLE_CHIP_RESET_FAIL_STRING:Ljava/lang/String; = "WHOLE-CHIP-RESET-FAIL"
 
 .field private static final WPA_EVENT_PREFIX_STR:Ljava/lang/String; = "WPA:"
 
 .field private static final WPA_RECV_ERROR_STR:Ljava/lang/String; = "recv error"
 
-.field public static final WPS_FAIL_EVENT:I = 0x24009
+.field public static final WPS_AP_PBC_EVENT:I = 0x24038
 
-.field private static final WPS_FAIL_PATTERN:Ljava/lang/String; = "WPS-FAIL msg=\\d+(?: config_error=(\\d+))?(?: reason=(\\d+))?"
+.field private static final WPS_AP_PBC_STRING:Ljava/lang/String; = "WPS-AP-AVAILABLE-PBC"
 
-.field private static final WPS_FAIL_STR:Ljava/lang/String; = "WPS-FAIL"
+.field public static final WPS_AP_PIN_EVENT:I = 0x24037
 
-.field public static final WPS_OVERLAP_EVENT:I = 0x2400a
+.field private static final WPS_AP_PIN_STRING:Ljava/lang/String; = "WPS-AP-AVAILABLE-PIN"
+
+.field public static final WPS_CRED_RECEIVED_EVENT:I = 0x24039
+
+.field private static final WPS_CRED_RECEIVED_STRING:Ljava/lang/String; = "WPS-CRED-RECEIVED"
+
+.field public static final WPS_ERROR_EVENT:I = 0x24034
+
+.field private static final WPS_ERROR_STRING:Ljava/lang/String; = "WPS-ERROR"
+
+.field private static final WPS_NO_OEVELAP_STRING:Ljava/lang/String; = "WPS-NO-OVERLAP"
+
+.field private static final WPS_OEVELAP_STRING:Ljava/lang/String; = "WPS-OVERLAP"
+
+.field public static final WPS_OVERLAP_EVENT:I = 0x24008
 
 .field private static final WPS_OVERLAP_STR:Ljava/lang/String; = "WPS-OVERLAP-DETECTED"
 
-.field public static final WPS_SUCCESS_EVENT:I = 0x24008
+.field public static final WPS_SUCCESS_EVENT:I = 0x24033
 
-.field private static final WPS_SUCCESS_STR:Ljava/lang/String; = "WPS-SUCCESS"
-
-.field public static final WPS_TIMEOUT_EVENT:I = 0x2400b
-
-.field private static final WPS_TIMEOUT_STR:Ljava/lang/String; = "WPS-TIMEOUT"
+.field private static final WPS_SUCCESS_STRING:Ljava/lang/String; = "WPS-SUCCESS"
 
 .field private static mConnectedEventPattern:Ljava/util/regex/Pattern;
 
 
 # instance fields
-.field private mConnecting:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-.field private mCurrentThread:Landroid/net/wifi/WifiMonitor$MonitorThread;
+.field private mIsHotspot:Z
 
 .field private mRecvErrors:I
 
 .field private final mStateMachine:Lcom/android/internal/util/StateMachine;
-
-.field private mStopped:Z
-
-.field private final mWifiNative:Landroid/net/wifi/WifiNative;
 
 
 # direct methods
@@ -235,7 +217,7 @@
     .locals 1
 
     .prologue
-    .line 65
+    .line 62
     const-string v0, "CTRL-EVENT-"
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
@@ -244,7 +226,7 @@
 
     sput v0, Landroid/net/wifi/WifiMonitor;->EVENT_PREFIX_LEN_STR:I
 
-    .line 162
+    .line 143
     const-string v0, "((?:[0-9a-f]{2}:){5}[0-9a-f]{2}) .* \\[id=([0-9]+) "
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
@@ -256,101 +238,68 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/android/internal/util/StateMachine;Landroid/net/wifi/WifiNative;)V
-    .locals 2
+.method public constructor <init>(Lcom/android/internal/util/StateMachine;)V
+    .locals 1
     .parameter "wifiStateMachine"
-    .parameter "wifiNative"
 
     .prologue
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    .line 373
+    .line 330
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 354
-    iput v1, p0, Landroid/net/wifi/WifiMonitor;->mRecvErrors:I
+    .line 321
+    iput v0, p0, Landroid/net/wifi/WifiMonitor;->mRecvErrors:I
 
-    .line 369
-    iput-boolean v1, p0, Landroid/net/wifi/WifiMonitor;->mStopped:Z
+    .line 328
+    iput-boolean v0, p0, Landroid/net/wifi/WifiMonitor;->mIsHotspot:Z
 
-    .line 371
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object v0, p0, Landroid/net/wifi/WifiMonitor;->mConnecting:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    .line 374
+    .line 331
     iput-object p1, p0, Landroid/net/wifi/WifiMonitor;->mStateMachine:Lcom/android/internal/util/StateMachine;
 
-    .line 375
-    iput-object p2, p0, Landroid/net/wifi/WifiMonitor;->mWifiNative:Landroid/net/wifi/WifiNative;
-
-    .line 376
+    .line 332
     return-void
 .end method
 
-.method static synthetic access$000(Landroid/net/wifi/WifiMonitor;)Landroid/net/wifi/WifiNative;
+.method static synthetic access$000(Landroid/net/wifi/WifiMonitor;)Lcom/android/internal/util/StateMachine;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 46
-    iget-object v0, p0, Landroid/net/wifi/WifiMonitor;->mWifiNative:Landroid/net/wifi/WifiNative;
-
-    return-object v0
-.end method
-
-.method static synthetic access$100(Landroid/net/wifi/WifiMonitor;)Lcom/android/internal/util/StateMachine;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 46
+    .line 42
     iget-object v0, p0, Landroid/net/wifi/WifiMonitor;->mStateMachine:Lcom/android/internal/util/StateMachine;
 
     return-object v0
 .end method
 
-.method static synthetic access$200(Landroid/net/wifi/WifiMonitor;)Z
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 46
-    iget-boolean v0, p0, Landroid/net/wifi/WifiMonitor;->mStopped:Z
-
-    return v0
-.end method
-
-.method static synthetic access$300()I
+.method static synthetic access$100()I
     .locals 1
 
     .prologue
-    .line 46
+    .line 42
     sget v0, Landroid/net/wifi/WifiMonitor;->EVENT_PREFIX_LEN_STR:I
 
     return v0
 .end method
 
-.method static synthetic access$402(Landroid/net/wifi/WifiMonitor;I)I
+.method static synthetic access$202(Landroid/net/wifi/WifiMonitor;I)I
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 46
+    .line 42
     iput p1, p0, Landroid/net/wifi/WifiMonitor;->mRecvErrors:I
 
     return p1
 .end method
 
-.method static synthetic access$404(Landroid/net/wifi/WifiMonitor;)I
+.method static synthetic access$204(Landroid/net/wifi/WifiMonitor;)I
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 46
+    .line 42
     iget v0, p0, Landroid/net/wifi/WifiMonitor;->mRecvErrors:I
 
     add-int/lit8 v0, v0, 0x1
@@ -360,36 +309,36 @@
     return v0
 .end method
 
-.method static synthetic access$500(Landroid/net/wifi/WifiMonitor;)Ljava/util/concurrent/atomic/AtomicBoolean;
+.method static synthetic access$300(Landroid/net/wifi/WifiMonitor;)Z
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 46
-    iget-object v0, p0, Landroid/net/wifi/WifiMonitor;->mConnecting:Ljava/util/concurrent/atomic/AtomicBoolean;
+    .line 42
+    iget-boolean v0, p0, Landroid/net/wifi/WifiMonitor;->mIsHotspot:Z
 
-    return-object v0
+    return v0
 .end method
 
-.method static synthetic access$600(I)V
+.method static synthetic access$400(I)V
     .locals 0
     .parameter "x0"
 
     .prologue
-    .line 46
+    .line 42
     invoke-static {p0}, Landroid/net/wifi/WifiMonitor;->nap(I)V
 
     return-void
 .end method
 
-.method static synthetic access$700(Landroid/net/wifi/WifiMonitor;Landroid/net/NetworkInfo$DetailedState;Ljava/lang/String;)V
+.method static synthetic access$500(Landroid/net/wifi/WifiMonitor;Landroid/net/NetworkInfo$DetailedState;Ljava/lang/String;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
     .parameter "x2"
 
     .prologue
-    .line 46
+    .line 42
     invoke-direct {p0, p1, p2}, Landroid/net/wifi/WifiMonitor;->handleNetworkStateChange(Landroid/net/NetworkInfo$DetailedState;Ljava/lang/String;)V
 
     return-void
@@ -401,27 +350,27 @@
     .parameter "data"
 
     .prologue
-    .line 802
+    .line 655
     const/4 v0, 0x0
 
-    .line 803
+    .line 656
     .local v0, BSSID:Ljava/lang/String;
     const/4 v3, -0x1
 
-    .line 804
+    .line 657
     .local v3, networkId:I
     sget-object v4, Landroid/net/NetworkInfo$DetailedState;->CONNECTED:Landroid/net/NetworkInfo$DetailedState;
 
     if-ne p1, v4, :cond_0
 
-    .line 805
+    .line 658
     sget-object v4, Landroid/net/wifi/WifiMonitor;->mConnectedEventPattern:Ljava/util/regex/Pattern;
 
     invoke-virtual {v4, p2}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object v2
 
-    .line 806
+    .line 659
     .local v2, match:Ljava/util/regex/Matcher;
     invoke-virtual {v2}, Ljava/util/regex/Matcher;->find()Z
 
@@ -429,16 +378,16 @@
 
     if-nez v4, :cond_1
 
-    .line 817
+    .line 670
     .end local v2           #match:Ljava/util/regex/Matcher;
     :cond_0
     :goto_0
     invoke-virtual {p0, p1, v0, v3}, Landroid/net/wifi/WifiMonitor;->notifyNetworkStateChange(Landroid/net/NetworkInfo$DetailedState;Ljava/lang/String;I)V
 
-    .line 818
+    .line 671
     return-void
 
-    .line 809
+    .line 662
     .restart local v2       #match:Ljava/util/regex/Matcher;
     :cond_1
     const/4 v4, 0x1
@@ -447,7 +396,7 @@
 
     move-result-object v0
 
-    .line 811
+    .line 664
     const/4 v4, 0x2
 
     :try_start_0
@@ -463,11 +412,11 @@
 
     goto :goto_0
 
-    .line 812
+    .line 665
     :catch_0
     move-exception v1
 
-    .line 813
+    .line 666
     .local v1, e:Ljava/lang/NumberFormatException;
     const/4 v3, -0x1
 
@@ -479,7 +428,7 @@
     .parameter "secs"
 
     .prologue
-    .line 862
+    .line 712
     mul-int/lit16 v0, p0, 0x3e8
 
     int-to-long v0, v0
@@ -489,11 +438,11 @@
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 865
+    .line 715
     :goto_0
     return-void
 
-    .line 863
+    .line 713
     :catch_0
     move-exception v0
 
@@ -511,12 +460,12 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 831
+    .line 684
     sget-object v1, Landroid/net/NetworkInfo$DetailedState;->CONNECTED:Landroid/net/NetworkInfo$DetailedState;
 
     if-ne p1, v1, :cond_0
 
-    .line 832
+    .line 685
     iget-object v1, p0, Landroid/net/wifi/WifiMonitor;->mStateMachine:Lcom/android/internal/util/StateMachine;
 
     const v2, 0x24003
@@ -525,17 +474,17 @@
 
     move-result-object v0
 
-    .line 834
+    .line 687
     .local v0, m:Landroid/os/Message;
     iget-object v1, p0, Landroid/net/wifi/WifiMonitor;->mStateMachine:Lcom/android/internal/util/StateMachine;
 
     invoke-virtual {v1, v0}, Lcom/android/internal/util/StateMachine;->sendMessage(Landroid/os/Message;)V
 
-    .line 840
+    .line 693
     :goto_0
     return-void
 
-    .line 836
+    .line 689
     .end local v0           #m:Landroid/os/Message;
     :cond_0
     iget-object v1, p0, Landroid/net/wifi/WifiMonitor;->mStateMachine:Lcom/android/internal/util/StateMachine;
@@ -546,7 +495,7 @@
 
     move-result-object v0
 
-    .line 838
+    .line 691
     .restart local v0       #m:Landroid/os/Message;
     iget-object v1, p0, Landroid/net/wifi/WifiMonitor;->mStateMachine:Lcom/android/internal/util/StateMachine;
 
@@ -555,15 +504,14 @@
     goto :goto_0
 .end method
 
-.method notifySupplicantStateChange(ILandroid/net/wifi/WifiSsid;Ljava/lang/String;Landroid/net/wifi/SupplicantState;)V
+.method notifySupplicantStateChange(ILjava/lang/String;Landroid/net/wifi/SupplicantState;)V
     .locals 4
     .parameter "networkId"
-    .parameter "wifiSsid"
     .parameter "BSSID"
     .parameter "newState"
 
     .prologue
-    .line 852
+    .line 702
     iget-object v0, p0, Landroid/net/wifi/WifiMonitor;->mStateMachine:Lcom/android/internal/util/StateMachine;
 
     iget-object v1, p0, Landroid/net/wifi/WifiMonitor;->mStateMachine:Lcom/android/internal/util/StateMachine;
@@ -572,7 +520,7 @@
 
     new-instance v3, Landroid/net/wifi/StateChangeResult;
 
-    invoke-direct {v3, p1, p2, p3, p4}, Landroid/net/wifi/StateChangeResult;-><init>(ILandroid/net/wifi/WifiSsid;Ljava/lang/String;Landroid/net/wifi/SupplicantState;)V
+    invoke-direct {v3, p1, p2, p3}, Landroid/net/wifi/StateChangeResult;-><init>(ILjava/lang/String;Landroid/net/wifi/SupplicantState;)V
 
     invoke-virtual {v1, v2, v3}, Lcom/android/internal/util/StateMachine;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
@@ -580,175 +528,25 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/util/StateMachine;->sendMessage(Landroid/os/Message;)V
 
-    .line 854
+    .line 704
     return-void
 .end method
 
-.method public startMonitoring()V
+.method public startMonitoring(Z)V
     .locals 1
+    .parameter "isHotspot"
 
     .prologue
-    .line 379
-    const/4 v0, 0x0
+    .line 335
+    iput-boolean p1, p0, Landroid/net/wifi/WifiMonitor;->mIsHotspot:Z
 
-    iput-boolean v0, p0, Landroid/net/wifi/WifiMonitor;->mStopped:Z
-
-    .line 380
+    .line 336
     new-instance v0, Landroid/net/wifi/WifiMonitor$MonitorThread;
 
     invoke-direct {v0, p0}, Landroid/net/wifi/WifiMonitor$MonitorThread;-><init>(Landroid/net/wifi/WifiMonitor;)V
 
-    iput-object v0, p0, Landroid/net/wifi/WifiMonitor;->mCurrentThread:Landroid/net/wifi/WifiMonitor$MonitorThread;
-
-    .line 381
-    iget-object v0, p0, Landroid/net/wifi/WifiMonitor;->mCurrentThread:Landroid/net/wifi/WifiMonitor$MonitorThread;
-
     invoke-virtual {v0}, Landroid/net/wifi/WifiMonitor$MonitorThread;->start()V
 
-    .line 382
+    .line 337
     return-void
-.end method
-
-.method public stopMonitoring()V
-    .locals 5
-
-    .prologue
-    .line 868
-    iget-object v1, p0, Landroid/net/wifi/WifiMonitor;->mCurrentThread:Landroid/net/wifi/WifiMonitor$MonitorThread;
-
-    if-eqz v1, :cond_1
-
-    .line 869
-    const/4 v1, 0x1
-
-    iput-boolean v1, p0, Landroid/net/wifi/WifiMonitor;->mStopped:Z
-
-    .line 870
-    iget-object v1, p0, Landroid/net/wifi/WifiMonitor;->mConnecting:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    .line 871
-    const-string v1, "WifiMonitor"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v3, "stopMonitoring, closeSupplicantConnection for "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget-object v3, p0, Landroid/net/wifi/WifiMonitor;->mCurrentThread:Landroid/net/wifi/WifiMonitor$MonitorThread;
-
-    invoke-virtual {v3}, Landroid/net/wifi/WifiMonitor$MonitorThread;->getName()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, ", threadId:"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget-object v3, p0, Landroid/net/wifi/WifiMonitor;->mCurrentThread:Landroid/net/wifi/WifiMonitor$MonitorThread;
-
-    invoke-virtual {v3}, Landroid/net/wifi/WifiMonitor$MonitorThread;->getId()J
-
-    move-result-wide v3
-
-    invoke-virtual {v2, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 873
-    iget-object v1, p0, Landroid/net/wifi/WifiMonitor;->mWifiNative:Landroid/net/wifi/WifiNative;
-
-    invoke-virtual {v1}, Landroid/net/wifi/WifiNative;->closeSupplicantConnection()V
-
-    .line 878
-    :goto_0
-    :try_start_0
-    iget-object v1, p0, Landroid/net/wifi/WifiMonitor;->mCurrentThread:Landroid/net/wifi/WifiMonitor$MonitorThread;
-
-    invoke-virtual {v1}, Landroid/net/wifi/WifiMonitor$MonitorThread;->join()V
-    :try_end_0
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 882
-    :goto_1
-    const/4 v1, 0x0
-
-    iput-object v1, p0, Landroid/net/wifi/WifiMonitor;->mCurrentThread:Landroid/net/wifi/WifiMonitor$MonitorThread;
-
-    .line 886
-    :goto_2
-    return-void
-
-    .line 875
-    :cond_0
-    const-string v1, "WifiMonitor"
-
-    const-string/jumbo v2, "stopMonitoring, it\'s connecting to supplicant!"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
-
-    .line 879
-    :catch_0
-    move-exception v0
-
-    .line 880
-    .local v0, ignore:Ljava/lang/InterruptedException;
-    const-string v1, "WifiMonitor"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "InterruptedException:"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_1
-
-    .line 884
-    .end local v0           #ignore:Ljava/lang/InterruptedException;
-    :cond_1
-    const-string v1, "WifiMonitor"
-
-    const-string/jumbo v2, "stopMonitoring, mCurrentThread is null!"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_2
 .end method

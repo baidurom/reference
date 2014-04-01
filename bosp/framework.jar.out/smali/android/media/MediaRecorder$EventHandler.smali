@@ -17,9 +17,11 @@
 # static fields
 .field private static final MEDIA_RECORDER_EVENT_ERROR:I = 0x1
 
+.field private static final MEDIA_RECORDER_EVENT_FOCUS:I = 0x200
+
 .field private static final MEDIA_RECORDER_EVENT_INFO:I = 0x2
 
-.field private static final MEDIA_RECORDER_EVENT_LIST_END:I = 0x63
+.field private static final MEDIA_RECORDER_EVENT_LIST_END:I = 0x200
 
 .field private static final MEDIA_RECORDER_EVENT_LIST_START:I = 0x1
 
@@ -46,16 +48,16 @@
     .parameter "looper"
 
     .prologue
-    .line 1000
+    .line 1001
     iput-object p1, p0, Landroid/media/MediaRecorder$EventHandler;->this$0:Landroid/media/MediaRecorder;
 
-    .line 1001
+    .line 1002
     invoke-direct {p0, p3}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 1002
+    .line 1003
     iput-object p2, p0, Landroid/media/MediaRecorder$EventHandler;->mMediaRecorder:Landroid/media/MediaRecorder;
 
-    .line 1003
+    .line 1004
     return-void
 .end method
 
@@ -66,7 +68,7 @@
     .parameter "msg"
 
     .prologue
-    .line 1021
+    .line 1024
     iget-object v0, p0, Landroid/media/MediaRecorder$EventHandler;->mMediaRecorder:Landroid/media/MediaRecorder;
 
     #getter for: Landroid/media/MediaRecorder;->mNativeContext:I
@@ -76,25 +78,25 @@
 
     if-nez v0, :cond_1
 
-    .line 1022
+    .line 1025
     const-string v0, "MediaRecorder"
 
     const-string/jumbo v1, "mediarecorder went away with unhandled events"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1042
+    .line 1051
     :cond_0
     :goto_0
     return-void
 
-    .line 1025
+    .line 1028
     :cond_1
     iget v0, p1, Landroid/os/Message;->what:I
 
     sparse-switch v0, :sswitch_data_0
 
-    .line 1041
+    .line 1050
     const-string v0, "MediaRecorder"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -121,7 +123,7 @@
 
     goto :goto_0
 
-    .line 1028
+    .line 1031
     :sswitch_0
     iget-object v0, p0, Landroid/media/MediaRecorder$EventHandler;->this$0:Landroid/media/MediaRecorder;
 
@@ -132,7 +134,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1029
+    .line 1032
     iget-object v0, p0, Landroid/media/MediaRecorder$EventHandler;->this$0:Landroid/media/MediaRecorder;
 
     #getter for: Landroid/media/MediaRecorder;->mOnErrorListener:Landroid/media/MediaRecorder$OnErrorListener;
@@ -150,7 +152,7 @@
 
     goto :goto_0
 
-    .line 1035
+    .line 1038
     :sswitch_1
     iget-object v0, p0, Landroid/media/MediaRecorder$EventHandler;->this$0:Landroid/media/MediaRecorder;
 
@@ -161,7 +163,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1036
+    .line 1039
     iget-object v0, p0, Landroid/media/MediaRecorder$EventHandler;->this$0:Landroid/media/MediaRecorder;
 
     #getter for: Landroid/media/MediaRecorder;->mOnInfoListener:Landroid/media/MediaRecorder$OnInfoListener;
@@ -179,14 +181,80 @@
 
     goto :goto_0
 
-    .line 1025
-    nop
+    .line 1043
+    :sswitch_2
+    const-string v0, "MediaRecorder"
 
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "mediaRecorder autoFocusCallback: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Landroid/media/MediaRecorder$EventHandler;->this$0:Landroid/media/MediaRecorder;
+
+    #getter for: Landroid/media/MediaRecorder;->mAutoFocusCallback:Landroid/media/MediaRecorder$AutoFocusCallback;
+    invoke-static {v2}, Landroid/media/MediaRecorder;->access$300(Landroid/media/MediaRecorder;)Landroid/media/MediaRecorder$AutoFocusCallback;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 1044
+    iget-object v0, p0, Landroid/media/MediaRecorder$EventHandler;->this$0:Landroid/media/MediaRecorder;
+
+    #getter for: Landroid/media/MediaRecorder;->mAutoFocusCallback:Landroid/media/MediaRecorder$AutoFocusCallback;
+    invoke-static {v0}, Landroid/media/MediaRecorder;->access$300(Landroid/media/MediaRecorder;)Landroid/media/MediaRecorder$AutoFocusCallback;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    .line 1045
+    iget-object v0, p0, Landroid/media/MediaRecorder$EventHandler;->this$0:Landroid/media/MediaRecorder;
+
+    #getter for: Landroid/media/MediaRecorder;->mAutoFocusCallback:Landroid/media/MediaRecorder$AutoFocusCallback;
+    invoke-static {v0}, Landroid/media/MediaRecorder;->access$300(Landroid/media/MediaRecorder;)Landroid/media/MediaRecorder$AutoFocusCallback;
+
+    move-result-object v1
+
+    iget v0, p1, Landroid/os/Message;->arg1:I
+
+    if-nez v0, :cond_2
+
+    const/4 v0, 0x0
+
+    :goto_1
+    iget-object v2, p0, Landroid/media/MediaRecorder$EventHandler;->mMediaRecorder:Landroid/media/MediaRecorder;
+
+    invoke-interface {v1, v0, v2}, Landroid/media/MediaRecorder$AutoFocusCallback;->onAutoFocus(ZLandroid/media/MediaRecorder;)V
+
+    goto/16 :goto_0
+
+    :cond_2
+    const/4 v0, 0x1
+
+    goto :goto_1
+
+    .line 1028
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_0
         0x2 -> :sswitch_1
         0x64 -> :sswitch_0
         0x65 -> :sswitch_1
+        0x200 -> :sswitch_2
     .end sparse-switch
 .end method

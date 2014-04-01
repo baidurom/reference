@@ -17,7 +17,7 @@
 
     .prologue
     .line 30
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 116
     return-void
@@ -51,18 +51,18 @@
 
     move-result-object v5
 
+    .line 196
     .local v5, compressedImage:Ljava/nio/ByteBuffer;
+    const/4 v3, 0x3
+
     move-object v0, p0
 
     move v1, p1
 
     move v2, p2
 
-    move v3, p3
-
     move v4, p4
 
-    .line 196
     invoke-static/range {v0 .. v5}, Landroid/opengl/ETC1;->encodeImage(Ljava/nio/Buffer;IIIILjava/nio/Buffer;)V
 
     .line 197
@@ -381,7 +381,7 @@
     if-eqz v1, :cond_2
 
     .line 78
-    invoke-virtual {v8}, Ljava/nio/Buffer;->remaining()I
+    invoke-virtual {v8}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v7
 

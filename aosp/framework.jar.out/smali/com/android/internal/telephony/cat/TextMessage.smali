@@ -61,7 +61,7 @@
     const/4 v1, 0x0
 
     .line 33
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 24
     const-string v0, ""
@@ -107,7 +107,7 @@
     const/4 v1, 0x1
 
     .line 36
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 24
     const-string v0, ""
@@ -251,20 +251,6 @@
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/cat/TextMessage;-><init>(Landroid/os/Parcel;)V
 
     return-void
-.end method
-
-.method public static getInstance()Lcom/android/internal/telephony/cat/TextMessage;
-    .locals 1
-
-    .prologue
-    .line 73
-    new-instance v0, Lcom/android/internal/telephony/cat/TextMessage;
-
-    invoke-direct {v0}, Lcom/android/internal/telephony/cat/TextMessage;-><init>()V
-
-    .line 74
-    .local v0, self:Lcom/android/internal/telephony/cat/TextMessage;
-    return-object v0
 .end method
 
 

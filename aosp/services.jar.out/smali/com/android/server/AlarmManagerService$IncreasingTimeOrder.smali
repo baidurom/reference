@@ -32,8 +32,8 @@
     .locals 0
 
     .prologue
-    .line 936
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 698
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -48,14 +48,14 @@
     .prologue
     const-wide/16 v6, 0x0
 
-    .line 938
+    .line 700
     iget-wide v0, p1, Lcom/android/server/AlarmManagerService$Alarm;->when:J
 
-    .line 939
+    .line 701
     .local v0, when1:J
     iget-wide v2, p2, Lcom/android/server/AlarmManagerService$Alarm;->when:J
 
-    .line 940
+    .line 702
     .local v2, when2:J
     sub-long v4, v0, v2
 
@@ -63,14 +63,14 @@
 
     if-lez v4, :cond_0
 
-    .line 941
+    .line 703
     const/4 v4, 0x1
 
-    .line 946
+    .line 708
     :goto_0
     return v4
 
-    .line 943
+    .line 705
     :cond_0
     sub-long v4, v0, v2
 
@@ -78,12 +78,12 @@
 
     if-gez v4, :cond_1
 
-    .line 944
+    .line 706
     const/4 v4, -0x1
 
     goto :goto_0
 
-    .line 946
+    .line 708
     :cond_1
     const/4 v4, 0x0
 
@@ -96,7 +96,7 @@
     .parameter "x1"
 
     .prologue
-    .line 936
+    .line 698
     check-cast p1, Lcom/android/server/AlarmManagerService$Alarm;
 
     .end local p1

@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 4655
+    .line 3975
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$23;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,12 +40,12 @@
     .parameter "intent"
 
     .prologue
-    .line 4657
+    .line 3977
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 4658
+    .line 3978
     .local v0, action:Ljava/lang/String;
     const-string v2, "WindowManager"
 
@@ -69,7 +69,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4659
+    .line 3979
     const-string v2, "android.intent.action.PACKAGE_REMOVED"
 
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -86,13 +86,13 @@
 
     if-eqz v2, :cond_1
 
-    .line 4660
+    .line 3980
     :cond_0
     invoke-virtual {p2}, Landroid/content/Intent;->getDataString()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 4661
+    .line 3981
     .local v1, packageName:Ljava/lang/String;
     const-string v2, "package:com.baidu.flashlight"
 
@@ -102,15 +102,15 @@
 
     if-eqz v2, :cond_1
 
-    .line 4662
+    .line 3982
     iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$23;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     const/4 v3, 0x0
 
     #setter for: Lcom/android/internal/policy/impl/PhoneWindowManager;->mIsFlashlightOn:Z
-    invoke-static {v2, v3}, Lcom/android/internal/policy/impl/PhoneWindowManager;->access$702(Lcom/android/internal/policy/impl/PhoneWindowManager;Z)Z
+    invoke-static {v2, v3}, Lcom/android/internal/policy/impl/PhoneWindowManager;->access$402(Lcom/android/internal/policy/impl/PhoneWindowManager;Z)Z
 
-    .line 4665
+    .line 3985
     .end local v1           #packageName:Ljava/lang/String;
     :cond_1
     return-void

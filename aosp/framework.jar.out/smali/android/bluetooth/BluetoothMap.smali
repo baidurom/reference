@@ -71,7 +71,7 @@
 
     .prologue
     .line 141
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 309
     new-instance v0, Landroid/bluetooth/BluetoothMap$1;
@@ -128,7 +128,7 @@
 
     .prologue
     .line 130
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 309
     new-instance v0, Landroid/bluetooth/BluetoothMap$1;

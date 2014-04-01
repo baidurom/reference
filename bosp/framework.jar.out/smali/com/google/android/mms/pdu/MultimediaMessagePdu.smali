@@ -91,22 +91,6 @@
     return-wide v0
 .end method
 
-.method public getDateSent()J
-    .locals 2
-
-    .prologue
-    .line 158
-    iget-object v0, p0, Lcom/google/android/mms/pdu/MultimediaMessagePdu;->mPduHeaders:Lcom/google/android/mms/pdu/PduHeaders;
-
-    const/16 v1, 0xc9
-
-    invoke-virtual {v0, v1}, Lcom/google/android/mms/pdu/PduHeaders;->getLongInteger(I)J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
 .method public getPriority()I
     .locals 2
 

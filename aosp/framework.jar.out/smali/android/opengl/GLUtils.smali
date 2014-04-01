@@ -20,20 +20,9 @@
 
     .prologue
     .line 40
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 41
-    return-void
-.end method
-
-.method public static enableTracing()V
-    .locals 0
-
-    .prologue
-    .line 277
-    invoke-static {}, Landroid/opengl/GLUtils;->native_enableTracing()V
-
-    .line 278
     return-void
 .end method
 
@@ -299,9 +288,6 @@
 .end method
 
 .method private static native nativeClassInit()V
-.end method
-
-.method private static native native_enableTracing()V
 .end method
 
 .method private static native native_getInternalFormat(Landroid/graphics/Bitmap;)I

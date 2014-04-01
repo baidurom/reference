@@ -30,17 +30,17 @@
     .parameter "syncResult"
 
     .prologue
-    .line 708
+    .line 706
     iput-object p1, p0, Landroid/content/SyncManager$SyncHandlerMessagePayload;->this$0:Landroid/content/SyncManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 709
+    .line 707
     iput-object p2, p0, Landroid/content/SyncManager$SyncHandlerMessagePayload;->activeSyncContext:Landroid/content/SyncManager$ActiveSyncContext;
 
-    .line 710
+    .line 708
     iput-object p3, p0, Landroid/content/SyncManager$SyncHandlerMessagePayload;->syncResult:Landroid/content/SyncResult;
 
-    .line 711
+    .line 709
     return-void
 .end method

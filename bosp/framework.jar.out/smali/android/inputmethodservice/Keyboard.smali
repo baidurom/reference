@@ -891,22 +891,22 @@
     .parameter "defValue"
 
     .prologue
-    .line 884
+    .line 891
     invoke-virtual {p0, p1}, Landroid/content/res/TypedArray;->peekValue(I)Landroid/util/TypedValue;
 
     move-result-object v0
 
-    .line 885
+    .line 892
     .local v0, value:Landroid/util/TypedValue;
     if-nez v0, :cond_1
 
-    .line 892
+    .line 899
     .end local p3
     :cond_0
     :goto_0
     return p3
 
-    .line 886
+    .line 893
     .restart local p3
     :cond_1
     iget v1, v0, Landroid/util/TypedValue;->type:I
@@ -915,14 +915,14 @@
 
     if-ne v1, v2, :cond_2
 
-    .line 887
+    .line 894
     invoke-virtual {p0, p1, p3}, Landroid/content/res/TypedArray;->getDimensionPixelOffset(II)I
 
     move-result p3
 
     goto :goto_0
 
-    .line 888
+    .line 895
     :cond_2
     iget v1, v0, Landroid/util/TypedValue;->type:I
 
@@ -930,7 +930,7 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 890
+    .line 897
     int-to-float v1, p3
 
     invoke-virtual {p0, p1, p2, p2, v1}, Landroid/content/res/TypedArray;->getFraction(IIIF)F
@@ -1360,12 +1360,12 @@
 .end method
 
 .method private parseKeyboardAttributes(Landroid/content/res/Resources;Landroid/content/res/XmlResourceParser;)V
-    .locals 5
+    .locals 4
     .parameter "res"
     .parameter "parser"
 
     .prologue
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
     .line 863
     invoke-static {p2}, Landroid/util/Xml;->asAttributeSet(Lorg/xmlpull/v1/XmlPullParser;)Landroid/util/AttributeSet;
@@ -1386,48 +1386,40 @@
 
     div-int/lit8 v2, v2, 0xa
 
-    invoke-static {v0, v4, v1, v2}, Landroid/inputmethodservice/Keyboard;->getDimensionOrFraction(Landroid/content/res/TypedArray;III)I
+    invoke-static {v0, v3, v1, v2}, Landroid/inputmethodservice/Keyboard;->getDimensionOrFraction(Landroid/content/res/TypedArray;III)I
 
     move-result v1
 
     iput v1, p0, Landroid/inputmethodservice/Keyboard;->mDefaultWidth:I
 
-    .line 869
-    const/4 v1, 0x1
+    .line 876
+    const/16 v1, 0x41
 
-    iget v2, p0, Landroid/inputmethodservice/Keyboard;->mDisplayHeight:I
+    iput v1, p0, Landroid/inputmethodservice/Keyboard;->mDefaultHeight:I
 
-    const/16 v3, 0x32
+    .line 879
+    const/4 v1, 0x2
+
+    iget v2, p0, Landroid/inputmethodservice/Keyboard;->mDisplayWidth:I
 
     invoke-static {v0, v1, v2, v3}, Landroid/inputmethodservice/Keyboard;->getDimensionOrFraction(Landroid/content/res/TypedArray;III)I
 
     move-result v1
 
-    iput v1, p0, Landroid/inputmethodservice/Keyboard;->mDefaultHeight:I
-
-    .line 872
-    const/4 v1, 0x2
-
-    iget v2, p0, Landroid/inputmethodservice/Keyboard;->mDisplayWidth:I
-
-    invoke-static {v0, v1, v2, v4}, Landroid/inputmethodservice/Keyboard;->getDimensionOrFraction(Landroid/content/res/TypedArray;III)I
-
-    move-result v1
-
     iput v1, p0, Landroid/inputmethodservice/Keyboard;->mDefaultHorizontalGap:I
 
-    .line 875
+    .line 882
     const/4 v1, 0x3
 
     iget v2, p0, Landroid/inputmethodservice/Keyboard;->mDisplayHeight:I
 
-    invoke-static {v0, v1, v2, v4}, Landroid/inputmethodservice/Keyboard;->getDimensionOrFraction(Landroid/content/res/TypedArray;III)I
+    invoke-static {v0, v1, v2, v3}, Landroid/inputmethodservice/Keyboard;->getDimensionOrFraction(Landroid/content/res/TypedArray;III)I
 
     move-result v1
 
     iput v1, p0, Landroid/inputmethodservice/Keyboard;->mDefaultVerticalGap:I
 
-    .line 878
+    .line 885
     iget v1, p0, Landroid/inputmethodservice/Keyboard;->mDefaultWidth:I
 
     int-to-float v1, v1
@@ -1440,7 +1432,7 @@
 
     iput v1, p0, Landroid/inputmethodservice/Keyboard;->mProximityThreshold:I
 
-    .line 879
+    .line 886
     iget v1, p0, Landroid/inputmethodservice/Keyboard;->mProximityThreshold:I
 
     iget v2, p0, Landroid/inputmethodservice/Keyboard;->mProximityThreshold:I
@@ -1449,10 +1441,10 @@
 
     iput v1, p0, Landroid/inputmethodservice/Keyboard;->mProximityThreshold:I
 
-    .line 880
+    .line 887
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 881
+    .line 888
     return-void
 .end method
 

@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 3605
+    .line 3234
     iput-object p1, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$3;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,50 +40,50 @@
     .parameter "intent"
 
     .prologue
-    const/4 v4, 0x1
+    const/4 v3, 0x1
 
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
-    .line 3609
+    .line 3238
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 3613
+    .line 3242
     .local v0, action:Ljava/lang/String;
-    const-string v3, "android.intent.action.SIM_STATE_CHANGED"
+    const-string v5, "android.intent.action.SIM_STATE_CHANGED"
 
-    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v5
 
-    if-eqz v3, :cond_1
+    if-eqz v5, :cond_1
 
-    .line 3638
+    .line 3261
     :cond_0
     :goto_0
     return-void
 
-    .line 3617
+    .line 3246
     :cond_1
-    const-string v3, "android.intent.action.GPRS_TRANSFER_TYPE"
+    const-string v5, "android.intent.action.GPRS_TRANSFER_TYPE"
 
-    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v5
 
-    if-eqz v3, :cond_3
+    if-eqz v5, :cond_3
 
-    .line 3618
-    const-string v3, "gemini.gprs.transfer.type"
+    .line 3247
+    const-string v5, "gemini.gprs.transfer.type"
 
-    invoke-virtual {p2, v3, v5}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    invoke-virtual {p2, v5, v4}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v2
 
-    .line 3619
+    .line 3248
     .local v2, gprsTransferType:I
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$3;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
+    iget-object v5, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$3;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
 
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -103,155 +103,104 @@
 
     move-result-object v6
 
-    invoke-virtual {v3, v6}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->logd(Ljava/lang/String;)V
+    invoke-virtual {v5, v6}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->logd(Ljava/lang/String;)V
 
-    .line 3620
-    if-ne v2, v4, :cond_2
+    .line 3249
+    if-ne v2, v3, :cond_2
 
-    .line 3621
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$3;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
+    .line 3250
+    iget-object v4, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$3;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
 
     #setter for: Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->mIsCallPrefer:Z
-    invoke-static {v3, v4}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->access$602(Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;Z)Z
+    invoke-static {v4, v3}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->access$1302(Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;Z)Z
 
     goto :goto_0
 
-    .line 3623
+    .line 3252
     :cond_2
     iget-object v3, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$3;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
 
     #setter for: Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->mIsCallPrefer:Z
-    invoke-static {v3, v5}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->access$602(Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;Z)Z
+    invoke-static {v3, v4}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->access$1302(Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;Z)Z
 
     goto :goto_0
 
-    .line 3625
+    .line 3254
     .end local v2           #gprsTransferType:I
     :cond_3
-    const-string v3, "android.net.conn.TETHER_STATE_CHANGED"
+    const-string v5, "android.net.conn.TETHER_STATE_CHANGED"
 
-    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v5
 
-    if-eqz v3, :cond_0
+    if-eqz v5, :cond_0
 
-    .line 3627
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$3;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
+    .line 3256
+    iget-object v5, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$3;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
 
     const-string v6, "Received ConnectivityManager.ACTION_TETHER_STATE_CHANGED"
 
-    invoke-virtual {v3, v6}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->logd(Ljava/lang/String;)V
+    invoke-virtual {v5, v6}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->logd(Ljava/lang/String;)V
 
-    .line 3628
-    const-string v3, "activeArray"
+    .line 3257
+    const-string v5, "activeArray"
 
-    invoke-virtual {p2, v3}, Landroid/content/Intent;->getStringArrayListExtra(Ljava/lang/String;)Ljava/util/ArrayList;
+    invoke-virtual {p2, v5}, Landroid/content/Intent;->getStringArrayListExtra(Ljava/lang/String;)Ljava/util/ArrayList;
 
     move-result-object v1
 
-    .line 3629
+    .line 3258
     .local v1, active:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
-    iget-object v6, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$3;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
+    iget-object v5, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$3;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
 
     if-eqz v1, :cond_4
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
-    move-result v3
+    move-result v6
 
-    if-lez v3, :cond_4
-
-    move v3, v4
+    if-lez v6, :cond_4
 
     :goto_1
     #setter for: Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->mIsTetheredMode:Z
-    invoke-static {v6, v3}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->access$702(Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;Z)Z
+    invoke-static {v5, v3}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->access$1402(Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;Z)Z
 
-    .line 3630
+    .line 3259
     iget-object v3, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$3;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v7, "[TETHER_STATE_CHANGED]mIsTetheredMode = "
+    const-string v5, "[TETHER_STATE_CHANGED]mIsTetheredMode = "
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v4
 
-    iget-object v7, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$3;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
+    iget-object v5, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$3;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
 
     #getter for: Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->mIsTetheredMode:Z
-    invoke-static {v7}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->access$700(Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;)Z
+    invoke-static {v5}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->access$1400(Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;)Z
 
-    move-result v7
+    move-result v5
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v4
 
-    const-string/jumbo v7, "mChargingMode="
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v4
 
-    move-result-object v6
+    invoke-virtual {v3, v4}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->logd(Ljava/lang/String;)V
 
-    iget-object v7, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$3;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
-
-    #getter for: Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->mChargingMode:Z
-    invoke-static {v7}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->access$800(Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;)Z
-
-    move-result v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v3, v6}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->logd(Ljava/lang/String;)V
-
-    .line 3632
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$3;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
-
-    #getter for: Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->mIsTetheredMode:Z
-    invoke-static {v3}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->access$700(Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_5
-
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$3;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
-
-    #getter for: Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->mChargingMode:Z
-    invoke-static {v3}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->access$900(Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_5
-
-    .line 3633
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$3;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
-
-    invoke-virtual {v3, v4}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->updateFDMDEnableStatus(Z)V
-
-    goto/16 :goto_0
+    goto :goto_0
 
     :cond_4
-    move v3, v5
+    move v3, v4
 
-    .line 3629
+    .line 3258
     goto :goto_1
-
-    .line 3635
-    :cond_5
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$3;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
-
-    invoke-virtual {v3, v5}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->updateFDMDEnableStatus(Z)V
-
-    goto/16 :goto_0
 .end method

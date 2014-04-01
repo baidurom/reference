@@ -35,8 +35,6 @@ key 113   MUTE              WAKE_DROPPED
 key 116   POWER             WAKE
 key 212   CAMERA
 key 211   FOCUS
-key 67    F9
-key 68    F10
 
 key 16    Q
 key 17    W

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<LocationService version="1">
+  <!--This configuration file will decide which provider the location service framework will bind in the booting process-->
+  <NetworkServiceName>com.google.android.location.NetworkLocationProvider</NetworkServiceName>
+</LocationService>

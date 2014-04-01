@@ -249,7 +249,7 @@
 
     .line 184
     :cond_4
-    const-string/jumbo v11, "item"
+    const-string v11, "item"
 
     invoke-virtual {v3, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -323,7 +323,7 @@
     .line 194
     :goto_1
     :try_start_3
-    const-string/jumbo v11, "item"
+    const-string v11, "item"
 
     invoke-virtual {v3, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

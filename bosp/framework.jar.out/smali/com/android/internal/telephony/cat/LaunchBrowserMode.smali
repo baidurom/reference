@@ -35,7 +35,7 @@
 
     const/4 v2, 0x0
 
-    .line 24
+    .line 27
     new-instance v0, Lcom/android/internal/telephony/cat/LaunchBrowserMode;
 
     const-string v1, "LAUNCH_IF_NOT_ALREADY_LAUNCHED"
@@ -44,7 +44,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/LaunchBrowserMode;->LAUNCH_IF_NOT_ALREADY_LAUNCHED:Lcom/android/internal/telephony/cat/LaunchBrowserMode;
 
-    .line 29
+    .line 32
     new-instance v0, Lcom/android/internal/telephony/cat/LaunchBrowserMode;
 
     const-string v1, "USE_EXISTING_BROWSER"
@@ -53,7 +53,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/LaunchBrowserMode;->USE_EXISTING_BROWSER:Lcom/android/internal/telephony/cat/LaunchBrowserMode;
 
-    .line 31
+    .line 34
     new-instance v0, Lcom/android/internal/telephony/cat/LaunchBrowserMode;
 
     const-string v1, "LAUNCH_NEW_BROWSER"
@@ -62,7 +62,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/LaunchBrowserMode;->LAUNCH_NEW_BROWSER:Lcom/android/internal/telephony/cat/LaunchBrowserMode;
 
-    .line 22
+    .line 25
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/android/internal/telephony/cat/LaunchBrowserMode;
@@ -95,7 +95,7 @@
     .end annotation
 
     .prologue
-    .line 22
+    .line 25
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -106,7 +106,7 @@
     .parameter "name"
 
     .prologue
-    .line 22
+    .line 25
     const-class v0, Lcom/android/internal/telephony/cat/LaunchBrowserMode;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -122,7 +122,7 @@
     .locals 1
 
     .prologue
-    .line 22
+    .line 25
     sget-object v0, Lcom/android/internal/telephony/cat/LaunchBrowserMode;->$VALUES:[Lcom/android/internal/telephony/cat/LaunchBrowserMode;
 
     invoke-virtual {v0}, [Lcom/android/internal/telephony/cat/LaunchBrowserMode;->clone()Ljava/lang/Object;

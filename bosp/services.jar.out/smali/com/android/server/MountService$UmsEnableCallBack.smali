@@ -29,230 +29,140 @@
     .parameter "force"
 
     .prologue
-    .line 519
+    .line 435
     iput-object p1, p0, Lcom/android/server/MountService$UmsEnableCallBack;->this$0:Lcom/android/server/MountService;
 
-    .line 520
+    .line 436
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, p4, v0}, Lcom/android/server/MountService$UnmountCallBack;-><init>(Lcom/android/server/MountService;Ljava/lang/String;ZZ)V
 
-    .line 521
+    .line 437
     iput-object p3, p0, Lcom/android/server/MountService$UmsEnableCallBack;->method:Ljava/lang/String;
 
-    .line 522
+    .line 438
     return-void
 .end method
 
 
 # virtual methods
 .method handleFinished()V
-    .locals 8
+    .locals 5
 
     .prologue
-    .line 526
-    iget-object v3, p0, Lcom/android/server/MountService$UmsEnableCallBack;->this$0:Lcom/android/server/MountService;
+    .line 442
+    iget-object v0, p0, Lcom/android/server/MountService$UmsEnableCallBack;->this$0:Lcom/android/server/MountService;
 
     #getter for: Lcom/android/server/MountService;->mIsUsbConnected:Z
-    invoke-static {v3}, Lcom/android/server/MountService;->access$200(Lcom/android/server/MountService;)Z
+    invoke-static {v0}, Lcom/android/server/MountService;->access$200(Lcom/android/server/MountService;)Z
 
-    move-result v3
+    move-result v0
 
-    if-nez v3, :cond_1
+    if-nez v0, :cond_1
 
-    .line 527
-    const/4 v2, 0x0
+    .line 443
+    iget-object v0, p0, Lcom/android/server/MountService$UmsEnableCallBack;->this$0:Lcom/android/server/MountService;
 
-    .line 528
-    .local v2, volume:Landroid/os/storage/StorageVolume;
-    iget-object v3, p0, Lcom/android/server/MountService$UmsEnableCallBack;->this$0:Lcom/android/server/MountService;
+    iget-object v1, p0, Lcom/android/server/MountService$UmsEnableCallBack;->path:Ljava/lang/String;
 
-    #getter for: Lcom/android/server/MountService;->mVolumesLock:Ljava/lang/Object;
-    invoke-static {v3}, Lcom/android/server/MountService;->access$300(Lcom/android/server/MountService;)Ljava/lang/Object;
+    const-string v2, "checking"
 
-    move-result-object v4
+    #calls: Lcom/android/server/MountService;->updatePublicVolumeState(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1, v2}, Lcom/android/server/MountService;->access$300(Lcom/android/server/MountService;Ljava/lang/String;Ljava/lang/String;)V
 
-    monitor-enter v4
+    .line 444
+    iget-object v0, p0, Lcom/android/server/MountService$UmsEnableCallBack;->this$0:Lcom/android/server/MountService;
 
-    .line 529
-    :try_start_0
-    iget-object v3, p0, Lcom/android/server/MountService$UmsEnableCallBack;->this$0:Lcom/android/server/MountService;
+    const-string v1, "android.intent.action.MEDIA_CHECKING"
 
-    #getter for: Lcom/android/server/MountService;->mVolumesByPath:Ljava/util/HashMap;
-    invoke-static {v3}, Lcom/android/server/MountService;->access$400(Lcom/android/server/MountService;)Ljava/util/HashMap;
+    iget-object v2, p0, Lcom/android/server/MountService$UmsEnableCallBack;->path:Ljava/lang/String;
 
-    move-result-object v3
+    #calls: Lcom/android/server/MountService;->sendStorageIntent(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1, v2}, Lcom/android/server/MountService;->access$400(Lcom/android/server/MountService;Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v5, p0, Lcom/android/server/MountService$UmsEnableCallBack;->path:Ljava/lang/String;
+    .line 445
+    iget-object v0, p0, Lcom/android/server/MountService$UmsEnableCallBack;->this$0:Lcom/android/server/MountService;
 
-    invoke-virtual {v3, v5}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v1, p0, Lcom/android/server/MountService$UmsEnableCallBack;->path:Ljava/lang/String;
 
-    move-result-object v3
+    const-string v2, "mounted"
 
-    move-object v0, v3
+    #calls: Lcom/android/server/MountService;->updatePublicVolumeState(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1, v2}, Lcom/android/server/MountService;->access$300(Lcom/android/server/MountService;Ljava/lang/String;Ljava/lang/String;)V
 
-    check-cast v0, Landroid/os/storage/StorageVolume;
+    .line 446
+    iget-object v0, p0, Lcom/android/server/MountService$UmsEnableCallBack;->this$0:Lcom/android/server/MountService;
 
-    move-object v2, v0
+    const-string v1, "android.intent.action.MEDIA_MOUNTED"
 
-    .line 530
-    monitor-exit v4
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v2, p0, Lcom/android/server/MountService$UmsEnableCallBack;->path:Ljava/lang/String;
 
-    .line 531
-    iget-object v3, p0, Lcom/android/server/MountService$UmsEnableCallBack;->this$0:Lcom/android/server/MountService;
+    #calls: Lcom/android/server/MountService;->sendStorageIntent(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1, v2}, Lcom/android/server/MountService;->access$400(Lcom/android/server/MountService;Ljava/lang/String;Ljava/lang/String;)V
 
-    const-string v4, "checking"
-
-    #calls: Lcom/android/server/MountService;->updatePublicVolumeState(Landroid/os/storage/StorageVolume;Ljava/lang/String;)V
-    invoke-static {v3, v2, v4}, Lcom/android/server/MountService;->access$500(Lcom/android/server/MountService;Landroid/os/storage/StorageVolume;Ljava/lang/String;)V
-
-    .line 532
-    iget-object v3, p0, Lcom/android/server/MountService$UmsEnableCallBack;->this$0:Lcom/android/server/MountService;
-
-    const-string v4, "android.intent.action.MEDIA_CHECKING"
-
-    sget-object v5, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
-
-    #calls: Lcom/android/server/MountService;->sendStorageIntent(Ljava/lang/String;Landroid/os/storage/StorageVolume;Landroid/os/UserHandle;)V
-    invoke-static {v3, v4, v2, v5}, Lcom/android/server/MountService;->access$600(Lcom/android/server/MountService;Ljava/lang/String;Landroid/os/storage/StorageVolume;Landroid/os/UserHandle;)V
-
-    .line 533
-    iget-object v3, p0, Lcom/android/server/MountService$UmsEnableCallBack;->this$0:Lcom/android/server/MountService;
-
-    const-string v4, "mounted"
-
-    #calls: Lcom/android/server/MountService;->updatePublicVolumeState(Landroid/os/storage/StorageVolume;Ljava/lang/String;)V
-    invoke-static {v3, v2, v4}, Lcom/android/server/MountService;->access$500(Lcom/android/server/MountService;Landroid/os/storage/StorageVolume;Ljava/lang/String;)V
-
-    .line 534
-    iget-object v3, p0, Lcom/android/server/MountService$UmsEnableCallBack;->this$0:Lcom/android/server/MountService;
-
-    const-string v4, "android.intent.action.MEDIA_MOUNTED"
-
-    sget-object v5, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
-
-    #calls: Lcom/android/server/MountService;->sendStorageIntent(Ljava/lang/String;Landroid/os/storage/StorageVolume;Landroid/os/UserHandle;)V
-    invoke-static {v3, v4, v2, v5}, Lcom/android/server/MountService;->access$600(Lcom/android/server/MountService;Ljava/lang/String;Landroid/os/storage/StorageVolume;Landroid/os/UserHandle;)V
-
-    .line 548
-    .end local v2           #volume:Landroid/os/storage/StorageVolume;
+    .line 453
     :goto_0
-    iget-object v3, p0, Lcom/android/server/MountService$UmsEnableCallBack;->this$0:Lcom/android/server/MountService;
+    iget-object v0, p0, Lcom/android/server/MountService$UmsEnableCallBack;->this$0:Lcom/android/server/MountService;
 
-    invoke-static {v3}, Lcom/android/server/MountService;->access$1010(Lcom/android/server/MountService;)I
+    invoke-static {v0}, Lcom/android/server/MountService;->access$710(Lcom/android/server/MountService;)I
 
-    .line 549
-    iget-object v3, p0, Lcom/android/server/MountService$UmsEnableCallBack;->this$0:Lcom/android/server/MountService;
+    .line 454
+    iget-object v0, p0, Lcom/android/server/MountService$UmsEnableCallBack;->this$0:Lcom/android/server/MountService;
 
     #getter for: Lcom/android/server/MountService;->mUMSCount:I
-    invoke-static {v3}, Lcom/android/server/MountService;->access$1000(Lcom/android/server/MountService;)I
+    invoke-static {v0}, Lcom/android/server/MountService;->access$700(Lcom/android/server/MountService;)I
 
-    move-result v3
+    move-result v0
 
-    if-gtz v3, :cond_0
+    if-gtz v0, :cond_0
 
-    .line 550
-    new-instance v3, Lcom/android/server/MountService$UmsEnableCallBack$1;
+    .line 455
+    iget-object v0, p0, Lcom/android/server/MountService$UmsEnableCallBack;->this$0:Lcom/android/server/MountService;
 
-    invoke-direct {v3, p0}, Lcom/android/server/MountService$UmsEnableCallBack$1;-><init>(Lcom/android/server/MountService$UmsEnableCallBack;)V
+    const/4 v1, 0x0
 
-    invoke-virtual {v3}, Lcom/android/server/MountService$UmsEnableCallBack$1;->start()V
+    #setter for: Lcom/android/server/MountService;->mIsTurnOnUsb:Z
+    invoke-static {v0, v1}, Lcom/android/server/MountService;->access$802(Lcom/android/server/MountService;Z)Z
 
-    .line 556
-    iget-object v3, p0, Lcom/android/server/MountService$UmsEnableCallBack;->this$0:Lcom/android/server/MountService;
-
-    const/4 v4, 0x0
-
-    #setter for: Lcom/android/server/MountService;->mUnmountPrimary:Z
-    invoke-static {v3, v4}, Lcom/android/server/MountService;->access$1202(Lcom/android/server/MountService;Z)Z
-
-    .line 558
+    .line 457
     :cond_0
     return-void
 
-    .line 530
-    .restart local v2       #volume:Landroid/os/storage/StorageVolume;
-    :catchall_0
-    move-exception v3
-
-    :try_start_1
-    monitor-exit v4
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v3
-
-    .line 536
-    .end local v2           #volume:Landroid/os/storage/StorageVolume;
+    .line 448
     :cond_1
-    invoke-static {}, Lcom/android/server/MountService;->access$700()Ljava/lang/Object;
+    invoke-static {}, Lcom/android/server/MountService;->access$500()Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v1
 
-    monitor-enter v4
+    monitor-enter v1
 
-    .line 537
-    :try_start_2
-    iget-object v3, p0, Lcom/android/server/MountService$UmsEnableCallBack;->this$0:Lcom/android/server/MountService;
-
-    #getter for: Lcom/android/server/MountService;->mUnmountSwap:Z
-    invoke-static {v3}, Lcom/android/server/MountService;->access$800(Lcom/android/server/MountService;)Z
-
-    move-result v1
-
-    .line 538
-    .local v1, unmountSwap:Z
+    .line 449
+    :try_start_0
     invoke-super {p0}, Lcom/android/server/MountService$UnmountCallBack;->handleFinished()V
 
-    .line 541
-    if-eqz v1, :cond_2
+    .line 450
+    iget-object v0, p0, Lcom/android/server/MountService$UmsEnableCallBack;->this$0:Lcom/android/server/MountService;
 
-    .line 542
-    iget-object v3, p0, Lcom/android/server/MountService$UmsEnableCallBack;->this$0:Lcom/android/server/MountService;
+    iget-object v2, p0, Lcom/android/server/MountService$UmsEnableCallBack;->path:Ljava/lang/String;
 
-    const-string v5, "/storage/sdcard1"
+    iget-object v3, p0, Lcom/android/server/MountService$UmsEnableCallBack;->method:Ljava/lang/String;
 
-    iget-object v6, p0, Lcom/android/server/MountService$UmsEnableCallBack;->method:Ljava/lang/String;
-
-    const/4 v7, 0x1
+    const/4 v4, 0x1
 
     #calls: Lcom/android/server/MountService;->doShareUnshareVolume(Ljava/lang/String;Ljava/lang/String;Z)V
-    invoke-static {v3, v5, v6, v7}, Lcom/android/server/MountService;->access$900(Lcom/android/server/MountService;Ljava/lang/String;Ljava/lang/String;Z)V
+    invoke-static {v0, v2, v3, v4}, Lcom/android/server/MountService;->access$600(Lcom/android/server/MountService;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 546
-    :goto_1
-    monitor-exit v4
+    .line 451
+    monitor-exit v1
 
     goto :goto_0
 
-    .end local v1           #unmountSwap:Z
-    :catchall_1
-    move-exception v3
+    :catchall_0
+    move-exception v0
 
-    monitor-exit v4
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v3
-
-    .line 544
-    .restart local v1       #unmountSwap:Z
-    :cond_2
-    :try_start_3
-    iget-object v3, p0, Lcom/android/server/MountService$UmsEnableCallBack;->this$0:Lcom/android/server/MountService;
-
-    iget-object v5, p0, Lcom/android/server/MountService$UmsEnableCallBack;->path:Ljava/lang/String;
-
-    iget-object v6, p0, Lcom/android/server/MountService$UmsEnableCallBack;->method:Ljava/lang/String;
-
-    const/4 v7, 0x1
-
-    #calls: Lcom/android/server/MountService;->doShareUnshareVolume(Ljava/lang/String;Ljava/lang/String;Z)V
-    invoke-static {v3, v5, v6, v7}, Lcom/android/server/MountService;->access$900(Lcom/android/server/MountService;Ljava/lang/String;Ljava/lang/String;Z)V
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
-
-    goto :goto_1
+    throw v0
 .end method

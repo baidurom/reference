@@ -11,7 +11,6 @@
     .line 25
     invoke-direct {p0}, Landroid/database/SQLException;-><init>()V
 
-    .line 26
     return-void
 .end method
 
@@ -20,22 +19,9 @@
     .parameter "error"
 
     .prologue
-    .line 29
+    .line 28
     invoke-direct {p0, p1}, Landroid/database/SQLException;-><init>(Ljava/lang/String;)V
 
-    .line 30
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-    .locals 0
-    .parameter "error"
-    .parameter "cause"
-
-    .prologue
-    .line 33
-    invoke-direct {p0, p1, p2}, Landroid/database/SQLException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    .line 34
+    .line 29
     return-void
 .end method

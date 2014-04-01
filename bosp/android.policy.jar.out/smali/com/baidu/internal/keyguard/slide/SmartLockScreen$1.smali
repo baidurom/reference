@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 439
+    .line 437
     iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$1;->this$0:Lcom/baidu/internal/keyguard/slide/SmartLockScreen;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,21 +38,19 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .locals 1
 
     .prologue
-    .line 441
+    .line 439
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$1;->this$0:Lcom/baidu/internal/keyguard/slide/SmartLockScreen;
 
-    #getter for: Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
-    invoke-static {v0}, Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->access$200(Lcom/baidu/internal/keyguard/slide/SmartLockScreen;)Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    #getter for: Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
+    invoke-static {v0}, Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->access$200(Lcom/baidu/internal/keyguard/slide/SmartLockScreen;)Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
     move-result-object v0
 
-    const/4 v1, 0x1
+    invoke-interface {v0}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->goToUnlockScreen()V
 
-    invoke-interface {v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;->dismiss(Z)V
-
-    .line 442
+    .line 440
     return-void
 .end method

@@ -19,23 +19,23 @@
     .locals 0
 
     .prologue
-    .line 2491
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 2351
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2492
+    .line 2352
     return-void
 .end method
 
 
 # virtual methods
-.method abstract getAlignmentValue(Landroid/view/View;II)I
+.method abstract getAlignmentValue(Landroid/view/View;I)I
 .end method
 
 .method getBounds()Landroid/widget/GridLayout$Bounds;
     .locals 2
 
     .prologue
-    .line 2526
+    .line 2386
     new-instance v0, Landroid/widget/GridLayout$Bounds;
 
     const/4 v1, 0x0
@@ -45,16 +45,14 @@
     return-object v0
 .end method
 
-.method abstract getGravityOffset(Landroid/view/View;I)I
-.end method
-
-.method getSizeInCell(Landroid/view/View;II)I
+.method getSizeInCell(Landroid/view/View;III)I
     .locals 0
     .parameter "view"
     .parameter "viewSize"
     .parameter "cellSize"
+    .parameter "measurementType"
 
     .prologue
-    .line 2522
+    .line 2382
     return p2
 .end method

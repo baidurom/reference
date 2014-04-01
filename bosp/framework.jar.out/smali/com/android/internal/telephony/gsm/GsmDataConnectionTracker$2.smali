@@ -20,20 +20,15 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
 
-.field final synthetic val$gprsDefaultSIM:I
-
 
 # direct methods
-.method constructor <init>(Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;I)V
+.method constructor <init>(Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;)V
     .locals 0
-    .parameter
     .parameter
 
     .prologue
-    .line 2203
+    .line 2028
     iput-object p1, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$2;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
-
-    iput p2, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$2;->val$gprsDefaultSIM:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -43,26 +38,20 @@
 
 # virtual methods
 .method public run()V
-    .locals 4
+    .locals 2
 
     .prologue
-    .line 2205
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$2;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
-
-    #calls: Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->syncRoamingSetting()V
-    invoke-static {v0}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->access$200(Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;)V
-
-    .line 2206
+    .line 2030
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$2;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
 
     #calls: Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->createAllApnList()V
-    invoke-static {v0}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->access$300(Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;)V
+    invoke-static {v0}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->access$1000(Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;)V
 
-    .line 2207
+    .line 2031
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$2;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
 
     #getter for: Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->mPhone:Lcom/android/internal/telephony/PhoneBase;
-    invoke-static {v0}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->access$400(Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;)Lcom/android/internal/telephony/PhoneBase;
+    invoke-static {v0}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->access$1100(Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;)Lcom/android/internal/telephony/PhoneBase;
 
     move-result-object v0
 
@@ -78,63 +67,29 @@
 
     if-eqz v0, :cond_0
 
-    .line 2208
+    .line 2032
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$2;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
 
     const-string/jumbo v1, "onRecordsLoaded: notifying data availability"
 
     invoke-virtual {v0, v1}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->log(Ljava/lang/String;)V
 
-    .line 2209
+    .line 2033
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$2;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
 
     const-string/jumbo v1, "simLoaded"
 
     invoke-virtual {v0, v1}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->notifyOffApnsOfAvailability(Ljava/lang/String;)V
 
-    .line 2211
+    .line 2035
     :cond_0
-    iget v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$2;->val$gprsDefaultSIM:I
-
-    iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$2;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
-
-    #getter for: Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->mGsmPhone:Lcom/android/internal/telephony/gsm/GSMPhone;
-    invoke-static {v1}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->access$500(Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;)Lcom/android/internal/telephony/gsm/GSMPhone;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/GSMPhone;->getMySimId()I
-
-    move-result v1
-
-    if-eq v0, v1, :cond_1
-
-    .line 2218
-    :goto_0
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$2;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
 
-    iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$2;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
+    const-string/jumbo v1, "simLoaded"
 
-    const v2, 0x42003
+    #calls: Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->setupDataOnReadyApns(Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->access$1200(Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;Ljava/lang/String;)V
 
-    const-string/jumbo v3, "simLoaded"
-
-    invoke-virtual {v1, v2, v3}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->sendMessage(Landroid/os/Message;)Z
-
-    .line 2219
+    .line 2036
     return-void
-
-    .line 2214
-    :cond_1
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$2;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
-
-    const-string v1, "default"
-
-    invoke-virtual {v0, v1}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->enableApnType(Ljava/lang/String;)I
-
-    goto :goto_0
 .end method

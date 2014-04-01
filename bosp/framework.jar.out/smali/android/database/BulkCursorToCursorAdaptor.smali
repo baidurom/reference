@@ -37,16 +37,62 @@
     return-void
 .end method
 
+.method public static findRowIdColumnIndex([Ljava/lang/String;)I
+    .locals 4
+    .parameter "columnNames"
+
+    .prologue
+    .line 54
+    array-length v1, p0
+
+    .line 55
+    .local v1, length:I
+    const/4 v0, 0x0
+
+    .local v0, i:I
+    :goto_0
+    if-ge v0, v1, :cond_1
+
+    .line 56
+    aget-object v2, p0, v0
+
+    const-string v3, "_id"
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    .line 60
+    .end local v0           #i:I
+    :goto_1
+    return v0
+
+    .line 55
+    .restart local v0       #i:I
+    :cond_0
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    .line 60
+    :cond_1
+    const/4 v0, -0x1
+
+    goto :goto_1
+.end method
+
 .method private throwIfCursorIsClosed()V
     .locals 2
 
     .prologue
-    .line 63
+    .line 74
     iget-object v0, p0, Landroid/database/BulkCursorToCursorAdaptor;->mBulkCursor:Landroid/database/IBulkCursor;
 
     if-nez v0, :cond_0
 
-    .line 64
+    .line 75
     new-instance v0, Landroid/database/StaleDataException;
 
     const-string v1, "Attempted to access a cursor after it has been closed."
@@ -55,7 +101,7 @@
 
     throw v0
 
-    .line 66
+    .line 77
     :cond_0
     return-void
 .end method
@@ -68,15 +114,15 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 118
+    .line 129
     invoke-super {p0}, Landroid/database/AbstractWindowedCursor;->close()V
 
-    .line 120
+    .line 131
     iget-object v1, p0, Landroid/database/BulkCursorToCursorAdaptor;->mBulkCursor:Landroid/database/IBulkCursor;
 
     if-eqz v1, :cond_0
 
-    .line 122
+    .line 133
     :try_start_0
     iget-object v1, p0, Landroid/database/BulkCursorToCursorAdaptor;->mBulkCursor:Landroid/database/IBulkCursor;
 
@@ -85,19 +131,19 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 126
-    :goto_0
+    .line 137
     iput-object v3, p0, Landroid/database/BulkCursorToCursorAdaptor;->mBulkCursor:Landroid/database/IBulkCursor;
 
-    .line 129
+    .line 140
     :cond_0
+    :goto_0
     return-void
 
-    .line 123
+    .line 134
     :catch_0
     move-exception v0
 
-    .line 124
+    .line 135
     .local v0, ex:Landroid/os/RemoteException;
     :try_start_1
     const-string v1, "BulkCursor"
@@ -108,9 +154,11 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    .line 137
+    iput-object v3, p0, Landroid/database/BulkCursorToCursorAdaptor;->mBulkCursor:Landroid/database/IBulkCursor;
+
     goto :goto_0
 
-    .line 126
     .end local v0           #ex:Landroid/os/RemoteException;
     :catchall_0
     move-exception v1
@@ -124,15 +172,15 @@
     .locals 3
 
     .prologue
-    .line 105
+    .line 116
     invoke-super {p0}, Landroid/database/AbstractWindowedCursor;->deactivate()V
 
-    .line 107
+    .line 118
     iget-object v1, p0, Landroid/database/BulkCursorToCursorAdaptor;->mBulkCursor:Landroid/database/IBulkCursor;
 
     if-eqz v1, :cond_0
 
-    .line 109
+    .line 120
     :try_start_0
     iget-object v1, p0, Landroid/database/BulkCursorToCursorAdaptor;->mBulkCursor:Landroid/database/IBulkCursor;
 
@@ -140,16 +188,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 114
+    .line 125
     :cond_0
     :goto_0
     return-void
 
-    .line 110
+    .line 121
     :catch_0
     move-exception v0
 
-    .line 111
+    .line 122
     .local v0, ex:Landroid/os/RemoteException;
     const-string v1, "BulkCursor"
 
@@ -161,26 +209,62 @@
 .end method
 
 .method public getColumnNames()[Ljava/lang/String;
-    .locals 1
+    .locals 3
 
     .prologue
-    .line 159
+    .line 170
     invoke-direct {p0}, Landroid/database/BulkCursorToCursorAdaptor;->throwIfCursorIsClosed()V
 
-    .line 161
-    iget-object v0, p0, Landroid/database/BulkCursorToCursorAdaptor;->mColumns:[Ljava/lang/String;
+    .line 172
+    iget-object v1, p0, Landroid/database/BulkCursorToCursorAdaptor;->mColumns:[Ljava/lang/String;
 
-    return-object v0
+    if-nez v1, :cond_0
+
+    .line 174
+    :try_start_0
+    iget-object v1, p0, Landroid/database/BulkCursorToCursorAdaptor;->mBulkCursor:Landroid/database/IBulkCursor;
+
+    invoke-interface {v1}, Landroid/database/IBulkCursor;->getColumnNames()[Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, p0, Landroid/database/BulkCursorToCursorAdaptor;->mColumns:[Ljava/lang/String;
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 180
+    :cond_0
+    iget-object v1, p0, Landroid/database/BulkCursorToCursorAdaptor;->mColumns:[Ljava/lang/String;
+
+    :goto_0
+    return-object v1
+
+    .line 175
+    :catch_0
+    move-exception v0
+
+    .line 176
+    .local v0, ex:Landroid/os/RemoteException;
+    const-string v1, "BulkCursor"
+
+    const-string v2, "Unable to fetch column names because the remote process is dead"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 177
+    const/4 v1, 0x0
+
+    goto :goto_0
 .end method
 
 .method public getCount()I
     .locals 1
 
     .prologue
-    .line 70
+    .line 81
     invoke-direct {p0}, Landroid/database/BulkCursorToCursorAdaptor;->throwIfCursorIsClosed()V
 
-    .line 71
+    .line 82
     iget v0, p0, Landroid/database/BulkCursorToCursorAdaptor;->mCount:I
 
     return v0
@@ -190,10 +274,10 @@
     .locals 2
 
     .prologue
-    .line 166
+    .line 185
     invoke-direct {p0}, Landroid/database/BulkCursorToCursorAdaptor;->throwIfCursorIsClosed()V
 
-    .line 169
+    .line 188
     :try_start_0
     iget-object v1, p0, Landroid/database/BulkCursorToCursorAdaptor;->mBulkCursor:Landroid/database/IBulkCursor;
 
@@ -205,11 +289,11 @@
 
     return-object v1
 
-    .line 170
+    .line 189
     :catch_0
     move-exception v0
 
-    .line 173
+    .line 192
     .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -222,7 +306,7 @@
     .locals 1
 
     .prologue
-    .line 59
+    .line 70
     iget-object v0, p0, Landroid/database/BulkCursorToCursorAdaptor;->mObserverBridge:Landroid/database/AbstractCursor$SelfContentObserver;
 
     invoke-virtual {v0}, Landroid/database/AbstractCursor$SelfContentObserver;->getContentObserver()Landroid/database/IContentObserver;
@@ -232,52 +316,32 @@
     return-object v0
 .end method
 
-.method public initialize(Landroid/database/BulkCursorDescriptor;)V
+.method public initialize(Landroid/database/IBulkCursor;IIZ)V
     .locals 1
-    .parameter "d"
+    .parameter "bulkCursor"
+    .parameter "count"
+    .parameter "idIndex"
+    .parameter "wantsAllOnMoveCalls"
 
     .prologue
-    .line 42
-    iget-object v0, p1, Landroid/database/BulkCursorDescriptor;->cursor:Landroid/database/IBulkCursor;
-
-    iput-object v0, p0, Landroid/database/BulkCursorToCursorAdaptor;->mBulkCursor:Landroid/database/IBulkCursor;
-
     .line 43
-    iget-object v0, p1, Landroid/database/BulkCursorDescriptor;->columnNames:[Ljava/lang/String;
+    iput-object p1, p0, Landroid/database/BulkCursorToCursorAdaptor;->mBulkCursor:Landroid/database/IBulkCursor;
+
+    .line 44
+    const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/database/BulkCursorToCursorAdaptor;->mColumns:[Ljava/lang/String;
 
-    .line 44
-    iget-object v0, p0, Landroid/database/BulkCursorToCursorAdaptor;->mColumns:[Ljava/lang/String;
-
-    invoke-static {v0}, Landroid/database/DatabaseUtils;->findRowIdColumnIndex([Ljava/lang/String;)I
-
-    move-result v0
-
-    iput v0, p0, Landroid/database/BulkCursorToCursorAdaptor;->mRowIdColumnIndex:I
-
     .line 45
-    iget-boolean v0, p1, Landroid/database/BulkCursorDescriptor;->wantsAllOnMoveCalls:Z
-
-    iput-boolean v0, p0, Landroid/database/BulkCursorToCursorAdaptor;->mWantsAllOnMoveCalls:Z
+    iput p2, p0, Landroid/database/BulkCursorToCursorAdaptor;->mCount:I
 
     .line 46
-    iget v0, p1, Landroid/database/BulkCursorDescriptor;->count:I
-
-    iput v0, p0, Landroid/database/BulkCursorToCursorAdaptor;->mCount:I
+    iput p3, p0, Landroid/database/BulkCursorToCursorAdaptor;->mRowIdColumnIndex:I
 
     .line 47
-    iget-object v0, p1, Landroid/database/BulkCursorDescriptor;->window:Landroid/database/CursorWindow;
-
-    if-eqz v0, :cond_0
+    iput-boolean p4, p0, Landroid/database/BulkCursorToCursorAdaptor;->mWantsAllOnMoveCalls:Z
 
     .line 48
-    iget-object v0, p1, Landroid/database/BulkCursorDescriptor;->window:Landroid/database/CursorWindow;
-
-    invoke-virtual {p0, v0}, Landroid/database/BulkCursorToCursorAdaptor;->setWindow(Landroid/database/CursorWindow;)V
-
-    .line 50
-    :cond_0
     return-void
 .end method
 
@@ -289,10 +353,10 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 76
+    .line 87
     invoke-direct {p0}, Landroid/database/BulkCursorToCursorAdaptor;->throwIfCursorIsClosed()V
 
-    .line 80
+    .line 91
     :try_start_0
     iget-object v2, p0, Landroid/database/BulkCursorToCursorAdaptor;->mWindow:Landroid/database/CursorWindow;
 
@@ -322,7 +386,7 @@
 
     if-lt p2, v2, :cond_2
 
-    .line 83
+    .line 94
     :cond_0
     iget-object v2, p0, Landroid/database/BulkCursorToCursorAdaptor;->mBulkCursor:Landroid/database/IBulkCursor;
 
@@ -334,25 +398,25 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 94
+    .line 105
     :cond_1
     :goto_0
     iget-object v2, p0, Landroid/database/BulkCursorToCursorAdaptor;->mWindow:Landroid/database/CursorWindow;
 
     if-nez v2, :cond_3
 
-    .line 98
+    .line 109
     :goto_1
     return v1
 
-    .line 84
+    .line 95
     :cond_2
     :try_start_1
     iget-boolean v2, p0, Landroid/database/BulkCursorToCursorAdaptor;->mWantsAllOnMoveCalls:Z
 
     if-eqz v2, :cond_1
 
-    .line 85
+    .line 96
     iget-object v2, p0, Landroid/database/BulkCursorToCursorAdaptor;->mBulkCursor:Landroid/database/IBulkCursor;
 
     invoke-interface {v2, p2}, Landroid/database/IBulkCursor;->onMove(I)V
@@ -361,11 +425,11 @@
 
     goto :goto_0
 
-    .line 87
+    .line 98
     :catch_0
     move-exception v0
 
-    .line 89
+    .line 100
     .local v0, ex:Landroid/os/RemoteException;
     const-string v2, "BulkCursor"
 
@@ -375,7 +439,7 @@
 
     goto :goto_1
 
-    .line 98
+    .line 109
     .end local v0           #ex:Landroid/os/RemoteException;
     :cond_3
     const/4 v1, 0x1
@@ -391,10 +455,10 @@
 
     const/4 v4, -0x1
 
-    .line 133
+    .line 144
     invoke-direct {p0}, Landroid/database/BulkCursorToCursorAdaptor;->throwIfCursorIsClosed()V
 
-    .line 136
+    .line 147
     :try_start_0
     iget-object v2, p0, Landroid/database/BulkCursorToCursorAdaptor;->mBulkCursor:Landroid/database/IBulkCursor;
 
@@ -408,30 +472,30 @@
 
     iput v2, p0, Landroid/database/BulkCursorToCursorAdaptor;->mCount:I
 
-    .line 137
+    .line 148
     iget v2, p0, Landroid/database/BulkCursorToCursorAdaptor;->mCount:I
 
     if-eq v2, v4, :cond_0
 
-    .line 138
+    .line 149
     const/4 v2, -0x1
 
     iput v2, p0, Landroid/database/BulkCursorToCursorAdaptor;->mPos:I
 
-    .line 139
+    .line 150
     invoke-virtual {p0}, Landroid/database/BulkCursorToCursorAdaptor;->closeWindow()V
 
-    .line 144
+    .line 155
     invoke-super {p0}, Landroid/database/AbstractWindowedCursor;->requery()Z
 
-    .line 145
+    .line 156
     const/4 v1, 0x1
 
-    .line 153
+    .line 164
     :goto_0
     return v1
 
-    .line 147
+    .line 158
     :cond_0
     invoke-virtual {p0}, Landroid/database/BulkCursorToCursorAdaptor;->deactivate()V
     :try_end_0
@@ -439,11 +503,11 @@
 
     goto :goto_0
 
-    .line 150
+    .line 161
     :catch_0
     move-exception v0
 
-    .line 151
+    .line 162
     .local v0, ex:Ljava/lang/Exception;
     const-string v2, "BulkCursor"
 
@@ -471,7 +535,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 152
+    .line 163
     invoke-virtual {p0}, Landroid/database/BulkCursorToCursorAdaptor;->deactivate()V
 
     goto :goto_0
@@ -482,10 +546,10 @@
     .parameter "extras"
 
     .prologue
-    .line 179
+    .line 198
     invoke-direct {p0}, Landroid/database/BulkCursorToCursorAdaptor;->throwIfCursorIsClosed()V
 
-    .line 182
+    .line 201
     :try_start_0
     iget-object v1, p0, Landroid/database/BulkCursorToCursorAdaptor;->mBulkCursor:Landroid/database/IBulkCursor;
 
@@ -495,15 +559,15 @@
 
     move-result-object v1
 
-    .line 188
+    .line 207
     :goto_0
     return-object v1
 
-    .line 183
+    .line 202
     :catch_0
     move-exception v0
 
-    .line 187
+    .line 206
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "BulkCursor"
 
@@ -511,7 +575,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 188
+    .line 207
     sget-object v1, Landroid/os/Bundle;->EMPTY:Landroid/os/Bundle;
 
     goto :goto_0

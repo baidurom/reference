@@ -245,46 +245,6 @@
     return v0
 .end method
 
-.method public isExtendedLengthApduSupported()Z
-    .locals 3
-
-    .prologue
-    .line 199
-    :try_start_0
-    iget-object v1, p0, Landroid/nfc/tech/IsoDep;->mTag:Landroid/nfc/Tag;
-
-    invoke-virtual {v1}, Landroid/nfc/Tag;->getTagService()Landroid/nfc/INfcTag;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Landroid/nfc/INfcTag;->getExtendedLengthApdusSupported()Z
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result v1
-
-    .line 202
-    :goto_0
-    return v1
-
-    .line 200
-    :catch_0
-    move-exception v0
-
-    .line 201
-    .local v0, e:Landroid/os/RemoteException;
-    const-string v1, "NFC"
-
-    const-string v2, "NFC service dead"
-
-    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    .line 202
-    const/4 v1, 0x0
-
-    goto :goto_0
-.end method
-
 .method public bridge synthetic reconnect()V
     .locals 0
     .annotation system Ldalvik/annotation/Throws;

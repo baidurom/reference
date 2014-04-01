@@ -27,8 +27,8 @@
     .locals 0
 
     .prologue
-    .line 69
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 54
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -38,7 +38,7 @@
     .parameter "x0"
 
     .prologue
-    .line 69
+    .line 54
     invoke-direct {p0}, Lcom/android/internal/telephony/cdma/CDMALTEPhone$NetworkSelectMessage;-><init>()V
 
     return-void

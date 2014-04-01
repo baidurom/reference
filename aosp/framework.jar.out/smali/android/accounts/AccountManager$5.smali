@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/accounts/AccountManager;->getAuthToken(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;Landroid/app/Activity;Landroid/accounts/AccountManagerCallback;Landroid/os/Handler;)Landroid/accounts/AccountManagerFuture;
+    value = Landroid/accounts/AccountManager;->getAuthToken(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;ZLandroid/accounts/AccountManagerCallback;Landroid/os/Handler;)Landroid/accounts/AccountManagerFuture;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -21,11 +21,13 @@
 
 .field final synthetic val$authTokenType:Ljava/lang/String;
 
+.field final synthetic val$notifyAuthFailure:Z
+
 .field final synthetic val$optionsIn:Landroid/os/Bundle;
 
 
 # direct methods
-.method constructor <init>(Landroid/accounts/AccountManager;Landroid/app/Activity;Landroid/os/Handler;Landroid/accounts/AccountManagerCallback;Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;)V
+.method constructor <init>(Landroid/accounts/AccountManager;Landroid/app/Activity;Landroid/os/Handler;Landroid/accounts/AccountManagerCallback;Landroid/accounts/Account;Ljava/lang/String;ZLandroid/os/Bundle;)V
     .locals 0
     .parameter
     .parameter "x0"
@@ -34,9 +36,10 @@
     .parameter
     .parameter
     .parameter
+    .parameter
 
     .prologue
-    .line 880
+    .line 995
     .local p4, x2:Landroid/accounts/AccountManagerCallback;,"Landroid/accounts/AccountManagerCallback<Landroid/os/Bundle;>;"
     iput-object p1, p0, Landroid/accounts/AccountManager$5;->this$0:Landroid/accounts/AccountManager;
 
@@ -44,7 +47,9 @@
 
     iput-object p6, p0, Landroid/accounts/AccountManager$5;->val$authTokenType:Ljava/lang/String;
 
-    iput-object p7, p0, Landroid/accounts/AccountManager$5;->val$optionsIn:Landroid/os/Bundle;
+    iput-boolean p7, p0, Landroid/accounts/AccountManager$5;->val$notifyAuthFailure:Z
+
+    iput-object p8, p0, Landroid/accounts/AccountManager$5;->val$optionsIn:Landroid/os/Bundle;
 
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/accounts/AccountManager$AmsTask;-><init>(Landroid/accounts/AccountManager;Landroid/app/Activity;Landroid/os/Handler;Landroid/accounts/AccountManagerCallback;)V
 
@@ -62,7 +67,7 @@
     .end annotation
 
     .prologue
-    .line 882
+    .line 997
     iget-object v0, p0, Landroid/accounts/AccountManager$5;->this$0:Landroid/accounts/AccountManager;
 
     #getter for: Landroid/accounts/AccountManager;->mService:Landroid/accounts/IAccountManager;
@@ -70,20 +75,20 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Landroid/accounts/AccountManager$5;->mResponse:Landroid/accounts/IAccountManagerResponse;
+    iget-object v1, p0, Landroid/accounts/AccountManager$AmsTask;->mResponse:Landroid/accounts/IAccountManagerResponse;
 
     iget-object v2, p0, Landroid/accounts/AccountManager$5;->val$account:Landroid/accounts/Account;
 
     iget-object v3, p0, Landroid/accounts/AccountManager$5;->val$authTokenType:Ljava/lang/String;
 
-    const/4 v4, 0x0
+    iget-boolean v4, p0, Landroid/accounts/AccountManager$5;->val$notifyAuthFailure:Z
 
-    const/4 v5, 0x1
+    const/4 v5, 0x0
 
     iget-object v6, p0, Landroid/accounts/AccountManager$5;->val$optionsIn:Landroid/os/Bundle;
 
     invoke-interface/range {v0 .. v6}, Landroid/accounts/IAccountManager;->getAuthToken(Landroid/accounts/IAccountManagerResponse;Landroid/accounts/Account;Ljava/lang/String;ZZLandroid/os/Bundle;)V
 
-    .line 885
+    .line 999
     return-void
 .end method

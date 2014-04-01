@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 122
+    .line 120
     iput-object p1, p0, Lcom/android/internal/os/BatteryStatsImpl$MyHandler;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,7 +39,7 @@
     .parameter "msg"
 
     .prologue
-    .line 125
+    .line 123
     iget-object v1, p0, Lcom/android/internal/os/BatteryStatsImpl$MyHandler;->this$0:Lcom/android/internal/os/BatteryStatsImpl;
 
     #getter for: Lcom/android/internal/os/BatteryStatsImpl;->mCallback:Lcom/android/internal/os/BatteryStatsImpl$BatteryCallback;
@@ -47,31 +47,31 @@
 
     move-result-object v0
 
-    .line 126
+    .line 124
     .local v0, cb:Lcom/android/internal/os/BatteryStatsImpl$BatteryCallback;
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 138
+    .line 136
     :cond_0
     :goto_0
     return-void
 
-    .line 128
+    .line 126
     :pswitch_0
     if-eqz v0, :cond_0
 
-    .line 129
+    .line 127
     invoke-interface {v0}, Lcom/android/internal/os/BatteryStatsImpl$BatteryCallback;->batteryNeedsCpuUpdate()V
 
     goto :goto_0
 
-    .line 133
+    .line 131
     :pswitch_1
     if-eqz v0, :cond_0
 
-    .line 134
+    .line 132
     iget v1, p1, Landroid/os/Message;->arg1:I
 
     if-eqz v1, :cond_1
@@ -88,7 +88,7 @@
 
     goto :goto_1
 
-    .line 126
+    .line 124
     nop
 
     :pswitch_data_0

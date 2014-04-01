@@ -1,9 +1,6 @@
-ACodec
 APEExtractor
 AppLaunch
 BLOCK_TAG
-DISPSYS
-DPFD
 FS_TAG
 MDLOGGER
 MidiFile
@@ -11,7 +8,6 @@ MIDIST
 MP3Extractor
 MtkAACExtractor
 MtkAVIExtractor
-MtkEffectLoundness
 MtkOmxAacDec
 MtkOmxAacDecoder
 MtkOmxAacEnc
@@ -25,7 +21,6 @@ MtkOmxFlacDec
 MtkOmxG711Dec
 MtkOmxMp3Dec
 MtkOmxVorbisEnc
-NuPlayerRenderer
 OggWriter
 VTMAL/Adaptor
 VTMAL/AMRDec

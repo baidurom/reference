@@ -140,9 +140,6 @@
 .field public static final animationOrder:I = #attr@animationOrder#t
 
 .field public static final animationResolution:I = #attr@animationResolution#t
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end field
 
 .field public static final antialias:I = #attr@antialias#t
 
@@ -265,8 +262,6 @@
 .field public static final checked:I = #attr@checked#t
 
 .field public static final checkedButton:I = #attr@checkedButton#t
-
-.field public static final checkedTextViewStyle:I = #attr@checkedTextViewStyle#t
 
 .field public static final childDivider:I = #attr@childDivider#t
 
@@ -484,13 +479,13 @@
 .field public static final ems:I = #attr@ems#t
 
 .field public static final enabled:I = #attr@enabled#t
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 .field public static final endColor:I = #attr@endColor#t
 
 .field public static final endYear:I = #attr@endYear#t
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end field
 
 .field public static final enterFadeDuration:I = #attr@enterFadeDuration#t
 
@@ -535,6 +530,9 @@
 .field public static final fadeScrollbars:I = #attr@fadeScrollbars#t
 
 .field public static final fadingEdge:I = #attr@fadingEdge#t
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 .field public static final fadingEdgeLength:I = #attr@fadingEdgeLength#t
 
@@ -582,8 +580,6 @@
 
 .field public static final focusedMonthDateColor:I = #attr@focusedMonthDateColor#t
 
-.field public static final fontFamily:I = #attr@fontFamily#t
-
 .field public static final footerDividersEnabled:I = #attr@footerDividersEnabled#t
 
 .field public static final foreground:I = #attr@foreground#t
@@ -591,10 +587,6 @@
 .field public static final foregroundGravity:I = #attr@foregroundGravity#t
 
 .field public static final format:I = #attr@format#t
-
-.field public static final format12Hour:I = #attr@format12Hour#t
-
-.field public static final format24Hour:I = #attr@format24Hour#t
 
 .field public static final fragment:I = #attr@fragment#t
 
@@ -728,8 +720,6 @@
 
 .field public static final immersive:I = #attr@immersive#t
 
-.field public static final importantForAccessibility:I = #attr@importantForAccessibility#t
-
 .field public static final inAnimation:I = #attr@inAnimation#t
 
 .field public static final includeFontPadding:I = #attr@includeFontPadding#t
@@ -755,8 +745,6 @@
 .field public static final inflatedId:I = #attr@inflatedId#t
 
 .field public static final initOrder:I = #attr@initOrder#t
-
-.field public static final initialKeyguardLayout:I = #attr@initialKeyguardLayout#t
 
 .field public static final initialLayout:I = #attr@initialLayout#t
 
@@ -799,8 +787,6 @@
 
 .field public static final isSticky:I = #attr@isSticky#t
 
-.field public static final isolatedProcess:I = #attr@isolatedProcess#t
-
 .field public static final itemBackground:I = #attr@itemBackground#t
 
 .field public static final itemIconDisabledAlpha:I = #attr@itemIconDisabledAlpha#t
@@ -837,8 +823,6 @@
 
 .field public static final keyWidth:I = #attr@keyWidth#t
 
-.field public static final keyboardLayout:I = #attr@keyboardLayout#t
-
 .field public static final keyboardMode:I = #attr@keyboardMode#t
 
 .field public static final keycode:I = #attr@keycode#t
@@ -846,8 +830,6 @@
 .field public static final killAfterRestore:I = #attr@killAfterRestore#t
 
 .field public static final label:I = #attr@label#t
-
-.field public static final labelFor:I = #attr@labelFor#t
 
 .field public static final labelTextSize:I = #attr@labelTextSize#t
 
@@ -865,33 +847,23 @@
 
 .field public static final layoutAnimation:I = #attr@layoutAnimation#t
 
-.field public static final layoutDirection:I = #attr@layoutDirection#t
-
 .field public static final layout_above:I = #attr@layout_above#t
 
 .field public static final layout_alignBaseline:I = #attr@layout_alignBaseline#t
 
 .field public static final layout_alignBottom:I = #attr@layout_alignBottom#t
 
-.field public static final layout_alignEnd:I = #attr@layout_alignEnd#t
-
 .field public static final layout_alignLeft:I = #attr@layout_alignLeft#t
 
 .field public static final layout_alignParentBottom:I = #attr@layout_alignParentBottom#t
-
-.field public static final layout_alignParentEnd:I = #attr@layout_alignParentEnd#t
 
 .field public static final layout_alignParentLeft:I = #attr@layout_alignParentLeft#t
 
 .field public static final layout_alignParentRight:I = #attr@layout_alignParentRight#t
 
-.field public static final layout_alignParentStart:I = #attr@layout_alignParentStart#t
-
 .field public static final layout_alignParentTop:I = #attr@layout_alignParentTop#t
 
 .field public static final layout_alignRight:I = #attr@layout_alignRight#t
-
-.field public static final layout_alignStart:I = #attr@layout_alignStart#t
 
 .field public static final layout_alignTop:I = #attr@layout_alignTop#t
 
@@ -917,13 +889,9 @@
 
 .field public static final layout_marginBottom:I = #attr@layout_marginBottom#t
 
-.field public static final layout_marginEnd:I = #attr@layout_marginEnd#t
-
 .field public static final layout_marginLeft:I = #attr@layout_marginLeft#t
 
 .field public static final layout_marginRight:I = #attr@layout_marginRight#t
-
-.field public static final layout_marginStart:I = #attr@layout_marginStart#t
 
 .field public static final layout_marginTop:I = #attr@layout_marginTop#t
 
@@ -935,13 +903,9 @@
 
 .field public static final layout_span:I = #attr@layout_span#t
 
-.field public static final layout_toEndOf:I = #attr@layout_toEndOf#t
-
 .field public static final layout_toLeftOf:I = #attr@layout_toLeftOf#t
 
 .field public static final layout_toRightOf:I = #attr@layout_toRightOf#t
-
-.field public static final layout_toStartOf:I = #attr@layout_toStartOf#t
 
 .field public static final layout_weight:I = #attr@layout_weight#t
 
@@ -979,13 +943,9 @@
 
 .field public static final listPreferredItemHeightSmall:I = #attr@listPreferredItemHeightSmall#t
 
-.field public static final listPreferredItemPaddingEnd:I = #attr@listPreferredItemPaddingEnd#t
-
 .field public static final listPreferredItemPaddingLeft:I = #attr@listPreferredItemPaddingLeft#t
 
 .field public static final listPreferredItemPaddingRight:I = #attr@listPreferredItemPaddingRight#t
-
-.field public static final listPreferredItemPaddingStart:I = #attr@listPreferredItemPaddingStart#t
 
 .field public static final listSelector:I = #attr@listSelector#t
 
@@ -1032,10 +992,6 @@
 .field public static final measureAllChildren:I = #attr@measureAllChildren#t
 
 .field public static final measureWithLargestChild:I = #attr@measureWithLargestChild#t
-
-.field public static final mediaRouteButtonStyle:I = #attr@mediaRouteButtonStyle#t
-
-.field public static final mediaRouteTypes:I = #attr@mediaRouteTypes#t
 
 .field public static final menuCategory:I = #attr@menuCategory#t
 
@@ -1130,13 +1086,9 @@
 
 .field public static final paddingBottom:I = #attr@paddingBottom#t
 
-.field public static final paddingEnd:I = #attr@paddingEnd#t
-
 .field public static final paddingLeft:I = #attr@paddingLeft#t
 
 .field public static final paddingRight:I = #attr@paddingRight#t
-
-.field public static final paddingStart:I = #attr@paddingStart#t
 
 .field public static final paddingTop:I = #attr@paddingTop#t
 
@@ -1149,8 +1101,6 @@
 .field public static final panelFullBackground:I = #attr@panelFullBackground#t
 
 .field public static final panelTextAppearance:I = #attr@panelTextAppearance#t
-
-.field public static final parentActivityName:I = #attr@parentActivityName#t
 
 .field public static final password:I = #attr@password#t
     .annotation runtime Ljava/lang/Deprecated;
@@ -1165,11 +1115,7 @@
 
 .field public static final permission:I = #attr@permission#t
 
-.field public static final permissionFlags:I = #attr@permissionFlags#t
-
 .field public static final permissionGroup:I = #attr@permissionGroup#t
-
-.field public static final permissionGroupFlags:I = #attr@permissionGroupFlags#t
 
 .field public static final persistent:I = #attr@persistent#t
 
@@ -1211,8 +1157,6 @@
 .field public static final preferenceScreenStyle:I = #attr@preferenceScreenStyle#t
 
 .field public static final preferenceStyle:I = #attr@preferenceStyle#t
-
-.field public static final presentationTheme:I = #attr@presentationTheme#t
 
 .field public static final previewImage:I = #attr@previewImage#t
 
@@ -1456,8 +1400,6 @@
 
 .field public static final showDividers:I = #attr@showDividers#t
 
-.field public static final showOnLockScreen:I = #attr@showOnLockScreen#t
-
 .field public static final showSilent:I = #attr@showSilent#t
 
 .field public static final showWeekNumber:I = #attr@showWeekNumber#t
@@ -1470,8 +1412,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 .end field
-
-.field public static final singleUser:I = #attr@singleUser#t
 
 .field public static final smallIcon:I = #attr@smallIcon#t
 
@@ -1508,9 +1448,6 @@
 .field public static final startOffset:I = #attr@startOffset#t
 
 .field public static final startYear:I = #attr@startYear#t
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end field
 
 .field public static final stateNotNeeded:I = #attr@stateNotNeeded#t
 
@@ -1576,8 +1513,6 @@
 
 .field public static final subtypeExtraValue:I = #attr@subtypeExtraValue#t
 
-.field public static final subtypeId:I = #attr@subtypeId#t
-
 .field public static final subtypeLocale:I = #attr@subtypeLocale#t
 
 .field public static final suggestActionMsg:I = #attr@suggestActionMsg#t
@@ -1591,8 +1526,6 @@
 .field public static final summaryOff:I = #attr@summaryOff#t
 
 .field public static final summaryOn:I = #attr@summaryOn#t
-
-.field public static final supportsRtl:I = #attr@supportsRtl#t
 
 .field public static final supportsUploading:I = #attr@supportsUploading#t
 
@@ -1653,8 +1586,6 @@
 .field public static final testOnly:I = #attr@testOnly#t
 
 .field public static final text:I = #attr@text#t
-
-.field public static final textAlignment:I = #attr@textAlignment#t
 
 .field public static final textAllCaps:I = #attr@textAllCaps#t
 
@@ -1734,8 +1665,6 @@
 
 .field public static final textCursorDrawable:I = #attr@textCursorDrawable#t
 
-.field public static final textDirection:I = #attr@textDirection#t
-
 .field public static final textEditNoPasteWindowLayout:I = #attr@textEditNoPasteWindowLayout#t
 
 .field public static final textEditPasteWindowLayout:I = #attr@textEditPasteWindowLayout#t
@@ -1787,8 +1716,6 @@
 .field public static final thumbnail:I = #attr@thumbnail#t
 
 .field public static final tileMode:I = #attr@tileMode#t
-
-.field public static final timeZone:I = #attr@timeZone#t
 
 .field public static final tint:I = #attr@tint#t
 
@@ -1924,8 +1851,6 @@
 
 .field public static final weightSum:I = #attr@weightSum#t
 
-.field public static final widgetCategory:I = #attr@widgetCategory#t
-
 .field public static final widgetLayout:I = #attr@widgetLayout#t
 
 .field public static final width:I = #attr@width#t
@@ -2001,7 +1926,7 @@
 
     .prologue
     .line 55
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

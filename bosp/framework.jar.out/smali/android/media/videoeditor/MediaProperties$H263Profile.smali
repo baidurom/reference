@@ -46,7 +46,7 @@
     .parameter
 
     .prologue
-    .line 193
+    .line 188
     iput-object p1, p0, Landroid/media/videoeditor/MediaProperties$H263Profile;->this$0:Landroid/media/videoeditor/MediaProperties;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

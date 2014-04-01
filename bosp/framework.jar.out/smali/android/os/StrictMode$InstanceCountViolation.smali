@@ -33,7 +33,7 @@
     .prologue
     const/4 v6, 0x1
 
-    .line 2218
+    .line 2135
     new-array v0, v6, [Ljava/lang/StackTraceElement;
 
     const/4 v1, 0x0
@@ -62,7 +62,7 @@
     .parameter "limit"
 
     .prologue
-    .line 2224
+    .line 2141
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -101,20 +101,20 @@
 
     invoke-direct {p0, v0}, Ljava/lang/Throwable;-><init>(Ljava/lang/String;)V
 
-    .line 2225
+    .line 2142
     sget-object v0, Landroid/os/StrictMode$InstanceCountViolation;->FAKE_STACK:[Ljava/lang/StackTraceElement;
 
     invoke-virtual {p0, v0}, Landroid/os/StrictMode$InstanceCountViolation;->setStackTrace([Ljava/lang/StackTraceElement;)V
 
-    .line 2226
+    .line 2143
     iput-object p1, p0, Landroid/os/StrictMode$InstanceCountViolation;->mClass:Ljava/lang/Class;
 
-    .line 2227
+    .line 2144
     iput-wide p2, p0, Landroid/os/StrictMode$InstanceCountViolation;->mInstances:J
 
-    .line 2228
+    .line 2145
     iput p4, p0, Landroid/os/StrictMode$InstanceCountViolation;->mLimit:I
 
-    .line 2229
+    .line 2146
     return-void
 .end method

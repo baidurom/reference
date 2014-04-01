@@ -9,7 +9,7 @@
 
     .prologue
     .line 38
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -414,65 +414,6 @@
     .line 890
     :cond_1
     return-void
-.end method
-
-.method public static nextElementWithin(Lorg/xmlpull/v1/XmlPullParser;I)Z
-    .locals 4
-    .parameter "parser"
-    .parameter "outerDepth"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lorg/xmlpull/v1/XmlPullParserException;
-        }
-    .end annotation
-
-    .prologue
-    const/4 v1, 0x1
-
-    .line 895
-    :cond_0
-    invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->next()I
-
-    move-result v0
-
-    .line 896
-    .local v0, type:I
-    if-eq v0, v1, :cond_1
-
-    const/4 v2, 0x3
-
-    if-ne v0, v2, :cond_2
-
-    invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->getDepth()I
-
-    move-result v2
-
-    if-ne v2, p1, :cond_2
-
-    .line 898
-    :cond_1
-    const/4 v1, 0x0
-
-    .line 902
-    :goto_0
-    return v1
-
-    .line 900
-    :cond_2
-    const/4 v2, 0x2
-
-    if-ne v0, v2, :cond_0
-
-    invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->getDepth()I
-
-    move-result v2
-
-    add-int/lit8 v3, p1, 0x1
-
-    if-ne v2, v3, :cond_0
-
-    goto :goto_0
 .end method
 
 .method public static final parseUnsignedIntAttribute(Ljava/lang/CharSequence;)I
@@ -1740,7 +1681,7 @@
     .line 805
     .end local v1           #res:Ljava/lang/Integer;
     :cond_8
-    const-string/jumbo v5, "long"
+    const-string v5, "long"
 
     invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -3028,7 +2969,7 @@
     if-eqz v1, :cond_6
 
     .line 431
-    const-string/jumbo v0, "long"
+    const-string v0, "long"
 
     .restart local v0       #typeStr:Ljava/lang/String;
     goto :goto_1

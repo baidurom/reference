@@ -878,7 +878,7 @@
     .line 194
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string/jumbo v1, "keys aren\'t parcelable"
+    const-string v1, "keys aren\'t parcelable"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 

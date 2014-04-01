@@ -134,7 +134,7 @@
     .end annotation
 .end method
 
-.method public abstract notifyChange(Landroid/net/Uri;Landroid/database/IContentObserver;ZZI)V
+.method public abstract notifyChange(Landroid/net/Uri;Landroid/database/IContentObserver;ZZ)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -142,7 +142,7 @@
     .end annotation
 .end method
 
-.method public abstract registerContentObserver(Landroid/net/Uri;ZLandroid/database/IContentObserver;I)V
+.method public abstract registerContentObserver(Landroid/net/Uri;ZLandroid/database/IContentObserver;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

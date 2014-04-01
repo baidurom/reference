@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 1796
+    .line 1793
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .parameter "in"
 
     .prologue
-    .line 1798
+    .line 1795
     new-instance v0, Landroid/preference/Preference$BaseSavedState;
 
     invoke-direct {v0, p1}, Landroid/preference/Preference$BaseSavedState;-><init>(Landroid/os/Parcel;)V
@@ -58,7 +58,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1796
+    .line 1793
     invoke-virtual {p0, p1}, Landroid/preference/Preference$BaseSavedState$1;->createFromParcel(Landroid/os/Parcel;)Landroid/preference/Preference$BaseSavedState;
 
     move-result-object v0
@@ -71,7 +71,7 @@
     .parameter "size"
 
     .prologue
-    .line 1802
+    .line 1799
     new-array v0, p1, [Landroid/preference/Preference$BaseSavedState;
 
     return-object v0
@@ -82,7 +82,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1796
+    .line 1793
     invoke-virtual {p0, p1}, Landroid/preference/Preference$BaseSavedState$1;->newArray(I)[Landroid/preference/Preference$BaseSavedState;
 
     move-result-object v0

@@ -25,8 +25,6 @@
 
 .field public audioFormat:I
 
-.field public audioRealDuration:I
-
 .field public audioSamplingFrequency:I
 
 .field public audioVolumeValue:I

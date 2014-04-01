@@ -19,8 +19,6 @@
 
 
 # static fields
-.field public static final AAS_INDEX:Ljava/lang/String; = "data5"
-
 .field public static final CONTENT_FILTER_URI:Landroid/net/Uri; = null
 
 .field public static final CONTENT_ITEM_TYPE:Ljava/lang/String; = "vnd.android.cursor.item/phone_v2"
@@ -32,10 +30,6 @@
 .field public static final NORMALIZED_NUMBER:Ljava/lang/String; = "data4"
 
 .field public static final NUMBER:Ljava/lang/String; = "data1"
-
-.field public static final SEARCH_DISPLAY_NAME_KEY:Ljava/lang/String; = "search_display_name"
-
-.field public static final SEARCH_PHONE_NUMBER_KEY:Ljava/lang/String; = "search_phone_number"
 
 .field public static final TYPE_ASSISTANT:I = 0x13
 
@@ -83,7 +77,7 @@
     .locals 2
 
     .prologue
-    .line 5577
+    .line 5543
     sget-object v0, Landroid/provider/ContactsContract$Data;->CONTENT_URI:Landroid/net/Uri;
 
     const-string/jumbo v1, "phones"
@@ -94,7 +88,7 @@
 
     sput-object v0, Landroid/provider/ContactsContract$CommonDataKinds$Phone;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 5586
+    .line 5552
     sget-object v0, Landroid/provider/ContactsContract$CommonDataKinds$Phone;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v1, "filter"
@@ -112,8 +106,8 @@
     .locals 0
 
     .prologue
-    .line 5561
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 5527
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -127,7 +121,7 @@
     .end annotation
 
     .prologue
-    .line 5665
+    .line 5607
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -149,7 +143,7 @@
     .end annotation
 
     .prologue
-    .line 5655
+    .line 5597
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -168,7 +162,7 @@
     .parameter "label"
 
     .prologue
-    .line 5705
+    .line 5647
     if-eqz p1, :cond_0
 
     const/16 v1, 0x13
@@ -182,19 +176,19 @@
 
     if-nez v1, :cond_1
 
-    .line 5709
+    .line 5651
     .end local p2
     :goto_0
     return-object p2
 
-    .line 5708
+    .line 5650
     .restart local p2
     :cond_1
     invoke-static {p1}, Landroid/provider/ContactsContract$CommonDataKinds$Phone;->getTypeLabelResource(I)I
 
     move-result v0
 
-    .line 5709
+    .line 5651
     .local v0, labelRes:I
     invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -208,136 +202,136 @@
     .parameter "type"
 
     .prologue
-    .line 5673
+    .line 5615
     packed-switch p0, :pswitch_data_0
 
-    .line 5694
+    .line 5636
     const v0, #string@phoneTypeCustom#t
 
     :goto_0
     return v0
 
-    .line 5674
+    .line 5616
     :pswitch_0
     const v0, #string@phoneTypeHome#t
 
     goto :goto_0
 
-    .line 5675
+    .line 5617
     :pswitch_1
     const v0, #string@phoneTypeMobile#t
 
     goto :goto_0
 
-    .line 5676
+    .line 5618
     :pswitch_2
     const v0, #string@phoneTypeWork#t
 
     goto :goto_0
 
-    .line 5677
+    .line 5619
     :pswitch_3
     const v0, #string@phoneTypeFaxWork#t
 
     goto :goto_0
 
-    .line 5678
+    .line 5620
     :pswitch_4
     const v0, #string@phoneTypeFaxHome#t
 
     goto :goto_0
 
-    .line 5679
+    .line 5621
     :pswitch_5
     const v0, #string@phoneTypePager#t
 
     goto :goto_0
 
-    .line 5680
+    .line 5622
     :pswitch_6
     const v0, #string@phoneTypeOther#t
 
     goto :goto_0
 
-    .line 5681
+    .line 5623
     :pswitch_7
     const v0, #string@phoneTypeCallback#t
 
     goto :goto_0
 
-    .line 5682
+    .line 5624
     :pswitch_8
     const v0, #string@phoneTypeCar#t
 
     goto :goto_0
 
-    .line 5683
+    .line 5625
     :pswitch_9
     const v0, #string@phoneTypeCompanyMain#t
 
     goto :goto_0
 
-    .line 5684
+    .line 5626
     :pswitch_a
     const v0, #string@phoneTypeIsdn#t
 
     goto :goto_0
 
-    .line 5685
+    .line 5627
     :pswitch_b
     const v0, #string@phoneTypeMain#t
 
     goto :goto_0
 
-    .line 5686
+    .line 5628
     :pswitch_c
     const v0, #string@phoneTypeOtherFax#t
 
     goto :goto_0
 
-    .line 5687
+    .line 5629
     :pswitch_d
     const v0, #string@phoneTypeRadio#t
 
     goto :goto_0
 
-    .line 5688
+    .line 5630
     :pswitch_e
     const v0, #string@phoneTypeTelex#t
 
     goto :goto_0
 
-    .line 5689
+    .line 5631
     :pswitch_f
     const v0, #string@phoneTypeTtyTdd#t
 
     goto :goto_0
 
-    .line 5690
+    .line 5632
     :pswitch_10
     const v0, #string@phoneTypeWorkMobile#t
 
     goto :goto_0
 
-    .line 5691
+    .line 5633
     :pswitch_11
     const v0, #string@phoneTypeWorkPager#t
 
     goto :goto_0
 
-    .line 5692
+    .line 5634
     :pswitch_12
     const v0, #string@phoneTypeAssistant#t
 
     goto :goto_0
 
-    .line 5693
+    .line 5635
     :pswitch_13
     const v0, #string@phoneTypeMms#t
 
     goto :goto_0
 
-    .line 5673
+    .line 5615
     nop
 
     :pswitch_data_0

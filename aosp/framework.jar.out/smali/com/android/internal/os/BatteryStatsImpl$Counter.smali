@@ -55,24 +55,24 @@
     .end annotation
 
     .prologue
-    .line 384
+    .line 370
     .local p1, unpluggables:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/os/BatteryStatsImpl$Unpluggable;>;"
     invoke-direct {p0}, Landroid/os/BatteryStats$Counter;-><init>()V
 
-    .line 367
+    .line 353
     new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/os/BatteryStatsImpl$Counter;->mCount:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    .line 385
+    .line 371
     iput-object p1, p0, Lcom/android/internal/os/BatteryStatsImpl$Counter;->mUnpluggables:Ljava/util/ArrayList;
 
-    .line 386
+    .line 372
     invoke-virtual {p1, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 387
+    .line 373
     return-void
 .end method
 
@@ -93,57 +93,57 @@
     .end annotation
 
     .prologue
-    .line 374
+    .line 360
     .local p1, unpluggables:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/os/BatteryStatsImpl$Unpluggable;>;"
     invoke-direct {p0}, Landroid/os/BatteryStats$Counter;-><init>()V
 
-    .line 367
+    .line 353
     new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/os/BatteryStatsImpl$Counter;->mCount:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    .line 375
+    .line 361
     iput-object p1, p0, Lcom/android/internal/os/BatteryStatsImpl$Counter;->mUnpluggables:Ljava/util/ArrayList;
 
-    .line 376
+    .line 362
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/internal/os/BatteryStatsImpl$Counter;->mPluggedCount:I
 
-    .line 377
+    .line 363
     iget-object v0, p0, Lcom/android/internal/os/BatteryStatsImpl$Counter;->mCount:Ljava/util/concurrent/atomic/AtomicInteger;
 
     iget v1, p0, Lcom/android/internal/os/BatteryStatsImpl$Counter;->mPluggedCount:I
 
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;->set(I)V
 
-    .line 378
+    .line 364
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/internal/os/BatteryStatsImpl$Counter;->mLoadedCount:I
 
-    .line 379
+    .line 365
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/os/BatteryStatsImpl$Counter;->mLastCount:I
 
-    .line 380
+    .line 366
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/internal/os/BatteryStatsImpl$Counter;->mUnpluggedCount:I
 
-    .line 381
+    .line 367
     invoke-virtual {p1, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 382
+    .line 368
     return-void
 .end method
 
@@ -153,25 +153,25 @@
     .parameter "counter"
 
     .prologue
-    .line 411
+    .line 397
     if-nez p1, :cond_0
 
-    .line 412
+    .line 398
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 418
+    .line 404
     :goto_0
     return-void
 
-    .line 415
+    .line 401
     :cond_0
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 417
+    .line 403
     invoke-virtual {p1, p0}, Lcom/android/internal/os/BatteryStatsImpl$Counter;->writeToParcel(Landroid/os/Parcel;)V
 
     goto :goto_0
@@ -183,12 +183,12 @@
     .locals 1
 
     .prologue
-    .line 460
+    .line 446
     iget-object v0, p0, Lcom/android/internal/os/BatteryStatsImpl$Counter;->mUnpluggables:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 461
+    .line 447
     return-void
 .end method
 
@@ -197,21 +197,21 @@
     .parameter "which"
 
     .prologue
-    .line 423
+    .line 409
     const/4 v1, 0x1
 
     if-ne p1, v1, :cond_1
 
-    .line 424
+    .line 410
     iget v0, p0, Lcom/android/internal/os/BatteryStatsImpl$Counter;->mLastCount:I
 
-    .line 434
+    .line 420
     .local v0, val:I
     :cond_0
     :goto_0
     return v0
 
-    .line 426
+    .line 412
     .end local v0           #val:I
     :cond_1
     iget-object v1, p0, Lcom/android/internal/os/BatteryStatsImpl$Counter;->mCount:Ljava/util/concurrent/atomic/AtomicInteger;
@@ -220,24 +220,24 @@
 
     move-result v0
 
-    .line 427
+    .line 413
     .restart local v0       #val:I
     const/4 v1, 0x3
 
     if-ne p1, v1, :cond_2
 
-    .line 428
+    .line 414
     iget v1, p0, Lcom/android/internal/os/BatteryStatsImpl$Counter;->mUnpluggedCount:I
 
     sub-int/2addr v0, v1
 
     goto :goto_0
 
-    .line 429
+    .line 415
     :cond_2
     if-eqz p1, :cond_0
 
-    .line 430
+    .line 416
     iget v1, p0, Lcom/android/internal/os/BatteryStatsImpl$Counter;->mLoadedCount:I
 
     sub-int/2addr v0, v1
@@ -251,7 +251,7 @@
     .parameter "prefix"
 
     .prologue
-    .line 438
+    .line 424
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -260,7 +260,7 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "mCount="
+    const-string v1, "mCount="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -330,7 +330,7 @@
 
     invoke-interface {p1, v0}, Landroid/util/Printer;->println(Ljava/lang/String;)V
 
-    .line 442
+    .line 428
     return-void
 .end method
 
@@ -340,7 +340,7 @@
     .parameter "batteryRealtime"
 
     .prologue
-    .line 401
+    .line 387
     iget-object v0, p0, Lcom/android/internal/os/BatteryStatsImpl$Counter;->mCount:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
@@ -349,7 +349,7 @@
 
     iput v0, p0, Lcom/android/internal/os/BatteryStatsImpl$Counter;->mPluggedCount:I
 
-    .line 402
+    .line 388
     return-void
 .end method
 
@@ -358,33 +358,33 @@
     .parameter "in"
 
     .prologue
-    .line 469
+    .line 455
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/internal/os/BatteryStatsImpl$Counter;->mLoadedCount:I
 
-    .line 470
+    .line 456
     iget-object v0, p0, Lcom/android/internal/os/BatteryStatsImpl$Counter;->mCount:Ljava/util/concurrent/atomic/AtomicInteger;
 
     iget v1, p0, Lcom/android/internal/os/BatteryStatsImpl$Counter;->mLoadedCount:I
 
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;->set(I)V
 
-    .line 471
+    .line 457
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/os/BatteryStatsImpl$Counter;->mLastCount:I
 
-    .line 472
+    .line 458
     iget v0, p0, Lcom/android/internal/os/BatteryStatsImpl$Counter;->mLoadedCount:I
 
     iput v0, p0, Lcom/android/internal/os/BatteryStatsImpl$Counter;->mPluggedCount:I
 
     iput v0, p0, Lcom/android/internal/os/BatteryStatsImpl$Counter;->mUnpluggedCount:I
 
-    .line 473
+    .line 459
     return-void
 .end method
 
@@ -395,12 +395,12 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 452
+    .line 438
     iget-object v0, p0, Lcom/android/internal/os/BatteryStatsImpl$Counter;->mCount:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;->set(I)V
 
-    .line 453
+    .line 439
     iput v1, p0, Lcom/android/internal/os/BatteryStatsImpl$Counter;->mUnpluggedCount:I
 
     iput v1, p0, Lcom/android/internal/os/BatteryStatsImpl$Counter;->mPluggedCount:I
@@ -409,13 +409,13 @@
 
     iput v1, p0, Lcom/android/internal/os/BatteryStatsImpl$Counter;->mLoadedCount:I
 
-    .line 454
+    .line 440
     if-eqz p1, :cond_0
 
-    .line 455
+    .line 441
     invoke-virtual {p0}, Lcom/android/internal/os/BatteryStatsImpl$Counter;->detach()V
 
-    .line 457
+    .line 443
     :cond_0
     return-void
 .end method
@@ -424,12 +424,12 @@
     .locals 1
 
     .prologue
-    .line 445
+    .line 431
     iget-object v0, p0, Lcom/android/internal/os/BatteryStatsImpl$Counter;->mCount:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I
 
-    .line 446
+    .line 432
     return-void
 .end method
 
@@ -439,19 +439,19 @@
     .parameter "batteryRealtime"
 
     .prologue
-    .line 396
+    .line 382
     iget v0, p0, Lcom/android/internal/os/BatteryStatsImpl$Counter;->mPluggedCount:I
 
     iput v0, p0, Lcom/android/internal/os/BatteryStatsImpl$Counter;->mUnpluggedCount:I
 
-    .line 397
+    .line 383
     iget-object v0, p0, Lcom/android/internal/os/BatteryStatsImpl$Counter;->mCount:Ljava/util/concurrent/atomic/AtomicInteger;
 
     iget v1, p0, Lcom/android/internal/os/BatteryStatsImpl$Counter;->mPluggedCount:I
 
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;->set(I)V
 
-    .line 398
+    .line 384
     return-void
 .end method
 
@@ -460,18 +460,18 @@
     .parameter "out"
 
     .prologue
-    .line 464
+    .line 450
     iget-object v1, p0, Lcom/android/internal/os/BatteryStatsImpl$Counter;->mCount:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
     move-result v0
 
-    .line 465
+    .line 451
     .local v0, count:I
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 466
+    .line 452
     return-void
 .end method
 
@@ -480,7 +480,7 @@
     .parameter "out"
 
     .prologue
-    .line 390
+    .line 376
     iget-object v0, p0, Lcom/android/internal/os/BatteryStatsImpl$Counter;->mCount:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
@@ -489,16 +489,16 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 391
+    .line 377
     iget v0, p0, Lcom/android/internal/os/BatteryStatsImpl$Counter;->mLoadedCount:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 392
+    .line 378
     iget v0, p0, Lcom/android/internal/os/BatteryStatsImpl$Counter;->mUnpluggedCount:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 393
+    .line 379
     return-void
 .end method

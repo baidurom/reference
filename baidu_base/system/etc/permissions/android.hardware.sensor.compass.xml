@@ -14,7 +14,7 @@
      limitations under the License.
 -->
 
-<!-- Feature for devices with a compass. -->
+<!-- Feature for devices with an ambient light sensor. -->
 <permissions>
     <feature name="android.hardware.sensor.compass" />
 </permissions>

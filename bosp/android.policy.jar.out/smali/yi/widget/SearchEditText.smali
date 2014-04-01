@@ -31,7 +31,7 @@
 
     .prologue
     .line 41
-    const v0, 0x3010062
+    const v0, 0x4010062
 
     invoke-direct {p0, p1, p2, v0}, Lyi/widget/SearchEditText;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

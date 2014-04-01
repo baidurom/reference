@@ -1,11 +1,8 @@
 XLOG-FILTER-V2
 ALL	verbose/debug+verbose/verbose
-TAG	ACodec	debug
 TAG	APEExtractor	debug
 TAG	AppLaunch	off
-TAG	BLOCK_TAG	debug
-TAG	DISPSYS	info
-TAG	DPFD	info
+TAG	BLOCK_TAG	info
 TAG	FS_TAG	info
 TAG	MDLOGGER	debug
 TAG	MidiFile	debug
@@ -13,7 +10,6 @@ TAG	MIDIST	debug
 TAG	MP3Extractor	debug
 TAG	MtkAACExtractor	debug
 TAG	MtkAVIExtractor	debug
-TAG	MtkEffectLoundness	debug
 TAG	MtkOmxAacDec	debug
 TAG	MtkOmxAacDecoder	debug
 TAG	MtkOmxAacEnc	debug
@@ -27,7 +23,6 @@ TAG	MtkOmxFlacDec	debug
 TAG	MtkOmxG711Dec	debug
 TAG	MtkOmxMp3Dec	debug
 TAG	MtkOmxVorbisEnc	debug
-TAG	NuPlayerRenderer	debug
 TAG	OggWriter	debug
 TAG	VTMAL/Adaptor	info
 TAG	VTMAL/AMRDec	info

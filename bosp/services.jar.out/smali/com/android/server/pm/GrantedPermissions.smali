@@ -103,12 +103,12 @@
 
     .prologue
     .line 45
-    const v0, 0x60040001
+    const v0, 0x20040001
 
     and-int/2addr v0, p1
 
     iput v0, p0, Lcom/android/server/pm/GrantedPermissions;->pkgFlags:I
 
-    .line 50
+    .line 49
     return-void
 .end method

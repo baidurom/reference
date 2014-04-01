@@ -24,6 +24,8 @@
 
 .field private final mContext:Landroid/content/Context;
 
+.field protected mSimId:I
+
 .field private mSmsDispatcher:Lcom/android/internal/telephony/SMSDispatcher;
 
 .field private mWapConn:Lcom/android/internal/telephony/WapPushOverSms$WapPushConnection;
@@ -38,35 +40,40 @@
     .parameter "smsDispatcher"
 
     .prologue
-    .line 131
+    .line 134
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 60
+    .line 57
+    const/4 v0, 0x0
+
+    iput v0, p0, Lcom/android/internal/telephony/WapPushOverSms;->mSimId:I
+
+    .line 63
     const/16 v0, 0x1388
 
     iput v0, p0, Lcom/android/internal/telephony/WapPushOverSms;->WAKE_LOCK_TIMEOUT:I
 
-    .line 62
+    .line 65
     const/16 v0, 0x3e8
 
     iput v0, p0, Lcom/android/internal/telephony/WapPushOverSms;->BIND_RETRY_INTERVAL:I
 
-    .line 66
+    .line 69
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/telephony/WapPushOverSms;->mWapConn:Lcom/android/internal/telephony/WapPushOverSms$WapPushConnection;
 
-    .line 132
+    .line 135
     iput-object p2, p0, Lcom/android/internal/telephony/WapPushOverSms;->mSmsDispatcher:Lcom/android/internal/telephony/SMSDispatcher;
 
-    .line 133
+    .line 136
     invoke-interface {p1}, Lcom/android/internal/telephony/Phone;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/internal/telephony/WapPushOverSms;->mContext:Landroid/content/Context;
 
-    .line 134
+    .line 137
     new-instance v0, Lcom/android/internal/telephony/WapPushOverSms$WapPushConnection;
 
     iget-object v1, p0, Lcom/android/internal/telephony/WapPushOverSms;->mContext:Landroid/content/Context;
@@ -75,12 +82,19 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/WapPushOverSms;->mWapConn:Lcom/android/internal/telephony/WapPushOverSms$WapPushConnection;
 
-    .line 135
+    .line 138
     iget-object v0, p0, Lcom/android/internal/telephony/WapPushOverSms;->mWapConn:Lcom/android/internal/telephony/WapPushOverSms$WapPushConnection;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/WapPushOverSms$WapPushConnection;->bindWapPushManager()V
 
-    .line 136
+    .line 140
+    invoke-interface {p1}, Lcom/android/internal/telephony/Phone;->getMySimId()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/android/internal/telephony/WapPushOverSms;->mSimId:I
+
+    .line 141
     return-void
 .end method
 
@@ -91,10 +105,10 @@
     .parameter "pdu"
 
     .prologue
-    .line 152
+    .line 157
     const/4 v11, 0x0
 
-    .line 153
+    .line 158
     .local v11, index:I
     add-int/lit8 v12, v11, 0x1
 
@@ -108,7 +122,7 @@
 
     move/from16 v21, v0
 
-    .line 154
+    .line 159
     .local v21, transactionId:I
     add-int/lit8 v11, v12, 0x1
 
@@ -122,11 +136,11 @@
 
     move/from16 v16, v0
 
-    .line 155
+    .line 160
     .local v16, pduType:I
     const/4 v9, 0x0
 
-    .line 157
+    .line 162
     .local v9, headerLength:I
     const/16 v24, 0x6
 
@@ -144,14 +158,14 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 160
+    .line 165
     const/16 v24, 0x1
 
-    .line 305
+    .line 309
     :goto_0
     return v24
 
-    .line 163
+    .line 168
     :cond_0
     new-instance v24, Lcom/android/internal/telephony/WspTypeDecoder;
 
@@ -167,7 +181,7 @@
 
     iput-object v0, v1, Lcom/android/internal/telephony/WapPushOverSms;->pduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
 
-    .line 171
+    .line 176
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->pduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -182,12 +196,12 @@
 
     if-nez v24, :cond_1
 
-    .line 173
+    .line 178
     const/16 v24, 0x2
 
     goto :goto_0
 
-    .line 175
+    .line 180
     :cond_1
     move-object/from16 v0, p0
 
@@ -203,7 +217,7 @@
 
     long-to-int v9, v0
 
-    .line 176
+    .line 181
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->pduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -216,10 +230,10 @@
 
     add-int/lit8 v11, v24, 0x2
 
-    .line 178
+    .line 183
     move v10, v11
 
-    .line 192
+    .line 197
     .local v10, headerStartIndex:I
     move-object/from16 v0, p0
 
@@ -235,12 +249,12 @@
 
     if-nez v24, :cond_2
 
-    .line 194
+    .line 199
     const/16 v24, 0x2
 
     goto :goto_0
 
-    .line 197
+    .line 202
     :cond_2
     move-object/from16 v0, p0
 
@@ -252,7 +266,7 @@
 
     move-result-object v15
 
-    .line 198
+    .line 203
     .local v15, mimeType:Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -264,7 +278,7 @@
 
     move-result-wide v4
 
-    .line 199
+    .line 204
     .local v4, binaryContentType:J
     move-object/from16 v0, p0
 
@@ -278,10 +292,10 @@
 
     add-int v11, v11, v24
 
-    .line 201
+    .line 206
     new-array v8, v9, [B
 
-    .line 202
+    .line 207
     .local v8, header:[B
     const/16 v24, 0x0
 
@@ -297,7 +311,7 @@
 
     invoke-static {v0, v10, v8, v1, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 203
+    .line 208
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->pduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -314,10 +328,14 @@
 
     invoke-virtual {v0, v11, v1}, Lcom/android/internal/telephony/WspTypeDecoder;->decodeHeaders(II)V
 
-    .line 207
+    .line 212
     if-eqz v15, :cond_5
 
-    const-string v24, "application/vnd.wap.coc"
+    const/16 v24, 0x32
+
+    invoke-static/range {v24 .. v24}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v24
 
     move-object/from16 v0, v24
 
@@ -327,10 +345,10 @@
 
     if-eqz v24, :cond_5
 
-    .line 208
+    .line 213
     move-object/from16 v14, p1
 
-    .line 221
+    .line 226
     .local v14, intentData:[B
     :goto_1
     move-object/from16 v0, p0
@@ -353,7 +371,7 @@
 
     if-eqz v24, :cond_9
 
-    .line 222
+    .line 227
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->pduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -368,7 +386,7 @@
 
     long-to-int v11, v0
 
-    .line 223
+    .line 228
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->pduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -379,7 +397,7 @@
 
     invoke-virtual {v0, v11}, Lcom/android/internal/telephony/WspTypeDecoder;->decodeXWapApplicationId(I)Z
 
-    .line 224
+    .line 229
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->pduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -390,11 +408,11 @@
 
     move-result-object v22
 
-    .line 225
+    .line 230
     .local v22, wapAppId:Ljava/lang/String;
     if-nez v22, :cond_3
 
-    .line 226
+    .line 231
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->pduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -415,7 +433,7 @@
 
     move-result-object v22
 
-    .line 229
+    .line 234
     :cond_3
     if-nez v15, :cond_6
 
@@ -423,12 +441,12 @@
 
     move-result-object v6
 
-    .line 234
+    .line 239
     .local v6, contentType:Ljava/lang/String;
     :goto_2
     const/16 v19, 0x1
 
-    .line 235
+    .line 240
     .local v19, processFurther:Z
     :try_start_0
     move-object/from16 v0, p0
@@ -443,21 +461,21 @@
 
     move-result-object v23
 
-    .line 237
+    .line 242
     .local v23, wapPushMan:Lcom/android/internal/telephony/IWapPushManager;
     if-nez v23, :cond_7
 
-    .line 262
+    .line 266
     :cond_4
     :goto_3
     if-nez v19, :cond_9
 
-    .line 263
+    .line 267
     const/16 v24, 0x1
 
     goto/16 :goto_0
 
-    .line 210
+    .line 215
     .end local v6           #contentType:Ljava/lang/String;
     .end local v14           #intentData:[B
     .end local v19           #processFurther:Z
@@ -466,7 +484,7 @@
     :cond_5
     add-int v7, v10, v9
 
-    .line 211
+    .line 216
     .local v7, dataIndex:I
     move-object/from16 v0, p1
 
@@ -480,7 +498,7 @@
 
     new-array v14, v0, [B
 
-    .line 212
+    .line 217
     .restart local v14       #intentData:[B
     const/16 v24, 0x0
 
@@ -503,10 +521,10 @@
     :cond_6
     move-object v6, v15
 
-    .line 229
+    .line 234
     goto :goto_2
 
-    .line 240
+    .line 245
     .restart local v6       #contentType:Ljava/lang/String;
     .restart local v19       #processFurther:Z
     .restart local v23       #wapPushMan:Lcom/android/internal/telephony/IWapPushManager;
@@ -516,7 +534,7 @@
 
     invoke-direct {v13}, Landroid/content/Intent;-><init>()V
 
-    .line 241
+    .line 246
     .local v13, intent:Landroid/content/Intent;
     const-string/jumbo v24, "transactionId"
 
@@ -526,7 +544,7 @@
 
     invoke-virtual {v13, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 242
+    .line 247
     const-string/jumbo v24, "pduType"
 
     move-object/from16 v0, v24
@@ -535,21 +553,21 @@
 
     invoke-virtual {v13, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 243
+    .line 248
     const-string v24, "header"
 
     move-object/from16 v0, v24
 
     invoke-virtual {v13, v0, v8}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[B)Landroid/content/Intent;
 
-    .line 244
+    .line 249
     const-string v24, "data"
 
     move-object/from16 v0, v24
 
     invoke-virtual {v13, v0, v14}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[B)Landroid/content/Intent;
 
-    .line 245
+    .line 250
     const-string v24, "contentTypeParameters"
 
     move-object/from16 v0, p0
@@ -568,7 +586,7 @@
 
     invoke-virtual {v13, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    .line 247
+    .line 251
     const-string/jumbo v24, "wspHeaders"
 
     move-object/from16 v0, p0
@@ -587,7 +605,7 @@
 
     invoke-virtual {v13, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    .line 249
+    .line 253
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->bundle:Landroid/os/Bundle;
@@ -596,14 +614,14 @@
 
     if-eqz v24, :cond_8
 
-    .line 250
+    .line 254
     const-string v24, "WAP PUSH"
 
     const-string/jumbo v25, "put addr info into intent 1"
 
     invoke-static/range {v24 .. v25}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 251
+    .line 255
     const-string v24, "address"
 
     move-object/from16 v0, p0
@@ -624,7 +642,7 @@
 
     invoke-virtual {v13, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 252
+    .line 256
     const-string/jumbo v24, "service_center"
 
     move-object/from16 v0, p0
@@ -645,7 +663,7 @@
 
     invoke-virtual {v13, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 255
+    .line 259
     :cond_8
     move-object/from16 v0, v23
 
@@ -657,7 +675,7 @@
 
     move-result v18
 
-    .line 257
+    .line 261
     .local v18, procRet:I
     and-int/lit8 v24, v18, 0x1
 
@@ -669,31 +687,31 @@
 
     if-nez v24, :cond_4
 
-    .line 259
+    .line 263
     const/16 v19, 0x0
 
     goto/16 :goto_3
 
-    .line 265
+    .line 269
     .end local v13           #intent:Landroid/content/Intent;
     .end local v18           #procRet:I
     .end local v23           #wapPushMan:Lcom/android/internal/telephony/IWapPushManager;
     :catch_0
     move-exception v24
 
-    .line 271
+    .line 275
     .end local v6           #contentType:Ljava/lang/String;
     .end local v19           #processFurther:Z
     .end local v22           #wapAppId:Ljava/lang/String;
     :cond_9
     if-nez v15, :cond_a
 
-    .line 273
+    .line 277
     const/16 v24, 0x2
 
     goto/16 :goto_0
 
-    .line 278
+    .line 282
     :cond_a
     const-string v24, "application/vnd.wap.mms-message"
 
@@ -705,17 +723,17 @@
 
     if-eqz v24, :cond_b
 
-    .line 279
+    .line 283
     const-string v24, "WAP PUSH"
 
     const-string v25, "[WapPush set permission for MMS"
 
     invoke-static/range {v24 .. v25}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 280
+    .line 284
     const-string v17, "android.permission.RECEIVE_MMS"
 
-    .line 281
+    .line 285
     .local v17, permission:Ljava/lang/String;
     invoke-static {v14}, Lcom/baidu/internal/telephony/SMSPlugin;->getMmsNotiWapPushAddress([B)Ljava/lang/String;
 
@@ -723,9 +741,13 @@
 
     sput-object v24, Lcom/baidu/internal/telephony/SMSPlugin;->msgAddress:Ljava/lang/String;
 
-    .line 286
+    .line 290
     :goto_4
-    const-string v24, "application/vnd.wap.mms-message"
+    const/16 v24, 0x3e
+
+    invoke-static/range {v24 .. v24}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v24
 
     move-object/from16 v0, v24
 
@@ -737,7 +759,7 @@
 
     const/4 v3, 0x2
 
-    .line 288
+    .line 292
     .local v3, appType:I
     :goto_5
     move-object/from16 v0, p0
@@ -756,7 +778,7 @@
 
     move-result-object v20
 
-    .line 289
+    .line 293
     .local v20, result:Lcom/baidu/internal/telephony/DisturbPreventUtils$BlockResult;
     move-object/from16 v0, v20
 
@@ -772,7 +794,7 @@
 
     if-ne v0, v1, :cond_d
 
-    .line 290
+    .line 294
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->mContext:Landroid/content/Context;
@@ -785,7 +807,11 @@
 
     move/from16 v25, v0
 
-    const/16 v26, -0x1
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->mSimId:I
+
+    move/from16 v26, v0
 
     move-object/from16 v0, v24
 
@@ -795,12 +821,12 @@
 
     invoke-static {v0, v15, v14, v1, v2}, Lcom/baidu/internal/telephony/SMSPlugin;->dispatchDisturbWapPdu(Landroid/content/Context;Ljava/lang/String;[BII)V
 
-    .line 291
+    .line 295
     const/16 v24, 0x1
 
     goto/16 :goto_0
 
-    .line 283
+    .line 287
     .end local v3           #appType:I
     .end local v17           #permission:Ljava/lang/String;
     .end local v20           #result:Lcom/baidu/internal/telephony/DisturbPreventUtils$BlockResult;
@@ -810,13 +836,13 @@
     .restart local v17       #permission:Ljava/lang/String;
     goto :goto_4
 
-    .line 286
+    .line 290
     :cond_c
     const/4 v3, 0x1
 
     goto :goto_5
 
-    .line 293
+    .line 297
     .restart local v3       #appType:I
     .restart local v20       #result:Lcom/baidu/internal/telephony/DisturbPreventUtils$BlockResult;
     :cond_d
@@ -828,11 +854,11 @@
 
     invoke-direct {v13, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 294
+    .line 298
     .restart local v13       #intent:Landroid/content/Intent;
     invoke-virtual {v13, v15}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 295
+    .line 299
     const-string/jumbo v24, "transactionId"
 
     move-object/from16 v0, v24
@@ -841,7 +867,7 @@
 
     invoke-virtual {v13, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 296
+    .line 300
     const-string/jumbo v24, "pduType"
 
     move-object/from16 v0, v24
@@ -850,21 +876,21 @@
 
     invoke-virtual {v13, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 297
+    .line 301
     const-string v24, "header"
 
     move-object/from16 v0, v24
 
     invoke-virtual {v13, v0, v8}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[B)Landroid/content/Intent;
 
-    .line 298
+    .line 302
     const-string v24, "data"
 
     move-object/from16 v0, v24
 
     invoke-virtual {v13, v0, v14}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[B)Landroid/content/Intent;
 
-    .line 299
+    .line 303
     const-string v24, "contentTypeParameters"
 
     move-object/from16 v0, p0
@@ -883,7 +909,7 @@
 
     invoke-virtual {v13, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    .line 300
+    .line 304
     const-string/jumbo v24, "wspHeaders"
 
     move-object/from16 v0, p0
@@ -902,7 +928,7 @@
 
     invoke-virtual {v13, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    .line 301
+    .line 305
     const-string v24, "address"
 
     sget-object v25, Lcom/baidu/internal/telephony/SMSPlugin;->msgAddress:Ljava/lang/String;
@@ -913,7 +939,7 @@
 
     invoke-virtual {v13, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 303
+    .line 307
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->mSmsDispatcher:Lcom/android/internal/telephony/SMSDispatcher;
@@ -926,7 +952,7 @@
 
     invoke-virtual {v0, v13, v1}, Lcom/android/internal/telephony/SMSDispatcher;->dispatch(Landroid/content/Intent;Ljava/lang/String;)V
 
-    .line 305
+    .line 309
     const/16 v24, -0x1
 
     goto/16 :goto_0
@@ -938,7 +964,7 @@
     .parameter "extra"
 
     .prologue
-    .line 316
+    .line 320
     const-string v0, "WAP PUSH"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -983,10 +1009,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 320
+    .line 324
     iput-object p2, p0, Lcom/android/internal/telephony/WapPushOverSms;->bundle:Landroid/os/Bundle;
 
-    .line 321
+    .line 325
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/WapPushOverSms;->dispatchWapPdu([B)I
 
     move-result v0

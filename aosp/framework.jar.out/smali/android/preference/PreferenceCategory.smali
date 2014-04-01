@@ -13,12 +13,12 @@
     .parameter "context"
 
     .prologue
-    .line 47
+    .line 40
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Landroid/preference/PreferenceCategory;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 48
+    .line 41
     return-void
 .end method
 
@@ -28,12 +28,12 @@
     .parameter "attrs"
 
     .prologue
-    .line 43
+    .line 36
     const v0, #attr@preferenceCategoryStyle#t
 
     invoke-direct {p0, p1, p2, v0}, Landroid/preference/PreferenceCategory;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 44
+    .line 37
     return-void
 .end method
 
@@ -44,10 +44,10 @@
     .parameter "defStyle"
 
     .prologue
-    .line 39
+    .line 32
     invoke-direct {p0, p1, p2, p3}, Landroid/preference/PreferenceGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 40
+    .line 33
     return-void
 .end method
 
@@ -57,7 +57,7 @@
     .locals 1
 
     .prologue
-    .line 62
+    .line 55
     const/4 v0, 0x0
 
     return v0
@@ -68,12 +68,12 @@
     .parameter "preference"
 
     .prologue
-    .line 52
+    .line 45
     instance-of v0, p1, Landroid/preference/PreferenceCategory;
 
     if-eqz v0, :cond_0
 
-    .line 53
+    .line 46
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "Cannot add a PreferenceCategory directly to a PreferenceCategory"
@@ -82,7 +82,7 @@
 
     throw v0
 
-    .line 57
+    .line 50
     :cond_0
     invoke-super {p0, p1}, Landroid/preference/PreferenceGroup;->onPrepareAddPreference(Landroid/preference/Preference;)Z
 

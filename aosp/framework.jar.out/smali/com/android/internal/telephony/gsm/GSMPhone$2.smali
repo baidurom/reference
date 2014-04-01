@@ -1,5 +1,5 @@
-.class Lcom/android/internal/telephony/gsm/GSMPhone$2;
-.super Landroid/content/BroadcastReceiver;
+.class synthetic Lcom/android/internal/telephony/gsm/GSMPhone$2;
+.super Ljava/lang/Object;
 .source "GSMPhone.java"
 
 
@@ -9,246 +9,254 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1008
     name = null
 .end annotation
 
 
-# instance fields
-.field final synthetic this$0:Lcom/android/internal/telephony/gsm/GSMPhone;
+# static fields
+.field static final synthetic $SwitchMap$com$android$internal$telephony$DataConnectionTracker$Activity:[I
+
+.field static final synthetic $SwitchMap$com$android$internal$telephony$DataConnectionTracker$State:[I
 
 
 # direct methods
-.method constructor <init>(Lcom/android/internal/telephony/gsm/GSMPhone;)V
-    .locals 0
-    .parameter
+.method static constructor <clinit>()V
+    .locals 3
 
     .prologue
-    .line 3087
-    iput-object p1, p0, Lcom/android/internal/telephony/gsm/GSMPhone$2;->this$0:Lcom/android/internal/telephony/gsm/GSMPhone;
-
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 8
-    .parameter "context"
-    .parameter "intent"
-
-    .prologue
-    .line 3090
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    .line 489
+    invoke-static {}, Lcom/android/internal/telephony/DataConnectionTracker$Activity;->values()[Lcom/android/internal/telephony/DataConnectionTracker$Activity;
 
     move-result-object v0
 
-    .line 3091
-    .local v0, action:Ljava/lang/String;
-    iget-object v5, p0, Lcom/android/internal/telephony/gsm/GSMPhone$2;->this$0:Lcom/android/internal/telephony/gsm/GSMPhone;
+    array-length v0, v0
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-array v0, v0, [I
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    sput-object v0, Lcom/android/internal/telephony/gsm/GSMPhone$2;->$SwitchMap$com$android$internal$telephony$DataConnectionTracker$Activity:[I
 
-    const-string/jumbo v7, "received broadcast "
+    :try_start_0
+    sget-object v0, Lcom/android/internal/telephony/gsm/GSMPhone$2;->$SwitchMap$com$android$internal$telephony$DataConnectionTracker$Activity:[I
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sget-object v1, Lcom/android/internal/telephony/DataConnectionTracker$Activity;->DATAIN:Lcom/android/internal/telephony/DataConnectionTracker$Activity;
 
-    move-result-object v6
+    invoke-virtual {v1}, Lcom/android/internal/telephony/DataConnectionTracker$Activity;->ordinal()I
 
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v1
 
-    move-result-object v6
+    const/4 v2, 0x1
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_9
 
-    move-result-object v6
+    :goto_0
+    :try_start_1
+    sget-object v0, Lcom/android/internal/telephony/gsm/GSMPhone$2;->$SwitchMap$com$android$internal$telephony$DataConnectionTracker$Activity:[I
 
-    #calls: Lcom/android/internal/telephony/gsm/GSMPhone;->LOGW(Ljava/lang/String;)V
-    invoke-static {v5, v6}, Lcom/android/internal/telephony/gsm/GSMPhone;->access$000(Lcom/android/internal/telephony/gsm/GSMPhone;Ljava/lang/String;)V
+    sget-object v1, Lcom/android/internal/telephony/DataConnectionTracker$Activity;->DATAOUT:Lcom/android/internal/telephony/DataConnectionTracker$Activity;
 
-    .line 3093
-    const-string v5, "android.intent.action.SIM_INFO_UPDATE"
+    invoke-virtual {v1}, Lcom/android/internal/telephony/DataConnectionTracker$Activity;->ordinal()I
 
-    invoke-virtual {v5, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result v1
 
-    move-result v5
+    const/4 v2, 0x2
 
-    if-eqz v5, :cond_0
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_8
 
-    .line 3094
-    iget-object v5, p0, Lcom/android/internal/telephony/gsm/GSMPhone$2;->this$0:Lcom/android/internal/telephony/gsm/GSMPhone;
+    :goto_1
+    :try_start_2
+    sget-object v0, Lcom/android/internal/telephony/gsm/GSMPhone$2;->$SwitchMap$com$android$internal$telephony$DataConnectionTracker$Activity:[I
 
-    invoke-virtual {v5}, Lcom/android/internal/telephony/gsm/GSMPhone;->getMySimId()I
+    sget-object v1, Lcom/android/internal/telephony/DataConnectionTracker$Activity;->DATAINANDOUT:Lcom/android/internal/telephony/DataConnectionTracker$Activity;
 
-    move-result v5
+    invoke-virtual {v1}, Lcom/android/internal/telephony/DataConnectionTracker$Activity;->ordinal()I
 
-    invoke-static {p1, v5}, Landroid/provider/Telephony$SIMInfo;->getSIMInfoBySlot(Landroid/content/Context;I)Landroid/provider/Telephony$SIMInfo;
+    move-result v1
 
-    move-result-object v3
+    const/4 v2, 0x3
 
-    .line 3095
-    .local v3, mySimInfo:Landroid/provider/Telephony$SIMInfo;
-    new-instance v5, Ljava/lang/StringBuilder;
+    aput v2, v0, v1
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_7
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    .line 426
+    :goto_2
+    invoke-static {}, Lcom/android/internal/telephony/DataConnectionTracker$State;->values()[Lcom/android/internal/telephony/DataConnectionTracker$State;
 
-    const-string/jumbo v6, "persist.radio.cfu.iccid."
+    move-result-object v0
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    array-length v0, v0
 
-    move-result-object v5
+    new-array v0, v0, [I
 
-    iget-object v6, p0, Lcom/android/internal/telephony/gsm/GSMPhone$2;->this$0:Lcom/android/internal/telephony/gsm/GSMPhone;
+    sput-object v0, Lcom/android/internal/telephony/gsm/GSMPhone$2;->$SwitchMap$com$android$internal$telephony$DataConnectionTracker$State:[I
 
-    invoke-virtual {v6}, Lcom/android/internal/telephony/gsm/GSMPhone;->getMySimId()I
+    :try_start_3
+    sget-object v0, Lcom/android/internal/telephony/gsm/GSMPhone$2;->$SwitchMap$com$android$internal$telephony$DataConnectionTracker$State:[I
 
-    move-result v6
+    sget-object v1, Lcom/android/internal/telephony/DataConnectionTracker$State;->FAILED:Lcom/android/internal/telephony/DataConnectionTracker$State;
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1}, Lcom/android/internal/telephony/DataConnectionTracker$State;->ordinal()I
 
-    move-result-object v5
+    move-result v1
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const/4 v2, 0x1
 
-    move-result-object v2
+    aput v2, v0, v1
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_6
 
-    .line 3096
-    .local v2, mySettingName:Ljava/lang/String;
-    const-string v5, ""
+    :goto_3
+    :try_start_4
+    sget-object v0, Lcom/android/internal/telephony/gsm/GSMPhone$2;->$SwitchMap$com$android$internal$telephony$DataConnectionTracker$State:[I
 
-    invoke-static {v2, v5}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    sget-object v1, Lcom/android/internal/telephony/DataConnectionTracker$State;->IDLE:Lcom/android/internal/telephony/DataConnectionTracker$State;
 
-    move-result-object v4
+    invoke-virtual {v1}, Lcom/android/internal/telephony/DataConnectionTracker$State;->ordinal()I
 
-    .line 3098
-    .local v4, oldIccId:Ljava/lang/String;
-    if-eqz v3, :cond_0
+    move-result v1
 
-    .line 3099
-    iget-object v5, v3, Landroid/provider/Telephony$SIMInfo;->mICCId:Ljava/lang/String;
+    const/4 v2, 0x2
 
-    invoke-virtual {v5, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    aput v2, v0, v1
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_5
 
-    move-result v5
+    :goto_4
+    :try_start_5
+    sget-object v0, Lcom/android/internal/telephony/gsm/GSMPhone$2;->$SwitchMap$com$android$internal$telephony$DataConnectionTracker$State:[I
 
-    if-nez v5, :cond_0
+    sget-object v1, Lcom/android/internal/telephony/DataConnectionTracker$State;->CONNECTED:Lcom/android/internal/telephony/DataConnectionTracker$State;
 
-    .line 3100
-    iget-object v5, p0, Lcom/android/internal/telephony/gsm/GSMPhone$2;->this$0:Lcom/android/internal/telephony/gsm/GSMPhone;
+    invoke-virtual {v1}, Lcom/android/internal/telephony/DataConnectionTracker$State;->ordinal()I
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    move-result v1
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    const/4 v2, 0x3
 
-    const-string v7, " mySimId "
+    aput v2, v0, v1
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_4
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :goto_5
+    :try_start_6
+    sget-object v0, Lcom/android/internal/telephony/gsm/GSMPhone$2;->$SwitchMap$com$android$internal$telephony$DataConnectionTracker$State:[I
 
-    move-result-object v6
+    sget-object v1, Lcom/android/internal/telephony/DataConnectionTracker$State;->DISCONNECTING:Lcom/android/internal/telephony/DataConnectionTracker$State;
 
-    iget-object v7, p0, Lcom/android/internal/telephony/gsm/GSMPhone$2;->this$0:Lcom/android/internal/telephony/gsm/GSMPhone;
+    invoke-virtual {v1}, Lcom/android/internal/telephony/DataConnectionTracker$State;->ordinal()I
 
-    #getter for: Lcom/android/internal/telephony/gsm/GSMPhone;->mySimId:I
-    invoke-static {v7}, Lcom/android/internal/telephony/gsm/GSMPhone;->access$100(Lcom/android/internal/telephony/gsm/GSMPhone;)I
+    move-result v1
 
-    move-result v7
+    const/4 v2, 0x4
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    aput v2, v0, v1
+    :try_end_6
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_3
 
-    move-result-object v6
+    :goto_6
+    :try_start_7
+    sget-object v0, Lcom/android/internal/telephony/gsm/GSMPhone$2;->$SwitchMap$com$android$internal$telephony$DataConnectionTracker$State:[I
 
-    const-string v7, " mySettingName "
+    sget-object v1, Lcom/android/internal/telephony/DataConnectionTracker$State;->INITING:Lcom/android/internal/telephony/DataConnectionTracker$State;
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1}, Lcom/android/internal/telephony/DataConnectionTracker$State;->ordinal()I
 
-    move-result-object v6
+    move-result v1
 
-    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/4 v2, 0x5
 
-    move-result-object v6
+    aput v2, v0, v1
+    :try_end_7
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_2
 
-    const-string v7, " old iccid : "
+    :goto_7
+    :try_start_8
+    sget-object v0, Lcom/android/internal/telephony/gsm/GSMPhone$2;->$SwitchMap$com$android$internal$telephony$DataConnectionTracker$State:[I
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sget-object v1, Lcom/android/internal/telephony/DataConnectionTracker$State;->CONNECTING:Lcom/android/internal/telephony/DataConnectionTracker$State;
 
-    move-result-object v6
+    invoke-virtual {v1}, Lcom/android/internal/telephony/DataConnectionTracker$State;->ordinal()I
 
-    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v1
 
-    move-result-object v6
+    const/4 v2, 0x6
 
-    const-string v7, " new iccid : "
+    aput v2, v0, v1
+    :try_end_8
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_8 .. :try_end_8} :catch_1
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :goto_8
+    :try_start_9
+    sget-object v0, Lcom/android/internal/telephony/gsm/GSMPhone$2;->$SwitchMap$com$android$internal$telephony$DataConnectionTracker$State:[I
 
-    move-result-object v6
+    sget-object v1, Lcom/android/internal/telephony/DataConnectionTracker$State;->SCANNING:Lcom/android/internal/telephony/DataConnectionTracker$State;
 
-    iget-object v7, v3, Landroid/provider/Telephony$SIMInfo;->mICCId:Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/android/internal/telephony/DataConnectionTracker$State;->ordinal()I
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v1
 
-    move-result-object v6
+    const/4 v2, 0x7
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    aput v2, v0, v1
+    :try_end_9
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_9} :catch_0
 
-    move-result-object v6
-
-    #calls: Lcom/android/internal/telephony/gsm/GSMPhone;->LOGW(Ljava/lang/String;)V
-    invoke-static {v5, v6}, Lcom/android/internal/telephony/gsm/GSMPhone;->access$000(Lcom/android/internal/telephony/gsm/GSMPhone;Ljava/lang/String;)V
-
-    .line 3101
-    iget-object v5, v3, Landroid/provider/Telephony$SIMInfo;->mICCId:Ljava/lang/String;
-
-    invoke-static {v2, v5}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 3102
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v6, "persist.radio.cfu.change."
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    iget-object v6, p0, Lcom/android/internal/telephony/gsm/GSMPhone$2;->this$0:Lcom/android/internal/telephony/gsm/GSMPhone;
-
-    invoke-virtual {v6}, Lcom/android/internal/telephony/gsm/GSMPhone;->getMySimId()I
-
-    move-result v6
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 3103
-    .local v1, isChanged:Ljava/lang/String;
-    const-string v5, "1"
-
-    invoke-static {v1, v5}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 3104
-    iget-object v5, p0, Lcom/android/internal/telephony/gsm/GSMPhone$2;->this$0:Lcom/android/internal/telephony/gsm/GSMPhone;
-
-    const/4 v6, 0x1
-
-    #setter for: Lcom/android/internal/telephony/gsm/GSMPhone;->needQueryCfu:Z
-    invoke-static {v5, v6}, Lcom/android/internal/telephony/gsm/GSMPhone;->access$202(Lcom/android/internal/telephony/gsm/GSMPhone;Z)Z
-
-    .line 3108
-    .end local v1           #isChanged:Ljava/lang/String;
-    .end local v2           #mySettingName:Ljava/lang/String;
-    .end local v3           #mySimInfo:Landroid/provider/Telephony$SIMInfo;
-    .end local v4           #oldIccId:Ljava/lang/String;
-    :cond_0
+    :goto_9
     return-void
+
+    :catch_0
+    move-exception v0
+
+    goto :goto_9
+
+    :catch_1
+    move-exception v0
+
+    goto :goto_8
+
+    :catch_2
+    move-exception v0
+
+    goto :goto_7
+
+    :catch_3
+    move-exception v0
+
+    goto :goto_6
+
+    :catch_4
+    move-exception v0
+
+    goto :goto_5
+
+    :catch_5
+    move-exception v0
+
+    goto :goto_4
+
+    :catch_6
+    move-exception v0
+
+    goto :goto_3
+
+    .line 489
+    :catch_7
+    move-exception v0
+
+    goto :goto_2
+
+    :catch_8
+    move-exception v0
+
+    goto :goto_1
+
+    :catch_9
+    move-exception v0
+
+    goto :goto_0
 .end method

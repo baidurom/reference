@@ -187,7 +187,7 @@
 .end method
 
 .method public enter(Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel$State;)V
-    .locals 3
+    .locals 2
     .parameter "oldState"
 
     .prologue
@@ -245,8 +245,8 @@
     .line 362
     iget-object v0, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel$StateTouch;->this$0:Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;
 
-    #getter for: Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
-    invoke-static {v0}, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->access$1900(Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;)Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    #getter for: Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
+    invoke-static {v0}, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->access$1900(Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;)Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
     move-result-object v0
 
@@ -255,14 +255,12 @@
     .line 363
     iget-object v0, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel$StateTouch;->this$0:Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;
 
-    #getter for: Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
-    invoke-static {v0}, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->access$1900(Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;)Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    #getter for: Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
+    invoke-static {v0}, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->access$1900(Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;)Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
     move-result-object v0
 
-    const-wide/16 v1, 0x0
-
-    invoke-interface {v0, v1, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;->userActivity(J)V
+    invoke-interface {v0}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->pokeWakelock()V
 
     .line 365
     :cond_1

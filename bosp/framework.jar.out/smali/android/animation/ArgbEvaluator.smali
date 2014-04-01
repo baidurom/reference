@@ -36,9 +36,7 @@
 
     .line 43
     .local v8, startInt:I
-    shr-int/lit8 v10, v8, 0x18
-
-    and-int/lit16 v5, v10, 0xff
+    shr-int/lit8 v5, v8, 0x18
 
     .line 44
     .local v5, startA:I
@@ -67,9 +65,7 @@
 
     .line 49
     .local v3, endInt:I
-    shr-int/lit8 v10, v3, 0x18
-
-    and-int/lit16 v0, v10, 0xff
+    shr-int/lit8 v0, v3, 0x18
 
     .line 50
     .local v0, endA:I

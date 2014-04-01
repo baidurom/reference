@@ -177,7 +177,7 @@
 .end method
 
 .method public addAddress(Ljava/net/InetAddress;I)Landroid/net/VpnService$Builder;
-    .locals 3
+    .locals 5
     .parameter "address"
     .parameter "prefixLength"
 
@@ -205,35 +205,29 @@
     :cond_0
     iget-object v0, p0, Landroid/net/VpnService$Builder;->mAddresses:Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v1, " %s/%d"
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const/4 v2, 0x2
 
-    const/16 v2, 0x20
+    new-array v2, v2, [Ljava/lang/Object;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    const/4 v3, 0x0
 
     invoke-virtual {p1}, Ljava/net/InetAddress;->getHostAddress()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v4
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    aput-object v4, v2, v3
 
-    move-result-object v1
+    const/4 v3, 0x1
 
-    const/16 v2, 0x2f
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    move-result-object v4
 
-    move-result-object v1
+    aput-object v4, v2, v3
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 

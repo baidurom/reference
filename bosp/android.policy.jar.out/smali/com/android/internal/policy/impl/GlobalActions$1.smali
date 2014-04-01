@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/internal/policy/impl/GlobalActions;->createDialog()Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;
+    value = Lcom/android/internal/policy/impl/GlobalActions;->createDialog()Landroid/app/AlertDialog;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -30,7 +30,7 @@
     .parameter "x5"
 
     .prologue
-    .line 241
+    .line 150
     iput-object p1, p0, Lcom/android/internal/policy/impl/GlobalActions$1;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     move-object v0, p0
@@ -59,23 +59,7 @@
     .parameter "buttonOn"
 
     .prologue
-    .line 266
-    iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$1;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
-
-    #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mHasTelephony:Z
-    invoke-static {v0}, Lcom/android/internal/policy/impl/GlobalActions;->access$000(Lcom/android/internal/policy/impl/GlobalActions;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    .line 274
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 269
-    :cond_1
+    .line 169
     const-string v0, "ril.cdma.inecmmode"
 
     invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -88,51 +72,53 @@
 
     if-nez v0, :cond_0
 
-    .line 271
-    if-eqz p1, :cond_2
+    .line 171
+    if-eqz p1, :cond_1
 
     sget-object v0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;->TurningOn:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
 
-    :goto_1
+    :goto_0
     iput-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$1;->mState:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
 
-    .line 272
+    .line 172
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$1;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/GlobalActions$1;->mState:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
 
     #setter for: Lcom/android/internal/policy/impl/GlobalActions;->mAirplaneState:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
-    invoke-static {v0, v1}, Lcom/android/internal/policy/impl/GlobalActions;->access$402(Lcom/android/internal/policy/impl/GlobalActions;Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;)Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
+    invoke-static {v0, v1}, Lcom/android/internal/policy/impl/GlobalActions;->access$302(Lcom/android/internal/policy/impl/GlobalActions;Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;)Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
 
-    goto :goto_0
+    .line 174
+    :cond_0
+    return-void
 
-    .line 271
-    :cond_2
+    .line 171
+    :cond_1
     sget-object v0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;->TurningOff:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
 
-    goto :goto_1
+    goto :goto_0
 .end method
 
 .method public isEnabled()Z
     .locals 2
 
     .prologue
-    .line 286
-    sget v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->sDualSimSetting:I
+    .line 186
+    sget v0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->dual_sim_setting:I
 
     if-nez v0, :cond_0
 
-    .line 287
+    .line 187
     const-string v0, "GlobalActions"
 
     const-string v1, "if user unselect the dual sim mode setting on phone starting, the airplane mode can not be set."
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 288
+    .line 188
     const/4 v0, 0x0
 
-    .line 291
+    .line 191
     :goto_0
     return v0
 
@@ -144,34 +130,12 @@
     goto :goto_0
 .end method
 
-.method public onPress()V
-    .locals 1
-
-    .prologue
-    .line 260
-    iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$1;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
-
-    invoke-virtual {v0}, Lcom/android/internal/policy/impl/GlobalActions;->showAlertDialog()V
-
-    .line 261
-    return-void
-.end method
-
 .method onToggle(Z)V
     .locals 3
     .parameter "on"
 
     .prologue
-    .line 244
-    iget-object v1, p0, Lcom/android/internal/policy/impl/GlobalActions$1;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
-
-    #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mHasTelephony:Z
-    invoke-static {v1}, Lcom/android/internal/policy/impl/GlobalActions;->access$000(Lcom/android/internal/policy/impl/GlobalActions;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
+    .line 153
     const-string v1, "ril.cdma.inecmmode"
 
     invoke-static {v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -184,15 +148,15 @@
 
     if-eqz v1, :cond_0
 
-    .line 246
+    .line 155
     iget-object v1, p0, Lcom/android/internal/policy/impl/GlobalActions$1;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     const/4 v2, 0x1
 
     #setter for: Lcom/android/internal/policy/impl/GlobalActions;->mIsWaitingForEcmExit:Z
-    invoke-static {v1, v2}, Lcom/android/internal/policy/impl/GlobalActions;->access$102(Lcom/android/internal/policy/impl/GlobalActions;Z)Z
+    invoke-static {v1, v2}, Lcom/android/internal/policy/impl/GlobalActions;->access$002(Lcom/android/internal/policy/impl/GlobalActions;Z)Z
 
-    .line 248
+    .line 157
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.ACTION_SHOW_NOTICE_ECM_BLOCK_OTHERS"
@@ -201,33 +165,33 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 250
+    .line 159
     .local v0, ecmDialogIntent:Landroid/content/Intent;
     const/high16 v1, 0x1000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 251
+    .line 160
     iget-object v1, p0, Lcom/android/internal/policy/impl/GlobalActions$1;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mContext:Landroid/content/Context;
-    invoke-static {v1}, Lcom/android/internal/policy/impl/GlobalActions;->access$200(Lcom/android/internal/policy/impl/GlobalActions;)Landroid/content/Context;
+    invoke-static {v1}, Lcom/android/internal/policy/impl/GlobalActions;->access$100(Lcom/android/internal/policy/impl/GlobalActions;)Landroid/content/Context;
 
     move-result-object v1
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 255
+    .line 164
     .end local v0           #ecmDialogIntent:Landroid/content/Intent;
     :goto_0
     return-void
 
-    .line 253
+    .line 162
     :cond_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/GlobalActions$1;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     #calls: Lcom/android/internal/policy/impl/GlobalActions;->changeAirplaneModeSystemSetting(Z)V
-    invoke-static {v1, p1}, Lcom/android/internal/policy/impl/GlobalActions;->access$300(Lcom/android/internal/policy/impl/GlobalActions;Z)V
+    invoke-static {v1, p1}, Lcom/android/internal/policy/impl/GlobalActions;->access$200(Lcom/android/internal/policy/impl/GlobalActions;Z)V
 
     goto :goto_0
 .end method
@@ -236,7 +200,7 @@
     .locals 1
 
     .prologue
-    .line 281
+    .line 181
     const/4 v0, 0x0
 
     return v0
@@ -246,7 +210,7 @@
     .locals 1
 
     .prologue
-    .line 277
+    .line 177
     const/4 v0, 0x1
 
     return v0

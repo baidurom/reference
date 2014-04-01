@@ -21,8 +21,6 @@
 
 
 # instance fields
-.field public canDisableShutterSound:Z
-
 .field public facing:I
 
 .field public orientation:I
@@ -33,8 +31,8 @@
     .locals 0
 
     .prologue
-    .line 313
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 262
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

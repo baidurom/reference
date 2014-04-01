@@ -15,6 +15,8 @@
 
 
 # static fields
+.field public static final sym_app_on_sd_unavailable_icon:I = #mipmap@sym_app_on_sd_unavailable_icon#t
+
 .field public static final sym_def_app_icon:I = #mipmap@sym_def_app_icon#t
 
 
@@ -23,7 +25,7 @@
     .locals 0
 
     .prologue
-    .line 13149
+    .line 15949
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

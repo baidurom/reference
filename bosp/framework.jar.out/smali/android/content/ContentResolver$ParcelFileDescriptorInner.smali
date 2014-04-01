@@ -14,6 +14,10 @@
 .end annotation
 
 
+# static fields
+.field public static final TAG:Ljava/lang/String; = "ParcelFileDescriptorInner"
+
+
 # instance fields
 .field private final mContentProvider:Landroid/content/IContentProvider;
 
@@ -30,21 +34,21 @@
     .parameter "icp"
 
     .prologue
-    .line 1923
+    .line 1642
     iput-object p1, p0, Landroid/content/ContentResolver$ParcelFileDescriptorInner;->this$0:Landroid/content/ContentResolver;
 
-    .line 1924
+    .line 1643
     invoke-direct {p0, p2}, Landroid/os/ParcelFileDescriptor;-><init>(Landroid/os/ParcelFileDescriptor;)V
 
-    .line 1921
+    .line 1640
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/content/ContentResolver$ParcelFileDescriptorInner;->mReleaseProviderFlag:Z
 
-    .line 1925
+    .line 1644
     iput-object p3, p0, Landroid/content/ContentResolver$ParcelFileDescriptorInner;->mContentProvider:Landroid/content/IContentProvider;
 
-    .line 1926
+    .line 1645
     return-void
 .end method
 
@@ -59,27 +63,27 @@
     .end annotation
 
     .prologue
-    .line 1930
+    .line 1649
     iget-boolean v0, p0, Landroid/content/ContentResolver$ParcelFileDescriptorInner;->mReleaseProviderFlag:Z
 
     if-nez v0, :cond_0
 
-    .line 1931
+    .line 1650
     invoke-super {p0}, Landroid/os/ParcelFileDescriptor;->close()V
 
-    .line 1932
+    .line 1651
     iget-object v0, p0, Landroid/content/ContentResolver$ParcelFileDescriptorInner;->this$0:Landroid/content/ContentResolver;
 
     iget-object v1, p0, Landroid/content/ContentResolver$ParcelFileDescriptorInner;->mContentProvider:Landroid/content/IContentProvider;
 
     invoke-virtual {v0, v1}, Landroid/content/ContentResolver;->releaseProvider(Landroid/content/IContentProvider;)Z
 
-    .line 1933
+    .line 1652
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/content/ContentResolver$ParcelFileDescriptorInner;->mReleaseProviderFlag:Z
 
-    .line 1935
+    .line 1654
     :cond_0
     return-void
 .end method
@@ -93,15 +97,15 @@
     .end annotation
 
     .prologue
-    .line 1939
+    .line 1658
     iget-boolean v0, p0, Landroid/content/ContentResolver$ParcelFileDescriptorInner;->mReleaseProviderFlag:Z
 
     if-nez v0, :cond_0
 
-    .line 1940
+    .line 1659
     invoke-virtual {p0}, Landroid/content/ContentResolver$ParcelFileDescriptorInner;->close()V
 
-    .line 1942
+    .line 1661
     :cond_0
     return-void
 .end method

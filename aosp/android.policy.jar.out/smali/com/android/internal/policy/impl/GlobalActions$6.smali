@@ -1,11 +1,11 @@
 .class Lcom/android/internal/policy/impl/GlobalActions$6;
-.super Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;
+.super Landroid/os/Handler;
 .source "GlobalActions.java"
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/internal/policy/impl/GlobalActions;->addUsersToMenu(Ljava/util/ArrayList;)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/android/internal/policy/impl/GlobalActions;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,100 +17,75 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
-.field final synthetic val$user:Landroid/content/pm/UserInfo;
-
 
 # direct methods
-.method constructor <init>(Lcom/android/internal/policy/impl/GlobalActions;ILandroid/graphics/drawable/Drawable;Ljava/lang/CharSequence;Landroid/content/pm/UserInfo;)V
+.method constructor <init>(Lcom/android/internal/policy/impl/GlobalActions;)V
     .locals 0
-    .parameter
-    .parameter "x0"
-    .parameter "x1"
-    .parameter "x2"
     .parameter
 
     .prologue
-    .line 445
+    .line 660
     iput-object p1, p0, Lcom/android/internal/policy/impl/GlobalActions$6;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
-    iput-object p5, p0, Lcom/android/internal/policy/impl/GlobalActions$6;->val$user:Landroid/content/pm/UserInfo;
-
-    invoke-direct {p0, p2, p3, p4}, Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;-><init>(ILandroid/graphics/drawable/Drawable;Ljava/lang/CharSequence;)V
+    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onPress()V
-    .locals 4
+.method public handleMessage(Landroid/os/Message;)V
+    .locals 2
+    .parameter "msg"
 
     .prologue
-    .line 448
-    :try_start_0
-    invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
+    .line 662
+    iget v0, p1, Landroid/os/Message;->what:I
 
-    move-result-object v1
+    if-nez v0, :cond_1
 
-    iget-object v2, p0, Lcom/android/internal/policy/impl/GlobalActions$6;->val$user:Landroid/content/pm/UserInfo;
+    .line 663
+    iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$6;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
-    iget v2, v2, Landroid/content/pm/UserInfo;->id:I
+    #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mDialog:Landroid/app/AlertDialog;
+    invoke-static {v0}, Lcom/android/internal/policy/impl/GlobalActions;->access$1100(Lcom/android/internal/policy/impl/GlobalActions;)Landroid/app/AlertDialog;
 
-    invoke-interface {v1, v2}, Landroid/app/IActivityManager;->switchUser(I)Z
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    move-result-object v0
 
-    .line 452
+    if-eqz v0, :cond_0
+
+    .line 664
+    iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$6;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
+
+    #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mDialog:Landroid/app/AlertDialog;
+    invoke-static {v0}, Lcom/android/internal/policy/impl/GlobalActions;->access$1100(Lcom/android/internal/policy/impl/GlobalActions;)Landroid/app/AlertDialog;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
+
+    .line 669
+    :cond_0
     :goto_0
     return-void
 
-    .line 449
-    :catch_0
-    move-exception v0
+    .line 666
+    :cond_1
+    iget v0, p1, Landroid/os/Message;->what:I
 
-    .line 450
-    .local v0, re:Landroid/os/RemoteException;
-    const-string v1, "GlobalActions"
+    const/4 v1, 0x1
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    if-ne v0, v1, :cond_0
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    .line 667
+    iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$6;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
-    const-string v3, "Couldn\'t switch user "
+    #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mAdapter:Lcom/android/internal/policy/impl/GlobalActions$MyAdapter;
+    invoke-static {v0}, Lcom/android/internal/policy/impl/GlobalActions;->access$1000(Lcom/android/internal/policy/impl/GlobalActions;)Lcom/android/internal/policy/impl/GlobalActions$MyAdapter;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v0}, Lcom/android/internal/policy/impl/GlobalActions$MyAdapter;->notifyDataSetChanged()V
 
     goto :goto_0
-.end method
-
-.method public showBeforeProvisioning()Z
-    .locals 1
-
-    .prologue
-    .line 459
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public showDuringKeyguard()Z
-    .locals 1
-
-    .prologue
-    .line 455
-    const/4 v0, 0x1
-
-    return v0
 .end method

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 65
+    .line 67
     iput-object p1, p0, Landroid/bluetooth/BluetoothBipr$1;->this$0:Landroid/bluetooth/BluetoothBipr;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .parameter "service"
 
     .prologue
-    .line 67
+    .line 69
     iget-object v0, p0, Landroid/bluetooth/BluetoothBipr$1;->this$0:Landroid/bluetooth/BluetoothBipr;
 
     invoke-static {p2}, Landroid/bluetooth/IBluetoothBipr$Stub;->asInterface(Landroid/os/IBinder;)Landroid/bluetooth/IBluetoothBipr;
@@ -53,7 +53,7 @@
     #setter for: Landroid/bluetooth/BluetoothBipr;->mService:Landroid/bluetooth/IBluetoothBipr;
     invoke-static {v0, v1}, Landroid/bluetooth/BluetoothBipr;->access$002(Landroid/bluetooth/BluetoothBipr;Landroid/bluetooth/IBluetoothBipr;)Landroid/bluetooth/IBluetoothBipr;
 
-    .line 68
+    .line 70
     return-void
 .end method
 
@@ -62,7 +62,7 @@
     .parameter "className"
 
     .prologue
-    .line 70
+    .line 72
     iget-object v0, p0, Landroid/bluetooth/BluetoothBipr$1;->this$0:Landroid/bluetooth/BluetoothBipr;
 
     const/4 v1, 0x0
@@ -70,6 +70,6 @@
     #setter for: Landroid/bluetooth/BluetoothBipr;->mService:Landroid/bluetooth/IBluetoothBipr;
     invoke-static {v0, v1}, Landroid/bluetooth/BluetoothBipr;->access$002(Landroid/bluetooth/BluetoothBipr;Landroid/bluetooth/IBluetoothBipr;)Landroid/bluetooth/IBluetoothBipr;
 
-    .line 71
+    .line 73
     return-void
 .end method

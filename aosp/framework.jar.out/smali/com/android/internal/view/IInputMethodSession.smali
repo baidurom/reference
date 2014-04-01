@@ -23,14 +23,6 @@
     .end annotation
 .end method
 
-.method public abstract dispatchGenericMotionEvent(ILandroid/view/MotionEvent;Lcom/android/internal/view/IInputMethodCallback;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract dispatchKeyEvent(ILandroid/view/KeyEvent;Lcom/android/internal/view/IInputMethodCallback;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

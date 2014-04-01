@@ -23,7 +23,7 @@
 
 
 # static fields
-.field private static final mSmHandlerObj:Ljava/lang/Object;
+.field private static final mQuitObj:Ljava/lang/Object;
 
 
 # instance fields
@@ -48,9 +48,9 @@
 
 .field private mIsConstructionCompleted:Z
 
-.field private mLogRecords:Lcom/android/internal/util/StateMachine$LogRecords;
-
 .field private mMsg:Landroid/os/Message;
+
+.field private mProcessedMessages:Lcom/android/internal/util/StateMachine$ProcessedMessages;
 
 .field private mQuittingState:Lcom/android/internal/util/StateMachine$SmHandler$QuittingState;
 
@@ -82,12 +82,12 @@
     .locals 1
 
     .prologue
-    .line 654
+    .line 625
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Lcom/android/internal/util/StateMachine$SmHandler;->mSmHandlerObj:Ljava/lang/Object;
+    sput-object v0, Lcom/android/internal/util/StateMachine$SmHandler;->mQuitObj:Ljava/lang/Object;
 
     return-void
 .end method
@@ -100,68 +100,68 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1122
+    .line 1097
     invoke-direct {p0, p1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 651
-    const/4 v0, 0x0
+    .line 622
+    const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDbg:Z
 
-    .line 660
-    new-instance v0, Lcom/android/internal/util/StateMachine$LogRecords;
+    .line 631
+    new-instance v0, Lcom/android/internal/util/StateMachine$ProcessedMessages;
 
-    invoke-direct {v0, v1}, Lcom/android/internal/util/StateMachine$LogRecords;-><init>(Lcom/android/internal/util/StateMachine$1;)V
+    invoke-direct {v0}, Lcom/android/internal/util/StateMachine$ProcessedMessages;-><init>()V
 
-    iput-object v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mLogRecords:Lcom/android/internal/util/StateMachine$LogRecords;
+    iput-object v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mProcessedMessages:Lcom/android/internal/util/StateMachine$ProcessedMessages;
 
-    .line 669
+    .line 640
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mStateStackTopIndex:I
 
-    .line 678
+    .line 649
     new-instance v0, Lcom/android/internal/util/StateMachine$SmHandler$HaltingState;
 
     invoke-direct {v0, p0, v1}, Lcom/android/internal/util/StateMachine$SmHandler$HaltingState;-><init>(Lcom/android/internal/util/StateMachine$SmHandler;Lcom/android/internal/util/StateMachine$1;)V
 
     iput-object v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mHaltingState:Lcom/android/internal/util/StateMachine$SmHandler$HaltingState;
 
-    .line 681
+    .line 652
     new-instance v0, Lcom/android/internal/util/StateMachine$SmHandler$QuittingState;
 
     invoke-direct {v0, p0, v1}, Lcom/android/internal/util/StateMachine$SmHandler$QuittingState;-><init>(Lcom/android/internal/util/StateMachine$SmHandler;Lcom/android/internal/util/StateMachine$1;)V
 
     iput-object v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mQuittingState:Lcom/android/internal/util/StateMachine$SmHandler$QuittingState;
 
-    .line 712
+    .line 683
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mStateInfo:Ljava/util/HashMap;
 
-    .line 722
+    .line 693
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDeferredMessages:Ljava/util/ArrayList;
 
-    .line 1123
+    .line 1098
     iput-object p2, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mSm:Lcom/android/internal/util/StateMachine;
 
-    .line 1125
+    .line 1100
     iget-object v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mHaltingState:Lcom/android/internal/util/StateMachine$SmHandler$HaltingState;
 
     invoke-direct {p0, v0, v1}, Lcom/android/internal/util/StateMachine$SmHandler;->addState(Lcom/android/internal/util/State;Lcom/android/internal/util/State;)Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
 
-    .line 1126
+    .line 1101
     iget-object v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mQuittingState:Lcom/android/internal/util/StateMachine$SmHandler$QuittingState;
 
     invoke-direct {p0, v0, v1}, Lcom/android/internal/util/StateMachine$SmHandler;->addState(Lcom/android/internal/util/State;Lcom/android/internal/util/State;)Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
 
-    .line 1127
+    .line 1102
     return-void
 .end method
 
@@ -172,122 +172,164 @@
     .parameter "x2"
 
     .prologue
-    .line 648
+    .line 619
     invoke-direct {p0, p1, p2}, Lcom/android/internal/util/StateMachine$SmHandler;-><init>(Landroid/os/Looper;Lcom/android/internal/util/StateMachine;)V
 
     return-void
 .end method
 
-.method static synthetic access$1000(Lcom/android/internal/util/StateMachine$SmHandler;)Lcom/android/internal/util/IState;
+.method static synthetic access$1000(Lcom/android/internal/util/StateMachine$SmHandler;Lcom/android/internal/util/State;)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 619
+    invoke-direct {p0, p1}, Lcom/android/internal/util/StateMachine$SmHandler;->setInitialState(Lcom/android/internal/util/State;)V
+
+    return-void
+.end method
+
+.method static synthetic access$1100(Lcom/android/internal/util/StateMachine$SmHandler;Lcom/android/internal/util/IState;)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 619
+    invoke-direct {p0, p1}, Lcom/android/internal/util/StateMachine$SmHandler;->transitionTo(Lcom/android/internal/util/IState;)V
+
+    return-void
+.end method
+
+.method static synthetic access$1200(Lcom/android/internal/util/StateMachine$SmHandler;)Lcom/android/internal/util/StateMachine$SmHandler$HaltingState;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 648
-    invoke-direct {p0}, Lcom/android/internal/util/StateMachine$SmHandler;->getCurrentState()Lcom/android/internal/util/IState;
+    .line 619
+    iget-object v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mHaltingState:Lcom/android/internal/util/StateMachine$SmHandler$HaltingState;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1300(Lcom/android/internal/util/StateMachine$SmHandler;Landroid/os/Message;)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 619
+    invoke-direct {p0, p1}, Lcom/android/internal/util/StateMachine$SmHandler;->deferMessage(Landroid/os/Message;)V
+
+    return-void
+.end method
+
+.method static synthetic access$1400(Lcom/android/internal/util/StateMachine$SmHandler;)Z
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 619
+    iget-boolean v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDbg:Z
+
+    return v0
+.end method
+
+.method static synthetic access$1500(Lcom/android/internal/util/StateMachine$SmHandler;I)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 619
+    invoke-direct {p0, p1}, Lcom/android/internal/util/StateMachine$SmHandler;->setProcessedMessagesSize(I)V
+
+    return-void
+.end method
+
+.method static synthetic access$1600(Lcom/android/internal/util/StateMachine$SmHandler;)I
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 619
+    invoke-direct {p0}, Lcom/android/internal/util/StateMachine$SmHandler;->getProcessedMessagesSize()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method static synthetic access$1700(Lcom/android/internal/util/StateMachine$SmHandler;)I
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 619
+    invoke-direct {p0}, Lcom/android/internal/util/StateMachine$SmHandler;->getProcessedMessagesCount()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method static synthetic access$1800(Lcom/android/internal/util/StateMachine$SmHandler;I)Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;
+    .locals 1
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 619
+    invoke-direct {p0, p1}, Lcom/android/internal/util/StateMachine$SmHandler;->getProcessedMessageInfo(I)Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method static synthetic access$1100(Lcom/android/internal/util/StateMachine$SmHandler;Lcom/android/internal/util/State;)V
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 648
-    invoke-direct {p0, p1}, Lcom/android/internal/util/StateMachine$SmHandler;->setInitialState(Lcom/android/internal/util/State;)V
-
-    return-void
-.end method
-
-.method static synthetic access$1200(Lcom/android/internal/util/StateMachine$SmHandler;Lcom/android/internal/util/IState;)V
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 648
-    invoke-direct {p0, p1}, Lcom/android/internal/util/StateMachine$SmHandler;->transitionTo(Lcom/android/internal/util/IState;)V
-
-    return-void
-.end method
-
-.method static synthetic access$1300(Lcom/android/internal/util/StateMachine$SmHandler;)Lcom/android/internal/util/StateMachine$SmHandler$HaltingState;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 648
-    iget-object v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mHaltingState:Lcom/android/internal/util/StateMachine$SmHandler$HaltingState;
-
-    return-object v0
-.end method
-
-.method static synthetic access$1400(Lcom/android/internal/util/StateMachine$SmHandler;Landroid/os/Message;)V
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 648
-    invoke-direct {p0, p1}, Lcom/android/internal/util/StateMachine$SmHandler;->deferMessage(Landroid/os/Message;)V
-
-    return-void
-.end method
-
-.method static synthetic access$1500(Lcom/android/internal/util/StateMachine$SmHandler;)Z
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 648
-    iget-boolean v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDbg:Z
-
-    return v0
-.end method
-
-.method static synthetic access$1600(Lcom/android/internal/util/StateMachine$SmHandler;)Lcom/android/internal/util/StateMachine$LogRecords;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 648
-    iget-object v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mLogRecords:Lcom/android/internal/util/StateMachine$LogRecords;
-
-    return-object v0
-.end method
-
-.method static synthetic access$1700(Lcom/android/internal/util/StateMachine$SmHandler;)V
+.method static synthetic access$1900(Lcom/android/internal/util/StateMachine$SmHandler;)V
     .locals 0
     .parameter "x0"
 
     .prologue
-    .line 648
+    .line 619
     invoke-direct {p0}, Lcom/android/internal/util/StateMachine$SmHandler;->quit()V
 
     return-void
 .end method
 
-.method static synthetic access$1800(Lcom/android/internal/util/StateMachine$SmHandler;)V
-    .locals 0
-    .parameter "x0"
-
-    .prologue
-    .line 648
-    invoke-direct {p0}, Lcom/android/internal/util/StateMachine$SmHandler;->quitNow()V
-
-    return-void
-.end method
-
-.method static synthetic access$1900(Lcom/android/internal/util/StateMachine$SmHandler;)Z
+.method static synthetic access$200(Lcom/android/internal/util/StateMachine$SmHandler;)Lcom/android/internal/util/StateMachine;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 648
+    .line 619
+    iget-object v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mSm:Lcom/android/internal/util/StateMachine;
+
+    return-object v0
+.end method
+
+.method static synthetic access$2000(Lcom/android/internal/util/StateMachine$SmHandler;Landroid/os/Message;)Z
+    .locals 1
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 619
+    invoke-direct {p0, p1}, Lcom/android/internal/util/StateMachine$SmHandler;->isQuit(Landroid/os/Message;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method static synthetic access$2100(Lcom/android/internal/util/StateMachine$SmHandler;)Z
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 619
     invoke-direct {p0}, Lcom/android/internal/util/StateMachine$SmHandler;->isDbg()Z
 
     move-result v0
@@ -295,48 +337,37 @@
     return v0
 .end method
 
-.method static synthetic access$2000(Lcom/android/internal/util/StateMachine$SmHandler;Z)V
+.method static synthetic access$2200(Lcom/android/internal/util/StateMachine$SmHandler;Z)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 648
+    .line 619
     invoke-direct {p0, p1}, Lcom/android/internal/util/StateMachine$SmHandler;->setDbg(Z)V
 
     return-void
 .end method
 
-.method static synthetic access$2100(Lcom/android/internal/util/StateMachine$SmHandler;)V
+.method static synthetic access$2300(Lcom/android/internal/util/StateMachine$SmHandler;)V
     .locals 0
     .parameter "x0"
 
     .prologue
-    .line 648
+    .line 619
     invoke-direct {p0}, Lcom/android/internal/util/StateMachine$SmHandler;->completeConstruction()V
 
     return-void
 .end method
 
-.method static synthetic access$300(Lcom/android/internal/util/StateMachine$SmHandler;)Lcom/android/internal/util/StateMachine;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 648
-    iget-object v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mSm:Lcom/android/internal/util/StateMachine;
-
-    return-object v0
-.end method
-
-.method static synthetic access$800(Lcom/android/internal/util/StateMachine$SmHandler;Lcom/android/internal/util/State;Lcom/android/internal/util/State;)Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
+.method static synthetic access$700(Lcom/android/internal/util/StateMachine$SmHandler;Lcom/android/internal/util/State;Lcom/android/internal/util/State;)Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
     .locals 1
     .parameter "x0"
     .parameter "x1"
     .parameter "x2"
 
     .prologue
-    .line 648
+    .line 619
     invoke-direct {p0, p1, p2}, Lcom/android/internal/util/StateMachine$SmHandler;->addState(Lcom/android/internal/util/State;Lcom/android/internal/util/State;)Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
 
     move-result-object v0
@@ -344,13 +375,26 @@
     return-object v0
 .end method
 
-.method static synthetic access$900(Lcom/android/internal/util/StateMachine$SmHandler;)Landroid/os/Message;
+.method static synthetic access$800(Lcom/android/internal/util/StateMachine$SmHandler;)Landroid/os/Message;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 648
+    .line 619
     invoke-direct {p0}, Lcom/android/internal/util/StateMachine$SmHandler;->getCurrentMessage()Landroid/os/Message;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method static synthetic access$900(Lcom/android/internal/util/StateMachine$SmHandler;)Lcom/android/internal/util/IState;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 619
+    invoke-direct {p0}, Lcom/android/internal/util/StateMachine$SmHandler;->getCurrentState()Lcom/android/internal/util/IState;
 
     move-result-object v0
 
@@ -365,12 +409,12 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 1085
+    .line 1060
     iget-boolean v2, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDbg:Z
 
     if-eqz v2, :cond_0
 
-    .line 1086
+    .line 1061
     const-string v3, "StateMachine"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -412,15 +456,15 @@
 
     invoke-static {v3, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1089
+    .line 1064
     :cond_0
     const/4 v0, 0x0
 
-    .line 1090
+    .line 1065
     .local v0, parentStateInfo:Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
     if-eqz p2, :cond_1
 
-    .line 1091
+    .line 1066
     iget-object v2, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mStateInfo:Ljava/util/HashMap;
 
     invoke-virtual {v2, p2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -430,16 +474,16 @@
     .end local v0           #parentStateInfo:Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
     check-cast v0, Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
 
-    .line 1092
+    .line 1067
     .restart local v0       #parentStateInfo:Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
     if-nez v0, :cond_1
 
-    .line 1094
+    .line 1069
     invoke-direct {p0, p2, v5}, Lcom/android/internal/util/StateMachine$SmHandler;->addState(Lcom/android/internal/util/State;Lcom/android/internal/util/State;)Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
 
     move-result-object v0
 
-    .line 1097
+    .line 1072
     :cond_1
     iget-object v2, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mStateInfo:Ljava/util/HashMap;
 
@@ -449,23 +493,23 @@
 
     check-cast v1, Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
 
-    .line 1098
+    .line 1073
     .local v1, stateInfo:Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
     if-nez v1, :cond_2
 
-    .line 1099
+    .line 1074
     new-instance v1, Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
 
     .end local v1           #stateInfo:Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
     invoke-direct {v1, p0, v5}, Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;-><init>(Lcom/android/internal/util/StateMachine$SmHandler;Lcom/android/internal/util/StateMachine$1;)V
 
-    .line 1100
+    .line 1075
     .restart local v1       #stateInfo:Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
     iget-object v2, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mStateInfo:Ljava/util/HashMap;
 
     invoke-virtual {v2, p1, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1104
+    .line 1079
     :cond_2
     iget-object v2, v1, Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;->parentStateInfo:Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
 
@@ -475,7 +519,7 @@
 
     if-eq v2, v0, :cond_4
 
-    .line 1106
+    .line 1081
     new-instance v2, Ljava/lang/RuntimeException;
 
     const-string/jumbo v3, "state already added"
@@ -484,7 +528,7 @@
 
     throw v2
 
-    .line 1086
+    .line 1061
     .end local v0           #parentStateInfo:Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
     .end local v1           #stateInfo:Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
     :cond_3
@@ -494,21 +538,21 @@
 
     goto :goto_0
 
-    .line 1108
+    .line 1083
     .restart local v0       #parentStateInfo:Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
     .restart local v1       #stateInfo:Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
     :cond_4
     iput-object p1, v1, Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;->state:Lcom/android/internal/util/State;
 
-    .line 1109
+    .line 1084
     iput-object v0, v1, Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;->parentStateInfo:Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
 
-    .line 1110
+    .line 1085
     const/4 v2, 0x0
 
     iput-boolean v2, v1, Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;->active:Z
 
-    .line 1111
+    .line 1086
     iget-boolean v2, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDbg:Z
 
     if-eqz v2, :cond_5
@@ -535,7 +579,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1112
+    .line 1087
     :cond_5
     return-object v1
 .end method
@@ -546,70 +590,75 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 841
+    .line 810
+    iget-object v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mSm:Lcom/android/internal/util/StateMachine;
+
+    invoke-virtual {v0}, Lcom/android/internal/util/StateMachine;->quitting()V
+
+    .line 811
     iget-object v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mSm:Lcom/android/internal/util/StateMachine;
 
     #getter for: Lcom/android/internal/util/StateMachine;->mSmThread:Landroid/os/HandlerThread;
-    invoke-static {v0}, Lcom/android/internal/util/StateMachine;->access$400(Lcom/android/internal/util/StateMachine;)Landroid/os/HandlerThread;
+    invoke-static {v0}, Lcom/android/internal/util/StateMachine;->access$300(Lcom/android/internal/util/StateMachine;)Landroid/os/HandlerThread;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 843
+    .line 813
     invoke-virtual {p0}, Lcom/android/internal/util/StateMachine$SmHandler;->getLooper()Landroid/os/Looper;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/os/Looper;->quit()V
 
-    .line 844
+    .line 814
     iget-object v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mSm:Lcom/android/internal/util/StateMachine;
 
     #setter for: Lcom/android/internal/util/StateMachine;->mSmThread:Landroid/os/HandlerThread;
-    invoke-static {v0, v1}, Lcom/android/internal/util/StateMachine;->access$402(Lcom/android/internal/util/StateMachine;Landroid/os/HandlerThread;)Landroid/os/HandlerThread;
+    invoke-static {v0, v1}, Lcom/android/internal/util/StateMachine;->access$302(Lcom/android/internal/util/StateMachine;Landroid/os/HandlerThread;)Landroid/os/HandlerThread;
 
-    .line 847
+    .line 817
     :cond_0
     iget-object v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mSm:Lcom/android/internal/util/StateMachine;
 
     #setter for: Lcom/android/internal/util/StateMachine;->mSmHandler:Lcom/android/internal/util/StateMachine$SmHandler;
-    invoke-static {v0, v1}, Lcom/android/internal/util/StateMachine;->access$502(Lcom/android/internal/util/StateMachine;Lcom/android/internal/util/StateMachine$SmHandler;)Lcom/android/internal/util/StateMachine$SmHandler;
+    invoke-static {v0, v1}, Lcom/android/internal/util/StateMachine;->access$402(Lcom/android/internal/util/StateMachine;Lcom/android/internal/util/StateMachine$SmHandler;)Lcom/android/internal/util/StateMachine$SmHandler;
 
-    .line 848
+    .line 818
     iput-object v1, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mSm:Lcom/android/internal/util/StateMachine;
 
-    .line 849
+    .line 819
     iput-object v1, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mMsg:Landroid/os/Message;
 
-    .line 850
-    iget-object v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mLogRecords:Lcom/android/internal/util/StateMachine$LogRecords;
+    .line 820
+    iget-object v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mProcessedMessages:Lcom/android/internal/util/StateMachine$ProcessedMessages;
 
-    invoke-virtual {v0}, Lcom/android/internal/util/StateMachine$LogRecords;->cleanup()V
+    invoke-virtual {v0}, Lcom/android/internal/util/StateMachine$ProcessedMessages;->cleanup()V
 
-    .line 851
+    .line 821
     iput-object v1, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mStateStack:[Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
 
-    .line 852
+    .line 822
     iput-object v1, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mTempStateStack:[Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
 
-    .line 853
+    .line 823
     iget-object v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mStateInfo:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
-    .line 854
+    .line 824
     iput-object v1, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mInitialState:Lcom/android/internal/util/State;
 
-    .line 855
+    .line 825
     iput-object v1, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDestState:Lcom/android/internal/util/State;
 
-    .line 856
+    .line 826
     iget-object v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDeferredMessages:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 857
+    .line 827
     return-void
 .end method
 
@@ -617,7 +666,7 @@
     .locals 8
 
     .prologue
-    .line 863
+    .line 833
     iget-boolean v5, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDbg:Z
 
     if-eqz v5, :cond_0
@@ -628,11 +677,11 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 869
+    .line 839
     :cond_0
     const/4 v3, 0x0
 
-    .line 870
+    .line 840
     .local v3, maxDepth:I
     iget-object v5, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mStateInfo:Ljava/util/HashMap;
 
@@ -659,11 +708,11 @@
 
     check-cast v4, Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
 
-    .line 871
+    .line 841
     .local v4, si:Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
     const/4 v0, 0x0
 
-    .line 872
+    .line 842
     .local v0, depth:I
     move-object v1, v4
 
@@ -671,24 +720,24 @@
     :goto_1
     if-eqz v1, :cond_2
 
-    .line 873
+    .line 843
     iget-object v1, v1, Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;->parentStateInfo:Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
 
-    .line 872
+    .line 842
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 875
+    .line 845
     :cond_2
     if-ge v3, v0, :cond_1
 
-    .line 876
+    .line 846
     move v3, v0
 
     goto :goto_0
 
-    .line 879
+    .line 849
     .end local v0           #depth:I
     .end local v1           #i:Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
     .end local v4           #si:Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
@@ -719,32 +768,43 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 881
+    .line 851
     :cond_4
     new-array v5, v3, [Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
 
     iput-object v5, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mStateStack:[Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
 
-    .line 882
+    .line 852
     new-array v5, v3, [Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
 
     iput-object v5, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mTempStateStack:[Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
 
-    .line 883
+    .line 853
     invoke-direct {p0}, Lcom/android/internal/util/StateMachine$SmHandler;->setupInitialStateStack()V
 
-    .line 886
+    .line 859
+    const/4 v5, 0x1
+
+    iput-boolean v5, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mIsConstructionCompleted:Z
+
+    .line 860
     const/4 v5, -0x2
 
-    sget-object v6, Lcom/android/internal/util/StateMachine$SmHandler;->mSmHandlerObj:Ljava/lang/Object;
-
-    invoke-virtual {p0, v5, v6}, Lcom/android/internal/util/StateMachine$SmHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {p0, v5}, Lcom/android/internal/util/StateMachine$SmHandler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v5
 
-    invoke-virtual {p0, v5}, Lcom/android/internal/util/StateMachine$SmHandler;->sendMessageAtFrontOfQueue(Landroid/os/Message;)Z
+    iput-object v5, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mMsg:Landroid/os/Message;
 
-    .line 888
+    .line 861
+    const/4 v5, 0x0
+
+    invoke-direct {p0, v5}, Lcom/android/internal/util/StateMachine$SmHandler;->invokeEnterMethods(I)V
+
+    .line 866
+    invoke-direct {p0}, Lcom/android/internal/util/StateMachine$SmHandler;->performTransitions()V
+
+    .line 868
     iget-boolean v5, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDbg:Z
 
     if-eqz v5, :cond_5
@@ -755,7 +815,7 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 889
+    .line 869
     :cond_5
     return-void
 .end method
@@ -765,7 +825,7 @@
     .parameter "msg"
 
     .prologue
-    .line 1143
+    .line 1118
     iget-boolean v1, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDbg:Z
 
     if-eqz v1, :cond_0
@@ -794,22 +854,22 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1146
+    .line 1121
     :cond_0
     invoke-virtual {p0}, Lcom/android/internal/util/StateMachine$SmHandler;->obtainMessage()Landroid/os/Message;
 
     move-result-object v0
 
-    .line 1147
+    .line 1122
     .local v0, newMsg:Landroid/os/Message;
     invoke-virtual {v0, p1}, Landroid/os/Message;->copyFrom(Landroid/os/Message;)V
 
-    .line 1149
+    .line 1124
     iget-object v1, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDeferredMessages:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1150
+    .line 1125
     return-void
 .end method
 
@@ -817,7 +877,7 @@
     .locals 1
 
     .prologue
-    .line 1065
+    .line 1040
     iget-object v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mMsg:Landroid/os/Message;
 
     return-object v0
@@ -827,7 +887,7 @@
     .locals 2
 
     .prologue
-    .line 1072
+    .line 1047
     iget-object v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mStateStack:[Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
 
     iget v1, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mStateStackTopIndex:I
@@ -839,12 +899,55 @@
     return-object v0
 .end method
 
+.method private final getProcessedMessageInfo(I)Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;
+    .locals 1
+    .parameter "index"
+
+    .prologue
+    .line 1165
+    iget-object v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mProcessedMessages:Lcom/android/internal/util/StateMachine$ProcessedMessages;
+
+    invoke-virtual {v0, p1}, Lcom/android/internal/util/StateMachine$ProcessedMessages;->get(I)Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method private final getProcessedMessagesCount()I
+    .locals 1
+
+    .prologue
+    .line 1160
+    iget-object v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mProcessedMessages:Lcom/android/internal/util/StateMachine$ProcessedMessages;
+
+    invoke-virtual {v0}, Lcom/android/internal/util/StateMachine$ProcessedMessages;->count()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method private final getProcessedMessagesSize()I
+    .locals 1
+
+    .prologue
+    .line 1155
+    iget-object v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mProcessedMessages:Lcom/android/internal/util/StateMachine$ProcessedMessages;
+
+    invoke-virtual {v0}, Lcom/android/internal/util/StateMachine$ProcessedMessages;->size()I
+
+    move-result v0
+
+    return v0
+.end method
+
 .method private final invokeEnterMethods(I)V
     .locals 4
     .parameter "stateStackEnteringIndex"
 
     .prologue
-    .line 956
+    .line 931
     move v0, p1
 
     .local v0, i:I
@@ -853,7 +956,7 @@
 
     if-gt v0, v1, :cond_1
 
-    .line 957
+    .line 932
     iget-boolean v1, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDbg:Z
 
     if-eqz v1, :cond_0
@@ -864,7 +967,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v3, "invokeEnterMethods: "
+    const-string v3, "invokeEnterMethods: "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -890,7 +993,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 958
+    .line 933
     :cond_0
     iget-object v1, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mStateStack:[Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
 
@@ -900,7 +1003,7 @@
 
     invoke-virtual {v1}, Lcom/android/internal/util/State;->enter()V
 
-    .line 959
+    .line 934
     iget-object v1, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mStateStack:[Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
 
     aget-object v1, v1, v0
@@ -909,12 +1012,12 @@
 
     iput-boolean v2, v1, Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;->active:Z
 
-    .line 956
+    .line 931
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 961
+    .line 936
     :cond_1
     return-void
 .end method
@@ -924,7 +1027,7 @@
     .parameter "commonStateInfo"
 
     .prologue
-    .line 942
+    .line 917
     :goto_0
     iget v1, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mStateStackTopIndex:I
 
@@ -938,7 +1041,7 @@
 
     if-eq v1, p1, :cond_1
 
-    .line 944
+    .line 919
     iget-object v1, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mStateStack:[Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
 
     iget v2, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mStateStackTopIndex:I
@@ -947,7 +1050,7 @@
 
     iget-object v0, v1, Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;->state:Lcom/android/internal/util/State;
 
-    .line 945
+    .line 920
     .local v0, curState:Lcom/android/internal/util/State;
     iget-boolean v1, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDbg:Z
 
@@ -959,7 +1062,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v3, "invokeExitMethods: "
+    const-string v3, "invokeExitMethods: "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -979,11 +1082,11 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 946
+    .line 921
     :cond_0
     invoke-virtual {v0}, Lcom/android/internal/util/State;->exit()V
 
-    .line 947
+    .line 922
     iget-object v1, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mStateStack:[Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
 
     iget v2, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mStateStackTopIndex:I
@@ -994,7 +1097,7 @@
 
     iput-boolean v2, v1, Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;->active:Z
 
-    .line 948
+    .line 923
     iget v1, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mStateStackTopIndex:I
 
     add-int/lit8 v1, v1, -0x1
@@ -1003,7 +1106,7 @@
 
     goto :goto_0
 
-    .line 950
+    .line 925
     .end local v0           #curState:Lcom/android/internal/util/State;
     :cond_1
     return-void
@@ -1013,7 +1116,7 @@
     .locals 1
 
     .prologue
-    .line 1171
+    .line 1140
     iget-boolean v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDbg:Z
 
     return v0
@@ -1024,7 +1127,7 @@
     .parameter "msg"
 
     .prologue
-    .line 1166
+    .line 1135
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, -0x1
@@ -1033,7 +1136,7 @@
 
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    sget-object v1, Lcom/android/internal/util/StateMachine$SmHandler;->mSmHandlerObj:Ljava/lang/Object;
+    sget-object v1, Lcom/android/internal/util/StateMachine$SmHandler;->mQuitObj:Ljava/lang/Object;
 
     if-ne v0, v1, :cond_0
 
@@ -1052,7 +1155,7 @@
     .locals 5
 
     .prologue
-    .line 973
+    .line 948
     iget-object v2, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDeferredMessages:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
@@ -1065,7 +1168,7 @@
     :goto_0
     if-ltz v1, :cond_1
 
-    .line 974
+    .line 949
     iget-object v2, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDeferredMessages:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1074,7 +1177,7 @@
 
     check-cast v0, Landroid/os/Message;
 
-    .line 975
+    .line 950
     .local v0, curMsg:Landroid/os/Message;
     iget-boolean v2, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDbg:Z
 
@@ -1104,23 +1207,23 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 976
+    .line 951
     :cond_0
     invoke-virtual {p0, v0}, Lcom/android/internal/util/StateMachine$SmHandler;->sendMessageAtFrontOfQueue(Landroid/os/Message;)Z
 
-    .line 973
+    .line 948
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_0
 
-    .line 978
+    .line 953
     .end local v0           #curMsg:Landroid/os/Message;
     :cond_1
     iget-object v2, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDeferredMessages:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
 
-    .line 979
+    .line 954
     return-void
 .end method
 
@@ -1128,27 +1231,27 @@
     .locals 7
 
     .prologue
-    .line 989
+    .line 964
     iget v3, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mStateStackTopIndex:I
 
     add-int/lit8 v2, v3, 0x1
 
-    .line 990
+    .line 965
     .local v2, startingIndex:I
     iget v3, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mTempStateStackCount:I
 
     add-int/lit8 v0, v3, -0x1
 
-    .line 991
+    .line 966
     .local v0, i:I
     move v1, v2
 
-    .line 992
+    .line 967
     .local v1, j:I
     :goto_0
     if-ltz v0, :cond_1
 
-    .line 993
+    .line 968
     iget-boolean v3, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDbg:Z
 
     if-eqz v3, :cond_0
@@ -1185,7 +1288,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 994
+    .line 969
     :cond_0
     iget-object v3, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mStateStack:[Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
 
@@ -1195,26 +1298,26 @@
 
     aput-object v4, v3, v1
 
-    .line 995
+    .line 970
     add-int/lit8 v1, v1, 0x1
 
-    .line 996
+    .line 971
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    .line 999
+    .line 974
     :cond_1
     add-int/lit8 v3, v1, -0x1
 
     iput v3, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mStateStackTopIndex:I
 
-    .line 1000
+    .line 975
     iget-boolean v3, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDbg:Z
 
     if-eqz v3, :cond_2
 
-    .line 1001
+    .line 976
     const-string v3, "StateMachine"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1271,26 +1374,29 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1005
+    .line 980
     :cond_2
     return v2
 .end method
 
-.method private performTransitions()V
+.method private declared-synchronized performTransitions()V
     .locals 5
 
     .prologue
-    .line 784
+    .line 756
+    monitor-enter p0
+
     const/4 v1, 0x0
 
-    .line 785
+    .line 757
     .local v1, destState:Lcom/android/internal/util/State;
     :goto_0
+    :try_start_0
     iget-object v3, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDestState:Lcom/android/internal/util/State;
 
     if-eqz v3, :cond_1
 
-    .line 786
+    .line 758
     iget-boolean v3, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDbg:Z
 
     if-eqz v3, :cond_0
@@ -1301,72 +1407,85 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 792
+    .line 764
     :cond_0
     iget-object v1, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDestState:Lcom/android/internal/util/State;
 
-    .line 793
+    .line 765
     const/4 v3, 0x0
 
     iput-object v3, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDestState:Lcom/android/internal/util/State;
 
-    .line 800
+    .line 772
     invoke-direct {p0, v1}, Lcom/android/internal/util/StateMachine$SmHandler;->setupTempStateStackWithStatesToEnter(Lcom/android/internal/util/State;)Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
 
     move-result-object v0
 
-    .line 801
+    .line 773
     .local v0, commonStateInfo:Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
     invoke-direct {p0, v0}, Lcom/android/internal/util/StateMachine$SmHandler;->invokeExitMethods(Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;)V
 
-    .line 802
+    .line 774
     invoke-direct {p0}, Lcom/android/internal/util/StateMachine$SmHandler;->moveTempStateStackToStateStack()I
 
     move-result v2
 
-    .line 803
+    .line 775
     .local v2, stateStackEnteringIndex:I
     invoke-direct {p0, v2}, Lcom/android/internal/util/StateMachine$SmHandler;->invokeEnterMethods(I)V
 
-    .line 812
+    .line 784
     invoke-direct {p0}, Lcom/android/internal/util/StateMachine$SmHandler;->moveDeferredMessageAtFrontOfQueue()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
 
-    .line 819
+    .line 756
     .end local v0           #commonStateInfo:Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
     .end local v2           #stateStackEnteringIndex:I
+    :catchall_0
+    move-exception v3
+
+    monitor-exit p0
+
+    throw v3
+
+    .line 791
     :cond_1
     if-eqz v1, :cond_2
 
-    .line 820
+    .line 792
+    :try_start_1
     iget-object v3, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mQuittingState:Lcom/android/internal/util/StateMachine$SmHandler$QuittingState;
 
     if-ne v1, v3, :cond_3
 
-    .line 824
-    iget-object v3, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mSm:Lcom/android/internal/util/StateMachine;
-
-    invoke-virtual {v3}, Lcom/android/internal/util/StateMachine;->onQuitting()V
-
-    .line 825
+    .line 793
     invoke-direct {p0}, Lcom/android/internal/util/StateMachine$SmHandler;->cleanupAfterQuitting()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 835
+    .line 804
     :cond_2
     :goto_1
+    monitor-exit p0
+
     return-void
 
-    .line 826
+    .line 795
     :cond_3
+    :try_start_2
     iget-object v3, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mHaltingState:Lcom/android/internal/util/StateMachine$SmHandler$HaltingState;
 
     if-ne v1, v3, :cond_2
 
-    .line 832
+    .line 801
     iget-object v3, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mSm:Lcom/android/internal/util/StateMachine;
 
-    invoke-virtual {v3}, Lcom/android/internal/util/StateMachine;->onHalting()V
+    invoke-virtual {v3}, Lcom/android/internal/util/StateMachine;->halting()V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     goto :goto_1
 .end method
@@ -1378,20 +1497,20 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 897
+    .line 877
     iget-object v2, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mStateStack:[Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
 
     iget v3, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mStateStackTopIndex:I
 
     aget-object v0, v2, v3
 
-    .line 898
+    .line 878
     .local v0, curStateInfo:Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
     iget-boolean v2, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDbg:Z
 
     if-eqz v2, :cond_0
 
-    .line 899
+    .line 879
     const-string v2, "StateMachine"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1420,94 +1539,45 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 902
+    .line 881
     :cond_0
-    invoke-direct {p0, p1}, Lcom/android/internal/util/StateMachine$SmHandler;->isQuit(Landroid/os/Message;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_3
-
-    .line 903
-    iget-object v2, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mQuittingState:Lcom/android/internal/util/StateMachine$SmHandler$QuittingState;
-
-    invoke-direct {p0, v2}, Lcom/android/internal/util/StateMachine$SmHandler;->transitionTo(Lcom/android/internal/util/IState;)V
-
-    .line 935
-    :cond_1
     :goto_0
-    return-void
-
-    .line 917
-    :cond_2
-    iget-boolean v2, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDbg:Z
-
-    if-eqz v2, :cond_3
-
-    .line 918
-    const-string v2, "StateMachine"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v4, "processMsg: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget-object v4, v0, Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;->state:Lcom/android/internal/util/State;
-
-    invoke-virtual {v4}, Lcom/android/internal/util/State;->getName()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 905
-    :cond_3
     iget-object v2, v0, Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;->state:Lcom/android/internal/util/State;
 
     invoke-virtual {v2, p1}, Lcom/android/internal/util/State;->processMessage(Landroid/os/Message;)Z
 
     move-result v2
 
-    if-nez v2, :cond_4
+    if-nez v2, :cond_1
 
-    .line 909
+    .line 885
     iget-object v0, v0, Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;->parentStateInfo:Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
 
-    .line 910
+    .line 886
     if-nez v0, :cond_2
 
-    .line 914
+    .line 890
     iget-object v2, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mSm:Lcom/android/internal/util/StateMachine;
 
     invoke-virtual {v2, p1}, Lcom/android/internal/util/StateMachine;->unhandledMessage(Landroid/os/Message;)V
 
-    .line 925
-    :cond_4
-    iget-object v2, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mSm:Lcom/android/internal/util/StateMachine;
-
-    invoke-virtual {v2, p1}, Lcom/android/internal/util/StateMachine;->recordLogRec(Landroid/os/Message;)Z
+    .line 891
+    invoke-direct {p0, p1}, Lcom/android/internal/util/StateMachine$SmHandler;->isQuit(Landroid/os/Message;)Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    .line 926
-    if-eqz v0, :cond_5
+    .line 892
+    iget-object v2, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mQuittingState:Lcom/android/internal/util/StateMachine$SmHandler$QuittingState;
 
-    .line 927
+    invoke-direct {p0, v2}, Lcom/android/internal/util/StateMachine$SmHandler;->transitionTo(Lcom/android/internal/util/IState;)V
+
+    .line 904
+    :cond_1
+    if-eqz v0, :cond_3
+
+    .line 905
     iget-object v2, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mStateStack:[Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
 
     iget v3, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mStateStackTopIndex:I
@@ -1516,43 +1586,70 @@
 
     iget-object v1, v2, Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;->state:Lcom/android/internal/util/State;
 
-    .line 928
+    .line 906
     .local v1, orgState:Lcom/android/internal/util/State;
-    iget-object v2, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mLogRecords:Lcom/android/internal/util/StateMachine$LogRecords;
+    iget-object v2, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mProcessedMessages:Lcom/android/internal/util/StateMachine$ProcessedMessages;
 
-    iget-object v3, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mSm:Lcom/android/internal/util/StateMachine;
+    iget-object v3, v0, Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;->state:Lcom/android/internal/util/State;
 
-    invoke-virtual {v3, p1}, Lcom/android/internal/util/StateMachine;->getLogRecString(Landroid/os/Message;)Ljava/lang/String;
+    invoke-virtual {v2, p1, v3, v1}, Lcom/android/internal/util/StateMachine$ProcessedMessages;->add(Landroid/os/Message;Lcom/android/internal/util/State;Lcom/android/internal/util/State;)V
+
+    .line 910
+    .end local v1           #orgState:Lcom/android/internal/util/State;
+    :goto_1
+    return-void
+
+    .line 896
+    :cond_2
+    iget-boolean v2, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDbg:Z
+
+    if-eqz v2, :cond_0
+
+    .line 897
+    const-string v2, "StateMachine"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "processMsg: "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
     iget-object v4, v0, Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;->state:Lcom/android/internal/util/State;
 
-    invoke-virtual {v2, p1, v3, v4, v1}, Lcom/android/internal/util/StateMachine$LogRecords;->add(Landroid/os/Message;Ljava/lang/String;Lcom/android/internal/util/State;Lcom/android/internal/util/State;)V
+    invoke-virtual {v4}, Lcom/android/internal/util/State;->getName()Ljava/lang/String;
 
-    goto :goto_0
+    move-result-object v4
 
-    .line 931
-    .end local v1           #orgState:Lcom/android/internal/util/State;
-    :cond_5
-    iget-object v2, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mLogRecords:Lcom/android/internal/util/StateMachine$LogRecords;
-
-    iget-object v3, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mSm:Lcom/android/internal/util/StateMachine;
-
-    invoke-virtual {v3, p1}, Lcom/android/internal/util/StateMachine;->getLogRecString(Landroid/os/Message;)Ljava/lang/String;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
-    invoke-virtual {v2, p1, v3, v5, v5}, Lcom/android/internal/util/StateMachine$LogRecords;->add(Landroid/os/Message;Ljava/lang/String;Lcom/android/internal/util/State;Lcom/android/internal/util/State;)V
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
+
+    .line 908
+    :cond_3
+    iget-object v2, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mProcessedMessages:Lcom/android/internal/util/StateMachine$ProcessedMessages;
+
+    invoke-virtual {v2, p1, v5, v5}, Lcom/android/internal/util/StateMachine$ProcessedMessages;->add(Landroid/os/Message;Lcom/android/internal/util/State;Lcom/android/internal/util/State;)V
+
+    goto :goto_1
 .end method
 
 .method private final quit()V
     .locals 2
 
     .prologue
-    .line 1154
+    .line 1129
     iget-boolean v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDbg:Z
 
     if-eqz v0, :cond_0
@@ -1563,11 +1660,11 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1155
+    .line 1130
     :cond_0
     const/4 v0, -0x1
 
-    sget-object v1, Lcom/android/internal/util/StateMachine$SmHandler;->mSmHandlerObj:Ljava/lang/Object;
+    sget-object v1, Lcom/android/internal/util/StateMachine$SmHandler;->mQuitObj:Ljava/lang/Object;
 
     invoke-virtual {p0, v0, v1}, Lcom/android/internal/util/StateMachine$SmHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
@@ -1575,38 +1672,7 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/util/StateMachine$SmHandler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 1156
-    return-void
-.end method
-
-.method private final quitNow()V
-    .locals 2
-
-    .prologue
-    .line 1160
-    iget-boolean v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDbg:Z
-
-    if-eqz v0, :cond_0
-
-    const-string v0, "StateMachine"
-
-    const-string v1, "abort:"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1161
-    :cond_0
-    const/4 v0, -0x1
-
-    sget-object v1, Lcom/android/internal/util/StateMachine$SmHandler;->mSmHandlerObj:Ljava/lang/Object;
-
-    invoke-virtual {p0, v0, v1}, Lcom/android/internal/util/StateMachine$SmHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lcom/android/internal/util/StateMachine$SmHandler;->sendMessageAtFrontOfQueue(Landroid/os/Message;)Z
-
-    .line 1162
+    .line 1131
     return-void
 .end method
 
@@ -1615,10 +1681,10 @@
     .parameter "dbg"
 
     .prologue
-    .line 1176
+    .line 1145
     iput-boolean p1, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDbg:Z
 
-    .line 1177
+    .line 1146
     return-void
 .end method
 
@@ -1627,7 +1693,7 @@
     .parameter "initialState"
 
     .prologue
-    .line 1131
+    .line 1106
     iget-boolean v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDbg:Z
 
     if-eqz v0, :cond_0
@@ -1638,7 +1704,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "setInitialState: initialState="
+    const-string/jumbo v2, "setInitialState: initialState"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1658,11 +1724,25 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1132
+    .line 1107
     :cond_0
     iput-object p1, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mInitialState:Lcom/android/internal/util/State;
 
-    .line 1133
+    .line 1108
+    return-void
+.end method
+
+.method private final setProcessedMessagesSize(I)V
+    .locals 1
+    .parameter "maxSize"
+
+    .prologue
+    .line 1150
+    iget-object v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mProcessedMessages:Lcom/android/internal/util/StateMachine$ProcessedMessages;
+
+    invoke-virtual {v0, p1}, Lcom/android/internal/util/StateMachine$ProcessedMessages;->setSize(I)V
+
+    .line 1151
     return-void
 .end method
 
@@ -1670,12 +1750,12 @@
     .locals 4
 
     .prologue
-    .line 1044
+    .line 1019
     iget-boolean v1, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDbg:Z
 
     if-eqz v1, :cond_0
 
-    .line 1045
+    .line 1020
     const-string v1, "StateMachine"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1704,7 +1784,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1049
+    .line 1024
     :cond_0
     iget-object v1, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mStateInfo:Ljava/util/HashMap;
 
@@ -1716,7 +1796,7 @@
 
     check-cast v0, Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
 
-    .line 1050
+    .line 1025
     .local v0, curStateInfo:Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
     const/4 v1, 0x0
 
@@ -1725,17 +1805,17 @@
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 1051
+    .line 1026
     iget-object v1, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mTempStateStack:[Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
 
     iget v2, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mTempStateStackCount:I
 
     aput-object v0, v1, v2
 
-    .line 1052
+    .line 1027
     iget-object v0, v0, Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;->parentStateInfo:Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
 
-    .line 1050
+    .line 1025
     iget v1, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mTempStateStackCount:I
 
     add-int/lit8 v1, v1, 0x1
@@ -1744,16 +1824,16 @@
 
     goto :goto_0
 
-    .line 1056
+    .line 1031
     :cond_1
     const/4 v1, -0x1
 
     iput v1, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mStateStackTopIndex:I
 
-    .line 1058
+    .line 1033
     invoke-direct {p0}, Lcom/android/internal/util/StateMachine$SmHandler;->moveTempStateStackToStateStack()I
 
-    .line 1059
+    .line 1034
     return-void
 .end method
 
@@ -1762,12 +1842,12 @@
     .parameter "destState"
 
     .prologue
-    .line 1026
+    .line 1001
     const/4 v1, 0x0
 
     iput v1, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mTempStateStackCount:I
 
-    .line 1027
+    .line 1002
     iget-object v1, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mStateInfo:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1776,7 +1856,7 @@
 
     check-cast v0, Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
 
-    .line 1029
+    .line 1004
     .local v0, curStateInfo:Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
     :cond_0
     iget-object v1, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mTempStateStack:[Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
@@ -1789,23 +1869,23 @@
 
     aput-object v0, v1, v2
 
-    .line 1030
+    .line 1005
     iget-object v0, v0, Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;->parentStateInfo:Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;
 
-    .line 1031
+    .line 1006
     if-eqz v0, :cond_1
 
     iget-boolean v1, v0, Lcom/android/internal/util/StateMachine$SmHandler$StateInfo;->active:Z
 
     if-eqz v1, :cond_0
 
-    .line 1033
+    .line 1008
     :cond_1
     iget-boolean v1, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDbg:Z
 
     if-eqz v1, :cond_2
 
-    .line 1034
+    .line 1009
     const-string v1, "StateMachine"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1840,7 +1920,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1037
+    .line 1012
     :cond_2
     return-object v0
 .end method
@@ -1850,13 +1930,13 @@
     .parameter "destState"
 
     .prologue
-    .line 1137
+    .line 1112
     check-cast p1, Lcom/android/internal/util/State;
 
     .end local p1
     iput-object p1, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDestState:Lcom/android/internal/util/State;
 
-    .line 1138
+    .line 1113
     iget-boolean v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDbg:Z
 
     if-eqz v0, :cond_0
@@ -1867,7 +1947,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "transitionTo: destState="
+    const-string v2, "StateMachine.transitionTo EX destState"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1889,7 +1969,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1139
+    .line 1114
     :cond_0
     return-void
 .end method
@@ -1901,7 +1981,7 @@
     .parameter "msg"
 
     .prologue
-    .line 753
+    .line 724
     iget-boolean v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDbg:Z
 
     if-eqz v0, :cond_0
@@ -1930,80 +2010,23 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 756
+    .line 727
     :cond_0
     iput-object p1, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mMsg:Landroid/os/Message;
 
-    .line 758
+    .line 732
     iget-boolean v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mIsConstructionCompleted:Z
 
-    if-eqz v0, :cond_2
+    if-nez v0, :cond_2
 
-    .line 760
-    invoke-direct {p0, p1}, Lcom/android/internal/util/StateMachine$SmHandler;->processMsg(Landroid/os/Message;)V
-
-    .line 770
-    :goto_0
-    invoke-direct {p0}, Lcom/android/internal/util/StateMachine$SmHandler;->performTransitions()V
-
-    .line 772
-    iget-boolean v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDbg:Z
-
-    if-eqz v0, :cond_1
-
+    .line 733
     const-string v0, "StateMachine"
-
-    const-string v1, "handleMessage: X"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 773
-    :cond_1
-    return-void
-
-    .line 761
-    :cond_2
-    iget-boolean v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mIsConstructionCompleted:Z
-
-    if-nez v0, :cond_3
-
-    iget-object v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mMsg:Landroid/os/Message;
-
-    iget v0, v0, Landroid/os/Message;->what:I
-
-    const/4 v1, -0x2
-
-    if-ne v0, v1, :cond_3
-
-    iget-object v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mMsg:Landroid/os/Message;
-
-    iget-object v0, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    sget-object v1, Lcom/android/internal/util/StateMachine$SmHandler;->mSmHandlerObj:Ljava/lang/Object;
-
-    if-ne v0, v1, :cond_3
-
-    .line 764
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mIsConstructionCompleted:Z
-
-    .line 765
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0}, Lcom/android/internal/util/StateMachine$SmHandler;->invokeEnterMethods(I)V
-
-    goto :goto_0
-
-    .line 767
-    :cond_3
-    new-instance v0, Ljava/lang/RuntimeException;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "StateMachine.handleMessage: The start method not called, received msg: "
+    const-string v2, "The start method not called, ignore msg: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2017,7 +2040,30 @@
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    throw v0
+    .line 745
+    :cond_1
+    :goto_0
+    return-void
+
+    .line 741
+    :cond_2
+    invoke-direct {p0, p1}, Lcom/android/internal/util/StateMachine$SmHandler;->processMsg(Landroid/os/Message;)V
+
+    .line 742
+    invoke-direct {p0}, Lcom/android/internal/util/StateMachine$SmHandler;->performTransitions()V
+
+    .line 744
+    iget-boolean v0, p0, Lcom/android/internal/util/StateMachine$SmHandler;->mDbg:Z
+
+    if-eqz v0, :cond_1
+
+    const-string v0, "StateMachine"
+
+    const-string v1, "handleMessage: X"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
 .end method

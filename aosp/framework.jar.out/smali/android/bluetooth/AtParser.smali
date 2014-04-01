@@ -47,7 +47,7 @@
 
     .prologue
     .line 103
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 104
     new-instance v0, Ljava/util/HashMap;
@@ -630,14 +630,9 @@
     :cond_5
     const/16 v10, 0x2b
 
-    if-eq v1, v10, :cond_6
-
-    const/16 v10, 0x25
-
-    if-ne v1, v10, :cond_d
+    if-ne v1, v10, :cond_c
 
     .line 299
-    :cond_6
     add-int/lit8 v10, v6, 0x1
 
     invoke-static {v7, v10}, Landroid/bluetooth/AtParser;->findEndExtendedName(Ljava/lang/String;I)I
@@ -658,7 +653,7 @@
 
     move-result v10
 
-    if-nez v10, :cond_7
+    if-nez v10, :cond_6
 
     .line 303
     new-instance v10, Landroid/bluetooth/AtCommandResult;
@@ -672,7 +667,7 @@
     goto/16 :goto_1
 
     .line 307
-    :cond_7
+    :cond_6
     iget-object v10, p0, Landroid/bluetooth/AtParser;->mExtHandlers:Ljava/util/HashMap;
 
     invoke-virtual {v10, v2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -691,7 +686,7 @@
 
     .line 318
     .local v3, endIndex:I
-    if-lt v5, v3, :cond_8
+    if-lt v5, v3, :cond_7
 
     .line 319
     const/4 v9, 0x0
@@ -717,14 +712,14 @@
 
     .line 320
     .end local v9           #type:I
-    :cond_8
+    :cond_7
     invoke-virtual {v7, v5}, Ljava/lang/String;->charAt(I)C
 
     move-result v10
 
     const/16 v11, 0x3f
 
-    if-ne v10, v11, :cond_9
+    if-ne v10, v11, :cond_8
 
     .line 321
     const/4 v9, 0x1
@@ -734,19 +729,19 @@
 
     .line 322
     .end local v9           #type:I
-    :cond_9
+    :cond_8
     invoke-virtual {v7, v5}, Ljava/lang/String;->charAt(I)C
 
     move-result v10
 
     const/16 v11, 0x3d
 
-    if-ne v10, v11, :cond_c
+    if-ne v10, v11, :cond_b
 
     .line 323
     add-int/lit8 v10, v5, 0x1
 
-    if-ge v10, v3, :cond_b
+    if-ge v10, v3, :cond_a
 
     .line 324
     add-int/lit8 v10, v5, 0x1
@@ -757,7 +752,7 @@
 
     const/16 v11, 0x3f
 
-    if-ne v10, v11, :cond_a
+    if-ne v10, v11, :cond_9
 
     .line 325
     const/4 v9, 0x3
@@ -767,7 +762,7 @@
 
     .line 327
     .end local v9           #type:I
-    :cond_a
+    :cond_9
     const/4 v9, 0x2
 
     .restart local v9       #type:I
@@ -775,7 +770,7 @@
 
     .line 330
     .end local v9           #type:I
-    :cond_b
+    :cond_a
     const/4 v9, 0x2
 
     .restart local v9       #type:I
@@ -783,7 +778,7 @@
 
     .line 333
     .end local v9           #type:I
-    :cond_c
+    :cond_b
     const/4 v9, 0x0
 
     .restart local v9       #type:I
@@ -848,7 +843,7 @@
     .end local v4           #handler:Landroid/bluetooth/AtCommandHandler;
     .end local v5           #i:I
     .end local v9           #type:I
-    :cond_d
+    :cond_c
     add-int/lit8 v6, v6, 0x1
 
     goto/16 :goto_2

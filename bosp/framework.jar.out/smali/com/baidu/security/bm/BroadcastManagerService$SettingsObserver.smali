@@ -32,13 +32,13 @@
     .parameter "context"
 
     .prologue
-    .line 1048
+    .line 1047
     iput-object p1, p0, Lcom/baidu/security/bm/BroadcastManagerService$SettingsObserver;->this$0:Lcom/baidu/security/bm/BroadcastManagerService;
 
-    .line 1049
+    .line 1048
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 1045
+    .line 1044
     sget-object v0, Lcom/baidu/security/bm/AutoLaunchController;->SYS_BLACK_KEY:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -47,7 +47,7 @@
 
     iput-object v0, p0, Lcom/baidu/security/bm/BroadcastManagerService$SettingsObserver;->mSysBlack:Landroid/net/Uri;
 
-    .line 1046
+    .line 1045
     sget-object v0, Lcom/baidu/security/bm/AutoLaunchController;->THIRD_WHITE_KEY:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -56,10 +56,10 @@
 
     iput-object v0, p0, Lcom/baidu/security/bm/BroadcastManagerService$SettingsObserver;->mThirdWhite:Landroid/net/Uri;
 
-    .line 1050
+    .line 1049
     iput-object p3, p0, Lcom/baidu/security/bm/BroadcastManagerService$SettingsObserver;->mContext:Landroid/content/Context;
 
-    .line 1051
+    .line 1050
     return-void
 .end method
 
@@ -70,12 +70,12 @@
     .parameter "selfChange"
 
     .prologue
-    .line 1065
+    .line 1064
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Lcom/baidu/security/bm/BroadcastManagerService$SettingsObserver;->onChange(ZLandroid/net/Uri;)V
 
-    .line 1066
+    .line 1065
     return-void
 .end method
 
@@ -89,7 +89,7 @@
 
     const/4 v3, 0x6
 
-    .line 1073
+    .line 1071
     iget-object v2, p0, Lcom/baidu/security/bm/BroadcastManagerService$SettingsObserver;->mSysBlack:Landroid/net/Uri;
 
     invoke-virtual {v2, p2}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
@@ -98,7 +98,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 1074
+    .line 1072
     iget-object v2, p0, Lcom/baidu/security/bm/BroadcastManagerService$SettingsObserver;->this$0:Lcom/baidu/security/bm/BroadcastManagerService;
 
     #getter for: Lcom/baidu/security/bm/BroadcastManagerService;->mHandler:Lcom/baidu/security/bm/BroadcastManagerService$BlacklistHandler;
@@ -110,7 +110,7 @@
 
     move-result-object v0
 
-    .line 1075
+    .line 1073
     .local v0, msg:Landroid/os/Message;
     iget-object v2, p0, Lcom/baidu/security/bm/BroadcastManagerService$SettingsObserver;->this$0:Lcom/baidu/security/bm/BroadcastManagerService;
 
@@ -121,11 +121,11 @@
 
     invoke-virtual {v2, v0}, Lcom/baidu/security/bm/BroadcastManagerService$BlacklistHandler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 1085
+    .line 1083
     :goto_0
     return-void
 
-    .line 1076
+    .line 1074
     .end local v0           #msg:Landroid/os/Message;
     :cond_0
     iget-object v2, p0, Lcom/baidu/security/bm/BroadcastManagerService$SettingsObserver;->mThirdWhite:Landroid/net/Uri;
@@ -136,7 +136,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 1077
+    .line 1075
     iget-object v2, p0, Lcom/baidu/security/bm/BroadcastManagerService$SettingsObserver;->this$0:Lcom/baidu/security/bm/BroadcastManagerService;
 
     #getter for: Lcom/baidu/security/bm/BroadcastManagerService;->mHandler:Lcom/baidu/security/bm/BroadcastManagerService$BlacklistHandler;
@@ -148,7 +148,7 @@
 
     move-result-object v0
 
-    .line 1078
+    .line 1076
     .restart local v0       #msg:Landroid/os/Message;
     iget-object v2, p0, Lcom/baidu/security/bm/BroadcastManagerService$SettingsObserver;->this$0:Lcom/baidu/security/bm/BroadcastManagerService;
 
@@ -161,7 +161,7 @@
 
     goto :goto_0
 
-    .line 1080
+    .line 1078
     .end local v0           #msg:Landroid/os/Message;
     :cond_1
     iget-object v2, p0, Lcom/baidu/security/bm/BroadcastManagerService$SettingsObserver;->this$0:Lcom/baidu/security/bm/BroadcastManagerService;
@@ -175,7 +175,7 @@
 
     move-result-object v0
 
-    .line 1081
+    .line 1079
     .restart local v0       #msg:Landroid/os/Message;
     iget-object v2, p0, Lcom/baidu/security/bm/BroadcastManagerService$SettingsObserver;->this$0:Lcom/baidu/security/bm/BroadcastManagerService;
 
@@ -188,7 +188,7 @@
 
     move-result-object v1
 
-    .line 1082
+    .line 1080
     .local v1, msg2:Landroid/os/Message;
     iget-object v2, p0, Lcom/baidu/security/bm/BroadcastManagerService$SettingsObserver;->this$0:Lcom/baidu/security/bm/BroadcastManagerService;
 
@@ -199,7 +199,7 @@
 
     invoke-virtual {v2, v0}, Lcom/baidu/security/bm/BroadcastManagerService$BlacklistHandler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 1083
+    .line 1081
     iget-object v2, p0, Lcom/baidu/security/bm/BroadcastManagerService$SettingsObserver;->this$0:Lcom/baidu/security/bm/BroadcastManagerService;
 
     #getter for: Lcom/baidu/security/bm/BroadcastManagerService;->mHandler:Lcom/baidu/security/bm/BroadcastManagerService$BlacklistHandler;
@@ -218,25 +218,25 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1054
+    .line 1053
     iget-object v1, p0, Lcom/baidu/security/bm/BroadcastManagerService$SettingsObserver;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 1055
+    .line 1054
     .local v0, resolver:Landroid/content/ContentResolver;
     iget-object v1, p0, Lcom/baidu/security/bm/BroadcastManagerService$SettingsObserver;->mSysBlack:Landroid/net/Uri;
 
     invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 1056
+    .line 1055
     iget-object v1, p0, Lcom/baidu/security/bm/BroadcastManagerService$SettingsObserver;->mThirdWhite:Landroid/net/Uri;
 
     invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 1057
+    .line 1056
     return-void
 .end method
 
@@ -244,7 +244,7 @@
     .locals 1
 
     .prologue
-    .line 1060
+    .line 1059
     iget-object v0, p0, Lcom/baidu/security/bm/BroadcastManagerService$SettingsObserver;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -253,6 +253,6 @@
 
     invoke-virtual {v0, p0}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 1061
+    .line 1060
     return-void
 .end method

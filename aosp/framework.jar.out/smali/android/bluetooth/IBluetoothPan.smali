@@ -15,7 +15,7 @@
 
 
 # virtual methods
-.method public abstract connect(Landroid/bluetooth/BluetoothDevice;)Z
+.method public abstract connect(Landroid/bluetooth/BluetoothDevice;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -23,7 +23,7 @@
     .end annotation
 .end method
 
-.method public abstract disconnect(Landroid/bluetooth/BluetoothDevice;)Z
+.method public abstract disconnect(Landroid/bluetooth/BluetoothDevice;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -49,14 +49,6 @@
     .end annotation
 .end method
 
-.method public abstract getConnectionState(Landroid/bluetooth/BluetoothDevice;)I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract getDevicesMatchingConnectionStates([I)Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -68,6 +60,14 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract getState(Landroid/bluetooth/BluetoothDevice;)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

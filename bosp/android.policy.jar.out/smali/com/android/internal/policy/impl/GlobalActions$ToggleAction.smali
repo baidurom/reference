@@ -36,48 +36,10 @@
 
 .field protected mEnabledStatusMessageResId:I
 
-.field protected mMessageResId:I
-
 .field protected mState:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
 
 
 # direct methods
-.method public constructor <init>(IIIII)V
-    .locals 1
-    .parameter "enabledIconResId"
-    .parameter "disabledIconResid"
-    .parameter "message"
-    .parameter "enabledStatusMessageResId"
-    .parameter "disabledStatusMessageResId"
-
-    .prologue
-    .line 838
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 816
-    sget-object v0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;->Off:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
-
-    iput-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->mState:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
-
-    .line 839
-    iput p1, p0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->mEnabledIconResId:I
-
-    .line 840
-    iput p2, p0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->mDisabledIconResid:I
-
-    .line 841
-    iput p3, p0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->mMessageResId:I
-
-    .line 842
-    iput p4, p0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->mEnabledStatusMessageResId:I
-
-    .line 843
-    iput p5, p0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->mDisabledStatusMessageResId:I
-
-    .line 844
-    return-void
-.end method
-
 .method public constructor <init>(IIIIII)V
     .locals 1
     .parameter "enabledIconResId"
@@ -88,33 +50,33 @@
     .parameter "disabledStatusMessageResId"
 
     .prologue
-    .line 851
+    .line 559
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 816
+    .line 537
     sget-object v0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;->Off:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->mState:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
 
-    .line 852
+    .line 560
     iput p1, p0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->mEnabledIconResId:I
 
-    .line 853
+    .line 561
     iput p2, p0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->mDisabledIconResid:I
 
-    .line 854
+    .line 562
     iput p3, p0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->mEnabledMessageResId:I
 
-    .line 855
+    .line 563
     iput p4, p0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->mDisabledMessageResId:I
 
-    .line 856
+    .line 564
     iput p5, p0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->mEnabledStatusMessageResId:I
 
-    .line 857
+    .line 565
     iput p6, p0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->mDisabledStatusMessageResId:I
 
-    .line 858
+    .line 566
     return-void
 .end method
 
@@ -125,7 +87,7 @@
     .parameter "buttonOn"
 
     .prologue
-    .line 947
+    .line 634
     if-eqz p1, :cond_0
 
     sget-object v0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;->On:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
@@ -133,10 +95,10 @@
     :goto_0
     iput-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->mState:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
 
-    .line 948
+    .line 635
     return-void
 
-    .line 947
+    .line 634
     :cond_0
     sget-object v0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;->Off:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
 
@@ -153,17 +115,17 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 870
+    .line 578
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->willCreate()V
 
-    .line 872
+    .line 580
     const v6, #layout@global_actions_item#t
 
     invoke-virtual {p4, v6, p3, v7}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v5
 
-    .line 875
+    .line 583
     .local v5, v:Landroid/view/View;
     const v6, #id@icon#t
 
@@ -173,7 +135,7 @@
 
     check-cast v1, Landroid/widget/ImageView;
 
-    .line 876
+    .line 584
     .local v1, icon:Landroid/widget/ImageView;
     const v6, #id@message#t
 
@@ -183,7 +145,7 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    .line 877
+    .line 585
     .local v2, messageView:Landroid/widget/TextView;
     const v6, #id@status#t
 
@@ -193,13 +155,13 @@
 
     check-cast v4, Landroid/widget/TextView;
 
-    .line 878
+    .line 586
     .local v4, statusView:Landroid/widget/TextView;
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->isEnabled()Z
 
     move-result v0
 
-    .line 880
+    .line 590
     .local v0, enabled:Z
     iget-object v6, p0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->mState:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
 
@@ -216,35 +178,32 @@
     :cond_0
     const/4 v3, 0x1
 
-    .line 881
+    .line 591
     .local v3, on:Z
     :goto_0
     if-eqz v2, :cond_1
 
-    .line 882
-    iget v6, p0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->mMessageResId:I
+    .line 592
+    if-eqz v3, :cond_5
 
-    if-eqz v6, :cond_5
+    iget v6, p0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->mEnabledMessageResId:I
 
-    .line 883
-    iget v6, p0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->mMessageResId:I
-
+    :goto_1
     invoke-virtual {v2, v6}, Landroid/widget/TextView;->setText(I)V
 
-    .line 887
-    :goto_1
+    .line 593
     invoke-virtual {v2, v0}, Landroid/widget/TextView;->setEnabled(Z)V
 
-    .line 890
+    .line 596
     :cond_1
     if-eqz v1, :cond_2
 
-    .line 891
+    .line 597
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v8
 
-    if-eqz v3, :cond_7
+    if-eqz v3, :cond_6
 
     iget v6, p0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->mEnabledIconResId:I
 
@@ -255,128 +214,66 @@
 
     invoke-virtual {v1, v6}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 893
+    .line 599
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setEnabled(Z)V
 
-    .line 896
+    .line 602
     :cond_2
     if-eqz v4, :cond_3
 
-    .line 897
-    if-eqz v3, :cond_8
+    .line 603
+    if-eqz v3, :cond_7
 
     iget v6, p0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->mEnabledStatusMessageResId:I
 
     :goto_3
     invoke-virtual {v4, v6}, Landroid/widget/TextView;->setText(I)V
 
-    .line 898
+    .line 604
     invoke-virtual {v4, v7}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 899
+    .line 605
     invoke-virtual {v4, v0}, Landroid/widget/TextView;->setEnabled(Z)V
 
-    .line 901
+    .line 607
     :cond_3
     invoke-virtual {v5, v0}, Landroid/view/View;->setEnabled(Z)V
 
-    .line 903
+    .line 609
     return-object v5
 
     .end local v3           #on:Z
     :cond_4
     move v3, v7
 
-    .line 880
+    .line 590
     goto :goto_0
 
-    .line 885
+    .line 592
     .restart local v3       #on:Z
     :cond_5
-    if-eqz v3, :cond_6
-
-    iget v6, p0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->mEnabledMessageResId:I
-
-    :goto_4
-    invoke-virtual {v2, v6}, Landroid/widget/TextView;->setText(I)V
+    iget v6, p0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->mDisabledMessageResId:I
 
     goto :goto_1
 
+    .line 597
     :cond_6
-    iget v6, p0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->mDisabledMessageResId:I
-
-    goto :goto_4
-
-    .line 891
-    :cond_7
     iget v6, p0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->mDisabledIconResid:I
 
     goto :goto_2
 
-    .line 897
-    :cond_8
+    .line 603
+    :cond_7
     iget v6, p0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->mDisabledStatusMessageResId:I
 
     goto :goto_3
-.end method
-
-.method public final dialogOnPress()V
-    .locals 3
-
-    .prologue
-    .line 911
-    iget-object v1, p0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->mState:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
-
-    invoke-virtual {v1}, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;->inTransition()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 912
-    const-string v1, "GlobalActions"
-
-    const-string v2, "shouldn\'t be able to toggle when in transition"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 918
-    :goto_0
-    return-void
-
-    .line 915
-    :cond_0
-    iget-object v1, p0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->mState:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
-
-    sget-object v2, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;->On:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
-
-    if-eq v1, v2, :cond_1
-
-    const/4 v0, 0x1
-
-    .line 916
-    .local v0, nowOn:Z
-    :goto_1
-    invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->onToggle(Z)V
-
-    .line 917
-    invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->changeStateFromPress(Z)V
-
-    goto :goto_0
-
-    .line 915
-    .end local v0           #nowOn:Z
-    :cond_1
-    const/4 v0, 0x0
-
-    goto :goto_1
 .end method
 
 .method public isEnabled()Z
     .locals 1
 
     .prologue
-    .line 937
+    .line 624
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->mState:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;->inTransition()Z
@@ -396,21 +293,11 @@
     goto :goto_0
 .end method
 
-.method public onLongPress()Z
-    .locals 1
-
-    .prologue
-    .line 933
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public onPress()V
+.method public final onPress()V
     .locals 3
 
     .prologue
-    .line 922
+    .line 613
     iget-object v1, p0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->mState:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
 
     invoke-virtual {v1}, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;->inTransition()Z
@@ -419,18 +306,18 @@
 
     if-eqz v1, :cond_0
 
-    .line 923
+    .line 614
     const-string v1, "GlobalActions"
 
     const-string v2, "shouldn\'t be able to toggle when in transition"
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 930
+    .line 621
     :goto_0
     return-void
 
-    .line 927
+    .line 618
     :cond_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->mState:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
 
@@ -440,17 +327,17 @@
 
     const/4 v0, 0x1
 
-    .line 928
+    .line 619
     .local v0, nowOn:Z
     :goto_1
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->onToggle(Z)V
 
-    .line 929
+    .line 620
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->changeStateFromPress(Z)V
 
     goto :goto_0
 
-    .line 927
+    .line 618
     .end local v0           #nowOn:Z
     :cond_1
     const/4 v0, 0x0
@@ -466,10 +353,10 @@
     .parameter "state"
 
     .prologue
-    .line 953
+    .line 640
     iput-object p1, p0, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;->mState:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
 
-    .line 954
+    .line 641
     return-void
 .end method
 
@@ -477,6 +364,6 @@
     .locals 0
 
     .prologue
-    .line 866
+    .line 574
     return-void
 .end method

@@ -60,7 +60,7 @@
     iput v0, p0, Lyi/widget/RoundCornerListView;->mCornerType:I
 
     .line 33
-    const v0, 0x3010048
+    const v0, 0x4010048
 
     invoke-direct {p0, p1, p2, v0}, Lyi/widget/RoundCornerListView;->loadAttrs(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -163,7 +163,7 @@
 
     move-result-object v1
 
-    const v2, 0x30800c4
+    const v2, 0x40800c5
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -182,7 +182,7 @@
 
     move-result-object v1
 
-    const v2, 0x30800cc
+    const v2, 0x40800cd
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -201,7 +201,7 @@
 
     move-result-object v1
 
-    const v2, 0x30800bd
+    const v2, 0x40800be
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -220,7 +220,7 @@
 
     move-result-object v1
 
-    const v2, 0x30800c8
+    const v2, 0x40800c9
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

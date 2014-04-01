@@ -14,11 +14,7 @@
 # static fields
 .field public static final AUTHORITY:Ljava/lang/String; = "user_dictionary"
 
-.field public static final CONTENT_URI:Landroid/net/Uri; = null
-
-.field private static final FREQUENCY_MAX:I = 0xff
-
-.field private static final FREQUENCY_MIN:I
+.field public static final CONTENT_URI:Landroid/net/Uri;
 
 
 # direct methods
@@ -45,6 +41,6 @@
     .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 49
+    .line 46
     return-void
 .end method

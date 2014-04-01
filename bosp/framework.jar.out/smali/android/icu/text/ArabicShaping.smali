@@ -5474,7 +5474,7 @@
 
     .line 594
     :sswitch_4
-    const-string/jumbo v1, "lamAlef auto"
+    const-string v1, "lamAlef auto"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
@@ -5633,6 +5633,8 @@
     goto/16 :goto_7
 
     .line 589
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x0 -> :sswitch_0

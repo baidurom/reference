@@ -950,7 +950,7 @@
     invoke-static {v4, v6, p1}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     .line 145
-    invoke-interface {v1, p1}, Landroid/os/IPowerManager;->setTemporaryScreenBrightnessSettingOverride(I)V
+    invoke-interface {v1, p1}, Landroid/os/IPowerManager;->setBacklightBrightness(I)V
 
     .line 146
     const/4 v4, 0x1

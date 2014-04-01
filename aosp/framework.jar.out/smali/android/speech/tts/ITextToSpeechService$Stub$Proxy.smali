@@ -28,7 +28,7 @@
 
     .prologue
     .line 225
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 226
     iput-object p1, p0, Landroid/speech/tts/ITextToSpeechService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
@@ -447,9 +447,9 @@
     throw v3
 .end method
 
-.method public playAudio(Landroid/os/IBinder;Landroid/net/Uri;ILandroid/os/Bundle;)I
+.method public playAudio(Ljava/lang/String;Landroid/net/Uri;ILandroid/os/Bundle;)I
     .locals 6
-    .parameter "callingInstance"
+    .parameter "callingApp"
     .parameter "audioUri"
     .parameter "queueMode"
     .parameter "params"
@@ -479,7 +479,7 @@
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
     .line 324
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 325
     if-eqz p2, :cond_0
@@ -576,9 +576,9 @@
     goto :goto_1
 .end method
 
-.method public playSilence(Landroid/os/IBinder;JILandroid/os/Bundle;)I
+.method public playSilence(Ljava/lang/String;JILandroid/os/Bundle;)I
     .locals 6
-    .parameter "callingInstance"
+    .parameter "callingApp"
     .parameter "duration"
     .parameter "queueMode"
     .parameter "params"
@@ -608,7 +608,7 @@
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
     .line 366
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 367
     invoke-virtual {v0, p2, p3}, Landroid/os/Parcel;->writeLong(J)V
@@ -683,9 +683,9 @@
     throw v3
 .end method
 
-.method public setCallback(Landroid/os/IBinder;Landroid/speech/tts/ITextToSpeechCallback;)V
+.method public setCallback(Ljava/lang/String;Landroid/speech/tts/ITextToSpeechCallback;)V
     .locals 5
-    .parameter "caller"
+    .parameter "callingApp"
     .parameter "cb"
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -713,7 +713,7 @@
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
     .line 570
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 571
     if-eqz p2, :cond_0
@@ -766,9 +766,9 @@
     throw v2
 .end method
 
-.method public speak(Landroid/os/IBinder;Ljava/lang/String;ILandroid/os/Bundle;)I
+.method public speak(Ljava/lang/String;Ljava/lang/String;ILandroid/os/Bundle;)I
     .locals 6
-    .parameter "callingInstance"
+    .parameter "callingApp"
     .parameter "text"
     .parameter "queueMode"
     .parameter "params"
@@ -798,7 +798,7 @@
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
     .line 252
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 253
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
@@ -873,9 +873,9 @@
     throw v3
 .end method
 
-.method public stop(Landroid/os/IBinder;)I
+.method public stop(Ljava/lang/String;)I
     .locals 6
-    .parameter "callingInstance"
+    .parameter "callingApp"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -902,7 +902,7 @@
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
     .line 420
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 421
     iget-object v3, p0, Landroid/speech/tts/ITextToSpeechService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
@@ -946,9 +946,9 @@
     throw v3
 .end method
 
-.method public synthesizeToFile(Landroid/os/IBinder;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)I
+.method public synthesizeToFile(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)I
     .locals 6
-    .parameter "callingInstance"
+    .parameter "callingApp"
     .parameter "text"
     .parameter "filename"
     .parameter "params"
@@ -978,7 +978,7 @@
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
     .line 288
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 289
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V

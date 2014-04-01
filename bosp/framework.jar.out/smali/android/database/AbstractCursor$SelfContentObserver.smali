@@ -33,19 +33,19 @@
     .parameter "cursor"
 
     .prologue
-    .line 445
+    .line 418
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 446
+    .line 419
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Landroid/database/AbstractCursor$SelfContentObserver;->mCursor:Ljava/lang/ref/WeakReference;
 
-    .line 447
+    .line 420
     return-void
 .end method
 
@@ -55,7 +55,7 @@
     .locals 1
 
     .prologue
-    .line 451
+    .line 424
     const/4 v0, 0x0
 
     return v0
@@ -66,7 +66,7 @@
     .parameter "selfChange"
 
     .prologue
-    .line 456
+    .line 429
     iget-object v1, p0, Landroid/database/AbstractCursor$SelfContentObserver;->mCursor:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -75,16 +75,16 @@
 
     check-cast v0, Landroid/database/AbstractCursor;
 
-    .line 457
+    .line 430
     .local v0, cursor:Landroid/database/AbstractCursor;
     if-eqz v0, :cond_0
 
-    .line 458
+    .line 431
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/database/AbstractCursor;->onChange(Z)V
 
-    .line 460
+    .line 433
     :cond_0
     return-void
 .end method

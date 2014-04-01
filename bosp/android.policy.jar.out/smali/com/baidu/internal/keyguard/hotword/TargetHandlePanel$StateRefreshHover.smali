@@ -166,13 +166,35 @@
 .end method
 
 .method public getIntent(Landroid/content/Context;)Landroid/content/Intent;
-    .locals 4
+    .locals 9
     .parameter "context"
 
     .prologue
-    const/4 v3, 0x0
+    const/4 v8, 0x0
+
+    const/high16 v4, 0x3f00
+
+    const/4 v3, 0x1
 
     .line 501
+    iget-object v7, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel$StateRefreshHover;->this$0:Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;
+
+    new-instance v0, Landroid/view/animation/RotateAnimation;
+
+    const/high16 v1, 0x43b4
+
+    const/4 v2, 0x0
+
+    move v5, v3
+
+    move v6, v4
+
+    invoke-direct/range {v0 .. v6}, Landroid/view/animation/RotateAnimation;-><init>(FFIFIF)V
+
+    #setter for: Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->mRotateAnimation:Landroid/view/animation/Animation;
+    invoke-static {v7, v0}, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->access$2002(Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;Landroid/view/animation/Animation;)Landroid/view/animation/Animation;
+
+    .line 503
     iget-object v0, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel$StateRefreshHover;->this$0:Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;
 
     #getter for: Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->mRotateAnimation:Landroid/view/animation/Animation;
@@ -184,7 +206,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
 
-    .line 502
+    .line 504
     iget-object v0, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel$StateRefreshHover;->this$0:Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;
 
     #getter for: Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->mRotateAnimation:Landroid/view/animation/Animation;
@@ -198,7 +220,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
-    .line 503
+    .line 505
     iget-object v0, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel$StateRefreshHover;->this$0:Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;
 
     #getter for: Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->mRotateAnimation:Landroid/view/animation/Animation;
@@ -210,14 +232,14 @@
 
     invoke-virtual {v0, v1}, Landroid/view/animation/Animation;->setRepeatCount(I)V
 
-    .line 504
+    .line 506
     invoke-static {}, Lcom/baidu/internal/keyguard/hotword/WordList;->wordListAvaliable()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 505
+    .line 507
     iget-object v0, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel$StateRefreshHover;->this$0:Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;
 
     #getter for: Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->mTargetRefresh:Landroid/widget/ImageView;
@@ -234,7 +256,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setAnimation(Landroid/view/animation/Animation;)V
 
-    .line 506
+    .line 508
     iget-object v0, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel$StateRefreshHover;->this$0:Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;
 
     #getter for: Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->mTargetRefresh:Landroid/widget/ImageView;
@@ -244,9 +266,9 @@
 
     sget-object v1, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel$ViewState;->STATE_VISIBLE:Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel$ViewState;
 
-    invoke-virtual {p0, v0, v1, v3}, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel$StateRefreshHover;->setViewState(Landroid/view/View;Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel$ViewState;Z)V
+    invoke-virtual {p0, v0, v1, v8}, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel$StateRefreshHover;->setViewState(Landroid/view/View;Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel$ViewState;Z)V
 
-    .line 511
+    .line 513
     :goto_0
     iget-object v0, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel$StateRefreshHover;->this$0:Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;
 
@@ -257,12 +279,10 @@
 
     invoke-virtual {v0}, Landroid/view/animation/Animation;->startNow()V
 
-    .line 512
-    const/4 v0, 0x1
+    .line 514
+    invoke-static {v3}, Lcom/baidu/internal/keyguard/hotword/WordList;->updateWordList(Z)V
 
-    invoke-static {v0}, Lcom/baidu/internal/keyguard/hotword/WordList;->updateWordList(Z)V
-
-    .line 513
+    .line 515
     invoke-static {p1}, Lcom/baidu/internal/keyguard/hotword/UbcUtils;->getInstance(Landroid/content/Context;)Lcom/baidu/internal/keyguard/hotword/UbcUtils;
 
     move-result-object v0
@@ -271,12 +291,12 @@
 
     invoke-virtual {v0, v1}, Lcom/baidu/internal/keyguard/hotword/UbcUtils;->addStatistic(Ljava/lang/String;)V
 
-    .line 514
+    .line 516
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 508
+    .line 510
     :cond_0
     iget-object v0, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel$StateRefreshHover;->this$0:Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;
 
@@ -294,7 +314,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setAnimation(Landroid/view/animation/Animation;)V
 
-    .line 509
+    .line 511
     iget-object v0, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel$StateRefreshHover;->this$0:Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;
 
     #getter for: Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->mTargetRefresh2:Landroid/widget/ImageView;
@@ -304,7 +324,7 @@
 
     sget-object v1, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel$ViewState;->STATE_VISIBLE:Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel$ViewState;
 
-    invoke-virtual {p0, v0, v1, v3}, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel$StateRefreshHover;->setViewState(Landroid/view/View;Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel$ViewState;Z)V
+    invoke-virtual {p0, v0, v1, v8}, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel$StateRefreshHover;->setViewState(Landroid/view/View;Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel$ViewState;Z)V
 
     goto :goto_0
 .end method

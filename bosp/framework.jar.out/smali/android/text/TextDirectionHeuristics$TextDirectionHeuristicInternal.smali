@@ -25,13 +25,13 @@
     .parameter "defaultIsRtl"
 
     .prologue
-    .line 117
+    .line 119
     invoke-direct {p0, p1}, Landroid/text/TextDirectionHeuristics$TextDirectionHeuristicImpl;-><init>(Landroid/text/TextDirectionHeuristics$TextDirectionAlgorithm;)V
 
-    .line 118
+    .line 120
     iput-boolean p2, p0, Landroid/text/TextDirectionHeuristics$TextDirectionHeuristicInternal;->mDefaultIsRtl:Z
 
-    .line 119
+    .line 121
     return-void
 .end method
 
@@ -42,7 +42,7 @@
     .parameter "x2"
 
     .prologue
-    .line 112
+    .line 114
     invoke-direct {p0, p1, p2}, Landroid/text/TextDirectionHeuristics$TextDirectionHeuristicInternal;-><init>(Landroid/text/TextDirectionHeuristics$TextDirectionAlgorithm;Z)V
 
     return-void
@@ -54,7 +54,7 @@
     .locals 1
 
     .prologue
-    .line 123
+    .line 125
     iget-boolean v0, p0, Landroid/text/TextDirectionHeuristics$TextDirectionHeuristicInternal;->mDefaultIsRtl:Z
 
     return v0

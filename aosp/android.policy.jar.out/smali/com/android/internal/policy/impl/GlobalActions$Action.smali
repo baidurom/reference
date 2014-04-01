@@ -21,9 +21,6 @@
 .method public abstract isEnabled()Z
 .end method
 
-.method public abstract onLongPress()Z
-.end method
-
 .method public abstract onPress()V
 .end method
 

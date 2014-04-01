@@ -19,16 +19,14 @@
 
 .field mObject:Ljava/lang/Object;
 
-.field mRequireAnnotation:Z
-
 
 # direct methods
 .method constructor <init>()V
     .locals 0
 
     .prologue
-    .line 942
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 761
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

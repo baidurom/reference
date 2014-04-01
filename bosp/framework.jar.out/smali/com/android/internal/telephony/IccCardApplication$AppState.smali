@@ -54,7 +54,7 @@
 
     const/4 v3, 0x0
 
-    .line 69
+    .line 38
     new-instance v0, Lcom/android/internal/telephony/IccCardApplication$AppState;
 
     const-string v1, "APPSTATE_UNKNOWN"
@@ -63,7 +63,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/IccCardApplication$AppState;->APPSTATE_UNKNOWN:Lcom/android/internal/telephony/IccCardApplication$AppState;
 
-    .line 70
+    .line 39
     new-instance v0, Lcom/android/internal/telephony/IccCardApplication$AppState;
 
     const-string v1, "APPSTATE_DETECTED"
@@ -72,7 +72,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/IccCardApplication$AppState;->APPSTATE_DETECTED:Lcom/android/internal/telephony/IccCardApplication$AppState;
 
-    .line 71
+    .line 40
     new-instance v0, Lcom/android/internal/telephony/IccCardApplication$AppState;
 
     const-string v1, "APPSTATE_PIN"
@@ -81,7 +81,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/IccCardApplication$AppState;->APPSTATE_PIN:Lcom/android/internal/telephony/IccCardApplication$AppState;
 
-    .line 72
+    .line 41
     new-instance v0, Lcom/android/internal/telephony/IccCardApplication$AppState;
 
     const-string v1, "APPSTATE_PUK"
@@ -90,7 +90,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/IccCardApplication$AppState;->APPSTATE_PUK:Lcom/android/internal/telephony/IccCardApplication$AppState;
 
-    .line 73
+    .line 42
     new-instance v0, Lcom/android/internal/telephony/IccCardApplication$AppState;
 
     const-string v1, "APPSTATE_SUBSCRIPTION_PERSO"
@@ -99,7 +99,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/IccCardApplication$AppState;->APPSTATE_SUBSCRIPTION_PERSO:Lcom/android/internal/telephony/IccCardApplication$AppState;
 
-    .line 74
+    .line 43
     new-instance v0, Lcom/android/internal/telephony/IccCardApplication$AppState;
 
     const-string v1, "APPSTATE_READY"
@@ -110,7 +110,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/IccCardApplication$AppState;->APPSTATE_READY:Lcom/android/internal/telephony/IccCardApplication$AppState;
 
-    .line 68
+    .line 37
     const/4 v0, 0x6
 
     new-array v0, v0, [Lcom/android/internal/telephony/IccCardApplication$AppState;
@@ -157,7 +157,7 @@
     .end annotation
 
     .prologue
-    .line 68
+    .line 37
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -168,7 +168,7 @@
     .parameter "name"
 
     .prologue
-    .line 68
+    .line 37
     const-class v0, Lcom/android/internal/telephony/IccCardApplication$AppState;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -184,7 +184,7 @@
     .locals 1
 
     .prologue
-    .line 68
+    .line 37
     sget-object v0, Lcom/android/internal/telephony/IccCardApplication$AppState;->$VALUES:[Lcom/android/internal/telephony/IccCardApplication$AppState;
 
     invoke-virtual {v0}, [Lcom/android/internal/telephony/IccCardApplication$AppState;->clone()Ljava/lang/Object;
@@ -202,7 +202,7 @@
     .locals 1
 
     .prologue
-    .line 93
+    .line 62
     sget-object v0, Lcom/android/internal/telephony/IccCardApplication$AppState;->APPSTATE_UNKNOWN:Lcom/android/internal/telephony/IccCardApplication$AppState;
 
     if-eq p0, v0, :cond_0
@@ -227,7 +227,7 @@
     .locals 1
 
     .prologue
-    .line 89
+    .line 58
     sget-object v0, Lcom/android/internal/telephony/IccCardApplication$AppState;->APPSTATE_READY:Lcom/android/internal/telephony/IccCardApplication$AppState;
 
     if-ne p0, v0, :cond_0
@@ -247,7 +247,7 @@
     .locals 1
 
     .prologue
-    .line 77
+    .line 46
     sget-object v0, Lcom/android/internal/telephony/IccCardApplication$AppState;->APPSTATE_PIN:Lcom/android/internal/telephony/IccCardApplication$AppState;
 
     if-ne p0, v0, :cond_0
@@ -267,7 +267,7 @@
     .locals 1
 
     .prologue
-    .line 81
+    .line 50
     sget-object v0, Lcom/android/internal/telephony/IccCardApplication$AppState;->APPSTATE_PUK:Lcom/android/internal/telephony/IccCardApplication$AppState;
 
     if-ne p0, v0, :cond_0
@@ -287,7 +287,7 @@
     .locals 1
 
     .prologue
-    .line 85
+    .line 54
     sget-object v0, Lcom/android/internal/telephony/IccCardApplication$AppState;->APPSTATE_SUBSCRIPTION_PERSO:Lcom/android/internal/telephony/IccCardApplication$AppState;
 
     if-ne p0, v0, :cond_0

@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 434
+    .line 402
     iput-object p1, p0, Lcom/android/server/WifiService$1;->this$0:Lcom/android/server/WifiService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,7 +40,7 @@
     .parameter "intent"
 
     .prologue
-    .line 437
+    .line 405
     iget-object v1, p0, Lcom/android/server/WifiService$1;->this$0:Lcom/android/server/WifiService;
 
     #calls: Lcom/android/server/WifiService;->isAirplaneModeOn()Z
@@ -48,7 +48,7 @@
 
     move-result v0
 
-    .line 438
+    .line 406
     .local v0, isAirplaneModeOn:Z
     const-string v1, "WifiService"
 
@@ -72,7 +72,7 @@
 
     invoke-static {v1, v2}, Lcom/mediatek/xlog/SXlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 439
+    .line 407
     iget-object v1, p0, Lcom/android/server/WifiService$1;->this$0:Lcom/android/server/WifiService;
 
     #getter for: Lcom/android/server/WifiService;->mAirplaneModeOn:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -82,29 +82,60 @@
 
     invoke-virtual {v1, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    .line 440
+    .line 409
     iget-object v1, p0, Lcom/android/server/WifiService$1;->this$0:Lcom/android/server/WifiService;
 
-    iget-object v2, p0, Lcom/android/server/WifiService$1;->this$0:Lcom/android/server/WifiService;
-
     #getter for: Lcom/android/server/WifiService;->mAirplaneModeOn:Ljava/util/concurrent/atomic/AtomicBoolean;
-    invoke-static {v2}, Lcom/android/server/WifiService;->access$900(Lcom/android/server/WifiService;)Ljava/util/concurrent/atomic/AtomicBoolean;
+    invoke-static {v1}, Lcom/android/server/WifiService;->access$900(Lcom/android/server/WifiService;)Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
+    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
-    move-result v2
+    move-result v1
 
-    #calls: Lcom/android/server/WifiService;->handleAirplaneModeToggled(Z)V
-    invoke-static {v1, v2}, Lcom/android/server/WifiService;->access$1000(Lcom/android/server/WifiService;Z)V
+    if-nez v1, :cond_1
 
-    .line 441
+    iget-object v1, p0, Lcom/android/server/WifiService$1;->this$0:Lcom/android/server/WifiService;
+
+    #calls: Lcom/android/server/WifiService;->testAndClearWifiSavedState()Z
+    invoke-static {v1}, Lcom/android/server/WifiService;->access$1000(Lcom/android/server/WifiService;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    iget-object v1, p0, Lcom/android/server/WifiService$1;->this$0:Lcom/android/server/WifiService;
+
+    #getter for: Lcom/android/server/WifiService;->mPersistWifiState:Ljava/util/concurrent/atomic/AtomicInteger;
+    invoke-static {v1}, Lcom/android/server/WifiService;->access$1100(Lcom/android/server/WifiService;)Ljava/util/concurrent/atomic/AtomicInteger;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    if-ne v1, v2, :cond_1
+
+    .line 411
+    :cond_0
+    iget-object v1, p0, Lcom/android/server/WifiService$1;->this$0:Lcom/android/server/WifiService;
+
+    const/4 v2, 0x1
+
+    #calls: Lcom/android/server/WifiService;->persistWifiState(Z)V
+    invoke-static {v1, v2}, Lcom/android/server/WifiService;->access$1200(Lcom/android/server/WifiService;Z)V
+
+    .line 413
+    :cond_1
     iget-object v1, p0, Lcom/android/server/WifiService$1;->this$0:Lcom/android/server/WifiService;
 
     #calls: Lcom/android/server/WifiService;->updateWifiState()V
-    invoke-static {v1}, Lcom/android/server/WifiService;->access$1100(Lcom/android/server/WifiService;)V
+    invoke-static {v1}, Lcom/android/server/WifiService;->access$1300(Lcom/android/server/WifiService;)V
 
-    .line 442
+    .line 414
     return-void
 .end method

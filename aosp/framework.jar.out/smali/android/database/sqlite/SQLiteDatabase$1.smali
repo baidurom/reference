@@ -1,11 +1,11 @@
 .class Landroid/database/sqlite/SQLiteDatabase$1;
-.super Ljava/lang/ThreadLocal;
+.super Landroid/util/LruCache;
 .source "SQLiteDatabase.java"
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/database/sqlite/SQLiteDatabase;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Landroid/database/sqlite/SQLiteDatabase;->setMaxSqlCacheSize(I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,9 +15,10 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Ljava/lang/ThreadLocal",
+        "Landroid/util/LruCache",
         "<",
-        "Landroid/database/sqlite/SQLiteSession;",
+        "Ljava/lang/String;",
+        "Landroid/database/sqlite/SQLiteCompiledSql;",
         ">;"
     }
 .end annotation
@@ -28,43 +29,61 @@
 
 
 # direct methods
-.method constructor <init>(Landroid/database/sqlite/SQLiteDatabase;)V
+.method constructor <init>(Landroid/database/sqlite/SQLiteDatabase;I)V
     .locals 0
     .parameter
+    .parameter "x0"
 
     .prologue
-    .line 81
+    .line 2179
     iput-object p1, p0, Landroid/database/sqlite/SQLiteDatabase$1;->this$0:Landroid/database/sqlite/SQLiteDatabase;
 
-    invoke-direct {p0}, Ljava/lang/ThreadLocal;-><init>()V
+    invoke-direct {p0, p2}, Landroid/util/LruCache;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected initialValue()Landroid/database/sqlite/SQLiteSession;
-    .locals 1
+.method protected bridge synthetic entryRemoved(ZLjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+    .parameter "x2"
+    .parameter "x3"
 
     .prologue
-    .line 84
-    iget-object v0, p0, Landroid/database/sqlite/SQLiteDatabase$1;->this$0:Landroid/database/sqlite/SQLiteDatabase;
+    .line 2179
+    check-cast p2, Ljava/lang/String;
 
-    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->createSession()Landroid/database/sqlite/SQLiteSession;
+    .end local p2
+    check-cast p3, Landroid/database/sqlite/SQLiteCompiledSql;
 
-    move-result-object v0
+    .end local p3
+    check-cast p4, Landroid/database/sqlite/SQLiteCompiledSql;
 
-    return-object v0
+    .end local p4
+    invoke-virtual {p0, p1, p2, p3, p4}, Landroid/database/sqlite/SQLiteDatabase$1;->entryRemoved(ZLjava/lang/String;Landroid/database/sqlite/SQLiteCompiledSql;Landroid/database/sqlite/SQLiteCompiledSql;)V
+
+    return-void
 .end method
 
-.method protected bridge synthetic initialValue()Ljava/lang/Object;
+.method protected entryRemoved(ZLjava/lang/String;Landroid/database/sqlite/SQLiteCompiledSql;Landroid/database/sqlite/SQLiteCompiledSql;)V
     .locals 1
+    .parameter "evicted"
+    .parameter "key"
+    .parameter "oldValue"
+    .parameter "newValue"
 
     .prologue
-    .line 81
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase$1;->initialValue()Landroid/database/sqlite/SQLiteSession;
+    .line 2183
+    iget-object v0, p0, Landroid/database/sqlite/SQLiteDatabase$1;->this$0:Landroid/database/sqlite/SQLiteDatabase;
 
-    move-result-object v0
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->verifyLockOwner()V
 
-    return-object v0
+    .line 2184
+    invoke-virtual {p3}, Landroid/database/sqlite/SQLiteCompiledSql;->releaseIfNotInUse()V
+
+    .line 2185
+    return-void
 .end method

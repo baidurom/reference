@@ -37,36 +37,36 @@
     .parameter "color"
 
     .prologue
-    .line 35
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 36
-    iput p1, p0, Lcom/android/internal/telephony/cat/TextAttribute;->start:I
-
-    .line 37
-    iput p2, p0, Lcom/android/internal/telephony/cat/TextAttribute;->length:I
-
     .line 38
-    iput-object p3, p0, Lcom/android/internal/telephony/cat/TextAttribute;->align:Lcom/android/internal/telephony/cat/TextAlignment;
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 39
-    iput-object p4, p0, Lcom/android/internal/telephony/cat/TextAttribute;->size:Lcom/android/internal/telephony/cat/FontSize;
+    iput p1, p0, Lcom/android/internal/telephony/cat/TextAttribute;->start:I
 
     .line 40
-    iput-boolean p5, p0, Lcom/android/internal/telephony/cat/TextAttribute;->bold:Z
+    iput p2, p0, Lcom/android/internal/telephony/cat/TextAttribute;->length:I
 
     .line 41
-    iput-boolean p6, p0, Lcom/android/internal/telephony/cat/TextAttribute;->italic:Z
+    iput-object p3, p0, Lcom/android/internal/telephony/cat/TextAttribute;->align:Lcom/android/internal/telephony/cat/TextAlignment;
 
     .line 42
-    iput-boolean p7, p0, Lcom/android/internal/telephony/cat/TextAttribute;->underlined:Z
+    iput-object p4, p0, Lcom/android/internal/telephony/cat/TextAttribute;->size:Lcom/android/internal/telephony/cat/FontSize;
 
     .line 43
-    iput-boolean p8, p0, Lcom/android/internal/telephony/cat/TextAttribute;->strikeThrough:Z
+    iput-boolean p5, p0, Lcom/android/internal/telephony/cat/TextAttribute;->bold:Z
 
     .line 44
-    iput-object p9, p0, Lcom/android/internal/telephony/cat/TextAttribute;->color:Lcom/android/internal/telephony/cat/TextColor;
+    iput-boolean p6, p0, Lcom/android/internal/telephony/cat/TextAttribute;->italic:Z
 
     .line 45
+    iput-boolean p7, p0, Lcom/android/internal/telephony/cat/TextAttribute;->underlined:Z
+
+    .line 46
+    iput-boolean p8, p0, Lcom/android/internal/telephony/cat/TextAttribute;->strikeThrough:Z
+
+    .line 47
+    iput-object p9, p0, Lcom/android/internal/telephony/cat/TextAttribute;->color:Lcom/android/internal/telephony/cat/TextColor;
+
+    .line 48
     return-void
 .end method

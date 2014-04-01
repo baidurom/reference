@@ -32,7 +32,7 @@
     .parameter
 
     .prologue
-    .line 1187
+    .line 295
     iput-object p1, p0, Landroid/media/MediaRecorder$HDRecordMode;->this$0:Landroid/media/MediaRecorder;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

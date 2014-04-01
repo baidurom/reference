@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:fitsSystemWindows="true" android:splitMotionEvents="false"
+<LinearLayout android:orientation="vertical" android:fitsSystemWindows="true"
   xmlns:android="http://schemas.android.com/apk/res/android">
     <com.android.internal.widget.ActionBarContainer android:id="@id/action_bar_container" android:layout_width="fill_parent" android:layout_height="wrap_content" style="?android:attr/actionBarStyle">
         <com.android.internal.widget.ActionBarView android:id="@id/action_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" style="?android:attr/actionBarStyle" />

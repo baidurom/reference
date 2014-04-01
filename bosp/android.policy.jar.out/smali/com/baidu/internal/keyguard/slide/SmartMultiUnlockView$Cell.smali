@@ -48,41 +48,41 @@
     .parameter "description"
 
     .prologue
-    .line 1121
+    .line 1132
     iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;->this$0:Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1117
+    .line 1128
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;->mHasNotifier:Z
 
-    .line 1123
+    .line 1134
     iput-object p2, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;->mNormalDrawable:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
 
-    .line 1124
+    .line 1135
     iput-object p3, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;->mNotifierDrawable:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
 
-    .line 1125
+    .line 1136
     iput-object p7, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;->mNotifierText:Ljava/lang/String;
 
-    .line 1126
+    .line 1137
     iput p8, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;->mID:I
 
-    .line 1127
+    .line 1138
     iput-object p9, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;->mDescription:Ljava/lang/String;
 
-    .line 1128
+    .line 1139
     invoke-virtual {p0, p4}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;->setX(F)V
 
-    .line 1129
+    .line 1140
     invoke-virtual {p0, p5}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;->setY(F)V
 
-    .line 1130
+    .line 1141
     invoke-virtual {p0, p6}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;->setHasNotifier(Z)V
 
-    .line 1131
+    .line 1142
     return-void
 .end method
 
@@ -92,7 +92,7 @@
     .locals 1
 
     .prologue
-    .line 1150
+    .line 1161
     iget-boolean v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;->mHasNotifier:Z
 
     return v0
@@ -102,7 +102,7 @@
     .locals 1
 
     .prologue
-    .line 1191
+    .line 1202
     iget v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;->mID:I
 
     return v0
@@ -112,7 +112,7 @@
     .locals 1
 
     .prologue
-    .line 1134
+    .line 1145
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;->mNormalDrawable:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
 
     return-object v0
@@ -122,7 +122,7 @@
     .locals 1
 
     .prologue
-    .line 1142
+    .line 1153
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;->mNotifierDrawable:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
 
     return-object v0
@@ -132,7 +132,7 @@
     .locals 1
 
     .prologue
-    .line 1167
+    .line 1178
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;->mNotifierText:Ljava/lang/String;
 
     return-object v0
@@ -142,7 +142,7 @@
     .locals 1
 
     .prologue
-    .line 1171
+    .line 1182
     iget v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;->mLeftX:F
 
     return v0
@@ -152,7 +152,7 @@
     .locals 1
 
     .prologue
-    .line 1181
+    .line 1192
     iget v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;->mTopY:F
 
     return v0
@@ -163,24 +163,24 @@
     .parameter "bHasNotifier"
 
     .prologue
-    .line 1154
+    .line 1165
     if-eqz p1, :cond_0
 
-    .line 1155
+    .line 1166
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;->mNormalDrawable:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
 
     sget-object v1, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->STATE_FOCUSED:[I
 
     invoke-virtual {v0, v1}, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->setState([I)V
 
-    .line 1159
+    .line 1170
     :goto_0
     iput-boolean p1, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;->mHasNotifier:Z
 
-    .line 1160
+    .line 1171
     return-void
 
-    .line 1157
+    .line 1168
     :cond_0
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;->mNormalDrawable:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
 
@@ -196,10 +196,10 @@
     .parameter "newNormal"
 
     .prologue
-    .line 1138
+    .line 1149
     iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;->mNormalDrawable:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
 
-    .line 1139
+    .line 1150
     return-void
 .end method
 
@@ -208,10 +208,10 @@
     .parameter "newNotifier"
 
     .prologue
-    .line 1146
+    .line 1157
     iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;->mNotifierDrawable:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
 
-    .line 1147
+    .line 1158
     return-void
 .end method
 
@@ -220,10 +220,10 @@
     .parameter "newText"
 
     .prologue
-    .line 1163
+    .line 1174
     iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;->mNotifierText:Ljava/lang/String;
 
-    .line 1164
+    .line 1175
     return-void
 .end method
 
@@ -232,15 +232,15 @@
     .parameter "x"
 
     .prologue
-    .line 1175
+    .line 1186
     iput p1, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;->mLeftX:F
 
-    .line 1176
+    .line 1187
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;->mNormalDrawable:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
 
     invoke-virtual {v0, p1}, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->setX(F)V
 
-    .line 1177
+    .line 1188
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;->mNotifierDrawable:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
 
     iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;->mNormalDrawable:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
@@ -269,7 +269,7 @@
 
     invoke-virtual {v0, v1}, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->setX(F)V
 
-    .line 1178
+    .line 1189
     return-void
 .end method
 
@@ -278,15 +278,15 @@
     .parameter "y"
 
     .prologue
-    .line 1185
+    .line 1196
     iput p1, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;->mTopY:F
 
-    .line 1186
+    .line 1197
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;->mNormalDrawable:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
 
     invoke-virtual {v0, p1}, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->setY(F)V
 
-    .line 1187
+    .line 1198
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;->mNotifierDrawable:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
 
     iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;->mNormalDrawable:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
@@ -315,6 +315,6 @@
 
     invoke-virtual {v0, v1}, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->setY(F)V
 
-    .line 1188
+    .line 1199
     return-void
 .end method

@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 124
+    .line 207
     iput-object p1, p0, Lcom/android/server/UiModeManagerService$2;->this$0:Lcom/android/server/UiModeManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,27 +35,42 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 3
+    .locals 2
     .parameter "context"
     .parameter "intent"
 
     .prologue
-    .line 127
-    const-string v1, "android.intent.extra.DOCK_STATE"
+    .line 210
+    iget-object v0, p0, Lcom/android/server/UiModeManagerService$2;->this$0:Lcom/android/server/UiModeManagerService;
 
-    const/4 v2, 0x0
-
-    invoke-virtual {p2, v1, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    invoke-virtual {v0}, Lcom/android/server/UiModeManagerService;->isDoingNightMode()Z
 
     move-result v0
 
-    .line 129
-    .local v0, state:I
-    iget-object v1, p0, Lcom/android/server/UiModeManagerService$2;->this$0:Lcom/android/server/UiModeManagerService;
+    if-eqz v0, :cond_0
 
-    #calls: Lcom/android/server/UiModeManagerService;->updateDockState(I)V
-    invoke-static {v1, v0}, Lcom/android/server/UiModeManagerService;->access$100(Lcom/android/server/UiModeManagerService;I)V
+    iget-object v0, p0, Lcom/android/server/UiModeManagerService$2;->this$0:Lcom/android/server/UiModeManagerService;
 
-    .line 130
+    #getter for: Lcom/android/server/UiModeManagerService;->mNightMode:I
+    invoke-static {v0}, Lcom/android/server/UiModeManagerService;->access$300(Lcom/android/server/UiModeManagerService;)I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 211
+    iget-object v0, p0, Lcom/android/server/UiModeManagerService$2;->this$0:Lcom/android/server/UiModeManagerService;
+
+    #getter for: Lcom/android/server/UiModeManagerService;->mHandler:Landroid/os/Handler;
+    invoke-static {v0}, Lcom/android/server/UiModeManagerService;->access$400(Lcom/android/server/UiModeManagerService;)Landroid/os/Handler;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+
+    .line 213
+    :cond_0
     return-void
 .end method

@@ -30,6 +30,8 @@
 
 .field private static final TAG:Ljava/lang/String; = "SipManager"
 
+.field private static strRegTimeout:Ljava/lang/String;
+
 
 # instance fields
 .field private mContext:Landroid/content/Context;
@@ -39,21 +41,46 @@
 
 # direct methods
 .method private constructor <init>(Landroid/content/Context;)V
-    .locals 0
+    .locals 2
     .parameter "context"
 
     .prologue
-    .line 158
+    .line 187
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 159
+    .line 188
     iput-object p1, p0, Landroid/net/sip/SipManager;->mContext:Landroid/content/Context;
 
-    .line 160
+    .line 189
     invoke-direct {p0}, Landroid/net/sip/SipManager;->createSipService()V
 
-    .line 161
+    .line 190
+    iget-object v0, p0, Landroid/net/sip/SipManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const v1, #string@sipError_registration_timeout#t
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Landroid/net/sip/SipManager;->strRegTimeout:Ljava/lang/String;
+
+    .line 191
     return-void
+.end method
+
+.method static synthetic access$000()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 91
+    sget-object v0, Landroid/net/sip/SipManager;->strRegTimeout:Ljava/lang/String;
+
+    return-object v0
 .end method
 
 .method public static createIncomingCallBroadcast(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
@@ -62,23 +89,23 @@
     .parameter "sessionDescription"
 
     .prologue
-    .line 457
+    .line 487
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 458
+    .line 488
     .local v0, intent:Landroid/content/Intent;
     const-string v1, "android:sipCallID"
 
     invoke-virtual {v0, v1, p0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 459
+    .line 489
     const-string v1, "android:sipOfferSD"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 460
+    .line 490
     return-object v0
 .end method
 
@@ -88,7 +115,7 @@
     .parameter "uri"
 
     .prologue
-    .line 539
+    .line 569
     if-nez p0, :cond_0
 
     const/4 v0, 0x0
@@ -108,14 +135,14 @@
     .locals 2
 
     .prologue
-    .line 164
+    .line 194
     const-string/jumbo v1, "sip"
 
     invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 165
+    .line 195
     .local v0, b:Landroid/os/IBinder;
     invoke-static {v0}, Landroid/net/sip/ISipService$Stub;->asInterface(Landroid/os/IBinder;)Landroid/net/sip/ISipService;
 
@@ -123,7 +150,7 @@
 
     iput-object v1, p0, Landroid/net/sip/SipManager;->mSipService:Landroid/net/sip/ISipService;
 
-    .line 166
+    .line 196
     return-void
 .end method
 
@@ -132,7 +159,7 @@
     .parameter "incomingCallIntent"
 
     .prologue
-    .line 432
+    .line 462
     const-string v0, "android:sipCallID"
 
     invoke-virtual {p0, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
@@ -147,7 +174,7 @@
     .parameter "incomingCallIntent"
 
     .prologue
-    .line 444
+    .line 474
     const-string v0, "android:sipOfferSD"
 
     invoke-virtual {p0, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
@@ -162,7 +189,7 @@
     .parameter "context"
 
     .prologue
-    .line 138
+    .line 167
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
@@ -183,27 +210,27 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 419
+    .line 449
     if-nez p0, :cond_1
 
-    .line 422
+    .line 452
     :cond_0
     :goto_0
     return v2
 
-    .line 420
+    .line 450
     :cond_1
     invoke-static {p0}, Landroid/net/sip/SipManager;->getCallId(Landroid/content/Intent;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 421
+    .line 451
     .local v0, callId:Ljava/lang/String;
     invoke-static {p0}, Landroid/net/sip/SipManager;->getOfferSessionDescription(Landroid/content/Intent;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 422
+    .line 452
     .local v1, offerSd:Ljava/lang/String;
     if-eqz v0, :cond_0
 
@@ -219,7 +246,7 @@
     .parameter "context"
 
     .prologue
-    .line 154
+    .line 183
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -238,7 +265,7 @@
     .parameter "context"
 
     .prologue
-    .line 146
+    .line 175
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
@@ -273,7 +300,7 @@
     .parameter "context"
 
     .prologue
-    .line 131
+    .line 160
     invoke-static {p0}, Landroid/net/sip/SipManager;->isApiSupported(Landroid/content/Context;)Z
 
     move-result v0
@@ -305,7 +332,7 @@
     .end annotation
 
     .prologue
-    .line 259
+    .line 289
     :try_start_0
     iget-object v1, p0, Landroid/net/sip/SipManager;->mSipService:Landroid/net/sip/ISipService;
 
@@ -313,14 +340,14 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 263
+    .line 293
     return-void
 
-    .line 260
+    .line 290
     :catch_0
     move-exception v0
 
-    .line 261
+    .line 291
     .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Landroid/net/sip/SipException;
 
@@ -342,7 +369,7 @@
     .end annotation
 
     .prologue
-    .line 553
+    .line 583
     :try_start_0
     iget-object v2, p0, Landroid/net/sip/SipManager;->mSipService:Landroid/net/sip/ISipService;
 
@@ -352,11 +379,11 @@
 
     move-result-object v1
 
-    .line 554
+    .line 584
     .local v1, s:Landroid/net/sip/ISipSession;
     if-nez v1, :cond_0
 
-    .line 555
+    .line 585
     new-instance v2, Landroid/net/sip/SipException;
 
     const-string v3, "Failed to create SipSession; network unavailable?"
@@ -367,12 +394,12 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 559
+    .line 589
     .end local v1           #s:Landroid/net/sip/ISipSession;
     :catch_0
     move-exception v0
 
-    .line 560
+    .line 590
     .local v0, e:Landroid/os/RemoteException;
     new-instance v2, Landroid/net/sip/SipException;
 
@@ -382,7 +409,7 @@
 
     throw v2
 
-    .line 558
+    .line 588
     .end local v0           #e:Landroid/os/RemoteException;
     .restart local v1       #s:Landroid/net/sip/ISipSession;
     :cond_0
@@ -400,7 +427,7 @@
     .locals 2
 
     .prologue
-    .line 571
+    .line 601
     :try_start_0
     iget-object v1, p0, Landroid/net/sip/SipManager;->mSipService:Landroid/net/sip/ISipService;
 
@@ -410,15 +437,15 @@
 
     move-result-object v1
 
-    .line 573
+    .line 603
     :goto_0
     return-object v1
 
-    .line 572
+    .line 602
     :catch_0
     move-exception v0
 
-    .line 573
+    .line 603
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -437,13 +464,13 @@
     .end annotation
 
     .prologue
-    .line 529
+    .line 559
     :try_start_0
     invoke-static {p1}, Landroid/net/sip/SipManager;->getCallId(Landroid/content/Intent;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 530
+    .line 560
     .local v0, callId:Ljava/lang/String;
     iget-object v3, p0, Landroid/net/sip/SipManager;->mSipService:Landroid/net/sip/ISipService;
 
@@ -451,7 +478,7 @@
 
     move-result-object v2
 
-    .line 531
+    .line 561
     .local v2, s:Landroid/net/sip/ISipSession;
     if-nez v2, :cond_0
 
@@ -469,13 +496,13 @@
 
     goto :goto_0
 
-    .line 532
+    .line 562
     .end local v0           #callId:Ljava/lang/String;
     .end local v2           #s:Landroid/net/sip/ISipSession;
     :catch_0
     move-exception v1
 
-    .line 533
+    .line 563
     .local v1, e:Landroid/os/RemoteException;
     new-instance v3, Landroid/net/sip/SipException;
 
@@ -496,7 +523,7 @@
     .end annotation
 
     .prologue
-    .line 275
+    .line 305
     :try_start_0
     iget-object v1, p0, Landroid/net/sip/SipManager;->mSipService:Landroid/net/sip/ISipService;
 
@@ -508,15 +535,15 @@
 
     return v1
 
-    .line 276
+    .line 306
     :catch_0
     move-exception v0
 
-    .line 277
+    .line 307
     .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Landroid/net/sip/SipException;
 
-    const-string/jumbo v2, "isOpened()"
+    const-string v2, "isOpened()"
 
     invoke-direct {v1, v2, v0}, Landroid/net/sip/SipException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
@@ -533,7 +560,7 @@
     .end annotation
 
     .prologue
-    .line 296
+    .line 326
     :try_start_0
     iget-object v1, p0, Landroid/net/sip/SipManager;->mSipService:Landroid/net/sip/ISipService;
 
@@ -545,15 +572,15 @@
 
     return v1
 
-    .line 297
+    .line 327
     :catch_0
     move-exception v0
 
-    .line 298
+    .line 328
     .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Landroid/net/sip/SipException;
 
-    const-string/jumbo v2, "isRegistered()"
+    const-string v2, "isRegistered()"
 
     invoke-direct {v1, v2, v0}, Landroid/net/sip/SipException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
@@ -573,7 +600,7 @@
     .end annotation
 
     .prologue
-    .line 323
+    .line 353
     iget-object v2, p0, Landroid/net/sip/SipManager;->mContext:Landroid/content/Context;
 
     invoke-static {v2}, Landroid/net/sip/SipManager;->isVoipSupported(Landroid/content/Context;)Z
@@ -582,7 +609,7 @@
 
     if-nez v2, :cond_0
 
-    .line 324
+    .line 354
     new-instance v2, Landroid/net/sip/SipException;
 
     const-string v3, "VOIP API is not supported"
@@ -591,7 +618,7 @@
 
     throw v2
 
-    .line 326
+    .line 356
     :cond_0
     new-instance v0, Landroid/net/sip/SipAudioCall;
 
@@ -599,22 +626,22 @@
 
     invoke-direct {v0, v2, p1}, Landroid/net/sip/SipAudioCall;-><init>(Landroid/content/Context;Landroid/net/sip/SipProfile;)V
 
-    .line 327
+    .line 357
     .local v0, call:Landroid/net/sip/SipAudioCall;
     invoke-virtual {v0, p3}, Landroid/net/sip/SipAudioCall;->setListener(Landroid/net/sip/SipAudioCall$Listener;)V
 
-    .line 328
+    .line 358
     const/4 v2, 0x0
 
     invoke-virtual {p0, p1, v2}, Landroid/net/sip/SipManager;->createSipSession(Landroid/net/sip/SipProfile;Landroid/net/sip/SipSession$Listener;)Landroid/net/sip/SipSession;
 
     move-result-object v1
 
-    .line 329
+    .line 359
     .local v1, s:Landroid/net/sip/SipSession;
     invoke-virtual {v0, p2, v1, p4}, Landroid/net/sip/SipAudioCall;->makeCall(Landroid/net/sip/SipProfile;Landroid/net/sip/SipSession;I)V
 
-    .line 330
+    .line 360
     return-object v0
 .end method
 
@@ -631,7 +658,7 @@
     .end annotation
 
     .prologue
-    .line 355
+    .line 385
     iget-object v1, p0, Landroid/net/sip/SipManager;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Landroid/net/sip/SipManager;->isVoipSupported(Landroid/content/Context;)Z
@@ -640,7 +667,7 @@
 
     if-nez v1, :cond_0
 
-    .line 356
+    .line 386
     new-instance v1, Landroid/net/sip/SipException;
 
     const-string v2, "VOIP API is not supported"
@@ -649,7 +676,7 @@
 
     throw v1
 
-    .line 359
+    .line 389
     :cond_0
     :try_start_0
     new-instance v1, Landroid/net/sip/SipProfile$Builder;
@@ -676,11 +703,11 @@
 
     return-object v1
 
-    .line 363
+    .line 393
     :catch_0
     move-exception v0
 
-    .line 364
+    .line 394
     .local v0, e:Ljava/text/ParseException;
     new-instance v1, Landroid/net/sip/SipException;
 
@@ -701,7 +728,7 @@
     .end annotation
 
     .prologue
-    .line 181
+    .line 211
     :try_start_0
     iget-object v1, p0, Landroid/net/sip/SipManager;->mSipService:Landroid/net/sip/ISipService;
 
@@ -709,14 +736,14 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 185
+    .line 215
     return-void
 
-    .line 182
+    .line 212
     :catch_0
     move-exception v0
 
-    .line 183
+    .line 213
     .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Landroid/net/sip/SipException;
 
@@ -739,19 +766,19 @@
     .end annotation
 
     .prologue
-    .line 219
+    .line 249
     if-nez p2, :cond_0
 
-    .line 220
+    .line 250
     new-instance v1, Ljava/lang/NullPointerException;
 
-    const-string/jumbo v2, "incomingCallPendingIntent cannot be null"
+    const-string v2, "incomingCallPendingIntent cannot be null"
 
     invoke-direct {v1, v2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw v1
 
-    .line 224
+    .line 254
     :cond_0
     :try_start_0
     iget-object v1, p0, Landroid/net/sip/SipManager;->mSipService:Landroid/net/sip/ISipService;
@@ -768,14 +795,14 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 229
+    .line 259
     return-void
 
-    .line 226
+    .line 256
     :catch_0
     move-exception v0
 
-    .line 227
+    .line 257
     .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Landroid/net/sip/SipException;
 
@@ -798,7 +825,7 @@
     .end annotation
 
     .prologue
-    .line 479
+    .line 509
     :try_start_0
     iget-object v2, p0, Landroid/net/sip/SipManager;->mSipService:Landroid/net/sip/ISipService;
 
@@ -814,11 +841,11 @@
 
     move-result-object v1
 
-    .line 481
+    .line 511
     .local v1, session:Landroid/net/sip/ISipSession;
     if-nez v1, :cond_0
 
-    .line 482
+    .line 512
     new-instance v2, Landroid/net/sip/SipException;
 
     const-string v3, "SipService.createSession() returns null"
@@ -829,12 +856,12 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 486
+    .line 516
     .end local v1           #session:Landroid/net/sip/ISipSession;
     :catch_0
     move-exception v0
 
-    .line 487
+    .line 517
     .local v0, e:Landroid/os/RemoteException;
     new-instance v2, Landroid/net/sip/SipException;
 
@@ -844,7 +871,7 @@
 
     throw v2
 
-    .line 485
+    .line 515
     .end local v0           #e:Landroid/os/RemoteException;
     .restart local v1       #session:Landroid/net/sip/ISipSession;
     :cond_0
@@ -853,7 +880,7 @@
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 489
+    .line 519
     return-void
 .end method
 
@@ -868,7 +895,7 @@
     .end annotation
 
     .prologue
-    .line 243
+    .line 273
     :try_start_0
     iget-object v1, p0, Landroid/net/sip/SipManager;->mSipService:Landroid/net/sip/ISipService;
 
@@ -880,14 +907,14 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 248
+    .line 278
     return-void
 
-    .line 245
+    .line 275
     :catch_0
     move-exception v0
 
-    .line 246
+    .line 276
     .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Landroid/net/sip/SipException;
 
@@ -909,10 +936,10 @@
     .end annotation
 
     .prologue
-    .line 382
+    .line 412
     if-nez p1, :cond_0
 
-    .line 383
+    .line 413
     new-instance v5, Landroid/net/sip/SipException;
 
     const-string v6, "Cannot retrieve session with null intent"
@@ -921,17 +948,17 @@
 
     throw v5
 
-    .line 386
+    .line 416
     :cond_0
     invoke-static {p1}, Landroid/net/sip/SipManager;->getCallId(Landroid/content/Intent;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 387
+    .line 417
     .local v1, callId:Ljava/lang/String;
     if-nez v1, :cond_1
 
-    .line 388
+    .line 418
     new-instance v5, Landroid/net/sip/SipException;
 
     const-string v6, "Call ID missing in incoming call intent"
@@ -940,17 +967,17 @@
 
     throw v5
 
-    .line 391
+    .line 421
     :cond_1
     invoke-static {p1}, Landroid/net/sip/SipManager;->getOfferSessionDescription(Landroid/content/Intent;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 392
+    .line 422
     .local v2, offerSd:Ljava/lang/String;
     if-nez v2, :cond_2
 
-    .line 393
+    .line 423
     new-instance v5, Landroid/net/sip/SipException;
 
     const-string v6, "Session description missing in incoming call intent"
@@ -959,7 +986,7 @@
 
     throw v5
 
-    .line 398
+    .line 428
     :cond_2
     :try_start_0
     iget-object v5, p0, Landroid/net/sip/SipManager;->mSipService:Landroid/net/sip/ISipService;
@@ -968,11 +995,11 @@
 
     move-result-object v3
 
-    .line 399
+    .line 429
     .local v3, session:Landroid/net/sip/ISipSession;
     if-nez v3, :cond_3
 
-    .line 400
+    .line 430
     new-instance v5, Landroid/net/sip/SipException;
 
     const-string v6, "No pending session for the call"
@@ -983,12 +1010,12 @@
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 407
+    .line 437
     .end local v3           #session:Landroid/net/sip/ISipSession;
     :catch_0
     move-exception v4
 
-    .line 408
+    .line 438
     .local v4, t:Ljava/lang/Throwable;
     new-instance v5, Landroid/net/sip/SipException;
 
@@ -998,7 +1025,7 @@
 
     throw v5
 
-    .line 402
+    .line 432
     .end local v4           #t:Ljava/lang/Throwable;
     .restart local v3       #session:Landroid/net/sip/ISipSession;
     :cond_3
@@ -1013,7 +1040,7 @@
 
     invoke-direct {v0, v5, v6}, Landroid/net/sip/SipAudioCall;-><init>(Landroid/content/Context;Landroid/net/sip/SipProfile;)V
 
-    .line 404
+    .line 434
     .local v0, call:Landroid/net/sip/SipAudioCall;
     new-instance v5, Landroid/net/sip/SipSession;
 
@@ -1021,12 +1048,12 @@
 
     invoke-virtual {v0, v5, v2}, Landroid/net/sip/SipAudioCall;->attachCall(Landroid/net/sip/SipSession;Ljava/lang/String;)V
 
-    .line 405
+    .line 435
     invoke-virtual {v0, p2}, Landroid/net/sip/SipAudioCall;->setListener(Landroid/net/sip/SipAudioCall$Listener;)V
     :try_end_1
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 406
+    .line 436
     return-object v0
 .end method
 
@@ -1041,7 +1068,7 @@
     .end annotation
 
     .prologue
-    .line 504
+    .line 534
     :try_start_0
     iget-object v2, p0, Landroid/net/sip/SipManager;->mSipService:Landroid/net/sip/ISipService;
 
@@ -1057,11 +1084,11 @@
 
     move-result-object v1
 
-    .line 506
+    .line 536
     .local v1, session:Landroid/net/sip/ISipSession;
     if-nez v1, :cond_0
 
-    .line 507
+    .line 537
     new-instance v2, Landroid/net/sip/SipException;
 
     const-string v3, "SipService.createSession() returns null"
@@ -1072,12 +1099,12 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 511
+    .line 541
     .end local v1           #session:Landroid/net/sip/ISipSession;
     :catch_0
     move-exception v0
 
-    .line 512
+    .line 542
     .local v0, e:Landroid/os/RemoteException;
     new-instance v2, Landroid/net/sip/SipException;
 
@@ -1087,7 +1114,7 @@
 
     throw v2
 
-    .line 510
+    .line 540
     .end local v0           #e:Landroid/os/RemoteException;
     .restart local v1       #session:Landroid/net/sip/ISipSession;
     :cond_0
@@ -1096,6 +1123,6 @@
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 514
+    .line 544
     return-void
 .end method

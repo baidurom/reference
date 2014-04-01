@@ -30,15 +30,15 @@
     .parameter "cb"
 
     .prologue
-    .line 6765
+    .line 4063
     iput-object p1, p0, Landroid/media/AudioService$EnableHDMIAudioDeathHandler;->this$0:Landroid/media/AudioService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 6766
+    .line 4064
     iput-object p2, p0, Landroid/media/AudioService$EnableHDMIAudioDeathHandler;->mCb:Landroid/os/IBinder;
 
-    .line 6767
+    .line 4065
     return-void
 .end method
 
@@ -48,23 +48,23 @@
     .locals 3
 
     .prologue
-    .line 6770
+    .line 4068
     const-string v0, "AudioService"
 
     const-string v1, "EnableHDMIAudioDeathHandler::binderDied"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 6771
+    .line 4069
     iget-object v0, p0, Landroid/media/AudioService$EnableHDMIAudioDeathHandler;->this$0:Landroid/media/AudioService;
 
     const/4 v1, 0x0
 
     iget-object v2, p0, Landroid/media/AudioService$EnableHDMIAudioDeathHandler;->mCb:Landroid/os/IBinder;
 
-    invoke-virtual {v0, v1, v2}, Landroid/media/AudioService;->enableHdmiAudio(ZLandroid/os/IBinder;)Z
+    invoke-virtual {v0, v1, v2}, Landroid/media/AudioService;->enableHDMIAudio(ZLandroid/os/IBinder;)Z
 
-    .line 6772
+    .line 4070
     return-void
 .end method
 
@@ -72,7 +72,7 @@
     .locals 1
 
     .prologue
-    .line 6775
+    .line 4073
     iget-object v0, p0, Landroid/media/AudioService$EnableHDMIAudioDeathHandler;->mCb:Landroid/os/IBinder;
 
     return-object v0

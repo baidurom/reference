@@ -487,8 +487,6 @@
 
 .field public static final Widget_DeviceDefault_CalendarView:I = #style@Widget.DeviceDefault.CalendarView#t
 
-.field public static final Widget_DeviceDefault_CheckedTextView:I = #style@Widget.DeviceDefault.CheckedTextView#t
-
 .field public static final Widget_DeviceDefault_CompoundButton_CheckBox:I = #style@Widget.DeviceDefault.CompoundButton.CheckBox#t
 
 .field public static final Widget_DeviceDefault_CompoundButton_RadioButton:I = #style@Widget.DeviceDefault.CompoundButton.RadioButton#t
@@ -555,8 +553,6 @@
 
 .field public static final Widget_DeviceDefault_Light_CalendarView:I = #style@Widget.DeviceDefault.Light.CalendarView#t
 
-.field public static final Widget_DeviceDefault_Light_CheckedTextView:I = #style@Widget.DeviceDefault.Light.CheckedTextView#t
-
 .field public static final Widget_DeviceDefault_Light_CompoundButton_CheckBox:I = #style@Widget.DeviceDefault.Light.CompoundButton.CheckBox#t
 
 .field public static final Widget_DeviceDefault_Light_CompoundButton_RadioButton:I = #style@Widget.DeviceDefault.Light.CompoundButton.RadioButton#t
@@ -582,8 +578,6 @@
 .field public static final Widget_DeviceDefault_Light_ListView:I = #style@Widget.DeviceDefault.Light.ListView#t
 
 .field public static final Widget_DeviceDefault_Light_ListView_DropDown:I = #style@Widget.DeviceDefault.Light.ListView.DropDown#t
-
-.field public static final Widget_DeviceDefault_Light_MediaRouteButton:I = #style@Widget.DeviceDefault.Light.MediaRouteButton#t
 
 .field public static final Widget_DeviceDefault_Light_PopupMenu:I = #style@Widget.DeviceDefault.Light.PopupMenu#t
 
@@ -634,8 +628,6 @@
 .field public static final Widget_DeviceDefault_ListView:I = #style@Widget.DeviceDefault.ListView#t
 
 .field public static final Widget_DeviceDefault_ListView_DropDown:I = #style@Widget.DeviceDefault.ListView.DropDown#t
-
-.field public static final Widget_DeviceDefault_MediaRouteButton:I = #style@Widget.DeviceDefault.MediaRouteButton#t
 
 .field public static final Widget_DeviceDefault_PopupMenu:I = #style@Widget.DeviceDefault.PopupMenu#t
 
@@ -727,8 +719,6 @@
 
 .field public static final Widget_Holo_CalendarView:I = #style@Widget.Holo.CalendarView#t
 
-.field public static final Widget_Holo_CheckedTextView:I = #style@Widget.Holo.CheckedTextView#t
-
 .field public static final Widget_Holo_CompoundButton_CheckBox:I = #style@Widget.Holo.CompoundButton.CheckBox#t
 
 .field public static final Widget_Holo_CompoundButton_RadioButton:I = #style@Widget.Holo.CompoundButton.RadioButton#t
@@ -795,8 +785,6 @@
 
 .field public static final Widget_Holo_Light_CalendarView:I = #style@Widget.Holo.Light.CalendarView#t
 
-.field public static final Widget_Holo_Light_CheckedTextView:I = #style@Widget.Holo.Light.CheckedTextView#t
-
 .field public static final Widget_Holo_Light_CompoundButton_CheckBox:I = #style@Widget.Holo.Light.CompoundButton.CheckBox#t
 
 .field public static final Widget_Holo_Light_CompoundButton_RadioButton:I = #style@Widget.Holo.Light.CompoundButton.RadioButton#t
@@ -822,8 +810,6 @@
 .field public static final Widget_Holo_Light_ListView:I = #style@Widget.Holo.Light.ListView#t
 
 .field public static final Widget_Holo_Light_ListView_DropDown:I = #style@Widget.Holo.Light.ListView.DropDown#t
-
-.field public static final Widget_Holo_Light_MediaRouteButton:I = #style@Widget.Holo.Light.MediaRouteButton#t
 
 .field public static final Widget_Holo_Light_PopupMenu:I = #style@Widget.Holo.Light.PopupMenu#t
 
@@ -874,8 +860,6 @@
 .field public static final Widget_Holo_ListView:I = #style@Widget.Holo.ListView#t
 
 .field public static final Widget_Holo_ListView_DropDown:I = #style@Widget.Holo.ListView.DropDown#t
-
-.field public static final Widget_Holo_MediaRouteButton:I = #style@Widget.Holo.MediaRouteButton#t
 
 .field public static final Widget_Holo_PopupMenu:I = #style@Widget.Holo.PopupMenu#t
 
@@ -975,8 +959,8 @@
     .locals 0
 
     .prologue
-    .line 10882
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 10398
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

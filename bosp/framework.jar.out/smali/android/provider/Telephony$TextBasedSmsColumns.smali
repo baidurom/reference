@@ -69,8 +69,6 @@
 
 .field public static final STATUS_PENDING:I = 0x20
 
-.field public static final STATUS_REPLACED_BY_SC:I = 0x2
-
 .field public static final SUBJECT:Ljava/lang/String; = "subject"
 
 .field public static final THREAD_ID:Ljava/lang/String; = "thread_id"

@@ -1,11 +1,11 @@
 .class Lcom/android/server/MountService$5;
-.super Landroid/content/BroadcastReceiver;
+.super Ljava/lang/Thread;
 .source "MountService.java"
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/server/MountService;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/server/MountService;->notifyShareAvailabilityChange(Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,63 +24,78 @@
     .parameter
 
     .prologue
-    .line 985
+    .line 1579
     iput-object p1, p0, Lcom/android/server/MountService$5;->this$0:Lcom/android/server/MountService;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 3
-    .parameter "context"
-    .parameter "intent"
+.method public run()V
+    .locals 4
 
     .prologue
-    .line 990
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    .line 1582
+    invoke-static {}, Lcom/android/server/MountService;->access$2900()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    .line 991
-    .local v0, action:Ljava/lang/String;
-    const-string v1, "android.intent.action.BOOT_COMPLETED"
+    monitor-enter v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 1583
+    :try_start_0
+    invoke-static {}, Lcom/android/server/MountService;->access$500()Ljava/lang/Object;
 
-    move-result v1
+    move-result-object v2
 
-    if-eqz v1, :cond_0
+    monitor-enter v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 992
-    const-string v1, "MountService"
+    .line 1584
+    :try_start_1
+    iget-object v0, p0, Lcom/android/server/MountService$5;->this$0:Lcom/android/server/MountService;
 
-    const-string v2, "MountService BOOT_COMPLETED!"
+    const/4 v3, 0x0
 
-    invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v0, v3}, Lcom/android/server/MountService;->setUsbMassStorageEnabled(Z)V
 
-    .line 993
-    iget-object v1, p0, Lcom/android/server/MountService$5;->this$0:Lcom/android/server/MountService;
+    .line 1585
+    monitor-exit v2
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    const/4 v2, 0x1
+    .line 1600
+    :try_start_2
+    monitor-exit v1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    #setter for: Lcom/android/server/MountService;->mBootCompleted:Z
-    invoke-static {v1, v2}, Lcom/android/server/MountService;->access$2802(Lcom/android/server/MountService;Z)Z
-
-    .line 1064
-    :goto_0
+    .line 1601
     return-void
 
-    .line 997
-    :cond_0
-    new-instance v1, Lcom/android/server/MountService$5$1;
+    .line 1585
+    :catchall_0
+    move-exception v0
 
-    invoke-direct {v1, p0}, Lcom/android/server/MountService$5$1;-><init>(Lcom/android/server/MountService$5;)V
+    :try_start_3
+    monitor-exit v2
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    invoke-virtual {v1}, Lcom/android/server/MountService$5$1;->start()V
+    :try_start_4
+    throw v0
 
-    goto :goto_0
+    .line 1600
+    :catchall_1
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+
+    throw v0
 .end method

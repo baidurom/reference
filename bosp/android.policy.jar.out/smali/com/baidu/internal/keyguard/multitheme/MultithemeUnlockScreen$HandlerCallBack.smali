@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 229
+    .line 228
     iput-object p1, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen$HandlerCallBack;->this$0:Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .parameter "x1"
 
     .prologue
-    .line 229
+    .line 228
     invoke-direct {p0, p1}, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen$HandlerCallBack;-><init>(Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;)V
 
     return-void
@@ -54,21 +54,21 @@
     .parameter "time"
 
     .prologue
-    .line 251
+    .line 249
     iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen$HandlerCallBack;->this$0:Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;
 
     iget-object v0, v0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mLockScreenElement:Lcom/baidu/themeanimation/element/LockScreenElement;
 
     if-eqz v0, :cond_0
 
-    .line 252
+    .line 250
     iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen$HandlerCallBack;->this$0:Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;
 
     iget-object v0, v0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mLockScreenElement:Lcom/baidu/themeanimation/element/LockScreenElement;
 
     invoke-virtual {v0, p1}, Lcom/baidu/themeanimation/element/LockScreenElement;->dispatchTimeTick(Landroid/text/format/Time;)V
 
-    .line 254
+    .line 252
     :cond_0
     return-void
 .end method
@@ -78,7 +78,7 @@
     .parameter "category"
 
     .prologue
-    .line 243
+    .line 241
     iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen$HandlerCallBack;->this$0:Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;
 
     iget-object v0, v0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mLockScreenElement:Lcom/baidu/themeanimation/element/LockScreenElement;
@@ -94,13 +94,13 @@
 
     if-eq p1, v0, :cond_0
 
-    .line 244
+    .line 242
     iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen$HandlerCallBack;->this$0:Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;
 
     #setter for: Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mCategory:I
     invoke-static {v0, p1}, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->access$202(Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;I)I
 
-    .line 245
+    .line 243
     const-string v0, "category"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -130,40 +130,33 @@
 
     invoke-static {v0, v1}, Lcom/baidu/themeanimation/util/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 246
+    .line 244
     iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen$HandlerCallBack;->this$0:Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;
 
     iget-object v0, v0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mLockScreenElement:Lcom/baidu/themeanimation/element/LockScreenElement;
 
     invoke-virtual {v0, p1}, Lcom/baidu/themeanimation/element/LockScreenElement;->dispatchCategoryChange(I)V
 
-    .line 248
+    .line 246
     :cond_0
     return-void
 .end method
 
 .method public unLock()V
-    .locals 2
+    .locals 1
 
     .prologue
-    .line 232
+    .line 231
     iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen$HandlerCallBack;->this$0:Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;
 
-    invoke-virtual {v0}, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->reset()V
-
-    .line 233
-    iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen$HandlerCallBack;->this$0:Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;
-
-    #getter for: Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
-    invoke-static {v0}, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->access$100(Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;)Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    #getter for: Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
+    invoke-static {v0}, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->access$100(Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;)Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
     move-result-object v0
 
-    const/4 v1, 0x1
+    invoke-interface {v0}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->goToUnlockScreen()V
 
-    invoke-interface {v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;->dismiss(Z)V
-
-    .line 234
+    .line 232
     return-void
 .end method
 
@@ -171,21 +164,21 @@
     .locals 1
 
     .prologue
-    .line 237
+    .line 235
     iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen$HandlerCallBack;->this$0:Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;
 
     iget-object v0, v0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mLockScreenElement:Lcom/baidu/themeanimation/element/LockScreenElement;
 
     if-eqz v0, :cond_0
 
-    .line 238
+    .line 236
     iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen$HandlerCallBack;->this$0:Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;
 
     iget-object v0, v0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mLockScreenElement:Lcom/baidu/themeanimation/element/LockScreenElement;
 
     invoke-virtual {v0}, Lcom/baidu/themeanimation/element/LockScreenElement;->updateWallpaper()V
 
-    .line 240
+    .line 238
     :cond_0
     return-void
 .end method

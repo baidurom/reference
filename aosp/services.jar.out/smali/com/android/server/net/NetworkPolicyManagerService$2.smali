@@ -1,5 +1,5 @@
 .class Lcom/android/server/net/NetworkPolicyManagerService$2;
-.super Landroid/app/IProcessObserver$Stub;
+.super Landroid/content/BroadcastReceiver;
 .source "NetworkPolicyManagerService.java"
 
 
@@ -24,80 +24,52 @@
     .parameter
 
     .prologue
-    .line 493
+    .line 369
     iput-object p1, p0, Lcom/android/server/net/NetworkPolicyManagerService$2;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
-    invoke-direct {p0}, Landroid/app/IProcessObserver$Stub;-><init>()V
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onForegroundActivitiesChanged(IIZ)V
-    .locals 3
-    .parameter "pid"
-    .parameter "uid"
-    .parameter "foregroundActivities"
-
-    .prologue
-    .line 496
-    iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$2;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
-
-    #getter for: Lcom/android/server/net/NetworkPolicyManagerService;->mHandler:Landroid/os/Handler;
-    invoke-static {v0}, Lcom/android/server/net/NetworkPolicyManagerService;->access$800(Lcom/android/server/net/NetworkPolicyManagerService;)Landroid/os/Handler;
-
-    move-result-object v0
-
-    const/4 v1, 0x3
-
-    invoke-static {p3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, p1, p2, v2}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
-
-    .line 498
-    return-void
-.end method
-
-.method public onImportanceChanged(III)V
-    .locals 0
-    .parameter "pid"
-    .parameter "uid"
-    .parameter "importance"
-
-    .prologue
-    .line 502
-    return-void
-.end method
-
-.method public onProcessDied(II)V
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 2
-    .parameter "pid"
-    .parameter "uid"
+    .parameter "context"
+    .parameter "intent"
 
     .prologue
-    .line 506
+    .line 372
     iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$2;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
-    #getter for: Lcom/android/server/net/NetworkPolicyManagerService;->mHandler:Landroid/os/Handler;
-    invoke-static {v0}, Lcom/android/server/net/NetworkPolicyManagerService;->access$800(Lcom/android/server/net/NetworkPolicyManagerService;)Landroid/os/Handler;
+    #getter for: Lcom/android/server/net/NetworkPolicyManagerService;->mRulesLock:Ljava/lang/Object;
+    invoke-static {v0}, Lcom/android/server/net/NetworkPolicyManagerService;->access$100(Lcom/android/server/net/NetworkPolicyManagerService;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/4 v1, 0x4
+    monitor-enter v1
 
-    invoke-virtual {v0, v1, p1, p2}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
+    .line 375
+    :try_start_0
+    iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$2;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
-    move-result-object v0
+    #calls: Lcom/android/server/net/NetworkPolicyManagerService;->updateScreenOn()V
+    invoke-static {v0}, Lcom/android/server/net/NetworkPolicyManagerService;->access$200(Lcom/android/server/net/NetworkPolicyManagerService;)V
 
-    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
+    .line 376
+    monitor-exit v1
 
-    .line 507
+    .line 377
     return-void
+
+    .line 376
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method

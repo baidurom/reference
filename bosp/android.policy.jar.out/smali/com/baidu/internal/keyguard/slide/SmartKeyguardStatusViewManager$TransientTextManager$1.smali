@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 178
+    .line 279
     iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager$1;->this$1:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;
 
     iput-object p2, p0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager$1;->val$data:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager$Data;
@@ -48,11 +48,11 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 180
+    .line 281
     iget-object v5, p0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager$1;->this$1:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;
 
     #getter for: Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;->mMessages:Ljava/util/ArrayList;
-    invoke-static {v5}, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;->access$000(Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;)Ljava/util/ArrayList;
+    invoke-static {v5}, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;->access$200(Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;)Ljava/util/ArrayList;
 
     move-result-object v5
 
@@ -60,11 +60,11 @@
 
     invoke-virtual {v5, v6}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 181
+    .line 282
     iget-object v5, p0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager$1;->this$1:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;
 
     #getter for: Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;->mMessages:Ljava/util/ArrayList;
-    invoke-static {v5}, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;->access$000(Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;)Ljava/util/ArrayList;
+    invoke-static {v5}, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;->access$200(Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;)Ljava/util/ArrayList;
 
     move-result-object v5
 
@@ -74,15 +74,15 @@
 
     add-int/lit8 v0, v5, -0x1
 
-    .line 184
+    .line 285
     .local v0, last:I
     if-lez v0, :cond_0
 
-    .line 185
+    .line 286
     iget-object v5, p0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager$1;->this$1:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;
 
     #getter for: Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;->mMessages:Ljava/util/ArrayList;
-    invoke-static {v5}, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;->access$000(Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;)Ljava/util/ArrayList;
+    invoke-static {v5}, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;->access$200(Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;)Ljava/util/ArrayList;
 
     move-result-object v5
 
@@ -92,41 +92,41 @@
 
     check-cast v3, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager$Data;
 
-    .line 186
+    .line 287
     .local v3, oldData:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager$Data;
     iget-object v2, v3, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager$Data;->text:Ljava/lang/CharSequence;
 
-    .line 187
+    .line 288
     .local v2, lastText:Ljava/lang/CharSequence;
     iget v1, v3, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager$Data;->icon:I
 
-    .line 193
+    .line 294
     .end local v3           #oldData:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager$Data;
     .local v1, lastIcon:I
     :goto_0
     iget-object v5, p0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager$1;->this$1:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;
 
     #getter for: Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;->mTextView:Landroid/widget/TextView;
-    invoke-static {v5}, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;->access$200(Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;)Landroid/widget/TextView;
+    invoke-static {v5}, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;->access$400(Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;)Landroid/widget/TextView;
 
     move-result-object v5
 
     invoke-virtual {v5, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 194
+    .line 295
     iget-object v5, p0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager$1;->this$1:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;
 
     #getter for: Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;->mTextView:Landroid/widget/TextView;
-    invoke-static {v5}, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;->access$200(Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;)Landroid/widget/TextView;
+    invoke-static {v5}, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;->access$400(Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;)Landroid/widget/TextView;
 
     move-result-object v5
 
     invoke-virtual {v5, v1, v7, v7, v7}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
 
-    .line 195
+    .line 296
     return-void
 
-    .line 189
+    .line 290
     .end local v1           #lastIcon:I
     .end local v2           #lastText:Ljava/lang/CharSequence;
     :cond_0
@@ -134,18 +134,18 @@
 
     invoke-direct {v4, v7}, Llibcore/util/MutableInt;-><init>(I)V
 
-    .line 190
+    .line 291
     .local v4, tmpIcon:Llibcore/util/MutableInt;
     iget-object v5, p0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager$1;->this$1:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;
 
     iget-object v5, v5, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;->this$0:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;
 
     #calls: Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;->getAltTextMessage(Llibcore/util/MutableInt;)Ljava/lang/CharSequence;
-    invoke-static {v5, v4}, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;->access$100(Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;Llibcore/util/MutableInt;)Ljava/lang/CharSequence;
+    invoke-static {v5, v4}, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;->access$300(Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;Llibcore/util/MutableInt;)Ljava/lang/CharSequence;
 
     move-result-object v2
 
-    .line 191
+    .line 292
     .restart local v2       #lastText:Ljava/lang/CharSequence;
     iget v1, v4, Llibcore/util/MutableInt;->value:I
 

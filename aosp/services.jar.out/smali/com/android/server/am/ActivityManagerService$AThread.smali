@@ -25,17 +25,17 @@
     .locals 1
 
     .prologue
-    .line 1646
+    .line 1515
     const-string v0, "ActivityManager"
 
     invoke-direct {p0, v0}, Ljava/lang/Thread;-><init>(Ljava/lang/String;)V
 
-    .line 1643
+    .line 1512
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/am/ActivityManagerService$AThread;->mReady:Z
 
-    .line 1647
+    .line 1516
     return-void
 .end method
 
@@ -45,46 +45,46 @@
     .locals 3
 
     .prologue
-    .line 1650
+    .line 1519
     invoke-static {}, Landroid/os/Looper;->prepare()V
 
-    .line 1652
+    .line 1521
     const/4 v1, -0x2
 
     invoke-static {v1}, Landroid/os/Process;->setThreadPriority(I)V
 
-    .line 1654
+    .line 1523
     const/4 v1, 0x0
 
     invoke-static {v1}, Landroid/os/Process;->setCanSelfBackground(Z)V
 
-    .line 1656
+    .line 1525
     new-instance v0, Lcom/android/server/am/ActivityManagerService;
 
     const/4 v1, 0x0
 
     invoke-direct {v0, v1}, Lcom/android/server/am/ActivityManagerService;-><init>(Lcom/android/server/am/ActivityManagerService$1;)V
 
-    .line 1658
+    .line 1527
     .local v0, m:Lcom/android/server/am/ActivityManagerService;
     monitor-enter p0
 
-    .line 1659
+    .line 1528
     :try_start_0
     iput-object v0, p0, Lcom/android/server/am/ActivityManagerService$AThread;->mService:Lcom/android/server/am/ActivityManagerService;
 
-    .line 1660
+    .line 1529
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
 
-    .line 1661
+    .line 1530
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1663
+    .line 1532
     monitor-enter p0
 
-    .line 1664
+    .line 1533
     :goto_0
     :try_start_1
     iget-boolean v1, p0, Lcom/android/server/am/ActivityManagerService$AThread;->mReady:Z
@@ -93,7 +93,7 @@
 
     if-nez v1, :cond_0
 
-    .line 1666
+    .line 1535
     :try_start_2
     invoke-virtual {p0}, Ljava/lang/Object;->wait()V
     :try_end_2
@@ -102,13 +102,13 @@
 
     goto :goto_0
 
-    .line 1667
+    .line 1536
     :catch_0
     move-exception v1
 
     goto :goto_0
 
-    .line 1661
+    .line 1530
     :catchall_0
     move-exception v1
 
@@ -119,35 +119,35 @@
 
     throw v1
 
-    .line 1670
+    .line 1539
     :cond_0
     :try_start_4
     monitor-exit p0
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    .line 1673
+    .line 1542
     invoke-static {}, Landroid/os/StrictMode;->conditionallyEnableDebugLogging()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 1674
+    .line 1543
     const-string v1, "ActivityManager"
 
     const-string v2, "Enabled StrictMode logging for AThread\'s Looper"
 
     invoke-static {v1, v2}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1677
+    .line 1546
     :cond_1
     invoke-static {}, Landroid/os/Looper;->loop()V
 
-    .line 1678
+    .line 1547
     return-void
 
-    .line 1670
+    .line 1539
     :catchall_1
     move-exception v1
 

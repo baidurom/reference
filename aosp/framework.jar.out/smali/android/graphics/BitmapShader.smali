@@ -36,10 +36,10 @@
 
     move-result v1
 
-    iput v1, p0, Landroid/graphics/BitmapShader;->native_instance:I
+    iput v1, p0, Landroid/graphics/Shader;->native_instance:I
 
     .line 42
-    iget v1, p0, Landroid/graphics/BitmapShader;->native_instance:I
+    iget v1, p0, Landroid/graphics/Shader;->native_instance:I
 
     iget v2, p2, Landroid/graphics/Shader$TileMode;->nativeInt:I
 
@@ -49,7 +49,7 @@
 
     move-result v1
 
-    iput v1, p0, Landroid/graphics/BitmapShader;->native_shader:I
+    iput v1, p0, Landroid/graphics/Shader;->native_shader:I
 
     .line 43
     return-void

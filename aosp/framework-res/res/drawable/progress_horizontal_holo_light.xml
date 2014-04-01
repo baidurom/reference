@@ -3,9 +3,13 @@
   xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@id/background" android:drawable="@drawable/progress_bg_holo_light" />
     <item android:id="@id/secondaryProgress">
-        <scale android:drawable="@drawable/progress_secondary_holo_light" android:scaleWidth="100%" />
+        <clip>
+            <scale android:drawable="@drawable/progress_secondary_holo_light" android:scaleWidth="100%" />
+        </clip>
     </item>
     <item android:id="@id/progress">
-        <scale android:drawable="@drawable/progress_primary_holo_light" android:scaleWidth="100%" />
+        <clip>
+            <scale android:drawable="@drawable/progress_primary_holo_light" android:scaleWidth="100%" />
+        </clip>
     </item>
 </layer-list>

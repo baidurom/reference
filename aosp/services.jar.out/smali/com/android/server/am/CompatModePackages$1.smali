@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 45
+    .line 46
     iput-object p1, p0, Lcom/android/server/am/CompatModePackages$1;->this$0:Lcom/android/server/am/CompatModePackages;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,19 +39,19 @@
     .parameter "msg"
 
     .prologue
-    .line 47
+    .line 48
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 52
+    .line 53
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
-    .line 55
+    .line 56
     :goto_0
     return-void
 
-    .line 49
+    .line 50
     :pswitch_0
     iget-object v0, p0, Lcom/android/server/am/CompatModePackages$1;->this$0:Lcom/android/server/am/CompatModePackages;
 
@@ -59,11 +59,11 @@
 
     goto :goto_0
 
-    .line 47
+    .line 48
     nop
 
     :pswitch_data_0
-    .packed-switch 0x12c
+    .packed-switch 0x1
         :pswitch_0
     .end packed-switch
 .end method

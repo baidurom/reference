@@ -30,20 +30,20 @@
     .parameter "state"
 
     .prologue
-    .line 205
+    .line 197
     iput-object p1, p0, Landroid/os/storage/StorageManager$ObbStateChangedStorageEvent;->this$0:Landroid/os/storage/StorageManager;
 
-    .line 206
+    .line 198
     const/4 v0, 0x3
 
     invoke-direct {p0, p1, v0}, Landroid/os/storage/StorageManager$StorageEvent;-><init>(Landroid/os/storage/StorageManager;I)V
 
-    .line 207
+    .line 199
     iput-object p2, p0, Landroid/os/storage/StorageManager$ObbStateChangedStorageEvent;->path:Ljava/lang/String;
 
-    .line 208
+    .line 200
     iput p3, p0, Landroid/os/storage/StorageManager$ObbStateChangedStorageEvent;->state:I
 
-    .line 209
+    .line 201
     return-void
 .end method

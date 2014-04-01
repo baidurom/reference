@@ -60,13 +60,13 @@
     .parameter "context"
 
     .prologue
-    .line 139
+    .line 138
     invoke-direct {p0}, Lcom/baidu/notificationdefense/INotificationDefenseService$Stub;-><init>()V
 
-    .line 140
+    .line 139
     iput-object p1, p0, Lcom/baidu/notificationdefense/NotificationDefenseService;->mContext:Landroid/content/Context;
 
-    .line 142
+    .line 141
     new-instance v0, Landroid/os/HandlerThread;
 
     const-string v1, "NotificationDefenseService"
@@ -75,12 +75,12 @@
 
     iput-object v0, p0, Lcom/baidu/notificationdefense/NotificationDefenseService;->mHandlerThread:Landroid/os/HandlerThread;
 
-    .line 143
+    .line 142
     iget-object v0, p0, Lcom/baidu/notificationdefense/NotificationDefenseService;->mHandlerThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
 
-    .line 144
+    .line 143
     new-instance v0, Lcom/baidu/notificationdefense/NotificationDefenseService$DefenseHandler;
 
     iget-object v1, p0, Lcom/baidu/notificationdefense/NotificationDefenseService;->mHandlerThread:Landroid/os/HandlerThread;
@@ -93,17 +93,17 @@
 
     iput-object v0, p0, Lcom/baidu/notificationdefense/NotificationDefenseService;->mHandler:Landroid/os/Handler;
 
-    .line 146
+    .line 145
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     iput-object v0, p0, Lcom/baidu/notificationdefense/NotificationDefenseService;->mBlockedPackages:Ljava/util/HashSet;
 
-    .line 147
+    .line 146
     invoke-direct {p0}, Lcom/baidu/notificationdefense/NotificationDefenseService;->loadBlockDb()V
 
-    .line 148
+    .line 147
     return-void
 .end method
 
@@ -112,7 +112,7 @@
     .parameter "x0"
 
     .prologue
-    .line 33
+    .line 32
     iget-object v0, p0, Lcom/baidu/notificationdefense/NotificationDefenseService;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -124,14 +124,14 @@
     .parameter "notification"
 
     .prologue
-    .line 211
+    .line 210
     const/4 v0, 0x0
 
-    .line 212
+    .line 211
     .local v0, blocked:Z
     iget-object v1, p2, Landroid/app/Notification;->tickerText:Ljava/lang/CharSequence;
 
-    .line 216
+    .line 215
     .local v1, title:Ljava/lang/CharSequence;
     return v0
 .end method
@@ -142,25 +142,25 @@
     .prologue
     const/4 v11, 0x1
 
-    .line 57
+    .line 56
     iget-object v8, p0, Lcom/baidu/notificationdefense/NotificationDefenseService;->mBlockedPackages:Ljava/util/HashSet;
 
     monitor-enter v8
 
-    .line 58
+    .line 57
     :try_start_0
     iget-object v7, p0, Lcom/baidu/notificationdefense/NotificationDefenseService;->mPolicyFile:Lcom/android/internal/os/AtomicFile;
 
     if-nez v7, :cond_3
 
-    .line 59
+    .line 58
     new-instance v0, Ljava/io/File;
 
     const-string v7, "/data/system"
 
     invoke-direct {v0, v7}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 60
+    .line 59
     .local v0, dir:Ljava/io/File;
     new-instance v7, Lcom/android/internal/os/AtomicFile;
 
@@ -174,17 +174,17 @@
 
     iput-object v7, p0, Lcom/baidu/notificationdefense/NotificationDefenseService;->mPolicyFile:Lcom/android/internal/os/AtomicFile;
 
-    .line 62
+    .line 61
     iget-object v7, p0, Lcom/baidu/notificationdefense/NotificationDefenseService;->mBlockedPackages:Ljava/util/HashSet;
 
     invoke-virtual {v7}, Ljava/util/HashSet;->clear()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 64
+    .line 63
     const/4 v2, 0x0
 
-    .line 66
+    .line 65
     .local v2, infile:Ljava/io/FileInputStream;
     :try_start_1
     iget-object v7, p0, Lcom/baidu/notificationdefense/NotificationDefenseService;->mPolicyFile:Lcom/android/internal/os/AtomicFile;
@@ -193,21 +193,21 @@
 
     move-result-object v2
 
-    .line 67
+    .line 66
     invoke-static {}, Landroid/util/Xml;->newPullParser()Lorg/xmlpull/v1/XmlPullParser;
 
     move-result-object v3
 
-    .line 68
+    .line 67
     .local v3, parser:Lorg/xmlpull/v1/XmlPullParser;
     const/4 v7, 0x0
 
     invoke-interface {v3, v2, v7}, Lorg/xmlpull/v1/XmlPullParser;->setInput(Ljava/io/InputStream;Ljava/lang/String;)V
 
-    .line 72
+    .line 71
     const/4 v6, 0x1
 
-    .line 73
+    .line 72
     .local v6, version:I
     :cond_0
     :goto_0
@@ -218,18 +218,18 @@
     .local v5, type:I
     if-eq v5, v11, :cond_5
 
-    .line 74
+    .line 73
     invoke-interface {v3}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 75
+    .line 74
     .local v4, tag:Ljava/lang/String;
     const/4 v7, 0x2
 
     if-ne v5, v7, :cond_0
 
-    .line 76
+    .line 75
     const-string/jumbo v7, "notification-policy"
 
     invoke-virtual {v7, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -238,7 +238,7 @@
 
     if-eqz v7, :cond_1
 
-    .line 77
+    .line 76
     const/4 v7, 0x0
 
     const-string/jumbo v9, "version"
@@ -253,7 +253,7 @@
 
     goto :goto_0
 
-    .line 78
+    .line 77
     :cond_1
     const-string v7, "blocked-packages"
 
@@ -263,7 +263,7 @@
 
     if-eqz v7, :cond_0
 
-    .line 79
+    .line 78
     :cond_2
     :goto_1
     invoke-interface {v3}, Lorg/xmlpull/v1/XmlPullParser;->next()I
@@ -272,12 +272,12 @@
 
     if-eq v5, v11, :cond_0
 
-    .line 80
+    .line 79
     invoke-interface {v3}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 81
+    .line 80
     const-string/jumbo v7, "package"
 
     invoke-virtual {v7, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -286,7 +286,7 @@
 
     if-eqz v7, :cond_4
 
-    .line 82
+    .line 81
     iget-object v7, p0, Lcom/baidu/notificationdefense/NotificationDefenseService;->mBlockedPackages:Ljava/util/HashSet;
 
     const/4 v9, 0x0
@@ -307,7 +307,7 @@
 
     goto :goto_1
 
-    .line 90
+    .line 89
     .end local v3           #parser:Lorg/xmlpull/v1/XmlPullParser;
     .end local v4           #tag:Ljava/lang/String;
     .end local v5           #type:I
@@ -315,11 +315,11 @@
     :catch_0
     move-exception v7
 
-    .line 99
+    .line 98
     :try_start_2
     invoke-static {v2}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
-    .line 102
+    .line 101
     .end local v0           #dir:Ljava/io/File;
     .end local v2           #infile:Ljava/io/FileInputStream;
     :cond_3
@@ -328,10 +328,10 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 103
+    .line 102
     return-void
 
-    .line 83
+    .line 82
     .restart local v0       #dir:Ljava/io/File;
     .restart local v2       #infile:Ljava/io/FileInputStream;
     .restart local v3       #parser:Lorg/xmlpull/v1/XmlPullParser;
@@ -360,87 +360,96 @@
 
     goto :goto_0
 
-    .line 92
-    .end local v3           #parser:Lorg/xmlpull/v1/XmlPullParser;
+    .line 98
     .end local v4           #tag:Ljava/lang/String;
+    :cond_5
+    :try_start_4
+    invoke-static {v2}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
+
+    goto :goto_2
+
+    .line 101
+    .end local v0           #dir:Ljava/io/File;
+    .end local v2           #infile:Ljava/io/FileInputStream;
+    .end local v3           #parser:Lorg/xmlpull/v1/XmlPullParser;
     .end local v5           #type:I
     .end local v6           #version:I
+    :catchall_0
+    move-exception v7
+
+    monitor-exit v8
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+
+    throw v7
+
+    .line 91
+    .restart local v0       #dir:Ljava/io/File;
+    .restart local v2       #infile:Ljava/io/FileInputStream;
     :catch_1
     move-exception v1
 
-    .line 93
+    .line 92
     .local v1, e:Ljava/io/IOException;
-    :try_start_4
+    :try_start_5
     const-string v7, "NotificationDefenseService"
 
     const-string v9, "Unable to read blocked notifications database"
 
     invoke-static {v7, v9, v1}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    .line 99
-    :try_start_5
+    .line 98
+    :try_start_6
     invoke-static {v2}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
     goto :goto_2
 
-    .line 102
-    .end local v0           #dir:Ljava/io/File;
+    .line 93
     .end local v1           #e:Ljava/io/IOException;
-    .end local v2           #infile:Ljava/io/FileInputStream;
-    :catchall_0
-    move-exception v7
-
-    monitor-exit v8
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
-
-    throw v7
-
-    .line 94
-    .restart local v0       #dir:Ljava/io/File;
-    .restart local v2       #infile:Ljava/io/FileInputStream;
     :catch_2
     move-exception v1
 
-    .line 95
+    .line 94
     .local v1, e:Ljava/lang/NumberFormatException;
-    :try_start_6
+    :try_start_7
     const-string v7, "NotificationDefenseService"
 
     const-string v9, "Unable to parse blocked notifications database"
 
     invoke-static {v7, v9, v1}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_1
-
-    .line 99
-    :try_start_7
-    invoke-static {v2}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
     :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_0
+    .catchall {:try_start_7 .. :try_end_7} :catchall_1
+
+    .line 98
+    :try_start_8
+    invoke-static {v2}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
+    :try_end_8
+    .catchall {:try_start_8 .. :try_end_8} :catchall_0
 
     goto :goto_2
 
-    .line 96
+    .line 95
     .end local v1           #e:Ljava/lang/NumberFormatException;
     :catch_3
     move-exception v1
 
-    .line 97
+    .line 96
     .local v1, e:Lorg/xmlpull/v1/XmlPullParserException;
-    :try_start_8
+    :try_start_9
     const-string v7, "NotificationDefenseService"
 
     const-string v9, "Unable to parse blocked notifications database"
 
     invoke-static {v7, v9, v1}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    :try_end_8
-    .catchall {:try_start_8 .. :try_end_8} :catchall_1
+    :try_end_9
+    .catchall {:try_start_9 .. :try_end_9} :catchall_1
 
-    .line 99
-    :try_start_9
+    .line 98
+    :try_start_a
     invoke-static {v2}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
     goto :goto_2
@@ -452,16 +461,8 @@
     invoke-static {v2}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
     throw v7
-
-    .restart local v3       #parser:Lorg/xmlpull/v1/XmlPullParser;
-    .restart local v5       #type:I
-    .restart local v6       #version:I
-    :cond_5
-    invoke-static {v2}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
-    :try_end_9
-    .catchall {:try_start_9 .. :try_end_9} :catchall_0
-
-    goto :goto_2
+    :try_end_a
+    .catchall {:try_start_a .. :try_end_a} :catchall_0
 .end method
 
 .method public static main(Landroid/content/Context;)V
@@ -469,18 +470,18 @@
     .parameter "context"
 
     .prologue
-    .line 249
+    .line 248
     new-instance v0, Lcom/baidu/notificationdefense/NotificationDefenseService;
 
     invoke-direct {v0, p0}, Lcom/baidu/notificationdefense/NotificationDefenseService;-><init>(Landroid/content/Context;)V
 
-    .line 250
+    .line 249
     .local v0, service:Lcom/baidu/notificationdefense/NotificationDefenseService;
     const-string v1, "NotificationDefenseService"
 
     invoke-static {v1, v0}, Landroid/os/ServiceManager;->addService(Ljava/lang/String;Landroid/os/IBinder;)V
 
-    .line 254
+    .line 253
     return-void
 .end method
 
@@ -488,15 +489,15 @@
     .locals 9
 
     .prologue
-    .line 106
+    .line 105
     iget-object v6, p0, Lcom/baidu/notificationdefense/NotificationDefenseService;->mBlockedPackages:Ljava/util/HashSet;
 
     monitor-enter v6
 
-    .line 107
+    .line 106
     const/4 v3, 0x0
 
-    .line 109
+    .line 108
     .local v3, outfile:Ljava/io/FileOutputStream;
     :try_start_0
     iget-object v5, p0, Lcom/baidu/notificationdefense/NotificationDefenseService;->mPolicyFile:Lcom/android/internal/os/AtomicFile;
@@ -505,18 +506,18 @@
 
     move-result-object v3
 
-    .line 111
+    .line 110
     new-instance v2, Lcom/android/internal/util/FastXmlSerializer;
 
     invoke-direct {v2}, Lcom/android/internal/util/FastXmlSerializer;-><init>()V
 
-    .line 112
+    .line 111
     .local v2, out:Lorg/xmlpull/v1/XmlSerializer;
     const-string/jumbo v5, "utf-8"
 
     invoke-interface {v2, v3, v5}, Lorg/xmlpull/v1/XmlSerializer;->setOutput(Ljava/io/OutputStream;Ljava/lang/String;)V
 
-    .line 114
+    .line 113
     const/4 v5, 0x0
 
     const/4 v7, 0x1
@@ -527,14 +528,14 @@
 
     invoke-interface {v2, v5, v7}, Lorg/xmlpull/v1/XmlSerializer;->startDocument(Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    .line 116
+    .line 115
     const/4 v5, 0x0
 
     const-string/jumbo v7, "notification-policy"
 
     invoke-interface {v2, v5, v7}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 117
+    .line 116
     const/4 v5, 0x0
 
     const-string/jumbo v7, "version"
@@ -547,14 +548,14 @@
 
     invoke-interface {v2, v5, v7, v8}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 118
+    .line 117
     const/4 v5, 0x0
 
     const-string v7, "blocked-packages"
 
     invoke-interface {v2, v5, v7}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 120
+    .line 119
     iget-object v5, p0, Lcom/baidu/notificationdefense/NotificationDefenseService;->mBlockedPackages:Ljava/util/HashSet;
 
     invoke-virtual {v5}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
@@ -575,7 +576,7 @@
 
     check-cast v4, Ljava/lang/String;
 
-    .line 121
+    .line 120
     .local v4, pkg:Ljava/lang/String;
     const/4 v5, 0x0
 
@@ -583,14 +584,14 @@
 
     invoke-interface {v2, v5, v7}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 122
+    .line 121
     const/4 v5, 0x0
 
     const-string/jumbo v7, "name"
 
     invoke-interface {v2, v5, v7, v4}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 123
+    .line 122
     const/4 v5, 0x0
 
     const-string/jumbo v7, "package"
@@ -602,24 +603,24 @@
 
     goto :goto_0
 
-    .line 131
+    .line 130
     .end local v1           #i$:Ljava/util/Iterator;
     .end local v2           #out:Lorg/xmlpull/v1/XmlSerializer;
     .end local v4           #pkg:Ljava/lang/String;
     :catch_0
     move-exception v0
 
-    .line 132
+    .line 131
     .local v0, e:Ljava/io/IOException;
     if-eqz v3, :cond_0
 
-    .line 133
+    .line 132
     :try_start_1
     iget-object v5, p0, Lcom/baidu/notificationdefense/NotificationDefenseService;->mPolicyFile:Lcom/android/internal/os/AtomicFile;
 
     invoke-virtual {v5, v3}, Lcom/android/internal/os/AtomicFile;->failWrite(Ljava/io/FileOutputStream;)V
 
-    .line 136
+    .line 135
     .end local v0           #e:Ljava/io/IOException;
     :cond_0
     :goto_1
@@ -627,10 +628,10 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 137
+    .line 136
     return-void
 
-    .line 125
+    .line 124
     .restart local v1       #i$:Ljava/util/Iterator;
     .restart local v2       #out:Lorg/xmlpull/v1/XmlSerializer;
     :cond_1
@@ -641,17 +642,17 @@
 
     invoke-interface {v2, v5, v7}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 126
+    .line 125
     const/4 v5, 0x0
 
     const-string/jumbo v7, "notification-policy"
 
     invoke-interface {v2, v5, v7}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 128
+    .line 127
     invoke-interface {v2}, Lorg/xmlpull/v1/XmlSerializer;->endDocument()V
 
-    .line 130
+    .line 129
     iget-object v5, p0, Lcom/baidu/notificationdefense/NotificationDefenseService;->mPolicyFile:Lcom/android/internal/os/AtomicFile;
 
     invoke-virtual {v5, v3}, Lcom/android/internal/os/AtomicFile;->finishWrite(Ljava/io/FileOutputStream;)V
@@ -661,7 +662,7 @@
 
     goto :goto_1
 
-    .line 136
+    .line 135
     .end local v1           #i$:Ljava/util/Iterator;
     .end local v2           #out:Lorg/xmlpull/v1/XmlSerializer;
     :catchall_0
@@ -682,12 +683,12 @@
     .parameter "pkg"
 
     .prologue
-    .line 152
+    .line 151
     iget-object v2, p0, Lcom/baidu/notificationdefense/NotificationDefenseService;->mBlockedPackages:Ljava/util/HashSet;
 
     monitor-enter v2
 
-    .line 153
+    .line 152
     :try_start_0
     iget-object v1, p0, Lcom/baidu/notificationdefense/NotificationDefenseService;->mBlockedPackages:Ljava/util/HashSet;
 
@@ -699,22 +700,22 @@
 
     const/4 v0, 0x1
 
-    .line 154
+    .line 153
     .local v0, enabled:Z
     :goto_0
     monitor-exit v2
 
-    .line 155
+    .line 154
     return v0
 
-    .line 153
+    .line 152
     .end local v0           #enabled:Z
     :cond_0
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 154
+    .line 153
     :catchall_0
     move-exception v1
 
@@ -732,12 +733,12 @@
     .parameter "notification"
 
     .prologue
-    .line 186
+    .line 185
     iget-object v5, p0, Lcom/baidu/notificationdefense/NotificationDefenseService;->mBlockedPackages:Ljava/util/HashSet;
 
     monitor-enter v5
 
-    .line 187
+    .line 186
     :try_start_0
     iget-object v4, p0, Lcom/baidu/notificationdefense/NotificationDefenseService;->mBlockedPackages:Ljava/util/HashSet;
 
@@ -745,36 +746,36 @@
 
     move-result v0
 
-    .line 188
+    .line 187
     .local v0, blocked:Z
     monitor-exit v5
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 190
+    .line 189
     if-nez v0, :cond_0
 
-    .line 191
+    .line 190
     invoke-direct {p0, p1, p3}, Lcom/baidu/notificationdefense/NotificationDefenseService;->checkAds(Ljava/lang/String;Landroid/app/Notification;)Z
 
     move-result v0
 
-    .line 194
+    .line 193
     :cond_0
     if-eqz v0, :cond_1
 
-    .line 195
+    .line 194
     move-object v2, p1
 
-    .line 196
+    .line 195
     .local v2, clonePkg:Ljava/lang/String;
     move v1, p2
 
-    .line 197
+    .line 196
     .local v1, cloneId:I
     move-object v3, p3
 
-    .line 198
+    .line 197
     .local v3, ntf:Landroid/app/Notification;
     iget-object v4, p0, Lcom/baidu/notificationdefense/NotificationDefenseService;->mHandler:Landroid/os/Handler;
 
@@ -784,14 +785,14 @@
 
     invoke-virtual {v4, v5}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 207
+    .line 206
     .end local v1           #cloneId:I
     .end local v2           #clonePkg:Ljava/lang/String;
     .end local v3           #ntf:Landroid/app/Notification;
     :cond_1
     return v0
 
-    .line 188
+    .line 187
     .end local v0           #blocked:Z
     :catchall_0
     move-exception v4
@@ -810,40 +811,40 @@
     .parameter "enabled"
 
     .prologue
-    .line 163
+    .line 162
     iget-object v2, p0, Lcom/baidu/notificationdefense/NotificationDefenseService;->mBlockedPackages:Ljava/util/HashSet;
 
     monitor-enter v2
 
-    .line 164
+    .line 163
     if-eqz p2, :cond_0
 
-    .line 165
+    .line 164
     :try_start_0
     iget-object v1, p0, Lcom/baidu/notificationdefense/NotificationDefenseService;->mBlockedPackages:Ljava/util/HashSet;
 
     invoke-virtual {v1, p1}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
 
-    .line 173
+    .line 172
     :goto_0
     monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 174
+    .line 173
     invoke-direct {p0}, Lcom/baidu/notificationdefense/NotificationDefenseService;->writeBlockDb()V
 
-    .line 175
+    .line 174
     return-void
 
-    .line 167
+    .line 166
     :cond_0
     :try_start_1
     iget-object v1, p0, Lcom/baidu/notificationdefense/NotificationDefenseService;->mBlockedPackages:Ljava/util/HashSet;
 
     invoke-virtual {v1, p1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 170
+    .line 169
     iget-object v1, p0, Lcom/baidu/notificationdefense/NotificationDefenseService;->mHandler:Landroid/os/Handler;
 
     const/16 v3, 0xb
@@ -852,7 +853,7 @@
 
     move-result-object v0
 
-    .line 171
+    .line 170
     .local v0, msg:Landroid/os/Message;
     iget-object v1, p0, Lcom/baidu/notificationdefense/NotificationDefenseService;->mHandler:Landroid/os/Handler;
 
@@ -860,7 +861,7 @@
 
     goto :goto_0
 
-    .line 173
+    .line 172
     .end local v0           #msg:Landroid/os/Message;
     :catchall_0
     move-exception v1

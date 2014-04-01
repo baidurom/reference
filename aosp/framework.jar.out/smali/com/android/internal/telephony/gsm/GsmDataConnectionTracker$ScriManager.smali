@@ -35,8 +35,6 @@
 
 .field public static final SCRI_PS_SIGNALLING_ONGOING:I = 0x2
 
-.field public static final SCRI_RAU_ENABLED:I = 0x6
-
 .field public static final SCRI_REQ_NOT_SENT:I = 0x4
 
 .field public static final SCRI_RESULT_REQ_SENT:I = 0x0
@@ -53,13 +51,9 @@
 # instance fields
 .field protected final LOG_TAG:Ljava/lang/String;
 
-.field public mFirstESCRIRAUFollowOnProceed:Z
-
 .field private mGuardTimerExpired:Z
 
 .field private mNwType:I
-
-.field public mPeriodicRAUFollowOnProceedEnable:Z
 
 .field private mPsSession:Z
 
@@ -94,62 +88,56 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 3686
+    .line 3304
     iput-object p1, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3674
-    iput-boolean v1, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mPeriodicRAUFollowOnProceedEnable:Z
-
-    .line 3675
-    iput-boolean v1, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mFirstESCRIRAUFollowOnProceed:Z
-
-    .line 3684
+    .line 3302
     const-string v0, "GSM"
 
     iput-object v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->LOG_TAG:Ljava/lang/String;
 
-    .line 3687
+    .line 3305
     iput v1, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mScriGuardTimer:I
 
-    .line 3688
+    .line 3306
     iput v1, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mScriPollTimer:I
 
-    .line 3689
+    .line 3307
     iput v1, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mScriDataCounter:I
 
-    .line 3690
+    .line 3308
     iput v1, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mScriRetryTimer:I
 
-    .line 3691
+    .line 3309
     iput v1, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mScriAddCounter:I
 
-    .line 3692
+    .line 3310
     iput v1, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mScriTriggerDataCounter:I
 
-    .line 3693
+    .line 3311
     iput v1, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mScriTriggerDataOffCounter:I
 
-    .line 3694
+    .line 3312
     iput v1, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mScriRetryCounter:I
 
-    .line 3695
+    .line 3313
     iput-boolean v1, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mPsSession:Z
 
-    .line 3697
+    .line 3315
     iput-boolean v1, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mScriNeeded:Z
 
-    .line 3698
+    .line 3316
     iput-boolean v1, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mGuardTimerExpired:Z
 
-    .line 3699
+    .line 3317
     iput v1, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mScriState:I
 
-    .line 3701
+    .line 3319
     iput v1, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mNwType:I
 
-    .line 3702
+    .line 3320
     return-void
 .end method
 
@@ -159,7 +147,7 @@
     .locals 1
 
     .prologue
-    .line 3780
+    .line 3398
     iget-boolean v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mPsSession:Z
 
     return v0
@@ -170,7 +158,7 @@
     .parameter "networktype"
 
     .prologue
-    .line 3801
+    .line 3419
     const-string v1, "GSM"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -193,19 +181,19 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3802
+    .line 3420
     const/4 v0, 0x0
 
-    .line 3804
+    .line 3422
     .local v0, nwType:I
     const/4 v1, 0x3
 
     if-lt p1, v1, :cond_0
 
-    .line 3805
+    .line 3423
     const/4 v0, 0x1
 
-    .line 3813
+    .line 3431
     :goto_0
     if-eqz v0, :cond_3
 
@@ -213,14 +201,14 @@
 
     if-eq v1, v0, :cond_3
 
-    .line 3815
+    .line 3433
     iput v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mNwType:I
 
-    .line 3820
+    .line 3438
     :goto_1
     return v0
 
-    .line 3806
+    .line 3424
     :cond_0
     const/4 v1, 0x1
 
@@ -230,19 +218,19 @@
 
     if-ne p1, v1, :cond_2
 
-    .line 3807
+    .line 3425
     :cond_1
     const/4 v0, 0x2
 
     goto :goto_0
 
-    .line 3809
+    .line 3427
     :cond_2
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 3817
+    .line 3435
     :cond_3
     const/4 v0, 0x0
 
@@ -253,231 +241,195 @@
     .locals 1
 
     .prologue
-    .line 3769
+    .line 3387
     iget v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mScriState:I
 
     return v0
 .end method
 
 .method public isDataTransmitting()Z
-    .locals 15
+    .locals 14
 
     .prologue
-    const-wide/16 v13, 0x0
+    const-wide/16 v12, 0x0
 
-    .line 3825
-    iget-object v9, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
+    .line 3443
+    const-wide/16 v6, -0x1
 
-    iget-wide v7, v9, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->scriTxPkts:J
+    .local v6, preTxPkts:J
+    const-wide/16 v4, -0x1
 
-    .local v7, preTxPkts:J
-    iget-object v9, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
+    .line 3445
+    .local v4, preRxPkts:J
+    iget-object v8, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
 
-    iget-wide v5, v9, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->scriRxPkts:J
+    iget-wide v6, v8, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->scriTxPkts:J
 
-    .line 3827
-    .local v5, preRxPkts:J
-    invoke-static {}, Lcom/android/internal/telephony/PhoneFactory;->isDualTalkMode()Z
+    .line 3446
+    iget-object v8, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
 
-    move-result v9
+    iget-wide v4, v8, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->scriRxPkts:J
 
-    if-eqz v9, :cond_1
-
-    .line 3828
-    new-instance v0, Lcom/android/internal/telephony/DataConnectionTracker$TxRxSum;
-
-    iget-object v9, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
-
-    invoke-direct {v0, v9}, Lcom/android/internal/telephony/DataConnectionTracker$TxRxSum;-><init>(Lcom/android/internal/telephony/DataConnectionTracker;)V
-
-    .line 3830
-    .local v0, curTxRxSum:Lcom/android/internal/telephony/DataConnectionTracker$TxRxSum;
-    invoke-virtual {v0}, Lcom/android/internal/telephony/DataConnectionTracker$TxRxSum;->updateTxRxSum()V
-
-    .line 3831
-    iget-object v9, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
-
-    iget-wide v10, v0, Lcom/android/internal/telephony/DataConnectionTracker$TxRxSum;->txPkts:J
-
-    iput-wide v10, v9, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->scriTxPkts:J
-
-    .line 3832
-    iget-object v9, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
-
-    iget-wide v10, v0, Lcom/android/internal/telephony/DataConnectionTracker$TxRxSum;->rxPkts:J
-
-    iput-wide v10, v9, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->scriRxPkts:J
-
-    .line 3838
-    .end local v0           #curTxRxSum:Lcom/android/internal/telephony/DataConnectionTracker$TxRxSum;
-    :goto_0
-    const-string v9, "GSM"
-
-    new-instance v10, Ljava/lang/StringBuilder;
-
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v11, "[SCRI]tx: "
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10, v7, v8}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    const-string v11, " ==> "
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    iget-object v11, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
-
-    iget-wide v11, v11, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->scriTxPkts:J
-
-    invoke-virtual {v10, v11, v12}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-static {v9, v10}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 3839
-    const-string v9, "GSM"
-
-    new-instance v10, Ljava/lang/StringBuilder;
-
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v11, "[SCRI]rx  "
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    const-string v11, " ==> "
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    iget-object v11, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
-
-    iget-wide v11, v11, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->scriRxPkts:J
-
-    invoke-virtual {v10, v11, v12}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-static {v9, v10}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 3841
-    iget-object v9, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
-
-    iget-wide v9, v9, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->scriTxPkts:J
-
-    sub-long v3, v9, v7
-
-    .line 3842
-    .local v3, deltaTx:J
-    iget-object v9, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
-
-    iget-wide v9, v9, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->scriRxPkts:J
-
-    sub-long v1, v9, v5
-
-    .line 3843
-    .local v1, deltaRx:J
-    const-string v9, "GSM"
-
-    new-instance v10, Ljava/lang/StringBuilder;
-
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v11, "[SCRI]delta rx "
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    const-string v11, " tx "
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-static {v9, v10}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 3845
-    cmp-long v9, v3, v13
-
-    if-gtz v9, :cond_0
-
-    cmp-long v9, v1, v13
-
-    if-lez v9, :cond_2
-
-    :cond_0
-    const/4 v9, 0x1
-
-    :goto_1
-    return v9
-
-    .line 3834
-    .end local v1           #deltaRx:J
-    .end local v3           #deltaTx:J
-    :cond_1
-    iget-object v9, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
+    .line 3448
+    iget-object v8, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
 
     invoke-static {}, Landroid/net/TrafficStats;->getMobileTxPackets()J
 
-    move-result-wide v10
+    move-result-wide v9
 
-    iput-wide v10, v9, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->scriTxPkts:J
+    iput-wide v9, v8, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->scriTxPkts:J
 
-    .line 3835
-    iget-object v9, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
+    .line 3449
+    iget-object v8, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
 
     invoke-static {}, Landroid/net/TrafficStats;->getMobileRxPackets()J
 
-    move-result-wide v10
+    move-result-wide v9
 
-    iput-wide v10, v9, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->scriRxPkts:J
+    iput-wide v9, v8, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->scriRxPkts:J
 
-    goto/16 :goto_0
+    .line 3451
+    const-string v8, "GSM"
 
-    .line 3845
-    .restart local v1       #deltaRx:J
-    .restart local v3       #deltaTx:J
-    :cond_2
-    const/4 v9, 0x0
+    new-instance v9, Ljava/lang/StringBuilder;
 
-    goto :goto_1
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v10, "[SCRI]tx: "
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    const-string v10, " ==> "
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    iget-object v10, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
+
+    iget-wide v10, v10, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->scriTxPkts:J
+
+    invoke-virtual {v9, v10, v11}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 3452
+    const-string v8, "GSM"
+
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v10, "[SCRI]rx  "
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    const-string v10, " ==> "
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    iget-object v10, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
+
+    iget-wide v10, v10, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->scriRxPkts:J
+
+    invoke-virtual {v9, v10, v11}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 3454
+    iget-object v8, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
+
+    iget-wide v8, v8, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->scriTxPkts:J
+
+    sub-long v2, v8, v6
+
+    .line 3455
+    .local v2, deltaTx:J
+    iget-object v8, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
+
+    iget-wide v8, v8, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->scriRxPkts:J
+
+    sub-long v0, v8, v4
+
+    .line 3456
+    .local v0, deltaRx:J
+    const-string v8, "GSM"
+
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v10, "[SCRI]delta rx "
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    const-string v10, " tx "
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 3458
+    cmp-long v8, v2, v12
+
+    if-gtz v8, :cond_0
+
+    cmp-long v8, v0, v12
+
+    if-lez v8, :cond_1
+
+    :cond_0
+    const/4 v8, 0x1
+
+    :goto_0
+    return v8
+
+    :cond_1
+    const/4 v8, 0x0
+
+    goto :goto_0
 .end method
 
 .method public isPollTimerTrigger(Z)Z
@@ -489,17 +441,17 @@
 
     const/4 v1, 0x0
 
-    .line 3793
+    .line 3411
     if-eqz p1, :cond_2
 
-    .line 3794
+    .line 3412
     iget v2, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mScriDataCounter:I
 
     iget v3, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mScriTriggerDataCounter:I
 
     if-lt v2, v3, :cond_1
 
-    .line 3796
+    .line 3414
     :cond_0
     :goto_0
     return v0
@@ -507,10 +459,10 @@
     :cond_1
     move v0, v1
 
-    .line 3794
+    .line 3412
     goto :goto_0
 
-    .line 3796
+    .line 3414
     :cond_2
     iget v2, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mScriDataCounter:I
 
@@ -529,35 +481,35 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 3754
+    .line 3372
     iput-boolean v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mScriNeeded:Z
 
-    .line 3755
+    .line 3373
     iput-boolean v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mGuardTimerExpired:Z
 
-    .line 3756
+    .line 3374
     iput-boolean v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mPsSession:Z
 
-    .line 3757
+    .line 3375
     iput v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mScriRetryCounter:I
 
-    .line 3758
+    .line 3376
     iput v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mScriState:I
 
-    .line 3759
+    .line 3377
     iput v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mScriDataCounter:I
 
-    .line 3760
+    .line 3378
     iget v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mScriPollTimer:I
 
     div-int/lit16 v0, v0, 0x3e8
 
     iput v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mScriAddCounter:I
 
-    .line 3761
+    .line 3379
     invoke-virtual {p0}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->setScriTimer()V
 
-    .line 3762
+    .line 3380
     return-void
 .end method
 
@@ -566,19 +518,19 @@
     .parameter "hasPsSession"
 
     .prologue
-    .line 3773
+    .line 3391
     if-eqz p1, :cond_0
 
-    .line 3774
+    .line 3392
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mScriRetryCounter:I
 
-    .line 3776
+    .line 3394
     :cond_0
     iput-boolean p1, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mPsSession:Z
 
-    .line 3777
+    .line 3395
     return-void
 .end method
 
@@ -587,10 +539,10 @@
     .parameter "reset"
 
     .prologue
-    .line 3784
+    .line 3402
     if-nez p1, :cond_0
 
-    .line 3785
+    .line 3403
     iget v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mScriDataCounter:I
 
     iget v1, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mScriAddCounter:I
@@ -599,7 +551,7 @@
 
     iput v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mScriDataCounter:I
 
-    .line 3789
+    .line 3407
     :goto_0
     const-string v0, "GSM"
 
@@ -625,10 +577,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3790
+    .line 3408
     return-void
 
-    .line 3787
+    .line 3405
     :cond_0
     const/4 v0, 0x0
 
@@ -642,10 +594,10 @@
     .parameter "scriState"
 
     .prologue
-    .line 3765
+    .line 3383
     iput p1, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mScriState:I
 
-    .line 3766
+    .line 3384
     return-void
 .end method
 
@@ -661,10 +613,10 @@
 
     const/4 v6, 0x5
 
-    .line 3706
+    .line 3324
     const/4 v1, 0x0
 
-    .line 3707
+    .line 3325
     .local v1, str:Ljava/lang/String;
     const/4 v3, 0x0
 
@@ -672,7 +624,7 @@
 
     move-result-object v2
 
-    .line 3711
+    .line 3329
     .local v2, val:Ljava/lang/Integer;
     :try_start_0
     const-string/jumbo v3, "persist.radio.fd.guard.timer"
@@ -683,7 +635,7 @@
 
     move-result-object v1
 
-    .line 3712
+    .line 3330
     invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v3
@@ -692,7 +644,7 @@
 
     move-result-object v2
 
-    .line 3713
+    .line 3331
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
     move-result v3
@@ -712,7 +664,7 @@
 
     move-result-object v2
 
-    .line 3714
+    .line 3332
     :cond_1
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
@@ -722,7 +674,7 @@
 
     iput v3, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mScriGuardTimer:I
 
-    .line 3717
+    .line 3335
     const-string/jumbo v3, "persist.radio.fd.poll.timer"
 
     const-string v4, "5"
@@ -731,7 +683,7 @@
 
     move-result-object v1
 
-    .line 3718
+    .line 3336
     invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v3
@@ -740,7 +692,7 @@
 
     move-result-object v2
 
-    .line 3719
+    .line 3337
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
     move-result v3
@@ -760,7 +712,7 @@
 
     move-result-object v2
 
-    .line 3720
+    .line 3338
     :cond_3
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
@@ -768,7 +720,7 @@
 
     iput v3, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mScriAddCounter:I
 
-    .line 3721
+    .line 3339
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
     move-result v3
@@ -777,7 +729,7 @@
 
     iput v3, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mScriPollTimer:I
 
-    .line 3724
+    .line 3342
     const-string/jumbo v3, "persist.radio.fd.counter"
 
     const-string v4, "20"
@@ -786,7 +738,7 @@
 
     move-result-object v1
 
-    .line 3725
+    .line 3343
     invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v3
@@ -795,7 +747,7 @@
 
     move-result-object v2
 
-    .line 3726
+    .line 3344
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
     move-result v3
@@ -815,7 +767,7 @@
 
     move-result-object v2
 
-    .line 3727
+    .line 3345
     :cond_5
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
@@ -823,7 +775,7 @@
 
     iput v3, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mScriTriggerDataCounter:I
 
-    .line 3730
+    .line 3348
     const-string/jumbo v3, "persist.radio.fd.off.counter"
 
     const-string v4, "20"
@@ -832,7 +784,7 @@
 
     move-result-object v1
 
-    .line 3731
+    .line 3349
     invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v3
@@ -841,7 +793,7 @@
 
     move-result-object v2
 
-    .line 3732
+    .line 3350
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
     move-result v3
@@ -861,7 +813,7 @@
 
     move-result-object v2
 
-    .line 3733
+    .line 3351
     :cond_7
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
@@ -869,7 +821,7 @@
 
     iput v3, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mScriTriggerDataOffCounter:I
 
-    .line 3736
+    .line 3354
     const-string/jumbo v3, "persist.radio.fd.retry.timer"
 
     const-string v4, "20"
@@ -878,7 +830,7 @@
 
     move-result-object v1
 
-    .line 3737
+    .line 3355
     invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v3
@@ -887,7 +839,7 @@
 
     move-result-object v2
 
-    .line 3738
+    .line 3356
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
     move-result v3
@@ -907,7 +859,7 @@
 
     move-result-object v2
 
-    .line 3739
+    .line 3357
     :cond_9
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
@@ -917,7 +869,7 @@
 
     iput v3, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mScriRetryTimer:I
 
-    .line 3741
+    .line 3359
     const-string v3, "GSM"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -998,40 +950,40 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3751
+    .line 3369
     :goto_0
     return-void
 
-    .line 3742
+    .line 3360
     :catch_0
     move-exception v0
 
-    .line 3743
+    .line 3361
     .local v0, e:Ljava/lang/Exception;
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 3744
+    .line 3362
     const v3, 0xea60
 
     iput v3, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mScriGuardTimer:I
 
-    .line 3745
+    .line 3363
     const/16 v3, 0x1388
 
     iput v3, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mScriPollTimer:I
 
-    .line 3746
+    .line 3364
     iput v7, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mScriTriggerDataCounter:I
 
-    .line 3747
+    .line 3365
     iput v7, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mScriTriggerDataOffCounter:I
 
-    .line 3748
+    .line 3366
     const/16 v3, 0x4e20
 
     iput v3, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mScriRetryTimer:I
 
-    .line 3749
+    .line 3367
     iput v6, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$ScriManager;->mScriAddCounter:I
 
     goto :goto_0

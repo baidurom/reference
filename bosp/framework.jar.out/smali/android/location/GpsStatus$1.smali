@@ -37,7 +37,7 @@
     .parameter
 
     .prologue
-    .line 68
+    .line 79
     iput-object p1, p0, Landroid/location/GpsStatus$1;->this$0:Landroid/location/GpsStatus;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
     .end annotation
 
     .prologue
-    .line 70
+    .line 82
     new-instance v0, Landroid/location/GpsStatus$SatelliteIterator;
 
     iget-object v1, p0, Landroid/location/GpsStatus$1;->this$0:Landroid/location/GpsStatus;

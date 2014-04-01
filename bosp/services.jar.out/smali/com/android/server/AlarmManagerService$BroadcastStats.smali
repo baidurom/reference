@@ -17,25 +17,17 @@
 # instance fields
 .field aggregateTime:J
 
-.field count:I
-
-.field final filterStats:Ljava/util/HashMap;
+.field filterStats:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/HashMap",
             "<",
-            "Landroid/util/Pair",
-            "<",
-            "Ljava/lang/String;",
-            "Landroid/content/ComponentName;",
-            ">;",
+            "Landroid/content/Intent$FilterComparison;",
             "Lcom/android/server/AlarmManagerService$FilterStats;",
             ">;"
         }
     .end annotation
 .end field
-
-.field final mPackageName:Ljava/lang/String;
 
 .field nesting:I
 
@@ -45,24 +37,30 @@
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/String;)V
+.method private constructor <init>()V
     .locals 1
-    .parameter "packageName"
 
     .prologue
-    .line 204
+    .line 157
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 201
+    .line 162
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/AlarmManagerService$BroadcastStats;->filterStats:Ljava/util/HashMap;
 
-    .line 205
-    iput-object p1, p0, Lcom/android/server/AlarmManagerService$BroadcastStats;->mPackageName:Ljava/lang/String;
+    return-void
+.end method
 
-    .line 206
+.method synthetic constructor <init>(Lcom/android/server/AlarmManagerService$1;)V
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    .line 157
+    invoke-direct {p0}, Lcom/android/server/AlarmManagerService$BroadcastStats;-><init>()V
+
     return-void
 .end method

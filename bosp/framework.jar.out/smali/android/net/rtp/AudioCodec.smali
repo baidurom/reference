@@ -282,7 +282,7 @@
 
     if-nez v8, :cond_0
 
-    const-string/jumbo v8, "interleaving="
+    const-string v8, "interleaving="
 
     invoke-virtual {v2, v8}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 

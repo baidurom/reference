@@ -47,9 +47,11 @@
 
 # virtual methods
 .method public run()V
-    .locals 5
+    .locals 6
 
     .prologue
+    const/4 v5, 0x0
+
     .line 147
     const/4 v0, 0x0
 
@@ -140,7 +142,70 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
+    .line 167
+    sget-boolean v1, Landroid/net/http/HttpLog;->LOGV:Z
+
+    if-eqz v1, :cond_2
+
+    .line 168
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "IdleCache IdleReaper shutdown: cached "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Landroid/net/http/IdleCache$IdleReaper;->this$0:Landroid/net/http/IdleCache;
+
+    #getter for: Landroid/net/http/IdleCache;->mCached:I
+    invoke-static {v2}, Landroid/net/http/IdleCache;->access$400(Landroid/net/http/IdleCache;)I
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " reused "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Landroid/net/http/IdleCache$IdleReaper;->this$0:Landroid/net/http/IdleCache;
+
+    #getter for: Landroid/net/http/IdleCache;->mReused:I
+    invoke-static {v2}, Landroid/net/http/IdleCache;->access$500(Landroid/net/http/IdleCache;)I
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/net/http/HttpLog;->v(Ljava/lang/String;)V
+
+    .line 170
+    iget-object v1, p0, Landroid/net/http/IdleCache$IdleReaper;->this$0:Landroid/net/http/IdleCache;
+
+    #setter for: Landroid/net/http/IdleCache;->mCached:I
+    invoke-static {v1, v5}, Landroid/net/http/IdleCache;->access$402(Landroid/net/http/IdleCache;I)I
+
+    .line 171
+    iget-object v1, p0, Landroid/net/http/IdleCache$IdleReaper;->this$0:Landroid/net/http/IdleCache;
+
+    #setter for: Landroid/net/http/IdleCache;->mReused:I
+    invoke-static {v1, v5}, Landroid/net/http/IdleCache;->access$502(Landroid/net/http/IdleCache;I)I
+
     .line 173
+    :cond_2
     return-void
 
     .line 156

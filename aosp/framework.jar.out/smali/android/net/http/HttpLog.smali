@@ -8,16 +8,28 @@
 
 .field private static final LOGTAG:Ljava/lang/String; = "http"
 
-.field static final LOGV:Z
+.field static LOGV:Z
 
 
 # direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    .prologue
+    .line 35
+    const/4 v0, 0x0
+
+    sput-boolean v0, Landroid/net/http/HttpLog;->LOGV:Z
+
+    return-void
+.end method
+
 .method constructor <init>()V
     .locals 0
 
     .prologue
-    .line 30
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 31
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -27,12 +39,24 @@
     .parameter "logMe"
 
     .prologue
-    .line 41
+    .line 46
     const-string v0, "http"
 
     invoke-static {v0, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 42
+    .line 47
+    return-void
+.end method
+
+.method static setHttpDebug(Z)V
+    .locals 0
+    .parameter "enableDebug"
+
+    .prologue
+    .line 38
+    sput-boolean p0, Landroid/net/http/HttpLog;->LOGV:Z
+
+    .line 39
     return-void
 .end method
 
@@ -41,7 +65,7 @@
     .parameter "logMe"
 
     .prologue
-    .line 37
+    .line 42
     const-string v0, "http"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -90,6 +114,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 38
+    .line 43
     return-void
 .end method

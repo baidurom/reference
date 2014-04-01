@@ -1,66 +1,143 @@
-.class Landroid/webkit/CallbackProxy$11;
+.class synthetic Landroid/webkit/CallbackProxy$11;
 .super Ljava/lang/Object;
 .source "CallbackProxy.java"
 
-# interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
-
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/webkit/CallbackProxy;->handleMessage(Landroid/os/Message;)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroid/webkit/CallbackProxy;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1008
     name = null
 .end annotation
 
 
-# instance fields
-.field final synthetic this$0:Landroid/webkit/CallbackProxy;
-
-.field final synthetic val$res:Landroid/webkit/JsResult;
+# static fields
+.field static final synthetic $SwitchMap$android$webkit$ConsoleMessage$MessageLevel:[I
 
 
 # direct methods
-.method constructor <init>(Landroid/webkit/CallbackProxy;Landroid/webkit/JsResult;)V
-    .locals 0
-    .parameter
-    .parameter
+.method static constructor <clinit>()V
+    .locals 3
 
     .prologue
-    .line 793
-    iput-object p1, p0, Landroid/webkit/CallbackProxy$11;->this$0:Landroid/webkit/CallbackProxy;
+    .line 750
+    invoke-static {}, Landroid/webkit/ConsoleMessage$MessageLevel;->values()[Landroid/webkit/ConsoleMessage$MessageLevel;
 
-    iput-object p2, p0, Landroid/webkit/CallbackProxy$11;->val$res:Landroid/webkit/JsResult;
+    move-result-object v0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    array-length v0, v0
 
+    new-array v0, v0, [I
+
+    sput-object v0, Landroid/webkit/CallbackProxy$11;->$SwitchMap$android$webkit$ConsoleMessage$MessageLevel:[I
+
+    :try_start_0
+    sget-object v0, Landroid/webkit/CallbackProxy$11;->$SwitchMap$android$webkit$ConsoleMessage$MessageLevel:[I
+
+    sget-object v1, Landroid/webkit/ConsoleMessage$MessageLevel;->TIP:Landroid/webkit/ConsoleMessage$MessageLevel;
+
+    invoke-virtual {v1}, Landroid/webkit/ConsoleMessage$MessageLevel;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_4
+
+    :goto_0
+    :try_start_1
+    sget-object v0, Landroid/webkit/CallbackProxy$11;->$SwitchMap$android$webkit$ConsoleMessage$MessageLevel:[I
+
+    sget-object v1, Landroid/webkit/ConsoleMessage$MessageLevel;->LOG:Landroid/webkit/ConsoleMessage$MessageLevel;
+
+    invoke-virtual {v1}, Landroid/webkit/ConsoleMessage$MessageLevel;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_3
+
+    :goto_1
+    :try_start_2
+    sget-object v0, Landroid/webkit/CallbackProxy$11;->$SwitchMap$android$webkit$ConsoleMessage$MessageLevel:[I
+
+    sget-object v1, Landroid/webkit/ConsoleMessage$MessageLevel;->WARNING:Landroid/webkit/ConsoleMessage$MessageLevel;
+
+    invoke-virtual {v1}, Landroid/webkit/ConsoleMessage$MessageLevel;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x3
+
+    aput v2, v0, v1
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+
+    :goto_2
+    :try_start_3
+    sget-object v0, Landroid/webkit/CallbackProxy$11;->$SwitchMap$android$webkit$ConsoleMessage$MessageLevel:[I
+
+    sget-object v1, Landroid/webkit/ConsoleMessage$MessageLevel;->ERROR:Landroid/webkit/ConsoleMessage$MessageLevel;
+
+    invoke-virtual {v1}, Landroid/webkit/ConsoleMessage$MessageLevel;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x4
+
+    aput v2, v0, v1
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_1
+
+    :goto_3
+    :try_start_4
+    sget-object v0, Landroid/webkit/CallbackProxy$11;->$SwitchMap$android$webkit$ConsoleMessage$MessageLevel:[I
+
+    sget-object v1, Landroid/webkit/ConsoleMessage$MessageLevel;->DEBUG:Landroid/webkit/ConsoleMessage$MessageLevel;
+
+    invoke-virtual {v1}, Landroid/webkit/ConsoleMessage$MessageLevel;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x5
+
+    aput v2, v0, v1
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_0
+
+    :goto_4
     return-void
-.end method
 
+    :catch_0
+    move-exception v0
 
-# virtual methods
-.method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 2
-    .parameter "dialog"
-    .parameter "which"
+    goto :goto_4
 
-    .prologue
-    .line 797
-    iget-object v0, p0, Landroid/webkit/CallbackProxy$11;->val$res:Landroid/webkit/JsResult;
+    :catch_1
+    move-exception v0
 
-    invoke-virtual {v0}, Landroid/webkit/JsResult;->confirm()V
+    goto :goto_3
 
-    .line 799
-    iget-object v0, p0, Landroid/webkit/CallbackProxy$11;->this$0:Landroid/webkit/CallbackProxy;
+    :catch_2
+    move-exception v0
 
-    const/4 v1, 0x0
+    goto :goto_2
 
-    #calls: Landroid/webkit/CallbackProxy;->setPreventWatchdogResume(Z)V
-    invoke-static {v0, v1}, Landroid/webkit/CallbackProxy;->access$000(Landroid/webkit/CallbackProxy;Z)V
+    :catch_3
+    move-exception v0
 
-    .line 800
-    return-void
+    goto :goto_1
+
+    :catch_4
+    move-exception v0
+
+    goto :goto_0
 .end method

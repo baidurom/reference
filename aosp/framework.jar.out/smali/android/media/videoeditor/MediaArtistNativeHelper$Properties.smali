@@ -25,8 +25,6 @@
 
 .field public audioFormat:I
 
-.field public audioRealDuration:I
-
 .field public audioSamplingFrequency:I
 
 .field public audioVolumeValue:I
@@ -64,7 +62,7 @@
 
     .prologue
     .line 1596
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

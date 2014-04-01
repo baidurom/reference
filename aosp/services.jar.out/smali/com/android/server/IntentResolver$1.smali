@@ -22,8 +22,8 @@
     .locals 0
 
     .prologue
-    .line 608
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 579
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -36,7 +36,7 @@
     .parameter "o2"
 
     .prologue
-    .line 610
+    .line 581
     check-cast p1, Landroid/content/IntentFilter;
 
     .end local p1
@@ -44,7 +44,7 @@
 
     move-result v0
 
-    .line 611
+    .line 582
     .local v0, q1:I
     check-cast p2, Landroid/content/IntentFilter;
 
@@ -53,7 +53,7 @@
 
     move-result v1
 
-    .line 612
+    .line 583
     .local v1, q2:I
     if-le v0, v1, :cond_0
 

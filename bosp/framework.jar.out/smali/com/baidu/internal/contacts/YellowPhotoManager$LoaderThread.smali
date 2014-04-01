@@ -265,10 +265,10 @@
     .line 340
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
-    .line 339
     :cond_3
     throw v0
 
+    .line 339
     :cond_4
     if-eqz v7, :cond_5
 

@@ -25,13 +25,13 @@
     .parameter "looper"
 
     .prologue
-    .line 221
+    .line 220
     iput-object p1, p0, Lcom/baidu/notificationdefense/NotificationDefenseService$DefenseHandler;->this$0:Lcom/baidu/notificationdefense/NotificationDefenseService;
 
-    .line 222
+    .line 221
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 223
+    .line 222
     return-void
 .end method
 
@@ -42,26 +42,26 @@
     .parameter "msg"
 
     .prologue
-    .line 228
+    .line 227
     iget v2, p1, Landroid/os/Message;->what:I
 
     packed-switch v2, :pswitch_data_0
 
-    .line 242
+    .line 241
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
-    .line 244
+    .line 243
     :cond_0
     :goto_0
     return-void
 
-    .line 231
+    .line 230
     :pswitch_0
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v1, Ljava/lang/String;
 
-    .line 232
+    .line 231
     .local v1, pkg:Ljava/lang/String;
     const-string/jumbo v2, "notification"
 
@@ -73,29 +73,25 @@
 
     move-result-object v0
 
-    .line 233
+    .line 232
     .local v0, nm:Landroid/app/INotificationManager;
     if-eqz v0, :cond_0
 
-    .line 236
+    .line 235
     :try_start_0
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v2
-
-    invoke-interface {v0, v1, v2}, Landroid/app/INotificationManager;->cancelAllNotifications(Ljava/lang/String;I)V
+    invoke-interface {v0, v1}, Landroid/app/INotificationManager;->cancelAllNotifications(Ljava/lang/String;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    .line 237
+    .line 236
     :catch_0
     move-exception v2
 
     goto :goto_0
 
-    .line 228
+    .line 227
     :pswitch_data_0
     .packed-switch 0xb
         :pswitch_0

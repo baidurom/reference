@@ -1,9 +1,6 @@
 .class Lcom/android/internal/policy/impl/PhoneWindowManager$3;
-.super Ljava/lang/Object;
+.super Landroid/os/UEventObserver;
 .source "PhoneWindowManager.java"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # annotations
@@ -27,74 +24,38 @@
     .parameter
 
     .prologue
-    .line 840
+    .line 598
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$3;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/os/UEventObserver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
+.method public onUEvent(Landroid/os/UEventObserver$UEvent;)V
     .locals 3
+    .parameter "event"
 
     .prologue
-    .line 844
-    :try_start_0
-    const-string v1, "WindowManager"
+    .line 601
+    iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$3;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
-    const-string v2, "This press is treated as short press!!"
+    const-string v1, "1"
 
-    invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    const-string v2, "SWITCH_STATE"
 
-    .line 845
-    iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$3;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
+    invoke-virtual {p1, v2}, Landroid/os/UEventObserver$UEvent;->get(Ljava/lang/String;)Ljava/lang/String;
 
-    const/4 v2, 0x0
+    move-result-object v2
 
-    #setter for: Lcom/android/internal/policy/impl/PhoneWindowManager;->mPowerKeyCount:I
-    invoke-static {v1, v2}, Lcom/android/internal/policy/impl/PhoneWindowManager;->access$202(Lcom/android/internal/policy/impl/PhoneWindowManager;I)I
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    .line 846
-    iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$3;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
+    move-result v1
 
-    iget-object v1, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mQuickBoot:Lcom/baidu/service/IQuickBootService;
+    invoke-virtual {v0, v1}, Lcom/android/internal/policy/impl/PhoneWindowManager;->setHdmiPlugged(Z)V
 
-    invoke-interface {v1}, Lcom/baidu/service/IQuickBootService;->notifyPowerShortPress()V
-
-    .line 849
-    iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$3;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
-
-    iget-object v1, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mQuickBootWakeLock:Landroid/os/PowerManager$WakeLock;
-
-    invoke-virtual {v1}, Landroid/os/PowerManager$WakeLock;->release()V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 854
-    :goto_0
+    .line 602
     return-void
-
-    .line 850
-    :catch_0
-    move-exception v0
-
-    .line 851
-    .local v0, e:Landroid/os/RemoteException;
-    const-string v1, "WindowManager"
-
-    const-string v2, "RemoteException when notify the QuickBootService short press"
-
-    invoke-static {v1, v2, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    .line 852
-    iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$3;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
-
-    iget-object v1, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mQuickBootWakeLock:Landroid/os/PowerManager$WakeLock;
-
-    invoke-virtual {v1}, Landroid/os/PowerManager$WakeLock;->release()V
-
-    goto :goto_0
 .end method

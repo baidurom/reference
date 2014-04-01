@@ -144,138 +144,14 @@
 
 
 # virtual methods
-.method protected drawableStateChanged()V
-    .locals 2
-
-    .prologue
-    .line 138
-    invoke-super {p0}, Landroid/widget/FrameLayout;->drawableStateChanged()V
-
-    .line 139
-    iget-object v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mBackground:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mBackground:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->isStateful()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 140
-    iget-object v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mBackground:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {p0}, Lcom/android/internal/widget/ActionBarContainer;->getDrawableState()[I
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setState([I)Z
-
-    .line 142
-    :cond_0
-    iget-object v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mStackedBackground:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mStackedBackground:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->isStateful()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 143
-    iget-object v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mStackedBackground:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {p0}, Lcom/android/internal/widget/ActionBarContainer;->getDrawableState()[I
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setState([I)Z
-
-    .line 145
-    :cond_1
-    iget-object v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mSplitBackground:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v0, :cond_2
-
-    iget-object v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mSplitBackground:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->isStateful()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    .line 146
-    iget-object v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mSplitBackground:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {p0}, Lcom/android/internal/widget/ActionBarContainer;->getDrawableState()[I
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setState([I)Z
-
-    .line 148
-    :cond_2
-    return-void
-.end method
-
 .method public getTabContainer()Landroid/view/View;
     .locals 1
 
     .prologue
-    .line 231
+    .line 144
     iget-object v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mTabContainer:Landroid/view/View;
 
     return-object v0
-.end method
-
-.method public jumpDrawablesToCurrentState()V
-    .locals 1
-
-    .prologue
-    .line 152
-    invoke-super {p0}, Landroid/widget/FrameLayout;->jumpDrawablesToCurrentState()V
-
-    .line 153
-    iget-object v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mBackground:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v0, :cond_0
-
-    .line 154
-    iget-object v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mBackground:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->jumpToCurrentState()V
-
-    .line 156
-    :cond_0
-    iget-object v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mStackedBackground:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v0, :cond_1
-
-    .line 157
-    iget-object v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mStackedBackground:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->jumpToCurrentState()V
-
-    .line 159
-    :cond_1
-    iget-object v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mSplitBackground:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v0, :cond_2
-
-    .line 160
-    iget-object v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mSplitBackground:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->jumpToCurrentState()V
-
-    .line 162
-    :cond_2
-    return-void
 .end method
 
 .method public onDraw(Landroid/graphics/Canvas;)V
@@ -283,7 +159,7 @@
     .parameter "canvas"
 
     .prologue
-    .line 236
+    .line 149
     invoke-virtual {p0}, Lcom/android/internal/widget/ActionBarContainer;->getWidth()I
 
     move-result v0
@@ -296,18 +172,18 @@
 
     if-nez v0, :cond_1
 
-    .line 250
+    .line 163
     :cond_0
     :goto_0
     return-void
 
-    .line 240
+    .line 153
     :cond_1
     iget-boolean v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mIsSplit:Z
 
     if-eqz v0, :cond_2
 
-    .line 241
+    .line 154
     iget-object v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mSplitBackground:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_0
@@ -318,18 +194,18 @@
 
     goto :goto_0
 
-    .line 243
+    .line 156
     :cond_2
     iget-object v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mBackground:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_3
 
-    .line 244
+    .line 157
     iget-object v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mBackground:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 246
+    .line 159
     :cond_3
     iget-object v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mStackedBackground:Landroid/graphics/drawable/Drawable;
 
@@ -339,7 +215,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 247
+    .line 160
     iget-object v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mStackedBackground:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
@@ -374,10 +250,10 @@
     .parameter "ev"
 
     .prologue
-    .line 210
+    .line 123
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onHoverEvent(Landroid/view/MotionEvent;)Z
 
-    .line 213
+    .line 126
     const/4 v0, 0x1
 
     return v0
@@ -388,7 +264,7 @@
     .parameter "ev"
 
     .prologue
-    .line 197
+    .line 110
     iget-boolean v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mIsTransitioning:Z
 
     if-nez v0, :cond_0
@@ -420,10 +296,10 @@
     .parameter "b"
 
     .prologue
-    .line 281
+    .line 194
     invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
 
-    .line 283
+    .line 196
     iget-object v8, p0, Lcom/android/internal/widget/ActionBarContainer;->mTabContainer:Landroid/view/View;
 
     if-eqz v8, :cond_1
@@ -440,7 +316,7 @@
 
     const/4 v4, 0x1
 
-    .line 285
+    .line 198
     .local v4, hasTabs:Z
     :goto_0
     iget-object v8, p0, Lcom/android/internal/widget/ActionBarContainer;->mTabContainer:Landroid/view/View;
@@ -457,12 +333,12 @@
 
     if-eq v8, v9, :cond_4
 
-    .line 286
+    .line 199
     invoke-virtual {p0}, Lcom/android/internal/widget/ActionBarContainer;->getMeasuredHeight()I
 
     move-result v2
 
-    .line 287
+    .line 200
     .local v2, containerHeight:I
     iget-object v8, p0, Lcom/android/internal/widget/ActionBarContainer;->mTabContainer:Landroid/view/View;
 
@@ -470,7 +346,7 @@
 
     move-result v7
 
-    .line 289
+    .line 202
     .local v7, tabHeight:I
     iget-object v8, p0, Lcom/android/internal/widget/ActionBarContainer;->mActionBarView:Lcom/android/internal/widget/ActionBarView;
 
@@ -482,12 +358,12 @@
 
     if-nez v8, :cond_7
 
-    .line 291
+    .line 204
     invoke-virtual {p0}, Lcom/android/internal/widget/ActionBarContainer;->getChildCount()I
 
     move-result v3
 
-    .line 292
+    .line 205
     .local v3, count:I
     const/4 v5, 0x0
 
@@ -495,25 +371,25 @@
     :goto_1
     if-ge v5, v3, :cond_3
 
-    .line 293
+    .line 206
     invoke-virtual {p0, v5}, Lcom/android/internal/widget/ActionBarContainer;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 295
+    .line 208
     .local v1, child:Landroid/view/View;
     iget-object v8, p0, Lcom/android/internal/widget/ActionBarContainer;->mTabContainer:Landroid/view/View;
 
     if-ne v1, v8, :cond_2
 
-    .line 292
+    .line 205
     :cond_0
     :goto_2
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_1
 
-    .line 283
+    .line 196
     .end local v1           #child:Landroid/view/View;
     .end local v2           #containerHeight:I
     .end local v3           #count:I
@@ -525,7 +401,7 @@
 
     goto :goto_0
 
-    .line 297
+    .line 210
     .restart local v1       #child:Landroid/view/View;
     .restart local v2       #containerHeight:I
     .restart local v3       #count:I
@@ -541,12 +417,12 @@
 
     if-nez v8, :cond_0
 
-    .line 298
+    .line 211
     invoke-virtual {v1, v7}, Landroid/view/View;->offsetTopAndBottom(I)V
 
     goto :goto_2
 
-    .line 301
+    .line 214
     .end local v1           #child:Landroid/view/View;
     :cond_3
     iget-object v8, p0, Lcom/android/internal/widget/ActionBarContainer;->mTabContainer:Landroid/view/View;
@@ -557,7 +433,7 @@
 
     invoke-virtual {v8, p2, v9, v0, v7}, Landroid/view/View;->layout(IIII)V
 
-    .line 307
+    .line 220
     .end local v2           #containerHeight:I
     .end local v3           #count:I
     .end local v5           #i:I
@@ -566,18 +442,18 @@
     :goto_3
     const/4 v6, 0x0
 
-    .line 308
+    .line 221
     .local v6, needsInvalidate:Z
     iget-boolean v8, p0, Lcom/android/internal/widget/ActionBarContainer;->mIsSplit:Z
 
     if-eqz v8, :cond_8
 
-    .line 309
+    .line 222
     iget-object v8, p0, Lcom/android/internal/widget/ActionBarContainer;->mSplitBackground:Landroid/graphics/drawable/Drawable;
 
     if-eqz v8, :cond_5
 
-    .line 310
+    .line 223
     iget-object v8, p0, Lcom/android/internal/widget/ActionBarContainer;->mSplitBackground:Landroid/graphics/drawable/Drawable;
 
     const/4 v9, 0x0
@@ -594,22 +470,22 @@
 
     invoke-virtual {v8, v9, v10, v11, v12}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 311
+    .line 224
     const/4 v6, 0x1
 
-    .line 326
+    .line 239
     :cond_5
     :goto_4
     if-eqz v6, :cond_6
 
-    .line 327
+    .line 240
     invoke-virtual {p0}, Lcom/android/internal/widget/ActionBarContainer;->invalidate()V
 
-    .line 329
+    .line 242
     :cond_6
     return-void
 
-    .line 303
+    .line 216
     .end local v6           #needsInvalidate:Z
     .restart local v2       #containerHeight:I
     .restart local v7       #tabHeight:I
@@ -624,7 +500,7 @@
 
     goto :goto_3
 
-    .line 314
+    .line 227
     .end local v2           #containerHeight:I
     .end local v7           #tabHeight:I
     .restart local v6       #needsInvalidate:Z
@@ -633,7 +509,7 @@
 
     if-eqz v8, :cond_9
 
-    .line 315
+    .line 228
     iget-object v8, p0, Lcom/android/internal/widget/ActionBarContainer;->mBackground:Landroid/graphics/drawable/Drawable;
 
     iget-object v9, p0, Lcom/android/internal/widget/ActionBarContainer;->mActionBarView:Lcom/android/internal/widget/ActionBarView;
@@ -662,10 +538,10 @@
 
     invoke-virtual {v8, v9, v10, v11, v12}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 317
+    .line 230
     const/4 v6, 0x1
 
-    .line 319
+    .line 232
     :cond_9
     if-eqz v4, :cond_a
 
@@ -680,7 +556,7 @@
 
     if-eqz v8, :cond_5
 
-    .line 320
+    .line 233
     iget-object v8, p0, Lcom/android/internal/widget/ActionBarContainer;->mStackedBackground:Landroid/graphics/drawable/Drawable;
 
     iget-object v9, p0, Lcom/android/internal/widget/ActionBarContainer;->mTabContainer:Landroid/view/View;
@@ -709,12 +585,12 @@
 
     invoke-virtual {v8, v9, v10, v11, v12}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 322
+    .line 235
     const/4 v6, 0x1
 
     goto :goto_4
 
-    .line 319
+    .line 232
     :cond_a
     const/4 v8, 0x0
 
@@ -727,20 +603,20 @@
     .parameter "heightMeasureSpec"
 
     .prologue
-    .line 260
+    .line 173
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
-    .line 262
+    .line 175
     iget-object v4, p0, Lcom/android/internal/widget/ActionBarContainer;->mActionBarView:Lcom/android/internal/widget/ActionBarView;
 
     if-nez v4, :cond_1
 
-    .line 277
+    .line 190
     :cond_0
     :goto_0
     return-void
 
-    .line 264
+    .line 177
     :cond_1
     iget-object v4, p0, Lcom/android/internal/widget/ActionBarContainer;->mActionBarView:Lcom/android/internal/widget/ActionBarView;
 
@@ -750,7 +626,7 @@
 
     check-cast v1, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 265
+    .line 178
     .local v1, lp:Landroid/widget/FrameLayout$LayoutParams;
     iget-object v4, p0, Lcom/android/internal/widget/ActionBarContainer;->mActionBarView:Lcom/android/internal/widget/ActionBarView;
 
@@ -762,7 +638,7 @@
 
     const/4 v0, 0x0
 
-    .line 268
+    .line 181
     .local v0, actionBarViewHeight:I
     :goto_1
     iget-object v4, p0, Lcom/android/internal/widget/ActionBarContainer;->mTabContainer:Landroid/view/View;
@@ -779,23 +655,23 @@
 
     if-eq v4, v5, :cond_0
 
-    .line 269
+    .line 182
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v3
 
-    .line 270
+    .line 183
     .local v3, mode:I
     const/high16 v4, -0x8000
 
     if-ne v3, v4, :cond_0
 
-    .line 271
+    .line 184
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v2
 
-    .line 272
+    .line 185
     .local v2, maxHeight:I
     invoke-virtual {p0}, Lcom/android/internal/widget/ActionBarContainer;->getMeasuredWidth()I
 
@@ -817,7 +693,7 @@
 
     goto :goto_0
 
-    .line 265
+    .line 178
     .end local v0           #actionBarViewHeight:I
     .end local v2           #maxHeight:I
     .end local v3           #mode:I
@@ -839,294 +715,63 @@
     goto :goto_1
 .end method
 
-.method public onResolveDrawables(I)V
-    .locals 1
-    .parameter "layoutDirection"
-
-    .prologue
-    .line 169
-    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onResolveDrawables(I)V
-
-    .line 170
-    iget-object v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mBackground:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v0, :cond_0
-
-    .line 171
-    iget-object v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mBackground:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)V
-
-    .line 173
-    :cond_0
-    iget-object v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mStackedBackground:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v0, :cond_1
-
-    .line 174
-    iget-object v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mStackedBackground:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)V
-
-    .line 176
-    :cond_1
-    iget-object v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mSplitBackground:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v0, :cond_2
-
-    .line 177
-    iget-object v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mSplitBackground:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)V
-
-    .line 179
-    :cond_2
-    return-void
-.end method
-
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
     .parameter "ev"
 
     .prologue
-    .line 202
+    .line 115
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 205
+    .line 118
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public setPrimaryBackground(Landroid/graphics/drawable/Drawable;)V
-    .locals 4
+    .locals 0
     .parameter "bg"
 
     .prologue
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
-
     .line 80
-    iget-object v2, p0, Lcom/android/internal/widget/ActionBarContainer;->mBackground:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v2, :cond_0
-
-    .line 81
-    iget-object v2, p0, Lcom/android/internal/widget/ActionBarContainer;->mBackground:Landroid/graphics/drawable/Drawable;
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v2, v3}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
-
-    .line 82
-    iget-object v2, p0, Lcom/android/internal/widget/ActionBarContainer;->mBackground:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {p0, v2}, Lcom/android/internal/widget/ActionBarContainer;->unscheduleDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 84
-    :cond_0
     iput-object p1, p0, Lcom/android/internal/widget/ActionBarContainer;->mBackground:Landroid/graphics/drawable/Drawable;
 
-    .line 85
-    if-eqz p1, :cond_1
-
-    .line 86
-    invoke-virtual {p1, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
-
-    .line 88
-    :cond_1
-    iget-boolean v2, p0, Lcom/android/internal/widget/ActionBarContainer;->mIsSplit:Z
-
-    if-eqz v2, :cond_4
-
-    iget-object v2, p0, Lcom/android/internal/widget/ActionBarContainer;->mSplitBackground:Landroid/graphics/drawable/Drawable;
-
-    if-nez v2, :cond_3
-
-    :cond_2
-    :goto_0
-    invoke-virtual {p0, v0}, Lcom/android/internal/widget/ActionBarContainer;->setWillNotDraw(Z)V
-
-    .line 90
+    .line 81
     invoke-virtual {p0}, Lcom/android/internal/widget/ActionBarContainer;->invalidate()V
 
-    .line 91
+    .line 82
     return-void
-
-    :cond_3
-    move v0, v1
-
-    .line 88
-    goto :goto_0
-
-    :cond_4
-    iget-object v2, p0, Lcom/android/internal/widget/ActionBarContainer;->mBackground:Landroid/graphics/drawable/Drawable;
-
-    if-nez v2, :cond_5
-
-    iget-object v2, p0, Lcom/android/internal/widget/ActionBarContainer;->mStackedBackground:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v2, :cond_2
-
-    :cond_5
-    move v0, v1
-
-    goto :goto_0
 .end method
 
 .method public setSplitBackground(Landroid/graphics/drawable/Drawable;)V
-    .locals 4
+    .locals 0
     .parameter "bg"
 
     .prologue
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
-
-    .line 108
-    iget-object v2, p0, Lcom/android/internal/widget/ActionBarContainer;->mSplitBackground:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v2, :cond_0
-
-    .line 109
-    iget-object v2, p0, Lcom/android/internal/widget/ActionBarContainer;->mSplitBackground:Landroid/graphics/drawable/Drawable;
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v2, v3}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
-
-    .line 110
-    iget-object v2, p0, Lcom/android/internal/widget/ActionBarContainer;->mSplitBackground:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {p0, v2}, Lcom/android/internal/widget/ActionBarContainer;->unscheduleDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 112
-    :cond_0
+    .line 90
     iput-object p1, p0, Lcom/android/internal/widget/ActionBarContainer;->mSplitBackground:Landroid/graphics/drawable/Drawable;
 
-    .line 113
-    if-eqz p1, :cond_1
-
-    .line 114
-    invoke-virtual {p1, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
-
-    .line 116
-    :cond_1
-    iget-boolean v2, p0, Lcom/android/internal/widget/ActionBarContainer;->mIsSplit:Z
-
-    if-eqz v2, :cond_4
-
-    iget-object v2, p0, Lcom/android/internal/widget/ActionBarContainer;->mSplitBackground:Landroid/graphics/drawable/Drawable;
-
-    if-nez v2, :cond_3
-
-    :cond_2
-    :goto_0
-    invoke-virtual {p0, v0}, Lcom/android/internal/widget/ActionBarContainer;->setWillNotDraw(Z)V
-
-    .line 118
+    .line 91
     invoke-virtual {p0}, Lcom/android/internal/widget/ActionBarContainer;->invalidate()V
 
-    .line 119
+    .line 92
     return-void
-
-    :cond_3
-    move v0, v1
-
-    .line 116
-    goto :goto_0
-
-    :cond_4
-    iget-object v2, p0, Lcom/android/internal/widget/ActionBarContainer;->mBackground:Landroid/graphics/drawable/Drawable;
-
-    if-nez v2, :cond_5
-
-    iget-object v2, p0, Lcom/android/internal/widget/ActionBarContainer;->mStackedBackground:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v2, :cond_2
-
-    :cond_5
-    move v0, v1
-
-    goto :goto_0
 .end method
 
 .method public setStackedBackground(Landroid/graphics/drawable/Drawable;)V
-    .locals 4
+    .locals 0
     .parameter "bg"
 
     .prologue
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
-
-    .line 94
-    iget-object v2, p0, Lcom/android/internal/widget/ActionBarContainer;->mStackedBackground:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v2, :cond_0
-
-    .line 95
-    iget-object v2, p0, Lcom/android/internal/widget/ActionBarContainer;->mStackedBackground:Landroid/graphics/drawable/Drawable;
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v2, v3}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
-
-    .line 96
-    iget-object v2, p0, Lcom/android/internal/widget/ActionBarContainer;->mStackedBackground:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {p0, v2}, Lcom/android/internal/widget/ActionBarContainer;->unscheduleDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 98
-    :cond_0
+    .line 85
     iput-object p1, p0, Lcom/android/internal/widget/ActionBarContainer;->mStackedBackground:Landroid/graphics/drawable/Drawable;
 
-    .line 99
-    if-eqz p1, :cond_1
-
-    .line 100
-    invoke-virtual {p1, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
-
-    .line 102
-    :cond_1
-    iget-boolean v2, p0, Lcom/android/internal/widget/ActionBarContainer;->mIsSplit:Z
-
-    if-eqz v2, :cond_4
-
-    iget-object v2, p0, Lcom/android/internal/widget/ActionBarContainer;->mSplitBackground:Landroid/graphics/drawable/Drawable;
-
-    if-nez v2, :cond_3
-
-    :cond_2
-    :goto_0
-    invoke-virtual {p0, v0}, Lcom/android/internal/widget/ActionBarContainer;->setWillNotDraw(Z)V
-
-    .line 104
+    .line 86
     invoke-virtual {p0}, Lcom/android/internal/widget/ActionBarContainer;->invalidate()V
 
-    .line 105
+    .line 87
     return-void
-
-    :cond_3
-    move v0, v1
-
-    .line 102
-    goto :goto_0
-
-    :cond_4
-    iget-object v2, p0, Lcom/android/internal/widget/ActionBarContainer;->mBackground:Landroid/graphics/drawable/Drawable;
-
-    if-nez v2, :cond_5
-
-    iget-object v2, p0, Lcom/android/internal/widget/ActionBarContainer;->mStackedBackground:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v2, :cond_2
-
-    :cond_5
-    move v0, v1
-
-    goto :goto_0
 .end method
 
 .method public setTabContainer(Lcom/android/internal/widget/ScrollingTabContainerView;)V
@@ -1134,48 +779,48 @@
     .parameter "tabView"
 
     .prologue
-    .line 217
+    .line 130
     iget-object v1, p0, Lcom/android/internal/widget/ActionBarContainer;->mTabContainer:Landroid/view/View;
 
     if-eqz v1, :cond_0
 
-    .line 218
+    .line 131
     iget-object v1, p0, Lcom/android/internal/widget/ActionBarContainer;->mTabContainer:Landroid/view/View;
 
     invoke-virtual {p0, v1}, Lcom/android/internal/widget/ActionBarContainer;->removeView(Landroid/view/View;)V
 
-    .line 220
+    .line 133
     :cond_0
     iput-object p1, p0, Lcom/android/internal/widget/ActionBarContainer;->mTabContainer:Landroid/view/View;
 
-    .line 221
+    .line 134
     if-eqz p1, :cond_1
 
-    .line 222
+    .line 135
     invoke-virtual {p0, p1}, Lcom/android/internal/widget/ActionBarContainer;->addView(Landroid/view/View;)V
 
-    .line 223
+    .line 136
     invoke-virtual {p1}, Lcom/android/internal/widget/ScrollingTabContainerView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
-    .line 224
+    .line 137
     .local v0, lp:Landroid/view/ViewGroup$LayoutParams;
     const/4 v1, -0x1
 
     iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 225
+    .line 138
     const/4 v1, -0x2
 
     iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 226
+    .line 139
     const/4 v1, 0x0
 
     invoke-virtual {p1, v1}, Lcom/android/internal/widget/ScrollingTabContainerView;->setAllowCollapse(Z)V
 
-    .line 228
+    .line 141
     .end local v0           #lp:Landroid/view/ViewGroup$LayoutParams;
     :cond_1
     return-void
@@ -1186,10 +831,10 @@
     .parameter "isTransitioning"
 
     .prologue
-    .line 190
+    .line 103
     iput-boolean p1, p0, Lcom/android/internal/widget/ActionBarContainer;->mIsTransitioning:Z
 
-    .line 191
+    .line 104
     if-eqz p1, :cond_0
 
     const/high16 v0, 0x6
@@ -1197,71 +842,13 @@
     :goto_0
     invoke-virtual {p0, v0}, Lcom/android/internal/widget/ActionBarContainer;->setDescendantFocusability(I)V
 
-    .line 193
+    .line 106
     return-void
 
-    .line 191
+    .line 104
     :cond_0
     const/high16 v0, 0x4
 
-    goto :goto_0
-.end method
-
-.method public setVisibility(I)V
-    .locals 3
-    .parameter "visibility"
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 123
-    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setVisibility(I)V
-
-    .line 124
-    if-nez p1, :cond_3
-
-    const/4 v0, 0x1
-
-    .line 125
-    .local v0, isVisible:Z
-    :goto_0
-    iget-object v2, p0, Lcom/android/internal/widget/ActionBarContainer;->mBackground:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v2, :cond_0
-
-    iget-object v2, p0, Lcom/android/internal/widget/ActionBarContainer;->mBackground:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v2, v0, v1}, Landroid/graphics/drawable/Drawable;->setVisible(ZZ)Z
-
-    .line 126
-    :cond_0
-    iget-object v2, p0, Lcom/android/internal/widget/ActionBarContainer;->mStackedBackground:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v2, :cond_1
-
-    iget-object v2, p0, Lcom/android/internal/widget/ActionBarContainer;->mStackedBackground:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v2, v0, v1}, Landroid/graphics/drawable/Drawable;->setVisible(ZZ)Z
-
-    .line 127
-    :cond_1
-    iget-object v2, p0, Lcom/android/internal/widget/ActionBarContainer;->mSplitBackground:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v2, :cond_2
-
-    iget-object v2, p0, Lcom/android/internal/widget/ActionBarContainer;->mSplitBackground:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v2, v0, v1}, Landroid/graphics/drawable/Drawable;->setVisible(ZZ)Z
-
-    .line 128
-    :cond_2
-    return-void
-
-    .end local v0           #isVisible:Z
-    :cond_3
-    move v0, v1
-
-    .line 124
     goto :goto_0
 .end method
 
@@ -1271,59 +858,8 @@
     .parameter "callback"
 
     .prologue
-    .line 255
+    .line 168
     const/4 v0, 0x0
 
     return-object v0
-.end method
-
-.method protected verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
-    .locals 1
-    .parameter "who"
-
-    .prologue
-    .line 132
-    iget-object v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mBackground:Landroid/graphics/drawable/Drawable;
-
-    if-ne p1, v0, :cond_0
-
-    iget-boolean v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mIsSplit:Z
-
-    if-eqz v0, :cond_3
-
-    :cond_0
-    iget-object v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mStackedBackground:Landroid/graphics/drawable/Drawable;
-
-    if-ne p1, v0, :cond_1
-
-    iget-boolean v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mIsStacked:Z
-
-    if-nez v0, :cond_3
-
-    :cond_1
-    iget-object v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mSplitBackground:Landroid/graphics/drawable/Drawable;
-
-    if-ne p1, v0, :cond_2
-
-    iget-boolean v0, p0, Lcom/android/internal/widget/ActionBarContainer;->mIsSplit:Z
-
-    if-nez v0, :cond_3
-
-    :cond_2
-    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    :cond_3
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_4
-    const/4 v0, 0x0
-
-    goto :goto_0
 .end method

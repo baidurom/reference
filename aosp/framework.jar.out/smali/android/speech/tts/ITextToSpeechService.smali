@@ -55,7 +55,7 @@
     .end annotation
 .end method
 
-.method public abstract playAudio(Landroid/os/IBinder;Landroid/net/Uri;ILandroid/os/Bundle;)I
+.method public abstract playAudio(Ljava/lang/String;Landroid/net/Uri;ILandroid/os/Bundle;)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -63,7 +63,7 @@
     .end annotation
 .end method
 
-.method public abstract playSilence(Landroid/os/IBinder;JILandroid/os/Bundle;)I
+.method public abstract playSilence(Ljava/lang/String;JILandroid/os/Bundle;)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -71,7 +71,7 @@
     .end annotation
 .end method
 
-.method public abstract setCallback(Landroid/os/IBinder;Landroid/speech/tts/ITextToSpeechCallback;)V
+.method public abstract setCallback(Ljava/lang/String;Landroid/speech/tts/ITextToSpeechCallback;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -79,7 +79,7 @@
     .end annotation
 .end method
 
-.method public abstract speak(Landroid/os/IBinder;Ljava/lang/String;ILandroid/os/Bundle;)I
+.method public abstract speak(Ljava/lang/String;Ljava/lang/String;ILandroid/os/Bundle;)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -87,7 +87,7 @@
     .end annotation
 .end method
 
-.method public abstract stop(Landroid/os/IBinder;)I
+.method public abstract stop(Ljava/lang/String;)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -95,7 +95,7 @@
     .end annotation
 .end method
 
-.method public abstract synthesizeToFile(Landroid/os/IBinder;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)I
+.method public abstract synthesizeToFile(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

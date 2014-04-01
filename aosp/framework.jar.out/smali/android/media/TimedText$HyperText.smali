@@ -1,4 +1,4 @@
-.class public final Landroid/media/TimedText$HyperText;
+.class public Landroid/media/TimedText$HyperText;
 .super Ljava/lang/Object;
 .source "TimedText.java"
 
@@ -9,45 +9,42 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
+    accessFlags = 0x1
     name = "HyperText"
 .end annotation
 
 
 # instance fields
-.field public final URL:Ljava/lang/String;
+.field public URL:Ljava/lang/String;
 
-.field public final altString:Ljava/lang/String;
+.field public altString:Ljava/lang/String;
 
-.field public final endChar:I
+.field public endChar:I
 
-.field public final startChar:I
+.field public startChar:I
+
+.field final synthetic this$0:Landroid/media/TimedText;
 
 
 # direct methods
-.method public constructor <init>(IILjava/lang/String;Ljava/lang/String;)V
-    .locals 0
-    .parameter "startChar"
-    .parameter "endChar"
-    .parameter "url"
-    .parameter "alt"
+.method public constructor <init>(Landroid/media/TimedText;)V
+    .locals 1
+    .parameter
 
     .prologue
-    .line 345
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, -0x1
 
-    .line 346
-    iput p1, p0, Landroid/media/TimedText$HyperText;->startChar:I
+    .line 300
+    iput-object p1, p0, Landroid/media/TimedText$HyperText;->this$0:Landroid/media/TimedText;
 
-    .line 347
-    iput p2, p0, Landroid/media/TimedText$HyperText;->endChar:I
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 348
-    iput-object p3, p0, Landroid/media/TimedText$HyperText;->URL:Ljava/lang/String;
+    .line 283
+    iput v0, p0, Landroid/media/TimedText$HyperText;->startChar:I
 
-    .line 349
-    iput-object p4, p0, Landroid/media/TimedText$HyperText;->altString:Ljava/lang/String;
+    .line 288
+    iput v0, p0, Landroid/media/TimedText$HyperText;->endChar:I
 
-    .line 350
+    .line 300
     return-void
 .end method

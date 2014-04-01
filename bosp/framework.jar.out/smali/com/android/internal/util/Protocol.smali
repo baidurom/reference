@@ -14,15 +14,11 @@
 
 .field public static final BASE_DNS_PINGER:I = 0x50000
 
-.field public static final BASE_NSD_MANAGER:I = 0x60000
-
 .field public static final BASE_SYSTEM_ASYNC_CHANNEL:I = 0x11000
 
 .field public static final BASE_SYSTEM_RESERVED:I = 0x10000
 
 .field public static final BASE_WIFI:I = 0x20000
-
-.field public static final BASE_WIFI_MANAGER:I = 0x25000
 
 .field public static final BASE_WIFI_MONITOR:I = 0x24000
 

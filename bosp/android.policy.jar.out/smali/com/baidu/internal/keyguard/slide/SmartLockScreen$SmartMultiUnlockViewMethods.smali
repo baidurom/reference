@@ -43,18 +43,18 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 279
+    .line 277
     iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;->this$0:Lcom/baidu/internal/keyguard/slide/SmartLockScreen;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 277
+    .line 275
     iput v0, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;->mViewHeight:I
 
-    .line 280
+    .line 278
     iput-object p2, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;->mSmartMultiUnlockView:Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;
 
-    .line 291
+    .line 289
     iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;->mSmartMultiUnlockView:Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;
 
     invoke-virtual {v1}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->getTargetResourceId()I
@@ -70,7 +70,7 @@
     :cond_0
     iput-boolean v0, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;->mFiveShortcutDisabled:Z
 
-    .line 293
+    .line 291
     return-void
 .end method
 
@@ -80,7 +80,7 @@
     .locals 1
 
     .prologue
-    .line 365
+    .line 363
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;->mSmartMultiUnlockView:Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;
 
     return-object v0
@@ -94,7 +94,7 @@
 
     const/4 v1, 0x0
 
-    .line 396
+    .line 394
     iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;->this$0:Lcom/baidu/internal/keyguard/slide/SmartLockScreen;
 
     invoke-virtual {v2}, Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -103,28 +103,28 @@
 
     check-cast v12, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    .line 397
+    .line 395
     .local v12, lockScreenLP:Landroid/view/ViewGroup$MarginLayoutParams;
     iget v11, v12, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    .line 398
+    .line 396
     .local v11, fromY:I
     iput v1, v12, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    .line 399
+    .line 397
     iput v1, v12, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
-    .line 400
+    .line 398
     iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;->this$0:Lcom/baidu/internal/keyguard/slide/SmartLockScreen;
 
     invoke-virtual {v2, v12}, Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 401
+    .line 399
     new-instance v9, Landroid/view/animation/AnimationSet;
 
     invoke-direct {v9, v1}, Landroid/view/animation/AnimationSet;-><init>(Z)V
 
-    .line 402
+    .line 400
     .local v9, aSet:Landroid/view/animation/AnimationSet;
     new-instance v0, Landroid/view/animation/TranslateAnimation;
 
@@ -156,7 +156,7 @@
 
     invoke-direct/range {v0 .. v8}, Landroid/view/animation/TranslateAnimation;-><init>(IFIFIFIF)V
 
-    .line 405
+    .line 403
     .local v0, a:Landroid/view/animation/TranslateAnimation;
     new-instance v1, Landroid/view/animation/BounceInterpolator;
 
@@ -164,20 +164,20 @@
 
     invoke-virtual {v0, v1}, Landroid/view/animation/TranslateAnimation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
-    .line 406
+    .line 404
     invoke-virtual {v0, v13, v14}, Landroid/view/animation/TranslateAnimation;->setDuration(J)V
 
-    .line 407
+    .line 405
     new-instance v1, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods$2;
 
     invoke-direct {v1, p0}, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods$2;-><init>(Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;)V
 
     invoke-virtual {v0, v1}, Landroid/view/animation/TranslateAnimation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
-    .line 424
+    .line 422
     invoke-virtual {v9, v0}, Landroid/view/animation/AnimationSet;->addAnimation(Landroid/view/animation/Animation;)V
 
-    .line 425
+    .line 423
     new-instance v10, Landroid/view/animation/AlphaAnimation;
 
     iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;->this$0:Lcom/baidu/internal/keyguard/slide/SmartLockScreen;
@@ -190,7 +190,7 @@
 
     invoke-direct {v10, v1, v2}, Landroid/view/animation/AlphaAnimation;-><init>(FF)V
 
-    .line 426
+    .line 424
     .local v10, alphaAnim:Landroid/view/animation/AlphaAnimation;
     new-instance v1, Landroid/view/animation/DecelerateInterpolator;
 
@@ -198,55 +198,53 @@
 
     invoke-virtual {v10, v1}, Landroid/view/animation/AlphaAnimation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
-    .line 427
+    .line 425
     invoke-virtual {v10, v13, v14}, Landroid/view/animation/AlphaAnimation;->setDuration(J)V
 
-    .line 428
+    .line 426
     invoke-virtual {v9, v10}, Landroid/view/animation/AnimationSet;->addAnimation(Landroid/view/animation/Animation;)V
 
-    .line 429
+    .line 427
     iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;->this$0:Lcom/baidu/internal/keyguard/slide/SmartLockScreen;
 
     invoke-virtual {v1, v9}, Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 430
+    .line 428
     return-void
 .end method
 
 .method public onDragging(I)V
-    .locals 5
+    .locals 4
     .parameter "yOffset"
 
     .prologue
-    .line 377
+    .line 375
     iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;->this$0:Lcom/baidu/internal/keyguard/slide/SmartLockScreen;
 
-    #getter for: Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
-    invoke-static {v2}, Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->access$200(Lcom/baidu/internal/keyguard/slide/SmartLockScreen;)Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    #getter for: Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
+    invoke-static {v2}, Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->access$200(Lcom/baidu/internal/keyguard/slide/SmartLockScreen;)Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
     move-result-object v2
 
     if-eqz v2, :cond_0
 
-    .line 378
+    .line 376
     iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;->this$0:Lcom/baidu/internal/keyguard/slide/SmartLockScreen;
 
-    #getter for: Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
-    invoke-static {v2}, Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->access$200(Lcom/baidu/internal/keyguard/slide/SmartLockScreen;)Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    #getter for: Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
+    invoke-static {v2}, Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->access$200(Lcom/baidu/internal/keyguard/slide/SmartLockScreen;)Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
     move-result-object v2
 
-    const-wide/16 v3, 0x0
+    invoke-interface {v2}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->pokeWakelock()V
 
-    invoke-interface {v2, v3, v4}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;->userActivity(J)V
-
-    .line 381
+    .line 379
     :cond_0
     iget v2, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;->mViewHeight:I
 
     if-nez v2, :cond_1
 
-    .line 382
+    .line 380
     iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;->this$0:Lcom/baidu/internal/keyguard/slide/SmartLockScreen;
 
     invoke-virtual {v2}, Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->getHeight()I
@@ -255,11 +253,11 @@
 
     iput v2, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;->mViewHeight:I
 
-    .line 384
+    .line 382
     :cond_1
     const/high16 v1, 0x3f80
 
-    .line 385
+    .line 383
     .local v1, percent:F
     iget v2, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;->mViewHeight:I
 
@@ -267,7 +265,7 @@
 
     if-gez p1, :cond_2
 
-    .line 386
+    .line 384
     iget v2, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;->mViewHeight:I
 
     int-to-float v2, v2
@@ -282,13 +280,13 @@
 
     div-float v1, v2, v3
 
-    .line 388
+    .line 386
     :cond_2
     iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;->this$0:Lcom/baidu/internal/keyguard/slide/SmartLockScreen;
 
     invoke-virtual {v2, v1}, Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->setAlpha(F)V
 
-    .line 389
+    .line 387
     iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;->this$0:Lcom/baidu/internal/keyguard/slide/SmartLockScreen;
 
     invoke-virtual {v2}, Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -297,21 +295,21 @@
 
     check-cast v0, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    .line 390
+    .line 388
     .local v0, lockScreenLP:Landroid/view/ViewGroup$MarginLayoutParams;
     iput p1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    .line 391
+    .line 389
     neg-int v2, p1
 
     iput v2, v0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
-    .line 392
+    .line 390
     iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;->this$0:Lcom/baidu/internal/keyguard/slide/SmartLockScreen;
 
     invoke-virtual {v2, v0}, Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 393
+    .line 391
     return-void
 .end method
 
@@ -320,67 +318,63 @@
     .parameter "whichPosition"
 
     .prologue
-    .line 433
+    .line 431
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public onGrabbed(Landroid/view/View;I)V
-    .locals 3
+    .locals 1
     .parameter "v"
     .parameter "handle"
 
     .prologue
-    .line 313
+    .line 311
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;->this$0:Lcom/baidu/internal/keyguard/slide/SmartLockScreen;
 
-    #getter for: Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
-    invoke-static {v0}, Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->access$200(Lcom/baidu/internal/keyguard/slide/SmartLockScreen;)Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    #getter for: Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
+    invoke-static {v0}, Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->access$200(Lcom/baidu/internal/keyguard/slide/SmartLockScreen;)Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 314
+    .line 312
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;->this$0:Lcom/baidu/internal/keyguard/slide/SmartLockScreen;
 
-    #getter for: Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
-    invoke-static {v0}, Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->access$200(Lcom/baidu/internal/keyguard/slide/SmartLockScreen;)Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    #getter for: Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
+    invoke-static {v0}, Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->access$200(Lcom/baidu/internal/keyguard/slide/SmartLockScreen;)Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
     move-result-object v0
 
-    const-wide/16 v1, 0x0
+    invoke-interface {v0}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->pokeWakelock()V
 
-    invoke-interface {v0, v1, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;->userActivity(J)V
-
-    .line 316
+    .line 314
     :cond_0
     return-void
 .end method
 
 .method public onGrabbedStateChange(Landroid/view/View;I)V
-    .locals 3
+    .locals 1
     .parameter "v"
     .parameter "handle"
 
     .prologue
-    .line 359
+    .line 357
     if-eqz p2, :cond_0
 
-    .line 360
+    .line 358
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;->this$0:Lcom/baidu/internal/keyguard/slide/SmartLockScreen;
 
-    #getter for: Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
-    invoke-static {v0}, Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->access$200(Lcom/baidu/internal/keyguard/slide/SmartLockScreen;)Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    #getter for: Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
+    invoke-static {v0}, Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->access$200(Lcom/baidu/internal/keyguard/slide/SmartLockScreen;)Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
     move-result-object v0
 
-    const-wide/16 v1, 0x0
+    invoke-interface {v0}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->pokeWakelock()V
 
-    invoke-interface {v0, v1, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;->userActivity(J)V
-
-    .line 362
+    .line 360
     :cond_0
     return-void
 .end method
@@ -391,7 +385,7 @@
     .parameter "handle"
 
     .prologue
-    .line 320
+    .line 318
     return-void
 .end method
 
@@ -405,7 +399,7 @@
 
     const/4 v10, 0x0
 
-    .line 323
+    .line 321
     iget-object v8, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;->this$0:Lcom/baidu/internal/keyguard/slide/SmartLockScreen;
 
     invoke-virtual {v8}, Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -414,17 +408,17 @@
 
     check-cast v5, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    .line 324
+    .line 322
     .local v5, layoutParams:Landroid/view/ViewGroup$MarginLayoutParams;
     iget v4, v5, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    .line 325
+    .line 323
     .local v4, fromY:I
     iget v8, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;->mViewHeight:I
 
     if-nez v8, :cond_0
 
-    .line 326
+    .line 324
     iget-object v8, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;->this$0:Lcom/baidu/internal/keyguard/slide/SmartLockScreen;
 
     invoke-virtual {v8}, Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->getHeight()I
@@ -433,13 +427,13 @@
 
     iput v8, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;->mViewHeight:I
 
-    .line 328
+    .line 326
     :cond_0
     iget v8, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;->mViewHeight:I
 
     rsub-int/lit8 v6, v8, 0x0
 
-    .line 329
+    .line 327
     .local v6, toY:I
     iget v8, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;->mViewHeight:I
 
@@ -453,19 +447,19 @@
 
     int-to-long v2, v8
 
-    .line 331
+    .line 329
     .local v2, duration:J
     iput v11, v5, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    .line 332
+    .line 330
     iput v11, v5, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
-    .line 334
+    .line 332
     new-instance v1, Landroid/view/animation/AnimationSet;
 
     invoke-direct {v1, v11}, Landroid/view/animation/AnimationSet;-><init>(Z)V
 
-    .line 335
+    .line 333
     .local v1, animSet:Landroid/view/animation/AnimationSet;
     new-instance v0, Landroid/view/animation/AlphaAnimation;
 
@@ -477,14 +471,14 @@
 
     invoke-direct {v0, v8, v10}, Landroid/view/animation/AlphaAnimation;-><init>(FF)V
 
-    .line 336
+    .line 334
     .local v0, alphaAnim:Landroid/view/animation/AlphaAnimation;
     invoke-virtual {v0, v2, v3}, Landroid/view/animation/AlphaAnimation;->setDuration(J)V
 
-    .line 337
+    .line 335
     invoke-virtual {v1, v0}, Landroid/view/animation/AnimationSet;->addAnimation(Landroid/view/animation/Animation;)V
 
-    .line 338
+    .line 336
     new-instance v7, Landroid/view/animation/TranslateAnimation;
 
     int-to-float v8, v4
@@ -493,30 +487,30 @@
 
     invoke-direct {v7, v10, v10, v8, v9}, Landroid/view/animation/TranslateAnimation;-><init>(FFFF)V
 
-    .line 339
+    .line 337
     .local v7, transAnim:Landroid/view/animation/TranslateAnimation;
     invoke-virtual {v7, v2, v3}, Landroid/view/animation/TranslateAnimation;->setDuration(J)V
 
-    .line 340
+    .line 338
     invoke-virtual {v1, v7}, Landroid/view/animation/AnimationSet;->addAnimation(Landroid/view/animation/Animation;)V
 
-    .line 342
+    .line 340
     iget-object v8, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;->this$0:Lcom/baidu/internal/keyguard/slide/SmartLockScreen;
 
     invoke-virtual {v8, v1}, Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->setAnimation(Landroid/view/animation/Animation;)V
 
-    .line 343
+    .line 341
     iget-object v8, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;->this$0:Lcom/baidu/internal/keyguard/slide/SmartLockScreen;
 
     invoke-virtual {v8}, Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->invalidate()V
 
-    .line 344
+    .line 342
     iget-object v8, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;->this$0:Lcom/baidu/internal/keyguard/slide/SmartLockScreen;
 
     #calls: Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->launchApplication(I)V
     invoke-static {v8, p2}, Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->access$900(Lcom/baidu/internal/keyguard/slide/SmartLockScreen;I)V
 
-    .line 346
+    .line 344
     iget-object v8, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;->this$0:Lcom/baidu/internal/keyguard/slide/SmartLockScreen;
 
     new-instance v9, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods$1;
@@ -525,7 +519,7 @@
 
     invoke-virtual {v8, v9, v2, v3}, Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 353
+    .line 351
     return-void
 .end method
 
@@ -533,12 +527,12 @@
     .locals 1
 
     .prologue
-    .line 373
+    .line 371
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;->mSmartMultiUnlockView:Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;
 
     invoke-virtual {v0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->ping()V
 
-    .line 374
+    .line 372
     return-void
 .end method
 
@@ -547,12 +541,12 @@
     .parameter "animate"
 
     .prologue
-    .line 369
+    .line 367
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;->mSmartMultiUnlockView:Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;
 
     invoke-virtual {v0, p1}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->reset(Z)V
 
-    .line 370
+    .line 368
     return-void
 .end method
 
@@ -560,27 +554,27 @@
     .locals 3
 
     .prologue
-    .line 296
+    .line 294
     const v1, #array@zz_lockscreen_targets_five_shortcuts#t
 
-    .line 297
+    .line 295
     .local v1, resId:I
     const v0, #array@zz_lockscreen_five_shortcuts_description#t
 
-    .line 298
+    .line 296
     .local v0, descriptionId:I
     const v1, #array@zz_lockscreen_targets_five_shortcuts#t
 
-    .line 308
+    .line 306
     iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;->mSmartMultiUnlockView:Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;
 
     invoke-virtual {v2, v0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->setTargetDescriptionsResourceId(I)V
 
-    .line 309
+    .line 307
     iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;->mSmartMultiUnlockView:Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;
 
     invoke-virtual {v2, v1}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->setTargetResources(I)V
 
-    .line 310
+    .line 308
     return-void
 .end method

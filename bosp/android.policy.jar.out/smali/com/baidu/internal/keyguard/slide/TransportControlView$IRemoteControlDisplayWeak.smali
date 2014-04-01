@@ -33,17 +33,17 @@
     .parameter "handler"
 
     .prologue
-    .line 164
+    .line 195
     invoke-direct {p0}, Landroid/media/IRemoteControlDisplay$Stub;-><init>()V
 
-    .line 165
+    .line 196
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView$IRemoteControlDisplayWeak;->mLocalHandler:Ljava/lang/ref/WeakReference;
 
-    .line 166
+    .line 197
     return-void
 .end method
 
@@ -58,7 +58,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 198
+    .line 229
     iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView$IRemoteControlDisplayWeak;->mLocalHandler:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -67,11 +67,11 @@
 
     check-cast v0, Landroid/os/Handler;
 
-    .line 199
+    .line 230
     .local v0, handler:Landroid/os/Handler;
     if-eqz v0, :cond_0
 
-    .line 200
+    .line 231
     const/16 v1, 0x65
 
     invoke-virtual {v0, v1, p1, v2, p2}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
@@ -80,7 +80,7 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 201
+    .line 232
     const/16 v1, 0x67
 
     invoke-virtual {v0, v1, p1, v2, p3}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
@@ -89,7 +89,7 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 203
+    .line 234
     :cond_0
     return-void
 .end method
@@ -100,7 +100,7 @@
     .parameter "bitmap"
 
     .prologue
-    .line 191
+    .line 222
     iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView$IRemoteControlDisplayWeak;->mLocalHandler:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -109,11 +109,11 @@
 
     check-cast v0, Landroid/os/Handler;
 
-    .line 192
+    .line 223
     .local v0, handler:Landroid/os/Handler;
     if-eqz v0, :cond_0
 
-    .line 193
+    .line 224
     const/16 v1, 0x67
 
     const/4 v2, 0x0
@@ -124,7 +124,7 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 195
+    .line 226
     :cond_0
     return-void
 .end method
@@ -141,6 +141,50 @@
     .end annotation
 
     .prologue
+    .line 238
+    iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView$IRemoteControlDisplayWeak;->mLocalHandler:Ljava/lang/ref/WeakReference;
+
+    invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/os/Handler;
+
+    .line 239
+    .local v0, handler:Landroid/os/Handler;
+    if-eqz v0, :cond_0
+
+    .line 240
+    const/16 v2, 0x68
+
+    if-eqz p3, :cond_1
+
+    const/4 v1, 0x1
+
+    :goto_0
+    invoke-virtual {v0, v2, p1, v1, p2}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
+
+    .line 243
+    :cond_0
+    return-void
+
+    .line 240
+    :cond_1
+    const/4 v1, 0x0
+
+    goto :goto_0
+.end method
+
+.method public setMetadata(ILandroid/os/Bundle;)V
+    .locals 3
+    .parameter "generationId"
+    .parameter "metadata"
+
+    .prologue
     .line 207
     iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView$IRemoteControlDisplayWeak;->mLocalHandler:Ljava/lang/ref/WeakReference;
 
@@ -155,50 +199,6 @@
     if-eqz v0, :cond_0
 
     .line 209
-    const/16 v2, 0x68
-
-    if-eqz p3, :cond_1
-
-    const/4 v1, 0x1
-
-    :goto_0
-    invoke-virtual {v0, v2, p1, v1, p2}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
-
-    .line 212
-    :cond_0
-    return-void
-
-    .line 209
-    :cond_1
-    const/4 v1, 0x0
-
-    goto :goto_0
-.end method
-
-.method public setMetadata(ILandroid/os/Bundle;)V
-    .locals 3
-    .parameter "generationId"
-    .parameter "metadata"
-
-    .prologue
-    .line 176
-    iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView$IRemoteControlDisplayWeak;->mLocalHandler:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/os/Handler;
-
-    .line 177
-    .local v0, handler:Landroid/os/Handler;
-    if-eqz v0, :cond_0
-
-    .line 178
     const/16 v1, 0x65
 
     const/4 v2, 0x0
@@ -209,7 +209,7 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 180
+    .line 211
     :cond_0
     return-void
 .end method
@@ -221,7 +221,7 @@
     .parameter "stateChangeTimeMs"
 
     .prologue
-    .line 169
+    .line 200
     iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView$IRemoteControlDisplayWeak;->mLocalHandler:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -230,11 +230,11 @@
 
     check-cast v0, Landroid/os/Handler;
 
-    .line 170
+    .line 201
     .local v0, handler:Landroid/os/Handler;
     if-eqz v0, :cond_0
 
-    .line 171
+    .line 202
     const/16 v1, 0x64
 
     invoke-virtual {v0, v1, p1, p2}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
@@ -243,7 +243,7 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 173
+    .line 204
     :cond_0
     return-void
 .end method
@@ -254,7 +254,7 @@
     .parameter "flags"
 
     .prologue
-    .line 183
+    .line 214
     iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView$IRemoteControlDisplayWeak;->mLocalHandler:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -263,11 +263,11 @@
 
     check-cast v0, Landroid/os/Handler;
 
-    .line 184
+    .line 215
     .local v0, handler:Landroid/os/Handler;
     if-eqz v0, :cond_0
 
-    .line 185
+    .line 216
     const/16 v1, 0x66
 
     invoke-virtual {v0, v1, p1, p2}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
@@ -276,7 +276,7 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 188
+    .line 219
     :cond_0
     return-void
 .end method

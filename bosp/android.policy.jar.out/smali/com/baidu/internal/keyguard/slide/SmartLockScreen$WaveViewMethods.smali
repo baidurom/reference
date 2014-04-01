@@ -56,7 +56,7 @@
 .end method
 
 .method public onGrabbedStateChange(Landroid/view/View;I)V
-    .locals 3
+    .locals 2
     .parameter "v"
     .parameter "grabbedState"
 
@@ -69,14 +69,14 @@
     .line 169
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$WaveViewMethods;->this$0:Lcom/baidu/internal/keyguard/slide/SmartLockScreen;
 
-    #getter for: Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
-    invoke-static {v0}, Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->access$200(Lcom/baidu/internal/keyguard/slide/SmartLockScreen;)Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    #getter for: Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
+    invoke-static {v0}, Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->access$200(Lcom/baidu/internal/keyguard/slide/SmartLockScreen;)Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
     move-result-object v0
 
-    const-wide/16 v1, 0x7530
+    const/16 v1, 0x7530
 
-    invoke-interface {v0, v1, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;->userActivity(J)V
+    invoke-interface {v0, v1}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->pokeWakelock(I)V
 
     .line 171
     :cond_0

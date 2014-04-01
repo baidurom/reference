@@ -25,13 +25,13 @@
     .parameter "handler"
 
     .prologue
-    .line 230
+    .line 231
     iput-object p1, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen$MmsContent;->this$0:Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;
 
-    .line 231
+    .line 232
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 232
+    .line 233
     return-void
 .end method
 
@@ -42,19 +42,19 @@
     .parameter "selfChange"
 
     .prologue
-    .line 236
+    .line 237
     :try_start_0
     new-instance v1, Landroid/content/Intent;
 
     invoke-direct {v1}, Landroid/content/Intent;-><init>()V
 
-    .line 237
+    .line 238
     .local v1, intent:Landroid/content/Intent;
     const-string v2, "com.baidu.keyguard.internal.SMS_UNREAD_UPDATED"
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 238
+    .line 239
     iget-object v2, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen$MmsContent;->this$0:Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;
 
     #getter for: Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mContext:Landroid/content/Context;
@@ -66,16 +66,16 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 242
+    .line 243
     .end local v1           #intent:Landroid/content/Intent;
     :goto_0
     return-void
 
-    .line 239
+    .line 240
     :catch_0
     move-exception v0
 
-    .line 240
+    .line 241
     .local v0, e:Ljava/lang/Exception;
     const-string v2, "HotwordKeyguardView"
 

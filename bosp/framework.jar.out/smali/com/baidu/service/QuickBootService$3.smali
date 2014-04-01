@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 498
+    .line 496
     iput-object p1, p0, Lcom/baidu/service/QuickBootService$3;->this$0:Lcom/baidu/service/QuickBootService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,12 +41,12 @@
     .locals 1
 
     .prologue
-    .line 501
+    .line 499
     iget-object v0, p0, Lcom/baidu/service/QuickBootService$3;->this$0:Lcom/baidu/service/QuickBootService;
 
     #calls: Lcom/baidu/service/QuickBootService;->stopCharger()V
     invoke-static {v0}, Lcom/baidu/service/QuickBootService;->access$600(Lcom/baidu/service/QuickBootService;)V
 
-    .line 502
+    .line 500
     return-void
 .end method

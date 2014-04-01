@@ -26,7 +26,7 @@
     .prologue
     const/4 v1, 0x2
 
-    .line 54
+    .line 59
     const-string v0, "LocationService"
 
     invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
@@ -35,7 +35,7 @@
 
     sput-boolean v0, Lcom/android/server/location/LocationServiceDebug;->DEBUG_LOCATMANAGERSERVICE:Z
 
-    .line 56
+    .line 61
     const-string v0, "LocationService"
 
     invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
@@ -44,7 +44,7 @@
 
     sput-boolean v0, Lcom/android/server/location/LocationServiceDebug;->DEBUG_LOCATPROVIDERPROXY:Z
 
-    .line 58
+    .line 63
     const-string v0, "LocationService"
 
     invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
@@ -53,7 +53,7 @@
 
     sput-boolean v0, Lcom/android/server/location/LocationServiceDebug;->DEBUG_GEOPROVIDERPROXY:Z
 
-    .line 60
+    .line 65
     const-string v0, "LocationService"
 
     invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
@@ -69,7 +69,7 @@
     .locals 0
 
     .prologue
-    .line 52
+    .line 57
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -138,10 +138,10 @@
 .end method
 
 .method private getOrientationUsingGetRotationMatrix()V
-    .locals 13
+    .locals 15
 
     .prologue
-    const-wide v11, 0x4076800000000000L
+    const-wide v13, 0x4076800000000000L
 
     .line 106
     iget-object v0, p0, Landroid/webkit/DeviceOrientationService;->mGravityVector:[F
@@ -197,7 +197,11 @@
 
     invoke-static {v9, v10}, Ljava/lang/Math;->toDegrees(D)D
 
-    move-result-wide v1
+    move-result-wide v9
+
+    const-wide v11, 0x4056800000000000L
+
+    sub-double v1, v9, v11
 
     .line 127
     .local v1, alpha:D
@@ -208,7 +212,7 @@
 
     if-gez v0, :cond_2
 
-    add-double/2addr v1, v11
+    add-double/2addr v1, v13
 
     goto :goto_1
 
@@ -235,7 +239,7 @@
 
     if-gez v0, :cond_3
 
-    add-double/2addr v3, v11
+    add-double/2addr v3, v13
 
     goto :goto_2
 
@@ -260,7 +264,7 @@
 
     if-gez v0, :cond_4
 
-    add-double/2addr v5, v11
+    add-double/2addr v5, v13
 
     goto :goto_3
 
@@ -697,7 +701,7 @@
     .parameter "accuracy"
 
     .prologue
-    .line 223
+    .line 221
     sget-boolean v0, Landroid/webkit/DeviceOrientationService;->$assertionsDisabled:Z
 
     if-nez v0, :cond_0
@@ -724,7 +728,7 @@
 
     throw v0
 
-    .line 224
+    .line 222
     :cond_0
     return-void
 .end method
@@ -742,7 +746,7 @@
 
     const/4 v2, 0x0
 
-    .line 189
+    .line 188
     sget-boolean v0, Landroid/webkit/DeviceOrientationService;->$assertionsDisabled:Z
 
     if-nez v0, :cond_0
@@ -759,7 +763,7 @@
 
     throw v0
 
-    .line 190
+    .line 189
     :cond_0
     sget-boolean v0, Landroid/webkit/DeviceOrientationService;->$assertionsDisabled:Z
 
@@ -787,18 +791,18 @@
 
     throw v0
 
-    .line 193
+    .line 192
     :cond_1
     iget-boolean v0, p0, Landroid/webkit/DeviceOrientationService;->mIsRunning:Z
 
     if-nez v0, :cond_3
 
-    .line 219
+    .line 218
     :cond_2
     :goto_0
     return-void
 
-    .line 197
+    .line 196
     :cond_3
     iget-object v0, p1, Landroid/hardware/SensorEvent;->sensor:Landroid/hardware/Sensor;
 
@@ -808,7 +812,7 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 217
+    .line 216
     sget-boolean v0, Landroid/webkit/DeviceOrientationService;->$assertionsDisabled:Z
 
     if-nez v0, :cond_2
@@ -819,18 +823,18 @@
 
     throw v0
 
-    .line 199
+    .line 198
     :pswitch_0
     iget-object v0, p0, Landroid/webkit/DeviceOrientationService;->mGravityVector:[F
 
     if-nez v0, :cond_4
 
-    .line 200
+    .line 199
     new-array v0, v5, [F
 
     iput-object v0, p0, Landroid/webkit/DeviceOrientationService;->mGravityVector:[F
 
-    .line 202
+    .line 201
     :cond_4
     iget-object v0, p0, Landroid/webkit/DeviceOrientationService;->mGravityVector:[F
 
@@ -840,7 +844,7 @@
 
     aput v1, v0, v2
 
-    .line 203
+    .line 202
     iget-object v0, p0, Landroid/webkit/DeviceOrientationService;->mGravityVector:[F
 
     iget-object v1, p1, Landroid/hardware/SensorEvent;->values:[F
@@ -849,7 +853,7 @@
 
     aput v1, v0, v3
 
-    .line 204
+    .line 203
     iget-object v0, p0, Landroid/webkit/DeviceOrientationService;->mGravityVector:[F
 
     iget-object v1, p1, Landroid/hardware/SensorEvent;->values:[F
@@ -858,23 +862,23 @@
 
     aput v1, v0, v4
 
-    .line 205
+    .line 204
     invoke-direct {p0}, Landroid/webkit/DeviceOrientationService;->getOrientationUsingGetRotationMatrix()V
 
     goto :goto_0
 
-    .line 208
+    .line 207
     :pswitch_1
     iget-object v0, p0, Landroid/webkit/DeviceOrientationService;->mMagneticFieldVector:[F
 
     if-nez v0, :cond_5
 
-    .line 209
+    .line 208
     new-array v0, v5, [F
 
     iput-object v0, p0, Landroid/webkit/DeviceOrientationService;->mMagneticFieldVector:[F
 
-    .line 211
+    .line 210
     :cond_5
     iget-object v0, p0, Landroid/webkit/DeviceOrientationService;->mMagneticFieldVector:[F
 
@@ -884,7 +888,7 @@
 
     aput v1, v0, v2
 
-    .line 212
+    .line 211
     iget-object v0, p0, Landroid/webkit/DeviceOrientationService;->mMagneticFieldVector:[F
 
     iget-object v1, p1, Landroid/hardware/SensorEvent;->values:[F
@@ -893,7 +897,7 @@
 
     aput v1, v0, v3
 
-    .line 213
+    .line 212
     iget-object v0, p0, Landroid/webkit/DeviceOrientationService;->mMagneticFieldVector:[F
 
     iget-object v1, p1, Landroid/hardware/SensorEvent;->values:[F
@@ -902,12 +906,12 @@
 
     aput v1, v0, v4
 
-    .line 214
+    .line 213
     invoke-direct {p0}, Landroid/webkit/DeviceOrientationService;->getOrientationUsingGetRotationMatrix()V
 
     goto :goto_0
 
-    .line 197
+    .line 196
     nop
 
     :pswitch_data_0

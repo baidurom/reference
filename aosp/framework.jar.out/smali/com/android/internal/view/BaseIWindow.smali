@@ -27,7 +27,7 @@
     .parameter "reason"
 
     .prologue
-    .line 73
+    .line 59
     return-void
 .end method
 
@@ -36,7 +36,7 @@
     .parameter "visible"
 
     .prologue
-    .line 53
+    .line 47
     return-void
 .end method
 
@@ -45,7 +45,15 @@
     .parameter "event"
 
     .prologue
-    .line 87
+    .line 71
+    return-void
+.end method
+
+.method public dispatchDumpWindowInfo()V
+    .locals 0
+
+    .prologue
+    .line 98
     return-void
 .end method
 
@@ -53,7 +61,7 @@
     .locals 0
 
     .prologue
-    .line 57
+    .line 50
     return-void
 .end method
 
@@ -63,16 +71,7 @@
     .parameter "top"
 
     .prologue
-    .line 114
-    return-void
-.end method
-
-.method public dispatchScreenState(Z)V
-    .locals 0
-    .parameter "on"
-
-    .prologue
-    .line 61
+    .line 89
     return-void
 .end method
 
@@ -84,10 +83,10 @@
     .parameter "localChanges"
 
     .prologue
-    .line 92
+    .line 75
     iput p1, p0, Lcom/android/internal/view/BaseIWindow;->mSeq:I
 
-    .line 93
+    .line 76
     return-void
 .end method
 
@@ -101,10 +100,10 @@
     .parameter "sync"
 
     .prologue
-    .line 98
+    .line 80
     if-eqz p6, :cond_0
 
-    .line 100
+    .line 82
     :try_start_0
     iget-object v0, p0, Lcom/android/internal/view/BaseIWindow;->mSession:Landroid/view/IWindowSession;
 
@@ -118,12 +117,12 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 104
+    .line 86
     :cond_0
     :goto_0
     return-void
 
-    .line 101
+    .line 83
     :catch_0
     move-exception v0
 
@@ -139,10 +138,10 @@
     .parameter "sync"
 
     .prologue
-    .line 77
+    .line 62
     if-eqz p5, :cond_0
 
-    .line 79
+    .line 64
     :try_start_0
     iget-object v0, p0, Lcom/android/internal/view/BaseIWindow;->mSession:Landroid/view/IWindowSession;
 
@@ -154,31 +153,23 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 83
+    .line 68
     :cond_0
     :goto_0
     return-void
 
-    .line 80
+    .line 65
     :catch_0
     move-exception v0
 
     goto :goto_0
 .end method
 
-.method public doneAnimating()V
-    .locals 0
-
-    .prologue
-    .line 108
-    return-void
-.end method
-
 .method public dumpInputDispatchingStatus()V
     .locals 0
 
     .prologue
-    .line 124
+    .line 95
     return-void
 .end method
 
@@ -187,7 +178,7 @@
     .parameter "enable"
 
     .prologue
-    .line 120
+    .line 92
     return-void
 .end method
 
@@ -198,33 +189,24 @@
     .parameter "out"
 
     .prologue
-    .line 69
+    .line 56
     return-void
 .end method
 
-.method public moved(II)V
-    .locals 0
-    .parameter "newX"
-    .parameter "newY"
-
-    .prologue
-    .line 49
-    return-void
-.end method
-
-.method public resized(Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;ZLandroid/content/res/Configuration;)V
+.method public resized(IILandroid/graphics/Rect;Landroid/graphics/Rect;ZLandroid/content/res/Configuration;)V
     .locals 1
-    .parameter "frame"
-    .parameter "contentInsets"
+    .parameter "w"
+    .parameter "h"
+    .parameter "coveredInsets"
     .parameter "visibleInsets"
     .parameter "reportDraw"
     .parameter "newConfig"
 
     .prologue
-    .line 39
-    if-eqz p4, :cond_0
+    .line 38
+    if-eqz p5, :cond_0
 
-    .line 41
+    .line 40
     :try_start_0
     iget-object v0, p0, Lcom/android/internal/view/BaseIWindow;->mSession:Landroid/view/IWindowSession;
 
@@ -232,12 +214,12 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 45
+    .line 44
     :cond_0
     :goto_0
     return-void
 
-    .line 42
+    .line 41
     :catch_0
     move-exception v0
 
@@ -262,6 +244,6 @@
     .parameter "touchEnabled"
 
     .prologue
-    .line 65
+    .line 53
     return-void
 .end method

@@ -35,7 +35,7 @@
     .locals 0
 
     .prologue
-    .line 6590
+    .line 6550
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -48,15 +48,15 @@
     .prologue
     const v0, #string@eventTypeOther#t
 
-    .line 6610
+    .line 6570
     if-nez p0, :cond_0
 
-    .line 6618
+    .line 6578
     :goto_0
     :pswitch_0
     return v0
 
-    .line 6613
+    .line 6573
     :cond_0
     invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
 
@@ -64,24 +64,24 @@
 
     packed-switch v1, :pswitch_data_0
 
-    .line 6618
+    .line 6578
     const v0, #string@eventTypeCustom#t
 
     goto :goto_0
 
-    .line 6615
+    .line 6575
     :pswitch_1
     const v0, #string@eventTypeAnniversary#t
 
     goto :goto_0
 
-    .line 6616
+    .line 6576
     :pswitch_2
     const v0, #string@eventTypeBirthday#t
 
     goto :goto_0
 
-    .line 6613
+    .line 6573
     nop
 
     :pswitch_data_0

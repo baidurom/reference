@@ -353,27 +353,16 @@
     .line 264
     iget-object v0, p0, Landroid/preference/DialogPreference;->mDialog:Landroid/app/Dialog;
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    iget-object v0, p0, Landroid/preference/DialogPreference;->mDialog:Landroid/app/Dialog;
-
-    invoke-virtual {v0}, Landroid/app/Dialog;->isShowing()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 267
-    :goto_0
-    return-void
-
-    .line 266
-    :cond_0
+    .line 265
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Landroid/preference/DialogPreference;->showDialog(Landroid/os/Bundle;)V
 
-    goto :goto_0
+    .line 267
+    :cond_0
+    return-void
 .end method
 
 .method public onClick(Landroid/content/DialogInterface;I)V
@@ -858,21 +847,21 @@
 
     .line 301
     .local v2, dialog:Landroid/app/Dialog;
-    if-eqz p1, :cond_0
-
-    .line 302
-    invoke-virtual {v2, p1}, Landroid/app/Dialog;->onRestoreInstanceState(Landroid/os/Bundle;)V
-
-    .line 304
-    :cond_0
     invoke-virtual {p0}, Landroid/preference/DialogPreference;->needInputMethod()Z
 
     move-result v3
 
-    if-eqz v3, :cond_1
+    if-eqz v3, :cond_0
+
+    .line 302
+    invoke-direct {p0, v2}, Landroid/preference/DialogPreference;->requestInputMethod(Landroid/app/Dialog;)V
+
+    .line 304
+    :cond_0
+    if-eqz p1, :cond_1
 
     .line 305
-    invoke-direct {p0, v2}, Landroid/preference/DialogPreference;->requestInputMethod(Landroid/app/Dialog;)V
+    invoke-virtual {v2, p1}, Landroid/app/Dialog;->onRestoreInstanceState(Landroid/os/Bundle;)V
 
     .line 307
     :cond_1

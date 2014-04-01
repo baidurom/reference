@@ -183,8 +183,10 @@
     .line 174
     :try_start_1
     invoke-virtual {v0}, Landroid/os/ParcelFileDescriptor;->close()V
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_2
 
-    .line 171
+    .line 177
     :goto_0
     return v2
 
@@ -197,35 +199,41 @@
     const/4 v2, 0x0
 
     .line 174
+    :try_start_2
     invoke-virtual {v0}, Landroid/os/ParcelFileDescriptor;->close()V
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
     goto :goto_0
 
     .line 175
-    .end local v1           #e:Ljava/lang/Exception;
     :catch_1
     move-exception v3
 
     goto :goto_0
 
     .line 173
+    .end local v1           #e:Ljava/lang/Exception;
     :catchall_0
     move-exception v2
 
     .line 174
-    :try_start_2
+    :try_start_3
     invoke-virtual {v0}, Landroid/os/ParcelFileDescriptor;->close()V
-    :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
+    :try_end_3
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_3
 
-    .line 173
+    .line 177
     :goto_1
     throw v2
 
     .line 175
     :catch_2
+    move-exception v3
+
+    goto :goto_0
+
+    :catch_3
     move-exception v3
 
     goto :goto_1

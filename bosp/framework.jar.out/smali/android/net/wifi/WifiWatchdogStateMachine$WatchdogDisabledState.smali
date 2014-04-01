@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 495
+    .line 583
     iput-object p1, p0, Landroid/net/wifi/WifiWatchdogStateMachine$WatchdogDisabledState;->this$0:Landroid/net/wifi/WifiWatchdogStateMachine;
 
     invoke-direct {p0}, Lcom/android/internal/util/State;-><init>()V
@@ -34,141 +34,55 @@
 
 
 # virtual methods
-.method public enter()V
-    .locals 1
+.method public processMessage(Landroid/os/Message;)Z
+    .locals 2
+    .parameter "msg"
 
     .prologue
-    .line 498
-    invoke-static {}, Landroid/net/wifi/WifiWatchdogStateMachine;->access$000()Z
+    .line 586
+    iget v0, p1, Landroid/os/Message;->what:I
+
+    packed-switch v0, :pswitch_data_0
+
+    .line 592
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+
+    .line 588
+    :pswitch_0
+    iget-object v0, p0, Landroid/net/wifi/WifiWatchdogStateMachine$WatchdogDisabledState;->this$0:Landroid/net/wifi/WifiWatchdogStateMachine;
+
+    #calls: Landroid/net/wifi/WifiWatchdogStateMachine;->isWatchdogEnabled()Z
+    invoke-static {v0}, Landroid/net/wifi/WifiWatchdogStateMachine;->access$400(Landroid/net/wifi/WifiWatchdogStateMachine;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p0}, Landroid/net/wifi/WifiWatchdogStateMachine$WatchdogDisabledState;->getName()Ljava/lang/String;
+    .line 589
+    iget-object v0, p0, Landroid/net/wifi/WifiWatchdogStateMachine$WatchdogDisabledState;->this$0:Landroid/net/wifi/WifiWatchdogStateMachine;
 
-    move-result-object v0
-
-    #calls: Landroid/net/wifi/WifiWatchdogStateMachine;->logd(Ljava/lang/String;)V
-    invoke-static {v0}, Landroid/net/wifi/WifiWatchdogStateMachine;->access$100(Ljava/lang/String;)V
-
-    .line 499
-    :cond_0
-    return-void
-.end method
-
-.method public processMessage(Landroid/os/Message;)Z
-    .locals 5
-    .parameter "msg"
-
-    .prologue
-    const/4 v2, 0x1
-
-    .line 503
-    iget v3, p1, Landroid/os/Message;->what:I
-
-    packed-switch v3, :pswitch_data_0
-
-    .line 523
-    :goto_0
-    const/4 v2, 0x0
-
-    :cond_0
-    :goto_1
-    return v2
-
-    .line 505
-    :pswitch_0
-    iget-object v3, p0, Landroid/net/wifi/WifiWatchdogStateMachine$WatchdogDisabledState;->this$0:Landroid/net/wifi/WifiWatchdogStateMachine;
-
-    #calls: Landroid/net/wifi/WifiWatchdogStateMachine;->isWatchdogEnabled()Z
-    invoke-static {v3}, Landroid/net/wifi/WifiWatchdogStateMachine;->access$800(Landroid/net/wifi/WifiWatchdogStateMachine;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    .line 506
-    iget-object v3, p0, Landroid/net/wifi/WifiWatchdogStateMachine$WatchdogDisabledState;->this$0:Landroid/net/wifi/WifiWatchdogStateMachine;
-
-    iget-object v4, p0, Landroid/net/wifi/WifiWatchdogStateMachine$WatchdogDisabledState;->this$0:Landroid/net/wifi/WifiWatchdogStateMachine;
+    iget-object v1, p0, Landroid/net/wifi/WifiWatchdogStateMachine$WatchdogDisabledState;->this$0:Landroid/net/wifi/WifiWatchdogStateMachine;
 
     #getter for: Landroid/net/wifi/WifiWatchdogStateMachine;->mNotConnectedState:Landroid/net/wifi/WifiWatchdogStateMachine$NotConnectedState;
-    invoke-static {v4}, Landroid/net/wifi/WifiWatchdogStateMachine;->access$900(Landroid/net/wifi/WifiWatchdogStateMachine;)Landroid/net/wifi/WifiWatchdogStateMachine$NotConnectedState;
-
-    move-result-object v4
-
-    #calls: Landroid/net/wifi/WifiWatchdogStateMachine;->transitionTo(Lcom/android/internal/util/IState;)V
-    invoke-static {v3, v4}, Landroid/net/wifi/WifiWatchdogStateMachine;->access$1000(Landroid/net/wifi/WifiWatchdogStateMachine;Lcom/android/internal/util/IState;)V
-
-    goto :goto_1
-
-    .line 509
-    :pswitch_1
-    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v0, Landroid/content/Intent;
-
-    .line 510
-    .local v0, intent:Landroid/content/Intent;
-    const-string/jumbo v3, "networkInfo"
-
-    invoke-virtual {v0, v3}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
+    invoke-static {v1}, Landroid/net/wifi/WifiWatchdogStateMachine;->access$500(Landroid/net/wifi/WifiWatchdogStateMachine;)Landroid/net/wifi/WifiWatchdogStateMachine$NotConnectedState;
 
     move-result-object v1
 
-    check-cast v1, Landroid/net/NetworkInfo;
+    #calls: Landroid/net/wifi/WifiWatchdogStateMachine;->transitionTo(Lcom/android/internal/util/IState;)V
+    invoke-static {v0, v1}, Landroid/net/wifi/WifiWatchdogStateMachine;->access$600(Landroid/net/wifi/WifiWatchdogStateMachine;Lcom/android/internal/util/IState;)V
 
-    .line 513
-    .local v1, networkInfo:Landroid/net/NetworkInfo;
-    sget-object v3, Landroid/net/wifi/WifiWatchdogStateMachine$4;->$SwitchMap$android$net$NetworkInfo$DetailedState:[I
-
-    invoke-virtual {v1}, Landroid/net/NetworkInfo;->getDetailedState()Landroid/net/NetworkInfo$DetailedState;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Landroid/net/NetworkInfo$DetailedState;->ordinal()I
-
-    move-result v4
-
-    aget v3, v3, v4
-
-    packed-switch v3, :pswitch_data_1
+    .line 590
+    :cond_0
+    const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 515
-    :pswitch_2
-    invoke-static {}, Landroid/net/wifi/WifiWatchdogStateMachine;->access$000()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    const-string v3, "Watchdog disabled, verify link"
-
-    #calls: Landroid/net/wifi/WifiWatchdogStateMachine;->logd(Ljava/lang/String;)V
-    invoke-static {v3}, Landroid/net/wifi/WifiWatchdogStateMachine;->access$100(Ljava/lang/String;)V
-
-    .line 516
-    :cond_1
-    iget-object v3, p0, Landroid/net/wifi/WifiWatchdogStateMachine$WatchdogDisabledState;->this$0:Landroid/net/wifi/WifiWatchdogStateMachine;
-
-    #calls: Landroid/net/wifi/WifiWatchdogStateMachine;->sendLinkStatusNotification(Z)V
-    invoke-static {v3, v2}, Landroid/net/wifi/WifiWatchdogStateMachine;->access$1100(Landroid/net/wifi/WifiWatchdogStateMachine;Z)V
-
-    goto :goto_0
-
-    .line 503
+    .line 586
     :pswitch_data_0
     .packed-switch 0x21001
         :pswitch_0
-        :pswitch_1
-    .end packed-switch
-
-    .line 513
-    :pswitch_data_1
-    .packed-switch 0x1
-        :pswitch_2
     .end packed-switch
 .end method

@@ -32,8 +32,8 @@
     .locals 0
 
     .prologue
-    .line 134
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 109
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -45,16 +45,16 @@
     .parameter "in"
 
     .prologue
-    .line 139
+    .line 114
     new-instance v0, Landroid/graphics/PointF;
 
     invoke-direct {v0}, Landroid/graphics/PointF;-><init>()V
 
-    .line 140
+    .line 115
     .local v0, r:Landroid/graphics/PointF;
     invoke-virtual {v0, p1}, Landroid/graphics/PointF;->readFromParcel(Landroid/os/Parcel;)V
 
-    .line 141
+    .line 116
     return-object v0
 .end method
 
@@ -63,7 +63,7 @@
     .parameter "x0"
 
     .prologue
-    .line 134
+    .line 109
     invoke-virtual {p0, p1}, Landroid/graphics/PointF$1;->createFromParcel(Landroid/os/Parcel;)Landroid/graphics/PointF;
 
     move-result-object v0
@@ -76,7 +76,7 @@
     .parameter "size"
 
     .prologue
-    .line 148
+    .line 123
     new-array v0, p1, [Landroid/graphics/PointF;
 
     return-object v0
@@ -87,7 +87,7 @@
     .parameter "x0"
 
     .prologue
-    .line 134
+    .line 109
     invoke-virtual {p0, p1}, Landroid/graphics/PointF$1;->newArray(I)[Landroid/graphics/PointF;
 
     move-result-object v0

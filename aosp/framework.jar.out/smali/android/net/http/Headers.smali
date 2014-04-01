@@ -322,7 +322,7 @@
     const/4 v2, 0x4
 
     .line 154
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 125
     new-instance v0, Ljava/util/ArrayList;
@@ -751,7 +751,7 @@
     .prologue
     const-wide/16 v9, -0x1
 
-    const/4 v6, 0x0
+    const/4 v7, 0x0
 
     const/16 v8, 0xc
 
@@ -775,7 +775,7 @@
 
     .line 165
     :cond_1
-    invoke-virtual {p1, v6, v3}, Lorg/apache/http/util/CharArrayBuffer;->substringTrimmed(II)Ljava/lang/String;
+    invoke-virtual {p1, v7, v3}, Lorg/apache/http/util/CharArrayBuffer;->substringTrimmed(II)Ljava/lang/String;
 
     move-result-object v2
 
@@ -799,8 +799,49 @@
 
     move-result-object v4
 
-    .line 176
+    .line 172
     .local v4, val:Ljava/lang/String;
+    sget-boolean v5, Landroid/net/http/HttpLog;->LOGV:Z
+
+    if-eqz v5, :cond_2
+
+    .line 173
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "hdr "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {p1}, Lorg/apache/http/util/CharArrayBuffer;->length()I
+
+    move-result v6
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    const-string v6, " "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v5}, Landroid/net/http/HttpLog;->v(Ljava/lang/String;)V
+
+    .line 176
+    :cond_2
     invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
 
     move-result v5
@@ -832,7 +873,7 @@
     .line 179
     iget-object v5, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
-    aput-object v4, v5, v6
+    aput-object v4, v5, v7
 
     .line 180
     sget-object v5, Lorg/apache/http/message/BasicHeaderValueParser;->DEFAULT:Lorg/apache/http/message/BasicHeaderValueParser;
@@ -861,7 +902,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_2
+    if-eqz v5, :cond_3
 
     .line 187
     iput-wide v9, p0, Landroid/net/http/Headers;->transferEncoding:J
@@ -869,8 +910,8 @@
     goto :goto_0
 
     .line 188
-    :cond_2
-    if-lez v1, :cond_3
+    :cond_3
+    if-lez v1, :cond_4
 
     const-string v5, "chunked"
 
@@ -886,20 +927,20 @@
 
     move-result v5
 
-    if-eqz v5, :cond_3
+    if-eqz v5, :cond_4
 
     .line 191
     const-wide/16 v5, -0x2
 
     iput-wide v5, p0, Landroid/net/http/Headers;->transferEncoding:J
 
-    goto :goto_0
+    goto/16 :goto_0
 
     .line 193
-    :cond_3
+    :cond_4
     iput-wide v9, p0, Landroid/net/http/Headers;->transferEncoding:J
 
-    goto :goto_0
+    goto/16 :goto_0
 
     .line 198
     .end local v0           #encodings:[Lorg/apache/http/HeaderElement;
@@ -930,13 +971,13 @@
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    goto/16 :goto_0
 
     .line 202
     :catch_0
     move-exception v5
 
-    goto :goto_0
+    goto/16 :goto_0
 
     .line 211
     :sswitch_2
@@ -1149,7 +1190,7 @@
 
     aget-object v5, v5, v8
 
-    if-eqz v5, :cond_4
+    if-eqz v5, :cond_5
 
     iget-object v5, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
@@ -1159,7 +1200,7 @@
 
     move-result v5
 
-    if-lez v5, :cond_4
+    if-lez v5, :cond_5
 
     .line 268
     new-instance v5, Ljava/lang/StringBuilder;
@@ -1193,7 +1234,7 @@
     goto/16 :goto_0
 
     .line 270
-    :cond_4
+    :cond_5
     iget-object v5, p0, Landroid/net/http/Headers;->mHeaders:[Ljava/lang/String;
 
     aput-object v4, v5, v8

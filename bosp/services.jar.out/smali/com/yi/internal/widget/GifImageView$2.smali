@@ -23,7 +23,7 @@
     .locals 3
 
     .prologue
-    .line 485
+    .line 502
     invoke-static {}, Lcom/yi/internal/widget/GifImageView$GifImageType;->values()[Lcom/yi/internal/widget/GifImageView$GifImageType;
 
     move-result-object v0

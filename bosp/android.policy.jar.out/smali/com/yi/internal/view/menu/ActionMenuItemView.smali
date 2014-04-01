@@ -53,7 +53,7 @@
 
     .prologue
     .line 38
-    const v0, 0x301004a
+    const v0, 0x401004a
 
     invoke-direct {p0, p1, p2, v0}, Lcom/yi/internal/view/menu/ActionMenuItemView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -168,7 +168,7 @@
 
     move-result-object v5
 
-    const v6, 0x306002a
+    const v6, 0x406002a
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getColorStateList(I)Landroid/content/res/ColorStateList;
 
@@ -187,7 +187,7 @@
 
     move-result-object v5
 
-    const v6, 0x3080056
+    const v6, 0x4080057
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -206,7 +206,7 @@
 
     move-result-object v5
 
-    const v6, 0x306002b
+    const v6, 0x406002b
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getColor(I)I
 

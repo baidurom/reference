@@ -38,7 +38,7 @@
     .line 36
     new-instance v1, Lcom/google/android/mms/pdu/EncodedStringValue;
 
-    const-string/jumbo v2, "insert-address-token"
+    const-string v2, "insert-address-token"
 
     invoke-virtual {v2}, Ljava/lang/String;->getBytes()[B
 

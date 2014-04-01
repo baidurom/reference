@@ -16,9 +16,6 @@
     name = "SimInfo"
 .end annotation
 
-.annotation runtime Ljava/lang/Deprecated;
-.end annotation
-
 
 # static fields
 .field public static final COLOR:Ljava/lang/String; = "color"
@@ -47,11 +44,9 @@
 
 .field public static final DEFAULT_NAME_MIN_INDEX:I = 0x1
 
-.field public static final DEFAULT_NAME_RES:I = 0x2050092
+.field public static final DEFAULT_NAME_RES:I = 0x205006f
 
 .field public static final DEFAULT_SORT_ORDER:Ljava/lang/String; = "name ASC"
-
-.field public static final DEFAULT_SOURCE:I = 0x0
 
 .field public static final DISLPAY_NUMBER_DEFAULT:I = 0x1
 
@@ -71,27 +66,19 @@
 
 .field public static final ICC_ID:Ljava/lang/String; = "icc_id"
 
-.field public static final NAME_SOURCE:Ljava/lang/String; = "name_source"
-
 .field public static final NUMBER:Ljava/lang/String; = "number"
-
-.field public static final OPERATOR:Ljava/lang/String; = "operator"
-
-.field public static final OPERATOR_OP01:Ljava/lang/String; = "OP01"
-
-.field public static final OPERATOR_OP02:Ljava/lang/String; = "OP02"
-
-.field public static final OPERATOR_OP09:Ljava/lang/String; = "OP09"
-
-.field public static final OPERATOR_OTHERS:Ljava/lang/String; = "others"
-
-.field public static final SIM_SOURCE:I = 0x1
 
 .field public static final SLOT:Ljava/lang/String; = "slot"
 
 .field public static final SLOT_NONE:I = -0x1
 
-.field public static final USER_INPUT:I = 0x2
+.field public static final WAP_PUSH:Ljava/lang/String; = "wap_push"
+
+.field public static final WAP_PUSH_DEFAULT:I = -0x1
+
+.field public static final WAP_PUSH_DISABLE:I = 0x0
+
+.field public static final WAP_PUSH_ENABLE:I = 0x1
 
 
 # direct methods
@@ -99,7 +86,7 @@
     .locals 1
 
     .prologue
-    .line 2553
+    .line 2397
     const-string v0, "content://telephony/siminfo"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -115,8 +102,8 @@
     .locals 0
 
     .prologue
-    .line 2552
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 2396
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

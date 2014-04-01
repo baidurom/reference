@@ -49,12 +49,12 @@
 
     const/4 v3, 0x0
 
-    .line 331
+    .line 330
     new-instance v0, Landroid/location/Criteria;
 
     invoke-direct {v0}, Landroid/location/Criteria;-><init>()V
 
-    .line 332
+    .line 331
     .local v0, c:Landroid/location/Criteria;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -63,7 +63,7 @@
     #setter for: Landroid/location/Criteria;->mHorizontalAccuracy:I
     invoke-static {v0, v1}, Landroid/location/Criteria;->access$002(Landroid/location/Criteria;I)I
 
-    .line 333
+    .line 332
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
@@ -71,7 +71,7 @@
     #setter for: Landroid/location/Criteria;->mVerticalAccuracy:I
     invoke-static {v0, v1}, Landroid/location/Criteria;->access$102(Landroid/location/Criteria;I)I
 
-    .line 334
+    .line 333
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
@@ -79,7 +79,7 @@
     #setter for: Landroid/location/Criteria;->mSpeedAccuracy:I
     invoke-static {v0, v1}, Landroid/location/Criteria;->access$202(Landroid/location/Criteria;I)I
 
-    .line 335
+    .line 334
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
@@ -87,7 +87,7 @@
     #setter for: Landroid/location/Criteria;->mBearingAccuracy:I
     invoke-static {v0, v1}, Landroid/location/Criteria;->access$302(Landroid/location/Criteria;I)I
 
-    .line 336
+    .line 335
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
@@ -95,7 +95,7 @@
     #setter for: Landroid/location/Criteria;->mPowerRequirement:I
     invoke-static {v0, v1}, Landroid/location/Criteria;->access$402(Landroid/location/Criteria;I)I
 
-    .line 337
+    .line 336
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
@@ -108,7 +108,7 @@
     #setter for: Landroid/location/Criteria;->mAltitudeRequired:Z
     invoke-static {v0, v1}, Landroid/location/Criteria;->access$502(Landroid/location/Criteria;Z)Z
 
-    .line 338
+    .line 337
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
@@ -121,7 +121,7 @@
     #setter for: Landroid/location/Criteria;->mBearingRequired:Z
     invoke-static {v0, v1}, Landroid/location/Criteria;->access$602(Landroid/location/Criteria;Z)Z
 
-    .line 339
+    .line 338
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
@@ -134,7 +134,7 @@
     #setter for: Landroid/location/Criteria;->mSpeedRequired:Z
     invoke-static {v0, v1}, Landroid/location/Criteria;->access$702(Landroid/location/Criteria;Z)Z
 
-    .line 340
+    .line 339
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
@@ -145,31 +145,31 @@
     #setter for: Landroid/location/Criteria;->mCostAllowed:Z
     invoke-static {v0, v2}, Landroid/location/Criteria;->access$802(Landroid/location/Criteria;Z)Z
 
-    .line 341
+    .line 340
     return-object v0
 
     :cond_0
     move v1, v3
 
-    .line 337
+    .line 336
     goto :goto_0
 
     :cond_1
     move v1, v3
 
-    .line 338
+    .line 337
     goto :goto_1
 
     :cond_2
     move v1, v3
 
-    .line 339
+    .line 338
     goto :goto_2
 
     :cond_3
     move v2, v3
 
-    .line 340
+    .line 339
     goto :goto_3
 .end method
 
@@ -191,7 +191,7 @@
     .parameter "size"
 
     .prologue
-    .line 346
+    .line 344
     new-array v0, p1, [Landroid/location/Criteria;
 
     return-object v0

@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+.field private mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
 
 # direct methods
@@ -140,7 +140,7 @@
 .end method
 
 .method public onFling(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
-    .locals 4
+    .locals 3
     .parameter "e1"
     .parameter "e2"
     .parameter "velocityX"
@@ -168,16 +168,14 @@
     invoke-virtual {p0, v0, v1}, Lcom/baidu/internal/keyguard/hotword/ConstellationGallery;->onKeyDown(ILandroid/view/KeyEvent;)Z
 
     .line 46
-    iget-object v1, p0, Lcom/baidu/internal/keyguard/hotword/ConstellationGallery;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    iget-object v1, p0, Lcom/baidu/internal/keyguard/hotword/ConstellationGallery;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
     if-eqz v1, :cond_0
 
     .line 47
-    iget-object v1, p0, Lcom/baidu/internal/keyguard/hotword/ConstellationGallery;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    iget-object v1, p0, Lcom/baidu/internal/keyguard/hotword/ConstellationGallery;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
-    const-wide/16 v2, 0x0
-
-    invoke-interface {v1, v2, v3}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;->userActivity(J)V
+    invoke-interface {v1}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->pokeWakelock()V
 
     .line 49
     :cond_0
@@ -208,7 +206,7 @@
 .end method
 
 .method public onWordHover(Landroid/graphics/Point;)Landroid/widget/TextView;
-    .locals 4
+    .locals 2
     .parameter "handlePoint"
 
     .prologue
@@ -224,16 +222,14 @@
     if-eqz v0, :cond_1
 
     .line 74
-    iget-object v1, p0, Lcom/baidu/internal/keyguard/hotword/ConstellationGallery;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    iget-object v1, p0, Lcom/baidu/internal/keyguard/hotword/ConstellationGallery;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
     if-eqz v1, :cond_0
 
     .line 75
-    iget-object v1, p0, Lcom/baidu/internal/keyguard/hotword/ConstellationGallery;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    iget-object v1, p0, Lcom/baidu/internal/keyguard/hotword/ConstellationGallery;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
-    const-wide/16 v2, 0x0
-
-    invoke-interface {v1, v2, v3}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;->userActivity(J)V
+    invoke-interface {v1}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->pokeWakelock()V
 
     .line 77
     :cond_0
@@ -322,13 +318,13 @@
     return-void
 .end method
 
-.method public setKeyguardCallback(Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;)V
+.method public setKeyguardCallback(Lcom/android/internal/policy/impl/KeyguardScreenCallback;)V
     .locals 0
     .parameter "callback"
 
     .prologue
     .line 105
-    iput-object p1, p0, Lcom/baidu/internal/keyguard/hotword/ConstellationGallery;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    iput-object p1, p0, Lcom/baidu/internal/keyguard/hotword/ConstellationGallery;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
     .line 106
     return-void

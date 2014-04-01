@@ -24,7 +24,7 @@
 
 .field private static final NUM_SATELLITES:I = 0xff
 
-.field private static final TAG:Ljava/lang/String; = "GpsStatus"
+.field private static TAG:Ljava/lang/String;
 
 
 # instance fields
@@ -45,28 +45,40 @@
 
 
 # direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    .prologue
+    .line 29
+    const-string v0, "GpsStatus"
+
+    sput-object v0, Landroid/location/GpsStatus;->TAG:Ljava/lang/String;
+
+    return-void
+.end method
+
 .method constructor <init>()V
     .locals 4
 
     .prologue
-    .line 131
+    .line 149
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 33
+    .line 34
     const/16 v1, 0xff
 
     new-array v1, v1, [Landroid/location/GpsSatellite;
 
     iput-object v1, p0, Landroid/location/GpsStatus;->mSatellites:[Landroid/location/GpsSatellite;
 
-    .line 68
+    .line 78
     new-instance v1, Landroid/location/GpsStatus$1;
 
     invoke-direct {v1, p0}, Landroid/location/GpsStatus$1;-><init>(Landroid/location/GpsStatus;)V
 
     iput-object v1, p0, Landroid/location/GpsStatus;->mSatelliteList:Ljava/lang/Iterable;
 
-    .line 132
+    .line 150
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -77,7 +89,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 133
+    .line 152
     iget-object v1, p0, Landroid/location/GpsStatus;->mSatellites:[Landroid/location/GpsSatellite;
 
     new-instance v2, Landroid/location/GpsSatellite;
@@ -88,12 +100,12 @@
 
     aput-object v2, v1, v0
 
-    .line 132
+    .line 150
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 135
+    .line 154
     :cond_0
     return-void
 .end method
@@ -115,7 +127,7 @@
     .locals 1
 
     .prologue
-    .line 245
+    .line 241
     const/16 v0, 0xff
 
     return v0
@@ -134,7 +146,7 @@
     .end annotation
 
     .prologue
-    .line 235
+    .line 230
     iget-object v0, p0, Landroid/location/GpsStatus;->mSatelliteList:Ljava/lang/Iterable;
 
     return-object v0
@@ -144,14 +156,14 @@
     .locals 1
 
     .prologue
-    .line 225
+    .line 219
     iget v0, p0, Landroid/location/GpsStatus;->mTimeToFirstFix:I
 
     return v0
 .end method
 
-.method declared-synchronized setStatus(I[I[F[F[F[I[I[I)V
-    .locals 9
+.method declared-synchronized setStatus(I[I[F[F[FIII)V
+    .locals 7
     .parameter "svCount"
     .parameter "prns"
     .parameter "snrs"
@@ -162,228 +174,277 @@
     .parameter "usedInFixMask"
 
     .prologue
-    .line 147
+    .line 163
     monitor-enter p0
 
-    const/4 v1, 0x0
-
-    .local v1, i:I
-    :goto_0
     :try_start_0
-    iget-object v6, p0, Landroid/location/GpsStatus;->mSatellites:[Landroid/location/GpsSatellite;
+    sget-object v4, Landroid/location/GpsStatus;->TAG:Ljava/lang/String;
 
-    array-length v6, v6
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    if-ge v1, v6, :cond_0
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 148
-    iget-object v6, p0, Landroid/location/GpsStatus;->mSatellites:[Landroid/location/GpsSatellite;
+    const-string/jumbo v6, "setStatus() is called svCount: "
 
-    aget-object v6, v6, v1
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v7, 0x0
+    move-result-object v5
 
-    iput-boolean v7, v6, Landroid/location/GpsSatellite;->mValid:Z
+    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 147
-    add-int/lit8 v1, v1, 0x1
+    move-result-object v5
+
+    const-string v6, "ephemerisMask: "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, p6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    const-string v6, "almanacMask: "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, p7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    const-string/jumbo v6, "usedInFixMask: "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, p8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 165
+    const/4 v0, 0x0
+
+    .local v0, i:I
+    :goto_0
+    iget-object v4, p0, Landroid/location/GpsStatus;->mSatellites:[Landroid/location/GpsSatellite;
+
+    array-length v4, v4
+
+    if-ge v0, v4, :cond_0
+
+    .line 167
+    iget-object v4, p0, Landroid/location/GpsStatus;->mSatellites:[Landroid/location/GpsSatellite;
+
+    aget-object v4, v4, v0
+
+    const/4 v5, 0x0
+
+    iput-boolean v5, v4, Landroid/location/GpsSatellite;->mValid:Z
+
+    .line 165
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 150
+    .line 170
     :cond_0
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     :goto_1
-    if-ge v1, p1, :cond_7
+    if-ge v0, p1, :cond_5
 
-    .line 151
-    aget v6, p2, v1
+    .line 172
+    sget-object v4, Landroid/location/GpsStatus;->TAG:Ljava/lang/String;
 
-    add-int/lit8 v3, v6, -0x1
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    .line 152
-    .local v3, prn:I
-    div-int/lit8 v0, v3, 0x20
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 153
-    .local v0, baseNum:I
-    mul-int/lit8 v6, v0, 0x20
+    const-string/jumbo v6, "prn: "
 
-    sub-int v2, v3, v6
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 154
-    .local v2, posInInt:I
-    const/4 v6, 0x1
+    move-result-object v5
 
-    shl-int v4, v6, v2
+    aget v6, p2, v0
 
-    .line 155
-    .local v4, prnShift:I
-    if-ltz v2, :cond_1
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const/16 v6, 0x20
+    move-result-object v5
 
-    if-ge v2, v6, :cond_1
+    const-string/jumbo v6, "snrs: "
 
-    if-ltz v0, :cond_1
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/16 v6, 0x8
+    move-result-object v5
 
-    if-lt v0, v6, :cond_2
+    aget v6, p3, v0
 
-    .line 156
-    :cond_1
-    const-string v6, "GpsStatus"
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    move-result-object v5
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v6, "elevations: "
 
-    const-string v8, "an error has been happened posInInt: "
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v5
 
-    move-result-object v7
+    aget v6, p4, v0
 
-    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v5
 
-    const-string v8, "baseNum:"
+    const-string v6, "azimuths: "
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v5
 
-    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    aget v6, p5, v0
 
-    move-result-object v7
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v5
 
-    move-result-object v7
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-static {v6, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    move-result-object v5
 
-    .line 158
-    :cond_2
-    if-ltz v3, :cond_3
+    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    iget-object v6, p0, Landroid/location/GpsStatus;->mSatellites:[Landroid/location/GpsSatellite;
+    .line 173
+    aget v4, p2, v0
 
-    array-length v6, v6
+    add-int/lit8 v1, v4, -0x1
 
-    if-ge v3, v6, :cond_3
+    .line 174
+    .local v1, prn:I
+    const/4 v4, 0x1
 
-    .line 159
-    iget-object v6, p0, Landroid/location/GpsStatus;->mSatellites:[Landroid/location/GpsSatellite;
+    shl-int v2, v4, v1
 
-    aget-object v5, v6, v3
+    .line 175
+    .local v2, prnShift:I
+    if-ltz v1, :cond_1
 
-    .line 160
-    .local v5, satellite:Landroid/location/GpsSatellite;
-    const/4 v6, 0x1
+    iget-object v4, p0, Landroid/location/GpsStatus;->mSatellites:[Landroid/location/GpsSatellite;
 
-    iput-boolean v6, v5, Landroid/location/GpsSatellite;->mValid:Z
+    array-length v4, v4
 
-    .line 161
-    aget v6, p3, v1
+    if-ge v1, v4, :cond_1
 
-    iput v6, v5, Landroid/location/GpsSatellite;->mSnr:F
+    .line 177
+    iget-object v4, p0, Landroid/location/GpsStatus;->mSatellites:[Landroid/location/GpsSatellite;
 
-    .line 162
-    aget v6, p4, v1
+    aget-object v3, v4, v1
 
-    iput v6, v5, Landroid/location/GpsSatellite;->mElevation:F
+    .line 179
+    .local v3, satellite:Landroid/location/GpsSatellite;
+    const/4 v4, 0x1
 
-    .line 163
-    aget v6, p5, v1
+    iput-boolean v4, v3, Landroid/location/GpsSatellite;->mValid:Z
 
-    iput v6, v5, Landroid/location/GpsSatellite;->mAzimuth:F
+    .line 180
+    aget v4, p3, v0
 
-    .line 164
-    aget v6, p6, v0
+    iput v4, v3, Landroid/location/GpsSatellite;->mSnr:F
 
-    and-int/2addr v6, v4
+    .line 181
+    aget v4, p4, v0
 
-    if-eqz v6, :cond_4
+    iput v4, v3, Landroid/location/GpsSatellite;->mElevation:F
 
-    const/4 v6, 0x1
+    .line 182
+    aget v4, p5, v0
+
+    iput v4, v3, Landroid/location/GpsSatellite;->mAzimuth:F
+
+    .line 183
+    and-int v4, p6, v2
+
+    if-eqz v4, :cond_2
+
+    const/4 v4, 0x1
 
     :goto_2
-    iput-boolean v6, v5, Landroid/location/GpsSatellite;->mHasEphemeris:Z
+    iput-boolean v4, v3, Landroid/location/GpsSatellite;->mHasEphemeris:Z
 
-    .line 165
-    aget v6, p7, v0
+    .line 184
+    and-int v4, p7, v2
 
-    and-int/2addr v6, v4
+    if-eqz v4, :cond_3
 
-    if-eqz v6, :cond_5
-
-    const/4 v6, 0x1
+    const/4 v4, 0x1
 
     :goto_3
-    iput-boolean v6, v5, Landroid/location/GpsSatellite;->mHasAlmanac:Z
+    iput-boolean v4, v3, Landroid/location/GpsSatellite;->mHasAlmanac:Z
 
-    .line 166
-    aget v6, p8, v0
+    .line 185
+    and-int v4, p8, v2
 
-    and-int/2addr v6, v4
+    if-eqz v4, :cond_4
 
-    if-eqz v6, :cond_6
-
-    const/4 v6, 0x1
+    const/4 v4, 0x1
 
     :goto_4
-    iput-boolean v6, v5, Landroid/location/GpsSatellite;->mUsedInFix:Z
+    iput-boolean v4, v3, Landroid/location/GpsSatellite;->mUsedInFix:Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 150
-    .end local v5           #satellite:Landroid/location/GpsSatellite;
-    :cond_3
-    add-int/lit8 v1, v1, 0x1
+    .line 170
+    .end local v3           #satellite:Landroid/location/GpsSatellite;
+    :cond_1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 164
-    .restart local v5       #satellite:Landroid/location/GpsSatellite;
-    :cond_4
-    const/4 v6, 0x0
+    .line 183
+    .restart local v3       #satellite:Landroid/location/GpsSatellite;
+    :cond_2
+    const/4 v4, 0x0
 
     goto :goto_2
 
-    .line 165
-    :cond_5
-    const/4 v6, 0x0
+    .line 184
+    :cond_3
+    const/4 v4, 0x0
 
     goto :goto_3
 
-    .line 166
-    :cond_6
-    const/4 v6, 0x0
+    .line 185
+    :cond_4
+    const/4 v4, 0x0
 
     goto :goto_4
 
-    .line 169
-    .end local v0           #baseNum:I
-    .end local v2           #posInInt:I
-    .end local v3           #prn:I
-    .end local v4           #prnShift:I
-    .end local v5           #satellite:Landroid/location/GpsSatellite;
-    :cond_7
+    .line 188
+    .end local v1           #prn:I
+    .end local v2           #prnShift:I
+    .end local v3           #satellite:Landroid/location/GpsSatellite;
+    :cond_5
     monitor-exit p0
 
     return-void
 
-    .line 147
+    .line 163
+    .end local v0           #i:I
     :catchall_0
-    move-exception v6
+    move-exception v4
 
     monitor-exit p0
 
-    throw v6
+    throw v4
 .end method
 
 .method setStatus(Landroid/location/GpsStatus;)V
@@ -391,14 +452,14 @@
     .parameter "status"
 
     .prologue
-    .line 207
+    .line 198
     invoke-virtual {p1}, Landroid/location/GpsStatus;->getTimeToFirstFix()I
 
     move-result v1
 
     iput v1, p0, Landroid/location/GpsStatus;->mTimeToFirstFix:I
 
-    .line 209
+    .line 200
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -409,7 +470,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 210
+    .line 202
     iget-object v1, p0, Landroid/location/GpsStatus;->mSatellites:[Landroid/location/GpsSatellite;
 
     aget-object v1, v1, v0
@@ -420,12 +481,12 @@
 
     invoke-virtual {v1, v2}, Landroid/location/GpsSatellite;->setStatus(Landroid/location/GpsSatellite;)V
 
-    .line 209
+    .line 200
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 212
+    .line 204
     :cond_0
     return-void
 .end method
@@ -435,9 +496,9 @@
     .parameter "ttff"
 
     .prologue
-    .line 215
+    .line 208
     iput p1, p0, Landroid/location/GpsStatus;->mTimeToFirstFix:I
 
-    .line 216
+    .line 209
     return-void
 .end method

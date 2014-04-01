@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 173
+    .line 137
     iput-object p1, p0, Lcom/android/server/DeviceStorageMonitorService$1;->this$0:Lcom/android/server/DeviceStorageMonitorService;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -45,12 +45,12 @@
 
     const/4 v3, 0x0
 
-    .line 177
+    .line 140
     iget v4, p1, Landroid/os/Message;->what:I
 
     if-ne v4, v8, :cond_6
 
-    .line 178
+    .line 141
     iget-object v4, p0, Lcom/android/server/DeviceStorageMonitorService$1;->this$0:Lcom/android/server/DeviceStorageMonitorService;
 
     #getter for: Lcom/android/server/DeviceStorageMonitorService;->mDialog:Landroid/app/AlertDialog;
@@ -78,14 +78,14 @@
 
     if-eqz v4, :cond_2
 
-    .line 179
+    .line 142
     :cond_0
     iget-object v4, p0, Lcom/android/server/DeviceStorageMonitorService$1;->this$0:Lcom/android/server/DeviceStorageMonitorService;
 
     #setter for: Lcom/android/server/DeviceStorageMonitorService;->mIPOBootup:Z
     invoke-static {v4, v3}, Lcom/android/server/DeviceStorageMonitorService;->access$102(Lcom/android/server/DeviceStorageMonitorService;Z)Z
 
-    .line 180
+    .line 143
     iget-object v4, p0, Lcom/android/server/DeviceStorageMonitorService$1;->this$0:Lcom/android/server/DeviceStorageMonitorService;
 
     #getter for: Lcom/android/server/DeviceStorageMonitorService;->mConfigChanged:Z
@@ -95,13 +95,13 @@
 
     if-eqz v4, :cond_1
 
-    .line 181
+    .line 144
     iget-object v4, p0, Lcom/android/server/DeviceStorageMonitorService$1;->this$0:Lcom/android/server/DeviceStorageMonitorService;
 
     #setter for: Lcom/android/server/DeviceStorageMonitorService;->mConfigChanged:Z
     invoke-static {v4, v3}, Lcom/android/server/DeviceStorageMonitorService;->access$202(Lcom/android/server/DeviceStorageMonitorService;Z)Z
 
-    .line 183
+    .line 146
     :cond_1
     iget-object v4, p0, Lcom/android/server/DeviceStorageMonitorService$1;->this$0:Lcom/android/server/DeviceStorageMonitorService;
 
@@ -114,13 +114,13 @@
 
     move-result-object v4
 
-    const v5, 0x20500f8
+    const v5, 0x20500cb
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 185
+    .line 148
     .local v0, string1:Ljava/lang/String;
     iget-object v4, p0, Lcom/android/server/DeviceStorageMonitorService$1;->this$0:Lcom/android/server/DeviceStorageMonitorService;
 
@@ -133,17 +133,17 @@
 
     move-result-object v4
 
-    const v5, 0x20500f9
+    const v5, 0x20500cc
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 187
+    .line 150
     .local v1, string2:Ljava/lang/String;
     iget-object v4, p0, Lcom/android/server/DeviceStorageMonitorService$1;->this$0:Lcom/android/server/DeviceStorageMonitorService;
 
-    #getter for: Lcom/android/server/DeviceStorageMonitorService;->mTotalSize:J
+    #getter for: Lcom/android/server/DeviceStorageMonitorService;->totalsize:J
     invoke-static {v4}, Lcom/android/server/DeviceStorageMonitorService;->access$400(Lcom/android/server/DeviceStorageMonitorService;)J
 
     move-result-wide v4
@@ -154,7 +154,7 @@
 
     if-lez v4, :cond_4
 
-    .line 188
+    .line 151
     iget-object v4, p0, Lcom/android/server/DeviceStorageMonitorService$1;->this$0:Lcom/android/server/DeviceStorageMonitorService;
 
     new-array v5, v8, [Ljava/lang/String;
@@ -166,7 +166,7 @@
     #setter for: Lcom/android/server/DeviceStorageMonitorService;->mStrings:[Ljava/lang/String;
     invoke-static {v4, v5}, Lcom/android/server/DeviceStorageMonitorService;->access$502(Lcom/android/server/DeviceStorageMonitorService;[Ljava/lang/String;)[Ljava/lang/String;
 
-    .line 196
+    .line 155
     :goto_0
     iget-object v2, p0, Lcom/android/server/DeviceStorageMonitorService$1;->this$0:Lcom/android/server/DeviceStorageMonitorService;
 
@@ -194,7 +194,7 @@
 
     move-result-object v5
 
-    const v6, 0x20500bd
+    const v6, 0x205009b
 
     invoke-virtual {v5, v6}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -245,7 +245,7 @@
     #setter for: Lcom/android/server/DeviceStorageMonitorService;->mDialog:Landroid/app/AlertDialog;
     invoke-static {v2, v4}, Lcom/android/server/DeviceStorageMonitorService;->access$002(Lcom/android/server/DeviceStorageMonitorService;Landroid/app/AlertDialog;)Landroid/app/AlertDialog;
 
-    .line 227
+    .line 182
     .end local v0           #string1:Ljava/lang/String;
     .end local v1           #string2:Ljava/lang/String;
     :cond_2
@@ -264,7 +264,7 @@
 
     invoke-virtual {v2, v4}, Landroid/view/Window;->setType(I)V
 
-    .line 228
+    .line 183
     iget-object v2, p0, Lcom/android/server/DeviceStorageMonitorService$1;->this$0:Lcom/android/server/DeviceStorageMonitorService;
 
     #getter for: Lcom/android/server/DeviceStorageMonitorService;->mDialog:Landroid/app/AlertDialog;
@@ -278,7 +278,7 @@
 
     if-nez v2, :cond_3
 
-    .line 230
+    .line 185
     const-string v2, "ctsrunning"
 
     invoke-static {v2, v3}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
@@ -287,7 +287,7 @@
 
     if-nez v2, :cond_5
 
-    .line 231
+    .line 186
     iget-object v2, p0, Lcom/android/server/DeviceStorageMonitorService$1;->this$0:Lcom/android/server/DeviceStorageMonitorService;
 
     #getter for: Lcom/android/server/DeviceStorageMonitorService;->mDialog:Landroid/app/AlertDialog;
@@ -297,12 +297,12 @@
 
     invoke-virtual {v2}, Landroid/app/AlertDialog;->show()V
 
-    .line 245
+    .line 199
     :cond_3
     :goto_1
     return-void
 
-    .line 192
+    .line 153
     .restart local v0       #string1:Ljava/lang/String;
     .restart local v1       #string2:Ljava/lang/String;
     :cond_4
@@ -317,7 +317,7 @@
 
     goto/16 :goto_0
 
-    .line 233
+    .line 188
     .end local v0           #string1:Ljava/lang/String;
     .end local v1           #string2:Ljava/lang/String;
     :cond_5
@@ -329,13 +329,13 @@
 
     goto :goto_1
 
-    .line 240
+    .line 194
     :cond_6
     iget v4, p1, Landroid/os/Message;->what:I
 
     if-eq v4, v2, :cond_7
 
-    .line 241
+    .line 195
     const-string v2, "DeviceStorageMonitorService"
 
     const-string v3, "Will not process invalid message"
@@ -344,7 +344,7 @@
 
     goto :goto_1
 
-    .line 244
+    .line 198
     :cond_7
     iget-object v4, p0, Lcom/android/server/DeviceStorageMonitorService$1;->this$0:Lcom/android/server/DeviceStorageMonitorService;
 

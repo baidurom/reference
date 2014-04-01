@@ -32,14 +32,14 @@
     </array>
     <array name="lockscreen_targets_with_camera">
         <item>@drawable/ic_lockscreen_unlock</item>
-        <item>@drawable/ic_action_assist_generic</item>
+        <item>@null</item>
         <item>@drawable/ic_lockscreen_camera</item>
         <item>@null</item>
     </array>
-    <string-array name="lockscreen_target_descriptions_with_camera">
+    <array name="lockscreen_target_descriptions_with_camera">
         <item>@string/description_target_unlock</item>
-        <item>@string/description_target_search</item>
+        <item>@null</item>
         <item>@string/description_target_camera</item>
         <item>@null</item>
-    </string-array>
+    </array>
 </resources>

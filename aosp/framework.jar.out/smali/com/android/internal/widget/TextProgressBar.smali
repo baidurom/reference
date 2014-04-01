@@ -369,7 +369,7 @@
     .local v8, textWidth:I
     iget v9, p0, Lcom/android/internal/widget/TextProgressBar;->mChronometerGravity:I
 
-    const v10, 0x800005
+    const/4 v10, 0x5
 
     if-ne v9, v10, :cond_5
 

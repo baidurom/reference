@@ -7,26 +7,13 @@
 .method public abstract notifyCallForwardingChanged(Lcom/android/internal/telephony/Phone;)V
 .end method
 
-.method public abstract notifyCellInfo(Lcom/android/internal/telephony/Phone;Ljava/util/List;)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/android/internal/telephony/Phone;",
-            "Ljava/util/List",
-            "<",
-            "Landroid/telephony/CellInfo;",
-            ">;)V"
-        }
-    .end annotation
-.end method
-
 .method public abstract notifyCellLocation(Lcom/android/internal/telephony/Phone;)V
 .end method
 
 .method public abstract notifyDataActivity(Lcom/android/internal/telephony/Phone;)V
 .end method
 
-.method public abstract notifyDataConnection(Lcom/android/internal/telephony/Phone;Ljava/lang/String;Ljava/lang/String;Lcom/android/internal/telephony/PhoneConstants$DataState;)V
+.method public abstract notifyDataConnection(Lcom/android/internal/telephony/Phone;Ljava/lang/String;Ljava/lang/String;Lcom/android/internal/telephony/Phone$DataState;)V
 .end method
 
 .method public abstract notifyDataConnection(Lcom/android/internal/telephony/Phone;Ljava/lang/String;Ljava/lang/String;Z)V

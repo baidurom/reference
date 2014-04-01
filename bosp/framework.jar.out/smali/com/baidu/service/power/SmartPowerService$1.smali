@@ -118,7 +118,7 @@
     invoke-static {v2, v3}, Lcom/baidu/service/power/SmartPowerService;->access$102(Lcom/baidu/service/power/SmartPowerService;I)I
 
     .line 95
-    const-string/jumbo v2, "level"
+    const-string v2, "level"
 
     const/4 v3, -0x1
 

@@ -21,9 +21,6 @@
 
 
 # virtual methods
-.method public abstract onFinishFinalAnimation()V
-.end method
-
 .method public abstract onGrabbed(Landroid/view/View;I)V
 .end method
 

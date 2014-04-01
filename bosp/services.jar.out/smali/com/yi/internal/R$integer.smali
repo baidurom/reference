@@ -14,12 +14,18 @@
 .end annotation
 
 
+# static fields
+.field public static final longAnimTime:I = 0x4070000
+
+.field public static final shortAnimTime:I = 0x4070001
+
+
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 847
+    .line 1636
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

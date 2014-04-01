@@ -7,15 +7,11 @@
 
 
 # static fields
-.field public static final CONFIG_DENSITY:I = 0x1000
-
 .field public static final CONFIG_FONT_SCALE:I = 0x40000000
 
 .field public static final CONFIG_KEYBOARD:I = 0x10
 
 .field public static final CONFIG_KEYBOARD_HIDDEN:I = 0x20
-
-.field public static final CONFIG_LAYOUT_DIRECTION:I = 0x2000
 
 .field public static final CONFIG_LOCALE:I = 0x4
 
@@ -32,8 +28,6 @@
 .field public static final CONFIG_SCREEN_LAYOUT:I = 0x100
 
 .field public static final CONFIG_SCREEN_SIZE:I = 0x400
-
-.field public static final CONFIG_SKIN:I = -0x80000000
 
 .field public static final CONFIG_SMALLEST_SCREEN_SIZE:I = 0x800
 
@@ -68,17 +62,11 @@
 
 .field public static final FLAG_HARDWARE_ACCELERATED:I = 0x200
 
-.field public static final FLAG_IMMERSIVE:I = 0x800
+.field public static final FLAG_IMMERSIVE:I = 0x400
 
 .field public static final FLAG_MULTIPROCESS:I = 0x1
 
 .field public static final FLAG_NO_HISTORY:I = 0x80
-
-.field public static final FLAG_PRIMARY_USER_ONLY:I = 0x20000000
-
-.field public static final FLAG_SHOW_ON_LOCK_SCREEN:I = 0x400
-
-.field public static final FLAG_SINGLE_USER:I = 0x40000000
 
 .field public static final FLAG_STATE_NOT_NEEDED:I = 0x10
 
@@ -124,8 +112,6 @@
 
 .field public launchMode:I
 
-.field public parentActivityName:Ljava/lang/String;
-
 .field public permission:Ljava/lang/String;
 
 .field public screenOrientation:I
@@ -146,8 +132,8 @@
     .locals 1
 
     .prologue
-    .line 419
-    const/16 v0, 0xe
+    .line 380
+    const/16 v0, 0xc
 
     new-array v0, v0, [I
 
@@ -155,7 +141,7 @@
 
     sput-object v0, Landroid/content/pm/ActivityInfo;->CONFIG_NATIVE_BITS:[I
 
-    .line 597
+    .line 548
     new-instance v0, Landroid/content/pm/ActivityInfo$1;
 
     invoke-direct {v0}, Landroid/content/pm/ActivityInfo$1;-><init>()V
@@ -164,7 +150,7 @@
 
     return-void
 
-    .line 419
+    .line 380
     nop
 
     :array_0
@@ -181,8 +167,6 @@
         0x0t 0x10t 0x0t 0x0t
         0x0t 0x2t 0x0t 0x0t
         0x0t 0x20t 0x0t 0x0t
-        0x0t 0x1t 0x0t 0x0t
-        0x0t 0x40t 0x0t 0x0t
     .end array-data
 .end method
 
@@ -190,20 +174,20 @@
     .locals 1
 
     .prologue
-    .line 519
+    .line 472
     invoke-direct {p0}, Landroid/content/pm/ComponentInfo;-><init>()V
 
-    .line 291
+    .line 271
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/content/pm/ActivityInfo;->screenOrientation:I
 
-    .line 503
+    .line 461
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/content/pm/ActivityInfo;->uiOptions:I
 
-    .line 520
+    .line 473
     return-void
 .end method
 
@@ -212,75 +196,70 @@
     .parameter "orig"
 
     .prologue
-    .line 523
+    .line 476
     invoke-direct {p0, p1}, Landroid/content/pm/ComponentInfo;-><init>(Landroid/content/pm/ComponentInfo;)V
 
-    .line 291
+    .line 271
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/content/pm/ActivityInfo;->screenOrientation:I
 
-    .line 503
+    .line 461
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/content/pm/ActivityInfo;->uiOptions:I
 
-    .line 524
+    .line 477
     iget v0, p1, Landroid/content/pm/ActivityInfo;->theme:I
 
     iput v0, p0, Landroid/content/pm/ActivityInfo;->theme:I
 
-    .line 525
+    .line 478
     iget v0, p1, Landroid/content/pm/ActivityInfo;->launchMode:I
 
     iput v0, p0, Landroid/content/pm/ActivityInfo;->launchMode:I
 
-    .line 526
+    .line 479
     iget-object v0, p1, Landroid/content/pm/ActivityInfo;->permission:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/content/pm/ActivityInfo;->permission:Ljava/lang/String;
 
-    .line 527
+    .line 480
     iget-object v0, p1, Landroid/content/pm/ActivityInfo;->taskAffinity:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/content/pm/ActivityInfo;->taskAffinity:Ljava/lang/String;
 
-    .line 528
+    .line 481
     iget-object v0, p1, Landroid/content/pm/ActivityInfo;->targetActivity:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/content/pm/ActivityInfo;->targetActivity:Ljava/lang/String;
 
-    .line 529
+    .line 482
     iget v0, p1, Landroid/content/pm/ActivityInfo;->flags:I
 
     iput v0, p0, Landroid/content/pm/ActivityInfo;->flags:I
 
-    .line 530
+    .line 483
     iget v0, p1, Landroid/content/pm/ActivityInfo;->screenOrientation:I
 
     iput v0, p0, Landroid/content/pm/ActivityInfo;->screenOrientation:I
 
-    .line 531
+    .line 484
     iget v0, p1, Landroid/content/pm/ActivityInfo;->configChanges:I
 
     iput v0, p0, Landroid/content/pm/ActivityInfo;->configChanges:I
 
-    .line 532
+    .line 485
     iget v0, p1, Landroid/content/pm/ActivityInfo;->softInputMode:I
 
     iput v0, p0, Landroid/content/pm/ActivityInfo;->softInputMode:I
 
-    .line 533
+    .line 486
     iget v0, p1, Landroid/content/pm/ActivityInfo;->uiOptions:I
 
     iput v0, p0, Landroid/content/pm/ActivityInfo;->uiOptions:I
 
-    .line 534
-    iget-object v0, p1, Landroid/content/pm/ActivityInfo;->parentActivityName:Ljava/lang/String;
-
-    iput-object v0, p0, Landroid/content/pm/ActivityInfo;->parentActivityName:Ljava/lang/String;
-
-    .line 535
+    .line 487
     return-void
 .end method
 
@@ -289,97 +268,90 @@
     .parameter "source"
 
     .prologue
-    .line 608
+    .line 559
     invoke-direct {p0, p1}, Landroid/content/pm/ComponentInfo;-><init>(Landroid/os/Parcel;)V
 
-    .line 291
+    .line 271
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/content/pm/ActivityInfo;->screenOrientation:I
 
-    .line 503
+    .line 461
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/content/pm/ActivityInfo;->uiOptions:I
 
-    .line 609
+    .line 560
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/content/pm/ActivityInfo;->theme:I
 
-    .line 610
+    .line 561
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/content/pm/ActivityInfo;->launchMode:I
 
-    .line 611
+    .line 562
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/content/pm/ActivityInfo;->permission:Ljava/lang/String;
 
-    .line 612
+    .line 563
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/content/pm/ActivityInfo;->taskAffinity:Ljava/lang/String;
 
-    .line 613
+    .line 564
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/content/pm/ActivityInfo;->targetActivity:Ljava/lang/String;
 
-    .line 614
+    .line 565
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/content/pm/ActivityInfo;->flags:I
 
-    .line 615
+    .line 566
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/content/pm/ActivityInfo;->screenOrientation:I
 
-    .line 616
+    .line 567
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/content/pm/ActivityInfo;->configChanges:I
 
-    .line 617
+    .line 568
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/content/pm/ActivityInfo;->softInputMode:I
 
-    .line 618
+    .line 569
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/content/pm/ActivityInfo;->uiOptions:I
 
-    .line 619
-    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Landroid/content/pm/ActivityInfo;->parentActivityName:Ljava/lang/String;
-
-    .line 620
+    .line 570
     return-void
 .end method
 
@@ -400,10 +372,10 @@
     .parameter "input"
 
     .prologue
-    .line 439
+    .line 398
     const/4 v1, 0x0
 
-    .line 440
+    .line 399
     .local v1, output:I
     const/4 v0, 0x0
 
@@ -415,7 +387,7 @@
 
     if-ge v0, v2, :cond_1
 
-    .line 441
+    .line 400
     const/4 v2, 0x1
 
     shl-int/2addr v2, v0
@@ -424,26 +396,26 @@
 
     if-eqz v2, :cond_0
 
-    .line 442
+    .line 401
     sget-object v2, Landroid/content/pm/ActivityInfo;->CONFIG_NATIVE_BITS:[I
 
     aget v2, v2, v0
 
     or-int/2addr v1, v2
 
-    .line 440
+    .line 399
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 446
+    .line 405
     :cond_1
     invoke-static {p0, v1}, Landroid/content/pm/ActivityInfo;->setOutputBaidu(II)I
 
     move-result v1
 
-    .line 448
+    .line 407
     return v1
 .end method
 
@@ -455,19 +427,19 @@
     .prologue
     const/high16 v2, -0x8000
 
-    .line 453
+    .line 412
     move v0, p1
 
-    .line 454
+    .line 413
     .local v0, output:I
     and-int v1, p0, v2
 
     if-eqz v1, :cond_0
 
-    .line 455
+    .line 414
     or-int/2addr v0, v2
 
-    .line 457
+    .line 416
     :cond_0
     return v0
 .end method
@@ -478,7 +450,7 @@
     .locals 1
 
     .prologue
-    .line 579
+    .line 531
     const/4 v0, 0x0
 
     return v0
@@ -490,15 +462,15 @@
     .parameter "prefix"
 
     .prologue
-    .line 549
+    .line 501
     invoke-super {p0, p1, p2}, Landroid/content/pm/ComponentInfo;->dumpFront(Landroid/util/Printer;Ljava/lang/String;)V
 
-    .line 550
+    .line 502
     iget-object v0, p0, Landroid/content/pm/ActivityInfo;->permission:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
-    .line 551
+    .line 503
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -525,7 +497,7 @@
 
     invoke-interface {p1, v0}, Landroid/util/Printer;->println(Ljava/lang/String;)V
 
-    .line 553
+    .line 505
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -565,7 +537,7 @@
 
     invoke-interface {p1, v0}, Landroid/util/Printer;->println(Ljava/lang/String;)V
 
-    .line 555
+    .line 507
     iget v0, p0, Landroid/content/pm/ActivityInfo;->launchMode:I
 
     if-nez v0, :cond_1
@@ -578,7 +550,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 556
+    .line 508
     :cond_1
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -588,7 +560,7 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "launchMode="
+    const-string v1, "launchMode="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -638,7 +610,7 @@
 
     invoke-interface {p1, v0}, Landroid/util/Printer;->println(Ljava/lang/String;)V
 
-    .line 560
+    .line 512
     :cond_2
     iget v0, p0, Landroid/content/pm/ActivityInfo;->screenOrientation:I
 
@@ -654,7 +626,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 562
+    .line 514
     :cond_3
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -714,13 +686,13 @@
 
     invoke-interface {p1, v0}, Landroid/util/Printer;->println(Ljava/lang/String;)V
 
-    .line 566
+    .line 518
     :cond_4
     iget v0, p0, Landroid/content/pm/ActivityInfo;->uiOptions:I
 
     if-eqz v0, :cond_5
 
-    .line 567
+    .line 519
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -751,11 +723,11 @@
 
     invoke-interface {p1, v0}, Landroid/util/Printer;->println(Ljava/lang/String;)V
 
-    .line 569
+    .line 521
     :cond_5
     invoke-super {p0, p1, p2}, Landroid/content/pm/ComponentInfo;->dumpBack(Landroid/util/Printer;Ljava/lang/String;)V
 
-    .line 570
+    .line 522
     return-void
 .end method
 
@@ -763,7 +735,7 @@
     .locals 2
 
     .prologue
-    .line 469
+    .line 428
     iget-object v0, p0, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     iget v0, v0, Landroid/content/pm/ApplicationInfo;->targetSdkVersion:I
@@ -791,7 +763,7 @@
     .locals 1
 
     .prologue
-    .line 545
+    .line 497
     iget v0, p0, Landroid/content/pm/ActivityInfo;->theme:I
 
     if-eqz v0, :cond_0
@@ -813,7 +785,7 @@
     .locals 2
 
     .prologue
-    .line 573
+    .line 525
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -867,64 +839,59 @@
     .parameter "parcelableFlags"
 
     .prologue
-    .line 583
+    .line 535
     invoke-super {p0, p1, p2}, Landroid/content/pm/ComponentInfo;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 584
+    .line 536
     iget v0, p0, Landroid/content/pm/ActivityInfo;->theme:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 585
+    .line 537
     iget v0, p0, Landroid/content/pm/ActivityInfo;->launchMode:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 586
+    .line 538
     iget-object v0, p0, Landroid/content/pm/ActivityInfo;->permission:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 587
+    .line 539
     iget-object v0, p0, Landroid/content/pm/ActivityInfo;->taskAffinity:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 588
+    .line 540
     iget-object v0, p0, Landroid/content/pm/ActivityInfo;->targetActivity:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 589
+    .line 541
     iget v0, p0, Landroid/content/pm/ActivityInfo;->flags:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 590
+    .line 542
     iget v0, p0, Landroid/content/pm/ActivityInfo;->screenOrientation:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 591
+    .line 543
     iget v0, p0, Landroid/content/pm/ActivityInfo;->configChanges:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 592
+    .line 544
     iget v0, p0, Landroid/content/pm/ActivityInfo;->softInputMode:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 593
+    .line 545
     iget v0, p0, Landroid/content/pm/ActivityInfo;->uiOptions:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 594
-    iget-object v0, p0, Landroid/content/pm/ActivityInfo;->parentActivityName:Ljava/lang/String;
-
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    .line 595
+    .line 546
     return-void
 .end method

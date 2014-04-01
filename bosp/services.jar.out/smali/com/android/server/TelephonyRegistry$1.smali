@@ -1,5 +1,5 @@
 .class Lcom/android/server/TelephonyRegistry$1;
-.super Landroid/os/Handler;
+.super Landroid/content/BroadcastReceiver;
 .source "TelephonyRegistry.java"
 
 
@@ -24,92 +24,51 @@
     .parameter
 
     .prologue
-    .line 188
+    .line 663
     iput-object p1, p0, Lcom/android/server/TelephonyRegistry$1;->this$0:Lcom/android/server/TelephonyRegistry;
 
-    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public handleMessage(Landroid/os/Message;)V
-    .locals 3
-    .parameter "msg"
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 2
+    .parameter "context"
+    .parameter "intent"
 
     .prologue
-    .line 191
-    iget v0, p1, Landroid/os/Message;->what:I
+    .line 665
+    const-string v0, "android.intent.action.ANY_DATA_STATE_MOBILE"
 
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
-    .line 204
-    :goto_0
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 666
+    const-string v0, "TelephonyRegistry"
+
+    const-string v1, "Received ACTION_ANY_DATA_CONNECTION_STATE_CHANGED_MOBILE"
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 667
+    const-string v0, "android.intent.action.ANY_DATA_STATE"
+
+    invoke-virtual {p2, v0}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 668
+    invoke-virtual {p1, p2}, Landroid/content/Context;->sendStickyBroadcast(Landroid/content/Intent;)V
+
+    .line 670
+    :cond_0
     return-void
-
-    .line 193
-    :pswitch_0
-    const-string v0, "TelephonyRegistry"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "MSG_USER_SWITCHED userId="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p1, Landroid/os/Message;->arg1:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 194
-    iget-object v0, p0, Lcom/android/server/TelephonyRegistry$1;->this$0:Lcom/android/server/TelephonyRegistry;
-
-    iget-object v1, p0, Lcom/android/server/TelephonyRegistry$1;->this$0:Lcom/android/server/TelephonyRegistry;
-
-    #getter for: Lcom/android/server/TelephonyRegistry;->mCellLocation:Landroid/os/Bundle;
-    invoke-static {v1}, Lcom/android/server/TelephonyRegistry;->access$000(Lcom/android/server/TelephonyRegistry;)Landroid/os/Bundle;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/android/server/TelephonyRegistry;->notifyCellLocation(Landroid/os/Bundle;)V
-
-    goto :goto_0
-
-    .line 199
-    :pswitch_1
-    const-string v0, "TelephonyRegistry"
-
-    const-string v1, "MSG_SHUTDOWN_IPO handled"
-
-    invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 200
-    iget-object v0, p0, Lcom/android/server/TelephonyRegistry$1;->this$0:Lcom/android/server/TelephonyRegistry;
-
-    #calls: Lcom/android/server/TelephonyRegistry;->resetMemberData()V
-    invoke-static {v0}, Lcom/android/server/TelephonyRegistry;->access$100(Lcom/android/server/TelephonyRegistry;)V
-
-    goto :goto_0
-
-    .line 191
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-        :pswitch_1
-    .end packed-switch
 .end method

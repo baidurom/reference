@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/pm/PackageManagerService;->updateExternalMediaStatus(ZZ)V
+    value = Lcom/android/server/pm/PackageManagerService;->getPackageSizeInfo(Ljava/lang/String;Landroid/content/pm/IPackageStatsObserver;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,27 +20,27 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/server/pm/PackageManagerService;
 
-.field final synthetic val$mediaStatus:Z
+.field final synthetic val$observer:Landroid/content/pm/IPackageStatsObserver;
 
-.field final synthetic val$reportStatus:Z
+.field final synthetic val$packageName:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/server/pm/PackageManagerService;ZZ)V
+.method constructor <init>(Lcom/android/server/pm/PackageManagerService;Ljava/lang/String;Landroid/content/pm/IPackageStatsObserver;)V
     .locals 0
     .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 10029
+    .line 7523
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$10;->this$0:Lcom/android/server/pm/PackageManagerService;
 
-    iput-boolean p2, p0, Lcom/android/server/pm/PackageManagerService$10;->val$mediaStatus:Z
+    iput-object p2, p0, Lcom/android/server/pm/PackageManagerService$10;->val$packageName:Ljava/lang/String;
 
-    iput-boolean p3, p0, Lcom/android/server/pm/PackageManagerService$10;->val$reportStatus:Z
+    iput-object p3, p0, Lcom/android/server/pm/PackageManagerService$10;->val$observer:Landroid/content/pm/IPackageStatsObserver;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -48,21 +48,91 @@
 
 # virtual methods
 .method public run()V
-    .locals 4
+    .locals 6
 
     .prologue
-    .line 10031
-    iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$10;->this$0:Lcom/android/server/pm/PackageManagerService;
+    .line 7525
+    iget-object v3, p0, Lcom/android/server/pm/PackageManagerService$10;->this$0:Lcom/android/server/pm/PackageManagerService;
 
-    iget-boolean v1, p0, Lcom/android/server/pm/PackageManagerService$10;->val$mediaStatus:Z
+    iget-object v3, v3, Lcom/android/server/pm/PackageManagerService;->mHandler:Lcom/android/server/pm/PackageManagerService$PackageHandler;
 
-    iget-boolean v2, p0, Lcom/android/server/pm/PackageManagerService$10;->val$reportStatus:Z
+    invoke-virtual {v3, p0}, Lcom/android/server/pm/PackageManagerService$PackageHandler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    const/4 v3, 0x1
+    .line 7526
+    new-instance v1, Landroid/content/pm/PackageStats;
 
-    #calls: Lcom/android/server/pm/PackageManagerService;->updateExternalMediaStatusInner(ZZZ)V
-    invoke-static {v0, v1, v2, v3}, Lcom/android/server/pm/PackageManagerService;->access$4600(Lcom/android/server/pm/PackageManagerService;ZZZ)V
+    iget-object v3, p0, Lcom/android/server/pm/PackageManagerService$10;->val$packageName:Ljava/lang/String;
 
-    .line 10032
+    invoke-direct {v1, v3}, Landroid/content/pm/PackageStats;-><init>(Ljava/lang/String;)V
+
+    .line 7529
+    .local v1, stats:Landroid/content/pm/PackageStats;
+    iget-object v3, p0, Lcom/android/server/pm/PackageManagerService$10;->this$0:Lcom/android/server/pm/PackageManagerService;
+
+    iget-object v4, v3, Lcom/android/server/pm/PackageManagerService;->mInstallLock:Ljava/lang/Object;
+
+    monitor-enter v4
+
+    .line 7530
+    :try_start_0
+    iget-object v3, p0, Lcom/android/server/pm/PackageManagerService$10;->this$0:Lcom/android/server/pm/PackageManagerService;
+
+    iget-object v5, p0, Lcom/android/server/pm/PackageManagerService$10;->val$packageName:Ljava/lang/String;
+
+    #calls: Lcom/android/server/pm/PackageManagerService;->getPackageSizeInfoLI(Ljava/lang/String;Landroid/content/pm/PackageStats;)Z
+    invoke-static {v3, v5, v1}, Lcom/android/server/pm/PackageManagerService;->access$3700(Lcom/android/server/pm/PackageManagerService;Ljava/lang/String;Landroid/content/pm/PackageStats;)Z
+
+    move-result v2
+
+    .line 7531
+    .local v2, success:Z
+    monitor-exit v4
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 7533
+    iget-object v3, p0, Lcom/android/server/pm/PackageManagerService$10;->this$0:Lcom/android/server/pm/PackageManagerService;
+
+    iget-object v3, v3, Lcom/android/server/pm/PackageManagerService;->mHandler:Lcom/android/server/pm/PackageManagerService$PackageHandler;
+
+    const/4 v4, 0x5
+
+    invoke-virtual {v3, v4}, Lcom/android/server/pm/PackageManagerService$PackageHandler;->obtainMessage(I)Landroid/os/Message;
+
+    move-result-object v0
+
+    .line 7534
+    .local v0, msg:Landroid/os/Message;
+    new-instance v3, Lcom/android/server/pm/PackageManagerService$MeasureParams;
+
+    iget-object v4, p0, Lcom/android/server/pm/PackageManagerService$10;->this$0:Lcom/android/server/pm/PackageManagerService;
+
+    iget-object v5, p0, Lcom/android/server/pm/PackageManagerService$10;->val$observer:Landroid/content/pm/IPackageStatsObserver;
+
+    invoke-direct {v3, v4, v1, v2, v5}, Lcom/android/server/pm/PackageManagerService$MeasureParams;-><init>(Lcom/android/server/pm/PackageManagerService;Landroid/content/pm/PackageStats;ZLandroid/content/pm/IPackageStatsObserver;)V
+
+    iput-object v3, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    .line 7535
+    iget-object v3, p0, Lcom/android/server/pm/PackageManagerService$10;->this$0:Lcom/android/server/pm/PackageManagerService;
+
+    iget-object v3, v3, Lcom/android/server/pm/PackageManagerService;->mHandler:Lcom/android/server/pm/PackageManagerService$PackageHandler;
+
+    invoke-virtual {v3, v0}, Lcom/android/server/pm/PackageManagerService$PackageHandler;->sendMessage(Landroid/os/Message;)Z
+
+    .line 7536
     return-void
+
+    .line 7531
+    .end local v0           #msg:Landroid/os/Message;
+    .end local v2           #success:Z
+    :catchall_0
+    move-exception v3
+
+    :try_start_1
+    monitor-exit v4
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v3
 .end method

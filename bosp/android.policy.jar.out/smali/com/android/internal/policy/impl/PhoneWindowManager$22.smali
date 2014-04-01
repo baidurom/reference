@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 4645
+    .line 3965
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$22;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,12 +40,12 @@
     .parameter "intent"
 
     .prologue
-    .line 4647
+    .line 3967
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 4648
+    .line 3968
     .local v0, action:Ljava/lang/String;
     const-string v1, "WindowManager"
 
@@ -69,7 +69,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4649
+    .line 3969
     const-string v1, "com.baidu.action.FLASHLIGHT_STATE_CHANGED"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -78,7 +78,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 4650
+    .line 3970
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$22;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     const-string v2, "state"
@@ -90,9 +90,9 @@
     move-result v2
 
     #setter for: Lcom/android/internal/policy/impl/PhoneWindowManager;->mIsFlashlightOn:Z
-    invoke-static {v1, v2}, Lcom/android/internal/policy/impl/PhoneWindowManager;->access$702(Lcom/android/internal/policy/impl/PhoneWindowManager;Z)Z
+    invoke-static {v1, v2}, Lcom/android/internal/policy/impl/PhoneWindowManager;->access$402(Lcom/android/internal/policy/impl/PhoneWindowManager;Z)Z
 
-    .line 4652
+    .line 3972
     :cond_0
     return-void
 .end method

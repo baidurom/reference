@@ -29,7 +29,7 @@
 
 .field private mContext:Landroid/content/Context;
 
-.field private final mListener:Landroid/media/IMediaScannerListener$Stub;
+.field private mListener:Landroid/media/IMediaScannerListener$Stub;
 
 .field private mService:Landroid/media/IMediaScannerService;
 
@@ -42,7 +42,7 @@
 
     .prologue
     .line 103
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 50
     new-instance v0, Landroid/media/MediaScannerConnection$1;

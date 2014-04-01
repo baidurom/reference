@@ -17,10 +17,6 @@
 # instance fields
 .field name:Ljava/lang/String;
 
-.field newUsers:[I
-
-.field origUsers:[I
-
 .field pkg:Landroid/content/pm/PackageParser$Package;
 
 .field removedInfo:Lcom/android/server/pm/PackageManagerService$PackageRemovedInfo;
@@ -38,10 +34,10 @@
     .parameter
 
     .prologue
-    .line 7870
+    .line 6472
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$PackageInstalledInfo;->this$0:Lcom/android/server/pm/PackageManagerService;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

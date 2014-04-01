@@ -172,13 +172,13 @@
     invoke-virtual {v0, v3, v3, v1, v2}, Landroid/graphics/Rect;->set(IIII)V
 
     .line 284
-    invoke-virtual {p0}, Lcom/android/internal/view/menu/IconMenuItemView;->getLayoutDirection()I
+    invoke-virtual {p0}, Lcom/android/internal/view/menu/IconMenuItemView;->getResolvedLayoutDirection()I
 
     move-result v5
 
     .line 285
     .local v5, layoutDirection:I
-    const v0, 0x800013
+    const/16 v0, 0x13
 
     iget-object v1, p0, Lcom/android/internal/view/menu/IconMenuItemView;->mIcon:Landroid/graphics/drawable/Drawable;
 

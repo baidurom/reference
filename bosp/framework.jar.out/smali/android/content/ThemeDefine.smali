@@ -10,7 +10,7 @@
 
 .field public static final BOUNDARY_VALUE:I = 0x70000000
 
-.field public static final BOUNDARY_YI:I = 0x3
+.field public static final BOUNDARY_YI:I = 0x4
 
 .field public static final CONFIG_THEME:I = -0x80000000
 

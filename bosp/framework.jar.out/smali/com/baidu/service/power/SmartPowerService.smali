@@ -205,7 +205,7 @@
     invoke-virtual {p1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
     .line 120
-    const-string/jumbo v2, "keyguard"
+    const-string v2, "keyguard"
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -219,6 +219,8 @@
     return-void
 
     .line 49
+    nop
+
     :array_0
     .array-data 0x4
         0xfft 0xfft 0xfft 0xfft

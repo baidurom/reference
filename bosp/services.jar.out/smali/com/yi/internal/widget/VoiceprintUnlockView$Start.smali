@@ -70,7 +70,7 @@
     .line 567
     iget-object v0, p0, Lcom/yi/internal/widget/VoiceprintUnlockView$Start;->this$0:Lcom/yi/internal/widget/VoiceprintUnlockView;
 
-    const v1, 0x3070016
+    const v1, 0x40b0017
 
     #calls: Lcom/yi/internal/widget/VoiceprintUnlockView;->updateTipWords(I)V
     invoke-static {v0, v1}, Lcom/yi/internal/widget/VoiceprintUnlockView;->access$1300(Lcom/yi/internal/widget/VoiceprintUnlockView;I)V
@@ -83,7 +83,7 @@
 
     move-result-object v0
 
-    const v1, 0x308012f
+    const v1, 0x4080132
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 

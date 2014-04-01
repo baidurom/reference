@@ -19,8 +19,6 @@
 
 .field public static final METHOD:Ljava/lang/String; = "method"
 
-.field public static final METHOD_ALARM:I = 0x4
-
 .field public static final METHOD_ALERT:I = 0x1
 
 .field public static final METHOD_DEFAULT:I = 0x0

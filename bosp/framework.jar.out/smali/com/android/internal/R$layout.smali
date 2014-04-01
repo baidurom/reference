@@ -19,11 +19,11 @@
 
 .field public static final action_bar_title_item:I = #layout@action_bar_title_item#t
 
-.field public static final action_bar_up_container:I = #layout@action_bar_up_container#t
-
 .field public static final action_menu_item_layout:I = #layout@action_menu_item_layout#t
 
 .field public static final action_menu_layout:I = #layout@action_menu_layout#t
+
+.field public static final action_mode_bar:I = #layout@action_mode_bar#t
 
 .field public static final action_mode_close_item:I = #layout@action_mode_close_item#t
 
@@ -39,7 +39,11 @@
 
 .field public static final alert_dialog:I = #layout@alert_dialog#t
 
+.field public static final alert_dialog_holo:I = #layout@alert_dialog_holo#t
+
 .field public static final alert_dialog_progress:I = #layout@alert_dialog_progress#t
+
+.field public static final alert_dialog_progress_holo:I = #layout@alert_dialog_progress_holo#t
 
 .field public static final always_use_checkbox:I = #layout@always_use_checkbox#t
 
@@ -47,13 +51,13 @@
 
 .field public static final app_permission_item:I = #layout@app_permission_item#t
 
-.field public static final app_permission_item_money:I = #layout@app_permission_item_money#t
-
-.field public static final app_permission_item_old:I = #layout@app_permission_item_old#t
+.field public static final app_permission_table_item:I = #layout@app_permission_table_item#t
 
 .field public static final app_perms_summary:I = #layout@app_perms_summary#t
 
 .field public static final auto_complete_list:I = #layout@auto_complete_list#t
+
+.field public static final baidu_keyguard_axis_single_line:I = #layout@baidu_keyguard_axis_single_line#t
 
 .field public static final baidu_keyguard_constellation01:I = #layout@baidu_keyguard_constellation01#t
 
@@ -77,6 +81,12 @@
 
 .field public static final baidu_keyguard_hotword:I = #layout@baidu_keyguard_hotword#t
 
+.field public static final baidu_keyguard_search:I = #layout@baidu_keyguard_search#t
+
+.field public static final baidu_keyguard_target:I = #layout@baidu_keyguard_target#t
+
+.field public static final breadcrumbs_in_fragment:I = #layout@breadcrumbs_in_fragment#t
+
 .field public static final browser_link_context_header:I = #layout@browser_link_context_header#t
 
 .field public static final calendar_view:I = #layout@calendar_view#t
@@ -91,11 +101,27 @@
 
 .field public static final choose_account_type:I = #layout@choose_account_type#t
 
+.field public static final choose_selected_account_row:I = #layout@choose_selected_account_row#t
+
 .field public static final choose_type_and_account:I = #layout@choose_type_and_account#t
 
 .field public static final date_picker:I = #layout@date_picker#t
 
 .field public static final date_picker_dialog:I = #layout@date_picker_dialog#t
+
+.field public static final date_picker_holo:I = #layout@date_picker_holo#t
+
+.field public static final dialog_custom_title:I = #layout@dialog_custom_title#t
+
+.field public static final dialog_custom_title_holo:I = #layout@dialog_custom_title_holo#t
+
+.field public static final dialog_title:I = #layout@dialog_title#t
+
+.field public static final dialog_title_holo:I = #layout@dialog_title_holo#t
+
+.field public static final dialog_title_icons:I = #layout@dialog_title_icons#t
+
+.field public static final dialog_title_icons_holo:I = #layout@dialog_title_icons_holo#t
 
 .field public static final dynamic_perm_dialog:I = #layout@dynamic_perm_dialog#t
 
@@ -123,27 +149,13 @@
 
 .field public static final input_method_extract_view:I = #layout@input_method_extract_view#t
 
-.field public static final input_method_switch_dialog_title:I = #layout@input_method_switch_dialog_title#t
-
 .field public static final js_prompt:I = #layout@js_prompt#t
 
-.field public static final keyguard_account_view:I = #layout@keyguard_account_view#t
+.field public static final keyboard_key_preview:I = #layout@keyboard_key_preview#t
 
-.field public static final keyguard_add_widget:I = #layout@keyguard_add_widget#t
+.field public static final keyboard_popup_keyboard:I = #layout@keyboard_popup_keyboard#t
 
-.field public static final keyguard_face_unlock_view:I = #layout@keyguard_face_unlock_view#t
-
-.field public static final keyguard_host_view:I = #layout@keyguard_host_view#t
-
-.field public static final keyguard_multi_user_avatar:I = #layout@keyguard_multi_user_avatar#t
-
-.field public static final keyguard_multi_user_selector_widget:I = #layout@keyguard_multi_user_selector_widget#t
-
-.field public static final keyguard_password_view:I = #layout@keyguard_password_view#t
-
-.field public static final keyguard_pattern_view:I = #layout@keyguard_pattern_view#t
-
-.field public static final keyguard_pin_view:I = #layout@keyguard_pin_view#t
+.field public static final keyguard:I = #layout@keyguard#t
 
 .field public static final keyguard_screen_glogin_unlock:I = #layout@keyguard_screen_glogin_unlock#t
 
@@ -151,7 +163,13 @@
 
 .field public static final keyguard_screen_hotspot:I = #layout@keyguard_screen_hotspot#t
 
+.field public static final keyguard_screen_jrd_tab_unlock_gemini:I = #layout@keyguard_screen_jrd_tab_unlock_gemini#t
+
+.field public static final keyguard_screen_lock:I = #layout@keyguard_screen_lock#t
+
 .field public static final keyguard_screen_password_landscape:I = #layout@keyguard_screen_password_landscape#t
+
+.field public static final keyguard_screen_password_landscape_gemini:I = #layout@keyguard_screen_password_landscape_gemini#t
 
 .field public static final keyguard_screen_password_portrait:I = #layout@keyguard_screen_password_portrait#t
 
@@ -161,35 +179,41 @@
 
 .field public static final keyguard_screen_sim_pin_portrait:I = #layout@keyguard_screen_sim_pin_portrait#t
 
+.field public static final keyguard_screen_sim_pin_portrait_gemini:I = #layout@keyguard_screen_sim_pin_portrait_gemini#t
+
 .field public static final keyguard_screen_sim_puk_landscape:I = #layout@keyguard_screen_sim_puk_landscape#t
 
 .field public static final keyguard_screen_sim_puk_portrait:I = #layout@keyguard_screen_sim_puk_portrait#t
 
+.field public static final keyguard_screen_status_land:I = #layout@keyguard_screen_status_land#t
+
+.field public static final keyguard_screen_status_land_gemini:I = #layout@keyguard_screen_status_land_gemini#t
+
+.field public static final keyguard_screen_status_port:I = #layout@keyguard_screen_status_port#t
+
 .field public static final keyguard_screen_tab_unlock:I = #layout@keyguard_screen_tab_unlock#t
+
+.field public static final keyguard_screen_tab_unlock_gemini:I = #layout@keyguard_screen_tab_unlock_gemini#t
 
 .field public static final keyguard_screen_tab_unlock_land:I = #layout@keyguard_screen_tab_unlock_land#t
 
 .field public static final keyguard_screen_unlock_landscape:I = #layout@keyguard_screen_unlock_landscape#t
 
+.field public static final keyguard_screen_unlock_landscape_gemini:I = #layout@keyguard_screen_unlock_landscape_gemini#t
+
 .field public static final keyguard_screen_unlock_portrait:I = #layout@keyguard_screen_unlock_portrait#t
 
 .field public static final keyguard_screen_unlock_portrait_gemini:I = #layout@keyguard_screen_unlock_portrait_gemini#t
 
-.field public static final keyguard_selector_view:I = #layout@keyguard_selector_view#t
-
-.field public static final keyguard_sim_pin_view:I = #layout@keyguard_sim_pin_view#t
-
-.field public static final keyguard_sim_puk_view:I = #layout@keyguard_sim_puk_view#t
-
-.field public static final keyguard_status_view:I = #layout@keyguard_status_view#t
-
-.field public static final keyguard_transport_control_view:I = #layout@keyguard_transport_control_view#t
+.field public static final keyguard_transport_control:I = #layout@keyguard_transport_control#t
 
 .field public static final launch_warning:I = #layout@launch_warning#t
 
 .field public static final list_content:I = #layout@list_content#t
 
 .field public static final list_content_simple:I = #layout@list_content_simple#t
+
+.field public static final list_gestures_overlay:I = #layout@list_gestures_overlay#t
 
 .field public static final list_menu_item_checkbox:I = #layout@list_menu_item_checkbox#t
 
@@ -203,51 +227,41 @@
 
 .field public static final media_controller:I = #layout@media_controller#t
 
-.field public static final media_route_chooser_layout:I = #layout@media_route_chooser_layout#t
-
-.field public static final media_route_list_item:I = #layout@media_route_list_item#t
-
-.field public static final media_route_list_item_checkable:I = #layout@media_route_list_item_checkable#t
-
-.field public static final media_route_list_item_collapse_group:I = #layout@media_route_list_item_collapse_group#t
-
-.field public static final media_route_list_item_section_header:I = #layout@media_route_list_item_section_header#t
-
-.field public static final media_route_list_item_top_header:I = #layout@media_route_list_item_top_header#t
-
-.field public static final notification_action:I = #layout@notification_action#t
-
-.field public static final notification_action_tombstone:I = #layout@notification_action_tombstone#t
-
-.field public static final notification_intruder_content:I = #layout@notification_intruder_content#t
-
-.field public static final notification_template_base:I = #layout@notification_template_base#t
-
-.field public static final notification_template_big_base:I = #layout@notification_template_big_base#t
-
-.field public static final notification_template_big_picture:I = #layout@notification_template_big_picture#t
-
-.field public static final notification_template_big_text:I = #layout@notification_template_big_text#t
-
-.field public static final notification_template_inbox:I = #layout@notification_template_inbox#t
-
-.field public static final notification_template_part_chronometer:I = #layout@notification_template_part_chronometer#t
-
-.field public static final notification_template_part_time:I = #layout@notification_template_part_time#t
+.field public static final menu_item:I = #layout@menu_item#t
 
 .field public static final number_picker:I = #layout@number_picker#t
 
-.field public static final overlay_display_window:I = #layout@overlay_display_window#t
+.field public static final permission_prompt:I = #layout@permission_prompt#t
+
+.field public static final permission_prompt_item:I = #layout@permission_prompt_item#t
+
+.field public static final permissions_account_and_authtokentype:I = #layout@permissions_account_and_authtokentype#t
 
 .field public static final permissions_package_list_item:I = #layout@permissions_package_list_item#t
 
 .field public static final popup_menu_item_layout:I = #layout@popup_menu_item_layout#t
 
+.field public static final power_dialog:I = #layout@power_dialog#t
+
 .field public static final preference:I = #layout@preference#t
 
 .field public static final preference_category:I = #layout@preference_category#t
 
+.field public static final preference_category_holo:I = #layout@preference_category_holo#t
+
+.field public static final preference_child:I = #layout@preference_child#t
+
+.field public static final preference_child_holo:I = #layout@preference_child_holo#t
+
+.field public static final preference_dialog_edittext:I = #layout@preference_dialog_edittext#t
+
 .field public static final preference_header_item:I = #layout@preference_header_item#t
+
+.field public static final preference_holo:I = #layout@preference_holo#t
+
+.field public static final preference_information:I = #layout@preference_information#t
+
+.field public static final preference_information_holo:I = #layout@preference_information_holo#t
 
 .field public static final preference_list_content:I = #layout@preference_list_content#t
 
@@ -255,23 +269,33 @@
 
 .field public static final preference_list_fragment:I = #layout@preference_list_fragment#t
 
+.field public static final preference_widget_checkbox:I = #layout@preference_widget_checkbox#t
+
 .field public static final preference_widget_seekbar:I = #layout@preference_widget_seekbar#t
 
+.field public static final preference_widget_switch:I = #layout@preference_widget_switch#t
+
+.field public static final preferences:I = #layout@preferences#t
+
 .field public static final progress_dialog:I = #layout@progress_dialog#t
+
+.field public static final progress_dialog_holo:I = #layout@progress_dialog_holo#t
 
 .field public static final quickboot_dialog_confirm:I = #layout@quickboot_dialog_confirm#t
 
 .field public static final recent_apps_dialog:I = #layout@recent_apps_dialog#t
 
+.field public static final recent_apps_icon:I = #layout@recent_apps_icon#t
+
 .field public static final remote_views_adapter_default_loading_view:I = #layout@remote_views_adapter_default_loading_view#t
 
 .field public static final resolve_list_item:I = #layout@resolve_list_item#t
 
-.field public static final resolver_grid:I = #layout@resolver_grid#t
-
 .field public static final ringtone_custom_item:I = #layout@ringtone_custom_item#t
 
 .field public static final safe_mode:I = #layout@safe_mode#t
+
+.field public static final screen:I = #layout@screen#t
 
 .field public static final screen_action_bar:I = #layout@screen_action_bar#t
 
@@ -291,6 +315,8 @@
 
 .field public static final search_bar:I = #layout@search_bar#t
 
+.field public static final search_dropdown_item_1line:I = #layout@search_dropdown_item_1line#t
+
 .field public static final search_dropdown_item_icons_2line:I = #layout@search_dropdown_item_icons_2line#t
 
 .field public static final search_view:I = #layout@search_view#t
@@ -299,7 +325,11 @@
 
 .field public static final select_dialog:I = #layout@select_dialog#t
 
+.field public static final select_dialog_holo:I = #layout@select_dialog_holo#t
+
 .field public static final select_dialog_item:I = #layout@select_dialog_item#t
+
+.field public static final select_dialog_item_holo:I = #layout@select_dialog_item_holo#t
 
 .field public static final select_dialog_multichoice:I = #layout@select_dialog_multichoice#t
 
@@ -312,6 +342,8 @@
 .field public static final simple_dropdown_hint:I = #layout@simple_dropdown_hint#t
 
 .field public static final simple_dropdown_item_1line:I = #layout@simple_dropdown_item_1line#t
+
+.field public static final simple_dropdown_item_2line:I = #layout@simple_dropdown_item_2line#t
 
 .field public static final simple_expandable_list_item_1:I = #layout@simple_expandable_list_item_1#t
 
@@ -341,11 +373,11 @@
 
 .field public static final simple_spinner_item:I = #layout@simple_spinner_item#t
 
-.field public static final sms_short_code_confirmation_dialog:I = #layout@sms_short_code_confirmation_dialog#t
-
 .field public static final ssl_certificate:I = #layout@ssl_certificate#t
 
 .field public static final status_bar_latest_event_content:I = #layout@status_bar_latest_event_content#t
+
+.field public static final status_bar_latest_event_content_large_icon:I = #layout@status_bar_latest_event_content_large_icon#t
 
 .field public static final status_bar_latest_event_ticker:I = #layout@status_bar_latest_event_ticker#t
 
@@ -355,6 +387,8 @@
 
 .field public static final tab_content:I = #layout@tab_content#t
 
+.field public static final tab_indicator:I = #layout@tab_indicator#t
+
 .field public static final tab_indicator_holo:I = #layout@tab_indicator_holo#t
 
 .field public static final test_list_item:I = #layout@test_list_item#t
@@ -363,13 +397,29 @@
 
 .field public static final text_edit_action_popup_text:I = #layout@text_edit_action_popup_text#t
 
+.field public static final text_edit_no_paste_window:I = #layout@text_edit_no_paste_window#t
+
+.field public static final text_edit_paste_window:I = #layout@text_edit_paste_window#t
+
+.field public static final text_edit_side_no_paste_window:I = #layout@text_edit_side_no_paste_window#t
+
+.field public static final text_edit_side_paste_window:I = #layout@text_edit_side_paste_window#t
+
+.field public static final text_edit_suggestion_item:I = #layout@text_edit_suggestion_item#t
+
+.field public static final text_edit_suggestions_window:I = #layout@text_edit_suggestions_window#t
+
 .field public static final textview_hint:I = #layout@textview_hint#t
 
 .field public static final time_picker:I = #layout@time_picker#t
 
 .field public static final time_picker_dialog:I = #layout@time_picker_dialog#t
 
+.field public static final time_picker_holo:I = #layout@time_picker_holo#t
+
 .field public static final transient_notification:I = #layout@transient_notification#t
+
+.field public static final twelve_key_entry:I = #layout@twelve_key_entry#t
 
 .field public static final two_line_list_item:I = #layout@two_line_list_item#t
 
@@ -381,21 +431,53 @@
 
 .field public static final volume_adjust_item:I = #layout@volume_adjust_item#t
 
+.field public static final web_runtime:I = #layout@web_runtime#t
+
 .field public static final web_text_view_dropdown:I = #layout@web_text_view_dropdown#t
 
 .field public static final webview_find:I = #layout@webview_find#t
 
 .field public static final webview_select_singlechoice:I = #layout@webview_select_singlechoice#t
 
-.field public static final wifi_p2p_dialog:I = #layout@wifi_p2p_dialog#t
+.field public static final wifi_p2p_go_negotiation_request_alert:I = #layout@wifi_p2p_go_negotiation_request_alert#t
 
-.field public static final wifi_p2p_dialog_row:I = #layout@wifi_p2p_dialog_row#t
+.field public static final yi_alert_dialog_baidu:I = #layout@yi_alert_dialog_baidu#t
 
 .field public static final yi_alert_dialog_baidu_light:I = #layout@yi_alert_dialog_baidu_light#t
 
+.field public static final yi_date_picker_baidu:I = #layout@yi_date_picker_baidu#t
+
+.field public static final yi_dialog_custom_title_baidu:I = #layout@yi_dialog_custom_title_baidu#t
+
+.field public static final yi_dialog_title_baidu:I = #layout@yi_dialog_title_baidu#t
+
+.field public static final yi_dialog_title_icons_baidu:I = #layout@yi_dialog_title_icons_baidu#t
+
+.field public static final yi_preference_baidu:I = #layout@yi_preference_baidu#t
+
+.field public static final yi_preference_category_baidu:I = #layout@yi_preference_category_baidu#t
+
+.field public static final yi_preference_child_baidu:I = #layout@yi_preference_child_baidu#t
+
+.field public static final yi_preference_dialog_edittext_light:I = #layout@yi_preference_dialog_edittext_light#t
+
 .field public static final yi_ringtone:I = #layout@yi_ringtone#t
 
+.field public static final yi_select_dialog_baidu_light:I = #layout@yi_select_dialog_baidu_light#t
+
+.field public static final yi_select_dialog_item_baidu_light:I = #layout@yi_select_dialog_item_baidu_light#t
+
+.field public static final yi_select_dialog_multichoice_baidu_light:I = #layout@yi_select_dialog_multichoice_baidu_light#t
+
+.field public static final yi_select_dialog_singlechoice_baidu_light:I = #layout@yi_select_dialog_singlechoice_baidu_light#t
+
+.field public static final yi_tab_indicator_baidu:I = #layout@yi_tab_indicator_baidu#t
+
 .field public static final yi_text_edit_action_popup_text:I = #layout@yi_text_edit_action_popup_text#t
+
+.field public static final yi_time_picker_baidu:I = #layout@yi_time_picker_baidu#t
+
+.field public static final zoom_browser_accessory_buttons:I = #layout@zoom_browser_accessory_buttons#t
 
 .field public static final zoom_container:I = #layout@zoom_container#t
 
@@ -409,15 +491,13 @@
 
 .field public static final zz_keyguard_transport_control:I = #layout@zz_keyguard_transport_control#t
 
-.field public static final zz_keyguard_voice_unlock_view:I = #layout@zz_keyguard_voice_unlock_view#t
-
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 12929
+    .line 15689
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

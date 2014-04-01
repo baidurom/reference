@@ -15,14 +15,6 @@
 
 
 # virtual methods
-.method public abstract checkDataConnOverLimit()Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract getNetworkPolicies()[Landroid/net/NetworkPolicy;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -55,23 +47,7 @@
     .end annotation
 .end method
 
-.method public abstract getUidsWithPolicy(I)[I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract isDataConnOverLimit(Ljava/lang/String;)Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract isNetworkMetered(Landroid/net/NetworkState;)Z
+.method public abstract isDataConnOverLimit(J)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -111,14 +87,6 @@
     .end annotation
 .end method
 
-.method public abstract setNetworkPoliciesForWifi([Landroid/net/NetworkPolicy;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract setRestrictBackground(Z)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -135,7 +103,7 @@
     .end annotation
 .end method
 
-.method public abstract snoozeLimit(Landroid/net/NetworkTemplate;)V
+.method public abstract snoozePolicy(Landroid/net/NetworkTemplate;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

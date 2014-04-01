@@ -26,7 +26,7 @@
     .parameter "x1"
 
     .prologue
-    .line 5962
+    .line 5528
     iput-object p1, p0, Landroid/widget/AbsListView$3;->this$0:Landroid/widget/AbsListView;
 
     invoke-direct {p0, p2, p3}, Landroid/view/inputmethod/InputConnectionWrapper;-><init>(Landroid/view/inputmethod/InputConnection;Z)V
@@ -43,12 +43,12 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 5974
+    .line 5540
     const/4 v2, 0x6
 
     if-ne p1, v2, :cond_1
 
-    .line 5975
+    .line 5541
     iget-object v2, p0, Landroid/widget/AbsListView$3;->this$0:Landroid/widget/AbsListView;
 
     invoke-virtual {v2}, Landroid/widget/AbsListView;->getContext()Landroid/content/Context;
@@ -63,11 +63,11 @@
 
     check-cast v0, Landroid/view/inputmethod/InputMethodManager;
 
-    .line 5978
+    .line 5544
     .local v0, imm:Landroid/view/inputmethod/InputMethodManager;
     if-eqz v0, :cond_0
 
-    .line 5979
+    .line 5545
     iget-object v2, p0, Landroid/widget/AbsListView$3;->this$0:Landroid/widget/AbsListView;
 
     invoke-virtual {v2}, Landroid/widget/AbsListView;->getWindowToken()Landroid/os/IBinder;
@@ -76,11 +76,11 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/view/inputmethod/InputMethodManager;->hideSoftInputFromWindow(Landroid/os/IBinder;I)Z
 
-    .line 5981
+    .line 5547
     :cond_0
     const/4 v1, 0x1
 
-    .line 5983
+    .line 5549
     .end local v0           #imm:Landroid/view/inputmethod/InputMethodManager;
     :cond_1
     return v1
@@ -91,11 +91,11 @@
     .parameter "enabled"
 
     .prologue
-    .line 5967
+    .line 5533
     iget-object v0, p0, Landroid/widget/AbsListView$3;->this$0:Landroid/widget/AbsListView;
 
     #getter for: Landroid/widget/AbsListView;->mDefInputConnection:Landroid/view/inputmethod/InputConnection;
-    invoke-static {v0}, Landroid/widget/AbsListView;->access$5000(Landroid/widget/AbsListView;)Landroid/view/inputmethod/InputConnection;
+    invoke-static {v0}, Landroid/widget/AbsListView;->access$4200(Landroid/widget/AbsListView;)Landroid/view/inputmethod/InputConnection;
 
     move-result-object v0
 
@@ -111,11 +111,11 @@
     .parameter "event"
 
     .prologue
-    .line 5991
+    .line 5557
     iget-object v0, p0, Landroid/widget/AbsListView$3;->this$0:Landroid/widget/AbsListView;
 
     #getter for: Landroid/widget/AbsListView;->mDefInputConnection:Landroid/view/inputmethod/InputConnection;
-    invoke-static {v0}, Landroid/widget/AbsListView;->access$5000(Landroid/widget/AbsListView;)Landroid/view/inputmethod/InputConnection;
+    invoke-static {v0}, Landroid/widget/AbsListView;->access$4200(Landroid/widget/AbsListView;)Landroid/view/inputmethod/InputConnection;
 
     move-result-object v0
 

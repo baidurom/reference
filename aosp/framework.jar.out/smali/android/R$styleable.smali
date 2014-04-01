@@ -225,8 +225,6 @@
 
 .field public static final AndroidManifestActivityAlias_name:I = 0x2
 
-.field public static final AndroidManifestActivityAlias_parentActivityName:I = 0x9
-
 .field public static final AndroidManifestActivityAlias_permission:I = 0x3
 
 .field public static final AndroidManifestActivityAlias_targetActivity:I = 0x7
@@ -269,17 +267,11 @@
 
 .field public static final AndroidManifestActivity_noHistory:I = 0x15
 
-.field public static final AndroidManifestActivity_parentActivityName:I = 0x1b
-
 .field public static final AndroidManifestActivity_permission:I = 0x4
 
 .field public static final AndroidManifestActivity_process:I = 0x7
 
 .field public static final AndroidManifestActivity_screenOrientation:I = 0xf
-
-.field public static final AndroidManifestActivity_showOnLockScreen:I = 0x1d
-
-.field public static final AndroidManifestActivity_singleUser:I = 0x1c
 
 .field public static final AndroidManifestActivity_stateNotNeeded:I = 0xc
 
@@ -337,8 +329,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 .end field
-
-.field public static final AndroidManifestApplication_supportsRtl:I = 0x1a
 
 .field public static final AndroidManifestApplication_taskAffinity:I = 0xc
 
@@ -446,19 +436,15 @@
 
 .field public static final AndroidManifestPermissionGroup:[I = null
 
-.field public static final AndroidManifestPermissionGroup_description:I = 0x4
+.field public static final AndroidManifestPermissionGroup_description:I = 0x3
 
 .field public static final AndroidManifestPermissionGroup_icon:I = 0x1
 
 .field public static final AndroidManifestPermissionGroup_label:I = 0x0
 
-.field public static final AndroidManifestPermissionGroup_logo:I = 0x5
+.field public static final AndroidManifestPermissionGroup_logo:I = 0x4
 
 .field public static final AndroidManifestPermissionGroup_name:I = 0x2
-
-.field public static final AndroidManifestPermissionGroup_permissionGroupFlags:I = 0x6
-
-.field public static final AndroidManifestPermissionGroup_priority:I = 0x3
 
 .field public static final AndroidManifestPermissionTree:[I = null
 
@@ -479,8 +465,6 @@
 .field public static final AndroidManifestPermission_logo:I = 0x6
 
 .field public static final AndroidManifestPermission_name:I = 0x2
-
-.field public static final AndroidManifestPermission_permissionFlags:I = 0x7
 
 .field public static final AndroidManifestPermission_permissionGroup:I = 0x4
 
@@ -520,8 +504,6 @@
 
 .field public static final AndroidManifestProvider_readPermission:I = 0x4
 
-.field public static final AndroidManifestProvider_singleUser:I = 0x10
-
 .field public static final AndroidManifestProvider_syncable:I = 0xb
 
 .field public static final AndroidManifestProvider_writePermission:I = 0x5
@@ -546,8 +528,6 @@
 
 .field public static final AndroidManifestReceiver_process:I = 0x6
 
-.field public static final AndroidManifestReceiver_singleUser:I = 0x9
-
 .field public static final AndroidManifestService:[I = null
 
 .field public static final AndroidManifestService_description:I = 0x7
@@ -558,8 +538,6 @@
 
 .field public static final AndroidManifestService_icon:I = 0x1
 
-.field public static final AndroidManifestService_isolatedProcess:I = 0xa
-
 .field public static final AndroidManifestService_label:I = 0x0
 
 .field public static final AndroidManifestService_logo:I = 0x8
@@ -569,8 +547,6 @@
 .field public static final AndroidManifestService_permission:I = 0x3
 
 .field public static final AndroidManifestService_process:I = 0x6
-
-.field public static final AndroidManifestService_singleUser:I = 0xb
 
 .field public static final AndroidManifestService_stopWithTask:I = 0x9
 
@@ -742,8 +718,6 @@
 
 .field public static final AppWidgetProviderInfo_configure:I = 0x4
 
-.field public static final AppWidgetProviderInfo_initialKeyguardLayout:I = 0xa
-
 .field public static final AppWidgetProviderInfo_initialLayout:I = 0x3
 
 .field public static final AppWidgetProviderInfo_minHeight:I = 0x1
@@ -759,8 +733,6 @@
 .field public static final AppWidgetProviderInfo_resizeMode:I = 0x7
 
 .field public static final AppWidgetProviderInfo_updatePeriodMillis:I = 0x2
-
-.field public static final AppWidgetProviderInfo_widgetCategory:I = 0xb
 
 .field public static final AutoCompleteTextView:[I = null
 
@@ -884,23 +856,19 @@
 
 .field public static final DatePicker:[I = null
 
-.field public static final DatePicker_calendarViewShown:I = 0x5
+.field public static final DatePicker_calendarViewShown:I = 0x6
 
-.field public static final DatePicker_endYear:I = 0x1
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end field
+.field public static final DatePicker_endYear:I = 0x2
 
-.field public static final DatePicker_maxDate:I = 0x3
+.field public static final DatePicker_layout:I = 0x0
 
-.field public static final DatePicker_minDate:I = 0x2
+.field public static final DatePicker_maxDate:I = 0x4
 
-.field public static final DatePicker_spinnersShown:I = 0x4
+.field public static final DatePicker_minDate:I = 0x3
 
-.field public static final DatePicker_startYear:I = 0x0
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end field
+.field public static final DatePicker_spinnersShown:I = 0x5
+
+.field public static final DatePicker_startYear:I = 0x1
 
 .field public static final DecelerateInterpolator:[I = null
 
@@ -976,10 +944,6 @@
 
 .field public static final Drawable_visible:I = 0x0
 
-.field public static final Dream:[I = null
-
-.field public static final Dream_settingsActivity:I = 0x0
-
 .field public static final EditText:[I = null
 
 .field public static final ExpandableListChildIndicatorState:[I = null
@@ -1029,10 +993,6 @@
 .field public static final FragmentAnimation_fragmentOpenEnterAnimation:I = 0x0
 
 .field public static final FragmentAnimation_fragmentOpenExitAnimation:I = 0x1
-
-.field public static final FragmentBreadCrumbs:[I = null
-
-.field public static final FragmentBreadCrumbs_gravity:I = 0x0
 
 .field public static final Fragment_id:I = 0x1
 
@@ -1087,16 +1047,6 @@
 .field public static final GestureOverlayView_orientation:I = 0x0
 
 .field public static final GestureOverlayView_uncertainGestureColor:I = 0x3
-
-.field public static final GlowPadView:[I = null
-
-.field public static final GlowPadView_directionDescriptions:I = 0x3
-
-.field public static final GlowPadView_gravity:I = 0x0
-
-.field public static final GlowPadView_innerRadius:I = 0x1
-
-.field public static final GlowPadView_targetDescriptions:I = 0x2
 
 .field public static final GradientDrawable:[I = null
 
@@ -1292,8 +1242,6 @@
 
 .field public static final InputMethod_Subtype_overridesImplicitlyEnabledSubtype:I = 0x6
 
-.field public static final InputMethod_Subtype_subtypeId:I = 0x7
-
 .field public static final InputMethod_isDefault:I = 0x0
 
 .field public static final InputMethod_settingsActivity:I = 0x1
@@ -1329,14 +1277,6 @@
 .field public static final Intent_targetPackage:I = 0x0
 
 .field public static final Keyboard:[I = null
-
-.field public static final KeyboardLayout:[I = null
-
-.field public static final KeyboardLayout_keyboardLayout:I = 0x2
-
-.field public static final KeyboardLayout_label:I = 0x0
-
-.field public static final KeyboardLayout_name:I = 0x1
 
 .field public static final KeyboardView:[I = null
 
@@ -1405,10 +1345,6 @@
 .field public static final Keyboard_keyWidth:I = 0x0
 
 .field public static final Keyboard_verticalGap:I = 0x3
-
-.field public static final KeyguardGlowStripView:[I = null
-
-.field public static final KeyguardSecurityViewFlipper_Layout:[I = null
 
 .field public static final LayerDrawable:[I = null
 
@@ -1503,14 +1439,6 @@
 .field public static final MapView:[I = null
 
 .field public static final MapView_apiKey:I = 0x0
-
-.field public static final MediaRouteButton:[I = null
-
-.field public static final MediaRouteButton_mediaRouteTypes:I = 0x2
-
-.field public static final MediaRouteButton_minHeight:I = 0x1
-
-.field public static final MediaRouteButton_minWidth:I = 0x0
 
 .field public static final Menu:[I = null
 
@@ -1608,14 +1536,6 @@
 
 .field public static final MipmapDrawableItem_drawable:I = 0x0
 
-.field public static final MultiPaneChallengeLayout:[I = null
-
-.field public static final MultiPaneChallengeLayout_Layout:[I = null
-
-.field public static final MultiPaneChallengeLayout_Layout_layout_gravity:I = 0x0
-
-.field public static final MultiPaneChallengeLayout_orientation:I = 0x0
-
 .field public static final MultiSelectListPreference:[I = null
 
 .field public static final MultiSelectListPreference_entries:I = 0x0
@@ -1634,17 +1554,21 @@
 
 .field public static final NinePatchDrawable_src:I = 0x0
 
-.field public static final NumPadKey:[I = null
-
 .field public static final NumberPicker:[I = null
 
-.field public static final NumberPicker_solidColor:I = 0x0
+.field public static final NumberPicker_maxHeight:I = 0x1
+
+.field public static final NumberPicker_maxWidth:I = 0x0
+
+.field public static final NumberPicker_minHeight:I = 0x3
+
+.field public static final NumberPicker_minWidth:I = 0x2
+
+.field public static final NumberPicker_solidColor:I = 0x4
 
 .field public static final OvershootInterpolator:[I = null
 
 .field public static final OvershootInterpolator_tension:I = 0x0
-
-.field public static final PagedView:[I = null
 
 .field public static final Pointer:[I = null
 
@@ -1717,9 +1641,6 @@
 .field public static final ProgressBar:[I = null
 
 .field public static final ProgressBar_animationResolution:I = 0xe
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end field
 
 .field public static final ProgressBar_indeterminate:I = 0x5
 
@@ -1785,25 +1706,17 @@
 
 .field public static final RelativeLayout_Layout_layout_alignBottom:I = 0x8
 
-.field public static final RelativeLayout_Layout_layout_alignEnd:I = 0x14
-
 .field public static final RelativeLayout_Layout_layout_alignLeft:I = 0x5
 
 .field public static final RelativeLayout_Layout_layout_alignParentBottom:I = 0xc
-
-.field public static final RelativeLayout_Layout_layout_alignParentEnd:I = 0x16
 
 .field public static final RelativeLayout_Layout_layout_alignParentLeft:I = 0x9
 
 .field public static final RelativeLayout_Layout_layout_alignParentRight:I = 0xb
 
-.field public static final RelativeLayout_Layout_layout_alignParentStart:I = 0x15
-
 .field public static final RelativeLayout_Layout_layout_alignParentTop:I = 0xa
 
 .field public static final RelativeLayout_Layout_layout_alignRight:I = 0x7
-
-.field public static final RelativeLayout_Layout_layout_alignStart:I = 0x13
 
 .field public static final RelativeLayout_Layout_layout_alignTop:I = 0x6
 
@@ -1817,13 +1730,9 @@
 
 .field public static final RelativeLayout_Layout_layout_centerVertical:I = 0xf
 
-.field public static final RelativeLayout_Layout_layout_toEndOf:I = 0x12
-
 .field public static final RelativeLayout_Layout_layout_toLeftOf:I = 0x0
 
 .field public static final RelativeLayout_Layout_layout_toRightOf:I = 0x1
-
-.field public static final RelativeLayout_Layout_layout_toStartOf:I = 0x11
 
 .field public static final RelativeLayout_gravity:I = 0x0
 
@@ -2002,12 +1911,6 @@
 
 .field public static final ShapeDrawable_width:I = 0x2
 
-.field public static final SizeAdaptiveLayout:[I = null
-
-.field public static final SizeAdaptiveLayout_Layout:[I = null
-
-.field public static final SlidingChallengeLayout_Layout:[I = null
-
 .field public static final SlidingDrawer:[I = null
 
 .field public static final SlidingDrawer_allowSingleTap:I = 0x3
@@ -2154,8 +2057,6 @@
 
 .field public static final TextAppearance:[I = null
 
-.field public static final TextAppearance_fontFamily:I = 0x8
-
 .field public static final TextAppearance_textAllCaps:I = 0x7
 
 .field public static final TextAppearance_textColor:I = 0x3
@@ -2171,14 +2072,6 @@
 .field public static final TextAppearance_textStyle:I = 0x2
 
 .field public static final TextAppearance_typeface:I = 0x1
-
-.field public static final TextClock:[I = null
-
-.field public static final TextClock_format12Hour:I = 0x0
-
-.field public static final TextClock_format24Hour:I = 0x1
-
-.field public static final TextClock_timeZone:I = 0x2
 
 .field public static final TextSwitcher:[I = null
 
@@ -2240,8 +2133,9 @@
 .field public static final TextView_ems:I = 0x1b
 
 .field public static final TextView_enabled:I = 0x0
-
-.field public static final TextView_fontFamily:I = 0x4b
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 .field public static final TextView_freezesText:I = 0x2f
 
@@ -2458,8 +2352,6 @@
 
 .field public static final Theme_checkboxStyle:I = 0x35
 
-.field public static final Theme_checkedTextViewStyle:I = 0xd9
-
 .field public static final Theme_colorActivatedHighlight:I = 0xc8
 
 .field public static final Theme_colorBackground:I = 0x1
@@ -2568,13 +2460,9 @@
 
 .field public static final Theme_listPreferredItemHeightSmall:I = 0xc3
 
-.field public static final Theme_listPreferredItemPaddingEnd:I = 0xd6
-
 .field public static final Theme_listPreferredItemPaddingLeft:I = 0xd1
 
 .field public static final Theme_listPreferredItemPaddingRight:I = 0xd2
-
-.field public static final Theme_listPreferredItemPaddingStart:I = 0xd5
 
 .field public static final Theme_listSeparatorTextViewStyle:I = 0x60
 
@@ -2583,8 +2471,6 @@
 .field public static final Theme_listViewWhiteStyle:I = 0x3e
 
 .field public static final Theme_mapViewStyle:I = 0x52
-
-.field public static final Theme_mediaRouteButtonStyle:I = 0xd4
 
 .field public static final Theme_panelBackground:I = 0x2e
 
@@ -2609,8 +2495,6 @@
 .field public static final Theme_preferenceScreenStyle:I = 0x53
 
 .field public static final Theme_preferenceStyle:I = 0x56
-
-.field public static final Theme_presentationTheme:I = 0xd7
 
 .field public static final Theme_progressBarStyle:I = 0x40
 
@@ -2806,6 +2690,8 @@
 
 .field public static final TimePicker:[I = null
 
+.field public static final TimePicker_layout:I = 0x0
+
 .field public static final ToggleButton:[I = null
 
 .field public static final ToggleButton_disabledAlpha:I = 0x0
@@ -2886,13 +2772,9 @@
 
 .field public static final ViewGroup_MarginLayout_layout_marginBottom:I = 0x6
 
-.field public static final ViewGroup_MarginLayout_layout_marginEnd:I = 0x8
-
 .field public static final ViewGroup_MarginLayout_layout_marginLeft:I = 0x3
 
 .field public static final ViewGroup_MarginLayout_layout_marginRight:I = 0x5
-
-.field public static final ViewGroup_MarginLayout_layout_marginStart:I = 0x7
 
 .field public static final ViewGroup_MarginLayout_layout_marginTop:I = 0x4
 
@@ -2941,6 +2823,9 @@
 .field public static final View_fadeScrollbars:I = 0x2c
 
 .field public static final View_fadingEdge:I = 0x17
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 .field public static final View_fadingEdgeLength:I = 0x18
 
@@ -2956,17 +2841,11 @@
 
 .field public static final View_id:I = 0x8
 
-.field public static final View_importantForAccessibility:I = 0x3d
-
 .field public static final View_isScrollContainer:I = 0x26
 
 .field public static final View_keepScreenOn:I = 0x25
 
-.field public static final View_labelFor:I = 0x43
-
 .field public static final View_layerType:I = 0x3b
-
-.field public static final View_layoutDirection:I = 0x40
 
 .field public static final View_longClickable:I = 0x1e
 
@@ -2992,13 +2871,9 @@
 
 .field public static final View_paddingBottom:I = 0x11
 
-.field public static final View_paddingEnd:I = 0x42
-
 .field public static final View_paddingLeft:I = 0xe
 
 .field public static final View_paddingRight:I = 0x10
-
-.field public static final View_paddingStart:I = 0x41
 
 .field public static final View_paddingTop:I = 0xf
 
@@ -3045,10 +2920,6 @@
 .field public static final View_soundEffectsEnabled:I = 0x24
 
 .field public static final View_tag:I = 0x9
-
-.field public static final View_textAlignment:I = 0x3f
-
-.field public static final View_textDirection:I = 0x3e
 
 .field public static final View_transformPivotX:I = 0x30
 
@@ -3194,7 +3065,7 @@
 
     const/4 v2, 0x0
 
-    .line 11730
+    .line 11238
     const/16 v0, 0xb
 
     new-array v0, v0, [I
@@ -3203,7 +3074,7 @@
 
     sput-object v0, Landroid/R$styleable;->AbsListView:[I
 
-    .line 11957
+    .line 11465
     new-array v0, v3, [I
 
     const v1, #attr@entries#t
@@ -3212,14 +3083,14 @@
 
     sput-object v0, Landroid/R$styleable;->AbsSpinner:[I
 
-    .line 11985
+    .line 11493
     new-array v0, v4, [I
 
     fill-array-data v0, :array_1
 
     sput-object v0, Landroid/R$styleable;->AbsoluteLayout_Layout:[I
 
-    .line 12030
+    .line 11538
     new-array v0, v3, [I
 
     const v1, #attr@factor#t
@@ -3228,7 +3099,7 @@
 
     sput-object v0, Landroid/R$styleable;->AccelerateInterpolator:[I
 
-    .line 12083
+    .line 11591
     const/16 v0, 0x8
 
     new-array v0, v0, [I
@@ -3237,7 +3108,7 @@
 
     sput-object v0, Landroid/R$styleable;->AccessibilityService:[I
 
-    .line 12279
+    .line 11785
     const/4 v0, 0x6
 
     new-array v0, v0, [I
@@ -3246,7 +3117,7 @@
 
     sput-object v0, Landroid/R$styleable;->AccountAuthenticator:[I
 
-    .line 12413
+    .line 11919
     const/16 v0, 0x13
 
     new-array v0, v0, [I
@@ -3255,7 +3126,7 @@
 
     sput-object v0, Landroid/R$styleable;->ActionBar:[I
 
-    .line 12713
+    .line 12218
     new-array v0, v3, [I
 
     const v1, #attr@layout_gravity#t
@@ -3264,7 +3135,7 @@
 
     sput-object v0, Landroid/R$styleable;->ActionBar_LayoutParams:[I
 
-    .line 12764
+    .line 12269
     new-array v0, v3, [I
 
     const v1, #attr@minWidth#t
@@ -3273,7 +3144,7 @@
 
     sput-object v0, Landroid/R$styleable;->ActionMenuItemView:[I
 
-    .line 12801
+    .line 12306
     const/4 v0, 0x5
 
     new-array v0, v0, [I
@@ -3282,28 +3153,28 @@
 
     sput-object v0, Landroid/R$styleable;->ActionMode:[I
 
-    .line 12883
+    .line 12388
     new-array v0, v4, [I
 
     fill-array-data v0, :array_6
 
     sput-object v0, Landroid/R$styleable;->ActivityChooserView:[I
 
-    .line 12904
+    .line 12409
     new-array v0, v5, [I
 
     fill-array-data v0, :array_7
 
     sput-object v0, Landroid/R$styleable;->AdapterViewAnimator:[I
 
-    .line 12977
+    .line 12482
     new-array v0, v4, [I
 
     fill-array-data v0, :array_8
 
     sput-object v0, Landroid/R$styleable;->AdapterViewFlipper:[I
 
-    .line 13041
+    .line 12546
     const/16 v0, 0x11
 
     new-array v0, v0, [I
@@ -3312,21 +3183,21 @@
 
     sput-object v0, Landroid/R$styleable;->AlertDialog:[I
 
-    .line 13194
+    .line 12699
     new-array v0, v4, [I
 
     fill-array-data v0, :array_a
 
     sput-object v0, Landroid/R$styleable;->AlphaAnimation:[I
 
-    .line 13239
+    .line 12744
     new-array v0, v6, [I
 
     fill-array-data v0, :array_b
 
     sput-object v0, Landroid/R$styleable;->AnalogClock:[I
 
-    .line 13309
+    .line 12814
     const/4 v0, 0x5
 
     new-array v0, v0, [I
@@ -3335,7 +3206,7 @@
 
     sput-object v0, Landroid/R$styleable;->AndroidManifest:[I
 
-    .line 13430
+    .line 12935
     new-array v0, v3, [I
 
     const v1, #attr@name#t
@@ -3344,8 +3215,8 @@
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestAction:[I
 
-    .line 13553
-    const/16 v0, 0x1f
+    .line 13050
+    const/16 v0, 0x1b
 
     new-array v0, v0, [I
 
@@ -3353,8 +3224,8 @@
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestActivity:[I
 
-    .line 14441
-    const/16 v0, 0xa
+    .line 13875
+    const/16 v0, 0x9
 
     new-array v0, v0, [I
 
@@ -3362,8 +3233,8 @@
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestActivityAlias:[I
 
-    .line 14745
-    const/16 v0, 0x1d
+    .line 14161
+    const/16 v0, 0x1c
 
     new-array v0, v0, [I
 
@@ -3371,7 +3242,7 @@
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestApplication:[I
 
-    .line 15345
+    .line 14743
     new-array v0, v3, [I
 
     const v1, #attr@name#t
@@ -3380,14 +3251,14 @@
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestCategory:[I
 
-    .line 15386
+    .line 14784
     new-array v0, v4, [I
 
     fill-array-data v0, :array_10
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestCompatibleScreensScreen:[I
 
-    .line 15487
+    .line 14885
     const/4 v0, 0x7
 
     new-array v0, v0, [I
@@ -3396,14 +3267,14 @@
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestData:[I
 
-    .line 15660
+    .line 15058
     new-array v0, v6, [I
 
     fill-array-data v0, :array_12
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestGrantUriPermission:[I
 
-    .line 15754
+    .line 15152
     const/4 v0, 0x7
 
     new-array v0, v0, [I
@@ -3412,21 +3283,21 @@
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestInstrumentation:[I
 
-    .line 15941
+    .line 15339
     new-array v0, v5, [I
 
     fill-array-data v0, :array_14
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestIntentFilter:[I
 
-    .line 16072
+    .line 15470
     new-array v0, v6, [I
 
     fill-array-data v0, :array_15
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestMetaData:[I
 
-    .line 16152
+    .line 15550
     new-array v0, v3, [I
 
     const v1, #attr@name#t
@@ -3435,14 +3306,14 @@
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestOriginalPackage:[I
 
-    .line 16187
+    .line 15585
     new-array v0, v4, [I
 
     fill-array-data v0, :array_16
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestPackageVerifier:[I
 
-    .line 16257
+    .line 15655
     const/4 v0, 0x6
 
     new-array v0, v0, [I
@@ -3451,8 +3322,8 @@
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestPathPermission:[I
 
-    .line 16416
-    const/16 v0, 0x8
+    .line 15812
+    const/4 v0, 0x7
 
     new-array v0, v0, [I
 
@@ -3460,8 +3331,8 @@
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestPermission:[I
 
-    .line 16662
-    const/4 v0, 0x7
+    .line 16022
+    const/4 v0, 0x5
 
     new-array v0, v0, [I
 
@@ -3469,14 +3340,14 @@
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestPermissionGroup:[I
 
-    .line 16852
+    .line 16164
     new-array v0, v5, [I
 
     fill-array-data v0, :array_1a
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestPermissionTree:[I
 
-    .line 16963
+    .line 16275
     new-array v0, v3, [I
 
     const v1, #attr@name#t
@@ -3485,8 +3356,8 @@
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestProtectedBroadcast:[I
 
-    .line 17048
-    const/16 v0, 0x11
+    .line 16357
+    const/16 v0, 0x10
 
     new-array v0, v0, [I
 
@@ -3494,8 +3365,8 @@
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestProvider:[I
 
-    .line 17471
-    const/16 v0, 0xa
+    .line 16750
+    const/16 v0, 0x9
 
     new-array v0, v0, [I
 
@@ -3503,8 +3374,8 @@
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestReceiver:[I
 
-    .line 17753
-    const/16 v0, 0xc
+    .line 17000
+    const/16 v0, 0xa
 
     new-array v0, v0, [I
 
@@ -3512,7 +3383,7 @@
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestService:[I
 
-    .line 18063
+    .line 17266
     const/16 v0, 0x9
 
     new-array v0, v0, [I
@@ -3521,7 +3392,7 @@
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestSupportsScreens:[I
 
-    .line 18292
+    .line 17495
     const/4 v0, 0x5
 
     new-array v0, v0, [I
@@ -3530,21 +3401,21 @@
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestUsesConfiguration:[I
 
-    .line 18413
+    .line 17616
     new-array v0, v6, [I
 
     fill-array-data v0, :array_20
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestUsesFeature:[I
 
-    .line 18489
+    .line 17692
     new-array v0, v4, [I
 
     fill-array-data v0, :array_21
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestUsesLibrary:[I
 
-    .line 18561
+    .line 17756
     new-array v0, v3, [I
 
     const v1, #attr@name#t
@@ -3553,14 +3424,14 @@
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestUsesPermission:[I
 
-    .line 18604
+    .line 17799
     new-array v0, v6, [I
 
     fill-array-data v0, :array_22
 
     sput-object v0, Landroid/R$styleable;->AndroidManifestUsesSdk:[I
 
-    .line 18691
+    .line 17886
     const/4 v0, 0x6
 
     new-array v0, v0, [I
@@ -3569,7 +3440,7 @@
 
     sput-object v0, Landroid/R$styleable;->AnimatedRotateDrawable:[I
 
-    .line 18795
+    .line 17990
     const/16 v0, 0xb
 
     new-array v0, v0, [I
@@ -3578,21 +3449,21 @@
 
     sput-object v0, Landroid/R$styleable;->Animation:[I
 
-    .line 19012
+    .line 18207
     new-array v0, v6, [I
 
     fill-array-data v0, :array_25
 
     sput-object v0, Landroid/R$styleable;->AnimationDrawable:[I
 
-    .line 19084
+    .line 18279
     new-array v0, v4, [I
 
     fill-array-data v0, :array_26
 
     sput-object v0, Landroid/R$styleable;->AnimationDrawableItem:[I
 
-    .line 19139
+    .line 18334
     const/4 v0, 0x6
 
     new-array v0, v0, [I
@@ -3601,7 +3472,7 @@
 
     sput-object v0, Landroid/R$styleable;->AnimationSet:[I
 
-    .line 19269
+    .line 18464
     const/16 v0, 0x8
 
     new-array v0, v0, [I
@@ -3610,7 +3481,7 @@
 
     sput-object v0, Landroid/R$styleable;->Animator:[I
 
-    .line 19437
+    .line 18632
     new-array v0, v3, [I
 
     const v1, #attr@ordering#t
@@ -3619,7 +3490,7 @@
 
     sput-object v0, Landroid/R$styleable;->AnimatorSet:[I
 
-    .line 19469
+    .line 18664
     new-array v0, v3, [I
 
     const v1, #attr@tension#t
@@ -3628,15 +3499,15 @@
 
     sput-object v0, Landroid/R$styleable;->AnticipateInterpolator:[I
 
-    .line 19500
+    .line 18695
     new-array v0, v4, [I
 
     fill-array-data v0, :array_29
 
     sput-object v0, Landroid/R$styleable;->AnticipateOvershootInterpolator:[I
 
-    .line 19572
-    const/16 v0, 0xc
+    .line 18762
+    const/16 v0, 0xa
 
     new-array v0, v0, [I
 
@@ -3644,7 +3515,7 @@
 
     sput-object v0, Landroid/R$styleable;->AppWidgetProviderInfo:[I
 
-    .line 19816
+    .line 18967
     const/16 v0, 0xa
 
     new-array v0, v0, [I
@@ -3653,7 +3524,7 @@
 
     sput-object v0, Landroid/R$styleable;->AutoCompleteTextView:[I
 
-    .line 20144
+    .line 19295
     const/4 v0, 0x6
 
     new-array v0, v0, [I
@@ -3662,12 +3533,12 @@
 
     sput-object v0, Landroid/R$styleable;->BitmapDrawable:[I
 
-    .line 20276
+    .line 19427
     new-array v0, v2, [I
 
     sput-object v0, Landroid/R$styleable;->Button:[I
 
-    .line 20313
+    .line 19464
     const/16 v0, 0xd
 
     new-array v0, v0, [I
@@ -3676,21 +3547,21 @@
 
     sput-object v0, Landroid/R$styleable;->CalendarView:[I
 
-    .line 20521
+    .line 19672
     new-array v0, v6, [I
 
     fill-array-data v0, :array_2e
 
     sput-object v0, Landroid/R$styleable;->CheckBoxPreference:[I
 
-    .line 20589
+    .line 19740
     new-array v0, v4, [I
 
     fill-array-data v0, :array_2f
 
     sput-object v0, Landroid/R$styleable;->CheckedTextView:[I
 
-    .line 20632
+    .line 19783
     new-array v0, v3, [I
 
     const v1, #attr@format#t
@@ -3699,14 +3570,14 @@
 
     sput-object v0, Landroid/R$styleable;->Chronometer:[I
 
-    .line 20669
+    .line 19820
     new-array v0, v6, [I
 
     fill-array-data v0, :array_30
 
     sput-object v0, Landroid/R$styleable;->ClipDrawable:[I
 
-    .line 20751
+    .line 19902
     new-array v0, v3, [I
 
     const v1, #attr@color#t
@@ -3715,14 +3586,14 @@
 
     sput-object v0, Landroid/R$styleable;->ColorDrawable:[I
 
-    .line 20783
+    .line 19934
     new-array v0, v4, [I
 
     fill-array-data v0, :array_31
 
     sput-object v0, Landroid/R$styleable;->CompoundButton:[I
 
-    .line 20834
+    .line 19985
     const/4 v0, 0x6
 
     new-array v0, v0, [I
@@ -3731,7 +3602,7 @@
 
     sput-object v0, Landroid/R$styleable;->ContactsDataKind:[I
 
-    .line 20941
+    .line 20092
     new-array v0, v3, [I
 
     const v1, #attr@cycles#t
@@ -3740,7 +3611,7 @@
 
     sput-object v0, Landroid/R$styleable;->CycleInterpolator:[I
 
-    .line 20978
+    .line 20131
     const/4 v0, 0x7
 
     new-array v0, v0, [I
@@ -3749,7 +3620,7 @@
 
     sput-object v0, Landroid/R$styleable;->DatePicker:[I
 
-    .line 21094
+    .line 20253
     new-array v0, v3, [I
 
     const v1, #attr@factor#t
@@ -3758,7 +3629,7 @@
 
     sput-object v0, Landroid/R$styleable;->DecelerateInterpolator:[I
 
-    .line 21130
+    .line 20289
     new-array v0, v3, [I
 
     const v1, #attr@visible#t
@@ -3767,7 +3638,7 @@
 
     sput-object v0, Landroid/R$styleable;->DeviceAdmin:[I
 
-    .line 21172
+    .line 20331
     const/4 v0, 0x6
 
     new-array v0, v0, [I
@@ -3776,7 +3647,7 @@
 
     sput-object v0, Landroid/R$styleable;->DialogPreference:[I
 
-    .line 21278
+    .line 20437
     new-array v0, v3, [I
 
     const v1, #attr@visible#t
@@ -3785,7 +3656,7 @@
 
     sput-object v0, Landroid/R$styleable;->Drawable:[I
 
-    .line 21318
+    .line 20477
     const/4 v0, 0x5
 
     new-array v0, v0, [I
@@ -3794,8 +3665,8 @@
 
     sput-object v0, Landroid/R$styleable;->DrawableCorners:[I
 
-    .line 21494
-    const/16 v0, 0x12
+    .line 20652
+    const/16 v0, 0x11
 
     new-array v0, v0, [I
 
@@ -3803,21 +3674,12 @@
 
     sput-object v0, Landroid/R$styleable;->DrawableStates:[I
 
-    .line 21814
-    new-array v0, v3, [I
-
-    const v1, #attr@settingsActivity#t
-
-    aput v1, v0, v2
-
-    sput-object v0, Landroid/R$styleable;->Dream:[I
-
-    .line 21836
+    .line 20957
     new-array v0, v2, [I
 
     sput-object v0, Landroid/R$styleable;->EditText:[I
 
-    .line 21849
+    .line 20970
     new-array v0, v3, [I
 
     const v1, #attr@state_last#t
@@ -3826,14 +3688,14 @@
 
     sput-object v0, Landroid/R$styleable;->ExpandableListChildIndicatorState:[I
 
-    .line 21880
+    .line 21001
     new-array v0, v4, [I
 
     fill-array-data v0, :array_37
 
     sput-object v0, Landroid/R$styleable;->ExpandableListGroupIndicatorState:[I
 
-    .line 21937
+    .line 21058
     const/4 v0, 0x7
 
     new-array v0, v0, [I
@@ -3842,21 +3704,21 @@
 
     sput-object v0, Landroid/R$styleable;->ExpandableListView:[I
 
-    .line 22068
+    .line 21189
     new-array v0, v4, [I
 
     fill-array-data v0, :array_39
 
     sput-object v0, Landroid/R$styleable;->Extra:[I
 
-    .line 22130
+    .line 21251
     new-array v0, v6, [I
 
     fill-array-data v0, :array_3a
 
     sput-object v0, Landroid/R$styleable;->Fragment:[I
 
-    .line 22210
+    .line 21331
     const/4 v0, 0x6
 
     new-array v0, v0, [I
@@ -3865,23 +3727,14 @@
 
     sput-object v0, Landroid/R$styleable;->FragmentAnimation:[I
 
-    .line 22286
-    new-array v0, v3, [I
-
-    const v1, #attr@gravity#t
-
-    aput v1, v0, v2
-
-    sput-object v0, Landroid/R$styleable;->FragmentBreadCrumbs:[I
-
-    .line 22342
+    .line 21410
     new-array v0, v5, [I
 
     fill-array-data v0, :array_3c
 
     sput-object v0, Landroid/R$styleable;->FrameLayout:[I
 
-    .line 22424
+    .line 21492
     new-array v0, v3, [I
 
     const v1, #attr@layout_gravity#t
@@ -3890,14 +3743,14 @@
 
     sput-object v0, Landroid/R$styleable;->FrameLayout_Layout:[I
 
-    .line 22483
+    .line 21551
     new-array v0, v5, [I
 
     fill-array-data v0, :array_3d
 
     sput-object v0, Landroid/R$styleable;->Gallery:[I
 
-    .line 22610
+    .line 21678
     const/16 v0, 0xc
 
     new-array v0, v0, [I
@@ -3906,48 +3759,39 @@
 
     sput-object v0, Landroid/R$styleable;->GestureOverlayView:[I
 
-    .line 22836
-    const/16 v0, 0x11
+    .line 21911
+    const/16 v0, 0x8
 
     new-array v0, v0, [I
 
     fill-array-data v0, :array_3f
 
-    sput-object v0, Landroid/R$styleable;->GlowPadView:[I
+    sput-object v0, Landroid/R$styleable;->GradientDrawable:[I
 
-    .line 22947
-    const/16 v0, 0x8
+    .line 22082
+    const/16 v0, 0x9
 
     new-array v0, v0, [I
 
     fill-array-data v0, :array_40
 
-    sput-object v0, Landroid/R$styleable;->GradientDrawable:[I
+    sput-object v0, Landroid/R$styleable;->GradientDrawableGradient:[I
 
-    .line 23118
-    const/16 v0, 0x9
-
-    new-array v0, v0, [I
+    .line 22262
+    new-array v0, v5, [I
 
     fill-array-data v0, :array_41
 
-    sput-object v0, Landroid/R$styleable;->GradientDrawableGradient:[I
+    sput-object v0, Landroid/R$styleable;->GradientDrawablePadding:[I
 
-    .line 23298
-    new-array v0, v5, [I
+    .line 22349
+    new-array v0, v4, [I
 
     fill-array-data v0, :array_42
 
-    sput-object v0, Landroid/R$styleable;->GradientDrawablePadding:[I
-
-    .line 23385
-    new-array v0, v4, [I
-
-    fill-array-data v0, :array_43
-
     sput-object v0, Landroid/R$styleable;->GradientDrawableSize:[I
 
-    .line 23434
+    .line 22398
     new-array v0, v3, [I
 
     const v1, #attr@color#t
@@ -3956,48 +3800,48 @@
 
     sput-object v0, Landroid/R$styleable;->GradientDrawableSolid:[I
 
-    .line 23470
+    .line 22434
     new-array v0, v5, [I
 
-    fill-array-data v0, :array_44
+    fill-array-data v0, :array_43
 
     sput-object v0, Landroid/R$styleable;->GradientDrawableStroke:[I
 
-    .line 23570
+    .line 22534
     const/4 v0, 0x7
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_45
+    fill-array-data v0, :array_44
 
     sput-object v0, Landroid/R$styleable;->GridLayout:[I
 
-    .line 23732
+    .line 22696
     new-array v0, v5, [I
 
-    fill-array-data v0, :array_46
+    fill-array-data v0, :array_45
 
     sput-object v0, Landroid/R$styleable;->GridLayoutAnimation:[I
 
-    .line 23841
+    .line 22805
     const/4 v0, 0x5
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_46
+
+    sput-object v0, Landroid/R$styleable;->GridLayout_Layout:[I
+
+    .line 22940
+    const/4 v0, 0x6
 
     new-array v0, v0, [I
 
     fill-array-data v0, :array_47
 
-    sput-object v0, Landroid/R$styleable;->GridLayout_Layout:[I
-
-    .line 23976
-    const/4 v0, 0x6
-
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_48
-
     sput-object v0, Landroid/R$styleable;->GridView:[I
 
-    .line 24126
+    .line 23090
     new-array v0, v3, [I
 
     const v1, #attr@fillViewport#t
@@ -4006,14 +3850,14 @@
 
     sput-object v0, Landroid/R$styleable;->HorizontalScrollView:[I
 
-    .line 24160
+    .line 23124
     new-array v0, v4, [I
 
-    fill-array-data v0, :array_49
+    fill-array-data v0, :array_48
 
     sput-object v0, Landroid/R$styleable;->Icon:[I
 
-    .line 24218
+    .line 23182
     new-array v0, v3, [I
 
     const v1, #attr@icon#t
@@ -4022,76 +3866,76 @@
 
     sput-object v0, Landroid/R$styleable;->IconDefault:[I
 
-    .line 24260
+    .line 23224
     const/4 v0, 0x5
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_49
+
+    sput-object v0, Landroid/R$styleable;->IconMenuView:[I
+
+    .line 23292
+    new-array v0, v2, [I
+
+    sput-object v0, Landroid/R$styleable;->ImageSwitcher:[I
+
+    .line 23324
+    const/16 v0, 0xa
 
     new-array v0, v0, [I
 
     fill-array-data v0, :array_4a
 
-    sput-object v0, Landroid/R$styleable;->IconMenuView:[I
-
-    .line 24328
-    new-array v0, v2, [I
-
-    sput-object v0, Landroid/R$styleable;->ImageSwitcher:[I
-
-    .line 24360
-    const/16 v0, 0xa
-
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_4b
-
     sput-object v0, Landroid/R$styleable;->ImageView:[I
 
-    .line 24533
+    .line 23497
     new-array v0, v2, [I
 
     sput-object v0, Landroid/R$styleable;->InputExtras:[I
 
-    .line 24556
+    .line 23520
     new-array v0, v4, [I
 
-    fill-array-data v0, :array_4c
+    fill-array-data v0, :array_4b
 
     sput-object v0, Landroid/R$styleable;->InputMethod:[I
 
-    .line 24611
+    .line 23575
     new-array v0, v6, [I
 
-    fill-array-data v0, :array_4d
+    fill-array-data v0, :array_4c
 
     sput-object v0, Landroid/R$styleable;->InputMethodService:[I
 
-    .line 24686
-    const/16 v0, 0x8
+    .line 23648
+    const/4 v0, 0x7
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_4d
+
+    sput-object v0, Landroid/R$styleable;->InputMethod_Subtype:[I
+
+    .line 23789
+    const/4 v0, 0x6
 
     new-array v0, v0, [I
 
     fill-array-data v0, :array_4e
 
-    sput-object v0, Landroid/R$styleable;->InputMethod_Subtype:[I
+    sput-object v0, Landroid/R$styleable;->InsetDrawable:[I
 
-    .line 24847
-    const/4 v0, 0x6
+    .line 23913
+    const/4 v0, 0x5
 
     new-array v0, v0, [I
 
     fill-array-data v0, :array_4f
 
-    sput-object v0, Landroid/R$styleable;->InsetDrawable:[I
-
-    .line 24971
-    const/4 v0, 0x5
-
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_50
-
     sput-object v0, Landroid/R$styleable;->Intent:[I
 
-    .line 25078
+    .line 24020
     new-array v0, v3, [I
 
     const v1, #attr@name#t
@@ -4100,30 +3944,23 @@
 
     sput-object v0, Landroid/R$styleable;->IntentCategory:[I
 
-    .line 25113
+    .line 24055
     new-array v0, v5, [I
 
-    fill-array-data v0, :array_51
+    fill-array-data v0, :array_50
 
     sput-object v0, Landroid/R$styleable;->Keyboard:[I
 
-    .line 25222
-    new-array v0, v6, [I
-
-    fill-array-data v0, :array_52
-
-    sput-object v0, Landroid/R$styleable;->KeyboardLayout:[I
-
-    .line 25296
+    .line 24172
     const/16 v0, 0xc
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_53
+    fill-array-data v0, :array_51
 
     sput-object v0, Landroid/R$styleable;->KeyboardView:[I
 
-    .line 25490
+    .line 24366
     new-array v0, v3, [I
 
     const v1, #attr@state_long_pressable#t
@@ -4132,37 +3969,23 @@
 
     sput-object v0, Landroid/R$styleable;->KeyboardViewPreviewState:[I
 
-    .line 25542
+    .line 24418
     const/16 v0, 0xc
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_54
+    fill-array-data v0, :array_52
 
     sput-object v0, Landroid/R$styleable;->Keyboard_Key:[I
 
-    .line 25740
+    .line 24616
     new-array v0, v4, [I
 
-    fill-array-data v0, :array_55
+    fill-array-data v0, :array_53
 
     sput-object v0, Landroid/R$styleable;->Keyboard_Row:[I
 
-    .line 25783
-    new-array v0, v5, [I
-
-    fill-array-data v0, :array_56
-
-    sput-object v0, Landroid/R$styleable;->KeyguardGlowStripView:[I
-
-    .line 25794
-    new-array v0, v4, [I
-
-    fill-array-data v0, :array_57
-
-    sput-object v0, Landroid/R$styleable;->KeyguardSecurityViewFlipper_Layout:[I
-
-    .line 25808
+    .line 24662
     new-array v0, v3, [I
 
     const v1, #attr@opacity#t
@@ -4171,62 +3994,62 @@
 
     sput-object v0, Landroid/R$styleable;->LayerDrawable:[I
 
-    .line 25854
+    .line 24708
     const/4 v0, 0x6
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_58
+    fill-array-data v0, :array_54
 
     sput-object v0, Landroid/R$styleable;->LayerDrawableItem:[I
 
-    .line 25973
+    .line 24827
     new-array v0, v5, [I
 
-    fill-array-data v0, :array_59
+    fill-array-data v0, :array_55
 
     sput-object v0, Landroid/R$styleable;->LayoutAnimation:[I
 
-    .line 26055
+    .line 24909
     new-array v0, v6, [I
 
-    fill-array-data v0, :array_5a
+    fill-array-data v0, :array_56
 
     sput-object v0, Landroid/R$styleable;->LevelListDrawableItem:[I
 
-    .line 26135
+    .line 24989
     const/16 v0, 0x9
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_5b
+    fill-array-data v0, :array_57
 
     sput-object v0, Landroid/R$styleable;->LinearLayout:[I
 
-    .line 26342
+    .line 25196
     new-array v0, v5, [I
 
-    fill-array-data v0, :array_5c
+    fill-array-data v0, :array_58
 
     sput-object v0, Landroid/R$styleable;->LinearLayout_Layout:[I
 
-    .line 26478
+    .line 25332
     new-array v0, v4, [I
 
-    fill-array-data v0, :array_5d
+    fill-array-data v0, :array_59
 
     sput-object v0, Landroid/R$styleable;->ListPreference:[I
 
-    .line 26530
+    .line 25384
     const/4 v0, 0x7
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_5e
+    fill-array-data v0, :array_5a
 
     sput-object v0, Landroid/R$styleable;->ListView:[I
 
-    .line 26650
+    .line 25504
     new-array v0, v3, [I
 
     const v1, #attr@aspect#t
@@ -4235,7 +4058,7 @@
 
     sput-object v0, Landroid/R$styleable;->LockPatternView:[I
 
-    .line 26663
+    .line 25517
     new-array v0, v3, [I
 
     const v1, #attr@apiKey#t
@@ -4244,58 +4067,51 @@
 
     sput-object v0, Landroid/R$styleable;->MapView:[I
 
-    .line 26697
-    new-array v0, v5, [I
-
-    fill-array-data v0, :array_5f
-
-    sput-object v0, Landroid/R$styleable;->MediaRouteButton:[I
-
-    .line 26760
+    .line 25538
     new-array v0, v2, [I
 
     sput-object v0, Landroid/R$styleable;->Menu:[I
 
-    .line 26783
+    .line 25561
     const/4 v0, 0x6
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_60
+    fill-array-data v0, :array_5b
 
     sput-object v0, Landroid/R$styleable;->MenuGroup:[I
 
-    .line 26936
+    .line 25714
     const/16 v0, 0x11
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_61
+    fill-array-data v0, :array_5c
 
     sput-object v0, Landroid/R$styleable;->MenuItem:[I
 
-    .line 27253
+    .line 26031
     new-array v0, v6, [I
 
-    fill-array-data v0, :array_62
+    fill-array-data v0, :array_5d
 
     sput-object v0, Landroid/R$styleable;->MenuItemCheckedFocusedState:[I
 
-    .line 27322
+    .line 26100
     new-array v0, v4, [I
 
-    fill-array-data v0, :array_63
+    fill-array-data v0, :array_5e
 
     sput-object v0, Landroid/R$styleable;->MenuItemCheckedState:[I
 
-    .line 27375
+    .line 26153
     new-array v0, v4, [I
 
-    fill-array-data v0, :array_64
+    fill-array-data v0, :array_5f
 
     sput-object v0, Landroid/R$styleable;->MenuItemUncheckedFocusedState:[I
 
-    .line 27423
+    .line 26201
     new-array v0, v3, [I
 
     const v1, #attr@state_checkable#t
@@ -4304,16 +4120,16 @@
 
     sput-object v0, Landroid/R$styleable;->MenuItemUncheckedState:[I
 
-    .line 27466
+    .line 26244
     const/16 v0, 0x8
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_65
+    fill-array-data v0, :array_60
 
     sput-object v0, Landroid/R$styleable;->MenuView:[I
 
-    .line 27572
+    .line 26350
     new-array v0, v3, [I
 
     const v1, #attr@drawable#t
@@ -4322,64 +4138,39 @@
 
     sput-object v0, Landroid/R$styleable;->MipmapDrawableItem:[I
 
-    .line 27598
-    new-array v0, v3, [I
-
-    const v1, #attr@orientation#t
-
-    aput v1, v0, v2
-
-    sput-object v0, Landroid/R$styleable;->MultiPaneChallengeLayout:[I
-
-    .line 27630
-    const/4 v0, 0x5
-
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_66
-
-    sput-object v0, Landroid/R$styleable;->MultiPaneChallengeLayout_Layout:[I
-
-    .line 27685
+    .line 26379
     new-array v0, v4, [I
 
-    fill-array-data v0, :array_67
+    fill-array-data v0, :array_61
 
     sput-object v0, Landroid/R$styleable;->MultiSelectListPreference:[I
 
-    .line 27727
-    const/16 v0, 0xb
+    .line 26421
+    const/16 v0, 0x10
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_68
+    fill-array-data v0, :array_62
 
     sput-object v0, Landroid/R$styleable;->MultiWaveView:[I
 
-    .line 27770
+    .line 26465
     new-array v0, v4, [I
 
-    fill-array-data v0, :array_69
+    fill-array-data v0, :array_63
 
     sput-object v0, Landroid/R$styleable;->NinePatchDrawable:[I
 
-    .line 27813
-    new-array v0, v4, [I
-
-    fill-array-data v0, :array_6a
-
-    sput-object v0, Landroid/R$styleable;->NumPadKey:[I
-
-    .line 27826
-    const/16 v0, 0xa
+    .line 26518
+    const/16 v0, 0x8
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_6b
+    fill-array-data v0, :array_64
 
     sput-object v0, Landroid/R$styleable;->NumberPicker:[I
 
-    .line 27855
+    .line 26619
     new-array v0, v3, [I
 
     const v1, #attr@tension#t
@@ -4388,35 +4179,28 @@
 
     sput-object v0, Landroid/R$styleable;->OvershootInterpolator:[I
 
-    .line 27883
-    new-array v0, v6, [I
-
-    fill-array-data v0, :array_6c
-
-    sput-object v0, Landroid/R$styleable;->PagedView:[I
-
-    .line 27894
+    .line 26646
     new-array v0, v5, [I
 
-    fill-array-data v0, :array_6d
+    fill-array-data v0, :array_65
 
     sput-object v0, Landroid/R$styleable;->Pointer:[I
 
-    .line 27905
+    .line 26657
     new-array v0, v6, [I
 
-    fill-array-data v0, :array_6e
+    fill-array-data v0, :array_66
 
     sput-object v0, Landroid/R$styleable;->PointerIcon:[I
 
-    .line 27920
+    .line 26672
     new-array v0, v4, [I
 
-    fill-array-data v0, :array_6f
+    fill-array-data v0, :array_67
 
     sput-object v0, Landroid/R$styleable;->PopupWindow:[I
 
-    .line 27955
+    .line 26707
     new-array v0, v3, [I
 
     const v1, #attr@state_above_anchor#t
@@ -4425,23 +4209,23 @@
 
     sput-object v0, Landroid/R$styleable;->PopupWindowBackgroundState:[I
 
-    .line 28014
+    .line 26766
     const/16 v0, 0xe
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_70
+    fill-array-data v0, :array_68
 
     sput-object v0, Landroid/R$styleable;->Preference:[I
 
-    .line 28250
+    .line 27002
     new-array v0, v5, [I
 
-    fill-array-data v0, :array_71
+    fill-array-data v0, :array_69
 
     sput-object v0, Landroid/R$styleable;->PreferenceFrameLayout:[I
 
-    .line 28261
+    .line 27013
     new-array v0, v3, [I
 
     const v1, #attr@layout_removeBorders#t
@@ -4450,7 +4234,7 @@
 
     sput-object v0, Landroid/R$styleable;->PreferenceFrameLayout_Layout:[I
 
-    .line 28274
+    .line 27026
     new-array v0, v3, [I
 
     const v1, #attr@orderingFromXml#t
@@ -4459,25 +4243,25 @@
 
     sput-object v0, Landroid/R$styleable;->PreferenceGroup:[I
 
-    .line 28318
+    .line 27070
     const/4 v0, 0x7
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_72
+    fill-array-data v0, :array_6a
 
     sput-object v0, Landroid/R$styleable;->PreferenceHeader:[I
 
-    .line 28466
+    .line 27217
     const/16 v0, 0xf
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_73
+    fill-array-data v0, :array_6b
 
     sput-object v0, Landroid/R$styleable;->ProgressBar:[I
 
-    .line 28723
+    .line 27472
     new-array v0, v3, [I
 
     const v1, #attr@propertyName#t
@@ -4486,7 +4270,7 @@
 
     sput-object v0, Landroid/R$styleable;->PropertyAnimator:[I
 
-    .line 28750
+    .line 27499
     new-array v0, v3, [I
 
     const v1, #attr@quickContactWindowSize#t
@@ -4495,21 +4279,21 @@
 
     sput-object v0, Landroid/R$styleable;->QuickContactBadge:[I
 
-    .line 28767
+    .line 27516
     new-array v0, v4, [I
 
-    fill-array-data v0, :array_74
+    fill-array-data v0, :array_6c
 
     sput-object v0, Landroid/R$styleable;->RadioGroup:[I
 
-    .line 28824
+    .line 27573
     new-array v0, v5, [I
 
-    fill-array-data v0, :array_75
+    fill-array-data v0, :array_6d
 
     sput-object v0, Landroid/R$styleable;->RatingBar:[I
 
-    .line 28905
+    .line 27654
     new-array v0, v3, [I
 
     const v1, #attr@settingsActivity#t
@@ -4518,30 +4302,30 @@
 
     sput-object v0, Landroid/R$styleable;->RecognitionService:[I
 
-    .line 28938
+    .line 27687
     new-array v0, v4, [I
 
-    fill-array-data v0, :array_76
+    fill-array-data v0, :array_6e
 
     sput-object v0, Landroid/R$styleable;->RelativeLayout:[I
 
-    .line 29046
-    const/16 v0, 0x17
+    .line 27783
+    const/16 v0, 0x11
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_77
+    fill-array-data v0, :array_6f
 
     sput-object v0, Landroid/R$styleable;->RelativeLayout_Layout:[I
 
-    .line 29403
+    .line 28053
     new-array v0, v6, [I
 
-    fill-array-data v0, :array_78
+    fill-array-data v0, :array_70
 
     sput-object v0, Landroid/R$styleable;->RingtonePreference:[I
 
-    .line 29470
+    .line 28120
     new-array v0, v3, [I
 
     const v1, #attr@orientation#t
@@ -4550,41 +4334,41 @@
 
     sput-object v0, Landroid/R$styleable;->RotarySelector:[I
 
-    .line 29508
+    .line 28158
     new-array v0, v5, [I
 
-    fill-array-data v0, :array_79
+    fill-array-data v0, :array_71
 
     sput-object v0, Landroid/R$styleable;->RotateAnimation:[I
 
-    .line 29594
+    .line 28244
     const/4 v0, 0x6
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_7a
+    fill-array-data v0, :array_72
 
     sput-object v0, Landroid/R$styleable;->RotateDrawable:[I
 
-    .line 29711
+    .line 28361
     const/4 v0, 0x6
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_7b
+    fill-array-data v0, :array_73
 
     sput-object v0, Landroid/R$styleable;->ScaleAnimation:[I
 
-    .line 29847
+    .line 28497
     const/4 v0, 0x5
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_7c
+    fill-array-data v0, :array_74
 
     sput-object v0, Landroid/R$styleable;->ScaleDrawable:[I
 
-    .line 29963
+    .line 28611
     new-array v0, v3, [I
 
     const v1, #attr@fillViewport#t
@@ -4593,88 +4377,69 @@
 
     sput-object v0, Landroid/R$styleable;->ScrollView:[I
 
-    .line 30000
+    .line 28648
     const/4 v0, 0x5
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_7d
+    fill-array-data v0, :array_75
 
     sput-object v0, Landroid/R$styleable;->SearchView:[I
 
-    .line 30367
+    .line 29001
     const/16 v0, 0x16
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_7e
+    fill-array-data v0, :array_76
 
     sput-object v0, Landroid/R$styleable;->Searchable:[I
 
-    .line 31035
+    .line 29655
     new-array v0, v5, [I
 
-    fill-array-data v0, :array_7f
+    fill-array-data v0, :array_77
 
     sput-object v0, Landroid/R$styleable;->SearchableActionKey:[I
 
-    .line 31366
+    .line 29978
     new-array v0, v4, [I
 
-    fill-array-data v0, :array_80
+    fill-array-data v0, :array_78
 
     sput-object v0, Landroid/R$styleable;->SeekBar:[I
 
-    .line 31415
+    .line 30027
     new-array v0, v5, [I
 
-    fill-array-data v0, :array_81
+    fill-array-data v0, :array_79
 
     sput-object v0, Landroid/R$styleable;->SelectionModeDrawables:[I
 
-    .line 31482
+    .line 30094
     new-array v0, v5, [I
 
-    fill-array-data v0, :array_82
+    fill-array-data v0, :array_7a
 
     sput-object v0, Landroid/R$styleable;->ShapeDrawable:[I
 
-    .line 31570
+    .line 30182
     new-array v0, v5, [I
 
-    fill-array-data v0, :array_83
+    fill-array-data v0, :array_7b
 
     sput-object v0, Landroid/R$styleable;->ShapeDrawablePadding:[I
 
-    .line 31647
-    new-array v0, v2, [I
-
-    sput-object v0, Landroid/R$styleable;->SizeAdaptiveLayout:[I
-
-    .line 31658
-    new-array v0, v4, [I
-
-    fill-array-data v0, :array_84
-
-    sput-object v0, Landroid/R$styleable;->SizeAdaptiveLayout_Layout:[I
-
-    .line 31669
-    new-array v0, v4, [I
-
-    fill-array-data v0, :array_85
-
-    sput-object v0, Landroid/R$styleable;->SlidingChallengeLayout_Layout:[I
-
-    .line 31697
+    .line 30282
     const/4 v0, 0x7
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_86
+    fill-array-data v0, :array_7c
 
     sput-object v0, Landroid/R$styleable;->SlidingDrawer:[I
 
-    .line 31825
+    .line 30410
     new-array v0, v3, [I
 
     const v1, #attr@orientation#t
@@ -4683,138 +4448,131 @@
 
     sput-object v0, Landroid/R$styleable;->SlidingTab:[I
 
-    .line 31866
+    .line 30451
     new-array v0, v4, [I
 
-    fill-array-data v0, :array_87
+    fill-array-data v0, :array_7d
 
     sput-object v0, Landroid/R$styleable;->SpellChecker:[I
 
-    .line 31913
+    .line 30498
     new-array v0, v6, [I
 
-    fill-array-data v0, :array_88
+    fill-array-data v0, :array_7e
 
     sput-object v0, Landroid/R$styleable;->SpellChecker_Subtype:[I
 
-    .line 31990
+    .line 30575
     const/16 v0, 0xa
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_89
+    fill-array-data v0, :array_7f
 
     sput-object v0, Landroid/R$styleable;->Spinner:[I
 
-    .line 32169
+    .line 30754
     new-array v0, v4, [I
 
-    fill-array-data v0, :array_8a
+    fill-array-data v0, :array_80
 
     sput-object v0, Landroid/R$styleable;->StackView:[I
 
-    .line 32198
+    .line 30783
     const/4 v0, 0x6
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_8b
+    fill-array-data v0, :array_81
 
     sput-object v0, Landroid/R$styleable;->StateListDrawable:[I
 
-    .line 32316
+    .line 30901
     const/16 v0, 0x8
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_8c
+    fill-array-data v0, :array_82
 
     sput-object v0, Landroid/R$styleable;->Storage:[I
 
-    .line 32328
+    .line 30913
     new-array v0, v4, [I
 
-    fill-array-data v0, :array_8d
+    fill-array-data v0, :array_83
 
     sput-object v0, Landroid/R$styleable;->SuggestionSpan:[I
 
-    .line 32355
+    .line 30940
     const/16 v0, 0x8
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_8e
+    fill-array-data v0, :array_84
 
     sput-object v0, Landroid/R$styleable;->Switch:[I
 
-    .line 32501
+    .line 31086
     const/4 v0, 0x5
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_8f
+    fill-array-data v0, :array_85
 
     sput-object v0, Landroid/R$styleable;->SwitchPreference:[I
 
-    .line 32618
+    .line 31203
     const/4 v0, 0x7
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_90
+    fill-array-data v0, :array_86
 
     sput-object v0, Landroid/R$styleable;->SyncAdapter:[I
 
-    .line 32756
+    .line 31341
     const/4 v0, 0x5
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_91
+    fill-array-data v0, :array_87
 
     sput-object v0, Landroid/R$styleable;->TabWidget:[I
 
-    .line 32828
+    .line 31413
     new-array v0, v6, [I
 
-    fill-array-data v0, :array_92
+    fill-array-data v0, :array_88
 
     sput-object v0, Landroid/R$styleable;->TableLayout:[I
 
-    .line 32891
+    .line 31476
     new-array v0, v2, [I
 
     sput-object v0, Landroid/R$styleable;->TableRow:[I
 
-    .line 32906
+    .line 31491
     new-array v0, v4, [I
 
-    fill-array-data v0, :array_93
+    fill-array-data v0, :array_89
 
     sput-object v0, Landroid/R$styleable;->TableRow_Cell:[I
 
-    .line 32967
-    const/16 v0, 0x9
+    .line 31550
+    const/16 v0, 0x8
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_94
+    fill-array-data v0, :array_8a
 
     sput-object v0, Landroid/R$styleable;->TextAppearance:[I
 
-    .line 33135
-    new-array v0, v6, [I
-
-    fill-array-data v0, :array_95
-
-    sput-object v0, Landroid/R$styleable;->TextClock:[I
-
-    .line 33198
+    .line 31687
     new-array v0, v2, [I
 
     sput-object v0, Landroid/R$styleable;->TextSwitcher:[I
 
-    .line 33218
+    .line 31707
     new-array v0, v3, [I
 
     const v1, #attr@settingsActivity#t
@@ -4823,16 +4581,16 @@
 
     sput-object v0, Landroid/R$styleable;->TextToSpeechEngine:[I
 
-    .line 33436
-    const/16 v0, 0x4c
+    .line 31923
+    const/16 v0, 0x4b
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_96
+    fill-array-data v0, :array_8b
 
     sput-object v0, Landroid/R$styleable;->TextView:[I
 
-    .line 35016
+    .line 33465
     new-array v0, v3, [I
 
     const v1, #attr@textAppearance#t
@@ -4841,7 +4599,7 @@
 
     sput-object v0, Landroid/R$styleable;->TextViewAppearance:[I
 
-    .line 35041
+    .line 33490
     new-array v0, v3, [I
 
     const v1, #attr@state_multiline#t
@@ -4850,39 +4608,39 @@
 
     sput-object v0, Landroid/R$styleable;->TextViewMultiLineBackgroundState:[I
 
-    .line 35530
-    const/16 v0, 0x108
+    .line 33969
+    const/16 v0, 0x103
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_97
+    fill-array-data v0, :array_8c
 
     sput-object v0, Landroid/R$styleable;->Theme:[I
 
-    .line 38567
+    .line 36935
     new-array v0, v3, [I
 
-    const v1, #attr@internalLayout#t
+    const v1, #attr@layout#t
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/R$styleable;->TimePicker:[I
 
-    .line 38584
+    .line 36964
     new-array v0, v6, [I
 
-    fill-array-data v0, :array_98
+    fill-array-data v0, :array_8d
 
     sput-object v0, Landroid/R$styleable;->ToggleButton:[I
 
-    .line 38651
+    .line 37031
     new-array v0, v5, [I
 
-    fill-array-data v0, :array_99
+    fill-array-data v0, :array_8e
 
     sput-object v0, Landroid/R$styleable;->TranslateAnimation:[I
 
-    .line 38732
+    .line 37112
     new-array v0, v3, [I
 
     const v1, #attr@mode#t
@@ -4891,7 +4649,7 @@
 
     sput-object v0, Landroid/R$styleable;->TwoLineListItem:[I
 
-    .line 38764
+    .line 37144
     new-array v0, v3, [I
 
     const v1, #attr@layout_scale#t
@@ -4900,76 +4658,76 @@
 
     sput-object v0, Landroid/R$styleable;->VerticalSlider_Layout:[I
 
-    .line 38968
-    const/16 v0, 0x44
+    .line 37331
+    const/16 v0, 0x41
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_9a
+    fill-array-data v0, :array_8f
 
     sput-object v0, Landroid/R$styleable;->View:[I
 
-    .line 40296
+    .line 38482
     new-array v0, v6, [I
 
-    fill-array-data v0, :array_9b
+    fill-array-data v0, :array_90
 
     sput-object v0, Landroid/R$styleable;->ViewAnimator:[I
 
-    .line 40381
+    .line 38567
     const/16 v0, 0xa
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_9c
+    fill-array-data v0, :array_91
 
     sput-object v0, Landroid/R$styleable;->ViewDrawableStates:[I
 
-    .line 40577
+    .line 38763
     new-array v0, v4, [I
 
-    fill-array-data v0, :array_9d
+    fill-array-data v0, :array_92
 
     sput-object v0, Landroid/R$styleable;->ViewFlipper:[I
 
-    .line 40647
+    .line 38833
     const/16 v0, 0xa
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_9e
+    fill-array-data v0, :array_93
 
     sput-object v0, Landroid/R$styleable;->ViewGroup:[I
 
-    .line 40865
+    .line 39051
     new-array v0, v4, [I
 
-    fill-array-data v0, :array_9f
+    fill-array-data v0, :array_94
 
     sput-object v0, Landroid/R$styleable;->ViewGroup_Layout:[I
 
-    .line 40969
+    .line 39151
     const/16 v0, 0x9
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_a0
+    fill-array-data v0, :array_95
 
     sput-object v0, Landroid/R$styleable;->ViewGroup_MarginLayout:[I
 
-    .line 41189
+    .line 39333
     new-array v0, v4, [I
 
-    fill-array-data v0, :array_a1
+    fill-array-data v0, :array_96
 
     sput-object v0, Landroid/R$styleable;->ViewStub:[I
 
-    .line 41220
+    .line 39364
     new-array v0, v2, [I
 
     sput-object v0, Landroid/R$styleable;->ViewSwitcher:[I
 
-    .line 41233
+    .line 39377
     new-array v0, v3, [I
 
     const v1, #attr@streamType#t
@@ -4978,14 +4736,14 @@
 
     sput-object v0, Landroid/R$styleable;->VolumePreference:[I
 
-    .line 41281
+    .line 39425
     new-array v0, v5, [I
 
-    fill-array-data v0, :array_a2
+    fill-array-data v0, :array_97
 
     sput-object v0, Landroid/R$styleable;->Wallpaper:[I
 
-    .line 41348
+    .line 39492
     new-array v0, v3, [I
 
     const v1, #attr@staticWallpaperPreview#t
@@ -4994,36 +4752,34 @@
 
     sput-object v0, Landroid/R$styleable;->WallpaperPreviewInfo:[I
 
-    .line 41371
+    .line 39515
     new-array v0, v5, [I
 
-    fill-array-data v0, :array_a3
+    fill-array-data v0, :array_98
 
     sput-object v0, Landroid/R$styleable;->WeightedLinearLayout:[I
 
-    .line 41439
-    const/16 v0, 0x1b
+    .line 39583
+    const/16 v0, 0x17
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_a4
+    fill-array-data v0, :array_99
 
     sput-object v0, Landroid/R$styleable;->Window:[I
 
-    .line 41975
+    .line 40118
     const/16 v0, 0x18
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_a5
+    fill-array-data v0, :array_9a
 
     sput-object v0, Landroid/R$styleable;->WindowAnimation:[I
 
     return-void
 
-    .line 11730
-    nop
-
+    .line 11238
     :array_0
     .array-data 0x4
         #attr@listSelector#a
@@ -5039,14 +4795,14 @@
         #attr@fastScrollAlwaysVisible#a
     .end array-data
 
-    .line 11985
+    .line 11493
     :array_1
     .array-data 0x4
         #attr@layout_x#a
         #attr@layout_y#a
     .end array-data
 
-    .line 12083
+    .line 11591
     :array_2
     .array-data 0x4
         #attr@description#a
@@ -5059,7 +4815,7 @@
         #attr@canRetrieveWindowContent#a
     .end array-data
 
-    .line 12279
+    .line 11785
     :array_3
     .array-data 0x4
         #attr@label#a
@@ -5070,7 +4826,7 @@
         #attr@customTokens#a
     .end array-data
 
-    .line 12413
+    .line 11919
     :array_4
     .array-data 0x4
         #attr@icon#a
@@ -5094,7 +4850,7 @@
         #attr@backgroundSplit#a
     .end array-data
 
-    .line 12801
+    .line 12306
     :array_5
     .array-data 0x4
         #attr@background#a
@@ -5104,14 +4860,14 @@
         #attr@backgroundSplit#a
     .end array-data
 
-    .line 12883
+    .line 12388
     :array_6
     .array-data 0x4
         #attr@initialActivityCount#a
         #attr@expandActivityOverflowButtonDrawable#a
     .end array-data
 
-    .line 12904
+    .line 12409
     :array_7
     .array-data 0x4
         #attr@inAnimation#a
@@ -5120,14 +4876,14 @@
         #attr@loopViews#a
     .end array-data
 
-    .line 12977
+    .line 12482
     :array_8
     .array-data 0x4
         #attr@flipInterval#a
         #attr@autoStart#a
     .end array-data
 
-    .line 13041
+    .line 12546
     :array_9
     .array-data 0x4
         #attr@fullDark#a
@@ -5149,14 +4905,14 @@
         #attr@horizontalProgressLayout#a
     .end array-data
 
-    .line 13194
+    .line 12699
     :array_a
     .array-data 0x4
         #attr@fromAlpha#a
         #attr@toAlpha#a
     .end array-data
 
-    .line 13239
+    .line 12744
     :array_b
     .array-data 0x4
         #attr@dial#a
@@ -5164,7 +4920,7 @@
         #attr@hand_minute#a
     .end array-data
 
-    .line 13309
+    .line 12814
     :array_c
     .array-data 0x4
         #attr@sharedUserId#a
@@ -5174,7 +4930,7 @@
         #attr@installLocation#a
     .end array-data
 
-    .line 13553
+    .line 13050
     :array_d
     .array-data 0x4
         #attr@theme#a
@@ -5204,13 +4960,9 @@
         #attr@immersive#a
         #attr@hardwareAccelerated#a
         #attr@uiOptions#a
-        #attr@parentActivityName#a
-        #attr@singleUser#a
-        #attr@showOnLockScreen#a
-        #attr@primaryUserOnly#a
     .end array-data
 
-    .line 14441
+    .line 13875
     :array_e
     .array-data 0x4
         #attr@label#a
@@ -5222,10 +4974,9 @@
         #attr@description#a
         #attr@targetActivity#a
         #attr@logo#a
-        #attr@parentActivityName#a
     .end array-data
 
-    .line 14745
+    .line 14161
     :array_f
     .array-data 0x4
         #attr@theme#a
@@ -5254,19 +5005,18 @@
         #attr@hardwareAccelerated#a
         #attr@largeHeap#a
         #attr@uiOptions#a
-        #attr@supportsRtl#a
         #attr@neverEncrypt#a
         #attr@cantSaveState#a
     .end array-data
 
-    .line 15386
+    .line 14784
     :array_10
     .array-data 0x4
         #attr@screenSize#a
         #attr@screenDensity#a
     .end array-data
 
-    .line 15487
+    .line 14885
     :array_11
     .array-data 0x4
         #attr@mimeType#a
@@ -5278,7 +5028,7 @@
         #attr@pathPattern#a
     .end array-data
 
-    .line 15660
+    .line 15058
     :array_12
     .array-data 0x4
         #attr@path#a
@@ -5286,7 +5036,7 @@
         #attr@pathPattern#a
     .end array-data
 
-    .line 15754
+    .line 15152
     :array_13
     .array-data 0x4
         #attr@label#a
@@ -5298,7 +5048,7 @@
         #attr@logo#a
     .end array-data
 
-    .line 15941
+    .line 15339
     :array_14
     .array-data 0x4
         #attr@label#a
@@ -5307,7 +5057,7 @@
         #attr@logo#a
     .end array-data
 
-    .line 16072
+    .line 15470
     :array_15
     .array-data 0x4
         #attr@name#a
@@ -5315,14 +5065,14 @@
         #attr@resource#a
     .end array-data
 
-    .line 16187
+    .line 15585
     :array_16
     .array-data 0x4
         #attr@name#a
         #attr@publicKey#a
     .end array-data
 
-    .line 16257
+    .line 15655
     :array_17
     .array-data 0x4
         #attr@permission#a
@@ -5333,7 +5083,7 @@
         #attr@pathPattern#a
     .end array-data
 
-    .line 16416
+    .line 15812
     :array_18
     .array-data 0x4
         #attr@label#a
@@ -5343,22 +5093,19 @@
         #attr@permissionGroup#a
         #attr@description#a
         #attr@logo#a
-        #attr@permissionFlags#a
     .end array-data
 
-    .line 16662
+    .line 16022
     :array_19
     .array-data 0x4
         #attr@label#a
         #attr@icon#a
         #attr@name#a
-        #attr@priority#a
         #attr@description#a
         #attr@logo#a
-        #attr@permissionGroupFlags#a
     .end array-data
 
-    .line 16852
+    .line 16164
     :array_1a
     .array-data 0x4
         #attr@label#a
@@ -5367,7 +5114,7 @@
         #attr@logo#a
     .end array-data
 
-    .line 17048
+    .line 16357
     :array_1b
     .array-data 0x4
         #attr@label#a
@@ -5386,10 +5133,9 @@
         #attr@grantUriPermissions#a
         #attr@description#a
         #attr@logo#a
-        #attr@singleUser#a
     .end array-data
 
-    .line 17471
+    .line 16750
     :array_1c
     .array-data 0x4
         #attr@label#a
@@ -5401,10 +5147,9 @@
         #attr@process#a
         #attr@description#a
         #attr@logo#a
-        #attr@singleUser#a
     .end array-data
 
-    .line 17753
+    .line 17000
     :array_1d
     .array-data 0x4
         #attr@label#a
@@ -5417,11 +5162,9 @@
         #attr@description#a
         #attr@logo#a
         #attr@stopWithTask#a
-        #attr@isolatedProcess#a
-        #attr@singleUser#a
     .end array-data
 
-    .line 18063
+    .line 17266
     :array_1e
     .array-data 0x4
         #attr@anyDensity#a
@@ -5435,7 +5178,7 @@
         #attr@largestWidthLimitDp#a
     .end array-data
 
-    .line 18292
+    .line 17495
     :array_1f
     .array-data 0x4
         #attr@reqTouchScreen#a
@@ -5445,7 +5188,7 @@
         #attr@reqFiveWayNav#a
     .end array-data
 
-    .line 18413
+    .line 17616
     :array_20
     .array-data 0x4
         #attr@name#a
@@ -5453,14 +5196,14 @@
         #attr@required#a
     .end array-data
 
-    .line 18489
+    .line 17692
     :array_21
     .array-data 0x4
         #attr@name#a
         #attr@required#a
     .end array-data
 
-    .line 18604
+    .line 17799
     :array_22
     .array-data 0x4
         #attr@minSdkVersion#a
@@ -5468,7 +5211,7 @@
         #attr@maxSdkVersion#a
     .end array-data
 
-    .line 18691
+    .line 17886
     :array_23
     .array-data 0x4
         #attr@visible#a
@@ -5479,7 +5222,7 @@
         #attr@framesCount#a
     .end array-data
 
-    .line 18795
+    .line 17990
     :array_24
     .array-data 0x4
         #attr@background#a
@@ -5495,7 +5238,7 @@
         #attr@detachWallpaper#a
     .end array-data
 
-    .line 19012
+    .line 18207
     :array_25
     .array-data 0x4
         #attr@visible#a
@@ -5503,14 +5246,14 @@
         #attr@oneshot#a
     .end array-data
 
-    .line 19084
+    .line 18279
     :array_26
     .array-data 0x4
         #attr@duration#a
         #attr@drawable#a
     .end array-data
 
-    .line 19139
+    .line 18334
     :array_27
     .array-data 0x4
         #attr@duration#a
@@ -5521,7 +5264,7 @@
         #attr@repeatMode#a
     .end array-data
 
-    .line 19269
+    .line 18464
     :array_28
     .array-data 0x4
         #attr@interpolator#a
@@ -5534,14 +5277,14 @@
         #attr@valueType#a
     .end array-data
 
-    .line 19500
+    .line 18695
     :array_29
     .array-data 0x4
         #attr@tension#a
         #attr@extraTension#a
     .end array-data
 
-    .line 19572
+    .line 18762
     :array_2a
     .array-data 0x4
         #attr@minWidth#a
@@ -5554,11 +5297,9 @@
         #attr@resizeMode#a
         #attr@minResizeWidth#a
         #attr@minResizeHeight#a
-        #attr@initialKeyguardLayout#a
-        #attr@widgetCategory#a
     .end array-data
 
-    .line 19816
+    .line 18967
     :array_2b
     .array-data 0x4
         #attr@completionHint#a
@@ -5573,7 +5314,7 @@
         #attr@dropDownVerticalOffset#a
     .end array-data
 
-    .line 20144
+    .line 19295
     :array_2c
     .array-data 0x4
         #attr@gravity#a
@@ -5584,7 +5325,7 @@
         #attr@tileMode#a
     .end array-data
 
-    .line 20313
+    .line 19464
     :array_2d
     .array-data 0x4
         #attr@firstDayOfWeek#a
@@ -5602,7 +5343,7 @@
         #attr@dateTextAppearance#a
     .end array-data
 
-    .line 20521
+    .line 19672
     :array_2e
     .array-data 0x4
         #attr@summaryOn#a
@@ -5610,14 +5351,14 @@
         #attr@disableDependentsState#a
     .end array-data
 
-    .line 20589
+    .line 19740
     :array_2f
     .array-data 0x4
         #attr@checked#a
         #attr@checkMark#a
     .end array-data
 
-    .line 20669
+    .line 19820
     :array_30
     .array-data 0x4
         #attr@gravity#a
@@ -5625,14 +5366,14 @@
         #attr@clipOrientation#a
     .end array-data
 
-    .line 20783
+    .line 19934
     :array_31
     .array-data 0x4
         #attr@checked#a
         #attr@button#a
     .end array-data
 
-    .line 20834
+    .line 19985
     :array_32
     .array-data 0x4
         #attr@icon#a
@@ -5643,19 +5384,19 @@
         #attr@allContactsName#a
     .end array-data
 
-    .line 20978
+    .line 20131
     :array_33
     .array-data 0x4
+        #attr@layout#a
         #attr@startYear#a
         #attr@endYear#a
         #attr@minDate#a
         #attr@maxDate#a
         #attr@spinnersShown#a
         #attr@calendarViewShown#a
-        #attr@internalLayout#a
     .end array-data
 
-    .line 21172
+    .line 20331
     :array_34
     .array-data 0x4
         #attr@dialogTitle#a
@@ -5666,7 +5407,7 @@
         #attr@dialogLayout#a
     .end array-data
 
-    .line 21318
+    .line 20477
     :array_35
     .array-data 0x4
         #attr@radius#a
@@ -5676,7 +5417,7 @@
         #attr@bottomRightRadius#a
     .end array-data
 
-    .line 21494
+    .line 20652
     :array_36
     .array-data 0x4
         #attr@state_focused#a
@@ -5696,17 +5437,16 @@
         #attr@state_hovered#a
         #attr@state_drag_can_accept#a
         #attr@state_drag_hovered#a
-        #attr@state_accessibility_focused#a
     .end array-data
 
-    .line 21880
+    .line 21001
     :array_37
     .array-data 0x4
         #attr@state_expanded#a
         #attr@state_empty#a
     .end array-data
 
-    .line 21937
+    .line 21058
     :array_38
     .array-data 0x4
         #attr@groupIndicator#a
@@ -5718,14 +5458,14 @@
         #attr@childDivider#a
     .end array-data
 
-    .line 22068
+    .line 21189
     :array_39
     .array-data 0x4
         #attr@name#a
         #attr@value#a
     .end array-data
 
-    .line 22130
+    .line 21251
     :array_3a
     .array-data 0x4
         #attr@name#a
@@ -5733,7 +5473,7 @@
         #attr@tag#a
     .end array-data
 
-    .line 22210
+    .line 21331
     :array_3b
     .array-data 0x4
         #attr@fragmentOpenEnterAnimation#a
@@ -5744,7 +5484,7 @@
         #attr@fragmentFadeExitAnimation#a
     .end array-data
 
-    .line 22342
+    .line 21410
     :array_3c
     .array-data 0x4
         #attr@foreground#a
@@ -5753,7 +5493,7 @@
         #attr@foregroundInsidePadding#a
     .end array-data
 
-    .line 22483
+    .line 21551
     :array_3d
     .array-data 0x4
         #attr@gravity#a
@@ -5762,7 +5502,7 @@
         #attr@unselectedAlpha#a
     .end array-data
 
-    .line 22610
+    .line 21678
     :array_3e
     .array-data 0x4
         #attr@orientation#a
@@ -5779,30 +5519,8 @@
         #attr@fadeEnabled#a
     .end array-data
 
-    .line 22836
+    .line 21911
     :array_3f
-    .array-data 0x4
-        #attr@gravity#a
-        #attr@innerRadius#a
-        #attr@targetDescriptions#a
-        #attr@directionDescriptions#a
-        #attr@outerRingDrawable#a
-        #attr@pointDrawable#a
-        #attr@glowRadius#a
-        #attr@firstItemOffset#a
-        #attr@magneticTargets#a
-        #attr@allowScaling#a
-        #attr@targetDrawables#a
-        #attr@handleDrawable#a
-        #attr@outerRadius#a
-        #attr@vibrationDuration#a
-        #attr@snapMargin#a
-        #attr@feedbackCount#a
-        #attr@alwaysTrackFinger#a
-    .end array-data
-
-    .line 22947
-    :array_40
     .array-data 0x4
         #attr@dither#a
         #attr@visible#a
@@ -5814,8 +5532,8 @@
         #attr@thickness#a
     .end array-data
 
-    .line 23118
-    :array_41
+    .line 22082
+    :array_40
     .array-data 0x4
         #attr@startColor#a
         #attr@endColor#a
@@ -5828,8 +5546,8 @@
         #attr@centerColor#a
     .end array-data
 
-    .line 23298
-    :array_42
+    .line 22262
+    :array_41
     .array-data 0x4
         #attr@left#a
         #attr@top#a
@@ -5837,15 +5555,15 @@
         #attr@bottom#a
     .end array-data
 
-    .line 23385
-    :array_43
+    .line 22349
+    :array_42
     .array-data 0x4
         #attr@height#a
         #attr@width#a
     .end array-data
 
-    .line 23470
-    :array_44
+    .line 22434
+    :array_43
     .array-data 0x4
         #attr@width#a
         #attr@color#a
@@ -5853,8 +5571,8 @@
         #attr@dashGap#a
     .end array-data
 
-    .line 23570
-    :array_45
+    .line 22534
+    :array_44
     .array-data 0x4
         #attr@orientation#a
         #attr@rowCount#a
@@ -5865,8 +5583,8 @@
         #attr@alignmentMode#a
     .end array-data
 
-    .line 23732
-    :array_46
+    .line 22696
+    :array_45
     .array-data 0x4
         #attr@columnDelay#a
         #attr@rowDelay#a
@@ -5874,8 +5592,8 @@
         #attr@directionPriority#a
     .end array-data
 
-    .line 23841
-    :array_47
+    .line 22805
+    :array_46
     .array-data 0x4
         #attr@layout_gravity#a
         #attr@layout_column#a
@@ -5884,8 +5602,8 @@
         #attr@layout_columnSpan#a
     .end array-data
 
-    .line 23976
-    :array_48
+    .line 22940
+    :array_47
     .array-data 0x4
         #attr@gravity#a
         #attr@horizontalSpacing#a
@@ -5895,15 +5613,15 @@
         #attr@numColumns#a
     .end array-data
 
-    .line 24160
-    :array_49
+    .line 23124
+    :array_48
     .array-data 0x4
         #attr@icon#a
         #attr@mimeType#a
     .end array-data
 
-    .line 24260
-    :array_4a
+    .line 23224
+    :array_49
     .array-data 0x4
         #attr@rowHeight#a
         #attr@maxRows#a
@@ -5912,8 +5630,8 @@
         #attr@maxItems#a
     .end array-data
 
-    .line 24360
-    :array_4b
+    .line 23324
+    :array_4a
     .array-data 0x4
         #attr@src#a
         #attr@scaleType#a
@@ -5927,23 +5645,23 @@
         #attr@drawableAlpha#a
     .end array-data
 
-    .line 24556
-    :array_4c
+    .line 23520
+    :array_4b
     .array-data 0x4
         #attr@isDefault#a
         #attr@settingsActivity#a
     .end array-data
 
-    .line 24611
-    :array_4d
+    .line 23575
+    :array_4c
     .array-data 0x4
         #attr@imeFullscreenBackground#a
         #attr@imeExtractEnterAnimation#a
         #attr@imeExtractExitAnimation#a
     .end array-data
 
-    .line 24686
-    :array_4e
+    .line 23648
+    :array_4d
     .array-data 0x4
         #attr@label#a
         #attr@icon#a
@@ -5952,11 +5670,10 @@
         #attr@imeSubtypeExtraValue#a
         #attr@isAuxiliary#a
         #attr@overridesImplicitlyEnabledSubtype#a
-        #attr@subtypeId#a
     .end array-data
 
-    .line 24847
-    :array_4f
+    .line 23789
+    :array_4e
     .array-data 0x4
         #attr@visible#a
         #attr@drawable#a
@@ -5966,8 +5683,8 @@
         #attr@insetBottom#a
     .end array-data
 
-    .line 24971
-    :array_50
+    .line 23913
+    :array_4f
     .array-data 0x4
         #attr@targetPackage#a
         #attr@mimeType#a
@@ -5976,8 +5693,8 @@
         #attr@targetClass#a
     .end array-data
 
-    .line 25113
-    :array_51
+    .line 24055
+    :array_50
     .array-data 0x4
         #attr@keyWidth#a
         #attr@keyHeight#a
@@ -5985,16 +5702,8 @@
         #attr@verticalGap#a
     .end array-data
 
-    .line 25222
-    :array_52
-    .array-data 0x4
-        #attr@label#a
-        #attr@name#a
-        #attr@keyboardLayout#a
-    .end array-data
-
-    .line 25296
-    :array_53
+    .line 24172
+    :array_51
     .array-data 0x4
         #attr@shadowColor#a
         #attr@shadowRadius#a
@@ -6010,8 +5719,8 @@
         #attr@keyboardViewStyle#a
     .end array-data
 
-    .line 25542
-    :array_54
+    .line 24418
+    :array_52
     .array-data 0x4
         #attr@codes#a
         #attr@popupKeyboard#a
@@ -6027,31 +5736,15 @@
         #attr@keyboardMode#a
     .end array-data
 
-    .line 25740
-    :array_55
+    .line 24616
+    :array_53
     .array-data 0x4
         #attr@rowEdgeFlags#a
         #attr@keyboardMode#a
     .end array-data
 
-    .line 25783
-    :array_56
-    .array-data 0x4
-        #attr@dotSize#a
-        #attr@numDots#a
-        #attr@glowDot#a
-        #attr@leftToRight#a
-    .end array-data
-
-    .line 25794
-    :array_57
-    .array-data 0x4
-        #attr@layout_maxHeight#a
-        #attr@layout_maxWidth#a
-    .end array-data
-
-    .line 25854
-    :array_58
+    .line 24708
+    :array_54
     .array-data 0x4
         #attr@id#a
         #attr@drawable#a
@@ -6061,8 +5754,8 @@
         #attr@bottom#a
     .end array-data
 
-    .line 25973
-    :array_59
+    .line 24827
+    :array_55
     .array-data 0x4
         #attr@interpolator#a
         #attr@delay#a
@@ -6070,16 +5763,16 @@
         #attr@animationOrder#a
     .end array-data
 
-    .line 26055
-    :array_5a
+    .line 24909
+    :array_56
     .array-data 0x4
         #attr@drawable#a
         #attr@minLevel#a
         #attr@maxLevel#a
     .end array-data
 
-    .line 26135
-    :array_5b
+    .line 24989
+    :array_57
     .array-data 0x4
         #attr@gravity#a
         #attr@orientation#a
@@ -6092,8 +5785,8 @@
         #attr@dividerPadding#a
     .end array-data
 
-    .line 26342
-    :array_5c
+    .line 25196
+    :array_58
     .array-data 0x4
         #attr@layout_gravity#a
         #attr@layout_width#a
@@ -6101,15 +5794,15 @@
         #attr@layout_weight#a
     .end array-data
 
-    .line 26478
-    :array_5d
+    .line 25332
+    :array_59
     .array-data 0x4
         #attr@entries#a
         #attr@entryValues#a
     .end array-data
 
-    .line 26530
-    :array_5e
+    .line 25384
+    :array_5a
     .array-data 0x4
         #attr@entries#a
         #attr@divider#a
@@ -6120,17 +5813,8 @@
         #attr@overScrollFooter#a
     .end array-data
 
-    .line 26697
-    :array_5f
-    .array-data 0x4
-        #attr@minWidth#a
-        #attr@minHeight#a
-        #attr@mediaRouteTypes#a
-        #attr@externalRouteEnabledDrawable#a
-    .end array-data
-
-    .line 26783
-    :array_60
+    .line 25561
+    :array_5b
     .array-data 0x4
         #attr@enabled#a
         #attr@id#a
@@ -6140,8 +5824,8 @@
         #attr@checkableBehavior#a
     .end array-data
 
-    .line 26936
-    :array_61
+    .line 25714
+    :array_5c
     .array-data 0x4
         #attr@icon#a
         #attr@enabled#a
@@ -6162,30 +5846,30 @@
         #attr@actionProviderClass#a
     .end array-data
 
-    .line 27253
-    :array_62
+    .line 26031
+    :array_5d
     .array-data 0x4
         #attr@state_focused#a
         #attr@state_checkable#a
         #attr@state_checked#a
     .end array-data
 
-    .line 27322
-    :array_63
+    .line 26100
+    :array_5e
     .array-data 0x4
         #attr@state_checkable#a
         #attr@state_checked#a
     .end array-data
 
-    .line 27375
-    :array_64
+    .line 26153
+    :array_5f
     .array-data 0x4
         #attr@state_focused#a
         #attr@state_checkable#a
     .end array-data
 
-    .line 27466
-    :array_65
+    .line 26244
+    :array_60
     .array-data 0x4
         #attr@windowAnimationStyle#a
         #attr@itemTextAppearance#a
@@ -6197,78 +5881,56 @@
         #attr@preserveIconSpacing#a
     .end array-data
 
-    .line 27630
-    :array_66
-    .array-data 0x4
-        #attr@layout_gravity#a
-        #attr@layout_maxHeight#a
-        #attr@layout_childType#a
-        #attr@layout_centerWithinArea#a
-        #attr@layout_maxWidth#a
-    .end array-data
-
-    .line 27685
-    :array_67
+    .line 26379
+    :array_61
     .array-data 0x4
         #attr@entries#a
         #attr@entryValues#a
     .end array-data
 
-    .line 27727
-    :array_68
+    .line 26421
+    :array_62
     .array-data 0x4
         #attr@targetDescriptions#a
         #attr@directionDescriptions#a
         #attr@targetDrawables#a
         #attr@handleDrawable#a
-        #attr@chevronDrawables#a
+        #attr@leftChevronDrawable#a
+        #attr@rightChevronDrawable#a
+        #attr@topChevronDrawable#a
+        #attr@bottomChevronDrawable#a
         #attr@waveDrawable#a
         #attr@outerRadius#a
+        #attr@hitRadius#a
         #attr@vibrationDuration#a
         #attr@snapMargin#a
         #attr@feedbackCount#a
-        #attr@alwaysTrackFinger#a
+        #attr@verticalOffset#a
+        #attr@horizontalOffset#a
     .end array-data
 
-    .line 27770
-    :array_69
+    .line 26465
+    :array_63
     .array-data 0x4
         #attr@src#a
         #attr@dither#a
     .end array-data
 
-    .line 27813
-    :array_6a
+    .line 26518
+    :array_64
     .array-data 0x4
-        #attr@digit#a
-        #attr@textView#a
-    .end array-data
-
-    .line 27826
-    :array_6b
-    .array-data 0x4
+        #attr@maxWidth#a
+        #attr@maxHeight#a
+        #attr@minWidth#a
+        #attr@minHeight#a
         #attr@solidColor#a
-        #attr@internalLayout#a
+        #attr@flingable#a
         #attr@selectionDivider#a
         #attr@selectionDividerHeight#a
-        #attr@selectionDividersDistance#a
-        #attr@internalMinHeight#a
-        #attr@internalMaxHeight#a
-        #attr@internalMinWidth#a
-        #attr@internalMaxWidth#a
-        #attr@virtualButtonPressedDrawable#a
     .end array-data
 
-    .line 27883
-    :array_6c
-    .array-data 0x4
-        #attr@pageSpacing#a
-        #attr@scrollIndicatorPaddingLeft#a
-        #attr@scrollIndicatorPaddingRight#a
-    .end array-data
-
-    .line 27894
-    :array_6d
+    .line 26646
+    :array_65
     .array-data 0x4
         #attr@pointerIconArrow#a
         #attr@pointerIconSpotHover#a
@@ -6276,23 +5938,23 @@
         #attr@pointerIconSpotAnchor#a
     .end array-data
 
-    .line 27905
-    :array_6e
+    .line 26657
+    :array_66
     .array-data 0x4
         #attr@bitmap#a
         #attr@hotSpotX#a
         #attr@hotSpotY#a
     .end array-data
 
-    .line 27920
-    :array_6f
+    .line 26672
+    :array_67
     .array-data 0x4
         #attr@popupBackground#a
         #attr@popupAnimationStyle#a
     .end array-data
 
-    .line 28014
-    :array_70
+    .line 26766
+    :array_68
     .array-data 0x4
         #attr@icon#a
         #attr@persistent#a
@@ -6310,8 +5972,8 @@
         #attr@fragment#a
     .end array-data
 
-    .line 28250
-    :array_71
+    .line 27002
+    :array_69
     .array-data 0x4
         #attr@borderTop#a
         #attr@borderBottom#a
@@ -6319,8 +5981,8 @@
         #attr@borderRight#a
     .end array-data
 
-    .line 28318
-    :array_72
+    .line 27070
+    :array_6a
     .array-data 0x4
         #attr@icon#a
         #attr@id#a
@@ -6331,8 +5993,8 @@
         #attr@breadCrumbShortTitle#a
     .end array-data
 
-    .line 28466
-    :array_73
+    .line 27217
+    :array_6b
     .array-data 0x4
         #attr@maxWidth#a
         #attr@maxHeight#a
@@ -6351,15 +6013,15 @@
         #attr@animationResolution#a
     .end array-data
 
-    .line 28767
-    :array_74
+    .line 27516
+    :array_6c
     .array-data 0x4
         #attr@orientation#a
         #attr@checkedButton#a
     .end array-data
 
-    .line 28824
-    :array_75
+    .line 27573
+    :array_6d
     .array-data 0x4
         #attr@numStars#a
         #attr@rating#a
@@ -6367,15 +6029,15 @@
         #attr@isIndicator#a
     .end array-data
 
-    .line 28938
-    :array_76
+    .line 27687
+    :array_6e
     .array-data 0x4
         #attr@gravity#a
         #attr@ignoreGravity#a
     .end array-data
 
-    .line 29046
-    :array_77
+    .line 27783
+    :array_6f
     .array-data 0x4
         #attr@layout_toLeftOf#a
         #attr@layout_toRightOf#a
@@ -6394,24 +6056,18 @@
         #attr@layout_centerHorizontal#a
         #attr@layout_centerVertical#a
         #attr@layout_alignWithParentIfMissing#a
-        #attr@layout_toStartOf#a
-        #attr@layout_toEndOf#a
-        #attr@layout_alignStart#a
-        #attr@layout_alignEnd#a
-        #attr@layout_alignParentStart#a
-        #attr@layout_alignParentEnd#a
     .end array-data
 
-    .line 29403
-    :array_78
+    .line 28053
+    :array_70
     .array-data 0x4
         #attr@ringtoneType#a
         #attr@showDefault#a
         #attr@showSilent#a
     .end array-data
 
-    .line 29508
-    :array_79
+    .line 28158
+    :array_71
     .array-data 0x4
         #attr@fromDegrees#a
         #attr@toDegrees#a
@@ -6419,8 +6075,8 @@
         #attr@pivotY#a
     .end array-data
 
-    .line 29594
-    :array_7a
+    .line 28244
+    :array_72
     .array-data 0x4
         #attr@visible#a
         #attr@drawable#a
@@ -6430,8 +6086,8 @@
         #attr@pivotY#a
     .end array-data
 
-    .line 29711
-    :array_7b
+    .line 28361
+    :array_73
     .array-data 0x4
         #attr@pivotX#a
         #attr@pivotY#a
@@ -6441,8 +6097,8 @@
         #attr@toYScale#a
     .end array-data
 
-    .line 29847
-    :array_7c
+    .line 28497
+    :array_74
     .array-data 0x4
         #attr@drawable#a
         #attr@scaleWidth#a
@@ -6451,8 +6107,8 @@
         #attr@useIntrinsicSizeAsMinimum#a
     .end array-data
 
-    .line 30000
-    :array_7d
+    .line 28648
+    :array_75
     .array-data 0x4
         #attr@maxWidth#a
         #attr@inputType#a
@@ -6461,8 +6117,8 @@
         #attr@queryHint#a
     .end array-data
 
-    .line 30367
-    :array_7e
+    .line 29001
+    :array_76
     .array-data 0x4
         #attr@label#a
         #attr@icon#a
@@ -6488,8 +6144,8 @@
         #attr@autoUrlDetect#a
     .end array-data
 
-    .line 31035
-    :array_7f
+    .line 29655
+    :array_77
     .array-data 0x4
         #attr@keycode#a
         #attr@queryActionMsg#a
@@ -6497,15 +6153,15 @@
         #attr@suggestActionMsgColumn#a
     .end array-data
 
-    .line 31366
-    :array_80
+    .line 29978
+    :array_78
     .array-data 0x4
         #attr@thumb#a
         #attr@thumbOffset#a
     .end array-data
 
-    .line 31415
-    :array_81
+    .line 30027
+    :array_79
     .array-data 0x4
         #attr@actionModeCutDrawable#a
         #attr@actionModeCopyDrawable#a
@@ -6513,8 +6169,8 @@
         #attr@actionModeSelectAllDrawable#a
     .end array-data
 
-    .line 31482
-    :array_82
+    .line 30094
+    :array_7a
     .array-data 0x4
         #attr@dither#a
         #attr@height#a
@@ -6522,8 +6178,8 @@
         #attr@color#a
     .end array-data
 
-    .line 31570
-    :array_83
+    .line 30182
+    :array_7b
     .array-data 0x4
         #attr@left#a
         #attr@top#a
@@ -6531,22 +6187,8 @@
         #attr@bottom#a
     .end array-data
 
-    .line 31658
-    :array_84
-    .array-data 0x4
-        #attr@layout_maxHeight#a
-        #attr@layout_minHeight#a
-    .end array-data
-
-    .line 31669
-    :array_85
-    .array-data 0x4
-        #attr@layout_maxHeight#a
-        #attr@layout_childType#a
-    .end array-data
-
-    .line 31697
-    :array_86
+    .line 30282
+    :array_7c
     .array-data 0x4
         #attr@orientation#a
         #attr@bottomOffset#a
@@ -6557,23 +6199,23 @@
         #attr@animateOnClick#a
     .end array-data
 
-    .line 31866
-    :array_87
+    .line 30451
+    :array_7d
     .array-data 0x4
         #attr@label#a
         #attr@settingsActivity#a
     .end array-data
 
-    .line 31913
-    :array_88
+    .line 30498
+    :array_7e
     .array-data 0x4
         #attr@label#a
         #attr@subtypeLocale#a
         #attr@subtypeExtraValue#a
     .end array-data
 
-    .line 31990
-    :array_89
+    .line 30575
+    :array_7f
     .array-data 0x4
         #attr@gravity#a
         #attr@dropDownSelector#a
@@ -6587,15 +6229,15 @@
         #attr@disableChildrenWhenDisabled#a
     .end array-data
 
-    .line 32169
-    :array_8a
+    .line 30754
+    :array_80
     .array-data 0x4
         #attr@resOutColor#a
         #attr@clickColor#a
     .end array-data
 
-    .line 32198
-    :array_8b
+    .line 30783
+    :array_81
     .array-data 0x4
         #attr@dither#a
         #attr@visible#a
@@ -6605,8 +6247,8 @@
         #attr@exitFadeDuration#a
     .end array-data
 
-    .line 32316
-    :array_8c
+    .line 30901
+    :array_82
     .array-data 0x4
         #attr@mountPoint#a
         #attr@storageDescription#a
@@ -6618,15 +6260,15 @@
         #attr@maxFileSize#a
     .end array-data
 
-    .line 32328
-    :array_8d
+    .line 30913
+    :array_83
     .array-data 0x4
         #attr@textUnderlineColor#a
         #attr@textUnderlineThickness#a
     .end array-data
 
-    .line 32355
-    :array_8e
+    .line 30940
+    :array_84
     .array-data 0x4
         #attr@textOn#a
         #attr@textOff#a
@@ -6638,8 +6280,8 @@
         #attr@thumbTextPadding#a
     .end array-data
 
-    .line 32501
-    :array_8f
+    .line 31086
+    :array_85
     .array-data 0x4
         #attr@summaryOn#a
         #attr@summaryOff#a
@@ -6648,8 +6290,8 @@
         #attr@switchTextOff#a
     .end array-data
 
-    .line 32618
-    :array_90
+    .line 31203
+    :array_86
     .array-data 0x4
         #attr@settingsActivity#a
         #attr@accountType#a
@@ -6660,8 +6302,8 @@
         #attr@isAlwaysSyncable#a
     .end array-data
 
-    .line 32756
-    :array_91
+    .line 31341
+    :array_87
     .array-data 0x4
         #attr@divider#a
         #attr@tabStripLeft#a
@@ -6670,23 +6312,23 @@
         #attr@tabLayout#a
     .end array-data
 
-    .line 32828
-    :array_92
+    .line 31413
+    :array_88
     .array-data 0x4
         #attr@stretchColumns#a
         #attr@shrinkColumns#a
         #attr@collapseColumns#a
     .end array-data
 
-    .line 32906
-    :array_93
+    .line 31491
+    :array_89
     .array-data 0x4
         #attr@layout_column#a
         #attr@layout_span#a
     .end array-data
 
-    .line 32967
-    :array_94
+    .line 31550
+    :array_8a
     .array-data 0x4
         #attr@textSize#a
         #attr@typeface#a
@@ -6696,19 +6338,10 @@
         #attr@textColorHint#a
         #attr@textColorLink#a
         #attr@textAllCaps#a
-        #attr@fontFamily#a
     .end array-data
 
-    .line 33135
-    :array_95
-    .array-data 0x4
-        #attr@format12Hour#a
-        #attr@format24Hour#a
-        #attr@timeZone#a
-    .end array-data
-
-    .line 33436
-    :array_96
+    .line 31923
+    :array_8b
     .array-data 0x4
         #attr@enabled#a
         #attr@textAppearance#a
@@ -6785,11 +6418,10 @@
         #attr@textAllCaps#a
         #attr@drawableStart#a
         #attr@drawableEnd#a
-        #attr@fontFamily#a
     .end array-data
 
-    .line 35530
-    :array_97
+    .line 33969
+    :array_8c
     .array-data 0x4
         #attr@colorForeground#a
         #attr@colorBackground#a
@@ -7003,12 +6635,7 @@
         #attr@listPreferredItemPaddingLeft#a
         #attr@listPreferredItemPaddingRight#a
         #attr@searchWidgetCorpusItemBackground#a
-        #attr@mediaRouteButtonStyle#a
-        #attr@listPreferredItemPaddingStart#a
-        #attr@listPreferredItemPaddingEnd#a
-        #attr@presentationTheme#a
         #attr@textAppearanceEasyCorrectSuggestion#a
-        #attr@checkedTextViewStyle#a
         #attr@textAppearanceMisspelledSuggestion#a
         #attr@textAppearanceAutoCorrectionSuggestion#a
         #attr@textUnderlineColor#a
@@ -7027,6 +6654,9 @@
         #attr@quickContactBadgeOverlay#a
         #attr@stackViewStyle#a
         #attr@numberPickerStyle#a
+        #attr@numberPickerUpButtonStyle#a
+        #attr@numberPickerDownButtonStyle#a
+        #attr@numberPickerInputTextStyle#a
         #attr@timePickerStyle#a
         #attr@activityChooserViewStyle#a
         #attr@actionModeShareDrawable#a
@@ -7052,21 +6682,18 @@
         #attr@preferenceFrameLayoutStyle#a
         #attr@switchStyle#a
         #attr@pointerStyle#a
-        #attr@accessibilityFocusedDrawable#a
-        #attr@findOnPageNextDrawable#a
-        #attr@findOnPagePreviousDrawable#a
     .end array-data
 
-    .line 38584
-    :array_98
+    .line 36964
+    :array_8d
     .array-data 0x4
         #attr@disabledAlpha#a
         #attr@textOn#a
         #attr@textOff#a
     .end array-data
 
-    .line 38651
-    :array_99
+    .line 37031
+    :array_8e
     .array-data 0x4
         #attr@fromXDelta#a
         #attr@toXDelta#a
@@ -7074,8 +6701,8 @@
         #attr@toYDelta#a
     .end array-data
 
-    .line 38968
-    :array_9a
+    .line 37331
+    :array_8f
     .array-data 0x4
         #attr@scrollbarSize#a
         #attr@scrollbarThumbHorizontal#a
@@ -7138,25 +6765,22 @@
         #attr@nextFocusForward#a
         #attr@layerType#a
         #attr@requiresFadingEdge#a
-        #attr@importantForAccessibility#a
-        #attr@textDirection#a
-        #attr@textAlignment#a
-        #attr@layoutDirection#a
         #attr@paddingStart#a
         #attr@paddingEnd#a
-        #attr@labelFor#a
+        #attr@layoutDirection#a
+        #attr@textDirection#a
     .end array-data
 
-    .line 40296
-    :array_9b
+    .line 38482
+    :array_90
     .array-data 0x4
         #attr@inAnimation#a
         #attr@outAnimation#a
         #attr@animateFirstView#a
     .end array-data
 
-    .line 40381
-    :array_9c
+    .line 38567
+    :array_91
     .array-data 0x4
         #attr@state_focused#a
         #attr@state_window_focused#a
@@ -7170,15 +6794,15 @@
         #attr@state_drag_hovered#a
     .end array-data
 
-    .line 40577
-    :array_9d
+    .line 38763
+    :array_92
     .array-data 0x4
         #attr@flipInterval#a
         #attr@autoStart#a
     .end array-data
 
-    .line 40647
-    :array_9e
+    .line 38833
+    :array_93
     .array-data 0x4
         #attr@clipChildren#a
         #attr@clipToPadding#a
@@ -7192,15 +6816,15 @@
         #attr@animateLayoutChanges#a
     .end array-data
 
-    .line 40865
-    :array_9f
+    .line 39051
+    :array_94
     .array-data 0x4
         #attr@layout_width#a
         #attr@layout_height#a
     .end array-data
 
-    .line 40969
-    :array_a0
+    .line 39151
+    :array_95
     .array-data 0x4
         #attr@layout_width#a
         #attr@layout_height#a
@@ -7213,15 +6837,15 @@
         #attr@layout_marginEnd#a
     .end array-data
 
-    .line 41189
-    :array_a1
+    .line 39333
+    :array_96
     .array-data 0x4
         #attr@layout#a
         #attr@inflatedId#a
     .end array-data
 
-    .line 41281
-    :array_a2
+    .line 39425
+    :array_97
     .array-data 0x4
         #attr@description#a
         #attr@settingsActivity#a
@@ -7229,8 +6853,8 @@
         #attr@author#a
     .end array-data
 
-    .line 41371
-    :array_a3
+    .line 39515
+    :array_98
     .array-data 0x4
         #attr@majorWeightMin#a
         #attr@minorWeightMin#a
@@ -7238,8 +6862,8 @@
         #attr@minorWeightMax#a
     .end array-data
 
-    .line 41439
-    :array_a4
+    .line 39583
+    :array_99
     .array-data 0x4
         #attr@backgroundDimAmount#a
         #attr@windowBackground#a
@@ -7264,14 +6888,10 @@
         #attr@windowMinWidthMinor#a
         #attr@windowCloseOnTouchOutside#a
         #attr@windowSplitActionBar#a
-        #attr@windowFixedWidthMajor#a
-        #attr@windowFixedHeightMinor#a
-        #attr@windowFixedWidthMinor#a
-        #attr@windowFixedHeightMajor#a
     .end array-data
 
-    .line 41975
-    :array_a5
+    .line 40118
+    :array_9a
     .array-data 0x4
         #attr@windowEnterAnimation#a
         #attr@windowExitAnimation#a
@@ -7304,8 +6924,8 @@
     .locals 0
 
     .prologue
-    .line 11696
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 11204
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

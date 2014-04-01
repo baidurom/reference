@@ -3,53 +3,16 @@
 .source "AbstractWindowedCursor.java"
 
 
-# static fields
-.field private static final DEBUG_CLOSE_TRACE:Z
-
-.field private static final DEBUG_IS_ENG_BUILD:Z
-
-
 # instance fields
 .field protected mWindow:Landroid/database/CursorWindow;
 
-.field private mWindowCloseTrace:Ljava/lang/Throwable;
-
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    .prologue
-    .line 49
-    const-string v0, "DBStaleDataTrace"
-
-    const/4 v1, 0x2
-
-    invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
-
-    move-result v0
-
-    sput-boolean v0, Landroid/database/AbstractWindowedCursor;->DEBUG_CLOSE_TRACE:Z
-
-    .line 50
-    const-string v0, "eng"
-
-    sget-object v1, Landroid/os/Build;->TYPE:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    sput-boolean v0, Landroid/database/AbstractWindowedCursor;->DEBUG_IS_ENG_BUILD:Z
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 41
+    .line 36
     invoke-direct {p0}, Landroid/database/AbstractCursor;-><init>()V
 
     return-void
@@ -58,38 +21,18 @@
 
 # virtual methods
 .method protected checkPosition()V
-    .locals 3
+    .locals 2
 
     .prologue
-    .line 147
+    .line 136
     invoke-super {p0}, Landroid/database/AbstractCursor;->checkPosition()V
 
-    .line 149
+    .line 138
     iget-object v0, p0, Landroid/database/AbstractWindowedCursor;->mWindow:Landroid/database/CursorWindow;
-
-    if-nez v0, :cond_2
-
-    .line 151
-    sget-boolean v0, Landroid/database/AbstractWindowedCursor;->DEBUG_IS_ENG_BUILD:Z
 
     if-nez v0, :cond_0
 
-    sget-boolean v0, Landroid/database/AbstractWindowedCursor;->DEBUG_CLOSE_TRACE:Z
-
-    if-eqz v0, :cond_1
-
-    .line 152
-    :cond_0
-    const-string v0, "CursorOrCursorWindowClosed"
-
-    const-string v1, "CursorWindow close stack trace"
-
-    iget-object v2, p0, Landroid/database/AbstractWindowedCursor;->mWindowCloseTrace:Ljava/lang/Throwable;
-
-    invoke-static {v0, v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    .line 156
-    :cond_1
+    .line 139
     new-instance v0, Landroid/database/StaleDataException;
 
     const-string v1, "Attempting to access a closed CursorWindow.Most probable cause: cursor is deactivated prior to calling this method."
@@ -98,8 +41,8 @@
 
     throw v0
 
-    .line 159
-    :cond_2
+    .line 142
+    :cond_0
     return-void
 .end method
 
@@ -108,23 +51,23 @@
     .parameter "name"
 
     .prologue
-    .line 220
+    .line 197
     iget-object v0, p0, Landroid/database/AbstractWindowedCursor;->mWindow:Landroid/database/CursorWindow;
 
     if-nez v0, :cond_0
 
-    .line 221
+    .line 198
     new-instance v0, Landroid/database/CursorWindow;
 
     invoke-direct {v0, p1}, Landroid/database/CursorWindow;-><init>(Ljava/lang/String;)V
 
     iput-object v0, p0, Landroid/database/AbstractWindowedCursor;->mWindow:Landroid/database/CursorWindow;
 
-    .line 225
+    .line 202
     :goto_0
     return-void
 
-    .line 223
+    .line 200
     :cond_0
     iget-object v0, p0, Landroid/database/AbstractWindowedCursor;->mWindow:Landroid/database/CursorWindow;
 
@@ -134,45 +77,26 @@
 .end method
 
 .method protected closeWindow()V
-    .locals 2
+    .locals 1
 
     .prologue
-    .line 200
+    .line 183
     iget-object v0, p0, Landroid/database/AbstractWindowedCursor;->mWindow:Landroid/database/CursorWindow;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
-    .line 201
+    .line 184
     iget-object v0, p0, Landroid/database/AbstractWindowedCursor;->mWindow:Landroid/database/CursorWindow;
 
     invoke-virtual {v0}, Landroid/database/CursorWindow;->close()V
 
-    .line 202
+    .line 185
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/database/AbstractWindowedCursor;->mWindow:Landroid/database/CursorWindow;
 
-    .line 205
-    sget-boolean v0, Landroid/database/AbstractWindowedCursor;->DEBUG_IS_ENG_BUILD:Z
-
-    if-nez v0, :cond_0
-
-    sget-boolean v0, Landroid/database/AbstractWindowedCursor;->DEBUG_CLOSE_TRACE:Z
-
-    if-eqz v0, :cond_1
-
-    .line 206
+    .line 187
     :cond_0
-    new-instance v0, Ljava/lang/Throwable;
-
-    const-string/jumbo v1, "stacktrace"
-
-    invoke-direct {v0, v1}, Ljava/lang/Throwable;-><init>(Ljava/lang/String;)V
-
-    iput-object v0, p0, Landroid/database/AbstractWindowedCursor;->mWindowCloseTrace:Ljava/lang/Throwable;
-
-    .line 210
-    :cond_1
     return-void
 .end method
 
@@ -182,17 +106,17 @@
     .parameter "buffer"
 
     .prologue
-    .line 67
+    .line 56
     invoke-virtual {p0}, Landroid/database/AbstractWindowedCursor;->checkPosition()V
 
-    .line 68
+    .line 57
     iget-object v0, p0, Landroid/database/AbstractWindowedCursor;->mWindow:Landroid/database/CursorWindow;
 
-    iget v1, p0, Landroid/database/AbstractWindowedCursor;->mPos:I
+    iget v1, p0, Landroid/database/AbstractCursor;->mPos:I
 
     invoke-virtual {v0, v1, p1, p2}, Landroid/database/CursorWindow;->copyStringToBuffer(IILandroid/database/CharArrayBuffer;)V
 
-    .line 69
+    .line 58
     return-void
 .end method
 
@@ -201,13 +125,13 @@
     .parameter "columnIndex"
 
     .prologue
-    .line 55
+    .line 44
     invoke-virtual {p0}, Landroid/database/AbstractWindowedCursor;->checkPosition()V
 
-    .line 56
+    .line 45
     iget-object v0, p0, Landroid/database/AbstractWindowedCursor;->mWindow:Landroid/database/CursorWindow;
 
-    iget v1, p0, Landroid/database/AbstractWindowedCursor;->mPos:I
+    iget v1, p0, Landroid/database/AbstractCursor;->mPos:I
 
     invoke-virtual {v0, v1, p1}, Landroid/database/CursorWindow;->getBlob(II)[B
 
@@ -221,13 +145,13 @@
     .parameter "columnIndex"
 
     .prologue
-    .line 97
+    .line 86
     invoke-virtual {p0}, Landroid/database/AbstractWindowedCursor;->checkPosition()V
 
-    .line 98
+    .line 87
     iget-object v0, p0, Landroid/database/AbstractWindowedCursor;->mWindow:Landroid/database/CursorWindow;
 
-    iget v1, p0, Landroid/database/AbstractWindowedCursor;->mPos:I
+    iget v1, p0, Landroid/database/AbstractCursor;->mPos:I
 
     invoke-virtual {v0, v1, p1}, Landroid/database/CursorWindow;->getDouble(II)D
 
@@ -241,13 +165,13 @@
     .parameter "columnIndex"
 
     .prologue
-    .line 91
+    .line 80
     invoke-virtual {p0}, Landroid/database/AbstractWindowedCursor;->checkPosition()V
 
-    .line 92
+    .line 81
     iget-object v0, p0, Landroid/database/AbstractWindowedCursor;->mWindow:Landroid/database/CursorWindow;
 
-    iget v1, p0, Landroid/database/AbstractWindowedCursor;->mPos:I
+    iget v1, p0, Landroid/database/AbstractCursor;->mPos:I
 
     invoke-virtual {v0, v1, p1}, Landroid/database/CursorWindow;->getFloat(II)F
 
@@ -261,13 +185,13 @@
     .parameter "columnIndex"
 
     .prologue
-    .line 79
+    .line 68
     invoke-virtual {p0}, Landroid/database/AbstractWindowedCursor;->checkPosition()V
 
-    .line 80
+    .line 69
     iget-object v0, p0, Landroid/database/AbstractWindowedCursor;->mWindow:Landroid/database/CursorWindow;
 
-    iget v1, p0, Landroid/database/AbstractWindowedCursor;->mPos:I
+    iget v1, p0, Landroid/database/AbstractCursor;->mPos:I
 
     invoke-virtual {v0, v1, p1}, Landroid/database/CursorWindow;->getInt(II)I
 
@@ -281,13 +205,13 @@
     .parameter "columnIndex"
 
     .prologue
-    .line 85
+    .line 74
     invoke-virtual {p0}, Landroid/database/AbstractWindowedCursor;->checkPosition()V
 
-    .line 86
+    .line 75
     iget-object v0, p0, Landroid/database/AbstractWindowedCursor;->mWindow:Landroid/database/CursorWindow;
 
-    iget v1, p0, Landroid/database/AbstractWindowedCursor;->mPos:I
+    iget v1, p0, Landroid/database/AbstractCursor;->mPos:I
 
     invoke-virtual {v0, v1, p1}, Landroid/database/CursorWindow;->getLong(II)J
 
@@ -301,13 +225,13 @@
     .parameter "columnIndex"
 
     .prologue
-    .line 73
+    .line 62
     invoke-virtual {p0}, Landroid/database/AbstractWindowedCursor;->checkPosition()V
 
-    .line 74
+    .line 63
     iget-object v0, p0, Landroid/database/AbstractWindowedCursor;->mWindow:Landroid/database/CursorWindow;
 
-    iget v1, p0, Landroid/database/AbstractWindowedCursor;->mPos:I
+    iget v1, p0, Landroid/database/AbstractCursor;->mPos:I
 
     invoke-virtual {v0, v1, p1}, Landroid/database/CursorWindow;->getShort(II)S
 
@@ -321,13 +245,13 @@
     .parameter "columnIndex"
 
     .prologue
-    .line 61
+    .line 50
     invoke-virtual {p0}, Landroid/database/AbstractWindowedCursor;->checkPosition()V
 
-    .line 62
+    .line 51
     iget-object v0, p0, Landroid/database/AbstractWindowedCursor;->mWindow:Landroid/database/CursorWindow;
 
-    iget v1, p0, Landroid/database/AbstractWindowedCursor;->mPos:I
+    iget v1, p0, Landroid/database/AbstractCursor;->mPos:I
 
     invoke-virtual {v0, v1, p1}, Landroid/database/CursorWindow;->getString(II)Ljava/lang/String;
 
@@ -341,13 +265,13 @@
     .parameter "columnIndex"
 
     .prologue
-    .line 141
+    .line 130
     invoke-virtual {p0}, Landroid/database/AbstractWindowedCursor;->checkPosition()V
 
-    .line 142
+    .line 131
     iget-object v0, p0, Landroid/database/AbstractWindowedCursor;->mWindow:Landroid/database/CursorWindow;
 
-    iget v1, p0, Landroid/database/AbstractWindowedCursor;->mPos:I
+    iget v1, p0, Landroid/database/AbstractCursor;->mPos:I
 
     invoke-virtual {v0, v1, p1}, Landroid/database/CursorWindow;->getType(II)I
 
@@ -360,7 +284,7 @@
     .locals 1
 
     .prologue
-    .line 163
+    .line 146
     iget-object v0, p0, Landroid/database/AbstractWindowedCursor;->mWindow:Landroid/database/CursorWindow;
 
     return-object v0
@@ -370,7 +294,7 @@
     .locals 1
 
     .prologue
-    .line 192
+    .line 175
     iget-object v0, p0, Landroid/database/AbstractWindowedCursor;->mWindow:Landroid/database/CursorWindow;
 
     if-eqz v0, :cond_0
@@ -393,7 +317,7 @@
     .end annotation
 
     .prologue
-    .line 112
+    .line 101
     invoke-virtual {p0, p1}, Landroid/database/AbstractWindowedCursor;->getType(I)I
 
     move-result v0
@@ -420,7 +344,7 @@
     .end annotation
 
     .prologue
-    .line 136
+    .line 125
     invoke-virtual {p0, p1}, Landroid/database/AbstractWindowedCursor;->getType(I)I
 
     move-result v0
@@ -449,7 +373,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 128
+    .line 117
     invoke-virtual {p0, p1}, Landroid/database/AbstractWindowedCursor;->getType(I)I
 
     move-result v1
@@ -470,13 +394,13 @@
     .parameter "columnIndex"
 
     .prologue
-    .line 103
+    .line 92
     invoke-virtual {p0}, Landroid/database/AbstractWindowedCursor;->checkPosition()V
 
-    .line 104
+    .line 93
     iget-object v0, p0, Landroid/database/AbstractWindowedCursor;->mWindow:Landroid/database/CursorWindow;
 
-    iget v1, p0, Landroid/database/AbstractWindowedCursor;->mPos:I
+    iget v1, p0, Landroid/database/AbstractCursor;->mPos:I
 
     invoke-virtual {v0, v1, p1}, Landroid/database/CursorWindow;->getType(II)I
 
@@ -502,7 +426,7 @@
     .end annotation
 
     .prologue
-    .line 120
+    .line 109
     invoke-virtual {p0, p1}, Landroid/database/AbstractWindowedCursor;->getType(I)I
 
     move-result v0
@@ -526,13 +450,13 @@
     .locals 0
 
     .prologue
-    .line 230
+    .line 207
     invoke-super {p0}, Landroid/database/AbstractCursor;->onDeactivateOrClose()V
 
-    .line 231
+    .line 208
     invoke-virtual {p0}, Landroid/database/AbstractWindowedCursor;->closeWindow()V
 
-    .line 232
+    .line 209
     return-void
 .end method
 
@@ -541,18 +465,18 @@
     .parameter "window"
 
     .prologue
-    .line 180
+    .line 163
     iget-object v0, p0, Landroid/database/AbstractWindowedCursor;->mWindow:Landroid/database/CursorWindow;
 
     if-eq p1, v0, :cond_0
 
-    .line 181
+    .line 164
     invoke-virtual {p0}, Landroid/database/AbstractWindowedCursor;->closeWindow()V
 
-    .line 182
+    .line 165
     iput-object p1, p0, Landroid/database/AbstractWindowedCursor;->mWindow:Landroid/database/CursorWindow;
 
-    .line 184
+    .line 167
     :cond_0
     return-void
 .end method

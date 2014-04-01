@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 703
+    .line 595
     iput-object p1, p0, Landroid/webkit/CallbackProxy$5;->this$0:Landroid/webkit/CallbackProxy;
 
     iput-object p2, p0, Landroid/webkit/CallbackProxy$5;->val$res:Landroid/webkit/JsResult;
@@ -43,24 +43,16 @@
 
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 2
+    .locals 1
     .parameter "dialog"
     .parameter "which"
 
     .prologue
-    .line 707
+    .line 599
     iget-object v0, p0, Landroid/webkit/CallbackProxy$5;->val$res:Landroid/webkit/JsResult;
 
     invoke-virtual {v0}, Landroid/webkit/JsResult;->confirm()V
 
-    .line 709
-    iget-object v0, p0, Landroid/webkit/CallbackProxy$5;->this$0:Landroid/webkit/CallbackProxy;
-
-    const/4 v1, 0x0
-
-    #calls: Landroid/webkit/CallbackProxy;->setPreventWatchdogResume(Z)V
-    invoke-static {v0, v1}, Landroid/webkit/CallbackProxy;->access$000(Landroid/webkit/CallbackProxy;Z)V
-
-    .line 710
+    .line 600
     return-void
 .end method

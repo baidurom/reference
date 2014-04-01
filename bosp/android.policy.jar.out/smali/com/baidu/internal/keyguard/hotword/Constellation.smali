@@ -16,7 +16,7 @@
 
 .field private mAxisSingleLine:Landroid/widget/RelativeLayout;
 
-.field private mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+.field private mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
 .field private mConstellation:Landroid/widget/ImageView;
 
@@ -366,16 +366,14 @@
 
     .line 341
     :goto_0
-    iget-object v2, p0, Lcom/baidu/internal/keyguard/hotword/Constellation;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    iget-object v2, p0, Lcom/baidu/internal/keyguard/hotword/Constellation;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
     if-eqz v2, :cond_0
 
     .line 342
-    iget-object v2, p0, Lcom/baidu/internal/keyguard/hotword/Constellation;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    iget-object v2, p0, Lcom/baidu/internal/keyguard/hotword/Constellation;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
-    const/4 v3, 0x1
-
-    invoke-interface {v2, v3}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;->dismiss(Z)V
+    invoke-interface {v2}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->goToUnlockScreen()V
 
     .line 344
     :cond_0
@@ -896,25 +894,23 @@
 .end method
 
 .method public onClick(Landroid/view/View;)V
-    .locals 7
+    .locals 6
     .parameter "v"
 
     .prologue
-    const/4 v6, 0x1
+    const/4 v2, 0x1
 
     const/4 v5, 0x4
 
     const/4 v4, 0x0
 
     .line 122
-    iget-object v1, p0, Lcom/baidu/internal/keyguard/hotword/Constellation;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    iget-object v1, p0, Lcom/baidu/internal/keyguard/hotword/Constellation;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
-    const-wide/16 v2, 0x0
-
-    invoke-interface {v1, v2, v3}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;->userActivity(J)V
+    invoke-interface {v1}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->pokeWakelock()V
 
     .line 123
-    invoke-virtual {p0, v6}, Lcom/baidu/internal/keyguard/hotword/Constellation;->setTransparent(Z)V
+    invoke-virtual {p0, v2}, Lcom/baidu/internal/keyguard/hotword/Constellation;->setTransparent(Z)V
 
     .line 124
     iget-object v1, p0, Lcom/baidu/internal/keyguard/hotword/Constellation;->mWordLast:Landroid/widget/TextView;
@@ -955,7 +951,7 @@
     .local v0, word:Lcom/baidu/internal/keyguard/hotword/WordList$Word;
     iget v1, v0, Lcom/baidu/internal/keyguard/hotword/WordList$Word;->type:I
 
-    if-ne v1, v6, :cond_4
+    if-ne v1, v2, :cond_4
 
     .line 132
     invoke-virtual {p0}, Lcom/baidu/internal/keyguard/hotword/Constellation;->getContext()Landroid/content/Context;
@@ -1074,7 +1070,7 @@
 .end method
 
 .method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .locals 5
+    .locals 4
     .parameter "v"
     .parameter "event"
 
@@ -1084,11 +1080,9 @@
     const/4 v1, 0x0
 
     .line 299
-    iget-object v2, p0, Lcom/baidu/internal/keyguard/hotword/Constellation;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    iget-object v2, p0, Lcom/baidu/internal/keyguard/hotword/Constellation;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
-    const-wide/16 v3, 0x0
-
-    invoke-interface {v2, v3, v4}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;->userActivity(J)V
+    invoke-interface {v2}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->pokeWakelock()V
 
     .line 300
     invoke-virtual {p0, v0}, Lcom/baidu/internal/keyguard/hotword/Constellation;->setTransparent(Z)V
@@ -2362,13 +2356,13 @@
     goto :goto_0
 .end method
 
-.method public setKeyguardCallback(Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;)V
+.method public setKeyguardCallback(Lcom/android/internal/policy/impl/KeyguardScreenCallback;)V
     .locals 0
     .parameter "callback"
 
     .prologue
     .line 164
-    iput-object p1, p0, Lcom/baidu/internal/keyguard/hotword/Constellation;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    iput-object p1, p0, Lcom/baidu/internal/keyguard/hotword/Constellation;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
     .line 165
     return-void

@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 666
+    .line 698
     iput-object p1, p0, Lcom/android/server/sip/SipSessionGroup$SipSessionImpl$1;->this$1:Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;
 
     iput-object p2, p0, Lcom/android/server/sip/SipSessionGroup$SipSessionImpl$1;->val$command:Ljava/util/EventObject;
@@ -46,26 +46,26 @@
     .locals 4
 
     .prologue
-    .line 669
+    .line 701
     :try_start_0
     iget-object v1, p0, Lcom/android/server/sip/SipSessionGroup$SipSessionImpl$1;->this$1:Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;
 
     iget-object v2, p0, Lcom/android/server/sip/SipSessionGroup$SipSessionImpl$1;->val$command:Ljava/util/EventObject;
 
     #calls: Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;->processCommand(Ljava/util/EventObject;)V
-    invoke-static {v1, v2}, Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;->access$1500(Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;Ljava/util/EventObject;)V
+    invoke-static {v1, v2}, Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;->access$1600(Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;Ljava/util/EventObject;)V
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 676
+    .line 708
     :goto_0
     return-void
 
-    .line 670
+    .line 702
     :catch_0
     move-exception v0
 
-    .line 671
+    .line 703
     .local v0, e:Ljava/lang/Throwable;
     const-string v1, "SipSession"
 
@@ -96,7 +96,7 @@
     iget-object v3, v3, Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;->this$0:Lcom/android/server/sip/SipSessionGroup;
 
     #getter for: Lcom/android/server/sip/SipSessionGroup;->mLocalProfile:Landroid/net/sip/SipProfile;
-    invoke-static {v3}, Lcom/android/server/sip/SipSessionGroup;->access$1400(Lcom/android/server/sip/SipSessionGroup;)Landroid/net/sip/SipProfile;
+    invoke-static {v3}, Lcom/android/server/sip/SipSessionGroup;->access$1500(Lcom/android/server/sip/SipSessionGroup;)Landroid/net/sip/SipProfile;
 
     move-result-object v3
 
@@ -117,13 +117,13 @@
     iget-object v3, v3, Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;->this$0:Lcom/android/server/sip/SipSessionGroup;
 
     #calls: Lcom/android/server/sip/SipSessionGroup;->getRootCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
-    invoke-static {v3, v0}, Lcom/android/server/sip/SipSessionGroup;->access$1600(Lcom/android/server/sip/SipSessionGroup;Ljava/lang/Throwable;)Ljava/lang/Throwable;
+    invoke-static {v3, v0}, Lcom/android/server/sip/SipSessionGroup;->access$1700(Lcom/android/server/sip/SipSessionGroup;Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
     move-result-object v3
 
     invoke-static {v1, v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 674
+    .line 706
     iget-object v1, p0, Lcom/android/server/sip/SipSessionGroup$SipSessionImpl$1;->this$1:Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;
 
     #calls: Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;->onError(Ljava/lang/Throwable;)V

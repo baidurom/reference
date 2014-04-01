@@ -9,14 +9,14 @@
 
     .prologue
     .line 22
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 .method public static round(F)I
     .locals 5
-    .parameter "value"
+    .parameter "x"
 
     .prologue
     .line 30

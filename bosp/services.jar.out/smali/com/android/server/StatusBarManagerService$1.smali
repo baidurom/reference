@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/StatusBarManagerService;->disableLocked(IILandroid/os/IBinder;Ljava/lang/String;)V
+    value = Lcom/android/server/StatusBarManagerService;->disableLocked(ILandroid/os/IBinder;Ljava/lang/String;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 204
+    .line 160
     iput-object p1, p0, Lcom/android/server/StatusBarManagerService$1;->this$0:Lcom/android/server/StatusBarManagerService;
 
     iput p2, p0, Lcom/android/server/StatusBarManagerService$1;->val$net:I
@@ -46,7 +46,7 @@
     .locals 2
 
     .prologue
-    .line 206
+    .line 162
     iget-object v0, p0, Lcom/android/server/StatusBarManagerService$1;->this$0:Lcom/android/server/StatusBarManagerService;
 
     iget-object v0, v0, Lcom/android/server/StatusBarManagerService;->mNotificationCallbacks:Lcom/android/server/StatusBarManagerService$NotificationCallbacks;
@@ -55,6 +55,6 @@
 
     invoke-interface {v0, v1}, Lcom/android/server/StatusBarManagerService$NotificationCallbacks;->onSetDisabled(I)V
 
-    .line 207
+    .line 163
     return-void
 .end method

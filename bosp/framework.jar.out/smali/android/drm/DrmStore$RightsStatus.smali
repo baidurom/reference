@@ -21,7 +21,9 @@
 
 .field public static final RIGHTS_NOT_ACQUIRED:I = 0x3
 
-.field public static final RIGHTS_VALID:I
+.field public static final RIGHTS_VALID:I = 0x0
+
+.field public static final SECURE_TIMER_INVALID:I = 0x4
 
 
 # direct methods
@@ -29,7 +31,7 @@
     .locals 0
 
     .prologue
-    .line 259
+    .line 199
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

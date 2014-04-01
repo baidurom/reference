@@ -111,7 +111,7 @@
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 12
+    .locals 11
     .parameter "code"
     .parameter "data"
     .parameter "reply"
@@ -126,8 +126,8 @@
     .line 41
     sparse-switch p1, :sswitch_data_0
 
-    .line 103
-    invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    .line 101
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v0
 
@@ -231,70 +231,63 @@
 
     .line 82
     .local v5, _arg4:[F
-    invoke-virtual {p2}, Landroid/os/Parcel;->createIntArray()[I
-
-    move-result-object v6
-
-    .line 84
-    .local v6, _arg5:[I
-    invoke-virtual {p2}, Landroid/os/Parcel;->createIntArray()[I
-
-    move-result-object v7
-
-    .line 86
-    .local v7, _arg6:[I
-    invoke-virtual {p2}, Landroid/os/Parcel;->createIntArray()[I
-
-    move-result-object v8
-
-    .line 88
-    .local v8, _arg7:[I
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v9
+    move-result v6
 
-    .local v9, _arg8:I
+    .line 84
+    .local v6, _arg5:I
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v7
+
+    .line 86
+    .local v7, _arg6:I
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v8
+
+    .local v8, _arg7:I
     move-object v0, p0
 
-    .line 89
-    invoke-virtual/range {v0 .. v9}, Landroid/location/IGpsStatusListener$Stub;->onSvStatusChanged(I[I[F[F[F[I[I[II)V
+    .line 87
+    invoke-virtual/range {v0 .. v8}, Landroid/location/IGpsStatusListener$Stub;->onSvStatusChanged(I[I[F[F[FIII)V
 
-    .line 90
+    .line 88
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 94
+    .line 92
     .end local v1           #_arg0:I
     .end local v2           #_arg1:[I
     .end local v3           #_arg2:[F
     .end local v4           #_arg3:[F
     .end local v5           #_arg4:[F
-    .end local v6           #_arg5:[I
-    .end local v7           #_arg6:[I
-    .end local v8           #_arg7:[I
-    .end local v9           #_arg8:I
+    .end local v6           #_arg5:I
+    .end local v7           #_arg6:I
+    .end local v8           #_arg7:I
     :sswitch_5
     const-string v0, "android.location.IGpsStatusListener"
 
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 96
+    .line 94
     invoke-virtual {p2}, Landroid/os/Parcel;->readLong()J
 
-    move-result-wide v10
+    move-result-wide v9
 
-    .line 98
-    .local v10, _arg0:J
+    .line 96
+    .local v9, _arg0:J
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 99
+    .line 97
     .local v2, _arg1:Ljava/lang/String;
-    invoke-virtual {p0, v10, v11, v2}, Landroid/location/IGpsStatusListener$Stub;->onNmeaReceived(JLjava/lang/String;)V
+    invoke-virtual {p0, v9, v10, v2}, Landroid/location/IGpsStatusListener$Stub;->onNmeaReceived(JLjava/lang/String;)V
 
-    .line 100
+    .line 98
     const/4 v0, 0x1
 
     goto :goto_0

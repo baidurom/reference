@@ -3704,6 +3704,10 @@
     :goto_1
     iget-object v0, p0, Lcom/yi/internal/widget/GifDecoder;->currentFrame:Lcom/yi/internal/widget/GifFrame;
 
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lcom/yi/internal/widget/GifDecoder;->currentFrame:Lcom/yi/internal/widget/GifFrame;
+
     iget-object v0, v0, Lcom/yi/internal/widget/GifFrame;->nextFrame:Lcom/yi/internal/widget/GifFrame;
 
     if-nez v0, :cond_2

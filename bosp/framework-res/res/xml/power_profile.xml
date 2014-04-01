@@ -35,16 +35,16 @@
         <value>205.4</value>
         <value>259.0</value>
     </array>
-    <item name="backlight.full">230</item>
-    <item name="backlight.on">86</item>
+    <item name="backlight.full">232</item>
+    <item name="backlight.on">89</item>
     <item name="bluetooth.open">6</item>
     <item name="gps.open">12</item>
-    <item name="phone">163</item>
-    <item name="net">223</item>
-    <item name="music">65</item>
-    <item name="video">214</item>
-    <item name="game">283</item>
-    <item name="read">132</item>
-    <item name="photo">311</item>
-    <item name="available">100</item>
+    <item name="phone">174</item>
+    <item name="net">235</item>
+    <item name="music">70</item>
+    <item name="video">162</item>
+    <item name="game">285</item>
+    <item name="read">98</item>
+    <item name="photo">307</item>
+    <item name="available">95</item>
 </device>

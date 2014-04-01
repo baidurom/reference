@@ -532,13 +532,13 @@
     :goto_1
     new-instance v1, Landroid/net/http/SslCertificate;
 
-    const-string/jumbo v2, "issued-to"
+    const-string v2, "issued-to"
 
     invoke-virtual {p0, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    const-string/jumbo v3, "issued-by"
+    const-string v3, "issued-by"
 
     invoke-virtual {p0, v3}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
@@ -640,7 +640,7 @@
 
     .line 100
     .local v0, bundle:Landroid/os/Bundle;
-    const-string/jumbo v2, "issued-to"
+    const-string v2, "issued-to"
 
     invoke-virtual {p0}, Landroid/net/http/SslCertificate;->getIssuedTo()Landroid/net/http/SslCertificate$DName;
 
@@ -653,7 +653,7 @@
     invoke-virtual {v0, v2, v3}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 101
-    const-string/jumbo v2, "issued-by"
+    const-string v2, "issued-by"
 
     invoke-virtual {p0}, Landroid/net/http/SslCertificate;->getIssuedBy()Landroid/net/http/SslCertificate$DName;
 

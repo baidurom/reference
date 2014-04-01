@@ -26,7 +26,7 @@
     .parameter "x1"
 
     .prologue
-    .line 170
+    .line 167
     iput-object p1, p0, Landroid/net/http/AndroidHttpClient$2;->this$0:Landroid/net/http/AndroidHttpClient;
 
     invoke-direct {p0, p2, p3}, Lorg/apache/http/impl/client/DefaultHttpClient;-><init>(Lorg/apache/http/conn/ClientConnectionManager;Lorg/apache/http/params/HttpParams;)V
@@ -40,12 +40,12 @@
     .locals 3
 
     .prologue
-    .line 185
+    .line 182
     new-instance v0, Lorg/apache/http/protocol/BasicHttpContext;
 
     invoke-direct {v0}, Lorg/apache/http/protocol/BasicHttpContext;-><init>()V
 
-    .line 186
+    .line 183
     .local v0, context:Lorg/apache/http/protocol/HttpContext;
     const-string v1, "http.authscheme-registry"
 
@@ -55,7 +55,7 @@
 
     invoke-interface {v0, v1, v2}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 189
+    .line 186
     const-string v1, "http.cookiespec-registry"
 
     invoke-virtual {p0}, Landroid/net/http/AndroidHttpClient$2;->getCookieSpecs()Lorg/apache/http/cookie/CookieSpecRegistry;
@@ -64,7 +64,7 @@
 
     invoke-interface {v0, v1, v2}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 192
+    .line 189
     const-string v1, "http.auth.credentials-provider"
 
     invoke-virtual {p0}, Landroid/net/http/AndroidHttpClient$2;->getCredentialsProvider()Lorg/apache/http/client/CredentialsProvider;
@@ -73,7 +73,7 @@
 
     invoke-interface {v0, v1, v2}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 195
+    .line 192
     return-object v0
 .end method
 
@@ -81,12 +81,12 @@
     .locals 4
 
     .prologue
-    .line 174
+    .line 171
     invoke-super {p0}, Lorg/apache/http/impl/client/DefaultHttpClient;->createHttpProcessor()Lorg/apache/http/protocol/BasicHttpProcessor;
 
     move-result-object v0
 
-    .line 175
+    .line 172
     .local v0, processor:Lorg/apache/http/protocol/BasicHttpProcessor;
     invoke-static {}, Landroid/net/http/AndroidHttpClient;->access$000()Lorg/apache/http/HttpRequestInterceptor;
 
@@ -94,7 +94,7 @@
 
     invoke-virtual {v0, v1}, Lorg/apache/http/protocol/BasicHttpProcessor;->addRequestInterceptor(Lorg/apache/http/HttpRequestInterceptor;)V
 
-    .line 176
+    .line 173
     new-instance v1, Landroid/net/http/AndroidHttpClient$CurlLogger;
 
     iget-object v2, p0, Landroid/net/http/AndroidHttpClient$2;->this$0:Landroid/net/http/AndroidHttpClient;
@@ -105,6 +105,6 @@
 
     invoke-virtual {v0, v1}, Lorg/apache/http/protocol/BasicHttpProcessor;->addRequestInterceptor(Lorg/apache/http/HttpRequestInterceptor;)V
 
-    .line 178
+    .line 175
     return-object v0
 .end method

@@ -93,7 +93,7 @@
 
     const-string v1, "LINK"
 
-    const-string/jumbo v2, "l"
+    const-string v2, "l"
 
     invoke-direct {v0, v1, v6, v2}, Lcom/google/android/util/AbstractMessageParser$Token$Type;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 

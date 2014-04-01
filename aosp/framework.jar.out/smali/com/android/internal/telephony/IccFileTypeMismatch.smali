@@ -8,10 +8,10 @@
     .locals 0
 
     .prologue
-    .line 54
+    .line 23
     invoke-direct {p0}, Lcom/android/internal/telephony/IccException;-><init>()V
 
-    .line 56
+    .line 25
     return-void
 .end method
 
@@ -20,9 +20,9 @@
     .parameter "s"
 
     .prologue
-    .line 59
+    .line 28
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/IccException;-><init>(Ljava/lang/String;)V
 
-    .line 60
+    .line 29
     return-void
 .end method

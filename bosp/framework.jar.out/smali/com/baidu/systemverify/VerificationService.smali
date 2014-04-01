@@ -492,13 +492,13 @@
     if-eqz v5, :cond_1
 
     .line 94
-    .end local v0           #count:I
-    .end local v4           #verify:Lcom/baidu/systemverify/Verification;
-    :goto_1
     invoke-virtual {v5}, Landroid/os/PowerManager$WakeLock;->release()V
 
     .line 97
+    .end local v0           #count:I
+    .end local v4           #verify:Lcom/baidu/systemverify/Verification;
     :cond_1
+    :goto_1
     return-void
 
     .line 86
@@ -544,8 +544,12 @@
     .line 93
     if-eqz v5, :cond_1
 
+    .line 94
+    invoke-virtual {v5}, Landroid/os/PowerManager$WakeLock;->release()V
+
     goto :goto_1
 
+    .line 93
     .end local v1           #e:Ljava/lang/Exception;
     :catchall_0
     move-exception v6
@@ -555,7 +559,6 @@
     .line 94
     invoke-virtual {v5}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 93
     :cond_3
     throw v6
 .end method

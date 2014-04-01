@@ -15,8 +15,6 @@
 
 
 # static fields
-.field public static final DELETE_USAGE_URI:Landroid/net/Uri; = null
-
 .field public static final FEEDBACK_URI:Landroid/net/Uri; = null
 
 .field public static final SIM_CONTACT_STATUS:Ljava/lang/String; = "sim_contact_status"
@@ -39,7 +37,7 @@
     .locals 2
 
     .prologue
-    .line 7755
+    .line 7661
     sget-object v0, Landroid/provider/ContactsContract$Data;->CONTENT_URI:Landroid/net/Uri;
 
     const-string/jumbo v1, "usagefeedback"
@@ -50,17 +48,6 @@
 
     sput-object v0, Landroid/provider/ContactsContract$DataUsageFeedback;->FEEDBACK_URI:Landroid/net/Uri;
 
-    .line 7763
-    sget-object v0, Landroid/provider/ContactsContract$Contacts;->CONTENT_URI:Landroid/net/Uri;
-
-    const-string v1, "delete_usage"
-
-    invoke-static {v0, v1}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v0
-
-    sput-object v0, Landroid/provider/ContactsContract$DataUsageFeedback;->DELETE_USAGE_URI:Landroid/net/Uri;
-
     return-void
 .end method
 
@@ -68,8 +55,8 @@
     .locals 0
 
     .prologue
-    .line 7749
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 7655
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

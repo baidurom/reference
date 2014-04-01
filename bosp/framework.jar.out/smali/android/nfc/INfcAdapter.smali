@@ -15,7 +15,23 @@
 
 
 # virtual methods
-.method public abstract disable(Z)Z
+.method public abstract activeSwp()I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract deselectSecureElement()I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract disable()Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -24,14 +40,6 @@
 .end method
 
 .method public abstract disableNdefPush()Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract dispatch(Landroid/nfc/Tag;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -55,14 +63,6 @@
     .end annotation
 .end method
 
-.method public abstract getModeFlag(I)I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract getNfcAdapterExtrasInterface(Ljava/lang/String;)Landroid/nfc/INfcAdapterExtras;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -71,7 +71,31 @@
     .end annotation
 .end method
 
+.method public abstract getNfcSecureElementInterface()Landroid/nfc/INfcSecureElement;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract getNfcTagInterface()Landroid/nfc/INfcTag;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract getSecureElementList()[I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract getSelectedSecureElement()I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -95,6 +119,14 @@
     .end annotation
 .end method
 
+.method public abstract selectSecureElement(I)I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract setForegroundDispatch(Landroid/app/PendingIntent;[Landroid/content/IntentFilter;Landroid/nfc/TechListParcel;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -103,7 +135,7 @@
     .end annotation
 .end method
 
-.method public abstract setModeFlag(II)V
+.method public abstract setForegroundNdefPush(Landroid/nfc/NdefMessage;Landroid/nfc/INdefPushCallback;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -111,15 +143,7 @@
     .end annotation
 .end method
 
-.method public abstract setNdefPushCallback(Landroid/nfc/INdefPushCallback;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setP2pModes(II)V
+.method public abstract setSecureElementState(Z)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

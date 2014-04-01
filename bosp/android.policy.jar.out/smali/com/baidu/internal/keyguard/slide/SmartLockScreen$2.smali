@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 618
+    .line 622
     iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$2;->this$0:Lcom/baidu/internal/keyguard/slide/SmartLockScreen;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 1
 
     .prologue
-    .line 620
+    .line 624
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$2;->this$0:Lcom/baidu/internal/keyguard/slide/SmartLockScreen;
 
     #getter for: Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->mUnlockWidgetMethods:Lcom/baidu/internal/keyguard/slide/SmartLockScreen$UnlockWidgetCommonMethods;
@@ -51,6 +51,6 @@
 
     invoke-interface {v0}, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$UnlockWidgetCommonMethods;->ping()V
 
-    .line 621
+    .line 625
     return-void
 .end method

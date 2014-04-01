@@ -112,7 +112,7 @@
     .line 673
     iget-object v0, p0, Lcom/yi/internal/widget/VoiceprintUnlockView$RecognizingError;->this$0:Lcom/yi/internal/widget/VoiceprintUnlockView;
 
-    const v1, 0x307001a
+    const v1, 0x40b001b
 
     #calls: Lcom/yi/internal/widget/VoiceprintUnlockView;->updateTipWords(I)V
     invoke-static {v0, v1}, Lcom/yi/internal/widget/VoiceprintUnlockView;->access$1300(Lcom/yi/internal/widget/VoiceprintUnlockView;I)V
@@ -142,7 +142,7 @@
 
     move-result-object v0
 
-    const v1, 0x3080125
+    const v1, 0x4080128
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -176,7 +176,7 @@
     :cond_0
     iget-object v0, p0, Lcom/yi/internal/widget/VoiceprintUnlockView$RecognizingError;->this$0:Lcom/yi/internal/widget/VoiceprintUnlockView;
 
-    const v1, 0x307001b
+    const v1, 0x40b001c
 
     #calls: Lcom/yi/internal/widget/VoiceprintUnlockView;->updateTipWords(I)V
     invoke-static {v0, v1}, Lcom/yi/internal/widget/VoiceprintUnlockView;->access$1300(Lcom/yi/internal/widget/VoiceprintUnlockView;I)V

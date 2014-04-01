@@ -158,8 +158,6 @@
 
 .field public static final STATUS:Ljava/lang/String; = "st"
 
-.field public static final STATUS_EXT:Ljava/lang/String; = "st_ext"
-
 .field public static final STATUS_TEXT:Ljava/lang/String; = "st_txt"
 
 .field public static final STORE:Ljava/lang/String; = "store"
@@ -173,8 +171,6 @@
 .field public static final SUBJECT:Ljava/lang/String; = "sub"
 
 .field public static final SUBJECT_CHARSET:Ljava/lang/String; = "sub_cs"
-
-.field public static final TEXT_ONLY:Ljava/lang/String; = "text_only"
 
 .field public static final THREAD_ID:Ljava/lang/String; = "thread_id"
 

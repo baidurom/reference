@@ -85,7 +85,7 @@
     invoke-virtual {v1, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
 
     .line 41
-    const-string/jumbo v2, "intent"
+    const-string v2, "intent"
 
     iget-object v3, p0, Lcom/baidu/service/power/Action;->mIntent:Landroid/content/Intent;
 

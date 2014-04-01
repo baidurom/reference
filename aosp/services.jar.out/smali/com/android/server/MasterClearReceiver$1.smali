@@ -46,18 +46,11 @@
     .prologue
     .line 46
     :try_start_0
-    const-string v1, "MasterClear"
-
-    const-string v2, "Call mtehod: rebootWipeUserData"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 47
     iget-object v1, p0, Lcom/android/server/MasterClearReceiver$1;->val$context:Landroid/content/Context;
 
     invoke-static {v1}, Landroid/os/RecoverySystem;->rebootWipeUserData(Landroid/content/Context;)V
 
-    .line 48
+    .line 47
     const-string v1, "MasterClear"
 
     const-string v2, "Still running after master clear?!"
@@ -66,15 +59,15 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 52
+    .line 51
     :goto_0
     return-void
 
-    .line 49
+    .line 48
     :catch_0
     move-exception v0
 
-    .line 50
+    .line 49
     .local v0, e:Ljava/io/IOException;
     const-string v1, "MasterClear"
 

@@ -35,28 +35,28 @@
     .parameter "clock"
 
     .prologue
-    .line 137
+    .line 153
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     invoke-direct {p0, v0}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 138
+    .line 154
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Lcom/android/internal/widget/DigitalClock$FormatChangeObserver;->mClock:Ljava/lang/ref/WeakReference;
 
-    .line 139
+    .line 155
     invoke-virtual {p1}, Lcom/android/internal/widget/DigitalClock;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/internal/widget/DigitalClock$FormatChangeObserver;->mContext:Landroid/content/Context;
 
-    .line 140
+    .line 156
     return-void
 .end method
 
@@ -67,7 +67,7 @@
     .parameter "selfChange"
 
     .prologue
-    .line 143
+    .line 159
     iget-object v1, p0, Lcom/android/internal/widget/DigitalClock$FormatChangeObserver;->mClock:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -76,22 +76,23 @@
 
     check-cast v0, Lcom/android/internal/widget/DigitalClock;
 
-    .line 144
+    .line 160
     .local v0, digitalClock:Lcom/android/internal/widget/DigitalClock;
     if-eqz v0, :cond_0
 
-    .line 145
+    .line 161
     #calls: Lcom/android/internal/widget/DigitalClock;->setDateFormat()V
+    invoke-static {v0}, Lcom/android/internal/widget/DigitalClock;->access$400(Lcom/android/internal/widget/DigitalClock;)V
+
+    .line 162
+    #calls: Lcom/android/internal/widget/DigitalClock;->updateTime()V
     invoke-static {v0}, Lcom/android/internal/widget/DigitalClock;->access$200(Lcom/android/internal/widget/DigitalClock;)V
 
-    .line 146
-    invoke-virtual {v0}, Lcom/android/internal/widget/DigitalClock;->updateTime()V
-
-    .line 154
+    .line 170
     :goto_0
     return-void
 
-    .line 149
+    .line 165
     :cond_0
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/widget/DigitalClock$FormatChangeObserver;->mContext:Landroid/content/Context;
@@ -106,7 +107,7 @@
 
     goto :goto_0
 
-    .line 150
+    .line 166
     :catch_0
     move-exception v1
 

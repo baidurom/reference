@@ -14,18 +14,18 @@
     .parameter "input"
 
     .prologue
-    .line 196
+    .line 157
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/cat/CommandParams;-><init>(Lcom/android/internal/telephony/cat/CommandDetails;)V
 
-    .line 193
+    .line 154
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/telephony/cat/GetInputParams;->input:Lcom/android/internal/telephony/cat/Input;
 
-    .line 197
+    .line 158
     iput-object p2, p0, Lcom/android/internal/telephony/cat/GetInputParams;->input:Lcom/android/internal/telephony/cat/Input;
 
-    .line 198
+    .line 159
     return-void
 .end method
 
@@ -36,19 +36,19 @@
     .parameter "icon"
 
     .prologue
-    .line 201
+    .line 162
     if-eqz p1, :cond_0
 
     iget-object v0, p0, Lcom/android/internal/telephony/cat/GetInputParams;->input:Lcom/android/internal/telephony/cat/Input;
 
     if-eqz v0, :cond_0
 
-    .line 202
+    .line 163
     iget-object v0, p0, Lcom/android/internal/telephony/cat/GetInputParams;->input:Lcom/android/internal/telephony/cat/Input;
 
     iput-object p1, v0, Lcom/android/internal/telephony/cat/Input;->icon:Landroid/graphics/Bitmap;
 
-    .line 204
+    .line 165
     :cond_0
     const/4 v0, 0x1
 

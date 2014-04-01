@@ -23,8 +23,6 @@
 
 .field public static final accessibilityFlags:I = #attr@accessibilityFlags#t
 
-.field public static final accessibilityFocusedDrawable:I = #attr@accessibilityFocusedDrawable#t
-
 .field public static final accountPreferences:I = #attr@accountPreferences#t
 
 .field public static final accountType:I = #attr@accountType#t
@@ -69,6 +67,8 @@
 
 .field public static final actionModeCutDrawable:I = #attr@actionModeCutDrawable#t
 
+.field public static final actionModeFindDrawable:I = #attr@actionModeFindDrawable#t
+
 .field public static final actionModePasteDrawable:I = #attr@actionModePasteDrawable#t
 
 .field public static final actionModePopupWindowStyle:I = #attr@actionModePopupWindowStyle#t
@@ -81,6 +81,8 @@
 
 .field public static final actionModeStyle:I = #attr@actionModeStyle#t
 
+.field public static final actionModeWebSearchDrawable:I = #attr@actionModeWebSearchDrawable#t
+
 .field public static final actionOverflowButtonStyle:I = #attr@actionOverflowButtonStyle#t
 
 .field public static final actionProviderClass:I = #attr@actionProviderClass#t
@@ -88,6 +90,8 @@
 .field public static final actionViewClass:I = #attr@actionViewClass#t
 
 .field public static final activatedBackgroundIndicator:I = #attr@activatedBackgroundIndicator#t
+
+.field public static final activityChooserViewStyle:I = #attr@activityChooserViewStyle#t
 
 .field public static final activityCloseEnterAnimation:I = #attr@activityCloseEnterAnimation#t
 
@@ -100,6 +104,8 @@
 .field public static final addStatesFromChildren:I = #attr@addStatesFromChildren#t
 
 .field public static final adjustViewBounds:I = #attr@adjustViewBounds#t
+
+.field public static final alertDialogButtonGroupStyle:I = #attr@alertDialogButtonGroupStyle#t
 
 .field public static final alertDialogCenterButtons:I = #attr@alertDialogCenterButtons#t
 
@@ -116,6 +122,8 @@
 .field public static final allowBackup:I = #attr@allowBackup#t
 
 .field public static final allowClearUserData:I = #attr@allowClearUserData#t
+
+.field public static final allowMassStorage:I = #attr@allowMassStorage#t
 
 .field public static final allowParallelSyncs:I = #attr@allowParallelSyncs#t
 
@@ -148,15 +156,14 @@
 .field public static final animationOrder:I = #attr@animationOrder#t
 
 .field public static final animationResolution:I = #attr@animationResolution#t
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end field
 
 .field public static final antialias:I = #attr@antialias#t
 
 .field public static final anyDensity:I = #attr@anyDensity#t
 
 .field public static final apiKey:I = #attr@apiKey#t
+
+.field public static final aspect:I = #attr@aspect#t
 
 .field public static final author:I = #attr@author#t
 
@@ -197,11 +204,23 @@
 
 .field public static final baselineAlignedChildIndex:I = #attr@baselineAlignedChildIndex#t
 
+.field public static final bitmap:I = #attr@bitmap#t
+
+.field public static final borderBottom:I = #attr@borderBottom#t
+
+.field public static final borderLeft:I = #attr@borderLeft#t
+
+.field public static final borderRight:I = #attr@borderRight#t
+
+.field public static final borderTop:I = #attr@borderTop#t
+
 .field public static final borderlessButtonStyle:I = #attr@borderlessButtonStyle#t
 
 .field public static final bottom:I = #attr@bottom#t
 
 .field public static final bottomBright:I = #attr@bottomBright#t
+
+.field public static final bottomChevronDrawable:I = #attr@bottomChevronDrawable#t
 
 .field public static final bottomDark:I = #attr@bottomDark#t
 
@@ -243,6 +262,8 @@
 
 .field public static final candidatesTextStyleSpans:I = #attr@candidatesTextStyleSpans#t
 
+.field public static final cantSaveState:I = #attr@cantSaveState#t
+
 .field public static final capitalize:I = #attr@capitalize#t
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
@@ -274,8 +295,6 @@
 
 .field public static final checkedButton:I = #attr@checkedButton#t
 
-.field public static final checkedTextViewStyle:I = #attr@checkedTextViewStyle#t
-
 .field public static final childDivider:I = #attr@childDivider#t
 
 .field public static final childIndicator:I = #attr@childIndicator#t
@@ -287,6 +306,8 @@
 .field public static final choiceMode:I = #attr@choiceMode#t
 
 .field public static final clearTaskOnLaunch:I = #attr@clearTaskOnLaunch#t
+
+.field public static final clickColor:I = #attr@clickColor#t
 
 .field public static final clickable:I = #attr@clickable#t
 
@@ -416,6 +437,8 @@
 
 .field public static final directionPriority:I = #attr@directionPriority#t
 
+.field public static final disableChildrenWhenDisabled:I = #attr@disableChildrenWhenDisabled#t
+
 .field public static final disableDependentsState:I = #attr@disableDependentsState#t
 
 .field public static final disabledAlpha:I = #attr@disabledAlpha#t
@@ -437,6 +460,8 @@
 .field public static final drawSelectorOnTop:I = #attr@drawSelectorOnTop#t
 
 .field public static final drawable:I = #attr@drawable#t
+
+.field public static final drawableAlpha:I = #attr@drawableAlpha#t
 
 .field public static final drawableBottom:I = #attr@drawableBottom#t
 
@@ -474,6 +499,8 @@
 
 .field public static final dropDownWidth:I = #attr@dropDownWidth#t
 
+.field public static final dropdownListPreferredItemHeight:I = #attr@dropdownListPreferredItemHeight#t
+
 .field public static final duplicateParentState:I = #attr@duplicateParentState#t
 
 .field public static final duration:I = #attr@duration#t
@@ -497,14 +524,16 @@
 
 .field public static final ems:I = #attr@ems#t
 
+.field public static final emulated:I = #attr@emulated#t
+
 .field public static final enabled:I = #attr@enabled#t
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 .field public static final endColor:I = #attr@endColor#t
 
 .field public static final endYear:I = #attr@endYear#t
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end field
 
 .field public static final enterFadeDuration:I = #attr@enterFadeDuration#t
 
@@ -512,11 +541,17 @@
 
 .field public static final entryValues:I = #attr@entryValues#t
 
+.field public static final errorMessageAboveBackground:I = #attr@errorMessageAboveBackground#t
+
+.field public static final errorMessageBackground:I = #attr@errorMessageBackground#t
+
 .field public static final eventsInterceptionEnabled:I = #attr@eventsInterceptionEnabled#t
 
 .field public static final excludeFromRecents:I = #attr@excludeFromRecents#t
 
 .field public static final exitFadeDuration:I = #attr@exitFadeDuration#t
+
+.field public static final expandActivityOverflowButtonDrawable:I = #attr@expandActivityOverflowButtonDrawable#t
 
 .field public static final expandableListPreferredChildIndicatorLeft:I = #attr@expandableListPreferredChildIndicatorLeft#t
 
@@ -536,8 +571,6 @@
 
 .field public static final exported:I = #attr@exported#t
 
-.field public static final externalRouteEnabledDrawable:I = #attr@externalRouteEnabledDrawable#t
-
 .field public static final extraTension:I = #attr@extraTension#t
 
 .field public static final factor:I = #attr@factor#t
@@ -551,6 +584,9 @@
 .field public static final fadeScrollbars:I = #attr@fadeScrollbars#t
 
 .field public static final fadingEdge:I = #attr@fadingEdge#t
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 .field public static final fadingEdgeLength:I = #attr@fadingEdgeLength#t
 
@@ -569,6 +605,8 @@
 .field public static final fastScrollThumbDrawable:I = #attr@fastScrollThumbDrawable#t
 
 .field public static final fastScrollTrackDrawable:I = #attr@fastScrollTrackDrawable#t
+
+.field public static final feedbackCount:I = #attr@feedbackCount#t
 
 .field public static final fillAfter:I = #attr@fillAfter#t
 
@@ -590,6 +628,8 @@
 
 .field public static final fitsSystemWindows:I = #attr@fitsSystemWindows#t
 
+.field public static final flingable:I = #attr@flingable#t
+
 .field public static final flipInterval:I = #attr@flipInterval#t
 
 .field public static final focusable:I = #attr@focusable#t
@@ -598,19 +638,15 @@
 
 .field public static final focusedMonthDateColor:I = #attr@focusedMonthDateColor#t
 
-.field public static final fontFamily:I = #attr@fontFamily#t
-
 .field public static final footerDividersEnabled:I = #attr@footerDividersEnabled#t
 
 .field public static final foreground:I = #attr@foreground#t
 
 .field public static final foregroundGravity:I = #attr@foregroundGravity#t
 
+.field public static final foregroundInsidePadding:I = #attr@foregroundInsidePadding#t
+
 .field public static final format:I = #attr@format#t
-
-.field public static final format12Hour:I = #attr@format12Hour#t
-
-.field public static final format24Hour:I = #attr@format24Hour#t
 
 .field public static final fragment:I = #attr@fragment#t
 
@@ -625,6 +661,10 @@
 .field public static final fragmentOpenEnterAnimation:I = #attr@fragmentOpenEnterAnimation#t
 
 .field public static final fragmentOpenExitAnimation:I = #attr@fragmentOpenExitAnimation#t
+
+.field public static final frameDuration:I = #attr@frameDuration#t
+
+.field public static final framesCount:I = #attr@framesCount#t
 
 .field public static final freezesText:I = #attr@freezesText#t
 
@@ -682,6 +722,8 @@
 
 .field public static final handle:I = #attr@handle#t
 
+.field public static final handleDrawable:I = #attr@handleDrawable#t
+
 .field public static final handleProfiling:I = #attr@handleProfiling#t
 
 .field public static final hapticFeedbackEnabled:I = #attr@hapticFeedbackEnabled#t
@@ -698,6 +740,8 @@
 
 .field public static final hint:I = #attr@hint#t
 
+.field public static final hitRadius:I = #attr@hitRadius#t
+
 .field public static final homeAsUpIndicator:I = #attr@homeAsUpIndicator#t
 
 .field public static final homeLayout:I = #attr@homeLayout#t
@@ -706,11 +750,19 @@
 
 .field public static final horizontalGap:I = #attr@horizontalGap#t
 
+.field public static final horizontalOffset:I = #attr@horizontalOffset#t
+
+.field public static final horizontalProgressLayout:I = #attr@horizontalProgressLayout#t
+
 .field public static final horizontalScrollViewStyle:I = #attr@horizontalScrollViewStyle#t
 
 .field public static final horizontalSpacing:I = #attr@horizontalSpacing#t
 
 .field public static final host:I = #attr@host#t
+
+.field public static final hotSpotX:I = #attr@hotSpotX#t
+
+.field public static final hotSpotY:I = #attr@hotSpotY#t
 
 .field public static final icon:I = #attr@icon#t
 
@@ -746,8 +798,6 @@
 
 .field public static final immersive:I = #attr@immersive#t
 
-.field public static final importantForAccessibility:I = #attr@importantForAccessibility#t
-
 .field public static final inAnimation:I = #attr@inAnimation#t
 
 .field public static final includeFontPadding:I = #attr@includeFontPadding#t
@@ -774,7 +824,7 @@
 
 .field public static final initOrder:I = #attr@initOrder#t
 
-.field public static final initialKeyguardLayout:I = #attr@initialKeyguardLayout#t
+.field public static final initialActivityCount:I = #attr@initialActivityCount#t
 
 .field public static final initialLayout:I = #attr@initialLayout#t
 
@@ -817,8 +867,6 @@
 
 .field public static final isSticky:I = #attr@isSticky#t
 
-.field public static final isolatedProcess:I = #attr@isolatedProcess#t
-
 .field public static final itemBackground:I = #attr@itemBackground#t
 
 .field public static final itemIconDisabledAlpha:I = #attr@itemIconDisabledAlpha#t
@@ -855,8 +903,6 @@
 
 .field public static final keyWidth:I = #attr@keyWidth#t
 
-.field public static final keyboardLayout:I = #attr@keyboardLayout#t
-
 .field public static final keyboardMode:I = #attr@keyboardMode#t
 
 .field public static final keyboardViewStyle:I = #attr@keyboardViewStyle#t
@@ -866,8 +912,6 @@
 .field public static final killAfterRestore:I = #attr@killAfterRestore#t
 
 .field public static final label:I = #attr@label#t
-
-.field public static final labelFor:I = #attr@labelFor#t
 
 .field public static final labelTextSize:I = #attr@labelTextSize#t
 
@@ -893,25 +937,17 @@
 
 .field public static final layout_alignBottom:I = #attr@layout_alignBottom#t
 
-.field public static final layout_alignEnd:I = #attr@layout_alignEnd#t
-
 .field public static final layout_alignLeft:I = #attr@layout_alignLeft#t
 
 .field public static final layout_alignParentBottom:I = #attr@layout_alignParentBottom#t
-
-.field public static final layout_alignParentEnd:I = #attr@layout_alignParentEnd#t
 
 .field public static final layout_alignParentLeft:I = #attr@layout_alignParentLeft#t
 
 .field public static final layout_alignParentRight:I = #attr@layout_alignParentRight#t
 
-.field public static final layout_alignParentStart:I = #attr@layout_alignParentStart#t
-
 .field public static final layout_alignParentTop:I = #attr@layout_alignParentTop#t
 
 .field public static final layout_alignRight:I = #attr@layout_alignRight#t
-
-.field public static final layout_alignStart:I = #attr@layout_alignStart#t
 
 .field public static final layout_alignTop:I = #attr@layout_alignTop#t
 
@@ -947,6 +983,8 @@
 
 .field public static final layout_marginTop:I = #attr@layout_marginTop#t
 
+.field public static final layout_removeBorders:I = #attr@layout_removeBorders#t
+
 .field public static final layout_row:I = #attr@layout_row#t
 
 .field public static final layout_rowSpan:I = #attr@layout_rowSpan#t
@@ -955,13 +993,9 @@
 
 .field public static final layout_span:I = #attr@layout_span#t
 
-.field public static final layout_toEndOf:I = #attr@layout_toEndOf#t
-
 .field public static final layout_toLeftOf:I = #attr@layout_toLeftOf#t
 
 .field public static final layout_toRightOf:I = #attr@layout_toRightOf#t
-
-.field public static final layout_toStartOf:I = #attr@layout_toStartOf#t
 
 .field public static final layout_weight:I = #attr@layout_weight#t
 
@@ -972,6 +1006,8 @@
 .field public static final layout_y:I = #attr@layout_y#t
 
 .field public static final left:I = #attr@left#t
+
+.field public static final leftChevronDrawable:I = #attr@leftChevronDrawable#t
 
 .field public static final lineSpacingExtra:I = #attr@lineSpacingExtra#t
 
@@ -991,6 +1027,10 @@
 
 .field public static final listDividerAlertDialog:I = #attr@listDividerAlertDialog#t
 
+.field public static final listItemLayout:I = #attr@listItemLayout#t
+
+.field public static final listLayout:I = #attr@listLayout#t
+
 .field public static final listPopupWindowStyle:I = #attr@listPopupWindowStyle#t
 
 .field public static final listPreferredItemHeight:I = #attr@listPreferredItemHeight#t
@@ -999,13 +1039,9 @@
 
 .field public static final listPreferredItemHeightSmall:I = #attr@listPreferredItemHeightSmall#t
 
-.field public static final listPreferredItemPaddingEnd:I = #attr@listPreferredItemPaddingEnd#t
-
 .field public static final listPreferredItemPaddingLeft:I = #attr@listPreferredItemPaddingLeft#t
 
 .field public static final listPreferredItemPaddingRight:I = #attr@listPreferredItemPaddingRight#t
-
-.field public static final listPreferredItemPaddingStart:I = #attr@listPreferredItemPaddingStart#t
 
 .field public static final listSelector:I = #attr@listSelector#t
 
@@ -1021,6 +1057,10 @@
 
 .field public static final loopViews:I = #attr@loopViews#t
 
+.field public static final majorWeightMax:I = #attr@majorWeightMax#t
+
+.field public static final majorWeightMin:I = #attr@majorWeightMin#t
+
 .field public static final manageSpaceActivity:I = #attr@manageSpaceActivity#t
 
 .field public static final mapViewStyle:I = #attr@mapViewStyle#t
@@ -1033,7 +1073,11 @@
 
 .field public static final maxEms:I = #attr@maxEms#t
 
+.field public static final maxFileSize:I = #attr@maxFileSize#t
+
 .field public static final maxHeight:I = #attr@maxHeight#t
+
+.field public static final maxItems:I = #attr@maxItems#t
 
 .field public static final maxItemsPerRow:I = #attr@maxItemsPerRow#t
 
@@ -1052,10 +1096,6 @@
 .field public static final measureAllChildren:I = #attr@measureAllChildren#t
 
 .field public static final measureWithLargestChild:I = #attr@measureWithLargestChild#t
-
-.field public static final mediaRouteButtonStyle:I = #attr@mediaRouteButtonStyle#t
-
-.field public static final mediaRouteTypes:I = #attr@mediaRouteTypes#t
 
 .field public static final menuCategory:I = #attr@menuCategory#t
 
@@ -1079,9 +1119,19 @@
 
 .field public static final minWidth:I = #attr@minWidth#t
 
+.field public static final minorWeightMax:I = #attr@minorWeightMax#t
+
+.field public static final minorWeightMin:I = #attr@minorWeightMin#t
+
 .field public static final mode:I = #attr@mode#t
 
 .field public static final moreIcon:I = #attr@moreIcon#t
+
+.field public static final mountPoint:I = #attr@mountPoint#t
+
+.field public static final mtpReserve:I = #attr@mtpReserve#t
+
+.field public static final multiChoiceItemLayout:I = #attr@multiChoiceItemLayout#t
 
 .field public static final multiprocess:I = #attr@multiprocess#t
 
@@ -1090,6 +1140,8 @@
 .field public static final navigationMode:I = #attr@navigationMode#t
 
 .field public static final negativeButtonText:I = #attr@negativeButtonText#t
+
+.field public static final neverEncrypt:I = #attr@neverEncrypt#t
 
 .field public static final nextFocusDown:I = #attr@nextFocusDown#t
 
@@ -1111,7 +1163,13 @@
 
 .field public static final numStars:I = #attr@numStars#t
 
+.field public static final numberPickerDownButtonStyle:I = #attr@numberPickerDownButtonStyle#t
+
+.field public static final numberPickerInputTextStyle:I = #attr@numberPickerInputTextStyle#t
+
 .field public static final numberPickerStyle:I = #attr@numberPickerStyle#t
+
+.field public static final numberPickerUpButtonStyle:I = #attr@numberPickerUpButtonStyle#t
 
 .field public static final numeric:I = #attr@numeric#t
     .annotation runtime Ljava/lang/Deprecated;
@@ -1137,6 +1195,8 @@
 .field public static final orientation:I = #attr@orientation#t
 
 .field public static final outAnimation:I = #attr@outAnimation#t
+
+.field public static final outerRadius:I = #attr@outerRadius#t
 
 .field public static final overScrollFooter:I = #attr@overScrollFooter#t
 
@@ -1170,9 +1230,13 @@
 
 .field public static final panelFullBackground:I = #attr@panelFullBackground#t
 
-.field public static final panelTextAppearance:I = #attr@panelTextAppearance#t
+.field public static final panelMenuIsCompact:I = #attr@panelMenuIsCompact#t
 
-.field public static final parentActivityName:I = #attr@parentActivityName#t
+.field public static final panelMenuListTheme:I = #attr@panelMenuListTheme#t
+
+.field public static final panelMenuListWidth:I = #attr@panelMenuListWidth#t
+
+.field public static final panelTextAppearance:I = #attr@panelTextAppearance#t
 
 .field public static final password:I = #attr@password#t
     .annotation runtime Ljava/lang/Deprecated;
@@ -1187,11 +1251,7 @@
 
 .field public static final permission:I = #attr@permission#t
 
-.field public static final permissionFlags:I = #attr@permissionFlags#t
-
 .field public static final permissionGroup:I = #attr@permissionGroup#t
-
-.field public static final permissionGroupFlags:I = #attr@permissionGroupFlags#t
 
 .field public static final persistent:I = #attr@persistent#t
 
@@ -1205,6 +1265,14 @@
 .field public static final pivotX:I = #attr@pivotX#t
 
 .field public static final pivotY:I = #attr@pivotY#t
+
+.field public static final pointerIconArrow:I = #attr@pointerIconArrow#t
+
+.field public static final pointerIconSpotAnchor:I = #attr@pointerIconSpotAnchor#t
+
+.field public static final pointerIconSpotHover:I = #attr@pointerIconSpotHover#t
+
+.field public static final pointerIconSpotTouch:I = #attr@pointerIconSpotTouch#t
 
 .field public static final pointerStyle:I = #attr@pointerStyle#t
 
@@ -1220,6 +1288,8 @@
 
 .field public static final popupMenuStyle:I = #attr@popupMenuStyle#t
 
+.field public static final popupPromptView:I = #attr@popupPromptView#t
+
 .field public static final popupWindowStyle:I = #attr@popupWindowStyle#t
 
 .field public static final port:I = #attr@port#t
@@ -1228,19 +1298,25 @@
 
 .field public static final preferenceCategoryStyle:I = #attr@preferenceCategoryStyle#t
 
+.field public static final preferenceFragmentStyle:I = #attr@preferenceFragmentStyle#t
+
 .field public static final preferenceFrameLayoutStyle:I = #attr@preferenceFrameLayoutStyle#t
 
 .field public static final preferenceInformationStyle:I = #attr@preferenceInformationStyle#t
 
 .field public static final preferenceLayoutChild:I = #attr@preferenceLayoutChild#t
 
+.field public static final preferencePanelStyle:I = #attr@preferencePanelStyle#t
+
 .field public static final preferenceScreenStyle:I = #attr@preferenceScreenStyle#t
 
 .field public static final preferenceStyle:I = #attr@preferenceStyle#t
 
-.field public static final presentationTheme:I = #attr@presentationTheme#t
+.field public static final preserveIconSpacing:I = #attr@preserveIconSpacing#t
 
 .field public static final previewImage:I = #attr@previewImage#t
+
+.field public static final primary:I = #attr@primary#t
 
 .field public static final priority:I = #attr@priority#t
 
@@ -1270,6 +1346,8 @@
 
 .field public static final progressDrawable:I = #attr@progressDrawable#t
 
+.field public static final progressLayout:I = #attr@progressLayout#t
+
 .field public static final prompt:I = #attr@prompt#t
 
 .field public static final propertyName:I = #attr@propertyName#t
@@ -1284,6 +1362,8 @@
 
 .field public static final queryHint:I = #attr@queryHint#t
 
+.field public static final quickContactBadgeOverlay:I = #attr@quickContactBadgeOverlay#t
+
 .field public static final quickContactBadgeStyleSmallWindowLarge:I = #attr@quickContactBadgeStyleSmallWindowLarge#t
 
 .field public static final quickContactBadgeStyleSmallWindowMedium:I = #attr@quickContactBadgeStyleSmallWindowMedium#t
@@ -1295,6 +1375,8 @@
 .field public static final quickContactBadgeStyleWindowMedium:I = #attr@quickContactBadgeStyleWindowMedium#t
 
 .field public static final quickContactBadgeStyleWindowSmall:I = #attr@quickContactBadgeStyleWindowSmall#t
+
+.field public static final quickContactWindowSize:I = #attr@quickContactWindowSize#t
 
 .field public static final radioButtonStyle:I = #attr@radioButtonStyle#t
 
@@ -1309,6 +1391,8 @@
 .field public static final ratingBarStyleSmall:I = #attr@ratingBarStyleSmall#t
 
 .field public static final readPermission:I = #attr@readPermission#t
+
+.field public static final removable:I = #attr@removable#t
 
 .field public static final repeatCount:I = #attr@repeatCount#t
 
@@ -1330,6 +1414,8 @@
 
 .field public static final requiresSmallestWidthDp:I = #attr@requiresSmallestWidthDp#t
 
+.field public static final resOutColor:I = #attr@resOutColor#t
+
 .field public static final resizeMode:I = #attr@resizeMode#t
 
 .field public static final resizeable:I = #attr@resizeable#t
@@ -1344,6 +1430,8 @@
 .end field
 
 .field public static final right:I = #attr@right#t
+
+.field public static final rightChevronDrawable:I = #attr@rightChevronDrawable#t
 
 .field public static final ringtonePreferenceStyle:I = #attr@ringtonePreferenceStyle#t
 
@@ -1426,7 +1514,11 @@
 
 .field public static final searchDialogTheme:I = #attr@searchDialogTheme#t
 
+.field public static final searchDropdownBackground:I = #attr@searchDropdownBackground#t
+
 .field public static final searchMode:I = #attr@searchMode#t
+
+.field public static final searchResultListItemHeight:I = #attr@searchResultListItemHeight#t
 
 .field public static final searchSettingsDescription:I = #attr@searchSettingsDescription#t
 
@@ -1442,7 +1534,23 @@
 
 .field public static final searchSuggestThreshold:I = #attr@searchSuggestThreshold#t
 
+.field public static final searchViewCloseIcon:I = #attr@searchViewCloseIcon#t
+
+.field public static final searchViewEditQuery:I = #attr@searchViewEditQuery#t
+
+.field public static final searchViewEditQueryBackground:I = #attr@searchViewEditQueryBackground#t
+
+.field public static final searchViewGoIcon:I = #attr@searchViewGoIcon#t
+
 .field public static final searchViewSearchIcon:I = #attr@searchViewSearchIcon#t
+
+.field public static final searchViewTextField:I = #attr@searchViewTextField#t
+
+.field public static final searchViewTextFieldRight:I = #attr@searchViewTextFieldRight#t
+
+.field public static final searchViewVoiceIcon:I = #attr@searchViewVoiceIcon#t
+
+.field public static final searchWidgetCorpusItemBackground:I = #attr@searchWidgetCorpusItemBackground#t
 
 .field public static final secondaryProgress:I = #attr@secondaryProgress#t
 
@@ -1459,6 +1567,10 @@
 .field public static final selectedDateVerticalBar:I = #attr@selectedDateVerticalBar#t
 
 .field public static final selectedWeekBackgroundColor:I = #attr@selectedWeekBackgroundColor#t
+
+.field public static final selectionDivider:I = #attr@selectionDivider#t
+
+.field public static final selectionDividerHeight:I = #attr@selectionDividerHeight#t
 
 .field public static final settingsActivity:I = #attr@settingsActivity#t
 
@@ -1486,8 +1598,6 @@
 
 .field public static final showDividers:I = #attr@showDividers#t
 
-.field public static final showOnLockScreen:I = #attr@showOnLockScreen#t
-
 .field public static final showSilent:I = #attr@showSilent#t
 
 .field public static final showWeekNumber:I = #attr@showWeekNumber#t
@@ -1496,18 +1606,20 @@
 
 .field public static final shrinkColumns:I = #attr@shrinkColumns#t
 
+.field public static final singleChoiceItemLayout:I = #attr@singleChoiceItemLayout#t
+
 .field public static final singleLine:I = #attr@singleLine#t
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 .end field
-
-.field public static final singleUser:I = #attr@singleUser#t
 
 .field public static final smallIcon:I = #attr@smallIcon#t
 
 .field public static final smallScreens:I = #attr@smallScreens#t
 
 .field public static final smoothScrollbar:I = #attr@smoothScrollbar#t
+
+.field public static final snapMargin:I = #attr@snapMargin#t
 
 .field public static final solidColor:I = #attr@solidColor#t
 
@@ -1540,9 +1652,6 @@
 .field public static final startOffset:I = #attr@startOffset#t
 
 .field public static final startYear:I = #attr@startYear#t
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end field
 
 .field public static final stateNotNeeded:I = #attr@stateNotNeeded#t
 
@@ -1596,6 +1705,8 @@
 
 .field public static final stopWithTask:I = #attr@stopWithTask#t
 
+.field public static final storageDescription:I = #attr@storageDescription#t
+
 .field public static final streamType:I = #attr@streamType#t
 
 .field public static final stretchColumns:I = #attr@stretchColumns#t
@@ -1607,8 +1718,6 @@
 .field public static final subtitleTextStyle:I = #attr@subtitleTextStyle#t
 
 .field public static final subtypeExtraValue:I = #attr@subtypeExtraValue#t
-
-.field public static final subtypeId:I = #attr@subtypeId#t
 
 .field public static final subtypeLocale:I = #attr@subtypeLocale#t
 
@@ -1623,8 +1732,6 @@
 .field public static final summaryOff:I = #attr@summaryOff#t
 
 .field public static final summaryOn:I = #attr@summaryOn#t
-
-.field public static final supportsRtl:I = #attr@supportsRtl#t
 
 .field public static final supportsUploading:I = #attr@supportsUploading#t
 
@@ -1644,6 +1751,8 @@
 
 .field public static final syncable:I = #attr@syncable#t
 
+.field public static final tabLayout:I = #attr@tabLayout#t
+
 .field public static final tabStripEnabled:I = #attr@tabStripEnabled#t
 
 .field public static final tabStripLeft:I = #attr@tabStripLeft#t
@@ -1659,6 +1768,8 @@
 .field public static final targetClass:I = #attr@targetClass#t
 
 .field public static final targetDescriptions:I = #attr@targetDescriptions#t
+
+.field public static final targetDrawables:I = #attr@targetDrawables#t
 
 .field public static final targetPackage:I = #attr@targetPackage#t
 
@@ -1687,8 +1798,6 @@
 .field public static final testOnly:I = #attr@testOnly#t
 
 .field public static final text:I = #attr@text#t
-
-.field public static final textAlignment:I = #attr@textAlignment#t
 
 .field public static final textAllCaps:I = #attr@textAllCaps#t
 
@@ -1812,6 +1921,10 @@
 
 .field public static final textSuggestionsWindowStyle:I = #attr@textSuggestionsWindowStyle#t
 
+.field public static final textUnderlineColor:I = #attr@textUnderlineColor#t
+
+.field public static final textUnderlineThickness:I = #attr@textUnderlineThickness#t
+
 .field public static final textViewStyle:I = #attr@textViewStyle#t
 
 .field public static final theme:I = #attr@theme#t
@@ -1831,8 +1944,6 @@
 .field public static final tileMode:I = #attr@tileMode#t
 
 .field public static final timePickerStyle:I = #attr@timePickerStyle#t
-
-.field public static final timeZone:I = #attr@timeZone#t
 
 .field public static final tint:I = #attr@tint#t
 
@@ -1854,9 +1965,13 @@
 
 .field public static final toYScale:I = #attr@toYScale#t
 
+.field public static final toastFrameBackground:I = #attr@toastFrameBackground#t
+
 .field public static final top:I = #attr@top#t
 
 .field public static final topBright:I = #attr@topBright#t
+
+.field public static final topChevronDrawable:I = #attr@topChevronDrawable#t
 
 .field public static final topDark:I = #attr@topDark#t
 
@@ -1920,9 +2035,13 @@
 
 .field public static final verticalGap:I = #attr@verticalGap#t
 
+.field public static final verticalOffset:I = #attr@verticalOffset#t
+
 .field public static final verticalScrollbarPosition:I = #attr@verticalScrollbarPosition#t
 
 .field public static final verticalSpacing:I = #attr@verticalSpacing#t
+
+.field public static final vibrationDuration:I = #attr@vibrationDuration#t
 
 .field public static final visibility:I = #attr@visibility#t
 
@@ -1956,6 +2075,8 @@
 
 .field public static final wallpaperOpenExitAnimation:I = #attr@wallpaperOpenExitAnimation#t
 
+.field public static final waveDrawable:I = #attr@waveDrawable#t
+
 .field public static final webTextViewStyle:I = #attr@webTextViewStyle#t
 
 .field public static final webViewStyle:I = #attr@webViewStyle#t
@@ -1967,8 +2088,6 @@
 .field public static final weekSeparatorLineColor:I = #attr@weekSeparatorLineColor#t
 
 .field public static final weightSum:I = #attr@weightSum#t
-
-.field public static final widgetCategory:I = #attr@widgetCategory#t
 
 .field public static final widgetLayout:I = #attr@widgetLayout#t
 
@@ -1996,14 +2115,6 @@
 
 .field public static final windowExitAnimation:I = #attr@windowExitAnimation#t
 
-.field public static final windowFixedHeightMajor:I = #attr@windowFixedHeightMajor#t
-
-.field public static final windowFixedHeightMinor:I = #attr@windowFixedHeightMinor#t
-
-.field public static final windowFixedWidthMajor:I = #attr@windowFixedWidthMajor#t
-
-.field public static final windowFixedWidthMinor:I = #attr@windowFixedWidthMinor#t
-
 .field public static final windowFrame:I = #attr@windowFrame#t
 
 .field public static final windowFullscreen:I = #attr@windowFullscreen#t
@@ -2027,6 +2138,8 @@
 .field public static final windowShowWallpaper:I = #attr@windowShowWallpaper#t
 
 .field public static final windowSoftInputMode:I = #attr@windowSoftInputMode#t
+
+.field public static final windowSplitActionBar:I = #attr@windowSplitActionBar#t
 
 .field public static final windowTitleBackgroundStyle:I = #attr@windowTitleBackgroundStyle#t
 
@@ -2052,8 +2165,8 @@
     .locals 0
 
     .prologue
-    .line 549
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 514
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

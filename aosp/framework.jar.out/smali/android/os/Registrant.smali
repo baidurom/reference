@@ -19,23 +19,23 @@
     .parameter "obj"
 
     .prologue
-    .line 33
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 30
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 34
+    .line 31
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Landroid/os/Registrant;->refH:Ljava/lang/ref/WeakReference;
 
-    .line 35
+    .line 32
     iput p2, p0, Landroid/os/Registrant;->what:I
 
-    .line 36
+    .line 33
     iput-object p3, p0, Landroid/os/Registrant;->userObj:Ljava/lang/Object;
 
-    .line 37
+    .line 34
     return-void
 .end method
 
@@ -47,13 +47,13 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 42
+    .line 39
     iput-object v0, p0, Landroid/os/Registrant;->refH:Ljava/lang/ref/WeakReference;
 
-    .line 43
+    .line 40
     iput-object v0, p0, Landroid/os/Registrant;->userObj:Ljava/lang/Object;
 
-    .line 44
+    .line 41
     return-void
 .end method
 
@@ -61,15 +61,15 @@
     .locals 1
 
     .prologue
-    .line 122
+    .line 114
     iget-object v0, p0, Landroid/os/Registrant;->refH:Ljava/lang/ref/WeakReference;
 
     if-nez v0, :cond_0
 
-    .line 123
+    .line 115
     const/4 v0, 0x0
 
-    .line 125
+    .line 117
     :goto_0
     return-object v0
 
@@ -86,103 +86,40 @@
 .end method
 
 .method internalNotifyRegistrant(Ljava/lang/Object;Ljava/lang/Throwable;)V
-    .locals 5
+    .locals 4
     .parameter "result"
     .parameter "exception"
 
     .prologue
-    .line 76
+    .line 73
     invoke-virtual {p0}, Landroid/os/Registrant;->getHandler()Landroid/os/Handler;
 
     move-result-object v0
 
-    .line 78
+    .line 75
     .local v0, h:Landroid/os/Handler;
     if-nez v0, :cond_0
 
-    .line 79
+    .line 76
     invoke-virtual {p0}, Landroid/os/Registrant;->clear()V
 
-    .line 82
-    const-string v2, "Registrant"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "internalNotifyRegistrant(): Warning! Handler is null, it could be already GCed. ( what="
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget v4, p0, Landroid/os/Registrant;->what:I
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ", userObj="
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget-object v4, p0, Landroid/os/Registrant;->userObj:Ljava/lang/Object;
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ", result="
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ", exception="
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, " )"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 92
+    .line 86
     :goto_0
     return-void
 
-    .line 84
+    .line 78
     :cond_0
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v1
 
-    .line 86
+    .line 80
     .local v1, msg:Landroid/os/Message;
     iget v2, p0, Landroid/os/Registrant;->what:I
 
     iput v2, v1, Landroid/os/Message;->what:I
 
-    .line 88
+    .line 82
     new-instance v2, Landroid/os/AsyncResult;
 
     iget-object v3, p0, Landroid/os/Registrant;->userObj:Ljava/lang/Object;
@@ -191,91 +128,48 @@
 
     iput-object v2, v1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 90
+    .line 84
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     goto :goto_0
 .end method
 
 .method public messageForRegistrant()Landroid/os/Message;
-    .locals 5
+    .locals 3
 
     .prologue
-    .line 101
+    .line 95
     invoke-virtual {p0}, Landroid/os/Registrant;->getHandler()Landroid/os/Handler;
 
     move-result-object v0
 
-    .line 103
+    .line 97
     .local v0, h:Landroid/os/Handler;
     if-nez v0, :cond_0
 
-    .line 104
+    .line 98
     invoke-virtual {p0}, Landroid/os/Registrant;->clear()V
 
-    .line 107
-    const-string v2, "Registrant"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v4, "messageForRegistrant(): Warning! Handler is null, it could be already GCed. ( what="
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget v4, p0, Landroid/os/Registrant;->what:I
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ", userObj="
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget-object v4, p0, Landroid/os/Registrant;->userObj:Ljava/lang/Object;
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, " )"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 108
+    .line 100
     const/4 v1, 0x0
 
-    .line 115
+    .line 107
     :goto_0
     return-object v1
 
-    .line 110
+    .line 102
     :cond_0
     invoke-virtual {v0}, Landroid/os/Handler;->obtainMessage()Landroid/os/Message;
 
     move-result-object v1
 
-    .line 112
+    .line 104
     .local v1, msg:Landroid/os/Message;
     iget v2, p0, Landroid/os/Registrant;->what:I
 
     iput v2, v1, Landroid/os/Message;->what:I
 
-    .line 113
+    .line 105
     iget-object v2, p0, Landroid/os/Registrant;->userObj:Ljava/lang/Object;
 
     iput-object v2, v1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -288,12 +182,12 @@
     .parameter "exception"
 
     .prologue
-    .line 61
+    .line 58
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0, p1}, Landroid/os/Registrant;->internalNotifyRegistrant(Ljava/lang/Object;Ljava/lang/Throwable;)V
 
-    .line 62
+    .line 59
     return-void
 .end method
 
@@ -303,10 +197,10 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 49
+    .line 46
     invoke-virtual {p0, v0, v0}, Landroid/os/Registrant;->internalNotifyRegistrant(Ljava/lang/Object;Ljava/lang/Throwable;)V
 
-    .line 50
+    .line 47
     return-void
 .end method
 
@@ -315,14 +209,14 @@
     .parameter "ar"
 
     .prologue
-    .line 70
+    .line 67
     iget-object v0, p1, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
 
     iget-object v1, p1, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
     invoke-virtual {p0, v0, v1}, Landroid/os/Registrant;->internalNotifyRegistrant(Ljava/lang/Object;Ljava/lang/Throwable;)V
 
-    .line 71
+    .line 68
     return-void
 .end method
 
@@ -331,11 +225,11 @@
     .parameter "result"
 
     .prologue
-    .line 55
+    .line 52
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Landroid/os/Registrant;->internalNotifyRegistrant(Ljava/lang/Object;Ljava/lang/Throwable;)V
 
-    .line 56
+    .line 53
     return-void
 .end method

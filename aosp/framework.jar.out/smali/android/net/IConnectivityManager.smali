@@ -15,14 +15,6 @@
 
 
 # virtual methods
-.method public abstract captivePortalCheckComplete(Landroid/net/NetworkInfo;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract establishVpn(Lcom/android/internal/net/VpnConfig;)Landroid/os/ParcelFileDescriptor;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -79,6 +71,14 @@
     .end annotation
 .end method
 
+.method public abstract getDataActivedSubscriberId()Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract getGlobalProxy()Landroid/net/ProxyProperties;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -119,7 +119,7 @@
     .end annotation
 .end method
 
-.method public abstract getMobileDataEnabledGemini(I)Z
+.method public abstract getMobileDataEnabledGemini(J)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -200,22 +200,6 @@
 .end method
 
 .method public abstract getTetheringErroredIfaces()[Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract getTetheringIpv6Enable()Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract isActiveNetworkMetered()Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -319,7 +303,7 @@
     .end annotation
 .end method
 
-.method public abstract setMobileDataEnabledGemini(I)Z
+.method public abstract setMobileDataEnabledGemini(J)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -359,30 +343,6 @@
     .end annotation
 .end method
 
-.method public abstract setTetheringIpv6Enable(Z)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setUsbInternet(Z)Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setUsbInternetWithType(ZI)Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract setUsbTethering(Z)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -391,7 +351,7 @@
     .end annotation
 .end method
 
-.method public abstract startLegacyVpn(Lcom/android/internal/net/VpnProfile;)V
+.method public abstract startLegacyVpn(Lcom/android/internal/net/VpnConfig;[Ljava/lang/String;[Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -440,14 +400,6 @@
 .end method
 
 .method public abstract untether(Ljava/lang/String;)I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract updateLockdownVpn()Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

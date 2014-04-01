@@ -1,4 +1,4 @@
-.class public final Lcom/android/server/pm/Installer;
+.class Lcom/android/server/pm/Installer;
 .super Ljava/lang/Object;
 .source "Installer.java"
 
@@ -22,12 +22,12 @@
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>()V
     .locals 1
 
     .prologue
     .line 28
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 39
     const/16 v0, 0x400
@@ -675,27 +675,27 @@
     .prologue
     const/16 v2, 0x20
 
-    .line 285
+    .line 272
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "rmuserdata"
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 286
+    .line 273
     .local v0, builder:Ljava/lang/StringBuilder;
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 287
+    .line 274
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 288
+    .line 275
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 289
+    .line 276
     invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 290
+    .line 277
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -705,64 +705,6 @@
     move-result v1
 
     return v1
-.end method
-
-.method public cloneUserData(IIZ)I
-    .locals 3
-    .parameter "srcUserId"
-    .parameter "targetUserId"
-    .parameter "copyData"
-
-    .prologue
-    const/16 v2, 0x20
-
-    .line 304
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "cloneuserdata"
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 305
-    .local v0, builder:Ljava/lang/StringBuilder;
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 306
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    .line 307
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 308
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    .line 309
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 310
-    if-eqz p3, :cond_0
-
-    const/16 v1, 0x31
-
-    :goto_0
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 311
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1}, Lcom/android/server/pm/Installer;->execute(Ljava/lang/String;)I
-
-    move-result v1
-
-    return v1
-
-    .line 310
-    :cond_0
-    const/16 v1, 0x30
-
-    goto :goto_0
 .end method
 
 .method public createUserData(Ljava/lang/String;II)I
@@ -774,33 +716,33 @@
     .prologue
     const/16 v2, 0x20
 
-    .line 267
+    .line 254
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "mkuserdata"
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 268
+    .line 255
     .local v0, builder:Ljava/lang/StringBuilder;
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 269
+    .line 256
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 270
+    .line 257
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 271
+    .line 258
     invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 272
+    .line 259
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 273
+    .line 260
     invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 274
+    .line 261
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -812,35 +754,28 @@
     return v1
 .end method
 
-.method public deleteCacheFiles(Ljava/lang/String;I)I
-    .locals 3
+.method public deleteCacheFiles(Ljava/lang/String;)I
+    .locals 2
     .parameter "name"
-    .parameter "userId"
 
     .prologue
-    const/16 v2, 0x20
-
-    .line 258
+    .line 247
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "rmcache"
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 259
+    .line 248
     .local v0, builder:Ljava/lang/StringBuilder;
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    const/16 v1, 0x20
 
-    .line 260
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 249
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 261
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 262
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    .line 263
+    .line 250
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -907,79 +842,32 @@
     goto :goto_0
 .end method
 
-.method public fixUid(Ljava/lang/String;II)I
-    .locals 3
-    .parameter "name"
-    .parameter "uid"
-    .parameter "gid"
-
-    .prologue
-    const/16 v2, 0x20
-
-    .line 247
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "fixuid"
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 248
-    .local v0, builder:Ljava/lang/StringBuilder;
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 249
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 250
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 251
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    .line 252
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 253
-    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    .line 254
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1}, Lcom/android/server/pm/Installer;->execute(Ljava/lang/String;)I
-
-    move-result v1
-
-    return v1
-.end method
-
 .method public freeCache(J)I
     .locals 2
     .parameter "freeStorageSize"
 
     .prologue
-    .line 323
+    .line 289
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "freecache"
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 324
+    .line 290
     .local v0, builder:Ljava/lang/StringBuilder;
     const/16 v1, 0x20
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 325
+    .line 291
     invoke-static {p1, p2}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 326
+    .line 292
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -991,10 +879,9 @@
     return v1
 .end method
 
-.method public getSizeInfo(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/content/pm/PackageStats;)I
+.method public getSizeInfo(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/content/pm/PackageStats;)I
     .locals 7
     .parameter "pkgName"
-    .parameter "persona"
     .parameter "apkPath"
     .parameter "fwdLockApkPath"
     .parameter "asecPath"
@@ -1005,53 +892,47 @@
 
     const/16 v6, 0x20
 
-    .line 331
+    .line 311
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v5, "getsize"
 
     invoke-direct {v0, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 332
+    .line 312
     .local v0, builder:Ljava/lang/StringBuilder;
     invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 333
+    .line 313
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 334
+    .line 314
     invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 335
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    .line 315
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 336
+    .line 316
     invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 337
+    .line 317
+    if-eqz p3, :cond_1
+
+    .end local p3
+    :goto_0
     invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 338
+    .line 318
     invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 339
-    if-eqz p4, :cond_1
+    .line 319
+    if-eqz p4, :cond_2
 
     .end local p4
-    :goto_0
+    :goto_1
     invoke-virtual {v0, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 340
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 341
-    if-eqz p5, :cond_2
-
-    .end local p5
-    :goto_1
-    invoke-virtual {v0, p5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 343
+    .line 321
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v5
@@ -1060,7 +941,7 @@
 
     move-result-object v3
 
-    .line 344
+    .line 322
     .local v3, s:Ljava/lang/String;
     const-string v5, " "
 
@@ -1068,7 +949,7 @@
 
     move-result-object v2
 
-    .line 346
+    .line 324
     .local v2, res:[Ljava/lang/String;
     if-eqz v2, :cond_0
 
@@ -1078,30 +959,30 @@
 
     if-eq v5, v6, :cond_3
 
-    .line 356
+    .line 334
     :cond_0
     :goto_2
     return v4
 
-    .line 339
+    .line 317
     .end local v2           #res:[Ljava/lang/String;
     .end local v3           #s:Ljava/lang/String;
+    .restart local p3
     .restart local p4
-    .restart local p5
     :cond_1
-    const-string p4, "!"
+    const-string p3, "!"
 
     goto :goto_0
 
-    .line 341
-    .end local p4
+    .line 319
+    .end local p3
     :cond_2
-    const-string p5, "!"
+    const-string p4, "!"
 
     goto :goto_1
 
-    .line 350
-    .end local p5
+    .line 328
+    .end local p4
     .restart local v2       #res:[Ljava/lang/String;
     .restart local v3       #s:Ljava/lang/String;
     :cond_3
@@ -1114,9 +995,9 @@
 
     move-result-wide v5
 
-    iput-wide v5, p6, Landroid/content/pm/PackageStats;->codeSize:J
+    iput-wide v5, p5, Landroid/content/pm/PackageStats;->codeSize:J
 
-    .line 351
+    .line 329
     const/4 v5, 0x2
 
     aget-object v5, v2, v5
@@ -1125,9 +1006,9 @@
 
     move-result-wide v5
 
-    iput-wide v5, p6, Landroid/content/pm/PackageStats;->dataSize:J
+    iput-wide v5, p5, Landroid/content/pm/PackageStats;->dataSize:J
 
-    .line 352
+    .line 330
     const/4 v5, 0x3
 
     aget-object v5, v2, v5
@@ -1136,9 +1017,9 @@
 
     move-result-wide v5
 
-    iput-wide v5, p6, Landroid/content/pm/PackageStats;->cacheSize:J
+    iput-wide v5, p5, Landroid/content/pm/PackageStats;->cacheSize:J
 
-    .line 353
+    .line 331
     const/4 v5, 0x4
 
     aget-object v5, v2, v5
@@ -1147,9 +1028,9 @@
 
     move-result-wide v5
 
-    iput-wide v5, p6, Landroid/content/pm/PackageStats;->externalCodeSize:J
+    iput-wide v5, p5, Landroid/content/pm/PackageStats;->externalCodeSize:J
 
-    .line 354
+    .line 332
     const/4 v5, 0x0
 
     aget-object v5, v2, v5
@@ -1162,11 +1043,11 @@
 
     goto :goto_2
 
-    .line 355
+    .line 333
     :catch_0
     move-exception v1
 
-    .line 356
+    .line 334
     .local v1, e:Ljava/lang/NumberFormatException;
     goto :goto_2
 .end method
@@ -1218,45 +1099,42 @@
     return v1
 .end method
 
-.method public linkNativeLibraryDirectory(Ljava/lang/String;Ljava/lang/String;I)I
+.method public linkNativeLibraryDirectory(Ljava/lang/String;Ljava/lang/String;)I
     .locals 4
     .parameter "dataPath"
     .parameter "nativeLibPath"
-    .parameter "userId"
 
     .prologue
-    const/16 v2, 0x20
-
     const/4 v1, -0x1
 
-    .line 373
+    .line 343
     if-nez p1, :cond_0
 
-    .line 374
+    .line 344
     const-string v2, "Installer"
 
-    const-string v3, "linkNativeLibraryDirectory dataPath is null"
+    const-string v3, "unlinkNativeLibraryDirectory dataPath is null"
 
     invoke-static {v2, v3}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 388
+    .line 356
     :goto_0
     return v1
 
-    .line 376
+    .line 346
     :cond_0
     if-nez p2, :cond_1
 
-    .line 377
+    .line 347
     const-string v2, "Installer"
 
-    const-string v3, "linkNativeLibraryDirectory nativeLibPath is null"
+    const-string v3, "unlinkNativeLibraryDirectory nativeLibPath is null"
 
     invoke-static {v2, v3}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 
-    .line 381
+    .line 351
     :cond_1
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1264,23 +1142,19 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 382
+    .line 352
     .local v0, builder:Ljava/lang/StringBuilder;
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 383
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    .line 353
+    const/16 v1, 0x20
 
-    .line 384
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 354
     invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 385
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 386
-    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    .line 388
+    .line 356
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -1296,7 +1170,7 @@
     .locals 1
 
     .prologue
-    .line 361
+    .line 339
     const-string v0, "movefiles"
 
     invoke-direct {p0, v0}, Lcom/android/server/pm/Installer;->execute(Ljava/lang/String;)I
@@ -1350,7 +1224,7 @@
     .locals 1
 
     .prologue
-    .line 315
+    .line 281
     const-string v0, "ping"
 
     invoke-direct {p0, v0}, Lcom/android/server/pm/Installer;->execute(Ljava/lang/String;)I
@@ -1359,10 +1233,10 @@
 
     if-gez v0, :cond_0
 
-    .line 316
+    .line 282
     const/4 v0, 0x0
 
-    .line 318
+    .line 284
     :goto_0
     return v0
 
@@ -1417,23 +1291,23 @@
     .parameter "userId"
 
     .prologue
-    .line 278
+    .line 265
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "rmuser"
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 279
+    .line 266
     .local v0, builder:Ljava/lang/StringBuilder;
     const/16 v1, 0x20
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 280
+    .line 267
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 281
+    .line 268
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -1516,4 +1390,90 @@
     move-result v1
 
     return v1
+.end method
+
+.method public setForwardLockPerm(Ljava/lang/String;I)I
+    .locals 3
+    .parameter "packagePathSuffix"
+    .parameter "gid"
+
+    .prologue
+    const/16 v2, 0x20
+
+    .line 301
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "protect"
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 302
+    .local v0, builder:Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 303
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 304
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 305
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    .line 306
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {p0, v1}, Lcom/android/server/pm/Installer;->execute(Ljava/lang/String;)I
+
+    move-result v1
+
+    return v1
+.end method
+
+.method public unlinkNativeLibraryDirectory(Ljava/lang/String;)I
+    .locals 3
+    .parameter "dataPath"
+
+    .prologue
+    .line 360
+    if-nez p1, :cond_0
+
+    .line 361
+    const-string v1, "Installer"
+
+    const-string v2, "unlinkNativeLibraryDirectory dataPath is null"
+
+    invoke-static {v1, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 362
+    const/4 v1, -0x1
+
+    .line 368
+    :goto_0
+    return v1
+
+    .line 365
+    :cond_0
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "unlinklib "
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 366
+    .local v0, builder:Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 368
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {p0, v1}, Lcom/android/server/pm/Installer;->execute(Ljava/lang/String;)I
+
+    move-result v1
+
+    goto :goto_0
 .end method

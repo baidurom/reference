@@ -23,15 +23,13 @@
 
 .field public number:Ljava/lang/String;
 
-.field public simId:I
-
 
 # direct methods
 .method private constructor <init>()V
     .locals 0
 
     .prologue
-    .line 101
+    .line 81
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -42,7 +40,7 @@
     .parameter "x0"
 
     .prologue
-    .line 101
+    .line 81
     invoke-direct {p0}, Lcom/android/internal/telephony/CallerInfoAsyncQuery$CookieWrapper;-><init>()V
 
     return-void

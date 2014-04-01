@@ -1,3 +1,3 @@
-Android Open Source Project 4.2
+Android Open Source Project 4.0
 
-This is decoded from original MTK 6592.
+This is decoded from ZTE V970

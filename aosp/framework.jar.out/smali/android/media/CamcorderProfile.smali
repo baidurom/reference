@@ -20,15 +20,11 @@
 
 .field public static final QUALITY_LOW:I = 0x0
 
-.field public static final QUALITY_MTK_1080P:I = 0x12
-
 .field public static final QUALITY_MTK_FINE:I = 0xb
-
-.field public static final QUALITY_MTK_H264_HIGH:I = 0x11
 
 .field public static final QUALITY_MTK_HIGH:I = 0xa
 
-.field public static final QUALITY_MTK_LIST_END:I = 0x12
+.field public static final QUALITY_MTK_LIST_END:I = 0x10
 
 .field public static final QUALITY_MTK_LIVE_EFFECT:I = 0x10
 
@@ -44,7 +40,7 @@
 
 .field public static final QUALITY_MTK_NIGHT_MEDIUM:I = 0xd
 
-.field private static final QUALITY_MTK_TIME_LAPSE_LIST_END:I = 0x3fa
+.field private static final QUALITY_MTK_TIME_LAPSE_LIST_END:I = 0x3f8
 
 .field public static final QUALITY_MTK_TIME_LAPSE_LIVE_EFFECT:I = 0x3f8
 
@@ -104,15 +100,15 @@
     .locals 1
 
     .prologue
-    .line 364
+    .line 378
     const-string/jumbo v0, "media_jni"
 
     invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 
-    .line 365
+    .line 379
     invoke-static {}, Landroid/media/CamcorderProfile;->native_init()V
 
-    .line 366
+    .line 380
     return-void
 .end method
 
@@ -132,46 +128,46 @@
     .parameter "audioChannels"
 
     .prologue
-    .line 380
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 394
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 382
+    .line 396
     iput p1, p0, Landroid/media/CamcorderProfile;->duration:I
 
-    .line 383
+    .line 397
     iput p2, p0, Landroid/media/CamcorderProfile;->quality:I
 
-    .line 384
+    .line 398
     iput p3, p0, Landroid/media/CamcorderProfile;->fileFormat:I
 
-    .line 385
+    .line 399
     iput p4, p0, Landroid/media/CamcorderProfile;->videoCodec:I
 
-    .line 386
+    .line 400
     iput p5, p0, Landroid/media/CamcorderProfile;->videoBitRate:I
 
-    .line 387
+    .line 401
     iput p6, p0, Landroid/media/CamcorderProfile;->videoFrameRate:I
 
-    .line 388
+    .line 402
     iput p7, p0, Landroid/media/CamcorderProfile;->videoFrameWidth:I
 
-    .line 389
+    .line 403
     iput p8, p0, Landroid/media/CamcorderProfile;->videoFrameHeight:I
 
-    .line 390
+    .line 404
     iput p9, p0, Landroid/media/CamcorderProfile;->audioCodec:I
 
-    .line 391
+    .line 405
     iput p10, p0, Landroid/media/CamcorderProfile;->audioBitRate:I
 
-    .line 392
+    .line 406
     iput p11, p0, Landroid/media/CamcorderProfile;->audioSampleRate:I
 
-    .line 393
+    .line 407
     iput p12, p0, Landroid/media/CamcorderProfile;->audioChannels:I
 
-    .line 394
+    .line 408
     return-void
 .end method
 
@@ -180,18 +176,18 @@
     .parameter "quality"
 
     .prologue
-    .line 274
+    .line 260
     invoke-static {}, Landroid/hardware/Camera;->getNumberOfCameras()I
 
     move-result v2
 
-    .line 275
+    .line 261
     .local v2, numberOfCameras:I
     new-instance v0, Landroid/hardware/Camera$CameraInfo;
 
     invoke-direct {v0}, Landroid/hardware/Camera$CameraInfo;-><init>()V
 
-    .line 276
+    .line 262
     .local v0, cameraInfo:Landroid/hardware/Camera$CameraInfo;
     const/4 v1, 0x0
 
@@ -199,30 +195,30 @@
     :goto_0
     if-ge v1, v2, :cond_1
 
-    .line 277
+    .line 263
     invoke-static {v1, v0}, Landroid/hardware/Camera;->getCameraInfo(ILandroid/hardware/Camera$CameraInfo;)V
 
-    .line 278
+    .line 264
     iget v3, v0, Landroid/hardware/Camera$CameraInfo;->facing:I
 
     if-nez v3, :cond_0
 
-    .line 279
+    .line 265
     invoke-static {v1, p0}, Landroid/media/CamcorderProfile;->get(II)Landroid/media/CamcorderProfile;
 
     move-result-object v3
 
-    .line 282
+    .line 268
     :goto_1
     return-object v3
 
-    .line 276
+    .line 262
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 282
+    .line 268
     :cond_1
     const/4 v3, 0x0
 
@@ -235,7 +231,7 @@
     .parameter "quality"
 
     .prologue
-    .line 325
+    .line 311
     if-ltz p1, :cond_0
 
     const/4 v1, 0x7
@@ -251,7 +247,7 @@
 
     if-le p1, v1, :cond_2
 
-    .line 329
+    .line 315
     :cond_1
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -271,7 +267,7 @@
 
     move-result-object v0
 
-    .line 330
+    .line 316
     .local v0, errMessage:Ljava/lang/String;
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
@@ -279,7 +275,121 @@
 
     throw v1
 
-    .line 332
+    .line 318
+    .end local v0           #errMessage:Ljava/lang/String;
+    :cond_2
+    invoke-static {p0, p1}, Landroid/media/CamcorderProfile;->native_get_camcorder_profile(II)Landroid/media/CamcorderProfile;
+
+    move-result-object v1
+
+    return-object v1
+.end method
+
+.method public static getMtk(I)Landroid/media/CamcorderProfile;
+    .locals 4
+    .parameter "quality"
+
+    .prologue
+    .line 325
+    invoke-static {}, Landroid/hardware/Camera;->getNumberOfCameras()I
+
+    move-result v2
+
+    .line 326
+    .local v2, numberOfCameras:I
+    new-instance v0, Landroid/hardware/Camera$CameraInfo;
+
+    invoke-direct {v0}, Landroid/hardware/Camera$CameraInfo;-><init>()V
+
+    .line 327
+    .local v0, cameraInfo:Landroid/hardware/Camera$CameraInfo;
+    const/4 v1, 0x0
+
+    .local v1, i:I
+    :goto_0
+    if-ge v1, v2, :cond_1
+
+    .line 328
+    invoke-static {v1, v0}, Landroid/hardware/Camera;->getCameraInfo(ILandroid/hardware/Camera$CameraInfo;)V
+
+    .line 329
+    iget v3, v0, Landroid/hardware/Camera$CameraInfo;->facing:I
+
+    if-nez v3, :cond_0
+
+    .line 330
+    invoke-static {v1, p0}, Landroid/media/CamcorderProfile;->getMtk(II)Landroid/media/CamcorderProfile;
+
+    move-result-object v3
+
+    .line 333
+    :goto_1
+    return-object v3
+
+    .line 327
+    :cond_0
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    .line 333
+    :cond_1
+    const/4 v3, 0x0
+
+    goto :goto_1
+.end method
+
+.method public static getMtk(II)Landroid/media/CamcorderProfile;
+    .locals 3
+    .parameter "cameraId"
+    .parameter "quality"
+
+    .prologue
+    .line 340
+    if-ltz p1, :cond_0
+
+    const/16 v1, 0x10
+
+    if-le p1, v1, :cond_2
+
+    :cond_0
+    const/16 v1, 0x3e8
+
+    if-lt p1, v1, :cond_1
+
+    const/16 v1, 0x3f8
+
+    if-le p1, v1, :cond_2
+
+    .line 344
+    :cond_1
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Unsupported quality level: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 345
+    .local v0, errMessage:Ljava/lang/String;
+    new-instance v1, Ljava/lang/IllegalArgumentException;
+
+    invoke-direct {v1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    .line 347
     .end local v0           #errMessage:Ljava/lang/String;
     :cond_2
     invoke-static {p0, p1}, Landroid/media/CamcorderProfile;->native_get_camcorder_profile(II)Landroid/media/CamcorderProfile;
@@ -294,18 +404,18 @@
     .parameter "quality"
 
     .prologue
-    .line 342
+    .line 356
     invoke-static {}, Landroid/hardware/Camera;->getNumberOfCameras()I
 
     move-result v2
 
-    .line 343
+    .line 357
     .local v2, numberOfCameras:I
     new-instance v0, Landroid/hardware/Camera$CameraInfo;
 
     invoke-direct {v0}, Landroid/hardware/Camera$CameraInfo;-><init>()V
 
-    .line 344
+    .line 358
     .local v0, cameraInfo:Landroid/hardware/Camera$CameraInfo;
     const/4 v1, 0x0
 
@@ -313,30 +423,30 @@
     :goto_0
     if-ge v1, v2, :cond_1
 
-    .line 345
+    .line 359
     invoke-static {v1, v0}, Landroid/hardware/Camera;->getCameraInfo(ILandroid/hardware/Camera$CameraInfo;)V
 
-    .line 346
+    .line 360
     iget v3, v0, Landroid/hardware/Camera$CameraInfo;->facing:I
 
     if-nez v3, :cond_0
 
-    .line 347
+    .line 361
     invoke-static {v1, p0}, Landroid/media/CamcorderProfile;->hasProfile(II)Z
 
     move-result v3
 
-    .line 350
+    .line 364
     :goto_1
     return v3
 
-    .line 344
+    .line 358
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 350
+    .line 364
     :cond_1
     const/4 v3, 0x0
 
@@ -349,7 +459,7 @@
     .parameter "quality"
 
     .prologue
-    .line 360
+    .line 374
     invoke-static {p0, p1}, Landroid/media/CamcorderProfile;->native_has_camcorder_profile(II)Z
 
     move-result v0

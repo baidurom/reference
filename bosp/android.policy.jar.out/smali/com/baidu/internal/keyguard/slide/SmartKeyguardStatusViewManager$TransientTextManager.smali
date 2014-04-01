@@ -44,12 +44,12 @@
     .parameter "textView"
 
     .prologue
-    .line 163
+    .line 264
     iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;->this$0:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 161
+    .line 262
     new-instance v0, Ljava/util/ArrayList;
 
     const/4 v1, 0x5
@@ -58,30 +58,30 @@
 
     iput-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;->mMessages:Ljava/util/ArrayList;
 
-    .line 164
+    .line 265
     iput-object p2, p0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;->mTextView:Landroid/widget/TextView;
 
-    .line 165
+    .line 266
     return-void
 .end method
 
-.method static synthetic access$000(Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;)Ljava/util/ArrayList;
+.method static synthetic access$200(Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;)Ljava/util/ArrayList;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 151
+    .line 252
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;->mMessages:Ljava/util/ArrayList;
 
     return-object v0
 .end method
 
-.method static synthetic access$200(Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;)Landroid/widget/TextView;
+.method static synthetic access$400(Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;)Landroid/widget/TextView;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 151
+    .line 252
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;->mTextView:Landroid/widget/TextView;
 
     return-object v0
@@ -98,37 +98,37 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 172
+    .line 273
     iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;->mTextView:Landroid/widget/TextView;
 
     if-nez v1, :cond_0
 
-    .line 197
+    .line 298
     :goto_0
     return-void
 
-    .line 175
+    .line 276
     :cond_0
     iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v1, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 176
+    .line 277
     iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v1, p2, v2, v2, v2}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
 
-    .line 177
+    .line 278
     new-instance v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager$Data;
 
     invoke-direct {v0, p0, p1, p2}, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager$Data;-><init>(Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;Ljava/lang/CharSequence;I)V
 
-    .line 178
+    .line 279
     .local v0, data:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager$Data;
     iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$TransientTextManager;->this$0:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;
 
     #getter for: Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;->mContainer:Landroid/view/View;
-    invoke-static {v1}, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;->access$300(Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;)Landroid/view/View;
+    invoke-static {v1}, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;->access$500(Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;)Landroid/view/View;
 
     move-result-object v1
 

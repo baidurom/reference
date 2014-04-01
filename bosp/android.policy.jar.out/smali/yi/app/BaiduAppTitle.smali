@@ -66,12 +66,12 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 46
-    const v0, 0x309002c
+    const v0, 0x4090031
 
     iput v0, p0, Lyi/app/BaiduAppTitle;->mResourceId:I
 
     .line 47
-    const v0, 0x309002d
+    const v0, 0x4090032
 
     iput v0, p0, Lyi/app/BaiduAppTitle;->mBtnGrpResourceId:I
 
@@ -269,7 +269,7 @@
     :cond_2
     iget-object v0, p0, Lyi/app/BaiduAppTitle;->mActivity:Landroid/app/Activity;
 
-    const v1, 0x302000b
+    const v1, 0x402000b
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 
@@ -282,7 +282,7 @@
     .line 90
     iget-object v0, p0, Lyi/app/BaiduAppTitle;->mActivity:Landroid/app/Activity;
 
-    const v1, 0x302000c
+    const v1, 0x402000c
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 
@@ -308,7 +308,7 @@
     .line 92
     iget-object v0, p0, Lyi/app/BaiduAppTitle;->mActivity:Landroid/app/Activity;
 
-    const v1, 0x302000a
+    const v1, 0x402000a
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 
@@ -319,7 +319,7 @@
     .line 93
     iget-object v0, p0, Lyi/app/BaiduAppTitle;->mActivity:Landroid/app/Activity;
 
-    const v1, 0x302000d
+    const v1, 0x402000d
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 
@@ -891,7 +891,7 @@
     .line 181
     iget-object v4, p0, Lyi/app/BaiduAppTitle;->mActivity:Landroid/app/Activity;
 
-    const v5, 0x302000a
+    const v5, 0x402000a
 
     invoke-virtual {v4, v5}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 
@@ -945,7 +945,7 @@
     :cond_2
     iget-object v4, p0, Lyi/app/BaiduAppTitle;->mActivity:Landroid/app/Activity;
 
-    const v5, 0x302000d
+    const v5, 0x402000d
 
     invoke-virtual {v4, v5}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 

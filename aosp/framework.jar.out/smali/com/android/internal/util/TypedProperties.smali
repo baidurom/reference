@@ -277,7 +277,7 @@
 
     .line 121
     :cond_4
-    const-string/jumbo v0, "long"
+    const-string v0, "long"
 
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1563,7 +1563,7 @@
     :cond_1
     new-instance v1, Lcom/android/internal/util/TypedProperties$TypeException;
 
-    const-string/jumbo v2, "long"
+    const-string v2, "long"
 
     invoke-direct {v1, p1, v0, v2}, Lcom/android/internal/util/TypedProperties$TypeException;-><init>(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/String;)V
 

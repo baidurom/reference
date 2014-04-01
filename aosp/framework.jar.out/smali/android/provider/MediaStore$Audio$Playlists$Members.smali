@@ -36,8 +36,8 @@
     .locals 0
 
     .prologue
-    .line 1651
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 1610
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -48,7 +48,7 @@
     .parameter "playlistId"
 
     .prologue
-    .line 1654
+    .line 1613
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -100,7 +100,7 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 1668
+    .line 1627
     const-string v2, "external"
 
     invoke-static {v2, p1, p2}, Landroid/provider/MediaStore$Audio$Playlists$Members;->getContentUri(Ljava/lang/String;J)Landroid/net/Uri;
@@ -131,13 +131,13 @@
 
     move-result-object v0
 
-    .line 1674
+    .line 1633
     .local v0, uri:Landroid/net/Uri;
     new-instance v1, Landroid/content/ContentValues;
 
     invoke-direct {v1}, Landroid/content/ContentValues;-><init>()V
 
-    .line 1675
+    .line 1634
     .local v1, values:Landroid/content/ContentValues;
     const-string/jumbo v2, "play_order"
 
@@ -147,7 +147,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 1676
+    .line 1635
     invoke-virtual {p0, v0, v1, v5, v5}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
     move-result v2

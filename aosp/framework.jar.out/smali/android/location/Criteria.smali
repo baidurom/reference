@@ -79,7 +79,7 @@
     const/4 v0, 0x0
 
     .line 100
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 84
     iput v0, p0, Landroid/location/Criteria;->mHorizontalAccuracy:I
@@ -120,7 +120,7 @@
     const/4 v0, 0x0
 
     .line 105
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 84
     iput v0, p0, Landroid/location/Criteria;->mHorizontalAccuracy:I
@@ -306,109 +306,13 @@
     return p1
 .end method
 
-.method private static accuracyToString(I)Ljava/lang/String;
-    .locals 1
-    .parameter "accuracy"
-
-    .prologue
-    .line 384
-    packed-switch p0, :pswitch_data_0
-
-    .line 394
-    const-string v0, "???"
-
-    :goto_0
-    return-object v0
-
-    .line 386
-    :pswitch_0
-    const-string v0, "---"
-
-    goto :goto_0
-
-    .line 388
-    :pswitch_1
-    const-string v0, "HIGH"
-
-    goto :goto_0
-
-    .line 390
-    :pswitch_2
-    const-string v0, "MEDIUM"
-
-    goto :goto_0
-
-    .line 392
-    :pswitch_3
-    const-string v0, "LOW"
-
-    goto :goto_0
-
-    .line 384
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
-.end method
-
-.method private static powerToString(I)Ljava/lang/String;
-    .locals 1
-    .parameter "power"
-
-    .prologue
-    .line 369
-    packed-switch p0, :pswitch_data_0
-
-    .line 379
-    const-string v0, "???"
-
-    :goto_0
-    return-object v0
-
-    .line 371
-    :pswitch_0
-    const-string v0, "NO_REQ"
-
-    goto :goto_0
-
-    .line 373
-    :pswitch_1
-    const-string v0, "LOW"
-
-    goto :goto_0
-
-    .line 375
-    :pswitch_2
-    const-string v0, "MEDIUM"
-
-    goto :goto_0
-
-    .line 377
-    :pswitch_3
-    const-string v0, "HIGH"
-
-    goto :goto_0
-
-    .line 369
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-        :pswitch_3
-    .end packed-switch
-.end method
-
 
 # virtual methods
 .method public describeContents()I
     .locals 1
 
     .prologue
-    .line 352
+    .line 349
     const/4 v0, 0x0
 
     return v0
@@ -866,59 +770,6 @@
     return-void
 .end method
 
-.method public toString()Ljava/lang/String;
-    .locals 3
-
-    .prologue
-    .line 400
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    .line 401
-    .local v0, s:Ljava/lang/StringBuilder;
-    const-string v1, "Criteria[power="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, Landroid/location/Criteria;->mPowerRequirement:I
-
-    invoke-static {v2}, Landroid/location/Criteria;->powerToString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 402
-    const-string v1, " acc="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, Landroid/location/Criteria;->mHorizontalAccuracy:I
-
-    invoke-static {v2}, Landroid/location/Criteria;->accuracyToString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 403
-    const/16 v1, 0x5d
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 404
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    return-object v1
-.end method
-
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 3
     .parameter "parcel"
@@ -929,32 +780,32 @@
 
     const/4 v2, 0x0
 
-    .line 357
+    .line 353
     iget v0, p0, Landroid/location/Criteria;->mHorizontalAccuracy:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 358
+    .line 354
     iget v0, p0, Landroid/location/Criteria;->mVerticalAccuracy:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 359
+    .line 355
     iget v0, p0, Landroid/location/Criteria;->mSpeedAccuracy:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 360
+    .line 356
     iget v0, p0, Landroid/location/Criteria;->mBearingAccuracy:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 361
+    .line 357
     iget v0, p0, Landroid/location/Criteria;->mPowerRequirement:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 362
+    .line 358
     iget-boolean v0, p0, Landroid/location/Criteria;->mAltitudeRequired:Z
 
     if-eqz v0, :cond_0
@@ -964,7 +815,7 @@
     :goto_0
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 363
+    .line 359
     iget-boolean v0, p0, Landroid/location/Criteria;->mBearingRequired:Z
 
     if-eqz v0, :cond_1
@@ -974,7 +825,7 @@
     :goto_1
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 364
+    .line 360
     iget-boolean v0, p0, Landroid/location/Criteria;->mSpeedRequired:Z
 
     if-eqz v0, :cond_2
@@ -984,7 +835,7 @@
     :goto_2
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 365
+    .line 361
     iget-boolean v0, p0, Landroid/location/Criteria;->mCostAllowed:Z
 
     if-eqz v0, :cond_3
@@ -992,30 +843,30 @@
     :goto_3
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 366
+    .line 362
     return-void
 
     :cond_0
     move v0, v2
 
-    .line 362
+    .line 358
     goto :goto_0
 
     :cond_1
     move v0, v2
 
-    .line 363
+    .line 359
     goto :goto_1
 
     :cond_2
     move v0, v2
 
-    .line 364
+    .line 360
     goto :goto_2
 
     :cond_3
     move v1, v2
 
-    .line 365
+    .line 361
     goto :goto_3
 .end method

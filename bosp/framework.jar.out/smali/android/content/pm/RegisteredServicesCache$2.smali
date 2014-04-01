@@ -1,11 +1,14 @@
 .class Landroid/content/pm/RegisteredServicesCache$2;
-.super Landroid/content/BroadcastReceiver;
+.super Ljava/lang/Object;
 .source "RegisteredServicesCache.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/content/pm/RegisteredServicesCache;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Landroid/content/pm/RegisteredServicesCache;->notifyListener(Ljava/lang/Object;Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,39 +20,53 @@
 # instance fields
 .field final synthetic this$0:Landroid/content/pm/RegisteredServicesCache;
 
+.field final synthetic val$listener2:Landroid/content/pm/RegisteredServicesCacheListener;
+
+.field final synthetic val$removed:Z
+
+.field final synthetic val$type:Ljava/lang/Object;
+
 
 # direct methods
-.method constructor <init>(Landroid/content/pm/RegisteredServicesCache;)V
+.method constructor <init>(Landroid/content/pm/RegisteredServicesCache;Landroid/content/pm/RegisteredServicesCacheListener;Ljava/lang/Object;Z)V
     .locals 0
+    .parameter
+    .parameter
+    .parameter
     .parameter
 
     .prologue
-    .line 153
+    .line 169
     .local p0, this:Landroid/content/pm/RegisteredServicesCache$2;,"Landroid/content/pm/RegisteredServicesCache.2;"
     iput-object p1, p0, Landroid/content/pm/RegisteredServicesCache$2;->this$0:Landroid/content/pm/RegisteredServicesCache;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    iput-object p2, p0, Landroid/content/pm/RegisteredServicesCache$2;->val$listener2:Landroid/content/pm/RegisteredServicesCacheListener;
+
+    iput-object p3, p0, Landroid/content/pm/RegisteredServicesCache$2;->val$type:Ljava/lang/Object;
+
+    iput-boolean p4, p0, Landroid/content/pm/RegisteredServicesCache$2;->val$removed:Z
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 2
-    .parameter "context"
-    .parameter "intent"
+.method public run()V
+    .locals 3
 
     .prologue
-    .line 157
+    .line 171
     .local p0, this:Landroid/content/pm/RegisteredServicesCache$2;,"Landroid/content/pm/RegisteredServicesCache.2;"
-    iget-object v0, p0, Landroid/content/pm/RegisteredServicesCache$2;->this$0:Landroid/content/pm/RegisteredServicesCache;
+    iget-object v0, p0, Landroid/content/pm/RegisteredServicesCache$2;->val$listener2:Landroid/content/pm/RegisteredServicesCacheListener;
 
-    const/4 v1, 0x0
+    iget-object v1, p0, Landroid/content/pm/RegisteredServicesCache$2;->val$type:Ljava/lang/Object;
 
-    #calls: Landroid/content/pm/RegisteredServicesCache;->generateServicesMap(I)V
-    invoke-static {v0, v1}, Landroid/content/pm/RegisteredServicesCache;->access$100(Landroid/content/pm/RegisteredServicesCache;I)V
+    iget-boolean v2, p0, Landroid/content/pm/RegisteredServicesCache$2;->val$removed:Z
 
-    .line 158
+    invoke-interface {v0, v1, v2}, Landroid/content/pm/RegisteredServicesCacheListener;->onServiceChanged(Ljava/lang/Object;Z)V
+
+    .line 172
     return-void
 .end method

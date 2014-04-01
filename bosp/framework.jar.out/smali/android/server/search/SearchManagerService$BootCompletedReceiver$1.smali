@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 118
+    .line 91
     iput-object p1, p0, Landroid/server/search/SearchManagerService$BootCompletedReceiver$1;->this$1:Landroid/server/search/SearchManagerService$BootCompletedReceiver;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
@@ -38,18 +38,18 @@
     .locals 2
 
     .prologue
-    .line 121
+    .line 94
     const/16 v0, 0xa
 
     invoke-static {v0}, Landroid/os/Process;->setThreadPriority(I)V
 
-    .line 122
+    .line 95
     iget-object v0, p0, Landroid/server/search/SearchManagerService$BootCompletedReceiver$1;->this$1:Landroid/server/search/SearchManagerService$BootCompletedReceiver;
 
     iget-object v0, v0, Landroid/server/search/SearchManagerService$BootCompletedReceiver;->this$0:Landroid/server/search/SearchManagerService;
 
     #getter for: Landroid/server/search/SearchManagerService;->mContext:Landroid/content/Context;
-    invoke-static {v0}, Landroid/server/search/SearchManagerService;->access$200(Landroid/server/search/SearchManagerService;)Landroid/content/Context;
+    invoke-static {v0}, Landroid/server/search/SearchManagerService;->access$100(Landroid/server/search/SearchManagerService;)Landroid/content/Context;
 
     move-result-object v0
 
@@ -57,16 +57,14 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 123
+    .line 96
     iget-object v0, p0, Landroid/server/search/SearchManagerService$BootCompletedReceiver$1;->this$1:Landroid/server/search/SearchManagerService$BootCompletedReceiver;
 
     iget-object v0, v0, Landroid/server/search/SearchManagerService$BootCompletedReceiver;->this$0:Landroid/server/search/SearchManagerService;
 
-    const/4 v1, 0x0
+    #calls: Landroid/server/search/SearchManagerService;->getSearchables()Landroid/server/search/Searchables;
+    invoke-static {v0}, Landroid/server/search/SearchManagerService;->access$200(Landroid/server/search/SearchManagerService;)Landroid/server/search/Searchables;
 
-    #calls: Landroid/server/search/SearchManagerService;->getSearchables(I)Landroid/server/search/Searchables;
-    invoke-static {v0, v1}, Landroid/server/search/SearchManagerService;->access$300(Landroid/server/search/SearchManagerService;I)Landroid/server/search/Searchables;
-
-    .line 124
+    .line 97
     return-void
 .end method

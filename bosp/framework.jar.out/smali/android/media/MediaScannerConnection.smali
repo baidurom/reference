@@ -29,7 +29,7 @@
 
 .field private mContext:Landroid/content/Context;
 
-.field private final mListener:Landroid/media/IMediaScannerListener$Stub;
+.field private mListener:Landroid/media/IMediaScannerListener$Stub;
 
 .field private mService:Landroid/media/IMediaScannerService;
 

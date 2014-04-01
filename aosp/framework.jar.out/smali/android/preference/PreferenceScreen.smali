@@ -30,137 +30,117 @@
     .parameter "attrs"
 
     .prologue
-    .line 101
+    .line 93
     const v0, #attr@preferenceScreenStyle#t
 
     invoke-direct {p0, p1, p2, v0}, Landroid/preference/PreferenceGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 102
+    .line 94
     return-void
 .end method
 
 .method private showDialog(Landroid/os/Bundle;)V
-    .locals 7
+    .locals 5
     .parameter "state"
 
     .prologue
-    const/4 v6, 0x0
-
-    .line 160
+    .line 152
     invoke-virtual {p0}, Landroid/preference/PreferenceScreen;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    .line 161
-    .local v1, context:Landroid/content/Context;
-    iget-object v5, p0, Landroid/preference/PreferenceScreen;->mListView:Landroid/widget/ListView;
-
-    if-eqz v5, :cond_0
-
-    .line 162
-    iget-object v5, p0, Landroid/preference/PreferenceScreen;->mListView:Landroid/widget/ListView;
-
-    invoke-virtual {v5, v6}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
-
-    .line 165
-    :cond_0
-    const-string v5, "layout_inflater"
-
-    invoke-virtual {v1, v5}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Landroid/view/LayoutInflater;
-
-    .line 167
-    .local v3, inflater:Landroid/view/LayoutInflater;
-    const v5, #layout@preference_list_fragment#t
-
-    invoke-virtual {v3, v5, v6}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v0
 
-    .line 169
-    .local v0, childPrefScreen:Landroid/view/View;
-    const v5, #id@list#t
+    .line 153
+    .local v0, context:Landroid/content/Context;
+    iget-object v3, p0, Landroid/preference/PreferenceScreen;->mListView:Landroid/widget/ListView;
 
-    invoke-virtual {v0, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    if-eqz v3, :cond_0
 
-    move-result-object v5
+    .line 154
+    iget-object v3, p0, Landroid/preference/PreferenceScreen;->mListView:Landroid/widget/ListView;
 
-    check-cast v5, Landroid/widget/ListView;
+    const/4 v4, 0x0
 
-    iput-object v5, p0, Landroid/preference/PreferenceScreen;->mListView:Landroid/widget/ListView;
+    invoke-virtual {v3, v4}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
-    .line 170
-    iget-object v5, p0, Landroid/preference/PreferenceScreen;->mListView:Landroid/widget/ListView;
+    .line 156
+    :cond_0
+    new-instance v3, Landroid/widget/ListView;
 
-    invoke-virtual {p0, v5}, Landroid/preference/PreferenceScreen;->bind(Landroid/widget/ListView;)V
+    invoke-direct {v3, v0}, Landroid/widget/ListView;-><init>(Landroid/content/Context;)V
 
-    .line 173
+    iput-object v3, p0, Landroid/preference/PreferenceScreen;->mListView:Landroid/widget/ListView;
+
+    .line 157
+    iget-object v3, p0, Landroid/preference/PreferenceScreen;->mListView:Landroid/widget/ListView;
+
+    invoke-virtual {p0, v3}, Landroid/preference/PreferenceScreen;->bind(Landroid/widget/ListView;)V
+
+    .line 160
     invoke-virtual {p0}, Landroid/preference/PreferenceScreen;->getTitle()Ljava/lang/CharSequence;
 
-    move-result-object v4
+    move-result-object v2
 
-    .line 174
-    .local v4, title:Ljava/lang/CharSequence;
-    new-instance v2, Landroid/app/Dialog;
+    .line 161
+    .local v2, title:Ljava/lang/CharSequence;
+    new-instance v1, Landroid/app/Dialog;
 
-    invoke-virtual {v1}, Landroid/content/Context;->getThemeResId()I
+    invoke-virtual {v0}, Landroid/content/Context;->getThemeResId()I
 
-    move-result v5
+    move-result v3
 
-    invoke-direct {v2, v1, v5}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
+    invoke-direct {v1, v0, v3}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
-    iput-object v2, p0, Landroid/preference/PreferenceScreen;->mDialog:Landroid/app/Dialog;
+    iput-object v1, p0, Landroid/preference/PreferenceScreen;->mDialog:Landroid/app/Dialog;
 
-    .line 175
-    .local v2, dialog:Landroid/app/Dialog;
-    invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    .line 162
+    .local v1, dialog:Landroid/app/Dialog;
+    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v5
+    move-result v3
 
-    if-eqz v5, :cond_2
+    if-eqz v3, :cond_2
 
-    .line 176
-    invoke-virtual {v2}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
+    .line 163
+    invoke-virtual {v1}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
-    move-result-object v5
+    move-result-object v3
 
-    const/4 v6, 0x1
+    const/4 v4, 0x1
 
-    invoke-virtual {v5, v6}, Landroid/view/Window;->requestFeature(I)Z
+    invoke-virtual {v3, v4}, Landroid/view/Window;->requestFeature(I)Z
 
-    .line 180
+    .line 167
     :goto_0
-    invoke-virtual {v2, v0}, Landroid/app/Dialog;->setContentView(Landroid/view/View;)V
+    iget-object v3, p0, Landroid/preference/PreferenceScreen;->mListView:Landroid/widget/ListView;
 
-    .line 181
-    invoke-virtual {v2, p0}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
+    invoke-virtual {v1, v3}, Landroid/app/Dialog;->setContentView(Landroid/view/View;)V
 
-    .line 182
+    .line 168
+    invoke-virtual {v1, p0}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
+
+    .line 169
     if-eqz p1, :cond_1
 
-    .line 183
-    invoke-virtual {v2, p1}, Landroid/app/Dialog;->onRestoreInstanceState(Landroid/os/Bundle;)V
+    .line 170
+    invoke-virtual {v1, p1}, Landroid/app/Dialog;->onRestoreInstanceState(Landroid/os/Bundle;)V
 
-    .line 187
+    .line 174
     :cond_1
     invoke-virtual {p0}, Landroid/preference/PreferenceScreen;->getPreferenceManager()Landroid/preference/PreferenceManager;
 
-    move-result-object v5
+    move-result-object v3
 
-    invoke-virtual {v5, v2}, Landroid/preference/PreferenceManager;->addPreferencesScreen(Landroid/content/DialogInterface;)V
+    invoke-virtual {v3, v1}, Landroid/preference/PreferenceManager;->addPreferencesScreen(Landroid/content/DialogInterface;)V
 
-    .line 189
-    invoke-virtual {v2}, Landroid/app/Dialog;->show()V
+    .line 176
+    invoke-virtual {v1}, Landroid/app/Dialog;->show()V
 
-    .line 190
+    .line 177
     return-void
 
-    .line 178
+    .line 165
     :cond_2
-    invoke-virtual {v2, v4}, Landroid/app/Dialog;->setTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v2}, Landroid/app/Dialog;->setTitle(Ljava/lang/CharSequence;)V
 
     goto :goto_0
 .end method
@@ -172,20 +152,20 @@
     .parameter "listView"
 
     .prologue
-    .line 144
+    .line 136
     invoke-virtual {p1, p0}, Landroid/widget/ListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
-    .line 145
+    .line 137
     invoke-virtual {p0}, Landroid/preference/PreferenceScreen;->getRootAdapter()Landroid/widget/ListAdapter;
 
     move-result-object v0
 
     invoke-virtual {p1, v0}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
-    .line 147
+    .line 139
     invoke-virtual {p0}, Landroid/preference/PreferenceScreen;->onAttachedToActivity()V
 
-    .line 148
+    .line 140
     return-void
 .end method
 
@@ -193,7 +173,7 @@
     .locals 1
 
     .prologue
-    .line 203
+    .line 190
     iget-object v0, p0, Landroid/preference/PreferenceScreen;->mDialog:Landroid/app/Dialog;
 
     return-object v0
@@ -203,19 +183,19 @@
     .locals 1
 
     .prologue
-    .line 119
+    .line 111
     iget-object v0, p0, Landroid/preference/PreferenceScreen;->mRootAdapter:Landroid/widget/ListAdapter;
 
     if-nez v0, :cond_0
 
-    .line 120
+    .line 112
     invoke-virtual {p0}, Landroid/preference/PreferenceScreen;->onCreateRootAdapter()Landroid/widget/ListAdapter;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/preference/PreferenceScreen;->mRootAdapter:Landroid/widget/ListAdapter;
 
-    .line 123
+    .line 115
     :cond_0
     iget-object v0, p0, Landroid/preference/PreferenceScreen;->mRootAdapter:Landroid/widget/ListAdapter;
 
@@ -226,7 +206,7 @@
     .locals 1
 
     .prologue
-    .line 220
+    .line 207
     const/4 v0, 0x0
 
     return v0
@@ -236,7 +216,7 @@
     .locals 1
 
     .prologue
-    .line 152
+    .line 144
     invoke-virtual {p0}, Landroid/preference/PreferenceScreen;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
@@ -255,12 +235,12 @@
 
     if-nez v0, :cond_1
 
-    .line 157
+    .line 149
     :cond_0
     :goto_0
     return-void
 
-    .line 156
+    .line 148
     :cond_1
     const/4 v0, 0x0
 
@@ -273,7 +253,7 @@
     .locals 1
 
     .prologue
-    .line 133
+    .line 125
     new-instance v0, Landroid/preference/PreferenceGroupAdapter;
 
     invoke-direct {v0, p0}, Landroid/preference/PreferenceGroupAdapter;-><init>(Landroid/preference/PreferenceGroup;)V
@@ -286,19 +266,19 @@
     .parameter "dialog"
 
     .prologue
-    .line 193
+    .line 180
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/preference/PreferenceScreen;->mDialog:Landroid/app/Dialog;
 
-    .line 194
+    .line 181
     invoke-virtual {p0}, Landroid/preference/PreferenceScreen;->getPreferenceManager()Landroid/preference/PreferenceManager;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/preference/PreferenceManager;->removePreferencesScreen(Landroid/content/DialogInterface;)V
 
-    .line 195
+    .line 182
     return-void
 .end method
 
@@ -310,12 +290,12 @@
     .parameter "id"
 
     .prologue
-    .line 208
+    .line 195
     instance-of v2, p1, Landroid/widget/ListView;
 
     if-eqz v2, :cond_0
 
-    .line 209
+    .line 196
     check-cast p1, Landroid/widget/ListView;
 
     .end local p1
@@ -325,7 +305,7 @@
 
     sub-int/2addr p3, v2
 
-    .line 211
+    .line 198
     :cond_0
     invoke-virtual {p0}, Landroid/preference/PreferenceScreen;->getRootAdapter()Landroid/widget/ListAdapter;
 
@@ -335,23 +315,23 @@
 
     move-result-object v0
 
-    .line 212
+    .line 199
     .local v0, item:Ljava/lang/Object;
     instance-of v2, v0, Landroid/preference/Preference;
 
     if-nez v2, :cond_1
 
-    .line 216
+    .line 203
     :goto_0
     return-void
 
     :cond_1
     move-object v1, v0
 
-    .line 214
+    .line 201
     check-cast v1, Landroid/preference/Preference;
 
-    .line 215
+    .line 202
     .local v1, preference:Landroid/preference/Preference;
     invoke-virtual {v1, p0}, Landroid/preference/Preference;->performClick(Landroid/preference/PreferenceScreen;)V
 
@@ -363,7 +343,7 @@
     .parameter "state"
 
     .prologue
-    .line 239
+    .line 226
     if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -378,11 +358,11 @@
 
     if-nez v1, :cond_2
 
-    .line 241
+    .line 228
     :cond_0
     invoke-super {p0, p1}, Landroid/preference/PreferenceGroup;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
-    .line 250
+    .line 237
     :cond_1
     :goto_0
     return-void
@@ -390,10 +370,10 @@
     :cond_2
     move-object v0, p1
 
-    .line 245
+    .line 232
     check-cast v0, Landroid/preference/PreferenceScreen$SavedState;
 
-    .line 246
+    .line 233
     .local v0, myState:Landroid/preference/PreferenceScreen$SavedState;
     invoke-virtual {v0}, Landroid/preference/PreferenceScreen$SavedState;->getSuperState()Landroid/os/Parcelable;
 
@@ -401,12 +381,12 @@
 
     invoke-super {p0, v1}, Landroid/preference/PreferenceGroup;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
-    .line 247
+    .line 234
     iget-boolean v1, v0, Landroid/preference/PreferenceScreen$SavedState;->isDialogShowing:Z
 
     if-eqz v1, :cond_1
 
-    .line 248
+    .line 235
     iget-object v1, v0, Landroid/preference/PreferenceScreen$SavedState;->dialogBundle:Landroid/os/Bundle;
 
     invoke-direct {p0, v1}, Landroid/preference/PreferenceScreen;->showDialog(Landroid/os/Bundle;)V
@@ -418,16 +398,16 @@
     .locals 4
 
     .prologue
-    .line 225
+    .line 212
     invoke-super {p0}, Landroid/preference/PreferenceGroup;->onSaveInstanceState()Landroid/os/Parcelable;
 
     move-result-object v2
 
-    .line 226
+    .line 213
     .local v2, superState:Landroid/os/Parcelable;
     iget-object v0, p0, Landroid/preference/PreferenceScreen;->mDialog:Landroid/app/Dialog;
 
-    .line 227
+    .line 214
     .local v0, dialog:Landroid/app/Dialog;
     if-eqz v0, :cond_0
 
@@ -440,23 +420,23 @@
     :cond_0
     move-object v1, v2
 
-    .line 234
+    .line 221
     :goto_0
     return-object v1
 
-    .line 231
+    .line 218
     :cond_1
     new-instance v1, Landroid/preference/PreferenceScreen$SavedState;
 
     invoke-direct {v1, v2}, Landroid/preference/PreferenceScreen$SavedState;-><init>(Landroid/os/Parcelable;)V
 
-    .line 232
+    .line 219
     .local v1, myState:Landroid/preference/PreferenceScreen$SavedState;
     const/4 v3, 0x1
 
     iput-boolean v3, v1, Landroid/preference/PreferenceScreen$SavedState;->isDialogShowing:Z
 
-    .line 233
+    .line 220
     invoke-virtual {v0}, Landroid/app/Dialog;->onSaveInstanceState()Landroid/os/Bundle;
 
     move-result-object v3

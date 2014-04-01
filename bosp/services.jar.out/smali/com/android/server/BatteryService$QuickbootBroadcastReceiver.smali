@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 251
+    .line 220
     iput-object p1, p0, Lcom/android/server/BatteryService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/BatteryService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -44,7 +44,7 @@
 
     const/4 v2, 0x0
 
-    .line 254
+    .line 223
     const-string v3, "android.intent.action.ACTION_QUICKBOOT_SHUTDOWN"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -57,30 +57,30 @@
 
     if-eqz v3, :cond_3
 
-    .line 255
+    .line 224
     iget-object v3, p0, Lcom/android/server/BatteryService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/BatteryService;
 
     #setter for: Lcom/android/server/BatteryService;->mIsQbShutdown:Z
-    invoke-static {v3, v1}, Lcom/android/server/BatteryService;->access$002(Lcom/android/server/BatteryService;Z)Z
+    invoke-static {v3, v1}, Lcom/android/server/BatteryService;->access$502(Lcom/android/server/BatteryService;Z)Z
 
-    .line 257
+    .line 226
     iget-object v3, p0, Lcom/android/server/BatteryService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/BatteryService;
 
     #getter for: Lcom/android/server/BatteryService;->mQuickBoot:Lcom/baidu/service/IQuickBootService;
-    invoke-static {v3}, Lcom/android/server/BatteryService;->access$100(Lcom/android/server/BatteryService;)Lcom/baidu/service/IQuickBootService;
+    invoke-static {v3}, Lcom/android/server/BatteryService;->access$600(Lcom/android/server/BatteryService;)Lcom/baidu/service/IQuickBootService;
 
     move-result-object v3
 
     if-nez v3, :cond_0
 
-    .line 258
+    .line 227
     const-string v3, "QuickBootService"
 
     invoke-static {v3}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 259
+    .line 228
     .local v0, b:Landroid/os/IBinder;
     iget-object v3, p0, Lcom/android/server/BatteryService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/BatteryService;
 
@@ -89,9 +89,9 @@
     move-result-object v4
 
     #setter for: Lcom/android/server/BatteryService;->mQuickBoot:Lcom/baidu/service/IQuickBootService;
-    invoke-static {v3, v4}, Lcom/android/server/BatteryService;->access$102(Lcom/android/server/BatteryService;Lcom/baidu/service/IQuickBootService;)Lcom/baidu/service/IQuickBootService;
+    invoke-static {v3, v4}, Lcom/android/server/BatteryService;->access$602(Lcom/android/server/BatteryService;Lcom/baidu/service/IQuickBootService;)Lcom/baidu/service/IQuickBootService;
 
-    .line 262
+    .line 231
     .end local v0           #b:Landroid/os/IBinder;
     :cond_0
     iget-object v3, p0, Lcom/android/server/BatteryService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/BatteryService;
@@ -99,14 +99,14 @@
     iget-object v4, p0, Lcom/android/server/BatteryService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/BatteryService;
 
     #getter for: Lcom/android/server/BatteryService;->mBatteryLevel:I
-    invoke-static {v4}, Lcom/android/server/BatteryService;->access$200(Lcom/android/server/BatteryService;)I
+    invoke-static {v4}, Lcom/android/server/BatteryService;->access$700(Lcom/android/server/BatteryService;)I
 
     move-result v4
 
     iget-object v5, p0, Lcom/android/server/BatteryService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/BatteryService;
 
     #getter for: Lcom/android/server/BatteryService;->mPlugType:I
-    invoke-static {v5}, Lcom/android/server/BatteryService;->access$300(Lcom/android/server/BatteryService;)I
+    invoke-static {v5}, Lcom/android/server/BatteryService;->access$800(Lcom/android/server/BatteryService;)I
 
     move-result v5
 
@@ -114,19 +114,19 @@
 
     :goto_0
     #calls: Lcom/android/server/BatteryService;->notifyQbService(IZ)V
-    invoke-static {v3, v4, v1}, Lcom/android/server/BatteryService;->access$400(Lcom/android/server/BatteryService;IZ)V
+    invoke-static {v3, v4, v1}, Lcom/android/server/BatteryService;->access$900(Lcom/android/server/BatteryService;IZ)V
 
-    .line 265
+    .line 234
     iget-object v1, p0, Lcom/android/server/BatteryService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/BatteryService;
 
     #getter for: Lcom/android/server/BatteryService;->mLed:Lcom/android/server/BatteryService$Led;
-    invoke-static {v1}, Lcom/android/server/BatteryService;->access$500(Lcom/android/server/BatteryService;)Lcom/android/server/BatteryService$Led;
+    invoke-static {v1}, Lcom/android/server/BatteryService;->access$1000(Lcom/android/server/BatteryService;)Lcom/android/server/BatteryService$Led;
 
     move-result-object v1
 
     invoke-virtual {v1}, Lcom/android/server/BatteryService$Led;->updateQbLights()V
 
-    .line 272
+    .line 240
     :cond_1
     :goto_1
     return-void
@@ -134,10 +134,10 @@
     :cond_2
     move v1, v2
 
-    .line 262
+    .line 231
     goto :goto_0
 
-    .line 266
+    .line 235
     :cond_3
     const-string v1, "android.intent.action.ACTION_QUICKBOOT_BOOT"
 
@@ -151,32 +151,32 @@
 
     if-eqz v1, :cond_1
 
-    .line 267
+    .line 236
     iget-object v1, p0, Lcom/android/server/BatteryService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/BatteryService;
 
     #setter for: Lcom/android/server/BatteryService;->mIsQbShutdown:Z
-    invoke-static {v1, v2}, Lcom/android/server/BatteryService;->access$002(Lcom/android/server/BatteryService;Z)Z
+    invoke-static {v1, v2}, Lcom/android/server/BatteryService;->access$502(Lcom/android/server/BatteryService;Z)Z
 
-    .line 268
+    .line 237
     iget-object v1, p0, Lcom/android/server/BatteryService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/BatteryService;
 
     iget-object v2, p0, Lcom/android/server/BatteryService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/BatteryService;
 
     #getter for: Lcom/android/server/BatteryService;->mLowBatteryWarningLevel:I
-    invoke-static {v2}, Lcom/android/server/BatteryService;->access$700(Lcom/android/server/BatteryService;)I
+    invoke-static {v2}, Lcom/android/server/BatteryService;->access$300(Lcom/android/server/BatteryService;)I
 
     move-result v2
 
     add-int/lit8 v2, v2, 0x1
 
     #setter for: Lcom/android/server/BatteryService;->mLastBatteryLevel:I
-    invoke-static {v1, v2}, Lcom/android/server/BatteryService;->access$602(Lcom/android/server/BatteryService;I)I
+    invoke-static {v1, v2}, Lcom/android/server/BatteryService;->access$202(Lcom/android/server/BatteryService;I)I
 
-    .line 269
+    .line 238
     iget-object v1, p0, Lcom/android/server/BatteryService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/BatteryService;
 
-    #calls: Lcom/android/server/BatteryService;->updateLocked()V
-    invoke-static {v1}, Lcom/android/server/BatteryService;->access$800(Lcom/android/server/BatteryService;)V
+    #calls: Lcom/android/server/BatteryService;->update()V
+    invoke-static {v1}, Lcom/android/server/BatteryService;->access$400(Lcom/android/server/BatteryService;)V
 
     goto :goto_1
 .end method

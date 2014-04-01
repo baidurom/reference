@@ -18,7 +18,7 @@
     .locals 0
 
     .prologue
-    .line 31
+    .line 27
     invoke-direct {p0}, Landroid/app/Activity;-><init>()V
 
     return-void
@@ -29,7 +29,7 @@
     .parameter "x0"
 
     .prologue
-    .line 31
+    .line 27
     iget-boolean v0, p0, Lcom/android/server/ShutdownActivity;->mReboot:Z
 
     return v0
@@ -40,7 +40,7 @@
     .parameter "x0"
 
     .prologue
-    .line 31
+    .line 27
     iget-boolean v0, p0, Lcom/android/server/ShutdownActivity;->mConfirm:Z
 
     return v0
@@ -53,19 +53,19 @@
     .parameter "savedInstanceState"
 
     .prologue
-    .line 39
+    .line 35
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 41
+    .line 37
     invoke-virtual {p0}, Lcom/android/server/ShutdownActivity;->getIntent()Landroid/content/Intent;
 
-    move-result-object v0
+    move-result-object v1
 
-    .line 42
-    .local v0, intent:Landroid/content/Intent;
+    .line 38
+    .local v1, intent:Landroid/content/Intent;
     const-string v2, "android.intent.action.REBOOT"
 
-    invoke-virtual {v0}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    invoke-virtual {v1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v3
 
@@ -75,18 +75,18 @@
 
     iput-boolean v2, p0, Lcom/android/server/ShutdownActivity;->mReboot:Z
 
-    .line 43
+    .line 39
     const-string v2, "android.intent.extra.KEY_CONFIRM"
 
     const/4 v3, 0x0
 
-    invoke-virtual {v0, v2, v3}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+    invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
     move-result v2
 
     iput-boolean v2, p0, Lcom/android/server/ShutdownActivity;->mConfirm:Z
 
-    .line 44
+    .line 40
     const-string v2, "ShutdownActivity"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -111,33 +111,33 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 46
-    new-instance v1, Lcom/android/server/ShutdownActivity$1;
+    .line 42
+    new-instance v0, Landroid/os/Handler;
 
-    const-string v2, "ShutdownActivity"
+    invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
-    invoke-direct {v1, p0, v2}, Lcom/android/server/ShutdownActivity$1;-><init>(Lcom/android/server/ShutdownActivity;Ljava/lang/String;)V
+    .line 43
+    .local v0, h:Landroid/os/Handler;
+    new-instance v2, Lcom/android/server/ShutdownActivity$1;
 
-    .line 61
-    .local v1, thr:Ljava/lang/Thread;
-    invoke-virtual {v1}, Ljava/lang/Thread;->start()V
+    invoke-direct {v2, p0}, Lcom/android/server/ShutdownActivity$1;-><init>(Lcom/android/server/ShutdownActivity;)V
 
-    .line 62
-    invoke-virtual {p0}, Lcom/android/server/ShutdownActivity;->finish()V
+    invoke-virtual {v0, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 65
-    :try_start_0
-    invoke-virtual {v1}, Ljava/lang/Thread;->join()V
-    :try_end_0
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 68
-    :goto_0
+    .line 52
     return-void
+.end method
 
-    .line 66
-    :catch_0
-    move-exception v2
+.method protected onDestroy()V
+    .locals 0
 
-    goto :goto_0
+    .prologue
+    .line 55
+    invoke-super {p0}, Landroid/app/Activity;->onDestroy()V
+
+    .line 56
+    invoke-static {}, Lcom/android/internal/app/ShutdownThread;->dismissDialog()V
+
+    .line 57
+    return-void
 .end method

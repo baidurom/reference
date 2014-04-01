@@ -43,7 +43,7 @@
 
     .prologue
     .line 57
-    const v0, 0x301005c
+    const v0, 0x401005c
 
     invoke-direct {p0, p1, p2, v0}, Lyi/widget/BaiduEditText;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -62,7 +62,7 @@
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/EditText;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     .line 35
-    const v0, 0x3080150
+    const v0, 0x408017e
 
     iput v0, p0, Lyi/widget/BaiduEditText;->mDeleteIcon:I
 

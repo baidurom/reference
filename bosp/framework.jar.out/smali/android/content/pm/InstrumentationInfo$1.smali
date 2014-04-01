@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 101
+    .line 105
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .parameter "source"
 
     .prologue
-    .line 103
+    .line 107
     new-instance v0, Landroid/content/pm/InstrumentationInfo;
 
     const/4 v1, 0x0
@@ -60,7 +60,7 @@
     .parameter "x0"
 
     .prologue
-    .line 101
+    .line 105
     invoke-virtual {p0, p1}, Landroid/content/pm/InstrumentationInfo$1;->createFromParcel(Landroid/os/Parcel;)Landroid/content/pm/InstrumentationInfo;
 
     move-result-object v0
@@ -73,7 +73,7 @@
     .parameter "size"
 
     .prologue
-    .line 106
+    .line 110
     new-array v0, p1, [Landroid/content/pm/InstrumentationInfo;
 
     return-object v0
@@ -84,7 +84,7 @@
     .parameter "x0"
 
     .prologue
-    .line 101
+    .line 105
     invoke-virtual {p0, p1}, Landroid/content/pm/InstrumentationInfo$1;->newArray(I)[Landroid/content/pm/InstrumentationInfo;
 
     move-result-object v0

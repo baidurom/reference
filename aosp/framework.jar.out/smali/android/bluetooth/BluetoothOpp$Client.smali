@@ -20,12 +20,12 @@
     .parameter "context"
 
     .prologue
-    .line 55
+    .line 57
     const-class v0, Landroid/bluetooth/BluetoothOpp$Client;
 
     invoke-direct {p0, p1, v0}, Landroid/bluetooth/BluetoothProxy;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 56
+    .line 58
     return-void
 .end method
 
@@ -35,7 +35,7 @@
     .locals 0
 
     .prologue
-    .line 51
+    .line 53
     invoke-super {p0}, Landroid/bluetooth/BluetoothProxy;->close()V
 
     return-void
@@ -46,7 +46,7 @@
     .parameter "x0"
 
     .prologue
-    .line 51
+    .line 53
     invoke-super {p0, p1}, Landroid/bluetooth/BluetoothProxy;->connect(Landroid/bluetooth/BluetoothDevice;)Z
 
     move-result v0
@@ -59,7 +59,7 @@
     .parameter "x0"
 
     .prologue
-    .line 51
+    .line 53
     invoke-super {p0, p1}, Landroid/bluetooth/BluetoothProxy;->disconnect(Landroid/bluetooth/BluetoothDevice;)Z
 
     move-result v0
@@ -71,7 +71,7 @@
     .locals 1
 
     .prologue
-    .line 51
+    .line 53
     invoke-super {p0}, Landroid/bluetooth/BluetoothProxy;->getConnectedDevices()Ljava/util/Set;
 
     move-result-object v0
@@ -84,7 +84,7 @@
     .parameter "x0"
 
     .prologue
-    .line 51
+    .line 53
     invoke-super {p0, p1}, Landroid/bluetooth/BluetoothProxy;->getState(Landroid/bluetooth/BluetoothDevice;)I
 
     move-result v0

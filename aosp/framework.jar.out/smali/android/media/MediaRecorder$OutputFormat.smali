@@ -33,8 +33,6 @@
 
 .field public static final OUTPUT_FORMAT_RTP_AVP:I = 0x7
 
-.field public static final OUTPUT_FORMAT_WAV:I = 0x9
-
 .field public static final RAW_AMR:I = 0x3
 
 .field public static final THREE_GPP:I = 0x1
@@ -50,10 +48,10 @@
     .parameter
 
     .prologue
-    .line 238
+    .line 220
     iput-object p1, p0, Landroid/media/MediaRecorder$OutputFormat;->this$0:Landroid/media/MediaRecorder;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

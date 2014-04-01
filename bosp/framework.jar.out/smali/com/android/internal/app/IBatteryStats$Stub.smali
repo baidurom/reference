@@ -58,6 +58,14 @@
 
 .field static final TRANSACTION_notePhoneState:I = 0x13
 
+.field static final TRANSACTION_noteScanWifiLockAcquired:I = 0x1d
+
+.field static final TRANSACTION_noteScanWifiLockAcquiredFromSource:I = 0x23
+
+.field static final TRANSACTION_noteScanWifiLockReleased:I = 0x1e
+
+.field static final TRANSACTION_noteScanWifiLockReleasedFromSource:I = 0x24
+
 .field static final TRANSACTION_noteScreenBrightness:I = 0xb
 
 .field static final TRANSACTION_noteScreenOff:I = 0xc
@@ -97,14 +105,6 @@
 .field static final TRANSACTION_noteWifiRunning:I = 0x16
 
 .field static final TRANSACTION_noteWifiRunningChanged:I = 0x17
-
-.field static final TRANSACTION_noteWifiScanStarted:I = 0x1d
-
-.field static final TRANSACTION_noteWifiScanStartedFromSource:I = 0x23
-
-.field static final TRANSACTION_noteWifiScanStopped:I = 0x1e
-
-.field static final TRANSACTION_noteWifiScanStoppedFromSource:I = 0x24
 
 .field static final TRANSACTION_noteWifiStopped:I = 0x18
 
@@ -1026,7 +1026,7 @@
 
     .line 352
     .restart local v1       #_arg0:I
-    invoke-virtual {p0, v1}, Lcom/android/internal/app/IBatteryStats$Stub;->noteWifiScanStarted(I)V
+    invoke-virtual {p0, v1}, Lcom/android/internal/app/IBatteryStats$Stub;->noteScanWifiLockAcquired(I)V
 
     .line 353
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
@@ -1047,7 +1047,7 @@
 
     .line 361
     .restart local v1       #_arg0:I
-    invoke-virtual {p0, v1}, Lcom/android/internal/app/IBatteryStats$Stub;->noteWifiScanStopped(I)V
+    invoke-virtual {p0, v1}, Lcom/android/internal/app/IBatteryStats$Stub;->noteScanWifiLockReleased(I)V
 
     .line 362
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
@@ -1204,7 +1204,7 @@
     .line 421
     .restart local v1       #_arg0:Landroid/os/WorkSource;
     :goto_b
-    invoke-virtual {p0, v1}, Lcom/android/internal/app/IBatteryStats$Stub;->noteWifiScanStartedFromSource(Landroid/os/WorkSource;)V
+    invoke-virtual {p0, v1}, Lcom/android/internal/app/IBatteryStats$Stub;->noteScanWifiLockAcquiredFromSource(Landroid/os/WorkSource;)V
 
     .line 422
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
@@ -1245,7 +1245,7 @@
     .line 435
     .restart local v1       #_arg0:Landroid/os/WorkSource;
     :goto_c
-    invoke-virtual {p0, v1}, Lcom/android/internal/app/IBatteryStats$Stub;->noteWifiScanStoppedFromSource(Landroid/os/WorkSource;)V
+    invoke-virtual {p0, v1}, Lcom/android/internal/app/IBatteryStats$Stub;->noteScanWifiLockReleasedFromSource(Landroid/os/WorkSource;)V
 
     .line 436
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V

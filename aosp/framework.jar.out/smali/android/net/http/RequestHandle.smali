@@ -76,7 +76,7 @@
     .prologue
     .line 64
     .local p5, headers:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 50
     const/4 v0, 0x0
@@ -517,8 +517,35 @@
     .parameter "cnonce"
 
     .prologue
+    .line 354
+    sget-boolean v0, Landroid/net/http/HttpLog;->LOGV:Z
+
+    if-eqz v0, :cond_0
+
+    .line 355
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "computeDigest(): QOP: "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/net/http/HttpLog;->v(Ljava/lang/String;)V
+
     .line 358
-    if-nez p4, :cond_0
+    :cond_0
+    if-nez p4, :cond_1
 
     .line 359
     invoke-direct {p0, p1}, Landroid/net/http/RequestHandle;->H(Ljava/lang/String;)Ljava/lang/String;
@@ -560,14 +587,14 @@
     return-object v0
 
     .line 361
-    :cond_0
+    :cond_1
     const-string v0, "auth"
 
     invoke-virtual {p4, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     .line 362
     invoke-direct {p0, p1}, Landroid/net/http/RequestHandle;->H(Ljava/lang/String;)Ljava/lang/String;
@@ -637,7 +664,7 @@
     goto :goto_0
 
     .line 366
-    :cond_1
+    :cond_2
     const/4 v0, 0x0
 
     goto :goto_0
@@ -1155,18 +1182,18 @@
 .end method
 
 .method private setupAuthResponse()V
-    .locals 1
+    .locals 2
 
     .prologue
     .line 256
     :try_start_0
-    iget-object v0, p0, Landroid/net/http/RequestHandle;->mBodyProvider:Ljava/io/InputStream;
+    iget-object v1, p0, Landroid/net/http/RequestHandle;->mBodyProvider:Ljava/io/InputStream;
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
-    iget-object v0, p0, Landroid/net/http/RequestHandle;->mBodyProvider:Ljava/io/InputStream;
+    iget-object v1, p0, Landroid/net/http/RequestHandle;->mBodyProvider:Ljava/io/InputStream;
 
-    invoke-virtual {v0}, Ljava/io/InputStream;->reset()V
+    invoke-virtual {v1}, Ljava/io/InputStream;->reset()V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -1181,6 +1208,17 @@
     .line 257
     :catch_0
     move-exception v0
+
+    .line 258
+    .local v0, ex:Ljava/io/IOException;
+    sget-boolean v1, Landroid/net/http/HttpLog;->LOGV:Z
+
+    if-eqz v1, :cond_0
+
+    .line 259
+    const-string/jumbo v1, "setupAuthResponse() failed to reset body provider"
+
+    invoke-static {v1}, Landroid/net/http/HttpLog;->v(Ljava/lang/String;)V
 
     goto :goto_0
 .end method
@@ -1333,8 +1371,35 @@
 
     move-result-object v0
 
-    .line 229
+    .line 226
     .local v0, response:Ljava/lang/String;
+    sget-boolean v1, Landroid/net/http/HttpLog;->LOGV:Z
+
+    if-eqz v1, :cond_0
+
+    .line 227
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "setupBasicAuthResponse(): response: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/net/http/HttpLog;->v(Ljava/lang/String;)V
+
+    .line 229
+    :cond_0
     iget-object v1, p0, Landroid/net/http/RequestHandle;->mHeaders:Ljava/util/Map;
 
     invoke-static {p1}, Landroid/net/http/RequestHandle;->authorizationHeader(Z)Ljava/lang/String;
@@ -1401,8 +1466,35 @@
 
     move-result-object v8
 
-    .line 250
+    .line 247
     .local v8, response:Ljava/lang/String;
+    sget-boolean v0, Landroid/net/http/HttpLog;->LOGV:Z
+
+    if-eqz v0, :cond_0
+
+    .line 248
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v1, "setupDigestAuthResponse(): response: "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/net/http/HttpLog;->v(Ljava/lang/String;)V
+
+    .line 250
+    :cond_0
     iget-object v0, p0, Landroid/net/http/RequestHandle;->mHeaders:Ljava/util/Map;
 
     invoke-static {p1}, Landroid/net/http/RequestHandle;->authorizationHeader(Z)Ljava/lang/String;
@@ -1458,7 +1550,36 @@
     .local p3, cacheHeaders:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     const/4 v3, 0x0
 
+    .line 150
+    sget-boolean v4, Landroid/net/http/HttpLog;->LOGV:Z
+
+    if-eqz v4, :cond_0
+
+    .line 151
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "RequestHandle.setupRedirect(): redirectCount "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    iget v5, p0, Landroid/net/http/RequestHandle;->mRedirectCount:I
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4}, Landroid/net/http/HttpLog;->v(Ljava/lang/String;)V
+
     .line 156
+    :cond_0
     iget-object v4, p0, Landroid/net/http/RequestHandle;->mHeaders:Ljava/util/Map;
 
     const-string v5, "Authorization"
@@ -1481,9 +1602,37 @@
 
     const/16 v5, 0x10
 
-    if-ne v4, v5, :cond_0
+    if-ne v4, v5, :cond_3
+
+    .line 161
+    sget-boolean v4, Landroid/net/http/HttpLog;->LOGV:Z
+
+    if-eqz v4, :cond_1
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "RequestHandle.setupRedirect(): too many redirects "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    iget-object v5, p0, Landroid/net/http/RequestHandle;->mRequest:Landroid/net/http/Request;
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4}, Landroid/net/http/HttpLog;->v(Ljava/lang/String;)V
 
     .line 164
+    :cond_1
     iget-object v4, p0, Landroid/net/http/RequestHandle;->mRequest:Landroid/net/http/Request;
 
     const/16 v5, -0x9
@@ -1493,11 +1642,12 @@
     invoke-virtual {v4, v5, v6}, Landroid/net/http/Request;->error(II)V
 
     .line 218
+    :cond_2
     :goto_0
     return v3
 
     .line 169
-    :cond_0
+    :cond_3
     iget-object v4, p0, Landroid/net/http/RequestHandle;->mUrl:Ljava/lang/String;
 
     const-string v5, "https:"
@@ -1506,7 +1656,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_1
+    if-eqz v4, :cond_5
 
     const-string v4, "http:"
 
@@ -1514,9 +1664,20 @@
 
     move-result v4
 
-    if-eqz v4, :cond_1
+    if-eqz v4, :cond_5
+
+    .line 171
+    sget-boolean v4, Landroid/net/http/HttpLog;->LOGV:Z
+
+    if-eqz v4, :cond_4
+
+    .line 172
+    const-string v4, "blowing away the referer on an https -> http redirect"
+
+    invoke-static {v4}, Landroid/net/http/HttpLog;->v(Ljava/lang/String;)V
 
     .line 174
+    :cond_4
     iget-object v4, p0, Landroid/net/http/RequestHandle;->mHeaders:Ljava/util/Map;
 
     const-string v5, "Referer"
@@ -1524,7 +1685,7 @@
     invoke-interface {v4, v5}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 177
-    :cond_1
+    :cond_5
     iput-object p1, p0, Landroid/net/http/RequestHandle;->mUrl:Ljava/lang/String;
 
     .line 179
@@ -1560,13 +1721,13 @@
 
     .line 187
     .local v0, cookie:Ljava/lang/String;
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_6
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v4
 
-    if-lez v4, :cond_2
+    if-lez v4, :cond_6
 
     .line 188
     iget-object v4, p0, Landroid/net/http/RequestHandle;->mHeaders:Ljava/util/Map;
@@ -1576,16 +1737,16 @@
     invoke-interface {v4, v5, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 191
-    :cond_2
+    :cond_6
     const/16 v4, 0x12e
 
-    if-eq p2, v4, :cond_3
+    if-eq p2, v4, :cond_7
 
     const/16 v4, 0x12f
 
-    if-ne p2, v4, :cond_4
+    if-ne p2, v4, :cond_9
 
-    :cond_3
+    :cond_7
     iget-object v4, p0, Landroid/net/http/RequestHandle;->mMethod:Ljava/lang/String;
 
     const-string v5, "POST"
@@ -1594,24 +1755,51 @@
 
     move-result v4
 
-    if-eqz v4, :cond_4
+    if-eqz v4, :cond_9
+
+    .line 192
+    sget-boolean v4, Landroid/net/http/HttpLog;->LOGV:Z
+
+    if-eqz v4, :cond_8
+
+    .line 193
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v5, "replacing POST with GET on redirect to "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4}, Landroid/net/http/HttpLog;->v(Ljava/lang/String;)V
 
     .line 195
+    :cond_8
     const-string v4, "GET"
 
     iput-object v4, p0, Landroid/net/http/RequestHandle;->mMethod:Ljava/lang/String;
 
     .line 199
-    :cond_4
+    :cond_9
     const/16 v4, 0x133
 
-    if-ne p2, v4, :cond_6
+    if-ne p2, v4, :cond_b
 
     .line 201
     :try_start_1
     iget-object v4, p0, Landroid/net/http/RequestHandle;->mBodyProvider:Ljava/io/InputStream;
 
-    if-eqz v4, :cond_5
+    if-eqz v4, :cond_a
 
     iget-object v4, p0, Landroid/net/http/RequestHandle;->mBodyProvider:Ljava/io/InputStream;
 
@@ -1620,7 +1808,7 @@
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 215
-    :cond_5
+    :cond_a
     :goto_2
     iget-object v3, p0, Landroid/net/http/RequestHandle;->mHeaders:Ljava/util/Map;
 
@@ -1632,7 +1820,7 @@
     .line 218
     const/4 v3, 0x1
 
-    goto :goto_0
+    goto/16 :goto_0
 
     .line 180
     .end local v0           #cookie:Ljava/lang/String;
@@ -1651,13 +1839,22 @@
     :catch_1
     move-exception v2
 
-    .line 206
+    .line 203
     .local v2, ex:Ljava/io/IOException;
-    goto :goto_0
+    sget-boolean v4, Landroid/net/http/HttpLog;->LOGV:Z
+
+    if-eqz v4, :cond_2
+
+    .line 204
+    const-string/jumbo v4, "setupRedirect() failed to reset body provider"
+
+    invoke-static {v4}, Landroid/net/http/HttpLog;->v(Ljava/lang/String;)V
+
+    goto/16 :goto_0
 
     .line 210
     .end local v2           #ex:Ljava/io/IOException;
-    :cond_6
+    :cond_b
     iget-object v3, p0, Landroid/net/http/RequestHandle;->mHeaders:Ljava/util/Map;
 
     const-string v4, "Content-Type"

@@ -1,0 +1,992 @@
+.class public Lbaidu/net/sip/SipProfile;
+.super Ljava/lang/Object;
+.source "SipProfile.java"
+
+# interfaces
+.implements Landroid/os/Parcelable;
+.implements Ljava/io/Serializable;
+.implements Ljava/lang/Cloneable;
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lbaidu/net/sip/SipProfile$Builder;
+    }
+.end annotation
+
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator; = null
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator",
+            "<",
+            "Lbaidu/net/sip/SipProfile;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private static final DEFAULT_PORT:I = 0x13c4
+
+.field private static final TCP:Ljava/lang/String; = "TCP"
+
+.field private static final UDP:Ljava/lang/String; = "UDP"
+
+.field private static final serialVersionUID:J = 0x1L
+
+
+# instance fields
+.field private mAddress:Ljavax/sip/address/Address;
+
+.field private mAuthUserName:Ljava/lang/String;
+
+.field private mAutoRegistration:Z
+
+.field private mBaiduAccountId:Ljava/lang/String;
+
+.field private mBaiduAccountName:Ljava/lang/String;
+
+.field private transient mCallingUid:I
+
+.field private mDomain:Ljava/lang/String;
+
+.field private mEmail:Ljava/lang/String;
+
+.field private mPassword:Ljava/lang/String;
+
+.field private mPhoneNumber:Ljava/lang/String;
+
+.field private mPort:I
+
+.field private mProfileName:Ljava/lang/String;
+
+.field private mProtocol:Ljava/lang/String;
+
+.field private mProxyAddress:Ljava/lang/String;
+
+.field private mSendKeepAlive:Z
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    .prologue
+    .line 74
+    new-instance v0, Lbaidu/net/sip/SipProfile$1;
+
+    invoke-direct {v0}, Lbaidu/net/sip/SipProfile$1;-><init>()V
+
+    sput-object v0, Lbaidu/net/sip/SipProfile;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
+    .locals 2
+
+    .prologue
+    const/4 v1, 0x0
+
+    .line 363
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 60
+    const-string v0, "UDP"
+
+    iput-object v0, p0, Lbaidu/net/sip/SipProfile;->mProtocol:Ljava/lang/String;
+
+    .line 69
+    const/16 v0, 0x13c4
+
+    iput v0, p0, Lbaidu/net/sip/SipProfile;->mPort:I
+
+    .line 70
+    iput-boolean v1, p0, Lbaidu/net/sip/SipProfile;->mSendKeepAlive:Z
+
+    .line 71
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lbaidu/net/sip/SipProfile;->mAutoRegistration:Z
+
+    .line 72
+    iput v1, p0, Lbaidu/net/sip/SipProfile;->mCallingUid:I
+
+    .line 364
+    return-void
+.end method
+
+.method private constructor <init>(Landroid/os/Parcel;)V
+    .locals 3
+    .parameter "in"
+
+    .prologue
+    const/4 v2, 0x1
+
+    const/4 v1, 0x0
+
+    .line 366
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 60
+    const-string v0, "UDP"
+
+    iput-object v0, p0, Lbaidu/net/sip/SipProfile;->mProtocol:Ljava/lang/String;
+
+    .line 69
+    const/16 v0, 0x13c4
+
+    iput v0, p0, Lbaidu/net/sip/SipProfile;->mPort:I
+
+    .line 70
+    iput-boolean v1, p0, Lbaidu/net/sip/SipProfile;->mSendKeepAlive:Z
+
+    .line 71
+    iput-boolean v2, p0, Lbaidu/net/sip/SipProfile;->mAutoRegistration:Z
+
+    .line 72
+    iput v1, p0, Lbaidu/net/sip/SipProfile;->mCallingUid:I
+
+    .line 367
+    invoke-virtual {p1}, Landroid/os/Parcel;->readSerializable()Ljava/io/Serializable;
+
+    move-result-object v0
+
+    check-cast v0, Ljavax/sip/address/Address;
+
+    iput-object v0, p0, Lbaidu/net/sip/SipProfile;->mAddress:Ljavax/sip/address/Address;
+
+    .line 368
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lbaidu/net/sip/SipProfile;->mProxyAddress:Ljava/lang/String;
+
+    .line 369
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lbaidu/net/sip/SipProfile;->mPassword:Ljava/lang/String;
+
+    .line 370
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lbaidu/net/sip/SipProfile;->mDomain:Ljava/lang/String;
+
+    .line 371
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lbaidu/net/sip/SipProfile;->mProtocol:Ljava/lang/String;
+
+    .line 372
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lbaidu/net/sip/SipProfile;->mProfileName:Ljava/lang/String;
+
+    .line 373
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    move v0, v1
+
+    :goto_0
+    iput-boolean v0, p0, Lbaidu/net/sip/SipProfile;->mSendKeepAlive:Z
+
+    .line 374
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    :goto_1
+    iput-boolean v1, p0, Lbaidu/net/sip/SipProfile;->mAutoRegistration:Z
+
+    .line 375
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    iput v0, p0, Lbaidu/net/sip/SipProfile;->mCallingUid:I
+
+    .line 376
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    iput v0, p0, Lbaidu/net/sip/SipProfile;->mPort:I
+
+    .line 377
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lbaidu/net/sip/SipProfile;->mAuthUserName:Ljava/lang/String;
+
+    .line 379
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lbaidu/net/sip/SipProfile;->mBaiduAccountId:Ljava/lang/String;
+
+    .line 380
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lbaidu/net/sip/SipProfile;->mBaiduAccountName:Ljava/lang/String;
+
+    .line 381
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lbaidu/net/sip/SipProfile;->mEmail:Ljava/lang/String;
+
+    .line 382
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lbaidu/net/sip/SipProfile;->mPhoneNumber:Ljava/lang/String;
+
+    .line 384
+    return-void
+
+    :cond_0
+    move v0, v2
+
+    .line 373
+    goto :goto_0
+
+    :cond_1
+    move v1, v2
+
+    .line 374
+    goto :goto_1
+.end method
+
+.method synthetic constructor <init>(Landroid/os/Parcel;Lbaidu/net/sip/SipProfile$1;)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 51
+    invoke-direct {p0, p1}, Lbaidu/net/sip/SipProfile;-><init>(Landroid/os/Parcel;)V
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(Lbaidu/net/sip/SipProfile$1;)V
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    .line 51
+    invoke-direct {p0}, Lbaidu/net/sip/SipProfile;-><init>()V
+
+    return-void
+.end method
+
+.method static synthetic access$1002(Lbaidu/net/sip/SipProfile;Z)Z
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 51
+    iput-boolean p1, p0, Lbaidu/net/sip/SipProfile;->mAutoRegistration:Z
+
+    return p1
+.end method
+
+.method static synthetic access$1102(Lbaidu/net/sip/SipProfile;Ljava/lang/String;)Ljava/lang/String;
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 51
+    iput-object p1, p0, Lbaidu/net/sip/SipProfile;->mBaiduAccountId:Ljava/lang/String;
+
+    return-object p1
+.end method
+
+.method static synthetic access$1202(Lbaidu/net/sip/SipProfile;Ljava/lang/String;)Ljava/lang/String;
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 51
+    iput-object p1, p0, Lbaidu/net/sip/SipProfile;->mBaiduAccountName:Ljava/lang/String;
+
+    return-object p1
+.end method
+
+.method static synthetic access$1302(Lbaidu/net/sip/SipProfile;Ljava/lang/String;)Ljava/lang/String;
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 51
+    iput-object p1, p0, Lbaidu/net/sip/SipProfile;->mEmail:Ljava/lang/String;
+
+    return-object p1
+.end method
+
+.method static synthetic access$1402(Lbaidu/net/sip/SipProfile;Ljava/lang/String;)Ljava/lang/String;
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 51
+    iput-object p1, p0, Lbaidu/net/sip/SipProfile;->mPhoneNumber:Ljava/lang/String;
+
+    return-object p1
+.end method
+
+.method static synthetic access$1502(Lbaidu/net/sip/SipProfile;Ljava/lang/String;)Ljava/lang/String;
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 51
+    iput-object p1, p0, Lbaidu/net/sip/SipProfile;->mPassword:Ljava/lang/String;
+
+    return-object p1
+.end method
+
+.method static synthetic access$1602(Lbaidu/net/sip/SipProfile;Ljava/lang/String;)Ljava/lang/String;
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 51
+    iput-object p1, p0, Lbaidu/net/sip/SipProfile;->mProxyAddress:Ljava/lang/String;
+
+    return-object p1
+.end method
+
+.method static synthetic access$200(Lbaidu/net/sip/SipProfile;)Ljava/lang/Object;
+    .locals 1
+    .parameter "x0"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/CloneNotSupportedException;
+        }
+    .end annotation
+
+    .prologue
+    .line 51
+    invoke-virtual {p0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method static synthetic access$302(Lbaidu/net/sip/SipProfile;Ljavax/sip/address/Address;)Ljavax/sip/address/Address;
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 51
+    iput-object p1, p0, Lbaidu/net/sip/SipProfile;->mAddress:Ljavax/sip/address/Address;
+
+    return-object p1
+.end method
+
+.method static synthetic access$400(Lbaidu/net/sip/SipProfile;)I
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 51
+    iget v0, p0, Lbaidu/net/sip/SipProfile;->mPort:I
+
+    return v0
+.end method
+
+.method static synthetic access$402(Lbaidu/net/sip/SipProfile;I)I
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 51
+    iput p1, p0, Lbaidu/net/sip/SipProfile;->mPort:I
+
+    return p1
+.end method
+
+.method static synthetic access$502(Lbaidu/net/sip/SipProfile;Ljava/lang/String;)Ljava/lang/String;
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 51
+    iput-object p1, p0, Lbaidu/net/sip/SipProfile;->mDomain:Ljava/lang/String;
+
+    return-object p1
+.end method
+
+.method static synthetic access$602(Lbaidu/net/sip/SipProfile;Ljava/lang/String;)Ljava/lang/String;
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 51
+    iput-object p1, p0, Lbaidu/net/sip/SipProfile;->mAuthUserName:Ljava/lang/String;
+
+    return-object p1
+.end method
+
+.method static synthetic access$702(Lbaidu/net/sip/SipProfile;Ljava/lang/String;)Ljava/lang/String;
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 51
+    iput-object p1, p0, Lbaidu/net/sip/SipProfile;->mProfileName:Ljava/lang/String;
+
+    return-object p1
+.end method
+
+.method static synthetic access$800(Lbaidu/net/sip/SipProfile;)Ljava/lang/String;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 51
+    iget-object v0, p0, Lbaidu/net/sip/SipProfile;->mProtocol:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method static synthetic access$802(Lbaidu/net/sip/SipProfile;Ljava/lang/String;)Ljava/lang/String;
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 51
+    iput-object p1, p0, Lbaidu/net/sip/SipProfile;->mProtocol:Ljava/lang/String;
+
+    return-object p1
+.end method
+
+.method static synthetic access$902(Lbaidu/net/sip/SipProfile;Z)Z
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 51
+    iput-boolean p1, p0, Lbaidu/net/sip/SipProfile;->mSendKeepAlive:Z
+
+    return p1
+.end method
+
+.method private readResolve()Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/ObjectStreamException;
+        }
+    .end annotation
+
+    .prologue
+    .line 626
+    iget v0, p0, Lbaidu/net/sip/SipProfile;->mPort:I
+
+    if-nez v0, :cond_0
+
+    const/16 v0, 0x13c4
+
+    iput v0, p0, Lbaidu/net/sip/SipProfile;->mPort:I
+
+    .line 627
+    :cond_0
+    return-object p0
+.end method
+
+
+# virtual methods
+.method public describeContents()I
+    .locals 1
+
+    .prologue
+    .line 447
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public getAuthUserName()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 511
+    iget-object v0, p0, Lbaidu/net/sip/SipProfile;->mAuthUserName:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getAutoRegistration()Z
+    .locals 1
+
+    .prologue
+    .line 583
+    iget-boolean v0, p0, Lbaidu/net/sip/SipProfile;->mAutoRegistration:Z
+
+    return v0
+.end method
+
+.method public getBaiduAccountId()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 414
+    iget-object v0, p0, Lbaidu/net/sip/SipProfile;->mBaiduAccountId:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getBaiduAccountName()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 423
+    iget-object v0, p0, Lbaidu/net/sip/SipProfile;->mBaiduAccountName:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getCallingUid()I
+    .locals 1
+
+    .prologue
+    .line 599
+    iget v0, p0, Lbaidu/net/sip/SipProfile;->mCallingUid:I
+
+    return v0
+.end method
+
+.method public getDisplayName()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 491
+    iget-object v0, p0, Lbaidu/net/sip/SipProfile;->mAddress:Ljavax/sip/address/Address;
+
+    invoke-interface {v0}, Ljavax/sip/address/Address;->getDisplayName()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public getEmail()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 432
+    iget-object v0, p0, Lbaidu/net/sip/SipProfile;->mEmail:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getPassword()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 520
+    iget-object v0, p0, Lbaidu/net/sip/SipProfile;->mPassword:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getPhoneNumber()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 441
+    iget-object v0, p0, Lbaidu/net/sip/SipProfile;->mPhoneNumber:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getPort()I
+    .locals 1
+
+    .prologue
+    .line 538
+    iget v0, p0, Lbaidu/net/sip/SipProfile;->mPort:I
+
+    return v0
+.end method
+
+.method public getProfileName()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 565
+    iget-object v0, p0, Lbaidu/net/sip/SipProfile;->mProfileName:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getProtocol()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 547
+    iget-object v0, p0, Lbaidu/net/sip/SipProfile;->mProtocol:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getProxyAddress()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 556
+    iget-object v0, p0, Lbaidu/net/sip/SipProfile;->mProxyAddress:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getSendKeepAlive()Z
+    .locals 1
+
+    .prologue
+    .line 574
+    iget-boolean v0, p0, Lbaidu/net/sip/SipProfile;->mSendKeepAlive:Z
+
+    return v0
+.end method
+
+.method public getSipAddress()Ljavax/sip/address/Address;
+    .locals 1
+
+    .prologue
+    .line 482
+    iget-object v0, p0, Lbaidu/net/sip/SipProfile;->mAddress:Ljavax/sip/address/Address;
+
+    return-object v0
+.end method
+
+.method public getSipDomain()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 529
+    iget-object v0, p0, Lbaidu/net/sip/SipProfile;->mDomain:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getUri()Ljavax/sip/address/SipURI;
+    .locals 1
+
+    .prologue
+    .line 457
+    iget-object v0, p0, Lbaidu/net/sip/SipProfile;->mAddress:Ljavax/sip/address/Address;
+
+    invoke-interface {v0}, Ljavax/sip/address/Address;->getURI()Ljavax/sip/address/URI;
+
+    move-result-object v0
+
+    check-cast v0, Ljavax/sip/address/SipURI;
+
+    return-object v0
+.end method
+
+.method public getUriString()Ljava/lang/String;
+    .locals 2
+
+    .prologue
+    .line 469
+    iget-object v0, p0, Lbaidu/net/sip/SipProfile;->mProxyAddress:Ljava/lang/String;
+
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 470
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v1, "sip:"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Lbaidu/net/sip/SipProfile;->getUserName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "@"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbaidu/net/sip/SipProfile;->mDomain:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 472
+    :goto_0
+    return-object v0
+
+    :cond_0
+    invoke-virtual {p0}, Lbaidu/net/sip/SipProfile;->getUri()Ljavax/sip/address/SipURI;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+.end method
+
+.method public getUserName()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 500
+    invoke-virtual {p0}, Lbaidu/net/sip/SipProfile;->getUri()Ljavax/sip/address/SipURI;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljavax/sip/address/SipURI;->getUser()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public setBaiduAccountName(Ljava/lang/String;)V
+    .locals 0
+    .parameter "name"
+
+    .prologue
+    .line 604
+    iput-object p1, p0, Lbaidu/net/sip/SipProfile;->mBaiduAccountName:Ljava/lang/String;
+
+    .line 605
+    return-void
+.end method
+
+.method public setCallingUid(I)V
+    .locals 0
+    .parameter "uid"
+
+    .prologue
+    .line 591
+    iput p1, p0, Lbaidu/net/sip/SipProfile;->mCallingUid:I
+
+    .line 592
+    return-void
+.end method
+
+.method public setEmail(Ljava/lang/String;)V
+    .locals 0
+    .parameter "email"
+
+    .prologue
+    .line 608
+    iput-object p1, p0, Lbaidu/net/sip/SipProfile;->mEmail:Ljava/lang/String;
+
+    .line 609
+    return-void
+.end method
+
+.method public setPhoneNumber(Ljava/lang/String;)V
+    .locals 0
+    .parameter "phonenumber"
+
+    .prologue
+    .line 612
+    iput-object p1, p0, Lbaidu/net/sip/SipProfile;->mPhoneNumber:Ljava/lang/String;
+
+    .line 613
+    return-void
+.end method
+
+.method public setUserProfile(Lbaidu/net/sip/extension/UserProfile;)V
+    .locals 1
+    .parameter "user"
+
+    .prologue
+    .line 616
+    if-eqz p1, :cond_0
+
+    .line 617
+    iget-object v0, p1, Lbaidu/net/sip/extension/UserProfile;->mEmail:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lbaidu/net/sip/SipProfile;->setEmail(Ljava/lang/String;)V
+
+    .line 618
+    iget-object v0, p1, Lbaidu/net/sip/extension/UserProfile;->mPhone:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lbaidu/net/sip/SipProfile;->setPhoneNumber(Ljava/lang/String;)V
+
+    .line 619
+    iget-object v0, p1, Lbaidu/net/sip/extension/UserProfile;->mUname:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lbaidu/net/sip/SipProfile;->setBaiduAccountName(Ljava/lang/String;)V
+
+    .line 621
+    :cond_0
+    return-void
+.end method
+
+.method public writeToParcel(Landroid/os/Parcel;I)V
+    .locals 3
+    .parameter "out"
+    .parameter "flags"
+
+    .prologue
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    .line 388
+    iget-object v0, p0, Lbaidu/net/sip/SipProfile;->mAddress:Ljavax/sip/address/Address;
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeSerializable(Ljava/io/Serializable;)V
+
+    .line 389
+    iget-object v0, p0, Lbaidu/net/sip/SipProfile;->mProxyAddress:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    .line 390
+    iget-object v0, p0, Lbaidu/net/sip/SipProfile;->mPassword:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    .line 391
+    iget-object v0, p0, Lbaidu/net/sip/SipProfile;->mDomain:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    .line 392
+    iget-object v0, p0, Lbaidu/net/sip/SipProfile;->mProtocol:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    .line 393
+    iget-object v0, p0, Lbaidu/net/sip/SipProfile;->mProfileName:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    .line 394
+    iget-boolean v0, p0, Lbaidu/net/sip/SipProfile;->mSendKeepAlive:Z
+
+    if-eqz v0, :cond_0
+
+    move v0, v1
+
+    :goto_0
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 395
+    iget-boolean v0, p0, Lbaidu/net/sip/SipProfile;->mAutoRegistration:Z
+
+    if-eqz v0, :cond_1
+
+    :goto_1
+    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 396
+    iget v0, p0, Lbaidu/net/sip/SipProfile;->mCallingUid:I
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 397
+    iget v0, p0, Lbaidu/net/sip/SipProfile;->mPort:I
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 398
+    iget-object v0, p0, Lbaidu/net/sip/SipProfile;->mAuthUserName:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    .line 400
+    iget-object v0, p0, Lbaidu/net/sip/SipProfile;->mBaiduAccountId:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    .line 401
+    iget-object v0, p0, Lbaidu/net/sip/SipProfile;->mBaiduAccountName:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    .line 402
+    iget-object v0, p0, Lbaidu/net/sip/SipProfile;->mEmail:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    .line 403
+    iget-object v0, p0, Lbaidu/net/sip/SipProfile;->mPhoneNumber:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    .line 405
+    return-void
+
+    :cond_0
+    move v0, v2
+
+    .line 394
+    goto :goto_0
+
+    :cond_1
+    move v1, v2
+
+    .line 395
+    goto :goto_1
+.end method

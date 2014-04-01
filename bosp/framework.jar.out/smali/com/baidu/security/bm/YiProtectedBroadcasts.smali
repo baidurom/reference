@@ -139,7 +139,7 @@
 
     const/16 v1, 0x13
 
-    const-string/jumbo v2, "intent.action.HOME_ACTIVITY_CHANGED"
+    const-string v2, "intent.action.HOME_ACTIVITY_CHANGED"
 
     aput-object v2, v0, v1
 

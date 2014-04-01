@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field final accountAndUser:Landroid/accounts/AccountAndUser;
+.field final account:Landroid/accounts/Account;
 
 .field final authorities:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
@@ -31,24 +31,24 @@
 
 
 # direct methods
-.method constructor <init>(Landroid/accounts/AccountAndUser;)V
+.method constructor <init>(Landroid/accounts/Account;)V
     .locals 1
-    .parameter "accountAndUser"
+    .parameter "account"
 
     .prologue
-    .line 190
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 170
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 187
+    .line 167
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/content/SyncStorageEngine$AccountInfo;->authorities:Ljava/util/HashMap;
 
-    .line 191
-    iput-object p1, p0, Landroid/content/SyncStorageEngine$AccountInfo;->accountAndUser:Landroid/accounts/AccountAndUser;
+    .line 171
+    iput-object p1, p0, Landroid/content/SyncStorageEngine$AccountInfo;->account:Landroid/accounts/Account;
 
-    .line 192
+    .line 172
     return-void
 .end method

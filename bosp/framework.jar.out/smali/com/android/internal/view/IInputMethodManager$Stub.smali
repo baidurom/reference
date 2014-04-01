@@ -46,15 +46,13 @@
 
 .field static final TRANSACTION_hideSoftInput:I = 0xb
 
-.field static final TRANSACTION_notifyImsDump:I = 0x1d
-
 .field static final TRANSACTION_notifySuggestionPicked:I = 0x16
 
 .field static final TRANSACTION_registerSuggestionSpansForNotification:I = 0x15
 
 .field static final TRANSACTION_removeClient:I = 0x7
 
-.field static final TRANSACTION_setAdditionalInputMethodSubtypes:I = 0x1c
+.field static final TRANSACTION_setAdditionalInputMethodSubtypes:I = 0x1b
 
 .field static final TRANSACTION_setCurrentInputMethodSubtype:I = 0x18
 
@@ -64,7 +62,7 @@
 
 .field static final TRANSACTION_setInputMethodAndSubtype:I = 0x10
 
-.field static final TRANSACTION_setInputMethodEnabled:I = 0x1b
+.field static final TRANSACTION_setInputMethodEnabled:I = 0x1a
 
 .field static final TRANSACTION_showInputMethodAndSubtypeEnablerFromClient:I = 0xe
 
@@ -76,11 +74,7 @@
 
 .field static final TRANSACTION_startInput:I = 0x8
 
-.field static final TRANSACTION_switchInputMethodFromWindowManager:I = 0x1e
-
 .field static final TRANSACTION_switchToLastInputMethod:I = 0x19
-
-.field static final TRANSACTION_switchToNextInputMethod:I = 0x1a
 
 .field static final TRANSACTION_updateStatusIcon:I = 0x13
 
@@ -176,7 +170,7 @@
     .line 42
     sparse-switch p1, :sswitch_data_0
 
-    .line 450
+    .line 422
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v0
@@ -1437,12 +1431,12 @@
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 403
-    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
     .line 405
-    .restart local v1       #_arg0:Landroid/os/IBinder;
+    .local v1, _arg0:Ljava/lang/String;
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -1454,7 +1448,7 @@
     .line 406
     .local v2, _arg1:Z
     :goto_13
-    invoke-virtual {p0, v1, v2}, Lcom/android/internal/view/IInputMethodManager$Stub;->switchToNextInputMethod(Landroid/os/IBinder;Z)Z
+    invoke-virtual {p0, v1, v2}, Lcom/android/internal/view/IInputMethodManager$Stub;->setInputMethodEnabled(Ljava/lang/String;Z)Z
 
     move-result v8
 
@@ -1492,7 +1486,7 @@
     goto :goto_14
 
     .line 413
-    .end local v1           #_arg0:Landroid/os/IBinder;
+    .end local v1           #_arg0:Ljava/lang/String;
     .end local v2           #_arg1:Z
     .end local v8           #_result:Z
     :sswitch_1b
@@ -1506,70 +1500,6 @@
     move-result-object v1
 
     .line 417
-    .local v1, _arg0:Ljava/lang/String;
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    if-eqz v0, :cond_14
-
-    const/4 v2, 0x1
-
-    .line 418
-    .restart local v2       #_arg1:Z
-    :goto_15
-    invoke-virtual {p0, v1, v2}, Lcom/android/internal/view/IInputMethodManager$Stub;->setInputMethodEnabled(Ljava/lang/String;Z)Z
-
-    move-result v8
-
-    .line 419
-    .restart local v8       #_result:Z
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 420
-    if-eqz v8, :cond_15
-
-    const/4 v0, 0x1
-
-    :goto_16
-    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 421
-    const/4 v0, 0x1
-
-    goto/16 :goto_0
-
-    .line 417
-    .end local v2           #_arg1:Z
-    .end local v8           #_result:Z
-    :cond_14
-    const/4 v2, 0x0
-
-    goto :goto_15
-
-    .line 420
-    .restart local v2       #_arg1:Z
-    .restart local v8       #_result:Z
-    :cond_15
-    const/4 v0, 0x0
-
-    goto :goto_16
-
-    .line 425
-    .end local v1           #_arg0:Ljava/lang/String;
-    .end local v2           #_arg1:Z
-    .end local v8           #_result:Z
-    :sswitch_1c
-    const-string v0, "com.android.internal.view.IInputMethodManager"
-
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 427
-    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 429
     .restart local v1       #_arg0:Ljava/lang/String;
     sget-object v0, Landroid/view/inputmethod/InputMethodSubtype;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -1579,80 +1509,14 @@
 
     check-cast v2, [Landroid/view/inputmethod/InputMethodSubtype;
 
-    .line 430
+    .line 418
     .local v2, _arg1:[Landroid/view/inputmethod/InputMethodSubtype;
     invoke-virtual {p0, v1, v2}, Lcom/android/internal/view/IInputMethodManager$Stub;->setAdditionalInputMethodSubtypes(Ljava/lang/String;[Landroid/view/inputmethod/InputMethodSubtype;)V
 
-    .line 431
+    .line 419
     const/4 v0, 0x1
 
     goto/16 :goto_0
-
-    .line 435
-    .end local v1           #_arg0:Ljava/lang/String;
-    .end local v2           #_arg1:[Landroid/view/inputmethod/InputMethodSubtype;
-    :sswitch_1d
-    const-string v0, "com.android.internal.view.IInputMethodManager"
-
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 437
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    if-eqz v0, :cond_16
-
-    const/4 v1, 0x1
-
-    .line 438
-    .local v1, _arg0:Z
-    :goto_17
-    invoke-virtual {p0, v1}, Lcom/android/internal/view/IInputMethodManager$Stub;->notifyImsDump(Z)V
-
-    .line 439
-    const/4 v0, 0x1
-
-    goto/16 :goto_0
-
-    .line 437
-    .end local v1           #_arg0:Z
-    :cond_16
-    const/4 v1, 0x0
-
-    goto :goto_17
-
-    .line 443
-    :sswitch_1e
-    const-string v0, "com.android.internal.view.IInputMethodManager"
-
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 445
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    if-eqz v0, :cond_17
-
-    const/4 v1, 0x1
-
-    .line 446
-    .restart local v1       #_arg0:Z
-    :goto_18
-    invoke-virtual {p0, v1}, Lcom/android/internal/view/IInputMethodManager$Stub;->switchInputMethodFromWindowManager(Z)V
-
-    .line 447
-    const/4 v0, 0x1
-
-    goto/16 :goto_0
-
-    .line 445
-    .end local v1           #_arg0:Z
-    :cond_17
-    const/4 v1, 0x0
-
-    goto :goto_18
 
     .line 42
     nop
@@ -1686,9 +1550,6 @@
         0x19 -> :sswitch_19
         0x1a -> :sswitch_1a
         0x1b -> :sswitch_1b
-        0x1c -> :sswitch_1c
-        0x1d -> :sswitch_1d
-        0x1e -> :sswitch_1e
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

@@ -482,7 +482,7 @@
 
     move-object/from16 v22, v0
 
-    const-string/jumbo v23, "java_size"
+    const-string v23, "java_size"
 
     move-object/from16 v0, v22
 
@@ -497,7 +497,7 @@
 
     move-object/from16 v22, v0
 
-    const-string/jumbo v23, "java_allocated"
+    const-string v23, "java_allocated"
 
     move-object/from16 v0, v22
 
@@ -512,7 +512,7 @@
 
     move-object/from16 v22, v0
 
-    const-string/jumbo v23, "java_free"
+    const-string v23, "java_free"
 
     move-object/from16 v0, v22
 
@@ -527,7 +527,7 @@
 
     move-object/from16 v22, v0
 
-    const-string/jumbo v23, "java_pss"
+    const-string v23, "java_pss"
 
     iget v0, v14, Landroid/os/Debug$MemoryInfo;->dalvikPss:I
 
@@ -548,7 +548,7 @@
 
     move-object/from16 v22, v0
 
-    const-string/jumbo v23, "java_private_dirty"
+    const-string v23, "java_private_dirty"
 
     iget v0, v14, Landroid/os/Debug$MemoryInfo;->dalvikPrivateDirty:I
 
@@ -569,7 +569,7 @@
 
     move-object/from16 v22, v0
 
-    const-string/jumbo v23, "java_shared_dirty"
+    const-string v23, "java_shared_dirty"
 
     iget v0, v14, Landroid/os/Debug$MemoryInfo;->dalvikSharedDirty:I
 
@@ -951,7 +951,7 @@
 
     .line 392
     .local v0, iteration:Landroid/os/Bundle;
-    const-string/jumbo v1, "label"
+    const-string v1, "label"
 
     invoke-virtual {v0, v1, p1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -972,7 +972,7 @@
     .line 395
     iget-object v1, p0, Landroid/os/PerformanceCollector;->mPerfMeasurement:Landroid/os/Bundle;
 
-    const-string/jumbo v2, "iterations"
+    const-string v2, "iterations"
 
     invoke-virtual {v1, v2}, Landroid/os/Bundle;->getParcelableArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
 
@@ -1148,7 +1148,7 @@
     .line 366
     iget-object v0, p0, Landroid/os/PerformanceCollector;->mPerfMeasurement:Landroid/os/Bundle;
 
-    const-string/jumbo v1, "iterations"
+    const-string v1, "iterations"
 
     new-instance v2, Ljava/util/ArrayList;
 

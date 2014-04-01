@@ -3,7 +3,7 @@
 .source "MultithemeUnlockScreen.java"
 
 # interfaces
-.implements Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityView;
+.implements Lcom/android/internal/policy/impl/KeyguardScreen;
 
 
 # annotations
@@ -24,7 +24,7 @@
 
 .field private isTouchLeftTop:Ljava/lang/Boolean;
 
-.field private mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+.field private mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
 .field private mCategory:I
 
@@ -44,12 +44,12 @@
 
 .field private mLockScreenView:Landroid/view/View;
 
-.field private mUpdateMonitor:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
+.field private mUpdateMonitor:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroid/content/res/Configuration;Lcom/android/internal/widget/LockPatternUtils;Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;)V
-    .locals 7
+.method public constructor <init>(Landroid/content/Context;Landroid/content/res/Configuration;Lcom/android/internal/widget/LockPatternUtils;Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;Lcom/android/internal/policy/impl/KeyguardScreenCallback;)V
+    .locals 5
     .parameter "context"
     .parameter "configuration"
     .parameter "lockPatternUtils"
@@ -57,185 +57,176 @@
     .parameter "callback"
 
     .prologue
-    const/4 v6, 0x1
+    const/4 v4, 0x1
 
-    const/4 v5, -0x1
+    const/4 v3, 0x0
 
-    const/4 v4, 0x0
-
-    .line 82
+    .line 81
     invoke-direct {p0, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 67
-    iput v5, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mCategory:I
+    .line 66
+    const/4 v0, -0x1
 
-    .line 69
-    invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    iput v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mCategory:I
 
-    move-result-object v1
+    .line 68
+    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    iput-object v1, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mIsInitSuccess:Ljava/lang/Boolean;
+    move-result-object v0
 
-    .line 73
-    new-instance v1, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen$HandlerCallBack;
+    iput-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mIsInitSuccess:Ljava/lang/Boolean;
 
-    const/4 v2, 0x0
+    .line 72
+    new-instance v0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen$HandlerCallBack;
 
-    invoke-direct {v1, p0, v2}, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen$HandlerCallBack;-><init>(Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen$1;)V
+    const/4 v1, 0x0
 
-    iput-object v1, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mHandlerCallback:Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen$HandlerCallBack;
+    invoke-direct {v0, p0, v1}, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen$HandlerCallBack;-><init>(Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen$1;)V
 
-    .line 262
-    invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    iput-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mHandlerCallback:Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen$HandlerCallBack;
 
-    move-result-object v1
+    .line 260
+    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    iput-object v1, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->isBackKeyDown:Ljava/lang/Boolean;
+    move-result-object v0
 
-    .line 263
-    invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    iput-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->isBackKeyDown:Ljava/lang/Boolean;
 
-    move-result-object v1
+    .line 261
+    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    iput-object v1, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->isTouchLeftTop:Ljava/lang/Boolean;
+    move-result-object v0
 
-    .line 84
-    const-string v1, "MultithemeUnlockScreen"
+    iput-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->isTouchLeftTop:Ljava/lang/Boolean;
 
-    const-string v2, "MultithemeUnlockScreen onCreate"
+    .line 83
+    const-string v0, "MultithemeUnlockScreen"
 
-    invoke-static {v1, v2}, Lcom/baidu/themeanimation/util/Logger;->i(Ljava/lang/String;Ljava/lang/String;)V
+    const-string v1, "MultithemeUnlockScreen onCreate"
 
-    .line 86
+    invoke-static {v0, v1}, Lcom/baidu/themeanimation/util/Logger;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 85
     iput-object p3, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
+    .line 86
+    iput-object p4, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mUpdateMonitor:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
+
     .line 87
-    iput-object p4, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mUpdateMonitor:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
+    iput-object p5, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
     .line 88
-    iput-object p5, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
-
-    .line 89
     iput-object p1, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mContext:Landroid/content/Context;
 
-    .line 90
-    new-instance v1, Lcom/baidu/themeanimation/util/LockScreenHandler;
+    .line 89
+    new-instance v0, Lcom/baidu/themeanimation/util/LockScreenHandler;
 
-    iget-object v2, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mContext:Landroid/content/Context;
 
-    iget-object v3, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mHandlerCallback:Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen$HandlerCallBack;
+    iget-object v2, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mHandlerCallback:Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen$HandlerCallBack;
 
-    invoke-direct {v1, v2, v3}, Lcom/baidu/themeanimation/util/LockScreenHandler;-><init>(Landroid/content/Context;Lcom/baidu/themeanimation/util/LockScreenHandler$HandlerCallback;)V
+    invoke-direct {v0, v1, v2}, Lcom/baidu/themeanimation/util/LockScreenHandler;-><init>(Landroid/content/Context;Lcom/baidu/themeanimation/util/LockScreenHandler$HandlerCallback;)V
 
-    iput-object v1, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mHandler:Lcom/baidu/themeanimation/util/LockScreenHandler;
+    iput-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mHandler:Lcom/baidu/themeanimation/util/LockScreenHandler;
+
+    .line 91
+    new-instance v0, Lcom/baidu/themeanimation/model/InfoRefreshUtil;
+
+    iget-object v1, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mContext:Landroid/content/Context;
+
+    iget-object v2, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mHandler:Lcom/baidu/themeanimation/util/LockScreenHandler;
+
+    invoke-direct {v0, v1, v2}, Lcom/baidu/themeanimation/model/InfoRefreshUtil;-><init>(Landroid/content/Context;Lcom/baidu/themeanimation/util/LockScreenHandler;)V
+
+    iput-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mInfoRefreshUtil:Lcom/baidu/themeanimation/model/InfoRefreshUtil;
 
     .line 92
-    new-instance v1, Lcom/baidu/themeanimation/model/InfoRefreshUtil;
-
-    iget-object v2, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mContext:Landroid/content/Context;
-
-    iget-object v3, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mHandler:Lcom/baidu/themeanimation/util/LockScreenHandler;
-
-    invoke-direct {v1, v2, v3}, Lcom/baidu/themeanimation/model/InfoRefreshUtil;-><init>(Landroid/content/Context;Lcom/baidu/themeanimation/util/LockScreenHandler;)V
-
-    iput-object v1, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mInfoRefreshUtil:Lcom/baidu/themeanimation/model/InfoRefreshUtil;
-
-    .line 93
     invoke-virtual {p0}, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->initlayout()V
 
+    .line 94
+    invoke-virtual {p0, v4}, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->setFocusable(Z)V
+
     .line 95
-    invoke-virtual {p0, v6}, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->setFocusable(Z)V
+    invoke-virtual {p0, v4}, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->setFocusableInTouchMode(Z)V
 
     .line 96
-    invoke-virtual {p0, v6}, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->setFocusableInTouchMode(Z)V
+    const/high16 v0, 0x6
 
-    .line 97
-    const/high16 v1, 0x6
+    invoke-virtual {p0, v0}, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->setDescendantFocusability(I)V
 
-    invoke-virtual {p0, v1}, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->setDescendantFocusability(I)V
+    .line 98
+    iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mIsInitSuccess:Ljava/lang/Boolean;
 
-    .line 99
-    iget-object v1, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mIsInitSuccess:Ljava/lang/Boolean;
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+    move-result v0
 
-    move-result v1
+    if-nez v0, :cond_1
 
-    if-nez v1, :cond_1
+    .line 100
+    const-string v0, "MultithemeUnlockScreen"
+
+    const-string v1, "initlayout failed!"
+
+    invoke-static {v0, v1}, Lcom/baidu/themeanimation/util/Logger;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 101
-    const-string v1, "MultithemeUnlockScreen"
+    iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mUpdateMonitor:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
-    const-string v2, "initlayout failed!"
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v1, v2}, Lcom/baidu/themeanimation/util/Logger;->i(Ljava/lang/String;Ljava/lang/String;)V
+    move-result-object v1
 
-    .line 102
-    iget-object v1, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mUpdateMonitor:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
+    invoke-virtual {v0, v1}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->handleMultithemLockscreenEnalbe(Ljava/lang/Integer;)V
 
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->handleMultithemLockscreenEnalbe(Ljava/lang/Integer;)V
-
-    .line 118
+    .line 115
     :cond_0
     :goto_0
     return-void
 
-    .line 106
+    .line 105
     :cond_1
-    iget-object v1, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mLockScreenView:Landroid/view/View;
+    iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mLockScreenView:Landroid/view/View;
 
-    if-eqz v1, :cond_0
+    if-eqz v0, :cond_0
+
+    .line 106
+    iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mLockScreenView:Landroid/view/View;
+
+    invoke-virtual {p0, v0}, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->addView(Landroid/view/View;)V
 
     .line 107
-    new-instance v0, Landroid/widget/LinearLayout$LayoutParams;
+    const-string v0, "MultithemeUnlockScreen"
 
-    invoke-direct {v0, v5, v5}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
+    const-string v1, "create multi-lockscreen ok"
+
+    invoke-static {v0, v1}, Lcom/baidu/themeanimation/util/Logger;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 108
-    .local v0, layoutParams:Landroid/widget/LinearLayout$LayoutParams;
-    invoke-virtual {p0, v0}, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mInfoRefreshUtil:Lcom/baidu/themeanimation/model/InfoRefreshUtil;
+
+    invoke-virtual {v0}, Lcom/baidu/themeanimation/model/InfoRefreshUtil;->setGlobalVariable()V
 
     .line 109
-    iget-object v1, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mLockScreenView:Landroid/view/View;
+    iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mInfoRefreshUtil:Lcom/baidu/themeanimation/model/InfoRefreshUtil;
 
-    invoke-virtual {p0, v1}, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->addView(Landroid/view/View;)V
+    invoke-virtual {v0}, Lcom/baidu/themeanimation/model/InfoRefreshUtil;->register_Receiver_create()V
 
     .line 110
-    const-string v1, "MultithemeUnlockScreen"
+    iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mLockScreenElement:Lcom/baidu/themeanimation/element/LockScreenElement;
 
-    const-string v2, "create multi-lockscreen ok"
-
-    invoke-static {v1, v2}, Lcom/baidu/themeanimation/util/Logger;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 111
-    iget-object v1, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mInfoRefreshUtil:Lcom/baidu/themeanimation/model/InfoRefreshUtil;
-
-    invoke-virtual {v1}, Lcom/baidu/themeanimation/model/InfoRefreshUtil;->setGlobalVariable()V
-
-    .line 112
-    iget-object v1, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mInfoRefreshUtil:Lcom/baidu/themeanimation/model/InfoRefreshUtil;
-
-    invoke-virtual {v1}, Lcom/baidu/themeanimation/model/InfoRefreshUtil;->register_Receiver_create()V
-
-    .line 113
-    iget-object v1, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mLockScreenElement:Lcom/baidu/themeanimation/element/LockScreenElement;
-
-    invoke-virtual {v1}, Lcom/baidu/themeanimation/element/LockScreenElement;->stopAnimations()V
+    invoke-virtual {v0}, Lcom/baidu/themeanimation/element/LockScreenElement;->stopAnimations()V
 
     goto :goto_0
 .end method
 
-.method static synthetic access$100(Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;)Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+.method static synthetic access$100(Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;)Lcom/android/internal/policy/impl/KeyguardScreenCallback;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 56
-    iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    .line 55
+    iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
     return-object v0
 .end method
@@ -245,7 +236,7 @@
     .parameter "x0"
 
     .prologue
-    .line 56
+    .line 55
     iget v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mCategory:I
 
     return v0
@@ -257,7 +248,7 @@
     .parameter "x1"
 
     .prologue
-    .line 56
+    .line 55
     iput p1, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mCategory:I
 
     return p1
@@ -267,7 +258,7 @@
     .locals 2
 
     .prologue
-    .line 180
+    .line 177
     invoke-static {}, Lcom/baidu/themeanimation/util/FileUtil;->getInstance()Lcom/baidu/themeanimation/util/FileUtil;
 
     move-result-object v0
@@ -276,64 +267,107 @@
 
     invoke-virtual {v0, v1}, Lcom/baidu/themeanimation/util/FileUtil;->setWallpaperChanged(Z)V
 
-    .line 181
+    .line 178
     return-void
 .end method
 
 
 # virtual methods
+.method public cleanUp()V
+    .locals 3
+
+    .prologue
+    const/4 v2, 0x0
+
+    .line 307
+    const-string v0, "MultithemeUnlockScreen"
+
+    const-string v1, "cleanUp"
+
+    invoke-static {v0, v1}, Lcom/baidu/themeanimation/util/Logger;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 308
+    iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mInfoRefreshUtil:Lcom/baidu/themeanimation/model/InfoRefreshUtil;
+
+    invoke-virtual {v0}, Lcom/baidu/themeanimation/model/InfoRefreshUtil;->unregister_Receiver_destory()V
+
+    .line 309
+    iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mLockScreenElement:Lcom/baidu/themeanimation/element/LockScreenElement;
+
+    if-eqz v0, :cond_0
+
+    .line 310
+    iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mLockScreenElement:Lcom/baidu/themeanimation/element/LockScreenElement;
+
+    invoke-virtual {v0}, Lcom/baidu/themeanimation/element/LockScreenElement;->releaseView()V
+
+    .line 313
+    :cond_0
+    iput-object v2, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mLockScreenView:Landroid/view/View;
+
+    .line 314
+    iput-object v2, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mLockScreenElement:Lcom/baidu/themeanimation/element/LockScreenElement;
+
+    .line 315
+    return-void
+.end method
+
 .method public dealPause()V
     .locals 2
 
     .prologue
-    .line 172
+    .line 169
     const-string v0, "MultithemeUnlockScreen"
 
     const-string v1, "onPause"
 
     invoke-static {v0, v1}, Lcom/baidu/themeanimation/util/Logger;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 173
+    .line 170
     iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mLockScreenElement:Lcom/baidu/themeanimation/element/LockScreenElement;
 
     if-eqz v0, :cond_0
 
-    .line 174
+    .line 171
     iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mLockScreenElement:Lcom/baidu/themeanimation/element/LockScreenElement;
 
     invoke-virtual {v0}, Lcom/baidu/themeanimation/element/LockScreenElement;->stopAnimations()V
 
-    .line 175
+    .line 172
     iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mInfoRefreshUtil:Lcom/baidu/themeanimation/model/InfoRefreshUtil;
 
     invoke-virtual {v0}, Lcom/baidu/themeanimation/model/InfoRefreshUtil;->unregister_Receiver_pause()V
 
-    .line 177
+    .line 174
     :cond_0
     return-void
 .end method
 
 .method public dealResume()V
-    .locals 3
+    .locals 5
 
     .prologue
-    .line 184
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    .line 181
     const-string v0, "MultithemeUnlockScreen"
 
-    const-string v1, "onResume"
+    const-string v3, "onResume"
 
-    invoke-static {v0, v1}, Lcom/baidu/themeanimation/util/Logger;->i(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v3}, Lcom/baidu/themeanimation/util/Logger;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 185
+    .line 182
     iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mLockScreenElement:Lcom/baidu/themeanimation/element/LockScreenElement;
 
     if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mContext:Landroid/content/Context;
 
-    const-string v1, "power"
+    const-string v3, "power"
 
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v0, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -347,33 +381,63 @@
 
     if-eqz v0, :cond_0
 
-    .line 187
+    .line 184
     iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mInfoRefreshUtil:Lcom/baidu/themeanimation/model/InfoRefreshUtil;
 
     invoke-virtual {v0}, Lcom/baidu/themeanimation/model/InfoRefreshUtil;->register_Receiver_resume()V
 
-    .line 188
+    .line 185
     iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mLockScreenElement:Lcom/baidu/themeanimation/element/LockScreenElement;
 
-    iget-object v1, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mContext:Landroid/content/Context;
+    iget-object v3, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mContext:Landroid/content/Context;
 
-    iget-object v2, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mHandler:Lcom/baidu/themeanimation/util/LockScreenHandler;
+    iget-object v4, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mHandler:Lcom/baidu/themeanimation/util/LockScreenHandler;
 
-    invoke-virtual {v0, v1, v2}, Lcom/baidu/themeanimation/element/LockScreenElement;->updateContent(Landroid/content/Context;Landroid/os/Handler;)V
+    invoke-virtual {v0, v3, v4}, Lcom/baidu/themeanimation/element/LockScreenElement;->updateContent(Landroid/content/Context;Landroid/os/Handler;)V
 
-    .line 189
+    .line 186
     iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mLockScreenElement:Lcom/baidu/themeanimation/element/LockScreenElement;
 
     invoke-virtual {v0}, Lcom/baidu/themeanimation/element/LockScreenElement;->startAnimations()V
 
-    .line 192
+    .line 188
     :cond_0
+    invoke-static {}, Lcom/baidu/themeanimation/util/FileUtil;->getInstance()Lcom/baidu/themeanimation/util/FileUtil;
+
+    move-result-object v3
+
+    iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v4, "lock_pattern_tactile_feedback_enabled"
+
+    invoke-static {v0, v4, v2}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v0
+
+    if-ne v0, v1, :cond_1
+
+    move v0, v1
+
+    :goto_0
+    invoke-virtual {v3, v0}, Lcom/baidu/themeanimation/util/FileUtil;->setTactileFeedbackEnabled(Z)V
+
+    .line 191
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mCategory:I
 
-    .line 193
+    .line 192
     return-void
+
+    :cond_1
+    move v0, v2
+
+    .line 188
+    goto :goto_0
 .end method
 
 .method public dispatchKeyEvent(Landroid/view/KeyEvent;)Z
@@ -381,16 +445,16 @@
     .parameter "event"
 
     .prologue
-    const/4 v2, 0x0
-
     const/4 v1, 0x1
 
-    .line 267
+    const/4 v2, 0x0
+
+    .line 265
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
 
     move-result v0
 
-    .line 269
+    .line 267
     .local v0, code:I
     iget-object v3, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->isBackKeyDown:Ljava/lang/Boolean;
 
@@ -419,7 +483,7 @@
 
     if-ne v0, v3, :cond_2
 
-    .line 271
+    .line 269
     iget-object v3, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->isBackKeyDown:Ljava/lang/Boolean;
 
     invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
@@ -428,14 +492,14 @@
 
     if-eqz v3, :cond_1
 
-    .line 272
+    .line 270
     const-string v3, "MultithemeUnlockScreen"
 
     const-string v4, "unlock directly, using back key and volumn down"
 
     invoke-static {v3, v4}, Lcom/baidu/themeanimation/util/Logger;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 276
+    .line 274
     :goto_0
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -443,23 +507,23 @@
 
     iput-object v3, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->isBackKeyDown:Ljava/lang/Boolean;
 
-    .line 277
+    .line 275
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v2
 
     iput-object v2, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->isTouchLeftTop:Ljava/lang/Boolean;
 
-    .line 278
-    iget-object v2, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    .line 276
+    iget-object v2, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
-    invoke-interface {v2, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;->dismiss(Z)V
+    invoke-interface {v2}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->goToUnlockScreen()V
 
-    .line 285
+    .line 283
     :goto_1
     return v1
 
-    .line 274
+    .line 272
     :cond_1
     const-string v3, "MultithemeUnlockScreen"
 
@@ -469,13 +533,13 @@
 
     goto :goto_0
 
-    .line 282
+    .line 280
     :cond_2
     const/4 v3, 0x4
 
     if-ne v0, v3, :cond_3
 
-    .line 283
+    .line 281
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getAction()I
 
     move-result v3
@@ -489,7 +553,7 @@
 
     iput-object v1, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->isBackKeyDown:Ljava/lang/Boolean;
 
-    .line 285
+    .line 283
     :cond_3
     invoke-super {p0, p1}, Landroid/widget/LinearLayout;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
@@ -500,7 +564,7 @@
     :cond_4
     move v1, v2
 
-    .line 283
+    .line 281
     goto :goto_2
 .end method
 
@@ -513,7 +577,7 @@
 
     const/high16 v1, 0x42c8
 
-    .line 209
+    .line 208
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
@@ -536,14 +600,14 @@
 
     if-gez v0, :cond_2
 
-    .line 211
+    .line 210
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->isTouchLeftTop:Ljava/lang/Boolean;
 
-    .line 217
+    .line 216
     :cond_0
     :goto_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
@@ -552,7 +616,7 @@
 
     if-nez v0, :cond_1
 
-    .line 218
+    .line 217
     iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mInfoRefreshUtil:Lcom/baidu/themeanimation/model/InfoRefreshUtil;
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
@@ -565,22 +629,20 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/baidu/themeanimation/model/InfoRefreshUtil;->dispatchTouch(FF)V
 
-    .line 220
+    .line 219
     :cond_1
-    iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
-    const-wide/16 v1, 0x0
+    invoke-interface {v0}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->pokeWakelock()V
 
-    invoke-interface {v0, v1, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;->userActivity(J)V
-
-    .line 221
+    .line 220
     invoke-super {p0, p1}, Landroid/widget/LinearLayout;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v0
 
     return v0
 
-    .line 212
+    .line 211
     :cond_2
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -604,7 +666,7 @@
 
     if-lez v0, :cond_0
 
-    .line 214
+    .line 213
     :cond_3
     const/4 v0, 0x0
 
@@ -617,25 +679,6 @@
     goto :goto_0
 .end method
 
-.method public getCallback()Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
-    .locals 1
-
-    .prologue
-    .line 339
-    iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
-
-    return-object v0
-.end method
-
-.method public hideBouncer(I)V
-    .locals 0
-    .parameter "duration"
-
-    .prologue
-    .line 350
-    return-void
-.end method
-
 .method public initlayout()V
     .locals 10
 
@@ -644,33 +687,33 @@
 
     const/4 v8, 0x0
 
-    .line 121
+    .line 118
     const-string v3, "MultithemeUnlockScreen"
 
     const-string v4, "initlayout "
 
     invoke-static {v3, v4}, Lcom/baidu/themeanimation/util/Logger;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 122
+    .line 119
     invoke-static {v8}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v3
 
     iput-object v3, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mIsInitSuccess:Ljava/lang/Boolean;
 
-    .line 123
-    iget-object v3, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mUpdateMonitor:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
+    .line 120
+    iget-object v3, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mUpdateMonitor:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
-    iget-object v3, v3, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->mLockScreenElement:Lcom/baidu/themeanimation/element/LockScreenElement;
+    iget-object v3, v3, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mLockScreenElement:Lcom/baidu/themeanimation/element/LockScreenElement;
 
     iput-object v3, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mLockScreenElement:Lcom/baidu/themeanimation/element/LockScreenElement;
 
-    .line 124
+    .line 121
     iget-object v3, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mLockScreenElement:Lcom/baidu/themeanimation/element/LockScreenElement;
 
     if-nez v3, :cond_0
 
-    .line 125
+    .line 122
     invoke-static {}, Lcom/baidu/themeanimation/util/FileUtil;->getInstance()Lcom/baidu/themeanimation/util/FileUtil;
 
     move-result-object v3
@@ -685,17 +728,17 @@
 
     invoke-virtual {v3, v4, v5, v6, v7}, Lcom/baidu/themeanimation/util/FileUtil;->init(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 127
+    .line 124
     const-string v3, "MultithemeUnlockScreen"
 
     const-string v4, "create LockScreenElement"
 
     invoke-static {v3, v4}, Lcom/baidu/themeanimation/util/Logger;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 128
+    .line 125
     const/4 v2, 0x0
 
-    .line 129
+    .line 126
     .local v2, manifestStream:Ljava/io/InputStream;
     invoke-static {}, Lcom/baidu/themeanimation/util/FileUtil;->getInstance()Lcom/baidu/themeanimation/util/FileUtil;
 
@@ -707,10 +750,10 @@
 
     move-result-object v2
 
-    .line 130
+    .line 127
     if-eqz v2, :cond_0
 
-    .line 132
+    .line 129
     :try_start_0
     invoke-static {}, Lcom/baidu/themeanimation/util/LockScreenParser;->getInstance()Lcom/baidu/themeanimation/util/LockScreenParser;
 
@@ -722,25 +765,25 @@
 
     iput-object v3, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mLockScreenElement:Lcom/baidu/themeanimation/element/LockScreenElement;
 
-    .line 133
-    iget-object v3, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mUpdateMonitor:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
+    .line 130
+    iget-object v3, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mUpdateMonitor:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     iget-object v4, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mLockScreenElement:Lcom/baidu/themeanimation/element/LockScreenElement;
 
-    invoke-virtual {v3, v4}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->holdPersistData(Lcom/baidu/themeanimation/element/LockScreenElement;)V
+    invoke-virtual {v3, v4}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->holdPersistData(Lcom/baidu/themeanimation/element/LockScreenElement;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_3
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_5
 
-    .line 142
+    .line 139
     :try_start_1
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 150
+    .line 147
     .end local v2           #manifestStream:Ljava/io/InputStream;
     :cond_0
     :goto_0
@@ -748,14 +791,14 @@
 
     if-eqz v3, :cond_1
 
-    .line 151
+    .line 148
     const-string v3, "MultithemeUnlockScreen"
 
     const-string v4, "generate LockScreenView"
 
     invoke-static {v3, v4}, Lcom/baidu/themeanimation/util/Logger;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 153
+    .line 150
     :try_start_2
     iget-object v3, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mLockScreenElement:Lcom/baidu/themeanimation/element/LockScreenElement;
 
@@ -776,14 +819,14 @@
     .catch Ljava/lang/IllegalStateException; {:try_start_2 .. :try_end_2} :catch_8
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_9
 
-    .line 164
+    .line 161
     :cond_1
     :goto_1
     iget-object v3, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mLockScreenView:Landroid/view/View;
 
     if-eqz v3, :cond_2
 
-    .line 165
+    .line 162
     const/4 v3, 0x1
 
     invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -792,34 +835,34 @@
 
     iput-object v3, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mIsInitSuccess:Ljava/lang/Boolean;
 
-    .line 169
+    .line 166
     :goto_2
     return-void
 
-    .line 143
+    .line 140
     .restart local v2       #manifestStream:Ljava/io/InputStream;
     :catch_0
     move-exception v0
 
-    .line 144
+    .line 141
     .local v0, e:Ljava/io/IOException;
     invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
 
     goto :goto_0
 
-    .line 134
+    .line 131
     .end local v0           #e:Ljava/io/IOException;
     :catch_1
     move-exception v0
 
-    .line 135
+    .line 132
     .local v0, e:Lorg/xmlpull/v1/XmlPullParserException;
     :try_start_3
     invoke-virtual {v0}, Lorg/xmlpull/v1/XmlPullParserException;->printStackTrace()V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 142
+    .line 139
     :try_start_4
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
     :try_end_4
@@ -827,29 +870,29 @@
 
     goto :goto_0
 
-    .line 143
+    .line 140
     :catch_2
     move-exception v0
 
-    .line 144
+    .line 141
     .local v0, e:Ljava/io/IOException;
     invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
 
     goto :goto_0
 
-    .line 136
+    .line 133
     .end local v0           #e:Ljava/io/IOException;
     :catch_3
     move-exception v0
 
-    .line 137
+    .line 134
     .restart local v0       #e:Ljava/io/IOException;
     :try_start_5
     invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
-    .line 142
+    .line 139
     :try_start_6
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
     :try_end_6
@@ -857,28 +900,28 @@
 
     goto :goto_0
 
-    .line 143
+    .line 140
     :catch_4
     move-exception v0
 
-    .line 144
+    .line 141
     invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
 
     goto :goto_0
 
-    .line 138
+    .line 135
     .end local v0           #e:Ljava/io/IOException;
     :catch_5
     move-exception v0
 
-    .line 139
+    .line 136
     .local v0, e:Ljava/lang/Exception;
     :try_start_7
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_0
 
-    .line 142
+    .line 139
     :try_start_8
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
     :try_end_8
@@ -886,71 +929,71 @@
 
     goto :goto_0
 
-    .line 143
+    .line 140
     :catch_6
     move-exception v0
 
-    .line 144
+    .line 141
     .local v0, e:Ljava/io/IOException;
     invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
 
     goto :goto_0
 
-    .line 141
+    .line 138
     .end local v0           #e:Ljava/io/IOException;
     :catchall_0
     move-exception v3
 
-    .line 142
+    .line 139
     :try_start_9
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
     :try_end_9
     .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_7
 
-    .line 145
+    .line 142
     :goto_3
     throw v3
 
-    .line 143
+    .line 140
     :catch_7
     move-exception v0
 
-    .line 144
+    .line 141
     .restart local v0       #e:Ljava/io/IOException;
     invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
 
     goto :goto_3
 
-    .line 156
+    .line 153
     .end local v0           #e:Ljava/io/IOException;
     .end local v2           #manifestStream:Ljava/io/InputStream;
     :catch_8
     move-exception v0
 
-    .line 157
+    .line 154
     .local v0, e:Ljava/lang/IllegalStateException;
     iput-object v9, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mLockScreenView:Landroid/view/View;
 
-    .line 158
+    .line 155
     invoke-virtual {v0}, Ljava/lang/IllegalStateException;->printStackTrace()V
 
     goto :goto_1
 
-    .line 159
+    .line 156
     .end local v0           #e:Ljava/lang/IllegalStateException;
     :catch_9
     move-exception v1
 
-    .line 160
+    .line 157
     .local v1, e1:Ljava/lang/Exception;
     iput-object v9, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mLockScreenView:Landroid/view/View;
 
-    .line 161
+    .line 158
     invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
 
     goto :goto_1
 
-    .line 167
+    .line 164
     .end local v1           #e1:Ljava/lang/Exception;
     :cond_2
     invoke-static {v8}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -966,7 +1009,7 @@
     .locals 1
 
     .prologue
-    .line 296
+    .line 289
     const/4 v0, 0x0
 
     return v0
@@ -976,22 +1019,21 @@
     .locals 0
 
     .prologue
-    .line 302
+    .line 295
     invoke-virtual {p0}, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->dealPause()V
 
-    .line 303
+    .line 296
     return-void
 .end method
 
-.method public onResume(I)V
+.method public onResume()V
     .locals 0
-    .parameter "reason"
 
     .prologue
-    .line 308
+    .line 301
     invoke-virtual {p0}, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->dealResume()V
 
-    .line 309
+    .line 302
     return-void
 .end method
 
@@ -1000,94 +1042,8 @@
     .parameter "ev"
 
     .prologue
-    .line 226
+    .line 225
     const/4 v0, 0x1
 
     return v0
-.end method
-
-.method public reset()V
-    .locals 3
-
-    .prologue
-    const/4 v2, 0x0
-
-    .line 324
-    const-string v0, "MultithemeUnlockScreen"
-
-    const-string v1, "cleanUp"
-
-    invoke-static {v0, v1}, Lcom/baidu/themeanimation/util/Logger;->i(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 325
-    iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mInfoRefreshUtil:Lcom/baidu/themeanimation/model/InfoRefreshUtil;
-
-    if-eqz v0, :cond_0
-
-    .line 326
-    iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mInfoRefreshUtil:Lcom/baidu/themeanimation/model/InfoRefreshUtil;
-
-    invoke-virtual {v0}, Lcom/baidu/themeanimation/model/InfoRefreshUtil;->unregister_Receiver_destory()V
-
-    .line 329
-    :cond_0
-    iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mLockScreenElement:Lcom/baidu/themeanimation/element/LockScreenElement;
-
-    if-eqz v0, :cond_1
-
-    .line 330
-    iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mLockScreenElement:Lcom/baidu/themeanimation/element/LockScreenElement;
-
-    invoke-virtual {v0}, Lcom/baidu/themeanimation/element/LockScreenElement;->releaseView()V
-
-    .line 333
-    :cond_1
-    iput-object v2, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mLockScreenView:Landroid/view/View;
-
-    .line 334
-    iput-object v2, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mLockScreenElement:Lcom/baidu/themeanimation/element/LockScreenElement;
-
-    .line 335
-    return-void
-.end method
-
-.method public setKeyguardCallback(Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;)V
-    .locals 0
-    .parameter "callback"
-
-    .prologue
-    .line 313
-    iput-object p1, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
-
-    .line 314
-    return-void
-.end method
-
-.method public setLockPatternUtils(Lcom/android/internal/widget/LockPatternUtils;)V
-    .locals 0
-    .parameter "utils"
-
-    .prologue
-    .line 318
-    iput-object p1, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
-
-    .line 319
-    return-void
-.end method
-
-.method public showBouncer(I)V
-    .locals 0
-    .parameter "duration"
-
-    .prologue
-    .line 345
-    return-void
-.end method
-
-.method public showUsabilityHint()V
-    .locals 0
-
-    .prologue
-    .line 291
-    return-void
 .end method

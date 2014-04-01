@@ -33,19 +33,19 @@
     .parameter "service"
 
     .prologue
-    .line 377
+    .line 388
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 378
+    .line 389
     iput-object p1, p0, Landroid/security/KeyChain$KeyChainConnection;->context:Landroid/content/Context;
 
-    .line 379
+    .line 390
     iput-object p2, p0, Landroid/security/KeyChain$KeyChainConnection;->serviceConnection:Landroid/content/ServiceConnection;
 
-    .line 380
+    .line 391
     iput-object p3, p0, Landroid/security/KeyChain$KeyChainConnection;->service:Landroid/security/IKeyChainService;
 
-    .line 381
+    .line 392
     return-void
 .end method
 
@@ -57,7 +57,7 @@
     .parameter "x3"
 
     .prologue
-    .line 371
+    .line 382
     invoke-direct {p0, p1, p2, p3}, Landroid/security/KeyChain$KeyChainConnection;-><init>(Landroid/content/Context;Landroid/content/ServiceConnection;Landroid/security/IKeyChainService;)V
 
     return-void
@@ -69,14 +69,14 @@
     .locals 2
 
     .prologue
-    .line 383
+    .line 394
     iget-object v0, p0, Landroid/security/KeyChain$KeyChainConnection;->context:Landroid/content/Context;
 
     iget-object v1, p0, Landroid/security/KeyChain$KeyChainConnection;->serviceConnection:Landroid/content/ServiceConnection;
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
 
-    .line 384
+    .line 395
     return-void
 .end method
 
@@ -84,7 +84,7 @@
     .locals 1
 
     .prologue
-    .line 386
+    .line 397
     iget-object v0, p0, Landroid/security/KeyChain$KeyChainConnection;->service:Landroid/security/IKeyChainService;
 
     return-object v0

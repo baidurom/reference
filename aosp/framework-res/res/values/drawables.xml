@@ -18,8 +18,6 @@
     <item type="drawable" name="dialog_holo_light_frame">@drawable/dialog_full_holo_light</item>
     <item type="drawable" name="status_bar_closed_default_background">#ff000000</item>
     <item type="drawable" name="status_bar_opened_default_background">#ff000000</item>
-    <item type="drawable" name="notification_item_background_color">#ff111111</item>
-    <item type="drawable" name="notification_item_background_color_pressed">#ff257390</item>
     <item type="drawable" name="search_bar_default_color">#ff000000</item>
     <item type="drawable" name="safe_mode_background">#60000000</item>
     <item type="drawable" name="input_method_fullscreen_background">#fff9f9f9</item>
@@ -27,13 +25,6 @@
     <item type="drawable" name="selected_day_background">#ff0092f4</item>
     <item type="drawable" name="screen_background_holo_light">#fff3f3f3</item>
     <item type="drawable" name="screen_background_holo_dark">#ff000000</item>
-    <item type="drawable" name="notification_template_icon_bg">#3333b5e5</item>
-    <item type="drawable" name="notification_template_icon_low_bg">#0cffffff</item>
-    <item type="drawable" name="APKTOOL_DUMMY_02e4">false</item>
-    <item type="drawable" name="APKTOOL_DUMMY_02e5">false</item>
-    <item type="drawable" name="APKTOOL_DUMMY_02e6">false</item>
-    <item type="drawable" name="APKTOOL_DUMMY_02e7">false</item>
-    <item type="drawable" name="APKTOOL_DUMMY_0363">false</item>
-    <item type="drawable" name="APKTOOL_DUMMY_0364">false</item>
-    <item type="drawable" name="APKTOOL_DUMMY_0594">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_02b3">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0560">false</item>
 </resources>

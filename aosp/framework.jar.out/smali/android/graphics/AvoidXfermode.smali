@@ -10,9 +10,6 @@
     }
 .end annotation
 
-.annotation runtime Ljava/lang/Deprecated;
-.end annotation
-
 
 # direct methods
 .method public constructor <init>(IILandroid/graphics/AvoidXfermode$Mode;)V
@@ -22,17 +19,17 @@
     .parameter "mode"
 
     .prologue
-    .line 52
+    .line 51
     invoke-direct {p0}, Landroid/graphics/Xfermode;-><init>()V
 
-    .line 53
+    .line 52
     if-ltz p2, :cond_0
 
     const/16 v0, 0xff
 
     if-le p2, v0, :cond_1
 
-    .line 54
+    .line 53
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -42,7 +39,7 @@
 
     throw v0
 
-    .line 56
+    .line 55
     :cond_1
     iget v0, p3, Landroid/graphics/AvoidXfermode$Mode;->nativeInt:I
 
@@ -50,9 +47,9 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/graphics/AvoidXfermode;->native_instance:I
+    iput v0, p0, Landroid/graphics/Xfermode;->native_instance:I
 
-    .line 57
+    .line 56
     return-void
 .end method
 

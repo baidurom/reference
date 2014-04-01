@@ -37,10 +37,10 @@
     .locals 0
 
     .prologue
-    .line 51
+    .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 509
+    .line 698
     return-void
 .end method
 
@@ -52,7 +52,7 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 791
+    .line 718
     if-lt p0, v1, :cond_0
 
     if-nez p1, :cond_2
@@ -60,12 +60,12 @@
     :cond_0
     move p0, v1
 
-    .line 798
+    .line 725
     .end local p0
     :cond_1
     return p0
 
-    .line 792
+    .line 719
     .restart local p0
     :cond_2
     iget v2, p1, Landroid/graphics/BitmapFactory$Options;->outWidth:I
@@ -76,7 +76,7 @@
 
     iget v0, p1, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
-    .line 794
+    .line 721
     .local v0, imageShortterDimension:I
     :goto_0
     if-le p0, v1, :cond_1
@@ -87,12 +87,12 @@
 
     if-ge v2, v3, :cond_1
 
-    .line 796
+    .line 723
     shr-int/lit8 p0, p0, 0x1
 
     goto :goto_0
 
-    .line 792
+    .line 719
     .end local v0           #imageShortterDimension:I
     :cond_3
     iget v0, p1, Landroid/graphics/BitmapFactory$Options;->outHeight:I
@@ -105,14 +105,14 @@
     .parameter "c"
 
     .prologue
-    .line 385
+    .line 574
     if-nez p0, :cond_0
 
-    .line 391
+    .line 580
     :goto_0
     return-void
 
-    .line 387
+    .line 576
     :cond_0
     :try_start_0
     invoke-virtual {p0}, Landroid/os/ParcelFileDescriptor;->close()V
@@ -121,7 +121,7 @@
 
     goto :goto_0
 
-    .line 388
+    .line 577
     :catch_0
     move-exception v0
 
@@ -139,42 +139,42 @@
 
     const/4 v11, -0x1
 
-    .line 319
+    .line 508
     iget v7, p0, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
     int-to-double v4, v7
 
-    .line 320
+    .line 509
     .local v4, w:D
     iget v7, p0, Landroid/graphics/BitmapFactory$Options;->outHeight:I
 
     int-to-double v0, v7
 
-    .line 322
+    .line 511
     .local v0, h:D
     if-ne p2, v11, :cond_1
 
     move v2, v6
 
-    .line 324
+    .line 513
     .local v2, lowerBound:I
     :goto_0
     if-ne p1, v11, :cond_2
 
     const/16 v3, 0x80
 
-    .line 328
+    .line 517
     .local v3, upperBound:I
     :goto_1
     if-ge v3, v2, :cond_3
 
-    .line 339
+    .line 528
     .end local v2           #lowerBound:I
     :cond_0
     :goto_2
     return v2
 
-    .line 322
+    .line 511
     .end local v3           #upperBound:I
     :cond_1
     mul-double v7, v4, v0
@@ -195,7 +195,7 @@
 
     goto :goto_0
 
-    .line 324
+    .line 513
     .restart local v2       #lowerBound:I
     :cond_2
     int-to-double v7, p1
@@ -222,7 +222,7 @@
 
     goto :goto_1
 
-    .line 333
+    .line 522
     .restart local v3       #upperBound:I
     :cond_3
     if-ne p2, v11, :cond_4
@@ -231,16 +231,16 @@
 
     move v2, v6
 
-    .line 335
+    .line 524
     goto :goto_2
 
-    .line 336
+    .line 525
     :cond_4
     if-eq p1, v11, :cond_0
 
     move v2, v3
 
-    .line 339
+    .line 528
     goto :goto_2
 .end method
 
@@ -251,31 +251,31 @@
     .parameter "maxNumOfPixels"
 
     .prologue
-    .line 301
+    .line 490
     invoke-static {p0, p1, p2}, Landroid/media/ThumbnailUtils;->computeInitialSampleSize(Landroid/graphics/BitmapFactory$Options;II)I
 
     move-result v0
 
-    .line 305
+    .line 494
     .local v0, initialSize:I
     const/16 v2, 0x8
 
     if-gt v0, v2, :cond_0
 
-    .line 306
+    .line 495
     const/4 v1, 0x1
 
-    .line 307
+    .line 496
     .local v1, roundedSize:I
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 308
+    .line 497
     shl-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 311
+    .line 500
     .end local v1           #roundedSize:I
     :cond_0
     add-int/lit8 v2, v0, 0x7
@@ -284,682 +284,382 @@
 
     mul-int/lit8 v1, v2, 0x8
 
-    .line 314
+    .line 503
     .restart local v1       #roundedSize:I
     :cond_1
     return v1
 .end method
 
 .method public static createImageThumbnail(Ljava/lang/String;I)Landroid/graphics/Bitmap;
-    .locals 20
+    .locals 16
     .parameter "filePath"
     .parameter "kind"
 
     .prologue
-    .line 96
-    const/16 v17, 0x1
+    .line 94
+    const/4 v13, 0x1
 
     move/from16 v0, p1
 
-    move/from16 v1, v17
+    if-ne v0, v13, :cond_3
 
-    if-ne v0, v1, :cond_4
+    const/4 v12, 0x1
 
-    const/16 v16, 0x1
-
-    .line 97
-    .local v16, wantMini:Z
+    .line 95
+    .local v12, wantMini:Z
     :goto_0
-    if-eqz v16, :cond_5
+    if-eqz v12, :cond_4
 
-    const/16 v15, 0x140
+    const/16 v11, 0x140
 
-    .line 100
-    .local v15, targetSize:I
+    .line 98
+    .local v11, targetSize:I
     :goto_1
-    if-eqz v16, :cond_6
+    if-eqz v12, :cond_5
 
-    const/high16 v9, 0x3
+    const/high16 v7, 0x3
 
-    .line 103
-    .local v9, maxPixels:I
+    .line 101
+    .local v7, maxPixels:I
     :goto_2
-    new-instance v12, Landroid/media/ThumbnailUtils$SizedThumbnailBitmap;
+    new-instance v10, Landroid/media/ThumbnailUtils$SizedThumbnailBitmap;
 
-    const/16 v17, 0x0
-
-    move-object/from16 v0, v17
-
-    invoke-direct {v12, v0}, Landroid/media/ThumbnailUtils$SizedThumbnailBitmap;-><init>(Landroid/media/ThumbnailUtils$1;)V
-
-    .line 104
-    .local v12, sizedThumbnailBitmap:Landroid/media/ThumbnailUtils$SizedThumbnailBitmap;
-    const/4 v3, 0x0
-
-    .line 105
-    .local v3, bitmap:Landroid/graphics/Bitmap;
-    invoke-static/range {p0 .. p0}, Landroid/media/MediaFile;->getFileType(Ljava/lang/String;)Landroid/media/MediaFile$MediaFileType;
-
-    move-result-object v7
-
-    .line 106
-    .local v7, fileType:Landroid/media/MediaFile$MediaFileType;
-    if-eqz v7, :cond_0
-
-    iget v0, v7, Landroid/media/MediaFile$MediaFileType;->fileType:I
-
-    move/from16 v17, v0
-
-    const/16 v18, 0x191
-
-    move/from16 v0, v17
-
-    move/from16 v1, v18
-
-    if-ne v0, v1, :cond_0
-
-    .line 107
-    move-object/from16 v0, p0
-
-    invoke-static {v0, v15, v9, v12}, Landroid/media/ThumbnailUtils;->createThumbnailFromEXIF(Ljava/lang/String;IILandroid/media/ThumbnailUtils$SizedThumbnailBitmap;)V
-
-    .line 108
-    iget-object v3, v12, Landroid/media/ThumbnailUtils$SizedThumbnailBitmap;->mBitmap:Landroid/graphics/Bitmap;
-
-    .line 111
-    :cond_0
-    if-nez v3, :cond_8
-
-    .line 112
     const/4 v13, 0x0
 
-    .line 114
-    .local v13, stream:Ljava/io/FileInputStream;
+    invoke-direct {v10, v13}, Landroid/media/ThumbnailUtils$SizedThumbnailBitmap;-><init>(Landroid/media/ThumbnailUtils$1;)V
+
+    .line 102
+    .local v10, sizedThumbnailBitmap:Landroid/media/ThumbnailUtils$SizedThumbnailBitmap;
+    const/4 v1, 0x0
+
+    .line 103
+    .local v1, bitmap:Landroid/graphics/Bitmap;
+    invoke-static/range {p0 .. p0}, Landroid/media/MediaFile;->getFileType(Ljava/lang/String;)Landroid/media/MediaFile$MediaFileType;
+
+    move-result-object v5
+
+    .line 104
+    .local v5, fileType:Landroid/media/MediaFile$MediaFileType;
+    if-eqz v5, :cond_0
+
+    iget v13, v5, Landroid/media/MediaFile$MediaFileType;->fileType:I
+
+    const/16 v14, 0x191
+
+    if-ne v13, v14, :cond_0
+
+    .line 105
+    move-object/from16 v0, p0
+
+    invoke-static {v0, v11, v7, v10}, Landroid/media/ThumbnailUtils;->createThumbnailFromEXIF(Ljava/lang/String;IILandroid/media/ThumbnailUtils$SizedThumbnailBitmap;)V
+
+    .line 106
+    iget-object v1, v10, Landroid/media/ThumbnailUtils$SizedThumbnailBitmap;->mBitmap:Landroid/graphics/Bitmap;
+
+    .line 109
+    :cond_0
+    if-nez v1, :cond_7
+
+    .line 113
     :try_start_0
-    new-instance v14, Ljava/io/FileInputStream;
+    new-instance v3, Ljava/io/FileInputStream;
 
     move-object/from16 v0, p0
 
-    invoke-direct {v14, v0}, Ljava/io/FileInputStream;-><init>(Ljava/lang/String;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_8
-    .catch Ljava/lang/OutOfMemoryError; {:try_start_0 .. :try_end_0} :catch_4
+    invoke-direct {v3, v0}, Ljava/io/FileInputStream;-><init>(Ljava/lang/String;)V
 
-    .line 115
-    .end local v13           #stream:Ljava/io/FileInputStream;
-    .local v14, stream:Ljava/io/FileInputStream;
-    :try_start_1
-    invoke-virtual {v14}, Ljava/io/FileInputStream;->getFD()Ljava/io/FileDescriptor;
-
-    move-result-object v6
-
-    .line 116
-    .local v6, fd:Ljava/io/FileDescriptor;
-    new-instance v11, Landroid/graphics/BitmapFactory$Options;
-
-    invoke-direct {v11}, Landroid/graphics/BitmapFactory$Options;-><init>()V
-
-    .line 117
-    .local v11, options:Landroid/graphics/BitmapFactory$Options;
-    const/16 v17, 0x1
-
-    move/from16 v0, v17
-
-    iput v0, v11, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
-
-    .line 118
-    const/16 v17, 0x1
-
-    move/from16 v0, v17
-
-    iput-boolean v0, v11, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
-
-    .line 121
-    const/4 v8, 0x0
-
-    .line 122
-    .local v8, isDcfImage:Z
-    const-string v17, ".dcf"
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v17
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
-
-    move-result v17
-
-    if-eqz v17, :cond_1
-
-    .line 123
-    const/4 v8, 0x1
-
-    .line 126
-    :cond_1
-    if-eqz v8, :cond_7
-
-    .line 130
-    const-class v17, Lcom/mediatek/common/dcfdecoder/IDcfDecoder;
-
-    const/16 v18, 0x0
-
-    move/from16 v0, v18
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    move-object/from16 v18, v0
-
-    invoke-static/range {v17 .. v18}, Lcom/mediatek/common/MediatekClassFactory;->createInstance(Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;
+    .line 114
+    .local v3, fInputFile:Ljava/io/FileInputStream;
+    invoke-virtual {v3}, Ljava/io/FileInputStream;->getFD()Ljava/io/FileDescriptor;
 
     move-result-object v4
 
-    check-cast v4, Lcom/mediatek/common/dcfdecoder/IDcfDecoder;
+    .line 116
+    .local v4, fd:Ljava/io/FileDescriptor;
+    new-instance v9, Landroid/graphics/BitmapFactory$Options;
 
-    .line 131
-    .local v4, decoder:Lcom/mediatek/common/dcfdecoder/IDcfDecoder;
-    const/16 v17, 0x0
+    invoke-direct {v9}, Landroid/graphics/BitmapFactory$Options;-><init>()V
+
+    .line 117
+    .local v9, options:Landroid/graphics/BitmapFactory$Options;
+    const/4 v13, 0x1
+
+    iput v13, v9, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
+
+    .line 118
+    const/4 v13, 0x1
+
+    iput-boolean v13, v9, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
+
+    .line 121
+    const/4 v6, 0x0
+
+    .line 122
+    .local v6, isDcfImage:Z
+    const-string v13, ".dcf"
 
     move-object/from16 v0, p0
 
-    move/from16 v1, v17
+    invoke-virtual {v0, v13}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
-    invoke-interface {v4, v0, v11, v1}, Lcom/mediatek/common/dcfdecoder/IDcfDecoder;->decodeFile(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;Z)Landroid/graphics/Bitmap;
+    move-result v13
+
+    if-eqz v13, :cond_1
+
+    .line 123
+    const/4 v6, 0x1
+
+    .line 125
+    :cond_1
+    if-eqz v6, :cond_6
+
+    .line 128
+    const/4 v13, 0x0
+
+    move-object/from16 v0, p0
+
+    invoke-static {v0, v9, v13}, Lcom/mediatek/dcfdecoder/DcfDecoder;->decodeFile(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;Z)Landroid/graphics/Bitmap;
+
+    .line 131
+    :goto_3
+    iget-boolean v13, v9, Landroid/graphics/BitmapFactory$Options;->mCancel:Z
+
+    if-nez v13, :cond_2
+
+    iget v13, v9, Landroid/graphics/BitmapFactory$Options;->outWidth:I
+
+    const/4 v14, -0x1
+
+    if-eq v13, v14, :cond_2
+
+    iget v13, v9, Landroid/graphics/BitmapFactory$Options;->outHeight:I
+
+    const/4 v14, -0x1
+
+    if-ne v13, v14, :cond_9
+
+    .line 133
+    :cond_2
+    const/4 v4, 0x0
 
     .line 134
-    .end local v4           #decoder:Lcom/mediatek/common/dcfdecoder/IDcfDecoder;
-    :goto_3
-    iget-boolean v0, v11, Landroid/graphics/BitmapFactory$Options;->mCancel:Z
+    invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
 
-    move/from16 v17, v0
+    .line 135
+    const/4 v13, 0x0
 
-    if-nez v17, :cond_2
-
-    iget v0, v11, Landroid/graphics/BitmapFactory$Options;->outWidth:I
-
-    move/from16 v17, v0
-
-    const/16 v18, -0x1
-
-    move/from16 v0, v17
-
-    move/from16 v1, v18
-
-    if-eq v0, v1, :cond_2
-
-    iget v0, v11, Landroid/graphics/BitmapFactory$Options;->outHeight:I
-
-    move/from16 v17, v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
-    .catch Ljava/lang/OutOfMemoryError; {:try_start_1 .. :try_end_1} :catch_7
-
-    const/16 v18, -0x1
-
-    move/from16 v0, v17
-
-    move/from16 v1, v18
-
-    if-ne v0, v1, :cond_a
-
-    .line 136
-    :cond_2
-    const/16 v17, 0x0
-
-    .line 165
-    if-eqz v14, :cond_3
-
-    .line 166
-    :try_start_2
-    invoke-virtual {v14}, Ljava/io/FileInputStream;->close()V
-    :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
-
-    .line 180
-    .end local v6           #fd:Ljava/io/FileDescriptor;
-    .end local v8           #isDcfImage:Z
-    .end local v11           #options:Landroid/graphics/BitmapFactory$Options;
-    .end local v14           #stream:Ljava/io/FileInputStream;
-    :cond_3
+    .line 174
+    .end local v3           #fInputFile:Ljava/io/FileInputStream;
+    .end local v4           #fd:Ljava/io/FileDescriptor;
+    .end local v6           #isDcfImage:Z
+    .end local v9           #options:Landroid/graphics/BitmapFactory$Options;
     :goto_4
-    return-object v17
+    return-object v13
 
-    .line 96
-    .end local v3           #bitmap:Landroid/graphics/Bitmap;
-    .end local v7           #fileType:Landroid/media/MediaFile$MediaFileType;
-    .end local v9           #maxPixels:I
-    .end local v12           #sizedThumbnailBitmap:Landroid/media/ThumbnailUtils$SizedThumbnailBitmap;
-    .end local v15           #targetSize:I
-    .end local v16           #wantMini:Z
+    .line 94
+    .end local v1           #bitmap:Landroid/graphics/Bitmap;
+    .end local v5           #fileType:Landroid/media/MediaFile$MediaFileType;
+    .end local v7           #maxPixels:I
+    .end local v10           #sizedThumbnailBitmap:Landroid/media/ThumbnailUtils$SizedThumbnailBitmap;
+    .end local v11           #targetSize:I
+    .end local v12           #wantMini:Z
+    :cond_3
+    const/4 v12, 0x0
+
+    goto :goto_0
+
+    .line 95
+    .restart local v12       #wantMini:Z
     :cond_4
-    const/16 v16, 0x0
+    const/16 v11, 0x60
 
-    goto/16 :goto_0
+    goto :goto_1
 
-    .line 97
-    .restart local v16       #wantMini:Z
+    .line 98
+    .restart local v11       #targetSize:I
     :cond_5
-    const/16 v15, 0x60
+    const/16 v7, 0x4000
 
-    goto/16 :goto_1
+    goto :goto_2
 
-    .line 100
-    .restart local v15       #targetSize:I
+    .line 126
+    .restart local v1       #bitmap:Landroid/graphics/Bitmap;
+    .restart local v3       #fInputFile:Ljava/io/FileInputStream;
+    .restart local v4       #fd:Ljava/io/FileDescriptor;
+    .restart local v5       #fileType:Landroid/media/MediaFile$MediaFileType;
+    .restart local v6       #isDcfImage:Z
+    .restart local v7       #maxPixels:I
+    .restart local v9       #options:Landroid/graphics/BitmapFactory$Options;
+    .restart local v10       #sizedThumbnailBitmap:Landroid/media/ThumbnailUtils$SizedThumbnailBitmap;
     :cond_6
-    const/16 v9, 0x4000
+    const/4 v13, 0x0
 
-    goto/16 :goto_2
-
-    .line 127
-    .restart local v3       #bitmap:Landroid/graphics/Bitmap;
-    .restart local v6       #fd:Ljava/io/FileDescriptor;
-    .restart local v7       #fileType:Landroid/media/MediaFile$MediaFileType;
-    .restart local v8       #isDcfImage:Z
-    .restart local v9       #maxPixels:I
-    .restart local v11       #options:Landroid/graphics/BitmapFactory$Options;
-    .restart local v12       #sizedThumbnailBitmap:Landroid/media/ThumbnailUtils$SizedThumbnailBitmap;
-    .restart local v14       #stream:Ljava/io/FileInputStream;
-    :cond_7
-    const/16 v17, 0x0
-
-    :try_start_3
-    move-object/from16 v0, v17
-
-    invoke-static {v6, v0, v11}, Landroid/graphics/BitmapFactory;->decodeFileDescriptor(Ljava/io/FileDescriptor;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
-    .catch Ljava/lang/OutOfMemoryError; {:try_start_3 .. :try_end_3} :catch_7
+    invoke-static {v4, v13, v9}, Landroid/graphics/BitmapFactory;->decodeFileDescriptor(Ljava/io/FileDescriptor;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/OutOfMemoryError; {:try_start_0 .. :try_end_0} :catch_1
 
     goto :goto_3
 
-    .line 159
-    .end local v6           #fd:Ljava/io/FileDescriptor;
-    .end local v8           #isDcfImage:Z
-    .end local v11           #options:Landroid/graphics/BitmapFactory$Options;
+    .line 161
+    .end local v3           #fInputFile:Ljava/io/FileInputStream;
+    .end local v4           #fd:Ljava/io/FileDescriptor;
+    .end local v6           #isDcfImage:Z
+    .end local v9           #options:Landroid/graphics/BitmapFactory$Options;
     :catch_0
-    move-exception v5
+    move-exception v2
 
-    move-object v13, v14
+    .line 162
+    .local v2, ex:Ljava/io/IOException;
+    const-string v13, "ThumbnailUtils"
 
-    .line 160
-    .end local v14           #stream:Ljava/io/FileInputStream;
-    .local v5, ex:Ljava/io/IOException;
-    .restart local v13       #stream:Ljava/io/FileInputStream;
+    const-string v14, ""
+
+    invoke-static {v13, v14, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    .line 168
+    .end local v2           #ex:Ljava/io/IOException;
+    :cond_7
     :goto_5
-    :try_start_4
-    const-string v17, "ThumbnailUtils"
-
-    const-string v18, ""
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, v18
-
-    invoke-static {v0, v1, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
-
-    .line 165
-    if-eqz v13, :cond_8
-
-    .line 166
-    :try_start_5
-    invoke-virtual {v13}, Ljava/io/FileInputStream;->close()V
-    :try_end_5
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_3
-
-    .line 174
-    .end local v5           #ex:Ljava/io/IOException;
-    .end local v13           #stream:Ljava/io/FileInputStream;
-    :cond_8
-    :goto_6
-    const/16 v17, 0x3
+    const/4 v13, 0x3
 
     move/from16 v0, p1
 
-    move/from16 v1, v17
+    if-ne v0, v13, :cond_8
 
-    if-ne v0, v1, :cond_9
+    .line 170
+    const/16 v13, 0x60
 
-    .line 176
-    const/16 v17, 0x60
+    const/16 v14, 0x60
 
-    const/16 v18, 0x60
+    const/4 v15, 0x2
 
-    const/16 v19, 0x2
+    invoke-static {v1, v13, v14, v15}, Landroid/media/ThumbnailUtils;->extractThumbnail(Landroid/graphics/Bitmap;III)Landroid/graphics/Bitmap;
 
-    move/from16 v0, v17
+    move-result-object v1
 
-    move/from16 v1, v18
+    :cond_8
+    move-object v13, v1
 
-    move/from16 v2, v19
+    .line 174
+    goto :goto_4
 
-    invoke-static {v3, v0, v1, v2}, Landroid/media/ThumbnailUtils;->extractThumbnail(Landroid/graphics/Bitmap;III)Landroid/graphics/Bitmap;
-
-    move-result-object v3
-
+    .line 140
+    .restart local v3       #fInputFile:Ljava/io/FileInputStream;
+    .restart local v4       #fd:Ljava/io/FileDescriptor;
+    .restart local v6       #isDcfImage:Z
+    .restart local v9       #options:Landroid/graphics/BitmapFactory$Options;
     :cond_9
-    move-object/from16 v17, v3
+    :try_start_1
+    invoke-static {v9, v11, v7}, Landroid/media/ThumbnailUtils;->computeSampleSize(Landroid/graphics/BitmapFactory$Options;II)I
 
-    .line 180
-    goto :goto_4
+    move-result v13
 
-    .line 168
-    .restart local v6       #fd:Ljava/io/FileDescriptor;
-    .restart local v8       #isDcfImage:Z
-    .restart local v11       #options:Landroid/graphics/BitmapFactory$Options;
-    .restart local v14       #stream:Ljava/io/FileInputStream;
-    :catch_1
-    move-exception v5
+    invoke-static {v13, v9}, Landroid/media/ThumbnailUtils;->adustSampleSize(ILandroid/graphics/BitmapFactory$Options;)I
 
-    .line 169
-    .restart local v5       #ex:Ljava/io/IOException;
-    const-string v18, "ThumbnailUtils"
+    move-result v13
 
-    const-string v19, ""
+    iput v13, v9, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
-    move-object/from16 v0, v18
+    .line 144
+    const/4 v13, 0x0
 
-    move-object/from16 v1, v19
+    iput-boolean v13, v9, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    invoke-static {v0, v1, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    .line 146
+    const/4 v13, 0x0
 
-    goto :goto_4
-
-    .line 141
-    .end local v5           #ex:Ljava/io/IOException;
-    :cond_a
-    :try_start_6
-    invoke-static {v11, v15, v9}, Landroid/media/ThumbnailUtils;->computeSampleSize(Landroid/graphics/BitmapFactory$Options;II)I
-
-    move-result v17
-
-    move/from16 v0, v17
-
-    invoke-static {v0, v11}, Landroid/media/ThumbnailUtils;->adustSampleSize(ILandroid/graphics/BitmapFactory$Options;)I
-
-    move-result v17
-
-    move/from16 v0, v17
-
-    iput v0, v11, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
-
-    .line 145
-    const/16 v17, 0x0
-
-    move/from16 v0, v17
-
-    iput-boolean v0, v11, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
+    iput-boolean v13, v9, Landroid/graphics/BitmapFactory$Options;->inDither:Z
 
     .line 147
-    const/16 v17, 0x0
+    sget-object v13, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    move/from16 v0, v17
+    iput-object v13, v9, Landroid/graphics/BitmapFactory$Options;->inPreferredConfig:Landroid/graphics/Bitmap$Config;
 
-    iput-boolean v0, v11, Landroid/graphics/BitmapFactory$Options;->inDither:Z
+    .line 150
+    if-eqz v6, :cond_a
 
-    .line 148
-    sget-object v17, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
-
-    move-object/from16 v0, v17
-
-    iput-object v0, v11, Landroid/graphics/BitmapFactory$Options;->inPreferredConfig:Landroid/graphics/Bitmap$Config;
-
-    .line 152
-    if-eqz v8, :cond_b
-
-    .line 156
-    const-class v17, Lcom/mediatek/common/dcfdecoder/IDcfDecoder;
-
-    const/16 v18, 0x0
-
-    move/from16 v0, v18
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    move-object/from16 v18, v0
-
-    invoke-static/range {v17 .. v18}, Lcom/mediatek/common/MediatekClassFactory;->createInstance(Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lcom/mediatek/common/dcfdecoder/IDcfDecoder;
-
-    .line 157
-    .restart local v4       #decoder:Lcom/mediatek/common/dcfdecoder/IDcfDecoder;
-    const/16 v17, 0x0
+    .line 153
+    const/4 v13, 0x0
 
     move-object/from16 v0, p0
 
-    move/from16 v1, v17
+    invoke-static {v0, v9, v13}, Lcom/mediatek/dcfdecoder/DcfDecoder;->decodeFile(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;Z)Landroid/graphics/Bitmap;
 
-    invoke-interface {v4, v0, v11, v1}, Lcom/mediatek/common/dcfdecoder/IDcfDecoder;->decodeFile(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;Z)Landroid/graphics/Bitmap;
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_1
-    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_0
-    .catch Ljava/lang/OutOfMemoryError; {:try_start_6 .. :try_end_6} :catch_7
+    move-result-object v1
 
-    move-result-object v3
-
-    .line 165
-    .end local v4           #decoder:Lcom/mediatek/common/dcfdecoder/IDcfDecoder;
-    :goto_7
-    if-eqz v14, :cond_8
-
-    .line 166
-    :try_start_7
-    invoke-virtual {v14}, Ljava/io/FileInputStream;->close()V
-    :try_end_7
-    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_2
-
-    goto :goto_6
-
-    .line 168
-    :catch_2
-    move-exception v5
-
-    .line 169
-    .restart local v5       #ex:Ljava/io/IOException;
-    const-string v17, "ThumbnailUtils"
-
-    const-string v18, ""
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, v18
-
-    invoke-static {v0, v1, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto :goto_6
-
-    .line 153
-    .end local v5           #ex:Ljava/io/IOException;
-    :cond_b
-    const/16 v17, 0x0
-
-    :try_start_8
-    move-object/from16 v0, v17
-
-    invoke-static {v6, v0, v11}, Landroid/graphics/BitmapFactory;->decodeFileDescriptor(Ljava/io/FileDescriptor;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
-    :try_end_8
-    .catchall {:try_start_8 .. :try_end_8} :catchall_1
-    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_0
-    .catch Ljava/lang/OutOfMemoryError; {:try_start_8 .. :try_end_8} :catch_7
-
-    move-result-object v3
-
-    goto :goto_7
-
-    .line 168
-    .end local v6           #fd:Ljava/io/FileDescriptor;
-    .end local v8           #isDcfImage:Z
-    .end local v11           #options:Landroid/graphics/BitmapFactory$Options;
-    .end local v14           #stream:Ljava/io/FileInputStream;
-    .restart local v5       #ex:Ljava/io/IOException;
-    .restart local v13       #stream:Ljava/io/FileInputStream;
-    :catch_3
-    move-exception v5
-
-    .line 169
-    const-string v17, "ThumbnailUtils"
-
-    const-string v18, ""
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, v18
-
-    invoke-static {v0, v1, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto/16 :goto_6
-
-    .line 161
-    .end local v5           #ex:Ljava/io/IOException;
-    :catch_4
-    move-exception v10
-
-    .line 162
-    .local v10, oom:Ljava/lang/OutOfMemoryError;
-    :goto_8
-    :try_start_9
-    const-string v17, "ThumbnailUtils"
-
-    new-instance v18, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v19, "Unable to decode file "
-
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    move-object/from16 v0, v18
-
-    move-object/from16 v1, p0
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    const-string v19, ". OutOfMemoryError."
-
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v18
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, v18
-
-    invoke-static {v0, v1, v10}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    :try_end_9
-    .catchall {:try_start_9 .. :try_end_9} :catchall_0
-
-    .line 165
-    if-eqz v13, :cond_8
-
-    .line 166
-    :try_start_a
-    invoke-virtual {v13}, Ljava/io/FileInputStream;->close()V
-    :try_end_a
-    .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_5
-
-    goto/16 :goto_6
-
-    .line 168
-    :catch_5
-    move-exception v5
-
-    .line 169
-    .restart local v5       #ex:Ljava/io/IOException;
-    const-string v17, "ThumbnailUtils"
-
-    const-string v18, ""
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, v18
-
-    invoke-static {v0, v1, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto/16 :goto_6
-
-    .line 164
-    .end local v5           #ex:Ljava/io/IOException;
-    .end local v10           #oom:Ljava/lang/OutOfMemoryError;
-    :catchall_0
-    move-exception v17
-
-    .line 165
-    :goto_9
-    if-eqz v13, :cond_c
-
-    .line 166
-    :try_start_b
-    invoke-virtual {v13}, Ljava/io/FileInputStream;->close()V
-    :try_end_b
-    .catch Ljava/io/IOException; {:try_start_b .. :try_end_b} :catch_6
-
-    .line 170
-    :cond_c
-    :goto_a
-    throw v17
-
-    .line 168
-    :catch_6
-    move-exception v5
-
-    .line 169
-    .restart local v5       #ex:Ljava/io/IOException;
-    const-string v18, "ThumbnailUtils"
-
-    const-string v19, ""
-
-    move-object/from16 v0, v18
-
-    move-object/from16 v1, v19
-
-    invoke-static {v0, v1, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto :goto_a
-
-    .line 164
-    .end local v5           #ex:Ljava/io/IOException;
-    .end local v13           #stream:Ljava/io/FileInputStream;
-    .restart local v14       #stream:Ljava/io/FileInputStream;
-    :catchall_1
-    move-exception v17
-
-    move-object v13, v14
-
-    .end local v14           #stream:Ljava/io/FileInputStream;
-    .restart local v13       #stream:Ljava/io/FileInputStream;
-    goto :goto_9
-
-    .line 161
-    .end local v13           #stream:Ljava/io/FileInputStream;
-    .restart local v14       #stream:Ljava/io/FileInputStream;
-    :catch_7
-    move-exception v10
-
-    move-object v13, v14
-
-    .end local v14           #stream:Ljava/io/FileInputStream;
-    .restart local v13       #stream:Ljava/io/FileInputStream;
-    goto :goto_8
+    .line 158
+    :goto_6
+    const/4 v4, 0x0
 
     .line 159
-    :catch_8
-    move-exception v5
+    invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Ljava/lang/OutOfMemoryError; {:try_start_1 .. :try_end_1} :catch_1
 
-    goto/16 :goto_5
+    goto :goto_5
+
+    .line 163
+    .end local v3           #fInputFile:Ljava/io/FileInputStream;
+    .end local v4           #fd:Ljava/io/FileDescriptor;
+    .end local v6           #isDcfImage:Z
+    .end local v9           #options:Landroid/graphics/BitmapFactory$Options;
+    :catch_1
+    move-exception v8
+
+    .line 164
+    .local v8, oom:Ljava/lang/OutOfMemoryError;
+    const-string v13, "ThumbnailUtils"
+
+    new-instance v14, Ljava/lang/StringBuilder;
+
+    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v15, "Unable to decode file "
+
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v14
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v14, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v14
+
+    const-string v15, ". OutOfMemoryError."
+
+    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v14
+
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v14
+
+    invoke-static {v13, v14, v8}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto :goto_5
+
+    .line 151
+    .end local v8           #oom:Ljava/lang/OutOfMemoryError;
+    .restart local v3       #fInputFile:Ljava/io/FileInputStream;
+    .restart local v4       #fd:Ljava/io/FileDescriptor;
+    .restart local v6       #isDcfImage:Z
+    .restart local v9       #options:Landroid/graphics/BitmapFactory$Options;
+    :cond_a
+    const/4 v13, 0x0
+
+    :try_start_2
+    invoke-static {v4, v13, v9}, Landroid/graphics/BitmapFactory;->decodeFileDescriptor(Ljava/io/FileDescriptor;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
+    .catch Ljava/lang/OutOfMemoryError; {:try_start_2 .. :try_end_2} :catch_1
+
+    move-result-object v1
+
+    goto :goto_6
 .end method
 
 .method private static createThumbnailFromEXIF(Ljava/lang/String;IILandroid/media/ThumbnailUtils$SizedThumbnailBitmap;)V
@@ -970,23 +670,23 @@
     .parameter "sizedThumbBitmap"
 
     .prologue
-    .line 523
+    .line 736
     if-nez p0, :cond_1
 
-    .line 587
+    .line 802
     :cond_0
     :goto_0
     return-void
 
-    .line 525
+    .line 738
     :cond_1
     const/4 v1, 0x0
 
-    .line 526
+    .line 739
     .local v1, exif:Landroid/media/ExifInterface;
     const/4 v8, 0x0
 
-    .line 528
+    .line 741
     .local v8, thumbData:[B
     :try_start_0
     new-instance v2, Landroid/media/ExifInterface;
@@ -995,9 +695,12 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 529
+    .line 742
     .end local v1           #exif:Landroid/media/ExifInterface;
     .local v2, exif:Landroid/media/ExifInterface;
+    if-eqz v2, :cond_2
+
+    .line 743
     :try_start_1
     invoke-virtual {v2}, Landroid/media/ExifInterface;->getThumbnail()[B
     :try_end_1
@@ -1005,9 +708,10 @@
 
     move-result-object v8
 
+    :cond_2
     move-object v1, v2
 
-    .line 534
+    .line 749
     .end local v2           #exif:Landroid/media/ExifInterface;
     .restart local v1       #exif:Landroid/media/ExifInterface;
     :goto_1
@@ -1015,37 +719,37 @@
 
     invoke-direct {v5}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
-    .line 535
+    .line 750
     .local v5, fullOptions:Landroid/graphics/BitmapFactory$Options;
     new-instance v3, Landroid/graphics/BitmapFactory$Options;
 
     invoke-direct {v3}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
-    .line 536
+    .line 751
     .local v3, exifOptions:Landroid/graphics/BitmapFactory$Options;
     const/4 v4, 0x0
 
-    .line 537
+    .line 752
     .local v4, exifThumbWidth:I
     const/4 v6, 0x0
 
-    .line 540
+    .line 755
     .local v6, fullThumbWidth:I
-    if-eqz v8, :cond_2
+    if-eqz v8, :cond_3
 
-    .line 541
+    .line 756
     const/4 v10, 0x1
 
     iput-boolean v10, v3, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 542
+    .line 757
     const/4 v10, 0x0
 
     array-length v11, v8
 
     invoke-static {v8, v10, v11, v3}, Landroid/graphics/BitmapFactory;->decodeByteArray([BIILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
-    .line 545
+    .line 760
     invoke-static {v3, p1, p2}, Landroid/media/ThumbnailUtils;->computeSampleSize(Landroid/graphics/BitmapFactory$Options;II)I
 
     move-result v10
@@ -1056,44 +760,44 @@
 
     iput v10, v3, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
-    .line 549
+    .line 764
     iget v10, v3, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
     iget v11, v3, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
     div-int v4, v10, v11
 
-    .line 553
-    :cond_2
+    .line 768
+    :cond_3
     const/4 v10, 0x1
 
     iput-boolean v10, v5, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 554
+    .line 769
     invoke-static {p0, v5}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
-    .line 558
+    .line 773
     iget v10, v5, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
     const/4 v11, -0x1
 
-    if-eq v10, v11, :cond_3
+    if-eq v10, v11, :cond_4
 
     iget v10, v5, Landroid/graphics/BitmapFactory$Options;->outHeight:I
 
     const/4 v11, -0x1
 
-    if-ne v10, v11, :cond_4
+    if-ne v10, v11, :cond_5
 
-    .line 559
-    :cond_3
+    .line 774
+    :cond_4
     const/4 v10, 0x0
 
     iput-object v10, p3, Landroid/media/ThumbnailUtils$SizedThumbnailBitmap;->mBitmap:Landroid/graphics/Bitmap;
 
     goto :goto_0
 
-    .line 530
+    .line 745
     .end local v3           #exifOptions:Landroid/graphics/BitmapFactory$Options;
     .end local v4           #exifThumbWidth:I
     .end local v5           #fullOptions:Landroid/graphics/BitmapFactory$Options;
@@ -1101,7 +805,7 @@
     :catch_0
     move-exception v0
 
-    .line 531
+    .line 746
     .local v0, ex:Ljava/io/IOException;
     :goto_2
     const-string v10, "ThumbnailUtils"
@@ -1110,13 +814,13 @@
 
     goto :goto_1
 
-    .line 565
+    .line 780
     .end local v0           #ex:Ljava/io/IOException;
     .restart local v3       #exifOptions:Landroid/graphics/BitmapFactory$Options;
     .restart local v4       #exifThumbWidth:I
     .restart local v5       #fullOptions:Landroid/graphics/BitmapFactory$Options;
     .restart local v6       #fullThumbWidth:I
-    :cond_4
+    :cond_5
     invoke-static {v5, p1, p2}, Landroid/media/ThumbnailUtils;->computeSampleSize(Landroid/graphics/BitmapFactory$Options;II)I
 
     move-result v10
@@ -1127,32 +831,32 @@
 
     iput v10, v5, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
-    .line 569
+    .line 784
     iget v10, v5, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
     iget v11, v5, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
     div-int v6, v10, v11
 
-    .line 572
-    if-eqz v8, :cond_5
+    .line 787
+    if-eqz v8, :cond_6
 
-    if-lt v4, v6, :cond_5
+    if-lt v4, v6, :cond_6
 
-    .line 573
+    .line 788
     iget v9, v3, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
-    .line 574
+    .line 789
     .local v9, width:I
     iget v7, v3, Landroid/graphics/BitmapFactory$Options;->outHeight:I
 
-    .line 575
+    .line 790
     .local v7, height:I
     const/4 v10, 0x0
 
     iput-boolean v10, v3, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 576
+    .line 791
     const/4 v10, 0x0
 
     array-length v11, v8
@@ -1163,31 +867,31 @@
 
     iput-object v10, p3, Landroid/media/ThumbnailUtils$SizedThumbnailBitmap;->mBitmap:Landroid/graphics/Bitmap;
 
-    .line 578
+    .line 793
     iget-object v10, p3, Landroid/media/ThumbnailUtils$SizedThumbnailBitmap;->mBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v10, :cond_0
 
-    .line 579
+    .line 794
     iput-object v8, p3, Landroid/media/ThumbnailUtils$SizedThumbnailBitmap;->mThumbnailData:[B
 
-    .line 580
+    .line 795
     iput v9, p3, Landroid/media/ThumbnailUtils$SizedThumbnailBitmap;->mThumbnailWidth:I
 
-    .line 581
+    .line 796
     iput v7, p3, Landroid/media/ThumbnailUtils$SizedThumbnailBitmap;->mThumbnailHeight:I
 
     goto :goto_0
 
-    .line 584
+    .line 799
     .end local v7           #height:I
     .end local v9           #width:I
-    :cond_5
+    :cond_6
     const/4 v10, 0x0
 
     iput-boolean v10, v5, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 585
+    .line 800
     invoke-static {p0, v5}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
     move-result-object v10
@@ -1196,7 +900,7 @@
 
     goto/16 :goto_0
 
-    .line 530
+    .line 745
     .end local v1           #exif:Landroid/media/ExifInterface;
     .end local v3           #exifOptions:Landroid/graphics/BitmapFactory$Options;
     .end local v4           #exifThumbWidth:I
@@ -1223,21 +927,21 @@
 
     const/4 v10, 0x1
 
-    .line 191
+    .line 185
     const/4 v0, 0x0
 
-    .line 192
+    .line 186
     .local v0, bitmap:Landroid/graphics/Bitmap;
     new-instance v4, Landroid/media/MediaMetadataRetriever;
 
     invoke-direct {v4}, Landroid/media/MediaMetadataRetriever;-><init>()V
 
-    .line 194
+    .line 188
     .local v4, retriever:Landroid/media/MediaMetadataRetriever;
     :try_start_0
     invoke-virtual {v4, p0}, Landroid/media/MediaMetadataRetriever;->setDataSource(Ljava/lang/String;)V
 
-    .line 195
+    .line 189
     const-wide/16 v8, -0x1
 
     invoke-virtual {v4, v8, v9}, Landroid/media/MediaMetadataRetriever;->getFrameAtTime(J)Landroid/graphics/Bitmap;
@@ -1248,27 +952,27 @@
 
     move-result-object v0
 
-    .line 202
+    .line 196
     :try_start_1
     invoke-virtual {v4}, Landroid/media/MediaMetadataRetriever;->release()V
     :try_end_1
     .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_4
 
-    .line 208
+    .line 202
     :goto_0
     if-nez v0, :cond_0
 
     const/4 v8, 0x0
 
-    .line 227
+    .line 221
     :goto_1
     return-object v8
 
-    .line 196
+    .line 190
     :catch_0
     move-exception v8
 
-    .line 202
+    .line 196
     :try_start_2
     invoke-virtual {v4}, Landroid/media/MediaMetadataRetriever;->release()V
     :try_end_2
@@ -1276,17 +980,17 @@
 
     goto :goto_0
 
-    .line 203
+    .line 197
     :catch_1
     move-exception v8
 
     goto :goto_0
 
-    .line 198
+    .line 192
     :catch_2
     move-exception v8
 
-    .line 202
+    .line 196
     :try_start_3
     invoke-virtual {v4}, Landroid/media/MediaMetadataRetriever;->release()V
     :try_end_3
@@ -1294,61 +998,61 @@
 
     goto :goto_0
 
-    .line 203
+    .line 197
     :catch_3
     move-exception v8
 
     goto :goto_0
 
-    .line 201
+    .line 195
     :catchall_0
     move-exception v8
 
-    .line 202
+    .line 196
     :try_start_4
     invoke-virtual {v4}, Landroid/media/MediaMetadataRetriever;->release()V
     :try_end_4
     .catch Ljava/lang/RuntimeException; {:try_start_4 .. :try_end_4} :catch_5
 
-    .line 205
+    .line 199
     :goto_2
     throw v8
 
-    .line 210
+    .line 204
     :cond_0
     if-ne p1, v10, :cond_2
 
-    .line 212
+    .line 206
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v7
 
-    .line 213
+    .line 207
     .local v7, width:I
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v2
 
-    .line 214
+    .line 208
     .local v2, height:I
     invoke-static {v7, v2}, Ljava/lang/Math;->max(II)I
 
     move-result v3
 
-    .line 215
+    .line 209
     .local v3, max:I
     const/16 v8, 0x200
 
     if-le v3, v8, :cond_1
 
-    .line 216
+    .line 210
     const/high16 v8, 0x4400
 
     int-to-float v9, v3
 
     div-float v5, v8, v9
 
-    .line 217
+    .line 211
     .local v5, scale:F
     int-to-float v8, v7
 
@@ -1358,7 +1062,7 @@
 
     move-result v6
 
-    .line 218
+    .line 212
     .local v6, w:I
     int-to-float v8, v2
 
@@ -1368,7 +1072,7 @@
 
     move-result v1
 
-    .line 219
+    .line 213
     .local v1, h:I
     invoke-static {v0, v6, v1, v10}, Landroid/graphics/Bitmap;->createScaledBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
 
@@ -1384,16 +1088,16 @@
     :goto_3
     move-object v8, v0
 
-    .line 227
+    .line 221
     goto :goto_1
 
-    .line 221
+    .line 215
     :cond_2
     const/4 v8, 0x3
 
     if-ne p1, v8, :cond_1
 
-    .line 222
+    .line 216
     const/4 v8, 0x2
 
     invoke-static {v0, v11, v11, v8}, Landroid/media/ThumbnailUtils;->extractThumbnail(Landroid/graphics/Bitmap;III)Landroid/graphics/Bitmap;
@@ -1402,7 +1106,7 @@
 
     goto :goto_3
 
-    .line 203
+    .line 197
     :catch_4
     move-exception v8
 
@@ -1424,42 +1128,42 @@
     .parameter "options"
 
     .prologue
-    .line 604
+    .line 291
     if-nez p0, :cond_0
 
-    .line 605
+    .line 292
     const/4 v10, 0x0
 
-    .line 630
+    .line 317
     :goto_0
     return-object v10
 
-    .line 609
+    .line 296
     :cond_0
     if-ge p1, p2, :cond_1
 
-    .line 610
+    .line 297
     int-to-float v1, p3
 
     int-to-float v2, p1
 
     div-float v8, v1, v2
 
-    .line 614
+    .line 301
     .local v8, scale:F
     :goto_1
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
-    .line 615
+    .line 302
     .local v0, matrix:Landroid/graphics/Matrix;
     invoke-virtual {v0, v8, v8}, Landroid/graphics/Matrix;->setScale(FF)V
 
-    .line 617
+    .line 304
     const/4 v10, 0x0
 
-    .line 619
+    .line 306
     .local v10, thumbnail:Landroid/graphics/Bitmap;
     new-instance v9, Landroid/graphics/RectF;
 
@@ -1473,17 +1177,17 @@
 
     invoke-direct {v9, v1, v2, v3, v4}, Landroid/graphics/RectF;-><init>(FFFF)V
 
-    .line 620
+    .line 307
     .local v9, srcR:Landroid/graphics/RectF;
     new-instance v7, Landroid/graphics/RectF;
 
     invoke-direct {v7}, Landroid/graphics/RectF;-><init>()V
 
-    .line 621
+    .line 308
     .local v7, deviceR:Landroid/graphics/RectF;
     invoke-virtual {v0, v7, v9}, Landroid/graphics/Matrix;->mapRect(Landroid/graphics/RectF;Landroid/graphics/RectF;)Z
 
-    .line 622
+    .line 309
     invoke-virtual {v7}, Landroid/graphics/RectF;->width()F
 
     move-result v1
@@ -1512,14 +1216,14 @@
 
     move/from16 v6, p5
 
-    .line 623
+    .line 310
     invoke-static/range {v0 .. v6}, Landroid/media/ThumbnailUtils;->transformBuffer(Landroid/graphics/Matrix;[BIIIII)Landroid/graphics/Bitmap;
 
     move-result-object v10
 
     goto :goto_0
 
-    .line 612
+    .line 299
     .end local v0           #matrix:Landroid/graphics/Matrix;
     .end local v7           #deviceR:Landroid/graphics/RectF;
     .end local v8           #scale:F
@@ -1535,7 +1239,7 @@
     .restart local v8       #scale:F
     goto :goto_1
 
-    .line 626
+    .line 313
     .restart local v0       #matrix:Landroid/graphics/Matrix;
     .restart local v7       #deviceR:Landroid/graphics/RectF;
     .restart local v9       #srcR:Landroid/graphics/RectF;
@@ -1567,7 +1271,7 @@
     .parameter "height"
 
     .prologue
-    .line 239
+    .line 233
     const/4 v0, 0x0
 
     invoke-static {p0, p1, p2, v0}, Landroid/media/ThumbnailUtils;->extractThumbnail(Landroid/graphics/Bitmap;III)Landroid/graphics/Bitmap;
@@ -1587,17 +1291,17 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 252
+    .line 246
     if-nez p0, :cond_0
 
-    .line 253
+    .line 247
     const/4 v4, 0x0
 
-    .line 277
+    .line 271
     :goto_0
     return-object v4
 
-    .line 257
+    .line 251
     :cond_0
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -1609,7 +1313,7 @@
 
     if-ge v5, v6, :cond_1
 
-    .line 258
+    .line 252
     int-to-float v5, p1
 
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
@@ -1620,21 +1324,21 @@
 
     div-float v2, v5, v6
 
-    .line 262
+    .line 256
     .local v2, scale:F
     :goto_1
     new-instance v1, Landroid/graphics/Matrix;
 
     invoke-direct {v1}, Landroid/graphics/Matrix;-><init>()V
 
-    .line 263
+    .line 257
     .local v1, matrix:Landroid/graphics/Matrix;
     invoke-virtual {v1, v2, v2}, Landroid/graphics/Matrix;->setScale(FF)V
 
-    .line 266
+    .line 259
     const/4 v4, 0x0
 
-    .line 267
+    .line 261
     .local v4, thumbnail:Landroid/graphics/Bitmap;
     new-instance v3, Landroid/graphics/RectF;
 
@@ -1652,17 +1356,17 @@
 
     invoke-direct {v3, v7, v7, v5, v6}, Landroid/graphics/RectF;-><init>(FFFF)V
 
-    .line 268
+    .line 262
     .local v3, srcR:Landroid/graphics/RectF;
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
 
-    .line 269
+    .line 263
     .local v0, deviceR:Landroid/graphics/RectF;
     invoke-virtual {v1, v0, v3}, Landroid/graphics/Matrix;->mapRect(Landroid/graphics/RectF;Landroid/graphics/RectF;)Z
 
-    .line 270
+    .line 264
     invoke-virtual {v0}, Landroid/graphics/RectF;->width()F
 
     move-result v5
@@ -1679,14 +1383,14 @@
 
     if-ltz v5, :cond_2
 
-    .line 271
+    .line 265
     invoke-static {v1, p0, p1, p2, p3}, Landroid/media/ThumbnailUtils;->transform(Landroid/graphics/Matrix;Landroid/graphics/Bitmap;III)Landroid/graphics/Bitmap;
 
     move-result-object v4
 
     goto :goto_0
 
-    .line 260
+    .line 254
     .end local v0           #deviceR:Landroid/graphics/RectF;
     .end local v1           #matrix:Landroid/graphics/Matrix;
     .end local v2           #scale:F
@@ -1706,7 +1410,7 @@
     .restart local v2       #scale:F
     goto :goto_1
 
-    .line 273
+    .line 267
     .restart local v0       #deviceR:Landroid/graphics/RectF;
     .restart local v1       #matrix:Landroid/graphics/Matrix;
     .restart local v3       #srcR:Landroid/graphics/RectF;
@@ -1735,10 +1439,10 @@
 
     const/4 v4, 0x0
 
-    .line 354
+    .line 543
     const/4 v0, 0x0
 
-    .line 356
+    .line 545
     .local v0, b:Landroid/graphics/Bitmap;
     if-nez p4, :cond_0
 
@@ -1750,18 +1454,18 @@
 
     move-result-object p4
 
-    .line 357
+    .line 546
     :cond_0
     if-nez p4, :cond_1
 
-    .line 379
+    .line 568
     invoke-static {p4}, Landroid/media/ThumbnailUtils;->closeSilently(Landroid/os/ParcelFileDescriptor;)V
 
-    .line 381
+    .line 570
     :goto_0
     return-object v4
 
-    .line 358
+    .line 547
     :cond_1
     if-nez p5, :cond_2
 
@@ -1774,7 +1478,7 @@
     .local v3, options:Landroid/graphics/BitmapFactory$Options;
     move-object p5, v3
 
-    .line 360
+    .line 549
     .end local v3           #options:Landroid/graphics/BitmapFactory$Options;
     .restart local p5
     :cond_2
@@ -1782,23 +1486,23 @@
 
     move-result-object v2
 
-    .line 361
+    .line 550
     .local v2, fd:Ljava/io/FileDescriptor;
     const/4 v5, 0x1
 
     iput v5, p5, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
-    .line 362
+    .line 551
     const/4 v5, 0x1
 
     iput-boolean v5, p5, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 363
+    .line 552
     const/4 v5, 0x0
 
     invoke-static {v2, v5, p5}, Landroid/graphics/BitmapFactory;->decodeFileDescriptor(Ljava/io/FileDescriptor;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
-    .line 364
+    .line 553
     iget-boolean v5, p5, Landroid/graphics/BitmapFactory$Options;->mCancel:Z
 
     if-nez v5, :cond_3
@@ -1814,13 +1518,13 @@
 
     if-ne v5, v6, :cond_4
 
-    .line 379
+    .line 568
     :cond_3
     invoke-static {p4}, Landroid/media/ThumbnailUtils;->closeSilently(Landroid/os/ParcelFileDescriptor;)V
 
     goto :goto_0
 
-    .line 368
+    .line 557
     :cond_4
     :try_start_2
     invoke-static {p5, p0, p1}, Landroid/media/ThumbnailUtils;->computeSampleSize(Landroid/graphics/BitmapFactory$Options;II)I
@@ -1829,22 +1533,22 @@
 
     iput v5, p5, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
-    .line 370
+    .line 559
     const/4 v5, 0x0
 
     iput-boolean v5, p5, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 372
+    .line 561
     const/4 v5, 0x0
 
     iput-boolean v5, p5, Landroid/graphics/BitmapFactory$Options;->inDither:Z
 
-    .line 373
+    .line 562
     sget-object v5, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     iput-object v5, p5, Landroid/graphics/BitmapFactory$Options;->inPreferredConfig:Landroid/graphics/Bitmap$Config;
 
-    .line 374
+    .line 563
     const/4 v5, 0x0
 
     invoke-static {v2, v5, p5}, Landroid/graphics/BitmapFactory;->decodeFileDescriptor(Ljava/io/FileDescriptor;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
@@ -1854,20 +1558,20 @@
 
     move-result-object v0
 
-    .line 379
+    .line 568
     invoke-static {p4}, Landroid/media/ThumbnailUtils;->closeSilently(Landroid/os/ParcelFileDescriptor;)V
 
     move-object v4, v0
 
-    .line 381
+    .line 570
     goto :goto_0
 
-    .line 375
+    .line 564
     .end local v2           #fd:Ljava/io/FileDescriptor;
     :catch_0
     move-exception v1
 
-    .line 376
+    .line 565
     .local v1, ex:Ljava/lang/OutOfMemoryError;
     :try_start_3
     const-string v5, "ThumbnailUtils"
@@ -1878,7 +1582,7 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 379
+    .line 568
     invoke-static {p4}, Landroid/media/ThumbnailUtils;->closeSilently(Landroid/os/ParcelFileDescriptor;)V
 
     goto :goto_0
@@ -1898,7 +1602,7 @@
     .parameter "cr"
 
     .prologue
-    .line 396
+    .line 585
     :try_start_0
     const-string/jumbo v1, "r"
 
@@ -1908,15 +1612,15 @@
 
     move-result-object v1
 
-    .line 398
+    .line 587
     :goto_0
     return-object v1
 
-    .line 397
+    .line 586
     :catch_0
     move-exception v0
 
-    .line 398
+    .line 587
     .local v0, ex:Ljava/io/IOException;
     const/4 v1, 0x0
 
@@ -1932,14 +1636,14 @@
     .parameter "options"
 
     .prologue
-    .line 410
+    .line 599
     and-int/lit8 v3, p4, 0x1
 
     if-eqz v3, :cond_3
 
     const/16 v27, 0x1
 
-    .line 411
+    .line 600
     .local v27, scaleUp:Z
     :goto_0
     and-int/lit8 v3, p4, 0x2
@@ -1948,7 +1652,7 @@
 
     const/16 v25, 0x1
 
-    .line 413
+    .line 602
     .local v25, recycle:Z
     :goto_1
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Bitmap;->getWidth()I
@@ -1957,7 +1661,7 @@
 
     sub-int v16, v3, p2
 
-    .line 414
+    .line 603
     .local v16, deltaX:I
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Bitmap;->getHeight()I
 
@@ -1965,7 +1669,7 @@
 
     sub-int v18, v3, p3
 
-    .line 415
+    .line 604
     .local v18, deltaY:I
     if-nez v27, :cond_5
 
@@ -1973,7 +1677,7 @@
 
     if-gez v18, :cond_5
 
-    .line 422
+    .line 611
     :cond_0
     sget-object v3, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
@@ -1985,13 +1689,13 @@
 
     move-result-object v11
 
-    .line 424
+    .line 613
     .local v11, b2:Landroid/graphics/Bitmap;
     new-instance v15, Landroid/graphics/Canvas;
 
     invoke-direct {v15, v11}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 426
+    .line 615
     .local v15, c:Landroid/graphics/Canvas;
     const/4 v3, 0x0
 
@@ -2001,7 +1705,7 @@
 
     move-result v17
 
-    .line 427
+    .line 616
     .local v17, deltaXHalf:I
     const/4 v3, 0x0
 
@@ -2011,7 +1715,7 @@
 
     move-result v19
 
-    .line 428
+    .line 617
     .local v19, deltaYHalf:I
     new-instance v28, Landroid/graphics/Rect;
 
@@ -2047,7 +1751,7 @@
 
     invoke-direct {v0, v1, v2, v3, v4}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 433
+    .line 622
     .local v28, src:Landroid/graphics/Rect;
     invoke-virtual/range {v28 .. v28}, Landroid/graphics/Rect;->width()I
 
@@ -2057,7 +1761,7 @@
 
     div-int/lit8 v21, v3, 0x2
 
-    .line 434
+    .line 623
     .local v21, dstX:I
     invoke-virtual/range {v28 .. v28}, Landroid/graphics/Rect;->height()I
 
@@ -2067,7 +1771,7 @@
 
     div-int/lit8 v22, v3, 0x2
 
-    .line 435
+    .line 624
     .local v22, dstY:I
     new-instance v20, Landroid/graphics/Rect;
 
@@ -2083,7 +1787,7 @@
 
     invoke-direct {v0, v1, v2, v3, v4}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 440
+    .line 629
     .local v20, dst:Landroid/graphics/Rect;
     const/4 v3, 0x0
 
@@ -2095,19 +1799,19 @@
 
     invoke-virtual {v15, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
 
-    .line 441
+    .line 630
     if-eqz v25, :cond_1
 
-    .line 442
+    .line 631
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 444
+    .line 633
     :cond_1
     const/4 v3, 0x0
 
     invoke-virtual {v15, v3}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 498
+    .line 687
     .end local v15           #c:Landroid/graphics/Canvas;
     .end local v17           #deltaXHalf:I
     .end local v19           #deltaYHalf:I
@@ -2119,7 +1823,7 @@
     :goto_2
     return-object v11
 
-    .line 410
+    .line 599
     .end local v11           #b2:Landroid/graphics/Bitmap;
     .end local v16           #deltaX:I
     .end local v18           #deltaY:I
@@ -2130,14 +1834,14 @@
 
     goto/16 :goto_0
 
-    .line 411
+    .line 600
     .restart local v27       #scaleUp:Z
     :cond_4
     const/16 v25, 0x0
 
     goto/16 :goto_1
 
-    .line 447
+    .line 636
     .restart local v16       #deltaX:I
     .restart local v18       #deltaY:I
     .restart local v25       #recycle:Z
@@ -2148,7 +1852,7 @@
 
     int-to-float v14, v3
 
-    .line 448
+    .line 637
     .local v14, bitmapWidthF:F
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Bitmap;->getHeight()I
 
@@ -2156,11 +1860,11 @@
 
     int-to-float v13, v3
 
-    .line 450
+    .line 639
     .local v13, bitmapHeightF:F
     div-float v12, v14, v13
 
-    .line 451
+    .line 640
     .local v12, bitmapAspect:F
     move/from16 v0, p2
 
@@ -2172,20 +1876,20 @@
 
     div-float v29, v3, v4
 
-    .line 453
+    .line 642
     .local v29, viewAspect:F
     cmpl-float v3, v12, v29
 
     if-lez v3, :cond_a
 
-    .line 454
+    .line 643
     move/from16 v0, p3
 
     int-to-float v3, v0
 
     div-float v26, v3, v13
 
-    .line 455
+    .line 644
     .local v26, scale:F
     const v3, 0x3f666666
 
@@ -2199,7 +1903,7 @@
 
     if-lez v3, :cond_9
 
-    .line 456
+    .line 645
     :cond_6
     move-object/from16 v0, p0
 
@@ -2209,11 +1913,11 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Matrix;->setScale(FF)V
 
-    .line 470
+    .line 659
     :goto_3
     if-eqz p0, :cond_d
 
-    .line 472
+    .line 661
     const/4 v4, 0x0
 
     const/4 v5, 0x0
@@ -2236,7 +1940,7 @@
 
     move-result-object v10
 
-    .line 478
+    .line 667
     .local v10, b1:Landroid/graphics/Bitmap;
     :goto_4
     if-eqz v25, :cond_7
@@ -2245,10 +1949,10 @@
 
     if-eq v10, v0, :cond_7
 
-    .line 479
+    .line 668
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 482
+    .line 671
     :cond_7
     const/4 v3, 0x0
 
@@ -2262,7 +1966,7 @@
 
     move-result v23
 
-    .line 483
+    .line 672
     .local v23, dx1:I
     const/4 v3, 0x0
 
@@ -2276,7 +1980,7 @@
 
     move-result v24
 
-    .line 485
+    .line 674
     .local v24, dy1:I
     div-int/lit8 v3, v23, 0x2
 
@@ -2290,24 +1994,24 @@
 
     move-result-object v11
 
-    .line 492
+    .line 681
     .restart local v11       #b2:Landroid/graphics/Bitmap;
     if-eq v11, v10, :cond_2
 
-    .line 493
+    .line 682
     if-nez v25, :cond_8
 
     move-object/from16 v0, p1
 
     if-eq v10, v0, :cond_2
 
-    .line 494
+    .line 683
     :cond_8
     invoke-virtual {v10}, Landroid/graphics/Bitmap;->recycle()V
 
     goto/16 :goto_2
 
-    .line 458
+    .line 647
     .end local v10           #b1:Landroid/graphics/Bitmap;
     .end local v11           #b2:Landroid/graphics/Bitmap;
     .end local v23           #dx1:I
@@ -2317,7 +2021,7 @@
 
     goto :goto_3
 
-    .line 461
+    .line 650
     .end local v26           #scale:F
     :cond_a
     move/from16 v0, p2
@@ -2326,7 +2030,7 @@
 
     div-float v26, v3, v14
 
-    .line 462
+    .line 651
     .restart local v26       #scale:F
     const v3, 0x3f666666
 
@@ -2340,7 +2044,7 @@
 
     if-lez v3, :cond_c
 
-    .line 463
+    .line 652
     :cond_b
     move-object/from16 v0, p0
 
@@ -2352,13 +2056,13 @@
 
     goto :goto_3
 
-    .line 465
+    .line 654
     :cond_c
     const/16 p0, 0x0
 
     goto :goto_3
 
-    .line 475
+    .line 664
     :cond_d
     move-object/from16 v10, p1
 
@@ -2377,23 +2081,23 @@
     .parameter "options"
 
     .prologue
-    .line 643
+    .line 330
     and-int/lit8 v31, p6, 0x1
 
     if-eqz v31, :cond_2
 
     const/16 v26, 0x1
 
-    .line 647
+    .line 334
     .local v26, scaleUp:Z
     :goto_0
     sub-int v14, p2, p4
 
-    .line 648
+    .line 335
     .local v14, deltaX:I
     sub-int v16, p3, p5
 
-    .line 649
+    .line 336
     .local v16, deltaY:I
     if-nez v26, :cond_4
 
@@ -2401,7 +2105,7 @@
 
     if-gez v16, :cond_4
 
-    .line 656
+    .line 343
     :cond_0
     sget-object v31, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
@@ -2415,13 +2119,13 @@
 
     move-result-object v7
 
-    .line 658
+    .line 345
     .local v7, b2:Landroid/graphics/Bitmap;
     new-instance v11, Landroid/graphics/Canvas;
 
     invoke-direct {v11, v7}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 660
+    .line 347
     .local v11, c:Landroid/graphics/Canvas;
     const/16 v31, 0x0
 
@@ -2431,7 +2135,7 @@
 
     move-result v15
 
-    .line 661
+    .line 348
     .local v15, deltaXHalf:I
     const/16 v31, 0x0
 
@@ -2441,7 +2145,7 @@
 
     move-result v17
 
-    .line 662
+    .line 349
     .local v17, deltaYHalf:I
     new-instance v29, Landroid/graphics/Rect;
 
@@ -2475,7 +2179,7 @@
 
     invoke-direct {v0, v15, v1, v2, v3}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 667
+    .line 354
     .local v29, src:Landroid/graphics/Rect;
     invoke-virtual/range {v29 .. v29}, Landroid/graphics/Rect;->width()I
 
@@ -2485,7 +2189,7 @@
 
     div-int/lit8 v19, v31, 0x2
 
-    .line 668
+    .line 355
     .local v19, dstX:I
     invoke-virtual/range {v29 .. v29}, Landroid/graphics/Rect;->height()I
 
@@ -2495,7 +2199,7 @@
 
     div-int/lit8 v20, v31, 0x2
 
-    .line 669
+    .line 356
     .local v20, dstY:I
     new-instance v18, Landroid/graphics/Rect;
 
@@ -2515,13 +2219,13 @@
 
     invoke-direct {v0, v1, v2, v3, v4}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 676
+    .line 364
     .local v18, dst:Landroid/graphics/Rect;
     new-instance v5, Landroid/graphics/BitmapFactory$Options;
 
     invoke-direct {v5}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
-    .line 678
+    .line 366
     .local v5, Options:Landroid/graphics/BitmapFactory$Options;
     const/16 v31, 0x0
 
@@ -2529,28 +2233,28 @@
 
     iput-boolean v0, v5, Landroid/graphics/BitmapFactory$Options;->inDither:Z
 
-    .line 679
+    .line 367
     const/16 v31, 0x1
 
     move/from16 v0, v31
 
     iput v0, v5, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
-    .line 680
+    .line 368
     sget-object v31, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     move-object/from16 v0, v31
 
     iput-object v0, v5, Landroid/graphics/BitmapFactory$Options;->inPreferredConfig:Landroid/graphics/Bitmap$Config;
 
-    .line 682
+    .line 370
     const/4 v6, 0x0
 
-    .line 683
+    .line 371
     .local v6, b1:Landroid/graphics/Bitmap;
     if-eqz p1, :cond_1
 
-    .line 684
+    .line 372
     const/16 v31, 0x0
 
     move-object/from16 v0, p1
@@ -2569,14 +2273,14 @@
 
     move-result-object v6
 
-    .line 686
+    .line 374
     :cond_1
     if-nez v6, :cond_3
 
-    .line 687
+    .line 375
     const/4 v7, 0x0
 
-    .line 776
+    .line 464
     .end local v7           #b2:Landroid/graphics/Bitmap;
     .end local v11           #c:Landroid/graphics/Canvas;
     .end local v15           #deltaXHalf:I
@@ -2588,7 +2292,7 @@
     :goto_1
     return-object v7
 
-    .line 643
+    .line 330
     .end local v5           #Options:Landroid/graphics/BitmapFactory$Options;
     .end local v6           #b1:Landroid/graphics/Bitmap;
     .end local v14           #deltaX:I
@@ -2599,7 +2303,7 @@
 
     goto/16 :goto_0
 
-    .line 690
+    .line 378
     .restart local v5       #Options:Landroid/graphics/BitmapFactory$Options;
     .restart local v6       #b1:Landroid/graphics/Bitmap;
     .restart local v7       #b2:Landroid/graphics/Bitmap;
@@ -2624,12 +2328,12 @@
 
     invoke-virtual {v11, v6, v0, v1, v2}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
 
-    .line 691
+    .line 379
     invoke-virtual {v6}, Landroid/graphics/Bitmap;->recycle()V
 
     goto :goto_1
 
-    .line 694
+    .line 382
     .end local v5           #Options:Landroid/graphics/BitmapFactory$Options;
     .end local v6           #b1:Landroid/graphics/Bitmap;
     .end local v7           #b2:Landroid/graphics/Bitmap;
@@ -2645,17 +2349,17 @@
 
     int-to-float v10, v0
 
-    .line 695
+    .line 383
     .local v10, bitmapWidthF:F
     move/from16 v0, p3
 
     int-to-float v9, v0
 
-    .line 697
+    .line 385
     .local v9, bitmapHeightF:F
     div-float v8, v10, v9
 
-    .line 698
+    .line 386
     .local v8, bitmapAspect:F
     move/from16 v0, p4
 
@@ -2671,17 +2375,17 @@
 
     div-float v30, v31, v32
 
-    .line 700
+    .line 388
     .local v30, viewAspect:F
     const/high16 v21, 0x3f80
 
-    .line 702
+    .line 390
     .local v21, finalScale:F
     cmpl-float v31, v8, v30
 
     if-lez v31, :cond_8
 
-    .line 703
+    .line 391
     move/from16 v0, p5
 
     int-to-float v0, v0
@@ -2690,7 +2394,7 @@
 
     div-float v25, v31, v9
 
-    .line 704
+    .line 392
     .local v25, scale:F
     const v31, 0x3f666666
 
@@ -2704,7 +2408,7 @@
 
     if-lez v31, :cond_7
 
-    .line 705
+    .line 393
     :cond_5
     move-object/from16 v0, p0
 
@@ -2714,20 +2418,20 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Matrix;->setScale(FF)V
 
-    .line 707
+    .line 395
     move/from16 v21, v25
 
-    .line 722
+    .line 410
     :goto_2
     const/4 v6, 0x0
 
-    .line 724
+    .line 412
     .restart local v6       #b1:Landroid/graphics/Bitmap;
     new-instance v5, Landroid/graphics/BitmapFactory$Options;
 
     invoke-direct {v5}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
-    .line 726
+    .line 414
     .restart local v5       #Options:Landroid/graphics/BitmapFactory$Options;
     const/16 v31, 0x0
 
@@ -2735,14 +2439,14 @@
 
     iput-boolean v0, v5, Landroid/graphics/BitmapFactory$Options;->inDither:Z
 
-    .line 727
+    .line 415
     sget-object v31, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     move-object/from16 v0, v31
 
     iput-object v0, v5, Landroid/graphics/BitmapFactory$Options;->inPreferredConfig:Landroid/graphics/Bitmap$Config;
 
-    .line 729
+    .line 417
     move/from16 v0, p2
 
     int-to-float v0, v0
@@ -2769,11 +2473,16 @@
 
     move/from16 v22, v0
 
-    .line 732
+    .line 418
     .local v22, inPreferSize:I
+    move/from16 v0, v22
+
+    iput v0, v5, Landroid/graphics/BitmapFactory$Options;->inPreferSize:I
+
+    .line 420
     if-eqz p1, :cond_6
 
-    .line 733
+    .line 421
     const/16 v31, 0x0
 
     move-object/from16 v0, p1
@@ -2792,16 +2501,16 @@
 
     move-result-object v6
 
-    .line 735
+    .line 423
     :cond_6
     if-nez v6, :cond_b
 
-    .line 736
+    .line 424
     const/4 v7, 0x0
 
     goto/16 :goto_1
 
-    .line 709
+    .line 397
     .end local v5           #Options:Landroid/graphics/BitmapFactory$Options;
     .end local v6           #b1:Landroid/graphics/Bitmap;
     .end local v22           #inPreferSize:I
@@ -2810,7 +2519,7 @@
 
     goto :goto_2
 
-    .line 712
+    .line 400
     .end local v25           #scale:F
     :cond_8
     move/from16 v0, p4
@@ -2821,7 +2530,7 @@
 
     div-float v25, v31, v10
 
-    .line 713
+    .line 401
     .restart local v25       #scale:F
     const v31, 0x3f666666
 
@@ -2835,7 +2544,7 @@
 
     if-lez v31, :cond_a
 
-    .line 714
+    .line 402
     :cond_9
     move-object/from16 v0, p0
 
@@ -2845,18 +2554,18 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Matrix;->setScale(FF)V
 
-    .line 716
+    .line 404
     move/from16 v21, v25
 
     goto :goto_2
 
-    .line 718
+    .line 406
     :cond_a
     const/16 p0, 0x0
 
     goto :goto_2
 
-    .line 738
+    .line 426
     .restart local v5       #Options:Landroid/graphics/BitmapFactory$Options;
     .restart local v6       #b1:Landroid/graphics/Bitmap;
     .restart local v22       #inPreferSize:I
@@ -2865,13 +2574,13 @@
 
     move-result v28
 
-    .line 739
+    .line 427
     .local v28, scaledBitmapWidth:I
     invoke-virtual {v6}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v27
 
-    .line 741
+    .line 429
     .local v27, scaledBitmapHeight:I
     sget-object v31, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
@@ -2885,13 +2594,13 @@
 
     move-result-object v7
 
-    .line 743
+    .line 431
     .restart local v7       #b2:Landroid/graphics/Bitmap;
     new-instance v11, Landroid/graphics/Canvas;
 
     invoke-direct {v11, v7}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 745
+    .line 433
     .restart local v11       #c:Landroid/graphics/Canvas;
     new-instance v18, Landroid/graphics/RectF;
 
@@ -2923,11 +2632,11 @@
 
     invoke-direct {v0, v1, v2, v3, v4}, Landroid/graphics/RectF;-><init>(FFFF)V
 
-    .line 746
+    .line 434
     .local v18, dst:Landroid/graphics/RectF;
     const/16 v29, 0x0
 
-    .line 747
+    .line 435
     .restart local v29       #src:Landroid/graphics/Rect;
     move/from16 v0, v28
 
@@ -2937,7 +2646,7 @@
 
     move/from16 v23, v28
 
-    .line 749
+    .line 437
     .local v23, maxSize:I
     :goto_3
     move/from16 v0, v23
@@ -2946,7 +2655,7 @@
 
     if-ne v0, v1, :cond_d
 
-    .line 751
+    .line 439
     const/16 v31, 0x0
 
     sub-int v32, v28, p4
@@ -2957,7 +2666,7 @@
 
     move-result v12
 
-    .line 752
+    .line 440
     .local v12, croppedX:I
     const/16 v31, 0x0
 
@@ -2969,7 +2678,7 @@
 
     move-result v13
 
-    .line 753
+    .line 441
     .local v13, croppedY:I
     new-instance v29, Landroid/graphics/Rect;
 
@@ -3002,14 +2711,14 @@
 
     invoke-direct {v0, v12, v13, v1, v2}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 771
+    .line 459
     .restart local v29       #src:Landroid/graphics/Rect;
     :goto_4
     new-instance v24, Landroid/graphics/Paint;
 
     invoke-direct/range {v24 .. v24}, Landroid/graphics/Paint;-><init>()V
 
-    .line 772
+    .line 460
     .local v24, paint:Landroid/graphics/Paint;
     const/16 v31, 0x1
 
@@ -3019,7 +2728,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setFilterBitmap(Z)V
 
-    .line 773
+    .line 461
     move-object/from16 v0, v29
 
     move-object/from16 v1, v18
@@ -3028,7 +2737,7 @@
 
     invoke-virtual {v11, v6, v0, v1, v2}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/RectF;Landroid/graphics/Paint;)V
 
-    .line 775
+    .line 463
     invoke-virtual {v6}, Landroid/graphics/Bitmap;->recycle()V
 
     goto/16 :goto_1
@@ -3040,10 +2749,10 @@
     :cond_c
     move/from16 v23, v27
 
-    .line 747
+    .line 435
     goto :goto_3
 
-    .line 760
+    .line 448
     .restart local v23       #maxSize:I
     :cond_d
     const/16 v31, 0x0
@@ -3070,7 +2779,7 @@
 
     move-result v12
 
-    .line 761
+    .line 449
     .restart local v12       #croppedX:I
     const/16 v31, 0x0
 
@@ -3096,7 +2805,7 @@
 
     move-result v13
 
-    .line 762
+    .line 450
     .restart local v13       #croppedY:I
     new-instance v29, Landroid/graphics/Rect;
 

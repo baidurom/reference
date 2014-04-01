@@ -23,7 +23,15 @@
     .end annotation
 .end method
 
-.method public abstract addTestProvider(Ljava/lang/String;Lcom/android/internal/location/ProviderProperties;)V
+.method public abstract addProximityAlert(DDFJLandroid/app/PendingIntent;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract addTestProvider(Ljava/lang/String;ZZZZZZZII)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -89,6 +97,14 @@
     .end annotation
 .end method
 
+.method public abstract getFileTime([J)I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract getFromLocation(DDILandroid/location/GeocoderParams;Ljava/util/List;)Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -131,7 +147,7 @@
     .end annotation
 .end method
 
-.method public abstract getLastLocation(Landroid/location/LocationRequest;Ljava/lang/String;)Landroid/location/Location;
+.method public abstract getLastKnownLocation(Ljava/lang/String;)Landroid/location/Location;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -139,7 +155,7 @@
     .end annotation
 .end method
 
-.method public abstract getProviderProperties(Ljava/lang/String;)Lcom/android/internal/location/ProviderProperties;
+.method public abstract getProviderInfo(Ljava/lang/String;)Landroid/os/Bundle;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -191,7 +207,7 @@
     .end annotation
 .end method
 
-.method public abstract removeGeofence(Landroid/location/Geofence;Landroid/app/PendingIntent;Ljava/lang/String;)V
+.method public abstract removeGpsStatusListener(Landroid/location/IGpsStatusListener;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -199,7 +215,7 @@
     .end annotation
 .end method
 
-.method public abstract removeGpsStatusListener(Landroid/location/IGpsStatusListener;)V
+.method public abstract removeProximityAlert(Landroid/app/PendingIntent;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -215,7 +231,15 @@
     .end annotation
 .end method
 
-.method public abstract removeUpdates(Landroid/location/ILocationListener;Landroid/app/PendingIntent;Ljava/lang/String;)V
+.method public abstract removeUpdates(Landroid/location/ILocationListener;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract removeUpdatesPI(Landroid/app/PendingIntent;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -231,7 +255,7 @@
     .end annotation
 .end method
 
-.method public abstract requestGeofence(Landroid/location/LocationRequest;Landroid/location/Geofence;Landroid/app/PendingIntent;Ljava/lang/String;)V
+.method public abstract requestLocationUpdates(Ljava/lang/String;Landroid/location/Criteria;JFZLandroid/location/ILocationListener;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -239,7 +263,7 @@
     .end annotation
 .end method
 
-.method public abstract requestLocationUpdates(Landroid/location/LocationRequest;Landroid/location/ILocationListener;Landroid/app/PendingIntent;Ljava/lang/String;)V
+.method public abstract requestLocationUpdatesPI(Ljava/lang/String;Landroid/location/Criteria;JFZLandroid/app/PendingIntent;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -280,6 +304,14 @@
 .end method
 
 .method public abstract setTestProviderStatus(Ljava/lang/String;ILandroid/os/Bundle;J)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract updateEPOFile()I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

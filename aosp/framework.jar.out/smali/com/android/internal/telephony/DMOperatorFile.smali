@@ -35,7 +35,7 @@
     .locals 1
 
     .prologue
-    .line 66
+    .line 77
     const/4 v0, 0x0
 
     sput-object v0, Lcom/android/internal/telephony/DMOperatorFile;->instance:Lcom/android/internal/telephony/DMOperatorFile;
@@ -51,36 +51,36 @@
 
     const/4 v2, 0x0
 
-    .line 68
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 79
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 69
+    .line 80
     const-string v0, "DMOpFile"
 
     const-string v1, "[DM create DMOperatorFile"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 70
+    .line 81
     iput v2, p0, Lcom/android/internal/telephony/DMOperatorFile;->mNumberOfDMOpInfo:I
 
-    .line 71
+    .line 82
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/DMOperatorFile;->mDMOperatorInfoArray:Ljava/util/ArrayList;
 
-    .line 72
+    .line 83
     iput-boolean v2, p0, Lcom/android/internal/telephony/DMOperatorFile;->isDMOpFileLoaded:Z
 
-    .line 73
+    .line 84
     iput-object v3, p0, Lcom/android/internal/telephony/DMOperatorFile;->mDMOpFileParser:Lorg/xmlpull/v1/XmlPullParser;
 
-    .line 74
+    .line 85
     iput-object v3, p0, Lcom/android/internal/telephony/DMOperatorFile;->r:Landroid/content/res/Resources;
 
-    .line 75
+    .line 86
     return-void
 .end method
 
@@ -88,19 +88,19 @@
     .locals 1
 
     .prologue
-    .line 78
+    .line 89
     sget-object v0, Lcom/android/internal/telephony/DMOperatorFile;->instance:Lcom/android/internal/telephony/DMOperatorFile;
 
     if-nez v0, :cond_0
 
-    .line 79
+    .line 90
     new-instance v0, Lcom/android/internal/telephony/DMOperatorFile;
 
     invoke-direct {v0}, Lcom/android/internal/telephony/DMOperatorFile;-><init>()V
 
     sput-object v0, Lcom/android/internal/telephony/DMOperatorFile;->instance:Lcom/android/internal/telephony/DMOperatorFile;
 
-    .line 81
+    .line 92
     :cond_0
     sget-object v0, Lcom/android/internal/telephony/DMOperatorFile;->instance:Lcom/android/internal/telephony/DMOperatorFile;
 
@@ -113,14 +113,14 @@
     .locals 5
 
     .prologue
-    .line 155
+    .line 164
     const-string v2, "DMOpFile"
 
     const-string v3, "[xj dump operator info"
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 156
+    .line 165
     iget-object v2, p0, Lcom/android/internal/telephony/DMOperatorFile;->mDMOperatorInfoArray:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -141,7 +141,7 @@
 
     check-cast v0, Lcom/android/internal/telephony/DMOperatorInfo;
 
-    .line 157
+    .line 166
     .local v0, e:Lcom/android/internal/telephony/DMOperatorInfo;
     const-string v2, "DMOpFile"
 
@@ -193,7 +193,7 @@
 
     goto :goto_0
 
-    .line 160
+    .line 169
     .end local v0           #e:Lcom/android/internal/telephony/DMOperatorInfo;
     :cond_0
     return-void
@@ -204,34 +204,45 @@
     .parameter "mContext"
 
     .prologue
-    .line 85
+    .line 96
     const-string v7, "DMOpFile"
 
     const-string v8, "loadDMOperatorFileFromXml: open normal file"
 
     invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 86
+    .line 97
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v7
 
     iput-object v7, p0, Lcom/android/internal/telephony/DMOperatorFile;->r:Landroid/content/res/Resources;
 
-    .line 90
+    .line 98
+    iget-object v7, p0, Lcom/android/internal/telephony/DMOperatorFile;->r:Landroid/content/res/Resources;
+
+    const/high16 v8, 0x208
+
+    invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getXml(I)Landroid/content/res/XmlResourceParser;
+
+    move-result-object v7
+
+    iput-object v7, p0, Lcom/android/internal/telephony/DMOperatorFile;->mDMOpFileParser:Lorg/xmlpull/v1/XmlPullParser;
+
+    .line 100
     :try_start_0
     iget-object v7, p0, Lcom/android/internal/telephony/DMOperatorFile;->mDMOpFileParser:Lorg/xmlpull/v1/XmlPullParser;
 
     if-eqz v7, :cond_1
 
-    .line 91
+    .line 101
     iget-object v7, p0, Lcom/android/internal/telephony/DMOperatorFile;->mDMOpFileParser:Lorg/xmlpull/v1/XmlPullParser;
 
     const-string v8, "DMOperatorFile"
 
     invoke-static {v7, v8}, Lcom/android/internal/util/XmlUtils;->beginDocument(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)V
 
-    .line 96
+    .line 106
     iget-object v7, p0, Lcom/android/internal/telephony/DMOperatorFile;->mDMOpFileParser:Lorg/xmlpull/v1/XmlPullParser;
 
     const/4 v8, 0x0
@@ -248,7 +259,7 @@
 
     iput v7, p0, Lcom/android/internal/telephony/DMOperatorFile;->mNumberOfDMOpInfo:I
 
-    .line 98
+    .line 107
     iget-object v7, p0, Lcom/android/internal/telephony/DMOperatorFile;->mDMOpFileParser:Lorg/xmlpull/v1/XmlPullParser;
 
     const/4 v8, 0x0
@@ -265,18 +276,18 @@
 
     move-result v2
 
-    .line 100
+    .line 108
     .local v2, MTK_DM_REGISTER_SUPPORT:Z
     if-nez v2, :cond_2
 
-    .line 101
+    .line 110
     const-string v7, "DMOpFile"
 
     const-string v8, "DMOpInfoFilterSupport : off"
 
     invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 102
+    .line 111
     const/4 v7, 0x0
 
     iput-boolean v7, p0, Lcom/android/internal/telephony/DMOperatorFile;->isDMOpFileLoaded:Z
@@ -284,7 +295,7 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 129
+    .line 137
     :goto_0
     iget-object v7, p0, Lcom/android/internal/telephony/DMOperatorFile;->mDMOpFileParser:Lorg/xmlpull/v1/XmlPullParser;
 
@@ -292,20 +303,20 @@
 
     if-eqz v7, :cond_0
 
-    .line 130
+    .line 138
     iget-object v7, p0, Lcom/android/internal/telephony/DMOperatorFile;->mDMOpFileParser:Lorg/xmlpull/v1/XmlPullParser;
 
     check-cast v7, Landroid/content/res/XmlResourceParser;
 
     invoke-interface {v7}, Landroid/content/res/XmlResourceParser;->close()V
 
-    .line 133
+    .line 141
     .end local v2           #MTK_DM_REGISTER_SUPPORT:Z
     :cond_0
     :goto_1
     return-void
 
-    .line 93
+    .line 103
     :cond_1
     :try_start_1
     const-string v7, "DMOpFile"
@@ -317,14 +328,14 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 129
+    .line 137
     iget-object v7, p0, Lcom/android/internal/telephony/DMOperatorFile;->mDMOpFileParser:Lorg/xmlpull/v1/XmlPullParser;
 
     instance-of v7, v7, Landroid/content/res/XmlResourceParser;
 
     if-eqz v7, :cond_0
 
-    .line 130
+    .line 138
     iget-object v7, p0, Lcom/android/internal/telephony/DMOperatorFile;->mDMOpFileParser:Lorg/xmlpull/v1/XmlPullParser;
 
     check-cast v7, Landroid/content/res/XmlResourceParser;
@@ -333,7 +344,7 @@
 
     goto :goto_1
 
-    .line 104
+    .line 113
     .restart local v2       #MTK_DM_REGISTER_SUPPORT:Z
     :cond_2
     :try_start_2
@@ -343,10 +354,10 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 105
+    .line 114
     const/4 v6, 0x0
 
-    .line 107
+    .line 116
     .local v6, parsedDMOpInfo:I
     :cond_3
     :goto_2
@@ -354,23 +365,23 @@
 
     invoke-static {v7}, Lcom/android/internal/util/XmlUtils;->nextElement(Lorg/xmlpull/v1/XmlPullParser;)V
 
-    .line 108
+    .line 117
     iget-object v7, p0, Lcom/android/internal/telephony/DMOperatorFile;->mDMOpFileParser:Lorg/xmlpull/v1/XmlPullParser;
 
     invoke-interface {v7}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 109
+    .line 118
     .local v4, name:Ljava/lang/String;
     if-nez v4, :cond_5
 
-    .line 110
+    .line 119
     iget v7, p0, Lcom/android/internal/telephony/DMOperatorFile;->mNumberOfDMOpInfo:I
 
     if-eq v6, v7, :cond_4
 
-    .line 111
+    .line 120
     const-string v7, "DMOpFile"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -411,7 +422,7 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 123
+    .line 131
     :cond_4
     const-string v7, "DMOpFile"
 
@@ -419,7 +430,7 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 124
+    .line 132
     const/4 v7, 0x1
 
     iput-boolean v7, p0, Lcom/android/internal/telephony/DMOperatorFile;->isDMOpFileLoaded:Z
@@ -429,14 +440,14 @@
 
     goto :goto_0
 
-    .line 126
+    .line 134
     .end local v2           #MTK_DM_REGISTER_SUPPORT:Z
     .end local v4           #name:Ljava/lang/String;
     .end local v6           #parsedDMOpInfo:I
     :catch_0
     move-exception v3
 
-    .line 127
+    .line 135
     .local v3, e:Ljava/lang/Exception;
     :try_start_3
     const-string v7, "DMOpFile"
@@ -447,14 +458,14 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 129
+    .line 137
     iget-object v7, p0, Lcom/android/internal/telephony/DMOperatorFile;->mDMOpFileParser:Lorg/xmlpull/v1/XmlPullParser;
 
     instance-of v7, v7, Landroid/content/res/XmlResourceParser;
 
     if-eqz v7, :cond_0
 
-    .line 130
+    .line 138
     iget-object v7, p0, Lcom/android/internal/telephony/DMOperatorFile;->mDMOpFileParser:Lorg/xmlpull/v1/XmlPullParser;
 
     check-cast v7, Landroid/content/res/XmlResourceParser;
@@ -463,7 +474,7 @@
 
     goto :goto_1
 
-    .line 114
+    .line 123
     .end local v3           #e:Ljava/lang/Exception;
     .restart local v2       #MTK_DM_REGISTER_SUPPORT:Z
     .restart local v4       #name:Ljava/lang/String;
@@ -478,7 +489,7 @@
 
     if-eqz v7, :cond_3
 
-    .line 115
+    .line 124
     iget-object v7, p0, Lcom/android/internal/telephony/DMOperatorFile;->mDMOpFileParser:Lorg/xmlpull/v1/XmlPullParser;
 
     const/4 v8, 0x0
@@ -489,7 +500,7 @@
 
     move-result-object v5
 
-    .line 116
+    .line 125
     .local v5, opName:Ljava/lang/String;
     iget-object v7, p0, Lcom/android/internal/telephony/DMOperatorFile;->mDMOpFileParser:Lorg/xmlpull/v1/XmlPullParser;
 
@@ -501,7 +512,7 @@
 
     move-result-object v0
 
-    .line 117
+    .line 126
     .local v0, DMNum:Ljava/lang/String;
     iget-object v7, p0, Lcom/android/internal/telephony/DMOperatorFile;->mDMOpFileParser:Lorg/xmlpull/v1/XmlPullParser;
 
@@ -517,11 +528,11 @@
 
     move-result v1
 
-    .line 119
+    .line 127
     .local v1, DMPort:I
     add-int/lit8 v6, v6, 0x1
 
-    .line 120
+    .line 128
     iget-object v7, p0, Lcom/android/internal/telephony/DMOperatorFile;->mDMOperatorInfoArray:Ljava/util/ArrayList;
 
     new-instance v8, Lcom/android/internal/telephony/DMOperatorInfo;
@@ -535,7 +546,7 @@
 
     goto/16 :goto_2
 
-    .line 129
+    .line 137
     .end local v0           #DMNum:Ljava/lang/String;
     .end local v1           #DMPort:I
     .end local v2           #MTK_DM_REGISTER_SUPPORT:Z
@@ -553,7 +564,7 @@
 
     if-eqz v7, :cond_6
 
-    .line 130
+    .line 138
     iget-object v7, p0, Lcom/android/internal/telephony/DMOperatorFile;->mDMOpFileParser:Lorg/xmlpull/v1/XmlPullParser;
 
     check-cast v7, Landroid/content/res/XmlResourceParser;
@@ -572,24 +583,24 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 136
+    .line 144
     iget-boolean v3, p0, Lcom/android/internal/telephony/DMOperatorFile;->isDMOpFileLoaded:Z
 
     if-nez v3, :cond_1
 
-    .line 137
+    .line 145
     const-string v3, "DMOpFile"
 
     const-string v4, "DM Operator File hasn\'t been load From xml"
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 151
+    .line 160
     :cond_0
     :goto_0
     return v2
 
-    .line 140
+    .line 148
     :cond_1
     const-string v3, "DMOpFile"
 
@@ -623,10 +634,10 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 141
+    .line 149
     if-eqz p1, :cond_0
 
-    .line 144
+    .line 152
     iget-object v3, p0, Lcom/android/internal/telephony/DMOperatorFile;->mDMOperatorInfoArray:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -647,7 +658,7 @@
 
     check-cast v0, Lcom/android/internal/telephony/DMOperatorInfo;
 
-    .line 145
+    .line 153
     .local v0, EachOpInfo:Lcom/android/internal/telephony/DMOperatorInfo;
     iget v3, v0, Lcom/android/internal/telephony/DMOperatorInfo;->mDMport:I
 
@@ -661,7 +672,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 147
+    .line 156
     const/4 v2, 0x1
 
     goto :goto_0

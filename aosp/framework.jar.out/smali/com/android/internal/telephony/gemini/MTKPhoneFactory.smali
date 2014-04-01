@@ -4,60 +4,41 @@
 
 
 # static fields
-.field static a:I
+.field private static a:Lcom/android/internal/telephony/Phone;
 
-.field private static b:Lcom/android/internal/telephony/Phone;
+.field private static b:Lcom/android/internal/telephony/CommandsInterface;
 
 .field private static c:Lcom/android/internal/telephony/CommandsInterface;
 
-.field private static d:Lcom/android/internal/telephony/CommandsInterface;
+.field private static d:Z
 
-.field private static e:Lcom/android/internal/telephony/CommandsInterface;
+.field private static e:Lcom/android/internal/telephony/PhoneNotifier;
 
-.field private static f:Lcom/android/internal/telephony/CommandsInterface;
+.field private static f:Landroid/os/Looper;
 
-.field private static g:Z
-
-.field private static h:Lcom/android/internal/telephony/PhoneNotifier;
-
-.field private static i:Lcom/android/internal/telephony/PhoneNotifier;
-
-.field private static j:Landroid/os/Looper;
-
-.field private static k:Landroid/content/Context;
-
-.field private static l:Lcom/android/internal/telephony/ITelephonyRegistry;
+.field private static g:Landroid/content/Context;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
     .prologue
-    const/4 v1, 0x0
-
     const/4 v0, 0x0
 
-    .line 88
-    sput-object v0, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->b:Lcom/android/internal/telephony/Phone;
+    .line 86
+    sput-object v0, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->a:Lcom/android/internal/telephony/Phone;
 
-    .line 89
+    .line 87
+    sput-object v0, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->b:Lcom/android/internal/telephony/CommandsInterface;
+
+    .line 88
     sput-object v0, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->c:Lcom/android/internal/telephony/CommandsInterface;
 
     .line 90
-    sput-object v0, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->d:Lcom/android/internal/telephony/CommandsInterface;
+    const/4 v0, 0x0
 
-    .line 91
-    sput-object v0, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->e:Lcom/android/internal/telephony/CommandsInterface;
-
-    .line 92
-    sput-object v0, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->f:Lcom/android/internal/telephony/CommandsInterface;
-
-    .line 94
-    sput-boolean v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->g:Z
-
-    .line 101
-    sput v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->a:I
+    sput-boolean v0, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->d:Z
 
     return-void
 .end method
@@ -66,572 +47,43 @@
     .locals 0
 
     .prologue
-    .line 82
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 80
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
-.end method
-
-.method private static a(Landroid/content/Context;III)V
-    .locals 5
-    .parameter
-    .parameter
-    .parameter
-    .parameter
-
-    .prologue
-    const/4 v1, 0x4
-
-    const/4 v4, 0x1
-
-    const/4 v3, 0x0
-
-    .line 342
-    if-nez p1, :cond_0
-
-    .line 343
-    new-instance v0, Lcom/android/internal/telephony/RIL;
-
-    invoke-direct {v0, p0, p3, p2, v3}, Lcom/android/internal/telephony/RIL;-><init>(Landroid/content/Context;III)V
-
-    sput-object v0, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->c:Lcom/android/internal/telephony/CommandsInterface;
-
-    .line 344
-    new-instance v0, Lcom/android/internal/telephony/RIL;
-
-    invoke-direct {v0, p0, v1, p2, v4}, Lcom/android/internal/telephony/RIL;-><init>(Landroid/content/Context;III)V
-
-    sput-object v0, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->d:Lcom/android/internal/telephony/CommandsInterface;
-
-    .line 346
-    sget-object v0, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->c:Lcom/android/internal/telephony/CommandsInterface;
-
-    invoke-static {p0, v0, v3}, Lcom/android/internal/telephony/uicc/UiccController;->make(Landroid/content/Context;Lcom/android/internal/telephony/CommandsInterface;I)Lcom/android/internal/telephony/uicc/UiccController;
-
-    .line 347
-    sget-object v0, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->d:Lcom/android/internal/telephony/CommandsInterface;
-
-    invoke-static {p0, v0, v4}, Lcom/android/internal/telephony/uicc/UiccController;->make(Landroid/content/Context;Lcom/android/internal/telephony/CommandsInterface;I)Lcom/android/internal/telephony/uicc/UiccController;
-
-    .line 349
-    new-instance v0, Lcom/android/internal/telephony/cdma/CDMAPhone;
-
-    sget-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->c:Lcom/android/internal/telephony/CommandsInterface;
-
-    sget-object v2, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->h:Lcom/android/internal/telephony/PhoneNotifier;
-
-    invoke-direct {v0, p0, v1, v2, v3}, Lcom/android/internal/telephony/cdma/CDMAPhone;-><init>(Landroid/content/Context;Lcom/android/internal/telephony/CommandsInterface;Lcom/android/internal/telephony/PhoneNotifier;I)V
-
-    .line 350
-    new-instance v1, Lcom/android/internal/telephony/gsm/GSMPhone;
-
-    sget-object v2, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->d:Lcom/android/internal/telephony/CommandsInterface;
-
-    sget-object v3, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->i:Lcom/android/internal/telephony/PhoneNotifier;
-
-    invoke-direct {v1, p0, v2, v3, v4}, Lcom/android/internal/telephony/gsm/GSMPhone;-><init>(Landroid/content/Context;Lcom/android/internal/telephony/CommandsInterface;Lcom/android/internal/telephony/PhoneNotifier;I)V
-
-    .line 353
-    new-instance v2, Lcom/android/internal/telephony/gemini/GeminiPhone;
-
-    new-instance v3, Lcom/android/internal/telephony/PhoneProxy;
-
-    invoke-direct {v3, v0}, Lcom/android/internal/telephony/PhoneProxy;-><init>(Lcom/android/internal/telephony/PhoneBase;)V
-
-    new-instance v0, Lcom/android/internal/telephony/PhoneProxy;
-
-    invoke-direct {v0, v1}, Lcom/android/internal/telephony/PhoneProxy;-><init>(Lcom/android/internal/telephony/PhoneBase;)V
-
-    invoke-direct {v2, v3, v0, p1}, Lcom/android/internal/telephony/gemini/GeminiPhone;-><init>(Lcom/android/internal/telephony/Phone;Lcom/android/internal/telephony/Phone;I)V
-
-    sput-object v2, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->b:Lcom/android/internal/telephony/Phone;
-
-    .line 354
-    const-string v0, "PHONE"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Creating EVDO GeminiPhone with CDMA as Phone"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    add-int/lit8 v2, p1, 0x1
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 367
-    :goto_0
-    return-void
-
-    .line 356
-    :cond_0
-    new-instance v0, Lcom/android/internal/telephony/RIL;
-
-    invoke-direct {v0, p0, p3, p2, v3}, Lcom/android/internal/telephony/RIL;-><init>(Landroid/content/Context;III)V
-
-    sput-object v0, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->c:Lcom/android/internal/telephony/CommandsInterface;
-
-    .line 357
-    new-instance v0, Lcom/android/internal/telephony/RIL;
-
-    invoke-direct {v0, p0, v1, p2, v4}, Lcom/android/internal/telephony/RIL;-><init>(Landroid/content/Context;III)V
-
-    sput-object v0, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->d:Lcom/android/internal/telephony/CommandsInterface;
-
-    .line 358
-    sget-object v0, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->c:Lcom/android/internal/telephony/CommandsInterface;
-
-    invoke-static {p0, v0, v3}, Lcom/android/internal/telephony/uicc/UiccController;->make(Landroid/content/Context;Lcom/android/internal/telephony/CommandsInterface;I)Lcom/android/internal/telephony/uicc/UiccController;
-
-    .line 359
-    sget-object v0, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->d:Lcom/android/internal/telephony/CommandsInterface;
-
-    invoke-static {p0, v0, v4}, Lcom/android/internal/telephony/uicc/UiccController;->make(Landroid/content/Context;Lcom/android/internal/telephony/CommandsInterface;I)Lcom/android/internal/telephony/uicc/UiccController;
-
-    .line 360
-    new-instance v0, Lcom/android/internal/telephony/gsm/GSMPhone;
-
-    sget-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->c:Lcom/android/internal/telephony/CommandsInterface;
-
-    sget-object v2, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->h:Lcom/android/internal/telephony/PhoneNotifier;
-
-    invoke-direct {v0, p0, v1, v2, v3}, Lcom/android/internal/telephony/gsm/GSMPhone;-><init>(Landroid/content/Context;Lcom/android/internal/telephony/CommandsInterface;Lcom/android/internal/telephony/PhoneNotifier;I)V
-
-    .line 361
-    new-instance v1, Lcom/android/internal/telephony/cdma/CDMAPhone;
-
-    sget-object v2, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->d:Lcom/android/internal/telephony/CommandsInterface;
-
-    sget-object v3, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->i:Lcom/android/internal/telephony/PhoneNotifier;
-
-    invoke-direct {v1, p0, v2, v3, v4}, Lcom/android/internal/telephony/cdma/CDMAPhone;-><init>(Landroid/content/Context;Lcom/android/internal/telephony/CommandsInterface;Lcom/android/internal/telephony/PhoneNotifier;I)V
-
-    .line 364
-    new-instance v2, Lcom/android/internal/telephony/gemini/GeminiPhone;
-
-    new-instance v3, Lcom/android/internal/telephony/PhoneProxy;
-
-    invoke-direct {v3, v0}, Lcom/android/internal/telephony/PhoneProxy;-><init>(Lcom/android/internal/telephony/PhoneBase;)V
-
-    new-instance v0, Lcom/android/internal/telephony/PhoneProxy;
-
-    invoke-direct {v0, v1}, Lcom/android/internal/telephony/PhoneProxy;-><init>(Lcom/android/internal/telephony/PhoneBase;)V
-
-    invoke-direct {v2, v3, v0, p1}, Lcom/android/internal/telephony/gemini/GeminiPhone;-><init>(Lcom/android/internal/telephony/Phone;Lcom/android/internal/telephony/Phone;I)V
-
-    sput-object v2, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->b:Lcom/android/internal/telephony/Phone;
-
-    .line 365
-    const-string v0, "PHONE"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Creating EVDO GeminiPhone with CDMA as Phone"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    add-int/lit8 v2, p1, 0x1
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
-.end method
-
-.method private static b(Landroid/content/Context;III)V
-    .locals 6
-    .parameter
-    .parameter
-    .parameter
-    .parameter
-
-    .prologue
-    const/4 v2, 0x0
-
-    const/4 v1, 0x1
-
-    .line 378
-    invoke-static {}, Lcom/android/internal/telephony/PhoneFactory;->isDualTalkMode()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 379
-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    const-string/jumbo v3, "preferred_network_mode_2"
-
-    sget v4, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->a:I
-
-    invoke-static {v0, v3, v4}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v0
-
-    .line 381
-    const-string v3, "PHONE"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "Network Mode 2 set to "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 382
-    new-instance v3, Lcom/android/internal/telephony/RIL;
-
-    invoke-direct {v3, p0, p3, p2, v2}, Lcom/android/internal/telephony/RIL;-><init>(Landroid/content/Context;III)V
-
-    sput-object v3, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->c:Lcom/android/internal/telephony/CommandsInterface;
-
-    .line 383
-    new-instance v3, Lcom/android/internal/telephony/RIL;
-
-    invoke-direct {v3, p0, v0, p2, v1}, Lcom/android/internal/telephony/RIL;-><init>(Landroid/content/Context;III)V
-
-    sput-object v3, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->d:Lcom/android/internal/telephony/CommandsInterface;
-
-    .line 398
-    :goto_0
-    sget-object v0, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->c:Lcom/android/internal/telephony/CommandsInterface;
-
-    invoke-static {p0, v0, v2}, Lcom/android/internal/telephony/uicc/UiccController;->make(Landroid/content/Context;Lcom/android/internal/telephony/CommandsInterface;I)Lcom/android/internal/telephony/uicc/UiccController;
-
-    .line 399
-    sget-object v0, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->d:Lcom/android/internal/telephony/CommandsInterface;
-
-    invoke-static {p0, v0, v1}, Lcom/android/internal/telephony/uicc/UiccController;->make(Landroid/content/Context;Lcom/android/internal/telephony/CommandsInterface;I)Lcom/android/internal/telephony/uicc/UiccController;
-
-    .line 400
-    new-instance v0, Lcom/android/internal/telephony/gsm/GSMPhone;
-
-    sget-object v3, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->c:Lcom/android/internal/telephony/CommandsInterface;
-
-    sget-object v4, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->h:Lcom/android/internal/telephony/PhoneNotifier;
-
-    invoke-direct {v0, p0, v3, v4, v2}, Lcom/android/internal/telephony/gsm/GSMPhone;-><init>(Landroid/content/Context;Lcom/android/internal/telephony/CommandsInterface;Lcom/android/internal/telephony/PhoneNotifier;I)V
-
-    .line 402
-    new-instance v2, Lcom/android/internal/telephony/gsm/GSMPhone;
-
-    sget-object v3, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->d:Lcom/android/internal/telephony/CommandsInterface;
-
-    sget-object v4, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->i:Lcom/android/internal/telephony/PhoneNotifier;
-
-    invoke-direct {v2, p0, v3, v4, v1}, Lcom/android/internal/telephony/gsm/GSMPhone;-><init>(Landroid/content/Context;Lcom/android/internal/telephony/CommandsInterface;Lcom/android/internal/telephony/PhoneNotifier;I)V
-
-    .line 405
-    new-instance v1, Lcom/android/internal/telephony/gemini/GeminiPhone;
-
-    new-instance v3, Lcom/android/internal/telephony/PhoneProxy;
-
-    invoke-direct {v3, v0}, Lcom/android/internal/telephony/PhoneProxy;-><init>(Lcom/android/internal/telephony/PhoneBase;)V
-
-    new-instance v4, Lcom/android/internal/telephony/PhoneProxy;
-
-    invoke-direct {v4, v2}, Lcom/android/internal/telephony/PhoneProxy;-><init>(Lcom/android/internal/telephony/PhoneBase;)V
-
-    invoke-direct {v1, v3, v4, p1}, Lcom/android/internal/telephony/gemini/GeminiPhone;-><init>(Lcom/android/internal/telephony/Phone;Lcom/android/internal/telephony/Phone;I)V
-
-    sput-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->b:Lcom/android/internal/telephony/Phone;
-
-    .line 407
-    const-string v1, "PHONE"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "Creating GSM GeminiPhone with default phone at Phone"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    add-int/lit8 v4, p1, 0x1
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v1, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 408
-    invoke-virtual {v0, v2}, Lcom/android/internal/telephony/gsm/GSMPhone;->setPeerPhone(Lcom/android/internal/telephony/gsm/GSMPhone;)V
-
-    .line 409
-    invoke-virtual {v2, v0}, Lcom/android/internal/telephony/gsm/GSMPhone;->setPeerPhone(Lcom/android/internal/telephony/gsm/GSMPhone;)V
-
-    .line 410
-    return-void
-
-    .line 385
-    :cond_0
-    const-string v0, "com.mtk.3G_SWITCH"
-
-    invoke-virtual {p0, v0, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-
-    move-result-object v3
-
-    .line 386
-    const-string v0, "gsm.3gswitch"
-
-    invoke-static {v0, v1}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
-
-    move-result v0
-
-    const/4 v4, 0x2
-
-    if-ne v0, v4, :cond_1
-
-    move v0, v1
-
-    .line 387
-    :goto_1
-    const-string v4, "3G_SIM_ID"
-
-    invoke-interface {v3, v4, v0}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
-
-    move-result v0
-
-    .line 388
-    const-string v3, "PHONE"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "Initiate 3G Sim="
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, " "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 390
-    if-nez v0, :cond_2
-
-    .line 391
-    new-instance v0, Lcom/android/internal/telephony/RIL;
-
-    invoke-direct {v0, p0, p3, p2, v2}, Lcom/android/internal/telephony/RIL;-><init>(Landroid/content/Context;III)V
-
-    sput-object v0, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->c:Lcom/android/internal/telephony/CommandsInterface;
-
-    .line 392
-    new-instance v0, Lcom/android/internal/telephony/RIL;
-
-    invoke-direct {v0, p0, v1, p2, v1}, Lcom/android/internal/telephony/RIL;-><init>(Landroid/content/Context;III)V
-
-    sput-object v0, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->d:Lcom/android/internal/telephony/CommandsInterface;
-
-    goto/16 :goto_0
-
-    :cond_1
-    move v0, v2
-
-    .line 386
-    goto :goto_1
-
-    .line 394
-    :cond_2
-    new-instance v0, Lcom/android/internal/telephony/RIL;
-
-    invoke-direct {v0, p0, v1, p2, v2}, Lcom/android/internal/telephony/RIL;-><init>(Landroid/content/Context;III)V
-
-    sput-object v0, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->c:Lcom/android/internal/telephony/CommandsInterface;
-
-    .line 395
-    new-instance v0, Lcom/android/internal/telephony/RIL;
-
-    invoke-direct {v0, p0, p3, p2, v1}, Lcom/android/internal/telephony/RIL;-><init>(Landroid/content/Context;III)V
-
-    sput-object v0, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->d:Lcom/android/internal/telephony/CommandsInterface;
-
-    goto/16 :goto_0
 .end method
 
 .method public static getCdmaPhone()Lcom/android/internal/telephony/Phone;
     .locals 5
 
     .prologue
-    .line 457
+    .line 261
     sget-object v1, Lcom/android/internal/telephony/PhoneProxy;->lockForRadioTechnologyChange:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 458
+    .line 262
     :try_start_0
     new-instance v0, Lcom/android/internal/telephony/cdma/CDMAPhone;
 
-    sget-object v2, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->k:Landroid/content/Context;
+    sget-object v2, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->g:Landroid/content/Context;
 
-    sget-object v3, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->c:Lcom/android/internal/telephony/CommandsInterface;
+    sget-object v3, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->b:Lcom/android/internal/telephony/CommandsInterface;
 
-    sget-object v4, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->h:Lcom/android/internal/telephony/PhoneNotifier;
+    sget-object v4, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->e:Lcom/android/internal/telephony/PhoneNotifier;
 
     invoke-direct {v0, v2, v3, v4}, Lcom/android/internal/telephony/cdma/CDMAPhone;-><init>(Landroid/content/Context;Lcom/android/internal/telephony/CommandsInterface;Lcom/android/internal/telephony/PhoneNotifier;)V
 
-    .line 459
+    .line 263
     monitor-exit v1
 
     return-object v0
 
-    .line 460
+    .line 264
     :catchall_0
     move-exception v0
 
     monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method public static getCdmaPhone(I)Lcom/android/internal/telephony/Phone;
-    .locals 5
-    .parameter
-
-    .prologue
-    .line 477
-    sget-object v3, Lcom/android/internal/telephony/PhoneProxy;->lockForRadioTechnologyChange:Ljava/lang/Object;
-
-    monitor-enter v3
-
-    .line 478
-    :try_start_0
-    invoke-static {}, Lcom/android/internal/telephony/PhoneFactory;->isInternationalRoamingEnabled()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    .line 479
-    if-nez p0, :cond_0
-
-    sget-object v0, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->h:Lcom/android/internal/telephony/PhoneNotifier;
-
-    move-object v2, v0
-
-    .line 481
-    :goto_0
-    if-nez p0, :cond_1
-
-    sget-object v0, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->c:Lcom/android/internal/telephony/CommandsInterface;
-
-    move-object v1, v0
-
-    .line 483
-    :goto_1
-    new-instance v0, Lcom/android/internal/telephony/cdma/CDMAPhone;
-
-    sget-object v4, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->k:Landroid/content/Context;
-
-    invoke-direct {v0, v4, v1, v2, p0}, Lcom/android/internal/telephony/cdma/CDMAPhone;-><init>(Landroid/content/Context;Lcom/android/internal/telephony/CommandsInterface;Lcom/android/internal/telephony/PhoneNotifier;I)V
-
-    .line 484
-    monitor-exit v3
-
-    .line 487
-    :goto_2
-    return-object v0
-
-    .line 479
-    :cond_0
-    sget-object v0, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->i:Lcom/android/internal/telephony/PhoneNotifier;
-
-    move-object v2, v0
-
-    goto :goto_0
-
-    .line 481
-    :cond_1
-    sget-object v0, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->d:Lcom/android/internal/telephony/CommandsInterface;
-
-    move-object v1, v0
-
-    goto :goto_1
-
-    .line 486
-    :cond_2
-    new-instance v0, Lcom/android/internal/telephony/cdma/CDMAPhone;
-
-    sget-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->k:Landroid/content/Context;
-
-    sget-object v2, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->c:Lcom/android/internal/telephony/CommandsInterface;
-
-    sget-object v4, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->h:Lcom/android/internal/telephony/PhoneNotifier;
-
-    invoke-direct {v0, v1, v2, v4}, Lcom/android/internal/telephony/cdma/CDMAPhone;-><init>(Landroid/content/Context;Lcom/android/internal/telephony/CommandsInterface;Lcom/android/internal/telephony/PhoneNotifier;)V
-
-    .line 487
-    monitor-exit v3
-
-    goto :goto_2
-
-    .line 489
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v3
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -639,11 +91,45 @@
 .end method
 
 .method public static getDefaultPhone()Lcom/android/internal/telephony/Phone;
-    .locals 1
+    .locals 2
 
     .prologue
-    .line 453
-    sget-object v0, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->b:Lcom/android/internal/telephony/Phone;
+    .line 249
+    sget-object v0, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->f:Landroid/os/Looper;
+
+    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
+
+    move-result-object v1
+
+    if-eq v0, v1, :cond_0
+
+    .line 250
+    new-instance v0, Ljava/lang/RuntimeException;
+
+    const-string v1, "PhoneFactory.getDefaultPhone must be called from Looper thread"
+
+    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 254
+    :cond_0
+    sget-boolean v0, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->d:Z
+
+    if-nez v0, :cond_1
+
+    .line 255
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "Default phones haven\'t been made yet!"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 257
+    :cond_1
+    sget-object v0, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->a:Lcom/android/internal/telephony/Phone;
 
     return-object v0
 .end method
@@ -652,125 +138,33 @@
     .locals 5
 
     .prologue
-    .line 464
+    .line 268
     sget-object v1, Lcom/android/internal/telephony/PhoneProxy;->lockForRadioTechnologyChange:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 465
+    .line 269
     :try_start_0
     new-instance v0, Lcom/android/internal/telephony/gsm/GSMPhone;
 
-    sget-object v2, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->k:Landroid/content/Context;
+    sget-object v2, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->g:Landroid/content/Context;
 
-    sget-object v3, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->c:Lcom/android/internal/telephony/CommandsInterface;
+    sget-object v3, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->b:Lcom/android/internal/telephony/CommandsInterface;
 
-    sget-object v4, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->h:Lcom/android/internal/telephony/PhoneNotifier;
+    sget-object v4, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->e:Lcom/android/internal/telephony/PhoneNotifier;
 
     invoke-direct {v0, v2, v3, v4}, Lcom/android/internal/telephony/gsm/GSMPhone;-><init>(Landroid/content/Context;Lcom/android/internal/telephony/CommandsInterface;Lcom/android/internal/telephony/PhoneNotifier;)V
 
-    .line 466
+    .line 270
     monitor-exit v1
 
     return-object v0
 
-    .line 467
+    .line 271
     :catchall_0
     move-exception v0
 
     monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method public static getGsmPhone(I)Lcom/android/internal/telephony/Phone;
-    .locals 5
-    .parameter
-
-    .prologue
-    .line 493
-    sget-object v3, Lcom/android/internal/telephony/PhoneProxy;->lockForRadioTechnologyChange:Ljava/lang/Object;
-
-    monitor-enter v3
-
-    .line 494
-    :try_start_0
-    invoke-static {}, Lcom/android/internal/telephony/PhoneFactory;->isInternationalRoamingEnabled()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    .line 495
-    if-nez p0, :cond_0
-
-    sget-object v0, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->h:Lcom/android/internal/telephony/PhoneNotifier;
-
-    move-object v2, v0
-
-    .line 497
-    :goto_0
-    if-nez p0, :cond_1
-
-    sget-object v0, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->c:Lcom/android/internal/telephony/CommandsInterface;
-
-    move-object v1, v0
-
-    .line 499
-    :goto_1
-    new-instance v0, Lcom/android/internal/telephony/gsm/GSMPhone;
-
-    sget-object v4, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->k:Landroid/content/Context;
-
-    invoke-direct {v0, v4, v1, v2, p0}, Lcom/android/internal/telephony/gsm/GSMPhone;-><init>(Landroid/content/Context;Lcom/android/internal/telephony/CommandsInterface;Lcom/android/internal/telephony/PhoneNotifier;I)V
-
-    .line 500
-    monitor-exit v3
-
-    .line 503
-    :goto_2
-    return-object v0
-
-    .line 495
-    :cond_0
-    sget-object v0, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->i:Lcom/android/internal/telephony/PhoneNotifier;
-
-    move-object v2, v0
-
-    goto :goto_0
-
-    .line 497
-    :cond_1
-    sget-object v0, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->d:Lcom/android/internal/telephony/CommandsInterface;
-
-    move-object v1, v0
-
-    goto :goto_1
-
-    .line 502
-    :cond_2
-    new-instance v0, Lcom/android/internal/telephony/gsm/GSMPhone;
-
-    sget-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->k:Landroid/content/Context;
-
-    sget-object v2, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->c:Lcom/android/internal/telephony/CommandsInterface;
-
-    sget-object v4, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->h:Lcom/android/internal/telephony/PhoneNotifier;
-
-    invoke-direct {v0, v1, v2, v4}, Lcom/android/internal/telephony/gsm/GSMPhone;-><init>(Landroid/content/Context;Lcom/android/internal/telephony/CommandsInterface;Lcom/android/internal/telephony/PhoneNotifier;)V
-
-    .line 503
-    monitor-exit v3
-
-    goto :goto_2
-
-    .line 506
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v3
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -786,13 +180,13 @@
 
     const/4 v1, 0x1
 
-    .line 419
+    .line 226
     packed-switch p0, :pswitch_data_0
 
     :pswitch_0
     move v0, v1
 
-    .line 436
+    .line 243
     :goto_0
     :pswitch_1
     return v0
@@ -800,16 +194,16 @@
     :pswitch_2
     move v0, v1
 
-    .line 429
+    .line 236
     goto :goto_0
 
-    .line 434
+    .line 241
     :pswitch_3
     const/4 v0, 0x4
 
     goto :goto_0
 
-    .line 419
+    .line 226
     nop
 
     :pswitch_data_0
@@ -835,16 +229,16 @@
     .parameter
 
     .prologue
-    .line 471
+    .line 275
     sget-object v1, Lcom/android/internal/telephony/PhoneProxy;->lockForRadioTechnologyChange:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 472
+    .line 276
     :try_start_0
-    sget-object v0, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->k:Landroid/content/Context;
+    sget-object v0, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->g:Landroid/content/Context;
 
-    sget-object v2, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->h:Lcom/android/internal/telephony/PhoneNotifier;
+    sget-object v2, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->e:Lcom/android/internal/telephony/PhoneNotifier;
 
     invoke-static {p0, v0, v2}, Lcom/android/internal/telephony/sip/SipPhoneFactory;->makePhone(Ljava/lang/String;Landroid/content/Context;Lcom/android/internal/telephony/PhoneNotifier;)Lcom/android/internal/telephony/sip/SipPhone;
 
@@ -854,7 +248,7 @@
 
     return-object v0
 
-    .line 473
+    .line 277
     :catchall_0
     move-exception v0
 
@@ -866,47 +260,47 @@
 .end method
 
 .method public static makeDefaultPhone(Landroid/content/Context;)V
-    .locals 16
+    .locals 12
     .parameter
 
     .prologue
-    const/4 v11, -0x1
+    const/4 v8, 0x3
 
-    const/4 v15, 0x2
+    const/4 v11, 0x2
 
-    const/4 v14, 0x3
+    const/4 v10, -0x1
 
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
-    const/4 v9, 0x0
+    const/4 v2, 0x0
 
-    .line 106
-    const-class v10, Lcom/android/internal/telephony/Phone;
+    .line 100
+    const-class v5, Lcom/android/internal/telephony/Phone;
 
-    monitor-enter v10
+    monitor-enter v5
 
-    .line 107
+    .line 101
     :try_start_0
-    sget-boolean v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->g:Z
+    sget-boolean v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->d:Z
 
-    if-nez v1, :cond_4
+    if-nez v1, :cond_6
 
-    .line 108
+    .line 102
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v1
 
-    sput-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->j:Landroid/os/Looper;
+    sput-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->f:Landroid/os/Looper;
 
-    .line 109
-    sput-object p0, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->k:Landroid/content/Context;
+    .line 103
+    sput-object p0, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->g:Landroid/content/Context;
 
-    .line 111
-    sget-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->j:Landroid/os/Looper;
+    .line 105
+    sget-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->f:Landroid/os/Looper;
 
     if-nez v1, :cond_0
 
-    .line 112
+    .line 106
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "PhoneFactory.makeDefaultPhone must be called from Looper thread"
@@ -915,17 +309,17 @@
 
     throw v1
 
-    .line 338
+    .line 215
     :catchall_0
     move-exception v1
 
-    monitor-exit v10
+    monitor-exit v5
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 
-    .line 116
+    .line 110
     :cond_0
     :try_start_1
     const-string/jumbo v1, "persist.service.conn.looper"
@@ -934,107 +328,142 @@
 
     move-result-object v1
 
-    const-string/jumbo v3, "true"
+    const-string/jumbo v4, "true"
 
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 117
+    .line 111
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v1
 
-    new-instance v3, Landroid/util/LogPrinter;
+    new-instance v4, Landroid/util/LogPrinter;
 
-    const/4 v4, 0x3
+    const/4 v6, 0x3
 
-    const-string v5, "PHONE"
+    const-string v7, "PHONE"
 
-    invoke-direct {v3, v4, v5}, Landroid/util/LogPrinter;-><init>(ILjava/lang/String;)V
+    invoke-direct {v4, v6, v7}, Landroid/util/LogPrinter;-><init>(ILjava/lang/String;)V
 
-    invoke-virtual {v1, v3}, Landroid/os/Looper;->setMessageLogging(Landroid/util/Printer;)V
+    invoke-virtual {v1, v4}, Landroid/os/Looper;->setMessageLogging(Landroid/util/Printer;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :cond_1
-    move v1, v9
+    move v1, v2
 
-    .line 124
+    .line 118
     :goto_0
     add-int/lit8 v1, v1, 0x1
 
-    .line 129
+    .line 123
     :try_start_2
-    new-instance v3, Landroid/net/LocalServerSocket;
+    new-instance v4, Landroid/net/LocalServerSocket;
 
-    const-string v4, "com.android.internal.telephony"
+    const-string v6, "com.android.internal.telephony"
 
-    invoke-direct {v3, v4}, Landroid/net/LocalServerSocket;-><init>(Ljava/lang/String;)V
+    invoke-direct {v4, v6}, Landroid/net/LocalServerSocket;-><init>(Ljava/lang/String;)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
-    move v3, v9
+    move v4, v2
+
+    .line 128
+    :goto_1
+    if-eqz v4, :cond_3
+
+    .line 129
+    if-le v1, v8, :cond_2
+
+    .line 131
+    :try_start_3
+    new-instance v1, Ljava/lang/RuntimeException;
+
+    const-string v2, "PhoneFactory probably already running"
+
+    invoke-direct {v1, v2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    .line 125
+    :catch_0
+    move-exception v4
+
+    move v4, v3
+
+    goto :goto_1
 
     .line 134
-    :goto_1
-    if-nez v3, :cond_5
+    :cond_2
+    const-wide/16 v6, 0x7d0
 
-    .line 146
-    :try_start_3
+    :try_start_4
+    invoke-static {v6, v7}, Ljava/lang/Thread;->sleep(J)V
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+    .catch Ljava/lang/InterruptedException; {:try_start_4 .. :try_end_4} :catch_1
+
+    goto :goto_0
+
+    .line 138
+    :catch_1
+    move-exception v4
+
+    goto :goto_0
+
+    .line 140
+    :cond_3
+    :try_start_5
     new-instance v1, Lcom/android/internal/telephony/DefaultPhoneNotifier;
 
     invoke-direct {v1}, Lcom/android/internal/telephony/DefaultPhoneNotifier;-><init>()V
 
-    sput-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->h:Lcom/android/internal/telephony/PhoneNotifier;
+    sput-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->e:Lcom/android/internal/telephony/PhoneNotifier;
 
-    .line 148
-    invoke-static {}, Landroid/telephony/TelephonyManager;->getLteOnCdmaModeStatic()I
-
-    move-result v1
-
-    if-ne v1, v2, :cond_2
-
-    .line 149
-    const/4 v1, 0x7
-
-    sput v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->a:I
-
-    .line 152
-    :cond_2
-    invoke-virtual/range {p0 .. p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    .line 143
+    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    const-string/jumbo v3, "preferred_network_mode"
+    const-string/jumbo v4, "preferred_network_mode"
 
-    sget v4, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->a:I
+    const/4 v6, 0x0
 
-    invoke-static {v1, v3, v4}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    invoke-static {v1, v4, v6}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
-    move-result v1
+    move-result v6
 
-    .line 154
-    const-string v3, "PHONE"
+    .line 146
+    const-string v1, "PHONE"
 
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "Network Mode set to "
+    const-string v7, "Network Mode set to "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+    invoke-static {v6}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v7
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v7, " "
+
+    invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
@@ -1042,187 +471,213 @@
 
     move-result-object v4
 
-    invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 158
-    const-string/jumbo v3, "persist.radio.default_sim_mode"
+    .line 147
+    const-string/jumbo v1, "persist.radio.default_sim_mode"
 
     const/16 v4, 0xc
 
-    invoke-static {v3, v4}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+    invoke-static {v1, v4}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
 
-    move-result v4
+    move-result v7
 
-    .line 160
-    const-string v3, "PHONE"
+    .line 152
+    const-string v1, "PHONE"
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v6, "Gemini Network Mode set to "
+    const-string v8, "Gemini Network Mode set to "
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-static {v4}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+    invoke-static {v6}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v8
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v3, v5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 163
-    invoke-virtual/range {p0 .. p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v3
-
-    const-string/jumbo v5, "preferred_cdma_subscription"
-
-    const/4 v6, 0x1
-
-    invoke-static {v3, v5, v6}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v5
-
-    .line 165
-    const-string v3, "PHONE"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "Cdma Subscription set to "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-static {v5}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v3, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 169
-    const-string v3, "com.mtk.3G_SWITCH"
-
-    const/4 v6, 0x0
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v3, v6}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-
-    move-result-object v6
-
-    .line 170
-    const-string v3, "gsm.3gswitch"
-
-    const/4 v7, 0x1
-
-    invoke-static {v3, v7}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
-
-    move-result v3
-
-    if-ne v3, v15, :cond_7
-
-    move v3, v2
-
-    .line 171
-    :goto_2
-    const-string v7, "3G_SIM_ID"
-
-    invoke-interface {v6, v7, v3}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
-
-    move-result v3
-
-    .line 172
-    const-string v6, "PHONE"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "Initiate 3G Sim="
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v7
+    move-result-object v4
 
     const-string v8, " "
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v4
 
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v4
 
-    invoke-static {v6, v7}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 174
-    invoke-static {v4}, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->getPhoneType(I)I
+    .line 155
+    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    move-result v4
+    move-result-object v1
+
+    const-string/jumbo v4, "preferred_cdma_subscription"
+
+    const/4 v8, 0x1
+
+    invoke-static {v1, v4, v8}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v8
+
+    .line 157
+    const-string v1, "PHONE"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v9, "Cdma Subscription set to "
+
+    invoke-virtual {v4, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-static {v8}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v4, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v1, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 161
+    const-string/jumbo v1, "persist.radio.default_sim"
+
+    const/4 v4, -0x1
+
+    invoke-static {v1, v4}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+
+    move-result v1
+
+    .line 162
+    if-ne v1, v10, :cond_a
+
+    .line 164
+    const-string/jumbo v1, "persist.radio.default_sim"
+
+    const/4 v4, 0x0
+
+    invoke-static {v4}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v1, v4}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 168
+    const-string v1, "PHONE"
+
+    const-string v4, "Set Default Phone as SIM1 during first boot-up"
+
+    invoke-static {v1, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    move v4, v2
+
+    .line 170
+    :goto_2
+    const-string v1, "com.mtk.3G_SWITCH"
+
+    const/4 v9, 0x0
+
+    invoke-virtual {p0, v1, v9}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object v1
+
+    .line 171
+    const-string v9, "gsm.3gswitch"
+
+    const/4 v10, 0x1
+
+    invoke-static {v9, v10}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+
+    move-result v9
+
+    if-ne v9, v11, :cond_4
+
+    move v2, v3
+
+    .line 172
+    :cond_4
+    const-string v9, "3G_SIM_ID"
+
+    invoke-interface {v1, v9, v2}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+
+    move-result v1
+
+    .line 173
+    const-string v2, "PHONE"
+
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v10, "Initiate 3G Sim="
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    const-string v10, " "
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v2, v9}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 175
-    if-ne v4, v2, :cond_8
+    invoke-static {v7}, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->getPhoneType(I)I
+
+    move-result v2
 
     .line 176
-    new-instance v2, Lcom/android/internal/telephony/RIL;
-
-    const/4 v3, 0x0
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v2, v0, v1, v5, v3}, Lcom/android/internal/telephony/RIL;-><init>(Landroid/content/Context;III)V
-
-    sput-object v2, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->c:Lcom/android/internal/telephony/CommandsInterface;
+    if-ne v2, v3, :cond_7
 
     .line 177
-    sget-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->c:Lcom/android/internal/telephony/CommandsInterface;
+    new-instance v1, Lcom/android/internal/telephony/RIL;
 
-    move-object/from16 v0, p0
+    const/4 v2, 0x0
 
-    invoke-static {v0, v1}, Lcom/android/internal/telephony/uicc/UiccController;->make(Landroid/content/Context;Lcom/android/internal/telephony/CommandsInterface;)Lcom/android/internal/telephony/uicc/UiccController;
+    invoke-direct {v1, p0, v6, v8, v2}, Lcom/android/internal/telephony/RIL;-><init>(Landroid/content/Context;III)V
+
+    sput-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->b:Lcom/android/internal/telephony/CommandsInterface;
 
     .line 178
     new-instance v1, Lcom/android/internal/telephony/PhoneProxy;
 
     new-instance v2, Lcom/android/internal/telephony/gsm/GSMPhone;
 
-    sget-object v3, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->c:Lcom/android/internal/telephony/CommandsInterface;
+    sget-object v3, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->b:Lcom/android/internal/telephony/CommandsInterface;
 
-    sget-object v4, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->h:Lcom/android/internal/telephony/PhoneNotifier;
+    sget-object v4, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->e:Lcom/android/internal/telephony/PhoneNotifier;
 
-    move-object/from16 v0, p0
+    invoke-direct {v2, p0, v3, v4}, Lcom/android/internal/telephony/gsm/GSMPhone;-><init>(Landroid/content/Context;Lcom/android/internal/telephony/CommandsInterface;Lcom/android/internal/telephony/PhoneNotifier;)V
 
-    invoke-direct {v2, v0, v3, v4}, Lcom/android/internal/telephony/gsm/GSMPhone;-><init>(Landroid/content/Context;Lcom/android/internal/telephony/CommandsInterface;Lcom/android/internal/telephony/PhoneNotifier;)V
+    invoke-direct {v1, v2}, Lcom/android/internal/telephony/PhoneProxy;-><init>(Lcom/android/internal/telephony/Phone;)V
 
-    invoke-direct {v1, v2}, Lcom/android/internal/telephony/PhoneProxy;-><init>(Lcom/android/internal/telephony/PhoneBase;)V
-
-    sput-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->b:Lcom/android/internal/telephony/Phone;
+    sput-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->a:Lcom/android/internal/telephony/Phone;
 
     .line 179
     const-string v1, "PHONE"
@@ -1231,135 +686,48 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 326
-    :cond_3
+    .line 213
+    :cond_5
     :goto_3
     const/4 v1, 0x1
 
-    sput-boolean v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->g:Z
+    sput-boolean v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->d:Z
 
-    .line 330
-    :cond_4
-    const-string/jumbo v1, "telephony.registry"
+    .line 215
+    :cond_6
+    monitor-exit v5
 
-    invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/android/internal/telephony/ITelephonyRegistry$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/telephony/ITelephonyRegistry;
-
-    move-result-object v1
-
-    sput-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->l:Lcom/android/internal/telephony/ITelephonyRegistry;
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    .line 333
-    :try_start_4
-    sget-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->l:Lcom/android/internal/telephony/ITelephonyRegistry;
-
-    invoke-interface {v1}, Lcom/android/internal/telephony/ITelephonyRegistry;->updateRegistryCellLocation()V
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
-    .catch Landroid/os/RemoteException; {:try_start_4 .. :try_end_4} :catch_2
-
-    .line 338
-    :goto_4
-    :try_start_5
-    monitor-exit v10
-
-    .line 339
     return-void
 
-    .line 130
-    :catch_0
-    move-exception v3
-
-    move v3, v2
-
-    .line 131
-    goto/16 :goto_1
-
-    .line 136
-    :cond_5
-    if-le v1, v14, :cond_6
-
-    .line 137
-    new-instance v1, Ljava/lang/RuntimeException;
-
-    const-string v2, "PhoneFactory probably already running"
-
-    invoke-direct {v1, v2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
-
-    .line 140
-    :cond_6
-    const-wide/16 v3, 0x7d0
-
-    :try_start_6
-    invoke-static {v3, v4}, Ljava/lang/Thread;->sleep(J)V
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_0
-    .catch Ljava/lang/InterruptedException; {:try_start_6 .. :try_end_6} :catch_1
-
-    goto/16 :goto_0
-
-    .line 141
-    :catch_1
-    move-exception v3
-
-    goto/16 :goto_0
-
-    :cond_7
-    move v3, v9
-
-    .line 170
-    goto/16 :goto_2
-
     .line 180
-    :cond_8
-    if-ne v4, v15, :cond_9
+    :cond_7
+    if-ne v2, v11, :cond_8
 
     .line 181
-    :try_start_7
-    new-instance v2, Lcom/android/internal/telephony/RIL;
+    new-instance v1, Lcom/android/internal/telephony/RIL;
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    move-object/from16 v0, p0
+    invoke-direct {v1, p0, v6, v8, v2}, Lcom/android/internal/telephony/RIL;-><init>(Landroid/content/Context;III)V
 
-    invoke-direct {v2, v0, v1, v5, v3}, Lcom/android/internal/telephony/RIL;-><init>(Landroid/content/Context;III)V
-
-    sput-object v2, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->c:Lcom/android/internal/telephony/CommandsInterface;
+    sput-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->b:Lcom/android/internal/telephony/CommandsInterface;
 
     .line 182
-    sget-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->c:Lcom/android/internal/telephony/CommandsInterface;
-
-    move-object/from16 v0, p0
-
-    invoke-static {v0, v1}, Lcom/android/internal/telephony/uicc/UiccController;->make(Landroid/content/Context;Lcom/android/internal/telephony/CommandsInterface;)Lcom/android/internal/telephony/uicc/UiccController;
-
-    .line 183
     new-instance v1, Lcom/android/internal/telephony/PhoneProxy;
 
     new-instance v2, Lcom/android/internal/telephony/cdma/CDMAPhone;
 
-    sget-object v3, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->c:Lcom/android/internal/telephony/CommandsInterface;
+    sget-object v3, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->b:Lcom/android/internal/telephony/CommandsInterface;
 
-    sget-object v4, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->h:Lcom/android/internal/telephony/PhoneNotifier;
+    sget-object v4, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->e:Lcom/android/internal/telephony/PhoneNotifier;
 
-    move-object/from16 v0, p0
+    invoke-direct {v2, p0, v3, v4}, Lcom/android/internal/telephony/cdma/CDMAPhone;-><init>(Landroid/content/Context;Lcom/android/internal/telephony/CommandsInterface;Lcom/android/internal/telephony/PhoneNotifier;)V
 
-    invoke-direct {v2, v0, v3, v4}, Lcom/android/internal/telephony/cdma/CDMAPhone;-><init>(Landroid/content/Context;Lcom/android/internal/telephony/CommandsInterface;Lcom/android/internal/telephony/PhoneNotifier;)V
+    invoke-direct {v1, v2}, Lcom/android/internal/telephony/PhoneProxy;-><init>(Lcom/android/internal/telephony/Phone;)V
 
-    invoke-direct {v1, v2}, Lcom/android/internal/telephony/PhoneProxy;-><init>(Lcom/android/internal/telephony/PhoneBase;)V
+    sput-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->a:Lcom/android/internal/telephony/Phone;
 
-    sput-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->b:Lcom/android/internal/telephony/Phone;
-
-    .line 184
+    .line 183
     const-string v1, "PHONE"
 
     const-string v2, "Creating CDMAPhone"
@@ -1368,121 +736,100 @@
 
     goto :goto_3
 
-    .line 185
-    :cond_9
-    const/4 v6, 0x4
+    .line 184
+    :cond_8
+    const/4 v3, 0x4
 
-    if-ne v4, v6, :cond_3
+    if-ne v2, v3, :cond_5
+
+    .line 185
+    if-nez v1, :cond_9
 
     .line 186
-    new-instance v4, Lcom/android/internal/telephony/DefaultPhoneNotifier;
+    new-instance v1, Lcom/android/internal/telephony/RIL;
 
-    const/4 v6, 0x1
+    const/4 v2, 0x0
 
-    invoke-direct {v4, v6}, Lcom/android/internal/telephony/DefaultPhoneNotifier;-><init>(I)V
+    invoke-direct {v1, p0, v6, v8, v2}, Lcom/android/internal/telephony/RIL;-><init>(Landroid/content/Context;III)V
 
-    sput-object v4, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->i:Lcom/android/internal/telephony/PhoneNotifier;
+    sput-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->b:Lcom/android/internal/telephony/CommandsInterface;
 
     .line 187
-    new-instance v7, Lcom/android/internal/telephony/DefaultPhoneNotifier;
+    new-instance v1, Lcom/android/internal/telephony/RIL;
 
-    const/4 v4, 0x2
+    const/4 v2, 0x1
 
-    invoke-direct {v7, v4}, Lcom/android/internal/telephony/DefaultPhoneNotifier;-><init>(I)V
+    const/4 v3, 0x1
 
-    .line 188
-    new-instance v8, Lcom/android/internal/telephony/DefaultPhoneNotifier;
+    invoke-direct {v1, p0, v2, v8, v3}, Lcom/android/internal/telephony/RIL;-><init>(Landroid/content/Context;III)V
 
-    const/4 v4, 0x3
-
-    invoke-direct {v8, v4}, Lcom/android/internal/telephony/DefaultPhoneNotifier;-><init>(I)V
-
-    .line 190
-    invoke-static {}, Lcom/android/internal/telephony/PhoneFactory;->isEVDODTSupport()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_e
+    sput-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->c:Lcom/android/internal/telephony/CommandsInterface;
 
     .line 192
-    invoke-static {}, Lcom/android/internal/telephony/PhoneFactory;->isDualTalkMode()Z
+    :goto_4
+    new-instance v2, Lcom/android/internal/telephony/DefaultPhoneNotifier;
 
-    move-result v3
+    const/4 v1, 0x1
 
-    if-eqz v3, :cond_d
+    invoke-direct {v2, v1}, Lcom/android/internal/telephony/DefaultPhoneNotifier;-><init>(I)V
 
-    .line 194
-    const-string/jumbo v3, "persist.radio.default_sim"
+    .line 193
+    new-instance v3, Lcom/android/internal/telephony/gsm/GSMPhone;
 
-    const/4 v4, -0x1
+    sget-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->b:Lcom/android/internal/telephony/CommandsInterface;
 
-    invoke-static {v3, v4}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+    sget-object v6, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->e:Lcom/android/internal/telephony/PhoneNotifier;
 
-    move-result v3
+    const/4 v7, 0x0
+
+    invoke-direct {v3, p0, v1, v6, v7}, Lcom/android/internal/telephony/gsm/GSMPhone;-><init>(Landroid/content/Context;Lcom/android/internal/telephony/CommandsInterface;Lcom/android/internal/telephony/PhoneNotifier;I)V
 
     .line 195
-    if-ne v3, v11, :cond_19
+    new-instance v6, Lcom/android/internal/telephony/gsm/GSMPhone;
 
-    .line 196
-    invoke-static {}, Lcom/android/internal/telephony/PhoneFactory;->getExternalModemSlot()I
+    sget-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->c:Lcom/android/internal/telephony/CommandsInterface;
 
-    move-result v3
+    const/4 v7, 0x1
 
-    if-nez v3, :cond_a
+    invoke-direct {v6, p0, v1, v2, v7}, Lcom/android/internal/telephony/gsm/GSMPhone;-><init>(Landroid/content/Context;Lcom/android/internal/telephony/CommandsInterface;Lcom/android/internal/telephony/PhoneNotifier;I)V
 
-    move v2, v9
+    .line 199
+    new-instance v1, Lcom/android/internal/telephony/gemini/GeminiPhone;
+
+    new-instance v7, Lcom/android/internal/telephony/PhoneProxy;
+
+    invoke-direct {v7, v3}, Lcom/android/internal/telephony/PhoneProxy;-><init>(Lcom/android/internal/telephony/Phone;)V
+
+    new-instance v8, Lcom/android/internal/telephony/PhoneProxy;
+
+    invoke-direct {v8, v6}, Lcom/android/internal/telephony/PhoneProxy;-><init>(Lcom/android/internal/telephony/Phone;)V
+
+    invoke-direct {v1, v7, v8}, Lcom/android/internal/telephony/gemini/GeminiPhone;-><init>(Lcom/android/internal/telephony/Phone;Lcom/android/internal/telephony/Phone;)V
+
+    sput-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->a:Lcom/android/internal/telephony/Phone;
+
+    .line 202
+    const-string v1, "PHONE"
+
+    const-string v7, "Creating GeminiPhone"
+
+    invoke-static {v1, v7}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 203
-    :cond_a
-    const-string/jumbo v3, "persist.radio.default_sim"
+    sget-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->a:Lcom/android/internal/telephony/Phone;
 
-    invoke-static {v2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    check-cast v1, Lcom/android/internal/telephony/gemini/GeminiPhone;
 
-    move-result-object v4
+    invoke-virtual {v1, v4}, Lcom/android/internal/telephony/gemini/GeminiPhone;->setDefaultPhone(I)V
 
-    invoke-static {v3, v4}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+    .line 204
+    invoke-virtual {v3, v6}, Lcom/android/internal/telephony/gsm/GSMPhone;->setPeerPhone(Lcom/android/internal/telephony/gsm/GSMPhone;)V
 
     .line 205
-    :goto_5
-    const-string v3, "PHONE"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "Set Default Phone as SIM"
-
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    add-int/lit8 v6, v2, 0x1
-
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v6, " during first boot-up (EVDO DT)"
-
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v6, v3}, Lcom/android/internal/telephony/gsm/GSMPhone;->setPeerPhone(Lcom/android/internal/telephony/gsm/GSMPhone;)V
 
     .line 207
-    move-object/from16 v0, p0
-
-    invoke-static {v0, v2, v5, v1}, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->a(Landroid/content/Context;III)V
-
-    .line 316
-    :cond_b
-    :goto_6
-    sget-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->b:Lcom/android/internal/telephony/Phone;
+    sget-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->a:Lcom/android/internal/telephony/Phone;
 
     check-cast v1, Lcom/android/internal/telephony/gemini/GeminiPhone;
 
@@ -1492,651 +839,53 @@
 
     invoke-virtual {v1}, Lcom/android/internal/telephony/gemini/GeminiDataSubUtil;->getDataStateChangedCallback()Lcom/android/internal/telephony/DefaultPhoneNotifier$IDataStateChangedCallback;
 
-    move-result-object v2
+    move-result-object v3
 
-    .line 318
-    sget-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->h:Lcom/android/internal/telephony/PhoneNotifier;
-
-    check-cast v1, Lcom/android/internal/telephony/DefaultPhoneNotifier;
-
-    invoke-virtual {v1, v2}, Lcom/android/internal/telephony/DefaultPhoneNotifier;->registerDataStateChangeCallback(Lcom/android/internal/telephony/DefaultPhoneNotifier$IDataStateChangedCallback;)V
-
-    .line 319
-    sget-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->i:Lcom/android/internal/telephony/PhoneNotifier;
+    .line 209
+    sget-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->e:Lcom/android/internal/telephony/PhoneNotifier;
 
     check-cast v1, Lcom/android/internal/telephony/DefaultPhoneNotifier;
 
-    invoke-virtual {v1, v2}, Lcom/android/internal/telephony/DefaultPhoneNotifier;->registerDataStateChangeCallback(Lcom/android/internal/telephony/DefaultPhoneNotifier$IDataStateChangedCallback;)V
+    invoke-virtual {v1, v3}, Lcom/android/internal/telephony/DefaultPhoneNotifier;->registerDataStateChangeCallback(Lcom/android/internal/telephony/DefaultPhoneNotifier$IDataStateChangedCallback;)V
 
-    .line 320
-    sget v1, Lcom/android/internal/telephony/PhoneConstants;->GEMINI_SIM_NUM:I
-
-    if-lt v1, v14, :cond_c
-
-    .line 321
-    move-object v0, v7
+    .line 210
+    move-object v0, v2
 
     check-cast v0, Lcom/android/internal/telephony/DefaultPhoneNotifier;
 
     move-object v1, v0
 
-    invoke-virtual {v1, v2}, Lcom/android/internal/telephony/DefaultPhoneNotifier;->registerDataStateChangeCallback(Lcom/android/internal/telephony/DefaultPhoneNotifier$IDataStateChangedCallback;)V
-
-    .line 322
-    :cond_c
-    sget v1, Lcom/android/internal/telephony/PhoneConstants;->GEMINI_SIM_NUM:I
-
-    const/4 v3, 0x4
-
-    if-lt v1, v3, :cond_3
-
-    .line 323
-    move-object v0, v8
-
-    check-cast v0, Lcom/android/internal/telephony/DefaultPhoneNotifier;
-
-    move-object v1, v0
-
-    invoke-virtual {v1, v2}, Lcom/android/internal/telephony/DefaultPhoneNotifier;->registerDataStateChangeCallback(Lcom/android/internal/telephony/DefaultPhoneNotifier$IDataStateChangedCallback;)V
+    invoke-virtual {v1, v3}, Lcom/android/internal/telephony/DefaultPhoneNotifier;->registerDataStateChangeCallback(Lcom/android/internal/telephony/DefaultPhoneNotifier$IDataStateChangedCallback;)V
 
     goto/16 :goto_3
 
-    .line 210
-    :cond_d
-    const-string/jumbo v2, "persist.radio.default_sim"
-
-    const/4 v3, -0x1
-
-    invoke-static {v2, v3}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
-
-    move-result v2
-
-    .line 211
-    if-ne v2, v11, :cond_18
-
-    .line 213
-    const/4 v2, 0x0
-
-    .line 214
-    const-string/jumbo v3, "persist.radio.default_sim"
-
-    invoke-static {v2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v3, v2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 216
-    :goto_7
-    const-string v2, "PHONE"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "Set Default Phone as SIM"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    add-int/lit8 v4, v9, 0x1
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, " during first boot-up"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 218
-    move-object/from16 v0, p0
-
-    invoke-static {v0, v9, v5, v1}, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->b(Landroid/content/Context;III)V
-
-    goto :goto_6
-
-    .line 223
-    :cond_e
-    const-string/jumbo v4, "persist.radio.default_sim"
-
-    const/4 v6, -0x1
-
-    invoke-static {v4, v6}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
-
-    move-result v6
-
-    .line 224
-    if-ne v6, v11, :cond_f
-
-    .line 226
-    const/4 v4, 0x0
-
-    .line 227
-    const-string/jumbo v6, "persist.radio.default_sim"
-
-    invoke-static {v4}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v6, v4}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
-
-    move v6, v9
-
-    .line 229
-    :cond_f
-    const-string v4, "PHONE"
-
-    new-instance v11, Ljava/lang/StringBuilder;
-
-    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v12, "Set Default Phone as SIM"
-
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    add-int/lit8 v12, v6, 0x1
-
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    const-string v12, " during first boot-up"
-
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-static {v4, v11}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 231
-    sget v4, Lcom/android/internal/telephony/PhoneConstants;->GEMINI_SIM_NUM:I
-
-    new-array v4, v4, [I
-
-    .line 233
-    invoke-static {}, Lcom/android/internal/telephony/PhoneFactory;->isDualTalkMode()Z
-
-    move-result v11
-
-    if-eqz v11, :cond_14
-
-    .line 234
-    invoke-virtual/range {p0 .. p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v3
-
-    const-string/jumbo v11, "preferred_network_mode_2"
-
-    sget v12, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->a:I
-
-    invoke-static {v3, v11, v12}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v3
-
-    .line 236
-    invoke-static {}, Lcom/android/internal/telephony/PhoneFactory;->getTelephonyMode()I
-
-    move-result v11
-
-    packed-switch v11, :pswitch_data_0
-
-    move v2, v3
-
-    .line 245
-    :goto_8
-    :pswitch_0
-    const-string v3, "PHONE"
-
-    new-instance v11, Ljava/lang/StringBuilder;
-
-    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v12, "Network Mode 2 set to "
-
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    invoke-virtual {v11, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-static {v3, v11}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 246
-    new-instance v3, Lcom/android/internal/telephony/RIL;
-
-    const/4 v11, 0x0
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v3, v0, v1, v5, v11}, Lcom/android/internal/telephony/RIL;-><init>(Landroid/content/Context;III)V
-
-    sput-object v3, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->c:Lcom/android/internal/telephony/CommandsInterface;
-
-    .line 247
+    .line 189
+    :cond_9
     new-instance v1, Lcom/android/internal/telephony/RIL;
-
-    const/4 v3, 0x1
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v1, v0, v2, v5, v3}, Lcom/android/internal/telephony/RIL;-><init>(Landroid/content/Context;III)V
-
-    sput-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->d:Lcom/android/internal/telephony/CommandsInterface;
-
-    .line 261
-    :goto_9
-    sget-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->c:Lcom/android/internal/telephony/CommandsInterface;
-
-    const/4 v2, 0x0
-
-    move-object/from16 v0, p0
-
-    invoke-static {v0, v1, v2}, Lcom/android/internal/telephony/uicc/UiccController;->make(Landroid/content/Context;Lcom/android/internal/telephony/CommandsInterface;I)Lcom/android/internal/telephony/uicc/UiccController;
-
-    .line 262
-    sget-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->d:Lcom/android/internal/telephony/CommandsInterface;
 
     const/4 v2, 0x1
 
-    move-object/from16 v0, p0
-
-    invoke-static {v0, v1, v2}, Lcom/android/internal/telephony/uicc/UiccController;->make(Landroid/content/Context;Lcom/android/internal/telephony/CommandsInterface;I)Lcom/android/internal/telephony/uicc/UiccController;
-
-    .line 265
-    sget v1, Lcom/android/internal/telephony/PhoneConstants;->GEMINI_SIM_NUM:I
-
-    new-array v11, v1, [Lcom/android/internal/telephony/gsm/GSMPhone;
-
-    .line 268
-    const/4 v1, 0x0
-
-    new-instance v2, Lcom/android/internal/telephony/gsm/GSMPhone;
-
-    sget-object v3, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->c:Lcom/android/internal/telephony/CommandsInterface;
-
-    sget-object v12, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->h:Lcom/android/internal/telephony/PhoneNotifier;
-
-    const/4 v13, 0x0
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v2, v0, v3, v12, v13}, Lcom/android/internal/telephony/gsm/GSMPhone;-><init>(Landroid/content/Context;Lcom/android/internal/telephony/CommandsInterface;Lcom/android/internal/telephony/PhoneNotifier;I)V
-
-    aput-object v2, v11, v1
-
-    .line 270
-    const/4 v1, 0x1
-
-    new-instance v2, Lcom/android/internal/telephony/gsm/GSMPhone;
-
-    sget-object v3, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->d:Lcom/android/internal/telephony/CommandsInterface;
-
-    sget-object v12, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->i:Lcom/android/internal/telephony/PhoneNotifier;
-
-    const/4 v13, 0x1
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v2, v0, v3, v12, v13}, Lcom/android/internal/telephony/gsm/GSMPhone;-><init>(Landroid/content/Context;Lcom/android/internal/telephony/CommandsInterface;Lcom/android/internal/telephony/PhoneNotifier;I)V
-
-    aput-object v2, v11, v1
-
-    .line 273
-    sget v1, Lcom/android/internal/telephony/PhoneConstants;->GEMINI_SIM_NUM:I
-
-    if-ne v1, v15, :cond_10
-
-    .line 274
-    new-instance v1, Lcom/android/internal/telephony/gemini/GeminiPhone;
-
-    new-instance v2, Lcom/android/internal/telephony/PhoneProxy;
-
     const/4 v3, 0x0
 
-    aget-object v3, v11, v3
+    invoke-direct {v1, p0, v2, v8, v3}, Lcom/android/internal/telephony/RIL;-><init>(Landroid/content/Context;III)V
 
-    invoke-direct {v2, v3}, Lcom/android/internal/telephony/PhoneProxy;-><init>(Lcom/android/internal/telephony/PhoneBase;)V
+    sput-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->b:Lcom/android/internal/telephony/CommandsInterface;
 
-    new-instance v3, Lcom/android/internal/telephony/PhoneProxy;
-
-    const/4 v12, 0x1
-
-    aget-object v12, v11, v12
-
-    invoke-direct {v3, v12}, Lcom/android/internal/telephony/PhoneProxy;-><init>(Lcom/android/internal/telephony/PhoneBase;)V
-
-    invoke-direct {v1, v2, v3, v6}, Lcom/android/internal/telephony/gemini/GeminiPhone;-><init>(Lcom/android/internal/telephony/Phone;Lcom/android/internal/telephony/Phone;I)V
-
-    sput-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->b:Lcom/android/internal/telephony/Phone;
-
-    .line 278
-    :cond_10
-    sget v1, Lcom/android/internal/telephony/PhoneConstants;->GEMINI_SIM_NUM:I
-
-    if-lt v1, v14, :cond_12
-
-    .line 279
+    .line 190
     new-instance v1, Lcom/android/internal/telephony/RIL;
 
-    const/4 v2, 0x2
+    const/4 v2, 0x1
 
-    aget v2, v4, v2
-
-    const/4 v3, 0x2
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v1, v0, v2, v5, v3}, Lcom/android/internal/telephony/RIL;-><init>(Landroid/content/Context;III)V
-
-    sput-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->e:Lcom/android/internal/telephony/CommandsInterface;
-
-    .line 281
-    sget-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->e:Lcom/android/internal/telephony/CommandsInterface;
-
-    const/4 v2, 0x2
-
-    move-object/from16 v0, p0
-
-    invoke-static {v0, v1, v2}, Lcom/android/internal/telephony/uicc/UiccController;->make(Landroid/content/Context;Lcom/android/internal/telephony/CommandsInterface;I)Lcom/android/internal/telephony/uicc/UiccController;
-
-    .line 283
-    const/4 v1, 0x2
-
-    new-instance v2, Lcom/android/internal/telephony/gsm/GSMPhone;
-
-    sget-object v3, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->e:Lcom/android/internal/telephony/CommandsInterface;
-
-    const/4 v12, 0x2
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v2, v0, v3, v7, v12}, Lcom/android/internal/telephony/gsm/GSMPhone;-><init>(Landroid/content/Context;Lcom/android/internal/telephony/CommandsInterface;Lcom/android/internal/telephony/PhoneNotifier;I)V
-
-    aput-object v2, v11, v1
-
-    .line 286
-    sget v1, Lcom/android/internal/telephony/PhoneConstants;->GEMINI_SIM_NUM:I
-
-    if-ne v1, v14, :cond_11
-
-    .line 287
-    new-instance v1, Lcom/android/internal/telephony/gemini/GeminiPhone;
-
-    new-instance v2, Lcom/android/internal/telephony/PhoneProxy;
-
-    const/4 v3, 0x0
-
-    aget-object v3, v11, v3
-
-    invoke-direct {v2, v3}, Lcom/android/internal/telephony/PhoneProxy;-><init>(Lcom/android/internal/telephony/PhoneBase;)V
-
-    new-instance v3, Lcom/android/internal/telephony/PhoneProxy;
-
-    const/4 v12, 0x1
-
-    aget-object v12, v11, v12
-
-    invoke-direct {v3, v12}, Lcom/android/internal/telephony/PhoneProxy;-><init>(Lcom/android/internal/telephony/PhoneBase;)V
-
-    new-instance v12, Lcom/android/internal/telephony/PhoneProxy;
-
-    const/4 v13, 0x2
-
-    aget-object v13, v11, v13
-
-    invoke-direct {v12, v13}, Lcom/android/internal/telephony/PhoneProxy;-><init>(Lcom/android/internal/telephony/PhoneBase;)V
-
-    invoke-direct {v1, v2, v3, v12, v6}, Lcom/android/internal/telephony/gemini/GeminiPhone;-><init>(Lcom/android/internal/telephony/Phone;Lcom/android/internal/telephony/Phone;Lcom/android/internal/telephony/Phone;I)V
-
-    sput-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->b:Lcom/android/internal/telephony/Phone;
-
-    .line 291
-    :cond_11
-    sget v1, Lcom/android/internal/telephony/PhoneConstants;->GEMINI_SIM_NUM:I
-
-    const/4 v2, 0x4
-
-    if-ne v1, v2, :cond_12
-
-    .line 292
-    new-instance v1, Lcom/android/internal/telephony/RIL;
-
-    const/4 v2, 0x3
-
-    aget v2, v4, v2
-
-    const/4 v3, 0x3
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v1, v0, v2, v5, v3}, Lcom/android/internal/telephony/RIL;-><init>(Landroid/content/Context;III)V
-
-    sput-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->f:Lcom/android/internal/telephony/CommandsInterface;
-
-    .line 294
-    sget-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->f:Lcom/android/internal/telephony/CommandsInterface;
-
-    const/4 v2, 0x3
-
-    move-object/from16 v0, p0
-
-    invoke-static {v0, v1, v2}, Lcom/android/internal/telephony/uicc/UiccController;->make(Landroid/content/Context;Lcom/android/internal/telephony/CommandsInterface;I)Lcom/android/internal/telephony/uicc/UiccController;
-
-    .line 296
-    const/4 v1, 0x3
-
-    new-instance v2, Lcom/android/internal/telephony/gsm/GSMPhone;
-
-    sget-object v3, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->f:Lcom/android/internal/telephony/CommandsInterface;
-
-    const/4 v4, 0x3
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v2, v0, v3, v8, v4}, Lcom/android/internal/telephony/gsm/GSMPhone;-><init>(Landroid/content/Context;Lcom/android/internal/telephony/CommandsInterface;Lcom/android/internal/telephony/PhoneNotifier;I)V
-
-    aput-object v2, v11, v1
-
-    .line 299
-    new-instance v1, Lcom/android/internal/telephony/gemini/GeminiPhone;
-
-    new-instance v2, Lcom/android/internal/telephony/PhoneProxy;
-
-    const/4 v3, 0x0
-
-    aget-object v3, v11, v3
-
-    invoke-direct {v2, v3}, Lcom/android/internal/telephony/PhoneProxy;-><init>(Lcom/android/internal/telephony/PhoneBase;)V
-
-    new-instance v3, Lcom/android/internal/telephony/PhoneProxy;
-
-    const/4 v4, 0x1
-
-    aget-object v4, v11, v4
-
-    invoke-direct {v3, v4}, Lcom/android/internal/telephony/PhoneProxy;-><init>(Lcom/android/internal/telephony/PhoneBase;)V
-
-    new-instance v4, Lcom/android/internal/telephony/PhoneProxy;
-
-    const/4 v5, 0x2
-
-    aget-object v5, v11, v5
-
-    invoke-direct {v4, v5}, Lcom/android/internal/telephony/PhoneProxy;-><init>(Lcom/android/internal/telephony/PhoneBase;)V
-
-    new-instance v5, Lcom/android/internal/telephony/PhoneProxy;
-
-    const/4 v12, 0x3
-
-    aget-object v12, v11, v12
-
-    invoke-direct {v5, v12}, Lcom/android/internal/telephony/PhoneProxy;-><init>(Lcom/android/internal/telephony/PhoneBase;)V
-
-    invoke-direct/range {v1 .. v6}, Lcom/android/internal/telephony/gemini/GeminiPhone;-><init>(Lcom/android/internal/telephony/Phone;Lcom/android/internal/telephony/Phone;Lcom/android/internal/telephony/Phone;Lcom/android/internal/telephony/Phone;I)V
-
-    sput-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->b:Lcom/android/internal/telephony/Phone;
-
-    .line 304
-    :cond_12
-    const-string v1, "PHONE"
-
-    const-string v2, "Creating GeminiPhone"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    move v2, v9
-
-    .line 306
-    :goto_a
-    sget v1, Lcom/android/internal/telephony/PhoneConstants;->GEMINI_SIM_NUM:I
-
-    if-ge v2, v1, :cond_b
-
-    move v1, v9
-
-    .line 307
-    :goto_b
-    sget v3, Lcom/android/internal/telephony/PhoneConstants;->GEMINI_SIM_NUM:I
-
-    if-ge v1, v3, :cond_17
-
-    .line 308
-    if-eq v1, v2, :cond_13
-
-    .line 309
-    aget-object v3, v11, v2
-
-    aget-object v4, v11, v1
-
-    invoke-virtual {v3, v4, v1}, Lcom/android/internal/telephony/gsm/GSMPhone;->setPeerPhones(Lcom/android/internal/telephony/gsm/GSMPhone;I)V
-
-    .line 307
-    :cond_13
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_b
-
-    :pswitch_1
-    move v1, v2
-
-    .line 238
-    goto/16 :goto_8
-
-    :cond_14
-    move v2, v9
-
-    .line 249
-    :goto_c
-    sget v11, Lcom/android/internal/telephony/PhoneConstants;->GEMINI_SIM_NUM:I
-
-    if-ge v2, v11, :cond_16
-
-    .line 250
-    if-ne v3, v2, :cond_15
-
-    .line 251
-    aput v1, v4, v2
-
-    .line 249
-    :goto_d
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_c
-
-    .line 253
-    :cond_15
-    const/4 v11, 0x1
-
-    aput v11, v4, v2
-
-    goto :goto_d
-
-    .line 257
-    :cond_16
-    new-instance v1, Lcom/android/internal/telephony/RIL;
-
-    const/4 v2, 0x0
-
-    aget v2, v4, v2
-
-    const/4 v3, 0x0
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v1, v0, v2, v5, v3}, Lcom/android/internal/telephony/RIL;-><init>(Landroid/content/Context;III)V
+    invoke-direct {v1, p0, v6, v8, v2}, Lcom/android/internal/telephony/RIL;-><init>(Landroid/content/Context;III)V
 
     sput-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->c:Lcom/android/internal/telephony/CommandsInterface;
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
-    .line 258
-    new-instance v1, Lcom/android/internal/telephony/RIL;
+    goto :goto_4
 
-    const/4 v2, 0x1
+    :cond_a
+    move v4, v1
 
-    aget v2, v4, v2
-
-    const/4 v3, 0x1
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v1, v0, v2, v5, v3}, Lcom/android/internal/telephony/RIL;-><init>(Landroid/content/Context;III)V
-
-    sput-object v1, Lcom/android/internal/telephony/gemini/MTKPhoneFactory;->d:Lcom/android/internal/telephony/CommandsInterface;
-    :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_0
-
-    goto/16 :goto_9
-
-    .line 306
-    :cond_17
-    add-int/lit8 v1, v2, 0x1
-
-    move v2, v1
-
-    goto :goto_a
-
-    .line 334
-    :catch_2
-    move-exception v1
-
-    goto/16 :goto_4
-
-    :cond_18
-    move v9, v2
-
-    goto/16 :goto_7
-
-    :cond_19
-    move v2, v3
-
-    goto/16 :goto_5
-
-    .line 236
-    :pswitch_data_0
-    .packed-switch 0x6
-        :pswitch_0
-        :pswitch_0
-        :pswitch_1
-    .end packed-switch
+    goto/16 :goto_2
 .end method

@@ -26,10 +26,10 @@
     .parameter "length"
 
     .prologue
-    .line 148
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 158
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 150
+    .line 159
     const-string/jumbo v0, "webkit/ByteArrayBuilder"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -52,17 +52,17 @@
 
     invoke-static {v0, v1}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 151
+    .line 160
     new-array v0, p1, [B
 
     iput-object v0, p0, Landroid/webkit/ByteArrayBuilder$Chunk;->mArray:[B
 
-    .line 152
+    .line 161
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/webkit/ByteArrayBuilder$Chunk;->mLength:I
 
-    .line 153
+    .line 162
     return-void
 .end method
 
@@ -72,19 +72,19 @@
     .locals 4
 
     .prologue
-    .line 159
+    .line 168
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/webkit/ByteArrayBuilder$Chunk;->mLength:I
 
-    .line 160
+    .line 169
     invoke-static {}, Landroid/webkit/ByteArrayBuilder;->access$000()Ljava/util/LinkedList;
 
     move-result-object v1
 
     monitor-enter v1
 
-    .line 164
+    .line 172
     :try_start_0
     const-string/jumbo v0, "webkit/ByteArrayBuilder"
 
@@ -108,7 +108,7 @@
 
     invoke-static {v0, v2}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 165
+    .line 173
     invoke-static {}, Landroid/webkit/ByteArrayBuilder;->access$000()Ljava/util/LinkedList;
 
     move-result-object v0
@@ -123,20 +123,20 @@
 
     invoke-virtual {v0, v2}, Ljava/util/LinkedList;->offer(Ljava/lang/Object;)Z
 
-    .line 166
+    .line 174
     invoke-static {}, Landroid/webkit/ByteArrayBuilder;->access$000()Ljava/util/LinkedList;
 
     move-result-object v0
 
     invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
 
-    .line 167
+    .line 175
     monitor-exit v1
 
-    .line 168
+    .line 176
     return-void
 
-    .line 167
+    .line 175
     :catchall_0
     move-exception v0
 

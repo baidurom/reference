@@ -173,14 +173,14 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 175
+    .line 171
     .end local v1           #errorCode:I
     .end local v2           #serviceHandle:I
     .end local v3           #tagService:Landroid/nfc/INfcTag;
     :catch_0
     move-exception v0
 
-    .line 176
+    .line 172
     .local v0, e:Landroid/os/RemoteException;
     const-string v4, "NFC"
 
@@ -188,7 +188,7 @@
 
     invoke-static {v4, v5, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 178
+    .line 174
     .end local v0           #e:Landroid/os/RemoteException;
     :cond_0
     :sswitch_0
@@ -220,35 +220,24 @@
 
     move-result v4
 
-    if-nez v4, :cond_1
+    if-eqz v4, :cond_1
 
     .line 141
-    new-instance v4, Ljava/io/IOException;
-
-    invoke-direct {v4}, Ljava/io/IOException;-><init>()V
-
-    throw v4
-
-    .line 145
-    :cond_1
-    if-eqz p1, :cond_2
-
-    .line 146
     invoke-interface {v3, v2, p1}, Landroid/nfc/INfcTag;->ndefWrite(ILandroid/nfc/NdefMessage;)I
 
     move-result v1
 
-    .line 147
+    .line 142
     sparse-switch v1, :sswitch_data_1
 
-    .line 156
+    .line 151
     new-instance v4, Ljava/io/IOException;
 
     invoke-direct {v4}, Ljava/io/IOException;-><init>()V
 
     throw v4
 
-    .line 151
+    .line 146
     :sswitch_4
     new-instance v4, Ljava/io/IOException;
 
@@ -256,7 +245,7 @@
 
     throw v4
 
-    .line 153
+    .line 148
     :sswitch_5
     new-instance v4, Landroid/nfc/FormatException;
 
@@ -264,27 +253,34 @@
 
     throw v4
 
-    .line 161
-    :cond_2
-    :sswitch_6
-    if-eqz p2, :cond_0
-
-    .line 162
-    invoke-interface {v3, v2}, Landroid/nfc/INfcTag;->ndefMakeReadOnly(I)I
-
-    move-result v1
-
-    .line 163
-    sparse-switch v1, :sswitch_data_2
-
-    .line 172
+    .line 154
+    :cond_1
     new-instance v4, Ljava/io/IOException;
 
     invoke-direct {v4}, Ljava/io/IOException;-><init>()V
 
     throw v4
 
-    .line 167
+    .line 157
+    :sswitch_6
+    if-eqz p2, :cond_0
+
+    .line 158
+    invoke-interface {v3, v2}, Landroid/nfc/INfcTag;->ndefMakeReadOnly(I)I
+
+    move-result v1
+
+    .line 159
+    sparse-switch v1, :sswitch_data_2
+
+    .line 168
+    new-instance v4, Ljava/io/IOException;
+
+    invoke-direct {v4}, Ljava/io/IOException;-><init>()V
+
+    throw v4
+
+    .line 163
     :sswitch_7
     new-instance v4, Ljava/io/IOException;
 
@@ -292,7 +288,7 @@
 
     throw v4
 
-    .line 169
+    .line 165
     :sswitch_8
     new-instance v4, Ljava/io/IOException;
 
@@ -312,7 +308,7 @@
         0x0 -> :sswitch_3
     .end sparse-switch
 
-    .line 147
+    .line 142
     :sswitch_data_1
     .sparse-switch
         -0x8 -> :sswitch_5
@@ -320,7 +316,7 @@
         0x0 -> :sswitch_6
     .end sparse-switch
 
-    .line 163
+    .line 159
     :sswitch_data_2
     .sparse-switch
         -0x8 -> :sswitch_8

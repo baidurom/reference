@@ -30,7 +30,7 @@
     .locals 1
 
     .prologue
-    .line 100
+    .line 99
     new-instance v0, Landroid/telephony/SmsMemoryStatus$1;
 
     invoke-direct {v0}, Landroid/telephony/SmsMemoryStatus$1;-><init>()V
@@ -46,16 +46,16 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 64
+    .line 63
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 65
+    .line 64
     iput v0, p0, Landroid/telephony/SmsMemoryStatus;->mUsed:I
 
-    .line 66
+    .line 65
     iput v0, p0, Landroid/telephony/SmsMemoryStatus;->mTotal:I
 
-    .line 67
+    .line 66
     return-void
 .end method
 
@@ -65,16 +65,16 @@
     .parameter "total"
 
     .prologue
-    .line 69
+    .line 68
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 70
+    .line 69
     iput p1, p0, Landroid/telephony/SmsMemoryStatus;->mUsed:I
 
-    .line 71
+    .line 70
     iput p2, p0, Landroid/telephony/SmsMemoryStatus;->mTotal:I
 
-    .line 72
+    .line 71
     return-void
 .end method
 
@@ -84,7 +84,7 @@
     .locals 1
 
     .prologue
-    .line 92
+    .line 91
     const/4 v0, 0x0
 
     return v0
@@ -94,7 +94,7 @@
     .locals 1
 
     .prologue
-    .line 79
+    .line 78
     iget v0, p0, Landroid/telephony/SmsMemoryStatus;->mTotal:I
 
     return v0
@@ -104,7 +104,7 @@
     .locals 2
 
     .prologue
-    .line 83
+    .line 82
     iget v0, p0, Landroid/telephony/SmsMemoryStatus;->mTotal:I
 
     iget v1, p0, Landroid/telephony/SmsMemoryStatus;->mUsed:I
@@ -118,7 +118,7 @@
     .locals 1
 
     .prologue
-    .line 75
+    .line 74
     iget v0, p0, Landroid/telephony/SmsMemoryStatus;->mUsed:I
 
     return v0
@@ -130,13 +130,13 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 87
+    .line 86
     iput v0, p0, Landroid/telephony/SmsMemoryStatus;->mUsed:I
 
-    .line 88
+    .line 87
     iput v0, p0, Landroid/telephony/SmsMemoryStatus;->mTotal:I
 
-    .line 89
+    .line 88
     return-void
 .end method
 
@@ -146,16 +146,16 @@
     .parameter "flags"
 
     .prologue
-    .line 96
+    .line 95
     iget v0, p0, Landroid/telephony/SmsMemoryStatus;->mUsed:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 97
+    .line 96
     iget v0, p0, Landroid/telephony/SmsMemoryStatus;->mTotal:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 98
+    .line 97
     return-void
 .end method

@@ -14,7 +14,7 @@
     .locals 0
 
     .prologue
-    .line 87
+    .line 92
     invoke-direct {p0}, Lcom/android/internal/telephony/cat/ValueObject;-><init>()V
 
     return-void
@@ -26,7 +26,7 @@
     .locals 1
 
     .prologue
-    .line 92
+    .line 97
     sget-object v0, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;->DEVICE_IDENTITIES:Lcom/android/internal/telephony/cat/ComprehensionTlvTag;
 
     return-object v0

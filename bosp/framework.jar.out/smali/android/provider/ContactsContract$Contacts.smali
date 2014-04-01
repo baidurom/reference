@@ -64,7 +64,7 @@
     .locals 2
 
     .prologue
-    .line 1485
+    .line 1481
     sget-object v0, Landroid/provider/ContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string v1, "contacts"
@@ -75,7 +75,7 @@
 
     sput-object v0, Landroid/provider/ContactsContract$Contacts;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 1503
+    .line 1499
     sget-object v0, Landroid/provider/ContactsContract$Contacts;->CONTENT_URI:Landroid/net/Uri;
 
     const-string/jumbo v1, "lookup"
@@ -86,7 +86,7 @@
 
     sput-object v0, Landroid/provider/ContactsContract$Contacts;->CONTENT_LOOKUP_URI:Landroid/net/Uri;
 
-    .line 1514
+    .line 1510
     sget-object v0, Landroid/provider/ContactsContract$Contacts;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v1, "as_vcard"
@@ -97,7 +97,7 @@
 
     sput-object v0, Landroid/provider/ContactsContract$Contacts;->CONTENT_VCARD_URI:Landroid/net/Uri;
 
-    .line 1542
+    .line 1538
     sget-object v0, Landroid/provider/ContactsContract$Contacts;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v1, "as_multi_vcard"
@@ -108,7 +108,7 @@
 
     sput-object v0, Landroid/provider/ContactsContract$Contacts;->CONTENT_MULTI_VCARD_URI:Landroid/net/Uri;
 
-    .line 1634
+    .line 1626
     sget-object v0, Landroid/provider/ContactsContract$Contacts;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v1, "filter"
@@ -119,7 +119,7 @@
 
     sput-object v0, Landroid/provider/ContactsContract$Contacts;->CONTENT_FILTER_URI:Landroid/net/Uri;
 
-    .line 1642
+    .line 1634
     sget-object v0, Landroid/provider/ContactsContract$Contacts;->CONTENT_URI:Landroid/net/Uri;
 
     const-string/jumbo v1, "strequent"
@@ -130,7 +130,7 @@
 
     sput-object v0, Landroid/provider/ContactsContract$Contacts;->CONTENT_STREQUENT_URI:Landroid/net/Uri;
 
-    .line 1649
+    .line 1641
     sget-object v0, Landroid/provider/ContactsContract$Contacts;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v1, "frequent"
@@ -141,7 +141,7 @@
 
     sput-object v0, Landroid/provider/ContactsContract$Contacts;->CONTENT_FREQUENT_URI:Landroid/net/Uri;
 
-    .line 1658
+    .line 1650
     sget-object v0, Landroid/provider/ContactsContract$Contacts;->CONTENT_STREQUENT_URI:Landroid/net/Uri;
 
     const-string v1, "filter"
@@ -152,7 +152,7 @@
 
     sput-object v0, Landroid/provider/ContactsContract$Contacts;->CONTENT_STREQUENT_FILTER_URI:Landroid/net/Uri;
 
-    .line 1661
+    .line 1653
     sget-object v0, Landroid/provider/ContactsContract$Contacts;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v1, "group"
@@ -170,7 +170,7 @@
     .locals 0
 
     .prologue
-    .line 1480
+    .line 1476
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -182,7 +182,7 @@
     .parameter "lookupKey"
 
     .prologue
-    .line 1577
+    .line 1573
     sget-object v0, Landroid/provider/ContactsContract$Contacts;->CONTENT_LOOKUP_URI:Landroid/net/Uri;
 
     invoke-static {v0, p2}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
@@ -208,7 +208,7 @@
 
     const/4 v3, 0x0
 
-    .line 1553
+    .line 1549
     const/4 v0, 0x2
 
     new-array v2, v0, [Ljava/lang/String;
@@ -233,15 +233,15 @@
 
     move-result-object v6
 
-    .line 1556
+    .line 1552
     .local v6, c:Landroid/database/Cursor;
     if-nez v6, :cond_0
 
-    .line 1569
+    .line 1565
     :goto_0
     return-object v3
 
-    .line 1561
+    .line 1557
     :cond_0
     :try_start_0
     invoke-interface {v6}, Landroid/database/Cursor;->moveToFirst()Z
@@ -250,14 +250,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 1562
+    .line 1558
     const/4 v0, 0x0
 
     invoke-interface {v6, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v9
 
-    .line 1563
+    .line 1559
     .local v9, lookupKey:Ljava/lang/String;
     const/4 v0, 0x1
 
@@ -265,7 +265,7 @@
 
     move-result-wide v7
 
-    .line 1564
+    .line 1560
     .local v7, contactId:J
     invoke-static {v7, v8, v9}, Landroid/provider/ContactsContract$Contacts;->getLookupUri(JLjava/lang/String;)Landroid/net/Uri;
     :try_end_0
@@ -273,7 +273,11 @@
 
     move-result-object v3
 
-    .line 1567
+    .line 1563
+    invoke-interface {v6}, Landroid/database/Cursor;->close()V
+
+    goto :goto_0
+
     .end local v7           #contactId:J
     .end local v9           #lookupKey:Ljava/lang/String;
     :cond_1
@@ -299,15 +303,15 @@
 
     const/4 v3, 0x0
 
-    .line 1587
+    .line 1583
     if-nez p1, :cond_1
 
-    .line 1604
+    .line 1600
     :cond_0
     :goto_0
     return-object v3
 
-    .line 1591
+    .line 1587
     :cond_1
     const/4 v0, 0x1
 
@@ -329,11 +333,11 @@
 
     move-result-object v6
 
-    .line 1592
+    .line 1588
     .local v6, c:Landroid/database/Cursor;
     if-eqz v6, :cond_0
 
-    .line 1597
+    .line 1593
     :try_start_0
     invoke-interface {v6}, Landroid/database/Cursor;->moveToFirst()Z
 
@@ -341,14 +345,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 1598
+    .line 1594
     const/4 v0, 0x0
 
     invoke-interface {v6, v0}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v7
 
-    .line 1599
+    .line 1595
     .local v7, contactId:J
     sget-object v0, Landroid/provider/ContactsContract$Contacts;->CONTENT_URI:Landroid/net/Uri;
 
@@ -358,7 +362,11 @@
 
     move-result-object v3
 
-    .line 1602
+    .line 1598
+    invoke-interface {v6}, Landroid/database/Cursor;->close()V
+
+    goto :goto_0
+
     .end local v7           #contactId:J
     :cond_2
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
@@ -377,28 +385,26 @@
     .locals 6
     .parameter "resolver"
     .parameter "contactId"
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
 
     .prologue
     const/4 v5, 0x0
 
-    .line 1621
+    .line 1613
     sget-object v2, Landroid/provider/ContactsContract$Contacts;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-static {v2, p1, p2}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 1622
+    .line 1614
     .local v0, uri:Landroid/net/Uri;
     new-instance v1, Landroid/content/ContentValues;
 
     invoke-direct {v1}, Landroid/content/ContentValues;-><init>()V
 
-    .line 1624
+    .line 1616
     .local v1, values:Landroid/content/ContentValues;
-    const-string/jumbo v2, "last_time_contacted"
+    const-string v2, "last_time_contacted"
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -410,10 +416,10 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 1625
+    .line 1617
     invoke-virtual {p0, v0, v1, v5, v5}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 1626
+    .line 1618
     return-void
 .end method
 
@@ -423,7 +429,7 @@
     .parameter "contactUri"
 
     .prologue
-    .line 2079
+    .line 2071
     const/4 v0, 0x0
 
     invoke-static {p0, p1, v0}, Landroid/provider/ContactsContract$Contacts;->openContactPhotoInputStream(Landroid/content/ContentResolver;Landroid/net/Uri;Z)Ljava/io/InputStream;
@@ -444,17 +450,17 @@
 
     const/4 v3, 0x0
 
-    .line 2032
+    .line 2024
     if-eqz p2, :cond_1
 
-    .line 2033
+    .line 2025
     const-string v0, "display_photo"
 
     invoke-static {p1, v0}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v8
 
-    .line 2037
+    .line 2029
     .local v8, displayPhotoUri:Landroid/net/Uri;
     :try_start_0
     const-string/jumbo v0, "r"
@@ -463,7 +469,7 @@
 
     move-result-object v9
 
-    .line 2038
+    .line 2030
     .local v9, fd:Landroid/content/res/AssetFileDescriptor;
     invoke-virtual {v9}, Landroid/content/res/AssetFileDescriptor;->createInputStream()Ljava/io/FileInputStream;
     :try_end_0
@@ -471,19 +477,19 @@
 
     move-result-object v3
 
-    .line 2060
+    .line 2055
     .end local v8           #displayPhotoUri:Landroid/net/Uri;
     .end local v9           #fd:Landroid/content/res/AssetFileDescriptor;
     :cond_0
     :goto_0
     return-object v3
 
-    .line 2039
+    .line 2031
     .restart local v8       #displayPhotoUri:Landroid/net/Uri;
     :catch_0
     move-exception v0
 
-    .line 2044
+    .line 2036
     .end local v8           #displayPhotoUri:Landroid/net/Uri;
     :cond_1
     const-string/jumbo v0, "photo"
@@ -492,11 +498,11 @@
 
     move-result-object v1
 
-    .line 2045
+    .line 2037
     .local v1, photoUri:Landroid/net/Uri;
     if-eqz v1, :cond_0
 
-    .line 2048
+    .line 2040
     const/4 v0, 0x1
 
     new-array v2, v0, [Ljava/lang/String;
@@ -515,7 +521,7 @@
 
     move-result-object v6
 
-    .line 2053
+    .line 2045
     .local v6, cursor:Landroid/database/Cursor;
     if-eqz v6, :cond_2
 
@@ -528,57 +534,65 @@
 
     if-nez v0, :cond_3
 
-    .line 2062
+    .line 2054
     :cond_2
     if-eqz v6, :cond_0
 
-    .line 2063
-    :goto_1
+    .line 2055
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     goto :goto_0
 
-    .line 2056
+    .line 2048
     :cond_3
     const/4 v0, 0x0
 
     :try_start_2
     invoke-interface {v6, v0}, Landroid/database/Cursor;->getBlob(I)[B
-
-    move-result-object v7
-
-    .line 2057
-    .local v7, data:[B
-    if-nez v7, :cond_4
-
-    .line 2062
-    if-eqz v6, :cond_0
-
-    goto :goto_1
-
-    .line 2060
-    :cond_4
-    new-instance v3, Ljava/io/ByteArrayInputStream;
-
-    invoke-direct {v3, v7}, Ljava/io/ByteArrayInputStream;-><init>([B)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 2062
+    move-result-object v7
+
+    .line 2049
+    .local v7, data:[B
+    if-nez v7, :cond_4
+
+    .line 2054
     if-eqz v6, :cond_0
 
-    goto :goto_1
+    .line 2055
+    invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
+    goto :goto_0
+
+    .line 2052
+    :cond_4
+    :try_start_3
+    new-instance v3, Ljava/io/ByteArrayInputStream;
+
+    invoke-direct {v3, v7}, Ljava/io/ByteArrayInputStream;-><init>([B)V
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    .line 2054
+    if-eqz v6, :cond_0
+
+    .line 2055
+    invoke-interface {v6}, Landroid/database/Cursor;->close()V
+
+    goto :goto_0
+
+    .line 2054
     .end local v7           #data:[B
     :catchall_0
     move-exception v0
 
     if-eqz v6, :cond_5
 
-    .line 2063
+    .line 2055
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 2062
     :cond_5
     throw v0
 .end method

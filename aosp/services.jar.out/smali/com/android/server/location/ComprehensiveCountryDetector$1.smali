@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 143
+    .line 135
     iput-object p1, p0, Lcom/android/server/location/ComprehensiveCountryDetector$1;->this$0:Lcom/android/server/location/ComprehensiveCountryDetector;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -42,21 +42,14 @@
     .parameter "country"
 
     .prologue
-    .line 146
-    const-string v0, "CountryDetector"
-
-    const-string v1, "Country detected via LocationBasedCountryDetector"
-
-    invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 147
-    const-string v1, "CountryDetector"
+    .line 139
+    const-string v1, "ComprehensiveCountryDetector"
 
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "LBS CountryDetector CountryDetected From country: "
+    const-string v2, "onCountryDetected() is called changed from country: "
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -87,7 +80,13 @@
 
     move-result-object v0
 
-    const-string v2, " To country: "
+    const-string v2, "to"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v2, "country: "
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -110,13 +109,13 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 152
+    .line 141
     iget-object v0, p0, Lcom/android/server/location/ComprehensiveCountryDetector$1;->this$0:Lcom/android/server/location/ComprehensiveCountryDetector;
 
     #setter for: Lcom/android/server/location/ComprehensiveCountryDetector;->mCountryFromLocation:Landroid/location/Country;
     invoke-static {v0, p1}, Lcom/android/server/location/ComprehensiveCountryDetector;->access$002(Lcom/android/server/location/ComprehensiveCountryDetector;Landroid/location/Country;)Landroid/location/Country;
 
-    .line 154
+    .line 143
     iget-object v0, p0, Lcom/android/server/location/ComprehensiveCountryDetector$1;->this$0:Lcom/android/server/location/ComprehensiveCountryDetector;
 
     const/4 v1, 0x1
@@ -126,16 +125,16 @@
     #calls: Lcom/android/server/location/ComprehensiveCountryDetector;->detectCountry(ZZ)Landroid/location/Country;
     invoke-static {v0, v1, v2}, Lcom/android/server/location/ComprehensiveCountryDetector;->access$100(Lcom/android/server/location/ComprehensiveCountryDetector;ZZ)Landroid/location/Country;
 
-    .line 155
+    .line 144
     iget-object v0, p0, Lcom/android/server/location/ComprehensiveCountryDetector$1;->this$0:Lcom/android/server/location/ComprehensiveCountryDetector;
 
     #calls: Lcom/android/server/location/ComprehensiveCountryDetector;->stopLocationBasedDetector()V
     invoke-static {v0}, Lcom/android/server/location/ComprehensiveCountryDetector;->access$200(Lcom/android/server/location/ComprehensiveCountryDetector;)V
 
-    .line 156
+    .line 145
     return-void
 
-    .line 147
+    .line 139
     :cond_0
     const-string v0, "null"
 

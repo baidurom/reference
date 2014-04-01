@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/widget/RemoteViewsAdapter;->processException(Ljava/lang/String;Ljava/lang/Exception;)V
+    value = Landroid/widget/RemoteViewsAdapter;->updateRemoteViews(IZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,17 +20,32 @@
 # instance fields
 .field final synthetic this$0:Landroid/widget/RemoteViewsAdapter;
 
+.field final synthetic val$position:I
+
+.field final synthetic val$rv:Landroid/widget/RemoteViews;
+
+.field final synthetic val$typeId:I
+
 
 # direct methods
-.method constructor <init>(Landroid/widget/RemoteViewsAdapter;)V
+.method constructor <init>(Landroid/widget/RemoteViewsAdapter;ILandroid/widget/RemoteViews;I)V
     .locals 0
+    .parameter
+    .parameter
+    .parameter
     .parameter
 
     .prologue
-    .line 977
+    .line 869
     iput-object p1, p0, Landroid/widget/RemoteViewsAdapter$3;->this$0:Landroid/widget/RemoteViewsAdapter;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p2, p0, Landroid/widget/RemoteViewsAdapter$3;->val$position:I
+
+    iput-object p3, p0, Landroid/widget/RemoteViewsAdapter$3;->val$rv:Landroid/widget/RemoteViews;
+
+    iput p4, p0, Landroid/widget/RemoteViewsAdapter$3;->val$typeId:I
+
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -38,14 +53,25 @@
 
 # virtual methods
 .method public run()V
-    .locals 1
+    .locals 4
 
     .prologue
-    .line 980
+    .line 872
     iget-object v0, p0, Landroid/widget/RemoteViewsAdapter$3;->this$0:Landroid/widget/RemoteViewsAdapter;
 
-    invoke-virtual {v0}, Landroid/widget/RemoteViewsAdapter;->superNotifyDataSetChanged()V
+    #getter for: Landroid/widget/RemoteViewsAdapter;->mRequestedViews:Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayoutRefSet;
+    invoke-static {v0}, Landroid/widget/RemoteViewsAdapter;->access$1500(Landroid/widget/RemoteViewsAdapter;)Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayoutRefSet;
 
-    .line 981
+    move-result-object v0
+
+    iget v1, p0, Landroid/widget/RemoteViewsAdapter$3;->val$position:I
+
+    iget-object v2, p0, Landroid/widget/RemoteViewsAdapter$3;->val$rv:Landroid/widget/RemoteViews;
+
+    iget v3, p0, Landroid/widget/RemoteViewsAdapter$3;->val$typeId:I
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayoutRefSet;->notifyOnRemoteViewsLoaded(ILandroid/widget/RemoteViews;I)V
+
+    .line 873
     return-void
 .end method

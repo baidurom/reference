@@ -17,11 +17,7 @@
 # static fields
 .field public static final BandwidthControl:I = 0x259
 
-.field public static final DnsProxyQueryResult:I = 0xde
-
 .field public static final InterfaceChange:I = 0x258
-
-.field public static final InterfaceClassActivity:I = 0x265
 
 .field public static final InterfaceGetCfgResult:I = 0xd5
 
@@ -62,7 +58,7 @@
     .parameter
 
     .prologue
-    .line 118
+    .line 95
     iput-object p1, p0, Lcom/android/server/NetworkManagementService$NetdResponseCode;->this$0:Lcom/android/server/NetworkManagementService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

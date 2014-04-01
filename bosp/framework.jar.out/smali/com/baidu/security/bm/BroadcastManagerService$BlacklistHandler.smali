@@ -25,13 +25,13 @@
     .parameter "looper"
 
     .prologue
-    .line 110
+    .line 109
     iput-object p1, p0, Lcom/baidu/security/bm/BroadcastManagerService$BlacklistHandler;->this$0:Lcom/baidu/security/bm/BroadcastManagerService;
 
-    .line 111
+    .line 110
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 112
+    .line 111
     return-void
 .end method
 
@@ -42,80 +42,80 @@
     .parameter "msg"
 
     .prologue
-    .line 115
+    .line 114
     iget v3, p1, Landroid/os/Message;->what:I
 
     packed-switch v3, :pswitch_data_0
 
-    .line 162
+    .line 161
     :goto_0
     return-void
 
-    .line 122
+    .line 121
     :pswitch_0
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Ljava/util/ArrayList;
 
-    .line 123
+    .line 122
     .local v0, newPartApps:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/baidu/security/bm/AutoLaunchAppInfo;>;"
     invoke-static {v0}, Lcom/baidu/security/bm/AutoLaunchController;->updateBlackList(Ljava/util/ArrayList;)V
 
     goto :goto_0
 
-    .line 132
+    .line 131
     .end local v0           #newPartApps:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/baidu/security/bm/AutoLaunchAppInfo;>;"
     :pswitch_1
     iget-object v2, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v2, Ljava/util/ArrayList;
 
-    .line 133
+    .line 132
     .local v2, packageNameArray:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     invoke-static {v2}, Lcom/baidu/security/bm/SilentAppsController;->addCleanedApps(Ljava/util/ArrayList;)V
 
     goto :goto_0
 
-    .line 137
+    .line 136
     .end local v2           #packageNameArray:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     :pswitch_2
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v1, Ljava/lang/String;
 
-    .line 138
+    .line 137
     .local v1, packageName:Ljava/lang/String;
     invoke-static {v1}, Lcom/baidu/security/bm/SilentAppsController;->removeCleanedApp(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 142
+    .line 141
     .end local v1           #packageName:Ljava/lang/String;
     :pswitch_3
     iget-object v2, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v2, Ljava/util/ArrayList;
 
-    .line 143
+    .line 142
     .restart local v2       #packageNameArray:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     invoke-static {v2}, Lcom/baidu/security/bm/LockedAppsController;->addLockedApps(Ljava/util/ArrayList;)V
 
     goto :goto_0
 
-    .line 147
+    .line 146
     .end local v2           #packageNameArray:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     :pswitch_4
     iget-object v2, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v2, Ljava/util/ArrayList;
 
-    .line 148
+    .line 147
     .restart local v2       #packageNameArray:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     invoke-static {v2}, Lcom/baidu/security/bm/LockedAppsController;->removeLockedApps(Ljava/util/ArrayList;)V
 
     goto :goto_0
 
-    .line 152
+    .line 151
     .end local v2           #packageNameArray:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     :pswitch_5
     iget-object v3, p0, Lcom/baidu/security/bm/BroadcastManagerService$BlacklistHandler;->this$0:Lcom/baidu/security/bm/BroadcastManagerService;
@@ -131,7 +131,7 @@
 
     goto :goto_0
 
-    .line 156
+    .line 155
     :pswitch_6
     iget-object v3, p0, Lcom/baidu/security/bm/BroadcastManagerService$BlacklistHandler;->this$0:Lcom/baidu/security/bm/BroadcastManagerService;
 
@@ -146,7 +146,7 @@
 
     goto :goto_0
 
-    .line 115
+    .line 114
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

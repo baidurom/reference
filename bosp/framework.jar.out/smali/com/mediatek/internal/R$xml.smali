@@ -15,7 +15,7 @@
 
 
 # static fields
-.field public static final dm_operator_info:I = 0x20a0000
+.field public static final dm_operator_info:I = 0x2080000
 
 
 # direct methods
@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 2101
+    .line 1454
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

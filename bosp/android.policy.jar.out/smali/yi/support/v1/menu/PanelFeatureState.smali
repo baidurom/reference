@@ -155,9 +155,9 @@
     .line 116
     new-instance v1, Lcom/yi/internal/view/menu/ActionMenuPresenter;
 
-    const v2, 0x3090014
+    const v2, 0x4090014
 
-    const v3, 0x3090013
+    const v3, 0x4090013
 
     invoke-direct {v1, p1, v2, v3}, Lcom/yi/internal/view/menu/ActionMenuPresenter;-><init>(Landroid/content/Context;II)V
 
@@ -171,7 +171,7 @@
     .line 119
     iget-object v1, p0, Lyi/support/v1/menu/PanelFeatureState;->actionMenuPresenter:Lcom/yi/internal/view/menu/ActionMenuPresenter;
 
-    const v2, 0x3020020
+    const v2, 0x4020020
 
     invoke-virtual {v1, v2}, Lcom/yi/internal/view/menu/ActionMenuPresenter;->setId(I)V
 
@@ -221,7 +221,7 @@
     .line 135
     new-instance v1, Lcom/yi/internal/view/menu/ListMenuPresenter;
 
-    const v2, 0x3090021
+    const v2, 0x4090023
 
     invoke-direct {v1, p1, v2}, Lcom/yi/internal/view/menu/ListMenuPresenter;-><init>(Landroid/content/Context;I)V
 
@@ -235,7 +235,7 @@
     .line 138
     iget-object v1, p0, Lyi/support/v1/menu/PanelFeatureState;->listMenuPresenter:Lcom/yi/internal/view/menu/ListMenuPresenter;
 
-    const v2, 0x302001f
+    const v2, 0x402001f
 
     invoke-virtual {v1, v2}, Lcom/yi/internal/view/menu/ListMenuPresenter;->setId(I)V
 

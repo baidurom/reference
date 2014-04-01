@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/accounts/AccountManager;->getAuthTokenLabel(Ljava/lang/String;Ljava/lang/String;Landroid/accounts/AccountManagerCallback;Landroid/os/Handler;)Landroid/accounts/AccountManagerFuture;
+    value = Landroid/accounts/AccountManager;->hasFeatures(Landroid/accounts/Account;[Ljava/lang/String;Landroid/accounts/AccountManagerCallback;Landroid/os/Handler;)Landroid/accounts/AccountManagerFuture;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,7 +17,7 @@
     value = {
         "Landroid/accounts/AccountManager$Future2Task",
         "<",
-        "Ljava/lang/String;",
+        "Ljava/lang/Boolean;",
         ">;"
     }
 .end annotation
@@ -26,13 +26,13 @@
 # instance fields
 .field final synthetic this$0:Landroid/accounts/AccountManager;
 
-.field final synthetic val$accountType:Ljava/lang/String;
+.field final synthetic val$account:Landroid/accounts/Account;
 
-.field final synthetic val$authTokenType:Ljava/lang/String;
+.field final synthetic val$features:[Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Landroid/accounts/AccountManager;Landroid/os/Handler;Landroid/accounts/AccountManagerCallback;Ljava/lang/String;Ljava/lang/String;)V
+.method constructor <init>(Landroid/accounts/AccountManager;Landroid/os/Handler;Landroid/accounts/AccountManagerCallback;Landroid/accounts/Account;[Ljava/lang/String;)V
     .locals 0
     .parameter
     .parameter "x0"
@@ -41,13 +41,13 @@
     .parameter
 
     .prologue
-    .line 447
-    .local p3, x1:Landroid/accounts/AccountManagerCallback;,"Landroid/accounts/AccountManagerCallback<Ljava/lang/String;>;"
+    .line 435
+    .local p3, x1:Landroid/accounts/AccountManagerCallback;,"Landroid/accounts/AccountManagerCallback<Ljava/lang/Boolean;>;"
     iput-object p1, p0, Landroid/accounts/AccountManager$1;->this$0:Landroid/accounts/AccountManager;
 
-    iput-object p4, p0, Landroid/accounts/AccountManager$1;->val$accountType:Ljava/lang/String;
+    iput-object p4, p0, Landroid/accounts/AccountManager$1;->val$account:Landroid/accounts/Account;
 
-    iput-object p5, p0, Landroid/accounts/AccountManager$1;->val$authTokenType:Ljava/lang/String;
+    iput-object p5, p0, Landroid/accounts/AccountManager$1;->val$features:[Ljava/lang/String;
 
     invoke-direct {p0, p1, p2, p3}, Landroid/accounts/AccountManager$Future2Task;-><init>(Landroid/accounts/AccountManager;Landroid/os/Handler;Landroid/accounts/AccountManagerCallback;)V
 
@@ -56,6 +56,49 @@
 
 
 # virtual methods
+.method public bundleToResult(Landroid/os/Bundle;)Ljava/lang/Boolean;
+    .locals 2
+    .parameter "bundle"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/accounts/AuthenticatorException;
+        }
+    .end annotation
+
+    .prologue
+    .line 440
+    const-string v0, "booleanResult"
+
+    invoke-virtual {p1, v0}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 441
+    new-instance v0, Landroid/accounts/AuthenticatorException;
+
+    const-string/jumbo v1, "no result in response"
+
+    invoke-direct {v0, v1}, Landroid/accounts/AuthenticatorException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 443
+    :cond_0
+    const-string v0, "booleanResult"
+
+    invoke-virtual {p1, v0}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public bridge synthetic bundleToResult(Landroid/os/Bundle;)Ljava/lang/Object;
     .locals 1
     .parameter "x0"
@@ -66,47 +109,8 @@
     .end annotation
 
     .prologue
-    .line 447
-    invoke-virtual {p0, p1}, Landroid/accounts/AccountManager$1;->bundleToResult(Landroid/os/Bundle;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public bundleToResult(Landroid/os/Bundle;)Ljava/lang/String;
-    .locals 2
-    .parameter "bundle"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/accounts/AuthenticatorException;
-        }
-    .end annotation
-
-    .prologue
-    .line 454
-    const-string v0, "authTokenLabelKey"
-
-    invoke-virtual {p1, v0}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 455
-    new-instance v0, Landroid/accounts/AuthenticatorException;
-
-    const-string/jumbo v1, "no result in response"
-
-    invoke-direct {v0, v1}, Landroid/accounts/AuthenticatorException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 457
-    :cond_0
-    const-string v0, "authTokenLabelKey"
-
-    invoke-virtual {p1, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    .line 435
+    invoke-virtual {p0, p1}, Landroid/accounts/AccountManager$1;->bundleToResult(Landroid/os/Bundle;)Ljava/lang/Boolean;
 
     move-result-object v0
 
@@ -122,7 +126,7 @@
     .end annotation
 
     .prologue
-    .line 449
+    .line 437
     iget-object v0, p0, Landroid/accounts/AccountManager$1;->this$0:Landroid/accounts/AccountManager;
 
     #getter for: Landroid/accounts/AccountManager;->mService:Landroid/accounts/IAccountManager;
@@ -132,12 +136,12 @@
 
     iget-object v1, p0, Landroid/accounts/AccountManager$1;->mResponse:Landroid/accounts/IAccountManagerResponse;
 
-    iget-object v2, p0, Landroid/accounts/AccountManager$1;->val$accountType:Ljava/lang/String;
+    iget-object v2, p0, Landroid/accounts/AccountManager$1;->val$account:Landroid/accounts/Account;
 
-    iget-object v3, p0, Landroid/accounts/AccountManager$1;->val$authTokenType:Ljava/lang/String;
+    iget-object v3, p0, Landroid/accounts/AccountManager$1;->val$features:[Ljava/lang/String;
 
-    invoke-interface {v0, v1, v2, v3}, Landroid/accounts/IAccountManager;->getAuthTokenLabel(Landroid/accounts/IAccountManagerResponse;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {v0, v1, v2, v3}, Landroid/accounts/IAccountManager;->hasFeatures(Landroid/accounts/IAccountManagerResponse;Landroid/accounts/Account;[Ljava/lang/String;)V
 
-    .line 450
+    .line 438
     return-void
 .end method

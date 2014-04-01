@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 2448
+    .line 2008
     iput-object p1, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,2236 +35,1521 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .locals 17
+    .locals 10
     .parameter "msg"
 
     .prologue
-    .line 2455
-    const-string v14, "CallManager"
+    const/4 v9, 0x1
 
-    new-instance v15, Ljava/lang/StringBuilder;
+    const/4 v8, 0x0
 
-    invoke-direct {v15}, Ljava/lang/StringBuilder;-><init>()V
+    .line 2014
+    const-string v5, "CallManager"
 
-    const-string v16, " handleMessage msgid:"
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result-object v15
+    const-string v7, " handleMessage msgid:"
 
-    move-object/from16 v0, p1
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v0, v0, Landroid/os/Message;->what:I
+    move-result-object v6
 
-    move/from16 v16, v0
+    iget v7, p1, Landroid/os/Message;->what:I
 
-    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v15
+    move-result-object v6
 
-    invoke-virtual {v15}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v15
+    move-result-object v6
 
-    invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2457
-    move-object/from16 v0, p1
+    .line 2016
+    iget v5, p1, Landroid/os/Message;->what:I
 
-    iget v14, v0, Landroid/os/Message;->what:I
+    packed-switch v5, :pswitch_data_0
 
-    sparse-switch v14, :sswitch_data_0
-
-    .line 2832
+    .line 2294
     :cond_0
     :goto_0
+    :pswitch_0
     return-void
 
-    .line 2462
-    :sswitch_0
-    const-string v14, "CallManager"
+    .line 2019
+    :pswitch_1
+    const-string v5, "CallManager"
 
-    const-string v15, " handleMessage (EVENT_DISCONNECT)"
+    const-string v6, " handleMessage (EVENT_DISCONNECT)"
 
-    invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2463
-    move-object/from16 v0, p1
+    .line 2020
+    const/16 v5, 0x64
 
-    iget v14, v0, Landroid/os/Message;->what:I
+    iget v6, p1, Landroid/os/Message;->what:I
 
-    add-int/lit8 v14, v14, -0x64
+    if-ne v5, v6, :cond_1
 
-    div-int/lit8 v9, v14, 0x64
+    .line 2021
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
 
-    .line 2464
-    .local v9, index:I
-    move-object/from16 v0, p0
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mDisconnectRegistrants:Landroid/os/RegistrantList;
 
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    iget-object v14, v14, Lcom/android/internal/telephony/CallManager;->mDisconnectRegistrantsGemini:[Landroid/os/RegistrantList;
+    check-cast v5, Landroid/os/AsyncResult;
 
-    aget-object v15, v14, v9
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
 
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    .line 2465
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v15, v14, Lcom/android/internal/telephony/CallManager;->mDisconnectRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    .line 2466
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    #calls: Lcom/android/internal/telephony/CallManager;->handle3GSwitchLock()V
-    invoke-static {v14}, Lcom/android/internal/telephony/CallManager;->access$000(Lcom/android/internal/telephony/CallManager;)V
-
-    .line 2470
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    #calls: Lcom/android/internal/telephony/CallManager;->clearEspeechInfo()Z
-    invoke-static {v14}, Lcom/android/internal/telephony/CallManager;->access$100(Lcom/android/internal/telephony/CallManager;)Z
-
-    goto :goto_0
-
-    .line 2476
-    .end local v9           #index:I
-    :sswitch_1
-    const-string v14, "CallManager"
-
-    const-string v15, " handleMessage (EVENT_PRECISE_CALL_STATE_CHANGED)"
-
-    invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2477
-    move-object/from16 v0, p1
-
-    iget v14, v0, Landroid/os/Message;->what:I
-
-    add-int/lit8 v14, v14, -0x65
-
-    div-int/lit8 v9, v14, 0x64
-
-    .line 2478
-    .restart local v9       #index:I
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v14, v14, Lcom/android/internal/telephony/CallManager;->mPreciseCallStateRegistrantsGemini:[Landroid/os/RegistrantList;
-
-    aget-object v15, v14, v9
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    .line 2479
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v15, v14, Lcom/android/internal/telephony/CallManager;->mPreciseCallStateRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    .line 2480
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    #calls: Lcom/android/internal/telephony/CallManager;->handle3GSwitchLock()V
-    invoke-static {v14}, Lcom/android/internal/telephony/CallManager;->access$000(Lcom/android/internal/telephony/CallManager;)V
-
-    .line 2483
-    :try_start_0
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    #calls: Lcom/android/internal/telephony/CallManager;->checkIfExistsFollowingAction()Z
-    invoke-static {v14}, Lcom/android/internal/telephony/CallManager;->access$200(Lcom/android/internal/telephony/CallManager;)Z
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    .line 2484
-    :catch_0
-    move-exception v14
-
-    goto :goto_0
-
-    .line 2493
-    .end local v9           #index:I
-    :sswitch_2
-    const-string v14, "CallManager"
-
-    const-string v15, " handleMessage (EVENT_VOICE_CALL_INCOMING_INDICATION)"
-
-    invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2495
-    const/4 v11, 0x0
-
-    .line 2496
-    .local v11, isECCExists:Z
-    const/4 v12, 0x0
-
-    .line 2497
-    .local v12, isRejectNewRingCall:Z
-    const/4 v10, 0x0
-
-    .line 2498
-    .local v10, isDisconnected:Z
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    invoke-virtual {v14}, Lcom/android/internal/telephony/CallManager;->getActiveFgCall()Lcom/android/internal/telephony/Call;
-
-    move-result-object v14
-
-    if-eqz v14, :cond_1
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    invoke-virtual {v14}, Lcom/android/internal/telephony/CallManager;->getActiveFgCall()Lcom/android/internal/telephony/Call;
-
-    move-result-object v14
-
-    invoke-virtual {v14}, Lcom/android/internal/telephony/Call;->getEarliestConnection()Lcom/android/internal/telephony/Connection;
-
-    move-result-object v14
-
-    if-eqz v14, :cond_1
-
-    .line 2500
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    invoke-virtual {v14}, Lcom/android/internal/telephony/CallManager;->getActiveFgCall()Lcom/android/internal/telephony/Call;
-
-    move-result-object v14
-
-    invoke-virtual {v14}, Lcom/android/internal/telephony/Call;->getEarliestConnection()Lcom/android/internal/telephony/Connection;
-
-    move-result-object v14
-
-    invoke-virtual {v14}, Lcom/android/internal/telephony/Connection;->getAddress()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 2501
-    .local v1, activeCallAddress:Ljava/lang/String;
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    invoke-virtual {v14}, Lcom/android/internal/telephony/CallManager;->getActiveFgCall()Lcom/android/internal/telephony/Call;
-
-    move-result-object v14
-
-    invoke-virtual {v14}, Lcom/android/internal/telephony/Call;->getState()Lcom/android/internal/telephony/Call$State;
-
-    move-result-object v14
-
-    sget-object v15, Lcom/android/internal/telephony/Call$State;->DISCONNECTED:Lcom/android/internal/telephony/Call$State;
-
-    if-ne v14, v15, :cond_5
-
-    const/4 v10, 0x1
-
-    .line 2502
+    .line 2025
     :goto_1
-    invoke-static {v1}, Landroid/telephony/PhoneNumberUtils;->isEmergencyNumber(Ljava/lang/String;)Z
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
 
-    move-result v14
+    #calls: Lcom/android/internal/telephony/CallManager;->handle3GSwitchLock()V
+    invoke-static {v5}, Lcom/android/internal/telephony/CallManager;->access$000(Lcom/android/internal/telephony/CallManager;)V
 
-    if-eqz v14, :cond_6
+    goto :goto_0
 
-    invoke-static {v1}, Landroid/telephony/PhoneNumberUtils;->isSpecialEmergencyNumber(Ljava/lang/String;)Z
-
-    move-result v14
-
-    if-nez v14, :cond_6
-
-    const/4 v11, 0x1
-
-    .line 2504
-    :goto_2
-    const-string v14, "CallManager"
-
-    const-string v15, "Reject incoming call since ECC call exists."
-
-    invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2507
-    .end local v1           #activeCallAddress:Ljava/lang/String;
+    .line 2023
     :cond_1
-    move-object/from16 v0, p0
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
 
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mDisconnectRegistrants2:Landroid/os/RegistrantList;
 
-    invoke-virtual {v14}, Lcom/android/internal/telephony/CallManager;->getRingingCallCount()I
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    move-result v14
+    check-cast v5, Landroid/os/AsyncResult;
 
-    if-lez v14, :cond_2
-
-    .line 2508
-    const/4 v12, 0x1
-
-    .line 2516
-    :cond_2
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    iget-object v7, v14, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
-
-    check-cast v7, Lcom/android/internal/telephony/gsm/GSMPhone;
-
-    .line 2517
-    .local v7, gsmPhone:Lcom/android/internal/telephony/gsm/GSMPhone;
-    if-eqz v11, :cond_3
-
-    if-eqz v10, :cond_4
-
-    :cond_3
-    if-eqz v12, :cond_7
-
-    .line 2518
-    :cond_4
-    const/4 v14, 0x0
-
-    invoke-virtual {v7, v14}, Lcom/android/internal/telephony/gsm/GSMPhone;->setIncomingCallIndicationResponse(Z)V
-
-    goto/16 :goto_0
-
-    .line 2501
-    .end local v7           #gsmPhone:Lcom/android/internal/telephony/gsm/GSMPhone;
-    .restart local v1       #activeCallAddress:Ljava/lang/String;
-    :cond_5
-    const/4 v10, 0x0
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
 
     goto :goto_1
 
-    .line 2502
-    :cond_6
-    const/4 v11, 0x0
+    .line 2029
+    :pswitch_2
+    const-string v5, "CallManager"
+
+    const-string v6, " handleMessage (EVENT_PRECISE_CALL_STATE_CHANGED)"
+
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2030
+    const/16 v5, 0x65
+
+    iget v6, p1, Landroid/os/Message;->what:I
+
+    if-ne v5, v6, :cond_2
+
+    .line 2031
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mPreciseCallStateRegistrants:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    .line 2035
+    :goto_2
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    #calls: Lcom/android/internal/telephony/CallManager;->handle3GSwitchLock()V
+    invoke-static {v5}, Lcom/android/internal/telephony/CallManager;->access$000(Lcom/android/internal/telephony/CallManager;)V
+
+    goto :goto_0
+
+    .line 2033
+    :cond_2
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mPreciseCallStateRegistrants2:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
 
     goto :goto_2
 
-    .line 2520
-    .end local v1           #activeCallAddress:Ljava/lang/String;
-    .restart local v7       #gsmPhone:Lcom/android/internal/telephony/gsm/GSMPhone;
-    :cond_7
-    const/4 v14, 0x1
+    .line 2039
+    :pswitch_3
+    const-string v5, "CallManager"
 
-    invoke-virtual {v7, v14}, Lcom/android/internal/telephony/gsm/GSMPhone;->setIncomingCallIndicationResponse(Z)V
+    const-string v6, " handleMessage (EVENT_NEW_RINGING_CONNECTION)"
 
-    goto/16 :goto_0
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2528
-    .end local v7           #gsmPhone:Lcom/android/internal/telephony/gsm/GSMPhone;
-    .end local v10           #isDisconnected:Z
-    .end local v11           #isECCExists:Z
-    .end local v12           #isRejectNewRingCall:Z
-    :sswitch_3
-    const-string v14, "CallManager"
+    .line 2040
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
 
-    const-string v15, " handleMessage (EVENT_RADIO_OFF_OR_NOT_AVAILABLE)"
+    invoke-virtual {v5}, Lcom/android/internal/telephony/CallManager;->getActiveFgCallState()Lcom/android/internal/telephony/Call$State;
 
-    invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    move-result-object v5
 
-    .line 2533
-    move-object/from16 v0, p0
+    invoke-virtual {v5}, Lcom/android/internal/telephony/Call$State;->isDialing()Z
 
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+    move-result v5
 
-    #calls: Lcom/android/internal/telephony/CallManager;->clearEspeechInfo()Z
-    invoke-static {v14}, Lcom/android/internal/telephony/CallManager;->access$100(Lcom/android/internal/telephony/CallManager;)Z
+    if-eqz v5, :cond_3
 
-    move-result v14
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
 
-    const/4 v15, 0x1
+    invoke-virtual {v5}, Lcom/android/internal/telephony/CallManager;->getFgPhone()Lcom/android/internal/telephony/Phone;
 
-    if-ne v14, v15, :cond_0
+    move-result-object v5
 
-    .line 2534
-    move-object/from16 v0, p0
+    instance-of v5, v5, Lcom/android/internal/telephony/gsm/GSMPhone;
 
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+    if-eqz v5, :cond_4
 
-    const/4 v15, 0x0
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
 
-    #calls: Lcom/android/internal/telephony/CallManager;->setAudioMode(I)V
-    invoke-static {v14, v15}, Lcom/android/internal/telephony/CallManager;->access$300(Lcom/android/internal/telephony/CallManager;I)V
+    invoke-virtual {v5}, Lcom/android/internal/telephony/CallManager;->getRingingPhone()Lcom/android/internal/telephony/Phone;
 
-    goto/16 :goto_0
+    move-result-object v5
 
-    .line 2542
-    :sswitch_4
-    const-string v14, "CallManager"
+    instance-of v5, v5, Lcom/android/internal/telephony/gsm/GSMPhone;
 
-    const-string v15, " handleMessage (EVENT_NEW_RINGING_CONNECTION)"
+    if-eqz v5, :cond_4
 
-    invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2546
-    const/4 v3, 0x0
-
-    .line 2547
-    .local v3, bECCExists:Z
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    invoke-virtual {v14}, Lcom/android/internal/telephony/CallManager;->getActiveFgCall()Lcom/android/internal/telephony/Call;
-
-    move-result-object v14
-
-    if-eqz v14, :cond_8
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    invoke-virtual {v14}, Lcom/android/internal/telephony/CallManager;->getActiveFgCall()Lcom/android/internal/telephony/Call;
-
-    move-result-object v14
-
-    invoke-virtual {v14}, Lcom/android/internal/telephony/Call;->getEarliestConnection()Lcom/android/internal/telephony/Connection;
-
-    move-result-object v14
-
-    if-eqz v14, :cond_8
-
-    .line 2549
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    invoke-virtual {v14}, Lcom/android/internal/telephony/CallManager;->getActiveFgCall()Lcom/android/internal/telephony/Call;
-
-    move-result-object v14
-
-    invoke-virtual {v14}, Lcom/android/internal/telephony/Call;->getEarliestConnection()Lcom/android/internal/telephony/Connection;
-
-    move-result-object v14
-
-    invoke-virtual {v14}, Lcom/android/internal/telephony/Connection;->getAddress()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 2550
-    .restart local v1       #activeCallAddress:Ljava/lang/String;
-    invoke-static {v1}, Landroid/telephony/PhoneNumberUtils;->isEmergencyNumber(Ljava/lang/String;)Z
-
-    move-result v14
-
-    if-eqz v14, :cond_b
-
-    invoke-static {v1}, Landroid/telephony/PhoneNumberUtils;->isSpecialEmergencyNumber(Ljava/lang/String;)Z
-
-    move-result v14
-
-    if-nez v14, :cond_b
-
-    const/4 v3, 0x1
-
-    .line 2552
-    :goto_3
-    const-string v14, "CallManager"
-
-    const-string v15, "Reject incoming call since ECC call exists."
-
-    invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2554
-    .end local v1           #activeCallAddress:Ljava/lang/String;
-    :cond_8
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    invoke-virtual {v14}, Lcom/android/internal/telephony/CallManager;->getActiveFgCallState()Lcom/android/internal/telephony/Call$State;
-
-    move-result-object v14
-
-    invoke-virtual {v14}, Lcom/android/internal/telephony/Call$State;->isDialing()Z
-
-    move-result v14
-
-    if-nez v14, :cond_9
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+    :cond_3
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
 
     #calls: Lcom/android/internal/telephony/CallManager;->hasMoreThanOneRingingCall()Z
-    invoke-static {v14}, Lcom/android/internal/telephony/CallManager;->access$400(Lcom/android/internal/telephony/CallManager;)Z
+    invoke-static {v5}, Lcom/android/internal/telephony/CallManager;->access$100(Lcom/android/internal/telephony/CallManager;)Z
 
-    move-result v14
+    move-result v5
 
-    if-eqz v14, :cond_c
+    if-eqz v5, :cond_5
 
+    .line 2042
+    :cond_4
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    iget-object v1, v5, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
+
+    check-cast v1, Lcom/android/internal/telephony/Connection;
+
+    .line 2044
+    .local v1, c:Lcom/android/internal/telephony/Connection;
+    :try_start_0
+    const-string v5, "CallManager"
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v7, "silently drop incoming call: "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v1}, Lcom/android/internal/telephony/Connection;->getCall()Lcom/android/internal/telephony/Call;
+
+    move-result-object v7
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2045
+    invoke-virtual {v1}, Lcom/android/internal/telephony/Connection;->getCall()Lcom/android/internal/telephony/Call;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Lcom/android/internal/telephony/Call;->hangup()V
+    :try_end_0
+    .catch Lcom/android/internal/telephony/CallStateException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto/16 :goto_0
+
+    .line 2046
+    :catch_0
+    move-exception v2
+
+    .line 2047
+    .local v2, e:Lcom/android/internal/telephony/CallStateException;
+    const-string v5, "CallManager"
+
+    const-string/jumbo v6, "new ringing connection"
+
+    invoke-static {v5, v6, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto/16 :goto_0
+
+    .line 2050
+    .end local v1           #c:Lcom/android/internal/telephony/Connection;
+    .end local v2           #e:Lcom/android/internal/telephony/CallStateException;
+    :cond_5
+    const/16 v5, 0x66
+
+    iget v6, p1, Landroid/os/Message;->what:I
+
+    if-ne v5, v6, :cond_6
+
+    .line 2051
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mNewRingingConnectionRegistrants:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 2053
+    :cond_6
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mNewRingingConnectionRegistrants2:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 2059
+    :pswitch_4
+    const-string v5, "CallManager"
+
+    const-string v6, " handleMessage (EVENT_UNKNOWN_CONNECTION)"
+
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2060
+    const/16 v5, 0x67
+
+    iget v6, p1, Landroid/os/Message;->what:I
+
+    if-ne v5, v6, :cond_7
+
+    .line 2061
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mUnknownConnectionRegistrants:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 2063
+    :cond_7
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mUnknownConnectionRegistrants2:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 2068
+    :pswitch_5
+    const-string v5, "CallManager"
+
+    const-string v6, " handleMessage (EVENT_INCOMING_RING)"
+
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2070
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    invoke-virtual {v5}, Lcom/android/internal/telephony/CallManager;->hasActiveFgCall()Z
+
+    move-result v5
+
+    if-nez v5, :cond_0
+
+    .line 2071
+    const/16 v5, 0x68
+
+    iget v6, p1, Landroid/os/Message;->what:I
+
+    if-ne v5, v6, :cond_8
+
+    .line 2072
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mIncomingRingRegistrants:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 2074
+    :cond_8
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mIncomingRingRegistrants2:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 2080
+    :pswitch_6
+    const-string v5, "CallManager"
+
+    const-string v6, " handleMessage (EVENT_RINGBACK_TONE)"
+
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2081
+    const/16 v5, 0x69
+
+    iget v6, p1, Landroid/os/Message;->what:I
+
+    if-ne v5, v6, :cond_9
+
+    .line 2082
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mRingbackToneRegistrants:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 2084
     :cond_9
-    const/4 v4, 0x1
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
 
-    .line 2556
-    .local v4, bMoMtConflict:Z
-    :goto_4
-    if-nez v3, :cond_a
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mRingbackToneRegistrants2:Landroid/os/RegistrantList;
 
-    if-eqz v4, :cond_d
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 2557
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 2089
+    :pswitch_7
+    const-string v5, "CallManager"
+
+    const-string v6, " handleMessage (EVENT_IN_CALL_VOICE_PRIVACY_ON)"
+
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2090
+    const/16 v5, 0x6a
+
+    iget v6, p1, Landroid/os/Message;->what:I
+
+    if-ne v5, v6, :cond_a
+
+    .line 2091
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mInCallVoicePrivacyOnRegistrants:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 2093
     :cond_a
-    move-object/from16 v0, p1
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
 
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mInCallVoicePrivacyOnRegistrants2:Landroid/os/RegistrantList;
 
-    check-cast v14, Landroid/os/AsyncResult;
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    iget-object v5, v14, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
+    check-cast v5, Landroid/os/AsyncResult;
 
-    check-cast v5, Lcom/android/internal/telephony/Connection;
-
-    .line 2559
-    .local v5, c:Lcom/android/internal/telephony/Connection;
-    :try_start_1
-    const-string v14, "CallManager"
-
-    new-instance v15, Ljava/lang/StringBuilder;
-
-    invoke-direct {v15}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v16, "silently drop incoming call: "
-
-    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v15
-
-    invoke-virtual {v5}, Lcom/android/internal/telephony/Connection;->getCall()Lcom/android/internal/telephony/Call;
-
-    move-result-object v16
-
-    invoke-virtual/range {v15 .. v16}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v15
-
-    invoke-virtual {v15}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v15
-
-    invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2560
-    invoke-virtual {v5}, Lcom/android/internal/telephony/Connection;->getCall()Lcom/android/internal/telephony/Call;
-
-    move-result-object v14
-
-    invoke-virtual {v14}, Lcom/android/internal/telephony/Call;->hangup()V
-    :try_end_1
-    .catch Lcom/android/internal/telephony/CallStateException; {:try_start_1 .. :try_end_1} :catch_1
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
 
     goto/16 :goto_0
 
-    .line 2561
-    :catch_1
-    move-exception v6
+    .line 2098
+    :pswitch_8
+    const-string v5, "CallManager"
 
-    .line 2562
-    .local v6, e:Lcom/android/internal/telephony/CallStateException;
-    const-string v14, "CallManager"
+    const-string v6, " handleMessage (EVENT_IN_CALL_VOICE_PRIVACY_OFF)"
 
-    const-string/jumbo v15, "new ringing connection"
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {v14, v15, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    .line 2099
+    const/16 v5, 0x6b
+
+    iget v6, p1, Landroid/os/Message;->what:I
+
+    if-ne v5, v6, :cond_b
+
+    .line 2100
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mInCallVoicePrivacyOffRegistrants:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
 
     goto/16 :goto_0
 
-    .line 2550
-    .end local v4           #bMoMtConflict:Z
-    .end local v5           #c:Lcom/android/internal/telephony/Connection;
-    .end local v6           #e:Lcom/android/internal/telephony/CallStateException;
-    .restart local v1       #activeCallAddress:Ljava/lang/String;
+    .line 2102
     :cond_b
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mInCallVoicePrivacyOffRegistrants2:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 2107
+    :pswitch_9
+    const-string v5, "CallManager"
+
+    const-string v6, " handleMessage (EVENT_CALL_WAITING)"
+
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2108
+    const/16 v5, 0x6c
+
+    iget v6, p1, Landroid/os/Message;->what:I
+
+    if-ne v5, v6, :cond_c
+
+    .line 2109
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mCallWaitingRegistrants:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 2111
+    :cond_c
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mCallWaitingRegistrants2:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 2116
+    :pswitch_a
+    const-string v5, "CallManager"
+
+    const-string v6, " handleMessage (EVENT_DISPLAY_INFO)"
+
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2117
+    const/16 v5, 0x6d
+
+    iget v6, p1, Landroid/os/Message;->what:I
+
+    if-ne v5, v6, :cond_d
+
+    .line 2118
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mDisplayInfoRegistrants:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 2120
+    :cond_d
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mDisplayInfoRegistrants2:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 2125
+    :pswitch_b
+    const-string v5, "CallManager"
+
+    const-string v6, " handleMessage (EVENT_SIGNAL_INFO)"
+
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2126
+    const/16 v5, 0x6e
+
+    iget v6, p1, Landroid/os/Message;->what:I
+
+    if-ne v5, v6, :cond_e
+
+    .line 2127
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mSignalInfoRegistrants:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 2129
+    :cond_e
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mSignalInfoRegistrants2:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 2134
+    :pswitch_c
+    const-string v5, "CallManager"
+
+    const-string v6, " handleMessage (EVENT_CDMA_OTA_STATUS_CHANGE)"
+
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2135
+    const/16 v5, 0x6f
+
+    iget v6, p1, Landroid/os/Message;->what:I
+
+    if-ne v5, v6, :cond_f
+
+    .line 2136
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mCdmaOtaStatusChangeRegistrants:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 2138
+    :cond_f
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mCdmaOtaStatusChangeRegistrants2:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 2143
+    :pswitch_d
+    const-string v5, "CallManager"
+
+    const-string v6, " handleMessage (EVENT_RESEND_INCALL_MUTE)"
+
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2144
+    const/16 v5, 0x70
+
+    iget v6, p1, Landroid/os/Message;->what:I
+
+    if-ne v5, v6, :cond_10
+
+    .line 2145
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mResendIncallMuteRegistrants:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 2147
+    :cond_10
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mResendIncallMuteRegistrants2:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 2152
+    :pswitch_e
+    const-string v5, "CallManager"
+
+    const-string v6, " handleMessage (EVENT_MMI_INITIATE)"
+
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2153
+    const/16 v5, 0x71
+
+    iget v6, p1, Landroid/os/Message;->what:I
+
+    if-ne v5, v6, :cond_11
+
+    .line 2154
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mMmiInitiateRegistrants:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 2156
+    :cond_11
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mMmiInitiateRegistrants2:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 2161
+    :pswitch_f
+    const-string v5, "CallManager"
+
+    const-string v6, " handleMessage (EVENT_MMI_COMPLETE)"
+
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2162
+    const/16 v5, 0x72
+
+    iget v6, p1, Landroid/os/Message;->what:I
+
+    if-ne v5, v6, :cond_12
+
+    .line 2163
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mMmiCompleteRegistrants:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 2165
+    :cond_12
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mMmiCompleteRegistrants2:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 2170
+    :pswitch_10
+    const-string v5, "CallManager"
+
+    const-string v6, " handleMessage (EVENT_ECM_TIMER_RESET)"
+
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2171
+    const/16 v5, 0x73
+
+    iget v6, p1, Landroid/os/Message;->what:I
+
+    if-ne v5, v6, :cond_13
+
+    .line 2172
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mEcmTimerResetRegistrants:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 2174
+    :cond_13
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mEcmTimerResetRegistrants2:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 2179
+    :pswitch_11
+    const-string v5, "CallManager"
+
+    const-string v6, " handleMessage (EVENT_SUBSCRIPTION_INFO_READY)"
+
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2180
+    const/16 v5, 0x74
+
+    iget v6, p1, Landroid/os/Message;->what:I
+
+    if-ne v5, v6, :cond_14
+
+    .line 2181
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mSubscriptionInfoReadyRegistrants:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 2183
+    :cond_14
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mSubscriptionInfoReadyRegistrants2:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 2188
+    :pswitch_12
+    const-string v5, "CallManager"
+
+    const-string v6, " handleMessage (EVENT_SUPP_SERVICE_FAILED)"
+
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2189
+    const/16 v5, 0x75
+
+    iget v6, p1, Landroid/os/Message;->what:I
+
+    if-ne v5, v6, :cond_15
+
+    .line 2190
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mSuppServiceFailedRegistrants:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 2192
+    :cond_15
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mSuppServiceFailedRegistrants2:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 2197
+    :pswitch_13
+    const-string v5, "CallManager"
+
+    const-string v6, " handleMessage (EVENT_SERVICE_STATE_CHANGED)"
+
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2198
+    const/16 v5, 0x76
+
+    iget v6, p1, Landroid/os/Message;->what:I
+
+    if-ne v5, v6, :cond_16
+
+    .line 2199
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mServiceStateChangedRegistrants:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 2201
+    :cond_16
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mServiceStateChangedRegistrants2:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 2208
+    :pswitch_14
+    const-string v5, "CallManager"
+
+    const-string v6, " handleMessage (EVENT_POST_DIAL_CHARACTER)"
+
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2209
+    const/16 v5, 0x77
+
+    iget v6, p1, Landroid/os/Message;->what:I
+
+    if-ne v5, v6, :cond_17
+
+    .line 2210
     const/4 v3, 0x0
+
+    .local v3, i:I
+    :goto_3
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v5, v5, Lcom/android/internal/telephony/CallManager;->mPostDialCharacterRegistrants:Landroid/os/RegistrantList;
+
+    invoke-virtual {v5}, Landroid/os/RegistrantList;->size()I
+
+    move-result v5
+
+    if-ge v3, v5, :cond_0
+
+    .line 2212
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v5, v5, Lcom/android/internal/telephony/CallManager;->mPostDialCharacterRegistrants:Landroid/os/RegistrantList;
+
+    invoke-virtual {v5, v3}, Landroid/os/RegistrantList;->get(I)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Landroid/os/Registrant;
+
+    invoke-virtual {v5}, Landroid/os/Registrant;->messageForRegistrant()Landroid/os/Message;
+
+    move-result-object v4
+
+    .line 2213
+    .local v4, notifyMsg:Landroid/os/Message;
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    iput-object v5, v4, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    .line 2214
+    iget v5, p1, Landroid/os/Message;->arg1:I
+
+    iput v5, v4, Landroid/os/Message;->arg1:I
+
+    .line 2215
+    invoke-virtual {v4}, Landroid/os/Message;->sendToTarget()V
+
+    .line 2210
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_3
 
-    .line 2554
-    .end local v1           #activeCallAddress:Ljava/lang/String;
-    :cond_c
-    const/4 v4, 0x0
+    .line 2218
+    .end local v3           #i:I
+    .end local v4           #notifyMsg:Landroid/os/Message;
+    :cond_17
+    const/4 v3, 0x0
+
+    .restart local v3       #i:I
+    :goto_4
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v5, v5, Lcom/android/internal/telephony/CallManager;->mPostDialCharacterRegistrants2:Landroid/os/RegistrantList;
+
+    invoke-virtual {v5}, Landroid/os/RegistrantList;->size()I
+
+    move-result v5
+
+    if-ge v3, v5, :cond_0
+
+    .line 2220
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v5, v5, Lcom/android/internal/telephony/CallManager;->mPostDialCharacterRegistrants2:Landroid/os/RegistrantList;
+
+    invoke-virtual {v5, v3}, Landroid/os/RegistrantList;->get(I)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Landroid/os/Registrant;
+
+    invoke-virtual {v5}, Landroid/os/Registrant;->messageForRegistrant()Landroid/os/Message;
+
+    move-result-object v4
+
+    .line 2221
+    .restart local v4       #notifyMsg:Landroid/os/Message;
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    iput-object v5, v4, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    .line 2222
+    iget v5, p1, Landroid/os/Message;->arg1:I
+
+    iput v5, v4, Landroid/os/Message;->arg1:I
+
+    .line 2223
+    invoke-virtual {v4}, Landroid/os/Message;->sendToTarget()V
+
+    .line 2218
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_4
 
-    .line 2565
-    .restart local v4       #bMoMtConflict:Z
-    :cond_d
-    move-object/from16 v0, p1
+    .line 2230
+    .end local v3           #i:I
+    .end local v4           #notifyMsg:Landroid/os/Message;
+    :pswitch_15
+    const-string v5, "CallManager"
 
-    iget v14, v0, Landroid/os/Message;->what:I
+    const-string v6, " handleMessage (EVENT_SPEECH_INFO)"
 
-    add-int/lit8 v14, v14, -0x66
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    div-int/lit8 v9, v14, 0x64
+    .line 2231
+    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 2566
-    .restart local v9       #index:I
-    move-object/from16 v0, p0
+    check-cast v0, Landroid/os/AsyncResult;
 
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+    .line 2232
+    .local v0, ar:Landroid/os/AsyncResult;
+    iget-object v5, v0, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
 
-    iget-object v14, v14, Lcom/android/internal/telephony/CallManager;->mNewRingingConnectionRegistrantsGemini:[Landroid/os/RegistrantList;
+    check-cast v5, [I
 
-    aget-object v15, v14, v9
+    check-cast v5, [I
 
-    move-object/from16 v0, p1
+    aget v5, v5, v8
 
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
+    if-ne v5, v9, :cond_18
 
-    check-cast v14, Landroid/os/AsyncResult;
+    .line 2234
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
 
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+    #setter for: Lcom/android/internal/telephony/CallManager;->espeech_info:I
+    invoke-static {v5, v9}, Lcom/android/internal/telephony/CallManager;->access$202(Lcom/android/internal/telephony/CallManager;I)I
 
-    .line 2567
-    move-object/from16 v0, p0
+    .line 2235
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
 
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v15, v14, Lcom/android/internal/telephony/CallManager;->mNewRingingConnectionRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    goto/16 :goto_0
-
-    .line 2575
-    .end local v3           #bECCExists:Z
-    .end local v4           #bMoMtConflict:Z
-    .end local v9           #index:I
-    :sswitch_5
-    const-string v14, "CallManager"
-
-    const-string v15, " handleMessage (EVENT_UNKNOWN_CONNECTION)"
-
-    invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2576
-    move-object/from16 v0, p1
-
-    iget v14, v0, Landroid/os/Message;->what:I
-
-    add-int/lit8 v14, v14, -0x67
-
-    div-int/lit8 v9, v14, 0x64
-
-    .line 2577
-    .restart local v9       #index:I
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v14, v14, Lcom/android/internal/telephony/CallManager;->mUnknownConnectionRegistrantsGemini:[Landroid/os/RegistrantList;
-
-    aget-object v15, v14, v9
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    .line 2578
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v15, v14, Lcom/android/internal/telephony/CallManager;->mUnknownConnectionRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    goto/16 :goto_0
-
-    .line 2584
-    .end local v9           #index:I
-    :sswitch_6
-    const-string v14, "CallManager"
-
-    const-string v15, " handleMessage (EVENT_INCOMING_RING)"
-
-    invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2586
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    invoke-virtual {v14}, Lcom/android/internal/telephony/CallManager;->hasActiveFgCall()Z
-
-    move-result v14
-
-    if-nez v14, :cond_0
-
-    .line 2587
-    move-object/from16 v0, p1
-
-    iget v14, v0, Landroid/os/Message;->what:I
-
-    add-int/lit8 v14, v14, -0x68
-
-    div-int/lit8 v9, v14, 0x64
-
-    .line 2588
-    .restart local v9       #index:I
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v14, v14, Lcom/android/internal/telephony/CallManager;->mIncomingRingRegistrantsGemini:[Landroid/os/RegistrantList;
-
-    aget-object v15, v14, v9
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    .line 2589
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v15, v14, Lcom/android/internal/telephony/CallManager;->mIncomingRingRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    goto/16 :goto_0
-
-    .line 2596
-    .end local v9           #index:I
-    :sswitch_7
-    const-string v14, "CallManager"
-
-    const-string v15, " handleMessage (EVENT_RINGBACK_TONE)"
-
-    invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2597
-    move-object/from16 v0, p1
-
-    iget v14, v0, Landroid/os/Message;->what:I
-
-    add-int/lit8 v14, v14, -0x69
-
-    div-int/lit8 v9, v14, 0x64
-
-    .line 2598
-    .restart local v9       #index:I
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v14, v14, Lcom/android/internal/telephony/CallManager;->mRingbackToneRegistrantsGemini:[Landroid/os/RegistrantList;
-
-    aget-object v15, v14, v9
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    .line 2599
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v15, v14, Lcom/android/internal/telephony/CallManager;->mRingbackToneRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    goto/16 :goto_0
-
-    .line 2605
-    .end local v9           #index:I
-    :sswitch_8
-    const-string v14, "CallManager"
-
-    const-string v15, " handleMessage (EVENT_IN_CALL_VOICE_PRIVACY_ON)"
-
-    invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2606
-    move-object/from16 v0, p1
-
-    iget v14, v0, Landroid/os/Message;->what:I
-
-    add-int/lit8 v14, v14, -0x6a
-
-    div-int/lit8 v9, v14, 0x64
-
-    .line 2607
-    .restart local v9       #index:I
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v14, v14, Lcom/android/internal/telephony/CallManager;->mInCallVoicePrivacyOnRegistrantsGemini:[Landroid/os/RegistrantList;
-
-    aget-object v15, v14, v9
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    .line 2608
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v15, v14, Lcom/android/internal/telephony/CallManager;->mInCallVoicePrivacyOnRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    goto/16 :goto_0
-
-    .line 2614
-    .end local v9           #index:I
-    :sswitch_9
-    const-string v14, "CallManager"
-
-    const-string v15, " handleMessage (EVENT_IN_CALL_VOICE_PRIVACY_OFF)"
-
-    invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2615
-    move-object/from16 v0, p1
-
-    iget v14, v0, Landroid/os/Message;->what:I
-
-    add-int/lit8 v14, v14, -0x6b
-
-    div-int/lit8 v9, v14, 0x64
-
-    .line 2616
-    .restart local v9       #index:I
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v14, v14, Lcom/android/internal/telephony/CallManager;->mInCallVoicePrivacyOffRegistrantsGemini:[Landroid/os/RegistrantList;
-
-    aget-object v15, v14, v9
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    .line 2617
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v15, v14, Lcom/android/internal/telephony/CallManager;->mInCallVoicePrivacyOffRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    goto/16 :goto_0
-
-    .line 2623
-    .end local v9           #index:I
-    :sswitch_a
-    const-string v14, "CallManager"
-
-    const-string v15, " handleMessage (EVENT_CALL_WAITING)"
-
-    invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2624
-    move-object/from16 v0, p1
-
-    iget v14, v0, Landroid/os/Message;->what:I
-
-    add-int/lit8 v14, v14, -0x6c
-
-    div-int/lit8 v9, v14, 0x64
-
-    .line 2625
-    .restart local v9       #index:I
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v14, v14, Lcom/android/internal/telephony/CallManager;->mCallWaitingRegistrantsGemini:[Landroid/os/RegistrantList;
-
-    aget-object v15, v14, v9
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    .line 2626
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v15, v14, Lcom/android/internal/telephony/CallManager;->mCallWaitingRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    goto/16 :goto_0
-
-    .line 2632
-    .end local v9           #index:I
-    :sswitch_b
-    const-string v14, "CallManager"
-
-    const-string v15, " handleMessage (EVENT_DISPLAY_INFO)"
-
-    invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2633
-    move-object/from16 v0, p1
-
-    iget v14, v0, Landroid/os/Message;->what:I
-
-    add-int/lit8 v14, v14, -0x6d
-
-    div-int/lit8 v9, v14, 0x64
-
-    .line 2634
-    .restart local v9       #index:I
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v14, v14, Lcom/android/internal/telephony/CallManager;->mDisplayInfoRegistrantsGemini:[Landroid/os/RegistrantList;
-
-    aget-object v15, v14, v9
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    .line 2635
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v15, v14, Lcom/android/internal/telephony/CallManager;->mDisplayInfoRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    goto/16 :goto_0
-
-    .line 2641
-    .end local v9           #index:I
-    :sswitch_c
-    const-string v14, "CallManager"
-
-    const-string v15, " handleMessage (EVENT_SIGNAL_INFO)"
-
-    invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2642
-    move-object/from16 v0, p1
-
-    iget v14, v0, Landroid/os/Message;->what:I
-
-    add-int/lit8 v14, v14, -0x6e
-
-    div-int/lit8 v9, v14, 0x64
-
-    .line 2643
-    .restart local v9       #index:I
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v14, v14, Lcom/android/internal/telephony/CallManager;->mSignalInfoRegistrantsGemini:[Landroid/os/RegistrantList;
-
-    aget-object v15, v14, v9
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    .line 2644
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v15, v14, Lcom/android/internal/telephony/CallManager;->mSignalInfoRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    goto/16 :goto_0
-
-    .line 2650
-    .end local v9           #index:I
-    :sswitch_d
-    const-string v14, "CallManager"
-
-    const-string v15, " handleMessage (EVENT_CDMA_OTA_STATUS_CHANGE)"
-
-    invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2651
-    move-object/from16 v0, p1
-
-    iget v14, v0, Landroid/os/Message;->what:I
-
-    add-int/lit8 v14, v14, -0x6f
-
-    div-int/lit8 v9, v14, 0x64
-
-    .line 2652
-    .restart local v9       #index:I
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v14, v14, Lcom/android/internal/telephony/CallManager;->mCdmaOtaStatusChangeRegistrantsGemini:[Landroid/os/RegistrantList;
-
-    aget-object v15, v14, v9
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    .line 2653
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v15, v14, Lcom/android/internal/telephony/CallManager;->mCdmaOtaStatusChangeRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    goto/16 :goto_0
-
-    .line 2659
-    .end local v9           #index:I
-    :sswitch_e
-    const-string v14, "CallManager"
-
-    const-string v15, " handleMessage (EVENT_RESEND_INCALL_MUTE)"
-
-    invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2660
-    move-object/from16 v0, p1
-
-    iget v14, v0, Landroid/os/Message;->what:I
-
-    add-int/lit8 v14, v14, -0x70
-
-    div-int/lit8 v9, v14, 0x64
-
-    .line 2661
-    .restart local v9       #index:I
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v14, v14, Lcom/android/internal/telephony/CallManager;->mResendIncallMuteRegistrantsGemini:[Landroid/os/RegistrantList;
-
-    aget-object v15, v14, v9
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    .line 2662
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v15, v14, Lcom/android/internal/telephony/CallManager;->mResendIncallMuteRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    goto/16 :goto_0
-
-    .line 2668
-    .end local v9           #index:I
-    :sswitch_f
-    const-string v14, "CallManager"
-
-    const-string v15, " handleMessage (EVENT_MMI_INITIATE)"
-
-    invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2669
-    move-object/from16 v0, p1
-
-    iget v14, v0, Landroid/os/Message;->what:I
-
-    add-int/lit8 v14, v14, -0x71
-
-    div-int/lit8 v9, v14, 0x64
-
-    .line 2670
-    .restart local v9       #index:I
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v14, v14, Lcom/android/internal/telephony/CallManager;->mMmiInitiateRegistrantsGemini:[Landroid/os/RegistrantList;
-
-    aget-object v15, v14, v9
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    .line 2671
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v15, v14, Lcom/android/internal/telephony/CallManager;->mMmiInitiateRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    goto/16 :goto_0
-
-    .line 2677
-    .end local v9           #index:I
-    :sswitch_10
-    const-string v14, "CallManager"
-
-    const-string v15, " handleMessage (EVENT_MMI_COMPLETE)"
-
-    invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2678
-    move-object/from16 v0, p1
-
-    iget v14, v0, Landroid/os/Message;->what:I
-
-    add-int/lit8 v14, v14, -0x72
-
-    div-int/lit8 v9, v14, 0x64
-
-    .line 2679
-    .restart local v9       #index:I
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v14, v14, Lcom/android/internal/telephony/CallManager;->mMmiCompleteRegistrantsGemini:[Landroid/os/RegistrantList;
-
-    aget-object v15, v14, v9
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    .line 2680
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v15, v14, Lcom/android/internal/telephony/CallManager;->mMmiCompleteRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    goto/16 :goto_0
-
-    .line 2686
-    .end local v9           #index:I
-    :sswitch_11
-    const-string v14, "CallManager"
-
-    const-string v15, " handleMessage (EVENT_ECM_TIMER_RESET)"
-
-    invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2687
-    move-object/from16 v0, p1
-
-    iget v14, v0, Landroid/os/Message;->what:I
-
-    add-int/lit8 v14, v14, -0x73
-
-    div-int/lit8 v9, v14, 0x64
-
-    .line 2688
-    .restart local v9       #index:I
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v14, v14, Lcom/android/internal/telephony/CallManager;->mEcmTimerResetRegistrantsGemini:[Landroid/os/RegistrantList;
-
-    aget-object v15, v14, v9
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    .line 2689
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v15, v14, Lcom/android/internal/telephony/CallManager;->mEcmTimerResetRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    goto/16 :goto_0
-
-    .line 2695
-    .end local v9           #index:I
-    :sswitch_12
-    const-string v14, "CallManager"
-
-    const-string v15, " handleMessage (EVENT_SUBSCRIPTION_INFO_READY)"
-
-    invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2696
-    move-object/from16 v0, p1
-
-    iget v14, v0, Landroid/os/Message;->what:I
-
-    add-int/lit8 v14, v14, -0x74
-
-    div-int/lit8 v9, v14, 0x64
-
-    .line 2697
-    .restart local v9       #index:I
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v14, v14, Lcom/android/internal/telephony/CallManager;->mSubscriptionInfoReadyRegistrantsGemini:[Landroid/os/RegistrantList;
-
-    aget-object v15, v14, v9
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    .line 2698
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v15, v14, Lcom/android/internal/telephony/CallManager;->mSubscriptionInfoReadyRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    goto/16 :goto_0
-
-    .line 2704
-    .end local v9           #index:I
-    :sswitch_13
-    const-string v14, "CallManager"
-
-    const-string v15, " handleMessage (EVENT_SUPP_SERVICE_FAILED)"
-
-    invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2705
-    move-object/from16 v0, p1
-
-    iget v14, v0, Landroid/os/Message;->what:I
-
-    add-int/lit8 v14, v14, -0x75
-
-    div-int/lit8 v9, v14, 0x64
-
-    .line 2706
-    .restart local v9       #index:I
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v14, v14, Lcom/android/internal/telephony/CallManager;->mSuppServiceFailedRegistrantsGemini:[Landroid/os/RegistrantList;
-
-    aget-object v15, v14, v9
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    .line 2707
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v15, v14, Lcom/android/internal/telephony/CallManager;->mSuppServiceFailedRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    .line 2710
-    const-string v14, "CallManager"
-
-    const-string v15, "Reset WaitingForHoldRequest variables since hold request is failed."
-
-    invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2711
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    sget-object v15, Lcom/android/internal/telephony/CallManager$WaitingReasonForHold;->NONE:Lcom/android/internal/telephony/CallManager$WaitingReasonForHold;
-
-    #setter for: Lcom/android/internal/telephony/CallManager;->mWaitingReasonForHold:Lcom/android/internal/telephony/CallManager$WaitingReasonForHold;
-    invoke-static {v14, v15}, Lcom/android/internal/telephony/CallManager;->access$502(Lcom/android/internal/telephony/CallManager;Lcom/android/internal/telephony/CallManager$WaitingReasonForHold;)Lcom/android/internal/telephony/CallManager$WaitingReasonForHold;
-
-    .line 2712
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    const/4 v15, 0x0
-
-    #setter for: Lcom/android/internal/telephony/CallManager;->bWaitingForHoldRequest:Z
-    invoke-static {v14, v15}, Lcom/android/internal/telephony/CallManager;->access$602(Lcom/android/internal/telephony/CallManager;Z)Z
-
-    .line 2715
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    #getter for: Lcom/android/internal/telephony/CallManager;->mCurrentAudioMode:I
-    invoke-static {v14}, Lcom/android/internal/telephony/CallManager;->access$700(Lcom/android/internal/telephony/CallManager;)I
-
-    move-result v14
-
-    const/4 v15, -0x1
-
-    if-eq v14, v15, :cond_0
-
-    .line 2716
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    #calls: Lcom/android/internal/telephony/CallManager;->getContext()Landroid/content/Context;
-    invoke-static {v14}, Lcom/android/internal/telephony/CallManager;->access$800(Lcom/android/internal/telephony/CallManager;)Landroid/content/Context;
-
-    move-result-object v14
-
-    const-string v15, "audio"
-
-    invoke-virtual {v14, v15}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/media/AudioManager;
-
-    .line 2717
-    .local v2, audioManager:Landroid/media/AudioManager;
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    #getter for: Lcom/android/internal/telephony/CallManager;->mCurrentAudioMode:I
-    invoke-static {v14}, Lcom/android/internal/telephony/CallManager;->access$700(Lcom/android/internal/telephony/CallManager;)I
-
-    move-result v14
-
-    invoke-virtual {v2, v14}, Landroid/media/AudioManager;->setMode(I)V
-
-    .line 2718
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    const/4 v15, -0x1
-
-    #setter for: Lcom/android/internal/telephony/CallManager;->mCurrentAudioMode:I
-    invoke-static {v14, v15}, Lcom/android/internal/telephony/CallManager;->access$702(Lcom/android/internal/telephony/CallManager;I)I
-
-    goto/16 :goto_0
-
-    .line 2726
-    .end local v2           #audioManager:Landroid/media/AudioManager;
-    .end local v9           #index:I
-    :sswitch_14
-    const-string v14, "CallManager"
-
-    const-string v15, " handleMessage (EVENT_SERVICE_STATE_CHANGED)"
-
-    invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2727
-    move-object/from16 v0, p1
-
-    iget v14, v0, Landroid/os/Message;->what:I
-
-    add-int/lit8 v14, v14, -0x76
-
-    div-int/lit8 v9, v14, 0x64
-
-    .line 2728
-    .restart local v9       #index:I
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v14, v14, Lcom/android/internal/telephony/CallManager;->mServiceStateChangedRegistrantsGemini:[Landroid/os/RegistrantList;
-
-    aget-object v15, v14, v9
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    .line 2729
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v15, v14, Lcom/android/internal/telephony/CallManager;->mServiceStateChangedRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    .line 2735
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    #calls: Lcom/android/internal/telephony/CallManager;->clearEspeechInfo()Z
-    invoke-static {v14}, Lcom/android/internal/telephony/CallManager;->access$100(Lcom/android/internal/telephony/CallManager;)Z
-
-    move-result v14
-
-    const/4 v15, 0x1
-
-    if-ne v14, v15, :cond_0
-
-    .line 2736
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    const/4 v15, 0x0
+    const/4 v6, 0x2
 
     #calls: Lcom/android/internal/telephony/CallManager;->setAudioMode(I)V
-    invoke-static {v14, v15}, Lcom/android/internal/telephony/CallManager;->access$300(Lcom/android/internal/telephony/CallManager;I)V
+    invoke-static {v5, v6}, Lcom/android/internal/telephony/CallManager;->access$300(Lcom/android/internal/telephony/CallManager;I)V
+
+    .line 2241
+    :goto_5
+    const/16 v5, 0x78
+
+    iget v6, p1, Landroid/os/Message;->what:I
+
+    if-ne v5, v6, :cond_19
+
+    .line 2242
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mSpeechInfoRegistrants:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
 
     goto/16 :goto_0
 
-    .line 2745
-    .end local v9           #index:I
-    :sswitch_15
-    const-string v14, "CallManager"
+    .line 2239
+    :cond_18
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
 
-    const-string v15, " handleMessage (EVENT_POST_DIAL_CHARACTER)"
-
-    invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2747
-    move-object/from16 v0, p1
-
-    iget v14, v0, Landroid/os/Message;->what:I
-
-    add-int/lit8 v14, v14, -0x77
-
-    div-int/lit8 v9, v14, 0x64
-
-    .line 2748
-    .restart local v9       #index:I
-    const/4 v8, 0x0
-
-    .local v8, i:I
-    :goto_5
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v14, v14, Lcom/android/internal/telephony/CallManager;->mPostDialCharacterRegistrantsGemini:[Landroid/os/RegistrantList;
-
-    aget-object v14, v14, v9
-
-    invoke-virtual {v14}, Landroid/os/RegistrantList;->size()I
-
-    move-result v14
-
-    if-ge v8, v14, :cond_e
-
-    .line 2750
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v14, v14, Lcom/android/internal/telephony/CallManager;->mPostDialCharacterRegistrantsGemini:[Landroid/os/RegistrantList;
-
-    aget-object v14, v14, v9
-
-    invoke-virtual {v14, v8}, Landroid/os/RegistrantList;->get(I)Ljava/lang/Object;
-
-    move-result-object v14
-
-    check-cast v14, Landroid/os/Registrant;
-
-    invoke-virtual {v14}, Landroid/os/Registrant;->messageForRegistrant()Landroid/os/Message;
-
-    move-result-object v13
-
-    .line 2751
-    .local v13, notifyMsg:Landroid/os/Message;
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    iput-object v14, v13, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    .line 2752
-    move-object/from16 v0, p1
-
-    iget v14, v0, Landroid/os/Message;->arg1:I
-
-    iput v14, v13, Landroid/os/Message;->arg1:I
-
-    .line 2753
-    invoke-virtual {v13}, Landroid/os/Message;->sendToTarget()V
-
-    .line 2748
-    add-int/lit8 v8, v8, 0x1
+    #setter for: Lcom/android/internal/telephony/CallManager;->espeech_info:I
+    invoke-static {v5, v8}, Lcom/android/internal/telephony/CallManager;->access$202(Lcom/android/internal/telephony/CallManager;I)I
 
     goto :goto_5
 
-    .line 2755
-    .end local v13           #notifyMsg:Landroid/os/Message;
-    :cond_e
-    const/4 v8, 0x0
+    .line 2244
+    :cond_19
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
 
-    :goto_6
-    move-object/from16 v0, p0
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mSpeechInfoRegistrants2:Landroid/os/RegistrantList;
 
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    iget-object v14, v14, Lcom/android/internal/telephony/CallManager;->mPostDialCharacterRegistrants:Landroid/os/RegistrantList;
+    check-cast v5, Landroid/os/AsyncResult;
 
-    invoke-virtual {v14}, Landroid/os/RegistrantList;->size()I
-
-    move-result v14
-
-    if-ge v8, v14, :cond_0
-
-    .line 2757
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v14, v14, Lcom/android/internal/telephony/CallManager;->mPostDialCharacterRegistrants:Landroid/os/RegistrantList;
-
-    invoke-virtual {v14, v8}, Landroid/os/RegistrantList;->get(I)Ljava/lang/Object;
-
-    move-result-object v14
-
-    check-cast v14, Landroid/os/Registrant;
-
-    invoke-virtual {v14}, Landroid/os/Registrant;->messageForRegistrant()Landroid/os/Message;
-
-    move-result-object v13
-
-    .line 2758
-    .restart local v13       #notifyMsg:Landroid/os/Message;
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    iput-object v14, v13, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    .line 2759
-    move-object/from16 v0, p1
-
-    iget v14, v0, Landroid/os/Message;->arg1:I
-
-    iput v14, v13, Landroid/os/Message;->arg1:I
-
-    .line 2760
-    invoke-virtual {v13}, Landroid/os/Message;->sendToTarget()V
-
-    .line 2755
-    add-int/lit8 v8, v8, 0x1
-
-    goto :goto_6
-
-    .line 2768
-    .end local v8           #i:I
-    .end local v9           #index:I
-    .end local v13           #notifyMsg:Landroid/os/Message;
-    :sswitch_16
-    const-string v14, "CallManager"
-
-    const-string v15, " handleMessage (EVENT_SPEECH_INFO)"
-
-    invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2769
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    move-object/from16 v0, p1
-
-    #calls: Lcom/android/internal/telephony/CallManager;->handleSpeechInfo(Landroid/os/Message;)Z
-    invoke-static {v14, v0}, Lcom/android/internal/telephony/CallManager;->access$900(Lcom/android/internal/telephony/CallManager;Landroid/os/Message;)Z
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
 
     goto/16 :goto_0
 
-    .line 2776
-    :sswitch_17
-    const-string v14, "CallManager"
+    .line 2249
+    .end local v0           #ar:Landroid/os/AsyncResult;
+    :pswitch_16
+    const-string v5, "CallManager"
 
-    const-string v15, " handleMessage (EVENT_VT_RING_INFO)"
+    const-string v6, " handleMessage (EVENT_VT_RING_INFO)"
 
-    invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2777
-    move-object/from16 v0, p1
+    .line 2250
+    const/16 v5, 0x7a
 
-    iget v14, v0, Landroid/os/Message;->what:I
+    iget v6, p1, Landroid/os/Message;->what:I
 
-    add-int/lit8 v14, v14, -0x7a
+    if-ne v5, v6, :cond_1a
 
-    div-int/lit8 v9, v14, 0x64
+    .line 2251
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
 
-    .line 2778
-    .restart local v9       #index:I
-    move-object/from16 v0, p0
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mVtRingInfoRegistrants:Landroid/os/RegistrantList;
 
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    iget-object v14, v14, Lcom/android/internal/telephony/CallManager;->mVtRingInfoRegistrantsGemini:[Landroid/os/RegistrantList;
+    check-cast v5, Landroid/os/AsyncResult;
 
-    aget-object v15, v14, v9
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    .line 2779
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v15, v14, Lcom/android/internal/telephony/CallManager;->mVtRingInfoRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
 
     goto/16 :goto_0
 
-    .line 2785
-    .end local v9           #index:I
-    :sswitch_18
-    const-string v14, "CallManager"
+    .line 2253
+    :cond_1a
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
 
-    const-string v15, " handleMessage (EVENT_VT_STATUS_INFO)"
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mVtRingInfoRegistrants2:Landroid/os/RegistrantList;
 
-    invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 2788
-    move-object/from16 v0, p0
+    check-cast v5, Landroid/os/AsyncResult;
 
-    iget-object v15, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    #calls: Lcom/android/internal/telephony/CallManager;->setVTSpeechCall(Landroid/os/AsyncResult;)V
-    invoke-static {v15, v14}, Lcom/android/internal/telephony/CallManager;->access$1000(Lcom/android/internal/telephony/CallManager;Landroid/os/AsyncResult;)V
-
-    .line 2789
-    move-object/from16 v0, p1
-
-    iget v14, v0, Landroid/os/Message;->what:I
-
-    add-int/lit8 v14, v14, -0x79
-
-    div-int/lit8 v9, v14, 0x64
-
-    .line 2790
-    .restart local v9       #index:I
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v14, v14, Lcom/android/internal/telephony/CallManager;->mVtStatusInfoRegistrantsGemini:[Landroid/os/RegistrantList;
-
-    aget-object v15, v14, v9
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    .line 2791
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v15, v14, Lcom/android/internal/telephony/CallManager;->mVtStatusInfoRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
 
     goto/16 :goto_0
 
-    .line 2797
-    .end local v9           #index:I
-    :sswitch_19
-    const-string v14, "CallManager"
+    .line 2258
+    :pswitch_17
+    const-string v5, "CallManager"
 
-    const-string v15, " handleMessage (EVENT_CRSS_SUPP_SERVICE_NOTIFICATION)"
+    const-string v6, " handleMessage (EVENT_VT_STATUS_INFO)"
 
-    invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2798
-    move-object/from16 v0, p1
+    .line 2259
+    const/16 v5, 0x79
 
-    iget v14, v0, Landroid/os/Message;->what:I
+    iget v6, p1, Landroid/os/Message;->what:I
 
-    add-int/lit8 v14, v14, -0x7b
+    if-ne v5, v6, :cond_1b
 
-    div-int/lit8 v9, v14, 0x64
+    .line 2260
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
 
-    .line 2799
-    .restart local v9       #index:I
-    move-object/from16 v0, p0
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mVtStatusInfoRegistrants:Landroid/os/RegistrantList;
 
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    iget-object v14, v14, Lcom/android/internal/telephony/CallManager;->mCrssSuppServiceNotificationRegistrantsGemini:[Landroid/os/RegistrantList;
+    check-cast v5, Landroid/os/AsyncResult;
 
-    aget-object v15, v14, v9
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    .line 2800
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v15, v14, Lcom/android/internal/telephony/CallManager;->mCrssSuppServiceNotificationRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
 
     goto/16 :goto_0
 
-    .line 2806
-    .end local v9           #index:I
-    :sswitch_1a
-    const-string v14, "CallManager"
+    .line 2262
+    :cond_1b
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
 
-    const-string v15, " handleMessage (EVENT_SUPP_SERVICE_NOTIFICATION)"
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mVtStatusInfoRegistrants2:Landroid/os/RegistrantList;
 
-    invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 2807
-    move-object/from16 v0, p1
+    check-cast v5, Landroid/os/AsyncResult;
 
-    iget v14, v0, Landroid/os/Message;->what:I
-
-    add-int/lit8 v14, v14, -0x7c
-
-    div-int/lit8 v9, v14, 0x64
-
-    .line 2808
-    .restart local v9       #index:I
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v14, v14, Lcom/android/internal/telephony/CallManager;->mSuppServiceNotificationRegistrantsGemini:[Landroid/os/RegistrantList;
-
-    aget-object v15, v14, v9
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    .line 2809
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v15, v14, Lcom/android/internal/telephony/CallManager;->mSuppServiceNotificationRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
 
     goto/16 :goto_0
 
-    .line 2815
-    .end local v9           #index:I
-    :sswitch_1b
-    const-string v14, "CallManager"
+    .line 2267
+    :pswitch_18
+    const-string v5, "CallManager"
 
-    const-string v15, " handleMessage (EVENT_VT_REPLACE_DISCONNECT)"
+    const-string v6, " handleMessage (EVENT_CRSS_SUPP_SERVICE_NOTIFICATION)"
 
-    invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2816
-    move-object/from16 v0, p1
+    .line 2268
+    const/16 v5, 0x7b
 
-    iget v14, v0, Landroid/os/Message;->what:I
+    iget v6, p1, Landroid/os/Message;->what:I
 
-    add-int/lit8 v14, v14, -0x7d
+    if-ne v5, v6, :cond_1c
 
-    div-int/lit8 v9, v14, 0x64
+    .line 2269
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
 
-    .line 2817
-    .restart local v9       #index:I
-    move-object/from16 v0, p0
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mCrssSuppServiceNotificationRegistrants:Landroid/os/RegistrantList;
 
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    iget-object v14, v14, Lcom/android/internal/telephony/CallManager;->mVtReplaceDisconnectRegistrantsGemini:[Landroid/os/RegistrantList;
+    check-cast v5, Landroid/os/AsyncResult;
 
-    aget-object v15, v14, v9
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    .line 2818
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v15, v14, Lcom/android/internal/telephony/CallManager;->mVtReplaceDisconnectRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
 
     goto/16 :goto_0
 
-    .line 2825
-    .end local v9           #index:I
-    :sswitch_1c
-    const-string v14, "CallManager"
+    .line 2271
+    :cond_1c
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
 
-    const-string v15, " handleMessage (EVENT_CIPHER_INDICATION)"
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mCrssSuppServiceNotificationRegistrants2:Landroid/os/RegistrantList;
 
-    invoke-static {v14, v15}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 2826
-    move-object/from16 v0, p1
+    check-cast v5, Landroid/os/AsyncResult;
 
-    iget v14, v0, Landroid/os/Message;->what:I
-
-    add-int/lit8 v14, v14, -0x7d
-
-    div-int/lit8 v9, v14, 0x64
-
-    .line 2827
-    .restart local v9       #index:I
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v14, v14, Lcom/android/internal/telephony/CallManager;->mCipherIndicationRegistrantsGemini:[Landroid/os/RegistrantList;
-
-    aget-object v15, v14, v9
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
-
-    .line 2828
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
-
-    iget-object v15, v14, Lcom/android/internal/telephony/CallManager;->mCipherIndicationRegistrants:Landroid/os/RegistrantList;
-
-    move-object/from16 v0, p1
-
-    iget-object v14, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v14, Landroid/os/AsyncResult;
-
-    invoke-virtual {v15, v14}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
 
     goto/16 :goto_0
 
-    .line 2457
-    nop
+    .line 2276
+    :pswitch_19
+    const-string v5, "CallManager"
 
-    :sswitch_data_0
-    .sparse-switch
-        0x64 -> :sswitch_0
-        0x65 -> :sswitch_1
-        0x66 -> :sswitch_4
-        0x67 -> :sswitch_5
-        0x68 -> :sswitch_6
-        0x69 -> :sswitch_7
-        0x6a -> :sswitch_8
-        0x6b -> :sswitch_9
-        0x6c -> :sswitch_a
-        0x6d -> :sswitch_b
-        0x6e -> :sswitch_c
-        0x6f -> :sswitch_d
-        0x70 -> :sswitch_e
-        0x71 -> :sswitch_f
-        0x72 -> :sswitch_10
-        0x73 -> :sswitch_11
-        0x74 -> :sswitch_12
-        0x75 -> :sswitch_13
-        0x76 -> :sswitch_14
-        0x77 -> :sswitch_15
-        0x78 -> :sswitch_16
-        0x79 -> :sswitch_18
-        0x7a -> :sswitch_17
-        0x7b -> :sswitch_19
-        0x7c -> :sswitch_1a
-        0x7d -> :sswitch_1b
-        0x7e -> :sswitch_2
-        0x7f -> :sswitch_3
-        0x80 -> :sswitch_1c
-        0xc8 -> :sswitch_0
-        0xc9 -> :sswitch_1
-        0xca -> :sswitch_4
-        0xcb -> :sswitch_5
-        0xcc -> :sswitch_6
-        0xcd -> :sswitch_7
-        0xce -> :sswitch_8
-        0xcf -> :sswitch_9
-        0xd0 -> :sswitch_a
-        0xd1 -> :sswitch_b
-        0xd2 -> :sswitch_c
-        0xd3 -> :sswitch_d
-        0xd4 -> :sswitch_e
-        0xd5 -> :sswitch_f
-        0xd6 -> :sswitch_10
-        0xd7 -> :sswitch_11
-        0xd8 -> :sswitch_12
-        0xd9 -> :sswitch_13
-        0xda -> :sswitch_14
-        0xdb -> :sswitch_15
-        0xdc -> :sswitch_16
-        0xdd -> :sswitch_18
-        0xde -> :sswitch_17
-        0xdf -> :sswitch_19
-        0xe0 -> :sswitch_1a
-        0xe1 -> :sswitch_1b
-        0xe2 -> :sswitch_2
-        0xe3 -> :sswitch_3
-        0xe4 -> :sswitch_1c
-        0x12c -> :sswitch_0
-        0x12d -> :sswitch_1
-        0x12e -> :sswitch_4
-        0x12f -> :sswitch_5
-        0x130 -> :sswitch_6
-        0x131 -> :sswitch_7
-        0x132 -> :sswitch_8
-        0x133 -> :sswitch_9
-        0x134 -> :sswitch_a
-        0x135 -> :sswitch_b
-        0x136 -> :sswitch_c
-        0x137 -> :sswitch_d
-        0x138 -> :sswitch_e
-        0x139 -> :sswitch_f
-        0x13a -> :sswitch_10
-        0x13b -> :sswitch_11
-        0x13c -> :sswitch_12
-        0x13d -> :sswitch_13
-        0x13e -> :sswitch_14
-        0x13f -> :sswitch_15
-        0x140 -> :sswitch_16
-        0x141 -> :sswitch_18
-        0x142 -> :sswitch_17
-        0x143 -> :sswitch_19
-        0x144 -> :sswitch_1a
-        0x145 -> :sswitch_1b
-        0x146 -> :sswitch_2
-        0x147 -> :sswitch_3
-        0x148 -> :sswitch_1c
-        0x190 -> :sswitch_0
-        0x191 -> :sswitch_1
-        0x192 -> :sswitch_4
-        0x193 -> :sswitch_5
-        0x194 -> :sswitch_6
-        0x195 -> :sswitch_7
-        0x196 -> :sswitch_8
-        0x197 -> :sswitch_9
-        0x198 -> :sswitch_a
-        0x199 -> :sswitch_b
-        0x19a -> :sswitch_c
-        0x19b -> :sswitch_d
-        0x19c -> :sswitch_e
-        0x19d -> :sswitch_f
-        0x19e -> :sswitch_10
-        0x19f -> :sswitch_11
-        0x1a0 -> :sswitch_12
-        0x1a1 -> :sswitch_13
-        0x1a2 -> :sswitch_14
-        0x1a3 -> :sswitch_15
-        0x1a4 -> :sswitch_16
-        0x1a5 -> :sswitch_18
-        0x1a6 -> :sswitch_17
-        0x1a7 -> :sswitch_19
-        0x1a8 -> :sswitch_1a
-        0x1a9 -> :sswitch_1b
-        0x1aa -> :sswitch_2
-        0x1ab -> :sswitch_3
-        0x1ac -> :sswitch_1c
-    .end sparse-switch
+    const-string v6, " handleMessage (EVENT_SUPP_SERVICE_NOTIFICATION)"
+
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2277
+    const/16 v5, 0x7c
+
+    iget v6, p1, Landroid/os/Message;->what:I
+
+    if-ne v5, v6, :cond_1d
+
+    .line 2278
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mSuppServiceNotificationRegistrants:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 2280
+    :cond_1d
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mSuppServiceNotificationRegistrants2:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 2285
+    :pswitch_1a
+    const-string v5, "CallManager"
+
+    const-string v6, " handleMessage (EVENT_VT_REPLACE_DISCONNECT)"
+
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2286
+    const/16 v5, 0x7d
+
+    iget v6, p1, Landroid/os/Message;->what:I
+
+    if-ne v5, v6, :cond_1e
+
+    .line 2287
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mVtReplaceDisconnectRegistrants:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 2289
+    :cond_1e
+    iget-object v5, p0, Lcom/android/internal/telephony/CallManager$1;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iget-object v6, v5, Lcom/android/internal/telephony/CallManager;->mVtReplaceDisconnectRegistrants2:Landroid/os/RegistrantList;
+
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v5, Landroid/os/AsyncResult;
+
+    invoke-virtual {v6, v5}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
+
+    goto/16 :goto_0
+
+    .line 2016
+    :pswitch_data_0
+    .packed-switch 0x64
+        :pswitch_1
+        :pswitch_2
+        :pswitch_3
+        :pswitch_4
+        :pswitch_5
+        :pswitch_6
+        :pswitch_7
+        :pswitch_8
+        :pswitch_9
+        :pswitch_a
+        :pswitch_b
+        :pswitch_c
+        :pswitch_d
+        :pswitch_e
+        :pswitch_f
+        :pswitch_10
+        :pswitch_11
+        :pswitch_12
+        :pswitch_13
+        :pswitch_14
+        :pswitch_15
+        :pswitch_17
+        :pswitch_16
+        :pswitch_18
+        :pswitch_19
+        :pswitch_1a
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+        :pswitch_3
+        :pswitch_4
+        :pswitch_5
+        :pswitch_6
+        :pswitch_7
+        :pswitch_8
+        :pswitch_9
+        :pswitch_a
+        :pswitch_b
+        :pswitch_c
+        :pswitch_d
+        :pswitch_e
+        :pswitch_f
+        :pswitch_10
+        :pswitch_11
+        :pswitch_12
+        :pswitch_13
+        :pswitch_14
+        :pswitch_15
+        :pswitch_17
+        :pswitch_16
+        :pswitch_18
+        :pswitch_19
+        :pswitch_1a
+    .end packed-switch
 .end method

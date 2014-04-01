@@ -32,7 +32,7 @@
     .parameter
 
     .prologue
-    .line 284
+    .line 320
     iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;->this$0:Lcom/baidu/internal/keyguard/slide/TransportControlView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +45,7 @@
     .parameter "x0"
 
     .prologue
-    .line 284
+    .line 320
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;->artist:Ljava/lang/String;
 
     return-object v0
@@ -57,7 +57,7 @@
     .parameter "x1"
 
     .prologue
-    .line 284
+    .line 320
     iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;->artist:Ljava/lang/String;
 
     return-object p1
@@ -68,7 +68,7 @@
     .parameter "x0"
 
     .prologue
-    .line 284
+    .line 320
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;->trackTitle:Ljava/lang/String;
 
     return-object v0
@@ -80,7 +80,7 @@
     .parameter "x1"
 
     .prologue
-    .line 284
+    .line 320
     iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;->trackTitle:Ljava/lang/String;
 
     return-object p1
@@ -92,7 +92,7 @@
     .parameter "x1"
 
     .prologue
-    .line 284
+    .line 320
     iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;->albumTitle:Ljava/lang/String;
 
     return-object p1
@@ -103,7 +103,7 @@
     .parameter "x0"
 
     .prologue
-    .line 284
+    .line 320
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;->bitmap:Landroid/graphics/Bitmap;
 
     return-object v0
@@ -115,7 +115,7 @@
     .parameter "x1"
 
     .prologue
-    .line 284
+    .line 320
     iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;->bitmap:Landroid/graphics/Bitmap;
 
     return-object p1
@@ -127,7 +127,7 @@
     .locals 2
 
     .prologue
-    .line 291
+    .line 330
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

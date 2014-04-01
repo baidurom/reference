@@ -4,8 +4,6 @@
 
 
 # static fields
-.field public static final ACTION_ACMT_NETWORK_SERVICE_STATUS_INDICATOR:Ljava/lang/String; = "com.VendorName.CauseCode"
-
 .field public static final ACTION_ANY_DATA_CONNECTION_STATE_CHANGED:Ljava/lang/String; = "android.intent.action.ANY_DATA_STATE"
 
 .field public static final ACTION_ANY_DATA_CONNECTION_STATE_CHANGED_MOBILE:Ljava/lang/String; = "android.intent.action.ANY_DATA_STATE_MOBILE"
@@ -20,17 +18,9 @@
 
 .field public static final ACTION_DOWNLOAD_CALIBRATION_DATA:Ljava/lang/String; = "android.intent.action.DOWNLOAD_CALIBRATION_DATA"
 
-.field public static final ACTION_EF_CSP_CONTENT_NOTIFY:Ljava/lang/String; = "android.intent.action.ACTION_EF_CSP_CONTENT_NOTIFY"
-
-.field public static final ACTION_EF_RAT_CONTENT_NOTIFY:Ljava/lang/String; = "android.intent.action.ACTION_EF_RAT_CONTENT_NOTIFY"
-
 .field public static final ACTION_EMERGENCY_CALLBACK_MODE_CHANGED:Ljava/lang/String; = "android.intent.action.EMERGENCY_CALLBACK_MODE_CHANGED"
 
 .field public static final ACTION_GPRS_TRANSFER_TYPE:Ljava/lang/String; = "android.intent.action.GPRS_TRANSFER_TYPE"
-
-.field public static final ACTION_IVSR_NOTIFY:Ljava/lang/String; = "android.intent.action.IVSR_NOTIFY"
-
-.field public static final ACTION_MCC_MNC_CHANGED:Ljava/lang/String; = "android.intent.action.MCC_MNC_CHANGED"
 
 .field public static final ACTION_MMS_PDP_DISCONNECTED:Ljava/lang/String; = "android.intent.action.MMS_PDP_DISCONNECTED"
 
@@ -42,21 +32,15 @@
 
 .field public static final ACTION_PHB_STATE_CHANGED:Ljava/lang/String; = "android.intent.action.PHB_STATE_CHANGED"
 
-.field public static final ACTION_RADIO_AVAILABLE:Ljava/lang/String; = "android.intent.action.RADIO_AVAILABLE"
-
 .field public static final ACTION_RADIO_OFF:Ljava/lang/String; = "android.intent.action.RADIO_OFF"
 
 .field public static final ACTION_RADIO_TECHNOLOGY_CHANGED:Ljava/lang/String; = "android.intent.action.RADIO_TECHNOLOGY"
 
 .field public static final ACTION_SERVICE_STATE_CHANGED:Ljava/lang/String; = "android.intent.action.SERVICE_STATE"
 
-.field public static final ACTION_SHOW_NEW_SIM_DETECTED:Ljava/lang/String; = "android.intent.action.ACTION_SHOW_NEW_SIM_DETECTED"
-
 .field public static final ACTION_SHOW_NOTICE_ECM_BLOCK_OTHERS:Ljava/lang/String; = "android.intent.action.ACTION_SHOW_NOTICE_ECM_BLOCK_OTHERS"
 
 .field public static final ACTION_SIGNAL_STRENGTH_CHANGED:Ljava/lang/String; = "android.intent.action.SIG_STR"
-
-.field public static final ACTION_SIM_DETECTED:Ljava/lang/String; = "android.intent.action.ACTION_SIM_DETECTED"
 
 .field public static final ACTION_SIM_INDICATOR_STATE_CHANGED:Ljava/lang/String; = "android.intent.action.SIM_INDICATOR_STATE_CHANGED"
 
@@ -70,53 +54,13 @@
 
 .field public static final ACTION_SIM_STATE_CHANGED_EXTEND:Ljava/lang/String; = "android.intent.action.SIM_STATE_CHANGED_EXTEND"
 
-.field public static final ACTION_UNLOCK_SIM_LOCK:Ljava/lang/String; = "com.android.phone.ACTION_UNLOCK_SIM_LOCK"
-
 .field public static final ACTION_WIFI_FAILOVER_GPRS_DIALOG:Ljava/lang/String; = "android.intent.action_WIFI_FAILOVER_GPRS_DIALOG"
 
 .field public static final EXTRA_CALIBRATION_DATA:Ljava/lang/String; = "calibrationData"
 
-.field public static final EXTRA_MCC_MNC_CHANGED_MCC:Ljava/lang/String; = "mcc"
-
-.field public static final EXTRA_MCC_MNC_CHANGED_MNC:Ljava/lang/String; = "mnc"
-
-.field public static final EXTRA_PLMN:Ljava/lang/String; = "plmn"
-
-.field public static final EXTRA_RADIO_AVAILABLE_STATE:Ljava/lang/String; = "radio_available_state"
-
-.field public static final EXTRA_SHOW_PLMN:Ljava/lang/String; = "showPlmn"
-
-.field public static final EXTRA_SHOW_SPN:Ljava/lang/String; = "showSpn"
-
-.field public static final EXTRA_SIMME_LOCK_TYPE:Ljava/lang/String; = "com.android.phone.EXTRA_SIMME_LOCK_TYPE"
-
-.field public static final EXTRA_SIM_SLOT:Ljava/lang/String; = "com.android.phone.EXTRA_SIM_SLOT"
-
-.field public static final EXTRA_SPN:Ljava/lang/String; = "spn"
-
-.field public static final EXTRA_UNLOCK_TYPE:Ljava/lang/String; = "com.android.phone.EXTRA_UNLOCK_TYPE"
-
-.field public static final INTENT_KEY_EF_RAT_CONTENT:Ljava/lang/String; = "ef_rat_content"
-
-.field public static final INTENT_KEY_EF_RAT_STATUS:Ljava/lang/String; = "ef_rat_status"
-
 .field public static final INTENT_KEY_ICC_SLOT:Ljava/lang/String; = "slotId"
 
 .field public static final INTENT_KEY_ICC_STATE:Ljava/lang/String; = "state"
-
-.field public static final INTENT_KEY_IVSR_ACTION:Ljava/lang/String; = "action"
-
-.field public static final INTENT_KEY_PLMN_MODE_BIT:Ljava/lang/String; = "plmn_mode_bit"
-
-.field public static final SECRET_CODE_ACTION:Ljava/lang/String; = "android.provider.Telephony.SECRET_CODE"
-
-.field public static final SPN_STRINGS_UPDATED_ACTION:Ljava/lang/String; = "android.provider.Telephony.SPN_STRINGS_UPDATED"
-
-.field public static final VERIFY_TYPE_PIN:I = 0x1f5
-
-.field public static final VERIFY_TYPE_PUK:I = 0x1f6
-
-.field public static final VERIFY_TYPE_SIMMELOCK:I = 0x1f7
 
 
 # direct methods
@@ -124,7 +68,7 @@
     .locals 0
 
     .prologue
-    .line 61
+    .line 26
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

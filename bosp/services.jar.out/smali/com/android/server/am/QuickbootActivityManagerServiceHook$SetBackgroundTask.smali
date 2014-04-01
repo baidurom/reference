@@ -29,7 +29,7 @@
     .parameter
 
     .prologue
-    .line 168
+    .line 185
     iput-object p1, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook$SetBackgroundTask;->this$0:Lcom/android/server/am/QuickbootActivityManagerServiceHook;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .parameter "x1"
 
     .prologue
-    .line 168
+    .line 185
     invoke-direct {p0, p1}, Lcom/android/server/am/QuickbootActivityManagerServiceHook$SetBackgroundTask;-><init>(Lcom/android/server/am/QuickbootActivityManagerServiceHook;)V
 
     return-void
@@ -55,7 +55,7 @@
     .locals 4
 
     .prologue
-    .line 173
+    .line 190
     const-string v1, "QuickbootActivityManagerServiceHook"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -80,14 +80,14 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 175
+    .line 192
     iget v1, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook$SetBackgroundTask;->nextIndex:I
 
     const/4 v2, -0x1
 
     if-ne v1, v2, :cond_0
 
-    .line 176
+    .line 193
     iget-object v1, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook$SetBackgroundTask;->this$0:Lcom/android/server/am/QuickbootActivityManagerServiceHook;
 
     #getter for: Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mService:Lcom/android/server/am/ActivityManagerService;
@@ -99,11 +99,11 @@
 
     invoke-virtual {v1, v2}, Lcom/android/server/am/ActivityManagerService;->setQbBackgroundRes(I)V
 
-    .line 190
+    .line 207
     :goto_0
     return-void
 
-    .line 181
+    .line 198
     :cond_0
     iget-object v1, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook$SetBackgroundTask;->this$0:Lcom/android/server/am/QuickbootActivityManagerServiceHook;
 
@@ -122,12 +122,12 @@
 
     invoke-virtual {v1, v2}, Lcom/android/server/am/ActivityManagerService;->setQbBackgroundRes(I)V
 
-    .line 184
+    .line 201
     iget v1, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook$SetBackgroundTask;->nextIndex:I
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 185
+    .line 202
     .local v0, index:I
     invoke-static {}, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->access$1100()[I
 
@@ -137,12 +137,12 @@
 
     if-lt v0, v1, :cond_1
 
-    .line 186
+    .line 203
     invoke-static {}, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->access$600()I
 
     move-result v0
 
-    .line 189
+    .line 206
     :cond_1
     iget-object v1, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook$SetBackgroundTask;->this$0:Lcom/android/server/am/QuickbootActivityManagerServiceHook;
 

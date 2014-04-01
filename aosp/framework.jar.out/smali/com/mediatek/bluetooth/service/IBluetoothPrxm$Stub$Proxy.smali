@@ -28,7 +28,7 @@
 
     .prologue
     .line 252
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 253
     iput-object p1, p0, Lcom/mediatek/bluetooth/service/IBluetoothPrxm$Stub$Proxy;->mRemote:Landroid/os/IBinder;

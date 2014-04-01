@@ -25,15 +25,9 @@
 
 .field public static final ENCODING_IS91_EXTENDED_PROTOCOL:I = 0x1
 
-.field public static final ENCODING_KOREAN:I = 0x6
-
 .field public static final ENCODING_LATIN:I = 0x8
 
-.field public static final ENCODING_LATIN_HEBREW:I = 0x7
-
 .field public static final ENCODING_OCTET:I = 0x0
-
-.field public static final ENCODING_SHIFT_JIS:I = 0x5
 
 .field public static final ENCODING_UNICODE_16:I = 0x4
 
@@ -252,7 +246,7 @@
 
     .prologue
     .line 24
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 132
     const/4 v0, 0x0

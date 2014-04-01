@@ -8,8 +8,6 @@
 
 .field public static final LISTEN_CALL_STATE:I = 0x20
 
-.field public static final LISTEN_CELL_INFO:I = 0x400
-
 .field public static final LISTEN_CELL_LOCATION:I = 0x10
 
 .field public static final LISTEN_DATA_ACTIVITY:I = 0x80
@@ -43,24 +41,24 @@
     .locals 1
 
     .prologue
-    .line 167
+    .line 159
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 299
+    .line 282
     new-instance v0, Landroid/telephony/PhoneStateListener$1;
 
     invoke-direct {v0, p0}, Landroid/telephony/PhoneStateListener$1;-><init>(Landroid/telephony/PhoneStateListener;)V
 
     iput-object v0, p0, Landroid/telephony/PhoneStateListener;->callback:Lcom/android/internal/telephony/IPhoneStateListener;
 
-    .line 349
+    .line 328
     new-instance v0, Landroid/telephony/PhoneStateListener$2;
 
     invoke-direct {v0, p0}, Landroid/telephony/PhoneStateListener$2;-><init>(Landroid/telephony/PhoneStateListener;)V
 
     iput-object v0, p0, Landroid/telephony/PhoneStateListener;->mHandler:Landroid/os/Handler;
 
-    .line 168
+    .line 160
     return-void
 .end method
 
@@ -70,7 +68,7 @@
     .locals 1
 
     .prologue
-    .line 395
+    .line 372
     iget-object v0, p0, Landroid/telephony/PhoneStateListener;->callback:Lcom/android/internal/telephony/IPhoneStateListener;
 
     return-object v0
@@ -81,7 +79,7 @@
     .parameter "cfi"
 
     .prologue
-    .line 208
+    .line 200
     return-void
 .end method
 
@@ -91,26 +89,7 @@
     .parameter "incomingNumber"
 
     .prologue
-    .line 226
-    return-void
-.end method
-
-.method public onCellInfoChanged(Ljava/util/List;)V
-    .locals 0
-    .parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List",
-            "<",
-            "Landroid/telephony/CellInfo;",
-            ">;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 293
-    .local p1, cellInfo:Ljava/util/List;,"Ljava/util/List<Landroid/telephony/CellInfo;>;"
+    .line 218
     return-void
 .end method
 
@@ -119,7 +98,7 @@
     .parameter "location"
 
     .prologue
-    .line 215
+    .line 207
     return-void
 .end method
 
@@ -128,7 +107,7 @@
     .parameter "direction"
 
     .prologue
-    .line 257
+    .line 249
     return-void
 .end method
 
@@ -137,7 +116,7 @@
     .parameter "state"
 
     .prologue
-    .line 238
+    .line 230
     return-void
 .end method
 
@@ -147,7 +126,7 @@
     .parameter "networkType"
 
     .prologue
-    .line 244
+    .line 236
     return-void
 .end method
 
@@ -156,7 +135,7 @@
     .parameter "mwi"
 
     .prologue
-    .line 201
+    .line 193
     return-void
 .end method
 
@@ -165,7 +144,7 @@
     .parameter "otaspMode"
 
     .prologue
-    .line 284
+    .line 276
     return-void
 .end method
 
@@ -174,7 +153,7 @@
     .parameter "serviceState"
 
     .prologue
-    .line 180
+    .line 172
     return-void
 .end method
 
@@ -185,7 +164,7 @@
     .end annotation
 
     .prologue
-    .line 194
+    .line 186
     return-void
 .end method
 
@@ -194,6 +173,6 @@
     .parameter "signalStrength"
 
     .prologue
-    .line 269
+    .line 261
     return-void
 .end method

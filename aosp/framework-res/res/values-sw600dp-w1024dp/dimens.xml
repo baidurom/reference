@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="preference_screen_side_margin">0.0dip</dimen>
+    <dimen name="preference_screen_side_margin_negative">0.0dip</dimen>
+    <dimen name="preference_screen_top_margin">0.0dip</dimen>
+    <dimen name="preference_screen_bottom_margin">0.0dip</dimen>
+    <dimen name="preference_widget_width">48.0dip</dimen>
+    <dimen name="preference_fragment_padding_bottom">0.0dip</dimen>
+    <dimen name="preference_fragment_padding_side">16.0dip</dimen>
+    <dimen name="preference_breadcrumb_paddingLeft">0.0dip</dimen>
+    <dimen name="preference_breadcrumb_paddingRight">0.0dip</dimen>
+</resources>

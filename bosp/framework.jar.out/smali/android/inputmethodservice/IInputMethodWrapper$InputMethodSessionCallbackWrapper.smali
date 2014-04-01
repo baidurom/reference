@@ -30,16 +30,16 @@
     .parameter "cb"
 
     .prologue
-    .line 86
+    .line 83
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 87
+    .line 84
     iput-object p1, p0, Landroid/inputmethodservice/IInputMethodWrapper$InputMethodSessionCallbackWrapper;->mContext:Landroid/content/Context;
 
-    .line 88
+    .line 85
     iput-object p2, p0, Landroid/inputmethodservice/IInputMethodWrapper$InputMethodSessionCallbackWrapper;->mCb:Lcom/android/internal/view/IInputMethodCallback;
 
-    .line 89
+    .line 86
     return-void
 .end method
 
@@ -50,10 +50,10 @@
     .parameter "session"
 
     .prologue
-    .line 92
+    .line 89
     if-eqz p1, :cond_0
 
-    .line 93
+    .line 90
     :try_start_0
     new-instance v0, Landroid/inputmethodservice/IInputMethodSessionWrapper;
 
@@ -61,27 +61,18 @@
 
     invoke-direct {v0, v1, p1}, Landroid/inputmethodservice/IInputMethodSessionWrapper;-><init>(Landroid/content/Context;Landroid/view/inputmethod/InputMethodSession;)V
 
-    .line 95
+    .line 92
     .local v0, wrap:Landroid/inputmethodservice/IInputMethodSessionWrapper;
     iget-object v1, p0, Landroid/inputmethodservice/IInputMethodWrapper$InputMethodSessionCallbackWrapper;->mCb:Lcom/android/internal/view/IInputMethodCallback;
 
     invoke-interface {v1, v0}, Lcom/android/internal/view/IInputMethodCallback;->sessionCreated(Lcom/android/internal/view/IInputMethodSession;)V
 
-    .line 97
-    iget-object v1, p0, Landroid/inputmethodservice/IInputMethodWrapper$InputMethodSessionCallbackWrapper;->mCb:Lcom/android/internal/view/IInputMethodCallback;
-
-    invoke-static {}, Landroid/os/Process;->myPid()I
-
-    move-result v2
-
-    invoke-interface {v1, v2}, Lcom/android/internal/view/IInputMethodCallback;->notifyImsPid(I)V
-
-    .line 103
+    .line 98
     .end local v0           #wrap:Landroid/inputmethodservice/IInputMethodSessionWrapper;
     :goto_0
     return-void
 
-    .line 99
+    .line 94
     :cond_0
     iget-object v1, p0, Landroid/inputmethodservice/IInputMethodWrapper$InputMethodSessionCallbackWrapper;->mCb:Lcom/android/internal/view/IInputMethodCallback;
 
@@ -93,7 +84,7 @@
 
     goto :goto_0
 
-    .line 101
+    .line 96
     :catch_0
     move-exception v1
 

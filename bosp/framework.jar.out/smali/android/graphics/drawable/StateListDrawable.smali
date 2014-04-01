@@ -46,29 +46,29 @@
     .parameter "res"
 
     .prologue
-    .line 323
+    .line 313
     invoke-direct {p0}, Landroid/graphics/drawable/DrawableContainer;-><init>()V
 
-    .line 324
+    .line 314
     new-instance v0, Landroid/graphics/drawable/StateListDrawable$StateListState;
 
     invoke-direct {v0, p1, p0, p2}, Landroid/graphics/drawable/StateListDrawable$StateListState;-><init>(Landroid/graphics/drawable/StateListDrawable$StateListState;Landroid/graphics/drawable/StateListDrawable;Landroid/content/res/Resources;)V
 
-    .line 325
+    .line 315
     .local v0, as:Landroid/graphics/drawable/StateListDrawable$StateListState;
     iput-object v0, p0, Landroid/graphics/drawable/StateListDrawable;->mStateListState:Landroid/graphics/drawable/StateListDrawable$StateListState;
 
-    .line 326
+    .line 316
     invoke-virtual {p0, v0}, Landroid/graphics/drawable/StateListDrawable;->setConstantState(Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;)V
 
-    .line 327
+    .line 317
     invoke-virtual {p0}, Landroid/graphics/drawable/StateListDrawable;->getState()[I
 
     move-result-object v1
 
     invoke-virtual {p0, v1}, Landroid/graphics/drawable/StateListDrawable;->onStateChange([I)Z
 
-    .line 328
+    .line 318
     return-void
 .end method
 
@@ -359,7 +359,7 @@
 
     move-result-object v15
 
-    const-string/jumbo v16, "item"
+    const-string v16, "item"
 
     invoke-virtual/range {v15 .. v16}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -717,42 +717,4 @@
     move-result v1
 
     goto :goto_0
-.end method
-
-.method public setLayoutDirection(I)V
-    .locals 3
-    .parameter "layoutDirection"
-
-    .prologue
-    .line 267
-    invoke-virtual {p0}, Landroid/graphics/drawable/StateListDrawable;->getStateCount()I
-
-    move-result v1
-
-    .line 268
-    .local v1, numStates:I
-    const/4 v0, 0x0
-
-    .local v0, i:I
-    :goto_0
-    if-ge v0, v1, :cond_0
-
-    .line 269
-    invoke-virtual {p0, v0}, Landroid/graphics/drawable/StateListDrawable;->getStateDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p1}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)V
-
-    .line 268
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    .line 271
-    :cond_0
-    invoke-super {p0, p1}, Landroid/graphics/drawable/DrawableContainer;->setLayoutDirection(I)V
-
-    .line 272
-    return-void
 .end method

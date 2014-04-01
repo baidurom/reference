@@ -178,11 +178,10 @@
     invoke-interface {v1}, Lcom/android/internal/telephony/IIccPhoneBook;->isPhbReady()Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_1
 
     move-result v2
 
-    .line 119
+    .line 117
     :goto_1
     return v2
 
@@ -216,27 +215,10 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 119
+    .line 117
     .end local v0           #e:Landroid/os/RemoteException;
     :cond_1
-    :goto_2
     const/4 v2, 0x0
 
     goto :goto_1
-
-    .line 115
-    :catch_1
-    move-exception v0
-
-    .line 116
-    .local v0, e:Ljava/lang/NullPointerException;
-    const-string v2, "BaiduIccPhonebookManager"
-
-    invoke-virtual {v0}, Ljava/lang/NullPointerException;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_2
 .end method

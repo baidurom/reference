@@ -103,7 +103,7 @@
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 10
+    .locals 9
     .parameter "code"
     .parameter "data"
     .parameter "reply"
@@ -117,18 +117,18 @@
     .prologue
     const/4 v0, 0x0
 
-    const/4 v8, 0x1
+    const/4 v7, 0x1
 
     .line 45
     sparse-switch p1, :sswitch_data_0
 
-    .line 83
+    .line 81
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    move-result v8
+    move-result v7
 
     :goto_0
-    return v8
+    return v7
 
     .line 49
     :sswitch_0
@@ -140,21 +140,21 @@
 
     .line 54
     :sswitch_1
-    const-string v9, "android.content.IIntentReceiver"
+    const-string v8, "android.content.IIntentReceiver"
 
-    invoke-virtual {p2, v9}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 56
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_0
+    if-eqz v8, :cond_0
 
     .line 57
-    sget-object v9, Landroid/content/Intent;->CREATOR:Landroid/os/Parcelable$Creator;
+    sget-object v8, Landroid/content/Intent;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    invoke-interface {v9, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    invoke-interface {v8, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -177,14 +177,14 @@
     .local v3, _arg2:Ljava/lang/String;
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_1
+    if-eqz v8, :cond_1
 
     .line 68
-    sget-object v9, Landroid/os/Bundle;->CREATOR:Landroid/os/Parcelable$Creator;
+    sget-object v8, Landroid/os/Bundle;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    invoke-interface {v9, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    invoke-interface {v8, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v4
 
@@ -195,35 +195,29 @@
     :goto_2
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_2
+    if-eqz v8, :cond_2
 
-    move v5, v8
+    move v5, v7
 
     .line 76
     .local v5, _arg4:Z
     :goto_3
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_3
+    if-eqz v8, :cond_3
 
-    move v6, v8
+    move v6, v7
 
-    .line 78
     .local v6, _arg5:Z
     :goto_4
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v7
-
-    .local v7, _arg6:I
     move-object v0, p0
 
-    .line 79
-    invoke-virtual/range {v0 .. v7}, Landroid/content/IIntentReceiver$Stub;->performReceive(Landroid/content/Intent;ILjava/lang/String;Landroid/os/Bundle;ZZI)V
+    .line 77
+    invoke-virtual/range {v0 .. v6}, Landroid/content/IIntentReceiver$Stub;->performReceive(Landroid/content/Intent;ILjava/lang/String;Landroid/os/Bundle;ZZ)V
 
     goto :goto_0
 
@@ -234,7 +228,6 @@
     .end local v4           #_arg3:Landroid/os/Bundle;
     .end local v5           #_arg4:Z
     .end local v6           #_arg5:Z
-    .end local v7           #_arg6:I
     :cond_0
     const/4 v1, 0x0
 

@@ -33,67 +33,69 @@
 
 .field private mReadyToDraw:Z
 
-.field private final mWebView:Landroid/webkit/WebViewClassic;
+.field private final mWebView:Landroid/webkit/WebView;
 
 .field private mZoomInProgress:Z
 
 
 # direct methods
-.method constructor <init>(Landroid/webkit/WebViewClassic;)V
-    .locals 6
+.method constructor <init>(Landroid/webkit/WebView;)V
+    .locals 5
     .parameter "w"
 
     .prologue
-    .line 102
+    .line 101
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 29
-    new-instance v2, Ljava/util/ArrayList;
+    .line 28
+    new-instance v1, Ljava/util/ArrayList;
 
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v2, p0, Landroid/webkit/ViewManager;->mChildren:Ljava/util/ArrayList;
+    iput-object v1, p0, Landroid/webkit/ViewManager;->mChildren:Ljava/util/ArrayList;
 
-    .line 32
-    const/4 v2, 0x0
+    .line 31
+    const/4 v1, 0x0
 
-    iput-boolean v2, p0, Landroid/webkit/ViewManager;->mZoomInProgress:Z
+    iput-boolean v1, p0, Landroid/webkit/ViewManager;->mZoomInProgress:Z
 
-    .line 103
-    iput-object p1, p0, Landroid/webkit/ViewManager;->mWebView:Landroid/webkit/WebViewClassic;
+    .line 102
+    iput-object p1, p0, Landroid/webkit/ViewManager;->mWebView:Landroid/webkit/WebView;
 
     .line 104
-    invoke-virtual {p1}, Landroid/webkit/WebViewClassic;->getWebView()Landroid/webkit/WebView;
+    invoke-virtual {p1}, Landroid/webkit/WebView;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Landroid/webkit/WebView;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v1
+
+    iget v1, v1, Landroid/util/DisplayMetrics;->widthPixels:I
+
+    invoke-virtual {p1}, Landroid/webkit/WebView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
     invoke-virtual {v2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    move-result-object v0
+    move-result-object v2
 
-    .line 105
-    .local v0, metrics:Landroid/util/DisplayMetrics;
-    iget v2, v0, Landroid/util/DisplayMetrics;->widthPixels:I
+    iget v2, v2, Landroid/util/DisplayMetrics;->heightPixels:I
 
-    iget v3, v0, Landroid/util/DisplayMetrics;->heightPixels:I
-
-    mul-int v1, v2, v3
+    mul-int v0, v1, v2
 
     .line 110
-    .local v1, pixelArea:I
-    int-to-double v2, v1
+    .local v0, pixelArea:I
+    int-to-double v1, v0
 
-    const-wide/high16 v4, 0x4006
+    const-wide/high16 v3, 0x4006
 
-    mul-double/2addr v2, v4
+    mul-double/2addr v1, v3
 
-    double-to-int v2, v2
+    double-to-int v1, v1
 
-    iput v2, p0, Landroid/webkit/ViewManager;->MAX_SURFACE_AREA:I
+    iput v1, p0, Landroid/webkit/ViewManager;->MAX_SURFACE_AREA:I
 
     .line 111
     return-void
@@ -105,19 +107,19 @@
     .parameter "x1"
 
     .prologue
-    .line 27
+    .line 26
     invoke-direct {p0, p1}, Landroid/webkit/ViewManager;->requestLayout(Landroid/webkit/ViewManager$ChildView;)V
 
     return-void
 .end method
 
-.method static synthetic access$200(Landroid/webkit/ViewManager;)Landroid/webkit/WebViewClassic;
+.method static synthetic access$200(Landroid/webkit/ViewManager;)Landroid/webkit/WebView;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 27
-    iget-object v0, p0, Landroid/webkit/ViewManager;->mWebView:Landroid/webkit/WebViewClassic;
+    .line 26
+    iget-object v0, p0, Landroid/webkit/ViewManager;->mWebView:Landroid/webkit/WebView;
 
     return-object v0
 .end method
@@ -127,7 +129,7 @@
     .parameter "x0"
 
     .prologue
-    .line 27
+    .line 26
     iget-object v0, p0, Landroid/webkit/ViewManager;->mChildren:Ljava/util/ArrayList;
 
     return-object v0
@@ -138,7 +140,7 @@
     .parameter "x0"
 
     .prologue
-    .line 27
+    .line 26
     iget-boolean v0, p0, Landroid/webkit/ViewManager;->mReadyToDraw:Z
 
     return v0
@@ -150,7 +152,7 @@
     .parameter "x1"
 
     .prologue
-    .line 27
+    .line 26
     iput-boolean p1, p0, Landroid/webkit/ViewManager;->mReadyToDraw:Z
 
     return p1
@@ -164,41 +166,41 @@
     const/16 v12, 0x800
 
     .line 122
-    iget-object v10, p0, Landroid/webkit/ViewManager;->mWebView:Landroid/webkit/WebViewClassic;
+    iget-object v10, p0, Landroid/webkit/ViewManager;->mWebView:Landroid/webkit/WebView;
 
     iget v11, p1, Landroid/webkit/ViewManager$ChildView;->width:I
 
-    invoke-virtual {v10, v11}, Landroid/webkit/WebViewClassic;->contentToViewDimension(I)I
+    invoke-virtual {v10, v11}, Landroid/webkit/WebView;->contentToViewDimension(I)I
 
     move-result v7
 
     .line 123
     .local v7, width:I
-    iget-object v10, p0, Landroid/webkit/ViewManager;->mWebView:Landroid/webkit/WebViewClassic;
+    iget-object v10, p0, Landroid/webkit/ViewManager;->mWebView:Landroid/webkit/WebView;
 
     iget v11, p1, Landroid/webkit/ViewManager$ChildView;->height:I
 
-    invoke-virtual {v10, v11}, Landroid/webkit/WebViewClassic;->contentToViewDimension(I)I
+    invoke-virtual {v10, v11}, Landroid/webkit/WebView;->contentToViewDimension(I)I
 
     move-result v3
 
     .line 124
     .local v3, height:I
-    iget-object v10, p0, Landroid/webkit/ViewManager;->mWebView:Landroid/webkit/WebViewClassic;
+    iget-object v10, p0, Landroid/webkit/ViewManager;->mWebView:Landroid/webkit/WebView;
 
     iget v11, p1, Landroid/webkit/ViewManager$ChildView;->x:I
 
-    invoke-virtual {v10, v11}, Landroid/webkit/WebViewClassic;->contentToViewX(I)I
+    invoke-virtual {v10, v11}, Landroid/webkit/WebView;->contentToViewX(I)I
 
     move-result v8
 
     .line 125
     .local v8, x:I
-    iget-object v10, p0, Landroid/webkit/ViewManager;->mWebView:Landroid/webkit/WebViewClassic;
+    iget-object v10, p0, Landroid/webkit/ViewManager;->mWebView:Landroid/webkit/WebView;
 
     iget v11, p1, Landroid/webkit/ViewManager$ChildView;->y:I
 
-    invoke-virtual {v10, v11}, Landroid/webkit/WebViewClassic;->contentToViewY(I)I
+    invoke-virtual {v10, v11}, Landroid/webkit/WebView;->contentToViewY(I)I
 
     move-result v9
 
@@ -496,9 +498,9 @@
     invoke-interface {v10}, Landroid/view/SurfaceHolder;->setSizeFromLayout()V
 
     .line 211
-    iget-object v10, p0, Landroid/webkit/ViewManager;->mWebView:Landroid/webkit/WebViewClassic;
+    iget-object v10, p0, Landroid/webkit/ViewManager;->mWebView:Landroid/webkit/WebView;
 
-    iget-object v10, v10, Landroid/webkit/WebViewClassic;->mPrivateHandler:Landroid/os/Handler;
+    iget-object v10, v10, Landroid/webkit/WebView;->mPrivateHandler:Landroid/os/Handler;
 
     new-instance v11, Landroid/webkit/ViewManager$1;
 
@@ -721,9 +723,9 @@
 
     .prologue
     .line 272
-    iget-object v0, p0, Landroid/webkit/ViewManager;->mWebView:Landroid/webkit/WebViewClassic;
+    iget-object v0, p0, Landroid/webkit/ViewManager;->mWebView:Landroid/webkit/WebView;
 
-    iget-object v0, v0, Landroid/webkit/WebViewClassic;->mPrivateHandler:Landroid/os/Handler;
+    iget-object v0, v0, Landroid/webkit/WebView;->mPrivateHandler:Landroid/os/Handler;
 
     new-instance v1, Landroid/webkit/ViewManager$3;
 
@@ -740,9 +742,9 @@
 
     .prologue
     .line 264
-    iget-object v0, p0, Landroid/webkit/ViewManager;->mWebView:Landroid/webkit/WebViewClassic;
+    iget-object v0, p0, Landroid/webkit/ViewManager;->mWebView:Landroid/webkit/WebView;
 
-    iget-object v0, v0, Landroid/webkit/WebViewClassic;->mPrivateHandler:Landroid/os/Handler;
+    iget-object v0, v0, Landroid/webkit/WebView;->mPrivateHandler:Landroid/os/Handler;
 
     new-instance v1, Landroid/webkit/ViewManager$2;
 

@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field appId:I
-
 .field pkg:Landroid/content/pm/PackageParser$Package;
 
 .field sharedUser:Lcom/android/server/pm/SharedUserSetting;
+
+.field userId:I
 
 
 # direct methods
@@ -21,9 +21,9 @@
     invoke-direct {p0, p1}, Lcom/android/server/pm/PackageSettingBase;-><init>(Lcom/android/server/pm/PackageSettingBase;)V
 
     .line 44
-    iget v0, p1, Lcom/android/server/pm/PackageSetting;->appId:I
+    iget v0, p1, Lcom/android/server/pm/PackageSetting;->userId:I
 
-    iput v0, p0, Lcom/android/server/pm/PackageSetting;->appId:I
+    iput v0, p0, Lcom/android/server/pm/PackageSetting;->userId:I
 
     .line 45
     iget-object v0, p1, Lcom/android/server/pm/PackageSetting;->pkg:Landroid/content/pm/PackageParser$Package;
@@ -104,7 +104,7 @@
 
     move-result-object v0
 
-    iget v1, p0, Lcom/android/server/pm/PackageSetting;->appId:I
+    iget v1, p0, Lcom/android/server/pm/PackageSetting;->userId:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 

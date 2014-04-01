@@ -23,14 +23,6 @@
     .end annotation
 .end method
 
-.method public abstract engineShown(Landroid/service/wallpaper/IWallpaperEngine;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract setWallpaper(Ljava/lang/String;)Landroid/os/ParcelFileDescriptor;
     .annotation system Ldalvik/annotation/Throws;
         value = {

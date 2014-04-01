@@ -21,8 +21,6 @@
 
 .field loadAll:Z
 
-.field mode:I
-
 .field onLoaded:Landroid/os/Message;
 
 .field recordNum:I
@@ -47,29 +45,24 @@
     .parameter "onLoaded"
 
     .prologue
-    .line 149
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 105
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 150
+    .line 106
     iput p1, p0, Lcom/android/internal/telephony/IccFileHandler$LoadLinearFixedContext;->efid:I
 
-    .line 151
+    .line 107
     iput p2, p0, Lcom/android/internal/telephony/IccFileHandler$LoadLinearFixedContext;->recordNum:I
 
-    .line 152
+    .line 108
     iput-object p3, p0, Lcom/android/internal/telephony/IccFileHandler$LoadLinearFixedContext;->onLoaded:Landroid/os/Message;
 
-    .line 153
+    .line 109
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/internal/telephony/IccFileHandler$LoadLinearFixedContext;->loadAll:Z
 
-    .line 154
-    const/4 v0, -0x1
-
-    iput v0, p0, Lcom/android/internal/telephony/IccFileHandler$LoadLinearFixedContext;->mode:I
-
-    .line 155
+    .line 110
     return-void
 .end method
 
@@ -81,57 +74,21 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 157
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 112
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 158
+    .line 113
     iput p1, p0, Lcom/android/internal/telephony/IccFileHandler$LoadLinearFixedContext;->efid:I
 
-    .line 159
+    .line 114
     iput v0, p0, Lcom/android/internal/telephony/IccFileHandler$LoadLinearFixedContext;->recordNum:I
 
-    .line 160
+    .line 115
     iput-boolean v0, p0, Lcom/android/internal/telephony/IccFileHandler$LoadLinearFixedContext;->loadAll:Z
 
-    .line 161
+    .line 116
     iput-object p2, p0, Lcom/android/internal/telephony/IccFileHandler$LoadLinearFixedContext;->onLoaded:Landroid/os/Message;
 
-    .line 162
-    const/4 v0, -0x1
-
-    iput v0, p0, Lcom/android/internal/telephony/IccFileHandler$LoadLinearFixedContext;->mode:I
-
-    .line 163
-    return-void
-.end method
-
-.method constructor <init>(ILandroid/os/Message;I)V
-    .locals 1
-    .parameter "efid"
-    .parameter "onLoaded"
-    .parameter "mode"
-
-    .prologue
-    const/4 v0, 0x1
-
-    .line 165
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 166
-    iput p1, p0, Lcom/android/internal/telephony/IccFileHandler$LoadLinearFixedContext;->efid:I
-
-    .line 167
-    iput v0, p0, Lcom/android/internal/telephony/IccFileHandler$LoadLinearFixedContext;->recordNum:I
-
-    .line 168
-    iput-boolean v0, p0, Lcom/android/internal/telephony/IccFileHandler$LoadLinearFixedContext;->loadAll:Z
-
-    .line 169
-    iput-object p2, p0, Lcom/android/internal/telephony/IccFileHandler$LoadLinearFixedContext;->onLoaded:Landroid/os/Message;
-
-    .line 170
-    iput p3, p0, Lcom/android/internal/telephony/IccFileHandler$LoadLinearFixedContext;->mode:I
-
-    .line 171
+    .line 117
     return-void
 .end method

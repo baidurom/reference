@@ -219,7 +219,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "internalUpdateWithAddress: "
+    const-string v2, "internalUpdateWithAddress: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -953,7 +953,7 @@
 
     .line 427
     .local v17, values:Landroid/content/ContentValues;
-    const-string/jumbo v20, "last_time_contacted"
+    const-string v20, "last_time_contacted"
 
     invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 

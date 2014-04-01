@@ -47,7 +47,7 @@
     .line 41
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/speech/tts/FileSynthesisCallback;->mStateLock:Ljava/lang/Object;
 
@@ -220,117 +220,117 @@
 
     const/4 v8, 0x4
 
-    .line 232
+    .line 205
     const/4 v7, 0x3
 
     if-ne p2, v7, :cond_0
 
     move v5, v6
 
-    .line 233
+    .line 206
     .local v5, sampleSizeInBytes:I
     :goto_0
     mul-int v7, p1, v5
 
     mul-int v2, v7, p3
 
-    .line 234
+    .line 207
     .local v2, byteRate:I
     mul-int v7, v5, p3
 
     int-to-short v1, v7
 
-    .line 235
+    .line 208
     .local v1, blockAlign:S
     mul-int/lit8 v7, v5, 0x8
 
     int-to-short v0, v7
 
-    .line 237
+    .line 210
     .local v0, bitsPerSample:S
     const/16 v7, 0x2c
 
     new-array v4, v7, [B
 
-    .line 238
+    .line 211
     .local v4, headerBuf:[B
     invoke-static {v4}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
 
     move-result-object v3
 
-    .line 239
+    .line 212
     .local v3, header:Ljava/nio/ByteBuffer;
     sget-object v7, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
 
     invoke-virtual {v3, v7}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 
-    .line 241
+    .line 214
     new-array v7, v8, [B
 
     fill-array-data v7, :array_0
 
     invoke-virtual {v3, v7}, Ljava/nio/ByteBuffer;->put([B)Ljava/nio/ByteBuffer;
 
-    .line 242
+    .line 215
     add-int/lit8 v7, p4, 0x2c
 
     add-int/lit8 v7, v7, -0x8
 
     invoke-virtual {v3, v7}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
-    .line 243
+    .line 216
     new-array v7, v8, [B
 
     fill-array-data v7, :array_1
 
     invoke-virtual {v3, v7}, Ljava/nio/ByteBuffer;->put([B)Ljava/nio/ByteBuffer;
 
-    .line 244
+    .line 217
     new-array v7, v8, [B
 
     fill-array-data v7, :array_2
 
     invoke-virtual {v3, v7}, Ljava/nio/ByteBuffer;->put([B)Ljava/nio/ByteBuffer;
 
-    .line 245
+    .line 218
     const/16 v7, 0x10
 
     invoke-virtual {v3, v7}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
-    .line 246
+    .line 219
     invoke-virtual {v3, v6}, Ljava/nio/ByteBuffer;->putShort(S)Ljava/nio/ByteBuffer;
 
-    .line 247
+    .line 220
     int-to-short v6, p3
 
     invoke-virtual {v3, v6}, Ljava/nio/ByteBuffer;->putShort(S)Ljava/nio/ByteBuffer;
 
-    .line 248
+    .line 221
     invoke-virtual {v3, p1}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
-    .line 249
+    .line 222
     invoke-virtual {v3, v2}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
-    .line 250
+    .line 223
     invoke-virtual {v3, v1}, Ljava/nio/ByteBuffer;->putShort(S)Ljava/nio/ByteBuffer;
 
-    .line 251
+    .line 224
     invoke-virtual {v3, v0}, Ljava/nio/ByteBuffer;->putShort(S)Ljava/nio/ByteBuffer;
 
-    .line 252
+    .line 225
     new-array v6, v8, [B
 
     fill-array-data v6, :array_3
 
     invoke-virtual {v3, v6}, Ljava/nio/ByteBuffer;->put([B)Ljava/nio/ByteBuffer;
 
-    .line 253
+    .line 226
     invoke-virtual {v3, p4}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
-    .line 255
+    .line 228
     return-object v4
 
-    .line 232
+    .line 205
     .end local v0           #bitsPerSample:S
     .end local v1           #blockAlign:S
     .end local v2           #byteRate:I
@@ -342,7 +342,7 @@
 
     goto :goto_0
 
-    .line 241
+    .line 214
     :array_0
     .array-data 0x1
         0x52t
@@ -351,7 +351,7 @@
         0x46t
     .end array-data
 
-    .line 243
+    .line 216
     :array_1
     .array-data 0x1
         0x57t
@@ -360,7 +360,7 @@
         0x45t
     .end array-data
 
-    .line 244
+    .line 217
     :array_2
     .array-data 0x1
         0x66t
@@ -369,7 +369,7 @@
         0x20t
     .end array-data
 
-    .line 252
+    .line 225
     :array_3
     .array-data 0x1
         0x64t
@@ -377,90 +377,6 @@
         0x74t
         0x61t
     .end array-data
-.end method
-
-.method private maybeCleanupExistingFile(Ljava/io/File;)Z
-    .locals 3
-    .parameter "file"
-
-    .prologue
-    .line 102
-    invoke-virtual {p1}, Ljava/io/File;->exists()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 103
-    const-string v0, "FileSynthesisRequest"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "File "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, " exists, deleting."
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 104
-    invoke-virtual {p1}, Ljava/io/File;->delete()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 105
-    const-string v0, "FileSynthesisRequest"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Failed to delete "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 106
-    const/4 v0, 0x0
-
-    .line 110
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x1
-
-    goto :goto_0
 .end method
 
 
@@ -474,43 +390,43 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 166
+    .line 145
     iget-object v2, p0, Landroid/speech/tts/FileSynthesisCallback;->mStateLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 167
+    .line 146
     :try_start_0
     iget-boolean v3, p0, Landroid/speech/tts/FileSynthesisCallback;->mStopped:Z
 
     if-eqz v3, :cond_0
 
-    .line 169
+    .line 148
     monitor-exit v2
 
-    .line 181
+    .line 160
     :goto_0
     return v1
 
-    .line 171
+    .line 150
     :cond_0
     iget-object v3, p0, Landroid/speech/tts/FileSynthesisCallback;->mFile:Ljava/io/RandomAccessFile;
 
     if-nez v3, :cond_1
 
-    .line 172
+    .line 151
     const-string v3, "FileSynthesisRequest"
 
     const-string v4, "File not open"
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 173
+    .line 152
     monitor-exit v2
 
     goto :goto_0
 
-    .line 183
+    .line 162
     :catchall_0
     move-exception v1
 
@@ -520,7 +436,7 @@
 
     throw v1
 
-    .line 176
+    .line 155
     :cond_1
     :try_start_1
     iget-object v3, p0, Landroid/speech/tts/FileSynthesisCallback;->mFile:Ljava/io/RandomAccessFile;
@@ -530,7 +446,7 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 177
+    .line 156
     const/4 v1, 0x0
 
     :try_start_2
@@ -538,11 +454,11 @@
 
     goto :goto_0
 
-    .line 178
+    .line 157
     :catch_0
     move-exception v0
 
-    .line 179
+    .line 158
     .local v0, ex:Ljava/io/IOException;
     const-string v3, "FileSynthesisRequest"
 
@@ -578,10 +494,10 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 180
+    .line 159
     invoke-direct {p0}, Landroid/speech/tts/FileSynthesisCallback;->cleanUp()V
 
-    .line 181
+    .line 160
     monitor-exit v2
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
@@ -595,36 +511,43 @@
     .prologue
     const/4 v2, -0x1
 
-    .line 189
+    .line 168
     iget-object v3, p0, Landroid/speech/tts/FileSynthesisCallback;->mStateLock:Ljava/lang/Object;
 
     monitor-enter v3
 
-    .line 190
+    .line 169
     :try_start_0
-    iget-boolean v4, p0, Landroid/speech/tts/FileSynthesisCallback;->mDone:Z
+    iget-boolean v4, p0, Landroid/speech/tts/FileSynthesisCallback;->mStopped:Z
 
     if-eqz v4, :cond_0
 
-    .line 194
+    .line 171
     monitor-exit v3
 
-    .line 216
+    .line 189
     :goto_0
     return v2
 
-    .line 196
+    .line 173
     :cond_0
-    iget-boolean v4, p0, Landroid/speech/tts/FileSynthesisCallback;->mStopped:Z
+    iget-object v4, p0, Landroid/speech/tts/FileSynthesisCallback;->mFile:Ljava/io/RandomAccessFile;
 
-    if-eqz v4, :cond_1
+    if-nez v4, :cond_1
 
-    .line 198
+    .line 174
+    const-string v4, "FileSynthesisRequest"
+
+    const-string v5, "File not open"
+
+    invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 175
     monitor-exit v3
 
     goto :goto_0
 
-    .line 218
+    .line 191
     :catchall_0
     move-exception v2
 
@@ -634,37 +557,16 @@
 
     throw v2
 
-    .line 200
+    .line 179
     :cond_1
     :try_start_1
-    iget-object v4, p0, Landroid/speech/tts/FileSynthesisCallback;->mFile:Ljava/io/RandomAccessFile;
-
-    if-nez v4, :cond_2
-
-    .line 201
-    const-string v4, "FileSynthesisRequest"
-
-    const-string v5, "File not open"
-
-    invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 202
-    monitor-exit v3
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-
-    .line 206
-    :cond_2
-    :try_start_2
     iget-object v4, p0, Landroid/speech/tts/FileSynthesisCallback;->mFile:Ljava/io/RandomAccessFile;
 
     const-wide/16 v5, 0x0
 
     invoke-virtual {v4, v5, v6}, Ljava/io/RandomAccessFile;->seek(J)V
 
-    .line 207
+    .line 180
     iget-object v4, p0, Landroid/speech/tts/FileSynthesisCallback;->mFile:Ljava/io/RandomAccessFile;
 
     invoke-virtual {v4}, Ljava/io/RandomAccessFile;->length()J
@@ -677,7 +579,7 @@
 
     long-to-int v0, v4
 
-    .line 208
+    .line 181
     .local v0, dataLength:I
     iget-object v4, p0, Landroid/speech/tts/FileSynthesisCallback;->mFile:Ljava/io/RandomAccessFile;
 
@@ -693,31 +595,31 @@
 
     invoke-virtual {v4, v5}, Ljava/io/RandomAccessFile;->write([B)V
 
-    .line 210
+    .line 183
     invoke-direct {p0}, Landroid/speech/tts/FileSynthesisCallback;->closeFileAndWidenPermissions()V
 
-    .line 211
+    .line 184
     const/4 v4, 0x1
 
     iput-boolean v4, p0, Landroid/speech/tts/FileSynthesisCallback;->mDone:Z
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 212
+    .line 185
     const/4 v2, 0x0
 
-    :try_start_3
+    :try_start_2
     monitor-exit v3
 
     goto :goto_0
 
-    .line 213
+    .line 186
     .end local v0           #dataLength:I
     :catch_0
     move-exception v1
 
-    .line 214
+    .line 187
     .local v1, ex:Ljava/io/IOException;
     const-string v4, "FileSynthesisRequest"
 
@@ -753,13 +655,13 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 215
+    .line 188
     invoke-direct {p0}, Landroid/speech/tts/FileSynthesisCallback;->cleanUp()V
 
-    .line 216
+    .line 189
     monitor-exit v3
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     goto :goto_0
 .end method
@@ -768,22 +670,22 @@
     .locals 2
 
     .prologue
-    .line 224
+    .line 197
     iget-object v1, p0, Landroid/speech/tts/FileSynthesisCallback;->mStateLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 225
+    .line 198
     :try_start_0
     invoke-direct {p0}, Landroid/speech/tts/FileSynthesisCallback;->cleanUp()V
 
-    .line 226
+    .line 199
     monitor-exit v1
 
-    .line 227
+    .line 200
     return-void
 
-    .line 226
+    .line 199
     :catchall_0
     move-exception v0
 
@@ -798,7 +700,7 @@
     .locals 1
 
     .prologue
-    .line 116
+    .line 100
     const/16 v0, 0x2000
 
     return v0
@@ -808,7 +710,7 @@
     .locals 1
 
     .prologue
-    .line 121
+    .line 105
     iget-boolean v0, p0, Landroid/speech/tts/FileSynthesisCallback;->mDone:Z
 
     return v0
@@ -823,34 +725,34 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 130
+    .line 114
     iget-object v2, p0, Landroid/speech/tts/FileSynthesisCallback;->mStateLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 131
+    .line 115
     :try_start_0
     iget-boolean v3, p0, Landroid/speech/tts/FileSynthesisCallback;->mStopped:Z
 
     if-eqz v3, :cond_0
 
-    .line 133
+    .line 117
     monitor-exit v2
 
-    .line 155
+    .line 134
     :goto_0
     return v1
 
-    .line 135
+    .line 119
     :cond_0
     iget-object v3, p0, Landroid/speech/tts/FileSynthesisCallback;->mFile:Ljava/io/RandomAccessFile;
 
     if-eqz v3, :cond_1
 
-    .line 136
+    .line 120
     invoke-direct {p0}, Landroid/speech/tts/FileSynthesisCallback;->cleanUp()V
 
-    .line 137
+    .line 121
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string v3, "FileSynthesisRequest.start() called twice"
@@ -859,7 +761,7 @@
 
     throw v1
 
-    .line 157
+    .line 136
     :catchall_0
     move-exception v1
 
@@ -869,35 +771,20 @@
 
     throw v1
 
-    .line 140
+    .line 123
     :cond_1
     :try_start_1
-    iget-object v3, p0, Landroid/speech/tts/FileSynthesisCallback;->mFileName:Ljava/io/File;
-
-    invoke-direct {p0, v3}, Landroid/speech/tts/FileSynthesisCallback;->maybeCleanupExistingFile(Ljava/io/File;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_2
-
-    .line 141
-    monitor-exit v2
-
-    goto :goto_0
-
-    .line 144
-    :cond_2
     iput p1, p0, Landroid/speech/tts/FileSynthesisCallback;->mSampleRateInHz:I
 
-    .line 145
+    .line 124
     iput p2, p0, Landroid/speech/tts/FileSynthesisCallback;->mAudioFormat:I
 
-    .line 146
+    .line 125
     iput p3, p0, Landroid/speech/tts/FileSynthesisCallback;->mChannelCount:I
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 148
+    .line 127
     :try_start_2
     new-instance v3, Ljava/io/RandomAccessFile;
 
@@ -909,7 +796,7 @@
 
     iput-object v3, p0, Landroid/speech/tts/FileSynthesisCallback;->mFile:Ljava/io/RandomAccessFile;
 
-    .line 150
+    .line 129
     iget-object v3, p0, Landroid/speech/tts/FileSynthesisCallback;->mFile:Ljava/io/RandomAccessFile;
 
     const/16 v4, 0x2c
@@ -921,7 +808,7 @@
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 151
+    .line 130
     const/4 v1, 0x0
 
     :try_start_3
@@ -929,11 +816,11 @@
 
     goto :goto_0
 
-    .line 152
+    .line 131
     :catch_0
     move-exception v0
 
-    .line 153
+    .line 132
     .local v0, ex:Ljava/io/IOException;
     const-string v3, "FileSynthesisRequest"
 
@@ -969,10 +856,10 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 154
+    .line 133
     invoke-direct {p0}, Landroid/speech/tts/FileSynthesisCallback;->cleanUp()V
 
-    .line 155
+    .line 134
     monitor-exit v2
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0

@@ -375,66 +375,75 @@
 
     goto :goto_0
 
-    .line 95
-    .end local v3           #parser:Lorg/xmlpull/v1/XmlPullParser;
-    .end local v4           #tag:Ljava/lang/String;
-    .end local v5           #type:I
-    .end local v6           #version:I
-    :catch_1
-    move-exception v1
-
-    .line 96
-    .local v1, e:Ljava/io/IOException;
-    :try_start_4
-    const-string v7, "AccessControllManager"
-
-    const-string v8, "Unable to read blocked notifications database"
-
-    invoke-static {v7, v8, v1}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
-
     .line 102
-    :try_start_5
+    .end local v4           #tag:Ljava/lang/String;
+    :cond_6
+    :try_start_4
     invoke-static {v2}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
     goto :goto_3
 
     .line 105
     .end local v0           #dir:Ljava/io/File;
-    .end local v1           #e:Ljava/io/IOException;
     .end local v2           #infile:Ljava/io/FileInputStream;
+    .end local v3           #parser:Lorg/xmlpull/v1/XmlPullParser;
+    .end local v5           #type:I
+    .end local v6           #version:I
     :catchall_0
     move-exception v7
 
     monitor-exit v9
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     throw v7
 
-    .line 97
+    .line 95
     .restart local v0       #dir:Ljava/io/File;
     .restart local v2       #infile:Ljava/io/FileInputStream;
+    :catch_1
+    move-exception v1
+
+    .line 96
+    .local v1, e:Ljava/io/IOException;
+    :try_start_5
+    const-string v7, "AccessControllManager"
+
+    const-string v8, "Unable to read blocked notifications database"
+
+    invoke-static {v7, v8, v1}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
+
+    .line 102
+    :try_start_6
+    invoke-static {v2}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_0
+
+    goto :goto_3
+
+    .line 97
+    .end local v1           #e:Ljava/io/IOException;
     :catch_2
     move-exception v1
 
     .line 98
     .local v1, e:Ljava/lang/NumberFormatException;
-    :try_start_6
+    :try_start_7
     const-string v7, "AccessControllManager"
 
     const-string v8, "Unable to parse blocked notifications database"
 
     invoke-static {v7, v8, v1}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_1
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_1
 
     .line 102
-    :try_start_7
+    :try_start_8
     invoke-static {v2}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
-    :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_0
+    :try_end_8
+    .catchall {:try_start_8 .. :try_end_8} :catchall_0
 
     goto :goto_3
 
@@ -445,17 +454,17 @@
 
     .line 100
     .local v1, e:Lorg/xmlpull/v1/XmlPullParserException;
-    :try_start_8
+    :try_start_9
     const-string v7, "AccessControllManager"
 
     const-string v8, "Unable to parse blocked notifications database"
 
     invoke-static {v7, v8, v1}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    :try_end_8
-    .catchall {:try_start_8 .. :try_end_8} :catchall_1
+    :try_end_9
+    .catchall {:try_start_9 .. :try_end_9} :catchall_1
 
     .line 102
-    :try_start_9
+    :try_start_a
     invoke-static {v2}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
     goto :goto_3
@@ -467,16 +476,8 @@
     invoke-static {v2}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
     throw v7
-
-    .restart local v3       #parser:Lorg/xmlpull/v1/XmlPullParser;
-    .restart local v5       #type:I
-    .restart local v6       #version:I
-    :cond_6
-    invoke-static {v2}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
-    :try_end_9
-    .catchall {:try_start_9 .. :try_end_9} :catchall_0
-
-    goto :goto_3
+    :try_end_a
+    .catchall {:try_start_a .. :try_end_a} :catchall_0
 .end method
 
 .method public static main(Landroid/content/Context;)V

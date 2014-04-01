@@ -1,5 +1,5 @@
 .class Lcom/android/server/net/NetworkPolicyManagerService$6;
-.super Landroid/content/BroadcastReceiver;
+.super Lcom/android/server/net/NetworkAlertObserver;
 .source "NetworkPolicyManagerService.java"
 
 
@@ -24,80 +24,62 @@
     .parameter
 
     .prologue
-    .line 559
+    .line 443
     iput-object p1, p0, Lcom/android/server/net/NetworkPolicyManagerService$6;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    invoke-direct {p0}, Lcom/android/server/net/NetworkAlertObserver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 4
-    .parameter "context"
-    .parameter "intent"
+.method public limitReached(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 3
+    .parameter "limitName"
+    .parameter "iface"
 
     .prologue
-    const/4 v3, -0x1
+    .line 447
+    iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$6;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
-    .line 565
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    #getter for: Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
+    invoke-static {v0}, Lcom/android/server/net/NetworkPolicyManagerService;->access$1100(Lcom/android/server/net/NetworkPolicyManagerService;)Landroid/content/Context;
 
     move-result-object v0
 
-    .line 566
-    .local v0, action:Ljava/lang/String;
-    const-string v2, "android.intent.extra.user_handle"
+    const-string v1, "android.permission.CONNECTIVITY_INTERNAL"
 
-    invoke-virtual {p2, v2, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    const-string v2, "NetworkPolicy"
 
-    move-result v1
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 567
-    .local v1, userId:I
-    if-ne v1, v3, :cond_0
+    .line 449
+    const-string v0, "globalAlert"
 
-    .line 577
-    :goto_0
-    return-void
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    .line 571
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 450
+    iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$6;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
+
+    #getter for: Lcom/android/server/net/NetworkPolicyManagerService;->mHandler:Landroid/os/Handler;
+    invoke-static {v0}, Lcom/android/server/net/NetworkPolicyManagerService;->access$000(Lcom/android/server/net/NetworkPolicyManagerService;)Landroid/os/Handler;
+
+    move-result-object v0
+
+    const/4 v1, 0x5
+
+    invoke-virtual {v0, v1, p2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
+
+    .line 452
     :cond_0
-    iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$6;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
-
-    #calls: Lcom/android/server/net/NetworkPolicyManagerService;->removePoliciesForUserLocked(I)V
-    invoke-static {v2, v1}, Lcom/android/server/net/NetworkPolicyManagerService;->access$1200(Lcom/android/server/net/NetworkPolicyManagerService;I)V
-
-    .line 574
-    iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$6;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
-
-    #getter for: Lcom/android/server/net/NetworkPolicyManagerService;->mRulesLock:Ljava/lang/Object;
-    invoke-static {v2}, Lcom/android/server/net/NetworkPolicyManagerService;->access$400(Lcom/android/server/net/NetworkPolicyManagerService;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    monitor-enter v3
-
-    .line 575
-    :try_start_0
-    iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$6;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
-
-    #calls: Lcom/android/server/net/NetworkPolicyManagerService;->updateRulesForRestrictBackgroundLocked()V
-    invoke-static {v2}, Lcom/android/server/net/NetworkPolicyManagerService;->access$1300(Lcom/android/server/net/NetworkPolicyManagerService;)V
-
-    .line 576
-    monitor-exit v3
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v2
-
-    monitor-exit v3
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v2
+    return-void
 .end method

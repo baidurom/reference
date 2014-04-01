@@ -15,7 +15,7 @@
 
 
 # virtual methods
-.method public abstract onServiceConnected(Landroid/bluetooth/BluetoothPbap;)V
+.method public abstract onServiceConnected()V
 .end method
 
 .method public abstract onServiceDisconnected()V

@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 193
+    .line 168
     iput-object p1, p0, Lcom/android/server/InputMethodManagerService$1;->this$0:Lcom/android/server/InputMethodManagerService;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -43,7 +43,7 @@
     .parameter "service"
 
     .prologue
-    .line 195
+    .line 170
     return-void
 .end method
 
@@ -52,6 +52,6 @@
     .parameter "name"
 
     .prologue
-    .line 198
+    .line 173
     return-void
 .end method

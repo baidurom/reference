@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 407
+    .line 405
     iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods$2;->this$1:Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,14 +42,14 @@
     .parameter "animation"
 
     .prologue
-    .line 420
+    .line 418
     const-string v0, "SmartLockScreen"
 
     const-string v1, "onAnimationEnd"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 421
+    .line 419
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods$2;->this$1:Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;
 
     iget-object v0, v0, Lcom/baidu/internal/keyguard/slide/SmartLockScreen$SmartMultiUnlockViewMethods;->this$0:Lcom/baidu/internal/keyguard/slide/SmartLockScreen;
@@ -58,7 +58,7 @@
 
     invoke-virtual {v0, v1}, Lcom/baidu/internal/keyguard/slide/SmartLockScreen;->setAlpha(F)V
 
-    .line 422
+    .line 420
     return-void
 .end method
 
@@ -67,14 +67,14 @@
     .parameter "animation"
 
     .prologue
-    .line 415
+    .line 413
     const-string v0, "SmartLockScreen"
 
     const-string v1, "onAnimationRepeat"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 416
+    .line 414
     return-void
 .end method
 
@@ -83,13 +83,13 @@
     .parameter "animation"
 
     .prologue
-    .line 410
+    .line 408
     const-string v0, "SmartLockScreen"
 
     const-string v1, "onAnimationStart"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 411
+    .line 409
     return-void
 .end method

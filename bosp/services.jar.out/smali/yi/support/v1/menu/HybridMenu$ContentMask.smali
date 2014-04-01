@@ -39,7 +39,7 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 290
-    const v0, 0x3020040
+    const v0, 0x4020040
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -50,7 +50,7 @@
     iput-object v0, p0, Lyi/support/v1/menu/HybridMenu$ContentMask;->mBlurMask:Landroid/widget/ImageView;
 
     .line 291
-    const v0, 0x3020041
+    const v0, 0x4020041
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

@@ -4,15 +4,9 @@
 
 
 # static fields
-.field public static final BUILD_LINE:Ljava/lang/String; = "rom-mtk-4.2-mt6592"
+.field public static final BUILD_LINE:Ljava/lang/String; = "rom-mtk"
 
 .field public static final BUILD_TYPE:Ljava/lang/String; = "ROM"
-
-.field public static final FEATURE_CALLLOCATION:Z = true
-
-.field public static final FEATURE_CAMERA_FLASH_SUPPORT:Z = true
-
-.field public static final FEATURE_DEFAULT_MOBILEDATA_ON:Z = true
 
 .field public static final FEATURE_FULLRECOVERY:Z = true
 
@@ -25,8 +19,6 @@
 .field public static final FEATURE_HOTWORDUNLOCK:Z = true
 
 .field public static final FEATURE_IMAGESEARCH:Z = false
-
-.field public static final FEATURE_LIBFFMPEG:Z = true
 
 .field public static final FEATURE_MESSAGE_SHOW_POPUP_UNLOCK:Z = true
 

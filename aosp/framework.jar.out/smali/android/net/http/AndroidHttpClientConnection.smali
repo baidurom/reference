@@ -35,7 +35,7 @@
     const/4 v0, 0x0
 
     .line 83
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 70
     iput-object v0, p0, Landroid/net/http/AndroidHttpClientConnection;->inbuffer:Lorg/apache/http/io/SessionInputBuffer;
@@ -712,8 +712,34 @@
 
     move-result-object v9
 
-    .line 317
+    .line 316
     .local v9, statusline:Lorg/apache/http/StatusLine;
+    sget-boolean v10, Landroid/net/http/HttpLog;->LOGV:Z
+
+    if-eqz v10, :cond_1
+
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v11, "read: "
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-static {v10}, Landroid/net/http/HttpLog;->v(Ljava/lang/String;)V
+
+    .line 317
+    :cond_1
     invoke-interface {v9}, Lorg/apache/http/StatusLine;->getStatusCode()I
 
     move-result v8
@@ -728,8 +754,8 @@
 
     .line 323
     .local v3, headerNumber:I
-    :cond_1
-    if-nez v1, :cond_5
+    :cond_2
+    if-nez v1, :cond_6
 
     .line 324
     new-instance v1, Lorg/apache/http/util/CharArrayBuffer;
@@ -752,7 +778,7 @@
     .local v4, l:I
     const/4 v10, -0x1
 
-    if-eq v4, v10, :cond_2
+    if-eq v4, v10, :cond_3
 
     invoke-virtual {v1}, Lorg/apache/http/util/CharArrayBuffer;->length()I
 
@@ -760,20 +786,20 @@
 
     const/4 v11, 0x1
 
-    if-ge v10, v11, :cond_6
+    if-ge v10, v11, :cond_7
 
     .line 370
-    :cond_2
-    if-eqz v6, :cond_3
+    :cond_3
+    if-eqz v6, :cond_4
 
     .line 371
     invoke-virtual {p1, v6}, Landroid/net/http/Headers;->parseHeader(Lorg/apache/http/util/CharArrayBuffer;)V
 
     .line 374
-    :cond_3
+    :cond_4
     const/16 v10, 0xc8
 
-    if-lt v8, v10, :cond_4
+    if-lt v8, v10, :cond_5
 
     .line 375
     iget-object v10, p0, Landroid/net/http/AndroidHttpClientConnection;->metrics:Lorg/apache/http/impl/HttpConnectionMetricsImpl;
@@ -781,19 +807,19 @@
     invoke-virtual {v10}, Lorg/apache/http/impl/HttpConnectionMetricsImpl;->incrementResponseCount()V
 
     .line 377
-    :cond_4
+    :cond_5
     return-object v9
 
     .line 327
     .end local v4           #l:I
-    :cond_5
+    :cond_6
     invoke-virtual {v1}, Lorg/apache/http/util/CharArrayBuffer;->clear()V
 
     goto :goto_0
 
     .line 337
     .restart local v4       #l:I
-    :cond_6
+    :cond_7
     const/4 v10, 0x0
 
     invoke-virtual {v1, v10}, Lorg/apache/http/util/CharArrayBuffer;->charAt(I)C
@@ -804,14 +830,14 @@
     .local v2, first:C
     const/16 v10, 0x20
 
-    if-eq v2, v10, :cond_7
+    if-eq v2, v10, :cond_8
 
     const/16 v10, 0x9
 
-    if-ne v2, v10, :cond_b
+    if-ne v2, v10, :cond_c
 
-    :cond_7
-    if-eqz v6, :cond_b
+    :cond_8
+    if-eqz v6, :cond_c
 
     .line 341
     const/4 v7, 0x0
@@ -825,7 +851,7 @@
     .line 343
     .local v5, length:I
     :goto_1
-    if-ge v7, v5, :cond_8
+    if-ge v7, v5, :cond_9
 
     .line 344
     invoke-virtual {v1, v7}, Lorg/apache/http/util/CharArrayBuffer;->charAt(I)C
@@ -836,18 +862,18 @@
     .local v0, ch:C
     const/16 v10, 0x20
 
-    if-eq v0, v10, :cond_9
+    if-eq v0, v10, :cond_a
 
     const/16 v10, 0x9
 
-    if-eq v0, v10, :cond_9
+    if-eq v0, v10, :cond_a
 
     .line 350
     .end local v0           #ch:C
-    :cond_8
+    :cond_9
     iget v10, p0, Landroid/net/http/AndroidHttpClientConnection;->maxLineLength:I
 
-    if-lez v10, :cond_a
+    if-lez v10, :cond_b
 
     invoke-virtual {v6}, Lorg/apache/http/util/CharArrayBuffer;->length()I
 
@@ -865,7 +891,7 @@
 
     iget v11, p0, Landroid/net/http/AndroidHttpClientConnection;->maxLineLength:I
 
-    if-le v10, v11, :cond_a
+    if-le v10, v11, :cond_b
 
     .line 353
     new-instance v10, Ljava/io/IOException;
@@ -878,7 +904,7 @@
 
     .line 348
     .restart local v0       #ch:C
-    :cond_9
+    :cond_a
     add-int/lit8 v7, v7, 0x1
 
     .line 349
@@ -886,7 +912,7 @@
 
     .line 355
     .end local v0           #ch:C
-    :cond_a
+    :cond_b
     const/16 v10, 0x20
 
     invoke-virtual {v6, v10}, Lorg/apache/http/util/CharArrayBuffer;->append(C)V
@@ -906,11 +932,11 @@
     :goto_2
     iget v10, p0, Landroid/net/http/AndroidHttpClientConnection;->maxHeaderCount:I
 
-    if-lez v10, :cond_1
+    if-lez v10, :cond_2
 
     iget v10, p0, Landroid/net/http/AndroidHttpClientConnection;->maxHeaderCount:I
 
-    if-lt v3, v10, :cond_1
+    if-lt v3, v10, :cond_2
 
     .line 366
     new-instance v10, Ljava/io/IOException;
@@ -922,14 +948,14 @@
     throw v10
 
     .line 358
-    :cond_b
-    if-eqz v6, :cond_c
+    :cond_c
+    if-eqz v6, :cond_d
 
     .line 359
     invoke-virtual {p1, v6}, Landroid/net/http/Headers;->parseHeader(Lorg/apache/http/util/CharArrayBuffer;)V
 
     .line 361
-    :cond_c
+    :cond_d
     add-int/lit8 v3, v3, 0x1
 
     .line 362

@@ -1,409 +1,82 @@
-.class synthetic Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$5;
+.class Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$5;
 .super Ljava/lang/Object;
 .source "SmartKeyguardStatusViewManager.java"
 
+# interfaces
+.implements Lcom/baidu/internal/keyguard/slide/SnapHorizontalScrollView$OnHorizontalScrollListener;
+
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;-><init>(Landroid/view/View;Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;Lcom/android/internal/widget/LockPatternUtils;Lcom/android/internal/policy/impl/KeyguardScreenCallback;ZLcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1008
+    accessFlags = 0x0
     name = null
 .end annotation
 
 
-# static fields
-.field static final synthetic $SwitchMap$com$android$internal$telephony$IccCardConstants$State:[I
-
-.field static final synthetic $SwitchMap$com$baidu$internal$keyguard$slide$SmartKeyguardStatusViewManager$StatusMode:[I
+# instance fields
+.field final synthetic this$0:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method constructor <init>(Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;)V
+    .locals 0
+    .parameter
 
     .prologue
-    .line 633
-    invoke-static {}, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;->values()[Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;
+    .line 439
+    iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$5;->this$0:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;
 
-    move-result-object v0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    array-length v0, v0
-
-    new-array v0, v0, [I
-
-    sput-object v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$5;->$SwitchMap$com$baidu$internal$keyguard$slide$SmartKeyguardStatusViewManager$StatusMode:[I
-
-    :try_start_0
-    sget-object v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$5;->$SwitchMap$com$baidu$internal$keyguard$slide$SmartKeyguardStatusViewManager$StatusMode:[I
-
-    sget-object v1, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;->SimUnknown:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;
-
-    invoke-virtual {v1}, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_10
-
-    :goto_0
-    :try_start_1
-    sget-object v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$5;->$SwitchMap$com$baidu$internal$keyguard$slide$SmartKeyguardStatusViewManager$StatusMode:[I
-
-    sget-object v1, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;->Normal:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;
-
-    invoke-virtual {v1}, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_f
-
-    :goto_1
-    :try_start_2
-    sget-object v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$5;->$SwitchMap$com$baidu$internal$keyguard$slide$SmartKeyguardStatusViewManager$StatusMode:[I
-
-    sget-object v1, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;->NetworkLocked:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;
-
-    invoke-virtual {v1}, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_e
-
-    :goto_2
-    :try_start_3
-    sget-object v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$5;->$SwitchMap$com$baidu$internal$keyguard$slide$SmartKeyguardStatusViewManager$StatusMode:[I
-
-    sget-object v1, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;->SimNotReady:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;
-
-    invoke-virtual {v1}, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x4
-
-    aput v2, v0, v1
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_d
-
-    :goto_3
-    :try_start_4
-    sget-object v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$5;->$SwitchMap$com$baidu$internal$keyguard$slide$SmartKeyguardStatusViewManager$StatusMode:[I
-
-    sget-object v1, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;->SimMissing:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;
-
-    invoke-virtual {v1}, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x5
-
-    aput v2, v0, v1
-    :try_end_4
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_c
-
-    :goto_4
-    :try_start_5
-    sget-object v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$5;->$SwitchMap$com$baidu$internal$keyguard$slide$SmartKeyguardStatusViewManager$StatusMode:[I
-
-    sget-object v1, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;->SimPermDisabled:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;
-
-    invoke-virtual {v1}, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x6
-
-    aput v2, v0, v1
-    :try_end_5
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_b
-
-    :goto_5
-    :try_start_6
-    sget-object v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$5;->$SwitchMap$com$baidu$internal$keyguard$slide$SmartKeyguardStatusViewManager$StatusMode:[I
-
-    sget-object v1, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;->SimMissingLocked:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;
-
-    invoke-virtual {v1}, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x7
-
-    aput v2, v0, v1
-    :try_end_6
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_a
-
-    :goto_6
-    :try_start_7
-    sget-object v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$5;->$SwitchMap$com$baidu$internal$keyguard$slide$SmartKeyguardStatusViewManager$StatusMode:[I
-
-    sget-object v1, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;->SimLocked:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;
-
-    invoke-virtual {v1}, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0x8
-
-    aput v2, v0, v1
-    :try_end_7
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_9
-
-    :goto_7
-    :try_start_8
-    sget-object v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$5;->$SwitchMap$com$baidu$internal$keyguard$slide$SmartKeyguardStatusViewManager$StatusMode:[I
-
-    sget-object v1, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;->SimPukLocked:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;
-
-    invoke-virtual {v1}, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0x9
-
-    aput v2, v0, v1
-    :try_end_8
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_8 .. :try_end_8} :catch_8
-
-    .line 588
-    :goto_8
-    invoke-static {}, Lcom/android/internal/telephony/IccCardConstants$State;->values()[Lcom/android/internal/telephony/IccCardConstants$State;
-
-    move-result-object v0
-
-    array-length v0, v0
-
-    new-array v0, v0, [I
-
-    sput-object v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$5;->$SwitchMap$com$android$internal$telephony$IccCardConstants$State:[I
-
-    :try_start_9
-    sget-object v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$5;->$SwitchMap$com$android$internal$telephony$IccCardConstants$State:[I
-
-    sget-object v1, Lcom/android/internal/telephony/IccCardConstants$State;->ABSENT:Lcom/android/internal/telephony/IccCardConstants$State;
-
-    invoke-virtual {v1}, Lcom/android/internal/telephony/IccCardConstants$State;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    aput v2, v0, v1
-    :try_end_9
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_9} :catch_7
-
-    :goto_9
-    :try_start_a
-    sget-object v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$5;->$SwitchMap$com$android$internal$telephony$IccCardConstants$State:[I
-
-    sget-object v1, Lcom/android/internal/telephony/IccCardConstants$State;->NETWORK_LOCKED:Lcom/android/internal/telephony/IccCardConstants$State;
-
-    invoke-virtual {v1}, Lcom/android/internal/telephony/IccCardConstants$State;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_a
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_a .. :try_end_a} :catch_6
-
-    :goto_a
-    :try_start_b
-    sget-object v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$5;->$SwitchMap$com$android$internal$telephony$IccCardConstants$State:[I
-
-    sget-object v1, Lcom/android/internal/telephony/IccCardConstants$State;->NOT_READY:Lcom/android/internal/telephony/IccCardConstants$State;
-
-    invoke-virtual {v1}, Lcom/android/internal/telephony/IccCardConstants$State;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_b
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_b .. :try_end_b} :catch_5
-
-    :goto_b
-    :try_start_c
-    sget-object v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$5;->$SwitchMap$com$android$internal$telephony$IccCardConstants$State:[I
-
-    sget-object v1, Lcom/android/internal/telephony/IccCardConstants$State;->PIN_REQUIRED:Lcom/android/internal/telephony/IccCardConstants$State;
-
-    invoke-virtual {v1}, Lcom/android/internal/telephony/IccCardConstants$State;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x4
-
-    aput v2, v0, v1
-    :try_end_c
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_c .. :try_end_c} :catch_4
-
-    :goto_c
-    :try_start_d
-    sget-object v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$5;->$SwitchMap$com$android$internal$telephony$IccCardConstants$State:[I
-
-    sget-object v1, Lcom/android/internal/telephony/IccCardConstants$State;->PUK_REQUIRED:Lcom/android/internal/telephony/IccCardConstants$State;
-
-    invoke-virtual {v1}, Lcom/android/internal/telephony/IccCardConstants$State;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x5
-
-    aput v2, v0, v1
-    :try_end_d
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_d .. :try_end_d} :catch_3
-
-    :goto_d
-    :try_start_e
-    sget-object v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$5;->$SwitchMap$com$android$internal$telephony$IccCardConstants$State:[I
-
-    sget-object v1, Lcom/android/internal/telephony/IccCardConstants$State;->READY:Lcom/android/internal/telephony/IccCardConstants$State;
-
-    invoke-virtual {v1}, Lcom/android/internal/telephony/IccCardConstants$State;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x6
-
-    aput v2, v0, v1
-    :try_end_e
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_e .. :try_end_e} :catch_2
-
-    :goto_e
-    :try_start_f
-    sget-object v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$5;->$SwitchMap$com$android$internal$telephony$IccCardConstants$State:[I
-
-    sget-object v1, Lcom/android/internal/telephony/IccCardConstants$State;->PERM_DISABLED:Lcom/android/internal/telephony/IccCardConstants$State;
-
-    invoke-virtual {v1}, Lcom/android/internal/telephony/IccCardConstants$State;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x7
-
-    aput v2, v0, v1
-    :try_end_f
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_f .. :try_end_f} :catch_1
-
-    :goto_f
-    :try_start_10
-    sget-object v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$5;->$SwitchMap$com$android$internal$telephony$IccCardConstants$State:[I
-
-    sget-object v1, Lcom/android/internal/telephony/IccCardConstants$State;->UNKNOWN:Lcom/android/internal/telephony/IccCardConstants$State;
-
-    invoke-virtual {v1}, Lcom/android/internal/telephony/IccCardConstants$State;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0x8
-
-    aput v2, v0, v1
-    :try_end_10
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_10 .. :try_end_10} :catch_0
-
-    :goto_10
     return-void
+.end method
 
-    :catch_0
-    move-exception v0
 
-    goto :goto_10
+# virtual methods
+.method public pokeWakelock()V
+    .locals 2
 
-    :catch_1
-    move-exception v0
+    .prologue
+    .line 446
+    const-string v0, "KeyguardStatusViewManager"
 
-    goto :goto_f
+    const-string v1, "wake up lock screen"
 
-    :catch_2
-    move-exception v0
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_e
+    .line 447
+    iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$5;->this$0:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;
 
-    :catch_3
-    move-exception v0
+    #getter for: Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
+    invoke-static {v0}, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;->access$600(Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;)Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
-    goto :goto_d
+    move-result-object v0
 
-    :catch_4
-    move-exception v0
+    invoke-interface {v0}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->pokeWakelock()V
 
-    goto :goto_c
+    .line 448
+    return-void
+.end method
 
-    :catch_5
-    move-exception v0
+.method public setBackgroundColor(I)V
+    .locals 1
+    .parameter "color"
 
-    goto :goto_b
+    .prologue
+    .line 441
+    iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$5;->this$0:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;
 
-    :catch_6
-    move-exception v0
+    #getter for: Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;->mWorkspaceLayout:Landroid/widget/GridLayout;
+    invoke-static {v0}, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;->access$1200(Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager;)Landroid/widget/GridLayout;
 
-    goto :goto_a
+    move-result-object v0
 
-    :catch_7
-    move-exception v0
+    invoke-virtual {v0, p1}, Landroid/widget/GridLayout;->setBackgroundColor(I)V
 
-    goto :goto_9
-
-    .line 633
-    :catch_8
-    move-exception v0
-
-    goto :goto_8
-
-    :catch_9
-    move-exception v0
-
-    goto/16 :goto_7
-
-    :catch_a
-    move-exception v0
-
-    goto/16 :goto_6
-
-    :catch_b
-    move-exception v0
-
-    goto/16 :goto_5
-
-    :catch_c
-    move-exception v0
-
-    goto/16 :goto_4
-
-    :catch_d
-    move-exception v0
-
-    goto/16 :goto_3
-
-    :catch_e
-    move-exception v0
-
-    goto/16 :goto_2
-
-    :catch_f
-    move-exception v0
-
-    goto/16 :goto_1
-
-    :catch_10
-    move-exception v0
-
-    goto/16 :goto_0
+    .line 442
+    return-void
 .end method

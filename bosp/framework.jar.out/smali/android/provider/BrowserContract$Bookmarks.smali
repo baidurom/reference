@@ -20,16 +20,6 @@
 
 
 # static fields
-.field public static final BOOKMARK_TYPE_BOOKMARK:I = 0x1
-
-.field public static final BOOKMARK_TYPE_BOOKMARK_BAR_FOLDER:I = 0x3
-
-.field public static final BOOKMARK_TYPE_FOLDER:I = 0x2
-
-.field public static final BOOKMARK_TYPE_MOBILE_FOLDER:I = 0x5
-
-.field public static final BOOKMARK_TYPE_OTHER_FOLDER:I = 0x4
-
 .field public static final CONTENT_ITEM_TYPE:Ljava/lang/String; = "vnd.android.cursor.item/bookmark"
 
 .field public static final CONTENT_TYPE:Ljava/lang/String; = "vnd.android.cursor.dir/bookmark"
@@ -58,15 +48,13 @@
 
 .field public static final QUERY_PARAMETER_SHOW_DELETED:Ljava/lang/String; = "show_deleted"
 
-.field public static final TYPE:Ljava/lang/String; = "type"
-
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 2
 
     .prologue
-    .line 254
+    .line 218
     sget-object v0, Landroid/provider/BrowserContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string v1, "bookmarks"
@@ -77,7 +65,7 @@
 
     sput-object v0, Landroid/provider/BrowserContract$Bookmarks;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 303
+    .line 223
     sget-object v0, Landroid/provider/BrowserContract$Bookmarks;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v1, "folder"
@@ -95,7 +83,7 @@
     .locals 0
 
     .prologue
-    .line 249
+    .line 213
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -106,7 +94,7 @@
     .parameter "folderId"
 
     .prologue
-    .line 324
+    .line 241
     sget-object v0, Landroid/provider/BrowserContract$Bookmarks;->CONTENT_URI_DEFAULT_FOLDER:Landroid/net/Uri;
 
     invoke-static {v0, p0, p1}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;

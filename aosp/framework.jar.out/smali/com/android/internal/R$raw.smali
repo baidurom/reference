@@ -15,8 +15,6 @@
 
 
 # static fields
-.field public static final accessibility_gestures:I = #raw@accessibility_gestures#t
-
 .field public static final fallbackring:I = #raw@fallbackring#t
 
 .field public static final incognito_mode_start_page:I = #raw@incognito_mode_start_page#t
@@ -31,8 +29,8 @@
     .locals 0
 
     .prologue
-    .line 12909
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 14850
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

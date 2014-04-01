@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
+    accessFlags = 0x1
     name = "HitTestResult"
 .end annotation
 
@@ -47,30 +47,111 @@
 
 .field private mImageAnchorUrl:Ljava/lang/String;
 
-.field private mTouchHighlightRect:Landroid/graphics/Rect;
-
 .field private mType:I
+
+.field final synthetic this$0:Landroid/webkit/WebView;
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>(Landroid/webkit/WebView;)V
     .locals 1
+    .parameter
 
     .prologue
-    .line 410
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 1025
+    iput-object p1, p0, Landroid/webkit/WebView$HitTestResult;->this$0:Landroid/webkit/WebView;
 
-    .line 404
-    const/4 v0, 0x0
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object v0, p0, Landroid/webkit/WebView$HitTestResult;->mTouchHighlightRect:Landroid/graphics/Rect;
-
-    .line 411
+    .line 1026
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/webkit/WebView$HitTestResult;->mType:I
 
-    .line 412
+    .line 1027
+    return-void
+.end method
+
+.method static synthetic access$1000(Landroid/webkit/WebView$HitTestResult;Ljava/lang/String;)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 977
+    invoke-direct {p0, p1}, Landroid/webkit/WebView$HitTestResult;->setExtra(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method static synthetic access$1100(Landroid/webkit/WebView$HitTestResult;Ljava/lang/String;)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 977
+    invoke-direct {p0, p1}, Landroid/webkit/WebView$HitTestResult;->setImageAnchorUrlExtra(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method static synthetic access$4100(Landroid/webkit/WebView$HitTestResult;)I
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 977
+    iget v0, p0, Landroid/webkit/WebView$HitTestResult;->mType:I
+
+    return v0
+.end method
+
+.method static synthetic access$900(Landroid/webkit/WebView$HitTestResult;I)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 977
+    invoke-direct {p0, p1}, Landroid/webkit/WebView$HitTestResult;->setType(I)V
+
+    return-void
+.end method
+
+.method private setExtra(Ljava/lang/String;)V
+    .locals 0
+    .parameter "extra"
+
+    .prologue
+    .line 1042
+    iput-object p1, p0, Landroid/webkit/WebView$HitTestResult;->mExtra:Ljava/lang/String;
+
+    .line 1043
+    return-void
+.end method
+
+.method private setImageAnchorUrlExtra(Ljava/lang/String;)V
+    .locals 0
+    .parameter "imageAnchorUrl"
+
+    .prologue
+    .line 1030
+    iput-object p1, p0, Landroid/webkit/WebView$HitTestResult;->mImageAnchorUrl:Ljava/lang/String;
+
+    .line 1031
+    return-void
+.end method
+
+.method private setType(I)V
+    .locals 0
+    .parameter "type"
+
+    .prologue
+    .line 1038
+    iput p1, p0, Landroid/webkit/WebView$HitTestResult;->mType:I
+
+    .line 1039
     return-void
 .end method
 
@@ -80,7 +161,7 @@
     .locals 1
 
     .prologue
-    .line 446
+    .line 1050
     iget-object v0, p0, Landroid/webkit/WebView$HitTestResult;->mExtra:Ljava/lang/String;
 
     return-object v0
@@ -90,18 +171,8 @@
     .locals 1
 
     .prologue
-    .line 461
+    .line 1034
     iget-object v0, p0, Landroid/webkit/WebView$HitTestResult;->mImageAnchorUrl:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public getTouchHighlightRect()Landroid/graphics/Rect;
-    .locals 1
-
-    .prologue
-    .line 481
-    iget-object v0, p0, Landroid/webkit/WebView$HitTestResult;->mTouchHighlightRect:Landroid/graphics/Rect;
 
     return-object v0
 .end method
@@ -110,56 +181,8 @@
     .locals 1
 
     .prologue
-    .line 435
+    .line 1046
     iget v0, p0, Landroid/webkit/WebView$HitTestResult;->mType:I
 
     return v0
-.end method
-
-.method public setExtra(Ljava/lang/String;)V
-    .locals 0
-    .parameter "extra"
-
-    .prologue
-    .line 425
-    iput-object p1, p0, Landroid/webkit/WebView$HitTestResult;->mExtra:Ljava/lang/String;
-
-    .line 426
-    return-void
-.end method
-
-.method public setImageAnchorUrlExtra(Ljava/lang/String;)V
-    .locals 0
-    .parameter "imageAnchorUrl"
-
-    .prologue
-    .line 454
-    iput-object p1, p0, Landroid/webkit/WebView$HitTestResult;->mImageAnchorUrl:Ljava/lang/String;
-
-    .line 455
-    return-void
-.end method
-
-.method public setTouchHighlightRect(Landroid/graphics/Rect;)V
-    .locals 0
-    .parameter "r"
-
-    .prologue
-    .line 472
-    iput-object p1, p0, Landroid/webkit/WebView$HitTestResult;->mTouchHighlightRect:Landroid/graphics/Rect;
-
-    .line 473
-    return-void
-.end method
-
-.method public setType(I)V
-    .locals 0
-    .parameter "type"
-
-    .prologue
-    .line 418
-    iput p1, p0, Landroid/webkit/WebView$HitTestResult;->mType:I
-
-    .line 419
-    return-void
 .end method

@@ -4,7 +4,6 @@
 
 # interfaces
 .implements Landroid/provider/MediaStore$MediaColumns;
-.implements Landroid/provider/MediaStore$AudioExtensionColumns;
 
 
 # annotations
@@ -42,6 +41,8 @@
 .field public static final DURATION:Ljava/lang/String; = "duration"
 
 .field public static final GENRE:Ljava/lang/String; = "genre"
+
+.field public static final IS_ACCURATE_DURATION:Ljava/lang/String; = "isaccurateduration"
 
 .field public static final IS_ALARM:Ljava/lang/String; = "is_alarm"
 

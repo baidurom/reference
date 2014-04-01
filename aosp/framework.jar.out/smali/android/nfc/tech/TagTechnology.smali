@@ -21,8 +21,6 @@
 
 .field public static final NFC_B:I = 0x2
 
-.field public static final NFC_BARCODE:I = 0xa
-
 .field public static final NFC_F:I = 0x4
 
 .field public static final NFC_V:I = 0x5

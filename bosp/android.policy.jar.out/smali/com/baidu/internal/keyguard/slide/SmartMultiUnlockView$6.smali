@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1088
+    .line 1099
     iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$6;->this$0:Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,11 +41,11 @@
     .locals 1
 
     .prologue
-    .line 1091
+    .line 1102
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$6;->this$0:Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;
 
     invoke-virtual {v0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->invalidate()V
 
-    .line 1092
+    .line 1103
     return-void
 .end method

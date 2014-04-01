@@ -68,10 +68,9 @@
     return-void
 .end method
 
-.method private static sendAPNM(Ljava/lang/String;I)V
+.method private static sendAPNM(Ljava/lang/String;)V
     .locals 3
     .parameter "appName"
-    .parameter "userId"
 
     .prologue
     .line 93
@@ -83,50 +82,44 @@
 
     add-int/lit8 v2, v2, 0x4
 
-    add-int/lit8 v2, v2, 0x4
-
     invoke-static {v2}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
     move-result-object v1
 
-    .line 97
+    .line 94
     .local v1, out:Ljava/nio/ByteBuffer;
     sget-object v2, Lorg/apache/harmony/dalvik/ddmc/ChunkHandler;->CHUNK_ORDER:Ljava/nio/ByteOrder;
 
     invoke-virtual {v1, v2}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 
-    .line 98
+    .line 95
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v2
 
     invoke-virtual {v1, v2}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
-    .line 99
+    .line 96
     invoke-static {v1, p0}, Landroid/ddm/DdmHandleAppName;->putString(Ljava/nio/ByteBuffer;Ljava/lang/String;)V
 
-    .line 100
-    invoke-virtual {v1, p1}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
-
-    .line 102
+    .line 98
     new-instance v0, Lorg/apache/harmony/dalvik/ddmc/Chunk;
 
     sget v2, Landroid/ddm/DdmHandleAppName;->CHUNK_APNM:I
 
     invoke-direct {v0, v2, v1}, Lorg/apache/harmony/dalvik/ddmc/Chunk;-><init>(ILjava/nio/ByteBuffer;)V
 
-    .line 103
+    .line 99
     .local v0, chunk:Lorg/apache/harmony/dalvik/ddmc/Chunk;
     invoke-static {v0}, Lorg/apache/harmony/dalvik/ddmc/DdmServer;->sendChunk(Lorg/apache/harmony/dalvik/ddmc/Chunk;)V
 
-    .line 104
+    .line 100
     return-void
 .end method
 
-.method public static setAppName(Ljava/lang/String;I)V
+.method public static setAppName(Ljava/lang/String;)V
     .locals 1
     .parameter "name"
-    .parameter "userId"
 
     .prologue
     .line 73
@@ -148,7 +141,7 @@
     sput-object p0, Landroid/ddm/DdmHandleAppName;->mAppName:Ljava/lang/String;
 
     .line 79
-    invoke-static {p0, p1}, Landroid/ddm/DdmHandleAppName;->sendAPNM(Ljava/lang/String;I)V
+    invoke-static {p0}, Landroid/ddm/DdmHandleAppName;->sendAPNM(Ljava/lang/String;)V
 
     goto :goto_0
 .end method

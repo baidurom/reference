@@ -27,16 +27,16 @@
     .parameter "target"
 
     .prologue
-    .line 5380
+    .line 4443
     iput-object p1, p0, Lcom/android/server/am/ActivityStack$myThread;->this$0:Lcom/android/server/am/ActivityStack;
 
-    .line 5381
+    .line 4444
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
-    .line 5382
+    .line 4445
     iput-object p2, p0, Lcom/android/server/am/ActivityStack$myThread;->mTargetActivityRecord:Lcom/android/server/am/ActivityRecord;
 
-    .line 5383
+    .line 4446
     return-void
 .end method
 
@@ -46,26 +46,26 @@
     .locals 2
 
     .prologue
-    .line 5386
+    .line 4449
     iget-object v0, p0, Lcom/android/server/am/ActivityStack$myThread;->this$0:Lcom/android/server/am/ActivityStack;
 
     iget-object v1, v0, Lcom/android/server/am/ActivityStack;->mService:Lcom/android/server/am/ActivityManagerService;
 
     monitor-enter v1
 
-    .line 5387
+    .line 4450
     :try_start_0
     iget-object v0, p0, Lcom/android/server/am/ActivityStack$myThread;->mTargetActivityRecord:Lcom/android/server/am/ActivityRecord;
 
     invoke-virtual {v0}, Lcom/android/server/am/ActivityRecord;->resumeKeyDispatchingLocked()V
 
-    .line 5388
+    .line 4451
     monitor-exit v1
 
-    .line 5389
+    .line 4452
     return-void
 
-    .line 5388
+    .line 4451
     :catchall_0
     move-exception v0
 

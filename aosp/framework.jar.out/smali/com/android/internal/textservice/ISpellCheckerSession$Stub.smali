@@ -26,11 +26,9 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "com.android.internal.textservice.ISpellCheckerSession"
 
-.field static final TRANSACTION_onCancel:I = 0x3
+.field static final TRANSACTION_onCancel:I = 0x2
 
-.field static final TRANSACTION_onClose:I = 0x4
-
-.field static final TRANSACTION_onGetSentenceSuggestionsMultiple:I = 0x2
+.field static final TRANSACTION_onClose:I = 0x3
 
 .field static final TRANSACTION_onGetSuggestionsMultiple:I = 0x1
 
@@ -126,7 +124,7 @@
     .line 41
     sparse-switch p1, :sswitch_data_0
 
-    .line 83
+    .line 73
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v3
@@ -195,58 +193,30 @@
 
     invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 64
-    sget-object v4, Landroid/view/textservice/TextInfo;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-virtual {p2, v4}, Landroid/os/Parcel;->createTypedArray(Landroid/os/Parcelable$Creator;)[Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Landroid/view/textservice/TextInfo;
-
-    .line 66
-    .restart local v0       #_arg0:[Landroid/view/textservice/TextInfo;
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v1
-
-    .line 67
-    .restart local v1       #_arg1:I
-    invoke-virtual {p0, v0, v1}, Lcom/android/internal/textservice/ISpellCheckerSession$Stub;->onGetSentenceSuggestionsMultiple([Landroid/view/textservice/TextInfo;I)V
+    .line 63
+    invoke-virtual {p0}, Lcom/android/internal/textservice/ISpellCheckerSession$Stub;->onCancel()V
 
     goto :goto_0
 
-    .line 72
-    .end local v0           #_arg0:[Landroid/view/textservice/TextInfo;
-    .end local v1           #_arg1:I
+    .line 68
     :sswitch_3
     const-string v4, "com.android.internal.textservice.ISpellCheckerSession"
 
     invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 73
-    invoke-virtual {p0}, Lcom/android/internal/textservice/ISpellCheckerSession$Stub;->onCancel()V
-
-    goto :goto_0
-
-    .line 78
-    :sswitch_4
-    const-string v4, "com.android.internal.textservice.ISpellCheckerSession"
-
-    invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 79
+    .line 69
     invoke-virtual {p0}, Lcom/android/internal/textservice/ISpellCheckerSession$Stub;->onClose()V
 
     goto :goto_0
 
     .line 41
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
         0x2 -> :sswitch_2
         0x3 -> :sswitch_3
-        0x4 -> :sswitch_4
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

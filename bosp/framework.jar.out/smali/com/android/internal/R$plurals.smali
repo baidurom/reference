@@ -31,12 +31,6 @@
 
 .field public static final abbrev_num_seconds_ago:I = #plurals@abbrev_num_seconds_ago#t
 
-.field public static final duration_hours:I = #plurals@duration_hours#t
-
-.field public static final duration_minutes:I = #plurals@duration_minutes#t
-
-.field public static final duration_seconds:I = #plurals@duration_seconds#t
-
 .field public static final in_num_days:I = #plurals@in_num_days#t
 
 .field public static final in_num_hours:I = #plurals@in_num_hours#t
@@ -67,7 +61,7 @@
     .locals 0
 
     .prologue
-    .line 13154
+    .line 15955
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -12,118 +12,10 @@
     .locals 0
 
     .prologue
-    .line 87
+    .line 91
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
-.end method
-
-.method public static activateCellBroadcastSms(ZI)Z
-    .locals 7
-    .parameter "activate"
-    .parameter "slotId"
-
-    .prologue
-    .line 1343
-    const-string v4, "SMS"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "activateCellBroadcastSms activate : "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string v6, ", slot = "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1344
-    const/4 v1, 0x0
-
-    .line 1346
-    .local v1, result:Z
-    invoke-static {p1}, Landroid/telephony/gemini/GeminiSmsManager;->getSmsServiceName(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 1348
-    .local v3, serviceName:Ljava/lang/String;
-    :try_start_0
-    invoke-static {v3}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lcom/android/internal/telephony/ISms$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/telephony/ISms;
-
-    move-result-object v2
-
-    .line 1349
-    .local v2, service:Lcom/android/internal/telephony/ISms;
-    if-eqz v2, :cond_0
-
-    .line 1350
-    invoke-interface {v2, p0}, Lcom/android/internal/telephony/ISms;->activateCellBroadcastSms(Z)Z
-
-    move-result v1
-
-    .line 1360
-    .end local v2           #service:Lcom/android/internal/telephony/ISms;
-    :goto_0
-    return v1
-
-    .line 1352
-    .restart local v2       #service:Lcom/android/internal/telephony/ISms;
-    :cond_0
-    const-string v4, "SMS"
-
-    const-string v5, "fail to get sms service"
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 1353
-    const/4 v1, 0x0
-
-    goto :goto_0
-
-    .line 1355
-    .end local v2           #service:Lcom/android/internal/telephony/ISms;
-    :catch_0
-    move-exception v0
-
-    .line 1356
-    .local v0, e:Landroid/os/RemoteException;
-    const-string v4, "SMS"
-
-    const-string v5, "fail to activate CB"
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1357
-    const/4 v1, 0x0
-
-    goto :goto_0
 .end method
 
 .method public static copyMessageToIccGemini([B[BII)Z
@@ -134,23 +26,23 @@
     .parameter "simId"
 
     .prologue
-    .line 554
+    .line 547
     const-string v3, "SMS"
 
     const-string v4, "call copyMessageToIccGemini"
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 555
+    .line 548
     const/4 v2, 0x0
 
-    .line 557
+    .line 550
     .local v2, success:Z
     invoke-static {p3}, Landroid/telephony/gemini/GeminiSmsManager;->getSmsServiceName(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 560
+    .line 553
     .local v1, isms:Ljava/lang/String;
     :try_start_0
     invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -161,72 +53,26 @@
 
     move-result-object v0
 
-    .line 561
+    .line 554
     .local v0, iccISms:Lcom/android/internal/telephony/ISms;
     if-eqz v0, :cond_0
 
-    .line 562
+    .line 555
     invoke-interface {v0, p2, p1, p0}, Lcom/android/internal/telephony/ISms;->copyMessageToIccEf(I[B[B)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v2
 
-    .line 568
+    .line 561
     .end local v0           #iccISms:Lcom/android/internal/telephony/ISms;
     :cond_0
     :goto_0
     return v2
 
-    .line 564
+    .line 557
     :catch_0
     move-exception v3
-
-    goto :goto_0
-.end method
-
-.method public static copySmsToIcc([B[BII)I
-    .locals 3
-    .parameter "smsc"
-    .parameter "pdu"
-    .parameter "status"
-    .parameter "subscription"
-
-    .prologue
-    .line 1459
-    invoke-static {p2, p1, p0, p3}, Landroid/telephony/gemini/GeminiSmsManager;->insertRawMessageToIccCardGemini(I[B[BI)Landroid/telephony/SimSmsInsertStatus;
-
-    move-result-object v1
-
-    .line 1461
-    .local v1, smsStatus:Landroid/telephony/SimSmsInsertStatus;
-    if-eqz v1, :cond_0
-
-    .line 1462
-    invoke-virtual {v1}, Landroid/telephony/SimSmsInsertStatus;->getIndex()[I
-
-    move-result-object v0
-
-    .line 1464
-    .local v0, index:[I
-    if-eqz v0, :cond_0
-
-    array-length v2, v0
-
-    if-lez v2, :cond_0
-
-    .line 1465
-    const/4 v2, 0x0
-
-    aget v2, v0, v2
-
-    .line 1469
-    .end local v0           #index:[I
-    :goto_0
-    return v2
-
-    :cond_0
-    const/4 v2, -0x1
 
     goto :goto_0
 .end method
@@ -252,7 +98,7 @@
     .end annotation
 
     .prologue
-    .line 586
+    .line 579
     .local p2, text:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     const-string v1, "SMS"
 
@@ -260,16 +106,16 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 587
+    .line 580
     const/4 v8, 0x1
 
-    .line 589
+    .line 582
     .local v8, result:I
     invoke-static {p6}, Landroid/telephony/gemini/GeminiSmsManager;->getSmsServiceName(I)Ljava/lang/String;
 
     move-result-object v7
 
-    .line 592
+    .line 585
     .local v7, isms:Ljava/lang/String;
     :try_start_0
     invoke-static {v7}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -280,7 +126,7 @@
 
     move-result-object v0
 
-    .line 593
+    .line 586
     .local v0, iccISms:Lcom/android/internal/telephony/ISms;
     if-eqz v0, :cond_0
 
@@ -294,20 +140,20 @@
 
     move-wide v5, p4
 
-    .line 594
+    .line 587
     invoke-interface/range {v0 .. v6}, Lcom/android/internal/telephony/ISms;->copyTextMessageToIccCard(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;IJ)I
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v8
 
-    .line 600
+    .line 593
     .end local v0           #iccISms:Lcom/android/internal/telephony/ISms;
     :cond_0
     :goto_0
     return v8
 
-    .line 596
+    .line 589
     :catch_0
     move-exception v1
 
@@ -333,7 +179,7 @@
     .end annotation
 
     .prologue
-    .line 811
+    .line 804
     .local p0, records:Ljava/util/List;,"Ljava/util/List<Lcom/android/internal/telephony/SmsRawData;>;"
     const-string v5, "SMS"
 
@@ -341,26 +187,26 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 812
+    .line 805
     const/4 v2, 0x0
 
-    .line 813
+    .line 806
     .local v2, geminiMessages:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/telephony/SmsMessage;>;"
     if-eqz p0, :cond_2
 
-    .line 814
+    .line 807
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v0
 
-    .line 815
+    .line 808
     .local v0, count:I
     new-instance v2, Ljava/util/ArrayList;
 
     .end local v2           #geminiMessages:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/telephony/SmsMessage;>;"
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 817
+    .line 810
     .restart local v2       #geminiMessages:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/telephony/SmsMessage;>;"
     const/4 v4, 0x0
 
@@ -368,18 +214,18 @@
     :goto_0
     if-ge v4, v0, :cond_1
 
-    .line 818
+    .line 811
     invoke-interface {p0, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/android/internal/telephony/SmsRawData;
 
-    .line 820
+    .line 813
     .local v1, data:Lcom/android/internal/telephony/SmsRawData;
     if-eqz v1, :cond_0
 
-    .line 821
+    .line 814
     add-int/lit8 v5, v4, 0x1
 
     invoke-virtual {v1}, Lcom/android/internal/telephony/SmsRawData;->getBytes()[B
@@ -390,21 +236,21 @@
 
     move-result-object v3
 
-    .line 823
+    .line 816
     .local v3, geminiSms:Landroid/telephony/gemini/GeminiSmsMessage;
     if-eqz v3, :cond_0
 
-    .line 824
+    .line 817
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 817
+    .line 810
     .end local v3           #geminiSms:Landroid/telephony/gemini/GeminiSmsMessage;
     :cond_0
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 828
+    .line 821
     .end local v1           #data:Lcom/android/internal/telephony/SmsRawData;
     :cond_1
     const-string v5, "SMS"
@@ -433,13 +279,13 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 833
+    .line 826
     .end local v0           #count:I
     .end local v4           #i:I
     :goto_1
     return-object v2
 
-    .line 830
+    .line 823
     :cond_2
     const-string v5, "SMS"
 
@@ -456,35 +302,35 @@
     .parameter "simId"
 
     .prologue
-    .line 616
+    .line 609
     const-string v4, "SMS"
 
     const-string v5, "call deleteMessageFromIccGemini"
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 617
+    .line 610
     const/4 v3, 0x0
 
-    .line 618
+    .line 611
     .local v3, success:Z
     invoke-static {p1}, Landroid/telephony/gemini/GeminiSmsManager;->getSmsServiceName(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 620
+    .line 613
     .local v1, isms:Ljava/lang/String;
     const/16 v4, 0xaf
 
     new-array v2, v4, [B
 
-    .line 621
+    .line 614
     .local v2, pdu:[B
     const/4 v4, -0x1
 
     invoke-static {v2, v4}, Ljava/util/Arrays;->fill([BB)V
 
-    .line 624
+    .line 617
     :try_start_0
     invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
@@ -494,11 +340,11 @@
 
     move-result-object v0
 
-    .line 625
+    .line 618
     .local v0, iccISms:Lcom/android/internal/telephony/ISms;
     if-eqz v0, :cond_0
 
-    .line 626
+    .line 619
     const/4 v4, 0x0
 
     invoke-interface {v0, p0, v4, v2}, Lcom/android/internal/telephony/ISms;->updateMessageOnIccEf(II[B)Z
@@ -507,13 +353,13 @@
 
     move-result v3
 
-    .line 633
+    .line 626
     .end local v0           #iccISms:Lcom/android/internal/telephony/ISms;
     :cond_0
     :goto_0
     return v3
 
-    .line 629
+    .line 622
     :catch_0
     move-exception v4
 
@@ -526,7 +372,7 @@
     .parameter "slotId"
 
     .prologue
-    .line 1286
+    .line 1263
     invoke-static {p0, p0, p1}, Landroid/telephony/gemini/GeminiSmsManager;->disableCellBroadcastRangeGemini(III)Z
 
     move-result v0
@@ -541,7 +387,7 @@
     .parameter "slotId"
 
     .prologue
-    .line 1318
+    .line 1295
     const-string v4, "SMS"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -584,16 +430,16 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1319
+    .line 1296
     const/4 v1, 0x0
 
-    .line 1321
+    .line 1298
     .local v1, result:Z
     invoke-static {p2}, Landroid/telephony/gemini/GeminiSmsManager;->getSmsServiceName(I)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 1323
+    .line 1300
     .local v3, serviceName:Ljava/lang/String;
     :try_start_0
     invoke-static {v3}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -604,16 +450,16 @@
 
     move-result-object v2
 
-    .line 1324
+    .line 1301
     .local v2, service:Lcom/android/internal/telephony/ISms;
     if-eqz v2, :cond_0
 
-    .line 1325
+    .line 1302
     invoke-interface {v2, p0, p1}, Lcom/android/internal/telephony/ISms;->disableCellBroadcastRange(II)Z
 
     move-result v1
 
-    .line 1326
+    .line 1303
     const-string v4, "SMS"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -636,12 +482,12 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1336
+    .line 1313
     .end local v2           #service:Lcom/android/internal/telephony/ISms;
     :goto_0
     return v1
 
-    .line 1328
+    .line 1305
     .restart local v2       #service:Lcom/android/internal/telephony/ISms;
     :cond_0
     const-string v4, "SMS"
@@ -652,17 +498,17 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1329
+    .line 1306
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 1331
+    .line 1308
     .end local v2           #service:Lcom/android/internal/telephony/ISms;
     :catch_0
     move-exception v0
 
-    .line 1332
+    .line 1309
     .local v0, e:Landroid/os/RemoteException;
     const-string v4, "SMS"
 
@@ -670,7 +516,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1333
+    .line 1310
     const/4 v1, 0x0
 
     goto :goto_0
@@ -692,7 +538,7 @@
     .end annotation
 
     .prologue
-    .line 98
+    .line 102
     invoke-static {p0}, Landroid/telephony/SmsMessage;->fragmentText(Ljava/lang/String;)Ljava/util/ArrayList;
 
     move-result-object v0
@@ -717,7 +563,7 @@
     .end annotation
 
     .prologue
-    .line 1102
+    .line 1089
     const-string v1, "SMS"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -740,12 +586,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1103
+    .line 1090
     invoke-static {p0, p1}, Landroid/telephony/SmsMessage;->fragmentText(Ljava/lang/String;I)Ljava/util/ArrayList;
 
     move-result-object v0
 
-    .line 1104
+    .line 1091
     .local v0, ret:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     const-string v1, "SMS"
 
@@ -773,7 +619,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1105
+    .line 1092
     return-object v0
 .end method
 
@@ -783,7 +629,7 @@
     .parameter "slotId"
 
     .prologue
-    .line 1279
+    .line 1256
     invoke-static {p0, p0, p1}, Landroid/telephony/gemini/GeminiSmsManager;->enableCellBroadcastRangeGemini(III)Z
 
     move-result v0
@@ -798,7 +644,7 @@
     .parameter "slotId"
 
     .prologue
-    .line 1293
+    .line 1270
     const-string v4, "SMS"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -841,16 +687,16 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1294
+    .line 1271
     const/4 v1, 0x0
 
-    .line 1296
+    .line 1273
     .local v1, result:Z
     invoke-static {p2}, Landroid/telephony/gemini/GeminiSmsManager;->getSmsServiceName(I)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 1298
+    .line 1275
     .local v3, serviceName:Ljava/lang/String;
     :try_start_0
     invoke-static {v3}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -861,16 +707,16 @@
 
     move-result-object v2
 
-    .line 1299
+    .line 1276
     .local v2, service:Lcom/android/internal/telephony/ISms;
     if-eqz v2, :cond_0
 
-    .line 1300
+    .line 1277
     invoke-interface {v2, p0, p1}, Lcom/android/internal/telephony/ISms;->enableCellBroadcastRange(II)Z
 
     move-result v1
 
-    .line 1301
+    .line 1278
     const-string v4, "SMS"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -893,12 +739,12 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1311
+    .line 1288
     .end local v2           #service:Lcom/android/internal/telephony/ISms;
     :goto_0
     return v1
 
-    .line 1303
+    .line 1280
     .restart local v2       #service:Lcom/android/internal/telephony/ISms;
     :cond_0
     const-string v4, "SMS"
@@ -909,17 +755,17 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1304
+    .line 1281
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 1306
+    .line 1283
     .end local v2           #service:Lcom/android/internal/telephony/ISms;
     :catch_0
     move-exception v0
 
-    .line 1307
+    .line 1284
     .local v0, e:Landroid/os/RemoteException;
     const-string v4, "SMS"
 
@@ -927,7 +773,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1308
+    .line 1285
     const/4 v1, 0x0
 
     goto :goto_0
@@ -949,23 +795,23 @@
     .prologue
     const/4 v12, 0x1
 
-    .line 680
+    .line 673
     const-string v9, "SMS"
 
     const-string v10, "call getAllMessagesFromIccGemini"
 
     invoke-static {v9, v10}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 681
+    .line 674
     invoke-static {p0}, Landroid/telephony/gemini/GeminiSmsManager;->getSmsServiceName(I)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 682
+    .line 675
     .local v4, isms:Ljava/lang/String;
     const/4 v6, 0x0
 
-    .line 685
+    .line 678
     .local v6, records:Ljava/util/List;,"Ljava/util/List<Lcom/android/internal/telephony/SmsRawData;>;"
     :try_start_0
     invoke-static {v4}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -976,33 +822,33 @@
 
     move-result-object v2
 
-    .line 686
+    .line 679
     .local v2, iccISms:Lcom/android/internal/telephony/ISms;
     if-eqz v2, :cond_0
 
-    .line 687
+    .line 680
     invoke-interface {v2}, Lcom/android/internal/telephony/ISms;->getAllMessagesFromIccEf()Ljava/util/List;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v6
 
-    .line 693
+    .line 686
     .end local v2           #iccISms:Lcom/android/internal/telephony/ISms;
     :cond_0
     :goto_0
     const/4 v8, 0x0
 
-    .line 694
+    .line 687
     .local v8, sz:I
     if-eqz v6, :cond_1
 
-    .line 695
+    .line 688
     invoke-interface {v6}, Ljava/util/List;->size()I
 
     move-result v8
 
-    .line 697
+    .line 690
     :cond_1
     const/4 v1, 0x0
 
@@ -1010,10 +856,10 @@
     :goto_1
     if-ge v1, v8, :cond_5
 
-    .line 698
+    .line 691
     const/4 v0, 0x0
 
-    .line 699
+    .line 692
     .local v0, data:[B
     invoke-interface {v6, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -1021,27 +867,27 @@
 
     check-cast v5, Lcom/android/internal/telephony/SmsRawData;
 
-    .line 700
+    .line 693
     .local v5, record:Lcom/android/internal/telephony/SmsRawData;
     if-nez v5, :cond_3
 
-    .line 697
+    .line 690
     :cond_2
     :goto_2
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 703
+    .line 696
     :cond_3
     invoke-virtual {v5}, Lcom/android/internal/telephony/SmsRawData;->getBytes()[B
 
     move-result-object v0
 
-    .line 705
+    .line 698
     add-int/lit8 v3, v1, 0x1
 
-    .line 706
+    .line 699
     .local v3, index:I
     const/4 v9, 0x0
 
@@ -1053,14 +899,14 @@
 
     if-ne v9, v10, :cond_2
 
-    .line 707
+    .line 700
     const-string v9, "SMS"
 
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v11, "index["
+    const-string v11, "index["
 
     invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1082,16 +928,16 @@
 
     invoke-static {v9, v10}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 709
+    .line 702
     invoke-static {v3, v12, v0, p0}, Landroid/telephony/gemini/GeminiSmsManager;->updateMessageOnIccGemini(II[BI)Z
 
     move-result v7
 
-    .line 710
+    .line 703
     .local v7, ret:Z
     if-ne v7, v12, :cond_4
 
-    .line 711
+    .line 704
     const-string v9, "SMS"
 
     new-instance v10, Ljava/lang/StringBuilder;
@@ -1122,7 +968,7 @@
 
     goto :goto_2
 
-    .line 713
+    .line 706
     :cond_4
     const-string v9, "SMS"
 
@@ -1132,7 +978,7 @@
 
     goto :goto_2
 
-    .line 718
+    .line 711
     .end local v0           #data:[B
     .end local v3           #index:I
     .end local v5           #record:Lcom/android/internal/telephony/SmsRawData;
@@ -1144,181 +990,11 @@
 
     return-object v9
 
-    .line 689
+    .line 682
     .end local v1           #i:I
     .end local v8           #sz:I
     :catch_0
     move-exception v9
-
-    goto :goto_0
-.end method
-
-.method public static getMaxEfSmsGemini(I)I
-    .locals 2
-    .parameter "slotId"
-
-    .prologue
-    .line 1473
-    invoke-static {p0}, Landroid/telephony/gemini/GeminiSmsManager;->getSmsSimMemoryStatusGemini(I)Lcom/mediatek/common/telephony/IccSmsStorageStatus;
-
-    move-result-object v0
-
-    .line 1474
-    .local v0, memStatus:Lcom/mediatek/common/telephony/IccSmsStorageStatus;
-    if-eqz v0, :cond_0
-
-    .line 1475
-    iget v1, v0, Lcom/mediatek/common/telephony/IccSmsStorageStatus;->mTotal:I
-
-    .line 1478
-    :goto_0
-    return v1
-
-    :cond_0
-    const/4 v1, -0x1
-
-    goto :goto_0
-.end method
-
-.method protected static getSmsFormat(I)Ljava/lang/String;
-    .locals 4
-    .parameter "simId"
-
-    .prologue
-    .line 1367
-    invoke-static {p0}, Landroid/telephony/gemini/GeminiSmsManager;->getSmsServiceName(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 1369
-    .local v2, isms:Ljava/lang/String;
-    :try_start_0
-    invoke-static {v2}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lcom/android/internal/telephony/ISms$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/telephony/ISms;
-
-    move-result-object v1
-
-    .line 1370
-    .local v1, iccISms:Lcom/android/internal/telephony/ISms;
-    if-eqz v1, :cond_0
-
-    .line 1371
-    invoke-interface {v1}, Lcom/android/internal/telephony/ISms;->getFormat()Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 1376
-    .end local v1           #iccISms:Lcom/android/internal/telephony/ISms;
-    :goto_0
-    return-object v3
-
-    .line 1373
-    .restart local v1       #iccISms:Lcom/android/internal/telephony/ISms;
-    :cond_0
-    const-string v3, "3gpp"
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    .line 1375
-    .end local v1           #iccISms:Lcom/android/internal/telephony/ISms;
-    :catch_0
-    move-exception v0
-
-    .line 1376
-    .local v0, ex:Landroid/os/RemoteException;
-    const-string v3, "3gpp"
-
-    goto :goto_0
-.end method
-
-.method public static getSmsParametersGemini(I)Landroid/telephony/SmsParameters;
-    .locals 6
-    .parameter "slotId"
-
-    .prologue
-    const/4 v3, 0x0
-
-    .line 1384
-    const-string v4, "SMS"
-
-    const-string v5, "[EFsmsp call getSmsParametersGemini"
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1385
-    invoke-static {p0}, Landroid/telephony/gemini/GeminiSmsManager;->getSmsServiceName(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 1388
-    .local v2, svcName:Ljava/lang/String;
-    :try_start_0
-    invoke-static {v2}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lcom/android/internal/telephony/ISms$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/telephony/ISms;
-
-    move-result-object v1
-
-    .line 1389
-    .local v1, iccISms:Lcom/android/internal/telephony/ISms;
-    if-eqz v1, :cond_0
-
-    .line 1390
-    const-string v4, "SMS"
-
-    const-string v5, "[EFsmsp to get params from ef"
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1391
-    invoke-interface {v1}, Lcom/android/internal/telephony/ISms;->getSmsParameters()Landroid/telephony/SmsParameters;
-
-    move-result-object v3
-
-    .line 1401
-    .end local v1           #iccISms:Lcom/android/internal/telephony/ISms;
-    :goto_0
-    return-object v3
-
-    .line 1393
-    .restart local v1       #iccISms:Lcom/android/internal/telephony/ISms;
-    :cond_0
-    const-string v4, "SMS"
-
-    const-string v5, "[EFsmsp fail to get service"
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    .line 1396
-    .end local v1           #iccISms:Lcom/android/internal/telephony/ISms;
-    :catch_0
-    move-exception v0
-
-    .line 1397
-    .local v0, ex:Landroid/os/RemoteException;
-    const-string v4, "SMS"
-
-    const-string v5, "[EFsmsp fail because of RemoteException"
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1400
-    const-string v4, "SMS"
-
-    const-string v5, "[EFsmsp fail to get EFsmsp info"
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 .end method
@@ -1328,74 +1004,52 @@
     .parameter "simId"
 
     .prologue
-    .line 842
+    .line 835
     if-nez p0, :cond_0
 
-    .line 843
-    const-string/jumbo v0, "isms"
+    .line 836
+    const-string v0, "isms"
 
-    .line 851
+    .line 840
     :goto_0
     return-object v0
 
-    .line 844
+    .line 837
     :cond_0
     const/4 v0, 0x1
 
     if-ne p0, v0, :cond_1
 
-    .line 845
-    const-string/jumbo v0, "isms2"
+    .line 838
+    const-string v0, "isms2"
 
     goto :goto_0
 
-    .line 846
+    .line 840
     :cond_1
-    const/4 v0, 0x2
-
-    if-ne p0, v0, :cond_2
-
-    .line 847
-    const-string/jumbo v0, "isms3"
-
-    goto :goto_0
-
-    .line 848
-    :cond_2
-    const/4 v0, 0x3
-
-    if-ne p0, v0, :cond_3
-
-    .line 849
-    const-string/jumbo v0, "isms4"
-
-    goto :goto_0
-
-    .line 851
-    :cond_3
     const/4 v0, 0x0
 
     goto :goto_0
 .end method
 
-.method public static getSmsSimMemoryStatusGemini(I)Lcom/mediatek/common/telephony/IccSmsStorageStatus;
+.method public static getSmsSimMemoryStatusGemini(I)Landroid/telephony/SmsMemoryStatus;
     .locals 4
     .parameter "simId"
 
     .prologue
-    .line 782
+    .line 775
     const-string v2, "SMS"
 
     const-string v3, "call getSmsSimMemoryStatusGemini"
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 783
+    .line 776
     invoke-static {p0}, Landroid/telephony/gemini/GeminiSmsManager;->getSmsServiceName(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 786
+    .line 779
     .local v1, isms:Ljava/lang/String;
     :try_start_0
     invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -1406,27 +1060,27 @@
 
     move-result-object v0
 
-    .line 788
+    .line 781
     .local v0, iccISms:Lcom/android/internal/telephony/ISms;
     if-eqz v0, :cond_0
 
-    .line 789
-    invoke-interface {v0}, Lcom/android/internal/telephony/ISms;->getSmsSimMemoryStatus()Lcom/mediatek/common/telephony/IccSmsStorageStatus;
+    .line 782
+    invoke-interface {v0}, Lcom/android/internal/telephony/ISms;->getSmsSimMemoryStatus()Landroid/telephony/SmsMemoryStatus;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v2
 
-    .line 795
+    .line 788
     .end local v0           #iccISms:Lcom/android/internal/telephony/ISms;
     :goto_0
     return-object v2
 
-    .line 791
+    .line 784
     :catch_0
     move-exception v2
 
-    .line 795
+    .line 788
     :cond_0
     const/4 v2, 0x0
 
@@ -1441,23 +1095,23 @@
     .parameter "slotId"
 
     .prologue
-    .line 1144
+    .line 1131
     const-string v3, "SMS"
 
     const-string v4, "call insertRawMessageToIccCardGemini"
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1145
+    .line 1132
     const/4 v2, 0x0
 
-    .line 1147
+    .line 1134
     .local v2, ret:Landroid/telephony/SimSmsInsertStatus;
     invoke-static {p3}, Landroid/telephony/gemini/GeminiSmsManager;->getSmsServiceName(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1149
+    .line 1136
     .local v1, isms:Ljava/lang/String;
     :try_start_0
     invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -1468,18 +1122,18 @@
 
     move-result-object v0
 
-    .line 1150
+    .line 1137
     .local v0, iccISms:Lcom/android/internal/telephony/ISms;
     if-eqz v0, :cond_0
 
-    .line 1151
+    .line 1138
     invoke-interface {v0, p0, p1, p2}, Lcom/android/internal/telephony/ISms;->insertRawMessageToIccCard(I[B[B)Landroid/telephony/SimSmsInsertStatus;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v2
 
-    .line 1157
+    .line 1144
     .end local v0           #iccISms:Lcom/android/internal/telephony/ISms;
     :cond_0
     :goto_0
@@ -1510,16 +1164,16 @@
     :goto_1
     invoke-static {v4, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1158
+    .line 1145
     return-object v2
 
-    .line 1157
+    .line 1144
     :cond_1
     const-string v3, "[insertRaw null"
 
     goto :goto_1
 
-    .line 1153
+    .line 1140
     :catch_0
     move-exception v3
 
@@ -1548,7 +1202,7 @@
     .end annotation
 
     .prologue
-    .line 1125
+    .line 1112
     .local p2, text:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     const-string v1, "SMS"
 
@@ -1556,16 +1210,16 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1126
+    .line 1113
     const/4 v8, 0x0
 
-    .line 1128
+    .line 1115
     .local v8, ret:Landroid/telephony/SimSmsInsertStatus;
     invoke-static {p6}, Landroid/telephony/gemini/GeminiSmsManager;->getSmsServiceName(I)Ljava/lang/String;
 
     move-result-object v7
 
-    .line 1130
+    .line 1117
     .local v7, isms:Ljava/lang/String;
     :try_start_0
     invoke-static {v7}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -1576,7 +1230,7 @@
 
     move-result-object v0
 
-    .line 1131
+    .line 1118
     .local v0, iccISms:Lcom/android/internal/telephony/ISms;
     if-eqz v0, :cond_0
 
@@ -1590,14 +1244,14 @@
 
     move-wide v5, p4
 
-    .line 1132
+    .line 1119
     invoke-interface/range {v0 .. v6}, Lcom/android/internal/telephony/ISms;->insertTextMessageToIccCard(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;IJ)Landroid/telephony/SimSmsInsertStatus;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v8
 
-    .line 1138
+    .line 1125
     .end local v0           #iccISms:Lcom/android/internal/telephony/ISms;
     :cond_0
     :goto_0
@@ -1628,16 +1282,16 @@
     :goto_1
     invoke-static {v2, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1139
+    .line 1126
     return-object v8
 
-    .line 1138
+    .line 1125
     :cond_1
     const-string v1, "[insertText null"
 
     goto :goto_1
 
-    .line 1134
+    .line 1121
     :catch_0
     move-exception v1
 
@@ -1649,23 +1303,23 @@
     .parameter "simId"
 
     .prologue
-    .line 756
+    .line 749
     const-string v3, "SMS"
 
     const-string v4, "call isSmsReadyGemini"
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 757
+    .line 750
     const/4 v1, 0x0
 
-    .line 758
+    .line 751
     .local v1, isReady:Z
     invoke-static {p0}, Landroid/telephony/gemini/GeminiSmsManager;->getSmsServiceName(I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 761
+    .line 754
     .local v2, isms:Ljava/lang/String;
     :try_start_0
     invoke-static {v2}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -1676,24 +1330,24 @@
 
     move-result-object v0
 
-    .line 762
+    .line 755
     .local v0, iccISms:Lcom/android/internal/telephony/ISms;
     if-eqz v0, :cond_0
 
-    .line 763
+    .line 756
     invoke-interface {v0}, Lcom/android/internal/telephony/ISms;->isSmsReady()Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v1
 
-    .line 769
+    .line 762
     .end local v0           #iccISms:Lcom/android/internal/telephony/ISms;
     :cond_0
     :goto_0
     return v1
 
-    .line 765
+    .line 758
     :catch_0
     move-exception v3
 
@@ -1701,31 +1355,48 @@
 .end method
 
 .method private static isValidParameters(Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;)Z
-    .locals 3
+    .locals 4
     .parameter "destinationAddress"
     .parameter "text"
     .parameter "sentIntent"
 
     .prologue
-    .line 867
+    .line 855
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 869
+    .line 857
     .local v1, sentIntents:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/app/PendingIntent;>;"
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 872
+    .line 860
     .local v0, parts:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     invoke-virtual {v1, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 873
+    .line 861
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 879
+    .line 863
+    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    .line 864
+    new-instance v2, Ljava/lang/IllegalArgumentException;
+
+    const-string v3, "Invalid message body"
+
+    invoke-direct {v2, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v2
+
+    .line 867
+    :cond_0
     invoke-static {p0, v0, v1}, Landroid/telephony/gemini/GeminiSmsManager;->isValidParameters(Ljava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;)Z
 
     move-result v2
@@ -1758,7 +1429,7 @@
     .local p2, sentIntents:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/app/PendingIntent;>;"
     const/4 v2, 0x1
 
-    .line 895
+    .line 881
     if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
@@ -1767,12 +1438,12 @@
 
     if-nez v3, :cond_1
 
-    .line 920
+    .line 907
     :cond_0
     :goto_0
     return v2
 
-    .line 899
+    .line 885
     :cond_1
     invoke-static {p0}, Landroid/telephony/gemini/GeminiSmsManager;->isValidSmsDestinationAddress(Ljava/lang/String;)Z
 
@@ -1780,7 +1451,7 @@
 
     if-nez v3, :cond_4
 
-    .line 900
+    .line 886
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -1791,18 +1462,18 @@
 
     if-ge v0, v2, :cond_3
 
-    .line 901
+    .line 888
     invoke-virtual {p2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/app/PendingIntent;
 
-    .line 902
+    .line 889
     .local v1, sentIntent:Landroid/app/PendingIntent;
     if-eqz v1, :cond_2
 
-    .line 904
+    .line 891
     const/4 v2, 0x1
 
     :try_start_0
@@ -1810,14 +1481,14 @@
     :try_end_0
     .catch Landroid/app/PendingIntent$CanceledException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 900
+    .line 886
     :cond_2
     :goto_2
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 909
+    .line 896
     .end local v1           #sentIntent:Landroid/app/PendingIntent;
     :cond_3
     const-string v2, "SMS"
@@ -1842,12 +1513,12 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 910
+    .line 897
     const/4 v2, 0x0
 
     goto :goto_0
 
-    .line 913
+    .line 900
     .end local v0           #i:I
     :cond_4
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -1856,7 +1527,7 @@
 
     if-eqz v3, :cond_5
 
-    .line 914
+    .line 901
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
     const-string v3, "Invalid destinationAddress"
@@ -1865,7 +1536,7 @@
 
     throw v2
 
-    .line 916
+    .line 903
     :cond_5
     if-eqz p1, :cond_6
 
@@ -1875,7 +1546,7 @@
 
     if-ge v3, v2, :cond_0
 
-    .line 917
+    .line 904
     :cond_6
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
@@ -1885,7 +1556,7 @@
 
     throw v2
 
-    .line 905
+    .line 892
     .restart local v0       #i:I
     .restart local v1       #sentIntent:Landroid/app/PendingIntent;
     :catch_0
@@ -1901,25 +1572,25 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 932
+    .line 919
     invoke-static {p0}, Landroid/telephony/PhoneNumberUtils;->extractNetworkPortion(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 933
+    .line 920
     .local v0, encodeAddress:Ljava/lang/String;
     if-nez v0, :cond_1
 
-    .line 943
+    .line 930
     :cond_0
     :goto_0
     return v3
 
-    .line 936
+    .line 923
     :cond_1
     const/4 v2, 0x0
 
-    .line 937
+    .line 924
     .local v2, spaceCount:I
     const/4 v1, 0x0
 
@@ -1931,7 +1602,7 @@
 
     if-ge v1, v4, :cond_4
 
-    .line 938
+    .line 925
     invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
 
     move-result v4
@@ -1948,17 +1619,17 @@
 
     if-ne v4, v5, :cond_3
 
-    .line 939
+    .line 926
     :cond_2
     add-int/lit8 v2, v2, 0x1
 
-    .line 937
+    .line 924
     :cond_3
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 943
+    .line 930
     :cond_4
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
@@ -1977,33 +1648,6 @@
     goto :goto_0
 .end method
 
-.method public static readValidityPeriod(I)I
-    .locals 2
-    .parameter "subscription"
-
-    .prologue
-    .line 1432
-    invoke-static {p0}, Landroid/telephony/gemini/GeminiSmsManager;->getSmsParametersGemini(I)Landroid/telephony/SmsParameters;
-
-    move-result-object v0
-
-    .line 1433
-    .local v0, smsParam:Landroid/telephony/SmsParameters;
-    if-eqz v0, :cond_0
-
-    .line 1434
-    iget v1, v0, Landroid/telephony/SmsParameters;->vp:I
-
-    .line 1437
-    :goto_0
-    return v1
-
-    :cond_0
-    const/4 v1, -0x1
-
-    goto :goto_0
-.end method
-
 .method public static sendDataMessageGemini(Ljava/lang/String;Ljava/lang/String;SS[BILandroid/app/PendingIntent;Landroid/app/PendingIntent;)V
     .locals 9
     .parameter "destinationAddress"
@@ -2016,14 +1660,14 @@
     .parameter "deliveryIntent"
 
     .prologue
-    .line 427
+    .line 424
     const-string v1, "SMS"
 
     const-string v2, "[xj send data with original port"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 428
+    .line 425
     const-string/jumbo v1, "send_data"
 
     invoke-static {p0, v1, p6}, Landroid/telephony/gemini/GeminiSmsManager;->isValidParameters(Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;)Z
@@ -2032,12 +1676,12 @@
 
     if-nez v1, :cond_1
 
-    .line 452
+    .line 448
     :cond_0
     :goto_0
     return-void
 
-    .line 433
+    .line 430
     :cond_1
     if-eqz p4, :cond_2
 
@@ -2045,7 +1689,7 @@
 
     if-nez v1, :cond_3
 
-    .line 434
+    .line 431
     :cond_2
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
@@ -2055,13 +1699,13 @@
 
     throw v1
 
-    .line 437
+    .line 434
     :cond_3
     invoke-static {p5}, Landroid/telephony/gemini/GeminiSmsManager;->getSmsServiceName(I)Ljava/lang/String;
 
     move-result-object v8
 
-    .line 439
+    .line 436
     .local v8, isms:Ljava/lang/String;
     :try_start_0
     const-string v1, "SMS"
@@ -2070,7 +1714,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 440
+    .line 437
     invoke-static {v8}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v1
@@ -2079,7 +1723,7 @@
 
     move-result-object v0
 
-    .line 441
+    .line 438
     .local v0, iccISms:Lcom/android/internal/telephony/ISms;
     const-string v1, "SMS"
 
@@ -2087,17 +1731,17 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 442
+    .line 439
     if-eqz v0, :cond_0
 
-    .line 443
+    .line 440
     const-string v1, "SMS"
 
     const-string v2, "[xj send data start"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 444
+    .line 441
     const v1, 0xffff
 
     and-int v3, p2, v1
@@ -2118,7 +1762,7 @@
 
     invoke-interface/range {v0 .. v7}, Lcom/android/internal/telephony/ISms;->sendDataWithOriginalPort(Ljava/lang/String;Ljava/lang/String;II[BLandroid/app/PendingIntent;Landroid/app/PendingIntent;)V
 
-    .line 447
+    .line 443
     const-string v1, "SMS"
 
     const-string v2, "[xj send data end"
@@ -2129,7 +1773,7 @@
 
     goto :goto_0
 
-    .line 449
+    .line 445
     .end local v0           #iccISms:Lcom/android/internal/telephony/ISms;
     :catch_0
     move-exception v1
@@ -2148,14 +1792,14 @@
     .parameter "deliveryIntent"
 
     .prologue
-    .line 372
+    .line 369
     const-string v1, "SMS"
 
     const-string v2, "call sendDataMessageGemini"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 373
+    .line 370
     const-string/jumbo v1, "send_data"
 
     invoke-static {p0, v1, p5}, Landroid/telephony/gemini/GeminiSmsManager;->isValidParameters(Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;)Z
@@ -2164,12 +1808,12 @@
 
     if-nez v1, :cond_1
 
-    .line 392
+    .line 389
     :cond_0
     :goto_0
     return-void
 
-    .line 378
+    .line 375
     :cond_1
     if-eqz p3, :cond_2
 
@@ -2177,7 +1821,7 @@
 
     if-nez v1, :cond_3
 
-    .line 379
+    .line 376
     :cond_2
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
@@ -2187,13 +1831,13 @@
 
     throw v1
 
-    .line 382
+    .line 379
     :cond_3
     invoke-static {p4}, Landroid/telephony/gemini/GeminiSmsManager;->getSmsServiceName(I)Ljava/lang/String;
 
     move-result-object v7
 
-    .line 384
+    .line 381
     .local v7, isms:Ljava/lang/String;
     :try_start_0
     invoke-static {v7}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -2204,11 +1848,11 @@
 
     move-result-object v0
 
-    .line 385
+    .line 382
     .local v0, iccISms:Lcom/android/internal/telephony/ISms;
     if-eqz v0, :cond_0
 
-    .line 386
+    .line 383
     const v1, 0xffff
 
     and-int v3, p2, v1
@@ -2229,7 +1873,7 @@
 
     goto :goto_0
 
-    .line 389
+    .line 386
     .end local v0           #iccISms:Lcom/android/internal/telephony/ISms;
     :catch_0
     move-exception v1
@@ -2238,7 +1882,7 @@
 .end method
 
 .method public static sendMultipartDataMessageGemini(Ljava/lang/String;Ljava/lang/String;S[[BILjava/util/ArrayList;Ljava/util/ArrayList;)V
-    .locals 0
+    .locals 17
     .parameter "destinationAddress"
     .parameter "scAddress"
     .parameter "destinationPort"
@@ -2264,10 +1908,225 @@
     .end annotation
 
     .prologue
-    .line 536
+    .line 487
     .local p5, sentIntents:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/app/PendingIntent;>;"
     .local p6, deliveryIntents:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/app/PendingIntent;>;"
+    const-string v3, "SMS"
+
+    const-string/jumbo v4, "sendMultipartDataMessageGemini"
+
+    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 488
+    new-instance v14, Ljava/util/ArrayList;
+
+    invoke-direct {v14}, Ljava/util/ArrayList;-><init>()V
+
+    .line 489
+    .local v14, fake_text:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
+    const-string/jumbo v3, "send_data1"
+
+    invoke-virtual {v14, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 490
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p5
+
+    invoke-static {v0, v14, v1}, Landroid/telephony/gemini/GeminiSmsManager;->isValidParameters(Ljava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_1
+
+    .line 529
+    :cond_0
+    :goto_0
     return-void
+
+    .line 495
+    :cond_1
+    if-eqz p3, :cond_2
+
+    move-object/from16 v0, p3
+
+    array-length v3, v0
+
+    if-nez v3, :cond_3
+
+    .line 496
+    :cond_2
+    new-instance v3, Ljava/lang/IllegalArgumentException;
+
+    const-string v4, "Invalid message data"
+
+    invoke-direct {v3, v4}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v3
+
+    .line 499
+    :cond_3
+    invoke-static/range {p4 .. p4}, Landroid/telephony/gemini/GeminiSmsManager;->getSmsServiceName(I)Ljava/lang/String;
+
+    move-result-object v16
+
+    .line 500
+    .local v16, isms:Ljava/lang/String;
+    move-object/from16 v0, p3
+
+    array-length v3, v0
+
+    const/4 v4, 0x1
+
+    if-le v3, v4, :cond_5
+
+    .line 501
+    new-instance v6, Ljava/util/ArrayList;
+
+    move-object/from16 v0, p3
+
+    array-length v3, v0
+
+    invoke-direct {v6, v3}, Ljava/util/ArrayList;-><init>(I)V
+
+    .line 502
+    .local v6, list:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/telephony/SmsRawData;>;"
+    const/4 v15, 0x0
+
+    .local v15, i:I
+    :goto_1
+    move-object/from16 v0, p3
+
+    array-length v3, v0
+
+    if-ge v15, v3, :cond_4
+
+    .line 504
+    new-instance v3, Lcom/android/internal/telephony/SmsRawData;
+
+    aget-object v4, p3, v15
+
+    invoke-direct {v3, v4}, Lcom/android/internal/telephony/SmsRawData;-><init>([B)V
+
+    invoke-virtual {v6, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 502
+    add-int/lit8 v15, v15, 0x1
+
+    goto :goto_1
+
+    .line 508
+    :cond_4
+    :try_start_0
+    invoke-static/range {v16 .. v16}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+
+    move-result-object v3
+
+    invoke-static {v3}, Lcom/android/internal/telephony/ISms$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/telephony/ISms;
+
+    move-result-object v2
+
+    .line 509
+    .local v2, iccISms:Lcom/android/internal/telephony/ISms;
+    if-eqz v2, :cond_0
+
+    move-object/from16 v3, p0
+
+    move-object/from16 v4, p1
+
+    move/from16 v5, p2
+
+    move-object/from16 v7, p5
+
+    move-object/from16 v8, p6
+
+    .line 510
+    invoke-interface/range {v2 .. v8}, Lcom/android/internal/telephony/ISms;->sendMultipartData(Ljava/lang/String;Ljava/lang/String;ILjava/util/List;Ljava/util/List;Ljava/util/List;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    .line 513
+    .end local v2           #iccISms:Lcom/android/internal/telephony/ISms;
+    :catch_0
+    move-exception v3
+
+    goto :goto_0
+
+    .line 518
+    .end local v6           #list:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/telephony/SmsRawData;>;"
+    .end local v15           #i:I
+    :cond_5
+    const/4 v12, 0x0
+
+    .line 519
+    .local v12, sentIntent:Landroid/app/PendingIntent;
+    const/4 v13, 0x0
+
+    .line 520
+    .local v13, deliveryIntent:Landroid/app/PendingIntent;
+    if-eqz p5, :cond_6
+
+    invoke-virtual/range {p5 .. p5}, Ljava/util/ArrayList;->size()I
+
+    move-result v3
+
+    if-lez v3, :cond_6
+
+    .line 521
+    const/4 v3, 0x0
+
+    move-object/from16 v0, p5
+
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v12
+
+    .end local v12           #sentIntent:Landroid/app/PendingIntent;
+    check-cast v12, Landroid/app/PendingIntent;
+
+    .line 523
+    .restart local v12       #sentIntent:Landroid/app/PendingIntent;
+    :cond_6
+    if-eqz p6, :cond_7
+
+    invoke-virtual/range {p6 .. p6}, Ljava/util/ArrayList;->size()I
+
+    move-result v3
+
+    if-lez v3, :cond_7
+
+    .line 524
+    const/4 v3, 0x0
+
+    move-object/from16 v0, p6
+
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v13
+
+    .end local v13           #deliveryIntent:Landroid/app/PendingIntent;
+    check-cast v13, Landroid/app/PendingIntent;
+
+    .line 526
+    .restart local v13       #deliveryIntent:Landroid/app/PendingIntent;
+    :cond_7
+    const/4 v3, 0x0
+
+    aget-object v10, p3, v3
+
+    move-object/from16 v7, p0
+
+    move-object/from16 v8, p1
+
+    move/from16 v9, p2
+
+    move/from16 v11, p4
+
+    invoke-static/range {v7 .. v13}, Landroid/telephony/gemini/GeminiSmsManager;->sendDataMessageGemini(Ljava/lang/String;Ljava/lang/String;S[BILandroid/app/PendingIntent;Landroid/app/PendingIntent;)V
+
+    goto/16 :goto_0
 .end method
 
 .method public static sendMultipartTextMessageGemini(Ljava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;ILjava/util/ArrayList;Ljava/util/ArrayList;)V
@@ -2302,16 +2161,16 @@
     .local p2, parts:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     .local p4, sentIntents:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/app/PendingIntent;>;"
     .local p5, deliveryIntents:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/app/PendingIntent;>;"
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
-    .line 237
+    .line 238
     const-string v1, "SMS"
 
     const-string v2, "call sendMultipartTextMessageGemini"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 238
+    .line 239
     invoke-static {p0, p2, p4}, Landroid/telephony/gemini/GeminiSmsManager;->isValidParameters(Ljava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;)Z
 
     move-result v1
@@ -2323,13 +2182,13 @@
     :goto_0
     return-void
 
-    .line 242
+    .line 243
     :cond_1
     invoke-static {p3}, Landroid/telephony/gemini/GeminiSmsManager;->getSmsServiceName(I)Ljava/lang/String;
 
     move-result-object v7
 
-    .line 243
+    .line 244
     .local v7, isms:Ljava/lang/String;
     invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
 
@@ -2339,7 +2198,7 @@
 
     if-le v1, v2, :cond_2
 
-    .line 245
+    .line 246
     :try_start_0
     invoke-static {v7}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
@@ -2349,7 +2208,7 @@
 
     move-result-object v0
 
-    .line 246
+    .line 247
     .local v0, iccISms:Lcom/android/internal/telephony/ISms;
     if-eqz v0, :cond_0
 
@@ -2363,29 +2222,29 @@
 
     move-object v5, p5
 
-    .line 247
+    .line 248
     invoke-interface/range {v0 .. v5}, Lcom/android/internal/telephony/ISms;->sendMultipartText(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    .line 250
+    .line 251
     .end local v0           #iccISms:Lcom/android/internal/telephony/ISms;
     :catch_0
     move-exception v1
 
     goto :goto_0
 
-    .line 254
+    .line 255
     :cond_2
     const/4 v5, 0x0
 
-    .line 255
+    .line 256
     .local v5, sentIntent:Landroid/app/PendingIntent;
     const/4 v6, 0x0
 
-    .line 256
+    .line 257
     .local v6, deliveryIntent:Landroid/app/PendingIntent;
     if-eqz p4, :cond_3
 
@@ -2395,15 +2254,15 @@
 
     if-lez v1, :cond_3
 
-    .line 257
-    invoke-virtual {p4, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    .line 258
+    invoke-virtual {p4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v5
 
     .end local v5           #sentIntent:Landroid/app/PendingIntent;
     check-cast v5, Landroid/app/PendingIntent;
 
-    .line 259
+    .line 260
     .restart local v5       #sentIntent:Landroid/app/PendingIntent;
     :cond_3
     if-eqz p5, :cond_4
@@ -2414,57 +2273,36 @@
 
     if-lez v1, :cond_4
 
-    .line 260
-    invoke-virtual {p5, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    .line 261
+    invoke-virtual {p5, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
 
     .end local v6           #deliveryIntent:Landroid/app/PendingIntent;
     check-cast v6, Landroid/app/PendingIntent;
 
-    .line 262
+    .line 263
     .restart local v6       #deliveryIntent:Landroid/app/PendingIntent;
     :cond_4
-    if-eqz p2, :cond_5
+    invoke-virtual {p2, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
+    move-result-object v3
 
-    move-result v1
+    check-cast v3, Ljava/lang/String;
 
-    if-nez v1, :cond_6
-
-    :cond_5
-    const-string v3, ""
-
-    .local v3, text:Ljava/lang/String;
-    :goto_1
     move-object v1, p0
 
     move-object v2, p1
 
     move v4, p3
 
-    .line 263
     invoke-static/range {v1 .. v6}, Landroid/telephony/gemini/GeminiSmsManager;->sendTextMessageGemini(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILandroid/app/PendingIntent;Landroid/app/PendingIntent;)V
 
     goto :goto_0
-
-    .line 262
-    .end local v3           #text:Ljava/lang/String;
-    :cond_6
-    invoke-virtual {p2, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/String;
-
-    move-object v3, v1
-
-    goto :goto_1
 .end method
 
 .method public static sendMultipartTextMessageGemini(Ljava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;SILjava/util/ArrayList;Ljava/util/ArrayList;)V
-    .locals 0
+    .locals 9
     .parameter "destinationAddress"
     .parameter "scAddress"
     .parameter
@@ -2493,11 +2331,144 @@
     .end annotation
 
     .prologue
-    .line 338
     .local p2, parts:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     .local p5, sentIntents:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/app/PendingIntent;>;"
     .local p6, deliveryIntents:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/app/PendingIntent;>;"
+    const/4 v3, 0x0
+
+    .line 308
+    invoke-static {p0, p2, p5}, Landroid/telephony/gemini/GeminiSmsManager;->isValidParameters(Ljava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    .line 335
+    :cond_0
+    :goto_0
     return-void
+
+    .line 312
+    :cond_1
+    invoke-static {p4}, Landroid/telephony/gemini/GeminiSmsManager;->getSmsServiceName(I)Ljava/lang/String;
+
+    move-result-object v8
+
+    .line 313
+    .local v8, isms:Ljava/lang/String;
+    invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    if-le v1, v2, :cond_2
+
+    .line 315
+    :try_start_0
+    invoke-static {v8}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/android/internal/telephony/ISms$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/telephony/ISms;
+
+    move-result-object v0
+
+    .line 316
+    .local v0, iccISms:Lcom/android/internal/telephony/ISms;
+    if-eqz v0, :cond_0
+
+    move-object v1, p0
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    move v4, p3
+
+    move-object v5, p5
+
+    move-object v6, p6
+
+    .line 317
+    invoke-interface/range {v0 .. v6}, Lcom/android/internal/telephony/ISms;->sendMultipartTextWithPort(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;ILjava/util/List;Ljava/util/List;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    .line 320
+    .end local v0           #iccISms:Lcom/android/internal/telephony/ISms;
+    :catch_0
+    move-exception v1
+
+    goto :goto_0
+
+    .line 324
+    :cond_2
+    const/4 v6, 0x0
+
+    .line 325
+    .local v6, sentIntent:Landroid/app/PendingIntent;
+    const/4 v7, 0x0
+
+    .line 326
+    .local v7, deliveryIntent:Landroid/app/PendingIntent;
+    if-eqz p5, :cond_3
+
+    invoke-virtual {p5}, Ljava/util/ArrayList;->size()I
+
+    move-result v1
+
+    if-lez v1, :cond_3
+
+    .line 327
+    invoke-virtual {p5, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v6
+
+    .end local v6           #sentIntent:Landroid/app/PendingIntent;
+    check-cast v6, Landroid/app/PendingIntent;
+
+    .line 329
+    .restart local v6       #sentIntent:Landroid/app/PendingIntent;
+    :cond_3
+    if-eqz p6, :cond_4
+
+    invoke-virtual {p6}, Ljava/util/ArrayList;->size()I
+
+    move-result v1
+
+    if-lez v1, :cond_4
+
+    .line 330
+    invoke-virtual {p6, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v7
+
+    .end local v7           #deliveryIntent:Landroid/app/PendingIntent;
+    check-cast v7, Landroid/app/PendingIntent;
+
+    .line 332
+    .restart local v7       #deliveryIntent:Landroid/app/PendingIntent;
+    :cond_4
+    invoke-virtual {p2, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/String;
+
+    move-object v1, p0
+
+    move-object v2, p1
+
+    move v4, p3
+
+    move v5, p4
+
+    invoke-static/range {v1 .. v7}, Landroid/telephony/gemini/GeminiSmsManager;->sendTextMessageGemini(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;SILandroid/app/PendingIntent;Landroid/app/PendingIntent;)V
+
+    goto :goto_0
 .end method
 
 .method public static sendMultipartTextMessageWithEncodingTypeGemini(Ljava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;IILjava/util/ArrayList;Ljava/util/ArrayList;)V
@@ -2535,7 +2506,7 @@
     .local p6, deliveryIntents:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/app/PendingIntent;>;"
     const/4 v5, 0x0
 
-    .line 1052
+    .line 1039
     const-string v1, "SMS"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2558,32 +2529,32 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1054
+    .line 1041
     invoke-static {p0, p2, p5}, Landroid/telephony/gemini/GeminiSmsManager;->isValidParameters(Ljava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;)Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 1055
+    .line 1042
     const-string v1, "SMS"
 
-    const-string/jumbo v2, "invalid parameters for multipart message"
+    const-string v2, "invalid parameters for multipart message"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1090
+    .line 1077
     :cond_0
     :goto_0
     return-void
 
-    .line 1059
+    .line 1046
     :cond_1
     invoke-static {p4}, Landroid/telephony/gemini/GeminiSmsManager;->getSmsServiceName(I)Ljava/lang/String;
 
     move-result-object v8
 
-    .line 1060
+    .line 1047
     .local v8, isms:Ljava/lang/String;
     invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
 
@@ -2593,7 +2564,7 @@
 
     if-le v1, v2, :cond_2
 
-    .line 1062
+    .line 1049
     :try_start_0
     invoke-static {v8}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
@@ -2603,11 +2574,11 @@
 
     move-result-object v0
 
-    .line 1063
+    .line 1050
     .local v0, iccISms:Lcom/android/internal/telephony/ISms;
     if-eqz v0, :cond_0
 
-    .line 1064
+    .line 1051
     const-string v1, "SMS"
 
     const-string v2, "call ISms.sendMultipartText"
@@ -2626,29 +2597,29 @@
 
     move-object v6, p6
 
-    .line 1065
+    .line 1052
     invoke-interface/range {v0 .. v6}, Lcom/android/internal/telephony/ISms;->sendMultipartTextWithEncodingType(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;ILjava/util/List;Ljava/util/List;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    .line 1068
+    .line 1055
     .end local v0           #iccISms:Lcom/android/internal/telephony/ISms;
     :catch_0
     move-exception v1
 
     goto :goto_0
 
-    .line 1072
+    .line 1059
     :cond_2
     const/4 v6, 0x0
 
-    .line 1073
+    .line 1060
     .local v6, sentIntent:Landroid/app/PendingIntent;
     const/4 v7, 0x0
 
-    .line 1074
+    .line 1061
     .local v7, deliveryIntent:Landroid/app/PendingIntent;
     if-eqz p5, :cond_3
 
@@ -2658,7 +2629,7 @@
 
     if-lez v1, :cond_3
 
-    .line 1075
+    .line 1062
     invoke-virtual {p5, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
@@ -2666,7 +2637,7 @@
     .end local v6           #sentIntent:Landroid/app/PendingIntent;
     check-cast v6, Landroid/app/PendingIntent;
 
-    .line 1077
+    .line 1064
     .restart local v6       #sentIntent:Landroid/app/PendingIntent;
     :cond_3
     const-string v1, "SMS"
@@ -2691,7 +2662,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1078
+    .line 1065
     if-eqz p6, :cond_4
 
     invoke-virtual {p6}, Ljava/util/ArrayList;->size()I
@@ -2700,7 +2671,7 @@
 
     if-lez v1, :cond_4
 
-    .line 1079
+    .line 1066
     invoke-virtual {p6, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v7
@@ -2708,7 +2679,7 @@
     .end local v7           #deliveryIntent:Landroid/app/PendingIntent;
     check-cast v7, Landroid/app/PendingIntent;
 
-    .line 1081
+    .line 1068
     .restart local v7       #deliveryIntent:Landroid/app/PendingIntent;
     :cond_4
     const-string v1, "SMS"
@@ -2717,10 +2688,10 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1082
+    .line 1069
     if-eqz p2, :cond_5
 
-    .line 1083
+    .line 1070
     const-string v1, "SMS"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2747,7 +2718,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1085
+    .line 1072
     :cond_5
     if-eqz p2, :cond_6
 
@@ -2760,7 +2731,7 @@
     :cond_6
     const-string v3, ""
 
-    .line 1086
+    .line 1073
     .local v3, text:Ljava/lang/String;
     :goto_1
     const-string v1, "SMS"
@@ -2793,12 +2764,12 @@
 
     move v5, p4
 
-    .line 1087
+    .line 1074
     invoke-static/range {v1 .. v7}, Landroid/telephony/gemini/GeminiSmsManager;->sendTextMessageWithEncodingTypeGemini(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IILandroid/app/PendingIntent;Landroid/app/PendingIntent;)V
 
     goto/16 :goto_0
 
-    .line 1085
+    .line 1072
     .end local v3           #text:Ljava/lang/String;
     :cond_7
     invoke-virtual {p2, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2844,7 +2815,7 @@
     .end annotation
 
     .prologue
-    .line 1238
+    .line 1220
     .local p2, parts:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     .local p5, sentIntents:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/app/PendingIntent;>;"
     .local p6, deliveryIntents:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/app/PendingIntent;>;"
@@ -2854,7 +2825,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1239
+    .line 1221
     move-object/from16 v0, p5
 
     invoke-static {p0, p2, v0}, Landroid/telephony/gemini/GeminiSmsManager;->isValidParameters(Ljava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;)Z
@@ -2863,31 +2834,18 @@
 
     if-nez v2, :cond_1
 
-    .line 1273
+    .line 1250
     :cond_0
     :goto_0
     return-void
 
-    .line 1243
+    .line 1225
     :cond_1
-    if-nez p3, :cond_2
-
-    .line 1244
-    const-string v2, "SMS"
-
-    const-string v3, "bundle is null"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
-
-    .line 1248
-    :cond_2
     invoke-static {p4}, Landroid/telephony/gemini/GeminiSmsManager;->getSmsServiceName(I)Ljava/lang/String;
 
     move-result-object v10
 
-    .line 1249
+    .line 1226
     .local v10, serviceName:Ljava/lang/String;
     const-string v2, "SMS"
 
@@ -2911,16 +2869,16 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1250
+    .line 1227
     invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
     const/4 v3, 0x1
 
-    if-le v2, v3, :cond_3
+    if-le v2, v3, :cond_2
 
-    .line 1252
+    .line 1229
     :try_start_0
     invoke-static {v10}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
@@ -2930,7 +2888,7 @@
 
     move-result-object v1
 
-    .line 1253
+    .line 1230
     .local v1, service:Lcom/android/internal/telephony/ISms;
     if-eqz v1, :cond_0
 
@@ -2946,19 +2904,19 @@
 
     move-object/from16 v7, p6
 
-    .line 1254
+    .line 1231
     invoke-interface/range {v1 .. v7}, Lcom/android/internal/telephony/ISms;->sendMultipartTextWithExtraParams(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Landroid/os/Bundle;Ljava/util/List;Ljava/util/List;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    .line 1257
+    .line 1234
     .end local v1           #service:Lcom/android/internal/telephony/ISms;
     :catch_0
     move-exception v9
 
-    .line 1258
+    .line 1235
     .local v9, e:Landroid/os/RemoteException;
     const-string v2, "SMS"
 
@@ -2984,26 +2942,26 @@
 
     goto :goto_0
 
-    .line 1261
+    .line 1238
     .end local v9           #e:Landroid/os/RemoteException;
-    :cond_3
+    :cond_2
     const/4 v7, 0x0
 
-    .line 1262
+    .line 1239
     .local v7, sentIntent:Landroid/app/PendingIntent;
     const/4 v8, 0x0
 
-    .line 1263
+    .line 1240
     .local v8, deliveryIntent:Landroid/app/PendingIntent;
-    if-eqz p5, :cond_4
+    if-eqz p5, :cond_3
 
     invoke-virtual/range {p5 .. p5}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    if-lez v2, :cond_4
+    if-lez v2, :cond_3
 
-    .line 1264
+    .line 1241
     const/4 v2, 0x0
 
     move-object/from16 v0, p5
@@ -3015,18 +2973,18 @@
     .end local v7           #sentIntent:Landroid/app/PendingIntent;
     check-cast v7, Landroid/app/PendingIntent;
 
-    .line 1266
+    .line 1243
     .restart local v7       #sentIntent:Landroid/app/PendingIntent;
-    :cond_4
-    if-eqz p6, :cond_5
+    :cond_3
+    if-eqz p6, :cond_4
 
     invoke-virtual/range {p6 .. p6}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    if-lez v2, :cond_5
+    if-lez v2, :cond_4
 
-    .line 1267
+    .line 1244
     const/4 v2, 0x0
 
     move-object/from16 v0, p6
@@ -3038,9 +2996,9 @@
     .end local v8           #deliveryIntent:Landroid/app/PendingIntent;
     check-cast v8, Landroid/app/PendingIntent;
 
-    .line 1270
+    .line 1247
     .restart local v8       #deliveryIntent:Landroid/app/PendingIntent;
-    :cond_5
+    :cond_4
     const/4 v2, 0x0
 
     invoke-virtual {p2, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -3072,32 +3030,32 @@
     .parameter "deliveryIntent"
 
     .prologue
-    .line 132
+    .line 136
     const-string v1, "SMS"
 
     const-string v2, "call sendTextMessageGemini"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 133
+    .line 137
     invoke-static {p0, p2, p4}, Landroid/telephony/gemini/GeminiSmsManager;->isValidParameters(Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;)Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 146
+    .line 150
     :cond_0
     :goto_0
     return-void
 
-    .line 137
+    .line 141
     :cond_1
     invoke-static {p3}, Landroid/telephony/gemini/GeminiSmsManager;->getSmsServiceName(I)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 139
+    .line 143
     .local v6, isms:Ljava/lang/String;
     :try_start_0
     invoke-static {v6}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -3108,7 +3066,7 @@
 
     move-result-object v0
 
-    .line 140
+    .line 144
     .local v0, iccISms:Lcom/android/internal/telephony/ISms;
     if-eqz v0, :cond_0
 
@@ -3122,14 +3080,14 @@
 
     move-object v5, p5
 
-    .line 141
+    .line 145
     invoke-interface/range {v0 .. v5}, Lcom/android/internal/telephony/ISms;->sendText(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;Landroid/app/PendingIntent;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    .line 143
+    .line 147
     .end local v0           #iccISms:Lcom/android/internal/telephony/ISms;
     :catch_0
     move-exception v1
@@ -3138,7 +3096,7 @@
 .end method
 
 .method public static sendTextMessageGemini(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;SILandroid/app/PendingIntent;Landroid/app/PendingIntent;)V
-    .locals 0
+    .locals 8
     .parameter "destinationAddress"
     .parameter "scAddress"
     .parameter "text"
@@ -3148,8 +3106,66 @@
     .parameter "deliveryIntent"
 
     .prologue
-    .line 198
+    .line 185
+    invoke-static {p0, p2, p5}, Landroid/telephony/gemini/GeminiSmsManager;->isValidParameters(Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    .line 199
+    :cond_0
+    :goto_0
     return-void
+
+    .line 189
+    :cond_1
+    invoke-static {p4}, Landroid/telephony/gemini/GeminiSmsManager;->getSmsServiceName(I)Ljava/lang/String;
+
+    move-result-object v7
+
+    .line 191
+    .local v7, isms:Ljava/lang/String;
+    :try_start_0
+    invoke-static {v7}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/android/internal/telephony/ISms$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/telephony/ISms;
+
+    move-result-object v0
+
+    .line 192
+    .local v0, iccISms:Lcom/android/internal/telephony/ISms;
+    if-eqz v0, :cond_0
+
+    .line 193
+    const v1, 0xffff
+
+    and-int v4, p3, v1
+
+    move-object v1, p0
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    move-object v5, p5
+
+    move-object v6, p6
+
+    invoke-interface/range {v0 .. v6}, Lcom/android/internal/telephony/ISms;->sendTextWithPort(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILandroid/app/PendingIntent;Landroid/app/PendingIntent;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    .line 196
+    .end local v0           #iccISms:Lcom/android/internal/telephony/ISms;
+    :catch_0
+    move-exception v1
+
+    goto :goto_0
 .end method
 
 .method public static sendTextMessageWithEncodingTypeGemini(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IILandroid/app/PendingIntent;Landroid/app/PendingIntent;)V
@@ -3163,7 +3179,7 @@
     .parameter "deliveryIntent"
 
     .prologue
-    .line 984
+    .line 971
     const-string v1, "SMS"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -3186,25 +3202,25 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 986
+    .line 973
     invoke-static {p0, p2, p5}, Landroid/telephony/gemini/GeminiSmsManager;->isValidParameters(Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 987
+    .line 974
     const-string v1, "SMS"
 
     const-string/jumbo v2, "the parameters are invalid"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1007
+    .line 994
     :goto_0
     return-void
 
-    .line 990
+    .line 977
     :cond_0
     const-string v1, "SMS"
 
@@ -3212,12 +3228,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 991
+    .line 978
     invoke-static {p4}, Landroid/telephony/gemini/GeminiSmsManager;->getSmsServiceName(I)Ljava/lang/String;
 
     move-result-object v8
 
-    .line 992
+    .line 979
     .local v8, isms:Ljava/lang/String;
     const-string v1, "SMS"
 
@@ -3225,7 +3241,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v3, "isms = "
+    const-string v3, "isms = "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3241,14 +3257,14 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 993
+    .line 980
     const-string v1, "SMS"
 
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v3, "isms = "
+    const-string v3, "isms = "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3264,7 +3280,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 995
+    .line 982
     :try_start_0
     invoke-static {v8}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
@@ -3274,11 +3290,11 @@
 
     move-result-object v0
 
-    .line 996
+    .line 983
     .local v0, iccISms:Lcom/android/internal/telephony/ISms;
     if-eqz v0, :cond_1
 
-    .line 997
+    .line 984
     const-string v1, "SMS"
 
     const-string v2, "call ISms interface to send text message"
@@ -3297,19 +3313,19 @@
 
     move-object v6, p6
 
-    .line 998
+    .line 985
     invoke-interface/range {v0 .. v6}, Lcom/android/internal/telephony/ISms;->sendTextWithEncodingType(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILandroid/app/PendingIntent;Landroid/app/PendingIntent;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    .line 1003
+    .line 990
     .end local v0           #iccISms:Lcom/android/internal/telephony/ISms;
     :catch_0
     move-exception v7
 
-    .line 1005
+    .line 992
     .local v7, ex:Landroid/os/RemoteException;
     const-string v1, "SMS"
 
@@ -3319,7 +3335,7 @@
 
     goto :goto_0
 
-    .line 1001
+    .line 988
     .end local v7           #ex:Landroid/os/RemoteException;
     .restart local v0       #iccISms:Lcom/android/internal/telephony/ISms;
     :cond_1
@@ -3346,45 +3362,32 @@
     .parameter "deliveryIntent"
 
     .prologue
-    .line 1186
+    .line 1173
     const-string v1, "SMS"
 
     const-string v2, "call sendTextWithExtraParamsGemini"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1187
+    .line 1174
     invoke-static {p0, p2, p5}, Landroid/telephony/gemini/GeminiSmsManager;->isValidParameters(Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;)Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 1207
+    .line 1189
     :cond_0
     :goto_0
     return-void
 
-    .line 1191
+    .line 1178
     :cond_1
-    if-nez p3, :cond_2
-
-    .line 1192
-    const-string v1, "SMS"
-
-    const-string v2, "bundle is null"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
-
-    .line 1196
-    :cond_2
     invoke-static {p4}, Landroid/telephony/gemini/GeminiSmsManager;->getSmsServiceName(I)Ljava/lang/String;
 
     move-result-object v8
 
-    .line 1197
+    .line 1179
     .local v8, serviceName:Ljava/lang/String;
     const-string v1, "SMS"
 
@@ -3408,7 +3411,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1199
+    .line 1181
     :try_start_0
     invoke-static {v8}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
@@ -3418,7 +3421,7 @@
 
     move-result-object v0
 
-    .line 1200
+    .line 1182
     .local v0, service:Lcom/android/internal/telephony/ISms;
     if-eqz v0, :cond_0
 
@@ -3434,19 +3437,19 @@
 
     move-object v6, p6
 
-    .line 1201
+    .line 1183
     invoke-interface/range {v0 .. v6}, Lcom/android/internal/telephony/ISms;->sendTextWithExtraParams(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;Landroid/app/PendingIntent;Landroid/app/PendingIntent;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    .line 1204
+    .line 1186
     .end local v0           #service:Lcom/android/internal/telephony/ISms;
     :catch_0
     move-exception v7
 
-    .line 1205
+    .line 1187
     .local v7, e:Landroid/os/RemoteException;
     const-string v1, "SMS"
 
@@ -3473,82 +3476,25 @@
     goto :goto_0
 .end method
 
-.method public static setEtwsConfigGemini(II)Z
-    .locals 5
-    .parameter "mode"
-    .parameter "slotId"
-
-    .prologue
-    .line 1523
-    const-string v3, "SMS"
-
-    const-string v4, "call setEtwsConfigGemini"
-
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1525
-    const/4 v2, 0x0
-
-    .line 1527
-    .local v2, ret:Z
-    invoke-static {p1}, Landroid/telephony/gemini/GeminiSmsManager;->getSmsServiceName(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 1529
-    .local v1, isms:Ljava/lang/String;
-    :try_start_0
-    invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lcom/android/internal/telephony/ISms$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/telephony/ISms;
-
-    move-result-object v0
-
-    .line 1530
-    .local v0, iccISms:Lcom/android/internal/telephony/ISms;
-    if-eqz v0, :cond_0
-
-    .line 1531
-    invoke-interface {v0, p0}, Lcom/android/internal/telephony/ISms;->setEtwsConfig(I)Z
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result v2
-
-    .line 1537
-    .end local v0           #iccISms:Lcom/android/internal/telephony/ISms;
-    :cond_0
-    :goto_0
-    return v2
-
-    .line 1533
-    :catch_0
-    move-exception v3
-
-    goto :goto_0
-.end method
-
 .method public static setSmsMemoryStatusGemini(ZI)V
     .locals 4
     .parameter "status"
     .parameter "simId"
 
     .prologue
-    .line 732
+    .line 725
     const-string v2, "SMS"
 
     const-string v3, "call setSmsMemoryStatusGemini"
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 733
+    .line 726
     invoke-static {p1}, Landroid/telephony/gemini/GeminiSmsManager;->getSmsServiceName(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 736
+    .line 729
     .local v1, isms:Ljava/lang/String;
     :try_start_0
     invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -3559,105 +3505,24 @@
 
     move-result-object v0
 
-    .line 737
+    .line 730
     .local v0, iccISms:Lcom/android/internal/telephony/ISms;
     if-eqz v0, :cond_0
 
-    .line 738
+    .line 731
     invoke-interface {v0, p0}, Lcom/android/internal/telephony/ISms;->setSmsMemoryStatus(Z)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 744
+    .line 737
     .end local v0           #iccISms:Lcom/android/internal/telephony/ISms;
     :cond_0
     :goto_0
     return-void
 
-    .line 740
+    .line 733
     :catch_0
     move-exception v2
-
-    goto :goto_0
-.end method
-
-.method public static setSmsParametersGemini(Landroid/telephony/SmsParameters;I)Z
-    .locals 6
-    .parameter "params"
-    .parameter "slotId"
-
-    .prologue
-    const/4 v3, 0x0
-
-    .line 1408
-    const-string v4, "SMS"
-
-    const-string v5, "[EFsmsp call setSmsParametersGemini"
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1409
-    invoke-static {p1}, Landroid/telephony/gemini/GeminiSmsManager;->getSmsServiceName(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 1412
-    .local v2, svcName:Ljava/lang/String;
-    :try_start_0
-    invoke-static {v2}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lcom/android/internal/telephony/ISms$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/telephony/ISms;
-
-    move-result-object v1
-
-    .line 1413
-    .local v1, iccISms:Lcom/android/internal/telephony/ISms;
-    if-eqz v1, :cond_0
-
-    .line 1414
-    const-string v4, "SMS"
-
-    const-string v5, "[EFsmsp to set params into ef"
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1415
-    invoke-interface {v1, p0}, Lcom/android/internal/telephony/ISms;->setSmsParameters(Landroid/telephony/SmsParameters;)Z
-
-    move-result v3
-
-    .line 1424
-    .end local v1           #iccISms:Lcom/android/internal/telephony/ISms;
-    :goto_0
-    return v3
-
-    .line 1417
-    .restart local v1       #iccISms:Lcom/android/internal/telephony/ISms;
-    :cond_0
-    const-string v4, "SMS"
-
-    const-string v5, "[EFsmsp fail to get service"
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    .line 1420
-    .end local v1           #iccISms:Lcom/android/internal/telephony/ISms;
-    :catch_0
-    move-exception v0
-
-    .line 1421
-    .local v0, ex:Landroid/os/RemoteException;
-    const-string v4, "SMS"
-
-    const-string v5, "[EFsmsp fail because of RemoteException"
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 .end method
@@ -3670,23 +3535,23 @@
     .parameter "simId"
 
     .prologue
-    .line 653
+    .line 646
     const-string v3, "SMS"
 
     const-string v4, "call updateMessageOnIccGemini"
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 654
+    .line 647
     const/4 v2, 0x0
 
-    .line 655
+    .line 648
     .local v2, success:Z
     invoke-static {p3}, Landroid/telephony/gemini/GeminiSmsManager;->getSmsServiceName(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 658
+    .line 651
     .local v1, isms:Ljava/lang/String;
     :try_start_0
     invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -3697,291 +3562,26 @@
 
     move-result-object v0
 
-    .line 659
+    .line 652
     .local v0, iccISms:Lcom/android/internal/telephony/ISms;
     if-eqz v0, :cond_0
 
-    .line 660
+    .line 653
     invoke-interface {v0, p0, p1, p2}, Lcom/android/internal/telephony/ISms;->updateMessageOnIccEf(II[B)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v2
 
-    .line 666
+    .line 659
     .end local v0           #iccISms:Lcom/android/internal/telephony/ISms;
     :cond_0
     :goto_0
     return v2
 
-    .line 662
+    .line 655
     :catch_0
     move-exception v3
-
-    goto :goto_0
-.end method
-
-.method public static updateSmsOnSimReadStatus(IZI)Z
-    .locals 11
-    .parameter "index"
-    .parameter "read"
-    .parameter "subscription"
-
-    .prologue
-    const/4 v6, 0x3
-
-    const/4 v7, 0x0
-
-    const/4 v0, 0x1
-
-    .line 1482
-    const-string v8, "SMS"
-
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v10, "call updateSmsOnSimReadStatus "
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1484
-    const/4 v2, 0x0
-
-    .line 1485
-    .local v2, record:Lcom/android/internal/telephony/SmsRawData;
-    invoke-static {p2}, Landroid/telephony/gemini/GeminiSmsManager;->getSmsServiceName(I)Ljava/lang/String;
-
-    move-result-object v5
-
-    .line 1487
-    .local v5, svcName:Ljava/lang/String;
-    :try_start_0
-    invoke-static {v5}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
-
-    move-result-object v8
-
-    invoke-static {v8}, Lcom/android/internal/telephony/ISms$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/telephony/ISms;
-
-    move-result-object v3
-
-    .line 1488
-    .local v3, smsSvc:Lcom/android/internal/telephony/ISms;
-    if-eqz v3, :cond_0
-
-    .line 1489
-    invoke-interface {v3, p0}, Lcom/android/internal/telephony/ISms;->getMessageFromIccEf(I)Lcom/android/internal/telephony/SmsRawData;
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-object v2
-
-    .line 1495
-    .end local v3           #smsSvc:Lcom/android/internal/telephony/ISms;
-    :cond_0
-    :goto_0
-    if-eqz v2, :cond_6
-
-    .line 1496
-    invoke-virtual {v2}, Lcom/android/internal/telephony/SmsRawData;->getBytes()[B
-
-    move-result-object v1
-
-    .line 1497
-    .local v1, rawData:[B
-    aget-byte v8, v1, v7
-
-    and-int/lit16 v4, v8, 0xff
-
-    .line 1498
-    .local v4, status:I
-    const-string v8, "SMS"
-
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v10, "sms status is "
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1499
-    if-eq v4, v6, :cond_1
-
-    if-eq v4, v0, :cond_1
-
-    .line 1501
-    const-string v6, "SMS"
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v9, "non-delivery sms "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v6, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    move v0, v7
-
-    .line 1518
-    .end local v1           #rawData:[B
-    .end local v4           #status:I
-    :goto_1
-    return v0
-
-    .line 1504
-    .restart local v1       #rawData:[B
-    .restart local v4       #status:I
-    :cond_1
-    if-ne v4, v6, :cond_2
-
-    if-eqz p1, :cond_3
-
-    :cond_2
-    if-ne v4, v0, :cond_4
-
-    if-ne p1, v0, :cond_4
-
-    .line 1506
-    :cond_3
-    const-string v6, "SMS"
-
-    const-string/jumbo v7, "no need to update status"
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_1
-
-    .line 1509
-    :cond_4
-    const-string v7, "SMS"
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v9, "update sms status as "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1510
-    if-ne p1, v0, :cond_5
-
-    .line 1512
-    .local v0, newStatus:I
-    :goto_2
-    invoke-static {p0, v0, v1, p2}, Landroid/telephony/gemini/GeminiSmsManager;->updateMessageOnIccGemini(II[BI)Z
-
-    move-result v0
-
-    goto :goto_1
-
-    .end local v0           #newStatus:I
-    :cond_5
-    move v0, v6
-
-    .line 1510
-    goto :goto_2
-
-    .line 1517
-    .end local v1           #rawData:[B
-    .end local v4           #status:I
-    :cond_6
-    const-string v6, "SMS"
-
-    const-string/jumbo v8, "record is null"
-
-    invoke-static {v6, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    move v0, v7
-
-    .line 1518
-    goto :goto_1
-
-    .line 1491
-    :catch_0
-    move-exception v8
-
-    goto :goto_0
-.end method
-
-.method public static updateValidityPeriod(II)Z
-    .locals 2
-    .parameter "validityperiod"
-    .parameter "subscription"
-
-    .prologue
-    .line 1445
-    invoke-static {p1}, Landroid/telephony/gemini/GeminiSmsManager;->getSmsParametersGemini(I)Landroid/telephony/SmsParameters;
-
-    move-result-object v0
-
-    .line 1446
-    .local v0, smsParams:Landroid/telephony/SmsParameters;
-    if-eqz v0, :cond_0
-
-    .line 1447
-    iput p0, v0, Landroid/telephony/SmsParameters;->vp:I
-
-    .line 1448
-    invoke-static {v0, p1}, Landroid/telephony/gemini/GeminiSmsManager;->setSmsParametersGemini(Landroid/telephony/SmsParameters;I)Z
-
-    move-result v1
-
-    .line 1451
-    :goto_0
-    return v1
-
-    :cond_0
-    const/4 v1, 0x0
 
     goto :goto_0
 .end method

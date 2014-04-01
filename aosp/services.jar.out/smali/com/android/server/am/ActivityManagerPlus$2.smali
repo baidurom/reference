@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 548
+    .line 533
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerPlus$2;->this$0:Lcom/android/server/am/ActivityManagerPlus;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +38,10 @@
 
 # virtual methods
 .method public run()V
-    .locals 22
+    .locals 21
 
     .prologue
-    .line 550
+    .line 535
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/server/am/ActivityManagerPlus$2;->this$0:Lcom/android/server/am/ActivityManagerPlus;
@@ -52,14 +52,14 @@
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 551
+    .line 536
     const/4 v12, 0x0
 
-    .line 552
+    .line 537
     .local v12, registeredReceivers:Ljava/util/List;,"Ljava/util/List<Lcom/android/server/am/BroadcastFilter;>;"
     const/4 v11, 0x0
 
-    .line 553
+    .line 538
     .local v11, receivers:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     new-instance v4, Landroid/content/Intent;
 
@@ -69,7 +69,7 @@
 
     invoke-direct {v4, v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 556
+    .line 541
     .local v4, intent:Landroid/content/Intent;
     :try_start_0
     invoke-static {}, Landroid/app/AppGlobals;->getPackageManager()Landroid/content/pm/IPackageManager;
@@ -87,15 +87,13 @@
 
     const/16 v3, 0x400
 
-    const/4 v5, 0x0
-
-    invoke-interface {v1, v4, v2, v3, v5}, Landroid/content/pm/IPackageManager;->queryIntentReceivers(Landroid/content/Intent;Ljava/lang/String;II)Ljava/util/List;
+    invoke-interface {v1, v4, v2, v3}, Landroid/content/pm/IPackageManager;->queryIntentReceivers(Landroid/content/Intent;Ljava/lang/String;I)Ljava/util/List;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v11
 
-    .line 561
+    .line 546
     :goto_0
     move-object/from16 v0, p0
 
@@ -112,18 +110,16 @@
 
     const/4 v3, 0x0
 
-    const/4 v5, 0x0
-
-    invoke-virtual {v1, v4, v2, v3, v5}, Lcom/android/server/IntentResolver;->queryIntent(Landroid/content/Intent;Ljava/lang/String;ZI)Ljava/util/List;
+    invoke-virtual {v1, v4, v2, v3}, Lcom/android/server/IntentResolver;->queryIntent(Landroid/content/Intent;Ljava/lang/String;Z)Ljava/util/List;
 
     move-result-object v12
 
-    .line 563
+    .line 548
     invoke-interface {v12}, Ljava/util/List;->size()I
 
     move-result v18
 
-    .line 564
+    .line 549
     .local v18, sizeOfRegisteredReceivers:I
     const/4 v15, 0x0
 
@@ -133,14 +129,14 @@
 
     if-ge v15, v0, :cond_2
 
-    .line 565
+    .line 550
     invoke-interface {v12, v15}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v13
 
     check-cast v13, Lcom/android/server/am/BroadcastFilter;
 
-    .line 566
+    .line 551
     .local v13, curr:Lcom/android/server/am/BroadcastFilter;
     move-object/from16 v0, p0
 
@@ -166,7 +162,7 @@
 
     check-cast v19, Ljava/lang/String;
 
-    .line 567
+    .line 552
     .local v19, target:Ljava/lang/String;
     iget-object v1, v13, Lcom/android/server/am/BroadcastFilter;->receiverList:Lcom/android/server/am/ReceiverList;
 
@@ -182,23 +178,23 @@
 
     if-eqz v1, :cond_0
 
-    .line 568
+    .line 553
     invoke-interface {v12, v15}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
-    .line 569
+    .line 554
     add-int/lit8 v18, v18, -0x1
 
-    .line 570
+    .line 555
     add-int/lit8 v15, v15, -0x1
 
-    .line 564
+    .line 549
     .end local v19           #target:Ljava/lang/String;
     :cond_1
     add-int/lit8 v15, v15, 0x1
 
     goto :goto_1
 
-    .line 576
+    .line 561
     .end local v13           #curr:Lcom/android/server/am/BroadcastFilter;
     .end local v16           #i$:Ljava/util/Iterator;
     :cond_2
@@ -208,7 +204,7 @@
 
     move-result v17
 
-    .line 577
+    .line 562
     .local v17, sizeOfReceivers:I
     :goto_2
     const/4 v15, 0x0
@@ -218,14 +214,14 @@
 
     if-ge v15, v0, :cond_6
 
-    .line 578
+    .line 563
     invoke-interface {v11, v15}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v14
 
     check-cast v14, Landroid/content/pm/ResolveInfo;
 
-    .line 580
+    .line 565
     .local v14, curt:Landroid/content/pm/ResolveInfo;
     move-object/from16 v0, p0
 
@@ -251,7 +247,7 @@
 
     check-cast v19, Ljava/lang/String;
 
-    .line 581
+    .line 566
     .restart local v19       #target:Ljava/lang/String;
     iget-object v1, v14, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
@@ -265,23 +261,23 @@
 
     if-eqz v1, :cond_3
 
-    .line 582
+    .line 567
     invoke-interface {v11, v15}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
-    .line 583
+    .line 568
     add-int/lit8 v17, v17, -0x1
 
-    .line 584
+    .line 569
     add-int/lit8 v15, v15, -0x1
 
-    .line 577
+    .line 562
     .end local v19           #target:Ljava/lang/String;
     :cond_4
     add-int/lit8 v15, v15, 0x1
 
     goto :goto_3
 
-    .line 576
+    .line 561
     .end local v14           #curt:Landroid/content/pm/ResolveInfo;
     .end local v16           #i$:Ljava/util/Iterator;
     .end local v17           #sizeOfReceivers:I
@@ -290,7 +286,7 @@
 
     goto :goto_2
 
-    .line 589
+    .line 574
     .restart local v17       #sizeOfReceivers:I
     :cond_6
     move-object/from16 v0, p0
@@ -300,57 +296,12 @@
     #getter for: Lcom/android/server/am/ActivityManagerPlus;->mService:Lcom/android/server/am/ActivityManagerService;
     invoke-static {v1}, Lcom/android/server/am/ActivityManagerPlus;->access$100(Lcom/android/server/am/ActivityManagerPlus;)Lcom/android/server/am/ActivityManagerService;
 
-    move-result-object v21
+    move-result-object v20
 
-    monitor-enter v21
+    monitor-enter v20
 
-    .line 591
-    const/4 v15, 0x0
-
-    :goto_4
+    .line 576
     :try_start_1
-    move-object/from16 v0, p0
-
-    iget-object v1, v0, Lcom/android/server/am/ActivityManagerPlus$2;->this$0:Lcom/android/server/am/ActivityManagerPlus;
-
-    #getter for: Lcom/android/server/am/ActivityManagerPlus;->mService:Lcom/android/server/am/ActivityManagerService;
-    invoke-static {v1}, Lcom/android/server/am/ActivityManagerPlus;->access$100(Lcom/android/server/am/ActivityManagerPlus;)Lcom/android/server/am/ActivityManagerService;
-
-    move-result-object v1
-
-    iget-object v1, v1, Lcom/android/server/am/ActivityManagerService;->mStartedUsers:Landroid/util/SparseArray;
-
-    invoke-virtual {v1}, Landroid/util/SparseArray;->size()I
-
-    move-result v1
-
-    if-ge v15, v1, :cond_7
-
-    .line 592
-    move-object/from16 v0, p0
-
-    iget-object v1, v0, Lcom/android/server/am/ActivityManagerPlus$2;->this$0:Lcom/android/server/am/ActivityManagerPlus;
-
-    #getter for: Lcom/android/server/am/ActivityManagerPlus;->mService:Lcom/android/server/am/ActivityManagerService;
-    invoke-static {v1}, Lcom/android/server/am/ActivityManagerPlus;->access$100(Lcom/android/server/am/ActivityManagerPlus;)Lcom/android/server/am/ActivityManagerService;
-
-    move-result-object v1
-
-    iget-object v1, v1, Lcom/android/server/am/ActivityManagerService;->mStartedUsers:Landroid/util/SparseArray;
-
-    invoke-virtual {v1, v15}, Landroid/util/SparseArray;->keyAt(I)I
-
-    move-result v20
-
-    .line 593
-    .local v20, userId:I
-    const-string v1, "android.intent.extra.user_handle"
-
-    move/from16 v0, v20
-
-    invoke-virtual {v4, v1, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
-
-    .line 594
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/server/am/ActivityManagerPlus$2;->this$0:Lcom/android/server/am/ActivityManagerPlus;
@@ -378,30 +329,23 @@
 
     invoke-virtual/range {v1 .. v12}, Lcom/android/server/am/ActivityManagerService;->broadcastSpecificIntentLocked(Lcom/android/server/am/ProcessRecord;Ljava/lang/String;Landroid/content/Intent;Ljava/lang/String;Landroid/content/IIntentReceiver;ILjava/lang/String;Landroid/os/Bundle;Ljava/lang/String;Ljava/util/List;Ljava/util/List;)I
 
-    .line 591
-    add-int/lit8 v15, v15, 0x1
+    .line 580
+    monitor-exit v20
 
-    goto :goto_4
-
-    .line 599
-    .end local v20           #userId:I
-    :cond_7
-    monitor-exit v21
-
-    .line 601
+    .line 582
     return-void
 
-    .line 599
+    .line 580
     :catchall_0
     move-exception v1
 
-    monitor-exit v21
+    monitor-exit v20
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v1
 
-    .line 558
+    .line 543
     .end local v15           #i:I
     .end local v17           #sizeOfReceivers:I
     .end local v18           #sizeOfRegisteredReceivers:I

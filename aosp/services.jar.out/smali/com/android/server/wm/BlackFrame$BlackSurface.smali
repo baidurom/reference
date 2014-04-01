@@ -15,8 +15,6 @@
 
 
 # instance fields
-.field final layer:I
-
 .field final left:I
 
 .field final surface:Landroid/view/Surface;
@@ -27,8 +25,8 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/android/server/wm/BlackFrame;Landroid/view/SurfaceSession;IIIIII)V
-    .locals 7
+.method constructor <init>(Lcom/android/server/wm/BlackFrame;Landroid/view/SurfaceSession;IIIII)V
+    .locals 9
     .parameter
     .parameter "session"
     .parameter "layer"
@@ -36,7 +34,6 @@
     .parameter "t"
     .parameter "r"
     .parameter "b"
-    .parameter "layerStack"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/view/Surface$OutOfResourcesException;
@@ -44,104 +41,45 @@
     .end annotation
 
     .prologue
-    const v6, 0x20004
-
-    const/4 v5, -0x1
-
-    .line 39
+    .line 36
     iput-object p1, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->this$0:Lcom/android/server/wm/BlackFrame;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 40
+    .line 37
     iput p4, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->left:I
 
-    .line 41
+    .line 38
     iput p5, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->top:I
 
-    .line 42
-    iput p3, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->layer:I
+    .line 39
+    sub-int v5, p6, p4
 
-    .line 43
-    sub-int v3, p6, p4
+    .line 40
+    .local v5, w:I
+    sub-int v6, p7, p5
 
-    .line 44
-    .local v3, w:I
-    sub-int v4, p7, p5
+    .line 41
+    .local v6, h:I
+    new-instance v0, Landroid/view/Surface;
 
-    .line 45
-    .local v4, h:I
-    sget-boolean v0, Lcom/android/server/wm/WindowManagerService;->DEBUG_SURFACE_TRACE:Z
+    const/4 v2, 0x0
 
-    if-eqz v0, :cond_2
+    const-string v3, "BlackSurface"
 
-    .line 46
-    new-instance v0, Lcom/android/server/wm/WindowStateAnimator$SurfaceTrace;
+    const/4 v4, -0x1
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const/4 v7, -0x1
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "BlackSurface("
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ", "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ")"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
+    const/high16 v8, 0x2
 
     move-object v1, p2
 
-    invoke-direct/range {v0 .. v6}, Lcom/android/server/wm/WindowStateAnimator$SurfaceTrace;-><init>(Landroid/view/SurfaceSession;Ljava/lang/String;IIII)V
+    invoke-direct/range {v0 .. v8}, Landroid/view/Surface;-><init>(Landroid/view/SurfaceSession;ILjava/lang/String;IIIII)V
 
     iput-object v0, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->surface:Landroid/view/Surface;
 
-    .line 53
-    :goto_0
-    iget-object v0, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->surface:Landroid/view/Surface;
-
-    const/high16 v1, 0x3f80
-
-    invoke-virtual {v0, v1}, Landroid/view/Surface;->setAlpha(F)V
-
-    .line 54
-    iget-object v0, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->surface:Landroid/view/Surface;
-
-    invoke-virtual {v0, p8}, Landroid/view/Surface;->setLayerStack(I)V
-
-    .line 55
-    iget-object v0, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->surface:Landroid/view/Surface;
-
-    invoke-virtual {v0, p3}, Landroid/view/Surface;->setLayer(I)V
-
-    .line 56
-    iget-object v0, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->surface:Landroid/view/Surface;
-
-    invoke-virtual {v0}, Landroid/view/Surface;->show()V
-
-    .line 57
+    .line 43
     sget-boolean v0, Lcom/android/server/wm/WindowManagerService;->SHOW_TRANSACTIONS:Z
 
     if-nez v0, :cond_0
@@ -150,7 +88,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 58
+    .line 44
     :cond_0
     const-string v0, "WindowManager"
 
@@ -186,23 +124,21 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 60
+    .line 46
     :cond_1
+    iget-object v0, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->surface:Landroid/view/Surface;
+
+    const/high16 v1, 0x3f80
+
+    invoke-virtual {v0, v1}, Landroid/view/Surface;->setAlpha(F)V
+
+    .line 47
+    iget-object v0, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->surface:Landroid/view/Surface;
+
+    invoke-virtual {v0, p3}, Landroid/view/Surface;->setLayer(I)V
+
+    .line 48
     return-void
-
-    .line 50
-    :cond_2
-    new-instance v0, Landroid/view/Surface;
-
-    const-string v2, "BlackSurface"
-
-    move-object v1, p2
-
-    invoke-direct/range {v0 .. v6}, Landroid/view/Surface;-><init>(Landroid/view/SurfaceSession;Ljava/lang/String;IIII)V
-
-    iput-object v0, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->surface:Landroid/view/Surface;
-
-    goto :goto_0
 .end method
 
 
@@ -215,21 +151,31 @@
 
     const/4 v1, 0x0
 
-    .line 83
+    .line 71
     iget-object v0, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->surface:Landroid/view/Surface;
 
     invoke-virtual {v0, v2, v1, v1, v2}, Landroid/view/Surface;->setMatrix(FFFF)V
 
-    .line 84
+    .line 72
     return-void
 .end method
 
 .method setMatrix(Landroid/graphics/Matrix;)V
-    .locals 6
+    .locals 10
     .parameter "matrix"
 
     .prologue
-    .line 63
+    const/4 v9, 0x4
+
+    const/4 v8, 0x3
+
+    const/4 v7, 0x2
+
+    const/4 v6, 0x1
+
+    const/4 v5, 0x0
+
+    .line 51
     iget-object v0, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->this$0:Lcom/android/server/wm/BlackFrame;
 
     iget-object v0, v0, Lcom/android/server/wm/BlackFrame;->mTmpMatrix:Landroid/graphics/Matrix;
@@ -244,14 +190,14 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Matrix;->setTranslate(FF)V
 
-    .line 64
+    .line 52
     iget-object v0, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->this$0:Lcom/android/server/wm/BlackFrame;
 
     iget-object v0, v0, Lcom/android/server/wm/BlackFrame;->mTmpMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Matrix;->postConcat(Landroid/graphics/Matrix;)Z
 
-    .line 65
+    .line 53
     iget-object v0, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->this$0:Lcom/android/server/wm/BlackFrame;
 
     iget-object v0, v0, Lcom/android/server/wm/BlackFrame;->mTmpMatrix:Landroid/graphics/Matrix;
@@ -262,16 +208,14 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Matrix;->getValues([F)V
 
-    .line 66
+    .line 54
     iget-object v0, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->surface:Landroid/view/Surface;
 
     iget-object v1, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->this$0:Lcom/android/server/wm/BlackFrame;
 
     iget-object v1, v1, Lcom/android/server/wm/BlackFrame;->mTmpFloats:[F
 
-    const/4 v2, 0x2
-
-    aget v1, v1, v2
+    aget v1, v1, v7
 
     iget-object v2, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->this$0:Lcom/android/server/wm/BlackFrame;
 
@@ -283,43 +227,182 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/Surface;->setPosition(FF)V
 
-    .line 68
+    .line 56
     iget-object v0, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->surface:Landroid/view/Surface;
 
     iget-object v1, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->this$0:Lcom/android/server/wm/BlackFrame;
 
     iget-object v1, v1, Lcom/android/server/wm/BlackFrame;->mTmpFloats:[F
 
-    const/4 v2, 0x0
-
-    aget v1, v1, v2
+    aget v1, v1, v5
 
     iget-object v2, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->this$0:Lcom/android/server/wm/BlackFrame;
 
     iget-object v2, v2, Lcom/android/server/wm/BlackFrame;->mTmpFloats:[F
 
-    const/4 v3, 0x3
-
-    aget v2, v2, v3
+    aget v2, v2, v8
 
     iget-object v3, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->this$0:Lcom/android/server/wm/BlackFrame;
 
     iget-object v3, v3, Lcom/android/server/wm/BlackFrame;->mTmpFloats:[F
 
-    const/4 v4, 0x1
-
-    aget v3, v3, v4
+    aget v3, v3, v6
 
     iget-object v4, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->this$0:Lcom/android/server/wm/BlackFrame;
 
     iget-object v4, v4, Lcom/android/server/wm/BlackFrame;->mTmpFloats:[F
 
-    const/4 v5, 0x4
-
-    aget v4, v4, v5
+    aget v4, v4, v9
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/view/Surface;->setMatrix(FFFF)V
 
-    .line 80
+    .line 59
+    sget-boolean v0, Lcom/android/server/wm/WindowManagerService;->SHOW_TRANSACTIONS:Z
+
+    if-eqz v0, :cond_0
+
+    .line 60
+    const-string v0, "WindowManager"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Black Surface @ ("
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->left:I
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ","
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget v2, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->top:I
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "): ("
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->this$0:Lcom/android/server/wm/BlackFrame;
+
+    iget-object v2, v2, Lcom/android/server/wm/BlackFrame;->mTmpFloats:[F
+
+    aget v2, v2, v7
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ","
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->this$0:Lcom/android/server/wm/BlackFrame;
+
+    iget-object v2, v2, Lcom/android/server/wm/BlackFrame;->mTmpFloats:[F
+
+    const/4 v3, 0x5
+
+    aget v2, v2, v3
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ") matrix=["
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->this$0:Lcom/android/server/wm/BlackFrame;
+
+    iget-object v2, v2, Lcom/android/server/wm/BlackFrame;->mTmpFloats:[F
+
+    aget v2, v2, v5
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ","
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->this$0:Lcom/android/server/wm/BlackFrame;
+
+    iget-object v2, v2, Lcom/android/server/wm/BlackFrame;->mTmpFloats:[F
+
+    aget v2, v2, v9
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "]["
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->this$0:Lcom/android/server/wm/BlackFrame;
+
+    iget-object v2, v2, Lcom/android/server/wm/BlackFrame;->mTmpFloats:[F
+
+    aget v2, v2, v6
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ","
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/android/server/wm/BlackFrame$BlackSurface;->this$0:Lcom/android/server/wm/BlackFrame;
+
+    iget-object v2, v2, Lcom/android/server/wm/BlackFrame;->mTmpFloats:[F
+
+    aget v2, v2, v8
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "]"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 68
+    :cond_0
     return-void
 .end method

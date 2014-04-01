@@ -37,7 +37,7 @@
 
 .field private mBatteryLevelView:Lcom/baidu/internal/keyguard/hotword/BatteryLevelView;
 
-.field private mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+.field private mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
 .field private mGallery:Lcom/baidu/internal/keyguard/hotword/ConstellationGallery;
 
@@ -413,13 +413,13 @@
     return-void
 .end method
 
-.method static synthetic access$1900(Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;)Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+.method static synthetic access$1900(Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;)Lcom/android/internal/policy/impl/KeyguardScreenCallback;
     .locals 1
     .parameter "x0"
 
     .prologue
     .line 32
-    iget-object v0, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    iget-object v0, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
     return-object v0
 .end method
@@ -444,6 +444,18 @@
     iget-object v0, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->mRotateAnimation:Landroid/view/animation/Animation;
 
     return-object v0
+.end method
+
+.method static synthetic access$2002(Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;Landroid/view/animation/Animation;)Landroid/view/animation/Animation;
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 32
+    iput-object p1, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->mRotateAnimation:Landroid/view/animation/Animation;
+
+    return-object p1
 .end method
 
 .method static synthetic access$2100(Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;)Landroid/widget/ImageView;
@@ -1328,19 +1340,19 @@
     .locals 3
 
     .prologue
-    .line 613
+    .line 615
     iget-object v0, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->mVibrator:Landroid/os/Vibrator;
 
     if-eqz v0, :cond_0
 
-    .line 614
+    .line 616
     iget-object v0, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->mVibrator:Landroid/os/Vibrator;
 
     const-wide/16 v1, 0x14
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Vibrator;->vibrate(J)V
 
-    .line 616
+    .line 618
     :cond_0
     return-void
 .end method
@@ -1602,7 +1614,7 @@
     .parameter "plugged"
 
     .prologue
-    .line 619
+    .line 621
     const-string v0, "TargetHandlePanel"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1635,26 +1647,26 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 620
+    .line 622
     if-eqz p2, :cond_0
 
-    .line 621
+    .line 623
     iget-object v0, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->mBatteryLevelView:Lcom/baidu/internal/keyguard/hotword/BatteryLevelView;
 
     int-to-float v1, p1
 
     invoke-virtual {v0, v1}, Lcom/baidu/internal/keyguard/hotword/BatteryLevelView;->setLevel(F)V
 
-    .line 622
+    .line 624
     iget-object v0, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->mBatteryLevelView:Lcom/baidu/internal/keyguard/hotword/BatteryLevelView;
 
     invoke-virtual {v0}, Lcom/baidu/internal/keyguard/hotword/BatteryLevelView;->invalidate()V
 
-    .line 627
+    .line 629
     :goto_0
     return-void
 
-    .line 624
+    .line 626
     :cond_0
     iget-object v0, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->mBatteryLevelView:Lcom/baidu/internal/keyguard/hotword/BatteryLevelView;
 
@@ -1662,7 +1674,7 @@
 
     invoke-virtual {v0, v1}, Lcom/baidu/internal/keyguard/hotword/BatteryLevelView;->setLevel(F)V
 
-    .line 625
+    .line 627
     iget-object v0, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->mBatteryLevelView:Lcom/baidu/internal/keyguard/hotword/BatteryLevelView;
 
     invoke-virtual {v0}, Lcom/baidu/internal/keyguard/hotword/BatteryLevelView;->invalidate()V
@@ -2034,15 +2046,15 @@
     return-void
 .end method
 
-.method public setKeyguardCallback(Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;)V
+.method public setKeyguardCallback(Lcom/android/internal/policy/impl/KeyguardScreenCallback;)V
     .locals 0
     .parameter "callback"
 
     .prologue
-    .line 599
-    iput-object p1, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    .line 601
+    iput-object p1, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
-    .line 600
+    .line 602
     return-void
 .end method
 
@@ -2145,15 +2157,15 @@
     .parameter "enabled"
 
     .prologue
-    .line 603
+    .line 605
     if-eqz p1, :cond_1
 
-    .line 604
+    .line 606
     iget-object v0, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->mVibrator:Landroid/os/Vibrator;
 
     if-nez v0, :cond_0
 
-    .line 605
+    .line 607
     invoke-virtual {p0}, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -2168,12 +2180,12 @@
 
     iput-object v0, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->mVibrator:Landroid/os/Vibrator;
 
-    .line 610
+    .line 612
     :cond_0
     :goto_0
     return-void
 
-    .line 608
+    .line 610
     :cond_1
     const/4 v0, 0x0
 
@@ -2187,27 +2199,25 @@
     .parameter "gallery"
 
     .prologue
-    .line 595
+    .line 597
     iput-object p1, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->mGallery:Lcom/baidu/internal/keyguard/hotword/ConstellationGallery;
 
-    .line 596
+    .line 598
     return-void
 .end method
 
 .method public startTargetIntentOrDismissKeyguard()Z
-    .locals 5
+    .locals 4
 
     .prologue
-    const/4 v2, 0x1
-
     .line 89
-    iget-object v3, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->mState:Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel$State;
+    iget-object v2, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->mState:Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel$State;
 
     invoke-virtual {p0}, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->getContext()Landroid/content/Context;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v3, v4}, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel$State;->getIntent(Landroid/content/Context;)Landroid/content/Intent;
+    invoke-virtual {v2, v3}, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel$State;->getIntent(Landroid/content/Context;)Landroid/content/Intent;
 
     move-result-object v1
 
@@ -2219,9 +2229,9 @@
     :try_start_0
     invoke-virtual {p0}, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->getContext()Landroid/content/Context;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v3, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+    invoke-virtual {v2, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -2230,30 +2240,33 @@
     invoke-virtual {p0}, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->resetTargetHandlePanelUi()V
 
     .line 97
-    iget-object v3, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->mGallery:Lcom/baidu/internal/keyguard/hotword/ConstellationGallery;
+    iget-object v2, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->mGallery:Lcom/baidu/internal/keyguard/hotword/ConstellationGallery;
 
-    invoke-virtual {v3}, Lcom/baidu/internal/keyguard/hotword/ConstellationGallery;->resetConstellationUi()V
+    invoke-virtual {v2}, Lcom/baidu/internal/keyguard/hotword/ConstellationGallery;->resetConstellationUi()V
 
     .line 99
     :cond_0
     if-nez v1, :cond_1
 
-    iget-object v3, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->mState:Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel$State;
+    iget-object v2, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->mState:Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel$State;
 
-    iget-object v4, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->mStateTargetUnlockHover:Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel$State;
+    iget-object v3, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->mStateTargetUnlockHover:Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel$State;
 
-    if-ne v3, v4, :cond_2
+    if-ne v2, v3, :cond_2
 
     .line 100
     :cond_1
-    iget-object v3, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    iget-object v2, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
-    if-eqz v3, :cond_2
+    if-eqz v2, :cond_2
 
     .line 101
-    iget-object v3, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    iget-object v2, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
-    invoke-interface {v3, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;->dismiss(Z)V
+    invoke-interface {v2}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->goToUnlockScreen()V
+
+    .line 102
+    const/4 v2, 0x1
 
     .line 105
     :goto_1
@@ -2265,11 +2278,11 @@
 
     .line 94
     .local v0, e:Ljava/lang/Exception;
-    const-string v3, "TargetHandlePanel"
+    const-string v2, "TargetHandlePanel"
 
-    const-string v4, "startActivity fail:"
+    const-string v3, "startActivity fail:"
 
-    invoke-static {v3, v4, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v2, v3, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_0
 

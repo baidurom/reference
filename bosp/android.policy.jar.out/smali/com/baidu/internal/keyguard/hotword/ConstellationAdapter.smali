@@ -12,7 +12,7 @@
 # instance fields
 .field private inflater:Landroid/view/LayoutInflater;
 
-.field private mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+.field private mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
 .field private mConstellationCount:I
 
@@ -30,7 +30,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;)V
+.method public constructor <init>(Landroid/content/Context;Lcom/android/internal/policy/impl/KeyguardScreenCallback;)V
     .locals 1
     .parameter "c"
     .parameter "callback"
@@ -56,7 +56,7 @@
     iput-object v0, p0, Lcom/baidu/internal/keyguard/hotword/ConstellationAdapter;->inflater:Landroid/view/LayoutInflater;
 
     .line 23
-    iput-object p2, p0, Lcom/baidu/internal/keyguard/hotword/ConstellationAdapter;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    iput-object p2, p0, Lcom/baidu/internal/keyguard/hotword/ConstellationAdapter;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
     .line 24
     return-void
@@ -234,9 +234,9 @@
     .line 99
     check-cast v1, Lcom/baidu/internal/keyguard/hotword/Constellation;
 
-    iget-object v2, p0, Lcom/baidu/internal/keyguard/hotword/ConstellationAdapter;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    iget-object v2, p0, Lcom/baidu/internal/keyguard/hotword/ConstellationAdapter;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
-    invoke-virtual {v1, v2}, Lcom/baidu/internal/keyguard/hotword/Constellation;->setKeyguardCallback(Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;)V
+    invoke-virtual {v1, v2}, Lcom/baidu/internal/keyguard/hotword/Constellation;->setKeyguardCallback(Lcom/android/internal/policy/impl/KeyguardScreenCallback;)V
 
     .line 100
     return-object v0

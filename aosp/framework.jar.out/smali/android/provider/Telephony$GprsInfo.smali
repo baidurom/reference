@@ -32,7 +32,7 @@
     .locals 1
 
     .prologue
-    .line 3141
+    .line 2953
     const-string v0, "content://telephony/gprsinfo"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -48,8 +48,8 @@
     .locals 0
 
     .prologue
-    .line 3140
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 2952
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

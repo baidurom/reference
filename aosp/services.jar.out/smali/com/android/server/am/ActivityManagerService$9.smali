@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 8658
+    .line 7487
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$9;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iput-object p2, p0, Lcom/android/server/am/ActivityManagerService$9;->val$doneReceivers:Ljava/util/ArrayList;
@@ -44,7 +44,7 @@
 
 
 # virtual methods
-.method public performReceive(Landroid/content/Intent;ILjava/lang/String;Landroid/os/Bundle;ZZI)V
+.method public performReceive(Landroid/content/Intent;ILjava/lang/String;Landroid/os/Bundle;ZZ)V
     .locals 2
     .parameter "intent"
     .parameter "resultCode"
@@ -52,10 +52,9 @@
     .parameter "extras"
     .parameter "ordered"
     .parameter "sticky"
-    .parameter "sendingUser"
 
     .prologue
-    .line 8665
+    .line 7494
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$9;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mHandler:Landroid/os/Handler;
@@ -66,6 +65,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 8677
+    .line 7506
     return-void
 .end method

@@ -28,7 +28,9 @@
 
 .field static final TRANSACTION_cancel:I = 0x2
 
-.field static final TRANSACTION_pokeWakelock:I = 0x4
+.field static final TRANSACTION_exposeFallback:I = 0x4
+
+.field static final TRANSACTION_pokeWakelock:I = 0x5
 
 .field static final TRANSACTION_reportFailedAttempt:I = 0x3
 
@@ -109,7 +111,7 @@
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 3
+    .locals 2
     .parameter "code"
     .parameter "data"
     .parameter "reply"
@@ -121,32 +123,32 @@
     .end annotation
 
     .prologue
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     .line 39
     sparse-switch p1, :sswitch_data_0
 
-    .line 73
+    .line 77
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    move-result v1
+    move-result v0
 
     :goto_0
-    return v1
+    return v0
 
     .line 43
     :sswitch_0
-    const-string v2, "com.android.internal.policy.IFaceLockCallback"
+    const-string v1, "com.android.internal.policy.IFaceLockCallback"
 
-    invoke-virtual {p3, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    invoke-virtual {p3, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     goto :goto_0
 
     .line 48
     :sswitch_1
-    const-string v2, "com.android.internal.policy.IFaceLockCallback"
+    const-string v1, "com.android.internal.policy.IFaceLockCallback"
 
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 49
     invoke-virtual {p0}, Lcom/android/internal/policy/IFaceLockCallback$Stub;->unlock()V
@@ -155,9 +157,9 @@
 
     .line 54
     :sswitch_2
-    const-string v2, "com.android.internal.policy.IFaceLockCallback"
+    const-string v1, "com.android.internal.policy.IFaceLockCallback"
 
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 55
     invoke-virtual {p0}, Lcom/android/internal/policy/IFaceLockCallback$Stub;->cancel()V
@@ -166,9 +168,9 @@
 
     .line 60
     :sswitch_3
-    const-string v2, "com.android.internal.policy.IFaceLockCallback"
+    const-string v1, "com.android.internal.policy.IFaceLockCallback"
 
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 61
     invoke-virtual {p0}, Lcom/android/internal/policy/IFaceLockCallback$Stub;->reportFailedAttempt()V
@@ -177,30 +179,34 @@
 
     .line 66
     :sswitch_4
-    const-string v2, "com.android.internal.policy.IFaceLockCallback"
+    const-string v1, "com.android.internal.policy.IFaceLockCallback"
 
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 68
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+    .line 67
+    invoke-virtual {p0}, Lcom/android/internal/policy/IFaceLockCallback$Stub;->exposeFallback()V
 
-    move-result v0
+    goto :goto_0
 
-    .line 69
-    .local v0, _arg0:I
-    invoke-virtual {p0, v0}, Lcom/android/internal/policy/IFaceLockCallback$Stub;->pokeWakelock(I)V
+    .line 72
+    :sswitch_5
+    const-string v1, "com.android.internal.policy.IFaceLockCallback"
+
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 73
+    invoke-virtual {p0}, Lcom/android/internal/policy/IFaceLockCallback$Stub;->pokeWakelock()V
 
     goto :goto_0
 
     .line 39
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
         0x2 -> :sswitch_2
         0x3 -> :sswitch_3
         0x4 -> :sswitch_4
+        0x5 -> :sswitch_5
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

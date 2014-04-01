@@ -14,7 +14,7 @@
     .locals 1
 
     .prologue
-    .line 56
+    .line 52
     const/16 v0, 0x11
 
     new-array v0, v0, [C
@@ -51,7 +51,7 @@
     .locals 0
 
     .prologue
-    .line 29
+    .line 25
     invoke-direct {p0}, Landroid/text/method/NumberKeyListener;-><init>()V
 
     return-void
@@ -61,19 +61,19 @@
     .locals 1
 
     .prologue
-    .line 43
+    .line 39
     sget-object v0, Landroid/text/method/DateTimeKeyListener;->sInstance:Landroid/text/method/DateTimeKeyListener;
 
     if-eqz v0, :cond_0
 
-    .line 44
+    .line 40
     sget-object v0, Landroid/text/method/DateTimeKeyListener;->sInstance:Landroid/text/method/DateTimeKeyListener;
 
-    .line 47
+    .line 43
     :goto_0
     return-object v0
 
-    .line 46
+    .line 42
     :cond_0
     new-instance v0, Landroid/text/method/DateTimeKeyListener;
 
@@ -81,7 +81,7 @@
 
     sput-object v0, Landroid/text/method/DateTimeKeyListener;->sInstance:Landroid/text/method/DateTimeKeyListener;
 
-    .line 47
+    .line 43
     sget-object v0, Landroid/text/method/DateTimeKeyListener;->sInstance:Landroid/text/method/DateTimeKeyListener;
 
     goto :goto_0
@@ -93,7 +93,7 @@
     .locals 1
 
     .prologue
-    .line 39
+    .line 35
     sget-object v0, Landroid/text/method/DateTimeKeyListener;->CHARACTERS:[C
 
     return-object v0
@@ -103,7 +103,7 @@
     .locals 1
 
     .prologue
-    .line 32
+    .line 28
     const/4 v0, 0x4
 
     return v0

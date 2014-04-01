@@ -22,24 +22,19 @@
     .prologue
     const/4 v0, -0x1
 
-    .line 42
+    .line 41
     invoke-direct {p0}, Landroid/telephony/CellLocation;-><init>()V
 
-    .line 43
+    .line 42
     iput v0, p0, Landroid/telephony/gsm/GsmCellLocation;->mLac:I
 
-    .line 44
+    .line 43
     iput v0, p0, Landroid/telephony/gsm/GsmCellLocation;->mCid:I
 
-    .line 45
+    .line 44
     iput v0, p0, Landroid/telephony/gsm/GsmCellLocation;->mPsc:I
 
-    .line 46
-    const/4 v0, 0x1
-
-    iput v0, p0, Landroid/telephony/gsm/GsmCellLocation;->mType:I
-
-    .line 47
+    .line 45
     return-void
 .end method
 
@@ -48,10 +43,10 @@
     .parameter "bundle"
 
     .prologue
-    .line 52
+    .line 50
     invoke-direct {p0}, Landroid/telephony/CellLocation;-><init>()V
 
-    .line 53
+    .line 51
     const-string v0, "lac"
 
     iget v1, p0, Landroid/telephony/gsm/GsmCellLocation;->mLac:I
@@ -62,7 +57,7 @@
 
     iput v0, p0, Landroid/telephony/gsm/GsmCellLocation;->mLac:I
 
-    .line 54
+    .line 52
     const-string v0, "cid"
 
     iget v1, p0, Landroid/telephony/gsm/GsmCellLocation;->mCid:I
@@ -73,7 +68,7 @@
 
     iput v0, p0, Landroid/telephony/gsm/GsmCellLocation;->mCid:I
 
-    .line 55
+    .line 53
     const-string/jumbo v0, "psc"
 
     iget v1, p0, Landroid/telephony/gsm/GsmCellLocation;->mPsc:I
@@ -84,12 +79,7 @@
 
     iput v0, p0, Landroid/telephony/gsm/GsmCellLocation;->mPsc:I
 
-    .line 56
-    const/4 v0, 0x1
-
-    iput v0, p0, Landroid/telephony/gsm/GsmCellLocation;->mType:I
-
-    .line 57
+    .line 54
     return-void
 .end method
 
@@ -99,7 +89,7 @@
     .parameter "b"
 
     .prologue
-    .line 144
+    .line 141
     if-nez p0, :cond_1
 
     if-nez p1, :cond_0
@@ -131,7 +121,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 118
+    .line 115
     :try_start_0
     move-object v0, p1
 
@@ -141,25 +131,25 @@
     :try_end_0
     .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 123
+    .line 120
     .local v2, s:Landroid/telephony/gsm/GsmCellLocation;
     if-nez p1, :cond_1
 
-    .line 127
+    .line 124
     .end local v2           #s:Landroid/telephony/gsm/GsmCellLocation;
     :cond_0
     :goto_0
     return v3
 
-    .line 119
+    .line 116
     :catch_0
     move-exception v1
 
-    .line 120
+    .line 117
     .local v1, ex:Ljava/lang/ClassCastException;
     goto :goto_0
 
-    .line 127
+    .line 124
     .end local v1           #ex:Ljava/lang/ClassCastException;
     .restart local v2       #s:Landroid/telephony/gsm/GsmCellLocation;
     :cond_1
@@ -227,35 +217,28 @@
     .parameter "m"
 
     .prologue
-    .line 153
+    .line 150
     const-string v0, "lac"
 
     iget v1, p0, Landroid/telephony/gsm/GsmCellLocation;->mLac:I
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 154
+    .line 151
     const-string v0, "cid"
 
     iget v1, p0, Landroid/telephony/gsm/GsmCellLocation;->mCid:I
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 155
+    .line 152
     const-string/jumbo v0, "psc"
 
     iget v1, p0, Landroid/telephony/gsm/GsmCellLocation;->mPsc:I
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 157
-    const-string/jumbo v0, "type"
-
-    iget v1, p0, Landroid/telephony/gsm/GsmCellLocation;->mType:I
-
-    invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
-
-    .line 158
+    .line 154
     const-string v0, "GsmCellLocation"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -282,7 +265,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 160
+    .line 156
     return-void
 .end method
 
@@ -290,7 +273,7 @@
     .locals 1
 
     .prologue
-    .line 70
+    .line 67
     iget v0, p0, Landroid/telephony/gsm/GsmCellLocation;->mCid:I
 
     return v0
@@ -300,7 +283,7 @@
     .locals 1
 
     .prologue
-    .line 63
+    .line 60
     iget v0, p0, Landroid/telephony/gsm/GsmCellLocation;->mLac:I
 
     return v0
@@ -310,7 +293,7 @@
     .locals 1
 
     .prologue
-    .line 80
+    .line 77
     iget v0, p0, Landroid/telephony/gsm/GsmCellLocation;->mPsc:I
 
     return v0
@@ -320,7 +303,7 @@
     .locals 2
 
     .prologue
-    .line 110
+    .line 107
     iget v0, p0, Landroid/telephony/gsm/GsmCellLocation;->mLac:I
 
     iget v1, p0, Landroid/telephony/gsm/GsmCellLocation;->mCid:I
@@ -336,7 +319,7 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 166
+    .line 162
     iget v0, p0, Landroid/telephony/gsm/GsmCellLocation;->mLac:I
 
     if-ne v0, v1, :cond_0
@@ -366,13 +349,13 @@
     .parameter "cid"
 
     .prologue
-    .line 96
+    .line 93
     iput p1, p0, Landroid/telephony/gsm/GsmCellLocation;->mLac:I
 
-    .line 97
+    .line 94
     iput p2, p0, Landroid/telephony/gsm/GsmCellLocation;->mCid:I
 
-    .line 98
+    .line 95
     return-void
 .end method
 
@@ -381,10 +364,10 @@
     .parameter "psc"
 
     .prologue
-    .line 105
+    .line 102
     iput p1, p0, Landroid/telephony/gsm/GsmCellLocation;->mPsc:I
 
-    .line 106
+    .line 103
     return-void
 .end method
 
@@ -394,16 +377,16 @@
     .prologue
     const/4 v0, -0x1
 
-    .line 87
+    .line 84
     iput v0, p0, Landroid/telephony/gsm/GsmCellLocation;->mLac:I
 
-    .line 88
+    .line 85
     iput v0, p0, Landroid/telephony/gsm/GsmCellLocation;->mCid:I
 
-    .line 89
+    .line 86
     iput v0, p0, Landroid/telephony/gsm/GsmCellLocation;->mPsc:I
 
-    .line 90
+    .line 87
     return-void
 .end method
 
@@ -411,7 +394,7 @@
     .locals 2
 
     .prologue
-    .line 133
+    .line 130
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

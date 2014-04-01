@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 419
+    .line 334
     iput-object p1, p0, Lcom/android/server/connectivity/Tethering$1;->this$0:Lcom/android/server/connectivity/Tethering;
 
     iput-object p2, p0, Lcom/android/server/connectivity/Tethering$1;->val$service:Landroid/os/INetworkManagementService;
@@ -45,88 +45,61 @@
 
 # virtual methods
 .method public run()V
-    .locals 6
+    .locals 5
 
     .prologue
-    .line 422
+    .line 337
     :try_start_0
-    iget-object v3, p0, Lcom/android/server/connectivity/Tethering$1;->val$service:Landroid/os/INetworkManagementService;
+    iget-object v2, p0, Lcom/android/server/connectivity/Tethering$1;->val$service:Landroid/os/INetworkManagementService;
 
-    invoke-interface {v3}, Landroid/os/INetworkManagementService;->getStartRequest()Z
+    invoke-interface {v2}, Landroid/os/INetworkManagementService;->getStartRequest()Z
 
     move-result v2
 
-    .line 423
-    .local v2, startRequest:Z
-    const-string v3, "Tethering"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "restartAccessPoint getStartRequest:"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 424
     if-nez v2, :cond_0
 
-    .line 425
-    iget-object v3, p0, Lcom/android/server/connectivity/Tethering$1;->val$wifiService:Landroid/net/wifi/IWifiManager;
+    .line 338
+    iget-object v2, p0, Lcom/android/server/connectivity/Tethering$1;->val$wifiService:Landroid/net/wifi/IWifiManager;
 
-    invoke-interface {v3}, Landroid/net/wifi/IWifiManager;->getWifiApConfiguration()Landroid/net/wifi/WifiConfiguration;
+    invoke-interface {v2}, Landroid/net/wifi/IWifiManager;->getWifiApConfiguration()Landroid/net/wifi/WifiConfiguration;
 
     move-result-object v0
 
-    .line 426
+    .line 339
     .local v0, config:Landroid/net/wifi/WifiConfiguration;
-    iget-object v3, p0, Lcom/android/server/connectivity/Tethering$1;->val$wifiService:Landroid/net/wifi/IWifiManager;
+    iget-object v2, p0, Lcom/android/server/connectivity/Tethering$1;->val$service:Landroid/os/INetworkManagementService;
 
-    const/4 v4, 0x0
+    const-string v3, "wifi.interface"
 
-    const/4 v5, 0x0
+    const-string v4, "wlan0"
 
-    invoke-interface {v3, v4, v5}, Landroid/net/wifi/IWifiManager;->setWifiApEnabled(Landroid/net/wifi/WifiConfiguration;Z)V
+    invoke-static {v3, v4}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 427
-    iget-object v3, p0, Lcom/android/server/connectivity/Tethering$1;->val$wifiService:Landroid/net/wifi/IWifiManager;
+    move-result-object v3
 
-    const/4 v4, 0x1
+    const-string v4, "ap0"
 
-    invoke-interface {v3, v0, v4}, Landroid/net/wifi/IWifiManager;->setWifiApEnabled(Landroid/net/wifi/WifiConfiguration;Z)V
+    invoke-interface {v2, v0, v3, v4}, Landroid/os/INetworkManagementService;->restartAccessPoint(Landroid/net/wifi/WifiConfiguration;Ljava/lang/String;Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 432
+    .line 344
     .end local v0           #config:Landroid/net/wifi/WifiConfiguration;
-    .end local v2           #startRequest:Z
     :cond_0
     :goto_0
     return-void
 
-    .line 429
+    .line 341
     :catch_0
     move-exception v1
 
-    .line 430
+    .line 342
     .local v1, e:Ljava/lang/Exception;
-    const-string v3, "Tethering"
+    const-string v2, "Tethering"
 
-    const-string v4, "restartAccessPoint failed!"
+    const-string v3, "restartAccessPoint failed!"
 
-    invoke-static {v3, v4}, Lcom/mediatek/xlog/Xlog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v3}, Lcom/mediatek/xlog/Xlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 .end method

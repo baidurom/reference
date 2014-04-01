@@ -13,56 +13,31 @@
 
 # direct methods
 .method public constructor <init>(Lcom/android/internal/telephony/gsm/GSMPhone;)V
-    .locals 2
+    .locals 1
     .parameter "phone"
 
     .prologue
-    .line 74
+    .line 38
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;-><init>(Lcom/android/internal/telephony/PhoneBase;)V
 
-    .line 77
+    .line 39
+    iget-object v0, p1, Lcom/android/internal/telephony/PhoneBase;->mIccRecords:Lcom/android/internal/telephony/IccRecords;
+
+    invoke-virtual {v0}, Lcom/android/internal/telephony/IccRecords;->getAdnCache()Lcom/android/internal/telephony/AdnRecordCache;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->adnCache:Lcom/android/internal/telephony/AdnRecordCache;
+
+    .line 42
     invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/GSMPhone;->getMySimId()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/internal/telephony/gsm/SimPhoneBookInterfaceManager;->mSimId:I
 
-    .line 79
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "SimPhoneBookInterfaceManager has been created. (mAdnCache="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/SimPhoneBookInterfaceManager;->adnCache:Lcom/android/internal/telephony/AdnRecordCache;
-
-    if-nez v0, :cond_0
-
-    const-string/jumbo v0, "null"
-
-    :goto_0
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lcom/android/internal/telephony/gsm/SimPhoneBookInterfaceManager;->logd(Ljava/lang/String;)V
-
-    .line 81
+    .line 43
     return-void
-
-    .line 79
-    :cond_0
-    const-string v0, "has been set."
-
-    goto :goto_0
 .end method
 
 
@@ -71,10 +46,10 @@
     .locals 0
 
     .prologue
-    .line 84
+    .line 46
     invoke-super {p0}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->dispose()V
 
-    .line 85
+    .line 47
     return-void
 .end method
 
@@ -82,13 +57,13 @@
     .locals 3
 
     .prologue
-    .line 89
+    .line 51
     :try_start_0
     invoke-super {p0}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->finalize()V
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 93
+    .line 55
     :goto_0
     const-string v1, "GSM"
 
@@ -96,14 +71,14 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 94
+    .line 56
     return-void
 
-    .line 90
+    .line 52
     :catch_0
     move-exception v0
 
-    .line 91
+    .line 53
     .local v0, throwable:Ljava/lang/Throwable;
     const-string v1, "GSM"
 
@@ -115,106 +90,99 @@
 .end method
 
 .method public getAdnRecordsSize(I)[I
-    .locals 6
+    .locals 5
     .parameter "efid"
 
     .prologue
-    .line 97
-    new-instance v3, Ljava/lang/StringBuilder;
+    .line 59
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "getAdnRecordsSize: efid="
+    const-string v3, "getAdnRecordsSize: efid="
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {p0, v3}, Lcom/android/internal/telephony/gsm/SimPhoneBookInterfaceManager;->logd(Ljava/lang/String;)V
+    invoke-virtual {p0, v2}, Lcom/android/internal/telephony/gsm/SimPhoneBookInterfaceManager;->logd(Ljava/lang/String;)V
 
-    .line 98
-    iget-object v4, p0, Lcom/android/internal/telephony/gsm/SimPhoneBookInterfaceManager;->mLock:Ljava/lang/Object;
+    .line 60
+    iget-object v3, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->mLock:Ljava/lang/Object;
 
-    monitor-enter v4
+    monitor-enter v3
 
-    .line 99
+    .line 61
     :try_start_0
     invoke-virtual {p0}, Lcom/android/internal/telephony/gsm/SimPhoneBookInterfaceManager;->checkThread()V
 
-    .line 100
-    const/4 v3, 0x3
+    .line 62
+    const/4 v2, 0x3
 
-    new-array v3, v3, [I
+    new-array v2, v2, [I
 
-    iput-object v3, p0, Lcom/android/internal/telephony/gsm/SimPhoneBookInterfaceManager;->recordSize:[I
+    iput-object v2, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->recordSize:[I
 
-    .line 103
-    new-instance v2, Ljava/util/concurrent/atomic/AtomicBoolean;
+    .line 65
+    new-instance v1, Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    invoke-direct {v2, v3}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+    invoke-direct {v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
-    .line 104
-    .local v2, status:Ljava/util/concurrent/atomic/AtomicBoolean;
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SimPhoneBookInterfaceManager;->mBaseHandler:Landroid/os/Handler;
+    .line 66
+    .local v1, status:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget-object v2, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->mBaseHandler:Landroid/os/Handler;
 
-    const/4 v5, 0x1
+    const/4 v4, 0x1
 
-    invoke-virtual {v3, v5, v2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v1
-
-    .line 106
-    .local v1, response:Landroid/os/Message;
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SimPhoneBookInterfaceManager;->phone:Lcom/android/internal/telephony/PhoneBase;
-
-    invoke-virtual {v3}, Lcom/android/internal/telephony/PhoneBase;->getIccFileHandler()Lcom/android/internal/telephony/IccFileHandler;
+    invoke-virtual {v2, v4, v1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
-    .line 107
-    .local v0, fh:Lcom/android/internal/telephony/IccFileHandler;
-    if-eqz v0, :cond_0
+    .line 68
+    .local v0, response:Landroid/os/Message;
+    iget-object v2, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->phone:Lcom/android/internal/telephony/PhoneBase;
 
-    .line 108
-    invoke-virtual {v0, p1, v1}, Lcom/android/internal/telephony/IccFileHandler;->getEFLinearRecordSize(ILandroid/os/Message;)V
+    invoke-virtual {v2}, Lcom/android/internal/telephony/PhoneBase;->getIccFileHandler()Lcom/android/internal/telephony/IccFileHandler;
 
-    .line 109
-    invoke-virtual {p0, v2}, Lcom/android/internal/telephony/gsm/SimPhoneBookInterfaceManager;->waitForResult(Ljava/util/concurrent/atomic/AtomicBoolean;)V
+    move-result-object v2
 
-    .line 111
-    :cond_0
-    monitor-exit v4
+    invoke-virtual {v2, p1, v0}, Lcom/android/internal/telephony/IccFileHandler;->getEFLinearRecordSize(ILandroid/os/Message;)V
+
+    .line 69
+    invoke-virtual {p0, v1}, Lcom/android/internal/telephony/gsm/SimPhoneBookInterfaceManager;->waitForResult(Ljava/util/concurrent/atomic/AtomicBoolean;)V
+
+    .line 70
+    monitor-exit v3
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 113
-    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SimPhoneBookInterfaceManager;->recordSize:[I
+    .line 72
+    iget-object v2, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->recordSize:[I
 
-    return-object v3
+    return-object v2
 
-    .line 111
-    .end local v0           #fh:Lcom/android/internal/telephony/IccFileHandler;
-    .end local v1           #response:Landroid/os/Message;
-    .end local v2           #status:Ljava/util/concurrent/atomic/AtomicBoolean;
+    .line 70
+    .end local v0           #response:Landroid/os/Message;
+    .end local v1           #status:Ljava/util/concurrent/atomic/AtomicBoolean;
     :catchall_0
-    move-exception v3
+    move-exception v2
 
     :try_start_1
-    monitor-exit v4
+    monitor-exit v3
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    throw v3
+    throw v2
 .end method
 
 .method protected logd(Ljava/lang/String;)V
@@ -222,7 +190,7 @@
     .parameter "msg"
 
     .prologue
-    .line 117
+    .line 76
     const-string v0, "GSM"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -257,7 +225,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 118
+    .line 77
     return-void
 .end method
 
@@ -266,7 +234,7 @@
     .parameter "msg"
 
     .prologue
-    .line 121
+    .line 80
     const-string v0, "GSM"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -301,6 +269,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 122
+    .line 81
     return-void
 .end method

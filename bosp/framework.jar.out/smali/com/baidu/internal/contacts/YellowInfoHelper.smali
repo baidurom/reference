@@ -369,15 +369,13 @@
     .end local v5           #number:Ljava/lang/String;
     .end local v6           #photo:[B
     :cond_3
-    if-eqz p1, :cond_4
+    if-eqz p1, :cond_5
 
     .line 268
     invoke-interface {p1}, Landroid/database/Cursor;->close()V
 
-    :cond_4
     move-object v2, v3
 
-    .line 270
     .end local v3           #info:Lcom/baidu/internal/contacts/YellowInfoHelper$YellowInfo;
     .restart local v2       #info:Lcom/baidu/internal/contacts/YellowInfoHelper$YellowInfo;
     goto :goto_0
@@ -415,15 +413,15 @@
     move-exception v7
 
     :goto_3
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_4
 
     .line 268
     invoke-interface {p1}, Landroid/database/Cursor;->close()V
 
-    .line 267
-    :cond_5
+    :cond_4
     throw v7
 
+    .line 267
     .end local v2           #info:Lcom/baidu/internal/contacts/YellowInfoHelper$YellowInfo;
     .restart local v0       #columnCount:I
     .restart local v3       #info:Lcom/baidu/internal/contacts/YellowInfoHelper$YellowInfo;
@@ -447,6 +445,15 @@
     .end local v3           #info:Lcom/baidu/internal/contacts/YellowInfoHelper$YellowInfo;
     .restart local v2       #info:Lcom/baidu/internal/contacts/YellowInfoHelper$YellowInfo;
     goto :goto_2
+
+    .end local v2           #info:Lcom/baidu/internal/contacts/YellowInfoHelper$YellowInfo;
+    .restart local v3       #info:Lcom/baidu/internal/contacts/YellowInfoHelper$YellowInfo;
+    :cond_5
+    move-object v2, v3
+
+    .end local v3           #info:Lcom/baidu/internal/contacts/YellowInfoHelper$YellowInfo;
+    .restart local v2       #info:Lcom/baidu/internal/contacts/YellowInfoHelper$YellowInfo;
+    goto :goto_0
 .end method
 
 .method public static getInstance(Landroid/content/Context;)Lcom/baidu/internal/contacts/YellowInfoHelper;

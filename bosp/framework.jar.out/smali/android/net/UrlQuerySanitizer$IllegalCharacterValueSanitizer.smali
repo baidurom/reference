@@ -80,7 +80,7 @@
 
     .prologue
     .line 274
-    const-string/jumbo v0, "javascript:"
+    const-string v0, "javascript:"
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
@@ -444,7 +444,7 @@
 
     .line 309
     .local v0, asLower:Ljava/lang/String;
-    const-string/jumbo v5, "javascript:"
+    const-string v5, "javascript:"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 

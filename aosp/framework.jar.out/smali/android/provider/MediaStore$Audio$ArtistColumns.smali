@@ -2,9 +2,6 @@
 .super Ljava/lang/Object;
 .source "MediaStore.java"
 
-# interfaces
-.implements Landroid/provider/MediaStore$ArtistExtensionColumns;
-
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingClass;

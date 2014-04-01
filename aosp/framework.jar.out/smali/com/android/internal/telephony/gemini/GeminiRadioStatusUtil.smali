@@ -12,27 +12,28 @@
 
 .field private static d:I
 
-.field private static e:[Ljava/lang/String;
+.field private static e:Ljava/lang/String;
 
-.field private static f:I
+.field private static f:Ljava/lang/String;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 2
 
     .prologue
-    .line 58
+    const/4 v1, 0x0
+
+    .line 59
     const/4 v0, 0x3
 
     sput v0, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->d:I
 
-    .line 59
-    sget v0, Lcom/android/internal/telephony/PhoneConstants;->GEMINI_SIM_NUM:I
+    .line 60
+    sput-object v1, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->e:Ljava/lang/String;
 
-    new-array v0, v0, [Ljava/lang/String;
-
-    sput-object v0, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->e:[Ljava/lang/String;
+    .line 61
+    sput-object v1, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->f:Ljava/lang/String;
 
     return-void
 .end method
@@ -41,166 +42,71 @@
     .locals 0
 
     .prologue
-    .line 50
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 51
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method private static a([Ljava/lang/String;I)I
-    .locals 4
+.method private static a(Ljava/lang/String;Ljava/lang/String;)I
+    .locals 3
     .parameter
     .parameter
 
     .prologue
-    const/4 v1, 0x3
+    const/4 v0, 0x3
 
-    const/4 v0, 0x1
-
-    const/4 v2, 0x0
-
-    .line 143
-    .line 146
-    sget v3, Lcom/android/internal/telephony/PhoneConstants;->GEMINI_SIM_NUM:I
-
-    if-ne v3, v0, :cond_1
-
-    .line 155
-    :goto_0
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "getSIMModeByIccidStatus: default simMode="
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->a(Ljava/lang/String;)V
-
-    .line 158
-    :goto_1
-    if-ge v2, p1, :cond_4
-
-    .line 159
+    .line 130
+    .line 131
     sget-object v1, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->b:Landroid/content/SharedPreferences;
 
-    aget-object v3, p0, v2
-
-    invoke-interface {v1, v3}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    invoke-interface {v1, p0}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    .line 132
+    sget-object v2, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->b:Landroid/content/SharedPreferences;
 
-    .line 160
-    packed-switch v2, :pswitch_data_0
+    invoke-interface {v2, p1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
-    .line 174
-    const-string v1, "PHONE"
+    move-result v2
 
-    const-string v3, "[GeminiRadioStatusUtil] getSIMModeByIccidStatus argument error!"
+    .line 133
+    if-eqz v1, :cond_1
 
-    invoke-static {v1, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    if-eqz v2, :cond_1
 
-    .line 158
+    .line 134
+    const/4 v0, 0x0
+
+    .line 142
     :cond_0
-    :goto_2
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_1
-
-    .line 148
-    :cond_1
-    sget v0, Lcom/android/internal/telephony/PhoneConstants;->GEMINI_SIM_NUM:I
-
-    const/4 v3, 0x2
-
-    if-ne v0, v3, :cond_2
-
-    move v0, v1
-
-    .line 149
-    goto :goto_0
-
-    .line 150
-    :cond_2
-    sget v0, Lcom/android/internal/telephony/PhoneConstants;->GEMINI_SIM_NUM:I
-
-    if-ne v0, v1, :cond_3
-
-    .line 151
-    const/4 v0, 0x7
-
-    goto :goto_0
-
-    .line 152
-    :cond_3
-    sget v0, Lcom/android/internal/telephony/PhoneConstants;->GEMINI_SIM_NUM:I
-
-    const/4 v1, 0x4
-
-    if-ne v0, v1, :cond_5
-
-    .line 153
-    const/16 v0, 0xf
-
-    goto :goto_0
-
-    .line 162
-    :pswitch_0
-    and-int/lit8 v0, v0, -0x2
-
-    .line 163
-    goto :goto_2
-
-    .line 165
-    :pswitch_1
-    and-int/lit8 v0, v0, -0x3
-
-    .line 166
-    goto :goto_2
-
-    .line 168
-    :pswitch_2
-    and-int/lit8 v0, v0, -0x5
-
-    .line 169
-    goto :goto_2
-
-    .line 171
-    :pswitch_3
-    and-int/lit8 v0, v0, -0x9
-
-    .line 172
-    goto :goto_2
-
-    .line 180
-    :cond_4
+    :goto_0
     return v0
 
-    :cond_5
-    move v0, v2
+    .line 135
+    :cond_1
+    if-nez v1, :cond_2
+
+    if-eqz v2, :cond_0
+
+    .line 137
+    :cond_2
+    if-eqz v1, :cond_3
+
+    .line 138
+    const/4 v0, 0x2
 
     goto :goto_0
 
-    .line 160
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-        :pswitch_3
-    .end packed-switch
+    .line 139
+    :cond_3
+    if-eqz v2, :cond_0
+
+    .line 140
+    const/4 v0, 0x1
+
+    goto :goto_0
 .end method
 
 .method private static a(Landroid/content/SharedPreferences$Editor;Ljava/lang/String;)V
@@ -209,10 +115,10 @@
     .parameter
 
     .prologue
-    .line 188
+    .line 150
     if-eqz p1, :cond_0
 
-    .line 189
+    .line 151
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -233,12 +139,12 @@
 
     invoke-static {v0}, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->a(Ljava/lang/String;)V
 
-    .line 190
+    .line 152
     const/4 v0, 0x0
 
     invoke-interface {p0, p1, v0}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 192
+    .line 154
     :cond_0
     return-void
 .end method
@@ -248,7 +154,7 @@
     .parameter
 
     .prologue
-    .line 184
+    .line 146
     const-string v0, "PHONE"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -271,7 +177,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 185
+    .line 147
     return-void
 .end method
 
@@ -281,10 +187,10 @@
     .parameter
 
     .prologue
-    .line 195
+    .line 157
     if-eqz p1, :cond_0
 
-    .line 196
+    .line 158
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -305,37 +211,33 @@
 
     invoke-static {v0}, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->a(Ljava/lang/String;)V
 
-    .line 197
+    .line 159
     invoke-interface {p0, p1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 199
+    .line 161
     :cond_0
     return-void
 .end method
 
 .method public static checkRadioOffSIM(Landroid/content/Context;)V
-    .locals 3
+    .locals 2
     .parameter
 
     .prologue
-    .line 63
+    .line 64
+    .line 65
     sput-object p0, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->a:Landroid/content/Context;
 
-    .line 64
-    sget-object v0, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->a:Landroid/content/Context;
+    const-string v0, "RADIO_STATUS"
 
-    const-string v1, "RADIO_STATUS"
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    invoke-virtual {p0, v0, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
+    .line 66
     sput-object v0, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->b:Landroid/content/SharedPreferences;
-
-    .line 65
-    sget-object v0, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->b:Landroid/content/SharedPreferences;
 
     invoke-interface {v0}, Landroid/content/SharedPreferences;->getAll()Ljava/util/Map;
 
@@ -347,21 +249,21 @@
 
     if-eqz v0, :cond_0
 
-    .line 66
+    .line 67
     const-string v0, "checkRadioOffSIM no recorded radio off SIM"
 
     invoke-static {v0}, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->a(Ljava/lang/String;)V
 
-    .line 67
+    .line 68
     const/4 v0, 0x1
 
     sput-boolean v0, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->c:Z
 
-    .line 71
+    .line 72
     :goto_0
     return-void
 
-    .line 69
+    .line 70
     :cond_0
     const-string v0, "checkRadioOffSIM has radio off SIM"
 
@@ -370,89 +272,40 @@
     goto :goto_0
 .end method
 
-.method public static finishRadioStatusInitialization([Ljava/lang/String;I)V
-    .locals 3
+.method public static finishRadioStatusInitialization(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 2
     .parameter
     .parameter
 
     .prologue
-    .line 83
+    .line 90
     const/4 v0, 0x1
 
     sput-boolean v0, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->c:Z
 
-    .line 84
-    sput p1, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->f:I
+    .line 91
+    sput-object p0, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->e:Ljava/lang/String;
 
-    .line 85
-    const/4 v0, 0x0
+    .line 92
+    sput-object p1, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->f:Ljava/lang/String;
 
-    :goto_0
-    if-ge v0, p1, :cond_0
+    .line 93
+    sget-object v0, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->e:Ljava/lang/String;
 
-    .line 86
-    sget-object v1, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->e:[Ljava/lang/String;
+    sget-object v1, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->f:Ljava/lang/String;
 
-    aget-object v2, p0, v0
-
-    aput-object v2, v1, v0
-
-    .line 87
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Finish radio status initialization mIccId["
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "] = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    sget-object v2, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->e:[Ljava/lang/String;
-
-    aget-object v2, v2, v0
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->a(Ljava/lang/String;)V
-
-    .line 85
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    .line 90
-    :cond_0
-    sget-object v0, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->e:[Ljava/lang/String;
-
-    invoke-static {v0, p1}, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->a([Ljava/lang/String;I)I
+    invoke-static {v0, v1}, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->a(Ljava/lang/String;Ljava/lang/String;)I
 
     move-result v0
 
     sput v0, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->d:I
 
-    .line 91
+    .line 94
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "Finish radio status initialization mSIMMode = "
+    const-string v1, "Finish radio status initialization ["
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -464,13 +317,43 @@
 
     move-result-object v0
 
+    const-string v1, ", "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->e:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ","
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->f:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "]"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-static {v0}, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->a(Ljava/lang/String;)V
 
-    .line 92
+    .line 95
     return-void
 .end method
 
@@ -478,7 +361,7 @@
     .locals 1
 
     .prologue
-    .line 139
+    .line 126
     sget v0, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->d:I
 
     return v0
@@ -488,224 +371,222 @@
     .locals 1
 
     .prologue
-    .line 74
+    .line 75
     sget-boolean v0, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->c:Z
 
     return v0
 .end method
 
 .method public static setRadioSIMMode(Landroid/content/Context;I)V
-    .locals 5
+    .locals 4
     .parameter
     .parameter
 
     .prologue
-    const/4 v0, 0x0
+    const/4 v3, 0x0
 
-    .line 95
+    .line 98
     sput p1, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->d:I
 
-    .line 96
-    sget-object v1, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->b:Landroid/content/SharedPreferences;
+    .line 99
+    sget-object v0, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->b:Landroid/content/SharedPreferences;
 
-    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    .line 100
+    sget v1, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->d:I
+
+    const/4 v2, 0x1
+
+    if-ne v1, v2, :cond_1
+
+    .line 101
+    sget-object v1, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->e:Ljava/lang/String;
+
+    invoke-static {v0, v1}, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->b(Landroid/content/SharedPreferences$Editor;Ljava/lang/String;)V
+
+    .line 102
+    sget-object v1, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->f:Ljava/lang/String;
+
+    invoke-static {v0, v1}, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->a(Landroid/content/SharedPreferences$Editor;Ljava/lang/String;)V
+
+    .line 121
+    :cond_0
+    :goto_0
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "setRadioSIMMode: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 98
     sget v2, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->d:I
 
-    const/4 v3, -0x1
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    if-ne v2, v3, :cond_0
+    move-result-object v1
 
-    .line 136
-    :goto_0
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->a(Ljava/lang/String;)V
+
+    .line 122
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+
+    .line 123
     return-void
 
-    .line 102
-    :cond_0
-    sget v2, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->d:I
-
-    if-nez v2, :cond_3
-
     .line 103
-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    :cond_1
+    sget v1, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->d:I
 
-    move-result-object v2
+    const/4 v2, 0x2
 
-    const-string v3, "airplane_mode_on"
-
-    invoke-static {v2, v3, v0}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v2
+    if-ne v1, v2, :cond_2
 
     .line 104
-    if-nez v2, :cond_1
+    sget-object v1, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->e:Ljava/lang/String;
+
+    invoke-static {v0, v1}, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->a(Landroid/content/SharedPreferences$Editor;Ljava/lang/String;)V
 
     .line 105
-    :goto_1
-    sget v2, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->f:I
+    sget-object v1, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->f:Ljava/lang/String;
 
-    if-ge v0, v2, :cond_2
-
-    .line 106
-    sget-object v2, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->e:[Ljava/lang/String;
-
-    aget-object v2, v2, v0
-
-    invoke-static {v1, v2}, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->a(Landroid/content/SharedPreferences$Editor;Ljava/lang/String;)V
-
-    .line 105
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_1
-
-    .line 111
-    :cond_1
-    const-string v2, "air plane mode, not to record radio off SIM"
-
-    invoke-static {v2}, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->a(Ljava/lang/String;)V
-
-    .line 117
-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v2
-
-    const-string v3, "dual_sim_mode_setting"
-
-    invoke-static {v2, v3, v0}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v0
-
-    sput v0, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->d:I
-
-    .line 134
-    :cond_2
-    const-string v0, "PHONE"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "[GeminiRadioStatusUtil]setRadioSIMMode mSIMMode = "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    sget v3, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->d:I
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 135
-    invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->commit()Z
+    invoke-static {v0, v1}, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->b(Landroid/content/SharedPreferences$Editor;Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 120
+    .line 106
+    :cond_2
+    sget v1, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->d:I
+
+    const/4 v2, 0x3
+
+    if-ne v1, v2, :cond_3
+
+    .line 107
+    sget-object v1, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->e:Ljava/lang/String;
+
+    invoke-static {v0, v1}, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->b(Landroid/content/SharedPreferences$Editor;Ljava/lang/String;)V
+
+    .line 108
+    sget-object v1, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->f:Ljava/lang/String;
+
+    invoke-static {v0, v1}, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->b(Landroid/content/SharedPreferences$Editor;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    .line 109
     :cond_3
-    const/4 v2, 0x1
+    sget v1, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->d:I
 
-    .line 121
-    :goto_2
-    sget v3, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->f:I
+    if-nez v1, :cond_5
 
-    if-ge v0, v3, :cond_2
+    .line 110
+    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    .line 122
-    sget-object v3, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->e:[Ljava/lang/String;
+    move-result-object v1
 
-    aget-object v3, v3, v0
+    const-string v2, "airplane_mode_on"
 
-    if-nez v3, :cond_4
+    invoke-static {v1, v2, v3}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
-    .line 121
-    :goto_3
-    add-int/lit8 v0, v0, 0x1
+    move-result v1
 
-    goto :goto_2
+    .line 111
+    if-nez v1, :cond_4
 
-    .line 126
+    .line 112
+    sget-object v1, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->e:Ljava/lang/String;
+
+    invoke-static {v0, v1}, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->a(Landroid/content/SharedPreferences$Editor;Ljava/lang/String;)V
+
+    .line 113
+    sget-object v1, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->f:Ljava/lang/String;
+
+    invoke-static {v0, v1}, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->a(Landroid/content/SharedPreferences$Editor;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    .line 115
     :cond_4
-    sget v3, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->d:I
+    const-string v1, "air plane mode, not to record radio off SIM"
 
-    shl-int v4, v2, v0
+    invoke-static {v1}, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->a(Ljava/lang/String;)V
 
-    and-int/2addr v3, v4
+    .line 116
+    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    if-lez v3, :cond_5
+    move-result-object v1
 
-    .line 127
-    sget-object v3, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->e:[Ljava/lang/String;
+    const-string v2, "dual_sim_mode_setting"
 
-    aget-object v3, v3, v0
+    invoke-static {v1, v2, v3}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
-    invoke-static {v1, v3}, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->b(Landroid/content/SharedPreferences$Editor;Ljava/lang/String;)V
+    move-result v1
 
-    goto :goto_3
+    sput v1, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->d:I
 
-    .line 129
+    goto :goto_0
+
+    .line 118
     :cond_5
-    sget-object v3, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->e:[Ljava/lang/String;
+    sget v1, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->d:I
 
-    aget-object v3, v3, v0
+    const/4 v2, -0x1
 
-    invoke-static {v1, v3}, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->a(Landroid/content/SharedPreferences$Editor;Ljava/lang/String;)V
+    if-ne v1, v2, :cond_0
 
-    goto :goto_3
+    .line 119
+    sget-object v1, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->e:Ljava/lang/String;
+
+    sget-object v2, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->f:Ljava/lang/String;
+
+    invoke-static {v1, v2}, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->a(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v1
+
+    sput v1, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->d:I
+
+    goto :goto_0
 .end method
 
 .method public static setSIMIccId(ILjava/lang/String;)V
-    .locals 2
+    .locals 0
     .parameter
     .parameter
 
     .prologue
-    .line 78
-    new-instance v0, Ljava/lang/StringBuilder;
+    .line 79
+    packed-switch p0, :pswitch_data_0
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    .line 87
+    :goto_0
+    return-void
 
-    const-string/jumbo v1, "setSIMIccId() setmIccId["
+    .line 81
+    :pswitch_0
+    sput-object p1, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->e:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    goto :goto_0
 
-    move-result-object v0
+    .line 84
+    :pswitch_1
+    sput-object p1, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->f:Ljava/lang/String;
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "] to iccid: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->a(Ljava/lang/String;)V
+    goto :goto_0
 
     .line 79
-    sget-object v0, Lcom/android/internal/telephony/gemini/GeminiRadioStatusUtil;->e:[Ljava/lang/String;
-
-    aput-object p1, v0, p0
-
-    .line 80
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+        :pswitch_1
+    .end packed-switch
 .end method

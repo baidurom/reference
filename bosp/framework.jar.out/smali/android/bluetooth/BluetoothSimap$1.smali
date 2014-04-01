@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 378
+    .line 380
     iput-object p1, p0, Landroid/bluetooth/BluetoothSimap$1;->this$0:Landroid/bluetooth/BluetoothSimap;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,13 +43,13 @@
     .parameter "service"
 
     .prologue
-    .line 380
+    .line 382
     const-string v0, "Proxy object connected"
 
     #calls: Landroid/bluetooth/BluetoothSimap;->log(Ljava/lang/String;)V
     invoke-static {v0}, Landroid/bluetooth/BluetoothSimap;->access$000(Ljava/lang/String;)V
 
-    .line 381
+    .line 383
     iget-object v0, p0, Landroid/bluetooth/BluetoothSimap$1;->this$0:Landroid/bluetooth/BluetoothSimap;
 
     invoke-static {p2}, Landroid/bluetooth/IBluetoothSimap$Stub;->asInterface(Landroid/os/IBinder;)Landroid/bluetooth/IBluetoothSimap;
@@ -59,7 +59,7 @@
     #setter for: Landroid/bluetooth/BluetoothSimap;->mService:Landroid/bluetooth/IBluetoothSimap;
     invoke-static {v0, v1}, Landroid/bluetooth/BluetoothSimap;->access$102(Landroid/bluetooth/BluetoothSimap;Landroid/bluetooth/IBluetoothSimap;)Landroid/bluetooth/IBluetoothSimap;
 
-    .line 382
+    .line 384
     iget-object v0, p0, Landroid/bluetooth/BluetoothSimap$1;->this$0:Landroid/bluetooth/BluetoothSimap;
 
     #getter for: Landroid/bluetooth/BluetoothSimap;->mServiceListener:Landroid/bluetooth/BluetoothSimap$ServiceListener;
@@ -69,7 +69,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 383
+    .line 385
     iget-object v0, p0, Landroid/bluetooth/BluetoothSimap$1;->this$0:Landroid/bluetooth/BluetoothSimap;
 
     #getter for: Landroid/bluetooth/BluetoothSimap;->mServiceListener:Landroid/bluetooth/BluetoothSimap$ServiceListener;
@@ -79,7 +79,7 @@
 
     invoke-interface {v0}, Landroid/bluetooth/BluetoothSimap$ServiceListener;->onServiceConnected()V
 
-    .line 385
+    .line 387
     :cond_0
     return-void
 .end method
@@ -89,13 +89,13 @@
     .parameter "className"
 
     .prologue
-    .line 387
+    .line 389
     const-string v0, "Proxy object disconnected"
 
     #calls: Landroid/bluetooth/BluetoothSimap;->log(Ljava/lang/String;)V
     invoke-static {v0}, Landroid/bluetooth/BluetoothSimap;->access$000(Ljava/lang/String;)V
 
-    .line 388
+    .line 390
     iget-object v0, p0, Landroid/bluetooth/BluetoothSimap$1;->this$0:Landroid/bluetooth/BluetoothSimap;
 
     const/4 v1, 0x0
@@ -103,7 +103,7 @@
     #setter for: Landroid/bluetooth/BluetoothSimap;->mService:Landroid/bluetooth/IBluetoothSimap;
     invoke-static {v0, v1}, Landroid/bluetooth/BluetoothSimap;->access$102(Landroid/bluetooth/BluetoothSimap;Landroid/bluetooth/IBluetoothSimap;)Landroid/bluetooth/IBluetoothSimap;
 
-    .line 389
+    .line 391
     iget-object v0, p0, Landroid/bluetooth/BluetoothSimap$1;->this$0:Landroid/bluetooth/BluetoothSimap;
 
     #getter for: Landroid/bluetooth/BluetoothSimap;->mServiceListener:Landroid/bluetooth/BluetoothSimap$ServiceListener;
@@ -113,7 +113,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 390
+    .line 392
     iget-object v0, p0, Landroid/bluetooth/BluetoothSimap$1;->this$0:Landroid/bluetooth/BluetoothSimap;
 
     #getter for: Landroid/bluetooth/BluetoothSimap;->mServiceListener:Landroid/bluetooth/BluetoothSimap$ServiceListener;
@@ -123,7 +123,7 @@
 
     invoke-interface {v0}, Landroid/bluetooth/BluetoothSimap$ServiceListener;->onServiceDisconnected()V
 
-    .line 392
+    .line 394
     :cond_0
     return-void
 .end method

@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 96
+    .line 114
     iput-object p1, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook$1;->this$0:Lcom/android/server/am/QuickbootActivityManagerServiceHook;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -42,12 +42,12 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 99
+    .line 117
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 100
+    .line 118
     .local v0, action:Ljava/lang/String;
     const-string v5, "QuickbootActivityManagerServiceHook"
 
@@ -71,7 +71,7 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 101
+    .line 119
     const-string v5, "android.intent.action.ACTION_QUICKBOOT_SHUTDOWN"
 
     invoke-virtual {v5, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -80,17 +80,17 @@
 
     if-eqz v5, :cond_1
 
-    .line 102
+    .line 120
     const/4 v5, 0x1
 
     invoke-static {v5}, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->access$102(Z)Z
 
-    .line 137
+    .line 154
     :cond_0
     :goto_0
     return-void
 
-    .line 103
+    .line 121
     :cond_1
     const-string v5, "android.intent.action.ACTION_QUICKBOOT_BOOT"
 
@@ -100,7 +100,7 @@
 
     if-eqz v5, :cond_3
 
-    .line 104
+    .line 122
     iget-object v5, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook$1;->this$0:Lcom/android/server/am/QuickbootActivityManagerServiceHook;
 
     #getter for: Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mService:Lcom/android/server/am/ActivityManagerService;
@@ -110,13 +110,13 @@
 
     invoke-virtual {v5}, Lcom/android/server/am/ActivityManagerService;->rmQbShutdownBackground()V
 
-    .line 105
-    invoke-static {}, Lcom/android/server/power/QuickbootManager;->getInstance()Lcom/android/server/power/QuickbootManager;
+    .line 123
+    invoke-static {}, Lcom/android/internal/app/QuickbootManager;->getInstance()Lcom/android/internal/app/QuickbootManager;
 
     move-result-object v3
 
-    .line 106
-    .local v3, qbMgr:Lcom/android/server/power/QuickbootManager;
+    .line 124
+    .local v3, qbMgr:Lcom/android/internal/app/QuickbootManager;
     iget-object v5, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook$1;->this$0:Lcom/android/server/am/QuickbootActivityManagerServiceHook;
 
     #getter for: Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mContext:Landroid/content/Context;
@@ -124,33 +124,21 @@
 
     move-result-object v5
 
-    invoke-virtual {v3, v5}, Lcom/android/server/power/QuickbootManager;->restoreSystemStates(Landroid/content/Context;)V
+    invoke-virtual {v3, v5}, Lcom/android/internal/app/QuickbootManager;->restoreSystemStates(Landroid/content/Context;)V
 
-    .line 107
+    .line 125
     iget-object v5, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook$1;->this$0:Lcom/android/server/am/QuickbootActivityManagerServiceHook;
 
     #calls: Lcom/android/server/am/QuickbootActivityManagerServiceHook;->resetActivityStack()V
     invoke-static {v5}, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->access$400(Lcom/android/server/am/QuickbootActivityManagerServiceHook;)V
 
-    .line 108
-    iget-object v5, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook$1;->this$0:Lcom/android/server/am/QuickbootActivityManagerServiceHook;
-
-    #getter for: Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mService:Lcom/android/server/am/ActivityManagerService;
-    invoke-static {v5}, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->access$200(Lcom/android/server/am/QuickbootActivityManagerServiceHook;)Lcom/android/server/am/ActivityManagerService;
-
-    move-result-object v5
-
-    iget-object v5, v5, Lcom/android/server/am/ActivityManagerService;->mWindowManager:Lcom/android/server/wm/WindowManagerService;
-
-    invoke-virtual {v5}, Lcom/android/server/wm/WindowManagerService;->closeSystemDialogsForQb()V
-
-    .line 109
+    .line 126
     iget-object v5, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook$1;->this$0:Lcom/android/server/am/QuickbootActivityManagerServiceHook;
 
     #calls: Lcom/android/server/am/QuickbootActivityManagerServiceHook;->notifyBootCompleted()V
     invoke-static {v5}, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->access$500(Lcom/android/server/am/QuickbootActivityManagerServiceHook;)V
 
-    .line 111
+    .line 128
     :try_start_0
     const-string v5, "QuickBootService"
 
@@ -158,22 +146,22 @@
 
     move-result-object v2
 
-    .line 112
+    .line 129
     .local v2, iService:Landroid/os/IBinder;
     if-eqz v2, :cond_2
 
-    .line 113
+    .line 130
     invoke-static {v2}, Lcom/baidu/service/IQuickBootService$Stub;->asInterface(Landroid/os/IBinder;)Lcom/baidu/service/IQuickBootService;
 
     move-result-object v4
 
-    .line 114
+    .line 131
     .local v4, qbService:Lcom/baidu/service/IQuickBootService;
     invoke-interface {v4}, Lcom/baidu/service/IQuickBootService;->notifyQuickBootComplete()V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 119
+    .line 136
     .end local v2           #iService:Landroid/os/IBinder;
     .end local v4           #qbService:Lcom/baidu/service/IQuickBootService;
     :goto_1
@@ -181,7 +169,7 @@
 
     goto :goto_0
 
-    .line 116
+    .line 133
     .restart local v2       #iService:Landroid/os/IBinder;
     :cond_2
     :try_start_1
@@ -195,15 +183,15 @@
 
     goto :goto_1
 
-    .line 118
+    .line 135
     .end local v2           #iService:Landroid/os/IBinder;
     :catch_0
     move-exception v5
 
     goto :goto_1
 
-    .line 120
-    .end local v3           #qbMgr:Lcom/android/server/power/QuickbootManager;
+    .line 137
+    .end local v3           #qbMgr:Lcom/android/internal/app/QuickbootManager;
     :cond_3
     const-string v5, "android.intent.action.ACTION_QUICKBOOT_SHUTDOWN_DONE"
 
@@ -213,7 +201,7 @@
 
     if-eqz v5, :cond_4
 
-    .line 121
+    .line 138
     iget-object v5, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook$1;->this$0:Lcom/android/server/am/QuickbootActivityManagerServiceHook;
 
     #getter for: Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mService:Lcom/android/server/am/ActivityManagerService;
@@ -225,7 +213,7 @@
 
     goto :goto_0
 
-    .line 122
+    .line 139
     :cond_4
     const-string v5, "android.intent.action.ACTION_QUICKBOOT_BOOT_NOTICE"
 
@@ -235,7 +223,7 @@
 
     if-eqz v5, :cond_5
 
-    .line 123
+    .line 140
     iget-object v5, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook$1;->this$0:Lcom/android/server/am/QuickbootActivityManagerServiceHook;
 
     #getter for: Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mService:Lcom/android/server/am/ActivityManagerService;
@@ -249,7 +237,7 @@
 
     goto :goto_0
 
-    .line 124
+    .line 141
     :cond_5
     const-string v5, "android.intent.action.ACTION_QUICKBOOT_START_CHARGE"
 
@@ -259,7 +247,7 @@
 
     if-eqz v5, :cond_7
 
-    .line 125
+    .line 142
     const-string v5, "level"
 
     const/4 v6, -0x1
@@ -268,7 +256,7 @@
 
     move-result v1
 
-    .line 127
+    .line 144
     .local v1, batteryLevel:I
     if-ltz v1, :cond_6
 
@@ -276,7 +264,7 @@
 
     if-gt v1, v5, :cond_6
 
-    .line 128
+    .line 145
     iget-object v5, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook$1;->this$0:Lcom/android/server/am/QuickbootActivityManagerServiceHook;
 
     #calls: Lcom/android/server/am/QuickbootActivityManagerServiceHook;->getChargerPicIndex(I)I
@@ -286,7 +274,7 @@
 
     invoke-static {v5}, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->access$602(I)I
 
-    .line 129
+    .line 146
     iget-object v5, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook$1;->this$0:Lcom/android/server/am/QuickbootActivityManagerServiceHook;
 
     invoke-static {}, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->access$600()I
@@ -298,7 +286,7 @@
 
     goto/16 :goto_0
 
-    .line 131
+    .line 148
     :cond_6
     const-string v5, "QuickbootActivityManagerServiceHook"
 
@@ -306,7 +294,7 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 132
+    .line 149
     iget-object v5, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook$1;->this$0:Lcom/android/server/am/QuickbootActivityManagerServiceHook;
 
     #getter for: Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mService:Lcom/android/server/am/ActivityManagerService;
@@ -320,7 +308,7 @@
 
     goto/16 :goto_0
 
-    .line 134
+    .line 151
     .end local v1           #batteryLevel:I
     :cond_7
     const-string v5, "android.intent.action.ACTION_QUICKBOOT_STOP_CHARGE"
@@ -331,7 +319,7 @@
 
     if-eqz v5, :cond_0
 
-    .line 135
+    .line 152
     iget-object v5, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook$1;->this$0:Lcom/android/server/am/QuickbootActivityManagerServiceHook;
 
     #getter for: Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mMainHandler:Landroid/os/Handler;

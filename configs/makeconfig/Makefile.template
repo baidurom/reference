@@ -3,9 +3,9 @@
 
 ##############################################################################
 # This value defines which base this project should choose, only for baidu internal.
-# Support values: S710, JRD77SS, YINS, YIGN, I9250
+# Support values: S710, JRD77SS, YINS, YIGN
 #-----------------------------------------------------------------------------
-BAIDU_BASE_DEVICE := I9250
+BAIDU_BASE_DEVICE := S710
 
 ##############################################################################
 # Default DALVIK_VM_BUILD setting is 27
@@ -20,6 +20,12 @@ DALVIK_VM_BUILD := 27
 DENSITY := hdpi
 
 ##############################################################################
+# Default RESOLUTION setting is nothing
+# this used to config the bootanimation
+#-----------------------------------------------------------------------------
+RESOLUTION :=
+
+##############################################################################
 # customize weather use prebuilt image or pack from BOOT/RECOVERY directory
 # Support Values:
 # vendor_modify_images := boot recovery
@@ -27,12 +33,12 @@ DENSITY := hdpi
 # NULL, check boot.img/recovery.img in project root directory, if it exists,
 # use a prebuilt boot.img/recovery.img, if not, nothing to do
 #-----------------------------------------------------------------------------
-# vendor_modify_images := boot recovery
+vendor_modify_images := boot recovery
 
 ##############################################################################
 # Directorys which you want to remove in vendor directory
 #-----------------------------------------------------------------------------
-vendor_remove_dirs := app vendor/operator/app
+vendor_remove_dirs := app appbackup vendor/operator media/audio/notifications
 
 ##############################################################################
 # Files which you want to remove in vendor directory
@@ -42,7 +48,7 @@ vendor_remove_dirs := app vendor/operator/app
 ##############################################################################
 # Vendor apks you want to use
 #-----------------------------------------------------------------------------
-vendor_saved_apps := Bluetooth
+vendor_saved_apps := MtkBt FMTransmitter
 
 ##############################################################################
 # Apks build from current project root directory
@@ -60,7 +66,7 @@ vendor_saved_apps := Bluetooth
 # you need decode FMRadio.apk to the project directory (use apktool d FMRadio.apk) first
 # then you can make it by:   make FMRadio
 #-----------------------------------------------------------------------------
-# vendor_modify_apps := FMRadio
+vendor_modify_apps := FMRadio
 
 ##############################################################################
 # Jars build from current project root directory
@@ -78,7 +84,7 @@ vendor_saved_apps := Bluetooth
 # you need decode android.policy.jar to the project directory (use apktool d android.policy.jar) first
 # then you can make it by:   make android.policy
 #-----------------------------------------------------------------------------
-vendor_modify_jars := framework services
+vendor_modify_jars := framework secondary_framework services android.policy HTCExtension
 
 ##############################################################################
 # Directorys which you want to saved in baidu directory
@@ -105,7 +111,7 @@ baidu_modify_apps := Phone
 # baidu_modify_jars: which base the baidu's jar
 # just append *.smali.part
 #-----------------------------------------------------------------------------
-baidu_modify_jars := android.policy
+# baidu_modify_jars := android.policy
 
 ##############################################################################
 # override_property: this property will override the build.prop
@@ -133,8 +139,8 @@ baidu_modify_jars := android.policy
 # Porting commits from a reference device automatically.
 # These two are useful for ROM porting.
 #-----------------------------------------------------------------------------
-# PORTING_FROM_DEVICE := p6
-# PORTING_FROM_BRANCH := smali-4.2
+# PORTING_FROM_DEVICE := a789
+# PORTING_FROM_BRANCH := smali-mtk-4.0
 
 ################### Auto Patch Constants Definition #########################
 

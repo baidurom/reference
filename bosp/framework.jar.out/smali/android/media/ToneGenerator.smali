@@ -240,13 +240,10 @@
     .locals 0
 
     .prologue
-    .line 887
+    .line 879
     invoke-direct {p0}, Landroid/media/ToneGenerator;->native_finalize()V
 
     return-void
-.end method
-
-.method public final native getAudioSessionId()I
 .end method
 
 .method public native release()V

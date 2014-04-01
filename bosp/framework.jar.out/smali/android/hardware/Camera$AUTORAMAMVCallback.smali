@@ -17,6 +17,3 @@
 # virtual methods
 .method public abstract onFrame(II)V
 .end method
-
-.method public abstract onFrame(III)V
-.end method

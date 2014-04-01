@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 142
+    .line 118
     iput-object p1, p0, Landroid/service/wallpaper/WallpaperService$1;->this$0:Landroid/service/wallpaper/WallpaperService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,118 +35,123 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 5
+    .locals 3
     .parameter "context"
     .parameter "intent"
 
     .prologue
-    .line 145
+    .line 121
+    const-string v1, "android.intent.action.SCREEN_ON"
+
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v2
 
-    .line 146
-    .local v0, action:Ljava/lang/String;
-    iget-object v4, p0, Landroid/service/wallpaper/WallpaperService$1;->this$0:Landroid/service/wallpaper/WallpaperService;
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 122
+    const/4 v0, 0x0
+
+    .local v0, i:I
+    :goto_0
+    iget-object v1, p0, Landroid/service/wallpaper/WallpaperService$1;->this$0:Landroid/service/wallpaper/WallpaperService;
 
     #getter for: Landroid/service/wallpaper/WallpaperService;->mActiveEngines:Ljava/util/ArrayList;
-    invoke-static {v4}, Landroid/service/wallpaper/WallpaperService;->access$000(Landroid/service/wallpaper/WallpaperService;)Ljava/util/ArrayList;
+    invoke-static {v1}, Landroid/service/wallpaper/WallpaperService;->access$000(Landroid/service/wallpaper/WallpaperService;)Ljava/util/ArrayList;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
-    move-result v3
+    move-result v1
 
-    .line 147
-    .local v3, size:I
-    const/4 v2, 0x0
+    if-ge v0, v1, :cond_1
 
-    .line 148
-    .local v2, isScreenOn:Z
-    const-string v4, "android.intent.action.SCREEN_ON"
+    .line 123
+    iget-object v1, p0, Landroid/service/wallpaper/WallpaperService$1;->this$0:Landroid/service/wallpaper/WallpaperService;
 
-    invoke-virtual {v4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    #getter for: Landroid/service/wallpaper/WallpaperService;->mActiveEngines:Ljava/util/ArrayList;
+    invoke-static {v1}, Landroid/service/wallpaper/WallpaperService;->access$000(Landroid/service/wallpaper/WallpaperService;)Ljava/util/ArrayList;
 
-    move-result v4
+    move-result-object v1
 
-    if-eqz v4, :cond_1
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    .line 149
+    move-result-object v1
+
+    check-cast v1, Landroid/service/wallpaper/WallpaperService$Engine;
+
     const/4 v2, 0x1
 
-    .line 155
+    invoke-virtual {v1, v2}, Landroid/service/wallpaper/WallpaperService$Engine;->doScreenOnOff(Z)V
+
+    .line 122
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    .line 125
+    .end local v0           #i:I
     :cond_0
-    :goto_0
-    const/4 v1, 0x0
+    const-string v1, "android.intent.action.SCREEN_OFF"
 
-    .local v1, i:I
+    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    .line 126
+    const/4 v0, 0x0
+
+    .restart local v0       #i:I
     :goto_1
-    if-ge v1, v3, :cond_3
-
-    .line 156
-    iget-object v4, p0, Landroid/service/wallpaper/WallpaperService$1;->this$0:Landroid/service/wallpaper/WallpaperService;
+    iget-object v1, p0, Landroid/service/wallpaper/WallpaperService$1;->this$0:Landroid/service/wallpaper/WallpaperService;
 
     #getter for: Landroid/service/wallpaper/WallpaperService;->mActiveEngines:Ljava/util/ArrayList;
-    invoke-static {v4}, Landroid/service/wallpaper/WallpaperService;->access$000(Landroid/service/wallpaper/WallpaperService;)Ljava/util/ArrayList;
+    invoke-static {v1}, Landroid/service/wallpaper/WallpaperService;->access$000(Landroid/service/wallpaper/WallpaperService;)Ljava/util/ArrayList;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-virtual {v4, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
-    move-result-object v4
+    move-result v1
 
-    check-cast v4, Landroid/service/wallpaper/WallpaperService$Engine;
+    if-ge v0, v1, :cond_1
 
-    invoke-virtual {v4, v2}, Landroid/service/wallpaper/WallpaperService$Engine;->doScreenOnOff(Z)V
+    .line 127
+    iget-object v1, p0, Landroid/service/wallpaper/WallpaperService$1;->this$0:Landroid/service/wallpaper/WallpaperService;
 
-    .line 155
-    add-int/lit8 v1, v1, 0x1
+    #getter for: Landroid/service/wallpaper/WallpaperService;->mActiveEngines:Ljava/util/ArrayList;
+    invoke-static {v1}, Landroid/service/wallpaper/WallpaperService;->access$000(Landroid/service/wallpaper/WallpaperService;)Ljava/util/ArrayList;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/service/wallpaper/WallpaperService$Engine;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v2}, Landroid/service/wallpaper/WallpaperService$Engine;->doScreenOnOff(Z)V
+
+    .line 126
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 150
-    .end local v1           #i:I
+    .line 130
+    .end local v0           #i:I
     :cond_1
-    const-string v4, "android.intent.action.SCREEN_OFF"
-
-    invoke-virtual {v4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_2
-
-    .line 151
-    const/4 v2, 0x0
-
-    goto :goto_0
-
-    .line 152
-    :cond_2
-    const-string v4, "android.intent.action.ACTION_PREBOOT_IPO"
-
-    invoke-virtual {v4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_0
-
-    iget-object v4, p0, Landroid/service/wallpaper/WallpaperService$1;->this$0:Landroid/service/wallpaper/WallpaperService;
-
-    #calls: Landroid/service/wallpaper/WallpaperService;->isTabletBuild()Z
-    invoke-static {v4}, Landroid/service/wallpaper/WallpaperService;->access$100(Landroid/service/wallpaper/WallpaperService;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_0
-
-    .line 153
-    const/4 v2, 0x1
-
-    goto :goto_0
-
-    .line 158
-    .restart local v1       #i:I
-    :cond_3
     return-void
 .end method

@@ -18,51 +18,43 @@
 
 
 # instance fields
-.field private final mSelfChange:Z
-
-.field private final mUri:Landroid/net/Uri;
+.field private mSelf:Z
 
 .field final synthetic this$0:Landroid/database/ContentObserver;
 
 
 # direct methods
-.method public constructor <init>(Landroid/database/ContentObserver;ZLandroid/net/Uri;)V
+.method public constructor <init>(Landroid/database/ContentObserver;Z)V
     .locals 0
     .parameter
-    .parameter "selfChange"
-    .parameter "uri"
+    .parameter "self"
 
     .prologue
-    .line 173
+    .line 38
     iput-object p1, p0, Landroid/database/ContentObserver$NotificationRunnable;->this$0:Landroid/database/ContentObserver;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 174
-    iput-boolean p2, p0, Landroid/database/ContentObserver$NotificationRunnable;->mSelfChange:Z
+    .line 39
+    iput-boolean p2, p0, Landroid/database/ContentObserver$NotificationRunnable;->mSelf:Z
 
-    .line 175
-    iput-object p3, p0, Landroid/database/ContentObserver$NotificationRunnable;->mUri:Landroid/net/Uri;
-
-    .line 176
+    .line 40
     return-void
 .end method
 
 
 # virtual methods
 .method public run()V
-    .locals 3
+    .locals 2
 
     .prologue
-    .line 180
+    .line 43
     iget-object v0, p0, Landroid/database/ContentObserver$NotificationRunnable;->this$0:Landroid/database/ContentObserver;
 
-    iget-boolean v1, p0, Landroid/database/ContentObserver$NotificationRunnable;->mSelfChange:Z
+    iget-boolean v1, p0, Landroid/database/ContentObserver$NotificationRunnable;->mSelf:Z
 
-    iget-object v2, p0, Landroid/database/ContentObserver$NotificationRunnable;->mUri:Landroid/net/Uri;
+    invoke-virtual {v0, v1}, Landroid/database/ContentObserver;->onChange(Z)V
 
-    invoke-virtual {v0, v1, v2}, Landroid/database/ContentObserver;->onChange(ZLandroid/net/Uri;)V
-
-    .line 181
+    .line 44
     return-void
 .end method

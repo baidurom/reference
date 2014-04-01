@@ -29,8 +29,8 @@
     .locals 0
 
     .prologue
-    .line 509
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 698
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -40,7 +40,7 @@
     .parameter "x0"
 
     .prologue
-    .line 509
+    .line 698
     invoke-direct {p0}, Landroid/media/ThumbnailUtils$SizedThumbnailBitmap;-><init>()V
 
     return-void

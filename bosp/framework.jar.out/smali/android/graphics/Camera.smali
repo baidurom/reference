@@ -41,12 +41,12 @@
     .parameter "canvas"
 
     .prologue
-    .line 150
+    .line 129
     iget v0, p1, Landroid/graphics/Canvas;->mNativeCanvas:I
 
     invoke-direct {p0, v0}, Landroid/graphics/Camera;->nativeApplyToCanvas(I)V
 
-    .line 151
+    .line 130
     return-void
 .end method
 
@@ -62,19 +62,19 @@
     .end annotation
 
     .prologue
-    .line 157
+    .line 136
     :try_start_0
     invoke-direct {p0}, Landroid/graphics/Camera;->nativeDestructor()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 159
+    .line 138
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 161
+    .line 140
     return-void
 
-    .line 159
+    .line 138
     :catchall_0
     move-exception v0
 
@@ -83,26 +83,17 @@
     throw v0
 .end method
 
-.method public native getLocationX()F
-.end method
-
-.method public native getLocationY()F
-.end method
-
-.method public native getLocationZ()F
-.end method
-
 .method public getMatrix(Landroid/graphics/Matrix;)V
     .locals 1
     .parameter "matrix"
 
     .prologue
-    .line 140
+    .line 119
     iget v0, p1, Landroid/graphics/Matrix;->native_instance:I
 
     invoke-direct {p0, v0}, Landroid/graphics/Camera;->nativeGetMatrix(I)V
 
-    .line 141
+    .line 120
     return-void
 .end method
 

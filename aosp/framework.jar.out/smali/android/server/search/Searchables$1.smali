@@ -32,8 +32,8 @@
     .locals 0
 
     .prologue
-    .line 332
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 316
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -46,53 +46,53 @@
     .parameter "rhs"
 
     .prologue
-    .line 335
+    .line 319
     if-ne p1, p2, :cond_0
 
-    .line 336
+    .line 320
     const/4 v2, 0x0
 
-    .line 351
+    .line 335
     :goto_0
     return v2
 
-    .line 338
+    .line 322
     :cond_0
     #calls: Landroid/server/search/Searchables;->isSystemApp(Landroid/content/pm/ResolveInfo;)Z
     invoke-static {p1}, Landroid/server/search/Searchables;->access$000(Landroid/content/pm/ResolveInfo;)Z
 
     move-result v0
 
-    .line 339
+    .line 323
     .local v0, lhsSystem:Z
     #calls: Landroid/server/search/Searchables;->isSystemApp(Landroid/content/pm/ResolveInfo;)Z
     invoke-static {p2}, Landroid/server/search/Searchables;->access$000(Landroid/content/pm/ResolveInfo;)Z
 
     move-result v1
 
-    .line 341
+    .line 325
     .local v1, rhsSystem:Z
     if-eqz v0, :cond_1
 
     if-nez v1, :cond_1
 
-    .line 342
+    .line 326
     const/4 v2, -0x1
 
     goto :goto_0
 
-    .line 343
+    .line 327
     :cond_1
     if-eqz v1, :cond_2
 
     if-nez v0, :cond_2
 
-    .line 344
+    .line 328
     const/4 v2, 0x1
 
     goto :goto_0
 
-    .line 351
+    .line 335
     :cond_2
     iget v2, p2, Landroid/content/pm/ResolveInfo;->priority:I
 
@@ -109,7 +109,7 @@
     .parameter "x1"
 
     .prologue
-    .line 332
+    .line 316
     check-cast p1, Landroid/content/pm/ResolveInfo;
 
     .end local p1

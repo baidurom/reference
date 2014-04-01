@@ -232,7 +232,7 @@
     const/4 v1, 0x0
 
     .line 369
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 283
     iput v9, p0, Landroid/media/audiofx/AudioEffect;->mState:I
@@ -240,7 +240,7 @@
     .line 287
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/media/audiofx/AudioEffect;->mStateLock:Ljava/lang/Object;
 
@@ -256,7 +256,7 @@
     .line 324
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/media/audiofx/AudioEffect;->mListenerLock:Ljava/lang/Object;
 
@@ -351,7 +351,7 @@
 
     move-result-object v1
 
-    const-string v2, " Error: "
+    const-string v2, "Error: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -496,7 +496,7 @@
     .locals 2
 
     .prologue
-    .line 918
+    .line 902
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v0
@@ -504,18 +504,18 @@
     .local v0, looper:Landroid/os/Looper;
     if-eqz v0, :cond_0
 
-    .line 919
+    .line 903
     new-instance v1, Landroid/media/audiofx/AudioEffect$NativeEventHandler;
 
     invoke-direct {v1, p0, p0, v0}, Landroid/media/audiofx/AudioEffect$NativeEventHandler;-><init>(Landroid/media/audiofx/AudioEffect;Landroid/media/audiofx/AudioEffect;Landroid/os/Looper;)V
 
     iput-object v1, p0, Landroid/media/audiofx/AudioEffect;->mNativeEventHandler:Landroid/media/audiofx/AudioEffect$NativeEventHandler;
 
-    .line 925
+    .line 909
     :goto_0
     return-void
 
-    .line 920
+    .line 904
     :cond_0
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
@@ -523,7 +523,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 921
+    .line 905
     new-instance v1, Landroid/media/audiofx/AudioEffect$NativeEventHandler;
 
     invoke-direct {v1, p0, p0, v0}, Landroid/media/audiofx/AudioEffect$NativeEventHandler;-><init>(Landroid/media/audiofx/AudioEffect;Landroid/media/audiofx/AudioEffect;Landroid/os/Looper;)V
@@ -532,7 +532,7 @@
 
     goto :goto_0
 
-    .line 923
+    .line 907
     :cond_1
     const/4 v1, 0x0
 
@@ -541,63 +541,12 @@
     goto :goto_0
 .end method
 
-.method public static isEffectTypeAvailable(Ljava/util/UUID;)Z
-    .locals 3
-    .parameter "type"
-
-    .prologue
-    .line 462
-    invoke-static {}, Landroid/media/audiofx/AudioEffect;->queryEffects()[Landroid/media/audiofx/AudioEffect$Descriptor;
-
-    move-result-object v0
-
-    .line 463
-    .local v0, desc:[Landroid/media/audiofx/AudioEffect$Descriptor;
-    const/4 v1, 0x0
-
-    .local v1, i:I
-    :goto_0
-    array-length v2, v0
-
-    if-ge v1, v2, :cond_1
-
-    .line 464
-    aget-object v2, v0, v1
-
-    iget-object v2, v2, Landroid/media/audiofx/AudioEffect$Descriptor;->type:Ljava/util/UUID;
-
-    invoke-virtual {v2, p0}, Ljava/util/UUID;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    .line 465
-    const/4 v2, 0x1
-
-    .line 468
-    :goto_1
-    return v2
-
-    .line 463
-    :cond_0
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    .line 468
-    :cond_1
-    const/4 v2, 0x0
-
-    goto :goto_1
-.end method
-
 .method public static isError(I)Z
     .locals 1
     .parameter "status"
 
     .prologue
-    .line 1256
+    .line 1240
     if-gez p0, :cond_0
 
     const/4 v0, 0x1
@@ -656,7 +605,7 @@
     .parameter "obj"
 
     .prologue
-    .line 1174
+    .line 1158
     check-cast p0, Ljava/lang/ref/WeakReference;
 
     .end local p0
@@ -666,29 +615,29 @@
 
     check-cast v0, Landroid/media/audiofx/AudioEffect;
 
-    .line 1175
+    .line 1159
     .local v0, effect:Landroid/media/audiofx/AudioEffect;
     if-nez v0, :cond_1
 
-    .line 1184
+    .line 1168
     :cond_0
     :goto_0
     return-void
 
-    .line 1178
+    .line 1162
     :cond_1
     iget-object v2, v0, Landroid/media/audiofx/AudioEffect;->mNativeEventHandler:Landroid/media/audiofx/AudioEffect$NativeEventHandler;
 
     if-eqz v2, :cond_0
 
-    .line 1179
+    .line 1163
     iget-object v2, v0, Landroid/media/audiofx/AudioEffect;->mNativeEventHandler:Landroid/media/audiofx/AudioEffect$NativeEventHandler;
 
     invoke-virtual {v2, p1, p2, p3, p4}, Landroid/media/audiofx/AudioEffect$NativeEventHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v1
 
-    .line 1181
+    .line 1165
     .local v1, m:Landroid/os/Message;
     iget-object v2, v0, Landroid/media/audiofx/AudioEffect;->mNativeEventHandler:Landroid/media/audiofx/AudioEffect$NativeEventHandler;
 
@@ -737,7 +686,7 @@
     .parameter "valueBuf"
 
     .prologue
-    .line 1263
+    .line 1247
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Landroid/media/audiofx/AudioEffect;->byteArrayToInt([BI)I
@@ -753,12 +702,12 @@
     .parameter "offset"
 
     .prologue
-    .line 1271
+    .line 1255
     invoke-static {p1}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
 
     move-result-object v0
 
-    .line 1272
+    .line 1256
     .local v0, converter:Ljava/nio/ByteBuffer;
     invoke-static {}, Ljava/nio/ByteOrder;->nativeOrder()Ljava/nio/ByteOrder;
 
@@ -766,7 +715,7 @@
 
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 
-    .line 1273
+    .line 1257
     invoke-virtual {v0, p2}, Ljava/nio/ByteBuffer;->getInt(I)I
 
     move-result v1
@@ -779,7 +728,7 @@
     .parameter "valueBuf"
 
     .prologue
-    .line 1291
+    .line 1275
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Landroid/media/audiofx/AudioEffect;->byteArrayToShort([BI)S
@@ -795,12 +744,12 @@
     .parameter "offset"
 
     .prologue
-    .line 1298
+    .line 1282
     invoke-static {p1}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
 
     move-result-object v0
 
-    .line 1299
+    .line 1283
     .local v0, converter:Ljava/nio/ByteBuffer;
     invoke-static {}, Ljava/nio/ByteOrder;->nativeOrder()Ljava/nio/ByteOrder;
 
@@ -808,7 +757,7 @@
 
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 
-    .line 1300
+    .line 1284
     invoke-virtual {v0, p2}, Ljava/nio/ByteBuffer;->getShort(I)S
 
     move-result v1
@@ -826,12 +775,12 @@
     .end annotation
 
     .prologue
-    .line 1226
+    .line 1210
     iget-object v1, p0, Landroid/media/audiofx/AudioEffect;->mStateLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 1227
+    .line 1211
     :try_start_0
     iget v0, p0, Landroid/media/audiofx/AudioEffect;->mState:I
 
@@ -839,7 +788,7 @@
 
     if-eq v0, v2, :cond_0
 
-    .line 1228
+    .line 1212
     new-instance v0, Ljava/lang/IllegalStateException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -864,7 +813,7 @@
 
     throw v0
 
-    .line 1231
+    .line 1215
     :catchall_0
     move-exception v0
 
@@ -880,7 +829,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1232
+    .line 1216
     return-void
 .end method
 
@@ -889,17 +838,17 @@
     .parameter "status"
 
     .prologue
-    .line 1238
+    .line 1222
     invoke-static {p1}, Landroid/media/audiofx/AudioEffect;->isError(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 1239
+    .line 1223
     packed-switch p1, :pswitch_data_0
 
-    .line 1247
+    .line 1231
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "AudioEffect: set/get parameter error"
@@ -908,7 +857,7 @@
 
     throw v0
 
-    .line 1241
+    .line 1225
     :pswitch_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -918,7 +867,7 @@
 
     throw v0
 
-    .line 1244
+    .line 1228
     :pswitch_1
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -928,11 +877,11 @@
 
     throw v0
 
-    .line 1250
+    .line 1234
     :cond_0
     return-void
 
-    .line 1239
+    .line 1223
     :pswitch_data_0
     .packed-switch -0x5
         :pswitch_1
@@ -952,12 +901,12 @@
     .end annotation
 
     .prologue
-    .line 820
+    .line 804
     const-string v0, "command()"
 
     invoke-virtual {p0, v0}, Landroid/media/audiofx/AudioEffect;->checkState(Ljava/lang/String;)V
 
-    .line 821
+    .line 805
     array-length v2, p2
 
     array-length v4, p3
@@ -982,10 +931,10 @@
     .parameter "arrays"
 
     .prologue
-    .line 1319
+    .line 1303
     const/4 v4, 0x0
 
-    .line 1320
+    .line 1304
     .local v4, len:I
     move-object v1, p1
 
@@ -1001,27 +950,27 @@
 
     aget-object v0, v1, v3
 
-    .line 1321
+    .line 1305
     .local v0, a:[B
     array-length v7, v0
 
     add-int/2addr v4, v7
 
-    .line 1320
+    .line 1304
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 1323
+    .line 1307
     .end local v0           #a:[B
     :cond_0
     new-array v2, v4, [B
 
-    .line 1325
+    .line 1309
     .local v2, b:[B
     const/4 v6, 0x0
 
-    .line 1326
+    .line 1310
     .local v6, offs:I
     move-object v1, p1
 
@@ -1034,7 +983,7 @@
 
     aget-object v0, v1, v3
 
-    .line 1327
+    .line 1311
     .restart local v0       #a:[B
     const/4 v7, 0x0
 
@@ -1042,17 +991,17 @@
 
     invoke-static {v0, v7, v2, v6, v8}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 1328
+    .line 1312
     array-length v7, v0
 
     add-int/2addr v6, v7
 
-    .line 1326
+    .line 1310
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
-    .line 1330
+    .line 1314
     .end local v0           #a:[B
     :cond_1
     return-object v2
@@ -1098,12 +1047,12 @@
     .end annotation
 
     .prologue
-    .line 848
+    .line 832
     const-string v0, "getEnabled()"
 
     invoke-virtual {p0, v0}, Landroid/media/audiofx/AudioEffect;->checkState(Ljava/lang/String;)V
 
-    .line 849
+    .line 833
     invoke-direct {p0}, Landroid/media/audiofx/AudioEffect;->native_getEnabled()Z
 
     move-result v0
@@ -1120,12 +1069,12 @@
     .end annotation
 
     .prologue
-    .line 837
+    .line 821
     const-string v0, "getId()"
 
     invoke-virtual {p0, v0}, Landroid/media/audiofx/AudioEffect;->checkState(Ljava/lang/String;)V
 
-    .line 838
+    .line 822
     iget v0, p0, Landroid/media/audiofx/AudioEffect;->mId:I
 
     return v0
@@ -1142,12 +1091,12 @@
     .end annotation
 
     .prologue
-    .line 655
+    .line 639
     invoke-virtual {p0, p1}, Landroid/media/audiofx/AudioEffect;->intToByteArray(I)[B
 
     move-result-object v0
 
-    .line 657
+    .line 641
     .local v0, p:[B
     invoke-virtual {p0, v0, p2}, Landroid/media/audiofx/AudioEffect;->getParameter([B[B)I
 
@@ -1171,27 +1120,27 @@
 
     const/4 v5, 0x4
 
-    .line 670
+    .line 654
     array-length v3, p2
 
     const/4 v4, 0x2
 
     if-le v3, v4, :cond_0
 
-    .line 671
+    .line 655
     const/4 v1, -0x4
 
-    .line 688
+    .line 672
     :goto_0
     return v1
 
-    .line 673
+    .line 657
     :cond_0
     invoke-virtual {p0, p1}, Landroid/media/audiofx/AudioEffect;->intToByteArray(I)[B
 
     move-result-object v0
 
-    .line 675
+    .line 659
     .local v0, p:[B
     array-length v3, p2
 
@@ -1199,19 +1148,19 @@
 
     new-array v2, v3, [B
 
-    .line 677
+    .line 661
     .local v2, v:[B
     invoke-virtual {p0, v0, v2}, Landroid/media/audiofx/AudioEffect;->getParameter([B[B)I
 
     move-result v1
 
-    .line 679
+    .line 663
     .local v1, status:I
     if-eq v1, v5, :cond_1
 
     if-ne v1, v6, :cond_3
 
-    .line 680
+    .line 664
     :cond_1
     const/4 v3, 0x0
 
@@ -1221,10 +1170,10 @@
 
     aput v4, p2, v3
 
-    .line 681
+    .line 665
     if-ne v1, v6, :cond_2
 
-    .line 682
+    .line 666
     const/4 v3, 0x1
 
     invoke-virtual {p0, v2, v5}, Landroid/media/audiofx/AudioEffect;->byteArrayToInt([BI)I
@@ -1233,13 +1182,13 @@
 
     aput v4, p2, v3
 
-    .line 684
+    .line 668
     :cond_2
     div-int/lit8 v1, v1, 0x4
 
     goto :goto_0
 
-    .line 686
+    .line 670
     :cond_3
     const/4 v1, -0x1
 
@@ -1261,25 +1210,25 @@
 
     const/4 v5, 0x2
 
-    .line 701
+    .line 685
     array-length v3, p2
 
     if-le v3, v5, :cond_0
 
-    .line 702
+    .line 686
     const/4 v1, -0x4
 
-    .line 719
+    .line 703
     :goto_0
     return v1
 
-    .line 704
+    .line 688
     :cond_0
     invoke-virtual {p0, p1}, Landroid/media/audiofx/AudioEffect;->intToByteArray(I)[B
 
     move-result-object v0
 
-    .line 706
+    .line 690
     .local v0, p:[B
     array-length v3, p2
 
@@ -1287,19 +1236,19 @@
 
     new-array v2, v3, [B
 
-    .line 708
+    .line 692
     .local v2, v:[B
     invoke-virtual {p0, v0, v2}, Landroid/media/audiofx/AudioEffect;->getParameter([B[B)I
 
     move-result v1
 
-    .line 710
+    .line 694
     .local v1, status:I
     if-eq v1, v5, :cond_1
 
     if-ne v1, v6, :cond_3
 
-    .line 711
+    .line 695
     :cond_1
     const/4 v3, 0x0
 
@@ -1309,10 +1258,10 @@
 
     aput-short v4, p2, v3
 
-    .line 712
+    .line 696
     if-ne v1, v6, :cond_2
 
-    .line 713
+    .line 697
     const/4 v3, 0x1
 
     invoke-virtual {p0, v2, v5}, Landroid/media/audiofx/AudioEffect;->byteArrayToShort([BI)S
@@ -1321,13 +1270,13 @@
 
     aput-short v4, p2, v3
 
-    .line 715
+    .line 699
     :cond_2
     div-int/lit8 v1, v1, 0x2
 
     goto :goto_0
 
-    .line 717
+    .line 701
     :cond_3
     const/4 v1, -0x1
 
@@ -1345,12 +1294,12 @@
     .end annotation
 
     .prologue
-    .line 642
+    .line 626
     const-string v0, "getParameter()"
 
     invoke-virtual {p0, v0}, Landroid/media/audiofx/AudioEffect;->checkState(Ljava/lang/String;)V
 
-    .line 643
+    .line 627
     array-length v0, p1
 
     array-length v1, p2
@@ -1379,19 +1328,19 @@
 
     const/4 v3, 0x1
 
-    .line 799
+    .line 783
     array-length v2, p1
 
     if-le v2, v5, :cond_0
 
-    .line 800
+    .line 784
     const/4 v2, -0x4
 
-    .line 808
+    .line 792
     :goto_0
     return v2
 
-    .line 802
+    .line 786
     :cond_0
     aget v2, p1, v4
 
@@ -1399,20 +1348,20 @@
 
     move-result-object v0
 
-    .line 803
+    .line 787
     .local v0, p:[B
     array-length v2, p1
 
     if-le v2, v3, :cond_1
 
-    .line 804
+    .line 788
     aget v2, p1, v3
 
     invoke-virtual {p0, v2}, Landroid/media/audiofx/AudioEffect;->intToByteArray(I)[B
 
     move-result-object v1
 
-    .line 805
+    .line 789
     .local v1, p2:[B
     new-array v2, v5, [[B
 
@@ -1424,7 +1373,7 @@
 
     move-result-object v0
 
-    .line 808
+    .line 792
     .end local v1           #p2:[B
     :cond_1
     invoke-virtual {p0, v0, p2}, Landroid/media/audiofx/AudioEffect;->getParameter([B[B)I
@@ -1455,7 +1404,7 @@
 
     const/4 v5, 0x1
 
-    .line 732
+    .line 716
     array-length v4, p1
 
     if-gt v4, v7, :cond_0
@@ -1464,15 +1413,15 @@
 
     if-le v4, v7, :cond_1
 
-    .line 733
+    .line 717
     :cond_0
     const/4 v2, -0x4
 
-    .line 753
+    .line 737
     :goto_0
     return v2
 
-    .line 735
+    .line 719
     :cond_1
     aget v4, p1, v6
 
@@ -1480,20 +1429,20 @@
 
     move-result-object v0
 
-    .line 736
+    .line 720
     .local v0, p:[B
     array-length v4, p1
 
     if-le v4, v5, :cond_2
 
-    .line 737
+    .line 721
     aget v4, p1, v5
 
     invoke-virtual {p0, v4}, Landroid/media/audiofx/AudioEffect;->intToByteArray(I)[B
 
     move-result-object v1
 
-    .line 738
+    .line 722
     .local v1, p2:[B
     new-array v4, v7, [[B
 
@@ -1505,7 +1454,7 @@
 
     move-result-object v0
 
-    .line 740
+    .line 724
     .end local v1           #p2:[B
     :cond_2
     array-length v4, p2
@@ -1514,19 +1463,19 @@
 
     new-array v3, v4, [B
 
-    .line 742
+    .line 726
     .local v3, v:[B
     invoke-virtual {p0, v0, v3}, Landroid/media/audiofx/AudioEffect;->getParameter([B[B)I
 
     move-result v2
 
-    .line 744
+    .line 728
     .local v2, status:I
     if-eq v2, v8, :cond_3
 
     if-ne v2, v9, :cond_5
 
-    .line 745
+    .line 729
     :cond_3
     invoke-virtual {p0, v3}, Landroid/media/audiofx/AudioEffect;->byteArrayToInt([B)I
 
@@ -1534,23 +1483,23 @@
 
     aput v4, p2, v6
 
-    .line 746
+    .line 730
     if-ne v2, v9, :cond_4
 
-    .line 747
+    .line 731
     invoke-virtual {p0, v3, v8}, Landroid/media/audiofx/AudioEffect;->byteArrayToInt([BI)I
 
     move-result v4
 
     aput v4, p2, v5
 
-    .line 749
+    .line 733
     :cond_4
     div-int/lit8 v2, v2, 0x4
 
     goto :goto_0
 
-    .line 751
+    .line 735
     :cond_5
     const/4 v2, -0x1
 
@@ -1576,7 +1525,7 @@
 
     const/4 v5, 0x2
 
-    .line 766
+    .line 750
     array-length v4, p1
 
     if-gt v4, v5, :cond_0
@@ -1585,15 +1534,15 @@
 
     if-le v4, v5, :cond_1
 
-    .line 767
+    .line 751
     :cond_0
     const/4 v2, -0x4
 
-    .line 787
+    .line 771
     :goto_0
     return v2
 
-    .line 769
+    .line 753
     :cond_1
     aget v4, p1, v7
 
@@ -1601,20 +1550,20 @@
 
     move-result-object v0
 
-    .line 770
+    .line 754
     .local v0, p:[B
     array-length v4, p1
 
     if-le v4, v6, :cond_2
 
-    .line 771
+    .line 755
     aget v4, p1, v6
 
     invoke-virtual {p0, v4}, Landroid/media/audiofx/AudioEffect;->intToByteArray(I)[B
 
     move-result-object v1
 
-    .line 772
+    .line 756
     .local v1, p2:[B
     new-array v4, v5, [[B
 
@@ -1626,7 +1575,7 @@
 
     move-result-object v0
 
-    .line 774
+    .line 758
     .end local v1           #p2:[B
     :cond_2
     array-length v4, p2
@@ -1635,19 +1584,19 @@
 
     new-array v3, v4, [B
 
-    .line 776
+    .line 760
     .local v3, v:[B
     invoke-virtual {p0, v0, v3}, Landroid/media/audiofx/AudioEffect;->getParameter([B[B)I
 
     move-result v2
 
-    .line 778
+    .line 762
     .local v2, status:I
     if-eq v2, v5, :cond_3
 
     if-ne v2, v8, :cond_5
 
-    .line 779
+    .line 763
     :cond_3
     invoke-virtual {p0, v3}, Landroid/media/audiofx/AudioEffect;->byteArrayToShort([B)S
 
@@ -1655,23 +1604,23 @@
 
     aput-short v4, p2, v7
 
-    .line 780
+    .line 764
     if-ne v2, v8, :cond_4
 
-    .line 781
+    .line 765
     invoke-virtual {p0, v3, v5}, Landroid/media/audiofx/AudioEffect;->byteArrayToShort([BI)S
 
     move-result v4
 
     aput-short v4, p2, v6
 
-    .line 783
+    .line 767
     :cond_4
     div-int/lit8 v2, v2, 0x2
 
     goto :goto_0
 
-    .line 785
+    .line 769
     :cond_5
     const/4 v2, -0x1
 
@@ -1687,12 +1636,12 @@
     .end annotation
 
     .prologue
-    .line 860
+    .line 844
     const-string v0, "hasControl()"
 
     invoke-virtual {p0, v0}, Landroid/media/audiofx/AudioEffect;->checkState(Ljava/lang/String;)V
 
-    .line 861
+    .line 845
     invoke-direct {p0}, Landroid/media/audiofx/AudioEffect;->native_hasControl()Z
 
     move-result v0
@@ -1705,14 +1654,14 @@
     .parameter "value"
 
     .prologue
-    .line 1281
+    .line 1265
     const/4 v1, 0x4
 
     invoke-static {v1}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
     move-result-object v0
 
-    .line 1282
+    .line 1266
     .local v0, converter:Ljava/nio/ByteBuffer;
     invoke-static {}, Ljava/nio/ByteOrder;->nativeOrder()Ljava/nio/ByteOrder;
 
@@ -1720,10 +1669,10 @@
 
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 
-    .line 1283
+    .line 1267
     invoke-virtual {v0, p1}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
-    .line 1284
+    .line 1268
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->array()[B
 
     move-result-object v1
@@ -1771,35 +1720,35 @@
     .parameter "listener"
 
     .prologue
-    .line 889
+    .line 873
     iget-object v1, p0, Landroid/media/audiofx/AudioEffect;->mListenerLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 890
+    .line 874
     :try_start_0
     iput-object p1, p0, Landroid/media/audiofx/AudioEffect;->mControlChangeStatusListener:Landroid/media/audiofx/AudioEffect$OnControlStatusChangeListener;
 
-    .line 891
+    .line 875
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 892
+    .line 876
     if-eqz p1, :cond_0
 
     iget-object v0, p0, Landroid/media/audiofx/AudioEffect;->mNativeEventHandler:Landroid/media/audiofx/AudioEffect$NativeEventHandler;
 
     if-nez v0, :cond_0
 
-    .line 893
+    .line 877
     invoke-direct {p0}, Landroid/media/audiofx/AudioEffect;->createNativeEventHandler()V
 
-    .line 895
+    .line 879
     :cond_0
     return-void
 
-    .line 891
+    .line 875
     :catchall_0
     move-exception v0
 
@@ -1816,35 +1765,35 @@
     .parameter "listener"
 
     .prologue
-    .line 874
+    .line 858
     iget-object v1, p0, Landroid/media/audiofx/AudioEffect;->mListenerLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 875
+    .line 859
     :try_start_0
     iput-object p1, p0, Landroid/media/audiofx/AudioEffect;->mEnableStatusChangeListener:Landroid/media/audiofx/AudioEffect$OnEnableStatusChangeListener;
 
-    .line 876
+    .line 860
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 877
+    .line 861
     if-eqz p1, :cond_0
 
     iget-object v0, p0, Landroid/media/audiofx/AudioEffect;->mNativeEventHandler:Landroid/media/audiofx/AudioEffect$NativeEventHandler;
 
     if-nez v0, :cond_0
 
-    .line 878
+    .line 862
     invoke-direct {p0}, Landroid/media/audiofx/AudioEffect;->createNativeEventHandler()V
 
-    .line 880
+    .line 864
     :cond_0
     return-void
 
-    .line 876
+    .line 860
     :catchall_0
     move-exception v0
 
@@ -1866,12 +1815,12 @@
     .end annotation
 
     .prologue
-    .line 488
+    .line 472
     const-string/jumbo v0, "setEnabled()"
 
     invoke-virtual {p0, v0}, Landroid/media/audiofx/AudioEffect;->checkState(Ljava/lang/String;)V
 
-    .line 489
+    .line 473
     invoke-direct {p0, p1}, Landroid/media/audiofx/AudioEffect;->native_setEnabled(Z)I
 
     move-result v0
@@ -1890,18 +1839,18 @@
     .end annotation
 
     .prologue
-    .line 522
+    .line 506
     invoke-virtual {p0, p1}, Landroid/media/audiofx/AudioEffect;->intToByteArray(I)[B
 
     move-result-object v0
 
-    .line 523
+    .line 507
     .local v0, p:[B
     invoke-virtual {p0, p2}, Landroid/media/audiofx/AudioEffect;->intToByteArray(I)[B
 
     move-result-object v1
 
-    .line 524
+    .line 508
     .local v1, v:[B
     invoke-virtual {p0, v0, v1}, Landroid/media/audiofx/AudioEffect;->setParameter([B[B)I
 
@@ -1921,18 +1870,18 @@
     .end annotation
 
     .prologue
-    .line 536
+    .line 520
     invoke-virtual {p0, p1}, Landroid/media/audiofx/AudioEffect;->intToByteArray(I)[B
 
     move-result-object v0
 
-    .line 537
+    .line 521
     .local v0, p:[B
     invoke-virtual {p0, p2}, Landroid/media/audiofx/AudioEffect;->shortToByteArray(S)[B
 
     move-result-object v1
 
-    .line 538
+    .line 522
     .local v1, v:[B
     invoke-virtual {p0, v0, v1}, Landroid/media/audiofx/AudioEffect;->setParameter([B[B)I
 
@@ -1952,12 +1901,12 @@
     .end annotation
 
     .prologue
-    .line 550
+    .line 534
     invoke-virtual {p0, p1}, Landroid/media/audiofx/AudioEffect;->intToByteArray(I)[B
 
     move-result-object v0
 
-    .line 551
+    .line 535
     .local v0, p:[B
     invoke-virtual {p0, v0, p2}, Landroid/media/audiofx/AudioEffect;->setParameter([B[B)I
 
@@ -1977,12 +1926,12 @@
     .end annotation
 
     .prologue
-    .line 511
+    .line 495
     const-string/jumbo v0, "setParameter()"
 
     invoke-virtual {p0, v0}, Landroid/media/audiofx/AudioEffect;->checkState(Ljava/lang/String;)V
 
-    .line 512
+    .line 496
     array-length v0, p1
 
     array-length v1, p2
@@ -2011,19 +1960,19 @@
 
     const/4 v3, 0x1
 
-    .line 614
+    .line 598
     array-length v2, p1
 
     if-le v2, v5, :cond_0
 
-    .line 615
+    .line 599
     const/4 v2, -0x4
 
-    .line 622
+    .line 606
     :goto_0
     return v2
 
-    .line 617
+    .line 601
     :cond_0
     aget v2, p1, v4
 
@@ -2031,20 +1980,20 @@
 
     move-result-object v0
 
-    .line 618
+    .line 602
     .local v0, p:[B
     array-length v2, p1
 
     if-le v2, v3, :cond_1
 
-    .line 619
+    .line 603
     aget v2, p1, v3
 
     invoke-virtual {p0, v2}, Landroid/media/audiofx/AudioEffect;->intToByteArray(I)[B
 
     move-result-object v1
 
-    .line 620
+    .line 604
     .local v1, p2:[B
     new-array v2, v5, [[B
 
@@ -2056,7 +2005,7 @@
 
     move-result-object v0
 
-    .line 622
+    .line 606
     .end local v1           #p2:[B
     :cond_1
     invoke-virtual {p0, v0, p2}, Landroid/media/audiofx/AudioEffect;->setParameter([B[B)I
@@ -2083,7 +2032,7 @@
 
     const/4 v5, 0x1
 
-    .line 563
+    .line 547
     array-length v4, p1
 
     if-gt v4, v7, :cond_0
@@ -2092,15 +2041,15 @@
 
     if-le v4, v7, :cond_1
 
-    .line 564
+    .line 548
     :cond_0
     const/4 v4, -0x4
 
-    .line 576
+    .line 560
     :goto_0
     return v4
 
-    .line 566
+    .line 550
     :cond_1
     aget v4, p1, v6
 
@@ -2108,20 +2057,20 @@
 
     move-result-object v0
 
-    .line 567
+    .line 551
     .local v0, p:[B
     array-length v4, p1
 
     if-le v4, v5, :cond_2
 
-    .line 568
+    .line 552
     aget v4, p1, v5
 
     invoke-virtual {p0, v4}, Landroid/media/audiofx/AudioEffect;->intToByteArray(I)[B
 
     move-result-object v1
 
-    .line 569
+    .line 553
     .local v1, p2:[B
     new-array v4, v7, [[B
 
@@ -2133,7 +2082,7 @@
 
     move-result-object v0
 
-    .line 571
+    .line 555
     .end local v1           #p2:[B
     :cond_2
     aget v4, p2, v6
@@ -2142,20 +2091,20 @@
 
     move-result-object v2
 
-    .line 572
+    .line 556
     .local v2, v:[B
     array-length v4, p2
 
     if-le v4, v5, :cond_3
 
-    .line 573
+    .line 557
     aget v4, p2, v5
 
     invoke-virtual {p0, v4}, Landroid/media/audiofx/AudioEffect;->intToByteArray(I)[B
 
     move-result-object v3
 
-    .line 574
+    .line 558
     .local v3, v2:[B
     new-array v4, v7, [[B
 
@@ -2167,7 +2116,7 @@
 
     move-result-object v2
 
-    .line 576
+    .line 560
     .end local v3           #v2:[B
     :cond_3
     invoke-virtual {p0, v0, v2}, Landroid/media/audiofx/AudioEffect;->setParameter([B[B)I
@@ -2194,7 +2143,7 @@
 
     const/4 v5, 0x1
 
-    .line 588
+    .line 572
     array-length v4, p1
 
     if-gt v4, v7, :cond_0
@@ -2203,15 +2152,15 @@
 
     if-le v4, v7, :cond_1
 
-    .line 589
+    .line 573
     :cond_0
     const/4 v4, -0x4
 
-    .line 602
+    .line 586
     :goto_0
     return v4
 
-    .line 591
+    .line 575
     :cond_1
     aget v4, p1, v6
 
@@ -2219,20 +2168,20 @@
 
     move-result-object v0
 
-    .line 592
+    .line 576
     .local v0, p:[B
     array-length v4, p1
 
     if-le v4, v5, :cond_2
 
-    .line 593
+    .line 577
     aget v4, p1, v5
 
     invoke-virtual {p0, v4}, Landroid/media/audiofx/AudioEffect;->intToByteArray(I)[B
 
     move-result-object v1
 
-    .line 594
+    .line 578
     .local v1, p2:[B
     new-array v4, v7, [[B
 
@@ -2244,7 +2193,7 @@
 
     move-result-object v0
 
-    .line 597
+    .line 581
     .end local v1           #p2:[B
     :cond_2
     aget-short v4, p2, v6
@@ -2253,20 +2202,20 @@
 
     move-result-object v2
 
-    .line 598
+    .line 582
     .local v2, v:[B
     array-length v4, p2
 
     if-le v4, v5, :cond_3
 
-    .line 599
+    .line 583
     aget-short v4, p2, v5
 
     invoke-virtual {p0, v4}, Landroid/media/audiofx/AudioEffect;->shortToByteArray(S)[B
 
     move-result-object v3
 
-    .line 600
+    .line 584
     .local v3, v2:[B
     new-array v4, v7, [[B
 
@@ -2278,7 +2227,7 @@
 
     move-result-object v2
 
-    .line 602
+    .line 586
     .end local v3           #v2:[B
     :cond_3
     invoke-virtual {p0, v0, v2}, Landroid/media/audiofx/AudioEffect;->setParameter([B[B)I
@@ -2293,35 +2242,35 @@
     .parameter "listener"
 
     .prologue
-    .line 904
+    .line 888
     iget-object v1, p0, Landroid/media/audiofx/AudioEffect;->mListenerLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 905
+    .line 889
     :try_start_0
     iput-object p1, p0, Landroid/media/audiofx/AudioEffect;->mParameterChangeListener:Landroid/media/audiofx/AudioEffect$OnParameterChangeListener;
 
-    .line 906
+    .line 890
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 907
+    .line 891
     if-eqz p1, :cond_0
 
     iget-object v0, p0, Landroid/media/audiofx/AudioEffect;->mNativeEventHandler:Landroid/media/audiofx/AudioEffect$NativeEventHandler;
 
     if-nez v0, :cond_0
 
-    .line 908
+    .line 892
     invoke-direct {p0}, Landroid/media/audiofx/AudioEffect;->createNativeEventHandler()V
 
-    .line 910
+    .line 894
     :cond_0
     return-void
 
-    .line 906
+    .line 890
     :catchall_0
     move-exception v0
 
@@ -2338,14 +2287,14 @@
     .parameter "value"
 
     .prologue
-    .line 1308
+    .line 1292
     const/4 v2, 0x2
 
     invoke-static {v2}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
     move-result-object v0
 
-    .line 1309
+    .line 1293
     .local v0, converter:Ljava/nio/ByteBuffer;
     invoke-static {}, Ljava/nio/ByteOrder;->nativeOrder()Ljava/nio/ByteOrder;
 
@@ -2353,14 +2302,14 @@
 
     invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 
-    .line 1310
+    .line 1294
     move v1, p1
 
-    .line 1311
+    .line 1295
     .local v1, sValue:S
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->putShort(S)Ljava/nio/ByteBuffer;
 
-    .line 1312
+    .line 1296
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->array()[B
 
     move-result-object v2

@@ -27,13 +27,13 @@
     .parameter "callback"
 
     .prologue
-    .line 1800
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 1789
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1801
+    .line 1790
     iput-object p1, p0, Lcom/android/server/sip/SipSessionGroup$KeepAliveProcessCallbackProxy;->mCallback:Lcom/android/server/sip/SipSessionGroup$KeepAliveProcessCallback;
 
-    .line 1802
+    .line 1791
     return-void
 .end method
 
@@ -42,7 +42,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1797
+    .line 1786
     iget-object v0, p0, Lcom/android/server/sip/SipSessionGroup$KeepAliveProcessCallbackProxy;->mCallback:Lcom/android/server/sip/SipSessionGroup$KeepAliveProcessCallback;
 
     return-object v0
@@ -53,7 +53,7 @@
     .parameter "runnable"
 
     .prologue
-    .line 1808
+    .line 1797
     new-instance v0, Ljava/lang/Thread;
 
     const-string v1, "SIP-KeepAliveProcessCallbackThread"
@@ -62,7 +62,7 @@
 
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
-    .line 1809
+    .line 1798
     return-void
 .end method
 
@@ -74,16 +74,16 @@
     .parameter "description"
 
     .prologue
-    .line 1825
+    .line 1814
     iget-object v0, p0, Lcom/android/server/sip/SipSessionGroup$KeepAliveProcessCallbackProxy;->mCallback:Lcom/android/server/sip/SipSessionGroup$KeepAliveProcessCallback;
 
     if-nez v0, :cond_0
 
-    .line 1835
+    .line 1824
     :goto_0
     return-void
 
-    .line 1826
+    .line 1815
     :cond_0
     new-instance v0, Lcom/android/server/sip/SipSessionGroup$KeepAliveProcessCallbackProxy$2;
 
@@ -99,16 +99,16 @@
     .parameter "portChanged"
 
     .prologue
-    .line 1812
+    .line 1801
     iget-object v0, p0, Lcom/android/server/sip/SipSessionGroup$KeepAliveProcessCallbackProxy;->mCallback:Lcom/android/server/sip/SipSessionGroup$KeepAliveProcessCallback;
 
     if-nez v0, :cond_0
 
-    .line 1822
+    .line 1811
     :goto_0
     return-void
 
-    .line 1813
+    .line 1802
     :cond_0
     new-instance v0, Lcom/android/server/sip/SipSessionGroup$KeepAliveProcessCallbackProxy$1;
 

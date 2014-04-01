@@ -20,11 +20,7 @@
 
 .field public static final BATTERY_PLUGGED_AC:I = 0x1
 
-.field public static final BATTERY_PLUGGED_ANY:I = 0x7
-
 .field public static final BATTERY_PLUGGED_USB:I = 0x2
-
-.field public static final BATTERY_PLUGGED_WIRELESS:I = 0x4
 
 .field public static final BATTERY_STATUS_CHARGING:I = 0x2
 
@@ -44,19 +40,13 @@
 
 .field public static final EXTRA_LEVEL:Ljava/lang/String; = "level"
 
-.field public static final EXTRA_LEVEL_2ND:Ljava/lang/String; = "level_2nd"
-
 .field public static final EXTRA_PLUGGED:Ljava/lang/String; = "plugged"
 
 .field public static final EXTRA_PRESENT:Ljava/lang/String; = "present"
 
-.field public static final EXTRA_PRESENT_2ND:Ljava/lang/String; = "present_2nd"
-
 .field public static final EXTRA_SCALE:Ljava/lang/String; = "scale"
 
 .field public static final EXTRA_STATUS:Ljava/lang/String; = "status"
-
-.field public static final EXTRA_STATUS_2ND:Ljava/lang/String; = "status_2nd"
 
 .field public static final EXTRA_TECHNOLOGY:Ljava/lang/String; = "technology"
 
@@ -71,7 +61,7 @@
 
     .prologue
     .line 23
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

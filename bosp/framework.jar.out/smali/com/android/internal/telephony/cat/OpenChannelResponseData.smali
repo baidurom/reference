@@ -4,15 +4,15 @@
 
 
 # instance fields
-.field mBearerDesc:Lcom/mediatek/common/telephony/BearerDesc;
+.field mBearerDesc:Lcom/android/internal/telephony/cat/BearerDesc;
 
 .field mBufferSize:I
 
-.field mChannelStatus:Lcom/mediatek/common/telephony/ChannelStatus;
+.field mChannelStatus:Lcom/android/internal/telephony/cat/ChannelStatus;
 
 
 # direct methods
-.method constructor <init>(Lcom/mediatek/common/telephony/ChannelStatus;Lcom/mediatek/common/telephony/BearerDesc;I)V
+.method constructor <init>(Lcom/android/internal/telephony/cat/ChannelStatus;Lcom/android/internal/telephony/cat/BearerDesc;I)V
     .locals 3
     .parameter "channelStatus"
     .parameter "bearerDesc"
@@ -21,37 +21,37 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 486
+    .line 356
     invoke-direct {p0}, Lcom/android/internal/telephony/cat/ResponseData;-><init>()V
 
-    .line 481
-    iput-object v0, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mChannelStatus:Lcom/mediatek/common/telephony/ChannelStatus;
+    .line 351
+    iput-object v0, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mChannelStatus:Lcom/android/internal/telephony/cat/ChannelStatus;
 
-    .line 482
-    iput-object v0, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBearerDesc:Lcom/mediatek/common/telephony/BearerDesc;
+    .line 352
+    iput-object v0, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBearerDesc:Lcom/android/internal/telephony/cat/BearerDesc;
 
-    .line 483
+    .line 353
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBufferSize:I
 
-    .line 487
+    .line 357
     if-eqz p1, :cond_0
 
-    .line 488
+    .line 358
     const-string v0, "[BIP]"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "OpenChannelResponseData-constructor: channelStatus cid/status : "
+    const-string v2, "OpenChannelResponseData-constructor: channelStatus cid/status"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    iget v2, p1, Lcom/mediatek/common/telephony/ChannelStatus;->mChannelId:I
+    iget v2, p1, Lcom/android/internal/telephony/cat/ChannelStatus;->mChannelId:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -63,7 +63,7 @@
 
     move-result-object v1
 
-    iget v2, p1, Lcom/mediatek/common/telephony/ChannelStatus;->mChannelStatus:I
+    iget v2, p1, Lcom/android/internal/telephony/cat/ChannelStatus;->mChannelStatus:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -75,11 +75,11 @@
 
     invoke-static {v0, v1}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 493
+    .line 363
     :goto_0
     if-eqz p2, :cond_1
 
-    .line 494
+    .line 364
     const-string v0, "[BIP]"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -92,7 +92,7 @@
 
     move-result-object v1
 
-    iget v2, p2, Lcom/mediatek/common/telephony/BearerDesc;->bearerType:I
+    iget v2, p2, Lcom/android/internal/telephony/cat/BearerDesc;->bearerType:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -104,11 +104,11 @@
 
     invoke-static {v0, v1}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 499
+    .line 368
     :goto_1
     if-lez p3, :cond_2
 
-    .line 500
+    .line 369
     const-string v0, "[BIP]"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -131,20 +131,20 @@
 
     invoke-static {v0, v1}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 506
+    .line 374
     :goto_2
-    iput-object p1, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mChannelStatus:Lcom/mediatek/common/telephony/ChannelStatus;
+    iput-object p1, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mChannelStatus:Lcom/android/internal/telephony/cat/ChannelStatus;
 
-    .line 507
-    iput-object p2, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBearerDesc:Lcom/mediatek/common/telephony/BearerDesc;
+    .line 375
+    iput-object p2, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBearerDesc:Lcom/android/internal/telephony/cat/BearerDesc;
 
-    .line 508
+    .line 376
     iput p3, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBufferSize:I
 
-    .line 509
+    .line 377
     return-void
 
-    .line 491
+    .line 361
     :cond_0
     const-string v0, "[BIP]"
 
@@ -154,7 +154,7 @@
 
     goto :goto_0
 
-    .line 497
+    .line 366
     :cond_1
     const-string v0, "[BIP]"
 
@@ -164,7 +164,7 @@
 
     goto :goto_1
 
-    .line 502
+    .line 371
     :cond_2
     const-string v0, "[BIP]"
 
@@ -204,29 +204,29 @@
 
     const/4 v7, 0x2
 
-    .line 513
+    .line 381
     if-nez p1, :cond_0
 
-    .line 514
+    .line 382
     const-string v1, "[BIP]"
 
     const-string v2, "OpenChannelResponseData-format: buf is null"
 
     invoke-static {v1, v2}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 580
+    .line 442
     :goto_0
     return-void
 
-    .line 518
+    .line 386
     :cond_0
-    iget-object v1, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBearerDesc:Lcom/mediatek/common/telephony/BearerDesc;
+    iget-object v1, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBearerDesc:Lcom/android/internal/telephony/cat/BearerDesc;
 
-    iget v1, v1, Lcom/mediatek/common/telephony/BearerDesc;->bearerType:I
+    iget v1, v1, Lcom/android/internal/telephony/cat/BearerDesc;->bearerType:I
 
     if-eq v1, v7, :cond_1
 
-    .line 519
+    .line 387
     const-string v1, "[BIP]"
 
     const-string v2, "OpenChannelResponseData-format: bearer type is not gprs"
@@ -235,9 +235,9 @@
 
     goto :goto_0
 
-    .line 525
+    .line 393
     :cond_1
-    iget-object v1, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBearerDesc:Lcom/mediatek/common/telephony/BearerDesc;
+    iget-object v1, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBearerDesc:Lcom/android/internal/telephony/cat/BearerDesc;
 
     if-eqz v1, :cond_5
 
@@ -245,26 +245,26 @@
 
     if-lez v1, :cond_5
 
-    .line 526
-    iget-object v1, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mChannelStatus:Lcom/mediatek/common/telephony/ChannelStatus;
+    .line 394
+    iget-object v1, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mChannelStatus:Lcom/android/internal/telephony/cat/ChannelStatus;
 
     if-eqz v1, :cond_2
 
-    .line 527
+    .line 395
     const-string v1, "[BIP]"
 
     const-string v4, "OpenChannelResponseData-format: Write channel status into TR"
 
     invoke-static {v1, v4}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 528
+    .line 396
     sget-object v1, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;->CHANNEL_STATUS:Lcom/android/internal/telephony/cat/ComprehensionTlvTag;
 
     invoke-virtual {v1}, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;->value()I
 
     move-result v0
 
-    .line 529
+    .line 397
     .local v0, tag:I
     const-string v1, "[BIP]"
 
@@ -288,20 +288,20 @@
 
     invoke-static {v1, v4}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 530
+    .line 398
     invoke-virtual {p1, v0}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 531
+    .line 399
     const-string v1, "[BIP]"
 
     const-string v4, "OpenChannelResponseData-format: length: 2"
 
     invoke-static {v1, v4}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 532
+    .line 400
     invoke-virtual {p1, v7}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 533
+    .line 401
     const-string v4, "[BIP]"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -314,13 +314,13 @@
 
     move-result-object v5
 
-    iget-object v1, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mChannelStatus:Lcom/mediatek/common/telephony/ChannelStatus;
+    iget-object v1, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mChannelStatus:Lcom/android/internal/telephony/cat/ChannelStatus;
 
-    iget v6, v1, Lcom/mediatek/common/telephony/ChannelStatus;->mChannelId:I
+    iget v6, v1, Lcom/android/internal/telephony/cat/ChannelStatus;->mChannelId:I
 
-    iget-object v1, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mChannelStatus:Lcom/mediatek/common/telephony/ChannelStatus;
+    iget-object v1, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mChannelStatus:Lcom/android/internal/telephony/cat/ChannelStatus;
 
-    iget-boolean v1, v1, Lcom/mediatek/common/telephony/ChannelStatus;->isActivated:Z
+    iget-boolean v1, v1, Lcom/android/internal/telephony/cat/ChannelStatus;->isActivated:Z
 
     if-eqz v1, :cond_3
 
@@ -339,14 +339,14 @@
 
     invoke-static {v4, v1}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 535
-    iget-object v1, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mChannelStatus:Lcom/mediatek/common/telephony/ChannelStatus;
+    .line 403
+    iget-object v1, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mChannelStatus:Lcom/android/internal/telephony/cat/ChannelStatus;
 
-    iget v1, v1, Lcom/mediatek/common/telephony/ChannelStatus;->mChannelId:I
+    iget v1, v1, Lcom/android/internal/telephony/cat/ChannelStatus;->mChannelId:I
 
-    iget-object v4, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mChannelStatus:Lcom/mediatek/common/telephony/ChannelStatus;
+    iget-object v4, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mChannelStatus:Lcom/android/internal/telephony/cat/ChannelStatus;
 
-    iget-boolean v4, v4, Lcom/mediatek/common/telephony/ChannelStatus;->isActivated:Z
+    iget-boolean v4, v4, Lcom/android/internal/telephony/cat/ChannelStatus;->isActivated:Z
 
     if-eqz v4, :cond_4
 
@@ -355,7 +355,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 536
+    .line 404
     const-string v1, "[BIP]"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -368,9 +368,9 @@
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mChannelStatus:Lcom/mediatek/common/telephony/ChannelStatus;
+    iget-object v3, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mChannelStatus:Lcom/android/internal/telephony/cat/ChannelStatus;
 
-    iget v3, v3, Lcom/mediatek/common/telephony/ChannelStatus;->mChannelStatus:I
+    iget v3, v3, Lcom/android/internal/telephony/cat/ChannelStatus;->mChannelStatus:I
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -382,14 +382,14 @@
 
     invoke-static {v1, v2}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 538
-    iget-object v1, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mChannelStatus:Lcom/mediatek/common/telephony/ChannelStatus;
+    .line 405
+    iget-object v1, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mChannelStatus:Lcom/android/internal/telephony/cat/ChannelStatus;
 
-    iget v1, v1, Lcom/mediatek/common/telephony/ChannelStatus;->mChannelStatus:I
+    iget v1, v1, Lcom/android/internal/telephony/cat/ChannelStatus;->mChannelStatus:I
 
     invoke-virtual {p1, v1}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 541
+    .line 408
     .end local v0           #tag:I
     :cond_2
     const-string v1, "[BIP]"
@@ -398,14 +398,14 @@
 
     invoke-static {v1, v2}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 542
+    .line 409
     sget-object v1, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;->BEARER_DESCRIPTION:Lcom/android/internal/telephony/cat/ComprehensionTlvTag;
 
     invoke-virtual {v1}, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;->value()I
 
     move-result v0
 
-    .line 543
+    .line 410
     .restart local v0       #tag:I
     const-string v1, "[BIP]"
 
@@ -429,22 +429,22 @@
 
     invoke-static {v1, v2}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 544
+    .line 411
     invoke-virtual {p1, v0}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 545
+    .line 412
     const-string v1, "[BIP]"
 
     const-string v2, "OpenChannelResponseData-format: length: 7"
 
     invoke-static {v1, v2}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 546
+    .line 413
     const/4 v1, 0x7
 
     invoke-virtual {p1, v1}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 547
+    .line 414
     const-string v1, "[BIP]"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -457,9 +457,9 @@
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBearerDesc:Lcom/mediatek/common/telephony/BearerDesc;
+    iget-object v3, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBearerDesc:Lcom/android/internal/telephony/cat/BearerDesc;
 
-    iget v3, v3, Lcom/mediatek/common/telephony/BearerDesc;->bearerType:I
+    iget v3, v3, Lcom/android/internal/telephony/cat/BearerDesc;->bearerType:I
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -471,14 +471,14 @@
 
     invoke-static {v1, v2}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 549
-    iget-object v1, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBearerDesc:Lcom/mediatek/common/telephony/BearerDesc;
+    .line 415
+    iget-object v1, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBearerDesc:Lcom/android/internal/telephony/cat/BearerDesc;
 
-    iget v1, v1, Lcom/mediatek/common/telephony/BearerDesc;->bearerType:I
+    iget v1, v1, Lcom/android/internal/telephony/cat/BearerDesc;->bearerType:I
 
     invoke-virtual {p1, v1}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 550
+    .line 416
     const-string v1, "[BIP]"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -491,9 +491,9 @@
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBearerDesc:Lcom/mediatek/common/telephony/BearerDesc;
+    iget-object v3, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBearerDesc:Lcom/android/internal/telephony/cat/BearerDesc;
 
-    iget v3, v3, Lcom/mediatek/common/telephony/BearerDesc;->precedence:I
+    iget v3, v3, Lcom/android/internal/telephony/cat/BearerDesc;->precedence:I
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -505,14 +505,14 @@
 
     invoke-static {v1, v2}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 552
-    iget-object v1, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBearerDesc:Lcom/mediatek/common/telephony/BearerDesc;
+    .line 417
+    iget-object v1, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBearerDesc:Lcom/android/internal/telephony/cat/BearerDesc;
 
-    iget v1, v1, Lcom/mediatek/common/telephony/BearerDesc;->precedence:I
+    iget v1, v1, Lcom/android/internal/telephony/cat/BearerDesc;->precedence:I
 
     invoke-virtual {p1, v1}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 553
+    .line 418
     const-string v1, "[BIP]"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -525,9 +525,9 @@
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBearerDesc:Lcom/mediatek/common/telephony/BearerDesc;
+    iget-object v3, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBearerDesc:Lcom/android/internal/telephony/cat/BearerDesc;
 
-    iget v3, v3, Lcom/mediatek/common/telephony/BearerDesc;->delay:I
+    iget v3, v3, Lcom/android/internal/telephony/cat/BearerDesc;->delay:I
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -539,14 +539,14 @@
 
     invoke-static {v1, v2}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 554
-    iget-object v1, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBearerDesc:Lcom/mediatek/common/telephony/BearerDesc;
+    .line 419
+    iget-object v1, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBearerDesc:Lcom/android/internal/telephony/cat/BearerDesc;
 
-    iget v1, v1, Lcom/mediatek/common/telephony/BearerDesc;->delay:I
+    iget v1, v1, Lcom/android/internal/telephony/cat/BearerDesc;->delay:I
 
     invoke-virtual {p1, v1}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 555
+    .line 420
     const-string v1, "[BIP]"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -559,9 +559,9 @@
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBearerDesc:Lcom/mediatek/common/telephony/BearerDesc;
+    iget-object v3, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBearerDesc:Lcom/android/internal/telephony/cat/BearerDesc;
 
-    iget v3, v3, Lcom/mediatek/common/telephony/BearerDesc;->reliability:I
+    iget v3, v3, Lcom/android/internal/telephony/cat/BearerDesc;->reliability:I
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -573,14 +573,14 @@
 
     invoke-static {v1, v2}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 557
-    iget-object v1, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBearerDesc:Lcom/mediatek/common/telephony/BearerDesc;
+    .line 421
+    iget-object v1, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBearerDesc:Lcom/android/internal/telephony/cat/BearerDesc;
 
-    iget v1, v1, Lcom/mediatek/common/telephony/BearerDesc;->reliability:I
+    iget v1, v1, Lcom/android/internal/telephony/cat/BearerDesc;->reliability:I
 
     invoke-virtual {p1, v1}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 558
+    .line 422
     const-string v1, "[BIP]"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -593,9 +593,9 @@
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBearerDesc:Lcom/mediatek/common/telephony/BearerDesc;
+    iget-object v3, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBearerDesc:Lcom/android/internal/telephony/cat/BearerDesc;
 
-    iget v3, v3, Lcom/mediatek/common/telephony/BearerDesc;->peak:I
+    iget v3, v3, Lcom/android/internal/telephony/cat/BearerDesc;->peak:I
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -607,14 +607,14 @@
 
     invoke-static {v1, v2}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 559
-    iget-object v1, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBearerDesc:Lcom/mediatek/common/telephony/BearerDesc;
+    .line 423
+    iget-object v1, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBearerDesc:Lcom/android/internal/telephony/cat/BearerDesc;
 
-    iget v1, v1, Lcom/mediatek/common/telephony/BearerDesc;->peak:I
+    iget v1, v1, Lcom/android/internal/telephony/cat/BearerDesc;->peak:I
 
     invoke-virtual {p1, v1}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 560
+    .line 424
     const-string v1, "[BIP]"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -627,9 +627,9 @@
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBearerDesc:Lcom/mediatek/common/telephony/BearerDesc;
+    iget-object v3, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBearerDesc:Lcom/android/internal/telephony/cat/BearerDesc;
 
-    iget v3, v3, Lcom/mediatek/common/telephony/BearerDesc;->mean:I
+    iget v3, v3, Lcom/android/internal/telephony/cat/BearerDesc;->mean:I
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -641,14 +641,14 @@
 
     invoke-static {v1, v2}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 561
-    iget-object v1, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBearerDesc:Lcom/mediatek/common/telephony/BearerDesc;
+    .line 425
+    iget-object v1, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBearerDesc:Lcom/android/internal/telephony/cat/BearerDesc;
 
-    iget v1, v1, Lcom/mediatek/common/telephony/BearerDesc;->mean:I
+    iget v1, v1, Lcom/android/internal/telephony/cat/BearerDesc;->mean:I
 
     invoke-virtual {p1, v1}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 562
+    .line 426
     const-string v1, "[BIP]"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -661,9 +661,9 @@
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBearerDesc:Lcom/mediatek/common/telephony/BearerDesc;
+    iget-object v3, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBearerDesc:Lcom/android/internal/telephony/cat/BearerDesc;
 
-    iget v3, v3, Lcom/mediatek/common/telephony/BearerDesc;->pdpType:I
+    iget v3, v3, Lcom/android/internal/telephony/cat/BearerDesc;->pdpType:I
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -675,28 +675,28 @@
 
     invoke-static {v1, v2}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 563
-    iget-object v1, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBearerDesc:Lcom/mediatek/common/telephony/BearerDesc;
+    .line 427
+    iget-object v1, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBearerDesc:Lcom/android/internal/telephony/cat/BearerDesc;
 
-    iget v1, v1, Lcom/mediatek/common/telephony/BearerDesc;->pdpType:I
+    iget v1, v1, Lcom/android/internal/telephony/cat/BearerDesc;->pdpType:I
 
     invoke-virtual {p1, v1}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 565
+    .line 429
     const-string v1, "[BIP]"
 
     const-string v2, "Write buffer size into TR"
 
     invoke-static {v1, v2}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 566
+    .line 430
     sget-object v1, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;->BUFFER_SIZE:Lcom/android/internal/telephony/cat/ComprehensionTlvTag;
 
     invoke-virtual {v1}, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;->value()I
 
     move-result v0
 
-    .line 567
+    .line 431
     const-string v1, "[BIP]"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -719,20 +719,20 @@
 
     invoke-static {v1, v2}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 568
+    .line 432
     invoke-virtual {p1, v0}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 569
+    .line 433
     const-string v1, "[BIP]"
 
     const-string v2, "OpenChannelResponseData-format: length: 2"
 
     invoke-static {v1, v2}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 570
+    .line 434
     invoke-virtual {p1, v7}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 571
+    .line 435
     const-string v1, "[BIP]"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -759,14 +759,14 @@
 
     invoke-static {v1, v2}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 573
+    .line 436
     iget v1, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBufferSize:I
 
     shr-int/lit8 v1, v1, 0x8
 
     invoke-virtual {p1, v1}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 574
+    .line 437
     const-string v1, "[BIP]"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -793,7 +793,7 @@
 
     invoke-static {v1, v2}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 576
+    .line 438
     iget v1, p0, Lcom/android/internal/telephony/cat/OpenChannelResponseData;->mBufferSize:I
 
     and-int/lit16 v1, v1, 0xff
@@ -805,16 +805,16 @@
     :cond_3
     move v1, v3
 
-    .line 533
+    .line 401
     goto/16 :goto_1
 
     :cond_4
     move v2, v3
 
-    .line 535
+    .line 403
     goto/16 :goto_2
 
-    .line 578
+    .line 440
     .end local v0           #tag:I
     :cond_5
     const-string v1, "[BIP]"

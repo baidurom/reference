@@ -62,7 +62,7 @@
 
     .prologue
     .line 96
-    const v0, 0x301002f
+    const v0, 0x401002f
 
     invoke-direct {p0, p1, p2, v0}, Lyi/widget/Switcher;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

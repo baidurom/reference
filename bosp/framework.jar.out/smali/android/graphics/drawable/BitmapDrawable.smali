@@ -584,7 +584,7 @@
     if-eqz v0, :cond_1
 
     .line 388
-    invoke-virtual {p0}, Landroid/graphics/drawable/BitmapDrawable;->getLayoutDirection()I
+    invoke-virtual {p0}, Landroid/graphics/drawable/BitmapDrawable;->getResolvedLayoutDirectionSelf()I
 
     move-result v5
 

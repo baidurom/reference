@@ -219,7 +219,7 @@
 
     .prologue
     .line 739
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 740
     invoke-direct {p0, p1, p2}, Landroid/media/ToneGenerator;->native_setup(II)V
@@ -240,13 +240,10 @@
     .locals 0
 
     .prologue
-    .line 887
+    .line 879
     invoke-direct {p0}, Landroid/media/ToneGenerator;->native_finalize()V
 
     return-void
-.end method
-
-.method public final native getAudioSessionId()I
 .end method
 
 .method public native release()V

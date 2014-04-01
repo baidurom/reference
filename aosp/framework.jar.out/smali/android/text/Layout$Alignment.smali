@@ -52,7 +52,7 @@
 
     const/4 v2, 0x0
 
-    .line 1895
+    .line 1845
     new-instance v0, Landroid/text/Layout$Alignment;
 
     const-string v1, "ALIGN_NORMAL"
@@ -61,7 +61,7 @@
 
     sput-object v0, Landroid/text/Layout$Alignment;->ALIGN_NORMAL:Landroid/text/Layout$Alignment;
 
-    .line 1896
+    .line 1846
     new-instance v0, Landroid/text/Layout$Alignment;
 
     const-string v1, "ALIGN_OPPOSITE"
@@ -70,7 +70,7 @@
 
     sput-object v0, Landroid/text/Layout$Alignment;->ALIGN_OPPOSITE:Landroid/text/Layout$Alignment;
 
-    .line 1897
+    .line 1847
     new-instance v0, Landroid/text/Layout$Alignment;
 
     const-string v1, "ALIGN_CENTER"
@@ -79,7 +79,7 @@
 
     sput-object v0, Landroid/text/Layout$Alignment;->ALIGN_CENTER:Landroid/text/Layout$Alignment;
 
-    .line 1899
+    .line 1849
     new-instance v0, Landroid/text/Layout$Alignment;
 
     const-string v1, "ALIGN_LEFT"
@@ -88,7 +88,7 @@
 
     sput-object v0, Landroid/text/Layout$Alignment;->ALIGN_LEFT:Landroid/text/Layout$Alignment;
 
-    .line 1901
+    .line 1851
     new-instance v0, Landroid/text/Layout$Alignment;
 
     const-string v1, "ALIGN_RIGHT"
@@ -97,7 +97,7 @@
 
     sput-object v0, Landroid/text/Layout$Alignment;->ALIGN_RIGHT:Landroid/text/Layout$Alignment;
 
-    .line 1894
+    .line 1844
     const/4 v0, 0x5
 
     new-array v0, v0, [Landroid/text/Layout$Alignment;
@@ -138,7 +138,7 @@
     .end annotation
 
     .prologue
-    .line 1894
+    .line 1844
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -149,7 +149,7 @@
     .parameter "name"
 
     .prologue
-    .line 1894
+    .line 1844
     const-class v0, Landroid/text/Layout$Alignment;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -165,7 +165,7 @@
     .locals 1
 
     .prologue
-    .line 1894
+    .line 1844
     sget-object v0, Landroid/text/Layout$Alignment;->$VALUES:[Landroid/text/Layout$Alignment;
 
     invoke-virtual {v0}, [Landroid/text/Layout$Alignment;->clone()Ljava/lang/Object;

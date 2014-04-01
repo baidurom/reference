@@ -35,9 +35,9 @@
     .locals 0
 
     .prologue
-    .line 2266
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 2136
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2268
+    .line 2138
     return-void
 .end method

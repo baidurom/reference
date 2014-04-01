@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 727
+    .line 560
     iput-object p1, p0, Lcom/android/server/DeviceStorageMonitorService$3;->this$0:Lcom/android/server/DeviceStorageMonitorService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,19 +35,19 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 4
+    .locals 3
     .parameter "context"
     .parameter "intent"
 
     .prologue
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    .line 730
+    .line 563
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 732
+    .line 565
     .local v0, action:Ljava/lang/String;
     const-string v1, "android.intent.action.ACTION_BOOT_IPO"
 
@@ -57,21 +57,13 @@
 
     if-eqz v1, :cond_0
 
-    .line 733
+    .line 566
     iget-object v1, p0, Lcom/android/server/DeviceStorageMonitorService$3;->this$0:Lcom/android/server/DeviceStorageMonitorService;
 
     #setter for: Lcom/android/server/DeviceStorageMonitorService;->mIPOBootup:Z
-    invoke-static {v1, v3}, Lcom/android/server/DeviceStorageMonitorService;->access$102(Lcom/android/server/DeviceStorageMonitorService;Z)Z
+    invoke-static {v1, v2}, Lcom/android/server/DeviceStorageMonitorService;->access$102(Lcom/android/server/DeviceStorageMonitorService;Z)Z
 
-    .line 734
-    iget-object v1, p0, Lcom/android/server/DeviceStorageMonitorService$3;->this$0:Lcom/android/server/DeviceStorageMonitorService;
-
-    const/4 v2, 0x0
-
-    #setter for: Lcom/android/server/DeviceStorageMonitorService;->mLowMemFlag:Z
-    invoke-static {v1, v2}, Lcom/android/server/DeviceStorageMonitorService;->access$1402(Lcom/android/server/DeviceStorageMonitorService;Z)Z
-
-    .line 737
+    .line 569
     :cond_0
     const-string v1, "android.intent.action.LOCALE_CHANGED"
 
@@ -79,24 +71,15 @@
 
     move-result v1
 
-    if-nez v1, :cond_1
+    if-eqz v1, :cond_1
 
-    const-string v1, "android.intent.action.SKIN_CHANGED"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    .line 739
-    :cond_1
+    .line 570
     iget-object v1, p0, Lcom/android/server/DeviceStorageMonitorService$3;->this$0:Lcom/android/server/DeviceStorageMonitorService;
 
     #setter for: Lcom/android/server/DeviceStorageMonitorService;->mConfigChanged:Z
-    invoke-static {v1, v3}, Lcom/android/server/DeviceStorageMonitorService;->access$202(Lcom/android/server/DeviceStorageMonitorService;Z)Z
+    invoke-static {v1, v2}, Lcom/android/server/DeviceStorageMonitorService;->access$202(Lcom/android/server/DeviceStorageMonitorService;Z)Z
 
-    .line 740
+    .line 571
     iget-object v1, p0, Lcom/android/server/DeviceStorageMonitorService$3;->this$0:Lcom/android/server/DeviceStorageMonitorService;
 
     #getter for: Lcom/android/server/DeviceStorageMonitorService;->mDialog:Landroid/app/AlertDialog;
@@ -104,9 +87,9 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_1
 
-    .line 741
+    .line 572
     iget-object v1, p0, Lcom/android/server/DeviceStorageMonitorService$3;->this$0:Lcom/android/server/DeviceStorageMonitorService;
 
     #getter for: Lcom/android/server/DeviceStorageMonitorService;->mDialog:Landroid/app/AlertDialog;
@@ -116,7 +99,7 @@
 
     invoke-virtual {v1}, Landroid/app/AlertDialog;->cancel()V
 
-    .line 744
-    :cond_2
+    .line 575
+    :cond_1
     return-void
 .end method

@@ -21,28 +21,28 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 698
+    .line 523
     invoke-direct {p0}, Lcom/android/internal/telephony/cat/ResponseData;-><init>()V
 
-    .line 694
+    .line 519
     iput v0, p0, Lcom/android/internal/telephony/cat/GetChannelStatusResponseData;->mChannelId:I
 
-    .line 695
+    .line 520
     iput v0, p0, Lcom/android/internal/telephony/cat/GetChannelStatusResponseData;->mChannelStatus:I
 
-    .line 696
+    .line 521
     iput v0, p0, Lcom/android/internal/telephony/cat/GetChannelStatusResponseData;->mChannelStatusInfo:I
 
-    .line 699
+    .line 524
     iput p1, p0, Lcom/android/internal/telephony/cat/GetChannelStatusResponseData;->mChannelId:I
 
-    .line 700
+    .line 525
     iput p2, p0, Lcom/android/internal/telephony/cat/GetChannelStatusResponseData;->mChannelStatus:I
 
-    .line 701
+    .line 526
     iput p3, p0, Lcom/android/internal/telephony/cat/GetChannelStatusResponseData;->mChannelStatusInfo:I
 
-    .line 702
+    .line 527
     return-void
 .end method
 
@@ -53,14 +53,14 @@
     .parameter "buf"
 
     .prologue
-    .line 706
+    .line 531
     if-nez p1, :cond_0
 
-    .line 715
+    .line 540
     :goto_0
     return-void
 
-    .line 710
+    .line 535
     :cond_0
     sget-object v1, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;->CHANNEL_STATUS:Lcom/android/internal/telephony/cat/ComprehensionTlvTag;
 
@@ -70,16 +70,16 @@
 
     or-int/lit16 v0, v1, 0x80
 
-    .line 711
+    .line 536
     .local v0, tag:I
     invoke-virtual {p1, v0}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 712
+    .line 537
     const/4 v1, 0x2
 
     invoke-virtual {p1, v1}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 713
+    .line 538
     iget v1, p0, Lcom/android/internal/telephony/cat/GetChannelStatusResponseData;->mChannelId:I
 
     and-int/lit8 v1, v1, 0x7
@@ -90,7 +90,7 @@
 
     invoke-virtual {p1, v1}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 714
+    .line 539
     iget v1, p0, Lcom/android/internal/telephony/cat/GetChannelStatusResponseData;->mChannelStatusInfo:I
 
     invoke-virtual {p1, v1}, Ljava/io/ByteArrayOutputStream;->write(I)V

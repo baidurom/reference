@@ -174,7 +174,7 @@
     if-eqz v0, :cond_1
 
     .line 57
-    const v3, 0x3020023
+    const v3, 0x4020023
 
     invoke-virtual {v0, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -193,7 +193,7 @@
 
     check-cast v3, Landroid/content/Context;
 
-    const v4, 0x30a000b
+    const v4, 0x40a000b
 
     invoke-static {v3, v4}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -267,7 +267,7 @@
     .parameter "view"
 
     .prologue
-    const v5, 0x3020023
+    const v5, 0x4020023
 
     const/4 v4, -0x1
 
@@ -326,7 +326,7 @@
 
     move-result-object v2
 
-    const v3, 0x30800e8
+    const v3, 0x40800e9
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -355,7 +355,7 @@
 
     check-cast v2, Landroid/content/Context;
 
-    const v3, 0x30a000a
+    const v3, 0x40a000a
 
     invoke-static {v2, v3}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 

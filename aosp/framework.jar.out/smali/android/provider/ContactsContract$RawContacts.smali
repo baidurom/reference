@@ -59,7 +59,7 @@
     .locals 2
 
     .prologue
-    .line 2718
+    .line 2709
     sget-object v0, Landroid/provider/ContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string/jumbo v1, "raw_contacts"
@@ -77,10 +77,10 @@
     .locals 0
 
     .prologue
-    .line 2711
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 2702
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2712
+    .line 2703
     return-void
 .end method
 
@@ -96,14 +96,14 @@
 
     const/4 v3, 0x0
 
-    .line 2807
+    .line 2800
     const-string v0, "data"
 
     invoke-static {p1, v0}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v1
 
-    .line 2808
+    .line 2801
     .local v1, dataUri:Landroid/net/Uri;
     const/4 v0, 0x2
 
@@ -113,7 +113,7 @@
 
     aput-object v0, v2, v4
 
-    const-string/jumbo v0, "lookup"
+    const-string v0, "lookup"
 
     aput-object v0, v2, v5
 
@@ -127,11 +127,11 @@
 
     move-result-object v8
 
-    .line 2812
+    .line 2805
     .local v8, cursor:Landroid/database/Cursor;
     const/4 v10, 0x0
 
-    .line 2814
+    .line 2807
     .local v10, lookupUri:Landroid/net/Uri;
     if-eqz v8, :cond_1
 
@@ -142,14 +142,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 2815
+    .line 2808
     const/4 v0, 0x0
 
     invoke-interface {v8, v0}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v6
 
-    .line 2816
+    .line 2809
     .local v6, contactId:J
     const/4 v0, 0x1
 
@@ -157,7 +157,7 @@
 
     move-result-object v9
 
-    .line 2817
+    .line 2810
     .local v9, lookupKey:Ljava/lang/String;
     invoke-static {v6, v7, v9}, Landroid/provider/ContactsContract$Contacts;->getLookupUri(JLjava/lang/String;)Landroid/net/Uri;
     :try_end_0
@@ -165,20 +165,20 @@
 
     move-result-object v10
 
-    .line 2820
+    .line 2813
     .end local v10           #lookupUri:Landroid/net/Uri;
     if-eqz v8, :cond_0
 
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
-    .line 2822
+    .line 2815
     .end local v6           #contactId:J
     .end local v9           #lookupKey:Ljava/lang/String;
     :cond_0
     :goto_0
     return-object v10
 
-    .line 2820
+    .line 2813
     .restart local v10       #lookupUri:Landroid/net/Uri;
     :cond_1
     if-eqz v8, :cond_0
@@ -203,7 +203,7 @@
     .parameter "cursor"
 
     .prologue
-    .line 2969
+    .line 2962
     new-instance v0, Landroid/provider/ContactsContract$RawContacts$EntityIteratorImpl;
 
     invoke-direct {v0, p0}, Landroid/provider/ContactsContract$RawContacts$EntityIteratorImpl;-><init>(Landroid/database/Cursor;)V

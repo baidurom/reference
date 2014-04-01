@@ -13,9 +13,9 @@
 
 
 # instance fields
-.field mHandler:Landroid/os/Handler;
+.field private lock:Ljava/lang/Object;
 
-.field private final mLock:Ljava/lang/Object;
+.field mHandler:Landroid/os/Handler;
 
 .field private mTransport:Landroid/database/ContentObserver$Transport;
 
@@ -26,20 +26,20 @@
     .parameter "handler"
 
     .prologue
-    .line 37
+    .line 79
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 27
+    .line 30
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object v0, p0, Landroid/database/ContentObserver;->mLock:Ljava/lang/Object;
+    iput-object v0, p0, Landroid/database/ContentObserver;->lock:Ljava/lang/Object;
 
-    .line 38
+    .line 80
     iput-object p1, p0, Landroid/database/ContentObserver;->mHandler:Landroid/os/Handler;
 
-    .line 39
+    .line 81
     return-void
 .end method
 
@@ -49,53 +49,36 @@
     .locals 1
 
     .prologue
-    .line 82
+    .line 119
     const/4 v0, 0x0
 
     return v0
 .end method
 
 .method public final dispatchChange(Z)V
-    .locals 1
-    .parameter "selfChange"
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    .prologue
-    .line 146
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, p1, v0}, Landroid/database/ContentObserver;->dispatchChange(ZLandroid/net/Uri;)V
-
-    .line 147
-    return-void
-.end method
-
-.method public final dispatchChange(ZLandroid/net/Uri;)V
     .locals 2
     .parameter "selfChange"
-    .parameter "uri"
 
     .prologue
-    .line 162
+    .line 132
     iget-object v0, p0, Landroid/database/ContentObserver;->mHandler:Landroid/os/Handler;
 
     if-nez v0, :cond_0
 
-    .line 163
-    invoke-virtual {p0, p1, p2}, Landroid/database/ContentObserver;->onChange(ZLandroid/net/Uri;)V
+    .line 133
+    invoke-virtual {p0, p1}, Landroid/database/ContentObserver;->onChange(Z)V
 
-    .line 167
+    .line 137
     :goto_0
     return-void
 
-    .line 165
+    .line 135
     :cond_0
     iget-object v0, p0, Landroid/database/ContentObserver;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Landroid/database/ContentObserver$NotificationRunnable;
 
-    invoke-direct {v1, p0, p1, p2}, Landroid/database/ContentObserver$NotificationRunnable;-><init>(Landroid/database/ContentObserver;ZLandroid/net/Uri;)V
+    invoke-direct {v1, p0, p1}, Landroid/database/ContentObserver$NotificationRunnable;-><init>(Landroid/database/ContentObserver;Z)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -106,25 +89,25 @@
     .locals 2
 
     .prologue
-    .line 47
-    iget-object v1, p0, Landroid/database/ContentObserver;->mLock:Ljava/lang/Object;
+    .line 89
+    iget-object v1, p0, Landroid/database/ContentObserver;->lock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 48
+    .line 90
     :try_start_0
     iget-object v0, p0, Landroid/database/ContentObserver;->mTransport:Landroid/database/ContentObserver$Transport;
 
     if-nez v0, :cond_0
 
-    .line 49
+    .line 91
     new-instance v0, Landroid/database/ContentObserver$Transport;
 
     invoke-direct {v0, p0}, Landroid/database/ContentObserver$Transport;-><init>(Landroid/database/ContentObserver;)V
 
     iput-object v0, p0, Landroid/database/ContentObserver;->mTransport:Landroid/database/ContentObserver$Transport;
 
-    .line 51
+    .line 93
     :cond_0
     iget-object v0, p0, Landroid/database/ContentObserver;->mTransport:Landroid/database/ContentObserver$Transport;
 
@@ -132,7 +115,7 @@
 
     return-object v0
 
-    .line 52
+    .line 94
     :catchall_0
     move-exception v0
 
@@ -148,20 +131,7 @@
     .parameter "selfChange"
 
     .prologue
-    .line 95
-    return-void
-.end method
-
-.method public onChange(ZLandroid/net/Uri;)V
-    .locals 0
-    .parameter "selfChange"
-    .parameter "uri"
-
-    .prologue
     .line 129
-    invoke-virtual {p0, p1}, Landroid/database/ContentObserver;->onChange(Z)V
-
-    .line 130
     return-void
 .end method
 
@@ -169,34 +139,34 @@
     .locals 3
 
     .prologue
-    .line 62
-    iget-object v2, p0, Landroid/database/ContentObserver;->mLock:Ljava/lang/Object;
+    .line 104
+    iget-object v2, p0, Landroid/database/ContentObserver;->lock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 63
+    .line 105
     :try_start_0
     iget-object v0, p0, Landroid/database/ContentObserver;->mTransport:Landroid/database/ContentObserver$Transport;
 
-    .line 64
+    .line 106
     .local v0, oldTransport:Landroid/database/ContentObserver$Transport;
     if-eqz v0, :cond_0
 
-    .line 65
+    .line 107
     invoke-virtual {v0}, Landroid/database/ContentObserver$Transport;->releaseContentObserver()V
 
-    .line 66
+    .line 108
     const/4 v1, 0x0
 
     iput-object v1, p0, Landroid/database/ContentObserver;->mTransport:Landroid/database/ContentObserver$Transport;
 
-    .line 68
+    .line 110
     :cond_0
     monitor-exit v2
 
     return-object v0
 
-    .line 69
+    .line 111
     .end local v0           #oldTransport:Landroid/database/ContentObserver$Transport;
     :catchall_0
     move-exception v1

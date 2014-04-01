@@ -17,7 +17,7 @@
 # instance fields
 .field mBinder:Landroid/os/IBinder;
 
-.field mCallback:Lcom/mediatek/common/audioprofile/IAudioProfileListener;
+.field mCallback:Lcom/mediatek/audioprofile/IAudioProfileListener;
 
 .field mEvent:I
 
@@ -27,7 +27,7 @@
     .locals 0
 
     .prologue
-    .line 6897
+    .line 4150
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,7 +38,7 @@
     .parameter "x0"
 
     .prologue
-    .line 6897
+    .line 4150
     invoke-direct {p0}, Landroid/media/AudioService$Record;-><init>()V
 
     return-void

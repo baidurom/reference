@@ -769,7 +769,7 @@
     invoke-virtual {v6, v10}, Landroid/view/Window;->requestFeature(I)Z
 
     .line 97
-    const/16 v7, 0x7ec
+    const/16 v7, 0x7d8
 
     invoke-virtual {v6, v7}, Landroid/view/Window;->setType(I)V
 

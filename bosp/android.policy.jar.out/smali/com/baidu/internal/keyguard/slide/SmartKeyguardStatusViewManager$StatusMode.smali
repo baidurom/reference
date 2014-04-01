@@ -66,7 +66,7 @@
 
     const/4 v3, 0x0
 
-    .line 723
+    .line 1092
     new-instance v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;
 
     const-string v1, "Normal"
@@ -75,7 +75,7 @@
 
     sput-object v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;->Normal:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;
 
-    .line 728
+    .line 1097
     new-instance v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;
 
     const-string v1, "NetworkLocked"
@@ -84,7 +84,7 @@
 
     sput-object v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;->NetworkLocked:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;
 
-    .line 733
+    .line 1102
     new-instance v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;
 
     const-string v1, "SimMissing"
@@ -93,7 +93,7 @@
 
     sput-object v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;->SimMissing:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;
 
-    .line 738
+    .line 1107
     new-instance v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;
 
     const-string v1, "SimNotReady"
@@ -102,7 +102,7 @@
 
     sput-object v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;->SimNotReady:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;
 
-    .line 745
+    .line 1114
     new-instance v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;
 
     const-string v1, "SimMissingLocked"
@@ -111,7 +111,7 @@
 
     sput-object v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;->SimMissingLocked:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;
 
-    .line 750
+    .line 1116
     new-instance v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;
 
     const-string v1, "NetworkSearching"
@@ -122,7 +122,7 @@
 
     sput-object v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;->NetworkSearching:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;
 
-    .line 756
+    .line 1121
     new-instance v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;
 
     const-string v1, "SimPukLocked"
@@ -133,7 +133,7 @@
 
     sput-object v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;->SimPukLocked:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;
 
-    .line 761
+    .line 1126
     new-instance v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;
 
     const-string v1, "SimLocked"
@@ -144,7 +144,7 @@
 
     sput-object v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;->SimLocked:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;
 
-    .line 766
+    .line 1131
     new-instance v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;
 
     const-string v1, "SimPermDisabled"
@@ -155,7 +155,7 @@
 
     sput-object v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;->SimPermDisabled:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;
 
-    .line 771
+    .line 1136
     new-instance v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;
 
     const-string v1, "SimUnknown"
@@ -166,7 +166,7 @@
 
     sput-object v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;->SimUnknown:Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;
 
-    .line 719
+    .line 1088
     const/16 v0, 0xa
 
     new-array v0, v0, [Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;
@@ -238,13 +238,13 @@
     .end annotation
 
     .prologue
-    .line 775
+    .line 1139
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 776
+    .line 1140
     iput-boolean p3, p0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;->mShowStatusLines:Z
 
-    .line 777
+    .line 1141
     return-void
 .end method
 
@@ -253,7 +253,7 @@
     .parameter "name"
 
     .prologue
-    .line 719
+    .line 1088
     const-class v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -269,7 +269,7 @@
     .locals 1
 
     .prologue
-    .line 719
+    .line 1088
     sget-object v0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;->$VALUES:[Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;
 
     invoke-virtual {v0}, [Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;->clone()Ljava/lang/Object;
@@ -287,7 +287,7 @@
     .locals 1
 
     .prologue
-    .line 784
+    .line 1148
     iget-boolean v0, p0, Lcom/baidu/internal/keyguard/slide/SmartKeyguardStatusViewManager$StatusMode;->mShowStatusLines:Z
 
     return v0

@@ -48,7 +48,7 @@
 
     const/4 v2, 0x0
 
-    .line 82
+    .line 75
     new-instance v0, Landroid/renderscript/Font$Style;
 
     const-string v1, "NORMAL"
@@ -57,7 +57,7 @@
 
     sput-object v0, Landroid/renderscript/Font$Style;->NORMAL:Landroid/renderscript/Font$Style;
 
-    .line 86
+    .line 76
     new-instance v0, Landroid/renderscript/Font$Style;
 
     const-string v1, "BOLD"
@@ -66,7 +66,7 @@
 
     sput-object v0, Landroid/renderscript/Font$Style;->BOLD:Landroid/renderscript/Font$Style;
 
-    .line 90
+    .line 77
     new-instance v0, Landroid/renderscript/Font$Style;
 
     const-string v1, "ITALIC"
@@ -75,7 +75,7 @@
 
     sput-object v0, Landroid/renderscript/Font$Style;->ITALIC:Landroid/renderscript/Font$Style;
 
-    .line 94
+    .line 78
     new-instance v0, Landroid/renderscript/Font$Style;
 
     const-string v1, "BOLD_ITALIC"
@@ -84,7 +84,7 @@
 
     sput-object v0, Landroid/renderscript/Font$Style;->BOLD_ITALIC:Landroid/renderscript/Font$Style;
 
-    .line 78
+    .line 74
     const/4 v0, 0x4
 
     new-array v0, v0, [Landroid/renderscript/Font$Style;
@@ -121,7 +121,7 @@
     .end annotation
 
     .prologue
-    .line 78
+    .line 74
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -132,7 +132,7 @@
     .parameter "name"
 
     .prologue
-    .line 78
+    .line 74
     const-class v0, Landroid/renderscript/Font$Style;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -148,7 +148,7 @@
     .locals 1
 
     .prologue
-    .line 78
+    .line 74
     sget-object v0, Landroid/renderscript/Font$Style;->$VALUES:[Landroid/renderscript/Font$Style;
 
     invoke-virtual {v0}, [Landroid/renderscript/Font$Style;->clone()Ljava/lang/Object;

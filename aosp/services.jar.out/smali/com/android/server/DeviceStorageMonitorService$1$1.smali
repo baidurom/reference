@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 201
+    .line 158
     iput-object p1, p0, Lcom/android/server/DeviceStorageMonitorService$1$1;->this$1:Lcom/android/server/DeviceStorageMonitorService$1;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -45,24 +45,24 @@
     .prologue
     const/high16 v5, 0x1000
 
-    .line 203
+    .line 160
     if-nez p2, :cond_0
 
-    .line 204
+    .line 161
     new-instance v1, Landroid/content/Intent;
 
     invoke-direct {v1}, Landroid/content/Intent;-><init>()V
 
-    .line 205
+    .line 162
     .local v1, mIntent:Landroid/content/Intent;
     const-string v2, "android.intent.action.MANAGE_PACKAGE_STORAGE"
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 207
+    .line 163
     invoke-virtual {v1, v5}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 208
+    .line 164
     iget-object v2, p0, Lcom/android/server/DeviceStorageMonitorService$1$1;->this$1:Lcom/android/server/DeviceStorageMonitorService$1;
 
     iget-object v2, v2, Lcom/android/server/DeviceStorageMonitorService$1;->this$0:Lcom/android/server/DeviceStorageMonitorService;
@@ -74,14 +74,14 @@
 
     invoke-virtual {v2, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 210
+    .line 166
     .end local v1           #mIntent:Landroid/content/Intent;
     :cond_0
     const/4 v2, 0x1
 
     if-ne p2, v2, :cond_1
 
-    .line 212
+    .line 168
     :try_start_0
     invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
 
@@ -93,27 +93,27 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 216
+    .line 172
     :goto_0
     new-instance v1, Landroid/content/Intent;
 
     invoke-direct {v1}, Landroid/content/Intent;-><init>()V
 
-    .line 217
+    .line 173
     .restart local v1       #mIntent:Landroid/content/Intent;
     const-string v2, "android.intent.action.MAIN"
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 218
+    .line 174
     const-string v2, "android.intent.category.APP_EMAIL"
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 219
+    .line 175
     invoke-virtual {v1, v5}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 220
+    .line 176
     iget-object v2, p0, Lcom/android/server/DeviceStorageMonitorService$1$1;->this$1:Lcom/android/server/DeviceStorageMonitorService$1;
 
     iget-object v2, v2, Lcom/android/server/DeviceStorageMonitorService$1;->this$0:Lcom/android/server/DeviceStorageMonitorService;
@@ -125,16 +125,16 @@
 
     invoke-virtual {v2, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 222
+    .line 178
     .end local v1           #mIntent:Landroid/content/Intent;
     :cond_1
     return-void
 
-    .line 213
+    .line 169
     :catch_0
     move-exception v0
 
-    .line 214
+    .line 170
     .local v0, e:Ljava/io/IOException;
     const-string v2, "DeviceStorageMonitorService"
 

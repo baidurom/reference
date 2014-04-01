@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/webkit/WebViewCore;->reachedMaxAppCacheSize(JJ)V
+    value = Landroid/webkit/WebViewCore;->reachedMaxAppCacheSize(J)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 506
+    .line 405
     iput-object p1, p0, Landroid/webkit/WebViewCore$2;->this$0:Landroid/webkit/WebViewCore;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,23 +38,16 @@
 
 # virtual methods
 .method public updateQuota(J)V
-    .locals 2
-    .parameter "newQuota"
+    .locals 1
+    .parameter "quota"
 
     .prologue
-    .line 509
+    .line 407
     iget-object v0, p0, Landroid/webkit/WebViewCore$2;->this$0:Landroid/webkit/WebViewCore;
 
-    iget-object v1, p0, Landroid/webkit/WebViewCore$2;->this$0:Landroid/webkit/WebViewCore;
+    #calls: Landroid/webkit/WebViewCore;->nativeSetNewStorageLimit(J)V
+    invoke-static {v0, p1, p2}, Landroid/webkit/WebViewCore;->access$300(Landroid/webkit/WebViewCore;J)V
 
-    #getter for: Landroid/webkit/WebViewCore;->mNativeClass:I
-    invoke-static {v1}, Landroid/webkit/WebViewCore;->access$300(Landroid/webkit/WebViewCore;)I
-
-    move-result v1
-
-    #calls: Landroid/webkit/WebViewCore;->nativeSetNewStorageLimit(IJ)V
-    invoke-static {v0, v1, p1, p2}, Landroid/webkit/WebViewCore;->access$400(Landroid/webkit/WebViewCore;IJ)V
-
-    .line 510
+    .line 408
     return-void
 .end method

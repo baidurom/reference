@@ -8,15 +8,17 @@
 
 
 # direct methods
-.method public constructor <init>(Landroid/webkit/JsResult$ResultReceiver;)V
-    .locals 0
-    .parameter "receiver"
+.method constructor <init>(Landroid/webkit/CallbackProxy;)V
+    .locals 1
+    .parameter "proxy"
 
     .prologue
-    .line 43
-    invoke-direct {p0, p1}, Landroid/webkit/JsResult;-><init>(Landroid/webkit/JsResult$ResultReceiver;)V
+    .line 40
+    const/4 v0, 0x0
 
-    .line 44
+    invoke-direct {p0, p1, v0}, Landroid/webkit/JsResult;-><init>(Landroid/webkit/CallbackProxy;Z)V
+
+    .line 41
     return-void
 .end method
 
@@ -37,12 +39,28 @@
     return-void
 .end method
 
-.method public getStringResult()Ljava/lang/String;
+.method getStringResult()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 50
+    .line 44
     iget-object v0, p0, Landroid/webkit/JsPromptResult;->mStringResult:Ljava/lang/String;
 
     return-object v0
+.end method
+
+.method handleDefault()V
+    .locals 1
+
+    .prologue
+    .line 49
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Landroid/webkit/JsPromptResult;->mStringResult:Ljava/lang/String;
+
+    .line 50
+    invoke-super {p0}, Landroid/webkit/JsResult;->handleDefault()V
+
+    .line 51
+    return-void
 .end method

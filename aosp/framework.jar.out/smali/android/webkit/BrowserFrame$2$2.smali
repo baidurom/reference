@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 1123
+    .line 1220
     iput-object p1, p0, Landroid/webkit/BrowserFrame$2$2;->this$1:Landroid/webkit/BrowserFrame$2;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,7 +41,7 @@
     .locals 3
 
     .prologue
-    .line 1125
+    .line 1222
     iget-object v0, p0, Landroid/webkit/BrowserFrame$2$2;->this$1:Landroid/webkit/BrowserFrame$2;
 
     iget-object v0, v0, Landroid/webkit/BrowserFrame$2;->this$0:Landroid/webkit/BrowserFrame;
@@ -57,6 +57,6 @@
     #calls: Landroid/webkit/BrowserFrame;->nativeSslCertErrorCancel(II)V
     invoke-static {v0, v1, v2}, Landroid/webkit/BrowserFrame;->access$300(Landroid/webkit/BrowserFrame;II)V
 
-    .line 1126
+    .line 1223
     return-void
 .end method

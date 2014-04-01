@@ -13,7 +13,7 @@
 
     .prologue
     .line 32
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 33
     const/4 v0, 0x4
@@ -37,7 +37,7 @@
     const/4 v2, 0x0
 
     .line 44
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 45
     const/4 v0, 0x4
@@ -63,8 +63,8 @@
 # virtual methods
 .method public get(II)F
     .locals 2
-    .parameter "x"
-    .parameter "y"
+    .parameter "i"
+    .parameter "j"
 
     .prologue
     .line 68
@@ -394,8 +394,8 @@
 
 .method public set(IIF)V
     .locals 2
-    .parameter "x"
-    .parameter "y"
+    .parameter "i"
+    .parameter "j"
     .parameter "v"
 
     .prologue

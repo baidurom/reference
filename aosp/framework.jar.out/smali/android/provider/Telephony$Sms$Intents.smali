@@ -15,10 +15,6 @@
 
 
 # static fields
-.field public static final CDMA_AUTO_SMS_REGISTER_FEASIBLE_ACTION:Ljava/lang/String; = "android.provider.Telephony.CDMA_AUTO_SMS_REGISTER_FEASIBLE"
-
-.field public static final CDMA_REG_SMS_ACTION:Ljava/lang/String; = "android.telephony.sms.CDMA_REG_SMS_ACTION"
-
 .field public static final DATA_SMS_RECEIVED_ACTION:Ljava/lang/String; = "android.intent.action.DATA_SMS_RECEIVED"
 
 .field public static final DM_REGISTER_SMS_RECEIVED_ACTION:Ljava/lang/String; = "android.intent.action.DM_REGISTER_SMS_RECEIVED"
@@ -43,8 +39,6 @@
 
 .field public static final SMS_REJECTED_ACTION:Ljava/lang/String; = "android.provider.Telephony.SMS_REJECTED"
 
-.field public static final SMS_SERVICE_CATEGORY_PROGRAM_DATA_RECEIVED_ACTION:Ljava/lang/String; = "android.provider.Telephony.SMS_SERVICE_CATEGORY_PROGRAM_DATA_RECEIVED"
-
 .field public static final SMS_STATE_CHANGED_ACTION:Ljava/lang/String; = "android.provider.Telephony.SMS_STATE_CHANGED"
 
 .field public static final WAP_PUSH_RECEIVED_ACTION:Ljava/lang/String; = "android.provider.Telephony.WAP_PUSH_RECEIVED"
@@ -55,8 +49,8 @@
     .locals 0
 
     .prologue
-    .line 697
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 677
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -66,7 +60,7 @@
     .parameter "intent"
 
     .prologue
-    .line 956
+    .line 894
     const-string/jumbo v8, "pdus"
 
     invoke-virtual {p0, v8}, Landroid/content/Intent;->getSerializableExtra(Ljava/lang/String;)Ljava/io/Serializable;
@@ -79,7 +73,7 @@
 
     check-cast v2, [Ljava/lang/Object;
 
-    .line 957
+    .line 895
     .local v2, messages:[Ljava/lang/Object;
     const-string v8, "format"
 
@@ -87,24 +81,24 @@
 
     move-result-object v0
 
-    .line 960
+    .line 898
     .local v0, format:Ljava/lang/String;
     if-nez v2, :cond_1
 
-    .line 961
+    .line 899
     const/4 v3, 0x0
 
-    .line 984
+    .line 922
     :cond_0
     return-object v3
 
-    .line 964
+    .line 902
     :cond_1
     array-length v8, v2
 
     new-array v5, v8, [[B
 
-    .line 966
+    .line 904
     .local v5, pduObjs:[[B
     const-string/jumbo v8, "simId"
 
@@ -114,7 +108,7 @@
 
     move-result v7
 
-    .line 967
+    .line 905
     .local v7, simId:I
     const-string v8, "Telephony"
 
@@ -138,7 +132,7 @@
 
     invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 971
+    .line 909
     const/4 v1, 0x0
 
     .local v1, i:I
@@ -147,7 +141,7 @@
 
     if-ge v1, v8, :cond_2
 
-    .line 972
+    .line 910
     aget-object v8, v2, v1
 
     check-cast v8, [B
@@ -156,47 +150,47 @@
 
     aput-object v8, v5, v1
 
-    .line 971
+    .line 909
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 974
+    .line 912
     :cond_2
     array-length v8, v5
 
     new-array v6, v8, [[B
 
-    .line 975
+    .line 913
     .local v6, pdus:[[B
     array-length v4, v6
 
-    .line 976
+    .line 914
     .local v4, pduCount:I
     new-array v3, v4, [Landroid/telephony/SmsMessage;
 
-    .line 977
+    .line 915
     .local v3, msgs:[Landroid/telephony/SmsMessage;
     const/4 v1, 0x0
 
     :goto_1
     if-ge v1, v4, :cond_0
 
-    .line 978
+    .line 916
     aget-object v8, v5, v1
 
     aput-object v8, v6, v1
 
-    .line 981
+    .line 919
     aget-object v8, v6, v1
 
-    invoke-static {v8, v0, v7}, Landroid/telephony/gemini/GeminiSmsMessage;->createFromPdu([BLjava/lang/String;I)Landroid/telephony/gemini/GeminiSmsMessage;
+    invoke-static {v8, v7}, Landroid/telephony/gemini/GeminiSmsMessage;->createFromPdu([BI)Landroid/telephony/gemini/GeminiSmsMessage;
 
     move-result-object v8
 
     aput-object v8, v3, v1
 
-    .line 977
+    .line 915
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1

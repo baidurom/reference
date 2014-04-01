@@ -32,7 +32,7 @@
 
     .prologue
     .line 36
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 52
     const/4 v0, 0x0
@@ -44,7 +44,7 @@
 
     iput-boolean v0, p0, Landroid/animation/Keyframe;->mHasValue:Z
 
-    .line 320
+    .line 318
     return-void
 .end method
 

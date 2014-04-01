@@ -10,33 +10,15 @@
 
 .field public static final MESSAGE_TYPE_POINT_TO_POINT:I = 0x0
 
-.field public static final SERVICE_CATEGORY_CMAS_CHILD_ABDUCTION_EMERGENCY:I = 0x1003
-
-.field public static final SERVICE_CATEGORY_CMAS_EXTREME_THREAT:I = 0x1001
-
-.field public static final SERVICE_CATEGORY_CMAS_LAST_RESERVED_VALUE:I = 0x10ff
-
-.field public static final SERVICE_CATEGORY_CMAS_PRESIDENTIAL_LEVEL_ALERT:I = 0x1000
-
-.field public static final SERVICE_CATEGORY_CMAS_SEVERE_THREAT:I = 0x1002
-
-.field public static final SERVICE_CATEGORY_CMAS_TEST_MESSAGE:I = 0x1004
-
-.field public static final TELESERVICE_CTC_DM:I = 0xfdf1
+.field public static final SMS_BEARER_DATA_MAX:I = 0xff
 
 .field public static final TELESERVICE_MWI:I = 0x40000
 
 .field public static final TELESERVICE_NOT_SET:I = 0x0
 
-.field public static final TELESERVICE_REG_SMS_CT:I = 0xfded
-
-.field public static final TELESERVICE_SCPT:I = 0x1006
-
 .field public static final TELESERVICE_VMN:I = 0x1003
 
 .field public static final TELESERVICE_WAP:I = 0x1004
-
-.field public static final TELESERVICE_WAP_CT:I = 0xfdea
 
 .field public static final TELESERVICE_WEMT:I = 0x1005
 
@@ -72,14 +54,14 @@
     .locals 1
 
     .prologue
-    .line 132
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 121
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 79
+    .line 68
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/telephony/cdma/sms/SmsEnvelope;->teleService:I
 
-    .line 134
+    .line 123
     return-void
 .end method

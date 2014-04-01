@@ -126,9 +126,8 @@
 
 
 # virtual methods
-.method getID(Landroid/renderscript/RenderScript;)I
+.method getID()I
     .locals 2
-    .parameter "rs"
 
     .prologue
     .line 34

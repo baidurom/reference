@@ -1,11 +1,11 @@
 .class Lcom/android/server/MountService$4;
-.super Landroid/content/BroadcastReceiver;
+.super Ljava/lang/Thread;
 .source "MountService.java"
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/server/MountService;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/server/MountService;->notifyShareAvailabilityChange(Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,105 +24,78 @@
     .parameter
 
     .prologue
-    .line 866
+    .line 1385
     iput-object p1, p0, Lcom/android/server/MountService$4;->this$0:Lcom/android/server/MountService;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 3
-    .parameter "context"
-    .parameter "intent"
+.method public run()V
+    .locals 4
 
     .prologue
-    .line 869
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    .line 1388
+    invoke-static {}, Lcom/android/server/MountService;->access$2400()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    .line 870
-    .local v0, action:Ljava/lang/String;
-    const-string v1, "com.mediatek.dm.LAWMO_UNLOCK"
+    monitor-enter v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 1389
+    :try_start_0
+    invoke-static {}, Lcom/android/server/MountService;->access$500()Ljava/lang/Object;
 
-    move-result v1
+    move-result-object v2
 
-    if-eqz v1, :cond_1
+    monitor-enter v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 871
-    const-string v1, "MountService"
+    .line 1390
+    :try_start_1
+    iget-object v0, p0, Lcom/android/server/MountService$4;->this$0:Lcom/android/server/MountService;
 
-    const-string v2, "USB enable"
+    const/4 v3, 0x0
 
-    invoke-static {v1, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v0, v3}, Lcom/android/server/MountService;->setUsbMassStorageEnabled(Z)V
 
-    .line 872
-    new-instance v1, Lcom/android/server/MountService$4$1;
+    .line 1391
+    monitor-exit v2
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    invoke-direct {v1, p0}, Lcom/android/server/MountService$4$1;-><init>(Lcom/android/server/MountService$4;)V
+    .line 1406
+    :try_start_2
+    monitor-exit v1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    invoke-virtual {v1}, Lcom/android/server/MountService$4$1;->start()V
-
-    .line 942
-    :cond_0
-    :goto_0
+    .line 1407
     return-void
 
-    .line 883
-    :cond_1
-    const-string v1, "com.mediatek.dm.LAWMO_LOCK"
+    .line 1391
+    :catchall_0
+    move-exception v0
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    :try_start_3
+    monitor-exit v2
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    move-result v1
+    :try_start_4
+    throw v0
 
-    if-eqz v1, :cond_2
+    .line 1406
+    :catchall_1
+    move-exception v0
 
-    .line 884
-    const-string v1, "MountService"
+    monitor-exit v1
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    const-string v2, "USB disable"
-
-    invoke-static {v1, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 885
-    new-instance v1, Lcom/android/server/MountService$4$2;
-
-    invoke-direct {v1, p0}, Lcom/android/server/MountService$4$2;-><init>(Lcom/android/server/MountService$4;)V
-
-    invoke-virtual {v1}, Lcom/android/server/MountService$4$2;->start()V
-
-    goto :goto_0
-
-    .line 896
-    :cond_2
-    const-string v1, "com.mediatek.dm.LAWMO_WIPE"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 897
-    const-string v1, "MountService"
-
-    const-string v2, "format SD"
-
-    invoke-static {v1, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 898
-    new-instance v1, Lcom/android/server/MountService$4$3;
-
-    invoke-direct {v1, p0}, Lcom/android/server/MountService$4$3;-><init>(Lcom/android/server/MountService$4;)V
-
-    invoke-virtual {v1}, Lcom/android/server/MountService$4$3;->start()V
-
-    goto :goto_0
+    throw v0
 .end method

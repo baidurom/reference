@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final DF_ADF:Ljava/lang/String; = "7FFF"
+.field public static final DF_ADFISIM:Ljava/lang/String; = "7FFF"
 
 .field public static final DF_CDMA:Ljava/lang/String; = "7F25"
 
@@ -46,8 +46,6 @@
 
 .field public static final EF_ECC:I = 0x6fb7
 
-.field public static final EF_ELP:I = 0x2f05
-
 .field public static final EF_EXT1:I = 0x6f4a
 
 .field public static final EF_EXT2:I = 0x6f4b
@@ -70,13 +68,9 @@
 
 .field public static final EF_IMPU:I = 0x6f04
 
-.field public static final EF_IMSI:I = 0x6f07
-
 .field public static final EF_INFO_CPHS:I = 0x6f16
 
 .field public static final EF_IST:I = 0x6f07
-
-.field public static final EF_LI:I = 0x6f05
 
 .field public static final EF_MAILBOX_CPHS:I = 0x6f17
 
@@ -98,8 +92,6 @@
 
 .field public static final EF_PNN:I = 0x6fc5
 
-.field public static final EF_RAT:I = 0x4f36
-
 .field public static final EF_RUIM_SPN:I = 0x6f41
 
 .field public static final EF_SDN:I = 0x6f49
@@ -115,8 +107,6 @@
 .field public static final EF_SPN_SHORT_CPHS:I = 0x6f18
 
 .field public static final EF_SST:I = 0x6f38
-
-.field public static final EF_SUME:I = 0x6f54
 
 .field public static final EF_VOICE_MAIL_INDICATOR_CPHS:I = 0x6f11
 

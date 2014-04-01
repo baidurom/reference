@@ -26,9 +26,7 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "android.bluetooth.IBluetoothCallback"
 
-.field static final TRANSACTION_onBluetoothStateChange:I = 0x1
-
-.field static final TRANSACTION_onWholeChipReset:I = 0x2
+.field static final TRANSACTION_onRfcommChannelFound:I = 0x1
 
 
 # direct methods
@@ -105,7 +103,7 @@
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 4
+    .locals 3
     .parameter "code"
     .parameter "data"
     .parameter "reply"
@@ -117,65 +115,43 @@
     .end annotation
 
     .prologue
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
     .line 43
     sparse-switch p1, :sswitch_data_0
 
-    .line 69
+    .line 60
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    move-result v2
+    move-result v1
 
     :goto_0
-    return v2
+    return v1
 
     .line 47
     :sswitch_0
-    const-string v3, "android.bluetooth.IBluetoothCallback"
+    const-string v2, "android.bluetooth.IBluetoothCallback"
 
-    invoke-virtual {p3, v3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    invoke-virtual {p3, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     goto :goto_0
 
     .line 52
     :sswitch_1
-    const-string v3, "android.bluetooth.IBluetoothCallback"
+    const-string v2, "android.bluetooth.IBluetoothCallback"
 
-    invoke-virtual {p2, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 54
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 56
+    .line 55
     .local v0, _arg0:I
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+    invoke-virtual {p0, v0}, Landroid/bluetooth/IBluetoothCallback$Stub;->onRfcommChannelFound(I)V
 
-    move-result v1
-
-    .line 57
-    .local v1, _arg1:I
-    invoke-virtual {p0, v0, v1}, Landroid/bluetooth/IBluetoothCallback$Stub;->onBluetoothStateChange(II)V
-
-    .line 58
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    goto :goto_0
-
-    .line 63
-    .end local v0           #_arg0:I
-    .end local v1           #_arg1:I
-    :sswitch_2
-    const-string v3, "android.bluetooth.IBluetoothCallback"
-
-    invoke-virtual {p2, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 64
-    invoke-virtual {p0}, Landroid/bluetooth/IBluetoothCallback$Stub;->onWholeChipReset()V
-
-    .line 65
+    .line 56
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     goto :goto_0
@@ -186,7 +162,6 @@
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
-        0x2 -> :sswitch_2
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

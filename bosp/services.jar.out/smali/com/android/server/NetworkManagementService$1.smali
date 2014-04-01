@@ -17,15 +17,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/server/NetworkManagementService;
 
+.field final synthetic val$ifacename:Ljava/lang/String;
+
 
 # direct methods
-.method constructor <init>(Lcom/android/server/NetworkManagementService;)V
+.method constructor <init>(Lcom/android/server/NetworkManagementService;Ljava/lang/String;)V
     .locals 0
+    .parameter
     .parameter
 
     .prologue
-    .line 312
+    .line 266
     iput-object p1, p0, Lcom/android/server/NetworkManagementService$1;->this$0:Lcom/android/server/NetworkManagementService;
+
+    iput-object p2, p0, Lcom/android/server/NetworkManagementService$1;->val$ifacename:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
@@ -35,60 +40,42 @@
 
 # virtual methods
 .method public run()V
-    .locals 6
+    .locals 3
 
     .prologue
-    .line 314
-    iget-object v1, p0, Lcom/android/server/NetworkManagementService$1;->this$0:Lcom/android/server/NetworkManagementService;
+    .line 268
+    iget-object v0, p0, Lcom/android/server/NetworkManagementService$1;->this$0:Lcom/android/server/NetworkManagementService;
 
-    #getter for: Lcom/android/server/NetworkManagementService;->mContext:Landroid/content/Context;
-    invoke-static {v1}, Lcom/android/server/NetworkManagementService;->access$100(Lcom/android/server/NetworkManagementService;)Landroid/content/Context;
+    iget-object v1, p0, Lcom/android/server/NetworkManagementService$1;->val$ifacename:Ljava/lang/String;
 
-    move-result-object v1
+    #calls: Lcom/android/server/NetworkManagementService;->isWifi(Ljava/lang/String;)Z
+    invoke-static {v0, v1}, Lcom/android/server/NetworkManagementService;->access$000(Lcom/android/server/NetworkManagementService;Ljava/lang/String;)Z
 
-    const-string v2, "android.permission.CONNECTIVITY_INTERNAL"
+    move-result v0
 
-    const-string v3, "NetworkManagementService"
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v1, v2, v3}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 316
-    :try_start_0
-    iget-object v1, p0, Lcom/android/server/NetworkManagementService$1;->this$0:Lcom/android/server/NetworkManagementService;
+    .line 269
+    iget-object v0, p0, Lcom/android/server/NetworkManagementService$1;->this$0:Lcom/android/server/NetworkManagementService;
 
     #getter for: Lcom/android/server/NetworkManagementService;->mConnector:Lcom/android/server/NativeDaemonConnector;
-    invoke-static {v1}, Lcom/android/server/NetworkManagementService;->access$200(Lcom/android/server/NetworkManagementService;)Lcom/android/server/NativeDaemonConnector;
+    invoke-static {v0}, Lcom/android/server/NetworkManagementService;->access$100(Lcom/android/server/NetworkManagementService;)Lcom/android/server/NativeDaemonConnector;
+
+    move-result-object v0
+
+    const-string v1, "softap setflag"
+
+    const/4 v2, 0x0
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    const-string v2, "softap"
+    invoke-virtual {v0, v1}, Lcom/android/server/NativeDaemonConnector;->doCommand(Ljava/lang/String;)Ljava/util/ArrayList;
 
-    const/4 v3, 0x1
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    const/4 v4, 0x0
-
-    const-string v5, "clearpid"
-
-    aput-object v5, v3, v4
-
-    invoke-virtual {v1, v2, v3}, Lcom/android/server/NativeDaemonConnector;->execute(Ljava/lang/String;[Ljava/lang/Object;)Lcom/android/server/NativeDaemonEvent;
-    :try_end_0
-    .catch Lcom/android/server/NativeDaemonConnectorException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 320
+    .line 271
+    :cond_0
     return-void
-
-    .line 317
-    :catch_0
-    move-exception v0
-
-    .line 318
-    .local v0, e:Lcom/android/server/NativeDaemonConnectorException;
-    invoke-virtual {v0}, Lcom/android/server/NativeDaemonConnectorException;->rethrowAsParcelableException()Ljava/lang/IllegalArgumentException;
-
-    move-result-object v1
-
-    throw v1
 .end method

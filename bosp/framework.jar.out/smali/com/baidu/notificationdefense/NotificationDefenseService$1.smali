@@ -36,7 +36,7 @@
     .parameter
 
     .prologue
-    .line 198
+    .line 197
     iput-object p1, p0, Lcom/baidu/notificationdefense/NotificationDefenseService$1;->this$0:Lcom/baidu/notificationdefense/NotificationDefenseService;
 
     iput-object p2, p0, Lcom/baidu/notificationdefense/NotificationDefenseService$1;->val$clonePkg:Ljava/lang/String;
@@ -56,7 +56,7 @@
     .locals 4
 
     .prologue
-    .line 202
+    .line 201
     iget-object v0, p0, Lcom/baidu/notificationdefense/NotificationDefenseService$1;->this$0:Lcom/baidu/notificationdefense/NotificationDefenseService;
 
     #getter for: Lcom/baidu/notificationdefense/NotificationDefenseService;->mContext:Landroid/content/Context;
@@ -72,6 +72,6 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/baidu/notificationdefense/NfLogsHelper;->savelog(Landroid/content/Context;Ljava/lang/String;ILandroid/app/Notification;)V
 
-    .line 203
+    .line 202
     return-void
 .end method

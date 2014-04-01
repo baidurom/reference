@@ -14,7 +14,7 @@
      limitations under the License.
 -->
 
-<!-- Feature for devices with an accelerometer sensor. -->
+<!-- Feature for devices with an ambient light sensor. -->
 <permissions>
     <feature name="android.hardware.sensor.accelerometer" />
 </permissions>

@@ -17,9 +17,9 @@
 # static fields
 .field static final synthetic $SwitchMap$com$android$internal$telephony$Phone$DataActivityState:[I
 
-.field static final synthetic $SwitchMap$com$android$internal$telephony$PhoneConstants$DataState:[I
+.field static final synthetic $SwitchMap$com$android$internal$telephony$Phone$DataState:[I
 
-.field static final synthetic $SwitchMap$com$android$internal$telephony$PhoneConstants$State:[I
+.field static final synthetic $SwitchMap$com$android$internal$telephony$Phone$State:[I
 
 
 # direct methods
@@ -27,7 +27,7 @@
     .locals 3
 
     .prologue
-    .line 320
+    .line 268
     invoke-static {}, Lcom/android/internal/telephony/Phone$DataActivityState;->values()[Lcom/android/internal/telephony/Phone$DataActivityState;
 
     move-result-object v0
@@ -101,9 +101,9 @@
     :try_end_3
     .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_5
 
-    .line 286
+    .line 234
     :goto_3
-    invoke-static {}, Lcom/android/internal/telephony/PhoneConstants$DataState;->values()[Lcom/android/internal/telephony/PhoneConstants$DataState;
+    invoke-static {}, Lcom/android/internal/telephony/Phone$DataState;->values()[Lcom/android/internal/telephony/Phone$DataState;
 
     move-result-object v0
 
@@ -111,14 +111,14 @@
 
     new-array v0, v0, [I
 
-    sput-object v0, Lcom/android/internal/telephony/DefaultPhoneNotifier$1;->$SwitchMap$com$android$internal$telephony$PhoneConstants$DataState:[I
+    sput-object v0, Lcom/android/internal/telephony/DefaultPhoneNotifier$1;->$SwitchMap$com$android$internal$telephony$Phone$DataState:[I
 
     :try_start_4
-    sget-object v0, Lcom/android/internal/telephony/DefaultPhoneNotifier$1;->$SwitchMap$com$android$internal$telephony$PhoneConstants$DataState:[I
+    sget-object v0, Lcom/android/internal/telephony/DefaultPhoneNotifier$1;->$SwitchMap$com$android$internal$telephony$Phone$DataState:[I
 
-    sget-object v1, Lcom/android/internal/telephony/PhoneConstants$DataState;->CONNECTING:Lcom/android/internal/telephony/PhoneConstants$DataState;
+    sget-object v1, Lcom/android/internal/telephony/Phone$DataState;->CONNECTING:Lcom/android/internal/telephony/Phone$DataState;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/PhoneConstants$DataState;->ordinal()I
+    invoke-virtual {v1}, Lcom/android/internal/telephony/Phone$DataState;->ordinal()I
 
     move-result v1
 
@@ -130,11 +130,11 @@
 
     :goto_4
     :try_start_5
-    sget-object v0, Lcom/android/internal/telephony/DefaultPhoneNotifier$1;->$SwitchMap$com$android$internal$telephony$PhoneConstants$DataState:[I
+    sget-object v0, Lcom/android/internal/telephony/DefaultPhoneNotifier$1;->$SwitchMap$com$android$internal$telephony$Phone$DataState:[I
 
-    sget-object v1, Lcom/android/internal/telephony/PhoneConstants$DataState;->CONNECTED:Lcom/android/internal/telephony/PhoneConstants$DataState;
+    sget-object v1, Lcom/android/internal/telephony/Phone$DataState;->CONNECTED:Lcom/android/internal/telephony/Phone$DataState;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/PhoneConstants$DataState;->ordinal()I
+    invoke-virtual {v1}, Lcom/android/internal/telephony/Phone$DataState;->ordinal()I
 
     move-result v1
 
@@ -146,11 +146,11 @@
 
     :goto_5
     :try_start_6
-    sget-object v0, Lcom/android/internal/telephony/DefaultPhoneNotifier$1;->$SwitchMap$com$android$internal$telephony$PhoneConstants$DataState:[I
+    sget-object v0, Lcom/android/internal/telephony/DefaultPhoneNotifier$1;->$SwitchMap$com$android$internal$telephony$Phone$DataState:[I
 
-    sget-object v1, Lcom/android/internal/telephony/PhoneConstants$DataState;->SUSPENDED:Lcom/android/internal/telephony/PhoneConstants$DataState;
+    sget-object v1, Lcom/android/internal/telephony/Phone$DataState;->SUSPENDED:Lcom/android/internal/telephony/Phone$DataState;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/PhoneConstants$DataState;->ordinal()I
+    invoke-virtual {v1}, Lcom/android/internal/telephony/Phone$DataState;->ordinal()I
 
     move-result v1
 
@@ -160,9 +160,9 @@
     :try_end_6
     .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_2
 
-    .line 256
+    .line 204
     :goto_6
-    invoke-static {}, Lcom/android/internal/telephony/PhoneConstants$State;->values()[Lcom/android/internal/telephony/PhoneConstants$State;
+    invoke-static {}, Lcom/android/internal/telephony/Phone$State;->values()[Lcom/android/internal/telephony/Phone$State;
 
     move-result-object v0
 
@@ -170,14 +170,14 @@
 
     new-array v0, v0, [I
 
-    sput-object v0, Lcom/android/internal/telephony/DefaultPhoneNotifier$1;->$SwitchMap$com$android$internal$telephony$PhoneConstants$State:[I
+    sput-object v0, Lcom/android/internal/telephony/DefaultPhoneNotifier$1;->$SwitchMap$com$android$internal$telephony$Phone$State:[I
 
     :try_start_7
-    sget-object v0, Lcom/android/internal/telephony/DefaultPhoneNotifier$1;->$SwitchMap$com$android$internal$telephony$PhoneConstants$State:[I
+    sget-object v0, Lcom/android/internal/telephony/DefaultPhoneNotifier$1;->$SwitchMap$com$android$internal$telephony$Phone$State:[I
 
-    sget-object v1, Lcom/android/internal/telephony/PhoneConstants$State;->RINGING:Lcom/android/internal/telephony/PhoneConstants$State;
+    sget-object v1, Lcom/android/internal/telephony/Phone$State;->RINGING:Lcom/android/internal/telephony/Phone$State;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/PhoneConstants$State;->ordinal()I
+    invoke-virtual {v1}, Lcom/android/internal/telephony/Phone$State;->ordinal()I
 
     move-result v1
 
@@ -189,11 +189,11 @@
 
     :goto_7
     :try_start_8
-    sget-object v0, Lcom/android/internal/telephony/DefaultPhoneNotifier$1;->$SwitchMap$com$android$internal$telephony$PhoneConstants$State:[I
+    sget-object v0, Lcom/android/internal/telephony/DefaultPhoneNotifier$1;->$SwitchMap$com$android$internal$telephony$Phone$State:[I
 
-    sget-object v1, Lcom/android/internal/telephony/PhoneConstants$State;->OFFHOOK:Lcom/android/internal/telephony/PhoneConstants$State;
+    sget-object v1, Lcom/android/internal/telephony/Phone$State;->OFFHOOK:Lcom/android/internal/telephony/Phone$State;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/PhoneConstants$State;->ordinal()I
+    invoke-virtual {v1}, Lcom/android/internal/telephony/Phone$State;->ordinal()I
 
     move-result v1
 
@@ -216,7 +216,7 @@
 
     goto :goto_7
 
-    .line 286
+    .line 234
     :catch_2
     move-exception v0
 
@@ -232,7 +232,7 @@
 
     goto :goto_4
 
-    .line 320
+    .line 268
     :catch_5
     move-exception v0
 

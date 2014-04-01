@@ -37,36 +37,36 @@
     .parameter "color"
 
     .prologue
-    .line 35
+    .line 38
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 36
+    .line 39
     iput p1, p0, Lcom/android/internal/telephony/cat/TextAttribute;->start:I
 
-    .line 37
+    .line 40
     iput p2, p0, Lcom/android/internal/telephony/cat/TextAttribute;->length:I
 
-    .line 38
+    .line 41
     iput-object p3, p0, Lcom/android/internal/telephony/cat/TextAttribute;->align:Lcom/android/internal/telephony/cat/TextAlignment;
 
-    .line 39
+    .line 42
     iput-object p4, p0, Lcom/android/internal/telephony/cat/TextAttribute;->size:Lcom/android/internal/telephony/cat/FontSize;
 
-    .line 40
+    .line 43
     iput-boolean p5, p0, Lcom/android/internal/telephony/cat/TextAttribute;->bold:Z
 
-    .line 41
+    .line 44
     iput-boolean p6, p0, Lcom/android/internal/telephony/cat/TextAttribute;->italic:Z
 
-    .line 42
+    .line 45
     iput-boolean p7, p0, Lcom/android/internal/telephony/cat/TextAttribute;->underlined:Z
 
-    .line 43
+    .line 46
     iput-boolean p8, p0, Lcom/android/internal/telephony/cat/TextAttribute;->strikeThrough:Z
 
-    .line 44
+    .line 47
     iput-object p9, p0, Lcom/android/internal/telephony/cat/TextAttribute;->color:Lcom/android/internal/telephony/cat/TextColor;
 
-    .line 45
+    .line 48
     return-void
 .end method

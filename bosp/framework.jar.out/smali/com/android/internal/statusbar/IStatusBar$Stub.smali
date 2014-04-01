@@ -28,39 +28,33 @@
 
 .field static final TRANSACTION_addNotification:I = 0x3
 
-.field static final TRANSACTION_animateCollapsePanels:I = 0x9
+.field static final TRANSACTION_animateCollapse:I = 0x8
 
-.field static final TRANSACTION_animateExpandNotificationsPanel:I = 0x7
-
-.field static final TRANSACTION_animateExpandSettingsPanel:I = 0x8
-
-.field static final TRANSACTION_cancelPreloadRecentApps:I = 0x10
+.field static final TRANSACTION_animateExpand:I = 0x7
 
 .field static final TRANSACTION_disable:I = 0x6
 
-.field static final TRANSACTION_hideSIMIndicator:I = 0x12
-
-.field static final TRANSACTION_preloadRecentApps:I = 0xf
+.field static final TRANSACTION_hideSIMIndicator:I = 0xf
 
 .field static final TRANSACTION_removeIcon:I = 0x2
 
 .field static final TRANSACTION_removeNotification:I = 0x5
 
-.field static final TRANSACTION_setHardKeyboardStatus:I = 0xd
+.field static final TRANSACTION_setHardKeyboardStatus:I = 0xc
 
 .field static final TRANSACTION_setIcon:I = 0x1
 
-.field static final TRANSACTION_setImeWindowStatus:I = 0xc
+.field static final TRANSACTION_setImeWindowStatus:I = 0xb
 
-.field static final TRANSACTION_setSystemUiVisibility:I = 0xa
+.field static final TRANSACTION_setSystemUiVisibility:I = 0x9
 
-.field static final TRANSACTION_showApplicationGuide:I = 0x13
+.field static final TRANSACTION_showOrhideNavigationBar:I = 0x10
 
-.field static final TRANSACTION_showSIMIndicator:I = 0x11
+.field static final TRANSACTION_showSIMIndicator:I = 0xe
 
-.field static final TRANSACTION_toggleRecentApps:I = 0xe
+.field static final TRANSACTION_toggleRecentApps:I = 0xd
 
-.field static final TRANSACTION_topAppWindowChanged:I = 0xb
+.field static final TRANSACTION_topAppWindowChanged:I = 0xa
 
 .field static final TRANSACTION_updateNotification:I = 0x4
 
@@ -158,7 +152,7 @@
     .line 39
     sparse-switch p1, :sswitch_data_0
 
-    .line 214
+    .line 194
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v3
@@ -370,7 +364,7 @@
     invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 118
-    invoke-virtual {p0}, Lcom/android/internal/statusbar/IStatusBar$Stub;->animateExpandNotificationsPanel()V
+    invoke-virtual {p0}, Lcom/android/internal/statusbar/IStatusBar$Stub;->animateExpand()V
 
     goto/16 :goto_0
 
@@ -381,7 +375,7 @@
     invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 124
-    invoke-virtual {p0}, Lcom/android/internal/statusbar/IStatusBar$Stub;->animateExpandSettingsPanel()V
+    invoke-virtual {p0}, Lcom/android/internal/statusbar/IStatusBar$Stub;->animateCollapse()V
 
     goto/16 :goto_0
 
@@ -391,43 +385,25 @@
 
     invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 130
-    invoke-virtual {p0}, Lcom/android/internal/statusbar/IStatusBar$Stub;->animateCollapsePanels()V
-
-    goto/16 :goto_0
-
-    .line 135
-    :sswitch_a
-    const-string v4, "com.android.internal.statusbar.IStatusBar"
-
-    invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 137
+    .line 131
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 139
+    .line 132
     .restart local v0       #_arg0:I
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v1
-
-    .line 140
-    .local v1, _arg1:I
-    invoke-virtual {p0, v0, v1}, Lcom/android/internal/statusbar/IStatusBar$Stub;->setSystemUiVisibility(II)V
+    invoke-virtual {p0, v0}, Lcom/android/internal/statusbar/IStatusBar$Stub;->setSystemUiVisibility(I)V
 
     goto/16 :goto_0
 
-    .line 145
+    .line 137
     .end local v0           #_arg0:I
-    .end local v1           #_arg1:I
-    :sswitch_b
+    :sswitch_a
     const-string v5, "com.android.internal.statusbar.IStatusBar"
 
     invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 147
+    .line 139
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
@@ -436,7 +412,7 @@
 
     move v0, v3
 
-    .line 148
+    .line 140
     .local v0, _arg0:Z
     :goto_4
     invoke-virtual {p0, v0}, Lcom/android/internal/statusbar/IStatusBar$Stub;->topAppWindowChanged(Z)V
@@ -447,48 +423,48 @@
     :cond_3
     move v0, v4
 
-    .line 147
+    .line 139
     goto :goto_4
 
-    .line 153
-    :sswitch_c
+    .line 145
+    :sswitch_b
     const-string v4, "com.android.internal.statusbar.IStatusBar"
 
     invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 155
+    .line 147
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 157
+    .line 149
     .local v0, _arg0:Landroid/os/IBinder;
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 159
-    .restart local v1       #_arg1:I
+    .line 151
+    .local v1, _arg1:I
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
-    .line 160
+    .line 152
     .local v2, _arg2:I
     invoke-virtual {p0, v0, v1, v2}, Lcom/android/internal/statusbar/IStatusBar$Stub;->setImeWindowStatus(Landroid/os/IBinder;II)V
 
     goto/16 :goto_0
 
-    .line 165
+    .line 157
     .end local v0           #_arg0:Landroid/os/IBinder;
     .end local v1           #_arg1:I
     .end local v2           #_arg2:I
-    :sswitch_d
+    :sswitch_c
     const-string v5, "com.android.internal.statusbar.IStatusBar"
 
     invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 167
+    .line 159
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
@@ -497,7 +473,7 @@
 
     move v0, v3
 
-    .line 169
+    .line 161
     .local v0, _arg0:Z
     :goto_5
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
@@ -508,7 +484,7 @@
 
     move v1, v3
 
-    .line 170
+    .line 162
     .local v1, _arg1:Z
     :goto_6
     invoke-virtual {p0, v0, v1}, Lcom/android/internal/statusbar/IStatusBar$Stub;->setHardKeyboardStatus(ZZ)V
@@ -520,97 +496,89 @@
     :cond_4
     move v0, v4
 
-    .line 167
+    .line 159
     goto :goto_5
 
     .restart local v0       #_arg0:Z
     :cond_5
     move v1, v4
 
-    .line 169
+    .line 161
     goto :goto_6
 
-    .line 175
+    .line 167
     .end local v0           #_arg0:Z
+    :sswitch_d
+    const-string v4, "com.android.internal.statusbar.IStatusBar"
+
+    invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 168
+    invoke-virtual {p0}, Lcom/android/internal/statusbar/IStatusBar$Stub;->toggleRecentApps()V
+
+    goto/16 :goto_0
+
+    .line 173
     :sswitch_e
     const-string v4, "com.android.internal.statusbar.IStatusBar"
 
     invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
+    .line 175
+    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
+
     .line 176
-    invoke-virtual {p0}, Lcom/android/internal/statusbar/IStatusBar$Stub;->toggleRecentApps()V
+    .local v0, _arg0:Ljava/lang/String;
+    invoke-virtual {p0, v0}, Lcom/android/internal/statusbar/IStatusBar$Stub;->showSIMIndicator(Ljava/lang/String;)V
 
     goto/16 :goto_0
 
     .line 181
+    .end local v0           #_arg0:Ljava/lang/String;
     :sswitch_f
     const-string v4, "com.android.internal.statusbar.IStatusBar"
 
     invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
     .line 182
-    invoke-virtual {p0}, Lcom/android/internal/statusbar/IStatusBar$Stub;->preloadRecentApps()V
+    invoke-virtual {p0}, Lcom/android/internal/statusbar/IStatusBar$Stub;->hideSIMIndicator()V
 
     goto/16 :goto_0
 
     .line 187
     :sswitch_10
-    const-string v4, "com.android.internal.statusbar.IStatusBar"
+    const-string v5, "com.android.internal.statusbar.IStatusBar"
 
-    invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    invoke-virtual {p2, v5}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 188
-    invoke-virtual {p0}, Lcom/android/internal/statusbar/IStatusBar$Stub;->cancelPreloadRecentApps()V
+    .line 189
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    goto/16 :goto_0
+    move-result v5
 
-    .line 193
-    :sswitch_11
-    const-string v4, "com.android.internal.statusbar.IStatusBar"
+    if-eqz v5, :cond_6
 
-    invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+    move v0, v3
 
-    .line 195
-    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 196
-    .local v0, _arg0:Ljava/lang/String;
-    invoke-virtual {p0, v0}, Lcom/android/internal/statusbar/IStatusBar$Stub;->showSIMIndicator(Ljava/lang/String;)V
+    .line 190
+    .local v0, _arg0:Z
+    :goto_7
+    invoke-virtual {p0, v0}, Lcom/android/internal/statusbar/IStatusBar$Stub;->showOrhideNavigationBar(Z)V
 
     goto/16 :goto_0
 
-    .line 201
-    .end local v0           #_arg0:Ljava/lang/String;
-    :sswitch_12
-    const-string v4, "com.android.internal.statusbar.IStatusBar"
+    .end local v0           #_arg0:Z
+    :cond_6
+    move v0, v4
 
-    invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 202
-    invoke-virtual {p0}, Lcom/android/internal/statusbar/IStatusBar$Stub;->hideSIMIndicator()V
-
-    goto/16 :goto_0
-
-    .line 207
-    :sswitch_13
-    const-string v4, "com.android.internal.statusbar.IStatusBar"
-
-    invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 209
-    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 210
-    .restart local v0       #_arg0:Ljava/lang/String;
-    invoke-virtual {p0, v0}, Lcom/android/internal/statusbar/IStatusBar$Stub;->showApplicationGuide(Ljava/lang/String;)V
-
-    goto/16 :goto_0
+    .line 189
+    goto :goto_7
 
     .line 39
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
@@ -629,9 +597,6 @@
         0xe -> :sswitch_e
         0xf -> :sswitch_f
         0x10 -> :sswitch_10
-        0x11 -> :sswitch_11
-        0x12 -> :sswitch_12
-        0x13 -> :sswitch_13
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

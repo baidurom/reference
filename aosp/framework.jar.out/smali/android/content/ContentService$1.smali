@@ -40,12 +40,12 @@
     .parameter
 
     .prologue
-    .line 91
+    .line 88
     iput-object p1, p0, Landroid/content/ContentService$1;->this$0:Landroid/content/ContentService;
 
     iput-object p2, p0, Landroid/content/ContentService$1;->val$pidCounts:Landroid/util/SparseIntArray;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -58,7 +58,7 @@
     .parameter "rhs"
 
     .prologue
-    .line 94
+    .line 91
     iget-object v2, p0, Landroid/content/ContentService$1;->val$pidCounts:Landroid/util/SparseIntArray;
 
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
@@ -69,7 +69,7 @@
 
     move-result v0
 
-    .line 95
+    .line 92
     .local v0, lc:I
     iget-object v2, p0, Landroid/content/ContentService$1;->val$pidCounts:Landroid/util/SparseIntArray;
 
@@ -81,27 +81,27 @@
 
     move-result v1
 
-    .line 96
+    .line 93
     .local v1, rc:I
     if-ge v0, v1, :cond_0
 
-    .line 97
+    .line 94
     const/4 v2, 0x1
 
-    .line 101
+    .line 98
     :goto_0
     return v2
 
-    .line 98
+    .line 95
     :cond_0
     if-le v0, v1, :cond_1
 
-    .line 99
+    .line 96
     const/4 v2, -0x1
 
     goto :goto_0
 
-    .line 101
+    .line 98
     :cond_1
     const/4 v2, 0x0
 
@@ -114,7 +114,7 @@
     .parameter "x1"
 
     .prologue
-    .line 91
+    .line 88
     check-cast p1, Ljava/lang/Integer;
 
     .end local p1

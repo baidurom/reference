@@ -24,8 +24,6 @@
 
 .field public static final SECONDS:C = 's'
 
-.field public static final STANDALONE_MONTH:C = 'L'
-
 .field public static final TIME_ZONE:C = 'z'
 
 .field public static final YEAR:C = 'y'
@@ -42,7 +40,7 @@
     .locals 1
 
     .prologue
-    .line 210
+    .line 193
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
@@ -56,13 +54,13 @@
     .locals 0
 
     .prologue
-    .line 85
+    .line 77
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method private static appendQuotedText(Landroid/text/SpannableStringBuilder;II)I
+.method private static final appendQuotedText(Landroid/text/SpannableStringBuilder;II)I
     .locals 4
     .parameter "s"
     .parameter "i"
@@ -71,7 +69,7 @@
     .prologue
     const/16 v3, 0x27
 
-    .line 743
+    .line 645
     add-int/lit8 v2, p1, 0x1
 
     if-ge v2, p2, :cond_1
@@ -84,46 +82,46 @@
 
     if-ne v2, v3, :cond_1
 
-    .line 744
+    .line 646
     add-int/lit8 v2, p1, 0x1
 
     invoke-virtual {p0, p1, v2}, Landroid/text/SpannableStringBuilder;->delete(II)Landroid/text/SpannableStringBuilder;
 
-    .line 745
+    .line 647
     const/4 v1, 0x1
 
-    .line 776
+    .line 678
     :cond_0
     :goto_0
     return v1
 
-    .line 748
+    .line 650
     :cond_1
     const/4 v1, 0x0
 
-    .line 751
+    .line 653
     .local v1, count:I
     add-int/lit8 v2, p1, 0x1
 
     invoke-virtual {p0, p1, v2}, Landroid/text/SpannableStringBuilder;->delete(II)Landroid/text/SpannableStringBuilder;
 
-    .line 752
+    .line 654
     add-int/lit8 p2, p2, -0x1
 
-    .line 754
+    .line 656
     :goto_1
     if-ge p1, p2, :cond_0
 
-    .line 755
+    .line 657
     invoke-virtual {p0, p1}, Landroid/text/SpannableStringBuilder;->charAt(I)C
 
     move-result v0
 
-    .line 757
+    .line 659
     .local v0, c:C
     if-ne v0, v3, :cond_3
 
-    .line 759
+    .line 661
     add-int/lit8 v2, p1, 0x1
 
     if-ge v2, p2, :cond_2
@@ -136,23 +134,23 @@
 
     if-ne v2, v3, :cond_2
 
-    .line 761
+    .line 663
     add-int/lit8 v2, p1, 0x1
 
     invoke-virtual {p0, p1, v2}, Landroid/text/SpannableStringBuilder;->delete(II)Landroid/text/SpannableStringBuilder;
 
-    .line 762
+    .line 664
     add-int/lit8 p2, p2, -0x1
 
-    .line 763
+    .line 665
     add-int/lit8 v1, v1, 0x1
 
-    .line 764
+    .line 666
     add-int/lit8 p1, p1, 0x1
 
     goto :goto_1
 
-    .line 767
+    .line 669
     :cond_2
     add-int/lit8 v2, p1, 0x1
 
@@ -160,23 +158,23 @@
 
     goto :goto_0
 
-    .line 771
+    .line 673
     :cond_3
     add-int/lit8 p1, p1, 0x1
 
-    .line 772
+    .line 674
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 .end method
 
-.method public static format(Ljava/lang/CharSequence;J)Ljava/lang/CharSequence;
+.method public static final format(Ljava/lang/CharSequence;J)Ljava/lang/CharSequence;
     .locals 1
     .parameter "inFormat"
     .parameter "inTimeInMillis"
 
     .prologue
-    .line 500
+    .line 471
     new-instance v0, Ljava/util/Date;
 
     invoke-direct {v0, p1, p2}, Ljava/util/Date;-><init>(J)V
@@ -188,7 +186,7 @@
     return-object v0
 .end method
 
-.method public static format(Ljava/lang/CharSequence;Ljava/util/Calendar;)Ljava/lang/CharSequence;
+.method public static final format(Ljava/lang/CharSequence;Ljava/util/Calendar;)Ljava/lang/CharSequence;
     .locals 10
     .parameter "inFormat"
     .parameter "inDate"
@@ -198,18 +196,18 @@
 
     const/16 v9, 0x9
 
-    .line 588
+    .line 497
     new-instance v5, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v5, p0}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 592
+    .line 501
     .local v5, s:Landroid/text/SpannableStringBuilder;
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result v3
 
-    .line 594
+    .line 503
     .local v3, len:I
     const/4 v2, 0x0
 
@@ -217,39 +215,39 @@
     :goto_0
     if-ge v2, v3, :cond_5
 
-    .line 597
+    .line 506
     const/4 v1, 0x1
 
-    .line 598
+    .line 507
     .local v1, count:I
     invoke-virtual {v5, v2}, Landroid/text/SpannableStringBuilder;->charAt(I)C
 
     move-result v0
 
-    .line 600
+    .line 509
     .local v0, c:I
     const/16 v7, 0x27
 
     if-ne v0, v7, :cond_1
 
-    .line 601
+    .line 510
     invoke-static {v5, v2, v3}, Landroid/text/format/DateFormat;->appendQuotedText(Landroid/text/SpannableStringBuilder;II)I
 
     move-result v1
 
-    .line 602
+    .line 511
     invoke-virtual {v5}, Landroid/text/SpannableStringBuilder;->length()I
 
     move-result v3
 
-    .line 594
+    .line 503
     :cond_0
     :goto_1
     add-int/2addr v2, v1
 
     goto :goto_0
 
-    .line 606
+    .line 515
     :cond_1
     :goto_2
     add-int v7, v2, v1
@@ -264,41 +262,41 @@
 
     if-ne v7, v0, :cond_2
 
-    .line 607
+    .line 516
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_2
 
-    .line 612
+    .line 521
     :cond_2
     sparse-switch v0, :sswitch_data_0
 
-    .line 669
+    .line 577
     const/4 v4, 0x0
 
-    .line 673
+    .line 581
     .local v4, replacement:Ljava/lang/String;
     :goto_3
     if-eqz v4, :cond_0
 
-    .line 674
+    .line 582
     add-int v7, v2, v1
 
     invoke-virtual {v5, v2, v7, v4}, Landroid/text/SpannableStringBuilder;->replace(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 675
+    .line 583
     invoke-virtual {v4}, Ljava/lang/String;->length()I
 
     move-result v1
 
-    .line 676
+    .line 584
     invoke-virtual {v5}, Landroid/text/SpannableStringBuilder;->length()I
 
     move-result v3
 
     goto :goto_1
 
-    .line 614
+    .line 523
     .end local v4           #replacement:Ljava/lang/String;
     :sswitch_0
     invoke-virtual {p1, v9}, Ljava/util/Calendar;->get(I)I
@@ -309,11 +307,11 @@
 
     move-result-object v4
 
-    .line 615
+    .line 524
     .restart local v4       #replacement:Ljava/lang/String;
     goto :goto_3
 
-    .line 619
+    .line 528
     .end local v4           #replacement:Ljava/lang/String;
     :sswitch_1
     invoke-virtual {p1, v9}, Ljava/util/Calendar;->get(I)I
@@ -324,11 +322,11 @@
 
     move-result-object v4
 
-    .line 620
+    .line 529
     .restart local v4       #replacement:Ljava/lang/String;
     goto :goto_3
 
-    .line 623
+    .line 532
     .end local v4           #replacement:Ljava/lang/String;
     :sswitch_2
     const/4 v7, 0x5
@@ -341,11 +339,11 @@
 
     move-result-object v4
 
-    .line 624
+    .line 533
     .restart local v4       #replacement:Ljava/lang/String;
     goto :goto_3
 
-    .line 627
+    .line 536
     .end local v4           #replacement:Ljava/lang/String;
     :sswitch_3
     const/4 v7, 0x7
@@ -354,7 +352,7 @@
 
     move-result v6
 
-    .line 628
+    .line 537
     .local v6, temp:I
     const/4 v7, 0x4
 
@@ -367,7 +365,7 @@
 
     move-result-object v4
 
-    .line 632
+    .line 541
     .restart local v4       #replacement:Ljava/lang/String;
     goto :goto_3
 
@@ -375,34 +373,34 @@
     :cond_3
     move v7, v8
 
-    .line 628
+    .line 537
     goto :goto_4
 
-    .line 635
+    .line 544
     .end local v6           #temp:I
     :sswitch_4
     invoke-virtual {p1, v8}, Ljava/util/Calendar;->get(I)I
 
     move-result v6
 
-    .line 637
+    .line 546
     .restart local v6       #temp:I
     if-nez v6, :cond_4
 
-    .line 638
+    .line 547
     const/16 v6, 0xc
 
-    .line 640
+    .line 549
     :cond_4
     invoke-static {v6, v1}, Landroid/text/format/DateFormat;->zeroPad(II)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 641
+    .line 550
     .restart local v4       #replacement:Ljava/lang/String;
     goto :goto_3
 
-    .line 644
+    .line 553
     .end local v4           #replacement:Ljava/lang/String;
     .end local v6           #temp:I
     :sswitch_5
@@ -416,11 +414,11 @@
 
     move-result-object v4
 
-    .line 645
+    .line 554
     .restart local v4       #replacement:Ljava/lang/String;
     goto :goto_3
 
-    .line 648
+    .line 557
     .end local v4           #replacement:Ljava/lang/String;
     :sswitch_6
     const/16 v7, 0xc
@@ -433,22 +431,22 @@
 
     move-result-object v4
 
-    .line 649
+    .line 558
     .restart local v4       #replacement:Ljava/lang/String;
     goto :goto_3
 
-    .line 653
+    .line 561
     .end local v4           #replacement:Ljava/lang/String;
     :sswitch_7
-    invoke-static {p1, v1, v0}, Landroid/text/format/DateFormat;->getMonthString(Ljava/util/Calendar;II)Ljava/lang/String;
+    invoke-static {p1, v1}, Landroid/text/format/DateFormat;->getMonthString(Ljava/util/Calendar;I)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 654
+    .line 562
     .restart local v4       #replacement:Ljava/lang/String;
     goto :goto_3
 
-    .line 657
+    .line 565
     .end local v4           #replacement:Ljava/lang/String;
     :sswitch_8
     const/16 v7, 0xd
@@ -461,33 +459,33 @@
 
     move-result-object v4
 
-    .line 658
+    .line 566
     .restart local v4       #replacement:Ljava/lang/String;
     goto :goto_3
 
-    .line 661
+    .line 569
     .end local v4           #replacement:Ljava/lang/String;
     :sswitch_9
     invoke-static {p1, v1}, Landroid/text/format/DateFormat;->getTimeZoneString(Ljava/util/Calendar;I)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 662
+    .line 570
     .restart local v4       #replacement:Ljava/lang/String;
     goto :goto_3
 
-    .line 665
+    .line 573
     .end local v4           #replacement:Ljava/lang/String;
     :sswitch_a
     invoke-static {p1, v1}, Landroid/text/format/DateFormat;->getYearString(Ljava/util/Calendar;I)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 666
+    .line 574
     .restart local v4       #replacement:Ljava/lang/String;
     goto :goto_3
 
-    .line 680
+    .line 588
     .end local v0           #c:I
     .end local v1           #count:I
     .end local v4           #replacement:Ljava/lang/String;
@@ -496,12 +494,12 @@
 
     if-eqz v7, :cond_6
 
-    .line 681
+    .line 589
     new-instance v7, Landroid/text/SpannedString;
 
     invoke-direct {v7, v5}, Landroid/text/SpannedString;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 683
+    .line 591
     :goto_5
     return-object v7
 
@@ -512,14 +510,13 @@
 
     goto :goto_5
 
-    .line 612
+    .line 521
     nop
 
     :sswitch_data_0
     .sparse-switch
         0x41 -> :sswitch_1
         0x45 -> :sswitch_3
-        0x4c -> :sswitch_7
         0x4d -> :sswitch_7
         0x61 -> :sswitch_0
         0x64 -> :sswitch_2
@@ -532,22 +529,22 @@
     .end sparse-switch
 .end method
 
-.method public static format(Ljava/lang/CharSequence;Ljava/util/Date;)Ljava/lang/CharSequence;
+.method public static final format(Ljava/lang/CharSequence;Ljava/util/Date;)Ljava/lang/CharSequence;
     .locals 2
     .parameter "inFormat"
     .parameter "inDate"
 
     .prologue
-    .line 511
+    .line 482
     new-instance v0, Ljava/util/GregorianCalendar;
 
     invoke-direct {v0}, Ljava/util/GregorianCalendar;-><init>()V
 
-    .line 513
+    .line 484
     .local v0, c:Ljava/util/Calendar;
     invoke-virtual {v0, p1}, Ljava/util/Calendar;->setTime(Ljava/util/Date;)V
 
-    .line 515
+    .line 486
     invoke-static {p0, v0}, Landroid/text/format/DateFormat;->format(Ljava/lang/CharSequence;Ljava/util/Calendar;)Ljava/lang/CharSequence;
 
     move-result-object v1
@@ -555,7 +552,7 @@
     return-object v1
 .end method
 
-.method private static formatZoneOffset(II)Ljava/lang/String;
+.method private static final formatZoneOffset(II)Ljava/lang/String;
     .locals 6
     .parameter "offset"
     .parameter "count"
@@ -565,37 +562,37 @@
 
     const/4 v4, 0x0
 
-    .line 718
+    .line 621
     div-int/lit16 p0, p0, 0x3e8
 
-    .line 719
+    .line 622
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 721
+    .line 624
     .local v2, tb:Ljava/lang/StringBuilder;
     if-gez p0, :cond_0
 
-    .line 722
+    .line 625
     const-string v3, "-"
 
     invoke-virtual {v2, v4, v3}, Ljava/lang/StringBuilder;->insert(ILjava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 723
+    .line 626
     neg-int p0, p0
 
-    .line 728
+    .line 631
     :goto_0
     div-int/lit16 v0, p0, 0xe10
 
-    .line 729
+    .line 632
     .local v0, hours:I
     rem-int/lit16 v3, p0, 0xe10
 
     div-int/lit8 v1, v3, 0x3c
 
-    .line 731
+    .line 634
     .local v1, minutes:I
     invoke-static {v0, v5}, Landroid/text/format/DateFormat;->zeroPad(II)Ljava/lang/String;
 
@@ -603,21 +600,21 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 732
+    .line 635
     invoke-static {v1, v5}, Landroid/text/format/DateFormat;->zeroPad(II)Ljava/lang/String;
 
     move-result-object v3
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 733
+    .line 636
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
 
     return-object v3
 
-    .line 725
+    .line 628
     .end local v0           #hours:I
     .end local v1           #minutes:I
     :cond_0
@@ -628,12 +625,12 @@
     goto :goto_0
 .end method
 
-.method public static getDateFormat(Landroid/content/Context;)Ljava/text/DateFormat;
+.method public static final getDateFormat(Landroid/content/Context;)Ljava/text/DateFormat;
     .locals 3
     .parameter "context"
 
     .prologue
-    .line 297
+    .line 270
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -644,7 +641,7 @@
 
     move-result-object v0
 
-    .line 300
+    .line 273
     .local v0, value:Ljava/lang/String;
     invoke-static {p0, v0}, Landroid/text/format/DateFormat;->getDateFormatForSetting(Landroid/content/Context;Ljava/lang/String;)Ljava/text/DateFormat;
 
@@ -659,12 +656,12 @@
     .parameter "value"
 
     .prologue
-    .line 314
+    .line 287
     invoke-static {p0, p1}, Landroid/text/format/DateFormat;->getDateFormatStringForSetting(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 316
+    .line 289
     .local v0, format:Ljava/lang/String;
     new-instance v1, Ljava/text/SimpleDateFormat;
 
@@ -673,7 +670,7 @@
     return-object v1
 .end method
 
-.method public static getDateFormatOrder(Landroid/content/Context;)[C
+.method public static final getDateFormatOrder(Landroid/content/Context;)[C
     .locals 14
     .parameter "context"
 
@@ -684,36 +681,36 @@
 
     const/16 v11, 0x4d
 
-    .line 456
+    .line 427
     const/4 v10, 0x3
 
     new-array v8, v10, [C
 
     fill-array-data v8, :array_0
 
-    .line 457
+    .line 428
     .local v8, order:[C
     invoke-static {p0}, Landroid/text/format/DateFormat;->getDateFormatString(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v9
 
-    .line 458
+    .line 429
     .local v9, value:Ljava/lang/String;
     const/4 v6, 0x0
 
-    .line 459
+    .line 430
     .local v6, index:I
     const/4 v2, 0x0
 
-    .line 460
+    .line 431
     .local v2, foundDate:Z
     const/4 v3, 0x0
 
-    .line 461
+    .line 432
     .local v3, foundMonth:Z
     const/4 v4, 0x0
 
-    .line 463
+    .line 434
     .local v4, foundYear:Z
     invoke-virtual {v9}, Ljava/lang/String;->toCharArray()[C
 
@@ -727,72 +724,67 @@
 
     .local v5, i$:I
     :goto_0
-    if-ge v5, v7, :cond_4
+    if-ge v5, v7, :cond_3
 
     aget-char v1, v0, v5
 
-    .line 464
+    .line 435
     .local v1, c:C
     if-nez v2, :cond_0
 
     if-ne v1, v12, :cond_0
 
-    .line 465
+    .line 436
     const/4 v2, 0x1
 
-    .line 466
+    .line 437
     aput-char v12, v8, v6
 
-    .line 467
+    .line 438
     add-int/lit8 v6, v6, 0x1
 
-    .line 470
+    .line 441
     :cond_0
-    if-nez v3, :cond_2
+    if-nez v3, :cond_1
 
-    if-eq v1, v11, :cond_1
+    if-ne v1, v11, :cond_1
 
-    const/16 v10, 0x4c
-
-    if-ne v1, v10, :cond_2
-
-    .line 471
-    :cond_1
+    .line 442
     const/4 v3, 0x1
 
-    .line 472
+    .line 443
     aput-char v11, v8, v6
 
-    .line 473
+    .line 444
     add-int/lit8 v6, v6, 0x1
 
-    .line 476
-    :cond_2
-    if-nez v4, :cond_3
+    .line 447
+    :cond_1
+    if-nez v4, :cond_2
 
-    if-ne v1, v13, :cond_3
+    if-ne v1, v13, :cond_2
 
-    .line 477
+    .line 448
     const/4 v4, 0x1
 
-    .line 478
+    .line 449
     aput-char v13, v8, v6
 
-    .line 479
+    .line 450
     add-int/lit8 v6, v6, 0x1
 
-    .line 463
-    :cond_3
+    .line 434
+    :cond_2
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_0
 
-    .line 482
+    .line 453
     .end local v1           #c:C
-    :cond_4
+    :cond_3
     return-object v8
 
-    .line 456
+    .line 427
     nop
 
     :array_0
@@ -808,7 +800,7 @@
     .parameter "context"
 
     .prologue
-    .line 486
+    .line 457
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -819,7 +811,7 @@
 
     move-result-object v0
 
-    .line 489
+    .line 460
     .local v0, value:Ljava/lang/String;
     invoke-static {p0, v0}, Landroid/text/format/DateFormat;->getDateFormatStringForSetting(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
 
@@ -834,14 +826,14 @@
     .parameter "value"
 
     .prologue
-    .line 320
+    .line 293
     const/4 v4, 0x0
 
-    .line 321
+    .line 294
     .local v4, result:Ljava/lang/String;
     if-eqz p1, :cond_17
 
-    .line 323
+    .line 295
     const-string v11, "dd"
 
     invoke-virtual {p1, v11}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
@@ -852,7 +844,7 @@
 
     const-string v1, "d"
 
-    .line 324
+    .line 296
     .local v1, dayValue:Ljava/lang/String;
     :goto_0
     const-string v11, "MMMM"
@@ -881,7 +873,7 @@
 
     const-string v3, "M"
 
-    .line 325
+    .line 297
     .local v3, monthValue:Ljava/lang/String;
     :goto_1
     const-string/jumbo v11, "yyyy"
@@ -894,7 +886,7 @@
 
     const-string/jumbo v10, "y"
 
-    .line 326
+    .line 298
     .local v10, yearValue:Ljava/lang/String;
     :goto_2
     const-string v11, "EEEE"
@@ -907,32 +899,32 @@
 
     const-string v8, "E"
 
-    .line 328
+    .line 300
     .local v8, weekValue:Ljava/lang/String;
     :goto_3
     invoke-virtual {p1, v1}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 329
+    .line 301
     .local v0, day:I
     invoke-virtual {p1, v3}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v2
 
-    .line 330
+    .line 302
     .local v2, month:I
     invoke-virtual {p1, v10}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v9
 
-    .line 331
+    .line 303
     .local v9, year:I
     invoke-virtual {p1, v8}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v7
 
-    .line 333
+    .line 305
     .local v7, week:I
     if-ltz v7, :cond_11
 
@@ -942,29 +934,29 @@
 
     if-ltz v9, :cond_11
 
-    .line 334
+    .line 306
     const/4 v6, 0x0
 
-    .line 335
+    .line 307
     .local v6, template:Ljava/lang/String;
     if-ge v7, v0, :cond_b
 
-    .line 336
+    .line 308
     if-ge v9, v2, :cond_7
 
     if-ge v9, v0, :cond_7
 
-    .line 337
+    .line 309
     if-ge v2, v0, :cond_6
 
-    .line 338
-    const v11, 0x205005c
+    .line 310
+    const v11, 0x205005b
 
     invoke-virtual {p0, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 339
+    .line 311
     const/4 v11, 0x4
 
     new-array v11, v11, [Ljava/lang/Object;
@@ -992,7 +984,7 @@
     :goto_4
     move-object v5, v4
 
-    .line 423
+    .line 394
     .end local v0           #day:I
     .end local v1           #dayValue:Ljava/lang/String;
     .end local v2           #month:I
@@ -1007,7 +999,7 @@
     :goto_5
     return-object v5
 
-    .line 323
+    .line 295
     .end local v5           #result:Ljava/lang/String;
     .restart local v4       #result:Ljava/lang/String;
     :cond_0
@@ -1015,7 +1007,7 @@
 
     goto :goto_0
 
-    .line 324
+    .line 296
     .restart local v1       #dayValue:Ljava/lang/String;
     :cond_1
     const-string v3, "MM"
@@ -1032,21 +1024,21 @@
 
     goto :goto_1
 
-    .line 325
+    .line 297
     .restart local v3       #monthValue:Ljava/lang/String;
     :cond_4
     const-string/jumbo v10, "yyyy"
 
     goto :goto_2
 
-    .line 326
+    .line 298
     .restart local v10       #yearValue:Ljava/lang/String;
     :cond_5
     const-string v8, "EEEE"
 
     goto :goto_3
 
-    .line 341
+    .line 313
     .restart local v0       #day:I
     .restart local v2       #month:I
     .restart local v6       #template:Ljava/lang/String;
@@ -1054,13 +1046,54 @@
     .restart local v8       #weekValue:Ljava/lang/String;
     .restart local v9       #year:I
     :cond_6
+    const v11, 0x205005c
+
+    invoke-virtual {p0, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    .line 314
+    const/4 v11, 0x4
+
+    new-array v11, v11, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aput-object v8, v11, v12
+
+    const/4 v12, 0x1
+
+    aput-object v10, v11, v12
+
+    const/4 v12, 0x2
+
+    aput-object v1, v11, v12
+
+    const/4 v12, 0x3
+
+    aput-object v3, v11, v12
+
+    invoke-static {v6, v11}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    goto :goto_4
+
+    .line 316
+    :cond_7
+    if-ge v2, v0, :cond_9
+
+    .line 317
+    if-ge v0, v9, :cond_8
+
+    .line 318
     const v11, 0x205005d
 
     invoke-virtual {p0, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 342
+    .line 319
     const/4 v11, 0x4
 
     new-array v11, v11, [Ljava/lang/Object;
@@ -1071,7 +1104,7 @@
 
     const/4 v12, 0x1
 
-    aput-object v10, v11, v12
+    aput-object v3, v11, v12
 
     const/4 v12, 0x2
 
@@ -1079,7 +1112,7 @@
 
     const/4 v12, 0x3
 
-    aput-object v3, v11, v12
+    aput-object v10, v11, v12
 
     invoke-static {v6, v11}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1087,21 +1120,15 @@
 
     goto :goto_4
 
-    .line 344
-    :cond_7
-    if-ge v2, v0, :cond_9
-
-    .line 345
-    if-ge v0, v9, :cond_8
-
-    .line 346
+    .line 321
+    :cond_8
     const v11, 0x205005e
 
     invoke-virtual {p0, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 347
+    .line 322
     const/4 v11, 0x4
 
     new-array v11, v11, [Ljava/lang/Object;
@@ -1116,11 +1143,11 @@
 
     const/4 v12, 0x2
 
-    aput-object v1, v11, v12
+    aput-object v10, v11, v12
 
     const/4 v12, 0x3
 
-    aput-object v10, v11, v12
+    aput-object v1, v11, v12
 
     invoke-static {v6, v11}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1128,53 +1155,18 @@
 
     goto :goto_4
 
-    .line 349
-    :cond_8
+    .line 325
+    :cond_9
+    if-ge v2, v9, :cond_a
+
+    .line 326
     const v11, 0x205005f
 
     invoke-virtual {p0, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 350
-    const/4 v11, 0x4
-
-    new-array v11, v11, [Ljava/lang/Object;
-
-    const/4 v12, 0x0
-
-    aput-object v8, v11, v12
-
-    const/4 v12, 0x1
-
-    aput-object v3, v11, v12
-
-    const/4 v12, 0x2
-
-    aput-object v10, v11, v12
-
-    const/4 v12, 0x3
-
-    aput-object v1, v11, v12
-
-    invoke-static {v6, v11}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    goto :goto_4
-
-    .line 353
-    :cond_9
-    if-ge v2, v9, :cond_a
-
-    .line 354
-    const v11, 0x205006a
-
-    invoke-virtual {p0, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v6
-
-    .line 355
+    .line 327
     const/4 v11, 0x4
 
     new-array v11, v11, [Ljava/lang/Object;
@@ -1201,15 +1193,15 @@
 
     goto/16 :goto_4
 
-    .line 357
+    .line 329
     :cond_a
-    const v11, 0x205006b
+    const v11, 0x2050063
 
     invoke-virtual {p0, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 358
+    .line 330
     const/4 v11, 0x4
 
     new-array v11, v11, [Ljava/lang/Object;
@@ -1229,6 +1221,233 @@
     const/4 v12, 0x3
 
     aput-object v3, v11, v12
+
+    invoke-static {v6, v11}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    goto/16 :goto_4
+
+    .line 334
+    :cond_b
+    if-ge v9, v2, :cond_d
+
+    if-ge v9, v0, :cond_d
+
+    .line 335
+    if-ge v2, v0, :cond_c
+
+    .line 336
+    const v11, 0x2050064
+
+    invoke-virtual {p0, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    .line 337
+    const/4 v11, 0x4
+
+    new-array v11, v11, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aput-object v10, v11, v12
+
+    const/4 v12, 0x1
+
+    aput-object v3, v11, v12
+
+    const/4 v12, 0x2
+
+    aput-object v1, v11, v12
+
+    const/4 v12, 0x3
+
+    aput-object v8, v11, v12
+
+    invoke-static {v6, v11}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    goto/16 :goto_4
+
+    .line 339
+    :cond_c
+    const v11, 0x2050065
+
+    invoke-virtual {p0, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    .line 340
+    const/4 v11, 0x4
+
+    new-array v11, v11, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aput-object v10, v11, v12
+
+    const/4 v12, 0x1
+
+    aput-object v1, v11, v12
+
+    const/4 v12, 0x2
+
+    aput-object v3, v11, v12
+
+    const/4 v12, 0x3
+
+    aput-object v8, v11, v12
+
+    invoke-static {v6, v11}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    goto/16 :goto_4
+
+    .line 342
+    :cond_d
+    if-ge v2, v0, :cond_f
+
+    .line 343
+    if-ge v0, v9, :cond_e
+
+    .line 344
+    const v11, 0x2050066
+
+    invoke-virtual {p0, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    .line 345
+    const/4 v11, 0x4
+
+    new-array v11, v11, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aput-object v3, v11, v12
+
+    const/4 v12, 0x1
+
+    aput-object v1, v11, v12
+
+    const/4 v12, 0x2
+
+    aput-object v10, v11, v12
+
+    const/4 v12, 0x3
+
+    aput-object v8, v11, v12
+
+    invoke-static {v6, v11}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    goto/16 :goto_4
+
+    .line 347
+    :cond_e
+    const v11, 0x2050067
+
+    invoke-virtual {p0, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    .line 348
+    const/4 v11, 0x4
+
+    new-array v11, v11, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aput-object v3, v11, v12
+
+    const/4 v12, 0x1
+
+    aput-object v10, v11, v12
+
+    const/4 v12, 0x2
+
+    aput-object v1, v11, v12
+
+    const/4 v12, 0x3
+
+    aput-object v8, v11, v12
+
+    invoke-static {v6, v11}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    goto/16 :goto_4
+
+    .line 351
+    :cond_f
+    if-ge v2, v9, :cond_10
+
+    .line 352
+    const v11, 0x2050068
+
+    invoke-virtual {p0, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    .line 353
+    const/4 v11, 0x4
+
+    new-array v11, v11, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aput-object v1, v11, v12
+
+    const/4 v12, 0x1
+
+    aput-object v3, v11, v12
+
+    const/4 v12, 0x2
+
+    aput-object v10, v11, v12
+
+    const/4 v12, 0x3
+
+    aput-object v8, v11, v12
+
+    invoke-static {v6, v11}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    goto/16 :goto_4
+
+    .line 355
+    :cond_10
+    const v11, 0x2050069
+
+    invoke-virtual {p0, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v6
+
+    .line 356
+    const/4 v11, 0x4
+
+    new-array v11, v11, [Ljava/lang/Object;
+
+    const/4 v12, 0x0
+
+    aput-object v1, v11, v12
+
+    const/4 v12, 0x1
+
+    aput-object v10, v11, v12
+
+    const/4 v12, 0x2
+
+    aput-object v3, v11, v12
+
+    const/4 v12, 0x3
+
+    aput-object v8, v11, v12
 
     invoke-static {v6, v11}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1237,233 +1456,6 @@
     goto/16 :goto_4
 
     .line 362
-    :cond_b
-    if-ge v9, v2, :cond_d
-
-    if-ge v9, v0, :cond_d
-
-    .line 363
-    if-ge v2, v0, :cond_c
-
-    .line 364
-    const v11, 0x205006c
-
-    invoke-virtual {p0, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v6
-
-    .line 365
-    const/4 v11, 0x4
-
-    new-array v11, v11, [Ljava/lang/Object;
-
-    const/4 v12, 0x0
-
-    aput-object v10, v11, v12
-
-    const/4 v12, 0x1
-
-    aput-object v3, v11, v12
-
-    const/4 v12, 0x2
-
-    aput-object v1, v11, v12
-
-    const/4 v12, 0x3
-
-    aput-object v8, v11, v12
-
-    invoke-static {v6, v11}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    goto/16 :goto_4
-
-    .line 367
-    :cond_c
-    const v11, 0x205006d
-
-    invoke-virtual {p0, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v6
-
-    .line 368
-    const/4 v11, 0x4
-
-    new-array v11, v11, [Ljava/lang/Object;
-
-    const/4 v12, 0x0
-
-    aput-object v10, v11, v12
-
-    const/4 v12, 0x1
-
-    aput-object v1, v11, v12
-
-    const/4 v12, 0x2
-
-    aput-object v3, v11, v12
-
-    const/4 v12, 0x3
-
-    aput-object v8, v11, v12
-
-    invoke-static {v6, v11}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    goto/16 :goto_4
-
-    .line 370
-    :cond_d
-    if-ge v2, v0, :cond_f
-
-    .line 371
-    if-ge v0, v9, :cond_e
-
-    .line 372
-    const v11, 0x205006e
-
-    invoke-virtual {p0, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v6
-
-    .line 373
-    const/4 v11, 0x4
-
-    new-array v11, v11, [Ljava/lang/Object;
-
-    const/4 v12, 0x0
-
-    aput-object v3, v11, v12
-
-    const/4 v12, 0x1
-
-    aput-object v1, v11, v12
-
-    const/4 v12, 0x2
-
-    aput-object v10, v11, v12
-
-    const/4 v12, 0x3
-
-    aput-object v8, v11, v12
-
-    invoke-static {v6, v11}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    goto/16 :goto_4
-
-    .line 375
-    :cond_e
-    const v11, 0x205006f
-
-    invoke-virtual {p0, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v6
-
-    .line 376
-    const/4 v11, 0x4
-
-    new-array v11, v11, [Ljava/lang/Object;
-
-    const/4 v12, 0x0
-
-    aput-object v3, v11, v12
-
-    const/4 v12, 0x1
-
-    aput-object v10, v11, v12
-
-    const/4 v12, 0x2
-
-    aput-object v1, v11, v12
-
-    const/4 v12, 0x3
-
-    aput-object v8, v11, v12
-
-    invoke-static {v6, v11}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    goto/16 :goto_4
-
-    .line 379
-    :cond_f
-    if-ge v2, v9, :cond_10
-
-    .line 380
-    const v11, 0x205007a
-
-    invoke-virtual {p0, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v6
-
-    .line 381
-    const/4 v11, 0x4
-
-    new-array v11, v11, [Ljava/lang/Object;
-
-    const/4 v12, 0x0
-
-    aput-object v1, v11, v12
-
-    const/4 v12, 0x1
-
-    aput-object v3, v11, v12
-
-    const/4 v12, 0x2
-
-    aput-object v10, v11, v12
-
-    const/4 v12, 0x3
-
-    aput-object v8, v11, v12
-
-    invoke-static {v6, v11}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    goto/16 :goto_4
-
-    .line 383
-    :cond_10
-    const v11, 0x205007b
-
-    invoke-virtual {p0, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v6
-
-    .line 384
-    const/4 v11, 0x4
-
-    new-array v11, v11, [Ljava/lang/Object;
-
-    const/4 v12, 0x0
-
-    aput-object v1, v11, v12
-
-    const/4 v12, 0x1
-
-    aput-object v10, v11, v12
-
-    const/4 v12, 0x2
-
-    aput-object v3, v11, v12
-
-    const/4 v12, 0x3
-
-    aput-object v8, v11, v12
-
-    invoke-static {v6, v11}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    goto/16 :goto_4
-
-    .line 391
     .end local v6           #template:Ljava/lang/String;
     :cond_11
     if-ltz v2, :cond_17
@@ -1472,23 +1464,23 @@
 
     if-ltz v9, :cond_17
 
-    .line 392
+    .line 363
     const v11, #string@numeric_date_template#t
 
     invoke-virtual {p0, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 393
+    .line 364
     .restart local v6       #template:Ljava/lang/String;
     if-ge v9, v2, :cond_13
 
     if-ge v9, v0, :cond_13
 
-    .line 394
+    .line 365
     if-ge v2, v0, :cond_12
 
-    .line 395
+    .line 366
     const/4 v11, 0x3
 
     new-array v11, v11, [Ljava/lang/Object;
@@ -1512,12 +1504,12 @@
     :goto_6
     move-object v5, v4
 
-    .line 413
+    .line 384
     .end local v4           #result:Ljava/lang/String;
     .restart local v5       #result:Ljava/lang/String;
     goto/16 :goto_5
 
-    .line 397
+    .line 368
     .end local v5           #result:Ljava/lang/String;
     .restart local v4       #result:Ljava/lang/String;
     :cond_12
@@ -1543,14 +1535,14 @@
 
     goto :goto_6
 
-    .line 399
+    .line 370
     :cond_13
     if-ge v2, v0, :cond_15
 
-    .line 400
+    .line 371
     if-ge v0, v9, :cond_14
 
-    .line 401
+    .line 372
     const/4 v11, 0x3
 
     new-array v11, v11, [Ljava/lang/Object;
@@ -1573,7 +1565,7 @@
 
     goto :goto_6
 
-    .line 403
+    .line 374
     :cond_14
     const/4 v11, 0x3
 
@@ -1597,11 +1589,11 @@
 
     goto :goto_6
 
-    .line 406
+    .line 377
     :cond_15
     if-ge v2, v9, :cond_16
 
-    .line 407
+    .line 378
     const/4 v11, 0x3
 
     new-array v11, v11, [Ljava/lang/Object;
@@ -1624,7 +1616,7 @@
 
     goto :goto_6
 
-    .line 409
+    .line 380
     :cond_16
     const/4 v11, 0x3
 
@@ -1648,7 +1640,7 @@
 
     goto :goto_6
 
-    .line 422
+    .line 393
     .end local v0           #day:I
     .end local v1           #dayValue:Ljava/lang/String;
     .end local v2           #month:I
@@ -1667,18 +1659,18 @@
 
     move-object v5, v4
 
-    .line 423
+    .line 394
     .end local v4           #result:Ljava/lang/String;
     .restart local v5       #result:Ljava/lang/String;
     goto/16 :goto_5
 .end method
 
-.method public static getLongDateFormat(Landroid/content/Context;)Ljava/text/DateFormat;
+.method public static final getLongDateFormat(Landroid/content/Context;)Ljava/text/DateFormat;
     .locals 1
     .parameter "context"
 
     .prologue
-    .line 433
+    .line 404
     const/4 v0, 0x1
 
     invoke-static {v0}, Ljava/text/DateFormat;->getDateInstance(I)Ljava/text/DateFormat;
@@ -1688,12 +1680,12 @@
     return-object v0
 .end method
 
-.method public static getMediumDateFormat(Landroid/content/Context;)Ljava/text/DateFormat;
+.method public static final getMediumDateFormat(Landroid/content/Context;)Ljava/text/DateFormat;
     .locals 1
     .parameter "context"
 
     .prologue
-    .line 443
+    .line 414
     const/4 v0, 0x2
 
     invoke-static {v0}, Ljava/text/DateFormat;->getDateInstance(I)Ljava/text/DateFormat;
@@ -1703,119 +1695,80 @@
     return-object v0
 .end method
 
-.method private static getMonthString(Ljava/util/Calendar;II)Ljava/lang/String;
-    .locals 5
+.method private static final getMonthString(Ljava/util/Calendar;I)Ljava/lang/String;
+    .locals 2
     .parameter "inDate"
     .parameter "count"
-    .parameter "kind"
 
     .prologue
-    const/16 v4, 0x14
+    .line 595
+    const/4 v1, 0x2
 
-    const/16 v3, 0xa
-
-    .line 687
-    const/16 v2, 0x4c
-
-    if-ne p2, v2, :cond_0
-
-    const/4 v1, 0x1
-
-    .line 688
-    .local v1, standalone:Z
-    :goto_0
-    const/4 v2, 0x2
-
-    invoke-virtual {p0, v2}, Ljava/util/Calendar;->get(I)I
+    invoke-virtual {p0, v1}, Ljava/util/Calendar;->get(I)I
 
     move-result v0
 
-    .line 690
+    .line 597
     .local v0, month:I
-    const/4 v2, 0x4
+    const/4 v1, 0x4
 
-    if-lt p1, v2, :cond_2
+    if-lt p1, v1, :cond_0
 
-    .line 691
-    if-eqz v1, :cond_1
+    .line 598
+    const/16 v1, 0xa
 
-    invoke-static {v0, v3}, Landroid/text/format/DateUtils;->getStandaloneMonthString(II)Ljava/lang/String;
+    invoke-static {v0, v1}, Landroid/text/format/DateUtils;->getMonthString(II)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    .line 700
-    :goto_1
-    return-object v2
+    .line 603
+    :goto_0
+    return-object v1
 
-    .line 687
-    .end local v0           #month:I
-    .end local v1           #standalone:Z
+    .line 599
     :cond_0
-    const/4 v1, 0x0
+    const/4 v1, 0x3
+
+    if-ne p1, v1, :cond_1
+
+    .line 600
+    const/16 v1, 0x14
+
+    invoke-static {v0, v1}, Landroid/text/format/DateUtils;->getMonthString(II)Ljava/lang/String;
+
+    move-result-object v1
 
     goto :goto_0
 
-    .line 691
-    .restart local v0       #month:I
-    .restart local v1       #standalone:Z
+    .line 603
     :cond_1
-    invoke-static {v0, v3}, Landroid/text/format/DateUtils;->getMonthString(II)Ljava/lang/String;
+    add-int/lit8 v1, v0, 0x1
 
-    move-result-object v2
+    invoke-static {v1, p1}, Landroid/text/format/DateFormat;->zeroPad(II)Ljava/lang/String;
 
-    goto :goto_1
+    move-result-object v1
 
-    .line 694
-    :cond_2
-    const/4 v2, 0x3
-
-    if-ne p1, v2, :cond_4
-
-    .line 695
-    if-eqz v1, :cond_3
-
-    invoke-static {v0, v4}, Landroid/text/format/DateUtils;->getStandaloneMonthString(II)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto :goto_1
-
-    :cond_3
-    invoke-static {v0, v4}, Landroid/text/format/DateUtils;->getMonthString(II)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto :goto_1
-
-    .line 700
-    :cond_4
-    add-int/lit8 v2, v0, 0x1
-
-    invoke-static {v2, p1}, Landroid/text/format/DateFormat;->zeroPad(II)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto :goto_1
+    goto :goto_0
 .end method
 
-.method public static getTimeFormat(Landroid/content/Context;)Ljava/text/DateFormat;
+.method public static final getTimeFormat(Landroid/content/Context;)Ljava/text/DateFormat;
     .locals 4
     .parameter "context"
 
     .prologue
-    .line 277
+    .line 250
     invoke-static {p0}, Landroid/text/format/DateFormat;->is24HourFormat(Landroid/content/Context;)Z
 
     move-result v0
 
-    .line 280
+    .line 253
     .local v0, b24:Z
     if-eqz v0, :cond_0
 
-    .line 281
+    .line 254
     const v1, #string@twenty_four_hour_time_format#t
 
-    .line 286
+    .line 259
     .local v1, res:I
     :goto_0
     new-instance v2, Ljava/text/SimpleDateFormat;
@@ -1828,7 +1781,7 @@
 
     return-object v2
 
-    .line 283
+    .line 256
     .end local v1           #res:I
     :cond_0
     const v1, #string@twelve_hour_time_format#t
@@ -1837,7 +1790,7 @@
     goto :goto_0
 .end method
 
-.method private static getTimeZoneString(Ljava/util/Calendar;I)Ljava/lang/String;
+.method private static final getTimeZoneString(Ljava/util/Calendar;I)Ljava/lang/String;
     .locals 5
     .parameter "inDate"
     .parameter "count"
@@ -1847,18 +1800,18 @@
 
     const/4 v2, 0x0
 
-    .line 705
+    .line 608
     invoke-virtual {p0}, Ljava/util/Calendar;->getTimeZone()Ljava/util/TimeZone;
 
     move-result-object v1
 
-    .line 707
+    .line 610
     .local v1, tz:Ljava/util/TimeZone;
     const/4 v3, 0x2
 
     if-ge p1, v3, :cond_0
 
-    .line 708
+    .line 611
     invoke-virtual {p0, v4}, Ljava/util/Calendar;->get(I)I
 
     move-result v2
@@ -1875,11 +1828,11 @@
 
     move-result-object v2
 
-    .line 713
+    .line 616
     :goto_0
     return-object v2
 
-    .line 712
+    .line 615
     :cond_0
     invoke-virtual {p0, v4}, Ljava/util/Calendar;->get(I)I
 
@@ -1889,7 +1842,7 @@
 
     const/4 v0, 0x1
 
-    .line 713
+    .line 616
     .local v0, dst:Z
     :goto_1
     invoke-virtual {v1, v0, v2}, Ljava/util/TimeZone;->getDisplayName(ZI)Ljava/lang/String;
@@ -1902,26 +1855,26 @@
     :cond_1
     move v0, v2
 
-    .line 712
+    .line 615
     goto :goto_1
 .end method
 
-.method private static getYearString(Ljava/util/Calendar;I)Ljava/lang/String;
-    .locals 6
+.method private static final getYearString(Ljava/util/Calendar;I)Ljava/lang/String;
+    .locals 3
     .parameter "inDate"
     .parameter "count"
 
     .prologue
     const/4 v2, 0x2
 
-    const/4 v3, 0x1
+    .line 640
+    const/4 v1, 0x1
 
-    .line 737
-    invoke-virtual {p0, v3}, Ljava/util/Calendar;->get(I)I
+    invoke-virtual {p0, v1}, Ljava/util/Calendar;->get(I)I
 
     move-result v0
 
-    .line 738
+    .line 641
     .local v0, year:I
     if-gt p1, v2, :cond_0
 
@@ -1935,288 +1888,292 @@
     return-object v1
 
     :cond_0
-    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v1
-
-    const-string v2, "%d"
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    const/4 v4, 0x0
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    aput-object v5, v3, v4
-
-    invoke-static {v1, v2, v3}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    goto :goto_0
-.end method
-
-.method public static hasSeconds(Ljava/lang/CharSequence;)Z
-    .locals 6
-    .parameter "inFormat"
-
-    .prologue
-    const/4 v4, 0x0
-
-    .line 530
-    if-nez p0, :cond_1
-
-    .line 548
-    :cond_0
-    :goto_0
-    return v4
-
-    .line 532
-    :cond_1
-    invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
-
-    move-result v3
-
-    .line 537
-    .local v3, length:I
-    const/4 v2, 0x0
-
-    .local v2, i:I
-    :goto_1
-    if-ge v2, v3, :cond_0
-
-    .line 538
-    const/4 v1, 0x1
-
-    .line 539
-    .local v1, count:I
-    invoke-interface {p0, v2}, Ljava/lang/CharSequence;->charAt(I)C
-
-    move-result v0
-
-    .line 541
-    .local v0, c:I
-    const/16 v5, 0x27
-
-    if-ne v0, v5, :cond_3
-
-    .line 542
-    invoke-static {p0, v2, v3}, Landroid/text/format/DateFormat;->skipQuotedText(Ljava/lang/CharSequence;II)I
-
-    move-result v1
-
-    .line 537
-    :cond_2
-    add-int/2addr v2, v1
-
-    goto :goto_1
-
-    .line 543
-    :cond_3
-    const/16 v5, 0x73
-
-    if-ne v0, v5, :cond_2
-
-    .line 544
-    const/4 v4, 0x1
 
     goto :goto_0
 .end method
 
 .method public static is24HourFormat(Landroid/content/Context;)Z
-    .locals 5
+    .locals 9
     .parameter "context"
 
     .prologue
-    .line 221
-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v2
-
-    const-string/jumbo v3, "time_12_24"
-
-    invoke-static {v2, v3}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 225
-    .local v1, value:Ljava/lang/String;
-    if-nez v1, :cond_0
-
-    .line 226
-    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v2
-
-    const-string/jumbo v3, "time_12_24"
-
-    const-string v4, "24"
-
-    invoke-static {v2, v3, v4}, Landroid/provider/Settings$System;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
-
-    .line 228
-    const-string v1, "24"
-
-    .line 230
-    :cond_0
-    if-eqz v1, :cond_1
-
-    const-string v2, "12"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_1
+    const/4 v6, 0x0
 
     const/4 v0, 0x1
 
-    .line 231
-    .local v0, b24:Z
+    .line 204
+    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v7
+
+    const-string/jumbo v8, "time_12_24"
+
+    invoke-static {v7, v8}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v5
+
+    .line 207
+    .local v5, value:Ljava/lang/String;
+    if-nez v5, :cond_1
+
+    .line 208
+    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+
+    move-result-object v7
+
+    iget-object v1, v7, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
+
+    .line 210
+    .local v1, locale:Ljava/util/Locale;
+    sget-object v7, Landroid/text/format/DateFormat;->sLocaleLock:Ljava/lang/Object;
+
+    monitor-enter v7
+
+    .line 211
+    :try_start_0
+    sget-object v8, Landroid/text/format/DateFormat;->sIs24HourLocale:Ljava/util/Locale;
+
+    if-eqz v8, :cond_0
+
+    sget-object v8, Landroid/text/format/DateFormat;->sIs24HourLocale:Ljava/util/Locale;
+
+    invoke-virtual {v8, v1}, Ljava/util/Locale;->equals(Ljava/lang/Object;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_0
+
+    .line 212
+    sget-boolean v0, Landroid/text/format/DateFormat;->sIs24Hour:Z
+
+    monitor-exit v7
+
+    .line 240
+    .end local v1           #locale:Ljava/util/Locale;
     :goto_0
     return v0
 
-    .line 230
-    .end local v0           #b24:Z
-    :cond_1
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method private static skipQuotedText(Ljava/lang/CharSequence;II)I
-    .locals 4
-    .parameter "s"
-    .parameter "i"
-    .parameter "len"
-
-    .prologue
-    const/16 v3, 0x27
-
-    .line 552
-    add-int/lit8 v2, p1, 0x1
-
-    if-ge v2, p2, :cond_1
-
-    add-int/lit8 v2, p1, 0x1
-
-    invoke-interface {p0, v2}, Ljava/lang/CharSequence;->charAt(I)C
-
-    move-result v2
-
-    if-ne v2, v3, :cond_1
-
-    .line 553
-    const/4 v1, 0x2
-
-    .line 577
+    .line 214
+    .restart local v1       #locale:Ljava/util/Locale;
     :cond_0
-    return v1
+    monitor-exit v7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 556
+    .line 216
+    invoke-static {v0, v1}, Ljava/text/DateFormat;->getTimeInstance(ILjava/util/Locale;)Ljava/text/DateFormat;
+
+    move-result-object v2
+
+    .line 220
+    .local v2, natural:Ljava/text/DateFormat;
+    instance-of v7, v2, Ljava/text/SimpleDateFormat;
+
+    if-eqz v7, :cond_3
+
+    move-object v4, v2
+
+    .line 221
+    check-cast v4, Ljava/text/SimpleDateFormat;
+
+    .line 222
+    .local v4, sdf:Ljava/text/SimpleDateFormat;
+    invoke-virtual {v4}, Ljava/text/SimpleDateFormat;->toPattern()Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 224
+    .local v3, pattern:Ljava/lang/String;
+    const/16 v7, 0x48
+
+    invoke-virtual {v3, v7}, Ljava/lang/String;->indexOf(I)I
+
+    move-result v7
+
+    if-ltz v7, :cond_2
+
+    .line 225
+    const-string v5, "24"
+
+    .line 233
+    .end local v3           #pattern:Ljava/lang/String;
+    .end local v4           #sdf:Ljava/text/SimpleDateFormat;
+    :goto_1
+    sget-object v8, Landroid/text/format/DateFormat;->sLocaleLock:Ljava/lang/Object;
+
+    monitor-enter v8
+
+    .line 234
+    :try_start_1
+    sput-object v1, Landroid/text/format/DateFormat;->sIs24HourLocale:Ljava/util/Locale;
+
+    .line 235
+    const-string v7, "12"
+
+    invoke-virtual {v5, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-nez v7, :cond_4
+
+    move v7, v0
+
+    :goto_2
+    sput-boolean v7, Landroid/text/format/DateFormat;->sIs24Hour:Z
+
+    .line 236
+    monitor-exit v8
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    .line 239
+    .end local v1           #locale:Ljava/util/Locale;
+    .end local v2           #natural:Ljava/text/DateFormat;
     :cond_1
-    const/4 v1, 0x1
+    if-eqz v5, :cond_5
 
-    .line 558
-    .local v1, count:I
-    add-int/lit8 p1, p1, 0x1
+    const-string v7, "12"
 
-    .line 560
-    :goto_0
-    if-ge p1, p2, :cond_0
+    invoke-virtual {v5, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    .line 561
-    invoke-interface {p0, p1}, Ljava/lang/CharSequence;->charAt(I)C
+    move-result v7
 
-    move-result v0
+    if-nez v7, :cond_5
 
-    .line 563
-    .local v0, c:C
-    if-ne v0, v3, :cond_2
-
-    .line 564
-    add-int/lit8 v1, v1, 0x1
-
-    .line 566
-    add-int/lit8 v2, p1, 0x1
-
-    if-ge v2, p2, :cond_0
-
-    add-int/lit8 v2, p1, 0x1
-
-    invoke-interface {p0, v2}, Ljava/lang/CharSequence;->charAt(I)C
-
-    move-result v2
-
-    if-ne v2, v3, :cond_0
-
-    .line 567
-    add-int/lit8 p1, p1, 0x1
-
+    .line 240
+    .local v0, b24:Z
+    :goto_3
     goto :goto_0
 
-    .line 572
+    .line 214
+    .end local v0           #b24:Z
+    .restart local v1       #locale:Ljava/util/Locale;
+    :catchall_0
+    move-exception v6
+
+    :try_start_2
+    monitor-exit v7
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    throw v6
+
+    .line 227
+    .restart local v2       #natural:Ljava/text/DateFormat;
+    .restart local v3       #pattern:Ljava/lang/String;
+    .restart local v4       #sdf:Ljava/text/SimpleDateFormat;
     :cond_2
-    add-int/lit8 p1, p1, 0x1
+    const-string v5, "12"
 
-    .line 573
-    add-int/lit8 v1, v1, 0x1
+    goto :goto_1
 
-    goto :goto_0
+    .line 230
+    .end local v3           #pattern:Ljava/lang/String;
+    .end local v4           #sdf:Ljava/text/SimpleDateFormat;
+    :cond_3
+    const-string v5, "12"
+
+    goto :goto_1
+
+    :cond_4
+    move v7, v6
+
+    .line 235
+    goto :goto_2
+
+    .line 236
+    :catchall_1
+    move-exception v6
+
+    :try_start_3
+    monitor-exit v8
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    throw v6
+
+    .end local v1           #locale:Ljava/util/Locale;
+    .end local v2           #natural:Ljava/text/DateFormat;
+    :cond_5
+    move v0, v6
+
+    .line 239
+    goto :goto_3
 .end method
 
-.method private static zeroPad(II)Ljava/lang/String;
-    .locals 5
+.method private static final zeroPad(II)Ljava/lang/String;
+    .locals 6
     .parameter "inValue"
     .parameter "inMinDigits"
 
     .prologue
-    .line 780
-    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
+    .line 682
+    invoke-static {p0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v2
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    .line 684
+    .local v2, val:Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    move-result v3
 
-    const-string v2, "%0"
+    if-ge v3, p1, :cond_1
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 685
+    new-array v0, p1, [C
 
-    move-result-object v1
+    .line 687
+    .local v0, buf:[C
+    const/4 v1, 0x0
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    .local v1, i:I
+    :goto_0
+    if-ge v1, p1, :cond_0
 
-    move-result-object v1
+    .line 688
+    const/16 v3, 0x30
 
-    const-string v2, "d"
+    aput-char v3, v0, v1
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 687
+    add-int/lit8 v1, v1, 0x1
 
-    move-result-object v1
+    goto :goto_0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x1
-
-    new-array v2, v2, [Ljava/lang/Object;
-
+    .line 690
+    :cond_0
     const/4 v3, 0x0
 
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    move-result-object v4
+    move-result v4
 
-    aput-object v4, v2, v3
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    invoke-static {v0, v1, v2}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    move-result v5
 
-    move-result-object v0
+    sub-int v5, p1, v5
 
-    return-object v0
+    invoke-virtual {v2, v3, v4, v0, v5}, Ljava/lang/String;->getChars(II[CI)V
+
+    .line 691
+    new-instance v2, Ljava/lang/String;
+
+    .end local v2           #val:Ljava/lang/String;
+    invoke-direct {v2, v0}, Ljava/lang/String;-><init>([C)V
+
+    .line 693
+    .end local v0           #buf:[C
+    .end local v1           #i:I
+    .restart local v2       #val:Ljava/lang/String;
+    :cond_1
+    return-object v2
 .end method

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list android:oneshot="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:duration="70" android:drawable="@drawable/jrd_unlock_01" />
+    <item android:duration="70" android:drawable="@drawable/jrd_unlock_02" />
+    <item android:duration="70" android:drawable="@drawable/jrd_unlock_03" />
+    <item android:duration="70" android:drawable="@drawable/jrd_unlock_04" />
+    <item android:duration="70" android:drawable="@drawable/jrd_unlock_05" />
+    <item android:duration="70" android:drawable="@drawable/jrd_unlock_06" />
+    <item android:duration="70" android:drawable="@drawable/jrd_unlock_07" />
+    <item android:duration="70" android:drawable="@drawable/jrd_unlock_08" />
+    <item android:duration="70" android:drawable="@drawable/jrd_unlock_09" />
+    <item android:duration="70" android:drawable="@drawable/jrd_unlock_10" />
+    <item android:duration="70" android:drawable="@drawable/jrd_unlock_11" />
+    <item android:duration="70" android:drawable="@drawable/jrd_unlock_12" />
+    <item android:duration="70" android:drawable="@drawable/jrd_unlock_13" />
+    <item android:duration="70" android:drawable="@drawable/jrd_unlock_14" />
+    <item android:duration="70" android:drawable="@drawable/jrd_unlock_15" />
+    <item android:duration="70" android:drawable="@drawable/jrd_unlock_16" />
+    <item android:duration="70" android:drawable="@drawable/jrd_unlock_17" />
+    <item android:duration="70" android:drawable="@drawable/jrd_unlock_18" />
+    <item android:duration="70" android:drawable="@drawable/jrd_unlock_19" />
+    <item android:duration="70" android:drawable="@drawable/jrd_unlock_20" />
+    <item android:duration="70" android:drawable="@drawable/jrd_unlock_21" />
+    <item android:duration="70" android:drawable="@drawable/jrd_unlock_22" />
+    <item android:duration="70" android:drawable="@drawable/jrd_unlock_23" />
+</animation-list>

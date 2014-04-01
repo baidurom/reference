@@ -25,13 +25,13 @@
     .parameter "handler"
 
     .prologue
-    .line 2085
+    .line 2000
     iput-object p1, p0, Lcom/android/server/WifiService$NotificationEnabledSettingObserver;->this$0:Lcom/android/server/WifiService;
 
-    .line 2086
+    .line 2001
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 2087
+    .line 2002
     return-void
 .end method
 
@@ -41,7 +41,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 2105
+    .line 2020
     iget-object v1, p0, Lcom/android/server/WifiService$NotificationEnabledSettingObserver;->this$0:Lcom/android/server/WifiService;
 
     #getter for: Lcom/android/server/WifiService;->mContext:Landroid/content/Context;
@@ -55,7 +55,7 @@
 
     const-string v2, "wifi_networks_available_notification_on"
 
-    invoke-static {v1, v2, v0}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    invoke-static {v1, v2, v0}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v1
 
@@ -77,10 +77,10 @@
     .parameter "selfChange"
 
     .prologue
-    .line 2098
+    .line 2013
     invoke-super {p0, p1}, Landroid/database/ContentObserver;->onChange(Z)V
 
-    .line 2100
+    .line 2015
     iget-object v0, p0, Lcom/android/server/WifiService$NotificationEnabledSettingObserver;->this$0:Lcom/android/server/WifiService;
 
     invoke-direct {p0}, Lcom/android/server/WifiService$NotificationEnabledSettingObserver;->getValue()Z
@@ -88,15 +88,15 @@
     move-result v1
 
     #setter for: Lcom/android/server/WifiService;->mNotificationEnabled:Z
-    invoke-static {v0, v1}, Lcom/android/server/WifiService;->access$4102(Lcom/android/server/WifiService;Z)Z
+    invoke-static {v0, v1}, Lcom/android/server/WifiService;->access$4202(Lcom/android/server/WifiService;Z)Z
 
-    .line 2101
+    .line 2016
     iget-object v0, p0, Lcom/android/server/WifiService$NotificationEnabledSettingObserver;->this$0:Lcom/android/server/WifiService;
 
     #calls: Lcom/android/server/WifiService;->resetNotification()V
-    invoke-static {v0}, Lcom/android/server/WifiService;->access$1300(Lcom/android/server/WifiService;)V
+    invoke-static {v0}, Lcom/android/server/WifiService;->access$1500(Lcom/android/server/WifiService;)V
 
-    .line 2102
+    .line 2017
     return-void
 .end method
 
@@ -104,7 +104,7 @@
     .locals 3
 
     .prologue
-    .line 2090
+    .line 2005
     iget-object v1, p0, Lcom/android/server/WifiService$NotificationEnabledSettingObserver;->this$0:Lcom/android/server/WifiService;
 
     #getter for: Lcom/android/server/WifiService;->mContext:Landroid/content/Context;
@@ -116,11 +116,11 @@
 
     move-result-object v0
 
-    .line 2091
+    .line 2006
     .local v0, cr:Landroid/content/ContentResolver;
     const-string v1, "wifi_networks_available_notification_on"
 
-    invoke-static {v1}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+    invoke-static {v1}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v1
 
@@ -128,7 +128,7 @@
 
     invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 2093
+    .line 2008
     iget-object v1, p0, Lcom/android/server/WifiService$NotificationEnabledSettingObserver;->this$0:Lcom/android/server/WifiService;
 
     invoke-direct {p0}, Lcom/android/server/WifiService$NotificationEnabledSettingObserver;->getValue()Z
@@ -136,8 +136,8 @@
     move-result v2
 
     #setter for: Lcom/android/server/WifiService;->mNotificationEnabled:Z
-    invoke-static {v1, v2}, Lcom/android/server/WifiService;->access$4102(Lcom/android/server/WifiService;Z)Z
+    invoke-static {v1, v2}, Lcom/android/server/WifiService;->access$4202(Lcom/android/server/WifiService;Z)Z
 
-    .line 2094
+    .line 2009
     return-void
 .end method

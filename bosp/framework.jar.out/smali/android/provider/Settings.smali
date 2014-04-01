@@ -7,7 +7,6 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroid/provider/Settings$Bookmarks;,
-        Landroid/provider/Settings$Global;,
         Landroid/provider/Settings$Secure;,
         Landroid/provider/Settings$System;,
         Landroid/provider/Settings$NameValueCache;,
@@ -42,8 +41,6 @@
 
 .field public static final ACTION_DISPLAY_SETTINGS:Ljava/lang/String; = "android.settings.DISPLAY_SETTINGS"
 
-.field public static final ACTION_DREAM_SETTINGS:Ljava/lang/String; = "android.settings.DREAM_SETTINGS"
-
 .field public static final ACTION_INPUT_METHOD_SETTINGS:Ljava/lang/String; = "android.settings.INPUT_METHOD_SETTINGS"
 
 .field public static final ACTION_INPUT_METHOD_SUBTYPE_SETTINGS:Ljava/lang/String; = "android.settings.INPUT_METHOD_SUBTYPE_SETTINGS"
@@ -63,8 +60,6 @@
 .field public static final ACTION_NETWORK_OPERATOR_SETTINGS:Ljava/lang/String; = "android.settings.NETWORK_OPERATOR_SETTINGS"
 
 .field public static final ACTION_NFCSHARING_SETTINGS:Ljava/lang/String; = "android.settings.NFCSHARING_SETTINGS"
-
-.field public static final ACTION_NFC_SETTINGS:Ljava/lang/String; = "android.settings.NFC_SETTINGS"
 
 .field public static final ACTION_PRIVACY_SETTINGS:Ljava/lang/String; = "android.settings.PRIVACY_SETTINGS"
 
@@ -88,8 +83,6 @@
 
 .field public static final ACTION_USER_DICTIONARY_SETTINGS:Ljava/lang/String; = "android.settings.USER_DICTIONARY_SETTINGS"
 
-.field public static final ACTION_WIFI_DISPLAY_SETTINGS:Ljava/lang/String; = "android.settings.WIFI_DISPLAY_SETTINGS"
-
 .field public static final ACTION_WIFI_IP_SETTINGS:Ljava/lang/String; = "android.settings.WIFI_IP_SETTINGS"
 
 .field public static final ACTION_WIFI_SETTINGS:Ljava/lang/String; = "android.settings.WIFI_SETTINGS"
@@ -98,19 +91,9 @@
 
 .field public static final AUTHORITY:Ljava/lang/String; = "settings"
 
-.field public static final CALL_METHOD_GET_GLOBAL:Ljava/lang/String; = "GET_global"
-
 .field public static final CALL_METHOD_GET_SECURE:Ljava/lang/String; = "GET_secure"
 
 .field public static final CALL_METHOD_GET_SYSTEM:Ljava/lang/String; = "GET_system"
-
-.field public static final CALL_METHOD_PUT_GLOBAL:Ljava/lang/String; = "PUT_global"
-
-.field public static final CALL_METHOD_PUT_SECURE:Ljava/lang/String; = "PUT_secure"
-
-.field public static final CALL_METHOD_PUT_SYSTEM:Ljava/lang/String; = "PUT_system"
-
-.field public static final CALL_METHOD_USER_KEY:Ljava/lang/String; = "_user"
 
 .field public static final EXTRA_AUTHORITIES:Ljava/lang/String; = "authorities"
 
@@ -118,60 +101,21 @@
 
 .field private static final JID_RESOURCE_PREFIX:Ljava/lang/String; = "android"
 
-#the value of this static final field might be set in the static constructor
-.field private static final LOCAL_LOGV:Z = false
+.field private static final LOCAL_LOGV:Z = true
 
-.field private static final TAG:Ljava/lang/String; = "Provider/Settings"
+.field private static final TAG:Ljava/lang/String; = "Provider/Setting"
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    .prologue
-    .line 699
-    sget-object v0, Landroid/os/Build;->TYPE:Ljava/lang/String;
-
-    const-string v1, "eng"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    sput-boolean v0, Landroid/provider/Settings;->LOCAL_LOGV:Z
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 68
+    .line 58
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 7150
+    .line 4883
     return-void
-.end method
-
-.method static synthetic access$000()Z
-    .locals 1
-
-    .prologue
-    .line 68
-    sget-boolean v0, Landroid/provider/Settings;->LOCAL_LOGV:Z
-
-    return v0
 .end method
 
 .method public static getGTalkDeviceId(J)Ljava/lang/String;
@@ -179,7 +123,7 @@
     .parameter "androidId"
 
     .prologue
-    .line 7355
+    .line 5088
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

@@ -25,13 +25,13 @@
     .parameter "l"
 
     .prologue
-    .line 393
+    .line 391
     iput-object p1, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
 
-    .line 394
+    .line 392
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 395
+    .line 393
     return-void
 .end method
 
@@ -50,21 +50,21 @@
 
     const/4 v4, 0x0
 
-    .line 722
+    .line 717
     invoke-static {}, Ljava/util/GregorianCalendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v1
 
-    .line 723
+    .line 718
     .local v1, end:Ljava/util/Calendar;
     invoke-virtual {v1, p1, p2}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
-    .line 724
+    .line 719
     invoke-virtual {v1, v7}, Ljava/util/Calendar;->get(I)I
 
     move-result v0
 
-    .line 725
+    .line 720
     .local v0, day:I
     iget-object v3, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
 
@@ -75,25 +75,25 @@
 
     invoke-virtual {v1, v7, v3}, Ljava/util/Calendar;->set(II)V
 
-    .line 726
+    .line 721
     invoke-virtual {v1, v8, v4}, Ljava/util/Calendar;->set(II)V
 
-    .line 727
+    .line 722
     const/16 v3, 0xc
 
     invoke-virtual {v1, v3, v4}, Ljava/util/Calendar;->set(II)V
 
-    .line 728
+    .line 723
     const/16 v3, 0xd
 
     invoke-virtual {v1, v3, v4}, Ljava/util/Calendar;->set(II)V
 
-    .line 729
+    .line 724
     const/16 v3, 0xe
 
     invoke-virtual {v1, v3, v4}, Ljava/util/Calendar;->set(II)V
 
-    .line 730
+    .line 725
     iget-object v3, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
 
     #getter for: Lcom/android/server/ThrottleService;->mPolicyResetDay:I
@@ -103,16 +103,16 @@
 
     if-lt v0, v3, :cond_1
 
-    .line 731
+    .line 726
     invoke-virtual {v1, v6}, Ljava/util/Calendar;->get(I)I
 
     move-result v2
 
-    .line 732
+    .line 727
     .local v2, month:I
     if-ne v2, v8, :cond_0
 
-    .line 733
+    .line 728
     invoke-virtual {v1, v5}, Ljava/util/Calendar;->get(I)I
 
     move-result v3
@@ -121,16 +121,16 @@
 
     invoke-virtual {v1, v5, v3}, Ljava/util/Calendar;->set(II)V
 
-    .line 734
+    .line 729
     const/4 v2, -0x1
 
-    .line 736
+    .line 731
     :cond_0
     add-int/lit8 v3, v2, 0x1
 
     invoke-virtual {v1, v6, v3}, Ljava/util/Calendar;->set(II)V
 
-    .line 740
+    .line 735
     .end local v2           #month:I
     :cond_1
     const-string v3, "persist.throttle.testing"
@@ -147,22 +147,22 @@
 
     if-eqz v3, :cond_2
 
-    .line 741
+    .line 736
     invoke-static {}, Ljava/util/GregorianCalendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v1
 
-    .line 742
+    .line 737
     invoke-virtual {v1, p1, p2}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
-    .line 743
+    .line 738
     const/16 v3, 0xd
 
     const/16 v4, 0x258
 
     invoke-virtual {v1, v3, v4}, Ljava/util/Calendar;->add(II)V
 
-    .line 745
+    .line 740
     :cond_2
     return-object v1
 .end method
@@ -176,20 +176,20 @@
 
     const/4 v3, 0x2
 
-    .line 748
+    .line 743
     invoke-virtual {p1}, Ljava/util/Calendar;->clone()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Ljava/util/Calendar;
 
-    .line 749
+    .line 744
     .local v1, start:Ljava/util/Calendar;
     invoke-virtual {p1, v3}, Ljava/util/Calendar;->get(I)I
 
     move-result v0
 
-    .line 750
+    .line 745
     .local v0, month:I
     invoke-virtual {p1, v3}, Ljava/util/Calendar;->get(I)I
 
@@ -197,10 +197,10 @@
 
     if-nez v2, :cond_0
 
-    .line 751
+    .line 746
     const/16 v0, 0xc
 
-    .line 752
+    .line 747
     invoke-virtual {v1, v4}, Ljava/util/Calendar;->get(I)I
 
     move-result v2
@@ -209,13 +209,13 @@
 
     invoke-virtual {v1, v4, v2}, Ljava/util/Calendar;->set(II)V
 
-    .line 754
+    .line 749
     :cond_0
     add-int/lit8 v2, v0, -0x1
 
     invoke-virtual {v1, v3, v2}, Ljava/util/Calendar;->set(II)V
 
-    .line 757
+    .line 752
     const-string v2, "persist.throttle.testing"
 
     invoke-static {v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -230,7 +230,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 758
+    .line 753
     invoke-virtual {p1}, Ljava/util/Calendar;->clone()Ljava/lang/Object;
 
     move-result-object v1
@@ -238,7 +238,7 @@
     .end local v1           #start:Ljava/util/Calendar;
     check-cast v1, Ljava/util/Calendar;
 
-    .line 759
+    .line 754
     .restart local v1       #start:Ljava/util/Calendar;
     const/16 v2, 0xd
 
@@ -246,7 +246,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/util/Calendar;->add(II)V
 
-    .line 761
+    .line 756
     :cond_1
     return-object v1
 .end method
@@ -256,7 +256,7 @@
     .parameter "currentTotal"
 
     .prologue
-    .line 599
+    .line 597
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
@@ -272,7 +272,7 @@
 
     move-result-wide v15
 
-    .line 600
+    .line 598
     .local v15, threshold:J
     const-wide/16 v21, 0x0
 
@@ -280,15 +280,15 @@
 
     if-nez v21, :cond_1
 
-    .line 601
+    .line 599
     invoke-direct/range {p0 .. p0}, Lcom/android/server/ThrottleService$MyHandler;->clearThrottleAndNotification()V
 
-    .line 674
+    .line 672
     :cond_0
     :goto_0
     return-void
 
-    .line 607
+    .line 605
     :cond_1
     move-object/from16 v0, p0
 
@@ -307,7 +307,7 @@
 
     if-nez v21, :cond_2
 
-    .line 608
+    .line 606
     const-string v21, "ThrottleService"
 
     const-string v22, "missing trusted time, skipping throttle check"
@@ -316,13 +316,13 @@
 
     goto :goto_0
 
-    .line 613
+    .line 611
     :cond_2
     cmp-long v21, p1, v15
 
     if-lez v21, :cond_3
 
-    .line 614
+    .line 612
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
@@ -346,7 +346,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 615
+    .line 613
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
@@ -362,7 +362,7 @@
 
     invoke-virtual/range {v21 .. v22}, Ljava/util/concurrent/atomic/AtomicInteger;->set(I)V
 
-    .line 616
+    .line 614
     const-string v21, "ThrottleService"
 
     new-instance v22, Ljava/lang/StringBuilder;
@@ -395,7 +395,7 @@
 
     invoke-static/range {v21 .. v22}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 618
+    .line 616
     :try_start_0
     move-object/from16 v0, p0
 
@@ -453,7 +453,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 624
+    .line 622
     :goto_1
     move-object/from16 v0, p0
 
@@ -470,7 +470,7 @@
 
     invoke-virtual/range {v21 .. v22}, Landroid/app/NotificationManager;->cancel(I)V
 
-    .line 626
+    .line 624
     const v21, #string@throttled_notification_title#t
 
     const v22, #string@throttled_notification_message#t
@@ -491,7 +491,7 @@
 
     invoke-direct {v0, v1, v2, v3, v4}, Lcom/android/server/ThrottleService$MyHandler;->postNotification(IIII)V
 
-    .line 631
+    .line 629
     new-instance v5, Landroid/content/Intent;
 
     const-string v21, "android.net.thrott.THROTTLE_ACTION"
@@ -500,7 +500,7 @@
 
     invoke-direct {v5, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 632
+    .line 630
     .local v5, broadcast:Landroid/content/Intent;
     const-string v21, "level"
 
@@ -525,7 +525,7 @@
 
     invoke-virtual {v5, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 634
+    .line 632
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
@@ -537,22 +537,18 @@
 
     move-result-object v21
 
-    sget-object v22, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
-
     move-object/from16 v0, v21
 
-    move-object/from16 v1, v22
-
-    invoke-virtual {v0, v5, v1}, Landroid/content/Context;->sendStickyBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
+    invoke-virtual {v0, v5}, Landroid/content/Context;->sendStickyBroadcast(Landroid/content/Intent;)V
 
     goto/16 :goto_0
 
-    .line 620
+    .line 618
     .end local v5           #broadcast:Landroid/content/Intent;
     :catch_0
     move-exception v6
 
-    .line 621
+    .line 619
     .local v6, e:Ljava/lang/Exception;
     const-string v21, "ThrottleService"
 
@@ -580,12 +576,12 @@
 
     goto :goto_1
 
-    .line 638
+    .line 636
     .end local v6           #e:Ljava/lang/Exception;
     :cond_3
     invoke-direct/range {p0 .. p0}, Lcom/android/server/ThrottleService$MyHandler;->clearThrottleAndNotification()V
 
-    .line 639
+    .line 637
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
@@ -601,7 +597,7 @@
 
     if-eqz v21, :cond_0
 
-    .line 651
+    .line 649
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
@@ -617,7 +613,7 @@
 
     move-result-wide v13
 
-    .line 652
+    .line 650
     .local v13, start:J
     move-object/from16 v0, p0
 
@@ -634,21 +630,21 @@
 
     move-result-wide v7
 
-    .line 653
+    .line 651
     .local v7, end:J
     sub-long v11, v7, v13
 
-    .line 654
+    .line 652
     .local v11, periodLength:J
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v9
 
-    .line 655
+    .line 653
     .local v9, now:J
     sub-long v17, v9, v13
 
-    .line 656
+    .line 654
     .local v17, timeUsed:J
     const-wide/16 v21, 0x2
 
@@ -660,7 +656,7 @@
 
     div-long v19, v21, v23
 
-    .line 657
+    .line 655
     .local v19, warningThreshold:J
     cmp-long v21, p1, v19
 
@@ -674,7 +670,7 @@
 
     if-lez v21, :cond_4
 
-    .line 658
+    .line 656
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
@@ -688,7 +684,7 @@
 
     if-nez v21, :cond_0
 
-    .line 659
+    .line 657
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
@@ -700,7 +696,7 @@
     #setter for: Lcom/android/server/ThrottleService;->mWarningNotificationSent:Z
     invoke-static/range {v21 .. v22}, Lcom/android/server/ThrottleService;->access$1902(Lcom/android/server/ThrottleService;Z)Z
 
-    .line 660
+    .line 658
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
@@ -716,7 +712,7 @@
 
     invoke-virtual/range {v21 .. v22}, Landroid/app/NotificationManager;->cancel(I)V
 
-    .line 661
+    .line 659
     const v21, #string@throttle_warning_notification_title#t
 
     const v22, #string@throttle_warning_notification_message#t
@@ -739,7 +735,7 @@
 
     goto/16 :goto_0
 
-    .line 667
+    .line 665
     :cond_4
     move-object/from16 v0, p0
 
@@ -760,7 +756,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 668
+    .line 666
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
@@ -776,7 +772,7 @@
 
     invoke-virtual/range {v21 .. v22}, Landroid/app/NotificationManager;->cancel(I)V
 
-    .line 669
+    .line 667
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
@@ -799,7 +795,7 @@
 
     const/4 v6, -0x1
 
-    .line 705
+    .line 701
     iget-object v2, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
 
     #getter for: Lcom/android/server/ThrottleService;->mThrottleIndex:Ljava/util/concurrent/atomic/AtomicInteger;
@@ -813,7 +809,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 706
+    .line 702
     iget-object v2, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
 
     #getter for: Lcom/android/server/ThrottleService;->mThrottleIndex:Ljava/util/concurrent/atomic/AtomicInteger;
@@ -823,7 +819,7 @@
 
     invoke-virtual {v2, v7}, Ljava/util/concurrent/atomic/AtomicInteger;->set(I)V
 
-    .line 708
+    .line 704
     :try_start_0
     iget-object v2, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
 
@@ -847,7 +843,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 712
+    .line 708
     :goto_0
     new-instance v0, Landroid/content/Intent;
 
@@ -855,13 +851,13 @@
 
     invoke-direct {v0, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 713
+    .line 709
     .local v0, broadcast:Landroid/content/Intent;
     const-string v2, "level"
 
     invoke-virtual {v0, v2, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 714
+    .line 710
     iget-object v2, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
 
     #getter for: Lcom/android/server/ThrottleService;->mContext:Landroid/content/Context;
@@ -869,11 +865,9 @@
 
     move-result-object v2
 
-    sget-object v3, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
+    invoke-virtual {v2, v0}, Landroid/content/Context;->sendStickyBroadcast(Landroid/content/Intent;)V
 
-    invoke-virtual {v2, v0, v3}, Landroid/content/Context;->sendStickyBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
-
-    .line 715
+    .line 711
     iget-object v2, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
 
     #getter for: Lcom/android/server/ThrottleService;->mNotificationManager:Landroid/app/NotificationManager;
@@ -881,30 +875,26 @@
 
     move-result-object v2
 
-    const/4 v3, 0x0
+    const v3, #drawable@stat_sys_throttled#t
 
-    const v4, #drawable@stat_sys_throttled#t
+    invoke-virtual {v2, v3}, Landroid/app/NotificationManager;->cancel(I)V
 
-    sget-object v5, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
-
-    invoke-virtual {v2, v3, v4, v5}, Landroid/app/NotificationManager;->cancelAsUser(Ljava/lang/String;ILandroid/os/UserHandle;)V
-
-    .line 717
+    .line 712
     iget-object v2, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
 
     #setter for: Lcom/android/server/ThrottleService;->mWarningNotificationSent:Z
     invoke-static {v2, v7}, Lcom/android/server/ThrottleService;->access$1902(Lcom/android/server/ThrottleService;Z)Z
 
-    .line 719
+    .line 714
     .end local v0           #broadcast:Landroid/content/Intent;
     :cond_0
     return-void
 
-    .line 709
+    .line 705
     :catch_0
     move-exception v1
 
-    .line 710
+    .line 706
     .local v1, e:Ljava/lang/Exception;
     const-string v2, "ThrottleService"
 
@@ -935,7 +925,7 @@
     .locals 5
 
     .prologue
-    .line 586
+    .line 584
     iget-object v1, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
 
     #getter for: Lcom/android/server/ThrottleService;->mThrottleIndex:Ljava/util/concurrent/atomic/AtomicInteger;
@@ -951,7 +941,7 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 588
+    .line 586
     :try_start_0
     iget-object v1, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
 
@@ -973,7 +963,7 @@
 
     invoke-interface {v1, v2, v3, v4}, Landroid/os/INetworkManagementService;->setInterfaceThrottle(Ljava/lang/String;II)V
 
-    .line 589
+    .line 587
     iget-object v1, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
 
     #getter for: Lcom/android/server/ThrottleService;->mNMService:Landroid/os/INetworkManagementService;
@@ -1014,16 +1004,16 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 595
+    .line 593
     :cond_0
     :goto_0
     return-void
 
-    .line 591
+    .line 589
     :catch_0
     move-exception v0
 
-    .line 592
+    .line 590
     .local v0, e:Ljava/lang/Exception;
     const-string v1, "ThrottleService"
 
@@ -1054,7 +1044,7 @@
     .locals 17
 
     .prologue
-    .line 444
+    .line 442
     const-string v13, "persist.throttle.testing"
 
     invoke-static {v13}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -1067,7 +1057,7 @@
 
     move-result v9
 
-    .line 446
+    .line 444
     .local v9, testing:Z
     move-object/from16 v0, p0
 
@@ -1088,7 +1078,7 @@
 
     move-result v8
 
-    .line 448
+    .line 446
     .local v8, pollingPeriod:I
     move-object/from16 v0, p0
 
@@ -1109,14 +1099,14 @@
 
     const-string v15, "throttle_polling_sec"
 
-    invoke-static {v14, v15, v8}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    invoke-static {v14, v15, v8}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v14
 
     #setter for: Lcom/android/server/ThrottleService;->mPolicyPollPeriodSec:I
     invoke-static {v13, v14}, Lcom/android/server/ThrottleService;->access$402(Lcom/android/server/ThrottleService;I)I
 
-    .line 452
+    .line 450
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
@@ -1138,7 +1128,7 @@
 
     int-to-long v3, v13
 
-    .line 454
+    .line 452
     .local v3, defaultThreshold:J
     move-object/from16 v0, p0
 
@@ -1159,7 +1149,7 @@
 
     move-result v5
 
-    .line 456
+    .line 454
     .local v5, defaultValue:I
     move-object/from16 v0, p0
 
@@ -1176,11 +1166,11 @@
 
     const-string v14, "throttle_threshold_bytes"
 
-    invoke-static {v13, v14, v3, v4}, Landroid/provider/Settings$Global;->getLong(Landroid/content/ContentResolver;Ljava/lang/String;J)J
+    invoke-static {v13, v14, v3, v4}, Landroid/provider/Settings$Secure;->getLong(Landroid/content/ContentResolver;Ljava/lang/String;J)J
 
     move-result-wide v10
 
-    .line 458
+    .line 456
     .local v10, threshold:J
     move-object/from16 v0, p0
 
@@ -1197,11 +1187,11 @@
 
     const-string v14, "throttle_value_kbitsps"
 
-    invoke-static {v13, v14, v5}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    invoke-static {v13, v14, v5}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v12
 
-    .line 461
+    .line 459
     .local v12, value:I
     move-object/from16 v0, p0
 
@@ -1214,7 +1204,7 @@
 
     invoke-virtual {v13, v10, v11}, Ljava/util/concurrent/atomic/AtomicLong;->set(J)V
 
-    .line 462
+    .line 460
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
@@ -1226,10 +1216,10 @@
 
     invoke-virtual {v13, v12}, Ljava/util/concurrent/atomic/AtomicInteger;->set(I)V
 
-    .line 463
+    .line 461
     if-eqz v9, :cond_0
 
-    .line 464
+    .line 462
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
@@ -1239,7 +1229,7 @@
     #setter for: Lcom/android/server/ThrottleService;->mPolicyPollPeriodSec:I
     invoke-static {v13, v14}, Lcom/android/server/ThrottleService;->access$402(Lcom/android/server/ThrottleService;I)I
 
-    .line 465
+    .line 463
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
@@ -1253,7 +1243,7 @@
 
     invoke-virtual {v13, v14, v15}, Ljava/util/concurrent/atomic/AtomicLong;->set(J)V
 
-    .line 468
+    .line 466
     :cond_0
     move-object/from16 v0, p0
 
@@ -1276,14 +1266,14 @@
 
     const/16 v16, -0x1
 
-    invoke-static/range {v14 .. v16}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    invoke-static/range {v14 .. v16}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v14
 
     #setter for: Lcom/android/server/ThrottleService;->mPolicyResetDay:I
     invoke-static {v13, v14}, Lcom/android/server/ThrottleService;->access$702(Lcom/android/server/ThrottleService;I)I
 
-    .line 470
+    .line 468
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
@@ -1323,13 +1313,13 @@
 
     if-le v13, v14, :cond_2
 
-    .line 472
+    .line 470
     :cond_1
     new-instance v6, Ljava/util/Random;
 
     invoke-direct {v6}, Ljava/util/Random;-><init>()V
 
-    .line 473
+    .line 471
     .local v6, g:Ljava/util/Random;
     move-object/from16 v0, p0
 
@@ -1346,7 +1336,7 @@
     #setter for: Lcom/android/server/ThrottleService;->mPolicyResetDay:I
     invoke-static {v13, v14}, Lcom/android/server/ThrottleService;->access$702(Lcom/android/server/ThrottleService;I)I
 
-    .line 474
+    .line 472
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
@@ -1371,9 +1361,9 @@
 
     move-result v15
 
-    invoke-static {v13, v14, v15}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    invoke-static {v13, v14, v15}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 477
+    .line 475
     .end local v6           #g:Ljava/util/Random;
     :cond_2
     move-object/from16 v0, p0
@@ -1387,7 +1377,7 @@
 
     if-nez v13, :cond_3
 
-    .line 478
+    .line 476
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
@@ -1401,7 +1391,7 @@
 
     invoke-virtual {v13, v14, v15}, Ljava/util/concurrent/atomic/AtomicLong;->set(J)V
 
-    .line 481
+    .line 479
     :cond_3
     move-object/from16 v0, p0
 
@@ -1422,7 +1412,7 @@
 
     move-result v2
 
-    .line 483
+    .line 481
     .local v2, defaultNotificationType:I
     move-object/from16 v0, p0
 
@@ -1443,14 +1433,14 @@
 
     const-string v15, "throttle_notification_type"
 
-    invoke-static {v14, v15, v2}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    invoke-static {v14, v15, v2}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v14
 
     #setter for: Lcom/android/server/ThrottleService;->mPolicyNotificationsAllowedMask:I
     invoke-static {v13, v14}, Lcom/android/server/ThrottleService;->access$902(Lcom/android/server/ThrottleService;I)I
 
-    .line 486
+    .line 484
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
@@ -1468,11 +1458,11 @@
 
     const v15, 0x15180
 
-    invoke-static {v13, v14, v15}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    invoke-static {v13, v14, v15}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v7
 
-    .line 489
+    .line 487
     .local v7, maxNtpCacheAgeSec:I
     move-object/from16 v0, p0
 
@@ -1485,7 +1475,7 @@
     #setter for: Lcom/android/server/ThrottleService;->mMaxNtpCacheAge:J
     invoke-static {v13, v14, v15}, Lcom/android/server/ThrottleService;->access$1002(Lcom/android/server/ThrottleService;J)J
 
-    .line 491
+    .line 489
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
@@ -1505,7 +1495,7 @@
 
     if-eqz v13, :cond_4
 
-    .line 492
+    .line 490
     const-string v13, "ThrottleService"
 
     new-instance v14, Ljava/lang/StringBuilder;
@@ -1650,7 +1640,7 @@
 
     invoke-static {v13, v14}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 500
+    .line 498
     :cond_4
     move-object/from16 v0, p0
 
@@ -1665,20 +1655,20 @@
 
     invoke-virtual {v13, v14}, Ljava/util/concurrent/atomic/AtomicInteger;->set(I)V
 
-    .line 502
+    .line 500
     invoke-direct/range {p0 .. p0}, Lcom/android/server/ThrottleService$MyHandler;->onResetAlarm()V
 
-    .line 504
+    .line 502
     invoke-direct/range {p0 .. p0}, Lcom/android/server/ThrottleService$MyHandler;->onPollAlarm()V
 
-    .line 506
+    .line 504
     new-instance v1, Landroid/content/Intent;
 
     const-string v13, "android.net.thrott.POLICY_CHANGED_ACTION"
 
     invoke-direct {v1, v13}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 507
+    .line 505
     .local v1, broadcast:Landroid/content/Intent;
     move-object/from16 v0, p0
 
@@ -1689,11 +1679,9 @@
 
     move-result-object v13
 
-    sget-object v14, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
+    invoke-virtual {v13, v1}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    invoke-virtual {v13, v1, v14}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
-
-    .line 508
+    .line 506
     return-void
 .end method
 
@@ -1701,12 +1689,12 @@
     .locals 29
 
     .prologue
-    .line 511
+    .line 509
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v15
 
-    .line 512
+    .line 510
     .local v15, now:J
     move-object/from16 v0, p0
 
@@ -1733,7 +1721,7 @@
 
     add-long v13, v15, v25
 
-    .line 515
+    .line 513
     .local v13, next:J
     move-object/from16 v0, p0
 
@@ -1765,7 +1753,7 @@
 
     if-lez v25, :cond_0
 
-    .line 516
+    .line 514
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
@@ -1783,7 +1771,7 @@
 
     if-eqz v25, :cond_0
 
-    .line 518
+    .line 516
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
@@ -1792,15 +1780,15 @@
 
     invoke-virtual/range {v25 .. v25}, Lcom/android/server/ThrottleService;->dispatchReset()V
 
-    .line 522
+    .line 520
     :cond_0
     const-wide/16 v8, 0x0
 
-    .line 523
+    .line 521
     .local v8, incRead:J
     const-wide/16 v10, 0x0
 
-    .line 525
+    .line 523
     .local v10, incWrite:J
     :try_start_0
     move-object/from16 v0, p0
@@ -1814,11 +1802,11 @@
 
     move-result-object v25
 
-    invoke-interface/range {v25 .. v25}, Landroid/os/INetworkManagementService;->getNetworkStatsSummaryDev()Landroid/net/NetworkStats;
+    invoke-interface/range {v25 .. v25}, Landroid/os/INetworkManagementService;->getNetworkStatsSummary()Landroid/net/NetworkStats;
 
     move-result-object v22
 
-    .line 526
+    .line 524
     .local v22, stats:Landroid/net/NetworkStats;
     move-object/from16 v0, p0
 
@@ -1851,7 +1839,7 @@
 
     move-result v12
 
-    .line 529
+    .line 527
     .local v12, index:I
     const/16 v25, -0x1
 
@@ -1859,7 +1847,7 @@
 
     if-eq v12, v0, :cond_5
 
-    .line 530
+    .line 528
     const/16 v25, 0x0
 
     move-object/from16 v0, v22
@@ -1870,7 +1858,7 @@
 
     move-result-object v7
 
-    .line 531
+    .line 529
     .local v7, entry:Landroid/net/NetworkStats$Entry;
     iget-wide v0, v7, Landroid/net/NetworkStats$Entry;->rxBytes:J
 
@@ -1889,7 +1877,7 @@
 
     sub-long v8, v25, v27
 
-    .line 532
+    .line 530
     iget-wide v0, v7, Landroid/net/NetworkStats$Entry;->txBytes:J
 
     move-wide/from16 v25, v0
@@ -1907,7 +1895,7 @@
 
     sub-long v10, v25, v27
 
-    .line 540
+    .line 538
     .end local v7           #entry:Landroid/net/NetworkStats$Entry;
     :goto_0
     const-wide/16 v25, 0x0
@@ -1922,7 +1910,7 @@
 
     if-gez v25, :cond_2
 
-    .line 541
+    .line 539
     :cond_1
     move-object/from16 v0, p0
 
@@ -1937,7 +1925,7 @@
 
     add-long v8, v8, v25
 
-    .line 542
+    .line 540
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
@@ -1951,7 +1939,7 @@
 
     add-long v10, v10, v25
 
-    .line 543
+    .line 541
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
@@ -1963,7 +1951,7 @@
     #setter for: Lcom/android/server/ThrottleService;->mLastRead:J
     invoke-static/range {v25 .. v27}, Lcom/android/server/ThrottleService;->access$1302(Lcom/android/server/ThrottleService;J)J
 
-    .line 544
+    .line 542
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
@@ -1978,7 +1966,7 @@
     .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 553
+    .line 551
     .end local v12           #index:I
     .end local v22           #stats:Landroid/net/NetworkStats;
     :cond_2
@@ -1995,11 +1983,11 @@
 
     move-result v21
 
-    .line 555
+    .line 553
     .local v21, roaming:Z
     if-nez v21, :cond_3
 
-    .line 556
+    .line 554
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
@@ -2015,7 +2003,7 @@
 
     invoke-virtual {v0, v8, v9, v10, v11}, Lcom/android/server/ThrottleService$DataRecorder;->addData(JJ)V
 
-    .line 559
+    .line 557
     :cond_3
     move-object/from16 v0, p0
 
@@ -2034,7 +2022,7 @@
 
     move-result-wide v17
 
-    .line 560
+    .line 558
     .local v17, periodRx:J
     move-object/from16 v0, p0
 
@@ -2053,11 +2041,11 @@
 
     move-result-wide v19
 
-    .line 561
+    .line 559
     .local v19, periodTx:J
     add-long v23, v17, v19
 
-    .line 562
+    .line 560
     .local v23, total:J
     move-object/from16 v0, p0
 
@@ -2080,7 +2068,7 @@
 
     if-eqz v25, :cond_4
 
-    .line 563
+    .line 561
     const-string v25, "ThrottleService"
 
     new-instance v26, Ljava/lang/StringBuilder;
@@ -2145,7 +2133,7 @@
 
     invoke-static/range {v25 .. v26}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 566
+    .line 564
     :cond_4
     move-object/from16 v0, p0
 
@@ -2157,7 +2145,7 @@
 
     invoke-static {v0, v8, v9}, Lcom/android/server/ThrottleService;->access$1314(Lcom/android/server/ThrottleService;J)J
 
-    .line 567
+    .line 565
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
@@ -2168,14 +2156,14 @@
 
     invoke-static {v0, v10, v11}, Lcom/android/server/ThrottleService;->access$1414(Lcom/android/server/ThrottleService;J)J
 
-    .line 569
+    .line 567
     move-object/from16 v0, p0
 
     move-wide/from16 v1, v23
 
     invoke-direct {v0, v1, v2}, Lcom/android/server/ThrottleService$MyHandler;->checkThrottleAndPostNotification(J)V
 
-    .line 571
+    .line 569
     new-instance v5, Landroid/content/Intent;
 
     const-string v25, "android.net.thrott.POLL_ACTION"
@@ -2184,7 +2172,7 @@
 
     invoke-direct {v5, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 572
+    .line 570
     .local v5, broadcast:Landroid/content/Intent;
     const-string v25, "cycleRead"
 
@@ -2194,7 +2182,7 @@
 
     invoke-virtual {v5, v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
 
-    .line 573
+    .line 571
     const-string v25, "cycleWrite"
 
     move-object/from16 v0, v25
@@ -2203,7 +2191,7 @@
 
     invoke-virtual {v5, v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
 
-    .line 574
+    .line 572
     const-string v25, "cycleStart"
 
     move-object/from16 v0, p0
@@ -2233,7 +2221,7 @@
 
     invoke-virtual {v5, v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
 
-    .line 575
+    .line 573
     const-string v25, "cycleEnd"
 
     move-object/from16 v0, p0
@@ -2263,7 +2251,7 @@
 
     invoke-virtual {v5, v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
 
-    .line 576
+    .line 574
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
@@ -2275,15 +2263,11 @@
 
     move-result-object v25
 
-    sget-object v26, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
-
     move-object/from16 v0, v25
 
-    move-object/from16 v1, v26
+    invoke-virtual {v0, v5}, Landroid/content/Context;->sendStickyBroadcast(Landroid/content/Intent;)V
 
-    invoke-virtual {v0, v5, v1}, Landroid/content/Context;->sendStickyBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
-
-    .line 577
+    .line 575
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
@@ -2295,7 +2279,7 @@
     #setter for: Lcom/android/server/ThrottleService;->mPollStickyBroadcast:Landroid/content/Intent;
     invoke-static {v0, v5}, Lcom/android/server/ThrottleService;->access$1502(Lcom/android/server/ThrottleService;Landroid/content/Intent;)Landroid/content/Intent;
 
-    .line 579
+    .line 577
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
@@ -2320,7 +2304,7 @@
 
     invoke-virtual/range {v25 .. v26}, Landroid/app/AlarmManager;->cancel(Landroid/app/PendingIntent;)V
 
-    .line 580
+    .line 578
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
@@ -2353,10 +2337,10 @@
 
     invoke-virtual {v0, v1, v13, v14, v2}, Landroid/app/AlarmManager;->set(IJLandroid/app/PendingIntent;)V
 
-    .line 581
+    .line 579
     return-void
 
-    .line 535
+    .line 533
     .end local v5           #broadcast:Landroid/content/Intent;
     .end local v17           #periodRx:J
     .end local v19           #periodTx:J
@@ -2404,13 +2388,13 @@
 
     goto/16 :goto_0
 
-    .line 546
+    .line 544
     .end local v12           #index:I
     .end local v22           #stats:Landroid/net/NetworkStats;
     :catch_0
     move-exception v6
 
-    .line 547
+    .line 545
     .local v6, e:Ljava/lang/IllegalStateException;
     const-string v25, "ThrottleService"
 
@@ -2438,12 +2422,12 @@
 
     goto/16 :goto_1
 
-    .line 548
+    .line 546
     .end local v6           #e:Ljava/lang/IllegalStateException;
     :catch_1
     move-exception v6
 
-    .line 549
+    .line 547
     .local v6, e:Landroid/os/RemoteException;
     const-string v25, "ThrottleService"
 
@@ -2476,7 +2460,7 @@
     .locals 4
 
     .prologue
-    .line 428
+    .line 426
     iget-object v0, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
 
     #getter for: Lcom/android/server/ThrottleService;->mThrottleIndex:Ljava/util/concurrent/atomic/AtomicInteger;
@@ -2488,7 +2472,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;->set(I)V
 
-    .line 430
+    .line 428
     iget-object v0, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
 
     new-instance v1, Lcom/android/server/ThrottleService$DataRecorder;
@@ -2507,7 +2491,7 @@
     #setter for: Lcom/android/server/ThrottleService;->mRecorder:Lcom/android/server/ThrottleService$DataRecorder;
     invoke-static {v0, v1}, Lcom/android/server/ThrottleService;->access$102(Lcom/android/server/ThrottleService;Lcom/android/server/ThrottleService$DataRecorder;)Lcom/android/server/ThrottleService$DataRecorder;
 
-    .line 433
+    .line 431
     iget-object v0, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
 
     #getter for: Lcom/android/server/ThrottleService;->mHandler:Landroid/os/Handler;
@@ -2523,7 +2507,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 438
+    .line 436
     iget-object v0, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
 
     #getter for: Lcom/android/server/ThrottleService;->mHandler:Landroid/os/Handler;
@@ -2548,7 +2532,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 440
+    .line 438
     return-void
 .end method
 
@@ -2558,7 +2542,7 @@
     .prologue
     const/4 v10, 0x0
 
-    .line 765
+    .line 760
     iget-object v6, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
 
     #getter for: Lcom/android/server/ThrottleService;->mPolicyThreshold:Ljava/util/concurrent/atomic/AtomicLong;
@@ -2576,7 +2560,7 @@
 
     if-eqz v6, :cond_0
 
-    .line 766
+    .line 761
     const-string v6, "ThrottleService"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -2637,7 +2621,7 @@
 
     invoke-static {v6, v7}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 771
+    .line 766
     :cond_0
     iget-object v6, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
 
@@ -2661,7 +2645,7 @@
 
     if-lez v6, :cond_1
 
-    .line 772
+    .line 767
     iget-object v6, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
 
     #getter for: Lcom/android/server/ThrottleService;->mTime:Landroid/util/TrustedTime;
@@ -2671,7 +2655,7 @@
 
     invoke-interface {v6}, Landroid/util/TrustedTime;->forceRefresh()Z
 
-    .line 777
+    .line 772
     :cond_1
     iget-object v6, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
 
@@ -2686,7 +2670,7 @@
 
     if-eqz v6, :cond_3
 
-    .line 778
+    .line 773
     iget-object v6, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
 
     #getter for: Lcom/android/server/ThrottleService;->mTime:Landroid/util/TrustedTime;
@@ -2698,19 +2682,19 @@
 
     move-result-wide v1
 
-    .line 779
+    .line 774
     .local v1, now:J
     invoke-direct {p0, v1, v2}, Lcom/android/server/ThrottleService$MyHandler;->calculatePeriodEnd(J)Ljava/util/Calendar;
 
     move-result-object v0
 
-    .line 780
+    .line 775
     .local v0, end:Ljava/util/Calendar;
     invoke-direct {p0, v0}, Lcom/android/server/ThrottleService$MyHandler;->calculatePeriodStart(Ljava/util/Calendar;)Ljava/util/Calendar;
 
     move-result-object v5
 
-    .line 782
+    .line 777
     .local v5, start:Ljava/util/Calendar;
     iget-object v6, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
 
@@ -2725,10 +2709,10 @@
 
     if-eqz v6, :cond_2
 
-    .line 783
+    .line 778
     invoke-direct {p0}, Lcom/android/server/ThrottleService$MyHandler;->onPollAlarm()V
 
-    .line 786
+    .line 781
     :cond_2
     iget-object v6, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
 
@@ -2746,14 +2730,14 @@
 
     invoke-virtual {v6, v7}, Landroid/app/AlarmManager;->cancel(Landroid/app/PendingIntent;)V
 
-    .line 787
+    .line 782
     invoke-virtual {v0}, Ljava/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v6
 
     sub-long v3, v6, v1
 
-    .line 789
+    .line 784
     .local v3, offset:J
     iget-object v6, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
 
@@ -2779,7 +2763,7 @@
 
     invoke-virtual {v6, v7, v8, v9, v10}, Landroid/app/AlarmManager;->set(IJLandroid/app/PendingIntent;)V
 
-    .line 795
+    .line 790
     .end local v0           #end:Ljava/util/Calendar;
     .end local v1           #now:J
     .end local v3           #offset:J
@@ -2789,195 +2773,185 @@
 .end method
 
 .method private postNotification(IIII)V
-    .locals 10
+    .locals 8
     .parameter "titleInt"
     .parameter "messageInt"
     .parameter "icon"
     .parameter "flags"
 
     .prologue
+    const/4 v7, 0x0
+
+    .line 675
+    new-instance v0, Landroid/content/Intent;
+
+    invoke-direct {v0}, Landroid/content/Intent;-><init>()V
+
     .line 677
-    new-instance v2, Landroid/content/Intent;
+    .local v0, intent:Landroid/content/Intent;
+    const-string v5, "com.android.phone"
 
-    invoke-direct {v2}, Landroid/content/Intent;-><init>()V
+    const-string v6, "com.android.phone.DataUsage"
 
-    .line 679
-    .local v2, intent:Landroid/content/Intent;
-    const-string v0, "com.android.phone"
+    invoke-virtual {v0, v5, v6}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    const-string v1, "com.android.phone.DataUsage"
+    .line 678
+    const/high16 v5, 0x4000
 
-    invoke-virtual {v2, v0, v1}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v0, v5}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
     .line 680
-    const/high16 v0, 0x4000
+    iget-object v5, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
 
-    invoke-virtual {v2, v0}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+    #getter for: Lcom/android/server/ThrottleService;->mContext:Landroid/content/Context;
+    invoke-static {v5}, Lcom/android/server/ThrottleService;->access$200(Lcom/android/server/ThrottleService;)Landroid/content/Context;
+
+    move-result-object v5
+
+    invoke-static {v5, v7, v0, v7}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+
+    move-result-object v2
 
     .line 682
-    iget-object v0, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
-
-    #getter for: Lcom/android/server/ThrottleService;->mContext:Landroid/content/Context;
-    invoke-static {v0}, Lcom/android/server/ThrottleService;->access$200(Lcom/android/server/ThrottleService;)Landroid/content/Context;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    sget-object v5, Landroid/os/UserHandle;->CURRENT:Landroid/os/UserHandle;
-
-    invoke-static/range {v0 .. v5}, Landroid/app/PendingIntent;->getActivityAsUser(Landroid/content/Context;ILandroid/content/Intent;ILandroid/os/Bundle;Landroid/os/UserHandle;)Landroid/app/PendingIntent;
-
-    move-result-object v7
-
-    .line 685
-    .local v7, pi:Landroid/app/PendingIntent;
+    .local v2, pi:Landroid/app/PendingIntent;
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
-
-    move-result-object v8
-
-    .line 686
-    .local v8, r:Landroid/content/res/Resources;
-    invoke-virtual {v8, p1}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
-
-    move-result-object v9
-
-    .line 687
-    .local v9, title:Ljava/lang/CharSequence;
-    invoke-virtual {v8, p2}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
-
-    move-result-object v6
-
-    .line 688
-    .local v6, message:Ljava/lang/CharSequence;
-    iget-object v0, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
-
-    #getter for: Lcom/android/server/ThrottleService;->mThrottlingNotification:Landroid/app/Notification;
-    invoke-static {v0}, Lcom/android/server/ThrottleService;->access$2000(Lcom/android/server/ThrottleService;)Landroid/app/Notification;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    .line 689
-    iget-object v0, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
-
-    new-instance v1, Landroid/app/Notification;
-
-    invoke-direct {v1}, Landroid/app/Notification;-><init>()V
-
-    #setter for: Lcom/android/server/ThrottleService;->mThrottlingNotification:Landroid/app/Notification;
-    invoke-static {v0, v1}, Lcom/android/server/ThrottleService;->access$2002(Lcom/android/server/ThrottleService;Landroid/app/Notification;)Landroid/app/Notification;
-
-    .line 690
-    iget-object v0, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
-
-    #getter for: Lcom/android/server/ThrottleService;->mThrottlingNotification:Landroid/app/Notification;
-    invoke-static {v0}, Lcom/android/server/ThrottleService;->access$2000(Lcom/android/server/ThrottleService;)Landroid/app/Notification;
-
-    move-result-object v0
-
-    const-wide/16 v3, 0x0
-
-    iput-wide v3, v0, Landroid/app/Notification;->when:J
-
-    .line 692
-    iget-object v0, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
-
-    #getter for: Lcom/android/server/ThrottleService;->mThrottlingNotification:Landroid/app/Notification;
-    invoke-static {v0}, Lcom/android/server/ThrottleService;->access$2000(Lcom/android/server/ThrottleService;)Landroid/app/Notification;
-
-    move-result-object v0
-
-    iput p3, v0, Landroid/app/Notification;->icon:I
-
-    .line 693
-    iget-object v0, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
-
-    #getter for: Lcom/android/server/ThrottleService;->mThrottlingNotification:Landroid/app/Notification;
-    invoke-static {v0}, Lcom/android/server/ThrottleService;->access$2000(Lcom/android/server/ThrottleService;)Landroid/app/Notification;
-
-    move-result-object v0
-
-    iget v1, v0, Landroid/app/Notification;->defaults:I
-
-    and-int/lit8 v1, v1, -0x2
-
-    iput v1, v0, Landroid/app/Notification;->defaults:I
-
-    .line 695
-    :cond_0
-    iget-object v0, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
-
-    #getter for: Lcom/android/server/ThrottleService;->mThrottlingNotification:Landroid/app/Notification;
-    invoke-static {v0}, Lcom/android/server/ThrottleService;->access$2000(Lcom/android/server/ThrottleService;)Landroid/app/Notification;
-
-    move-result-object v0
-
-    iput p4, v0, Landroid/app/Notification;->flags:I
-
-    .line 696
-    iget-object v0, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
-
-    #getter for: Lcom/android/server/ThrottleService;->mThrottlingNotification:Landroid/app/Notification;
-    invoke-static {v0}, Lcom/android/server/ThrottleService;->access$2000(Lcom/android/server/ThrottleService;)Landroid/app/Notification;
-
-    move-result-object v0
-
-    iput-object v9, v0, Landroid/app/Notification;->tickerText:Ljava/lang/CharSequence;
-
-    .line 697
-    iget-object v0, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
-
-    #getter for: Lcom/android/server/ThrottleService;->mThrottlingNotification:Landroid/app/Notification;
-    invoke-static {v0}, Lcom/android/server/ThrottleService;->access$2000(Lcom/android/server/ThrottleService;)Landroid/app/Notification;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
-
-    #getter for: Lcom/android/server/ThrottleService;->mContext:Landroid/content/Context;
-    invoke-static {v1}, Lcom/android/server/ThrottleService;->access$200(Lcom/android/server/ThrottleService;)Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1, v9, v6, v7}, Landroid/app/Notification;->setLatestEventInfo(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V
-
-    .line 699
-    iget-object v0, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
-
-    #getter for: Lcom/android/server/ThrottleService;->mNotificationManager:Landroid/app/NotificationManager;
-    invoke-static {v0}, Lcom/android/server/ThrottleService;->access$1800(Lcom/android/server/ThrottleService;)Landroid/app/NotificationManager;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    iget-object v3, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
-
-    #getter for: Lcom/android/server/ThrottleService;->mThrottlingNotification:Landroid/app/Notification;
-    invoke-static {v3}, Lcom/android/server/ThrottleService;->access$2000(Lcom/android/server/ThrottleService;)Landroid/app/Notification;
 
     move-result-object v3
 
-    iget v3, v3, Landroid/app/Notification;->icon:I
-
-    iget-object v4, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
-
-    #getter for: Lcom/android/server/ThrottleService;->mThrottlingNotification:Landroid/app/Notification;
-    invoke-static {v4}, Lcom/android/server/ThrottleService;->access$2000(Lcom/android/server/ThrottleService;)Landroid/app/Notification;
+    .line 683
+    .local v3, r:Landroid/content/res/Resources;
+    invoke-virtual {v3, p1}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v4
 
-    sget-object v5, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
+    .line 684
+    .local v4, title:Ljava/lang/CharSequence;
+    invoke-virtual {v3, p2}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
-    invoke-virtual {v0, v1, v3, v4, v5}, Landroid/app/NotificationManager;->notifyAsUser(Ljava/lang/String;ILandroid/app/Notification;Landroid/os/UserHandle;)V
+    move-result-object v1
 
-    .line 701
+    .line 685
+    .local v1, message:Ljava/lang/CharSequence;
+    iget-object v5, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
+
+    #getter for: Lcom/android/server/ThrottleService;->mThrottlingNotification:Landroid/app/Notification;
+    invoke-static {v5}, Lcom/android/server/ThrottleService;->access$2000(Lcom/android/server/ThrottleService;)Landroid/app/Notification;
+
+    move-result-object v5
+
+    if-nez v5, :cond_0
+
+    .line 686
+    iget-object v5, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
+
+    new-instance v6, Landroid/app/Notification;
+
+    invoke-direct {v6}, Landroid/app/Notification;-><init>()V
+
+    #setter for: Lcom/android/server/ThrottleService;->mThrottlingNotification:Landroid/app/Notification;
+    invoke-static {v5, v6}, Lcom/android/server/ThrottleService;->access$2002(Lcom/android/server/ThrottleService;Landroid/app/Notification;)Landroid/app/Notification;
+
+    .line 687
+    iget-object v5, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
+
+    #getter for: Lcom/android/server/ThrottleService;->mThrottlingNotification:Landroid/app/Notification;
+    invoke-static {v5}, Lcom/android/server/ThrottleService;->access$2000(Lcom/android/server/ThrottleService;)Landroid/app/Notification;
+
+    move-result-object v5
+
+    const-wide/16 v6, 0x0
+
+    iput-wide v6, v5, Landroid/app/Notification;->when:J
+
+    .line 689
+    iget-object v5, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
+
+    #getter for: Lcom/android/server/ThrottleService;->mThrottlingNotification:Landroid/app/Notification;
+    invoke-static {v5}, Lcom/android/server/ThrottleService;->access$2000(Lcom/android/server/ThrottleService;)Landroid/app/Notification;
+
+    move-result-object v5
+
+    iput p3, v5, Landroid/app/Notification;->icon:I
+
+    .line 690
+    iget-object v5, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
+
+    #getter for: Lcom/android/server/ThrottleService;->mThrottlingNotification:Landroid/app/Notification;
+    invoke-static {v5}, Lcom/android/server/ThrottleService;->access$2000(Lcom/android/server/ThrottleService;)Landroid/app/Notification;
+
+    move-result-object v5
+
+    iget v6, v5, Landroid/app/Notification;->defaults:I
+
+    and-int/lit8 v6, v6, -0x2
+
+    iput v6, v5, Landroid/app/Notification;->defaults:I
+
+    .line 692
+    :cond_0
+    iget-object v5, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
+
+    #getter for: Lcom/android/server/ThrottleService;->mThrottlingNotification:Landroid/app/Notification;
+    invoke-static {v5}, Lcom/android/server/ThrottleService;->access$2000(Lcom/android/server/ThrottleService;)Landroid/app/Notification;
+
+    move-result-object v5
+
+    iput p4, v5, Landroid/app/Notification;->flags:I
+
+    .line 693
+    iget-object v5, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
+
+    #getter for: Lcom/android/server/ThrottleService;->mThrottlingNotification:Landroid/app/Notification;
+    invoke-static {v5}, Lcom/android/server/ThrottleService;->access$2000(Lcom/android/server/ThrottleService;)Landroid/app/Notification;
+
+    move-result-object v5
+
+    iput-object v4, v5, Landroid/app/Notification;->tickerText:Ljava/lang/CharSequence;
+
+    .line 694
+    iget-object v5, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
+
+    #getter for: Lcom/android/server/ThrottleService;->mThrottlingNotification:Landroid/app/Notification;
+    invoke-static {v5}, Lcom/android/server/ThrottleService;->access$2000(Lcom/android/server/ThrottleService;)Landroid/app/Notification;
+
+    move-result-object v5
+
+    iget-object v6, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
+
+    #getter for: Lcom/android/server/ThrottleService;->mContext:Landroid/content/Context;
+    invoke-static {v6}, Lcom/android/server/ThrottleService;->access$200(Lcom/android/server/ThrottleService;)Landroid/content/Context;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6, v4, v1, v2}, Landroid/app/Notification;->setLatestEventInfo(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V
+
+    .line 696
+    iget-object v5, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
+
+    #getter for: Lcom/android/server/ThrottleService;->mNotificationManager:Landroid/app/NotificationManager;
+    invoke-static {v5}, Lcom/android/server/ThrottleService;->access$1800(Lcom/android/server/ThrottleService;)Landroid/app/NotificationManager;
+
+    move-result-object v5
+
+    iget-object v6, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
+
+    #getter for: Lcom/android/server/ThrottleService;->mThrottlingNotification:Landroid/app/Notification;
+    invoke-static {v6}, Lcom/android/server/ThrottleService;->access$2000(Lcom/android/server/ThrottleService;)Landroid/app/Notification;
+
+    move-result-object v6
+
+    iget v6, v6, Landroid/app/Notification;->icon:I
+
+    iget-object v7, p0, Lcom/android/server/ThrottleService$MyHandler;->this$0:Lcom/android/server/ThrottleService;
+
+    #getter for: Lcom/android/server/ThrottleService;->mThrottlingNotification:Landroid/app/Notification;
+    invoke-static {v7}, Lcom/android/server/ThrottleService;->access$2000(Lcom/android/server/ThrottleService;)Landroid/app/Notification;
+
+    move-result-object v7
+
+    invoke-virtual {v5, v6, v7}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
+
+    .line 697
     return-void
 .end method
 
@@ -2988,6 +2962,6 @@
     .parameter "msg"
 
     .prologue
-    .line 402
+    .line 400
     return-void
 .end method

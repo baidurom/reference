@@ -41,10 +41,10 @@
 
     const/16 v0, 0x10
 
-    .line 121
+    .line 105
     sparse-switch p0, :sswitch_data_0
 
-    .line 135
+    .line 119
     const/4 v0, -0x1
 
     :goto_0
@@ -54,16 +54,16 @@
     :sswitch_1
     move v0, v1
 
-    .line 129
+    .line 113
     goto :goto_0
 
     :sswitch_2
     move v0, v1
 
-    .line 131
+    .line 115
     goto :goto_0
 
-    .line 121
+    .line 105
     nop
 
     :sswitch_data_0

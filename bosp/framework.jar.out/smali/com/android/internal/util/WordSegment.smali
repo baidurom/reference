@@ -4,11 +4,7 @@
 
 
 # static fields
-.field private static final DBG:Z = false
-
 .field private static final SEPARATOR:Ljava/util/regex/Pattern; = null
-
-.field private static final TAG:Ljava/lang/String; = "WordSegment"
 
 .field private static final WINDOW_WIDTH:I = 0x32
 
@@ -26,7 +22,7 @@
     .locals 1
 
     .prologue
-    .line 42
+    .line 39
     const-string v0, "[\u3002\uff0c\uff1b\uff01\uff1f\\s\\r]"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
@@ -42,10 +38,10 @@
     .locals 0
 
     .prologue
-    .line 52
+    .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 53
+    .line 50
     return-void
 .end method
 
@@ -54,7 +50,7 @@
     .parameter "shiftedOffset"
 
     .prologue
-    .line 151
+    .line 148
     if-ltz p1, :cond_0
 
     iget-object v0, p0, Lcom/android/internal/util/WordSegment;->mString:Ljava/lang/String;
@@ -65,7 +61,7 @@
 
     if-le p1, v0, :cond_1
 
-    .line 152
+    .line 149
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -133,7 +129,7 @@
 
     throw v0
 
-    .line 156
+    .line 153
     :cond_1
     return-void
 .end method
@@ -144,10 +140,10 @@
     .parameter "offset"
 
     .prologue
-    .line 138
+    .line 135
     move v0, p2
 
-    .line 140
+    .line 137
     .local v0, right:I
     :goto_0
     invoke-virtual {p1}, Ljava/lang/String;->length()I
@@ -156,18 +152,18 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 141
+    .line 138
     sub-int v1, v0, p2
 
     const/16 v2, 0x32
 
     if-le v1, v2, :cond_1
 
-    .line 146
+    .line 143
     :cond_0
     return v0
 
-    .line 143
+    .line 140
     :cond_1
     invoke-virtual {p1, v0}, Ljava/lang/String;->charAt(I)C
 
@@ -179,7 +175,7 @@
 
     if-nez v1, :cond_0
 
-    .line 144
+    .line 141
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
@@ -194,7 +190,7 @@
 
     const/4 v3, 0x0
 
-    .line 119
+    .line 116
     new-instance v1, Ljava/lang/String;
 
     new-array v4, v2, [C
@@ -203,7 +199,7 @@
 
     invoke-direct {v1, v4}, Ljava/lang/String;-><init>([C)V
 
-    .line 120
+    .line 117
     .local v1, s:Ljava/lang/String;
     sget-object v4, Lcom/android/internal/util/WordSegment;->SEPARATOR:Ljava/util/regex/Pattern;
 
@@ -211,7 +207,7 @@
 
     move-result-object v0
 
-    .line 121
+    .line 118
     .local v0, m:Ljava/util/regex/Matcher;
     invoke-virtual {v0}, Ljava/util/regex/Matcher;->find()Z
 
@@ -219,7 +215,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 122
+    .line 119
     :goto_0
     return v2
 
@@ -235,28 +231,28 @@
     .parameter "offset"
 
     .prologue
-    .line 126
+    .line 123
     add-int/lit8 v0, p2, -0x1
 
-    .line 128
+    .line 125
     .local v0, left:I
     :goto_0
     if-ltz v0, :cond_0
 
-    .line 129
+    .line 126
     sub-int v1, p2, v0
 
     const/16 v2, 0x32
 
     if-le v1, v2, :cond_1
 
-    .line 134
+    .line 131
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     return v0
 
-    .line 131
+    .line 128
     :cond_1
     invoke-virtual {p1, v0}, Ljava/lang/String;->charAt(I)C
 
@@ -268,7 +264,7 @@
 
     if-nez v1, :cond_0
 
-    .line 132
+    .line 129
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
@@ -281,22 +277,22 @@
     .parameter "offset"
 
     .prologue
-    const/4 v6, -0x1
+    const/4 v4, -0x1
 
-    const/4 v5, 0x1
+    const/4 v6, 0x1
 
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
-    .line 100
+    .line 97
     iget v2, p0, Lcom/android/internal/util/WordSegment;->mOffsetShift:I
 
     sub-int v1, p1, v2
 
-    .line 101
+    .line 98
     .local v1, shiftedOffset:I
     invoke-direct {p0, v1}, Lcom/android/internal/util/WordSegment;->checkOffsetIsValid(I)V
 
-    .line 102
+    .line 99
     iget-object v2, p0, Lcom/android/internal/util/WordSegment;->mString:Ljava/lang/String;
 
     invoke-virtual {v2}, Ljava/lang/String;->length()I
@@ -307,13 +303,13 @@
 
     add-int/lit8 v1, v1, -0x1
 
-    .line 104
+    .line 101
     :cond_0
     const/4 v2, 0x2
 
     new-array v0, v2, [I
 
-    .line 105
+    .line 102
     .local v0, result:[I
     iget-object v2, p0, Lcom/android/internal/util/WordSegment;->mString:Ljava/lang/String;
 
@@ -327,37 +323,65 @@
 
     move-result-object v0
 
-    .line 106
-    aget v2, v0, v4
-
-    if-eq v2, v6, :cond_1
-
+    .line 103
     aget v2, v0, v5
 
-    if-ne v2, v6, :cond_2
+    if-eq v2, v4, :cond_1
 
-    .line 107
+    aget v2, v0, v6
+
+    if-ne v2, v4, :cond_2
+
+    .line 104
     :cond_1
-    aput p1, v0, v4
-
-    .line 108
     aput p1, v0, v5
 
-    .line 115
-    :goto_0
-    return-object v0
-
-    .line 110
-    :cond_2
-    aget v2, v0, v4
-
-    iget v3, p0, Lcom/android/internal/util/WordSegment;->mOffsetShift:I
-
-    add-int/2addr v2, v3
-
-    aput v2, v0, v4
+    .line 105
+    aput p1, v0, v6
 
     .line 111
+    :goto_0
+    const-string v2, "caculateWordSegment"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "result = "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    aget v4, v0, v5
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    aget v4, v0, v6
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 112
+    return-object v0
+
+    .line 107
+    :cond_2
     aget v2, v0, v5
 
     iget v3, p0, Lcom/android/internal/util/WordSegment;->mOffsetShift:I
@@ -365,6 +389,15 @@
     add-int/2addr v2, v3
 
     aput v2, v0, v5
+
+    .line 108
+    aget v2, v0, v6
+
+    iget v3, p0, Lcom/android/internal/util/WordSegment;->mOffsetShift:I
+
+    add-int/2addr v2, v3
+
+    aput v2, v0, v6
 
     goto :goto_0
 .end method
@@ -380,16 +413,16 @@
 
     const/4 v3, 0x0
 
-    .line 63
+    .line 60
     if-eq p2, p3, :cond_1
 
-    .line 91
+    .line 88
     .end local p1
     :cond_0
     :goto_0
     return v3
 
-    .line 64
+    .line 61
     .restart local p1
     :cond_1
     if-ltz p2, :cond_0
@@ -400,28 +433,28 @@
 
     if-gt p2, v5, :cond_0
 
-    .line 65
+    .line 62
     iput-boolean v4, p0, Lcom/android/internal/util/WordSegment;->mOneOffset:Z
 
-    .line 66
+    .line 63
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 67
+    .line 64
     .local v0, src:Ljava/lang/String;
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v1
 
-    .line 71
+    .line 68
     .local v1, srclen:I
     if-ne p2, v1, :cond_2
 
-    .line 72
+    .line 69
     move v2, v1
 
-    .line 73
+    .line 70
     .local v2, windowEnd:I
     invoke-direct {p0, v0, p2}, Lcom/android/internal/util/WordSegment;->precedingSeparator(Ljava/lang/String;I)I
 
@@ -433,13 +466,13 @@
 
     iput v5, p0, Lcom/android/internal/util/WordSegment;->mOffsetShift:I
 
-    .line 83
+    .line 80
     :goto_1
     instance-of v5, p1, Landroid/text/SpannableStringBuilder;
 
     if-eqz v5, :cond_4
 
-    .line 84
+    .line 81
     check-cast p1, Landroid/text/SpannableStringBuilder;
 
     .end local p1
@@ -451,7 +484,7 @@
 
     iput-object v5, p0, Lcom/android/internal/util/WordSegment;->mString:Ljava/lang/String;
 
-    .line 89
+    .line 86
     :goto_2
     iget-object v5, p0, Lcom/android/internal/util/WordSegment;->mString:Ljava/lang/String;
 
@@ -467,10 +500,10 @@
 
     move v3, v4
 
-    .line 91
+    .line 88
     goto :goto_0
 
-    .line 76
+    .line 73
     .end local v2           #windowEnd:I
     .restart local p1
     :cond_2
@@ -498,7 +531,7 @@
 
     if-nez v5, :cond_0
 
-    .line 78
+    .line 75
     :cond_3
     invoke-direct {p0, v0, p2}, Lcom/android/internal/util/WordSegment;->precedingSeparator(Ljava/lang/String;I)I
 
@@ -510,7 +543,7 @@
 
     iput v5, p0, Lcom/android/internal/util/WordSegment;->mOffsetShift:I
 
-    .line 79
+    .line 76
     invoke-direct {p0, v0, p2}, Lcom/android/internal/util/WordSegment;->followingSeparator(Ljava/lang/String;I)I
 
     move-result v5
@@ -522,7 +555,7 @@
     .restart local v2       #windowEnd:I
     goto :goto_1
 
-    .line 86
+    .line 83
     :cond_4
     iget v5, p0, Lcom/android/internal/util/WordSegment;->mOffsetShift:I
 

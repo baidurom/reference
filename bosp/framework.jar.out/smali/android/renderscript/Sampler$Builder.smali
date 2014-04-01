@@ -36,43 +36,43 @@
     .parameter "rs"
 
     .prologue
-    .line 231
+    .line 236
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 232
+    .line 237
     iput-object p1, p0, Landroid/renderscript/Sampler$Builder;->mRS:Landroid/renderscript/RenderScript;
 
-    .line 233
+    .line 238
     sget-object v0, Landroid/renderscript/Sampler$Value;->NEAREST:Landroid/renderscript/Sampler$Value;
 
     iput-object v0, p0, Landroid/renderscript/Sampler$Builder;->mMin:Landroid/renderscript/Sampler$Value;
 
-    .line 234
+    .line 239
     sget-object v0, Landroid/renderscript/Sampler$Value;->NEAREST:Landroid/renderscript/Sampler$Value;
 
     iput-object v0, p0, Landroid/renderscript/Sampler$Builder;->mMag:Landroid/renderscript/Sampler$Value;
 
-    .line 235
+    .line 240
     sget-object v0, Landroid/renderscript/Sampler$Value;->WRAP:Landroid/renderscript/Sampler$Value;
 
     iput-object v0, p0, Landroid/renderscript/Sampler$Builder;->mWrapS:Landroid/renderscript/Sampler$Value;
 
-    .line 236
+    .line 241
     sget-object v0, Landroid/renderscript/Sampler$Value;->WRAP:Landroid/renderscript/Sampler$Value;
 
     iput-object v0, p0, Landroid/renderscript/Sampler$Builder;->mWrapT:Landroid/renderscript/Sampler$Value;
 
-    .line 237
+    .line 242
     sget-object v0, Landroid/renderscript/Sampler$Value;->WRAP:Landroid/renderscript/Sampler$Value;
 
     iput-object v0, p0, Landroid/renderscript/Sampler$Builder;->mWrapR:Landroid/renderscript/Sampler$Value;
 
-    .line 238
+    .line 243
     const/high16 v0, 0x3f80
 
     iput v0, p0, Landroid/renderscript/Sampler$Builder;->mAniso:F
 
-    .line 239
+    .line 244
     return-void
 .end method
 
@@ -82,12 +82,12 @@
     .locals 9
 
     .prologue
-    .line 285
+    .line 290
     iget-object v0, p0, Landroid/renderscript/Sampler$Builder;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v0}, Landroid/renderscript/RenderScript;->validate()V
 
-    .line 286
+    .line 291
     iget-object v0, p0, Landroid/renderscript/Sampler$Builder;->mRS:Landroid/renderscript/RenderScript;
 
     iget-object v1, p0, Landroid/renderscript/Sampler$Builder;->mMag:Landroid/renderscript/Sampler$Value;
@@ -116,7 +116,7 @@
 
     move-result v7
 
-    .line 288
+    .line 293
     .local v7, id:I
     new-instance v8, Landroid/renderscript/Sampler;
 
@@ -124,38 +124,38 @@
 
     invoke-direct {v8, v7, v0}, Landroid/renderscript/Sampler;-><init>(ILandroid/renderscript/RenderScript;)V
 
-    .line 289
+    .line 294
     .local v8, sampler:Landroid/renderscript/Sampler;
     iget-object v0, p0, Landroid/renderscript/Sampler$Builder;->mMin:Landroid/renderscript/Sampler$Value;
 
     iput-object v0, v8, Landroid/renderscript/Sampler;->mMin:Landroid/renderscript/Sampler$Value;
 
-    .line 290
+    .line 295
     iget-object v0, p0, Landroid/renderscript/Sampler$Builder;->mMag:Landroid/renderscript/Sampler$Value;
 
     iput-object v0, v8, Landroid/renderscript/Sampler;->mMag:Landroid/renderscript/Sampler$Value;
 
-    .line 291
+    .line 296
     iget-object v0, p0, Landroid/renderscript/Sampler$Builder;->mWrapS:Landroid/renderscript/Sampler$Value;
 
     iput-object v0, v8, Landroid/renderscript/Sampler;->mWrapS:Landroid/renderscript/Sampler$Value;
 
-    .line 292
+    .line 297
     iget-object v0, p0, Landroid/renderscript/Sampler$Builder;->mWrapT:Landroid/renderscript/Sampler$Value;
 
     iput-object v0, v8, Landroid/renderscript/Sampler;->mWrapT:Landroid/renderscript/Sampler$Value;
 
-    .line 293
+    .line 298
     iget-object v0, p0, Landroid/renderscript/Sampler$Builder;->mWrapR:Landroid/renderscript/Sampler$Value;
 
     iput-object v0, v8, Landroid/renderscript/Sampler;->mWrapR:Landroid/renderscript/Sampler$Value;
 
-    .line 294
+    .line 299
     iget v0, p0, Landroid/renderscript/Sampler$Builder;->mAniso:F
 
     iput v0, v8, Landroid/renderscript/Sampler;->mAniso:F
 
-    .line 295
+    .line 300
     return-object v8
 .end method
 
@@ -164,20 +164,20 @@
     .parameter "v"
 
     .prologue
-    .line 277
+    .line 282
     const/4 v0, 0x0
 
     cmpl-float v0, p1, v0
 
     if-ltz v0, :cond_0
 
-    .line 278
+    .line 283
     iput p1, p0, Landroid/renderscript/Sampler$Builder;->mAniso:F
 
-    .line 282
+    .line 287
     return-void
 
-    .line 280
+    .line 285
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -193,7 +193,7 @@
     .parameter "v"
 
     .prologue
-    .line 253
+    .line 258
     sget-object v0, Landroid/renderscript/Sampler$Value;->NEAREST:Landroid/renderscript/Sampler$Value;
 
     if-eq p1, v0, :cond_0
@@ -202,14 +202,14 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 254
+    .line 259
     :cond_0
     iput-object p1, p0, Landroid/renderscript/Sampler$Builder;->mMag:Landroid/renderscript/Sampler$Value;
 
-    .line 258
+    .line 263
     return-void
 
-    .line 256
+    .line 261
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -225,7 +225,7 @@
     .parameter "v"
 
     .prologue
-    .line 242
+    .line 247
     sget-object v0, Landroid/renderscript/Sampler$Value;->NEAREST:Landroid/renderscript/Sampler$Value;
 
     if-eq p1, v0, :cond_0
@@ -242,14 +242,14 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 246
+    .line 251
     :cond_0
     iput-object p1, p0, Landroid/renderscript/Sampler$Builder;->mMin:Landroid/renderscript/Sampler$Value;
 
-    .line 250
+    .line 255
     return-void
 
-    .line 248
+    .line 253
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -265,7 +265,7 @@
     .parameter "v"
 
     .prologue
-    .line 261
+    .line 266
     sget-object v0, Landroid/renderscript/Sampler$Value;->WRAP:Landroid/renderscript/Sampler$Value;
 
     if-eq p1, v0, :cond_0
@@ -274,14 +274,14 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 262
+    .line 267
     :cond_0
     iput-object p1, p0, Landroid/renderscript/Sampler$Builder;->mWrapS:Landroid/renderscript/Sampler$Value;
 
-    .line 266
+    .line 271
     return-void
 
-    .line 264
+    .line 269
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -297,7 +297,7 @@
     .parameter "v"
 
     .prologue
-    .line 269
+    .line 274
     sget-object v0, Landroid/renderscript/Sampler$Value;->WRAP:Landroid/renderscript/Sampler$Value;
 
     if-eq p1, v0, :cond_0
@@ -306,14 +306,14 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 270
+    .line 275
     :cond_0
     iput-object p1, p0, Landroid/renderscript/Sampler$Builder;->mWrapT:Landroid/renderscript/Sampler$Value;
 
-    .line 274
+    .line 279
     return-void
 
-    .line 272
+    .line 277
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 

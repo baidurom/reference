@@ -76,12 +76,12 @@
     .parameter "context"
 
     .prologue
-    .line 439
+    .line 437
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/internal/widget/SlidingTab;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 440
+    .line 438
     return-void
 .end method
 
@@ -97,43 +97,43 @@
 
     const/4 v3, 0x0
 
-    .line 446
+    .line 444
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 66
+    .line 64
     iput-boolean v2, p0, Lcom/android/internal/widget/SlidingTab;->mHoldLeftOnTransition:Z
 
-    .line 67
+    .line 65
     iput-boolean v2, p0, Lcom/android/internal/widget/SlidingTab;->mHoldRightOnTransition:Z
 
-    .line 70
+    .line 68
     iput v3, p0, Lcom/android/internal/widget/SlidingTab;->mGrabbedState:I
 
-    .line 71
+    .line 69
     iput-boolean v3, p0, Lcom/android/internal/widget/SlidingTab;->mTriggered:Z
 
-    .line 92
+    .line 90
     new-instance v2, Lcom/android/internal/widget/SlidingTab$1;
 
     invoke-direct {v2, p0}, Lcom/android/internal/widget/SlidingTab$1;-><init>(Lcom/android/internal/widget/SlidingTab;)V
 
     iput-object v2, p0, Lcom/android/internal/widget/SlidingTab;->mAnimationDoneListener:Landroid/view/animation/Animation$AnimationListener;
 
-    .line 449
+    .line 447
     new-instance v2, Landroid/graphics/Rect;
 
     invoke-direct {v2}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v2, p0, Lcom/android/internal/widget/SlidingTab;->mTmpRect:Landroid/graphics/Rect;
 
-    .line 451
+    .line 449
     sget-object v2, Lcom/android/internal/R$styleable;->SlidingTab:[I
 
     invoke-virtual {p1, p2, v2}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 452
+    .line 450
     .local v0, a:Landroid/content/res/TypedArray;
     invoke-virtual {v0, v3, v3}, Landroid/content/res/TypedArray;->getInt(II)I
 
@@ -141,15 +141,15 @@
 
     iput v2, p0, Lcom/android/internal/widget/SlidingTab;->mOrientation:I
 
-    .line 453
+    .line 451
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 455
+    .line 453
     invoke-virtual {p0}, Lcom/android/internal/widget/SlidingTab;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    .line 456
+    .line 454
     .local v1, r:Landroid/content/res/Resources;
     invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
@@ -159,7 +159,7 @@
 
     iput v2, p0, Lcom/android/internal/widget/SlidingTab;->mDensity:F
 
-    .line 459
+    .line 457
     new-instance v2, Lcom/android/internal/widget/SlidingTab$Slider;
 
     const v3, #drawable@jog_tab_left_generic#t
@@ -170,7 +170,7 @@
 
     iput-object v2, p0, Lcom/android/internal/widget/SlidingTab;->mLeftSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
-    .line 463
+    .line 461
     new-instance v2, Lcom/android/internal/widget/SlidingTab$Slider;
 
     const v3, #drawable@jog_tab_right_generic#t
@@ -181,7 +181,7 @@
 
     iput-object v2, p0, Lcom/android/internal/widget/SlidingTab;->mRightSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
-    .line 469
+    .line 467
     return-void
 .end method
 
@@ -190,7 +190,7 @@
     .parameter "x0"
 
     .prologue
-    .line 53
+    .line 51
     invoke-direct {p0}, Lcom/android/internal/widget/SlidingTab;->onAnimationDone()V
 
     return-void
@@ -202,7 +202,7 @@
     .parameter "x1"
 
     .prologue
-    .line 53
+    .line 51
     iput-boolean p1, p0, Lcom/android/internal/widget/SlidingTab;->mAnimating:Z
 
     return p1
@@ -213,7 +213,7 @@
     .parameter "x0"
 
     .prologue
-    .line 53
+    .line 51
     invoke-direct {p0}, Lcom/android/internal/widget/SlidingTab;->resetView()V
 
     return-void
@@ -224,7 +224,7 @@
     .parameter "x0"
 
     .prologue
-    .line 53
+    .line 51
     iget-object v0, p0, Lcom/android/internal/widget/SlidingTab;->mAnimationDoneListener:Landroid/view/animation/Animation$AnimationListener;
 
     return-object v0
@@ -235,7 +235,7 @@
     .parameter "x0"
 
     .prologue
-    .line 53
+    .line 51
     iget-object v0, p0, Lcom/android/internal/widget/SlidingTab;->mLeftSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
     return-object v0
@@ -246,7 +246,7 @@
     .parameter "x0"
 
     .prologue
-    .line 53
+    .line 51
     iget-object v0, p0, Lcom/android/internal/widget/SlidingTab;->mRightSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
     return-object v0
@@ -260,39 +260,39 @@
 
     const/4 v2, 0x0
 
-    .line 624
+    .line 622
     iput-boolean v2, p0, Lcom/android/internal/widget/SlidingTab;->mTracking:Z
 
-    .line 625
+    .line 623
     iput-boolean v2, p0, Lcom/android/internal/widget/SlidingTab;->mTriggered:Z
 
-    .line 626
+    .line 624
     iget-object v0, p0, Lcom/android/internal/widget/SlidingTab;->mOtherSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/SlidingTab$Slider;->show(Z)V
 
-    .line 627
+    .line 625
     iget-object v0, p0, Lcom/android/internal/widget/SlidingTab;->mCurrentSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
     invoke-virtual {v0, v2}, Lcom/android/internal/widget/SlidingTab$Slider;->reset(Z)V
 
-    .line 628
+    .line 626
     iget-object v0, p0, Lcom/android/internal/widget/SlidingTab;->mCurrentSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/SlidingTab$Slider;->hideTarget()V
 
-    .line 629
+    .line 627
     iput-object v3, p0, Lcom/android/internal/widget/SlidingTab;->mCurrentSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
-    .line 630
+    .line 628
     iput-object v3, p0, Lcom/android/internal/widget/SlidingTab;->mOtherSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
-    .line 631
+    .line 629
     invoke-direct {p0, v2}, Lcom/android/internal/widget/SlidingTab;->setGrabbedState(I)V
 
-    .line 632
+    .line 630
     return-void
 .end method
 
@@ -301,22 +301,22 @@
     .parameter "whichHandle"
 
     .prologue
-    .line 842
+    .line 835
     const-wide/16 v0, 0x28
 
     invoke-direct {p0, v0, v1}, Lcom/android/internal/widget/SlidingTab;->vibrate(J)V
 
-    .line 843
+    .line 836
     iget-object v0, p0, Lcom/android/internal/widget/SlidingTab;->mOnTriggerListener:Lcom/android/internal/widget/SlidingTab$OnTriggerListener;
 
     if-eqz v0, :cond_0
 
-    .line 844
+    .line 837
     iget-object v0, p0, Lcom/android/internal/widget/SlidingTab;->mOnTriggerListener:Lcom/android/internal/widget/SlidingTab$OnTriggerListener;
 
     invoke-interface {v0, p0, p1}, Lcom/android/internal/widget/SlidingTab$OnTriggerListener;->onTrigger(Landroid/view/View;I)V
 
-    .line 846
+    .line 839
     :cond_0
     return-void
 .end method
@@ -325,7 +325,7 @@
     .locals 1
 
     .prologue
-    .line 714
+    .line 712
     iget v0, p0, Lcom/android/internal/widget/SlidingTab;->mOrientation:I
 
     if-nez v0, :cond_0
@@ -346,12 +346,12 @@
     .parameter "msg"
 
     .prologue
-    .line 873
+    .line 866
     const-string v0, "SlidingTab"
 
     invoke-static {v0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 874
+    .line 867
     return-void
 .end method
 
@@ -361,7 +361,7 @@
     .parameter "y"
 
     .prologue
-    .line 733
+    .line 731
     iget-object v4, p0, Lcom/android/internal/widget/SlidingTab;->mCurrentSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
     #getter for: Lcom/android/internal/widget/SlidingTab$Slider;->tab:Landroid/widget/ImageView;
@@ -369,7 +369,7 @@
 
     move-result-object v3
 
-    .line 734
+    .line 732
     .local v3, handle:Landroid/view/View;
     iget-object v4, p0, Lcom/android/internal/widget/SlidingTab;->mCurrentSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
@@ -378,7 +378,7 @@
 
     move-result-object v0
 
-    .line 735
+    .line 733
     .local v0, content:Landroid/view/View;
     invoke-direct {p0}, Lcom/android/internal/widget/SlidingTab;->isHorizontal()Z
 
@@ -386,7 +386,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 736
+    .line 734
     float-to-int v4, p1
 
     invoke-virtual {v3}, Landroid/view/View;->getLeft()I
@@ -403,22 +403,22 @@
 
     sub-int v1, v4, v5
 
-    .line 737
+    .line 735
     .local v1, deltaX:I
     invoke-virtual {v3, v1}, Landroid/view/View;->offsetLeftAndRight(I)V
 
-    .line 738
+    .line 736
     invoke-virtual {v0, v1}, Landroid/view/View;->offsetLeftAndRight(I)V
 
-    .line 744
+    .line 742
     .end local v1           #deltaX:I
     :goto_0
     invoke-virtual {p0}, Lcom/android/internal/widget/SlidingTab;->invalidate()V
 
-    .line 745
+    .line 743
     return-void
 
-    .line 740
+    .line 738
     :cond_0
     float-to-int v4, p2
 
@@ -436,11 +436,11 @@
 
     sub-int v2, v4, v5
 
-    .line 741
+    .line 739
     .local v2, deltaY:I
     invoke-virtual {v3, v2}, Landroid/view/View;->offsetTopAndBottom(I)V
 
-    .line 742
+    .line 740
     invoke-virtual {v0, v2}, Landroid/view/View;->offsetTopAndBottom(I)V
 
     goto :goto_0
@@ -450,15 +450,15 @@
     .locals 1
 
     .prologue
-    .line 704
+    .line 702
     invoke-direct {p0}, Lcom/android/internal/widget/SlidingTab;->resetView()V
 
-    .line 705
+    .line 703
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/internal/widget/SlidingTab;->mAnimating:Z
 
-    .line 706
+    .line 704
     return-void
 .end method
 
@@ -468,17 +468,17 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 718
+    .line 716
     iget-object v0, p0, Lcom/android/internal/widget/SlidingTab;->mLeftSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/SlidingTab$Slider;->reset(Z)V
 
-    .line 719
+    .line 717
     iget-object v0, p0, Lcom/android/internal/widget/SlidingTab;->mRightSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/SlidingTab$Slider;->reset(Z)V
 
-    .line 721
+    .line 719
     return-void
 .end method
 
@@ -487,112 +487,79 @@
     .parameter "newState"
 
     .prologue
-    .line 864
+    .line 857
     iget v0, p0, Lcom/android/internal/widget/SlidingTab;->mGrabbedState:I
 
     if-eq p1, v0, :cond_0
 
-    .line 865
+    .line 858
     iput p1, p0, Lcom/android/internal/widget/SlidingTab;->mGrabbedState:I
 
-    .line 866
+    .line 859
     iget-object v0, p0, Lcom/android/internal/widget/SlidingTab;->mOnTriggerListener:Lcom/android/internal/widget/SlidingTab$OnTriggerListener;
 
     if-eqz v0, :cond_0
 
-    .line 867
+    .line 860
     iget-object v0, p0, Lcom/android/internal/widget/SlidingTab;->mOnTriggerListener:Lcom/android/internal/widget/SlidingTab$OnTriggerListener;
 
     iget v1, p0, Lcom/android/internal/widget/SlidingTab;->mGrabbedState:I
 
     invoke-interface {v0, p0, v1}, Lcom/android/internal/widget/SlidingTab$OnTriggerListener;->onGrabbedStateChange(Landroid/view/View;I)V
 
-    .line 870
+    .line 863
     :cond_0
     return-void
 .end method
 
 .method private declared-synchronized vibrate(J)V
-    .locals 5
+    .locals 2
     .parameter "duration"
 
     .prologue
-    const/4 v0, 0x1
-
-    .line 816
+    .line 814
     monitor-enter p0
 
     :try_start_0
-    iget-object v1, p0, Lcom/android/internal/widget/SlidingTab;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/android/internal/widget/SlidingTab;->mVibrator:Landroid/os/Vibrator;
 
-    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    if-nez v0, :cond_0
 
-    move-result-object v1
-
-    const-string v2, "haptic_feedback_enabled"
-
-    const/4 v3, 0x1
-
-    const/4 v4, -0x2
-
-    invoke-static {v1, v2, v3, v4}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    .line 819
-    .local v0, hapticEnabled:Z
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 820
-    iget-object v1, p0, Lcom/android/internal/widget/SlidingTab;->mVibrator:Landroid/os/Vibrator;
-
-    if-nez v1, :cond_0
-
-    .line 821
+    .line 815
     invoke-virtual {p0}, Lcom/android/internal/widget/SlidingTab;->getContext()Landroid/content/Context;
 
-    move-result-object v1
+    move-result-object v0
 
-    const-string/jumbo v2, "vibrator"
+    const-string/jumbo v1, "vibrator"
 
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Landroid/os/Vibrator;
+    check-cast v0, Landroid/os/Vibrator;
 
-    iput-object v1, p0, Lcom/android/internal/widget/SlidingTab;->mVibrator:Landroid/os/Vibrator;
+    iput-object v0, p0, Lcom/android/internal/widget/SlidingTab;->mVibrator:Landroid/os/Vibrator;
 
-    .line 824
+    .line 818
     :cond_0
-    iget-object v1, p0, Lcom/android/internal/widget/SlidingTab;->mVibrator:Landroid/os/Vibrator;
+    iget-object v0, p0, Lcom/android/internal/widget/SlidingTab;->mVibrator:Landroid/os/Vibrator;
 
-    invoke-virtual {v1, p1, p2}, Landroid/os/Vibrator;->vibrate(J)V
+    invoke-virtual {v0, p1, p2}, Landroid/os/Vibrator;->vibrate(J)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 826
-    :cond_1
+    .line 819
     monitor-exit p0
 
     return-void
 
-    .line 816
-    .end local v0           #hapticEnabled:Z
-    :cond_2
-    const/4 v0, 0x0
-
-    goto :goto_0
-
+    .line 814
     :catchall_0
-    move-exception v1
+    move-exception v0
 
     monitor-exit p0
 
-    throw v1
+    throw v0
 .end method
 
 .method private withinView(FFLandroid/view/View;)Z
@@ -604,7 +571,7 @@
     .prologue
     const/high16 v1, -0x3db8
 
-    .line 709
+    .line 707
     invoke-direct {p0}, Lcom/android/internal/widget/SlidingTab;->isHorizontal()Z
 
     move-result v0
@@ -677,24 +644,24 @@
 
     const/4 v10, 0x1
 
-    .line 508
+    .line 506
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    .line 509
+    .line 507
     .local v0, action:I
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v5
 
-    .line 510
+    .line 508
     .local v5, x:F
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v6
 
-    .line 512
+    .line 510
     .local v6, y:F
     iget-boolean v11, p0, Lcom/android/internal/widget/SlidingTab;->mAnimating:Z
 
@@ -702,11 +669,11 @@
 
     move v7, v9
 
-    .line 551
+    .line 549
     :goto_0
     return v7
 
-    .line 516
+    .line 514
     :cond_0
     iget-object v11, p0, Lcom/android/internal/widget/SlidingTab;->mLeftSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
@@ -715,13 +682,13 @@
 
     move-result-object v1
 
-    .line 517
+    .line 515
     .local v1, leftHandle:Landroid/view/View;
     iget-object v11, p0, Lcom/android/internal/widget/SlidingTab;->mTmpRect:Landroid/graphics/Rect;
 
     invoke-virtual {v1, v11}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
 
-    .line 518
+    .line 516
     iget-object v11, p0, Lcom/android/internal/widget/SlidingTab;->mTmpRect:Landroid/graphics/Rect;
 
     float-to-int v12, v5
@@ -732,7 +699,7 @@
 
     move-result v2
 
-    .line 520
+    .line 518
     .local v2, leftHit:Z
     iget-object v11, p0, Lcom/android/internal/widget/SlidingTab;->mRightSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
@@ -741,13 +708,13 @@
 
     move-result-object v3
 
-    .line 521
+    .line 519
     .local v3, rightHandle:Landroid/view/View;
     iget-object v11, p0, Lcom/android/internal/widget/SlidingTab;->mTmpRect:Landroid/graphics/Rect;
 
     invoke-virtual {v3, v11}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
 
-    .line 522
+    .line 520
     iget-object v11, p0, Lcom/android/internal/widget/SlidingTab;->mTmpRect:Landroid/graphics/Rect;
 
     float-to-int v12, v5
@@ -758,7 +725,7 @@
 
     move-result v4
 
-    .line 524
+    .line 522
     .local v4, rightHit:Z
     iget-boolean v11, p0, Lcom/android/internal/widget/SlidingTab;->mTracking:Z
 
@@ -770,45 +737,45 @@
 
     move v7, v9
 
-    .line 525
+    .line 523
     goto :goto_0
 
-    .line 528
+    .line 526
     :cond_1
     packed-switch v0, :pswitch_data_0
 
     :goto_1
     move v7, v10
 
-    .line 551
+    .line 549
     goto :goto_0
 
-    .line 530
+    .line 528
     :pswitch_0
     iput-boolean v10, p0, Lcom/android/internal/widget/SlidingTab;->mTracking:Z
 
-    .line 531
+    .line 529
     iput-boolean v9, p0, Lcom/android/internal/widget/SlidingTab;->mTriggered:Z
 
-    .line 532
+    .line 530
     const-wide/16 v11, 0x1e
 
     invoke-direct {p0, v11, v12}, Lcom/android/internal/widget/SlidingTab;->vibrate(J)V
 
-    .line 533
+    .line 531
     if-eqz v2, :cond_3
 
-    .line 534
+    .line 532
     iget-object v9, p0, Lcom/android/internal/widget/SlidingTab;->mLeftSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
     iput-object v9, p0, Lcom/android/internal/widget/SlidingTab;->mCurrentSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
-    .line 535
+    .line 533
     iget-object v9, p0, Lcom/android/internal/widget/SlidingTab;->mRightSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
     iput-object v9, p0, Lcom/android/internal/widget/SlidingTab;->mOtherSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
-    .line 536
+    .line 534
     invoke-direct {p0}, Lcom/android/internal/widget/SlidingTab;->isHorizontal()Z
 
     move-result v9
@@ -818,21 +785,21 @@
     :goto_2
     iput v7, p0, Lcom/android/internal/widget/SlidingTab;->mThreshold:F
 
-    .line 537
+    .line 535
     invoke-direct {p0, v10}, Lcom/android/internal/widget/SlidingTab;->setGrabbedState(I)V
 
-    .line 544
+    .line 542
     :goto_3
     iget-object v7, p0, Lcom/android/internal/widget/SlidingTab;->mCurrentSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
     invoke-virtual {v7, v10}, Lcom/android/internal/widget/SlidingTab$Slider;->setState(I)V
 
-    .line 545
+    .line 543
     iget-object v7, p0, Lcom/android/internal/widget/SlidingTab;->mCurrentSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
     invoke-virtual {v7}, Lcom/android/internal/widget/SlidingTab$Slider;->showTarget()V
 
-    .line 546
+    .line 544
     iget-object v7, p0, Lcom/android/internal/widget/SlidingTab;->mOtherSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
     invoke-virtual {v7}, Lcom/android/internal/widget/SlidingTab$Slider;->hide()V
@@ -842,21 +809,21 @@
     :cond_2
     move v7, v8
 
-    .line 536
+    .line 534
     goto :goto_2
 
-    .line 539
+    .line 537
     :cond_3
     iget-object v9, p0, Lcom/android/internal/widget/SlidingTab;->mRightSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
     iput-object v9, p0, Lcom/android/internal/widget/SlidingTab;->mCurrentSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
-    .line 540
+    .line 538
     iget-object v9, p0, Lcom/android/internal/widget/SlidingTab;->mLeftSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
     iput-object v9, p0, Lcom/android/internal/widget/SlidingTab;->mOtherSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
-    .line 541
+    .line 539
     invoke-direct {p0}, Lcom/android/internal/widget/SlidingTab;->isHorizontal()Z
 
     move-result v9
@@ -866,7 +833,7 @@
     :goto_4
     iput v8, p0, Lcom/android/internal/widget/SlidingTab;->mThreshold:F
 
-    .line 542
+    .line 540
     const/4 v7, 0x2
 
     invoke-direct {p0, v7}, Lcom/android/internal/widget/SlidingTab;->setGrabbedState(I)V
@@ -876,10 +843,10 @@
     :cond_4
     move v8, v7
 
-    .line 541
+    .line 539
     goto :goto_4
 
-    .line 528
+    .line 526
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -895,14 +862,14 @@
     .parameter "b"
 
     .prologue
-    .line 725
+    .line 723
     if-nez p1, :cond_0
 
-    .line 730
+    .line 728
     :goto_0
     return-void
 
-    .line 728
+    .line 726
     :cond_0
     iget-object v0, p0, Lcom/android/internal/widget/SlidingTab;->mLeftSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
@@ -925,7 +892,7 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/android/internal/widget/SlidingTab$Slider;->layout(IIIII)V
 
-    .line 729
+    .line 727
     iget-object v0, p0, Lcom/android/internal/widget/SlidingTab;->mRightSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
     invoke-direct {p0}, Lcom/android/internal/widget/SlidingTab;->isHorizontal()Z
@@ -949,13 +916,13 @@
 
     goto :goto_0
 
-    .line 728
+    .line 726
     :cond_1
     const/4 v5, 0x3
 
     goto :goto_1
 
-    .line 729
+    .line 727
     :cond_2
     const/4 v5, 0x2
 
@@ -968,48 +935,48 @@
     .parameter "heightMeasureSpec"
 
     .prologue
-    .line 473
+    .line 471
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v8
 
-    .line 474
+    .line 472
     .local v8, widthSpecMode:I
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v9
 
-    .line 476
+    .line 474
     .local v9, widthSpecSize:I
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v1
 
-    .line 477
+    .line 475
     .local v1, heightSpecMode:I
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v2
 
-    .line 488
+    .line 486
     .local v2, heightSpecSize:I
     iget-object v10, p0, Lcom/android/internal/widget/SlidingTab;->mLeftSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
     invoke-virtual {v10}, Lcom/android/internal/widget/SlidingTab$Slider;->measure()V
 
-    .line 489
+    .line 487
     iget-object v10, p0, Lcom/android/internal/widget/SlidingTab;->mRightSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
     invoke-virtual {v10}, Lcom/android/internal/widget/SlidingTab$Slider;->measure()V
 
-    .line 490
+    .line 488
     iget-object v10, p0, Lcom/android/internal/widget/SlidingTab;->mLeftSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
     invoke-virtual {v10}, Lcom/android/internal/widget/SlidingTab$Slider;->getTabWidth()I
 
     move-result v4
 
-    .line 491
+    .line 489
     .local v4, leftTabWidth:I
     iget-object v10, p0, Lcom/android/internal/widget/SlidingTab;->mRightSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
@@ -1017,7 +984,7 @@
 
     move-result v6
 
-    .line 492
+    .line 490
     .local v6, rightTabWidth:I
     iget-object v10, p0, Lcom/android/internal/widget/SlidingTab;->mLeftSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
@@ -1025,7 +992,7 @@
 
     move-result v3
 
-    .line 493
+    .line 491
     .local v3, leftTabHeight:I
     iget-object v10, p0, Lcom/android/internal/widget/SlidingTab;->mRightSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
@@ -1033,7 +1000,7 @@
 
     move-result v5
 
-    .line 496
+    .line 494
     .local v5, rightTabHeight:I
     invoke-direct {p0}, Lcom/android/internal/widget/SlidingTab;->isHorizontal()Z
 
@@ -1041,28 +1008,28 @@
 
     if-eqz v10, :cond_0
 
-    .line 497
+    .line 495
     add-int v10, v4, v6
 
     invoke-static {v9, v10}, Ljava/lang/Math;->max(II)I
 
     move-result v7
 
-    .line 498
+    .line 496
     .local v7, width:I
     invoke-static {v3, v5}, Ljava/lang/Math;->max(II)I
 
     move-result v0
 
-    .line 503
+    .line 501
     .local v0, height:I
     :goto_0
     invoke-virtual {p0, v7, v0}, Lcom/android/internal/widget/SlidingTab;->setMeasuredDimension(II)V
 
-    .line 504
+    .line 502
     return-void
 
-    .line 500
+    .line 498
     .end local v0           #height:I
     .end local v7           #width:I
     :cond_0
@@ -1070,7 +1037,7 @@
 
     move-result v7
 
-    .line 501
+    .line 499
     .restart local v7       #width:I
     add-int v10, v3, v5
 
@@ -1093,33 +1060,33 @@
 
     const/4 v9, 0x0
 
-    .line 579
+    .line 577
     iget-boolean v7, p0, Lcom/android/internal/widget/SlidingTab;->mTracking:Z
 
     if-eqz v7, :cond_0
 
-    .line 580
+    .line 578
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    .line 581
+    .line 579
     .local v0, action:I
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v5
 
-    .line 582
+    .line 580
     .local v5, x:F
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v6
 
-    .line 584
+    .line 582
     .local v6, y:F
     packed-switch v0, :pswitch_data_0
 
-    .line 620
+    .line 618
     .end local v0           #action:I
     .end local v5           #x:F
     .end local v6           #y:F
@@ -1141,7 +1108,7 @@
     :cond_2
     return v9
 
-    .line 586
+    .line 584
     .restart local v0       #action:I
     .restart local v5       #x:F
     .restart local v6       #y:F
@@ -1152,10 +1119,10 @@
 
     if-eqz v7, :cond_f
 
-    .line 587
+    .line 585
     invoke-direct {p0, v5, v6}, Lcom/android/internal/widget/SlidingTab;->moveHandle(FF)V
 
-    .line 588
+    .line 586
     invoke-direct {p0}, Lcom/android/internal/widget/SlidingTab;->isHorizontal()Z
 
     move-result v7
@@ -1164,7 +1131,7 @@
 
     move v2, v5
 
-    .line 589
+    .line 587
     .local v2, position:F
     :goto_1
     iget v11, p0, Lcom/android/internal/widget/SlidingTab;->mThreshold:F
@@ -1184,7 +1151,7 @@
 
     mul-float v3, v11, v7
 
-    .line 591
+    .line 589
     .local v3, target:F
     invoke-direct {p0}, Lcom/android/internal/widget/SlidingTab;->isHorizontal()Z
 
@@ -1192,7 +1159,7 @@
 
     if-eqz v7, :cond_8
 
-    .line 592
+    .line 590
     iget-object v7, p0, Lcom/android/internal/widget/SlidingTab;->mCurrentSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
     iget-object v11, p0, Lcom/android/internal/widget/SlidingTab;->mLeftSlider:Lcom/android/internal/widget/SlidingTab$Slider;
@@ -1205,7 +1172,7 @@
 
     move v4, v8
 
-    .line 598
+    .line 596
     .local v4, thresholdReached:Z
     :goto_3
     iget-boolean v7, p0, Lcom/android/internal/widget/SlidingTab;->mTriggered:Z
@@ -1214,18 +1181,18 @@
 
     if-eqz v4, :cond_0
 
-    .line 599
+    .line 597
     iput-boolean v8, p0, Lcom/android/internal/widget/SlidingTab;->mTriggered:Z
 
-    .line 600
+    .line 598
     iput-boolean v9, p0, Lcom/android/internal/widget/SlidingTab;->mTracking:Z
 
-    .line 601
+    .line 599
     iget-object v7, p0, Lcom/android/internal/widget/SlidingTab;->mCurrentSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
     invoke-virtual {v7, v10}, Lcom/android/internal/widget/SlidingTab$Slider;->setState(I)V
 
-    .line 602
+    .line 600
     iget-object v7, p0, Lcom/android/internal/widget/SlidingTab;->mCurrentSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
     iget-object v11, p0, Lcom/android/internal/widget/SlidingTab;->mLeftSlider:Lcom/android/internal/widget/SlidingTab$Slider;
@@ -1234,7 +1201,7 @@
 
     move v1, v8
 
-    .line 603
+    .line 601
     .local v1, isLeft:Z
     :goto_4
     if-eqz v1, :cond_d
@@ -1244,7 +1211,7 @@
     :goto_5
     invoke-direct {p0, v7}, Lcom/android/internal/widget/SlidingTab;->dispatchTriggerEvent(I)V
 
-    .line 606
+    .line 604
     if-eqz v1, :cond_e
 
     iget-boolean v7, p0, Lcom/android/internal/widget/SlidingTab;->mHoldLeftOnTransition:Z
@@ -1252,7 +1219,7 @@
     :goto_6
     invoke-virtual {p0, v7}, Lcom/android/internal/widget/SlidingTab;->startAnimating(Z)V
 
-    .line 607
+    .line 605
     invoke-direct {p0, v9}, Lcom/android/internal/widget/SlidingTab;->setGrabbedState(I)V
 
     goto :goto_0
@@ -1264,10 +1231,10 @@
     :cond_3
     move v2, v6
 
-    .line 588
+    .line 586
     goto :goto_1
 
-    .line 589
+    .line 587
     .restart local v2       #position:F
     :cond_4
     invoke-virtual {p0}, Lcom/android/internal/widget/SlidingTab;->getHeight()I
@@ -1280,7 +1247,7 @@
     :cond_5
     move v4, v9
 
-    .line 592
+    .line 590
     goto :goto_3
 
     :cond_6
@@ -1297,7 +1264,7 @@
 
     goto :goto_3
 
-    .line 595
+    .line 593
     :cond_8
     iget-object v7, p0, Lcom/android/internal/widget/SlidingTab;->mCurrentSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
@@ -1339,23 +1306,23 @@
     :cond_c
     move v1, v9
 
-    .line 602
+    .line 600
     goto :goto_4
 
     .restart local v1       #isLeft:Z
     :cond_d
     move v7, v10
 
-    .line 603
+    .line 601
     goto :goto_5
 
-    .line 606
+    .line 604
     :cond_e
     iget-boolean v7, p0, Lcom/android/internal/widget/SlidingTab;->mHoldRightOnTransition:Z
 
     goto :goto_6
 
-    .line 615
+    .line 613
     .end local v1           #isLeft:Z
     .end local v2           #position:F
     .end local v3           #target:F
@@ -1366,7 +1333,7 @@
 
     goto/16 :goto_0
 
-    .line 584
+    .line 582
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_1
@@ -1381,10 +1348,10 @@
     .parameter "visibility"
 
     .prologue
-    .line 850
+    .line 843
     invoke-super {p0, p1, p2}, Landroid/view/ViewGroup;->onVisibilityChanged(Landroid/view/View;I)V
 
-    .line 853
+    .line 846
     if-ne p1, p0, :cond_0
 
     if-eqz p2, :cond_0
@@ -1393,10 +1360,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 855
+    .line 848
     invoke-direct {p0}, Lcom/android/internal/widget/SlidingTab;->cancelGrab()V
 
-    .line 857
+    .line 850
     :cond_0
     return-void
 .end method
@@ -1406,25 +1373,25 @@
     .parameter "animate"
 
     .prologue
-    .line 561
+    .line 559
     iget-object v0, p0, Lcom/android/internal/widget/SlidingTab;->mLeftSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/widget/SlidingTab$Slider;->reset(Z)V
 
-    .line 562
+    .line 560
     iget-object v0, p0, Lcom/android/internal/widget/SlidingTab;->mRightSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/widget/SlidingTab$Slider;->reset(Z)V
 
-    .line 563
+    .line 561
     if-nez p1, :cond_0
 
-    .line 564
+    .line 562
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/internal/widget/SlidingTab;->mAnimating:Z
 
-    .line 566
+    .line 564
     :cond_0
     return-void
 .end method
@@ -1435,13 +1402,13 @@
     .parameter "holdRight"
 
     .prologue
-    .line 808
+    .line 806
     iput-boolean p1, p0, Lcom/android/internal/widget/SlidingTab;->mHoldLeftOnTransition:Z
 
-    .line 809
+    .line 807
     iput-boolean p2, p0, Lcom/android/internal/widget/SlidingTab;->mHoldRightOnTransition:Z
 
-    .line 810
+    .line 808
     return-void
 .end method
 
@@ -1450,19 +1417,19 @@
     .parameter "resId"
 
     .prologue
-    .line 772
+    .line 770
     invoke-direct {p0}, Lcom/android/internal/widget/SlidingTab;->isHorizontal()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 773
+    .line 771
     iget-object v0, p0, Lcom/android/internal/widget/SlidingTab;->mLeftSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/widget/SlidingTab$Slider;->setHintText(I)V
 
-    .line 775
+    .line 773
     :cond_0
     return-void
 .end method
@@ -1475,32 +1442,32 @@
     .parameter "tabId"
 
     .prologue
-    .line 759
+    .line 757
     iget-object v0, p0, Lcom/android/internal/widget/SlidingTab;->mLeftSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/widget/SlidingTab$Slider;->setIcon(I)V
 
-    .line 760
+    .line 758
     iget-object v0, p0, Lcom/android/internal/widget/SlidingTab;->mLeftSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
     invoke-virtual {v0, p2}, Lcom/android/internal/widget/SlidingTab$Slider;->setTarget(I)V
 
-    .line 761
+    .line 759
     iget-object v0, p0, Lcom/android/internal/widget/SlidingTab;->mLeftSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
     invoke-virtual {v0, p3}, Lcom/android/internal/widget/SlidingTab$Slider;->setBarBackgroundResource(I)V
 
-    .line 762
+    .line 760
     iget-object v0, p0, Lcom/android/internal/widget/SlidingTab;->mLeftSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
     invoke-virtual {v0, p4}, Lcom/android/internal/widget/SlidingTab$Slider;->setTabBackgroundResource(I)V
 
-    .line 763
+    .line 761
     iget-object v0, p0, Lcom/android/internal/widget/SlidingTab;->mLeftSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/SlidingTab$Slider;->updateDrawableStates()V
 
-    .line 764
+    .line 762
     return-void
 .end method
 
@@ -1509,10 +1476,10 @@
     .parameter "listener"
 
     .prologue
-    .line 834
+    .line 827
     iput-object p1, p0, Lcom/android/internal/widget/SlidingTab;->mOnTriggerListener:Lcom/android/internal/widget/SlidingTab$OnTriggerListener;
 
-    .line 835
+    .line 828
     return-void
 .end method
 
@@ -1521,19 +1488,19 @@
     .parameter "resId"
 
     .prologue
-    .line 802
+    .line 800
     invoke-direct {p0}, Lcom/android/internal/widget/SlidingTab;->isHorizontal()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 803
+    .line 801
     iget-object v0, p0, Lcom/android/internal/widget/SlidingTab;->mRightSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/widget/SlidingTab$Slider;->setHintText(I)V
 
-    .line 805
+    .line 803
     :cond_0
     return-void
 .end method
@@ -1546,32 +1513,32 @@
     .parameter "tabId"
 
     .prologue
-    .line 789
+    .line 787
     iget-object v0, p0, Lcom/android/internal/widget/SlidingTab;->mRightSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/widget/SlidingTab$Slider;->setIcon(I)V
 
-    .line 790
+    .line 788
     iget-object v0, p0, Lcom/android/internal/widget/SlidingTab;->mRightSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
     invoke-virtual {v0, p2}, Lcom/android/internal/widget/SlidingTab$Slider;->setTarget(I)V
 
-    .line 791
+    .line 789
     iget-object v0, p0, Lcom/android/internal/widget/SlidingTab;->mRightSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
     invoke-virtual {v0, p3}, Lcom/android/internal/widget/SlidingTab$Slider;->setBarBackgroundResource(I)V
 
-    .line 792
+    .line 790
     iget-object v0, p0, Lcom/android/internal/widget/SlidingTab;->mRightSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
     invoke-virtual {v0, p4}, Lcom/android/internal/widget/SlidingTab$Slider;->setTabBackgroundResource(I)V
 
-    .line 793
+    .line 791
     iget-object v0, p0, Lcom/android/internal/widget/SlidingTab;->mRightSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/SlidingTab$Slider;->updateDrawableStates()V
 
-    .line 794
+    .line 792
     return-void
 .end method
 
@@ -1580,7 +1547,7 @@
     .parameter "visibility"
 
     .prologue
-    .line 571
+    .line 569
     invoke-virtual {p0}, Lcom/android/internal/widget/SlidingTab;->getVisibility()I
 
     move-result v0
@@ -1591,16 +1558,16 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 572
+    .line 570
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/internal/widget/SlidingTab;->reset(Z)V
 
-    .line 574
+    .line 572
     :cond_0
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->setVisibility(I)V
 
-    .line 575
+    .line 573
     return-void
 .end method
 
@@ -1609,7 +1576,7 @@
     .parameter "holdAfter"
 
     .prologue
-    .line 635
+    .line 633
     const/16 v19, 0x1
 
     move/from16 v0, v19
@@ -1618,18 +1585,18 @@
 
     iput-boolean v0, v1, Lcom/android/internal/widget/SlidingTab;->mAnimating:Z
 
-    .line 638
+    .line 636
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/android/internal/widget/SlidingTab;->mCurrentSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
-    .line 639
+    .line 637
     .local v12, slider:Lcom/android/internal/widget/SlidingTab$Slider;
     move-object/from16 v0, p0
 
     iget-object v10, v0, Lcom/android/internal/widget/SlidingTab;->mOtherSlider:Lcom/android/internal/widget/SlidingTab$Slider;
 
-    .line 642
+    .line 640
     .local v10, other:Lcom/android/internal/widget/SlidingTab$Slider;
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/widget/SlidingTab;->isHorizontal()Z
 
@@ -1637,7 +1604,7 @@
 
     if-eqz v19, :cond_2
 
-    .line 643
+    .line 641
     #getter for: Lcom/android/internal/widget/SlidingTab$Slider;->tab:Landroid/widget/ImageView;
     invoke-static {v12}, Lcom/android/internal/widget/SlidingTab$Slider;->access$100(Lcom/android/internal/widget/SlidingTab$Slider;)Landroid/widget/ImageView;
 
@@ -1647,7 +1614,7 @@
 
     move-result v11
 
-    .line 644
+    .line 642
     .local v11, right:I
     #getter for: Lcom/android/internal/widget/SlidingTab$Slider;->tab:Landroid/widget/ImageView;
     invoke-static {v12}, Lcom/android/internal/widget/SlidingTab$Slider;->access$100(Lcom/android/internal/widget/SlidingTab$Slider;)Landroid/widget/ImageView;
@@ -1658,7 +1625,7 @@
 
     move-result v18
 
-    .line 645
+    .line 643
     .local v18, width:I
     #getter for: Lcom/android/internal/widget/SlidingTab$Slider;->tab:Landroid/widget/ImageView;
     invoke-static {v12}, Lcom/android/internal/widget/SlidingTab$Slider;->access$100(Lcom/android/internal/widget/SlidingTab$Slider;)Landroid/widget/ImageView;
@@ -1669,19 +1636,19 @@
 
     move-result v9
 
-    .line 646
+    .line 644
     .local v9, left:I
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/widget/SlidingTab;->getWidth()I
 
     move-result v17
 
-    .line 647
+    .line 645
     .local v17, viewWidth:I
     if-eqz p1, :cond_0
 
     const/4 v8, 0x0
 
-    .line 648
+    .line 646
     .local v8, holdOffset:I
     :goto_0
     move-object/from16 v0, p0
@@ -1702,12 +1669,12 @@
 
     neg-int v5, v0
 
-    .line 650
+    .line 648
     .local v5, dx:I
     :goto_1
     const/4 v6, 0x0
 
-    .line 661
+    .line 659
     .end local v9           #left:I
     .end local v11           #right:I
     .end local v17           #viewWidth:I
@@ -1738,7 +1705,7 @@
 
     invoke-direct {v14, v0, v1, v2, v3}, Landroid/view/animation/TranslateAnimation;-><init>(FFFF)V
 
-    .line 662
+    .line 660
     .local v14, trans1:Landroid/view/animation/Animation;
     const-wide/16 v19, 0xfa
 
@@ -1746,7 +1713,7 @@
 
     invoke-virtual {v14, v0, v1}, Landroid/view/animation/Animation;->setDuration(J)V
 
-    .line 663
+    .line 661
     new-instance v19, Landroid/view/animation/LinearInterpolator;
 
     invoke-direct/range {v19 .. v19}, Landroid/view/animation/LinearInterpolator;-><init>()V
@@ -1755,14 +1722,14 @@
 
     invoke-virtual {v14, v0}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
-    .line 664
+    .line 662
     const/16 v19, 0x1
 
     move/from16 v0, v19
 
     invoke-virtual {v14, v0}, Landroid/view/animation/Animation;->setFillAfter(Z)V
 
-    .line 665
+    .line 663
     new-instance v15, Landroid/view/animation/TranslateAnimation;
 
     const/16 v19, 0x0
@@ -1787,7 +1754,7 @@
 
     invoke-direct {v15, v0, v1, v2, v3}, Landroid/view/animation/TranslateAnimation;-><init>(FFFF)V
 
-    .line 666
+    .line 664
     .local v15, trans2:Landroid/view/animation/Animation;
     const-wide/16 v19, 0xfa
 
@@ -1795,7 +1762,7 @@
 
     invoke-virtual {v15, v0, v1}, Landroid/view/animation/Animation;->setDuration(J)V
 
-    .line 667
+    .line 665
     new-instance v19, Landroid/view/animation/LinearInterpolator;
 
     invoke-direct/range {v19 .. v19}, Landroid/view/animation/LinearInterpolator;-><init>()V
@@ -1804,14 +1771,14 @@
 
     invoke-virtual {v15, v0}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
-    .line 668
+    .line 666
     const/16 v19, 0x1
 
     move/from16 v0, v19
 
     invoke-virtual {v15, v0}, Landroid/view/animation/Animation;->setFillAfter(Z)V
 
-    .line 670
+    .line 668
     new-instance v19, Lcom/android/internal/widget/SlidingTab$2;
 
     move-object/from16 v0, v19
@@ -1826,13 +1793,13 @@
 
     invoke-virtual {v14, v0}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
-    .line 699
+    .line 697
     invoke-virtual {v12}, Lcom/android/internal/widget/SlidingTab$Slider;->hideTarget()V
 
-    .line 700
+    .line 698
     invoke-virtual {v12, v14, v15}, Lcom/android/internal/widget/SlidingTab$Slider;->startAnimation(Landroid/view/animation/Animation;Landroid/view/animation/Animation;)V
 
-    .line 701
+    .line 699
     return-void
 
     .end local v5           #dx:I
@@ -1847,10 +1814,10 @@
     :cond_0
     move/from16 v8, v18
 
-    .line 647
+    .line 645
     goto/16 :goto_0
 
-    .line 648
+    .line 646
     .restart local v8       #holdOffset:I
     :cond_1
     sub-int v19, v17, v9
@@ -1861,7 +1828,7 @@
 
     goto :goto_1
 
-    .line 652
+    .line 650
     .end local v8           #holdOffset:I
     .end local v9           #left:I
     .end local v11           #right:I
@@ -1877,7 +1844,7 @@
 
     move-result v13
 
-    .line 653
+    .line 651
     .local v13, top:I
     #getter for: Lcom/android/internal/widget/SlidingTab$Slider;->tab:Landroid/widget/ImageView;
     invoke-static {v12}, Lcom/android/internal/widget/SlidingTab$Slider;->access$100(Lcom/android/internal/widget/SlidingTab$Slider;)Landroid/widget/ImageView;
@@ -1888,7 +1855,7 @@
 
     move-result v4
 
-    .line 654
+    .line 652
     .local v4, bottom:I
     #getter for: Lcom/android/internal/widget/SlidingTab$Slider;->tab:Landroid/widget/ImageView;
     invoke-static {v12}, Lcom/android/internal/widget/SlidingTab$Slider;->access$100(Lcom/android/internal/widget/SlidingTab$Slider;)Landroid/widget/ImageView;
@@ -1899,24 +1866,24 @@
 
     move-result v7
 
-    .line 655
+    .line 653
     .local v7, height:I
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/widget/SlidingTab;->getHeight()I
 
     move-result v16
 
-    .line 656
+    .line 654
     .local v16, viewHeight:I
     if-eqz p1, :cond_3
 
     const/4 v8, 0x0
 
-    .line 657
+    .line 655
     .restart local v8       #holdOffset:I
     :goto_3
     const/4 v5, 0x0
 
-    .line 658
+    .line 656
     .restart local v5       #dx:I
     move-object/from16 v0, p0
 
@@ -1942,10 +1909,10 @@
     :cond_3
     move v8, v7
 
-    .line 656
+    .line 654
     goto :goto_3
 
-    .line 658
+    .line 656
     .restart local v5       #dx:I
     .restart local v8       #holdOffset:I
     :cond_4

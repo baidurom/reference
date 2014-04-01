@@ -8,21 +8,17 @@
     value = {
         Lcom/mediatek/internal/R$styleable;,
         Lcom/mediatek/internal/R$xml;,
-        Lcom/mediatek/internal/R$style;,
         Lcom/mediatek/internal/R$string;,
         Lcom/mediatek/internal/R$raw;,
         Lcom/mediatek/internal/R$plurals;,
         Lcom/mediatek/internal/R$layout;,
-        Lcom/mediatek/internal/R$interpolator;,
         Lcom/mediatek/internal/R$integer;,
         Lcom/mediatek/internal/R$id;,
         Lcom/mediatek/internal/R$drawable;,
         Lcom/mediatek/internal/R$dimen;,
         Lcom/mediatek/internal/R$color;,
-        Lcom/mediatek/internal/R$bool;,
         Lcom/mediatek/internal/R$attr;,
-        Lcom/mediatek/internal/R$array;,
-        Lcom/mediatek/internal/R$anim;
+        Lcom/mediatek/internal/R$array;
     }
 .end annotation
 

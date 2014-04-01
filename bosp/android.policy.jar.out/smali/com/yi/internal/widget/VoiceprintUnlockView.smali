@@ -1412,14 +1412,14 @@
 
     .line 196
     .local v0, inflater:Landroid/view/LayoutInflater;
-    const v1, 0x309003b
+    const v1, 0x4090040
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, p0, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     .line 197
-    const v1, 0x3020054
+    const v1, 0x402007a
 
     invoke-virtual {p0, v1}, Lcom/yi/internal/widget/VoiceprintUnlockView;->findViewById(I)Landroid/view/View;
 
@@ -1430,7 +1430,7 @@
     iput-object v1, p0, Lcom/yi/internal/widget/VoiceprintUnlockView;->mVoiceLockScreen:Landroid/widget/RelativeLayout;
 
     .line 198
-    const v1, 0x302005f
+    const v1, 0x4020085
 
     invoke-virtual {p0, v1}, Lcom/yi/internal/widget/VoiceprintUnlockView;->findViewById(I)Landroid/view/View;
 
@@ -1441,7 +1441,7 @@
     iput-object v1, p0, Lcom/yi/internal/widget/VoiceprintUnlockView;->mTipWords:Landroid/widget/TextView;
 
     .line 199
-    const v1, 0x302005e
+    const v1, 0x4020084
 
     invoke-virtual {p0, v1}, Lcom/yi/internal/widget/VoiceprintUnlockView;->findViewById(I)Landroid/view/View;
 
@@ -1452,7 +1452,7 @@
     iput-object v1, p0, Lcom/yi/internal/widget/VoiceprintUnlockView;->mTipImage:Landroid/widget/ImageView;
 
     .line 200
-    const v1, 0x302005d
+    const v1, 0x4020083
 
     invoke-virtual {p0, v1}, Lcom/yi/internal/widget/VoiceprintUnlockView;->findViewById(I)Landroid/view/View;
 
@@ -1463,7 +1463,7 @@
     iput-object v1, p0, Lcom/yi/internal/widget/VoiceprintUnlockView;->mMicImage:Landroid/widget/ImageView;
 
     .line 201
-    const v1, 0x302005b
+    const v1, 0x4020081
 
     invoke-virtual {p0, v1}, Lcom/yi/internal/widget/VoiceprintUnlockView;->findViewById(I)Landroid/view/View;
 

@@ -17,9 +17,9 @@
 # instance fields
 .field activity:Lcom/android/server/am/ActivityRecord;
 
-.field holder:Lcom/android/server/am/ThumbnailHolder;
-
 .field index:I
+
+.field thumbnail:Landroid/graphics/Bitmap;
 
 
 # direct methods
@@ -27,7 +27,7 @@
     .locals 0
 
     .prologue
-    .line 24
+    .line 25
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

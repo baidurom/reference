@@ -29,7 +29,7 @@
     invoke-direct {p0}, Landroid/animation/Keyframe;-><init>()V
 
     .line 247
-    iput p1, p0, Landroid/animation/Keyframe$ObjectKeyframe;->mFraction:F
+    iput p1, p0, Landroid/animation/Keyframe;->mFraction:F
 
     .line 248
     iput-object p2, p0, Landroid/animation/Keyframe$ObjectKeyframe;->mValue:Ljava/lang/Object;
@@ -40,10 +40,10 @@
     const/4 v0, 0x1
 
     :goto_0
-    iput-boolean v0, p0, Landroid/animation/Keyframe$ObjectKeyframe;->mHasValue:Z
+    iput-boolean v0, p0, Landroid/animation/Keyframe;->mHasValue:Z
 
     .line 250
-    iget-boolean v0, p0, Landroid/animation/Keyframe$ObjectKeyframe;->mHasValue:Z
+    iget-boolean v0, p0, Landroid/animation/Keyframe;->mHasValue:Z
 
     if-eqz v0, :cond_1
 
@@ -52,7 +52,7 @@
     move-result-object v0
 
     :goto_1
-    iput-object v0, p0, Landroid/animation/Keyframe$ObjectKeyframe;->mValueType:Ljava/lang/Class;
+    iput-object v0, p0, Landroid/animation/Keyframe;->mValueType:Ljava/lang/Class;
 
     .line 251
     return-void
@@ -81,16 +81,11 @@
 
     invoke-virtual {p0}, Landroid/animation/Keyframe$ObjectKeyframe;->getFraction()F
 
-    move-result v2
+    move-result v1
 
-    iget-boolean v1, p0, Landroid/animation/Keyframe$ObjectKeyframe;->mHasValue:Z
+    iget-object v2, p0, Landroid/animation/Keyframe$ObjectKeyframe;->mValue:Ljava/lang/Object;
 
-    if-eqz v1, :cond_0
-
-    iget-object v1, p0, Landroid/animation/Keyframe$ObjectKeyframe;->mValue:Ljava/lang/Object;
-
-    :goto_0
-    invoke-direct {v0, v2, v1}, Landroid/animation/Keyframe$ObjectKeyframe;-><init>(FLjava/lang/Object;)V
+    invoke-direct {v0, v1, v2}, Landroid/animation/Keyframe$ObjectKeyframe;-><init>(FLjava/lang/Object;)V
 
     .line 265
     .local v0, kfClone:Landroid/animation/Keyframe$ObjectKeyframe;
@@ -102,13 +97,6 @@
 
     .line 266
     return-object v0
-
-    .line 264
-    .end local v0           #kfClone:Landroid/animation/Keyframe$ObjectKeyframe;
-    :cond_0
-    const/4 v1, 0x0
-
-    goto :goto_0
 .end method
 
 .method public bridge synthetic clone()Landroid/animation/Keyframe;
@@ -164,7 +152,7 @@
     const/4 v0, 0x1
 
     :goto_0
-    iput-boolean v0, p0, Landroid/animation/Keyframe$ObjectKeyframe;->mHasValue:Z
+    iput-boolean v0, p0, Landroid/animation/Keyframe;->mHasValue:Z
 
     .line 260
     return-void

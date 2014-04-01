@@ -26,8 +26,6 @@
 
 .field public static final PING_TRANSACTION:I = 0x5f504e47
 
-.field public static final SYSPROPS_TRANSACTION:I = 0x5f535052
-
 .field public static final TWEET_TRANSACTION:I = 0x5f545754
 
 

@@ -35,29 +35,29 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 249
+    .line 209
     iput-object p1, p0, Lcom/android/internal/telephony/cat/OpenChannelParams$GprsParams;->this$0:Lcom/android/internal/telephony/cat/OpenChannelParams;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 245
+    .line 205
     iput-object v0, p0, Lcom/android/internal/telephony/cat/OpenChannelParams$GprsParams;->accessPointName:Ljava/lang/String;
 
-    .line 246
+    .line 206
     iput-object v0, p0, Lcom/android/internal/telephony/cat/OpenChannelParams$GprsParams;->userLogin:Ljava/lang/String;
 
-    .line 247
+    .line 207
     iput-object v0, p0, Lcom/android/internal/telephony/cat/OpenChannelParams$GprsParams;->userPwd:Ljava/lang/String;
 
-    .line 250
+    .line 210
     iput-object p2, p0, Lcom/android/internal/telephony/cat/OpenChannelParams$GprsParams;->accessPointName:Ljava/lang/String;
 
-    .line 251
+    .line 211
     iput-object p3, p0, Lcom/android/internal/telephony/cat/OpenChannelParams$GprsParams;->userLogin:Ljava/lang/String;
 
-    .line 252
+    .line 212
     iput-object p4, p0, Lcom/android/internal/telephony/cat/OpenChannelParams$GprsParams;->userPwd:Ljava/lang/String;
 
-    .line 253
+    .line 213
     return-void
 .end method

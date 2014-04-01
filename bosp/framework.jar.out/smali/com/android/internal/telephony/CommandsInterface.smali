@@ -94,16 +94,6 @@
 
 .field public static final OP_UNLOCK:I = 0x0
 
-.field public static final REFRESH_NAA_FILE_CHANGE:I = 0x1
-
-.field public static final REFRESH_NAA_INIT:I = 0x3
-
-.field public static final REFRESH_NAA_INIT_AND_FILE_CHANGE:I = 0x2
-
-.field public static final REFRESH_NAA_INIT_AND_FULL_FILE_CHANGE:I = 0x0
-
-.field public static final REFRESH_UICC_RESET:I = 0x4
-
 .field public static final SERVICE_CLASS_DATA:I = 0x2
 
 .field public static final SERVICE_CLASS_DATA_ASYNC:I = 0x20
@@ -145,12 +135,6 @@
 .field public static final USSD_OPERATION_NOT_SUPPORTED:I = 0x4
 
 .field public static final USSD_SESSION_END:I = 0x2
-
-.field public static final UTK_REFRESH_PHB:I = 0x1
-
-.field public static final UTK_REFRESH_SMS:I = 0x0
-
-.field public static final UTK_REFRESH_SYS:I = 0x2
 
 
 # virtual methods
@@ -205,9 +189,6 @@
 .method public abstract deleteUPBEntry(IIILandroid/os/Message;)V
 .end method
 
-.method public abstract detachPS(Landroid/os/Message;)V
-.end method
-
 .method public abstract detectSimMissing(Landroid/os/Message;)V
 .end method
 
@@ -229,9 +210,6 @@
 .method public abstract emergencyDial(Ljava/lang/String;ILcom/android/internal/telephony/UUSInfo;Landroid/os/Message;)V
 .end method
 
-.method public abstract enableCdmaRegisterPause(ZLandroid/os/Message;)V
-.end method
-
 .method public abstract exitEmergencyCallbackMode(Landroid/os/Message;)V
 .end method
 
@@ -251,9 +229,6 @@
 .end method
 
 .method public abstract getAvailableNetworks(Landroid/os/Message;)V
-.end method
-
-.method public abstract getAvoidSYSList(Landroid/os/Message;)V
 .end method
 
 .method public abstract getBasebandVersion(Landroid/os/Message;)V
@@ -310,9 +285,6 @@
 .method public abstract getIMSI(Landroid/os/Message;)V
 .end method
 
-.method public abstract getIMSIForApp(Ljava/lang/String;Landroid/os/Message;)V
-.end method
-
 .method public abstract getIccCardStatus(Landroid/os/Message;)V
 .end method
 
@@ -342,9 +314,6 @@
 .method public abstract getNetworkSelectionMode(Landroid/os/Message;)V
 .end method
 
-.method public abstract getNitzTime(Landroid/os/Message;)V
-.end method
-
 .method public abstract getNvState()Lcom/android/internal/telephony/CommandsInterface$RadioState;
 .end method
 
@@ -357,12 +326,6 @@
 .end method
 
 .method public abstract getPOLCapabilty(Landroid/os/Message;)V
-.end method
-
-.method public abstract getPhoneBookMemStorage(Landroid/os/Message;)V
-.end method
-
-.method public abstract getPhoneBookStringsLength(Landroid/os/Message;)V
 .end method
 
 .method public abstract getPpuAndCurrency(Landroid/os/Message;)V
@@ -389,19 +352,10 @@
 .method public abstract getSimState()Lcom/android/internal/telephony/CommandsInterface$RadioState;
 .end method
 
-.method public abstract getSmsParameters(Landroid/os/Message;)V
-.end method
-
 .method public abstract getSmsSimMemoryStatus(Landroid/os/Message;)V
 .end method
 
 .method public abstract getSmscAddress(Landroid/os/Message;)V
-.end method
-
-.method public abstract getUtkLocalInfo(Landroid/os/Message;)V
-.end method
-
-.method public abstract getVoiceRadioTechnology(Landroid/os/Message;)V
 .end method
 
 .method public abstract getVoiceRegistrationState(Landroid/os/Message;)V
@@ -410,13 +364,7 @@
 .method public abstract handleCallSetupRequestFromSim(ZILandroid/os/Message;)V
 .end method
 
-.method public abstract handleCallSetupRequestFromUim(ZLandroid/os/Message;)V
-.end method
-
 .method public abstract hangupAll(Landroid/os/Message;)V
-.end method
-
-.method public abstract hangupAllEx(Landroid/os/Message;)V
 .end method
 
 .method public abstract hangupConnection(ILandroid/os/Message;)V
@@ -428,25 +376,7 @@
 .method public abstract hangupWaitingOrBackground(Landroid/os/Message;)V
 .end method
 
-.method public abstract iccCloseChannel(ILandroid/os/Message;)V
-.end method
-
-.method public abstract iccExchangeAPDU(IIIIIILjava/lang/String;Landroid/os/Message;)V
-.end method
-
-.method public abstract iccGetATR(Landroid/os/Message;)V
-.end method
-
 .method public abstract iccIO(IILjava/lang/String;IIILjava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
-.end method
-
-.method public abstract iccIOForApp(IILjava/lang/String;IIILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
-.end method
-
-.method public abstract iccOpenChannel(Ljava/lang/String;Landroid/os/Message;)V
-.end method
-
-.method public abstract iccOpenChannelWithSw(Ljava/lang/String;Landroid/os/Message;)V
 .end method
 
 .method public abstract invokeOemRilRequestRaw([BLandroid/os/Message;)V
@@ -455,31 +385,13 @@
 .method public abstract invokeOemRilRequestStrings([Ljava/lang/String;Landroid/os/Message;)V
 .end method
 
-.method public abstract isGettingAvailableNetworks()Z
-.end method
-
 .method public abstract lookupOperatorName(Ljava/lang/String;Z)Ljava/lang/String;
 .end method
 
 .method public abstract notifySimMissing()V
 .end method
 
-.method public abstract notifyUimInsertedStatus(I)V
-.end method
-
-.method public abstract profileDownload(Ljava/lang/String;Landroid/os/Message;)V
-.end method
-
 .method public abstract queryAvailableBandMode(Landroid/os/Message;)V
-.end method
-
-.method public abstract queryCDMANetWorkRegistrationState(Landroid/os/Message;)V
-.end method
-
-.method public abstract queryCDMANetworkInfo(Landroid/os/Message;)V
-.end method
-
-.method public abstract queryCDMASmsAndPBStatus(Landroid/os/Message;)V
 .end method
 
 .method public abstract queryCLIP(Landroid/os/Message;)V
@@ -494,9 +406,6 @@
 .method public abstract queryCdmaRoamingPreference(Landroid/os/Message;)V
 .end method
 
-.method public abstract queryCellBroadcastConfigInfo(Landroid/os/Message;)V
-.end method
-
 .method public abstract queryFacilityLock(Ljava/lang/String;Ljava/lang/String;ILandroid/os/Message;)V
 .end method
 
@@ -504,9 +413,6 @@
 .end method
 
 .method public abstract queryIccId(Landroid/os/Message;)V
-.end method
-
-.method public abstract queryModemType(Landroid/os/Message;)V
 .end method
 
 .method public abstract queryNetworkLock(ILandroid/os/Message;)V
@@ -521,12 +427,6 @@
 .method public abstract queryUPBCapability(Landroid/os/Message;)V
 .end method
 
-.method public abstract queryUimInsertedStatus(Landroid/os/Message;)V
-.end method
-
-.method public abstract readPhoneBookEntryExt(IILandroid/os/Message;)V
-.end method
-
 .method public abstract readUPBGasList(IILandroid/os/Message;)V
 .end method
 
@@ -537,9 +437,6 @@
 .end method
 
 .method public abstract registerForAvailable(Landroid/os/Handler;ILjava/lang/Object;)V
-.end method
-
-.method public abstract registerForCallAccepted(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
 .method public abstract registerForCallForwardingInfo(Landroid/os/Handler;ILjava/lang/Object;)V
@@ -563,25 +460,13 @@
 .method public abstract registerForCdmaSubscriptionChanged(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
-.method public abstract registerForCipherIndication(Landroid/os/Handler;ILjava/lang/Object;)V
-.end method
-
 .method public abstract registerForDataNetworkStateChanged(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
 .method public abstract registerForDisplayInfo(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
-.method public abstract registerForEfCspPlmnModeBitChanged(Landroid/os/Handler;ILjava/lang/Object;)V
-.end method
-
 .method public abstract registerForExitEmergencyCallbackMode(Landroid/os/Handler;ILjava/lang/Object;)V
-.end method
-
-.method public abstract registerForGetAvailableNetworksDone(Landroid/os/Handler;ILjava/lang/Object;)V
-.end method
-
-.method public abstract registerForIMEILock(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
 .method public abstract registerForIccRefresh(Landroid/os/Handler;ILjava/lang/Object;)V
@@ -596,13 +481,7 @@
 .method public abstract registerForInCallVoicePrivacyOn(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
-.method public abstract registerForInvalidSimDetected(Landroid/os/Handler;ILjava/lang/Object;)V
-.end method
-
 .method public abstract registerForLineControlInfo(Landroid/os/Handler;ILjava/lang/Object;)V
-.end method
-
-.method public abstract registerForMccMncChange(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
 .method public abstract registerForNVReady(Landroid/os/Handler;ILjava/lang/Object;)V
@@ -612,9 +491,6 @@
 .end method
 
 .method public abstract registerForNetworkInfo(Landroid/os/Handler;ILjava/lang/Object;)V
-.end method
-
-.method public abstract registerForNetworkTypeChanged(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
 .method public abstract registerForNotAvailable(Landroid/os/Handler;ILjava/lang/Object;)V
@@ -642,6 +518,9 @@
 .end method
 
 .method public abstract registerForRadioStateChanged(Landroid/os/Handler;ILjava/lang/Object;)V
+.end method
+
+.method public abstract registerForRadioTechnologyChanged(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
 .method public abstract registerForRedirectedNumberInfo(Landroid/os/Handler;ILjava/lang/Object;)V
@@ -674,12 +553,6 @@
 .method public abstract registerForSimMissing(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
-.method public abstract registerForSimPlugIn(Landroid/os/Handler;ILjava/lang/Object;)V
-.end method
-
-.method public abstract registerForSimPlugOut(Landroid/os/Handler;ILjava/lang/Object;)V
-.end method
-
 .method public abstract registerForSimRecovery(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
@@ -692,9 +565,6 @@
 .method public abstract registerForT53AudioControlInfo(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
-.method public abstract registerForViaGpsEvent(Landroid/os/Handler;ILjava/lang/Object;)V
-.end method
-
 .method public abstract registerForVirtualSimOff(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
@@ -702,9 +572,6 @@
 .end method
 
 .method public abstract registerForVoiceNetworkStateChanged(Landroid/os/Handler;ILjava/lang/Object;)V
-.end method
-
-.method public abstract registerForVoiceRadioTechChanged(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
 .method public abstract registerForVtRingInfo(Landroid/os/Handler;ILjava/lang/Object;)V
@@ -725,37 +592,13 @@
 .method public abstract reportStkServiceIsRunning(Landroid/os/Message;)V
 .end method
 
-.method public abstract reportUtkServiceIsRunning(Landroid/os/Message;)V
-.end method
-
-.method public abstract requestAGPSGetMpcIpPort(Landroid/os/Message;)V
-.end method
-
-.method public abstract requestAGPSSetMpcIpPort(Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
-.end method
-
-.method public abstract requestAGPSTcpConnected(ILandroid/os/Message;)V
-.end method
-
 .method public abstract requestIsimAuthentication(Ljava/lang/String;Landroid/os/Message;)V
-.end method
-
-.method public abstract requestSetEtsDev(ILandroid/os/Message;)V
-.end method
-
-.method public abstract requestSwitchHPF(ZLandroid/os/Message;)V
-.end method
-
-.method public abstract requestUtkRefresh(ILandroid/os/Message;)V
 .end method
 
 .method public abstract resetAccumulatedCallMeter(Ljava/lang/String;Landroid/os/Message;)V
 .end method
 
 .method public abstract resetRadio(Landroid/os/Message;)V
-.end method
-
-.method public abstract resumeCdmaRegister(Landroid/os/Message;)V
 .end method
 
 .method public abstract sendBTSIMProfile(IILjava/lang/String;Landroid/os/Message;)V
@@ -797,15 +640,6 @@
 .method public abstract setAccumulatedCallMeterMaximum(Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
 .end method
 
-.method public abstract setAllCbLanguageOn(Landroid/os/Message;)V
-.end method
-
-.method public abstract setArsiReportThreshold(ILandroid/os/Message;)V
-.end method
-
-.method public abstract setAvoidSYS(ZLandroid/os/Message;)V
-.end method
-
 .method public abstract setBandMode(ILandroid/os/Message;)V
 .end method
 
@@ -836,22 +670,10 @@
 .method public abstract setCdmaSubscriptionSource(ILandroid/os/Message;)V
 .end method
 
-.method public abstract setCellBroadcastChannelConfigInfo(Ljava/lang/String;ILandroid/os/Message;)V
-.end method
-
-.method public abstract setCellBroadcastLanguageConfigInfo(Ljava/lang/String;Landroid/os/Message;)V
-.end method
-
 .method public abstract setCurrentPreferredNetworkType()V
 .end method
 
 .method public abstract setEmergencyCallbackMode(Landroid/os/Handler;ILjava/lang/Object;)V
-.end method
-
-.method public abstract setEtws(ILandroid/os/Message;)V
-.end method
-
-.method public abstract setFDMode(IIILandroid/os/Message;)V
 .end method
 
 .method public abstract setFacilityLock(Ljava/lang/String;ZLjava/lang/String;ILandroid/os/Message;)V
@@ -879,12 +701,6 @@
 .end method
 
 .method public abstract setLocationUpdates(ZLandroid/os/Message;)V
-.end method
-
-.method public abstract setMdnNumber(Ljava/lang/String;Landroid/os/Message;)V
-.end method
-
-.method public abstract setMeid(Ljava/lang/String;Landroid/os/Message;)V
 .end method
 
 .method public abstract setMute(ZLandroid/os/Message;)V
@@ -920,12 +736,6 @@
 .method public abstract setOnCatSessionEnd(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
-.method public abstract setOnEtwsNotification(Landroid/os/Handler;ILjava/lang/Object;)V
-.end method
-
-.method public abstract setOnGSMSuspended(Landroid/os/Handler;ILjava/lang/Object;)V
-.end method
-
 .method public abstract setOnIccRefresh(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
@@ -953,12 +763,6 @@
 .method public abstract setOnNewSMS(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
-.method public abstract setOnPacketsFlushNotification(Landroid/os/Handler;ILjava/lang/Object;)V
-.end method
-
-.method public abstract setOnPlmnChangeNotification(Landroid/os/Handler;ILjava/lang/Object;)V
-.end method
-
 .method public abstract setOnRestrictedStateChanged(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
@@ -971,31 +775,13 @@
 .method public abstract setOnSmsStatus(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
-.method public abstract setOnStkEvdlCall(Landroid/os/Handler;ILjava/lang/Object;)V
-.end method
-
 .method public abstract setOnSuppServiceNotification(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
 .method public abstract setOnUSSD(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
-.method public abstract setOnUtkEvent(Landroid/os/Handler;ILjava/lang/Object;)V
-.end method
-
-.method public abstract setOnUtkProactiveCmd(Landroid/os/Handler;ILjava/lang/Object;)V
-.end method
-
-.method public abstract setOnUtkSessionEnd(Landroid/os/Handler;ILjava/lang/Object;)V
-.end method
-
 .method public abstract setPOLEntry(ILjava/lang/String;ILandroid/os/Message;)V
-.end method
-
-.method public abstract setPhoneBookMemStorage(Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
-.end method
-
-.method public abstract setPhoneComponent(Lcom/android/internal/telephony/Phone;)V
 .end method
 
 .method public abstract setPhoneType(I)V
@@ -1019,19 +805,10 @@
 .method public abstract setRadioPower(ZLandroid/os/Message;)V
 .end method
 
-.method public abstract setRadioPowerCardSwitch(ILandroid/os/Message;)V
-.end method
-
 .method public abstract setRadioPowerOff(Landroid/os/Message;)V
 .end method
 
 .method public abstract setRadioPowerOn(Landroid/os/Message;)V
-.end method
-
-.method public abstract setRegistrationSuspendEnabled(ILandroid/os/Message;)V
-.end method
-
-.method public abstract setResumeRegistration(ILandroid/os/Message;)V
 .end method
 
 .method public abstract setScri(ZLandroid/os/Message;)V
@@ -1040,19 +817,10 @@
 .method public abstract setScriResult(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
-.method public abstract setSimInterfaceSwitch(ILandroid/os/Message;)V
-.end method
-
 .method public abstract setSimRecoveryOn(ILandroid/os/Message;)V
 .end method
 
-.method public abstract setSmsParameters(Landroid/telephony/SmsParameters;Landroid/os/Message;)V
-.end method
-
 .method public abstract setSmscAddress(Ljava/lang/String;Landroid/os/Message;)V
-.end method
-
-.method public abstract setStkEvdlCallByAP(ILandroid/os/Message;)V
 .end method
 
 .method public abstract setSuppServiceNotifications(ZLandroid/os/Message;)V
@@ -1062,9 +830,6 @@
 .end method
 
 .method public abstract setTTYMode(ILandroid/os/Message;)V
-.end method
-
-.method public abstract setViaTRM(ILandroid/os/Message;)V
 .end method
 
 .method public abstract setupDataCall(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
@@ -1077,9 +842,6 @@
 .end method
 
 .method public abstract stopDtmf(Landroid/os/Message;)V
-.end method
-
-.method public abstract storeModemType(ILandroid/os/Message;)V
 .end method
 
 .method public abstract supplyIccPin(Ljava/lang/String;Landroid/os/Message;)V
@@ -1109,31 +871,7 @@
 .method public abstract supplyNetworkDepersonalization(Ljava/lang/String;Landroid/os/Message;)V
 .end method
 
-.method public abstract switchRilSocket(II)V
-.end method
-
 .method public abstract switchWaitingOrHoldingAndActive(Landroid/os/Message;)V
-.end method
-
-.method public abstract testingEmergencyCall()V
-.end method
-
-.method public abstract uiccAkaAuthenticate(I[B[BLandroid/os/Message;)V
-.end method
-
-.method public abstract uiccApplicationIO(IIILjava/lang/String;IIILjava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
-.end method
-
-.method public abstract uiccDeactivateApplication(ILandroid/os/Message;)V
-.end method
-
-.method public abstract uiccGbaAuthenticateBootstrap(I[B[BLandroid/os/Message;)V
-.end method
-
-.method public abstract uiccGbaAuthenticateNaf(I[BLandroid/os/Message;)V
-.end method
-
-.method public abstract uiccSelectApplication(Ljava/lang/String;Landroid/os/Message;)V
 .end method
 
 .method public abstract unSetGprsDetach(Landroid/os/Handler;)V
@@ -1160,12 +898,6 @@
 .method public abstract unSetOnCatSessionEnd(Landroid/os/Handler;)V
 .end method
 
-.method public abstract unSetOnEtwsNotification(Landroid/os/Handler;)V
-.end method
-
-.method public abstract unSetOnGSMSuspended(Landroid/os/Handler;)V
-.end method
-
 .method public abstract unSetOnIccSmsFull(Landroid/os/Handler;)V
 .end method
 
@@ -1187,12 +919,6 @@
 .method public abstract unSetOnNewSMS(Landroid/os/Handler;)V
 .end method
 
-.method public abstract unSetOnPacketsFlushNotification(Landroid/os/Handler;)V
-.end method
-
-.method public abstract unSetOnPlmnChangeNotification(Landroid/os/Handler;)V
-.end method
-
 .method public abstract unSetOnRestrictedStateChanged(Landroid/os/Handler;)V
 .end method
 
@@ -1205,31 +931,16 @@
 .method public abstract unSetOnSmsStatus(Landroid/os/Handler;)V
 .end method
 
-.method public abstract unSetOnStkEvdlCall(Landroid/os/Handler;)V
-.end method
-
 .method public abstract unSetOnSuppServiceNotification(Landroid/os/Handler;)V
 .end method
 
 .method public abstract unSetOnUSSD(Landroid/os/Handler;)V
 .end method
 
-.method public abstract unSetOnUtkEvent(Landroid/os/Handler;)V
-.end method
-
-.method public abstract unSetOnUtkProactiveCmd(Landroid/os/Handler;)V
-.end method
-
-.method public abstract unSetOnUtkSessionEnd(Landroid/os/Handler;)V
-.end method
-
 .method public abstract unSetScriResult(Landroid/os/Handler;)V
 .end method
 
 .method public abstract unregisterForAvailable(Landroid/os/Handler;)V
-.end method
-
-.method public abstract unregisterForCallAccepted(Landroid/os/Handler;)V
 .end method
 
 .method public abstract unregisterForCallForwardingInfo(Landroid/os/Handler;)V
@@ -1253,25 +964,13 @@
 .method public abstract unregisterForCdmaSubscriptionChanged(Landroid/os/Handler;)V
 .end method
 
-.method public abstract unregisterForCipherIndication(Landroid/os/Handler;)V
-.end method
-
 .method public abstract unregisterForDataNetworkStateChanged(Landroid/os/Handler;)V
 .end method
 
 .method public abstract unregisterForDisplayInfo(Landroid/os/Handler;)V
 .end method
 
-.method public abstract unregisterForEfCspPlmnModeBitChanged(Landroid/os/Handler;)V
-.end method
-
 .method public abstract unregisterForExitEmergencyCallbackMode(Landroid/os/Handler;)V
-.end method
-
-.method public abstract unregisterForGetAvailableNetworksDone(Landroid/os/Handler;)V
-.end method
-
-.method public abstract unregisterForIMEILock(Landroid/os/Handler;)V
 .end method
 
 .method public abstract unregisterForIccRefresh(Landroid/os/Handler;)V
@@ -1286,13 +985,7 @@
 .method public abstract unregisterForInCallVoicePrivacyOn(Landroid/os/Handler;)V
 .end method
 
-.method public abstract unregisterForInvalidSimDetected(Landroid/os/Handler;)V
-.end method
-
 .method public abstract unregisterForLineControlInfo(Landroid/os/Handler;)V
-.end method
-
-.method public abstract unregisterForMccMncChange(Landroid/os/Handler;)V
 .end method
 
 .method public abstract unregisterForNVReady(Landroid/os/Handler;)V
@@ -1302,9 +995,6 @@
 .end method
 
 .method public abstract unregisterForNetworkInfo(Landroid/os/Handler;)V
-.end method
-
-.method public abstract unregisterForNetworkTypeChanged(Landroid/os/Handler;)V
 .end method
 
 .method public abstract unregisterForNotAvailable(Landroid/os/Handler;)V
@@ -1332,6 +1022,9 @@
 .end method
 
 .method public abstract unregisterForRadioStateChanged(Landroid/os/Handler;)V
+.end method
+
+.method public abstract unregisterForRadioTechnologyChanged(Landroid/os/Handler;)V
 .end method
 
 .method public abstract unregisterForRedirectedNumberInfo(Landroid/os/Handler;)V
@@ -1364,12 +1057,6 @@
 .method public abstract unregisterForSimMissing(Landroid/os/Handler;)V
 .end method
 
-.method public abstract unregisterForSimPlugIn(Landroid/os/Handler;)V
-.end method
-
-.method public abstract unregisterForSimPlugOut(Landroid/os/Handler;)V
-.end method
-
 .method public abstract unregisterForSimRecovery(Landroid/os/Handler;)V
 .end method
 
@@ -1385,9 +1072,6 @@
 .method public abstract unregisterForT53ClirInfo(Landroid/os/Handler;)V
 .end method
 
-.method public abstract unregisterForViaGpsEvent(Landroid/os/Handler;)V
-.end method
-
 .method public abstract unregisterForVirtualSimOff(Landroid/os/Handler;)V
 .end method
 
@@ -1395,9 +1079,6 @@
 .end method
 
 .method public abstract unregisterForVoiceNetworkStateChanged(Landroid/os/Handler;)V
-.end method
-
-.method public abstract unregisterForVoiceRadioTechChanged(Landroid/os/Handler;)V
 .end method
 
 .method public abstract unregisterForVtRingInfo(Landroid/os/Handler;)V
@@ -1422,9 +1103,6 @@
 .end method
 
 .method public abstract writePhbEntry(Lcom/android/internal/telephony/PhbEntry;Landroid/os/Message;)V
-.end method
-
-.method public abstract writePhoneBookEntryExt(Lcom/mediatek/common/telephony/gsm/PBEntry;Landroid/os/Message;)V
 .end method
 
 .method public abstract writeSmsToRuim(ILjava/lang/String;Landroid/os/Message;)V

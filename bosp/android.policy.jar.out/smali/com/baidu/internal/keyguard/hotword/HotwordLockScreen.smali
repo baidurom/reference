@@ -3,7 +3,7 @@
 .source "HotwordLockScreen.java"
 
 # interfaces
-.implements Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityView;
+.implements Lcom/android/internal/policy/impl/KeyguardScreen;
 
 
 # annotations
@@ -35,7 +35,7 @@
 
 
 # instance fields
-.field private mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+.field private mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
 .field private mContext:Landroid/content/Context;
 
@@ -55,7 +55,7 @@
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;Lcom/android/internal/widget/LockPatternUtils;)V
+.method public constructor <init>(Landroid/content/Context;Lcom/android/internal/policy/impl/KeyguardScreenCallback;Lcom/android/internal/widget/LockPatternUtils;)V
     .locals 8
     .parameter "context"
     .parameter "callback"
@@ -64,16 +64,16 @@
     .prologue
     const/4 v7, 0x1
 
-    .line 172
+    .line 173
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 173
+    .line 174
     iput-object p1, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mContext:Landroid/content/Context;
 
-    .line 174
-    iput-object p2, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
-
     .line 175
+    iput-object p2, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
+
+    .line 176
     new-instance v1, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen$SmsContent;
 
     new-instance v2, Landroid/os/Handler;
@@ -84,7 +84,7 @@
 
     iput-object v1, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mSmsObserver:Landroid/database/ContentObserver;
 
-    .line 176
+    .line 177
     new-instance v1, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen$MmsContent;
 
     new-instance v2, Landroid/os/Handler;
@@ -95,21 +95,21 @@
 
     iput-object v1, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mMmsObserver:Landroid/database/ContentObserver;
 
-    .line 177
+    .line 178
     iput-object p3, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
-    .line 178
+    .line 179
     invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v0
 
-    .line 179
+    .line 180
     .local v0, inflater:Landroid/view/LayoutInflater;
     const v1, #layout@baidu_keyguard_hotword#t
 
     invoke-virtual {v0, v1, p0, v7}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
-    .line 180
+    .line 181
     const v1, #id@gallery#t
 
     invoke-virtual {p0, v1}, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->findViewById(I)Landroid/view/View;
@@ -120,27 +120,27 @@
 
     iput-object v1, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mGallery:Lcom/baidu/internal/keyguard/hotword/ConstellationGallery;
 
-    .line 181
+    .line 182
     iget-object v1, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mGallery:Lcom/baidu/internal/keyguard/hotword/ConstellationGallery;
 
     new-instance v2, Lcom/baidu/internal/keyguard/hotword/ConstellationAdapter;
 
     iget-object v3, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mContext:Landroid/content/Context;
 
-    iget-object v4, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    iget-object v4, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
-    invoke-direct {v2, v3, v4}, Lcom/baidu/internal/keyguard/hotword/ConstellationAdapter;-><init>(Landroid/content/Context;Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;)V
+    invoke-direct {v2, v3, v4}, Lcom/baidu/internal/keyguard/hotword/ConstellationAdapter;-><init>(Landroid/content/Context;Lcom/android/internal/policy/impl/KeyguardScreenCallback;)V
 
     invoke-virtual {v1, v2}, Lcom/baidu/internal/keyguard/hotword/ConstellationGallery;->setAdapter(Landroid/widget/SpinnerAdapter;)V
 
-    .line 182
+    .line 183
     iget-object v1, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mGallery:Lcom/baidu/internal/keyguard/hotword/ConstellationGallery;
 
-    iget-object v2, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    iget-object v2, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
-    invoke-virtual {v1, v2}, Lcom/baidu/internal/keyguard/hotword/ConstellationGallery;->setKeyguardCallback(Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;)V
+    invoke-virtual {v1, v2}, Lcom/baidu/internal/keyguard/hotword/ConstellationGallery;->setKeyguardCallback(Lcom/android/internal/policy/impl/KeyguardScreenCallback;)V
 
-    .line 183
+    .line 184
     iget-object v1, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mGallery:Lcom/baidu/internal/keyguard/hotword/ConstellationGallery;
 
     const v2, 0x3fffffff
@@ -159,7 +159,7 @@
 
     invoke-virtual {v1, v2}, Lcom/baidu/internal/keyguard/hotword/ConstellationGallery;->setSelection(I)V
 
-    .line 184
+    .line 185
     const v1, #id@target_handle_panel#t
 
     invoke-virtual {p0, v1}, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->findViewById(I)Landroid/view/View;
@@ -170,26 +170,26 @@
 
     iput-object v1, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mTargetHandlePanel:Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;
 
-    .line 185
+    .line 186
     iget-object v1, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mTargetHandlePanel:Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;
 
     iget-object v2, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mGallery:Lcom/baidu/internal/keyguard/hotword/ConstellationGallery;
 
     invoke-virtual {v1, v2}, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->setWordListGallery(Lcom/baidu/internal/keyguard/hotword/ConstellationGallery;)V
 
-    .line 186
+    .line 187
     iget-object v1, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mTargetHandlePanel:Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;
 
-    iget-object v2, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    iget-object v2, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
-    invoke-virtual {v1, v2}, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->setKeyguardCallback(Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;)V
+    invoke-virtual {v1, v2}, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->setKeyguardCallback(Lcom/android/internal/policy/impl/KeyguardScreenCallback;)V
 
-    .line 187
+    .line 188
     iget-object v1, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     if-eqz v1, :cond_0
 
-    .line 188
+    .line 189
     iget-object v1, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mTargetHandlePanel:Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;
 
     iget-object v2, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
@@ -200,7 +200,7 @@
 
     invoke-virtual {v1, v2}, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;->setVibrateEnabled(Z)V
 
-    .line 190
+    .line 191
     :cond_0
     new-instance v1, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen$MyHandler;
 
@@ -212,7 +212,7 @@
 
     iput-object v1, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mHandler:Landroid/os/Handler;
 
-    .line 191
+    .line 192
     new-instance v1, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen$MyBroadcastReceiver;
 
     iget-object v2, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mHandler:Landroid/os/Handler;
@@ -221,23 +221,23 @@
 
     iput-object v1, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mReceiver:Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen$MyBroadcastReceiver;
 
-    .line 192
+    .line 193
     invoke-virtual {p0, v7}, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->setFocusable(Z)V
 
-    .line 193
+    .line 194
     invoke-virtual {p0, v7}, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->setFocusableInTouchMode(Z)V
 
-    .line 194
+    .line 195
     const/high16 v1, 0x6
 
     invoke-virtual {p0, v1}, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->setDescendantFocusability(I)V
 
-    .line 195
+    .line 196
     iget-object v1, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Lcom/baidu/internal/keyguard/hotword/ActiveSprite;->active(Landroid/content/Context;)V
 
-    .line 196
+    .line 197
     return-void
 .end method
 
@@ -246,7 +246,7 @@
     .parameter "x0"
 
     .prologue
-    .line 31
+    .line 32
     iget-object v0, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -254,21 +254,19 @@
 
 
 # virtual methods
-.method public getCallback()Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
-    .locals 1
+.method public cleanUp()V
+    .locals 0
 
     .prologue
-    .line 311
-    iget-object v0, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
-
-    return-object v0
+    .line 296
+    return-void
 .end method
 
 .method public getGallery()Lcom/baidu/internal/keyguard/hotword/ConstellationGallery;
     .locals 1
 
     .prologue
-    .line 199
+    .line 200
     iget-object v0, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mGallery:Lcom/baidu/internal/keyguard/hotword/ConstellationGallery;
 
     return-object v0
@@ -278,26 +276,17 @@
     .locals 1
 
     .prologue
-    .line 203
+    .line 204
     iget-object v0, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mTargetHandlePanel:Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel;
 
     return-object v0
-.end method
-
-.method public hideBouncer(I)V
-    .locals 0
-    .parameter "duration"
-
-    .prologue
-    .line 330
-    return-void
 .end method
 
 .method public needsInput()Z
     .locals 1
 
     .prologue
-    .line 208
+    .line 209
     const/4 v0, 0x0
 
     return v0
@@ -307,7 +296,7 @@
     .locals 4
 
     .prologue
-    .line 249
+    .line 250
     const-string v1, "HotwordKeyguardView"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -344,7 +333,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 251
+    .line 252
     :try_start_0
     iget-object v1, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mContext:Landroid/content/Context;
 
@@ -352,7 +341,7 @@
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 252
+    .line 253
     iget-object v1, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -363,7 +352,7 @@
 
     invoke-virtual {v1, v2}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 253
+    .line 254
     iget-object v1, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -376,20 +365,20 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 260
+    .line 261
     :goto_0
     iget-object v1, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mGallery:Lcom/baidu/internal/keyguard/hotword/ConstellationGallery;
 
     invoke-virtual {v1}, Lcom/baidu/internal/keyguard/hotword/ConstellationGallery;->resetConstellationUi()V
 
-    .line 261
+    .line 262
     return-void
 
-    .line 254
+    .line 255
     :catch_0
     move-exception v0
 
-    .line 255
+    .line 256
     .local v0, e:Ljava/lang/Exception;
     const-string v1, "HotwordKeyguardView"
 
@@ -400,47 +389,46 @@
     goto :goto_0
 .end method
 
-.method public onResume(I)V
+.method public onResume()V
     .locals 7
-    .parameter "reason"
 
     .prologue
     const/4 v6, 0x0
 
-    .line 265
+    .line 266
     new-instance v1, Landroid/content/IntentFilter;
 
     invoke-direct {v1}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 266
+    .line 267
     .local v1, filter:Landroid/content/IntentFilter;
     const-string v3, "android.provider.Telephony.SMS_RECEIVED"
 
     invoke-virtual {v1, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 267
+    .line 268
     const-string v3, "com.baidu.keyguard.internal.SMS_UNREAD_UPDATED"
 
     invoke-virtual {v1, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 268
+    .line 269
     const-string v3, "com.baidu.keyguard.internal.WORD_LIST_UPDATED"
 
     invoke-virtual {v1, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 269
+    .line 270
     const-string v3, "android.intent.action.BATTERY_CHANGED"
 
     invoke-virtual {v1, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 270
+    .line 271
     iget-object v3, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mContext:Landroid/content/Context;
 
     iget-object v4, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mReceiver:Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen$MyBroadcastReceiver;
 
     invoke-virtual {v3, v4, v1}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 271
+    .line 272
     const-string v3, "HotwordKeyguardView"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -477,27 +465,27 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 272
+    .line 273
     iget-object v3, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mContext:Landroid/content/Context;
 
     invoke-static {v3}, Lcom/baidu/internal/keyguard/hotword/WordList;->init(Landroid/content/Context;)V
 
-    .line 273
+    .line 274
     invoke-static {v6}, Lcom/baidu/internal/keyguard/hotword/WordList;->updateWordList(Z)V
 
-    .line 274
+    .line 275
     invoke-static {}, Lcom/baidu/internal/keyguard/hotword/WordList;->wordListAvaliable()Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    .line 275
+    .line 276
     iget-object v3, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mGallery:Lcom/baidu/internal/keyguard/hotword/ConstellationGallery;
 
     invoke-virtual {v3, v6}, Lcom/baidu/internal/keyguard/hotword/ConstellationGallery;->setVisibility(I)V
 
-    .line 281
+    .line 282
     :goto_0
     :try_start_0
     iget-object v3, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mContext:Landroid/content/Context;
@@ -518,7 +506,7 @@
 
     invoke-virtual {v3, v4, v5, v6}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 283
+    .line 284
     iget-object v3, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -537,30 +525,30 @@
 
     invoke-virtual {v3, v4, v5, v6}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 285
+    .line 286
     new-instance v2, Landroid/content/Intent;
 
     invoke-direct {v2}, Landroid/content/Intent;-><init>()V
 
-    .line 286
+    .line 287
     .local v2, intent:Landroid/content/Intent;
     const-string v3, "com.baidu.keyguard.internal.SMS_UNREAD_UPDATED"
 
     invoke-virtual {v2, v3}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 287
+    .line 288
     iget-object v3, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3, v2}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 291
+    .line 292
     .end local v2           #intent:Landroid/content/Intent;
     :goto_1
     return-void
 
-    .line 277
+    .line 278
     :cond_0
     iget-object v3, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mGallery:Lcom/baidu/internal/keyguard/hotword/ConstellationGallery;
 
@@ -570,11 +558,11 @@
 
     goto :goto_0
 
-    .line 288
+    .line 289
     :catch_0
     move-exception v0
 
-    .line 289
+    .line 290
     .local v0, e:Ljava/lang/Exception;
     const-string v3, "HotwordKeyguardView"
 
@@ -583,50 +571,4 @@
     invoke-static {v3, v4, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_1
-.end method
-
-.method public reset()V
-    .locals 0
-
-    .prologue
-    .line 307
-    return-void
-.end method
-
-.method public setKeyguardCallback(Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;)V
-    .locals 0
-    .parameter "callback"
-
-    .prologue
-    .line 297
-    return-void
-.end method
-
-.method public setLockPatternUtils(Lcom/android/internal/widget/LockPatternUtils;)V
-    .locals 0
-    .parameter "utils"
-
-    .prologue
-    .line 301
-    iput-object p1, p0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
-
-    .line 302
-    return-void
-.end method
-
-.method public showBouncer(I)V
-    .locals 0
-    .parameter "duration"
-
-    .prologue
-    .line 324
-    return-void
-.end method
-
-.method public showUsabilityHint()V
-    .locals 0
-
-    .prologue
-    .line 318
-    return-void
 .end method

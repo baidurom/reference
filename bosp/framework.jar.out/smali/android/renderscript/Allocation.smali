@@ -21,10 +21,6 @@
 
 .field public static final USAGE_GRAPHICS_VERTEX:I = 0x4
 
-.field public static final USAGE_IO_INPUT:I = 0x20
-
-.field public static final USAGE_IO_OUTPUT:I = 0x40
-
 .field public static final USAGE_SCRIPT:I = 0x1
 
 .field static mBitmapOptions:Landroid/graphics/BitmapFactory$Options;
@@ -51,8 +47,6 @@
 
 .field mCurrentDimZ:I
 
-.field mReadAllowed:Z
-
 .field mSelectedFace:Landroid/renderscript/Type$CubemapFace;
 
 .field mSelectedLOD:I
@@ -65,29 +59,27 @@
 
 .field mUsage:I
 
-.field mWriteAllowed:Z
-
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 2
 
     .prologue
-    .line 1000
+    .line 860
     new-instance v0, Landroid/graphics/BitmapFactory$Options;
 
     invoke-direct {v0}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
     sput-object v0, Landroid/renderscript/Allocation;->mBitmapOptions:Landroid/graphics/BitmapFactory$Options;
 
-    .line 1002
+    .line 862
     sget-object v0, Landroid/renderscript/Allocation;->mBitmapOptions:Landroid/graphics/BitmapFactory$Options;
 
     const/4 v1, 0x0
 
     iput-boolean v1, v0, Landroid/graphics/BitmapFactory$Options;->inScaled:Z
 
-    .line 1003
+    .line 863
     return-void
 .end method
 
@@ -99,28 +91,20 @@
     .parameter "usage"
 
     .prologue
-    const/4 v0, 0x1
-
-    .line 237
+    .line 185
     invoke-direct {p0, p1, p2}, Landroid/renderscript/BaseObj;-><init>(ILandroid/renderscript/RenderScript;)V
 
-    .line 83
-    iput-boolean v0, p0, Landroid/renderscript/Allocation;->mReadAllowed:Z
-
     .line 84
-    iput-boolean v0, p0, Landroid/renderscript/Allocation;->mWriteAllowed:Z
-
-    .line 88
     sget-object v0, Landroid/renderscript/Type$CubemapFace;->POSITIVE_X:Landroid/renderscript/Type$CubemapFace;
 
     iput-object v0, p0, Landroid/renderscript/Allocation;->mSelectedFace:Landroid/renderscript/Type$CubemapFace;
 
-    .line 238
-    and-int/lit8 v0, p4, -0x80
+    .line 186
+    and-int/lit8 v0, p4, -0x20
 
     if-eqz v0, :cond_0
 
-    .line 245
+    .line 191
     new-instance v0, Landroid/renderscript/RSIllegalArgumentException;
 
     const-string v1, "Unknown usage specified."
@@ -129,46 +113,18 @@
 
     throw v0
 
-    .line 248
+    .line 193
     :cond_0
-    and-int/lit8 v0, p4, 0x20
-
-    if-eqz v0, :cond_1
-
-    .line 249
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Landroid/renderscript/Allocation;->mWriteAllowed:Z
-
-    .line 251
-    and-int/lit8 v0, p4, -0x24
-
-    if-eqz v0, :cond_1
-
-    .line 254
-    new-instance v0, Landroid/renderscript/RSIllegalArgumentException;
-
-    const-string v1, "Invalid usage combination."
-
-    invoke-direct {v0, v1}, Landroid/renderscript/RSIllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 258
-    :cond_1
     iput-object p3, p0, Landroid/renderscript/Allocation;->mType:Landroid/renderscript/Type;
 
-    .line 259
-    iput p4, p0, Landroid/renderscript/Allocation;->mUsage:I
+    .line 195
+    if-eqz p3, :cond_1
 
-    .line 261
-    if-eqz p3, :cond_2
-
-    .line 262
+    .line 196
     invoke-direct {p0, p3}, Landroid/renderscript/Allocation;->updateCacheInfo(Landroid/renderscript/Type;)V
 
-    .line 264
-    :cond_2
+    .line 198
+    :cond_1
     return-void
 .end method
 
@@ -178,7 +134,7 @@
     .parameter "b"
 
     .prologue
-    .line 1282
+    .line 1085
     sget-object v0, Landroid/renderscript/Allocation$MipmapControl;->MIPMAP_NONE:Landroid/renderscript/Allocation$MipmapControl;
 
     const/4 v1, 0x2
@@ -202,27 +158,27 @@
 
     const/4 v7, 0x1
 
-    .line 1236
+    .line 1039
     invoke-virtual {p0}, Landroid/renderscript/RenderScript;->validate()V
 
-    .line 1238
+    .line 1041
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v1
 
-    .line 1239
+    .line 1042
     .local v1, height:I
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v6
 
-    .line 1241
+    .line 1044
     .local v6, width:I
     rem-int/lit8 v9, v6, 0x6
 
     if-eqz v9, :cond_0
 
-    .line 1242
+    .line 1045
     new-instance v7, Landroid/renderscript/RSIllegalArgumentException;
 
     const-string v8, "Cubemap height must be multiple of 6"
@@ -231,13 +187,13 @@
 
     throw v7
 
-    .line 1244
+    .line 1047
     :cond_0
     div-int/lit8 v9, v6, 0x6
 
     if-eq v9, v1, :cond_1
 
-    .line 1245
+    .line 1048
     new-instance v7, Landroid/renderscript/RSIllegalArgumentException;
 
     const-string v8, "Only square cube map faces supported"
@@ -246,7 +202,7 @@
 
     throw v7
 
-    .line 1247
+    .line 1050
     :cond_1
     add-int/lit8 v9, v1, -0x1
 
@@ -256,12 +212,12 @@
 
     move v3, v7
 
-    .line 1248
+    .line 1051
     .local v3, isPow2:Z
     :goto_0
     if-nez v3, :cond_3
 
-    .line 1249
+    .line 1052
     new-instance v7, Landroid/renderscript/RSIllegalArgumentException;
 
     const-string v8, "Only power of 2 cube faces supported"
@@ -274,33 +230,33 @@
     :cond_2
     move v3, v8
 
-    .line 1247
+    .line 1050
     goto :goto_0
 
-    .line 1252
+    .line 1055
     .restart local v3       #isPow2:Z
     :cond_3
     invoke-static {p0, p1}, Landroid/renderscript/Allocation;->elementFromBitmap(Landroid/renderscript/RenderScript;Landroid/graphics/Bitmap;)Landroid/renderscript/Element;
 
     move-result-object v0
 
-    .line 1253
+    .line 1056
     .local v0, e:Landroid/renderscript/Element;
     new-instance v5, Landroid/renderscript/Type$Builder;
 
     invoke-direct {v5, p0, v0}, Landroid/renderscript/Type$Builder;-><init>(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;)V
 
-    .line 1254
+    .line 1057
     .local v5, tb:Landroid/renderscript/Type$Builder;
     invoke-virtual {v5, v1}, Landroid/renderscript/Type$Builder;->setX(I)Landroid/renderscript/Type$Builder;
 
-    .line 1255
+    .line 1058
     invoke-virtual {v5, v1}, Landroid/renderscript/Type$Builder;->setY(I)Landroid/renderscript/Type$Builder;
 
-    .line 1256
+    .line 1059
     invoke-virtual {v5, v7}, Landroid/renderscript/Type$Builder;->setFaces(Z)Landroid/renderscript/Type$Builder;
 
-    .line 1257
+    .line 1060
     sget-object v9, Landroid/renderscript/Allocation$MipmapControl;->MIPMAP_FULL:Landroid/renderscript/Allocation$MipmapControl;
 
     if-ne p2, v9, :cond_4
@@ -308,14 +264,14 @@
     :goto_1
     invoke-virtual {v5, v7}, Landroid/renderscript/Type$Builder;->setMipmaps(Z)Landroid/renderscript/Type$Builder;
 
-    .line 1258
+    .line 1061
     invoke-virtual {v5}, Landroid/renderscript/Type$Builder;->create()Landroid/renderscript/Type;
 
     move-result-object v4
 
-    .line 1260
+    .line 1063
     .local v4, t:Landroid/renderscript/Type;
-    invoke-virtual {v4, p0}, Landroid/renderscript/Type;->getID(Landroid/renderscript/RenderScript;)I
+    invoke-virtual {v4}, Landroid/renderscript/Type;->getID()I
 
     move-result v7
 
@@ -325,11 +281,11 @@
 
     move-result v2
 
-    .line 1261
+    .line 1064
     .local v2, id:I
     if-nez v2, :cond_5
 
-    .line 1262
+    .line 1065
     new-instance v7, Landroid/renderscript/RSRuntimeException;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -369,10 +325,10 @@
     :cond_4
     move v7, v8
 
-    .line 1257
+    .line 1060
     goto :goto_1
 
-    .line 1264
+    .line 1067
     .restart local v2       #id:I
     .restart local v4       #t:Landroid/renderscript/Type;
     :cond_5
@@ -394,7 +350,7 @@
     .parameter "zneg"
 
     .prologue
-    .line 1377
+    .line 1180
     sget-object v7, Landroid/renderscript/Allocation$MipmapControl;->MIPMAP_NONE:Landroid/renderscript/Allocation$MipmapControl;
 
     const/4 v8, 0x2
@@ -433,12 +389,12 @@
     .parameter "usage"
 
     .prologue
-    .line 1313
+    .line 1116
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v5
 
-    .line 1314
+    .line 1117
     .local v5, height:I
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -506,7 +462,7 @@
 
     if-eq v9, v5, :cond_1
 
-    .line 1320
+    .line 1123
     :cond_0
     new-instance v9, Landroid/renderscript/RSIllegalArgumentException;
 
@@ -516,7 +472,7 @@
 
     throw v9
 
-    .line 1322
+    .line 1125
     :cond_1
     add-int/lit8 v9, v5, -0x1
 
@@ -526,12 +482,12 @@
 
     const/4 v6, 0x1
 
-    .line 1323
+    .line 1126
     .local v6, isPow2:Z
     :goto_0
     if-nez v6, :cond_3
 
-    .line 1324
+    .line 1127
     new-instance v9, Landroid/renderscript/RSIllegalArgumentException;
 
     const-string v10, "Only power of 2 cube faces supported"
@@ -540,39 +496,39 @@
 
     throw v9
 
-    .line 1322
+    .line 1125
     .end local v6           #isPow2:Z
     :cond_2
     const/4 v6, 0x0
 
     goto :goto_0
 
-    .line 1327
+    .line 1130
     .restart local v6       #isPow2:Z
     :cond_3
     invoke-static {p0, p1}, Landroid/renderscript/Allocation;->elementFromBitmap(Landroid/renderscript/RenderScript;Landroid/graphics/Bitmap;)Landroid/renderscript/Element;
 
     move-result-object v4
 
-    .line 1328
+    .line 1131
     .local v4, e:Landroid/renderscript/Element;
     new-instance v8, Landroid/renderscript/Type$Builder;
 
     invoke-direct {v8, p0, v4}, Landroid/renderscript/Type$Builder;-><init>(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;)V
 
-    .line 1329
+    .line 1132
     .local v8, tb:Landroid/renderscript/Type$Builder;
     invoke-virtual {v8, v5}, Landroid/renderscript/Type$Builder;->setX(I)Landroid/renderscript/Type$Builder;
 
-    .line 1330
+    .line 1133
     invoke-virtual {v8, v5}, Landroid/renderscript/Type$Builder;->setY(I)Landroid/renderscript/Type$Builder;
 
-    .line 1331
+    .line 1134
     const/4 v9, 0x1
 
     invoke-virtual {v8, v9}, Landroid/renderscript/Type$Builder;->setFaces(Z)Landroid/renderscript/Type$Builder;
 
-    .line 1332
+    .line 1135
     sget-object v9, Landroid/renderscript/Allocation$MipmapControl;->MIPMAP_FULL:Landroid/renderscript/Allocation$MipmapControl;
 
     move-object/from16 v0, p7
@@ -584,12 +540,12 @@
     :goto_1
     invoke-virtual {v8, v9}, Landroid/renderscript/Type$Builder;->setMipmaps(Z)Landroid/renderscript/Type$Builder;
 
-    .line 1333
+    .line 1136
     invoke-virtual {v8}, Landroid/renderscript/Type$Builder;->create()Landroid/renderscript/Type;
 
     move-result-object v7
 
-    .line 1334
+    .line 1137
     .local v7, t:Landroid/renderscript/Type;
     move-object/from16 v0, p7
 
@@ -599,69 +555,69 @@
 
     move-result-object v3
 
-    .line 1336
+    .line 1139
     .local v3, cubemap:Landroid/renderscript/Allocation;
     invoke-static {p0, v3}, Landroid/renderscript/AllocationAdapter;->create2D(Landroid/renderscript/RenderScript;Landroid/renderscript/Allocation;)Landroid/renderscript/AllocationAdapter;
 
     move-result-object v2
 
-    .line 1337
+    .line 1140
     .local v2, adapter:Landroid/renderscript/AllocationAdapter;
     sget-object v9, Landroid/renderscript/Type$CubemapFace;->POSITIVE_X:Landroid/renderscript/Type$CubemapFace;
 
     invoke-virtual {v2, v9}, Landroid/renderscript/AllocationAdapter;->setFace(Landroid/renderscript/Type$CubemapFace;)V
 
-    .line 1338
+    .line 1141
     invoke-virtual {v2, p1}, Landroid/renderscript/AllocationAdapter;->copyFrom(Landroid/graphics/Bitmap;)V
 
-    .line 1339
+    .line 1142
     sget-object v9, Landroid/renderscript/Type$CubemapFace;->NEGATIVE_X:Landroid/renderscript/Type$CubemapFace;
 
     invoke-virtual {v2, v9}, Landroid/renderscript/AllocationAdapter;->setFace(Landroid/renderscript/Type$CubemapFace;)V
 
-    .line 1340
+    .line 1143
     invoke-virtual {v2, p2}, Landroid/renderscript/AllocationAdapter;->copyFrom(Landroid/graphics/Bitmap;)V
 
-    .line 1341
+    .line 1144
     sget-object v9, Landroid/renderscript/Type$CubemapFace;->POSITIVE_Y:Landroid/renderscript/Type$CubemapFace;
 
     invoke-virtual {v2, v9}, Landroid/renderscript/AllocationAdapter;->setFace(Landroid/renderscript/Type$CubemapFace;)V
 
-    .line 1342
+    .line 1145
     invoke-virtual {v2, p3}, Landroid/renderscript/AllocationAdapter;->copyFrom(Landroid/graphics/Bitmap;)V
 
-    .line 1343
+    .line 1146
     sget-object v9, Landroid/renderscript/Type$CubemapFace;->NEGATIVE_Y:Landroid/renderscript/Type$CubemapFace;
 
     invoke-virtual {v2, v9}, Landroid/renderscript/AllocationAdapter;->setFace(Landroid/renderscript/Type$CubemapFace;)V
 
-    .line 1344
+    .line 1147
     invoke-virtual {v2, p4}, Landroid/renderscript/AllocationAdapter;->copyFrom(Landroid/graphics/Bitmap;)V
 
-    .line 1345
+    .line 1148
     sget-object v9, Landroid/renderscript/Type$CubemapFace;->POSITIVE_Z:Landroid/renderscript/Type$CubemapFace;
 
     invoke-virtual {v2, v9}, Landroid/renderscript/AllocationAdapter;->setFace(Landroid/renderscript/Type$CubemapFace;)V
 
-    .line 1346
+    .line 1149
     move-object/from16 v0, p5
 
     invoke-virtual {v2, v0}, Landroid/renderscript/AllocationAdapter;->copyFrom(Landroid/graphics/Bitmap;)V
 
-    .line 1347
+    .line 1150
     sget-object v9, Landroid/renderscript/Type$CubemapFace;->NEGATIVE_Z:Landroid/renderscript/Type$CubemapFace;
 
     invoke-virtual {v2, v9}, Landroid/renderscript/AllocationAdapter;->setFace(Landroid/renderscript/Type$CubemapFace;)V
 
-    .line 1348
+    .line 1151
     move-object/from16 v0, p6
 
     invoke-virtual {v2, v0}, Landroid/renderscript/AllocationAdapter;->copyFrom(Landroid/graphics/Bitmap;)V
 
-    .line 1350
+    .line 1153
     return-object v3
 
-    .line 1332
+    .line 1135
     .end local v2           #adapter:Landroid/renderscript/AllocationAdapter;
     .end local v3           #cubemap:Landroid/renderscript/Allocation;
     .end local v7           #t:Landroid/renderscript/Type;
@@ -677,7 +633,7 @@
     .parameter "b"
 
     .prologue
-    .line 1215
+    .line 1018
     sget-object v0, Landroid/renderscript/Allocation$MipmapControl;->MIPMAP_NONE:Landroid/renderscript/Allocation$MipmapControl;
 
     const/4 v1, 0x2
@@ -697,17 +653,17 @@
     .parameter "usage"
 
     .prologue
-    .line 1137
+    .line 997
     invoke-virtual {p0}, Landroid/renderscript/RenderScript;->validate()V
 
-    .line 1138
+    .line 998
     invoke-static {p0, p1, p2}, Landroid/renderscript/Allocation;->typeFromBitmap(Landroid/renderscript/RenderScript;Landroid/graphics/Bitmap;Landroid/renderscript/Allocation$MipmapControl;)Landroid/renderscript/Type;
 
     move-result-object v1
 
-    .line 1140
+    .line 1000
     .local v1, t:Landroid/renderscript/Type;
-    invoke-virtual {v1, p0}, Landroid/renderscript/Type;->getID(Landroid/renderscript/RenderScript;)I
+    invoke-virtual {v1}, Landroid/renderscript/Type;->getID()I
 
     move-result v2
 
@@ -717,11 +673,11 @@
 
     move-result v0
 
-    .line 1141
+    .line 1001
     .local v0, id:I
     if-nez v0, :cond_0
 
-    .line 1142
+    .line 1002
     new-instance v2, Landroid/renderscript/RSRuntimeException;
 
     const-string v3, "Load failed."
@@ -730,7 +686,7 @@
 
     throw v2
 
-    .line 1144
+    .line 1004
     :cond_0
     new-instance v2, Landroid/renderscript/Allocation;
 
@@ -746,7 +702,7 @@
     .parameter "id"
 
     .prologue
-    .line 1424
+    .line 1227
     sget-object v0, Landroid/renderscript/Allocation$MipmapControl;->MIPMAP_NONE:Landroid/renderscript/Allocation$MipmapControl;
 
     const/4 v1, 0x2
@@ -767,25 +723,25 @@
     .parameter "usage"
 
     .prologue
-    .line 1403
+    .line 1206
     invoke-virtual {p0}, Landroid/renderscript/RenderScript;->validate()V
 
-    .line 1404
+    .line 1207
     invoke-static {p1, p2}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
-    .line 1405
+    .line 1208
     .local v1, b:Landroid/graphics/Bitmap;
     invoke-static {p0, v1, p3, p4}, Landroid/renderscript/Allocation;->createFromBitmap(Landroid/renderscript/RenderScript;Landroid/graphics/Bitmap;Landroid/renderscript/Allocation$MipmapControl;I)Landroid/renderscript/Allocation;
 
     move-result-object v0
 
-    .line 1406
+    .line 1209
     .local v0, alloc:Landroid/renderscript/Allocation;
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 1407
+    .line 1210
     return-object v0
 .end method
 
@@ -796,13 +752,13 @@
     .parameter "usage"
 
     .prologue
-    .line 1442
+    .line 1245
     invoke-virtual {p0}, Landroid/renderscript/RenderScript;->validate()V
 
-    .line 1443
+    .line 1246
     const/4 v1, 0x0
 
-    .line 1445
+    .line 1248
     .local v1, allocArray:[B
     :try_start_0
     const-string v3, "UTF-8"
@@ -811,7 +767,7 @@
 
     move-result-object v1
 
-    .line 1446
+    .line 1249
     invoke-static {p0}, Landroid/renderscript/Element;->U8(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;
 
     move-result-object v3
@@ -822,21 +778,21 @@
 
     move-result-object v0
 
-    .line 1447
+    .line 1250
     .local v0, alloc:Landroid/renderscript/Allocation;
     invoke-virtual {v0, v1}, Landroid/renderscript/Allocation;->copyFrom([B)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1448
+    .line 1251
     return-object v0
 
-    .line 1450
+    .line 1253
     .end local v0           #alloc:Landroid/renderscript/Allocation;
     :catch_0
     move-exception v2
 
-    .line 1451
+    .line 1254
     .local v2, e:Ljava/lang/Exception;
     new-instance v3, Landroid/renderscript/RSRuntimeException;
 
@@ -854,7 +810,7 @@
     .parameter "count"
 
     .prologue
-    .line 1091
+    .line 951
     const/4 v0, 0x1
 
     invoke-static {p0, p1, p2, v0}, Landroid/renderscript/Allocation;->createSized(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;II)Landroid/renderscript/Allocation;
@@ -865,33 +821,33 @@
 .end method
 
 .method public static createSized(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;II)Landroid/renderscript/Allocation;
-    .locals 6
+    .locals 5
     .parameter "rs"
     .parameter "e"
     .parameter "count"
     .parameter "usage"
 
     .prologue
-    .line 1068
+    .line 928
     invoke-virtual {p0}, Landroid/renderscript/RenderScript;->validate()V
 
-    .line 1069
+    .line 929
     new-instance v0, Landroid/renderscript/Type$Builder;
 
     invoke-direct {v0, p0, p1}, Landroid/renderscript/Type$Builder;-><init>(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;)V
 
-    .line 1070
+    .line 930
     .local v0, b:Landroid/renderscript/Type$Builder;
     invoke-virtual {v0, p2}, Landroid/renderscript/Type$Builder;->setX(I)Landroid/renderscript/Type$Builder;
 
-    .line 1071
+    .line 931
     invoke-virtual {v0}, Landroid/renderscript/Type$Builder;->create()Landroid/renderscript/Type;
 
     move-result-object v2
 
-    .line 1073
+    .line 933
     .local v2, t:Landroid/renderscript/Type;
-    invoke-virtual {v2, p0}, Landroid/renderscript/Type;->getID(Landroid/renderscript/RenderScript;)I
+    invoke-virtual {v2}, Landroid/renderscript/Type;->getID()I
 
     move-result v3
 
@@ -899,17 +855,15 @@
 
     iget v4, v4, Landroid/renderscript/Allocation$MipmapControl;->mID:I
 
-    const/4 v5, 0x0
-
-    invoke-virtual {p0, v3, v4, p3, v5}, Landroid/renderscript/RenderScript;->nAllocationCreateTyped(IIII)I
+    invoke-virtual {p0, v3, v4, p3}, Landroid/renderscript/RenderScript;->nAllocationCreateTyped(III)I
 
     move-result v1
 
-    .line 1074
+    .line 934
     .local v1, id:I
     if-nez v1, :cond_0
 
-    .line 1075
+    .line 935
     new-instance v3, Landroid/renderscript/RSRuntimeException;
 
     const-string v4, "Allocation creation failed."
@@ -918,7 +872,7 @@
 
     throw v3
 
-    .line 1077
+    .line 937
     :cond_0
     new-instance v3, Landroid/renderscript/Allocation;
 
@@ -933,7 +887,7 @@
     .parameter "type"
 
     .prologue
-    .line 1051
+    .line 911
     sget-object v0, Landroid/renderscript/Allocation$MipmapControl;->MIPMAP_NONE:Landroid/renderscript/Allocation$MipmapControl;
 
     const/4 v1, 0x1
@@ -952,7 +906,7 @@
     .parameter "usage"
 
     .prologue
-    .line 1037
+    .line 897
     sget-object v0, Landroid/renderscript/Allocation$MipmapControl;->MIPMAP_NONE:Landroid/renderscript/Allocation$MipmapControl;
 
     invoke-static {p0, p1, v0, p2}, Landroid/renderscript/Allocation;->createTyped(Landroid/renderscript/RenderScript;Landroid/renderscript/Type;Landroid/renderscript/Allocation$MipmapControl;I)Landroid/renderscript/Allocation;
@@ -963,24 +917,24 @@
 .end method
 
 .method public static createTyped(Landroid/renderscript/RenderScript;Landroid/renderscript/Type;Landroid/renderscript/Allocation$MipmapControl;I)Landroid/renderscript/Allocation;
-    .locals 4
+    .locals 3
     .parameter "rs"
     .parameter "type"
     .parameter "mips"
     .parameter "usage"
 
     .prologue
-    .line 1014
+    .line 874
     invoke-virtual {p0}, Landroid/renderscript/RenderScript;->validate()V
 
-    .line 1015
-    invoke-virtual {p1, p0}, Landroid/renderscript/Type;->getID(Landroid/renderscript/RenderScript;)I
+    .line 875
+    invoke-virtual {p1}, Landroid/renderscript/Type;->getID()I
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 1016
+    .line 876
     new-instance v1, Landroid/renderscript/RSInvalidStateException;
 
     const-string v2, "Bad Type"
@@ -989,25 +943,23 @@
 
     throw v1
 
-    .line 1018
+    .line 878
     :cond_0
-    invoke-virtual {p1, p0}, Landroid/renderscript/Type;->getID(Landroid/renderscript/RenderScript;)I
+    invoke-virtual {p1}, Landroid/renderscript/Type;->getID()I
 
     move-result v1
 
     iget v2, p2, Landroid/renderscript/Allocation$MipmapControl;->mID:I
 
-    const/4 v3, 0x0
-
-    invoke-virtual {p0, v1, v2, p3, v3}, Landroid/renderscript/RenderScript;->nAllocationCreateTyped(IIII)I
+    invoke-virtual {p0, v1, v2, p3}, Landroid/renderscript/RenderScript;->nAllocationCreateTyped(III)I
 
     move-result v0
 
-    .line 1019
+    .line 879
     .local v0, id:I
     if-nez v0, :cond_1
 
-    .line 1020
+    .line 880
     new-instance v1, Landroid/renderscript/RSRuntimeException;
 
     const-string v2, "Allocation creation failed."
@@ -1016,7 +968,7 @@
 
     throw v1
 
-    .line 1022
+    .line 882
     :cond_1
     new-instance v1, Landroid/renderscript/Allocation;
 
@@ -1033,15 +985,15 @@
     .parameter "dataSize"
 
     .prologue
-    .line 621
+    .line 501
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v0}, Landroid/renderscript/RenderScript;->validate()V
 
-    .line 622
+    .line 502
     if-gez p1, :cond_0
 
-    .line 623
+    .line 503
     new-instance v0, Landroid/renderscript/RSIllegalArgumentException;
 
     const-string v1, "Offset must be >= 0."
@@ -1050,13 +1002,13 @@
 
     throw v0
 
-    .line 625
+    .line 505
     :cond_0
     const/4 v0, 0x1
 
     if-ge p2, v0, :cond_1
 
-    .line 626
+    .line 506
     new-instance v0, Landroid/renderscript/RSIllegalArgumentException;
 
     const-string v1, "Count must be >= 1."
@@ -1065,7 +1017,7 @@
 
     throw v0
 
-    .line 628
+    .line 508
     :cond_1
     add-int v0, p1, p2
 
@@ -1073,7 +1025,7 @@
 
     if-le v0, v1, :cond_2
 
-    .line 629
+    .line 509
     new-instance v0, Landroid/renderscript/RSIllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1126,11 +1078,11 @@
 
     throw v0
 
-    .line 632
+    .line 512
     :cond_2
     if-ge p3, p4, :cond_3
 
-    .line 633
+    .line 513
     new-instance v0, Landroid/renderscript/RSIllegalArgumentException;
 
     const-string v1, "Array too small for allocation type."
@@ -1139,7 +1091,7 @@
 
     throw v0
 
-    .line 635
+    .line 515
     :cond_3
     return-void
 .end method
@@ -1150,66 +1102,66 @@
     .parameter "b"
 
     .prologue
-    .line 1095
+    .line 955
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
 
     move-result-object v0
 
-    .line 1096
+    .line 956
     .local v0, bc:Landroid/graphics/Bitmap$Config;
     sget-object v1, Landroid/graphics/Bitmap$Config;->ALPHA_8:Landroid/graphics/Bitmap$Config;
 
     if-ne v0, v1, :cond_0
 
-    .line 1097
+    .line 957
     invoke-static {p0}, Landroid/renderscript/Element;->A_8(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;
 
     move-result-object v1
 
-    .line 1106
+    .line 966
     :goto_0
     return-object v1
 
-    .line 1099
+    .line 959
     :cond_0
     sget-object v1, Landroid/graphics/Bitmap$Config;->ARGB_4444:Landroid/graphics/Bitmap$Config;
 
     if-ne v0, v1, :cond_1
 
-    .line 1100
+    .line 960
     invoke-static {p0}, Landroid/renderscript/Element;->RGBA_4444(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;
 
     move-result-object v1
 
     goto :goto_0
 
-    .line 1102
+    .line 962
     :cond_1
     sget-object v1, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     if-ne v0, v1, :cond_2
 
-    .line 1103
+    .line 963
     invoke-static {p0}, Landroid/renderscript/Element;->RGBA_8888(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;
 
     move-result-object v1
 
     goto :goto_0
 
-    .line 1105
+    .line 965
     :cond_2
     sget-object v1, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
 
     if-ne v0, v1, :cond_3
 
-    .line 1106
+    .line 966
     invoke-static {p0}, Landroid/renderscript/Element;->RGB_565(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;
 
     move-result-object v1
 
     goto :goto_0
 
-    .line 1108
+    .line 968
     :cond_3
     new-instance v1, Landroid/renderscript/RSInvalidStateException;
 
@@ -1237,31 +1189,27 @@
 .end method
 
 .method private getIDSafe()I
-    .locals 2
+    .locals 1
 
     .prologue
-    .line 184
+    .line 165
     iget-object v0, p0, Landroid/renderscript/Allocation;->mAdaptedAllocation:Landroid/renderscript/Allocation;
 
     if-eqz v0, :cond_0
 
-    .line 185
+    .line 166
     iget-object v0, p0, Landroid/renderscript/Allocation;->mAdaptedAllocation:Landroid/renderscript/Allocation;
 
-    iget-object v1, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    invoke-virtual {v0, v1}, Landroid/renderscript/Allocation;->getID(Landroid/renderscript/RenderScript;)I
+    invoke-virtual {v0}, Landroid/renderscript/Allocation;->getID()I
 
     move-result v0
 
-    .line 187
+    .line 168
     :goto_0
     return v0
 
     :cond_0
-    iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    invoke-virtual {p0, v0}, Landroid/renderscript/Allocation;->getID(Landroid/renderscript/RenderScript;)I
+    invoke-virtual {p0}, Landroid/renderscript/Allocation;->getID()I
 
     move-result v0
 
@@ -1275,18 +1223,18 @@
     .parameter "mip"
 
     .prologue
-    .line 1113
+    .line 973
     invoke-static {p0, p1}, Landroid/renderscript/Allocation;->elementFromBitmap(Landroid/renderscript/RenderScript;Landroid/graphics/Bitmap;)Landroid/renderscript/Element;
 
     move-result-object v0
 
-    .line 1114
+    .line 974
     .local v0, e:Landroid/renderscript/Element;
     new-instance v1, Landroid/renderscript/Type$Builder;
 
     invoke-direct {v1, p0, v0}, Landroid/renderscript/Type$Builder;-><init>(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;)V
 
-    .line 1115
+    .line 975
     .local v1, tb:Landroid/renderscript/Type$Builder;
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -1294,14 +1242,14 @@
 
     invoke-virtual {v1, v2}, Landroid/renderscript/Type$Builder;->setX(I)Landroid/renderscript/Type$Builder;
 
-    .line 1116
+    .line 976
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v2
 
     invoke-virtual {v1, v2}, Landroid/renderscript/Type$Builder;->setY(I)Landroid/renderscript/Type$Builder;
 
-    .line 1117
+    .line 977
     sget-object v2, Landroid/renderscript/Allocation$MipmapControl;->MIPMAP_FULL:Landroid/renderscript/Allocation$MipmapControl;
 
     if-ne p2, v2, :cond_0
@@ -1311,14 +1259,14 @@
     :goto_0
     invoke-virtual {v1, v2}, Landroid/renderscript/Type$Builder;->setMipmaps(Z)Landroid/renderscript/Type$Builder;
 
-    .line 1118
+    .line 978
     invoke-virtual {v1}, Landroid/renderscript/Type$Builder;->create()Landroid/renderscript/Type;
 
     move-result-object v2
 
     return-object v2
 
-    .line 1117
+    .line 977
     :cond_0
     const/4 v2, 0x0
 
@@ -1332,38 +1280,38 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 224
+    .line 172
     invoke-virtual {p1}, Landroid/renderscript/Type;->getX()I
 
     move-result v0
 
     iput v0, p0, Landroid/renderscript/Allocation;->mCurrentDimX:I
 
-    .line 225
+    .line 173
     invoke-virtual {p1}, Landroid/renderscript/Type;->getY()I
 
     move-result v0
 
     iput v0, p0, Landroid/renderscript/Allocation;->mCurrentDimY:I
 
-    .line 226
+    .line 174
     invoke-virtual {p1}, Landroid/renderscript/Type;->getZ()I
 
     move-result v0
 
     iput v0, p0, Landroid/renderscript/Allocation;->mCurrentDimZ:I
 
-    .line 227
+    .line 175
     iget v0, p0, Landroid/renderscript/Allocation;->mCurrentDimX:I
 
     iput v0, p0, Landroid/renderscript/Allocation;->mCurrentCount:I
 
-    .line 228
+    .line 176
     iget v0, p0, Landroid/renderscript/Allocation;->mCurrentDimY:I
 
     if-le v0, v2, :cond_0
 
-    .line 229
+    .line 177
     iget v0, p0, Landroid/renderscript/Allocation;->mCurrentCount:I
 
     iget v1, p0, Landroid/renderscript/Allocation;->mCurrentDimY:I
@@ -1372,13 +1320,13 @@
 
     iput v0, p0, Landroid/renderscript/Allocation;->mCurrentCount:I
 
-    .line 231
+    .line 179
     :cond_0
     iget v0, p0, Landroid/renderscript/Allocation;->mCurrentDimZ:I
 
     if-le v0, v2, :cond_1
 
-    .line 232
+    .line 180
     iget v0, p0, Landroid/renderscript/Allocation;->mCurrentCount:I
 
     iget v1, p0, Landroid/renderscript/Allocation;->mCurrentDimZ:I
@@ -1387,7 +1335,7 @@
 
     iput v0, p0, Landroid/renderscript/Allocation;->mCurrentCount:I
 
-    .line 234
+    .line 182
     :cond_1
     return-void
 .end method
@@ -1400,22 +1348,22 @@
     .parameter "h"
 
     .prologue
-    .line 781
+    .line 661
     iget-object v0, p0, Landroid/renderscript/Allocation;->mAdaptedAllocation:Landroid/renderscript/Allocation;
 
     if-eqz v0, :cond_1
 
-    .line 795
+    .line 675
     :cond_0
     return-void
 
-    .line 785
+    .line 665
     :cond_1
     if-ltz p1, :cond_2
 
     if-gez p2, :cond_3
 
-    .line 786
+    .line 666
     :cond_2
     new-instance v0, Landroid/renderscript/RSIllegalArgumentException;
 
@@ -1425,13 +1373,13 @@
 
     throw v0
 
-    .line 788
+    .line 668
     :cond_3
     if-ltz p4, :cond_4
 
     if-gez p3, :cond_5
 
-    .line 789
+    .line 669
     :cond_4
     new-instance v0, Landroid/renderscript/RSIllegalArgumentException;
 
@@ -1441,7 +1389,7 @@
 
     throw v0
 
-    .line 791
+    .line 671
     :cond_5
     add-int v0, p1, p3
 
@@ -1455,7 +1403,7 @@
 
     if-le v0, v1, :cond_0
 
-    .line 792
+    .line 672
     :cond_6
     new-instance v0, Landroid/renderscript/RSIllegalArgumentException;
 
@@ -1473,12 +1421,12 @@
     .prologue
     const/4 v3, 0x2
 
-    .line 413
+    .line 296
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
 
     move-result-object v0
 
-    .line 414
+    .line 297
     .local v0, bc:Landroid/graphics/Bitmap$Config;
     sget-object v1, Landroid/renderscript/Allocation$1;->$SwitchMap$android$graphics$Bitmap$Config:[I
 
@@ -1490,11 +1438,11 @@
 
     packed-switch v1, :pswitch_data_0
 
-    .line 456
+    .line 339
     :cond_0
     return-void
 
-    .line 416
+    .line 299
     :pswitch_0
     iget-object v1, p0, Landroid/renderscript/Allocation;->mType:Landroid/renderscript/Type;
 
@@ -1508,7 +1456,7 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 417
+    .line 300
     new-instance v1, Landroid/renderscript/RSIllegalArgumentException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1563,7 +1511,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v3}, Landroid/renderscript/Element;->getBytesSize()I
+    invoke-virtual {v3}, Landroid/renderscript/Element;->getSizeBytes()I
 
     move-result v3
 
@@ -1589,7 +1537,7 @@
 
     throw v1
 
-    .line 425
+    .line 308
     :pswitch_1
     iget-object v1, p0, Landroid/renderscript/Allocation;->mType:Landroid/renderscript/Type;
 
@@ -1609,7 +1557,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/renderscript/Element;->getBytesSize()I
+    invoke-virtual {v1}, Landroid/renderscript/Element;->getSizeBytes()I
 
     move-result v1
 
@@ -1617,7 +1565,7 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 427
+    .line 310
     :cond_1
     new-instance v1, Landroid/renderscript/RSIllegalArgumentException;
 
@@ -1673,7 +1621,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v3}, Landroid/renderscript/Element;->getBytesSize()I
+    invoke-virtual {v3}, Landroid/renderscript/Element;->getSizeBytes()I
 
     move-result v3
 
@@ -1699,7 +1647,7 @@
 
     throw v1
 
-    .line 435
+    .line 318
     :pswitch_2
     iget-object v1, p0, Landroid/renderscript/Allocation;->mType:Landroid/renderscript/Type;
 
@@ -1719,13 +1667,13 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/renderscript/Element;->getBytesSize()I
+    invoke-virtual {v1}, Landroid/renderscript/Element;->getSizeBytes()I
 
     move-result v1
 
     if-eq v1, v3, :cond_0
 
-    .line 437
+    .line 320
     :cond_2
     new-instance v1, Landroid/renderscript/RSIllegalArgumentException;
 
@@ -1781,7 +1729,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v3}, Landroid/renderscript/Element;->getBytesSize()I
+    invoke-virtual {v3}, Landroid/renderscript/Element;->getSizeBytes()I
 
     move-result v3
 
@@ -1807,7 +1755,7 @@
 
     throw v1
 
-    .line 445
+    .line 328
     :pswitch_3
     iget-object v1, p0, Landroid/renderscript/Allocation;->mType:Landroid/renderscript/Type;
 
@@ -1827,13 +1775,13 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/renderscript/Element;->getBytesSize()I
+    invoke-virtual {v1}, Landroid/renderscript/Element;->getSizeBytes()I
 
     move-result v1
 
     if-eq v1, v3, :cond_0
 
-    .line 447
+    .line 330
     :cond_3
     new-instance v1, Landroid/renderscript/RSIllegalArgumentException;
 
@@ -1889,7 +1837,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v3}, Landroid/renderscript/Element;->getBytesSize()I
+    invoke-virtual {v3}, Landroid/renderscript/Element;->getSizeBytes()I
 
     move-result v3
 
@@ -1915,7 +1863,7 @@
 
     throw v1
 
-    .line 414
+    .line 297
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -1930,7 +1878,7 @@
     .parameter "b"
 
     .prologue
-    .line 459
+    .line 342
     iget v0, p0, Landroid/renderscript/Allocation;->mCurrentDimX:I
 
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
@@ -1947,7 +1895,7 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 460
+    .line 343
     :cond_0
     new-instance v0, Landroid/renderscript/RSIllegalArgumentException;
 
@@ -1957,7 +1905,7 @@
 
     throw v0
 
-    .line 462
+    .line 345
     :cond_1
     return-void
 .end method
@@ -1966,7 +1914,7 @@
     .locals 3
 
     .prologue
-    .line 294
+    .line 228
     iget-object v0, p0, Landroid/renderscript/Allocation;->mType:Landroid/renderscript/Type;
 
     iget-object v0, v0, Landroid/renderscript/Type;->mElement:Landroid/renderscript/Element;
@@ -1977,10 +1925,10 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 295
+    .line 229
     return-void
 
-    .line 297
+    .line 231
     :cond_0
     new-instance v0, Landroid/renderscript/RSIllegalArgumentException;
 
@@ -2017,7 +1965,7 @@
     .locals 3
 
     .prologue
-    .line 276
+    .line 210
     iget-object v0, p0, Landroid/renderscript/Allocation;->mType:Landroid/renderscript/Type;
 
     iget-object v0, v0, Landroid/renderscript/Type;->mElement:Landroid/renderscript/Element;
@@ -2038,11 +1986,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 278
+    .line 212
     :cond_0
     return-void
 
-    .line 280
+    .line 214
     :cond_1
     new-instance v0, Landroid/renderscript/RSIllegalArgumentException;
 
@@ -2079,7 +2027,7 @@
     .locals 3
 
     .prologue
-    .line 267
+    .line 201
     iget-object v0, p0, Landroid/renderscript/Allocation;->mType:Landroid/renderscript/Type;
 
     iget-object v0, v0, Landroid/renderscript/Type;->mElement:Landroid/renderscript/Element;
@@ -2100,11 +2048,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 269
+    .line 203
     :cond_0
     return-void
 
-    .line 271
+    .line 205
     :cond_1
     new-instance v0, Landroid/renderscript/RSIllegalArgumentException;
 
@@ -2141,7 +2089,7 @@
     .locals 3
 
     .prologue
-    .line 285
+    .line 219
     iget-object v0, p0, Landroid/renderscript/Allocation;->mType:Landroid/renderscript/Type;
 
     iget-object v0, v0, Landroid/renderscript/Type;->mElement:Landroid/renderscript/Element;
@@ -2162,11 +2110,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 287
+    .line 221
     :cond_0
     return-void
 
-    .line 289
+    .line 223
     :cond_1
     new-instance v0, Landroid/renderscript/RSIllegalArgumentException;
 
@@ -2203,7 +2151,7 @@
     .locals 3
 
     .prologue
-    .line 302
+    .line 236
     iget-object v0, p0, Landroid/renderscript/Allocation;->mType:Landroid/renderscript/Type;
 
     iget-object v0, v0, Landroid/renderscript/Type;->mElement:Landroid/renderscript/Element;
@@ -2304,11 +2252,11 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 312
+    .line 246
     :cond_0
     return-void
 
-    .line 314
+    .line 248
     :cond_1
     new-instance v0, Landroid/renderscript/RSIllegalArgumentException;
 
@@ -2351,7 +2299,7 @@
     .parameter "dataOff"
 
     .prologue
-    .line 774
+    .line 654
     iget-object v1, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-direct {p0}, Landroid/renderscript/Allocation;->getIDSafe()I
@@ -2368,11 +2316,7 @@
 
     const/4 v8, 0x1
 
-    iget-object v3, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    move-object/from16 v0, p3
-
-    invoke-virtual {v0, v3}, Landroid/renderscript/Allocation;->getID(Landroid/renderscript/RenderScript;)I
+    invoke-virtual/range {p3 .. p3}, Landroid/renderscript/Allocation;->getID()I
 
     move-result v9
 
@@ -2396,7 +2340,7 @@
 
     invoke-virtual/range {v1 .. v13}, Landroid/renderscript/RenderScript;->nAllocationData2D(IIIIIIIIIIII)V
 
-    .line 778
+    .line 658
     return-void
 .end method
 
@@ -2407,13 +2351,13 @@
     .parameter "d"
 
     .prologue
-    .line 746
+    .line 626
     invoke-direct {p0}, Landroid/renderscript/Allocation;->validateIsInt8()V
 
-    .line 747
+    .line 627
     invoke-virtual {p0, p1, p2, p3}, Landroid/renderscript/Allocation;->copy1DRangeFromUnchecked(II[B)V
 
-    .line 748
+    .line 628
     return-void
 .end method
 
@@ -2424,13 +2368,13 @@
     .parameter "d"
 
     .prologue
-    .line 760
+    .line 640
     invoke-direct {p0}, Landroid/renderscript/Allocation;->validateIsFloat32()V
 
-    .line 761
+    .line 641
     invoke-virtual {p0, p1, p2, p3}, Landroid/renderscript/Allocation;->copy1DRangeFromUnchecked(II[F)V
 
-    .line 762
+    .line 642
     return-void
 .end method
 
@@ -2441,13 +2385,13 @@
     .parameter "d"
 
     .prologue
-    .line 718
+    .line 598
     invoke-direct {p0}, Landroid/renderscript/Allocation;->validateIsInt32()V
 
-    .line 719
+    .line 599
     invoke-virtual {p0, p1, p2, p3}, Landroid/renderscript/Allocation;->copy1DRangeFromUnchecked(II[I)V
 
-    .line 720
+    .line 600
     return-void
 .end method
 
@@ -2458,13 +2402,13 @@
     .parameter "d"
 
     .prologue
-    .line 732
+    .line 612
     invoke-direct {p0}, Landroid/renderscript/Allocation;->validateIsInt16()V
 
-    .line 733
+    .line 613
     invoke-virtual {p0, p1, p2, p3}, Landroid/renderscript/Allocation;->copy1DRangeFromUnchecked(II[S)V
 
-    .line 734
+    .line 614
     return-void
 .end method
 
@@ -2475,24 +2419,24 @@
     .parameter "d"
 
     .prologue
-    .line 689
+    .line 569
     iget-object v0, p0, Landroid/renderscript/Allocation;->mType:Landroid/renderscript/Type;
 
     iget-object v0, v0, Landroid/renderscript/Type;->mElement:Landroid/renderscript/Element;
 
-    invoke-virtual {v0}, Landroid/renderscript/Element;->getBytesSize()I
+    invoke-virtual {v0}, Landroid/renderscript/Element;->getSizeBytes()I
 
     move-result v0
 
     mul-int v6, v0, p2
 
-    .line 690
+    .line 570
     .local v6, dataSize:I
     array-length v0, p3
 
     invoke-direct {p0, p1, p2, v0, v6}, Landroid/renderscript/Allocation;->data1DChecks(IIII)V
 
-    .line 691
+    .line 571
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-direct {p0}, Landroid/renderscript/Allocation;->getIDSafe()I
@@ -2509,7 +2453,7 @@
 
     invoke-virtual/range {v0 .. v6}, Landroid/renderscript/RenderScript;->nAllocationData1D(IIII[BI)V
 
-    .line 692
+    .line 572
     return-void
 .end method
 
@@ -2520,18 +2464,18 @@
     .parameter "d"
 
     .prologue
-    .line 703
+    .line 583
     iget-object v0, p0, Landroid/renderscript/Allocation;->mType:Landroid/renderscript/Type;
 
     iget-object v0, v0, Landroid/renderscript/Type;->mElement:Landroid/renderscript/Element;
 
-    invoke-virtual {v0}, Landroid/renderscript/Element;->getBytesSize()I
+    invoke-virtual {v0}, Landroid/renderscript/Element;->getSizeBytes()I
 
     move-result v0
 
     mul-int v6, v0, p2
 
-    .line 704
+    .line 584
     .local v6, dataSize:I
     array-length v0, p3
 
@@ -2539,7 +2483,7 @@
 
     invoke-direct {p0, p1, p2, v0, v6}, Landroid/renderscript/Allocation;->data1DChecks(IIII)V
 
-    .line 705
+    .line 585
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-direct {p0}, Landroid/renderscript/Allocation;->getIDSafe()I
@@ -2556,7 +2500,7 @@
 
     invoke-virtual/range {v0 .. v6}, Landroid/renderscript/RenderScript;->nAllocationData1D(IIII[FI)V
 
-    .line 706
+    .line 586
     return-void
 .end method
 
@@ -2567,18 +2511,18 @@
     .parameter "d"
 
     .prologue
-    .line 661
+    .line 541
     iget-object v0, p0, Landroid/renderscript/Allocation;->mType:Landroid/renderscript/Type;
 
     iget-object v0, v0, Landroid/renderscript/Type;->mElement:Landroid/renderscript/Element;
 
-    invoke-virtual {v0}, Landroid/renderscript/Element;->getBytesSize()I
+    invoke-virtual {v0}, Landroid/renderscript/Element;->getSizeBytes()I
 
     move-result v0
 
     mul-int v6, v0, p2
 
-    .line 662
+    .line 542
     .local v6, dataSize:I
     array-length v0, p3
 
@@ -2586,7 +2530,7 @@
 
     invoke-direct {p0, p1, p2, v0, v6}, Landroid/renderscript/Allocation;->data1DChecks(IIII)V
 
-    .line 663
+    .line 543
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-direct {p0}, Landroid/renderscript/Allocation;->getIDSafe()I
@@ -2603,7 +2547,7 @@
 
     invoke-virtual/range {v0 .. v6}, Landroid/renderscript/RenderScript;->nAllocationData1D(IIII[II)V
 
-    .line 664
+    .line 544
     return-void
 .end method
 
@@ -2614,18 +2558,18 @@
     .parameter "d"
 
     .prologue
-    .line 675
+    .line 555
     iget-object v0, p0, Landroid/renderscript/Allocation;->mType:Landroid/renderscript/Type;
 
     iget-object v0, v0, Landroid/renderscript/Type;->mElement:Landroid/renderscript/Element;
 
-    invoke-virtual {v0}, Landroid/renderscript/Element;->getBytesSize()I
+    invoke-virtual {v0}, Landroid/renderscript/Element;->getSizeBytes()I
 
     move-result v0
 
     mul-int v6, v0, p2
 
-    .line 676
+    .line 556
     .local v6, dataSize:I
     array-length v0, p3
 
@@ -2633,7 +2577,7 @@
 
     invoke-direct {p0, p1, p2, v0, v6}, Landroid/renderscript/Allocation;->data1DChecks(IIII)V
 
-    .line 677
+    .line 557
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-direct {p0}, Landroid/renderscript/Allocation;->getIDSafe()I
@@ -2650,7 +2594,7 @@
 
     invoke-virtual/range {v0 .. v6}, Landroid/renderscript/RenderScript;->nAllocationData1D(IIII[SI)V
 
-    .line 678
+    .line 558
     return-void
 .end method
 
@@ -2665,15 +2609,15 @@
     .parameter "dataYoff"
 
     .prologue
-    .line 849
+    .line 729
     iget-object v1, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v1}, Landroid/renderscript/RenderScript;->validate()V
 
-    .line 850
+    .line 730
     invoke-direct/range {p0 .. p4}, Landroid/renderscript/Allocation;->validate2DRange(IIII)V
 
-    .line 851
+    .line 731
     iget-object v1, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-direct {p0}, Landroid/renderscript/Allocation;->getIDSafe()I
@@ -2686,11 +2630,7 @@
 
     iget v6, v3, Landroid/renderscript/Type$CubemapFace;->mID:I
 
-    iget-object v3, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    move-object/from16 v0, p5
-
-    invoke-virtual {v0, v3}, Landroid/renderscript/Allocation;->getID(Landroid/renderscript/RenderScript;)I
+    invoke-virtual/range {p5 .. p5}, Landroid/renderscript/Allocation;->getID()I
 
     move-result v9
 
@@ -2718,7 +2658,7 @@
 
     invoke-virtual/range {v1 .. v13}, Landroid/renderscript/RenderScript;->nAllocationData2D(IIIIIIIIIIII)V
 
-    .line 855
+    .line 735
     return-void
 .end method
 
@@ -2731,15 +2671,15 @@
     .parameter "data"
 
     .prologue
-    .line 808
+    .line 688
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v0}, Landroid/renderscript/RenderScript;->validate()V
 
-    .line 809
+    .line 689
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/renderscript/Allocation;->validate2DRange(IIII)V
 
-    .line 810
+    .line 690
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-direct {p0}, Landroid/renderscript/Allocation;->getIDSafe()I
@@ -2766,7 +2706,7 @@
 
     invoke-virtual/range {v0 .. v9}, Landroid/renderscript/RenderScript;->nAllocationData2D(IIIIIII[BI)V
 
-    .line 812
+    .line 692
     return-void
 .end method
 
@@ -2779,15 +2719,15 @@
     .parameter "data"
 
     .prologue
-    .line 829
+    .line 709
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v0}, Landroid/renderscript/RenderScript;->validate()V
 
-    .line 830
+    .line 710
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/renderscript/Allocation;->validate2DRange(IIII)V
 
-    .line 831
+    .line 711
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-direct {p0}, Landroid/renderscript/Allocation;->getIDSafe()I
@@ -2816,7 +2756,7 @@
 
     invoke-virtual/range {v0 .. v9}, Landroid/renderscript/RenderScript;->nAllocationData2D(IIIIIII[FI)V
 
-    .line 833
+    .line 713
     return-void
 .end method
 
@@ -2829,15 +2769,15 @@
     .parameter "data"
 
     .prologue
-    .line 822
+    .line 702
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v0}, Landroid/renderscript/RenderScript;->validate()V
 
-    .line 823
+    .line 703
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/renderscript/Allocation;->validate2DRange(IIII)V
 
-    .line 824
+    .line 704
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-direct {p0}, Landroid/renderscript/Allocation;->getIDSafe()I
@@ -2866,7 +2806,7 @@
 
     invoke-virtual/range {v0 .. v9}, Landroid/renderscript/RenderScript;->nAllocationData2D(IIIIIII[II)V
 
-    .line 826
+    .line 706
     return-void
 .end method
 
@@ -2879,15 +2819,15 @@
     .parameter "data"
 
     .prologue
-    .line 815
+    .line 695
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v0}, Landroid/renderscript/RenderScript;->validate()V
 
-    .line 816
+    .line 696
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/renderscript/Allocation;->validate2DRange(IIII)V
 
-    .line 817
+    .line 697
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-direct {p0}, Landroid/renderscript/Allocation;->getIDSafe()I
@@ -2916,7 +2856,7 @@
 
     invoke-virtual/range {v0 .. v9}, Landroid/renderscript/RenderScript;->nAllocationData2D(IIIIIII[SI)V
 
-    .line 819
+    .line 699
     return-void
 .end method
 
@@ -2927,15 +2867,15 @@
     .parameter "data"
 
     .prologue
-    .line 867
+    .line 747
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v0}, Landroid/renderscript/RenderScript;->validate()V
 
-    .line 868
+    .line 748
     invoke-direct {p0, p3}, Landroid/renderscript/Allocation;->validateBitmapFormat(Landroid/graphics/Bitmap;)V
 
-    .line 869
+    .line 749
     invoke-virtual {p3}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v0
@@ -2946,7 +2886,7 @@
 
     invoke-direct {p0, p1, p2, v0, v1}, Landroid/renderscript/Allocation;->validate2DRange(IIII)V
 
-    .line 870
+    .line 750
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-direct {p0}, Landroid/renderscript/Allocation;->getIDSafe()I
@@ -2967,7 +2907,7 @@
 
     invoke-virtual/range {v0 .. v6}, Landroid/renderscript/RenderScript;->nAllocationData2D(IIIIILandroid/graphics/Bitmap;)V
 
-    .line 871
+    .line 751
     return-void
 .end method
 
@@ -2976,29 +2916,27 @@
     .parameter "b"
 
     .prologue
-    .line 564
+    .line 447
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v0}, Landroid/renderscript/RenderScript;->validate()V
 
-    .line 565
+    .line 448
     invoke-direct {p0, p1}, Landroid/renderscript/Allocation;->validateBitmapSize(Landroid/graphics/Bitmap;)V
 
-    .line 566
+    .line 449
     invoke-direct {p0, p1}, Landroid/renderscript/Allocation;->validateBitmapFormat(Landroid/graphics/Bitmap;)V
 
-    .line 567
+    .line 450
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
-    iget-object v1, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    invoke-virtual {p0, v1}, Landroid/renderscript/Allocation;->getID(Landroid/renderscript/RenderScript;)I
+    invoke-virtual {p0}, Landroid/renderscript/Allocation;->getID()I
 
     move-result v1
 
     invoke-virtual {v0, v1, p1}, Landroid/renderscript/RenderScript;->nAllocationCopyFromBitmap(ILandroid/graphics/Bitmap;)V
 
-    .line 568
+    .line 451
     return-void
 .end method
 
@@ -3007,19 +2945,19 @@
     .parameter "d"
 
     .prologue
-    .line 541
+    .line 424
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v0}, Landroid/renderscript/RenderScript;->validate()V
 
-    .line 542
+    .line 425
     const/4 v0, 0x0
 
     iget v1, p0, Landroid/renderscript/Allocation;->mCurrentCount:I
 
     invoke-virtual {p0, v0, v1, p1}, Landroid/renderscript/Allocation;->copy1DRangeFrom(II[B)V
 
-    .line 543
+    .line 426
     return-void
 .end method
 
@@ -3028,19 +2966,19 @@
     .parameter "d"
 
     .prologue
-    .line 553
+    .line 436
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v0}, Landroid/renderscript/RenderScript;->validate()V
 
-    .line 554
+    .line 437
     const/4 v0, 0x0
 
     iget v1, p0, Landroid/renderscript/Allocation;->mCurrentCount:I
 
     invoke-virtual {p0, v0, v1, p1}, Landroid/renderscript/Allocation;->copy1DRangeFrom(II[F)V
 
-    .line 555
+    .line 438
     return-void
 .end method
 
@@ -3049,19 +2987,19 @@
     .parameter "d"
 
     .prologue
-    .line 517
+    .line 400
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v0}, Landroid/renderscript/RenderScript;->validate()V
 
-    .line 518
+    .line 401
     const/4 v0, 0x0
 
     iget v1, p0, Landroid/renderscript/Allocation;->mCurrentCount:I
 
     invoke-virtual {p0, v0, v1, p1}, Landroid/renderscript/Allocation;->copy1DRangeFrom(II[I)V
 
-    .line 519
+    .line 402
     return-void
 .end method
 
@@ -3070,22 +3008,22 @@
     .parameter "d"
 
     .prologue
-    .line 399
+    .line 282
     iget-object v2, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v2}, Landroid/renderscript/RenderScript;->validate()V
 
-    .line 400
+    .line 283
     invoke-direct {p0}, Landroid/renderscript/Allocation;->validateIsObject()V
 
-    .line 401
+    .line 284
     array-length v2, p1
 
     iget v3, p0, Landroid/renderscript/Allocation;->mCurrentCount:I
 
     if-eq v2, v3, :cond_0
 
-    .line 402
+    .line 285
     new-instance v2, Landroid/renderscript/RSIllegalArgumentException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -3124,13 +3062,13 @@
 
     throw v2
 
-    .line 405
+    .line 288
     :cond_0
     array-length v2, p1
 
     new-array v1, v2, [I
 
-    .line 406
+    .line 289
     .local v1, i:[I
     const/4 v0, 0x0
 
@@ -3140,23 +3078,21 @@
 
     if-ge v0, v2, :cond_1
 
-    .line 407
+    .line 290
     aget-object v2, p1, v0
 
-    iget-object v3, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    invoke-virtual {v2, v3}, Landroid/renderscript/BaseObj;->getID(Landroid/renderscript/RenderScript;)I
+    invoke-virtual {v2}, Landroid/renderscript/BaseObj;->getID()I
 
     move-result v2
 
     aput v2, v1, v0
 
-    .line 406
+    .line 289
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 409
+    .line 292
     :cond_1
     const/4 v2, 0x0
 
@@ -3164,7 +3100,7 @@
 
     invoke-virtual {p0, v2, v3, v1}, Landroid/renderscript/Allocation;->copy1DRangeFromUnchecked(II[I)V
 
-    .line 410
+    .line 293
     return-void
 .end method
 
@@ -3173,19 +3109,19 @@
     .parameter "d"
 
     .prologue
-    .line 529
+    .line 412
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v0}, Landroid/renderscript/RenderScript;->validate()V
 
-    .line 530
+    .line 413
     const/4 v0, 0x0
 
     iget v1, p0, Landroid/renderscript/Allocation;->mCurrentCount:I
 
     invoke-virtual {p0, v0, v1, p1}, Landroid/renderscript/Allocation;->copy1DRangeFrom(II[S)V
 
-    .line 531
+    .line 414
     return-void
 .end method
 
@@ -3194,19 +3130,19 @@
     .parameter "d"
 
     .prologue
-    .line 494
+    .line 377
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v0}, Landroid/renderscript/RenderScript;->validate()V
 
-    .line 495
+    .line 378
     const/4 v0, 0x0
 
     iget v1, p0, Landroid/renderscript/Allocation;->mCurrentCount:I
 
     invoke-virtual {p0, v0, v1, p1}, Landroid/renderscript/Allocation;->copy1DRangeFromUnchecked(II[B)V
 
-    .line 496
+    .line 379
     return-void
 .end method
 
@@ -3215,19 +3151,19 @@
     .parameter "d"
 
     .prologue
-    .line 505
+    .line 388
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v0}, Landroid/renderscript/RenderScript;->validate()V
 
-    .line 506
+    .line 389
     const/4 v0, 0x0
 
     iget v1, p0, Landroid/renderscript/Allocation;->mCurrentCount:I
 
     invoke-virtual {p0, v0, v1, p1}, Landroid/renderscript/Allocation;->copy1DRangeFromUnchecked(II[F)V
 
-    .line 507
+    .line 390
     return-void
 .end method
 
@@ -3236,19 +3172,19 @@
     .parameter "d"
 
     .prologue
-    .line 472
+    .line 355
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v0}, Landroid/renderscript/RenderScript;->validate()V
 
-    .line 473
+    .line 356
     const/4 v0, 0x0
 
     iget v1, p0, Landroid/renderscript/Allocation;->mCurrentCount:I
 
     invoke-virtual {p0, v0, v1, p1}, Landroid/renderscript/Allocation;->copy1DRangeFromUnchecked(II[I)V
 
-    .line 474
+    .line 357
     return-void
 .end method
 
@@ -3257,19 +3193,19 @@
     .parameter "d"
 
     .prologue
-    .line 483
+    .line 366
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v0}, Landroid/renderscript/RenderScript;->validate()V
 
-    .line 484
+    .line 367
     const/4 v0, 0x0
 
     iget v1, p0, Landroid/renderscript/Allocation;->mCurrentCount:I
 
     invoke-virtual {p0, v0, v1, p1}, Landroid/renderscript/Allocation;->copy1DRangeFromUnchecked(II[S)V
 
-    .line 485
+    .line 368
     return-void
 .end method
 
@@ -3278,29 +3214,27 @@
     .parameter "b"
 
     .prologue
-    .line 881
+    .line 761
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v0}, Landroid/renderscript/RenderScript;->validate()V
 
-    .line 882
+    .line 762
     invoke-direct {p0, p1}, Landroid/renderscript/Allocation;->validateBitmapFormat(Landroid/graphics/Bitmap;)V
 
-    .line 883
+    .line 763
     invoke-direct {p0, p1}, Landroid/renderscript/Allocation;->validateBitmapSize(Landroid/graphics/Bitmap;)V
 
-    .line 884
+    .line 764
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
-    iget-object v1, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    invoke-virtual {p0, v1}, Landroid/renderscript/Allocation;->getID(Landroid/renderscript/RenderScript;)I
+    invoke-virtual {p0}, Landroid/renderscript/Allocation;->getID()I
 
     move-result v1
 
     invoke-virtual {v0, v1, p1}, Landroid/renderscript/RenderScript;->nAllocationCopyToBitmap(ILandroid/graphics/Bitmap;)V
 
-    .line 885
+    .line 765
     return-void
 .end method
 
@@ -3309,26 +3243,24 @@
     .parameter "d"
 
     .prologue
-    .line 895
+    .line 775
     invoke-direct {p0}, Landroid/renderscript/Allocation;->validateIsInt8()V
 
-    .line 896
+    .line 776
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v0}, Landroid/renderscript/RenderScript;->validate()V
 
-    .line 897
+    .line 777
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
-    iget-object v1, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    invoke-virtual {p0, v1}, Landroid/renderscript/Allocation;->getID(Landroid/renderscript/RenderScript;)I
+    invoke-virtual {p0}, Landroid/renderscript/Allocation;->getID()I
 
     move-result v1
 
     invoke-virtual {v0, v1, p1}, Landroid/renderscript/RenderScript;->nAllocationRead(I[B)V
 
-    .line 898
+    .line 778
     return-void
 .end method
 
@@ -3337,26 +3269,24 @@
     .parameter "d"
 
     .prologue
-    .line 934
+    .line 814
     invoke-direct {p0}, Landroid/renderscript/Allocation;->validateIsFloat32()V
 
-    .line 935
+    .line 815
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v0}, Landroid/renderscript/RenderScript;->validate()V
 
-    .line 936
+    .line 816
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
-    iget-object v1, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    invoke-virtual {p0, v1}, Landroid/renderscript/Allocation;->getID(Landroid/renderscript/RenderScript;)I
+    invoke-virtual {p0}, Landroid/renderscript/Allocation;->getID()I
 
     move-result v1
 
     invoke-virtual {v0, v1, p1}, Landroid/renderscript/RenderScript;->nAllocationRead(I[F)V
 
-    .line 937
+    .line 817
     return-void
 .end method
 
@@ -3365,26 +3295,24 @@
     .parameter "d"
 
     .prologue
-    .line 921
+    .line 801
     invoke-direct {p0}, Landroid/renderscript/Allocation;->validateIsInt32()V
 
-    .line 922
+    .line 802
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v0}, Landroid/renderscript/RenderScript;->validate()V
 
-    .line 923
+    .line 803
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
-    iget-object v1, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    invoke-virtual {p0, v1}, Landroid/renderscript/Allocation;->getID(Landroid/renderscript/RenderScript;)I
+    invoke-virtual {p0}, Landroid/renderscript/Allocation;->getID()I
 
     move-result v1
 
     invoke-virtual {v0, v1, p1}, Landroid/renderscript/RenderScript;->nAllocationRead(I[I)V
 
-    .line 924
+    .line 804
     return-void
 .end method
 
@@ -3393,26 +3321,24 @@
     .parameter "d"
 
     .prologue
-    .line 908
+    .line 788
     invoke-direct {p0}, Landroid/renderscript/Allocation;->validateIsInt16()V
 
-    .line 909
+    .line 789
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v0}, Landroid/renderscript/RenderScript;->validate()V
 
-    .line 910
+    .line 790
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
-    iget-object v1, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    invoke-virtual {p0, v1}, Landroid/renderscript/Allocation;->getID(Landroid/renderscript/RenderScript;)I
+    invoke-virtual {p0}, Landroid/renderscript/Allocation;->getID()I
 
     move-result v1
 
     invoke-virtual {v0, v1, p1}, Landroid/renderscript/RenderScript;->nAllocationRead(I[S)V
 
-    .line 911
+    .line 791
     return-void
 .end method
 
@@ -3420,244 +3346,27 @@
     .locals 2
 
     .prologue
-    .line 648
+    .line 528
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
-    iget-object v1, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    invoke-virtual {p0, v1}, Landroid/renderscript/Allocation;->getID(Landroid/renderscript/RenderScript;)I
+    invoke-virtual {p0}, Landroid/renderscript/Allocation;->getID()I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/renderscript/RenderScript;->nAllocationGenerateMipmaps(I)V
 
-    .line 649
+    .line 529
     return-void
-.end method
-
-.method public getBytesSize()I
-    .locals 2
-
-    .prologue
-    .line 220
-    iget-object v0, p0, Landroid/renderscript/Allocation;->mType:Landroid/renderscript/Type;
-
-    invoke-virtual {v0}, Landroid/renderscript/Type;->getCount()I
-
-    move-result v0
-
-    iget-object v1, p0, Landroid/renderscript/Allocation;->mType:Landroid/renderscript/Type;
-
-    invoke-virtual {v1}, Landroid/renderscript/Type;->getElement()Landroid/renderscript/Element;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/renderscript/Element;->getBytesSize()I
-
-    move-result v1
-
-    mul-int/2addr v0, v1
-
-    return v0
-.end method
-
-.method public getElement()Landroid/renderscript/Element;
-    .locals 1
-
-    .prologue
-    .line 199
-    iget-object v0, p0, Landroid/renderscript/Allocation;->mType:Landroid/renderscript/Type;
-
-    invoke-virtual {v0}, Landroid/renderscript/Type;->getElement()Landroid/renderscript/Element;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getSurface()Landroid/view/Surface;
-    .locals 2
-
-    .prologue
-    .line 1174
-    new-instance v0, Landroid/view/Surface;
-
-    invoke-virtual {p0}, Landroid/renderscript/Allocation;->getSurfaceTexture()Landroid/graphics/SurfaceTexture;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Landroid/view/Surface;-><init>(Landroid/graphics/SurfaceTexture;)V
-
-    return-object v0
-.end method
-
-.method public getSurfaceTexture()Landroid/graphics/SurfaceTexture;
-    .locals 4
-
-    .prologue
-    .line 1154
-    iget v2, p0, Landroid/renderscript/Allocation;->mUsage:I
-
-    and-int/lit8 v2, v2, 0x20
-
-    if-nez v2, :cond_0
-
-    .line 1155
-    new-instance v2, Landroid/renderscript/RSInvalidStateException;
-
-    const-string v3, "Allocation is not a surface texture."
-
-    invoke-direct {v2, v3}, Landroid/renderscript/RSInvalidStateException;-><init>(Ljava/lang/String;)V
-
-    throw v2
-
-    .line 1158
-    :cond_0
-    iget-object v2, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    iget-object v3, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    invoke-virtual {p0, v3}, Landroid/renderscript/Allocation;->getID(Landroid/renderscript/RenderScript;)I
-
-    move-result v3
-
-    invoke-virtual {v2, v3}, Landroid/renderscript/RenderScript;->nAllocationGetSurfaceTextureID(I)I
-
-    move-result v0
-
-    .line 1159
-    .local v0, id:I
-    new-instance v1, Landroid/graphics/SurfaceTexture;
-
-    invoke-direct {v1, v0}, Landroid/graphics/SurfaceTexture;-><init>(I)V
-
-    .line 1160
-    .local v1, st:Landroid/graphics/SurfaceTexture;
-    iget-object v2, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    iget-object v3, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    invoke-virtual {p0, v3}, Landroid/renderscript/Allocation;->getID(Landroid/renderscript/RenderScript;)I
-
-    move-result v3
-
-    invoke-virtual {v2, v3, v1}, Landroid/renderscript/RenderScript;->nAllocationGetSurfaceTextureID2(ILandroid/graphics/SurfaceTexture;)V
-
-    .line 1162
-    return-object v1
 .end method
 
 .method public getType()Landroid/renderscript/Type;
     .locals 1
 
     .prologue
-    .line 336
+    .line 264
     iget-object v0, p0, Landroid/renderscript/Allocation;->mType:Landroid/renderscript/Type;
 
     return-object v0
-.end method
-
-.method public getUsage()I
-    .locals 1
-
-    .prologue
-    .line 210
-    iget v0, p0, Landroid/renderscript/Allocation;->mUsage:I
-
-    return v0
-.end method
-
-.method public ioReceive()V
-    .locals 2
-
-    .prologue
-    .line 385
-    iget v0, p0, Landroid/renderscript/Allocation;->mUsage:I
-
-    and-int/lit8 v0, v0, 0x20
-
-    if-nez v0, :cond_0
-
-    .line 386
-    new-instance v0, Landroid/renderscript/RSIllegalArgumentException;
-
-    const-string v1, "Can only receive if IO_INPUT usage specified."
-
-    invoke-direct {v0, v1}, Landroid/renderscript/RSIllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 389
-    :cond_0
-    iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    invoke-virtual {v0}, Landroid/renderscript/RenderScript;->validate()V
-
-    .line 390
-    iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    iget-object v1, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    invoke-virtual {p0, v1}, Landroid/renderscript/Allocation;->getID(Landroid/renderscript/RenderScript;)I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Landroid/renderscript/RenderScript;->nAllocationIoReceive(I)V
-
-    .line 391
-    return-void
-.end method
-
-.method public ioSend()V
-    .locals 2
-
-    .prologue
-    .line 364
-    iget v0, p0, Landroid/renderscript/Allocation;->mUsage:I
-
-    and-int/lit8 v0, v0, 0x40
-
-    if-nez v0, :cond_0
-
-    .line 365
-    new-instance v0, Landroid/renderscript/RSIllegalArgumentException;
-
-    const-string v1, "Can only send buffer if IO_OUTPUT usage specified."
-
-    invoke-direct {v0, v1}, Landroid/renderscript/RSIllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 368
-    :cond_0
-    iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    invoke-virtual {v0}, Landroid/renderscript/RenderScript;->validate()V
-
-    .line 369
-    iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    iget-object v1, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    invoke-virtual {p0, v1}, Landroid/renderscript/Allocation;->getID(Landroid/renderscript/RenderScript;)I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Landroid/renderscript/RenderScript;->nAllocationIoSend(I)V
-
-    .line 370
-    return-void
-.end method
-
-.method public ioSendOutput()V
-    .locals 0
-
-    .prologue
-    .line 377
-    invoke-virtual {p0}, Landroid/renderscript/Allocation;->ioSend()V
-
-    .line 378
-    return-void
 .end method
 
 .method public declared-synchronized resize(I)V
@@ -3665,7 +3374,7 @@
     .parameter "dimX"
 
     .prologue
-    .line 952
+    .line 832
     monitor-enter p0
 
     :try_start_0
@@ -3701,7 +3410,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 953
+    .line 833
     :cond_0
     new-instance v1, Landroid/renderscript/RSInvalidStateException;
 
@@ -3713,7 +3422,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 952
+    .line 832
     :catchall_0
     move-exception v1
 
@@ -3721,30 +3430,26 @@
 
     throw v1
 
-    .line 955
+    .line 835
     :cond_1
     :try_start_1
     iget-object v1, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
-    iget-object v2, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    invoke-virtual {p0, v2}, Landroid/renderscript/Allocation;->getID(Landroid/renderscript/RenderScript;)I
+    invoke-virtual {p0}, Landroid/renderscript/Allocation;->getID()I
 
     move-result v2
 
     invoke-virtual {v1, v2, p1}, Landroid/renderscript/RenderScript;->nAllocationResize1D(II)V
 
-    .line 956
+    .line 836
     iget-object v1, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v1}, Landroid/renderscript/RenderScript;->finish()V
 
-    .line 958
+    .line 838
     iget-object v1, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
-    iget-object v2, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    invoke-virtual {p0, v2}, Landroid/renderscript/Allocation;->getID(Landroid/renderscript/RenderScript;)I
+    invoke-virtual {p0}, Landroid/renderscript/Allocation;->getID()I
 
     move-result v2
 
@@ -3752,7 +3457,7 @@
 
     move-result v0
 
-    .line 959
+    .line 839
     .local v0, typeID:I
     new-instance v1, Landroid/renderscript/Type;
 
@@ -3762,135 +3467,21 @@
 
     iput-object v1, p0, Landroid/renderscript/Allocation;->mType:Landroid/renderscript/Type;
 
-    .line 960
+    .line 840
     iget-object v1, p0, Landroid/renderscript/Allocation;->mType:Landroid/renderscript/Type;
 
     invoke-virtual {v1}, Landroid/renderscript/Type;->updateFromNative()V
 
-    .line 961
+    .line 841
     iget-object v1, p0, Landroid/renderscript/Allocation;->mType:Landroid/renderscript/Type;
 
     invoke-direct {p0, v1}, Landroid/renderscript/Allocation;->updateCacheInfo(Landroid/renderscript/Type;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 962
+    .line 842
     monitor-exit p0
 
-    return-void
-.end method
-
-.method public resize(II)V
-    .locals 3
-    .parameter "dimX"
-    .parameter "dimY"
-
-    .prologue
-    .line 979
-    iget-object v1, p0, Landroid/renderscript/Allocation;->mType:Landroid/renderscript/Type;
-
-    invoke-virtual {v1}, Landroid/renderscript/Type;->getZ()I
-
-    move-result v1
-
-    if-gtz v1, :cond_0
-
-    iget-object v1, p0, Landroid/renderscript/Allocation;->mType:Landroid/renderscript/Type;
-
-    invoke-virtual {v1}, Landroid/renderscript/Type;->hasFaces()Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    iget-object v1, p0, Landroid/renderscript/Allocation;->mType:Landroid/renderscript/Type;
-
-    invoke-virtual {v1}, Landroid/renderscript/Type;->hasMipmaps()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    .line 980
-    :cond_0
-    new-instance v1, Landroid/renderscript/RSInvalidStateException;
-
-    const-string v2, "Resize only support for 2D allocations at this time."
-
-    invoke-direct {v1, v2}, Landroid/renderscript/RSInvalidStateException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    .line 983
-    :cond_1
-    iget-object v1, p0, Landroid/renderscript/Allocation;->mType:Landroid/renderscript/Type;
-
-    invoke-virtual {v1}, Landroid/renderscript/Type;->getY()I
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    .line 984
-    new-instance v1, Landroid/renderscript/RSInvalidStateException;
-
-    const-string v2, "Resize only support for 2D allocations at this time."
-
-    invoke-direct {v1, v2}, Landroid/renderscript/RSInvalidStateException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    .line 987
-    :cond_2
-    iget-object v1, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    iget-object v2, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    invoke-virtual {p0, v2}, Landroid/renderscript/Allocation;->getID(Landroid/renderscript/RenderScript;)I
-
-    move-result v2
-
-    invoke-virtual {v1, v2, p1, p2}, Landroid/renderscript/RenderScript;->nAllocationResize2D(III)V
-
-    .line 988
-    iget-object v1, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    invoke-virtual {v1}, Landroid/renderscript/RenderScript;->finish()V
-
-    .line 990
-    iget-object v1, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    iget-object v2, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    invoke-virtual {p0, v2}, Landroid/renderscript/Allocation;->getID(Landroid/renderscript/RenderScript;)I
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Landroid/renderscript/RenderScript;->nAllocationGetType(I)I
-
-    move-result v0
-
-    .line 991
-    .local v0, typeID:I
-    new-instance v1, Landroid/renderscript/Type;
-
-    iget-object v2, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    invoke-direct {v1, v0, v2}, Landroid/renderscript/Type;-><init>(ILandroid/renderscript/RenderScript;)V
-
-    iput-object v1, p0, Landroid/renderscript/Allocation;->mType:Landroid/renderscript/Type;
-
-    .line 992
-    iget-object v1, p0, Landroid/renderscript/Allocation;->mType:Landroid/renderscript/Type;
-
-    invoke-virtual {v1}, Landroid/renderscript/Type;->updateFromNative()V
-
-    .line 993
-    iget-object v1, p0, Landroid/renderscript/Allocation;->mType:Landroid/renderscript/Type;
-
-    invoke-direct {p0, v1}, Landroid/renderscript/Allocation;->updateCacheInfo(Landroid/renderscript/Type;)V
-
-    .line 994
     return-void
 .end method
 
@@ -3901,12 +3492,7 @@
     .parameter "fp"
 
     .prologue
-    .line 599
-    iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    invoke-virtual {v0}, Landroid/renderscript/RenderScript;->validate()V
-
-    .line 600
+    .line 481
     iget-object v0, p0, Landroid/renderscript/Allocation;->mType:Landroid/renderscript/Type;
 
     iget-object v0, v0, Landroid/renderscript/Type;->mElement:Landroid/renderscript/Element;
@@ -3917,7 +3503,7 @@
 
     if-lt p2, v0, :cond_0
 
-    .line 601
+    .line 482
     new-instance v0, Landroid/renderscript/RSIllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3948,11 +3534,11 @@
 
     throw v0
 
-    .line 603
+    .line 484
     :cond_0
     if-gez p1, :cond_1
 
-    .line 604
+    .line 485
     new-instance v0, Landroid/renderscript/RSIllegalArgumentException;
 
     const-string v1, "Offset must be >= 0."
@@ -3961,13 +3547,13 @@
 
     throw v0
 
-    .line 607
+    .line 488
     :cond_1
     invoke-virtual {p3}, Landroid/renderscript/FieldPacker;->getData()[B
 
     move-result-object v5
 
-    .line 608
+    .line 489
     .local v5, data:[B
     iget-object v0, p0, Landroid/renderscript/Allocation;->mType:Landroid/renderscript/Type;
 
@@ -3977,28 +3563,17 @@
 
     aget-object v0, v0, p2
 
-    invoke-virtual {v0}, Landroid/renderscript/Element;->getBytesSize()I
+    invoke-virtual {v0}, Landroid/renderscript/Element;->getSizeBytes()I
 
     move-result v7
 
-    .line 609
+    .line 491
     .local v7, eSize:I
-    iget-object v0, p0, Landroid/renderscript/Allocation;->mType:Landroid/renderscript/Type;
-
-    iget-object v0, v0, Landroid/renderscript/Type;->mElement:Landroid/renderscript/Element;
-
-    iget-object v0, v0, Landroid/renderscript/Element;->mArraySizes:[I
-
-    aget v0, v0, p2
-
-    mul-int/2addr v7, v0
-
-    .line 611
     array-length v0, v5
 
     if-eq v0, v7, :cond_2
 
-    .line 612
+    .line 492
     new-instance v0, Landroid/renderscript/RSIllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4041,7 +3616,7 @@
 
     throw v0
 
-    .line 616
+    .line 496
     :cond_2
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
@@ -4059,7 +3634,7 @@
 
     invoke-virtual/range {v0 .. v6}, Landroid/renderscript/RenderScript;->nAllocationElementData1D(IIII[BI)V
 
-    .line 618
+    .line 498
     return-void
 .end method
 
@@ -4069,33 +3644,28 @@
     .parameter "fp"
 
     .prologue
-    .line 578
-    iget-object v3, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    invoke-virtual {v3}, Landroid/renderscript/RenderScript;->validate()V
-
-    .line 579
+    .line 461
     iget-object v3, p0, Landroid/renderscript/Allocation;->mType:Landroid/renderscript/Type;
 
     iget-object v3, v3, Landroid/renderscript/Type;->mElement:Landroid/renderscript/Element;
 
-    invoke-virtual {v3}, Landroid/renderscript/Element;->getBytesSize()I
+    invoke-virtual {v3}, Landroid/renderscript/Element;->getSizeBytes()I
 
     move-result v2
 
-    .line 580
+    .line 462
     .local v2, eSize:I
     invoke-virtual {p2}, Landroid/renderscript/FieldPacker;->getData()[B
 
     move-result-object v1
 
-    .line 582
+    .line 464
     .local v1, data:[B
     array-length v3, v1
 
     div-int v0, v3, v2
 
-    .line 583
+    .line 465
     .local v0, count:I
     mul-int v3, v2, v0
 
@@ -4103,7 +3673,7 @@
 
     if-eq v3, v4, :cond_0
 
-    .line 584
+    .line 466
     new-instance v3, Landroid/renderscript/RSIllegalArgumentException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -4146,101 +3716,11 @@
 
     throw v3
 
-    .line 587
+    .line 469
     :cond_0
     invoke-virtual {p0, p1, v0, v1}, Landroid/renderscript/Allocation;->copy1DRangeFromUnchecked(II[B)V
 
-    .line 588
-    return-void
-.end method
-
-.method public setSurface(Landroid/view/Surface;)V
-    .locals 2
-    .parameter "sur"
-
-    .prologue
-    .line 1183
-    iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    invoke-virtual {v0}, Landroid/renderscript/RenderScript;->validate()V
-
-    .line 1184
-    iget v0, p0, Landroid/renderscript/Allocation;->mUsage:I
-
-    and-int/lit8 v0, v0, 0x40
-
-    if-nez v0, :cond_0
-
-    .line 1185
-    new-instance v0, Landroid/renderscript/RSInvalidStateException;
-
-    const-string v1, "Allocation is not USAGE_IO_OUTPUT."
-
-    invoke-direct {v0, v1}, Landroid/renderscript/RSInvalidStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 1188
-    :cond_0
-    iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    iget-object v1, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    invoke-virtual {p0, v1}, Landroid/renderscript/Allocation;->getID(Landroid/renderscript/RenderScript;)I
-
-    move-result v1
-
-    invoke-virtual {v0, v1, p1}, Landroid/renderscript/RenderScript;->nAllocationSetSurface(ILandroid/view/Surface;)V
-
-    .line 1189
-    return-void
-.end method
-
-.method public setSurfaceTexture(Landroid/graphics/SurfaceTexture;)V
-    .locals 3
-    .parameter "st"
-
-    .prologue
-    .line 1195
-    iget-object v1, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    invoke-virtual {v1}, Landroid/renderscript/RenderScript;->validate()V
-
-    .line 1196
-    iget v1, p0, Landroid/renderscript/Allocation;->mUsage:I
-
-    and-int/lit8 v1, v1, 0x40
-
-    if-nez v1, :cond_0
-
-    .line 1197
-    new-instance v1, Landroid/renderscript/RSInvalidStateException;
-
-    const-string v2, "Allocation is not USAGE_IO_OUTPUT."
-
-    invoke-direct {v1, v2}, Landroid/renderscript/RSInvalidStateException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    .line 1200
-    :cond_0
-    new-instance v0, Landroid/view/Surface;
-
-    invoke-direct {v0, p1}, Landroid/view/Surface;-><init>(Landroid/graphics/SurfaceTexture;)V
-
-    .line 1201
-    .local v0, s:Landroid/view/Surface;
-    iget-object v1, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    iget-object v2, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    invoke-virtual {p0, v2}, Landroid/renderscript/Allocation;->getID(Landroid/renderscript/RenderScript;)I
-
-    move-result v2
-
-    invoke-virtual {v1, v2, v0}, Landroid/renderscript/RenderScript;->nAllocationSetSurface(ILandroid/view/Surface;)V
-
-    .line 1202
+    .line 470
     return-void
 .end method
 
@@ -4249,10 +3729,10 @@
     .parameter "srcLocation"
 
     .prologue
-    .line 345
+    .line 268
     packed-switch p1, :pswitch_data_0
 
-    .line 352
+    .line 275
     :pswitch_0
     new-instance v0, Landroid/renderscript/RSIllegalArgumentException;
 
@@ -4262,13 +3742,13 @@
 
     throw v0
 
-    .line 354
+    .line 277
     :pswitch_1
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v0}, Landroid/renderscript/RenderScript;->validate()V
 
-    .line 355
+    .line 278
     iget-object v0, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-direct {p0}, Landroid/renderscript/Allocation;->getIDSafe()I
@@ -4277,10 +3757,10 @@
 
     invoke-virtual {v0, v1, p1}, Landroid/renderscript/RenderScript;->nAllocationSyncAll(II)V
 
-    .line 356
+    .line 279
     return-void
 
-    .line 345
+    .line 268
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_1
@@ -4298,15 +3778,13 @@
     .locals 3
 
     .prologue
-    .line 320
+    .line 254
     invoke-super {p0}, Landroid/renderscript/BaseObj;->updateFromNative()V
 
-    .line 321
+    .line 255
     iget-object v1, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
 
-    iget-object v2, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
-
-    invoke-virtual {p0, v2}, Landroid/renderscript/Allocation;->getID(Landroid/renderscript/RenderScript;)I
+    invoke-virtual {p0}, Landroid/renderscript/Allocation;->getID()I
 
     move-result v2
 
@@ -4314,11 +3792,11 @@
 
     move-result v0
 
-    .line 322
+    .line 256
     .local v0, typeID:I
     if-eqz v0, :cond_0
 
-    .line 323
+    .line 257
     new-instance v1, Landroid/renderscript/Type;
 
     iget-object v2, p0, Landroid/renderscript/Allocation;->mRS:Landroid/renderscript/RenderScript;
@@ -4327,17 +3805,17 @@
 
     iput-object v1, p0, Landroid/renderscript/Allocation;->mType:Landroid/renderscript/Type;
 
-    .line 324
+    .line 258
     iget-object v1, p0, Landroid/renderscript/Allocation;->mType:Landroid/renderscript/Type;
 
     invoke-virtual {v1}, Landroid/renderscript/Type;->updateFromNative()V
 
-    .line 325
+    .line 259
     iget-object v1, p0, Landroid/renderscript/Allocation;->mType:Landroid/renderscript/Type;
 
     invoke-direct {p0, v1}, Landroid/renderscript/Allocation;->updateCacheInfo(Landroid/renderscript/Type;)V
 
-    .line 327
+    .line 261
     :cond_0
     return-void
 .end method

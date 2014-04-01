@@ -21,11 +21,13 @@
 
 .field public static final eri:I = #xml@eri#t
 
-.field public static final kg_password_kbd_numeric:I = #xml@kg_password_kbd_numeric#t
-
 .field public static final modes:I = #xml@modes#t
 
+.field public static final password_kbd_extension:I = #xml@password_kbd_extension#t
+
 .field public static final password_kbd_numeric:I = #xml@password_kbd_numeric#t
+
+.field public static final password_kbd_popup_template:I = #xml@password_kbd_popup_template#t
 
 .field public static final password_kbd_qwerty:I = #xml@password_kbd_qwerty#t
 
@@ -39,7 +41,7 @@
 
 .field public static final power_profile:I = #xml@power_profile#t
 
-.field public static final sms_short_codes:I = #xml@sms_short_codes#t
+.field public static final preferred_time_zones:I = #xml@preferred_time_zones#t
 
 .field public static final storage_list:I = #xml@storage_list#t
 
@@ -51,7 +53,7 @@
     .locals 0
 
     .prologue
-    .line 17229
+    .line 21141
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

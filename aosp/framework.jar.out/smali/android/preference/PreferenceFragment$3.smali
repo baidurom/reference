@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 364
+    .line 357
     iput-object p1, p0, Landroid/preference/PreferenceFragment$3;->this$0:Landroid/preference/PreferenceFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
     .parameter "event"
 
     .prologue
-    .line 368
+    .line 361
     iget-object v2, p0, Landroid/preference/PreferenceFragment$3;->this$0:Landroid/preference/PreferenceFragment;
 
     #getter for: Landroid/preference/PreferenceFragment;->mList:Landroid/widget/ListView;
@@ -56,13 +56,13 @@
 
     move-result-object v0
 
-    .line 369
+    .line 362
     .local v0, selectedItem:Ljava/lang/Object;
     instance-of v2, v0, Landroid/preference/Preference;
 
     if-eqz v2, :cond_0
 
-    .line 370
+    .line 363
     iget-object v2, p0, Landroid/preference/PreferenceFragment$3;->this$0:Landroid/preference/PreferenceFragment;
 
     #getter for: Landroid/preference/PreferenceFragment;->mList:Landroid/widget/ListView;
@@ -74,7 +74,7 @@
 
     move-result-object v1
 
-    .line 371
+    .line 364
     .local v1, selectedView:Landroid/view/View;
     check-cast v0, Landroid/preference/Preference;
 
@@ -83,7 +83,7 @@
 
     move-result v2
 
-    .line 374
+    .line 367
     .end local v1           #selectedView:Landroid/view/View;
     :goto_0
     return v2

@@ -29,57 +29,51 @@
 
 .field final syncSource:I
 
-.field final userId:I
-
 
 # direct methods
-.method constructor <init>(Landroid/accounts/Account;IILjava/lang/String;Landroid/os/Bundle;Z)V
+.method constructor <init>(Landroid/accounts/Account;ILjava/lang/String;Landroid/os/Bundle;Z)V
     .locals 1
     .parameter "account"
-    .parameter "userId"
     .parameter "source"
     .parameter "authority"
     .parameter "extras"
     .parameter "expedited"
 
     .prologue
-    .line 164
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 146
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 165
+    .line 147
     iput-object p1, p0, Landroid/content/SyncStorageEngine$PendingOperation;->account:Landroid/accounts/Account;
 
-    .line 166
-    iput p2, p0, Landroid/content/SyncStorageEngine$PendingOperation;->userId:I
+    .line 148
+    iput p2, p0, Landroid/content/SyncStorageEngine$PendingOperation;->syncSource:I
 
-    .line 167
-    iput p3, p0, Landroid/content/SyncStorageEngine$PendingOperation;->syncSource:I
+    .line 149
+    iput-object p3, p0, Landroid/content/SyncStorageEngine$PendingOperation;->authority:Ljava/lang/String;
 
-    .line 168
-    iput-object p4, p0, Landroid/content/SyncStorageEngine$PendingOperation;->authority:Ljava/lang/String;
-
-    .line 169
-    if-eqz p5, :cond_0
+    .line 150
+    if-eqz p4, :cond_0
 
     new-instance v0, Landroid/os/Bundle;
 
-    invoke-direct {v0, p5}, Landroid/os/Bundle;-><init>(Landroid/os/Bundle;)V
+    invoke-direct {v0, p4}, Landroid/os/Bundle;-><init>(Landroid/os/Bundle;)V
 
-    move-object p5, v0
+    move-object p4, v0
 
-    .end local p5
+    .end local p4
     :cond_0
-    iput-object p5, p0, Landroid/content/SyncStorageEngine$PendingOperation;->extras:Landroid/os/Bundle;
+    iput-object p4, p0, Landroid/content/SyncStorageEngine$PendingOperation;->extras:Landroid/os/Bundle;
 
-    .line 170
-    iput-boolean p6, p0, Landroid/content/SyncStorageEngine$PendingOperation;->expedited:Z
+    .line 151
+    iput-boolean p5, p0, Landroid/content/SyncStorageEngine$PendingOperation;->expedited:Z
 
-    .line 171
+    .line 152
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/content/SyncStorageEngine$PendingOperation;->authorityId:I
 
-    .line 172
+    .line 153
     return-void
 .end method
 
@@ -88,44 +82,39 @@
     .parameter "other"
 
     .prologue
-    .line 174
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 155
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 175
+    .line 156
     iget-object v0, p1, Landroid/content/SyncStorageEngine$PendingOperation;->account:Landroid/accounts/Account;
 
     iput-object v0, p0, Landroid/content/SyncStorageEngine$PendingOperation;->account:Landroid/accounts/Account;
 
-    .line 176
-    iget v0, p1, Landroid/content/SyncStorageEngine$PendingOperation;->userId:I
-
-    iput v0, p0, Landroid/content/SyncStorageEngine$PendingOperation;->userId:I
-
-    .line 177
+    .line 157
     iget v0, p1, Landroid/content/SyncStorageEngine$PendingOperation;->syncSource:I
 
     iput v0, p0, Landroid/content/SyncStorageEngine$PendingOperation;->syncSource:I
 
-    .line 178
+    .line 158
     iget-object v0, p1, Landroid/content/SyncStorageEngine$PendingOperation;->authority:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/content/SyncStorageEngine$PendingOperation;->authority:Ljava/lang/String;
 
-    .line 179
+    .line 159
     iget-object v0, p1, Landroid/content/SyncStorageEngine$PendingOperation;->extras:Landroid/os/Bundle;
 
     iput-object v0, p0, Landroid/content/SyncStorageEngine$PendingOperation;->extras:Landroid/os/Bundle;
 
-    .line 180
+    .line 160
     iget v0, p1, Landroid/content/SyncStorageEngine$PendingOperation;->authorityId:I
 
     iput v0, p0, Landroid/content/SyncStorageEngine$PendingOperation;->authorityId:I
 
-    .line 181
+    .line 161
     iget-boolean v0, p1, Landroid/content/SyncStorageEngine$PendingOperation;->expedited:Z
 
     iput-boolean v0, p0, Landroid/content/SyncStorageEngine$PendingOperation;->expedited:Z
 
-    .line 182
+    .line 162
     return-void
 .end method

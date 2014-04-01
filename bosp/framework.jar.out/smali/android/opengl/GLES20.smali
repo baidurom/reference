@@ -823,22 +823,10 @@
 .method public static native glGenerateMipmap(I)V
 .end method
 
-.method public static native glGetActiveAttrib(IILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/lang/String;
-.end method
-
-.method public static native glGetActiveAttrib(II[II[II)Ljava/lang/String;
-.end method
-
 .method public static native glGetActiveAttrib(IIILjava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;B)V
 .end method
 
 .method public static native glGetActiveAttrib(III[II[II[II[BI)V
-.end method
-
-.method public static native glGetActiveUniform(IILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/lang/String;
-.end method
-
-.method public static native glGetActiveUniform(II[II[II)Ljava/lang/String;
 .end method
 
 .method public static native glGetActiveUniform(IIILjava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;B)V
@@ -911,9 +899,6 @@
 .end method
 
 .method public static native glGetShaderPrecisionFormat(II[II[II)V
-.end method
-
-.method public static native glGetShaderSource(I)Ljava/lang/String;
 .end method
 
 .method public static native glGetShaderSource(IILjava/nio/IntBuffer;B)V
@@ -1217,7 +1202,7 @@
     .parameter "ptr"
 
     .prologue
-    .line 1963
+    .line 1921
     invoke-virtual {p5}, Ljava/nio/Buffer;->remaining()I
 
     move-result v6
@@ -1236,7 +1221,7 @@
 
     invoke-static/range {v0 .. v6}, Landroid/opengl/GLES20;->glVertexAttribPointerBounds(IIIZILjava/nio/Buffer;I)V
 
-    .line 1972
+    .line 1930
     return-void
 .end method
 

@@ -15,11 +15,11 @@
 
 
 # static fields
-.field public static final cld_check_item_multichoice:I = 0x30a0002
+.field public static final cld_check_item_multichoice:I = 0x40a0002
 
-.field public static final yi_function_bar_hide:I = 0x30a0001
+.field public static final yi_function_bar_hide:I = 0x40a0001
 
-.field public static final yi_function_bar_show:I = 0x30a0000
+.field public static final yi_function_bar_show:I = 0x40a0000
 
 
 # direct methods

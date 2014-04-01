@@ -37,7 +37,7 @@
 
     .prologue
     .line 117
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 118
     return-void
@@ -51,15 +51,15 @@
 
     .prologue
     .line 124
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 125
-    iget-object v0, p1, Lcom/android/internal/telephony/SmsMessageBase$SubmitPduBase;->encodedMessage:[B
+    iget-object v0, p1, Lcom/android/internal/telephony/SmsMessageBase$PduBase;->encodedMessage:[B
 
     iput-object v0, p0, Landroid/telephony/gsm/SmsMessage$SubmitPdu;->encodedMessage:[B
 
     .line 126
-    iget-object v0, p1, Lcom/android/internal/telephony/SmsMessageBase$SubmitPduBase;->encodedScAddress:[B
+    iget-object v0, p1, Lcom/android/internal/telephony/SmsMessageBase$PduBase;->encodedScAddress:[B
 
     iput-object v0, p0, Landroid/telephony/gsm/SmsMessage$SubmitPdu;->encodedScAddress:[B
 

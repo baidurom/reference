@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 737
+    .line 542
     iput-object p1, p0, Landroid/webkit/HTML5VideoViewProxy$1;->this$0:Landroid/webkit/HTML5VideoViewProxy;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,47 +39,22 @@
     .parameter "msg"
 
     .prologue
-    .line 740
-    const-string v5, "HTML5VideoViewProxy"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "createWebCoreHandler::handleMessage msg "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    iget v7, p1, Landroid/os/Message;->what:I
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 741
+    .line 545
     iget v5, p1, Landroid/os/Message;->what:I
 
     sparse-switch v5, :sswitch_data_0
 
-    .line 772
+    .line 573
     :goto_0
     return-void
 
-    .line 743
+    .line 547
     :sswitch_0
     iget-object v2, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v2, Ljava/util/Map;
 
-    .line 744
+    .line 548
     .local v2, map:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;"
     const-string v5, "dur"
 
@@ -89,7 +64,7 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    .line 745
+    .line 549
     .local v0, duration:Ljava/lang/Integer;
     const-string/jumbo v5, "width"
 
@@ -99,7 +74,7 @@
 
     check-cast v4, Ljava/lang/Integer;
 
-    .line 746
+    .line 550
     .local v4, width:Ljava/lang/Integer;
     const-string v5, "height"
 
@@ -109,7 +84,7 @@
 
     check-cast v1, Ljava/lang/Integer;
 
-    .line 747
+    .line 551
     .local v1, height:Ljava/lang/Integer;
     iget-object v5, p0, Landroid/webkit/HTML5VideoViewProxy$1;->this$0:Landroid/webkit/HTML5VideoViewProxy;
 
@@ -134,7 +109,7 @@
 
     goto :goto_0
 
-    .line 752
+    .line 556
     .end local v0           #duration:Ljava/lang/Integer;
     .end local v1           #height:Ljava/lang/Integer;
     .end local v2           #map:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;"
@@ -147,7 +122,7 @@
     #setter for: Landroid/webkit/HTML5VideoViewProxy;->mSeekPosition:I
     invoke-static {v5, v6}, Landroid/webkit/HTML5VideoViewProxy;->access$802(Landroid/webkit/HTML5VideoViewProxy;I)I
 
-    .line 753
+    .line 557
     iget-object v5, p0, Landroid/webkit/HTML5VideoViewProxy$1;->this$0:Landroid/webkit/HTML5VideoViewProxy;
 
     iget-object v6, p0, Landroid/webkit/HTML5VideoViewProxy$1;->this$0:Landroid/webkit/HTML5VideoViewProxy;
@@ -159,7 +134,7 @@
 
     goto :goto_0
 
-    .line 756
+    .line 560
     :sswitch_2
     iget-object v5, p0, Landroid/webkit/HTML5VideoViewProxy$1;->this$0:Landroid/webkit/HTML5VideoViewProxy;
 
@@ -172,13 +147,13 @@
 
     goto :goto_0
 
-    .line 759
+    .line 563
     :sswitch_3
     iget-object v3, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v3, Landroid/graphics/Bitmap;
 
-    .line 760
+    .line 564
     .local v3, poster:Landroid/graphics/Bitmap;
     iget-object v5, p0, Landroid/webkit/HTML5VideoViewProxy$1;->this$0:Landroid/webkit/HTML5VideoViewProxy;
 
@@ -191,7 +166,7 @@
 
     goto :goto_0
 
-    .line 763
+    .line 567
     .end local v3           #poster:Landroid/graphics/Bitmap;
     :sswitch_4
     iget-object v5, p0, Landroid/webkit/HTML5VideoViewProxy$1;->this$0:Landroid/webkit/HTML5VideoViewProxy;
@@ -207,35 +182,20 @@
 
     goto :goto_0
 
-    .line 766
+    .line 570
     :sswitch_5
-    iget-object v5, p0, Landroid/webkit/HTML5VideoViewProxy$1;->this$0:Landroid/webkit/HTML5VideoViewProxy;
-
-    iget v6, p1, Landroid/os/Message;->arg1:I
-
-    iget-object v7, p0, Landroid/webkit/HTML5VideoViewProxy$1;->this$0:Landroid/webkit/HTML5VideoViewProxy;
-
-    iget v7, v7, Landroid/webkit/HTML5VideoViewProxy;->mNativePointer:I
-
-    #calls: Landroid/webkit/HTML5VideoViewProxy;->nativeOnStopFullscreen(II)V
-    invoke-static {v5, v6, v7}, Landroid/webkit/HTML5VideoViewProxy;->access$1300(Landroid/webkit/HTML5VideoViewProxy;II)V
-
-    goto :goto_0
-
-    .line 769
-    :sswitch_6
     iget-object v5, p0, Landroid/webkit/HTML5VideoViewProxy$1;->this$0:Landroid/webkit/HTML5VideoViewProxy;
 
     iget-object v6, p0, Landroid/webkit/HTML5VideoViewProxy$1;->this$0:Landroid/webkit/HTML5VideoViewProxy;
 
     iget v6, v6, Landroid/webkit/HTML5VideoViewProxy;->mNativePointer:I
 
-    #calls: Landroid/webkit/HTML5VideoViewProxy;->nativeOnRestoreState(I)V
-    invoke-static {v5, v6}, Landroid/webkit/HTML5VideoViewProxy;->access$1400(Landroid/webkit/HTML5VideoViewProxy;I)V
+    #calls: Landroid/webkit/HTML5VideoViewProxy;->nativeOnStopFullscreen(I)V
+    invoke-static {v5, v6}, Landroid/webkit/HTML5VideoViewProxy;->access$1300(Landroid/webkit/HTML5VideoViewProxy;I)V
 
     goto :goto_0
 
-    .line 741
+    .line 545
     nop
 
     :sswitch_data_0
@@ -245,7 +205,6 @@
         0xca -> :sswitch_3
         0xcb -> :sswitch_2
         0xcc -> :sswitch_5
-        0xcd -> :sswitch_6
         0x12c -> :sswitch_4
     .end sparse-switch
 .end method

@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 844
+    .line 837
     iput-object p1, p0, Lcom/android/server/net/NetworkStatsService$4;->this$0:Lcom/android/server/net/NetworkStatsService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,20 +40,20 @@
     .parameter "intent"
 
     .prologue
-    .line 849
+    .line 842
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsService$4;->this$0:Lcom/android/server/net/NetworkStatsService;
 
     const/4 v1, 0x3
 
     #calls: Lcom/android/server/net/NetworkStatsService;->performPoll(I)V
-    invoke-static {v0, v1}, Lcom/android/server/net/NetworkStatsService;->access$900(Lcom/android/server/net/NetworkStatsService;I)V
+    invoke-static {v0, v1}, Lcom/android/server/net/NetworkStatsService;->access$600(Lcom/android/server/net/NetworkStatsService;I)V
 
-    .line 852
+    .line 845
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsService$4;->this$0:Lcom/android/server/net/NetworkStatsService;
 
     #calls: Lcom/android/server/net/NetworkStatsService;->registerGlobalAlert()V
-    invoke-static {v0}, Lcom/android/server/net/NetworkStatsService;->access$1000(Lcom/android/server/net/NetworkStatsService;)V
+    invoke-static {v0}, Lcom/android/server/net/NetworkStatsService;->access$700(Lcom/android/server/net/NetworkStatsService;)V
 
-    .line 853
+    .line 846
     return-void
 .end method

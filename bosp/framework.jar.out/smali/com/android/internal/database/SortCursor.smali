@@ -1028,16 +1028,11 @@
 
     .prologue
     .line 297
-    const/4 v2, -0x1
-
-    iput v2, p0, Lcom/android/internal/database/SortCursor;->mPos:I
-
-    .line 298
     iget-object v2, p0, Lcom/android/internal/database/SortCursor;->mCursors:[Landroid/database/Cursor;
 
     array-length v1, v2
 
-    .line 299
+    .line 298
     .local v1, length:I
     const/4 v0, 0x0
 
@@ -1045,20 +1040,20 @@
     :goto_0
     if-ge v0, v1, :cond_2
 
-    .line 300
+    .line 299
     iget-object v2, p0, Lcom/android/internal/database/SortCursor;->mCursors:[Landroid/database/Cursor;
 
     aget-object v2, v2, v0
 
     if-nez v2, :cond_1
 
-    .line 299
+    .line 298
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 303
+    .line 301
     :cond_1
     iget-object v2, p0, Lcom/android/internal/database/SortCursor;->mCursors:[Landroid/database/Cursor;
 
@@ -1070,10 +1065,10 @@
 
     if-nez v2, :cond_0
 
-    .line 304
+    .line 302
     const/4 v2, 0x0
 
-    .line 308
+    .line 306
     :goto_1
     return v2
 

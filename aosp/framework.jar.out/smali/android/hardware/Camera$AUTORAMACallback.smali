@@ -15,14 +15,5 @@
 
 
 # virtual methods
-.method public abstract onBlended([BII)V
-.end method
-
 .method public abstract onCapture()V
-.end method
-
-.method public abstract onCapture([B)V
-.end method
-
-.method public abstract onIntermediate([B)V
 .end method

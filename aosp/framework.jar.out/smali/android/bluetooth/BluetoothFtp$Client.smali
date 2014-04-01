@@ -20,19 +20,19 @@
     .parameter "context"
 
     .prologue
-    .line 290
+    .line 292
     const-string v0, "BluetoothFtp.Client"
 
     invoke-direct {p0, p1, v0}, Landroid/bluetooth/BluetoothFtp$Remote;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 291
+    .line 293
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.bluetooth.ftp.action.BIND_CLIENT"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    iget-object v1, p0, Landroid/bluetooth/BluetoothFtp$Client;->mConnection:Landroid/content/ServiceConnection;
+    iget-object v1, p0, Landroid/bluetooth/BluetoothFtp$Remote;->mConnection:Landroid/content/ServiceConnection;
 
     const/4 v2, 0x1
 
@@ -42,12 +42,12 @@
 
     if-nez v0, :cond_0
 
-    .line 293
+    .line 295
     const-string v0, "Could not bind to Bluetooth FTP Service"
 
     invoke-virtual {p0, v0}, Landroid/bluetooth/BluetoothFtp$Client;->printErr(Ljava/lang/String;)V
 
-    .line 295
+    .line 297
     :cond_0
     return-void
 .end method
@@ -58,7 +58,7 @@
     .locals 0
 
     .prologue
-    .line 287
+    .line 289
     invoke-super {p0}, Landroid/bluetooth/BluetoothFtp$Remote;->close()V
 
     return-void
@@ -71,30 +71,30 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 298
-    iget-object v2, p0, Landroid/bluetooth/BluetoothFtp$Client;->mService:Landroid/bluetooth/IBluetoothFtpCtrl;
+    .line 300
+    iget-object v2, p0, Landroid/bluetooth/BluetoothFtp$Remote;->mService:Landroid/bluetooth/IBluetoothFtpCtrl;
 
     if-eqz v2, :cond_0
 
-    .line 300
+    .line 302
     :try_start_0
-    iget-object v2, p0, Landroid/bluetooth/BluetoothFtp$Client;->mService:Landroid/bluetooth/IBluetoothFtpCtrl;
+    iget-object v2, p0, Landroid/bluetooth/BluetoothFtp$Remote;->mService:Landroid/bluetooth/IBluetoothFtpCtrl;
 
     invoke-interface {v2, p1}, Landroid/bluetooth/IBluetoothFtpCtrl;->connect(Landroid/bluetooth/BluetoothDevice;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 310
+    .line 312
     const/4 v1, 0x1
 
     :goto_0
     return v1
 
-    .line 301
+    .line 303
     :catch_0
     move-exception v0
 
-    .line 302
+    .line 304
     .local v0, e:Landroid/os/RemoteException;
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -118,7 +118,7 @@
 
     goto :goto_0
 
-    .line 307
+    .line 309
     .end local v0           #e:Landroid/os/RemoteException;
     :cond_0
     const-string/jumbo v2, "mService is null"
@@ -133,35 +133,35 @@
     .parameter "ftpState"
 
     .prologue
-    .line 314
+    .line 316
     packed-switch p1, :pswitch_data_0
 
-    .line 332
+    .line 334
     :pswitch_0
     const/4 v0, 0x5
 
     :goto_0
     return v0
 
-    .line 318
+    .line 320
     :pswitch_1
     const/4 v0, 0x2
 
     goto :goto_0
 
-    .line 326
+    .line 328
     :pswitch_2
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 329
+    .line 331
     :pswitch_3
     const/4 v0, 0x3
 
     goto :goto_0
 
-    .line 314
+    .line 316
     nop
 
     :pswitch_data_0
@@ -185,7 +185,7 @@
     .parameter "x0"
 
     .prologue
-    .line 287
+    .line 289
     invoke-super {p0, p1}, Landroid/bluetooth/BluetoothFtp$Remote;->disconnect(Landroid/bluetooth/BluetoothDevice;)Z
 
     move-result v0
@@ -197,24 +197,24 @@
     .locals 3
 
     .prologue
-    .line 337
+    .line 339
     invoke-virtual {p0}, Landroid/bluetooth/BluetoothFtp$Client;->disconnectService()V
 
-    .line 339
+    .line 341
     :try_start_0
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 343
+    .line 345
     :goto_0
     return-void
 
-    .line 340
+    .line 342
     :catch_0
     move-exception v0
 
-    .line 341
+    .line 343
     .local v0, t:Ljava/lang/Throwable;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -243,7 +243,7 @@
     .locals 1
 
     .prologue
-    .line 287
+    .line 289
     invoke-super {p0}, Landroid/bluetooth/BluetoothFtp$Remote;->getConnectedDevices()Ljava/util/Set;
 
     move-result-object v0
@@ -256,7 +256,7 @@
     .parameter "x0"
 
     .prologue
-    .line 287
+    .line 289
     invoke-super {p0, p1}, Landroid/bluetooth/BluetoothFtp$Remote;->getState(Landroid/bluetooth/BluetoothDevice;)I
 
     move-result v0

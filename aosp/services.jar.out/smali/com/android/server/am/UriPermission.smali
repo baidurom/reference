@@ -47,7 +47,7 @@
     const/4 v0, 0x0
 
     .line 43
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 36
     iput v0, p0, Lcom/android/server/am/UriPermission;->modeFlags:I
@@ -170,7 +170,7 @@
     iput v2, p0, Lcom/android/server/am/UriPermission;->modeFlags:I
 
     .line 62
-    iget-object v2, p0, Lcom/android/server/am/UriPermission;->writeOwners:Ljava/util/HashSet;
+    iget-object v2, p0, Lcom/android/server/am/UriPermission;->readOwners:Ljava/util/HashSet;
 
     invoke-virtual {v2}, Ljava/util/HashSet;->size()I
 
@@ -208,7 +208,7 @@
     .line 66
     .end local v1           #r:Lcom/android/server/am/UriPermissionOwner;
     :cond_2
-    iget-object v2, p0, Lcom/android/server/am/UriPermission;->writeOwners:Ljava/util/HashSet;
+    iget-object v2, p0, Lcom/android/server/am/UriPermission;->readOwners:Ljava/util/HashSet;
 
     invoke-virtual {v2}, Ljava/util/HashSet;->clear()V
 

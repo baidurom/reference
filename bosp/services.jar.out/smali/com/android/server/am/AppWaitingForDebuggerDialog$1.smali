@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 64
+    .line 61
     iput-object p1, p0, Lcom/android/server/am/AppWaitingForDebuggerDialog$1;->this$0:Lcom/android/server/am/AppWaitingForDebuggerDialog;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,16 +39,16 @@
     .parameter "msg"
 
     .prologue
-    .line 66
+    .line 63
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 72
+    .line 69
     :goto_0
     return-void
 
-    .line 69
+    .line 66
     :pswitch_0
     iget-object v0, p0, Lcom/android/server/am/AppWaitingForDebuggerDialog$1;->this$0:Lcom/android/server/am/AppWaitingForDebuggerDialog;
 
@@ -64,7 +64,7 @@
 
     goto :goto_0
 
-    .line 66
+    .line 63
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

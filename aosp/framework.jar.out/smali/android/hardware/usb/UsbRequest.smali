@@ -25,7 +25,7 @@
 
     .prologue
     .line 51
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 52
     return-void
@@ -37,10 +37,10 @@
 .method private native native_close()V
 .end method
 
-.method private native native_dequeue_array([BIZ)I
+.method private native native_dequeue_array([BIZ)V
 .end method
 
-.method private native native_dequeue_direct()I
+.method private native native_dequeue_direct()V
 .end method
 
 .method private native native_init(Landroid/hardware/usb/UsbDeviceConnection;IIII)Z
@@ -58,7 +58,7 @@
     .locals 1
 
     .prologue
-    .line 174
+    .line 170
     invoke-direct {p0}, Landroid/hardware/usb/UsbRequest;->native_cancel()Z
 
     move-result v0
@@ -83,90 +83,68 @@
 .end method
 
 .method dequeue()V
-    .locals 5
+    .locals 4
 
     .prologue
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     .line 154
-    iget-object v3, p0, Landroid/hardware/usb/UsbRequest;->mEndpoint:Landroid/hardware/usb/UsbEndpoint;
+    iget-object v2, p0, Landroid/hardware/usb/UsbRequest;->mEndpoint:Landroid/hardware/usb/UsbEndpoint;
 
-    invoke-virtual {v3}, Landroid/hardware/usb/UsbEndpoint;->getDirection()I
+    invoke-virtual {v2}, Landroid/hardware/usb/UsbEndpoint;->getDirection()I
 
-    move-result v3
+    move-result v2
 
-    if-nez v3, :cond_1
+    if-nez v2, :cond_0
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
+
+    .line 155
+    .local v0, out:Z
+    :goto_0
+    iget-object v2, p0, Landroid/hardware/usb/UsbRequest;->mBuffer:Ljava/nio/ByteBuffer;
+
+    invoke-virtual {v2}, Ljava/nio/ByteBuffer;->isDirect()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
 
     .line 156
-    .local v1, out:Z
-    :goto_0
-    iget-object v3, p0, Landroid/hardware/usb/UsbRequest;->mBuffer:Ljava/nio/ByteBuffer;
+    invoke-direct {p0}, Landroid/hardware/usb/UsbRequest;->native_dequeue_direct()V
 
-    invoke-virtual {v3}, Ljava/nio/ByteBuffer;->isDirect()Z
+    .line 160
+    :goto_1
+    const/4 v2, 0x0
 
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    .line 157
-    invoke-direct {p0}, Landroid/hardware/usb/UsbRequest;->native_dequeue_direct()I
-
-    move-result v0
+    iput-object v2, p0, Landroid/hardware/usb/UsbRequest;->mBuffer:Ljava/nio/ByteBuffer;
 
     .line 161
-    .local v0, bytesRead:I
-    :goto_1
-    if-ltz v0, :cond_0
+    iput v1, p0, Landroid/hardware/usb/UsbRequest;->mLength:I
 
     .line 162
-    iget-object v3, p0, Landroid/hardware/usb/UsbRequest;->mBuffer:Ljava/nio/ByteBuffer;
-
-    iget v4, p0, Landroid/hardware/usb/UsbRequest;->mLength:I
-
-    invoke-static {v0, v4}, Ljava/lang/Math;->min(II)I
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
-
-    .line 164
-    :cond_0
-    const/4 v3, 0x0
-
-    iput-object v3, p0, Landroid/hardware/usb/UsbRequest;->mBuffer:Ljava/nio/ByteBuffer;
-
-    .line 165
-    iput v2, p0, Landroid/hardware/usb/UsbRequest;->mLength:I
-
-    .line 166
     return-void
 
-    .end local v0           #bytesRead:I
-    .end local v1           #out:Z
-    :cond_1
-    move v1, v2
+    .end local v0           #out:Z
+    :cond_0
+    move v0, v1
 
     .line 154
     goto :goto_0
 
-    .line 159
-    .restart local v1       #out:Z
-    :cond_2
-    iget-object v3, p0, Landroid/hardware/usb/UsbRequest;->mBuffer:Ljava/nio/ByteBuffer;
+    .line 158
+    .restart local v0       #out:Z
+    :cond_1
+    iget-object v2, p0, Landroid/hardware/usb/UsbRequest;->mBuffer:Ljava/nio/ByteBuffer;
 
-    invoke-virtual {v3}, Ljava/nio/ByteBuffer;->array()[B
+    invoke-virtual {v2}, Ljava/nio/ByteBuffer;->array()[B
 
-    move-result-object v3
+    move-result-object v2
 
-    iget v4, p0, Landroid/hardware/usb/UsbRequest;->mLength:I
+    iget v3, p0, Landroid/hardware/usb/UsbRequest;->mLength:I
 
-    invoke-direct {p0, v3, v4, v1}, Landroid/hardware/usb/UsbRequest;->native_dequeue_array([BIZ)I
+    invoke-direct {p0, v2, v3, v0}, Landroid/hardware/usb/UsbRequest;->native_dequeue_array([BIZ)V
 
-    move-result v0
-
-    .restart local v0       #bytesRead:I
     goto :goto_1
 .end method
 

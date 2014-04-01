@@ -25,7 +25,7 @@
     .parameter "x0"
 
     .prologue
-    .line 149
+    .line 148
     iput-object p1, p0, Lcom/baidu/service/QuickBootService$2;->this$0:Lcom/baidu/service/QuickBootService;
 
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
@@ -44,16 +44,16 @@
 
     const/4 v0, 0x1
 
-    .line 152
+    .line 151
     iget v2, p1, Landroid/os/Message;->what:I
 
     packed-switch v2, :pswitch_data_0
 
-    .line 162
+    .line 161
     :goto_0
     return-void
 
-    .line 154
+    .line 153
     :pswitch_0
     iget-object v2, p0, Lcom/baidu/service/QuickBootService$2;->this$0:Lcom/baidu/service/QuickBootService;
 
@@ -72,7 +72,7 @@
 
     goto :goto_1
 
-    .line 157
+    .line 156
     :pswitch_1
     iget-object v2, p0, Lcom/baidu/service/QuickBootService$2;->this$0:Lcom/baidu/service/QuickBootService;
 
@@ -91,7 +91,7 @@
 
     goto :goto_2
 
-    .line 160
+    .line 159
     :pswitch_2
     iget-object v2, p0, Lcom/baidu/service/QuickBootService$2;->this$0:Lcom/baidu/service/QuickBootService;
 
@@ -110,7 +110,7 @@
 
     goto :goto_3
 
-    .line 152
+    .line 151
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

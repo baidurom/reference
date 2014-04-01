@@ -63,48 +63,48 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 100
+    .line 99
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
-    .line 70
+    .line 69
     iput-object v0, p0, Landroid/telephony/BaiduSubManager;->mSetSlotActiveMsg:Landroid/os/Message;
 
-    .line 71
+    .line 70
     iput-object v0, p0, Landroid/telephony/BaiduSubManager;->mSetSlotModeMsg:Landroid/os/Message;
 
-    .line 72
+    .line 71
     iput-object v0, p0, Landroid/telephony/BaiduSubManager;->mSetDataSubscriptionMsg:Landroid/os/Message;
 
-    .line 73
+    .line 72
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/telephony/BaiduSubManager;->mDataSubscription:I
 
-    .line 126
+    .line 125
     new-instance v0, Landroid/telephony/BaiduSubManager$1;
 
     invoke-direct {v0, p0}, Landroid/telephony/BaiduSubManager$1;-><init>(Landroid/telephony/BaiduSubManager;)V
 
     iput-object v0, p0, Landroid/telephony/BaiduSubManager;->mDataConnectionReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 102
+    .line 101
     const-string v0, "BaiduSubManager"
 
     const-string v1, "Constructor - Enter"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 104
+    .line 103
     iput-object p1, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
 
-    .line 105
+    .line 104
     new-instance v0, Landroid/os/Messenger;
 
     invoke-direct {v0, p0}, Landroid/os/Messenger;-><init>(Landroid/os/Handler;)V
 
     iput-object v0, p0, Landroid/telephony/BaiduSubManager;->mMessenger:Landroid/os/Messenger;
 
-    .line 106
+    .line 105
     new-instance v0, Landroid/content/IntentFilter;
 
     const-string v1, "android.intent.action.ANY_DATA_STATE"
@@ -113,7 +113,7 @@
 
     iput-object v0, p0, Landroid/telephony/BaiduSubManager;->mIntentFilter:Landroid/content/IntentFilter;
 
-    .line 107
+    .line 106
     iget-object v0, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Landroid/telephony/BaiduSubManager;->mDataConnectionReceiver:Landroid/content/BroadcastReceiver;
@@ -122,7 +122,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 110
+    .line 109
     invoke-static {}, Lcom/android/internal/telephony/PhoneFactory;->getDefaultPhone()Lcom/android/internal/telephony/Phone;
 
     move-result-object v0
@@ -131,19 +131,19 @@
 
     iput-object v0, p0, Landroid/telephony/BaiduSubManager;->mGeminiPhone:Lcom/android/internal/telephony/gemini/GeminiPhone;
 
-    .line 111
+    .line 110
     iget-object v0, p0, Landroid/telephony/BaiduSubManager;->mGeminiPhone:Lcom/android/internal/telephony/gemini/GeminiPhone;
 
     if-nez v0, :cond_0
 
-    .line 112
+    .line 111
     const-string v0, "BaiduSubManager"
 
     const-string v1, "mGeminiPhone == null"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 122
+    .line 121
     :cond_0
     const-string v0, "BaiduSubManager"
 
@@ -151,7 +151,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 124
+    .line 123
     return-void
 .end method
 
@@ -160,7 +160,7 @@
     .parameter "x0"
 
     .prologue
-    .line 46
+    .line 45
     iget v0, p0, Landroid/telephony/BaiduSubManager;->mDataSubscription:I
 
     return v0
@@ -171,7 +171,7 @@
     .parameter "x0"
 
     .prologue
-    .line 46
+    .line 45
     iget-object v0, p0, Landroid/telephony/BaiduSubManager;->mSetDataSubscriptionMsg:Landroid/os/Message;
 
     return-object v0
@@ -183,7 +183,7 @@
     .parameter "x1"
 
     .prologue
-    .line 46
+    .line 45
     iput-object p1, p0, Landroid/telephony/BaiduSubManager;->mSetDataSubscriptionMsg:Landroid/os/Message;
 
     return-object p1
@@ -193,7 +193,7 @@
     .locals 1
 
     .prologue
-    .line 205
+    .line 204
     const-string v0, "phone"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -212,36 +212,36 @@
     .parameter "context"
 
     .prologue
-    .line 84
+    .line 83
     const-string v0, "BaiduSubManager"
 
     const-string v1, "getInstance"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 86
+    .line 85
     sget-object v0, Landroid/telephony/BaiduSubManager;->sBaiduSubManager:Landroid/telephony/BaiduSubManager;
 
     if-nez v0, :cond_1
 
-    .line 87
+    .line 86
     if-nez p0, :cond_0
 
-    .line 88
+    .line 87
     const-string v0, "BaiduSubManager"
 
     const-string v1, "sBaiduSubManager == null, context == null"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 89
+    .line 88
     const/4 v0, 0x0
 
-    .line 93
+    .line 92
     :goto_0
     return-object v0
 
-    .line 91
+    .line 90
     :cond_0
     new-instance v0, Landroid/telephony/BaiduSubManager;
 
@@ -249,7 +249,7 @@
 
     sput-object v0, Landroid/telephony/BaiduSubManager;->sBaiduSubManager:Landroid/telephony/BaiduSubManager;
 
-    .line 93
+    .line 92
     :cond_1
     sget-object v0, Landroid/telephony/BaiduSubManager;->sBaiduSubManager:Landroid/telephony/BaiduSubManager;
 
@@ -266,14 +266,14 @@
     .parameter "onCompleteMsg"
 
     .prologue
-    .line 961
+    .line 962
     if-eqz p1, :cond_0
 
     const/4 v2, 0x1
 
     if-ne v2, p1, :cond_4
 
-    .line 963
+    .line 964
     :cond_0
     const-string v2, "BaiduSubManager"
 
@@ -297,12 +297,12 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 965
+    .line 966
     iget-object v2, p0, Landroid/telephony/BaiduSubManager;->mGeminiPhone:Lcom/android/internal/telephony/gemini/GeminiPhone;
 
     if-nez v2, :cond_1
 
-    .line 966
+    .line 967
     invoke-static {}, Lcom/android/internal/telephony/PhoneFactory;->getDefaultPhone()Lcom/android/internal/telephony/Phone;
 
     move-result-object v2
@@ -311,26 +311,26 @@
 
     iput-object v2, p0, Landroid/telephony/BaiduSubManager;->mGeminiPhone:Lcom/android/internal/telephony/gemini/GeminiPhone;
 
-    .line 968
+    .line 969
     :cond_1
     iget-object v2, p0, Landroid/telephony/BaiduSubManager;->mGeminiPhone:Lcom/android/internal/telephony/gemini/GeminiPhone;
 
     if-nez v2, :cond_3
 
-    .line 969
+    .line 970
     const-string v2, "BaiduSubManager"
 
     const-string v3, "mGeminiPhone == null"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 970
+    .line 971
     if-eqz p4, :cond_2
 
-    .line 971
+    .line 972
     const/4 v1, 0x0
 
-    .line 972
+    .line 973
     .local v1, result:Z
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -338,7 +338,7 @@
 
     invoke-direct {v0, v2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    .line 973
+    .line 974
     .local v0, exception:Ljava/lang/RuntimeException;
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -346,17 +346,17 @@
 
     invoke-static {p4, v2, v0}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 974
+    .line 975
     invoke-virtual {p4}, Landroid/os/Message;->sendToTarget()V
 
-    .line 989
+    .line 990
     .end local v0           #exception:Ljava/lang/RuntimeException;
     .end local v1           #result:Z
     :cond_2
     :goto_0
     return-void
 
-    .line 977
+    .line 978
     :cond_3
     iget-object v2, p0, Landroid/telephony/BaiduSubManager;->mGeminiPhone:Lcom/android/internal/telephony/gemini/GeminiPhone;
 
@@ -364,11 +364,11 @@
 
     move-result-object v2
 
-    invoke-interface {v2, p2, p3, p4}, Lcom/android/internal/telephony/IccCard;->changeIccLockPassword(Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
+    invoke-virtual {v2, p2, p3, p4}, Lcom/android/internal/telephony/IccCard;->changeIccLockPassword(Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
 
     goto :goto_0
 
-    .line 980
+    .line 981
     :cond_4
     const-string v2, "BaiduSubManager"
 
@@ -376,13 +376,13 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 981
+    .line 982
     if-eqz p4, :cond_2
 
-    .line 982
+    .line 983
     const/4 v1, 0x0
 
-    .line 983
+    .line 984
     .restart local v1       #result:Z
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -390,7 +390,7 @@
 
     invoke-direct {v0, v2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    .line 984
+    .line 985
     .restart local v0       #exception:Ljava/lang/RuntimeException;
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -398,7 +398,7 @@
 
     invoke-static {p4, v2, v0}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 985
+    .line 986
     invoke-virtual {p4}, Landroid/os/Message;->sendToTarget()V
 
     goto :goto_0
@@ -413,24 +413,24 @@
 
     const/4 v5, 0x0
 
-    .line 755
+    .line 756
     if-eqz p1, :cond_1
 
     if-eq p1, v4, :cond_1
 
-    .line 756
+    .line 757
     const-string v4, "BaiduSubManager"
 
     const-string v6, "subscription error"
 
     invoke-static {v4, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 783
+    .line 784
     :cond_0
     :goto_0
     return v5
 
-    .line 760
+    .line 761
     :cond_1
     :try_start_0
     iget-object v6, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
@@ -439,7 +439,7 @@
 
     move-result-object v1
 
-    .line 763
+    .line 764
     .local v1, resolver:Landroid/content/ContentResolver;
     iget-object v6, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
 
@@ -447,14 +447,14 @@
 
     move-result-object v2
 
-    .line 764
+    .line 765
     .local v2, simInfo:Landroid/provider/Telephony$SIMInfo;
     if-eqz v2, :cond_0
 
-    .line 765
+    .line 766
     iget v0, v2, Landroid/provider/Telephony$SIMInfo;->mDataRoaming:I
 
-    .line 767
+    .line 768
     .local v0, dataRoaming:I
     const-string v6, "BaiduSubManager"
 
@@ -480,7 +480,7 @@
     :try_end_0
     .catch Landroid/provider/Settings$SettingNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 769
+    .line 770
     if-ne v0, v4, :cond_2
 
     :goto_1
@@ -493,14 +493,14 @@
 
     goto :goto_1
 
-    .line 782
+    .line 783
     .end local v0           #dataRoaming:I
     .end local v1           #resolver:Landroid/content/ContentResolver;
     .end local v2           #simInfo:Landroid/provider/Telephony$SIMInfo;
     :catch_0
     move-exception v3
 
-    .line 783
+    .line 784
     .local v3, snfe:Landroid/provider/Settings$SettingNotFoundException;
     goto :goto_0
 .end method
@@ -514,24 +514,24 @@
 
     const/4 v5, 0x0
 
-    .line 807
+    .line 808
     if-eqz p1, :cond_1
 
     if-eq p1, v4, :cond_1
 
-    .line 808
+    .line 809
     const-string v4, "BaiduSubManager"
 
     const-string v6, "subscription error"
 
     invoke-static {v4, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 835
+    .line 836
     :cond_0
     :goto_0
     return v5
 
-    .line 812
+    .line 813
     :cond_1
     :try_start_0
     iget-object v6, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
@@ -540,7 +540,7 @@
 
     move-result-object v1
 
-    .line 815
+    .line 816
     .local v1, resolver:Landroid/content/ContentResolver;
     iget-object v6, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
 
@@ -548,14 +548,14 @@
 
     move-result-object v2
 
-    .line 816
+    .line 817
     .local v2, simInfo:Landroid/provider/Telephony$SIMInfo;
     if-eqz v2, :cond_0
 
-    .line 817
+    .line 818
     iget v0, v2, Landroid/provider/Telephony$SIMInfo;->mDataRoaming:I
 
-    .line 819
+    .line 820
     .local v0, dataRoaming:I
     const-string v6, "BaiduSubManager"
 
@@ -581,7 +581,7 @@
     :try_end_0
     .catch Landroid/provider/Settings$SettingNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 821
+    .line 822
     if-ne v0, v4, :cond_2
 
     :goto_1
@@ -594,14 +594,14 @@
 
     goto :goto_1
 
-    .line 834
+    .line 835
     .end local v0           #dataRoaming:I
     .end local v1           #resolver:Landroid/content/ContentResolver;
     .end local v2           #simInfo:Landroid/provider/Telephony$SIMInfo;
     :catch_0
     move-exception v3
 
-    .line 835
+    .line 836
     .local v3, snfe:Landroid/provider/Settings$SettingNotFoundException;
     goto :goto_0
 .end method
@@ -613,27 +613,27 @@
     .prologue
     const/16 v1, -0x64
 
-    .line 1001
+    .line 1002
     if-nez p1, :cond_0
 
-    .line 1002
+    .line 1003
     const-string v0, "gsm.sim.retry.pin1"
 
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
 
     move-result v0
 
-    .line 1007
+    .line 1008
     :goto_0
     return v0
 
-    .line 1003
+    .line 1004
     :cond_0
     const/4 v0, 0x1
 
     if-ne v0, p1, :cond_1
 
-    .line 1004
+    .line 1005
     const-string v0, "gsm.sim.retry.pin1.2"
 
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
@@ -642,7 +642,7 @@
 
     goto :goto_0
 
-    .line 1006
+    .line 1007
     :cond_1
     const-string v0, "BaiduSubManager"
 
@@ -650,7 +650,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1007
+    .line 1008
     const/4 v0, -0x1
 
     goto :goto_0
@@ -665,24 +665,24 @@
 
     const/4 v2, 0x1
 
-    .line 570
+    .line 571
     if-eqz p1, :cond_1
 
     if-eq p1, v2, :cond_1
 
-    .line 571
+    .line 572
     const-string v2, "BaiduSubManager"
 
     const-string v3, "slot error"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 586
+    .line 587
     :cond_0
     :goto_0
     return v1
 
-    .line 574
+    .line 575
     :cond_1
     invoke-virtual {p0, p1}, Landroid/telephony/BaiduSubManager;->isCardInsert(I)Z
 
@@ -690,7 +690,7 @@
 
     if-nez v3, :cond_2
 
-    .line 575
+    .line 576
     const-string v2, "BaiduSubManager"
 
     const-string v3, "no card in slot"
@@ -699,7 +699,7 @@
 
     goto :goto_0
 
-    .line 578
+    .line 579
     :cond_2
     iget-object v3, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
 
@@ -715,7 +715,7 @@
 
     move-result v0
 
-    .line 579
+    .line 580
     .local v0, dualSimMode:I
     const/4 v3, 0x3
 
@@ -723,10 +723,10 @@
 
     move v1, v2
 
-    .line 580
+    .line 581
     goto :goto_0
 
-    .line 581
+    .line 582
     :cond_3
     if-ne v2, v0, :cond_4
 
@@ -734,10 +734,10 @@
 
     move v1, v2
 
-    .line 582
+    .line 583
     goto :goto_0
 
-    .line 583
+    .line 584
     :cond_4
     const/4 v3, 0x2
 
@@ -747,7 +747,7 @@
 
     move v1, v2
 
-    .line 584
+    .line 585
     goto :goto_0
 .end method
 
@@ -758,24 +758,24 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 643
+    .line 644
     if-eqz p1, :cond_1
 
     if-eq p1, v2, :cond_1
 
-    .line 644
+    .line 645
     const-string v0, "BaiduSubManager"
 
     const-string v1, "slot error"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 651
+    .line 652
     :cond_0
     :goto_0
     return v2
 
-    .line 647
+    .line 648
     :cond_1
     invoke-virtual {p0, p1}, Landroid/telephony/BaiduSubManager;->isCardInsert(I)Z
 
@@ -783,7 +783,7 @@
 
     if-nez v0, :cond_0
 
-    .line 648
+    .line 649
     const-string v0, "BaiduSubManager"
 
     const-string v1, "no card in slot"
@@ -800,17 +800,17 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 161
+    .line 160
     iget v3, p1, Landroid/os/Message;->what:I
 
     sparse-switch v3, :sswitch_data_0
 
-    .line 202
+    .line 201
     :cond_0
     :goto_0
     return-void
 
-    .line 165
+    .line 164
     :sswitch_0
     const-string v3, "BaiduSubManager"
 
@@ -818,7 +818,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 168
+    .line 167
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/BaiduSubManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
@@ -835,20 +835,20 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 178
+    .line 177
     :goto_1
     iget-object v3, p0, Landroid/telephony/BaiduSubManager;->mSetSlotActiveMsg:Landroid/os/Message;
 
     if-eqz v3, :cond_0
 
-    .line 179
+    .line 178
     const/4 v2, 0x1
 
-    .line 180
+    .line 179
     .local v2, result:Z
     const/4 v1, 0x0
 
-    .line 181
+    .line 180
     .local v1, exception:Ljava/lang/RuntimeException;
     iget-object v3, p0, Landroid/telephony/BaiduSubManager;->mSetSlotActiveMsg:Landroid/os/Message;
 
@@ -858,23 +858,23 @@
 
     invoke-static {v3, v4, v1}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 182
+    .line 181
     iget-object v3, p0, Landroid/telephony/BaiduSubManager;->mSetSlotActiveMsg:Landroid/os/Message;
 
     invoke-virtual {v3}, Landroid/os/Message;->sendToTarget()V
 
-    .line 183
+    .line 182
     iput-object v5, p0, Landroid/telephony/BaiduSubManager;->mSetSlotActiveMsg:Landroid/os/Message;
 
     goto :goto_0
 
-    .line 169
+    .line 168
     .end local v1           #exception:Ljava/lang/RuntimeException;
     .end local v2           #result:Z
     :catch_0
     move-exception v0
 
-    .line 170
+    .line 169
     .local v0, ex:Landroid/os/RemoteException;
     const-string v3, "BaiduSubManager"
 
@@ -884,12 +884,12 @@
 
     goto :goto_1
 
-    .line 171
+    .line 170
     .end local v0           #ex:Landroid/os/RemoteException;
     :catch_1
     move-exception v0
 
-    .line 172
+    .line 171
     .local v0, ex:Ljava/lang/NullPointerException;
     const-string v3, "BaiduSubManager"
 
@@ -899,7 +899,7 @@
 
     goto :goto_1
 
-    .line 190
+    .line 189
     .end local v0           #ex:Ljava/lang/NullPointerException;
     :sswitch_1
     const-string v3, "BaiduSubManager"
@@ -908,15 +908,15 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 192
+    .line 191
     iget-object v3, p0, Landroid/telephony/BaiduSubManager;->mSetDataSubscriptionMsg:Landroid/os/Message;
 
     if-eqz v3, :cond_0
 
-    .line 193
+    .line 192
     const/4 v2, 0x0
 
-    .line 194
+    .line 193
     .restart local v2       #result:Z
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -924,7 +924,7 @@
 
     invoke-direct {v1, v3}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    .line 195
+    .line 194
     .restart local v1       #exception:Ljava/lang/RuntimeException;
     iget-object v3, p0, Landroid/telephony/BaiduSubManager;->mSetDataSubscriptionMsg:Landroid/os/Message;
 
@@ -934,17 +934,17 @@
 
     invoke-static {v3, v4, v1}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 196
+    .line 195
     iget-object v3, p0, Landroid/telephony/BaiduSubManager;->mSetDataSubscriptionMsg:Landroid/os/Message;
 
     invoke-virtual {v3}, Landroid/os/Message;->sendToTarget()V
 
-    .line 197
+    .line 196
     iput-object v5, p0, Landroid/telephony/BaiduSubManager;->mSetDataSubscriptionMsg:Landroid/os/Message;
 
     goto :goto_0
 
-    .line 161
+    .line 160
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_0
@@ -973,11 +973,11 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 225
+    .line 224
     :goto_0
     return v1
 
-    .line 221
+    .line 220
     :cond_0
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/BaiduSubManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
@@ -986,7 +986,7 @@
 
     invoke-interface {v2, p1}, Lcom/android/internal/telephony/ITelephony;->isSimInsert(I)Z
     :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v1
 
@@ -997,14 +997,8 @@
     move-exception v0
 
     .line 223
-    .local v0, e:Landroid/os/RemoteException;
-    const-string v2, "BaiduSubManager"
-
-    invoke-virtual {v0}, Landroid/os/RemoteException;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    .local v0, e:Ljava/lang/Exception;
+    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
     goto :goto_0
 .end method
@@ -1016,20 +1010,20 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 858
+    .line 859
     if-eqz p1, :cond_0
 
     const/4 v0, 0x1
 
     if-ne v0, p1, :cond_3
 
-    .line 859
+    .line 860
     :cond_0
     iget-object v0, p0, Landroid/telephony/BaiduSubManager;->mGeminiPhone:Lcom/android/internal/telephony/gemini/GeminiPhone;
 
     if-nez v0, :cond_1
 
-    .line 860
+    .line 861
     invoke-static {}, Lcom/android/internal/telephony/PhoneFactory;->getDefaultPhone()Lcom/android/internal/telephony/Phone;
 
     move-result-object v0
@@ -1038,13 +1032,13 @@
 
     iput-object v0, p0, Landroid/telephony/BaiduSubManager;->mGeminiPhone:Lcom/android/internal/telephony/gemini/GeminiPhone;
 
-    .line 862
+    .line 863
     :cond_1
     iget-object v0, p0, Landroid/telephony/BaiduSubManager;->mGeminiPhone:Lcom/android/internal/telephony/gemini/GeminiPhone;
 
     if-nez v0, :cond_2
 
-    .line 863
+    .line 864
     const-string v0, "BaiduSubManager"
 
     const-string v2, "mGeminiPhone == null"
@@ -1053,11 +1047,11 @@
 
     move v0, v1
 
-    .line 870
+    .line 871
     :goto_0
     return v0
 
-    .line 866
+    .line 867
     :cond_2
     iget-object v0, p0, Landroid/telephony/BaiduSubManager;->mGeminiPhone:Lcom/android/internal/telephony/gemini/GeminiPhone;
 
@@ -1065,13 +1059,13 @@
 
     move-result-object v0
 
-    invoke-interface {v0}, Lcom/android/internal/telephony/IccCard;->getIccLockEnabled()Z
+    invoke-virtual {v0}, Lcom/android/internal/telephony/IccCard;->getIccLockEnabled()Z
 
     move-result v0
 
     goto :goto_0
 
-    .line 869
+    .line 870
     :cond_3
     const-string v0, "BaiduSubManager"
 
@@ -1081,7 +1075,7 @@
 
     move v0, v1
 
-    .line 870
+    .line 871
     goto :goto_0
 .end method
 
@@ -1095,24 +1089,24 @@
 
     const/4 v3, 0x1
 
-    .line 726
+    .line 727
     if-eqz p1, :cond_1
 
     if-eq p1, v3, :cond_1
 
-    .line 727
+    .line 728
     const-string v2, "BaiduSubManager"
 
     const-string v3, "subscription error"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 746
+    .line 747
     :cond_0
     :goto_0
     return-void
 
-    .line 730
+    .line 731
     :cond_1
     invoke-virtual {p0, p1}, Landroid/telephony/BaiduSubManager;->getDataRoamingEnabled(I)Z
 
@@ -1120,18 +1114,18 @@
 
     if-eq v2, p2, :cond_0
 
-    .line 732
+    .line 733
     iget-object v2, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
 
     invoke-static {v2, p1}, Landroid/provider/Telephony$SIMInfo;->getSIMInfoBySlot(Landroid/content/Context;I)Landroid/provider/Telephony$SIMInfo;
 
     move-result-object v1
 
-    .line 733
+    .line 734
     .local v1, simInfo:Landroid/provider/Telephony$SIMInfo;
     if-eqz v1, :cond_2
 
-    .line 734
+    .line 735
     iget-object v5, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
 
     if-eqz p2, :cond_3
@@ -1147,14 +1141,14 @@
 
     if-gtz v2, :cond_2
 
-    .line 735
+    .line 736
     const-string v2, "BaiduSubManager"
 
     const-string v5, "Can\'t set data romaing in database"
 
     invoke-static {v2, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 739
+    .line 740
     :cond_2
     iget-object v2, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
 
@@ -1162,17 +1156,17 @@
 
     move-result-object v0
 
-    .line 740
+    .line 741
     .local v0, resolver:Landroid/content/ContentResolver;
     if-ne p1, v3, :cond_5
 
-    .line 741
+    .line 742
     const-string v2, "data_roaming_2"
 
     if-eqz p2, :cond_4
 
     :goto_2
-    invoke-static {v0, v2, v3}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    invoke-static {v0, v2, v3}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     goto :goto_0
 
@@ -1180,24 +1174,24 @@
     :cond_3
     move v2, v4
 
-    .line 734
+    .line 735
     goto :goto_1
 
     .restart local v0       #resolver:Landroid/content/ContentResolver;
     :cond_4
     move v3, v4
 
-    .line 741
+    .line 742
     goto :goto_2
 
-    .line 743
+    .line 744
     :cond_5
     const-string v2, "data_roaming"
 
     if-eqz p2, :cond_6
 
     :goto_3
-    invoke-static {v0, v2, v3}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    invoke-static {v0, v2, v3}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     goto :goto_0
 
@@ -1213,10 +1207,10 @@
     .parameter "onCompleteMsg"
 
     .prologue
-    .line 664
+    .line 665
     const/4 v7, 0x1
 
-    .line 667
+    .line 668
     .local v7, result:Z
     if-eqz p1, :cond_1
 
@@ -1224,27 +1218,27 @@
 
     if-eq p1, v8, :cond_1
 
-    .line 668
+    .line 669
     const-string v8, "BaiduSubManager"
 
     const-string v9, "subscription error"
 
     invoke-static {v8, v9}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 669
+    .line 670
     if-eqz p2, :cond_0
 
-    .line 670
+    .line 671
     const/4 v7, 0x0
 
-    .line 671
+    .line 672
     new-instance v2, Ljava/lang/RuntimeException;
 
     const-string v8, "subscription error"
 
     invoke-direct {v2, v8}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    .line 672
+    .line 673
     .local v2, exception:Ljava/lang/RuntimeException;
     invoke-static {v7}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -1252,16 +1246,16 @@
 
     invoke-static {p2, v8, v2}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 673
+    .line 674
     invoke-virtual {p2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 717
+    .line 718
     .end local v2           #exception:Ljava/lang/RuntimeException;
     :cond_0
     :goto_0
     return-void
 
-    .line 678
+    .line 679
     :cond_1
     invoke-virtual {p0, p1}, Landroid/telephony/BaiduSubManager;->isCardInsert(I)Z
 
@@ -1269,27 +1263,27 @@
 
     if-nez v8, :cond_2
 
-    .line 679
+    .line 680
     const-string v8, "BaiduSubManager"
 
     const-string v9, "no card in slot"
 
     invoke-static {v8, v9}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 680
+    .line 681
     if-eqz p2, :cond_0
 
-    .line 681
+    .line 682
     const/4 v7, 0x0
 
-    .line 682
+    .line 683
     new-instance v2, Ljava/lang/RuntimeException;
 
     const-string v8, "no card in slot"
 
     invoke-direct {v2, v8}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    .line 683
+    .line 684
     .restart local v2       #exception:Ljava/lang/RuntimeException;
     invoke-static {v7}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -1297,17 +1291,17 @@
 
     invoke-static {p2, v8, v2}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 684
+    .line 685
     invoke-virtual {p2}, Landroid/os/Message;->sendToTarget()V
 
     goto :goto_0
 
-    .line 689
+    .line 690
     .end local v2           #exception:Ljava/lang/RuntimeException;
     :cond_2
     const-wide/16 v5, -0x5
 
-    .line 690
+    .line 691
     .local v5, newGprsValue:J
     iget-object v8, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
 
@@ -1315,14 +1309,14 @@
 
     move-result-object v3
 
-    .line 691
+    .line 692
     .local v3, gprsSimInfo:Landroid/provider/Telephony$SIMInfo;
     if-eqz v3, :cond_3
 
-    .line 692
+    .line 693
     iget-wide v5, v3, Landroid/provider/Telephony$SIMInfo;->mSimId:J
 
-    .line 694
+    .line 695
     :cond_3
     iget-object v8, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
 
@@ -1338,29 +1332,29 @@
 
     move-result-wide v0
 
-    .line 697
+    .line 698
     .local v0, GprsValue:J
     cmp-long v8, v5, v0
 
     if-nez v8, :cond_4
 
-    .line 699
+    .line 700
     const-string v8, "BaiduSubManager"
 
     const-string v9, "newGprsvalue == GprsValue"
 
     invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 701
+    .line 702
     if-eqz p2, :cond_0
 
-    .line 702
+    .line 703
     const/4 v7, 0x1
 
-    .line 703
+    .line 704
     const/4 v2, 0x0
 
-    .line 704
+    .line 705
     .restart local v2       #exception:Ljava/lang/RuntimeException;
     invoke-static {v7}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -1368,40 +1362,40 @@
 
     invoke-static {p2, v8, v2}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 705
+    .line 706
     invoke-virtual {p2}, Landroid/os/Message;->sendToTarget()V
 
     goto :goto_0
 
-    .line 710
+    .line 711
     .end local v2           #exception:Ljava/lang/RuntimeException;
     :cond_4
     iput-object p2, p0, Landroid/telephony/BaiduSubManager;->mSetDataSubscriptionMsg:Landroid/os/Message;
 
-    .line 711
+    .line 712
     iput p1, p0, Landroid/telephony/BaiduSubManager;->mDataSubscription:I
 
-    .line 713
+    .line 714
     const/16 v8, 0x7d1
 
     const-wide/16 v9, 0x7530
 
     invoke-virtual {p0, v8, v9, v10}, Landroid/telephony/BaiduSubManager;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 714
+    .line 715
     new-instance v4, Landroid/content/Intent;
 
     const-string v8, "android.intent.action.DATA_DEFAULT_SIM"
 
     invoke-direct {v4, v8}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 715
+    .line 716
     .local v4, intent:Landroid/content/Intent;
     const-string v8, "simid"
 
     invoke-virtual {v4, v8, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
 
-    .line 716
+    .line 717
     iget-object v8, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v8, v4}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
@@ -1417,14 +1411,14 @@
     .parameter "onCompleteMsg"
 
     .prologue
-    .line 903
+    .line 904
     if-eqz p1, :cond_0
 
     const/4 v2, 0x1
 
     if-ne v2, p1, :cond_4
 
-    .line 905
+    .line 906
     :cond_0
     const-string v2, "BaiduSubManager"
 
@@ -1448,12 +1442,12 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 907
+    .line 908
     iget-object v2, p0, Landroid/telephony/BaiduSubManager;->mGeminiPhone:Lcom/android/internal/telephony/gemini/GeminiPhone;
 
     if-nez v2, :cond_1
 
-    .line 908
+    .line 909
     invoke-static {}, Lcom/android/internal/telephony/PhoneFactory;->getDefaultPhone()Lcom/android/internal/telephony/Phone;
 
     move-result-object v2
@@ -1462,26 +1456,26 @@
 
     iput-object v2, p0, Landroid/telephony/BaiduSubManager;->mGeminiPhone:Lcom/android/internal/telephony/gemini/GeminiPhone;
 
-    .line 910
+    .line 911
     :cond_1
     iget-object v2, p0, Landroid/telephony/BaiduSubManager;->mGeminiPhone:Lcom/android/internal/telephony/gemini/GeminiPhone;
 
     if-nez v2, :cond_3
 
-    .line 911
+    .line 912
     const-string v2, "BaiduSubManager"
 
     const-string v3, "mGeminiPhone == null"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 912
+    .line 913
     if-eqz p4, :cond_2
 
-    .line 913
+    .line 914
     const/4 v1, 0x0
 
-    .line 914
+    .line 915
     .local v1, result:Z
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -1489,7 +1483,7 @@
 
     invoke-direct {v0, v2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    .line 915
+    .line 916
     .local v0, exception:Ljava/lang/RuntimeException;
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -1497,17 +1491,17 @@
 
     invoke-static {p4, v2, v0}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 916
+    .line 917
     invoke-virtual {p4}, Landroid/os/Message;->sendToTarget()V
 
-    .line 931
+    .line 932
     .end local v0           #exception:Ljava/lang/RuntimeException;
     .end local v1           #result:Z
     :cond_2
     :goto_0
     return-void
 
-    .line 919
+    .line 920
     :cond_3
     iget-object v2, p0, Landroid/telephony/BaiduSubManager;->mGeminiPhone:Lcom/android/internal/telephony/gemini/GeminiPhone;
 
@@ -1515,11 +1509,11 @@
 
     move-result-object v2
 
-    invoke-interface {v2, p2, p3, p4}, Lcom/android/internal/telephony/IccCard;->setIccLockEnabled(ZLjava/lang/String;Landroid/os/Message;)V
+    invoke-virtual {v2, p2, p3, p4}, Lcom/android/internal/telephony/IccCard;->setIccLockEnabled(ZLjava/lang/String;Landroid/os/Message;)V
 
     goto :goto_0
 
-    .line 922
+    .line 923
     :cond_4
     const-string v2, "BaiduSubManager"
 
@@ -1527,13 +1521,13 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 923
+    .line 924
     if-eqz p4, :cond_2
 
-    .line 924
+    .line 925
     const/4 v1, 0x0
 
-    .line 925
+    .line 926
     .restart local v1       #result:Z
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -1541,7 +1535,7 @@
 
     invoke-direct {v0, v2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    .line 926
+    .line 927
     .restart local v0       #exception:Ljava/lang/RuntimeException;
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -1549,7 +1543,7 @@
 
     invoke-static {p4, v2, v0}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 927
+    .line 928
     invoke-virtual {p4}, Landroid/os/Message;->sendToTarget()V
 
     goto :goto_0
@@ -1561,21 +1555,21 @@
     .parameter "enable"
 
     .prologue
-    .line 795
+    .line 796
     if-eqz p1, :cond_0
 
     const/4 v0, 0x1
 
     if-eq p1, v0, :cond_0
 
-    .line 796
+    .line 797
     const-string v0, "BaiduSubManager"
 
     const-string v1, "subscription error"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 798
+    .line 799
     :cond_0
     return-void
 .end method
@@ -1587,10 +1581,10 @@
     .parameter "onCompleteMsg"
 
     .prologue
-    .line 240
+    .line 241
     const/4 v5, 0x0
 
-    .line 243
+    .line 244
     .local v5, result:Z
     if-eqz p1, :cond_1
 
@@ -1598,27 +1592,27 @@
 
     if-eq p1, v6, :cond_1
 
-    .line 244
+    .line 245
     const-string v6, "BaiduSubManager"
 
     const-string v7, "slot error"
 
     invoke-static {v6, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 245
+    .line 246
     if-eqz p3, :cond_0
 
-    .line 246
+    .line 247
     const/4 v5, 0x0
 
-    .line 247
+    .line 248
     new-instance v2, Ljava/lang/RuntimeException;
 
     const-string v6, "slot error"
 
     invoke-direct {v2, v6}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    .line 248
+    .line 249
     .local v2, exception:Ljava/lang/RuntimeException;
     invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -1626,16 +1620,16 @@
 
     invoke-static {p3, v6, v2}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 249
+    .line 250
     invoke-virtual {p3}, Landroid/os/Message;->sendToTarget()V
 
-    .line 561
+    .line 562
     .end local v2           #exception:Ljava/lang/RuntimeException;
     :cond_0
     :goto_0
     return-void
 
-    .line 254
+    .line 255
     :cond_1
     invoke-virtual {p0, p1}, Landroid/telephony/BaiduSubManager;->isCardInsert(I)Z
 
@@ -1643,27 +1637,27 @@
 
     if-nez v6, :cond_2
 
-    .line 255
+    .line 256
     const-string v6, "BaiduSubManager"
 
     const-string v7, "no card in slot"
 
     invoke-static {v6, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 256
+    .line 257
     if-eqz p3, :cond_0
 
-    .line 257
+    .line 258
     const/4 v5, 0x0
 
-    .line 258
+    .line 259
     new-instance v2, Ljava/lang/RuntimeException;
 
     const-string v6, "no card in slot"
 
     invoke-direct {v2, v6}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    .line 259
+    .line 260
     .restart local v2       #exception:Ljava/lang/RuntimeException;
     invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -1671,12 +1665,12 @@
 
     invoke-static {p3, v6, v2}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 260
+    .line 261
     invoke-virtual {p3}, Landroid/os/Message;->sendToTarget()V
 
     goto :goto_0
 
-    .line 265
+    .line 266
     .end local v2           #exception:Ljava/lang/RuntimeException;
     :cond_2
     if-nez p1, :cond_3
@@ -1688,7 +1682,7 @@
 
     move-result v4
 
-    .line 266
+    .line 267
     .local v4, isOtherCardInsert:Z
     iget-object v6, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
 
@@ -1704,7 +1698,7 @@
 
     move-result v0
 
-    .line 268
+    .line 269
     .local v0, dualSimMode:I
     const-string v6, "BaiduSubManager"
 
@@ -1758,13 +1752,13 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 272
+    .line 273
     iput-object p3, p0, Landroid/telephony/BaiduSubManager;->mSetSlotActiveMsg:Landroid/os/Message;
 
-    .line 274
+    .line 275
     if-eqz p2, :cond_b
 
-    .line 275
+    .line 276
     const/4 v6, 0x1
 
     iget-object v7, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
@@ -1783,14 +1777,14 @@
 
     if-ne v6, v7, :cond_5
 
-    .line 277
+    .line 278
     const-string v6, "BaiduSubManager"
 
     const-string v7, "airplane mode on, turn off it"
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 280
+    .line 281
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/BaiduSubManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
@@ -1809,11 +1803,11 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 286
+    .line 287
     :goto_2
     if-nez p1, :cond_4
 
-    .line 287
+    .line 288
     iget-object v6, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v6}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1826,7 +1820,7 @@
 
     invoke-static {v6, v7, v8}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 288
+    .line 289
     iget-object v6, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v6}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1839,14 +1833,14 @@
 
     invoke-static {v6, v7, v8}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 289
+    .line 290
     new-instance v3, Landroid/content/Intent;
 
     const-string v6, "android.intent.action.AIRPLANE_MODE"
 
     invoke-direct {v3, v6}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 290
+    .line 291
     .local v3, intent:Landroid/content/Intent;
     const-string v6, "state"
 
@@ -1854,14 +1848,14 @@
 
     invoke-virtual {v3, v6, v7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 291
+    .line 292
     iget-object v6, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v6, v3}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
     goto/16 :goto_0
 
-    .line 265
+    .line 266
     .end local v0           #dualSimMode:I
     .end local v3           #intent:Landroid/content/Intent;
     .end local v4           #isOtherCardInsert:Z
@@ -1870,13 +1864,13 @@
 
     goto/16 :goto_1
 
-    .line 281
+    .line 282
     .restart local v0       #dualSimMode:I
     .restart local v4       #isOtherCardInsert:Z
     :catch_0
     move-exception v1
 
-    .line 282
+    .line 283
     .local v1, ex:Landroid/os/RemoteException;
     const-string v6, "BaiduSubManager"
 
@@ -1886,12 +1880,12 @@
 
     goto :goto_2
 
-    .line 283
+    .line 284
     .end local v1           #ex:Landroid/os/RemoteException;
     :catch_1
     move-exception v1
 
-    .line 284
+    .line 285
     .local v1, ex:Ljava/lang/NullPointerException;
     const-string v6, "BaiduSubManager"
 
@@ -1901,7 +1895,7 @@
 
     goto :goto_2
 
-    .line 293
+    .line 294
     .end local v1           #ex:Ljava/lang/NullPointerException;
     :cond_4
     iget-object v6, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
@@ -1916,7 +1910,7 @@
 
     invoke-static {v6, v7, v8}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 294
+    .line 295
     iget-object v6, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v6}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1929,14 +1923,14 @@
 
     invoke-static {v6, v7, v8}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 295
+    .line 296
     new-instance v3, Landroid/content/Intent;
 
     const-string v6, "android.intent.action.AIRPLANE_MODE"
 
     invoke-direct {v3, v6}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 296
+    .line 297
     .restart local v3       #intent:Landroid/content/Intent;
     const-string v6, "state"
 
@@ -1944,39 +1938,39 @@
 
     invoke-virtual {v3, v6, v7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 297
+    .line 298
     iget-object v6, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v6, v3}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
     goto/16 :goto_0
 
-    .line 302
+    .line 303
     .end local v3           #intent:Landroid/content/Intent;
     :cond_5
     packed-switch v0, :pswitch_data_0
 
-    .line 412
+    .line 413
     const-string v6, "BaiduSubManager"
 
     const-string v7, "unknown dual card mode"
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 414
+    .line 415
     if-eqz p3, :cond_0
 
-    .line 415
+    .line 416
     const/4 v5, 0x0
 
-    .line 416
+    .line 417
     new-instance v2, Ljava/lang/RuntimeException;
 
     const-string v6, "unknown dual card mode"
 
     invoke-direct {v2, v6}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    .line 417
+    .line 418
     .restart local v2       #exception:Ljava/lang/RuntimeException;
     invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -1984,17 +1978,17 @@
 
     invoke-static {p3, v6, v2}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 418
+    .line 419
     invoke-virtual {p3}, Landroid/os/Message;->sendToTarget()V
 
-    .line 419
+    .line 420
     const/4 v6, 0x0
 
     iput-object v6, p0, Landroid/telephony/BaiduSubManager;->mSetSlotActiveMsg:Landroid/os/Message;
 
     goto/16 :goto_0
 
-    .line 306
+    .line 307
     .end local v2           #exception:Ljava/lang/RuntimeException;
     :pswitch_0
     :try_start_1
@@ -2015,11 +2009,11 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_2
     .catch Ljava/lang/NullPointerException; {:try_start_1 .. :try_end_1} :catch_3
 
-    .line 312
+    .line 313
     :goto_3
     if-nez p1, :cond_6
 
-    .line 313
+    .line 314
     iget-object v6, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v6}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -2032,14 +2026,14 @@
 
     invoke-static {v6, v7, v8}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 314
+    .line 315
     new-instance v3, Landroid/content/Intent;
 
     const-string v6, "android.intent.action.DUAL_SIM_MODE"
 
     invoke-direct {v3, v6}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 315
+    .line 316
     .restart local v3       #intent:Landroid/content/Intent;
     const-string v6, "mode"
 
@@ -2047,19 +2041,19 @@
 
     invoke-virtual {v3, v6, v7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 316
+    .line 317
     iget-object v6, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v6, v3}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
     goto/16 :goto_0
 
-    .line 307
+    .line 308
     .end local v3           #intent:Landroid/content/Intent;
     :catch_2
     move-exception v1
 
-    .line 308
+    .line 309
     .local v1, ex:Landroid/os/RemoteException;
     const-string v6, "BaiduSubManager"
 
@@ -2069,12 +2063,12 @@
 
     goto :goto_3
 
-    .line 309
+    .line 310
     .end local v1           #ex:Landroid/os/RemoteException;
     :catch_3
     move-exception v1
 
-    .line 310
+    .line 311
     .local v1, ex:Ljava/lang/NullPointerException;
     const-string v6, "BaiduSubManager"
 
@@ -2084,7 +2078,7 @@
 
     goto :goto_3
 
-    .line 318
+    .line 319
     .end local v1           #ex:Ljava/lang/NullPointerException;
     :cond_6
     iget-object v6, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
@@ -2099,14 +2093,14 @@
 
     invoke-static {v6, v7, v8}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 319
+    .line 320
     new-instance v3, Landroid/content/Intent;
 
     const-string v6, "android.intent.action.DUAL_SIM_MODE"
 
     invoke-direct {v3, v6}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 320
+    .line 321
     .restart local v3       #intent:Landroid/content/Intent;
     const-string v6, "mode"
 
@@ -2114,21 +2108,21 @@
 
     invoke-virtual {v3, v6, v7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 321
+    .line 322
     iget-object v6, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v6, v3}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
     goto/16 :goto_0
 
-    .line 327
+    .line 328
     .end local v3           #intent:Landroid/content/Intent;
     :pswitch_1
     const/4 v6, 0x1
 
     if-ne p1, v6, :cond_8
 
-    .line 329
+    .line 330
     :try_start_2
     invoke-direct {p0}, Landroid/telephony/BaiduSubManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
@@ -2147,11 +2141,11 @@
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_4
     .catch Ljava/lang/NullPointerException; {:try_start_2 .. :try_end_2} :catch_5
 
-    .line 335
+    .line 336
     :goto_4
     if-eqz v4, :cond_7
 
-    .line 336
+    .line 337
     iget-object v6, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v6}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -2164,14 +2158,14 @@
 
     invoke-static {v6, v7, v8}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 337
+    .line 338
     new-instance v3, Landroid/content/Intent;
 
     const-string v6, "android.intent.action.DUAL_SIM_MODE"
 
     invoke-direct {v3, v6}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 338
+    .line 339
     .restart local v3       #intent:Landroid/content/Intent;
     const-string v6, "mode"
 
@@ -2179,19 +2173,19 @@
 
     invoke-virtual {v3, v6, v7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 339
+    .line 340
     iget-object v6, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v6, v3}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
     goto/16 :goto_0
 
-    .line 330
+    .line 331
     .end local v3           #intent:Landroid/content/Intent;
     :catch_4
     move-exception v1
 
-    .line 331
+    .line 332
     .local v1, ex:Landroid/os/RemoteException;
     const-string v6, "BaiduSubManager"
 
@@ -2201,12 +2195,12 @@
 
     goto :goto_4
 
-    .line 332
+    .line 333
     .end local v1           #ex:Landroid/os/RemoteException;
     :catch_5
     move-exception v1
 
-    .line 333
+    .line 334
     .local v1, ex:Ljava/lang/NullPointerException;
     const-string v6, "BaiduSubManager"
 
@@ -2216,7 +2210,7 @@
 
     goto :goto_4
 
-    .line 341
+    .line 342
     .end local v1           #ex:Ljava/lang/NullPointerException;
     :cond_7
     iget-object v6, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
@@ -2231,14 +2225,14 @@
 
     invoke-static {v6, v7, v8}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 342
+    .line 343
     new-instance v3, Landroid/content/Intent;
 
     const-string v6, "android.intent.action.DUAL_SIM_MODE"
 
     invoke-direct {v3, v6}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 343
+    .line 344
     .restart local v3       #intent:Landroid/content/Intent;
     const-string v6, "mode"
 
@@ -2246,14 +2240,14 @@
 
     invoke-virtual {v3, v6, v7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 344
+    .line 345
     iget-object v6, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v6, v3}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
     goto/16 :goto_0
 
-    .line 348
+    .line 349
     .end local v3           #intent:Landroid/content/Intent;
     :cond_8
     const-string v6, "BaiduSubManager"
@@ -2262,16 +2256,16 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 350
+    .line 351
     if-eqz p3, :cond_0
 
-    .line 351
+    .line 352
     const/4 v5, 0x1
 
-    .line 352
+    .line 353
     const/4 v2, 0x0
 
-    .line 353
+    .line 354
     .restart local v2       #exception:Ljava/lang/RuntimeException;
     invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -2279,22 +2273,22 @@
 
     invoke-static {p3, v6, v2}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 354
+    .line 355
     invoke-virtual {p3}, Landroid/os/Message;->sendToTarget()V
 
-    .line 355
+    .line 356
     const/4 v6, 0x0
 
     iput-object v6, p0, Landroid/telephony/BaiduSubManager;->mSetSlotActiveMsg:Landroid/os/Message;
 
     goto/16 :goto_0
 
-    .line 362
+    .line 363
     .end local v2           #exception:Ljava/lang/RuntimeException;
     :pswitch_2
     if-nez p1, :cond_a
 
-    .line 364
+    .line 365
     :try_start_3
     invoke-direct {p0}, Landroid/telephony/BaiduSubManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
@@ -2313,11 +2307,11 @@
     .catch Landroid/os/RemoteException; {:try_start_3 .. :try_end_3} :catch_6
     .catch Ljava/lang/NullPointerException; {:try_start_3 .. :try_end_3} :catch_7
 
-    .line 370
+    .line 371
     :goto_5
     if-eqz v4, :cond_9
 
-    .line 371
+    .line 372
     iget-object v6, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v6}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -2330,14 +2324,14 @@
 
     invoke-static {v6, v7, v8}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 372
+    .line 373
     new-instance v3, Landroid/content/Intent;
 
     const-string v6, "android.intent.action.DUAL_SIM_MODE"
 
     invoke-direct {v3, v6}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 373
+    .line 374
     .restart local v3       #intent:Landroid/content/Intent;
     const-string v6, "mode"
 
@@ -2345,19 +2339,19 @@
 
     invoke-virtual {v3, v6, v7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 374
+    .line 375
     iget-object v6, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v6, v3}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
     goto/16 :goto_0
 
-    .line 365
+    .line 366
     .end local v3           #intent:Landroid/content/Intent;
     :catch_6
     move-exception v1
 
-    .line 366
+    .line 367
     .local v1, ex:Landroid/os/RemoteException;
     const-string v6, "BaiduSubManager"
 
@@ -2367,12 +2361,12 @@
 
     goto :goto_5
 
-    .line 367
+    .line 368
     .end local v1           #ex:Landroid/os/RemoteException;
     :catch_7
     move-exception v1
 
-    .line 368
+    .line 369
     .local v1, ex:Ljava/lang/NullPointerException;
     const-string v6, "BaiduSubManager"
 
@@ -2382,7 +2376,7 @@
 
     goto :goto_5
 
-    .line 376
+    .line 377
     .end local v1           #ex:Ljava/lang/NullPointerException;
     :cond_9
     iget-object v6, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
@@ -2397,14 +2391,14 @@
 
     invoke-static {v6, v7, v8}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 377
+    .line 378
     new-instance v3, Landroid/content/Intent;
 
     const-string v6, "android.intent.action.DUAL_SIM_MODE"
 
     invoke-direct {v3, v6}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 378
+    .line 379
     .restart local v3       #intent:Landroid/content/Intent;
     const-string v6, "mode"
 
@@ -2412,14 +2406,14 @@
 
     invoke-virtual {v3, v6, v7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 379
+    .line 380
     iget-object v6, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v6, v3}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
     goto/16 :goto_0
 
-    .line 383
+    .line 384
     .end local v3           #intent:Landroid/content/Intent;
     :cond_a
     const-string v6, "BaiduSubManager"
@@ -2428,16 +2422,16 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 385
+    .line 386
     if-eqz p3, :cond_0
 
-    .line 386
+    .line 387
     const/4 v5, 0x1
 
-    .line 387
+    .line 388
     const/4 v2, 0x0
 
-    .line 388
+    .line 389
     .restart local v2       #exception:Ljava/lang/RuntimeException;
     invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -2445,17 +2439,17 @@
 
     invoke-static {p3, v6, v2}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 389
+    .line 390
     invoke-virtual {p3}, Landroid/os/Message;->sendToTarget()V
 
-    .line 390
+    .line 391
     const/4 v6, 0x0
 
     iput-object v6, p0, Landroid/telephony/BaiduSubManager;->mSetSlotActiveMsg:Landroid/os/Message;
 
     goto/16 :goto_0
 
-    .line 398
+    .line 399
     .end local v2           #exception:Ljava/lang/RuntimeException;
     :pswitch_3
     const-string v6, "BaiduSubManager"
@@ -2464,16 +2458,16 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 400
+    .line 401
     if-eqz p3, :cond_0
 
-    .line 401
+    .line 402
     const/4 v5, 0x1
 
-    .line 402
+    .line 403
     const/4 v2, 0x0
 
-    .line 403
+    .line 404
     .restart local v2       #exception:Ljava/lang/RuntimeException;
     invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -2481,17 +2475,17 @@
 
     invoke-static {p3, v6, v2}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 404
+    .line 405
     invoke-virtual {p3}, Landroid/os/Message;->sendToTarget()V
 
-    .line 405
+    .line 406
     const/4 v6, 0x0
 
     iput-object v6, p0, Landroid/telephony/BaiduSubManager;->mSetSlotActiveMsg:Landroid/os/Message;
 
     goto/16 :goto_0
 
-    .line 425
+    .line 426
     .end local v2           #exception:Ljava/lang/RuntimeException;
     :cond_b
     const/4 v6, 0x1
@@ -2512,23 +2506,23 @@
 
     if-ne v6, v7, :cond_c
 
-    .line 427
+    .line 428
     const-string v6, "BaiduSubManager"
 
     const-string v7, "airplane mode on, no need deactive any"
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 429
+    .line 430
     if-eqz p3, :cond_0
 
-    .line 430
+    .line 431
     const/4 v5, 0x1
 
-    .line 431
+    .line 432
     const/4 v2, 0x0
 
-    .line 432
+    .line 433
     .restart local v2       #exception:Ljava/lang/RuntimeException;
     invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -2536,42 +2530,42 @@
 
     invoke-static {p3, v6, v2}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 433
+    .line 434
     invoke-virtual {p3}, Landroid/os/Message;->sendToTarget()V
 
-    .line 434
+    .line 435
     const/4 v6, 0x0
 
     iput-object v6, p0, Landroid/telephony/BaiduSubManager;->mSetSlotActiveMsg:Landroid/os/Message;
 
     goto/16 :goto_0
 
-    .line 438
+    .line 439
     .end local v2           #exception:Ljava/lang/RuntimeException;
     :cond_c
     packed-switch v0, :pswitch_data_1
 
-    .line 548
+    .line 549
     const-string v6, "BaiduSubManager"
 
     const-string v7, "unknown dual card mode"
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 550
+    .line 551
     if-eqz p3, :cond_0
 
-    .line 551
+    .line 552
     const/4 v5, 0x0
 
-    .line 552
+    .line 553
     new-instance v2, Ljava/lang/RuntimeException;
 
     const-string v6, "unknown dual card mode"
 
     invoke-direct {v2, v6}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    .line 553
+    .line 554
     .restart local v2       #exception:Ljava/lang/RuntimeException;
     invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -2579,17 +2573,17 @@
 
     invoke-static {p3, v6, v2}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 554
+    .line 555
     invoke-virtual {p3}, Landroid/os/Message;->sendToTarget()V
 
-    .line 555
+    .line 556
     const/4 v6, 0x0
 
     iput-object v6, p0, Landroid/telephony/BaiduSubManager;->mSetSlotActiveMsg:Landroid/os/Message;
 
     goto/16 :goto_0
 
-    .line 442
+    .line 443
     .end local v2           #exception:Ljava/lang/RuntimeException;
     :pswitch_4
     const-string v6, "BaiduSubManager"
@@ -2598,16 +2592,16 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 444
+    .line 445
     if-eqz p3, :cond_0
 
-    .line 445
+    .line 446
     const/4 v5, 0x1
 
-    .line 446
+    .line 447
     const/4 v2, 0x0
 
-    .line 447
+    .line 448
     .restart local v2       #exception:Ljava/lang/RuntimeException;
     invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -2615,22 +2609,22 @@
 
     invoke-static {p3, v6, v2}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 448
+    .line 449
     invoke-virtual {p3}, Landroid/os/Message;->sendToTarget()V
 
-    .line 449
+    .line 450
     const/4 v6, 0x0
 
     iput-object v6, p0, Landroid/telephony/BaiduSubManager;->mSetSlotActiveMsg:Landroid/os/Message;
 
     goto/16 :goto_0
 
-    .line 455
+    .line 456
     .end local v2           #exception:Ljava/lang/RuntimeException;
     :pswitch_5
     if-nez p1, :cond_d
 
-    .line 457
+    .line 458
     :try_start_4
     invoke-direct {p0}, Landroid/telephony/BaiduSubManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
@@ -2649,7 +2643,7 @@
     .catch Landroid/os/RemoteException; {:try_start_4 .. :try_end_4} :catch_8
     .catch Ljava/lang/NullPointerException; {:try_start_4 .. :try_end_4} :catch_9
 
-    .line 463
+    .line 464
     :goto_6
     iget-object v6, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
 
@@ -2663,14 +2657,14 @@
 
     invoke-static {v6, v7, v8}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 464
+    .line 465
     new-instance v3, Landroid/content/Intent;
 
     const-string v6, "android.intent.action.DUAL_SIM_MODE"
 
     invoke-direct {v3, v6}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 465
+    .line 466
     .restart local v3       #intent:Landroid/content/Intent;
     const-string v6, "mode"
 
@@ -2678,19 +2672,19 @@
 
     invoke-virtual {v3, v6, v7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 466
+    .line 467
     iget-object v6, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v6, v3}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
     goto/16 :goto_0
 
-    .line 458
+    .line 459
     .end local v3           #intent:Landroid/content/Intent;
     :catch_8
     move-exception v1
 
-    .line 459
+    .line 460
     .local v1, ex:Landroid/os/RemoteException;
     const-string v6, "BaiduSubManager"
 
@@ -2700,12 +2694,12 @@
 
     goto :goto_6
 
-    .line 460
+    .line 461
     .end local v1           #ex:Landroid/os/RemoteException;
     :catch_9
     move-exception v1
 
-    .line 461
+    .line 462
     .local v1, ex:Ljava/lang/NullPointerException;
     const-string v6, "BaiduSubManager"
 
@@ -2715,7 +2709,7 @@
 
     goto :goto_6
 
-    .line 469
+    .line 470
     .end local v1           #ex:Ljava/lang/NullPointerException;
     :cond_d
     const-string v6, "BaiduSubManager"
@@ -2724,16 +2718,16 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 471
+    .line 472
     if-eqz p3, :cond_0
 
-    .line 472
+    .line 473
     const/4 v5, 0x1
 
-    .line 473
+    .line 474
     const/4 v2, 0x0
 
-    .line 474
+    .line 475
     .restart local v2       #exception:Ljava/lang/RuntimeException;
     invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -2741,24 +2735,24 @@
 
     invoke-static {p3, v6, v2}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 475
+    .line 476
     invoke-virtual {p3}, Landroid/os/Message;->sendToTarget()V
 
-    .line 476
+    .line 477
     const/4 v6, 0x0
 
     iput-object v6, p0, Landroid/telephony/BaiduSubManager;->mSetSlotActiveMsg:Landroid/os/Message;
 
     goto/16 :goto_0
 
-    .line 483
+    .line 484
     .end local v2           #exception:Ljava/lang/RuntimeException;
     :pswitch_6
     const/4 v6, 0x1
 
     if-ne p1, v6, :cond_e
 
-    .line 485
+    .line 486
     :try_start_5
     invoke-direct {p0}, Landroid/telephony/BaiduSubManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
@@ -2777,7 +2771,7 @@
     .catch Landroid/os/RemoteException; {:try_start_5 .. :try_end_5} :catch_a
     .catch Ljava/lang/NullPointerException; {:try_start_5 .. :try_end_5} :catch_b
 
-    .line 491
+    .line 492
     :goto_7
     iget-object v6, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
 
@@ -2791,14 +2785,14 @@
 
     invoke-static {v6, v7, v8}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 492
+    .line 493
     new-instance v3, Landroid/content/Intent;
 
     const-string v6, "android.intent.action.DUAL_SIM_MODE"
 
     invoke-direct {v3, v6}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 493
+    .line 494
     .restart local v3       #intent:Landroid/content/Intent;
     const-string v6, "mode"
 
@@ -2806,19 +2800,19 @@
 
     invoke-virtual {v3, v6, v7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 494
+    .line 495
     iget-object v6, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v6, v3}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
     goto/16 :goto_0
 
-    .line 486
+    .line 487
     .end local v3           #intent:Landroid/content/Intent;
     :catch_a
     move-exception v1
 
-    .line 487
+    .line 488
     .local v1, ex:Landroid/os/RemoteException;
     const-string v6, "BaiduSubManager"
 
@@ -2828,12 +2822,12 @@
 
     goto :goto_7
 
-    .line 488
+    .line 489
     .end local v1           #ex:Landroid/os/RemoteException;
     :catch_b
     move-exception v1
 
-    .line 489
+    .line 490
     .local v1, ex:Ljava/lang/NullPointerException;
     const-string v6, "BaiduSubManager"
 
@@ -2843,7 +2837,7 @@
 
     goto :goto_7
 
-    .line 497
+    .line 498
     .end local v1           #ex:Ljava/lang/NullPointerException;
     :cond_e
     const-string v6, "BaiduSubManager"
@@ -2852,16 +2846,16 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 499
+    .line 500
     if-eqz p3, :cond_0
 
-    .line 500
+    .line 501
     const/4 v5, 0x1
 
-    .line 501
+    .line 502
     const/4 v2, 0x0
 
-    .line 502
+    .line 503
     .restart local v2       #exception:Ljava/lang/RuntimeException;
     invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -2869,17 +2863,17 @@
 
     invoke-static {p3, v6, v2}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 503
+    .line 504
     invoke-virtual {p3}, Landroid/os/Message;->sendToTarget()V
 
-    .line 504
+    .line 505
     const/4 v6, 0x0
 
     iput-object v6, p0, Landroid/telephony/BaiduSubManager;->mSetSlotActiveMsg:Landroid/os/Message;
 
     goto/16 :goto_0
 
-    .line 512
+    .line 513
     .end local v2           #exception:Ljava/lang/RuntimeException;
     :pswitch_7
     :try_start_6
@@ -2900,14 +2894,14 @@
     .catch Landroid/os/RemoteException; {:try_start_6 .. :try_end_6} :catch_c
     .catch Ljava/lang/NullPointerException; {:try_start_6 .. :try_end_6} :catch_d
 
-    .line 518
+    .line 519
     :goto_8
     if-nez p1, :cond_10
 
-    .line 519
+    .line 520
     if-eqz v4, :cond_f
 
-    .line 520
+    .line 521
     iget-object v6, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v6}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -2920,14 +2914,14 @@
 
     invoke-static {v6, v7, v8}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 521
+    .line 522
     new-instance v3, Landroid/content/Intent;
 
     const-string v6, "android.intent.action.DUAL_SIM_MODE"
 
     invoke-direct {v3, v6}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 522
+    .line 523
     .restart local v3       #intent:Landroid/content/Intent;
     const-string v6, "mode"
 
@@ -2935,19 +2929,19 @@
 
     invoke-virtual {v3, v6, v7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 523
+    .line 524
     iget-object v6, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v6, v3}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
     goto/16 :goto_0
 
-    .line 513
+    .line 514
     .end local v3           #intent:Landroid/content/Intent;
     :catch_c
     move-exception v1
 
-    .line 514
+    .line 515
     .local v1, ex:Landroid/os/RemoteException;
     const-string v6, "BaiduSubManager"
 
@@ -2957,12 +2951,12 @@
 
     goto :goto_8
 
-    .line 515
+    .line 516
     .end local v1           #ex:Landroid/os/RemoteException;
     :catch_d
     move-exception v1
 
-    .line 516
+    .line 517
     .local v1, ex:Ljava/lang/NullPointerException;
     const-string v6, "BaiduSubManager"
 
@@ -2972,7 +2966,7 @@
 
     goto :goto_8
 
-    .line 525
+    .line 526
     .end local v1           #ex:Ljava/lang/NullPointerException;
     :cond_f
     iget-object v6, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
@@ -2987,14 +2981,14 @@
 
     invoke-static {v6, v7, v8}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 526
+    .line 527
     new-instance v3, Landroid/content/Intent;
 
     const-string v6, "android.intent.action.DUAL_SIM_MODE"
 
     invoke-direct {v3, v6}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 527
+    .line 528
     .restart local v3       #intent:Landroid/content/Intent;
     const-string v6, "mode"
 
@@ -3002,19 +2996,19 @@
 
     invoke-virtual {v3, v6, v7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 528
+    .line 529
     iget-object v6, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v6, v3}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
     goto/16 :goto_0
 
-    .line 531
+    .line 532
     .end local v3           #intent:Landroid/content/Intent;
     :cond_10
     if-eqz v4, :cond_11
 
-    .line 532
+    .line 533
     iget-object v6, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v6}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -3027,14 +3021,14 @@
 
     invoke-static {v6, v7, v8}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 533
+    .line 534
     new-instance v3, Landroid/content/Intent;
 
     const-string v6, "android.intent.action.DUAL_SIM_MODE"
 
     invoke-direct {v3, v6}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 534
+    .line 535
     .restart local v3       #intent:Landroid/content/Intent;
     const-string v6, "mode"
 
@@ -3042,14 +3036,14 @@
 
     invoke-virtual {v3, v6, v7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 535
+    .line 536
     iget-object v6, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v6, v3}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
     goto/16 :goto_0
 
-    .line 537
+    .line 538
     .end local v3           #intent:Landroid/content/Intent;
     :cond_11
     iget-object v6, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
@@ -3064,14 +3058,14 @@
 
     invoke-static {v6, v7, v8}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 538
+    .line 539
     new-instance v3, Landroid/content/Intent;
 
     const-string v6, "android.intent.action.DUAL_SIM_MODE"
 
     invoke-direct {v3, v6}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 539
+    .line 540
     .restart local v3       #intent:Landroid/content/Intent;
     const-string v6, "mode"
 
@@ -3079,14 +3073,14 @@
 
     invoke-virtual {v3, v6, v7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 540
+    .line 541
     iget-object v6, p0, Landroid/telephony/BaiduSubManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v6, v3}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
     goto/16 :goto_0
 
-    .line 302
+    .line 303
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -3095,7 +3089,7 @@
         :pswitch_3
     .end packed-switch
 
-    .line 438
+    .line 439
     :pswitch_data_1
     .packed-switch 0x0
         :pswitch_4
@@ -3112,10 +3106,10 @@
     .parameter "onCompleteMsg"
 
     .prologue
-    .line 603
+    .line 604
     const/4 v1, 0x0
 
-    .line 606
+    .line 607
     .local v1, result:Z
     if-eqz p1, :cond_1
 
@@ -3123,27 +3117,27 @@
 
     if-eq p1, v2, :cond_1
 
-    .line 607
+    .line 608
     const-string v2, "BaiduSubManager"
 
     const-string v3, "slot error"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 608
+    .line 609
     if-eqz p3, :cond_0
 
-    .line 609
+    .line 610
     const/4 v1, 0x0
 
-    .line 610
+    .line 611
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v2, "slot error"
 
     invoke-direct {v0, v2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    .line 611
+    .line 612
     .local v0, exception:Ljava/lang/RuntimeException;
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -3151,16 +3145,16 @@
 
     invoke-static {p3, v2, v0}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 612
+    .line 613
     invoke-virtual {p3}, Landroid/os/Message;->sendToTarget()V
 
-    .line 634
+    .line 635
     .end local v0           #exception:Ljava/lang/RuntimeException;
     :cond_0
     :goto_0
     return-void
 
-    .line 617
+    .line 618
     :cond_1
     invoke-virtual {p0, p1}, Landroid/telephony/BaiduSubManager;->isCardInsert(I)Z
 
@@ -3168,27 +3162,27 @@
 
     if-nez v2, :cond_2
 
-    .line 618
+    .line 619
     const-string v2, "BaiduSubManager"
 
     const-string v3, "no card in slot"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 619
+    .line 620
     if-eqz p3, :cond_0
 
-    .line 620
+    .line 621
     const/4 v1, 0x0
 
-    .line 621
+    .line 622
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v2, "no card in slot"
 
     invoke-direct {v0, v2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    .line 622
+    .line 623
     .restart local v0       #exception:Ljava/lang/RuntimeException;
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -3196,23 +3190,23 @@
 
     invoke-static {p3, v2, v0}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 623
+    .line 624
     invoke-virtual {p3}, Landroid/os/Message;->sendToTarget()V
 
     goto :goto_0
 
-    .line 628
+    .line 629
     .end local v0           #exception:Ljava/lang/RuntimeException;
     :cond_2
     if-eqz p3, :cond_0
 
-    .line 629
+    .line 630
     const/4 v1, 0x1
 
-    .line 630
+    .line 631
     const/4 v0, 0x0
 
-    .line 631
+    .line 632
     .restart local v0       #exception:Ljava/lang/RuntimeException;
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -3220,7 +3214,7 @@
 
     invoke-static {p3, v2, v0}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 632
+    .line 633
     invoke-virtual {p3}, Landroid/os/Message;->sendToTarget()V
 
     goto :goto_0

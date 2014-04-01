@@ -15,19 +15,37 @@
 
 
 # static fields
-.field public static final dropdownitem_icon_width:I = 0x305000c
+.field public static final app_title_size:I = 0x4050006
 
-.field public static final dropdownitem_text_padding_left:I = 0x305000a
+.field public static final dialog_height:I = 0x4050004
 
-.field public static final preference_fragment_padding_side:I = 0x3050001
+.field public static final dropdownitem_icon_width:I = 0x405000c
 
-.field public static final preference_item_padding_inner:I = 0x3050003
+.field public static final dropdownitem_text_padding_left:I = 0x405000a
 
-.field public static final preference_item_padding_side:I = 0x3050002
+.field public static final dropdownitem_text_padding_right:I = 0x405000b
 
-.field public static final search_view_preferred_width:I = 0x305000e
+.field public static final item_margin:I = 0x4050005
 
-.field public static final yi_list_item_header_height:I = 0x3050000
+.field public static final preference_fragment_padding_side:I = 0x4050001
+
+.field public static final preference_icon_minWidth:I = 0x4050008
+
+.field public static final preference_item_padding_inner:I = 0x4050003
+
+.field public static final preference_item_padding_side:I = 0x4050002
+
+.field public static final preference_widget_width:I = 0x4050007
+
+.field public static final search_view_back_icon_width:I = 0x405000f
+
+.field public static final search_view_preferred_width:I = 0x405000e
+
+.field public static final search_view_text_min_width:I = 0x405000d
+
+.field public static final yi_list_item_header_height:I = 0x4050000
+
+.field public static final yi_preference_item_padding_side:I = 0x4050009
 
 
 # direct methods
@@ -35,7 +53,7 @@
     .locals 0
 
     .prologue
-    .line 626
+    .line 727
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

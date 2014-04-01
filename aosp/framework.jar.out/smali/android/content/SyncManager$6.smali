@@ -1,16 +1,29 @@
 .class Landroid/content/SyncManager$6;
-.super Landroid/content/BroadcastReceiver;
+.super Ljava/lang/Object;
 .source "SyncManager.java"
+
+# interfaces
+.implements Landroid/content/pm/RegisteredServicesCacheListener;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/content/SyncManager;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Landroid/content/SyncManager;-><init>(Landroid/content/Context;Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
     accessFlags = 0x0
     name = null
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Landroid/content/pm/RegisteredServicesCacheListener",
+        "<",
+        "Landroid/content/SyncAdapterType;",
+        ">;"
+    }
 .end annotation
 
 
@@ -24,38 +37,56 @@
     .parameter
 
     .prologue
-    .line 303
+    .line 309
     iput-object p1, p0, Landroid/content/SyncManager$6;->this$0:Landroid/content/SyncManager;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 2
-    .parameter "context"
-    .parameter "intent"
+.method public onServiceChanged(Landroid/content/SyncAdapterType;Z)V
+    .locals 7
+    .parameter "type"
+    .parameter "removed"
 
     .prologue
-    .line 305
-    const-string v0, "SyncManager"
+    const/4 v1, 0x0
 
-    const-string v1, "Writing sync state before shutdown..."
+    .line 311
+    if-nez p2, :cond_0
 
-    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 306
+    .line 312
     iget-object v0, p0, Landroid/content/SyncManager$6;->this$0:Landroid/content/SyncManager;
 
-    invoke-virtual {v0}, Landroid/content/SyncManager;->getSyncStorageEngine()Landroid/content/SyncStorageEngine;
+    iget-object v2, p1, Landroid/content/SyncAdapterType;->authority:Ljava/lang/String;
 
-    move-result-object v0
+    const-wide/16 v4, 0x0
 
-    invoke-virtual {v0}, Landroid/content/SyncStorageEngine;->writeAllState()V
+    const/4 v6, 0x0
 
-    .line 307
+    move-object v3, v1
+
+    invoke-virtual/range {v0 .. v6}, Landroid/content/SyncManager;->scheduleSync(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;JZ)V
+
+    .line 315
+    :cond_0
+    return-void
+.end method
+
+.method public bridge synthetic onServiceChanged(Ljava/lang/Object;Z)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 309
+    check-cast p1, Landroid/content/SyncAdapterType;
+
+    .end local p1
+    invoke-virtual {p0, p1, p2}, Landroid/content/SyncManager$6;->onServiceChanged(Landroid/content/SyncAdapterType;Z)V
+
     return-void
 .end method

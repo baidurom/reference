@@ -1,11 +1,11 @@
 .class Lcom/android/server/accessibility/AccessibilityManagerService$5;
-.super Landroid/content/BroadcastReceiver;
+.super Landroid/database/ContentObserver;
 .source "AccessibilityManagerService.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/accessibility/AccessibilityManagerService;->registerIPOReceiver(Landroid/content/Context;)V
+    value = Lcom/android/server/accessibility/AccessibilityManagerService;->registerSettingsContentObservers()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,79 +19,57 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/android/server/accessibility/AccessibilityManagerService;)V
+.method constructor <init>(Lcom/android/server/accessibility/AccessibilityManagerService;Landroid/os/Handler;)V
     .locals 0
     .parameter
+    .parameter "x0"
 
     .prologue
-    .line 2586
+    .line 336
     iput-object p1, p0, Lcom/android/server/accessibility/AccessibilityManagerService$5;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 3
-    .parameter "context"
-    .parameter "intent"
+.method public onChange(Z)V
+    .locals 2
+    .parameter "selfChange"
 
     .prologue
-    .line 2589
-    iget-object v1, p0, Lcom/android/server/accessibility/AccessibilityManagerService$5;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
+    .line 339
+    invoke-super {p0, p1}, Landroid/database/ContentObserver;->onChange(Z)V
 
-    #calls: Lcom/android/server/accessibility/AccessibilityManagerService;->getCurrentUserStateLocked()Lcom/android/server/accessibility/AccessibilityManagerService$UserState;
-    invoke-static {v1}, Lcom/android/server/accessibility/AccessibilityManagerService;->access$400(Lcom/android/server/accessibility/AccessibilityManagerService;)Lcom/android/server/accessibility/AccessibilityManagerService$UserState;
+    .line 341
+    iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityManagerService$5;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
 
-    move-result-object v0
+    iget-object v1, v0, Lcom/android/server/accessibility/AccessibilityManagerService;->mLock:Ljava/lang/Object;
 
-    .line 2590
-    .local v0, userState:Lcom/android/server/accessibility/AccessibilityManagerService$UserState;
-    const-string v1, "android.intent.action.ACTION_BOOT_IPO"
+    monitor-enter v1
 
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    .line 342
+    :try_start_0
+    iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityManagerService$5;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
 
-    move-result-object v2
+    #calls: Lcom/android/server/accessibility/AccessibilityManagerService;->manageServicesLocked()V
+    invoke-static {v0}, Lcom/android/server/accessibility/AccessibilityManagerService;->access$200(Lcom/android/server/accessibility/AccessibilityManagerService;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 343
+    monitor-exit v1
 
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    .line 2592
-    iget-object v1, p0, Lcom/android/server/accessibility/AccessibilityManagerService$5;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
-
-    #calls: Lcom/android/server/accessibility/AccessibilityManagerService;->recreateInternalStateLocked(Lcom/android/server/accessibility/AccessibilityManagerService$UserState;)V
-    invoke-static {v1, v0}, Lcom/android/server/accessibility/AccessibilityManagerService;->access$2000(Lcom/android/server/accessibility/AccessibilityManagerService;Lcom/android/server/accessibility/AccessibilityManagerService$UserState;)V
-
-    .line 2596
-    :cond_0
-    :goto_0
+    .line 344
     return-void
 
-    .line 2593
-    :cond_1
-    const-string v1, "android.intent.action.ACTION_SHUTDOWN_IPO"
+    .line 343
+    :catchall_0
+    move-exception v0
 
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 2594
-    iget-object v1, p0, Lcom/android/server/accessibility/AccessibilityManagerService$5;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
-
-    #calls: Lcom/android/server/accessibility/AccessibilityManagerService;->manageAccessibilityServices()V
-    invoke-static {v1}, Lcom/android/server/accessibility/AccessibilityManagerService;->access$4400(Lcom/android/server/accessibility/AccessibilityManagerService;)V
-
-    goto :goto_0
+    throw v0
 .end method

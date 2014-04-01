@@ -44,45 +44,45 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 333
+    .line 331
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 334
+    .line 332
     iput-object p1, p0, Landroid/renderscript/ProgramStore$Builder;->mRS:Landroid/renderscript/RenderScript;
 
-    .line 335
+    .line 333
     sget-object v0, Landroid/renderscript/ProgramStore$DepthFunc;->ALWAYS:Landroid/renderscript/ProgramStore$DepthFunc;
 
     iput-object v0, p0, Landroid/renderscript/ProgramStore$Builder;->mDepthFunc:Landroid/renderscript/ProgramStore$DepthFunc;
 
-    .line 336
+    .line 334
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/renderscript/ProgramStore$Builder;->mDepthMask:Z
 
-    .line 337
+    .line 335
     iput-boolean v1, p0, Landroid/renderscript/ProgramStore$Builder;->mColorMaskR:Z
 
-    .line 338
+    .line 336
     iput-boolean v1, p0, Landroid/renderscript/ProgramStore$Builder;->mColorMaskG:Z
 
-    .line 339
+    .line 337
     iput-boolean v1, p0, Landroid/renderscript/ProgramStore$Builder;->mColorMaskB:Z
 
-    .line 340
+    .line 338
     iput-boolean v1, p0, Landroid/renderscript/ProgramStore$Builder;->mColorMaskA:Z
 
-    .line 341
+    .line 339
     sget-object v0, Landroid/renderscript/ProgramStore$BlendSrcFunc;->ONE:Landroid/renderscript/ProgramStore$BlendSrcFunc;
 
     iput-object v0, p0, Landroid/renderscript/ProgramStore$Builder;->mBlendSrc:Landroid/renderscript/ProgramStore$BlendSrcFunc;
 
-    .line 342
+    .line 340
     sget-object v0, Landroid/renderscript/ProgramStore$BlendDstFunc;->ZERO:Landroid/renderscript/ProgramStore$BlendDstFunc;
 
     iput-object v0, p0, Landroid/renderscript/ProgramStore$Builder;->mBlendDst:Landroid/renderscript/ProgramStore$BlendDstFunc;
 
-    .line 343
+    .line 341
     return-void
 .end method
 
@@ -92,12 +92,12 @@
     .locals 12
 
     .prologue
-    .line 422
+    .line 420
     iget-object v0, p0, Landroid/renderscript/ProgramStore$Builder;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v0}, Landroid/renderscript/RenderScript;->validate()V
 
-    .line 423
+    .line 421
     iget-object v0, p0, Landroid/renderscript/ProgramStore$Builder;->mRS:Landroid/renderscript/RenderScript;
 
     iget-boolean v1, p0, Landroid/renderscript/ProgramStore$Builder;->mColorMaskR:Z
@@ -128,7 +128,7 @@
 
     move-result v10
 
-    .line 426
+    .line 424
     .local v10, id:I
     new-instance v11, Landroid/renderscript/ProgramStore;
 
@@ -136,53 +136,53 @@
 
     invoke-direct {v11, v10, v0}, Landroid/renderscript/ProgramStore;-><init>(ILandroid/renderscript/RenderScript;)V
 
-    .line 427
+    .line 425
     .local v11, programStore:Landroid/renderscript/ProgramStore;
     iget-object v0, p0, Landroid/renderscript/ProgramStore$Builder;->mDepthFunc:Landroid/renderscript/ProgramStore$DepthFunc;
 
     iput-object v0, v11, Landroid/renderscript/ProgramStore;->mDepthFunc:Landroid/renderscript/ProgramStore$DepthFunc;
 
-    .line 428
+    .line 426
     iget-boolean v0, p0, Landroid/renderscript/ProgramStore$Builder;->mDepthMask:Z
 
     iput-boolean v0, v11, Landroid/renderscript/ProgramStore;->mDepthMask:Z
 
-    .line 429
+    .line 427
     iget-boolean v0, p0, Landroid/renderscript/ProgramStore$Builder;->mColorMaskR:Z
 
     iput-boolean v0, v11, Landroid/renderscript/ProgramStore;->mColorMaskR:Z
 
-    .line 430
+    .line 428
     iget-boolean v0, p0, Landroid/renderscript/ProgramStore$Builder;->mColorMaskG:Z
 
     iput-boolean v0, v11, Landroid/renderscript/ProgramStore;->mColorMaskG:Z
 
-    .line 431
+    .line 429
     iget-boolean v0, p0, Landroid/renderscript/ProgramStore$Builder;->mColorMaskB:Z
 
     iput-boolean v0, v11, Landroid/renderscript/ProgramStore;->mColorMaskB:Z
 
-    .line 432
+    .line 430
     iget-boolean v0, p0, Landroid/renderscript/ProgramStore$Builder;->mColorMaskA:Z
 
     iput-boolean v0, v11, Landroid/renderscript/ProgramStore;->mColorMaskA:Z
 
-    .line 433
+    .line 431
     iget-object v0, p0, Landroid/renderscript/ProgramStore$Builder;->mBlendSrc:Landroid/renderscript/ProgramStore$BlendSrcFunc;
 
     iput-object v0, v11, Landroid/renderscript/ProgramStore;->mBlendSrc:Landroid/renderscript/ProgramStore$BlendSrcFunc;
 
-    .line 434
+    .line 432
     iget-object v0, p0, Landroid/renderscript/ProgramStore$Builder;->mBlendDst:Landroid/renderscript/ProgramStore$BlendDstFunc;
 
     iput-object v0, v11, Landroid/renderscript/ProgramStore;->mBlendDst:Landroid/renderscript/ProgramStore$BlendDstFunc;
 
-    .line 435
+    .line 433
     iget-boolean v0, p0, Landroid/renderscript/ProgramStore$Builder;->mDither:Z
 
     iput-boolean v0, v11, Landroid/renderscript/ProgramStore;->mDither:Z
 
-    .line 436
+    .line 434
     return-object v11
 .end method
 
@@ -192,13 +192,13 @@
     .parameter "dst"
 
     .prologue
-    .line 400
+    .line 398
     iput-object p1, p0, Landroid/renderscript/ProgramStore$Builder;->mBlendSrc:Landroid/renderscript/ProgramStore$BlendSrcFunc;
 
-    .line 401
+    .line 399
     iput-object p2, p0, Landroid/renderscript/ProgramStore$Builder;->mBlendDst:Landroid/renderscript/ProgramStore$BlendDstFunc;
 
-    .line 402
+    .line 400
     return-object p0
 .end method
 
@@ -210,19 +210,19 @@
     .parameter "a"
 
     .prologue
-    .line 381
+    .line 379
     iput-boolean p1, p0, Landroid/renderscript/ProgramStore$Builder;->mColorMaskR:Z
 
-    .line 382
+    .line 380
     iput-boolean p2, p0, Landroid/renderscript/ProgramStore$Builder;->mColorMaskG:Z
 
-    .line 383
+    .line 381
     iput-boolean p3, p0, Landroid/renderscript/ProgramStore$Builder;->mColorMaskB:Z
 
-    .line 384
+    .line 382
     iput-boolean p4, p0, Landroid/renderscript/ProgramStore$Builder;->mColorMaskA:Z
 
-    .line 385
+    .line 383
     return-object p0
 .end method
 
@@ -231,10 +231,10 @@
     .parameter "func"
 
     .prologue
-    .line 353
+    .line 351
     iput-object p1, p0, Landroid/renderscript/ProgramStore$Builder;->mDepthFunc:Landroid/renderscript/ProgramStore$DepthFunc;
 
-    .line 354
+    .line 352
     return-object p0
 .end method
 
@@ -243,10 +243,10 @@
     .parameter "enable"
 
     .prologue
-    .line 366
+    .line 364
     iput-boolean p1, p0, Landroid/renderscript/ProgramStore$Builder;->mDepthMask:Z
 
-    .line 367
+    .line 365
     return-object p0
 .end method
 
@@ -255,9 +255,9 @@
     .parameter "enable"
 
     .prologue
-    .line 414
+    .line 412
     iput-boolean p1, p0, Landroid/renderscript/ProgramStore$Builder;->mDither:Z
 
-    .line 415
+    .line 413
     return-object p0
 .end method

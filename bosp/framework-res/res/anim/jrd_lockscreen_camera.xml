@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list android:oneshot="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:duration="70" android:drawable="@drawable/jrd_camera_01" />
+    <item android:duration="70" android:drawable="@drawable/jrd_camera_02" />
+    <item android:duration="70" android:drawable="@drawable/jrd_camera_03" />
+    <item android:duration="70" android:drawable="@drawable/jrd_camera_04" />
+    <item android:duration="70" android:drawable="@drawable/jrd_camera_05" />
+    <item android:duration="70" android:drawable="@drawable/jrd_camera_06" />
+    <item android:duration="70" android:drawable="@drawable/jrd_camera_07" />
+    <item android:duration="70" android:drawable="@drawable/jrd_camera_08" />
+    <item android:duration="70" android:drawable="@drawable/jrd_camera_09" />
+    <item android:duration="70" android:drawable="@drawable/jrd_camera_10" />
+    <item android:duration="70" android:drawable="@drawable/jrd_camera_11" />
+    <item android:duration="70" android:drawable="@drawable/jrd_camera_12" />
+    <item android:duration="70" android:drawable="@drawable/jrd_camera_13" />
+    <item android:duration="70" android:drawable="@drawable/jrd_camera_14" />
+    <item android:duration="70" android:drawable="@drawable/jrd_camera_15" />
+    <item android:duration="70" android:drawable="@drawable/jrd_camera_16" />
+    <item android:duration="70" android:drawable="@drawable/jrd_camera_17" />
+    <item android:duration="70" android:drawable="@drawable/jrd_camera_18" />
+    <item android:duration="70" android:drawable="@drawable/jrd_camera_19" />
+    <item android:duration="70" android:drawable="@drawable/jrd_camera_20" />
+    <item android:duration="70" android:drawable="@drawable/jrd_camera_21" />
+    <item android:duration="70" android:drawable="@drawable/jrd_camera_22" />
+    <item android:duration="70" android:drawable="@drawable/jrd_camera_23" />
+</animation-list>

@@ -178,350 +178,265 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 10
+    .locals 7
     .parameter "context"
     .parameter "attrs"
 
     .prologue
-    const/4 v4, 0x1
+    const/16 v6, 0xc
 
-    const/16 v9, 0xc
+    const/4 v2, 0x0
 
-    const/4 v8, -0x1
+    const/4 v5, -0x1
 
-    const/4 v7, 0x0
-
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
     .line 150
     invoke-direct {p0, p1, p2}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     .line 83
-    new-instance v6, Ljava/util/ArrayList;
+    new-instance v3, Ljava/util/ArrayList;
 
-    invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v6, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTargetAnimations:Ljava/util/ArrayList;
+    iput-object v3, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTargetAnimations:Ljava/util/ArrayList;
 
     .line 90
-    iput v5, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mVibrationDuration:I
+    iput v2, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mVibrationDuration:I
 
     .line 92
-    iput v8, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mActiveTarget:I
+    iput v5, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mActiveTarget:I
 
     .line 98
-    iput v7, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mOuterRadius:F
+    iput v4, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mOuterRadius:F
 
     .line 99
-    iput v7, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mHitRadius:F
+    iput v4, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mHitRadius:F
 
     .line 100
-    iput v7, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mSnapMargin:F
+    iput v4, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mSnapMargin:F
 
     .line 102
-    iput v7, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mOriginalRingRawY:F
+    iput v4, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mOriginalRingRawY:F
 
     .line 103
-    iput-boolean v5, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mReachUnlock:Z
+    iput-boolean v2, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mReachUnlock:Z
 
     .line 107
-    new-instance v6, Landroid/text/TextPaint;
+    new-instance v3, Landroid/text/TextPaint;
 
-    invoke-direct {v6}, Landroid/text/TextPaint;-><init>()V
+    invoke-direct {v3}, Landroid/text/TextPaint;-><init>()V
 
-    iput-object v6, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTextPaint:Landroid/text/TextPaint;
+    iput-object v3, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTextPaint:Landroid/text/TextPaint;
 
     .line 108
-    new-instance v6, Ljava/util/ArrayList;
+    new-instance v3, Ljava/util/ArrayList;
 
-    invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v6, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mCellList:Ljava/util/ArrayList;
+    iput-object v3, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mCellList:Ljava/util/ArrayList;
 
     .line 109
-    new-instance v6, Ljava/util/HashMap;
+    new-instance v3, Ljava/util/HashMap;
 
-    invoke-direct {v6}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v6, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mCellMap:Ljava/util/HashMap;
+    iput-object v3, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mCellMap:Ljava/util/HashMap;
 
     .line 115
-    iput v8, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mLastActiveTarget:I
+    iput v5, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mLastActiveTarget:I
 
     .line 118
-    iput v9, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTextSize:I
+    iput v6, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTextSize:I
 
     .line 119
-    iput v8, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mEnlargeTarget:I
+    iput v5, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mEnlargeTarget:I
 
     .line 121
-    new-instance v6, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$1;
+    new-instance v3, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$1;
 
-    invoke-direct {v6, p0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$1;-><init>(Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;)V
+    invoke-direct {v3, p0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$1;-><init>(Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;)V
 
-    iput-object v6, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mResetListener:Landroid/animation/Animator$AnimatorListener;
+    iput-object v3, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mResetListener:Landroid/animation/Animator$AnimatorListener;
 
     .line 127
-    new-instance v6, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$2;
+    new-instance v3, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$2;
 
-    invoke-direct {v6, p0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$2;-><init>(Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;)V
+    invoke-direct {v3, p0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$2;-><init>(Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;)V
 
-    iput-object v6, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mResetListenerWithPing:Landroid/animation/Animator$AnimatorListener;
+    iput-object v3, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mResetListenerWithPing:Landroid/animation/Animator$AnimatorListener;
 
     .line 134
-    new-instance v6, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$3;
+    new-instance v3, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$3;
 
-    invoke-direct {v6, p0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$3;-><init>(Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;)V
+    invoke-direct {v3, p0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$3;-><init>(Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;)V
 
-    iput-object v6, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+    iput-object v3, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
     .line 151
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v2
-
-    .line 153
-    .local v2, res:Landroid/content/res/Resources;
-    sget-object v6, Lcom/android/internal/R$styleable;->SmartMultiUnlockView:[I
-
-    invoke-virtual {p1, p2, v6}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
-
     move-result-object v0
 
-    .line 154
-    .local v0, a:Landroid/content/res/TypedArray;
-    const/4 v6, 0x3
-
-    iget v7, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mOuterRadius:F
-
-    invoke-virtual {v0, v6, v7}, Landroid/content/res/TypedArray;->getDimension(IF)F
-
-    move-result v6
-
-    iput v6, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mOuterRadius:F
-
     .line 155
-    const/16 v6, 0x8
+    .local v0, res:Landroid/content/res/Resources;
+    const v3, #dimen@zz_smartmultiUnlockview_target_placement_radius#t
 
-    iget v7, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mHorizontalOffset:F
+    invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getDimension(I)F
 
-    invoke-virtual {v0, v6, v7}, Landroid/content/res/TypedArray;->getDimension(IF)F
+    move-result v3
 
-    move-result v6
-
-    iput v6, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mHorizontalOffset:F
-
-    .line 156
-    const/4 v6, 0x7
-
-    iget v7, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mVerticalOffset:F
-
-    invoke-virtual {v0, v6, v7}, Landroid/content/res/TypedArray;->getDimension(IF)F
-
-    move-result v6
-
-    iput v6, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mVerticalOffset:F
+    iput v3, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mOuterRadius:F
 
     .line 157
-    const/4 v6, 0x4
-
-    iget v7, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mHitRadius:F
-
-    invoke-virtual {v0, v6, v7}, Landroid/content/res/TypedArray;->getDimension(IF)F
-
-    move-result v6
-
-    iput v6, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mHitRadius:F
-
-    .line 158
-    const/4 v6, 0x6
-
-    iget v7, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mSnapMargin:F
-
-    invoke-virtual {v0, v6, v7}, Landroid/content/res/TypedArray;->getDimension(IF)F
-
-    move-result v6
-
-    iput v6, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mSnapMargin:F
+    iput v4, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mHorizontalOffset:F
 
     .line 159
-    const/4 v6, 0x5
+    const v3, #dimen@zz_lockscreen_unlock_widget_center_offset#t
 
-    iget v7, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mVibrationDuration:I
+    invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getDimension(I)F
 
-    invoke-virtual {v0, v6, v7}, Landroid/content/res/TypedArray;->getInt(II)I
+    move-result v3
 
-    move-result v6
-
-    iput v6, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mVibrationDuration:I
+    iput v3, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mVerticalOffset:F
 
     .line 161
-    new-instance v6, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
+    const v3, #dimen@zz_smartmultiunlockview_hit_radius#t
 
-    const/4 v7, 0x2
+    invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getDimension(I)F
 
-    invoke-virtual {v0, v7}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    move-result v3
 
-    move-result-object v7
-
-    invoke-direct {v6, v2, v7}, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/drawable/Drawable;)V
-
-    iput-object v6, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mHandleDrawable:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
+    iput v3, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mHitRadius:F
 
     .line 163
-    iget-object v6, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mHandleDrawable:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
+    const v3, #dimen@zz_smartmultiunlockview_snap_margin#t
 
-    invoke-virtual {v6}, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->getWidth()I
+    invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getDimension(I)F
 
-    move-result v6
+    move-result v3
 
-    div-int/lit8 v6, v6, 0x2
+    iput v3, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mSnapMargin:F
 
-    int-to-float v6, v6
+    .line 166
+    const/16 v3, 0x14
 
-    iput v6, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTapRadius:F
-
-    .line 164
-    const/16 v6, 0xa
-
-    iget v7, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mUnlockDistance:I
-
-    invoke-virtual {v0, v6, v7}, Landroid/content/res/TypedArray;->getInt(II)I
-
-    move-result v6
-
-    iput v6, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mUnlockDistance:I
-
-    .line 167
-    new-instance v1, Landroid/util/TypedValue;
-
-    invoke-direct {v1}, Landroid/util/TypedValue;-><init>()V
+    iput v3, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mVibrationDuration:I
 
     .line 169
-    .local v1, outValue:Landroid/util/TypedValue;
-    const/16 v6, 0x9
+    new-instance v3, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
 
-    invoke-virtual {v0, v6}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    const v4, #drawable@zz_lockscreen_handle#t
 
-    move-result-object v6
+    invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    iput-object v6, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mNotifierDrawble:Landroid/graphics/drawable/Drawable;
+    move-result-object v4
 
-    .line 171
-    invoke-virtual {v0, v4, v1}, Landroid/content/res/TypedArray;->getValue(ILandroid/util/TypedValue;)Z
+    invoke-direct {v3, v0, v4}, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/drawable/Drawable;)V
 
-    move-result v6
+    iput-object v3, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mHandleDrawable:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
 
-    if-eqz v6, :cond_1
+    .line 170
+    iget-object v3, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mHandleDrawable:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
+
+    invoke-virtual {v3}, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->getWidth()I
+
+    move-result v3
+
+    div-int/lit8 v3, v3, 0x2
+
+    int-to-float v3, v3
+
+    iput v3, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTapRadius:F
 
     .line 172
-    iget v3, v1, Landroid/util/TypedValue;->resourceId:I
+    const v3, #integer@zz_lockscreen_unlock_widget_distance#t
 
-    .line 173
-    .local v3, resourceId:I
-    if-nez v3, :cond_0
+    invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
-    .line 174
-    new-instance v4, Ljava/lang/IllegalStateException;
+    move-result v3
 
-    const-string v5, "Must specify target descriptions"
+    iput v3, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mUnlockDistance:I
 
-    invoke-direct {v4, v5}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    .line 178
+    const v3, #drawable@zz_lockscreen_notification_round#t
 
-    throw v4
+    invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    .line 176
-    :cond_0
-    invoke-virtual {p0, v3}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->setTargetDescriptionsResourceId(I)V
+    move-result-object v3
 
-    .line 180
-    .end local v3           #resourceId:I
-    :cond_1
-    invoke-virtual {v0, v5, v1}, Landroid/content/res/TypedArray;->getValue(ILandroid/util/TypedValue;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_2
+    iput-object v3, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mNotifierDrawble:Landroid/graphics/drawable/Drawable;
 
     .line 181
-    iget v6, v1, Landroid/util/TypedValue;->resourceId:I
+    const v1, #array@zz_lockscreen_five_shortcuts_description#t
 
-    invoke-direct {p0, v6}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->internalSetTargetResources(I)V
+    .line 185
+    .local v1, resourceId:I
+    const v3, #array@zz_lockscreen_five_shortcuts_description#t
 
-    .line 183
-    :cond_2
-    iget-object v6, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mCellList:Ljava/util/ArrayList;
-
-    if-eqz v6, :cond_3
-
-    iget-object v6, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mCellList:Ljava/util/ArrayList;
-
-    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
-
-    move-result v6
-
-    if-nez v6, :cond_4
-
-    .line 184
-    :cond_3
-    new-instance v4, Ljava/lang/IllegalStateException;
-
-    const-string v5, "Must specify at least one target drawable"
-
-    invoke-direct {v4, v5}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v4
-
-    .line 186
-    :cond_4
-    const/16 v6, 0xb
-
-    invoke-virtual {v0, v6, v9}, Landroid/content/res/TypedArray;->getInt(II)I
-
-    move-result v6
-
-    iput v6, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTextSize:I
-
-    .line 187
-    iget-object v6, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mContext:Landroid/content/Context;
-
-    iget v7, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTextSize:I
-
-    invoke-direct {p0, v6, v7}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->setTextSize(Landroid/content/Context;I)V
-
-    .line 188
-    invoke-virtual {v0, v9, v5}, Landroid/content/res/TypedArray;->getColor(II)I
-
-    move-result v6
-
-    iput v6, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mDefaultNotificationClr:I
-
-    .line 189
-    iget-object v6, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTextPaint:Landroid/text/TextPaint;
-
-    iget v7, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mDefaultNotificationClr:I
-
-    invoke-virtual {v6, v7}, Landroid/text/TextPaint;->setColor(I)V
+    invoke-virtual {p0, v3}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->setTargetDescriptionsResourceId(I)V
 
     .line 190
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+    const v3, #array@zz_lockscreen_targets_five_shortcuts#t
 
-    .line 191
-    iget v6, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mVibrationDuration:I
-
-    if-lez v6, :cond_5
-
-    :goto_0
-    invoke-virtual {p0, v4}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->setVibrateEnabled(Z)V
+    invoke-direct {p0, v3}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->internalSetTargetResources(I)V
 
     .line 192
+    iget-object v3, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mCellList:Ljava/util/ArrayList;
+
+    if-eqz v3, :cond_0
+
+    iget-object v3, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mCellList:Ljava/util/ArrayList;
+
+    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
+
+    move-result v3
+
+    if-nez v3, :cond_1
+
+    .line 193
+    :cond_0
+    new-instance v2, Ljava/lang/IllegalStateException;
+
+    const-string v3, "Must specify at least one target drawable"
+
+    invoke-direct {v2, v3}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v2
+
+    .line 196
+    :cond_1
+    iput v6, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTextSize:I
+
+    .line 197
+    iget-object v3, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mContext:Landroid/content/Context;
+
+    iget v4, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTextSize:I
+
+    invoke-direct {p0, v3, v4}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->setTextSize(Landroid/content/Context;I)V
+
+    .line 199
+    iput v5, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mDefaultNotificationClr:I
+
+    .line 200
+    iget-object v3, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTextPaint:Landroid/text/TextPaint;
+
+    iget v4, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mDefaultNotificationClr:I
+
+    invoke-virtual {v3, v4}, Landroid/text/TextPaint;->setColor(I)V
+
+    .line 202
+    iget v3, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mVibrationDuration:I
+
+    if-lez v3, :cond_2
+
+    const/4 v2, 0x1
+
+    :cond_2
+    invoke-virtual {p0, v2}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->setVibrateEnabled(Z)V
+
+    .line 203
     return-void
-
-    :cond_5
-    move v4, v5
-
-    .line 191
-    goto :goto_0
 .end method
 
 .method static synthetic access$000(Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;)F
@@ -576,20 +491,20 @@
     .parameter "text"
 
     .prologue
-    .line 1015
+    .line 1026
     invoke-virtual {p0, p1}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 1016
+    .line 1027
     const/16 v0, 0x8
 
     invoke-virtual {p0, v0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->sendAccessibilityEvent(I)V
 
-    .line 1017
+    .line 1028
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 1018
+    .line 1029
     return-void
 .end method
 
@@ -603,7 +518,7 @@
 
     const/4 v8, 0x0
 
-    .line 526
+    .line 537
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mHandleDrawable:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
 
     const-wide/16 v1, 0x3e8
@@ -712,7 +627,7 @@
 
     iput-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mHandleAnimation:Lcom/baidu/internal/keyguard/slide/Tweener;
 
-    .line 532
+    .line 543
     return-void
 .end method
 
@@ -720,12 +635,12 @@
     .locals 1
 
     .prologue
-    .line 309
+    .line 320
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mActiveTarget:I
 
-    .line 310
+    .line 321
     return-void
 .end method
 
@@ -734,20 +649,20 @@
     .parameter "whichHandler"
 
     .prologue
-    .line 340
+    .line 351
     invoke-direct {p0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->vibrate()V
 
-    .line 341
+    .line 352
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mOnTriggerListener:Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$OnTriggerListener;
 
     if-eqz v0, :cond_0
 
-    .line 342
+    .line 353
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mOnTriggerListener:Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$OnTriggerListener;
 
     invoke-interface {v0, p0, p1}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$OnTriggerListener;->onGrabbed(Landroid/view/View;I)V
 
-    .line 344
+    .line 355
     :cond_0
     return-void
 .end method
@@ -757,20 +672,20 @@
     .parameter "whichHandle"
 
     .prologue
-    .line 333
+    .line 344
     invoke-direct {p0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->vibrate()V
 
-    .line 334
+    .line 345
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mOnTriggerListener:Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$OnTriggerListener;
 
     if-eqz v0, :cond_0
 
-    .line 335
+    .line 346
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mOnTriggerListener:Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$OnTriggerListener;
 
     invoke-interface {v0, p0, p1}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$OnTriggerListener;->onTrigger(Landroid/view/View;I)V
 
-    .line 337
+    .line 348
     :cond_0
     return-void
 .end method
@@ -781,7 +696,7 @@
     .parameter "dy"
 
     .prologue
-    .line 1001
+    .line 1012
     mul-float v0, p1, p1
 
     mul-float v1, p2, p2
@@ -805,10 +720,10 @@
 
     const/4 v3, 0x0
 
-    .line 347
+    .line 358
     iget v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mActiveTarget:I
 
-    .line 348
+    .line 359
     .local v0, activeTarget:I
     const/4 v4, -0x1
 
@@ -816,20 +731,20 @@
 
     move v1, v2
 
-    .line 351
+    .line 362
     .local v1, targetHit:Z
     :goto_0
     invoke-direct {p0, v2}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->hideTargets(Z)V
 
-    .line 352
+    .line 363
     if-eqz v1, :cond_1
 
-    .line 355
+    .line 366
     iget v4, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mActiveTarget:I
 
     invoke-direct {p0, v4}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->dispatchTriggerEvent(I)V
 
-    .line 356
+    .line 367
     iget-object v4, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mHandleDrawable:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
 
     const-wide/16 v5, 0x0
@@ -934,24 +849,24 @@
 
     iput-object v2, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mHandleAnimation:Lcom/baidu/internal/keyguard/slide/Tweener;
 
-    .line 382
+    .line 393
     :goto_1
     invoke-direct {p0, v3}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->setGrabbedState(I)V
 
-    .line 383
+    .line 394
     iput-boolean v3, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mReachUnlock:Z
 
-    .line 384
+    .line 395
     return-void
 
     .end local v1           #targetHit:Z
     :cond_0
     move v1, v3
 
-    .line 348
+    .line 359
     goto :goto_0
 
-    .line 366
+    .line 377
     .restart local v1       #targetHit:Z
     :cond_1
     iget-object v4, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mHandleDrawable:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
@@ -1063,12 +978,12 @@
 
     iput-object v2, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mHandleAnimation:Lcom/baidu/internal/keyguard/slide/Tweener;
 
-    .line 374
+    .line 385
     iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mOnTriggerListener:Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$OnTriggerListener;
 
     invoke-interface {v2}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$OnTriggerListener;->onDragReleased()V
 
-    .line 375
+    .line 386
     new-instance v2, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$5;
 
     invoke-direct {v2, p0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$5;-><init>(Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;)V
@@ -1079,7 +994,7 @@
 
     goto :goto_1
 
-    .line 366
+    .line 377
     :cond_2
     iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mResetListener:Landroid/animation/Animator$AnimatorListener;
 
@@ -1090,7 +1005,7 @@
     .locals 3
 
     .prologue
-    .line 222
+    .line 233
     const-string v0, "SmartMultiUnlockView"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1115,7 +1030,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 223
+    .line 234
     const-string v0, "SmartMultiUnlockView"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1140,7 +1055,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 224
+    .line 235
     const-string v0, "SmartMultiUnlockView"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1165,7 +1080,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 225
+    .line 236
     const-string v0, "SmartMultiUnlockView"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1190,7 +1105,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 226
+    .line 237
     const-string v0, "SmartMultiUnlockView"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1215,7 +1130,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 227
+    .line 238
     const-string v0, "SmartMultiUnlockView"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1240,7 +1155,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 228
+    .line 239
     const-string v0, "SmartMultiUnlockView"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1265,7 +1180,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 229
+    .line 240
     const-string v0, "SmartMultiUnlockView"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1290,7 +1205,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 230
+    .line 241
     const-string v0, "SmartMultiUnlockView"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1315,7 +1230,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 231
+    .line 242
     return-void
 .end method
 
@@ -1335,7 +1250,7 @@
 
     const/4 v7, 0x0
 
-    .line 484
+    .line 495
     if-ltz p2, :cond_0
 
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mCellList:Ljava/util/ArrayList;
@@ -1346,12 +1261,12 @@
 
     if-lt p2, v0, :cond_1
 
-    .line 523
+    .line 534
     :cond_0
     :goto_0
     return-void
 
-    .line 488
+    .line 499
     :cond_1
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTargetAnimations:Ljava/util/ArrayList;
 
@@ -1361,14 +1276,14 @@
 
     if-lez v0, :cond_2
 
-    .line 489
+    .line 500
     invoke-direct {p0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->stopTargetAnimation()V
 
-    .line 492
+    .line 503
     :cond_2
     if-eqz p1, :cond_3
 
-    .line 493
+    .line 504
     iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTargetAnimations:Ljava/util/ArrayList;
 
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mCellList:Ljava/util/ArrayList;
@@ -1457,7 +1372,7 @@
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 500
+    .line 511
     iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTargetAnimations:Ljava/util/ArrayList;
 
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mCellList:Ljava/util/ArrayList;
@@ -1546,12 +1461,12 @@
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 506
+    .line 517
     iput p2, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mEnlargeTarget:I
 
     goto/16 :goto_0
 
-    .line 508
+    .line 519
     :cond_3
     iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTargetAnimations:Ljava/util/ArrayList;
 
@@ -1641,7 +1556,7 @@
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 515
+    .line 526
     iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTargetAnimations:Ljava/util/ArrayList;
 
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mCellList:Ljava/util/ArrayList;
@@ -1730,7 +1645,7 @@
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 521
+    .line 532
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mEnlargeTarget:I
@@ -1742,7 +1657,7 @@
     .locals 3
 
     .prologue
-    .line 1006
+    .line 1017
     iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Landroid/view/accessibility/AccessibilityManager;->getInstance(Landroid/content/Context;)Landroid/view/accessibility/AccessibilityManager;
@@ -1755,14 +1670,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 1007
+    .line 1018
     const v1, 0x3fa66666
 
     iget v2, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTapRadius:F
 
     mul-float v0, v1, v2
 
-    .line 1011
+    .line 1022
     .local v0, scaledTapRadius:F
     :goto_0
     invoke-direct {p0, v0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->square(F)F
@@ -1771,7 +1686,7 @@
 
     return v1
 
-    .line 1009
+    .line 1020
     .end local v0           #scaledTapRadius:F
     :cond_0
     iget v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTapRadius:F
@@ -1785,7 +1700,7 @@
     .parameter "index"
 
     .prologue
-    .line 1021
+    .line 1032
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTargetDescriptions:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_0
@@ -1798,7 +1713,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1022
+    .line 1033
     :cond_0
     iget v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTargetDescriptionsResourceId:I
 
@@ -1808,7 +1723,7 @@
 
     iput-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTargetDescriptions:Ljava/util/ArrayList;
 
-    .line 1023
+    .line 1034
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mCellList:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1823,17 +1738,17 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 1024
+    .line 1035
     const-string v0, "SmartMultiUnlockView"
 
     const-string v1, "The number of target drawables must be euqal to the number of target descriptions."
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1026
+    .line 1037
     const/4 v0, 0x0
 
-    .line 1029
+    .line 1040
     :goto_0
     return-object v0
 
@@ -1854,22 +1769,22 @@
     .parameter "event"
 
     .prologue
-    .line 689
+    .line 700
     invoke-direct {p0, p1}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->trySwitchToFirstTouchState(Landroid/view/MotionEvent;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 690
+    .line 701
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mDragging:Z
 
-    .line 691
+    .line 702
     invoke-direct {p0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->stopTargetAnimation()V
 
-    .line 694
+    .line 705
     :cond_0
     return-void
 .end method
@@ -1879,7 +1794,7 @@
     .parameter "event"
 
     .prologue
-    .line 717
+    .line 728
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mDragging:Z
@@ -1888,14 +1803,14 @@
 
     if-nez v29, :cond_0
 
-    .line 718
+    .line 729
     invoke-direct/range {p0 .. p1}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->trySwitchToFirstTouchState(Landroid/view/MotionEvent;)Z
 
-    .line 848
+    .line 859
     :goto_0
     return-void
 
-    .line 724
+    .line 735
     :cond_0
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getRawY()F
 
@@ -1907,17 +1822,17 @@
 
     sub-float v6, v29, v30
 
-    .line 726
+    .line 737
     .local v6, deltaRawYY:F
     const/4 v4, -0x1
 
-    .line 727
+    .line 738
     .local v4, activeTarget:I
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getHistorySize()I
 
     move-result v12
 
-    .line 728
+    .line 739
     .local v12, historySize:I
     const/4 v15, 0x0
 
@@ -1929,7 +1844,7 @@
 
     if-ge v15, v0, :cond_d
 
-    .line 729
+    .line 740
     if-ge v15, v12, :cond_2
 
     move-object/from16 v0, p1
@@ -1938,7 +1853,7 @@
 
     move-result v27
 
-    .line 730
+    .line 741
     .local v27, x:F
     :goto_2
     if-ge v15, v12, :cond_3
@@ -1949,7 +1864,7 @@
 
     move-result v28
 
-    .line 731
+    .line 742
     .local v28, y:F
     :goto_3
     move-object/from16 v0, p0
@@ -1960,7 +1875,7 @@
 
     sub-float v25, v27, v29
 
-    .line 732
+    .line 743
     .local v25, tx:F
     move-object/from16 v0, p0
 
@@ -1970,7 +1885,7 @@
 
     sub-float v26, v28, v29
 
-    .line 733
+    .line 744
     .local v26, ty:F
     move-object/from16 v0, p0
 
@@ -1998,7 +1913,7 @@
 
     move/from16 v24, v0
 
-    .line 734
+    .line 745
     .local v24, touchRadius:F
     move-object/from16 v0, p0
 
@@ -2018,7 +1933,7 @@
 
     div-float v21, v29, v24
 
-    .line 735
+    .line 746
     .local v21, scale:F
     :goto_4
     move-object/from16 v0, p0
@@ -2031,7 +1946,7 @@
 
     add-float v16, v29, v30
 
-    .line 736
+    .line 747
     .local v16, limitX:F
     move-object/from16 v0, p0
 
@@ -2043,11 +1958,11 @@
 
     add-float v17, v29, v30
 
-    .line 739
+    .line 750
     .local v17, limitY:F
     const v5, 0x7f7fffff
 
-    .line 740
+    .line 751
     .local v5, best:F
     move-object/from16 v0, p0
 
@@ -2063,7 +1978,7 @@
 
     mul-float v13, v29, v30
 
-    .line 741
+    .line 752
     .local v13, hitRadius2:F
     const/4 v14, 0x0
 
@@ -2083,7 +1998,7 @@
 
     if-ge v14, v0, :cond_6
 
-    .line 742
+    .line 753
     const-string v29, "PROMPT"
 
     move-object/from16 v0, p0
@@ -2104,14 +2019,14 @@
 
     if-eqz v29, :cond_5
 
-    .line 741
+    .line 752
     :cond_1
     :goto_6
     add-int/lit8 v14, v14, 0x1
 
     goto :goto_5
 
-    .line 729
+    .line 740
     .end local v5           #best:F
     .end local v13           #hitRadius2:F
     .end local v14           #i:I
@@ -2130,7 +2045,7 @@
 
     goto/16 :goto_2
 
-    .line 730
+    .line 741
     .restart local v27       #x:F
     :cond_3
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getY()F
@@ -2139,7 +2054,7 @@
 
     goto/16 :goto_3
 
-    .line 734
+    .line 745
     .restart local v24       #touchRadius:F
     .restart local v25       #tx:F
     .restart local v26       #ty:F
@@ -2149,7 +2064,7 @@
 
     goto :goto_4
 
-    .line 746
+    .line 757
     .restart local v5       #best:F
     .restart local v13       #hitRadius2:F
     .restart local v14       #i:I
@@ -2175,7 +2090,7 @@
 
     move-result-object v22
 
-    .line 747
+    .line 758
     .local v22, target:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
     invoke-virtual/range {v22 .. v22}, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->getX()F
 
@@ -2183,7 +2098,7 @@
 
     sub-float v8, v16, v29
 
-    .line 748
+    .line 759
     .local v8, dx:F
     invoke-virtual/range {v22 .. v22}, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->getY()F
 
@@ -2191,7 +2106,7 @@
 
     sub-float v9, v17, v29
 
-    .line 749
+    .line 760
     .local v9, dy:F
     mul-float v29, v8, v8
 
@@ -2199,7 +2114,7 @@
 
     add-float v7, v29, v30
 
-    .line 751
+    .line 762
     .local v7, dist2:F
     invoke-virtual/range {v22 .. v22}, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->isValid()Z
 
@@ -2215,15 +2130,15 @@
 
     if-gez v29, :cond_1
 
-    .line 752
+    .line 763
     move v4, v14
 
-    .line 753
+    .line 764
     move v5, v7
 
     goto :goto_6
 
-    .line 757
+    .line 768
     .end local v7           #dist2:F
     .end local v8           #dx:F
     .end local v9           #dy:F
@@ -2275,7 +2190,7 @@
 
     if-gtz v29, :cond_7
 
-    .line 758
+    .line 769
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mWaveCenterY:F
@@ -2318,7 +2233,7 @@
 
     add-float v17, v29, v30
 
-    .line 762
+    .line 773
     :cond_7
     move-object/from16 v0, p0
 
@@ -2360,7 +2275,7 @@
 
     if-eq v0, v4, :cond_8
 
-    .line 763
+    .line 774
     const/16 v29, 0x0
 
     move-object/from16 v0, p0
@@ -2377,7 +2292,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->enlargeSelectTarget(ZI)V
 
-    .line 767
+    .line 778
     :cond_8
     if-ltz v4, :cond_a
 
@@ -2395,13 +2310,13 @@
 
     if-ge v4, v0, :cond_a
 
-    .line 769
+    .line 780
     move/from16 v27, v16
 
-    .line 770
+    .line 781
     move/from16 v28, v17
 
-    .line 772
+    .line 783
     const/16 v29, 0x3
 
     move-object/from16 v0, p0
@@ -2414,7 +2329,7 @@
 
     invoke-direct {v0, v1, v2, v3}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->switchToState(IFF)V
 
-    .line 775
+    .line 786
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mCellList:Ljava/util/ArrayList;
@@ -2437,7 +2352,7 @@
 
     move-result v18
 
-    .line 776
+    .line 787
     .local v18, newX:F
     move-object/from16 v0, p0
 
@@ -2461,7 +2376,7 @@
 
     move-result v19
 
-    .line 777
+    .line 788
     .local v19, newY:F
     move-object/from16 v0, p0
 
@@ -2471,7 +2386,7 @@
 
     if-nez v29, :cond_9
 
-    .line 778
+    .line 789
     const/16 v29, 0x0
 
     move-object/from16 v0, p0
@@ -2484,7 +2399,7 @@
 
     invoke-direct {v0, v1, v2, v3}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->moveHandleTo(FFZ)V
 
-    .line 779
+    .line 790
     const/16 v29, 0x1
 
     move-object/from16 v0, p0
@@ -2493,13 +2408,13 @@
 
     invoke-direct {v0, v1, v4}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->enlargeSelectTarget(ZI)V
 
-    .line 782
+    .line 793
     :cond_9
     move-object/from16 v0, p0
 
     iput v4, v0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mLastActiveTarget:I
 
-    .line 728
+    .line 739
     .end local v18           #newX:F
     .end local v19           #newY:F
     :goto_7
@@ -2507,11 +2422,11 @@
 
     goto/16 :goto_1
 
-    .line 786
+    .line 797
     :cond_a
     add-float v11, v6, v28
 
-    .line 787
+    .line 798
     .local v11, historyRawY:F
     move-object/from16 v0, p0
 
@@ -2521,21 +2436,21 @@
 
     sub-float v10, v11, v29
 
-    .line 790
+    .line 801
     .local v10, historyOffsetY:F
     move/from16 v27, v16
 
-    .line 791
+    .line 802
     move/from16 v28, v17
 
-    .line 792
+    .line 803
     const/16 v29, 0x0
 
     cmpg-float v29, v10, v29
 
     if-gez v29, :cond_c
 
-    .line 795
+    .line 806
     move-object/from16 v0, p0
 
     invoke-direct {v0, v11}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->upThreshold(F)Z
@@ -2544,7 +2459,7 @@
 
     if-eqz v29, :cond_b
 
-    .line 798
+    .line 809
     const/high16 v29, 0x3f00
 
     add-float v29, v29, v10
@@ -2563,7 +2478,7 @@
 
     add-int v20, v29, v30
 
-    .line 799
+    .line 810
     .local v20, offsetFramelayout:I
     move-object/from16 v0, p0
 
@@ -2577,7 +2492,7 @@
 
     invoke-interface {v0, v1}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$OnTriggerListener;->onDragging(I)V
 
-    .line 800
+    .line 811
     const/16 v29, 0x1
 
     move/from16 v0, v29
@@ -2586,10 +2501,10 @@
 
     iput-boolean v0, v1, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mReachUnlock:Z
 
-    .line 803
+    .line 814
     const/16 v4, 0x64
 
-    .line 805
+    .line 816
     const/16 v29, 0x3
 
     move-object/from16 v0, p0
@@ -2602,7 +2517,7 @@
 
     invoke-direct {v0, v1, v2, v3}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->switchToState(IFF)V
 
-    .line 806
+    .line 817
     const/16 v29, 0x0
 
     move-object/from16 v0, p0
@@ -2617,7 +2532,7 @@
 
     goto :goto_7
 
-    .line 810
+    .line 821
     .end local v20           #offsetFramelayout:I
     :cond_b
     float-to-double v0, v10
@@ -2636,7 +2551,7 @@
 
     div-int/lit8 v20, v29, 0x2
 
-    .line 811
+    .line 822
     .restart local v20       #offsetFramelayout:I
     move-object/from16 v0, p0
 
@@ -2650,7 +2565,7 @@
 
     invoke-interface {v0, v1}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$OnTriggerListener;->onDragging(I)V
 
-    .line 812
+    .line 823
     const/16 v29, 0x0
 
     move/from16 v0, v29
@@ -2659,10 +2574,10 @@
 
     iput-boolean v0, v1, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mReachUnlock:Z
 
-    .line 814
+    .line 825
     const/4 v4, -0x1
 
-    .line 815
+    .line 826
     const/16 v29, 0x2
 
     move-object/from16 v0, p0
@@ -2675,7 +2590,7 @@
 
     invoke-direct {v0, v1, v2, v3}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->switchToState(IFF)V
 
-    .line 816
+    .line 827
     const/16 v29, 0x0
 
     move-object/from16 v0, p0
@@ -2690,7 +2605,7 @@
 
     goto/16 :goto_7
 
-    .line 819
+    .line 830
     .end local v20           #offsetFramelayout:I
     :cond_c
     const/16 v29, 0x0
@@ -2701,16 +2616,16 @@
 
     iput-boolean v0, v1, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mReachUnlock:Z
 
-    .line 822
+    .line 833
     move/from16 v27, v16
 
-    .line 823
+    .line 834
     move/from16 v28, v17
 
-    .line 826
+    .line 837
     const/4 v4, -0x1
 
-    .line 827
+    .line 838
     const/16 v29, 0x2
 
     move-object/from16 v0, p0
@@ -2723,7 +2638,7 @@
 
     invoke-direct {v0, v1, v2, v3}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->switchToState(IFF)V
 
-    .line 828
+    .line 839
     const/16 v29, 0x0
 
     move-object/from16 v0, p0
@@ -2738,7 +2653,7 @@
 
     goto/16 :goto_7
 
-    .line 834
+    .line 845
     .end local v5           #best:F
     .end local v10           #historyOffsetY:F
     .end local v11           #historyRawY:F
@@ -2765,7 +2680,7 @@
 
     invoke-virtual {v0, v1}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->invalidateGlobalRegion(Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;)V
 
-    .line 836
+    .line 847
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mActiveTarget:I
@@ -2782,12 +2697,12 @@
 
     if-eq v4, v0, :cond_e
 
-    .line 837
+    .line 848
     move-object/from16 v0, p0
 
     invoke-direct {v0, v4}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->dispatchGrabbedEvent(I)V
 
-    .line 838
+    .line 849
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mContext:Landroid/content/Context;
@@ -2804,7 +2719,7 @@
 
     if-eqz v29, :cond_e
 
-    .line 839
+    .line 850
     if-ltz v4, :cond_f
 
     move-object/from16 v0, p0
@@ -2821,14 +2736,14 @@
 
     if-ge v4, v0, :cond_f
 
-    .line 840
+    .line 851
     move-object/from16 v0, p0
 
     invoke-direct {v0, v4}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->getTargetDescription(I)Ljava/lang/String;
 
     move-result-object v23
 
-    .line 841
+    .line 852
     .local v23, targetContentDescription:Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -2836,7 +2751,7 @@
 
     invoke-direct {v0, v1}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->announceText(Ljava/lang/String;)V
 
-    .line 847
+    .line 858
     .end local v23           #targetContentDescription:Ljava/lang/String;
     :cond_e
     :goto_8
@@ -2846,7 +2761,7 @@
 
     goto/16 :goto_0
 
-    .line 842
+    .line 853
     :cond_f
     const/16 v29, 0x64
 
@@ -2854,7 +2769,7 @@
 
     if-ne v4, v0, :cond_e
 
-    .line 843
+    .line 854
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mContext:Landroid/content/Context;
@@ -2881,7 +2796,7 @@
     .parameter "event"
 
     .prologue
-    .line 698
+    .line 709
     const/4 v0, 0x4
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
@@ -2894,7 +2809,7 @@
 
     invoke-direct {p0, v0, v1, v2}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->switchToState(IFF)V
 
-    .line 699
+    .line 710
     return-void
 .end method
 
@@ -2903,7 +2818,7 @@
     .parameter "animate"
 
     .prologue
-    .line 387
+    .line 398
     move-object/from16 v0, p0
 
     iget-object v9, v0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTargetAnimations:Ljava/util/ArrayList;
@@ -2914,10 +2829,10 @@
 
     if-lez v9, :cond_0
 
-    .line 388
+    .line 399
     invoke-direct/range {p0 .. p0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->stopTargetAnimation()V
 
-    .line 392
+    .line 403
     :cond_0
     move/from16 v0, p1
 
@@ -2925,15 +2840,15 @@
 
     iput-boolean v0, v1, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mAnimatingTargets:Z
 
-    .line 393
+    .line 404
     if-eqz p1, :cond_3
 
-    .line 394
+    .line 405
     if-eqz p1, :cond_1
 
     const/16 v6, 0x12c
 
-    .line 395
+    .line 406
     .local v6, duration:I
     :goto_0
     const/4 v7, 0x0
@@ -2950,7 +2865,7 @@
 
     if-ge v7, v9, :cond_5
 
-    .line 396
+    .line 407
     move-object/from16 v0, p0
 
     iget-object v9, v0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mCellList:Ljava/util/ArrayList;
@@ -2965,13 +2880,13 @@
 
     move-result-object v8
 
-    .line 397
+    .line 408
     .local v8, target:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
     sget-object v9, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->STATE_INACTIVE:[I
 
     invoke-virtual {v8, v9}, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->setState([I)V
 
-    .line 399
+    .line 410
     const-wide v9, -0x3fe6de04abbbd2e8L
 
     int-to-double v11, v7
@@ -2990,7 +2905,7 @@
 
     div-double v2, v9, v11
 
-    .line 401
+    .line 412
     .local v2, angle:D
     const-string v9, "PROMPT"
 
@@ -3008,7 +2923,7 @@
 
     if-nez v9, :cond_2
 
-    .line 402
+    .line 413
     move-object/from16 v0, p0
 
     iget v9, v0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mWaveCenterX:F
@@ -3027,7 +2942,7 @@
 
     add-float v4, v9, v10
 
-    .line 403
+    .line 414
     .local v4, desxPosition:F
     move-object/from16 v0, p0
 
@@ -3047,7 +2962,7 @@
 
     add-float v5, v9, v10
 
-    .line 404
+    .line 415
     .local v5, desyPosition:F
     move-object/from16 v0, p0
 
@@ -3163,13 +3078,13 @@
 
     invoke-virtual {v9, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 395
+    .line 406
     :goto_2
     add-int/lit8 v7, v7, 0x1
 
     goto/16 :goto_1
 
-    .line 394
+    .line 405
     .end local v2           #angle:D
     .end local v4           #desxPosition:F
     .end local v5           #desyPosition:F
@@ -3181,7 +3096,7 @@
 
     goto/16 :goto_0
 
-    .line 411
+    .line 422
     .restart local v2       #angle:D
     .restart local v6       #duration:I
     .restart local v7       #i:I
@@ -3209,7 +3124,7 @@
 
     add-float v4, v9, v10
 
-    .line 412
+    .line 423
     .restart local v4       #desxPosition:F
     move-object/from16 v0, p0
 
@@ -3233,7 +3148,7 @@
 
     add-float v5, v9, v10
 
-    .line 413
+    .line 424
     .restart local v5       #desyPosition:F
     move-object/from16 v0, p0
 
@@ -3351,7 +3266,7 @@
 
     goto/16 :goto_2
 
-    .line 422
+    .line 433
     .end local v2           #angle:D
     .end local v4           #desxPosition:F
     .end local v5           #desyPosition:F
@@ -3373,7 +3288,7 @@
 
     if-ge v7, v9, :cond_5
 
-    .line 423
+    .line 434
     move-object/from16 v0, p0
 
     iget-object v9, v0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mCellList:Ljava/util/ArrayList;
@@ -3388,13 +3303,13 @@
 
     move-result-object v8
 
-    .line 424
+    .line 435
     .restart local v8       #target:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
     sget-object v9, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->STATE_INACTIVE:[I
 
     invoke-virtual {v8, v9}, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->setState([I)V
 
-    .line 425
+    .line 436
     const-string v9, "PROMPT"
 
     move-object/from16 v0, p0
@@ -3411,18 +3326,18 @@
 
     if-eqz v9, :cond_4
 
-    .line 426
+    .line 437
     const/high16 v9, 0x3f80
 
     invoke-virtual {v8, v9}, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->setAlpha(F)V
 
-    .line 422
+    .line 433
     :goto_4
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_3
 
-    .line 428
+    .line 439
     :cond_4
     const/4 v9, 0x0
 
@@ -3430,7 +3345,7 @@
 
     goto :goto_4
 
-    .line 431
+    .line 442
     .end local v8           #target:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
     :cond_5
     return-void
@@ -3441,7 +3356,7 @@
     .parameter "resourceId"
 
     .prologue
-    .line 540
+    .line 551
     invoke-virtual/range {p0 .. p0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -3450,7 +3365,7 @@
 
     move-result-object v16
 
-    .line 541
+    .line 552
     .local v16, res:Landroid/content/res/Resources;
     move-object/from16 v0, v16
 
@@ -3460,13 +3375,13 @@
 
     move-result-object v12
 
-    .line 542
+    .line 553
     .local v12, array:Landroid/content/res/TypedArray;
     invoke-virtual {v12}, Landroid/content/res/TypedArray;->length()I
 
     move-result v13
 
-    .line 543
+    .line 554
     .local v13, count:I
     new-instance v18, Ljava/util/ArrayList;
 
@@ -3474,7 +3389,7 @@
 
     invoke-direct {v0, v13}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 544
+    .line 555
     .local v18, targetList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;>;"
     new-instance v17, Ljava/util/ArrayList;
 
@@ -3482,7 +3397,7 @@
 
     invoke-direct {v0, v13}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 546
+    .line 557
     .local v17, targetDesList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     const/4 v10, 0x0
 
@@ -3490,12 +3405,12 @@
     :goto_0
     if-ge v10, v13, :cond_2
 
-    .line 547
+    .line 558
     invoke-virtual {v12, v10}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v14
 
-    .line 548
+    .line 559
     .local v14, drawable:Landroid/graphics/drawable/Drawable;
     move-object/from16 v0, p0
 
@@ -3503,7 +3418,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 549
+    .line 560
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mOnTriggerListener:Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$OnTriggerListener;
@@ -3514,7 +3429,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 550
+    .line 561
     new-instance v2, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;
 
     new-instance v4, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
@@ -3551,7 +3466,7 @@
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 551
+    .line 562
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTargetDescriptions:Ljava/util/ArrayList;
@@ -3564,14 +3479,14 @@
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 546
+    .line 557
     :cond_0
     :goto_1
     add-int/lit8 v10, v10, 0x1
 
     goto :goto_0
 
-    .line 554
+    .line 565
     :cond_1
     new-instance v2, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;
 
@@ -3611,7 +3526,7 @@
 
     goto :goto_1
 
-    .line 558
+    .line 569
     .end local v14           #drawable:Landroid/graphics/drawable/Drawable;
     :cond_2
     move-object/from16 v0, p0
@@ -3620,7 +3535,7 @@
 
     invoke-virtual {v2}, Ljava/util/HashMap;->clear()V
 
-    .line 559
+    .line 570
     const/4 v15, 0x0
 
     .local v15, j:I
@@ -3631,7 +3546,7 @@
 
     if-ge v15, v2, :cond_3
 
-    .line 560
+    .line 571
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mCellMap:Ljava/util/HashMap;
@@ -3648,40 +3563,40 @@
 
     invoke-virtual {v2, v3, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 559
+    .line 570
     add-int/lit8 v15, v15, 0x1
 
     goto :goto_2
 
-    .line 562
+    .line 573
     :cond_3
     invoke-virtual {v12}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 563
+    .line 574
     move/from16 v0, p1
 
     move-object/from16 v1, p0
 
     iput v0, v1, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTargetResourceId:I
 
-    .line 564
+    .line 575
     move-object/from16 v0, v18
 
     move-object/from16 v1, p0
 
     iput-object v0, v1, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mCellList:Ljava/util/ArrayList;
 
-    .line 565
+    .line 576
     move-object/from16 v0, v17
 
     move-object/from16 v1, p0
 
     iput-object v0, v1, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTargetDescriptions:Ljava/util/ArrayList;
 
-    .line 566
+    .line 577
     invoke-direct/range {p0 .. p0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->updateTargetPositions()V
 
-    .line 567
+    .line 578
     return-void
 .end method
 
@@ -3699,7 +3614,7 @@
     .end annotation
 
     .prologue
-    .line 1040
+    .line 1051
     invoke-virtual {p0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->getContext()Landroid/content/Context;
 
     move-result-object v5
@@ -3712,19 +3627,19 @@
 
     move-result-object v0
 
-    .line 1041
+    .line 1052
     .local v0, array:Landroid/content/res/TypedArray;
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->length()I
 
     move-result v2
 
-    .line 1042
+    .line 1053
     .local v2, count:I
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1043
+    .line 1054
     .local v4, targetContentDescriptions:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     const/4 v3, 0x0
 
@@ -3732,16 +3647,16 @@
     :goto_0
     if-ge v3, v2, :cond_0
 
-    .line 1044
+    .line 1055
     invoke-virtual {v0, v3}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1045
+    .line 1056
     .local v1, contentDescription:Ljava/lang/String;
     invoke-virtual {v4, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1046
+    .line 1057
     iget-object v5, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mCellMap:Ljava/util/HashMap;
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3750,17 +3665,17 @@
 
     invoke-virtual {v5, v6, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1043
+    .line 1054
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 1048
+    .line 1059
     .end local v1           #contentDescription:Ljava/lang/String;
     :cond_0
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 1049
+    .line 1060
     return-object v4
 .end method
 
@@ -3768,7 +3683,7 @@
     .locals 1
 
     .prologue
-    .line 1033
+    .line 1044
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTargetDescriptions:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_0
@@ -3781,7 +3696,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1034
+    .line 1045
     :cond_0
     iget v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTargetDescriptionsResourceId:I
 
@@ -3791,7 +3706,7 @@
 
     iput-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTargetDescriptions:Ljava/util/ArrayList;
 
-    .line 1036
+    .line 1047
     :cond_1
     return-void
 .end method
@@ -3803,17 +3718,17 @@
     .parameter "animate"
 
     .prologue
-    .line 684
+    .line 695
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mHandleDrawable:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
 
     invoke-virtual {v0, p1}, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->setX(F)V
 
-    .line 685
+    .line 696
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mHandleDrawable:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
 
     invoke-virtual {v0, p2}, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->setY(F)V
 
-    .line 686
+    .line 697
     return-void
 .end method
 
@@ -3827,14 +3742,14 @@
 
     const/4 v3, 0x0
 
-    .line 903
+    .line 914
     iget v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mOuterRadius:F
 
     cmpl-float v0, v0, v3
 
     if-nez v0, :cond_0
 
-    .line 904
+    .line 915
     const/high16 v0, 0x3f00
 
     invoke-direct {p0, p1, p2}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->dist2(FF)F
@@ -3853,7 +3768,7 @@
 
     iput v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mOuterRadius:F
 
-    .line 906
+    .line 917
     :cond_0
     iget v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mHitRadius:F
 
@@ -3861,7 +3776,7 @@
 
     if-nez v0, :cond_1
 
-    .line 908
+    .line 919
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mCellList:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -3870,7 +3785,7 @@
 
     if-lez v0, :cond_1
 
-    .line 909
+    .line 920
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mCellList:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -3895,7 +3810,7 @@
 
     iput v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mHitRadius:F
 
-    .line 912
+    .line 923
     :cond_1
     iget v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mSnapMargin:F
 
@@ -3903,7 +3818,7 @@
 
     if-nez v0, :cond_2
 
-    .line 913
+    .line 924
     const/4 v0, 0x1
 
     const/high16 v1, 0x41a0
@@ -3926,14 +3841,14 @@
 
     iput v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mSnapMargin:F
 
-    .line 916
+    .line 927
     :cond_2
     invoke-direct {p0, v4}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->hideTargets(Z)V
 
-    .line 917
+    .line 928
     invoke-direct {p0, p1, p2, v4}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->moveHandleTo(FFZ)V
 
-    .line 918
+    .line 929
     return-void
 .end method
 
@@ -3943,16 +3858,16 @@
     .parameter "desired"
 
     .prologue
-    .line 249
+    .line 260
     const/4 v0, 0x0
 
-    .line 250
+    .line 261
     .local v0, result:I
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v1
 
-    .line 251
+    .line 262
     .local v1, specSize:I
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
@@ -3960,30 +3875,30 @@
 
     sparse-switch v2, :sswitch_data_0
 
-    .line 260
+    .line 271
     move v0, v1
 
-    .line 262
+    .line 273
     :goto_0
     return v0
 
-    .line 253
+    .line 264
     :sswitch_0
     move v0, p2
 
-    .line 254
+    .line 265
     goto :goto_0
 
-    .line 256
+    .line 267
     :sswitch_1
     invoke-static {v1, p2}, Ljava/lang/Math;->min(II)I
 
     move-result v0
 
-    .line 257
+    .line 268
     goto :goto_0
 
-    .line 251
+    .line 262
     nop
 
     :sswitch_data_0
@@ -3998,34 +3913,34 @@
     .parameter "newState"
 
     .prologue
-    .line 876
+    .line 887
     iget v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mGrabbedState:I
 
     if-eq p1, v0, :cond_1
 
-    .line 877
+    .line 888
     if-eqz p1, :cond_0
 
-    .line 878
+    .line 889
     invoke-direct {p0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->vibrate()V
 
-    .line 880
+    .line 891
     :cond_0
     iput p1, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mGrabbedState:I
 
-    .line 881
+    .line 892
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mOnTriggerListener:Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$OnTriggerListener;
 
     if-eqz v0, :cond_1
 
-    .line 882
+    .line 893
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mOnTriggerListener:Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$OnTriggerListener;
 
     iget v1, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mGrabbedState:I
 
     invoke-interface {v0, p0, v1}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$OnTriggerListener;->onGrabbedStateChange(Landroid/view/View;I)V
 
-    .line 885
+    .line 896
     :cond_1
     return-void
 .end method
@@ -4036,15 +3951,15 @@
     .parameter "textSize"
 
     .prologue
-    .line 196
+    .line 207
     if-nez p1, :cond_0
 
-    .line 197
+    .line 208
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 202
+    .line 213
     .local v0, r:Landroid/content/res/Resources;
     :goto_0
     const/4 v2, 0x2
@@ -4061,7 +3976,7 @@
 
     float-to-int v1, v2
 
-    .line 203
+    .line 214
     .local v1, size:I
     iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTextPaint:Landroid/text/TextPaint;
 
@@ -4069,10 +3984,10 @@
 
     invoke-virtual {v2, v3}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 204
+    .line 215
     return-void
 
-    .line 199
+    .line 210
     .end local v0           #r:Landroid/content/res/Resources;
     .end local v1           #size:I
     :cond_0
@@ -4089,7 +4004,7 @@
     .parameter "animate"
 
     .prologue
-    .line 434
+    .line 445
     move-object/from16 v0, p0
 
     iget-object v10, v0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTargetAnimations:Ljava/util/ArrayList;
@@ -4100,10 +4015,10 @@
 
     if-lez v10, :cond_0
 
-    .line 435
+    .line 446
     invoke-direct/range {p0 .. p0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->stopTargetAnimation()V
 
-    .line 437
+    .line 448
     :cond_0
     move/from16 v0, p1
 
@@ -4111,10 +4026,10 @@
 
     iput-boolean v0, v1, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mAnimatingTargets:Z
 
-    .line 438
+    .line 449
     if-eqz p1, :cond_2
 
-    .line 439
+    .line 450
     const/4 v6, 0x0
 
     .local v6, i:I
@@ -4129,7 +4044,7 @@
 
     if-ge v6, v10, :cond_3
 
-    .line 440
+    .line 451
     move-object/from16 v0, p0
 
     iget-object v10, v0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mCellList:Ljava/util/ArrayList;
@@ -4144,13 +4059,13 @@
 
     move-result-object v9
 
-    .line 441
+    .line 452
     .local v9, target:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
     sget-object v10, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->STATE_INACTIVE:[I
 
     invoke-virtual {v9, v10}, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->setState([I)V
 
-    .line 443
+    .line 454
     const-wide v10, -0x3fe6de04abbbd2e8L
 
     int-to-double v12, v6
@@ -4169,7 +4084,7 @@
 
     div-double v2, v10, v12
 
-    .line 444
+    .line 455
     .local v2, angle:D
     const-string v10, "PROMPT"
 
@@ -4187,7 +4102,7 @@
 
     if-nez v10, :cond_1
 
-    .line 445
+    .line 456
     move-object/from16 v0, p0
 
     iget v10, v0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mWaveCenterX:F
@@ -4210,7 +4125,7 @@
 
     add-float v7, v10, v11
 
-    .line 446
+    .line 457
     .local v7, startxPosition:F
     move-object/from16 v0, p0
 
@@ -4234,7 +4149,7 @@
 
     add-float v8, v10, v11
 
-    .line 447
+    .line 458
     .local v8, startyPosition:F
     move-object/from16 v0, p0
 
@@ -4254,7 +4169,7 @@
 
     add-float v4, v10, v11
 
-    .line 448
+    .line 459
     .local v4, desxPosition:F
     move-object/from16 v0, p0
 
@@ -4274,7 +4189,7 @@
 
     add-float v5, v10, v11
 
-    .line 449
+    .line 460
     .local v5, desyPosition:F
     move-object/from16 v0, p0
 
@@ -4382,7 +4297,7 @@
 
     invoke-virtual {v10, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 439
+    .line 450
     .end local v7           #startxPosition:F
     .end local v8           #startyPosition:F
     :goto_1
@@ -4390,7 +4305,7 @@
 
     goto/16 :goto_0
 
-    .line 456
+    .line 467
     .end local v4           #desxPosition:F
     .end local v5           #desyPosition:F
     :cond_1
@@ -4416,7 +4331,7 @@
 
     add-float v4, v10, v11
 
-    .line 457
+    .line 468
     .restart local v4       #desxPosition:F
     move-object/from16 v0, p0
 
@@ -4440,7 +4355,7 @@
 
     add-float v5, v10, v11
 
-    .line 458
+    .line 469
     .restart local v5       #desyPosition:F
     move-object/from16 v0, p0
 
@@ -4558,7 +4473,7 @@
 
     goto/16 :goto_1
 
-    .line 467
+    .line 478
     .end local v2           #angle:D
     .end local v4           #desxPosition:F
     .end local v5           #desyPosition:F
@@ -4579,7 +4494,7 @@
 
     if-ge v6, v10, :cond_3
 
-    .line 468
+    .line 479
     move-object/from16 v0, p0
 
     iget-object v10, v0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mCellList:Ljava/util/ArrayList;
@@ -4594,23 +4509,23 @@
 
     move-result-object v9
 
-    .line 469
+    .line 480
     .restart local v9       #target:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
     sget-object v10, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->STATE_INACTIVE:[I
 
     invoke-virtual {v9, v10}, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->setState([I)V
 
-    .line 470
+    .line 481
     const/high16 v10, 0x3f80
 
     invoke-virtual {v9, v10}, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->setAlpha(F)V
 
-    .line 467
+    .line 478
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_2
 
-    .line 473
+    .line 484
     .end local v9           #target:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
     :cond_3
     return-void
@@ -4621,7 +4536,7 @@
     .parameter "d"
 
     .prologue
-    .line 997
+    .line 1008
     mul-float v0, p1, p1
 
     return v0
@@ -4631,24 +4546,24 @@
     .locals 1
 
     .prologue
-    .line 302
+    .line 313
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mHandleAnimation:Lcom/baidu/internal/keyguard/slide/Tweener;
 
     if-eqz v0, :cond_0
 
-    .line 303
+    .line 314
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mHandleAnimation:Lcom/baidu/internal/keyguard/slide/Tweener;
 
     iget-object v0, v0, Lcom/baidu/internal/keyguard/slide/Tweener;->animator:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->end()V
 
-    .line 304
+    .line 315
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mHandleAnimation:Lcom/baidu/internal/keyguard/slide/Tweener;
 
-    .line 306
+    .line 317
     :cond_0
     return-void
 .end method
@@ -4657,7 +4572,7 @@
     .locals 3
 
     .prologue
-    .line 476
+    .line 487
     iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTargetAnimations:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -4678,7 +4593,7 @@
 
     check-cast v0, Lcom/baidu/internal/keyguard/slide/Tweener;
 
-    .line 477
+    .line 488
     .local v0, anim:Lcom/baidu/internal/keyguard/slide/Tweener;
     iget-object v2, v0, Lcom/baidu/internal/keyguard/slide/Tweener;->animator:Landroid/animation/ObjectAnimator;
 
@@ -4686,14 +4601,14 @@
 
     goto :goto_0
 
-    .line 479
+    .line 490
     .end local v0           #anim:Lcom/baidu/internal/keyguard/slide/Tweener;
     :cond_0
     iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTargetAnimations:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
 
-    .line 480
+    .line 491
     return-void
 .end method
 
@@ -4706,19 +4621,19 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 275
+    .line 286
     packed-switch p1, :pswitch_data_0
 
-    .line 299
+    .line 310
     :goto_0
     :pswitch_0
     return-void
 
-    .line 277
+    .line 288
     :pswitch_1
     invoke-direct {p0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->deactivateTargets()V
 
-    .line 278
+    .line 289
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mHandleDrawable:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
 
     sget-object v1, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->STATE_INACTIVE:[I
@@ -4727,35 +4642,35 @@
 
     goto :goto_0
 
-    .line 282
+    .line 293
     :pswitch_2
     invoke-direct {p0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->stopHandleAnimation()V
 
-    .line 283
+    .line 294
     invoke-direct {p0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->deactivateTargets()V
 
-    .line 284
+    .line 295
     invoke-direct {p0, v2}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->showTargets(Z)V
 
-    .line 285
+    .line 296
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mHandleDrawable:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
 
     sget-object v1, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->STATE_ACTIVE:[I
 
     invoke-virtual {v0, v1}, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->setState([I)V
 
-    .line 286
+    .line 297
     invoke-direct {p0, v2}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->setGrabbedState(I)V
 
     goto :goto_0
 
-    .line 296
+    .line 307
     :pswitch_3
     invoke-direct {p0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->doFinish()V
 
     goto :goto_0
 
-    .line 275
+    .line 286
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1
@@ -4775,30 +4690,30 @@
 
     const/4 v4, 0x1
 
-    .line 888
+    .line 899
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v2
 
-    .line 889
+    .line 900
     .local v2, x:F
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v3
 
-    .line 890
+    .line 901
     .local v3, y:F
     iget v6, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mWaveCenterX:F
 
     sub-float v0, v2, v6
 
-    .line 891
+    .line 902
     .local v0, dx:F
     iget v6, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mWaveCenterY:F
 
     sub-float v1, v3, v6
 
-    .line 892
+    .line 903
     .local v1, dy:F
     invoke-direct {p0, v0, v1}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->dist2(FF)F
 
@@ -4812,16 +4727,16 @@
 
     if-gtz v6, :cond_0
 
-    .line 894
+    .line 905
     invoke-direct {p0, v4, v2, v3}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->switchToState(IFF)V
 
-    .line 895
+    .line 906
     invoke-direct {p0, v2, v3, v5}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->moveHandleTo(FFZ)V
 
-    .line 896
+    .line 907
     iput-boolean v4, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mDragging:Z
 
-    .line 899
+    .line 910
     :goto_0
     return v4
 
@@ -4836,7 +4751,7 @@
     .parameter "draggingRingRawY"
 
     .prologue
-    .line 709
+    .line 720
     iget v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mOriginalRingRawY:F
 
     iget v1, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mUnlockDistance:I
@@ -4851,10 +4766,10 @@
 
     if-gez v0, :cond_0
 
-    .line 710
+    .line 721
     const/4 v0, 0x1
 
-    .line 713
+    .line 724
     :goto_0
     return v0
 
@@ -4870,7 +4785,7 @@
     .prologue
     const/high16 v9, 0x4220
 
-    .line 945
+    .line 956
     const/4 v2, 0x0
 
     .local v2, i:I
@@ -4883,7 +4798,7 @@
 
     if-ge v2, v5, :cond_1
 
-    .line 946
+    .line 957
     const-wide v5, -0x3fe6de04abbbd2e8L
 
     int-to-double v7, v2
@@ -4900,21 +4815,21 @@
 
     div-double v0, v5, v7
 
-    .line 947
+    .line 958
     .local v0, angle:D
     const/4 v3, 0x0
 
-    .line 948
+    .line 959
     .local v3, xPosition:F
     const/4 v4, 0x0
 
-    .line 949
+    .line 960
     .local v4, yPosition:F
     const/4 v5, 0x1
 
     if-eq v2, v5, :cond_0
 
-    .line 950
+    .line 961
     iget v5, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mWaveCenterX:F
 
     iget v6, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mOuterRadius:F
@@ -4929,7 +4844,7 @@
 
     add-float v3, v5, v6
 
-    .line 951
+    .line 962
     iget v5, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mWaveCenterY:F
 
     iget v6, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mOuterRadius:F
@@ -4944,7 +4859,7 @@
 
     add-float v4, v5, v6
 
-    .line 956
+    .line 967
     :goto_1
     iget-object v5, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mCellList:Ljava/util/ArrayList;
 
@@ -4956,7 +4871,7 @@
 
     invoke-virtual {v5, v3}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;->setX(F)V
 
-    .line 957
+    .line 968
     iget-object v5, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mCellList:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -4967,12 +4882,12 @@
 
     invoke-virtual {v5, v4}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;->setY(F)V
 
-    .line 945
+    .line 956
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 953
+    .line 964
     :cond_0
     iget v5, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mWaveCenterX:F
 
@@ -4990,7 +4905,7 @@
 
     add-float v3, v5, v6
 
-    .line 954
+    .line 965
     iget v5, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mWaveCenterY:F
 
     iget v6, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mOuterRadius:F
@@ -5009,7 +4924,7 @@
 
     goto :goto_1
 
-    .line 959
+    .line 970
     .end local v0           #angle:D
     .end local v3           #xPosition:F
     .end local v4           #yPosition:F
@@ -5021,12 +4936,12 @@
     .locals 3
 
     .prologue
-    .line 534
+    .line 545
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mVibrator:Landroid/os/Vibrator;
 
     if-eqz v0, :cond_0
 
-    .line 535
+    .line 546
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mVibrator:Landroid/os/Vibrator;
 
     iget v1, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mVibrationDuration:I
@@ -5035,7 +4950,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Vibrator;->vibrate(J)V
 
-    .line 537
+    .line 548
     :cond_0
     return-void
 .end method
@@ -5047,7 +4962,7 @@
     .parameter "key"
 
     .prologue
-    .line 1054
+    .line 1065
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mCellMap:Ljava/util/HashMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -5067,7 +4982,7 @@
     .locals 2
 
     .prologue
-    .line 243
+    .line 254
     iget v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mOuterRadius:F
 
     float-to-int v0, v0
@@ -5099,7 +5014,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 236
+    .line 247
     iget v1, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mOuterRadius:F
 
     float-to-int v1, v1
@@ -5142,7 +5057,7 @@
     .locals 1
 
     .prologue
-    .line 606
+    .line 617
     iget v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTargetDescriptionsResourceId:I
 
     return v0
@@ -5152,7 +5067,7 @@
     .locals 1
 
     .prologue
-    .line 584
+    .line 595
     iget v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTargetResourceId:I
 
     return v0
@@ -5165,18 +5080,18 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 313
+    .line 324
     invoke-virtual {p1}, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->getWidth()I
 
     move-result v3
 
-    .line 314
+    .line 325
     .local v3, width:I
     invoke-virtual {p1}, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->getHeight()I
 
     move-result v1
 
-    .line 315
+    .line 326
     .local v1, height:I
     new-instance v0, Landroid/graphics/RectF;
 
@@ -5186,7 +5101,7 @@
 
     invoke-direct {v0, v6, v6, v4, v5}, Landroid/graphics/RectF;-><init>(FFFF)V
 
-    .line 316
+    .line 327
     .local v0, childBounds:Landroid/graphics/RectF;
     invoke-virtual {p1}, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->getX()F
 
@@ -5210,10 +5125,10 @@
 
     invoke-virtual {v0, v4, v5}, Landroid/graphics/RectF;->offset(FF)V
 
-    .line 317
+    .line 328
     move-object v2, p0
 
-    .line 318
+    .line 329
     .local v2, view:Landroid/view/View;
     :goto_0
     invoke-virtual {v2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
@@ -5230,7 +5145,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 319
+    .line 330
     invoke-virtual {v2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v2
@@ -5238,7 +5153,7 @@
     .end local v2           #view:Landroid/view/View;
     check-cast v2, Landroid/view/View;
 
-    .line 320
+    .line 331
     .restart local v2       #view:Landroid/view/View;
     invoke-virtual {v2}, Landroid/view/View;->getMatrix()Landroid/graphics/Matrix;
 
@@ -5246,7 +5161,7 @@
 
     invoke-virtual {v4, v0}, Landroid/graphics/Matrix;->mapRect(Landroid/graphics/RectF;)Z
 
-    .line 321
+    .line 332
     iget v4, v0, Landroid/graphics/RectF;->left:F
 
     float-to-double v4, v4
@@ -5291,7 +5206,7 @@
 
     goto :goto_0
 
-    .line 326
+    .line 337
     :cond_0
     return-void
 .end method
@@ -5305,7 +5220,7 @@
 
     const/high16 v12, 0x4000
 
-    .line 963
+    .line 974
     const/4 v1, 0x0
 
     .local v1, i:I
@@ -5318,7 +5233,7 @@
 
     if-ge v1, v7, :cond_3
 
-    .line 964
+    .line 975
     iget-object v7, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mCellList:Ljava/util/ArrayList;
 
     invoke-virtual {v7, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -5331,14 +5246,14 @@
 
     move-result-object v5
 
-    .line 965
+    .line 976
     .local v5, target:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
     if-eqz v5, :cond_0
 
-    .line 966
+    .line 977
     invoke-virtual {v5, p1}, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 969
+    .line 980
     :cond_0
     iget-object v7, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mCellList:Ljava/util/ArrayList;
 
@@ -5354,7 +5269,7 @@
 
     if-eqz v7, :cond_2
 
-    .line 970
+    .line 981
     iget-object v7, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mCellList:Ljava/util/ArrayList;
 
     invoke-virtual {v7, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -5367,16 +5282,16 @@
 
     move-result-object v2
 
-    .line 971
+    .line 982
     .local v2, notifier:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
     if-eqz v2, :cond_2
 
-    .line 972
+    .line 983
     iget v7, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mEnlargeTarget:I
 
     if-ne v1, v7, :cond_1
 
-    .line 973
+    .line 984
     iget-object v7, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mContext:Landroid/content/Context;
 
     iget v8, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTextSize:I
@@ -5391,13 +5306,13 @@
 
     invoke-direct {p0, v7, v8}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->setTextSize(Landroid/content/Context;I)V
 
-    .line 975
+    .line 986
     :cond_1
     invoke-virtual {v2}, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->getWidth()I
 
     move-result v4
 
-    .line 976
+    .line 987
     .local v4, originalWidth:I
     iget-object v8, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTextPaint:Landroid/text/TextPaint;
 
@@ -5417,7 +5332,7 @@
 
     move-result v6
 
-    .line 977
+    .line 988
     .local v6, textWidth:F
     iget-object v7, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTextPaint:Landroid/text/TextPaint;
 
@@ -5425,7 +5340,7 @@
 
     move-result-object v0
 
-    .line 978
+    .line 989
     .local v0, fm:Landroid/graphics/Paint$FontMetrics;
     const/high16 v7, 0x40c0
 
@@ -5437,19 +5352,19 @@
 
     move-result v3
 
-    .line 979
+    .line 990
     .local v3, notifierWidth:F
     float-to-int v7, v3
 
     invoke-virtual {v2, v7}, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->setWidth(I)V
 
-    .line 980
+    .line 991
     invoke-virtual {v2, p1}, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 981
+    .line 992
     invoke-virtual {v2, v4}, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->setWidth(I)V
 
-    .line 984
+    .line 995
     iget-object v7, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mCellList:Ljava/util/ArrayList;
 
     invoke-virtual {v7, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -5500,14 +5415,14 @@
 
     invoke-virtual {p1, v7, v8, v9, v10}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 985
+    .line 996
     iget-object v7, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mContext:Landroid/content/Context;
 
     iget v8, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTextSize:I
 
     invoke-direct {p0, v7, v8}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->setTextSize(Landroid/content/Context;I)V
 
-    .line 963
+    .line 974
     .end local v0           #fm:Landroid/graphics/Paint$FontMetrics;
     .end local v2           #notifier:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
     .end local v3           #notifierWidth:F
@@ -5518,14 +5433,14 @@
 
     goto/16 :goto_0
 
-    .line 989
+    .line 1000
     .end local v5           #target:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
     :cond_3
     iget-object v7, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mHandleDrawable:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
 
     invoke-virtual {v7, p1}, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 990
+    .line 1001
     return-void
 .end method
 
@@ -5534,7 +5449,7 @@
     .parameter "event"
 
     .prologue
-    .line 852
+    .line 863
     iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Landroid/view/accessibility/AccessibilityManager;->getInstance(Landroid/content/Context;)Landroid/view/accessibility/AccessibilityManager;
@@ -5547,24 +5462,24 @@
 
     if-eqz v1, :cond_0
 
-    .line 853
+    .line 864
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    .line 854
+    .line 865
     .local v0, action:I
     packed-switch v0, :pswitch_data_0
 
-    .line 865
+    .line 876
     :goto_0
     :pswitch_0
     invoke-virtual {p0, p1}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 866
+    .line 877
     invoke-virtual {p1, v0}, Landroid/view/MotionEvent;->setAction(I)V
 
-    .line 868
+    .line 879
     .end local v0           #action:I
     :cond_0
     invoke-super {p0, p1}, Landroid/view/View;->onHoverEvent(Landroid/view/MotionEvent;)Z
@@ -5573,7 +5488,7 @@
 
     return v1
 
-    .line 856
+    .line 867
     .restart local v0       #action:I
     :pswitch_1
     const/4 v1, 0x0
@@ -5582,7 +5497,7 @@
 
     goto :goto_0
 
-    .line 859
+    .line 870
     :pswitch_2
     const/4 v1, 0x2
 
@@ -5590,7 +5505,7 @@
 
     goto :goto_0
 
-    .line 862
+    .line 873
     :pswitch_3
     const/4 v1, 0x1
 
@@ -5598,7 +5513,7 @@
 
     goto :goto_0
 
-    .line 854
+    .line 865
     nop
 
     :pswitch_data_0
@@ -5611,7 +5526,7 @@
 .end method
 
 .method protected onLayout(ZIIII)V
-    .locals 9
+    .locals 8
     .parameter "changed"
     .parameter "left"
     .parameter "top"
@@ -5619,21 +5534,19 @@
     .parameter "bottom"
 
     .prologue
-    const v8, 0x3a83126f
-
     const/4 v7, 0x0
 
-    .line 922
+    .line 933
     invoke-super/range {p0 .. p5}, Landroid/view/View;->onLayout(ZIIII)V
 
-    .line 923
+    .line 934
     sub-int v4, p4, p2
 
-    .line 924
+    .line 935
     .local v4, width:I
     sub-int v0, p5, p3
 
-    .line 925
+    .line 936
     .local v0, height:I
     iget v5, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mHorizontalOffset:F
 
@@ -5653,7 +5566,7 @@
 
     add-float v2, v5, v6
 
-    .line 926
+    .line 937
     .local v2, newWaveCenterX:F
     iget v5, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mVerticalOffset:F
 
@@ -5661,33 +5574,21 @@
 
     add-float v3, v5, v6
 
-    .line 927
+    .line 938
     .local v3, newWaveCenterY:F
     iget v5, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mWaveCenterX:F
 
-    sub-float v5, v2, v5
+    cmpl-float v5, v2, v5
 
-    invoke-static {v5}, Ljava/lang/Math;->abs(F)F
-
-    move-result v5
-
-    cmpl-float v5, v5, v8
-
-    if-gtz v5, :cond_0
+    if-nez v5, :cond_0
 
     iget v5, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mWaveCenterY:F
 
-    sub-float v5, v3, v5
+    cmpl-float v5, v3, v5
 
-    invoke-static {v5}, Ljava/lang/Math;->abs(F)F
+    if-eqz v5, :cond_2
 
-    move-result v5
-
-    cmpl-float v5, v5, v8
-
-    if-lez v5, :cond_2
-
-    .line 928
+    .line 939
     :cond_0
     iget v5, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mWaveCenterX:F
 
@@ -5701,19 +5602,19 @@
 
     if-nez v5, :cond_1
 
-    .line 929
+    .line 940
     invoke-direct {p0, v2, v3}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->performInitialLayout(FF)V
 
-    .line 931
+    .line 942
     const/4 v5, 0x2
 
     new-array v1, v5, [I
 
-    .line 932
+    .line 943
     .local v1, location:[I
     invoke-virtual {p0, v1}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->getLocationOnScreen([I)V
 
-    .line 933
+    .line 944
     const/4 v5, 0x1
 
     aget v5, v1, v5
@@ -5724,18 +5625,18 @@
 
     iput v5, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mOriginalRingRawY:F
 
-    .line 935
+    .line 946
     .end local v1           #location:[I
     :cond_1
     iput v2, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mWaveCenterX:F
 
-    .line 936
+    .line 947
     iput v3, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mWaveCenterY:F
 
-    .line 938
+    .line 949
     invoke-direct {p0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->updateTargetPositions()V
 
-    .line 941
+    .line 952
     :cond_2
     return-void
 .end method
@@ -5746,34 +5647,34 @@
     .parameter "heightMeasureSpec"
 
     .prologue
-    .line 267
+    .line 278
     invoke-virtual {p0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->getSuggestedMinimumWidth()I
 
     move-result v1
 
-    .line 268
+    .line 279
     .local v1, minimumWidth:I
     invoke-virtual {p0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->getSuggestedMinimumHeight()I
 
     move-result v0
 
-    .line 269
+    .line 280
     .local v0, minimumHeight:I
     invoke-direct {p0, p1, v1}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->resolveMeasured(II)I
 
     move-result v3
 
-    .line 270
+    .line 281
     .local v3, viewWidth:I
     invoke-direct {p0, p2, v0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->resolveMeasured(II)I
 
     move-result v2
 
-    .line 271
+    .line 282
     .local v2, viewHeight:I
     invoke-virtual {p0, v3, v2}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->setMeasuredDimension(II)V
 
-    .line 272
+    .line 283
     return-void
 .end method
 
@@ -5782,24 +5683,24 @@
     .parameter "event"
 
     .prologue
-    .line 653
+    .line 664
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    .line 655
+    .line 666
     .local v0, action:I
     const/4 v1, 0x0
 
-    .line 656
+    .line 667
     .local v1, handled:Z
     packed-switch v0, :pswitch_data_0
 
-    .line 678
+    .line 689
     :goto_0
     invoke-virtual {p0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->invalidate()V
 
-    .line 679
+    .line 690
     if-eqz v1, :cond_0
 
     const/4 v2, 0x1
@@ -5807,32 +5708,9 @@
     :goto_1
     return v2
 
-    .line 658
+    .line 669
     :pswitch_0
     invoke-direct {p0, p1}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->handleDown(Landroid/view/MotionEvent;)V
-
-    .line 659
-    const/4 v1, 0x1
-
-    .line 660
-    goto :goto_0
-
-    .line 663
-    :pswitch_1
-    invoke-direct {p0, p1}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->handleMove(Landroid/view/MotionEvent;)V
-
-    .line 664
-    const/4 v1, 0x1
-
-    .line 665
-    goto :goto_0
-
-    .line 668
-    :pswitch_2
-    invoke-direct {p0, p1}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->handleMove(Landroid/view/MotionEvent;)V
-
-    .line 669
-    invoke-direct {p0, p1}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->handleUp(Landroid/view/MotionEvent;)V
 
     .line 670
     const/4 v1, 0x1
@@ -5841,15 +5719,38 @@
     goto :goto_0
 
     .line 674
-    :pswitch_3
-    invoke-direct {p0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->doFinish()V
+    :pswitch_1
+    invoke-direct {p0, p1}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->handleMove(Landroid/view/MotionEvent;)V
 
     .line 675
     const/4 v1, 0x1
 
+    .line 676
     goto :goto_0
 
     .line 679
+    :pswitch_2
+    invoke-direct {p0, p1}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->handleMove(Landroid/view/MotionEvent;)V
+
+    .line 680
+    invoke-direct {p0, p1}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->handleUp(Landroid/view/MotionEvent;)V
+
+    .line 681
+    const/4 v1, 0x1
+
+    .line 682
+    goto :goto_0
+
+    .line 685
+    :pswitch_3
+    invoke-direct {p0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->doFinish()V
+
+    .line 686
+    const/4 v1, 0x1
+
+    goto :goto_0
+
+    .line 690
     :cond_0
     invoke-super {p0, p1}, Landroid/view/View;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -5857,7 +5758,7 @@
 
     goto :goto_1
 
-    .line 656
+    .line 667
     nop
 
     :pswitch_data_0
@@ -5873,13 +5774,13 @@
     .locals 0
 
     .prologue
-    .line 630
+    .line 641
     invoke-direct {p0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->stopHandleAnimation()V
 
-    .line 631
+    .line 642
     invoke-direct {p0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->bounceHandle()V
 
-    .line 632
+    .line 643
     return-void
 .end method
 
@@ -5888,47 +5789,47 @@
     .parameter "animate"
 
     .prologue
-    .line 641
+    .line 652
     invoke-direct {p0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->stopHandleAnimation()V
 
-    .line 642
+    .line 653
     invoke-direct {p0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->stopTargetAnimation()V
 
-    .line 643
+    .line 654
     invoke-direct {p0, p1}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->hideTargets(Z)V
 
-    .line 644
+    .line 655
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mHandleDrawable:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
 
     iget v1, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mWaveCenterX:F
 
     invoke-virtual {v0, v1}, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->setX(F)V
 
-    .line 645
+    .line 656
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mHandleDrawable:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
 
     iget v1, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mWaveCenterY:F
 
     invoke-virtual {v0, v1}, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->setY(F)V
 
-    .line 646
+    .line 657
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mHandleDrawable:Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;
 
     sget-object v1, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->STATE_INACTIVE:[I
 
     invoke-virtual {v0, v1}, Lcom/baidu/internal/keyguard/slide/SmartTargetDrawable;->setState([I)V
 
-    .line 647
+    .line 658
     invoke-static {}, Lcom/baidu/internal/keyguard/slide/Tweener;->reset()V
 
-    .line 648
+    .line 659
     const/4 v0, 0x0
 
     iget v1, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mLastActiveTarget:I
 
     invoke-direct {p0, v0, v1}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->enlargeSelectTarget(ZI)V
 
-    .line 649
+    .line 660
     return-void
 .end method
 
@@ -5938,17 +5839,17 @@
     .parameter "color"
 
     .prologue
-    .line 207
+    .line 218
     if-eqz p1, :cond_0
 
-    .line 208
+    .line 219
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTextPaint:Landroid/text/TextPaint;
 
     iget v1, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mDefaultNotificationClr:I
 
     invoke-virtual {v0, v1}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 213
+    .line 224
     :goto_0
     new-instance v0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$4;
 
@@ -5956,10 +5857,10 @@
 
     invoke-virtual {p0, v0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->post(Ljava/lang/Runnable;)Z
 
-    .line 219
+    .line 230
     return-void
 
-    .line 210
+    .line 221
     :cond_0
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTextPaint:Landroid/text/TextPaint;
 
@@ -5973,10 +5874,10 @@
     .parameter "listener"
 
     .prologue
-    .line 993
+    .line 1004
     iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mOnTriggerListener:Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$OnTriggerListener;
 
-    .line 994
+    .line 1005
     return-void
 .end method
 
@@ -5985,24 +5886,24 @@
     .parameter "resourceId"
 
     .prologue
-    .line 593
+    .line 604
     iput p1, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTargetDescriptionsResourceId:I
 
-    .line 594
+    .line 605
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTargetDescriptions:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_0
 
-    .line 595
+    .line 606
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTargetDescriptions:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 597
+    .line 608
     :cond_0
     invoke-direct {p0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->loadTargetDescription()V
 
-    .line 598
+    .line 609
     return-void
 .end method
 
@@ -6011,19 +5912,19 @@
     .parameter "resourceId"
 
     .prologue
-    .line 575
+    .line 586
     iget-boolean v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mAnimatingTargets:Z
 
     if-eqz v0, :cond_0
 
-    .line 577
+    .line 588
     iput p1, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mNewTargetResources:I
 
-    .line 581
+    .line 592
     :goto_0
     return-void
 
-    .line 579
+    .line 590
     :cond_0
     invoke-direct {p0, p1}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->internalSetTargetResources(I)V
 
@@ -6035,15 +5936,15 @@
     .parameter "enabled"
 
     .prologue
-    .line 615
+    .line 626
     if-eqz p1, :cond_1
 
-    .line 616
+    .line 627
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mVibrator:Landroid/os/Vibrator;
 
     if-nez v0, :cond_0
 
-    .line 617
+    .line 628
     invoke-virtual {p0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -6058,12 +5959,12 @@
 
     iput-object v0, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mVibrator:Landroid/os/Vibrator;
 
-    .line 622
+    .line 633
     :cond_0
     :goto_0
     return-void
 
-    .line 620
+    .line 631
     :cond_1
     const/4 v0, 0x0
 
@@ -6078,10 +5979,10 @@
     .parameter "number"
 
     .prologue
-    .line 1061
+    .line 1072
     const/4 v0, 0x0
 
-    .line 1062
+    .line 1073
     .local v0, hasUpdate:Z
     iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mCellList:Ljava/util/ArrayList;
 
@@ -6091,12 +5992,12 @@
 
     if-nez v2, :cond_1
 
-    .line 1095
+    .line 1106
     :cond_0
     :goto_0
     return-void
 
-    .line 1065
+    .line 1076
     :cond_1
     const/4 v1, 0x0
 
@@ -6110,7 +6011,7 @@
 
     if-ge v1, v2, :cond_5
 
-    .line 1066
+    .line 1077
     iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mTargetDescriptions:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -6125,10 +6026,10 @@
 
     if-eqz v2, :cond_2
 
-    .line 1067
+    .line 1078
     if-lez p2, :cond_4
 
-    .line 1068
+    .line 1079
     iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mCellList:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -6141,12 +6042,12 @@
 
     invoke-virtual {v2, v3}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;->setHasNotifier(Z)V
 
-    .line 1070
+    .line 1081
     const/16 v2, 0x3e7
 
     if-le p2, v2, :cond_3
 
-    .line 1071
+    .line 1082
     iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mCellList:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -6159,17 +6060,17 @@
 
     invoke-virtual {v2, v3}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;->setNotifyText(Ljava/lang/String;)V
 
-    .line 1082
+    .line 1093
     :goto_2
     const/4 v0, 0x1
 
-    .line 1065
+    .line 1076
     :cond_2
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 1074
+    .line 1085
     :cond_3
     iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mCellList:Ljava/util/ArrayList;
 
@@ -6187,7 +6088,7 @@
 
     goto :goto_2
 
-    .line 1078
+    .line 1089
     :cond_4
     iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mCellList:Ljava/util/ArrayList;
 
@@ -6201,7 +6102,7 @@
 
     invoke-virtual {v2, v3}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$Cell;->setHasNotifier(Z)V
 
-    .line 1079
+    .line 1090
     iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;->mCellList:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -6216,11 +6117,11 @@
 
     goto :goto_2
 
-    .line 1086
+    .line 1097
     :cond_5
     if-eqz v0, :cond_0
 
-    .line 1088
+    .line 1099
     new-instance v2, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$6;
 
     invoke-direct {v2, p0}, Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView$6;-><init>(Lcom/baidu/internal/keyguard/slide/SmartMultiUnlockView;)V

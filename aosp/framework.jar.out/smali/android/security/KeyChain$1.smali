@@ -29,12 +29,12 @@
     .parameter
 
     .prologue
-    .line 401
+    .line 412
     iput-object p1, p0, Landroid/security/KeyChain$1;->val$q:Ljava/util/concurrent/BlockingQueue;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 402
+    .line 413
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/security/KeyChain$1;->mConnectedAtLeastOnce:Z
@@ -50,17 +50,17 @@
     .parameter "service"
 
     .prologue
-    .line 404
+    .line 415
     iget-boolean v0, p0, Landroid/security/KeyChain$1;->mConnectedAtLeastOnce:Z
 
     if-nez v0, :cond_0
 
-    .line 405
+    .line 416
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/security/KeyChain$1;->mConnectedAtLeastOnce:Z
 
-    .line 407
+    .line 418
     :try_start_0
     iget-object v0, p0, Landroid/security/KeyChain$1;->val$q:Ljava/util/concurrent/BlockingQueue;
 
@@ -72,12 +72,12 @@
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 412
+    .line 423
     :cond_0
     :goto_0
     return-void
 
-    .line 408
+    .line 419
     :catch_0
     move-exception v0
 
@@ -89,6 +89,6 @@
     .parameter "name"
 
     .prologue
-    .line 413
+    .line 424
     return-void
 .end method

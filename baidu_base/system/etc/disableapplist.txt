@@ -11,6 +11,5 @@ com.android.providers.downloads.permission.tests
 com.android.providers.downloads.public_api_access_tests
 com.android.providers.downloads.ui
 com.android.providers.drm
-com.android.providers.media
+com.android,providers.media
 com.android.providers.telephony
-com.android.inputmethod.latin

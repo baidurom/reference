@@ -59,7 +59,7 @@
     .locals 1
 
     .prologue
-    .line 930
+    .line 924
     new-instance v0, Landroid/widget/ExpandableListConnector$GroupMetadata$1;
 
     invoke-direct {v0}, Landroid/widget/ExpandableListConnector$GroupMetadata$1;-><init>()V
@@ -73,10 +73,10 @@
     .locals 0
 
     .prologue
-    .line 899
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 893
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 900
+    .line 894
     return-void
 .end method
 
@@ -88,25 +88,25 @@
     .parameter "gId"
 
     .prologue
-    .line 903
+    .line 897
     new-instance v0, Landroid/widget/ExpandableListConnector$GroupMetadata;
 
     invoke-direct {v0}, Landroid/widget/ExpandableListConnector$GroupMetadata;-><init>()V
 
-    .line 904
+    .line 898
     .local v0, gm:Landroid/widget/ExpandableListConnector$GroupMetadata;
     iput p0, v0, Landroid/widget/ExpandableListConnector$GroupMetadata;->flPos:I
 
-    .line 905
+    .line 899
     iput p1, v0, Landroid/widget/ExpandableListConnector$GroupMetadata;->lastChildFlPos:I
 
-    .line 906
+    .line 900
     iput p2, v0, Landroid/widget/ExpandableListConnector$GroupMetadata;->gPos:I
 
-    .line 907
+    .line 901
     iput-wide p3, v0, Landroid/widget/ExpandableListConnector$GroupMetadata;->gId:J
 
-    .line 908
+    .line 902
     return-object v0
 .end method
 
@@ -117,17 +117,17 @@
     .parameter "another"
 
     .prologue
-    .line 912
+    .line 906
     if-nez p1, :cond_0
 
-    .line 913
+    .line 907
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
 
     throw v0
 
-    .line 916
+    .line 910
     :cond_0
     iget v0, p0, Landroid/widget/ExpandableListConnector$GroupMetadata;->gPos:I
 
@@ -143,7 +143,7 @@
     .parameter "x0"
 
     .prologue
-    .line 875
+    .line 869
     check-cast p1, Landroid/widget/ExpandableListConnector$GroupMetadata;
 
     .end local p1
@@ -158,7 +158,7 @@
     .locals 1
 
     .prologue
-    .line 920
+    .line 914
     const/4 v0, 0x0
 
     return v0
@@ -170,26 +170,26 @@
     .parameter "flags"
 
     .prologue
-    .line 924
+    .line 918
     iget v0, p0, Landroid/widget/ExpandableListConnector$GroupMetadata;->flPos:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 925
+    .line 919
     iget v0, p0, Landroid/widget/ExpandableListConnector$GroupMetadata;->lastChildFlPos:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 926
+    .line 920
     iget v0, p0, Landroid/widget/ExpandableListConnector$GroupMetadata;->gPos:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 927
+    .line 921
     iget-wide v0, p0, Landroid/widget/ExpandableListConnector$GroupMetadata;->gId:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 928
+    .line 922
     return-void
 .end method

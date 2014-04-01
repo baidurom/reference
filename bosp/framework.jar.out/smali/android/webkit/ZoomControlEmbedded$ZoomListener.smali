@@ -60,12 +60,12 @@
     .line 103
     iget-object v0, p0, Landroid/webkit/ZoomControlEmbedded$ZoomListener;->this$0:Landroid/webkit/ZoomControlEmbedded;
 
-    #getter for: Landroid/webkit/ZoomControlEmbedded;->mWebView:Landroid/webkit/WebViewClassic;
-    invoke-static {v0}, Landroid/webkit/ZoomControlEmbedded;->access$100(Landroid/webkit/ZoomControlEmbedded;)Landroid/webkit/WebViewClassic;
+    #getter for: Landroid/webkit/ZoomControlEmbedded;->mWebView:Landroid/webkit/WebView;
+    invoke-static {v0}, Landroid/webkit/ZoomControlEmbedded;->access$100(Landroid/webkit/ZoomControlEmbedded;)Landroid/webkit/WebView;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/webkit/WebViewClassic;->switchOutDrawHistory()V
+    invoke-virtual {v0}, Landroid/webkit/WebView;->switchOutDrawHistory()V
 
     .line 105
     iget-object v0, p0, Landroid/webkit/ZoomControlEmbedded$ZoomListener;->this$0:Landroid/webkit/ZoomControlEmbedded;
@@ -104,12 +104,12 @@
     .line 112
     iget-object v0, p0, Landroid/webkit/ZoomControlEmbedded$ZoomListener;->this$0:Landroid/webkit/ZoomControlEmbedded;
 
-    #getter for: Landroid/webkit/ZoomControlEmbedded;->mWebView:Landroid/webkit/WebViewClassic;
-    invoke-static {v0}, Landroid/webkit/ZoomControlEmbedded;->access$100(Landroid/webkit/ZoomControlEmbedded;)Landroid/webkit/WebViewClassic;
+    #getter for: Landroid/webkit/ZoomControlEmbedded;->mWebView:Landroid/webkit/WebView;
+    invoke-static {v0}, Landroid/webkit/ZoomControlEmbedded;->access$100(Landroid/webkit/ZoomControlEmbedded;)Landroid/webkit/WebView;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/webkit/WebViewClassic;->zoomIn()Z
+    invoke-virtual {v0}, Landroid/webkit/WebView;->zoomIn()Z
 
     .line 116
     :goto_0
@@ -124,12 +124,12 @@
     :cond_0
     iget-object v0, p0, Landroid/webkit/ZoomControlEmbedded$ZoomListener;->this$0:Landroid/webkit/ZoomControlEmbedded;
 
-    #getter for: Landroid/webkit/ZoomControlEmbedded;->mWebView:Landroid/webkit/WebViewClassic;
-    invoke-static {v0}, Landroid/webkit/ZoomControlEmbedded;->access$100(Landroid/webkit/ZoomControlEmbedded;)Landroid/webkit/WebViewClassic;
+    #getter for: Landroid/webkit/ZoomControlEmbedded;->mWebView:Landroid/webkit/WebView;
+    invoke-static {v0}, Landroid/webkit/ZoomControlEmbedded;->access$100(Landroid/webkit/ZoomControlEmbedded;)Landroid/webkit/WebView;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/webkit/WebViewClassic;->zoomOut()Z
+    invoke-virtual {v0}, Landroid/webkit/WebView;->zoomOut()Z
 
     goto :goto_0
 .end method

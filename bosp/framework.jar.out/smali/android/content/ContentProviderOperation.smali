@@ -653,7 +653,7 @@
     .line 216
     new-instance v3, Landroid/content/OperationApplicationException;
 
-    const-string/jumbo v4, "insert failed"
+    const-string v4, "insert failed"
 
     invoke-direct {v3, v4}, Landroid/content/OperationApplicationException;-><init>(Ljava/lang/String;)V
 

@@ -14,49 +14,28 @@
 .end annotation
 
 
-# static fields
-.field static final REASON_ACCESSIBILITY_INJECTOR:I = 0x1
-
-.field static final REASON_SELECT_WORD:I = 0x2
-
-.field static final REASON_UNKNOWN:I
-
-
 # instance fields
 .field mEnd:I
-
-.field mSelectTextPtr:I
-
-.field mSelectionReason:I
 
 .field mStart:I
 
 
 # direct methods
-.method public constructor <init>(III)V
-    .locals 1
+.method public constructor <init>(II)V
+    .locals 0
     .parameter "start"
     .parameter "end"
-    .parameter "selectTextPtr"
 
     .prologue
-    .line 990
+    .line 798
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 998
-    const/4 v0, 0x0
-
-    iput v0, p0, Landroid/webkit/WebViewCore$TextSelectionData;->mSelectionReason:I
-
-    .line 991
+    .line 799
     iput p1, p0, Landroid/webkit/WebViewCore$TextSelectionData;->mStart:I
 
-    .line 992
+    .line 800
     iput p2, p0, Landroid/webkit/WebViewCore$TextSelectionData;->mEnd:I
 
-    .line 993
-    iput p3, p0, Landroid/webkit/WebViewCore$TextSelectionData;->mSelectTextPtr:I
-
-    .line 994
+    .line 801
     return-void
 .end method

@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 658
+    .line 586
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,28 +38,16 @@
     .end annotation
 
     .prologue
-    .line 661
+    .line 589
     invoke-virtual {p0}, Ljava/io/DataInputStream;->readInt()I
 
     move-result v1
 
-    .line 662
+    .line 590
     .local v1, size:I
-    if-gez v1, :cond_0
-
-    new-instance v3, Ljava/net/ProtocolException;
-
-    const-string/jumbo v4, "negative array size"
-
-    invoke-direct {v3, v4}, Ljava/net/ProtocolException;-><init>(Ljava/lang/String;)V
-
-    throw v3
-
-    .line 663
-    :cond_0
     new-array v2, v1, [J
 
-    .line 664
+    .line 591
     .local v2, values:[J
     const/4 v0, 0x0
 
@@ -67,22 +55,22 @@
     :goto_0
     array-length v3, v2
 
-    if-ge v0, v3, :cond_1
+    if-ge v0, v3, :cond_0
 
-    .line 665
+    .line 592
     invoke-virtual {p0}, Ljava/io/DataInputStream;->readLong()J
 
     move-result-wide v3
 
     aput-wide v3, v2, v0
 
-    .line 664
+    .line 591
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 667
-    :cond_1
+    .line 594
+    :cond_0
     return-object v2
 .end method
 
@@ -96,26 +84,26 @@
     .end annotation
 
     .prologue
-    .line 674
+    .line 601
     const/4 v3, 0x0
 
-    .line 675
+    .line 602
     .local v3, shift:I
     const-wide/16 v1, 0x0
 
-    .line 676
+    .line 603
     .local v1, result:J
     :goto_0
     const/16 v4, 0x40
 
     if-ge v3, v4, :cond_1
 
-    .line 677
+    .line 604
     invoke-virtual {p0}, Ljava/io/DataInputStream;->readByte()B
 
     move-result v0
 
-    .line 678
+    .line 605
     .local v0, b:B
     and-int/lit8 v4, v0, 0x7f
 
@@ -125,22 +113,22 @@
 
     or-long/2addr v1, v4
 
-    .line 679
+    .line 606
     and-int/lit16 v4, v0, 0x80
 
     if-nez v4, :cond_0
 
-    .line 680
+    .line 607
     return-wide v1
 
-    .line 681
+    .line 608
     :cond_0
     add-int/lit8 v3, v3, 0x7
 
-    .line 682
+    .line 609
     goto :goto_0
 
-    .line 683
+    .line 610
     .end local v0           #b:B
     :cond_1
     new-instance v4, Ljava/net/ProtocolException;
@@ -162,12 +150,12 @@
     .end annotation
 
     .prologue
-    .line 702
+    .line 629
     invoke-virtual {p0}, Ljava/io/DataInputStream;->readInt()I
 
     move-result v1
 
-    .line 703
+    .line 630
     .local v1, size:I
     const/4 v3, -0x1
 
@@ -175,27 +163,15 @@
 
     const/4 v2, 0x0
 
-    .line 709
+    .line 635
     :cond_0
     return-object v2
 
-    .line 704
+    .line 631
     :cond_1
-    if-gez v1, :cond_2
-
-    new-instance v3, Ljava/net/ProtocolException;
-
-    const-string/jumbo v4, "negative array size"
-
-    invoke-direct {v3, v4}, Ljava/net/ProtocolException;-><init>(Ljava/lang/String;)V
-
-    throw v3
-
-    .line 705
-    :cond_2
     new-array v2, v1, [J
 
-    .line 706
+    .line 632
     .local v2, values:[J
     const/4 v0, 0x0
 
@@ -205,14 +181,14 @@
 
     if-ge v0, v3, :cond_0
 
-    .line 707
+    .line 633
     invoke-static {p0}, Landroid/net/NetworkStatsHistory$DataStreamUtils;->readVarLong(Ljava/io/DataInputStream;)J
 
     move-result-wide v3
 
     aput-wide v3, v2, v0
 
-    .line 706
+    .line 632
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
@@ -229,7 +205,7 @@
     .end annotation
 
     .prologue
-    .line 691
+    .line 618
     :goto_0
     const-wide/16 v0, -0x80
 
@@ -241,15 +217,15 @@
 
     if-nez v0, :cond_0
 
-    .line 692
+    .line 619
     long-to-int v0, p1
 
     invoke-virtual {p0, v0}, Ljava/io/DataOutputStream;->writeByte(I)V
 
-    .line 693
+    .line 620
     return-void
 
-    .line 695
+    .line 622
     :cond_0
     long-to-int v0, p1
 
@@ -259,7 +235,7 @@
 
     invoke-virtual {p0, v0}, Ljava/io/DataOutputStream;->writeByte(I)V
 
-    .line 696
+    .line 623
     const/4 v0, 0x7
 
     ushr-long/2addr p1, v0
@@ -279,25 +255,25 @@
     .end annotation
 
     .prologue
-    .line 714
+    .line 640
     if-nez p1, :cond_1
 
-    .line 715
+    .line 641
     const/4 v1, -0x1
 
     invoke-virtual {p0, v1}, Ljava/io/DataOutputStream;->writeInt(I)V
 
-    .line 725
+    .line 651
     :cond_0
     return-void
 
-    .line 718
+    .line 644
     :cond_1
     array-length v1, p1
 
     if-le p2, v1, :cond_2
 
-    .line 719
+    .line 645
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v2, "size larger than length"
@@ -306,23 +282,23 @@
 
     throw v1
 
-    .line 721
+    .line 647
     :cond_2
     invoke-virtual {p0, p2}, Ljava/io/DataOutputStream;->writeInt(I)V
 
-    .line 722
+    .line 648
     const/4 v0, 0x0
 
     .local v0, i:I
     :goto_0
     if-ge v0, p2, :cond_0
 
-    .line 723
+    .line 649
     aget-wide v1, p1, v0
 
     invoke-static {p0, v1, v2}, Landroid/net/NetworkStatsHistory$DataStreamUtils;->writeVarLong(Ljava/io/DataOutputStream;J)V
 
-    .line 722
+    .line 648
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0

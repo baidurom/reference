@@ -79,7 +79,7 @@
     .end annotation
 .end method
 
-.method public abstract initSocket(IZZILandroid/os/IBinder;)I
+.method public abstract initSocket(IZZI)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

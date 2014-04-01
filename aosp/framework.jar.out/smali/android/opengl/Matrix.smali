@@ -27,7 +27,7 @@
 
     .prologue
     .line 41
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -44,12 +44,12 @@
     .parameter "far"
 
     .prologue
-    .line 318
+    .line 319
     cmpl-float v9, p2, p3
 
     if-nez v9, :cond_0
 
-    .line 319
+    .line 320
     new-instance v9, Ljava/lang/IllegalArgumentException;
 
     const-string v10, "left == right"
@@ -58,13 +58,13 @@
 
     throw v9
 
-    .line 321
+    .line 322
     :cond_0
     cmpl-float v9, p5, p4
 
     if-nez v9, :cond_1
 
-    .line 322
+    .line 323
     new-instance v9, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v10, "top == bottom"
@@ -73,13 +73,13 @@
 
     throw v9
 
-    .line 324
+    .line 325
     :cond_1
     cmpl-float v9, p6, p7
 
     if-nez v9, :cond_2
 
-    .line 325
+    .line 326
     new-instance v9, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v10, "near == far"
@@ -88,7 +88,7 @@
 
     throw v9
 
-    .line 327
+    .line 328
     :cond_2
     const/4 v9, 0x0
 
@@ -96,7 +96,7 @@
 
     if-gtz v9, :cond_3
 
-    .line 328
+    .line 329
     new-instance v9, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v10, "near <= 0.0f"
@@ -105,7 +105,7 @@
 
     throw v9
 
-    .line 330
+    .line 331
     :cond_3
     const/4 v9, 0x0
 
@@ -113,7 +113,7 @@
 
     if-gtz v9, :cond_4
 
-    .line 331
+    .line 332
     new-instance v9, Ljava/lang/IllegalArgumentException;
 
     const-string v10, "far <= 0.0f"
@@ -122,7 +122,7 @@
 
     throw v9
 
-    .line 333
+    .line 334
     :cond_4
     const/high16 v9, 0x3f80
 
@@ -130,7 +130,7 @@
 
     div-float v6, v9, v10
 
-    .line 334
+    .line 335
     .local v6, r_width:F
     const/high16 v9, 0x3f80
 
@@ -138,7 +138,7 @@
 
     div-float v5, v9, v10
 
-    .line 335
+    .line 336
     .local v5, r_height:F
     const/high16 v9, 0x3f80
 
@@ -146,7 +146,7 @@
 
     div-float v4, v9, v10
 
-    .line 336
+    .line 337
     .local v4, r_depth:F
     const/high16 v9, 0x4000
 
@@ -154,7 +154,7 @@
 
     mul-float v7, v9, v10
 
-    .line 337
+    .line 338
     .local v7, x:F
     const/high16 v9, 0x4000
 
@@ -162,25 +162,29 @@
 
     mul-float v8, v9, v10
 
-    .line 338
-    .local v8, y:F
-    add-float v9, p3, p2
-
-    mul-float v0, v9, v6
-
     .line 339
+    .local v8, y:F
+    const/high16 v9, 0x4000
+
+    add-float v10, p3, p2
+
+    mul-float/2addr v10, v6
+
+    mul-float v0, v9, v10
+
+    .line 340
     .local v0, A:F
     add-float v9, p5, p4
 
     mul-float v1, v9, v5
 
-    .line 340
+    .line 341
     .local v1, B:F
     add-float v9, p7, p6
 
     mul-float v2, v9, v4
 
-    .line 341
+    .line 342
     .local v2, C:F
     const/high16 v9, 0x4000
 
@@ -190,108 +194,108 @@
 
     mul-float v3, v9, v10
 
-    .line 342
+    .line 343
     .local v3, D:F
     add-int/lit8 v9, p1, 0x0
 
     aput v7, p0, v9
 
-    .line 343
+    .line 344
     add-int/lit8 v9, p1, 0x5
 
     aput v8, p0, v9
 
-    .line 344
+    .line 345
     add-int/lit8 v9, p1, 0x8
 
     aput v0, p0, v9
 
-    .line 345
+    .line 346
     add-int/lit8 v9, p1, 0x9
 
     aput v1, p0, v9
 
-    .line 346
+    .line 347
     add-int/lit8 v9, p1, 0xa
 
     aput v2, p0, v9
 
-    .line 347
+    .line 348
     add-int/lit8 v9, p1, 0xe
 
     aput v3, p0, v9
 
-    .line 348
+    .line 349
     add-int/lit8 v9, p1, 0xb
 
     const/high16 v10, -0x4080
 
     aput v10, p0, v9
 
-    .line 349
+    .line 350
     add-int/lit8 v9, p1, 0x1
 
     const/4 v10, 0x0
 
     aput v10, p0, v9
 
-    .line 350
+    .line 351
     add-int/lit8 v9, p1, 0x2
 
     const/4 v10, 0x0
 
     aput v10, p0, v9
 
-    .line 351
+    .line 352
     add-int/lit8 v9, p1, 0x3
 
     const/4 v10, 0x0
 
     aput v10, p0, v9
 
-    .line 352
+    .line 353
     add-int/lit8 v9, p1, 0x4
 
     const/4 v10, 0x0
 
     aput v10, p0, v9
 
-    .line 353
+    .line 354
     add-int/lit8 v9, p1, 0x6
 
     const/4 v10, 0x0
 
     aput v10, p0, v9
 
-    .line 354
+    .line 355
     add-int/lit8 v9, p1, 0x7
 
     const/4 v10, 0x0
 
     aput v10, p0, v9
 
-    .line 355
+    .line 356
     add-int/lit8 v9, p1, 0xc
 
     const/4 v10, 0x0
 
     aput v10, p0, v9
 
-    .line 356
+    .line 357
     add-int/lit8 v9, p1, 0xd
 
     const/4 v10, 0x0
 
     aput v10, p0, v9
 
-    .line 357
+    .line 358
     add-int/lit8 v9, p1, 0xf
 
     const/4 v10, 0x0
 
     aput v10, p0, v9
 
-    .line 358
+    .line 359
     return-void
 .end method
 
@@ -1039,7 +1043,7 @@
     .parameter "z"
 
     .prologue
-    .line 406
+    .line 407
     mul-float v0, p0, p0
 
     mul-float v1, p1, p1
@@ -1308,7 +1312,7 @@
 
     const/4 v6, 0x0
 
-    .line 373
+    .line 374
     float-to-double v2, p2
 
     const-wide v4, 0x3f81df46a2529d39L
@@ -1323,13 +1327,13 @@
 
     div-float v0, v7, v2
 
-    .line 374
+    .line 375
     .local v0, f:F
     sub-float v2, p4, p5
 
     div-float v1, v7, v2
 
-    .line 376
+    .line 377
     .local v1, rangeReciprocal:F
     add-int/lit8 v2, p1, 0x0
 
@@ -1337,52 +1341,52 @@
 
     aput v3, p0, v2
 
-    .line 377
+    .line 378
     add-int/lit8 v2, p1, 0x1
 
     aput v6, p0, v2
 
-    .line 378
+    .line 379
     add-int/lit8 v2, p1, 0x2
 
     aput v6, p0, v2
 
-    .line 379
+    .line 380
     add-int/lit8 v2, p1, 0x3
 
     aput v6, p0, v2
 
-    .line 381
+    .line 382
     add-int/lit8 v2, p1, 0x4
 
     aput v6, p0, v2
 
-    .line 382
+    .line 383
     add-int/lit8 v2, p1, 0x5
 
     aput v0, p0, v2
 
-    .line 383
+    .line 384
     add-int/lit8 v2, p1, 0x6
 
     aput v6, p0, v2
 
-    .line 384
+    .line 385
     add-int/lit8 v2, p1, 0x7
 
     aput v6, p0, v2
 
-    .line 386
+    .line 387
     add-int/lit8 v2, p1, 0x8
 
     aput v6, p0, v2
 
-    .line 387
+    .line 388
     add-int/lit8 v2, p1, 0x9
 
     aput v6, p0, v2
 
-    .line 388
+    .line 389
     add-int/lit8 v2, p1, 0xa
 
     add-float v3, p5, p4
@@ -1391,24 +1395,24 @@
 
     aput v3, p0, v2
 
-    .line 389
+    .line 390
     add-int/lit8 v2, p1, 0xb
 
     const/high16 v3, -0x4080
 
     aput v3, p0, v2
 
-    .line 391
+    .line 392
     add-int/lit8 v2, p1, 0xc
 
     aput v6, p0, v2
 
-    .line 392
+    .line 393
     add-int/lit8 v2, p1, 0xd
 
     aput v6, p0, v2
 
-    .line 393
+    .line 394
     add-int/lit8 v2, p1, 0xe
 
     const/high16 v3, 0x4000
@@ -1421,12 +1425,12 @@
 
     aput v3, p0, v2
 
-    .line 394
+    .line 395
     add-int/lit8 v2, p1, 0xf
 
     aput v6, p0, v2
 
-    .line 395
+    .line 396
     return-void
 .end method
 
@@ -1440,12 +1444,12 @@
     .parameter "z"
 
     .prologue
-    .line 537
+    .line 538
     sget-object v6, Landroid/opengl/Matrix;->sTemp:[F
 
     monitor-enter v6
 
-    .line 538
+    .line 539
     :try_start_0
     sget-object v0, Landroid/opengl/Matrix;->sTemp:[F
 
@@ -1461,7 +1465,7 @@
 
     invoke-static/range {v0 .. v5}, Landroid/opengl/Matrix;->setRotateM([FIFFFF)V
 
-    .line 539
+    .line 540
     sget-object v0, Landroid/opengl/Matrix;->sTemp:[F
 
     const/16 v1, 0x10
@@ -1476,7 +1480,7 @@
 
     invoke-static/range {v0 .. v5}, Landroid/opengl/Matrix;->multiplyMM([FI[FI[FI)V
 
-    .line 540
+    .line 541
     sget-object v0, Landroid/opengl/Matrix;->sTemp:[F
 
     const/16 v1, 0x10
@@ -1485,13 +1489,13 @@
 
     invoke-static {v0, v1, p0, p1, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 541
+    .line 542
     monitor-exit v6
 
-    .line 542
+    .line 543
     return-void
 
-    .line 541
+    .line 542
     :catchall_0
     move-exception v0
 
@@ -1514,12 +1518,12 @@
     .parameter "z"
 
     .prologue
-    .line 519
+    .line 520
     sget-object v6, Landroid/opengl/Matrix;->sTemp:[F
 
     monitor-enter v6
 
-    .line 520
+    .line 521
     :try_start_0
     sget-object v0, Landroid/opengl/Matrix;->sTemp:[F
 
@@ -1535,7 +1539,7 @@
 
     invoke-static/range {v0 .. v5}, Landroid/opengl/Matrix;->setRotateM([FIFFFF)V
 
-    .line 521
+    .line 522
     sget-object v4, Landroid/opengl/Matrix;->sTemp:[F
 
     const/4 v5, 0x0
@@ -1550,13 +1554,13 @@
 
     invoke-static/range {v0 .. v5}, Landroid/opengl/Matrix;->multiplyMM([FI[FI[FI)V
 
-    .line 522
+    .line 523
     monitor-exit v6
 
-    .line 523
+    .line 524
     return-void
 
-    .line 522
+    .line 523
     :catchall_0
     move-exception v0
 
@@ -1576,7 +1580,7 @@
     .parameter "z"
 
     .prologue
-    .line 456
+    .line 457
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -1585,10 +1589,10 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 457
+    .line 458
     add-int v1, p1, v0
 
-    .line 458
+    .line 459
     .local v1, mi:I
     aget v2, p0, v1
 
@@ -1596,7 +1600,7 @@
 
     aput v2, p0, v1
 
-    .line 459
+    .line 460
     add-int/lit8 v2, v1, 0x4
 
     aget v3, p0, v2
@@ -1605,7 +1609,7 @@
 
     aput v3, p0, v2
 
-    .line 460
+    .line 461
     add-int/lit8 v2, v1, 0x8
 
     aget v3, p0, v2
@@ -1614,12 +1618,12 @@
 
     aput v3, p0, v2
 
-    .line 456
+    .line 457
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 462
+    .line 463
     .end local v1           #mi:I
     :cond_0
     return-void
@@ -1636,7 +1640,7 @@
     .parameter "z"
 
     .prologue
-    .line 436
+    .line 437
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -1645,14 +1649,14 @@
 
     if-ge v0, v3, :cond_0
 
-    .line 437
+    .line 438
     add-int v2, p1, v0
 
-    .line 438
+    .line 439
     .local v2, smi:I
     add-int v1, p3, v0
 
-    .line 439
+    .line 440
     .local v1, mi:I
     aget v3, p2, v1
 
@@ -1660,7 +1664,7 @@
 
     aput v3, p0, v2
 
-    .line 440
+    .line 441
     add-int/lit8 v3, v2, 0x4
 
     add-int/lit8 v4, v1, 0x4
@@ -1671,7 +1675,7 @@
 
     aput v4, p0, v3
 
-    .line 441
+    .line 442
     add-int/lit8 v3, v2, 0x8
 
     add-int/lit8 v4, v1, 0x8
@@ -1682,7 +1686,7 @@
 
     aput v4, p0, v3
 
-    .line 442
+    .line 443
     add-int/lit8 v3, v2, 0xc
 
     add-int/lit8 v4, v1, 0xc
@@ -1691,12 +1695,12 @@
 
     aput v4, p0, v3
 
-    .line 436
+    .line 437
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 444
+    .line 445
     .end local v1           #mi:I
     .end local v2           #smi:I
     :cond_0
@@ -1711,45 +1715,45 @@
     .prologue
     const/16 v3, 0x10
 
-    .line 415
+    .line 416
     const/4 v0, 0x0
 
     .local v0, i:I
     :goto_0
     if-ge v0, v3, :cond_0
 
-    .line 416
+    .line 417
     add-int v1, p1, v0
 
     const/4 v2, 0x0
 
     aput v2, p0, v1
 
-    .line 415
+    .line 416
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 418
+    .line 419
     :cond_0
     const/4 v0, 0x0
 
     :goto_1
     if-ge v0, v3, :cond_1
 
-    .line 419
+    .line 420
     add-int v1, p1, v0
 
     const/high16 v2, 0x3f80
 
     aput v2, p0, v1
 
-    .line 418
+    .line 419
     add-int/lit8 v0, v0, 0x5
 
     goto :goto_1
 
-    .line 421
+    .line 422
     :cond_1
     return-void
 .end method
@@ -1769,18 +1773,18 @@
     .parameter "upZ"
 
     .prologue
-    .line 677
+    .line 678
     sub-float v1, p5, p2
 
-    .line 678
+    .line 679
     .local v1, fx:F
     sub-float v2, p6, p3
 
-    .line 679
+    .line 680
     .local v2, fy:F
     sub-float v3, p7, p4
 
-    .line 682
+    .line 683
     .local v3, fz:F
     const/high16 v12, 0x3f80
 
@@ -1790,24 +1794,24 @@
 
     div-float v4, v12, v13
 
-    .line 683
+    .line 684
     .local v4, rlf:F
     mul-float/2addr v1, v4
 
-    .line 684
+    .line 685
     mul-float/2addr v2, v4
 
-    .line 685
+    .line 686
     mul-float/2addr v3, v4
 
-    .line 688
+    .line 689
     mul-float v12, v2, p10
 
     mul-float v13, v3, p9
 
     sub-float v6, v12, v13
 
-    .line 689
+    .line 690
     .local v6, sx:F
     mul-float v12, v3, p8
 
@@ -1815,7 +1819,7 @@
 
     sub-float v7, v12, v13
 
-    .line 690
+    .line 691
     .local v7, sy:F
     mul-float v12, v1, p9
 
@@ -1823,7 +1827,7 @@
 
     sub-float v8, v12, v13
 
-    .line 693
+    .line 694
     .local v8, sz:F
     const/high16 v12, 0x3f80
 
@@ -1833,24 +1837,24 @@
 
     div-float v5, v12, v13
 
-    .line 694
+    .line 695
     .local v5, rls:F
     mul-float/2addr v6, v5
 
-    .line 695
+    .line 696
     mul-float/2addr v7, v5
 
-    .line 696
+    .line 697
     mul-float/2addr v8, v5
 
-    .line 699
+    .line 700
     mul-float v12, v7, v3
 
     mul-float v13, v8, v2
 
     sub-float v9, v12, v13
 
-    .line 700
+    .line 701
     .local v9, ux:F
     mul-float v12, v8, v1
 
@@ -1858,7 +1862,7 @@
 
     sub-float v10, v12, v13
 
-    .line 701
+    .line 702
     .local v10, uy:F
     mul-float v12, v6, v2
 
@@ -1866,108 +1870,108 @@
 
     sub-float v11, v12, v13
 
-    .line 703
+    .line 704
     .local v11, uz:F
     add-int/lit8 v12, p1, 0x0
 
     aput v6, p0, v12
 
-    .line 704
+    .line 705
     add-int/lit8 v12, p1, 0x1
 
     aput v9, p0, v12
 
-    .line 705
+    .line 706
     add-int/lit8 v12, p1, 0x2
 
     neg-float v13, v1
 
     aput v13, p0, v12
 
-    .line 706
+    .line 707
     add-int/lit8 v12, p1, 0x3
 
     const/4 v13, 0x0
 
     aput v13, p0, v12
 
-    .line 708
+    .line 709
     add-int/lit8 v12, p1, 0x4
 
     aput v7, p0, v12
 
-    .line 709
+    .line 710
     add-int/lit8 v12, p1, 0x5
 
     aput v10, p0, v12
 
-    .line 710
+    .line 711
     add-int/lit8 v12, p1, 0x6
 
     neg-float v13, v2
 
     aput v13, p0, v12
 
-    .line 711
+    .line 712
     add-int/lit8 v12, p1, 0x7
 
     const/4 v13, 0x0
 
     aput v13, p0, v12
 
-    .line 713
+    .line 714
     add-int/lit8 v12, p1, 0x8
 
     aput v8, p0, v12
 
-    .line 714
+    .line 715
     add-int/lit8 v12, p1, 0x9
 
     aput v11, p0, v12
 
-    .line 715
+    .line 716
     add-int/lit8 v12, p1, 0xa
 
     neg-float v13, v3
 
     aput v13, p0, v12
 
-    .line 716
+    .line 717
     add-int/lit8 v12, p1, 0xb
 
     const/4 v13, 0x0
 
     aput v13, p0, v12
 
-    .line 718
+    .line 719
     add-int/lit8 v12, p1, 0xc
 
     const/4 v13, 0x0
 
     aput v13, p0, v12
 
-    .line 719
+    .line 720
     add-int/lit8 v12, p1, 0xd
 
     const/4 v13, 0x0
 
     aput v13, p0, v12
 
-    .line 720
+    .line 721
     add-int/lit8 v12, p1, 0xe
 
     const/4 v13, 0x0
 
     aput v13, p0, v12
 
-    .line 721
+    .line 722
     add-int/lit8 v12, p1, 0xf
 
     const/high16 v13, 0x3f80
 
     aput v13, p0, v12
 
-    .line 723
+    .line 724
     move/from16 v0, p2
 
     neg-float v12, v0
@@ -1984,7 +1988,7 @@
 
     invoke-static {p0, v0, v12, v13, v14}, Landroid/opengl/Matrix;->translateM([FIFFF)V
 
-    .line 724
+    .line 725
     return-void
 .end method
 
@@ -1997,22 +2001,22 @@
     .parameter "z"
 
     .prologue
-    .line 620
+    .line 621
     const v8, 0x3c8efa35
 
     mul-float/2addr p2, v8
 
-    .line 621
+    .line 622
     const v8, 0x3c8efa35
 
     mul-float/2addr p3, v8
 
-    .line 622
+    .line 623
     const v8, 0x3c8efa35
 
     mul-float/2addr p4, v8
 
-    .line 623
+    .line 624
     float-to-double v8, p2
 
     invoke-static {v8, v9}, Ljava/lang/Math;->cos(D)D
@@ -2021,7 +2025,7 @@
 
     double-to-float v0, v8
 
-    .line 624
+    .line 625
     .local v0, cx:F
     float-to-double v8, p2
 
@@ -2031,7 +2035,7 @@
 
     double-to-float v4, v8
 
-    .line 625
+    .line 626
     .local v4, sx:F
     float-to-double v8, p3
 
@@ -2041,7 +2045,7 @@
 
     double-to-float v2, v8
 
-    .line 626
+    .line 627
     .local v2, cy:F
     float-to-double v8, p3
 
@@ -2051,7 +2055,7 @@
 
     double-to-float v6, v8
 
-    .line 627
+    .line 628
     .local v6, sy:F
     float-to-double v8, p4
 
@@ -2061,7 +2065,7 @@
 
     double-to-float v3, v8
 
-    .line 628
+    .line 629
     .local v3, cz:F
     float-to-double v8, p4
 
@@ -2071,15 +2075,15 @@
 
     double-to-float v7, v8
 
-    .line 629
+    .line 630
     .local v7, sz:F
     mul-float v1, v0, v6
 
-    .line 630
+    .line 631
     .local v1, cxsy:F
     mul-float v5, v4, v6
 
-    .line 632
+    .line 633
     .local v5, sxsy:F
     add-int/lit8 v8, p1, 0x0
 
@@ -2087,7 +2091,7 @@
 
     aput v9, p0, v8
 
-    .line 633
+    .line 634
     add-int/lit8 v8, p1, 0x1
 
     neg-float v9, v2
@@ -2096,19 +2100,19 @@
 
     aput v9, p0, v8
 
-    .line 634
+    .line 635
     add-int/lit8 v8, p1, 0x2
 
     aput v6, p0, v8
 
-    .line 635
+    .line 636
     add-int/lit8 v8, p1, 0x3
 
     const/4 v9, 0x0
 
     aput v9, p0, v8
 
-    .line 637
+    .line 638
     add-int/lit8 v8, p1, 0x4
 
     mul-float v9, v1, v3
@@ -2119,7 +2123,7 @@
 
     aput v9, p0, v8
 
-    .line 638
+    .line 639
     add-int/lit8 v8, p1, 0x5
 
     neg-float v9, v1
@@ -2132,7 +2136,7 @@
 
     aput v9, p0, v8
 
-    .line 639
+    .line 640
     add-int/lit8 v8, p1, 0x6
 
     neg-float v9, v4
@@ -2141,14 +2145,14 @@
 
     aput v9, p0, v8
 
-    .line 640
+    .line 641
     add-int/lit8 v8, p1, 0x7
 
     const/4 v9, 0x0
 
     aput v9, p0, v8
 
-    .line 642
+    .line 643
     add-int/lit8 v8, p1, 0x8
 
     neg-float v9, v5
@@ -2161,7 +2165,7 @@
 
     aput v9, p0, v8
 
-    .line 643
+    .line 644
     add-int/lit8 v8, p1, 0x9
 
     mul-float v9, v5, v7
@@ -2172,49 +2176,49 @@
 
     aput v9, p0, v8
 
-    .line 644
+    .line 645
     add-int/lit8 v8, p1, 0xa
 
     mul-float v9, v0, v2
 
     aput v9, p0, v8
 
-    .line 645
+    .line 646
     add-int/lit8 v8, p1, 0xb
 
     const/4 v9, 0x0
 
     aput v9, p0, v8
 
-    .line 647
+    .line 648
     add-int/lit8 v8, p1, 0xc
 
     const/4 v9, 0x0
 
     aput v9, p0, v8
 
-    .line 648
+    .line 649
     add-int/lit8 v8, p1, 0xd
 
     const/4 v9, 0x0
 
     aput v9, p0, v8
 
-    .line 649
+    .line 650
     add-int/lit8 v8, p1, 0xe
 
     const/4 v9, 0x0
 
     aput v9, p0, v8
 
-    .line 650
+    .line 651
     add-int/lit8 v8, p1, 0xf
 
     const/high16 v9, 0x3f80
 
     aput v9, p0, v8
 
-    .line 651
+    .line 652
     return-void
 .end method
 
@@ -2228,61 +2232,61 @@
     .parameter "z"
 
     .prologue
-    .line 555
+    .line 556
     add-int/lit8 v11, p1, 0x3
 
     const/4 v12, 0x0
 
     aput v12, p0, v11
 
-    .line 556
+    .line 557
     add-int/lit8 v11, p1, 0x7
 
     const/4 v12, 0x0
 
     aput v12, p0, v11
 
-    .line 557
+    .line 558
     add-int/lit8 v11, p1, 0xb
 
     const/4 v12, 0x0
 
     aput v12, p0, v11
 
-    .line 558
+    .line 559
     add-int/lit8 v11, p1, 0xc
 
     const/4 v12, 0x0
 
     aput v12, p0, v11
 
-    .line 559
+    .line 560
     add-int/lit8 v11, p1, 0xd
 
     const/4 v12, 0x0
 
     aput v12, p0, v11
 
-    .line 560
+    .line 561
     add-int/lit8 v11, p1, 0xe
 
     const/4 v12, 0x0
 
     aput v12, p0, v11
 
-    .line 561
+    .line 562
     add-int/lit8 v11, p1, 0xf
 
     const/high16 v12, 0x3f80
 
     aput v12, p0, v11
 
-    .line 562
+    .line 563
     const v11, 0x3c8efa35
 
     mul-float/2addr p2, v11
 
-    .line 563
+    .line 564
     float-to-double v11, p2
 
     invoke-static {v11, v12}, Ljava/lang/Math;->sin(D)D
@@ -2291,7 +2295,7 @@
 
     double-to-float v4, v11
 
-    .line 564
+    .line 565
     .local v4, s:F
     float-to-double v11, p2
 
@@ -2301,7 +2305,7 @@
 
     double-to-float v0, v11
 
-    .line 565
+    .line 566
     .local v0, c:F
     const/high16 v11, 0x3f80
 
@@ -2321,7 +2325,7 @@
 
     if-nez v11, :cond_0
 
-    .line 566
+    .line 567
     add-int/lit8 v11, p1, 0x5
 
     aput v0, p0, v11
@@ -2330,7 +2334,7 @@
 
     aput v0, p0, v11
 
-    .line 567
+    .line 568
     add-int/lit8 v11, p1, 0x6
 
     aput v4, p0, v11
@@ -2341,7 +2345,7 @@
 
     aput v12, p0, v11
 
-    .line 568
+    .line 569
     add-int/lit8 v11, p1, 0x1
 
     const/4 v12, 0x0
@@ -2354,7 +2358,7 @@
 
     aput v12, p0, v11
 
-    .line 569
+    .line 570
     add-int/lit8 v11, p1, 0x4
 
     const/4 v12, 0x0
@@ -2367,18 +2371,18 @@
 
     aput v12, p0, v11
 
-    .line 570
+    .line 571
     add-int/lit8 v11, p1, 0x0
 
     const/high16 v12, 0x3f80
 
     aput v12, p0, v11
 
-    .line 608
+    .line 609
     :goto_0
     return-void
 
-    .line 571
+    .line 572
     :cond_0
     const/4 v11, 0x0
 
@@ -2398,7 +2402,7 @@
 
     if-nez v11, :cond_1
 
-    .line 572
+    .line 573
     add-int/lit8 v11, p1, 0x0
 
     aput v0, p0, v11
@@ -2407,7 +2411,7 @@
 
     aput v0, p0, v11
 
-    .line 573
+    .line 574
     add-int/lit8 v11, p1, 0x8
 
     aput v4, p0, v11
@@ -2418,7 +2422,7 @@
 
     aput v12, p0, v11
 
-    .line 574
+    .line 575
     add-int/lit8 v11, p1, 0x1
 
     const/4 v12, 0x0
@@ -2431,7 +2435,7 @@
 
     aput v12, p0, v11
 
-    .line 575
+    .line 576
     add-int/lit8 v11, p1, 0x6
 
     const/4 v12, 0x0
@@ -2444,7 +2448,7 @@
 
     aput v12, p0, v11
 
-    .line 576
+    .line 577
     add-int/lit8 v11, p1, 0x5
 
     const/high16 v12, 0x3f80
@@ -2453,7 +2457,7 @@
 
     goto :goto_0
 
-    .line 577
+    .line 578
     :cond_1
     const/4 v11, 0x0
 
@@ -2473,7 +2477,7 @@
 
     if-nez v11, :cond_2
 
-    .line 578
+    .line 579
     add-int/lit8 v11, p1, 0x0
 
     aput v0, p0, v11
@@ -2482,7 +2486,7 @@
 
     aput v0, p0, v11
 
-    .line 579
+    .line 580
     add-int/lit8 v11, p1, 0x1
 
     aput v4, p0, v11
@@ -2493,7 +2497,7 @@
 
     aput v12, p0, v11
 
-    .line 580
+    .line 581
     add-int/lit8 v11, p1, 0x2
 
     const/4 v12, 0x0
@@ -2506,7 +2510,7 @@
 
     aput v12, p0, v11
 
-    .line 581
+    .line 582
     add-int/lit8 v11, p1, 0x8
 
     const/4 v12, 0x0
@@ -2519,7 +2523,7 @@
 
     aput v12, p0, v11
 
-    .line 582
+    .line 583
     add-int/lit8 v11, p1, 0xa
 
     const/high16 v12, 0x3f80
@@ -2528,13 +2532,13 @@
 
     goto :goto_0
 
-    .line 584
+    .line 585
     :cond_2
     invoke-static/range {p3 .. p5}, Landroid/opengl/Matrix;->length(FFF)F
 
     move-result v1
 
-    .line 585
+    .line 586
     .local v1, len:F
     const/high16 v11, 0x3f80
 
@@ -2542,53 +2546,53 @@
 
     if-eqz v11, :cond_3
 
-    .line 586
+    .line 587
     const/high16 v11, 0x3f80
 
     div-float v3, v11, v1
 
-    .line 587
+    .line 588
     .local v3, recipLen:F
     mul-float p3, p3, v3
 
-    .line 588
+    .line 589
     mul-float p4, p4, v3
 
-    .line 589
+    .line 590
     mul-float p5, p5, v3
 
-    .line 591
+    .line 592
     .end local v3           #recipLen:F
     :cond_3
     const/high16 v11, 0x3f80
 
     sub-float v2, v11, v0
 
-    .line 592
+    .line 593
     .local v2, nc:F
     mul-float v6, p3, p4
 
-    .line 593
+    .line 594
     .local v6, xy:F
     mul-float v8, p4, p5
 
-    .line 594
+    .line 595
     .local v8, yz:F
     mul-float v10, p5, p3
 
-    .line 595
+    .line 596
     .local v10, zx:F
     mul-float v5, p3, v4
 
-    .line 596
+    .line 597
     .local v5, xs:F
     mul-float v7, p4, v4
 
-    .line 597
+    .line 598
     .local v7, ys:F
     mul-float v9, p5, v4
 
-    .line 598
+    .line 599
     .local v9, zs:F
     add-int/lit8 v11, p1, 0x0
 
@@ -2600,7 +2604,7 @@
 
     aput v12, p0, v11
 
-    .line 599
+    .line 600
     add-int/lit8 v11, p1, 0x4
 
     mul-float v12, v6, v2
@@ -2609,7 +2613,7 @@
 
     aput v12, p0, v11
 
-    .line 600
+    .line 601
     add-int/lit8 v11, p1, 0x8
 
     mul-float v12, v10, v2
@@ -2618,7 +2622,7 @@
 
     aput v12, p0, v11
 
-    .line 601
+    .line 602
     add-int/lit8 v11, p1, 0x1
 
     mul-float v12, v6, v2
@@ -2627,7 +2631,7 @@
 
     aput v12, p0, v11
 
-    .line 602
+    .line 603
     add-int/lit8 v11, p1, 0x5
 
     mul-float v12, p4, p4
@@ -2638,7 +2642,7 @@
 
     aput v12, p0, v11
 
-    .line 603
+    .line 604
     add-int/lit8 v11, p1, 0x9
 
     mul-float v12, v8, v2
@@ -2647,7 +2651,7 @@
 
     aput v12, p0, v11
 
-    .line 604
+    .line 605
     add-int/lit8 v11, p1, 0x2
 
     mul-float v12, v10, v2
@@ -2656,7 +2660,7 @@
 
     aput v12, p0, v11
 
-    .line 605
+    .line 606
     add-int/lit8 v11, p1, 0x6
 
     mul-float v12, v8, v2
@@ -2665,7 +2669,7 @@
 
     aput v12, p0, v11
 
-    .line 606
+    .line 607
     add-int/lit8 v11, p1, 0xa
 
     mul-float v12, p5, p5
@@ -2688,7 +2692,7 @@
     .parameter "z"
 
     .prologue
-    .line 499
+    .line 500
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -2697,10 +2701,10 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 500
+    .line 501
     add-int v1, p1, v0
 
-    .line 501
+    .line 502
     .local v1, mi:I
     add-int/lit8 v2, v1, 0xc
 
@@ -2730,12 +2734,12 @@
 
     aput v3, p0, v2
 
-    .line 499
+    .line 500
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 503
+    .line 504
     .end local v1           #mi:I
     :cond_0
     return-void
@@ -2752,7 +2756,7 @@
     .parameter "z"
 
     .prologue
-    .line 477
+    .line 478
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -2761,7 +2765,7 @@
 
     if-ge v0, v3, :cond_0
 
-    .line 478
+    .line 479
     add-int v3, p1, v0
 
     add-int v4, p3, v0
@@ -2770,12 +2774,12 @@
 
     aput v4, p0, v3
 
-    .line 477
+    .line 478
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 480
+    .line 481
     :cond_0
     const/4 v0, 0x0
 
@@ -2784,14 +2788,14 @@
 
     if-ge v0, v3, :cond_1
 
-    .line 481
+    .line 482
     add-int v2, p1, v0
 
-    .line 482
+    .line 483
     .local v2, tmi:I
     add-int v1, p3, v0
 
-    .line 483
+    .line 484
     .local v1, mi:I
     add-int/lit8 v3, v2, 0xc
 
@@ -2823,12 +2827,12 @@
 
     aput v4, p0, v3
 
-    .line 480
+    .line 481
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 486
+    .line 487
     .end local v1           #mi:I
     .end local v2           #tmi:I
     :cond_1

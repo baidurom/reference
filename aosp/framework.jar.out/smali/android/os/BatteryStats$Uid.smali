@@ -25,7 +25,7 @@
 
 
 # static fields
-.field public static final NUM_USER_ACTIVITY_TYPES:I = 0x3
+.field public static final NUM_USER_ACTIVITY_TYPES:I = 0x7
 
 .field static final USER_ACTIVITY_TYPES:[Ljava/lang/String;
 
@@ -35,8 +35,8 @@
     .locals 3
 
     .prologue
-    .line 286
-    const/4 v0, 0x3
+    .line 282
+    const/4 v0, 0x7
 
     new-array v0, v0, [Ljava/lang/String;
 
@@ -48,13 +48,37 @@
 
     const/4 v1, 0x1
 
-    const-string v2, "button"
+    const-string v2, "cheek"
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x2
 
     const-string/jumbo v2, "touch"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x3
+
+    const-string v2, "long_touch"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x4
+
+    const-string/jumbo v2, "touch_up"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x5
+
+    const-string v2, "button"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x6
+
+    const-string/jumbo v2, "unknown"
 
     aput-object v2, v0, v1
 
@@ -67,10 +91,10 @@
     .locals 0
 
     .prologue
-    .line 204
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 202
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 369
+    .line 365
     return-void
 .end method
 
@@ -122,6 +146,9 @@
     .end annotation
 .end method
 
+.method public abstract getScanWifiLockTime(JI)J
+.end method
+
 .method public abstract getSensorStats()Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -171,9 +198,6 @@
 .method public abstract getWifiRunningTime(JI)J
 .end method
 
-.method public abstract getWifiScanTime(JI)J
-.end method
-
 .method public abstract hasUserActivity()Z
 .end method
 
@@ -187,6 +211,12 @@
 .end method
 
 .method public abstract noteFullWifiLockReleasedLocked()V
+.end method
+
+.method public abstract noteScanWifiLockAcquiredLocked()V
+.end method
+
+.method public abstract noteScanWifiLockReleasedLocked()V
 .end method
 
 .method public abstract noteUserActivityLocked(I)V
@@ -205,12 +235,6 @@
 .end method
 
 .method public abstract noteWifiRunningLocked()V
-.end method
-
-.method public abstract noteWifiScanStartedLocked()V
-.end method
-
-.method public abstract noteWifiScanStoppedLocked()V
 .end method
 
 .method public abstract noteWifiStoppedLocked()V

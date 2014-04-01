@@ -30,11 +30,11 @@
 
 .field static final TRANSACTION_getCertificate:I = 0x2
 
+.field static final TRANSACTION_getPrivateKey:I = 0x1
+
 .field static final TRANSACTION_hasGrant:I = 0x7
 
 .field static final TRANSACTION_installCaCertificate:I = 0x3
-
-.field static final TRANSACTION_requestPrivateKey:I = 0x1
 
 .field static final TRANSACTION_reset:I = 0x5
 
@@ -163,22 +163,22 @@
 
     .line 56
     .local v0, _arg0:Ljava/lang/String;
-    invoke-virtual {p0, v0}, Landroid/security/IKeyChainService$Stub;->requestPrivateKey(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Landroid/security/IKeyChainService$Stub;->getPrivateKey(Ljava/lang/String;)[B
 
     move-result-object v3
 
     .line 57
-    .local v3, _result:Ljava/lang/String;
+    .local v3, _result:[B
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 58
-    invoke-virtual {p3, v3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    invoke-virtual {p3, v3}, Landroid/os/Parcel;->writeByteArray([B)V
 
     goto :goto_0
 
     .line 63
     .end local v0           #_arg0:Ljava/lang/String;
-    .end local v3           #_result:Ljava/lang/String;
+    .end local v3           #_result:[B
     :sswitch_2
     const-string v4, "android.security.IKeyChainService"
 
@@ -196,7 +196,7 @@
     move-result-object v3
 
     .line 67
-    .local v3, _result:[B
+    .restart local v3       #_result:[B
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 68

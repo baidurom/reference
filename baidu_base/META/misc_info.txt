@@ -1,0 +1,9 @@
+recovery_api_version=3
+system_size=512M
+secro_size=5M
+cache_size=312M
+userdata_size=1737M
+tool_extensions=mediatek/config/out/jrd77_cu_ics2/../common
+mkyaffs2_extra_flags=-c 4096 -s 128
+extfs_sparse_flag=-s
+default_system_dev_certificate=build/target/product/security/testkey

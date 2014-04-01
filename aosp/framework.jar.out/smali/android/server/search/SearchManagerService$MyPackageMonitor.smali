@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 139
+    .line 105
     iput-object p1, p0, Landroid/server/search/SearchManagerService$MyPackageMonitor;->this$0:Landroid/server/search/SearchManagerService;
 
     invoke-direct {p0}, Lcom/android/internal/content/PackageMonitor;-><init>()V
@@ -33,132 +33,44 @@
 .end method
 
 .method private updateSearchables()V
-    .locals 6
+    .locals 2
 
     .prologue
-    .line 152
-    invoke-virtual {p0}, Landroid/server/search/SearchManagerService$MyPackageMonitor;->getChangingUserId()I
+    .line 119
+    iget-object v1, p0, Landroid/server/search/SearchManagerService$MyPackageMonitor;->this$0:Landroid/server/search/SearchManagerService;
 
-    move-result v0
+    #calls: Landroid/server/search/SearchManagerService;->getSearchables()Landroid/server/search/Searchables;
+    invoke-static {v1}, Landroid/server/search/SearchManagerService;->access$200(Landroid/server/search/SearchManagerService;)Landroid/server/search/Searchables;
 
-    .line 153
-    .local v0, changingUserId:I
-    iget-object v3, p0, Landroid/server/search/SearchManagerService$MyPackageMonitor;->this$0:Landroid/server/search/SearchManagerService;
+    move-result-object v1
 
-    #getter for: Landroid/server/search/SearchManagerService;->mSearchables:Landroid/util/SparseArray;
-    invoke-static {v3}, Landroid/server/search/SearchManagerService;->access$500(Landroid/server/search/SearchManagerService;)Landroid/util/SparseArray;
+    invoke-virtual {v1}, Landroid/server/search/Searchables;->buildSearchableList()V
 
-    move-result-object v4
+    .line 121
+    new-instance v0, Landroid/content/Intent;
 
-    monitor-enter v4
+    const-string v1, "android.search.action.SEARCHABLES_CHANGED"
 
-    .line 155
-    const/4 v1, 0x0
+    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .local v1, i:I
-    :goto_0
-    :try_start_0
-    iget-object v3, p0, Landroid/server/search/SearchManagerService$MyPackageMonitor;->this$0:Landroid/server/search/SearchManagerService;
+    .line 122
+    .local v0, intent:Landroid/content/Intent;
+    const/high16 v1, 0x2000
 
-    #getter for: Landroid/server/search/SearchManagerService;->mSearchables:Landroid/util/SparseArray;
-    invoke-static {v3}, Landroid/server/search/SearchManagerService;->access$500(Landroid/server/search/SearchManagerService;)Landroid/util/SparseArray;
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/util/SparseArray;->size()I
-
-    move-result v3
-
-    if-ge v1, v3, :cond_0
-
-    .line 156
-    iget-object v3, p0, Landroid/server/search/SearchManagerService$MyPackageMonitor;->this$0:Landroid/server/search/SearchManagerService;
-
-    #getter for: Landroid/server/search/SearchManagerService;->mSearchables:Landroid/util/SparseArray;
-    invoke-static {v3}, Landroid/server/search/SearchManagerService;->access$500(Landroid/server/search/SearchManagerService;)Landroid/util/SparseArray;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v1}, Landroid/util/SparseArray;->keyAt(I)I
-
-    move-result v3
-
-    if-ne v0, v3, :cond_1
-
-    .line 157
-    iget-object v3, p0, Landroid/server/search/SearchManagerService$MyPackageMonitor;->this$0:Landroid/server/search/SearchManagerService;
-
-    iget-object v5, p0, Landroid/server/search/SearchManagerService$MyPackageMonitor;->this$0:Landroid/server/search/SearchManagerService;
-
-    #getter for: Landroid/server/search/SearchManagerService;->mSearchables:Landroid/util/SparseArray;
-    invoke-static {v5}, Landroid/server/search/SearchManagerService;->access$500(Landroid/server/search/SearchManagerService;)Landroid/util/SparseArray;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v1}, Landroid/util/SparseArray;->keyAt(I)I
-
-    move-result v5
-
-    #calls: Landroid/server/search/SearchManagerService;->getSearchables(I)Landroid/server/search/Searchables;
-    invoke-static {v3, v5}, Landroid/server/search/SearchManagerService;->access$300(Landroid/server/search/SearchManagerService;I)Landroid/server/search/Searchables;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/server/search/Searchables;->buildSearchableList()V
-
-    .line 161
-    :cond_0
-    monitor-exit v4
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 163
-    new-instance v2, Landroid/content/Intent;
-
-    const-string v3, "android.search.action.SEARCHABLES_CHANGED"
-
-    invoke-direct {v2, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    .line 164
-    .local v2, intent:Landroid/content/Intent;
-    const/high16 v3, 0x2800
-
-    invoke-virtual {v2, v3}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
-
-    .line 166
-    iget-object v3, p0, Landroid/server/search/SearchManagerService$MyPackageMonitor;->this$0:Landroid/server/search/SearchManagerService;
+    .line 123
+    iget-object v1, p0, Landroid/server/search/SearchManagerService$MyPackageMonitor;->this$0:Landroid/server/search/SearchManagerService;
 
     #getter for: Landroid/server/search/SearchManagerService;->mContext:Landroid/content/Context;
-    invoke-static {v3}, Landroid/server/search/SearchManagerService;->access$200(Landroid/server/search/SearchManagerService;)Landroid/content/Context;
+    invoke-static {v1}, Landroid/server/search/SearchManagerService;->access$100(Landroid/server/search/SearchManagerService;)Landroid/content/Context;
 
-    move-result-object v3
+    move-result-object v1
 
-    new-instance v4, Landroid/os/UserHandle;
+    invoke-virtual {v1, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    invoke-direct {v4, v0}, Landroid/os/UserHandle;-><init>(I)V
-
-    invoke-virtual {v3, v2, v4}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
-
-    .line 167
+    .line 124
     return-void
-
-    .line 155
-    .end local v2           #intent:Landroid/content/Intent;
-    :cond_1
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    .line 161
-    :catchall_0
-    move-exception v3
-
-    :try_start_1
-    monitor-exit v4
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v3
 .end method
 
 
@@ -168,10 +80,10 @@
     .parameter "pkg"
 
     .prologue
-    .line 148
+    .line 114
     invoke-direct {p0}, Landroid/server/search/SearchManagerService$MyPackageMonitor;->updateSearchables()V
 
-    .line 149
+    .line 115
     return-void
 .end method
 
@@ -179,9 +91,9 @@
     .locals 0
 
     .prologue
-    .line 143
+    .line 109
     invoke-direct {p0}, Landroid/server/search/SearchManagerService$MyPackageMonitor;->updateSearchables()V
 
-    .line 144
+    .line 110
     return-void
 .end method

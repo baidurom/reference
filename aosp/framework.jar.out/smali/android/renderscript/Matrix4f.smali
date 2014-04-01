@@ -13,7 +13,7 @@
 
     .prologue
     .line 32
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 33
     const/16 v0, 0x10
@@ -37,7 +37,7 @@
     const/4 v2, 0x0
 
     .line 44
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 45
     const/16 v0, 0x10
@@ -65,42 +65,42 @@
     .parameter "j"
 
     .prologue
-    .line 405
+    .line 377
     add-int/lit8 v8, p1, 0x1
 
     rem-int/lit8 v0, v8, 0x4
 
-    .line 406
+    .line 378
     .local v0, c0:I
     add-int/lit8 v8, p1, 0x2
 
     rem-int/lit8 v1, v8, 0x4
 
-    .line 407
+    .line 379
     .local v1, c1:I
     add-int/lit8 v8, p1, 0x3
 
     rem-int/lit8 v2, v8, 0x4
 
-    .line 408
+    .line 380
     .local v2, c2:I
     add-int/lit8 v8, p2, 0x1
 
     rem-int/lit8 v5, v8, 0x4
 
-    .line 409
+    .line 381
     .local v5, r0:I
     add-int/lit8 v8, p2, 0x2
 
     rem-int/lit8 v6, v8, 0x4
 
-    .line 410
+    .line 382
     .local v6, r1:I
     add-int/lit8 v8, p2, 0x3
 
     rem-int/lit8 v7, v8, 0x4
 
-    .line 412
+    .line 384
     .local v7, r2:I
     iget-object v8, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
@@ -250,7 +250,7 @@
 
     add-float v4, v8, v9
 
-    .line 419
+    .line 391
     .local v4, minor:F
     add-int v8, p1, p2
 
@@ -260,7 +260,7 @@
 
     neg-float v3, v4
 
-    .line 420
+    .line 392
     .local v3, cofactor:F
     :goto_0
     return v3
@@ -269,7 +269,7 @@
     :cond_0
     move v3, v4
 
-    .line 419
+    .line 391
     goto :goto_0
 .end method
 
@@ -277,8 +277,8 @@
 # virtual methods
 .method public get(II)F
     .locals 2
-    .parameter "x"
-    .parameter "y"
+    .parameter "i"
+    .parameter "j"
 
     .prologue
     .line 68
@@ -313,12 +313,12 @@
 
     const/4 v4, 0x0
 
-    .line 428
+    .line 400
     new-instance v3, Landroid/renderscript/Matrix4f;
 
     invoke-direct {v3}, Landroid/renderscript/Matrix4f;-><init>()V
 
-    .line 430
+    .line 402
     .local v3, result:Landroid/renderscript/Matrix4f;
     const/4 v1, 0x0
 
@@ -326,14 +326,14 @@
     :goto_0
     if-ge v1, v9, :cond_1
 
-    .line 431
+    .line 403
     const/4 v2, 0x0
 
     .local v2, j:I
     :goto_1
     if-ge v2, v9, :cond_0
 
-    .line 432
+    .line 404
     iget-object v6, v3, Landroid/renderscript/Matrix4f;->mMat:[F
 
     mul-int/lit8 v7, v1, 0x4
@@ -346,18 +346,18 @@
 
     aput v8, v6, v7
 
-    .line 431
+    .line 403
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 430
+    .line 402
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 437
+    .line 409
     .end local v2           #j:I
     :cond_1
     iget-object v6, p0, Landroid/renderscript/Matrix4f;->mMat:[F
@@ -414,7 +414,7 @@
 
     add-float v0, v6, v7
 
-    .line 440
+    .line 412
     .local v0, det:F
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
@@ -428,17 +428,17 @@
 
     if-gez v6, :cond_2
 
-    .line 449
+    .line 421
     :goto_2
     return v4
 
-    .line 444
+    .line 416
     :cond_2
     const/high16 v4, 0x3f80
 
     div-float v0, v4, v0
 
-    .line 445
+    .line 417
     const/4 v1, 0x0
 
     :goto_3
@@ -446,7 +446,7 @@
 
     if-ge v1, v4, :cond_3
 
-    .line 446
+    .line 418
     iget-object v4, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     iget-object v6, v3, Landroid/renderscript/Matrix4f;->mMat:[F
@@ -457,7 +457,7 @@
 
     aput v6, v4, v1
 
-    .line 445
+    .line 417
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_3
@@ -465,7 +465,7 @@
     :cond_3
     move v4, v5
 
-    .line 449
+    .line 421
     goto :goto_2
 .end method
 
@@ -481,12 +481,12 @@
 
     const/4 v8, 0x4
 
-    .line 457
+    .line 429
     new-instance v3, Landroid/renderscript/Matrix4f;
 
     invoke-direct {v3}, Landroid/renderscript/Matrix4f;-><init>()V
 
-    .line 459
+    .line 431
     .local v3, result:Landroid/renderscript/Matrix4f;
     const/4 v1, 0x0
 
@@ -494,14 +494,14 @@
     :goto_0
     if-ge v1, v8, :cond_1
 
-    .line 460
+    .line 432
     const/4 v2, 0x0
 
     .local v2, j:I
     :goto_1
     if-ge v2, v8, :cond_0
 
-    .line 461
+    .line 433
     iget-object v5, v3, Landroid/renderscript/Matrix4f;->mMat:[F
 
     mul-int/lit8 v6, v2, 0x4
@@ -514,18 +514,18 @@
 
     aput v7, v5, v6
 
-    .line 460
+    .line 432
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 459
+    .line 431
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 465
+    .line 437
     .end local v2           #j:I
     :cond_1
     iget-object v5, p0, Landroid/renderscript/Matrix4f;->mMat:[F
@@ -574,7 +574,7 @@
 
     add-float v0, v5, v6
 
-    .line 468
+    .line 440
     .local v0, det:F
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
@@ -588,17 +588,17 @@
 
     if-gez v5, :cond_2
 
-    .line 477
+    .line 449
     :goto_2
     return v4
 
-    .line 472
+    .line 444
     :cond_2
     const/high16 v4, 0x3f80
 
     div-float v0, v4, v0
 
-    .line 473
+    .line 445
     const/4 v1, 0x0
 
     :goto_3
@@ -606,7 +606,7 @@
 
     if-ge v1, v4, :cond_3
 
-    .line 474
+    .line 446
     iget-object v4, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     iget-object v5, v3, Landroid/renderscript/Matrix4f;->mMat:[F
@@ -617,187 +617,16 @@
 
     aput v5, v4, v1
 
-    .line 473
+    .line 445
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_3
 
-    .line 477
+    .line 449
     :cond_3
     const/4 v4, 0x1
 
     goto :goto_2
-.end method
-
-.method public load(Landroid/renderscript/Matrix3f;)V
-    .locals 7
-    .parameter "src"
-
-    .prologue
-    const/4 v6, 0x3
-
-    const/4 v5, 0x2
-
-    const/4 v3, 0x1
-
-    const/4 v2, 0x0
-
-    const/4 v4, 0x0
-
-    .line 122
-    iget-object v0, p0, Landroid/renderscript/Matrix4f;->mMat:[F
-
-    iget-object v1, p1, Landroid/renderscript/Matrix3f;->mMat:[F
-
-    aget v1, v1, v2
-
-    aput v1, v0, v2
-
-    .line 123
-    iget-object v0, p0, Landroid/renderscript/Matrix4f;->mMat:[F
-
-    iget-object v1, p1, Landroid/renderscript/Matrix3f;->mMat:[F
-
-    aget v1, v1, v3
-
-    aput v1, v0, v3
-
-    .line 124
-    iget-object v0, p0, Landroid/renderscript/Matrix4f;->mMat:[F
-
-    iget-object v1, p1, Landroid/renderscript/Matrix3f;->mMat:[F
-
-    aget v1, v1, v5
-
-    aput v1, v0, v5
-
-    .line 125
-    iget-object v0, p0, Landroid/renderscript/Matrix4f;->mMat:[F
-
-    aput v4, v0, v6
-
-    .line 127
-    iget-object v0, p0, Landroid/renderscript/Matrix4f;->mMat:[F
-
-    const/4 v1, 0x4
-
-    iget-object v2, p1, Landroid/renderscript/Matrix3f;->mMat:[F
-
-    aget v2, v2, v6
-
-    aput v2, v0, v1
-
-    .line 128
-    iget-object v0, p0, Landroid/renderscript/Matrix4f;->mMat:[F
-
-    const/4 v1, 0x5
-
-    iget-object v2, p1, Landroid/renderscript/Matrix3f;->mMat:[F
-
-    const/4 v3, 0x4
-
-    aget v2, v2, v3
-
-    aput v2, v0, v1
-
-    .line 129
-    iget-object v0, p0, Landroid/renderscript/Matrix4f;->mMat:[F
-
-    const/4 v1, 0x6
-
-    iget-object v2, p1, Landroid/renderscript/Matrix3f;->mMat:[F
-
-    const/4 v3, 0x5
-
-    aget v2, v2, v3
-
-    aput v2, v0, v1
-
-    .line 130
-    iget-object v0, p0, Landroid/renderscript/Matrix4f;->mMat:[F
-
-    const/4 v1, 0x7
-
-    aput v4, v0, v1
-
-    .line 132
-    iget-object v0, p0, Landroid/renderscript/Matrix4f;->mMat:[F
-
-    const/16 v1, 0x8
-
-    iget-object v2, p1, Landroid/renderscript/Matrix3f;->mMat:[F
-
-    const/4 v3, 0x6
-
-    aget v2, v2, v3
-
-    aput v2, v0, v1
-
-    .line 133
-    iget-object v0, p0, Landroid/renderscript/Matrix4f;->mMat:[F
-
-    const/16 v1, 0x9
-
-    iget-object v2, p1, Landroid/renderscript/Matrix3f;->mMat:[F
-
-    const/4 v3, 0x7
-
-    aget v2, v2, v3
-
-    aput v2, v0, v1
-
-    .line 134
-    iget-object v0, p0, Landroid/renderscript/Matrix4f;->mMat:[F
-
-    const/16 v1, 0xa
-
-    iget-object v2, p1, Landroid/renderscript/Matrix3f;->mMat:[F
-
-    const/16 v3, 0x8
-
-    aget v2, v2, v3
-
-    aput v2, v0, v1
-
-    .line 135
-    iget-object v0, p0, Landroid/renderscript/Matrix4f;->mMat:[F
-
-    const/16 v1, 0xb
-
-    aput v4, v0, v1
-
-    .line 137
-    iget-object v0, p0, Landroid/renderscript/Matrix4f;->mMat:[F
-
-    const/16 v1, 0xc
-
-    aput v4, v0, v1
-
-    .line 138
-    iget-object v0, p0, Landroid/renderscript/Matrix4f;->mMat:[F
-
-    const/16 v1, 0xd
-
-    aput v4, v0, v1
-
-    .line 139
-    iget-object v0, p0, Landroid/renderscript/Matrix4f;->mMat:[F
-
-    const/16 v1, 0xe
-
-    aput v4, v0, v1
-
-    .line 140
-    iget-object v0, p0, Landroid/renderscript/Matrix4f;->mMat:[F
-
-    const/16 v1, 0xf
-
-    const/high16 v2, 0x3f80
-
-    aput v2, v0, v1
-
-    .line 141
-    return-void
 .end method
 
 .method public load(Landroid/renderscript/Matrix4f;)V
@@ -836,10 +665,10 @@
     .prologue
     const/high16 v4, 0x4000
 
-    .line 292
+    .line 264
     invoke-virtual {p0}, Landroid/renderscript/Matrix4f;->loadIdentity()V
 
-    .line 293
+    .line 265
     iget-object v0, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     const/4 v1, 0x0
@@ -852,7 +681,7 @@
 
     aput v2, v0, v1
 
-    .line 294
+    .line 266
     iget-object v0, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     const/4 v1, 0x5
@@ -865,7 +694,7 @@
 
     aput v2, v0, v1
 
-    .line 295
+    .line 267
     iget-object v0, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     const/16 v1, 0x8
@@ -878,7 +707,7 @@
 
     aput v2, v0, v1
 
-    .line 296
+    .line 268
     iget-object v0, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     const/16 v1, 0x9
@@ -891,7 +720,7 @@
 
     aput v2, v0, v1
 
-    .line 297
+    .line 269
     iget-object v0, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     const/16 v1, 0xa
@@ -906,7 +735,7 @@
 
     aput v2, v0, v1
 
-    .line 298
+    .line 270
     iget-object v0, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     const/16 v1, 0xb
@@ -915,7 +744,7 @@
 
     aput v2, v0, v1
 
-    .line 299
+    .line 271
     iget-object v0, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     const/16 v1, 0xe
@@ -932,7 +761,7 @@
 
     aput v2, v0, v1
 
-    .line 300
+    .line 272
     iget-object v0, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     const/16 v1, 0xf
@@ -941,7 +770,7 @@
 
     aput v2, v0, v1
 
-    .line 301
+    .line 273
     return-void
 .end method
 
@@ -1085,29 +914,29 @@
 
     const/4 v8, 0x0
 
-    .line 227
+    .line 199
     const/4 v0, 0x0
 
     .local v0, i:I
     :goto_0
     if-ge v0, v12, :cond_1
 
-    .line 228
+    .line 200
     const/4 v3, 0x0
 
-    .line 229
+    .line 201
     .local v3, ri0:F
     const/4 v4, 0x0
 
-    .line 230
+    .line 202
     .local v4, ri1:F
     const/4 v5, 0x0
 
-    .line 231
+    .line 203
     .local v5, ri2:F
     const/4 v6, 0x0
 
-    .line 232
+    .line 204
     .local v6, ri3:F
     const/4 v1, 0x0
 
@@ -1115,12 +944,12 @@
     :goto_1
     if-ge v1, v12, :cond_0
 
-    .line 233
+    .line 205
     invoke-virtual {p2, v0, v1}, Landroid/renderscript/Matrix4f;->get(II)F
 
     move-result v2
 
-    .line 234
+    .line 206
     .local v2, rhs_ij:F
     invoke-virtual {p1, v1, v8}, Landroid/renderscript/Matrix4f;->get(II)F
 
@@ -1130,7 +959,7 @@
 
     add-float/2addr v3, v7
 
-    .line 235
+    .line 207
     invoke-virtual {p1, v1, v9}, Landroid/renderscript/Matrix4f;->get(II)F
 
     move-result v7
@@ -1139,7 +968,7 @@
 
     add-float/2addr v4, v7
 
-    .line 236
+    .line 208
     invoke-virtual {p1, v1, v10}, Landroid/renderscript/Matrix4f;->get(II)F
 
     move-result v7
@@ -1148,7 +977,7 @@
 
     add-float/2addr v5, v7
 
-    .line 237
+    .line 209
     invoke-virtual {p1, v1, v11}, Landroid/renderscript/Matrix4f;->get(II)F
 
     move-result v7
@@ -1157,31 +986,31 @@
 
     add-float/2addr v6, v7
 
-    .line 232
+    .line 204
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 239
+    .line 211
     .end local v2           #rhs_ij:F
     :cond_0
     invoke-virtual {p0, v0, v8, v3}, Landroid/renderscript/Matrix4f;->set(IIF)V
 
-    .line 240
+    .line 212
     invoke-virtual {p0, v0, v9, v4}, Landroid/renderscript/Matrix4f;->set(IIF)V
 
-    .line 241
+    .line 213
     invoke-virtual {p0, v0, v10, v5}, Landroid/renderscript/Matrix4f;->set(IIF)V
 
-    .line 242
+    .line 214
     invoke-virtual {p0, v0, v11, v6}, Landroid/renderscript/Matrix4f;->set(IIF)V
 
-    .line 227
+    .line 199
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 244
+    .line 216
     .end local v1           #j:I
     .end local v3           #ri0:F
     .end local v4           #ri1:F
@@ -1203,10 +1032,10 @@
     .prologue
     const/high16 v3, 0x4000
 
-    .line 257
+    .line 229
     invoke-virtual {p0}, Landroid/renderscript/Matrix4f;->loadIdentity()V
 
-    .line 258
+    .line 230
     iget-object v0, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     const/4 v1, 0x0
@@ -1217,7 +1046,7 @@
 
     aput v2, v0, v1
 
-    .line 259
+    .line 231
     iget-object v0, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     const/4 v1, 0x5
@@ -1228,7 +1057,7 @@
 
     aput v2, v0, v1
 
-    .line 260
+    .line 232
     iget-object v0, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     const/16 v1, 0xa
@@ -1241,7 +1070,7 @@
 
     aput v2, v0, v1
 
-    .line 261
+    .line 233
     iget-object v0, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     const/16 v1, 0xc
@@ -1256,7 +1085,7 @@
 
     aput v2, v0, v1
 
-    .line 262
+    .line 234
     iget-object v0, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     const/16 v1, 0xd
@@ -1271,7 +1100,7 @@
 
     aput v2, v0, v1
 
-    .line 263
+    .line 235
     iget-object v0, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     const/16 v1, 0xe
@@ -1286,7 +1115,7 @@
 
     aput v2, v0, v1
 
-    .line 264
+    .line 236
     return-void
 .end method
 
@@ -1298,7 +1127,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 277
+    .line 249
     int-to-float v2, p1
 
     int-to-float v3, p2
@@ -1313,7 +1142,7 @@
 
     invoke-virtual/range {v0 .. v6}, Landroid/renderscript/Matrix4f;->loadOrtho(FFFFFF)V
 
-    .line 278
+    .line 250
     return-void
 .end method
 
@@ -1325,7 +1154,7 @@
     .parameter "far"
 
     .prologue
-    .line 312
+    .line 284
     float-to-double v5, p1
 
     const-wide v7, 0x400921fb54442d18L
@@ -1348,15 +1177,15 @@
 
     mul-float v4, p3, v0
 
-    .line 313
+    .line 285
     .local v4, top:F
     neg-float v3, v4
 
-    .line 314
+    .line 286
     .local v3, bottom:F
     mul-float v1, v3, p2
 
-    .line 315
+    .line 287
     .local v1, left:F
     mul-float v2, v4, p2
 
@@ -1367,10 +1196,10 @@
 
     move v6, p4
 
-    .line 316
+    .line 288
     invoke-virtual/range {v0 .. v6}, Landroid/renderscript/Matrix4f;->loadFrustum(FFFFFF)V
 
-    .line 317
+    .line 289
     return-void
 .end method
 
@@ -1380,29 +1209,29 @@
     .parameter "h"
 
     .prologue
-    .line 329
+    .line 301
     new-instance v0, Landroid/renderscript/Matrix4f;
 
     invoke-direct {v0}, Landroid/renderscript/Matrix4f;-><init>()V
 
-    .line 330
+    .line 302
     .local v0, m1:Landroid/renderscript/Matrix4f;
     new-instance v10, Landroid/renderscript/Matrix4f;
 
     invoke-direct {v10}, Landroid/renderscript/Matrix4f;-><init>()V
 
-    .line 332
+    .line 304
     .local v10, m2:Landroid/renderscript/Matrix4f;
     if-le p1, p2, :cond_0
 
-    .line 333
+    .line 305
     int-to-float v1, p1
 
     int-to-float v3, p2
 
     div-float v2, v1, v3
 
-    .line 334
+    .line 306
     .local v2, aspect:F
     neg-float v1, v2
 
@@ -1416,7 +1245,7 @@
 
     invoke-virtual/range {v0 .. v6}, Landroid/renderscript/Matrix4f;->loadFrustum(FFFFFF)V
 
-    .line 340
+    .line 312
     :goto_0
     const/high16 v1, 0x4334
 
@@ -1428,10 +1257,10 @@
 
     invoke-virtual {v10, v1, v3, v4, v5}, Landroid/renderscript/Matrix4f;->loadRotate(FFFF)V
 
-    .line 341
+    .line 313
     invoke-virtual {v0, v0, v10}, Landroid/renderscript/Matrix4f;->loadMultiply(Landroid/renderscript/Matrix4f;Landroid/renderscript/Matrix4f;)V
 
-    .line 343
+    .line 315
     const/high16 v1, -0x4000
 
     const/high16 v3, 0x4000
@@ -1440,10 +1269,10 @@
 
     invoke-virtual {v10, v1, v3, v4}, Landroid/renderscript/Matrix4f;->loadScale(FFF)V
 
-    .line 344
+    .line 316
     invoke-virtual {v0, v0, v10}, Landroid/renderscript/Matrix4f;->loadMultiply(Landroid/renderscript/Matrix4f;Landroid/renderscript/Matrix4f;)V
 
-    .line 346
+    .line 318
     const/4 v1, 0x0
 
     const/4 v3, 0x0
@@ -1452,16 +1281,16 @@
 
     invoke-virtual {v10, v1, v3, v4}, Landroid/renderscript/Matrix4f;->loadTranslate(FFF)V
 
-    .line 347
+    .line 319
     invoke-virtual {v0, v0, v10}, Landroid/renderscript/Matrix4f;->loadMultiply(Landroid/renderscript/Matrix4f;Landroid/renderscript/Matrix4f;)V
 
-    .line 349
+    .line 321
     invoke-virtual {p0, v0}, Landroid/renderscript/Matrix4f;->load(Landroid/renderscript/Matrix4f;)V
 
-    .line 350
+    .line 322
     return-void
 
-    .line 336
+    .line 308
     .end local v2           #aspect:F
     :cond_0
     int-to-float v1, p2
@@ -1470,7 +1299,7 @@
 
     div-float v2, v1, v3
 
-    .line 337
+    .line 309
     .restart local v2       #aspect:F
     const/high16 v4, -0x4080
 
@@ -1499,7 +1328,7 @@
     .parameter "z"
 
     .prologue
-    .line 154
+    .line 126
     iget-object v11, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     const/4 v12, 0x3
@@ -1508,7 +1337,7 @@
 
     aput v13, v11, v12
 
-    .line 155
+    .line 127
     iget-object v11, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     const/4 v12, 0x7
@@ -1517,7 +1346,7 @@
 
     aput v13, v11, v12
 
-    .line 156
+    .line 128
     iget-object v11, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     const/16 v12, 0xb
@@ -1526,7 +1355,7 @@
 
     aput v13, v11, v12
 
-    .line 157
+    .line 129
     iget-object v11, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     const/16 v12, 0xc
@@ -1535,7 +1364,7 @@
 
     aput v13, v11, v12
 
-    .line 158
+    .line 130
     iget-object v11, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     const/16 v12, 0xd
@@ -1544,7 +1373,7 @@
 
     aput v13, v11, v12
 
-    .line 159
+    .line 131
     iget-object v11, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     const/16 v12, 0xe
@@ -1553,7 +1382,7 @@
 
     aput v13, v11, v12
 
-    .line 160
+    .line 132
     iget-object v11, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     const/16 v12, 0xf
@@ -1562,12 +1391,12 @@
 
     aput v13, v11, v12
 
-    .line 161
+    .line 133
     const v11, 0x3c8efa35
 
     mul-float/2addr p1, v11
 
-    .line 162
+    .line 134
     float-to-double v11, p1
 
     invoke-static {v11, v12}, Ljava/lang/Math;->cos(D)D
@@ -1576,7 +1405,7 @@
 
     double-to-float v0, v11
 
-    .line 163
+    .line 135
     .local v0, c:F
     float-to-double v11, p1
 
@@ -1586,7 +1415,7 @@
 
     double-to-float v4, v11
 
-    .line 165
+    .line 137
     .local v4, s:F
     mul-float v11, p2, p2
 
@@ -1606,7 +1435,7 @@
 
     double-to-float v1, v11
 
-    .line 166
+    .line 138
     .local v1, len:F
     const/high16 v11, 0x3f80
 
@@ -1614,53 +1443,53 @@
 
     if-nez v11, :cond_0
 
-    .line 167
+    .line 139
     const/high16 v11, 0x3f80
 
     div-float v3, v11, v1
 
-    .line 168
+    .line 140
     .local v3, recipLen:F
     mul-float p2, p2, v3
 
-    .line 169
+    .line 141
     mul-float p3, p3, v3
 
-    .line 170
+    .line 142
     mul-float p4, p4, v3
 
-    .line 172
+    .line 144
     .end local v3           #recipLen:F
     :cond_0
     const/high16 v11, 0x3f80
 
     sub-float v2, v11, v0
 
-    .line 173
+    .line 145
     .local v2, nc:F
     mul-float v6, p2, p3
 
-    .line 174
+    .line 146
     .local v6, xy:F
     mul-float v8, p3, p4
 
-    .line 175
+    .line 147
     .local v8, yz:F
     mul-float v10, p4, p2
 
-    .line 176
+    .line 148
     .local v10, zx:F
     mul-float v5, p2, v4
 
-    .line 177
+    .line 149
     .local v5, xs:F
     mul-float v7, p3, v4
 
-    .line 178
+    .line 150
     .local v7, ys:F
     mul-float v9, p4, v4
 
-    .line 179
+    .line 151
     .local v9, zs:F
     iget-object v11, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
@@ -1674,7 +1503,7 @@
 
     aput v13, v11, v12
 
-    .line 180
+    .line 152
     iget-object v11, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     const/4 v12, 0x4
@@ -1685,7 +1514,7 @@
 
     aput v13, v11, v12
 
-    .line 181
+    .line 153
     iget-object v11, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     const/16 v12, 0x8
@@ -1696,7 +1525,7 @@
 
     aput v13, v11, v12
 
-    .line 182
+    .line 154
     iget-object v11, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     const/4 v12, 0x1
@@ -1707,7 +1536,7 @@
 
     aput v13, v11, v12
 
-    .line 183
+    .line 155
     iget-object v11, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     const/4 v12, 0x5
@@ -1720,7 +1549,7 @@
 
     aput v13, v11, v12
 
-    .line 184
+    .line 156
     iget-object v11, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     const/16 v12, 0x9
@@ -1731,7 +1560,7 @@
 
     aput v13, v11, v12
 
-    .line 185
+    .line 157
     iget-object v11, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     const/4 v12, 0x2
@@ -1742,7 +1571,7 @@
 
     aput v13, v11, v12
 
-    .line 186
+    .line 158
     iget-object v11, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     const/4 v12, 0x6
@@ -1753,7 +1582,7 @@
 
     aput v13, v11, v12
 
-    .line 187
+    .line 159
     iget-object v11, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     const/16 v12, 0xa
@@ -1766,7 +1595,7 @@
 
     aput v13, v11, v12
 
-    .line 188
+    .line 160
     return-void
 .end method
 
@@ -1777,31 +1606,31 @@
     .parameter "z"
 
     .prologue
-    .line 198
+    .line 170
     invoke-virtual {p0}, Landroid/renderscript/Matrix4f;->loadIdentity()V
 
-    .line 199
+    .line 171
     iget-object v0, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     const/4 v1, 0x0
 
     aput p1, v0, v1
 
-    .line 200
+    .line 172
     iget-object v0, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     const/4 v1, 0x5
 
     aput p2, v0, v1
 
-    .line 201
+    .line 173
     iget-object v0, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     const/16 v1, 0xa
 
     aput p3, v0, v1
 
-    .line 202
+    .line 174
     return-void
 .end method
 
@@ -1812,31 +1641,31 @@
     .parameter "z"
 
     .prologue
-    .line 213
+    .line 185
     invoke-virtual {p0}, Landroid/renderscript/Matrix4f;->loadIdentity()V
 
-    .line 214
+    .line 186
     iget-object v0, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     const/16 v1, 0xc
 
     aput p1, v0, v1
 
-    .line 215
+    .line 187
     iget-object v0, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     const/16 v1, 0xd
 
     aput p2, v0, v1
 
-    .line 216
+    .line 188
     iget-object v0, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     const/16 v1, 0xe
 
     aput p3, v0, v1
 
-    .line 217
+    .line 189
     return-void
 .end method
 
@@ -1845,19 +1674,19 @@
     .parameter "rhs"
 
     .prologue
-    .line 358
+    .line 330
     new-instance v0, Landroid/renderscript/Matrix4f;
 
     invoke-direct {v0}, Landroid/renderscript/Matrix4f;-><init>()V
 
-    .line 359
+    .line 331
     .local v0, tmp:Landroid/renderscript/Matrix4f;
     invoke-virtual {v0, p0, p1}, Landroid/renderscript/Matrix4f;->loadMultiply(Landroid/renderscript/Matrix4f;Landroid/renderscript/Matrix4f;)V
 
-    .line 360
+    .line 332
     invoke-virtual {p0, v0}, Landroid/renderscript/Matrix4f;->load(Landroid/renderscript/Matrix4f;)V
 
-    .line 361
+    .line 333
     return-void
 .end method
 
@@ -1869,19 +1698,19 @@
     .parameter "z"
 
     .prologue
-    .line 372
+    .line 344
     new-instance v0, Landroid/renderscript/Matrix4f;
 
     invoke-direct {v0}, Landroid/renderscript/Matrix4f;-><init>()V
 
-    .line 373
+    .line 345
     .local v0, tmp:Landroid/renderscript/Matrix4f;
     invoke-virtual {v0, p1, p2, p3, p4}, Landroid/renderscript/Matrix4f;->loadRotate(FFFF)V
 
-    .line 374
+    .line 346
     invoke-virtual {p0, v0}, Landroid/renderscript/Matrix4f;->multiply(Landroid/renderscript/Matrix4f;)V
 
-    .line 375
+    .line 347
     return-void
 .end method
 
@@ -1892,26 +1721,26 @@
     .parameter "z"
 
     .prologue
-    .line 386
+    .line 358
     new-instance v0, Landroid/renderscript/Matrix4f;
 
     invoke-direct {v0}, Landroid/renderscript/Matrix4f;-><init>()V
 
-    .line 387
+    .line 359
     .local v0, tmp:Landroid/renderscript/Matrix4f;
     invoke-virtual {v0, p1, p2, p3}, Landroid/renderscript/Matrix4f;->loadScale(FFF)V
 
-    .line 388
+    .line 360
     invoke-virtual {p0, v0}, Landroid/renderscript/Matrix4f;->multiply(Landroid/renderscript/Matrix4f;)V
 
-    .line 389
+    .line 361
     return-void
 .end method
 
 .method public set(IIF)V
     .locals 2
-    .parameter "x"
-    .parameter "y"
+    .parameter "i"
+    .parameter "j"
     .parameter "v"
 
     .prologue
@@ -1935,19 +1764,19 @@
     .parameter "z"
 
     .prologue
-    .line 400
+    .line 372
     new-instance v0, Landroid/renderscript/Matrix4f;
 
     invoke-direct {v0}, Landroid/renderscript/Matrix4f;-><init>()V
 
-    .line 401
+    .line 373
     .local v0, tmp:Landroid/renderscript/Matrix4f;
     invoke-virtual {v0, p1, p2, p3}, Landroid/renderscript/Matrix4f;->loadTranslate(FFF)V
 
-    .line 402
+    .line 374
     invoke-virtual {p0, v0}, Landroid/renderscript/Matrix4f;->multiply(Landroid/renderscript/Matrix4f;)V
 
-    .line 403
+    .line 375
     return-void
 .end method
 
@@ -1955,7 +1784,7 @@
     .locals 7
 
     .prologue
-    .line 484
+    .line 456
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -1964,7 +1793,7 @@
 
     if-ge v0, v3, :cond_1
 
-    .line 485
+    .line 457
     add-int/lit8 v1, v0, 0x1
 
     .local v1, j:I
@@ -1973,7 +1802,7 @@
 
     if-ge v1, v3, :cond_0
 
-    .line 486
+    .line 458
     iget-object v3, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     mul-int/lit8 v4, v0, 0x4
@@ -1982,7 +1811,7 @@
 
     aget v2, v3, v4
 
-    .line 487
+    .line 459
     .local v2, temp:F
     iget-object v3, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
@@ -2000,7 +1829,7 @@
 
     aput v5, v3, v4
 
-    .line 488
+    .line 460
     iget-object v3, p0, Landroid/renderscript/Matrix4f;->mMat:[F
 
     mul-int/lit8 v4, v1, 0x4
@@ -2009,19 +1838,19 @@
 
     aput v2, v3, v4
 
-    .line 485
+    .line 457
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 484
+    .line 456
     .end local v2           #temp:F
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 491
+    .line 463
     .end local v1           #j:I
     :cond_1
     return-void

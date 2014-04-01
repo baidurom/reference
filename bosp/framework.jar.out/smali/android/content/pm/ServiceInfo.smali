@@ -18,10 +18,6 @@
     .end annotation
 .end field
 
-.field public static final FLAG_ISOLATED_PROCESS:I = 0x2
-
-.field public static final FLAG_SINGLE_USER:I = 0x40000000
-
 .field public static final FLAG_STOP_WITH_TASK:I = 0x1
 
 
@@ -36,7 +32,7 @@
     .locals 1
 
     .prologue
-    .line 98
+    .line 83
     new-instance v0, Landroid/content/pm/ServiceInfo$1;
 
     invoke-direct {v0}, Landroid/content/pm/ServiceInfo$1;-><init>()V
@@ -50,10 +46,10 @@
     .locals 0
 
     .prologue
-    .line 67
+    .line 52
     invoke-direct {p0}, Landroid/content/pm/ComponentInfo;-><init>()V
 
-    .line 68
+    .line 53
     return-void
 .end method
 
@@ -62,20 +58,20 @@
     .parameter "orig"
 
     .prologue
-    .line 71
+    .line 56
     invoke-direct {p0, p1}, Landroid/content/pm/ComponentInfo;-><init>(Landroid/content/pm/ComponentInfo;)V
 
-    .line 72
+    .line 57
     iget-object v0, p1, Landroid/content/pm/ServiceInfo;->permission:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/content/pm/ServiceInfo;->permission:Ljava/lang/String;
 
-    .line 73
+    .line 58
     iget v0, p1, Landroid/content/pm/ServiceInfo;->flags:I
 
     iput v0, p0, Landroid/content/pm/ServiceInfo;->flags:I
 
-    .line 74
+    .line 59
     return-void
 .end method
 
@@ -84,24 +80,24 @@
     .parameter "source"
 
     .prologue
-    .line 109
+    .line 94
     invoke-direct {p0, p1}, Landroid/content/pm/ComponentInfo;-><init>(Landroid/os/Parcel;)V
 
-    .line 110
+    .line 95
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/content/pm/ServiceInfo;->permission:Ljava/lang/String;
 
-    .line 111
+    .line 96
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/content/pm/ServiceInfo;->flags:I
 
-    .line 112
+    .line 97
     return-void
 .end method
 
@@ -123,7 +119,7 @@
     .locals 1
 
     .prologue
-    .line 89
+    .line 74
     const/4 v0, 0x0
 
     return v0
@@ -135,10 +131,10 @@
     .parameter "prefix"
 
     .prologue
-    .line 77
+    .line 62
     invoke-super {p0, p1, p2}, Landroid/content/pm/ComponentInfo;->dumpFront(Landroid/util/Printer;Ljava/lang/String;)V
 
-    .line 78
+    .line 63
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -165,7 +161,7 @@
 
     invoke-interface {p1, v0}, Landroid/util/Printer;->println(Ljava/lang/String;)V
 
-    .line 79
+    .line 64
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -196,7 +192,7 @@
 
     invoke-interface {p1, v0}, Landroid/util/Printer;->println(Ljava/lang/String;)V
 
-    .line 80
+    .line 65
     return-void
 .end method
 
@@ -204,7 +200,7 @@
     .locals 2
 
     .prologue
-    .line 83
+    .line 68
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -258,19 +254,19 @@
     .parameter "parcelableFlags"
 
     .prologue
-    .line 93
+    .line 78
     invoke-super {p0, p1, p2}, Landroid/content/pm/ComponentInfo;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 94
+    .line 79
     iget-object v0, p0, Landroid/content/pm/ServiceInfo;->permission:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 95
+    .line 80
     iget v0, p0, Landroid/content/pm/ServiceInfo;->flags:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 96
+    .line 81
     return-void
 .end method

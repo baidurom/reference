@@ -42,7 +42,7 @@
 
     const/4 v6, 0x3
 
-    const-string v7, "com.android.internal.policy.impl.PhoneWindow$DialogMenuCallback"
+    const-string v7, "com.android.internal.policy.impl.PhoneWindow$ContextMenuCallback"
 
     aput-object v7, v5, v6
 

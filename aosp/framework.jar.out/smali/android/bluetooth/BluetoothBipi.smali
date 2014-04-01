@@ -28,20 +28,20 @@
     .parameter "context"
 
     .prologue
-    .line 77
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 79
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 65
+    .line 67
     new-instance v0, Landroid/bluetooth/BluetoothBipi$1;
 
     invoke-direct {v0, p0}, Landroid/bluetooth/BluetoothBipi$1;-><init>(Landroid/bluetooth/BluetoothBipi;)V
 
     iput-object v0, p0, Landroid/bluetooth/BluetoothBipi;->mConnection:Landroid/content/ServiceConnection;
 
-    .line 78
+    .line 80
     iput-object p1, p0, Landroid/bluetooth/BluetoothBipi;->mContext:Landroid/content/Context;
 
-    .line 79
+    .line 81
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Landroid/bluetooth/IBluetoothBipi;
@@ -62,14 +62,14 @@
 
     if-nez v0, :cond_0
 
-    .line 81
+    .line 83
     const-string v0, "BIPI fw"
 
     const-string v1, "Could not bind to Bluetooth BIPI Service"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 83
+    .line 85
     :cond_0
     return-void
 .end method
@@ -80,7 +80,7 @@
     .parameter "x1"
 
     .prologue
-    .line 55
+    .line 57
     iput-object p1, p0, Landroid/bluetooth/BluetoothBipi;->mService:Landroid/bluetooth/IBluetoothBipi;
 
     return-object p1
@@ -92,7 +92,7 @@
     .locals 4
 
     .prologue
-    .line 87
+    .line 89
     monitor-enter p0
 
     :try_start_0
@@ -100,25 +100,25 @@
 
     if-eqz v1, :cond_0
 
-    .line 88
+    .line 90
     const/4 v1, 0x0
 
     iput-object v1, p0, Landroid/bluetooth/BluetoothBipi;->mService:Landroid/bluetooth/IBluetoothBipi;
 
-    .line 91
+    .line 93
     :cond_0
     iget-object v1, p0, Landroid/bluetooth/BluetoothBipi;->mConnection:Landroid/content/ServiceConnection;
 
     if-eqz v1, :cond_1
 
-    .line 92
+    .line 94
     iget-object v1, p0, Landroid/bluetooth/BluetoothBipi;->mContext:Landroid/content/Context;
 
     iget-object v2, p0, Landroid/bluetooth/BluetoothBipi;->mConnection:Landroid/content/ServiceConnection;
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
 
-    .line 93
+    .line 95
     const/4 v1, 0x0
 
     iput-object v1, p0, Landroid/bluetooth/BluetoothBipi;->mConnection:Landroid/content/ServiceConnection;
@@ -126,18 +126,18 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 98
+    .line 100
     :cond_1
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 95
+    .line 97
     :catch_0
     move-exception v0
 
-    .line 96
+    .line 98
     .local v0, e:Ljava/lang/Exception;
     :try_start_1
     const-string v1, "BIPI fw"
@@ -166,7 +166,7 @@
 
     goto :goto_0
 
-    .line 87
+    .line 89
     .end local v0           #e:Ljava/lang/Exception;
     :catchall_0
     move-exception v1
@@ -181,7 +181,7 @@
     .parameter "device"
 
     .prologue
-    .line 101
+    .line 103
     const/4 v0, 0x0
 
     return v0
@@ -192,12 +192,12 @@
     .parameter "device"
 
     .prologue
-    .line 105
+    .line 107
     iget-object v1, p0, Landroid/bluetooth/BluetoothBipi;->mService:Landroid/bluetooth/IBluetoothBipi;
 
     if-eqz v1, :cond_0
 
-    .line 107
+    .line 109
     :try_start_0
     iget-object v1, p0, Landroid/bluetooth/BluetoothBipi;->mService:Landroid/bluetooth/IBluetoothBipi;
 
@@ -207,15 +207,15 @@
 
     move-result v1
 
-    .line 116
+    .line 118
     :goto_0
     return v1
 
-    .line 108
+    .line 110
     :catch_0
     move-exception v0
 
-    .line 109
+    .line 111
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "BIPI fw"
 
@@ -239,14 +239,14 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 116
+    .line 118
     .end local v0           #e:Landroid/os/RemoteException;
     :goto_1
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 113
+    .line 115
     :cond_0
     const-string v1, "BIPI fw"
 
@@ -254,7 +254,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 114
+    .line 116
     const-string v1, "BIPI fw"
 
     new-instance v2, Ljava/lang/Throwable;
@@ -283,17 +283,17 @@
     .end annotation
 
     .prologue
-    .line 142
+    .line 144
     iget-object v2, p0, Landroid/bluetooth/BluetoothBipi;->mService:Landroid/bluetooth/IBluetoothBipi;
 
     if-eqz v2, :cond_0
 
-    .line 143
+    .line 145
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    .line 145
+    .line 147
     .local v0, devices:Ljava/util/HashSet;,"Ljava/util/HashSet<Landroid/bluetooth/BluetoothDevice;>;"
     :try_start_0
     iget-object v2, p0, Landroid/bluetooth/BluetoothBipi;->mService:Landroid/bluetooth/IBluetoothBipi;
@@ -306,17 +306,17 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 155
+    .line 157
     .end local v0           #devices:Ljava/util/HashSet;,"Ljava/util/HashSet<Landroid/bluetooth/BluetoothDevice;>;"
     :goto_0
     return-object v0
 
-    .line 147
+    .line 149
     .restart local v0       #devices:Ljava/util/HashSet;,"Ljava/util/HashSet<Landroid/bluetooth/BluetoothDevice;>;"
     :catch_0
     move-exception v1
 
-    .line 148
+    .line 150
     .local v1, e:Landroid/os/RemoteException;
     const-string v2, "BIPI fw"
 
@@ -340,7 +340,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 155
+    .line 157
     .end local v0           #devices:Ljava/util/HashSet;,"Ljava/util/HashSet<Landroid/bluetooth/BluetoothDevice;>;"
     .end local v1           #e:Landroid/os/RemoteException;
     :goto_1
@@ -348,7 +348,7 @@
 
     goto :goto_0
 
-    .line 152
+    .line 154
     :cond_0
     const-string v2, "BIPI fw"
 
@@ -356,7 +356,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 153
+    .line 155
     const-string v2, "BIPI fw"
 
     new-instance v3, Ljava/lang/Throwable;
@@ -377,12 +377,12 @@
     .parameter "device"
 
     .prologue
-    .line 120
+    .line 122
     iget-object v2, p0, Landroid/bluetooth/BluetoothBipi;->mService:Landroid/bluetooth/IBluetoothBipi;
 
     if-eqz v2, :cond_1
 
-    .line 123
+    .line 125
     :try_start_0
     iget-object v2, p0, Landroid/bluetooth/BluetoothBipi;->mService:Landroid/bluetooth/IBluetoothBipi;
 
@@ -390,7 +390,7 @@
 
     move-result-object v0
 
-    .line 124
+    .line 126
     .local v0, current:Landroid/bluetooth/BluetoothDevice;
     if-eqz v0, :cond_0
 
@@ -408,24 +408,24 @@
 
     move-result v2
 
-    .line 135
+    .line 137
     .end local v0           #current:Landroid/bluetooth/BluetoothDevice;
     :goto_0
     return v2
 
-    .line 124
+    .line 126
     .restart local v0       #current:Landroid/bluetooth/BluetoothDevice;
     :cond_0
     const/4 v2, 0x2
 
     goto :goto_0
 
-    .line 127
+    .line 129
     .end local v0           #current:Landroid/bluetooth/BluetoothDevice;
     :catch_0
     move-exception v1
 
-    .line 128
+    .line 130
     .local v1, e:Landroid/os/RemoteException;
     const-string v2, "BIPI fw"
 
@@ -449,14 +449,14 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 135
+    .line 137
     .end local v1           #e:Landroid/os/RemoteException;
     :goto_1
     const/4 v2, 0x5
 
     goto :goto_0
 
-    .line 132
+    .line 134
     :cond_1
     const-string v2, "BIPI fw"
 
@@ -464,7 +464,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 133
+    .line 135
     const-string v2, "BIPI fw"
 
     new-instance v3, Ljava/lang/Throwable;

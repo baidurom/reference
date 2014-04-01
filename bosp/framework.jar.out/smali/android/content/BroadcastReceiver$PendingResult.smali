@@ -37,15 +37,13 @@
 
 .field mResultExtras:Landroid/os/Bundle;
 
-.field final mSendingUser:I
-
 .field final mToken:Landroid/os/IBinder;
 
 .field final mType:I
 
 
 # direct methods
-.method public constructor <init>(ILjava/lang/String;Landroid/os/Bundle;IZZLandroid/os/IBinder;I)V
+.method public constructor <init>(ILjava/lang/String;Landroid/os/Bundle;IZZLandroid/os/IBinder;)V
     .locals 0
     .parameter "resultCode"
     .parameter "resultData"
@@ -54,7 +52,6 @@
     .parameter "ordered"
     .parameter "sticky"
     .parameter "token"
-    .parameter "userId"
 
     .prologue
     .line 250
@@ -82,9 +79,6 @@
     iput-object p7, p0, Landroid/content/BroadcastReceiver$PendingResult;->mToken:Landroid/os/IBinder;
 
     .line 258
-    iput p8, p0, Landroid/content/BroadcastReceiver$PendingResult;->mSendingUser:I
-
-    .line 259
     return-void
 .end method
 
@@ -94,15 +88,15 @@
     .locals 1
 
     .prologue
-    .line 348
+    .line 347
     invoke-virtual {p0}, Landroid/content/BroadcastReceiver$PendingResult;->checkSynchronousHint()V
 
-    .line 349
+    .line 348
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/content/BroadcastReceiver$PendingResult;->mAbortBroadcast:Z
 
-    .line 350
+    .line 349
     return-void
 .end method
 
@@ -110,7 +104,7 @@
     .locals 3
 
     .prologue
-    .line 448
+    .line 444
     iget-boolean v1, p0, Landroid/content/BroadcastReceiver$PendingResult;->mOrderedHint:Z
 
     if-nez v1, :cond_0
@@ -119,12 +113,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 455
+    .line 451
     :cond_0
     :goto_0
     return-void
 
-    .line 451
+    .line 447
     :cond_1
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -132,11 +126,11 @@
 
     invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    .line 453
+    .line 449
     .local v0, e:Ljava/lang/RuntimeException;
     invoke-virtual {v0}, Ljava/lang/RuntimeException;->fillInStackTrace()Ljava/lang/Throwable;
 
-    .line 454
+    .line 450
     const-string v1, "BroadcastReceiver"
 
     invoke-virtual {v0}, Ljava/lang/RuntimeException;->getMessage()Ljava/lang/String;
@@ -152,12 +146,12 @@
     .locals 1
 
     .prologue
-    .line 358
+    .line 357
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/content/BroadcastReceiver$PendingResult;->mAbortBroadcast:Z
 
-    .line 359
+    .line 358
     return-void
 .end method
 
@@ -165,17 +159,17 @@
     .locals 3
 
     .prologue
-    .line 366
+    .line 365
     iget v1, p0, Landroid/content/BroadcastReceiver$PendingResult;->mType:I
 
     if-nez v1, :cond_2
 
-    .line 367
+    .line 366
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
     move-result-object v0
 
-    .line 368
+    .line 367
     .local v0, mgr:Landroid/app/IActivityManager;
     invoke-static {}, Landroid/app/QueuedWork;->hasPendingWork()Z
 
@@ -183,7 +177,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 379
+    .line 378
     invoke-static {}, Landroid/app/QueuedWork;->singleThreadExecutor()Ljava/util/concurrent/ExecutorService;
 
     move-result-object v1
@@ -194,20 +188,20 @@
 
     invoke-interface {v1, v2}, Ljava/util/concurrent/ExecutorService;->execute(Ljava/lang/Runnable;)V
 
-    .line 397
+    .line 396
     .end local v0           #mgr:Landroid/app/IActivityManager;
     :cond_0
     :goto_0
     return-void
 
-    .line 389
+    .line 388
     .restart local v0       #mgr:Landroid/app/IActivityManager;
     :cond_1
     invoke-virtual {p0, v0}, Landroid/content/BroadcastReceiver$PendingResult;->sendFinished(Landroid/app/IActivityManager;)V
 
     goto :goto_0
 
-    .line 391
+    .line 390
     .end local v0           #mgr:Landroid/app/IActivityManager;
     :cond_2
     iget-boolean v1, p0, Landroid/content/BroadcastReceiver$PendingResult;->mOrderedHint:Z
@@ -220,12 +214,12 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 394
+    .line 393
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
     move-result-object v0
 
-    .line 395
+    .line 394
     .restart local v0       #mgr:Landroid/app/IActivityManager;
     invoke-virtual {p0, v0}, Landroid/content/BroadcastReceiver$PendingResult;->sendFinished(Landroid/app/IActivityManager;)V
 
@@ -236,7 +230,7 @@
     .locals 1
 
     .prologue
-    .line 339
+    .line 338
     iget-boolean v0, p0, Landroid/content/BroadcastReceiver$PendingResult;->mAbortBroadcast:Z
 
     return v0
@@ -246,7 +240,7 @@
     .locals 1
 
     .prologue
-    .line 277
+    .line 276
     iget v0, p0, Landroid/content/BroadcastReceiver$PendingResult;->mResultCode:I
 
     return v0
@@ -256,7 +250,7 @@
     .locals 1
 
     .prologue
-    .line 296
+    .line 295
     iget-object v0, p0, Landroid/content/BroadcastReceiver$PendingResult;->mResultData:Ljava/lang/String;
 
     return-object v0
@@ -267,22 +261,22 @@
     .parameter "makeMap"
 
     .prologue
-    .line 315
+    .line 314
     iget-object v0, p0, Landroid/content/BroadcastReceiver$PendingResult;->mResultExtras:Landroid/os/Bundle;
 
-    .line 316
+    .line 315
     .local v0, e:Landroid/os/Bundle;
     if-nez p1, :cond_0
 
     move-object v1, v0
 
-    .line 318
+    .line 317
     .end local v0           #e:Landroid/os/Bundle;
     .local v1, e:Landroid/os/Bundle;
     :goto_0
     return-object v1
 
-    .line 317
+    .line 316
     .end local v1           #e:Landroid/os/Bundle;
     .restart local v0       #e:Landroid/os/Bundle;
     :cond_0
@@ -299,20 +293,10 @@
     :cond_1
     move-object v1, v0
 
-    .line 318
+    .line 317
     .end local v0           #e:Landroid/os/Bundle;
     .restart local v1       #e:Landroid/os/Bundle;
     goto :goto_0
-.end method
-
-.method public getSendingUserId()I
-    .locals 1
-
-    .prologue
-    .line 441
-    iget v0, p0, Landroid/content/BroadcastReceiver$PendingResult;->mSendingUser:I
-
-    return v0
 .end method
 
 .method public sendFinished(Landroid/app/IActivityManager;)V
@@ -322,16 +306,16 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 408
+    .line 407
     monitor-enter p0
 
-    .line 409
+    .line 408
     :try_start_0
     iget-boolean v0, p0, Landroid/content/BroadcastReceiver$PendingResult;->mFinished:Z
 
     if-eqz v0, :cond_0
 
-    .line 410
+    .line 409
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Broadcast already finished"
@@ -340,7 +324,7 @@
 
     throw v0
 
-    .line 436
+    .line 437
     :catchall_0
     move-exception v0
 
@@ -350,7 +334,7 @@
 
     throw v0
 
-    .line 412
+    .line 411
     :cond_0
     const/4 v0, 0x1
 
@@ -359,26 +343,26 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 415
+    .line 414
     :try_start_2
     iget-object v0, p0, Landroid/content/BroadcastReceiver$PendingResult;->mResultExtras:Landroid/os/Bundle;
 
     if-eqz v0, :cond_1
 
-    .line 416
+    .line 415
     iget-object v0, p0, Landroid/content/BroadcastReceiver$PendingResult;->mResultExtras:Landroid/os/Bundle;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->setAllowFds(Z)Z
 
-    .line 418
+    .line 417
     :cond_1
     iget-boolean v0, p0, Landroid/content/BroadcastReceiver$PendingResult;->mOrderedHint:Z
 
     if-eqz v0, :cond_3
 
-    .line 420
+    .line 421
     sget-boolean v0, Landroid/app/ActivityThread;->mIsUserBuild:Z
 
     if-nez v0, :cond_2
@@ -387,7 +371,7 @@
 
     if-ne v0, v2, :cond_2
 
-    .line 421
+    .line 422
     const-string v0, "ActivityThread"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -420,7 +404,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 427
+    .line 428
     :cond_2
     iget-object v1, p0, Landroid/content/BroadcastReceiver$PendingResult;->mToken:Landroid/os/IBinder;
 
@@ -439,17 +423,17 @@
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 436
+    .line 437
     :goto_0
     :try_start_3
     monitor-exit p0
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 437
+    .line 438
     return-void
 
-    .line 432
+    .line 433
     :cond_3
     :try_start_4
     iget-object v1, p0, Landroid/content/BroadcastReceiver$PendingResult;->mToken:Landroid/os/IBinder;
@@ -471,7 +455,7 @@
 
     goto :goto_0
 
-    .line 434
+    .line 435
     :catch_0
     move-exception v0
 
@@ -483,17 +467,17 @@
     .parameter "cl"
 
     .prologue
-    .line 401
+    .line 400
     iget-object v0, p0, Landroid/content/BroadcastReceiver$PendingResult;->mResultExtras:Landroid/os/Bundle;
 
     if-eqz v0, :cond_0
 
-    .line 402
+    .line 401
     iget-object v0, p0, Landroid/content/BroadcastReceiver$PendingResult;->mResultExtras:Landroid/os/Bundle;
 
     invoke-virtual {v0, p1}, Landroid/os/Bundle;->setClassLoader(Ljava/lang/ClassLoader;)V
 
-    .line 404
+    .line 403
     :cond_0
     return-void
 .end method
@@ -505,19 +489,19 @@
     .parameter "extras"
 
     .prologue
-    .line 327
+    .line 326
     invoke-virtual {p0}, Landroid/content/BroadcastReceiver$PendingResult;->checkSynchronousHint()V
 
-    .line 328
+    .line 327
     iput p1, p0, Landroid/content/BroadcastReceiver$PendingResult;->mResultCode:I
 
-    .line 329
+    .line 328
     iput-object p2, p0, Landroid/content/BroadcastReceiver$PendingResult;->mResultData:Ljava/lang/String;
 
-    .line 330
+    .line 329
     iput-object p3, p0, Landroid/content/BroadcastReceiver$PendingResult;->mResultExtras:Landroid/os/Bundle;
 
-    .line 331
+    .line 330
     return-void
 .end method
 
@@ -526,13 +510,13 @@
     .parameter "code"
 
     .prologue
-    .line 267
+    .line 266
     invoke-virtual {p0}, Landroid/content/BroadcastReceiver$PendingResult;->checkSynchronousHint()V
 
-    .line 268
+    .line 267
     iput p1, p0, Landroid/content/BroadcastReceiver$PendingResult;->mResultCode:I
 
-    .line 269
+    .line 268
     return-void
 .end method
 
@@ -541,13 +525,13 @@
     .parameter "data"
 
     .prologue
-    .line 286
+    .line 285
     invoke-virtual {p0}, Landroid/content/BroadcastReceiver$PendingResult;->checkSynchronousHint()V
 
-    .line 287
+    .line 286
     iput-object p1, p0, Landroid/content/BroadcastReceiver$PendingResult;->mResultData:Ljava/lang/String;
 
-    .line 288
+    .line 287
     return-void
 .end method
 
@@ -556,12 +540,12 @@
     .parameter "extras"
 
     .prologue
-    .line 305
+    .line 304
     invoke-virtual {p0}, Landroid/content/BroadcastReceiver$PendingResult;->checkSynchronousHint()V
 
-    .line 306
+    .line 305
     iput-object p1, p0, Landroid/content/BroadcastReceiver$PendingResult;->mResultExtras:Landroid/os/Bundle;
 
-    .line 307
+    .line 306
     return-void
 .end method

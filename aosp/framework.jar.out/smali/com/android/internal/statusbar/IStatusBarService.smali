@@ -15,15 +15,7 @@
 
 
 # virtual methods
-.method public abstract cancelPreloadRecentApps()V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract collapsePanels()V
+.method public abstract collapse()V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -39,7 +31,7 @@
     .end annotation
 .end method
 
-.method public abstract dispatchStatusBarKeyEvent(Landroid/view/KeyEvent;)V
+.method public abstract expand()V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -47,23 +39,7 @@
     .end annotation
 .end method
 
-.method public abstract expandNotificationsPanel()V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract expandSettingsPanel()V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract hideSimIndicator()V
+.method public abstract hideSIMIndicator()V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -111,14 +87,6 @@
     .end annotation
 .end method
 
-.method public abstract preloadRecentApps()V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract registerStatusBar(Lcom/android/internal/statusbar/IStatusBar;Lcom/android/internal/statusbar/StatusBarIconList;Ljava/util/List;Ljava/util/List;[ILjava/util/List;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -148,14 +116,6 @@
 .end method
 
 .method public abstract removeIcon(Ljava/lang/String;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setCurrentUser(I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -195,7 +155,7 @@
     .end annotation
 .end method
 
-.method public abstract setSystemUiVisibility(II)V
+.method public abstract setSystemUiVisibility(I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -203,15 +163,7 @@
     .end annotation
 .end method
 
-.method public abstract showApplicationGuide(Ljava/lang/String;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract showSimIndicator(Ljava/lang/String;)V
+.method public abstract showSIMIndicator(Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

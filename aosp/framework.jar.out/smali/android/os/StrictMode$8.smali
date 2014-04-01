@@ -1,5 +1,5 @@
 .class final Landroid/os/StrictMode$8;
-.super Ljava/lang/ThreadLocal;
+.super Landroid/util/Singleton;
 .source "StrictMode.java"
 
 
@@ -15,9 +15,9 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Ljava/lang/ThreadLocal",
+        "Landroid/util/Singleton",
         "<",
-        "Landroid/os/StrictMode$ThreadSpanState;",
+        "Landroid/view/IWindowManager;",
         ">;"
     }
 .end annotation
@@ -28,34 +28,38 @@
     .locals 0
 
     .prologue
-    .line 1829
-    invoke-direct {p0}, Ljava/lang/ThreadLocal;-><init>()V
+    .line 1752
+    invoke-direct {p0}, Landroid/util/Singleton;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected initialValue()Landroid/os/StrictMode$ThreadSpanState;
-    .locals 2
+.method protected create()Landroid/view/IWindowManager;
+    .locals 1
 
     .prologue
-    .line 1831
-    new-instance v0, Landroid/os/StrictMode$ThreadSpanState;
+    .line 1754
+    const-string/jumbo v0, "window"
 
-    const/4 v1, 0x0
+    invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
-    invoke-direct {v0, v1}, Landroid/os/StrictMode$ThreadSpanState;-><init>(Landroid/os/StrictMode$1;)V
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/view/IWindowManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/view/IWindowManager;
+
+    move-result-object v0
 
     return-object v0
 .end method
 
-.method protected bridge synthetic initialValue()Ljava/lang/Object;
+.method protected bridge synthetic create()Ljava/lang/Object;
     .locals 1
 
     .prologue
-    .line 1829
-    invoke-virtual {p0}, Landroid/os/StrictMode$8;->initialValue()Landroid/os/StrictMode$ThreadSpanState;
+    .line 1752
+    invoke-virtual {p0}, Landroid/os/StrictMode$8;->create()Landroid/view/IWindowManager;
 
     move-result-object v0
 

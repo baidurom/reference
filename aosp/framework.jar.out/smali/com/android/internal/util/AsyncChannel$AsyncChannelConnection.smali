@@ -27,12 +27,12 @@
     .parameter
 
     .prologue
-    .line 857
+    .line 829
     iput-object p1, p0, Lcom/android/internal/util/AsyncChannel$AsyncChannelConnection;->this$0:Lcom/android/internal/util/AsyncChannel;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 858
+    .line 830
     return-void
 .end method
 
@@ -44,7 +44,7 @@
     .parameter "service"
 
     .prologue
-    .line 862
+    .line 834
     iget-object v0, p0, Lcom/android/internal/util/AsyncChannel$AsyncChannelConnection;->this$0:Lcom/android/internal/util/AsyncChannel;
 
     new-instance v1, Landroid/os/Messenger;
@@ -54,7 +54,7 @@
     #setter for: Lcom/android/internal/util/AsyncChannel;->mDstMessenger:Landroid/os/Messenger;
     invoke-static {v0, v1}, Lcom/android/internal/util/AsyncChannel;->access$502(Lcom/android/internal/util/AsyncChannel;Landroid/os/Messenger;)Landroid/os/Messenger;
 
-    .line 863
+    .line 835
     iget-object v0, p0, Lcom/android/internal/util/AsyncChannel$AsyncChannelConnection;->this$0:Lcom/android/internal/util/AsyncChannel;
 
     const/4 v1, 0x0
@@ -62,7 +62,7 @@
     #calls: Lcom/android/internal/util/AsyncChannel;->replyHalfConnected(I)V
     invoke-static {v0, v1}, Lcom/android/internal/util/AsyncChannel;->access$000(Lcom/android/internal/util/AsyncChannel;I)V
 
-    .line 864
+    .line 836
     return-void
 .end method
 
@@ -71,7 +71,7 @@
     .parameter "className"
 
     .prologue
-    .line 868
+    .line 840
     iget-object v0, p0, Lcom/android/internal/util/AsyncChannel$AsyncChannelConnection;->this$0:Lcom/android/internal/util/AsyncChannel;
 
     const/4 v1, 0x0
@@ -79,6 +79,6 @@
     #calls: Lcom/android/internal/util/AsyncChannel;->replyDisconnected(I)V
     invoke-static {v0, v1}, Lcom/android/internal/util/AsyncChannel;->access$600(Lcom/android/internal/util/AsyncChannel;I)V
 
-    .line 869
+    .line 841
     return-void
 .end method

@@ -18,7 +18,7 @@
 
     .prologue
     .line 26
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 27
     const/4 v0, 0x0
@@ -958,9 +958,7 @@
     if-eqz p1, :cond_0
 
     .line 146
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0}, Landroid/renderscript/BaseObj;->getID(Landroid/renderscript/RenderScript;)I
+    invoke-virtual {p1}, Landroid/renderscript/BaseObj;->getID()I
 
     move-result v0
 

@@ -65,48 +65,6 @@
 
 .field public static final BookmarkView_titleColor:I = 0x6
 
-.field public static final DecelerateInterpolatorEx:[I = null
-
-.field public static final GlowPadView:[I = null
-
-.field public static final GlowPadView_android_gravity:I = 0x0
-
-.field public static final GlowPadView_directionDescriptions:I = 0x3
-
-.field public static final GlowPadView_feedbackCount:I = 0xc
-
-.field public static final GlowPadView_glowRadius:I = 0x9
-
-.field public static final GlowPadView_handleDrawable:I = 0x4
-
-.field public static final GlowPadView_innerRadius:I = 0x7
-
-.field public static final GlowPadView_outerRadius:I = 0x8
-
-.field public static final GlowPadView_outerRingDrawable:I = 0x5
-
-.field public static final GlowPadView_pointDrawable:I = 0x6
-
-.field public static final GlowPadView_snapMargin:I = 0xb
-
-.field public static final GlowPadView_targetDescriptions:I = 0x2
-
-.field public static final GlowPadView_targetDrawables:I = 0x1
-
-.field public static final GlowPadView_vibrationDuration:I = 0xa
-
-.field public static final ImageSwitch:[I = null
-
-.field public static final ImageSwitch_android_switchMinWidth:I = 0x3
-
-.field public static final ImageSwitch_android_textOff:I = 0x1
-
-.field public static final ImageSwitch_android_textOn:I = 0x0
-
-.field public static final ImageSwitch_android_thumb:I = 0x2
-
-.field public static final ImageSwitch_android_thumbTextPadding:I = 0x4
-
 .field public static final MTKAppWidgetProviderInfo:[I = null
 
 .field public static final MTKAppWidgetProviderInfo_hasUsedCustomerView:I = 0x0
@@ -117,25 +75,13 @@
 
 .field public static final MTKManifest_themeNameId:I = 0x1
 
-.field public static final TextView:[I
-
-.field public static final TextView_smartFit:I
-
-.field public static final UnReadEventView:[I
-
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 5
+    .locals 3
 
     .prologue
-    const/4 v4, 0x2
-
-    const/4 v3, 0x1
-
-    const/4 v2, 0x0
-
-    .line 765
+    .line 509
     const/16 v0, 0xf
 
     new-array v0, v0, [I
@@ -144,7 +90,7 @@
 
     sput-object v0, Lcom/mediatek/R$styleable;->BladeView:[I
 
-    .line 1003
+    .line 747
     const/16 v0, 0x8
 
     new-array v0, v0, [I
@@ -153,68 +99,31 @@
 
     sput-object v0, Lcom/mediatek/R$styleable;->BookmarkView:[I
 
-    .line 1140
-    new-array v0, v4, [I
-
-    fill-array-data v0, :array_2
-
-    sput-object v0, Lcom/mediatek/R$styleable;->DecelerateInterpolatorEx:[I
-
-    .line 1177
-    const/16 v0, 0xe
+    .line 885
+    const/4 v0, 0x1
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_3
+    const/4 v1, 0x0
 
-    sput-object v0, Lcom/mediatek/R$styleable;->GlowPadView:[I
+    const v2, 0x2010011
 
-    .line 1387
-    const/4 v0, 0x5
-
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_4
-
-    sput-object v0, Lcom/mediatek/R$styleable;->ImageSwitch:[I
-
-    .line 1431
-    new-array v0, v3, [I
-
-    const v1, 0x2010011
-
-    aput v1, v0, v2
+    aput v2, v0, v1
 
     sput-object v0, Lcom/mediatek/R$styleable;->MTKAppWidgetProviderInfo:[I
 
-    .line 1460
-    new-array v0, v4, [I
+    .line 914
+    const/4 v0, 0x2
 
-    fill-array-data v0, :array_5
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_2
 
     sput-object v0, Lcom/mediatek/R$styleable;->MTKManifest:[I
 
-    .line 1499
-    new-array v0, v3, [I
-
-    const v1, 0x2010026
-
-    aput v1, v0, v2
-
-    sput-object v0, Lcom/mediatek/R$styleable;->TextView:[I
-
-    .line 1526
-    new-array v0, v3, [I
-
-    const v1, 0x2010027
-
-    aput v1, v0, v2
-
-    sput-object v0, Lcom/mediatek/R$styleable;->UnReadEventView:[I
-
     return-void
 
-    .line 765
+    .line 509
     :array_0
     .array-data 0x4
         0x0t 0x0t 0x1t 0x2t
@@ -234,7 +143,7 @@
         0xet 0x0t 0x1t 0x2t
     .end array-data
 
-    .line 1003
+    .line 747
     :array_1
     .array-data 0x4
         0x12t 0x0t 0x1t 0x2t
@@ -247,44 +156,8 @@
         0x19t 0x0t 0x1t 0x2t
     .end array-data
 
-    .line 1140
+    .line 914
     :array_2
-    .array-data 0x4
-        0x29t 0x0t 0x1t 0x2t
-        0x2at 0x0t 0x1t 0x2t
-    .end array-data
-
-    .line 1177
-    :array_3
-    .array-data 0x4
-        #attr@gravity#a
-        0x1at 0x0t 0x1t 0x2t
-        0x1bt 0x0t 0x1t 0x2t
-        0x1ct 0x0t 0x1t 0x2t
-        0x1dt 0x0t 0x1t 0x2t
-        0x1et 0x0t 0x1t 0x2t
-        0x1ft 0x0t 0x1t 0x2t
-        0x20t 0x0t 0x1t 0x2t
-        0x21t 0x0t 0x1t 0x2t
-        0x22t 0x0t 0x1t 0x2t
-        0x23t 0x0t 0x1t 0x2t
-        0x24t 0x0t 0x1t 0x2t
-        0x25t 0x0t 0x1t 0x2t
-        0x28t 0x0t 0x1t 0x2t
-    .end array-data
-
-    .line 1387
-    :array_4
-    .array-data 0x4
-        #attr@textOn#a
-        #attr@textOff#a
-        #attr@thumb#a
-        #attr@switchMinWidth#a
-        #attr@thumbTextPadding#a
-    .end array-data
-
-    .line 1460
-    :array_5
     .array-data 0x4
         0xft 0x0t 0x1t 0x2t
         0x10t 0x0t 0x1t 0x2t
@@ -295,7 +168,7 @@
     .locals 0
 
     .prologue
-    .line 725
+    .line 469
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

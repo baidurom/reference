@@ -16,8 +16,6 @@
 # instance fields
 .field public alphaid:Ljava/lang/String;
 
-.field public cli_validity:I
-
 .field public code:I
 
 .field public number:Ljava/lang/String;
@@ -42,7 +40,7 @@
     .locals 3
 
     .prologue
-    .line 79
+    .line 74
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -100,18 +98,6 @@
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/SuppCrssNotification;->alphaid:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " cli_validity: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Lcom/android/internal/telephony/gsm/SuppCrssNotification;->cli_validity:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

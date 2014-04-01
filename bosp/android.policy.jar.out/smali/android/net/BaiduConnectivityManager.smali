@@ -72,6 +72,34 @@
 
 
 # virtual methods
+.method public getMobileDataEnabledBaidu(Landroid/content/Context;J)Z
+    .locals 1
+    .parameter "context"
+    .parameter "simId"
+
+    .prologue
+    .line 116
+    invoke-super {p0, p2, p3}, Landroid/net/ConnectivityManager;->getMobileDataEnabledGemini(J)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public setMobileDataEnabledBaidu(Landroid/content/Context;J)Z
+    .locals 1
+    .parameter "context"
+    .parameter "simId"
+
+    .prologue
+    .line 128
+    invoke-super {p0, p2, p3}, Landroid/net/ConnectivityManager;->setMobileDataEnabledGemini(J)Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public startUsingNetworkFeatureBaidu(ILjava/lang/String;I)I
     .locals 1
     .parameter "networkType"

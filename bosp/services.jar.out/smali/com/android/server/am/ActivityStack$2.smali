@@ -1,14 +1,11 @@
 .class Lcom/android/server/am/ActivityStack$2;
-.super Ljava/lang/Object;
+.super Ljava/lang/Thread;
 .source "ActivityStack.java"
-
-# interfaces
-.implements Lcom/mediatek/common/amsplus/IAmsPlusProcessRecord;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/am/ActivityStack;->convertProcessRecord(Lcom/android/server/am/ProcessRecord;)Lcom/mediatek/common/amsplus/IAmsPlusProcessRecord;
+    value = Lcom/android/server/am/ActivityStack;->resumeTopActivityLocked(Lcom/android/server/am/ActivityRecord;)Z
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,135 +17,76 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/server/am/ActivityStack;
 
-.field final synthetic val$pr:Lcom/android/server/am/ProcessRecord;
-
 
 # direct methods
-.method constructor <init>(Lcom/android/server/am/ActivityStack;Lcom/android/server/am/ProcessRecord;)V
+.method constructor <init>(Lcom/android/server/am/ActivityStack;Ljava/lang/String;)V
     .locals 0
     .parameter
-    .parameter
+    .parameter "x0"
 
     .prologue
-    .line 898
+    .line 1409
     iput-object p1, p0, Lcom/android/server/am/ActivityStack$2;->this$0:Lcom/android/server/am/ActivityStack;
 
-    iput-object p2, p0, Lcom/android/server/am/ActivityStack$2;->val$pr:Lcom/android/server/am/ProcessRecord;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Ljava/lang/Thread;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getAdj()I
-    .locals 1
+.method public run()V
+    .locals 3
 
     .prologue
-    .line 906
-    iget-object v0, p0, Lcom/android/server/am/ActivityStack$2;->val$pr:Lcom/android/server/am/ProcessRecord;
+    .line 1412
+    sget-boolean v0, Lcom/android/server/am/ActivityStack;->DEBUG_TRANSITION:Z
 
-    iget v0, v0, Lcom/android/server/am/ProcessRecord;->setAdj:I
+    if-eqz v0, :cond_0
 
-    return v0
-.end method
+    const-string v0, "ActivityManager"
 
-.method public getPackageName()Ljava/lang/String;
-    .locals 1
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    .prologue
-    .line 900
-    iget-object v0, p0, Lcom/android/server/am/ActivityStack$2;->val$pr:Lcom/android/server/am/ProcessRecord;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v0, v0, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
+    const-string v2, "perform executeAppTransition for "
 
-    iget-object v0, v0, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return-object v0
-.end method
+    move-result-object v1
 
-.method public getPause3DUsage()J
-    .locals 2
+    iget-object v2, p0, Lcom/android/server/am/ActivityStack$2;->this$0:Lcom/android/server/am/ActivityStack;
 
-    .prologue
-    .line 923
-    iget-object v0, p0, Lcom/android/server/am/ActivityStack$2;->val$pr:Lcom/android/server/am/ProcessRecord;
+    iget-object v2, v2, Lcom/android/server/am/ActivityStack;->mResumedActivity:Lcom/android/server/am/ActivityRecord;
 
-    iget-wide v0, v0, Lcom/android/server/am/ProcessRecord;->pause3DUsage:J
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    return-wide v0
-.end method
+    move-result-object v1
 
-.method public getPauseAppMemUsage()J
-    .locals 2
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .prologue
-    .line 920
-    iget-object v0, p0, Lcom/android/server/am/ActivityStack$2;->val$pr:Lcom/android/server/am/ProcessRecord;
+    move-result-object v1
 
-    iget-wide v0, v0, Lcom/android/server/am/ProcessRecord;->pauseAppMemUsage:J
+    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    return-wide v0
-.end method
+    .line 1413
+    :cond_0
+    iget-object v0, p0, Lcom/android/server/am/ActivityStack$2;->this$0:Lcom/android/server/am/ActivityStack;
 
-.method public getPid()I
-    .locals 1
+    iget-object v0, v0, Lcom/android/server/am/ActivityStack;->mService:Lcom/android/server/am/ActivityManagerService;
 
-    .prologue
-    .line 903
-    iget-object v0, p0, Lcom/android/server/am/ActivityStack$2;->val$pr:Lcom/android/server/am/ProcessRecord;
+    iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mWindowManager:Lcom/android/server/wm/WindowManagerService;
 
-    iget v0, v0, Lcom/android/server/am/ProcessRecord;->pid:I
+    invoke-virtual {v0}, Lcom/android/server/wm/WindowManagerService;->executeAppTransition()V
 
-    return v0
-.end method
+    .line 1414
+    iget-object v0, p0, Lcom/android/server/am/ActivityStack$2;->this$0:Lcom/android/server/am/ActivityStack;
 
-.method public isLowMemory()Z
-    .locals 4
+    iget-object v0, v0, Lcom/android/server/am/ActivityStack;->mNoAnimActivities:Ljava/util/ArrayList;
 
-    .prologue
-    const-wide/16 v2, 0x40
+    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 913
-    const-string v1, "isLowMemory"
-
-    invoke-static {v2, v3, v1}, Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V
-
-    .line 914
-    new-instance v0, Landroid/app/ActivityManager$MemoryInfo;
-
-    invoke-direct {v0}, Landroid/app/ActivityManager$MemoryInfo;-><init>()V
-
-    .line 915
-    .local v0, outInfo:Landroid/app/ActivityManager$MemoryInfo;
-    iget-object v1, p0, Lcom/android/server/am/ActivityStack$2;->this$0:Lcom/android/server/am/ActivityStack;
-
-    iget-object v1, v1, Lcom/android/server/am/ActivityStack;->mService:Lcom/android/server/am/ActivityManagerService;
-
-    invoke-virtual {v1, v0}, Lcom/android/server/am/ActivityManagerService;->getMemoryInfo(Landroid/app/ActivityManager$MemoryInfo;)V
-
-    .line 916
-    invoke-static {v2, v3}, Landroid/os/Trace;->traceEnd(J)V
-
-    .line 917
-    iget-boolean v1, v0, Landroid/app/ActivityManager$MemoryInfo;->lowMemory:Z
-
-    return v1
-.end method
-
-.method public setKilledLTK(Z)I
-    .locals 1
-    .parameter "kill"
-
-    .prologue
-    .line 909
-    iget-object v0, p0, Lcom/android/server/am/ActivityStack$2;->val$pr:Lcom/android/server/am/ProcessRecord;
-
-    iput-boolean p1, v0, Lcom/android/server/am/ProcessRecord;->killedLTK:Z
-
-    .line 910
-    const/4 v0, 0x0
-
-    return v0
+    .line 1415
+    return-void
 .end method

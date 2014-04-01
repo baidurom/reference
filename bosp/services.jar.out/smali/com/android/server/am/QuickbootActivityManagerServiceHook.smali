@@ -64,12 +64,12 @@
 
     const/4 v3, 0x6
 
-    .line 38
+    .line 41
     const/4 v0, 0x0
 
     sput-object v0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mHook:Lcom/android/server/am/QuickbootActivityManagerServiceHook;
 
-    .line 52
+    .line 55
     const/4 v0, 0x7
 
     new-array v0, v0, [Ljava/lang/String;
@@ -114,31 +114,31 @@
 
     sput-object v0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mDefaultWhiteList:[Ljava/lang/String;
 
-    .line 54
+    .line 57
     new-array v0, v3, [I
 
     fill-array-data v0, :array_0
 
     sput-object v0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mBatteryLevels:[I
 
-    .line 55
+    .line 58
     new-array v0, v3, [I
 
     fill-array-data v0, :array_1
 
     sput-object v0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mChargerPicIds:[I
 
-    .line 61
+    .line 64
     const/4 v0, -0x1
 
     sput v0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mInitPicIndex:I
 
-    .line 62
+    .line 65
     sput-boolean v4, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mIsQbShutdown:Z
 
     return-void
 
-    .line 54
+    .line 57
     nop
 
     :array_0
@@ -151,7 +151,7 @@
         0x5ft 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 55
+    .line 58
     :array_1
     .array-data 0x4
         #drawable@battery_0#a
@@ -169,10 +169,10 @@
     .parameter "service"
 
     .prologue
-    .line 66
+    .line 69
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 32
+    .line 35
     new-instance v0, Landroid/os/HandlerThread;
 
     const-string v1, "QbAmsHook"
@@ -183,37 +183,37 @@
 
     iput-object v0, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mHandlerThread:Landroid/os/HandlerThread;
 
-    .line 40
+    .line 43
     const-string v0, "android.intent.action.ACTION_QUICKBOOT_SHUTDOWN"
 
     iput-object v0, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->ACTION_QUICKBOOT_SHUTDOWN:Ljava/lang/String;
 
-    .line 41
+    .line 44
     const-string v0, "android.intent.action.ACTION_QUICKBOOT_SHUTDOWN_DONE"
 
     iput-object v0, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->ACTION_QUICKBOOT_SHUTDOWN_DONE:Ljava/lang/String;
 
-    .line 42
+    .line 45
     const-string v0, "android.intent.action.ACTION_QUICKBOOT_BOOT"
 
     iput-object v0, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->ACTION_QUICKBOOT_BOOT:Ljava/lang/String;
 
-    .line 43
+    .line 46
     const-string v0, "android.intent.action.ACTION_QUICKBOOT_START_CHARGE"
 
     iput-object v0, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->ACTION_QUICKBOOT_START_CHARGE:Ljava/lang/String;
 
-    .line 44
+    .line 47
     const-string v0, "android.intent.action.ACTION_QUICKBOOT_STOP_CHARGE"
 
     iput-object v0, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->ACTION_QUICKBOOT_STOP_CHARGE:Ljava/lang/String;
 
-    .line 45
+    .line 48
     const-string v0, "android.intent.action.ACTION_QUICKBOOT_BOOT_NOTICE"
 
     iput-object v0, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->ACTION_QUICKBOOT_BOOT_NOTICE:Ljava/lang/String;
 
-    .line 64
+    .line 67
     new-instance v0, Lcom/android/server/am/QuickbootActivityManagerServiceHook$SetBackgroundTask;
 
     const/4 v1, 0x0
@@ -222,18 +222,18 @@
 
     iput-object v0, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mSetBackgroundTask:Lcom/android/server/am/QuickbootActivityManagerServiceHook$SetBackgroundTask;
 
-    .line 67
+    .line 70
     iput-object p1, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mContext:Landroid/content/Context;
 
-    .line 68
+    .line 71
     iput-object p2, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mService:Lcom/android/server/am/ActivityManagerService;
 
-    .line 70
+    .line 73
     iget-object v0, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mHandlerThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
 
-    .line 71
+    .line 74
     new-instance v0, Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mHandlerThread:Landroid/os/HandlerThread;
@@ -246,7 +246,7 @@
 
     iput-object v0, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mHandler:Landroid/os/Handler;
 
-    .line 72
+    .line 75
     new-instance v0, Landroid/os/Handler;
 
     invoke-virtual {p1}, Landroid/content/Context;->getMainLooper()Landroid/os/Looper;
@@ -257,10 +257,10 @@
 
     iput-object v0, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mMainHandler:Landroid/os/Handler;
 
-    .line 74
+    .line 77
     invoke-direct {p0}, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->init()V
 
-    .line 75
+    .line 78
     return-void
 .end method
 
@@ -269,7 +269,7 @@
     .parameter "x0"
 
     .prologue
-    .line 29
+    .line 32
     iget-object v0, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mMainHandler:Landroid/os/Handler;
 
     return-object v0
@@ -280,7 +280,7 @@
     .parameter "x0"
 
     .prologue
-    .line 29
+    .line 32
     sput-boolean p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mIsQbShutdown:Z
 
     return p0
@@ -290,7 +290,7 @@
     .locals 1
 
     .prologue
-    .line 29
+    .line 32
     sget-object v0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mChargerPicIds:[I
 
     return-object v0
@@ -301,7 +301,7 @@
     .parameter "x0"
 
     .prologue
-    .line 29
+    .line 32
     iget-object v0, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mHandler:Landroid/os/Handler;
 
     return-object v0
@@ -311,7 +311,7 @@
     .locals 1
 
     .prologue
-    .line 29
+    .line 32
     sget-object v0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mDefaultWhiteList:[Ljava/lang/String;
 
     return-object v0
@@ -322,7 +322,7 @@
     .parameter "x0"
 
     .prologue
-    .line 29
+    .line 32
     iget-object v0, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mService:Lcom/android/server/am/ActivityManagerService;
 
     return-object v0
@@ -333,7 +333,7 @@
     .parameter "x0"
 
     .prologue
-    .line 29
+    .line 32
     iget-object v0, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -344,7 +344,7 @@
     .parameter "x0"
 
     .prologue
-    .line 29
+    .line 32
     invoke-direct {p0}, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->resetActivityStack()V
 
     return-void
@@ -355,7 +355,7 @@
     .parameter "x0"
 
     .prologue
-    .line 29
+    .line 32
     invoke-direct {p0}, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->notifyBootCompleted()V
 
     return-void
@@ -365,7 +365,7 @@
     .locals 1
 
     .prologue
-    .line 29
+    .line 32
     sget v0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mInitPicIndex:I
 
     return v0
@@ -376,7 +376,7 @@
     .parameter "x0"
 
     .prologue
-    .line 29
+    .line 32
     sput p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mInitPicIndex:I
 
     return p0
@@ -388,7 +388,7 @@
     .parameter "x1"
 
     .prologue
-    .line 29
+    .line 32
     invoke-direct {p0, p1}, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->getChargerPicIndex(I)I
 
     move-result v0
@@ -403,7 +403,7 @@
     .parameter "x2"
 
     .prologue
-    .line 29
+    .line 32
     invoke-direct {p0, p1, p2}, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->setQbChargerBackground(II)V
 
     return-void
@@ -414,7 +414,7 @@
     .parameter "x0"
 
     .prologue
-    .line 29
+    .line 32
     iget-object v0, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mSetBackgroundTask:Lcom/android/server/am/QuickbootActivityManagerServiceHook$SetBackgroundTask;
 
     return-object v0
@@ -426,19 +426,19 @@
     .parameter "service"
 
     .prologue
-    .line 78
+    .line 81
     sget-object v0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mHook:Lcom/android/server/am/QuickbootActivityManagerServiceHook;
 
     if-nez v0, :cond_0
 
-    .line 79
+    .line 82
     new-instance v0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;
 
     invoke-direct {v0, p0, p1}, Lcom/android/server/am/QuickbootActivityManagerServiceHook;-><init>(Landroid/content/Context;Lcom/android/server/am/ActivityManagerService;)V
 
     sput-object v0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mHook:Lcom/android/server/am/QuickbootActivityManagerServiceHook;
 
-    .line 80
+    .line 83
     :cond_0
     return-void
 .end method
@@ -460,7 +460,7 @@
     .end annotation
 
     .prologue
-    .line 284
+    .line 301
     .local p0, receivers:Ljava/util/List;,"Ljava/util/List<Lcom/android/server/am/BroadcastFilter;>;"
     const-string v7, "android.intent.action.ACTION_SHUTDOWN"
 
@@ -478,14 +478,14 @@
 
     if-eqz v7, :cond_3
 
-    .line 285
+    .line 302
     if-eqz p0, :cond_1
 
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v5
 
-    .line 286
+    .line 303
     .local v5, size:I
     :goto_0
     const/4 v2, 0x0
@@ -494,14 +494,14 @@
     :goto_1
     if-ge v2, v5, :cond_3
 
-    .line 287
+    .line 304
     invoke-interface {p0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/android/server/am/BroadcastFilter;
 
-    .line 288
+    .line 305
     .local v1, filter:Lcom/android/server/am/BroadcastFilter;
     sget-object v0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mDefaultWhiteList:[Ljava/lang/String;
 
@@ -517,7 +517,7 @@
 
     aget-object v6, v0, v3
 
-    .line 289
+    .line 306
     .local v6, target:Ljava/lang/String;
     iget-object v7, v1, Lcom/android/server/am/BroadcastFilter;->receiverList:Lcom/android/server/am/ReceiverList;
 
@@ -531,23 +531,23 @@
 
     if-eqz v7, :cond_2
 
-    .line 290
+    .line 307
     invoke-interface {p0, v2}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
-    .line 291
+    .line 308
     add-int/lit8 v5, v5, -0x1
 
-    .line 292
+    .line 309
     add-int/lit8 v2, v2, -0x1
 
-    .line 286
+    .line 303
     .end local v6           #target:Ljava/lang/String;
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 285
+    .line 302
     .end local v0           #arr$:[Ljava/lang/String;
     .end local v1           #filter:Lcom/android/server/am/BroadcastFilter;
     .end local v2           #i:I
@@ -559,7 +559,7 @@
 
     goto :goto_0
 
-    .line 288
+    .line 305
     .restart local v0       #arr$:[Ljava/lang/String;
     .restart local v1       #filter:Lcom/android/server/am/BroadcastFilter;
     .restart local v2       #i:I
@@ -572,7 +572,7 @@
 
     goto :goto_2
 
-    .line 298
+    .line 315
     .end local v0           #arr$:[Ljava/lang/String;
     .end local v1           #filter:Lcom/android/server/am/BroadcastFilter;
     .end local v2           #i:I
@@ -589,7 +589,7 @@
     .parameter "level"
 
     .prologue
-    .line 144
+    .line 161
     const/4 v1, 0x1
 
     .local v1, i:I
@@ -601,7 +601,7 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 145
+    .line 162
     sget-object v2, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mBatteryLevels:[I
 
     aget v2, v2, v1
@@ -610,25 +610,25 @@
 
     if-ge p1, v2, :cond_1
 
-    .line 149
+    .line 166
     :cond_0
     add-int/lit8 v2, v1, -0x1
 
-    .line 153
+    .line 170
     :goto_1
     return v2
 
-    .line 144
+    .line 161
     :cond_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 150
+    .line 167
     :catch_0
     move-exception v0
 
-    .line 152
+    .line 169
     .local v0, e:Ljava/lang/Exception;
     const-string v2, "QuickbootActivityManagerServiceHook"
 
@@ -636,58 +636,119 @@
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 153
+    .line 170
     const/4 v2, -0x1
 
     goto :goto_1
+.end method
+
+.method public static getIntentForIntentSender(Landroid/content/IIntentSender;)Landroid/content/Intent;
+    .locals 5
+    .parameter "pendingResult"
+
+    .prologue
+    const/4 v3, 0x0
+
+    .line 88
+    instance-of v2, p0, Lcom/android/server/am/PendingIntentRecord;
+
+    if-nez v2, :cond_0
+
+    .line 96
+    :goto_0
+    return-object v3
+
+    .line 92
+    :cond_0
+    :try_start_0
+    move-object v0, p0
+
+    check-cast v0, Lcom/android/server/am/PendingIntentRecord;
+
+    move-object v1, v0
+
+    .line 93
+    .local v1, res:Lcom/android/server/am/PendingIntentRecord;
+    iget-object v2, v1, Lcom/android/server/am/PendingIntentRecord;->key:Lcom/android/server/am/PendingIntentRecord$Key;
+
+    iget-object v2, v2, Lcom/android/server/am/PendingIntentRecord$Key;->requestIntent:Landroid/content/Intent;
+
+    if-eqz v2, :cond_1
+
+    new-instance v2, Landroid/content/Intent;
+
+    iget-object v4, v1, Lcom/android/server/am/PendingIntentRecord;->key:Lcom/android/server/am/PendingIntentRecord$Key;
+
+    iget-object v4, v4, Lcom/android/server/am/PendingIntentRecord$Key;->requestIntent:Landroid/content/Intent;
+
+    invoke-direct {v2, v4}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
+    :try_end_0
+    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_1
+    move-object v3, v2
+
+    goto :goto_0
+
+    :cond_1
+    move-object v2, v3
+
+    goto :goto_1
+
+    .line 94
+    .end local v1           #res:Lcom/android/server/am/PendingIntentRecord;
+    :catch_0
+    move-exception v2
+
+    goto :goto_0
 .end method
 
 .method private init()V
     .locals 3
 
     .prologue
-    .line 86
+    .line 104
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 87
+    .line 105
     .local v0, filter:Landroid/content/IntentFilter;
     const-string v1, "android.intent.action.ACTION_QUICKBOOT_SHUTDOWN"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 88
+    .line 106
     const-string v1, "android.intent.action.ACTION_QUICKBOOT_BOOT"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 89
+    .line 107
     const-string v1, "android.intent.action.ACTION_QUICKBOOT_SHUTDOWN_DONE"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 90
+    .line 108
     const-string v1, "android.intent.action.ACTION_QUICKBOOT_BOOT_NOTICE"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 91
+    .line 109
     const-string v1, "android.intent.action.ACTION_QUICKBOOT_START_CHARGE"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 92
+    .line 110
     const-string v1, "android.intent.action.ACTION_QUICKBOOT_STOP_CHARGE"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 94
+    .line 112
     const/16 v1, 0x3e8
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->setPriority(I)V
 
-    .line 96
+    .line 114
     iget-object v1, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mContext:Landroid/content/Context;
 
     new-instance v2, Lcom/android/server/am/QuickbootActivityManagerServiceHook$1;
@@ -696,7 +757,7 @@
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 139
+    .line 156
     return-void
 .end method
 
@@ -704,7 +765,7 @@
     .locals 2
 
     .prologue
-    .line 227
+    .line 244
     iget-object v0, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/android/server/am/QuickbootActivityManagerServiceHook$2;
@@ -713,15 +774,15 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 277
+    .line 294
     return-void
 .end method
 
 .method private resetActivityStack()V
-    .locals 11
+    .locals 10
 
     .prologue
-    .line 198
+    .line 215
     iget-object v0, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mService:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mMainStack:Lcom/android/server/am/ActivityStack;
@@ -730,36 +791,36 @@
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
-    move-result v9
+    move-result v8
 
-    .line 199
-    .local v9, size:I
-    new-instance v8, Ljava/util/ArrayList;
+    .line 216
+    .local v8, size:I
+    new-instance v7, Ljava/util/ArrayList;
 
-    invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
 
-    .line 200
-    .local v8, list:Ljava/util/ArrayList;
-    const/4 v7, 0x0
+    .line 217
+    .local v7, list:Ljava/util/ArrayList;
+    const/4 v6, 0x0
 
-    .local v7, i:I
+    .local v6, i:I
     :goto_0
-    if-ge v7, v9, :cond_1
+    if-ge v6, v8, :cond_1
 
-    .line 201
+    .line 218
     iget-object v0, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mService:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mMainStack:Lcom/android/server/am/ActivityStack;
 
     iget-object v0, v0, Lcom/android/server/am/ActivityStack;->mHistory:Ljava/util/ArrayList;
 
-    invoke-virtual {v0, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/android/server/am/ActivityRecord;
 
-    .line 202
+    .line 219
     .local v1, r:Lcom/android/server/am/ActivityRecord;
     iget-object v0, v1, Lcom/android/server/am/ActivityRecord;->intent:Landroid/content/Intent;
 
@@ -775,45 +836,45 @@
 
     if-eqz v0, :cond_0
 
-    .line 200
+    .line 217
     :goto_1
-    add-int/lit8 v7, v7, 0x1
+    add-int/lit8 v6, v6, 0x1
 
     goto :goto_0
 
-    .line 205
+    .line 222
     :cond_0
-    invoke-virtual {v8, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v7, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
-    .line 209
+    .line 226
     .end local v1           #r:Lcom/android/server/am/ActivityRecord;
     :cond_1
-    invoke-virtual {v8}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
 
-    move-result v9
+    move-result v8
 
-    .line 210
-    iget-object v10, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mService:Lcom/android/server/am/ActivityManagerService;
+    .line 227
+    iget-object v9, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mService:Lcom/android/server/am/ActivityManagerService;
 
-    monitor-enter v10
+    monitor-enter v9
 
-    .line 211
-    add-int/lit8 v7, v9, -0x1
+    .line 228
+    add-int/lit8 v6, v8, -0x1
 
     :goto_2
-    if-ltz v7, :cond_2
+    if-ltz v6, :cond_2
 
-    .line 212
+    .line 229
     :try_start_0
-    invoke-virtual {v8, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v7, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/android/server/am/ActivityRecord;
 
-    .line 213
+    .line 230
     .restart local v1       #r:Lcom/android/server/am/ActivityRecord;
     iget-object v0, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mService:Lcom/android/server/am/ActivityManagerService;
 
@@ -825,7 +886,7 @@
 
     move-result v2
 
-    .line 214
+    .line 231
     .local v2, idx:I
     const-string v0, "QuickbootActivityManagerServiceHook"
 
@@ -849,7 +910,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
@@ -859,7 +920,7 @@
 
     invoke-static {v0, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 215
+    .line 232
     iget-object v0, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mService:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mMainStack:Lcom/android/server/am/ActivityStack;
@@ -870,42 +931,40 @@
 
     const-string v5, "clear"
 
-    const/4 v6, 0x0
+    invoke-virtual/range {v0 .. v5}, Lcom/android/server/am/ActivityStack;->finishActivityLocked(Lcom/android/server/am/ActivityRecord;IILandroid/content/Intent;Ljava/lang/String;)Z
 
-    invoke-virtual/range {v0 .. v6}, Lcom/android/server/am/ActivityStack;->finishActivityLocked(Lcom/android/server/am/ActivityRecord;IILandroid/content/Intent;Ljava/lang/String;Z)Z
-
-    .line 211
-    add-int/lit8 v7, v7, -0x1
+    .line 228
+    add-int/lit8 v6, v6, -0x1
 
     goto :goto_2
 
-    .line 217
+    .line 234
     .end local v1           #r:Lcom/android/server/am/ActivityRecord;
     .end local v2           #idx:I
     :cond_2
-    monitor-exit v10
+    monitor-exit v9
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 218
-    invoke-virtual {v8}, Ljava/util/ArrayList;->clear()V
+    .line 235
+    invoke-virtual {v7}, Ljava/util/ArrayList;->clear()V
 
-    .line 219
+    .line 236
     iget-object v0, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mService:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mRecentTasks:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 220
+    .line 237
     return-void
 
-    .line 217
+    .line 234
     :catchall_0
     move-exception v0
 
     :try_start_1
-    monitor-exit v10
+    monitor-exit v9
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -918,22 +977,22 @@
     .parameter "delay"
 
     .prologue
-    .line 158
+    .line 175
     if-ltz p2, :cond_0
 
-    .line 159
+    .line 176
     iget-object v0, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mSetBackgroundTask:Lcom/android/server/am/QuickbootActivityManagerServiceHook$SetBackgroundTask;
 
     iput p1, v0, Lcom/android/server/am/QuickbootActivityManagerServiceHook$SetBackgroundTask;->nextIndex:I
 
-    .line 160
+    .line 177
     iget-object v0, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mMainHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mSetBackgroundTask:Lcom/android/server/am/QuickbootActivityManagerServiceHook$SetBackgroundTask;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 161
+    .line 178
     iget-object v0, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mMainHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mSetBackgroundTask:Lcom/android/server/am/QuickbootActivityManagerServiceHook$SetBackgroundTask;
@@ -942,11 +1001,11 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 166
+    .line 183
     :goto_0
     return-void
 
-    .line 163
+    .line 180
     :cond_0
     iget-object v0, p0, Lcom/android/server/am/QuickbootActivityManagerServiceHook;->mMainHandler:Landroid/os/Handler;
 
@@ -954,7 +1013,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 164
+    .line 181
     const-string v0, "QuickbootActivityManagerServiceHook"
 
     const-string v1, "Delay time is invalid!"

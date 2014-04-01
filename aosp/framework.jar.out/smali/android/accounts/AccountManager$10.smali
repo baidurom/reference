@@ -1,11 +1,14 @@
 .class Landroid/accounts/AccountManager$10;
-.super Landroid/accounts/AccountManager$AmsTask;
+.super Ljava/lang/Object;
 .source "AccountManager.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/accounts/AccountManager;->editProperties(Ljava/lang/String;Landroid/app/Activity;Landroid/accounts/AccountManagerCallback;Landroid/os/Handler;)Landroid/accounts/AccountManagerFuture;
+    value = Landroid/accounts/AccountManager;->postToHandler(Landroid/os/Handler;Landroid/accounts/AccountManagerCallback;Landroid/accounts/AccountManagerFuture;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,73 +20,44 @@
 # instance fields
 .field final synthetic this$0:Landroid/accounts/AccountManager;
 
-.field final synthetic val$accountType:Ljava/lang/String;
+.field final synthetic val$callback:Landroid/accounts/AccountManagerCallback;
 
-.field final synthetic val$activity:Landroid/app/Activity;
+.field final synthetic val$future:Landroid/accounts/AccountManagerFuture;
 
 
 # direct methods
-.method constructor <init>(Landroid/accounts/AccountManager;Landroid/app/Activity;Landroid/os/Handler;Landroid/accounts/AccountManagerCallback;Ljava/lang/String;Landroid/app/Activity;)V
+.method constructor <init>(Landroid/accounts/AccountManager;Landroid/accounts/AccountManagerCallback;Landroid/accounts/AccountManagerFuture;)V
     .locals 0
-    .parameter
-    .parameter "x0"
-    .parameter "x1"
     .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 1310
-    .local p4, x2:Landroid/accounts/AccountManagerCallback;,"Landroid/accounts/AccountManagerCallback<Landroid/os/Bundle;>;"
+    .line 1262
     iput-object p1, p0, Landroid/accounts/AccountManager$10;->this$0:Landroid/accounts/AccountManager;
 
-    iput-object p5, p0, Landroid/accounts/AccountManager$10;->val$accountType:Ljava/lang/String;
+    iput-object p2, p0, Landroid/accounts/AccountManager$10;->val$callback:Landroid/accounts/AccountManagerCallback;
 
-    iput-object p6, p0, Landroid/accounts/AccountManager$10;->val$activity:Landroid/app/Activity;
+    iput-object p3, p0, Landroid/accounts/AccountManager$10;->val$future:Landroid/accounts/AccountManagerFuture;
 
-    invoke-direct {p0, p1, p2, p3, p4}, Landroid/accounts/AccountManager$AmsTask;-><init>(Landroid/accounts/AccountManager;Landroid/app/Activity;Landroid/os/Handler;Landroid/accounts/AccountManagerCallback;)V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public doWork()V
-    .locals 4
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
+.method public run()V
+    .locals 2
 
     .prologue
-    .line 1312
-    iget-object v0, p0, Landroid/accounts/AccountManager$10;->this$0:Landroid/accounts/AccountManager;
+    .line 1264
+    iget-object v0, p0, Landroid/accounts/AccountManager$10;->val$callback:Landroid/accounts/AccountManagerCallback;
 
-    #getter for: Landroid/accounts/AccountManager;->mService:Landroid/accounts/IAccountManager;
-    invoke-static {v0}, Landroid/accounts/AccountManager;->access$000(Landroid/accounts/AccountManager;)Landroid/accounts/IAccountManager;
+    iget-object v1, p0, Landroid/accounts/AccountManager$10;->val$future:Landroid/accounts/AccountManagerFuture;
 
-    move-result-object v1
+    invoke-interface {v0, v1}, Landroid/accounts/AccountManagerCallback;->run(Landroid/accounts/AccountManagerFuture;)V
 
-    iget-object v2, p0, Landroid/accounts/AccountManager$10;->mResponse:Landroid/accounts/IAccountManagerResponse;
-
-    iget-object v3, p0, Landroid/accounts/AccountManager$10;->val$accountType:Ljava/lang/String;
-
-    iget-object v0, p0, Landroid/accounts/AccountManager$10;->val$activity:Landroid/app/Activity;
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    invoke-interface {v1, v2, v3, v0}, Landroid/accounts/IAccountManager;->editProperties(Landroid/accounts/IAccountManagerResponse;Ljava/lang/String;Z)V
-
-    .line 1313
+    .line 1265
     return-void
-
-    .line 1312
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
 .end method

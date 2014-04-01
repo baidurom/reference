@@ -27,13 +27,13 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 100
+    .line 101
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 101
+    .line 102
     iput v0, p0, Lcom/android/internal/telephony/SmsHeader$NationalLanguageShift;->singleShiftId:I
 
-    .line 102
+    .line 103
     iput v0, p0, Lcom/android/internal/telephony/SmsHeader$NationalLanguageShift;->lockingShiftId:I
 
     return-void

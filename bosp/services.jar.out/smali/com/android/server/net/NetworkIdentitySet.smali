@@ -15,8 +15,6 @@
 
 
 # static fields
-.field private static final VERSION_ADD_NETWORK_ID:I = 0x3
-
 .field private static final VERSION_ADD_ROAMING:I = 0x2
 
 .field private static final VERSION_INIT:I = 0x1
@@ -35,7 +33,7 @@
 .end method
 
 .method public constructor <init>(Ljava/io/DataInputStream;)V
-    .locals 10
+    .locals 11
     .parameter "in"
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -50,111 +48,161 @@
     .line 41
     invoke-virtual {p1}, Ljava/io/DataInputStream;->readInt()I
 
-    move-result v9
+    move-result v7
 
     .line 42
-    .local v9, version:I
-    invoke-virtual {p1}, Ljava/io/DataInputStream;->readInt()I
+    .local v7, version:I
+    packed-switch v7, :pswitch_data_0
 
-    move-result v8
+    .line 66
+    new-instance v8, Ljava/net/ProtocolException;
 
-    .line 43
-    .local v8, size:I
-    const/4 v6, 0x0
+    new-instance v9, Ljava/lang/StringBuilder;
 
-    .local v6, i:I
-    :goto_0
-    if-ge v6, v8, :cond_3
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v10, "unexpected version: "
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-direct {v8, v9}, Ljava/net/ProtocolException;-><init>(Ljava/lang/String;)V
+
+    throw v8
 
     .line 44
-    const/4 v0, 0x1
-
-    if-gt v9, v0, :cond_0
-
-    .line 45
+    :pswitch_0
     invoke-virtual {p1}, Ljava/io/DataInputStream;->readInt()I
 
-    .line 47
-    :cond_0
+    move-result v3
+
+    .line 45
+    .local v3, size:I
+    const/4 v0, 0x0
+
+    .local v0, i:I
+    :goto_0
+    if-ge v0, v3, :cond_0
+
+    .line 46
     invoke-virtual {p1}, Ljava/io/DataInputStream;->readInt()I
 
     move-result v1
 
-    .line 48
-    .local v1, type:I
+    .line 47
+    .local v1, ignoredVersion:I
     invoke-virtual {p1}, Ljava/io/DataInputStream;->readInt()I
 
-    move-result v2
+    move-result v6
+
+    .line 48
+    .local v6, type:I
+    invoke-virtual {p1}, Ljava/io/DataInputStream;->readInt()I
+
+    move-result v4
 
     .line 49
-    .local v2, subType:I
+    .local v4, subType:I
     invoke-static {p1}, Lcom/android/server/net/NetworkIdentitySet;->readOptionalString(Ljava/io/DataInputStream;)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v5
 
-    .line 51
-    .local v3, subscriberId:Ljava/lang/String;
-    const/4 v0, 0x3
+    .line 50
+    .local v5, subscriberId:Ljava/lang/String;
+    new-instance v8, Landroid/net/NetworkIdentity;
 
-    if-lt v9, v0, :cond_1
+    const/4 v9, 0x0
 
-    .line 52
-    invoke-static {p1}, Lcom/android/server/net/NetworkIdentitySet;->readOptionalString(Ljava/io/DataInputStream;)Ljava/lang/String;
+    invoke-direct {v8, v6, v4, v5, v9}, Landroid/net/NetworkIdentity;-><init>(IILjava/lang/String;Z)V
 
-    move-result-object v4
+    invoke-virtual {p0, v8}, Lcom/android/server/net/NetworkIdentitySet;->add(Ljava/lang/Object;)Z
 
-    .line 57
-    .local v4, networkId:Ljava/lang/String;
-    :goto_1
-    const/4 v0, 0x2
-
-    if-lt v9, v0, :cond_2
-
-    .line 58
-    invoke-virtual {p1}, Ljava/io/DataInputStream;->readBoolean()Z
-
-    move-result v7
-
-    .line 63
-    .local v7, roaming:Z
-    :goto_2
-    new-instance v0, Landroid/net/NetworkIdentity;
-
-    const/4 v5, 0x0
-
-    invoke-direct/range {v0 .. v5}, Landroid/net/NetworkIdentity;-><init>(IILjava/lang/String;Ljava/lang/String;Z)V
-
-    invoke-virtual {p0, v0}, Lcom/android/server/net/NetworkIdentitySet;->add(Ljava/lang/Object;)Z
-
-    .line 43
-    add-int/lit8 v6, v6, 0x1
+    .line 45
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 54
-    .end local v4           #networkId:Ljava/lang/String;
-    .end local v7           #roaming:Z
-    :cond_1
-    const/4 v4, 0x0
+    .line 55
+    .end local v0           #i:I
+    .end local v1           #ignoredVersion:I
+    .end local v3           #size:I
+    .end local v4           #subType:I
+    .end local v5           #subscriberId:Ljava/lang/String;
+    .end local v6           #type:I
+    :pswitch_1
+    invoke-virtual {p1}, Ljava/io/DataInputStream;->readInt()I
 
-    .restart local v4       #networkId:Ljava/lang/String;
-    goto :goto_1
+    move-result v3
+
+    .line 56
+    .restart local v3       #size:I
+    const/4 v0, 0x0
+
+    .restart local v0       #i:I
+    :goto_1
+    if-ge v0, v3, :cond_0
+
+    .line 57
+    invoke-virtual {p1}, Ljava/io/DataInputStream;->readInt()I
+
+    move-result v6
+
+    .line 58
+    .restart local v6       #type:I
+    invoke-virtual {p1}, Ljava/io/DataInputStream;->readInt()I
+
+    move-result v4
+
+    .line 59
+    .restart local v4       #subType:I
+    invoke-static {p1}, Lcom/android/server/net/NetworkIdentitySet;->readOptionalString(Ljava/io/DataInputStream;)Ljava/lang/String;
+
+    move-result-object v5
 
     .line 60
-    :cond_2
-    const/4 v7, 0x0
+    .restart local v5       #subscriberId:Ljava/lang/String;
+    invoke-virtual {p1}, Ljava/io/DataInputStream;->readBoolean()Z
 
-    .restart local v7       #roaming:Z
-    goto :goto_2
+    move-result v2
 
-    .line 65
-    .end local v1           #type:I
-    .end local v2           #subType:I
-    .end local v3           #subscriberId:Ljava/lang/String;
-    .end local v4           #networkId:Ljava/lang/String;
-    .end local v7           #roaming:Z
-    :cond_3
+    .line 61
+    .local v2, roaming:Z
+    new-instance v8, Landroid/net/NetworkIdentity;
+
+    invoke-direct {v8, v6, v4, v5, v2}, Landroid/net/NetworkIdentity;-><init>(IILjava/lang/String;Z)V
+
+    invoke-virtual {p0, v8}, Lcom/android/server/net/NetworkIdentitySet;->add(Ljava/lang/Object;)Z
+
+    .line 56
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_1
+
+    .line 69
+    .end local v2           #roaming:Z
+    .end local v4           #subType:I
+    .end local v5           #subscriberId:Ljava/lang/String;
+    .end local v6           #type:I
+    :cond_0
     return-void
+
+    .line 42
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+        :pswitch_1
+    .end packed-switch
 .end method
 
 .method private static readOptionalString(Ljava/io/DataInputStream;)Ljava/lang/String;
@@ -167,19 +215,19 @@
     .end annotation
 
     .prologue
-    .line 89
+    .line 92
     invoke-virtual {p0}, Ljava/io/DataInputStream;->readByte()B
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 90
+    .line 93
     invoke-virtual {p0}, Ljava/io/DataInputStream;->readUTF()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 92
+    .line 95
     :goto_0
     return-object v0
 
@@ -200,22 +248,22 @@
     .end annotation
 
     .prologue
-    .line 80
+    .line 83
     if-eqz p1, :cond_0
 
-    .line 81
+    .line 84
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Ljava/io/DataOutputStream;->writeByte(I)V
 
-    .line 82
+    .line 85
     invoke-virtual {p0, p1}, Ljava/io/DataOutputStream;->writeUTF(Ljava/lang/String;)V
 
-    .line 86
+    .line 89
     :goto_0
     return-void
 
-    .line 84
+    .line 87
     :cond_0
     const/4 v0, 0x0
 
@@ -236,19 +284,19 @@
     .end annotation
 
     .prologue
-    .line 68
-    const/4 v2, 0x3
+    .line 72
+    const/4 v2, 0x2
 
     invoke-virtual {p1, v2}, Ljava/io/DataOutputStream;->writeInt(I)V
 
-    .line 69
+    .line 73
     invoke-virtual {p0}, Lcom/android/server/net/NetworkIdentitySet;->size()I
 
     move-result v2
 
     invoke-virtual {p1, v2}, Ljava/io/DataOutputStream;->writeInt(I)V
 
-    .line 70
+    .line 74
     invoke-virtual {p0}, Lcom/android/server/net/NetworkIdentitySet;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -267,7 +315,7 @@
 
     check-cast v1, Landroid/net/NetworkIdentity;
 
-    .line 71
+    .line 75
     .local v1, ident:Landroid/net/NetworkIdentity;
     invoke-virtual {v1}, Landroid/net/NetworkIdentity;->getType()I
 
@@ -275,28 +323,21 @@
 
     invoke-virtual {p1, v2}, Ljava/io/DataOutputStream;->writeInt(I)V
 
-    .line 72
+    .line 76
     invoke-virtual {v1}, Landroid/net/NetworkIdentity;->getSubType()I
 
     move-result v2
 
     invoke-virtual {p1, v2}, Ljava/io/DataOutputStream;->writeInt(I)V
 
-    .line 73
+    .line 77
     invoke-virtual {v1}, Landroid/net/NetworkIdentity;->getSubscriberId()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-static {p1, v2}, Lcom/android/server/net/NetworkIdentitySet;->writeOptionalString(Ljava/io/DataOutputStream;Ljava/lang/String;)V
 
-    .line 74
-    invoke-virtual {v1}, Landroid/net/NetworkIdentity;->getNetworkId()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {p1, v2}, Lcom/android/server/net/NetworkIdentitySet;->writeOptionalString(Ljava/io/DataOutputStream;Ljava/lang/String;)V
-
-    .line 75
+    .line 78
     invoke-virtual {v1}, Landroid/net/NetworkIdentity;->getRoaming()Z
 
     move-result v2
@@ -305,7 +346,7 @@
 
     goto :goto_0
 
-    .line 77
+    .line 80
     .end local v1           #ident:Landroid/net/NetworkIdentity;
     :cond_0
     return-void

@@ -38,6 +38,9 @@
 
     .line 66
     .local v0, extras:Landroid/os/Bundle;
+    if-eqz v0, :cond_0
+
+    .line 67
     const-string v1, "appdata"
 
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->getByteArray(Ljava/lang/String;)[B
@@ -46,7 +49,7 @@
 
     iput-object v1, p0, Landroid/nfc/tech/NfcB;->mAppData:[B
 
-    .line 67
+    .line 68
     const-string/jumbo v1, "protinfo"
 
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->getByteArray(Ljava/lang/String;)[B
@@ -55,7 +58,8 @@
 
     iput-object v1, p0, Landroid/nfc/tech/NfcB;->mProtInfo:[B
 
-    .line 68
+    .line 70
+    :cond_0
     return-void
 .end method
 
@@ -137,7 +141,7 @@
     .locals 1
 
     .prologue
-    .line 78
+    .line 80
     iget-object v0, p0, Landroid/nfc/tech/NfcB;->mAppData:[B
 
     return-object v0
@@ -147,7 +151,7 @@
     .locals 1
 
     .prologue
-    .line 123
+    .line 125
     invoke-virtual {p0}, Landroid/nfc/tech/NfcB;->getMaxTransceiveLengthInternal()I
 
     move-result v0
@@ -159,7 +163,7 @@
     .locals 1
 
     .prologue
-    .line 89
+    .line 91
     iget-object v0, p0, Landroid/nfc/tech/NfcB;->mProtInfo:[B
 
     return-object v0
@@ -214,7 +218,7 @@
     .end annotation
 
     .prologue
-    .line 115
+    .line 117
     const/4 v0, 0x1
 
     invoke-virtual {p0, p1, v0}, Landroid/nfc/tech/NfcB;->transceive([BZ)[B

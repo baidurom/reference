@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 91
+    .line 118
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,12 +45,12 @@
     .parameter "in"
 
     .prologue
-    .line 93
+    .line 120
     new-instance v0, Landroid/net/wifi/WpsInfo;
 
     invoke-direct {v0}, Landroid/net/wifi/WpsInfo;-><init>()V
 
-    .line 94
+    .line 121
     .local v0, config:Landroid/net/wifi/WpsInfo;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -58,21 +58,54 @@
 
     iput v1, v0, Landroid/net/wifi/WpsInfo;->setup:I
 
-    .line 95
+    .line 122
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, v0, Landroid/net/wifi/WpsInfo;->BSSID:Ljava/lang/String;
 
-    .line 96
+    .line 123
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, v0, Landroid/net/wifi/WpsInfo;->pin:Ljava/lang/String;
 
-    .line 97
+    .line 124
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/net/wifi/WifiConfiguration$IpAssignment;->valueOf(Ljava/lang/String;)Landroid/net/wifi/WifiConfiguration$IpAssignment;
+
+    move-result-object v1
+
+    iput-object v1, v0, Landroid/net/wifi/WpsInfo;->ipAssignment:Landroid/net/wifi/WifiConfiguration$IpAssignment;
+
+    .line 125
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/net/wifi/WifiConfiguration$ProxySettings;->valueOf(Ljava/lang/String;)Landroid/net/wifi/WifiConfiguration$ProxySettings;
+
+    move-result-object v1
+
+    iput-object v1, v0, Landroid/net/wifi/WpsInfo;->proxySettings:Landroid/net/wifi/WifiConfiguration$ProxySettings;
+
+    .line 126
+    const/4 v1, 0x0
+
+    invoke-virtual {p1, v1}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/net/LinkProperties;
+
+    iput-object v1, v0, Landroid/net/wifi/WpsInfo;->linkProperties:Landroid/net/LinkProperties;
+
+    .line 127
     return-object v0
 .end method
 
@@ -81,7 +114,7 @@
     .parameter "x0"
 
     .prologue
-    .line 91
+    .line 118
     invoke-virtual {p0, p1}, Landroid/net/wifi/WpsInfo$1;->createFromParcel(Landroid/os/Parcel;)Landroid/net/wifi/WpsInfo;
 
     move-result-object v0
@@ -94,7 +127,7 @@
     .parameter "size"
 
     .prologue
-    .line 101
+    .line 131
     new-array v0, p1, [Landroid/net/wifi/WpsInfo;
 
     return-object v0
@@ -105,7 +138,7 @@
     .parameter "x0"
 
     .prologue
-    .line 91
+    .line 118
     invoke-virtual {p0, p1}, Landroid/net/wifi/WpsInfo$1;->newArray(I)[Landroid/net/wifi/WpsInfo;
 
     move-result-object v0

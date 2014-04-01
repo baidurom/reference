@@ -40,7 +40,7 @@
     .locals 2
 
     .prologue
-    .line 7289
+    .line 7198
     sget-object v0, Landroid/provider/ContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string v1, "groups"
@@ -51,7 +51,7 @@
 
     sput-object v0, Landroid/provider/ContactsContract$Groups;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 7295
+    .line 7204
     sget-object v0, Landroid/provider/ContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string v1, "groups_summary"
@@ -69,10 +69,10 @@
     .locals 0
 
     .prologue
-    .line 7283
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 7192
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 7284
+    .line 7193
     return-void
 .end method
 
@@ -81,7 +81,7 @@
     .parameter "cursor"
 
     .prologue
-    .line 7309
+    .line 7218
     new-instance v0, Landroid/provider/ContactsContract$Groups$EntityIteratorImpl;
 
     invoke-direct {v0, p0}, Landroid/provider/ContactsContract$Groups$EntityIteratorImpl;-><init>(Landroid/database/Cursor;)V

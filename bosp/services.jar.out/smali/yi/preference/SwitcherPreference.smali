@@ -49,7 +49,7 @@
 
     .prologue
     .line 63
-    const v0, 0x3010060
+    const v0, 0x4010060
 
     invoke-direct {p0, p1, p2, v0}, Lyi/preference/SwitcherPreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -177,7 +177,7 @@
     invoke-super {p0, p1}, Landroid/preference/Preference;->onBindView(Landroid/view/View;)V
 
     .line 74
-    const v5, 0x3020051
+    const v5, 0x4020077
 
     invoke-virtual {p1, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

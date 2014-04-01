@@ -7,106 +7,47 @@
 
 
 # static fields
-.field private static final PROPERTIES:Lcom/android/internal/location/ProviderProperties; = null
-
 .field private static final TAG:Ljava/lang/String; = "PassiveProvider"
 
 
 # instance fields
 .field private final mLocationManager:Landroid/location/ILocationManager;
 
-.field private mReportLocation:Z
+.field private mTracking:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 10
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 46
-    new-instance v0, Lcom/android/internal/location/ProviderProperties;
-
-    const/4 v8, 0x1
-
-    const/4 v9, 0x2
-
-    move v2, v1
-
-    move v3, v1
-
-    move v4, v1
-
-    move v5, v1
-
-    move v6, v1
-
-    move v7, v1
-
-    invoke-direct/range {v0 .. v9}, Lcom/android/internal/location/ProviderProperties;-><init>(ZZZZZZZII)V
-
-    sput-object v0, Lcom/android/server/location/PassiveProvider;->PROPERTIES:Lcom/android/internal/location/ProviderProperties;
-
-    return-void
-.end method
-
 .method public constructor <init>(Landroid/location/ILocationManager;)V
     .locals 0
     .parameter "locationManager"
 
     .prologue
-    .line 53
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 44
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 54
+    .line 45
     iput-object p1, p0, Lcom/android/server/location/PassiveProvider;->mLocationManager:Landroid/location/ILocationManager;
 
-    .line 55
+    .line 46
     return-void
 .end method
 
 
 # virtual methods
+.method public addListener(I)V
+    .locals 0
+    .parameter "uid"
+
+    .prologue
+    .line 149
+    return-void
+.end method
+
 .method public disable()V
     .locals 0
 
     .prologue
-    .line 78
-    return-void
-.end method
-
-.method public dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
-    .locals 2
-    .parameter "fd"
-    .parameter "pw"
-    .parameter "args"
-
-    .prologue
-    .line 122
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "mReportLocation="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-boolean v1, p0, Lcom/android/server/location/PassiveProvider;->mReportLocation:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    .line 123
+    .line 101
     return-void
 .end method
 
@@ -114,28 +55,71 @@
     .locals 0
 
     .prologue
-    .line 74
+    .line 98
     return-void
+.end method
+
+.method public enableLocationTracking(Z)V
+    .locals 0
+    .parameter "enable"
+
+    .prologue
+    .line 120
+    iput-boolean p1, p0, Lcom/android/server/location/PassiveProvider;->mTracking:Z
+
+    .line 121
+    return-void
+.end method
+
+.method public getAccuracy()I
+    .locals 1
+
+    .prologue
+    .line 90
+    const/4 v0, -0x1
+
+    return v0
+.end method
+
+.method public getFileTime([J)I
+    .locals 1
+    .parameter "times"
+
+    .prologue
+    .line 156
+    const/4 v0, -0x1
+
+    return v0
+.end method
+
+.method public getInternalState()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 116
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method public getName()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 59
+    .line 49
     const-string v0, "passive"
 
     return-object v0
 .end method
 
-.method public getProperties()Lcom/android/internal/location/ProviderProperties;
+.method public getPowerRequirement()I
     .locals 1
 
     .prologue
-    .line 64
-    sget-object v0, Lcom/android/server/location/PassiveProvider;->PROPERTIES:Lcom/android/internal/location/ProviderProperties;
+    .line 81
+    const/4 v0, -0x1
 
-    return-object v0
+    return v0
 .end method
 
 .method public getStatus(Landroid/os/Bundle;)I
@@ -143,15 +127,15 @@
     .parameter "extras"
 
     .prologue
-    .line 82
-    iget-boolean v0, p0, Lcom/android/server/location/PassiveProvider;->mReportLocation:Z
+    .line 104
+    iget-boolean v0, p0, Lcom/android/server/location/PassiveProvider;->mTracking:Z
 
     if-eqz v0, :cond_0
 
-    .line 83
+    .line 105
     const/4 v0, 0x2
 
-    .line 85
+    .line 107
     :goto_0
     return v0
 
@@ -165,18 +149,88 @@
     .locals 2
 
     .prologue
-    .line 91
+    .line 112
     const-wide/16 v0, -0x1
 
     return-wide v0
+.end method
+
+.method public hasMonetaryCost()Z
+    .locals 1
+
+    .prologue
+    .line 65
+    const/4 v0, 0x0
+
+    return v0
 .end method
 
 .method public isEnabled()Z
     .locals 1
 
     .prologue
-    .line 69
+    .line 94
     const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public meetsCriteria(Landroid/location/Criteria;)Z
+    .locals 1
+    .parameter "criteria"
+
+    .prologue
+    .line 86
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public removeListener(I)V
+    .locals 0
+    .parameter "uid"
+
+    .prologue
+    .line 152
+    return-void
+.end method
+
+.method public requestSingleShotFix()Z
+    .locals 1
+
+    .prologue
+    .line 124
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public requiresCell()Z
+    .locals 1
+
+    .prologue
+    .line 61
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public requiresNetwork()Z
+    .locals 1
+
+    .prologue
+    .line 53
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public requiresSatellite()Z
+    .locals 1
+
+    .prologue
+    .line 57
+    const/4 v0, 0x0
 
     return v0
 .end method
@@ -187,34 +241,60 @@
     .parameter "extras"
 
     .prologue
-    .line 117
+    .line 145
     const/4 v0, 0x0
 
     return v0
 .end method
 
-.method public setRequest(Lcom/android/internal/location/ProviderRequest;Landroid/os/WorkSource;)V
-    .locals 1
-    .parameter "request"
-    .parameter "source"
+.method public setMinTime(JLandroid/os/WorkSource;)V
+    .locals 0
+    .parameter "minTime"
+    .parameter "ws"
 
     .prologue
-    .line 96
-    iget-boolean v0, p1, Lcom/android/internal/location/ProviderRequest;->reportLocation:Z
-
-    iput-boolean v0, p0, Lcom/android/server/location/PassiveProvider;->mReportLocation:Z
-
-    .line 97
+    .line 128
     return-void
 .end method
 
-.method public switchUser(I)V
-    .locals 0
-    .parameter "userId"
+.method public supportsAltitude()Z
+    .locals 1
 
     .prologue
-    .line 102
-    return-void
+    .line 69
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public supportsBearing()Z
+    .locals 1
+
+    .prologue
+    .line 77
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public supportsSpeed()Z
+    .locals 1
+
+    .prologue
+    .line 73
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public updateEPOFile()I
+    .locals 1
+
+    .prologue
+    .line 160
+    const/4 v0, -0x1
+
+    return v0
 .end method
 
 .method public updateLocation(Landroid/location/Location;)V
@@ -222,12 +302,12 @@
     .parameter "location"
 
     .prologue
-    .line 105
-    iget-boolean v1, p0, Lcom/android/server/location/PassiveProvider;->mReportLocation:Z
+    .line 134
+    iget-boolean v1, p0, Lcom/android/server/location/PassiveProvider;->mTracking:Z
 
     if-eqz v1, :cond_0
 
-    .line 108
+    .line 137
     :try_start_0
     iget-object v1, p0, Lcom/android/server/location/PassiveProvider;->mLocationManager:Landroid/location/ILocationManager;
 
@@ -237,16 +317,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 113
+    .line 142
     :cond_0
     :goto_0
     return-void
 
-    .line 109
+    .line 138
     :catch_0
     move-exception v0
 
-    .line 110
+    .line 139
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "PassiveProvider"
 
@@ -255,4 +335,14 @@
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
+.end method
+
+.method public updateNetworkState(ILandroid/net/NetworkInfo;)V
+    .locals 0
+    .parameter "state"
+    .parameter "info"
+
+    .prologue
+    .line 131
+    return-void
 .end method

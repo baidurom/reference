@@ -684,7 +684,7 @@
     if-eqz v1, :cond_a
 
     .line 313
-    const-string/jumbo v1, "l1"
+    const-string v1, "l1"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 

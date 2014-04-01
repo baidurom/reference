@@ -15,4 +15,14 @@
 #
 # Emulator keyboard configuration file #1.
 #
-device.internal = 0
+
+touch.deviceType = touchScreen
+touch.orientationAware = 1
+
+keyboard.layout = hid-keyboard
+keyboard.characterMap = hid-keyboard
+keyboard.orientationAware = 0
+keyboard.builtIn = 1
+
+cursor.mode = navigation
+cursor.orientationAware = 1

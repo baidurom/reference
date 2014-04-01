@@ -18,8 +18,6 @@
     .end annotation
 .end field
 
-.field public static final MIMETYPE_TEXT_HTML:Ljava/lang/String; = "text/html"
-
 .field public static final MIMETYPE_TEXT_INTENT:Ljava/lang/String; = "text/vnd.android.intent"
 
 .field public static final MIMETYPE_TEXT_PLAIN:Ljava/lang/String; = "text/plain"
@@ -38,7 +36,7 @@
     .locals 1
 
     .prologue
-    .line 240
+    .line 202
     new-instance v0, Landroid/content/ClipDescription$1;
 
     invoke-direct {v0}, Landroid/content/ClipDescription$1;-><init>()V
@@ -53,20 +51,20 @@
     .parameter "o"
 
     .prologue
-    .line 82
+    .line 77
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 83
+    .line 78
     iget-object v0, p1, Landroid/content/ClipDescription;->mLabel:Ljava/lang/CharSequence;
 
     iput-object v0, p0, Landroid/content/ClipDescription;->mLabel:Ljava/lang/CharSequence;
 
-    .line 84
+    .line 79
     iget-object v0, p1, Landroid/content/ClipDescription;->mMimeTypes:[Ljava/lang/String;
 
     iput-object v0, p0, Landroid/content/ClipDescription;->mMimeTypes:[Ljava/lang/String;
 
-    .line 85
+    .line 80
     return-void
 .end method
 
@@ -75,10 +73,10 @@
     .parameter "in"
 
     .prologue
-    .line 235
+    .line 197
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 236
+    .line 198
     sget-object v0, Landroid/text/TextUtils;->CHAR_SEQUENCE_CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v0, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -89,14 +87,14 @@
 
     iput-object v0, p0, Landroid/content/ClipDescription;->mLabel:Ljava/lang/CharSequence;
 
-    .line 237
+    .line 199
     invoke-virtual {p1}, Landroid/os/Parcel;->createStringArray()[Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/content/ClipDescription;->mMimeTypes:[Ljava/lang/String;
 
-    .line 238
+    .line 200
     return-void
 .end method
 
@@ -106,13 +104,13 @@
     .parameter "mimeTypes"
 
     .prologue
-    .line 71
+    .line 66
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 72
+    .line 67
     if-nez p2, :cond_0
 
-    .line 73
+    .line 68
     new-instance v0, Ljava/lang/NullPointerException;
 
     const-string/jumbo v1, "mimeTypes is null"
@@ -121,14 +119,14 @@
 
     throw v0
 
-    .line 75
+    .line 70
     :cond_0
     iput-object p1, p0, Landroid/content/ClipDescription;->mLabel:Ljava/lang/CharSequence;
 
-    .line 76
+    .line 71
     iput-object p2, p0, Landroid/content/ClipDescription;->mMimeTypes:[Ljava/lang/String;
 
-    .line 77
+    .line 72
     return-void
 .end method
 
@@ -142,12 +140,12 @@
 
     const/4 v3, 0x0
 
-    .line 94
+    .line 89
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v1
 
-    .line 95
+    .line 90
     .local v1, typeLength:I
     const/4 v4, 0x3
 
@@ -161,12 +159,12 @@
 
     if-eqz v4, :cond_1
 
-    .line 110
+    .line 105
     :cond_0
     :goto_0
     return v2
 
-    .line 99
+    .line 94
     :cond_1
     const/16 v4, 0x2f
 
@@ -174,11 +172,11 @@
 
     move-result v0
 
-    .line 100
+    .line 95
     .local v0, slashpos:I
     if-lez v0, :cond_2
 
-    .line 101
+    .line 96
     add-int/lit8 v4, v0, 0x2
 
     if-ne v1, v4, :cond_3
@@ -193,7 +191,7 @@
 
     if-ne v4, v5, :cond_3
 
-    .line 102
+    .line 97
     add-int/lit8 v4, v0, 0x1
 
     invoke-virtual {p1, v3, p0, v3, v4}, Ljava/lang/String;->regionMatches(ILjava/lang/String;II)Z
@@ -205,10 +203,10 @@
     :cond_2
     move v2, v3
 
-    .line 110
+    .line 105
     goto :goto_0
 
-    .line 105
+    .line 100
     :cond_3
     invoke-virtual {p1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -225,7 +223,7 @@
     .locals 1
 
     .prologue
-    .line 226
+    .line 188
     const/4 v0, 0x0
 
     return v0
@@ -236,10 +234,10 @@
     .parameter "mimeType"
 
     .prologue
-    .line 145
+    .line 140
     const/4 v0, 0x0
 
-    .line 146
+    .line 141
     .local v0, array:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     const/4 v1, 0x0
 
@@ -251,7 +249,7 @@
 
     if-ge v1, v3, :cond_2
 
-    .line 147
+    .line 142
     iget-object v3, p0, Landroid/content/ClipDescription;->mMimeTypes:[Ljava/lang/String;
 
     aget-object v3, v3, v1
@@ -262,16 +260,16 @@
 
     if-eqz v3, :cond_1
 
-    .line 148
+    .line 143
     if-nez v0, :cond_0
 
-    .line 149
+    .line 144
     new-instance v0, Ljava/util/ArrayList;
 
     .end local v0           #array:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 151
+    .line 146
     .restart local v0       #array:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     :cond_0
     iget-object v3, p0, Landroid/content/ClipDescription;->mMimeTypes:[Ljava/lang/String;
@@ -280,24 +278,24 @@
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 146
+    .line 141
     :cond_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 154
+    .line 149
     :cond_2
     if-nez v0, :cond_3
 
-    .line 155
+    .line 150
     const/4 v2, 0x0
 
-    .line 159
+    .line 154
     :goto_1
     return-object v2
 
-    .line 157
+    .line 152
     :cond_3
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -305,7 +303,7 @@
 
     new-array v2, v3, [Ljava/lang/String;
 
-    .line 158
+    .line 153
     .local v2, rawArray:[Ljava/lang/String;
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
@@ -316,7 +314,7 @@
     .locals 1
 
     .prologue
-    .line 117
+    .line 112
     iget-object v0, p0, Landroid/content/ClipDescription;->mLabel:Ljava/lang/CharSequence;
 
     return-object v0
@@ -327,7 +325,7 @@
     .parameter "index"
 
     .prologue
-    .line 173
+    .line 168
     iget-object v0, p0, Landroid/content/ClipDescription;->mMimeTypes:[Ljava/lang/String;
 
     aget-object v0, v0, p1
@@ -339,7 +337,7 @@
     .locals 1
 
     .prologue
-    .line 166
+    .line 161
     iget-object v0, p0, Landroid/content/ClipDescription;->mMimeTypes:[Ljava/lang/String;
 
     array-length v0, v0
@@ -352,7 +350,7 @@
     .parameter "mimeType"
 
     .prologue
-    .line 128
+    .line 123
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -363,7 +361,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 129
+    .line 124
     iget-object v1, p0, Landroid/content/ClipDescription;->mMimeTypes:[Ljava/lang/String;
 
     aget-object v1, v1, v0
@@ -374,157 +372,36 @@
 
     if-eqz v1, :cond_0
 
-    .line 130
+    .line 125
     const/4 v1, 0x1
 
-    .line 133
+    .line 128
     :goto_1
     return v1
 
-    .line 128
+    .line 123
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 133
+    .line 128
     :cond_1
     const/4 v1, 0x0
 
     goto :goto_1
-.end method
-
-.method public toShortString(Ljava/lang/StringBuilder;)Z
-    .locals 5
-    .parameter "b"
-
-    .prologue
-    const/16 v4, 0x22
-
-    const/16 v3, 0x20
-
-    .line 204
-    const/4 v0, 0x1
-
-    .line 205
-    .local v0, first:Z
-    const/4 v1, 0x0
-
-    .local v1, i:I
-    :goto_0
-    iget-object v2, p0, Landroid/content/ClipDescription;->mMimeTypes:[Ljava/lang/String;
-
-    array-length v2, v2
-
-    if-ge v1, v2, :cond_1
-
-    .line 206
-    if-nez v0, :cond_0
-
-    .line 207
-    invoke-virtual {p1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 209
-    :cond_0
-    const/4 v0, 0x0
-
-    .line 210
-    iget-object v2, p0, Landroid/content/ClipDescription;->mMimeTypes:[Ljava/lang/String;
-
-    aget-object v2, v2, v1
-
-    invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 205
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    .line 212
-    :cond_1
-    iget-object v2, p0, Landroid/content/ClipDescription;->mLabel:Ljava/lang/CharSequence;
-
-    if-eqz v2, :cond_3
-
-    .line 213
-    if-nez v0, :cond_2
-
-    .line 214
-    invoke-virtual {p1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 216
-    :cond_2
-    const/4 v0, 0x0
-
-    .line 217
-    invoke-virtual {p1, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 218
-    iget-object v2, p0, Landroid/content/ClipDescription;->mLabel:Ljava/lang/CharSequence;
-
-    invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
-
-    .line 219
-    invoke-virtual {p1, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 221
-    :cond_3
-    if-nez v0, :cond_4
-
-    const/4 v2, 0x1
-
-    :goto_1
-    return v2
-
-    :cond_4
-    const/4 v2, 0x0
-
-    goto :goto_1
-.end method
-
-.method public toString()Ljava/lang/String;
-    .locals 2
-
-    .prologue
-    .line 193
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const/16 v1, 0x80
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    .line 195
-    .local v0, b:Ljava/lang/StringBuilder;
-    const-string v1, "ClipDescription { "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 196
-    invoke-virtual {p0, v0}, Landroid/content/ClipDescription;->toShortString(Ljava/lang/StringBuilder;)Z
-
-    .line 197
-    const-string v1, " }"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 199
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    return-object v1
 .end method
 
 .method public validate()V
     .locals 4
 
     .prologue
-    .line 178
+    .line 173
     iget-object v1, p0, Landroid/content/ClipDescription;->mMimeTypes:[Ljava/lang/String;
 
     if-nez v1, :cond_0
 
-    .line 179
+    .line 174
     new-instance v1, Ljava/lang/NullPointerException;
 
     const-string/jumbo v2, "null mime types"
@@ -533,7 +410,7 @@
 
     throw v1
 
-    .line 181
+    .line 176
     :cond_0
     iget-object v1, p0, Landroid/content/ClipDescription;->mMimeTypes:[Ljava/lang/String;
 
@@ -541,7 +418,7 @@
 
     if-gtz v1, :cond_1
 
-    .line 182
+    .line 177
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v2, "must have at least 1 mime type"
@@ -550,7 +427,7 @@
 
     throw v1
 
-    .line 184
+    .line 179
     :cond_1
     const/4 v0, 0x0
 
@@ -562,14 +439,14 @@
 
     if-ge v0, v1, :cond_3
 
-    .line 185
+    .line 180
     iget-object v1, p0, Landroid/content/ClipDescription;->mMimeTypes:[Ljava/lang/String;
 
     aget-object v1, v1, v0
 
     if-nez v1, :cond_2
 
-    .line 186
+    .line 181
     new-instance v1, Ljava/lang/NullPointerException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -600,13 +477,13 @@
 
     throw v1
 
-    .line 184
+    .line 179
     :cond_2
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 189
+    .line 184
     :cond_3
     return-void
 .end method
@@ -617,16 +494,16 @@
     .parameter "flags"
 
     .prologue
-    .line 231
+    .line 193
     iget-object v0, p0, Landroid/content/ClipDescription;->mLabel:Ljava/lang/CharSequence;
 
     invoke-static {v0, p1, p2}, Landroid/text/TextUtils;->writeToParcel(Ljava/lang/CharSequence;Landroid/os/Parcel;I)V
 
-    .line 232
+    .line 194
     iget-object v0, p0, Landroid/content/ClipDescription;->mMimeTypes:[Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeStringArray([Ljava/lang/String;)V
 
-    .line 233
+    .line 195
     return-void
 .end method

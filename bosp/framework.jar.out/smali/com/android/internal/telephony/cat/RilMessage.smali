@@ -10,31 +10,24 @@
 
 .field mResCode:Lcom/android/internal/telephony/cat/ResultCode;
 
-.field mSetUpMenuFromMD:Z
-
 
 # direct methods
 .method constructor <init>(ILjava/lang/String;)V
-    .locals 1
+    .locals 0
     .parameter "msgId"
     .parameter "rawData"
 
     .prologue
-    .line 119
+    .line 66
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 120
+    .line 67
     iput p1, p0, Lcom/android/internal/telephony/cat/RilMessage;->mId:I
 
-    .line 121
+    .line 68
     iput-object p2, p0, Lcom/android/internal/telephony/cat/RilMessage;->mData:Ljava/lang/Object;
 
-    .line 122
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/android/internal/telephony/cat/RilMessage;->mSetUpMenuFromMD:Z
-
-    .line 123
+    .line 69
     return-void
 .end method
 
@@ -43,43 +36,24 @@
     .parameter "other"
 
     .prologue
-    .line 125
+    .line 71
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 126
+    .line 72
     iget v0, p1, Lcom/android/internal/telephony/cat/RilMessage;->mId:I
 
     iput v0, p0, Lcom/android/internal/telephony/cat/RilMessage;->mId:I
 
-    .line 127
+    .line 73
     iget-object v0, p1, Lcom/android/internal/telephony/cat/RilMessage;->mData:Ljava/lang/Object;
 
     iput-object v0, p0, Lcom/android/internal/telephony/cat/RilMessage;->mData:Ljava/lang/Object;
 
-    .line 128
+    .line 74
     iget-object v0, p1, Lcom/android/internal/telephony/cat/RilMessage;->mResCode:Lcom/android/internal/telephony/cat/ResultCode;
 
     iput-object v0, p0, Lcom/android/internal/telephony/cat/RilMessage;->mResCode:Lcom/android/internal/telephony/cat/ResultCode;
 
-    .line 129
-    iget-boolean v0, p1, Lcom/android/internal/telephony/cat/RilMessage;->mSetUpMenuFromMD:Z
-
-    iput-boolean v0, p0, Lcom/android/internal/telephony/cat/RilMessage;->mSetUpMenuFromMD:Z
-
-    .line 130
-    return-void
-.end method
-
-
-# virtual methods
-.method setSetUpMenuFromMD(Z)V
-    .locals 0
-    .parameter "flag"
-
-    .prologue
-    .line 134
-    iput-boolean p1, p0, Lcom/android/internal/telephony/cat/RilMessage;->mSetUpMenuFromMD:Z
-
-    .line 135
+    .line 75
     return-void
 .end method

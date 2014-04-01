@@ -13,31 +13,31 @@
     .parameter "iccPhoneBookInterfaceManager"
 
     .prologue
-    .line 81
+    .line 41
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;-><init>(Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;I)V
 
-    .line 82
+    .line 42
     return-void
 .end method
 
 .method public constructor <init>(Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;I)V
-    .locals 3
+    .locals 1
     .parameter "iccPhoneBookInterfaceManager"
     .parameter "simId"
 
     .prologue
-    .line 86
+    .line 46
     invoke-direct {p0}, Lcom/android/internal/telephony/IIccPhoneBook$Stub;-><init>()V
 
-    .line 87
+    .line 47
     iput-object p1, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
 
-    .line 89
+    .line 49
     if-nez p2, :cond_1
 
-    .line 90
+    .line 50
     const-string/jumbo v0, "simphonebook"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -46,46 +46,18 @@
 
     if-nez v0, :cond_0
 
-    .line 91
+    .line 51
     const-string/jumbo v0, "simphonebook"
 
     invoke-static {v0, p0}, Landroid/os/ServiceManager;->addService(Ljava/lang/String;Landroid/os/IBinder;)V
 
-    .line 107
+    .line 58
     :cond_0
     :goto_0
-    const-string v0, "IccPhoneBookInterfaceManagerProxy"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "create proxy:"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 108
     return-void
 
-    .line 93
+    .line 54
     :cond_1
-    const/4 v0, 0x1
-
-    if-ne v0, p2, :cond_2
-
-    .line 94
     const-string/jumbo v0, "simphonebook2"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -94,47 +66,8 @@
 
     if-nez v0, :cond_0
 
-    .line 95
+    .line 55
     const-string/jumbo v0, "simphonebook2"
-
-    invoke-static {v0, p0}, Landroid/os/ServiceManager;->addService(Ljava/lang/String;Landroid/os/IBinder;)V
-
-    goto :goto_0
-
-    .line 97
-    :cond_2
-    const/4 v0, 0x2
-
-    if-ne v0, p2, :cond_3
-
-    .line 98
-    const-string/jumbo v0, "simphonebook3"
-
-    invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    .line 99
-    const-string/jumbo v0, "simphonebook3"
-
-    invoke-static {v0, p0}, Landroid/os/ServiceManager;->addService(Ljava/lang/String;Landroid/os/IBinder;)V
-
-    goto :goto_0
-
-    .line 102
-    :cond_3
-    const-string/jumbo v0, "simphonebook4"
-
-    invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    .line 103
-    const-string/jumbo v0, "simphonebook4"
 
     invoke-static {v0, p0}, Landroid/os/ServiceManager;->addService(Ljava/lang/String;Landroid/os/IBinder;)V
 
@@ -149,7 +82,7 @@
     .parameter "grpIndex"
 
     .prologue
-    .line 220
+    .line 152
     iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->addContactToGroup(II)Z
@@ -179,7 +112,7 @@
     .end annotation
 
     .prologue
-    .line 190
+    .line 124
     iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->getAdnRecordsInEf(I)Ljava/util/List;
@@ -199,7 +132,7 @@
     .end annotation
 
     .prologue
-    .line 186
+    .line 120
     iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->getAdnRecordsSize(I)[I
@@ -209,141 +142,47 @@
     return-object v0
 .end method
 
-.method public getAnrCount()I
-    .locals 1
-
-    .prologue
-    .line 272
-    iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
-
-    invoke-virtual {v0}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->getAnrCount()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getEmailCount()I
-    .locals 1
-
-    .prologue
-    .line 276
-    iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
-
-    invoke-virtual {v0}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->getEmailCount()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getPhonebookMemStorageExt()[Lcom/mediatek/common/telephony/gsm/UsimPBMemInfo;
-    .locals 1
-
-    .prologue
-    .line 306
-    iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
-
-    invoke-virtual {v0}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->getPhonebookMemStorageExt()[Lcom/mediatek/common/telephony/gsm/UsimPBMemInfo;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getSneRecordLen()I
-    .locals 1
-
-    .prologue
-    .line 292
-    iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
-
-    invoke-virtual {v0}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->getSneRecordLen()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getUsimAasById(I)Ljava/lang/String;
-    .locals 1
-    .parameter "index"
-
-    .prologue
-    .line 252
-    iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
-
-    invoke-virtual {v0, p1}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->getUsimAasById(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getUsimAasList()Ljava/util/List;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List",
-            "<",
-            "Lcom/mediatek/common/telephony/AlphaTag;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 248
-    iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
-
-    invoke-virtual {v0}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->getUsimAasList()Ljava/util/List;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getUsimAasMaxCount()I
-    .locals 1
-
-    .prologue
-    .line 280
-    iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
-
-    invoke-virtual {v0}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->getUsimAasMaxCount()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getUsimAasMaxNameLen()I
-    .locals 1
-
-    .prologue
-    .line 284
-    iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
-
-    invoke-virtual {v0}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->getUsimAasMaxNameLen()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getUsimGroupById(I)Ljava/lang/String;
+.method public getUSIMGroupById(I)Ljava/lang/String;
     .locals 1
     .parameter "nGasId"
 
     .prologue
-    .line 204
+    .line 136
     iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
 
-    invoke-virtual {v0, p1}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->getUsimGroupById(I)Ljava/lang/String;
+    invoke-virtual {v0, p1}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->getUSIMGroupById(I)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public getUSIMGrpMaxCount()I
+    .locals 1
+
+    .prologue
+    .line 168
+    iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
+
+    invoke-virtual {v0}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->getUSIMGrpMaxCount()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public getUSIMGrpMaxNameLen()I
+    .locals 1
+
+    .prologue
+    .line 164
+    iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
+
+    invoke-virtual {v0}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->getUSIMGrpMaxNameLen()I
+
+    move-result v0
+
+    return v0
 .end method
 
 .method public getUsimGroups()Ljava/util/List;
@@ -353,13 +192,13 @@
             "()",
             "Ljava/util/List",
             "<",
-            "Lcom/mediatek/common/telephony/UsimGroup;",
+            "Lcom/android/internal/telephony/UsimGroup;",
             ">;"
         }
     .end annotation
 
     .prologue
-    .line 200
+    .line 133
     iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->getUsimGroups()Ljava/util/List;
@@ -369,40 +208,12 @@
     return-object v0
 .end method
 
-.method public getUsimGrpMaxCount()I
-    .locals 1
-
-    .prologue
-    .line 244
-    iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
-
-    invoke-virtual {v0}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->getUsimGrpMaxCount()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getUsimGrpMaxNameLen()I
-    .locals 1
-
-    .prologue
-    .line 240
-    iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
-
-    invoke-virtual {v0}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->getUsimGrpMaxNameLen()I
-
-    move-result v0
-
-    return v0
-.end method
-
 .method public hasExistGroup(Ljava/lang/String;)I
     .locals 1
     .parameter "grpName"
 
     .prologue
-    .line 236
+    .line 160
     iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->hasExistGroup(Ljava/lang/String;)I
@@ -412,58 +223,15 @@
     return v0
 .end method
 
-.method public hasSne()Z
-    .locals 1
-
-    .prologue
-    .line 288
-    iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
-
-    invoke-virtual {v0}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->hasSne()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public insertUsimAas(Ljava/lang/String;)I
-    .locals 1
-    .parameter "aasName"
-
-    .prologue
-    .line 260
-    iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
-
-    invoke-virtual {v0, p1}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->insertUsimAas(Ljava/lang/String;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public insertUsimGroup(Ljava/lang/String;)I
+.method public insertUSIMGroup(Ljava/lang/String;)I
     .locals 1
     .parameter "grpName"
 
     .prologue
-    .line 212
+    .line 144
     iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
 
-    invoke-virtual {v0, p1}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->insertUsimGroup(Ljava/lang/String;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public isAdnAccessible()Z
-    .locals 1
-
-    .prologue
-    .line 296
-    iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
-
-    invoke-virtual {v0}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->isAdnAccessible()Z
+    invoke-virtual {v0, p1}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->insertUSIMGroup(Ljava/lang/String;)I
 
     move-result v0
 
@@ -474,27 +242,10 @@
     .locals 1
 
     .prologue
-    .line 196
+    .line 129
     iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->isPhbReady()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public moveContactFromGroupsToGroups(I[I[I)Z
-    .locals 1
-    .parameter "adnIndex"
-    .parameter "fromGrpIdList"
-    .parameter "toGrpIdList"
-
-    .prologue
-    .line 232
-    iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
-
-    invoke-virtual {v0, p1, p2, p3}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->moveContactFromGroupsToGroups(I[I[I)Z
 
     move-result v0
 
@@ -507,7 +258,7 @@
     .parameter "grpIndex"
 
     .prologue
-    .line 224
+    .line 156
     iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->removeContactFromGroup(II)Z
@@ -517,31 +268,15 @@
     return v0
 .end method
 
-.method public removeUsimAasById(II)Z
-    .locals 1
-    .parameter "index"
-    .parameter "pbrIndex"
-
-    .prologue
-    .line 256
-    iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
-
-    invoke-virtual {v0, p1, p2}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->removeUsimAasById(II)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public removeUsimGroupById(I)Z
+.method public removeUSIMGroupById(I)Z
     .locals 1
     .parameter "nGasId"
 
     .prologue
-    .line 208
+    .line 140
     iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
 
-    invoke-virtual {v0, p1}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->removeUsimGroupById(I)Z
+    invoke-virtual {v0, p1}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->removeUSIMGroupById(I)Z
 
     move-result v0
 
@@ -553,27 +288,11 @@
     .parameter "iccPhoneBookInterfaceManager"
 
     .prologue
-    .line 113
+    .line 62
     iput-object p1, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
 
-    .line 114
+    .line 63
     return-void
-.end method
-
-.method public updateAdnAas(II)Z
-    .locals 1
-    .parameter "adnIndex"
-    .parameter "aasIndex"
-
-    .prologue
-    .line 268
-    iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
-
-    invoke-virtual {v0, p1, p2}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->updateAdnAas(II)Z
-
-    move-result v0
-
-    return v0
 .end method
 
 .method public updateAdnRecordsInEfByIndex(ILjava/lang/String;Ljava/lang/String;ILjava/lang/String;)Z
@@ -590,7 +309,7 @@
     .end annotation
 
     .prologue
-    .line 155
+    .line 96
     iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
 
     move v1, p1
@@ -619,7 +338,7 @@
     .parameter "pin2"
 
     .prologue
-    .line 163
+    .line 104
     iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
 
     move v1, p1
@@ -654,7 +373,7 @@
     .end annotation
 
     .prologue
-    .line 121
+    .line 70
     iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
 
     move v1, p1
@@ -686,7 +405,7 @@
     .parameter "pin2"
 
     .prologue
-    .line 130
+    .line 80
     iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
 
     move v1, p1
@@ -708,83 +427,16 @@
     return v0
 .end method
 
-.method public updateContactToGroups(I[I)Z
-    .locals 1
-    .parameter "adnIndex"
-    .parameter "grpIdList"
-
-    .prologue
-    .line 228
-    iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
-
-    invoke-virtual {v0, p1, p2}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->updateContactToGroups(I[I)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public updateUsimAas(IILjava/lang/String;)Z
-    .locals 1
-    .parameter "index"
-    .parameter "pbrIndex"
-    .parameter "aasName"
-
-    .prologue
-    .line 264
-    iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
-
-    invoke-virtual {v0, p1, p2, p3}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->updateUsimAas(IILjava/lang/String;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public updateUsimGroup(ILjava/lang/String;)I
+.method public updateUSIMGroup(ILjava/lang/String;)I
     .locals 1
     .parameter "nGasId"
     .parameter "grpName"
 
     .prologue
-    .line 216
+    .line 148
     iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
 
-    invoke-virtual {v0, p1, p2}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->updateUsimGroup(ILjava/lang/String;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public updateUsimPBRecordsByIndexWithError(ILcom/android/internal/telephony/AdnRecord;I)I
-    .locals 1
-    .parameter "efid"
-    .parameter "record"
-    .parameter "index"
-
-    .prologue
-    .line 178
-    iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
-
-    invoke-virtual {v0, p1, p2, p3}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->updateUsimPBRecordsByIndexWithError(ILcom/android/internal/telephony/AdnRecord;I)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public updateUsimPBRecordsBySearchWithError(ILcom/android/internal/telephony/AdnRecord;Lcom/android/internal/telephony/AdnRecord;)I
-    .locals 1
-    .parameter "efid"
-    .parameter "oldAdn"
-    .parameter "newAdn"
-
-    .prologue
-    .line 147
-    iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
-
-    invoke-virtual {v0, p1, p2, p3}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->updateUsimPBRecordsBySearchWithError(ILcom/android/internal/telephony/AdnRecord;Lcom/android/internal/telephony/AdnRecord;)I
+    invoke-virtual {v0, p1, p2}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->updateUSIMGroup(ILjava/lang/String;)I
 
     move-result v0
 
@@ -802,7 +454,7 @@
     .parameter "index"
 
     .prologue
-    .line 171
+    .line 113
     iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
 
     move v1, p1
@@ -841,7 +493,7 @@
     .parameter "newEmails"
 
     .prologue
-    .line 140
+    .line 89
     iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->mIccPhoneBookInterfaceManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
 
     move v1, p1

@@ -15,12 +15,16 @@
 # static fields
 .field private static LOG_TAG:Ljava/lang/String;
 
+.field public static PRESENTATION_ALLOWED:I
+
+.field public static PRESENTATION_PAYPHONE:I
+
+.field public static PRESENTATION_RESTRICTED:I
+
+.field public static PRESENTATION_UNKNOWN:I
+
 
 # instance fields
-.field protected cnapName:Ljava/lang/String;
-
-.field protected cnapNamePresentation:I
-
 .field userData:Ljava/lang/Object;
 
 
@@ -29,7 +33,27 @@
     .locals 1
 
     .prologue
+    .line 26
+    const/4 v0, 0x1
+
+    sput v0, Lcom/android/internal/telephony/Connection;->PRESENTATION_ALLOWED:I
+
+    .line 27
+    const/4 v0, 0x2
+
+    sput v0, Lcom/android/internal/telephony/Connection;->PRESENTATION_RESTRICTED:I
+
+    .line 28
+    const/4 v0, 0x3
+
+    sput v0, Lcom/android/internal/telephony/Connection;->PRESENTATION_UNKNOWN:I
+
     .line 29
+    const/4 v0, 0x4
+
+    sput v0, Lcom/android/internal/telephony/Connection;->PRESENTATION_PAYPHONE:I
+
+    .line 31
     const-string v0, "TelephonyConnection"
 
     sput-object v0, Lcom/android/internal/telephony/Connection;->LOG_TAG:Ljava/lang/String;
@@ -38,18 +62,13 @@
 .end method
 
 .method public constructor <init>()V
-    .locals 1
+    .locals 0
 
     .prologue
     .line 23
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 27
-    sget v0, Lcom/android/internal/telephony/PhoneConstants;->PRESENTATION_ALLOWED:I
-
-    iput v0, p0, Lcom/android/internal/telephony/Connection;->cnapNamePresentation:I
-
-    .line 266
+    .line 261
     return-void
 .end method
 
@@ -62,12 +81,12 @@
     .locals 1
 
     .prologue
-    .line 283
+    .line 278
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/telephony/Connection;->userData:Ljava/lang/Object;
 
-    .line 284
+    .line 279
     return-void
 .end method
 
@@ -81,8 +100,8 @@
     .locals 1
 
     .prologue
-    .line 110
-    iget-object v0, p0, Lcom/android/internal/telephony/Connection;->cnapName:Ljava/lang/String;
+    .line 112
+    const/4 v0, 0x0
 
     return-object v0
 .end method
@@ -91,8 +110,8 @@
     .locals 1
 
     .prologue
-    .line 127
-    iget v0, p0, Lcom/android/internal/telephony/Connection;->cnapNamePresentation:I
+    .line 129
+    const/4 v0, 0x0
 
     return v0
 .end method
@@ -122,7 +141,7 @@
     .locals 1
 
     .prologue
-    .line 118
+    .line 120
     const/4 v0, 0x0
 
     return-object v0
@@ -138,19 +157,19 @@
     .locals 2
 
     .prologue
-    .line 203
+    .line 205
     invoke-virtual {p0}, Lcom/android/internal/telephony/Connection;->getCall()Lcom/android/internal/telephony/Call;
 
     move-result-object v0
 
-    .line 205
+    .line 207
     .local v0, c:Lcom/android/internal/telephony/Call;
     if-nez v0, :cond_0
 
-    .line 206
+    .line 208
     sget-object v1, Lcom/android/internal/telephony/Call$State;->IDLE:Lcom/android/internal/telephony/Call$State;
 
-    .line 208
+    .line 210
     :goto_0
     return-object v1
 
@@ -169,7 +188,7 @@
     .locals 1
 
     .prologue
-    .line 236
+    .line 238
     iget-object v0, p0, Lcom/android/internal/telephony/Connection;->userData:Ljava/lang/Object;
 
     return-object v0
@@ -183,25 +202,11 @@
     .end annotation
 .end method
 
-.method public hangup(Lcom/android/internal/telephony/Connection$DisconnectCause;)V
-    .locals 0
-    .parameter "discRingingConnCause"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/android/internal/telephony/CallStateException;
-        }
-    .end annotation
-
-    .prologue
-    .line 257
-    return-void
-.end method
-
 .method public isAlive()Z
     .locals 1
 
     .prologue
-    .line 220
+    .line 222
     invoke-virtual {p0}, Lcom/android/internal/telephony/Connection;->getState()Lcom/android/internal/telephony/Call$State;
 
     move-result-object v0
@@ -220,7 +225,7 @@
     .locals 1
 
     .prologue
-    .line 228
+    .line 230
     invoke-virtual {p0}, Lcom/android/internal/telephony/Connection;->getState()Lcom/android/internal/telephony/Call$State;
 
     move-result-object v0
@@ -232,14 +237,7 @@
     return v0
 .end method
 
-.method public isVideo()Z
-    .locals 1
-
-    .prologue
-    .line 190
-    const/4 v0, 0x0
-
-    return v0
+.method public abstract isVideo()Z
 .end method
 
 .method public abstract proceedAfterWaitChar()V
@@ -261,10 +259,10 @@
     .parameter "userdata"
 
     .prologue
-    .line 244
+    .line 246
     iput-object p1, p0, Lcom/android/internal/telephony/Connection;->userData:Ljava/lang/Object;
 
-    .line 245
+    .line 247
     return-void
 .end method
 
@@ -272,14 +270,14 @@
     .locals 4
 
     .prologue
-    .line 328
+    .line 323
     new-instance v0, Ljava/lang/StringBuilder;
 
     const/16 v1, 0x80
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 330
+    .line 325
     .local v0, str:Ljava/lang/StringBuilder;
     sget-object v1, Lcom/android/internal/telephony/Connection;->LOG_TAG:Ljava/lang/String;
 
@@ -291,7 +289,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 331
+    .line 326
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -452,7 +450,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 338
+    .line 333
     :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -530,7 +528,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 341
+    .line 336
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1

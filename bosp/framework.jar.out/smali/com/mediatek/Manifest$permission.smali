@@ -15,8 +15,6 @@
 
 
 # static fields
-.field public static final ADVANCED_WIDGET_API:Ljava/lang/String; = "android.permission.ADVANCED_WIDGET_API"
-
 .field public static final GLOBAL_SEARCH:Ljava/lang/String; = "android.permission.GLOBAL_SEARCH"
 
 .field public static final GLOBAL_SEARCH_CONTROL:Ljava/lang/String; = "android.permission.GLOBAL_SEARCH_CONTROL"

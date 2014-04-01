@@ -4,11 +4,7 @@
 
 
 # static fields
-.field private static CNIR_PREFIX:Ljava/lang/String; = null
-
 .field private static final DBG_POLL:Z = false
-
-.field private static final DIAL_THREEWAY_DELAY_MILLIS:I = 0x320
 
 .field static final LOG_TAG:Ljava/lang/String; = "CDMA"
 
@@ -16,9 +12,7 @@
 
 .field static final MAX_CONNECTIONS_PER_CALL:I = 0x1
 
-.field private static final REPEAT_POLLING:Z = false
-
-.field public static final TOA_International:I = 0x91
+.field private static final REPEAT_POLLING:Z
 
 
 # instance fields
@@ -49,8 +43,6 @@
 
 .field mIsInEmergencyCall:Z
 
-.field private mVibrator:Landroid/os/Vibrator;
-
 .field pendingCallClirMode:I
 
 .field pendingCallInEcm:Z
@@ -61,7 +53,7 @@
 
 .field ringingCall:Lcom/android/internal/telephony/cdma/CdmaCall;
 
-.field state:Lcom/android/internal/telephony/PhoneConstants$State;
+.field state:Lcom/android/internal/telephony/Phone$State;
 
 .field voiceCallEndedRegistrants:Landroid/os/RegistrantList;
 
@@ -69,18 +61,6 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    .prologue
-    .line 107
-    const-string v0, "*76"
-
-    sput-object v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->CNIR_PREFIX:Ljava/lang/String;
-
-    return-void
-.end method
-
 .method constructor <init>(Lcom/android/internal/telephony/cdma/CDMAPhone;)V
     .locals 4
     .parameter "phone"
@@ -92,129 +72,122 @@
 
     const/4 v2, 0x0
 
-    .line 115
+    .line 93
     invoke-direct {p0}, Lcom/android/internal/telephony/CallTracker;-><init>()V
 
-    .line 71
+    .line 58
     new-array v0, v1, [Lcom/android/internal/telephony/cdma/CdmaConnection;
 
     iput-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->connections:[Lcom/android/internal/telephony/cdma/CdmaConnection;
 
-    .line 72
+    .line 59
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->voiceCallEndedRegistrants:Landroid/os/RegistrantList;
 
-    .line 73
+    .line 60
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->voiceCallStartedRegistrants:Landroid/os/RegistrantList;
 
-    .line 74
+    .line 61
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->callWaitingRegistrants:Landroid/os/RegistrantList;
 
-    .line 78
+    .line 65
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
     iput-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->droppedDuringPoll:Ljava/util/ArrayList;
 
-    .line 81
+    .line 68
     new-instance v0, Lcom/android/internal/telephony/cdma/CdmaCall;
 
     invoke-direct {v0, p0}, Lcom/android/internal/telephony/cdma/CdmaCall;-><init>(Lcom/android/internal/telephony/cdma/CdmaCallTracker;)V
 
     iput-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->ringingCall:Lcom/android/internal/telephony/cdma/CdmaCall;
 
-    .line 83
+    .line 70
     new-instance v0, Lcom/android/internal/telephony/cdma/CdmaCall;
 
     invoke-direct {v0, p0}, Lcom/android/internal/telephony/cdma/CdmaCall;-><init>(Lcom/android/internal/telephony/cdma/CdmaCallTracker;)V
 
     iput-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->foregroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
 
-    .line 84
+    .line 71
     new-instance v0, Lcom/android/internal/telephony/cdma/CdmaCall;
 
     invoke-direct {v0, p0}, Lcom/android/internal/telephony/cdma/CdmaCall;-><init>(Lcom/android/internal/telephony/cdma/CdmaCallTracker;)V
 
     iput-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->backgroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
 
-    .line 88
-    iput-boolean v3, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingCallInEcm:Z
+    .line 75
+    iput-boolean v2, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingCallInEcm:Z
 
-    .line 89
-    iput-boolean v3, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->mIsInEmergencyCall:Z
+    .line 76
+    iput-boolean v2, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->mIsInEmergencyCall:Z
 
-    .line 92
-    iput-boolean v3, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->desiredMute:Z
+    .line 79
+    iput-boolean v2, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->desiredMute:Z
 
-    .line 95
-    sget-object v0, Lcom/android/internal/telephony/PhoneConstants$State;->IDLE:Lcom/android/internal/telephony/PhoneConstants$State;
+    .line 82
+    sget-object v0, Lcom/android/internal/telephony/Phone$State;->IDLE:Lcom/android/internal/telephony/Phone$State;
 
-    iput-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->state:Lcom/android/internal/telephony/PhoneConstants$State;
+    iput-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->state:Lcom/android/internal/telephony/Phone$State;
 
-    .line 99
-    iput-boolean v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->mIsEcmTimerCanceled:Z
+    .line 84
+    iput-boolean v2, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->mIsEcmTimerCanceled:Z
 
-    .line 116
+    .line 94
     iput-object p1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
-    .line 117
-    iget-object v0, p1, Lcom/android/internal/telephony/cdma/CDMAPhone;->mCM:Lcom/android/internal/telephony/CommandsInterface;
+    .line 95
+    iget-object v0, p1, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
-    iput-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    iput-object v0, p0, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
-    .line 118
-    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    .line 96
+    iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     const/4 v1, 0x2
 
-    invoke-interface {v0, p0, v1, v2}, Lcom/android/internal/telephony/CommandsInterface;->registerForCallStateChanged(Landroid/os/Handler;ILjava/lang/Object;)V
+    invoke-interface {v0, p0, v1, v3}, Lcom/android/internal/telephony/CommandsInterface;->registerForCallStateChanged(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 119
-    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    .line 97
+    iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     const/16 v1, 0x9
 
-    invoke-interface {v0, p0, v1, v2}, Lcom/android/internal/telephony/CommandsInterface;->registerForOn(Landroid/os/Handler;ILjava/lang/Object;)V
+    invoke-interface {v0, p0, v1, v3}, Lcom/android/internal/telephony/CommandsInterface;->registerForOn(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 120
-    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    .line 98
+    iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     const/16 v1, 0xa
 
-    invoke-interface {v0, p0, v1, v2}, Lcom/android/internal/telephony/CommandsInterface;->registerForNotAvailable(Landroid/os/Handler;ILjava/lang/Object;)V
+    invoke-interface {v0, p0, v1, v3}, Lcom/android/internal/telephony/CommandsInterface;->registerForNotAvailable(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 121
-    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    .line 99
+    iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     const/16 v1, 0xf
 
-    invoke-interface {v0, p0, v1, v2}, Lcom/android/internal/telephony/CommandsInterface;->registerForCallWaitingInfo(Landroid/os/Handler;ILjava/lang/Object;)V
+    invoke-interface {v0, p0, v1, v3}, Lcom/android/internal/telephony/CommandsInterface;->registerForCallWaitingInfo(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 123
-    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
-
-    const/16 v1, 0x15
-
-    invoke-interface {v0, p0, v1, v2}, Lcom/android/internal/telephony/CommandsInterface;->registerForCallAccepted(Landroid/os/Handler;ILjava/lang/Object;)V
-
-    .line 125
+    .line 100
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->foregroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
 
-    invoke-virtual {v0, v3}, Lcom/android/internal/telephony/cdma/CdmaCall;->setGeneric(Z)V
+    invoke-virtual {v0, v2}, Lcom/android/internal/telephony/cdma/CdmaCall;->setGeneric(Z)V
 
-    .line 126
+    .line 101
     return-void
 .end method
 
@@ -222,17 +195,17 @@
     .locals 3
 
     .prologue
-    .line 1298
+    .line 1075
     iget-boolean v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->mIsInEmergencyCall:Z
 
     if-eqz v1, :cond_0
 
-    .line 1299
+    .line 1076
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->mIsInEmergencyCall:Z
 
-    .line 1300
+    .line 1077
     const-string/jumbo v1, "ril.cdma.inecmmode"
 
     const-string v2, "false"
@@ -241,7 +214,7 @@
 
     move-result-object v0
 
-    .line 1302
+    .line 1079
     .local v0, inEcm:Ljava/lang/String;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -263,7 +236,7 @@
 
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->log(Ljava/lang/String;)V
 
-    .line 1304
+    .line 1081
     const-string v1, "false"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
@@ -272,16 +245,16 @@
 
     if-nez v1, :cond_0
 
-    .line 1306
+    .line 1083
     iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
-    iget-object v1, v1, Lcom/android/internal/telephony/cdma/CDMAPhone;->mDataConnectionTracker:Lcom/android/internal/telephony/DataConnectionTracker;
+    iget-object v1, v1, Lcom/android/internal/telephony/PhoneBase;->mDataConnectionTracker:Lcom/android/internal/telephony/DataConnectionTracker;
 
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Lcom/android/internal/telephony/DataConnectionTracker;->setInternalDataEnabled(Z)Z
 
-    .line 1309
+    .line 1086
     .end local v0           #inEcm:Ljava/lang/String;
     :cond_0
     return-void
@@ -293,10 +266,10 @@
     .parameter "i"
 
     .prologue
-    .line 1317
+    .line 1094
     const/4 v0, 0x0
 
-    .line 1319
+    .line 1096
     .local v0, newRinging:Lcom/android/internal/telephony/Connection;
     iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->connections:[Lcom/android/internal/telephony/cdma/CdmaConnection;
 
@@ -312,7 +285,7 @@
 
     aput-object v2, v1, p2
 
-    .line 1321
+    .line 1098
     iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->connections:[Lcom/android/internal/telephony/cdma/CdmaConnection;
 
     aget-object v1, v1, p2
@@ -325,12 +298,12 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 1322
+    .line 1099
     iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->connections:[Lcom/android/internal/telephony/cdma/CdmaConnection;
 
     aget-object v0, v1, p2
 
-    .line 1323
+    .line 1100
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -351,12 +324,12 @@
 
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->log(Ljava/lang/String;)V
 
-    .line 1337
+    .line 1114
     :cond_0
     :goto_0
     return-object v0
 
-    .line 1328
+    .line 1105
     :cond_1
     const-string v1, "CDMA"
 
@@ -380,7 +353,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1332
+    .line 1109
     iget-object v1, p1, Lcom/android/internal/telephony/DriverCall;->state:Lcom/android/internal/telephony/DriverCall$State;
 
     sget-object v2, Lcom/android/internal/telephony/DriverCall$State;->ALERTING:Lcom/android/internal/telephony/DriverCall$State;
@@ -393,7 +366,7 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 1334
+    .line 1111
     iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->connections:[Lcom/android/internal/telephony/cdma/CdmaConnection;
 
     aget-object v1, v1, p2
@@ -408,11 +381,11 @@
 .end method
 
 .method private dialThreeWay(Ljava/lang/String;)Lcom/android/internal/telephony/Connection;
-    .locals 4
+    .locals 3
     .parameter "dialString"
 
     .prologue
-    .line 324
+    .line 256
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->foregroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/cdma/CdmaCall;->isIdle()Z
@@ -421,10 +394,10 @@
 
     if-nez v0, :cond_0
 
-    .line 326
+    .line 258
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->disableDataCallInEmergencyCall(Ljava/lang/String;)V
 
-    .line 329
+    .line 261
     new-instance v0, Lcom/android/internal/telephony/cdma/CdmaConnection;
 
     iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
@@ -433,35 +406,31 @@
 
     move-result-object v1
 
-    invoke-virtual {p0, p1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->checkForTestEmergencyNumber(Ljava/lang/String;)Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->foregroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
 
-    move-result-object v2
-
-    iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->foregroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
-
-    invoke-direct {v0, v1, v2, p0, v3}, Lcom/android/internal/telephony/cdma/CdmaConnection;-><init>(Landroid/content/Context;Ljava/lang/String;Lcom/android/internal/telephony/cdma/CdmaCallTracker;Lcom/android/internal/telephony/cdma/CdmaCall;)V
+    invoke-direct {v0, v1, p1, p0, v2}, Lcom/android/internal/telephony/cdma/CdmaConnection;-><init>(Landroid/content/Context;Ljava/lang/String;Lcom/android/internal/telephony/cdma/CdmaCallTracker;Lcom/android/internal/telephony/cdma/CdmaCall;)V
 
     iput-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
 
-    .line 332
-    const/16 v0, 0x16
+    .line 263
+    iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
 
     iget-object v1, v1, Lcom/android/internal/telephony/cdma/CdmaConnection;->address:Ljava/lang/String;
 
-    invoke-virtual {p0, v0, v1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    const/16 v2, 0x10
 
-    move-result-object v0
+    invoke-virtual {p0, v2}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->obtainMessage(I)Landroid/os/Message;
 
-    const-wide/16 v1, 0x320
+    move-result-object v2
 
-    invoke-virtual {p0, v0, v1, v2}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-interface {v0, v1, v2}, Lcom/android/internal/telephony/CommandsInterface;->sendCDMAFeatureCode(Ljava/lang/String;Landroid/os/Message;)V
 
-    .line 343
+    .line 265
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
 
-    .line 345
+    .line 267
     :goto_0
     return-object v0
 
@@ -476,35 +445,39 @@
     .parameter "dialString"
 
     .prologue
-    .line 1284
-    const/4 v0, 0x2
+    .line 1063
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
-    invoke-static {p1, v0}, Landroid/telephony/PhoneNumberUtils;->isEmergencyNumberExt(Ljava/lang/String;I)Z
+    invoke-virtual {v0}, Lcom/android/internal/telephony/cdma/CDMAPhone;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {p1, v0}, Landroid/telephony/PhoneNumberUtils;->isLocalEmergencyNumber(Ljava/lang/String;Landroid/content/Context;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 1287
+    .line 1064
     const-string v0, "disableDataCallInEmergencyCall"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->log(Ljava/lang/String;)V
 
-    .line 1288
+    .line 1065
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->mIsInEmergencyCall:Z
 
-    .line 1289
+    .line 1066
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CDMAPhone;->mDataConnectionTracker:Lcom/android/internal/telephony/DataConnectionTracker;
+    iget-object v0, v0, Lcom/android/internal/telephony/PhoneBase;->mDataConnectionTracker:Lcom/android/internal/telephony/DataConnectionTracker;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/internal/telephony/DataConnectionTracker;->setInternalDataEnabled(Z)Z
 
-    .line 1291
+    .line 1068
     :cond_0
     return-void
 .end method
@@ -513,7 +486,7 @@
     .locals 5
 
     .prologue
-    .line 195
+    .line 170
     iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->foregroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
 
     iget-object v4, v4, Lcom/android/internal/telephony/cdma/CdmaCall;->connections:Ljava/util/ArrayList;
@@ -524,7 +497,7 @@
 
     check-cast v1, Ljava/util/List;
 
-    .line 197
+    .line 172
     .local v1, connCopy:Ljava/util/List;,"Ljava/util/List<Lcom/android/internal/telephony/Connection;>;"
     const/4 v2, 0x0
 
@@ -537,23 +510,23 @@
     :goto_0
     if-ge v2, v3, :cond_0
 
-    .line 198
+    .line 173
     invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/internal/telephony/cdma/CdmaConnection;
 
-    .line 200
+    .line 175
     .local v0, conn:Lcom/android/internal/telephony/cdma/CdmaConnection;
     invoke-virtual {v0}, Lcom/android/internal/telephony/cdma/CdmaConnection;->fakeHoldBeforeDial()V
 
-    .line 197
+    .line 172
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 202
+    .line 177
     .end local v0           #conn:Lcom/android/internal/telephony/cdma/CdmaConnection;
     :cond_0
     return-void
@@ -568,8 +541,8 @@
     .end annotation
 
     .prologue
-    .line 1051
-    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    .line 885
+    iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     const-string v1, ""
 
@@ -581,198 +554,20 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/internal/telephony/CommandsInterface;->sendCDMAFeatureCode(Ljava/lang/String;Landroid/os/Message;)V
 
-    .line 1056
+    .line 890
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->foregroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/internal/telephony/cdma/CdmaCall;->setGeneric(Z)V
 
-    .line 1057
+    .line 891
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/cdma/CDMAPhone;->notifyPreciseCallStateChanged()V
 
-    .line 1058
+    .line 892
     return-void
-.end method
-
-.method private formatDialNumber(Ljava/lang/String;)Ljava/lang/String;
-    .locals 7
-    .parameter "dialNumber"
-
-    .prologue
-    .line 208
-    const-string v4, "CDMA"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "before format number = "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 209
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
-
-    move-result v4
-
-    if-lez v4, :cond_0
-
-    const-string v4, "+"
-
-    invoke-virtual {p1, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_0
-
-    .line 210
-    invoke-static {}, Lcom/android/internal/telephony/cdma/PlusCodeToIddNddUtils;->canFormatPlusToIddNdd()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_0
-
-    .line 211
-    invoke-static {p1}, Lcom/android/internal/telephony/cdma/PlusCodeToIddNddUtils;->replacePlusCodeWithIddNdd(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 212
-    .local v1, format:Ljava/lang/String;
-    if-eqz v1, :cond_0
-
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
-
-    move-result v4
-
-    if-lez v4, :cond_0
-
-    .line 213
-    move-object p1, v1
-
-    .line 217
-    .end local v1           #format:Ljava/lang/String;
-    :cond_0
-    const-string v4, "CDMA"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "after replace pluscode dial number = "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 220
-    iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
-
-    invoke-virtual {v4}, Lcom/android/internal/telephony/cdma/CDMAPhone;->getContext()Landroid/content/Context;
-
-    move-result-object v4
-
-    invoke-static {v4}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
-
-    move-result-object v3
-
-    .line 221
-    .local v3, sp:Landroid/content/SharedPreferences;
-    const-string v4, "cdma_cnir"
-
-    const/4 v5, 0x0
-
-    invoke-interface {v3, v4, v5}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v0
-
-    .line 223
-    .local v0, cnir_enable:Z
-    if-eqz v0, :cond_1
-
-    .line 225
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    sget-object v5, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->CNIR_PREFIX:Ljava/lang/String;
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 226
-    .local v2, newNumber:Ljava/lang/String;
-    move-object p1, v2
-
-    .line 227
-    const-string v4, "CDMA"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "after add dialNumber with CNIR number = \'"
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string v6, "\'..."
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 230
-    .end local v2           #newNumber:Ljava/lang/String;
-    :cond_1
-    return-object p1
 .end method
 
 .method private getFailedService(I)Lcom/android/internal/telephony/Phone$SuppService;
@@ -780,41 +575,41 @@
     .parameter "what"
 
     .prologue
-    .line 1061
+    .line 895
     packed-switch p1, :pswitch_data_0
 
-    .line 1071
+    .line 905
     :pswitch_0
     sget-object v0, Lcom/android/internal/telephony/Phone$SuppService;->UNKNOWN:Lcom/android/internal/telephony/Phone$SuppService;
 
     :goto_0
     return-object v0
 
-    .line 1063
+    .line 897
     :pswitch_1
     sget-object v0, Lcom/android/internal/telephony/Phone$SuppService;->SWITCH:Lcom/android/internal/telephony/Phone$SuppService;
 
     goto :goto_0
 
-    .line 1065
+    .line 899
     :pswitch_2
     sget-object v0, Lcom/android/internal/telephony/Phone$SuppService;->CONFERENCE:Lcom/android/internal/telephony/Phone$SuppService;
 
     goto :goto_0
 
-    .line 1067
+    .line 901
     :pswitch_3
     sget-object v0, Lcom/android/internal/telephony/Phone$SuppService;->SEPARATE:Lcom/android/internal/telephony/Phone$SuppService;
 
     goto :goto_0
 
-    .line 1069
+    .line 903
     :pswitch_4
     sget-object v0, Lcom/android/internal/telephony/Phone$SuppService;->TRANSFER:Lcom/android/internal/telephony/Phone$SuppService;
 
     goto :goto_0
 
-    .line 1061
+    .line 895
     :pswitch_data_0
     .packed-switch 0x8
         :pswitch_1
@@ -826,137 +621,6 @@
     .end packed-switch
 .end method
 
-.method private handleCallAccepted()V
-    .locals 7
-
-    .prologue
-    .line 1110
-    const-string v4, "CDMA"
-
-    const-string v5, "handleCallAccepted"
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1111
-    iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->foregroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
-
-    invoke-virtual {v4}, Lcom/android/internal/telephony/cdma/CdmaCall;->getConnections()Ljava/util/List;
-
-    move-result-object v2
-
-    .line 1112
-    .local v2, connections:Ljava/util/List;
-    invoke-interface {v2}, Ljava/util/List;->size()I
-
-    move-result v3
-
-    .line 1113
-    .local v3, count:I
-    const-string v4, "CDMA"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "count:"
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1114
-    const/4 v4, 0x1
-
-    if-ne v3, v4, :cond_0
-
-    .line 1115
-    const/4 v4, 0x0
-
-    invoke-interface {v2, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/android/internal/telephony/cdma/CdmaConnection;
-
-    .line 1116
-    .local v1, c:Lcom/android/internal/telephony/cdma/CdmaConnection;
-    invoke-virtual {v1}, Lcom/android/internal/telephony/cdma/CdmaConnection;->onCDMACallAccept()V
-
-    .line 1121
-    .end local v1           #c:Lcom/android/internal/telephony/cdma/CdmaConnection;
-    :cond_0
-    iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->mVibrator:Landroid/os/Vibrator;
-
-    if-nez v4, :cond_1
-
-    .line 1122
-    iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
-
-    invoke-virtual {v4}, Lcom/android/internal/telephony/cdma/CDMAPhone;->getContext()Landroid/content/Context;
-
-    move-result-object v4
-
-    const-string/jumbo v5, "vibrator"
-
-    invoke-virtual {v4, v5}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Landroid/os/Vibrator;
-
-    iput-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->mVibrator:Landroid/os/Vibrator;
-
-    .line 1125
-    :cond_1
-    const-string v4, "CDMA"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "handleCallAccepted start vibrate"
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    iget-object v6, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->mVibrator:Landroid/os/Vibrator;
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1128
-    const/16 v0, 0x12c
-
-    .line 1129
-    .local v0, MO_CALL_VIBRATE_TIME:I
-    iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->mVibrator:Landroid/os/Vibrator;
-
-    const-wide/16 v5, 0x12c
-
-    invoke-virtual {v4, v5, v6}, Landroid/os/Vibrator;->vibrate(J)V
-
-    .line 1132
-    return-void
-.end method
-
 .method private handleCallWaitingInfo(Lcom/android/internal/telephony/cdma/CdmaCallWaitingNotification;)V
     .locals 3
     .parameter "cw"
@@ -964,7 +628,7 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 1094
+    .line 928
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->foregroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
 
     iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCall;->connections:Ljava/util/ArrayList;
@@ -975,12 +639,12 @@
 
     if-le v0, v1, :cond_0
 
-    .line 1095
+    .line 929
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->foregroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
 
     invoke-virtual {v0, v1}, Lcom/android/internal/telephony/cdma/CdmaCall;->setGeneric(Z)V
 
-    .line 1099
+    .line 933
     :cond_0
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->ringingCall:Lcom/android/internal/telephony/cdma/CdmaCall;
 
@@ -988,7 +652,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/telephony/cdma/CdmaCall;->setGeneric(Z)V
 
-    .line 1100
+    .line 934
     new-instance v0, Lcom/android/internal/telephony/cdma/CdmaConnection;
 
     iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
@@ -1001,13 +665,13 @@
 
     invoke-direct {v0, v1, p1, p0, v2}, Lcom/android/internal/telephony/cdma/CdmaConnection;-><init>(Landroid/content/Context;Lcom/android/internal/telephony/cdma/CdmaCallWaitingNotification;Lcom/android/internal/telephony/cdma/CdmaCallTracker;Lcom/android/internal/telephony/cdma/CdmaCall;)V
 
-    .line 1101
+    .line 935
     invoke-direct {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->updatePhoneState()V
 
-    .line 1104
+    .line 938
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->notifyCallWaitingInfo(Lcom/android/internal/telephony/cdma/CdmaCallWaitingNotification;)V
 
-    .line 1105
+    .line 939
     return-void
 .end method
 
@@ -1016,38 +680,15 @@
     .parameter "action"
 
     .prologue
-    .line 1268
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "handleEcmTimer,mIsEcmTimerCanceled="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-boolean v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->mIsEcmTimerCanceled:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->log(Ljava/lang/String;)V
-
-    .line 1270
+    .line 1050
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/telephony/cdma/CDMAPhone;->handleTimerInEmergencyCallbackMode(I)V
 
-    .line 1271
+    .line 1051
     packed-switch p1, :pswitch_data_0
 
-    .line 1275
+    .line 1055
     const-string v0, "CDMA"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1070,11 +711,11 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1277
+    .line 1057
     :goto_0
     return-void
 
-    .line 1272
+    .line 1052
     :pswitch_0
     const/4 v0, 0x1
 
@@ -1082,7 +723,7 @@
 
     goto :goto_0
 
-    .line 1273
+    .line 1053
     :pswitch_1
     const/4 v0, 0x0
 
@@ -1090,7 +731,7 @@
 
     goto :goto_0
 
-    .line 1271
+    .line 1051
     nop
 
     :pswitch_data_0
@@ -1104,10 +745,10 @@
     .locals 0
 
     .prologue
-    .line 1078
+    .line 912
     invoke-virtual {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pollCallsWhenSafe()V
 
-    .line 1079
+    .line 913
     return-void
 .end method
 
@@ -1115,22 +756,22 @@
     .locals 1
 
     .prologue
-    .line 489
+    .line 393
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->ringingCall:Lcom/android/internal/telephony/cdma/CdmaCall;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/cdma/CdmaCall;->clearDisconnected()V
 
-    .line 490
+    .line 394
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->foregroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/cdma/CdmaCall;->clearDisconnected()V
 
-    .line 491
+    .line 395
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->backgroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/cdma/CdmaCall;->clearDisconnected()V
 
-    .line 492
+    .line 396
     return-void
 .end method
 
@@ -1141,12 +782,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1082
+    .line 916
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->callWaitingRegistrants:Landroid/os/RegistrantList;
 
     if-eqz v0, :cond_0
 
-    .line 1083
+    .line 917
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->callWaitingRegistrants:Landroid/os/RegistrantList;
 
     new-instance v1, Landroid/os/AsyncResult;
@@ -1155,7 +796,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
 
-    .line 1085
+    .line 919
     :cond_0
     return-void
 .end method
@@ -1164,7 +805,7 @@
     .locals 1
 
     .prologue
-    .line 500
+    .line 404
     const/4 v0, 0x4
 
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->obtainCompleteMessage(I)Landroid/os/Message;
@@ -1179,24 +820,24 @@
     .parameter "what"
 
     .prologue
-    .line 509
-    iget v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingOperations:I
+    .line 413
+    iget v0, p0, Lcom/android/internal/telephony/CallTracker;->pendingOperations:I
 
     add-int/lit8 v0, v0, 0x1
 
-    iput v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingOperations:I
+    iput v0, p0, Lcom/android/internal/telephony/CallTracker;->pendingOperations:I
 
-    .line 510
+    .line 414
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->lastRelevantPoll:Landroid/os/Message;
+    iput-object v0, p0, Lcom/android/internal/telephony/CallTracker;->lastRelevantPoll:Landroid/os/Message;
 
-    .line 511
+    .line 415
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->needsPoll:Z
+    iput-boolean v0, p0, Lcom/android/internal/telephony/CallTracker;->needsPoll:Z
 
-    .line 516
+    .line 420
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v0
@@ -1208,60 +849,60 @@
     .locals 2
 
     .prologue
-    .line 521
-    iget v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingOperations:I
+    .line 425
+    iget v0, p0, Lcom/android/internal/telephony/CallTracker;->pendingOperations:I
 
     add-int/lit8 v0, v0, -0x1
 
-    iput v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingOperations:I
+    iput v0, p0, Lcom/android/internal/telephony/CallTracker;->pendingOperations:I
 
-    .line 526
-    iget v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingOperations:I
+    .line 430
+    iget v0, p0, Lcom/android/internal/telephony/CallTracker;->pendingOperations:I
 
     if-nez v0, :cond_1
 
-    iget-boolean v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->needsPoll:Z
+    iget-boolean v0, p0, Lcom/android/internal/telephony/CallTracker;->needsPoll:Z
 
     if-eqz v0, :cond_1
 
-    .line 527
+    .line 431
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->lastRelevantPoll:Landroid/os/Message;
+    iput-object v0, p0, Lcom/android/internal/telephony/CallTracker;->lastRelevantPoll:Landroid/os/Message;
 
-    .line 528
-    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    .line 432
+    iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
-    iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->lastRelevantPoll:Landroid/os/Message;
+    iget-object v1, p0, Lcom/android/internal/telephony/CallTracker;->lastRelevantPoll:Landroid/os/Message;
 
     invoke-interface {v0, v1}, Lcom/android/internal/telephony/CommandsInterface;->getCurrentCalls(Landroid/os/Message;)V
 
-    .line 534
+    .line 438
     :cond_0
     :goto_0
     return-void
 
-    .line 529
+    .line 433
     :cond_1
-    iget v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingOperations:I
+    iget v0, p0, Lcom/android/internal/telephony/CallTracker;->pendingOperations:I
 
     if-gez v0, :cond_0
 
-    .line 531
+    .line 435
     const-string v0, "CDMA"
 
     const-string v1, "CdmaCallTracker.pendingOperations < 0"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 532
+    .line 436
     const/4 v0, 0x0
 
-    iput v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingOperations:I
+    iput v0, p0, Lcom/android/internal/telephony/CallTracker;->pendingOperations:I
 
     goto :goto_0
 .end method
@@ -1272,11 +913,11 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 540
-    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->state:Lcom/android/internal/telephony/PhoneConstants$State;
+    .line 444
+    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->state:Lcom/android/internal/telephony/Phone$State;
 
-    .line 542
-    .local v0, oldState:Lcom/android/internal/telephony/PhoneConstants$State;
+    .line 446
+    .local v0, oldState:Lcom/android/internal/telephony/Phone$State;
     iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->ringingCall:Lcom/android/internal/telephony/cdma/CdmaCall;
 
     invoke-virtual {v1}, Lcom/android/internal/telephony/cdma/CdmaCall;->isRinging()Z
@@ -1285,24 +926,24 @@
 
     if-eqz v1, :cond_2
 
-    .line 543
-    sget-object v1, Lcom/android/internal/telephony/PhoneConstants$State;->RINGING:Lcom/android/internal/telephony/PhoneConstants$State;
+    .line 447
+    sget-object v1, Lcom/android/internal/telephony/Phone$State;->RINGING:Lcom/android/internal/telephony/Phone$State;
 
-    iput-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->state:Lcom/android/internal/telephony/PhoneConstants$State;
+    iput-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->state:Lcom/android/internal/telephony/Phone$State;
 
-    .line 551
+    .line 455
     :goto_0
-    iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->state:Lcom/android/internal/telephony/PhoneConstants$State;
+    iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->state:Lcom/android/internal/telephony/Phone$State;
 
-    sget-object v2, Lcom/android/internal/telephony/PhoneConstants$State;->IDLE:Lcom/android/internal/telephony/PhoneConstants$State;
+    sget-object v2, Lcom/android/internal/telephony/Phone$State;->IDLE:Lcom/android/internal/telephony/Phone$State;
 
     if-ne v1, v2, :cond_5
 
-    iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->state:Lcom/android/internal/telephony/PhoneConstants$State;
+    iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->state:Lcom/android/internal/telephony/Phone$State;
 
     if-eq v0, v1, :cond_5
 
-    .line 552
+    .line 456
     iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->voiceCallEndedRegistrants:Landroid/os/RegistrantList;
 
     new-instance v2, Landroid/os/AsyncResult;
@@ -1311,7 +952,7 @@
 
     invoke-virtual {v1, v2}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
 
-    .line 559
+    .line 463
     :cond_0
     :goto_1
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1334,7 +975,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->state:Lcom/android/internal/telephony/PhoneConstants$State;
+    iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->state:Lcom/android/internal/telephony/Phone$State;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -1346,21 +987,21 @@
 
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->log(Ljava/lang/String;)V
 
-    .line 561
-    iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->state:Lcom/android/internal/telephony/PhoneConstants$State;
+    .line 465
+    iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->state:Lcom/android/internal/telephony/Phone$State;
 
     if-eq v1, v0, :cond_1
 
-    .line 562
+    .line 466
     iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
     invoke-virtual {v1}, Lcom/android/internal/telephony/cdma/CDMAPhone;->notifyPhoneStateChanged()V
 
-    .line 564
+    .line 468
     :cond_1
     return-void
 
-    .line 544
+    .line 448
     :cond_2
     iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
 
@@ -1382,33 +1023,33 @@
 
     if-nez v1, :cond_4
 
-    .line 546
+    .line 450
     :cond_3
-    sget-object v1, Lcom/android/internal/telephony/PhoneConstants$State;->OFFHOOK:Lcom/android/internal/telephony/PhoneConstants$State;
+    sget-object v1, Lcom/android/internal/telephony/Phone$State;->OFFHOOK:Lcom/android/internal/telephony/Phone$State;
 
-    iput-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->state:Lcom/android/internal/telephony/PhoneConstants$State;
+    iput-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->state:Lcom/android/internal/telephony/Phone$State;
 
     goto :goto_0
 
-    .line 548
+    .line 452
     :cond_4
-    sget-object v1, Lcom/android/internal/telephony/PhoneConstants$State;->IDLE:Lcom/android/internal/telephony/PhoneConstants$State;
+    sget-object v1, Lcom/android/internal/telephony/Phone$State;->IDLE:Lcom/android/internal/telephony/Phone$State;
 
-    iput-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->state:Lcom/android/internal/telephony/PhoneConstants$State;
+    iput-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->state:Lcom/android/internal/telephony/Phone$State;
 
     goto :goto_0
 
-    .line 554
+    .line 458
     :cond_5
-    sget-object v1, Lcom/android/internal/telephony/PhoneConstants$State;->IDLE:Lcom/android/internal/telephony/PhoneConstants$State;
+    sget-object v1, Lcom/android/internal/telephony/Phone$State;->IDLE:Lcom/android/internal/telephony/Phone$State;
 
     if-ne v0, v1, :cond_0
 
-    iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->state:Lcom/android/internal/telephony/PhoneConstants$State;
+    iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->state:Lcom/android/internal/telephony/Phone$State;
 
     if-eq v0, v1, :cond_0
 
-    .line 555
+    .line 459
     iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->voiceCallStartedRegistrants:Landroid/os/RegistrantList;
 
     new-instance v2, Landroid/os/AsyncResult;
@@ -1423,7 +1064,7 @@
 
 # virtual methods
 .method acceptCall()V
-    .locals 8
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/internal/telephony/CallStateException;
@@ -1431,199 +1072,103 @@
     .end annotation
 
     .prologue
-    .line 350
-    iget-object v5, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->ringingCall:Lcom/android/internal/telephony/cdma/CdmaCall;
+    .line 272
+    iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->ringingCall:Lcom/android/internal/telephony/cdma/CdmaCall;
 
-    invoke-virtual {v5}, Lcom/android/internal/telephony/cdma/CdmaCall;->getState()Lcom/android/internal/telephony/Call$State;
+    invoke-virtual {v1}, Lcom/android/internal/telephony/cdma/CdmaCall;->getState()Lcom/android/internal/telephony/Call$State;
 
-    move-result-object v5
+    move-result-object v1
 
-    sget-object v6, Lcom/android/internal/telephony/Call$State;->INCOMING:Lcom/android/internal/telephony/Call$State;
+    sget-object v2, Lcom/android/internal/telephony/Call$State;->INCOMING:Lcom/android/internal/telephony/Call$State;
 
-    if-ne v5, v6, :cond_0
+    if-ne v1, v2, :cond_0
 
-    .line 351
-    const-string/jumbo v5, "phone"
+    .line 273
+    const-string/jumbo v1, "phone"
 
-    const-string v6, "acceptCall: incoming..."
+    const-string v2, "acceptCall: incoming..."
 
-    invoke-static {v5, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 353
-    const/4 v5, 0x0
+    .line 275
+    const/4 v1, 0x0
 
-    invoke-virtual {p0, v5}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->setMute(Z)V
+    invoke-virtual {p0, v1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->setMute(Z)V
 
-    .line 354
-    iget-object v5, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    .line 276
+    iget-object v1, p0, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-direct {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->obtainCompleteMessage()Landroid/os/Message;
 
-    move-result-object v6
+    move-result-object v2
 
-    invoke-interface {v5, v6}, Lcom/android/internal/telephony/CommandsInterface;->acceptCall(Landroid/os/Message;)V
+    invoke-interface {v1, v2}, Lcom/android/internal/telephony/CommandsInterface;->acceptCall(Landroid/os/Message;)V
 
-    .line 387
+    .line 291
     :goto_0
     return-void
 
-    .line 355
+    .line 277
     :cond_0
-    iget-object v5, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->ringingCall:Lcom/android/internal/telephony/cdma/CdmaCall;
+    iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->ringingCall:Lcom/android/internal/telephony/cdma/CdmaCall;
 
-    invoke-virtual {v5}, Lcom/android/internal/telephony/cdma/CdmaCall;->getState()Lcom/android/internal/telephony/Call$State;
+    invoke-virtual {v1}, Lcom/android/internal/telephony/cdma/CdmaCall;->getState()Lcom/android/internal/telephony/Call$State;
 
-    move-result-object v5
+    move-result-object v1
 
-    sget-object v6, Lcom/android/internal/telephony/Call$State;->WAITING:Lcom/android/internal/telephony/Call$State;
+    sget-object v2, Lcom/android/internal/telephony/Call$State;->WAITING:Lcom/android/internal/telephony/Call$State;
 
-    if-ne v5, v6, :cond_2
+    if-ne v1, v2, :cond_1
 
-    .line 356
-    iget-object v5, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->ringingCall:Lcom/android/internal/telephony/cdma/CdmaCall;
+    .line 278
+    iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->ringingCall:Lcom/android/internal/telephony/cdma/CdmaCall;
 
-    invoke-virtual {v5}, Lcom/android/internal/telephony/cdma/CdmaCall;->getLatestConnection()Lcom/android/internal/telephony/Connection;
+    invoke-virtual {v1}, Lcom/android/internal/telephony/cdma/CdmaCall;->getLatestConnection()Lcom/android/internal/telephony/Connection;
 
-    move-result-object v5
-
-    check-cast v5, Lcom/android/internal/telephony/cdma/CdmaConnection;
-
-    move-object v1, v5
+    move-result-object v1
 
     check-cast v1, Lcom/android/internal/telephony/cdma/CdmaConnection;
 
-    .line 362
-    .local v1, cwConn:Lcom/android/internal/telephony/cdma/CdmaConnection;
-    iget-object v5, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->ringingCall:Lcom/android/internal/telephony/cdma/CdmaCall;
+    move-object v0, v1
 
-    iget-object v6, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->foregroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
+    check-cast v0, Lcom/android/internal/telephony/cdma/CdmaConnection;
 
-    invoke-virtual {v1, v5, v6}, Lcom/android/internal/telephony/cdma/CdmaConnection;->updateParent(Lcom/android/internal/telephony/cdma/CdmaCall;Lcom/android/internal/telephony/cdma/CdmaCall;)V
+    .line 284
+    .local v0, cwConn:Lcom/android/internal/telephony/cdma/CdmaConnection;
+    iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->ringingCall:Lcom/android/internal/telephony/cdma/CdmaCall;
 
-    .line 363
-    invoke-virtual {v1}, Lcom/android/internal/telephony/cdma/CdmaConnection;->onConnectedInOrOut()V
+    iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->foregroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
 
-    .line 366
-    iget-object v5, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->ringingCall:Lcom/android/internal/telephony/cdma/CdmaCall;
+    invoke-virtual {v0, v1, v2}, Lcom/android/internal/telephony/cdma/CdmaConnection;->updateParent(Lcom/android/internal/telephony/cdma/CdmaCall;Lcom/android/internal/telephony/cdma/CdmaCall;)V
 
-    invoke-virtual {v5}, Lcom/android/internal/telephony/cdma/CdmaCall;->getConnections()Ljava/util/List;
+    .line 285
+    invoke-virtual {v0}, Lcom/android/internal/telephony/cdma/CdmaConnection;->onConnectedInOrOut()V
 
-    move-result-object v4
-
-    .line 368
-    .local v4, ringconnections:Ljava/util/List;
-    invoke-interface {v4}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    .line 369
-    .local v0, count:I
-    const-string/jumbo v5, "phone"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "acceptCall: callwaiting count = "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 371
-    add-int/lit8 v2, v0, -0x1
-
-    .local v2, i:I
-    :goto_1
-    if-ltz v2, :cond_1
-
-    .line 372
-    invoke-interface {v4, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lcom/android/internal/telephony/cdma/CdmaConnection;
-
-    move-object v3, v5
-
-    check-cast v3, Lcom/android/internal/telephony/cdma/CdmaConnection;
-
-    .line 374
-    .local v3, ringConn:Lcom/android/internal/telephony/cdma/CdmaConnection;
-    const-string/jumbo v5, "phone"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "acceptCall: ringConn number = "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    iget-object v7, v3, Lcom/android/internal/telephony/cdma/CdmaConnection;->address:Ljava/lang/String;
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 377
-    iget-object v5, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->ringingCall:Lcom/android/internal/telephony/cdma/CdmaCall;
-
-    invoke-virtual {v5, v3}, Lcom/android/internal/telephony/cdma/CdmaCall;->detach(Lcom/android/internal/telephony/cdma/CdmaConnection;)V
-
-    .line 371
-    add-int/lit8 v2, v2, -0x1
-
-    goto :goto_1
-
-    .line 382
-    .end local v3           #ringConn:Lcom/android/internal/telephony/cdma/CdmaConnection;
-    :cond_1
+    .line 286
     invoke-direct {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->updatePhoneState()V
 
-    .line 383
+    .line 287
     invoke-virtual {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->switchWaitingOrHoldingAndActive()V
 
     goto :goto_0
 
-    .line 385
-    .end local v0           #count:I
-    .end local v1           #cwConn:Lcom/android/internal/telephony/cdma/CdmaConnection;
-    .end local v2           #i:I
-    .end local v4           #ringconnections:Ljava/util/List;
-    :cond_2
-    new-instance v5, Lcom/android/internal/telephony/CallStateException;
+    .line 289
+    .end local v0           #cwConn:Lcom/android/internal/telephony/cdma/CdmaConnection;
+    :cond_1
+    new-instance v1, Lcom/android/internal/telephony/CallStateException;
 
-    const-string/jumbo v6, "phone not ringing"
+    const-string/jumbo v2, "phone not ringing"
 
-    invoke-direct {v5, v6}, Lcom/android/internal/telephony/CallStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Lcom/android/internal/telephony/CallStateException;-><init>(Ljava/lang/String;)V
 
-    throw v5
+    throw v1
 .end method
 
 .method canConference()Z
     .locals 2
 
     .prologue
-    .line 437
+    .line 341
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->foregroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/cdma/CdmaCall;->getState()Lcom/android/internal/telephony/Call$State;
@@ -1681,7 +1226,7 @@
 
     const/4 v5, 0x0
 
-    .line 446
+    .line 350
     iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
     invoke-virtual {v3}, Lcom/android/internal/telephony/cdma/CDMAPhone;->getServiceState()Landroid/telephony/ServiceState;
@@ -1692,7 +1237,7 @@
 
     move-result v2
 
-    .line 447
+    .line 351
     .local v2, serviceState:I
     const-string/jumbo v3, "ro.telephony.disable-call"
 
@@ -1702,7 +1247,7 @@
 
     move-result-object v0
 
-    .line 450
+    .line 354
     .local v0, disableCall:Ljava/lang/String;
     if-eq v2, v9, :cond_2
 
@@ -1763,12 +1308,12 @@
     :cond_0
     move v1, v4
 
-    .line 458
+    .line 362
     .local v1, ret:Z
     :goto_0
     if-nez v1, :cond_1
 
-    .line 459
+    .line 363
     const-string v6, "canDial is false\n((serviceState=%d) != ServiceState.STATE_POWER_OFF)::=%s\n&& pendingMO == null::=%s\n&& !ringingCall.isRinging()::=%s\n&& !disableCall.equals(\"true\")::=%s\n&& (!foregroundCall.getState().isAlive()::=%s\n   || foregroundCall.getState() == CdmaCall.State.ACTIVE::=%s\n   ||!backgroundCall.getState().isAlive())::=%s)"
 
     const/16 v3, 0x8
@@ -1914,7 +1459,7 @@
 
     invoke-virtual {p0, v3}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->log(Ljava/lang/String;)V
 
-    .line 476
+    .line 380
     :cond_1
     return v1
 
@@ -1922,14 +1467,14 @@
     :cond_2
     move v1, v5
 
-    .line 450
+    .line 354
     goto/16 :goto_0
 
     .restart local v1       #ret:Z
     :cond_3
     move v3, v5
 
-    .line 459
+    .line 363
     goto :goto_1
 
     :cond_4
@@ -1967,14 +1512,14 @@
     .locals 2
 
     .prologue
-    .line 481
+    .line 385
     const-string v0, "CDMA"
 
     const-string v1, "canTransfer: not possible in CDMA"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 482
+    .line 386
     const/4 v0, 0x0
 
     return v0
@@ -1984,18 +1529,18 @@
     .locals 1
 
     .prologue
-    .line 429
+    .line 333
     invoke-direct {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->internalClearDisconnected()V
 
-    .line 431
+    .line 335
     invoke-direct {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->updatePhoneState()V
 
-    .line 432
+    .line 336
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/cdma/CDMAPhone;->notifyPreciseCallStateChanged()V
 
-    .line 433
+    .line 337
     return-void
 .end method
 
@@ -2008,10 +1553,10 @@
     .end annotation
 
     .prologue
-    .line 419
+    .line 323
     invoke-direct {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->flashAndSetGenericTrue()V
 
-    .line 420
+    .line 324
     return-void
 .end method
 
@@ -2025,7 +1570,7 @@
     .end annotation
 
     .prologue
-    .line 319
+    .line 251
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->dial(Ljava/lang/String;I)Lcom/android/internal/telephony/Connection;
@@ -2036,7 +1581,7 @@
 .end method
 
 .method dial(Ljava/lang/String;I)Lcom/android/internal/telephony/Connection;
-    .locals 10
+    .locals 8
     .parameter "dialString"
     .parameter "clirMode"
     .annotation system Ldalvik/annotation/Throws;
@@ -2046,246 +1591,219 @@
     .end annotation
 
     .prologue
-    const/4 v9, 0x1
+    const/4 v7, 0x1
 
-    const/4 v8, 0x0
+    const/4 v6, 0x0
 
-    .line 240
+    .line 185
     invoke-virtual {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->clearDisconnected()V
 
-    .line 242
+    .line 187
     invoke-virtual {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->canDial()Z
-
-    move-result v4
-
-    if-nez v4, :cond_0
-
-    .line 243
-    new-instance v4, Lcom/android/internal/telephony/CallStateException;
-
-    const-string v5, "cannot dial in current state"
-
-    invoke-direct {v4, v5}, Lcom/android/internal/telephony/CallStateException;-><init>(Ljava/lang/String;)V
-
-    throw v4
-
-    .line 246
-    :cond_0
-    const-string/jumbo v4, "ril.cdma.inecmmode"
-
-    const-string v5, "false"
-
-    invoke-static {v4, v5}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 247
-    .local v1, inEcm:Ljava/lang/String;
-    const-string/jumbo v4, "true"
-
-    invoke-virtual {v1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    .line 251
-    .local v3, isPhoneInEcmMode:Z
-    const/4 v4, 0x2
+    if-nez v3, :cond_0
 
-    invoke-static {p1, v4}, Landroid/telephony/PhoneNumberUtils;->isEmergencyNumberExt(Ljava/lang/String;I)Z
+    .line 188
+    new-instance v3, Lcom/android/internal/telephony/CallStateException;
 
-    move-result v2
+    const-string v4, "cannot dial in current state"
 
-    .line 255
-    .local v2, isEmergencyCall:Z
-    if-eqz v3, :cond_1
+    invoke-direct {v3, v4}, Lcom/android/internal/telephony/CallStateException;-><init>(Ljava/lang/String;)V
 
-    if-eqz v2, :cond_1
+    throw v3
 
-    .line 256
-    iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
+    .line 191
+    :cond_0
+    const-string/jumbo v3, "ril.cdma.inecmmode"
 
-    invoke-direct {p0, v9}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->handleEcmTimer(I)V
+    const-string v4, "false"
 
-    .line 262
-    :cond_1
-    iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->foregroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
-
-    invoke-virtual {v4, v8}, Lcom/android/internal/telephony/cdma/CdmaCall;->setGeneric(Z)V
-
-    .line 267
-    iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->foregroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
-
-    invoke-virtual {v4}, Lcom/android/internal/telephony/cdma/CdmaCall;->getState()Lcom/android/internal/telephony/Call$State;
-
-    move-result-object v4
-
-    sget-object v5, Lcom/android/internal/telephony/Call$State;->ACTIVE:Lcom/android/internal/telephony/Call$State;
-
-    if-ne v4, v5, :cond_2
-
-    .line 268
-    iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
-
-    const-string v5, ""
-
-    const/16 v6, 0x8
-
-    invoke-virtual {p0, v6}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->obtainMessage(I)Landroid/os/Message;
-
-    move-result-object v6
-
-    invoke-interface {v4, v5, v6}, Lcom/android/internal/telephony/CommandsInterface;->sendCDMAFeatureCode(Ljava/lang/String;Landroid/os/Message;)V
-
-    .line 269
-    const-string v4, "CDMA"
-
-    const-string/jumbo v5, "yangli send EVENT_CDMA_DIAL_THREEWAY_DELAY"
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 272
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->dialThreeWay(Ljava/lang/String;)Lcom/android/internal/telephony/Connection;
-
-    move-result-object v4
-
-    .line 313
-    :goto_0
-    return-object v4
-
-    .line 275
-    :cond_2
-    new-instance v4, Lcom/android/internal/telephony/cdma/CdmaConnection;
-
-    iget-object v5, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
-
-    invoke-virtual {v5}, Lcom/android/internal/telephony/cdma/CDMAPhone;->getContext()Landroid/content/Context;
-
-    move-result-object v5
-
-    invoke-virtual {p0, p1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->checkForTestEmergencyNumber(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    iget-object v7, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->foregroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
-
-    invoke-direct {v4, v5, v6, p0, v7}, Lcom/android/internal/telephony/cdma/CdmaConnection;-><init>(Landroid/content/Context;Ljava/lang/String;Lcom/android/internal/telephony/cdma/CdmaCallTracker;Lcom/android/internal/telephony/cdma/CdmaCall;)V
-
-    iput-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
-
-    .line 277
-    iput-boolean v8, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->hangupPendingMO:Z
-
-    .line 279
-    iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
-
-    iget-object v4, v4, Lcom/android/internal/telephony/cdma/CdmaConnection;->address:Ljava/lang/String;
-
-    if-eqz v4, :cond_3
-
-    iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
-
-    iget-object v4, v4, Lcom/android/internal/telephony/cdma/CdmaConnection;->address:Ljava/lang/String;
-
-    invoke-virtual {v4}, Ljava/lang/String;->length()I
-
-    move-result v4
-
-    if-eqz v4, :cond_3
-
-    iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
-
-    iget-object v4, v4, Lcom/android/internal/telephony/cdma/CdmaConnection;->address:Ljava/lang/String;
-
-    const/16 v5, 0x4e
-
-    invoke-virtual {v4, v5}, Ljava/lang/String;->indexOf(I)I
-
-    move-result v4
-
-    if-ltz v4, :cond_4
-
-    .line 282
-    :cond_3
-    iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
-
-    sget-object v5, Lcom/android/internal/telephony/Connection$DisconnectCause;->INVALID_NUMBER:Lcom/android/internal/telephony/Connection$DisconnectCause;
-
-    iput-object v5, v4, Lcom/android/internal/telephony/cdma/CdmaConnection;->cause:Lcom/android/internal/telephony/Connection$DisconnectCause;
-
-    .line 286
-    invoke-virtual {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pollCallsWhenSafe()V
-
-    .line 310
-    :goto_1
-    invoke-direct {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->updatePhoneState()V
-
-    .line 311
-    iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
-
-    invoke-virtual {v4}, Lcom/android/internal/telephony/cdma/CDMAPhone;->notifyPreciseCallStateChanged()V
-
-    .line 313
-    iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
-
-    goto :goto_0
-
-    .line 289
-    :cond_4
-    invoke-virtual {p0, v8}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->setMute(Z)V
-
-    .line 292
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->disableDataCallInEmergencyCall(Ljava/lang/String;)V
-
-    .line 295
-    if-eqz v3, :cond_5
-
-    if-eqz v3, :cond_6
-
-    if-eqz v2, :cond_6
-
-    .line 298
-    :cond_5
-    iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
-
-    iget-object v4, v4, Lcom/android/internal/telephony/cdma/CdmaConnection;->address:Ljava/lang/String;
-
-    invoke-direct {p0, v4}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->formatDialNumber(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, v4}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 301
-    .local v0, dialNumber:Ljava/lang/String;
-    iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    .line 192
+    .local v0, inEcm:Ljava/lang/String;
+    const-string/jumbo v3, "true"
+
+    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    .line 193
+    .local v2, isPhoneInEcmMode:Z
+    iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
+
+    invoke-virtual {v3}, Lcom/android/internal/telephony/cdma/CDMAPhone;->getContext()Landroid/content/Context;
+
+    move-result-object v3
+
+    invoke-static {p1, v3}, Landroid/telephony/PhoneNumberUtils;->isLocalEmergencyNumber(Ljava/lang/String;Landroid/content/Context;)Z
+
+    move-result v1
+
+    .line 197
+    .local v1, isEmergencyCall:Z
+    if-eqz v2, :cond_1
+
+    if-eqz v1, :cond_1
+
+    .line 198
+    iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
+
+    invoke-direct {p0, v7}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->handleEcmTimer(I)V
+
+    .line 204
+    :cond_1
+    iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->foregroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
+
+    invoke-virtual {v3, v6}, Lcom/android/internal/telephony/cdma/CdmaCall;->setGeneric(Z)V
+
+    .line 209
+    iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->foregroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
+
+    invoke-virtual {v3}, Lcom/android/internal/telephony/cdma/CdmaCall;->getState()Lcom/android/internal/telephony/Call$State;
+
+    move-result-object v3
+
+    sget-object v4, Lcom/android/internal/telephony/Call$State;->ACTIVE:Lcom/android/internal/telephony/Call$State;
+
+    if-ne v3, v4, :cond_2
+
+    .line 210
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->dialThreeWay(Ljava/lang/String;)Lcom/android/internal/telephony/Connection;
+
+    move-result-object v3
+
+    .line 245
+    :goto_0
+    return-object v3
+
+    .line 213
+    :cond_2
+    new-instance v3, Lcom/android/internal/telephony/cdma/CdmaConnection;
+
+    iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
+
+    invoke-virtual {v4}, Lcom/android/internal/telephony/cdma/CDMAPhone;->getContext()Landroid/content/Context;
+
+    move-result-object v4
+
+    iget-object v5, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->foregroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
+
+    invoke-direct {v3, v4, p1, p0, v5}, Lcom/android/internal/telephony/cdma/CdmaConnection;-><init>(Landroid/content/Context;Ljava/lang/String;Lcom/android/internal/telephony/cdma/CdmaCallTracker;Lcom/android/internal/telephony/cdma/CdmaCall;)V
+
+    iput-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
+
+    .line 214
+    iput-boolean v6, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->hangupPendingMO:Z
+
+    .line 216
+    iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
+
+    iget-object v3, v3, Lcom/android/internal/telephony/cdma/CdmaConnection;->address:Ljava/lang/String;
+
+    if-eqz v3, :cond_3
+
+    iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
+
+    iget-object v3, v3, Lcom/android/internal/telephony/cdma/CdmaConnection;->address:Ljava/lang/String;
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    if-eqz v3, :cond_3
+
+    iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
+
+    iget-object v3, v3, Lcom/android/internal/telephony/cdma/CdmaConnection;->address:Ljava/lang/String;
+
+    const/16 v4, 0x4e
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->indexOf(I)I
+
+    move-result v3
+
+    if-ltz v3, :cond_4
+
+    .line 219
+    :cond_3
+    iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
+
+    sget-object v4, Lcom/android/internal/telephony/Connection$DisconnectCause;->INVALID_NUMBER:Lcom/android/internal/telephony/Connection$DisconnectCause;
+
+    iput-object v4, v3, Lcom/android/internal/telephony/cdma/CdmaConnection;->cause:Lcom/android/internal/telephony/Connection$DisconnectCause;
+
+    .line 223
+    invoke-virtual {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pollCallsWhenSafe()V
+
+    .line 242
+    :goto_1
+    invoke-direct {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->updatePhoneState()V
+
+    .line 243
+    iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
+
+    invoke-virtual {v3}, Lcom/android/internal/telephony/cdma/CDMAPhone;->notifyPreciseCallStateChanged()V
+
+    .line 245
+    iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
+
+    goto :goto_0
+
+    .line 226
+    :cond_4
+    invoke-virtual {p0, v6}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->setMute(Z)V
+
+    .line 229
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->disableDataCallInEmergencyCall(Ljava/lang/String;)V
+
+    .line 232
+    if-eqz v2, :cond_5
+
+    if-eqz v2, :cond_6
+
+    if-eqz v1, :cond_6
+
+    .line 233
+    :cond_5
+    iget-object v3, p0, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+
+    iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
+
+    iget-object v4, v4, Lcom/android/internal/telephony/cdma/CdmaConnection;->address:Ljava/lang/String;
 
     invoke-direct {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->obtainCompleteMessage()Landroid/os/Message;
 
     move-result-object v5
 
-    invoke-interface {v4, v0, p2, v5}, Lcom/android/internal/telephony/CommandsInterface;->dial(Ljava/lang/String;ILandroid/os/Message;)V
+    invoke-interface {v3, v4, p2, v5}, Lcom/android/internal/telephony/CommandsInterface;->dial(Ljava/lang/String;ILandroid/os/Message;)V
 
     goto :goto_1
 
-    .line 303
-    .end local v0           #dialNumber:Ljava/lang/String;
+    .line 235
     :cond_6
-    iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
+    iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
-    invoke-virtual {v4}, Lcom/android/internal/telephony/cdma/CDMAPhone;->exitEmergencyCallbackMode()V
+    invoke-virtual {v3}, Lcom/android/internal/telephony/cdma/CDMAPhone;->exitEmergencyCallbackMode()V
 
-    .line 304
-    iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
+    .line 236
+    iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
-    const/16 v5, 0xe
+    const/16 v4, 0xe
 
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
-    invoke-virtual {v4, p0, v5, v6}, Lcom/android/internal/telephony/cdma/CDMAPhone;->setOnEcbModeExitResponse(Landroid/os/Handler;ILjava/lang/Object;)V
+    invoke-virtual {v3, p0, v4, v5}, Lcom/android/internal/telephony/cdma/CDMAPhone;->setOnEcbModeExitResponse(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 305
+    .line 237
     iput p2, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingCallClirMode:I
 
-    .line 306
-    iput-boolean v9, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingCallInEcm:Z
+    .line 238
+    iput-boolean v7, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingCallInEcm:Z
 
     goto :goto_1
 .end method
@@ -2294,27 +1812,27 @@
     .locals 7
 
     .prologue
-    .line 129
-    iget-object v5, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    .line 104
+    iget-object v5, p0, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-interface {v5, p0}, Lcom/android/internal/telephony/CommandsInterface;->unregisterForCallStateChanged(Landroid/os/Handler;)V
 
-    .line 130
-    iget-object v5, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    .line 105
+    iget-object v5, p0, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-interface {v5, p0}, Lcom/android/internal/telephony/CommandsInterface;->unregisterForOn(Landroid/os/Handler;)V
 
-    .line 131
-    iget-object v5, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    .line 106
+    iget-object v5, p0, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-interface {v5, p0}, Lcom/android/internal/telephony/CommandsInterface;->unregisterForNotAvailable(Landroid/os/Handler;)V
 
-    .line 132
-    iget-object v5, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    .line 107
+    iget-object v5, p0, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-interface {v5, p0}, Lcom/android/internal/telephony/CommandsInterface;->unregisterForCallWaitingInfo(Landroid/os/Handler;)V
 
-    .line 133
+    .line 108
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->connections:[Lcom/android/internal/telephony/cdma/CdmaConnection;
 
     .local v0, arr$:[Lcom/android/internal/telephony/cdma/CdmaConnection;
@@ -2329,7 +1847,7 @@
 
     aget-object v1, v0, v3
 
-    .line 135
+    .line 110
     .local v1, c:Lcom/android/internal/telephony/cdma/CdmaConnection;
     if-eqz v1, :cond_0
 
@@ -2338,18 +1856,18 @@
     :try_end_0
     .catch Lcom/android/internal/telephony/CallStateException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 133
+    .line 108
     :cond_0
     :goto_1
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 136
+    .line 111
     :catch_0
     move-exception v2
 
-    .line 137
+    .line 112
     .local v2, ex:Lcom/android/internal/telephony/CallStateException;
     const-string v5, "CDMA"
 
@@ -2359,7 +1877,7 @@
 
     goto :goto_1
 
-    .line 142
+    .line 117
     .end local v1           #c:Lcom/android/internal/telephony/cdma/CdmaConnection;
     .end local v2           #ex:Lcom/android/internal/telephony/CallStateException;
     :cond_1
@@ -2374,19 +1892,19 @@
     :try_end_1
     .catch Lcom/android/internal/telephony/CallStateException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 147
+    .line 122
     :cond_2
     :goto_2
     invoke-virtual {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->clearDisconnected()V
 
-    .line 149
+    .line 124
     return-void
 
-    .line 143
+    .line 118
     :catch_1
     move-exception v2
 
-    .line 144
+    .line 119
     .restart local v2       #ex:Lcom/android/internal/telephony/CallStateException;
     const-string v5, "CDMA"
 
@@ -2395,503 +1913,6 @@
     invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_2
-.end method
-
-.method public dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
-    .locals 7
-    .parameter "fd"
-    .parameter "pw"
-    .parameter "args"
-
-    .prologue
-    const/4 v6, 0x2
-
-    const/4 v5, 0x1
-
-    const/4 v4, 0x0
-
-    .line 1356
-    const-string v1, "GsmCallTracker extends:"
-
-    invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    .line 1357
-    invoke-super {p0, p1, p2, p3}, Lcom/android/internal/telephony/CallTracker;->dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
-
-    .line 1358
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "droppedDuringPoll: length="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->connections:[Lcom/android/internal/telephony/cdma/CdmaConnection;
-
-    array-length v2, v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    .line 1359
-    const/4 v0, 0x0
-
-    .local v0, i:I
-    :goto_0
-    iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->connections:[Lcom/android/internal/telephony/cdma/CdmaConnection;
-
-    array-length v1, v1
-
-    if-ge v0, v1, :cond_0
-
-    .line 1360
-    const-string v1, " connections[%d]=%s\n"
-
-    new-array v2, v6, [Ljava/lang/Object;
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v2, v4
-
-    iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->connections:[Lcom/android/internal/telephony/cdma/CdmaConnection;
-
-    aget-object v3, v3, v0
-
-    aput-object v3, v2, v5
-
-    invoke-virtual {p2, v1, v2}, Ljava/io/PrintWriter;->printf(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintWriter;
-
-    .line 1359
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    .line 1362
-    :cond_0
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, " voiceCallEndedRegistrants="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->voiceCallEndedRegistrants:Landroid/os/RegistrantList;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    .line 1363
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, " voiceCallStartedRegistrants="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->voiceCallStartedRegistrants:Landroid/os/RegistrantList;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    .line 1364
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, " callWaitingRegistrants="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->callWaitingRegistrants:Landroid/os/RegistrantList;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    .line 1365
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "droppedDuringPoll: size="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->droppedDuringPoll:Ljava/util/ArrayList;
-
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    .line 1366
-    const/4 v0, 0x0
-
-    :goto_1
-    iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->droppedDuringPoll:Ljava/util/ArrayList;
-
-    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
-
-    move-result v1
-
-    if-ge v0, v1, :cond_1
-
-    .line 1367
-    const-string v1, " droppedDuringPoll[%d]=%s\n"
-
-    new-array v2, v6, [Ljava/lang/Object;
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v2, v4
-
-    iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->droppedDuringPoll:Ljava/util/ArrayList;
-
-    invoke-virtual {v3, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    aput-object v3, v2, v5
-
-    invoke-virtual {p2, v1, v2}, Ljava/io/PrintWriter;->printf(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintWriter;
-
-    .line 1366
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_1
-
-    .line 1369
-    :cond_1
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, " ringingCall="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->ringingCall:Lcom/android/internal/telephony/cdma/CdmaCall;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    .line 1370
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, " foregroundCall="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->foregroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    .line 1371
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, " backgroundCall="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->backgroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    .line 1372
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, " pendingMO="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    .line 1373
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, " hangupPendingMO="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-boolean v2, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->hangupPendingMO:Z
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    .line 1374
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, " pendingCallInEcm="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-boolean v2, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingCallInEcm:Z
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    .line 1375
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, " mIsInEmergencyCall="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-boolean v2, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->mIsInEmergencyCall:Z
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    .line 1376
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, " phone="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    .line 1377
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, " desiredMute="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-boolean v2, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->desiredMute:Z
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    .line 1378
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, " pendingCallClirMode="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingCallClirMode:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    .line 1379
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, " state="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->state:Lcom/android/internal/telephony/PhoneConstants$State;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    .line 1380
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, " mIsEcmTimerCanceled="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-boolean v2, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->mIsEcmTimerCanceled:Z
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
-
-    .line 1381
-    return-void
 .end method
 
 .method explicitCallTransfer()V
@@ -2903,8 +1924,8 @@
     .end annotation
 
     .prologue
-    .line 424
-    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    .line 328
+    iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     const/16 v1, 0xd
 
@@ -2914,7 +1935,7 @@
 
     invoke-interface {v0, v1}, Lcom/android/internal/telephony/CommandsInterface;->explicitCallTransfer(Landroid/os/Message;)V
 
-    .line 425
+    .line 329
     return-void
 .end method
 
@@ -2922,14 +1943,14 @@
     .locals 2
 
     .prologue
-    .line 153
+    .line 128
     const-string v0, "CDMA"
 
     const-string v1, "CdmaCallTracker finalized"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 154
+    .line 129
     return-void
 .end method
 
@@ -2938,17 +1959,17 @@
     .parameter "result"
 
     .prologue
-    .line 1480
+    .line 1228
     const-string v0, "getAccumulatedCallMeter"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->log(Ljava/lang/String;)V
 
-    .line 1481
-    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    .line 1229
+    iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/CommandsInterface;->getAccumulatedCallMeter(Landroid/os/Message;)V
 
-    .line 1482
+    .line 1230
     return-void
 .end method
 
@@ -2957,17 +1978,17 @@
     .parameter "result"
 
     .prologue
-    .line 1485
+    .line 1233
     const-string v0, "getAccumulatedCallMeterMaximum"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->log(Ljava/lang/String;)V
 
-    .line 1486
-    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    .line 1234
+    iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/CommandsInterface;->getAccumulatedCallMeterMaximum(Landroid/os/Message;)V
 
-    .line 1487
+    .line 1235
     return-void
 .end method
 
@@ -2982,14 +2003,14 @@
     .end annotation
 
     .prologue
-    .line 1039
+    .line 873
     iget-object v3, p1, Lcom/android/internal/telephony/cdma/CdmaCall;->connections:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .line 1040
+    .line 874
     .local v1, count:I
     const/4 v2, 0x0
 
@@ -2997,7 +2018,7 @@
     :goto_0
     if-ge v2, v1, :cond_1
 
-    .line 1041
+    .line 875
     iget-object v3, p1, Lcom/android/internal/telephony/cdma/CdmaCall;->connections:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -3006,7 +2027,7 @@
 
     check-cast v0, Lcom/android/internal/telephony/cdma/CdmaConnection;
 
-    .line 1042
+    .line 876
     .local v0, cn:Lcom/android/internal/telephony/cdma/CdmaConnection;
     invoke-virtual {v0}, Lcom/android/internal/telephony/cdma/CdmaConnection;->getCDMAIndex()I
 
@@ -3014,19 +2035,19 @@
 
     if-ne v3, p2, :cond_0
 
-    .line 1047
+    .line 881
     .end local v0           #cn:Lcom/android/internal/telephony/cdma/CdmaConnection;
     :goto_1
     return-object v0
 
-    .line 1040
+    .line 874
     .restart local v0       #cn:Lcom/android/internal/telephony/cdma/CdmaConnection;
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 1047
+    .line 881
     .end local v0           #cn:Lcom/android/internal/telephony/cdma/CdmaConnection;
     :cond_1
     const/4 v0, 0x0
@@ -3039,17 +2060,17 @@
     .parameter "result"
 
     .prologue
-    .line 1475
+    .line 1223
     const-string v0, "getCurrentCallMeter"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->log(Ljava/lang/String;)V
 
-    .line 1476
-    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    .line 1224
+    iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/CommandsInterface;->getCurrentCallMeter(Landroid/os/Message;)V
 
-    .line 1477
+    .line 1225
     return-void
 .end method
 
@@ -3057,7 +2078,7 @@
     .locals 1
 
     .prologue
-    .line 926
+    .line 790
     iget-boolean v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->desiredMute:Z
 
     return v0
@@ -3068,368 +2089,290 @@
     .parameter "result"
 
     .prologue
-    .line 1490
+    .line 1238
     const-string v0, "getPpuAndCurrency"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->log(Ljava/lang/String;)V
 
-    .line 1491
-    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    .line 1239
+    iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/CommandsInterface;->getPpuAndCurrency(Landroid/os/Message;)V
 
-    .line 1492
+    .line 1240
     return-void
 .end method
 
 .method public handleMessage(Landroid/os/Message;)V
-    .locals 12
+    .locals 10
     .parameter "msg"
 
     .prologue
+    const/4 v7, 0x0
+
     const/4 v9, 0x0
 
-    const/4 v11, 0x0
+    .line 946
+    iget v5, p1, Landroid/os/Message;->what:I
 
-    .line 1139
-    iget v7, p1, Landroid/os/Message;->what:I
+    packed-switch v5, :pswitch_data_0
 
-    packed-switch v7, :pswitch_data_0
-
-    .line 1258
+    .line 1041
     :pswitch_0
-    new-instance v7, Ljava/lang/RuntimeException;
+    new-instance v5, Ljava/lang/RuntimeException;
 
-    const-string/jumbo v8, "unexpected event not handled"
+    const-string/jumbo v6, "unexpected event not handled"
 
-    invoke-direct {v7, v8}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v5, v6}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    throw v7
+    throw v5
 
-    .line 1141
+    .line 948
     :pswitch_1
-    const-string v7, "CDMA"
+    const-string v5, "CDMA"
 
-    const-string v8, "Event EVENT_POLL_CALLS_RESULT Received"
+    const-string v6, "Event EVENT_POLL_CALLS_RESULT Received"
 
-    invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1142
+    .line 949
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/os/AsyncResult;
 
-    .line 1144
+    .line 951
     .local v0, ar:Landroid/os/AsyncResult;
-    iget-object v7, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->lastRelevantPoll:Landroid/os/Message;
+    iget-object v5, p0, Lcom/android/internal/telephony/CallTracker;->lastRelevantPoll:Landroid/os/Message;
 
-    if-ne p1, v7, :cond_0
+    if-ne p1, v5, :cond_0
 
-    .line 1147
-    iput-boolean v11, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->needsPoll:Z
+    .line 954
+    iput-boolean v9, p0, Lcom/android/internal/telephony/CallTracker;->needsPoll:Z
 
-    .line 1148
-    iput-object v9, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->lastRelevantPoll:Landroid/os/Message;
+    .line 955
+    iput-object v7, p0, Lcom/android/internal/telephony/CallTracker;->lastRelevantPoll:Landroid/os/Message;
 
-    .line 1149
-    iget-object v7, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+    .line 956
+    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    check-cast v7, Landroid/os/AsyncResult;
+    check-cast v5, Landroid/os/AsyncResult;
 
-    invoke-virtual {p0, v7}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->handlePollCalls(Landroid/os/AsyncResult;)V
+    invoke-virtual {p0, v5}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->handlePollCalls(Landroid/os/AsyncResult;)V
 
-    .line 1261
+    .line 1044
     .end local v0           #ar:Landroid/os/AsyncResult;
     :cond_0
     :goto_0
     :pswitch_2
     return-void
 
-    .line 1155
+    .line 962
     :pswitch_3
     invoke-direct {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->operationComplete()V
 
     goto :goto_0
 
-    .line 1166
+    .line 973
     :pswitch_4
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/os/AsyncResult;
 
-    .line 1168
+    .line 975
     .restart local v0       #ar:Landroid/os/AsyncResult;
     invoke-direct {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->operationComplete()V
 
-    .line 1170
-    iget-object v7, v0, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
+    .line 977
+    iget-object v5, v0, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
-    if-eqz v7, :cond_1
+    if-eqz v5, :cond_1
 
-    .line 1173
+    .line 980
     const/16 v1, 0x10
 
-    .line 1174
+    .line 981
     .local v1, causeCode:I
-    const-string v7, "CDMA"
+    const-string v5, "CDMA"
 
-    const-string v8, "Exception during getLastCallFailCause, assuming normal disconnect"
+    const-string v6, "Exception during getLastCallFailCause, assuming normal disconnect"
 
-    invoke-static {v7, v8}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v5, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1180
+    .line 987
     :goto_1
-    const/4 v5, 0x0
+    const/4 v3, 0x0
 
-    .local v5, i:I
-    iget-object v7, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->droppedDuringPoll:Ljava/util/ArrayList;
+    .local v3, i:I
+    iget-object v5, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->droppedDuringPoll:Ljava/util/ArrayList;
 
-    invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
-    move-result v6
+    move-result v4
 
-    .line 1181
-    .local v6, s:I
+    .line 988
+    .local v4, s:I
     :goto_2
-    if-ge v5, v6, :cond_2
+    if-ge v3, v4, :cond_2
 
-    .line 1183
-    iget-object v7, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->droppedDuringPoll:Ljava/util/ArrayList;
+    .line 990
+    iget-object v5, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->droppedDuringPoll:Ljava/util/ArrayList;
 
-    invoke-virtual {v7, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v5, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lcom/android/internal/telephony/cdma/CdmaConnection;
 
-    .line 1185
+    .line 992
     .local v2, conn:Lcom/android/internal/telephony/cdma/CdmaConnection;
     invoke-virtual {v2, v1}, Lcom/android/internal/telephony/cdma/CdmaConnection;->onRemoteDisconnect(I)V
 
-    .line 1181
-    add-int/lit8 v5, v5, 0x1
+    .line 988
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_2
 
-    .line 1177
+    .line 984
     .end local v1           #causeCode:I
     .end local v2           #conn:Lcom/android/internal/telephony/cdma/CdmaConnection;
-    .end local v5           #i:I
-    .end local v6           #s:I
+    .end local v3           #i:I
+    .end local v4           #s:I
     :cond_1
-    iget-object v7, v0, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
+    iget-object v5, v0, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
 
-    check-cast v7, [I
+    check-cast v5, [I
 
-    check-cast v7, [I
+    check-cast v5, [I
 
-    aget v1, v7, v11
+    aget v1, v5, v9
 
     .restart local v1       #causeCode:I
     goto :goto_1
 
-    .line 1188
-    .restart local v5       #i:I
-    .restart local v6       #s:I
+    .line 995
+    .restart local v3       #i:I
+    .restart local v4       #s:I
     :cond_2
     invoke-direct {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->updatePhoneState()V
 
-    .line 1190
-    iget-object v7, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
+    .line 997
+    iget-object v5, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
-    invoke-virtual {v7}, Lcom/android/internal/telephony/cdma/CDMAPhone;->notifyPreciseCallStateChanged()V
+    invoke-virtual {v5}, Lcom/android/internal/telephony/cdma/CDMAPhone;->notifyPreciseCallStateChanged()V
 
-    .line 1191
-    iget-object v7, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->droppedDuringPoll:Ljava/util/ArrayList;
+    .line 998
+    iget-object v5, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->droppedDuringPoll:Ljava/util/ArrayList;
 
-    invoke-virtual {v7}, Ljava/util/ArrayList;->clear()V
+    invoke-virtual {v5}, Ljava/util/ArrayList;->clear()V
 
     goto :goto_0
 
-    .line 1196
+    .line 1003
     .end local v0           #ar:Landroid/os/AsyncResult;
     .end local v1           #causeCode:I
-    .end local v5           #i:I
-    .end local v6           #s:I
+    .end local v3           #i:I
+    .end local v4           #s:I
     :pswitch_5
     invoke-virtual {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pollCallsWhenSafe()V
 
     goto :goto_0
 
-    .line 1200
+    .line 1007
     :pswitch_6
     invoke-virtual {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->handleRadioAvailable()V
 
     goto :goto_0
 
-    .line 1204
+    .line 1011
     :pswitch_7
     invoke-direct {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->handleRadioNotAvailable()V
 
     goto :goto_0
 
-    .line 1209
+    .line 1016
     :pswitch_8
-    iget-boolean v7, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingCallInEcm:Z
+    iget-boolean v5, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingCallInEcm:Z
 
-    if-eqz v7, :cond_3
+    if-eqz v5, :cond_3
 
-    .line 1210
-    iget-object v7, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    .line 1017
+    iget-object v5, p0, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
-    iget-object v8, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
+    iget-object v6, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
 
-    iget-object v8, v8, Lcom/android/internal/telephony/cdma/CdmaConnection;->address:Ljava/lang/String;
+    iget-object v6, v6, Lcom/android/internal/telephony/cdma/CdmaConnection;->address:Ljava/lang/String;
 
-    iget v9, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingCallClirMode:I
+    iget v7, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingCallClirMode:I
 
     invoke-direct {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->obtainCompleteMessage()Landroid/os/Message;
 
-    move-result-object v10
+    move-result-object v8
 
-    invoke-interface {v7, v8, v9, v10}, Lcom/android/internal/telephony/CommandsInterface;->dial(Ljava/lang/String;ILandroid/os/Message;)V
+    invoke-interface {v5, v6, v7, v8}, Lcom/android/internal/telephony/CommandsInterface;->dial(Ljava/lang/String;ILandroid/os/Message;)V
 
-    .line 1211
-    iput-boolean v11, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingCallInEcm:Z
+    .line 1018
+    iput-boolean v9, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingCallInEcm:Z
 
-    .line 1213
+    .line 1020
     :cond_3
-    iget-object v7, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
+    iget-object v5, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
-    invoke-virtual {v7, p0}, Lcom/android/internal/telephony/cdma/CDMAPhone;->unsetOnEcbModeExitResponse(Landroid/os/Handler;)V
+    invoke-virtual {v5, p0}, Lcom/android/internal/telephony/cdma/CDMAPhone;->unsetOnEcbModeExitResponse(Landroid/os/Handler;)V
 
     goto :goto_0
 
-    .line 1217
+    .line 1024
     :pswitch_9
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/os/AsyncResult;
 
-    .line 1218
+    .line 1025
     .restart local v0       #ar:Landroid/os/AsyncResult;
-    iget-object v7, v0, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
+    iget-object v5, v0, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
-    if-nez v7, :cond_0
+    if-nez v5, :cond_0
 
-    .line 1219
-    iget-object v7, v0, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
+    .line 1026
+    iget-object v5, v0, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
 
-    check-cast v7, Lcom/android/internal/telephony/cdma/CdmaCallWaitingNotification;
+    check-cast v5, Lcom/android/internal/telephony/cdma/CdmaCallWaitingNotification;
 
-    invoke-direct {p0, v7}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->handleCallWaitingInfo(Lcom/android/internal/telephony/cdma/CdmaCallWaitingNotification;)V
+    invoke-direct {p0, v5}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->handleCallWaitingInfo(Lcom/android/internal/telephony/cdma/CdmaCallWaitingNotification;)V
 
-    .line 1220
-    const-string v7, "CDMA"
+    .line 1027
+    const-string v5, "CDMA"
 
-    const-string v8, "Event EVENT_CALL_WAITING_INFO_CDMA Received"
+    const-string v6, "Event EVENT_CALL_WAITING_INFO_CDMA Received"
 
-    invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto/16 :goto_0
 
-    .line 1225
+    .line 1032
     .end local v0           #ar:Landroid/os/AsyncResult;
     :pswitch_a
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/os/AsyncResult;
 
-    .line 1226
+    .line 1033
     .restart local v0       #ar:Landroid/os/AsyncResult;
-    iget-object v7, v0, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
+    iget-object v5, v0, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
-    if-nez v7, :cond_0
+    if-nez v5, :cond_0
 
-    .line 1228
-    iget-object v7, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
+    .line 1035
+    iget-object v5, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
 
-    invoke-virtual {v7}, Lcom/android/internal/telephony/cdma/CdmaConnection;->onConnectedInOrOut()V
+    invoke-virtual {v5}, Lcom/android/internal/telephony/cdma/CdmaConnection;->onConnectedInOrOut()V
 
-    .line 1229
-    iput-object v9, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
-
-    goto/16 :goto_0
-
-    .line 1235
-    .end local v0           #ar:Landroid/os/AsyncResult;
-    :pswitch_b
-    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v0, Landroid/os/AsyncResult;
-
-    .line 1236
-    .restart local v0       #ar:Landroid/os/AsyncResult;
-    iget-object v7, v0, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
-
-    if-nez v7, :cond_0
-
-    .line 1237
-    invoke-direct {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->handleCallAccepted()V
-
-    .line 1238
-    const-string v7, "CDMA"
-
-    const-string v8, "Event EVENT_CDMA_CALL_ACCEPTED Received"
-
-    invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    .line 1036
+    iput-object v7, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
 
     goto/16 :goto_0
 
-    .line 1245
-    .end local v0           #ar:Landroid/os/AsyncResult;
-    :pswitch_c
-    iget-object v4, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v4, Ljava/lang/String;
-
-    .line 1246
-    .local v4, dialString:Ljava/lang/String;
-    const-string v7, "CDMA"
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v9, "yangli Event EVENT_CDMA_DIAL_THREEWAY_DELAY Received dialString = "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1247
-    if-eqz v4, :cond_0
-
-    .line 1249
-    invoke-direct {p0, v4}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->formatDialNumber(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 1251
-    .local v3, dialNumber:Ljava/lang/String;
-    iget-object v7, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
-
-    const/16 v8, 0x10
-
-    invoke-virtual {p0, v8}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->obtainMessage(I)Landroid/os/Message;
-
-    move-result-object v8
-
-    invoke-interface {v7, v3, v8}, Lcom/android/internal/telephony/CommandsInterface;->sendCDMAFeatureCode(Ljava/lang/String;Landroid/os/Message;)V
-
-    goto/16 :goto_0
-
-    .line 1139
+    .line 946
     nop
 
     :pswitch_data_0
@@ -3450,1546 +2393,1235 @@
         :pswitch_8
         :pswitch_9
         :pswitch_a
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_b
-        :pswitch_c
     .end packed-switch
 .end method
 
 .method protected handlePollCalls(Landroid/os/AsyncResult;)V
-    .locals 26
+    .locals 22
     .parameter "ar"
 
     .prologue
-    .line 572
+    .line 476
     move-object/from16 v0, p1
 
     iget-object v0, v0, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
-    move-object/from16 v22, v0
+    move-object/from16 v18, v0
 
-    if-nez v22, :cond_5
+    if-nez v18, :cond_3
 
-    .line 573
+    .line 477
     move-object/from16 v0, p1
 
     iget-object v0, v0, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
 
-    move-object/from16 v19, v0
+    move-object/from16 v16, v0
 
-    check-cast v19, Ljava/util/List;
+    check-cast v16, Ljava/util/List;
 
-    .line 585
-    .local v19, polledCalls:Ljava/util/List;
+    .line 489
+    .local v16, polledCalls:Ljava/util/List;
     :goto_0
-    const/16 v18, 0x0
+    const/4 v15, 0x0
 
-    .line 586
-    .local v18, newRinging:Lcom/android/internal/telephony/Connection;
-    const/4 v12, 0x0
+    .line 490
+    .local v15, newRinging:Lcom/android/internal/telephony/Connection;
+    const/4 v11, 0x0
 
-    .line 588
-    .local v12, hasNonHangupStateChanged:Z
+    .line 492
+    .local v11, hasNonHangupStateChanged:Z
+    const/4 v14, 0x0
+
+    .line 493
+    .local v14, needsPollDelay:Z
     const/16 v17, 0x0
 
-    .line 589
-    .local v17, needsPollDelay:Z
-    const/16 v21, 0x0
+    .line 495
+    .local v17, unknownConnectionAppeared:Z
+    const/4 v12, 0x0
 
-    .line 591
-    .local v21, unknownConnectionAppeared:Z
-    const/4 v13, 0x0
+    .local v12, i:I
+    const/4 v7, 0x0
 
-    .local v13, i:I
-    const/4 v8, 0x0
+    .local v7, curDC:I
+    invoke-interface/range {v16 .. v16}, Ljava/util/List;->size()I
 
-    .local v8, curDC:I
-    invoke-interface/range {v19 .. v19}, Ljava/util/List;->size()I
+    move-result v9
 
-    move-result v10
-
-    .line 592
-    .local v10, dcSize:I
+    .line 496
+    .local v9, dcSize:I
     :goto_1
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->connections:[Lcom/android/internal/telephony/cdma/CdmaConnection;
 
-    move-object/from16 v22, v0
+    move-object/from16 v18, v0
 
-    move-object/from16 v0, v22
+    move-object/from16 v0, v18
 
     array-length v0, v0
 
-    move/from16 v22, v0
+    move/from16 v18, v0
 
-    move/from16 v0, v22
+    move/from16 v0, v18
 
-    if-ge v13, v0, :cond_18
+    if-ge v12, v0, :cond_14
 
-    .line 593
+    .line 497
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->connections:[Lcom/android/internal/telephony/cdma/CdmaConnection;
 
-    move-object/from16 v22, v0
+    move-object/from16 v18, v0
 
-    aget-object v6, v22, v13
+    aget-object v5, v18, v12
 
-    .line 594
-    .local v6, conn:Lcom/android/internal/telephony/cdma/CdmaConnection;
-    const/4 v9, 0x0
+    .line 498
+    .local v5, conn:Lcom/android/internal/telephony/cdma/CdmaConnection;
+    const/4 v8, 0x0
+
+    .line 501
+    .local v8, dc:Lcom/android/internal/telephony/DriverCall;
+    if-ge v7, v9, :cond_0
+
+    .line 502
+    move-object/from16 v0, v16
+
+    invoke-interface {v0, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v8
+
+    .end local v8           #dc:Lcom/android/internal/telephony/DriverCall;
+    check-cast v8, Lcom/android/internal/telephony/DriverCall;
+
+    .line 504
+    .restart local v8       #dc:Lcom/android/internal/telephony/DriverCall;
+    iget v0, v8, Lcom/android/internal/telephony/DriverCall;->index:I
+
+    move/from16 v18, v0
+
+    add-int/lit8 v19, v12, 0x1
+
+    move/from16 v0, v18
+
+    move/from16 v1, v19
+
+    if-ne v0, v1, :cond_5
+
+    .line 505
+    add-int/lit8 v7, v7, 0x1
+
+    .line 514
+    :cond_0
+    :goto_2
+    if-nez v5, :cond_a
+
+    if-eqz v8, :cond_a
+
+    .line 516
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
+
+    move-object/from16 v18, v0
+
+    if-eqz v18, :cond_6
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
+
+    move-object/from16 v18, v0
+
+    move-object/from16 v0, v18
+
+    invoke-virtual {v0, v8}, Lcom/android/internal/telephony/cdma/CdmaConnection;->compareTo(Lcom/android/internal/telephony/DriverCall;)Z
+
+    move-result v18
+
+    if-eqz v18, :cond_6
+
+    .line 521
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->connections:[Lcom/android/internal/telephony/cdma/CdmaConnection;
+
+    move-object/from16 v18, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
+
+    move-object/from16 v19, v0
+
+    aput-object v19, v18, v12
+
+    .line 522
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
+
+    move-object/from16 v18, v0
+
+    move-object/from16 v0, v18
+
+    iput v12, v0, Lcom/android/internal/telephony/cdma/CdmaConnection;->index:I
+
+    .line 523
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
+
+    move-object/from16 v18, v0
+
+    move-object/from16 v0, v18
+
+    invoke-virtual {v0, v8}, Lcom/android/internal/telephony/cdma/CdmaConnection;->update(Lcom/android/internal/telephony/DriverCall;)Z
+
+    .line 524
+    const/16 v18, 0x0
+
+    move-object/from16 v0, v18
+
+    move-object/from16 v1, p0
+
+    iput-object v0, v1, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
+
+    .line 527
+    move-object/from16 v0, p0
+
+    iget-boolean v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->hangupPendingMO:Z
+
+    move/from16 v18, v0
+
+    if-eqz v18, :cond_8
+
+    .line 528
+    const/16 v18, 0x0
+
+    move/from16 v0, v18
+
+    move-object/from16 v1, p0
+
+    iput-boolean v0, v1, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->hangupPendingMO:Z
+
+    .line 530
+    move-object/from16 v0, p0
+
+    iget-boolean v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->mIsEcmTimerCanceled:Z
+
+    move/from16 v18, v0
+
+    if-eqz v18, :cond_1
+
+    .line 531
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
+
+    move-object/from16 v18, v0
+
+    const/16 v18, 0x0
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    invoke-direct {v0, v1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->handleEcmTimer(I)V
+
+    .line 535
+    :cond_1
+    :try_start_0
+    new-instance v18, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v19, "poll: hangupPendingMO, hangup conn "
+
+    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v18
+
+    move-object/from16 v0, v18
+
+    invoke-virtual {v0, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v18
+
+    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v18
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v18
+
+    invoke-virtual {v0, v1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->log(Ljava/lang/String;)V
+
+    .line 537
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->connections:[Lcom/android/internal/telephony/cdma/CdmaConnection;
+
+    move-object/from16 v18, v0
+
+    aget-object v18, v18, v12
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v18
+
+    invoke-virtual {v0, v1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->hangup(Lcom/android/internal/telephony/cdma/CdmaConnection;)V
+    :try_end_0
+    .catch Lcom/android/internal/telephony/CallStateException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 716
+    .end local v5           #conn:Lcom/android/internal/telephony/cdma/CdmaConnection;
+    .end local v7           #curDC:I
+    .end local v8           #dc:Lcom/android/internal/telephony/DriverCall;
+    .end local v9           #dcSize:I
+    .end local v11           #hasNonHangupStateChanged:Z
+    .end local v12           #i:I
+    .end local v14           #needsPollDelay:Z
+    .end local v15           #newRinging:Lcom/android/internal/telephony/Connection;
+    .end local v16           #polledCalls:Ljava/util/List;
+    .end local v17           #unknownConnectionAppeared:Z
+    :cond_2
+    :goto_3
+    return-void
+
+    .line 478
+    :cond_3
+    move-object/from16 v0, p1
+
+    iget-object v0, v0, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
+
+    move-object/from16 v18, v0
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v18
+
+    invoke-virtual {v0, v1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->isCommandExceptionRadioNotAvailable(Ljava/lang/Throwable;)Z
+
+    move-result v18
+
+    if-eqz v18, :cond_4
+
+    .line 481
+    new-instance v16, Ljava/util/ArrayList;
+
+    invoke-direct/range {v16 .. v16}, Ljava/util/ArrayList;-><init>()V
+
+    .restart local v16       #polledCalls:Ljava/util/List;
+    goto/16 :goto_0
+
+    .line 485
+    .end local v16           #polledCalls:Ljava/util/List;
+    :cond_4
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pollCallsAfterDelay()V
+
+    goto :goto_3
+
+    .line 507
+    .restart local v5       #conn:Lcom/android/internal/telephony/cdma/CdmaConnection;
+    .restart local v7       #curDC:I
+    .restart local v8       #dc:Lcom/android/internal/telephony/DriverCall;
+    .restart local v9       #dcSize:I
+    .restart local v11       #hasNonHangupStateChanged:Z
+    .restart local v12       #i:I
+    .restart local v14       #needsPollDelay:Z
+    .restart local v15       #newRinging:Lcom/android/internal/telephony/Connection;
+    .restart local v16       #polledCalls:Ljava/util/List;
+    .restart local v17       #unknownConnectionAppeared:Z
+    :cond_5
+    const/4 v8, 0x0
+
+    goto/16 :goto_2
+
+    .line 538
+    :catch_0
+    move-exception v10
+
+    .line 539
+    .local v10, ex:Lcom/android/internal/telephony/CallStateException;
+    const-string v18, "CDMA"
+
+    const-string/jumbo v19, "unexpected error on hangup"
+
+    invoke-static/range {v18 .. v19}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_3
+
+    .line 548
+    .end local v10           #ex:Lcom/android/internal/telephony/CallStateException;
+    :cond_6
+    new-instance v18, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v19, "pendingMo="
+
+    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v18
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
+
+    move-object/from16 v19, v0
+
+    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v18
+
+    const-string v19, ", dc="
+
+    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v18
+
+    move-object/from16 v0, v18
+
+    invoke-virtual {v0, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v18
+
+    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v18
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v18
+
+    invoke-virtual {v0, v1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->log(Ljava/lang/String;)V
+
+    .line 551
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v8, v12}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->checkMtFindNewRinging(Lcom/android/internal/telephony/DriverCall;I)Lcom/android/internal/telephony/Connection;
+
+    move-result-object v15
+
+    .line 552
+    if-nez v15, :cond_7
+
+    .line 553
+    const/16 v17, 0x1
+
+    .line 555
+    :cond_7
+    invoke-direct/range {p0 .. p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->checkAndEnableDataCallAfterEmergencyCallDropped()V
+
+    .line 557
+    :cond_8
+    const/4 v11, 0x1
+
+    .line 496
+    :cond_9
+    :goto_4
+    add-int/lit8 v12, v12, 0x1
+
+    goto/16 :goto_1
+
+    .line 558
+    :cond_a
+    if-eqz v5, :cond_e
+
+    if-nez v8, :cond_e
+
+    .line 563
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->foregroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
+
+    move-object/from16 v18, v0
+
+    move-object/from16 v0, v18
+
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCall;->connections:Ljava/util/ArrayList;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v18 .. v18}, Ljava/util/ArrayList;->size()I
+
+    move-result v6
+
+    .line 564
+    .local v6, count:I
+    const/4 v13, 0x0
+
+    .local v13, n:I
+    :goto_5
+    if-ge v13, v6, :cond_b
+
+    .line 565
+    new-instance v18, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v19, "adding fgCall cn "
+
+    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v18
+
+    move-object/from16 v0, v18
+
+    invoke-virtual {v0, v13}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v18
+
+    const-string v19, " to droppedDuringPoll"
+
+    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v18
+
+    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v18
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v18
+
+    invoke-virtual {v0, v1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->log(Ljava/lang/String;)V
+
+    .line 566
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->foregroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
+
+    move-object/from16 v18, v0
+
+    move-object/from16 v0, v18
+
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCall;->connections:Ljava/util/ArrayList;
+
+    move-object/from16 v18, v0
+
+    move-object/from16 v0, v18
+
+    invoke-virtual {v0, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lcom/android/internal/telephony/cdma/CdmaConnection;
+
+    .line 567
+    .local v4, cn:Lcom/android/internal/telephony/cdma/CdmaConnection;
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->droppedDuringPoll:Ljava/util/ArrayList;
+
+    move-object/from16 v18, v0
+
+    move-object/from16 v0, v18
+
+    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 564
+    add-int/lit8 v13, v13, 0x1
+
+    goto :goto_5
+
+    .line 569
+    .end local v4           #cn:Lcom/android/internal/telephony/cdma/CdmaConnection;
+    :cond_b
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->ringingCall:Lcom/android/internal/telephony/cdma/CdmaCall;
+
+    move-object/from16 v18, v0
+
+    move-object/from16 v0, v18
+
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCall;->connections:Ljava/util/ArrayList;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v18 .. v18}, Ljava/util/ArrayList;->size()I
+
+    move-result v6
+
+    .line 572
+    const/4 v13, 0x0
+
+    :goto_6
+    if-ge v13, v6, :cond_c
+
+    .line 573
+    new-instance v18, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v19, "adding rgCall cn "
+
+    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v18
+
+    move-object/from16 v0, v18
+
+    invoke-virtual {v0, v13}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v18
+
+    const-string v19, " to droppedDuringPoll"
+
+    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v18
+
+    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v18
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v18
+
+    invoke-virtual {v0, v1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->log(Ljava/lang/String;)V
+
+    .line 574
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->ringingCall:Lcom/android/internal/telephony/cdma/CdmaCall;
+
+    move-object/from16 v18, v0
+
+    move-object/from16 v0, v18
+
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCall;->connections:Ljava/util/ArrayList;
+
+    move-object/from16 v18, v0
+
+    move-object/from16 v0, v18
+
+    invoke-virtual {v0, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lcom/android/internal/telephony/cdma/CdmaConnection;
+
+    .line 575
+    .restart local v4       #cn:Lcom/android/internal/telephony/cdma/CdmaConnection;
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->droppedDuringPoll:Ljava/util/ArrayList;
+
+    move-object/from16 v18, v0
+
+    move-object/from16 v0, v18
+
+    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 572
+    add-int/lit8 v13, v13, 0x1
+
+    goto :goto_6
+
+    .line 577
+    .end local v4           #cn:Lcom/android/internal/telephony/cdma/CdmaConnection;
+    :cond_c
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->foregroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
+
+    move-object/from16 v18, v0
+
+    const/16 v19, 0x0
+
+    invoke-virtual/range {v18 .. v19}, Lcom/android/internal/telephony/cdma/CdmaCall;->setGeneric(Z)V
+
+    .line 578
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->ringingCall:Lcom/android/internal/telephony/cdma/CdmaCall;
+
+    move-object/from16 v18, v0
+
+    const/16 v19, 0x0
+
+    invoke-virtual/range {v18 .. v19}, Lcom/android/internal/telephony/cdma/CdmaCall;->setGeneric(Z)V
+
+    .line 581
+    move-object/from16 v0, p0
+
+    iget-boolean v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->mIsEcmTimerCanceled:Z
+
+    move/from16 v18, v0
+
+    if-eqz v18, :cond_d
+
+    .line 582
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
+
+    move-object/from16 v18, v0
+
+    const/16 v18, 0x0
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v18
+
+    invoke-direct {v0, v1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->handleEcmTimer(I)V
+
+    .line 585
+    :cond_d
+    invoke-direct/range {p0 .. p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->checkAndEnableDataCallAfterEmergencyCallDropped()V
+
+    .line 589
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->connections:[Lcom/android/internal/telephony/cdma/CdmaConnection;
+
+    move-object/from16 v18, v0
+
+    const/16 v19, 0x0
+
+    aput-object v19, v18, v12
+
+    goto/16 :goto_4
+
+    .line 590
+    .end local v6           #count:I
+    .end local v13           #n:I
+    :cond_e
+    if-eqz v5, :cond_9
+
+    if-eqz v8, :cond_9
+
+    .line 592
+    iget-boolean v0, v5, Lcom/android/internal/telephony/cdma/CdmaConnection;->isIncoming:Z
+
+    move/from16 v18, v0
+
+    iget-boolean v0, v8, Lcom/android/internal/telephony/DriverCall;->isMT:Z
+
+    move/from16 v19, v0
+
+    move/from16 v0, v18
+
+    move/from16 v1, v19
+
+    if-eq v0, v1, :cond_11
+
+    .line 593
+    iget-boolean v0, v8, Lcom/android/internal/telephony/DriverCall;->isMT:Z
+
+    move/from16 v18, v0
+
+    const/16 v19, 0x1
+
+    move/from16 v0, v18
+
+    move/from16 v1, v19
+
+    if-ne v0, v1, :cond_10
+
+    .line 595
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->droppedDuringPoll:Ljava/util/ArrayList;
+
+    move-object/from16 v18, v0
+
+    move-object/from16 v0, v18
+
+    invoke-virtual {v0, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 597
-    .local v9, dc:Lcom/android/internal/telephony/DriverCall;
-    if-ge v8, v10, :cond_2
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v8, v12}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->checkMtFindNewRinging(Lcom/android/internal/telephony/DriverCall;I)Lcom/android/internal/telephony/Connection;
+
+    move-result-object v15
 
     .line 598
+    if-nez v15, :cond_f
+
+    .line 599
+    const/16 v17, 0x1
+
+    .line 601
+    :cond_f
+    invoke-direct/range {p0 .. p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->checkAndEnableDataCallAfterEmergencyCallDropped()V
+
+    goto/16 :goto_4
+
+    .line 607
+    :cond_10
+    const-string v18, "CDMA"
+
+    new-instance v19, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v19 .. v19}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v20, "Error in RIL, Phantom call appeared "
+
+    invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v19
+
     move-object/from16 v0, v19
 
-    invoke-interface {v0, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v9
+    move-result-object v19
 
-    .end local v9           #dc:Lcom/android/internal/telephony/DriverCall;
-    check-cast v9, Lcom/android/internal/telephony/DriverCall;
+    invoke-virtual/range {v19 .. v19}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 603
-    .restart local v9       #dc:Lcom/android/internal/telephony/DriverCall;
-    iget-object v0, v9, Lcom/android/internal/telephony/DriverCall;->number:Ljava/lang/String;
+    move-result-object v19
+
+    invoke-static/range {v18 .. v19}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto/16 :goto_4
+
+    .line 611
+    :cond_11
+    invoke-virtual {v5, v8}, Lcom/android/internal/telephony/cdma/CdmaConnection;->update(Lcom/android/internal/telephony/DriverCall;)Z
+
+    move-result v3
+
+    .line 612
+    .local v3, changed:Z
+    if-nez v11, :cond_12
+
+    if-eqz v3, :cond_13
+
+    :cond_12
+    const/4 v11, 0x1
+
+    :goto_7
+    goto/16 :goto_4
+
+    :cond_13
+    const/4 v11, 0x0
+
+    goto :goto_7
+
+    .line 639
+    .end local v3           #changed:Z
+    .end local v5           #conn:Lcom/android/internal/telephony/cdma/CdmaConnection;
+    .end local v8           #dc:Lcom/android/internal/telephony/DriverCall;
+    :cond_14
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
+
+    move-object/from16 v18, v0
+
+    if-eqz v18, :cond_15
+
+    .line 640
+    const-string v18, "CDMA"
+
+    new-instance v19, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v19 .. v19}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v20, "Pending MO dropped before poll fg state:"
+
+    invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v19
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->foregroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
 
     move-object/from16 v20, v0
 
-    .line 604
-    .local v20, s:Ljava/lang/String;
-    iget-boolean v0, v9, Lcom/android/internal/telephony/DriverCall;->isMT:Z
-
-    move/from16 v22, v0
-
-    if-eqz v22, :cond_1
-
-    iget v0, v9, Lcom/android/internal/telephony/DriverCall;->TOA:I
-
-    move/from16 v22, v0
-
-    const/16 v23, 0x91
-
-    move/from16 v0, v22
-
-    move/from16 v1, v23
-
-    if-ne v0, v1, :cond_1
-
-    .line 605
-    invoke-virtual/range {v20 .. v20}, Ljava/lang/String;->length()I
-
-    move-result v22
-
-    if-lez v22, :cond_0
-
-    const/16 v22, 0x0
-
-    move-object/from16 v0, v20
-
-    move/from16 v1, v22
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->charAt(I)C
-
-    move-result v22
-
-    const/16 v23, 0x2b
-
-    move/from16 v0, v22
-
-    move/from16 v1, v23
-
-    if-ne v0, v1, :cond_0
-
-    .line 606
-    new-instance v22, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v22 .. v22}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v23, "before remove + frome number number = "
-
-    invoke-virtual/range {v22 .. v23}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v22
-
-    move-object/from16 v0, v22
-
-    move-object/from16 v1, v20
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v22
-
-    invoke-virtual/range {v22 .. v22}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v22
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v22
-
-    invoke-virtual {v0, v1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->log(Ljava/lang/String;)V
-
-    .line 607
-    const/16 v22, 0x1
-
-    invoke-virtual/range {v20 .. v20}, Ljava/lang/String;->length()I
-
-    move-result v23
-
-    move-object/from16 v0, v20
-
-    move/from16 v1, v22
-
-    move/from16 v2, v23
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual/range {v20 .. v20}, Lcom/android/internal/telephony/cdma/CdmaCall;->getState()Lcom/android/internal/telephony/Call$State;
 
     move-result-object v20
 
-    .line 608
-    new-instance v22, Ljava/lang/StringBuilder;
+    invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v22 .. v22}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v19
 
-    const-string v23, "after remove + frome number number = "
+    invoke-virtual/range {v19 .. v19}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual/range {v22 .. v23}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v19
 
-    move-result-object v22
+    invoke-static/range {v18 .. v19}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-object/from16 v0, v22
-
-    move-object/from16 v1, v20
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v22
-
-    invoke-virtual/range {v22 .. v22}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v22
-
+    .line 643
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v22
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->droppedDuringPoll:Ljava/util/ArrayList;
 
-    invoke-virtual {v0, v1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->log(Ljava/lang/String;)V
-
-    .line 610
-    :cond_0
-    new-instance v22, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v22 .. v22}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v23, "CDMA PHONE before formate number = "
-
-    invoke-virtual/range {v22 .. v23}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v22
-
-    iget-object v0, v9, Lcom/android/internal/telephony/DriverCall;->number:Ljava/lang/String;
-
-    move-object/from16 v23, v0
-
-    invoke-virtual/range {v22 .. v23}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v22
-
-    invoke-virtual/range {v22 .. v22}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v22
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v22
-
-    invoke-virtual {v0, v1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->log(Ljava/lang/String;)V
-
-    .line 611
-    iget-object v0, v9, Lcom/android/internal/telephony/DriverCall;->number:Ljava/lang/String;
-
-    move-object/from16 v22, v0
-
-    invoke-static/range {v22 .. v22}, Lcom/android/internal/telephony/cdma/PlusCodeToIddNddUtils;->removeIddNddAddPlusCode(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v22
-
-    move-object/from16 v0, v22
-
-    iput-object v0, v9, Lcom/android/internal/telephony/DriverCall;->number:Ljava/lang/String;
-
-    .line 612
-    new-instance v22, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v22 .. v22}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v23, "after formate number = "
-
-    invoke-virtual/range {v22 .. v23}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v22
-
-    iget-object v0, v9, Lcom/android/internal/telephony/DriverCall;->number:Ljava/lang/String;
-
-    move-object/from16 v23, v0
-
-    invoke-virtual/range {v22 .. v23}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v22
-
-    invoke-virtual/range {v22 .. v22}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v22
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v22
-
-    invoke-virtual {v0, v1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->log(Ljava/lang/String;)V
-
-    .line 614
-    :cond_1
-    iget-object v0, v9, Lcom/android/internal/telephony/DriverCall;->number:Ljava/lang/String;
-
-    move-object/from16 v22, v0
-
-    iget v0, v9, Lcom/android/internal/telephony/DriverCall;->TOA:I
-
-    move/from16 v23, v0
-
-    invoke-static/range {v22 .. v23}, Landroid/telephony/PhoneNumberUtils;->stringFromStringAndTOA(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v22
-
-    move-object/from16 v0, v22
-
-    iput-object v0, v9, Lcom/android/internal/telephony/DriverCall;->number:Ljava/lang/String;
-
-    .line 617
-    iget v0, v9, Lcom/android/internal/telephony/DriverCall;->index:I
-
-    move/from16 v22, v0
-
-    add-int/lit8 v23, v13, 0x1
-
-    move/from16 v0, v22
-
-    move/from16 v1, v23
-
-    if-ne v0, v1, :cond_7
-
-    .line 618
-    add-int/lit8 v8, v8, 0x1
-
-    .line 628
-    .end local v20           #s:Ljava/lang/String;
-    :cond_2
-    :goto_2
-    const-string/jumbo v22, "ril.cdma.inecmmode"
-
-    const-string v23, "false"
-
-    invoke-static/range {v22 .. v23}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v22
-
-    const-string/jumbo v23, "true"
-
-    invoke-virtual/range {v22 .. v23}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v15
-
-    .line 629
-    .local v15, isPhoneInEcmMode:Z
-    const/4 v14, 0x0
-
-    .line 632
-    .local v14, isEmergencyCall:Z
-    if-nez v6, :cond_c
-
-    if-eqz v9, :cond_c
-
-    .line 634
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
-
-    move-object/from16 v22, v0
-
-    if-eqz v22, :cond_8
+    move-object/from16 v18, v0
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
 
-    move-object/from16 v22, v0
+    move-object/from16 v19, v0
 
-    move-object/from16 v0, v22
+    invoke-virtual/range {v18 .. v19}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    invoke-virtual {v0, v9}, Lcom/android/internal/telephony/cdma/CdmaConnection;->compareTo(Lcom/android/internal/telephony/DriverCall;)Z
+    .line 644
+    const/16 v18, 0x0
 
-    move-result v22
-
-    if-eqz v22, :cond_8
-
-    .line 639
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->connections:[Lcom/android/internal/telephony/cdma/CdmaConnection;
-
-    move-object/from16 v22, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
-
-    move-object/from16 v23, v0
-
-    aput-object v23, v22, v13
-
-    .line 640
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
-
-    move-object/from16 v22, v0
-
-    move-object/from16 v0, v22
-
-    iput v13, v0, Lcom/android/internal/telephony/cdma/CdmaConnection;->index:I
-
-    .line 641
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
-
-    move-object/from16 v22, v0
-
-    move-object/from16 v0, v22
-
-    invoke-virtual {v0, v9}, Lcom/android/internal/telephony/cdma/CdmaConnection;->update(Lcom/android/internal/telephony/DriverCall;)Z
-
-    .line 642
-    const/16 v22, 0x0
-
-    move-object/from16 v0, v22
+    move-object/from16 v0, v18
 
     move-object/from16 v1, p0
 
     iput-object v0, v1, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
 
     .line 645
-    move-object/from16 v0, p0
+    const/16 v18, 0x0
 
-    iget-boolean v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->hangupPendingMO:Z
-
-    move/from16 v22, v0
-
-    if-eqz v22, :cond_a
-
-    .line 646
-    const/16 v22, 0x0
-
-    move/from16 v0, v22
+    move/from16 v0, v18
 
     move-object/from16 v1, p0
 
     iput-boolean v0, v1, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->hangupPendingMO:Z
 
-    .line 649
+    .line 646
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->connections:[Lcom/android/internal/telephony/cdma/CdmaConnection;
+    iget-boolean v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingCallInEcm:Z
 
-    move-object/from16 v22, v0
+    move/from16 v18, v0
 
-    aget-object v22, v22, v13
+    if-eqz v18, :cond_15
 
-    move-object/from16 v0, v22
+    .line 647
+    const/16 v18, 0x0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaConnection;->dialString:Ljava/lang/String;
+    move/from16 v0, v18
 
-    move-object/from16 v22, v0
+    move-object/from16 v1, p0
 
-    const/16 v23, 0x2
+    iput-boolean v0, v1, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingCallInEcm:Z
 
-    invoke-static/range {v22 .. v23}, Landroid/telephony/PhoneNumberUtils;->isEmergencyNumberExt(Ljava/lang/String;I)Z
-
-    move-result v14
+    .line 651
+    :cond_15
+    if-eqz v15, :cond_16
 
     .line 652
-    if-eqz v15, :cond_3
-
-    if-eqz v14, :cond_3
-
-    .line 654
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
-    move-object/from16 v22, v0
+    move-object/from16 v18, v0
 
-    const/16 v22, 0x0
+    move-object/from16 v0, v18
 
-    move-object/from16 v0, p0
-
-    move/from16 v1, v22
-
-    invoke-direct {v0, v1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->handleEcmTimer(I)V
+    invoke-virtual {v0, v15}, Lcom/android/internal/telephony/cdma/CDMAPhone;->notifyNewRingingConnection(Lcom/android/internal/telephony/Connection;)V
 
     .line 658
-    :cond_3
-    :try_start_0
-    new-instance v22, Ljava/lang/StringBuilder;
+    :cond_16
+    move-object/from16 v0, p0
 
-    invoke-direct/range {v22 .. v22}, Ljava/lang/StringBuilder;-><init>()V
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->droppedDuringPoll:Ljava/util/ArrayList;
 
-    const-string/jumbo v23, "poll: hangupPendingMO, hangup conn "
+    move-object/from16 v18, v0
 
-    invoke-virtual/range {v22 .. v23}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v18 .. v18}, Ljava/util/ArrayList;->size()I
 
-    move-result-object v22
+    move-result v18
 
-    move-object/from16 v0, v22
+    add-int/lit8 v12, v18, -0x1
 
-    invoke-virtual {v0, v13}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    :goto_8
+    if-ltz v12, :cond_1b
 
-    move-result-object v22
+    .line 659
+    move-object/from16 v0, p0
 
-    invoke-virtual/range {v22 .. v22}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->droppedDuringPoll:Ljava/util/ArrayList;
 
-    move-result-object v22
+    move-object/from16 v18, v0
+
+    move-object/from16 v0, v18
+
+    invoke-virtual {v0, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lcom/android/internal/telephony/cdma/CdmaConnection;
+
+    .line 661
+    .restart local v5       #conn:Lcom/android/internal/telephony/cdma/CdmaConnection;
+    invoke-virtual {v5}, Lcom/android/internal/telephony/cdma/CdmaConnection;->isIncoming()Z
+
+    move-result v18
+
+    if-eqz v18, :cond_19
+
+    invoke-virtual {v5}, Lcom/android/internal/telephony/cdma/CdmaConnection;->getConnectTime()J
+
+    move-result-wide v18
+
+    const-wide/16 v20, 0x0
+
+    cmp-long v18, v18, v20
+
+    if-nez v18, :cond_19
+
+    .line 664
+    iget-object v0, v5, Lcom/android/internal/telephony/cdma/CdmaConnection;->cause:Lcom/android/internal/telephony/Connection$DisconnectCause;
+
+    move-object/from16 v18, v0
+
+    sget-object v19, Lcom/android/internal/telephony/Connection$DisconnectCause;->LOCAL:Lcom/android/internal/telephony/Connection$DisconnectCause;
+
+    move-object/from16 v0, v18
+
+    move-object/from16 v1, v19
+
+    if-ne v0, v1, :cond_18
+
+    .line 665
+    sget-object v2, Lcom/android/internal/telephony/Connection$DisconnectCause;->INCOMING_REJECTED:Lcom/android/internal/telephony/Connection$DisconnectCause;
+
+    .line 671
+    .local v2, cause:Lcom/android/internal/telephony/Connection$DisconnectCause;
+    :goto_9
+    new-instance v18, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v19, "missed/rejected call, conn.cause="
+
+    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v18
+
+    iget-object v0, v5, Lcom/android/internal/telephony/cdma/CdmaConnection;->cause:Lcom/android/internal/telephony/Connection$DisconnectCause;
+
+    move-object/from16 v19, v0
+
+    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v18
+
+    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v18
 
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v22
+    move-object/from16 v1, v18
 
     invoke-virtual {v0, v1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->log(Ljava/lang/String;)V
 
-    .line 660
-    move-object/from16 v0, p0
+    .line 672
+    new-instance v18, Ljava/lang/StringBuilder;
 
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->connections:[Lcom/android/internal/telephony/cdma/CdmaConnection;
+    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-object/from16 v22, v0
+    const-string/jumbo v19, "setting cause to "
 
-    aget-object v22, v22, v13
+    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-object/from16 v0, p0
+    move-result-object v18
 
-    move-object/from16 v1, v22
+    move-object/from16 v0, v18
 
-    invoke-virtual {v0, v1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->hangup(Lcom/android/internal/telephony/cdma/CdmaConnection;)V
-    :try_end_0
-    .catch Lcom/android/internal/telephony/CallStateException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 852
-    .end local v6           #conn:Lcom/android/internal/telephony/cdma/CdmaConnection;
-    .end local v8           #curDC:I
-    .end local v9           #dc:Lcom/android/internal/telephony/DriverCall;
-    .end local v10           #dcSize:I
-    .end local v12           #hasNonHangupStateChanged:Z
-    .end local v13           #i:I
-    .end local v14           #isEmergencyCall:Z
-    .end local v15           #isPhoneInEcmMode:Z
-    .end local v17           #needsPollDelay:Z
-    .end local v18           #newRinging:Lcom/android/internal/telephony/Connection;
-    .end local v19           #polledCalls:Ljava/util/List;
-    .end local v21           #unknownConnectionAppeared:Z
-    :cond_4
-    :goto_3
-    return-void
+    move-result-object v18
 
-    .line 574
-    :cond_5
-    move-object/from16 v0, p1
+    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    iget-object v0, v0, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
-
-    move-object/from16 v22, v0
+    move-result-object v18
 
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v22
-
-    invoke-virtual {v0, v1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->isCommandExceptionRadioNotAvailable(Ljava/lang/Throwable;)Z
-
-    move-result v22
-
-    if-eqz v22, :cond_6
-
-    .line 577
-    new-instance v19, Ljava/util/ArrayList;
-
-    invoke-direct/range {v19 .. v19}, Ljava/util/ArrayList;-><init>()V
-
-    .restart local v19       #polledCalls:Ljava/util/List;
-    goto/16 :goto_0
-
-    .line 581
-    .end local v19           #polledCalls:Ljava/util/List;
-    :cond_6
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pollCallsAfterDelay()V
-
-    goto :goto_3
-
-    .line 620
-    .restart local v6       #conn:Lcom/android/internal/telephony/cdma/CdmaConnection;
-    .restart local v8       #curDC:I
-    .restart local v9       #dc:Lcom/android/internal/telephony/DriverCall;
-    .restart local v10       #dcSize:I
-    .restart local v12       #hasNonHangupStateChanged:Z
-    .restart local v13       #i:I
-    .restart local v17       #needsPollDelay:Z
-    .restart local v18       #newRinging:Lcom/android/internal/telephony/Connection;
-    .restart local v19       #polledCalls:Ljava/util/List;
-    .restart local v20       #s:Ljava/lang/String;
-    .restart local v21       #unknownConnectionAppeared:Z
-    :cond_7
-    const/4 v9, 0x0
-
-    goto/16 :goto_2
-
-    .line 661
-    .end local v20           #s:Ljava/lang/String;
-    .restart local v14       #isEmergencyCall:Z
-    .restart local v15       #isPhoneInEcmMode:Z
-    :catch_0
-    move-exception v11
-
-    .line 662
-    .local v11, ex:Lcom/android/internal/telephony/CallStateException;
-    const-string v22, "CDMA"
-
-    const-string/jumbo v23, "unexpected error on hangup"
-
-    invoke-static/range {v22 .. v23}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_3
-
-    .line 671
-    .end local v11           #ex:Lcom/android/internal/telephony/CallStateException;
-    :cond_8
-    new-instance v22, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v22 .. v22}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v23, "pendingMo="
-
-    invoke-virtual/range {v22 .. v23}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v22
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
-
-    move-object/from16 v23, v0
-
-    invoke-virtual/range {v22 .. v23}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v22
-
-    const-string v23, ", dc="
-
-    invoke-virtual/range {v22 .. v23}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v22
-
-    move-object/from16 v0, v22
-
-    invoke-virtual {v0, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v22
-
-    invoke-virtual/range {v22 .. v22}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v22
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v22
+    move-object/from16 v1, v18
 
     invoke-virtual {v0, v1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->log(Ljava/lang/String;)V
 
     .line 674
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v9, v13}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->checkMtFindNewRinging(Lcom/android/internal/telephony/DriverCall;I)Lcom/android/internal/telephony/Connection;
+    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->droppedDuringPoll:Ljava/util/ArrayList;
 
-    move-result-object v18
+    move-object/from16 v18, v0
+
+    move-object/from16 v0, v18
+
+    invoke-virtual {v0, v12}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     .line 675
-    if-nez v18, :cond_9
+    invoke-virtual {v5, v2}, Lcom/android/internal/telephony/cdma/CdmaConnection;->onDisconnect(Lcom/android/internal/telephony/Connection$DisconnectCause;)V
 
-    .line 676
-    const/16 v21, 0x1
-
-    .line 678
-    :cond_9
-    invoke-direct/range {p0 .. p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->checkAndEnableDataCallAfterEmergencyCallDropped()V
-
-    .line 680
-    :cond_a
-    const/4 v12, 0x1
-
-    .line 592
-    :cond_b
-    :goto_4
-    add-int/lit8 v13, v13, 0x1
-
-    goto/16 :goto_1
-
-    .line 681
-    :cond_c
-    if-eqz v6, :cond_12
-
-    if-nez v9, :cond_12
-
-    .line 686
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->foregroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
-
-    move-object/from16 v22, v0
-
-    move-object/from16 v0, v22
-
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCall;->connections:Ljava/util/ArrayList;
-
-    move-object/from16 v22, v0
-
-    invoke-virtual/range {v22 .. v22}, Ljava/util/ArrayList;->size()I
-
-    move-result v7
-
-    .line 687
-    .local v7, count:I
-    const/16 v16, 0x0
-
-    .local v16, n:I
-    :goto_5
-    move/from16 v0, v16
-
-    if-ge v0, v7, :cond_e
-
-    .line 688
-    new-instance v22, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v22 .. v22}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v23, "adding fgCall cn "
-
-    invoke-virtual/range {v22 .. v23}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v22
-
-    move-object/from16 v0, v22
-
-    move/from16 v1, v16
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v22
-
-    const-string v23, " to droppedDuringPoll"
-
-    invoke-virtual/range {v22 .. v23}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v22
-
-    invoke-virtual/range {v22 .. v22}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v22
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v22
-
-    invoke-virtual {v0, v1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->log(Ljava/lang/String;)V
-
-    .line 689
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->foregroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
-
-    move-object/from16 v22, v0
-
-    move-object/from16 v0, v22
-
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCall;->connections:Ljava/util/ArrayList;
-
-    move-object/from16 v22, v0
-
-    move-object/from16 v0, v22
-
-    move/from16 v1, v16
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lcom/android/internal/telephony/cdma/CdmaConnection;
-
-    .line 690
-    .local v5, cn:Lcom/android/internal/telephony/cdma/CdmaConnection;
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->droppedDuringPoll:Ljava/util/ArrayList;
-
-    move-object/from16 v22, v0
-
-    move-object/from16 v0, v22
-
-    invoke-virtual {v0, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 692
-    iget-object v0, v5, Lcom/android/internal/telephony/cdma/CdmaConnection;->dialString:Ljava/lang/String;
-
-    move-object/from16 v22, v0
-
-    const/16 v23, 0x2
-
-    invoke-static/range {v22 .. v23}, Landroid/telephony/PhoneNumberUtils;->isEmergencyNumberExt(Ljava/lang/String;I)Z
-
-    move-result v22
-
-    if-eqz v22, :cond_d
-
-    .line 694
-    const/4 v14, 0x1
-
-    .line 687
-    :cond_d
-    add-int/lit8 v16, v16, 0x1
-
-    goto :goto_5
-
-    .line 697
-    .end local v5           #cn:Lcom/android/internal/telephony/cdma/CdmaConnection;
-    :cond_e
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->ringingCall:Lcom/android/internal/telephony/cdma/CdmaCall;
-
-    move-object/from16 v22, v0
-
-    move-object/from16 v0, v22
-
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCall;->connections:Ljava/util/ArrayList;
-
-    move-object/from16 v22, v0
-
-    invoke-virtual/range {v22 .. v22}, Ljava/util/ArrayList;->size()I
-
-    move-result v7
-
-    .line 700
-    const/16 v16, 0x0
-
-    :goto_6
-    move/from16 v0, v16
-
-    if-ge v0, v7, :cond_10
-
-    .line 701
-    new-instance v22, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v22 .. v22}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v23, "adding rgCall cn "
-
-    invoke-virtual/range {v22 .. v23}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v22
-
-    move-object/from16 v0, v22
-
-    move/from16 v1, v16
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v22
-
-    const-string v23, " to droppedDuringPoll"
-
-    invoke-virtual/range {v22 .. v23}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v22
-
-    invoke-virtual/range {v22 .. v22}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v22
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v22
-
-    invoke-virtual {v0, v1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->log(Ljava/lang/String;)V
-
-    .line 702
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->ringingCall:Lcom/android/internal/telephony/cdma/CdmaCall;
-
-    move-object/from16 v22, v0
-
-    move-object/from16 v0, v22
-
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCall;->connections:Ljava/util/ArrayList;
-
-    move-object/from16 v22, v0
-
-    move-object/from16 v0, v22
-
-    move/from16 v1, v16
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lcom/android/internal/telephony/cdma/CdmaConnection;
-
-    .line 703
-    .restart local v5       #cn:Lcom/android/internal/telephony/cdma/CdmaConnection;
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->droppedDuringPoll:Ljava/util/ArrayList;
-
-    move-object/from16 v22, v0
-
-    move-object/from16 v0, v22
-
-    invoke-virtual {v0, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 705
-    iget-object v0, v5, Lcom/android/internal/telephony/cdma/CdmaConnection;->dialString:Ljava/lang/String;
-
-    move-object/from16 v22, v0
-
-    const/16 v23, 0x2
-
-    invoke-static/range {v22 .. v23}, Landroid/telephony/PhoneNumberUtils;->isEmergencyNumberExt(Ljava/lang/String;I)Z
-
-    move-result v22
-
-    if-eqz v22, :cond_f
-
-    .line 707
-    const/4 v14, 0x1
-
-    .line 700
-    :cond_f
-    add-int/lit8 v16, v16, 0x1
-
-    goto :goto_6
-
-    .line 710
-    .end local v5           #cn:Lcom/android/internal/telephony/cdma/CdmaConnection;
-    :cond_10
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->foregroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
-
-    move-object/from16 v22, v0
-
-    const/16 v23, 0x0
-
-    invoke-virtual/range {v22 .. v23}, Lcom/android/internal/telephony/cdma/CdmaCall;->setGeneric(Z)V
-
-    .line 711
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->ringingCall:Lcom/android/internal/telephony/cdma/CdmaCall;
-
-    move-object/from16 v22, v0
-
-    const/16 v23, 0x0
-
-    invoke-virtual/range {v22 .. v23}, Lcom/android/internal/telephony/cdma/CdmaCall;->setGeneric(Z)V
-
-    .line 716
-    if-eqz v15, :cond_11
-
-    if-eqz v14, :cond_11
-
-    .line 718
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
-
-    move-object/from16 v22, v0
-
-    const/16 v22, 0x0
-
-    move-object/from16 v0, p0
-
-    move/from16 v1, v22
-
-    invoke-direct {v0, v1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->handleEcmTimer(I)V
-
-    .line 721
-    :cond_11
-    invoke-direct/range {p0 .. p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->checkAndEnableDataCallAfterEmergencyCallDropped()V
-
-    .line 725
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->connections:[Lcom/android/internal/telephony/cdma/CdmaConnection;
-
-    move-object/from16 v22, v0
-
-    const/16 v23, 0x0
-
-    aput-object v23, v22, v13
-
-    goto/16 :goto_4
-
-    .line 726
-    .end local v7           #count:I
-    .end local v16           #n:I
-    :cond_12
-    if-eqz v6, :cond_b
-
-    if-eqz v9, :cond_b
-
-    .line 728
-    iget-boolean v0, v6, Lcom/android/internal/telephony/cdma/CdmaConnection;->isIncoming:Z
-
-    move/from16 v22, v0
-
-    iget-boolean v0, v9, Lcom/android/internal/telephony/DriverCall;->isMT:Z
-
-    move/from16 v23, v0
-
-    move/from16 v0, v22
-
-    move/from16 v1, v23
-
-    if-eq v0, v1, :cond_15
-
-    .line 729
-    iget-boolean v0, v9, Lcom/android/internal/telephony/DriverCall;->isMT:Z
-
-    move/from16 v22, v0
-
-    const/16 v23, 0x1
-
-    move/from16 v0, v22
-
-    move/from16 v1, v23
-
-    if-ne v0, v1, :cond_14
-
-    .line 731
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->droppedDuringPoll:Ljava/util/ArrayList;
-
-    move-object/from16 v22, v0
-
-    move-object/from16 v0, v22
-
-    invoke-virtual {v0, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 733
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v9, v13}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->checkMtFindNewRinging(Lcom/android/internal/telephony/DriverCall;I)Lcom/android/internal/telephony/Connection;
-
-    move-result-object v18
-
-    .line 734
-    if-nez v18, :cond_13
-
-    .line 735
-    const/16 v21, 0x1
-
-    .line 737
-    :cond_13
-    invoke-direct/range {p0 .. p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->checkAndEnableDataCallAfterEmergencyCallDropped()V
-
-    goto/16 :goto_4
-
-    .line 743
-    :cond_14
-    const-string v22, "CDMA"
-
-    new-instance v23, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v23 .. v23}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v24, "Error in RIL, Phantom call appeared "
-
-    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    move-object/from16 v0, v23
-
-    invoke-virtual {v0, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    invoke-virtual/range {v23 .. v23}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v23
-
-    invoke-static/range {v22 .. v23}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto/16 :goto_4
-
-    .line 747
-    :cond_15
-    invoke-virtual {v6, v9}, Lcom/android/internal/telephony/cdma/CdmaConnection;->update(Lcom/android/internal/telephony/DriverCall;)Z
-
-    move-result v4
-
-    .line 748
-    .local v4, changed:Z
-    if-nez v12, :cond_16
-
-    if-eqz v4, :cond_17
-
-    :cond_16
-    const/4 v12, 0x1
-
-    :goto_7
-    goto/16 :goto_4
-
+    .line 658
+    .end local v2           #cause:Lcom/android/internal/telephony/Connection$DisconnectCause;
     :cond_17
-    const/4 v12, 0x0
-
-    goto :goto_7
-
-    .line 775
-    .end local v4           #changed:Z
-    .end local v6           #conn:Lcom/android/internal/telephony/cdma/CdmaConnection;
-    .end local v9           #dc:Lcom/android/internal/telephony/DriverCall;
-    .end local v14           #isEmergencyCall:Z
-    .end local v15           #isPhoneInEcmMode:Z
-    :cond_18
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
-
-    move-object/from16 v22, v0
-
-    if-eqz v22, :cond_19
-
-    .line 776
-    const-string v22, "CDMA"
-
-    new-instance v23, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v23 .. v23}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v24, "Pending MO dropped before poll fg state:"
-
-    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->foregroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
-
-    move-object/from16 v24, v0
-
-    invoke-virtual/range {v24 .. v24}, Lcom/android/internal/telephony/cdma/CdmaCall;->getState()Lcom/android/internal/telephony/Call$State;
-
-    move-result-object v24
-
-    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    invoke-virtual/range {v23 .. v23}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v23
-
-    invoke-static/range {v22 .. v23}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 779
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->droppedDuringPoll:Ljava/util/ArrayList;
-
-    move-object/from16 v22, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
-
-    move-object/from16 v23, v0
-
-    invoke-virtual/range {v22 .. v23}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 780
-    const/16 v22, 0x0
-
-    move-object/from16 v0, v22
-
-    move-object/from16 v1, p0
-
-    iput-object v0, v1, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
-
-    .line 781
-    const/16 v22, 0x0
-
-    move/from16 v0, v22
-
-    move-object/from16 v1, p0
-
-    iput-boolean v0, v1, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->hangupPendingMO:Z
-
-    .line 782
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingCallInEcm:Z
-
-    move/from16 v22, v0
-
-    if-eqz v22, :cond_19
-
-    .line 783
-    const/16 v22, 0x0
-
-    move/from16 v0, v22
-
-    move-object/from16 v1, p0
-
-    iput-boolean v0, v1, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingCallInEcm:Z
-
-    .line 787
-    :cond_19
-    if-eqz v18, :cond_1a
-
-    .line 788
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
-
-    move-object/from16 v22, v0
-
-    move-object/from16 v0, v22
-
-    move-object/from16 v1, v18
-
-    invoke-virtual {v0, v1}, Lcom/android/internal/telephony/cdma/CDMAPhone;->notifyNewRingingConnection(Lcom/android/internal/telephony/Connection;)V
-
-    .line 794
-    :cond_1a
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->droppedDuringPoll:Ljava/util/ArrayList;
-
-    move-object/from16 v22, v0
-
-    invoke-virtual/range {v22 .. v22}, Ljava/util/ArrayList;->size()I
-
-    move-result v22
-
-    add-int/lit8 v13, v22, -0x1
-
-    :goto_8
-    if-ltz v13, :cond_1f
-
-    .line 795
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->droppedDuringPoll:Ljava/util/ArrayList;
-
-    move-object/from16 v22, v0
-
-    move-object/from16 v0, v22
-
-    invoke-virtual {v0, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Lcom/android/internal/telephony/cdma/CdmaConnection;
-
-    .line 797
-    .restart local v6       #conn:Lcom/android/internal/telephony/cdma/CdmaConnection;
-    invoke-virtual {v6}, Lcom/android/internal/telephony/cdma/CdmaConnection;->isIncoming()Z
-
-    move-result v22
-
-    if-eqz v22, :cond_1d
-
-    invoke-virtual {v6}, Lcom/android/internal/telephony/cdma/CdmaConnection;->getConnectTime()J
-
-    move-result-wide v22
-
-    const-wide/16 v24, 0x0
-
-    cmp-long v22, v22, v24
-
-    if-nez v22, :cond_1d
-
-    .line 800
-    iget-object v0, v6, Lcom/android/internal/telephony/cdma/CdmaConnection;->cause:Lcom/android/internal/telephony/Connection$DisconnectCause;
-
-    move-object/from16 v22, v0
-
-    sget-object v23, Lcom/android/internal/telephony/Connection$DisconnectCause;->LOCAL:Lcom/android/internal/telephony/Connection$DisconnectCause;
-
-    move-object/from16 v0, v22
-
-    move-object/from16 v1, v23
-
-    if-ne v0, v1, :cond_1c
-
-    .line 801
-    sget-object v3, Lcom/android/internal/telephony/Connection$DisconnectCause;->INCOMING_REJECTED:Lcom/android/internal/telephony/Connection$DisconnectCause;
-
-    .line 807
-    .local v3, cause:Lcom/android/internal/telephony/Connection$DisconnectCause;
-    :goto_9
-    new-instance v22, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v22 .. v22}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v23, "missed/rejected call, conn.cause="
-
-    invoke-virtual/range {v22 .. v23}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v22
-
-    iget-object v0, v6, Lcom/android/internal/telephony/cdma/CdmaConnection;->cause:Lcom/android/internal/telephony/Connection$DisconnectCause;
-
-    move-object/from16 v23, v0
-
-    invoke-virtual/range {v22 .. v23}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v22
-
-    invoke-virtual/range {v22 .. v22}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v22
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v22
-
-    invoke-virtual {v0, v1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->log(Ljava/lang/String;)V
-
-    .line 808
-    new-instance v22, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v22 .. v22}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v23, "setting cause to "
-
-    invoke-virtual/range {v22 .. v23}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v22
-
-    move-object/from16 v0, v22
-
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v22
-
-    invoke-virtual/range {v22 .. v22}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v22
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v22
-
-    invoke-virtual {v0, v1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->log(Ljava/lang/String;)V
-
-    .line 810
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->droppedDuringPoll:Ljava/util/ArrayList;
-
-    move-object/from16 v22, v0
-
-    move-object/from16 v0, v22
-
-    invoke-virtual {v0, v13}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
-
-    .line 811
-    invoke-virtual {v6, v3}, Lcom/android/internal/telephony/cdma/CdmaConnection;->onDisconnect(Lcom/android/internal/telephony/Connection$DisconnectCause;)V
-
-    .line 794
-    .end local v3           #cause:Lcom/android/internal/telephony/Connection$DisconnectCause;
-    :cond_1b
     :goto_a
-    add-int/lit8 v13, v13, -0x1
+    add-int/lit8 v12, v12, -0x1
 
     goto :goto_8
 
-    .line 803
-    :cond_1c
-    sget-object v3, Lcom/android/internal/telephony/Connection$DisconnectCause;->INCOMING_MISSED:Lcom/android/internal/telephony/Connection$DisconnectCause;
+    .line 667
+    :cond_18
+    sget-object v2, Lcom/android/internal/telephony/Connection$DisconnectCause;->INCOMING_MISSED:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
-    .restart local v3       #cause:Lcom/android/internal/telephony/Connection$DisconnectCause;
+    .restart local v2       #cause:Lcom/android/internal/telephony/Connection$DisconnectCause;
     goto :goto_9
 
-    .line 812
-    .end local v3           #cause:Lcom/android/internal/telephony/Connection$DisconnectCause;
-    :cond_1d
-    iget-object v0, v6, Lcom/android/internal/telephony/cdma/CdmaConnection;->cause:Lcom/android/internal/telephony/Connection$DisconnectCause;
+    .line 676
+    .end local v2           #cause:Lcom/android/internal/telephony/Connection$DisconnectCause;
+    :cond_19
+    iget-object v0, v5, Lcom/android/internal/telephony/cdma/CdmaConnection;->cause:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
-    move-object/from16 v22, v0
+    move-object/from16 v18, v0
 
-    sget-object v23, Lcom/android/internal/telephony/Connection$DisconnectCause;->LOCAL:Lcom/android/internal/telephony/Connection$DisconnectCause;
+    sget-object v19, Lcom/android/internal/telephony/Connection$DisconnectCause;->LOCAL:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
-    move-object/from16 v0, v22
+    move-object/from16 v0, v18
 
-    move-object/from16 v1, v23
+    move-object/from16 v1, v19
 
-    if-ne v0, v1, :cond_1e
+    if-ne v0, v1, :cond_1a
 
-    .line 814
+    .line 678
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->droppedDuringPoll:Ljava/util/ArrayList;
 
-    move-object/from16 v22, v0
+    move-object/from16 v18, v0
 
-    move-object/from16 v0, v22
+    move-object/from16 v0, v18
 
-    invoke-virtual {v0, v13}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
+    invoke-virtual {v0, v12}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 815
-    sget-object v22, Lcom/android/internal/telephony/Connection$DisconnectCause;->LOCAL:Lcom/android/internal/telephony/Connection$DisconnectCause;
+    .line 679
+    sget-object v18, Lcom/android/internal/telephony/Connection$DisconnectCause;->LOCAL:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
-    move-object/from16 v0, v22
+    move-object/from16 v0, v18
 
-    invoke-virtual {v6, v0}, Lcom/android/internal/telephony/cdma/CdmaConnection;->onDisconnect(Lcom/android/internal/telephony/Connection$DisconnectCause;)V
+    invoke-virtual {v5, v0}, Lcom/android/internal/telephony/cdma/CdmaConnection;->onDisconnect(Lcom/android/internal/telephony/Connection$DisconnectCause;)V
 
     goto :goto_a
 
-    .line 816
-    :cond_1e
-    iget-object v0, v6, Lcom/android/internal/telephony/cdma/CdmaConnection;->cause:Lcom/android/internal/telephony/Connection$DisconnectCause;
+    .line 680
+    :cond_1a
+    iget-object v0, v5, Lcom/android/internal/telephony/cdma/CdmaConnection;->cause:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
-    move-object/from16 v22, v0
+    move-object/from16 v18, v0
 
-    sget-object v23, Lcom/android/internal/telephony/Connection$DisconnectCause;->INVALID_NUMBER:Lcom/android/internal/telephony/Connection$DisconnectCause;
+    sget-object v19, Lcom/android/internal/telephony/Connection$DisconnectCause;->INVALID_NUMBER:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
-    move-object/from16 v0, v22
+    move-object/from16 v0, v18
 
-    move-object/from16 v1, v23
+    move-object/from16 v1, v19
 
-    if-ne v0, v1, :cond_1b
+    if-ne v0, v1, :cond_17
 
-    .line 817
+    .line 681
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->droppedDuringPoll:Ljava/util/ArrayList;
 
-    move-object/from16 v22, v0
+    move-object/from16 v18, v0
 
-    move-object/from16 v0, v22
+    move-object/from16 v0, v18
 
-    invoke-virtual {v0, v13}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
+    invoke-virtual {v0, v12}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 818
-    sget-object v22, Lcom/android/internal/telephony/Connection$DisconnectCause;->INVALID_NUMBER:Lcom/android/internal/telephony/Connection$DisconnectCause;
+    .line 682
+    sget-object v18, Lcom/android/internal/telephony/Connection$DisconnectCause;->INVALID_NUMBER:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
-    move-object/from16 v0, v22
+    move-object/from16 v0, v18
 
-    invoke-virtual {v6, v0}, Lcom/android/internal/telephony/cdma/CdmaConnection;->onDisconnect(Lcom/android/internal/telephony/Connection$DisconnectCause;)V
+    invoke-virtual {v5, v0}, Lcom/android/internal/telephony/cdma/CdmaConnection;->onDisconnect(Lcom/android/internal/telephony/Connection$DisconnectCause;)V
 
     goto :goto_a
 
-    .line 823
-    .end local v6           #conn:Lcom/android/internal/telephony/cdma/CdmaConnection;
-    :cond_1f
+    .line 687
+    .end local v5           #conn:Lcom/android/internal/telephony/cdma/CdmaConnection;
+    :cond_1b
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->droppedDuringPoll:Ljava/util/ArrayList;
 
-    move-object/from16 v22, v0
+    move-object/from16 v18, v0
 
-    invoke-virtual/range {v22 .. v22}, Ljava/util/ArrayList;->size()I
+    invoke-virtual/range {v18 .. v18}, Ljava/util/ArrayList;->size()I
 
-    move-result v22
+    move-result v18
 
-    if-lez v22, :cond_20
+    if-lez v18, :cond_1c
 
-    .line 824
+    .line 688
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v0, v0, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
-    move-object/from16 v22, v0
+    move-object/from16 v18, v0
 
-    const/16 v23, 0x5
+    const/16 v19, 0x5
 
     move-object/from16 v0, p0
 
-    move/from16 v1, v23
+    move/from16 v1, v19
 
     invoke-virtual {v0, v1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->obtainNoPollCompleteMessage(I)Landroid/os/Message;
 
-    move-result-object v23
+    move-result-object v19
 
-    invoke-interface/range {v22 .. v23}, Lcom/android/internal/telephony/CommandsInterface;->getLastCallFailCause(Landroid/os/Message;)V
+    invoke-interface/range {v18 .. v19}, Lcom/android/internal/telephony/CommandsInterface;->getLastCallFailCause(Landroid/os/Message;)V
 
-    .line 828
-    :cond_20
-    if-eqz v17, :cond_21
+    .line 692
+    :cond_1c
+    if-eqz v14, :cond_1d
 
-    .line 829
+    .line 693
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pollCallsAfterDelay()V
 
-    .line 837
-    :cond_21
-    if-nez v18, :cond_22
+    .line 701
+    :cond_1d
+    if-nez v15, :cond_1e
 
-    if-eqz v12, :cond_23
+    if-eqz v11, :cond_1f
 
-    .line 838
-    :cond_22
+    .line 702
+    :cond_1e
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->internalClearDisconnected()V
 
-    .line 841
-    :cond_23
+    .line 705
+    :cond_1f
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->updatePhoneState()V
 
-    .line 843
-    if-eqz v21, :cond_24
+    .line 707
+    if-eqz v17, :cond_20
 
-    .line 844
+    .line 708
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
-    move-object/from16 v22, v0
+    move-object/from16 v18, v0
 
-    invoke-virtual/range {v22 .. v22}, Lcom/android/internal/telephony/cdma/CDMAPhone;->notifyUnknownConnection()V
+    invoke-virtual/range {v18 .. v18}, Lcom/android/internal/telephony/cdma/CDMAPhone;->notifyUnknownConnection()V
 
-    .line 847
-    :cond_24
-    if-nez v12, :cond_25
+    .line 711
+    :cond_20
+    if-nez v11, :cond_21
 
-    if-eqz v18, :cond_4
+    if-eqz v15, :cond_2
 
-    .line 848
-    :cond_25
+    .line 712
+    :cond_21
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
-    move-object/from16 v22, v0
+    move-object/from16 v18, v0
 
-    invoke-virtual/range {v22 .. v22}, Lcom/android/internal/telephony/cdma/CDMAPhone;->notifyPreciseCallStateChanged()V
+    invoke-virtual/range {v18 .. v18}, Lcom/android/internal/telephony/cdma/CDMAPhone;->notifyPreciseCallStateChanged()V
 
     goto/16 :goto_3
 .end method
@@ -5004,7 +3636,7 @@
     .end annotation
 
     .prologue
-    .line 934
+    .line 798
     invoke-virtual {p1}, Lcom/android/internal/telephony/cdma/CdmaCall;->getConnections()Ljava/util/List;
 
     move-result-object v0
@@ -5015,7 +3647,7 @@
 
     if-nez v0, :cond_0
 
-    .line 935
+    .line 799
     new-instance v0, Lcom/android/internal/telephony/CallStateException;
 
     const-string/jumbo v1, "no connections in call"
@@ -5024,19 +3656,19 @@
 
     throw v0
 
-    .line 938
+    .line 802
     :cond_0
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->ringingCall:Lcom/android/internal/telephony/cdma/CdmaCall;
 
     if-ne p1, v0, :cond_1
 
-    .line 939
+    .line 803
     const-string v0, "(ringing) hangup waiting or background"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->log(Ljava/lang/String;)V
 
-    .line 940
-    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    .line 804
+    iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-direct {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->obtainCompleteMessage()Landroid/os/Message;
 
@@ -5044,37 +3676,37 @@
 
     invoke-interface {v0, v1}, Lcom/android/internal/telephony/CommandsInterface;->hangupWaitingOrBackground(Landroid/os/Message;)V
 
-    .line 964
+    .line 828
     :goto_0
     invoke-virtual {p1}, Lcom/android/internal/telephony/cdma/CdmaCall;->onHangupLocal()V
 
-    .line 965
+    .line 829
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/cdma/CDMAPhone;->notifyPreciseCallStateChanged()V
 
-    .line 966
+    .line 830
     return-void
 
-    .line 941
+    .line 805
     :cond_1
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->foregroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
 
     if-ne p1, v0, :cond_3
 
-    .line 942
+    .line 806
     invoke-virtual {p1}, Lcom/android/internal/telephony/cdma/CdmaCall;->isDialingOrAlerting()Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    .line 944
+    .line 808
     const-string v0, "(foregnd) hangup dialing or alerting..."
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->log(Ljava/lang/String;)V
 
-    .line 946
+    .line 810
     invoke-virtual {p1}, Lcom/android/internal/telephony/cdma/CdmaCall;->getConnections()Ljava/util/List;
 
     move-result-object v0
@@ -5093,19 +3725,19 @@
 
     goto :goto_0
 
-    .line 948
+    .line 812
     :cond_2
     invoke-virtual {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->hangupForegroundResumeBackground()V
 
     goto :goto_0
 
-    .line 950
+    .line 814
     :cond_3
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->backgroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
 
     if-ne p1, v0, :cond_5
 
-    .line 951
+    .line 815
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->ringingCall:Lcom/android/internal/telephony/cdma/CdmaCall;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/cdma/CdmaCall;->isRinging()Z
@@ -5114,23 +3746,23 @@
 
     if-eqz v0, :cond_4
 
-    .line 953
+    .line 817
     const-string v0, "hangup all conns in background call"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->log(Ljava/lang/String;)V
 
-    .line 955
+    .line 819
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->hangupAllConnections(Lcom/android/internal/telephony/cdma/CdmaCall;)V
 
     goto :goto_0
 
-    .line 957
+    .line 821
     :cond_4
     invoke-virtual {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->hangupWaitingOrBackground()V
 
     goto :goto_0
 
-    .line 960
+    .line 824
     :cond_5
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -5167,133 +3799,6 @@
     throw v0
 .end method
 
-.method hangup(Lcom/android/internal/telephony/cdma/CdmaCall;Lcom/android/internal/telephony/Connection$DisconnectCause;)V
-    .locals 4
-    .parameter "call"
-    .parameter "discRingingCallCause"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/android/internal/telephony/CallStateException;
-        }
-    .end annotation
-
-    .prologue
-    .line 972
-    invoke-virtual {p1}, Lcom/android/internal/telephony/cdma/CdmaCall;->getConnections()Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/List;->size()I
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    .line 973
-    new-instance v1, Lcom/android/internal/telephony/CallStateException;
-
-    const-string/jumbo v2, "no connections in call"
-
-    invoke-direct {v1, v2}, Lcom/android/internal/telephony/CallStateException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    .line 976
-    :cond_0
-    iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->ringingCall:Lcom/android/internal/telephony/cdma/CdmaCall;
-
-    if-ne p1, v1, :cond_2
-
-    .line 977
-    const-string v1, "(ringing) hangup waiting or background"
-
-    invoke-virtual {p0, v1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->log(Ljava/lang/String;)V
-
-    .line 978
-    iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
-
-    invoke-direct {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->obtainCompleteMessage()Landroid/os/Message;
-
-    move-result-object v2
-
-    invoke-interface {v1, v2}, Lcom/android/internal/telephony/CommandsInterface;->hangupWaitingOrBackground(Landroid/os/Message;)V
-
-    .line 984
-    invoke-virtual {p1}, Lcom/android/internal/telephony/cdma/CdmaCall;->onHangupLocal()V
-
-    .line 989
-    iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->ringingCall:Lcom/android/internal/telephony/cdma/CdmaCall;
-
-    if-ne p1, v1, :cond_1
-
-    .line 990
-    invoke-virtual {p1}, Lcom/android/internal/telephony/cdma/CdmaCall;->getConnections()Ljava/util/List;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/android/internal/telephony/cdma/CdmaConnection;
-
-    move-object v0, v1
-
-    check-cast v0, Lcom/android/internal/telephony/cdma/CdmaConnection;
-
-    .line 991
-    .local v0, ringingConn:Lcom/android/internal/telephony/cdma/CdmaConnection;
-    iput-object p2, v0, Lcom/android/internal/telephony/cdma/CdmaConnection;->cause:Lcom/android/internal/telephony/Connection$DisconnectCause;
-
-    .line 994
-    .end local v0           #ringingConn:Lcom/android/internal/telephony/cdma/CdmaConnection;
-    :cond_1
-    iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
-
-    invoke-virtual {v1}, Lcom/android/internal/telephony/cdma/CDMAPhone;->notifyPreciseCallStateChanged()V
-
-    .line 995
-    return-void
-
-    .line 980
-    :cond_2
-    new-instance v1, Ljava/lang/RuntimeException;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "CdmaCall "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, "does not belong to CdmaCallTracker "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-.end method
-
 .method hangup(Lcom/android/internal/telephony/cdma/CdmaConnection;)V
     .locals 4
     .parameter "conn"
@@ -5304,12 +3809,12 @@
     .end annotation
 
     .prologue
-    .line 857
+    .line 721
     iget-object v1, p1, Lcom/android/internal/telephony/cdma/CdmaConnection;->owner:Lcom/android/internal/telephony/cdma/CdmaCallTracker;
 
     if-eq v1, p0, :cond_0
 
-    .line 858
+    .line 722
     new-instance v1, Lcom/android/internal/telephony/CallStateException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -5344,31 +3849,31 @@
 
     throw v1
 
-    .line 862
+    .line 726
     :cond_0
     iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
 
     if-ne p1, v1, :cond_1
 
-    .line 866
+    .line 730
     const-string v1, "hangup: set hangupPendingMO to true"
 
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->log(Ljava/lang/String;)V
 
-    .line 867
+    .line 731
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->hangupPendingMO:Z
 
-    .line 896
+    .line 760
     :goto_0
     invoke-virtual {p1}, Lcom/android/internal/telephony/cdma/CdmaConnection;->onHangupLocal()V
 
-    .line 897
+    .line 761
     :goto_1
     return-void
 
-    .line 868
+    .line 732
     :cond_1
     invoke-virtual {p1}, Lcom/android/internal/telephony/cdma/CdmaConnection;->getCall()Lcom/android/internal/telephony/cdma/CdmaCall;
 
@@ -5388,23 +3893,23 @@
 
     if-ne v1, v2, :cond_2
 
-    .line 881
+    .line 745
     invoke-virtual {p1}, Lcom/android/internal/telephony/cdma/CdmaConnection;->onLocalDisconnect()V
 
-    .line 882
+    .line 746
     invoke-direct {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->updatePhoneState()V
 
-    .line 883
+    .line 747
     iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
     invoke-virtual {v1}, Lcom/android/internal/telephony/cdma/CDMAPhone;->notifyPreciseCallStateChanged()V
 
     goto :goto_1
 
-    .line 887
+    .line 751
     :cond_2
     :try_start_0
-    iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v1, p0, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-virtual {p1}, Lcom/android/internal/telephony/cdma/CdmaConnection;->getCDMAIndex()I
 
@@ -5420,11 +3925,11 @@
 
     goto :goto_0
 
-    .line 888
+    .line 752
     :catch_0
     move-exception v0
 
-    .line 891
+    .line 755
     .local v0, ex:Lcom/android/internal/telephony/CallStateException;
     const-string v1, "CDMA"
 
@@ -5460,12 +3965,12 @@
     .end annotation
 
     .prologue
-    .line 1465
+    .line 1213
     const-string v0, "hangupActiveCall"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->log(Ljava/lang/String;)V
 
-    .line 1467
+    .line 1215
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->foregroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/cdma/CdmaCall;->getConnections()Ljava/util/List;
@@ -5478,7 +3983,7 @@
 
     if-nez v0, :cond_0
 
-    .line 1468
+    .line 1216
     new-instance v0, Lcom/android/internal/telephony/CallStateException;
 
     const-string/jumbo v1, "no connections in call"
@@ -5487,13 +3992,13 @@
 
     throw v0
 
-    .line 1471
+    .line 1219
     :cond_0
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->foregroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->hangupAllConnections(Lcom/android/internal/telephony/cdma/CdmaCall;)V
 
-    .line 1472
+    .line 1220
     return-void
 .end method
 
@@ -5501,13 +4006,13 @@
     .locals 2
 
     .prologue
-    .line 1460
+    .line 1208
     const-string v0, "hangupAll"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->log(Ljava/lang/String;)V
 
-    .line 1461
-    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    .line 1209
+    iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-direct {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->obtainCompleteMessage()Landroid/os/Message;
 
@@ -5515,7 +4020,7 @@
 
     invoke-interface {v0, v1}, Lcom/android/internal/telephony/CommandsInterface;->hangupAll(Landroid/os/Message;)V
 
-    .line 1462
+    .line 1210
     return-void
 .end method
 
@@ -5529,7 +4034,7 @@
     .end annotation
 
     .prologue
-    .line 1026
+    .line 860
     :try_start_0
     iget-object v4, p1, Lcom/android/internal/telephony/cdma/CdmaCall;->connections:Ljava/util/ArrayList;
 
@@ -5537,7 +4042,7 @@
 
     move-result v1
 
-    .line 1027
+    .line 861
     .local v1, count:I
     const/4 v3, 0x0
 
@@ -5545,7 +4050,7 @@
     :goto_0
     if-ge v3, v1, :cond_0
 
-    .line 1028
+    .line 862
     iget-object v4, p1, Lcom/android/internal/telephony/cdma/CdmaCall;->connections:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -5554,9 +4059,9 @@
 
     check-cast v0, Lcom/android/internal/telephony/cdma/CdmaConnection;
 
-    .line 1029
+    .line 863
     .local v0, cn:Lcom/android/internal/telephony/cdma/CdmaConnection;
-    iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v4, p0, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/cdma/CdmaConnection;->getCDMAIndex()I
 
@@ -5570,19 +4075,19 @@
     :try_end_0
     .catch Lcom/android/internal/telephony/CallStateException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1027
+    .line 861
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 1031
+    .line 865
     .end local v0           #cn:Lcom/android/internal/telephony/cdma/CdmaConnection;
     .end local v1           #count:I
     .end local v3           #i:I
     :catch_0
     move-exception v2
 
-    .line 1032
+    .line 866
     .local v2, ex:Lcom/android/internal/telephony/CallStateException;
     const-string v4, "CDMA"
 
@@ -5606,7 +4111,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1034
+    .line 868
     .end local v2           #ex:Lcom/android/internal/telephony/CallStateException;
     :cond_0
     return-void
@@ -5623,14 +4128,14 @@
     .end annotation
 
     .prologue
-    .line 1012
+    .line 846
     iget-object v3, p1, Lcom/android/internal/telephony/cdma/CdmaCall;->connections:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .line 1013
+    .line 847
     .local v1, count:I
     const/4 v2, 0x0
 
@@ -5638,7 +4143,7 @@
     :goto_0
     if-ge v2, v1, :cond_1
 
-    .line 1014
+    .line 848
     iget-object v3, p1, Lcom/android/internal/telephony/cdma/CdmaCall;->connections:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -5647,7 +4152,7 @@
 
     check-cast v0, Lcom/android/internal/telephony/cdma/CdmaConnection;
 
-    .line 1015
+    .line 849
     .local v0, cn:Lcom/android/internal/telephony/cdma/CdmaConnection;
     invoke-virtual {v0}, Lcom/android/internal/telephony/cdma/CdmaConnection;->getCDMAIndex()I
 
@@ -5655,8 +4160,8 @@
 
     if-ne v3, p2, :cond_0
 
-    .line 1016
-    iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    .line 850
+    iget-object v3, p0, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-direct {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->obtainCompleteMessage()Landroid/os/Message;
 
@@ -5664,16 +4169,16 @@
 
     invoke-interface {v3, p2, v4}, Lcom/android/internal/telephony/CommandsInterface;->hangupConnection(ILandroid/os/Message;)V
 
-    .line 1017
+    .line 851
     return-void
 
-    .line 1013
+    .line 847
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 1021
+    .line 855
     .end local v0           #cn:Lcom/android/internal/telephony/cdma/CdmaConnection;
     :cond_1
     new-instance v3, Lcom/android/internal/telephony/CallStateException;
@@ -5689,13 +4194,13 @@
     .locals 2
 
     .prologue
-    .line 1006
+    .line 840
     const-string v0, "hangupForegroundResumeBackground"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->log(Ljava/lang/String;)V
 
-    .line 1007
-    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    .line 841
+    iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-direct {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->obtainCompleteMessage()Landroid/os/Message;
 
@@ -5703,7 +4208,7 @@
 
     invoke-interface {v0, v1}, Lcom/android/internal/telephony/CommandsInterface;->hangupForegroundResumeBackground(Landroid/os/Message;)V
 
-    .line 1008
+    .line 842
     return-void
 .end method
 
@@ -5711,13 +4216,13 @@
     .locals 2
 
     .prologue
-    .line 1000
+    .line 834
     const-string v0, "hangupWaitingOrBackground"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->log(Ljava/lang/String;)V
 
-    .line 1001
-    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    .line 835
+    iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-direct {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->obtainCompleteMessage()Landroid/os/Message;
 
@@ -5725,7 +4230,7 @@
 
     invoke-interface {v0, v1}, Lcom/android/internal/telephony/CommandsInterface;->hangupWaitingOrBackground(Landroid/os/Message;)V
 
-    .line 1002
+    .line 836
     return-void
 .end method
 
@@ -5733,7 +4238,7 @@
     .locals 1
 
     .prologue
-    .line 1347
+    .line 1124
     iget-boolean v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->mIsInEmergencyCall:Z
 
     return v0
@@ -5744,7 +4249,7 @@
     .parameter "msg"
 
     .prologue
-    .line 1351
+    .line 1128
     const-string v0, "CDMA"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -5767,7 +4272,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1352
+    .line 1129
     return-void
 .end method
 
@@ -5778,18 +4283,18 @@
     .parameter "obj"
 
     .prologue
-    .line 181
+    .line 156
     new-instance v0, Landroid/os/Registrant;
 
     invoke-direct {v0, p1, p2, p3}, Landroid/os/Registrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 182
+    .line 157
     .local v0, r:Landroid/os/Registrant;
     iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->callWaitingRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v1, v0}, Landroid/os/RegistrantList;->add(Landroid/os/Registrant;)V
 
-    .line 183
+    .line 158
     return-void
 .end method
 
@@ -5800,18 +4305,18 @@
     .parameter "obj"
 
     .prologue
-    .line 172
+    .line 147
     new-instance v0, Landroid/os/Registrant;
 
     invoke-direct {v0, p1, p2, p3}, Landroid/os/Registrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 173
+    .line 148
     .local v0, r:Landroid/os/Registrant;
     iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->voiceCallEndedRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v1, v0}, Landroid/os/RegistrantList;->add(Landroid/os/Registrant;)V
 
-    .line 174
+    .line 149
     return-void
 .end method
 
@@ -5824,32 +4329,32 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 160
+    .line 135
     new-instance v0, Landroid/os/Registrant;
 
     invoke-direct {v0, p1, p2, p3}, Landroid/os/Registrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 161
+    .line 136
     .local v0, r:Landroid/os/Registrant;
     iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->voiceCallStartedRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v1, v0}, Landroid/os/RegistrantList;->add(Landroid/os/Registrant;)V
 
-    .line 163
-    iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->state:Lcom/android/internal/telephony/PhoneConstants$State;
+    .line 138
+    iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->state:Lcom/android/internal/telephony/Phone$State;
 
-    sget-object v2, Lcom/android/internal/telephony/PhoneConstants$State;->IDLE:Lcom/android/internal/telephony/PhoneConstants$State;
+    sget-object v2, Lcom/android/internal/telephony/Phone$State;->IDLE:Lcom/android/internal/telephony/Phone$State;
 
     if-eq v1, v2, :cond_0
 
-    .line 164
+    .line 139
     new-instance v1, Landroid/os/AsyncResult;
 
     invoke-direct {v1, v3, v3, v3}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Registrant;->notifyRegistrant(Landroid/os/AsyncResult;)V
 
-    .line 166
+    .line 141
     :cond_0
     return-void
 .end method
@@ -5863,7 +4368,7 @@
     .end annotation
 
     .prologue
-    .line 393
+    .line 297
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->ringingCall:Lcom/android/internal/telephony/cdma/CdmaCall;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/cdma/CdmaCall;->getState()Lcom/android/internal/telephony/Call$State;
@@ -5876,8 +4381,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 394
-    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    .line 298
+    iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-direct {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->obtainCompleteMessage()Landroid/os/Message;
 
@@ -5885,10 +4390,10 @@
 
     invoke-interface {v0, v1}, Lcom/android/internal/telephony/CommandsInterface;->rejectCall(Landroid/os/Message;)V
 
-    .line 398
+    .line 302
     return-void
 
-    .line 396
+    .line 300
     :cond_0
     new-instance v0, Lcom/android/internal/telephony/CallStateException;
 
@@ -5905,17 +4410,17 @@
     .parameter "result"
 
     .prologue
-    .line 1500
+    .line 1248
     const-string/jumbo v0, "resetAccumulatedCallMeter"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->log(Ljava/lang/String;)V
 
-    .line 1501
-    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    .line 1249
+    iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-interface {v0, p1, p2}, Lcom/android/internal/telephony/CommandsInterface;->resetAccumulatedCallMeter(Ljava/lang/String;Landroid/os/Message;)V
 
-    .line 1502
+    .line 1250
     return-void
 .end method
 
@@ -5929,12 +4434,12 @@
     .end annotation
 
     .prologue
-    .line 901
+    .line 765
     iget-object v1, p1, Lcom/android/internal/telephony/cdma/CdmaConnection;->owner:Lcom/android/internal/telephony/cdma/CdmaCallTracker;
 
     if-eq v1, p0, :cond_0
 
-    .line 902
+    .line 766
     new-instance v1, Lcom/android/internal/telephony/CallStateException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -5969,10 +4474,10 @@
 
     throw v1
 
-    .line 906
+    .line 770
     :cond_0
     :try_start_0
-    iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v1, p0, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-virtual {p1}, Lcom/android/internal/telephony/cdma/CdmaConnection;->getCDMAIndex()I
 
@@ -5988,15 +4493,15 @@
     :try_end_0
     .catch Lcom/android/internal/telephony/CallStateException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 914
+    .line 778
     :goto_0
     return-void
 
-    .line 908
+    .line 772
     :catch_0
     move-exception v0
 
-    .line 911
+    .line 775
     .local v0, ex:Lcom/android/internal/telephony/CallStateException;
     const-string v1, "CDMA"
 
@@ -6030,17 +4535,17 @@
     .parameter "result"
 
     .prologue
-    .line 1495
+    .line 1243
     const-string/jumbo v0, "setAccumulatedCallMeterMaximum"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->log(Ljava/lang/String;)V
 
-    .line 1496
-    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    .line 1244
+    iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/internal/telephony/CommandsInterface;->setAccumulatedCallMeterMaximum(Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
 
-    .line 1497
+    .line 1245
     return-void
 .end method
 
@@ -6049,11 +4554,11 @@
     .parameter "mute"
 
     .prologue
-    .line 920
+    .line 784
     iput-boolean p1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->desiredMute:Z
 
-    .line 921
-    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    .line 785
+    iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     iget-boolean v1, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->desiredMute:Z
 
@@ -6061,7 +4566,7 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/internal/telephony/CommandsInterface;->setMute(ZLandroid/os/Message;)V
 
-    .line 922
+    .line 786
     return-void
 .end method
 
@@ -6073,17 +4578,17 @@
     .parameter "result"
 
     .prologue
-    .line 1505
+    .line 1253
     const-string/jumbo v0, "setPpuAndCurrency"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->log(Ljava/lang/String;)V
 
-    .line 1506
-    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    .line 1254
+    iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-interface {v0, p1, p2, p3, p4}, Lcom/android/internal/telephony/CommandsInterface;->setPpuAndCurrency(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
 
-    .line 1507
+    .line 1255
     return-void
 .end method
 
@@ -6096,7 +4601,7 @@
     .end annotation
 
     .prologue
-    .line 403
+    .line 307
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->ringingCall:Lcom/android/internal/telephony/cdma/CdmaCall;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/cdma/CdmaCall;->getState()Lcom/android/internal/telephony/Call$State;
@@ -6107,7 +4612,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 404
+    .line 308
     new-instance v0, Lcom/android/internal/telephony/CallStateException;
 
     const-string v1, "cannot be in the incoming state"
@@ -6116,7 +4621,7 @@
 
     throw v0
 
-    .line 405
+    .line 309
     :cond_0
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->foregroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
 
@@ -6132,16 +4637,16 @@
 
     if-le v0, v1, :cond_1
 
-    .line 406
+    .line 310
     invoke-direct {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->flashAndSetGenericTrue()V
 
-    .line 414
+    .line 318
     :goto_0
     return-void
 
-    .line 412
+    .line 316
     :cond_1
-    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v0, p0, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     const-string v1, ""
 
@@ -6161,12 +4666,12 @@
     .parameter "h"
 
     .prologue
-    .line 186
+    .line 161
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->callWaitingRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v0, p1}, Landroid/os/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 187
+    .line 162
     return-void
 .end method
 
@@ -6175,12 +4680,12 @@
     .parameter "h"
 
     .prologue
-    .line 177
+    .line 152
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->voiceCallEndedRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v0, p1}, Landroid/os/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 178
+    .line 153
     return-void
 .end method
 
@@ -6189,12 +4694,12 @@
     .parameter "h"
 
     .prologue
-    .line 168
+    .line 143
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->voiceCallStartedRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v0, p1}, Landroid/os/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 169
+    .line 144
     return-void
 .end method
 
@@ -6208,7 +4713,7 @@
     .end annotation
 
     .prologue
-    .line 1455
+    .line 1203
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->vtDial(Ljava/lang/String;I)Lcom/android/internal/telephony/Connection;
@@ -6233,17 +4738,17 @@
 
     const/4 v6, 0x0
 
-    .line 1391
+    .line 1139
     invoke-virtual {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->clearDisconnected()V
 
-    .line 1393
+    .line 1141
     invoke-virtual {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->canDial()Z
 
     move-result v3
 
     if-nez v3, :cond_0
 
-    .line 1394
+    .line 1142
     new-instance v3, Lcom/android/internal/telephony/CallStateException;
 
     const-string v4, "cannot dial in current state"
@@ -6252,7 +4757,7 @@
 
     throw v3
 
-    .line 1397
+    .line 1145
     :cond_0
     const-string/jumbo v3, "ril.cdma.inecmmode"
 
@@ -6262,7 +4767,7 @@
 
     move-result-object v0
 
-    .line 1398
+    .line 1146
     .local v0, inEcm:Ljava/lang/String;
     const-string/jumbo v3, "true"
 
@@ -6270,30 +4775,30 @@
 
     move-result v2
 
-    .line 1399
+    .line 1147
     .local v2, isPhoneInEcmMode:Z
     invoke-static {p1}, Landroid/telephony/PhoneNumberUtils;->isEmergencyNumber(Ljava/lang/String;)Z
 
     move-result v1
 
-    .line 1402
+    .line 1150
     .local v1, isEmergencyCall:Z
     if-eqz v2, :cond_1
 
     if-eqz v1, :cond_1
 
-    .line 1403
+    .line 1151
     iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
     invoke-direct {p0, v7}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->handleEcmTimer(I)V
 
-    .line 1409
+    .line 1157
     :cond_1
     iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->foregroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
 
     invoke-virtual {v3, v6}, Lcom/android/internal/telephony/cdma/CdmaCall;->setGeneric(Z)V
 
-    .line 1414
+    .line 1162
     iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->foregroundCall:Lcom/android/internal/telephony/cdma/CdmaCall;
 
     invoke-virtual {v3}, Lcom/android/internal/telephony/cdma/CdmaCall;->getState()Lcom/android/internal/telephony/Call$State;
@@ -6304,16 +4809,16 @@
 
     if-ne v3, v4, :cond_2
 
-    .line 1415
+    .line 1163
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->dialThreeWay(Ljava/lang/String;)Lcom/android/internal/telephony/Connection;
 
     move-result-object v3
 
-    .line 1450
+    .line 1198
     :goto_0
     return-object v3
 
-    .line 1418
+    .line 1166
     :cond_2
     new-instance v3, Lcom/android/internal/telephony/cdma/CdmaConnection;
 
@@ -6329,10 +4834,10 @@
 
     iput-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
 
-    .line 1419
+    .line 1167
     iput-boolean v6, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->hangupPendingMO:Z
 
-    .line 1421
+    .line 1169
     iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
 
     iget-object v3, v3, Lcom/android/internal/telephony/cdma/CdmaConnection;->address:Ljava/lang/String;
@@ -6361,7 +4866,7 @@
 
     if-ltz v3, :cond_4
 
-    .line 1424
+    .line 1172
     :cond_3
     iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
 
@@ -6369,40 +4874,40 @@
 
     iput-object v4, v3, Lcom/android/internal/telephony/cdma/CdmaConnection;->cause:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
-    .line 1428
+    .line 1176
     invoke-virtual {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pollCallsWhenSafe()V
 
-    .line 1447
+    .line 1195
     :goto_1
     invoke-direct {p0}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->updatePhoneState()V
 
-    .line 1448
+    .line 1196
     iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
     invoke-virtual {v3}, Lcom/android/internal/telephony/cdma/CDMAPhone;->notifyPreciseCallStateChanged()V
 
-    .line 1450
+    .line 1198
     iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
 
     goto :goto_0
 
-    .line 1431
+    .line 1179
     :cond_4
     invoke-virtual {p0, v6}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->setMute(Z)V
 
-    .line 1434
+    .line 1182
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->disableDataCallInEmergencyCall(Ljava/lang/String;)V
 
-    .line 1437
+    .line 1185
     if-eqz v2, :cond_5
 
     if-eqz v2, :cond_6
 
     if-eqz v1, :cond_6
 
-    .line 1438
+    .line 1186
     :cond_5
-    iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v3, p0, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingMO:Lcom/android/internal/telephony/cdma/CdmaConnection;
 
@@ -6416,13 +4921,13 @@
 
     goto :goto_1
 
-    .line 1440
+    .line 1188
     :cond_6
     iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
     invoke-virtual {v3}, Lcom/android/internal/telephony/cdma/CDMAPhone;->exitEmergencyCallbackMode()V
 
-    .line 1441
+    .line 1189
     iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
     const/16 v4, 0xe
@@ -6431,10 +4936,10 @@
 
     invoke-virtual {v3, p0, v4, v5}, Lcom/android/internal/telephony/cdma/CDMAPhone;->setOnEcbModeExitResponse(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 1442
+    .line 1190
     iput p2, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingCallClirMode:I
 
-    .line 1443
+    .line 1191
     iput-boolean v7, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->pendingCallInEcm:Z
 
     goto :goto_1

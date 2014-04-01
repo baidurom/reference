@@ -25,8 +25,6 @@
 
 .field public static final MIC:I = 0x1
 
-.field public static final REMOTE_SUBMIX_SOURCE:I = 0x8
-
 .field public static final VOICE_CALL:I = 0x4
 
 .field public static final VOICE_COMMUNICATION:I = 0x7
@@ -48,10 +46,10 @@
     .parameter
 
     .prologue
-    .line 165
+    .line 153
     iput-object p1, p0, Landroid/media/MediaRecorder$AudioSource;->this$0:Landroid/media/MediaRecorder;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

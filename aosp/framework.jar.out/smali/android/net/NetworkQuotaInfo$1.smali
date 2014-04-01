@@ -33,7 +33,7 @@
 
     .prologue
     .line 72
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -45,7 +45,7 @@
     .parameter "in"
 
     .prologue
-    .line 75
+    .line 74
     new-instance v0, Landroid/net/NetworkQuotaInfo;
 
     invoke-direct {v0, p1}, Landroid/net/NetworkQuotaInfo;-><init>(Landroid/os/Parcel;)V
@@ -71,7 +71,7 @@
     .parameter "size"
 
     .prologue
-    .line 80
+    .line 78
     new-array v0, p1, [Landroid/net/NetworkQuotaInfo;
 
     return-object v0

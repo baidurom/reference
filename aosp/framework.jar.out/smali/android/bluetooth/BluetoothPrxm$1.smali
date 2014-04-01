@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 61
+    .line 63
     iput-object p1, p0, Landroid/bluetooth/BluetoothPrxm$1;->this$0:Landroid/bluetooth/BluetoothPrxm;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -43,7 +43,7 @@
     .parameter "service"
 
     .prologue
-    .line 65
+    .line 67
     iget-object v0, p0, Landroid/bluetooth/BluetoothPrxm$1;->this$0:Landroid/bluetooth/BluetoothPrxm;
 
     invoke-static {p2}, Lcom/mediatek/bluetooth/service/IBluetoothPrxm$Stub;->asInterface(Landroid/os/IBinder;)Lcom/mediatek/bluetooth/service/IBluetoothPrxm;
@@ -52,7 +52,7 @@
 
     iput-object v1, v0, Landroid/bluetooth/BluetoothPrxm;->mService:Lcom/mediatek/bluetooth/service/IBluetoothPrxm;
 
-    .line 66
+    .line 68
     return-void
 .end method
 
@@ -61,13 +61,13 @@
     .parameter "className"
 
     .prologue
-    .line 69
+    .line 71
     iget-object v0, p0, Landroid/bluetooth/BluetoothPrxm$1;->this$0:Landroid/bluetooth/BluetoothPrxm;
 
     const/4 v1, 0x0
 
     iput-object v1, v0, Landroid/bluetooth/BluetoothPrxm;->mService:Lcom/mediatek/bluetooth/service/IBluetoothPrxm;
 
-    .line 70
+    .line 72
     return-void
 .end method

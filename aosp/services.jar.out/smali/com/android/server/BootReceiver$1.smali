@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 66
+    .line 61
     iput-object p1, p0, Lcom/android/server/BootReceiver$1;->this$0:Lcom/android/server/BootReceiver;
 
     iput-object p2, p0, Lcom/android/server/BootReceiver$1;->val$context:Landroid/content/Context;
@@ -40,99 +40,62 @@
 
 # virtual methods
 .method public run()V
-    .locals 4
+    .locals 3
 
     .prologue
-    .line 70
+    .line 65
     :try_start_0
-    iget-object v2, p0, Lcom/android/server/BootReceiver$1;->this$0:Lcom/android/server/BootReceiver;
+    iget-object v1, p0, Lcom/android/server/BootReceiver$1;->this$0:Lcom/android/server/BootReceiver;
 
-    iget-object v3, p0, Lcom/android/server/BootReceiver$1;->val$context:Landroid/content/Context;
+    iget-object v2, p0, Lcom/android/server/BootReceiver$1;->val$context:Landroid/content/Context;
 
     #calls: Lcom/android/server/BootReceiver;->logBootEvents(Landroid/content/Context;)V
-    invoke-static {v2, v3}, Lcom/android/server/BootReceiver;->access$000(Lcom/android/server/BootReceiver;Landroid/content/Context;)V
+    invoke-static {v1, v2}, Lcom/android/server/BootReceiver;->access$000(Lcom/android/server/BootReceiver;Landroid/content/Context;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 75
+    .line 70
     :goto_0
-    const/4 v1, 0x0
-
-    .line 77
-    .local v1, onlyCore:Z
     :try_start_1
-    const-string v2, "package"
+    iget-object v1, p0, Lcom/android/server/BootReceiver$1;->this$0:Lcom/android/server/BootReceiver;
 
-    invoke-static {v2}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
-
-    move-result-object v2
-
-    invoke-static {v2}, Landroid/content/pm/IPackageManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/content/pm/IPackageManager;
-
-    move-result-object v2
-
-    invoke-interface {v2}, Landroid/content/pm/IPackageManager;->isOnlyCoreApps()Z
-    :try_end_1
-    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_2
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
-
-    move-result v1
-
-    .line 81
-    :goto_1
-    if-nez v1, :cond_0
-
-    .line 82
-    :try_start_2
-    iget-object v2, p0, Lcom/android/server/BootReceiver$1;->this$0:Lcom/android/server/BootReceiver;
-
-    iget-object v3, p0, Lcom/android/server/BootReceiver$1;->val$context:Landroid/content/Context;
+    iget-object v2, p0, Lcom/android/server/BootReceiver$1;->val$context:Landroid/content/Context;
 
     #calls: Lcom/android/server/BootReceiver;->removeOldUpdatePackages(Landroid/content/Context;)V
-    invoke-static {v2, v3}, Lcom/android/server/BootReceiver;->access$100(Lcom/android/server/BootReceiver;Landroid/content/Context;)V
-    :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
+    invoke-static {v1, v2}, Lcom/android/server/BootReceiver;->access$100(Lcom/android/server/BootReceiver;Landroid/content/Context;)V
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 88
-    :cond_0
-    :goto_2
+    .line 75
+    :goto_1
     return-void
 
-    .line 71
-    .end local v1           #onlyCore:Z
+    .line 66
     :catch_0
     move-exception v0
 
-    .line 72
+    .line 67
     .local v0, e:Ljava/lang/Exception;
-    const-string v2, "BootReceiver"
+    const-string v1, "BootReceiver"
 
-    const-string v3, "Can\'t log boot events"
+    const-string v2, "Can\'t log boot events"
 
-    invoke-static {v2, v3, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v1, v2, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_0
 
-    .line 84
+    .line 71
     .end local v0           #e:Ljava/lang/Exception;
-    .restart local v1       #onlyCore:Z
     :catch_1
     move-exception v0
 
-    .line 85
+    .line 72
     .restart local v0       #e:Ljava/lang/Exception;
-    const-string v2, "BootReceiver"
+    const-string v1, "BootReceiver"
 
-    const-string v3, "Can\'t remove old update packages"
+    const-string v2, "Can\'t remove old update packages"
 
-    invoke-static {v2, v3, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto :goto_2
-
-    .line 79
-    .end local v0           #e:Ljava/lang/Exception;
-    :catch_2
-    move-exception v2
+    invoke-static {v1, v2, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_1
 .end method

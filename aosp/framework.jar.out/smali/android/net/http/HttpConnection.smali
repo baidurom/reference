@@ -21,16 +21,16 @@
 
 # virtual methods
 .method closeConnection()V
-    .locals 2
+    .locals 3
 
     .prologue
     .line 74
     :try_start_0
-    iget-object v1, p0, Landroid/net/http/HttpConnection;->mHttpClientConnection:Landroid/net/http/AndroidHttpClientConnection;
+    iget-object v1, p0, Landroid/net/http/Connection;->mHttpClientConnection:Landroid/net/http/AndroidHttpClientConnection;
 
     if-eqz v1, :cond_0
 
-    iget-object v1, p0, Landroid/net/http/HttpConnection;->mHttpClientConnection:Landroid/net/http/AndroidHttpClientConnection;
+    iget-object v1, p0, Landroid/net/http/Connection;->mHttpClientConnection:Landroid/net/http/AndroidHttpClientConnection;
 
     invoke-virtual {v1}, Landroid/net/http/AndroidHttpClientConnection;->isOpen()Z
 
@@ -39,7 +39,7 @@
     if-eqz v1, :cond_0
 
     .line 75
-    iget-object v1, p0, Landroid/net/http/HttpConnection;->mHttpClientConnection:Landroid/net/http/AndroidHttpClientConnection;
+    iget-object v1, p0, Landroid/net/http/Connection;->mHttpClientConnection:Landroid/net/http/AndroidHttpClientConnection;
 
     invoke-virtual {v1}, Landroid/net/http/AndroidHttpClientConnection;->close()V
     :try_end_0
@@ -54,8 +54,36 @@
     :catch_0
     move-exception v0
 
-    .line 81
+    .line 78
     .local v0, e:Ljava/io/IOException;
+    sget-boolean v1, Landroid/net/http/HttpLog;->LOGV:Z
+
+    if-eqz v1, :cond_1
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "closeConnection(): failed closing connection "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Landroid/net/http/Connection;->mHost:Lorg/apache/http/HttpHost;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/net/http/HttpLog;->v(Ljava/lang/String;)V
+
+    .line 81
+    :cond_1
     invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
 
     goto :goto_0
@@ -90,10 +118,10 @@
     .local v1, eventHandler:Landroid/net/http/EventHandler;
     const/4 v4, 0x0
 
-    iput-object v4, p0, Landroid/net/http/HttpConnection;->mCertificate:Landroid/net/http/SslCertificate;
+    iput-object v4, p0, Landroid/net/http/Connection;->mCertificate:Landroid/net/http/SslCertificate;
 
     .line 54
-    iget-object v4, p0, Landroid/net/http/HttpConnection;->mCertificate:Landroid/net/http/SslCertificate;
+    iget-object v4, p0, Landroid/net/http/Connection;->mCertificate:Landroid/net/http/SslCertificate;
 
     invoke-interface {v1, v4}, Landroid/net/http/EventHandler;->certificate(Landroid/net/http/SslCertificate;)V
 
@@ -112,13 +140,13 @@
     .local v2, params:Lorg/apache/http/params/BasicHttpParams;
     new-instance v3, Ljava/net/Socket;
 
-    iget-object v4, p0, Landroid/net/http/HttpConnection;->mHost:Lorg/apache/http/HttpHost;
+    iget-object v4, p0, Landroid/net/http/Connection;->mHost:Lorg/apache/http/HttpHost;
 
     invoke-virtual {v4}, Lorg/apache/http/HttpHost;->getHostName()Ljava/lang/String;
 
     move-result-object v4
 
-    iget-object v5, p0, Landroid/net/http/HttpConnection;->mHost:Lorg/apache/http/HttpHost;
+    iget-object v5, p0, Landroid/net/http/Connection;->mHost:Lorg/apache/http/HttpHost;
 
     invoke-virtual {v5}, Lorg/apache/http/HttpHost;->getPort()I
 

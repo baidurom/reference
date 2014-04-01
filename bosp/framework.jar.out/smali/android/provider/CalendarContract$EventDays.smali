@@ -28,7 +28,7 @@
     .locals 1
 
     .prologue
-    .line 1993
+    .line 1907
     const-string v0, "content://com.android.calendar/instances/groupbyday"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -44,7 +44,7 @@
     .locals 0
 
     .prologue
-    .line 2000
+    .line 1914
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -60,22 +60,22 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 2018
+    .line 1932
     const/4 v0, 0x1
 
     if-ge p2, v0, :cond_0
 
-    .line 2025
+    .line 1939
     :goto_0
     return-object v4
 
-    .line 2021
+    .line 1935
     :cond_0
     add-int v0, p1, p2
 
     add-int/lit8 v7, v0, -0x1
 
-    .line 2022
+    .line 1936
     .local v7, endDay:I
     sget-object v0, Landroid/provider/CalendarContract$EventDays;->CONTENT_URI:Landroid/net/Uri;
 
@@ -83,18 +83,18 @@
 
     move-result-object v6
 
-    .line 2023
+    .line 1937
     .local v6, builder:Landroid/net/Uri$Builder;
     int-to-long v0, p1
 
     invoke-static {v6, v0, v1}, Landroid/content/ContentUris;->appendId(Landroid/net/Uri$Builder;J)Landroid/net/Uri$Builder;
 
-    .line 2024
+    .line 1938
     int-to-long v0, v7
 
     invoke-static {v6, v0, v1}, Landroid/content/ContentUris;->appendId(Landroid/net/Uri$Builder;J)Landroid/net/Uri$Builder;
 
-    .line 2025
+    .line 1939
     invoke-virtual {v6}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
     move-result-object v1

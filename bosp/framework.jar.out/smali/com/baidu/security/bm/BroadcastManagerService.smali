@@ -144,16 +144,16 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 48
+    .line 47
     sput-object v0, Lcom/baidu/security/bm/BroadcastManagerService;->broadcastFilter_packageName:Ljava/lang/reflect/Field;
 
-    .line 73
+    .line 72
     sput-object v0, Lcom/baidu/security/bm/BroadcastManagerService;->processRecord_pkgList:Ljava/lang/reflect/Field;
 
-    .line 83
+    .line 82
     sput-object v0, Lcom/baidu/security/bm/BroadcastManagerService;->mService:Lcom/baidu/security/bm/BroadcastManagerService;
 
-    .line 84
+    .line 83
     const/4 v0, 0x0
 
     sput-boolean v0, Lcom/baidu/security/bm/BroadcastManagerService;->enabled:Z
@@ -168,28 +168,28 @@
     .prologue
     const/4 v9, 0x0
 
-    .line 1003
+    .line 1002
     invoke-direct {p0}, Lcom/baidu/security/bm/IBroadcastManagerService$Stub;-><init>()V
 
-    .line 54
+    .line 53
     iput-object v9, p0, Lcom/baidu/security/bm/BroadcastManagerService;->packageManagerService_mProtectedBroadcasts:Ljava/util/HashSet;
 
-    .line 56
+    .line 55
     iput-object v9, p0, Lcom/baidu/security/bm/BroadcastManagerService;->packageManagerService_mSettings:Ljava/lang/Object;
 
-    .line 61
+    .line 60
     iput-object v9, p0, Lcom/baidu/security/bm/BroadcastManagerService;->pmSettings_mPackages:Ljava/util/HashMap;
 
-    .line 66
+    .line 65
     iput-object v9, p0, Lcom/baidu/security/bm/BroadcastManagerService;->packageSetting_stopped:Ljava/lang/reflect/Field;
 
-    .line 86
+    .line 85
     iput-object v9, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mContext:Landroid/content/Context;
 
-    .line 87
+    .line 86
     iput-object v9, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mPm:Landroid/content/pm/PackageManager;
 
-    .line 92
+    .line 91
     new-instance v6, Landroid/os/HandlerThread;
 
     const-string v7, "YiBMS"
@@ -200,16 +200,16 @@
 
     iput-object v6, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mHandlerThread:Landroid/os/HandlerThread;
 
-    .line 97
+    .line 96
     iput-object v9, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mPMSIBinder:Landroid/os/IBinder;
 
-    .line 99
+    .line 98
     iput-object v9, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mObserver:Lcom/baidu/security/bm/BroadcastManagerService$SettingsObserver;
 
-    .line 1004
+    .line 1003
     iput-object p1, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mContext:Landroid/content/Context;
 
-    .line 1005
+    .line 1004
     iget-object v6, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v6}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -218,19 +218,19 @@
 
     iput-object v6, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mPm:Landroid/content/pm/PackageManager;
 
-    .line 1007
+    .line 1006
     invoke-static {}, Lcom/baidu/security/bm/AutoLaunchController;->loadBlackList()Z
 
     move-result v6
 
     if-eqz v6, :cond_0
 
-    .line 1008
+    .line 1007
     const/4 v6, 0x1
 
     sput-boolean v6, Lcom/baidu/security/bm/BroadcastManagerService;->enabled:Z
 
-    .line 1011
+    .line 1010
     :cond_0
     new-instance v6, Ljava/util/HashSet;
 
@@ -238,7 +238,7 @@
 
     iput-object v6, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mProtectedApps:Ljava/util/HashSet;
 
-    .line 1012
+    .line 1011
     sget-object v6, Lcom/baidu/security/bm/YiProtectedBroadcasts;->APP_WHITE_LIST:[Ljava/lang/String;
 
     if-eqz v6, :cond_1
@@ -249,7 +249,7 @@
 
     if-lez v6, :cond_1
 
-    .line 1014
+    .line 1013
     sget-object v0, Lcom/baidu/security/bm/YiProtectedBroadcasts;->APP_WHITE_LIST:[Ljava/lang/String;
 
     .local v0, arr$:[Ljava/lang/String;
@@ -264,18 +264,18 @@
 
     aget-object v5, v0, v1
 
-    .line 1015
+    .line 1014
     .local v5, pkg:Ljava/lang/String;
     iget-object v6, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mProtectedApps:Ljava/util/HashSet;
 
     invoke-virtual {v6, v5}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 1014
+    .line 1013
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 1019
+    .line 1018
     .end local v0           #arr$:[Ljava/lang/String;
     .end local v1           #i$:I
     .end local v2           #len$:I
@@ -287,7 +287,7 @@
 
     iput-object v6, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mTrustedSilentApps:Ljava/util/HashSet;
 
-    .line 1020
+    .line 1019
     sget-object v6, Lcom/baidu/security/bm/YiProtectedBroadcasts;->TRUSTED_SILENT_APPS:[Ljava/lang/String;
 
     if-eqz v6, :cond_2
@@ -298,7 +298,7 @@
 
     if-lez v6, :cond_2
 
-    .line 1022
+    .line 1021
     sget-object v0, Lcom/baidu/security/bm/YiProtectedBroadcasts;->TRUSTED_SILENT_APPS:[Ljava/lang/String;
 
     .restart local v0       #arr$:[Ljava/lang/String;
@@ -313,18 +313,18 @@
 
     aget-object v5, v0, v1
 
-    .line 1023
+    .line 1022
     .restart local v5       #pkg:Ljava/lang/String;
     iget-object v6, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mTrustedSilentApps:Ljava/util/HashSet;
 
     invoke-virtual {v6, v5}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 1022
+    .line 1021
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 1027
+    .line 1026
     .end local v0           #arr$:[Ljava/lang/String;
     .end local v1           #i$:I
     .end local v2           #len$:I
@@ -332,12 +332,12 @@
     :cond_2
     invoke-static {}, Lcom/baidu/security/bm/LockedAppsController;->loadLockedAppsList()Z
 
-    .line 1029
+    .line 1028
     iget-object v6, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mHandlerThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v6}, Landroid/os/HandlerThread;->start()V
 
-    .line 1030
+    .line 1029
     new-instance v6, Lcom/baidu/security/bm/BroadcastManagerService$BlacklistHandler;
 
     iget-object v7, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mHandlerThread:Landroid/os/HandlerThread;
@@ -350,7 +350,7 @@
 
     iput-object v6, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mHandler:Lcom/baidu/security/bm/BroadcastManagerService$BlacklistHandler;
 
-    .line 1033
+    .line 1032
     iget-object v6, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mHandler:Lcom/baidu/security/bm/BroadcastManagerService$BlacklistHandler;
 
     const/4 v7, 0x6
@@ -359,7 +359,7 @@
 
     move-result-object v3
 
-    .line 1034
+    .line 1033
     .local v3, msg:Landroid/os/Message;
     iget-object v6, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mHandler:Lcom/baidu/security/bm/BroadcastManagerService$BlacklistHandler;
 
@@ -369,18 +369,18 @@
 
     move-result-object v4
 
-    .line 1035
+    .line 1034
     .local v4, msg2:Landroid/os/Message;
     iget-object v6, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mHandler:Lcom/baidu/security/bm/BroadcastManagerService$BlacklistHandler;
 
     invoke-virtual {v6, v3}, Lcom/baidu/security/bm/BroadcastManagerService$BlacklistHandler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 1036
+    .line 1035
     iget-object v6, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mHandler:Lcom/baidu/security/bm/BroadcastManagerService$BlacklistHandler;
 
     invoke-virtual {v6, v4}, Lcom/baidu/security/bm/BroadcastManagerService$BlacklistHandler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 1038
+    .line 1037
     new-instance v6, Lcom/baidu/security/bm/BroadcastManagerService$SettingsObserver;
 
     iget-object v7, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mHandler:Lcom/baidu/security/bm/BroadcastManagerService$BlacklistHandler;
@@ -391,12 +391,12 @@
 
     iput-object v6, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mObserver:Lcom/baidu/security/bm/BroadcastManagerService$SettingsObserver;
 
-    .line 1039
+    .line 1038
     iget-object v6, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mObserver:Lcom/baidu/security/bm/BroadcastManagerService$SettingsObserver;
 
     invoke-virtual {v6}, Lcom/baidu/security/bm/BroadcastManagerService$SettingsObserver;->startObserving()V
 
-    .line 1040
+    .line 1039
     return-void
 .end method
 
@@ -405,7 +405,7 @@
     .parameter "x0"
 
     .prologue
-    .line 41
+    .line 40
     iget-object v0, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -416,7 +416,7 @@
     .parameter "x0"
 
     .prologue
-    .line 41
+    .line 40
     iget-object v0, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mHandler:Lcom/baidu/security/bm/BroadcastManagerService$BlacklistHandler;
 
     return-object v0
@@ -442,36 +442,36 @@
     .local p2, systemActions:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
     const/4 v11, 0x0
 
-    .line 890
+    .line 889
     if-nez p1, :cond_1
 
-    .line 891
+    .line 890
     const/4 v1, 0x0
 
-    .line 971
+    .line 970
     :cond_0
     :goto_0
     return-object v1
 
-    .line 894
+    .line 893
     :cond_1
     const/4 v1, 0x0
 
-    .line 895
+    .line 894
     .local v1, autoLaunchApp:Lcom/baidu/security/bm/AutoLaunchAppInfo;
     const/4 v7, 0x0
 
-    .line 896
+    .line 895
     .local v7, resolveInfoList:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     iget-object v6, p1, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
 
-    .line 899
+    .line 898
     .local v6, packageName:Ljava/lang/String;
     sget-object v10, Lcom/baidu/security/bm/YiProtectedBroadcasts;->MAIN_CONCERN_ACTINS:[Ljava/lang/String;
 
     array-length v9, v10
 
-    .line 900
+    .line 899
     .local v9, yiConcernActionsNum:I
     sget-object v10, Lcom/baidu/security/bm/YiProtectedBroadcasts;->MAIN_CONCERN_ACTINS:[Ljava/lang/String;
 
@@ -479,7 +479,7 @@
 
     if-lez v9, :cond_5
 
-    .line 901
+    .line 900
     sget-object v10, Lcom/baidu/security/bm/YiProtectedBroadcasts;->MAIN_CONCERN_ACTINS:[Ljava/lang/String;
 
     aget-object v10, v10, v11
@@ -488,7 +488,7 @@
 
     move-result-object v7
 
-    .line 902
+    .line 901
     if-eqz v7, :cond_3
 
     invoke-interface {v7}, Ljava/util/List;->size()I
@@ -497,10 +497,10 @@
 
     if-lez v10, :cond_3
 
-    .line 903
+    .line 902
     if-nez v1, :cond_2
 
-    .line 904
+    .line 903
     new-instance v1, Lcom/baidu/security/bm/AutoLaunchAppInfo;
 
     .end local v1           #autoLaunchApp:Lcom/baidu/security/bm/AutoLaunchAppInfo;
@@ -508,7 +508,7 @@
 
     invoke-direct {v1, v6, v11, v10}, Lcom/baidu/security/bm/AutoLaunchAppInfo;-><init>(Ljava/lang/String;II)V
 
-    .line 906
+    .line 905
     .restart local v1       #autoLaunchApp:Lcom/baidu/security/bm/AutoLaunchAppInfo;
     :cond_2
     iget v10, v1, Lcom/baidu/security/bm/AutoLaunchAppInfo;->launchFlags:I
@@ -517,7 +517,7 @@
 
     iput v10, v1, Lcom/baidu/security/bm/AutoLaunchAppInfo;->launchFlags:I
 
-    .line 911
+    .line 910
     :cond_3
     const/4 v2, 0x1
 
@@ -525,7 +525,7 @@
     :goto_1
     if-ge v2, v9, :cond_5
 
-    .line 912
+    .line 911
     sget-object v10, Lcom/baidu/security/bm/YiProtectedBroadcasts;->MAIN_CONCERN_ACTINS:[Ljava/lang/String;
 
     aget-object v10, v10, v2
@@ -534,7 +534,7 @@
 
     move-result-object v7
 
-    .line 913
+    .line 912
     if-eqz v7, :cond_a
 
     invoke-interface {v7}, Ljava/util/List;->size()I
@@ -543,10 +543,10 @@
 
     if-lez v10, :cond_a
 
-    .line 914
+    .line 913
     if-nez v1, :cond_4
 
-    .line 915
+    .line 914
     new-instance v1, Lcom/baidu/security/bm/AutoLaunchAppInfo;
 
     .end local v1           #autoLaunchApp:Lcom/baidu/security/bm/AutoLaunchAppInfo;
@@ -554,7 +554,7 @@
 
     invoke-direct {v1, v6, v11, v10}, Lcom/baidu/security/bm/AutoLaunchAppInfo;-><init>(Ljava/lang/String;II)V
 
-    .line 917
+    .line 916
     .restart local v1       #autoLaunchApp:Lcom/baidu/security/bm/AutoLaunchAppInfo;
     :cond_4
     iget v10, v1, Lcom/baidu/security/bm/AutoLaunchAppInfo;->launchFlags:I
@@ -563,12 +563,12 @@
 
     iput v10, v1, Lcom/baidu/security/bm/AutoLaunchAppInfo;->launchFlags:I
 
-    .line 926
+    .line 925
     .end local v2           #i:I
     :cond_5
     const-wide/16 v4, 0x0
 
-    .line 931
+    .line 930
     .local v4, now1:J
     if-eqz v1, :cond_6
 
@@ -587,17 +587,17 @@
 
     if-lez v10, :cond_9
 
-    .line 933
+    .line 932
     sget-object v10, Lcom/baidu/security/bm/YiProtectedBroadcasts;->MAIN_CONCERN_ACTINS:[Ljava/lang/String;
 
     aget-object v10, v10, v11
 
     invoke-virtual {p2, v10}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
 
-    .line 934
+    .line 933
     if-eqz p2, :cond_9
 
-    .line 935
+    .line 934
     invoke-virtual {p2}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
@@ -616,13 +616,13 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 936
+    .line 935
     .local v0, action:Ljava/lang/String;
     invoke-direct {p0, v6, v0}, Lcom/baidu/security/bm/BroadcastManagerService;->getResolveInfo(Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;
 
     move-result-object v7
 
-    .line 937
+    .line 936
     if-eqz v7, :cond_7
 
     invoke-interface {v7}, Ljava/util/List;->size()I
@@ -631,10 +631,10 @@
 
     if-lez v10, :cond_7
 
-    .line 938
+    .line 937
     if-nez v1, :cond_8
 
-    .line 939
+    .line 938
     new-instance v1, Lcom/baidu/security/bm/AutoLaunchAppInfo;
 
     .end local v1           #autoLaunchApp:Lcom/baidu/security/bm/AutoLaunchAppInfo;
@@ -642,7 +642,7 @@
 
     invoke-direct {v1, v6, v11, v10}, Lcom/baidu/security/bm/AutoLaunchAppInfo;-><init>(Ljava/lang/String;II)V
 
-    .line 941
+    .line 940
     .restart local v1       #autoLaunchApp:Lcom/baidu/security/bm/AutoLaunchAppInfo;
     :cond_8
     iget v10, v1, Lcom/baidu/security/bm/AutoLaunchAppInfo;->launchFlags:I
@@ -651,27 +651,27 @@
 
     iput v10, v1, Lcom/baidu/security/bm/AutoLaunchAppInfo;->launchFlags:I
 
-    .line 955
+    .line 954
     .end local v0           #action:Ljava/lang/String;
     .end local v3           #i$:Ljava/util/Iterator;
     :cond_9
     if-eqz v1, :cond_0
 
-    .line 956
+    .line 955
     invoke-static {v6}, Lcom/baidu/security/bm/AutoLaunchController;->packageInBlackList(Ljava/lang/String;)Z
 
     move-result v10
 
     if-eqz v10, :cond_b
 
-    .line 957
+    .line 956
     invoke-static {v6}, Lcom/baidu/security/bm/AutoLaunchController;->isEnabled(Ljava/lang/String;)Z
 
     move-result v10
 
     iput-boolean v10, v1, Lcom/baidu/security/bm/AutoLaunchAppInfo;->enabled:Z
 
-    .line 958
+    .line 957
     invoke-static {}, Lcom/baidu/security/bm/AutoLaunchController;->getBlackListForReading()Ljava/util/HashMap;
 
     move-result-object v10
@@ -682,11 +682,11 @@
 
     check-cast v8, Ljava/lang/Integer;
 
-    .line 959
+    .line 958
     .local v8, state:Ljava/lang/Integer;
     if-eqz v8, :cond_0
 
-    .line 960
+    .line 959
     invoke-virtual {v8}, Ljava/lang/Integer;->intValue()I
 
     move-result v10
@@ -699,7 +699,7 @@
 
     goto/16 :goto_0
 
-    .line 911
+    .line 910
     .end local v4           #now1:J
     .end local v8           #state:Ljava/lang/Integer;
     .restart local v2       #i:I
@@ -708,7 +708,7 @@
 
     goto/16 :goto_1
 
-    .line 964
+    .line 963
     .end local v2           #i:I
     .restart local v4       #now1:J
     :cond_b
@@ -740,11 +740,11 @@
     .end annotation
 
     .prologue
-    .line 996
+    .line 995
     .local p1, map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Integer;>;"
     const/4 v0, 0x0
 
-    .line 997
+    .line 996
     .local v0, i:I
     invoke-virtual {p1}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
 
@@ -768,7 +768,7 @@
 
     check-cast v2, Ljava/lang/String;
 
-    .line 998
+    .line 997
     .local v2, item:Ljava/lang/String;
     const-string v3, "BroadcastManagerService"
 
@@ -810,12 +810,12 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 999
+    .line 998
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 1001
+    .line 1000
     .end local v2           #item:Ljava/lang/String;
     :cond_0
     return-void
@@ -829,47 +829,47 @@
     .parameter "runningAppProcesses"
 
     .prologue
-    .line 186
+    .line 185
     const/4 v3, 0x0
 
-    .line 187
+    .line 186
     .local v3, retVal:I
     sget-boolean v5, Lcom/baidu/security/bm/BroadcastManagerService;->enabled:Z
 
     if-nez v5, :cond_1
 
-    .line 188
+    .line 187
     const/4 v3, -0x1
 
-    .line 228
+    .line 227
     :cond_0
     :goto_0
     return v3
 
-    .line 190
+    .line 189
     :cond_1
     sget-object v5, Lcom/baidu/security/bm/BroadcastManagerService;->mService:Lcom/baidu/security/bm/BroadcastManagerService;
 
     if-nez v5, :cond_2
 
-    .line 191
+    .line 190
     const/4 v3, -0x3
 
     goto :goto_0
 
-    .line 194
+    .line 193
     :cond_2
     invoke-static {}, Lcom/baidu/security/bm/AutoLaunchController;->getBlackListForReading()Ljava/util/HashMap;
 
     move-result-object v0
 
-    .line 195
+    .line 194
     .local v0, blackList:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Integer;>;"
     invoke-static {}, Lcom/baidu/security/bm/SilentAppsController;->getSilentAppsForReading()Ljava/util/HashSet;
 
     move-result-object v4
 
-    .line 196
+    .line 195
     .local v4, silentList:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
     if-nez v0, :cond_4
 
@@ -881,13 +881,13 @@
 
     if-gtz v5, :cond_4
 
-    .line 197
+    .line 196
     :cond_3
     const/4 v3, -0x2
 
     goto :goto_0
 
-    .line 200
+    .line 199
     :cond_4
     invoke-virtual {p2}, Landroid/content/Intent;->getPackage()Ljava/lang/String;
 
@@ -901,10 +901,10 @@
 
     if-nez v5, :cond_0
 
-    .line 201
+    .line 200
     const-wide/16 v1, 0x0
 
-    .line 205
+    .line 204
     .local v1, now1:J
     invoke-virtual {v0}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
 
@@ -916,7 +916,7 @@
 
     if-eqz v5, :cond_0
 
-    .line 206
+    .line 205
     const/4 v3, 0x1
 
     goto :goto_0
@@ -946,7 +946,7 @@
     .end annotation
 
     .prologue
-    .line 577
+    .line 576
     .local p1, blackList:Ljava/util/Set;,"Ljava/util/Set<Ljava/lang/String;>;"
     .local p2, silentList:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
     if-eqz p0, :cond_0
@@ -957,37 +957,37 @@
 
     if-gtz v13, :cond_2
 
-    .line 578
+    .line 577
     :cond_0
     const/4 v10, 0x0
 
-    .line 660
+    .line 659
     :cond_1
     return v10
 
-    .line 581
+    .line 580
     :cond_2
     const/4 v10, 0x0
 
-    .line 582
+    .line 581
     .local v10, retVal:Z
     const/4 v3, 0x0
 
-    .line 583
+    .line 582
     .local v3, foundPkgName:Ljava/lang/String;
     const/4 v2, 0x0
 
-    .line 584
+    .line 583
     .local v2, foundClassName:Ljava/lang/String;
     const/4 v11, 0x0
 
-    .line 585
+    .line 584
     .local v11, ri:Landroid/content/pm/ResolveInfo;
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v9
 
-    .line 586
+    .line 585
     .local v9, receivers:Ljava/util/Iterator;
     :cond_3
     :goto_0
@@ -997,24 +997,24 @@
 
     if-eqz v13, :cond_1
 
-    .line 587
+    .line 586
     invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v7
 
-    .line 588
+    .line 587
     .local v7, item:Ljava/lang/Object;
     const/4 v3, 0x0
 
-    .line 589
+    .line 588
     if-eqz v7, :cond_4
 
     move-object v11, v7
 
-    .line 590
+    .line 589
     check-cast v11, Landroid/content/pm/ResolveInfo;
 
-    .line 591
+    .line 590
     iget-object v13, v11, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     if-eqz v13, :cond_8
@@ -1025,25 +1025,25 @@
 
     if-eqz v13, :cond_8
 
-    .line 592
+    .line 591
     iget-object v13, v11, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     iget-object v3, v13, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
 
-    .line 593
+    .line 592
     iget-object v13, v11, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     iget-object v2, v13, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
 
-    .line 612
+    .line 611
     :cond_4
     :goto_1
     if-eqz v3, :cond_3
 
-    .line 613
+    .line 612
     const/4 v1, 0x0
 
-    .line 614
+    .line 613
     .local v1, foundAutoLaunch:Z
     if-eqz v2, :cond_a
 
@@ -1057,12 +1057,12 @@
 
     const/4 v5, 0x1
 
-    .line 615
+    .line 614
     .local v5, isPush:Z
     :goto_2
     const/4 v6, 0x0
 
-    .line 628
+    .line 627
     .local v6, it:Ljava/util/Iterator;
     sget-object v13, Lcom/baidu/security/bm/BroadcastManagerService;->mService:Lcom/baidu/security/bm/BroadcastManagerService;
 
@@ -1070,10 +1070,10 @@
 
     move-result v1
 
-    .line 630
+    .line 629
     const/4 v4, 0x0
 
-    .line 631
+    .line 630
     .local v4, foundSilent:Z
     if-eqz p2, :cond_6
 
@@ -1083,15 +1083,15 @@
 
     if-lez v13, :cond_6
 
-    .line 632
+    .line 631
     invoke-virtual/range {p2 .. p2}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
 
     move-result-object v6
 
-    .line 633
+    .line 632
     const/4 v12, 0x0
 
-    .line 634
+    .line 633
     .local v12, silentListItem:Ljava/lang/String;
     :cond_5
     invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
@@ -1100,7 +1100,7 @@
 
     if-eqz v13, :cond_6
 
-    .line 635
+    .line 634
     invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v12
@@ -1108,7 +1108,7 @@
     .end local v12           #silentListItem:Ljava/lang/String;
     check-cast v12, Ljava/lang/String;
 
-    .line 636
+    .line 635
     .restart local v12       #silentListItem:Ljava/lang/String;
     invoke-virtual {v3, v12}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1116,10 +1116,10 @@
 
     if-eqz v13, :cond_5
 
-    .line 637
+    .line 636
     const/4 v4, 0x1
 
-    .line 642
+    .line 641
     .end local v12           #silentListItem:Ljava/lang/String;
     :cond_6
     if-nez v1, :cond_7
@@ -1129,7 +1129,7 @@
     :cond_7
     if-nez v5, :cond_3
 
-    .line 646
+    .line 645
     move-object/from16 v0, p3
 
     invoke-static {v3, v0}, Lcom/baidu/security/bm/BroadcastManagerService;->isRunningApp(Ljava/lang/String;Ljava/util/ArrayList;)Z
@@ -1138,15 +1138,15 @@
 
     if-nez v13, :cond_b
 
-    .line 647
+    .line 646
     invoke-interface {v9}, Ljava/util/Iterator;->remove()V
 
-    .line 648
+    .line 647
     const/4 v10, 0x1
 
     goto :goto_0
 
-    .line 598
+    .line 597
     .end local v1           #foundAutoLaunch:Z
     .end local v4           #foundSilent:Z
     .end local v5           #isPush:Z
@@ -1162,37 +1162,37 @@
 
     if-eqz v13, :cond_9
 
-    .line 599
+    .line 598
     iget-object v13, v11, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
     iget-object v3, v13, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
 
-    .line 600
+    .line 599
     iget-object v13, v11, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
     iget-object v2, v13, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
 
     goto :goto_1
 
-    .line 605
+    .line 604
     :cond_9
     iget-object v13, v11, Landroid/content/pm/ResolveInfo;->resolvePackageName:Ljava/lang/String;
 
     if-eqz v13, :cond_4
 
-    .line 606
+    .line 605
     iget-object v3, v11, Landroid/content/pm/ResolveInfo;->resolvePackageName:Ljava/lang/String;
 
     goto :goto_1
 
-    .line 614
+    .line 613
     .restart local v1       #foundAutoLaunch:Z
     :cond_a
     const/4 v5, 0x0
 
     goto :goto_2
 
-    .line 651
+    .line 650
     .restart local v4       #foundSilent:Z
     .restart local v5       #isPush:Z
     .restart local v6       #it:Ljava/util/Iterator;
@@ -1209,7 +1209,7 @@
 
     if-eqz v13, :cond_3
 
-    .line 652
+    .line 651
     sget-object v13, Lcom/baidu/security/bm/BroadcastManagerService;->mService:Lcom/baidu/security/bm/BroadcastManagerService;
 
     iget-object v13, v13, Lcom/baidu/security/bm/BroadcastManagerService;->mHandler:Lcom/baidu/security/bm/BroadcastManagerService$BlacklistHandler;
@@ -1220,7 +1220,7 @@
 
     move-result-object v8
 
-    .line 653
+    .line 652
     .local v8, msg:Landroid/os/Message;
     sget-object v13, Lcom/baidu/security/bm/BroadcastManagerService;->mService:Lcom/baidu/security/bm/BroadcastManagerService;
 
@@ -1255,7 +1255,7 @@
     .end annotation
 
     .prologue
-    .line 666
+    .line 665
     .local p1, blackList:Ljava/util/Set;,"Ljava/util/Set<Ljava/lang/String;>;"
     .local p2, silentList:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
     if-eqz p0, :cond_0
@@ -1266,29 +1266,29 @@
 
     if-gtz v7, :cond_2
 
-    .line 667
+    .line 666
     :cond_0
     const/4 v6, 0x0
 
-    .line 701
+    .line 700
     :cond_1
     return v6
 
-    .line 670
+    .line 669
     :cond_2
     const/4 v6, 0x0
 
-    .line 671
+    .line 670
     .local v6, retVal:Z
     const/4 v2, 0x0
 
-    .line 672
+    .line 671
     .local v2, foundPkgName:Ljava/lang/String;
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v5
 
-    .line 673
+    .line 672
     .local v5, receivers:Ljava/util/Iterator;
     :cond_3
     :goto_0
@@ -1298,37 +1298,37 @@
 
     if-eqz v7, :cond_1
 
-    .line 674
+    .line 673
     invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v4
 
-    .line 675
+    .line 674
     .local v4, item:Ljava/lang/Object;
     const/4 v2, 0x0
 
-    .line 676
+    .line 675
     if-eqz v4, :cond_4
 
-    .line 677
+    .line 676
     invoke-static {v4}, Lcom/baidu/security/bm/BroadcastManagerService;->getClassBroadcastFilterFieldPkgName(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 679
+    .line 678
     :cond_4
     if-eqz v2, :cond_3
 
-    .line 680
+    .line 679
     const/4 v1, 0x0
 
-    .line 681
+    .line 680
     .local v1, found:Z
     invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
 
-    .line 682
+    .line 681
     .local v3, it:Ljava/util/Iterator;
     :cond_5
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
@@ -1337,14 +1337,14 @@
 
     if-eqz v7, :cond_6
 
-    .line 683
+    .line 682
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/lang/String;
 
-    .line 684
+    .line 683
     .local v0, blacklistItem:Ljava/lang/String;
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1352,25 +1352,25 @@
 
     if-eqz v7, :cond_5
 
-    .line 685
+    .line 684
     const/4 v1, 0x1
 
-    .line 689
+    .line 688
     .end local v0           #blacklistItem:Ljava/lang/String;
     :cond_6
     if-eqz v1, :cond_3
 
-    .line 693
+    .line 692
     invoke-static {v2, p3}, Lcom/baidu/security/bm/BroadcastManagerService;->isRunningApp(Ljava/lang/String;Ljava/util/ArrayList;)Z
 
     move-result v7
 
     if-nez v7, :cond_3
 
-    .line 694
+    .line 693
     invoke-interface {v5}, Ljava/util/Iterator;->remove()V
 
-    .line 695
+    .line 694
     const/4 v6, 0x1
 
     goto :goto_0
@@ -1381,35 +1381,35 @@
     .parameter "obj"
 
     .prologue
-    .line 757
+    .line 756
     if-nez p0, :cond_0
 
-    .line 758
+    .line 757
     const/4 v3, 0x0
 
-    .line 781
+    .line 780
     :goto_0
     return-object v3
 
-    .line 761
+    .line 760
     :cond_0
     const/4 v3, 0x0
 
-    .line 763
+    .line 762
     .local v3, pkgName:Ljava/lang/String;
     :try_start_0
     sget-object v4, Lcom/baidu/security/bm/BroadcastManagerService;->broadcastFilter_packageName:Ljava/lang/reflect/Field;
 
     if-nez v4, :cond_1
 
-    .line 764
+    .line 763
     const-string v4, "com.android.server.am.BroadcastFilter"
 
     invoke-static {v4}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v1
 
-    .line 765
+    .line 764
     .local v1, broadcastFilterClass:Ljava/lang/Class;
     const-string/jumbo v4, "packageName"
 
@@ -1419,14 +1419,14 @@
 
     sput-object v4, Lcom/baidu/security/bm/BroadcastManagerService;->broadcastFilter_packageName:Ljava/lang/reflect/Field;
 
-    .line 766
+    .line 765
     sget-object v4, Lcom/baidu/security/bm/BroadcastManagerService;->broadcastFilter_packageName:Ljava/lang/reflect/Field;
 
     const/4 v5, 0x1
 
     invoke-virtual {v4, v5}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
-    .line 768
+    .line 767
     .end local v1           #broadcastFilterClass:Ljava/lang/Class;
     :cond_1
     sget-object v4, Lcom/baidu/security/bm/BroadcastManagerService;->broadcastFilter_packageName:Ljava/lang/reflect/Field;
@@ -1449,11 +1449,11 @@
 
     goto :goto_0
 
-    .line 769
+    .line 768
     :catch_0
     move-exception v2
 
-    .line 770
+    .line 769
     .local v2, e:Ljava/lang/ClassNotFoundException;
     const-string v4, "BroadcastManagerService"
 
@@ -1479,12 +1479,12 @@
 
     goto :goto_0
 
-    .line 771
+    .line 770
     .end local v2           #e:Ljava/lang/ClassNotFoundException;
     :catch_1
     move-exception v2
 
-    .line 772
+    .line 771
     .local v2, e:Ljava/lang/NoSuchFieldException;
     const-string v4, "BroadcastManagerService"
 
@@ -1510,12 +1510,12 @@
 
     goto :goto_0
 
-    .line 773
+    .line 772
     .end local v2           #e:Ljava/lang/NoSuchFieldException;
     :catch_2
     move-exception v2
 
-    .line 774
+    .line 773
     .local v2, e:Ljava/lang/IllegalAccessException;
     const-string v4, "BroadcastManagerService"
 
@@ -1541,12 +1541,12 @@
 
     goto :goto_0
 
-    .line 775
+    .line 774
     .end local v2           #e:Ljava/lang/IllegalAccessException;
     :catch_3
     move-exception v2
 
-    .line 776
+    .line 775
     .local v2, e:Ljava/lang/IllegalArgumentException;
     const-string v4, "BroadcastManagerService"
 
@@ -1572,12 +1572,12 @@
 
     goto/16 :goto_0
 
-    .line 777
+    .line 776
     .end local v2           #e:Ljava/lang/IllegalArgumentException;
     :catch_4
     move-exception v2
 
-    .line 778
+    .line 777
     .local v2, e:Ljava/lang/RuntimeException;
     const-string v4, "BroadcastManagerService"
 
@@ -1609,16 +1609,16 @@
     .parameter "attr"
 
     .prologue
-    .line 815
+    .line 814
     const/4 v3, 0x0
 
-    .line 817
+    .line 816
     .local v3, retVal:Ljava/lang/Object;
     iget-object v4, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mPMSIBinder:Landroid/os/IBinder;
 
     if-nez v4, :cond_0
 
-    .line 818
+    .line 817
     const-string/jumbo v4, "package"
 
     invoke-static {v4}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -1627,13 +1627,13 @@
 
     iput-object v4, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mPMSIBinder:Landroid/os/IBinder;
 
-    .line 820
+    .line 819
     :cond_0
     iget-object v4, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mPMSIBinder:Landroid/os/IBinder;
 
     if-eqz v4, :cond_1
 
-    .line 822
+    .line 821
     :try_start_0
     const-string v4, "com.android.server.pm.PackageManagerService"
 
@@ -1641,19 +1641,19 @@
 
     move-result-object v2
 
-    .line 823
+    .line 822
     .local v2, pmsClass:Ljava/lang/Class;
     invoke-virtual {v2, p1}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
     move-result-object v1
 
-    .line 824
+    .line 823
     .local v1, field:Ljava/lang/reflect/Field;
     const/4 v4, 0x1
 
     invoke-virtual {v1, v4}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
-    .line 825
+    .line 824
     iget-object v4, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mPMSIBinder:Landroid/os/IBinder;
 
     invoke-virtual {v1, v4}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1666,19 +1666,19 @@
 
     move-result-object v3
 
-    .line 842
+    .line 841
     .end local v1           #field:Ljava/lang/reflect/Field;
     .end local v2           #pmsClass:Ljava/lang/Class;
     .end local v3           #retVal:Ljava/lang/Object;
     :goto_0
     return-object v3
 
-    .line 826
+    .line 825
     .restart local v3       #retVal:Ljava/lang/Object;
     :catch_0
     move-exception v0
 
-    .line 827
+    .line 826
     .local v0, e:Ljava/lang/ClassNotFoundException;
     const-string v4, "BroadcastManagerService"
 
@@ -1704,12 +1704,12 @@
 
     goto :goto_0
 
-    .line 828
+    .line 827
     .end local v0           #e:Ljava/lang/ClassNotFoundException;
     :catch_1
     move-exception v0
 
-    .line 829
+    .line 828
     .local v0, e:Ljava/lang/NoSuchFieldException;
     const-string v4, "BroadcastManagerService"
 
@@ -1745,12 +1745,12 @@
 
     goto :goto_0
 
-    .line 830
+    .line 829
     .end local v0           #e:Ljava/lang/NoSuchFieldException;
     :catch_2
     move-exception v0
 
-    .line 831
+    .line 830
     .local v0, e:Ljava/lang/IllegalAccessException;
     const-string v4, "BroadcastManagerService"
 
@@ -1786,12 +1786,12 @@
 
     goto :goto_0
 
-    .line 832
+    .line 831
     .end local v0           #e:Ljava/lang/IllegalAccessException;
     :catch_3
     move-exception v0
 
-    .line 833
+    .line 832
     .local v0, e:Ljava/lang/IllegalArgumentException;
     const-string v4, "BroadcastManagerService"
 
@@ -1827,12 +1827,12 @@
 
     goto/16 :goto_0
 
-    .line 834
+    .line 833
     .end local v0           #e:Ljava/lang/IllegalArgumentException;
     :catch_4
     move-exception v0
 
-    .line 835
+    .line 834
     .local v0, e:Ljava/lang/RuntimeException;
     const-string v4, "BroadcastManagerService"
 
@@ -1858,7 +1858,7 @@
 
     goto/16 :goto_0
 
-    .line 839
+    .line 838
     .end local v0           #e:Ljava/lang/RuntimeException;
     :cond_1
     const-string v4, "BroadcastManagerService"
@@ -1871,7 +1871,7 @@
 .end method
 
 .method private getResolveInfo(Landroid/content/Intent;)Ljava/util/List;
-    .locals 6
+    .locals 5
     .parameter "intent"
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1886,21 +1886,21 @@
     .end annotation
 
     .prologue
-    .line 846
+    .line 845
     if-nez p1, :cond_0
 
-    .line 847
+    .line 846
     const/4 v1, 0x0
 
-    .line 863
+    .line 862
     :goto_0
     return-object v1
 
-    .line 850
+    .line 849
     :cond_0
     const/4 v1, 0x0
 
-    .line 852
+    .line 851
     .local v1, receivers:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     :try_start_0
     invoke-static {}, Landroid/app/AppGlobals;->getPackageManager()Landroid/content/pm/IPackageManager;
@@ -1919,11 +1919,7 @@
 
     const/4 v4, 0x0
 
-    invoke-static {}, Landroid/os/UserHandle;->getCallingUserId()I
-
-    move-result v5
-
-    invoke-interface {v2, p1, v3, v4, v5}, Landroid/content/pm/IPackageManager;->queryIntentReceivers(Landroid/content/Intent;Ljava/lang/String;II)Ljava/util/List;
+    invoke-interface {v2, p1, v3, v4}, Landroid/content/pm/IPackageManager;->queryIntentReceivers(Landroid/content/Intent;Ljava/lang/String;I)Ljava/util/List;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -1931,11 +1927,11 @@
 
     goto :goto_0
 
-    .line 859
+    .line 858
     :catch_0
     move-exception v0
 
-    .line 860
+    .line 859
     .local v0, e:Landroid/os/RemoteException;
     const-string v2, "BroadcastManagerService"
 
@@ -1980,30 +1976,30 @@
     .end annotation
 
     .prologue
-    .line 867
+    .line 866
     if-eqz p1, :cond_0
 
     if-nez p2, :cond_1
 
-    .line 868
+    .line 867
     :cond_0
     const/4 v1, 0x0
 
-    .line 886
+    .line 885
     :goto_0
     return-object v1
 
-    .line 873
+    .line 872
     :cond_1
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0, p2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 874
+    .line 873
     .local v0, intent:Landroid/content/Intent;
     invoke-virtual {v0, p1}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 876
+    .line 875
     const-string v2, "android.intent.action.MEDIA_MOUNTED"
 
     invoke-virtual {p2, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2044,7 +2040,7 @@
 
     if-eqz v2, :cond_3
 
-    .line 881
+    .line 880
     :cond_2
     new-instance v2, Ljava/io/File;
 
@@ -2058,13 +2054,13 @@
 
     invoke-virtual {v0, v2}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    .line 884
+    .line 883
     :cond_3
     invoke-direct {p0, v0}, Lcom/baidu/security/bm/BroadcastManagerService;->getResolveInfo(Landroid/content/Intent;)Ljava/util/List;
 
     move-result-object v1
 
-    .line 886
+    .line 885
     .local v1, receivers:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     goto :goto_0
 .end method
@@ -2082,19 +2078,19 @@
     .end annotation
 
     .prologue
-    .line 787
+    .line 786
     iget-object v6, p0, Lcom/baidu/security/bm/BroadcastManagerService;->packageManagerService_mProtectedBroadcasts:Ljava/util/HashSet;
 
     if-nez v6, :cond_0
 
-    .line 788
+    .line 787
     new-instance v6, Ljava/util/HashSet;
 
     invoke-direct {v6}, Ljava/util/HashSet;-><init>()V
 
     iput-object v6, p0, Lcom/baidu/security/bm/BroadcastManagerService;->packageManagerService_mProtectedBroadcasts:Ljava/util/HashSet;
 
-    .line 790
+    .line 789
     :try_start_0
     const-string/jumbo v6, "mProtectedBroadcasts"
 
@@ -2102,24 +2098,24 @@
 
     move-result-object v3
 
-    .line 791
+    .line 790
     .local v3, fieldObject:Ljava/lang/Object;
     if-eqz v3, :cond_0
 
-    .line 792
+    .line 791
     move-object v0, v3
 
     check-cast v0, Ljava/util/HashSet;
 
     move-object v5, v0
 
-    .line 796
+    .line 795
     .local v5, protectedBroadcasts:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
     invoke-virtual {v5}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
 
     move-result-object v4
 
-    .line 797
+    .line 796
     .local v4, it:Ljava/util/Iterator;
     :goto_0
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
@@ -2128,14 +2124,14 @@
 
     if-eqz v6, :cond_0
 
-    .line 798
+    .line 797
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Ljava/lang/String;
 
-    .line 799
+    .line 798
     .local v1, action:Ljava/lang/String;
     iget-object v6, p0, Lcom/baidu/security/bm/BroadcastManagerService;->packageManagerService_mProtectedBroadcasts:Ljava/util/HashSet;
 
@@ -2145,7 +2141,7 @@
 
     goto :goto_0
 
-    .line 802
+    .line 801
     .end local v1           #action:Ljava/lang/String;
     .end local v3           #fieldObject:Ljava/lang/Object;
     .end local v4           #it:Ljava/util/Iterator;
@@ -2153,7 +2149,7 @@
     :catch_0
     move-exception v2
 
-    .line 803
+    .line 802
     .local v2, e:Ljava/lang/RuntimeException;
     const-string v6, "BroadcastManagerService"
 
@@ -2177,7 +2173,7 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 807
+    .line 806
     .end local v2           #e:Ljava/lang/RuntimeException;
     :cond_0
     iget-object v6, p0, Lcom/baidu/security/bm/BroadcastManagerService;->packageManagerService_mProtectedBroadcasts:Ljava/util/HashSet;
@@ -2193,23 +2189,23 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 705
+    .line 704
     if-eqz p0, :cond_0
 
     if-nez p1, :cond_1
 
-    .line 749
+    .line 748
     :cond_0
     :goto_0
     return v6
 
-    .line 709
+    .line 708
     :cond_1
     sget-object v7, Lcom/baidu/security/bm/BroadcastManagerService;->processRecord_pkgList:Ljava/lang/reflect/Field;
 
     if-nez v7, :cond_2
 
-    .line 711
+    .line 710
     :try_start_0
     const-string v7, "com.android.server.am.ProcessRecord"
 
@@ -2217,7 +2213,7 @@
 
     move-result-object v5
 
-    .line 712
+    .line 711
     .local v5, processRecordClass:Ljava/lang/Class;
     const-string/jumbo v7, "pkgList"
 
@@ -2227,7 +2223,7 @@
 
     sput-object v7, Lcom/baidu/security/bm/BroadcastManagerService;->processRecord_pkgList:Ljava/lang/reflect/Field;
 
-    .line 713
+    .line 712
     sget-object v7, Lcom/baidu/security/bm/BroadcastManagerService;->processRecord_pkgList:Ljava/lang/reflect/Field;
 
     const/4 v8, 0x1
@@ -2238,7 +2234,7 @@
     .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_2
 
-    .line 722
+    .line 721
     .end local v5           #processRecordClass:Ljava/lang/Class;
     :cond_2
     :goto_1
@@ -2246,14 +2242,14 @@
 
     if-eqz v7, :cond_0
 
-    .line 726
+    .line 725
     const/4 v6, 0x0
 
-    .line 727
+    .line 726
     .local v6, retVal:Z
     const/4 v4, 0x0
 
-    .line 728
+    .line 727
     .local v4, pkgList:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
     invoke-virtual {p1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -2271,11 +2267,11 @@
 
     move-result-object v1
 
-    .line 729
+    .line 728
     .local v1, app:Ljava/lang/Object;
     const/4 v4, 0x0
 
-    .line 731
+    .line 730
     :try_start_1
     sget-object v7, Lcom/baidu/security/bm/BroadcastManagerService;->processRecord_pkgList:Ljava/lang/reflect/Field;
 
@@ -2294,24 +2290,24 @@
     .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_1} :catch_3
     .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_4
 
-    .line 737
+    .line 736
     :goto_2
     if-eqz v4, :cond_3
 
-    .line 740
+    .line 739
     invoke-virtual {v4, p0}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
 
     move-result v7
 
     if-eqz v7, :cond_3
 
-    .line 741
+    .line 740
     const/4 v6, 0x1
 
-    .line 745
+    .line 744
     goto :goto_0
 
-    .line 714
+    .line 713
     .end local v1           #app:Ljava/lang/Object;
     .end local v3           #i$:Ljava/util/Iterator;
     .end local v4           #pkgList:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
@@ -2319,7 +2315,7 @@
     :catch_0
     move-exception v2
 
-    .line 715
+    .line 714
     .local v2, e:Ljava/lang/ClassNotFoundException;
     const-string v7, "BroadcastManagerService"
 
@@ -2345,12 +2341,12 @@
 
     goto :goto_1
 
-    .line 716
+    .line 715
     .end local v2           #e:Ljava/lang/ClassNotFoundException;
     :catch_1
     move-exception v2
 
-    .line 717
+    .line 716
     .local v2, e:Ljava/lang/NoSuchFieldException;
     const-string v7, "BroadcastManagerService"
 
@@ -2376,12 +2372,12 @@
 
     goto :goto_1
 
-    .line 718
+    .line 717
     .end local v2           #e:Ljava/lang/NoSuchFieldException;
     :catch_2
     move-exception v2
 
-    .line 719
+    .line 718
     .local v2, e:Ljava/lang/RuntimeException;
     const-string v7, "BroadcastManagerService"
 
@@ -2407,7 +2403,7 @@
 
     goto :goto_1
 
-    .line 732
+    .line 731
     .end local v2           #e:Ljava/lang/RuntimeException;
     .restart local v1       #app:Ljava/lang/Object;
     .restart local v3       #i$:Ljava/util/Iterator;
@@ -2416,7 +2412,7 @@
     :catch_3
     move-exception v2
 
-    .line 733
+    .line 732
     .local v2, e:Ljava/lang/IllegalAccessException;
     const-string v7, "BroadcastManagerService"
 
@@ -2442,12 +2438,12 @@
 
     goto :goto_2
 
-    .line 734
+    .line 733
     .end local v2           #e:Ljava/lang/IllegalAccessException;
     :catch_4
     move-exception v2
 
-    .line 735
+    .line 734
     .local v2, e:Ljava/lang/IllegalArgumentException;
     const-string v7, "BroadcastManagerService"
 
@@ -2479,16 +2475,16 @@
     .parameter "context"
 
     .prologue
-    .line 169
+    .line 168
     sget-object v0, Lcom/baidu/security/bm/BroadcastManagerService;->mService:Lcom/baidu/security/bm/BroadcastManagerService;
 
     if-eqz v0, :cond_0
 
-    .line 178
+    .line 177
     :goto_0
     return-void
 
-    .line 176
+    .line 175
     :cond_0
     new-instance v0, Lcom/baidu/security/bm/BroadcastManagerService;
 
@@ -2496,7 +2492,7 @@
 
     sput-object v0, Lcom/baidu/security/bm/BroadcastManagerService;->mService:Lcom/baidu/security/bm/BroadcastManagerService;
 
-    .line 177
+    .line 176
     const-string v0, "BroadcastManagerService"
 
     sget-object v1, Lcom/baidu/security/bm/BroadcastManagerService;->mService:Lcom/baidu/security/bm/BroadcastManagerService;
@@ -2513,15 +2509,15 @@
     .parameter "packageName"
 
     .prologue
-    .line 376
+    .line 375
     if-nez p1, :cond_1
 
-    .line 389
+    .line 388
     :cond_0
     :goto_0
     return-void
 
-    .line 381
+    .line 380
     :cond_1
     invoke-virtual {p0, p1}, Lcom/baidu/security/bm/BroadcastManagerService;->isTrustedApp(Ljava/lang/String;)Z
 
@@ -2529,18 +2525,18 @@
 
     if-nez v2, :cond_0
 
-    .line 385
+    .line 384
     new-instance v0, Ljava/util/ArrayList;
 
     const/4 v2, 0x1
 
     invoke-direct {v0, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 386
+    .line 385
     .local v0, app:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 387
+    .line 386
     iget-object v2, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mHandler:Lcom/baidu/security/bm/BroadcastManagerService$BlacklistHandler;
 
     const/4 v3, 0x2
@@ -2549,7 +2545,7 @@
 
     move-result-object v1
 
-    .line 388
+    .line 387
     .local v1, msg:Landroid/os/Message;
     iget-object v2, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mHandler:Lcom/baidu/security/bm/BroadcastManagerService$BlacklistHandler;
 
@@ -2563,19 +2559,19 @@
     .parameter "packageNameArray"
 
     .prologue
-    .line 395
+    .line 394
     if-eqz p1, :cond_0
 
     array-length v6, p1
 
     if-gtz v6, :cond_1
 
-    .line 412
+    .line 411
     :cond_0
     :goto_0
     return-void
 
-    .line 399
+    .line 398
     :cond_1
     new-instance v4, Ljava/util/ArrayList;
 
@@ -2583,7 +2579,7 @@
 
     invoke-direct {v4, v6}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 400
+    .line 399
     .local v4, newPartApps:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     move-object v0, p1
 
@@ -2599,7 +2595,7 @@
 
     aget-object v5, v0, v1
 
-    .line 402
+    .line 401
     .local v5, pkgName:Ljava/lang/String;
     invoke-virtual {p0, v5}, Lcom/baidu/security/bm/BroadcastManagerService;->isTrustedApp(Ljava/lang/String;)Z
 
@@ -2607,19 +2603,19 @@
 
     if-eqz v6, :cond_2
 
-    .line 400
+    .line 399
     :goto_2
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 405
+    .line 404
     :cond_2
     invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_2
 
-    .line 408
+    .line 407
     .end local v5           #pkgName:Ljava/lang/String;
     :cond_3
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
@@ -2628,7 +2624,7 @@
 
     if-lez v6, :cond_0
 
-    .line 409
+    .line 408
     iget-object v6, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mHandler:Lcom/baidu/security/bm/BroadcastManagerService$BlacklistHandler;
 
     const/4 v7, 0x2
@@ -2637,7 +2633,7 @@
 
     move-result-object v3
 
-    .line 410
+    .line 409
     .local v3, msg:Landroid/os/Message;
     iget-object v6, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mHandler:Lcom/baidu/security/bm/BroadcastManagerService$BlacklistHandler;
 
@@ -2651,14 +2647,14 @@
     .parameter "packageName"
 
     .prologue
-    .line 418
+    .line 417
     if-nez p1, :cond_0
 
-    .line 426
+    .line 425
     :goto_0
     return-void
 
-    .line 422
+    .line 421
     :cond_0
     new-instance v0, Ljava/util/ArrayList;
 
@@ -2666,11 +2662,11 @@
 
     invoke-direct {v0, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 423
+    .line 422
     .local v0, app:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 424
+    .line 423
     iget-object v2, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mHandler:Lcom/baidu/security/bm/BroadcastManagerService$BlacklistHandler;
 
     const/4 v3, 0x4
@@ -2679,7 +2675,7 @@
 
     move-result-object v1
 
-    .line 425
+    .line 424
     .local v1, msg:Landroid/os/Message;
     iget-object v2, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mHandler:Lcom/baidu/security/bm/BroadcastManagerService$BlacklistHandler;
 
@@ -2693,19 +2689,19 @@
     .parameter "packageNameArray"
 
     .prologue
-    .line 432
+    .line 431
     if-eqz p1, :cond_0
 
     array-length v6, p1
 
     if-gtz v6, :cond_1
 
-    .line 442
+    .line 441
     :cond_0
     :goto_0
     return-void
 
-    .line 436
+    .line 435
     :cond_1
     new-instance v4, Ljava/util/ArrayList;
 
@@ -2713,7 +2709,7 @@
 
     invoke-direct {v4, v6}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 437
+    .line 436
     .local v4, newPartApps:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     move-object v0, p1
 
@@ -2729,16 +2725,16 @@
 
     aget-object v5, v0, v1
 
-    .line 438
+    .line 437
     .local v5, pkgName:Ljava/lang/String;
     invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 437
+    .line 436
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 440
+    .line 439
     .end local v5           #pkgName:Ljava/lang/String;
     :cond_2
     iget-object v6, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mHandler:Lcom/baidu/security/bm/BroadcastManagerService$BlacklistHandler;
@@ -2749,7 +2745,7 @@
 
     move-result-object v3
 
-    .line 441
+    .line 440
     .local v3, msg:Landroid/os/Message;
     iget-object v6, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mHandler:Lcom/baidu/security/bm/BroadcastManagerService$BlacklistHandler;
 
@@ -2763,13 +2759,13 @@
     .parameter "packageName"
 
     .prologue
-    .line 493
+    .line 492
     if-nez p1, :cond_0
 
-    .line 494
+    .line 493
     const/4 v0, 0x0
 
-    .line 497
+    .line 496
     :goto_0
     return v0
 
@@ -2788,7 +2784,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 310
+    .line 309
     if-eqz p1, :cond_0
 
     iget-object v3, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mContext:Landroid/content/Context;
@@ -2799,16 +2795,16 @@
 
     if-nez v3, :cond_1
 
-    .line 324
+    .line 323
     :cond_0
     :goto_0
     return-object v2
 
-    .line 314
+    .line 313
     :cond_1
     const/4 v0, 0x0
 
-    .line 316
+    .line 315
     .local v0, appInfo:Landroid/content/pm/ApplicationInfo;
     :try_start_0
     iget-object v3, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mPm:Landroid/content/pm/PackageManager;
@@ -2821,11 +2817,11 @@
 
     move-result-object v0
 
-    .line 320
+    .line 319
     :goto_1
     if-eqz v0, :cond_0
 
-    .line 324
+    .line 323
     invoke-direct {p0}, Lcom/baidu/security/bm/BroadcastManagerService;->getSystemProtectedBroadcasts()Ljava/util/HashSet;
 
     move-result-object v2
@@ -2836,11 +2832,11 @@
 
     goto :goto_0
 
-    .line 317
+    .line 316
     :catch_0
     move-exception v1
 
-    .line 318
+    .line 317
     .local v1, e:Landroid/content/pm/PackageManager$NameNotFoundException;
     const/4 v0, 0x0
 
@@ -2851,29 +2847,29 @@
     .locals 14
 
     .prologue
-    .line 235
+    .line 234
     iget-object v12, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mContext:Landroid/content/Context;
 
     if-nez v12, :cond_1
 
-    .line 236
+    .line 235
     const/4 v9, 0x0
 
-    .line 303
+    .line 302
     :cond_0
     return-object v9
 
-    .line 238
+    .line 237
     :cond_1
     const/4 v9, 0x0
 
-    .line 240
+    .line 239
     .local v9, retVal:[Lcom/baidu/security/bm/AutoLaunchAppInfo;
     new-instance v4, Ljava/util/LinkedList;
 
     invoke-direct {v4}, Ljava/util/LinkedList;-><init>()V
 
-    .line 242
+    .line 241
     .local v4, autoLaunchAppList:Ljava/util/LinkedList;,"Ljava/util/LinkedList<Lcom/baidu/security/bm/AutoLaunchAppInfo;>;"
     iget-object v12, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mPm:Landroid/content/pm/PackageManager;
 
@@ -2883,13 +2879,13 @@
 
     move-result-object v1
 
-    .line 243
+    .line 242
     .local v1, allApps:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ApplicationInfo;>;"
     invoke-direct {p0}, Lcom/baidu/security/bm/BroadcastManagerService;->getSystemProtectedBroadcasts()Ljava/util/HashSet;
 
     move-result-object v10
 
-    .line 271
+    .line 270
     .local v10, systemActions:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -2910,7 +2906,7 @@
 
     check-cast v2, Landroid/content/pm/ApplicationInfo;
 
-    .line 273
+    .line 272
     .local v2, appInfo:Landroid/content/pm/ApplicationInfo;
     iget v12, v2, Landroid/content/pm/ApplicationInfo;->flags:I
 
@@ -2928,21 +2924,21 @@
 
     if-nez v12, :cond_2
 
-    .line 275
+    .line 274
     invoke-direct {p0, v2, v10}, Lcom/baidu/security/bm/BroadcastManagerService;->buildAutoLaunchAppInfo(Landroid/content/pm/ApplicationInfo;Ljava/util/HashSet;)Lcom/baidu/security/bm/AutoLaunchAppInfo;
 
     move-result-object v3
 
-    .line 281
+    .line 280
     .local v3, autoLaunchApp:Lcom/baidu/security/bm/AutoLaunchAppInfo;
     if-eqz v3, :cond_2
 
-    .line 282
+    .line 281
     invoke-virtual {v4, v3}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 287
+    .line 286
     .end local v2           #appInfo:Landroid/content/pm/ApplicationInfo;
     .end local v3           #autoLaunchApp:Lcom/baidu/security/bm/AutoLaunchAppInfo;
     :cond_3
@@ -2950,23 +2946,23 @@
 
     move-result v11
 
-    .line 288
+    .line 287
     .local v11, totalAppNum:I
     if-lez v11, :cond_0
 
-    .line 289
+    .line 288
     new-array v9, v11, [Lcom/baidu/security/bm/AutoLaunchAppInfo;
 
-    .line 290
+    .line 289
     const/4 v7, 0x0
 
-    .line 291
+    .line 290
     .local v7, index:I
     invoke-virtual {v4}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
 
     move-result-object v8
 
-    .line 292
+    .line 291
     .local v8, it:Ljava/util/Iterator;
     const/4 v5, 0x0
 
@@ -2974,25 +2970,25 @@
     :goto_1
     if-ge v5, v11, :cond_0
 
-    .line 293
+    .line 292
     invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v12
 
     if-eqz v12, :cond_0
 
-    .line 294
+    .line 293
     invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/baidu/security/bm/AutoLaunchAppInfo;
 
-    .line 295
+    .line 294
     .local v0, alAppInfo:Lcom/baidu/security/bm/AutoLaunchAppInfo;
     aput-object v0, v9, v5
 
-    .line 292
+    .line 291
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_1
@@ -3002,12 +2998,12 @@
     .locals 6
 
     .prologue
-    .line 478
+    .line 477
     invoke-static {}, Lcom/baidu/security/bm/LockedAppsController;->getLockedAppsListForReading()Ljava/util/HashSet;
 
     move-result-object v3
 
-    .line 479
+    .line 478
     .local v3, lockedApps:Ljava/util/HashSet;,"Ljava/util/HashSet<Ljava/lang/String;>;"
     invoke-virtual {v3}, Ljava/util/HashSet;->size()I
 
@@ -3015,11 +3011,11 @@
 
     new-array v0, v5, [Ljava/lang/String;
 
-    .line 480
+    .line 479
     .local v0, appsArray:[Ljava/lang/String;
     const/4 v1, 0x0
 
-    .line 481
+    .line 480
     .local v1, i:I
     invoke-virtual {v3}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
 
@@ -3039,16 +3035,16 @@
 
     check-cast v4, Ljava/lang/String;
 
-    .line 482
+    .line 481
     .local v4, pkgName:Ljava/lang/String;
     aput-object v4, v0, v1
 
-    .line 483
+    .line 482
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 486
+    .line 485
     .end local v4           #pkgName:Ljava/lang/String;
     :cond_0
     return-object v0
@@ -3059,22 +3055,22 @@
     .parameter "packageName"
 
     .prologue
-    .line 511
+    .line 510
     const/4 v4, 0x0
 
-    .line 512
+    .line 511
     .local v4, retVal:Z
     iget-object v5, p0, Lcom/baidu/security/bm/BroadcastManagerService;->pmSettings_mPackages:Ljava/util/HashMap;
 
     if-nez v5, :cond_1
 
-    .line 514
+    .line 513
     :try_start_0
     iget-object v5, p0, Lcom/baidu/security/bm/BroadcastManagerService;->packageManagerService_mSettings:Ljava/lang/Object;
 
     if-nez v5, :cond_0
 
-    .line 515
+    .line 514
     const-string/jumbo v5, "mSettings"
 
     invoke-direct {p0, v5}, Lcom/baidu/security/bm/BroadcastManagerService;->getPMSAttribute(Ljava/lang/String;)Ljava/lang/Object;
@@ -3083,20 +3079,20 @@
 
     iput-object v5, p0, Lcom/baidu/security/bm/BroadcastManagerService;->packageManagerService_mSettings:Ljava/lang/Object;
 
-    .line 517
+    .line 516
     :cond_0
     iget-object v5, p0, Lcom/baidu/security/bm/BroadcastManagerService;->packageManagerService_mSettings:Ljava/lang/Object;
 
     if-eqz v5, :cond_1
 
-    .line 518
+    .line 517
     const-string v5, "com.android.server.pm.Settings"
 
     invoke-static {v5}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v3
 
-    .line 519
+    .line 518
     .local v3, pmsClass:Ljava/lang/Class;
     const-string/jumbo v5, "mPackages"
 
@@ -3104,13 +3100,13 @@
 
     move-result-object v1
 
-    .line 520
+    .line 519
     .local v1, field:Ljava/lang/reflect/Field;
     const/4 v5, 0x1
 
     invoke-virtual {v1, v5}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
-    .line 521
+    .line 520
     iget-object v5, p0, Lcom/baidu/security/bm/BroadcastManagerService;->packageManagerService_mSettings:Ljava/lang/Object;
 
     invoke-virtual {v1, v5}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -3127,7 +3123,7 @@
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_3
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_4
 
-    .line 536
+    .line 535
     .end local v1           #field:Ljava/lang/reflect/Field;
     .end local v3           #pmsClass:Ljava/lang/Class;
     :cond_1
@@ -3136,31 +3132,31 @@
 
     if-eqz v5, :cond_3
 
-    .line 537
+    .line 536
     iget-object v5, p0, Lcom/baidu/security/bm/BroadcastManagerService;->pmSettings_mPackages:Ljava/util/HashMap;
 
     invoke-virtual {v5, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 538
+    .line 537
     .local v2, packageSetting:Ljava/lang/Object;
     if-eqz v2, :cond_3
 
-    .line 540
+    .line 539
     :try_start_1
     iget-object v5, p0, Lcom/baidu/security/bm/BroadcastManagerService;->packageSetting_stopped:Ljava/lang/reflect/Field;
 
     if-nez v5, :cond_2
 
-    .line 541
+    .line 540
     const-string v5, "com.android.server.pm.PackageSettingBase"
 
     invoke-static {v5}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v3
 
-    .line 542
+    .line 541
     .restart local v3       #pmsClass:Ljava/lang/Class;
     const-string/jumbo v5, "stopped"
 
@@ -3170,14 +3166,14 @@
 
     iput-object v5, p0, Lcom/baidu/security/bm/BroadcastManagerService;->packageSetting_stopped:Ljava/lang/reflect/Field;
 
-    .line 543
+    .line 542
     iget-object v5, p0, Lcom/baidu/security/bm/BroadcastManagerService;->packageSetting_stopped:Ljava/lang/reflect/Field;
 
     const/4 v6, 0x1
 
     invoke-virtual {v5, v6}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
-    .line 545
+    .line 544
     .end local v3           #pmsClass:Ljava/lang/Class;
     :cond_2
     iget-object v5, p0, Lcom/baidu/security/bm/BroadcastManagerService;->packageSetting_stopped:Ljava/lang/reflect/Field;
@@ -3192,17 +3188,17 @@
 
     move-result v4
 
-    .line 560
+    .line 559
     .end local v2           #packageSetting:Ljava/lang/Object;
     :cond_3
     :goto_1
     return v4
 
-    .line 524
+    .line 523
     :catch_0
     move-exception v0
 
-    .line 525
+    .line 524
     .local v0, e:Ljava/lang/ClassNotFoundException;
     const-string v5, "BroadcastManagerService"
 
@@ -3228,12 +3224,12 @@
 
     goto :goto_0
 
-    .line 526
+    .line 525
     .end local v0           #e:Ljava/lang/ClassNotFoundException;
     :catch_1
     move-exception v0
 
-    .line 527
+    .line 526
     .local v0, e:Ljava/lang/NoSuchFieldException;
     const-string v5, "BroadcastManagerService"
 
@@ -3259,12 +3255,12 @@
 
     goto :goto_0
 
-    .line 528
+    .line 527
     .end local v0           #e:Ljava/lang/NoSuchFieldException;
     :catch_2
     move-exception v0
 
-    .line 529
+    .line 528
     .local v0, e:Ljava/lang/IllegalAccessException;
     const-string v5, "BroadcastManagerService"
 
@@ -3290,12 +3286,12 @@
 
     goto :goto_0
 
-    .line 530
+    .line 529
     .end local v0           #e:Ljava/lang/IllegalAccessException;
     :catch_3
     move-exception v0
 
-    .line 531
+    .line 530
     .local v0, e:Ljava/lang/IllegalArgumentException;
     const-string v5, "BroadcastManagerService"
 
@@ -3321,12 +3317,12 @@
 
     goto/16 :goto_0
 
-    .line 532
+    .line 531
     .end local v0           #e:Ljava/lang/IllegalArgumentException;
     :catch_4
     move-exception v0
 
-    .line 533
+    .line 532
     .local v0, e:Ljava/lang/RuntimeException;
     const-string v5, "BroadcastManagerService"
 
@@ -3352,13 +3348,13 @@
 
     goto/16 :goto_0
 
-    .line 546
+    .line 545
     .end local v0           #e:Ljava/lang/RuntimeException;
     .restart local v2       #packageSetting:Ljava/lang/Object;
     :catch_5
     move-exception v0
 
-    .line 547
+    .line 546
     .local v0, e:Ljava/lang/ClassNotFoundException;
     const-string v5, "BroadcastManagerService"
 
@@ -3384,12 +3380,12 @@
 
     goto/16 :goto_1
 
-    .line 548
+    .line 547
     .end local v0           #e:Ljava/lang/ClassNotFoundException;
     :catch_6
     move-exception v0
 
-    .line 549
+    .line 548
     .local v0, e:Ljava/lang/NoSuchFieldException;
     const-string v5, "BroadcastManagerService"
 
@@ -3415,12 +3411,12 @@
 
     goto/16 :goto_1
 
-    .line 550
+    .line 549
     .end local v0           #e:Ljava/lang/NoSuchFieldException;
     :catch_7
     move-exception v0
 
-    .line 551
+    .line 550
     .local v0, e:Ljava/lang/IllegalAccessException;
     const-string v5, "BroadcastManagerService"
 
@@ -3446,12 +3442,12 @@
 
     goto/16 :goto_1
 
-    .line 552
+    .line 551
     .end local v0           #e:Ljava/lang/IllegalAccessException;
     :catch_8
     move-exception v0
 
-    .line 553
+    .line 552
     .local v0, e:Ljava/lang/IllegalArgumentException;
     const-string v5, "BroadcastManagerService"
 
@@ -3477,12 +3473,12 @@
 
     goto/16 :goto_1
 
-    .line 554
+    .line 553
     .end local v0           #e:Ljava/lang/IllegalArgumentException;
     :catch_9
     move-exception v0
 
-    .line 555
+    .line 554
     .local v0, e:Ljava/lang/RuntimeException;
     const-string v5, "BroadcastManagerService"
 
@@ -3518,7 +3514,7 @@
 
     const/4 v4, 0x0
 
-    .line 975
+    .line 974
     iget-object v5, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mTrustedSilentApps:Ljava/util/HashSet;
 
     if-eqz v5, :cond_0
@@ -3534,22 +3530,22 @@
     :cond_0
     move v3, v4
 
-    .line 992
+    .line 991
     :cond_1
     :goto_0
     return v3
 
-    .line 979
+    .line 978
     :cond_2
     const/4 v2, 0x0
 
-    .line 980
+    .line 979
     .local v2, retVal:Z
     iget-object v4, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mPm:Landroid/content/pm/PackageManager;
 
     if-eqz v4, :cond_1
 
-    .line 982
+    .line 981
     :try_start_0
     iget-object v4, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mPm:Landroid/content/pm/PackageManager;
 
@@ -3559,7 +3555,7 @@
 
     move-result-object v0
 
-    .line 983
+    .line 982
     .local v0, appInfo:Landroid/content/pm/ApplicationInfo;
     iget v4, v0, Landroid/content/pm/ApplicationInfo;->flags:I
     :try_end_0
@@ -3569,17 +3565,17 @@
 
     if-ne v4, v3, :cond_1
 
-    .line 984
+    .line 983
     const/4 v2, 0x1
 
     goto :goto_0
 
-    .line 987
+    .line 986
     .end local v0           #appInfo:Landroid/content/pm/ApplicationInfo;
     :catch_0
     move-exception v1
 
-    .line 988
+    .line 987
     .local v1, e:Landroid/content/pm/PackageManager$NameNotFoundException;
     invoke-virtual {v1}, Landroid/content/pm/PackageManager$NameNotFoundException;->printStackTrace()V
 
@@ -3593,10 +3589,10 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 363
+    .line 362
     if-nez p1, :cond_1
 
-    .line 367
+    .line 366
     :cond_0
     :goto_0
     return v0
@@ -3636,14 +3632,14 @@
     .parameter "packageName"
 
     .prologue
-    .line 448
+    .line 447
     if-nez p1, :cond_0
 
-    .line 456
+    .line 455
     :goto_0
     return-void
 
-    .line 452
+    .line 451
     :cond_0
     new-instance v0, Ljava/util/ArrayList;
 
@@ -3651,11 +3647,11 @@
 
     invoke-direct {v0, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 453
+    .line 452
     .local v0, app:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 454
+    .line 453
     iget-object v2, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mHandler:Lcom/baidu/security/bm/BroadcastManagerService$BlacklistHandler;
 
     const/4 v3, 0x5
@@ -3664,7 +3660,7 @@
 
     move-result-object v1
 
-    .line 455
+    .line 454
     .local v1, msg:Landroid/os/Message;
     iget-object v2, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mHandler:Lcom/baidu/security/bm/BroadcastManagerService$BlacklistHandler;
 
@@ -3678,19 +3674,19 @@
     .parameter "packageNameArray"
 
     .prologue
-    .line 462
+    .line 461
     if-eqz p1, :cond_0
 
     array-length v6, p1
 
     if-gtz v6, :cond_1
 
-    .line 472
+    .line 471
     :cond_0
     :goto_0
     return-void
 
-    .line 466
+    .line 465
     :cond_1
     new-instance v0, Ljava/util/ArrayList;
 
@@ -3698,7 +3694,7 @@
 
     invoke-direct {v0, v6}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 467
+    .line 466
     .local v0, apps:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     move-object v1, p1
 
@@ -3714,16 +3710,16 @@
 
     aget-object v5, v1, v2
 
-    .line 468
+    .line 467
     .local v5, pkgName:Ljava/lang/String;
     invoke-virtual {v0, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 467
+    .line 466
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 470
+    .line 469
     .end local v5           #pkgName:Ljava/lang/String;
     :cond_2
     iget-object v6, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mHandler:Lcom/baidu/security/bm/BroadcastManagerService$BlacklistHandler;
@@ -3734,7 +3730,7 @@
 
     move-result-object v4
 
-    .line 471
+    .line 470
     .local v4, msg:Landroid/os/Message;
     iget-object v6, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mHandler:Lcom/baidu/security/bm/BroadcastManagerService$BlacklistHandler;
 
@@ -3748,14 +3744,14 @@
     .parameter "newPart"
 
     .prologue
-    .line 345
+    .line 344
     if-nez p1, :cond_0
 
-    .line 355
+    .line 354
     :goto_0
     return-void
 
-    .line 349
+    .line 348
     :cond_0
     new-instance v5, Ljava/util/ArrayList;
 
@@ -3763,7 +3759,7 @@
 
     invoke-direct {v5, v6}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 350
+    .line 349
     .local v5, newPartApps:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/baidu/security/bm/AutoLaunchAppInfo;>;"
     move-object v1, p1
 
@@ -3779,16 +3775,16 @@
 
     aget-object v0, v1, v2
 
-    .line 351
+    .line 350
     .local v0, appInfo:Lcom/baidu/security/bm/AutoLaunchAppInfo;
     invoke-virtual {v5, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 350
+    .line 349
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 353
+    .line 352
     .end local v0           #appInfo:Lcom/baidu/security/bm/AutoLaunchAppInfo;
     :cond_1
     iget-object v6, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mHandler:Lcom/baidu/security/bm/BroadcastManagerService$BlacklistHandler;
@@ -3799,7 +3795,7 @@
 
     move-result-object v4
 
-    .line 354
+    .line 353
     .local v4, msg:Landroid/os/Message;
     iget-object v6, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mHandler:Lcom/baidu/security/bm/BroadcastManagerService$BlacklistHandler;
 
@@ -3815,31 +3811,31 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 331
+    .line 330
     if-nez p1, :cond_0
 
-    .line 339
+    .line 338
     :goto_0
     return-void
 
-    .line 335
+    .line 334
     :cond_0
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1, v3}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 336
+    .line 335
     .local v1, newPartApps:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/baidu/security/bm/AutoLaunchAppInfo;>;"
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 337
+    .line 336
     iget-object v2, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mHandler:Lcom/baidu/security/bm/BroadcastManagerService$BlacklistHandler;
 
     invoke-virtual {v2, v3, v1}, Lcom/baidu/security/bm/BroadcastManagerService$BlacklistHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
-    .line 338
+    .line 337
     .local v0, msg:Landroid/os/Message;
     iget-object v2, p0, Lcom/baidu/security/bm/BroadcastManagerService;->mHandler:Lcom/baidu/security/bm/BroadcastManagerService$BlacklistHandler;
 

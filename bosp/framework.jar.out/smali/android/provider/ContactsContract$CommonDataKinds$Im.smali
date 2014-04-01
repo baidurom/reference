@@ -57,7 +57,7 @@
     .locals 0
 
     .prologue
-    .line 6148
+    .line 6108
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -70,7 +70,7 @@
     .parameter "label"
 
     .prologue
-    .line 6235
+    .line 6195
     const/4 v1, -0x1
 
     if-ne p1, v1, :cond_0
@@ -81,19 +81,19 @@
 
     if-nez v1, :cond_0
 
-    .line 6239
+    .line 6199
     .end local p2
     :goto_0
     return-object p2
 
-    .line 6238
+    .line 6198
     .restart local p2
     :cond_0
     invoke-static {p1}, Landroid/provider/ContactsContract$CommonDataKinds$Im;->getProtocolLabelResource(I)I
 
     move-result v0
 
-    .line 6239
+    .line 6199
     .local v0, labelRes:I
     invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -107,70 +107,70 @@
     .parameter "type"
 
     .prologue
-    .line 6214
+    .line 6174
     packed-switch p0, :pswitch_data_0
 
-    .line 6224
+    .line 6184
     const v0, #string@imProtocolCustom#t
 
     :goto_0
     return v0
 
-    .line 6215
+    .line 6175
     :pswitch_0
     const v0, #string@imProtocolAim#t
 
     goto :goto_0
 
-    .line 6216
+    .line 6176
     :pswitch_1
     const v0, #string@imProtocolMsn#t
 
     goto :goto_0
 
-    .line 6217
+    .line 6177
     :pswitch_2
     const v0, #string@imProtocolYahoo#t
 
     goto :goto_0
 
-    .line 6218
+    .line 6178
     :pswitch_3
     const v0, #string@imProtocolSkype#t
 
     goto :goto_0
 
-    .line 6219
+    .line 6179
     :pswitch_4
     const v0, #string@imProtocolQq#t
 
     goto :goto_0
 
-    .line 6220
+    .line 6180
     :pswitch_5
     const v0, #string@imProtocolGoogleTalk#t
 
     goto :goto_0
 
-    .line 6221
+    .line 6181
     :pswitch_6
     const v0, #string@imProtocolIcq#t
 
     goto :goto_0
 
-    .line 6222
+    .line 6182
     :pswitch_7
     const v0, #string@imProtocolJabber#t
 
     goto :goto_0
 
-    .line 6223
+    .line 6183
     :pswitch_8
     const v0, #string@imProtocolNetMeeting#t
 
     goto :goto_0
 
-    .line 6214
+    .line 6174
     nop
 
     :pswitch_data_0
@@ -194,7 +194,7 @@
     .parameter "label"
 
     .prologue
-    .line 6201
+    .line 6161
     if-nez p1, :cond_0
 
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -203,19 +203,19 @@
 
     if-nez v1, :cond_0
 
-    .line 6205
+    .line 6165
     .end local p2
     :goto_0
     return-object p2
 
-    .line 6204
+    .line 6164
     .restart local p2
     :cond_0
     invoke-static {p1}, Landroid/provider/ContactsContract$CommonDataKinds$Im;->getTypeLabelResource(I)I
 
     move-result v0
 
-    .line 6205
+    .line 6165
     .local v0, labelRes:I
     invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -229,34 +229,34 @@
     .parameter "type"
 
     .prologue
-    .line 6186
+    .line 6146
     packed-switch p0, :pswitch_data_0
 
-    .line 6190
+    .line 6150
     const v0, #string@imTypeCustom#t
 
     :goto_0
     return v0
 
-    .line 6187
+    .line 6147
     :pswitch_0
     const v0, #string@imTypeHome#t
 
     goto :goto_0
 
-    .line 6188
+    .line 6148
     :pswitch_1
     const v0, #string@imTypeWork#t
 
     goto :goto_0
 
-    .line 6189
+    .line 6149
     :pswitch_2
     const v0, #string@imTypeOther#t
 
     goto :goto_0
 
-    .line 6186
+    .line 6146
     nop
 
     :pswitch_data_0

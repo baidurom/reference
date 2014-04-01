@@ -15,21 +15,11 @@
 
 
 # static fields
-.field public static final MMRejectCause2:I = 0x2050068
-
-.field public static final MMRejectCause3:I = 0x2050069
-
-.field public static final MMRejectCause5:I = 0x2050070
-
-.field public static final MMRejectCause6:I = 0x2050071
-
 .field public static final Pin2Mmi:I = 0x2050009
 
 .field public static final Puk2Mmi:I = 0x205000b
 
 .field public static final PukMmi:I = 0x205000a
-
-.field public static final RejectCauseTitle:I = 0x2050067
 
 .field public static final RestrictedChangedTitle_SIM1:I = 0x205002d
 
@@ -50,8 +40,6 @@
 .field public static final badPin2:I = 0x2050001
 
 .field public static final badPuk2:I = 0x2050002
-
-.field public static final calibration_data:I = 0x2050065
 
 .field public static final callBarringFailMmi:I = 0x2050008
 
@@ -74,8 +62,6 @@
 .field public static final free_memory_text:I = 0x2050048
 
 .field public static final invalidPuk:I = 0x2050015
-
-.field public static final invalid_card:I = 0x2050066
 
 .field public static final invalid_imei:I = 0x205001b
 
@@ -147,8 +133,6 @@
 
 .field public static final oper_long_46001:I = 0x205001e
 
-.field public static final oper_long_46003:I = 0x2050063
-
 .field public static final oper_long_46601:I = 0x205001f
 
 .field public static final oper_long_46692:I = 0x2050020
@@ -162,8 +146,6 @@
 .field public static final oper_short_46000:I = 0x2050024
 
 .field public static final oper_short_46001:I = 0x2050025
-
-.field public static final oper_short_46003:I = 0x2050064
 
 .field public static final oper_short_46601:I = 0x2050026
 
@@ -201,12 +183,6 @@
 
 .field public static final same_imei:I = 0x205001c
 
-.field public static final sdcard_default_path_change:I = 0x2050079
-
-.field public static final sdcard_ready_title:I = 0x2050077
-
-.field public static final sdcard_select_default_path:I = 0x2050078
-
 .field public static final serviceClassVideo:I = 0x2050044
 
 .field public static final serviceProvisioned:I = 0x205000c
@@ -223,43 +199,9 @@
 
 .field public static final unread_messages:I = 0x205004b
 
-.field public static final usb_storage_ready_title:I = 0x2050083
-
-.field public static final usbint_notification_title:I = 0x2050072
-
 .field public static final volume_fm:I = 0x2050051
 
 .field public static final volume_matv:I = 0x2050052
-
-.field public static final wifi_display_bt_hdmi_off_wfd_on:I = 0x2050073
-
-.field public static final wifi_display_change_resolution_reminder:I = 0x2050090
-
-.field public static final wifi_display_connection_is_not_steady:I = 0x2050081
-
-.field public static final wifi_display_disconnect_then_reconnect:I = 0x2050085
-
-.field public static final wifi_display_disconnected:I = 0x2050086
-
-.field public static final wifi_display_do_not_remind_again:I = 0x2050091
-
-.field public static final wifi_display_reconnect:I = 0x2050084
-
-.field public static final wifi_display_sound_path_reminder:I = 0x2050089
-
-.field public static final wifi_display_unstable_connection:I = 0x2050080
-
-.field public static final wifi_display_unstable_suggestion:I = 0x2050082
-
-.field public static final wifi_display_wfd_and_wifi_are_turned_on:I = 0x2050088
-
-.field public static final wifi_display_wfd_off_bt_on:I = 0x2050075
-
-.field public static final wifi_display_wfd_off_hdmi_on:I = 0x2050074
-
-.field public static final wifi_display_wifi_p2p_disconnect_wfd_connect:I = 0x2050076
-
-.field public static final wifi_wps_failed_overlap:I = 0x2050087
 
 
 # direct methods
@@ -267,8 +209,8 @@
     .locals 0
 
     .prologue
-    .line 371
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 258
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

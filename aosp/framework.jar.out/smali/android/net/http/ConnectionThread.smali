@@ -144,7 +144,7 @@
     :goto_0
     iget-boolean v3, p0, Landroid/net/http/ConnectionThread;->mRunning:Z
 
-    if-eqz v3, :cond_6
+    if-eqz v3, :cond_8
 
     .line 83
     iget-wide v3, p0, Landroid/net/http/ConnectionThread;->mCurrentThreadTime:J
@@ -172,17 +172,27 @@
 
     .line 93
     .local v0, request:Landroid/net/http/Request;
-    if-nez v0, :cond_3
+    if-nez v0, :cond_4
 
     .line 94
     iget-object v4, p0, Landroid/net/http/ConnectionThread;->mRequestFeeder:Landroid/net/http/RequestFeeder;
 
     monitor-enter v4
 
+    .line 95
+    :try_start_0
+    sget-boolean v3, Landroid/net/http/HttpLog;->LOGV:Z
+
+    if-eqz v3, :cond_2
+
+    const-string v3, "ConnectionThread: Waiting for work"
+
+    invoke-static {v3}, Landroid/net/http/HttpLog;->v(Ljava/lang/String;)V
+
     .line 96
+    :cond_2
     const/4 v3, 0x1
 
-    :try_start_0
     iput-boolean v3, p0, Landroid/net/http/ConnectionThread;->mWaiting:Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -208,7 +218,7 @@
 
     cmp-long v3, v5, v7
 
-    if-eqz v3, :cond_2
+    if-eqz v3, :cond_3
 
     .line 103
     invoke-static {}, Landroid/os/SystemClock;->currentThreadTimeMillis()J
@@ -218,7 +228,7 @@
     iput-wide v5, p0, Landroid/net/http/ConnectionThread;->mCurrentThreadTime:J
 
     .line 106
-    :cond_2
+    :cond_3
     monitor-exit v4
 
     goto :goto_0
@@ -232,8 +242,46 @@
 
     throw v3
 
+    .line 108
+    :cond_4
+    sget-boolean v3, Landroid/net/http/HttpLog;->LOGV:Z
+
+    if-eqz v3, :cond_5
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "ConnectionThread: new request "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, v0, Landroid/net/http/Request;->mHost:Lorg/apache/http/HttpHost;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Landroid/net/http/HttpLog;->v(Ljava/lang/String;)V
+
     .line 111
-    :cond_3
+    :cond_5
     iget-object v3, p0, Landroid/net/http/ConnectionThread;->mConnectionManager:Landroid/net/http/RequestQueue$ConnectionManager;
 
     iget-object v4, p0, Landroid/net/http/ConnectionThread;->mContext:Landroid/content/Context;
@@ -258,7 +306,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_5
+    if-eqz v3, :cond_7
 
     .line 115
     iget-object v3, p0, Landroid/net/http/ConnectionThread;->mConnectionManager:Landroid/net/http/RequestQueue$ConnectionManager;
@@ -269,7 +317,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_4
+    if-nez v3, :cond_6
 
     .line 116
     iget-object v3, p0, Landroid/net/http/ConnectionThread;->mConnection:Landroid/net/http/Connection;
@@ -277,7 +325,7 @@
     invoke-virtual {v3}, Landroid/net/http/Connection;->closeConnection()V
 
     .line 121
-    :cond_4
+    :cond_6
     :goto_2
     const/4 v3, 0x0
 
@@ -312,11 +360,11 @@
 
     iput-wide v3, p0, Landroid/net/http/ConnectionThread;->mTotalThreadTime:J
 
-    goto :goto_0
+    goto/16 :goto_0
 
     .line 119
     .end local v1           #start:J
-    :cond_5
+    :cond_7
     iget-object v3, p0, Landroid/net/http/ConnectionThread;->mConnection:Landroid/net/http/Connection;
 
     invoke-virtual {v3}, Landroid/net/http/Connection;->closeConnection()V
@@ -325,7 +373,7 @@
 
     .line 131
     .end local v0           #request:Landroid/net/http/Request;
-    :cond_6
+    :cond_8
     return-void
 
     .line 99
@@ -333,7 +381,7 @@
     :catch_0
     move-exception v3
 
-    goto :goto_1
+    goto/16 :goto_1
 .end method
 
 .method public declared-synchronized toString()Ljava/lang/String;

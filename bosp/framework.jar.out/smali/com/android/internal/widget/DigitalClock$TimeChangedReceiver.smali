@@ -35,90 +35,102 @@
     .parameter "clock"
 
     .prologue
-    .line 74
+    .line 76
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
-    .line 75
+    .line 77
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Lcom/android/internal/widget/DigitalClock$TimeChangedReceiver;->mClock:Ljava/lang/ref/WeakReference;
 
-    .line 76
+    .line 78
     invoke-virtual {p1}, Lcom/android/internal/widget/DigitalClock;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/internal/widget/DigitalClock$TimeChangedReceiver;->mContext:Landroid/content/Context;
 
-    .line 77
+    .line 79
     return-void
 .end method
 
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 4
+    .locals 5
     .parameter "context"
     .parameter "intent"
 
     .prologue
-    .line 82
+    .line 84
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    const-string v3, "android.intent.action.TIMEZONE_CHANGED"
+    const-string v4, "android.intent.action.TIMEZONE_CHANGED"
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    .line 86
+    .local v2, timezoneChanged:Z
+    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v4, "android.intent.action.LOCALE_CHANGED"
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    .line 84
-    .local v1, timezoneChanged:Z
-    iget-object v2, p0, Lcom/android/internal/widget/DigitalClock$TimeChangedReceiver;->mClock:Ljava/lang/ref/WeakReference;
+    .line 88
+    .local v1, localeChanged:Z
+    iget-object v3, p0, Lcom/android/internal/widget/DigitalClock$TimeChangedReceiver;->mClock:Ljava/lang/ref/WeakReference;
 
-    invoke-virtual {v2}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v3}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/internal/widget/DigitalClock;
 
-    .line 85
+    .line 89
     .local v0, clock:Lcom/android/internal/widget/DigitalClock;
     if-eqz v0, :cond_0
 
-    .line 86
+    .line 90
     #getter for: Lcom/android/internal/widget/DigitalClock;->mHandler:Landroid/os/Handler;
-    invoke-static {v0}, Lcom/android/internal/widget/DigitalClock;->access$100(Lcom/android/internal/widget/DigitalClock;)Landroid/os/Handler;
+    invoke-static {v0}, Lcom/android/internal/widget/DigitalClock;->access$300(Lcom/android/internal/widget/DigitalClock;)Landroid/os/Handler;
 
-    move-result-object v2
+    move-result-object v3
 
-    new-instance v3, Lcom/android/internal/widget/DigitalClock$TimeChangedReceiver$1;
+    new-instance v4, Lcom/android/internal/widget/DigitalClock$TimeChangedReceiver$1;
 
-    invoke-direct {v3, p0, v1, v0}, Lcom/android/internal/widget/DigitalClock$TimeChangedReceiver$1;-><init>(Lcom/android/internal/widget/DigitalClock$TimeChangedReceiver;ZLcom/android/internal/widget/DigitalClock;)V
+    invoke-direct {v4, p0, v2, v0, v1}, Lcom/android/internal/widget/DigitalClock$TimeChangedReceiver$1;-><init>(Lcom/android/internal/widget/DigitalClock$TimeChangedReceiver;ZLcom/android/internal/widget/DigitalClock;Z)V
 
-    invoke-virtual {v2, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {v3, v4}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 101
+    .line 111
     :goto_0
     return-void
 
-    .line 96
+    .line 106
     :cond_0
     :try_start_0
-    iget-object v2, p0, Lcom/android/internal/widget/DigitalClock$TimeChangedReceiver;->mContext:Landroid/content/Context;
+    iget-object v3, p0, Lcom/android/internal/widget/DigitalClock$TimeChangedReceiver;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v2, p0}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
+    invoke-virtual {v3, p0}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    .line 97
+    .line 107
     :catch_0
-    move-exception v2
+    move-exception v3
 
     goto :goto_0
 .end method

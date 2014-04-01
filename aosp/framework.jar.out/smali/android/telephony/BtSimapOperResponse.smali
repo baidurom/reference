@@ -62,7 +62,7 @@
     .locals 1
 
     .prologue
-    .line 198
+    .line 201
     new-instance v0, Landroid/telephony/BtSimapOperResponse$1;
 
     invoke-direct {v0}, Landroid/telephony/BtSimapOperResponse$1;-><init>()V
@@ -80,27 +80,27 @@
 
     const/4 v1, -0x1
 
-    .line 67
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 70
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 68
+    .line 71
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/telephony/BtSimapOperResponse;->mParams:I
 
-    .line 69
+    .line 72
     iput v1, p0, Landroid/telephony/BtSimapOperResponse;->mCurType:I
 
-    .line 70
+    .line 73
     iput v1, p0, Landroid/telephony/BtSimapOperResponse;->mSupportType:I
 
-    .line 71
+    .line 74
     iput-object v2, p0, Landroid/telephony/BtSimapOperResponse;->mStrATR:Ljava/lang/String;
 
-    .line 72
+    .line 75
     iput-object v2, p0, Landroid/telephony/BtSimapOperResponse;->mStrAPDU:Ljava/lang/String;
 
-    .line 73
+    .line 76
     return-void
 .end method
 
@@ -109,45 +109,45 @@
     .parameter "in"
 
     .prologue
-    .line 78
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 81
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 79
+    .line 82
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telephony/BtSimapOperResponse;->mParams:I
 
-    .line 80
+    .line 83
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telephony/BtSimapOperResponse;->mCurType:I
 
-    .line 81
+    .line 84
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telephony/BtSimapOperResponse;->mSupportType:I
 
-    .line 82
+    .line 85
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/telephony/BtSimapOperResponse;->mStrATR:Ljava/lang/String;
 
-    .line 83
+    .line 86
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/telephony/BtSimapOperResponse;->mStrAPDU:Ljava/lang/String;
 
-    .line 84
+    .line 87
     return-void
 .end method
 
@@ -157,7 +157,7 @@
     .locals 1
 
     .prologue
-    .line 190
+    .line 193
     const/4 v0, 0x0
 
     return v0
@@ -167,17 +167,17 @@
     .locals 1
 
     .prologue
-    .line 143
+    .line 146
     invoke-virtual {p0}, Landroid/telephony/BtSimapOperResponse;->isApduExist()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 144
+    .line 147
     iget-object v0, p0, Landroid/telephony/BtSimapOperResponse;->mStrAPDU:Ljava/lang/String;
 
-    .line 146
+    .line 149
     :goto_0
     return-object v0
 
@@ -191,17 +191,17 @@
     .locals 1
 
     .prologue
-    .line 135
+    .line 138
     invoke-virtual {p0}, Landroid/telephony/BtSimapOperResponse;->isAtrExist()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 136
+    .line 139
     iget-object v0, p0, Landroid/telephony/BtSimapOperResponse;->mStrATR:Ljava/lang/String;
 
-    .line 138
+    .line 141
     :goto_0
     return-object v0
 
@@ -215,17 +215,17 @@
     .locals 1
 
     .prologue
-    .line 119
+    .line 122
     invoke-virtual {p0}, Landroid/telephony/BtSimapOperResponse;->isCurTypeExist()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 120
+    .line 123
     iget v0, p0, Landroid/telephony/BtSimapOperResponse;->mCurType:I
 
-    .line 122
+    .line 125
     :goto_0
     return v0
 
@@ -239,17 +239,17 @@
     .locals 1
 
     .prologue
-    .line 127
+    .line 130
     invoke-virtual {p0}, Landroid/telephony/BtSimapOperResponse;->isSupportTypeExist()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 128
+    .line 131
     iget v0, p0, Landroid/telephony/BtSimapOperResponse;->mSupportType:I
 
-    .line 130
+    .line 133
     :goto_0
     return v0
 
@@ -263,17 +263,17 @@
     .locals 1
 
     .prologue
-    .line 111
+    .line 114
     iget v0, p0, Landroid/telephony/BtSimapOperResponse;->mParams:I
 
     and-int/lit8 v0, v0, 0x8
 
     if-lez v0, :cond_0
 
-    .line 112
+    .line 115
     const/4 v0, 0x1
 
-    .line 114
+    .line 117
     :goto_0
     return v0
 
@@ -287,17 +287,17 @@
     .locals 1
 
     .prologue
-    .line 103
+    .line 106
     iget v0, p0, Landroid/telephony/BtSimapOperResponse;->mParams:I
 
     and-int/lit8 v0, v0, 0x4
 
     if-lez v0, :cond_0
 
-    .line 104
+    .line 107
     const/4 v0, 0x1
 
-    .line 106
+    .line 109
     :goto_0
     return v0
 
@@ -311,17 +311,17 @@
     .locals 1
 
     .prologue
-    .line 87
+    .line 90
     iget v0, p0, Landroid/telephony/BtSimapOperResponse;->mParams:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-lez v0, :cond_0
 
-    .line 88
+    .line 91
     const/4 v0, 0x1
 
-    .line 90
+    .line 93
     :goto_0
     return v0
 
@@ -335,17 +335,17 @@
     .locals 1
 
     .prologue
-    .line 95
+    .line 98
     iget v0, p0, Landroid/telephony/BtSimapOperResponse;->mParams:I
 
     and-int/lit8 v0, v0, 0x2
 
     if-lez v0, :cond_0
 
-    .line 96
+    .line 99
     const/4 v0, 0x1
 
-    .line 98
+    .line 101
     :goto_0
     return v0
 
@@ -360,42 +360,42 @@
     .parameter "source"
 
     .prologue
-    .line 179
+    .line 182
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telephony/BtSimapOperResponse;->mParams:I
 
-    .line 180
+    .line 183
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telephony/BtSimapOperResponse;->mCurType:I
 
-    .line 181
+    .line 184
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telephony/BtSimapOperResponse;->mSupportType:I
 
-    .line 182
+    .line 185
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/telephony/BtSimapOperResponse;->mStrATR:Ljava/lang/String;
 
-    .line 183
+    .line 186
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/telephony/BtSimapOperResponse;->mStrAPDU:Ljava/lang/String;
 
-    .line 184
+    .line 187
     return-void
 .end method
 
@@ -404,20 +404,20 @@
     .parameter "strVal"
 
     .prologue
-    .line 172
+    .line 175
     if-eqz p1, :cond_0
 
-    .line 173
+    .line 176
     iput-object p1, p0, Landroid/telephony/BtSimapOperResponse;->mStrAPDU:Ljava/lang/String;
 
-    .line 174
+    .line 177
     iget v0, p0, Landroid/telephony/BtSimapOperResponse;->mParams:I
 
     or-int/lit8 v0, v0, 0x8
 
     iput v0, p0, Landroid/telephony/BtSimapOperResponse;->mParams:I
 
-    .line 176
+    .line 179
     :cond_0
     return-void
 .end method
@@ -427,20 +427,20 @@
     .parameter "strVal"
 
     .prologue
-    .line 165
+    .line 168
     if-eqz p1, :cond_0
 
-    .line 166
+    .line 169
     iput-object p1, p0, Landroid/telephony/BtSimapOperResponse;->mStrATR:Ljava/lang/String;
 
-    .line 167
+    .line 170
     iget v0, p0, Landroid/telephony/BtSimapOperResponse;->mParams:I
 
     or-int/lit8 v0, v0, 0x4
 
     iput v0, p0, Landroid/telephony/BtSimapOperResponse;->mParams:I
 
-    .line 169
+    .line 172
     :cond_0
     return-void
 .end method
@@ -450,25 +450,25 @@
     .parameter "nType"
 
     .prologue
-    .line 151
+    .line 154
     if-eqz p1, :cond_0
 
     const/4 v0, 0x1
 
     if-ne p1, v0, :cond_1
 
-    .line 152
+    .line 155
     :cond_0
     iput p1, p0, Landroid/telephony/BtSimapOperResponse;->mCurType:I
 
-    .line 153
+    .line 156
     iget v0, p0, Landroid/telephony/BtSimapOperResponse;->mParams:I
 
     or-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Landroid/telephony/BtSimapOperResponse;->mParams:I
 
-    .line 155
+    .line 158
     :cond_1
     return-void
 .end method
@@ -478,7 +478,7 @@
     .parameter "nType"
 
     .prologue
-    .line 158
+    .line 161
     if-eqz p1, :cond_0
 
     const/4 v0, 0x1
@@ -489,18 +489,18 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 159
+    .line 162
     :cond_0
     iput p1, p0, Landroid/telephony/BtSimapOperResponse;->mSupportType:I
 
-    .line 160
+    .line 163
     iget v0, p0, Landroid/telephony/BtSimapOperResponse;->mParams:I
 
     or-int/lit8 v0, v0, 0x2
 
     iput v0, p0, Landroid/telephony/BtSimapOperResponse;->mParams:I
 
-    .line 162
+    .line 165
     :cond_1
     return-void
 .end method
@@ -511,31 +511,31 @@
     .parameter "flags"
 
     .prologue
-    .line 209
+    .line 212
     iget v0, p0, Landroid/telephony/BtSimapOperResponse;->mParams:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 210
+    .line 213
     iget v0, p0, Landroid/telephony/BtSimapOperResponse;->mCurType:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 211
+    .line 214
     iget v0, p0, Landroid/telephony/BtSimapOperResponse;->mSupportType:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 212
+    .line 215
     iget-object v0, p0, Landroid/telephony/BtSimapOperResponse;->mStrATR:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 213
+    .line 216
     iget-object v0, p0, Landroid/telephony/BtSimapOperResponse;->mStrAPDU:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 214
+    .line 217
     return-void
 .end method

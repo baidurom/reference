@@ -41,8 +41,8 @@
     .locals 0
 
     .prologue
-    .line 231
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 133
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -52,24 +52,24 @@
     .parameter "action"
 
     .prologue
-    .line 209
+    .line 177
     const/4 v0, 0x0
 
-    .line 211
+    .line 179
     .local v0, isValid:Z
     packed-switch p0, :pswitch_data_0
 
-    .line 224
+    .line 192
     :goto_0
     return v0
 
-    .line 222
+    .line 190
     :pswitch_0
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 211
+    .line 179
     nop
 
     :pswitch_data_0

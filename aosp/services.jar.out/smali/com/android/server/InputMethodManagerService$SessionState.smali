@@ -33,21 +33,21 @@
     .parameter "_session"
 
     .prologue
-    .line 228
+    .line 202
     iput-object p1, p0, Lcom/android/server/InputMethodManagerService$SessionState;->this$0:Lcom/android/server/InputMethodManagerService;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 229
+    .line 203
     iput-object p2, p0, Lcom/android/server/InputMethodManagerService$SessionState;->client:Lcom/android/server/InputMethodManagerService$ClientState;
 
-    .line 230
+    .line 204
     iput-object p3, p0, Lcom/android/server/InputMethodManagerService$SessionState;->method:Lcom/android/internal/view/IInputMethod;
 
-    .line 231
+    .line 205
     iput-object p4, p0, Lcom/android/server/InputMethodManagerService$SessionState;->session:Lcom/android/internal/view/IInputMethodSession;
 
-    .line 232
+    .line 206
     return-void
 .end method
 
@@ -57,7 +57,7 @@
     .locals 2
 
     .prologue
-    .line 219
+    .line 193
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

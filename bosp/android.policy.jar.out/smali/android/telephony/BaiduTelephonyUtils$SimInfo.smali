@@ -48,7 +48,7 @@
 
 .field public static final DEFAULT_NAME_MIN_INDEX:I = 0x1
 
-.field public static final DEFAULT_NAME_RES:I = 0x2050093
+.field public static final DEFAULT_NAME_RES:I = 0x205006f
 
 .field public static final DEFAULT_SORT_ORDER:Ljava/lang/String; = "name ASC"
 

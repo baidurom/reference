@@ -34,12 +34,12 @@
     .parameter
 
     .prologue
-    .line 363
+    .line 350
     iput-object p1, p0, Lcom/android/server/BackupManagerService$FullParams;->this$0:Lcom/android/server/BackupManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 364
+    .line 351
     new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v1, 0x0
@@ -48,6 +48,6 @@
 
     iput-object v0, p0, Lcom/android/server/BackupManagerService$FullParams;->latch:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    .line 365
+    .line 352
     return-void
 .end method

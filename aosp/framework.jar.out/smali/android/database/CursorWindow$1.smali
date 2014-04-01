@@ -32,8 +32,8 @@
     .locals 0
 
     .prologue
-    .line 679
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 687
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -45,7 +45,7 @@
     .parameter "source"
 
     .prologue
-    .line 681
+    .line 689
     new-instance v0, Landroid/database/CursorWindow;
 
     const/4 v1, 0x0
@@ -60,7 +60,7 @@
     .parameter "x0"
 
     .prologue
-    .line 679
+    .line 687
     invoke-virtual {p0, p1}, Landroid/database/CursorWindow$1;->createFromParcel(Landroid/os/Parcel;)Landroid/database/CursorWindow;
 
     move-result-object v0
@@ -73,7 +73,7 @@
     .parameter "size"
 
     .prologue
-    .line 685
+    .line 693
     new-array v0, p1, [Landroid/database/CursorWindow;
 
     return-object v0
@@ -84,7 +84,7 @@
     .parameter "x0"
 
     .prologue
-    .line 679
+    .line 687
     invoke-virtual {p0, p1}, Landroid/database/CursorWindow$1;->newArray(I)[Landroid/database/CursorWindow;
 
     move-result-object v0

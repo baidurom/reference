@@ -14,8 +14,6 @@
 # instance fields
 .field private mAdditionalInfo:I
 
-.field private mExplanation:Ljava/lang/String;
-
 .field private mResult:Lcom/android/internal/telephony/cat/ResultCode;
 
 
@@ -25,10 +23,10 @@
     .parameter "result"
 
     .prologue
-    .line 28
+    .line 30
     invoke-direct {p0}, Lcom/android/internal/telephony/cat/CatException;-><init>()V
 
-    .line 33
+    .line 35
     sget-object v0, Lcom/android/internal/telephony/cat/ResultException$1;->$SwitchMap$com$android$internal$telephony$cat$ResultCode:[I
 
     invoke-virtual {p1}, Lcom/android/internal/telephony/cat/ResultCode;->ordinal()I
@@ -39,23 +37,18 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 47
+    .line 49
     iput-object p1, p0, Lcom/android/internal/telephony/cat/ResultException;->mResult:Lcom/android/internal/telephony/cat/ResultCode;
 
-    .line 48
+    .line 50
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/internal/telephony/cat/ResultException;->mAdditionalInfo:I
 
-    .line 49
-    const-string v0, ""
-
-    iput-object v0, p0, Lcom/android/internal/telephony/cat/ResultException;->mExplanation:Ljava/lang/String;
-
-    .line 50
+    .line 51
     return-void
 
-    .line 42
+    .line 44
     :pswitch_0
     new-instance v0, Ljava/lang/AssertionError;
 
@@ -87,7 +80,7 @@
 
     throw v0
 
-    .line 33
+    .line 35
     nop
 
     :pswitch_data_0
@@ -109,24 +102,13 @@
     .parameter "additionalInfo"
 
     .prologue
-    .line 59
+    .line 54
     invoke-direct {p0}, Lcom/android/internal/telephony/cat/CatException;-><init>()V
 
-    .line 60
-    iput-object p1, p0, Lcom/android/internal/telephony/cat/ResultException;->mResult:Lcom/android/internal/telephony/cat/ResultCode;
-
-    .line 61
-    iput p2, p0, Lcom/android/internal/telephony/cat/ResultException;->mAdditionalInfo:I
-
-    .line 62
-    const-string v0, ""
-
-    iput-object v0, p0, Lcom/android/internal/telephony/cat/ResultException;->mExplanation:Ljava/lang/String;
-
-    .line 64
+    .line 56
     if-gez p2, :cond_0
 
-    .line 65
+    .line 57
     new-instance v0, Ljava/lang/AssertionError;
 
     const-string v1, "Additional info must be greater than zero!"
@@ -135,41 +117,14 @@
 
     throw v0
 
-    .line 68
+    .line 61
     :cond_0
-    return-void
-.end method
+    iput-object p1, p0, Lcom/android/internal/telephony/cat/ResultException;->mResult:Lcom/android/internal/telephony/cat/ResultCode;
 
-.method public constructor <init>(Lcom/android/internal/telephony/cat/ResultCode;ILjava/lang/String;)V
-    .locals 0
-    .parameter "result"
-    .parameter "additionalInfo"
-    .parameter "explanation"
+    .line 62
+    iput p2, p0, Lcom/android/internal/telephony/cat/ResultException;->mAdditionalInfo:I
 
-    .prologue
-    .line 71
-    invoke-direct {p0, p1, p2}, Lcom/android/internal/telephony/cat/ResultException;-><init>(Lcom/android/internal/telephony/cat/ResultCode;I)V
-
-    .line 72
-    iput-object p3, p0, Lcom/android/internal/telephony/cat/ResultException;->mExplanation:Ljava/lang/String;
-
-    .line 73
-    return-void
-.end method
-
-.method public constructor <init>(Lcom/android/internal/telephony/cat/ResultCode;Ljava/lang/String;)V
-    .locals 0
-    .parameter "result"
-    .parameter "explanation"
-
-    .prologue
-    .line 53
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/cat/ResultException;-><init>(Lcom/android/internal/telephony/cat/ResultCode;)V
-
-    .line 54
-    iput-object p2, p0, Lcom/android/internal/telephony/cat/ResultException;->mExplanation:Ljava/lang/String;
-
-    .line 55
+    .line 63
     return-void
 .end method
 
@@ -179,27 +134,17 @@
     .locals 1
 
     .prologue
-    .line 84
+    .line 74
     iget v0, p0, Lcom/android/internal/telephony/cat/ResultException;->mAdditionalInfo:I
 
     return v0
-.end method
-
-.method public explanation()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 88
-    iget-object v0, p0, Lcom/android/internal/telephony/cat/ResultException;->mExplanation:Ljava/lang/String;
-
-    return-object v0
 .end method
 
 .method public hasAdditionalInfo()Z
     .locals 1
 
     .prologue
-    .line 80
+    .line 70
     iget v0, p0, Lcom/android/internal/telephony/cat/ResultException;->mAdditionalInfo:I
 
     if-ltz v0, :cond_0
@@ -219,60 +164,8 @@
     .locals 1
 
     .prologue
-    .line 76
+    .line 66
     iget-object v0, p0, Lcom/android/internal/telephony/cat/ResultException;->mResult:Lcom/android/internal/telephony/cat/ResultCode;
-
-    return-object v0
-.end method
-
-.method public toString()Ljava/lang/String;
-    .locals 2
-
-    .prologue
-    .line 93
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v1, "result="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/internal/telephony/cat/ResultException;->mResult:Lcom/android/internal/telephony/cat/ResultCode;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " additionalInfo="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Lcom/android/internal/telephony/cat/ResultException;->mAdditionalInfo:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " explantion="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/internal/telephony/cat/ResultException;->mExplanation:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
 
     return-object v0
 .end method

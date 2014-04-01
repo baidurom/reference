@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 1109
+    .line 872
     iput-object p1, p0, Lcom/android/server/wm/WindowManagerService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/wm/WindowManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -38,7 +38,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1109
+    .line 872
     invoke-direct {p0, p1}, Lcom/android/server/wm/WindowManagerService$QuickbootBroadcastReceiver;-><init>(Lcom/android/server/wm/WindowManagerService;)V
 
     return-void
@@ -54,12 +54,12 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 1112
+    .line 875
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1113
+    .line 876
     .local v0, action:Ljava/lang/String;
     const-string v1, "android.intent.action.ACTION_QUICKBOOT_SHUTDOWN"
 
@@ -69,7 +69,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 1114
+    .line 877
     const-string v1, "WindowManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -92,7 +92,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1115
+    .line 878
     iget-object v1, p0, Lcom/android/server/wm/WindowManagerService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/wm/WindowManagerService;
 
     const/4 v2, 0x1
@@ -100,12 +100,12 @@
     #setter for: Lcom/android/server/wm/WindowManagerService;->mNeedResetRotation:Z
     invoke-static {v1, v2}, Lcom/android/server/wm/WindowManagerService;->access$502(Lcom/android/server/wm/WindowManagerService;Z)Z
 
-    .line 1123
+    .line 886
     :cond_0
     :goto_0
     return-void
 
-    .line 1116
+    .line 879
     :cond_1
     const-string v1, "android.intent.action.SCREEN_OFF"
 
@@ -115,7 +115,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 1117
+    .line 880
     iget-object v1, p0, Lcom/android/server/wm/WindowManagerService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/wm/WindowManagerService;
 
     #getter for: Lcom/android/server/wm/WindowManagerService;->mNeedResetRotation:Z
@@ -125,12 +125,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 1118
+    .line 881
     iget-object v1, p0, Lcom/android/server/wm/WindowManagerService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/wm/WindowManagerService;
 
     iput v3, v1, Lcom/android/server/wm/WindowManagerService;->mRotation:I
 
-    .line 1119
+    .line 882
     iget-object v1, p0, Lcom/android/server/wm/WindowManagerService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/wm/WindowManagerService;
 
     iget-object v1, v1, Lcom/android/server/wm/WindowManagerService;->mPolicy:Landroid/view/WindowManagerPolicy;
@@ -141,7 +141,7 @@
 
     invoke-interface {v1, v2}, Landroid/view/WindowManagerPolicy;->setRotationLw(I)V
 
-    .line 1120
+    .line 883
     iget-object v1, p0, Lcom/android/server/wm/WindowManagerService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/wm/WindowManagerService;
 
     #setter for: Lcom/android/server/wm/WindowManagerService;->mNeedResetRotation:Z

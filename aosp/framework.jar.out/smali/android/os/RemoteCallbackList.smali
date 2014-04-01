@@ -47,7 +47,7 @@
     .prologue
     .line 49
     .local p0, this:Landroid/os/RemoteCallbackList;,"Landroid/os/RemoteCallbackList<TE;>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 50
     new-instance v0, Ljava/util/HashMap;
@@ -306,53 +306,6 @@
     iget-object v0, v0, Landroid/os/RemoteCallbackList$Callback;->mCallback:Landroid/os/IInterface;
 
     return-object v0
-.end method
-
-.method public getRegisteredCallbackCount()I
-    .locals 2
-
-    .prologue
-    .line 321
-    .local p0, this:Landroid/os/RemoteCallbackList;,"Landroid/os/RemoteCallbackList<TE;>;"
-    iget-object v1, p0, Landroid/os/RemoteCallbackList;->mCallbacks:Ljava/util/HashMap;
-
-    monitor-enter v1
-
-    .line 322
-    :try_start_0
-    iget-boolean v0, p0, Landroid/os/RemoteCallbackList;->mKilled:Z
-
-    if-eqz v0, :cond_0
-
-    .line 323
-    const/4 v0, 0x0
-
-    monitor-exit v1
-
-    .line 325
-    :goto_0
-    return v0
-
-    :cond_0
-    iget-object v0, p0, Landroid/os/RemoteCallbackList;->mCallbacks:Ljava/util/HashMap;
-
-    invoke-virtual {v0}, Ljava/util/HashMap;->size()I
-
-    move-result v0
-
-    monitor-exit v1
-
-    goto :goto_0
-
-    .line 326
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
 .end method
 
 .method public kill()V

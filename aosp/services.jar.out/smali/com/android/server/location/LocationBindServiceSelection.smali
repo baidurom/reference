@@ -14,15 +14,15 @@
 
 .field private static final TAG:Ljava/lang/String; = "LocationBindServiceSelection"
 
-.field private static sLocationBindServiceSelection:Lcom/android/server/location/LocationBindServiceSelection;
+.field private static mLocationBindServiceSelection:Lcom/android/server/location/LocationBindServiceSelection;
 
 
 # instance fields
 .field private mContext:Landroid/content/Context;
 
-.field private mGeocoderPackageName:Ljava/lang/String;
+.field private mGeocoderServiceName:Ljava/lang/String;
 
-.field private mNWLocationPackageName:Ljava/lang/String;
+.field private mNetworkServiceName:Ljava/lang/String;
 
 
 # direct methods
@@ -30,10 +30,10 @@
     .locals 1
 
     .prologue
-    .line 72
+    .line 80
     const/4 v0, 0x0
 
-    sput-object v0, Lcom/android/server/location/LocationBindServiceSelection;->sLocationBindServiceSelection:Lcom/android/server/location/LocationBindServiceSelection;
+    sput-object v0, Lcom/android/server/location/LocationBindServiceSelection;->mLocationBindServiceSelection:Lcom/android/server/location/LocationBindServiceSelection;
 
     return-void
 .end method
@@ -45,22 +45,22 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 81
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 90
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 73
+    .line 81
     iput-object v0, p0, Lcom/android/server/location/LocationBindServiceSelection;->mContext:Landroid/content/Context;
 
-    .line 74
-    iput-object v0, p0, Lcom/android/server/location/LocationBindServiceSelection;->mGeocoderPackageName:Ljava/lang/String;
-
-    .line 75
-    iput-object v0, p0, Lcom/android/server/location/LocationBindServiceSelection;->mNWLocationPackageName:Ljava/lang/String;
-
     .line 82
-    iput-object p1, p0, Lcom/android/server/location/LocationBindServiceSelection;->mContext:Landroid/content/Context;
+    iput-object v0, p0, Lcom/android/server/location/LocationBindServiceSelection;->mGeocoderServiceName:Ljava/lang/String;
 
     .line 83
+    iput-object v0, p0, Lcom/android/server/location/LocationBindServiceSelection;->mNetworkServiceName:Ljava/lang/String;
+
+    .line 91
+    iput-object p1, p0, Lcom/android/server/location/LocationBindServiceSelection;->mContext:Landroid/content/Context;
+
+    .line 92
     return-void
 .end method
 
@@ -69,26 +69,26 @@
     .parameter "searchTag"
 
     .prologue
-    .line 170
+    .line 173
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v12
 
-    .line 171
+    .line 174
     .local v12, startTime:J
     const/4 v11, 0x0
 
-    .line 172
+    .line 175
     .local v11, serviceName:Ljava/lang/String;
     invoke-static {}, Landroid/util/Xml;->newPullParser()Lorg/xmlpull/v1/XmlPullParser;
 
     move-result-object v10
 
-    .line 173
+    .line 176
     .local v10, parser:Lorg/xmlpull/v1/XmlPullParser;
     const/4 v7, 0x0
 
-    .line 175
+    .line 179
     .local v7, is:Ljava/io/InputStream;
     :try_start_0
     new-instance v1, Ljava/io/File;
@@ -99,7 +99,7 @@
 
     invoke-direct {v1, v14, v15}, Ljava/io/File;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 177
+    .line 180
     .local v1, configFile:Ljava/io/File;
     new-instance v8, Ljava/io/FileInputStream;
 
@@ -107,9 +107,9 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_2
 
-    .line 178
+    .line 181
     .end local v7           #is:Ljava/io/InputStream;
     .local v8, is:Ljava/io/InputStream;
     const/4 v14, 0x0
@@ -117,16 +117,16 @@
     :try_start_1
     invoke-interface {v10, v8, v14}, Lorg/xmlpull/v1/XmlPullParser;->setInput(Ljava/io/InputStream;Ljava/lang/String;)V
 
-    .line 179
+    .line 182
     invoke-interface {v10}, Lorg/xmlpull/v1/XmlPullParser;->getEventType()I
 
     move-result v6
 
-    .line 180
+    .line 183
     .local v6, eventType:I
     const/4 v2, 0x0
 
-    .line 181
+    .line 184
     .local v2, done:Z
     :goto_0
     const/4 v14, 0x1
@@ -135,14 +135,14 @@
 
     if-nez v2, :cond_1
 
-    .line 182
+    .line 186
     const/4 v9, 0x0
 
-    .line 183
+    .line 187
     .local v9, name:Ljava/lang/String;
     packed-switch v6, :pswitch_data_0
 
-    .line 201
+    .line 204
     :cond_0
     :goto_1
     :pswitch_0
@@ -150,16 +150,16 @@
 
     move-result v6
 
-    .line 202
+    .line 205
     goto :goto_0
 
-    .line 187
+    .line 192
     :pswitch_1
     invoke-interface {v10}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v9
 
-    .line 188
+    .line 193
     move-object/from16 v0, p1
 
     invoke-virtual {v9, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
@@ -168,45 +168,45 @@
 
     if-eqz v14, :cond_0
 
-    .line 189
+    .line 195
     invoke-interface {v10}, Lorg/xmlpull/v1/XmlPullParser;->nextText()Ljava/lang/String;
 
     move-result-object v11
 
     goto :goto_1
 
-    .line 193
+    .line 199
     :pswitch_2
     invoke-interface {v10}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v9
 
-    .line 194
+    .line 200
     const-string v14, "LocationService"
 
     invoke-virtual {v9, v14}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_7
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_1 .. :try_end_1} :catch_6
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_6
 
     move-result v14
 
     if-eqz v14, :cond_0
 
-    .line 195
+    .line 201
     const/4 v2, 0x1
 
     goto :goto_1
 
-    .line 210
+    .line 219
     .end local v9           #name:Ljava/lang/String;
     :cond_1
     if-eqz v8, :cond_2
 
-    .line 212
+    .line 223
     :try_start_2
-    invoke-virtual {v8}, Ljava/io/InputStream;->close()V
+    invoke-virtual {v8}, Ljava/io/FileInputStream;->close()V
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_5
 
@@ -214,7 +214,7 @@
     :goto_2
     move-object v7, v8
 
-    .line 218
+    .line 231
     .end local v1           #configFile:Ljava/io/File;
     .end local v2           #done:Z
     .end local v6           #eventType:I
@@ -226,7 +226,7 @@
 
     move-result-wide v4
 
-    .line 219
+    .line 232
     .local v4, endTime:J
     const-string v14, "LocationBindServiceSelection"
 
@@ -264,15 +264,15 @@
 
     invoke-static {v14, v15}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 221
+    .line 233
     return-object v11
 
-    .line 203
+    .line 207
     .end local v4           #endTime:J
     :catch_0
     move-exception v3
 
-    .line 204
+    .line 209
     .local v3, e:Ljava/io/IOException;
     :goto_4
     :try_start_3
@@ -286,25 +286,25 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 205
+    .line 210
     const/4 v11, 0x0
 
-    .line 210
+    .line 219
     if-eqz v7, :cond_3
 
-    .line 212
+    .line 223
     :try_start_4
-    invoke-virtual {v7}, Ljava/io/InputStream;->close()V
+    invoke-virtual {v7}, Ljava/io/FileInputStream;->close()V
     :try_end_4
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_1
 
     goto :goto_3
 
-    .line 213
+    .line 225
     :catch_1
     move-exception v3
 
-    .line 214
+    .line 227
     const-string v14, "LocationBindServiceSelection"
 
     invoke-virtual {v3}, Ljava/io/IOException;->toString()Ljava/lang/String;
@@ -316,18 +316,18 @@
 
     goto :goto_3
 
-    .line 206
+    .line 212
     .end local v3           #e:Ljava/io/IOException;
     :catch_2
     move-exception v3
 
-    .line 207
-    .local v3, e:Lorg/xmlpull/v1/XmlPullParserException;
+    .line 214
+    .local v3, e:Ljava/lang/Exception;
     :goto_6
     :try_start_5
     const-string v14, "LocationBindServiceSelection"
 
-    invoke-virtual {v3}, Lorg/xmlpull/v1/XmlPullParserException;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/Exception;->toString()Ljava/lang/String;
 
     move-result-object v15
 
@@ -335,25 +335,25 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
-    .line 208
+    .line 215
     const/4 v11, 0x0
 
-    .line 210
+    .line 219
     if-eqz v7, :cond_3
 
-    .line 212
+    .line 223
     :try_start_6
-    invoke-virtual {v7}, Ljava/io/InputStream;->close()V
+    invoke-virtual {v7}, Ljava/io/FileInputStream;->close()V
     :try_end_6
     .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_3
 
     goto :goto_3
 
-    .line 213
+    .line 225
     :catch_3
     move-exception v3
 
-    .line 214
+    .line 227
     .local v3, e:Ljava/io/IOException;
     const-string v14, "LocationBindServiceSelection"
 
@@ -363,7 +363,7 @@
 
     goto :goto_5
 
-    .line 210
+    .line 219
     .end local v3           #e:Ljava/io/IOException;
     :catchall_0
     move-exception v14
@@ -371,22 +371,22 @@
     :goto_7
     if-eqz v7, :cond_4
 
-    .line 212
+    .line 223
     :try_start_7
-    invoke-virtual {v7}, Ljava/io/InputStream;->close()V
+    invoke-virtual {v7}, Ljava/io/FileInputStream;->close()V
     :try_end_7
     .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_4
 
-    .line 210
+    .line 219
     :cond_4
     :goto_8
     throw v14
 
-    .line 213
+    .line 225
     :catch_4
     move-exception v3
 
-    .line 214
+    .line 227
     .restart local v3       #e:Ljava/io/IOException;
     const-string v15, "LocationBindServiceSelection"
 
@@ -398,7 +398,7 @@
 
     goto :goto_8
 
-    .line 213
+    .line 225
     .end local v3           #e:Ljava/io/IOException;
     .end local v7           #is:Ljava/io/InputStream;
     .restart local v1       #configFile:Ljava/io/File;
@@ -408,7 +408,7 @@
     :catch_5
     move-exception v3
 
-    .line 214
+    .line 227
     .restart local v3       #e:Ljava/io/IOException;
     const-string v14, "LocationBindServiceSelection"
 
@@ -420,7 +420,7 @@
 
     goto :goto_2
 
-    .line 210
+    .line 219
     .end local v2           #done:Z
     .end local v3           #e:Ljava/io/IOException;
     .end local v6           #eventType:I
@@ -433,7 +433,7 @@
     .restart local v7       #is:Ljava/io/InputStream;
     goto :goto_7
 
-    .line 206
+    .line 212
     .end local v7           #is:Ljava/io/InputStream;
     .restart local v8       #is:Ljava/io/InputStream;
     :catch_6
@@ -445,7 +445,7 @@
     .restart local v7       #is:Ljava/io/InputStream;
     goto :goto_6
 
-    .line 203
+    .line 207
     .end local v7           #is:Ljava/io/InputStream;
     .restart local v8       #is:Ljava/io/InputStream;
     :catch_7
@@ -457,7 +457,7 @@
     .restart local v7       #is:Ljava/io/InputStream;
     goto :goto_4
 
-    .line 183
+    .line 187
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -472,234 +472,184 @@
     .parameter "context"
 
     .prologue
-    .line 92
-    sget-object v0, Lcom/android/server/location/LocationBindServiceSelection;->sLocationBindServiceSelection:Lcom/android/server/location/LocationBindServiceSelection;
+    .line 102
+    sget-object v0, Lcom/android/server/location/LocationBindServiceSelection;->mLocationBindServiceSelection:Lcom/android/server/location/LocationBindServiceSelection;
 
     if-nez v0, :cond_0
 
-    .line 93
+    .line 104
     new-instance v0, Lcom/android/server/location/LocationBindServiceSelection;
 
     invoke-direct {v0, p0}, Lcom/android/server/location/LocationBindServiceSelection;-><init>(Landroid/content/Context;)V
 
-    sput-object v0, Lcom/android/server/location/LocationBindServiceSelection;->sLocationBindServiceSelection:Lcom/android/server/location/LocationBindServiceSelection;
+    sput-object v0, Lcom/android/server/location/LocationBindServiceSelection;->mLocationBindServiceSelection:Lcom/android/server/location/LocationBindServiceSelection;
 
-    .line 95
+    .line 106
     :cond_0
-    sget-object v0, Lcom/android/server/location/LocationBindServiceSelection;->sLocationBindServiceSelection:Lcom/android/server/location/LocationBindServiceSelection;
+    sget-object v0, Lcom/android/server/location/LocationBindServiceSelection;->mLocationBindServiceSelection:Lcom/android/server/location/LocationBindServiceSelection;
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public getGeocodePackageName()Ljava/lang/String;
-    .locals 7
-
-    .prologue
-    const/4 v6, 0x0
-
-    .line 108
-    const-string v3, "com.google.android.location"
-
-    iput-object v3, p0, Lcom/android/server/location/LocationBindServiceSelection;->mGeocoderPackageName:Ljava/lang/String;
-
-    .line 109
-    const/4 v2, 0x0
-
-    .line 110
-    .local v2, tempGeocoderPackageName:Ljava/lang/String;
-    iget-object v3, p0, Lcom/android/server/location/LocationBindServiceSelection;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v3
-
-    const-string v4, "GeocoderServiceName"
-
-    invoke-static {v3, v4}, Landroid/provider/Settings$Secure;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 112
-    const-string v3, "LocationBindServiceSelection"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "GeocoderPackage database:"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Lcom/mediatek/xlog/Xlog;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 113
-    if-nez v2, :cond_0
-
-    .line 114
-    const-string v3, "PrivateInnerGeocoderServiceName"
-
-    invoke-direct {p0, v3}, Lcom/android/server/location/LocationBindServiceSelection;->getBindServiceFromXMLFile(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 115
-    const-string v3, "LocationBindServiceSelection"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "GeocoderPackage XML file:"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Lcom/mediatek/xlog/Xlog;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 117
-    :cond_0
-    if-eqz v2, :cond_1
-
-    .line 118
-    iput-object v2, p0, Lcom/android/server/location/LocationBindServiceSelection;->mGeocoderPackageName:Ljava/lang/String;
-
-    .line 123
-    :cond_1
-    iget-object v3, p0, Lcom/android/server/location/LocationBindServiceSelection;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v3}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v1
-
-    .line 125
-    .local v1, pm:Landroid/content/pm/PackageManager;
-    :try_start_0
-    iget-object v3, p0, Lcom/android/server/location/LocationBindServiceSelection;->mGeocoderPackageName:Ljava/lang/String;
-
-    const/4 v4, 0x0
-
-    invoke-virtual {v1, v3, v4}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
-
-    move-result-object v3
-
-    if-nez v3, :cond_2
-
-    .line 126
-    const-string v3, "LocationBindServiceSelection"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "Package "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget-object v5, p0, Lcom/android/server/location/LocationBindServiceSelection;->mGeocoderPackageName:Ljava/lang/String;
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, " is not available"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 127
-    const/4 v3, 0x0
-
-    iput-object v3, p0, Lcom/android/server/location/LocationBindServiceSelection;->mGeocoderPackageName:Ljava/lang/String;
-    :try_end_0
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 132
-    :cond_2
-    :goto_0
-    const-string v3, "LocationBindServiceSelection"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "GeocoderPackage returns: "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget-object v5, p0, Lcom/android/server/location/LocationBindServiceSelection;->mGeocoderPackageName:Ljava/lang/String;
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 133
-    iget-object v3, p0, Lcom/android/server/location/LocationBindServiceSelection;->mGeocoderPackageName:Ljava/lang/String;
-
-    return-object v3
-
-    .line 129
-    :catch_0
-    move-exception v0
-
-    .line 130
-    .local v0, e:Landroid/content/pm/PackageManager$NameNotFoundException;
-    iput-object v6, p0, Lcom/android/server/location/LocationBindServiceSelection;->mGeocoderPackageName:Ljava/lang/String;
-
-    goto :goto_0
-.end method
-
-.method public getNWLocationPackageName()Ljava/lang/String;
+.method public getGeocoderServiceName()Ljava/lang/String;
     .locals 4
 
     .prologue
-    .line 146
-    const-string v1, "com.google.android.location"
+    .line 120
+    const-string v1, "com.google.android.location.GeocodeProvider"
 
-    iput-object v1, p0, Lcom/android/server/location/LocationBindServiceSelection;->mNWLocationPackageName:Ljava/lang/String;
+    iput-object v1, p0, Lcom/android/server/location/LocationBindServiceSelection;->mGeocoderServiceName:Ljava/lang/String;
 
-    .line 147
+    .line 121
     const/4 v0, 0x0
 
+    .line 122
+    .local v0, tempGeocoderServiceName:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/server/location/LocationBindServiceSelection;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const-string v2, "GeocoderServiceName"
+
+    invoke-static {v1, v2}, Landroid/provider/Settings$Secure;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 123
+    const-string v2, "LocationBindServiceSelection"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "getGeocoderServiceName from the database geocoderServiceName:"
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    if-eqz v0, :cond_2
+
+    move-object v1, v0
+
+    :goto_0
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v2, v1}, Lcom/mediatek/xlog/Xlog;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 124
+    if-nez v0, :cond_0
+
+    .line 126
+    const-string v1, "PrivateInnerGeocoderServiceName"
+
+    invoke-direct {p0, v1}, Lcom/android/server/location/LocationBindServiceSelection;->getBindServiceFromXMLFile(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 127
+    const-string v2, "LocationBindServiceSelection"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "getGeocoderServiceName from the XML file geocoderServiceName:"
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    if-eqz v0, :cond_3
+
+    move-object v1, v0
+
+    :goto_1
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v2, v1}, Lcom/mediatek/xlog/Xlog;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 129
+    :cond_0
+    if-eqz v0, :cond_1
+
+    .line 131
+    iput-object v0, p0, Lcom/android/server/location/LocationBindServiceSelection;->mGeocoderServiceName:Ljava/lang/String;
+
+    .line 133
+    :cond_1
+    const-string v1, "LocationBindServiceSelection"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "getGeocoderServiceName() is returnning mGeocoderServiceName:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/android/server/location/LocationBindServiceSelection;->mGeocoderServiceName:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 134
+    iget-object v1, p0, Lcom/android/server/location/LocationBindServiceSelection;->mGeocoderServiceName:Ljava/lang/String;
+
+    return-object v1
+
+    .line 123
+    :cond_2
+    const-string v1, "null"
+
+    goto :goto_0
+
+    .line 127
+    :cond_3
+    const-string v1, "null"
+
+    goto :goto_1
+.end method
+
+.method public getNetworkLocationServiceName()Ljava/lang/String;
+    .locals 4
+
+    .prologue
     .line 148
-    .local v0, tempNWLocationPackageName:Ljava/lang/String;
+    const-string v1, "com.google.android.location.NetworkLocationProvider"
+
+    iput-object v1, p0, Lcom/android/server/location/LocationBindServiceSelection;->mNetworkServiceName:Ljava/lang/String;
+
+    .line 149
+    const/4 v0, 0x0
+
+    .line 150
+    .local v0, tempNetworkLocationServiceName:Ljava/lang/String;
     iget-object v1, p0, Lcom/android/server/location/LocationBindServiceSelection;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -712,70 +662,80 @@
 
     move-result-object v0
 
-    .line 150
-    const-string v1, "LocationBindServiceSelection"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "NWLocation Package database :"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Lcom/mediatek/xlog/Xlog;->v(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 151
+    const-string v2, "LocationBindServiceSelection"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "getNetworkLocationServiceName from the database networkLocationServiceName:"
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    if-eqz v0, :cond_2
+
+    move-object v1, v0
+
+    :goto_0
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v2, v1}, Lcom/mediatek/xlog/Xlog;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 153
     if-nez v0, :cond_0
 
-    .line 152
+    .line 155
     const-string v1, "NetworkServiceName"
 
     invoke-direct {p0, v1}, Lcom/android/server/location/LocationBindServiceSelection;->getBindServiceFromXMLFile(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 153
-    const-string v1, "LocationBindServiceSelection"
+    .line 156
+    const-string v2, "LocationBindServiceSelection"
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "NWLocation Package XML file:"
+    const-string v3, "getNetworkLocationServiceName from the XML file networkLocationServiceName:"
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-eqz v0, :cond_3
 
-    move-result-object v2
+    move-object v1, v0
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :goto_1
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {v1, v2}, Lcom/mediatek/xlog/Xlog;->v(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 155
+    move-result-object v1
+
+    invoke-static {v2, v1}, Lcom/mediatek/xlog/Xlog;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 159
     :cond_0
     if-eqz v0, :cond_1
 
-    .line 156
-    iput-object v0, p0, Lcom/android/server/location/LocationBindServiceSelection;->mNWLocationPackageName:Ljava/lang/String;
-
     .line 161
+    iput-object v0, p0, Lcom/android/server/location/LocationBindServiceSelection;->mNetworkServiceName:Ljava/lang/String;
+
+    .line 163
     :cond_1
     const-string v1, "LocationBindServiceSelection"
 
@@ -783,13 +743,13 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "NWLocation Package returns:"
+    const-string v3, "getNetworkLocationServiceName is returnning mNetworkServiceName:"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/android/server/location/LocationBindServiceSelection;->mNWLocationPackageName:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/server/location/LocationBindServiceSelection;->mNetworkServiceName:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -801,8 +761,20 @@
 
     invoke-static {v1, v2}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 162
-    iget-object v1, p0, Lcom/android/server/location/LocationBindServiceSelection;->mNWLocationPackageName:Ljava/lang/String;
+    .line 164
+    iget-object v1, p0, Lcom/android/server/location/LocationBindServiceSelection;->mNetworkServiceName:Ljava/lang/String;
 
     return-object v1
+
+    .line 151
+    :cond_2
+    const-string v1, "null"
+
+    goto :goto_0
+
+    .line 156
+    :cond_3
+    const-string v1, "null"
+
+    goto :goto_1
 .end method

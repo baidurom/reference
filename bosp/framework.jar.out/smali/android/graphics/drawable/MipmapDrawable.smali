@@ -178,7 +178,7 @@
 
     move-result-object v6
 
-    const-string/jumbo v7, "item"
+    const-string v7, "item"
 
     invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

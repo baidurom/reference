@@ -46,25 +46,25 @@
     .parameter "rs"
 
     .prologue
-    .line 233
+    .line 196
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 234
+    .line 197
     iput-object p1, p0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->mRS:Landroid/renderscript/RenderScript;
 
-    .line 235
+    .line 198
     const/4 v0, 0x2
 
     new-array v0, v0, [Landroid/renderscript/ProgramFragmentFixedFunction$Builder$Slot;
 
     iput-object v0, p0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->mSlots:[Landroid/renderscript/ProgramFragmentFixedFunction$Builder$Slot;
 
-    .line 236
+    .line 199
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->mPointSpriteEnable:Z
 
-    .line 237
+    .line 200
     return-void
 .end method
 
@@ -72,12 +72,12 @@
     .locals 3
 
     .prologue
-    .line 164
+    .line 128
     const-string v1, "//rs_shader_internal\n"
 
     iput-object v1, p0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->mShader:Ljava/lang/String;
 
-    .line 165
+    .line 129
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -100,7 +100,7 @@
 
     iput-object v1, p0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->mShader:Ljava/lang/String;
 
-    .line 166
+    .line 130
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -123,7 +123,7 @@
 
     iput-object v1, p0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->mShader:Ljava/lang/String;
 
-    .line 168
+    .line 132
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -146,12 +146,12 @@
 
     iput-object v1, p0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->mShader:Ljava/lang/String;
 
-    .line 169
+    .line 133
     iget-boolean v1, p0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->mVaryingColorEnable:Z
 
     if-eqz v1, :cond_1
 
-    .line 170
+    .line 134
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -174,18 +174,18 @@
 
     iput-object v1, p0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->mShader:Ljava/lang/String;
 
-    .line 175
+    .line 139
     :goto_0
     iget v1, p0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->mNumTextures:I
 
     if-eqz v1, :cond_0
 
-    .line 176
+    .line 140
     iget-boolean v1, p0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->mPointSpriteEnable:Z
 
     if-eqz v1, :cond_2
 
-    .line 177
+    .line 141
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -208,7 +208,7 @@
 
     iput-object v1, p0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->mShader:Ljava/lang/String;
 
-    .line 183
+    .line 147
     :cond_0
     :goto_1
     const/4 v0, 0x0
@@ -219,7 +219,7 @@
 
     if-ge v0, v1, :cond_3
 
-    .line 184
+    .line 148
     sget-object v1, Landroid/renderscript/ProgramFragmentFixedFunction$1;->$SwitchMap$android$renderscript$ProgramFragmentFixedFunction$Builder$EnvMode:[I
 
     iget-object v2, p0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->mSlots:[Landroid/renderscript/ProgramFragmentFixedFunction$Builder$Slot;
@@ -236,13 +236,13 @@
 
     packed-switch v1, :pswitch_data_0
 
-    .line 183
+    .line 147
     :goto_3
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_2
 
-    .line 172
+    .line 136
     .end local v0           #i:I
     :cond_1
     new-instance v1, Ljava/lang/StringBuilder;
@@ -269,7 +269,7 @@
 
     goto :goto_0
 
-    .line 179
+    .line 143
     :cond_2
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -295,7 +295,7 @@
 
     goto :goto_1
 
-    .line 186
+    .line 150
     .restart local v0       #i:I
     :pswitch_0
     sget-object v1, Landroid/renderscript/ProgramFragmentFixedFunction$1;->$SwitchMap$android$renderscript$ProgramFragmentFixedFunction$Builder$Format:[I
@@ -316,7 +316,7 @@
 
     goto :goto_3
 
-    .line 188
+    .line 152
     :pswitch_1
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -342,7 +342,7 @@
 
     goto :goto_3
 
-    .line 191
+    .line 155
     :pswitch_2
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -368,7 +368,7 @@
 
     goto :goto_3
 
-    .line 194
+    .line 158
     :pswitch_3
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -394,7 +394,7 @@
 
     goto/16 :goto_3
 
-    .line 197
+    .line 161
     :pswitch_4
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -420,7 +420,7 @@
 
     goto/16 :goto_3
 
-    .line 202
+    .line 166
     :pswitch_5
     sget-object v1, Landroid/renderscript/ProgramFragmentFixedFunction$1;->$SwitchMap$android$renderscript$ProgramFragmentFixedFunction$Builder$Format:[I
 
@@ -440,7 +440,7 @@
 
     goto/16 :goto_3
 
-    .line 204
+    .line 168
     :pswitch_6
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -466,7 +466,7 @@
 
     goto/16 :goto_3
 
-    .line 207
+    .line 171
     :pswitch_7
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -492,7 +492,7 @@
 
     goto/16 :goto_3
 
-    .line 210
+    .line 174
     :pswitch_8
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -518,7 +518,7 @@
 
     goto/16 :goto_3
 
-    .line 213
+    .line 177
     :pswitch_9
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -544,7 +544,7 @@
 
     goto/16 :goto_3
 
-    .line 218
+    .line 182
     :pswitch_a
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -570,7 +570,7 @@
 
     goto/16 :goto_3
 
-    .line 223
+    .line 187
     :cond_3
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -594,7 +594,7 @@
 
     iput-object v1, p0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->mShader:Ljava/lang/String;
 
-    .line 224
+    .line 188
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -617,10 +617,10 @@
 
     iput-object v1, p0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->mShader:Ljava/lang/String;
 
-    .line 225
+    .line 189
     return-void
 
-    .line 184
+    .line 148
     nop
 
     :pswitch_data_0
@@ -630,7 +630,7 @@
         :pswitch_a
     .end packed-switch
 
-    .line 186
+    .line 150
     :pswitch_data_1
     .packed-switch 0x1
         :pswitch_1
@@ -639,7 +639,7 @@
         :pswitch_4
     .end packed-switch
 
-    .line 202
+    .line 166
     :pswitch_data_2
     .packed-switch 0x1
         :pswitch_6
@@ -661,70 +661,70 @@
 
     const/high16 v11, 0x3f80
 
-    .line 294
+    .line 253
     new-instance v7, Landroid/renderscript/ProgramFragmentFixedFunction$InternalBuilder;
 
     iget-object v9, p0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-direct {v7, v9}, Landroid/renderscript/ProgramFragmentFixedFunction$InternalBuilder;-><init>(Landroid/renderscript/RenderScript;)V
 
-    .line 295
+    .line 254
     .local v7, sb:Landroid/renderscript/ProgramFragmentFixedFunction$InternalBuilder;
     iput v12, p0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->mNumTextures:I
 
-    .line 296
+    .line 255
     const/4 v5, 0x0
 
     .local v5, i:I
     :goto_0
     if-ge v5, v13, :cond_1
 
-    .line 297
+    .line 256
     iget-object v9, p0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->mSlots:[Landroid/renderscript/ProgramFragmentFixedFunction$Builder$Slot;
 
     aget-object v9, v9, v5
 
     if-eqz v9, :cond_0
 
-    .line 298
+    .line 257
     iget v9, p0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->mNumTextures:I
 
     add-int/lit8 v9, v9, 0x1
 
     iput v9, p0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->mNumTextures:I
 
-    .line 296
+    .line 255
     :cond_0
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_0
 
-    .line 301
+    .line 260
     :cond_1
     invoke-direct {p0}, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->buildShaderString()V
 
-    .line 302
+    .line 261
     iget-object v9, p0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->mShader:Ljava/lang/String;
 
     invoke-virtual {v7, v9}, Landroid/renderscript/ProgramFragmentFixedFunction$InternalBuilder;->setShader(Ljava/lang/String;)Landroid/renderscript/Program$BaseProgramBuilder;
 
-    .line 304
+    .line 263
     const/4 v1, 0x0
 
-    .line 305
+    .line 264
     .local v1, constType:Landroid/renderscript/Type;
     iget-boolean v9, p0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->mVaryingColorEnable:Z
 
     if-nez v9, :cond_2
 
-    .line 306
+    .line 265
     new-instance v0, Landroid/renderscript/Element$Builder;
 
     iget-object v9, p0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-direct {v0, v9}, Landroid/renderscript/Element$Builder;-><init>(Landroid/renderscript/RenderScript;)V
 
-    .line 307
+    .line 266
     .local v0, b:Landroid/renderscript/Element$Builder;
     iget-object v9, p0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->mRS:Landroid/renderscript/RenderScript;
 
@@ -736,7 +736,7 @@
 
     invoke-virtual {v0, v9, v10}, Landroid/renderscript/Element$Builder;->add(Landroid/renderscript/Element;Ljava/lang/String;)Landroid/renderscript/Element$Builder;
 
-    .line 308
+    .line 267
     new-instance v8, Landroid/renderscript/Type$Builder;
 
     iget-object v9, p0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->mRS:Landroid/renderscript/RenderScript;
@@ -747,21 +747,21 @@
 
     invoke-direct {v8, v9, v10}, Landroid/renderscript/Type$Builder;-><init>(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;)V
 
-    .line 309
+    .line 268
     .local v8, typeBuilder:Landroid/renderscript/Type$Builder;
     const/4 v9, 0x1
 
     invoke-virtual {v8, v9}, Landroid/renderscript/Type$Builder;->setX(I)Landroid/renderscript/Type$Builder;
 
-    .line 310
+    .line 269
     invoke-virtual {v8}, Landroid/renderscript/Type$Builder;->create()Landroid/renderscript/Type;
 
     move-result-object v1
 
-    .line 311
+    .line 270
     invoke-virtual {v7, v1}, Landroid/renderscript/ProgramFragmentFixedFunction$InternalBuilder;->addConstant(Landroid/renderscript/Type;)Landroid/renderscript/Program$BaseProgramBuilder;
 
-    .line 313
+    .line 272
     .end local v0           #b:Landroid/renderscript/Element$Builder;
     .end local v8           #typeBuilder:Landroid/renderscript/Type$Builder;
     :cond_2
@@ -772,39 +772,39 @@
 
     if-ge v5, v9, :cond_3
 
-    .line 314
+    .line 273
     sget-object v9, Landroid/renderscript/Program$TextureType;->TEXTURE_2D:Landroid/renderscript/Program$TextureType;
 
     invoke-virtual {v7, v9}, Landroid/renderscript/ProgramFragmentFixedFunction$InternalBuilder;->addTexture(Landroid/renderscript/Program$TextureType;)Landroid/renderscript/Program$BaseProgramBuilder;
 
-    .line 313
+    .line 272
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_1
 
-    .line 317
+    .line 276
     :cond_3
     invoke-virtual {v7}, Landroid/renderscript/ProgramFragmentFixedFunction$InternalBuilder;->create()Landroid/renderscript/ProgramFragmentFixedFunction;
 
     move-result-object v6
 
-    .line 318
+    .line 277
     .local v6, pf:Landroid/renderscript/ProgramFragmentFixedFunction;
     iput v13, v6, Landroid/renderscript/ProgramFragmentFixedFunction;->mTextureCount:I
 
-    .line 319
+    .line 278
     iget-boolean v9, p0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->mVaryingColorEnable:Z
 
     if-nez v9, :cond_4
 
-    .line 320
+    .line 279
     iget-object v9, p0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-static {v9, v1}, Landroid/renderscript/Allocation;->createTyped(Landroid/renderscript/RenderScript;Landroid/renderscript/Type;)Landroid/renderscript/Allocation;
 
     move-result-object v2
 
-    .line 321
+    .line 280
     .local v2, constantData:Landroid/renderscript/Allocation;
     new-instance v4, Landroid/renderscript/FieldPacker;
 
@@ -812,23 +812,23 @@
 
     invoke-direct {v4, v9}, Landroid/renderscript/FieldPacker;-><init>(I)V
 
-    .line 322
+    .line 281
     .local v4, fp:Landroid/renderscript/FieldPacker;
     new-instance v3, Landroid/renderscript/Float4;
 
     invoke-direct {v3, v11, v11, v11, v11}, Landroid/renderscript/Float4;-><init>(FFFF)V
 
-    .line 323
+    .line 282
     .local v3, f4:Landroid/renderscript/Float4;
     invoke-virtual {v4, v3}, Landroid/renderscript/FieldPacker;->addF32(Landroid/renderscript/Float4;)V
 
-    .line 324
+    .line 283
     invoke-virtual {v2, v12, v4}, Landroid/renderscript/Allocation;->setFromFieldPacker(ILandroid/renderscript/FieldPacker;)V
 
-    .line 325
+    .line 284
     invoke-virtual {v6, v2, v12}, Landroid/renderscript/ProgramFragmentFixedFunction;->bindConstants(Landroid/renderscript/Allocation;I)V
 
-    .line 327
+    .line 286
     .end local v2           #constantData:Landroid/renderscript/Allocation;
     .end local v3           #f4:Landroid/renderscript/Float4;
     .end local v4           #fp:Landroid/renderscript/FieldPacker;
@@ -841,10 +841,10 @@
     .parameter "enable"
 
     .prologue
-    .line 270
+    .line 231
     iput-boolean p1, p0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->mPointSpriteEnable:Z
 
-    .line 271
+    .line 232
     return-object p0
 .end method
 
@@ -860,14 +860,14 @@
     .end annotation
 
     .prologue
-    .line 255
+    .line 217
     if-ltz p3, :cond_0
 
     const/4 v0, 0x2
 
     if-lt p3, v0, :cond_1
 
-    .line 256
+    .line 218
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -877,7 +877,7 @@
 
     throw v0
 
-    .line 258
+    .line 220
     :cond_1
     iget-object v0, p0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->mSlots:[Landroid/renderscript/ProgramFragmentFixedFunction$Builder$Slot;
 
@@ -887,7 +887,7 @@
 
     aput-object v1, v0, p3
 
-    .line 259
+    .line 221
     return-object p0
 .end method
 
@@ -896,9 +896,9 @@
     .parameter "enable"
 
     .prologue
-    .line 283
+    .line 243
     iput-boolean p1, p0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder;->mVaryingColorEnable:Z
 
-    .line 284
+    .line 244
     return-object p0
 .end method

@@ -15,7 +15,7 @@
 
 
 # static fields
-.field static final synthetic $SwitchMap$com$android$internal$telephony$DctConstants$State:[I
+.field static final synthetic $SwitchMap$com$android$internal$telephony$DataConnectionTracker$State:[I
 
 
 # direct methods
@@ -23,8 +23,8 @@
     .locals 3
 
     .prologue
-    .line 619
-    invoke-static {}, Lcom/android/internal/telephony/DctConstants$State;->values()[Lcom/android/internal/telephony/DctConstants$State;
+    .line 533
+    invoke-static {}, Lcom/android/internal/telephony/DataConnectionTracker$State;->values()[Lcom/android/internal/telephony/DataConnectionTracker$State;
 
     move-result-object v0
 
@@ -32,14 +32,14 @@
 
     new-array v0, v0, [I
 
-    sput-object v0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$5;->$SwitchMap$com$android$internal$telephony$DctConstants$State:[I
+    sput-object v0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$5;->$SwitchMap$com$android$internal$telephony$DataConnectionTracker$State:[I
 
     :try_start_0
-    sget-object v0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$5;->$SwitchMap$com$android$internal$telephony$DctConstants$State:[I
+    sget-object v0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$5;->$SwitchMap$com$android$internal$telephony$DataConnectionTracker$State:[I
 
-    sget-object v1, Lcom/android/internal/telephony/DctConstants$State;->CONNECTED:Lcom/android/internal/telephony/DctConstants$State;
+    sget-object v1, Lcom/android/internal/telephony/DataConnectionTracker$State;->CONNECTED:Lcom/android/internal/telephony/DataConnectionTracker$State;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/DctConstants$State;->ordinal()I
+    invoke-virtual {v1}, Lcom/android/internal/telephony/DataConnectionTracker$State;->ordinal()I
 
     move-result v1
 
@@ -51,11 +51,11 @@
 
     :goto_0
     :try_start_1
-    sget-object v0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$5;->$SwitchMap$com$android$internal$telephony$DctConstants$State:[I
+    sget-object v0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$5;->$SwitchMap$com$android$internal$telephony$DataConnectionTracker$State:[I
 
-    sget-object v1, Lcom/android/internal/telephony/DctConstants$State;->DISCONNECTING:Lcom/android/internal/telephony/DctConstants$State;
+    sget-object v1, Lcom/android/internal/telephony/DataConnectionTracker$State;->DISCONNECTING:Lcom/android/internal/telephony/DataConnectionTracker$State;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/DctConstants$State;->ordinal()I
+    invoke-virtual {v1}, Lcom/android/internal/telephony/DataConnectionTracker$State;->ordinal()I
 
     move-result v1
 
@@ -67,11 +67,11 @@
 
     :goto_1
     :try_start_2
-    sget-object v0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$5;->$SwitchMap$com$android$internal$telephony$DctConstants$State:[I
+    sget-object v0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$5;->$SwitchMap$com$android$internal$telephony$DataConnectionTracker$State:[I
 
-    sget-object v1, Lcom/android/internal/telephony/DctConstants$State;->CONNECTING:Lcom/android/internal/telephony/DctConstants$State;
+    sget-object v1, Lcom/android/internal/telephony/DataConnectionTracker$State;->CONNECTING:Lcom/android/internal/telephony/DataConnectionTracker$State;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/DctConstants$State;->ordinal()I
+    invoke-virtual {v1}, Lcom/android/internal/telephony/DataConnectionTracker$State;->ordinal()I
 
     move-result v1
 
@@ -83,11 +83,11 @@
 
     :goto_2
     :try_start_3
-    sget-object v0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$5;->$SwitchMap$com$android$internal$telephony$DctConstants$State:[I
+    sget-object v0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$5;->$SwitchMap$com$android$internal$telephony$DataConnectionTracker$State:[I
 
-    sget-object v1, Lcom/android/internal/telephony/DctConstants$State;->INITING:Lcom/android/internal/telephony/DctConstants$State;
+    sget-object v1, Lcom/android/internal/telephony/DataConnectionTracker$State;->INITING:Lcom/android/internal/telephony/DataConnectionTracker$State;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/DctConstants$State;->ordinal()I
+    invoke-virtual {v1}, Lcom/android/internal/telephony/DataConnectionTracker$State;->ordinal()I
 
     move-result v1
 
@@ -99,11 +99,11 @@
 
     :goto_3
     :try_start_4
-    sget-object v0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$5;->$SwitchMap$com$android$internal$telephony$DctConstants$State:[I
+    sget-object v0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$5;->$SwitchMap$com$android$internal$telephony$DataConnectionTracker$State:[I
 
-    sget-object v1, Lcom/android/internal/telephony/DctConstants$State;->IDLE:Lcom/android/internal/telephony/DctConstants$State;
+    sget-object v1, Lcom/android/internal/telephony/DataConnectionTracker$State;->IDLE:Lcom/android/internal/telephony/DataConnectionTracker$State;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/DctConstants$State;->ordinal()I
+    invoke-virtual {v1}, Lcom/android/internal/telephony/DataConnectionTracker$State;->ordinal()I
 
     move-result v1
 
@@ -115,11 +115,11 @@
 
     :goto_4
     :try_start_5
-    sget-object v0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$5;->$SwitchMap$com$android$internal$telephony$DctConstants$State:[I
+    sget-object v0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$5;->$SwitchMap$com$android$internal$telephony$DataConnectionTracker$State:[I
 
-    sget-object v1, Lcom/android/internal/telephony/DctConstants$State;->SCANNING:Lcom/android/internal/telephony/DctConstants$State;
+    sget-object v1, Lcom/android/internal/telephony/DataConnectionTracker$State;->SCANNING:Lcom/android/internal/telephony/DataConnectionTracker$State;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/DctConstants$State;->ordinal()I
+    invoke-virtual {v1}, Lcom/android/internal/telephony/DataConnectionTracker$State;->ordinal()I
 
     move-result v1
 

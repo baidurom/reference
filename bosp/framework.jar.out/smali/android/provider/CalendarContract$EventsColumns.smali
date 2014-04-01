@@ -39,13 +39,9 @@
 
 .field public static final CAN_INVITE_OTHERS:Ljava/lang/String; = "canInviteOthers"
 
-.field public static final CUSTOM_APP_PACKAGE:Ljava/lang/String; = "customAppPackage"
-
-.field public static final CUSTOM_APP_URI:Ljava/lang/String; = "customAppUri"
+.field public static final CREATE_TIME:Ljava/lang/String; = "createTime"
 
 .field public static final DESCRIPTION:Ljava/lang/String; = "description"
-
-.field public static final DISPLAY_COLOR:Ljava/lang/String; = "displayColor"
 
 .field public static final DTEND:Ljava/lang/String; = "dtend"
 
@@ -79,11 +75,15 @@
 
 .field public static final HAS_EXTENDED_PROPERTIES:Ljava/lang/String; = "hasExtendedProperties"
 
-.field public static final IS_ORGANIZER:Ljava/lang/String; = "isOrganizer"
+.field public static final IS_LUNAR:Ljava/lang/String; = "isLunar"
 
 .field public static final LAST_DATE:Ljava/lang/String; = "lastDate"
 
 .field public static final LAST_SYNCED:Ljava/lang/String; = "lastSynced"
+
+.field public static final LUNAR_RRULE:Ljava/lang/String; = "lunarRrule"
+
+.field public static final MODIFY_TIME:Ljava/lang/String; = "modifyTime"
 
 .field public static final ORGANIZER:Ljava/lang/String; = "organizer"
 
@@ -130,5 +130,3 @@
 .field public static final SYNC_DATA9:Ljava/lang/String; = "sync_data9"
 
 .field public static final TITLE:Ljava/lang/String; = "title"
-
-.field public static final UID_2445:Ljava/lang/String; = "uid2445"

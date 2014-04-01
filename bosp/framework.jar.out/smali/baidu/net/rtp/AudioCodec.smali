@@ -1,0 +1,379 @@
+.class public Lbaidu/net/rtp/AudioCodec;
+.super Ljava/lang/Object;
+.source "AudioCodec.java"
+
+
+# static fields
+.field public static final AMR:Lbaidu/net/rtp/AudioCodec;
+
+.field public static final GSM:Lbaidu/net/rtp/AudioCodec;
+
+.field public static final GSM_EFR:Lbaidu/net/rtp/AudioCodec;
+
+.field public static final PCMA:Lbaidu/net/rtp/AudioCodec;
+
+.field public static final PCMU:Lbaidu/net/rtp/AudioCodec;
+
+.field private static final sCodecs:[Lbaidu/net/rtp/AudioCodec;
+
+
+# instance fields
+.field public final fmtp:Ljava/lang/String;
+
+.field public final rtpmap:Ljava/lang/String;
+
+.field public final type:I
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 6
+
+    .prologue
+    const/4 v5, 0x3
+
+    const/4 v4, 0x0
+
+    const/4 v3, 0x0
+
+    .line 58
+    new-instance v0, Lbaidu/net/rtp/AudioCodec;
+
+    const-string v1, "PCMU/8000"
+
+    invoke-direct {v0, v4, v1, v3}, Lbaidu/net/rtp/AudioCodec;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+
+    sput-object v0, Lbaidu/net/rtp/AudioCodec;->PCMU:Lbaidu/net/rtp/AudioCodec;
+
+    .line 63
+    new-instance v0, Lbaidu/net/rtp/AudioCodec;
+
+    const/16 v1, 0x8
+
+    const-string v2, "PCMA/8000"
+
+    invoke-direct {v0, v1, v2, v3}, Lbaidu/net/rtp/AudioCodec;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+
+    sput-object v0, Lbaidu/net/rtp/AudioCodec;->PCMA:Lbaidu/net/rtp/AudioCodec;
+
+    .line 69
+    new-instance v0, Lbaidu/net/rtp/AudioCodec;
+
+    const-string v1, "GSM/8000"
+
+    invoke-direct {v0, v5, v1, v3}, Lbaidu/net/rtp/AudioCodec;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+
+    sput-object v0, Lbaidu/net/rtp/AudioCodec;->GSM:Lbaidu/net/rtp/AudioCodec;
+
+    .line 75
+    new-instance v0, Lbaidu/net/rtp/AudioCodec;
+
+    const/16 v1, 0x60
+
+    const-string v2, "GSM-EFR/8000"
+
+    invoke-direct {v0, v1, v2, v3}, Lbaidu/net/rtp/AudioCodec;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+
+    sput-object v0, Lbaidu/net/rtp/AudioCodec;->GSM_EFR:Lbaidu/net/rtp/AudioCodec;
+
+    .line 82
+    new-instance v0, Lbaidu/net/rtp/AudioCodec;
+
+    const/16 v1, 0x61
+
+    const-string v2, "AMR/8000"
+
+    invoke-direct {v0, v1, v2, v3}, Lbaidu/net/rtp/AudioCodec;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+
+    sput-object v0, Lbaidu/net/rtp/AudioCodec;->AMR:Lbaidu/net/rtp/AudioCodec;
+
+    .line 84
+    const/4 v0, 0x5
+
+    new-array v0, v0, [Lbaidu/net/rtp/AudioCodec;
+
+    sget-object v1, Lbaidu/net/rtp/AudioCodec;->GSM_EFR:Lbaidu/net/rtp/AudioCodec;
+
+    aput-object v1, v0, v4
+
+    const/4 v1, 0x1
+
+    sget-object v2, Lbaidu/net/rtp/AudioCodec;->AMR:Lbaidu/net/rtp/AudioCodec;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x2
+
+    sget-object v2, Lbaidu/net/rtp/AudioCodec;->GSM:Lbaidu/net/rtp/AudioCodec;
+
+    aput-object v2, v0, v1
+
+    sget-object v1, Lbaidu/net/rtp/AudioCodec;->PCMU:Lbaidu/net/rtp/AudioCodec;
+
+    aput-object v1, v0, v5
+
+    const/4 v1, 0x4
+
+    sget-object v2, Lbaidu/net/rtp/AudioCodec;->PCMA:Lbaidu/net/rtp/AudioCodec;
+
+    aput-object v2, v0, v1
+
+    sput-object v0, Lbaidu/net/rtp/AudioCodec;->sCodecs:[Lbaidu/net/rtp/AudioCodec;
+
+    return-void
+.end method
+
+.method private constructor <init>(ILjava/lang/String;Ljava/lang/String;)V
+    .locals 0
+    .parameter "type"
+    .parameter "rtpmap"
+    .parameter "fmtp"
+
+    .prologue
+    .line 86
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 87
+    iput p1, p0, Lbaidu/net/rtp/AudioCodec;->type:I
+
+    .line 88
+    iput-object p2, p0, Lbaidu/net/rtp/AudioCodec;->rtpmap:Ljava/lang/String;
+
+    .line 89
+    iput-object p3, p0, Lbaidu/net/rtp/AudioCodec;->fmtp:Ljava/lang/String;
+
+    .line 90
+    return-void
+.end method
+
+.method public static getCodec(ILjava/lang/String;Ljava/lang/String;)Lbaidu/net/rtp/AudioCodec;
+    .locals 9
+    .parameter "type"
+    .parameter "rtpmap"
+    .parameter "fmtp"
+
+    .prologue
+    const/4 v7, 0x0
+
+    .line 110
+    if-ltz p0, :cond_0
+
+    const/16 v8, 0x7f
+
+    if-le p0, v8, :cond_1
+
+    .line 146
+    :cond_0
+    :goto_0
+    return-object v7
+
+    .line 114
+    :cond_1
+    const/4 v4, 0x0
+
+    .line 115
+    .local v4, hint:Lbaidu/net/rtp/AudioCodec;
+    if-eqz p1, :cond_6
+
+    .line 116
+    invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 117
+    .local v2, clue:Ljava/lang/String;
+    sget-object v0, Lbaidu/net/rtp/AudioCodec;->sCodecs:[Lbaidu/net/rtp/AudioCodec;
+
+    .local v0, arr$:[Lbaidu/net/rtp/AudioCodec;
+    array-length v6, v0
+
+    .local v6, len$:I
+    const/4 v5, 0x0
+
+    .local v5, i$:I
+    :goto_1
+    if-ge v5, v6, :cond_3
+
+    aget-object v3, v0, v5
+
+    .line 118
+    .local v3, codec:Lbaidu/net/rtp/AudioCodec;
+    iget-object v8, v3, Lbaidu/net/rtp/AudioCodec;->rtpmap:Ljava/lang/String;
+
+    invoke-virtual {v2, v8}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_5
+
+    .line 119
+    iget-object v8, v3, Lbaidu/net/rtp/AudioCodec;->rtpmap:Ljava/lang/String;
+
+    invoke-virtual {v8}, Ljava/lang/String;->length()I
+
+    move-result v8
+
+    invoke-virtual {v2, v8}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 120
+    .local v1, channels:Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v8
+
+    if-eqz v8, :cond_2
+
+    const-string v8, "/1"
+
+    invoke-virtual {v1, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_3
+
+    .line 121
+    :cond_2
+    move-object v4, v3
+
+    .line 136
+    .end local v0           #arr$:[Lbaidu/net/rtp/AudioCodec;
+    .end local v1           #channels:Ljava/lang/String;
+    .end local v2           #clue:Ljava/lang/String;
+    .end local v3           #codec:Lbaidu/net/rtp/AudioCodec;
+    .end local v5           #i$:I
+    .end local v6           #len$:I
+    :cond_3
+    :goto_2
+    if-eqz v4, :cond_0
+
+    .line 139
+    sget-object v8, Lbaidu/net/rtp/AudioCodec;->AMR:Lbaidu/net/rtp/AudioCodec;
+
+    if-ne v4, v8, :cond_4
+
+    if-eqz p2, :cond_4
+
+    .line 140
+    invoke-virtual {p2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 141
+    .restart local v2       #clue:Ljava/lang/String;
+    const-string v8, "crc=1"
+
+    invoke-virtual {v2, v8}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v8
+
+    if-nez v8, :cond_0
+
+    const-string/jumbo v8, "robust-sorting=1"
+
+    invoke-virtual {v2, v8}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v8
+
+    if-nez v8, :cond_0
+
+    const-string v8, "interleaving="
+
+    invoke-virtual {v2, v8}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v8
+
+    if-nez v8, :cond_0
+
+    .line 146
+    .end local v2           #clue:Ljava/lang/String;
+    :cond_4
+    new-instance v7, Lbaidu/net/rtp/AudioCodec;
+
+    invoke-direct {v7, p0, p1, p2}, Lbaidu/net/rtp/AudioCodec;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    .line 117
+    .restart local v0       #arr$:[Lbaidu/net/rtp/AudioCodec;
+    .restart local v2       #clue:Ljava/lang/String;
+    .restart local v3       #codec:Lbaidu/net/rtp/AudioCodec;
+    .restart local v5       #i$:I
+    .restart local v6       #len$:I
+    :cond_5
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_1
+
+    .line 126
+    .end local v0           #arr$:[Lbaidu/net/rtp/AudioCodec;
+    .end local v2           #clue:Ljava/lang/String;
+    .end local v3           #codec:Lbaidu/net/rtp/AudioCodec;
+    .end local v5           #i$:I
+    .end local v6           #len$:I
+    :cond_6
+    const/16 v8, 0x60
+
+    if-ge p0, v8, :cond_3
+
+    .line 127
+    sget-object v0, Lbaidu/net/rtp/AudioCodec;->sCodecs:[Lbaidu/net/rtp/AudioCodec;
+
+    .restart local v0       #arr$:[Lbaidu/net/rtp/AudioCodec;
+    array-length v6, v0
+
+    .restart local v6       #len$:I
+    const/4 v5, 0x0
+
+    .restart local v5       #i$:I
+    :goto_3
+    if-ge v5, v6, :cond_3
+
+    aget-object v3, v0, v5
+
+    .line 128
+    .restart local v3       #codec:Lbaidu/net/rtp/AudioCodec;
+    iget v8, v3, Lbaidu/net/rtp/AudioCodec;->type:I
+
+    if-ne p0, v8, :cond_7
+
+    .line 129
+    move-object v4, v3
+
+    .line 130
+    iget-object p1, v3, Lbaidu/net/rtp/AudioCodec;->rtpmap:Ljava/lang/String;
+
+    .line 131
+    goto :goto_2
+
+    .line 127
+    :cond_7
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_3
+.end method
+
+.method public static getCodecs()[Lbaidu/net/rtp/AudioCodec;
+    .locals 2
+
+    .prologue
+    .line 96
+    sget-object v0, Lbaidu/net/rtp/AudioCodec;->sCodecs:[Lbaidu/net/rtp/AudioCodec;
+
+    sget-object v1, Lbaidu/net/rtp/AudioCodec;->sCodecs:[Lbaidu/net/rtp/AudioCodec;
+
+    array-length v1, v1
+
+    invoke-static {v0, v1}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lbaidu/net/rtp/AudioCodec;
+
+    return-object v0
+.end method

@@ -42,16 +42,16 @@
     .parameter "power"
 
     .prologue
-    .line 43
+    .line 42
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 44
+    .line 43
     iput-object p1, p0, Lcom/baidu/service/power/PowerStatsUtil$BatterySipper;->pkgLabel:Ljava/lang/String;
 
-    .line 45
+    .line 44
     iput-wide p2, p0, Lcom/baidu/service/power/PowerStatsUtil$BatterySipper;->power:D
 
-    .line 46
+    .line 45
     return-void
 .end method
 
@@ -62,7 +62,7 @@
     .parameter "other"
 
     .prologue
-    .line 49
+    .line 48
     iget-wide v0, p1, Lcom/baidu/service/power/PowerStatsUtil$BatterySipper;->power:D
 
     iget-wide v2, p0, Lcom/baidu/service/power/PowerStatsUtil$BatterySipper;->power:D
@@ -79,7 +79,7 @@
     .parameter "x0"
 
     .prologue
-    .line 38
+    .line 37
     check-cast p1, Lcom/baidu/service/power/PowerStatsUtil$BatterySipper;
 
     .end local p1

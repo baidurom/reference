@@ -1,4 +1,4 @@
-.class public final Landroid/hardware/Sensor;
+.class public Landroid/hardware/Sensor;
 .super Ljava/lang/Object;
 .source "Sensor.java"
 
@@ -42,6 +42,8 @@
 # instance fields
 .field private mHandle:I
 
+.field private mLegacyType:I
+
 .field private mMaxRange:F
 
 .field private mMinDelay:I
@@ -64,10 +66,10 @@
     .locals 0
 
     .prologue
-    .line 136
+    .line 137
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 137
+    .line 138
     return-void
 .end method
 
@@ -77,8 +79,18 @@
     .locals 1
 
     .prologue
-    .line 198
+    .line 199
     iget v0, p0, Landroid/hardware/Sensor;->mHandle:I
+
+    return v0
+.end method
+
+.method getLegacyType()I
+    .locals 1
+
+    .prologue
+    .line 212
+    iget v0, p0, Landroid/hardware/Sensor;->mLegacyType:I
 
     return v0
 .end method
@@ -87,7 +99,7 @@
     .locals 1
 
     .prologue
-    .line 171
+    .line 172
     iget v0, p0, Landroid/hardware/Sensor;->mMaxRange:F
 
     return v0
@@ -97,7 +109,7 @@
     .locals 1
 
     .prologue
-    .line 194
+    .line 195
     iget v0, p0, Landroid/hardware/Sensor;->mMinDelay:I
 
     return v0
@@ -107,7 +119,7 @@
     .locals 1
 
     .prologue
-    .line 143
+    .line 144
     iget-object v0, p0, Landroid/hardware/Sensor;->mName:Ljava/lang/String;
 
     return-object v0
@@ -117,7 +129,7 @@
     .locals 1
 
     .prologue
-    .line 185
+    .line 186
     iget v0, p0, Landroid/hardware/Sensor;->mPower:F
 
     return v0
@@ -127,7 +139,7 @@
     .locals 1
 
     .prologue
-    .line 178
+    .line 179
     iget v0, p0, Landroid/hardware/Sensor;->mResolution:F
 
     return v0
@@ -137,7 +149,7 @@
     .locals 1
 
     .prologue
-    .line 157
+    .line 158
     iget v0, p0, Landroid/hardware/Sensor;->mType:I
 
     return v0
@@ -147,7 +159,7 @@
     .locals 1
 
     .prologue
-    .line 150
+    .line 151
     iget-object v0, p0, Landroid/hardware/Sensor;->mVendor:Ljava/lang/String;
 
     return-object v0
@@ -157,10 +169,22 @@
     .locals 1
 
     .prologue
-    .line 164
+    .line 165
     iget v0, p0, Landroid/hardware/Sensor;->mVersion:I
 
     return v0
+.end method
+
+.method setLegacyType(I)V
+    .locals 0
+    .parameter "legacyType"
+
+    .prologue
+    .line 208
+    iput p1, p0, Landroid/hardware/Sensor;->mLegacyType:I
+
+    .line 209
+    return-void
 .end method
 
 .method setRange(FF)V
@@ -169,130 +193,12 @@
     .parameter "res"
 
     .prologue
-    .line 202
+    .line 203
     iput p1, p0, Landroid/hardware/Sensor;->mMaxRange:F
 
-    .line 203
+    .line 204
     iput p2, p0, Landroid/hardware/Sensor;->mResolution:F
 
-    .line 204
+    .line 205
     return-void
-.end method
-
-.method public toString()Ljava/lang/String;
-    .locals 2
-
-    .prologue
-    .line 208
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v1, "{Sensor name=\""
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Landroid/hardware/Sensor;->mName:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "\", vendor=\""
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Landroid/hardware/Sensor;->mVendor:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "\", version="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Landroid/hardware/Sensor;->mVersion:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", type="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Landroid/hardware/Sensor;->mType:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", maxRange="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Landroid/hardware/Sensor;->mMaxRange:F
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", resolution="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Landroid/hardware/Sensor;->mResolution:F
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", power="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Landroid/hardware/Sensor;->mPower:F
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", minDelay="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Landroid/hardware/Sensor;->mMinDelay:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "}"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
 .end method

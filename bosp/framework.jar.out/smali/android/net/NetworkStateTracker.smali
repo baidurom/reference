@@ -6,17 +6,16 @@
 # static fields
 .field public static final EVENT_CONFIGURATION_CHANGED:I = 0x3
 
-.field public static final EVENT_NETWORK_SUBTYPE_CHANGED:I = 0x7
-
 .field public static final EVENT_RESTORE_DEFAULT_NETWORK:I = 0x6
 
 .field public static final EVENT_STATE_CHANGED:I = 0x1
 
+.field public static final MAX_NETWORK_STATE_TRACKER_EVENT:I = 0x64
+
+.field public static final MIN_NETWORK_STATE_TRACKER_EVENT:I = 0x1
+
 
 # virtual methods
-.method public abstract captivePortalCheckComplete()V
-.end method
-
 .method public abstract defaultRouteSet(Z)V
 .end method
 

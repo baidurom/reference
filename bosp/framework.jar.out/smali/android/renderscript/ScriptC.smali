@@ -60,75 +60,75 @@
 .end method
 
 .method private static declared-synchronized internalCreate(Landroid/renderscript/RenderScript;Landroid/content/res/Resources;I)I
-    .locals 12
+    .locals 13
     .parameter "rs"
     .parameter "resources"
     .parameter "resourceID"
 
     .prologue
     .line 69
-    const-class v9, Landroid/renderscript/ScriptC;
+    const-class v10, Landroid/renderscript/ScriptC;
 
-    monitor-enter v9
+    monitor-enter v10
 
     :try_start_0
     invoke-virtual {p1, p2}, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    move-result-object v4
+    move-result-object v5
 
     .line 72
-    .local v4, is:Ljava/io/InputStream;
-    const/16 v8, 0x400
+    .local v5, is:Ljava/io/InputStream;
+    const/16 v9, 0x400
 
     :try_start_1
-    new-array v5, v8, [B
+    new-array v6, v9, [B
 
     .line 73
-    .local v5, pgm:[B
-    const/4 v6, 0x0
+    .local v6, pgm:[B
+    const/4 v7, 0x0
 
     .line 75
-    .local v6, pgmLength:I
+    .local v7, pgmLength:I
     :goto_0
-    array-length v8, v5
+    array-length v9, v6
 
-    sub-int v1, v8, v6
+    sub-int v1, v9, v7
 
     .line 76
     .local v1, bytesLeft:I
     if-nez v1, :cond_0
 
     .line 77
-    array-length v8, v5
+    array-length v9, v6
 
-    mul-int/lit8 v8, v8, 0x2
+    mul-int/lit8 v9, v9, 0x2
 
-    new-array v0, v8, [B
+    new-array v0, v9, [B
 
     .line 78
     .local v0, buf2:[B
-    const/4 v8, 0x0
+    const/4 v9, 0x0
 
-    const/4 v10, 0x0
+    const/4 v11, 0x0
 
-    array-length v11, v5
+    array-length v12, v6
 
-    invoke-static {v5, v8, v0, v10, v11}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v6, v9, v0, v11, v12}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 79
-    move-object v5, v0
+    move-object v6, v0
 
     .line 80
-    array-length v8, v5
+    array-length v9, v6
 
-    sub-int v1, v8, v6
+    sub-int v1, v9, v7
 
     .line 82
     .end local v0           #buf2:[B
     :cond_0
-    invoke-virtual {v4, v5, v6, v1}, Ljava/io/InputStream;->read([BII)I
+    invoke-virtual {v5, v6, v7, v1}, Ljava/io/InputStream;->read([BII)I
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -140,58 +140,71 @@
 
     .line 89
     :try_start_2
-    invoke-virtual {v4}, Ljava/io/InputStream;->close()V
+    invoke-virtual {v5}, Ljava/io/InputStream;->close()V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 95
+    .line 98
     :try_start_3
     invoke-virtual {p1, p2}, Landroid/content/res/Resources;->getResourceEntryName(I)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v8
 
-    .line 97
-    .local v7, resName:Ljava/lang/String;
-    const-string v8, "ScriptC"
+    .line 99
+    .local v8, resName:Ljava/lang/String;
+    invoke-virtual {p0}, Landroid/renderscript/RenderScript;->getApplicationContext()Landroid/content/Context;
 
-    new-instance v10, Ljava/lang/StringBuilder;
+    move-result-object v9
 
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v9}, Landroid/content/Context;->getCacheDir()Ljava/io/File;
 
-    const-string v11, "Create script for resource = "
+    move-result-object v9
 
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9}, Ljava/io/File;->toString()Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v3
 
-    invoke-virtual {v10, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 101
+    .local v3, cacheDir:Ljava/lang/String;
+    const-string v9, "ScriptC"
 
-    move-result-object v10
+    new-instance v11, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result-object v10
+    const-string v12, "Create script for resource = "
 
-    invoke-static {v8, v10}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 98
-    sget-object v8, Landroid/renderscript/RenderScript;->mCachePath:Ljava/lang/String;
+    move-result-object v11
 
-    invoke-virtual {p0, v7, v8, v5, v6}, Landroid/renderscript/RenderScript;->nScriptCCreate(Ljava/lang/String;Ljava/lang/String;[BI)I
+    invoke-virtual {v11, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-static {v9, v11}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 102
+    invoke-virtual {p0, v8, v3, v6, v7}, Landroid/renderscript/RenderScript;->nScriptCCreate(Ljava/lang/String;Ljava/lang/String;[BI)I
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    move-result v8
+    move-result v9
 
-    monitor-exit v9
+    monitor-exit v10
 
-    return v8
+    return v9
 
     .line 86
-    .end local v7           #resName:Ljava/lang/String;
+    .end local v3           #cacheDir:Ljava/lang/String;
+    .end local v8           #resName:Ljava/lang/String;
     :cond_1
-    add-int/2addr v6, v2
+    add-int/2addr v7, v2
 
     .line 87
     goto :goto_0
@@ -199,41 +212,41 @@
     .line 89
     .end local v1           #bytesLeft:I
     .end local v2           #bytesRead:I
-    .end local v5           #pgm:[B
-    .end local v6           #pgmLength:I
+    .end local v6           #pgm:[B
+    .end local v7           #pgmLength:I
     :catchall_0
-    move-exception v8
+    move-exception v9
 
     :try_start_4
-    invoke-virtual {v4}, Ljava/io/InputStream;->close()V
+    invoke-virtual {v5}, Ljava/io/InputStream;->close()V
 
-    throw v8
+    throw v9
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_0
 
     .line 91
     :catch_0
-    move-exception v3
+    move-exception v4
 
     .line 92
-    .local v3, e:Ljava/io/IOException;
+    .local v4, e:Ljava/io/IOException;
     :try_start_5
-    new-instance v8, Landroid/content/res/Resources$NotFoundException;
+    new-instance v9, Landroid/content/res/Resources$NotFoundException;
 
-    invoke-direct {v8}, Landroid/content/res/Resources$NotFoundException;-><init>()V
+    invoke-direct {v9}, Landroid/content/res/Resources$NotFoundException;-><init>()V
 
-    throw v8
+    throw v9
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
     .line 69
-    .end local v3           #e:Ljava/io/IOException;
-    .end local v4           #is:Ljava/io/InputStream;
+    .end local v4           #e:Ljava/io/IOException;
+    .end local v5           #is:Ljava/io/InputStream;
     :catchall_1
-    move-exception v8
+    move-exception v9
 
-    monitor-exit v9
+    monitor-exit v10
 
-    throw v8
+    throw v9
 .end method

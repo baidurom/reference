@@ -1,4 +1,4 @@
-.class public final Landroid/media/TimedText$Style;
+.class public Landroid/media/TimedText$Style;
 .super Ljava/lang/Object;
 .source "TimedText.java"
 
@@ -9,69 +9,70 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
+    accessFlags = 0x1
     name = "Style"
 .end annotation
 
 
 # instance fields
-.field public final colorRGBA:I
+.field public colorRGBA:I
 
-.field public final endChar:I
+.field public endChar:I
 
-.field public final fontID:I
+.field public fontID:I
 
-.field public final fontSize:I
+.field public fontSize:I
 
-.field public final isBold:Z
+.field public isBold:Z
 
-.field public final isItalic:Z
+.field public isItalic:Z
 
-.field public final isUnderlined:Z
+.field public isUnderlined:Z
 
-.field public final startChar:I
+.field public startChar:I
+
+.field final synthetic this$0:Landroid/media/TimedText;
 
 
 # direct methods
-.method public constructor <init>(IIIZZZII)V
-    .locals 0
-    .parameter "startChar"
-    .parameter "endChar"
-    .parameter "fontId"
-    .parameter "isBold"
-    .parameter "isItalic"
-    .parameter "isUnderlined"
-    .parameter "fontSize"
-    .parameter "colorRGBA"
+.method public constructor <init>(Landroid/media/TimedText;)V
+    .locals 2
+    .parameter
 
     .prologue
-    .line 227
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v1, 0x0
 
-    .line 228
-    iput p1, p0, Landroid/media/TimedText$Style;->startChar:I
+    const/4 v0, -0x1
 
-    .line 229
-    iput p2, p0, Landroid/media/TimedText$Style;->endChar:I
+    .line 224
+    iput-object p1, p0, Landroid/media/TimedText$Style;->this$0:Landroid/media/TimedText;
 
-    .line 230
-    iput p3, p0, Landroid/media/TimedText$Style;->fontID:I
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 231
-    iput-boolean p4, p0, Landroid/media/TimedText$Style;->isBold:Z
+    .line 185
+    iput v0, p0, Landroid/media/TimedText$Style;->startChar:I
 
-    .line 232
-    iput-boolean p5, p0, Landroid/media/TimedText$Style;->isItalic:Z
+    .line 190
+    iput v0, p0, Landroid/media/TimedText$Style;->endChar:I
 
-    .line 233
-    iput-boolean p6, p0, Landroid/media/TimedText$Style;->isUnderlined:Z
+    .line 196
+    iput v0, p0, Landroid/media/TimedText$Style;->fontID:I
 
-    .line 234
-    iput p7, p0, Landroid/media/TimedText$Style;->fontSize:I
+    .line 201
+    iput-boolean v1, p0, Landroid/media/TimedText$Style;->isBold:Z
 
-    .line 235
-    iput p8, p0, Landroid/media/TimedText$Style;->colorRGBA:I
+    .line 206
+    iput-boolean v1, p0, Landroid/media/TimedText$Style;->isItalic:Z
 
-    .line 236
+    .line 211
+    iput-boolean v1, p0, Landroid/media/TimedText$Style;->isUnderlined:Z
+
+    .line 216
+    iput v0, p0, Landroid/media/TimedText$Style;->fontSize:I
+
+    .line 222
+    iput v0, p0, Landroid/media/TimedText$Style;->colorRGBA:I
+
+    .line 224
     return-void
 .end method

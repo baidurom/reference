@@ -22,15 +22,13 @@
 
 .field public static final COMPONENT_ENABLED_STATE_ENABLED:I = 0x1
 
-.field public static final DELETE_ALL_USERS:I = 0x2
-
 .field public static final DELETE_FAILED_DEVICE_POLICY_MANAGER:I = -0x2
 
 .field public static final DELETE_FAILED_INTERNAL_ERROR:I = -0x1
 
-.field public static final DELETE_KEEP_DATA:I = 0x1
-
 .field public static final DELETE_SUCCEEDED:I = 0x1
+
+.field public static final DONT_DELETE_DATA:I = 0x1
 
 .field public static final DONT_KILL_APP:I = 0x1
 
@@ -38,27 +36,15 @@
 
 .field public static final EXTRA_VERIFICATION_INSTALLER_PACKAGE:Ljava/lang/String; = "android.content.pm.extra.VERIFICATION_INSTALLER_PACKAGE"
 
-.field public static final EXTRA_VERIFICATION_INSTALLER_UID:Ljava/lang/String; = "android.content.pm.extra.VERIFICATION_INSTALLER_UID"
-
 .field public static final EXTRA_VERIFICATION_INSTALL_FLAGS:Ljava/lang/String; = "android.content.pm.extra.VERIFICATION_INSTALL_FLAGS"
 
-.field public static final EXTRA_VERIFICATION_PACKAGE_NAME:Ljava/lang/String; = "android.content.pm.extra.VERIFICATION_PACKAGE_NAME"
-
-.field public static final EXTRA_VERIFICATION_RESULT:Ljava/lang/String; = "android.content.pm.extra.VERIFICATION_RESULT"
-
 .field public static final EXTRA_VERIFICATION_URI:Ljava/lang/String; = "android.content.pm.extra.VERIFICATION_URI"
-
-.field public static final EXTRA_VERIFICATION_VERSION_CODE:Ljava/lang/String; = "android.content.pm.extra.VERIFICATION_VERSION_CODE"
 
 .field public static final FEATURE_AUDIO_LOW_LATENCY:Ljava/lang/String; = "android.hardware.audio.low_latency"
 
 .field public static final FEATURE_BLUETOOTH:Ljava/lang/String; = "android.hardware.bluetooth"
 
-.field public static final FEATURE_BLUETOOTH_LE:Ljava/lang/String; = "com.android.hardware.bluetooth_le"
-
 .field public static final FEATURE_CAMERA:Ljava/lang/String; = "android.hardware.camera"
-
-.field public static final FEATURE_CAMERA_ANY:Ljava/lang/String; = "android.hardware.camera.any"
 
 .field public static final FEATURE_CAMERA_AUTOFOCUS:Ljava/lang/String; = "android.hardware.camera.autofocus"
 
@@ -110,8 +96,6 @@
 
 .field public static final FEATURE_TELEPHONY_GSM:Ljava/lang/String; = "android.hardware.telephony.gsm"
 
-.field public static final FEATURE_TELEVISION:Ljava/lang/String; = "android.hardware.type.television"
-
 .field public static final FEATURE_TOUCHSCREEN:Ljava/lang/String; = "android.hardware.touchscreen"
 
 .field public static final FEATURE_TOUCHSCREEN_MULTITOUCH:Ljava/lang/String; = "android.hardware.touchscreen.multitouch"
@@ -160,11 +144,7 @@
 
 .field public static final GET_URI_PERMISSION_PATTERNS:I = 0x800
 
-.field public static final INSTALL_ALLOW_DOWNGRADE:I = 0x80
-
 .field public static final INSTALL_ALLOW_TEST:I = 0x4
-
-.field public static final INSTALL_ALL_USERS:I = 0x40
 
 .field public static final INSTALL_EXTERNAL:I = 0x8
 
@@ -210,15 +190,11 @@
 
 .field public static final INSTALL_FAILED_TEST_ONLY:I = -0xf
 
-.field public static final INSTALL_FAILED_UID_CHANGED:I = -0x18
-
 .field public static final INSTALL_FAILED_UPDATE_INCOMPATIBLE:I = -0x7
 
 .field public static final INSTALL_FAILED_VERIFICATION_FAILURE:I = -0x16
 
 .field public static final INSTALL_FAILED_VERIFICATION_TIMEOUT:I = -0x15
-
-.field public static final INSTALL_FAILED_VERSION_DOWNGRADE:I = -0x19
 
 .field public static final INSTALL_FORWARD_LOCK:I = 0x1
 
@@ -252,8 +228,6 @@
 
 .field public static final MATCH_DEFAULT_ONLY:I = 0x10000
 
-.field public static final MAXIMUM_VERIFICATION_TIMEOUT:J = 0x36ee80L
-
 .field public static final MOVE_EXTERNAL_MEDIA:I = 0x2
 
 .field public static final MOVE_FAILED_DOESNT_EXIST:I = -0x2
@@ -274,13 +248,11 @@
 
 .field public static final MOVE_SUCCEEDED:I = 0x1
 
-.field public static final PERMISSION_CHECKING:I = 0x1
-
 .field public static final PERMISSION_DENIED:I = -0x1
 
 .field public static final PERMISSION_GRANTED:I = 0x0
 
-.field public static final PERMISSION_USER_DENIED:I = 0x2
+.field public static final PER_USER_RANGE:I = 0x186a0
 
 .field public static final SIGNATURE_FIRST_NOT_SIGNED:I = -0x1
 
@@ -306,61 +278,83 @@
     .locals 0
 
     .prologue
-    .line 44
+    .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 50
+    .line 49
     return-void
 .end method
 
-.method public static getDataDirForUser(ILjava/lang/String;)Ljava/lang/String;
-    .locals 2
-    .parameter "userId"
-    .parameter "packageName"
+.method public static getAppId(I)I
+    .locals 1
+    .parameter "uid"
 
     .prologue
-    .line 2987
-    new-instance v0, Ljava/lang/StringBuilder;
+    .line 2647
+    const v0, 0x186a0
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    rem-int v0, p0, v0
 
-    invoke-static {}, Landroid/os/Environment;->getDataDirectory()Ljava/io/File;
+    return v0
+.end method
 
-    move-result-object v1
+.method public static getUid(II)I
+    .locals 2
+    .parameter "userId"
+    .parameter "appId"
 
-    invoke-virtual {v1}, Ljava/io/File;->toString()Ljava/lang/String;
+    .prologue
+    const v1, 0x186a0
 
-    move-result-object v1
+    .line 2639
+    mul-int v0, p0, v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    rem-int v1, p1, v1
 
-    move-result-object v0
+    add-int/2addr v0, v1
 
-    const-string v1, "/user/"
+    return v0
+.end method
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+.method public static getUserId(I)I
+    .locals 1
+    .parameter "uid"
 
-    move-result-object v0
+    .prologue
+    .line 2631
+    const v0, 0x186a0
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    div-int v0, p0, v0
 
-    move-result-object v0
+    return v0
+.end method
 
-    const-string v1, "/"
+.method public static isSameUser(II)Z
+    .locals 2
+    .parameter "uid1"
+    .parameter "uid2"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .prologue
+    .line 2623
+    invoke-static {p0}, Landroid/content/pm/PackageManager;->getUserId(I)I
 
-    move-result-object v0
+    move-result v0
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p1}, Landroid/content/pm/PackageManager;->getUserId(I)I
 
-    move-result-object v0
+    move-result v1
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    if-ne v0, v1, :cond_0
 
-    move-result-object v0
+    const/4 v0, 0x1
 
-    return-object v0
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 
@@ -379,25 +373,6 @@
 .method public abstract addPreferredActivity(Landroid/content/IntentFilter;I[Landroid/content/ComponentName;Landroid/content/ComponentName;)V
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
-.end method
-
-.method public addPreferredActivity(Landroid/content/IntentFilter;I[Landroid/content/ComponentName;Landroid/content/ComponentName;I)V
-    .locals 2
-    .parameter "filter"
-    .parameter "match"
-    .parameter "set"
-    .parameter "activity"
-    .parameter "userId"
-
-    .prologue
-    .line 2803
-    new-instance v0, Ljava/lang/RuntimeException;
-
-    const-string v1, "Not implemented. Must override in a subclass."
-
-    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v0
 .end method
 
 .method public abstract canonicalToCurrentPackageNames([Ljava/lang/String;)[Ljava/lang/String;
@@ -421,6 +396,9 @@
 .method public abstract clearPackagePreferredActivities(Ljava/lang/String;)V
 .end method
 
+.method public abstract createUser(Ljava/lang/String;I)Landroid/content/pm/UserInfo;
+.end method
+
 .method public abstract currentToCanonicalPackageNames([Ljava/lang/String;)[Ljava/lang/String;
 .end method
 
@@ -428,9 +406,6 @@
 .end method
 
 .method public abstract deletePackage(Ljava/lang/String;Landroid/content/pm/IPackageDeleteObserver;I)V
-.end method
-
-.method public abstract extendVerificationTimeout(IIJ)V
 .end method
 
 .method public abstract freeStorage(JLandroid/content/IntentSender;)V
@@ -560,18 +535,6 @@
     .end annotation
 .end method
 
-.method public abstract getInstalledPackages(II)Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(II)",
-            "Ljava/util/List",
-            "<",
-            "Landroid/content/pm/PackageInfo;",
-            ">;"
-        }
-    .end annotation
-.end method
-
 .method public abstract getInstallerPackageName(Ljava/lang/String;)Ljava/lang/String;
 .end method
 
@@ -590,75 +553,67 @@
 .end method
 
 .method public getPackageArchiveInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
-    .locals 12
+    .locals 10
     .parameter "archiveFilePath"
     .parameter "flags"
 
     .prologue
     const-wide/16 v3, 0x0
 
-    const/4 v5, 0x0
-
     const/4 v1, 0x0
 
-    .line 2402
-    new-instance v10, Landroid/content/pm/PackageParser;
+    const/4 v5, 0x0
 
-    invoke-direct {v10, p1}, Landroid/content/pm/PackageParser;-><init>(Ljava/lang/String;)V
+    .line 2122
+    new-instance v8, Landroid/content/pm/PackageParser;
 
-    .line 2403
-    .local v10, packageParser:Landroid/content/pm/PackageParser;
-    new-instance v9, Landroid/util/DisplayMetrics;
+    invoke-direct {v8, p1}, Landroid/content/pm/PackageParser;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v9}, Landroid/util/DisplayMetrics;-><init>()V
+    .line 2123
+    .local v8, packageParser:Landroid/content/pm/PackageParser;
+    new-instance v7, Landroid/util/DisplayMetrics;
 
-    .line 2404
-    .local v9, metrics:Landroid/util/DisplayMetrics;
-    invoke-virtual {v9}, Landroid/util/DisplayMetrics;->setToDefaults()V
+    invoke-direct {v7}, Landroid/util/DisplayMetrics;-><init>()V
 
-    .line 2405
-    new-instance v11, Ljava/io/File;
+    .line 2124
+    .local v7, metrics:Landroid/util/DisplayMetrics;
+    invoke-virtual {v7}, Landroid/util/DisplayMetrics;->setToDefaults()V
 
-    invoke-direct {v11, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    .line 2125
+    new-instance v9, Ljava/io/File;
 
-    .line 2406
-    .local v11, sourceFile:Ljava/io/File;
-    invoke-virtual {v10, v11, p1, v9, v5}, Landroid/content/pm/PackageParser;->parsePackage(Ljava/io/File;Ljava/lang/String;Landroid/util/DisplayMetrics;I)Landroid/content/pm/PackageParser$Package;
+    invoke-direct {v9, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    .line 2126
+    .local v9, sourceFile:Ljava/io/File;
+    invoke-virtual {v8, v9, p1, v7, v5}, Landroid/content/pm/PackageParser;->parsePackage(Ljava/io/File;Ljava/lang/String;Landroid/util/DisplayMetrics;I)Landroid/content/pm/PackageParser$Package;
 
     move-result-object v0
 
-    .line 2408
+    .line 2128
     .local v0, pkg:Landroid/content/pm/PackageParser$Package;
     if-nez v0, :cond_0
 
-    .line 2415
+    .line 2134
     :goto_0
     return-object v1
 
-    .line 2411
+    .line 2131
     :cond_0
     and-int/lit8 v2, p2, 0x40
 
     if-eqz v2, :cond_1
 
-    .line 2412
-    invoke-virtual {v10, v0, v5}, Landroid/content/pm/PackageParser;->collectCertificates(Landroid/content/pm/PackageParser$Package;I)Z
+    .line 2132
+    invoke-virtual {v8, v0, v5}, Landroid/content/pm/PackageParser;->collectCertificates(Landroid/content/pm/PackageParser$Package;I)Z
 
-    .line 2414
     :cond_1
-    new-instance v8, Landroid/content/pm/PackageUserState;
-
-    invoke-direct {v8}, Landroid/content/pm/PackageUserState;-><init>()V
-
-    .local v8, state:Landroid/content/pm/PackageUserState;
     move v2, p2
 
     move-wide v5, v3
 
-    move-object v7, v1
-
-    .line 2415
-    invoke-static/range {v0 .. v8}, Landroid/content/pm/PackageParser;->generatePackageInfo(Landroid/content/pm/PackageParser$Package;[IIJJLjava/util/HashSet;Landroid/content/pm/PackageUserState;)Landroid/content/pm/PackageInfo;
+    .line 2134
+    invoke-static/range {v0 .. v6}, Landroid/content/pm/PackageParser;->generatePackageInfo(Landroid/content/pm/PackageParser$Package;[IIJJ)Landroid/content/pm/PackageInfo;
 
     move-result-object v1
 
@@ -681,24 +636,7 @@
     .end annotation
 .end method
 
-.method public abstract getPackageSizeInfo(Ljava/lang/String;ILandroid/content/pm/IPackageStatsObserver;)V
-.end method
-
-.method public getPackageSizeInfo(Ljava/lang/String;Landroid/content/pm/IPackageStatsObserver;)V
-    .locals 1
-    .parameter "packageName"
-    .parameter "observer"
-
-    .prologue
-    .line 2722
-    invoke-static {}, Landroid/os/UserHandle;->myUserId()I
-
-    move-result v0
-
-    invoke-virtual {p0, p1, v0, p2}, Landroid/content/pm/PackageManager;->getPackageSizeInfo(Ljava/lang/String;ILandroid/content/pm/IPackageStatsObserver;)V
-
-    .line 2723
-    return-void
+.method public abstract getPackageSizeInfo(Ljava/lang/String;Landroid/content/pm/IPackageStatsObserver;)V
 .end method
 
 .method public abstract getPackagesForUid(I)[Ljava/lang/String;
@@ -790,14 +728,6 @@
     .end annotation
 .end method
 
-.method public abstract getResourcesForApplicationAsUser(Ljava/lang/String;I)Landroid/content/res/Resources;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/content/pm/PackageManager$NameNotFoundException;
-        }
-    .end annotation
-.end method
-
 .method public abstract getServiceInfo(Landroid/content/ComponentName;I)Landroid/content/pm/ServiceInfo;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -823,33 +753,31 @@
     .end annotation
 .end method
 
+.method public abstract getUsers()Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List",
+            "<",
+            "Landroid/content/pm/UserInfo;",
+            ">;"
+        }
+    .end annotation
+.end method
+
 .method public abstract getVerifierDeviceIdentity()Landroid/content/pm/VerifierDeviceIdentity;
 .end method
 
 .method public abstract getXml(Ljava/lang/String;ILandroid/content/pm/ApplicationInfo;)Landroid/content/res/XmlResourceParser;
 .end method
 
-.method public abstract grantPermission(Ljava/lang/String;Ljava/lang/String;)V
-.end method
-
 .method public abstract hasSystemFeature(Ljava/lang/String;)Z
-.end method
-
-.method public abstract installExistingPackage(Ljava/lang/String;)I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/content/pm/PackageManager$NameNotFoundException;
-        }
-    .end annotation
 .end method
 
 .method public abstract installPackage(Landroid/net/Uri;Landroid/content/pm/IPackageInstallObserver;ILjava/lang/String;)V
 .end method
 
-.method public abstract installPackageWithVerification(Landroid/net/Uri;Landroid/content/pm/IPackageInstallObserver;ILjava/lang/String;Landroid/net/Uri;Landroid/content/pm/ManifestDigest;Landroid/content/pm/ContainerEncryptionParams;)V
-.end method
-
-.method public abstract installPackageWithVerificationAndEncryption(Landroid/net/Uri;Landroid/content/pm/IPackageInstallObserver;ILjava/lang/String;Landroid/content/pm/VerificationParams;Landroid/content/pm/ContainerEncryptionParams;)V
+.method public abstract installPackageWithVerification(Landroid/net/Uri;Landroid/content/pm/IPackageInstallObserver;ILjava/lang/String;Landroid/net/Uri;Landroid/content/pm/ManifestDigest;)V
 .end method
 
 .method public abstract isSafeMode()Z
@@ -864,20 +792,6 @@
             "(",
             "Landroid/content/Intent;",
             "I)",
-            "Ljava/util/List",
-            "<",
-            "Landroid/content/pm/ResolveInfo;",
-            ">;"
-        }
-    .end annotation
-.end method
-
-.method public abstract queryBroadcastReceivers(Landroid/content/Intent;II)Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/content/Intent;",
-            "II)",
             "Ljava/util/List",
             "<",
             "Landroid/content/pm/ResolveInfo;",
@@ -928,20 +842,6 @@
     .end annotation
 .end method
 
-.method public abstract queryIntentActivitiesAsUser(Landroid/content/Intent;II)Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/content/Intent;",
-            "II)",
-            "Ljava/util/List",
-            "<",
-            "Landroid/content/pm/ResolveInfo;",
-            ">;"
-        }
-    .end annotation
-.end method
-
 .method public abstract queryIntentActivityOptions(Landroid/content/ComponentName;[Landroid/content/Intent;Landroid/content/Intent;I)Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -965,20 +865,6 @@
             "(",
             "Landroid/content/Intent;",
             "I)",
-            "Ljava/util/List",
-            "<",
-            "Landroid/content/pm/ResolveInfo;",
-            ">;"
-        }
-    .end annotation
-.end method
-
-.method public abstract queryIntentServicesAsUser(Landroid/content/Intent;II)Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/content/Intent;",
-            "II)",
             "Ljava/util/List",
             "<",
             "Landroid/content/pm/ResolveInfo;",
@@ -1015,6 +901,9 @@
 .method public abstract removePermission(Ljava/lang/String;)V
 .end method
 
+.method public abstract removeUser(I)Z
+.end method
+
 .method public abstract replacePreferredActivity(Landroid/content/IntentFilter;I[Landroid/content/ComponentName;Landroid/content/ComponentName;)V
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
@@ -1023,16 +912,10 @@
 .method public abstract resolveActivity(Landroid/content/Intent;I)Landroid/content/pm/ResolveInfo;
 .end method
 
-.method public abstract resolveActivityAsUser(Landroid/content/Intent;II)Landroid/content/pm/ResolveInfo;
-.end method
-
 .method public abstract resolveContentProvider(Ljava/lang/String;I)Landroid/content/pm/ProviderInfo;
 .end method
 
 .method public abstract resolveService(Landroid/content/Intent;I)Landroid/content/pm/ResolveInfo;
-.end method
-
-.method public abstract revokePermission(Ljava/lang/String;Ljava/lang/String;)V
 .end method
 
 .method public abstract setApplicationEnabledSetting(Ljava/lang/String;II)V
@@ -1042,6 +925,12 @@
 .end method
 
 .method public abstract setInstallerPackageName(Ljava/lang/String;Ljava/lang/String;)V
+.end method
+
+.method public abstract updateUserFlags(II)V
+.end method
+
+.method public abstract updateUserName(ILjava/lang/String;)V
 .end method
 
 .method public abstract verifyPendingInstall(II)V

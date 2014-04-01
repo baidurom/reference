@@ -126,6 +126,52 @@
     return-object p1
 .end method
 
+.method static synthetic access$400(Landroid/net/http/IdleCache;)I
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 30
+    iget v0, p0, Landroid/net/http/IdleCache;->mCached:I
+
+    return v0
+.end method
+
+.method static synthetic access$402(Landroid/net/http/IdleCache;I)I
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 30
+    iput p1, p0, Landroid/net/http/IdleCache;->mCached:I
+
+    return p1
+.end method
+
+.method static synthetic access$500(Landroid/net/http/IdleCache;)I
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 30
+    iget v0, p0, Landroid/net/http/IdleCache;->mReused:I
+
+    return v0
+.end method
+
+.method static synthetic access$502(Landroid/net/http/IdleCache;I)I
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 30
+    iput p1, p0, Landroid/net/http/IdleCache;->mReused:I
+
+    return p1
+.end method
+
 .method private declared-synchronized clearIdle()V
     .locals 6
 
@@ -221,24 +267,63 @@
 
 # virtual methods
 .method declared-synchronized cacheConnection(Lorg/apache/http/HttpHost;Landroid/net/http/Connection;)Z
-    .locals 7
+    .locals 8
     .parameter "host"
     .parameter "connection"
 
     .prologue
-    const/16 v6, 0x8
+    const/16 v7, 0x8
 
     .line 69
     monitor-enter p0
 
     const/4 v2, 0x0
 
-    .line 75
+    .line 71
     .local v2, ret:Z
     :try_start_0
+    sget-boolean v5, Landroid/net/http/HttpLog;->LOGV:Z
+
+    if-eqz v5, :cond_0
+
+    .line 72
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "IdleCache size "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    iget v6, p0, Landroid/net/http/IdleCache;->mCount:I
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    const-string v6, " host "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v5}, Landroid/net/http/HttpLog;->v(Ljava/lang/String;)V
+
+    .line 75
+    :cond_0
     iget v5, p0, Landroid/net/http/IdleCache;->mCount:I
 
-    if-ge v5, v6, :cond_0
+    if-ge v5, v7, :cond_2
 
     .line 76
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -251,7 +336,7 @@
 
     .local v1, i:I
     :goto_0
-    if-ge v1, v6, :cond_0
+    if-ge v1, v7, :cond_2
 
     .line 78
     iget-object v5, p0, Landroid/net/http/IdleCache;->mEntries:[Landroid/net/http/IdleCache$Entry;
@@ -262,7 +347,7 @@
     .local v0, entry:Landroid/net/http/IdleCache$Entry;
     iget-object v5, v0, Landroid/net/http/IdleCache$Entry;->mHost:Lorg/apache/http/HttpHost;
 
-    if-nez v5, :cond_1
+    if-nez v5, :cond_3
 
     .line 80
     iput-object p1, v0, Landroid/net/http/IdleCache$Entry;->mHost:Lorg/apache/http/HttpHost;
@@ -284,13 +369,25 @@
 
     iput v5, p0, Landroid/net/http/IdleCache;->mCount:I
 
+    .line 84
+    sget-boolean v5, Landroid/net/http/HttpLog;->LOGV:Z
+
+    if-eqz v5, :cond_1
+
+    iget v5, p0, Landroid/net/http/IdleCache;->mCached:I
+
+    add-int/lit8 v5, v5, 0x1
+
+    iput v5, p0, Landroid/net/http/IdleCache;->mCached:I
+
     .line 85
+    :cond_1
     const/4 v2, 0x1
 
     .line 86
     iget-object v5, p0, Landroid/net/http/IdleCache;->mThread:Landroid/net/http/IdleCache$IdleReaper;
 
-    if-nez v5, :cond_0
+    if-nez v5, :cond_2
 
     .line 87
     new-instance v5, Landroid/net/http/IdleCache$IdleReaper;
@@ -312,7 +409,7 @@
     .end local v0           #entry:Landroid/net/http/IdleCache$Entry;
     .end local v1           #i:I
     .end local v3           #time:J
-    :cond_0
+    :cond_2
     monitor-exit p0
 
     return v2
@@ -321,7 +418,7 @@
     .restart local v0       #entry:Landroid/net/http/IdleCache$Entry;
     .restart local v1       #i:I
     .restart local v3       #time:J
-    :cond_1
+    :cond_3
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
@@ -479,6 +576,17 @@
     add-int/lit8 v4, v4, -0x1
 
     iput v4, p0, Landroid/net/http/IdleCache;->mCount:I
+
+    .line 109
+    sget-boolean v4, Landroid/net/http/HttpLog;->LOGV:Z
+
+    if-eqz v4, :cond_0
+
+    iget v4, p0, Landroid/net/http/IdleCache;->mReused:I
+
+    add-int/lit8 v4, v4, 0x1
+
+    iput v4, p0, Landroid/net/http/IdleCache;->mReused:I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 

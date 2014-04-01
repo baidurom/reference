@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 406
+    .line 383
     iput-object p1, p0, Lcom/android/server/am/ServiceRecord$2;->this$0:Lcom/android/server/am/ServiceRecord;
 
     iput-object p2, p0, Lcom/android/server/am/ServiceRecord$2;->val$localPackageName:Ljava/lang/String;
@@ -48,47 +48,41 @@
 
 # virtual methods
 .method public run()V
-    .locals 6
+    .locals 4
 
     .prologue
-    .line 408
+    .line 385
     invoke-static {}, Landroid/app/NotificationManager;->getService()Landroid/app/INotificationManager;
 
     move-result-object v1
 
-    .line 409
+    .line 386
     .local v1, inm:Landroid/app/INotificationManager;
     if-nez v1, :cond_0
 
-    .line 420
+    .line 396
     :goto_0
     return-void
 
-    .line 413
+    .line 390
     :cond_0
     :try_start_0
     iget-object v2, p0, Lcom/android/server/am/ServiceRecord$2;->val$localPackageName:Ljava/lang/String;
 
-    const/4 v3, 0x0
+    iget v3, p0, Lcom/android/server/am/ServiceRecord$2;->val$localForegroundId:I
 
-    iget v4, p0, Lcom/android/server/am/ServiceRecord$2;->val$localForegroundId:I
-
-    iget-object v5, p0, Lcom/android/server/am/ServiceRecord$2;->this$0:Lcom/android/server/am/ServiceRecord;
-
-    iget v5, v5, Lcom/android/server/am/ServiceRecord;->userId:I
-
-    invoke-interface {v1, v2, v3, v4, v5}, Landroid/app/INotificationManager;->cancelNotificationWithTag(Ljava/lang/String;Ljava/lang/String;II)V
+    invoke-interface {v1, v2, v3}, Landroid/app/INotificationManager;->cancelNotification(Ljava/lang/String;I)V
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
 
     goto :goto_0
 
-    .line 415
+    .line 391
     :catch_0
     move-exception v0
 
-    .line 416
+    .line 392
     .local v0, e:Ljava/lang/RuntimeException;
     const-string v2, "ActivityManager"
 
@@ -98,7 +92,7 @@
 
     goto :goto_0
 
-    .line 418
+    .line 394
     .end local v0           #e:Ljava/lang/RuntimeException;
     :catch_1
     move-exception v2

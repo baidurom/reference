@@ -32,8 +32,8 @@
     .locals 0
 
     .prologue
-    .line 856
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 698
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -49,18 +49,18 @@
 
     const/4 v4, 0x0
 
-    .line 859
+    .line 700
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 860
+    .line 701
     .local v1, provider:Ljava/lang/String;
     new-instance v0, Landroid/location/Location;
 
     invoke-direct {v0, v1}, Landroid/location/Location;-><init>(Ljava/lang/String;)V
 
-    .line 861
+    .line 702
     .local v0, l:Landroid/location/Location;
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
@@ -69,31 +69,23 @@
     #setter for: Landroid/location/Location;->mTime:J
     invoke-static {v0, v5, v6}, Landroid/location/Location;->access$002(Landroid/location/Location;J)J
 
-    .line 862
-    invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
-
-    move-result-wide v5
-
-    #setter for: Landroid/location/Location;->mElapsedRealtimeNanos:J
-    invoke-static {v0, v5, v6}, Landroid/location/Location;->access$102(Landroid/location/Location;J)J
-
-    .line 863
+    .line 703
     invoke-virtual {p1}, Landroid/os/Parcel;->readDouble()D
 
     move-result-wide v5
 
     #setter for: Landroid/location/Location;->mLatitude:D
-    invoke-static {v0, v5, v6}, Landroid/location/Location;->access$202(Landroid/location/Location;D)D
+    invoke-static {v0, v5, v6}, Landroid/location/Location;->access$102(Landroid/location/Location;D)D
 
-    .line 864
+    .line 704
     invoke-virtual {p1}, Landroid/os/Parcel;->readDouble()D
 
     move-result-wide v5
 
     #setter for: Landroid/location/Location;->mLongitude:D
-    invoke-static {v0, v5, v6}, Landroid/location/Location;->access$302(Landroid/location/Location;D)D
+    invoke-static {v0, v5, v6}, Landroid/location/Location;->access$202(Landroid/location/Location;D)D
 
-    .line 865
+    .line 705
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
@@ -104,17 +96,17 @@
 
     :goto_0
     #setter for: Landroid/location/Location;->mHasAltitude:Z
-    invoke-static {v0, v2}, Landroid/location/Location;->access$402(Landroid/location/Location;Z)Z
+    invoke-static {v0, v2}, Landroid/location/Location;->access$302(Landroid/location/Location;Z)Z
 
-    .line 866
+    .line 706
     invoke-virtual {p1}, Landroid/os/Parcel;->readDouble()D
 
     move-result-wide v5
 
     #setter for: Landroid/location/Location;->mAltitude:D
-    invoke-static {v0, v5, v6}, Landroid/location/Location;->access$502(Landroid/location/Location;D)D
+    invoke-static {v0, v5, v6}, Landroid/location/Location;->access$402(Landroid/location/Location;D)D
 
-    .line 867
+    .line 707
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
@@ -125,17 +117,17 @@
 
     :goto_1
     #setter for: Landroid/location/Location;->mHasSpeed:Z
-    invoke-static {v0, v2}, Landroid/location/Location;->access$602(Landroid/location/Location;Z)Z
+    invoke-static {v0, v2}, Landroid/location/Location;->access$502(Landroid/location/Location;Z)Z
 
-    .line 868
+    .line 708
     invoke-virtual {p1}, Landroid/os/Parcel;->readFloat()F
 
     move-result v2
 
     #setter for: Landroid/location/Location;->mSpeed:F
-    invoke-static {v0, v2}, Landroid/location/Location;->access$702(Landroid/location/Location;F)F
+    invoke-static {v0, v2}, Landroid/location/Location;->access$602(Landroid/location/Location;F)F
 
-    .line 869
+    .line 709
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
@@ -146,17 +138,17 @@
 
     :goto_2
     #setter for: Landroid/location/Location;->mHasBearing:Z
-    invoke-static {v0, v2}, Landroid/location/Location;->access$802(Landroid/location/Location;Z)Z
+    invoke-static {v0, v2}, Landroid/location/Location;->access$702(Landroid/location/Location;Z)Z
 
-    .line 870
+    .line 710
     invoke-virtual {p1}, Landroid/os/Parcel;->readFloat()F
 
     move-result v2
 
     #setter for: Landroid/location/Location;->mBearing:F
-    invoke-static {v0, v2}, Landroid/location/Location;->access$902(Landroid/location/Location;F)F
+    invoke-static {v0, v2}, Landroid/location/Location;->access$802(Landroid/location/Location;F)F
 
-    .line 871
+    .line 711
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
@@ -165,49 +157,49 @@
 
     :goto_3
     #setter for: Landroid/location/Location;->mHasAccuracy:Z
-    invoke-static {v0, v3}, Landroid/location/Location;->access$1002(Landroid/location/Location;Z)Z
+    invoke-static {v0, v3}, Landroid/location/Location;->access$902(Landroid/location/Location;Z)Z
 
-    .line 872
+    .line 712
     invoke-virtual {p1}, Landroid/os/Parcel;->readFloat()F
 
     move-result v2
 
     #setter for: Landroid/location/Location;->mAccuracy:F
-    invoke-static {v0, v2}, Landroid/location/Location;->access$1102(Landroid/location/Location;F)F
+    invoke-static {v0, v2}, Landroid/location/Location;->access$1002(Landroid/location/Location;F)F
 
-    .line 873
+    .line 713
     invoke-virtual {p1}, Landroid/os/Parcel;->readBundle()Landroid/os/Bundle;
 
     move-result-object v2
 
     #setter for: Landroid/location/Location;->mExtras:Landroid/os/Bundle;
-    invoke-static {v0, v2}, Landroid/location/Location;->access$1202(Landroid/location/Location;Landroid/os/Bundle;)Landroid/os/Bundle;
+    invoke-static {v0, v2}, Landroid/location/Location;->access$1102(Landroid/location/Location;Landroid/os/Bundle;)Landroid/os/Bundle;
 
-    .line 874
+    .line 714
     return-object v0
 
     :cond_0
     move v2, v4
 
-    .line 865
+    .line 705
     goto :goto_0
 
     :cond_1
     move v2, v4
 
-    .line 867
+    .line 707
     goto :goto_1
 
     :cond_2
     move v2, v4
 
-    .line 869
+    .line 709
     goto :goto_2
 
     :cond_3
     move v3, v4
 
-    .line 871
+    .line 711
     goto :goto_3
 .end method
 
@@ -216,7 +208,7 @@
     .parameter "x0"
 
     .prologue
-    .line 856
+    .line 698
     invoke-virtual {p0, p1}, Landroid/location/Location$1;->createFromParcel(Landroid/os/Parcel;)Landroid/location/Location;
 
     move-result-object v0
@@ -229,7 +221,7 @@
     .parameter "size"
 
     .prologue
-    .line 879
+    .line 718
     new-array v0, p1, [Landroid/location/Location;
 
     return-object v0
@@ -240,7 +232,7 @@
     .parameter "x0"
 
     .prologue
-    .line 856
+    .line 698
     invoke-virtual {p0, p1}, Landroid/location/Location$1;->newArray(I)[Landroid/location/Location;
 
     move-result-object v0
