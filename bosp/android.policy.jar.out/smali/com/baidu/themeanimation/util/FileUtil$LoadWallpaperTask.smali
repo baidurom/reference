@@ -33,18 +33,18 @@
     .parameter "handler"
 
     .prologue
-    .line 247
+    .line 281
     iput-object p1, p0, Lcom/baidu/themeanimation/util/FileUtil$LoadWallpaperTask;->this$0:Lcom/baidu/themeanimation/util/FileUtil;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 248
+    .line 282
     iput-object p2, p0, Lcom/baidu/themeanimation/util/FileUtil$LoadWallpaperTask;->mLocalPath:Ljava/lang/String;
 
-    .line 249
+    .line 283
     iput-object p3, p0, Lcom/baidu/themeanimation/util/FileUtil$LoadWallpaperTask;->mHandler:Landroid/os/Handler;
 
-    .line 250
+    .line 284
     return-void
 .end method
 
@@ -54,10 +54,10 @@
     .locals 0
 
     .prologue
-    .line 253
+    .line 287
     invoke-virtual {p0}, Lcom/baidu/themeanimation/util/FileUtil$LoadWallpaperTask;->todo()V
 
-    .line 254
+    .line 288
     return-void
 .end method
 
@@ -65,7 +65,7 @@
     .locals 5
 
     .prologue
-    .line 258
+    .line 292
     :try_start_0
     iget-object v1, p0, Lcom/baidu/themeanimation/util/FileUtil$LoadWallpaperTask;->this$0:Lcom/baidu/themeanimation/util/FileUtil;
 
@@ -79,7 +79,7 @@
     #setter for: Lcom/baidu/themeanimation/util/FileUtil;->mLockWallpaperBitmap:Landroid/graphics/Bitmap;
     invoke-static {v1, v2}, Lcom/baidu/themeanimation/util/FileUtil;->access$002(Lcom/baidu/themeanimation/util/FileUtil;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
-    .line 259
+    .line 293
     iget-object v1, p0, Lcom/baidu/themeanimation/util/FileUtil$LoadWallpaperTask;->mHandler:Landroid/os/Handler;
 
     iget-object v2, p0, Lcom/baidu/themeanimation/util/FileUtil$LoadWallpaperTask;->mHandler:Landroid/os/Handler;
@@ -97,26 +97,26 @@
     .catch Ljava/lang/OutOfMemoryError; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 265
+    .line 299
     :goto_0
     return-void
 
-    .line 260
+    .line 294
     :catch_0
     move-exception v0
 
-    .line 261
+    .line 295
     .local v0, e:Ljava/lang/OutOfMemoryError;
     invoke-virtual {v0}, Ljava/lang/OutOfMemoryError;->printStackTrace()V
 
     goto :goto_0
 
-    .line 262
+    .line 296
     .end local v0           #e:Ljava/lang/OutOfMemoryError;
     :catch_1
     move-exception v0
 
-    .line 263
+    .line 297
     .local v0, e:Ljava/lang/Exception;
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 

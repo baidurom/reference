@@ -2220,6 +2220,33 @@
     goto :goto_0
 .end method
 
+.method public setPersistent(Landroid/content/pm/ApplicationInfo;Z)V
+    .locals 1
+    .parameter "app"
+    .parameter "persistent"
+
+    .prologue
+    .line 2025
+    :try_start_0
+    invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1, p2}, Landroid/app/IActivityManager;->setPersistent(Landroid/content/pm/ApplicationInfo;Z)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 2029
+    :goto_0
+    return-void
+
+    .line 2026
+    :catch_0
+    move-exception v0
+
+    goto :goto_0
+.end method
+
 .method public switchUser(I)Z
     .locals 2
     .parameter "userid"

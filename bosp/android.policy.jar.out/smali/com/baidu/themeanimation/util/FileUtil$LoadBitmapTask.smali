@@ -38,7 +38,7 @@
     .parameter "isMask"
 
     .prologue
-    .line 389
+    .line 423
     const/4 v5, 0x1
 
     move-object v0, p0
@@ -53,7 +53,7 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/baidu/themeanimation/util/FileUtil$LoadBitmapTask;-><init>(Lcom/baidu/themeanimation/util/FileUtil;Ljava/lang/String;Ljava/lang/Object;ZI)V
 
-    .line 390
+    .line 424
     return-void
 .end method
 
@@ -66,25 +66,25 @@
     .parameter "priority"
 
     .prologue
-    .line 392
+    .line 426
     iput-object p1, p0, Lcom/baidu/themeanimation/util/FileUtil$LoadBitmapTask;->this$0:Lcom/baidu/themeanimation/util/FileUtil;
 
-    .line 393
+    .line 427
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 394
+    .line 428
     iput-object p2, p0, Lcom/baidu/themeanimation/util/FileUtil$LoadBitmapTask;->mPath:Ljava/lang/String;
 
-    .line 395
+    .line 429
     iput-object p3, p0, Lcom/baidu/themeanimation/util/FileUtil$LoadBitmapTask;->mTarget:Ljava/lang/Object;
 
-    .line 396
+    .line 430
     iput-boolean p4, p0, Lcom/baidu/themeanimation/util/FileUtil$LoadBitmapTask;->mIsMask:Z
 
-    .line 397
+    .line 431
     iput p5, p0, Lcom/baidu/themeanimation/util/FileUtil$LoadBitmapTask;->mPriority:I
 
-    .line 398
+    .line 432
     return-void
 .end method
 
@@ -94,7 +94,7 @@
     .locals 1
 
     .prologue
-    .line 401
+    .line 435
     iget v0, p0, Lcom/baidu/themeanimation/util/FileUtil$LoadBitmapTask;->mPriority:I
 
     return v0
@@ -104,7 +104,7 @@
     .locals 5
 
     .prologue
-    .line 406
+    .line 440
     iget-object v3, p0, Lcom/baidu/themeanimation/util/FileUtil$LoadBitmapTask;->this$0:Lcom/baidu/themeanimation/util/FileUtil;
 
     iget-object v4, p0, Lcom/baidu/themeanimation/util/FileUtil$LoadBitmapTask;->mPath:Ljava/lang/String;
@@ -113,16 +113,16 @@
 
     move-result-object v0
 
-    .line 407
+    .line 441
     .local v0, bmp:Landroid/graphics/Bitmap;
     if-nez v0, :cond_1
 
-    .line 437
+    .line 471
     :cond_0
     :goto_0
     return-void
 
-    .line 410
+    .line 444
     :cond_1
     iget-object v3, p0, Lcom/baidu/themeanimation/util/FileUtil$LoadBitmapTask;->mTarget:Ljava/lang/Object;
 
@@ -130,18 +130,18 @@
 
     if-eqz v3, :cond_3
 
-    .line 411
+    .line 445
     iget-object v1, p0, Lcom/baidu/themeanimation/util/FileUtil$LoadBitmapTask;->mTarget:Ljava/lang/Object;
 
     check-cast v1, Lcom/baidu/themeanimation/element/ImageElement$ImageElementView;
 
-    .line 412
+    .line 446
     .local v1, elementview:Lcom/baidu/themeanimation/element/ImageElement$ImageElementView;
     iget-boolean v3, p0, Lcom/baidu/themeanimation/util/FileUtil$LoadBitmapTask;->mIsMask:Z
 
     if-eqz v3, :cond_2
 
-    .line 413
+    .line 447
     new-instance v3, Lcom/baidu/themeanimation/util/FileUtil$LoadBitmapTask$1;
 
     invoke-direct {v3, p0, v1, v0}, Lcom/baidu/themeanimation/util/FileUtil$LoadBitmapTask$1;-><init>(Lcom/baidu/themeanimation/util/FileUtil$LoadBitmapTask;Lcom/baidu/themeanimation/element/ImageElement$ImageElementView;Landroid/graphics/Bitmap;)V
@@ -150,7 +150,7 @@
 
     goto :goto_0
 
-    .line 421
+    .line 455
     :cond_2
     new-instance v3, Lcom/baidu/themeanimation/util/FileUtil$LoadBitmapTask$2;
 
@@ -160,7 +160,7 @@
 
     goto :goto_0
 
-    .line 428
+    .line 462
     .end local v1           #elementview:Lcom/baidu/themeanimation/element/ImageElement$ImageElementView;
     :cond_3
     iget-object v3, p0, Lcom/baidu/themeanimation/util/FileUtil$LoadBitmapTask;->mTarget:Ljava/lang/Object;
@@ -169,12 +169,12 @@
 
     if-eqz v3, :cond_0
 
-    .line 429
+    .line 463
     iget-object v2, p0, Lcom/baidu/themeanimation/util/FileUtil$LoadBitmapTask;->mTarget:Ljava/lang/Object;
 
     check-cast v2, Landroid/widget/ImageView;
 
-    .line 430
+    .line 464
     .local v2, imageview:Landroid/widget/ImageView;
     new-instance v3, Lcom/baidu/themeanimation/util/FileUtil$LoadBitmapTask$3;
 

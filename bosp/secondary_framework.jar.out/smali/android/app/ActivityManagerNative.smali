@@ -31,7 +31,7 @@
 
     sput-boolean v0, Landroid/app/ActivityManagerNative;->sSystemReady:Z
 
-    .line 1830
+    .line 1851
     new-instance v0, Landroid/app/ActivityManagerNative$1;
 
     invoke-direct {v0}, Landroid/app/ActivityManagerNative$1;-><init>()V
@@ -219,13 +219,69 @@
     goto :goto_0
 .end method
 
+.method private onTransactSetPersistentBaidu(Landroid/os/Parcel;Landroid/os/Parcel;)Z
+    .locals 4
+    .parameter "data"
+    .parameter "reply"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    const/4 v2, 0x1
+
+    .line 1839
+    const-string v3, "android.app.IActivityManager"
+
+    invoke-virtual {p1, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 1840
+    sget-object v3, Landroid/content/pm/ApplicationInfo;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-interface {v3, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/content/pm/ApplicationInfo;
+
+    .line 1841
+    .local v0, app:Landroid/content/pm/ApplicationInfo;
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    move v1, v2
+
+    .line 1842
+    .local v1, persistent:Z
+    :goto_0
+    invoke-virtual {p0, v0, v1}, Landroid/app/ActivityManagerNative;->setPersistent(Landroid/content/pm/ApplicationInfo;Z)V
+
+    .line 1843
+    invoke-virtual {p2}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 1844
+    return v2
+
+    .line 1841
+    .end local v1           #persistent:Z
+    :cond_0
+    const/4 v1, 0x0
+
+    goto :goto_0
+.end method
+
 
 # virtual methods
 .method public asBinder()Landroid/os/IBinder;
     .locals 0
 
     .prologue
-    .line 1827
+    .line 1848
     return-object p0
 .end method
 
@@ -245,12 +301,26 @@
     .line 114
     packed-switch p1, :pswitch_data_0
 
-    .line 1823
+    .line 1824
     :pswitch_0
-    invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    const/16 v5, 0xa2
+
+    move/from16 v0, p1
+
+    if-ne v0, v5, :cond_66
+
+    .line 1825
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p2
+
+    move-object/from16 v2, p3
+
+    invoke-direct {v0, v1, v2}, Landroid/app/ActivityManagerNative;->onTransactSetPersistentBaidu(Landroid/os/Parcel;Landroid/os/Parcel;)Z
 
     move-result v5
 
+    .line 1829
     :goto_0
     return v5
 
@@ -9284,6 +9354,15 @@
     const/16 v107, 0x0
 
     goto :goto_5c
+
+    .line 1829
+    .end local v159           #pid:I
+    :cond_66
+    invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    move-result v5
+
+    goto/16 :goto_0
 
     .line 114
     :pswitch_data_0

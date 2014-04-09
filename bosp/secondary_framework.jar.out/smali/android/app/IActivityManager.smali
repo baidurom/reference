@@ -253,6 +253,8 @@
 
 .field public static final SET_PACKAGE_SCREEN_COMPAT_MODE_TRANSACTION:I = 0x7f
 
+.field public static final SET_PERSISTENT_TRANSACTION:I = 0xa2
+
 .field public static final SET_PROCESS_FOREGROUND_TRANSACTION:I = 0x49
 
 .field public static final SET_PROCESS_LIMIT_TRANSACTION:I = 0x33
@@ -1329,6 +1331,14 @@
 .end method
 
 .method public abstract setPackageScreenCompatMode(Ljava/lang/String;I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract setPersistent(Landroid/content/pm/ApplicationInfo;Z)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

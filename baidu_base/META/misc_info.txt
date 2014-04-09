@@ -1,0 +1,9 @@
+recovery_api_version=3
+blocksize=4096
+tool_extensions=device/samsung/tuna
+default_system_dev_certificate=build/target/product/security/testkey
+mkbootimg_args=
+fs_type=ext4
+system_size=685768704
+userdata_size=14539537408
+extfs_sparse_flag=-s

@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final BUILD_LINE:Ljava/lang/String; = "rom-4.2-release-45"
+.field public static final BUILD_LINE:Ljava/lang/String; = "rom-4.2-release-47"
 
 .field public static final BUILD_TYPE:Ljava/lang/String; = "ROM"
 

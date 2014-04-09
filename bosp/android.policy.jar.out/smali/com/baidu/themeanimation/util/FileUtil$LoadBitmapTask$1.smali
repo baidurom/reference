@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 413
+    .line 447
     iput-object p1, p0, Lcom/baidu/themeanimation/util/FileUtil$LoadBitmapTask$1;->this$1:Lcom/baidu/themeanimation/util/FileUtil$LoadBitmapTask;
 
     iput-object p2, p0, Lcom/baidu/themeanimation/util/FileUtil$LoadBitmapTask$1;->val$elementview:Lcom/baidu/themeanimation/element/ImageElement$ImageElementView;
@@ -51,18 +51,18 @@
     .locals 2
 
     .prologue
-    .line 416
+    .line 450
     iget-object v0, p0, Lcom/baidu/themeanimation/util/FileUtil$LoadBitmapTask$1;->val$elementview:Lcom/baidu/themeanimation/element/ImageElement$ImageElementView;
 
     iget-object v1, p0, Lcom/baidu/themeanimation/util/FileUtil$LoadBitmapTask$1;->val$bmp:Landroid/graphics/Bitmap;
 
     invoke-virtual {v0, v1}, Lcom/baidu/themeanimation/element/ImageElement$ImageElementView;->setMask(Landroid/graphics/Bitmap;)V
 
-    .line 417
+    .line 451
     iget-object v0, p0, Lcom/baidu/themeanimation/util/FileUtil$LoadBitmapTask$1;->val$elementview:Lcom/baidu/themeanimation/element/ImageElement$ImageElementView;
 
     invoke-virtual {v0}, Lcom/baidu/themeanimation/element/ImageElement$ImageElementView;->requestLayout()V
 
-    .line 418
+    .line 452
     return-void
 .end method

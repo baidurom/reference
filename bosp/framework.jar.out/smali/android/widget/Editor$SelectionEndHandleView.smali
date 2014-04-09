@@ -26,18 +26,18 @@
     .parameter "drawableRtl"
 
     .prologue
-    .line 3876
+    .line 3890
     iput-object p1, p0, Landroid/widget/Editor$SelectionEndHandleView;->this$0:Landroid/widget/Editor;
 
-    .line 3877
+    .line 3891
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/Editor$HandleView;-><init>(Landroid/widget/Editor;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    .line 3878
+    .line 3892
     const/4 v0, 0x2
 
     iput v0, p0, Landroid/widget/Editor$SelectionEndHandleView;->mCursorType:I
 
-    .line 3879
+    .line 3893
     return-void
 .end method
 
@@ -47,7 +47,7 @@
     .locals 1
 
     .prologue
-    .line 3917
+    .line 3931
     iget-object v0, p0, Landroid/widget/Editor$SelectionEndHandleView;->this$0:Landroid/widget/Editor;
 
     #getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
@@ -68,7 +68,7 @@
     .parameter "isRtlRun"
 
     .prologue
-    .line 3883
+    .line 3897
     invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v0
@@ -83,12 +83,12 @@
     .parameter "ev"
 
     .prologue
-    .line 3896
+    .line 3910
     invoke-super {p0, p1}, Landroid/widget/Editor$HandleView;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v0
 
-    .line 3898
+    .line 3912
     .local v0, result:Z
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
@@ -96,17 +96,17 @@
 
     packed-switch v1, :pswitch_data_0
 
-    .line 3911
+    .line 3925
     :goto_0
     return v0
 
-    .line 3900
+    .line 3914
     :pswitch_0
     invoke-virtual {p0}, Landroid/widget/Editor$SelectionEndHandleView;->dismissActionPopupWindow()V
 
     goto :goto_0
 
-    .line 3903
+    .line 3917
     :pswitch_1
     iget-object v1, p0, Landroid/widget/Editor$SelectionEndHandleView;->mActionPopupWindow:Landroid/widget/Editor$ActionPopupWindow;
 
@@ -118,7 +118,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/Editor$ActionPopupWindow;->updatePositionFlag(I)V
 
-    .line 3904
+    .line 3918
     :cond_0
     const/16 v1, 0xc8
 
@@ -126,7 +126,7 @@
 
     goto :goto_0
 
-    .line 3898
+    .line 3912
     nop
 
     :pswitch_data_0
@@ -141,10 +141,10 @@
     .parameter "actionPopupWindow"
 
     .prologue
-    .line 3941
+    .line 3955
     iput-object p1, p0, Landroid/widget/Editor$SelectionEndHandleView;->mActionPopupWindow:Landroid/widget/Editor$ActionPopupWindow;
 
-    .line 3942
+    .line 3956
     return-void
 .end method
 
@@ -154,7 +154,7 @@
     .parameter "y"
 
     .prologue
-    .line 3929
+    .line 3943
     iget-object v2, p0, Landroid/widget/Editor$SelectionEndHandleView;->this$0:Landroid/widget/Editor;
 
     #getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
@@ -166,7 +166,7 @@
 
     move-result v0
 
-    .line 3932
+    .line 3946
     .local v0, offset:I
     iget-object v2, p0, Landroid/widget/Editor$SelectionEndHandleView;->this$0:Landroid/widget/Editor;
 
@@ -179,11 +179,11 @@
 
     move-result v1
 
-    .line 3933
+    .line 3947
     .local v1, selectionStart:I
     if-gt v0, v1, :cond_0
 
-    .line 3934
+    .line 3948
     add-int/lit8 v2, v1, 0x1
 
     iget-object v3, p0, Landroid/widget/Editor$SelectionEndHandleView;->this$0:Landroid/widget/Editor;
@@ -205,13 +205,13 @@
 
     move-result v0
 
-    .line 3937
+    .line 3951
     :cond_0
     const/4 v2, 0x0
 
     invoke-virtual {p0, v0, v2}, Landroid/widget/Editor$SelectionEndHandleView;->positionAtCursorOffset(IZ)Z
 
-    .line 3938
+    .line 3952
     return-void
 .end method
 
@@ -220,7 +220,7 @@
     .parameter "offset"
 
     .prologue
-    .line 3922
+    .line 3936
     iget-object v0, p0, Landroid/widget/Editor$SelectionEndHandleView;->this$0:Landroid/widget/Editor;
 
     #getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
@@ -247,9 +247,9 @@
 
     invoke-static {v0, v1, p1}, Landroid/text/Selection;->setSelection(Landroid/text/Spannable;II)V
 
-    .line 3924
+    .line 3938
     invoke-virtual {p0}, Landroid/widget/Editor$SelectionEndHandleView;->updateDrawable()V
 
-    .line 3925
+    .line 3939
     return-void
 .end method

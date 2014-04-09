@@ -25,17 +25,17 @@
     .parameter "looper"
 
     .prologue
-    .line 2481
+    .line 2486
     iput-object p1, p0, Lcom/android/server/power/PowerManagerService$PowerManagerHandler;->this$0:Lcom/android/server/power/PowerManagerService;
 
-    .line 2482
+    .line 2487
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
     invoke-direct {p0, p2, v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;Z)V
 
-    .line 2483
+    .line 2488
     return-void
 .end method
 
@@ -46,52 +46,52 @@
     .parameter "msg"
 
     .prologue
-    .line 2487
+    .line 2492
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 2501
+    .line 2506
     :goto_0
     return-void
 
-    .line 2489
+    .line 2494
     :pswitch_0
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$PowerManagerHandler;->this$0:Lcom/android/server/power/PowerManagerService;
 
     #calls: Lcom/android/server/power/PowerManagerService;->handleUserActivityTimeout()V
-    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->access$2600(Lcom/android/server/power/PowerManagerService;)V
-
-    goto :goto_0
-
-    .line 2492
-    :pswitch_1
-    iget-object v0, p0, Lcom/android/server/power/PowerManagerService$PowerManagerHandler;->this$0:Lcom/android/server/power/PowerManagerService;
-
-    #calls: Lcom/android/server/power/PowerManagerService;->handleSandman()V
     invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->access$2700(Lcom/android/server/power/PowerManagerService;)V
 
     goto :goto_0
 
-    .line 2495
-    :pswitch_2
+    .line 2497
+    :pswitch_1
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$PowerManagerHandler;->this$0:Lcom/android/server/power/PowerManagerService;
 
-    #calls: Lcom/android/server/power/PowerManagerService;->handleScreenOnBlockerReleased()V
+    #calls: Lcom/android/server/power/PowerManagerService;->handleSandman()V
     invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->access$2800(Lcom/android/server/power/PowerManagerService;)V
 
     goto :goto_0
 
-    .line 2498
-    :pswitch_3
+    .line 2500
+    :pswitch_2
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$PowerManagerHandler;->this$0:Lcom/android/server/power/PowerManagerService;
 
-    #calls: Lcom/android/server/power/PowerManagerService;->checkIfBootAnimationFinished()V
+    #calls: Lcom/android/server/power/PowerManagerService;->handleScreenOnBlockerReleased()V
     invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->access$2900(Lcom/android/server/power/PowerManagerService;)V
 
     goto :goto_0
 
-    .line 2487
+    .line 2503
+    :pswitch_3
+    iget-object v0, p0, Lcom/android/server/power/PowerManagerService$PowerManagerHandler;->this$0:Lcom/android/server/power/PowerManagerService;
+
+    #calls: Lcom/android/server/power/PowerManagerService;->checkIfBootAnimationFinished()V
+    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->access$3000(Lcom/android/server/power/PowerManagerService;)V
+
+    goto :goto_0
+
+    .line 2492
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

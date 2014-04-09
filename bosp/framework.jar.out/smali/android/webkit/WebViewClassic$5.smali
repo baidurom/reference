@@ -20,7 +20,7 @@
 # instance fields
 .field final synthetic this$0:Landroid/webkit/WebViewClassic;
 
-.field final synthetic val$remember:Landroid/os/Message;
+.field final synthetic val$resumeMsg:Landroid/os/Message;
 
 
 # direct methods
@@ -30,10 +30,10 @@
     .parameter
 
     .prologue
-    .line 1927
+    .line 1922
     iput-object p1, p0, Landroid/webkit/WebViewClassic$5;->this$0:Landroid/webkit/WebViewClassic;
 
-    iput-object p2, p0, Landroid/webkit/WebViewClassic$5;->val$remember:Landroid/os/Message;
+    iput-object p2, p0, Landroid/webkit/WebViewClassic$5;->val$resumeMsg:Landroid/os/Message;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -50,34 +50,34 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1930
+    .line 1925
     iget-object v0, p0, Landroid/webkit/WebViewClassic$5;->this$0:Landroid/webkit/WebViewClassic;
 
     #getter for: Landroid/webkit/WebViewClassic;->mResumeMsg:Landroid/os/Message;
-    invoke-static {v0}, Landroid/webkit/WebViewClassic;->access$1700(Landroid/webkit/WebViewClassic;)Landroid/os/Message;
+    invoke-static {v0}, Landroid/webkit/WebViewClassic;->access$1800(Landroid/webkit/WebViewClassic;)Landroid/os/Message;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 1931
-    iget-object v0, p0, Landroid/webkit/WebViewClassic$5;->val$remember:Landroid/os/Message;
+    .line 1926
+    iget-object v0, p0, Landroid/webkit/WebViewClassic$5;->val$resumeMsg:Landroid/os/Message;
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1932
+    .line 1927
     iget-object v0, p0, Landroid/webkit/WebViewClassic$5;->this$0:Landroid/webkit/WebViewClassic;
 
     #setter for: Landroid/webkit/WebViewClassic;->mResumeMsg:Landroid/os/Message;
-    invoke-static {v0, v1}, Landroid/webkit/WebViewClassic;->access$1702(Landroid/webkit/WebViewClassic;Landroid/os/Message;)Landroid/os/Message;
+    invoke-static {v0, v1}, Landroid/webkit/WebViewClassic;->access$1802(Landroid/webkit/WebViewClassic;Landroid/os/Message;)Landroid/os/Message;
 
-    .line 1934
+    .line 1929
     :cond_0
     iget-object v0, p0, Landroid/webkit/WebViewClassic$5;->this$0:Landroid/webkit/WebViewClassic;
 
     #setter for: Landroid/webkit/WebViewClassic;->mSavePasswordDialog:Landroid/app/AlertDialog;
-    invoke-static {v0, v1}, Landroid/webkit/WebViewClassic;->access$1802(Landroid/webkit/WebViewClassic;Landroid/app/AlertDialog;)Landroid/app/AlertDialog;
+    invoke-static {v0, v1}, Landroid/webkit/WebViewClassic;->access$1902(Landroid/webkit/WebViewClassic;Landroid/app/AlertDialog;)Landroid/app/AlertDialog;
 
-    .line 1935
+    .line 1930
     return-void
 .end method
