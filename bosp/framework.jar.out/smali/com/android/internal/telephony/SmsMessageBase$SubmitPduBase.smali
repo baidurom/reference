@@ -1,5 +1,5 @@
 .class public abstract Lcom/android/internal/telephony/SmsMessageBase$SubmitPduBase;
-.super Lcom/android/internal/telephony/SmsMessageBase$PduBase;
+.super Ljava/lang/Object;
 .source "SmsMessageBase.java"
 
 
@@ -14,13 +14,19 @@
 .end annotation
 
 
+# instance fields
+.field public encodedMessage:[B
+
+.field public encodedScAddress:[B
+
+
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 151
-    invoke-direct {p0}, Lcom/android/internal/telephony/SmsMessageBase$PduBase;-><init>()V
+    .line 144
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -31,7 +37,7 @@
     .locals 2
 
     .prologue
-    .line 153
+    .line 149
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -42,7 +48,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/internal/telephony/SmsMessageBase$PduBase;->encodedScAddress:[B
+    iget-object v1, p0, Lcom/android/internal/telephony/SmsMessageBase$SubmitPduBase;->encodedScAddress:[B
 
     invoke-static {v1}, Ljava/util/Arrays;->toString([B)Ljava/lang/String;
 
@@ -58,7 +64,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/internal/telephony/SmsMessageBase$PduBase;->encodedMessage:[B
+    iget-object v1, p0, Lcom/android/internal/telephony/SmsMessageBase$SubmitPduBase;->encodedMessage:[B
 
     invoke-static {v1}, Ljava/util/Arrays;->toString([B)Ljava/lang/String;
 

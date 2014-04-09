@@ -210,7 +210,7 @@
 
     iget v11, v10, Lcom/android/server/MountService$UnmountCallBack;->retries:I
 
-    const/4 v12, 0x1
+    const/4 v12, 0x4
 
     if-ge v11, v12, :cond_6
 
@@ -333,14 +333,14 @@
     :cond_6
     iget v11, v10, Lcom/android/server/MountService$UnmountCallBack;->retries:I
 
-    const/4 v12, 0x1
+    const/4 v12, 0x4
 
     if-lt v11, v12, :cond_7
 
     .line 457
     const-string v11, "MountService"
 
-    const-string v12, "Failed to unmount media inspite of 1 retries. Forcibly killing processes now"
+    const-string v12, "Failed to unmount media inspite of 4 retries. Forcibly killing processes now"
 
     invoke-static {v11, v12}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 

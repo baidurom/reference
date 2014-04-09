@@ -1,54 +1,50 @@
-.class final Lcom/android/internal/app/ShutdownThread$3;
-.super Ljava/lang/Object;
+.class Lcom/android/internal/app/ShutdownThread$3;
+.super Landroid/content/BroadcastReceiver;
 .source "ShutdownThread.java"
-
-# interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/internal/app/ShutdownThread;->shutdownInner(Landroid/content/Context;Z)V
+    value = Lcom/android/internal/app/ShutdownThread;->quickbootShutdown()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x0
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic val$context:Landroid/content/Context;
+.field final synthetic this$0:Lcom/android/internal/app/ShutdownThread;
 
 
 # direct methods
-.method constructor <init>(Landroid/content/Context;)V
+.method constructor <init>(Lcom/android/internal/app/ShutdownThread;)V
     .locals 0
     .parameter
 
     .prologue
-    .line 196
-    iput-object p1, p0, Lcom/android/internal/app/ShutdownThread$3;->val$context:Landroid/content/Context;
+    .line 602
+    iput-object p1, p0, Lcom/android/internal/app/ShutdownThread$3;->this$0:Lcom/android/internal/app/ShutdownThread;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onClick(Landroid/content/DialogInterface;I)V
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 1
-    .parameter "dialog"
-    .parameter "which"
+    .parameter "context"
+    .parameter "intent"
 
     .prologue
-    .line 198
-    iget-object v0, p0, Lcom/android/internal/app/ShutdownThread$3;->val$context:Landroid/content/Context;
+    .line 605
+    iget-object v0, p0, Lcom/android/internal/app/ShutdownThread$3;->this$0:Lcom/android/internal/app/ShutdownThread;
 
-    #calls: Lcom/android/internal/app/ShutdownThread;->beginShutdownSequence(Landroid/content/Context;)V
-    invoke-static {v0}, Lcom/android/internal/app/ShutdownThread;->access$000(Landroid/content/Context;)V
+    invoke-virtual {v0}, Lcom/android/internal/app/ShutdownThread;->actionDone()V
 
-    .line 199
+    .line 606
     return-void
 .end method

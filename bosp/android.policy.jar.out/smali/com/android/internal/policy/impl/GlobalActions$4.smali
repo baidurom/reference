@@ -26,7 +26,7 @@
     .parameter "x1"
 
     .prologue
-    .line 218
+    .line 223
     iput-object p1, p0, Lcom/android/internal/policy/impl/GlobalActions$4;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     invoke-direct {p0, p2, p3}, Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;-><init>(II)V
@@ -40,7 +40,7 @@
     .locals 4
 
     .prologue
-    .line 222
+    .line 227
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$4;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mDialog:Landroid/app/AlertDialog;
@@ -50,7 +50,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 223
+    .line 228
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$4;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mDialog:Landroid/app/AlertDialog;
@@ -60,7 +60,7 @@
 
     invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
 
-    .line 226
+    .line 231
     :cond_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$4;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
@@ -77,7 +77,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 227
+    .line 232
     return-void
 .end method
 
@@ -85,7 +85,7 @@
     .locals 1
 
     .prologue
-    .line 234
+    .line 239
     const/4 v0, 0x1
 
     return v0
@@ -95,7 +95,7 @@
     .locals 1
 
     .prologue
-    .line 230
+    .line 235
     const/4 v0, 0x1
 
     return v0

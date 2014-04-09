@@ -1,0 +1,8 @@
+recovery_api_version=3
+blocksize=4096
+system_size=536870912
+userdata_size=1073741824
+tool_extensions=device/samsung/crespo
+mkyaffs2_extra_flags=-c 4096 -s 128
+extfs_sparse_flag=-s
+default_system_dev_certificate=build/target/product/security/testkey

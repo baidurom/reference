@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 445
+    .line 442
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$2;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     invoke-direct {p0}, Lcom/android/internal/view/BaseInputHandler;-><init>()V
@@ -40,10 +40,10 @@
     .parameter "finishedCallback"
 
     .prologue
-    .line 448
+    .line 445
     const/4 v0, 0x0
 
-    .line 450
+    .line 447
     .local v0, handled:Z
     :try_start_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getSource()I
@@ -54,7 +54,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 451
+    .line 448
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$2;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     iget-object v2, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mLock:Ljava/lang/Object;
@@ -63,7 +63,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 452
+    .line 449
     :try_start_1
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$2;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
@@ -71,30 +71,30 @@
 
     if-eqz v1, :cond_0
 
-    .line 453
+    .line 450
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$2;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     iget-object v1, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mPointerLocationView:Lcom/android/internal/widget/PointerLocationView;
 
     invoke-virtual {v1, p1}, Lcom/android/internal/widget/PointerLocationView;->addPointerEvent(Landroid/view/MotionEvent;)V
 
-    .line 454
+    .line 451
     const/4 v0, 0x1
 
-    .line 456
+    .line 453
     :cond_0
     monitor-exit v2
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 459
+    .line 456
     :cond_1
     invoke-virtual {p2, v0}, Landroid/view/InputQueue$FinishedCallback;->finished(Z)V
 
-    .line 461
+    .line 458
     return-void
 
-    .line 456
+    .line 453
     :catchall_0
     move-exception v1
 
@@ -108,7 +108,7 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    .line 459
+    .line 456
     :catchall_1
     move-exception v1
 

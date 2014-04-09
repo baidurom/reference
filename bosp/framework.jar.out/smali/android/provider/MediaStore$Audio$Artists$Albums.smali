@@ -22,7 +22,7 @@
     .locals 0
 
     .prologue
-    .line 1626
+    .line 1624
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,7 +34,7 @@
     .parameter "artistId"
 
     .prologue
-    .line 1629
+    .line 1627
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

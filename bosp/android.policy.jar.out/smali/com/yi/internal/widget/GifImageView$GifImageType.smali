@@ -48,7 +48,7 @@
 
     const/4 v2, 0x0
 
-    .line 56
+    .line 73
     new-instance v0, Lcom/yi/internal/widget/GifImageView$GifImageType;
 
     const-string v1, "WAIT_FINISH"
@@ -57,7 +57,7 @@
 
     sput-object v0, Lcom/yi/internal/widget/GifImageView$GifImageType;->WAIT_FINISH:Lcom/yi/internal/widget/GifImageView$GifImageType;
 
-    .line 58
+    .line 75
     new-instance v0, Lcom/yi/internal/widget/GifImageView$GifImageType;
 
     const-string v1, "SYNC_DECODER"
@@ -66,7 +66,7 @@
 
     sput-object v0, Lcom/yi/internal/widget/GifImageView$GifImageType;->SYNC_DECODER:Lcom/yi/internal/widget/GifImageView$GifImageType;
 
-    .line 59
+    .line 76
     new-instance v0, Lcom/yi/internal/widget/GifImageView$GifImageType;
 
     const-string v1, "COVER"
@@ -75,7 +75,7 @@
 
     sput-object v0, Lcom/yi/internal/widget/GifImageView$GifImageType;->COVER:Lcom/yi/internal/widget/GifImageView$GifImageType;
 
-    .line 55
+    .line 72
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/yi/internal/widget/GifImageView$GifImageType;
@@ -109,13 +109,13 @@
     .end annotation
 
     .prologue
-    .line 61
+    .line 78
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 62
+    .line 79
     iput p3, p0, Lcom/yi/internal/widget/GifImageView$GifImageType;->nativeInt:I
 
-    .line 63
+    .line 80
     return-void
 .end method
 
@@ -124,7 +124,7 @@
     .parameter "name"
 
     .prologue
-    .line 55
+    .line 72
     const-class v0, Lcom/yi/internal/widget/GifImageView$GifImageType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -140,7 +140,7 @@
     .locals 1
 
     .prologue
-    .line 55
+    .line 72
     sget-object v0, Lcom/yi/internal/widget/GifImageView$GifImageType;->$VALUES:[Lcom/yi/internal/widget/GifImageView$GifImageType;
 
     invoke-virtual {v0}, [Lcom/yi/internal/widget/GifImageView$GifImageType;->clone()Ljava/lang/Object;

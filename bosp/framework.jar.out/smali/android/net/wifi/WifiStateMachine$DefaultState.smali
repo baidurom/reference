@@ -48,7 +48,7 @@
 
     sparse-switch v2, :sswitch_data_0
 
-    .line 1893
+    .line 1891
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine$DefaultState;->this$0:Landroid/net/wifi/WifiStateMachine;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -72,7 +72,7 @@
     #calls: Landroid/net/wifi/WifiStateMachine;->loge(Ljava/lang/String;)V
     invoke-static {v0, v2}, Landroid/net/wifi/WifiStateMachine;->access$200(Landroid/net/wifi/WifiStateMachine;Ljava/lang/String;)V
 
-    .line 1896
+    .line 1894
     :goto_0
     :sswitch_0
     return v1
@@ -220,20 +220,20 @@
 
     goto :goto_0
 
-    .line 1879
+    .line 1877
     :sswitch_7
     iget-object v2, p0, Landroid/net/wifi/WifiStateMachine$DefaultState;->this$0:Landroid/net/wifi/WifiStateMachine;
 
     invoke-virtual {v2, v0}, Landroid/net/wifi/WifiStateMachine;->setWifiEnabled(Z)V
 
-    .line 1880
+    .line 1878
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine$DefaultState;->this$0:Landroid/net/wifi/WifiStateMachine;
 
     invoke-virtual {v0, v1}, Landroid/net/wifi/WifiStateMachine;->setWifiEnabled(Z)V
 
     goto :goto_0
 
-    .line 1884
+    .line 1882
     :sswitch_8
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine$DefaultState;->this$0:Landroid/net/wifi/WifiStateMachine;
 
@@ -254,13 +254,13 @@
 
     goto/16 :goto_0
 
-    .line 1889
+    .line 1887
     :sswitch_9
     iget-object v2, p0, Landroid/net/wifi/WifiStateMachine$DefaultState;->this$0:Landroid/net/wifi/WifiStateMachine;
 
     invoke-virtual {v2, v0}, Landroid/net/wifi/WifiStateMachine;->setWifiEnabled(Z)V
 
-    .line 1890
+    .line 1888
     iget-object v0, p0, Landroid/net/wifi/WifiStateMachine$DefaultState;->this$0:Landroid/net/wifi/WifiStateMachine;
 
     #calls: Landroid/net/wifi/WifiStateMachine;->deferMessage(Landroid/os/Message;)V
@@ -327,8 +327,6 @@
         0x24007 -> :sswitch_0
         0x24008 -> :sswitch_0
         0x24009 -> :sswitch_7
-        0x2402b -> :sswitch_0
-        0x2402c -> :sswitch_0
         0x30004 -> :sswitch_0
         0x30005 -> :sswitch_0
     .end sparse-switch

@@ -113,507 +113,366 @@
 .end method
 
 .method private addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;Landroid/view/CompatibilityInfoHolder;Z)V
-    .locals 17
+    .locals 11
     .parameter "view"
     .parameter "params"
     .parameter "cih"
     .parameter "nest"
 
     .prologue
-    .line 226
-    move-object/from16 v0, p2
+    const/4 v0, 0x0
 
-    instance-of v13, v0, Landroid/view/WindowManager$LayoutParams;
+    .line 252
+    instance-of v7, p2, Landroid/view/WindowManager$LayoutParams;
 
-    if-nez v13, :cond_0
+    if-nez v7, :cond_0
 
-    .line 227
-    new-instance v13, Ljava/lang/IllegalArgumentException;
+    .line 253
+    new-instance v7, Ljava/lang/IllegalArgumentException;
 
-    const-string v14, "Params must be WindowManager.LayoutParams"
+    const-string v8, "Params must be WindowManager.LayoutParams"
 
-    invoke-direct {v13, v14}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v7, v8}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v13
+    throw v7
 
     :cond_0
-    move-object/from16 v12, p2
+    move-object v6, p2
 
-    .line 231
-    check-cast v12, Landroid/view/WindowManager$LayoutParams;
+    .line 257
+    check-cast v6, Landroid/view/WindowManager$LayoutParams;
 
-    .line 235
-    .local v12, wparams:Landroid/view/WindowManager$LayoutParams;
-    invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getContext()Landroid/content/Context;
+    .line 261
+    .local v6, wparams:Landroid/view/WindowManager$LayoutParams;
+    invoke-virtual {p0, p1, v6}, Landroid/view/WindowManagerImpl;->disablePopupWindow(Landroid/view/View;Landroid/view/WindowManager$LayoutParams;)Z
 
-    move-result-object v13
+    move-result v7
 
-    invoke-virtual {v13}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+    if-eqz v7, :cond_1
+
+    .line 338
+    :goto_0
+    return-void
+
+    .line 267
+    :cond_1
+    const/4 v4, 0x0
+
+    .line 269
+    .local v4, panelParentView:Landroid/view/View;
+    monitor-enter p0
+
+    .line 277
+    const/4 v7, 0x0
+
+    :try_start_0
+    invoke-direct {p0, p1, v7}, Landroid/view/WindowManagerImpl;->findViewLocked(Landroid/view/View;Z)I
+
+    move-result v2
+
+    .line 278
+    .local v2, index:I
+    if-ltz v2, :cond_3
+
+    .line 279
+    if-nez p4, :cond_2
+
+    .line 280
+    new-instance v7, Ljava/lang/IllegalStateException;
+
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v9, "View "
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v8
 
-    .line 236
-    .local v8, packageName:Ljava/lang/String;
-    if-eqz v8, :cond_2
+    invoke-virtual {v8, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v13, "com.qihoo360"
+    move-result-object v8
 
-    invoke-virtual {v8, v13}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    const-string v9, " has already been added to the window manager."
 
-    move-result v13
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-eqz v13, :cond_2
+    move-result-object v8
 
-    iget v13, v12, Landroid/view/WindowManager$LayoutParams;->type:I
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    const/16 v14, 0x7d7
+    move-result-object v8
 
-    if-le v13, v14, :cond_2
+    invoke-direct {v7, v8}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    .line 237
-    const/4 v5, 0x0
+    throw v7
 
-    .line 239
-    .local v5, incomingRinging:Z
-    :try_start_0
-    const-string/jumbo v13, "phone"
+    .line 335
+    .end local v2           #index:I
+    :catchall_0
+    move-exception v7
 
-    invoke-static {v13}, Landroid/os/ServiceManager;->checkService(Ljava/lang/String;)Landroid/os/IBinder;
-
-    move-result-object v13
-
-    invoke-static {v13}, Lcom/android/internal/telephony/ITelephony$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/telephony/ITelephony;
-
-    move-result-object v11
-
-    .line 241
-    .local v11, telephonyService:Lcom/android/internal/telephony/ITelephony;
-    if-eqz v11, :cond_1
-
-    .line 242
-    invoke-interface {v11}, Lcom/android/internal/telephony/ITelephony;->isRinging()Z
+    monitor-exit p0
     :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result v5
+    throw v7
 
-    .line 247
-    .end local v11           #telephonyService:Lcom/android/internal/telephony/ITelephony;
-    :cond_1
-    :goto_0
-    if-eqz v5, :cond_2
+    .line 283
+    .restart local v2       #index:I
+    :cond_2
+    :try_start_1
+    iget-object v7, p0, Landroid/view/WindowManagerImpl;->mRoots:[Landroid/view/ViewRootImpl;
 
-    .line 325
-    .end local v5           #incomingRinging:Z
-    :goto_1
-    return-void
+    aget-object v5, v7, v2
 
-    .line 244
-    .restart local v5       #incomingRinging:Z
-    :catch_0
-    move-exception v3
+    .line 284
+    .local v5, root:Landroid/view/ViewRootImpl;
+    iget v7, v5, Landroid/view/ViewRootImpl;->mAddNesting:I
 
-    .line 245
-    .local v3, ex:Landroid/os/RemoteException;
-    const-string v13, "WindowManager"
+    add-int/lit8 v7, v7, 0x1
 
-    const-string v14, "RemoteException from getPhoneInterface()"
+    iput v7, v5, Landroid/view/ViewRootImpl;->mAddNesting:I
 
-    invoke-static {v13, v14, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    .line 286
+    invoke-virtual {p1, v6}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 287
+    const/4 v7, 0x1
+
+    invoke-virtual {v5, v6, v7}, Landroid/view/ViewRootImpl;->setLayoutParams(Landroid/view/WindowManager$LayoutParams;Z)V
+
+    .line 288
+    monitor-exit p0
 
     goto :goto_0
 
-    .line 254
-    .end local v3           #ex:Landroid/os/RemoteException;
-    .end local v5           #incomingRinging:Z
-    :cond_2
-    const/4 v9, 0x0
+    .line 293
+    .end local v5           #root:Landroid/view/ViewRootImpl;
+    :cond_3
+    iget v7, v6, Landroid/view/WindowManager$LayoutParams;->type:I
 
-    .line 256
-    .local v9, panelParentView:Landroid/view/View;
-    monitor-enter p0
+    const/16 v8, 0x3e8
 
-    .line 264
-    const/4 v13, 0x0
+    if-lt v7, v8, :cond_6
 
-    :try_start_1
-    move-object/from16 v0, p0
+    iget v7, v6, Landroid/view/WindowManager$LayoutParams;->type:I
 
-    move-object/from16 v1, p1
+    const/16 v8, 0x7cf
 
-    invoke-direct {v0, v1, v13}, Landroid/view/WindowManagerImpl;->findViewLocked(Landroid/view/View;Z)I
+    if-gt v7, v8, :cond_6
 
-    move-result v6
+    .line 295
+    iget-object v7, p0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
 
-    .line 265
-    .local v6, index:I
-    if-ltz v6, :cond_4
+    if-eqz v7, :cond_4
 
-    .line 266
-    if-nez p4, :cond_3
+    iget-object v7, p0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
 
-    .line 267
-    new-instance v13, Ljava/lang/IllegalStateException;
+    array-length v0, v7
 
-    new-instance v14, Ljava/lang/StringBuilder;
+    .line 296
+    .local v0, count:I
+    :cond_4
+    const/4 v1, 0x0
 
-    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
+    .local v1, i:I
+    :goto_1
+    if-ge v1, v0, :cond_6
 
-    const-string v15, "View "
+    .line 297
+    iget-object v7, p0, Landroid/view/WindowManagerImpl;->mRoots:[Landroid/view/ViewRootImpl;
 
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    aget-object v7, v7, v1
 
-    move-result-object v14
+    iget-object v7, v7, Landroid/view/ViewRootImpl;->mWindow:Landroid/view/ViewRootImpl$W;
 
-    move-object/from16 v0, p1
+    invoke-virtual {v7}, Landroid/view/ViewRootImpl$W;->asBinder()Landroid/os/IBinder;
 
-    invoke-virtual {v14, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move-result-object v7
 
-    move-result-object v14
+    iget-object v8, v6, Landroid/view/WindowManager$LayoutParams;->token:Landroid/os/IBinder;
 
-    const-string v15, " has already been added to the window manager."
+    if-ne v7, v8, :cond_5
 
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 298
+    iget-object v7, p0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
 
-    move-result-object v14
+    aget-object v4, v7, v1
 
-    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 296
+    :cond_5
+    add-int/lit8 v1, v1, 0x1
 
-    move-result-object v14
+    goto :goto_1
 
-    invoke-direct {v13, v14}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    .line 303
+    .end local v0           #count:I
+    .end local v1           #i:I
+    :cond_6
+    new-instance v5, Landroid/view/ViewRootImpl;
 
-    throw v13
+    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    .line 322
-    .end local v6           #index:I
-    :catchall_0
-    move-exception v13
+    move-result-object v7
 
+    invoke-direct {v5, v7}, Landroid/view/ViewRootImpl;-><init>(Landroid/content/Context;)V
+
+    .line 304
+    .restart local v5       #root:Landroid/view/ViewRootImpl;
+    const/4 v7, 0x1
+
+    iput v7, v5, Landroid/view/ViewRootImpl;->mAddNesting:I
+
+    .line 305
+    if-nez p3, :cond_7
+
+    .line 306
+    new-instance v7, Landroid/view/CompatibilityInfoHolder;
+
+    invoke-direct {v7}, Landroid/view/CompatibilityInfoHolder;-><init>()V
+
+    iput-object v7, v5, Landroid/view/ViewRootImpl;->mCompatibilityInfo:Landroid/view/CompatibilityInfoHolder;
+
+    .line 311
+    :goto_2
+    invoke-virtual {p1, v6}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 313
+    iget-object v7, p0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
+
+    if-nez v7, :cond_8
+
+    .line 314
+    const/4 v2, 0x1
+
+    .line 315
+    const/4 v7, 0x1
+
+    new-array v7, v7, [Landroid/view/View;
+
+    iput-object v7, p0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
+
+    .line 316
+    const/4 v7, 0x1
+
+    new-array v7, v7, [Landroid/view/ViewRootImpl;
+
+    iput-object v7, p0, Landroid/view/WindowManagerImpl;->mRoots:[Landroid/view/ViewRootImpl;
+
+    .line 317
+    const/4 v7, 0x1
+
+    new-array v7, v7, [Landroid/view/WindowManager$LayoutParams;
+
+    iput-object v7, p0, Landroid/view/WindowManagerImpl;->mParams:[Landroid/view/WindowManager$LayoutParams;
+
+    .line 330
+    :goto_3
+    add-int/lit8 v2, v2, -0x1
+
+    .line 332
+    iget-object v7, p0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
+
+    aput-object p1, v7, v2
+
+    .line 333
+    iget-object v7, p0, Landroid/view/WindowManagerImpl;->mRoots:[Landroid/view/ViewRootImpl;
+
+    aput-object v5, v7, v2
+
+    .line 334
+    iget-object v7, p0, Landroid/view/WindowManagerImpl;->mParams:[Landroid/view/WindowManager$LayoutParams;
+
+    aput-object v6, v7, v2
+
+    .line 335
     monitor-exit p0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    throw v13
+    .line 337
+    invoke-virtual {v5, p1, v6, v4}, Landroid/view/ViewRootImpl;->setView(Landroid/view/View;Landroid/view/WindowManager$LayoutParams;Landroid/view/View;)V
 
-    .line 270
-    .restart local v6       #index:I
-    :cond_3
+    goto/16 :goto_0
+
+    .line 308
+    :cond_7
     :try_start_2
-    move-object/from16 v0, p0
-
-    iget-object v13, v0, Landroid/view/WindowManagerImpl;->mRoots:[Landroid/view/ViewRootImpl;
-
-    aget-object v10, v13, v6
-
-    .line 271
-    .local v10, root:Landroid/view/ViewRootImpl;
-    iget v13, v10, Landroid/view/ViewRootImpl;->mAddNesting:I
-
-    add-int/lit8 v13, v13, 0x1
-
-    iput v13, v10, Landroid/view/ViewRootImpl;->mAddNesting:I
-
-    .line 273
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v12}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 274
-    const/4 v13, 0x1
-
-    invoke-virtual {v10, v12, v13}, Landroid/view/ViewRootImpl;->setLayoutParams(Landroid/view/WindowManager$LayoutParams;Z)V
-
-    .line 275
-    monitor-exit p0
-
-    goto :goto_1
-
-    .line 280
-    .end local v10           #root:Landroid/view/ViewRootImpl;
-    :cond_4
-    iget v13, v12, Landroid/view/WindowManager$LayoutParams;->type:I
-
-    const/16 v14, 0x3e8
-
-    if-lt v13, v14, :cond_7
-
-    iget v13, v12, Landroid/view/WindowManager$LayoutParams;->type:I
-
-    const/16 v14, 0x7cf
-
-    if-gt v13, v14, :cond_7
-
-    .line 282
-    move-object/from16 v0, p0
-
-    iget-object v13, v0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
-
-    if-eqz v13, :cond_6
-
-    move-object/from16 v0, p0
-
-    iget-object v13, v0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
-
-    array-length v2, v13
-
-    .line 283
-    .local v2, count:I
-    :goto_2
-    const/4 v4, 0x0
-
-    .local v4, i:I
-    :goto_3
-    if-ge v4, v2, :cond_7
-
-    .line 284
-    move-object/from16 v0, p0
-
-    iget-object v13, v0, Landroid/view/WindowManagerImpl;->mRoots:[Landroid/view/ViewRootImpl;
-
-    aget-object v13, v13, v4
-
-    iget-object v13, v13, Landroid/view/ViewRootImpl;->mWindow:Landroid/view/ViewRootImpl$W;
-
-    invoke-virtual {v13}, Landroid/view/ViewRootImpl$W;->asBinder()Landroid/os/IBinder;
-
-    move-result-object v13
-
-    iget-object v14, v12, Landroid/view/WindowManager$LayoutParams;->token:Landroid/os/IBinder;
-
-    if-ne v13, v14, :cond_5
-
-    .line 285
-    move-object/from16 v0, p0
-
-    iget-object v13, v0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
-
-    aget-object v9, v13, v4
-
-    .line 283
-    :cond_5
-    add-int/lit8 v4, v4, 0x1
-
-    goto :goto_3
-
-    .line 282
-    .end local v2           #count:I
-    .end local v4           #i:I
-    :cond_6
-    const/4 v2, 0x0
+    iput-object p3, v5, Landroid/view/ViewRootImpl;->mCompatibilityInfo:Landroid/view/CompatibilityInfoHolder;
 
     goto :goto_2
 
-    .line 290
-    :cond_7
-    new-instance v10, Landroid/view/ViewRootImpl;
-
-    invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v13
-
-    invoke-direct {v10, v13}, Landroid/view/ViewRootImpl;-><init>(Landroid/content/Context;)V
-
-    .line 291
-    .restart local v10       #root:Landroid/view/ViewRootImpl;
-    const/4 v13, 0x1
-
-    iput v13, v10, Landroid/view/ViewRootImpl;->mAddNesting:I
-
-    .line 292
-    if-nez p3, :cond_8
-
-    .line 293
-    new-instance v13, Landroid/view/CompatibilityInfoHolder;
-
-    invoke-direct {v13}, Landroid/view/CompatibilityInfoHolder;-><init>()V
-
-    iput-object v13, v10, Landroid/view/ViewRootImpl;->mCompatibilityInfo:Landroid/view/CompatibilityInfoHolder;
-
-    .line 298
-    :goto_4
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v12}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 300
-    move-object/from16 v0, p0
-
-    iget-object v13, v0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
-
-    if-nez v13, :cond_9
-
-    .line 301
-    const/4 v6, 0x1
-
-    .line 302
-    const/4 v13, 0x1
-
-    new-array v13, v13, [Landroid/view/View;
-
-    move-object/from16 v0, p0
-
-    iput-object v13, v0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
-
-    .line 303
-    const/4 v13, 0x1
-
-    new-array v13, v13, [Landroid/view/ViewRootImpl;
-
-    move-object/from16 v0, p0
-
-    iput-object v13, v0, Landroid/view/WindowManagerImpl;->mRoots:[Landroid/view/ViewRootImpl;
-
-    .line 304
-    const/4 v13, 0x1
-
-    new-array v13, v13, [Landroid/view/WindowManager$LayoutParams;
-
-    move-object/from16 v0, p0
-
-    iput-object v13, v0, Landroid/view/WindowManagerImpl;->mParams:[Landroid/view/WindowManager$LayoutParams;
-
-    .line 317
-    :goto_5
-    add-int/lit8 v6, v6, -0x1
-
     .line 319
-    move-object/from16 v0, p0
+    :cond_8
+    iget-object v7, p0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
 
-    iget-object v13, v0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
+    array-length v7, v7
 
-    aput-object p1, v13, v6
+    add-int/lit8 v2, v7, 0x1
 
     .line 320
-    move-object/from16 v0, p0
-
-    iget-object v13, v0, Landroid/view/WindowManagerImpl;->mRoots:[Landroid/view/ViewRootImpl;
-
-    aput-object v10, v13, v6
+    iget-object v3, p0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
 
     .line 321
-    move-object/from16 v0, p0
+    .local v3, old:[Ljava/lang/Object;
+    new-array v7, v2, [Landroid/view/View;
 
-    iget-object v13, v0, Landroid/view/WindowManagerImpl;->mParams:[Landroid/view/WindowManager$LayoutParams;
-
-    aput-object v12, v13, v6
+    iput-object v7, p0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
 
     .line 322
-    monitor-exit p0
+    const/4 v7, 0x0
+
+    iget-object v8, p0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
+
+    const/4 v9, 0x0
+
+    add-int/lit8 v10, v2, -0x1
+
+    invoke-static {v3, v7, v8, v9, v10}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 323
+    iget-object v3, p0, Landroid/view/WindowManagerImpl;->mRoots:[Landroid/view/ViewRootImpl;
+
+    .line 324
+    new-array v7, v2, [Landroid/view/ViewRootImpl;
+
+    iput-object v7, p0, Landroid/view/WindowManagerImpl;->mRoots:[Landroid/view/ViewRootImpl;
+
+    .line 325
+    const/4 v7, 0x0
+
+    iget-object v8, p0, Landroid/view/WindowManagerImpl;->mRoots:[Landroid/view/ViewRootImpl;
+
+    const/4 v9, 0x0
+
+    add-int/lit8 v10, v2, -0x1
+
+    invoke-static {v3, v7, v8, v9, v10}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 326
+    iget-object v3, p0, Landroid/view/WindowManagerImpl;->mParams:[Landroid/view/WindowManager$LayoutParams;
+
+    .line 327
+    new-array v7, v2, [Landroid/view/WindowManager$LayoutParams;
+
+    iput-object v7, p0, Landroid/view/WindowManagerImpl;->mParams:[Landroid/view/WindowManager$LayoutParams;
+
+    .line 328
+    const/4 v7, 0x0
+
+    iget-object v8, p0, Landroid/view/WindowManagerImpl;->mParams:[Landroid/view/WindowManager$LayoutParams;
+
+    const/4 v9, 0x0
+
+    add-int/lit8 v10, v2, -0x1
+
+    invoke-static {v3, v7, v8, v9, v10}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 324
-    move-object/from16 v0, p1
-
-    invoke-virtual {v10, v0, v12, v9}, Landroid/view/ViewRootImpl;->setView(Landroid/view/View;Landroid/view/WindowManager$LayoutParams;Landroid/view/View;)V
-
-    goto/16 :goto_1
-
-    .line 295
-    :cond_8
-    :try_start_3
-    move-object/from16 v0, p3
-
-    iput-object v0, v10, Landroid/view/ViewRootImpl;->mCompatibilityInfo:Landroid/view/CompatibilityInfoHolder;
-
-    goto :goto_4
-
-    .line 306
-    :cond_9
-    move-object/from16 v0, p0
-
-    iget-object v13, v0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
-
-    array-length v13, v13
-
-    add-int/lit8 v6, v13, 0x1
-
-    .line 307
-    move-object/from16 v0, p0
-
-    iget-object v7, v0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
-
-    .line 308
-    .local v7, old:[Ljava/lang/Object;
-    new-array v13, v6, [Landroid/view/View;
-
-    move-object/from16 v0, p0
-
-    iput-object v13, v0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
-
-    .line 309
-    const/4 v13, 0x0
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
-
-    const/4 v15, 0x0
-
-    add-int/lit8 v16, v6, -0x1
-
-    move/from16 v0, v16
-
-    invoke-static {v7, v13, v14, v15, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 310
-    move-object/from16 v0, p0
-
-    iget-object v7, v0, Landroid/view/WindowManagerImpl;->mRoots:[Landroid/view/ViewRootImpl;
-
-    .line 311
-    new-array v13, v6, [Landroid/view/ViewRootImpl;
-
-    move-object/from16 v0, p0
-
-    iput-object v13, v0, Landroid/view/WindowManagerImpl;->mRoots:[Landroid/view/ViewRootImpl;
-
-    .line 312
-    const/4 v13, 0x0
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Landroid/view/WindowManagerImpl;->mRoots:[Landroid/view/ViewRootImpl;
-
-    const/4 v15, 0x0
-
-    add-int/lit8 v16, v6, -0x1
-
-    move/from16 v0, v16
-
-    invoke-static {v7, v13, v14, v15, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 313
-    move-object/from16 v0, p0
-
-    iget-object v7, v0, Landroid/view/WindowManagerImpl;->mParams:[Landroid/view/WindowManager$LayoutParams;
-
-    .line 314
-    new-array v13, v6, [Landroid/view/WindowManager$LayoutParams;
-
-    move-object/from16 v0, p0
-
-    iput-object v13, v0, Landroid/view/WindowManagerImpl;->mParams:[Landroid/view/WindowManager$LayoutParams;
-
-    .line 315
-    const/4 v13, 0x0
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Landroid/view/WindowManagerImpl;->mParams:[Landroid/view/WindowManager$LayoutParams;
-
-    const/4 v15, 0x0
-
-    add-int/lit8 v16, v6, -0x1
-
-    move/from16 v0, v16
-
-    invoke-static {v7, v13, v14, v15, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    goto :goto_5
+    goto :goto_3
 .end method
 
 .method private findViewLocked(Landroid/view/View;Z)I
@@ -622,10 +481,10 @@
     .parameter "required"
 
     .prologue
-    .line 602
+    .line 615
     monitor-enter p0
 
-    .line 603
+    .line 616
     :try_start_0
     iget-object v2, p0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
 
@@ -635,7 +494,7 @@
 
     array-length v0, v2
 
-    .line 604
+    .line 617
     .local v0, count:I
     :goto_0
     const/4 v1, 0x0
@@ -644,29 +503,29 @@
     :goto_1
     if-ge v1, v0, :cond_2
 
-    .line 605
+    .line 618
     iget-object v2, p0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
 
     aget-object v2, v2, v1
 
     if-ne v2, p1, :cond_1
 
-    .line 606
+    .line 619
     monitor-exit p0
 
-    .line 613
+    .line 626
     .end local v1           #i:I
     :goto_2
     return v1
 
-    .line 603
+    .line 616
     .end local v0           #count:I
     :cond_0
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 604
+    .line 617
     .restart local v0       #count:I
     .restart local v1       #i:I
     :cond_1
@@ -674,11 +533,11 @@
 
     goto :goto_1
 
-    .line 609
+    .line 622
     :cond_2
     if-eqz p2, :cond_3
 
-    .line 610
+    .line 623
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
     const-string v3, "View not attached to window manager"
@@ -687,7 +546,7 @@
 
     throw v2
 
-    .line 614
+    .line 627
     .end local v0           #count:I
     .end local v1           #i:I
     :catchall_0
@@ -699,7 +558,7 @@
 
     throw v2
 
-    .line 613
+    .line 626
     .restart local v0       #count:I
     .restart local v1       #i:I
     :cond_3
@@ -827,24 +686,24 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 591
+    .line 604
     array-length v0, p0
 
     if-lez v0, :cond_1
 
-    .line 592
+    .line 605
     if-lez p2, :cond_0
 
-    .line 593
+    .line 606
     invoke-static {p1, v1, p0, v1, p2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 595
+    .line 608
     :cond_0
     array-length v0, p0
 
     if-ge p2, v0, :cond_1
 
-    .line 596
+    .line 609
     add-int/lit8 v0, p2, 0x1
 
     array-length v1, p1
@@ -855,7 +714,7 @@
 
     invoke-static {p1, v0, p0, p2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 599
+    .line 612
     :cond_1
     return-void
 .end method
@@ -923,10 +782,10 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 583
+    .line 596
     invoke-virtual {p0, v0, v0, v0}, Landroid/view/WindowManagerImpl;->closeAll(Landroid/os/IBinder;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 584
+    .line 597
     return-void
 .end method
 
@@ -937,29 +796,29 @@
     .parameter "what"
 
     .prologue
-    .line 422
+    .line 435
     monitor-enter p0
 
-    .line 423
+    .line 436
     :try_start_0
     iget-object v4, p0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
 
     if-nez v4, :cond_0
 
-    .line 424
+    .line 437
     monitor-exit p0
 
-    .line 450
+    .line 463
     :goto_0
     return-void
 
-    .line 426
+    .line 439
     :cond_0
     iget-object v4, p0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
 
     array-length v0, v4
 
-    .line 428
+    .line 441
     .local v0, count:I
     const/4 v1, 0x0
 
@@ -967,7 +826,7 @@
     :goto_1
     if-ge v1, v0, :cond_4
 
-    .line 431
+    .line 444
     if-eqz p1, :cond_1
 
     iget-object v4, p0, Landroid/view/WindowManagerImpl;->mParams:[Landroid/view/WindowManager$LayoutParams;
@@ -978,22 +837,22 @@
 
     if-ne v4, p1, :cond_3
 
-    .line 432
+    .line 445
     :cond_1
     iget-object v4, p0, Landroid/view/WindowManagerImpl;->mRoots:[Landroid/view/ViewRootImpl;
 
     aget-object v3, v4, v1
 
-    .line 433
+    .line 446
     .local v3, root:Landroid/view/ViewRootImpl;
     const/4 v4, 0x1
 
     iput v4, v3, Landroid/view/ViewRootImpl;->mAddNesting:I
 
-    .line 436
+    .line 449
     if-eqz p2, :cond_2
 
-    .line 437
+    .line 450
     new-instance v2, Landroid/view/WindowLeaked;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1040,7 +899,7 @@
 
     invoke-direct {v2, v4}, Landroid/view/WindowLeaked;-><init>(Ljava/lang/String;)V
 
-    .line 440
+    .line 453
     .local v2, leak:Landroid/view/WindowLeaked;
     invoke-virtual {v3}, Landroid/view/ViewRootImpl;->getLocation()Landroid/view/WindowLeaked;
 
@@ -1052,7 +911,7 @@
 
     invoke-virtual {v2, v4}, Landroid/view/WindowLeaked;->setStackTrace([Ljava/lang/StackTraceElement;)V
 
-    .line 441
+    .line 454
     const-string v4, "WindowManager"
 
     invoke-virtual {v2}, Landroid/view/WindowLeaked;->getMessage()Ljava/lang/String;
@@ -1061,25 +920,25 @@
 
     invoke-static {v4, v5, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 444
+    .line 457
     .end local v2           #leak:Landroid/view/WindowLeaked;
     :cond_2
     invoke-virtual {p0, v1}, Landroid/view/WindowManagerImpl;->removeViewLocked(I)Landroid/view/View;
 
-    .line 445
+    .line 458
     add-int/lit8 v1, v1, -0x1
 
-    .line 446
+    .line 459
     add-int/lit8 v0, v0, -0x1
 
-    .line 428
+    .line 441
     .end local v3           #root:Landroid/view/ViewRootImpl;
     :cond_3
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 449
+    .line 462
     :cond_4
     monitor-exit p0
 
@@ -1097,6 +956,129 @@
     throw v4
 .end method
 
+.method disablePopupWindow(Landroid/view/View;Landroid/view/WindowManager$LayoutParams;)Z
+    .locals 9
+    .parameter "view"
+    .parameter "wparams"
+
+    .prologue
+    const/4 v5, 0x1
+
+    const/4 v6, 0x0
+
+    .line 224
+    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 225
+    .local v3, packageName:Ljava/lang/String;
+    if-eqz v3, :cond_2
+
+    const-string v7, "com.qihoo360"
+
+    invoke-virtual {v3, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v7
+
+    if-nez v7, :cond_0
+
+    const-string v7, "cn.opda"
+
+    invoke-virtual {v3, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_2
+
+    :cond_0
+    move v2, v5
+
+    .line 229
+    .local v2, needFilterPkg:Z
+    :goto_0
+    if-eqz v2, :cond_3
+
+    iget v7, p2, Landroid/view/WindowManager$LayoutParams;->type:I
+
+    const/16 v8, 0x7d7
+
+    if-le v7, v8, :cond_3
+
+    .line 230
+    const/4 v1, 0x0
+
+    .line 232
+    .local v1, incomingRinging:Z
+    :try_start_0
+    const-string/jumbo v7, "phone"
+
+    invoke-static {v7}, Landroid/os/ServiceManager;->checkService(Ljava/lang/String;)Landroid/os/IBinder;
+
+    move-result-object v7
+
+    invoke-static {v7}, Lcom/android/internal/telephony/ITelephony$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/telephony/ITelephony;
+
+    move-result-object v4
+
+    .line 234
+    .local v4, telephonyService:Lcom/android/internal/telephony/ITelephony;
+    if-eqz v4, :cond_1
+
+    .line 235
+    invoke-interface {v4}, Lcom/android/internal/telephony/ITelephony;->isRinging()Z
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v1
+
+    .line 240
+    .end local v4           #telephonyService:Lcom/android/internal/telephony/ITelephony;
+    :cond_1
+    :goto_1
+    if-eqz v1, :cond_3
+
+    .line 244
+    .end local v1           #incomingRinging:Z
+    :goto_2
+    return v5
+
+    .end local v2           #needFilterPkg:Z
+    :cond_2
+    move v2, v6
+
+    .line 225
+    goto :goto_0
+
+    .line 237
+    .restart local v1       #incomingRinging:Z
+    .restart local v2       #needFilterPkg:Z
+    :catch_0
+    move-exception v0
+
+    .line 238
+    .local v0, ex:Landroid/os/RemoteException;
+    const-string v7, "WindowManager"
+
+    const-string v8, "RemoteException from getPhoneInterface()"
+
+    invoke-static {v7, v8, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto :goto_1
+
+    .end local v0           #ex:Landroid/os/RemoteException;
+    .end local v1           #incomingRinging:Z
+    :cond_3
+    move v5, v6
+
+    .line 244
+    goto :goto_2
+.end method
+
 .method public dumpGfxInfo(Ljava/io/FileDescriptor;)V
     .locals 14
     .parameter "fd"
@@ -1104,55 +1086,55 @@
     .prologue
     const/high16 v13, 0x4480
 
-    .line 501
+    .line 514
     new-instance v2, Ljava/io/FileOutputStream;
 
     invoke-direct {v2, p1}, Ljava/io/FileOutputStream;-><init>(Ljava/io/FileDescriptor;)V
 
-    .line 502
+    .line 515
     .local v2, fout:Ljava/io/FileOutputStream;
     new-instance v6, Ljava/io/PrintWriter;
 
     invoke-direct {v6, v2}, Ljava/io/PrintWriter;-><init>(Ljava/io/OutputStream;)V
 
-    .line 504
+    .line 517
     .local v6, pw:Ljava/io/PrintWriter;
     :try_start_0
     monitor-enter p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 505
+    .line 518
     :try_start_1
     iget-object v9, p0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
 
     if-eqz v9, :cond_1
 
-    .line 506
+    .line 519
     const-string v9, "View hierarchy:"
 
     invoke-virtual {v6, v9}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 508
+    .line 521
     iget-object v9, p0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
 
     array-length v0, v9
 
-    .line 510
+    .line 523
     .local v0, count:I
     const/4 v8, 0x0
 
-    .line 511
+    .line 524
     .local v8, viewsCount:I
     const/4 v1, 0x0
 
-    .line 512
+    .line 525
     .local v1, displayListsSize:I
     const/4 v9, 0x2
 
     new-array v4, v9, [I
 
-    .line 514
+    .line 527
     .local v4, info:[I
     const/4 v3, 0x0
 
@@ -1160,16 +1142,16 @@
     :goto_0
     if-ge v3, v0, :cond_0
 
-    .line 515
+    .line 528
     iget-object v9, p0, Landroid/view/WindowManagerImpl;->mRoots:[Landroid/view/ViewRootImpl;
 
     aget-object v7, v9, v3
 
-    .line 516
+    .line 529
     .local v7, root:Landroid/view/ViewRootImpl;
     invoke-virtual {v7, v6, v4}, Landroid/view/ViewRootImpl;->dumpGfxInfo(Ljava/io/PrintWriter;[I)V
 
-    .line 518
+    .line 531
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -1208,7 +1190,7 @@
 
     move-result-object v5
 
-    .line 520
+    .line 533
     .local v5, name:Ljava/lang/String;
     const-string v9, "  %s: %d views, %.2f kB (display lists)\n"
 
@@ -1250,26 +1232,26 @@
 
     invoke-virtual {v6, v9, v10}, Ljava/io/PrintWriter;->printf(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintWriter;
 
-    .line 523
+    .line 536
     const/4 v9, 0x0
 
     aget v9, v4, v9
 
     add-int/2addr v8, v9
 
-    .line 524
+    .line 537
     const/4 v9, 0x1
 
     aget v9, v4, v9
 
     add-int/2addr v1, v9
 
-    .line 514
+    .line 527
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 527
+    .line 540
     .end local v5           #name:Ljava/lang/String;
     .end local v7           #root:Landroid/view/ViewRootImpl;
     :cond_0
@@ -1289,7 +1271,7 @@
 
     invoke-virtual {v6, v9, v10}, Ljava/io/PrintWriter;->printf(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintWriter;
 
-    .line 528
+    .line 541
     const-string v9, "Total Views:        %d\n"
 
     const/4 v10, 0x1
@@ -1306,7 +1288,7 @@
 
     invoke-virtual {v6, v9, v10}, Ljava/io/PrintWriter;->printf(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintWriter;
 
-    .line 529
+    .line 542
     const-string v9, "Total DisplayList:  %.2f kB\n\n"
 
     const/4 v10, 0x1
@@ -1327,7 +1309,7 @@
 
     invoke-virtual {v6, v9, v10}, Ljava/io/PrintWriter;->printf(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintWriter;
 
-    .line 531
+    .line 544
     .end local v0           #count:I
     .end local v1           #displayListsSize:I
     .end local v3           #i:I
@@ -1338,13 +1320,13 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 533
+    .line 546
     invoke-virtual {v6}, Ljava/io/PrintWriter;->flush()V
 
-    .line 535
+    .line 548
     return-void
 
-    .line 531
+    .line 544
     :catchall_0
     move-exception v9
 
@@ -1358,7 +1340,7 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    .line 533
+    .line 546
     :catchall_1
     move-exception v9
 
@@ -1373,63 +1355,63 @@
     .parameter "index"
 
     .prologue
-    .line 398
+    .line 411
     iget-object v4, p0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
 
     array-length v0, v4
 
-    .line 401
+    .line 414
     .local v0, count:I
     add-int/lit8 v4, v0, -0x1
 
     new-array v3, v4, [Landroid/view/View;
 
-    .line 402
+    .line 415
     .local v3, tmpViews:[Landroid/view/View;
     iget-object v4, p0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
 
     invoke-static {v3, v4, p2}, Landroid/view/WindowManagerImpl;->removeItem([Ljava/lang/Object;[Ljava/lang/Object;I)V
 
-    .line 403
+    .line 416
     iput-object v3, p0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
 
-    .line 405
+    .line 418
     add-int/lit8 v4, v0, -0x1
 
     new-array v2, v4, [Landroid/view/ViewRootImpl;
 
-    .line 406
+    .line 419
     .local v2, tmpRoots:[Landroid/view/ViewRootImpl;
     iget-object v4, p0, Landroid/view/WindowManagerImpl;->mRoots:[Landroid/view/ViewRootImpl;
 
     invoke-static {v2, v4, p2}, Landroid/view/WindowManagerImpl;->removeItem([Ljava/lang/Object;[Ljava/lang/Object;I)V
 
-    .line 407
+    .line 420
     iput-object v2, p0, Landroid/view/WindowManagerImpl;->mRoots:[Landroid/view/ViewRootImpl;
 
-    .line 409
+    .line 422
     add-int/lit8 v4, v0, -0x1
 
     new-array v1, v4, [Landroid/view/WindowManager$LayoutParams;
 
-    .line 411
+    .line 424
     .local v1, tmpParams:[Landroid/view/WindowManager$LayoutParams;
     iget-object v4, p0, Landroid/view/WindowManagerImpl;->mParams:[Landroid/view/WindowManager$LayoutParams;
 
     invoke-static {v1, v4, p2}, Landroid/view/WindowManagerImpl;->removeItem([Ljava/lang/Object;[Ljava/lang/Object;I)V
 
-    .line 412
+    .line 425
     iput-object v1, p0, Landroid/view/WindowManagerImpl;->mParams:[Landroid/view/WindowManager$LayoutParams;
 
-    .line 414
+    .line 427
     if-eqz p1, :cond_0
 
-    .line 415
+    .line 428
     const/4 v4, 0x0
 
     invoke-virtual {p1, v4}, Landroid/view/View;->assignParent(Landroid/view/ViewParent;)V
 
-    .line 419
+    .line 432
     :cond_0
     return-void
 .end method
@@ -1438,7 +1420,7 @@
     .locals 3
 
     .prologue
-    .line 587
+    .line 600
     new-instance v0, Landroid/view/Display;
 
     const/4 v1, 0x0
@@ -1457,12 +1439,12 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 563
+    .line 576
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v2
 
-    .line 564
+    .line 577
     .local v2, vp:Landroid/view/ViewParent;
     :goto_0
     if-eqz v2, :cond_0
@@ -1471,18 +1453,18 @@
 
     if-nez v5, :cond_0
 
-    .line 565
+    .line 578
     invoke-interface {v2}, Landroid/view/ViewParent;->getParent()Landroid/view/ViewParent;
 
     move-result-object v2
 
     goto :goto_0
 
-    .line 568
+    .line 581
     :cond_0
     if-nez v2, :cond_2
 
-    .line 579
+    .line 592
     :cond_1
     :goto_1
     return-object v4
@@ -1490,16 +1472,16 @@
     :cond_2
     move-object v3, v2
 
-    .line 570
+    .line 583
     check-cast v3, Landroid/view/ViewRootImpl;
 
-    .line 572
+    .line 585
     .local v3, vr:Landroid/view/ViewRootImpl;
     iget-object v5, p0, Landroid/view/WindowManagerImpl;->mRoots:[Landroid/view/ViewRootImpl;
 
     array-length v0, v5
 
-    .line 573
+    .line 586
     .local v0, N:I
     const/4 v1, 0x0
 
@@ -1507,21 +1489,21 @@
     :goto_2
     if-ge v1, v0, :cond_1
 
-    .line 574
+    .line 587
     iget-object v5, p0, Landroid/view/WindowManagerImpl;->mRoots:[Landroid/view/ViewRootImpl;
 
     aget-object v5, v5, v1
 
     if-ne v5, v3, :cond_3
 
-    .line 575
+    .line 588
     iget-object v4, p0, Landroid/view/WindowManagerImpl;->mParams:[Landroid/view/WindowManager$LayoutParams;
 
     aget-object v4, v4, v1
 
     goto :goto_1
 
-    .line 573
+    .line 586
     :cond_3
     add-int/lit8 v1, v1, 0x1
 
@@ -1543,10 +1525,10 @@
     .parameter "view"
 
     .prologue
-    .line 346
+    .line 359
     monitor-enter p0
 
-    .line 347
+    .line 360
     const/4 v2, 0x1
 
     :try_start_0
@@ -1554,22 +1536,22 @@
 
     move-result v1
 
-    .line 348
+    .line 361
     .local v1, index:I
     invoke-virtual {p0, v1}, Landroid/view/WindowManagerImpl;->removeViewLocked(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 349
+    .line 362
     .local v0, curView:Landroid/view/View;
     if-ne v0, p1, :cond_0
 
-    .line 350
+    .line 363
     monitor-exit p0
 
     return-void
 
-    .line 353
+    .line 366
     :cond_0
     new-instance v2, Ljava/lang/IllegalStateException;
 
@@ -1605,7 +1587,7 @@
 
     throw v2
 
-    .line 355
+    .line 368
     .end local v0           #curView:Landroid/view/View;
     .end local v1           #index:I
     :catchall_0
@@ -1623,10 +1605,10 @@
     .parameter "view"
 
     .prologue
-    .line 359
+    .line 372
     monitor-enter p0
 
-    .line 360
+    .line 373
     const/4 v3, 0x1
 
     :try_start_0
@@ -1634,41 +1616,41 @@
 
     move-result v1
 
-    .line 361
+    .line 374
     .local v1, index:I
     iget-object v3, p0, Landroid/view/WindowManagerImpl;->mRoots:[Landroid/view/ViewRootImpl;
 
     aget-object v2, v3, v1
 
-    .line 362
+    .line 375
     .local v2, root:Landroid/view/ViewRootImpl;
     invoke-virtual {v2}, Landroid/view/ViewRootImpl;->getView()Landroid/view/View;
 
     move-result-object v0
 
-    .line 364
+    .line 377
     .local v0, curView:Landroid/view/View;
     const/4 v3, 0x0
 
     iput v3, v2, Landroid/view/ViewRootImpl;->mAddNesting:I
 
-    .line 365
+    .line 378
     const/4 v3, 0x1
 
     invoke-virtual {v2, v3}, Landroid/view/ViewRootImpl;->die(Z)V
 
-    .line 366
+    .line 379
     invoke-virtual {p0, v0, v1}, Landroid/view/WindowManagerImpl;->finishRemoveViewLocked(Landroid/view/View;I)V
 
-    .line 367
+    .line 380
     if-ne v0, p1, :cond_0
 
-    .line 368
+    .line 381
     monitor-exit p0
 
     return-void
 
-    .line 371
+    .line 384
     :cond_0
     new-instance v3, Ljava/lang/IllegalStateException;
 
@@ -1704,7 +1686,7 @@
 
     throw v3
 
-    .line 373
+    .line 386
     .end local v0           #curView:Landroid/view/View;
     .end local v1           #index:I
     .end local v2           #root:Landroid/view/ViewRootImpl;
@@ -1723,18 +1705,18 @@
     .parameter "index"
 
     .prologue
-    .line 377
+    .line 390
     iget-object v3, p0, Landroid/view/WindowManagerImpl;->mRoots:[Landroid/view/ViewRootImpl;
 
     aget-object v1, v3, p1
 
-    .line 378
+    .line 391
     .local v1, root:Landroid/view/ViewRootImpl;
     invoke-virtual {v1}, Landroid/view/ViewRootImpl;->getView()Landroid/view/View;
 
     move-result-object v2
 
-    .line 381
+    .line 394
     .local v2, view:Landroid/view/View;
     iget v3, v1, Landroid/view/ViewRootImpl;->mAddNesting:I
 
@@ -1742,20 +1724,20 @@
 
     iput v3, v1, Landroid/view/ViewRootImpl;->mAddNesting:I
 
-    .line 382
+    .line 395
     iget v3, v1, Landroid/view/ViewRootImpl;->mAddNesting:I
 
     if-lez v3, :cond_0
 
-    .line 394
+    .line 407
     :goto_0
     return-object v2
 
-    .line 386
+    .line 399
     :cond_0
     if-eqz v2, :cond_1
 
-    .line 387
+    .line 400
     invoke-virtual {v2}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v3
@@ -1764,11 +1746,11 @@
 
     move-result-object v0
 
-    .line 388
+    .line 401
     .local v0, imm:Landroid/view/inputmethod/InputMethodManager;
     if-eqz v0, :cond_1
 
-    .line 389
+    .line 402
     iget-object v3, p0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
 
     aget-object v3, v3, p1
@@ -1779,14 +1761,14 @@
 
     invoke-virtual {v0, v3}, Landroid/view/inputmethod/InputMethodManager;->windowDismissed(Landroid/os/IBinder;)V
 
-    .line 392
+    .line 405
     .end local v0           #imm:Landroid/view/inputmethod/InputMethodManager;
     :cond_1
     const/4 v3, 0x0
 
     invoke-virtual {v1, v3}, Landroid/view/ViewRootImpl;->die(Z)V
 
-    .line 393
+    .line 406
     invoke-virtual {p0, v2, p1}, Landroid/view/WindowManagerImpl;->finishRemoveViewLocked(Landroid/view/View;I)V
 
     goto :goto_0
@@ -1797,16 +1779,16 @@
     .parameter "config"
 
     .prologue
-    .line 552
+    .line 565
     monitor-enter p0
 
-    .line 553
+    .line 566
     :try_start_0
     iget-object v4, p0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
 
     array-length v1, v4
 
-    .line 554
+    .line 567
     .local v1, count:I
     new-instance v0, Landroid/content/res/Configuration;
 
@@ -1814,7 +1796,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 555
+    .line 568
     .end local p1
     .local v0, config:Landroid/content/res/Configuration;
     const/4 v2, 0x0
@@ -1823,32 +1805,32 @@
     :goto_0
     if-ge v2, v1, :cond_0
 
-    .line 556
+    .line 569
     :try_start_1
     iget-object v4, p0, Landroid/view/WindowManagerImpl;->mRoots:[Landroid/view/ViewRootImpl;
 
     aget-object v3, v4, v2
 
-    .line 557
+    .line 570
     .local v3, root:Landroid/view/ViewRootImpl;
     invoke-virtual {v3, v0}, Landroid/view/ViewRootImpl;->requestUpdateConfiguration(Landroid/content/res/Configuration;)V
 
-    .line 555
+    .line 568
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 559
+    .line 572
     .end local v3           #root:Landroid/view/ViewRootImpl;
     :cond_0
     monitor-exit p0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 560
+    .line 573
     return-void
 
-    .line 559
+    .line 572
     .end local v0           #config:Landroid/content/res/Configuration;
     .end local v1           #count:I
     .end local v2           #i:I
@@ -1884,29 +1866,29 @@
     .parameter "stopped"
 
     .prologue
-    .line 538
+    .line 551
     monitor-enter p0
 
-    .line 539
+    .line 552
     :try_start_0
     iget-object v3, p0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
 
     if-nez v3, :cond_0
 
-    .line 540
+    .line 553
     monitor-exit p0
 
-    .line 549
+    .line 562
     :goto_0
     return-void
 
-    .line 541
+    .line 554
     :cond_0
     iget-object v3, p0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
 
     array-length v0, v3
 
-    .line 542
+    .line 555
     .local v0, count:I
     const/4 v1, 0x0
 
@@ -1914,7 +1896,7 @@
     :goto_1
     if-ge v1, v0, :cond_3
 
-    .line 543
+    .line 556
     if-eqz p1, :cond_1
 
     iget-object v3, p0, Landroid/view/WindowManagerImpl;->mParams:[Landroid/view/WindowManager$LayoutParams;
@@ -1925,24 +1907,24 @@
 
     if-ne v3, p1, :cond_2
 
-    .line 544
+    .line 557
     :cond_1
     iget-object v3, p0, Landroid/view/WindowManagerImpl;->mRoots:[Landroid/view/ViewRootImpl;
 
     aget-object v2, v3, v1
 
-    .line 545
+    .line 558
     .local v2, root:Landroid/view/ViewRootImpl;
     invoke-virtual {v2, p2}, Landroid/view/ViewRootImpl;->setStopped(Z)V
 
-    .line 542
+    .line 555
     .end local v2           #root:Landroid/view/ViewRootImpl;
     :cond_2
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 548
+    .line 561
     :cond_3
     monitor-exit p0
 
@@ -1964,10 +1946,10 @@
     .locals 3
 
     .prologue
-    .line 488
+    .line 501
     monitor-enter p0
 
-    .line 489
+    .line 502
     :try_start_0
     iget-object v2, p0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
 
@@ -1975,17 +1957,17 @@
 
     monitor-exit p0
 
-    .line 495
+    .line 508
     :goto_0
     return-void
 
-    .line 490
+    .line 503
     :cond_0
     iget-object v2, p0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
 
     array-length v0, v2
 
-    .line 491
+    .line 504
     .local v0, count:I
     const/4 v1, 0x0
 
@@ -1993,19 +1975,19 @@
     :goto_1
     if-ge v1, v0, :cond_1
 
-    .line 492
+    .line 505
     iget-object v2, p0, Landroid/view/WindowManagerImpl;->mRoots:[Landroid/view/ViewRootImpl;
 
     aget-object v2, v2, v1
 
     invoke-virtual {v2}, Landroid/view/ViewRootImpl;->destroyHardwareLayers()V
 
-    .line 491
+    .line 504
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 494
+    .line 507
     :cond_1
     monitor-exit p0
 
@@ -2028,26 +2010,26 @@
     .parameter "level"
 
     .prologue
-    .line 456
+    .line 469
     invoke-static {}, Landroid/view/HardwareRenderer;->isAvailable()Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    .line 457
+    .line 470
     sparse-switch p1, :sswitch_data_0
 
-    .line 479
+    .line 492
     :cond_0
     invoke-static {p1}, Landroid/view/HardwareRenderer;->trimMemory(I)V
 
-    .line 482
+    .line 495
     :cond_1
     :goto_0
     return-void
 
-    .line 461
+    .line 474
     :sswitch_0
     invoke-virtual {p0}, Landroid/view/WindowManagerImpl;->getDefaultDisplay()Landroid/view/Display;
 
@@ -2059,15 +2041,15 @@
 
     if-nez v2, :cond_0
 
-    .line 463
+    .line 476
     const/16 v2, 0x50
 
     invoke-static {v2}, Landroid/view/HardwareRenderer;->trimMemory(I)V
 
-    .line 466
+    .line 479
     monitor-enter p0
 
-    .line 467
+    .line 480
     :try_start_0
     iget-object v2, p0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
 
@@ -2077,7 +2059,7 @@
 
     goto :goto_0
 
-    .line 472
+    .line 485
     :catchall_0
     move-exception v2
 
@@ -2087,14 +2069,14 @@
 
     throw v2
 
-    .line 468
+    .line 481
     :cond_2
     :try_start_1
     iget-object v2, p0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
 
     array-length v0, v2
 
-    .line 469
+    .line 482
     .local v0, count:I
     const/4 v1, 0x0
 
@@ -2102,30 +2084,30 @@
     :goto_1
     if-ge v1, v0, :cond_3
 
-    .line 470
+    .line 483
     iget-object v2, p0, Landroid/view/WindowManagerImpl;->mRoots:[Landroid/view/ViewRootImpl;
 
     aget-object v2, v2, v1
 
     invoke-virtual {v2}, Landroid/view/ViewRootImpl;->terminateHardwareResources()V
 
-    .line 469
+    .line 482
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 472
+    .line 485
     :cond_3
     monitor-exit p0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 474
+    .line 487
     invoke-static {}, Landroid/opengl/ManagedEGLContext;->doTerminate()Z
 
     goto :goto_0
 
-    .line 457
+    .line 470
     nop
 
     :sswitch_data_0
@@ -2141,12 +2123,12 @@
     .parameter "params"
 
     .prologue
-    .line 328
+    .line 341
     instance-of v3, p2, Landroid/view/WindowManager$LayoutParams;
 
     if-nez v3, :cond_0
 
-    .line 329
+    .line 342
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
     const-string v4, "Params must be WindowManager.LayoutParams"
@@ -2158,17 +2140,17 @@
     :cond_0
     move-object v2, p2
 
-    .line 332
+    .line 345
     check-cast v2, Landroid/view/WindowManager$LayoutParams;
 
-    .line 335
+    .line 348
     .local v2, wparams:Landroid/view/WindowManager$LayoutParams;
     invoke-virtual {p1, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 337
+    .line 350
     monitor-enter p0
 
-    .line 338
+    .line 351
     const/4 v3, 0x1
 
     :try_start_0
@@ -2176,30 +2158,30 @@
 
     move-result v0
 
-    .line 339
+    .line 352
     .local v0, index:I
     iget-object v3, p0, Landroid/view/WindowManagerImpl;->mRoots:[Landroid/view/ViewRootImpl;
 
     aget-object v1, v3, v0
 
-    .line 340
+    .line 353
     .local v1, root:Landroid/view/ViewRootImpl;
     iget-object v3, p0, Landroid/view/WindowManagerImpl;->mParams:[Landroid/view/WindowManager$LayoutParams;
 
     aput-object v2, v3, v0
 
-    .line 341
+    .line 354
     const/4 v3, 0x0
 
     invoke-virtual {v1, v2, v3}, Landroid/view/ViewRootImpl;->setLayoutParams(Landroid/view/WindowManager$LayoutParams;Z)V
 
-    .line 342
+    .line 355
     monitor-exit p0
 
-    .line 343
+    .line 356
     return-void
 
-    .line 342
+    .line 355
     .end local v0           #index:I
     .end local v1           #root:Landroid/view/ViewRootImpl;
     :catchall_0

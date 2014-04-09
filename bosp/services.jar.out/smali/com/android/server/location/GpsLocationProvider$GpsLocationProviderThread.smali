@@ -24,15 +24,15 @@
     .parameter
 
     .prologue
-    .line 1705
+    .line 1592
     iput-object p1, p0, Lcom/android/server/location/GpsLocationProvider$GpsLocationProviderThread;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
-    .line 1706
+    .line 1593
     const-string v0, "GpsLocationProvider"
 
     invoke-direct {p0, v0}, Ljava/lang/Thread;-><init>(Ljava/lang/String;)V
 
-    .line 1707
+    .line 1594
     return-void
 .end method
 
@@ -42,21 +42,21 @@
     .locals 4
 
     .prologue
-    .line 1710
+    .line 1597
     const/16 v0, 0xa
 
     invoke-static {v0}, Landroid/os/Process;->setThreadPriority(I)V
 
-    .line 1711
+    .line 1598
     iget-object v0, p0, Lcom/android/server/location/GpsLocationProvider$GpsLocationProviderThread;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
     #calls: Lcom/android/server/location/GpsLocationProvider;->initialize()V
-    invoke-static {v0}, Lcom/android/server/location/GpsLocationProvider;->access$2800(Lcom/android/server/location/GpsLocationProvider;)V
+    invoke-static {v0}, Lcom/android/server/location/GpsLocationProvider;->access$2000(Lcom/android/server/location/GpsLocationProvider;)V
 
-    .line 1712
+    .line 1599
     invoke-static {}, Landroid/os/Looper;->prepare()V
 
-    .line 1713
+    .line 1600
     iget-object v0, p0, Lcom/android/server/location/GpsLocationProvider$GpsLocationProviderThread;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
     new-instance v1, Lcom/android/server/location/GpsLocationProvider$ProviderHandler;
@@ -68,21 +68,21 @@
     invoke-direct {v1, v2, v3}, Lcom/android/server/location/GpsLocationProvider$ProviderHandler;-><init>(Lcom/android/server/location/GpsLocationProvider;Lcom/android/server/location/GpsLocationProvider$1;)V
 
     #setter for: Lcom/android/server/location/GpsLocationProvider;->mHandler:Landroid/os/Handler;
-    invoke-static {v0, v1}, Lcom/android/server/location/GpsLocationProvider;->access$2902(Lcom/android/server/location/GpsLocationProvider;Landroid/os/Handler;)Landroid/os/Handler;
+    invoke-static {v0, v1}, Lcom/android/server/location/GpsLocationProvider;->access$2102(Lcom/android/server/location/GpsLocationProvider;Landroid/os/Handler;)Landroid/os/Handler;
 
-    .line 1715
+    .line 1602
     iget-object v0, p0, Lcom/android/server/location/GpsLocationProvider$GpsLocationProviderThread;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
     #getter for: Lcom/android/server/location/GpsLocationProvider;->mInitializedLatch:Ljava/util/concurrent/CountDownLatch;
-    invoke-static {v0}, Lcom/android/server/location/GpsLocationProvider;->access$3100(Lcom/android/server/location/GpsLocationProvider;)Ljava/util/concurrent/CountDownLatch;
+    invoke-static {v0}, Lcom/android/server/location/GpsLocationProvider;->access$2300(Lcom/android/server/location/GpsLocationProvider;)Ljava/util/concurrent/CountDownLatch;
 
     move-result-object v0
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
-    .line 1716
+    .line 1603
     invoke-static {}, Landroid/os/Looper;->loop()V
 
-    .line 1717
+    .line 1604
     return-void
 .end method

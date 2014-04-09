@@ -1186,9 +1186,9 @@
 
     .line 309
     :cond_1
-    iget-object v0, p1, Lcom/android/internal/telephony/SmsMessageBase$PduBase;->encodedScAddress:[B
+    iget-object v0, p1, Lcom/android/internal/telephony/SmsMessageBase$SubmitPduBase;->encodedScAddress:[B
 
-    iget-object v1, p1, Lcom/android/internal/telephony/SmsMessageBase$PduBase;->encodedMessage:[B
+    iget-object v1, p1, Lcom/android/internal/telephony/SmsMessageBase$SubmitPduBase;->encodedMessage:[B
 
     invoke-virtual {p0, v0, v1, p2, p3}, Lcom/android/internal/telephony/cdma/CdmaSMSDispatcher;->sendRawPdu([B[BLandroid/app/PendingIntent;Landroid/app/PendingIntent;)V
 

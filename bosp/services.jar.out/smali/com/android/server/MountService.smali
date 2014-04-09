@@ -50,7 +50,7 @@
 
 .field private static final MAX_CONTAINERS:I = 0xfa
 
-.field private static final MAX_UNMOUNT_RETRIES:I = 0x1
+.field private static final MAX_UNMOUNT_RETRIES:I = 0x4
 
 .field private static final OBB_FLUSH_MOUNT_STATE:I = 0x5
 

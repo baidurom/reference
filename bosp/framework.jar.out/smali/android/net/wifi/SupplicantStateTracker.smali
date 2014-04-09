@@ -260,18 +260,6 @@
     return v0
 .end method
 
-.method static synthetic access$1000(Landroid/net/wifi/SupplicantStateTracker;Lcom/android/internal/util/IState;)V
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 36
-    invoke-virtual {p0, p1}, Landroid/net/wifi/SupplicantStateTracker;->transitionTo(Lcom/android/internal/util/IState;)V
-
-    return-void
-.end method
-
 .method static synthetic access$102(Landroid/net/wifi/SupplicantStateTracker;Z)Z
     .locals 0
     .parameter "x0"
@@ -284,18 +272,7 @@
     return p1
 .end method
 
-.method static synthetic access$200(Landroid/net/wifi/SupplicantStateTracker;)Landroid/content/Context;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 36
-    iget-object v0, p0, Landroid/net/wifi/SupplicantStateTracker;->mContext:Landroid/content/Context;
-
-    return-object v0
-.end method
-
-.method static synthetic access$300(Landroid/net/wifi/SupplicantStateTracker;Landroid/net/wifi/SupplicantState;Z)V
+.method static synthetic access$200(Landroid/net/wifi/SupplicantStateTracker;Landroid/net/wifi/SupplicantState;Z)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -308,7 +285,7 @@
     return-void
 .end method
 
-.method static synthetic access$400(Landroid/net/wifi/SupplicantStateTracker;Landroid/net/wifi/StateChangeResult;)V
+.method static synthetic access$300(Landroid/net/wifi/SupplicantStateTracker;Landroid/net/wifi/StateChangeResult;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -320,7 +297,7 @@
     return-void
 .end method
 
-.method static synthetic access$500(Landroid/net/wifi/SupplicantStateTracker;)Lcom/android/internal/util/State;
+.method static synthetic access$400(Landroid/net/wifi/SupplicantStateTracker;)Lcom/android/internal/util/State;
     .locals 1
     .parameter "x0"
 
@@ -331,7 +308,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$600(Landroid/net/wifi/SupplicantStateTracker;Lcom/android/internal/util/IState;)V
+.method static synthetic access$500(Landroid/net/wifi/SupplicantStateTracker;Lcom/android/internal/util/IState;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -343,7 +320,7 @@
     return-void
 .end method
 
-.method static synthetic access$700(Landroid/net/wifi/SupplicantStateTracker;)Z
+.method static synthetic access$600(Landroid/net/wifi/SupplicantStateTracker;)Z
     .locals 1
     .parameter "x0"
 
@@ -354,7 +331,7 @@
     return v0
 .end method
 
-.method static synthetic access$702(Landroid/net/wifi/SupplicantStateTracker;Z)Z
+.method static synthetic access$602(Landroid/net/wifi/SupplicantStateTracker;Z)Z
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -366,7 +343,7 @@
     return p1
 .end method
 
-.method static synthetic access$800(Landroid/net/wifi/SupplicantStateTracker;)Landroid/os/Message;
+.method static synthetic access$700(Landroid/net/wifi/SupplicantStateTracker;)Landroid/os/Message;
     .locals 1
     .parameter "x0"
 
@@ -379,7 +356,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$900(Landroid/net/wifi/SupplicantStateTracker;I)V
+.method static synthetic access$800(Landroid/net/wifi/SupplicantStateTracker;I)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -387,6 +364,18 @@
     .prologue
     .line 36
     invoke-direct {p0, p1}, Landroid/net/wifi/SupplicantStateTracker;->handleNetworkConnectionFailure(I)V
+
+    return-void
+.end method
+
+.method static synthetic access$900(Landroid/net/wifi/SupplicantStateTracker;Lcom/android/internal/util/IState;)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 36
+    invoke-virtual {p0, p1}, Landroid/net/wifi/SupplicantStateTracker;->transitionTo(Lcom/android/internal/util/IState;)V
 
     return-void
 .end method
@@ -425,41 +414,41 @@
     .parameter "failedAuth"
 
     .prologue
-    .line 139
+    .line 137
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.net.wifi.supplicant.STATE_CHANGE"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 140
+    .line 138
     .local v0, intent:Landroid/content/Intent;
     const/high16 v1, 0x3000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 142
+    .line 140
     const-string/jumbo v1, "newState"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 143
+    .line 141
     if-eqz p2, :cond_0
 
-    .line 144
+    .line 142
     const-string/jumbo v1, "supplicantError"
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 148
+    .line 146
     :cond_0
     iget-object v1, p0, Landroid/net/wifi/SupplicantStateTracker;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->sendStickyBroadcast(Landroid/content/Intent;)V
 
-    .line 149
+    .line 147
     return-void
 .end method
 

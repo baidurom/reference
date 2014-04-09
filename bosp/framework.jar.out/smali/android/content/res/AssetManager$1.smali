@@ -25,7 +25,7 @@
     .parameter "x0"
 
     .prologue
-    .line 900
+    .line 805
     iput-object p1, p0, Landroid/content/res/AssetManager$1;->this$0:Landroid/content/res/AssetManager;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -40,12 +40,12 @@
     .parameter "selfChange"
 
     .prologue
-    .line 903
+    .line 808
     iget-object v0, p0, Landroid/content/res/AssetManager$1;->this$0:Landroid/content/res/AssetManager;
 
     #calls: Landroid/content/res/AssetManager;->readChannelPkgsBackgroud()V
-    invoke-static {v0}, Landroid/content/res/AssetManager;->access$200(Landroid/content/res/AssetManager;)V
+    invoke-static {v0}, Landroid/content/res/AssetManager;->access$100(Landroid/content/res/AssetManager;)V
 
-    .line 904
+    .line 809
     return-void
 .end method

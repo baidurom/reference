@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:id="@id/search_expand" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/search" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/baidu_keyguard_search" android:layout_centerHorizontal="true" />
-    <TextView android:textSize="20.0sp" android:textColor="@color/white" android:ellipsize="end" android:gravity="center" android:id="@id/expand_text" android:padding="3.0dip" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:maxLength="20" android:shadowColor="@color/black" android:shadowDy="5.0" android:shadowRadius="5.0" android:layout_centerHorizontal="true" />
-    <TextView android:textSize="20.0sp" android:textColor="@color/white" android:ellipsize="end" android:gravity="center" android:id="@id/hover_text" android:background="#80000000" android:padding="3.0dip" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:maxLength="20" android:shadowColor="@color/black" android:shadowDy="5.0" android:shadowRadius="5.0" />
-</RelativeLayout>

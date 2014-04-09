@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BaiduCameraSettings name="Nexus">    
+    <Camera id="0">        
+        <SettingItem name="flashMode">
+            <BadValues>nullBadValues</BadValues>
+            <Requirement itemName="sceneMode"  equal="true">
+                <Values>auto</Values>
+            </Requirement>
+        </SettingItem>        
+    </Camera>
+</BaiduCameraSettings>

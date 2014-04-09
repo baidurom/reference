@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 925
+    .line 830
     iput-object p1, p0, Landroid/content/res/AssetManager$2;->this$0:Landroid/content/res/AssetManager;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
@@ -38,12 +38,12 @@
     .locals 1
 
     .prologue
-    .line 928
+    .line 833
     iget-object v0, p0, Landroid/content/res/AssetManager$2;->this$0:Landroid/content/res/AssetManager;
 
     #calls: Landroid/content/res/AssetManager;->readChannelPkgs()V
-    invoke-static {v0}, Landroid/content/res/AssetManager;->access$300(Landroid/content/res/AssetManager;)V
+    invoke-static {v0}, Landroid/content/res/AssetManager;->access$200(Landroid/content/res/AssetManager;)V
 
-    .line 929
+    .line 834
     return-void
 .end method

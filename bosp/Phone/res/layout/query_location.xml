@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textAppearance="?android:textAppearanceLarge" android:paddingLeft="6.0dip" android:paddingTop="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/ip_call_self_location_indicator" />
-    <SearchView android:id="@id/searchView1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="9.0dip" android:inputType="text" />
-    <TextView android:textAppearance="?android:textAppearanceLarge" android:textColor="#ff474747" android:gravity="center" android:layout_gravity="center" android:id="@id/empty" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/ip_call_self_location_default_summary" />
-    <ListView android:id="@id/city_list" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="0.0dip" android:cacheColorHint="#00000000" android:layout_weight="1.0" android:drawable="@*android:color/transparent" />
-</LinearLayout>

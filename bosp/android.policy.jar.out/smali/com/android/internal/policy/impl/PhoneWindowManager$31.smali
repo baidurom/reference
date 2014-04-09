@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 4512
+    .line 4448
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$31;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .parameter "accuracy"
 
     .prologue
-    .line 4528
+    .line 4464
     return-void
 .end method
 
@@ -54,16 +54,16 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 4514
+    .line 4450
     const/high16 v0, 0x4090
 
-    .line 4515
+    .line 4451
     .local v0, THRESHOLD:F
     iget-object v2, p1, Landroid/hardware/SensorEvent;->values:[F
 
     aget v1, v2, v5
 
-    .line 4516
+    .line 4452
     .local v1, distance:F
     const-string v2, "WindowManager"
 
@@ -87,20 +87,20 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4517
+    .line 4453
     const/high16 v2, 0x4090
 
     cmpl-float v2, v1, v2
 
     if-lez v2, :cond_0
 
-    .line 4518
+    .line 4454
     iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$31;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     #setter for: Lcom/android/internal/policy/impl/PhoneWindowManager;->mIsInPocket:Z
     invoke-static {v2, v5}, Lcom/android/internal/policy/impl/PhoneWindowManager;->access$502(Lcom/android/internal/policy/impl/PhoneWindowManager;Z)Z
 
-    .line 4519
+    .line 4455
     const-string v2, "WindowManager"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -130,16 +130,16 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4524
+    .line 4460
     :goto_0
     iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$31;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     invoke-static {v2}, Lcom/android/internal/policy/impl/PhoneWindowManager;->access$608(Lcom/android/internal/policy/impl/PhoneWindowManager;)I
 
-    .line 4525
+    .line 4461
     return-void
 
-    .line 4521
+    .line 4457
     :cond_0
     iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$31;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
@@ -148,7 +148,7 @@
     #setter for: Lcom/android/internal/policy/impl/PhoneWindowManager;->mIsInPocket:Z
     invoke-static {v2, v3}, Lcom/android/internal/policy/impl/PhoneWindowManager;->access$502(Lcom/android/internal/policy/impl/PhoneWindowManager;Z)Z
 
-    .line 4522
+    .line 4458
     const-string v2, "WindowManager"
 
     new-instance v3, Ljava/lang/StringBuilder;

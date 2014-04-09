@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 3718
+    .line 3654
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$20;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,7 +40,7 @@
     .parameter "intent"
 
     .prologue
-    .line 3720
+    .line 3656
     const-string v0, "yi.intent.action.box.RUN"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -53,7 +53,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 3721
+    .line 3657
     iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$20;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     const/4 v1, 0x1
@@ -61,12 +61,12 @@
     #setter for: Lcom/android/internal/policy/impl/PhoneWindowManager;->mBoxRunning:Z
     invoke-static {v0, v1}, Lcom/android/internal/policy/impl/PhoneWindowManager;->access$302(Lcom/android/internal/policy/impl/PhoneWindowManager;Z)Z
 
-    .line 3725
+    .line 3661
     :cond_0
     :goto_0
     return-void
 
-    .line 3722
+    .line 3658
     :cond_1
     const-string v0, "yi.intent.action.box.EXIT"
 
@@ -80,7 +80,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 3723
+    .line 3659
     iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$20;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     const/4 v1, 0x0

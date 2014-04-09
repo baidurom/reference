@@ -47,12 +47,12 @@
     .parameter "args"
 
     .prologue
-    .line 138
+    .line 131
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfoProxy;->mPhoneSubInfo:Lcom/android/internal/telephony/PhoneSubInfo;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/android/internal/telephony/PhoneSubInfo;->dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
 
-    .line 139
+    .line 132
     return-void
 .end method
 
@@ -92,20 +92,6 @@
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfoProxy;->mPhoneSubInfo:Lcom/android/internal/telephony/PhoneSubInfo;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/PhoneSubInfo;->getDeviceSvn()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getIccCardType()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 134
-    iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfoProxy;->mPhoneSubInfo:Lcom/android/internal/telephony/PhoneSubInfo;
-
-    invoke-virtual {v0}, Lcom/android/internal/telephony/PhoneSubInfo;->getIccCardType()Ljava/lang/String;
 
     move-result-object v0
 

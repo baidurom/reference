@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 3730
+    .line 3666
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$21;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,12 +40,12 @@
     .parameter "intent"
 
     .prologue
-    .line 3732
+    .line 3668
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 3733
+    .line 3669
     .local v0, action:Ljava/lang/String;
     const-string v2, "WindowManager"
 
@@ -69,14 +69,14 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3735
+    .line 3671
     iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$21;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     iget-object v3, v2, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyDispatchLock:Ljava/lang/Object;
 
     monitor-enter v3
 
-    .line 3736
+    .line 3672
     :try_start_0
     const-string v2, "android.intent.action.ACTION_QUICKBOOT_SHUTDOWN"
 
@@ -86,14 +86,14 @@
 
     if-eqz v2, :cond_1
 
-    .line 3737
+    .line 3673
     iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$21;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     const/4 v4, 0x1
 
     iput-boolean v4, v2, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyDispatchDisable:Z
 
-    .line 3738
+    .line 3674
     iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$21;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -108,21 +108,21 @@
 
     iput-boolean v4, v2, Lcom/android/internal/policy/impl/PhoneWindowManager;->mQbTwicePowerOn:Z
 
-    .line 3740
+    .line 3676
     iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$21;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     iget-object v2, v2, Lcom/android/internal/policy/impl/PhoneWindowManager;->mQuickBoot:Lcom/baidu/service/IQuickBootService;
 
     if-nez v2, :cond_0
 
-    .line 3741
+    .line 3677
     const-string v2, "QuickBootService"
 
     invoke-static {v2}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v1
 
-    .line 3742
+    .line 3678
     .local v1, b:Landroid/os/IBinder;
     iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$21;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
@@ -132,7 +132,7 @@
 
     iput-object v4, v2, Lcom/android/internal/policy/impl/PhoneWindowManager;->mQuickBoot:Lcom/baidu/service/IQuickBootService;
 
-    .line 3751
+    .line 3687
     .end local v1           #b:Landroid/os/IBinder;
     :cond_0
     :goto_0
@@ -140,7 +140,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 3753
+    .line 3689
     const-string v2, "WindowManager"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -167,10 +167,10 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3754
+    .line 3690
     return-void
 
-    .line 3744
+    .line 3680
     :cond_1
     :try_start_1
     const-string v2, "android.intent.action.ACTION_QUICKBOOT_BOOT_COMPLETE"
@@ -181,21 +181,21 @@
 
     if-eqz v2, :cond_2
 
-    .line 3745
+    .line 3681
     iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$21;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     const/4 v4, 0x0
 
     iput-boolean v4, v2, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyDispatchDisable:Z
 
-    .line 3746
+    .line 3682
     iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$21;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     const/4 v4, 0x0
 
     iput-object v4, v2, Lcom/android/internal/policy/impl/PhoneWindowManager;->mQuickBoot:Lcom/baidu/service/IQuickBootService;
 
-    .line 3747
+    .line 3683
     iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$21;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     const/4 v4, 0x0
@@ -205,7 +205,7 @@
 
     goto :goto_0
 
-    .line 3751
+    .line 3687
     :catchall_0
     move-exception v2
 
@@ -215,7 +215,7 @@
 
     throw v2
 
-    .line 3749
+    .line 3685
     :cond_2
     :try_start_2
     const-string v2, "WindowManager"

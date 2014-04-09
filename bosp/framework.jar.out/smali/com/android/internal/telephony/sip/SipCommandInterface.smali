@@ -944,17 +944,6 @@
     return-void
 .end method
 
-.method public setOnCatSendSmsResult(Landroid/os/Handler;ILjava/lang/Object;)V
-    .locals 0
-    .parameter "h"
-    .parameter "what"
-    .parameter "obj"
-
-    .prologue
-    .line 418
-    return-void
-.end method
-
 .method public setOnNITZTime(Landroid/os/Handler;ILjava/lang/Object;)V
     .locals 0
     .parameter "h"
@@ -1174,15 +1163,6 @@
 
     .prologue
     .line 104
-    return-void
-.end method
-
-.method public unSetOnCatSendSmsResult(Landroid/os/Handler;)V
-    .locals 0
-    .parameter "h"
-
-    .prologue
-    .line 422
     return-void
 .end method
 

@@ -26,7 +26,7 @@
     .parameter "x1"
 
     .prologue
-    .line 198
+    .line 202
     iput-object p1, p0, Lcom/android/internal/policy/impl/GlobalActions$3;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     invoke-direct {p0, p2, p3}, Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;-><init>(II)V
@@ -40,7 +40,7 @@
     .locals 3
 
     .prologue
-    .line 201
+    .line 205
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$3;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mContext:Landroid/content/Context;
@@ -54,7 +54,7 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/internal/app/ShutdownThread;->reboot(Landroid/content/Context;Ljava/lang/String;Z)V
 
-    .line 202
+    .line 206
     return-void
 .end method
 
@@ -62,7 +62,7 @@
     .locals 1
 
     .prologue
-    .line 207
+    .line 211
     const/4 v0, 0x1
 
     return v0
@@ -72,7 +72,7 @@
     .locals 1
 
     .prologue
-    .line 204
+    .line 208
     const/4 v0, 0x1
 
     return v0

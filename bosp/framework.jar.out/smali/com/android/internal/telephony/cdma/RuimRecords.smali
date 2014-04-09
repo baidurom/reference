@@ -110,12 +110,12 @@
     .locals 3
 
     .prologue
-    .line 362
+    .line 361
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsRequested:Z
 
-    .line 364
+    .line 363
     const-string v0, "CDMA"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -140,7 +140,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 366
+    .line 365
     iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v0, v0, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
@@ -153,14 +153,14 @@
 
     invoke-interface {v0, v1}, Lcom/android/internal/telephony/CommandsInterface;->getIMSI(Landroid/os/Message;)V
 
-    .line 367
+    .line 366
     iget v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
-    .line 369
+    .line 368
     iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/PhoneBase;->getIccFileHandler()Lcom/android/internal/telephony/IccFileHandler;
@@ -177,14 +177,14 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/internal/telephony/IccFileHandler;->loadEFTransparent(ILandroid/os/Message;)V
 
-    .line 371
+    .line 370
     iget v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
-    .line 374
+    .line 373
     return-void
 .end method
 
@@ -195,91 +195,81 @@
     .prologue
     const/4 v2, 0x0
 
-    const/4 v1, 0x0
-
-    .line 408
+    .line 407
     if-eqz p1, :cond_0
 
     array-length v0, p1
 
     if-nez v0, :cond_1
 
-    .line 409
+    .line 408
     :cond_0
     const-string v0, "handleRuimRefresh without input"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cdma/RuimRecords;->log(Ljava/lang/String;)V
 
-    .line 442
+    .line 439
     :goto_0
     return-void
 
-    .line 413
+    .line 412
     :cond_1
-    aget v0, p1, v1
+    aget v0, p1, v2
 
     packed-switch v0, :pswitch_data_0
 
-    .line 437
+    .line 436
     const-string v0, "handleRuimRefresh with unknown operation"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cdma/RuimRecords;->log(Ljava/lang/String;)V
 
-    .line 440
-    :goto_1
-    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
-
-    iget-object v0, v0, Lcom/android/internal/telephony/PhoneBase;->mIccCard:Lcom/android/internal/telephony/IccCard;
-
-    const-string/jumbo v1, "sim_refresh"
-
-    invoke-virtual {v0, v1, v2}, Lcom/android/internal/telephony/IccCard;->broadcastIccStateChangedIntent(Ljava/lang/String;Ljava/lang/String;)V
-
     goto :goto_0
 
-    .line 415
+    .line 414
     :pswitch_0
     const-string v0, "handleRuimRefresh with SIM_REFRESH_FILE_UPDATED"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cdma/RuimRecords;->log(Ljava/lang/String;)V
 
-    .line 416
+    .line 415
     iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->adnCache:Lcom/android/internal/telephony/AdnRecordCache;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/AdnRecordCache;->reset()V
 
-    .line 417
+    .line 416
     invoke-direct {p0}, Lcom/android/internal/telephony/cdma/RuimRecords;->fetchRuimRecords()V
 
-    goto :goto_1
+    goto :goto_0
 
-    .line 420
+    .line 419
     :pswitch_1
     const-string v0, "handleRuimRefresh with SIM_REFRESH_INIT"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cdma/RuimRecords;->log(Ljava/lang/String;)V
 
-    .line 422
+    .line 421
     invoke-direct {p0}, Lcom/android/internal/telephony/cdma/RuimRecords;->fetchRuimRecords()V
 
-    goto :goto_1
+    goto :goto_0
 
-    .line 425
+    .line 424
     :pswitch_2
     const-string v0, "handleRuimRefresh with SIM_REFRESH_RESET"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cdma/RuimRecords;->log(Ljava/lang/String;)V
 
-    .line 426
+    .line 425
     iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v0, v0, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
-    invoke-interface {v0, v1, v2}, Lcom/android/internal/telephony/CommandsInterface;->setRadioPower(ZLandroid/os/Message;)V
+    const/4 v1, 0x0
 
-    goto :goto_1
+    invoke-interface {v0, v2, v1}, Lcom/android/internal/telephony/CommandsInterface;->setRadioPower(ZLandroid/os/Message;)V
 
-    .line 413
+    goto :goto_0
+
+    .line 412
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -292,7 +282,7 @@
     .locals 3
 
     .prologue
-    .line 351
+    .line 350
     iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v0, v0, Lcom/android/internal/telephony/PhoneBase;->mIccCard:Lcom/android/internal/telephony/IccCard;
@@ -303,10 +293,10 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/internal/telephony/IccCard;->broadcastIccStateChangedIntent(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 354
+    .line 353
     invoke-direct {p0}, Lcom/android/internal/telephony/cdma/RuimRecords;->fetchRuimRecords()V
 
-    .line 356
+    .line 355
     iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v0, v0, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
@@ -319,7 +309,7 @@
 
     invoke-interface {v0, v1}, Lcom/android/internal/telephony/CommandsInterface;->getCDMASubscription(Landroid/os/Message;)V
 
-    .line 358
+    .line 357
     return-void
 .end method
 
@@ -373,7 +363,7 @@
     .locals 1
 
     .prologue
-    .line 140
+    .line 139
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mMin2Min1:Ljava/lang/String;
 
     return-object v0
@@ -384,7 +374,7 @@
     .parameter "plmn"
 
     .prologue
-    .line 384
+    .line 383
     const/4 v0, 0x0
 
     return v0
@@ -394,7 +384,7 @@
     .locals 1
 
     .prologue
-    .line 136
+    .line 135
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mMyMobileNumber:Ljava/lang/String;
 
     return-object v0
@@ -404,7 +394,7 @@
     .locals 1
 
     .prologue
-    .line 145
+    .line 144
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mPrlVersion:Ljava/lang/String;
 
     return-object v0
@@ -416,19 +406,19 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 177
+    .line 176
     iget-object v1, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mImsi:Ljava/lang/String;
 
     if-nez v1, :cond_0
 
-    .line 178
+    .line 177
     const/4 v1, 0x0
 
-    .line 191
+    .line 190
     :goto_0
     return-object v1
 
-    .line 181
+    .line 180
     :cond_0
     iget v1, p0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
 
@@ -440,7 +430,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 184
+    .line 183
     iget-object v1, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mImsi:Ljava/lang/String;
 
     iget v2, p0, Lcom/android/internal/telephony/IccRecords;->mncLength:I
@@ -453,7 +443,7 @@
 
     goto :goto_0
 
-    .line 190
+    .line 189
     :cond_1
     iget-object v1, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mImsi:Ljava/lang/String;
 
@@ -467,7 +457,7 @@
 
     move-result v0
 
-    .line 191
+    .line 190
     .local v0, mcc:I
     iget-object v1, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mImsi:Ljava/lang/String;
 
@@ -491,10 +481,10 @@
     .prologue
     const/4 v12, 0x6
 
-    .line 200
+    .line 199
     const/4 v4, 0x0
 
-    .line 202
+    .line 201
     .local v4, isRecordLoadResponse:Z
     :try_start_0
     iget v7, p1, Landroid/os/Message;->what:I
@@ -504,21 +494,21 @@
 
     packed-switch v7, :pswitch_data_0
 
-    .line 307
+    .line 306
     :cond_0
     :goto_0
     :pswitch_0
     if-eqz v4, :cond_1
 
-    .line 308
+    .line 307
     :goto_1
     invoke-virtual {p0}, Lcom/android/internal/telephony/cdma/RuimRecords;->onRecordLoaded()V
 
-    .line 311
+    .line 310
     :cond_1
     return-void
 
-    .line 204
+    .line 203
     :pswitch_1
     :try_start_1
     invoke-direct {p0}, Lcom/android/internal/telephony/cdma/RuimRecords;->onRuimReady()V
@@ -528,11 +518,11 @@
 
     goto :goto_0
 
-    .line 302
+    .line 301
     :catch_0
     move-exception v3
 
-    .line 304
+    .line 303
     .local v3, exc:Ljava/lang/RuntimeException;
     :try_start_2
     const-string v7, "CDMA"
@@ -543,12 +533,12 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 307
+    .line 306
     if-eqz v4, :cond_1
 
     goto :goto_1
 
-    .line 208
+    .line 207
     .end local v3           #exc:Ljava/lang/RuntimeException;
     :pswitch_2
     :try_start_3
@@ -559,20 +549,20 @@
 
     goto :goto_0
 
-    .line 307
+    .line 306
     :catchall_0
     move-exception v7
 
     if-eqz v4, :cond_2
 
-    .line 308
+    .line 307
     invoke-virtual {p0}, Lcom/android/internal/telephony/cdma/RuimRecords;->onRecordLoaded()V
 
-    .line 307
+    .line 306
     :cond_2
     throw v7
 
-    .line 212
+    .line 211
     :pswitch_3
     :try_start_4
     const-string v7, "CDMA"
@@ -583,22 +573,22 @@
 
     goto :goto_0
 
-    .line 217
+    .line 216
     :pswitch_4
     const/4 v4, 0x1
 
-    .line 219
+    .line 218
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v1, Landroid/os/AsyncResult;
 
-    .line 220
+    .line 219
     .local v1, ar:Landroid/os/AsyncResult;
     iget-object v7, v1, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
     if-eqz v7, :cond_3
 
-    .line 221
+    .line 220
     const-string v7, "CDMA"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -625,7 +615,7 @@
 
     goto :goto_0
 
-    .line 225
+    .line 224
     :cond_3
     iget-object v7, v1, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
 
@@ -633,7 +623,7 @@
 
     iput-object v7, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mImsi:Ljava/lang/String;
 
-    .line 229
+    .line 228
     iget-object v7, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mImsi:Ljava/lang/String;
 
     if-eqz v7, :cond_5
@@ -656,7 +646,7 @@
 
     if-le v7, v8, :cond_5
 
-    .line 230
+    .line 229
     :cond_4
     const-string v7, "CDMA"
 
@@ -682,12 +672,12 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 231
+    .line 230
     const/4 v7, 0x0
 
     iput-object v7, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mImsi:Ljava/lang/String;
 
-    .line 234
+    .line 233
     :cond_5
     const-string v7, "CDMA"
 
@@ -727,30 +717,30 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 236
+    .line 235
     invoke-virtual {p0}, Lcom/android/internal/telephony/cdma/RuimRecords;->getRUIMOperatorNumeric()Ljava/lang/String;
 
     move-result-object v6
 
-    .line 237
+    .line 236
     .local v6, operatorNumeric:Ljava/lang/String;
     if-eqz v6, :cond_0
 
-    .line 238
+    .line 237
     invoke-virtual {v6}, Ljava/lang/String;->length()I
 
     move-result v7
 
     if-gt v7, v12, :cond_0
 
-    .line 239
+    .line 238
     iget-object v7, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-static {v7, v6}, Lcom/android/internal/telephony/MccTable;->updateMccMncConfiguration(Lcom/android/internal/telephony/PhoneBase;Ljava/lang/String;)V
 
     goto/16 :goto_0
 
-    .line 245
+    .line 244
     .end local v1           #ar:Landroid/os/AsyncResult;
     .end local v6           #operatorNumeric:Ljava/lang/String;
     :pswitch_5
@@ -758,7 +748,7 @@
 
     check-cast v1, Landroid/os/AsyncResult;
 
-    .line 246
+    .line 245
     .restart local v1       #ar:Landroid/os/AsyncResult;
     iget-object v7, v1, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
 
@@ -770,34 +760,34 @@
 
     move-object v5, v0
 
-    .line 247
+    .line 246
     .local v5, localTemp:[Ljava/lang/String;
     iget-object v7, v1, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
     if-nez v7, :cond_0
 
-    .line 251
+    .line 250
     const/4 v7, 0x0
 
     aget-object v7, v5, v7
 
     iput-object v7, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mMyMobileNumber:Ljava/lang/String;
 
-    .line 252
+    .line 251
     const/4 v7, 0x3
 
     aget-object v7, v5, v7
 
     iput-object v7, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mMin2Min1:Ljava/lang/String;
 
-    .line 253
+    .line 252
     const/4 v7, 0x4
 
     aget-object v7, v5, v7
 
     iput-object v7, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mPrlVersion:Ljava/lang/String;
 
-    .line 255
+    .line 254
     const-string v7, "CDMA"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -836,18 +826,18 @@
 
     goto/16 :goto_0
 
-    .line 260
+    .line 259
     .end local v1           #ar:Landroid/os/AsyncResult;
     .end local v5           #localTemp:[Ljava/lang/String;
     :pswitch_6
     const/4 v4, 0x1
 
-    .line 262
+    .line 261
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v1, Landroid/os/AsyncResult;
 
-    .line 263
+    .line 262
     .restart local v1       #ar:Landroid/os/AsyncResult;
     iget-object v7, v1, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
 
@@ -859,13 +849,13 @@
 
     move-object v2, v0
 
-    .line 265
+    .line 264
     .local v2, data:[B
     iget-object v7, v1, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
     if-nez v7, :cond_0
 
-    .line 269
+    .line 268
     const/4 v7, 0x0
 
     array-length v8, v2
@@ -876,7 +866,7 @@
 
     iput-object v7, p0, Lcom/android/internal/telephony/IccRecords;->iccid:Ljava/lang/String;
 
-    .line 271
+    .line 270
     const-string v7, "CDMA"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -903,7 +893,7 @@
 
     goto/16 :goto_0
 
-    .line 276
+    .line 275
     .end local v1           #ar:Landroid/os/AsyncResult;
     .end local v2           #data:[B
     :pswitch_7
@@ -911,13 +901,13 @@
 
     check-cast v1, Landroid/os/AsyncResult;
 
-    .line 277
+    .line 276
     .restart local v1       #ar:Landroid/os/AsyncResult;
     iget-object v7, v1, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
     if-eqz v7, :cond_0
 
-    .line 278
+    .line 277
     const-string v7, "CDMA"
 
     const-string v8, "RuimRecords update failed"
@@ -928,7 +918,7 @@
 
     goto/16 :goto_0
 
-    .line 286
+    .line 285
     .end local v1           #ar:Landroid/os/AsyncResult;
     :pswitch_8
     const-string v7, "CDMA"
@@ -957,7 +947,7 @@
 
     goto/16 :goto_0
 
-    .line 291
+    .line 290
     :pswitch_9
     const-string v7, "CDMA"
 
@@ -967,22 +957,22 @@
 
     goto/16 :goto_0
 
-    .line 295
+    .line 294
     :pswitch_a
     const/4 v4, 0x0
 
-    .line 296
+    .line 295
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v1, Landroid/os/AsyncResult;
 
-    .line 297
+    .line 296
     .restart local v1       #ar:Landroid/os/AsyncResult;
     iget-object v7, v1, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
     if-nez v7, :cond_0
 
-    .line 298
+    .line 297
     iget-object v7, v1, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
 
     check-cast v7, [I
@@ -996,7 +986,7 @@
 
     goto/16 :goto_0
 
-    .line 202
+    .line 201
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_1
@@ -1038,7 +1028,7 @@
     .parameter "s"
 
     .prologue
-    .line 446
+    .line 443
     const-string v0, "CDMA"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1061,7 +1051,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 447
+    .line 444
     return-void
 .end method
 
@@ -1070,7 +1060,7 @@
     .parameter "s"
 
     .prologue
-    .line 451
+    .line 448
     const-string v0, "CDMA"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1093,7 +1083,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 452
+    .line 449
     return-void
 .end method
 
@@ -1103,30 +1093,30 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 329
+    .line 328
     const-string v1, "CDMA"
 
     const-string v2, "RuimRecords: record load complete"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 333
+    .line 332
     invoke-virtual {p0}, Lcom/android/internal/telephony/cdma/RuimRecords;->getRUIMOperatorNumeric()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 334
+    .line 333
     .local v0, operator:Ljava/lang/String;
     const-string v1, "gsm.sim.operator.numeric"
 
     invoke-static {v1, v0}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 336
+    .line 335
     iget-object v1, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mImsi:Ljava/lang/String;
 
     if-eqz v1, :cond_0
 
-    .line 337
+    .line 336
     const-string v1, "gsm.sim.operator.iso-country"
 
     iget-object v2, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mImsi:Ljava/lang/String;
@@ -1149,7 +1139,7 @@
 
     invoke-static {v1, v2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 340
+    .line 339
     :cond_0
     iget-object v1, p0, Lcom/android/internal/telephony/IccRecords;->recordsLoadedRegistrants:Landroid/os/RegistrantList;
 
@@ -1159,7 +1149,7 @@
 
     invoke-virtual {v1, v2}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
 
-    .line 342
+    .line 341
     iget-object v1, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v1, v1, Lcom/android/internal/telephony/PhoneBase;->mIccCard:Lcom/android/internal/telephony/IccCard;
@@ -1168,7 +1158,7 @@
 
     invoke-virtual {v1, v2, v5}, Lcom/android/internal/telephony/IccCard;->broadcastIccStateChangedIntent(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 344
+    .line 343
     return-void
 .end method
 
@@ -1191,10 +1181,15 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/IccRecords;->iccid:Ljava/lang/String;
 
-    .line 132
+    .line 120
+    iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->adnCache:Lcom/android/internal/telephony/AdnRecordCache;
+
+    invoke-virtual {v0}, Lcom/android/internal/telephony/AdnRecordCache;->reset()V
+
+    .line 131
     iput-boolean v1, p0, Lcom/android/internal/telephony/IccRecords;->recordsRequested:Z
 
-    .line 133
+    .line 132
     return-void
 .end method
 
@@ -1202,14 +1197,14 @@
     .locals 2
 
     .prologue
-    .line 317
+    .line 316
     iget v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     add-int/lit8 v0, v0, -0x1
 
     iput v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
-    .line 319
+    .line 318
     iget v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     if-nez v0, :cond_1
@@ -1220,28 +1215,28 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 320
+    .line 319
     invoke-virtual {p0}, Lcom/android/internal/telephony/cdma/RuimRecords;->onAllRecordsLoaded()V
 
-    .line 325
+    .line 324
     :cond_0
     :goto_0
     return-void
 
-    .line 321
+    .line 320
     :cond_1
     iget v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
 
     if-gez v0, :cond_0
 
-    .line 322
+    .line 321
     const-string v0, "CDMA"
 
     const-string v1, "RuimRecords: recordsToLoad <0, programmer error suspected"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 323
+    .line 322
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/telephony/IccRecords;->recordsToLoad:I
@@ -1255,13 +1250,13 @@
     .parameter "fileList"
 
     .prologue
-    .line 164
+    .line 163
     if-eqz p1, :cond_0
 
-    .line 168
+    .line 167
     invoke-direct {p0}, Lcom/android/internal/telephony/cdma/RuimRecords;->fetchRuimRecords()V
 
-    .line 170
+    .line 169
     :cond_0
     return-void
 .end method
@@ -1273,7 +1268,7 @@
     .parameter "onComplete"
 
     .prologue
-    .line 151
+    .line 150
     invoke-static {p3}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;)Landroid/os/AsyncResult;
 
     move-result-object v0
@@ -1286,17 +1281,17 @@
 
     iput-object v1, v0, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
-    .line 153
+    .line 152
     invoke-virtual {p3}, Landroid/os/Message;->sendToTarget()V
 
-    .line 154
+    .line 153
     const-string v0, "CDMA"
 
     const-string/jumbo v1, "method setVoiceMailNumber is not implemented"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 155
+    .line 154
     return-void
 .end method
 
@@ -1306,28 +1301,28 @@
     .parameter "countWaiting"
 
     .prologue
-    .line 389
+    .line 388
     const/4 v0, 0x1
 
     if-eq p1, v0, :cond_0
 
-    .line 405
+    .line 404
     :goto_0
     return-void
 
-    .line 395
+    .line 394
     :cond_0
     if-gez p2, :cond_2
 
-    .line 396
+    .line 395
     const/4 p2, -0x1
 
-    .line 402
+    .line 401
     :cond_1
     :goto_1
     iput p2, p0, Lcom/android/internal/telephony/IccRecords;->countVoiceMessages:I
 
-    .line 404
+    .line 403
     iget-object v0, p0, Lcom/android/internal/telephony/IccRecords;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     check-cast v0, Lcom/android/internal/telephony/cdma/CDMAPhone;
@@ -1336,13 +1331,13 @@
 
     goto :goto_0
 
-    .line 397
+    .line 396
     :cond_2
     const/16 v0, 0xff
 
     if-le p2, v0, :cond_1
 
-    .line 400
+    .line 399
     const/16 p2, 0xff
 
     goto :goto_1

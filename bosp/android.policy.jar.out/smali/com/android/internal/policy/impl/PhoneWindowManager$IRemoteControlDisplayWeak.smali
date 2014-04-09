@@ -33,17 +33,17 @@
     .parameter "handler"
 
     .prologue
-    .line 4560
+    .line 4496
     invoke-direct {p0}, Landroid/media/IRemoteControlDisplay$Stub;-><init>()V
 
-    .line 4561
+    .line 4497
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$IRemoteControlDisplayWeak;->mLocalHandler:Ljava/lang/ref/WeakReference;
 
-    .line 4562
+    .line 4498
     return-void
 .end method
 
@@ -56,7 +56,7 @@
     .parameter "bitmap"
 
     .prologue
-    .line 4577
+    .line 4513
     return-void
 .end method
 
@@ -66,7 +66,7 @@
     .parameter "bitmap"
 
     .prologue
-    .line 4574
+    .line 4510
     return-void
 .end method
 
@@ -82,7 +82,7 @@
     .end annotation
 
     .prologue
-    .line 4581
+    .line 4517
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$IRemoteControlDisplayWeak;->mLocalHandler:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -91,11 +91,11 @@
 
     check-cast v0, Landroid/os/Handler;
 
-    .line 4582
+    .line 4518
     .local v0, handler:Landroid/os/Handler;
     if-eqz v0, :cond_0
 
-    .line 4583
+    .line 4519
     const/16 v2, 0x3e9
 
     if-eqz p3, :cond_1
@@ -109,11 +109,11 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 4586
+    .line 4522
     :cond_0
     return-void
 
-    .line 4583
+    .line 4519
     :cond_1
     const/4 v1, 0x0
 
@@ -126,7 +126,7 @@
     .parameter "metadata"
 
     .prologue
-    .line 4568
+    .line 4504
     return-void
 .end method
 
@@ -137,7 +137,7 @@
     .parameter "stateChangeTimeMs"
 
     .prologue
-    .line 4565
+    .line 4501
     return-void
 .end method
 
@@ -147,6 +147,6 @@
     .parameter "flags"
 
     .prologue
-    .line 4571
+    .line 4507
     return-void
 .end method

@@ -9,7 +9,7 @@
     <bool name="config_sf_limitedAlpha">false</bool>
     <bool name="ImsConnectedDefaultValue">false</bool>
     <bool name="config_sf_slowBlur">true</bool>
-    <bool name="config_ui_enableFadingMarquee">false</bool>
+    <bool name="config_ui_enableFadingMarquee">true</bool>
     <bool name="config_closeDialogWhenTouchOutside">true</bool>
     <bool name="config_wifi_dual_band_support">false</bool>
     <bool name="config_wifi_p2p_support">false</bool>
@@ -51,7 +51,7 @@
     <bool name="config_allowActionMenuItemTextWithIcon">false</bool>
     <bool name="config_wimaxEnabled">false</bool>
     <bool name="lockscreen_isPortrait">true</bool>
-    <bool name="config_wakeup_by_volume_key">true</bool>
+    <bool name="config_wakeup_by_volume_key">false</bool>
     <bool name="config_pbap_support">true</bool>
     <bool name="config_global_action_reboot">false</bool>
     <bool name="config_quickbootSupport">true</bool>

@@ -976,9 +976,9 @@
     if-eqz v0, :cond_1
 
     .line 244
-    iget-object v1, v0, Lcom/android/internal/telephony/SmsMessageBase$PduBase;->encodedScAddress:[B
+    iget-object v1, v0, Lcom/android/internal/telephony/SmsMessageBase$SubmitPduBase;->encodedScAddress:[B
 
-    iget-object v2, v0, Lcom/android/internal/telephony/SmsMessageBase$PduBase;->encodedMessage:[B
+    iget-object v2, v0, Lcom/android/internal/telephony/SmsMessageBase$SubmitPduBase;->encodedMessage:[B
 
     invoke-virtual {p0, v1, v2, p5, p6}, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher;->sendRawPdu([B[BLandroid/app/PendingIntent;Landroid/app/PendingIntent;)V
 
@@ -1048,9 +1048,9 @@
     if-eqz v10, :cond_1
 
     .line 279
-    iget-object v2, v10, Lcom/android/internal/telephony/SmsMessageBase$PduBase;->encodedScAddress:[B
+    iget-object v2, v10, Lcom/android/internal/telephony/SmsMessageBase$SubmitPduBase;->encodedScAddress:[B
 
-    iget-object v3, v10, Lcom/android/internal/telephony/SmsMessageBase$PduBase;->encodedMessage:[B
+    iget-object v3, v10, Lcom/android/internal/telephony/SmsMessageBase$SubmitPduBase;->encodedMessage:[B
 
     move-object/from16 v0, p6
 
@@ -1167,9 +1167,9 @@
     if-eqz v0, :cond_1
 
     .line 257
-    iget-object v1, v0, Lcom/android/internal/telephony/SmsMessageBase$PduBase;->encodedScAddress:[B
+    iget-object v1, v0, Lcom/android/internal/telephony/SmsMessageBase$SubmitPduBase;->encodedScAddress:[B
 
-    iget-object v2, v0, Lcom/android/internal/telephony/SmsMessageBase$PduBase;->encodedMessage:[B
+    iget-object v2, v0, Lcom/android/internal/telephony/SmsMessageBase$SubmitPduBase;->encodedMessage:[B
 
     invoke-virtual {p0, v1, v2, p4, p5}, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher;->sendRawPdu([B[BLandroid/app/PendingIntent;Landroid/app/PendingIntent;)V
 

@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 2974
+    .line 2973
     iput-object p1, p0, Lcom/android/server/PowerManagerService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -38,7 +38,7 @@
     .parameter "x1"
 
     .prologue
-    .line 2974
+    .line 2973
     invoke-direct {p0, p1}, Lcom/android/server/PowerManagerService$QuickbootBroadcastReceiver;-><init>(Lcom/android/server/PowerManagerService;)V
 
     return-void
@@ -52,12 +52,12 @@
     .parameter "intent"
 
     .prologue
-    .line 2977
+    .line 2976
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 2978
+    .line 2977
     .local v0, action:Ljava/lang/String;
     iget-object v1, p0, Lcom/android/server/PowerManagerService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
@@ -68,7 +68,7 @@
 
     monitor-enter v2
 
-    .line 2979
+    .line 2978
     :try_start_0
     const-string v1, "android.intent.action.ACTION_QUICKBOOT_SHUTDOWN"
 
@@ -82,7 +82,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 2980
+    .line 2979
     iget-object v1, p0, Lcom/android/server/PowerManagerService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     iget-object v3, p0, Lcom/android/server/PowerManagerService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/PowerManagerService;
@@ -91,14 +91,14 @@
 
     iput-boolean v3, v1, Lcom/android/server/PowerManagerService;->mAnimateScreenLightsOrigin:Z
 
-    .line 2981
+    .line 2980
     iget-object v1, p0, Lcom/android/server/PowerManagerService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     const/4 v3, 0x1
 
     iput-boolean v3, v1, Lcom/android/server/PowerManagerService;->mAnimateScreenLights:Z
 
-    .line 2982
+    .line 2981
     iget-object v1, p0, Lcom/android/server/PowerManagerService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     const/4 v3, 0x1
@@ -106,15 +106,15 @@
     #setter for: Lcom/android/server/PowerManagerService;->mIsQbShutdown:Z
     invoke-static {v1, v3}, Lcom/android/server/PowerManagerService;->access$6102(Lcom/android/server/PowerManagerService;Z)Z
 
-    .line 2999
+    .line 2998
     :cond_0
     :goto_0
     monitor-exit v2
 
-    .line 3000
+    .line 2999
     return-void
 
-    .line 2983
+    .line 2982
     :cond_1
     const-string v1, "android.intent.action.ACTION_QUICKBOOT_BOOT_COMPLETE"
 
@@ -128,13 +128,13 @@
 
     if-eqz v1, :cond_2
 
-    .line 2984
+    .line 2983
     iget-object v1, p0, Lcom/android/server/PowerManagerService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     #calls: Lcom/android/server/PowerManagerService;->forceUserActivityLocked()V
     invoke-static {v1}, Lcom/android/server/PowerManagerService;->access$1000(Lcom/android/server/PowerManagerService;)V
 
-    .line 2985
+    .line 2984
     iget-object v1, p0, Lcom/android/server/PowerManagerService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     iget-object v3, p0, Lcom/android/server/PowerManagerService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/PowerManagerService;
@@ -145,7 +145,7 @@
 
     goto :goto_0
 
-    .line 2999
+    .line 2998
     :catchall_0
     move-exception v1
 
@@ -155,7 +155,7 @@
 
     throw v1
 
-    .line 2986
+    .line 2985
     :cond_2
     :try_start_1
     const-string v1, "android.intent.action.ACTION_QUICKBOOT_BOOT"
@@ -170,7 +170,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 2987
+    .line 2986
     iget-object v1, p0, Lcom/android/server/PowerManagerService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     const/4 v3, 0x0
@@ -178,7 +178,7 @@
     #setter for: Lcom/android/server/PowerManagerService;->mIsQbShutdown:Z
     invoke-static {v1, v3}, Lcom/android/server/PowerManagerService;->access$6102(Lcom/android/server/PowerManagerService;Z)Z
 
-    .line 2988
+    .line 2987
     iget-object v1, p0, Lcom/android/server/PowerManagerService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     #calls: Lcom/android/server/PowerManagerService;->forceUserActivityLocked()V
@@ -186,7 +186,7 @@
 
     goto :goto_0
 
-    .line 2989
+    .line 2988
     :cond_3
     const-string v1, "android.intent.action.ACTION_QUICKBOOT_SCREENON"
 
@@ -196,19 +196,19 @@
 
     if-eqz v1, :cond_4
 
-    .line 2990
+    .line 2989
     const-string v1, "PowerManagerService"
 
     const-string v3, "Turn on screen!!"
 
     invoke-static {v1, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2991
+    .line 2990
     const/4 v1, 0x1
 
     invoke-static {v1}, Landroid/os/Power;->setScreenState(Z)I
 
-    .line 2992
+    .line 2991
     iget-object v1, p0, Lcom/android/server/PowerManagerService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     #getter for: Lcom/android/server/PowerManagerService;->mHandler:Landroid/os/Handler;
@@ -229,7 +229,7 @@
 
     goto :goto_0
 
-    .line 2994
+    .line 2993
     :cond_4
     const-string v1, "android.intent.action.ACTION_QUICKBOOT_SCREENOFF"
 
@@ -239,19 +239,19 @@
 
     if-eqz v1, :cond_0
 
-    .line 2995
+    .line 2994
     const-string v1, "PowerManagerService"
 
     const-string v3, "Turn off screen!!"
 
     invoke-static {v1, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2996
+    .line 2995
     const/4 v1, 0x0
 
     invoke-static {v1}, Landroid/os/Power;->setScreenState(Z)I
 
-    .line 2997
+    .line 2996
     iget-object v1, p0, Lcom/android/server/PowerManagerService$QuickbootBroadcastReceiver;->this$0:Lcom/android/server/PowerManagerService;
 
     #getter for: Lcom/android/server/PowerManagerService;->mScreenBrightness:Lcom/android/server/PowerManagerService$BrightnessState;

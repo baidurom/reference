@@ -4419,12 +4419,12 @@
     .parameter "s"
 
     .prologue
-    .line 3619
+    .line 3607
     const-string v0, "WifiStateMachine"
 
     invoke-static {v0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3620
+    .line 3608
     return-void
 .end method
 
@@ -4433,12 +4433,12 @@
     .parameter "s"
 
     .prologue
-    .line 3623
+    .line 3611
     const-string v0, "WifiStateMachine"
 
     invoke-static {v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3624
+    .line 3612
     return-void
 .end method
 

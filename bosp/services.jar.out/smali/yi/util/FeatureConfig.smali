@@ -4,9 +4,9 @@
 
 
 # static fields
-.field public static final BUILD_LINE:Ljava/lang/String; = "rom-release-46"
+.field public static final BUILD_LINE:Ljava/lang/String; = "baidu-4.0-release-47"
 
-.field public static final BUILD_TYPE:Ljava/lang/String; = "ROM"
+.field public static final BUILD_TYPE:Ljava/lang/String; = "PLATFORM"
 
 .field public static final FEATURE_FULLRECOVERY:Z = true
 

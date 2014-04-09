@@ -28,7 +28,7 @@
     .parameter
 
     .prologue
-    .line 300
+    .line 305
     iput-object p1, p0, Lcom/android/internal/policy/impl/GlobalActions$6$1;->this$1:Lcom/android/internal/policy/impl/GlobalActions$6;
 
     iput-object p3, p0, Lcom/android/internal/policy/impl/GlobalActions$6$1;->val$myConn:Landroid/content/ServiceConnection;
@@ -45,7 +45,7 @@
     .parameter "msg"
 
     .prologue
-    .line 303
+    .line 308
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$6$1;->this$1:Lcom/android/internal/policy/impl/GlobalActions$6;
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/GlobalActions$6;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
@@ -57,7 +57,7 @@
 
     monitor-enter v1
 
-    .line 304
+    .line 309
     :try_start_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$6$1;->this$1:Lcom/android/internal/policy/impl/GlobalActions$6;
 
@@ -72,7 +72,7 @@
 
     if-ne v0, v2, :cond_0
 
-    .line 305
+    .line 310
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$6$1;->this$1:Lcom/android/internal/policy/impl/GlobalActions$6;
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/GlobalActions$6;->val$context:Landroid/content/Context;
@@ -88,7 +88,7 @@
 
     invoke-virtual {v0, v2}, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
 
-    .line 306
+    .line 311
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$6$1;->this$1:Lcom/android/internal/policy/impl/GlobalActions$6;
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/GlobalActions$6;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
@@ -98,7 +98,7 @@
     #setter for: Lcom/android/internal/policy/impl/GlobalActions;->mScreenshotConnection:Landroid/content/ServiceConnection;
     invoke-static {v0, v2}, Lcom/android/internal/policy/impl/GlobalActions;->access$902(Lcom/android/internal/policy/impl/GlobalActions;Landroid/content/ServiceConnection;)Landroid/content/ServiceConnection;
 
-    .line 307
+    .line 312
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$6$1;->this$1:Lcom/android/internal/policy/impl/GlobalActions$6;
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/GlobalActions$6;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
@@ -116,14 +116,14 @@
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 309
+    .line 314
     :cond_0
     monitor-exit v1
 
-    .line 310
+    .line 315
     return-void
 
-    .line 309
+    .line 314
     :catchall_0
     move-exception v0
 

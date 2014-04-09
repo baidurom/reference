@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 276
+    .line 281
     iput-object p1, p0, Lcom/android/internal/policy/impl/GlobalActions$5;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 3
 
     .prologue
-    .line 279
+    .line 284
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$5;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mScreenshotLock:Ljava/lang/Object;
@@ -51,7 +51,7 @@
 
     monitor-enter v1
 
-    .line 280
+    .line 285
     :try_start_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$5;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
@@ -65,13 +65,13 @@
     #calls: Lcom/android/internal/policy/impl/GlobalActions;->takeScreenShot(Landroid/content/Context;)V
     invoke-static {v0, v2}, Lcom/android/internal/policy/impl/GlobalActions;->access$800(Lcom/android/internal/policy/impl/GlobalActions;Landroid/content/Context;)V
 
-    .line 281
+    .line 286
     monitor-exit v1
 
-    .line 282
+    .line 287
     return-void
 
-    .line 281
+    .line 286
     :catchall_0
     move-exception v0
 

@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 567
+    .line 586
     iput-object p1, p0, Lcom/yi/internal/widget/GifImageView$DrawThread;->this$0:Lcom/yi/internal/widget/GifImageView;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
@@ -38,7 +38,7 @@
     .parameter "x1"
 
     .prologue
-    .line 567
+    .line 586
     invoke-direct {p0, p1}, Lcom/yi/internal/widget/GifImageView$DrawThread;-><init>(Lcom/yi/internal/widget/GifImageView;)V
 
     return-void
@@ -50,7 +50,7 @@
     .locals 6
 
     .prologue
-    .line 569
+    .line 588
     iget-object v4, p0, Lcom/yi/internal/widget/GifImageView$DrawThread;->this$0:Lcom/yi/internal/widget/GifImageView;
 
     #getter for: Lcom/yi/internal/widget/GifImageView;->gifDecoder:Lcom/yi/internal/widget/GifDecoder;
@@ -60,11 +60,11 @@
 
     if-nez v4, :cond_1
 
-    .line 607
+    .line 626
     :cond_0
     return-void
 
-    .line 572
+    .line 591
     :cond_1
     iget-object v4, p0, Lcom/yi/internal/widget/GifImageView$DrawThread;->this$0:Lcom/yi/internal/widget/GifImageView;
 
@@ -73,7 +73,7 @@
     #setter for: Lcom/yi/internal/widget/GifImageView;->isRun:Z
     invoke-static {v4, v5}, Lcom/yi/internal/widget/GifImageView;->access$302(Lcom/yi/internal/widget/GifImageView;Z)Z
 
-    .line 573
+    .line 592
     :cond_2
     :goto_0
     iget-object v4, p0, Lcom/yi/internal/widget/GifImageView$DrawThread;->this$0:Lcom/yi/internal/widget/GifImageView;
@@ -85,7 +85,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 574
+    .line 593
     iget-object v4, p0, Lcom/yi/internal/widget/GifImageView$DrawThread;->this$0:Lcom/yi/internal/widget/GifImageView;
 
     #getter for: Lcom/yi/internal/widget/GifImageView;->gifDecoder:Lcom/yi/internal/widget/GifDecoder;
@@ -95,7 +95,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 577
+    .line 596
     iget-object v4, p0, Lcom/yi/internal/widget/GifImageView$DrawThread;->this$0:Lcom/yi/internal/widget/GifImageView;
 
     #getter for: Lcom/yi/internal/widget/GifImageView;->pause:Z
@@ -105,7 +105,7 @@
 
     if-nez v4, :cond_3
 
-    .line 578
+    .line 597
     iget-object v4, p0, Lcom/yi/internal/widget/GifImageView$DrawThread;->this$0:Lcom/yi/internal/widget/GifImageView;
 
     #getter for: Lcom/yi/internal/widget/GifImageView;->gifDecoder:Lcom/yi/internal/widget/GifDecoder;
@@ -117,11 +117,11 @@
 
     move-result-object v0
 
-    .line 579
+    .line 598
     .local v0, frame:Lcom/yi/internal/widget/GifFrame;
     if-eqz v0, :cond_2
 
-    .line 582
+    .line 601
     iget-object v4, p0, Lcom/yi/internal/widget/GifImageView$DrawThread;->this$0:Lcom/yi/internal/widget/GifImageView;
 
     iget-object v5, v0, Lcom/yi/internal/widget/GifFrame;->image:Landroid/graphics/Bitmap;
@@ -129,12 +129,12 @@
     #setter for: Lcom/yi/internal/widget/GifImageView;->currentImage:Landroid/graphics/Bitmap;
     invoke-static {v4, v5}, Lcom/yi/internal/widget/GifImageView;->access$102(Lcom/yi/internal/widget/GifImageView;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
-    .line 583
+    .line 602
     iget v4, v0, Lcom/yi/internal/widget/GifFrame;->delay:I
 
     int-to-long v2, v4
 
-    .line 584
+    .line 603
     .local v2, sp:J
     iget-object v4, p0, Lcom/yi/internal/widget/GifImageView$DrawThread;->this$0:Lcom/yi/internal/widget/GifImageView;
 
@@ -145,7 +145,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 585
+    .line 604
     iget-object v4, p0, Lcom/yi/internal/widget/GifImageView$DrawThread;->this$0:Lcom/yi/internal/widget/GifImageView;
 
     #getter for: Lcom/yi/internal/widget/GifImageView;->redrawHandler:Landroid/os/Handler;
@@ -153,11 +153,13 @@
 
     move-result-object v4
 
-    invoke-virtual {v4}, Landroid/os/Handler;->obtainMessage()Landroid/os/Message;
+    const/16 v5, 0x64
+
+    invoke-virtual {v4, v5}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v1
 
-    .line 586
+    .line 605
     .local v1, msg:Landroid/os/Message;
     iget-object v4, p0, Lcom/yi/internal/widget/GifImageView$DrawThread;->this$0:Lcom/yi/internal/widget/GifImageView;
 
@@ -168,7 +170,7 @@
 
     invoke-virtual {v4, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 590
+    .line 609
     :try_start_0
     invoke-static {v2, v3}, Ljava/lang/Thread;->sleep(J)V
     :try_end_0
@@ -176,13 +178,13 @@
 
     goto :goto_0
 
-    .line 591
+    .line 610
     :catch_0
     move-exception v4
 
     goto :goto_0
 
-    .line 600
+    .line 619
     .end local v0           #frame:Lcom/yi/internal/widget/GifFrame;
     .end local v1           #msg:Landroid/os/Message;
     .end local v2           #sp:J
@@ -196,7 +198,7 @@
 
     goto :goto_0
 
-    .line 601
+    .line 620
     :catch_1
     move-exception v4
 

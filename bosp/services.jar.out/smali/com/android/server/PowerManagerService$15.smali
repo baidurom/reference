@@ -36,7 +36,7 @@
     .parameter
 
     .prologue
-    .line 3067
+    .line 3066
     iput-object p1, p0, Lcom/android/server/PowerManagerService$15;->this$0:Lcom/android/server/PowerManagerService;
 
     iput-boolean p2, p0, Lcom/android/server/PowerManagerService$15;->val$shutdown:Z
@@ -56,16 +56,16 @@
     .locals 3
 
     .prologue
-    .line 3070
+    .line 3069
     monitor-enter p0
 
-    .line 3071
+    .line 3070
     :try_start_0
     iget-boolean v0, p0, Lcom/android/server/PowerManagerService$15;->val$shutdown:Z
 
     if-eqz v0, :cond_0
 
-    .line 3072
+    .line 3071
     iget-object v0, p0, Lcom/android/server/PowerManagerService$15;->this$0:Lcom/android/server/PowerManagerService;
 
     #getter for: Lcom/android/server/PowerManagerService;->mContext:Landroid/content/Context;
@@ -77,14 +77,14 @@
 
     invoke-static {v0, v1}, Lcom/android/internal/app/ShutdownThread;->shutdown(Landroid/content/Context;Z)V
 
-    .line 3076
+    .line 3075
     :goto_0
     monitor-exit p0
 
-    .line 3077
+    .line 3076
     return-void
 
-    .line 3074
+    .line 3073
     :cond_0
     iget-object v0, p0, Lcom/android/server/PowerManagerService$15;->this$0:Lcom/android/server/PowerManagerService;
 
@@ -101,7 +101,7 @@
 
     goto :goto_0
 
-    .line 3076
+    .line 3075
     :catchall_0
     move-exception v0
 
