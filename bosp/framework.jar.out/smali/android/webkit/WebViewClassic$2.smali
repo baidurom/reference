@@ -1,11 +1,14 @@
 .class Landroid/webkit/WebViewClassic$2;
-.super Landroid/os/AsyncTask;
+.super Ljava/lang/Object;
 .source "WebViewClassic.java"
+
+# interfaces
+.implements Landroid/content/DialogInterface$OnDismissListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/webkit/WebViewClassic;->setupPackageListener(Landroid/content/Context;)V
+    value = Landroid/webkit/WebViewClassic;->onSavePassword(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)Z
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -13,192 +16,67 @@
     name = null
 .end annotation
 
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Landroid/os/AsyncTask",
-        "<",
-        "Ljava/lang/Void;",
-        "Ljava/lang/Void;",
-        "Ljava/util/Set",
-        "<",
-        "Ljava/lang/String;",
-        ">;>;"
-    }
-.end annotation
-
 
 # instance fields
 .field final synthetic this$0:Landroid/webkit/WebViewClassic;
 
+.field final synthetic val$resumeMsg:Landroid/os/Message;
+
 
 # direct methods
-.method constructor <init>(Landroid/webkit/WebViewClassic;)V
+.method constructor <init>(Landroid/webkit/WebViewClassic;Landroid/os/Message;)V
     .locals 0
+    .parameter
     .parameter
 
     .prologue
-    .line 1854
+    .line 2145
     iput-object p1, p0, Landroid/webkit/WebViewClassic$2;->this$0:Landroid/webkit/WebViewClassic;
 
-    invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
+    iput-object p2, p0, Landroid/webkit/WebViewClassic$2;->val$resumeMsg:Landroid/os/Message;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 1854
-    check-cast p1, [Ljava/lang/Void;
-
-    .end local p1
-    invoke-virtual {p0, p1}, Landroid/webkit/WebViewClassic$2;->doInBackground([Ljava/lang/Void;)Ljava/util/Set;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method protected varargs doInBackground([Ljava/lang/Void;)Ljava/util/Set;
-    .locals 5
-    .parameter "unused"
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "([",
-            "Ljava/lang/Void;",
-            ")",
-            "Ljava/util/Set",
-            "<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 1858
-    new-instance v1, Ljava/util/HashSet;
-
-    invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
-
-    .line 1859
-    .local v1, installedPackages:Ljava/util/Set;,"Ljava/util/Set<Ljava/lang/String;>;"
-    iget-object v4, p0, Landroid/webkit/WebViewClassic$2;->this$0:Landroid/webkit/WebViewClassic;
-
-    #getter for: Landroid/webkit/WebViewClassic;->mContext:Landroid/content/Context;
-    invoke-static {v4}, Landroid/webkit/WebViewClassic;->access$700(Landroid/webkit/WebViewClassic;)Landroid/content/Context;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v3
-
-    .line 1860
-    .local v3, pm:Landroid/content/pm/PackageManager;
-    invoke-static {}, Landroid/webkit/WebViewClassic;->access$1600()Ljava/util/Set;
-
-    move-result-object v4
-
-    invoke-interface {v4}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    .local v0, i$:Ljava/util/Iterator;
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_0
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/String;
-
-    .line 1862
-    .local v2, name:Ljava/lang/String;
-    const/4 v4, 0x5
-
-    :try_start_0
-    invoke-virtual {v3, v2, v4}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
-
-    .line 1864
-    invoke-interface {v1, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-    :try_end_0
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    .line 1865
-    :catch_0
-    move-exception v4
-
-    goto :goto_0
-
-    .line 1869
-    .end local v2           #name:Ljava/lang/String;
-    :cond_0
-    return-object v1
-.end method
-
-.method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
-    .locals 0
-    .parameter "x0"
-
-    .prologue
-    .line 1854
-    check-cast p1, Ljava/util/Set;
-
-    .end local p1
-    invoke-virtual {p0, p1}, Landroid/webkit/WebViewClassic$2;->onPostExecute(Ljava/util/Set;)V
-
-    return-void
-.end method
-
-.method protected onPostExecute(Ljava/util/Set;)V
+.method public onDismiss(Landroid/content/DialogInterface;)V
     .locals 2
-    .parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/Set",
-            "<",
-            "Ljava/lang/String;",
-            ">;)V"
-        }
-    .end annotation
+    .parameter "dialog"
 
     .prologue
-    .line 1875
-    .local p1, installedPackages:Ljava/util/Set;,"Ljava/util/Set<Ljava/lang/String;>;"
+    const/4 v1, 0x0
+
+    .line 2148
     iget-object v0, p0, Landroid/webkit/WebViewClassic$2;->this$0:Landroid/webkit/WebViewClassic;
 
-    #getter for: Landroid/webkit/WebViewClassic;->mWebViewCore:Landroid/webkit/WebViewCore;
-    invoke-static {v0}, Landroid/webkit/WebViewClassic;->access$1100(Landroid/webkit/WebViewClassic;)Landroid/webkit/WebViewCore;
+    #getter for: Landroid/webkit/WebViewClassic;->mResumeMsg:Landroid/os/Message;
+    invoke-static {v0}, Landroid/webkit/WebViewClassic;->access$1900(Landroid/webkit/WebViewClassic;)Landroid/os/Message;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 1876
+    .line 2149
+    iget-object v0, p0, Landroid/webkit/WebViewClassic$2;->val$resumeMsg:Landroid/os/Message;
+
+    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
+
+    .line 2150
     iget-object v0, p0, Landroid/webkit/WebViewClassic$2;->this$0:Landroid/webkit/WebViewClassic;
 
-    #getter for: Landroid/webkit/WebViewClassic;->mWebViewCore:Landroid/webkit/WebViewCore;
-    invoke-static {v0}, Landroid/webkit/WebViewClassic;->access$1100(Landroid/webkit/WebViewClassic;)Landroid/webkit/WebViewCore;
+    #setter for: Landroid/webkit/WebViewClassic;->mResumeMsg:Landroid/os/Message;
+    invoke-static {v0, v1}, Landroid/webkit/WebViewClassic;->access$1902(Landroid/webkit/WebViewClassic;Landroid/os/Message;)Landroid/os/Message;
 
-    move-result-object v0
-
-    const/16 v1, 0xb8
-
-    invoke-virtual {v0, v1, p1}, Landroid/webkit/WebViewCore;->sendMessage(ILjava/lang/Object;)V
-
-    .line 1878
+    .line 2152
     :cond_0
+    iget-object v0, p0, Landroid/webkit/WebViewClassic$2;->this$0:Landroid/webkit/WebViewClassic;
+
+    #setter for: Landroid/webkit/WebViewClassic;->mSavePasswordDialog:Landroid/app/AlertDialog;
+    invoke-static {v0, v1}, Landroid/webkit/WebViewClassic;->access$2002(Landroid/webkit/WebViewClassic;Landroid/app/AlertDialog;)Landroid/app/AlertDialog;
+
+    .line 2153
     return-void
 .end method

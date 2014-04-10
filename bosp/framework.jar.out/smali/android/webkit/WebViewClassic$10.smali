@@ -1,11 +1,14 @@
 .class Landroid/webkit/WebViewClassic$10;
-.super Landroid/content/BroadcastReceiver;
+.super Ljava/lang/Object;
 .source "WebViewClassic.java"
+
+# interfaces
+.implements Lcom/mediatek/common/webkit/IOnChangedListener;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/webkit/WebViewClassic;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Landroid/webkit/WebViewClassic;->requestColorPicker(I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,83 +27,47 @@
     .parameter
 
     .prologue
-    .line 3886
+    .line 5495
     iput-object p1, p0, Landroid/webkit/WebViewClassic$10;->this$0:Landroid/webkit/WebViewClassic;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 4
-    .parameter "context"
-    .parameter "intent"
+.method public onChanged(Ljava/lang/String;IILjava/lang/Object;)V
+    .locals 2
+    .parameter "key"
+    .parameter "value1"
+    .parameter "value2"
+    .parameter "obj"
 
     .prologue
-    .line 3889
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    .line 5497
+    const-string v0, "colorPicker"
 
-    move-result-object v0
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    .line 3890
-    .local v0, action:Ljava/lang/String;
-    const-string v1, "android.intent.action.SCREEN_OFF"
+    move-result v0
 
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v0, :cond_0
 
-    move-result v1
+    .line 5499
+    iget-object v0, p0, Landroid/webkit/WebViewClassic$10;->this$0:Landroid/webkit/WebViewClassic;
 
-    if-eqz v1, :cond_0
+    invoke-virtual {v0, p2}, Landroid/webkit/WebViewClassic;->selectColor(I)V
 
-    .line 3891
-    iget-object v1, p0, Landroid/webkit/WebViewClassic$10;->this$0:Landroid/webkit/WebViewClassic;
+    .line 5500
+    iget-object v0, p0, Landroid/webkit/WebViewClassic$10;->this$0:Landroid/webkit/WebViewClassic;
 
-    #getter for: Landroid/webkit/WebViewClassic;->mPageVisibile:Z
-    invoke-static {v1}, Landroid/webkit/WebViewClassic;->access$2300(Landroid/webkit/WebViewClassic;)Z
+    const/4 v1, 0x0
 
-    move-result v1
+    #setter for: Landroid/webkit/WebViewClassic;->mColorPicker:Lcom/mediatek/common/webkit/IPicker;
+    invoke-static {v0, v1}, Landroid/webkit/WebViewClassic;->access$2702(Landroid/webkit/WebViewClassic;Lcom/mediatek/common/webkit/IPicker;)Lcom/mediatek/common/webkit/IPicker;
 
-    if-eqz v1, :cond_0
-
-    iget-object v1, p0, Landroid/webkit/WebViewClassic$10;->this$0:Landroid/webkit/WebViewClassic;
-
-    #getter for: Landroid/webkit/WebViewClassic;->mUserPresent:Z
-    invoke-static {v1}, Landroid/webkit/WebViewClassic;->access$2400(Landroid/webkit/WebViewClassic;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 3892
-    iget-object v1, p0, Landroid/webkit/WebViewClassic$10;->this$0:Landroid/webkit/WebViewClassic;
-
-    const/4 v2, 0x4
-
-    iget-object v3, p0, Landroid/webkit/WebViewClassic$10;->this$0:Landroid/webkit/WebViewClassic;
-
-    #getter for: Landroid/webkit/WebViewClassic;->mWebView:Landroid/webkit/WebView;
-    invoke-static {v3}, Landroid/webkit/WebViewClassic;->access$000(Landroid/webkit/WebViewClassic;)Landroid/webkit/WebView;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/webkit/WebView;->getVisibility()I
-
-    move-result v3
-
-    invoke-virtual {v1, v2, v3}, Landroid/webkit/WebViewClassic;->updatePageVisibilityState(II)V
-
-    .line 3893
-    iget-object v1, p0, Landroid/webkit/WebViewClassic$10;->this$0:Landroid/webkit/WebViewClassic;
-
-    const/4 v2, 0x0
-
-    #setter for: Landroid/webkit/WebViewClassic;->mUserPresent:Z
-    invoke-static {v1, v2}, Landroid/webkit/WebViewClassic;->access$2402(Landroid/webkit/WebViewClassic;Z)Z
-
-    .line 3896
+    .line 5502
     :cond_0
     return-void
 .end method

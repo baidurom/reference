@@ -25,13 +25,13 @@
     .parameter "handler"
 
     .prologue
-    .line 3334
+    .line 3339
     iput-object p1, p0, Lcom/android/server/power/PowerManagerService$SettingsObserver;->this$0:Lcom/android/server/power/PowerManagerService;
 
-    .line 3335
+    .line 3340
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 3336
+    .line 3341
     return-void
 .end method
 
@@ -43,7 +43,7 @@
     .parameter "uri"
 
     .prologue
-    .line 3340
+    .line 3345
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$SettingsObserver;->this$0:Lcom/android/server/power/PowerManagerService;
 
     #getter for: Lcom/android/server/power/PowerManagerService;->mLock:Ljava/lang/Object;
@@ -53,20 +53,20 @@
 
     monitor-enter v1
 
-    .line 3341
+    .line 3346
     :try_start_0
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$SettingsObserver;->this$0:Lcom/android/server/power/PowerManagerService;
 
     #calls: Lcom/android/server/power/PowerManagerService;->handleSettingsChangedLocked()V
-    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->access$2800(Lcom/android/server/power/PowerManagerService;)V
+    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->access$2900(Lcom/android/server/power/PowerManagerService;)V
 
-    .line 3342
+    .line 3347
     monitor-exit v1
 
-    .line 3343
+    .line 3348
     return-void
 
-    .line 3342
+    .line 3347
     :catchall_0
     move-exception v0
 

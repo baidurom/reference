@@ -65,7 +65,7 @@
     return-void
 .end method
 
-.method static synthetic access$2500(Landroid/webkit/WebViewClassic$WebViewInputConnection;)V
+.method static synthetic access$2600(Landroid/webkit/WebViewClassic$WebViewInputConnection;)V
     .locals 0
     .parameter "x0"
 

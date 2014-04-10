@@ -79,7 +79,7 @@
     <bool name="baidu_mms_send_signature">false</bool>
     <bool name="lockscreen_isPortrait">true</bool>
     <bool name="config_pbap_support">false</bool>
-    <bool name="config_quickbootSupport">false</bool>
+    <bool name="config_quickbootSupport">true</bool>
     <bool name="config_poweron_by_twice_press">false</bool>
     <bool name="config_close_button_backlight">true</bool>
 </resources>

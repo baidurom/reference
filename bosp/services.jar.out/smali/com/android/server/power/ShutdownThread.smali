@@ -3975,7 +3975,11 @@
     sput-boolean v1, Lcom/android/server/power/ShutdownThread;->mRebootSafeMode:Z
 
     .line 251
-    sput-boolean v1, Lcom/android/server/power/ShutdownThread;->mIsQuickbootShutdown:Z
+    invoke-static {p0}, Lcom/android/server/power/ShutdownThread$QbShutdown;->hasPoweroffAlarm(Landroid/content/Context;)Z
+
+    move-result v0
+
+    sput-boolean v0, Lcom/android/server/power/ShutdownThread;->mIsQuickbootShutdown:Z
 
     .line 253
     const/4 v0, 0x0

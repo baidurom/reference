@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 2393
+    .line 2394
     iput-object p1, p0, Lcom/android/server/ConnectivityService$3;->this$0:Lcom/android/server/ConnectivityService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,7 +40,7 @@
     .parameter "intent"
 
     .prologue
-    .line 2398
+    .line 2399
     iget-object v0, p0, Lcom/android/server/ConnectivityService$3;->this$0:Lcom/android/server/ConnectivityService;
 
     invoke-virtual {v0}, Lcom/android/server/ConnectivityService;->updateLockdownVpn()Z
@@ -49,7 +49,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2399
+    .line 2400
     iget-object v0, p0, Lcom/android/server/ConnectivityService$3;->this$0:Lcom/android/server/ConnectivityService;
 
     #getter for: Lcom/android/server/ConnectivityService;->mContext:Landroid/content/Context;
@@ -59,7 +59,7 @@
 
     invoke-virtual {v0, p0}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 2401
+    .line 2402
     :cond_0
     return-void
 .end method

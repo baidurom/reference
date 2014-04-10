@@ -29,7 +29,7 @@
     .parameter
 
     .prologue
-    .line 3517
+    .line 3522
     iput-object p1, p0, Lcom/android/server/power/PowerManagerService$ScreenOnBlockerImpl;->this$0:Lcom/android/server/power/PowerManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .parameter "x1"
 
     .prologue
-    .line 3517
+    .line 3522
     invoke-direct {p0, p1}, Lcom/android/server/power/PowerManagerService$ScreenOnBlockerImpl;-><init>(Lcom/android/server/power/PowerManagerService;)V
 
     return-void
@@ -55,10 +55,10 @@
     .locals 3
 
     .prologue
-    .line 3528
+    .line 3533
     monitor-enter p0
 
-    .line 3529
+    .line 3534
     :try_start_0
     iget v0, p0, Lcom/android/server/power/PowerManagerService$ScreenOnBlockerImpl;->mNestCount:I
 
@@ -66,7 +66,7 @@
 
     iput v0, p0, Lcom/android/server/power/PowerManagerService$ScreenOnBlockerImpl;->mNestCount:I
 
-    .line 3531
+    .line 3536
     const-string v0, "PowerManagerService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -91,13 +91,13 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3533
+    .line 3538
     monitor-exit p0
 
-    .line 3534
+    .line 3539
     return-void
 
-    .line 3533
+    .line 3538
     :catchall_0
     move-exception v0
 
@@ -112,10 +112,10 @@
     .locals 1
 
     .prologue
-    .line 3521
+    .line 3526
     monitor-enter p0
 
-    .line 3522
+    .line 3527
     :try_start_0
     iget v0, p0, Lcom/android/server/power/PowerManagerService$ScreenOnBlockerImpl;->mNestCount:I
 
@@ -133,7 +133,7 @@
 
     goto :goto_0
 
-    .line 3523
+    .line 3528
     :catchall_0
     move-exception v0
 
@@ -148,10 +148,10 @@
     .locals 3
 
     .prologue
-    .line 3538
+    .line 3543
     monitor-enter p0
 
-    .line 3539
+    .line 3544
     :try_start_0
     iget v0, p0, Lcom/android/server/power/PowerManagerService$ScreenOnBlockerImpl;->mNestCount:I
 
@@ -159,12 +159,12 @@
 
     iput v0, p0, Lcom/android/server/power/PowerManagerService$ScreenOnBlockerImpl;->mNestCount:I
 
-    .line 3540
+    .line 3545
     iget v0, p0, Lcom/android/server/power/PowerManagerService$ScreenOnBlockerImpl;->mNestCount:I
 
     if-gez v0, :cond_0
 
-    .line 3541
+    .line 3546
     const-string v0, "PowerManagerService"
 
     const-string v1, "Screen on blocker was released without being acquired!"
@@ -175,22 +175,22 @@
 
     invoke-static {v0, v1, v2}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 3543
+    .line 3548
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/power/PowerManagerService$ScreenOnBlockerImpl;->mNestCount:I
 
-    .line 3545
+    .line 3550
     :cond_0
     iget v0, p0, Lcom/android/server/power/PowerManagerService$ScreenOnBlockerImpl;->mNestCount:I
 
     if-nez v0, :cond_1
 
-    .line 3546
+    .line 3551
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$ScreenOnBlockerImpl;->this$0:Lcom/android/server/power/PowerManagerService;
 
     #getter for: Lcom/android/server/power/PowerManagerService;->mHandler:Lcom/android/server/power/PowerManagerService$PowerManagerHandler;
-    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->access$4100(Lcom/android/server/power/PowerManagerService;)Lcom/android/server/power/PowerManagerService$PowerManagerHandler;
+    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->access$4200(Lcom/android/server/power/PowerManagerService;)Lcom/android/server/power/PowerManagerService$PowerManagerHandler;
 
     move-result-object v0
 
@@ -198,7 +198,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/power/PowerManagerService$PowerManagerHandler;->sendEmptyMessage(I)Z
 
-    .line 3549
+    .line 3554
     :cond_1
     const-string v0, "PowerManagerService"
 
@@ -224,13 +224,13 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3551
+    .line 3556
     monitor-exit p0
 
-    .line 3552
+    .line 3557
     return-void
 
-    .line 3551
+    .line 3556
     :catchall_0
     move-exception v0
 
@@ -245,10 +245,10 @@
     .locals 2
 
     .prologue
-    .line 3556
+    .line 3561
     monitor-enter p0
 
-    .line 3557
+    .line 3562
     :try_start_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -296,7 +296,7 @@
 
     goto :goto_0
 
-    .line 3558
+    .line 3563
     :catchall_0
     move-exception v0
 

@@ -1,27 +1,16 @@
 .class Landroid/webkit/WebViewClassic$9;
-.super Landroid/os/AsyncTask;
+.super Landroid/content/BroadcastReceiver;
 .source "WebViewClassic.java"
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/webkit/WebViewClassic;->loadViewState(Ljava/io/InputStream;)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroid/webkit/WebViewClassic;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
     accessFlags = 0x0
     name = null
-.end annotation
-
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Landroid/os/AsyncTask",
-        "<",
-        "Ljava/io/InputStream;",
-        "Ljava/lang/Void;",
-        "Landroid/webkit/WebViewCore$DrawData;",
-        ">;"
-    }
 .end annotation
 
 
@@ -35,171 +24,83 @@
     .parameter
 
     .prologue
-    .line 2674
+    .line 3892
     iput-object p1, p0, Landroid/webkit/WebViewClassic$9;->this$0:Landroid/webkit/WebViewClassic;
 
-    invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected varargs doInBackground([Ljava/io/InputStream;)Landroid/webkit/WebViewCore$DrawData;
-    .locals 2
-    .parameter "params"
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 4
+    .parameter "context"
+    .parameter "intent"
 
     .prologue
-    .line 2679
-    const/4 v1, 0x0
-
-    :try_start_0
-    aget-object v1, p1, v1
-
-    invoke-static {v1}, Landroid/webkit/ViewStateSerializer;->deserializeViewState(Ljava/io/InputStream;)Landroid/webkit/WebViewCore$DrawData;
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-object v1
-
-    .line 2681
-    :goto_0
-    return-object v1
-
-    .line 2680
-    :catch_0
-    move-exception v0
-
-    .line 2681
-    .local v0, e:Ljava/io/IOException;
-    const/4 v1, 0x0
-
-    goto :goto_0
-.end method
-
-.method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 2674
-    check-cast p1, [Ljava/io/InputStream;
-
-    .end local p1
-    invoke-virtual {p0, p1}, Landroid/webkit/WebViewClassic$9;->doInBackground([Ljava/io/InputStream;)Landroid/webkit/WebViewCore$DrawData;
+    .line 3895
+    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    .line 3896
+    .local v0, action:Ljava/lang/String;
+    const-string v1, "android.intent.action.SCREEN_OFF"
 
-.method protected onPostExecute(Landroid/webkit/WebViewCore$DrawData;)V
-    .locals 5
-    .parameter "draw"
-
-    .prologue
-    .line 2687
-    if-nez p1, :cond_0
-
-    .line 2688
-    const-string/jumbo v2, "webview"
-
-    const-string v3, "Failed to load view state!"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2698
-    :goto_0
-    return-void
-
-    .line 2691
-    :cond_0
-    iget-object v2, p0, Landroid/webkit/WebViewClassic$9;->this$0:Landroid/webkit/WebViewClassic;
-
-    invoke-virtual {v2}, Landroid/webkit/WebViewClassic;->getViewWidth()I
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    .line 2692
-    .local v1, viewWidth:I
-    iget-object v2, p0, Landroid/webkit/WebViewClassic$9;->this$0:Landroid/webkit/WebViewClassic;
+    if-eqz v1, :cond_0
 
-    invoke-virtual {v2}, Landroid/webkit/WebViewClassic;->getViewHeightWithTitle()I
+    .line 3897
+    iget-object v1, p0, Landroid/webkit/WebViewClassic$9;->this$0:Landroid/webkit/WebViewClassic;
 
-    move-result v2
+    #getter for: Landroid/webkit/WebViewClassic;->mPageVisibile:Z
+    invoke-static {v1}, Landroid/webkit/WebViewClassic;->access$2400(Landroid/webkit/WebViewClassic;)Z
 
-    iget-object v3, p0, Landroid/webkit/WebViewClassic$9;->this$0:Landroid/webkit/WebViewClassic;
+    move-result v1
 
-    invoke-virtual {v3}, Landroid/webkit/WebViewClassic;->getTitleHeight()I
+    if-eqz v1, :cond_0
 
-    move-result v3
+    iget-object v1, p0, Landroid/webkit/WebViewClassic$9;->this$0:Landroid/webkit/WebViewClassic;
 
-    sub-int v0, v2, v3
+    #getter for: Landroid/webkit/WebViewClassic;->mUserPresent:Z
+    invoke-static {v1}, Landroid/webkit/WebViewClassic;->access$2500(Landroid/webkit/WebViewClassic;)Z
 
-    .line 2693
-    .local v0, viewHeight:I
-    new-instance v2, Landroid/graphics/Point;
+    move-result v1
 
-    invoke-direct {v2, v1, v0}, Landroid/graphics/Point;-><init>(II)V
+    if-eqz v1, :cond_0
 
-    iput-object v2, p1, Landroid/webkit/WebViewCore$DrawData;->mViewSize:Landroid/graphics/Point;
+    .line 3898
+    iget-object v1, p0, Landroid/webkit/WebViewClassic$9;->this$0:Landroid/webkit/WebViewClassic;
 
-    .line 2694
-    iget-object v2, p1, Landroid/webkit/WebViewCore$DrawData;->mViewState:Landroid/webkit/WebViewCore$ViewState;
-
-    iget-object v3, p0, Landroid/webkit/WebViewClassic$9;->this$0:Landroid/webkit/WebViewClassic;
-
-    invoke-virtual {v3}, Landroid/webkit/WebViewClassic;->getDefaultZoomScale()F
-
-    move-result v3
-
-    iput v3, v2, Landroid/webkit/WebViewCore$ViewState;->mDefaultScale:F
-
-    .line 2695
-    iget-object v2, p0, Landroid/webkit/WebViewClassic$9;->this$0:Landroid/webkit/WebViewClassic;
-
-    #setter for: Landroid/webkit/WebViewClassic;->mLoadedPicture:Landroid/webkit/WebViewCore$DrawData;
-    invoke-static {v2, p1}, Landroid/webkit/WebViewClassic;->access$2202(Landroid/webkit/WebViewClassic;Landroid/webkit/WebViewCore$DrawData;)Landroid/webkit/WebViewCore$DrawData;
-
-    .line 2696
-    iget-object v2, p0, Landroid/webkit/WebViewClassic$9;->this$0:Landroid/webkit/WebViewClassic;
+    const/4 v2, 0x4
 
     iget-object v3, p0, Landroid/webkit/WebViewClassic$9;->this$0:Landroid/webkit/WebViewClassic;
 
-    #getter for: Landroid/webkit/WebViewClassic;->mLoadedPicture:Landroid/webkit/WebViewCore$DrawData;
-    invoke-static {v3}, Landroid/webkit/WebViewClassic;->access$2200(Landroid/webkit/WebViewClassic;)Landroid/webkit/WebViewCore$DrawData;
+    #getter for: Landroid/webkit/WebViewClassic;->mWebView:Landroid/webkit/WebView;
+    invoke-static {v3}, Landroid/webkit/WebViewClassic;->access$000(Landroid/webkit/WebViewClassic;)Landroid/webkit/WebView;
 
     move-result-object v3
 
-    const/4 v4, 0x1
+    invoke-virtual {v3}, Landroid/webkit/WebView;->getVisibility()I
 
-    invoke-virtual {v2, v3, v4}, Landroid/webkit/WebViewClassic;->setNewPicture(Landroid/webkit/WebViewCore$DrawData;Z)V
+    move-result v3
 
-    .line 2697
-    iget-object v2, p0, Landroid/webkit/WebViewClassic$9;->this$0:Landroid/webkit/WebViewClassic;
+    invoke-virtual {v1, v2, v3}, Landroid/webkit/WebViewClassic;->updatePageVisibilityState(II)V
 
-    #getter for: Landroid/webkit/WebViewClassic;->mLoadedPicture:Landroid/webkit/WebViewCore$DrawData;
-    invoke-static {v2}, Landroid/webkit/WebViewClassic;->access$2200(Landroid/webkit/WebViewClassic;)Landroid/webkit/WebViewCore$DrawData;
+    .line 3899
+    iget-object v1, p0, Landroid/webkit/WebViewClassic$9;->this$0:Landroid/webkit/WebViewClassic;
 
-    move-result-object v2
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    #setter for: Landroid/webkit/WebViewClassic;->mUserPresent:Z
+    invoke-static {v1, v2}, Landroid/webkit/WebViewClassic;->access$2502(Landroid/webkit/WebViewClassic;Z)Z
 
-    iput-object v3, v2, Landroid/webkit/WebViewCore$DrawData;->mViewState:Landroid/webkit/WebViewCore$ViewState;
-
-    goto :goto_0
-.end method
-
-.method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
-    .locals 0
-    .parameter "x0"
-
-    .prologue
-    .line 2674
-    check-cast p1, Landroid/webkit/WebViewCore$DrawData;
-
-    .end local p1
-    invoke-virtual {p0, p1}, Landroid/webkit/WebViewClassic$9;->onPostExecute(Landroid/webkit/WebViewCore$DrawData;)V
-
+    .line 3902
+    :cond_0
     return-void
 .end method
