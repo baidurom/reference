@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="64.0dip">
+        <ImageButton android:textAppearance="?textAppearanceLarge" android:id="@id/one" android:background="@drawable/yi_btn_puk_one" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <ImageButton android:textAppearance="?textAppearanceLarge" android:id="@id/two" android:background="@drawable/yi_btn_puk_two" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" />
+        <ImageButton android:textAppearance="?textAppearanceLarge" android:id="@id/three" android:background="@drawable/yi_btn_puk_three" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="64.0dip">
+        <ImageButton android:textAppearance="?textAppearanceLarge" android:id="@id/four" android:background="@drawable/yi_btn_puk_four" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <ImageButton android:textAppearance="?textAppearanceLarge" android:id="@id/five" android:background="@drawable/yi_btn_puk_five" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" />
+        <ImageButton android:textAppearance="?textAppearanceLarge" android:id="@id/six" android:background="@drawable/yi_btn_puk_six" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="64.0dip">
+        <ImageButton android:textAppearance="?textAppearanceLarge" android:id="@id/seven" android:background="@drawable/yi_btn_puk_seven" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <ImageButton android:textAppearance="?textAppearanceLarge" android:id="@id/eight" android:background="@drawable/yi_btn_puk_eight" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" />
+        <ImageButton android:textAppearance="?textAppearanceLarge" android:id="@id/nine" android:background="@drawable/yi_btn_puk_nine" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="64.0dip">
+        <ImageButton android:textAppearance="?textAppearanceMedium" android:textStyle="bold" android:id="@id/cancel" android:background="@drawable/yi_btn_puk_cancel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cancel" />
+        <ImageButton android:textAppearance="?textAppearanceLarge" android:id="@id/zero" android:background="@drawable/yi_btn_puk_zero" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" />
+        <ImageButton android:textAppearance="?textAppearanceMedium" android:textStyle="bold" android:id="@id/ok" android:background="@drawable/yi_btn_puk_ok" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:text="@string/ok" />
+    </LinearLayout>
+</LinearLayout>

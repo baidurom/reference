@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/table_perm_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_centerInParent="true" />
+    <TextView android:textAppearance="?textAppearanceMedium" android:textSize="16.0sp" android:textStyle="bold" android:id="@id/table_perm_text" android:paddingLeft="6.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:layout_toRightOf="@id/table_perm_icon" android:layout_centerInParent="true" />
+    <CheckBox android:id="@id/table_perm_checkbox" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="-50.0dip" android:layout_toRightOf="@id/table_perm_text" android:layout_centerInParent="true" />
+</RelativeLayout>
