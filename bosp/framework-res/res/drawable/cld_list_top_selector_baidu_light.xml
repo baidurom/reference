@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector android:exitFadeDuration="5"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_window_focused="false" android:drawable="@color/transparent" />
+    <item android:state_focused="true" android:state_enabled="false" android:state_pressed="true" android:drawable="@drawable/list_selector_disabled_holo_light" />
+    <item android:state_focused="true" android:state_enabled="false" android:drawable="@drawable/list_selector_disabled_holo_light" />
+    <item android:state_focused="true" android:state_pressed="true" android:drawable="@drawable/cld_list_top_selector_background_transition_baidu_light" />
+    <item android:state_focused="false" android:state_pressed="true" android:drawable="@drawable/cld_list_top_selector_background_transition_baidu_light" />
+    <item android:state_focused="true" android:drawable="@drawable/yi_list_top_pressed_baidu_light" />
+</selector>
