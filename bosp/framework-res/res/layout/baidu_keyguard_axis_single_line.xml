@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/axis_single_line" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_centerHorizontal="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:paddingBottom="5.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/baidu_keyguard_axis_y_repeat" android:scaleType="fitXY" android:layout_centerHorizontal="true" android:alpha="0.2" />
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_centerHorizontal="true">
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/baidu_keyguard_constellation_star" android:scaleType="fitEnd" android:layout_weight="1.0" />
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/baidu_keyguard_constellation_star" android:scaleType="fitEnd" android:layout_weight="1.0" />
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/baidu_keyguard_constellation_star" android:scaleType="fitEnd" android:layout_weight="1.0" />
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/baidu_keyguard_constellation_star" android:scaleType="fitEnd" android:layout_weight="1.0" />
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/baidu_keyguard_constellation_star" android:scaleType="fitEnd" android:layout_weight="1.0" />
+    </LinearLayout>
+</RelativeLayout>

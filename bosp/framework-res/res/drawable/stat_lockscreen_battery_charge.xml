@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<level-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:maxLevel="1">
+        <animation-list android:oneshot="false"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:duration="270" android:drawable="@drawable/ic_main_unlock_charging_10" />
+        </animation-list>
+    </item>
+    <item android:maxLevel="15">
+        <animation-list android:oneshot="false"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:duration="270" android:drawable="@drawable/ic_main_unlock_charging_10_1" />
+            <item android:duration="270" android:drawable="@drawable/ic_main_unlock_charging_10_2" />
+            <item android:duration="270" android:drawable="@drawable/ic_main_unlock_charging_10_3" />
+            <item android:duration="270" android:drawable="@drawable/ic_main_unlock_charging_10_4" />
+        </animation-list>
+    </item>
+    <item android:maxLevel="25">
+        <animation-list android:oneshot="false"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:duration="270" android:drawable="@drawable/ic_main_unlock_charging_10" />
+            <item android:duration="270" android:drawable="@drawable/ic_main_unlock_charging_20_1" />
+            <item android:duration="270" android:drawable="@drawable/ic_main_unlock_charging_20_2" />
+            <item android:duration="270" android:drawable="@drawable/ic_main_unlock_charging_20_3" />
+            <item android:duration="270" android:drawable="@drawable/ic_main_unlock_charging_20_4" />
+            <item android:duration="270" android:drawable="@drawable/ic_main_unlock_charging_20_3" />
+        </animation-list>
+    </item>
+    <item android:maxLevel="50">
+        <animation-list android:oneshot="false"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:duration="270" android:drawable="@drawable/ic_main_unlock_charging_40_1" />
+            <item android:duration="270" android:drawable="@drawable/ic_main_unlock_charging_40_2" />
+            <item android:duration="270" android:drawable="@drawable/ic_main_unlock_charging_40_3" />
+            <item android:duration="270" android:drawable="@drawable/ic_main_unlock_charging_40_4" />
+            <item android:duration="270" android:drawable="@drawable/ic_main_unlock_charging_40_5" />
+        </animation-list>
+    </item>
+    <item android:maxLevel="70">
+        <animation-list android:oneshot="false"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:duration="270" android:drawable="@drawable/ic_main_unlock_charging_60_1" />
+            <item android:duration="270" android:drawable="@drawable/ic_main_unlock_charging_60_2" />
+            <item android:duration="270" android:drawable="@drawable/ic_main_unlock_charging_60_3" />
+            <item android:duration="270" android:drawable="@drawable/ic_main_unlock_charging_60_4" />
+            <item android:duration="270" android:drawable="@drawable/ic_main_unlock_charging_60_5" />
+        </animation-list>
+    </item>
+    <item android:maxLevel="90">
+        <animation-list android:oneshot="false"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:duration="270" android:drawable="@drawable/ic_main_unlock_charging_80_1" />
+            <item android:duration="270" android:drawable="@drawable/ic_main_unlock_charging_80_2" />
+            <item android:duration="270" android:drawable="@drawable/ic_main_unlock_charging_80_3" />
+            <item android:duration="270" android:drawable="@drawable/ic_main_unlock_charging_80_4" />
+            <item android:duration="270" android:drawable="@drawable/ic_main_unlock_charging_80_5" />
+        </animation-list>
+    </item>
+    <item android:maxLevel="99">
+        <animation-list android:oneshot="false"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:duration="270" android:drawable="@drawable/ic_main_unlock_charging_99_1" />
+            <item android:duration="270" android:drawable="@drawable/ic_main_unlock_charging_99_2" />
+            <item android:duration="270" android:drawable="@drawable/ic_main_unlock_charging_99_3" />
+            <item android:duration="270" android:drawable="@drawable/ic_main_unlock_charging_99_4" />
+            <item android:duration="270" android:drawable="@drawable/ic_main_unlock_charging_99_5" />
+        </animation-list>
+    </item>
+    <item android:maxLevel="100">
+        <animation-list android:oneshot="false"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:duration="270" android:drawable="@drawable/ic_main_unlock_charging_100" />
+        </animation-list>
+    </item>
+    <item android:maxLevel="101">
+        <animation-list android:oneshot="false"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <item android:duration="270" android:drawable="@drawable/ic_main_unlock_charging_100" />
+        </animation-list>
+    </item>
+</level-list>
