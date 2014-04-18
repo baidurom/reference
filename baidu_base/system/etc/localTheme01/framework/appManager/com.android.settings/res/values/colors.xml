@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="manager_applications_usedStorageText_text">#3d77ad</color>
+    <color name="manager_applications_freeStorageText_text">#44474f</color>
+    <color name="manager_applications_toolbar_text">#ffffff</color>
+
+</resources>

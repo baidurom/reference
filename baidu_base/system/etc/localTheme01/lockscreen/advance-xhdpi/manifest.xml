@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BaiduLockscreen version="1">
+    <WallpaperElement/>
+
+<!-- 变量 -->
+    <Variable name="unlock_x" expression="#screen_width/2-76" const="true" />
+    <Variable name="unlock_y" expression="#screen_height/2-40" const="true" />
+<!-- 日期时间 -->
+    <ImageElement x="0" y="0" src="ic_main_unlock_homescreen_background.png"/>
+    <TimeElement x="#screen_width/2" y="112" align="center" src="lock_screen_bar_time.png"/>
+    <DateElement x="#screen_width/2" y="195" align="center" color="#FFFFFFFF" size="36" format="yyyy-MM-dd EEEE"/>
+<!-- 充电 -->
+    <ImageElement x="200" y="222" category="Charging" src="ic_lock_idle_charging.png" />
+    <TextElement x="235" y="228" category="Charging" color="#FFFFFFFF" size="36" format="%d%%" paras="#battery_level"/>
+<!-- 闹钟 -->
+    <ImageElement x="149" y="222+eq(#battery_state,1)*36" src="ic_lock_idle_alarm.png" alpha = "#alarm_count*255"/>
+    <TextElement x="184" y="228+eq(#battery_state,1)*36" color="#FFFFFFFF" size="36" text="#alarm_info" alpha = "#alarm_count*255"/>
+
+<!-- 解锁路径指示 -->
+    <ImageElement x="#screen_width/2-15" y="#unlock_y+214" src="ic_main_unlock_indicator_0.png" alpha = "255"/>
+    <ImageElement x="#screen_width/2-15" y="#unlock_y+237" src="ic_main_unlock_indicator_0.png" alpha="156"/>
+    <ImageElement x="#screen_width/2-15" y="#unlock_y+260" src="ic_main_unlock_indicator_0.png" alpha = "76"/>
+
+<!-- 解锁部件 -->
+    <UnlockerElement name="unlocker">
+        <StartPoint x="#unlock_x" y="#unlock_y" w="170" h="170">
+            <NormalState>
+                <Image x="#unlock_x" y="#unlock_y" src="ic_main_unlock_normal.png" visibility= "1-eq(1,#battery_state)"/>
+            </NormalState>
+            <PressedState>
+                <Image x="#unlock_x" y="#unlock_y" src="ic_main_unlock_pressed.png"/>
+            </PressedState>
+        </StartPoint>
+        <EndPoint x="#unlock_x" y="#unlock_y+200" w="15" h="75">
+            <PressedState>
+                <Image x="#unlock_x" y="375" src="ic_unlock_call_background.png"/>
+            </PressedState>
+	     <Path x="#unlock_x" y="#unlock_y">
+                <Position x="0" y="0" />
+                <Position x="0" y="275" />
+            </Path>
+        </EndPoint>
+    </UnlockerElement>
+
+<!-- 电量 0< battery_level <=10%-->
+    <ImageElement x="#unlock_x" y="#unlock_y" category="Charging" alpha = "le(#battery_level,15)*eq(0,#unlocker.state)*255">
+        <SourcesAnimation>
+            <Source src="ic_main_unlock_charging_10_1.png" time="270"/>
+            <Source src="ic_main_unlock_charging_10_2.png" time="540"/>
+            <Source src="ic_main_unlock_charging_10_3.png" time="810"/>
+            <Source src="ic_main_unlock_charging_10_4.png" time="1080"/>
+            <Source src="ic_main_unlock_charging_10_5.png" time="1100"/>
+        </SourcesAnimation>
+    </ImageElement>
+
+<!-- 电量 15% < battery_level <=25%-->
+    <ImageElement x="#unlock_x" y="#unlock_y" category="Charging" alpha ="gt(#battery_level,15)*le(#battery_level,25)*eq(0,#unlocker.state)*255">
+        <SourcesAnimation>
+            <Source src="ic_main_unlock_charging_20_1.png" time="270"/>
+            <Source src="ic_main_unlock_charging_20_2.png" time="540"/>
+            <Source src="ic_main_unlock_charging_20_3.png" time="810"/>
+            <Source src="ic_main_unlock_charging_20_4.png" time="1080"/>
+            <Source src="ic_main_unlock_charging_20_5.png" time="1100"/>
+        </SourcesAnimation>
+    </ImageElement>
+
+<!-- 电量 25%< battery_level <=50% -->
+    <ImageElement x="#unlock_x" y="#unlock_y" category="Charging" alpha = "gt(#battery_level,25)*le(#battery_level,50)*eq(0,#unlocker.state)*255">
+        <SourcesAnimation>
+            <Source src="ic_main_unlock_charging_40_1.png" time="270"/>
+            <Source src="ic_main_unlock_charging_40_2.png" time="540"/>
+            <Source src="ic_main_unlock_charging_40_3.png" time="810"/>
+            <Source src="ic_main_unlock_charging_40_4.png" time="1080"/>
+            <Source src="ic_main_unlock_charging_40_5.png" time="1100"/>
+        </SourcesAnimation>
+    </ImageElement>
+<!-- 电量 50%< battery_level <=70%-->
+    <ImageElement x="#unlock_x" y="#unlock_y" category="Charging" alpha =" gt(#battery_level,50)*le(#battery_level,70)*eq(0,#unlocker.state)*255">
+        <SourcesAnimation>
+            <Source src="ic_main_unlock_charging_60_1.png" time="270"/>
+            <Source src="ic_main_unlock_charging_60_2.png" time="540"/>
+            <Source src="ic_main_unlock_charging_60_3.png" time="810"/>
+            <Source src="ic_main_unlock_charging_60_4.png" time="1080"/>
+            <Source src="ic_main_unlock_charging_60_5.png" time="1100"/>
+        </SourcesAnimation>
+    </ImageElement>
+
+<!-- 电量 70%< battery_level <=90%-->
+    <ImageElement x="#unlock_x" y="#unlock_y" category="Charging" alpha ="gt(#battery_level,70)*le(#battery_level,90)*eq(0,#unlocker.state)*255">
+        <SourcesAnimation>
+            <Source src="ic_main_unlock_charging_80_1.png" time="270"/>
+            <Source src="ic_main_unlock_charging_80_2.png" time="540"/>
+            <Source src="ic_main_unlock_charging_80_3.png" time="810"/>
+            <Source src="ic_main_unlock_charging_80_4.png" time="1080"/>
+            <Source src="ic_main_unlock_charging_80_5.png" time="1100"/>
+        </SourcesAnimation>
+    </ImageElement>
+
+<!-- 电量 90%< battery_level <= 99%-->
+    <ImageElement x="#unlock_x" y="#unlock_y" category="Charging" alpha ="gt(#battery_level,90)*le(#battery_level,99)*eq(0,#unlocker.state)*255">
+        <SourcesAnimation>
+            <Source src="ic_main_unlock_charging_99_1.png" time="270"/>
+            <Source src="ic_main_unlock_charging_99_2.png" time="540"/>
+            <Source src="ic_main_unlock_charging_99_3.png" time="810"/>
+            <Source src="ic_main_unlock_charging_99_4.png" time="1080"/>
+            <Source src="ic_main_unlock_charging_99_5.png" time="1100"/>
+        </SourcesAnimation>
+    </ImageElement>
+
+<!-- 99%<battery_level-->
+    <ImageElement x="#unlock_x" y="#unlock_y" category="Charging" alpha ="gt(#battery_level,99)*eq(0,#unlocker.state)*255">
+        <SourcesAnimation>
+            <Source src="ic_main_unlock_charging_100_1.png" time="270"/>
+            <Source src="ic_main_unlock_charging_100_2.png" time="540"/>
+            <Source src="ic_main_unlock_charging_100_3.png" time="810"/>
+            <Source src="ic_main_unlock_charging_100_4.png" time="1080"/>
+            <Source src="ic_main_unlock_charging_100_5.png" time="1100"/>
+        </SourcesAnimation>
+    </ImageElement>
+
+<!-- 电量100%  *-->
+    <ImageElement x="#unlock_x" y="#unlock_y" category="BatteryFull" alpha ="eq(0,#unlocker.state)*eq(3,#battery_state)*255">
+        <SourcesAnimation>
+            <Source src="ic_main_unlock_charging_100_1.png" time="270"/>
+            <Source src="ic_main_unlock_charging_100_2.png" time="540"/>
+            <Source src="ic_main_unlock_charging_100_3.png" time="810"/>
+            <Source src="ic_main_unlock_charging_100_4.png" time="1080"/>
+            <Source src="ic_main_unlock_charging_100_5.png" time="1100"/>
+        </SourcesAnimation>
+    </ImageElement>
+
+</BaiduLockscreen>

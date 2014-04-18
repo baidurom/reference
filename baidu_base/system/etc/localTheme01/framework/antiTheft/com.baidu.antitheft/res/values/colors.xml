@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<resources>
+
+    <color name="label">#aaaaaa</color>
+    <color name="repeat">#fff799</color>
+    <color name="gmt">#4988C1</color>
+    <color name="added_city">#474747</color>
+    <color name="alarm_alert_title">#1e65b5</color>
+    <color name="background">#e5e7eb</color>
+    <color name="blue_line">#538ad3</color>
+    <color name="stopwatch_time_dis">#4987da</color>
+    <color name="testcolor">#4987da</color>
+    <color name="tab_background">#393939</color>
+    
+    <color name="text_color">#ffffff</color>
+    <color name="sub_text_color">#53575F</color>
+    <color name="account_text_color">#4A7CC1</color>
+    <color name="account_background_color">#DDCCFF</color>
+    <color name="bind_text_color">#333640</color>
+    <color name="bg_color_below">#292C33</color>
+    <color name="guide_text_color">#4F555A</color>
+    <color name="divider_color">#3A3E49</color>
+    
+    <color name="btn_text_color">#98A2B3</color>
+    <color name="main_background">#343741</color>
+    <color name="current_account_text_color">#98A2B3</color>
+
+</resources>
