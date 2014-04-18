@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="transparent">#00000000</color>
+    <color name="white">#ffffffff</color>
+
+    <color name="main_content_text_color">#D1D4E1</color>
+    <color name="option_menu_text_color">#64707c</color>
+    <color name="wifi_and_check_time_text_color">#8C8C8C</color>
+    <color name="change_log_text_color">#7C7C7C</color>
+    <color name="main_content_background_color">#26282F</color>
+
+    <!--yi_primary_text_baidu_light-->
+    <color name="yi_bright_foreground_baidu_light">#ffb6c2cd</color>
+    <color name="yi_bright_foreground_disabled_baidu_light">#66515b64</color>
+    <!--yi_secondary_text_baidu_light-->
+    <color name="yi_dim_foreground_baidu_light">#ff7b8690</color>
+    <color name="yi_dim_foreground_disabled_baidu_light">#ff515b64</color>
+
+   <!--list divider text-->
+    <color name="yi_list_section_divider_text_light">#ffb6c2cd</color>
+
+</resources>

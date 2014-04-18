@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2009 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!--拨号号码颜色-->
+    <color name="dialpad_edit_text_color">#ff98a2b3</color> 
+    <!--通话记录主标题-->
+    <color name="call_log_primary_text_color">#ff9b9daa</color>
+    <!--通话记录副标题-->
+    <color name="call_log_secondary_text_color">#ff888888</color>
+
+    <color name="call_log_filter_title_color">#9b9daa</color>
+
+    <color name="call_log_timeline_color">#ff9b9daa</color>
+    <!--编辑界面和群组界面背景-->
+    <color name="background_primary">#212228</color>
+    <!--详情列表背景-->
+    <color name="contacts_background">#212228</color>
+    <!--列表中收藏联系人姓名-->
+    <color name="contact_list_text_color">#ff9b9daa</color>
+    <!--信息页面背景-->
+    <color name="compose_message_bg_color">#212228</color>
+    <!--短信列表主标题颜色-->
+    <color name="conversation_list_item_from_text_color">#9b9daa</color>
+    <!--短信列表副标题颜色-->
+    <color name="conversation_list_item_subject_text_color">#888888</color>
+    <!--短信列表里面日期颜色-->
+    <color name="message_list_item_date_text_color">#888888</color>
+    <!--信息编辑页面主题颜色-->
+    <color name="compose_message_subject_text_color">#9b9daa</color>
+    <!--短信会话列表信息字符颜色-->
+    <color name="message_list_text_color">#ff9b9daa</color> 
+    <color name="recent_contact_btn_text_color">#9b9daa</color>
+
+    <color name="primary_text_color_pressed">#ffffff</color>
+    <color name="primary_text_color_normal">#9b9daa</color>
+    <color name="secondary_text_color_pressed">#ffffff</color>
+    <color name="secondary_text_color_normal">#888888</color>
+
+    <color name="dialer_search_name_text_normal_color">#9b9daa</color>
+    <color name="dialer_search_number_text_normal_color">#888888</color>
+
+    <color name="template_sms_text_color">#9b9daa</color>
+
+    <color name="bless_list_item_msg_text_color">#ff9b9daa</color>
+
+   <!-- sim list -->
+    <color name="sim_list_background">#212228</color>
+    <color name="sim_list_cache_hint_color">#212228</color>
+    <color name="sim_message_item_background_color">#00000000</color>
+    <color name="sim_phone_number_text_color">#cc33b5e5</color>
+    <color name="sim_list_item_text_color">#ff9b9daa</color>
+    <color name="sim_list_item_date_text_color">#ff888888</color>
+
+<!-- search activity -->
+    <color name="search_widget_background">#ff212228</color>
+    <color name="search_cache_color_hint">#ff212228</color>
+
+    <color name="dialer_search_no_result_text_color">#ff9b9daa</color>
+
+</resources>
