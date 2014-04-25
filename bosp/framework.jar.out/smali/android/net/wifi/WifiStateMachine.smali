@@ -5930,7 +5930,7 @@
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
     .line 1723
-    const-string v1, "linkProperties"
+    const-string/jumbo v1, "linkProperties"
 
     new-instance v2, Landroid/net/LinkProperties;
 
@@ -5979,7 +5979,7 @@
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
     .line 1703
-    const-string v1, "linkProperties"
+    const-string/jumbo v1, "linkProperties"
 
     new-instance v2, Landroid/net/LinkProperties;
 
@@ -9471,7 +9471,7 @@
 
     .line 1265
     .local v1, sb:Ljava/lang/StringBuffer;
-    const-string v2, "line.separator"
+    const-string/jumbo v2, "line.separator"
 
     invoke-static {v2}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
 

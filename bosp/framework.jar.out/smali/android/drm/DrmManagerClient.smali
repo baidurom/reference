@@ -4944,7 +4944,7 @@
     .line 1391
     .end local v8           #dialog:Landroid/app/AlertDialog;
     :cond_10
-    const-string v28, "license_start_time"
+    const-string/jumbo v28, "license_start_time"
 
     invoke-virtual/range {v27 .. v28}, Landroid/content/ContentValues;->containsKey(Ljava/lang/String;)Z
 
@@ -4953,7 +4953,7 @@
     if-eqz v28, :cond_13
 
     .line 1392
-    const-string v28, "license_start_time"
+    const-string/jumbo v28, "license_start_time"
 
     invoke-virtual/range {v27 .. v28}, Landroid/content/ContentValues;->getAsLong(Ljava/lang/String;)Ljava/lang/Long;
 
@@ -4994,7 +4994,7 @@
     .line 1406
     .end local v24           #startL:Ljava/lang/Long;
     :goto_3
-    const-string v28, "license_expiry_time"
+    const-string/jumbo v28, "license_expiry_time"
 
     invoke-virtual/range {v27 .. v28}, Landroid/content/ContentValues;->containsKey(Ljava/lang/String;)Z
 
@@ -5003,7 +5003,7 @@
     if-eqz v28, :cond_16
 
     .line 1407
-    const-string v28, "license_expiry_time"
+    const-string/jumbo v28, "license_expiry_time"
 
     invoke-virtual/range {v27 .. v28}, Landroid/content/ContentValues;->getAsLong(Ljava/lang/String;)Ljava/lang/Long;
 

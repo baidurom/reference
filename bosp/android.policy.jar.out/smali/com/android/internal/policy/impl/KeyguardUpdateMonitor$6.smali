@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 981
+    .line 983
     iput-object p1, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$6;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
@@ -38,7 +38,7 @@
     .locals 5
 
     .prologue
-    .line 986
+    .line 988
     :goto_0
     const/4 v0, 0x1
 
@@ -82,7 +82,7 @@
 
     if-nez v0, :cond_1
 
-    .line 989
+    .line 991
     :cond_0
     const-wide/16 v0, 0x1f4
 
@@ -93,13 +93,13 @@
 
     goto :goto_0
 
-    .line 990
+    .line 992
     :catch_0
     move-exception v0
 
     goto :goto_0
 
-    .line 994
+    .line 996
     :cond_1
     const-string v0, "KeyguardUpdateMonitor"
 
@@ -130,7 +130,7 @@
 
     invoke-static {v0, v1}, Lcom/mediatek/xlog/Xlog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 996
+    .line 998
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$6;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     #getter for: Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
@@ -142,7 +142,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/LockPatternUtils;->setLockScreenDisabled(Z)V
 
-    .line 997
+    .line 999
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$6;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     #getter for: Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->shouldPopup:Z
@@ -152,7 +152,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 998
+    .line 1000
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$6;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     #getter for: Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mHandler:Landroid/os/Handler;
@@ -197,7 +197,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 1002
+    .line 1004
     :cond_2
     return-void
 .end method

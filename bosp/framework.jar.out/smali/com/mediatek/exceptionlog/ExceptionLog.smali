@@ -908,7 +908,7 @@
 
     .line 136
     .local v9, mNotificationManager:Landroid/app/NotificationManager;
-    const v8, #drawable@APKTOOL_DUMMY_0360#t
+    const v8, #drawable@ic_dialog_alert_holo_light#t
 
     .line 137
     .local v8, icon:I

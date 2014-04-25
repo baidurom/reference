@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1088
+    .line 1090
     iput-object p1, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$7;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,20 +43,20 @@
     .parameter "arg1"
 
     .prologue
-    .line 1091
+    .line 1093
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.baidu.dualcardsetting.baidu_dual_card_setting"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1092
+    .line 1094
     .local v0, t:Landroid/content/Intent;
     const/high16 v1, 0x1000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 1093
+    .line 1095
     iget-object v1, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$7;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     #getter for: Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mContext:Landroid/content/Context;
@@ -66,6 +66,6 @@
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 1094
+    .line 1096
     return-void
 .end method

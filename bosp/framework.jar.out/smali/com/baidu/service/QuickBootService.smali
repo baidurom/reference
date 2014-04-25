@@ -792,7 +792,7 @@
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
     .line 463
-    const-string v1, "level"
+    const-string/jumbo v1, "level"
 
     iget v3, p0, Lcom/baidu/service/QuickBootService;->mBatteryLevel:I
 

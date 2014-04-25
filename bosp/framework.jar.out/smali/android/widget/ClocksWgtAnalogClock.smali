@@ -159,7 +159,7 @@
     if-nez v2, :cond_0
 
     .line 141
-    const v2, #drawable@btn_star_off_disabled_holo_dark#t
+    const v2, #drawable@btn_radio_off#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -181,7 +181,7 @@
     if-nez v2, :cond_1
 
     .line 146
-    const v2, #drawable@btn_star_off_disabled_holo_light#t
+    const v2, #drawable@btn_radio_off_disabled_focused_holo_dark#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -205,7 +205,7 @@
     if-nez v2, :cond_2
 
     .line 151
-    const v2, #drawable@btn_star_off_focused_holo_dark#t
+    const v2, #drawable@btn_radio_off_disabled_focused_holo_light#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

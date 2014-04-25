@@ -140,7 +140,7 @@
     .line 146
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    const-string v2, "len must be > 0"
+    const-string/jumbo v2, "len must be > 0"
 
     invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

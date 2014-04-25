@@ -2639,7 +2639,7 @@
 
     move-result-object v3
 
-    const v4, 0x4080143
+    const v4, 0x4080144
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -2655,7 +2655,7 @@
 
     move-result-object v3
 
-    const v4, 0x4080144
+    const v4, 0x4080145
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -2671,7 +2671,7 @@
 
     move-result-object v3
 
-    const v4, 0x4080145
+    const v4, 0x4080146
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -2687,7 +2687,7 @@
 
     move-result-object v3
 
-    const v4, 0x4080146
+    const v4, 0x4080147
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -4231,7 +4231,7 @@
 
     .line 1112
     .local v5, textId:I
-    const v3, 0x4080140
+    const v3, 0x4080141
 
     .line 1113
     .local v3, phoneCallIcon:I

@@ -567,7 +567,7 @@
 
     .line 274
     :pswitch_3
-    const-string v13, "linkProperties"
+    const-string/jumbo v13, "linkProperties"
 
     move-object/from16 v0, p2
 
@@ -604,7 +604,7 @@
 
     .line 280
     :cond_7
-    const-string v13, "linkCapabilities"
+    const-string/jumbo v13, "linkCapabilities"
 
     move-object/from16 v0, p2
 
@@ -652,7 +652,7 @@
 
     .line 299
     :cond_9
-    const-string v13, "linkPropertiesChanged"
+    const-string/jumbo v13, "linkPropertiesChanged"
 
     invoke-static {v9, v13}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
@@ -661,7 +661,7 @@
     if-eqz v13, :cond_b
 
     .line 300
-    const-string v13, "linkProperties"
+    const-string/jumbo v13, "linkProperties"
 
     move-object/from16 v0, p2
 

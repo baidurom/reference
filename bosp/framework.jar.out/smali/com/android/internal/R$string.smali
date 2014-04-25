@@ -349,6 +349,10 @@
 
 .field public static final charge_complete:I = #string@charge_complete#t
 
+.field public static final charge_finished:I = #string@charge_finished#t
+
+.field public static final chargging:I = #string@chargging#t
+
 .field public static final checkbox_checked:I = #string@checkbox_checked#t
 
 .field public static final checkbox_not_checked:I = #string@checkbox_not_checked#t
@@ -2255,6 +2259,12 @@
 
 .field public static final replace:I = #string@replace#t
 
+.field public static final replace_browser_value:I = #string@replace_browser_value#t
+
+.field public static final replace_market_value:I = #string@replace_market_value#t
+
+.field public static final replace_reader_value:I = #string@replace_reader_value#t
+
 .field public static final report:I = #string@report#t
 
 .field public static final reset:I = #string@reset#t
@@ -2763,17 +2773,13 @@
 
 .field public static final yesterday:I = #string@yesterday#t
 
-.field public static final zz_lockscreen_month_day_hour_minute:I = #string@zz_lockscreen_month_day_hour_minute#t
-
-.field public static final zz_lockscreen_temperature_units:I = #string@zz_lockscreen_temperature_units#t
-
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 16024
+    .line 16146
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

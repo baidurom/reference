@@ -367,17 +367,13 @@
 
 .field public static final yi_tertiary_text_baidu_light:I = #color@yi_tertiary_text_baidu_light#t
 
-.field public static final zz_lockscreen_agenda_time_opacity:I = #color@zz_lockscreen_agenda_time_opacity#t
-
-.field public static final zz_lockscreen_white_opacity:I = #color@zz_lockscreen_white_opacity#t
-
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 11442
+    .line 11437
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

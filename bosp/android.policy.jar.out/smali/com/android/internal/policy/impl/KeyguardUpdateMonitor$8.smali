@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1428
+    .line 1430
     iput-object p1, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$8;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 
     const/4 v4, 0x0
 
-    .line 1430
+    .line 1432
     iget-object v2, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$8;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     #getter for: Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mGPRSDialog1:Landroid/app/AlertDialog;
@@ -57,7 +57,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 1431
+    .line 1433
     iget-object v2, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$8;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     #getter for: Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mGPRSDialog1:Landroid/app/AlertDialog;
@@ -67,7 +67,7 @@
 
     invoke-virtual {v2}, Landroid/app/AlertDialog;->dismiss()V
 
-    .line 1432
+    .line 1434
     iget-object v2, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$8;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     const/4 v3, 0x0
@@ -75,11 +75,11 @@
     #setter for: Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mGPRSDialog1:Landroid/app/AlertDialog;
     invoke-static {v2, v3}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->access$3702(Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;Landroid/app/AlertDialog;)Landroid/app/AlertDialog;
 
-    .line 1434
+    .line 1436
     :cond_0
     packed-switch p2, :pswitch_data_0
 
-    .line 1471
+    .line 1473
     iget-object v2, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$8;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     #getter for: Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->DEBUG:Z
@@ -95,7 +95,7 @@
 
     invoke-static {v2, v3}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1473
+    .line 1475
     :cond_1
     iget-object v2, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$8;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
@@ -112,12 +112,12 @@
 
     invoke-static {v2, v3, v4}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 1477
+    .line 1479
     :goto_0
     :pswitch_0
     return-void
 
-    .line 1438
+    .line 1440
     :pswitch_1
     iget-object v2, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$8;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
@@ -134,7 +134,7 @@
 
     invoke-static {v2, v3}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1440
+    .line 1442
     :cond_2
     :try_start_0
     const-string v2, "phone"
@@ -147,18 +147,18 @@
 
     move-result-object v1
 
-    .line 1441
+    .line 1443
     .local v1, phone:Lcom/android/internal/telephony/ITelephony;
     if-eqz v1, :cond_3
 
-    .line 1442
+    .line 1444
     const/4 v2, 0x0
 
     const/4 v3, 0x1
 
     invoke-interface {v1, v2, v3}, Lcom/android/internal/telephony/ITelephony;->setGprsConnType(II)V
 
-    .line 1443
+    .line 1445
     const/4 v2, 0x1
 
     const/4 v3, 0x0
@@ -167,7 +167,7 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1453
+    .line 1455
     .end local v1           #phone:Lcom/android/internal/telephony/ITelephony;
     :goto_1
     iget-object v2, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$8;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
@@ -187,7 +187,7 @@
 
     goto :goto_0
 
-    .line 1445
+    .line 1447
     .restart local v1       #phone:Lcom/android/internal/telephony/ITelephony;
     :cond_3
     :try_start_1
@@ -201,12 +201,12 @@
 
     goto :goto_0
 
-    .line 1448
+    .line 1450
     .end local v1           #phone:Lcom/android/internal/telephony/ITelephony;
     :catch_0
     move-exception v0
 
-    .line 1449
+    .line 1451
     .local v0, e:Landroid/os/RemoteException;
     const-string v2, "KeyguardUpdateMonitor"
 
@@ -216,7 +216,7 @@
 
     goto :goto_1
 
-    .line 1459
+    .line 1461
     .end local v0           #e:Landroid/os/RemoteException;
     :pswitch_2
     iget-object v2, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$8;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
@@ -234,7 +234,7 @@
 
     invoke-static {v2, v3}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1461
+    .line 1463
     :cond_4
     iget-object v2, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$8;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
@@ -253,7 +253,7 @@
 
     goto :goto_0
 
-    .line 1434
+    .line 1436
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1

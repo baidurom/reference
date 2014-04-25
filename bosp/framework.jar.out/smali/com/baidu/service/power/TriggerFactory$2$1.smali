@@ -43,7 +43,7 @@
     const/4 v4, 0x0
 
     .line 39
-    const-string v1, "level"
+    const-string/jumbo v1, "level"
 
     invoke-virtual {p2, v1, v4}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 

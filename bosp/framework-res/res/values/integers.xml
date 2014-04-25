@@ -54,5 +54,4 @@
     <integer name="preference_screen_header_scrollbarStyle">0x2000000</integer>
     <integer name="preference_fragment_scrollbarStyle">0x2000000</integer>
     <integer name="config_automatic_rotate_delay">2</integer>
-    <integer name="zz_lockscreen_unlock_widget_distance">50</integer>
 </resources>

@@ -189,7 +189,7 @@
 
     const/16 v1, 0x9
 
-    const-string v2, "lg"
+    const-string/jumbo v2, "lg"
 
     aput-object v2, v0, v1
 

@@ -6820,7 +6820,7 @@
 
     move-object/from16 v25, v0
 
-    const-string v26, "linkPropertiesChanged"
+    const-string/jumbo v26, "linkPropertiesChanged"
 
     invoke-virtual {v3}, Lcom/android/internal/telephony/ApnContext;->getApnType()Ljava/lang/String;
 

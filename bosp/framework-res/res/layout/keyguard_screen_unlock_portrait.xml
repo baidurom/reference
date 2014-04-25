@@ -21,7 +21,7 @@
     <LinearLayout android:layout_gravity="center" android:orientation="vertical">
         <TextView android:textAppearance="?textAppearanceMedium" android:textSize="14.0sp" android:ellipsize="marquee" android:id="@id/alarm_status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:drawablePadding="4.0dip" />
     </LinearLayout>
-    <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:layout_marginTop="6.0dip">
+    <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:layout_marginTop="@dimen/APKTOOL_DUMMY_0062">
         <com.android.internal.widget.LockPatternView android:layout_gravity="center_horizontal" android:id="@id/lockPattern" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip" android:layout_marginBottom="4.0dip" />
     </LinearLayout>
     <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:layout_marginTop="-6.0dip">

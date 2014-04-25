@@ -62,7 +62,7 @@
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/EditText;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     .line 35
-    const v0, 0x408017e
+    const v0, 0x4080195
 
     iput v0, p0, Lyi/widget/BaiduEditText;->mDeleteIcon:I
 

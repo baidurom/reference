@@ -144,7 +144,7 @@
 
     invoke-direct {v3, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    const v4, #drawable@APKTOOL_DUMMY_0800#t0
+    const v4, #drawable@yi_btn_star_off_disabled_focused_baidu_light#t0
 
     invoke-virtual {v3, v4}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 

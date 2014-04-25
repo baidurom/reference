@@ -216,7 +216,7 @@
     iput-boolean v4, p0, Landroid/media/videoeditor/VideoEditorImpl;->mPreviewInProgress:Z
 
     .line 150
-    const-string v3, "libc.debug.malloc"
+    const-string/jumbo v3, "libc.debug.malloc"
 
     invoke-static {v3}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 

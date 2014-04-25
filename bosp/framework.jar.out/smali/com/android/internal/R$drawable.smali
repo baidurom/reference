@@ -149,6 +149,126 @@
 
 .field public static final baidu_keyguard_search_up_pressed:I = #drawable@baidu_keyguard_search_up_pressed#t
 
+.field public static final baidu_keyguard_slide_album_default:I = #drawable@baidu_keyguard_slide_album_default#t
+
+.field public static final baidu_keyguard_slide_bg_circle:I = #drawable@baidu_keyguard_slide_bg_circle#t
+
+.field public static final baidu_keyguard_slide_camera:I = #drawable@baidu_keyguard_slide_camera#t
+
+.field public static final baidu_keyguard_slide_dot_l:I = #drawable@baidu_keyguard_slide_dot_l#t
+
+.field public static final baidu_keyguard_slide_dot_m:I = #drawable@baidu_keyguard_slide_dot_m#t
+
+.field public static final baidu_keyguard_slide_dot_s:I = #drawable@baidu_keyguard_slide_dot_s#t
+
+.field public static final baidu_keyguard_slide_down:I = #drawable@baidu_keyguard_slide_down#t
+
+.field public static final baidu_keyguard_slide_fade:I = #drawable@baidu_keyguard_slide_fade#t
+
+.field public static final baidu_keyguard_slide_handle:I = #drawable@baidu_keyguard_slide_handle#t
+
+.field public static final baidu_keyguard_slide_handle_charge:I = #drawable@baidu_keyguard_slide_handle_charge#t
+
+.field public static final baidu_keyguard_slide_handle_chargging:I = #drawable@baidu_keyguard_slide_handle_chargging#t
+
+.field public static final baidu_keyguard_slide_handle_normal:I = #drawable@baidu_keyguard_slide_handle_normal#t
+
+.field public static final baidu_keyguard_slide_handle_pressed:I = #drawable@baidu_keyguard_slide_handle_pressed#t
+
+.field public static final baidu_keyguard_slide_idle_alarm:I = #drawable@baidu_keyguard_slide_idle_alarm#t
+
+.field public static final baidu_keyguard_slide_iqiyi:I = #drawable@baidu_keyguard_slide_iqiyi#t
+
+.field public static final baidu_keyguard_slide_iqiyi_bg:I = #drawable@baidu_keyguard_slide_iqiyi_bg#t
+
+.field public static final baidu_keyguard_slide_iqiyi_edu:I = #drawable@baidu_keyguard_slide_iqiyi_edu#t
+
+.field public static final baidu_keyguard_slide_iqiyi_normal:I = #drawable@baidu_keyguard_slide_iqiyi_normal#t
+
+.field public static final baidu_keyguard_slide_iqiyi_pressed:I = #drawable@baidu_keyguard_slide_iqiyi_pressed#t
+
+.field public static final baidu_keyguard_slide_iqiyi_pushmsg_icon:I = #drawable@baidu_keyguard_slide_iqiyi_pushmsg_icon#t
+
+.field public static final baidu_keyguard_slide_message:I = #drawable@baidu_keyguard_slide_message#t
+
+.field public static final baidu_keyguard_slide_miss_bg:I = #drawable@baidu_keyguard_slide_miss_bg#t
+
+.field public static final baidu_keyguard_slide_misscall_bot:I = #drawable@baidu_keyguard_slide_misscall_bot#t
+
+.field public static final baidu_keyguard_slide_misssms_bot:I = #drawable@baidu_keyguard_slide_misssms_bot#t
+
+.field public static final baidu_keyguard_slide_music_bg:I = #drawable@baidu_keyguard_slide_music_bg#t
+
+.field public static final baidu_keyguard_slide_music_covermask:I = #drawable@baidu_keyguard_slide_music_covermask#t
+
+.field public static final baidu_keyguard_slide_music_covermask_front:I = #drawable@baidu_keyguard_slide_music_covermask_front#t
+
+.field public static final baidu_keyguard_slide_next:I = #drawable@baidu_keyguard_slide_next#t
+
+.field public static final baidu_keyguard_slide_next_normal:I = #drawable@baidu_keyguard_slide_next_normal#t
+
+.field public static final baidu_keyguard_slide_next_pressed:I = #drawable@baidu_keyguard_slide_next_pressed#t
+
+.field public static final baidu_keyguard_slide_pause:I = #drawable@baidu_keyguard_slide_pause#t
+
+.field public static final baidu_keyguard_slide_pause_normal:I = #drawable@baidu_keyguard_slide_pause_normal#t
+
+.field public static final baidu_keyguard_slide_pause_pressed:I = #drawable@baidu_keyguard_slide_pause_pressed#t
+
+.field public static final baidu_keyguard_slide_phone:I = #drawable@baidu_keyguard_slide_phone#t
+
+.field public static final baidu_keyguard_slide_play:I = #drawable@baidu_keyguard_slide_play#t
+
+.field public static final baidu_keyguard_slide_play_normal:I = #drawable@baidu_keyguard_slide_play_normal#t
+
+.field public static final baidu_keyguard_slide_play_pressed:I = #drawable@baidu_keyguard_slide_play_pressed#t
+
+.field public static final baidu_keyguard_slide_prev:I = #drawable@baidu_keyguard_slide_prev#t
+
+.field public static final baidu_keyguard_slide_previous_normal:I = #drawable@baidu_keyguard_slide_previous_normal#t
+
+.field public static final baidu_keyguard_slide_previous_pressed:I = #drawable@baidu_keyguard_slide_previous_pressed#t
+
+.field public static final baidu_keyguard_slide_ring:I = #drawable@baidu_keyguard_slide_ring#t
+
+.field public static final baidu_keyguard_slide_unlock:I = #drawable@baidu_keyguard_slide_unlock#t
+
+.field public static final baidu_keyguard_space_camera_normal:I = #drawable@baidu_keyguard_space_camera_normal#t
+
+.field public static final baidu_keyguard_space_camera_pressed:I = #drawable@baidu_keyguard_space_camera_pressed#t
+
+.field public static final baidu_keyguard_space_handle_normal:I = #drawable@baidu_keyguard_space_handle_normal#t
+
+.field public static final baidu_keyguard_space_handle_pressed:I = #drawable@baidu_keyguard_space_handle_pressed#t
+
+.field public static final baidu_keyguard_space_message_normal:I = #drawable@baidu_keyguard_space_message_normal#t
+
+.field public static final baidu_keyguard_space_message_pressed:I = #drawable@baidu_keyguard_space_message_pressed#t
+
+.field public static final baidu_keyguard_space_miss_call:I = #drawable@baidu_keyguard_space_miss_call#t
+
+.field public static final baidu_keyguard_space_miss_message:I = #drawable@baidu_keyguard_space_miss_message#t
+
+.field public static final baidu_keyguard_space_phone_normal:I = #drawable@baidu_keyguard_space_phone_normal#t
+
+.field public static final baidu_keyguard_space_phone_pressed:I = #drawable@baidu_keyguard_space_phone_pressed#t
+
+.field public static final baidu_keyguard_space_shake_background:I = #drawable@baidu_keyguard_space_shake_background#t
+
+.field public static final baidu_keyguard_space_shake_layer0:I = #drawable@baidu_keyguard_space_shake_layer0#t
+
+.field public static final baidu_keyguard_space_shake_layer1:I = #drawable@baidu_keyguard_space_shake_layer1#t
+
+.field public static final baidu_keyguard_space_shake_layer2:I = #drawable@baidu_keyguard_space_shake_layer2#t
+
+.field public static final baidu_keyguard_space_shake_layer3:I = #drawable@baidu_keyguard_space_shake_layer3#t
+
+.field public static final baidu_keyguard_space_shake_layer4:I = #drawable@baidu_keyguard_space_shake_layer4#t
+
+.field public static final baidu_keyguard_space_unlock_normal:I = #drawable@baidu_keyguard_space_unlock_normal#t
+
+.field public static final baidu_keyguard_space_unlock_pressed:I = #drawable@baidu_keyguard_space_unlock_pressed#t
+
 .field public static final baidu_keyguard_target_ring:I = #drawable@baidu_keyguard_target_ring#t
 
 .field public static final baidu_keyguard_target_small_ring:I = #drawable@baidu_keyguard_target_small_ring#t
@@ -158,6 +278,48 @@
 .field public static final baidu_keyguard_unlock_normal:I = #drawable@baidu_keyguard_unlock_normal#t
 
 .field public static final baidu_keyguard_unlock_pressed:I = #drawable@baidu_keyguard_unlock_pressed#t
+
+.field public static final baidu_keyguard_water_camera_normal:I = #drawable@baidu_keyguard_water_camera_normal#t
+
+.field public static final baidu_keyguard_water_camera_pressed:I = #drawable@baidu_keyguard_water_camera_pressed#t
+
+.field public static final baidu_keyguard_water_handle_normal:I = #drawable@baidu_keyguard_water_handle_normal#t
+
+.field public static final baidu_keyguard_water_handle_pressed:I = #drawable@baidu_keyguard_water_handle_pressed#t
+
+.field public static final baidu_keyguard_water_message_normal:I = #drawable@baidu_keyguard_water_message_normal#t
+
+.field public static final baidu_keyguard_water_message_pressed:I = #drawable@baidu_keyguard_water_message_pressed#t
+
+.field public static final baidu_keyguard_water_miss_call:I = #drawable@baidu_keyguard_water_miss_call#t
+
+.field public static final baidu_keyguard_water_miss_message:I = #drawable@baidu_keyguard_water_miss_message#t
+
+.field public static final baidu_keyguard_water_phone_normal:I = #drawable@baidu_keyguard_water_phone_normal#t
+
+.field public static final baidu_keyguard_water_phone_pressed:I = #drawable@baidu_keyguard_water_phone_pressed#t
+
+.field public static final baidu_keyguard_water_shake_background:I = #drawable@baidu_keyguard_water_shake_background#t
+
+.field public static final baidu_keyguard_water_shake_layer0:I = #drawable@baidu_keyguard_water_shake_layer0#t
+
+.field public static final baidu_keyguard_water_shake_layer1:I = #drawable@baidu_keyguard_water_shake_layer1#t
+
+.field public static final baidu_keyguard_water_shake_layer2:I = #drawable@baidu_keyguard_water_shake_layer2#t
+
+.field public static final baidu_keyguard_water_shake_layer3:I = #drawable@baidu_keyguard_water_shake_layer3#t
+
+.field public static final baidu_keyguard_water_shake_layer4:I = #drawable@baidu_keyguard_water_shake_layer4#t
+
+.field public static final baidu_keyguard_water_shake_layer5:I = #drawable@baidu_keyguard_water_shake_layer5#t
+
+.field public static final baidu_keyguard_water_shake_layer6:I = #drawable@baidu_keyguard_water_shake_layer6#t
+
+.field public static final baidu_keyguard_water_shake_layer7:I = #drawable@baidu_keyguard_water_shake_layer7#t
+
+.field public static final baidu_keyguard_water_unlock_normal:I = #drawable@baidu_keyguard_water_unlock_normal#t
+
+.field public static final baidu_keyguard_water_unlock_pressed:I = #drawable@baidu_keyguard_water_unlock_pressed#t
 
 .field public static final baidu_p001_small:I = #drawable@baidu_p001_small#t
 
@@ -196,6 +358,8 @@
 .field public static final battery_fail:I = #drawable@battery_fail#t
 
 .field public static final blank_tile:I = #drawable@blank_tile#t
+
+.field public static final boat:I = #drawable@boat#t
 
 .field public static final bottom_bar:I = #drawable@bottom_bar#t
 
@@ -881,6 +1045,8 @@
 
 .field public static final call_contact:I = #drawable@call_contact#t
 
+.field public static final charge_circle:I = #drawable@charge_circle#t
+
 .field public static final checkbox_off_background:I = #drawable@checkbox_off_background#t
 
 .field public static final checkbox_on_background:I = #drawable@checkbox_on_background#t
@@ -1004,6 +1170,22 @@
 .field public static final divider_vertical_holo_dark:I = #drawable@divider_vertical_holo_dark#t
 
 .field public static final divider_vertical_holo_light:I = #drawable@divider_vertical_holo_light#t
+
+.field public static final dot_l_h:I = #drawable@dot_l_h#t
+
+.field public static final dot_l_n:I = #drawable@dot_l_n#t
+
+.field public static final dot_m_h:I = #drawable@dot_m_h#t
+
+.field public static final dot_m_n:I = #drawable@dot_m_n#t
+
+.field public static final dot_s_h:I = #drawable@dot_s_h#t
+
+.field public static final dot_s_n:I = #drawable@dot_s_n#t
+
+.field public static final down_h:I = #drawable@down_h#t
+
+.field public static final down_n:I = #drawable@down_n#t
 
 .field public static final dropdown_disabled_focused_holo_dark:I = #drawable@dropdown_disabled_focused_holo_dark#t
 
@@ -1219,6 +1401,8 @@
 
 .field public static final ic_audio_vol_mute:I = #drawable@ic_audio_vol_mute#t
 
+.field public static final ic_baidu_sound:I = #drawable@ic_baidu_sound#t
+
 .field public static final ic_btn_round_more:I = #drawable@ic_btn_round_more#t
 
 .field public static final ic_btn_round_more_disabled:I = #drawable@ic_btn_round_more_disabled#t
@@ -1265,7 +1449,7 @@
 
 .field public static final ic_clear_search_api_holo_light:I = #drawable@ic_clear_search_api_holo_light#t
 
-.field public static final ic_commit:I = #drawable@APKTOOL_DUMMY_02fd#t
+.field public static final ic_commit:I = #drawable@APKTOOL_DUMMY_0359#t
 
 .field public static final ic_commit_search_api_holo_dark:I = #drawable@ic_commit_search_api_holo_dark#t
 
@@ -1339,7 +1523,89 @@
 
 .field public static final ic_jog_dial_vibrate_on:I = #drawable@ic_jog_dial_vibrate_on#t
 
+.field public static final ic_launcher_360:I = #drawable@ic_launcher_360#t
+
+.field public static final ic_launcher_360launcher:I = #drawable@ic_launcher_360launcher#t
+
+.field public static final ic_launcher_aliwangwang:I = #drawable@ic_launcher_aliwangwang#t
+
 .field public static final ic_launcher_android:I = #drawable@ic_launcher_android#t
+
+.field public static final ic_launcher_baidubrowser:I = #drawable@ic_launcher_baidubrowser#t
+
+.field public static final ic_launcher_baidugamecenter:I = #drawable@ic_launcher_baidugamecenter#t
+
+.field public static final ic_launcher_baidumap:I = #drawable@ic_launcher_baidumap#t
+
+.field public static final ic_launcher_baidumarket:I = #drawable@ic_launcher_baidumarket#t
+
+.field public static final ic_launcher_baidunetdisk:I = #drawable@ic_launcher_baidunetdisk#t
+
+.field public static final ic_launcher_baidureader:I = #drawable@ic_launcher_baidureader#t
+
+.field public static final ic_launcher_baidusearch:I = #drawable@ic_launcher_baidusearch#t
+
+.field public static final ic_launcher_baiduvoiceassistant:I = #drawable@ic_launcher_baiduvoiceassistant#t
+
+.field public static final ic_launcher_dolby:I = #drawable@ic_launcher_dolby#t
+
+.field public static final ic_launcher_huluxia_gametools:I = #drawable@ic_launcher_huluxia_gametools#t
+
+.field public static final ic_launcher_ireader:I = #drawable@ic_launcher_ireader#t
+
+.field public static final ic_launcher_iyqiyi:I = #drawable@ic_launcher_iyqiyi#t
+
+.field public static final ic_launcher_kugou_music:I = #drawable@ic_launcher_kugou_music#t
+
+.field public static final ic_launcher_kuwo_player:I = #drawable@ic_launcher_kuwo_player#t
+
+.field public static final ic_launcher_moji_weather:I = #drawable@ic_launcher_moji_weather#t
+
+.field public static final ic_launcher_momo:I = #drawable@ic_launcher_momo#t
+
+.field public static final ic_launcher_pplive:I = #drawable@ic_launcher_pplive#t
+
+.field public static final ic_launcher_qq:I = #drawable@ic_launcher_qq#t
+
+.field public static final ic_launcher_qqmusic:I = #drawable@ic_launcher_qqmusic#t
+
+.field public static final ic_launcher_qvodplayer:I = #drawable@ic_launcher_qvodplayer#t
+
+.field public static final ic_launcher_qzone:I = #drawable@ic_launcher_qzone#t
+
+.field public static final ic_launcher_renren:I = #drawable@ic_launcher_renren#t
+
+.field public static final ic_launcher_security:I = #drawable@ic_launcher_security#t
+
+.field public static final ic_launcher_shuqi:I = #drawable@ic_launcher_shuqi#t
+
+.field public static final ic_launcher_sim:I = #drawable@ic_launcher_sim#t
+
+.field public static final ic_launcher_sogou_input:I = #drawable@ic_launcher_sogou_input#t
+
+.field public static final ic_launcher_taobao:I = #drawable@ic_launcher_taobao#t
+
+.field public static final ic_launcher_tencent_news:I = #drawable@ic_launcher_tencent_news#t
+
+.field public static final ic_launcher_tencent_qqlive:I = #drawable@ic_launcher_tencent_qqlive#t
+
+.field public static final ic_launcher_ucmobile:I = #drawable@ic_launcher_ucmobile#t
+
+.field public static final ic_launcher_wandoujia:I = #drawable@ic_launcher_wandoujia#t
+
+.field public static final ic_launcher_wechat:I = #drawable@ic_launcher_wechat#t
+
+.field public static final ic_launcher_weibo:I = #drawable@ic_launcher_weibo#t
+
+.field public static final ic_launcher_wifiwnys:I = #drawable@ic_launcher_wifiwnys#t
+
+.field public static final ic_launcher_yixin:I = #drawable@ic_launcher_yixin#t
+
+.field public static final ic_launcher_youdao:I = #drawable@ic_launcher_youdao#t
+
+.field public static final ic_launcher_youku:I = #drawable@ic_launcher_youku#t
+
+.field public static final ic_launcher_zhifubao:I = #drawable@ic_launcher_zhifubao#t
 
 .field public static final ic_lock_airplane_mode:I = #drawable@ic_lock_airplane_mode#t
 
@@ -1459,67 +1725,67 @@
 
 .field public static final ic_lockscreen_unlock_normal:I = #drawable@ic_lockscreen_unlock_normal#t
 
-.field public static final ic_main_unlock_charging_10:I = #drawable@APKTOOL_DUMMY_034d#t
+.field public static final ic_main_unlock_charging_10:I = #drawable@APKTOOL_DUMMY_03d2#t
 
-.field public static final ic_main_unlock_charging_100:I = #drawable@APKTOOL_DUMMY_034e#t
+.field public static final ic_main_unlock_charging_100:I = #drawable@APKTOOL_DUMMY_03d3#t
 
-.field public static final ic_main_unlock_charging_10_1:I = #drawable@APKTOOL_DUMMY_034f#t
+.field public static final ic_main_unlock_charging_10_1:I = #drawable@APKTOOL_DUMMY_03d4#t
 
-.field public static final ic_main_unlock_charging_10_2:I = #drawable@APKTOOL_DUMMY_0350#t
+.field public static final ic_main_unlock_charging_10_2:I = #drawable@APKTOOL_DUMMY_03d5#t
 
-.field public static final ic_main_unlock_charging_10_3:I = #drawable@APKTOOL_DUMMY_0351#t
+.field public static final ic_main_unlock_charging_10_3:I = #drawable@APKTOOL_DUMMY_03d6#t
 
-.field public static final ic_main_unlock_charging_10_4:I = #drawable@APKTOOL_DUMMY_0352#t
+.field public static final ic_main_unlock_charging_10_4:I = #drawable@APKTOOL_DUMMY_03d7#t
 
-.field public static final ic_main_unlock_charging_20_1:I = #drawable@APKTOOL_DUMMY_0353#t
+.field public static final ic_main_unlock_charging_20_1:I = #drawable@APKTOOL_DUMMY_03d8#t
 
-.field public static final ic_main_unlock_charging_20_2:I = #drawable@APKTOOL_DUMMY_0354#t
+.field public static final ic_main_unlock_charging_20_2:I = #drawable@APKTOOL_DUMMY_03d9#t
 
-.field public static final ic_main_unlock_charging_20_3:I = #drawable@APKTOOL_DUMMY_0355#t
+.field public static final ic_main_unlock_charging_20_3:I = #drawable@APKTOOL_DUMMY_03da#t
 
-.field public static final ic_main_unlock_charging_20_4:I = #drawable@APKTOOL_DUMMY_0356#t
+.field public static final ic_main_unlock_charging_20_4:I = #drawable@APKTOOL_DUMMY_03db#t
 
-.field public static final ic_main_unlock_charging_20_5:I = #drawable@APKTOOL_DUMMY_0357#t
+.field public static final ic_main_unlock_charging_20_5:I = #drawable@APKTOOL_DUMMY_03dc#t
 
-.field public static final ic_main_unlock_charging_40_1:I = #drawable@APKTOOL_DUMMY_0358#t
+.field public static final ic_main_unlock_charging_40_1:I = #drawable@APKTOOL_DUMMY_03dd#t
 
-.field public static final ic_main_unlock_charging_40_2:I = #drawable@APKTOOL_DUMMY_0359#t
+.field public static final ic_main_unlock_charging_40_2:I = #drawable@APKTOOL_DUMMY_03de#t
 
-.field public static final ic_main_unlock_charging_40_3:I = #drawable@APKTOOL_DUMMY_035a#t
+.field public static final ic_main_unlock_charging_40_3:I = #drawable@APKTOOL_DUMMY_03df#t
 
-.field public static final ic_main_unlock_charging_40_4:I = #drawable@APKTOOL_DUMMY_035b#t
+.field public static final ic_main_unlock_charging_40_4:I = #drawable@APKTOOL_DUMMY_03e0#t
 
-.field public static final ic_main_unlock_charging_40_5:I = #drawable@APKTOOL_DUMMY_035c#t
+.field public static final ic_main_unlock_charging_40_5:I = #drawable@APKTOOL_DUMMY_03e1#t
 
-.field public static final ic_main_unlock_charging_60_1:I = #drawable@APKTOOL_DUMMY_035d#t
+.field public static final ic_main_unlock_charging_60_1:I = #drawable@APKTOOL_DUMMY_03e2#t
 
-.field public static final ic_main_unlock_charging_60_2:I = #drawable@APKTOOL_DUMMY_035e#t
+.field public static final ic_main_unlock_charging_60_2:I = #drawable@APKTOOL_DUMMY_03e3#t
 
-.field public static final ic_main_unlock_charging_60_3:I = #drawable@APKTOOL_DUMMY_035f#t
+.field public static final ic_main_unlock_charging_60_3:I = #drawable@APKTOOL_DUMMY_03e4#t
 
-.field public static final ic_main_unlock_charging_60_4:I = #drawable@APKTOOL_DUMMY_0360#t
+.field public static final ic_main_unlock_charging_60_4:I = #drawable@APKTOOL_DUMMY_03e5#t
 
-.field public static final ic_main_unlock_charging_60_5:I = #drawable@APKTOOL_DUMMY_0361#t
+.field public static final ic_main_unlock_charging_60_5:I = #drawable@APKTOOL_DUMMY_03e6#t
 
-.field public static final ic_main_unlock_charging_80_1:I = #drawable@APKTOOL_DUMMY_0362#t
+.field public static final ic_main_unlock_charging_80_1:I = #drawable@APKTOOL_DUMMY_03e7#t
 
-.field public static final ic_main_unlock_charging_80_2:I = #drawable@APKTOOL_DUMMY_0363#t
+.field public static final ic_main_unlock_charging_80_2:I = #drawable@APKTOOL_DUMMY_03e8#t
 
-.field public static final ic_main_unlock_charging_80_3:I = #drawable@APKTOOL_DUMMY_0364#t
+.field public static final ic_main_unlock_charging_80_3:I = #drawable@APKTOOL_DUMMY_03e9#t
 
-.field public static final ic_main_unlock_charging_80_4:I = #drawable@APKTOOL_DUMMY_0365#t
+.field public static final ic_main_unlock_charging_80_4:I = #drawable@APKTOOL_DUMMY_03ea#t
 
-.field public static final ic_main_unlock_charging_80_5:I = #drawable@APKTOOL_DUMMY_0366#t
+.field public static final ic_main_unlock_charging_80_5:I = #drawable@APKTOOL_DUMMY_03eb#t
 
-.field public static final ic_main_unlock_charging_99_1:I = #drawable@APKTOOL_DUMMY_0367#t
+.field public static final ic_main_unlock_charging_99_1:I = #drawable@APKTOOL_DUMMY_03ec#t
 
-.field public static final ic_main_unlock_charging_99_2:I = #drawable@APKTOOL_DUMMY_0368#t
+.field public static final ic_main_unlock_charging_99_2:I = #drawable@APKTOOL_DUMMY_03ed#t
 
-.field public static final ic_main_unlock_charging_99_3:I = #drawable@APKTOOL_DUMMY_0369#t
+.field public static final ic_main_unlock_charging_99_3:I = #drawable@APKTOOL_DUMMY_03ee#t
 
-.field public static final ic_main_unlock_charging_99_4:I = #drawable@APKTOOL_DUMMY_036a#t
+.field public static final ic_main_unlock_charging_99_4:I = #drawable@APKTOOL_DUMMY_03ef#t
 
-.field public static final ic_main_unlock_charging_99_5:I = #drawable@APKTOOL_DUMMY_036b#t
+.field public static final ic_main_unlock_charging_99_5:I = #drawable@APKTOOL_DUMMY_03f0#t
 
 .field public static final ic_main_unlock_hidden:I = #drawable@ic_main_unlock_hidden#t
 
@@ -2191,6 +2457,8 @@
 
 .field public static final loading_tile_android:I = #drawable@loading_tile_android#t
 
+.field public static final lock_music_covermask_front:I = #drawable@lock_music_covermask_front#t
+
 .field public static final lockscreen_arrow_lefttoright:I = #drawable@lockscreen_arrow_lefttoright#t
 
 .field public static final lockscreen_arrow_righttoleft:I = #drawable@lockscreen_arrow_righttoleft#t
@@ -2565,21 +2833,21 @@
 
 .field public static final progressbar_indeterminate3:I = #drawable@progressbar_indeterminate3#t
 
-.field public static final progressbar_indeterminate_baidu1:I = #drawable@APKTOOL_DUMMY_052b#t
+.field public static final progressbar_indeterminate_baidu1:I = #drawable@APKTOOL_DUMMY_05b1#t
 
-.field public static final progressbar_indeterminate_baidu2:I = #drawable@APKTOOL_DUMMY_052c#t
+.field public static final progressbar_indeterminate_baidu2:I = #drawable@APKTOOL_DUMMY_05b2#t
 
-.field public static final progressbar_indeterminate_baidu3:I = #drawable@APKTOOL_DUMMY_052d#t
+.field public static final progressbar_indeterminate_baidu3:I = #drawable@APKTOOL_DUMMY_05b3#t
 
-.field public static final progressbar_indeterminate_baidu4:I = #drawable@APKTOOL_DUMMY_052e#t
+.field public static final progressbar_indeterminate_baidu4:I = #drawable@APKTOOL_DUMMY_05b4#t
 
-.field public static final progressbar_indeterminate_baidu5:I = #drawable@APKTOOL_DUMMY_052f#t
+.field public static final progressbar_indeterminate_baidu5:I = #drawable@APKTOOL_DUMMY_05b5#t
 
-.field public static final progressbar_indeterminate_baidu6:I = #drawable@APKTOOL_DUMMY_0530#t
+.field public static final progressbar_indeterminate_baidu6:I = #drawable@APKTOOL_DUMMY_05b6#t
 
-.field public static final progressbar_indeterminate_baidu7:I = #drawable@APKTOOL_DUMMY_0531#t
+.field public static final progressbar_indeterminate_baidu7:I = #drawable@APKTOOL_DUMMY_05b7#t
 
-.field public static final progressbar_indeterminate_baidu8:I = #drawable@APKTOOL_DUMMY_0532#t
+.field public static final progressbar_indeterminate_baidu8:I = #drawable@APKTOOL_DUMMY_05b8#t
 
 .field public static final progressbar_indeterminate_holo1:I = #drawable@progressbar_indeterminate_holo1#t
 
@@ -2773,11 +3041,11 @@
 
 .field public static final reticle:I = #drawable@reticle#t
 
-.field public static final rice_expander_ic_maximized:I = #drawable@APKTOOL_DUMMY_0591#t
+.field public static final rice_expander_ic_maximized:I = #drawable@APKTOOL_DUMMY_0617#t
 
-.field public static final rice_expander_ic_minimized:I = #drawable@APKTOOL_DUMMY_0592#t
+.field public static final rice_expander_ic_minimized:I = #drawable@APKTOOL_DUMMY_0618#t
 
-.field public static final rice_ic_element_arrow_indicator_normal:I = #drawable@APKTOOL_DUMMY_0593#t
+.field public static final rice_ic_element_arrow_indicator_normal:I = #drawable@APKTOOL_DUMMY_0619#t
 
 .field public static final rice_ic_lock_background:I = #drawable@rice_ic_lock_background#t
 
@@ -2855,7 +3123,7 @@
 
 .field public static final searchbox_hotwords_selected:I = #drawable@searchbox_hotwords_selected#t
 
-.field public static final searchbox_music_normal:I = #drawable@APKTOOL_DUMMY_05b2#t
+.field public static final searchbox_music_normal:I = #drawable@APKTOOL_DUMMY_0638#t
 
 .field public static final searchbox_music_pressed:I = #drawable@searchbox_music_pressed#t
 
@@ -3318,7 +3586,7 @@
 
 .field public static final sym_keyboard_delete_dim:I = #drawable@sym_keyboard_delete_dim#t
 
-.field public static final sym_keyboard_delete_holo:I = #drawable@APKTOOL_DUMMY_0667#t
+.field public static final sym_keyboard_delete_holo:I = #drawable@APKTOOL_DUMMY_06ed#t
 
 .field public static final sym_keyboard_feedback_delete:I = #drawable@sym_keyboard_feedback_delete#t
 
@@ -3576,7 +3844,7 @@
 
 .field public static final vpn_disconnected:I = #drawable@vpn_disconnected#t
 
-.field public static final yi_ab_bottom_shadow_light_baidu:I = #drawable@APKTOOL_DUMMY_06e5#t
+.field public static final yi_ab_bottom_shadow_light_baidu:I = #drawable@APKTOOL_DUMMY_076b#t
 
 .field public static final yi_ab_bottom_solid_dark_baidu:I = #drawable@yi_ab_bottom_solid_dark_baidu#t
 
@@ -3594,7 +3862,7 @@
 
 .field public static final yi_ab_item_pressed_baidu_light:I = #drawable@yi_ab_item_pressed_baidu_light#t
 
-.field public static final yi_ab_pressed_light_baidu:I = #drawable@APKTOOL_DUMMY_06ee#t
+.field public static final yi_ab_pressed_light_baidu:I = #drawable@APKTOOL_DUMMY_0774#t
 
 .field public static final yi_ab_share_pack_baidu_dark:I = #drawable@yi_ab_share_pack_baidu_dark#t
 
@@ -3614,17 +3882,17 @@
 
 .field public static final yi_ab_stacked_transparent_dark_baidu:I = #drawable@yi_ab_stacked_transparent_dark_baidu#t
 
-.field public static final yi_ab_stacked_transparent_dark_baidu1:I = #drawable@APKTOOL_DUMMY_06f8#t
+.field public static final yi_ab_stacked_transparent_dark_baidu1:I = #drawable@APKTOOL_DUMMY_077e#t
 
 .field public static final yi_ab_stacked_transparent_light_baidu:I = #drawable@yi_ab_stacked_transparent_light_baidu#t
 
-.field public static final yi_ab_stacked_transparent_light_baidu1:I = #drawable@APKTOOL_DUMMY_06fa#t
+.field public static final yi_ab_stacked_transparent_light_baidu1:I = #drawable@APKTOOL_DUMMY_0780#t
 
 .field public static final yi_ab_transparent_dark_baidu:I = #drawable@yi_ab_transparent_dark_baidu#t
 
 .field public static final yi_ab_transparent_light_baidu:I = #drawable@yi_ab_transparent_light_baidu#t
 
-.field public static final yi_action_bar_bottom_pressed:I = #drawable@APKTOOL_DUMMY_06fd#t
+.field public static final yi_action_bar_bottom_pressed:I = #drawable@APKTOOL_DUMMY_0783#t
 
 .field public static final yi_activated_background_baidu_dark:I = #drawable@yi_activated_background_baidu_dark#t
 
@@ -3656,9 +3924,9 @@
 
 .field public static final yi_btn_check_off_baidu_light:I = #drawable@yi_btn_check_off_baidu_light#t
 
-.field public static final yi_btn_check_off_disable_baidu_light:I = #drawable@APKTOOL_DUMMY_070d#t
+.field public static final yi_btn_check_off_disable_baidu_light:I = #drawable@APKTOOL_DUMMY_0793#t
 
-.field public static final yi_btn_check_off_disable_focused_baidu_light:I = #drawable@APKTOOL_DUMMY_070e#t
+.field public static final yi_btn_check_off_disable_focused_baidu_light:I = #drawable@APKTOOL_DUMMY_0794#t
 
 .field public static final yi_btn_check_off_disabled_baidu_dark:I = #drawable@yi_btn_check_off_disabled_baidu_dark#t
 
@@ -3672,7 +3940,7 @@
 
 .field public static final yi_btn_check_off_focused_baidu_light:I = #drawable@yi_btn_check_off_focused_baidu_light#t
 
-.field public static final yi_btn_check_off_normal_baidu_light:I = #drawable@APKTOOL_DUMMY_0715#t
+.field public static final yi_btn_check_off_normal_baidu_light:I = #drawable@APKTOOL_DUMMY_079b#t
 
 .field public static final yi_btn_check_off_pressed_baidu_dark:I = #drawable@yi_btn_check_off_pressed_baidu_dark#t
 
@@ -3684,9 +3952,9 @@
 
 .field public static final yi_btn_check_on_baidu_light:I = #drawable@yi_btn_check_on_baidu_light#t
 
-.field public static final yi_btn_check_on_disable_baidu_light:I = #drawable@APKTOOL_DUMMY_071b#t
+.field public static final yi_btn_check_on_disable_baidu_light:I = #drawable@APKTOOL_DUMMY_07a1#t
 
-.field public static final yi_btn_check_on_disable_focused_baidu_light:I = #drawable@APKTOOL_DUMMY_071c#t
+.field public static final yi_btn_check_on_disable_focused_baidu_light:I = #drawable@APKTOOL_DUMMY_07a2#t
 
 .field public static final yi_btn_check_on_disabled_baidu_dark:I = #drawable@yi_btn_check_on_disabled_baidu_dark#t
 
@@ -3710,7 +3978,7 @@
 
 .field public static final yi_btn_default_disabled_baidu_dark:I = #drawable@yi_btn_default_disabled_baidu_dark#t
 
-.field public static final yi_btn_default_disabled_baidu_holo_dark:I = #drawable@APKTOOL_DUMMY_0728#t
+.field public static final yi_btn_default_disabled_baidu_holo_dark:I = #drawable@APKTOOL_DUMMY_07ae#t
 
 .field public static final yi_btn_default_disabled_baidu_light:I = #drawable@yi_btn_default_disabled_baidu_light#t
 
@@ -3830,11 +4098,11 @@
 
 .field public static final yi_btn_radio_on_pressed_baidu_light:I = #drawable@yi_btn_radio_on_pressed_baidu_light#t
 
-.field public static final yi_btn_radio_on_pressed_dark:I = #drawable@APKTOOL_DUMMY_0764#t
+.field public static final yi_btn_radio_on_pressed_dark:I = #drawable@APKTOOL_DUMMY_07ea#t
 
-.field public static final yi_btn_rating_star_off_disabled_baidu_light:I = #drawable@APKTOOL_DUMMY_0765#t
+.field public static final yi_btn_rating_star_off_disabled_baidu_light:I = #drawable@APKTOOL_DUMMY_07eb#t
 
-.field public static final yi_btn_rating_star_off_disabled_focused_baidu_light:I = #drawable@APKTOOL_DUMMY_0766#t
+.field public static final yi_btn_rating_star_off_disabled_focused_baidu_light:I = #drawable@APKTOOL_DUMMY_07ec#t
 
 .field public static final yi_btn_rating_star_off_focused_baidu_dark:I = #drawable@yi_btn_rating_star_off_focused_baidu_dark#t
 
@@ -3848,9 +4116,9 @@
 
 .field public static final yi_btn_rating_star_off_pressed_baidu_light:I = #drawable@yi_btn_rating_star_off_pressed_baidu_light#t
 
-.field public static final yi_btn_rating_star_on_disabled_baidu_light:I = #drawable@APKTOOL_DUMMY_076d#t
+.field public static final yi_btn_rating_star_on_disabled_baidu_light:I = #drawable@APKTOOL_DUMMY_07f3#t
 
-.field public static final yi_btn_rating_star_on_disabled_focused_baidu_light:I = #drawable@APKTOOL_DUMMY_076e#t
+.field public static final yi_btn_rating_star_on_disabled_focused_baidu_light:I = #drawable@APKTOOL_DUMMY_07f4#t
 
 .field public static final yi_btn_rating_star_on_focused_baidu_dark:I = #drawable@yi_btn_rating_star_on_focused_baidu_dark#t
 
@@ -4044,9 +4312,9 @@
 
 .field public static final yi_ic_ab_back_baidu_light:I = #drawable@yi_ic_ab_back_baidu_light#t
 
-.field public static final yi_ic_ab_back_pressed_baidu_dark:I = #drawable@APKTOOL_DUMMY_07cd#t
+.field public static final yi_ic_ab_back_pressed_baidu_dark:I = #drawable@APKTOOL_DUMMY_0853#t
 
-.field public static final yi_ic_ab_back_pressed_baidu_light:I = #drawable@APKTOOL_DUMMY_07ce#t
+.field public static final yi_ic_ab_back_pressed_baidu_light:I = #drawable@APKTOOL_DUMMY_0854#t
 
 .field public static final yi_ic_cab_done_baidu:I = #drawable@yi_ic_cab_done_baidu#t
 
@@ -4070,11 +4338,11 @@
 
 .field public static final yi_ic_dialog_alert_baidu_light:I = #drawable@yi_ic_dialog_alert_baidu_light#t
 
-.field public static final yi_ic_dialog_alert_baidudark:I = #drawable@APKTOOL_DUMMY_07da#t
+.field public static final yi_ic_dialog_alert_baidudark:I = #drawable@APKTOOL_DUMMY_0860#t
 
-.field public static final yi_ic_dialog_alert_baidulight:I = #drawable@APKTOOL_DUMMY_07db#t
+.field public static final yi_ic_dialog_alert_baidulight:I = #drawable@APKTOOL_DUMMY_0861#t
 
-.field public static final yi_ic_element_btn_radio_label_background:I = #drawable@APKTOOL_DUMMY_07dc#t
+.field public static final yi_ic_element_btn_radio_label_background:I = #drawable@APKTOOL_DUMMY_0862#t
 
 .field public static final yi_ic_find_next_baidu_dark:I = #drawable@yi_ic_find_next_baidu_dark#t
 
@@ -4090,7 +4358,7 @@
 
 .field public static final yi_ic_menu_cut_baidu_dark:I = #drawable@yi_ic_menu_cut_baidu_dark#t
 
-.field public static final yi_ic_menu_cut_baidu_pdark:I = #drawable@APKTOOL_DUMMY_07e4#t
+.field public static final yi_ic_menu_cut_baidu_pdark:I = #drawable@APKTOOL_DUMMY_086a#t
 
 .field public static final yi_ic_menu_done_baidu:I = #drawable@yi_ic_menu_done_baidu#t
 
@@ -4112,11 +4380,11 @@
 
 .field public static final yi_ic_menu_share_baidu_dark:I = #drawable@yi_ic_menu_share_baidu_dark#t
 
-.field public static final yi_ic_menu_trash_baidu_dark:I = #drawable@APKTOOL_DUMMY_07ef#t
+.field public static final yi_ic_menu_trash_baidu_dark:I = #drawable@APKTOOL_DUMMY_0875#t
 
 .field public static final yi_ic_menu_trash_baidu_light:I = #drawable@yi_ic_menu_trash_baidu_light#t
 
-.field public static final yi_ic_more:I = #drawable@APKTOOL_DUMMY_07f1#t
+.field public static final yi_ic_more:I = #drawable@APKTOOL_DUMMY_0877#t
 
 .field public static final yi_ic_search:I = #drawable@yi_ic_search#t
 
@@ -4134,11 +4402,11 @@
 
 .field public static final yi_list_activated_baidu:I = #drawable@yi_list_activated_baidu#t
 
-.field public static final yi_list_bg_baidu:I = #drawable@APKTOOL_DUMMY_07f9#t
+.field public static final yi_list_bg_baidu:I = #drawable@APKTOOL_DUMMY_087f#t
 
 .field public static final yi_list_bg_baidu_light:I = #drawable@yi_list_bg_baidu_light#t
 
-.field public static final yi_list_bottom_longpressed_baidu:I = #drawable@APKTOOL_DUMMY_07fb#t
+.field public static final yi_list_bottom_longpressed_baidu:I = #drawable@APKTOOL_DUMMY_0881#t
 
 .field public static final yi_list_bottom_longpressed_baidu_light:I = #drawable@yi_list_bottom_longpressed_baidu_light#t
 
@@ -4146,9 +4414,9 @@
 
 .field public static final yi_list_divider_baidu_dark:I = #drawable@yi_list_divider_baidu_dark#t
 
-.field public static final yi_list_divider_baidu_holo_dark:I = #drawable@APKTOOL_DUMMY_07ff#t
+.field public static final yi_list_divider_baidu_holo_dark:I = #drawable@APKTOOL_DUMMY_0885#t
 
-.field public static final yi_list_divider_baidu_holo_light:I = #drawable@APKTOOL_DUMMY_0800#t
+.field public static final yi_list_divider_baidu_holo_light:I = #drawable@APKTOOL_DUMMY_0886#t
 
 .field public static final yi_list_divider_baidu_light:I = #drawable@yi_list_divider_baidu_light#t
 
@@ -4176,13 +4444,13 @@
 
 .field public static final yi_list_selector_baidu_light:I = #drawable@yi_list_selector_baidu_light#t
 
-.field public static final yi_list_single_longpressed_baidu:I = #drawable@APKTOOL_DUMMY_080e#t
+.field public static final yi_list_single_longpressed_baidu:I = #drawable@APKTOOL_DUMMY_0894#t
 
 .field public static final yi_list_single_longpressed_baidu_light:I = #drawable@yi_list_single_longpressed_baidu_light#t
 
 .field public static final yi_list_single_pressed_baidu_light:I = #drawable@yi_list_single_pressed_baidu_light#t
 
-.field public static final yi_list_top_longpressed_baidu:I = #drawable@APKTOOL_DUMMY_0811#t
+.field public static final yi_list_top_longpressed_baidu:I = #drawable@APKTOOL_DUMMY_0897#t
 
 .field public static final yi_list_top_longpressed_baidu_light:I = #drawable@yi_list_top_longpressed_baidu_light#t
 
@@ -4198,19 +4466,19 @@
 
 .field public static final yi_menu_hardkey_panel_baidu_light:I = #drawable@yi_menu_hardkey_panel_baidu_light#t
 
-.field public static final yi_menu_hardkey_panel_baidu_light_up:I = #drawable@APKTOOL_DUMMY_0819#t
+.field public static final yi_menu_hardkey_panel_baidu_light_up:I = #drawable@APKTOOL_DUMMY_089f#t
 
-.field public static final yi_number_picker_bg_day:I = #drawable@APKTOOL_DUMMY_081a#t
+.field public static final yi_number_picker_bg_day:I = #drawable@APKTOOL_DUMMY_08a0#t
 
 .field public static final yi_number_picker_bg_left:I = #drawable@yi_number_picker_bg_left#t
 
 .field public static final yi_number_picker_bg_middle:I = #drawable@yi_number_picker_bg_middle#t
 
-.field public static final yi_number_picker_bg_month:I = #drawable@APKTOOL_DUMMY_081d#t
+.field public static final yi_number_picker_bg_month:I = #drawable@APKTOOL_DUMMY_08a3#t
 
 .field public static final yi_number_picker_bg_right:I = #drawable@yi_number_picker_bg_right#t
 
-.field public static final yi_number_picker_bg_year:I = #drawable@APKTOOL_DUMMY_081f#t
+.field public static final yi_number_picker_bg_year:I = #drawable@APKTOOL_DUMMY_08a5#t
 
 .field public static final yi_numberpicker_down_btn_baidu_dark:I = #drawable@yi_numberpicker_down_btn_baidu_dark#t
 
@@ -4228,7 +4496,7 @@
 
 .field public static final yi_numberpicker_down_focused_baidu_light:I = #drawable@yi_numberpicker_down_focused_baidu_light#t
 
-.field public static final yi_numberpicker_down_longpressed_baidu_light:I = #drawable@APKTOOL_DUMMY_0828#t
+.field public static final yi_numberpicker_down_longpressed_baidu_light:I = #drawable@APKTOOL_DUMMY_08ae#t
 
 .field public static final yi_numberpicker_down_normal_baidu_dark:I = #drawable@yi_numberpicker_down_normal_baidu_dark#t
 
@@ -4246,7 +4514,7 @@
 
 .field public static final yi_numberpicker_up_disabled_baidu_dark:I = #drawable@yi_numberpicker_up_disabled_baidu_dark#t
 
-.field public static final yi_numberpicker_up_disabled_baidu_light:I = #drawable@APKTOOL_DUMMY_0831#t
+.field public static final yi_numberpicker_up_disabled_baidu_light:I = #drawable@APKTOOL_DUMMY_08b7#t
 
 .field public static final yi_numberpicker_up_disabled_focused_baidu_dark:I = #drawable@yi_numberpicker_up_disabled_focused_baidu_dark#t
 
@@ -4256,7 +4524,7 @@
 
 .field public static final yi_numberpicker_up_focused_baidu_light:I = #drawable@yi_numberpicker_up_focused_baidu_light#t
 
-.field public static final yi_numberpicker_up_longpressed_baidu_light:I = #drawable@APKTOOL_DUMMY_0836#t
+.field public static final yi_numberpicker_up_longpressed_baidu_light:I = #drawable@APKTOOL_DUMMY_08bc#t
 
 .field public static final yi_numberpicker_up_normal_baidu_dark:I = #drawable@yi_numberpicker_up_normal_baidu_dark#t
 
@@ -4336,11 +4604,11 @@
 
 .field public static final yi_rate_star_big_on_baidu_light:I = #drawable@yi_rate_star_big_on_baidu_light#t
 
-.field public static final yi_rate_star_med_half_baidu_light:I = #drawable@APKTOOL_DUMMY_085e#t
+.field public static final yi_rate_star_med_half_baidu_light:I = #drawable@APKTOOL_DUMMY_08e4#t
 
-.field public static final yi_rate_star_med_off_baidu_light:I = #drawable@APKTOOL_DUMMY_085f#t
+.field public static final yi_rate_star_med_off_baidu_light:I = #drawable@APKTOOL_DUMMY_08e5#t
 
-.field public static final yi_rate_star_med_on_baidu_light:I = #drawable@APKTOOL_DUMMY_0860#t
+.field public static final yi_rate_star_med_on_baidu_light:I = #drawable@APKTOOL_DUMMY_08e6#t
 
 .field public static final yi_rate_star_small_half_baidu_dark:I = #drawable@yi_rate_star_small_half_baidu_dark#t
 
@@ -4404,27 +4672,27 @@
 
 .field public static final yi_scrubber_track_baidu_light:I = #drawable@yi_scrubber_track_baidu_light#t
 
-.field public static final yi_search_view_background:I = #drawable@APKTOOL_DUMMY_087e#t
+.field public static final yi_search_view_background:I = #drawable@APKTOOL_DUMMY_0904#t
 
 .field public static final yi_spinner_16_inner_dark_baidu:I = #drawable@yi_spinner_16_inner_dark_baidu#t
 
 .field public static final yi_spinner_16_inner_light_baidu:I = #drawable@yi_spinner_16_inner_light_baidu#t
 
-.field public static final yi_spinner_16_inner_light_baidulo:I = #drawable@APKTOOL_DUMMY_0881#t
+.field public static final yi_spinner_16_inner_light_baidulo:I = #drawable@APKTOOL_DUMMY_0907#t
 
-.field public static final yi_spinner_16_outer_baidu:I = #drawable@APKTOOL_DUMMY_0882#t
+.field public static final yi_spinner_16_outer_baidu:I = #drawable@APKTOOL_DUMMY_0908#t
 
 .field public static final yi_spinner_16_outer_dark_baidu:I = #drawable@yi_spinner_16_outer_dark_baidu#t
 
 .field public static final yi_spinner_16_outer_light_baidu:I = #drawable@yi_spinner_16_outer_light_baidu#t
 
-.field public static final yi_spinner_20_outer_baidu:I = #drawable@APKTOOL_DUMMY_0885#t
+.field public static final yi_spinner_20_outer_baidu:I = #drawable@APKTOOL_DUMMY_090b#t
 
 .field public static final yi_spinner_48_inner_dark_baidu:I = #drawable@yi_spinner_48_inner_dark_baidu#t
 
 .field public static final yi_spinner_48_inner_light_baidu:I = #drawable@yi_spinner_48_inner_light_baidu#t
 
-.field public static final yi_spinner_48_outer_baidu:I = #drawable@APKTOOL_DUMMY_0888#t
+.field public static final yi_spinner_48_outer_baidu:I = #drawable@APKTOOL_DUMMY_090e#t
 
 .field public static final yi_spinner_48_outer_dark_baidu:I = #drawable@yi_spinner_48_outer_dark_baidu#t
 
@@ -4434,7 +4702,7 @@
 
 .field public static final yi_spinner_76_inner_light_baidu:I = #drawable@yi_spinner_76_inner_light_baidu#t
 
-.field public static final yi_spinner_76_outer_baidu:I = #drawable@APKTOOL_DUMMY_088d#t
+.field public static final yi_spinner_76_outer_baidu:I = #drawable@APKTOOL_DUMMY_0913#t
 
 .field public static final yi_spinner_76_outer_dark_baidu:I = #drawable@yi_spinner_76_outer_dark_baidu#t
 
@@ -4504,8 +4772,6 @@
 
 .field public static final yi_switch_thumb_activated_baidu_light:I = #drawable@yi_switch_thumb_activated_baidu_light#t
 
-.field public static final yi_switch_thumb_activated_disable_baidu_light:I = #drawable@APKTOOL_DUMMY_08b0#t
-
 .field public static final yi_switch_thumb_activated_disabled_baidu_light:I = #drawable@yi_switch_thumb_activated_disabled_baidu_light#t
 
 .field public static final yi_switch_thumb_actived_pressed_baidu_light:I = #drawable@yi_switch_thumb_actived_pressed_baidu_light#t
@@ -4522,8 +4788,6 @@
 
 .field public static final yi_switch_thumb_pressed_baidu_light:I = #drawable@yi_switch_thumb_pressed_baidu_light#t
 
-.field public static final yi_switch_thumbpressed__baidu_light:I = #drawable@APKTOOL_DUMMY_08b9#t
-
 .field public static final yi_switch_track_baidu_dark:I = #drawable@yi_switch_track_baidu_dark#t
 
 .field public static final yi_switch_track_baidu_light:I = #drawable@yi_switch_track_baidu_light#t
@@ -4538,17 +4802,17 @@
 
 .field public static final yi_tab_selected_pressed_baidu:I = #drawable@yi_tab_selected_pressed_baidu#t
 
-.field public static final yi_tab_top_selected_baidu:I = #drawable@APKTOOL_DUMMY_08c1#t
+.field public static final yi_tab_top_selected_baidu:I = #drawable@APKTOOL_DUMMY_0945#t
 
-.field public static final yi_tab_top_selected_focused_baidu:I = #drawable@APKTOOL_DUMMY_08c2#t
+.field public static final yi_tab_top_selected_focused_baidu:I = #drawable@APKTOOL_DUMMY_0946#t
 
-.field public static final yi_tab_top_selected_pressed_baidu:I = #drawable@APKTOOL_DUMMY_08c3#t
+.field public static final yi_tab_top_selected_pressed_baidu:I = #drawable@APKTOOL_DUMMY_0947#t
 
-.field public static final yi_tab_top_unselected_baidu:I = #drawable@APKTOOL_DUMMY_08c4#t
+.field public static final yi_tab_top_unselected_baidu:I = #drawable@APKTOOL_DUMMY_0948#t
 
-.field public static final yi_tab_top_unselected_focused_baidu:I = #drawable@APKTOOL_DUMMY_08c5#t
+.field public static final yi_tab_top_unselected_focused_baidu:I = #drawable@APKTOOL_DUMMY_0949#t
 
-.field public static final yi_tab_top_unselected_pressed_baidu:I = #drawable@APKTOOL_DUMMY_08c6#t
+.field public static final yi_tab_top_unselected_pressed_baidu:I = #drawable@APKTOOL_DUMMY_094a#t
 
 .field public static final yi_tab_unselected_baidu:I = #drawable@yi_tab_unselected_baidu#t
 
@@ -4652,43 +4916,13 @@
 
 .field public static final zoom_plate:I = #drawable@zoom_plate#t
 
-.field public static final zz_lockscreen_camera:I = #drawable@zz_lockscreen_camera#t
-
-.field public static final zz_lockscreen_camera_normal:I = #drawable@zz_lockscreen_camera_normal#t
-
-.field public static final zz_lockscreen_fade:I = #drawable@zz_lockscreen_fade#t
-
-.field public static final zz_lockscreen_handle:I = #drawable@zz_lockscreen_handle#t
-
-.field public static final zz_lockscreen_mms:I = #drawable@zz_lockscreen_mms#t
-
-.field public static final zz_lockscreen_mms_normal:I = #drawable@zz_lockscreen_mms_normal#t
-
-.field public static final zz_lockscreen_music_default:I = #drawable@zz_lockscreen_music_default#t
-
-.field public static final zz_lockscreen_music_next:I = #drawable@zz_lockscreen_music_next#t
-
-.field public static final zz_lockscreen_music_pause:I = #drawable@zz_lockscreen_music_pause#t
-
-.field public static final zz_lockscreen_music_play:I = #drawable@zz_lockscreen_music_play#t
-
-.field public static final zz_lockscreen_music_prev:I = #drawable@zz_lockscreen_music_prev#t
-
-.field public static final zz_lockscreen_notification_round:I = #drawable@zz_lockscreen_notification_round#t
-
-.field public static final zz_lockscreen_phone:I = #drawable@zz_lockscreen_phone#t
-
-.field public static final zz_lockscreen_phone_normal:I = #drawable@zz_lockscreen_phone_normal#t
-
-.field public static final zz_lockscreen_prompt_normal:I = #drawable@zz_lockscreen_prompt_normal#t
-
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 12024
+    .line 12006
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

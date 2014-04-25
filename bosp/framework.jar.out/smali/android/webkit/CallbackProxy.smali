@@ -390,7 +390,7 @@
 
     move-result-object v1
 
-    const-string v2, "lineNumber"
+    const-string/jumbo v2, "lineNumber"
 
     invoke-virtual {v1, v2, p2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
@@ -2943,7 +2943,7 @@
 
     move-result-object v4
 
-    const-string v9, "lineNumber"
+    const-string/jumbo v9, "lineNumber"
 
     invoke-virtual {v4, v9}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 
@@ -3529,8 +3529,6 @@
     goto/16 :goto_0
 
     .line 286
-    nop
-
     :pswitch_data_0
     .packed-switch 0x64
         :pswitch_1

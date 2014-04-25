@@ -2046,7 +2046,7 @@
 
     .line 1497
     .local v3, sb:Ljava/lang/StringBuffer;
-    const-string v4, "line.separator"
+    const-string/jumbo v4, "line.separator"
 
     invoke-static {v4}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
 
@@ -3790,7 +3790,7 @@
 
     .line 791
     :cond_5
-    const-string v19, "linkAddress"
+    const-string/jumbo v19, "linkAddress"
 
     move-object/from16 v0, v19
 
@@ -4462,6 +4462,8 @@
     goto/16 :goto_5
 
     .line 842
+    nop
+
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_2
@@ -6207,7 +6209,7 @@
 
     .line 673
     .local v8, linkAddr:Landroid/net/LinkAddress;
-    const-string v15, "linkAddress"
+    const-string/jumbo v15, "linkAddress"
 
     invoke-virtual {v11, v15}, Ljava/io/DataOutputStream;->writeUTF(Ljava/lang/String;)V
 
@@ -6643,6 +6645,8 @@
     goto/16 :goto_5
 
     .line 668
+    nop
+
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_2
