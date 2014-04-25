@@ -1218,7 +1218,7 @@
     if-eqz v5, :cond_1
 
     .line 184
-    const-string v5, "in connect profile equals Bluetooth_A2DP"
+    const-string/jumbo v5, "in connect profile equals Bluetooth_A2DP"
 
     invoke-static {v5}, Landroid/server/BluetoothProfileManagerService;->log(Ljava/lang/String;)V
 

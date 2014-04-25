@@ -34,7 +34,7 @@
 
 
 # virtual methods
-.method getCallback()Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+.method protected getCallback()Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
     .locals 1
 
     .prologue
@@ -49,7 +49,7 @@
     return-object v0
 .end method
 
-.method getContext()Landroid/content/Context;
+.method protected getContext()Landroid/content/Context;
     .locals 1
 
     .prologue
@@ -64,7 +64,7 @@
     return-object v0
 .end method
 
-.method getLockPatternUtils()Lcom/android/internal/widget/LockPatternUtils;
+.method protected getLockPatternUtils()Lcom/android/internal/widget/LockPatternUtils;
     .locals 1
 
     .prologue

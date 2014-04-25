@@ -1472,7 +1472,7 @@ Listening at high volume for long periods may damage your hearing."</string>
     <string name="permit_btn_text">Allow</string>
     <string name="dynamic_perm_popup_dialog_title">Warning</string>
     <string name="remember_info_text">Save my choice</string>
-    <string name="remember_tips_text">Set Dynamic App Manager via Settings>Security>Permission monitor on the main screen.</string>
+    <string name="remember_tips_text">Set app permission via through \"Security\" > \"Permission\"</string>
     <string name="phone_call_info_msg">Outgoing call:%1$s</string>
     <string name="phone_sms_info_msg">To:%1$s</string>
     <string name="sms_info_msg">Message:%1$s</string>
@@ -1497,8 +1497,6 @@ Power-saving exits automatically when power recovers."</string>
     <string name="global_action_screenshot">Screenshot</string>
     <string name="voice_search_not_found">You do not install Voice Search Box</string>
     <string name="voice_search_unavailable">Voice Search has been stopt，you can reset from setting</string>
-    <string name="zz_lockscreen_temperature_units">°</string>
-    <string name="zz_lockscreen_month_day_hour_minute">MM/dd hh:mm a</string>
     <string name="progress_unmounting_target">Unmounting %s...</string>
     <string name="progress_erasing_target">Erasing %s...</string>
     <string name="baidu_keyguard_hotword_am">AM</string>
@@ -1509,10 +1507,15 @@ Power-saving exits automatically when power recovers."</string>
     <string name="battery_apps_button">View</string>
     <string name="power_off_alarm">Shut off alarm reminding</string>
     <string name="quickboot_shutdown_info">Your phone will be shut down, Please check the option to turn the shut off alarm and quick boot mode(may not be able to remind when low power)</string>
+    <string name="chargging">Chargging</string>
+    <string name="charge_finished">Chargging finished</string>
     <string name="quickboot_real_shutdown">Power off alarm and schedule power on will be disabled, are you sure to shut down?</string>
     <string name="quick_boot_text_info">Quick boot next time</string>
     <string name="quickboot_poweroff_alarm">Power off alarm will ring at: %1$s kk:mm</string>
     <string name="quickboot_schedule_pwonoff">Phone will shutdown at: %1$s kk:mm</string>
     <string name="quickboot_lowbat_poweroff">If the power is low, the power off alarm may fail</string>
     <string name="quickboot_lowbat_schedule_pwonoff">If the power is low, the schedule of power on may fail</string>
+    <string name="replace_browser_value">Browser</string>
+    <string name="replace_market_value">App Search</string>
+    <string name="replace_reader_value">Reader</string>
 </resources>

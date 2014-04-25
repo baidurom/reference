@@ -6007,7 +6007,7 @@
     invoke-direct {p0, v1, v0}, Landroid/opengl/GLLogWrapper;->arg(Ljava/lang/String;I)V
 
     .line 1348
-    const-string v1, "imageSize"
+    const-string/jumbo v1, "imageSize"
 
     move/from16 v0, p7
 
@@ -6117,7 +6117,7 @@
     invoke-direct {p0, v1, v0}, Landroid/opengl/GLLogWrapper;->arg(Ljava/lang/String;I)V
 
     .line 1368
-    const-string v1, "imageSize"
+    const-string/jumbo v1, "imageSize"
 
     move/from16 v0, p8
 

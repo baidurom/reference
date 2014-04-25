@@ -769,7 +769,7 @@
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 988
-    const-string v6, "imsi"
+    const-string/jumbo v6, "imsi"
 
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -1036,7 +1036,7 @@
 
     .line 990
     :cond_f
-    const-string v6, "imsi"
+    const-string/jumbo v6, "imsi"
 
     new-instance v7, Ljava/lang/StringBuilder;
 

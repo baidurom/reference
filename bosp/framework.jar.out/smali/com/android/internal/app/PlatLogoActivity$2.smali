@@ -52,7 +52,7 @@
 
     invoke-direct {v2, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    const v3, #drawable@yi_list_divider_baidu_light#t0
+    const v3, #drawable@yi_btn_star_off_focused_baidu_dark#t0
 
     invoke-virtual {v2, v3}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 

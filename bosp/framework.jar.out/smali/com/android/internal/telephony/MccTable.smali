@@ -1259,7 +1259,7 @@
 
     const/16 v2, 0x194
 
-    const-string v3, "in"
+    const-string/jumbo v3, "in"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
@@ -1272,7 +1272,7 @@
 
     const/16 v2, 0x195
 
-    const-string v3, "in"
+    const-string/jumbo v3, "in"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 

@@ -588,7 +588,7 @@
 
     .line 755
     :sswitch_6
-    const-string v0, "ims"
+    const-string/jumbo v0, "ims"
 
     goto :goto_0
 
@@ -629,8 +629,6 @@
     goto :goto_0
 
     .line 741
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x0 -> :sswitch_0

@@ -2,12 +2,6 @@
 # Please use this file as the project Makefile reference
 
 ##############################################################################
-# This value defines which base this project should choose, only for baidu internal.
-# Support values: S710, JRD77SS, YINS, YIGN, I9250
-#-----------------------------------------------------------------------------
-BAIDU_BASE_DEVICE := I9250
-
-##############################################################################
 # Default DALVIK_VM_BUILD setting is 27
 # Only used for odex, if not, ignore...
 #-----------------------------------------------------------------------------
@@ -18,6 +12,12 @@ DALVIK_VM_BUILD := 27
 # this depends on the device's resolution
 #-----------------------------------------------------------------------------
 DENSITY := hdpi
+
+##############################################################################
+# Default RESOLUTION setting is nothing
+# this used to config the bootanimation
+#-----------------------------------------------------------------------------
+RESOLUTION :=
 
 ##############################################################################
 # customize weather use prebuilt image or pack from BOOT/RECOVERY directory
@@ -121,22 +121,6 @@ baidu_modify_jars := android.policy
 # remove_property += \
 #    dev.defaultwallpaper
 
-################### Auto Patch Constants Definition #########################
-# Current ROM version and the new version to be ugraded.
-# These two are useful for ROM upgrading.
-# When UPGRADE_VERSION is none, means to upgrade to the newest version.
-#-----------------------------------------------------------------------------
-# ROM_VERSION := ROM37
-# UPGRADE_VERSION := ROM38
-
-##############################################################################
-# Porting commits from a reference device automatically.
-# These two are useful for ROM porting.
-#-----------------------------------------------------------------------------
-# PORTING_FROM_DEVICE := p6
-# PORTING_FROM_BRANCH := smali-4.2
-
-################### Auto Patch Constants Definition #########################
 
 include $(PORT_BUILD)/main.mk
 include $(PORT_BUILD)/autopatch.mk

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 5209
+    .line 5215
     iput-object p1, p0, Lcom/android/server/am/ActivityStack$4;->this$0:Lcom/android/server/am/ActivityStack;
 
     iput-object p2, p0, Lcom/android/server/am/ActivityStack$4;->val$thumbs:Lcom/android/server/am/TaskAccessInfo;
@@ -44,7 +44,7 @@
     .parameter "index"
 
     .prologue
-    .line 5211
+    .line 5217
     if-ltz p1, :cond_0
 
     iget-object v2, p0, Lcom/android/server/am/ActivityStack$4;->val$thumbs:Lcom/android/server/am/TaskAccessInfo;
@@ -57,15 +57,15 @@
 
     if-lt p1, v2, :cond_1
 
-    .line 5212
+    .line 5218
     :cond_0
     const/4 v2, 0x0
 
-    .line 5219
+    .line 5225
     :goto_0
     return-object v2
 
-    .line 5214
+    .line 5220
     :cond_1
     iget-object v2, p0, Lcom/android/server/am/ActivityStack$4;->val$thumbs:Lcom/android/server/am/TaskAccessInfo;
 
@@ -77,13 +77,13 @@
 
     check-cast v1, Lcom/android/server/am/TaskAccessInfo$SubTask;
 
-    .line 5215
+    .line 5221
     .local v1, sub:Lcom/android/server/am/TaskAccessInfo$SubTask;
     iget-object v2, p0, Lcom/android/server/am/ActivityStack$4;->this$0:Lcom/android/server/am/ActivityStack;
 
     iget-object v0, v2, Lcom/android/server/am/ActivityStack;->mResumedActivity:Lcom/android/server/am/ActivityRecord;
 
-    .line 5216
+    .line 5222
     .local v0, resumed:Lcom/android/server/am/ActivityRecord;
     if-eqz v0, :cond_2
 
@@ -93,7 +93,7 @@
 
     if-ne v2, v3, :cond_2
 
-    .line 5217
+    .line 5223
     iget-object v2, v0, Lcom/android/server/am/ActivityRecord;->stack:Lcom/android/server/am/ActivityStack;
 
     invoke-virtual {v2, v0}, Lcom/android/server/am/ActivityStack;->screenshotActivities(Lcom/android/server/am/ActivityRecord;)Landroid/graphics/Bitmap;
@@ -102,7 +102,7 @@
 
     goto :goto_0
 
-    .line 5219
+    .line 5225
     :cond_2
     iget-object v2, v1, Lcom/android/server/am/TaskAccessInfo$SubTask;->holder:Lcom/android/server/am/ThumbnailHolder;
 

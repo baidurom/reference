@@ -363,7 +363,7 @@
     invoke-virtual {p0, v0}, Landroid/filterfw/core/FilterGraph;->addFilter(Landroid/filterfw/core/Filter;)Z
 
     .line 333
-    const-string v11, "in"
+    const-string/jumbo v11, "in"
 
     invoke-virtual {v0, v11}, Landroid/filterpacks/base/FrameBranch;->getInputPort(Ljava/lang/String;)Landroid/filterfw/core/InputPort;
 

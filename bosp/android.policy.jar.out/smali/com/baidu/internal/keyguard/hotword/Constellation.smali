@@ -506,7 +506,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "http://m.baidu.com/s?word="
+    const-string v4, "http://m.baidu.com/s?from=1005777u&word="
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

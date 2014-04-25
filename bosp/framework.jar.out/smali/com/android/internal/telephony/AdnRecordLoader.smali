@@ -359,7 +359,7 @@
     .local v2, ex:Ljava/io/UnsupportedEncodingException;
     const-string v5, "RIL_AdnRecordLoader"
 
-    const-string v6, "implausible UnsupportedEncodingException"
+    const-string/jumbo v6, "implausible UnsupportedEncodingException"
 
     invoke-static {v5, v6, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 

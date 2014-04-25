@@ -23,15 +23,15 @@
     .locals 1
 
     .prologue
-    .line 2640
+    .line 2642
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2641
+    .line 2643
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$SpnUpdate;->simId:I
 
-    .line 2642
+    .line 2644
     return-void
 .end method
 
@@ -40,14 +40,14 @@
     .parameter "id"
 
     .prologue
-    .line 2644
+    .line 2646
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2645
+    .line 2647
     iget v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$SpnUpdate;->simId:I
 
     iput v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$SpnUpdate;->simId:I
 
-    .line 2646
+    .line 2648
     return-void
 .end method

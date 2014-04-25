@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="emergency_dial_background_height">922.0px</dimen>
+    <dimen name="emergency_dial_edit_text_height">230.0px</dimen>
+    <dimen name="emergency_dial_button_height">160.0px</dimen>
+    <dimen name="dtmf_dialpad_height">220.0dip</dimen>
+    <dimen name="dtmf_dialpad_editText_height">72.0dip</dimen>
+    <dimen name="dtmf_dialpad_buttons_height">200.0dip</dimen>
+    <dimen name="dtmf_dialpad_button_height">50.0dip</dimen>
+    <dimen name="dtmf_dialpad_gap">0.0px</dimen>
+</resources>

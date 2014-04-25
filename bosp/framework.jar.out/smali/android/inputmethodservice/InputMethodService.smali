@@ -1951,7 +1951,7 @@
 
     .line 1542
     .local v0, intent:Landroid/content/Intent;
-    const-string v1, "ime_state"
+    const-string/jumbo v1, "ime_state"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
@@ -4046,7 +4046,7 @@
 
     .line 1554
     .local v0, intent:Landroid/content/Intent;
-    const-string v1, "ime_state"
+    const-string/jumbo v1, "ime_state"
 
     const/4 v2, 0x1
 

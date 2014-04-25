@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/dialpad" android:layout_width="fill_parent" android:layout_height="@dimen/dtmf_dialpad_buttons_height" android:layout_weight="@integer/dialpad_layout_weight_dialpad"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="@dimen/dtmf_dialpad_button_height" android:layout_margin="0.0dip">
+        <ImageButton android:id="@id/one" android:src="@drawable/dial_num_1_no_vm" android:contentDescription="@string/description_image_button_one" style="@style/DialpadDTMFButtonStyle" />
+        <ImageButton android:id="@id/two" android:src="@drawable/dial_num_2" android:contentDescription="@string/description_image_button_two" style="@style/DialpadDTMFButtonStyle" />
+        <ImageButton android:id="@id/three" android:src="@drawable/dial_num_3" android:contentDescription="@string/description_image_button_three" style="@style/DialpadDTMFButtonStyle" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="@dimen/dtmf_dialpad_button_height" android:layout_margin="0.0dip">
+        <ImageButton android:id="@id/four" android:src="@drawable/dial_num_4" android:contentDescription="@string/description_image_button_four" style="@style/DialpadDTMFButtonStyle" />
+        <ImageButton android:id="@id/five" android:src="@drawable/dial_num_5" android:contentDescription="@string/description_image_button_five" style="@style/DialpadDTMFButtonStyle" />
+        <ImageButton android:id="@id/six" android:src="@drawable/dial_num_6" android:contentDescription="@string/description_image_button_six" style="@style/DialpadDTMFButtonStyle" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="@dimen/dtmf_dialpad_button_height">
+        <ImageButton android:id="@id/seven" android:src="@drawable/dial_num_7" android:contentDescription="@string/description_image_button_seven" style="@style/DialpadDTMFButtonStyle" />
+        <ImageButton android:id="@id/eight" android:src="@drawable/dial_num_8" android:contentDescription="@string/description_image_button_eight" style="@style/DialpadDTMFButtonStyle" />
+        <ImageButton android:id="@id/nine" android:src="@drawable/dial_num_9" android:contentDescription="@string/description_image_button_nine" style="@style/DialpadDTMFButtonStyle" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="@dimen/dtmf_dialpad_button_height" android:layout_margin="0.0dip">
+        <ImageButton android:id="@id/star" android:src="@drawable/dial_num_star" android:contentDescription="@string/description_image_button_star" style="@style/DialpadDTMFButtonStyle" />
+        <ImageButton android:id="@id/zero" android:src="@drawable/dial_num_0_no_plus" android:contentDescription="@string/description_image_button_zero" style="@style/DialpadDTMFButtonStyle" />
+        <ImageButton android:id="@id/pound" android:src="@drawable/dial_num_pound" android:contentDescription="@string/description_image_button_pound" style="@style/DialpadDTMFButtonStyle" />
+    </LinearLayout>
+</LinearLayout>

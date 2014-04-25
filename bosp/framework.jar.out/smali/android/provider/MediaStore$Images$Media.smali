@@ -142,7 +142,7 @@
     invoke-virtual {v15, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
     .line 926
-    const-string v2, "image_id"
+    const-string/jumbo v2, "image_id"
 
     move-wide/from16 v0, p2
 

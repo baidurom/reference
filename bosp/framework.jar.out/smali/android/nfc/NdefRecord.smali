@@ -262,7 +262,7 @@
 
     const/16 v1, 0x11
 
-    const-string v2, "imap:"
+    const-string/jumbo v2, "imap:"
 
     aput-object v2, v0, v1
 
@@ -385,6 +385,8 @@
     return-void
 
     .line 185
+    nop
+
     :array_0
     .array-data 0x1
         0x53t

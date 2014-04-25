@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1678
+    .line 1682
     iput-object p1, p0, Landroid/app/ActivityThread$GcIdler;->this$0:Landroid/app/ActivityThread;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,12 +41,12 @@
     .locals 1
 
     .prologue
-    .line 1680
+    .line 1684
     iget-object v0, p0, Landroid/app/ActivityThread$GcIdler;->this$0:Landroid/app/ActivityThread;
 
     invoke-virtual {v0}, Landroid/app/ActivityThread;->doGcIfNeeded()V
 
-    .line 1681
+    .line 1685
     const/4 v0, 0x0
 
     return v0

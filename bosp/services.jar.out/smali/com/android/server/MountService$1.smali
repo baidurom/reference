@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 844
+    .line 805
     iput-object p1, p0, Lcom/android/server/MountService$1;->this$0:Lcom/android/server/MountService;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
@@ -38,17 +38,17 @@
     .locals 2
 
     .prologue
-    .line 846
+    .line 807
     const-wide/16 v0, 0x7d0
 
     invoke-static {v0, v1}, Landroid/os/SystemClock;->sleep(J)V
 
-    .line 847
+    .line 808
     iget-object v0, p0, Lcom/android/server/MountService$1;->this$0:Lcom/android/server/MountService;
 
     #calls: Lcom/android/server/MountService;->updateDefaultpath()V
-    invoke-static {v0}, Lcom/android/server/MountService;->access$1900(Lcom/android/server/MountService;)V
+    invoke-static {v0}, Lcom/android/server/MountService;->access$400(Lcom/android/server/MountService;)V
 
-    .line 848
+    .line 809
     return-void
 .end method

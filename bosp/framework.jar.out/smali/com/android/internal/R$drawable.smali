@@ -27,6 +27,112 @@
 
 .field public static final baidu_keyguard_search_up_pressed:I = #drawable@baidu_keyguard_search_up_pressed#t
 
+.field public static final baidu_keyguard_slide_album_default:I = #drawable@baidu_keyguard_slide_album_default#t
+
+.field public static final baidu_keyguard_slide_bg_circle:I = #drawable@baidu_keyguard_slide_bg_circle#t
+
+.field public static final baidu_keyguard_slide_handle:I = #drawable@baidu_keyguard_slide_handle#t
+
+.field public static final baidu_keyguard_slide_handle_charge:I = #drawable@baidu_keyguard_slide_handle_charge#t
+
+.field public static final baidu_keyguard_slide_handle_chargging:I = #drawable@baidu_keyguard_slide_handle_chargging#t
+
+.field public static final baidu_keyguard_slide_handle_normal:I = #drawable@baidu_keyguard_slide_handle_normal#t
+
+.field public static final baidu_keyguard_slide_handle_pressed:I = #drawable@baidu_keyguard_slide_handle_pressed#t
+
+.field public static final baidu_keyguard_slide_idle_alarm:I = #drawable@baidu_keyguard_slide_idle_alarm#t
+
+.field public static final baidu_keyguard_slide_iqiyi:I = #drawable@baidu_keyguard_slide_iqiyi#t
+
+.field public static final baidu_keyguard_slide_iqiyi_bg:I = #drawable@baidu_keyguard_slide_iqiyi_bg#t
+
+.field public static final baidu_keyguard_slide_iqiyi_edu:I = #drawable@baidu_keyguard_slide_iqiyi_edu#t
+
+.field public static final baidu_keyguard_slide_miss_bg:I = #drawable@baidu_keyguard_slide_miss_bg#t
+
+.field public static final baidu_keyguard_slide_misscall_bot:I = #drawable@baidu_keyguard_slide_misscall_bot#t
+
+.field public static final baidu_keyguard_slide_misssms_bot:I = #drawable@baidu_keyguard_slide_misssms_bot#t
+
+.field public static final baidu_keyguard_slide_music_covermask:I = #drawable@baidu_keyguard_slide_music_covermask#t
+
+.field public static final baidu_keyguard_slide_music_covermask_front:I = #drawable@baidu_keyguard_slide_music_covermask_front#t
+
+.field public static final baidu_keyguard_slide_pause:I = #drawable@baidu_keyguard_slide_pause#t
+
+.field public static final baidu_keyguard_slide_play:I = #drawable@baidu_keyguard_slide_play#t
+
+.field public static final baidu_keyguard_slide_prev:I = #drawable@baidu_keyguard_slide_prev#t
+
+.field public static final baidu_keyguard_space_camera_normal:I = #drawable@baidu_keyguard_space_camera_normal#t
+
+.field public static final baidu_keyguard_space_camera_pressed:I = #drawable@baidu_keyguard_space_camera_pressed#t
+
+.field public static final baidu_keyguard_space_handle_normal:I = #drawable@baidu_keyguard_space_handle_normal#t
+
+.field public static final baidu_keyguard_space_handle_pressed:I = #drawable@baidu_keyguard_space_handle_pressed#t
+
+.field public static final baidu_keyguard_space_message_normal:I = #drawable@baidu_keyguard_space_message_normal#t
+
+.field public static final baidu_keyguard_space_message_pressed:I = #drawable@baidu_keyguard_space_message_pressed#t
+
+.field public static final baidu_keyguard_space_phone_normal:I = #drawable@baidu_keyguard_space_phone_normal#t
+
+.field public static final baidu_keyguard_space_phone_pressed:I = #drawable@baidu_keyguard_space_phone_pressed#t
+
+.field public static final baidu_keyguard_space_shake_background:I = #drawable@baidu_keyguard_space_shake_background#t
+
+.field public static final baidu_keyguard_space_shake_layer0:I = #drawable@baidu_keyguard_space_shake_layer0#t
+
+.field public static final baidu_keyguard_space_shake_layer1:I = #drawable@baidu_keyguard_space_shake_layer1#t
+
+.field public static final baidu_keyguard_space_shake_layer2:I = #drawable@baidu_keyguard_space_shake_layer2#t
+
+.field public static final baidu_keyguard_space_shake_layer3:I = #drawable@baidu_keyguard_space_shake_layer3#t
+
+.field public static final baidu_keyguard_space_unlock_normal:I = #drawable@baidu_keyguard_space_unlock_normal#t
+
+.field public static final baidu_keyguard_space_unlock_pressed:I = #drawable@baidu_keyguard_space_unlock_pressed#t
+
+.field public static final baidu_keyguard_water_camera_normal:I = #drawable@baidu_keyguard_water_camera_normal#t
+
+.field public static final baidu_keyguard_water_camera_pressed:I = #drawable@baidu_keyguard_water_camera_pressed#t
+
+.field public static final baidu_keyguard_water_handle_normal:I = #drawable@baidu_keyguard_water_handle_normal#t
+
+.field public static final baidu_keyguard_water_handle_pressed:I = #drawable@baidu_keyguard_water_handle_pressed#t
+
+.field public static final baidu_keyguard_water_message_normal:I = #drawable@baidu_keyguard_water_message_normal#t
+
+.field public static final baidu_keyguard_water_message_pressed:I = #drawable@baidu_keyguard_water_message_pressed#t
+
+.field public static final baidu_keyguard_water_phone_normal:I = #drawable@baidu_keyguard_water_phone_normal#t
+
+.field public static final baidu_keyguard_water_phone_pressed:I = #drawable@baidu_keyguard_water_phone_pressed#t
+
+.field public static final baidu_keyguard_water_shake_background:I = #drawable@baidu_keyguard_water_shake_background#t
+
+.field public static final baidu_keyguard_water_shake_layer0:I = #drawable@baidu_keyguard_water_shake_layer0#t
+
+.field public static final baidu_keyguard_water_shake_layer1:I = #drawable@baidu_keyguard_water_shake_layer1#t
+
+.field public static final baidu_keyguard_water_shake_layer2:I = #drawable@baidu_keyguard_water_shake_layer2#t
+
+.field public static final baidu_keyguard_water_shake_layer3:I = #drawable@baidu_keyguard_water_shake_layer3#t
+
+.field public static final baidu_keyguard_water_shake_layer4:I = #drawable@baidu_keyguard_water_shake_layer4#t
+
+.field public static final baidu_keyguard_water_shake_layer5:I = #drawable@baidu_keyguard_water_shake_layer5#t
+
+.field public static final baidu_keyguard_water_shake_layer6:I = #drawable@baidu_keyguard_water_shake_layer6#t
+
+.field public static final baidu_keyguard_water_shake_layer7:I = #drawable@baidu_keyguard_water_shake_layer7#t
+
+.field public static final baidu_keyguard_water_unlock_normal:I = #drawable@baidu_keyguard_water_unlock_normal#t
+
+.field public static final baidu_keyguard_water_unlock_pressed:I = #drawable@baidu_keyguard_water_unlock_pressed#t
+
 .field public static final baidu_p001_small:I = #drawable@baidu_p001_small#t
 
 .field public static final baidu_p002_small:I = #drawable@baidu_p002_small#t
@@ -60,6 +166,8 @@
 .field public static final battery_charge:I = #drawable@battery_charge#t
 
 .field public static final battery_fail:I = #drawable@battery_fail#t
+
+.field public static final boat:I = #drawable@boat#t
 
 .field public static final bottom_bar:I = #drawable@bottom_bar#t
 
@@ -144,6 +252,22 @@
 .field public static final divider_horizontal_dim_dark:I = #drawable@divider_horizontal_dim_dark#t
 
 .field public static final divider_horizontal_textfield:I = #drawable@divider_horizontal_textfield#t
+
+.field public static final dot_l_h:I = #drawable@dot_l_h#t
+
+.field public static final dot_l_n:I = #drawable@dot_l_n#t
+
+.field public static final dot_m_h:I = #drawable@dot_m_h#t
+
+.field public static final dot_m_n:I = #drawable@dot_m_n#t
+
+.field public static final dot_s_h:I = #drawable@dot_s_h#t
+
+.field public static final dot_s_n:I = #drawable@dot_s_n#t
+
+.field public static final down_h:I = #drawable@down_h#t
+
+.field public static final down_n:I = #drawable@down_n#t
 
 .field public static final edit_text:I = #drawable@edit_text#t
 
@@ -261,6 +385,88 @@
 
 .field public static final ic_jog_dial_vibrate_on:I = #drawable@ic_jog_dial_vibrate_on#t
 
+.field public static final ic_launcher_360:I = #drawable@ic_launcher_360#t
+
+.field public static final ic_launcher_360launcher:I = #drawable@ic_launcher_360launcher#t
+
+.field public static final ic_launcher_aliwangwang:I = #drawable@ic_launcher_aliwangwang#t
+
+.field public static final ic_launcher_baidubrowser:I = #drawable@ic_launcher_baidubrowser#t
+
+.field public static final ic_launcher_baidugamecenter:I = #drawable@ic_launcher_baidugamecenter#t
+
+.field public static final ic_launcher_baidumap:I = #drawable@ic_launcher_baidumap#t
+
+.field public static final ic_launcher_baidumarket:I = #drawable@ic_launcher_baidumarket#t
+
+.field public static final ic_launcher_baidunetdisk:I = #drawable@ic_launcher_baidunetdisk#t
+
+.field public static final ic_launcher_baidureader:I = #drawable@ic_launcher_baidureader#t
+
+.field public static final ic_launcher_baidusearch:I = #drawable@ic_launcher_baidusearch#t
+
+.field public static final ic_launcher_baiduvoiceassistant:I = #drawable@ic_launcher_baiduvoiceassistant#t
+
+.field public static final ic_launcher_dolby:I = #drawable@ic_launcher_dolby#t
+
+.field public static final ic_launcher_huluxia_gametools:I = #drawable@ic_launcher_huluxia_gametools#t
+
+.field public static final ic_launcher_ireader:I = #drawable@ic_launcher_ireader#t
+
+.field public static final ic_launcher_iyqiyi:I = #drawable@ic_launcher_iyqiyi#t
+
+.field public static final ic_launcher_kugou_music:I = #drawable@ic_launcher_kugou_music#t
+
+.field public static final ic_launcher_kuwo_player:I = #drawable@ic_launcher_kuwo_player#t
+
+.field public static final ic_launcher_moji_weather:I = #drawable@ic_launcher_moji_weather#t
+
+.field public static final ic_launcher_momo:I = #drawable@ic_launcher_momo#t
+
+.field public static final ic_launcher_pplive:I = #drawable@ic_launcher_pplive#t
+
+.field public static final ic_launcher_qq:I = #drawable@ic_launcher_qq#t
+
+.field public static final ic_launcher_qqmusic:I = #drawable@ic_launcher_qqmusic#t
+
+.field public static final ic_launcher_qvodplayer:I = #drawable@ic_launcher_qvodplayer#t
+
+.field public static final ic_launcher_qzone:I = #drawable@ic_launcher_qzone#t
+
+.field public static final ic_launcher_renren:I = #drawable@ic_launcher_renren#t
+
+.field public static final ic_launcher_security:I = #drawable@ic_launcher_security#t
+
+.field public static final ic_launcher_shuqi:I = #drawable@ic_launcher_shuqi#t
+
+.field public static final ic_launcher_sim:I = #drawable@ic_launcher_sim#t
+
+.field public static final ic_launcher_sogou_input:I = #drawable@ic_launcher_sogou_input#t
+
+.field public static final ic_launcher_taobao:I = #drawable@ic_launcher_taobao#t
+
+.field public static final ic_launcher_tencent_news:I = #drawable@ic_launcher_tencent_news#t
+
+.field public static final ic_launcher_tencent_qqlive:I = #drawable@ic_launcher_tencent_qqlive#t
+
+.field public static final ic_launcher_ucmobile:I = #drawable@ic_launcher_ucmobile#t
+
+.field public static final ic_launcher_wandoujia:I = #drawable@ic_launcher_wandoujia#t
+
+.field public static final ic_launcher_wechat:I = #drawable@ic_launcher_wechat#t
+
+.field public static final ic_launcher_weibo:I = #drawable@ic_launcher_weibo#t
+
+.field public static final ic_launcher_wifiwnys:I = #drawable@ic_launcher_wifiwnys#t
+
+.field public static final ic_launcher_yixin:I = #drawable@ic_launcher_yixin#t
+
+.field public static final ic_launcher_youdao:I = #drawable@ic_launcher_youdao#t
+
+.field public static final ic_launcher_youku:I = #drawable@ic_launcher_youku#t
+
+.field public static final ic_launcher_zhifubao:I = #drawable@ic_launcher_zhifubao#t
+
 .field public static final ic_lock_airplane_mode:I = #drawable@ic_lock_airplane_mode#t
 
 .field public static final ic_lock_airplane_mode_off:I = #drawable@ic_lock_airplane_mode_off#t
@@ -289,8 +495,6 @@
 
 .field public static final ic_lockscreen_camera:I = #drawable@ic_lockscreen_camera#t
 
-.field public static final ic_lockscreen_handle_press:I = #drawable@ic_lockscreen_handle_press#t
-
 .field public static final ic_lockscreen_silent:I = #drawable@ic_lockscreen_silent#t
 
 .field public static final ic_lockscreen_unlock:I = #drawable@ic_lockscreen_unlock#t
@@ -305,19 +509,11 @@
 
 .field public static final ic_media_next:I = #drawable@ic_media_next#t
 
-.field public static final ic_media_next_pressed:I = #drawable@ic_media_next_pressed#t
-
 .field public static final ic_media_pause:I = #drawable@ic_media_pause#t
-
-.field public static final ic_media_pause_pressed:I = #drawable@ic_media_pause_pressed#t
 
 .field public static final ic_media_play:I = #drawable@ic_media_play#t
 
-.field public static final ic_media_play_pressed:I = #drawable@ic_media_play_pressed#t
-
 .field public static final ic_media_previous:I = #drawable@ic_media_previous#t
-
-.field public static final ic_media_previous_pressed:I = #drawable@ic_media_previous_pressed#t
 
 .field public static final ic_media_rew:I = #drawable@ic_media_rew#t
 
@@ -838,29 +1034,13 @@
 
 .field public static final zoom_plate:I = #drawable@zoom_plate#t
 
-.field public static final zz_lockscreen_camera_normal:I = #drawable@zz_lockscreen_camera_normal#t
-
-.field public static final zz_lockscreen_mms_normal:I = #drawable@zz_lockscreen_mms_normal#t
-
-.field public static final zz_lockscreen_music_default:I = #drawable@zz_lockscreen_music_default#t
-
-.field public static final zz_lockscreen_music_pause:I = #drawable@zz_lockscreen_music_pause#t
-
-.field public static final zz_lockscreen_music_play:I = #drawable@zz_lockscreen_music_play#t
-
-.field public static final zz_lockscreen_notification_round:I = #drawable@zz_lockscreen_notification_round#t
-
-.field public static final zz_lockscreen_phone_normal:I = #drawable@zz_lockscreen_phone_normal#t
-
-.field public static final zz_lockscreen_prompt_normal:I = #drawable@zz_lockscreen_prompt_normal#t
-
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 11672
+    .line 11559
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

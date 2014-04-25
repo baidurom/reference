@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="emergency_dialer_digits_height">74.0dip</dimen>
+    <dimen name="emergency_dialer_digits_margin_bottom">60.0dip</dimen>
+    <dimen name="emergency_dialer_digits_text_size">34.0sp</dimen>
+</resources>

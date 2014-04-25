@@ -89,17 +89,13 @@
 
 .field public static final widget_edittext_dark:I = #color@widget_edittext_dark#t
 
-.field public static final zz_lockscreen_agenda_time_opacity:I = #color@zz_lockscreen_agenda_time_opacity#t
-
-.field public static final zz_lockscreen_white_opacity:I = #color@zz_lockscreen_white_opacity#t
-
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 11389
+    .line 11291
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

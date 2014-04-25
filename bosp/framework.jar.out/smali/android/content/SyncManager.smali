@@ -4877,7 +4877,7 @@
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     .line 1113
-    const-string v28, "in progress"
+    const-string/jumbo v28, "in progress"
 
     move-object/from16 v0, p1
 

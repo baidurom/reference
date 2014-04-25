@@ -752,7 +752,7 @@
 
     .line 361
     :cond_2
-    const-string v0, "in"
+    const-string/jumbo v0, "in"
 
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

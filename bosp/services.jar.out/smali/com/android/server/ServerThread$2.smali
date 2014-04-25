@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 270
+    .line 271
     iput-object p1, p0, Lcom/android/server/ServerThread$2;->this$0:Lcom/android/server/ServerThread;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,31 +41,31 @@
     .locals 2
 
     .prologue
-    .line 275
+    .line 276
     const/4 v0, -0x4
 
     invoke-static {v0}, Landroid/os/Process;->setThreadPriority(I)V
 
-    .line 277
+    .line 278
     const/4 v0, 0x0
 
     invoke-static {v0}, Landroid/os/Process;->setCanSelfBackground(Z)V
 
-    .line 280
+    .line 281
     invoke-static {}, Landroid/os/StrictMode;->conditionallyEnableDebugLogging()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 281
+    .line 282
     const-string v0, "SystemServer"
 
     const-string v1, "Enabled StrictMode logging for WM Looper"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 283
+    .line 284
     :cond_0
     return-void
 .end method

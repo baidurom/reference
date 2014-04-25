@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/call_settings"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:phone="http://schemas.android.com/apk/res/com.android.phone">
+    <PreferenceScreen android:persistent="true" android:title="@string/dial_default_card" android:key="button_default_card" android:summary="@string/no_default_card" />
+    <PreferenceCategory android:title="@string/choose_card">
+        <PreferenceScreen android:persistent="false" android:title="" android:key="button_sim_key_0" android:summary="" />
+        <PreferenceScreen android:persistent="false" android:title="" android:key="button_sim_key_1" android:summary="" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/auto_redial_setting_title" android:key="autoredial_setting_category">
+        <PreferenceScreen android:persistent="false" android:title="@string/auto_redial_title" android:key="autoredial_setting_entry_key">
+            <intent android:targetPackage="com.android.phone" android:action="android.intent.action.MAIN" android:targetClass="com.android.phone.MultipleSimCallSetting$AutoReDialSetting" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/autorecord_setting_category_title" android:key="autorecord_setting_category">
+        <PreferenceScreen android:persistent="false" android:title="@string/autorecord_settings" android:key="autorecord_setting_entry_key">
+            <intent android:targetPackage="com.android.phone" android:action="android.intent.action.MAIN" android:targetClass="com.android.phone.MultipleSimCallSetting$AutoRecordSetting" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+    <PreferenceCategory android:persistent="false" android:title="@string/answer" android:key="broadcast_by_tts_key">
+        <SwitchPreference android:persistent="false" android:title="@string/broadcast_call_by_tts" android:key="broadcast_call_by_tts" android:summary="@string/broadcast_callinfo_by_tts" />
+        <SwitchPreference android:persistent="false" android:title="@string/switch_silence_indicator" android:key="button_flipmute_enable" />
+        <SwitchPreference android:persistent="false" android:title="@string/vibrate_enable" android:key="button_vibrate_enable" />
+        <PreferenceScreen android:persistent="false" android:title="@string/respond_via_sms_setting_title" android:key="button_respond_via_sms_key" android:summary="@string/respond_via_sms_setting_summary">
+            <intent android:targetPackage="com.android.phone" android:action="android.intent.action.MAIN" android:targetClass="com.android.phone.RespondViaSmsManager$Settings" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+</PreferenceScreen>

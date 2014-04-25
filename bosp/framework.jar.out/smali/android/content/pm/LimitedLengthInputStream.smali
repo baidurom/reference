@@ -33,7 +33,7 @@
     .line 36
     new-instance v0, Ljava/io/IOException;
 
-    const-string v1, "in == null"
+    const-string/jumbo v1, "in == null"
 
     invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 

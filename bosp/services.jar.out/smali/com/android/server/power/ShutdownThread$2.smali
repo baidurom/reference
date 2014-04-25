@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 349
+    .line 250
     iput-object p1, p0, Lcom/android/server/power/ShutdownThread$2;->val$context:Landroid/content/Context;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,25 +43,25 @@
     .parameter "which"
 
     .prologue
-    .line 351
+    .line 252
     iget-object v0, p0, Lcom/android/server/power/ShutdownThread$2;->val$context:Landroid/content/Context;
 
     #calls: Lcom/android/server/power/ShutdownThread;->beginShutdownSequence(Landroid/content/Context;)V
     invoke-static {v0}, Lcom/android/server/power/ShutdownThread;->access$400(Landroid/content/Context;)V
 
-    .line 352
+    .line 253
     invoke-static {}, Lcom/android/server/power/ShutdownThread;->access$200()Landroid/app/AlertDialog;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 353
+    .line 254
     const/4 v0, 0x0
 
     invoke-static {v0}, Lcom/android/server/power/ShutdownThread;->access$202(Landroid/app/AlertDialog;)Landroid/app/AlertDialog;
 
-    .line 355
+    .line 256
     :cond_0
     return-void
 .end method

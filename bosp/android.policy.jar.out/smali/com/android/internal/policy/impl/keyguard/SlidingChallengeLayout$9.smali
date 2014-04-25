@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1077
+    .line 1083
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$9;->this$0:Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;
 
     iput-boolean p2, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$9;->val$show:Z
@@ -44,7 +44,7 @@
     .parameter "animation"
 
     .prologue
-    .line 1084
+    .line 1090
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$9;->this$0:Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;
 
     iget-boolean v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$9;->val$show:Z
@@ -52,7 +52,7 @@
     #calls: Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->onFadeEnd(Z)V
     invoke-static {v0, v1}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->access$200(Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;Z)V
 
-    .line 1085
+    .line 1091
     return-void
 .end method
 
@@ -61,7 +61,7 @@
     .parameter "animation"
 
     .prologue
-    .line 1080
+    .line 1086
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$9;->this$0:Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;
 
     iget-boolean v1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$9;->val$show:Z
@@ -69,6 +69,6 @@
     #calls: Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->onFadeStart(Z)V
     invoke-static {v0, v1}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->access$100(Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;Z)V
 
-    .line 1081
+    .line 1087
     return-void
 .end method

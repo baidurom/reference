@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="dialer_matchHighlight">#ffeecf6a</color>
+    <color name="incall_callTypeSip">#ff99ce3f</color>
+    <color name="incall_call_banner_background">#a0000000</color>
+    <color name="incall_call_state_label_background">#8033b5e5</color>
+    <color name="incall_call_banner_text_color">#ffffffff</color>
+    <color name="incall_call_banner_text_color_minor">#8033b5e5</color>
+    <color name="dtmf_dialer_display_text">#ffffffff</color>
+    <color name="action_bar_button_text_color">#ffffffff</color>
+    <color name="people_app_theme_color">#ff33b5e5</color>
+    <color name="transparent">#00000000</color>
+    <color name="incall_bottom_pannel">#88090a0a</color>
+    <color name="settings_bg">#ffebf0f8</color>
+    <color name="primary_text">#ff373737</color>
+    <color name="second_text">#ff8c8c8c</color>
+    <color name="settings_ab_text">#ff000000</color>
+    <color name="baidu_incall_bottom_pannel">#ff090a0a</color>
+    <color name="baidu_incall_call_state_label_hold_background">#80aaaa00</color>
+    <color name="baidu_sim_blue">#bb4c71ca</color>
+    <color name="baidu_sim_green">#bb72b548</color>
+    <color name="baidu_incall_call_state_label_end_background">#80ad0a0a</color>
+</resources>

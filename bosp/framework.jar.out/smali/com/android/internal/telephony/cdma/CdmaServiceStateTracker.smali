@@ -12457,7 +12457,7 @@
 
     if-eqz v3, :cond_8
 
-    const-string v8, "in service"
+    const-string/jumbo v8, "in service"
 
     invoke-virtual {v3, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

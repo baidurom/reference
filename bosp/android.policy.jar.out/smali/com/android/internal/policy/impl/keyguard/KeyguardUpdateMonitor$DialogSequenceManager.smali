@@ -54,18 +54,18 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 2421
+    .line 2423
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DialogSequenceManager;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2417
+    .line 2419
     iput-boolean v3, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DialogSequenceManager;->mInnerDialogShowing:Z
 
-    .line 2419
+    .line 2421
     iput-boolean v3, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DialogSequenceManager;->mLocked:Z
 
-    .line 2544
+    .line 2546
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DialogSequenceManager$1;
 
     new-instance v1, Landroid/os/Handler;
@@ -76,7 +76,7 @@
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DialogSequenceManager;->mDialogSequenceObserver:Landroid/database/ContentObserver;
 
-    .line 2578
+    .line 2580
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DialogSequenceManager$2;
 
     new-instance v1, Landroid/os/Handler;
@@ -87,21 +87,21 @@
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DialogSequenceManager;->mOOBEObserver:Landroid/database/ContentObserver;
 
-    .line 2423
+    .line 2425
     const-string v0, "KeyguardUpdateMonitor"
 
     const-string v1, "DialogSequenceManager DialogSequenceManager()"
 
     invoke-static {v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2425
+    .line 2427
     new-instance v0, Ljava/util/LinkedList;
 
     invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DialogSequenceManager;->mDialogShowCallbackQueue:Ljava/util/Queue;
 
-    .line 2427
+    .line 2429
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->mContext:Landroid/content/Context;
     invoke-static {p1}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->access$3500(Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;)Landroid/content/Context;
 
@@ -121,7 +121,7 @@
 
     invoke-virtual {v0, v1, v3, v2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 2429
+    .line 2431
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->mContext:Landroid/content/Context;
     invoke-static {p1}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->access$3500(Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;)Landroid/content/Context;
 
@@ -141,7 +141,7 @@
 
     invoke-virtual {v0, v1, v3, v2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 2431
+    .line 2433
     return-void
 .end method
 
@@ -150,7 +150,7 @@
     .parameter "x0"
 
     .prologue
-    .line 2409
+    .line 2411
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DialogSequenceManager;->queryDialogSequenceSeetings()I
 
     move-result v0
@@ -163,7 +163,7 @@
     .parameter "x0"
 
     .prologue
-    .line 2409
+    .line 2411
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DialogSequenceManager;->mDialogShowCallbackQueue:Ljava/util/Queue;
 
     return-object v0
@@ -175,7 +175,7 @@
     .parameter "x1"
 
     .prologue
-    .line 2409
+    .line 2411
     invoke-direct {p0, p1}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DialogSequenceManager;->setLocked(Z)V
 
     return-void
@@ -186,7 +186,7 @@
     .parameter "x0"
 
     .prologue
-    .line 2409
+    .line 2411
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DialogSequenceManager;->queryOOBEDisplay()I
 
     move-result v0
@@ -202,7 +202,7 @@
 
     const/4 v2, 0x0
 
-    .line 2492
+    .line 2494
     const-string v3, "KeyguardUpdateMonitor"
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -333,7 +333,7 @@
 
     invoke-static {v3, v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2500
+    .line 2502
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DialogSequenceManager;->mDialogShowCallbackQueue:Ljava/util/Queue;
 
     invoke-interface {v0}, Ljava/util/Queue;->isEmpty()Z
@@ -388,7 +388,7 @@
     :cond_0
     move v0, v2
 
-    .line 2492
+    .line 2494
     goto/16 :goto_0
 
     :cond_1
@@ -419,7 +419,7 @@
     :cond_6
     move v1, v2
 
-    .line 2500
+    .line 2502
     goto :goto_6
 .end method
 
@@ -427,7 +427,7 @@
     .locals 1
 
     .prologue
-    .line 2523
+    .line 2525
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DialogSequenceManager;->mInnerDialogShowing:Z
 
     return v0
@@ -437,7 +437,7 @@
     .locals 1
 
     .prologue
-    .line 2531
+    .line 2533
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DialogSequenceManager;->mLocked:Z
 
     return v0
@@ -449,12 +449,12 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 2596
+    .line 2598
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DialogSequenceManager;->queryOOBEDisplay()I
 
     move-result v0
 
-    .line 2598
+    .line 2600
     .local v0, value:I
     const-string v2, "KeyguardUpdateMonitor"
 
@@ -478,7 +478,7 @@
 
     invoke-static {v2, v3}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2600
+    .line 2602
     if-ne v0, v1, :cond_0
 
     :goto_0
@@ -496,12 +496,12 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 2508
+    .line 2510
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DialogSequenceManager;->queryDialogSequenceSeetings()I
 
     move-result v0
 
-    .line 2510
+    .line 2512
     .local v0, value:I
     const-string v2, "KeyguardUpdateMonitor"
 
@@ -525,16 +525,16 @@
 
     invoke-static {v2, v3}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2512
+    .line 2514
     if-eqz v0, :cond_0
 
     if-ne v0, v1, :cond_1
 
-    .line 2513
+    .line 2515
     :cond_0
     const/4 v1, 0x0
 
-    .line 2515
+    .line 2517
     :cond_1
     return v1
 .end method
@@ -543,7 +543,7 @@
     .locals 4
 
     .prologue
-    .line 2538
+    .line 2540
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DialogSequenceManager;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->mContext:Landroid/content/Context;
@@ -563,7 +563,7 @@
 
     move-result v0
 
-    .line 2540
+    .line 2542
     .local v0, value:I
     return v0
 .end method
@@ -572,7 +572,7 @@
     .locals 4
 
     .prologue
-    .line 2572
+    .line 2574
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DialogSequenceManager;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->mContext:Landroid/content/Context;
@@ -592,7 +592,7 @@
 
     move-result v0
 
-    .line 2574
+    .line 2576
     .local v0, value:I
     return v0
 .end method
@@ -602,10 +602,10 @@
     .parameter "show"
 
     .prologue
-    .line 2519
+    .line 2521
     iput-boolean p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DialogSequenceManager;->mInnerDialogShowing:Z
 
-    .line 2520
+    .line 2522
     return-void
 .end method
 
@@ -614,10 +614,10 @@
     .parameter "locked"
 
     .prologue
-    .line 2527
+    .line 2529
     iput-boolean p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DialogSequenceManager;->mLocked:Z
 
-    .line 2528
+    .line 2530
     return-void
 .end method
 
@@ -629,7 +629,7 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 2443
+    .line 2445
     const-string v1, "KeyguardUpdateMonitor"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -656,24 +656,24 @@
 
     invoke-static {v1, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2445
+    .line 2447
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DialogSequenceManager;->enableShow()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 2446
+    .line 2448
     invoke-direct {p0, v4}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DialogSequenceManager;->setInnerDialogShowing(Z)V
 
-    .line 2447
+    .line 2449
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DialogSequenceManager;->getLocked()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 2448
+    .line 2450
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DialogSequenceManager;->mDialogShowCallbackQueue:Ljava/util/Queue;
 
     invoke-interface {v1}, Ljava/util/Queue;->poll()Ljava/lang/Object;
@@ -682,7 +682,7 @@
 
     check-cast v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DialogShowCallBack;
 
-    .line 2450
+    .line 2452
     .local v0, dialogCallBack:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DialogShowCallBack;
     const-string v1, "KeyguardUpdateMonitor"
 
@@ -706,19 +706,19 @@
 
     invoke-static {v1, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2452
+    .line 2454
     if-eqz v0, :cond_0
 
-    .line 2453
+    .line 2455
     invoke-interface {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DialogShowCallBack;->show()V
 
-    .line 2464
+    .line 2466
     .end local v0           #dialogCallBack:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DialogShowCallBack;
     :cond_0
     :goto_0
     return-void
 
-    .line 2457
+    .line 2459
     :cond_1
     const-string v1, "KeyguardUpdateMonitor"
 
@@ -726,7 +726,7 @@
 
     invoke-static {v1, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2460
+    .line 2462
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DialogSequenceManager;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->mContext:Landroid/content/Context;
@@ -751,7 +751,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 2468
+    .line 2470
     const-string v0, "KeyguardUpdateMonitor"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -780,10 +780,10 @@
 
     invoke-static {v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2471
+    .line 2473
     invoke-direct {p0, v3}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DialogSequenceManager;->setInnerDialogShowing(Z)V
 
-    .line 2473
+    .line 2475
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DialogSequenceManager;->mDialogShowCallbackQueue:Ljava/util/Queue;
 
     invoke-interface {v0}, Ljava/util/Queue;->isEmpty()Z
@@ -792,14 +792,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 2475
+    .line 2477
     const-string v0, "KeyguardUpdateMonitor"
 
     const-string v1, "DialogSequenceManager --reportDialogClose()--System.putInt( dialog_sequence_settings value = 0 --setLocked(false)--"
 
     invoke-static {v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2479
+    .line 2481
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DialogSequenceManager;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->mContext:Landroid/content/Context;
@@ -815,14 +815,14 @@
 
     invoke-static {v0, v1, v3}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 2481
+    .line 2483
     invoke-direct {p0, v3}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DialogSequenceManager;->setLocked(Z)V
 
-    .line 2485
+    .line 2487
     :goto_0
     return-void
 
-    .line 2483
+    .line 2485
     :cond_0
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DialogSequenceManager;->handleShowDialog()V
 
@@ -834,21 +834,21 @@
     .parameter "callback"
 
     .prologue
-    .line 2435
+    .line 2437
     const-string v0, "KeyguardUpdateMonitor"
 
     const-string v1, "DialogSequenceManager --requestShowDialog()"
 
     invoke-static {v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2437
+    .line 2439
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DialogSequenceManager;->mDialogShowCallbackQueue:Ljava/util/Queue;
 
     invoke-interface {v0, p1}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
 
-    .line 2438
+    .line 2440
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$DialogSequenceManager;->handleShowDialog()V
 
-    .line 2439
+    .line 2441
     return-void
 .end method

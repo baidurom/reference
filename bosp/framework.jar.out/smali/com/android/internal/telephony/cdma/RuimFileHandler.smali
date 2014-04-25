@@ -167,7 +167,7 @@
 
     const/16 v2, 0xc0
 
-    const-string v4, "img"
+    const-string/jumbo v4, "img"
 
     const/4 v5, 0x0
 

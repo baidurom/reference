@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:background="@*android:color/background_dark" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="right" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="0.3">
+        <Button android:textAppearance="?android:textAppearanceLarge" android:textSize="30.0px" android:textColor="#ffffffff" android:ellipsize="end" android:id="@id/emergencyCall" android:background="@drawable/eccbtn" android:layout_width="wrap_content" android:layout_height="45.0dip" android:layout_marginTop="12.0dip" android:layout_marginRight="12.0dip" android:maxWidth="194.0dip" android:singleLine="true" android:drawableLeft="@drawable/emergencycallicon" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="0.52">
+        <LinearLayout android:gravity="left" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.8">
+            <TextView android:textAppearance="?android:textAppearanceLarge" android:textSize="36.0px" android:textColor="#ffffffff" android:ellipsize="end" android:gravity="center" android:id="@id/unlockResultNotify" android:focusableInTouchMode="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:singleLine="true" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+            <TextView android:textAppearance="?android:textAppearanceLarge" android:textSize="33.0px" android:textColor="#ffffffff" android:ellipsize="end" android:gravity="left" android:id="@id/unlockActionNotify" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+            <TextView android:textAppearance="?android:textAppearanceLarge" android:textSize="24.0px" android:textColor="#ff59771c" android:ellipsize="start" android:gravity="bottom|left|center" android:id="@id/unlockRetriesNotify" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:singleLine="true" />
+            <TextView android:textSize="24.0px" android:ellipsize="middle" android:gravity="center" android:id="@id/unlockSIMEmptyForSingleCard" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="6.0dip" android:maxWidth="100.0dip" android:singleLine="true" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="0.18" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/EnterPassword" android:background="@drawable/btndeletenobgb" android:layout_width="fill_parent" android:layout_height="48.0dip">
+        <TextView android:textAppearance="?android:textAppearanceLargeInverse" android:id="@id/pwdDisplay" android:background="@drawable/phone_dial_bg_text_normal" android:layout_width="0.0dip" android:layout_height="48.0dip" android:layout_marginLeft="6.0dip" android:cursorVisible="false" android:maxLines="1" android:layout_weight="0.75" android:inputType="textPassword" />
+        <ImageButton android:id="@id/backspace" android:layout_width="0.0dip" android:layout_height="42.0dip" android:layout_marginLeft="2.0dip" android:layout_marginRight="4.0dip" android:src="@drawable/btndeletenoarrow" android:layout_weight="0.2" />
+    </LinearLayout>
+    <include android:id="@id/keyPad" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/EnterPassword" layout="@layout/simlock_keyboard" />
+</LinearLayout>

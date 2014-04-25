@@ -114,7 +114,7 @@
     .local v3, ex:Ljava/io/UnsupportedEncodingException;
     const-string v10, "IccUtils"
 
-    const-string v11, "implausible UnsupportedEncodingException"
+    const-string/jumbo v11, "implausible UnsupportedEncodingException"
 
     invoke-static {v10, v11, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
@@ -1327,13 +1327,15 @@
     .restart local v2       #ret:Ljava/lang/String;
     const-string v4, "IccUtils"
 
-    const-string v5, "implausible UnsupportedEncodingException"
+    const-string/jumbo v5, "implausible UnsupportedEncodingException"
 
     invoke-static {v4, v5, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_1
 
     .line 515
+    nop
+
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

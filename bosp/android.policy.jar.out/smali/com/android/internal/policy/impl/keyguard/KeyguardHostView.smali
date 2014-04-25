@@ -5093,11 +5093,9 @@
 
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->mSlidingChallengeLayout:Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;
 
-    :goto_0
-    check-cast v0, Lcom/android/internal/policy/impl/keyguard/ChallengeLayout;
-
     .line 255
     .local v0, challenge:Lcom/android/internal/policy/impl/keyguard/ChallengeLayout;
+    :goto_0
     iget-object v6, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->mViewStateManager:Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;
 
     invoke-interface {v0, v6}, Lcom/android/internal/policy/impl/keyguard/ChallengeLayout;->setOnBouncerStateChangedListener(Lcom/android/internal/policy/impl/keyguard/ChallengeLayout$OnBouncerStateChangedListener;)V

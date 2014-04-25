@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/voice_call_settings"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:phone="http://schemas.android.com/apk/res/com.android.phone">
+    <PreferenceCategory android:title="@string/ip_call_setting_category_title" android:key="ip_call_setting_category">
+        <PreferenceScreen android:persistent="false" android:title="@string/ip_call_settings" android:key="ip_call_setting_entry_key">
+            <intent android:targetPackage="com.android.phone" android:action="android.intent.action.MAIN" android:targetClass="com.android.phone.CallFeaturesSetting$IpCallSetting" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/additional_gsm_call_settings" android:key="misc">
+        <PreferenceScreen android:persistent="false" android:title="@string/fdn" android:key="button_fdn_key" android:summary="@string/sum_fdn">
+            <intent android:targetPackage="com.android.phone" android:action="android.intent.action.MAIN" android:targetClass="com.android.phone.FdnSetting2" />
+        </PreferenceScreen>
+        <PreferenceScreen android:persistent="false" android:title="@string/voice_mail" android:key="button_voicemail_key" android:summary="@string/sum_voice_mail">
+            <intent android:targetPackage="com.android.phone" android:action="android.intent.action.MAIN" android:targetClass="com.android.phone.VoiceMailSetting" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -30,17 +30,17 @@
     .parameter "stackTrace"
 
     .prologue
-    .line 5478
+    .line 5499
     iput-object p1, p0, Landroid/app/ActivityThread$QueryHistoryRecord;->this$0:Landroid/app/ActivityThread;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 5479
+    .line 5500
     iput-object p2, p0, Landroid/app/ActivityThread$QueryHistoryRecord;->mUri:Ljava/lang/String;
 
-    .line 5480
+    .line 5501
     iput-object p3, p0, Landroid/app/ActivityThread$QueryHistoryRecord;->mStackTrace:Ljava/lang/Throwable;
 
-    .line 5481
+    .line 5502
     return-void
 .end method

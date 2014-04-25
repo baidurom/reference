@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 1919
+    .line 1869
     iput-object p1, p0, Lcom/android/server/MountService$8;->this$0:Lcom/android/server/MountService;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
@@ -38,14 +38,14 @@
     .locals 3
 
     .prologue
-    .line 1922
-    invoke-static {}, Lcom/android/server/MountService;->access$700()Ljava/lang/Object;
+    .line 1872
+    invoke-static {}, Lcom/android/server/MountService;->access$1100()Ljava/lang/Object;
 
     move-result-object v1
 
     monitor-enter v1
 
-    .line 1923
+    .line 1873
     :try_start_0
     iget-object v0, p0, Lcom/android/server/MountService$8;->this$0:Lcom/android/server/MountService;
 
@@ -53,13 +53,13 @@
 
     invoke-virtual {v0, v2}, Lcom/android/server/MountService;->setUsbMassStorageEnabled(Z)V
 
-    .line 1924
+    .line 1874
     monitor-exit v1
 
-    .line 1925
+    .line 1875
     return-void
 
-    .line 1924
+    .line 1874
     :catchall_0
     move-exception v0
 

@@ -1022,7 +1022,7 @@
     .line 1194
     const-string v0, "ContentProvider"
 
-    const-string v1, "implement ContentProvider shutdown() to make sure all database connections are gracefully shutdown"
+    const-string/jumbo v1, "implement ContentProvider shutdown() to make sure all database connections are gracefully shutdown"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 

@@ -230,7 +230,7 @@
     const/4 v3, 0x0
 
     .line 1050
-    const-string v5, "image_id ASC"
+    const-string/jumbo v5, "image_id ASC"
 
     move-object v0, p0
 
@@ -264,7 +264,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "image_id = "
+    const-string/jumbo v2, "image_id = "
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -342,7 +342,7 @@
 
     const/4 v4, 0x0
 
-    const-string v5, "image_id ASC"
+    const-string/jumbo v5, "image_id ASC"
 
     move-object v0, p0
 

@@ -1759,7 +1759,7 @@
 
     .line 512
     :cond_13
-    const-string v0, "img"
+    const-string/jumbo v0, "img"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 

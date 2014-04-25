@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.phone.VTCallStatus android:id="@id/vtCallStatus" android:layout_width="fill_parent" android:layout_height="@dimen/incall_status0_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/incall_status_text_size0" android:textColor="#ffffffff" android:ellipsize="end" android:id="@id/name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="80.0dip" android:singleLine="true" />
+    <TextView android:textSize="@dimen/incall_status_text_size0" android:textColor="#ffffffff" android:id="@id/numberLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="80.0dip" android:singleLine="true" />
+    <TextView android:id="@id/operator" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <TextView android:textColor="#ffffffff" android:ellipsize="middle" android:id="@id/simIndicator" android:background="@drawable/sim_name_border" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="80.0dip" android:singleLine="true" />
+    <TextView android:textAppearance="?android:textAppearanceSmall" android:textColor="@color/incall_call_banner_text_color" android:gravity="right" android:id="@id/callStateLabel" android:background="@color/incall_call_state_label_background" android:paddingTop="8.0dip" android:paddingRight="@dimen/call_banner_side_padding" android:paddingBottom="8.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:textAllCaps="true" />
+</com.android.phone.VTCallStatus>

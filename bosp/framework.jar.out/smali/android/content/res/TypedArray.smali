@@ -753,7 +753,7 @@
 
     iget v2, v0, Landroid/util/TypedValue;->resourceId:I
 
-    invoke-virtual {v1, v0, v2}, Landroid/content/res/Resources;->loadDrawable(Landroid/util/TypedValue;I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v1, v0, v2}, Landroid/content/res/Resources;->loadDrawableBaidu(Landroid/util/TypedValue;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 

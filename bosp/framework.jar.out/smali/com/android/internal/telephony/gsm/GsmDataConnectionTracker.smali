@@ -3152,7 +3152,7 @@
     .line 1247
     .restart local v30       #strSPN:Ljava/lang/String;
     :cond_6
-    const-string v4, "imsi"
+    const-string/jumbo v4, "imsi"
 
     move-object/from16 v0, p1
 
@@ -3552,7 +3552,7 @@
     :cond_0
     if-eqz p2, :cond_2
 
-    const-string v3, "imsi"
+    const-string/jumbo v3, "imsi"
 
     move-object/from16 v0, p1
 
@@ -12220,7 +12220,7 @@
 
     .prologue
     .line 3351
-    const-string v0, "ims"
+    const-string/jumbo v0, "ims"
 
     invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
@@ -14279,7 +14279,7 @@
 
     .line 492
     :sswitch_6
-    const-string v9, "ims"
+    const-string/jumbo v9, "ims"
 
     invoke-direct {p0, v9}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->addApnContext(Ljava/lang/String;)Lcom/android/internal/telephony/ApnContext;
 
@@ -14362,6 +14362,8 @@
     return-void
 
     .line 464
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x0 -> :sswitch_0

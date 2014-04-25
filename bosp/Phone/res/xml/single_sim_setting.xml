@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/call_settings"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:phone="http://schemas.android.com/apk/res/com.android.phone">
+    <PreferenceScreen android:persistent="false" android:title="@string/fdn" android:key="button_fdn_key" android:summary="@string/sum_fdn">
+        <intent android:targetPackage="com.android.phone" android:action="android.intent.action.MAIN" android:targetClass="com.android.phone.FdnSetting2" />
+    </PreferenceScreen>
+    <PreferenceScreen android:persistent="false" android:title="@string/ip_call_settings" android:key="ip_call_setting_entry_key">
+        <intent android:targetPackage="com.android.phone" android:action="android.intent.action.MAIN" android:targetClass="com.android.phone.SingleSimCallSetting$IpCallSetting" />
+    </PreferenceScreen>
+    <PreferenceScreen android:persistent="false" android:title="@string/voice_mail" android:key="button_voicemail_key" android:summary="@string/sum_voice_mail">
+        <intent android:targetPackage="com.android.phone" android:action="android.intent.action.MAIN" android:targetClass="com.android.phone.VoiceMailSetting" />
+    </PreferenceScreen>
+    <PreferenceScreen android:persistent="false" android:title="@string/labelCF" android:key="button_cf_expand_key" android:summary="@string/call_forwarding_settings">
+        <intent android:targetPackage="com.android.phone" android:action="android.intent.action.MAIN" android:targetClass="com.android.phone.GsmUmtsCallForwardOptions" />
+    </PreferenceScreen>
+    <PreferenceScreen android:persistent="false" android:title="@string/lable_call_barring" android:key="button_cb_expand_key" android:summary="@string/call_barring_sum">
+        <intent android:targetPackage="com.android.phone" android:action="android.intent.action.MAIN" android:targetClass="com.android.phone.CallBarring" />
+    </PreferenceScreen>
+    <PreferenceScreen android:persistent="false" android:title="@string/additional_gsm_call_settings" android:key="button_more_expand_key" android:summary="@string/call_additional_sum">
+        <intent android:targetPackage="com.android.phone" android:action="android.intent.action.MAIN" android:targetClass="com.android.phone.GsmUmtsAdditionalCallOptions" />
+    </PreferenceScreen>
+    <PreferenceScreen android:persistent="false" android:title="@string/respond_via_sms_setting_title" android:key="button_respond_via_sms_key" android:summary="@string/respond_via_sms_setting_summary">
+        <intent android:targetPackage="com.android.phone" android:action="android.intent.action.MAIN" android:targetClass="com.android.phone.RespondViaSmsManager$Settings" />
+    </PreferenceScreen>
+    <PreferenceCategory android:title="@string/autorecord_setting_category_title" android:key="autorecord_setting_category">
+        <PreferenceScreen android:persistent="false" android:title="@string/autorecord_settings" android:key="autorecord_setting_entry_key">
+            <intent android:targetPackage="com.android.phone" android:action="android.intent.action.MAIN" android:targetClass="com.android.phone.SingleSimCallSetting$AutoRecordSetting" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+    <PreferenceCategory android:persistent="false" android:title="@string/broadcast_by_tts" android:key="broadcast_by_tts_key">
+        <SwitchPreference android:persistent="false" android:title="@string/broadcast_call_by_tts" android:key="broadcast_call_by_tts" android:summary="@string/broadcast_callinfo_by_tts" />
+    </PreferenceCategory>
+    <PreferenceCategory android:persistent="false" android:title="@string/switch_silence_settings" android:key="button_flipmute_settings">
+        <SwitchPreference android:persistent="false" android:title="@string/switch_silence_indicator" android:key="button_flipmute_enable" />
+    </PreferenceCategory>
+</PreferenceScreen>

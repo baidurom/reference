@@ -121,20 +121,55 @@
     <item type="id" name="search">false</item>
     <item type="id" name="expand_text">false</item>
     <item type="id" name="hover_text">false</item>
-    <item type="id" name="target_handle_panel">false</item>
+    <item type="id" name="alarm_status">false</item>
+    <item type="id" name="slide_miss_call_and_mms">false</item>
+    <item type="id" name="miss_call">false</item>
+    <item type="id" name="miss_mms">false</item>
+    <item type="id" name="iqiyi_listview">false</item>
+    <item type="id" name="iqiyi_push_msg_layout">false</item>
+    <item type="id" name="push_msg_icon">false</item>
+    <item type="id" name="push_msg_text_layout">false</item>
+    <item type="id" name="iqiyi_push_msg_title">false</item>
+    <item type="id" name="iqiyi_push_msg_content">false</item>
+    <item type="id" name="iqiyi_push_msg_image">false</item>
+    <item type="id" name="music_view">false</item>
+    <item type="id" name="music_bg">false</item>
+    <item type="id" name="album">false</item>
+    <item type="id" name="album_cover">false</item>
+    <item type="id" name="album_title">false</item>
+    <item type="id" name="btn_prev">false</item>
+    <item type="id" name="btn_play">false</item>
+    <item type="id" name="btn_next">false</item>
+    <item type="id" name="target_view">false</item>
+    <item type="id" name="target_handle">false</item>
+    <item type="id" name="slide_guide_arrow">false</item>
+    <item type="id" name="targets">false</item>
+    <item type="id" name="bg_cicle">false</item>
+    <item type="id" name="handle_align">false</item>
     <item type="id" name="target_camera">false</item>
+    <item type="id" name="target_phone">false</item>
+    <item type="id" name="miss_call_count">false</item>
     <item type="id" name="target_unlock">false</item>
     <item type="id" name="target_message">false</item>
+    <item type="id" name="miss_message_count">false</item>
+    <item type="id" name="target_ring">false</item>
+    <item type="id" name="chargging_view">false</item>
+    <item type="id" name="chargging_tip">false</item>
+    <item type="id" name="power_percent">false</item>
+    <item type="id" name="chargging_progress">false</item>
+    <item type="id" name="chargging_circle_1">false</item>
+    <item type="id" name="chargging_circle_2">false</item>
+    <item type="id" name="chargging_circle_3">false</item>
+    <item type="id" name="chargging_circle_4">false</item>
+    <item type="id" name="water_layer_container">false</item>
+    <item type="id" name="miss_container">false</item>
+    <item type="id" name="target_handle_panel">false</item>
     <item type="id" name="target_refresh">false</item>
     <item type="id" name="target_refresh2">false</item>
-    <item type="id" name="target_ring">false</item>
-    <item type="id" name="target_handle">false</item>
     <item type="id" name="axis_left">false</item>
     <item type="id" name="axis_right">false</item>
     <item type="id" name="axis_top">false</item>
     <item type="id" name="axis_bottom">false</item>
-    <item type="id" name="power_percent">false</item>
-    <item type="id" name="miss_message_count">false</item>
     <item type="id" name="breadcrumb_section">false</item>
     <item type="id" name="month_name">false</item>
     <item type="id" name="day_names">false</item>
@@ -255,7 +290,6 @@
     <item type="id" name="switchIcon">false</item>
     <item type="id" name="timeDisplayBackground">false</item>
     <item type="id" name="timeDisplayForeground">false</item>
-    <item type="id" name="alarm_status">false</item>
     <item type="id" name="unlockWidgetLayout">false</item>
     <item type="id" name="unlock_widget">false</item>
     <item type="id" name="moveView">false</item>
@@ -318,9 +352,6 @@
     <item type="id" name="clock_view">false</item>
     <item type="id" name="clock_text">false</item>
     <item type="id" name="transport_controls">false</item>
-    <item type="id" name="btn_prev">false</item>
-    <item type="id" name="btn_play">false</item>
-    <item type="id" name="btn_next">false</item>
     <item type="id" name="albumart">false</item>
     <item type="id" name="keyguard_transport_control">false</item>
     <item type="id" name="replace_app_icon">false</item>
@@ -518,19 +549,6 @@
     <item type="id" name="zoomOut">false</item>
     <item type="id" name="zoomIn">false</item>
     <item type="id" name="zoomMagnify">false</item>
-    <item type="id" name="scroll_view">false</item>
-    <item type="id" name="flipper">false</item>
-    <item type="id" name="media_view">false</item>
-    <item type="id" name="album_view">false</item>
-    <item type="id" name="shade">false</item>
-    <item type="id" name="zz_transport">false</item>
-    <item type="id" name="weather_view">false</item>
-    <item type="id" name="dateLayout">false</item>
-    <item type="id" name="alarmLayout">false</item>
-    <item type="id" name="weather_background">false</item>
-    <item type="id" name="workspace">false</item>
-    <item type="id" name="relativeLayout1">false</item>
-    <item type="id" name="album">false</item>
     <item type="id" name="zz_keyguard_voice_unlock_view">false</item>
     <item type="id" name="zz_voice_unlock_area_view">false</item>
     <item type="id" name="zz_voiceLockMic">false</item>

@@ -117,25 +117,13 @@
 
 .field public static final special_locale_names:I = #array@special_locale_names#t
 
-.field public static final zz_lockscreen_five_shortcuts_description:I = #array@zz_lockscreen_five_shortcuts_description#t
-
-.field public static final zz_lockscreen_five_shortcuts_description_silent:I = #array@zz_lockscreen_five_shortcuts_description_silent#t
-
-.field public static final zz_lockscreen_five_shortcuts_description_soundon:I = #array@zz_lockscreen_five_shortcuts_description_soundon#t
-
-.field public static final zz_lockscreen_targets_five_shortcuts:I = #array@zz_lockscreen_targets_five_shortcuts#t
-
-.field public static final zz_lockscreen_targets_five_shortcuts_silent:I = #array@zz_lockscreen_targets_five_shortcuts_silent#t
-
-.field public static final zz_lockscreen_targets_five_shortcuts_soundon:I = #array@zz_lockscreen_targets_five_shortcuts_soundon#t
-
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 83
+    .line 84
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

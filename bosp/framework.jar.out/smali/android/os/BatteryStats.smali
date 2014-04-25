@@ -529,7 +529,7 @@
 
     new-array v6, v6, [Ljava/lang/String;
 
-    const-string v7, "in"
+    const-string/jumbo v7, "in"
 
     aput-object v7, v6, v8
 

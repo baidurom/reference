@@ -1667,7 +1667,7 @@
 
     move-object/from16 v22, v0
 
-    const-string v23, "imsi"
+    const-string/jumbo v23, "imsi"
 
     move-object/from16 v0, p1
 
@@ -4445,7 +4445,7 @@
     :cond_17
     iget-object v10, p0, Landroid/net/wifi/WifiConfigStore;->mWifiNative:Landroid/net/wifi/WifiNative;
 
-    const-string v11, "imsi"
+    const-string/jumbo v11, "imsi"
 
     invoke-virtual {v10, v6, v11}, Landroid/net/wifi/WifiNative;->getNetworkVariable(ILjava/lang/String;)Ljava/lang/String;
 

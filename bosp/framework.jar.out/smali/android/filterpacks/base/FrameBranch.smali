@@ -48,7 +48,7 @@
 
     .prologue
     .line 54
-    const-string v2, "in"
+    const-string/jumbo v2, "in"
 
     invoke-virtual {p0, v2}, Landroid/filterpacks/base/FrameBranch;->pullInput(Ljava/lang/String;)Landroid/filterfw/core/Frame;
 
@@ -100,7 +100,7 @@
 
     .prologue
     .line 41
-    const-string v1, "in"
+    const-string/jumbo v1, "in"
 
     invoke-virtual {p0, v1}, Landroid/filterpacks/base/FrameBranch;->addInputPort(Ljava/lang/String;)V
 
@@ -132,7 +132,7 @@
 
     move-result-object v1
 
-    const-string v2, "in"
+    const-string/jumbo v2, "in"
 
     invoke-virtual {p0, v1, v2}, Landroid/filterpacks/base/FrameBranch;->addOutputBasedOnInput(Ljava/lang/String;Ljava/lang/String;)V
 

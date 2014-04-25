@@ -1382,7 +1382,7 @@
     <string name="permit_btn_text">允许</string>
     <string name="dynamic_perm_popup_dialog_title">警告</string>
     <string name="remember_info_text">记住我的选择</string>
-    <string name="remember_tips_text">通过主屏幕上的”设置“>”安全“>”权限监控“>设置相应权限</string>
+    <string name="remember_tips_text">通过”安全中心“>”权限监控“>可设置相应权限</string>
     <string name="phone_call_info_msg">拨出号码：%1$s</string>
     <string name="phone_sms_info_msg">接收者：%1$s</string>
     <string name="sms_info_msg">内容：%1$s</string>
@@ -1413,11 +1413,16 @@
     <string name="battery_apps_button">点击查看</string>
     <string name="power_off_alarm">关机闹钟提醒</string>
     <string name="quickboot_shutdown_info">您的手机将会关机，使用关机闹钟请勾选如下选项（电量较低时可能无法提醒）。</string>
+    <string name="chargging">充电中</string>
+    <string name="charge_finished">充电完成</string>
     <string name="quickboot_real_shutdown">您设置的关机闹钟和定时开机将失效，确认关机？</string>
     <string name="quick_boot_text_info">下次快速开机</string>
     <string name="quickboot_poweroff_alarm">关机闹钟将在周%1$s kk:mm响起</string>
     <string name="quickboot_schedule_pwonoff">手机将在周%1$s kk:mm定时开机</string>
     <string name="quickboot_lowbat_poweroff">电量低时可能无法响铃</string>
     <string name="quickboot_lowbat_schedule_pwonoff">电量低时可能无法定时开机</string>
+    <string name="replace_browser_value">浏览器</string>
+    <string name="replace_market_value">云商店</string>
+    <string name="replace_reader_value">阅读</string>
     <string name="hot_keywords">实时热点</string>
 </resources>

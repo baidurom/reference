@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 2178
+    .line 2180
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$8;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
 
     invoke-direct {p0}, Landroid/telephony/PhoneStateListener;-><init>()V
@@ -43,15 +43,15 @@
 
     const/4 v5, 0x1
 
-    .line 2181
+    .line 2183
     if-eqz p1, :cond_3
 
-    .line 2182
+    .line 2184
     invoke-virtual {p1}, Landroid/telephony/ServiceState;->getRegState()I
 
     move-result v2
 
-    .line 2183
+    .line 2185
     .local v2, regState:I
     iget-object v3, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$8;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
 
@@ -61,37 +61,37 @@
 
     if-eq v2, v6, :cond_0
 
-    .line 2184
+    .line 2186
     const-string v3, "KeyguardUpdateMonitor"
 
     const-string v4, "PhoneStateListener, sim2 searching finished"
 
     invoke-static {v3, v4}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2185
+    .line 2187
     iget-object v3, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$8;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
 
     const/4 v4, 0x0
 
     iput-boolean v4, v3, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->mNetSearchingGemini:Z
 
-    .line 2187
+    .line 2189
     :cond_0
     if-ne v6, v2, :cond_1
 
-    .line 2188
+    .line 2190
     const-string v3, "KeyguardUpdateMonitor"
 
     const-string v4, "PhoneStateListener, sim2 searching begin"
 
     invoke-static {v3, v4}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2189
+    .line 2191
     iget-object v3, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$8;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
 
     iput-boolean v5, v3, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->mNetSearchingGemini:Z
 
-    .line 2191
+    .line 2193
     :cond_1
     const/4 v1, 0x0
 
@@ -110,7 +110,7 @@
 
     if-ge v1, v3, :cond_3
 
-    .line 2192
+    .line 2194
     iget-object v3, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$8;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->mCallbacks:Ljava/util/ArrayList;
@@ -130,24 +130,24 @@
 
     check-cast v0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitorCallback;
 
-    .line 2193
+    .line 2195
     .local v0, cb:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitorCallback;
     if-eqz v0, :cond_2
 
-    .line 2194
+    .line 2196
     iget-object v3, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor$8;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
 
     iget-boolean v3, v3, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->mNetSearchingGemini:Z
 
     invoke-virtual {v0, v5, v3}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitorCallback;->onSearchNetworkUpdate(IZ)V
 
-    .line 2191
+    .line 2193
     :cond_2
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 2198
+    .line 2200
     .end local v0           #cb:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitorCallback;
     .end local v1           #i:I
     .end local v2           #regState:I

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="56.0dip">
+        <ImageView android:id="@id/one" android:background="@drawable/baidu_pin_btn_1" android:layout_width="0.0sp" android:layout_height="fill_parent" android:layout_weight="1.0" />
+        <ImageView android:id="@id/two" android:background="@drawable/baidu_pin_btn_2" android:layout_width="0.0sp" android:layout_height="fill_parent" android:layout_weight="1.0" />
+        <ImageView android:id="@id/three" android:background="@drawable/baidu_pin_btn_3" android:layout_width="0.0sp" android:layout_height="fill_parent" android:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="56.0dip">
+        <ImageView android:id="@id/four" android:background="@drawable/baidu_pin_btn_4" android:layout_width="0.0sp" android:layout_height="fill_parent" android:layout_weight="1.0" />
+        <ImageView android:id="@id/five" android:background="@drawable/baidu_pin_btn_5" android:layout_width="0.0sp" android:layout_height="fill_parent" android:layout_weight="1.0" />
+        <ImageView android:id="@id/six" android:background="@drawable/baidu_pin_btn_6" android:layout_width="0.0sp" android:layout_height="fill_parent" android:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="56.0dip">
+        <ImageView android:id="@id/seven" android:background="@drawable/baidu_pin_btn_7" android:layout_width="0.0sp" android:layout_height="fill_parent" android:layout_weight="1.0" />
+        <ImageView android:id="@id/eight" android:background="@drawable/baidu_pin_btn_8" android:layout_width="0.0sp" android:layout_height="fill_parent" android:layout_weight="1.0" />
+        <ImageView android:id="@id/nine" android:background="@drawable/baidu_pin_btn_9" android:layout_width="0.0sp" android:layout_height="fill_parent" android:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="56.0dip">
+        <ImageView android:id="@id/ok" android:background="@drawable/baidu_pin_btn_affrim" android:layout_width="0.0sp" android:layout_height="fill_parent" android:text="@string/simlock_ok" android:layout_weight="1.0" />
+        <ImageView android:textColor="#ffdadbdb" android:id="@id/zero" android:background="@drawable/baidu_pin_btn_0" android:layout_width="0.0sp" android:layout_height="fill_parent" android:layout_weight="1.0" />
+        <ImageView android:id="@id/dismiss" android:background="@drawable/baidu_pin_btn_cancel" android:layout_width="0.0sp" android:layout_height="fill_parent" android:text="@string/simlock_dismiss" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

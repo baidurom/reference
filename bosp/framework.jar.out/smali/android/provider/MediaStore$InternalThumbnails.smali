@@ -943,7 +943,7 @@
     .end local v16           #column:Ljava/lang/String;
     :cond_e
     :try_start_9
-    const-string v16, "image_id="
+    const-string/jumbo v16, "image_id="
 
     goto :goto_5
 

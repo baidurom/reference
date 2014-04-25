@@ -50,12 +50,12 @@
     .parameter
 
     .prologue
-    .line 5484
+    .line 5505
     iput-object p1, p0, Landroid/app/ActivityThread$QueryHistory;->this$0:Landroid/app/ActivityThread;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 5485
+    .line 5506
     const-string v0, "Cursor_Leak_Detecter"
 
     const/4 v1, 0x2
@@ -66,14 +66,14 @@
 
     iput-boolean v0, p0, Landroid/app/ActivityThread$QueryHistory;->CURSOR_LEAK_DETECTER:Z
 
-    .line 5487
+    .line 5508
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/app/ActivityThread$QueryHistory;->recordMap:Ljava/util/Map;
 
-    .line 5488
+    .line 5509
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -89,7 +89,7 @@
     .parameter "x1"
 
     .prologue
-    .line 5484
+    .line 5505
     invoke-direct {p0, p1}, Landroid/app/ActivityThread$QueryHistory;-><init>(Landroid/app/ActivityThread;)V
 
     return-void
@@ -101,16 +101,16 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 5496
+    .line 5517
     invoke-static {}, Landroid/os/Process;->myUid()I
 
     move-result v6
 
-    .line 5497
+    .line 5518
     .local v6, uid:I
     const/4 v2, 0x0
 
-    .line 5500
+    .line 5521
     .local v2, inStream:Ljava/io/InputStream;
     :try_start_0
     new-instance v3, Ljava/io/FileInputStream;
@@ -122,35 +122,35 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 5502
+    .line 5523
     .end local v2           #inStream:Ljava/io/InputStream;
     .local v3, inStream:Ljava/io/InputStream;
     if-eqz v3, :cond_3
 
-    .line 5503
+    .line 5524
     :try_start_1
     new-instance v4, Ljava/io/InputStreamReader;
 
     invoke-direct {v4, v3}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;)V
 
-    .line 5504
+    .line 5525
     .local v4, inputReader:Ljava/io/InputStreamReader;
     new-instance v0, Ljava/io/BufferedReader;
 
     invoke-direct {v0, v4}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
 
-    .line 5506
+    .line 5527
     .local v0, buffReader:Ljava/io/BufferedReader;
     invoke-virtual {v0}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 5507
+    .line 5528
     .local v5, line:Ljava/lang/String;
     :goto_0
     if-eqz v5, :cond_3
 
-    .line 5508
+    .line 5529
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v8
@@ -164,13 +164,13 @@
 
     if-ne v6, v8, :cond_2
 
-    .line 5509
+    .line 5530
     const/4 v7, 0x1
 
-    .line 5518
+    .line 5539
     if-eqz v3, :cond_0
 
-    .line 5520
+    .line 5541
     :try_start_2
     invoke-virtual {v3}, Ljava/io/InputStream;->close()V
     :try_end_2
@@ -180,7 +180,7 @@
     :goto_1
     move-object v2, v3
 
-    .line 5516
+    .line 5537
     .end local v0           #buffReader:Ljava/io/BufferedReader;
     .end local v3           #inStream:Ljava/io/InputStream;
     .end local v4           #inputReader:Ljava/io/InputStreamReader;
@@ -190,7 +190,7 @@
     :goto_2
     return v7
 
-    .line 5511
+    .line 5532
     .end local v2           #inStream:Ljava/io/InputStream;
     .restart local v0       #buffReader:Ljava/io/BufferedReader;
     .restart local v3       #inStream:Ljava/io/InputStream;
@@ -207,14 +207,14 @@
 
     goto :goto_0
 
-    .line 5518
+    .line 5539
     .end local v0           #buffReader:Ljava/io/BufferedReader;
     .end local v4           #inputReader:Ljava/io/InputStreamReader;
     .end local v5           #line:Ljava/lang/String;
     :cond_3
     if-eqz v3, :cond_4
 
-    .line 5520
+    .line 5541
     :try_start_4
     invoke-virtual {v3}, Ljava/io/InputStream;->close()V
     :try_end_4
@@ -224,21 +224,21 @@
     :goto_3
     move-object v2, v3
 
-    .line 5514
+    .line 5535
     .end local v3           #inStream:Ljava/io/InputStream;
     .restart local v2       #inStream:Ljava/io/InputStream;
     goto :goto_2
 
-    .line 5515
+    .line 5536
     :catch_0
     move-exception v1
 
-    .line 5518
+    .line 5539
     .local v1, e:Ljava/io/IOException;
     :goto_4
     if-eqz v2, :cond_1
 
-    .line 5520
+    .line 5541
     :try_start_5
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
     :try_end_5
@@ -246,13 +246,13 @@
 
     goto :goto_2
 
-    .line 5521
+    .line 5542
     :catch_1
     move-exception v8
 
     goto :goto_2
 
-    .line 5518
+    .line 5539
     .end local v1           #e:Ljava/io/IOException;
     :catchall_0
     move-exception v7
@@ -260,18 +260,18 @@
     :goto_5
     if-eqz v2, :cond_5
 
-    .line 5520
+    .line 5541
     :try_start_6
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
     :try_end_6
     .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_2
 
-    .line 5518
+    .line 5539
     :cond_5
     :goto_6
     throw v7
 
-    .line 5521
+    .line 5542
     :catch_2
     move-exception v8
 
@@ -295,7 +295,7 @@
 
     goto :goto_3
 
-    .line 5518
+    .line 5539
     :catchall_1
     move-exception v7
 
@@ -305,7 +305,7 @@
     .restart local v2       #inStream:Ljava/io/InputStream;
     goto :goto_5
 
-    .line 5515
+    .line 5536
     .end local v2           #inStream:Ljava/io/InputStream;
     .restart local v3       #inStream:Ljava/io/InputStream;
     :catch_5
@@ -329,12 +329,12 @@
     .prologue
     const/4 v7, 0x1
 
-    .line 5535
+    .line 5556
     iget-object v3, p0, Landroid/app/ActivityThread$QueryHistory;->recordMap:Ljava/util/Map;
 
     monitor-enter v3
 
-    .line 5536
+    .line 5557
     :try_start_0
     iget-object v2, p0, Landroid/app/ActivityThread$QueryHistory;->uriMap:Ljava/util/Map;
 
@@ -344,7 +344,7 @@
 
     if-nez v2, :cond_5
 
-    .line 5537
+    .line 5558
     iget-object v2, p0, Landroid/app/ActivityThread$QueryHistory;->uriMap:Ljava/util/Map;
 
     const/4 v4, 0x1
@@ -355,7 +355,7 @@
 
     invoke-interface {v2, p1, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 5542
+    .line 5563
     :goto_0
     iget-object v2, p0, Landroid/app/ActivityThread$QueryHistory;->uriMap:Ljava/util/Map;
 
@@ -373,7 +373,7 @@
 
     if-lt v2, v4, :cond_0
 
-    .line 5543
+    .line 5564
     const-string v2, "CursorLeakDetecter"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -412,7 +412,7 @@
 
     invoke-static {v2, v4, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 5546
+    .line 5567
     :cond_0
     iget-object v2, p0, Landroid/app/ActivityThread$QueryHistory;->recordMap:Ljava/util/Map;
 
@@ -426,14 +426,14 @@
 
     if-nez v2, :cond_1
 
-    .line 5547
+    .line 5568
     new-instance v1, Landroid/app/ActivityThread$QueryHistoryRecord;
 
     iget-object v2, p0, Landroid/app/ActivityThread$QueryHistory;->this$0:Landroid/app/ActivityThread;
 
     invoke-direct {v1, v2, p1, p2}, Landroid/app/ActivityThread$QueryHistoryRecord;-><init>(Landroid/app/ActivityThread;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 5548
+    .line 5569
     .local v1, qhr:Landroid/app/ActivityThread$QueryHistoryRecord;
     iget-object v2, p0, Landroid/app/ActivityThread$QueryHistory;->recordMap:Ljava/util/Map;
 
@@ -443,14 +443,14 @@
 
     invoke-interface {v2, v4, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 5551
+    .line 5572
     .end local v1           #qhr:Landroid/app/ActivityThread$QueryHistoryRecord;
     :cond_1
     iget-boolean v2, p0, Landroid/app/ActivityThread$QueryHistory;->CURSOR_LEAK_DETECTER:Z
 
     if-eqz v2, :cond_2
 
-    .line 5552
+    .line 5573
     const-string v2, "CursorLeakDetecter"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -495,7 +495,7 @@
 
     invoke-static {v2, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5555
+    .line 5576
     :cond_2
     iget-object v2, p0, Landroid/app/ActivityThread$QueryHistory;->recordMap:Ljava/util/Map;
 
@@ -517,7 +517,7 @@
 
     if-ne v2, v4, :cond_4
 
-    .line 5556
+    .line 5577
     :cond_3
     const-string v2, "CursorLeakDetecter"
 
@@ -553,10 +553,10 @@
 
     invoke-static {v2, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5557
+    .line 5578
     invoke-virtual {p0}, Landroid/app/ActivityThread$QueryHistory;->Dump()V
 
-    .line 5561
+    .line 5582
     invoke-direct {p0}, Landroid/app/ActivityThread$QueryHistory;->checkAeeWarningList()Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -565,7 +565,7 @@
 
     if-eqz v2, :cond_4
 
-    .line 5563
+    .line 5584
     :try_start_1
     const-class v2, Lcom/mediatek/common/aee/IExceptionLog;
 
@@ -579,11 +579,11 @@
 
     check-cast v0, Lcom/mediatek/common/aee/IExceptionLog;
 
-    .line 5564
+    .line 5585
     .local v0, exceptionLog:Lcom/mediatek/common/aee/IExceptionLog;
     if-eqz v0, :cond_4
 
-    .line 5566
+    .line 5587
     const/4 v2, 0x0
 
     const-string v4, "CursorLeakDetecter"
@@ -625,17 +625,17 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 5575
+    .line 5596
     .end local v0           #exceptionLog:Lcom/mediatek/common/aee/IExceptionLog;
     :cond_4
     :goto_1
     :try_start_2
     monitor-exit v3
 
-    .line 5576
+    .line 5597
     return v7
 
-    .line 5539
+    .line 5560
     :cond_5
     iget-object v4, p0, Landroid/app/ActivityThread$QueryHistory;->uriMap:Ljava/util/Map;
 
@@ -661,7 +661,7 @@
 
     goto/16 :goto_0
 
-    .line 5575
+    .line 5596
     :catchall_0
     move-exception v2
 
@@ -671,7 +671,7 @@
 
     throw v2
 
-    .line 5569
+    .line 5590
     :catch_0
     move-exception v2
 
@@ -682,7 +682,7 @@
     .locals 6
 
     .prologue
-    .line 5609
+    .line 5630
     const-string v3, "CursorLeakDetecter"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -717,7 +717,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5610
+    .line 5631
     iget-object v3, p0, Landroid/app/ActivityThread$QueryHistory;->recordMap:Ljava/util/Map;
 
     invoke-interface {v3}, Ljava/util/Map;->entrySet()Ljava/util/Set;
@@ -728,7 +728,7 @@
 
     move-result-object v1
 
-    .line 5611
+    .line 5632
     .local v1, iterator:Ljava/util/Iterator;
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
@@ -737,14 +737,14 @@
 
     if-eqz v3, :cond_0
 
-    .line 5612
+    .line 5633
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 5613
+    .line 5634
     .local v0, entry:Ljava/util/Map$Entry;
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -752,7 +752,7 @@
 
     check-cast v2, Landroid/app/ActivityThread$QueryHistoryRecord;
 
-    .line 5614
+    .line 5635
     .local v2, qhr:Landroid/app/ActivityThread$QueryHistoryRecord;
     const-string v3, "CursorLeakDetecter"
 
@@ -782,7 +782,7 @@
 
     goto :goto_0
 
-    .line 5616
+    .line 5637
     .end local v0           #entry:Ljava/util/Map$Entry;
     .end local v2           #qhr:Landroid/app/ActivityThread$QueryHistoryRecord;
     :cond_0
@@ -796,12 +796,12 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 5585
+    .line 5606
     iget-object v2, p0, Landroid/app/ActivityThread$QueryHistory;->recordMap:Ljava/util/Map;
 
     monitor-enter v2
 
-    .line 5586
+    .line 5607
     :try_start_0
     iget-object v1, p0, Landroid/app/ActivityThread$QueryHistory;->recordMap:Ljava/util/Map;
 
@@ -815,7 +815,7 @@
 
     check-cast v0, Landroid/app/ActivityThread$QueryHistoryRecord;
 
-    .line 5587
+    .line 5608
     .local v0, qhr:Landroid/app/ActivityThread$QueryHistoryRecord;
     if-eqz v0, :cond_0
 
@@ -829,7 +829,7 @@
 
     if-nez v1, :cond_1
 
-    .line 5588
+    .line 5609
     :cond_0
     const-string v1, "CursorLeakDetecter"
 
@@ -859,14 +859,14 @@
 
     invoke-static {v1, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5589
+    .line 5610
     monitor-exit v2
 
-    .line 5602
+    .line 5623
     :goto_0
     return-void
 
-    .line 5590
+    .line 5611
     :cond_1
     iget-object v1, p0, Landroid/app/ActivityThread$QueryHistory;->uriMap:Ljava/util/Map;
 
@@ -884,14 +884,14 @@
 
     if-ne v1, v4, :cond_4
 
-    .line 5591
+    .line 5612
     iget-object v1, p0, Landroid/app/ActivityThread$QueryHistory;->uriMap:Ljava/util/Map;
 
     iget-object v3, v0, Landroid/app/ActivityThread$QueryHistoryRecord;->mUri:Ljava/lang/String;
 
     invoke-interface {v1, v3}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 5592
+    .line 5613
     iget-object v1, p0, Landroid/app/ActivityThread$QueryHistory;->recordMap:Ljava/util/Map;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -900,14 +900,14 @@
 
     invoke-interface {v1, v3}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 5598
+    .line 5619
     :cond_2
     :goto_1
     iget-boolean v1, p0, Landroid/app/ActivityThread$QueryHistory;->CURSOR_LEAK_DETECTER:Z
 
     if-eqz v1, :cond_3
 
-    .line 5599
+    .line 5620
     const-string v1, "CursorLeakDetecter"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -952,7 +952,7 @@
 
     invoke-static {v1, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5601
+    .line 5622
     :cond_3
     monitor-exit v2
 
@@ -968,7 +968,7 @@
 
     throw v1
 
-    .line 5593
+    .line 5614
     .restart local v0       #qhr:Landroid/app/ActivityThread$QueryHistoryRecord;
     :cond_4
     :try_start_1
@@ -988,7 +988,7 @@
 
     if-le v1, v4, :cond_2
 
-    .line 5594
+    .line 5615
     iget-object v3, p0, Landroid/app/ActivityThread$QueryHistory;->uriMap:Ljava/util/Map;
 
     iget-object v4, v0, Landroid/app/ActivityThread$QueryHistoryRecord;->mUri:Ljava/lang/String;
@@ -1015,7 +1015,7 @@
 
     invoke-interface {v3, v4, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 5595
+    .line 5616
     iget-object v1, p0, Landroid/app/ActivityThread$QueryHistory;->recordMap:Ljava/util/Map;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;

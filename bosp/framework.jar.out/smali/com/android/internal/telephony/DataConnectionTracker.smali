@@ -1239,7 +1239,7 @@
 
     .line 1180
     :pswitch_6
-    const-string v0, "ims"
+    const-string/jumbo v0, "ims"
 
     goto :goto_0
 
@@ -1286,6 +1286,8 @@
     goto :goto_0
 
     .line 1168
+    nop
+
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1
@@ -1390,7 +1392,7 @@
 
     .line 1146
     :cond_4
-    const-string v0, "ims"
+    const-string/jumbo v0, "ims"
 
     invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 

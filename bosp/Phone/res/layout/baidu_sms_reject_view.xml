@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/sms_reject_view" android:paddingLeft="8.0dip" android:paddingRight="8.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="18.0sp" android:gravity="center" android:id="@id/header" android:paddingTop="12.0dip" android:layout_width="wrap_content" android:layout_height="42.0dip" android:text="@string/baidu_slide_up_to_select" android:drawableLeft="@drawable/baidu_sms_reject_up" android:drawableRight="@drawable/baidu_sms_reject_up" android:drawablePadding="10.0dip" />
+    <ImageView android:background="?android:listDivider" android:layout_width="fill_parent" android:layout_height="0.30000007dip" />
+    <ListView android:id="@id/sms_reject_list" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</LinearLayout>

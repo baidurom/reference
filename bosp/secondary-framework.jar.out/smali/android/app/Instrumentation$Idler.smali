@@ -29,18 +29,18 @@
     .parameter "callback"
 
     .prologue
-    .line 1836
+    .line 1851
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1837
+    .line 1852
     iput-object p1, p0, Landroid/app/Instrumentation$Idler;->mCallback:Ljava/lang/Runnable;
 
-    .line 1838
+    .line 1853
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/app/Instrumentation$Idler;->mIdle:Z
 
-    .line 1839
+    .line 1854
     return-void
 .end method
 
@@ -50,38 +50,38 @@
     .locals 1
 
     .prologue
-    .line 1842
+    .line 1857
     iget-object v0, p0, Landroid/app/Instrumentation$Idler;->mCallback:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 1843
+    .line 1858
     iget-object v0, p0, Landroid/app/Instrumentation$Idler;->mCallback:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 1845
+    .line 1860
     :cond_0
     monitor-enter p0
 
-    .line 1846
+    .line 1861
     const/4 v0, 0x1
 
     :try_start_0
     iput-boolean v0, p0, Landroid/app/Instrumentation$Idler;->mIdle:Z
 
-    .line 1847
+    .line 1862
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
 
-    .line 1848
+    .line 1863
     monitor-exit p0
 
-    .line 1849
+    .line 1864
     const/4 v0, 0x0
 
     return v0
 
-    .line 1848
+    .line 1863
     :catchall_0
     move-exception v0
 
@@ -96,10 +96,10 @@
     .locals 1
 
     .prologue
-    .line 1853
+    .line 1868
     monitor-enter p0
 
-    .line 1854
+    .line 1869
     :goto_0
     :try_start_0
     iget-boolean v0, p0, Landroid/app/Instrumentation$Idler;->mIdle:Z
@@ -108,7 +108,7 @@
 
     if-nez v0, :cond_0
 
-    .line 1856
+    .line 1871
     :try_start_1
     invoke-virtual {p0}, Ljava/lang/Object;->wait()V
     :try_end_1
@@ -117,21 +117,21 @@
 
     goto :goto_0
 
-    .line 1857
+    .line 1872
     :catch_0
     move-exception v0
 
     goto :goto_0
 
-    .line 1860
+    .line 1875
     :cond_0
     :try_start_2
     monitor-exit p0
 
-    .line 1861
+    .line 1876
     return-void
 
-    .line 1860
+    .line 1875
     :catchall_0
     move-exception v0
 

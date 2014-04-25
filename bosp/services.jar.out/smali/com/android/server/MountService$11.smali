@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 4073
+    .line 4001
     iput-object p1, p0, Lcom/android/server/MountService$11;->this$0:Lcom/android/server/MountService;
 
     iput-boolean p2, p0, Lcom/android/server/MountService$11;->val$doShare:Z
@@ -45,7 +45,7 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 4075
+    .line 4003
     const-string v1, "yes"
 
     const-string v2, "sys.usb.mtk_bicr_support"
@@ -74,22 +74,22 @@
 
     if-eqz v1, :cond_4
 
-    .line 4077
+    .line 4005
     :cond_0
     iget-object v1, p0, Lcom/android/server/MountService$11;->this$0:Lcom/android/server/MountService;
 
     #calls: Lcom/android/server/MountService;->waitForReady()V
-    invoke-static {v1}, Lcom/android/server/MountService;->access$4400(Lcom/android/server/MountService;)V
+    invoke-static {v1}, Lcom/android/server/MountService;->access$4500(Lcom/android/server/MountService;)V
 
-    .line 4078
+    .line 4006
     iget-object v1, p0, Lcom/android/server/MountService$11;->this$0:Lcom/android/server/MountService;
 
     #calls: Lcom/android/server/MountService;->doGetCDRomState()I
-    invoke-static {v1}, Lcom/android/server/MountService;->access$4800(Lcom/android/server/MountService;)I
+    invoke-static {v1}, Lcom/android/server/MountService;->access$4900(Lcom/android/server/MountService;)I
 
     move-result v0
 
-    .line 4079
+    .line 4007
     .local v0, state:I
     const-string v1, "MountService"
 
@@ -113,7 +113,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4080
+    .line 4008
     if-nez v0, :cond_1
 
     iget-boolean v1, p0, Lcom/android/server/MountService$11;->val$doShare:Z
@@ -127,22 +127,22 @@
 
     if-ne v1, v4, :cond_3
 
-    .line 4082
+    .line 4010
     :cond_2
     iget-object v1, p0, Lcom/android/server/MountService$11;->this$0:Lcom/android/server/MountService;
 
     iget-boolean v2, p0, Lcom/android/server/MountService$11;->val$doShare:Z
 
     #calls: Lcom/android/server/MountService;->doShareUnshareCDRom(Z)V
-    invoke-static {v1, v2}, Lcom/android/server/MountService;->access$4900(Lcom/android/server/MountService;Z)V
+    invoke-static {v1, v2}, Lcom/android/server/MountService;->access$5000(Lcom/android/server/MountService;Z)V
 
-    .line 4087
+    .line 4015
     .end local v0           #state:I
     :cond_3
     :goto_0
     return-void
 
-    .line 4085
+    .line 4013
     :cond_4
     const-string v1, "MountService"
 
