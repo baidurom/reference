@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 418
+    .line 546
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .parameter "in"
 
     .prologue
-    .line 420
+    .line 548
     new-instance v0, Lcom/baidu/internal/keyguard/slide/TransportControlView$SavedState;
 
     const/4 v1, 0x0
@@ -60,7 +60,7 @@
     .parameter "x0"
 
     .prologue
-    .line 418
+    .line 546
     invoke-virtual {p0, p1}, Lcom/baidu/internal/keyguard/slide/TransportControlView$SavedState$1;->createFromParcel(Landroid/os/Parcel;)Lcom/baidu/internal/keyguard/slide/TransportControlView$SavedState;
 
     move-result-object v0
@@ -73,7 +73,7 @@
     .parameter "size"
 
     .prologue
-    .line 424
+    .line 552
     new-array v0, p1, [Lcom/baidu/internal/keyguard/slide/TransportControlView$SavedState;
 
     return-object v0
@@ -84,7 +84,7 @@
     .parameter "x0"
 
     .prologue
-    .line 418
+    .line 546
     invoke-virtual {p0, p1}, Lcom/baidu/internal/keyguard/slide/TransportControlView$SavedState$1;->newArray(I)[Lcom/baidu/internal/keyguard/slide/TransportControlView$SavedState;
 
     move-result-object v0

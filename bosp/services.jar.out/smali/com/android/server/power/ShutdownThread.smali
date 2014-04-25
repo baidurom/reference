@@ -707,7 +707,7 @@
 
     if-nez v3, :cond_baidu
 
-    const v3, #string@pwoer_off#t
+    const v3, #string@power_off#t
 
     :goto_2
     invoke-virtual {v4, v3}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;

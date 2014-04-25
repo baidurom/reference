@@ -299,6 +299,10 @@
 
 .field public static final charge_complete:I = #string@charge_complete#t
 
+.field public static final charge_finished:I = #string@charge_finished#t
+
+.field public static final chargging:I = #string@chargging#t
+
 .field public static final china_mobile:I = #string@china_mobile#t
 
 .field public static final china_telecom:I = #string@china_telecom#t
@@ -448,8 +452,6 @@
 .field public static final delete:I = #string@delete#t
 
 .field public static final deleteText:I = #string@deleteText#t
-
-.field public static final description_target_unlock:I = #string@description_target_unlock#t
 
 .field public static final description_target_unlock_tablet:I = #string@description_target_unlock_tablet#t
 
@@ -1285,6 +1287,12 @@
 
 .field public static final replace:I = #string@replace#t
 
+.field public static final replace_browser_value:I = #string@replace_browser_value#t
+
+.field public static final replace_market_value:I = #string@replace_market_value#t
+
+.field public static final replace_reader_value:I = #string@replace_reader_value#t
+
 .field public static final report:I = #string@report#t
 
 .field public static final reset:I = #string@reset#t
@@ -1701,17 +1709,13 @@
 
 .field public static final yes:I = #string@yes#t
 
-.field public static final zz_lockscreen_month_day_hour_minute:I = #string@zz_lockscreen_month_day_hour_minute#t
-
-.field public static final zz_lockscreen_temperature_units:I = #string@zz_lockscreen_temperature_units#t
-
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 13304
+    .line 13303
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

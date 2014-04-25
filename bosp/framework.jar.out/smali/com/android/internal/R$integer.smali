@@ -135,15 +135,13 @@
 
 .field public static final status_bar_notification_info_maxnum:I = #integer@status_bar_notification_info_maxnum#t
 
-.field public static final zz_lockscreen_unlock_widget_distance:I = #integer@zz_lockscreen_unlock_widget_distance#t
-
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 12686
+    .line 12681
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

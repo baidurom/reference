@@ -53,106 +53,59 @@
     return-void
 .end method
 
-.method private static filterAuthWithPermissionCheck(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+.method private acquireProviderBaidu(Landroid/content/Context;Ljava/lang/String;)Landroid/content/IContentProvider;
     .locals 4
     .parameter "context"
-    .parameter "orgAuth"
+    .parameter "auth"
 
     .prologue
-    .line 2014
-    move-object v0, p1
+    const/4 v3, 0x1
 
-    .line 2015
-    .local v0, auth:Ljava/lang/String;
-    invoke-static {p0}, Lcom/baidu/server/dp/DynamicPermissionManager;->getInstance(Landroid/content/Context;)Lcom/baidu/server/dp/DynamicPermissionManager;
+    .line 2005
+    invoke-static {p1}, Lcom/baidu/server/dp/DynamicPermissionManager;->getInstance(Landroid/content/Context;)Lcom/baidu/server/dp/DynamicPermissionManager;
 
-    move-result-object v1
+    move-result-object v0
 
-    .line 2016
-    .local v1, dpm:Lcom/baidu/server/dp/DynamicPermissionManager;
-    invoke-virtual {v1, v0}, Lcom/baidu/server/dp/DynamicPermissionManager;->checkProviderPermissionSync(Ljava/lang/String;)I
+    .line 2006
+    .local v0, dpm:Lcom/baidu/server/dp/DynamicPermissionManager;
+    invoke-virtual {v0, p2}, Lcom/baidu/server/dp/DynamicPermissionManager;->checkProviderPermissionSync(Ljava/lang/String;)I
+
+    move-result v1
+
+    if-ne v1, v3, :cond_0
+
+    .line 2007
+    const-string p2, "com.baidu.dp.impostor"
+
+    .line 2010
+    :cond_0
+    iget-object v1, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
+
+    iget-object v2, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mUser:Landroid/os/UserHandle;
+
+    invoke-virtual {v2}, Landroid/os/UserHandle;->getIdentifier()I
 
     move-result v2
 
-    const/4 v3, 0x1
+    invoke-virtual {v1, p1, p2, v2, v3}, Landroid/app/ActivityThread;->acquireProvider(Landroid/content/Context;Ljava/lang/String;IZ)Landroid/content/IContentProvider;
 
-    if-ne v2, v3, :cond_0
+    move-result-object v1
 
-    .line 2017
-    const-string v0, "com.baidu.dp.impostor"
-
-    .line 2019
-    :cond_0
-    return-object v0
+    return-object v1
 .end method
 
-
-# virtual methods
-.method protected acquireExistingProvider(Landroid/content/Context;Ljava/lang/String;)Landroid/content/IContentProvider;
-    .locals 3
-    .parameter "context"
-    .parameter "auth"
-
-    .prologue
-    .line 2025
-    iget-object v0, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
-
-    iget-object v1, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mUser:Landroid/os/UserHandle;
-
-    invoke-virtual {v1}, Landroid/os/UserHandle;->getIdentifier()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, p1, p2, v1, v2}, Landroid/app/ActivityThread;->acquireExistingProvider(Landroid/content/Context;Ljava/lang/String;IZ)Landroid/content/IContentProvider;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method protected acquireProvider(Landroid/content/Context;Ljava/lang/String;)Landroid/content/IContentProvider;
-    .locals 3
-    .parameter "context"
-    .parameter "auth"
-
-    .prologue
-    .line 2000
-    invoke-static {p1, p2}, Landroid/app/ContextImpl$ApplicationContentResolver;->filterAuthWithPermissionCheck(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p2
-
-    .line 2003
-    iget-object v0, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
-
-    iget-object v1, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mUser:Landroid/os/UserHandle;
-
-    invoke-virtual {v1}, Landroid/os/UserHandle;->getIdentifier()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, p1, p2, v1, v2}, Landroid/app/ActivityThread;->acquireProvider(Landroid/content/Context;Ljava/lang/String;IZ)Landroid/content/IContentProvider;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method protected acquireUnstableProvider(Landroid/content/Context;Ljava/lang/String;)Landroid/content/IContentProvider;
+.method private acquireUnstableProviderBaidu(Landroid/content/Context;Ljava/lang/String;)Landroid/content/IContentProvider;
     .locals 4
     .parameter "c"
     .parameter "auth"
 
     .prologue
-    .line 2036
+    .line 2032
     invoke-static {p1}, Lcom/baidu/server/dp/DynamicPermissionManager;->getInstance(Landroid/content/Context;)Lcom/baidu/server/dp/DynamicPermissionManager;
 
     move-result-object v0
 
-    .line 2037
+    .line 2033
     .local v0, dpm:Lcom/baidu/server/dp/DynamicPermissionManager;
     invoke-virtual {v0, p2}, Lcom/baidu/server/dp/DynamicPermissionManager;->checkProviderPermissionSync(Ljava/lang/String;)I
 
@@ -162,10 +115,10 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 2038
+    .line 2034
     const-string p2, "com.baidu.dp.impostor"
 
-    .line 2042
+    .line 2037
     :cond_0
     iget-object v1, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
 
@@ -184,12 +137,66 @@
     return-object v1
 .end method
 
+
+# virtual methods
+.method protected acquireExistingProvider(Landroid/content/Context;Ljava/lang/String;)Landroid/content/IContentProvider;
+    .locals 3
+    .parameter "context"
+    .parameter "auth"
+
+    .prologue
+    .line 2016
+    iget-object v0, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
+
+    iget-object v1, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mUser:Landroid/os/UserHandle;
+
+    invoke-virtual {v1}, Landroid/os/UserHandle;->getIdentifier()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, p1, p2, v1, v2}, Landroid/app/ActivityThread;->acquireExistingProvider(Landroid/content/Context;Ljava/lang/String;IZ)Landroid/content/IContentProvider;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method protected acquireProvider(Landroid/content/Context;Ljava/lang/String;)Landroid/content/IContentProvider;
+    .locals 1
+    .parameter "context"
+    .parameter "auth"
+
+    .prologue
+    .line 1999
+    invoke-direct {p0, p1, p2}, Landroid/app/ContextImpl$ApplicationContentResolver;->acquireProviderBaidu(Landroid/content/Context;Ljava/lang/String;)Landroid/content/IContentProvider;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method protected acquireUnstableProvider(Landroid/content/Context;Ljava/lang/String;)Landroid/content/IContentProvider;
+    .locals 1
+    .parameter "c"
+    .parameter "auth"
+
+    .prologue
+    .line 2026
+    invoke-direct {p0, p1, p2}, Landroid/app/ContextImpl$ApplicationContentResolver;->acquireUnstableProviderBaidu(Landroid/content/Context;Ljava/lang/String;)Landroid/content/IContentProvider;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public releaseProvider(Landroid/content/IContentProvider;)Z
     .locals 2
     .parameter "provider"
 
     .prologue
-    .line 2030
+    .line 2021
     iget-object v0, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
 
     const/4 v1, 0x1
@@ -206,7 +213,7 @@
     .parameter "icp"
 
     .prologue
-    .line 2047
+    .line 2043
     iget-object v0, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
 
     const/4 v1, 0x0
@@ -223,7 +230,7 @@
     .parameter "icp"
 
     .prologue
-    .line 2052
+    .line 2048
     iget-object v0, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
 
     invoke-interface {p1}, Landroid/content/IContentProvider;->asBinder()Landroid/os/IBinder;
@@ -234,6 +241,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/app/ActivityThread;->handleUnstableProviderDied(Landroid/os/IBinder;Z)V
 
-    .line 2053
+    .line 2049
     return-void
 .end method

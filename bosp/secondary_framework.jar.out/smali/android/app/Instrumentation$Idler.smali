@@ -29,18 +29,18 @@
     .parameter "callback"
 
     .prologue
-    .line 1757
+    .line 1772
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1758
+    .line 1773
     iput-object p1, p0, Landroid/app/Instrumentation$Idler;->mCallback:Ljava/lang/Runnable;
 
-    .line 1759
+    .line 1774
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/app/Instrumentation$Idler;->mIdle:Z
 
-    .line 1760
+    .line 1775
     return-void
 .end method
 
@@ -50,38 +50,38 @@
     .locals 1
 
     .prologue
-    .line 1763
+    .line 1778
     iget-object v0, p0, Landroid/app/Instrumentation$Idler;->mCallback:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 1764
+    .line 1779
     iget-object v0, p0, Landroid/app/Instrumentation$Idler;->mCallback:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 1766
+    .line 1781
     :cond_0
     monitor-enter p0
 
-    .line 1767
+    .line 1782
     const/4 v0, 0x1
 
     :try_start_0
     iput-boolean v0, p0, Landroid/app/Instrumentation$Idler;->mIdle:Z
 
-    .line 1768
+    .line 1783
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
 
-    .line 1769
+    .line 1784
     monitor-exit p0
 
-    .line 1770
+    .line 1785
     const/4 v0, 0x0
 
     return v0
 
-    .line 1769
+    .line 1784
     :catchall_0
     move-exception v0
 
@@ -96,10 +96,10 @@
     .locals 1
 
     .prologue
-    .line 1774
+    .line 1789
     monitor-enter p0
 
-    .line 1775
+    .line 1790
     :goto_0
     :try_start_0
     iget-boolean v0, p0, Landroid/app/Instrumentation$Idler;->mIdle:Z
@@ -108,7 +108,7 @@
 
     if-nez v0, :cond_0
 
-    .line 1777
+    .line 1792
     :try_start_1
     invoke-virtual {p0}, Ljava/lang/Object;->wait()V
     :try_end_1
@@ -117,21 +117,21 @@
 
     goto :goto_0
 
-    .line 1778
+    .line 1793
     :catch_0
     move-exception v0
 
     goto :goto_0
 
-    .line 1781
+    .line 1796
     :cond_0
     :try_start_2
     monitor-exit p0
 
-    .line 1782
+    .line 1797
     return-void
 
-    .line 1781
+    .line 1796
     :catchall_0
     move-exception v0
 

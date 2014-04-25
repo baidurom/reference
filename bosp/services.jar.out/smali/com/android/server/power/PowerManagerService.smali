@@ -5271,14 +5271,14 @@
     .line 1014
     iget-boolean v0, p0, Lcom/android/server/power/PowerManagerService;->mIsQbShutdown:Z
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_baidu_0
 
     .line 1022
     :goto_0
     return-void
 
     .line 1017
-    :cond_0
+    :cond_baidu_0
     iget-object v1, p0, Lcom/android/server/power/PowerManagerService;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
@@ -5289,13 +5289,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     .line 1019
     invoke-direct {p0}, Lcom/android/server/power/PowerManagerService;->updatePowerStateLocked()V
 
     .line 1021
-    :cond_1
+    :cond_0
     monitor-exit v1
 
     goto :goto_0

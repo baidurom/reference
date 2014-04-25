@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest android:sharedUserId="android.uid.system" android:versionCode="17" android:versionName="4.2.2-I9250_R_2.3.47.16" android:sharedUserLabel="@string/android_system_label" package="android" coreApp="true"
+<manifest android:sharedUserId="android.uid.system" android:versionCode="17" android:versionName="4.2.2-I9250_S_2.3.47.27" android:sharedUserLabel="@string/android_system_label" package="android" coreApp="true"
   xmlns:android="http://schemas.android.com/apk/res/android">
     <eat-comment />
     <protected-broadcast android:name="android.intent.action.SCREEN_OFF" />
@@ -410,13 +410,13 @@
         <activity android:theme="@style/Theme.DeviceDefault.Light.Dialog" android:label="@string/heavy_weight_switcher_title" android:name="com.android.internal.app.HeavyWeightSwitcherActivity" android:process=":ui" android:excludeFromRecents="true" android:finishOnCloseSystemDialogs="true" />
         <activity android:theme="@style/Theme.Wallpaper.NoTitleBar.Fullscreen" android:name="com.android.internal.app.PlatLogoActivity" android:process=":ui" />
         <activity android:theme="@style/Theme.NoDisplay" android:name="com.android.internal.app.DisableCarModeActivity" android:process=":ui" android:excludeFromRecents="true" />
-        <activity android:theme="@style/Theme.DeviceDefault.Light.DarkActionBar" android:name="com.yi.internal.app.RingtonePickerSystemActivity" android:multiprocess="true" android:excludeFromRecents="true" android:configChanges="keyboardHidden|orientation|screenSize">
+        <activity android:theme="@style/Theme.DeviceDefault.Light.DarkActionBar" android:icon="@drawable/ic_baidu_sound" android:name="com.yi.internal.app.RingtonePickerSystemActivity" android:multiprocess="true" android:excludeFromRecents="true" android:configChanges="keyboardHidden|orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.RINGTONE_PICKER" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:theme="@style/Theme.DeviceDefault.Light.DarkActionBar" android:name="com.yi.internal.app.RingtonePickerCustomActivity" android:multiprocess="true" android:excludeFromRecents="true" android:configChanges="keyboardHidden|orientation|screenSize">
+        <activity android:theme="@style/Theme.DeviceDefault.Light.DarkActionBar" android:icon="@drawable/ic_baidu_sound" android:name="com.yi.internal.app.RingtonePickerCustomActivity" android:multiprocess="true" android:excludeFromRecents="true" android:configChanges="keyboardHidden|orientation|screenSize">
             <intent-filter>
                 <action android:name="yi.intent.action.RINGTONE_PICKER_CUSTOM" />
                 <category android:name="android.intent.category.DEFAULT" />

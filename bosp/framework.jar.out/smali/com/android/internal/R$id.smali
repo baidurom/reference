@@ -59,7 +59,7 @@
 
 .field public static final album:I = #id@album#t
 
-.field public static final album_view:I = #id@album_view#t
+.field public static final album_title:I = #id@album_title#t
 
 .field public static final albumart:I = #id@albumart#t
 
@@ -104,6 +104,8 @@
 .field public static final battery_apps_message:I = #id@battery_apps_message#t
 
 .field public static final battery_info:I = #id@battery_info#t
+
+.field public static final bg_cicle:I = #id@bg_cicle#t
 
 .field public static final big_picture:I = #id@big_picture#t
 
@@ -162,6 +164,20 @@
 .field public static final carrier:I = #id@carrier#t
 
 .field public static final characterPicker:I = #id@characterPicker#t
+
+.field public static final chargging_circle_1:I = #id@chargging_circle_1#t
+
+.field public static final chargging_circle_2:I = #id@chargging_circle_2#t
+
+.field public static final chargging_circle_3:I = #id@chargging_circle_3#t
+
+.field public static final chargging_circle_4:I = #id@chargging_circle_4#t
+
+.field public static final chargging_progress:I = #id@chargging_progress#t
+
+.field public static final chargging_tip:I = #id@chargging_tip#t
+
+.field public static final chargging_view:I = #id@chargging_view#t
 
 .field public static final check:I = #id@check#t
 
@@ -379,6 +395,16 @@
 
 .field public static final internalEmpty:I = #id@internalEmpty#t
 
+.field public static final iqiyi_listview:I = #id@iqiyi_listview#t
+
+.field public static final iqiyi_push_msg_content:I = #id@iqiyi_push_msg_content#t
+
+.field public static final iqiyi_push_msg_image:I = #id@iqiyi_push_msg_image#t
+
+.field public static final iqiyi_push_msg_layout:I = #id@iqiyi_push_msg_layout#t
+
+.field public static final iqiyi_push_msg_title:I = #id@iqiyi_push_msg_title#t
+
 .field public static final issued_on:I = #id@issued_on#t
 
 .field public static final key_enter:I = #id@key_enter#t
@@ -481,15 +507,21 @@
 
 .field public static final matches:I = #id@matches#t
 
-.field public static final media_view:I = #id@media_view#t
-
 .field public static final mediacontroller_progress:I = #id@mediacontroller_progress#t
 
 .field public static final message:I = #id@message#t
 
 .field public static final minute:I = #id@minute#t
 
+.field public static final miss_call:I = #id@miss_call#t
+
+.field public static final miss_call_count:I = #id@miss_call_count#t
+
+.field public static final miss_container:I = #id@miss_container#t
+
 .field public static final miss_message_count:I = #id@miss_message_count#t
+
+.field public static final miss_mms:I = #id@miss_mms#t
 
 .field public static final mode_normal:I = #id@mode_normal#t
 
@@ -502,6 +534,10 @@
 .field public static final moveView:I = #id@moveView#t
 
 .field public static final multi_pane_challenge:I = #id@multi_pane_challenge#t
+
+.field public static final music_bg:I = #id@music_bg#t
+
+.field public static final music_view:I = #id@music_view#t
 
 .field public static final name:I = #id@name#t
 
@@ -651,8 +687,6 @@
 
 .field public static final scrollView:I = #id@scrollView#t
 
-.field public static final scroll_view:I = #id@scroll_view#t
-
 .field public static final search:I = #id@search#t
 
 .field public static final searchBox:I = #id@searchBox#t
@@ -701,8 +735,6 @@
 
 .field public static final sha256_fingerprint:I = #id@sha256_fingerprint#t
 
-.field public static final shade:I = #id@shade#t
-
 .field public static final share:I = #id@share#t
 
 .field public static final shortcut:I = #id@shortcut#t
@@ -710,6 +742,10 @@
 .field public static final six:I = #id@six#t
 
 .field public static final skip_button:I = #id@skip_button#t
+
+.field public static final slide_guide_arrow:I = #id@slide_guide_arrow#t
+
+.field public static final slide_miss_call_and_mms:I = #id@slide_miss_call_and_mms#t
 
 .field public static final slider_group:I = #id@slider_group#t
 
@@ -769,6 +805,8 @@
 
 .field public static final target_message:I = #id@target_message#t
 
+.field public static final target_phone:I = #id@target_phone#t
+
 .field public static final target_refresh:I = #id@target_refresh#t
 
 .field public static final target_refresh2:I = #id@target_refresh2#t
@@ -776,6 +814,10 @@
 .field public static final target_ring:I = #id@target_ring#t
 
 .field public static final target_unlock:I = #id@target_unlock#t
+
+.field public static final target_view:I = #id@target_view#t
+
+.field public static final targets:I = #id@targets#t
 
 .field public static final text:I = #id@text#t
 
@@ -853,17 +895,13 @@
 
 .field public static final volume_slider:I = #id@volume_slider#t
 
-.field public static final weather_background:I = #id@weather_background#t
-
-.field public static final weather_view:I = #id@weather_view#t
+.field public static final water_layer_container:I = #id@water_layer_container#t
 
 .field public static final websearch:I = #id@websearch#t
 
 .field public static final widget_frame:I = #id@widget_frame#t
 
 .field public static final wifi_p2p_wps_pin:I = #id@wifi_p2p_wps_pin#t
-
-.field public static final workspace:I = #id@workspace#t
 
 .field public static final year:I = #id@year#t
 
@@ -877,15 +915,13 @@
 
 .field public static final zoomOut:I = #id@zoomOut#t
 
-.field public static final zz_transport:I = #id@zz_transport#t
-
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 12205
+    .line 12182
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

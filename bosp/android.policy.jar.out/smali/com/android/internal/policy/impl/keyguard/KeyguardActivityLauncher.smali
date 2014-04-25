@@ -381,7 +381,7 @@
 
 
 # virtual methods
-.method abstract getCallback()Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+.method protected abstract getCallback()Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
 .end method
 
 .method public getCameraWidgetInfo()Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher$CameraWidgetInfo;
@@ -610,10 +610,10 @@
     goto/16 :goto_0
 .end method
 
-.method abstract getContext()Landroid/content/Context;
+.method protected abstract getContext()Landroid/content/Context;
 .end method
 
-.method abstract getLockPatternUtils()Lcom/android/internal/widget/LockPatternUtils;
+.method protected abstract getLockPatternUtils()Lcom/android/internal/widget/LockPatternUtils;
 .end method
 
 .method public launchActivity(Landroid/content/Intent;ZZLandroid/os/Handler;Ljava/lang/Runnable;)V

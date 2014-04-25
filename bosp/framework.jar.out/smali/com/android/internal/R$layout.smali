@@ -77,6 +77,22 @@
 
 .field public static final baidu_keyguard_hotword:I = #layout@baidu_keyguard_hotword#t
 
+.field public static final baidu_keyguard_slide:I = #layout@baidu_keyguard_slide#t
+
+.field public static final baidu_keyguard_slide_iqiyi_list_item:I = #layout@baidu_keyguard_slide_iqiyi_list_item#t
+
+.field public static final baidu_keyguard_slide_music_view:I = #layout@baidu_keyguard_slide_music_view#t
+
+.field public static final baidu_keyguard_slide_target_view:I = #layout@baidu_keyguard_slide_target_view#t
+
+.field public static final baidu_keyguard_space:I = #layout@baidu_keyguard_space#t
+
+.field public static final baidu_keyguard_space_target_view:I = #layout@baidu_keyguard_space_target_view#t
+
+.field public static final baidu_keyguard_water:I = #layout@baidu_keyguard_water#t
+
+.field public static final baidu_keyguard_water_target_view:I = #layout@baidu_keyguard_water_target_view#t
+
 .field public static final browser_link_context_header:I = #layout@browser_link_context_header#t
 
 .field public static final calendar_view:I = #layout@calendar_view#t
@@ -399,19 +415,13 @@
 
 .field public static final zoom_magnify:I = #layout@zoom_magnify#t
 
-.field public static final zz_keyguard_screen_status_port:I = #layout@zz_keyguard_screen_status_port#t
-
-.field public static final zz_keyguard_screen_tab_unlock:I = #layout@zz_keyguard_screen_tab_unlock#t
-
-.field public static final zz_keyguard_transport_control:I = #layout@zz_keyguard_transport_control#t
-
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 13003
+    .line 12997
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

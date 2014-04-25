@@ -187,7 +187,7 @@
 
     move-result-object v5
 
-    const v6, 0x5080056
+    const v6, 0x5080057
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

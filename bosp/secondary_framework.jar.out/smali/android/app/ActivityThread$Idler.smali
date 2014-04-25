@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1464
+    .line 1468
     iput-object p1, p0, Landroid/app/ActivityThread$Idler;->this$0:Landroid/app/ActivityThread;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1464
+    .line 1468
     invoke-direct {p0, p1}, Landroid/app/ActivityThread$Idler;-><init>(Landroid/app/ActivityThread;)V
 
     return-void
@@ -55,16 +55,16 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 1466
+    .line 1470
     iget-object v4, p0, Landroid/app/ActivityThread$Idler;->this$0:Landroid/app/ActivityThread;
 
     iget-object v0, v4, Landroid/app/ActivityThread;->mNewActivities:Landroid/app/ActivityThread$ActivityClientRecord;
 
-    .line 1467
+    .line 1471
     .local v0, a:Landroid/app/ActivityThread$ActivityClientRecord;
     const/4 v3, 0x0
 
-    .line 1468
+    .line 1472
     .local v3, stopProfiling:Z
     iget-object v4, p0, Landroid/app/ActivityThread$Idler;->this$0:Landroid/app/ActivityThread;
 
@@ -88,24 +88,24 @@
 
     if-eqz v4, :cond_0
 
-    .line 1470
+    .line 1474
     const/4 v3, 0x1
 
-    .line 1472
+    .line 1476
     :cond_0
     if-eqz v0, :cond_3
 
-    .line 1473
+    .line 1477
     iget-object v4, p0, Landroid/app/ActivityThread$Idler;->this$0:Landroid/app/ActivityThread;
 
     iput-object v6, v4, Landroid/app/ActivityThread;->mNewActivities:Landroid/app/ActivityThread$ActivityClientRecord;
 
-    .line 1474
+    .line 1478
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
     move-result-object v1
 
-    .line 1481
+    .line 1485
     .local v1, am:Landroid/app/IActivityManager;
     :cond_1
     iget-object v4, v0, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
@@ -118,7 +118,7 @@
 
     if-nez v4, :cond_2
 
-    .line 1483
+    .line 1487
     :try_start_0
     iget-object v4, v0, Landroid/app/ActivityThread$ActivityClientRecord;->token:Landroid/os/IBinder;
 
@@ -126,53 +126,53 @@
 
     invoke-interface {v1, v4, v5, v3}, Landroid/app/IActivityManager;->activityIdle(Landroid/os/IBinder;Landroid/content/res/Configuration;Z)V
 
-    .line 1484
+    .line 1488
     const/4 v4, 0x0
 
     iput-object v4, v0, Landroid/app/ActivityThread$ActivityClientRecord;->createdConfig:Landroid/content/res/Configuration;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1489
+    .line 1493
     :cond_2
     :goto_0
     move-object v2, v0
 
-    .line 1490
+    .line 1494
     .local v2, prev:Landroid/app/ActivityThread$ActivityClientRecord;
     iget-object v0, v0, Landroid/app/ActivityThread$ActivityClientRecord;->nextIdle:Landroid/app/ActivityThread$ActivityClientRecord;
 
-    .line 1491
+    .line 1495
     iput-object v6, v2, Landroid/app/ActivityThread$ActivityClientRecord;->nextIdle:Landroid/app/ActivityThread$ActivityClientRecord;
 
-    .line 1492
+    .line 1496
     if-nez v0, :cond_1
 
-    .line 1494
+    .line 1498
     .end local v1           #am:Landroid/app/IActivityManager;
     .end local v2           #prev:Landroid/app/ActivityThread$ActivityClientRecord;
     :cond_3
     if-eqz v3, :cond_4
 
-    .line 1495
+    .line 1499
     iget-object v4, p0, Landroid/app/ActivityThread$Idler;->this$0:Landroid/app/ActivityThread;
 
     iget-object v4, v4, Landroid/app/ActivityThread;->mProfiler:Landroid/app/ActivityThread$Profiler;
 
     invoke-virtual {v4}, Landroid/app/ActivityThread$Profiler;->stopProfiling()V
 
-    .line 1497
+    .line 1501
     :cond_4
     iget-object v4, p0, Landroid/app/ActivityThread$Idler;->this$0:Landroid/app/ActivityThread;
 
     invoke-virtual {v4}, Landroid/app/ActivityThread;->ensureJitEnabled()V
 
-    .line 1498
+    .line 1502
     const/4 v4, 0x0
 
     return v4
 
-    .line 1485
+    .line 1489
     .restart local v1       #am:Landroid/app/IActivityManager;
     :catch_0
     move-exception v4

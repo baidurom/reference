@@ -133,8 +133,6 @@
     <color name="yi_baidu_orange_light">#ffffbb33</color>
     <color name="yi_baidu_orange_dark">#ffff8800</color>
     <color name="yi_baidu_blue_bright">#ff00ddff</color>
-    <color name="zz_lockscreen_white_opacity">#9affffff</color>
-    <color name="zz_lockscreen_agenda_time_opacity">#72ffffff</color>
     <color name="yi_dark_action_bar_title">#ffffffff</color>
     <color name="yi_list_section_divider_text_light">#ff98a2b3</color>
     <color name="yi_action_tab_text_selected_baidu_light">#ffffffff</color>

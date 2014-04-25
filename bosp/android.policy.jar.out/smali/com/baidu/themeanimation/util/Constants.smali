@@ -6,6 +6,8 @@
 # static fields
 .field public static final ACTION_APPLY_THEME:Ljava/lang/String; = "theme.lockscreen.action.apply_theme"
 
+.field public static final ACTION_APPLY_THEME_WATER:Ljava/lang/String; = "theme.lockscreen.action.apply_theme_water"
+
 .field public static final ACTION_GO_SLEEP:Ljava/lang/String; = "theme.lockscreen.action.goSleep"
 
 .field public static final ACTION_NEXT_ALARM_BOOT:Ljava/lang/String; = "com.baidu.yi.baiduclock.NEXT_ALARM_AFTER_BOOT"
@@ -25,6 +27,8 @@
 .field public static final APPLY_TYPE_REDUCE_SETTINGS:I = 0x3
 
 .field public static final APPLY_TYPE_WALLPAPER:I = 0x2
+
+.field public static final APPLY_TYPE_WATER:I = 0x4
 
 .field public static final Animation_Status_Running:I = 0x1
 

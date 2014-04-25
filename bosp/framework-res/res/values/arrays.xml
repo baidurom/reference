@@ -372,42 +372,6 @@
         <item>Custom</item>
     </string-array>
     <array name="carrier_properties" />
-    <array name="zz_lockscreen_targets_five_shortcuts">
-        <item>@drawable/zz_lockscreen_mms</item>
-        <item>@drawable/zz_lockscreen_prompt_normal</item>
-        <item>@drawable/zz_lockscreen_phone</item>
-        <item>@drawable/zz_lockscreen_camera</item>
-    </array>
-    <string-array name="zz_lockscreen_five_shortcuts_description">
-        <item>MMS</item>
-        <item>PROMPT</item>
-        <item>Phone</item>
-        <item>Camera</item>
-    </string-array>
-    <array name="zz_lockscreen_targets_five_shortcuts_soundon">
-        <item>@drawable/zz_lockscreen_mms</item>
-        <item>@drawable/zz_lockscreen_prompt_normal</item>
-        <item>@drawable/zz_lockscreen_phone</item>
-        <item>@drawable/ic_lockscreen_silent</item>
-    </array>
-    <string-array name="zz_lockscreen_five_shortcuts_description_soundon">
-        <item>MMS</item>
-        <item>PROMPT</item>
-        <item>Phone</item>
-        <item>Soundon</item>
-    </string-array>
-    <array name="zz_lockscreen_targets_five_shortcuts_silent">
-        <item>@drawable/zz_lockscreen_mms</item>
-        <item>@drawable/zz_lockscreen_prompt_normal</item>
-        <item>@drawable/zz_lockscreen_phone</item>
-        <item>@drawable/ic_lockscreen_soundon</item>
-    </array>
-    <string-array name="zz_lockscreen_five_shortcuts_description_silent">
-        <item>MMS</item>
-        <item>PROMPT</item>
-        <item>Phone</item>
-        <item>Silent</item>
-    </string-array>
     <string-array name="shutdown_reboot_actions">
         <item>reboot</item>
         <item>recovery</item>

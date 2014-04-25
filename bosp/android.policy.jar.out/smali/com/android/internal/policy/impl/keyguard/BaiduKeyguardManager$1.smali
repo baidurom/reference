@@ -23,7 +23,7 @@
     .locals 3
 
     .prologue
-    .line 64
+    .line 142
     invoke-static {}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityModel$SecurityMode;->values()[Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityModel$SecurityMode;
 
     move-result-object v0

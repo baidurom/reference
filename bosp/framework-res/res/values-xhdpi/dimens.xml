@@ -16,9 +16,5 @@
     <dimen name="yi_lockscreen_unlockwidget_margintop">304.0dip</dimen>
     <dimen name="yi_lockscreen_password_height">356.0dip</dimen>
     <dimen name="yi_lockscreen_voiceprint_height">356.0dip</dimen>
-    <dimen name="zz_smartmultiUnlockview_target_placement_radius">110.0dip</dimen>
-    <dimen name="zz_lockscreen_flipper_width">360.0dip</dimen>
-    <dimen name="zz_lockscreen_unlock_widget_margin_top">-10.0dip</dimen>
-    <dimen name="zz_lockscreen_unlock_widget_center_offset">20.0dip</dimen>
-    <dimen name="zz_lockscreen_status_height">310.0dip</dimen>
+    <dimen name="yi_lockscreen_pattern_top_margin">20.0dip</dimen>
 </resources>

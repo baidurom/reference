@@ -1598,11 +1598,11 @@
 .end method
 
 .method public clearLock(Z)V
-    .locals 5
+    .locals 4
     .parameter "isFallback"
 
     .prologue
-    const-wide/16 v3, 0x0
+    const-wide/16 v2, 0x0
 
     const/4 v1, 0x0
 
@@ -1628,19 +1628,19 @@
     .line 437
     const-string v0, "lockscreen.password_type"
 
-    invoke-direct {p0, v0, v3, v4}, Lcom/android/internal/widget/LockPatternUtils;->setLong(Ljava/lang/String;J)V
+    invoke-direct {p0, v0, v2, v3}, Lcom/android/internal/widget/LockPatternUtils;->setLong(Ljava/lang/String;J)V
 
     .line 438
+    const-string v0, "lockscreen.password_type_alternate"
+
+    invoke-direct {p0, v0, v2, v3}, Lcom/android/internal/widget/LockPatternUtils;->setLong(Ljava/lang/String;J)V
+
+    .line 439
     const-string v0, "lockscreen.lockmode_type"
 
     const-wide/16 v1, 0x2
 
     invoke-direct {p0, v0, v1, v2}, Lcom/android/internal/widget/LockPatternUtils;->setLong(Ljava/lang/String;J)V
-
-    .line 439
-    const-string v0, "lockscreen.password_type_alternate"
-
-    invoke-direct {p0, v0, v3, v4}, Lcom/android/internal/widget/LockPatternUtils;->setLong(Ljava/lang/String;J)V
 
     .line 440
     return-void

@@ -11,12 +11,8 @@
             <TextView android:textAppearance="?textAppearanceMedium" android:id="@id/empty_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/ringtone_picker_sdcard_empty" />
         </LinearLayout>
     </LinearLayout>
-    <LinearLayout android:orientation="vertical" android:id="@id/button" android:layout_width="fill_parent" android:layout_height="wrap_content" android:divider="?dividerHorizontal" android:layout_alignParentBottom="true" android:showDividers="beginning">
-        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:measureWithLargestChild="true" style="?android:attr/buttonBarStyle">
-            <LinearLayout android:orientation="horizontal" android:id="@id/leftSpacer" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="0.25" />
-            <Button android:textSize="14.0sp" android:layout_gravity="left" android:id="@id/cancel_button" android:layout_width="0.0dip" android:layout_height="48.0dip" android:text="@string/cancel" android:maxLines="2" android:layout_weight="1.0" style="?android:attr/buttonBarButtonStyle" />
-            <Button android:textSize="14.0sp" android:layout_gravity="right" android:id="@id/ok_button" android:layout_width="0.0dip" android:layout_height="48.0dip" android:text="@string/ok" android:maxLines="2" android:layout_weight="1.0" style="?android:attr/buttonBarButtonStyle" />
-            <LinearLayout android:orientation="horizontal" android:id="@id/rightSpacer" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="0.25" />
-        </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/button" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <Button android:textSize="14.0sp" android:layout_gravity="left" android:id="@id/cancel_button" android:layout_width="0.0dip" android:layout_height="48.0dip" android:text="@string/cancel" android:maxLines="2" android:layout_weight="1.0" />
+        <Button android:textSize="14.0sp" android:layout_gravity="right" android:id="@id/ok_button" android:layout_width="0.0dip" android:layout_height="48.0dip" android:text="@string/ok" android:maxLines="2" android:layout_weight="1.0" />
     </LinearLayout>
 </RelativeLayout>

@@ -55243,17 +55243,17 @@
     .parameter "options"
 
     .prologue
-    .line 6023
+    .line 6000
     const-string v5, "android.permission.REORDER_TASKS"
 
     const-string v6, "moveTaskToFront()"
 
     invoke-virtual {p0, v5, v6}, Lcom/android/server/am/ActivityManagerService;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6026
+    .line 6003
     monitor-enter p0
 
-    .line 6027
+    .line 6004
     :try_start_0
     invoke-static {}, Landroid/os/Binder;->getCallingPid()I
 
@@ -55271,17 +55271,18 @@
 
     if-nez v5, :cond_0
 
-    .line 6029
+    .line 6006
     invoke-static {p3}, Landroid/app/ActivityOptions;->abort(Landroid/os/Bundle;)V
 
-    .line 6030
+    .line 6007
     monitor-exit p0
 
-    .line 6078
+    .line 6044
     :goto_0
+    :cond_baidu_0
     return-void
 
-    .line 6032
+    .line 6009
     :cond_0
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
     :try_end_0
@@ -55289,36 +55290,70 @@
 
     move-result-wide v2
 
-    .line 6034
+    .line 6011
     .local v2, origId:J
-    :try_start_1
+    :try_start_baidu_0
     invoke-direct {p0, p1}, Lcom/android/server/am/ActivityManagerService;->taskForIdLocked(I)Lcom/android/server/am/TaskRecord;
 
     move-result-object v4
 
-    .line 6036
+    .line 6012
     .local v4, tr:Lcom/android/server/am/TaskRecord;
-    if-eqz v4, :cond_4
+    if-eqz v4, :cond_3
 
-    .line 6038
     invoke-virtual {p0, v4, p2}, Lcom/android/server/am/ActivityManagerService;->hookMoveTaskToFront(Lcom/android/server/am/TaskRecord;I)Z
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+    :try_end_baidu_0
+    .catchall {:try_start_baidu_0 .. :try_end_baidu_0} :catchall_1
 
     move-result v5
 
-    if-eqz v5, :cond_1
+    if-nez v5, :cond_baidu_0
 
-    .line 6074
+    :try_start_1
+
+    .line 6013
+    and-int/lit8 v5, p2, 0x2
+
+    if-nez v5, :cond_1
+
+    .line 6014
+    iget-object v5, p0, Lcom/android/server/am/ActivityManagerService;->mMainStack:Lcom/android/server/am/ActivityStack;
+
+    const/4 v6, 0x1
+
+    iput-boolean v6, v5, Lcom/android/server/am/ActivityStack;->mUserLeaving:Z
+
+    .line 6016
+    :cond_1
+    and-int/lit8 v5, p2, 0x1
+
+    if-eqz v5, :cond_2
+
+    .line 6019
+    iget-object v5, p0, Lcom/android/server/am/ActivityManagerService;->mMainStack:Lcom/android/server/am/ActivityStack;
+
+    invoke-virtual {v5}, Lcom/android/server/am/ActivityStack;->moveHomeToFrontLocked()V
+
+    .line 6021
+    :cond_2
+    iget-object v5, p0, Lcom/android/server/am/ActivityManagerService;->mMainStack:Lcom/android/server/am/ActivityStack;
+
+    const/4 v6, 0x0
+
+    invoke-virtual {v5, v4, v6, p3}, Lcom/android/server/am/ActivityStack;->moveTaskToFrontLocked(Lcom/android/server/am/TaskRecord;Lcom/android/server/am/ActivityRecord;Landroid/os/Bundle;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    .line 6040
     :try_start_2
     invoke-static {v2, v3}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 6039
+    .line 6022
     monitor-exit p0
 
     goto :goto_0
 
-    .line 6077
+    .line 6043
     .end local v2           #origId:J
     .end local v4           #tr:Lcom/android/server/am/TaskRecord;
     :catchall_0
@@ -55330,57 +55365,11 @@
 
     throw v5
 
-    .line 6042
+    .line 6024
     .restart local v2       #origId:J
     .restart local v4       #tr:Lcom/android/server/am/TaskRecord;
-    :cond_1
-    and-int/lit8 v5, p2, 0x2
-
-    if-nez v5, :cond_2
-
-    .line 6043
-    :try_start_3
-    iget-object v5, p0, Lcom/android/server/am/ActivityManagerService;->mMainStack:Lcom/android/server/am/ActivityStack;
-
-    const/4 v6, 0x1
-
-    iput-boolean v6, v5, Lcom/android/server/am/ActivityStack;->mUserLeaving:Z
-
-    .line 6045
-    :cond_2
-    and-int/lit8 v5, p2, 0x1
-
-    if-eqz v5, :cond_3
-
-    .line 6048
-    iget-object v5, p0, Lcom/android/server/am/ActivityManagerService;->mMainStack:Lcom/android/server/am/ActivityStack;
-
-    invoke-virtual {v5}, Lcom/android/server/am/ActivityStack;->moveHomeToFrontLocked()V
-
-    .line 6050
     :cond_3
-    iget-object v5, p0, Lcom/android/server/am/ActivityManagerService;->mMainStack:Lcom/android/server/am/ActivityStack;
-
-    const/4 v6, 0x0
-
-    invoke-virtual {v5, v4, v6, p3}, Lcom/android/server/am/ActivityStack;->moveTaskToFrontLocked(Lcom/android/server/am/TaskRecord;Lcom/android/server/am/ActivityRecord;Landroid/os/Bundle;)V
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
-
-    .line 6074
-    :try_start_4
-    invoke-static {v2, v3}, Landroid/os/Binder;->restoreCallingIdentity(J)V
-
-    .line 6051
-    monitor-exit p0
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
-
-    goto :goto_0
-
-    .line 6053
-    :cond_4
-    :try_start_5
+    :try_start_baidu_1
     iget-object v5, p0, Lcom/android/server/am/ActivityManagerService;->mMainStack:Lcom/android/server/am/ActivityStack;
 
     iget-object v5, v5, Lcom/android/server/am/ActivityStack;->mHistory:Ljava/util/ArrayList;
@@ -55393,9 +55382,9 @@
 
     .local v1, i:I
     :goto_1
-    if-ltz v1, :cond_9
+    if-ltz v1, :cond_7
 
-    .line 6054
+    .line 6025
     iget-object v5, p0, Lcom/android/server/am/ActivityManagerService;->mMainStack:Lcom/android/server/am/ActivityStack;
 
     iget-object v5, v5, Lcom/android/server/am/ActivityStack;->mHistory:Ljava/util/ArrayList;
@@ -55406,61 +55395,49 @@
 
     check-cast v0, Lcom/android/server/am/ActivityRecord;
 
-    .line 6055
+    .line 6026
     .local v0, hr:Lcom/android/server/am/ActivityRecord;
     iget-object v5, v0, Lcom/android/server/am/ActivityRecord;->task:Lcom/android/server/am/TaskRecord;
 
     iget v5, v5, Lcom/android/server/am/TaskRecord;->taskId:I
 
-    if-ne v5, p1, :cond_8
+    if-ne v5, p1, :cond_6
 
-    .line 6057
     invoke-virtual {p0, v4, p2}, Lcom/android/server/am/ActivityManagerService;->hookMoveTaskToFront(Lcom/android/server/am/TaskRecord;I)Z
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_1
+    :try_end_baidu_1
+    .catchall {:try_start_baidu_1 .. :try_end_baidu_1} :catchall_1
 
     move-result v5
 
-    if-eqz v5, :cond_5
+    if-nez v5, :cond_baidu_0
 
-    .line 6074
-    :try_start_6
-    invoke-static {v2, v3}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+    :try_start_3
 
-    .line 6058
-    monitor-exit p0
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_0
-
-    goto :goto_0
-
-    .line 6061
-    :cond_5
+    .line 6027
     and-int/lit8 v5, p2, 0x2
 
-    if-nez v5, :cond_6
+    if-nez v5, :cond_4
 
-    .line 6062
-    :try_start_7
+    .line 6028
     iget-object v5, p0, Lcom/android/server/am/ActivityManagerService;->mMainStack:Lcom/android/server/am/ActivityStack;
 
     const/4 v6, 0x1
 
     iput-boolean v6, v5, Lcom/android/server/am/ActivityStack;->mUserLeaving:Z
 
-    .line 6064
-    :cond_6
+    .line 6030
+    :cond_4
     and-int/lit8 v5, p2, 0x1
 
-    if-eqz v5, :cond_7
+    if-eqz v5, :cond_5
 
-    .line 6067
+    .line 6033
     iget-object v5, p0, Lcom/android/server/am/ActivityManagerService;->mMainStack:Lcom/android/server/am/ActivityStack;
 
     invoke-virtual {v5}, Lcom/android/server/am/ActivityStack;->moveHomeToFrontLocked()V
 
-    .line 6069
-    :cond_7
+    .line 6035
+    :cond_5
     iget-object v5, p0, Lcom/android/server/am/ActivityManagerService;->mMainStack:Lcom/android/server/am/ActivityStack;
 
     iget-object v6, v0, Lcom/android/server/am/ActivityRecord;->task:Lcom/android/server/am/TaskRecord;
@@ -55468,25 +55445,25 @@
     const/4 v7, 0x0
 
     invoke-virtual {v5, v6, v7, p3}, Lcom/android/server/am/ActivityStack;->moveTaskToFrontLocked(Lcom/android/server/am/TaskRecord;Lcom/android/server/am/ActivityRecord;Landroid/os/Bundle;)V
-    :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_1
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    .line 6074
-    :try_start_8
+    .line 6040
+    :try_start_4
     invoke-static {v2, v3}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 6070
+    .line 6036
     monitor-exit p0
 
     goto :goto_0
 
-    .line 6053
-    :cond_8
+    .line 6024
+    :cond_6
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_1
 
-    .line 6074
+    .line 6040
     .end local v0           #hr:Lcom/android/server/am/ActivityRecord;
     .end local v1           #i:I
     .end local v4           #tr:Lcom/android/server/am/TaskRecord;
@@ -55499,18 +55476,18 @@
 
     .restart local v1       #i:I
     .restart local v4       #tr:Lcom/android/server/am/TaskRecord;
-    :cond_9
+    :cond_7
     invoke-static {v2, v3}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 6076
+    .line 6042
     invoke-static {p3}, Landroid/app/ActivityOptions;->abort(Landroid/os/Bundle;)V
 
-    .line 6077
+    .line 6043
     monitor-exit p0
-    :try_end_8
-    .catchall {:try_start_8 .. :try_end_8} :catchall_0
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    goto/16 :goto_0
+    goto :goto_0
 .end method
 
 .method public navigateUpTo(Landroid/os/IBinder;Landroid/content/Intent;ILandroid/content/Intent;)Z

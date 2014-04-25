@@ -30,15 +30,15 @@
     .parameter "waiter"
 
     .prologue
-    .line 1740
+    .line 1755
     iput-object p1, p0, Landroid/app/Instrumentation$ActivityGoing;->this$0:Landroid/app/Instrumentation;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1741
+    .line 1756
     iput-object p2, p0, Landroid/app/Instrumentation$ActivityGoing;->mWaiter:Landroid/app/Instrumentation$ActivityWaiter;
 
-    .line 1742
+    .line 1757
     return-void
 .end method
 
@@ -48,7 +48,7 @@
     .locals 3
 
     .prologue
-    .line 1745
+    .line 1760
     iget-object v0, p0, Landroid/app/Instrumentation$ActivityGoing;->this$0:Landroid/app/Instrumentation;
 
     #getter for: Landroid/app/Instrumentation;->mSync:Ljava/lang/Object;
@@ -58,7 +58,7 @@
 
     monitor-enter v1
 
-    .line 1746
+    .line 1761
     :try_start_0
     iget-object v0, p0, Landroid/app/Instrumentation$ActivityGoing;->this$0:Landroid/app/Instrumentation;
 
@@ -71,7 +71,7 @@
 
     invoke-interface {v0, v2}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    .line 1747
+    .line 1762
     iget-object v0, p0, Landroid/app/Instrumentation$ActivityGoing;->this$0:Landroid/app/Instrumentation;
 
     #getter for: Landroid/app/Instrumentation;->mSync:Ljava/lang/Object;
@@ -81,15 +81,15 @@
 
     invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
 
-    .line 1748
+    .line 1763
     monitor-exit v1
 
-    .line 1749
+    .line 1764
     const/4 v0, 0x0
 
     return v0
 
-    .line 1748
+    .line 1763
     :catchall_0
     move-exception v0
 

@@ -119,27 +119,13 @@
 
 .field public static final yi_magnifier_range_padding:I = #dimen@yi_magnifier_range_padding#t
 
-.field public static final zz_lockscreen_flipper_width:I = #dimen@zz_lockscreen_flipper_width#t
-
-.field public static final zz_lockscreen_status_height:I = #dimen@zz_lockscreen_status_height#t
-
-.field public static final zz_lockscreen_unlock_widget_center_offset:I = #dimen@zz_lockscreen_unlock_widget_center_offset#t
-
-.field public static final zz_lockscreen_unlock_widget_margin_top:I = #dimen@zz_lockscreen_unlock_widget_margin_top#t
-
-.field public static final zz_smartmultiUnlockview_target_placement_radius:I = #dimen@zz_smartmultiUnlockview_target_placement_radius#t
-
-.field public static final zz_smartmultiunlockview_hit_radius:I = #dimen@zz_smartmultiunlockview_hit_radius#t
-
-.field public static final zz_smartmultiunlockview_snap_margin:I = #dimen@zz_smartmultiunlockview_snap_margin#t
-
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 11537
+    .line 11437
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
