@@ -503,13 +503,13 @@
 
 .field public static final alarm:I = #id@alarm#t
 
-.field public static final alarmLayout:I = #id@alarmLayout#t
-
 .field public static final alarm_status:I = #id@alarm_status#t
 
 .field public static final album:I = #id@album#t
 
-.field public static final album_view:I = #id@album_view#t
+.field public static final album_cover:I = #id@album_cover#t
+
+.field public static final album_title:I = #id@album_title#t
 
 .field public static final albumart:I = #id@albumart#t
 
@@ -589,6 +589,8 @@
 
 .field public static final behind:I = #id@behind#t
 
+.field public static final bg_cicle:I = #id@bg_cicle#t
+
 .field public static final blocksDescendants:I = #id@blocksDescendants#t
 
 .field public static final body:I = #id@body#t
@@ -667,6 +669,20 @@
 
 .field public static final characters:I = #id@characters#t
 
+.field public static final chargging_circle_1:I = #id@chargging_circle_1#t
+
+.field public static final chargging_circle_2:I = #id@chargging_circle_2#t
+
+.field public static final chargging_circle_3:I = #id@chargging_circle_3#t
+
+.field public static final chargging_circle_4:I = #id@chargging_circle_4#t
+
+.field public static final chargging_progress:I = #id@chargging_progress#t
+
+.field public static final chargging_tip:I = #id@chargging_tip#t
+
+.field public static final chargging_view:I = #id@chargging_view#t
+
 .field public static final check:I = #id@check#t
 
 .field public static final checkbox:I = #id@checkbox#t
@@ -722,8 +738,6 @@
 .field public static final dangerous_perms_list:I = #id@dangerous_perms_list#t
 
 .field public static final date:I = #id@date#t
-
-.field public static final dateLayout:I = #id@dateLayout#t
 
 .field public static final datePicker:I = #id@datePicker#t
 
@@ -871,8 +885,6 @@
 
 .field public static final flagNoFullscreen:I = #id@flagNoFullscreen#t
 
-.field public static final flipper:I = #id@flipper#t
-
 .field public static final floatType:I = #id@floatType#t
 
 .field public static final floating:I = #id@floating#t
@@ -894,6 +906,8 @@
 .field public static final grant_credentials_permission_message_footer:I = #id@grant_credentials_permission_message_footer#t
 
 .field public static final grant_credentials_permission_message_header:I = #id@grant_credentials_permission_message_header#t
+
+.field public static final handle_align:I = #id@handle_align#t
 
 .field public static final hardware:I = #id@hardware#t
 
@@ -1007,6 +1021,16 @@
 
 .field public static final invisible:I = #id@invisible#t
 
+.field public static final iqiyi_listview:I = #id@iqiyi_listview#t
+
+.field public static final iqiyi_push_msg_content:I = #id@iqiyi_push_msg_content#t
+
+.field public static final iqiyi_push_msg_image:I = #id@iqiyi_push_msg_image#t
+
+.field public static final iqiyi_push_msg_layout:I = #id@iqiyi_push_msg_layout#t
+
+.field public static final iqiyi_push_msg_title:I = #id@iqiyi_push_msg_title#t
+
 .field public static final issued_on:I = #id@issued_on#t
 
 .field public static final issued_on_header:I = #id@issued_on_header#t
@@ -1111,8 +1135,6 @@
 
 .field public static final mdpi:I = #id@mdpi#t
 
-.field public static final media_view:I = #id@media_view#t
-
 .field public static final mediacontroller_progress:I = #id@mediacontroller_progress#t
 
 .field public static final menu:I = #id@menu#t
@@ -1125,7 +1147,15 @@
 
 .field public static final mirror:I = #id@mirror#t
 
+.field public static final miss_call:I = #id@miss_call#t
+
+.field public static final miss_call_count:I = #id@miss_call_count#t
+
+.field public static final miss_container:I = #id@miss_container#t
+
 .field public static final miss_message_count:I = #id@miss_message_count#t
+
+.field public static final miss_mms:I = #id@miss_mms#t
 
 .field public static final mnc:I = #id@mnc#t
 
@@ -1154,6 +1184,10 @@
 .field public static final multipleChoiceModal:I = #id@multipleChoiceModal#t
 
 .field public static final music:I = #id@music#t
+
+.field public static final music_bg:I = #id@music_bg#t
+
+.field public static final music_view:I = #id@music_view#t
 
 .field public static final navigation:I = #id@navigation#t
 
@@ -1343,6 +1377,10 @@
 
 .field public static final pukDisplay:I = #id@pukDisplay#t
 
+.field public static final push_msg_icon:I = #id@push_msg_icon#t
+
+.field public static final push_msg_text_layout:I = #id@push_msg_text_layout#t
+
 .field public static final queryRewriteFromData:I = #id@queryRewriteFromData#t
 
 .field public static final queryRewriteFromText:I = #id@queryRewriteFromText#t
@@ -1366,8 +1404,6 @@
 .field public static final reask_hint:I = #id@reask_hint#t
 
 .field public static final rectangle:I = #id@rectangle#t
-
-.field public static final relativeLayout1:I = #id@relativeLayout1#t
 
 .field public static final remember_cbx:I = #id@remember_cbx#t
 
@@ -1424,8 +1460,6 @@
 .field public static final screenSize:I = #id@screenSize#t
 
 .field public static final scrollView:I = #id@scrollView#t
-
-.field public static final scroll_view:I = #id@scroll_view#t
 
 .field public static final scrolling:I = #id@scrolling#t
 
@@ -1501,8 +1535,6 @@
 
 .field public static final sha256_fingerprint_header:I = #id@sha256_fingerprint_header#t
 
-.field public static final shade:I = #id@shade#t
-
 .field public static final share:I = #id@share#t
 
 .field public static final shortcut:I = #id@shortcut#t
@@ -1546,6 +1578,10 @@
 .field public static final six:I = #id@six#t
 
 .field public static final skip_button:I = #id@skip_button#t
+
+.field public static final slide_guide_arrow:I = #id@slide_guide_arrow#t
+
+.field public static final slide_miss_call_and_mms:I = #id@slide_miss_call_and_mms#t
 
 .field public static final slider_group:I = #id@slider_group#t
 
@@ -1647,6 +1683,8 @@
 
 .field public static final target_message:I = #id@target_message#t
 
+.field public static final target_phone:I = #id@target_phone#t
+
 .field public static final target_refresh:I = #id@target_refresh#t
 
 .field public static final target_refresh2:I = #id@target_refresh2#t
@@ -1654,6 +1692,10 @@
 .field public static final target_ring:I = #id@target_ring#t
 
 .field public static final target_unlock:I = #id@target_unlock#t
+
+.field public static final target_view:I = #id@target_view#t
+
+.field public static final targets:I = #id@targets#t
 
 .field public static final text:I = #id@text#t
 
@@ -1849,9 +1891,7 @@
 
 .field public static final voiceunlock_tips:I = #id@voiceunlock_tips#t
 
-.field public static final weather_background:I = #id@weather_background#t
-
-.field public static final weather_view:I = #id@weather_view#t
+.field public static final water_layer_container:I = #id@water_layer_container#t
 
 .field public static final web:I = #id@web#t
 
@@ -1868,8 +1908,6 @@
 .field public static final withText:I = #id@withText#t
 
 .field public static final words:I = #id@words#t
-
-.field public static final workspace:I = #id@workspace#t
 
 .field public static final wrap_content:I = #id@wrap_content#t
 
@@ -1899,7 +1937,7 @@
     .locals 0
 
     .prologue
-    .line 14484
+    .line 14474
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

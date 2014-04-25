@@ -185,9 +185,6 @@ etc/recovery.fstab 0 0 644
 res 0 0 755
 res/images 0 0 755
 res/images/icon_installing_overlay07.png 0 0 644
-res/images/icon_installing_overlay12.png 0 0 644
-res/images/icon_installing_overlay10.png 0 0 644
-res/images/icon_installing_overlay14.png 0 0 644
 res/images/icon_error.png 0 0 644
 res/images/icon_installing_overlay01.png 0 0 644
 res/images/icon_installing_overlay03.png 0 0 644
@@ -197,9 +194,6 @@ res/images/icon_installing_overlay06.png 0 0 644
 res/images/icon_installing_overlay08.png 0 0 644
 res/images/icon_installing_overlay09.png 0 0 644
 res/images/progress_empty.png 0 0 644
-res/images/icon_installing_overlay15.png 0 0 644
-res/images/icon_installing_overlay11.png 0 0 644
-res/images/icon_installing_overlay16.png 0 0 644
 res/images/progress_fill.png 0 0 644
 res/images/indeterminate03.png 0 0 644
 res/images/icon_installing.png 0 0 644
@@ -208,7 +202,6 @@ res/images/icon_installing_overlay05.png 0 0 644
 res/images/indeterminate04.png 0 0 644
 res/images/indeterminate05.png 0 0 644
 res/images/icon_installing_overlay04.png 0 0 644
-res/images/icon_installing_overlay13.png 0 0 644
 res/images/indeterminate01.png 0 0 644
 res/keys 0 0 644
 proc 0 0 755

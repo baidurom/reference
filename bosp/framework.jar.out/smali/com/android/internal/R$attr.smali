@@ -275,8 +275,6 @@
 
 .field public static final centerDark:I = #attr@centerDark#t
 
-.field public static final centerHandleDrawable:I = #attr@centerHandleDrawable#t
-
 .field public static final centerMedium:I = #attr@centerMedium#t
 
 .field public static final centerX:I = #attr@centerX#t
@@ -744,13 +742,9 @@
 
 .field public static final hitRadius:I = #attr@hitRadius#t
 
-.field public static final hitVibrationDuration:I = #attr@hitVibrationDuration#t
-
 .field public static final homeAsUpIndicator:I = #attr@homeAsUpIndicator#t
 
 .field public static final homeLayout:I = #attr@homeLayout#t
-
-.field public static final horizontalCenterOffset:I = #attr@horizontalCenterOffset#t
 
 .field public static final horizontalDivider:I = #attr@horizontalDivider#t
 
@@ -1165,12 +1159,6 @@
 
 .field public static final notificationTimeout:I = #attr@notificationTimeout#t
 
-.field public static final notifierDrawable:I = #attr@notifierDrawable#t
-
-.field public static final notifierTextColor:I = #attr@notifierTextColor#t
-
-.field public static final notifierTextSize:I = #attr@notifierTextSize#t
-
 .field public static final numColumns:I = #attr@numColumns#t
 
 .field public static final numStars:I = #attr@numStars#t
@@ -1209,8 +1197,6 @@
 .field public static final outAnimation:I = #attr@outAnimation#t
 
 .field public static final outerRadius:I = #attr@outerRadius#t
-
-.field public static final outerRingRadius:I = #attr@outerRingRadius#t
 
 .field public static final overScrollFooter:I = #attr@overScrollFooter#t
 
@@ -1608,10 +1594,6 @@
 
 .field public static final sharedUserLabel:I = #attr@sharedUserLabel#t
 
-.field public static final shortcutDescriptions:I = #attr@shortcutDescriptions#t
-
-.field public static final shortcutDrawables:I = #attr@shortcutDrawables#t
-
 .field public static final shouldDisableView:I = #attr@shouldDisableView#t
 
 .field public static final showAsAction:I = #attr@showAsAction#t
@@ -1793,13 +1775,9 @@
 
 .field public static final targetDrawables:I = #attr@targetDrawables#t
 
-.field public static final targetHitRadius:I = #attr@targetHitRadius#t
-
 .field public static final targetPackage:I = #attr@targetPackage#t
 
 .field public static final targetSdkVersion:I = #attr@targetSdkVersion#t
-
-.field public static final targetSnapMargin:I = #attr@targetSnapMargin#t
 
 .field public static final taskAffinity:I = #attr@taskAffinity#t
 
@@ -2029,8 +2007,6 @@
 
 .field public static final unfocusedMonthDateColor:I = #attr@unfocusedMonthDateColor#t
 
-.field public static final unlockDistance:I = #attr@unlockDistance#t
-
 .field public static final unselectedAlpha:I = #attr@unselectedAlpha#t
 
 .field public static final updatePeriodMillis:I = #attr@updatePeriodMillis#t
@@ -2056,8 +2032,6 @@
 .field public static final versionCode:I = #attr@versionCode#t
 
 .field public static final versionName:I = #attr@versionName#t
-
-.field public static final verticalCenterOffset:I = #attr@verticalCenterOffset#t
 
 .field public static final verticalCorrection:I = #attr@verticalCorrection#t
 
@@ -2195,7 +2169,7 @@
     .locals 0
 
     .prologue
-    .line 596
+    .line 591
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

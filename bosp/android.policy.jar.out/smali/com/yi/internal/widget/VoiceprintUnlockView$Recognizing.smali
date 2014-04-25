@@ -117,7 +117,7 @@
 
     move-result-object v1
 
-    const v2, 0x5080124
+    const v2, 0x5080125
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -149,7 +149,7 @@
 
     move-result-object v1
 
-    const v2, 0x5080132
+    const v2, 0x5080133
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 

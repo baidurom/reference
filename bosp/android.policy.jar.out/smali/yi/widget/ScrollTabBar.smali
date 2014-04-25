@@ -15,9 +15,9 @@
 
 
 # static fields
-.field private static final DEFAULT_SLID_DRAWABLE_RES_LAND:I = 0x5080274
+.field private static final DEFAULT_SLID_DRAWABLE_RES_LAND:I = 0x508028b
 
-.field private static final DEFAULT_SLID_DRAWABLE_RES_PORT:I = 0x5080274
+.field private static final DEFAULT_SLID_DRAWABLE_RES_PORT:I = 0x508028b
 
 .field private static final TAG:Ljava/lang/String; = "SrollTabBar"
 

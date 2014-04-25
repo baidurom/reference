@@ -687,7 +687,7 @@
 
     move-result-object v0
 
-    const/4 v1, 0x2
+    const/4 v1, 0x3
 
     invoke-static {v0, v1}, Landroid/util/Base64;->encodeToString([BI)Ljava/lang/String;
 
@@ -1593,11 +1593,11 @@
 
     .prologue
     .line 830
-    new-instance v0, Landroid/content/res/AssetManager$2;
+    new-instance v0, Landroid/content/res/AssetManager$baidu_2;
 
-    invoke-direct {v0, p0}, Landroid/content/res/AssetManager$2;-><init>(Landroid/content/res/AssetManager;)V
+    invoke-direct {v0, p0}, Landroid/content/res/AssetManager$baidu_2;-><init>(Landroid/content/res/AssetManager;)V
 
-    invoke-virtual {v0}, Landroid/content/res/AssetManager$2;->start()V
+    invoke-virtual {v0}, Landroid/content/res/AssetManager$baidu_2;->start()V
 
     .line 836
     return-void
@@ -2496,7 +2496,7 @@
 
     const/4 v3, 0x0
 
-    invoke-direct {v1, p0, v0, v3}, Landroid/content/res/AssetManager$AssetInputStream;-><init>(Landroid/content/res/AssetManager;ILandroid/content/res/AssetManager$1;)V
+    invoke-direct {v1, p0, v0, v3}, Landroid/content/res/AssetManager$AssetInputStream;-><init>(Landroid/content/res/AssetManager;ILandroid/content/res/AssetManager$baidu_1;)V
 
     .line 359
     .local v1, res:Landroid/content/res/AssetManager$AssetInputStream;
@@ -2746,7 +2746,7 @@
 
     const/4 v3, 0x0
 
-    invoke-direct {v1, p0, v0, v3}, Landroid/content/res/AssetManager$AssetInputStream;-><init>(Landroid/content/res/AssetManager;ILandroid/content/res/AssetManager$1;)V
+    invoke-direct {v1, p0, v0, v3}, Landroid/content/res/AssetManager$AssetInputStream;-><init>(Landroid/content/res/AssetManager;ILandroid/content/res/AssetManager$baidu_1;)V
 
     .line 457
     .local v1, res:Landroid/content/res/AssetManager$AssetInputStream;
@@ -2951,7 +2951,7 @@
 
     const/4 v10, 0x0
 
-    invoke-direct {v8, p0, v1, v10}, Landroid/content/res/AssetManager$AssetInputStream;-><init>(Landroid/content/res/AssetManager;ILandroid/content/res/AssetManager$1;)V
+    invoke-direct {v8, p0, v1, v10}, Landroid/content/res/AssetManager$AssetInputStream;-><init>(Landroid/content/res/AssetManager;ILandroid/content/res/AssetManager$baidu_1;)V
 
     .line 556
     .local v8, res:Landroid/content/res/AssetManager$AssetInputStream;
@@ -3585,13 +3585,13 @@
     invoke-direct {p0}, Landroid/content/res/AssetManager;->readChannelPkgsBackgroud()V
 
     .line 805
-    new-instance v0, Landroid/content/res/AssetManager$1;
+    new-instance v0, Landroid/content/res/AssetManager$baidu_1;
 
     new-instance v1, Landroid/os/Handler;
 
     invoke-direct {v1}, Landroid/os/Handler;-><init>()V
 
-    invoke-direct {v0, p0, v1}, Landroid/content/res/AssetManager$1;-><init>(Landroid/content/res/AssetManager;Landroid/os/Handler;)V
+    invoke-direct {v0, p0, v1}, Landroid/content/res/AssetManager$baidu_1;-><init>(Landroid/content/res/AssetManager;Landroid/os/Handler;)V
 
     iput-object v0, p0, Landroid/content/res/AssetManager;->mObserver:Landroid/database/ContentObserver;
 

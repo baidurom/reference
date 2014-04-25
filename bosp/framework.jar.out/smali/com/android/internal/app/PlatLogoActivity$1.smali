@@ -144,7 +144,7 @@
 
     invoke-direct {v3, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    const v4, #drawable@yi_popup_arrow_up#t0
+    const v4, #drawable@yi_edit_text_baidu_light#t0
 
     invoke-virtual {v3, v4}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 

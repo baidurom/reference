@@ -35,6 +35,8 @@
 
 .field public static final bounce_interpolator:I = #anim@bounce_interpolator#t
 
+.field public static final charge_anim:I = #anim@charge_anim#t
+
 .field public static final cycle_interpolator:I = #anim@cycle_interpolator#t
 
 .field public static final decelerate_custom:I = #anim@decelerate_custom#t

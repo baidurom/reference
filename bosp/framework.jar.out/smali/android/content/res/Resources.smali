@@ -252,9 +252,9 @@
     sput v2, Landroid/content/res/Resources;->sConfigThemeChanged:I
 
     .line 206
-    new-instance v0, Landroid/content/res/Resources$1;
+    new-instance v0, Landroid/content/res/Resources$baidu_1;
 
-    invoke-direct {v0, v1}, Landroid/content/res/Resources$1;-><init>(I)V
+    invoke-direct {v0, v1}, Landroid/content/res/Resources$baidu_1;-><init>(I)V
 
     sput-object v0, Landroid/content/res/Resources;->EMPTY_ARRAY:Landroid/util/LongSparseArray;
 

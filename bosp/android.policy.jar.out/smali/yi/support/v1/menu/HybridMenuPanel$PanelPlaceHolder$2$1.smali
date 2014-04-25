@@ -80,7 +80,7 @@
 
     .line 486
     .local v1, params:Landroid/widget/FrameLayout$LayoutParams;
-    iget v2, v1, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+    iget v2, v1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
     iget v3, p0, Lyi/support/v1/menu/HybridMenuPanel$PanelPlaceHolder$2$1;->val$paddingBottom:I
 
@@ -89,7 +89,7 @@
     .line 487
     iget v2, p0, Lyi/support/v1/menu/HybridMenuPanel$PanelPlaceHolder$2$1;->val$paddingBottom:I
 
-    iput v2, v1, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+    iput v2, v1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
     .line 488
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V

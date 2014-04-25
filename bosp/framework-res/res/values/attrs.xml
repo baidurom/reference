@@ -1753,17 +1753,4 @@
     <attr name="cantSaveState" format="boolean" />
     <attr name="pointOn" format="reference" />
     <attr name="pointOff" format="reference" />
-    <attr name="shortcutDrawables" format="reference" />
-    <attr name="shortcutDescriptions" format="reference" />
-    <attr name="centerHandleDrawable" format="reference" />
-    <attr name="outerRingRadius" format="dimension" />
-    <attr name="targetHitRadius" format="dimension" />
-    <attr name="hitVibrationDuration" format="integer" />
-    <attr name="targetSnapMargin" format="dimension" />
-    <attr name="verticalCenterOffset" format="dimension" />
-    <attr name="horizontalCenterOffset" format="dimension" />
-    <attr name="notifierDrawable" format="reference" />
-    <attr name="unlockDistance" format="integer" />
-    <attr name="notifierTextSize" format="integer" />
-    <attr name="notifierTextColor" format="reference|color" />
 </resources>
