@@ -30,7 +30,7 @@
     .line 614
     iput-object p1, p0, Lyi/support/v1/menu/HybridMenuPanel$MenuController$1$1;->this$2:Lyi/support/v1/menu/HybridMenuPanel$MenuController$1;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -48,7 +48,7 @@
 
     const/4 v1, 0x0
 
-    iput-boolean v1, v0, Lyi/support/v1/menu/HybridMenuPanel$PanelState;->mIsTransitioning:Z
+    iput-boolean v1, v0, Lyi/support/v1/menu/HybridMenuPanel$MenuController;->mIsTransitioning:Z
 
     .line 618
     return-void

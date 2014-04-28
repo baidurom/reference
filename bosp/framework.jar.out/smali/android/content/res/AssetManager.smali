@@ -154,19 +154,19 @@
     sput-object v0, Landroid/content/res/AssetManager;->sSystem:Landroid/content/res/AssetManager;
 
     new-instance v0, Ljava/util/HashMap;
-
+    
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
+    
     sput-object v0, Landroid/content/res/AssetManager;->OEM_PKGS:Ljava/util/HashMap;
-
+    
     const-string/jumbo v0, "pkg"
-
+    
     sput-object v0, Landroid/content/res/AssetManager;->PKG_COLUMN:Ljava/lang/String;
-
+    
     const-string v0, "file"
-
+    
     sput-object v0, Landroid/content/res/AssetManager;->FILENAME_COLUMN:Ljava/lang/String;
-
+    
     return-void
 .end method
 
@@ -206,17 +206,17 @@
 
     .line 88
     const-string v0, "content://com.baidu.bsy.channel"
-
+    
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
+    
     move-result-object v0
-
+    
     iput-object v0, p0, Landroid/content/res/AssetManager;->mUri:Landroid/net/Uri;
-
+    
     const/4 v0, 0x0
-
+    
     iput v0, p0, Landroid/content/res/AssetManager;->mDpi:I
-
+    
     monitor-enter p0
 
     .line 93
@@ -225,17 +225,18 @@
 
     .line 95
     invoke-static {}, Landroid/content/ThemeDefine;->getIconPath()Ljava/util/HashMap;
-
+    
     move-result-object v0
-
+    
     iput-object v0, p0, Landroid/content/res/AssetManager;->mIconPath:Ljava/util/HashMap;
-
+    
     invoke-static {}, Landroid/content/res/AssetManager;->ensureSystemAssets()V
 
     .line 96
     monitor-exit p0
 
     .line 97
+
     const-string v0, "/system/framework/framework-res-yi.apk"
 
     invoke-virtual {p0, v0}, Landroid/content/res/AssetManager;->addAssetPath(Ljava/lang/String;)I
@@ -289,20 +290,20 @@
     iput-boolean v1, p0, Landroid/content/res/AssetManager;->mOpen:Z
 
     const-string v0, "content://com.baidu.bsy.channel"
-
+    
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
+    
     move-result-object v0
-
+    
     iput-object v0, p0, Landroid/content/res/AssetManager;->mUri:Landroid/net/Uri;
-
+    
     const/4 v0, 0x0
-
+    
     iput v0, p0, Landroid/content/res/AssetManager;->mDpi:I
-
+    
     .line 116
     invoke-direct {p0}, Landroid/content/res/AssetManager;->init()V
-
+    
     invoke-static {}, Landroid/content/ThemeDefine;->getIconPath()Ljava/util/HashMap;
 
     move-result-object v0
@@ -310,6 +311,7 @@
     iput-object v0, p0, Landroid/content/res/AssetManager;->mIconPath:Ljava/util/HashMap;
 
     .line 118
+
     const-string v0, "/system/framework/framework-res-yi.apk"
 
     invoke-virtual {p0, v0}, Landroid/content/res/AssetManager;->addAssetPath(Ljava/lang/String;)I
@@ -920,7 +922,7 @@
 
     move-result-object v0
 
-    const/4 v1, 0x2
+    const/4 v1, 0x3
 
     invoke-static {v0, v1}, Landroid/util/Base64;->encodeToString([BI)Ljava/lang/String;
 
@@ -2143,11 +2145,11 @@
     .line 141
     :cond_0
     const/4 v0, 0x0
-
+    
     iput-object v0, p0, Landroid/content/res/AssetManager;->mPackageName:Ljava/lang/String;
-
+    
     invoke-virtual {p0}, Landroid/content/res/AssetManager;->clearContext()V
-
+    
     monitor-exit p0
 
     .line 142
@@ -2881,30 +2883,30 @@
     :cond_0
     :try_start_1
     invoke-direct {p0, p1, p2}, Landroid/content/res/AssetManager;->hookAssetManagerOpen(Ljava/lang/String;I)Ljava/io/InputStream;
-
+    
     move-result-object v1
-
-    if-eqz v1, :cond_1
-
-    goto :goto_0
-
-    :cond_1
+    
+    if-eqz v1, :cond_baidu_0
+    
+    goto :goto_baidu_0
+    
+    :cond_baidu_0
     invoke-direct {p0, p1}, Landroid/content/res/AssetManager;->getNewInputFileStream(Ljava/lang/String;)Ljava/io/FileInputStream;
-
+    
     move-result-object v1
-
-    if-eqz v1, :cond_2
-
-    goto :goto_0
-
-    :cond_2
+    
+    if-eqz v1, :cond_baidu_1
+    
+    goto :goto_baidu_0
+    
+    :cond_baidu_1
     invoke-direct {p0, p1, p2}, Landroid/content/res/AssetManager;->openAsset(Ljava/lang/String;I)I
 
     move-result v0
 
     .line 316
     .local v0, asset:I
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_1
 
     .line 317
     new-instance v1, Landroid/content/res/AssetManager$AssetInputStream;
@@ -2922,14 +2924,14 @@
     invoke-direct {p0, v2}, Landroid/content/res/AssetManager;->incRefsLocked(I)V
 
     .line 319
-    :goto_0
+    :goto_baidu_0
     monitor-exit p0
 
     return-object v1
 
     .line 321
     .end local v1           #res:Landroid/content/res/AssetManager$AssetInputStream;
-    :cond_3
+    :cond_1
     monitor-exit p0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -3129,21 +3131,21 @@
     :cond_0
     :try_start_1
     invoke-direct {p0, p2}, Landroid/content/res/AssetManager;->getNewInputFileStream(Ljava/lang/String;)Ljava/io/FileInputStream;
-
+    
     move-result-object v1
-
-    if-eqz v1, :cond_1
-
-    goto :goto_0
-
-    :cond_1
+    
+    if-eqz v1, :cond_baidu_0
+    
+    goto :goto_baidu_0
+    
+    :cond_baidu_0
     invoke-direct {p0, p1, p2, p3}, Landroid/content/res/AssetManager;->openNonAssetNative(ILjava/lang/String;I)I
 
     move-result v0
 
     .line 408
     .local v0, asset:I
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
     .line 409
     new-instance v1, Landroid/content/res/AssetManager$AssetInputStream;
@@ -3161,14 +3163,14 @@
     invoke-direct {p0, v2}, Landroid/content/res/AssetManager;->incRefsLocked(I)V
 
     .line 411
-    :goto_0
+    :goto_baidu_0
     monitor-exit p0
 
     return-object v1
 
     .line 413
     .end local v1           #res:Landroid/content/res/AssetManager$AssetInputStream;
-    :cond_2
+    :cond_1
     monitor-exit p0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -3977,6 +3979,15 @@
 
     .line 894
     :cond_1
+    const v1, 0x182b8
+
+    if-lt v0, v1, :cond_baidu_0
+    
+    const v1, 0x1869f
+
+    if-le v0, v1, :cond_0
+    
+    :cond_baidu_0
     iget-object v0, p0, Landroid/content/res/AssetManager;->mContext:Landroid/content/Context;
 
     if-nez v0, :cond_0

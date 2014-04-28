@@ -41,7 +41,7 @@
     .line 765
     iput-object p1, p0, Lyi/support/v1/menu/HybridMenuPanel$ActionHeight;->this$0:Lyi/support/v1/menu/HybridMenuPanel;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 863
     new-instance v0, Lyi/support/v1/menu/HybridMenuPanel$ActionHeight$2;

@@ -75,7 +75,7 @@
 
     .prologue
     .line 34
-    iget-object v0, p0, Lcom/baidu/ifttt/action/Action;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/baidu/ifttt/action/BroadcastAction;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/baidu/ifttt/action/BroadcastAction;->mIntent:Landroid/content/Intent;
 

@@ -30,7 +30,7 @@
 
     .prologue
     .line 24
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 25
     iput-object p1, p0, Lcom/baidu/customization/PreferenceOverlayHelper;->mContext:Landroid/content/Context;
@@ -69,7 +69,7 @@
 
     .prologue
     .line 33
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 34
     iput-object p1, p0, Lcom/baidu/customization/PreferenceOverlayHelper;->mContext:Landroid/content/Context;
@@ -260,7 +260,7 @@
 
     .line 87
     :try_start_4
-    invoke-virtual {v5}, Ljava/io/FileInputStream;->close()V
+    invoke-virtual {v5}, Ljava/io/InputStream;->close()V
 
     .line 89
     :cond_1
@@ -290,7 +290,7 @@
 
     .line 87
     :try_start_5
-    invoke-virtual {v6}, Ljava/io/FileInputStream;->close()V
+    invoke-virtual {v6}, Ljava/io/InputStream;->close()V
 
     .line 89
     :cond_4
@@ -359,7 +359,7 @@
 
     .line 87
     :try_start_6
-    invoke-virtual {v5}, Ljava/io/FileInputStream;->close()V
+    invoke-virtual {v5}, Ljava/io/InputStream;->close()V
 
     .line 89
     :cond_6

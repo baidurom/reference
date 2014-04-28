@@ -98,12 +98,12 @@
     .prologue
     .line 123
     iget-object v2, p0, Landroid/location/CountryDetector;->mService:Landroid/location/ICountryDetector;
-
-    if-nez v2, :cond_0
-
-    goto :goto_1
-
-    :cond_0
+    
+    if-nez v2, :cond_baidu_0
+    
+    goto :goto_baidu_0
+    
+    :cond_baidu_0
     iget-object v3, p0, Landroid/location/CountryDetector;->mListeners:Ljava/util/HashMap;
 
     monitor-enter v3
@@ -116,7 +116,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_1
+    if-nez v2, :cond_0
 
     .line 125
     new-instance v1, Landroid/location/CountryDetector$ListenerTransport;
@@ -142,13 +142,13 @@
 
     .line 133
     .end local v1           #transport:Landroid/location/CountryDetector$ListenerTransport;
-    :cond_1
+    :cond_0
     :goto_0
     :try_start_2
     monitor-exit v3
 
     .line 134
-    :goto_1
+    :goto_baidu_0
     return-void
 
     .line 129
@@ -187,17 +187,17 @@
     :try_start_0
     iget-object v1, p0, Landroid/location/CountryDetector;->mService:Landroid/location/ICountryDetector;
 
-    if-nez v1, :cond_0
-
+    if-nez v1, :cond_baidu_0
+    
     invoke-direct {p0}, Landroid/location/CountryDetector;->getLocaleCountry()Landroid/location/Country;
-
+    
     move-result-object v1
-
+    
     goto :goto_0
-
-    :cond_0
+    
+    :cond_baidu_0
     iget-object v1, p0, Landroid/location/CountryDetector;->mService:Landroid/location/ICountryDetector;
-
+    
     invoke-interface {v1}, Landroid/location/ICountryDetector;->detectCountry()Landroid/location/Country;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
@@ -232,13 +232,13 @@
 
     .prologue
     iget-object v2, p0, Landroid/location/CountryDetector;->mService:Landroid/location/ICountryDetector;
-
-    if-nez v2, :cond_0
-
-    goto :goto_1
-
+    
+    if-nez v2, :cond_baidu_0
+    
+    goto :goto_baidu_0
+    
     .line 140
-    :cond_0
+    :cond_baidu_0
     iget-object v3, p0, Landroid/location/CountryDetector;->mListeners:Ljava/util/HashMap;
 
     monitor-enter v3
@@ -257,7 +257,7 @@
 
     .line 142
     .local v1, transport:Landroid/location/CountryDetector$ListenerTransport;
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_0
 
     .line 144
     :try_start_1
@@ -274,13 +274,13 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 150
-    :cond_1
+    :cond_0
     :goto_0
     :try_start_2
     monitor-exit v3
 
     .line 151
-    :goto_1
+    :goto_baidu_0
     return-void
 
     .line 146

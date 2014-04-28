@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/widget/Editor;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-    .locals 0
+    .locals 1
     .parameter
     .parameter "drawableLtr"
     .parameter "drawableRtl"
@@ -33,6 +33,10 @@
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/Editor$HandleView;-><init>(Landroid/widget/Editor;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
     .line 3339
+    const/4 v0, 0x2
+    
+    iput v0, p0, Landroid/widget/Editor$SelectionEndHandleView;->mCursorType:I
+    
     return-void
 .end method
 
@@ -87,6 +91,64 @@
     div-int/lit8 v0, v0, 0x4
 
     goto :goto_0
+.end method
+
+.method public onTouchEvent(Landroid/view/MotionEvent;)Z
+    .locals 3
+    .parameter "ev"
+
+    .prologue
+    .line 3827
+    invoke-super {p0, p1}, Landroid/widget/Editor$HandleView;->onTouchEvent(Landroid/view/MotionEvent;)Z
+
+    move-result v0
+
+    .line 3829
+    .local v0, result:Z
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
+
+    move-result v1
+
+    packed-switch v1, :pswitch_data_0
+
+    .line 3842
+    :goto_0
+    return v0
+
+    .line 3831
+    :pswitch_0
+    invoke-virtual {p0}, Landroid/widget/Editor$SelectionEndHandleView;->dismissActionPopupWindow()V
+
+    goto :goto_0
+
+    .line 3834
+    :pswitch_1
+    iget-object v1, p0, Landroid/widget/Editor$SelectionEndHandleView;->mActionPopupWindow:Landroid/widget/Editor$ActionPopupWindow;
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Landroid/widget/Editor$SelectionEndHandleView;->mActionPopupWindow:Landroid/widget/Editor$ActionPopupWindow;
+
+    iget v2, p0, Landroid/widget/Editor$SelectionEndHandleView;->mCursorType:I
+
+    invoke-virtual {v1, v2}, Landroid/widget/Editor$ActionPopupWindow;->updatePositionFlag(I)V
+
+    .line 3835
+    :cond_0
+    const/16 v1, 0xc8
+
+    invoke-virtual {p0, v1}, Landroid/widget/Editor$SelectionEndHandleView;->showActionPopupWindow(I)V
+
+    goto :goto_0
+
+    .line 3829
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+        :pswitch_1
+    .end packed-switch
 .end method
 
 .method public setActionPopupWindow(Landroid/widget/Editor$ActionPopupWindow;)V

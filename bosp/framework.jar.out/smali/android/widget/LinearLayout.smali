@@ -1121,7 +1121,7 @@
     .line 447
     new-instance v5, Ljava/lang/RuntimeException;
 
-    const-string/jumbo v6, "mBaselineAlignedChildIndex of LinearLayout set to an index that is out of bounds."
+    const-string v6, "mBaselineAlignedChildIndex of LinearLayout set to an index that is out of bounds."
 
     invoke-direct {v5, v6}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
@@ -1153,7 +1153,7 @@
     .line 461
     new-instance v5, Ljava/lang/RuntimeException;
 
-    const-string/jumbo v6, "mBaselineAlignedChildIndex of LinearLayout points to a View that doesn\'t know how to get its baseline."
+    const-string v6, "mBaselineAlignedChildIndex of LinearLayout points to a View that doesn\'t know how to get its baseline."
 
     invoke-direct {v5, v6}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 

@@ -31,7 +31,7 @@
 
     .prologue
     .line 52
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 53
     iput-object p1, p0, Lcom/baidu/internal/keyguard/hotword/WordList$Word;->title:Ljava/lang/String;

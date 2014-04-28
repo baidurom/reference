@@ -255,7 +255,7 @@
     aput-object v2, v0, v1
 
     sput-object v0, Lcom/android/internal/telephony/CallManager;->mode2Description:[Ljava/lang/String;
-
+    
     new-instance v0, Lcom/android/internal/telephony/CallManager;
 
     invoke-direct {v0}, Lcom/android/internal/telephony/CallManager;-><init>()V
@@ -289,7 +289,7 @@
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/internal/telephony/CallManager;->mBaseband:Ljava/lang/String;
-
+    
     new-instance v0, Landroid/os/RegistrantList;
 
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
@@ -428,11 +428,11 @@
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/CallManager;->mSuppServiceNotificationRegistrants:Landroid/os/RegistrantList;
-
+    
     new-instance v0, Landroid/os/RegistrantList;
-
+    
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
-
+    
     iput-object v0, p0, Lcom/android/internal/telephony/CallManager;->mServiceStateChangedRegistrants:Landroid/os/RegistrantList;
 
     .line 164
@@ -444,11 +444,11 @@
 
     .line 1710
     new-instance v0, Landroid/os/RegistrantList;
-
+    
     invoke-direct {v0}, Landroid/os/RegistrantList;-><init>()V
-
+    
     iput-object v0, p0, Lcom/android/internal/telephony/CallManager;->mLineControlInfoRegistrants:Landroid/os/RegistrantList;
-
+    
     new-instance v0, Lcom/android/internal/telephony/CallManager$1;
 
     invoke-direct {v0, p0}, Lcom/android/internal/telephony/CallManager$1;-><init>(Lcom/android/internal/telephony/CallManager;)V
@@ -1723,34 +1723,34 @@
     invoke-interface {p1}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
 
     move-result v0
-
+    
     const/4 v1, 0x1
-
-    if-ne v0, v1, :cond_0
-
+    
+    if-ne v0, v1, :cond_baidu_0
+    
     iget-object v0, p0, Lcom/android/internal/telephony/CallManager;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0x78
-
+    
     invoke-interface {p1, v0, v1, v2}, Lcom/android/internal/telephony/Phone;->registerForSuppServiceNotification(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    :cond_0
+    :cond_baidu_0
     invoke-interface {p1}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
 
     move-result v0
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_1
+    if-eq v0, v1, :cond_0
 
     invoke-interface {p1}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
 
     move-result v0
 
-    if-ne v0, v3, :cond_2
+    if-ne v0, v3, :cond_1
 
     .line 448
-    :cond_1
+    :cond_0
     iget-object v0, p0, Lcom/android/internal/telephony/CallManager;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0x77
@@ -1758,12 +1758,12 @@
     invoke-interface {p1, v0, v1, v2}, Lcom/android/internal/telephony/Phone;->setOnPostDialCharacter(Landroid/os/Handler;ILjava/lang/Object;)V
 
     .line 452
-    :cond_2
+    :cond_1
     invoke-interface {p1}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
 
     move-result v0
 
-    if-ne v0, v3, :cond_3
+    if-ne v0, v3, :cond_2
 
     .line 453
     iget-object v0, p0, Lcom/android/internal/telephony/CallManager;->mHandler:Landroid/os/Handler;
@@ -1795,12 +1795,12 @@
 
     .line 458
     iget-object v0, p0, Lcom/android/internal/telephony/CallManager;->mHandler:Landroid/os/Handler;
-
+    
     const/16 v1, 0x7a
-
+    
     invoke-interface {p1, v0, v1, v2}, Lcom/android/internal/telephony/Phone;->registerForLineControlInfo(Landroid/os/Handler;ILjava/lang/Object;)V
-
-    :cond_3
+    
+    :cond_2
     return-void
 .end method
 
@@ -1887,9 +1887,9 @@
     iget-object v0, p0, Lcom/android/internal/telephony/CallManager;->mHandler:Landroid/os/Handler;
 
     invoke-interface {p1, v0}, Lcom/android/internal/telephony/Phone;->unregisterForSuppServiceNotification(Landroid/os/Handler;)V
-
+    
     iget-object v0, p0, Lcom/android/internal/telephony/CallManager;->mHandler:Landroid/os/Handler;
-
+    
     invoke-interface {p1, v0}, Lcom/android/internal/telephony/Phone;->unregisterForServiceStateChanged(Landroid/os/Handler;)V
 
     .line 479
@@ -1943,9 +1943,9 @@
 
     .line 491
     iget-object v0, p0, Lcom/android/internal/telephony/CallManager;->mHandler:Landroid/os/Handler;
-
+    
     invoke-interface {p1, v0}, Lcom/android/internal/telephony/Phone;->unregisterForLineControlInfo(Landroid/os/Handler;)V
-
+    
     :cond_2
     return-void
 .end method

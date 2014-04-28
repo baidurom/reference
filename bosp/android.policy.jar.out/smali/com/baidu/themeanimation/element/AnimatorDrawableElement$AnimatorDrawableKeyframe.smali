@@ -33,7 +33,7 @@
     .line 120
     iput-object p1, p0, Lcom/baidu/themeanimation/element/AnimatorDrawableElement$AnimatorDrawableKeyframe;->this$0:Lcom/baidu/themeanimation/element/AnimatorDrawableElement;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 121
     iput-object p2, p0, Lcom/baidu/themeanimation/element/AnimatorDrawableElement$AnimatorDrawableKeyframe;->src:Ljava/lang/String;

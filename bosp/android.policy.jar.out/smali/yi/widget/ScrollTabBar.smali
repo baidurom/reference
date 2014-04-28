@@ -15,9 +15,9 @@
 
 
 # static fields
-.field private static final DEFAULT_SLID_DRAWABLE_RES_LAND:I = 0x5080275
+.field private static final DEFAULT_SLID_DRAWABLE_RES_LAND:I = 0x508028c
 
-.field private static final DEFAULT_SLID_DRAWABLE_RES_PORT:I = 0x5080275
+.field private static final DEFAULT_SLID_DRAWABLE_RES_PORT:I = 0x508028c
 
 .field private static final TAG:Ljava/lang/String; = "SrollTabBar"
 
@@ -28,7 +28,7 @@
 
     .prologue
     .line 41
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 81
     return-void

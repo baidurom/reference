@@ -223,7 +223,7 @@
 
     .prologue
     .line 52
-    iget-object v0, p0, Lcom/android/internal/telephony/PhoneBase;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/baidu/internal/telephony/sip/SipPhone;->mContext:Landroid/content/Context;
 
     return-object v0
 .end method

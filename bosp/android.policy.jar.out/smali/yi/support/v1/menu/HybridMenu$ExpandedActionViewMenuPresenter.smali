@@ -135,7 +135,7 @@
     invoke-virtual {v0, v1}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
     .line 617
-    iget-object v0, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenterVolatile;->mExpandedActionView:Landroid/view/View;
+    iget-object v0, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenter;->mExpandedActionView:Landroid/view/View;
 
     iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenter;->mOutAnimationFuture:Landroid/view/animation/Animation;
 
@@ -188,7 +188,7 @@
     invoke-virtual {p0}, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenter;->reloadVolatile()V
 
     .line 521
-    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenterVolatile;->mExpandedHomeLayout:Landroid/widget/FrameLayout;
+    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenter;->mExpandedHomeLayout:Landroid/widget/FrameLayout;
 
     iget-object v2, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenter;->mExpandedActionViewUpListener:Landroid/view/View$OnClickListener;
 
@@ -199,14 +199,14 @@
 
     move-result-object v1
 
-    iput-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenterVolatile;->mExpandedActionView:Landroid/view/View;
+    iput-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenter;->mExpandedActionView:Landroid/view/View;
 
     .line 523
     const/4 v0, 0x0
 
     .line 524
     .local v0, bSearchView:Z
-    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenterVolatile;->mExpandedActionView:Landroid/view/View;
+    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenter;->mExpandedActionView:Landroid/view/View;
 
     instance-of v1, v1, Lyi/widget/SearchView;
 
@@ -216,7 +216,7 @@
     const/4 v0, 0x1
 
     .line 527
-    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenterVolatile;->mExpandedActionView:Landroid/view/View;
+    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenter;->mExpandedActionView:Landroid/view/View;
 
     check-cast v1, Lyi/widget/SearchView;
 
@@ -229,17 +229,17 @@
     if-eqz v0, :cond_1
 
     .line 530
-    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenterVolatile;->mExpandedHomeLayout:Landroid/widget/FrameLayout;
+    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenter;->mExpandedHomeLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1, v6}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     .line 532
     :cond_1
-    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenterVolatile;->ActionBarView_this:Lcom/android/internal/widget/ActionBarView;
+    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenter;->ActionBarView_this:Lcom/android/internal/widget/ActionBarView;
 
     const-string v2, "mExpandedActionView"
 
-    iget-object v3, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenterVolatile;->mExpandedActionView:Landroid/view/View;
+    iget-object v3, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenter;->mExpandedActionView:Landroid/view/View;
 
     invoke-static {v1, v2, v3}, Lyi/support/v1/utils/Reflection;->setFieldValue(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)Z
 
@@ -247,13 +247,13 @@
     if-nez v0, :cond_2
 
     .line 535
-    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenterVolatile;->mExpandedHomeLayout:Landroid/widget/FrameLayout;
+    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenter;->mExpandedHomeLayout:Landroid/widget/FrameLayout;
 
     const-string v2, "setIcon"
 
     new-array v3, v7, [Ljava/lang/Object;
 
-    iget-object v4, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenterVolatile;->mIcon:Landroid/graphics/drawable/Drawable;
+    iget-object v4, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenter;->mIcon:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v4}, Landroid/graphics/drawable/Drawable;->getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
 
@@ -276,18 +276,18 @@
     iput-object p2, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenter;->mCurrentExpandedItem:Lcom/yi/internal/view/menu/MenuItemImpl;
 
     .line 537
-    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenterVolatile;->mExpandedActionView:Landroid/view/View;
+    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenter;->mExpandedActionView:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v1
 
-    iget-object v2, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenterVolatile;->ActionBarView_this:Lcom/android/internal/widget/ActionBarView;
+    iget-object v2, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenter;->ActionBarView_this:Lcom/android/internal/widget/ActionBarView;
 
     if-eq v1, v2, :cond_3
 
     .line 538
-    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenterVolatile;->mExpandedActionView:Landroid/view/View;
+    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenter;->mExpandedActionView:Landroid/view/View;
 
     invoke-virtual {p0, v1}, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenter;->addView(Landroid/view/View;)V
 
@@ -295,18 +295,18 @@
     :cond_3
     if-nez v0, :cond_4
 
-    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenterVolatile;->mExpandedHomeLayout:Landroid/widget/FrameLayout;
+    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenter;->mExpandedHomeLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
     move-result-object v1
 
-    iget-object v2, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenterVolatile;->ActionBarView_this:Lcom/android/internal/widget/ActionBarView;
+    iget-object v2, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenter;->ActionBarView_this:Lcom/android/internal/widget/ActionBarView;
 
     if-eq v1, v2, :cond_4
 
     .line 541
-    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenterVolatile;->mExpandedHomeLayout:Landroid/widget/FrameLayout;
+    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenter;->mExpandedHomeLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {p0, v1}, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenter;->addView(Landroid/view/View;)V
 
@@ -315,46 +315,46 @@
     if-nez v0, :cond_9
 
     .line 544
-    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenterVolatile;->mHomeLayout:Landroid/widget/FrameLayout;
+    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenter;->mHomeLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1, v6}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     .line 545
-    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenterVolatile;->mTitleLayout:Landroid/widget/LinearLayout;
+    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenter;->mTitleLayout:Landroid/widget/LinearLayout;
 
     if-eqz v1, :cond_5
 
-    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenterVolatile;->mTitleLayout:Landroid/widget/LinearLayout;
+    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenter;->mTitleLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {v1, v6}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
     .line 546
     :cond_5
-    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenterVolatile;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
+    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenter;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
 
     if-eqz v1, :cond_6
 
-    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenterVolatile;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
+    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenter;->mTabScrollView:Lcom/android/internal/widget/ScrollingTabContainerView;
 
     invoke-virtual {v1, v6}, Lcom/android/internal/widget/ScrollingTabContainerView;->setVisibility(I)V
 
     .line 547
     :cond_6
-    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenterVolatile;->mSpinner:Landroid/widget/Spinner;
+    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenter;->mSpinner:Landroid/widget/Spinner;
 
     if-eqz v1, :cond_7
 
-    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenterVolatile;->mSpinner:Landroid/widget/Spinner;
+    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenter;->mSpinner:Landroid/widget/Spinner;
 
     invoke-virtual {v1, v6}, Landroid/widget/Spinner;->setVisibility(I)V
 
     .line 548
     :cond_7
-    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenterVolatile;->mCustomNavView:Landroid/view/View;
+    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenter;->mCustomNavView:Landroid/view/View;
 
     if-eqz v1, :cond_8
 
-    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenterVolatile;->mCustomNavView:Landroid/view/View;
+    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenter;->mCustomNavView:Landroid/view/View;
 
     invoke-virtual {v1, v6}, Landroid/view/View;->setVisibility(I)V
 
@@ -367,7 +367,7 @@
     invoke-virtual {p2, v7}, Lcom/yi/internal/view/menu/MenuItemImpl;->setActionViewExpanded(Z)V
 
     .line 553
-    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenterVolatile;->mExpandedActionView:Landroid/view/View;
+    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenter;->mExpandedActionView:Landroid/view/View;
 
     instance-of v1, v1, Landroid/view/CollapsibleActionView;
 
@@ -377,13 +377,13 @@
     if-eqz v0, :cond_a
 
     .line 555
-    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenterVolatile;->mExpandedActionView:Landroid/view/View;
+    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenter;->mExpandedActionView:Landroid/view/View;
 
     invoke-virtual {p0}, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenter;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
-    const v3, 0x50800e8
+    const v3, 0x50800e9
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -392,7 +392,7 @@
     invoke-virtual {v1, v2}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 556
-    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenterVolatile;->mExpandedActionView:Landroid/view/View;
+    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenter;->mExpandedActionView:Landroid/view/View;
 
     iget-object v2, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenter;->mInAnimationFuture:Landroid/view/animation/Animation;
 
@@ -400,7 +400,7 @@
 
     .line 558
     :cond_a
-    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenterVolatile;->mExpandedActionView:Landroid/view/View;
+    iget-object v1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenter;->mExpandedActionView:Landroid/view/View;
 
     check-cast v1, Landroid/view/CollapsibleActionView;
 

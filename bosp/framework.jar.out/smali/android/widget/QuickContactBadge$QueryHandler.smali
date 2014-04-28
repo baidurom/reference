@@ -248,6 +248,8 @@
 
     move-result-object v7
 
+    #invoke-virtual {v7, v3}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+    
     iget-object v7, p0, Landroid/widget/QuickContactBadge$QueryHandler;->this$0:Landroid/widget/QuickContactBadge;
 
     #calls: Landroid/widget/QuickContactBadge;->showStrangeQuickContact(Landroid/net/Uri;)V

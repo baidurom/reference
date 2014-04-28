@@ -410,14 +410,14 @@
 
     if-lez v2, :cond_0
 
-    iget v2, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iget v2, v0, Landroid/widget/LinearLayout$LayoutParams;->width:I
 
     if-gtz v2, :cond_0
 
     .line 229
     iget v2, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    iput v2, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iput v2, v0, Landroid/widget/LinearLayout$LayoutParams;->width:I
 
     .line 232
     .end local v0           #iconLp:Landroid/widget/LinearLayout$LayoutParams;

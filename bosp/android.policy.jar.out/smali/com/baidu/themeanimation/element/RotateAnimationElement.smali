@@ -64,7 +64,7 @@
     invoke-static {v8, v9}, Lcom/baidu/themeanimation/util/Logger;->v(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 68
-    iget-object v8, p0, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v8, p0, Lcom/baidu/themeanimation/element/RotateAnimationElement;->mKeyFrames:Ljava/util/List;
 
     invoke-interface {v8}, Ljava/util/List;->size()I
 
@@ -81,7 +81,7 @@
 
     .line 73
     .local v4, index:I
-    iget-object v8, p0, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v8, p0, Lcom/baidu/themeanimation/element/RotateAnimationElement;->mKeyFrames:Ljava/util/List;
 
     invoke-interface {v8, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -112,7 +112,7 @@
     invoke-virtual {v7, v12}, Lcom/baidu/themeanimation/element/RotateAnimationElement$RotateKeyFrame;->setAngle(I)V
 
     .line 78
-    iget-object v8, p0, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v8, p0, Lcom/baidu/themeanimation/element/RotateAnimationElement;->mKeyFrames:Ljava/util/List;
 
     invoke-interface {v8, v12, v7}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
@@ -141,7 +141,7 @@
 
     .line 86
     .local v1, endTime:J
-    iget-object v8, p0, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v8, p0, Lcom/baidu/themeanimation/element/RotateAnimationElement;->mKeyFrames:Ljava/util/List;
 
     invoke-interface {v8}, Ljava/util/List;->size()I
 
@@ -154,7 +154,7 @@
     if-ltz v3, :cond_1
 
     .line 87
-    iget-object v8, p0, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v8, p0, Lcom/baidu/themeanimation/element/RotateAnimationElement;->mKeyFrames:Ljava/util/List;
 
     invoke-interface {v8, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -173,7 +173,7 @@
     if-gez v8, :cond_3
 
     .line 88
-    iget-object v8, p0, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v8, p0, Lcom/baidu/themeanimation/element/RotateAnimationElement;->mKeyFrames:Ljava/util/List;
 
     invoke-interface {v8, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -186,7 +186,7 @@
     move-result-wide v1
 
     .line 89
-    iget-object v8, p0, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v8, p0, Lcom/baidu/themeanimation/element/RotateAnimationElement;->mKeyFrames:Ljava/util/List;
 
     invoke-interface {v8}, Ljava/util/List;->size()I
 

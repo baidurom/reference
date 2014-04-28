@@ -95,7 +95,7 @@
     .line 42
     iget-object v1, p0, Lcom/baidu/service/power/TriggerFactory$2$1;->this$0:Lcom/baidu/service/power/TriggerFactory$2;
 
-    iget-object v1, v1, Lcom/baidu/service/power/Trigger;->mCondition:Lcom/baidu/service/power/TriggerCondition;
+    iget-object v1, v1, Lcom/baidu/service/power/TriggerFactory$2;->mCondition:Lcom/baidu/service/power/TriggerCondition;
 
     invoke-virtual {v1, v0}, Lcom/baidu/service/power/TriggerCondition;->onCheck(I)Z
 
@@ -113,7 +113,7 @@
     .line 44
     iget-object v1, p0, Lcom/baidu/service/power/TriggerFactory$2$1;->this$0:Lcom/baidu/service/power/TriggerFactory$2;
 
-    iget-object v1, v1, Lcom/baidu/service/power/BroadcastTrigger;->mIntent:Landroid/content/Intent;
+    iget-object v1, v1, Lcom/baidu/service/power/TriggerFactory$2;->mIntent:Landroid/content/Intent;
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 

@@ -30,7 +30,7 @@
     .line 98
     iput-object p1, p0, Lcom/baidu/service/power/PowerModeManager$2;->this$0:Lcom/baidu/service/power/PowerModeManager;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

@@ -57,7 +57,7 @@
     .line 402
     iput-object p1, p0, Lyi/support/v1/menu/HybridMenu$ExpandedActionViewMenuPresenterVolatile;->this$0:Lyi/support/v1/menu/HybridMenu;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 395
     const/4 v1, -0x1

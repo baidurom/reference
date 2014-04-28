@@ -247,13 +247,13 @@
     packed-switch p1, :pswitch_data_0
 
     .line 1699
-    :goto_0
+    :goto_baidu_0
     :pswitch_0
     invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v5
 
-    :goto_1
+    :goto_0
     return v5
 
     .line 116
@@ -337,7 +337,7 @@
 
     .line 128
     .local v14, profileFd:Landroid/os/ParcelFileDescriptor;
-    :goto_2
+    :goto_1
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
@@ -357,7 +357,7 @@
     move-object v15, v5
 
     .local v15, options:Landroid/os/Bundle;
-    :goto_3
+    :goto_2
     move-object/from16 v5, p0
 
     .line 130
@@ -379,7 +379,7 @@
     .line 135
     const/4 v5, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
     .line 126
     .end local v14           #profileFd:Landroid/os/ParcelFileDescriptor;
@@ -388,14 +388,14 @@
     :cond_0
     const/4 v14, 0x0
 
-    goto :goto_2
+    goto :goto_1
 
     .line 128
     .restart local v14       #profileFd:Landroid/os/ParcelFileDescriptor;
     :cond_1
     const/4 v15, 0x0
 
-    goto :goto_3
+    goto :goto_2
 
     .line 140
     .end local v6           #app:Landroid/app/IApplicationThread;
@@ -488,7 +488,7 @@
 
     .line 152
     .restart local v14       #profileFd:Landroid/os/ParcelFileDescriptor;
-    :goto_4
+    :goto_3
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
@@ -508,7 +508,7 @@
     move-object v15, v5
 
     .restart local v15       #options:Landroid/os/Bundle;
-    :goto_5
+    :goto_4
     move-object/from16 v5, p0
 
     .line 154
@@ -532,7 +532,7 @@
     .line 159
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 150
     .end local v14           #profileFd:Landroid/os/ParcelFileDescriptor;
@@ -541,14 +541,14 @@
     :cond_2
     const/4 v14, 0x0
 
-    goto :goto_4
+    goto :goto_3
 
     .line 152
     .restart local v14       #profileFd:Landroid/os/ParcelFileDescriptor;
     :cond_3
     const/4 v15, 0x0
 
-    goto :goto_5
+    goto :goto_4
 
     .line 164
     .end local v6           #app:Landroid/app/IApplicationThread;
@@ -654,7 +654,7 @@
     move-object v15, v5
 
     .restart local v15       #options:Landroid/os/Bundle;
-    :goto_6
+    :goto_5
     move-object/from16 v16, p0
 
     move-object/from16 v17, v6
@@ -692,7 +692,7 @@
     .line 180
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 174
     .end local v15           #options:Landroid/os/Bundle;
@@ -700,7 +700,7 @@
     :cond_4
     const/4 v15, 0x0
 
-    goto :goto_6
+    goto :goto_5
 
     .line 185
     .end local v6           #app:Landroid/app/IApplicationThread;
@@ -824,7 +824,7 @@
     move-object v15, v5
 
     .restart local v15       #options:Landroid/os/Bundle;
-    :goto_7
+    :goto_6
     move-object/from16 v25, p0
 
     move-object/from16 v26, v6
@@ -860,7 +860,7 @@
     .line 206
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 199
     .end local v15           #options:Landroid/os/Bundle;
@@ -868,7 +868,7 @@
     :cond_6
     const/4 v15, 0x0
 
-    goto :goto_7
+    goto :goto_6
 
     .line 211
     .end local v6           #app:Landroid/app/IApplicationThread;
@@ -927,7 +927,7 @@
 
     .line 216
     .restart local v15       #options:Landroid/os/Bundle;
-    :goto_8
+    :goto_7
     move-object/from16 v0, p0
 
     move-object/from16 v1, v104
@@ -945,7 +945,7 @@
 
     const/4 v5, 0x1
 
-    :goto_9
+    :goto_8
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v5}, Landroid/os/Parcel;->writeInt(I)V
@@ -953,7 +953,7 @@
     .line 219
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 214
     .end local v15           #options:Landroid/os/Bundle;
@@ -961,7 +961,7 @@
     :cond_7
     const/4 v15, 0x0
 
-    goto :goto_8
+    goto :goto_7
 
     .line 218
     .restart local v15       #options:Landroid/os/Bundle;
@@ -969,7 +969,7 @@
     :cond_8
     const/4 v5, 0x0
 
-    goto :goto_9
+    goto :goto_8
 
     .line 223
     .end local v7           #intent:Landroid/content/Intent;
@@ -1042,7 +1042,7 @@
 
     const/4 v5, 0x1
 
-    :goto_a
+    :goto_9
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v5}, Landroid/os/Parcel;->writeInt(I)V
@@ -1050,13 +1050,13 @@
     .line 233
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 232
     :cond_a
     const/4 v5, 0x0
 
-    goto :goto_a
+    goto :goto_9
 
     .line 237
     .end local v40           #resultCode:I
@@ -1101,7 +1101,7 @@
     .line 243
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 247
     .end local v10           #resultWho:Ljava/lang/String;
@@ -1138,7 +1138,7 @@
 
     const/4 v5, 0x1
 
-    :goto_b
+    :goto_a
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v5}, Landroid/os/Parcel;->writeInt(I)V
@@ -1146,13 +1146,13 @@
     .line 252
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 251
     :cond_b
     const/4 v5, 0x0
 
-    goto :goto_b
+    goto :goto_a
 
     .line 256
     .end local v49           #token:Landroid/os/IBinder;
@@ -1188,7 +1188,7 @@
 
     const/4 v5, 0x1
 
-    :goto_c
+    :goto_b
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v5}, Landroid/os/Parcel;->writeInt(I)V
@@ -1196,13 +1196,13 @@
     .line 261
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 260
     :cond_c
     const/4 v5, 0x0
 
-    goto :goto_c
+    goto :goto_b
 
     .line 266
     .end local v49           #token:Landroid/os/IBinder;
@@ -1229,7 +1229,7 @@
 
     .line 270
     .restart local v6       #app:Landroid/app/IApplicationThread;
-    :goto_d
+    :goto_c
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v18
@@ -1249,7 +1249,7 @@
 
     .line 274
     .local v19, rec:Landroid/content/IIntentReceiver;
-    :goto_e
+    :goto_d
     sget-object v5, Landroid/content/IntentFilter;->CREATOR:Landroid/os/Parcelable$Creator;
 
     move-object/from16 v0, p2
@@ -1298,10 +1298,10 @@
     invoke-virtual {v7, v0, v5}, Landroid/content/Intent;->writeToParcel(Landroid/os/Parcel;I)V
 
     .line 284
-    :goto_f
+    :goto_e
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 268
     .end local v6           #app:Landroid/app/IApplicationThread;
@@ -1313,7 +1313,7 @@
     :cond_d
     const/4 v6, 0x0
 
-    goto :goto_d
+    goto :goto_c
 
     .line 272
     .restart local v6       #app:Landroid/app/IApplicationThread;
@@ -1321,7 +1321,7 @@
     :cond_e
     const/16 v19, 0x0
 
-    goto :goto_e
+    goto :goto_d
 
     .line 282
     .restart local v7       #intent:Landroid/content/Intent;
@@ -1335,7 +1335,7 @@
 
     invoke-virtual {v0, v5}, Landroid/os/Parcel;->writeInt(I)V
 
-    goto :goto_f
+    goto :goto_e
 
     .line 289
     .end local v6           #app:Landroid/app/IApplicationThread;
@@ -1364,7 +1364,7 @@
     .line 292
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 294
     :cond_10
@@ -1386,7 +1386,7 @@
     .line 297
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 302
     .end local v19           #rec:Landroid/content/IIntentReceiver;
@@ -1413,7 +1413,7 @@
 
     .line 306
     .restart local v6       #app:Landroid/app/IApplicationThread;
-    :goto_10
+    :goto_f
     sget-object v5, Landroid/content/Intent;->CREATOR:Landroid/os/Parcelable$Creator;
 
     move-object/from16 v0, p2
@@ -1445,7 +1445,7 @@
 
     .line 311
     .local v9, resultTo:Landroid/content/IIntentReceiver;
-    :goto_11
+    :goto_10
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v40
@@ -1480,7 +1480,7 @@
 
     .line 316
     .local v44, serialized:Z
-    :goto_12
+    :goto_11
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
@@ -1491,7 +1491,7 @@
 
     .line 317
     .local v45, sticky:Z
-    :goto_13
+    :goto_12
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v46
@@ -1528,7 +1528,7 @@
     .line 323
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 304
     .end local v6           #app:Landroid/app/IApplicationThread;
@@ -1546,7 +1546,7 @@
     :cond_11
     const/4 v6, 0x0
 
-    goto :goto_10
+    goto :goto_f
 
     .line 309
     .restart local v6       #app:Landroid/app/IApplicationThread;
@@ -1555,7 +1555,7 @@
     :cond_12
     const/4 v9, 0x0
 
-    goto :goto_11
+    goto :goto_10
 
     .line 315
     .restart local v9       #resultTo:Landroid/content/IIntentReceiver;
@@ -1566,14 +1566,14 @@
     :cond_13
     const/16 v44, 0x0
 
-    goto :goto_12
+    goto :goto_11
 
     .line 316
     .restart local v44       #serialized:Z
     :cond_14
     const/16 v45, 0x0
 
-    goto :goto_13
+    goto :goto_12
 
     .line 328
     .end local v6           #app:Landroid/app/IApplicationThread;
@@ -1608,7 +1608,7 @@
 
     .line 331
     .restart local v6       #app:Landroid/app/IApplicationThread;
-    :goto_14
+    :goto_13
     sget-object v5, Landroid/content/Intent;->CREATOR:Landroid/os/Parcelable$Creator;
 
     move-object/from16 v0, p2
@@ -1639,7 +1639,7 @@
     .line 335
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 330
     .end local v6           #app:Landroid/app/IApplicationThread;
@@ -1648,7 +1648,7 @@
     :cond_15
     const/4 v6, 0x0
 
-    goto :goto_14
+    goto :goto_13
 
     .line 339
     .end local v100           #b:Landroid/os/IBinder;
@@ -1694,7 +1694,7 @@
 
     .line 345
     .local v43, resultAbort:Z
-    :goto_15
+    :goto_14
     if-eqz v39, :cond_16
 
     move-object/from16 v38, p0
@@ -1709,14 +1709,14 @@
     .line 349
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 344
     .end local v43           #resultAbort:Z
     :cond_17
     const/16 v43, 0x0
 
-    goto :goto_15
+    goto :goto_14
 
     .line 353
     .end local v39           #who:Landroid/os/IBinder;
@@ -1755,7 +1755,7 @@
     .line 360
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 364
     .end local v6           #app:Landroid/app/IApplicationThread;
@@ -1808,7 +1808,7 @@
 
     .line 371
     .local v166, stopProfiling:Z
-    :goto_16
+    :goto_15
     if-eqz v49, :cond_1a
 
     .line 372
@@ -1829,14 +1829,14 @@
     .line 375
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 370
     .end local v166           #stopProfiling:Z
     :cond_1b
     const/16 v166, 0x0
 
-    goto :goto_16
+    goto :goto_15
 
     .line 379
     .end local v24           #config:Landroid/content/res/Configuration;
@@ -1867,7 +1867,7 @@
     .line 383
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 387
     .end local v49           #token:Landroid/os/IBinder;
@@ -1911,7 +1911,7 @@
 
     .line 392
     .local v173, thumbnail:Landroid/graphics/Bitmap;
-    :goto_17
+    :goto_16
     sget-object v5, Landroid/text/TextUtils;->CHAR_SEQUENCE_CREATOR:Landroid/os/Parcelable$Creator;
 
     move-object/from16 v0, p2
@@ -1942,7 +1942,7 @@
     .line 395
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 390
     .end local v111           #description:Ljava/lang/CharSequence;
@@ -1950,7 +1950,7 @@
     :cond_1c
     const/16 v173, 0x0
 
-    goto :goto_17
+    goto :goto_16
 
     .line 399
     .end local v49           #token:Landroid/os/IBinder;
@@ -1981,7 +1981,7 @@
     .line 403
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 407
     .end local v49           #token:Landroid/os/IBinder;
@@ -2011,7 +2011,7 @@
     .line 411
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 415
     .end local v49           #token:Landroid/os/IBinder;
@@ -2041,7 +2041,7 @@
 
     .line 418
     .local v159, res:Ljava/lang/String;
-    :goto_18
+    :goto_17
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 419
@@ -2054,14 +2054,14 @@
     .line 420
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 417
     .end local v159           #res:Ljava/lang/String;
     :cond_1d
     const/16 v159, 0x0
 
-    goto :goto_18
+    goto :goto_17
 
     .line 424
     .end local v49           #token:Landroid/os/IBinder;
@@ -2101,7 +2101,7 @@
     .line 429
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 433
     .end local v49           #token:Landroid/os/IBinder;
@@ -2140,7 +2140,7 @@
 
     .line 440
     .local v155, receiver:Landroid/app/IThumbnailReceiver;
-    :goto_19
+    :goto_18
     move-object/from16 v0, p0
 
     move/from16 v1, v134
@@ -2166,7 +2166,7 @@
 
     .line 443
     .local v94, N:I
-    :goto_1a
+    :goto_19
     move-object/from16 v0, p3
 
     move/from16 v1, v94
@@ -2177,7 +2177,7 @@
     const/16 v117, 0x0
 
     .local v117, i:I
-    :goto_1b
+    :goto_1a
     move/from16 v0, v117
 
     move/from16 v1, v94
@@ -2208,7 +2208,7 @@
     .line 445
     add-int/lit8 v117, v117, 0x1
 
-    goto :goto_1b
+    goto :goto_1a
 
     .line 437
     .end local v94           #N:I
@@ -2219,7 +2219,7 @@
     :cond_1e
     const/16 v155, 0x0
 
-    goto :goto_19
+    goto :goto_18
 
     .line 442
     .restart local v126       #list:Ljava/util/List;
@@ -2227,7 +2227,7 @@
     :cond_1f
     const/16 v94, -0x1
 
-    goto :goto_1a
+    goto :goto_19
 
     .line 450
     .restart local v94       #N:I
@@ -2235,7 +2235,7 @@
     :cond_20
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 454
     .end local v59           #fl:I
@@ -2289,7 +2289,7 @@
     .line 461
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 465
     .end local v59           #fl:I
@@ -2341,10 +2341,10 @@
     invoke-virtual {v0, v1, v5}, Landroid/app/ActivityManager$TaskThumbnails;->writeToParcel(Landroid/os/Parcel;I)V
 
     .line 475
-    :goto_1c
+    :goto_1b
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 473
     :cond_21
@@ -2354,7 +2354,7 @@
 
     invoke-virtual {v0, v5}, Landroid/os/Parcel;->writeInt(I)V
 
-    goto :goto_1c
+    goto :goto_1b
 
     .line 479
     .end local v50           #id:I
@@ -2402,7 +2402,7 @@
 
     .line 485
     .restart local v94       #N:I
-    :goto_1d
+    :goto_1c
     move-object/from16 v0, p3
 
     move/from16 v1, v94
@@ -2413,7 +2413,7 @@
     const/16 v117, 0x0
 
     .restart local v117       #i:I
-    :goto_1e
+    :goto_1d
     move/from16 v0, v117
 
     move/from16 v1, v94
@@ -2444,7 +2444,7 @@
     .line 487
     add-int/lit8 v117, v117, 0x1
 
-    goto :goto_1e
+    goto :goto_1d
 
     .line 484
     .end local v94           #N:I
@@ -2453,7 +2453,7 @@
     :cond_22
     const/16 v94, -0x1
 
-    goto :goto_1d
+    goto :goto_1c
 
     .line 492
     .restart local v94       #N:I
@@ -2461,7 +2461,7 @@
     :cond_23
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 496
     .end local v59           #fl:I
@@ -2495,7 +2495,7 @@
     .line 500
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 504
     .end local v127           #list:Ljava/util/List;,"Ljava/util/List<Landroid/app/ActivityManager$ProcessErrorStateInfo;>;"
@@ -2525,7 +2525,7 @@
     .line 508
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 512
     .end local v129           #list:Ljava/util/List;,"Ljava/util/List<Landroid/app/ActivityManager$RunningAppProcessInfo;>;"
@@ -2555,7 +2555,7 @@
     .line 516
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 520
     .end local v130           #list:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ApplicationInfo;>;"
@@ -2599,7 +2599,7 @@
 
     .line 525
     .restart local v15       #options:Landroid/os/Bundle;
-    :goto_1f
+    :goto_1e
     move-object/from16 v0, p0
 
     move/from16 v1, v171
@@ -2614,14 +2614,14 @@
     .line 527
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 523
     .end local v15           #options:Landroid/os/Bundle;
     :cond_24
     const/4 v15, 0x0
 
-    goto :goto_1f
+    goto :goto_1e
 
     .line 531
     .end local v59           #fl:I
@@ -2652,7 +2652,7 @@
     .line 535
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 539
     .end local v171           #task:I
@@ -2680,7 +2680,7 @@
 
     .line 542
     .local v140, nonRoot:Z
-    :goto_20
+    :goto_1f
     move-object/from16 v0, p0
 
     move-object/from16 v1, v49
@@ -2700,7 +2700,7 @@
 
     const/4 v5, 0x1
 
-    :goto_21
+    :goto_20
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v5}, Landroid/os/Parcel;->writeInt(I)V
@@ -2708,7 +2708,7 @@
     .line 545
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 541
     .end local v140           #nonRoot:Z
@@ -2716,7 +2716,7 @@
     :cond_25
     const/16 v140, 0x0
 
-    goto :goto_20
+    goto :goto_1f
 
     .line 544
     .restart local v140       #nonRoot:Z
@@ -2724,7 +2724,7 @@
     :cond_26
     const/4 v5, 0x0
 
-    goto :goto_21
+    goto :goto_20
 
     .line 549
     .end local v49           #token:Landroid/os/IBinder;
@@ -2756,7 +2756,7 @@
     .line 553
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 557
     .end local v171           #task:I
@@ -2784,7 +2784,7 @@
 
     .line 560
     .local v142, onlyRoot:Z
-    :goto_22
+    :goto_21
     if-eqz v49, :cond_28
 
     move-object/from16 v0, p0
@@ -2799,7 +2799,7 @@
 
     .line 562
     .local v159, res:I
-    :goto_23
+    :goto_22
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 563
@@ -2812,7 +2812,7 @@
     .line 564
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 559
     .end local v142           #onlyRoot:Z
@@ -2820,14 +2820,14 @@
     :cond_27
     const/16 v142, 0x0
 
-    goto :goto_22
+    goto :goto_21
 
     .line 560
     .restart local v142       #onlyRoot:Z
     :cond_28
     const/16 v159, -0x1
 
-    goto :goto_23
+    goto :goto_22
 
     .line 568
     .end local v49           #token:Landroid/os/IBinder;
@@ -2866,7 +2866,7 @@
 
     .line 572
     .restart local v173       #thumbnail:Landroid/graphics/Bitmap;
-    :goto_24
+    :goto_23
     sget-object v5, Landroid/text/TextUtils;->CHAR_SEQUENCE_CREATOR:Landroid/os/Parcelable$Creator;
 
     move-object/from16 v0, p2
@@ -2895,7 +2895,7 @@
     .line 575
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 570
     .end local v111           #description:Ljava/lang/CharSequence;
@@ -2903,7 +2903,7 @@
     :cond_29
     const/16 v173, 0x0
 
-    goto :goto_24
+    goto :goto_23
 
     .line 579
     .end local v49           #token:Landroid/os/IBinder;
@@ -2943,7 +2943,7 @@
 
     .line 584
     .local v164, stable:Z
-    :goto_25
+    :goto_24
     move-object/from16 v0, p0
 
     move-object/from16 v1, v139
@@ -2978,10 +2978,10 @@
     invoke-virtual {v0, v1, v5}, Landroid/app/IActivityManager$ContentProviderHolder;->writeToParcel(Landroid/os/Parcel;I)V
 
     .line 592
-    :goto_26
+    :goto_25
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 583
     .end local v110           #cph:Landroid/app/IActivityManager$ContentProviderHolder;
@@ -2989,7 +2989,7 @@
     :cond_2a
     const/16 v164, 0x0
 
-    goto :goto_25
+    goto :goto_24
 
     .line 590
     .restart local v110       #cph:Landroid/app/IActivityManager$ContentProviderHolder;
@@ -3001,7 +3001,7 @@
 
     invoke-virtual {v0, v5}, Landroid/os/Parcel;->writeInt(I)V
 
-    goto :goto_26
+    goto :goto_25
 
     .line 596
     .end local v6           #app:Landroid/app/IApplicationThread;
@@ -3063,10 +3063,10 @@
     invoke-virtual {v0, v1, v5}, Landroid/app/IActivityManager$ContentProviderHolder;->writeToParcel(Landroid/os/Parcel;I)V
 
     .line 607
-    :goto_27
+    :goto_26
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 605
     :cond_2c
@@ -3076,7 +3076,7 @@
 
     invoke-virtual {v0, v5}, Landroid/os/Parcel;->writeInt(I)V
 
-    goto :goto_27
+    goto :goto_26
 
     .line 611
     .end local v49           #token:Landroid/os/IBinder;
@@ -3124,7 +3124,7 @@
     .line 618
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 622
     .end local v6           #app:Landroid/app/IApplicationThread;
@@ -3177,7 +3177,7 @@
 
     const/4 v5, 0x1
 
-    :goto_28
+    :goto_27
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v5}, Landroid/os/Parcel;->writeInt(I)V
@@ -3185,13 +3185,13 @@
     .line 629
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 628
     :cond_2d
     const/4 v5, 0x0
 
-    goto :goto_28
+    goto :goto_27
 
     .line 633
     .end local v100           #b:Landroid/os/IBinder;
@@ -3224,7 +3224,7 @@
     .line 637
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 641
     .end local v100           #b:Landroid/os/IBinder;
@@ -3252,7 +3252,7 @@
 
     .line 644
     .local v164, stable:Z
-    :goto_29
+    :goto_28
     move-object/from16 v0, p0
 
     move-object/from16 v1, v100
@@ -3267,14 +3267,14 @@
     .line 646
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 643
     .end local v164           #stable:Z
     :cond_2e
     const/16 v164, 0x0
 
-    goto :goto_29
+    goto :goto_28
 
     .line 650
     .end local v100           #b:Landroid/os/IBinder;
@@ -3312,7 +3312,7 @@
     .line 655
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 659
     .end local v49           #token:Landroid/os/IBinder;
@@ -3359,7 +3359,7 @@
     .line 664
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 668
     .end local v109           #comp:Landroid/content/ComponentName;
@@ -3424,7 +3424,7 @@
     .line 676
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 680
     .end local v6           #app:Landroid/app/IApplicationThread;
@@ -3492,7 +3492,7 @@
     .line 688
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 692
     .end local v6           #app:Landroid/app/IApplicationThread;
@@ -3547,7 +3547,7 @@
 
     const/4 v5, 0x1
 
-    :goto_2a
+    :goto_29
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v5}, Landroid/os/Parcel;->writeInt(I)V
@@ -3555,13 +3555,13 @@
     .line 699
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 698
     :cond_2f
     const/4 v5, 0x0
 
-    goto :goto_2a
+    goto :goto_29
 
     .line 703
     .end local v48           #className:Landroid/content/ComponentName;
@@ -3628,7 +3628,7 @@
     const/16 v52, 0x1
 
     .local v52, removeNotification:Z
-    :goto_2b
+    :goto_2a
     move-object/from16 v47, p0
 
     .line 712
@@ -3640,14 +3640,14 @@
     .line 714
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 711
     .end local v52           #removeNotification:Z
     :cond_31
     const/16 v52, 0x0
 
-    goto :goto_2b
+    goto :goto_2a
 
     .line 718
     .end local v48           #className:Landroid/content/ComponentName;
@@ -3749,7 +3749,7 @@
     .line 731
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 735
     .end local v6           #app:Landroid/app/IApplicationThread;
@@ -3798,7 +3798,7 @@
 
     const/4 v5, 0x1
 
-    :goto_2c
+    :goto_2b
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v5}, Landroid/os/Parcel;->writeInt(I)V
@@ -3806,13 +3806,13 @@
     .line 741
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 740
     :cond_32
     const/4 v5, 0x0
 
-    goto :goto_2c
+    goto :goto_2b
 
     .line 745
     .end local v58           #conn:Landroid/app/IServiceConnection;
@@ -3864,7 +3864,7 @@
     .line 751
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 755
     .end local v7           #intent:Landroid/content/Intent;
@@ -3906,7 +3906,7 @@
 
     .line 759
     .local v113, doRebind:Z
-    :goto_2d
+    :goto_2c
     move-object/from16 v0, p0
 
     move-object/from16 v1, v49
@@ -3921,14 +3921,14 @@
     .line 761
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 758
     .end local v113           #doRebind:Z
     :cond_33
     const/16 v113, 0x0
 
-    goto :goto_2d
+    goto :goto_2c
 
     .line 765
     .end local v7           #intent:Landroid/content/Intent;
@@ -3983,7 +3983,7 @@
     .line 772
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 776
     .end local v49           #token:Landroid/os/IBinder;
@@ -4055,7 +4055,7 @@
 
     const/4 v5, 0x1
 
-    :goto_2e
+    :goto_2d
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v5}, Landroid/os/Parcel;->writeInt(I)V
@@ -4063,13 +4063,13 @@
     .line 786
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 785
     :cond_34
     const/4 v5, 0x0
 
-    goto :goto_2e
+    goto :goto_2d
 
     .line 791
     .end local v13           #profileFile:Ljava/lang/String;
@@ -4125,7 +4125,7 @@
     .line 798
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 802
     .end local v6           #app:Landroid/app/IApplicationThread;
@@ -4160,7 +4160,7 @@
     .line 806
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 810
     .end local v24           #config:Landroid/content/res/Configuration;
@@ -4196,7 +4196,7 @@
     .line 814
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 818
     .end local v24           #config:Landroid/content/res/Configuration;
@@ -4234,7 +4234,7 @@
     .line 823
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 827
     .end local v49           #token:Landroid/os/IBinder;
@@ -4275,7 +4275,7 @@
     .line 832
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 836
     .end local v49           #token:Landroid/os/IBinder;
@@ -4316,7 +4316,7 @@
     .line 841
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 845
     .end local v49           #token:Landroid/os/IBinder;
@@ -4353,7 +4353,7 @@
     .line 849
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 853
     .end local v49           #token:Landroid/os/IBinder;
@@ -4420,7 +4420,7 @@
 
     .line 868
     .local v73, requestResolvedTypes:[Ljava/lang/String;
-    :goto_2f
+    :goto_2e
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v59
@@ -4446,7 +4446,7 @@
     move-object v15, v5
 
     .restart local v15       #options:Landroid/os/Bundle;
-    :goto_30
+    :goto_2f
     move-object/from16 v66, p0
 
     move-object/from16 v68, v18
@@ -4477,7 +4477,7 @@
 
     move-result-object v5
 
-    :goto_31
+    :goto_30
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v5}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
@@ -4485,7 +4485,7 @@
     .line 876
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 865
     .end local v15           #options:Landroid/os/Bundle;
@@ -4501,14 +4501,14 @@
     const/16 v73, 0x0
 
     .restart local v73       #requestResolvedTypes:[Ljava/lang/String;
-    goto :goto_2f
+    goto :goto_2e
 
     .line 869
     .restart local v59       #fl:I
     :cond_36
     const/4 v15, 0x0
 
-    goto :goto_30
+    goto :goto_2f
 
     .line 875
     .restart local v15       #options:Landroid/os/Bundle;
@@ -4516,7 +4516,7 @@
     :cond_37
     const/4 v5, 0x0
 
-    goto :goto_31
+    goto :goto_30
 
     .line 880
     .end local v10           #resultWho:Ljava/lang/String;
@@ -4559,7 +4559,7 @@
     .line 885
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 889
     .end local v153           #r:Landroid/content/IIntentSender;
@@ -4603,7 +4603,7 @@
     .line 895
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 899
     .end local v153           #r:Landroid/content/IIntentSender;
@@ -4648,7 +4648,7 @@
     .line 905
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 909
     .end local v153           #r:Landroid/content/IIntentSender;
@@ -4679,7 +4679,7 @@
     .line 913
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 917
     .end local v133           #max:I
@@ -4709,7 +4709,7 @@
     .line 921
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 925
     .end local v125           #limit:I
@@ -4743,7 +4743,7 @@
 
     .line 929
     .local v123, isForeground:Z
-    :goto_32
+    :goto_31
     move-object/from16 v0, p0
 
     move-object/from16 v1, v49
@@ -4760,14 +4760,14 @@
     .line 931
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 928
     .end local v123           #isForeground:Z
     :cond_38
     const/16 v123, 0x0
 
-    goto :goto_32
+    goto :goto_31
 
     .line 935
     .end local v49           #token:Landroid/os/IBinder;
@@ -4824,7 +4824,7 @@
     .line 942
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 946
     .end local v21           #perm:Ljava/lang/String;
@@ -4897,7 +4897,7 @@
     .line 954
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 958
     .end local v81           #uid:I
@@ -4956,7 +4956,7 @@
 
     const/4 v5, 0x1
 
-    :goto_33
+    :goto_32
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v5}, Landroid/os/Parcel;->writeInt(I)V
@@ -4964,13 +4964,13 @@
     .line 966
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 965
     :cond_39
     const/4 v5, 0x0
 
-    goto :goto_33
+    goto :goto_32
 
     .line 970
     .end local v18           #packageName:Ljava/lang/String;
@@ -5037,7 +5037,7 @@
     .line 978
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 982
     .end local v6           #app:Landroid/app/IApplicationThread;
@@ -5097,7 +5097,7 @@
     .line 989
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 993
     .end local v6           #app:Landroid/app/IApplicationThread;
@@ -5134,7 +5134,7 @@
 
     .line 997
     .local v178, waiting:Z
-    :goto_34
+    :goto_33
     move-object/from16 v0, p0
 
     move/from16 v1, v178
@@ -5147,14 +5147,14 @@
     .line 999
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 996
     .end local v178           #waiting:Z
     :cond_3a
     const/16 v178, 0x0
 
-    goto :goto_34
+    goto :goto_33
 
     .line 1003
     .end local v6           #app:Landroid/app/IApplicationThread;
@@ -5194,7 +5194,7 @@
     .line 1008
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1012
     .end local v136           #mi:Landroid/app/ActivityManager$MemoryInfo;
@@ -5214,7 +5214,7 @@
     .line 1015
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1019
     :pswitch_4c
@@ -5267,10 +5267,10 @@
     invoke-virtual {v0, v1, v5}, Landroid/os/ParcelFileDescriptor;->writeToParcel(Landroid/os/Parcel;I)V
 
     .line 1029
-    :goto_35
+    :goto_34
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1027
     :cond_3b
@@ -5280,7 +5280,7 @@
 
     invoke-virtual {v0, v5}, Landroid/os/Parcel;->writeInt(I)V
 
-    goto :goto_35
+    goto :goto_34
 
     .line 1033
     .end local v86           #uri:Landroid/net/Uri;
@@ -5301,7 +5301,7 @@
     .line 1036
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1040
     :pswitch_4e
@@ -5320,7 +5320,7 @@
     .line 1043
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1047
     :pswitch_4f
@@ -5339,7 +5339,7 @@
 
     const/4 v5, 0x1
 
-    :goto_36
+    :goto_35
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v5}, Landroid/app/ActivityManagerNative;->setLockScreenShown(Z)V
@@ -5350,13 +5350,13 @@
     .line 1050
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1048
     :cond_3c
     const/4 v5, 0x0
 
-    goto :goto_36
+    goto :goto_35
 
     .line 1054
     :pswitch_50
@@ -5383,7 +5383,7 @@
 
     .line 1057
     .local v180, wfd:Z
-    :goto_37
+    :goto_36
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
@@ -5394,7 +5394,7 @@
 
     .line 1058
     .local v143, per:Z
-    :goto_38
+    :goto_37
     move-object/from16 v0, p0
 
     move-object/from16 v1, v149
@@ -5411,7 +5411,7 @@
     .line 1060
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1056
     .end local v143           #per:Z
@@ -5419,14 +5419,14 @@
     :cond_3d
     const/16 v180, 0x0
 
-    goto :goto_37
+    goto :goto_36
 
     .line 1057
     .restart local v180       #wfd:Z
     :cond_3e
     const/16 v143, 0x0
 
-    goto :goto_38
+    goto :goto_37
 
     .line 1064
     .end local v149           #pn:Ljava/lang/String;
@@ -5449,7 +5449,7 @@
 
     .line 1066
     .local v114, enabled:Z
-    :goto_39
+    :goto_38
     move-object/from16 v0, p0
 
     move/from16 v1, v114
@@ -5462,14 +5462,14 @@
     .line 1068
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1065
     .end local v114           #enabled:Z
     :cond_3f
     const/16 v114, 0x0
 
-    goto :goto_39
+    goto :goto_38
 
     .line 1072
     :pswitch_52
@@ -5499,7 +5499,7 @@
     .line 1076
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1080
     .end local v179           #watcher:Landroid/app/IActivityController;
@@ -5519,7 +5519,7 @@
     .line 1083
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1087
     :pswitch_54
@@ -5552,7 +5552,7 @@
     .line 1092
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1096
     .end local v122           #is:Landroid/content/IIntentSender;
@@ -5586,7 +5586,7 @@
 
     .line 1100
     .local v162, secure:Z
-    :goto_3a
+    :goto_39
     move-object/from16 v0, p0
 
     move-object/from16 v1, v147
@@ -5608,7 +5608,7 @@
 
     const/4 v5, 0x1
 
-    :goto_3b
+    :goto_3a
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v5}, Landroid/os/Parcel;->writeInt(I)V
@@ -5616,7 +5616,7 @@
     .line 1103
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1099
     .end local v159           #res:Z
@@ -5624,7 +5624,7 @@
     :cond_40
     const/16 v162, 0x0
 
-    goto :goto_3a
+    goto :goto_39
 
     .line 1102
     .restart local v159       #res:Z
@@ -5632,7 +5632,7 @@
     :cond_41
     const/4 v5, 0x0
 
-    goto :goto_3b
+    goto :goto_3a
 
     .line 1107
     .end local v147           #pids:[I
@@ -5670,7 +5670,7 @@
 
     const/4 v5, 0x1
 
-    :goto_3c
+    :goto_3b
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v5}, Landroid/os/Parcel;->writeInt(I)V
@@ -5678,13 +5678,13 @@
     .line 1112
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1111
     :cond_42
     const/4 v5, 0x0
 
-    goto :goto_3c
+    goto :goto_3b
 
     .line 1116
     .end local v154           #reason:Ljava/lang/String;
@@ -5739,7 +5739,7 @@
     .line 1123
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1127
     .end local v95           #action:Ljava/lang/String;
@@ -5782,7 +5782,7 @@
     .line 1132
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1136
     .end local v6           #app:Landroid/os/IBinder;
@@ -5836,7 +5836,7 @@
 
     const/4 v5, 0x1
 
-    :goto_3d
+    :goto_3c
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v5}, Landroid/os/Parcel;->writeInt(I)V
@@ -5844,13 +5844,13 @@
     .line 1143
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1142
     :cond_43
     const/4 v5, 0x0
 
-    goto :goto_3d
+    goto :goto_3c
 
     .line 1147
     .end local v6           #app:Landroid/os/IBinder;
@@ -5901,7 +5901,7 @@
     .line 1153
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1157
     .end local v6           #app:Landroid/os/IBinder;
@@ -5933,7 +5933,7 @@
     .line 1161
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1165
     .end local v163           #sig:I
@@ -5963,7 +5963,7 @@
     .line 1169
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1173
     .end local v18           #packageName:Ljava/lang/String;
@@ -5983,7 +5983,7 @@
     .line 1176
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1180
     :pswitch_5e
@@ -6012,7 +6012,7 @@
     .line 1184
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1188
     .end local v18           #packageName:Ljava/lang/String;
@@ -6051,7 +6051,7 @@
     .line 1194
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1198
     .end local v120           #info:Landroid/app/ActivityManager$RunningAppProcessInfo;
@@ -6083,7 +6083,7 @@
     .line 1202
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1206
     .end local v24           #config:Landroid/content/pm/ConfigurationInfo;
@@ -6111,7 +6111,7 @@
 
     .line 1209
     .local v76, start:Z
-    :goto_3e
+    :goto_3d
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v79
@@ -6135,7 +6135,7 @@
     move-result-object v78
 
     .local v78, fd:Landroid/os/ParcelFileDescriptor;
-    :goto_3f
+    :goto_3e
     move-object/from16 v74, p0
 
     .line 1213
@@ -6152,7 +6152,7 @@
 
     const/4 v5, 0x1
 
-    :goto_40
+    :goto_3f
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v5}, Landroid/os/Parcel;->writeInt(I)V
@@ -6160,7 +6160,7 @@
     .line 1216
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1208
     .end local v76           #start:Z
@@ -6171,7 +6171,7 @@
     :cond_44
     const/16 v76, 0x0
 
-    goto :goto_3e
+    goto :goto_3d
 
     .line 1211
     .restart local v76       #start:Z
@@ -6180,7 +6180,7 @@
     :cond_45
     const/16 v78, 0x0
 
-    goto :goto_3f
+    goto :goto_3e
 
     .line 1215
     .restart local v78       #fd:Landroid/os/ParcelFileDescriptor;
@@ -6188,7 +6188,7 @@
     :cond_46
     const/4 v5, 0x0
 
-    goto :goto_40
+    goto :goto_3f
 
     .line 1220
     .end local v75           #process:Ljava/lang/String;
@@ -6224,7 +6224,7 @@
 
     const/4 v5, 0x1
 
-    :goto_41
+    :goto_40
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v5}, Landroid/os/Parcel;->writeInt(I)V
@@ -6232,13 +6232,13 @@
     .line 1224
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1223
     :cond_47
     const/4 v5, 0x0
 
-    goto :goto_41
+    goto :goto_40
 
     .line 1228
     .end local v159           #res:Z
@@ -6258,7 +6258,7 @@
     .line 1231
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1235
     :pswitch_64
@@ -6277,7 +6277,7 @@
     .line 1238
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1242
     :pswitch_65
@@ -6328,7 +6328,7 @@
     .line 1248
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1252
     .end local v8           #resolvedType:Ljava/lang/String;
@@ -6379,7 +6379,7 @@
 
     const/4 v5, 0x1
 
-    :goto_42
+    :goto_41
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v5}, Landroid/os/Parcel;->writeInt(I)V
@@ -6387,13 +6387,13 @@
     .line 1258
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1257
     :cond_48
     const/4 v5, 0x0
 
-    goto :goto_42
+    goto :goto_41
 
     .line 1262
     .end local v101           #backupRestoreMode:I
@@ -6433,7 +6433,7 @@
     .line 1267
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1271
     .end local v18           #packageName:Ljava/lang/String;
@@ -6470,7 +6470,7 @@
     .line 1275
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1280
     .end local v120           #info:Landroid/content/pm/ApplicationInfo;
@@ -6549,7 +6549,7 @@
     move-object v15, v5
 
     .restart local v15       #options:Landroid/os/Bundle;
-    :goto_43
+    :goto_42
     move-object/from16 v80, p0
 
     move-object/from16 v82, v7
@@ -6585,7 +6585,7 @@
     .line 1294
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1288
     .end local v15           #options:Landroid/os/Bundle;
@@ -6593,7 +6593,7 @@
     :cond_49
     const/4 v15, 0x0
 
-    goto :goto_43
+    goto :goto_42
 
     .line 1298
     .end local v7           #intent:Landroid/content/Intent;
@@ -6637,7 +6637,7 @@
     .line 1303
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1307
     .end local v81           #uid:I
@@ -6668,7 +6668,7 @@
     .line 1311
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1315
     .end local v154           #reason:Ljava/lang/String;
@@ -6710,7 +6710,7 @@
     .line 1320
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1324
     .end local v147           #pids:[I
@@ -6749,7 +6749,7 @@
     .line 1329
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1333
     .end local v81           #uid:I
@@ -6804,7 +6804,7 @@
     .line 1340
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1344
     .end local v18           #packageName:Ljava/lang/String;
@@ -6832,7 +6832,7 @@
 
     const/4 v5, 0x1
 
-    :goto_44
+    :goto_43
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v5}, Landroid/os/Parcel;->writeInt(I)V
@@ -6840,13 +6840,13 @@
     .line 1348
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1347
     :cond_4a
     const/4 v5, 0x0
 
-    goto :goto_44
+    goto :goto_43
 
     .line 1352
     .end local v98           #areThey:Z
@@ -6866,7 +6866,7 @@
     .line 1355
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1359
     :pswitch_71
@@ -6900,7 +6900,7 @@
 
     const/4 v5, 0x1
 
-    :goto_45
+    :goto_44
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v5}, Landroid/os/Parcel;->writeInt(I)V
@@ -6908,13 +6908,13 @@
     .line 1364
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1363
     :cond_4b
     const/4 v5, 0x0
 
-    goto :goto_45
+    goto :goto_44
 
     .line 1368
     .end local v49           #token:Landroid/os/IBinder;
@@ -6947,7 +6947,7 @@
 
     .line 1371
     .local v118, imm:Z
-    :goto_46
+    :goto_45
     move-object/from16 v0, p0
 
     move-object/from16 v1, v49
@@ -6962,14 +6962,14 @@
     .line 1373
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1370
     .end local v118           #imm:Z
     :cond_4c
     const/16 v118, 0x0
 
-    goto :goto_46
+    goto :goto_45
 
     .line 1377
     .end local v49           #token:Landroid/os/IBinder;
@@ -6994,7 +6994,7 @@
 
     const/4 v5, 0x1
 
-    :goto_47
+    :goto_46
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v5}, Landroid/os/Parcel;->writeInt(I)V
@@ -7002,13 +7002,13 @@
     .line 1381
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1380
     :cond_4d
     const/4 v5, 0x0
 
-    goto :goto_47
+    goto :goto_46
 
     .line 1385
     .end local v124           #isit:Z
@@ -7062,7 +7062,7 @@
     .line 1392
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1396
     .end local v18           #packageName:Ljava/lang/String;
@@ -7111,7 +7111,7 @@
     .line 1401
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1405
     .end local v67           #type:Ljava/lang/String;
@@ -7152,7 +7152,7 @@
     .line 1410
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1414
     .end local v21           #perm:Landroid/os/IBinder;
@@ -7211,7 +7211,7 @@
     .line 1422
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1426
     .end local v83           #owner:Landroid/os/IBinder;
@@ -7274,7 +7274,7 @@
     .line 1435
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1439
     .end local v83           #owner:Landroid/os/IBinder;
@@ -7346,7 +7346,7 @@
     .line 1447
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1451
     .end local v85           #targetPkg:Ljava/lang/String;
@@ -7378,7 +7378,7 @@
 
     .line 1454
     .local v131, managed:Z
-    :goto_48
+    :goto_47
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v77
@@ -7397,7 +7397,7 @@
 
     .line 1457
     .restart local v78       #fd:Landroid/os/ParcelFileDescriptor;
-    :goto_49
+    :goto_48
     move-object/from16 v0, p0
 
     move-object/from16 v1, v75
@@ -7421,7 +7421,7 @@
 
     const/4 v5, 0x1
 
-    :goto_4a
+    :goto_49
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v5}, Landroid/os/Parcel;->writeInt(I)V
@@ -7429,7 +7429,7 @@
     .line 1460
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1453
     .end local v77           #path:Ljava/lang/String;
@@ -7439,7 +7439,7 @@
     :cond_4f
     const/16 v131, 0x0
 
-    goto :goto_48
+    goto :goto_47
 
     .line 1455
     .restart local v77       #path:Ljava/lang/String;
@@ -7447,7 +7447,7 @@
     :cond_50
     const/16 v78, 0x0
 
-    goto :goto_49
+    goto :goto_48
 
     .line 1459
     .restart local v78       #fd:Landroid/os/ParcelFileDescriptor;
@@ -7455,7 +7455,7 @@
     :cond_51
     const/4 v5, 0x0
 
-    goto :goto_4a
+    goto :goto_49
 
     .line 1465
     .end local v75           #process:Ljava/lang/String;
@@ -7520,7 +7520,7 @@
     move-object v15, v5
 
     .restart local v15       #options:Landroid/os/Bundle;
-    :goto_4b
+    :goto_4a
     move-object/from16 v88, p0
 
     move/from16 v89, v81
@@ -7548,7 +7548,7 @@
     .line 1476
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1470
     .end local v15           #options:Landroid/os/Bundle;
@@ -7556,7 +7556,7 @@
     :cond_52
     const/4 v15, 0x0
 
-    goto :goto_4b
+    goto :goto_4a
 
     .line 1481
     .end local v9           #resultTo:Landroid/os/IBinder;
@@ -7626,7 +7626,7 @@
     move-object v15, v5
 
     .restart local v15       #options:Landroid/os/Bundle;
-    :goto_4c
+    :goto_4b
     move-object/from16 v88, p0
 
     move-object/from16 v89, v6
@@ -7654,7 +7654,7 @@
     .line 1493
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1487
     .end local v15           #options:Landroid/os/Bundle;
@@ -7662,7 +7662,7 @@
     :cond_53
     const/4 v15, 0x0
 
-    goto :goto_4c
+    goto :goto_4b
 
     .line 1498
     .end local v6           #app:Landroid/app/IApplicationThread;
@@ -7696,7 +7696,7 @@
     .line 1502
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1507
     .end local v87           #mode:I
@@ -7733,7 +7733,7 @@
     .line 1512
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1517
     .end local v87           #mode:I
@@ -7773,7 +7773,7 @@
     .line 1522
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1527
     .end local v87           #mode:I
@@ -7812,7 +7812,7 @@
     .line 1532
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1536
     .end local v87           #mode:I
@@ -7848,7 +7848,7 @@
 
     const/4 v5, 0x1
 
-    :goto_4d
+    :goto_4c
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v5}, Landroid/os/Parcel;->writeInt(I)V
@@ -7856,13 +7856,13 @@
     .line 1541
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1540
     :cond_54
     const/4 v5, 0x0
 
-    goto :goto_4d
+    goto :goto_4c
 
     .line 1545
     .end local v160           #result:Z
@@ -7895,7 +7895,7 @@
     .line 1549
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1554
     .end local v175           #userInfo:Landroid/content/pm/UserInfo;
@@ -7938,7 +7938,7 @@
 
     const/4 v5, 0x1
 
-    :goto_4e
+    :goto_4d
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v5}, Landroid/os/Parcel;->writeInt(I)V
@@ -7946,13 +7946,13 @@
     .line 1560
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1559
     :cond_55
     const/4 v5, 0x0
 
-    goto :goto_4e
+    goto :goto_4d
 
     .line 1565
     .end local v160           #result:Z
@@ -7997,7 +7997,7 @@
 
     const/4 v5, 0x1
 
-    :goto_4f
+    :goto_4e
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v5}, Landroid/os/Parcel;->writeInt(I)V
@@ -8005,13 +8005,13 @@
     .line 1571
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1570
     :cond_56
     const/4 v5, 0x0
 
-    goto :goto_4f
+    goto :goto_4e
 
     .line 1575
     .end local v59           #fl:I
@@ -8044,7 +8044,7 @@
     .line 1579
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1583
     .end local v141           #observer:Landroid/app/IProcessObserver;
@@ -8075,7 +8075,7 @@
     .line 1587
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1592
     .end local v141           #observer:Landroid/app/IProcessObserver;
@@ -8110,7 +8110,7 @@
 
     const/4 v5, 0x1
 
-    :goto_50
+    :goto_4f
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v5}, Landroid/os/Parcel;->writeInt(I)V
@@ -8118,13 +8118,13 @@
     .line 1597
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1596
     :cond_57
     const/4 v5, 0x0
 
-    goto :goto_50
+    goto :goto_4f
 
     .line 1602
     .end local v99           #ask:Z
@@ -8153,7 +8153,7 @@
 
     .line 1605
     .restart local v99       #ask:Z
-    :goto_51
+    :goto_50
     move-object/from16 v0, p0
 
     move-object/from16 v1, v148
@@ -8168,14 +8168,14 @@
     .line 1607
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1604
     .end local v99           #ask:Z
     :cond_58
     const/16 v99, 0x0
 
-    goto :goto_51
+    goto :goto_50
 
     .line 1611
     .end local v148           #pkg:Ljava/lang/String;
@@ -8214,7 +8214,7 @@
 
     const/4 v5, 0x1
 
-    :goto_52
+    :goto_51
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v5}, Landroid/os/Parcel;->writeInt(I)V
@@ -8222,13 +8222,13 @@
     .line 1617
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1616
     :cond_59
     const/4 v5, 0x0
 
-    goto :goto_52
+    goto :goto_51
 
     .line 1621
     .end local v153           #r:Landroid/content/IIntentSender;
@@ -8268,7 +8268,7 @@
 
     const/4 v5, 0x1
 
-    :goto_53
+    :goto_52
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v5}, Landroid/os/Parcel;->writeInt(I)V
@@ -8276,13 +8276,13 @@
     .line 1627
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1626
     :cond_5a
     const/4 v5, 0x0
 
-    goto :goto_53
+    goto :goto_52
 
     .line 1631
     .end local v153           #r:Landroid/content/IIntentSender;
@@ -8319,7 +8319,7 @@
     .line 1635
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1639
     .end local v24           #config:Landroid/content/res/Configuration;
@@ -8359,7 +8359,7 @@
     .line 1644
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1648
     .end local v147           #pids:[I
@@ -8394,7 +8394,7 @@
 
     .line 1651
     .local v97, always:Z
-    :goto_54
+    :goto_53
     move-object/from16 v0, p0
 
     move-object/from16 v1, v138
@@ -8409,14 +8409,14 @@
     .line 1653
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1650
     .end local v97           #always:Z
     :cond_5b
     const/16 v97, 0x0
 
-    goto :goto_54
+    goto :goto_53
 
     .line 1657
     .end local v138           #msg:Ljava/lang/CharSequence;
@@ -8436,7 +8436,7 @@
     .line 1660
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1664
     :pswitch_8f
@@ -8478,7 +8478,7 @@
 
     const/4 v5, 0x1
 
-    :goto_55
+    :goto_54
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v5}, Landroid/os/Parcel;->writeInt(I)V
@@ -8486,13 +8486,13 @@
     .line 1670
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1669
     :cond_5c
     const/4 v5, 0x0
 
-    goto :goto_55
+    goto :goto_54
 
     .line 1674
     .end local v49           #token:Landroid/os/IBinder;
@@ -8578,7 +8578,7 @@
 
     const/4 v5, 0x1
 
-    :goto_56
+    :goto_55
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v5}, Landroid/os/Parcel;->writeInt(I)V
@@ -8586,13 +8586,13 @@
     .line 1685
     const/4 v5, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 1684
     :cond_5e
     const/4 v5, 0x0
 
-    goto :goto_56
+    goto :goto_55
 
     .line 1689
     .end local v40           #resultCode:I
@@ -8636,11 +8636,11 @@
     .line 1694
     const/4 v5, 0x1
 
-    goto/16 :goto_1
-
+    goto/16 :goto_0
+    
     .end local v49           #token:Landroid/os/IBinder;
     .end local v159           #res:I
-    :pswitch_92
+    :pswitch_baidu_0
     const-string v5, "android.app.IActivityManager"
 
     move-object/from16 v0, p2
@@ -8664,13 +8664,13 @@
 
     move-result v5
 
-    if-eqz v5, :cond_5f
+    if-eqz v5, :cond_baidu_0
 
     const/16 v144, 0x1
 
     .line 1701
     .local v144, persistent:Z
-    :goto_57
+    :goto_baidu_1
     move-object/from16 v0, p0
 
     move/from16 v1, v144
@@ -8680,14 +8680,14 @@
     .line 1702
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    goto/16 :goto_0
+    goto/16 :goto_baidu_0
 
     .line 1700
     .end local v144           #persistent:Z
-    :cond_5f
+    :cond_baidu_0
     const/16 v144, 0x0
 
-    goto :goto_57
+    goto :goto_baidu_1
 
     .line 113
     :pswitch_data_0
@@ -8844,6 +8844,6 @@
         :pswitch_91
         :pswitch_28
         :pswitch_8a
-        :pswitch_92
+        :pswitch_baidu_0
     .end packed-switch
 .end method

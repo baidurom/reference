@@ -138,14 +138,14 @@
     .line 62
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Lcom/baidu/themeanimation/util/FileUtil;->mInstanceSync:Ljava/lang/Object;
 
     .line 63
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Lcom/baidu/themeanimation/util/FileUtil;->mExecuteServiceSync:Ljava/lang/Object;
 
@@ -159,7 +159,7 @@
     const/4 v1, 0x0
 
     .line 30
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 37
     iput-boolean v1, p0, Lcom/baidu/themeanimation/util/FileUtil;->mIsWallpaperChanged:Z

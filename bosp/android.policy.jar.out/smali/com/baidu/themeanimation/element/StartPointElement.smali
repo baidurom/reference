@@ -978,7 +978,7 @@
 
     add-int/2addr v5, p1
 
-    iput v5, v3, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iput v5, v3, Landroid/widget/RelativeLayout$LayoutParams;->leftMargin:I
 
     .line 442
     invoke-virtual {v0}, Lcom/baidu/themeanimation/element/VisibleElement;->getY()I
@@ -987,7 +987,7 @@
 
     add-int/2addr v5, p2
 
-    iput v5, v3, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iput v5, v3, Landroid/widget/RelativeLayout$LayoutParams;->topMargin:I
 
     .line 447
     invoke-virtual {v0}, Lcom/baidu/themeanimation/element/VisibleElement;->getAlign()I
@@ -997,15 +997,15 @@
     if-ne v5, v7, :cond_5
 
     .line 448
-    iget v5, v3, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v5, v3, Landroid/widget/RelativeLayout$LayoutParams;->leftMargin:I
 
-    iget v6, v3, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iget v6, v3, Landroid/widget/RelativeLayout$LayoutParams;->width:I
 
     div-int/lit8 v6, v6, 0x2
 
     sub-int/2addr v5, v6
 
-    iput v5, v3, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iput v5, v3, Landroid/widget/RelativeLayout$LayoutParams;->leftMargin:I
 
     .line 453
     :cond_0
@@ -1017,15 +1017,15 @@
     if-ne v5, v7, :cond_6
 
     .line 454
-    iget v5, v3, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iget v5, v3, Landroid/widget/RelativeLayout$LayoutParams;->topMargin:I
 
-    iget v6, v3, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iget v6, v3, Landroid/widget/RelativeLayout$LayoutParams;->height:I
 
     div-int/lit8 v6, v6, 0x2
 
     sub-int/2addr v5, v6
 
-    iput v5, v3, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iput v5, v3, Landroid/widget/RelativeLayout$LayoutParams;->topMargin:I
 
     .line 459
     :cond_1
@@ -1110,13 +1110,13 @@
     if-ne v5, v6, :cond_0
 
     .line 450
-    iget v5, v3, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v5, v3, Landroid/widget/RelativeLayout$LayoutParams;->leftMargin:I
 
-    iget v6, v3, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iget v6, v3, Landroid/widget/RelativeLayout$LayoutParams;->width:I
 
     sub-int/2addr v5, v6
 
-    iput v5, v3, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iput v5, v3, Landroid/widget/RelativeLayout$LayoutParams;->leftMargin:I
 
     goto :goto_2
 
@@ -1131,13 +1131,13 @@
     if-ne v5, v6, :cond_1
 
     .line 456
-    iget v5, v3, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iget v5, v3, Landroid/widget/RelativeLayout$LayoutParams;->topMargin:I
 
-    iget v6, v3, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iget v6, v3, Landroid/widget/RelativeLayout$LayoutParams;->height:I
 
     sub-int/2addr v5, v6
 
-    iput v5, v3, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iput v5, v3, Landroid/widget/RelativeLayout$LayoutParams;->topMargin:I
 
     goto :goto_3
 

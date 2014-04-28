@@ -57,7 +57,7 @@
     .line 369
     iget-object v0, p0, Lyi/support/v1/menu/HybridMenuPanel$PanelController$1;->this$1:Lyi/support/v1/menu/HybridMenuPanel$PanelController;
 
-    iput-boolean v1, v0, Lyi/support/v1/menu/HybridMenuPanel$PanelState;->mIsTransitioning:Z
+    iput-boolean v1, v0, Lyi/support/v1/menu/HybridMenuPanel$PanelController;->mIsTransitioning:Z
 
     .line 370
     iget-object v0, p0, Lyi/support/v1/menu/HybridMenuPanel$PanelController$1;->this$1:Lyi/support/v1/menu/HybridMenuPanel$PanelController;

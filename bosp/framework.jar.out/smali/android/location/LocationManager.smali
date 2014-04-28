@@ -145,47 +145,47 @@
 
     .prologue
     const/4 v0, 0x2
-
+    
     const/4 v1, 0x1
-
+    
     const/4 v2, 0x0
-
+    
     new-array v2, v2, [Ljava/lang/Object;
-
+    
     invoke-static {v0, v1, v2}, Lcom/baidu/server/dp/DynamicPermissionManager;->checkPermission(IZ[Ljava/lang/Object;)I
-
+    
     move-result v0
-
+    
     const/4 v1, 0x1
-
-    if-ne v0, v1, :cond_0
-
+    
+    if-ne v0, v1, :cond_baidu_0
+    
     goto :goto_0
-
+    
     .line 837
-    :cond_0
+    :cond_baidu_0
     const-wide/16 v0, 0x0
 
     cmp-long v0, p3, v0
 
-    if-gez v0, :cond_1
+    if-gez v0, :cond_0
 
     .line 838
     const-wide/16 p3, 0x0
 
     .line 840
-    :cond_1
+    :cond_0
     const/4 v0, 0x0
 
     cmpg-float v0, p5, v0
 
-    if-gez v0, :cond_2
+    if-gez v0, :cond_1
 
     .line 841
     const/4 p5, 0x0
 
     .line 845
-    :cond_2
+    :cond_1
     :try_start_0
     iget-object v0, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
 
@@ -243,46 +243,46 @@
     .prologue
     .line 650
     const/4 v2, 0x2
-
+    
     const/4 v3, 0x1
-
+    
     const/4 v4, 0x0
-
+    
     new-array v4, v4, [Ljava/lang/Object;
-
+    
     invoke-static {v2, v3, v4}, Lcom/baidu/server/dp/DynamicPermissionManager;->checkPermission(IZ[Ljava/lang/Object;)I
-
+    
     move-result v2
-
+    
     const/4 v3, 0x1
-
-    if-ne v2, v3, :cond_0
-
+    
+    if-ne v2, v3, :cond_baidu_0
+    
     goto :goto_0
-
-    :cond_0
+    
+    :cond_baidu_0
     const-wide/16 v2, 0x0
 
     cmp-long v2, p3, v2
 
-    if-gez v2, :cond_1
+    if-gez v2, :cond_0
 
     .line 651
     const-wide/16 p3, 0x0
 
     .line 653
-    :cond_1
+    :cond_0
     const/4 v2, 0x0
 
     cmpg-float v2, p5, v2
 
-    if-gez v2, :cond_2
+    if-gez v2, :cond_1
 
     .line 654
     const/16 p5, 0x0
 
     .line 658
-    :cond_2
+    :cond_1
     :try_start_0
     iget-object v12, p0, Landroid/location/LocationManager;->mListeners:Ljava/util/HashMap;
 
@@ -304,7 +304,7 @@
 
     .line 660
     .local v9, transport:Landroid/location/LocationManager$ListenerTransport;
-    if-nez v9, :cond_3
+    if-nez v9, :cond_2
 
     .line 661
     new-instance v9, Landroid/location/LocationManager$ListenerTransport;
@@ -318,7 +318,7 @@
 
     .line 663
     .restart local v9       #transport:Landroid/location/LocationManager$ListenerTransport;
-    :cond_3
+    :cond_2
     iget-object v2, p0, Landroid/location/LocationManager;->mListeners:Ljava/util/HashMap;
 
     move-object/from16 v0, p7
@@ -984,9 +984,9 @@
     .prologue
     .line 1158
     const/4 v0, 0x2
-
+    
     const/4 v1, 0x1
-
+    
     const/4 v2, 0x0
 
     new-array v2, v2, [Ljava/lang/Object;
@@ -995,14 +995,14 @@
 
     move-result v0
 
-    if-ne v0, v1, :cond_0
-
+    if-ne v0, v1, :cond_baidu_0
+    
     const/4 v1, 0x0
 
     goto :goto_0
 
-    :cond_0
-    if-nez p1, :cond_1
+    :cond_baidu_0
+    if-nez p1, :cond_0
 
     .line 1159
     new-instance v1, Ljava/lang/IllegalArgumentException;
@@ -1014,7 +1014,7 @@
     throw v1
 
     .line 1162
-    :cond_1
+    :cond_0
     :try_start_0
     iget-object v1, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
 

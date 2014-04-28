@@ -69,7 +69,7 @@
     .line 15
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Lcom/yi/internal/media/AudioFadeController;->sLock:Ljava/lang/Object;
 
@@ -82,7 +82,7 @@
 
     .prologue
     .line 44
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 102
     new-instance v0, Lcom/yi/internal/media/AudioFadeController$1;

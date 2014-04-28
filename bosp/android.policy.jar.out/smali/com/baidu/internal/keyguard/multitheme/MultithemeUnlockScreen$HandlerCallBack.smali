@@ -30,7 +30,7 @@
     .line 227
     iput-object p1, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen$HandlerCallBack;->this$0:Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

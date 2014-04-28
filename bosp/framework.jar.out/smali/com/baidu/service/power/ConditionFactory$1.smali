@@ -55,7 +55,7 @@
 
     move-result-object v1
 
-    iget v2, p0, Lcom/baidu/service/power/TriggerCondition;->mData1:I
+    iget v2, p0, Lcom/baidu/service/power/ConditionFactory$1;->mData1:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -68,7 +68,7 @@
     invoke-static {v0, v1}, Lcom/baidu/service/power/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 18
-    iget v0, p0, Lcom/baidu/service/power/TriggerCondition;->mData1:I
+    iget v0, p0, Lcom/baidu/service/power/ConditionFactory$1;->mData1:I
 
     if-ge p1, v0, :cond_0
 

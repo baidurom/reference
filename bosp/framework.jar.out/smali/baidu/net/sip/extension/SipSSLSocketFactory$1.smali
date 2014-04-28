@@ -30,7 +30,7 @@
     .line 30
     iput-object p1, p0, Lbaidu/net/sip/extension/SipSSLSocketFactory$1;->this$0:Lbaidu/net/sip/extension/SipSSLSocketFactory;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

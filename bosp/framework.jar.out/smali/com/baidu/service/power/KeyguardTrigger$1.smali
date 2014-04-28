@@ -124,7 +124,7 @@
     :try_start_0
     iget-object v1, p0, Lcom/baidu/service/power/KeyguardTrigger$1;->this$0:Lcom/baidu/service/power/KeyguardTrigger;
 
-    iget-object v1, v1, Lcom/baidu/service/power/Trigger;->mHandler:Landroid/os/Handler;
+    iget-object v1, v1, Lcom/baidu/service/power/KeyguardTrigger;->mHandler:Landroid/os/Handler;
 
     iget-object v3, p0, Lcom/baidu/service/power/KeyguardTrigger$1;->this$0:Lcom/baidu/service/power/KeyguardTrigger;
 
@@ -158,7 +158,7 @@
     .line 81
     iget-object v1, p0, Lcom/baidu/service/power/KeyguardTrigger$1;->this$0:Lcom/baidu/service/power/KeyguardTrigger;
 
-    iget-object v1, v1, Lcom/baidu/service/power/Trigger;->mHandler:Landroid/os/Handler;
+    iget-object v1, v1, Lcom/baidu/service/power/KeyguardTrigger;->mHandler:Landroid/os/Handler;
 
     const-wide/16 v2, 0x3e8
 

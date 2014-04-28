@@ -95,7 +95,7 @@
 
     .line 114
     :cond_0
-    const-string v3, "listener"
+    const-string/jumbo v3, "listener"
 
     invoke-interface {v1, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 

@@ -183,7 +183,7 @@
     const/4 v0, 0x0
 
     .line 189
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 119
     iput v0, p0, Lcom/yi/internal/view/menu/MenuBuilder;->mDefaultShowAsAction:I

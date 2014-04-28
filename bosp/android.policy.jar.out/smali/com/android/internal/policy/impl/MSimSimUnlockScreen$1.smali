@@ -43,7 +43,7 @@
     .line 158
     iget-object v0, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$1;->this$0:Lcom/android/internal/policy/impl/MSimSimUnlockScreen;
 
-    iget-object v0, v0, Lcom/android/internal/policy/impl/SimUnlockScreen;->mPinText:Landroid/widget/TextView;
+    iget-object v0, v0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->mPinText:Landroid/widget/TextView;
 
     new-instance v1, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$1$1;
 

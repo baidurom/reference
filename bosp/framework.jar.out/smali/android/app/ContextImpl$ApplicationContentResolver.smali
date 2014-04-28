@@ -68,7 +68,6 @@
     return-object v1
 .end method
 
-
 # virtual methods
 .method protected acquireExistingProvider(Landroid/content/Context;Ljava/lang/String;)Landroid/content/IContentProvider;
     .locals 2
@@ -128,11 +127,11 @@
 
     const/4 v0, 0x1
 
-    if-ne v1, v0, :cond_0
+    if-ne v1, v0, :cond_baidu_0
 
     const-string p2, "com.baidu.dp.impostor"
 
-    :cond_0
+    :cond_baidu_0
     iget-object v0, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
 
     const/4 v1, 0x0

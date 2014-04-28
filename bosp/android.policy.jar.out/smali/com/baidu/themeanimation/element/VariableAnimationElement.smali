@@ -59,7 +59,7 @@
 
     .line 52
     .local v5, lockVarAnimation:Lcom/baidu/themeanimation/element/VariableAnimationElement$LockVarAnimation;
-    iget-object v7, p0, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v7, p0, Lcom/baidu/themeanimation/element/VariableAnimationElement;->mKeyFrames:Ljava/util/List;
 
     invoke-interface {v7}, Ljava/util/List;->size()I
 
@@ -72,7 +72,7 @@
     if-eqz p1, :cond_2
 
     .line 56
-    iget-object v7, p0, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v7, p0, Lcom/baidu/themeanimation/element/VariableAnimationElement;->mKeyFrames:Ljava/util/List;
 
     invoke-interface {v7, v11}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -107,7 +107,7 @@
     invoke-virtual {v6, v7}, Lcom/baidu/themeanimation/element/VariableAnimationElement$VarAniFrame;->setValue(Ljava/lang/String;)V
 
     .line 61
-    iget-object v7, p0, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v7, p0, Lcom/baidu/themeanimation/element/VariableAnimationElement;->mKeyFrames:Ljava/util/List;
 
     invoke-interface {v7, v11, v6}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
@@ -128,7 +128,7 @@
 
     .line 68
     .local v1, endTime:J
-    iget-object v7, p0, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v7, p0, Lcom/baidu/themeanimation/element/VariableAnimationElement;->mKeyFrames:Ljava/util/List;
 
     invoke-interface {v7}, Ljava/util/List;->size()I
 
@@ -141,7 +141,7 @@
     if-ltz v3, :cond_1
 
     .line 69
-    iget-object v7, p0, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v7, p0, Lcom/baidu/themeanimation/element/VariableAnimationElement;->mKeyFrames:Ljava/util/List;
 
     invoke-interface {v7, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -160,7 +160,7 @@
     if-gez v7, :cond_3
 
     .line 70
-    iget-object v7, p0, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v7, p0, Lcom/baidu/themeanimation/element/VariableAnimationElement;->mKeyFrames:Ljava/util/List;
 
     invoke-interface {v7, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -173,7 +173,7 @@
     move-result-wide v1
 
     .line 71
-    iget-object v7, p0, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v7, p0, Lcom/baidu/themeanimation/element/VariableAnimationElement;->mKeyFrames:Ljava/util/List;
 
     invoke-interface {v7}, Ljava/util/List;->size()I
 

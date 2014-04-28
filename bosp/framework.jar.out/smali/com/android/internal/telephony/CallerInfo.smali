@@ -518,50 +518,50 @@
     invoke-interface {p2, v3}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v0
-
+    
     invoke-interface {p2, v0}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v3
 
     iput v3, v1, Lcom/android/internal/telephony/CallerInfo;->mPhotoWidth:I
-
+    
     const-string v3, "height"
 
     invoke-interface {p2, v3}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v0
-
+    
     .line 237
     invoke-interface {p2, v0}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v3
 
     iput v3, v1, Lcom/android/internal/telephony/CallerInfo;->mPhotoHeight:I
-
+    
     const-string/jumbo v3, "photo_id"
 
     invoke-interface {p2, v3}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v0
-
+    
     invoke-interface {p2, v0}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v3
 
     iput v3, v1, Lcom/android/internal/telephony/CallerInfo;->mPhotoID:I
-
+    
     const-string/jumbo v3, "view_mode"
 
     invoke-interface {p2, v3}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v0
-
+    
     invoke-interface {p2, v0}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v3
 
     iput v3, v1, Lcom/android/internal/telephony/CallerInfo;->mViewMode:I
-
+    
     .end local v0           #columnIndex:I
     :cond_6
     invoke-interface {p2}, Landroid/database/Cursor;->close()V
@@ -610,7 +610,7 @@
 
     invoke-static {v3, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 227
     :cond_9
@@ -983,7 +983,7 @@
     invoke-virtual {v1}, Landroid/location/CountryDetector;->detectCountry()Landroid/location/Country;
 
     move-result-object v2
-
+    
     if-eqz v2, :cond_0
 
     invoke-virtual {v2}, Landroid/location/Country;->getCountryIso()Ljava/lang/String;
@@ -1643,9 +1643,9 @@
     .local v0, number:Ljava/lang/String;
     :goto_0
     const/4 v1, 0x0
-
+    
     const/4 v2, 0x1
-
+    
     invoke-static {p1, v0, v1, v2}, Lcom/baidu/internal/telephony/DisturbPreventUtils;->getPhoneLocation(Landroid/content/Context;Ljava/lang/String;ZZ)Ljava/lang/String;
 
     move-result-object v1

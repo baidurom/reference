@@ -1111,7 +1111,7 @@
     .local v1, whoThread:Landroid/app/IApplicationThread;
     iget-object v0, p0, Landroid/app/Instrumentation;->mActivityMonitors:Ljava/util/List;
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
     .line 1434
     iget-object v2, p0, Landroid/app/Instrumentation;->mSync:Ljava/lang/Object;
@@ -1132,7 +1132,7 @@
 
     .local v8, i:I
     :goto_0
-    if-ge v8, v6, :cond_2
+    if-ge v8, v6, :cond_1
 
     .line 1437
     iget-object v0, p0, Landroid/app/Instrumentation;->mActivityMonitors:Ljava/util/List;
@@ -1155,7 +1155,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     .line 1439
     iget v0, v7, Landroid/app/Instrumentation$ActivityMonitor;->mHits:I
@@ -1169,7 +1169,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
     .line 1441
     monitor-exit v2
@@ -1178,7 +1178,7 @@
     .end local v6           #N:I
     .end local v7           #am:Landroid/app/Instrumentation$ActivityMonitor;
     .end local v8           #i:I
-    :cond_0
+    :cond_baidu_1
     :goto_1
     return-void
 
@@ -1186,14 +1186,14 @@
     .restart local v6       #N:I
     .restart local v7       #am:Landroid/app/Instrumentation$ActivityMonitor;
     .restart local v8       #i:I
-    :cond_1
+    :cond_0
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_0
 
     .line 1446
     .end local v7           #am:Landroid/app/Instrumentation$ActivityMonitor;
-    :cond_2
+    :cond_1
     monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -1201,7 +1201,7 @@
     .line 1449
     .end local v6           #N:I
     .end local v8           #i:I
-    :cond_3
+    :cond_2
     invoke-static {p1}, Lcom/baidu/server/dp/DynamicPermissionManager;->getInstance(Landroid/content/Context;)Lcom/baidu/server/dp/DynamicPermissionManager;
 
     move-result-object v0
@@ -1216,7 +1216,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_baidu_0
 
     const/4 v3, 0x0
 
@@ -1226,9 +1226,9 @@
 
     array-length v2, v0
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_baidu_1
 
-    :cond_4
+    :cond_baidu_0
     :try_start_1
     array-length v0, p5
 
@@ -1242,7 +1242,7 @@
     :goto_2
     array-length v0, p5
 
-    if-ge v8, v0, :cond_5
+    if-ge v8, v0, :cond_3
 
     .line 1451
     aget-object v0, p5, v8
@@ -1287,7 +1287,7 @@
     .line 1454
     .restart local v3       #resolvedTypes:[Ljava/lang/String;
     .restart local v8       #i:I
-    :cond_5
+    :cond_3
     :try_start_3
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -1457,22 +1457,22 @@
     .end local v15           #i:I
     :cond_3
     invoke-static/range {p1 .. p1}, Lcom/baidu/server/dp/DynamicPermissionManager;->getInstance(Landroid/content/Context;)Lcom/baidu/server/dp/DynamicPermissionManager;
-
+    
     move-result-object v2
-
+    
     move-object/from16 v0, p5
 
     invoke-virtual {v2, v0}, Lcom/baidu/server/dp/DynamicPermissionManager;->checkCallPermission(Landroid/content/Intent;)I
-
+    
     move-result v2
-
-    if-eqz v2, :cond_4
-
+    
+    if-eqz v2, :cond_baidu_0
+    
     const/4 v2, 0x0
 
     goto :goto_2
-
-    :cond_4
+    
+    :cond_baidu_0
     const/4 v2, 0x0
 
     :try_start_1
@@ -1498,7 +1498,7 @@
 
     move-result-object v5
 
-    if-eqz p4, :cond_5
+    if-eqz p4, :cond_4
 
     move-object/from16 v0, p4
 
@@ -1552,7 +1552,7 @@
     throw v2
 
     .line 1411
-    :cond_5
+    :cond_4
     const/4 v7, 0x0
 
     goto :goto_3
@@ -1698,20 +1698,20 @@
     invoke-static/range {p1 .. p1}, Lcom/baidu/server/dp/DynamicPermissionManager;->getInstance(Landroid/content/Context;)Lcom/baidu/server/dp/DynamicPermissionManager;
 
     move-result-object v2
-
+    
     move-object/from16 v0, p5
 
     invoke-virtual {v2, v0}, Lcom/baidu/server/dp/DynamicPermissionManager;->checkCallPermission(Landroid/content/Intent;)I
 
     move-result v2
 
-    if-eqz v2, :cond_4
-
+    if-eqz v2, :cond_baidu_0
+    
     const/4 v2, 0x0
 
     goto :goto_2
 
-    :cond_4
+    :cond_baidu_0
     const/4 v2, 0x0
 
     :try_start_1
@@ -1737,7 +1737,7 @@
 
     move-result-object v5
 
-    if-eqz p4, :cond_5
+    if-eqz p4, :cond_4
 
     move-object/from16 v0, p4
 
@@ -1791,7 +1791,7 @@
     throw v2
 
     .line 1510
-    :cond_5
+    :cond_4
     const/4 v7, 0x0
 
     goto :goto_3

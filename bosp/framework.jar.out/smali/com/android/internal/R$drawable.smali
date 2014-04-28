@@ -501,6 +501,8 @@
 
 .field public static final ic_audio_vol_mute:I = #drawable@ic_audio_vol_mute#t
 
+.field public static final ic_baidu_sound:I = #drawable@ic_baidu_sound#t
+
 .field public static final ic_btn_speak_now:I = #drawable@ic_btn_speak_now#t
 
 .field public static final ic_bullet_key_permission:I = #drawable@ic_bullet_key_permission#t
@@ -540,6 +542,88 @@
 .field public static final ic_jog_dial_unlock:I = #drawable@ic_jog_dial_unlock#t
 
 .field public static final ic_jog_dial_vibrate_on:I = #drawable@ic_jog_dial_vibrate_on#t
+
+.field public static final ic_launcher_360:I = #drawable@ic_launcher_360#t
+
+.field public static final ic_launcher_360launcher:I = #drawable@ic_launcher_360launcher#t
+
+.field public static final ic_launcher_aliwangwang:I = #drawable@ic_launcher_aliwangwang#t
+
+.field public static final ic_launcher_baidubrowser:I = #drawable@ic_launcher_baidubrowser#t
+
+.field public static final ic_launcher_baidugamecenter:I = #drawable@ic_launcher_baidugamecenter#t
+
+.field public static final ic_launcher_baidumap:I = #drawable@ic_launcher_baidumap#t
+
+.field public static final ic_launcher_baidumarket:I = #drawable@ic_launcher_baidumarket#t
+
+.field public static final ic_launcher_baidunetdisk:I = #drawable@ic_launcher_baidunetdisk#t
+
+.field public static final ic_launcher_baidureader:I = #drawable@ic_launcher_baidureader#t
+
+.field public static final ic_launcher_baidusearch:I = #drawable@ic_launcher_baidusearch#t
+
+.field public static final ic_launcher_baiduvoiceassistant:I = #drawable@ic_launcher_baiduvoiceassistant#t
+
+.field public static final ic_launcher_dolby:I = #drawable@ic_launcher_dolby#t
+
+.field public static final ic_launcher_huluxia_gametools:I = #drawable@ic_launcher_huluxia_gametools#t
+
+.field public static final ic_launcher_ireader:I = #drawable@ic_launcher_ireader#t
+
+.field public static final ic_launcher_iyqiyi:I = #drawable@ic_launcher_iyqiyi#t
+
+.field public static final ic_launcher_kugou_music:I = #drawable@ic_launcher_kugou_music#t
+
+.field public static final ic_launcher_kuwo_player:I = #drawable@ic_launcher_kuwo_player#t
+
+.field public static final ic_launcher_moji_weather:I = #drawable@ic_launcher_moji_weather#t
+
+.field public static final ic_launcher_momo:I = #drawable@ic_launcher_momo#t
+
+.field public static final ic_launcher_pplive:I = #drawable@ic_launcher_pplive#t
+
+.field public static final ic_launcher_qq:I = #drawable@ic_launcher_qq#t
+
+.field public static final ic_launcher_qqmusic:I = #drawable@ic_launcher_qqmusic#t
+
+.field public static final ic_launcher_qvodplayer:I = #drawable@ic_launcher_qvodplayer#t
+
+.field public static final ic_launcher_qzone:I = #drawable@ic_launcher_qzone#t
+
+.field public static final ic_launcher_renren:I = #drawable@ic_launcher_renren#t
+
+.field public static final ic_launcher_security:I = #drawable@ic_launcher_security#t
+
+.field public static final ic_launcher_shuqi:I = #drawable@ic_launcher_shuqi#t
+
+.field public static final ic_launcher_sim:I = #drawable@ic_launcher_sim#t
+
+.field public static final ic_launcher_sogou_input:I = #drawable@ic_launcher_sogou_input#t
+
+.field public static final ic_launcher_taobao:I = #drawable@ic_launcher_taobao#t
+
+.field public static final ic_launcher_tencent_news:I = #drawable@ic_launcher_tencent_news#t
+
+.field public static final ic_launcher_tencent_qqlive:I = #drawable@ic_launcher_tencent_qqlive#t
+
+.field public static final ic_launcher_ucmobile:I = #drawable@ic_launcher_ucmobile#t
+
+.field public static final ic_launcher_wandoujia:I = #drawable@ic_launcher_wandoujia#t
+
+.field public static final ic_launcher_wechat:I = #drawable@ic_launcher_wechat#t
+
+.field public static final ic_launcher_weibo:I = #drawable@ic_launcher_weibo#t
+
+.field public static final ic_launcher_wifiwnys:I = #drawable@ic_launcher_wifiwnys#t
+
+.field public static final ic_launcher_yixin:I = #drawable@ic_launcher_yixin#t
+
+.field public static final ic_launcher_youdao:I = #drawable@ic_launcher_youdao#t
+
+.field public static final ic_launcher_youku:I = #drawable@ic_launcher_youku#t
+
+.field public static final ic_launcher_zhifubao:I = #drawable@ic_launcher_zhifubao#t
 
 .field public static final ic_lock_airplane_mode:I = #drawable@ic_lock_airplane_mode#t
 
@@ -2236,8 +2320,6 @@
 
 .field public static final yi_switch_thumb_activated_baidu_light:I = #drawable@yi_switch_thumb_activated_baidu_light#t
 
-.field public static final yi_switch_thumb_activated_disable_baidu_light:I = #drawable@yi_switch_thumb_activated_disable_baidu_light#t
-
 .field public static final yi_switch_thumb_activated_disabled_baidu_light:I = #drawable@yi_switch_thumb_activated_disabled_baidu_light#t
 
 .field public static final yi_switch_thumb_actived_pressed_baidu_light:I = #drawable@yi_switch_thumb_actived_pressed_baidu_light#t
@@ -2253,8 +2335,6 @@
 .field public static final yi_switch_thumb_pressed_baidu_dark:I = #drawable@yi_switch_thumb_pressed_baidu_dark#t
 
 .field public static final yi_switch_thumb_pressed_baidu_light:I = #drawable@yi_switch_thumb_pressed_baidu_light#t
-
-.field public static final yi_switch_thumbpressed__baidu_light:I = #drawable@yi_switch_thumbpressed__baidu_light#t
 
 .field public static final yi_switch_track_baidu_dark:I = #drawable@yi_switch_track_baidu_dark#t
 

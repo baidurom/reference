@@ -168,14 +168,14 @@
 
     .line 76
     :cond_0
-    iget-object v1, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mUpdateMonitor:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
+    iget-object v1, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mUpdateMonitor:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     iget-object v2, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mMSimInfoCallback:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$InfoCallbackImpl;
 
     invoke-virtual {v1, v2}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->registerInfoCallback(Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$InfoCallback;)V
 
     .line 77
-    iget-object v1, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mUpdateMonitor:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
+    iget-object v1, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mUpdateMonitor:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     iget-object v2, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mSimStateCallback:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$SimStateCallback;
 
@@ -197,7 +197,7 @@
 
     aget-object v1, v1, v2
 
-    iput-object v1, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mStatus:Lcom/android/internal/policy/impl/KeyguardStatusViewManager$StatusMode;
+    iput-object v1, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mStatus:Lcom/android/internal/policy/impl/KeyguardStatusViewManager$StatusMode;
 
     .line 81
     iget-object v1, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mMSimPlmn:[Ljava/lang/CharSequence;
@@ -212,7 +212,7 @@
 
     aget-object v1, v1, v2
 
-    iput-object v1, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mPlmn:Ljava/lang/CharSequence;
+    iput-object v1, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mPlmn:Ljava/lang/CharSequence;
 
     .line 82
     iget-object v1, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mMSimSpn:[Ljava/lang/CharSequence;
@@ -227,7 +227,7 @@
 
     aget-object v1, v1, v2
 
-    iput-object v1, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mSpn:Ljava/lang/CharSequence;
+    iput-object v1, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mSpn:Ljava/lang/CharSequence;
 
     .line 83
     iget-object v1, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mMSimState:[Lcom/android/internal/telephony/IccCard$State;
@@ -242,7 +242,7 @@
 
     aget-object v1, v1, v2
 
-    iput-object v1, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mSimState:Lcom/android/internal/telephony/IccCard$State;
+    iput-object v1, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mSimState:Lcom/android/internal/telephony/IccCard$State;
 
     .line 85
     return-void
@@ -383,7 +383,7 @@
     .local v0, carrierHelpTextId:I
     const/4 v1, 0x0
 
-    iput-boolean v1, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mEmergencyButtonEnabledBecauseSimLocked:Z
+    iput-boolean v1, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mEmergencyButtonEnabledBecauseSimLocked:Z
 
     .line 130
     iget-object v1, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mMSimStatus:[Lcom/android/internal/policy/impl/KeyguardStatusViewManager$StatusMode;
@@ -457,7 +457,7 @@
     :cond_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mMSimPlmn:[Ljava/lang/CharSequence;
 
-    iget-object v2, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mUpdateMonitor:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
+    iget-object v2, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mUpdateMonitor:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     invoke-virtual {v2}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->getDefaultPlmn()Ljava/lang/CharSequence;
 
@@ -531,7 +531,7 @@
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->setCarrierHelpText(I)V
 
     .line 218
-    iget v1, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mPhoneState:I
+    iget v1, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mPhoneState:I
 
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->updateEmergencyCallButtonState(I)V
 
@@ -610,7 +610,7 @@
     const v0, #string@lockscreen_permanent_disabled_sim_instructions#t
 
     .line 169
-    iput-boolean v4, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mEmergencyButtonEnabledBecauseSimLocked:Z
+    iput-boolean v4, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mEmergencyButtonEnabledBecauseSimLocked:Z
 
     goto :goto_0
 
@@ -628,7 +628,7 @@
     const v0, #string@lockscreen_missing_sim_instructions#t
 
     .line 179
-    iput-boolean v4, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mEmergencyButtonEnabledBecauseSimLocked:Z
+    iput-boolean v4, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mEmergencyButtonEnabledBecauseSimLocked:Z
 
     goto/16 :goto_0
 
@@ -649,7 +649,7 @@
     aput-object v2, v1, p2
 
     .line 189
-    iput-boolean v4, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mEmergencyButtonEnabledBecauseSimLocked:Z
+    iput-boolean v4, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mEmergencyButtonEnabledBecauseSimLocked:Z
 
     goto/16 :goto_0
 
@@ -670,7 +670,7 @@
     aput-object v2, v1, p2
 
     .line 199
-    iget-object v1, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
+    iget-object v1, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     invoke-virtual {v1}, Lcom/android/internal/widget/LockPatternUtils;->isPukUnlockScreenEnable()Z
 
@@ -679,7 +679,7 @@
     if-nez v1, :cond_2
 
     .line 201
-    iput-boolean v4, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mEmergencyButtonEnabledBecauseSimLocked:Z
+    iput-boolean v4, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mEmergencyButtonEnabledBecauseSimLocked:Z
 
     goto/16 :goto_0
 
@@ -700,7 +700,7 @@
     aput-object v2, v1, p2
 
     .line 211
-    iput-boolean v4, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mEmergencyButtonEnabledBecauseSimLocked:Z
+    iput-boolean v4, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mEmergencyButtonEnabledBecauseSimLocked:Z
 
     goto/16 :goto_0
 
@@ -725,14 +725,14 @@
 
     .prologue
     .line 105
-    iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mUpdateMonitor:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
+    iget-object v0, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mUpdateMonitor:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mMSimInfoCallback:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$InfoCallbackImpl;
 
     invoke-virtual {v0, v1}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->removeCallback(Ljava/lang/Object;)V
 
     .line 106
-    iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mUpdateMonitor:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
+    iget-object v0, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mUpdateMonitor:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mSimStateCallback:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$SimStateCallback;
 
@@ -747,14 +747,14 @@
 
     .prologue
     .line 113
-    iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mUpdateMonitor:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
+    iget-object v0, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mUpdateMonitor:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mMSimInfoCallback:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$InfoCallbackImpl;
 
     invoke-virtual {v0, v1}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->registerInfoCallback(Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$InfoCallback;)V
 
     .line 114
-    iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mUpdateMonitor:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
+    iget-object v0, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mUpdateMonitor:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mSimStateCallback:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$SimStateCallback;
 
@@ -805,13 +805,13 @@
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mCarrierText:Ljava/lang/CharSequence;
+    iput-object v1, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mCarrierText:Ljava/lang/CharSequence;
 
     .line 99
     :goto_0
     const/16 v1, 0xb
 
-    iget-object v2, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mCarrierText:Ljava/lang/CharSequence;
+    iget-object v2, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mCarrierText:Ljava/lang/CharSequence;
 
     invoke-virtual {p0, v1, v2}, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->update(ILjava/lang/CharSequence;)V
 
@@ -850,7 +850,7 @@
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mCarrierText:Ljava/lang/CharSequence;
+    iput-object v1, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mCarrierText:Ljava/lang/CharSequence;
 
     goto :goto_0
 .end method

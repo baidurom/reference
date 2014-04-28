@@ -191,12 +191,12 @@
     if-eqz v2, :cond_0
 
     .line 643
-    iput-boolean v3, p0, Lyi/support/v1/menu/HybridMenuPanel$PanelState;->mIsOpened:Z
+    iput-boolean v3, p0, Lyi/support/v1/menu/HybridMenuPanel$MenuController;->mIsOpened:Z
 
     .line 644
     const/4 v2, 0x1
 
-    iput-boolean v2, p0, Lyi/support/v1/menu/HybridMenuPanel$PanelState;->mIsTransitioning:Z
+    iput-boolean v2, p0, Lyi/support/v1/menu/HybridMenuPanel$MenuController;->mIsTransitioning:Z
 
     .line 645
     iget-object v2, p0, Lyi/support/v1/menu/HybridMenuPanel$MenuController;->this$0:Lyi/support/v1/menu/HybridMenuPanel;
@@ -335,10 +335,10 @@
     if-eqz v1, :cond_0
 
     .line 604
-    iput-boolean v3, p0, Lyi/support/v1/menu/HybridMenuPanel$PanelState;->mIsOpened:Z
+    iput-boolean v3, p0, Lyi/support/v1/menu/HybridMenuPanel$MenuController;->mIsOpened:Z
 
     .line 605
-    iput-boolean v3, p0, Lyi/support/v1/menu/HybridMenuPanel$PanelState;->mIsTransitioning:Z
+    iput-boolean v3, p0, Lyi/support/v1/menu/HybridMenuPanel$MenuController;->mIsTransitioning:Z
 
     .line 606
     iget-object v1, p0, Lyi/support/v1/menu/HybridMenuPanel$MenuController;->this$0:Lyi/support/v1/menu/HybridMenuPanel;

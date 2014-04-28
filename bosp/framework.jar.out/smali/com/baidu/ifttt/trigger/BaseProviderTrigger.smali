@@ -23,7 +23,7 @@
     .line 51
     new-instance v0, Lcom/baidu/ifttt/trigger/BaseProviderTrigger$1;
 
-    iget-object v1, p0, Lcom/baidu/ifttt/trigger/Trigger;->mHandler:Landroid/os/Handler;
+    iget-object v1, p0, Lcom/baidu/ifttt/trigger/BaseProviderTrigger;->mHandler:Landroid/os/Handler;
 
     invoke-direct {v0, p0, v1}, Lcom/baidu/ifttt/trigger/BaseProviderTrigger$1;-><init>(Lcom/baidu/ifttt/trigger/BaseProviderTrigger;Landroid/os/Handler;)V
 
@@ -47,7 +47,7 @@
     .line 51
     new-instance v0, Lcom/baidu/ifttt/trigger/BaseProviderTrigger$1;
 
-    iget-object v1, p0, Lcom/baidu/ifttt/trigger/Trigger;->mHandler:Landroid/os/Handler;
+    iget-object v1, p0, Lcom/baidu/ifttt/trigger/BaseProviderTrigger;->mHandler:Landroid/os/Handler;
 
     invoke-direct {v0, p0, v1}, Lcom/baidu/ifttt/trigger/BaseProviderTrigger$1;-><init>(Lcom/baidu/ifttt/trigger/BaseProviderTrigger;Landroid/os/Handler;)V
 
@@ -64,7 +64,7 @@
 
     .prologue
     .line 43
-    iget-object v0, p0, Lcom/baidu/ifttt/trigger/Trigger;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/baidu/ifttt/trigger/BaseProviderTrigger;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -99,7 +99,7 @@
 
     .prologue
     .line 48
-    iget-object v0, p0, Lcom/baidu/ifttt/trigger/Trigger;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/baidu/ifttt/trigger/BaseProviderTrigger;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 

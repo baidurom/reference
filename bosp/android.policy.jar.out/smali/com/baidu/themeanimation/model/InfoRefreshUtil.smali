@@ -45,7 +45,7 @@
 
     .prologue
     .line 43
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 44
     iput-object p2, p0, Lcom/baidu/themeanimation/model/InfoRefreshUtil;->mHandler:Lcom/baidu/themeanimation/util/LockScreenHandler;
@@ -73,7 +73,7 @@
 
     .prologue
     .line 49
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 50
     iput-object p1, p0, Lcom/baidu/themeanimation/model/InfoRefreshUtil;->mContext:Landroid/content/Context;

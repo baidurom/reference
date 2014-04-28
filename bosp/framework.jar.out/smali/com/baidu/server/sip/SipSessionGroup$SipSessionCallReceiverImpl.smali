@@ -367,7 +367,7 @@
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/baidu/server/sip/SipSessionGroup$SipSessionImpl;->mProxy:Lcom/baidu/server/sip/SipSessionListenerProxy;
+    iget-object v0, v0, Lcom/baidu/server/sip/SipSessionGroup$SipSessionCallReceiverImpl;->mProxy:Lcom/baidu/server/sip/SipSessionListenerProxy;
 
     move-object/from16 v19, v0
 
@@ -463,7 +463,7 @@
     :cond_4
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/baidu/server/sip/SipSessionGroup$SipSessionImpl;->mProxy:Lcom/baidu/server/sip/SipSessionListenerProxy;
+    iget-object v0, v0, Lcom/baidu/server/sip/SipSessionGroup$SipSessionCallReceiverImpl;->mProxy:Lcom/baidu/server/sip/SipSessionListenerProxy;
 
     move-object/from16 v18, v0
 
@@ -675,7 +675,7 @@
 
     move-result-object v2
 
-    iget v3, p0, Lcom/baidu/server/sip/SipSessionGroup$SipSessionImpl;->mState:I
+    iget v3, p0, Lcom/baidu/server/sip/SipSessionGroup$SipSessionCallReceiverImpl;->mState:I
 
     invoke-static {v3}, Lbaidu/net/sip/SipSession$State;->toString(I)Ljava/lang/String;
 

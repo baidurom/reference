@@ -16779,7 +16779,8 @@
 
     .line 3912
     .local v19, dataPathString:Ljava/lang/String;
-    goto/16 :goto_13
+    goto :cond_36
+
 
     invoke-static/range {p1 .. p1}, Lcom/android/server/pm/PackageManagerService;->isSystemApp(Landroid/content/pm/PackageParser$Package;)Z
 
@@ -17713,7 +17714,6 @@
     .restart local v29       #nativeLibraryDir:Ljava/io/File;
     .restart local v37       #path:Ljava/lang/String;
     :cond_36
-    :goto_13
     :try_start_7
     invoke-virtual/range {v29 .. v29}, Ljava/io/File;->getParentFile()Ljava/io/File;
 
@@ -17756,7 +17756,7 @@
 
     .line 3938
     .local v25, isSymLink:Z
-    :goto_14
+    :goto_13
     if-eqz v25, :cond_37
 
     .line 3939
@@ -17830,7 +17830,7 @@
     const/16 v25, 0x1
 
     .restart local v25       #isSymLink:Z
-    goto :goto_14
+    goto :goto_13
 
     .line 3949
     .end local v20           #e:Llibcore/io/ErrnoException;
@@ -18040,7 +18040,7 @@
 
     .line 4011
     :cond_3e
-    :goto_15
+    :goto_14
     move-object/from16 v0, p1
 
     iget-object v3, v0, Landroid/content/pm/PackageParser$Package;->providers:Ljava/util/ArrayList;
@@ -18058,7 +18058,7 @@
     const/16 v23, 0x0
 
     .restart local v23       #i:I
-    :goto_16
+    :goto_15
     move/from16 v0, v23
 
     if-ge v0, v14, :cond_49
@@ -18182,7 +18182,7 @@
 
     .end local v35           #p:Landroid/content/pm/PackageParser$Provider;
     .local v36, p:Landroid/content/pm/PackageParser$Provider;
-    :goto_17
+    :goto_16
     move-object/from16 v0, v28
 
     array-length v3, v0
@@ -18219,7 +18219,7 @@
     iput-boolean v3, v0, Landroid/content/pm/PackageParser$Provider;->syncable:Z
 
     .line 4036
-    :goto_18
+    :goto_17
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/pm/PackageManagerService;->mProviders:Ljava/util/HashMap;
@@ -18262,14 +18262,14 @@
     iput-object v10, v3, Landroid/content/pm/ProviderInfo;->authority:Ljava/lang/String;
 
     .line 4024
-    :goto_19
+    :goto_18
     add-int/lit8 v26, v26, 0x1
 
     move-object/from16 v36, v35
 
     .end local v35           #p:Landroid/content/pm/PackageParser$Provider;
     .restart local v36       #p:Landroid/content/pm/PackageParser$Provider;
-    goto :goto_17
+    goto :goto_16
 
     .line 3997
     .end local v14           #N:I
@@ -18290,7 +18290,7 @@
 
     iput-wide v0, v2, Lcom/android/server/pm/PackageSettingBase;->lastUpdateTime:J
 
-    goto/16 :goto_15
+    goto/16 :goto_14
 
     .line 4262
     :catchall_3
@@ -18328,7 +18328,7 @@
 
     iput-wide v0, v2, Lcom/android/server/pm/PackageSettingBase;->firstInstallTime:J
 
-    goto/16 :goto_15
+    goto/16 :goto_14
 
     .line 4003
     :cond_41
@@ -18352,7 +18352,7 @@
 
     iput-wide v0, v2, Lcom/android/server/pm/PackageSettingBase;->lastUpdateTime:J
 
-    goto/16 :goto_15
+    goto/16 :goto_14
 
     .line 4041
     .restart local v14       #N:I
@@ -18398,7 +18398,7 @@
 
     iput-object v10, v3, Landroid/content/pm/ProviderInfo;->authority:Ljava/lang/String;
 
-    goto :goto_19
+    goto :goto_18
 
     .line 4050
     :cond_43
@@ -18472,7 +18472,7 @@
 
     move-result-object v3
 
-    :goto_1a
+    :goto_19
     invoke-virtual {v11, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
@@ -18483,12 +18483,12 @@
 
     invoke-static {v10, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto/16 :goto_19
+    goto/16 :goto_18
 
     :cond_44
     const-string v3, "?"
 
-    goto :goto_1a
+    goto :goto_19
 
     .end local v34           #other:Landroid/content/pm/PackageParser$Provider;
     .end local v35           #p:Landroid/content/pm/PackageParser$Provider;
@@ -18521,7 +18521,7 @@
 
     .line 4065
     .restart local v43       #r:Ljava/lang/StringBuilder;
-    :goto_1b
+    :goto_1a
     move-object/from16 v0, v35
 
     iget-object v3, v0, Landroid/content/pm/PackageParser$Provider;->info:Landroid/content/pm/ProviderInfo;
@@ -18536,7 +18536,7 @@
     :cond_47
     add-int/lit8 v23, v23, 0x1
 
-    goto/16 :goto_16
+    goto/16 :goto_15
 
     .line 4063
     :cond_48
@@ -18546,7 +18546,7 @@
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    goto :goto_1b
+    goto :goto_1a
 
     .line 4068
     .end local v35           #p:Landroid/content/pm/PackageParser$Provider;
@@ -18569,7 +18569,7 @@
     .line 4074
     const/16 v23, 0x0
 
-    :goto_1c
+    :goto_1b
     move/from16 v0, v23
 
     if-ge v0, v14, :cond_4d
@@ -18646,7 +18646,7 @@
 
     .line 4085
     .restart local v43       #r:Ljava/lang/StringBuilder;
-    :goto_1d
+    :goto_1c
     move-object/from16 v0, v47
 
     iget-object v3, v0, Landroid/content/pm/PackageParser$Service;->info:Landroid/content/pm/ServiceInfo;
@@ -18661,7 +18661,7 @@
     :cond_4b
     add-int/lit8 v23, v23, 0x1
 
-    goto :goto_1c
+    goto :goto_1b
 
     .line 4083
     :cond_4c
@@ -18671,7 +18671,7 @@
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    goto :goto_1d
+    goto :goto_1c
 
     .line 4088
     .end local v47           #s:Landroid/content/pm/PackageParser$Service;
@@ -18694,7 +18694,7 @@
     .line 4094
     const/16 v23, 0x0
 
-    :goto_1e
+    :goto_1d
     move/from16 v0, v23
 
     if-ge v0, v14, :cond_51
@@ -18767,7 +18767,7 @@
 
     .line 4105
     .restart local v43       #r:Ljava/lang/StringBuilder;
-    :goto_1f
+    :goto_1e
     iget-object v3, v15, Landroid/content/pm/PackageParser$Activity;->info:Landroid/content/pm/ActivityInfo;
 
     iget-object v3, v3, Landroid/content/pm/ComponentInfo;->name:Ljava/lang/String;
@@ -18780,7 +18780,7 @@
     :cond_4f
     add-int/lit8 v23, v23, 0x1
 
-    goto :goto_1e
+    goto :goto_1d
 
     .line 4103
     :cond_50
@@ -18790,7 +18790,7 @@
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    goto :goto_1f
+    goto :goto_1e
 
     .line 4108
     .end local v15           #a:Landroid/content/pm/PackageParser$Activity;
@@ -18813,7 +18813,7 @@
     .line 4114
     const/16 v23, 0x0
 
-    :goto_20
+    :goto_1f
     move/from16 v0, v23
 
     if-ge v0, v14, :cond_55
@@ -18886,7 +18886,7 @@
 
     .line 4125
     .restart local v43       #r:Ljava/lang/StringBuilder;
-    :goto_21
+    :goto_20
     iget-object v3, v15, Landroid/content/pm/PackageParser$Activity;->info:Landroid/content/pm/ActivityInfo;
 
     iget-object v3, v3, Landroid/content/pm/ComponentInfo;->name:Ljava/lang/String;
@@ -18899,7 +18899,7 @@
     :cond_53
     add-int/lit8 v23, v23, 0x1
 
-    goto :goto_20
+    goto :goto_1f
 
     .line 4123
     :cond_54
@@ -18909,7 +18909,7 @@
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    goto :goto_21
+    goto :goto_20
 
     .line 4128
     .end local v15           #a:Landroid/content/pm/PackageParser$Activity;
@@ -18932,7 +18932,7 @@
     .line 4134
     const/16 v23, 0x0
 
-    :goto_22
+    :goto_21
     move/from16 v0, v23
 
     if-ge v0, v14, :cond_5b
@@ -19007,7 +19007,7 @@
 
     .line 4145
     .restart local v43       #r:Ljava/lang/StringBuilder;
-    :goto_23
+    :goto_22
     move-object/from16 v0, v39
 
     iget-object v3, v0, Landroid/content/pm/PackageParser$PermissionGroup;->info:Landroid/content/pm/PermissionGroupInfo;
@@ -19020,10 +19020,10 @@
 
     .line 4134
     :cond_57
-    :goto_24
+    :goto_23
     add-int/lit8 v23, v23, 0x1
 
-    goto :goto_22
+    goto :goto_21
 
     .line 4143
     :cond_58
@@ -19033,7 +19033,7 @@
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    goto :goto_23
+    goto :goto_22
 
     .line 4148
     :cond_59
@@ -19117,7 +19117,7 @@
 
     .line 4157
     .restart local v43       #r:Ljava/lang/StringBuilder;
-    :goto_25
+    :goto_24
     const-string v3, "DUP:"
 
     move-object/from16 v0, v43
@@ -19135,7 +19135,7 @@
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_24
+    goto :goto_23
 
     .line 4155
     :cond_5a
@@ -19145,7 +19145,7 @@
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    goto :goto_25
+    goto :goto_24
 
     .line 4162
     .end local v17           #cur:Landroid/content/pm/PackageParser$PermissionGroup;
@@ -19169,7 +19169,7 @@
     .line 4168
     const/16 v23, 0x0
 
-    :goto_26
+    :goto_25
     move/from16 v0, v23
 
     if-ge v0, v14, :cond_6a
@@ -19205,7 +19205,7 @@
 
     .line 4173
     .local v38, permissionMap:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Lcom/android/server/pm/BasePermission;>;"
-    :goto_27
+    :goto_26
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/pm/PackageManagerService;->mPermissionGroups:Ljava/util/HashMap;
@@ -19408,7 +19408,7 @@
 
     .line 4196
     .restart local v43       #r:Ljava/lang/StringBuilder;
-    :goto_28
+    :goto_27
     move-object/from16 v0, v35
 
     iget-object v3, v0, Landroid/content/pm/PackageParser$Permission;->info:Landroid/content/pm/PermissionInfo;
@@ -19422,7 +19422,7 @@
     .line 4218
     .end local v51           #tree:Lcom/android/server/pm/BasePermission;
     :cond_61
-    :goto_29
+    :goto_28
     move-object/from16 v0, v16
 
     iget-object v3, v0, Lcom/android/server/pm/BasePermission;->perm:Landroid/content/pm/PackageParser$Permission;
@@ -19445,10 +19445,10 @@
     .line 4168
     .end local v16           #bp:Lcom/android/server/pm/BasePermission;
     :cond_62
-    :goto_2a
+    :goto_29
     add-int/lit8 v23, v23, 0x1
 
-    goto/16 :goto_26
+    goto/16 :goto_25
 
     .line 4170
     .end local v38           #permissionMap:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Lcom/android/server/pm/BasePermission;>;"
@@ -19461,7 +19461,7 @@
 
     move-object/from16 v38, v0
 
-    goto/16 :goto_27
+    goto/16 :goto_26
 
     .line 4194
     .restart local v16       #bp:Lcom/android/server/pm/BasePermission;
@@ -19474,7 +19474,7 @@
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    goto :goto_28
+    goto :goto_27
 
     .line 4199
     :cond_65
@@ -19550,7 +19550,7 @@
 
     invoke-static {v3, v10}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_29
+    goto :goto_28
 
     .line 4205
     .end local v51           #tree:Lcom/android/server/pm/BasePermission;
@@ -19613,7 +19613,7 @@
 
     invoke-static {v3, v10}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto/16 :goto_29
+    goto/16 :goto_28
 
     .line 4209
     :cond_67
@@ -19636,7 +19636,7 @@
 
     .line 4215
     .restart local v43       #r:Ljava/lang/StringBuilder;
-    :goto_2b
+    :goto_2a
     const-string v3, "DUP:"
 
     move-object/from16 v0, v43
@@ -19654,7 +19654,7 @@
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto/16 :goto_29
+    goto/16 :goto_28
 
     .line 4213
     :cond_68
@@ -19664,7 +19664,7 @@
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    goto :goto_2b
+    goto :goto_2a
 
     .line 4222
     .end local v16           #bp:Lcom/android/server/pm/BasePermission;
@@ -19727,7 +19727,7 @@
 
     invoke-static {v3, v10}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto/16 :goto_2a
+    goto/16 :goto_29
 
     .line 4227
     .end local v35           #p:Landroid/content/pm/PackageParser$Permission;
@@ -19751,7 +19751,7 @@
     .line 4233
     const/16 v23, 0x0
 
-    :goto_2c
+    :goto_2b
     move/from16 v0, v23
 
     if-ge v0, v14, :cond_6e
@@ -19856,7 +19856,7 @@
 
     .line 4247
     .restart local v43       #r:Ljava/lang/StringBuilder;
-    :goto_2d
+    :goto_2c
     iget-object v3, v15, Landroid/content/pm/PackageParser$Instrumentation;->info:Landroid/content/pm/InstrumentationInfo;
 
     iget-object v3, v3, Landroid/content/pm/InstrumentationInfo;->name:Ljava/lang/String;
@@ -19869,7 +19869,7 @@
     :cond_6c
     add-int/lit8 v23, v23, 0x1
 
-    goto :goto_2c
+    goto :goto_2b
 
     .line 4245
     :cond_6d
@@ -19879,7 +19879,7 @@
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    goto :goto_2d
+    goto :goto_2c
 
     .line 4250
     .end local v15           #a:Landroid/content/pm/PackageParser$Instrumentation;
@@ -19906,7 +19906,7 @@
     .line 4256
     const/16 v23, 0x0
 
-    :goto_2e
+    :goto_2d
     move/from16 v0, v23
 
     if-ge v0, v14, :cond_70
@@ -19931,7 +19931,7 @@
     .line 4256
     add-int/lit8 v23, v23, 0x1
 
-    goto :goto_2e
+    goto :goto_2d
 
     .line 4261
     :cond_70
@@ -19956,7 +19956,7 @@
 
     .end local v36           #p:Landroid/content/pm/PackageParser$Provider;
     .local v35, p:Landroid/content/pm/PackageParser$Provider;
-    goto/16 :goto_18
+    goto/16 :goto_17
 .end method
 
 .method private scanPackageLI(Ljava/io/File;IIJ)Landroid/content/pm/PackageParser$Package;

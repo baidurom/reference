@@ -242,7 +242,7 @@
 
     .line 555
     .local v0, intent:Landroid/content/Intent;
-    iget-object v3, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel$State;->obj:Ljava/lang/Object;
+    iget-object v3, p0, Lcom/baidu/internal/keyguard/hotword/TargetHandlePanel$StateWordHover;->obj:Ljava/lang/Object;
 
     check-cast v3, Landroid/widget/TextView;
 

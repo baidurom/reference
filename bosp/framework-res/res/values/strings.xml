@@ -1420,4 +1420,7 @@ Power-saving exits automatically when power recovers."</string>
     <string name="quickboot_schedule_pwonoff">Phone will shutdown at: %1$s kk:mm</string>
     <string name="quickboot_lowbat_poweroff">If the power is low, the power off alarm may fail</string>
     <string name="quickboot_lowbat_schedule_pwonoff">If the power is low, the schedule of power on may fail</string>
+    <string name="replace_browser_value">Browser</string>
+    <string name="replace_market_value">App Search</string>
+    <string name="replace_reader_value">Reader</string>
 </resources>

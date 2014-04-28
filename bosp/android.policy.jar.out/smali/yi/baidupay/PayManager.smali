@@ -59,7 +59,7 @@
     .line 48
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Lyi/baidupay/PayManager;->mLock:Ljava/lang/Object;
 
@@ -88,7 +88,7 @@
 
     .prologue
     .line 78
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 79
     const/16 v0, 0x8

@@ -33,7 +33,7 @@
 
     .prologue
     .line 302
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 303
     const v0, #id@text1#t

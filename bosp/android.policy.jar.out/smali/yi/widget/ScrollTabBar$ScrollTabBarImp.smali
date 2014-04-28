@@ -103,7 +103,7 @@
     const/4 v1, 0x0
 
     .line 110
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 84
     const/4 v0, 0x1
@@ -650,7 +650,7 @@
 
     move-result-object v5
 
-    const v6, 0x5080275
+    const v6, 0x508028c
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -669,7 +669,7 @@
 
     move-result-object v5
 
-    const v6, 0x508026e
+    const v6, 0x5080285
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -933,7 +933,7 @@
 
     mul-int/2addr v5, v3
 
-    iput v5, v1, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iput v5, v1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
     goto :goto_1
 
@@ -946,7 +946,7 @@
     .line 478
     const/4 v5, 0x0
 
-    iput v5, v1, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iput v5, v1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
     goto :goto_1
 
@@ -1900,7 +1900,7 @@
     iput v10, v3, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
     .line 608
-    iput v2, v3, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iput v2, v3, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
     goto :goto_0
 
@@ -1927,7 +1927,7 @@
 
     mul-int/2addr v6, p1
 
-    iput v6, v3, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iput v6, v3, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
     goto :goto_0
 .end method

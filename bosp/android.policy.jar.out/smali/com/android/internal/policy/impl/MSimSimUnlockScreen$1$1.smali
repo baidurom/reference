@@ -35,7 +35,7 @@
 
     iput p2, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$1$1;->val$result:I
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -57,7 +57,7 @@
 
     iget-object v7, v7, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$1;->this$0:Lcom/android/internal/policy/impl/MSimSimUnlockScreen;
 
-    iget-object v7, v7, Lcom/android/internal/policy/impl/SimUnlockScreen;->mSimUnlockProgressDialog:Landroid/app/ProgressDialog;
+    iget-object v7, v7, Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->mSimUnlockProgressDialog:Landroid/app/ProgressDialog;
 
     if-eqz v7, :cond_0
 
@@ -66,7 +66,7 @@
 
     iget-object v7, v7, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$1;->this$0:Lcom/android/internal/policy/impl/MSimSimUnlockScreen;
 
-    iget-object v7, v7, Lcom/android/internal/policy/impl/SimUnlockScreen;->mSimUnlockProgressDialog:Landroid/app/ProgressDialog;
+    iget-object v7, v7, Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->mSimUnlockProgressDialog:Landroid/app/ProgressDialog;
 
     invoke-virtual {v7}, Landroid/app/ProgressDialog;->hide()V
 
@@ -81,7 +81,7 @@
 
     iget-object v7, v7, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$1;->this$0:Lcom/android/internal/policy/impl/MSimSimUnlockScreen;
 
-    #getter for: Lcom/android/internal/policy/impl/SimUnlockScreen;->mContext:Landroid/content/Context;
+    #getter for: Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->mContext:Landroid/content/Context;
     invoke-static {v7}, Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->access$100(Lcom/android/internal/policy/impl/MSimSimUnlockScreen;)Landroid/content/Context;
 
     move-result-object v7
@@ -133,7 +133,7 @@
 
     iget-object v7, v7, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$1;->this$0:Lcom/android/internal/policy/impl/MSimSimUnlockScreen;
 
-    #getter for: Lcom/android/internal/policy/impl/SimUnlockScreen;->mContext:Landroid/content/Context;
+    #getter for: Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->mContext:Landroid/content/Context;
     invoke-static {v7}, Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->access$200(Lcom/android/internal/policy/impl/MSimSimUnlockScreen;)Landroid/content/Context;
 
     move-result-object v7
@@ -160,7 +160,7 @@
 
     iget-object v7, v7, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$1;->this$0:Lcom/android/internal/policy/impl/MSimSimUnlockScreen;
 
-    iget-object v7, v7, Lcom/android/internal/policy/impl/SimUnlockScreen;->mUpdateMonitor:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
+    iget-object v7, v7, Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->mUpdateMonitor:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     iget-object v8, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$1$1;->this$1:Lcom/android/internal/policy/impl/MSimSimUnlockScreen$1;
 
@@ -178,7 +178,7 @@
 
     iget-object v7, v7, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$1;->this$0:Lcom/android/internal/policy/impl/MSimSimUnlockScreen;
 
-    iget-object v7, v7, Lcom/android/internal/policy/impl/SimUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
+    iget-object v7, v7, Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
     invoke-interface {v7}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->goToUnlockScreen()V
 
@@ -192,7 +192,7 @@
 
     iget-object v7, v7, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$1;->this$0:Lcom/android/internal/policy/impl/MSimSimUnlockScreen;
 
-    iget-object v7, v7, Lcom/android/internal/policy/impl/SimUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
+    iget-object v7, v7, Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
     invoke-interface {v7}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->pokeWakelock()V
 
@@ -267,7 +267,7 @@
 
     iget-object v7, v7, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$1;->this$0:Lcom/android/internal/policy/impl/MSimSimUnlockScreen;
 
-    iget-object v7, v7, Lcom/android/internal/policy/impl/SimUnlockScreen;->mHeaderText:Landroid/widget/TextView;
+    iget-object v7, v7, Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->mHeaderText:Landroid/widget/TextView;
 
     invoke-virtual {v7, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
     :try_end_0
@@ -281,7 +281,7 @@
 
     iget-object v7, v7, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$1;->this$0:Lcom/android/internal/policy/impl/MSimSimUnlockScreen;
 
-    iget-object v7, v7, Lcom/android/internal/policy/impl/SimUnlockScreen;->mPinText:Landroid/widget/TextView;
+    iget-object v7, v7, Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->mPinText:Landroid/widget/TextView;
 
     const-string v8, ""
 
@@ -292,7 +292,7 @@
 
     iget-object v7, v7, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$1;->this$0:Lcom/android/internal/policy/impl/MSimSimUnlockScreen;
 
-    iput v12, v7, Lcom/android/internal/policy/impl/SimUnlockScreen;->mEnteredDigits:I
+    iput v12, v7, Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->mEnteredDigits:I
 
     goto :goto_0
 
@@ -304,13 +304,13 @@
 
     iget-object v7, v7, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$1;->this$0:Lcom/android/internal/policy/impl/MSimSimUnlockScreen;
 
-    iget-object v7, v7, Lcom/android/internal/policy/impl/SimUnlockScreen;->mHeaderText:Landroid/widget/TextView;
+    iget-object v7, v7, Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->mHeaderText:Landroid/widget/TextView;
 
     iget-object v8, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$1$1;->this$1:Lcom/android/internal/policy/impl/MSimSimUnlockScreen$1;
 
     iget-object v8, v8, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$1;->this$0:Lcom/android/internal/policy/impl/MSimSimUnlockScreen;
 
-    #getter for: Lcom/android/internal/policy/impl/SimUnlockScreen;->mContext:Landroid/content/Context;
+    #getter for: Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->mContext:Landroid/content/Context;
     invoke-static {v8}, Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->access$300(Lcom/android/internal/policy/impl/MSimSimUnlockScreen;)Landroid/content/Context;
 
     move-result-object v8
@@ -338,7 +338,7 @@
 
     iget-object v7, v7, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$1;->this$0:Lcom/android/internal/policy/impl/MSimSimUnlockScreen;
 
-    iget-object v7, v7, Lcom/android/internal/policy/impl/SimUnlockScreen;->mHeaderText:Landroid/widget/TextView;
+    iget-object v7, v7, Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->mHeaderText:Landroid/widget/TextView;
 
     invoke-virtual {v7, v13}, Landroid/widget/TextView;->setText(I)V
 
@@ -351,7 +351,7 @@
 
     iget-object v7, v7, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$1;->this$0:Lcom/android/internal/policy/impl/MSimSimUnlockScreen;
 
-    iget-object v7, v7, Lcom/android/internal/policy/impl/SimUnlockScreen;->mHeaderText:Landroid/widget/TextView;
+    iget-object v7, v7, Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->mHeaderText:Landroid/widget/TextView;
 
     invoke-virtual {v7, v13}, Landroid/widget/TextView;->setText(I)V
 

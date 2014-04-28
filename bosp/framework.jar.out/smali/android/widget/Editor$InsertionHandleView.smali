@@ -32,7 +32,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/widget/Editor;Landroid/graphics/drawable/Drawable;)V
-    .locals 0
+    .locals 1
     .parameter
     .parameter "drawable"
 
@@ -44,6 +44,10 @@
     invoke-direct {p0, p1, p2, p2}, Landroid/widget/Editor$HandleView;-><init>(Landroid/widget/Editor;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
     .line 3177
+    const/4 v0, 0x1
+    
+    iput v0, p0, Landroid/widget/Editor$InsertionHandleView;->mCursorType:I
+    
     return-void
 .end method
 
@@ -375,7 +379,18 @@
 
     if-gez v2, :cond_0
 
+    iget-object v2, p0, Landroid/widget/Editor$InsertionHandleView;->mActionPopupWindow:Landroid/widget/Editor$ActionPopupWindow;
+    
+    if-eqz v2, :cond_baidu_0
+    
+    iget-object v2, p0, Landroid/widget/Editor$InsertionHandleView;->mActionPopupWindow:Landroid/widget/Editor$ActionPopupWindow;
+    
+    iget v3, p0, Landroid/widget/Editor$InsertionHandleView;->mCursorType:I
+    
+    invoke-virtual {v2, v3}, Landroid/widget/Editor$ActionPopupWindow;->updatePositionFlag(I)V
+    
     .line 3186
+    :cond_baidu_0
     const/4 v2, 0x0
 
     invoke-virtual {p0, v2}, Landroid/widget/Editor$InsertionHandleView;->showActionPopupWindow(I)V
@@ -389,13 +404,24 @@
 .end method
 
 .method public showWithActionPopup()V
-    .locals 1
+    .locals 2
 
     .prologue
     .line 3193
     invoke-virtual {p0}, Landroid/widget/Editor$InsertionHandleView;->show()V
 
+    iget-object v0, p0, Landroid/widget/Editor$InsertionHandleView;->mActionPopupWindow:Landroid/widget/Editor$ActionPopupWindow;
+    
+    if-eqz v0, :cond_baidu_0
+    
+    iget-object v0, p0, Landroid/widget/Editor$InsertionHandleView;->mActionPopupWindow:Landroid/widget/Editor$ActionPopupWindow;
+    
+    iget v1, p0, Landroid/widget/Editor$InsertionHandleView;->mCursorType:I
+    
+    invoke-virtual {v0, v1}, Landroid/widget/Editor$ActionPopupWindow;->updatePositionFlag(I)V
+    
     .line 3194
+    :cond_baidu_0
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Landroid/widget/Editor$InsertionHandleView;->showActionPopupWindow(I)V

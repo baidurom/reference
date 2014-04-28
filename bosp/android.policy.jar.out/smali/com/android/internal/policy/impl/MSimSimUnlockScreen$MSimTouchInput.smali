@@ -41,7 +41,7 @@
 
     check-cast v0, Landroid/widget/ImageButton;
 
-    iput-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mZero:Landroid/widget/ImageButton;
+    iput-object v0, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$MSimTouchInput;->mZero:Landroid/widget/ImageButton;
 
     .line 221
     const v0, #id@one#t
@@ -52,7 +52,7 @@
 
     check-cast v0, Landroid/widget/ImageButton;
 
-    iput-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mOne:Landroid/widget/ImageButton;
+    iput-object v0, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$MSimTouchInput;->mOne:Landroid/widget/ImageButton;
 
     .line 222
     const v0, #id@two#t
@@ -63,7 +63,7 @@
 
     check-cast v0, Landroid/widget/ImageButton;
 
-    iput-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mTwo:Landroid/widget/ImageButton;
+    iput-object v0, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$MSimTouchInput;->mTwo:Landroid/widget/ImageButton;
 
     .line 223
     const v0, #id@three#t
@@ -74,7 +74,7 @@
 
     check-cast v0, Landroid/widget/ImageButton;
 
-    iput-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mThree:Landroid/widget/ImageButton;
+    iput-object v0, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$MSimTouchInput;->mThree:Landroid/widget/ImageButton;
 
     .line 224
     const v0, #id@four#t
@@ -85,7 +85,7 @@
 
     check-cast v0, Landroid/widget/ImageButton;
 
-    iput-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mFour:Landroid/widget/ImageButton;
+    iput-object v0, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$MSimTouchInput;->mFour:Landroid/widget/ImageButton;
 
     .line 225
     const v0, #id@five#t
@@ -96,7 +96,7 @@
 
     check-cast v0, Landroid/widget/ImageButton;
 
-    iput-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mFive:Landroid/widget/ImageButton;
+    iput-object v0, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$MSimTouchInput;->mFive:Landroid/widget/ImageButton;
 
     .line 226
     const v0, #id@six#t
@@ -107,7 +107,7 @@
 
     check-cast v0, Landroid/widget/ImageButton;
 
-    iput-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mSix:Landroid/widget/ImageButton;
+    iput-object v0, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$MSimTouchInput;->mSix:Landroid/widget/ImageButton;
 
     .line 227
     const v0, #id@seven#t
@@ -118,7 +118,7 @@
 
     check-cast v0, Landroid/widget/ImageButton;
 
-    iput-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mSeven:Landroid/widget/ImageButton;
+    iput-object v0, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$MSimTouchInput;->mSeven:Landroid/widget/ImageButton;
 
     .line 228
     const v0, #id@eight#t
@@ -129,7 +129,7 @@
 
     check-cast v0, Landroid/widget/ImageButton;
 
-    iput-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mEight:Landroid/widget/ImageButton;
+    iput-object v0, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$MSimTouchInput;->mEight:Landroid/widget/ImageButton;
 
     .line 229
     const v0, #id@nine#t
@@ -140,7 +140,7 @@
 
     check-cast v0, Landroid/widget/ImageButton;
 
-    iput-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mNine:Landroid/widget/ImageButton;
+    iput-object v0, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$MSimTouchInput;->mNine:Landroid/widget/ImageButton;
 
     .line 230
     const v0, #id@cancel#t
@@ -151,60 +151,60 @@
 
     check-cast v0, Landroid/widget/ImageButton;
 
-    iput-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mCancelButton:Landroid/widget/ImageButton;
+    iput-object v0, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$MSimTouchInput;->mCancelButton:Landroid/widget/ImageButton;
 
     .line 232
-    iget-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mZero:Landroid/widget/ImageButton;
+    iget-object v0, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$MSimTouchInput;->mZero:Landroid/widget/ImageButton;
 
     invoke-virtual {v0, p0}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 233
-    iget-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mOne:Landroid/widget/ImageButton;
+    iget-object v0, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$MSimTouchInput;->mOne:Landroid/widget/ImageButton;
 
     invoke-virtual {v0, p0}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 234
-    iget-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mTwo:Landroid/widget/ImageButton;
+    iget-object v0, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$MSimTouchInput;->mTwo:Landroid/widget/ImageButton;
 
     invoke-virtual {v0, p0}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 235
-    iget-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mThree:Landroid/widget/ImageButton;
+    iget-object v0, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$MSimTouchInput;->mThree:Landroid/widget/ImageButton;
 
     invoke-virtual {v0, p0}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 236
-    iget-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mFour:Landroid/widget/ImageButton;
+    iget-object v0, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$MSimTouchInput;->mFour:Landroid/widget/ImageButton;
 
     invoke-virtual {v0, p0}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 237
-    iget-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mFive:Landroid/widget/ImageButton;
+    iget-object v0, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$MSimTouchInput;->mFive:Landroid/widget/ImageButton;
 
     invoke-virtual {v0, p0}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 238
-    iget-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mSix:Landroid/widget/ImageButton;
+    iget-object v0, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$MSimTouchInput;->mSix:Landroid/widget/ImageButton;
 
     invoke-virtual {v0, p0}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 239
-    iget-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mSeven:Landroid/widget/ImageButton;
+    iget-object v0, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$MSimTouchInput;->mSeven:Landroid/widget/ImageButton;
 
     invoke-virtual {v0, p0}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 240
-    iget-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mEight:Landroid/widget/ImageButton;
+    iget-object v0, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$MSimTouchInput;->mEight:Landroid/widget/ImageButton;
 
     invoke-virtual {v0, p0}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 241
-    iget-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mNine:Landroid/widget/ImageButton;
+    iget-object v0, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$MSimTouchInput;->mNine:Landroid/widget/ImageButton;
 
     invoke-virtual {v0, p0}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 242
-    iget-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mCancelButton:Landroid/widget/ImageButton;
+    iget-object v0, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$MSimTouchInput;->mCancelButton:Landroid/widget/ImageButton;
 
     invoke-virtual {v0, p0}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -220,14 +220,14 @@
 
     .prologue
     .line 248
-    iget-object v1, p0, Lcom/android/internal/policy/impl/SimUnlockScreen$TouchInput;->mCancelButton:Landroid/widget/ImageButton;
+    iget-object v1, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$MSimTouchInput;->mCancelButton:Landroid/widget/ImageButton;
 
     if-ne p1, v1, :cond_1
 
     .line 249
     iget-object v1, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$MSimTouchInput;->this$0:Lcom/android/internal/policy/impl/MSimSimUnlockScreen;
 
-    iget-object v1, v1, Lcom/android/internal/policy/impl/SimUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
+    iget-object v1, v1, Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
     iget-object v2, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$MSimTouchInput;->this$0:Lcom/android/internal/policy/impl/MSimSimUnlockScreen;
 
@@ -241,7 +241,7 @@
     .line 250
     iget-object v1, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$MSimTouchInput;->this$0:Lcom/android/internal/policy/impl/MSimSimUnlockScreen;
 
-    iget-object v1, v1, Lcom/android/internal/policy/impl/SimUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
+    iget-object v1, v1, Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
     invoke-interface {v1}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->goToLockScreen()V
 
@@ -263,7 +263,7 @@
     .line 256
     iget-object v1, p0, Lcom/android/internal/policy/impl/MSimSimUnlockScreen$MSimTouchInput;->this$0:Lcom/android/internal/policy/impl/MSimSimUnlockScreen;
 
-    iget-object v1, v1, Lcom/android/internal/policy/impl/SimUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
+    iget-object v1, v1, Lcom/android/internal/policy/impl/MSimSimUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
     const/16 v2, 0x1388
 

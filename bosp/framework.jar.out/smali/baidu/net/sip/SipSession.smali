@@ -29,7 +29,7 @@
 
     .prologue
     .line 251
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 252
     const-string v1, "baidu.net.sip"

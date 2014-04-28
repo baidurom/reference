@@ -709,7 +709,7 @@
 
     iget-object v4, v0, Lcom/baidu/themeanimation/element/ImageElement$ImageElementView;->this$0:Lcom/baidu/themeanimation/element/ImageElement;
 
-    iget-object v4, v4, Lcom/baidu/themeanimation/element/VisibleElement;->mPaint:Landroid/graphics/Paint;
+    iget-object v4, v4, Lcom/baidu/themeanimation/element/ImageElement;->mPaint:Landroid/graphics/Paint;
 
     move-object/from16 v0, p1
 
@@ -890,7 +890,7 @@
 
     sub-int/2addr v4, v5
 
-    iput v4, v0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iput v4, v0, Landroid/widget/RelativeLayout$LayoutParams;->leftMargin:I
 
     .line 250
     .end local v3           #posX:I

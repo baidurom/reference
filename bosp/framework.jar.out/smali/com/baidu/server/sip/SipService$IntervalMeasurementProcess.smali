@@ -60,7 +60,7 @@
     .line 699
     iput-object p1, p0, Lcom/baidu/server/sip/SipService$IntervalMeasurementProcess;->this$0:Lcom/baidu/server/sip/SipService;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 700
     const-string v0, "SipKeepAliveInterval"

@@ -30,7 +30,7 @@
     .line 203
     iput-object p1, p0, Lyi/support/v1/ActionBarTitleViewContainer$3;->this$0:Lyi/support/v1/ActionBarTitleViewContainer;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -117,7 +117,7 @@
 
     move-result-object v0
 
-    const v2, 0x508009f
+    const v2, 0x50800a0
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

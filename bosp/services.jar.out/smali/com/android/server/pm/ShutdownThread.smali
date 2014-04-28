@@ -135,6 +135,7 @@
     return-object p0
 .end method
 
+
 .method private static beginShutdownSequence(Landroid/content/Context;)V
     .locals 7
     .parameter "context"
@@ -688,8 +689,8 @@
     .local v0, closer:Lcom/android/server/pm/ShutdownThread$CloseDialogReceiver;
     sget-boolean v4, Lcom/android/server/pm/ShutdownThread;->mReboot:Z
 
-    if-nez v4, :cond_3
-
+    if-nez v4, :cond_baidu_0
+    
     new-instance v5, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v5, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -729,7 +730,7 @@
 
     .line 139
     .local v1, dialog:Landroid/app/AlertDialog;
-    :goto_3
+    :goto_baidu_0
     iput-object v1, v0, Lcom/android/server/pm/ShutdownThread$CloseDialogReceiver;->dialog:Landroid/app/Dialog;
 
     .line 140
@@ -783,11 +784,12 @@
     .line 127
     .restart local v0       #closer:Lcom/android/server/pm/ShutdownThread$CloseDialogReceiver;
     .restart local v3       #resourceId:I
+    :cond_3
     const v4, #string@power_off#t
 
     goto :goto_2
-
-    :cond_3
+    
+    :cond_baidu_0
     new-instance v5, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v5, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -815,7 +817,7 @@
     invoke-virtual {v5, v6, v7, v8}, Landroid/app/AlertDialog$Builder;->setSingleChoiceItems(IILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v5
-
+    
     const v7, #string@yes#t
 
     new-instance v8, Lcom/android/server/pm/ShutdownThread$baidu_1;
@@ -825,7 +827,7 @@
     invoke-virtual {v5, v7, v8}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v5
-
+    
     const v7, #string@no#t
 
     new-instance v8, Lcom/android/server/pm/ShutdownThread$baidu_2;
@@ -841,7 +843,7 @@
     move-result-object v1
 
     .restart local v1       #dialog:Landroid/app/AlertDialog;
-    goto :goto_3
+    goto :goto_baidu_0
 
     .line 144
     .end local v0           #closer:Lcom/android/server/pm/ShutdownThread$CloseDialogReceiver;

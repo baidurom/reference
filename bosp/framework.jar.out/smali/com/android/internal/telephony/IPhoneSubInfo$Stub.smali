@@ -435,9 +435,9 @@
     invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeStringArray([Ljava/lang/String;)V
 
     goto/16 :goto_0
-
+    
     .end local v0           #_result:[Ljava/lang/String;
-    :sswitch_e
+    :sswitch_baidu_0
     const-string v2, "com.android.internal.telephony.IPhoneSubInfo"
 
     invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
@@ -455,9 +455,9 @@
     invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     goto/16 :goto_0
-
+    
     .end local v0           #_result:Ljava/lang/String;
-    :sswitch_f
+    :sswitch_baidu_1
     const-string v2, "com.android.internal.telephony.IPhoneSubInfo"
 
     invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
@@ -474,13 +474,9 @@
     .line 78
     invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    goto/16 :goto_0
+    goto :goto_0
 
     .line 42
-    nop
-
-    nop
-
     nop
 
     :sswitch_data_0
@@ -498,8 +494,8 @@
         0xb -> :sswitch_b
         0xc -> :sswitch_c
         0xd -> :sswitch_d
-        0x98 -> :sswitch_e
-        0x99 -> :sswitch_f
+        0x98 -> :sswitch_baidu_0
+        0x99 -> :sswitch_baidu_1
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

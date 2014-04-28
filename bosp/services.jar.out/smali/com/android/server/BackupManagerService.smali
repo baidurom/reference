@@ -568,7 +568,7 @@
     move-object/from16 v1, p0
 
     iput-object v0, v1, Lcom/android/server/BackupManagerService;->mBaiduConnection:Landroid/content/ServiceConnection;
-
+    
     .line 710
     move-object/from16 v0, p1
 
@@ -1489,7 +1489,7 @@
     .end local v14           #intent:Landroid/content/Intent;
     :goto_4
     invoke-direct/range {p0 .. p0}, Lcom/android/server/BackupManagerService;->registerBaiduTransport()V
-
+    
     invoke-direct/range {p0 .. p0}, Lcom/android/server/BackupManagerService;->parseLeftoverJournals()V
 
     .line 851
@@ -1930,6 +1930,17 @@
     return-void
 .end method
 
+.method static synthetic access$baidu_200(Lcom/android/server/BackupManagerService;)V
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    .line 132
+    invoke-direct {p0}, Lcom/android/server/BackupManagerService;->registerBaiduTransport()V
+
+    return-void
+.end method
+
 .method static synthetic access$1900(Lcom/android/server/BackupManagerService;)Landroid/content/Context;
     .locals 1
     .parameter "x0"
@@ -1997,17 +2008,6 @@
     iget-object v0, p0, Lcom/android/server/BackupManagerService;->mActivityManager:Landroid/app/IActivityManager;
 
     return-object v0
-.end method
-
-.method static synthetic access$baidu_200(Lcom/android/server/BackupManagerService;)V
-    .locals 0
-    .parameter "x0"
-
-    .prologue
-    .line 132
-    invoke-direct {p0}, Lcom/android/server/BackupManagerService;->registerBaiduTransport()V
-
-    return-void
 .end method
 
 .method private addPackageParticipantsLockedInner(Ljava/lang/String;Ljava/util/List;)V

@@ -1076,7 +1076,7 @@
 
     .prologue
     .line 31
-    iget-object v0, p0, Lyi/support/v1/blend/BlendService$BlendTask;->mSrcBitmap:Landroid/graphics/Bitmap;
+    iget-object v0, p0, Lyi/support/v1/blend/BlurBlend$Task;->mSrcBitmap:Landroid/graphics/Bitmap;
 
     iget v1, p0, Lyi/support/v1/blend/BlurBlend$Task;->mRadius:I
 

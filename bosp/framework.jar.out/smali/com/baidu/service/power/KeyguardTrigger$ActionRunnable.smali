@@ -38,7 +38,7 @@
     .line 22
     iput-object p1, p0, Lcom/baidu/service/power/KeyguardTrigger$ActionRunnable;->this$0:Lcom/baidu/service/power/KeyguardTrigger;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 23
     iput-object p2, p0, Lcom/baidu/service/power/KeyguardTrigger$ActionRunnable;->mContext:Landroid/content/Context;
@@ -120,7 +120,7 @@
     :try_start_0
     iget-object v1, p0, Lcom/baidu/service/power/KeyguardTrigger$ActionRunnable;->this$0:Lcom/baidu/service/power/KeyguardTrigger;
 
-    iget-object v1, v1, Lcom/baidu/service/power/BroadcastTrigger;->mIntent:Landroid/content/Intent;
+    iget-object v1, v1, Lcom/baidu/service/power/KeyguardTrigger;->mIntent:Landroid/content/Intent;
 
     invoke-virtual {v1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -217,7 +217,7 @@
 
     iget-object v1, p0, Lcom/baidu/service/power/KeyguardTrigger$ActionRunnable;->this$0:Lcom/baidu/service/power/KeyguardTrigger;
 
-    iget-object v1, v1, Lcom/baidu/service/power/BroadcastTrigger;->mIntent:Landroid/content/Intent;
+    iget-object v1, v1, Lcom/baidu/service/power/KeyguardTrigger;->mIntent:Landroid/content/Intent;
 
     invoke-virtual {v1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -236,7 +236,7 @@
 
     iget-object v2, p0, Lcom/baidu/service/power/KeyguardTrigger$ActionRunnable;->this$0:Lcom/baidu/service/power/KeyguardTrigger;
 
-    iget-object v2, v2, Lcom/baidu/service/power/BroadcastTrigger;->mIntent:Landroid/content/Intent;
+    iget-object v2, v2, Lcom/baidu/service/power/KeyguardTrigger;->mIntent:Landroid/content/Intent;
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
@@ -317,7 +317,7 @@
 
     iget-object v1, p0, Lcom/baidu/service/power/KeyguardTrigger$ActionRunnable;->this$0:Lcom/baidu/service/power/KeyguardTrigger;
 
-    iget-object v1, v1, Lcom/baidu/service/power/BroadcastTrigger;->mIntent:Landroid/content/Intent;
+    iget-object v1, v1, Lcom/baidu/service/power/KeyguardTrigger;->mIntent:Landroid/content/Intent;
 
     invoke-virtual {v1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -336,7 +336,7 @@
 
     iget-object v2, p0, Lcom/baidu/service/power/KeyguardTrigger$ActionRunnable;->this$0:Lcom/baidu/service/power/KeyguardTrigger;
 
-    iget-object v2, v2, Lcom/baidu/service/power/BroadcastTrigger;->mIntent:Landroid/content/Intent;
+    iget-object v2, v2, Lcom/baidu/service/power/KeyguardTrigger;->mIntent:Landroid/content/Intent;
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 

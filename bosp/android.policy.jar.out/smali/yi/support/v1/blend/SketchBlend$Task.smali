@@ -857,7 +857,7 @@
 
     .prologue
     .line 31
-    iget-object v0, p0, Lyi/support/v1/blend/BlendService$BlendTask;->mSrcBitmap:Landroid/graphics/Bitmap;
+    iget-object v0, p0, Lyi/support/v1/blend/SketchBlend$Task;->mSrcBitmap:Landroid/graphics/Bitmap;
 
     invoke-virtual {p0, v0}, Lyi/support/v1/blend/SketchBlend$Task;->sketch(Landroid/graphics/Bitmap;)Z
 

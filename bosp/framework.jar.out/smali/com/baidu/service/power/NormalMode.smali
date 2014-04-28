@@ -40,7 +40,7 @@
     invoke-static {v1, v2, v3}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     .line 18
-    iget-object v1, p0, Lcom/baidu/service/power/PowerMode;->mProfile:Lcom/baidu/service/power/Profile;
+    iget-object v1, p0, Lcom/baidu/service/power/NormalMode;->mProfile:Lcom/baidu/service/power/Profile;
 
     invoke-virtual {v1, p1}, Lcom/baidu/service/power/Profile;->applyProfileMerge(Landroid/content/Context;)V
 
@@ -75,7 +75,7 @@
     invoke-static {v0, v1}, Lcom/baidu/service/power/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 27
-    iget-object v0, p0, Lcom/baidu/service/power/PowerMode;->mProfile:Lcom/baidu/service/power/Profile;
+    iget-object v0, p0, Lcom/baidu/service/power/NormalMode;->mProfile:Lcom/baidu/service/power/Profile;
 
     invoke-static {p1, v0}, Lcom/baidu/service/power/Profile;->createCurrentProfile(Landroid/content/Context;Lcom/baidu/service/power/Profile;)V
 

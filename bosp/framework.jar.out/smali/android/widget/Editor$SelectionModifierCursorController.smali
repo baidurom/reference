@@ -64,6 +64,18 @@
     return-void
 .end method
 
+.method static synthetic access$baidu_100(Landroid/widget/Editor$SelectionModifierCursorController;Landroid/view/MotionEvent;)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 3948
+    invoke-direct {p0, p1}, Landroid/widget/Editor$SelectionModifierCursorController;->updateMagnifierSelectionOffsets(Landroid/view/MotionEvent;)V
+
+    return-void
+.end method
+
 .method private initDrawables()V
     .locals 3
 
@@ -262,6 +274,43 @@
     return-void
 .end method
 
+.method private updateMagnifierSelectionOffsets(Landroid/view/MotionEvent;)V
+    .locals 3
+    .parameter "event"
+
+    .prologue
+    .line 4096
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+
+    move-result v0
+
+    .line 4097
+    .local v0, x:F
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    move-result v1
+
+    .line 4101
+    .local v1, y:F
+    iget-object v2, p0, Landroid/widget/Editor$SelectionModifierCursorController;->this$0:Landroid/widget/Editor;
+
+    #getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
+    invoke-static {v2}, Landroid/widget/Editor;->access$600(Landroid/widget/Editor;)Landroid/widget/TextView;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0, v1}, Landroid/widget/TextView;->getOffsetForPosition(FF)I
+
+    move-result v2
+
+    iput v2, p0, Landroid/widget/Editor$SelectionModifierCursorController;->mMaxTouchOffset:I
+
+    iput v2, p0, Landroid/widget/Editor$SelectionModifierCursorController;->mMinTouchOffset:I
+
+    .line 4103
+    return-void
+.end method
+
 .method private updateMinAndMaxOffsets(Landroid/view/MotionEvent;)V
     .locals 6
     .parameter "event"
@@ -355,6 +404,25 @@
 
     .prologue
     .line 3505
+    iget-object v0, p0, Landroid/widget/Editor$SelectionModifierCursorController;->this$0:Landroid/widget/Editor;
+    
+    #getter for: Landroid/widget/Editor;->mMagnifierController:Landroid/widget/MagnifierController;
+    invoke-static {v0}, Landroid/widget/Editor;->access$baidu_200(Landroid/widget/Editor;)Landroid/widget/MagnifierController;
+    
+    move-result-object v0
+    
+    if-eqz v0, :cond_baidu_0
+    
+    iget-object v0, p0, Landroid/widget/Editor$SelectionModifierCursorController;->this$0:Landroid/widget/Editor;
+    
+    #getter for: Landroid/widget/Editor;->mMagnifierController:Landroid/widget/MagnifierController;
+    invoke-static {v0}, Landroid/widget/Editor;->access$baidu_200(Landroid/widget/Editor;)Landroid/widget/MagnifierController;
+    
+    move-result-object v0
+    
+    invoke-virtual {v0}, Landroid/widget/MagnifierController;->dismiss()V
+    
+    :cond_baidu_0
     iget-object v0, p0, Landroid/widget/Editor$SelectionModifierCursorController;->mStartHandle:Landroid/widget/Editor$SelectionStartHandleView;
 
     if-eqz v0, :cond_0

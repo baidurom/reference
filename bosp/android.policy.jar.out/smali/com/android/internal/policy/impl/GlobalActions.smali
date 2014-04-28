@@ -107,7 +107,7 @@
     const/4 v6, 0x0
 
     .line 109
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 93
     iput-boolean v6, p0, Lcom/android/internal/policy/impl/GlobalActions;->mKeyguardShowing:Z
@@ -133,7 +133,7 @@
     .line 103
     new-instance v4, Ljava/lang/Object;
 
-    invoke-direct/range {v4 .. v4}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v4}, Ljava/lang/Object;-><init>()V
 
     iput-object v4, p0, Lcom/android/internal/policy/impl/GlobalActions;->mScreenshotLock:Ljava/lang/Object;
 

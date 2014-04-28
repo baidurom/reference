@@ -43,7 +43,7 @@
     .line 266
     iget-object v0, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager$1;->this$0:Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;
 
-    iget-object v0, v0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mUpdateMonitor:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
+    iget-object v0, v0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mUpdateMonitor:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->isClockVisible()Z
 
@@ -54,14 +54,14 @@
     .line 267
     iget-object v0, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager$1;->this$0:Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;
 
-    iget-object v0, v0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mDateView:Landroid/widget/TextView;
+    iget-object v0, v0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mDateView:Landroid/widget/TextView;
 
     if-eqz v0, :cond_0
 
     .line 268
     iget-object v0, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager$1;->this$0:Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;
 
-    iget-object v0, v0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mDateView:Landroid/widget/TextView;
+    iget-object v0, v0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mDateView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
@@ -69,14 +69,14 @@
     :cond_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager$1;->this$0:Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;
 
-    iget-object v0, v0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mAlarmStatusView:Landroid/widget/TextView;
+    iget-object v0, v0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mAlarmStatusView:Landroid/widget/TextView;
 
     if-eqz v0, :cond_1
 
     .line 271
     iget-object v0, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager$1;->this$0:Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;
 
-    iget-object v0, v0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mAlarmStatusView:Landroid/widget/TextView;
+    iget-object v0, v0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mAlarmStatusView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
@@ -89,14 +89,14 @@
     :cond_2
     iget-object v0, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager$1;->this$0:Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;
 
-    iget-object v0, v0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mDateView:Landroid/widget/TextView;
+    iget-object v0, v0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mDateView:Landroid/widget/TextView;
 
     if-eqz v0, :cond_3
 
     .line 275
     iget-object v0, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager$1;->this$0:Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;
 
-    iget-object v0, v0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mDateView:Landroid/widget/TextView;
+    iget-object v0, v0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mDateView:Landroid/widget/TextView;
 
     const/4 v1, 0x0
 
@@ -106,14 +106,14 @@
     :cond_3
     iget-object v0, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager$1;->this$0:Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;
 
-    iget-object v0, v0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mAlarmStatusView:Landroid/widget/TextView;
+    iget-object v0, v0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mAlarmStatusView:Landroid/widget/TextView;
 
     if-eqz v0, :cond_4
 
     .line 278
     iget-object v0, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager$1;->this$0:Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;
 
-    iget-object v0, v0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mAlarmStatusView:Landroid/widget/TextView;
+    iget-object v0, v0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mAlarmStatusView:Landroid/widget/TextView;
 
     const/4 v1, 0x4
 
@@ -144,7 +144,7 @@
     .line 259
     iget-object v0, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager$1;->this$0:Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;
 
-    iput p1, v0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mPhoneState:I
+    iput p1, v0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mPhoneState:I
 
     .line 260
     iget-object v0, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager$1;->this$0:Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;
@@ -165,17 +165,17 @@
     .line 233
     iget-object v1, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager$1;->this$0:Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;
 
-    iput-boolean p1, v1, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mShowingBatteryInfo:Z
+    iput-boolean p1, v1, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mShowingBatteryInfo:Z
 
     .line 234
     iget-object v1, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager$1;->this$0:Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;
 
-    iput-boolean p2, v1, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mPluggedIn:Z
+    iput-boolean p2, v1, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mPluggedIn:Z
 
     .line 235
     iget-object v1, p0, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager$1;->this$0:Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;
 
-    iput p3, v1, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mBatteryLevel:I
+    iput p3, v1, Lcom/android/internal/policy/impl/MSimKeyguardStatusViewManager;->mBatteryLevel:I
 
     .line 236
     new-instance v0, Llibcore/util/MutableInt;

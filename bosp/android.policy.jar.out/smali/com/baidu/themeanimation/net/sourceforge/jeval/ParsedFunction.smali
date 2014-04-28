@@ -20,7 +20,7 @@
 
     .prologue
     .line 48
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 50
     iput-object p1, p0, Lcom/baidu/themeanimation/net/sourceforge/jeval/ParsedFunction;->function:Lcom/baidu/themeanimation/net/sourceforge/jeval/function/Function;

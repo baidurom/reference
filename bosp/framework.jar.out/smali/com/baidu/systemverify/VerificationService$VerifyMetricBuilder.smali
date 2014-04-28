@@ -45,7 +45,7 @@
     .line 175
     iput-object p1, p0, Lcom/baidu/systemverify/VerificationService$VerifyMetricBuilder;->this$0:Lcom/baidu/systemverify/VerificationService;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 177
     invoke-static {}, Ljava/nio/ByteOrder;->nativeOrder()Ljava/nio/ByteOrder;

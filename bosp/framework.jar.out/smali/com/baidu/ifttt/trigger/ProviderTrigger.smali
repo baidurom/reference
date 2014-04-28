@@ -29,7 +29,7 @@
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/baidu/ifttt/trigger/BaseProviderTrigger;->mUri:Landroid/net/Uri;
+    iput-object v1, p0, Lcom/baidu/ifttt/trigger/ProviderTrigger;->mUri:Landroid/net/Uri;
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -62,7 +62,7 @@
     :try_start_0
     const-string/jumbo v1, "uri"
 
-    iget-object v2, p0, Lcom/baidu/ifttt/trigger/BaseProviderTrigger;->mUri:Landroid/net/Uri;
+    iget-object v2, p0, Lcom/baidu/ifttt/trigger/ProviderTrigger;->mUri:Landroid/net/Uri;
 
     invoke-virtual {v2}, Landroid/net/Uri;->toString()Ljava/lang/String;
 

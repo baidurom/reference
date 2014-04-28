@@ -61,6 +61,8 @@
 
 .field public static final yi_btn_star_on_normal_baidu_light:I = 0x508003f
 
+.field public static final yi_content_empty:I = 0x5080046
+
 .field public static final yi_divider_vertical_tab_baidu_light:I = 0x5080045
 
 .field public static final yi_expander_close_baidu_light:I = 0x5080025
@@ -162,7 +164,7 @@
 
     .prologue
     .line 474
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

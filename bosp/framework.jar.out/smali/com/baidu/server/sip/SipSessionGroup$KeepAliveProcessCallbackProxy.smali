@@ -28,7 +28,7 @@
 
     .prologue
     .line 2017
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2018
     iput-object p1, p0, Lcom/baidu/server/sip/SipSessionGroup$KeepAliveProcessCallbackProxy;->mCallback:Lcom/baidu/server/sip/SipSessionGroup$KeepAliveProcessCallback;

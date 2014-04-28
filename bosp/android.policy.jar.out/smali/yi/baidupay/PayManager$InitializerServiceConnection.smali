@@ -38,7 +38,7 @@
     .line 467
     iput-object p1, p0, Lyi/baidupay/PayManager$InitializerServiceConnection;->this$0:Lyi/baidupay/PayManager;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 468
     iput-object p2, p0, Lyi/baidupay/PayManager$InitializerServiceConnection;->mContext:Landroid/content/Context;

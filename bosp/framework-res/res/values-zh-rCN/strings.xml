@@ -1334,5 +1334,8 @@
     <string name="quickboot_schedule_pwonoff">手机将在周%1$s kk:mm定时开机</string>
     <string name="quickboot_lowbat_poweroff">电量低时可能无法响铃</string>
     <string name="quickboot_lowbat_schedule_pwonoff">电量低时可能无法定时开机</string>
+    <string name="replace_browser_value">浏览器</string>
+    <string name="replace_market_value">云商店</string>
+    <string name="replace_reader_value">阅读</string>
     <string name="hot_keywords">实时热点</string>
 </resources>

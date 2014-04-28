@@ -21,7 +21,7 @@
 
     .prologue
     .line 11
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 12
     iput-object p1, p0, Lcom/baidu/server/dp/SyncTransaction;->mTransport:Lcom/baidu/server/dp/ISyncTransport;

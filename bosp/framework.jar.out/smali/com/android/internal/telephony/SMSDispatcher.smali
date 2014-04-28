@@ -209,11 +209,11 @@
 
     .line 182
     new-instance v0, Lcom/android/internal/telephony/SMSDispatcher$baidu_1;
-
+    
     invoke-direct {v0, p0}, Lcom/android/internal/telephony/SMSDispatcher$baidu_1;-><init>(Lcom/android/internal/telephony/SMSDispatcher;)V
-
+    
     iput-object v0, p0, Lcom/android/internal/telephony/SMSDispatcher;->TrafficMonitorMessageReceiver:Landroid/content/BroadcastReceiver;
-
+    
     iput-object p1, p0, Lcom/android/internal/telephony/SMSDispatcher;->mPhone:Lcom/android/internal/telephony/Phone;
 
     .line 183
@@ -376,17 +376,17 @@
 
     .line 202
     new-instance v0, Landroid/content/IntentFilter;
-
+    
     const-string v1, "com.baidu.trafficmonitor.star.receive.message"
-
+    
     invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
-
+    
     iget-object v1, p0, Lcom/android/internal/telephony/SMSDispatcher;->mContext:Landroid/content/Context;
-
+    
     iget-object v2, p0, Lcom/android/internal/telephony/SMSDispatcher;->TrafficMonitorMessageReceiver:Landroid/content/BroadcastReceiver;
-
+    
     invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
-
+    
     return-void
 
     :cond_0
@@ -698,7 +698,7 @@
     move-result-object v3
 
     iget v4, v0, Lcom/baidu/internal/telephony/DisturbPreventUtils$BlockResult;->reason:I
-
+    
     const/4 v5, -0x1
 
     invoke-static {v2, p2, v3, v4, v5}, Lcom/baidu/internal/telephony/SMSPlugin;->dispatchDisturbSmsPdu(Landroid/content/Context;[[BLjava/lang/String;II)V
@@ -1098,7 +1098,7 @@
 
     iget-object v0, v13, Lcom/android/internal/telephony/SmsHeader;->concatRef:Lcom/android/internal/telephony/SmsHeader$ConcatRef;
 
-    if-nez v0, :cond_4
+    if-nez v0, :cond_3
 
     .line 492
     :cond_0
@@ -1132,11 +1132,11 @@
 
     .line 498
     invoke-virtual/range {p1 .. p1}, Lcom/android/internal/telephony/SmsMessageBase;->getDisplayOriginatingAddress()Ljava/lang/String;
-
+    
     move-result-object v0
-
+    
     sput-object v0, Lcom/baidu/internal/telephony/SMSPlugin;->msgAddress:Ljava/lang/String;
-
+    
     iget-object v0, p0, Lcom/android/internal/telephony/SMSDispatcher;->mWapPush:Lcom/android/internal/telephony/WapPushOverSms;
 
     invoke-virtual {p1}, Lcom/android/internal/telephony/SmsMessageBase;->getUserData()[B
@@ -1173,20 +1173,20 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3
-
+    if-eqz v0, :cond_baidu_0
+    
     const/4 v8, 0x1
-
+    
     goto :goto_0
 
-    :cond_3
+    :cond_baidu_0
     invoke-virtual {p0, v11}, Lcom/android/internal/telephony/SMSDispatcher;->dispatchPdus([[B)V
 
     goto :goto_0
 
     .line 510
     .end local v11           #pdus:[[B
-    :cond_4
+    :cond_3
     iget-object v10, v13, Lcom/android/internal/telephony/SmsHeader;->concatRef:Lcom/android/internal/telephony/SmsHeader$ConcatRef;
 
     .line 511
@@ -1213,11 +1213,11 @@
 
     move-result-wide v6
 
-    if-eqz v12, :cond_5
+    if-eqz v12, :cond_4
 
     iget v8, v12, Lcom/android/internal/telephony/SmsHeader$PortAddrs;->destPort:I
 
-    :cond_5
+    :cond_4
     move-object v0, p0
 
     invoke-virtual/range {v0 .. v9}, Lcom/android/internal/telephony/SMSDispatcher;->processMessagePart([BLjava/lang/String;IIIJIZ)I
@@ -2576,7 +2576,7 @@
 
     .line 637
     sput-object p2, Lcom/baidu/internal/telephony/SMSPlugin;->msgAddress:Ljava/lang/String;
-
+    
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/internal/telephony/SMSDispatcher;->mWapPush:Lcom/android/internal/telephony/WapPushOverSms;
@@ -2632,7 +2632,7 @@
     if-ne v0, v3, :cond_f
 
     sput-object p2, Lcom/baidu/internal/telephony/SMSPlugin;->msgAddress:Ljava/lang/String;
-
+    
     .line 651
     new-instance v19, Ljava/io/ByteArrayOutputStream;
 
@@ -2726,13 +2726,13 @@
 
     move-result v3
 
-    if-eqz v3, :cond_11
+    if-eqz v3, :cond_baidu_0
 
     const/4 v3, 0x1
 
     goto/16 :goto_1
 
-    :cond_11
+    :cond_baidu_0
     move-object/from16 v0, p0
 
     move-object/from16 v1, v20

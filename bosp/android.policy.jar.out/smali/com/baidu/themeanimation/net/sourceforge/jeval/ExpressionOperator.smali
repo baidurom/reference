@@ -19,7 +19,7 @@
     const/4 v0, 0x0
 
     .line 41
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 27
     iput-object v0, p0, Lcom/baidu/themeanimation/net/sourceforge/jeval/ExpressionOperator;->operator:Lcom/baidu/themeanimation/net/sourceforge/jeval/operator/Operator;

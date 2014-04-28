@@ -67,11 +67,11 @@
 
     .prologue
     .line 81
-    if-nez p2, :cond_0
-
+    if-nez p2, :cond_baidu_0
+    
     goto :goto_0
-
-    :cond_0
+    
+    :cond_baidu_0
     :try_start_0
     const-string v1, "SamplingProfilerService"
 

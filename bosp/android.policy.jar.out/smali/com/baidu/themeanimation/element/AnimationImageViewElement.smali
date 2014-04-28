@@ -45,12 +45,12 @@
 
     .prologue
     .line 103
-    iget-object v0, p0, Lcom/baidu/themeanimation/element/VisibleElement;->mAnimatorParser:Lcom/baidu/themeanimation/element/AnimatorParser;
+    iget-object v0, p0, Lcom/baidu/themeanimation/element/AnimationImageViewElement;->mAnimatorParser:Lcom/baidu/themeanimation/element/AnimatorParser;
 
     if-eqz v0, :cond_0
 
     .line 104
-    iget-object v0, p0, Lcom/baidu/themeanimation/element/VisibleElement;->mAnimatorParser:Lcom/baidu/themeanimation/element/AnimatorParser;
+    iget-object v0, p0, Lcom/baidu/themeanimation/element/AnimationImageViewElement;->mAnimatorParser:Lcom/baidu/themeanimation/element/AnimatorParser;
 
     invoke-virtual {v0}, Lcom/baidu/themeanimation/element/AnimatorParser;->stopAnimations()V
 
@@ -121,12 +121,12 @@
     invoke-virtual {p0, v1}, Lcom/baidu/themeanimation/element/AnimationImageViewElement;->setView(Landroid/view/View;)V
 
     .line 69
-    iget-object v1, p0, Lcom/baidu/themeanimation/element/VisibleElement;->mAnimatorParser:Lcom/baidu/themeanimation/element/AnimatorParser;
+    iget-object v1, p0, Lcom/baidu/themeanimation/element/AnimationImageViewElement;->mAnimatorParser:Lcom/baidu/themeanimation/element/AnimatorParser;
 
     if-eqz v1, :cond_2
 
     .line 70
-    iget-object v1, p0, Lcom/baidu/themeanimation/element/VisibleElement;->mAnimatorParser:Lcom/baidu/themeanimation/element/AnimatorParser;
+    iget-object v1, p0, Lcom/baidu/themeanimation/element/AnimationImageViewElement;->mAnimatorParser:Lcom/baidu/themeanimation/element/AnimatorParser;
 
     iget-object v2, p0, Lcom/baidu/themeanimation/element/AnimationImageViewElement;->imageview:Landroid/widget/ImageView;
 
@@ -142,7 +142,7 @@
 
     if-nez v1, :cond_3
 
-    iget-object v1, p0, Lcom/baidu/themeanimation/element/VisibleElement;->mAnimatorParser:Lcom/baidu/themeanimation/element/AnimatorParser;
+    iget-object v1, p0, Lcom/baidu/themeanimation/element/AnimationImageViewElement;->mAnimatorParser:Lcom/baidu/themeanimation/element/AnimatorParser;
 
     invoke-virtual {v1}, Lcom/baidu/themeanimation/element/AnimatorParser;->getAnimationDrawable()Landroid/graphics/drawable/AnimationDrawable;
 
@@ -153,7 +153,7 @@
     .line 76
     new-instance v0, Landroid/widget/RelativeLayout$LayoutParams;
 
-    iget-object v1, p0, Lcom/baidu/themeanimation/element/VisibleElement;->mAnimatorParser:Lcom/baidu/themeanimation/element/AnimatorParser;
+    iget-object v1, p0, Lcom/baidu/themeanimation/element/AnimationImageViewElement;->mAnimatorParser:Lcom/baidu/themeanimation/element/AnimatorParser;
 
     invoke-virtual {v1}, Lcom/baidu/themeanimation/element/AnimatorParser;->getAnimationDrawable()Landroid/graphics/drawable/AnimationDrawable;
 
@@ -171,7 +171,7 @@
 
     double-to-int v1, v1
 
-    iget-object v2, p0, Lcom/baidu/themeanimation/element/VisibleElement;->mAnimatorParser:Lcom/baidu/themeanimation/element/AnimatorParser;
+    iget-object v2, p0, Lcom/baidu/themeanimation/element/AnimationImageViewElement;->mAnimatorParser:Lcom/baidu/themeanimation/element/AnimatorParser;
 
     invoke-virtual {v2}, Lcom/baidu/themeanimation/element/AnimatorParser;->getAnimationDrawable()Landroid/graphics/drawable/AnimationDrawable;
 
@@ -205,7 +205,7 @@
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/baidu/themeanimation/element/VisibleElement;->mAnimatorParser:Lcom/baidu/themeanimation/element/AnimatorParser;
+    iget-object v3, p0, Lcom/baidu/themeanimation/element/AnimationImageViewElement;->mAnimatorParser:Lcom/baidu/themeanimation/element/AnimatorParser;
 
     invoke-virtual {v3}, Lcom/baidu/themeanimation/element/AnimatorParser;->getAnimationDrawable()Landroid/graphics/drawable/AnimationDrawable;
 
@@ -238,7 +238,7 @@
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/baidu/themeanimation/element/VisibleElement;->mAnimatorParser:Lcom/baidu/themeanimation/element/AnimatorParser;
+    iget-object v3, p0, Lcom/baidu/themeanimation/element/AnimationImageViewElement;->mAnimatorParser:Lcom/baidu/themeanimation/element/AnimatorParser;
 
     invoke-virtual {v3}, Lcom/baidu/themeanimation/element/AnimatorParser;->getAnimationDrawable()Landroid/graphics/drawable/AnimationDrawable;
 
@@ -367,7 +367,7 @@
 
     .prologue
     .line 127
-    iget-object v0, p0, Lcom/baidu/themeanimation/element/VisibleElement;->mAnimatorParser:Lcom/baidu/themeanimation/element/AnimatorParser;
+    iget-object v0, p0, Lcom/baidu/themeanimation/element/AnimationImageViewElement;->mAnimatorParser:Lcom/baidu/themeanimation/element/AnimatorParser;
 
     invoke-virtual {v0, p1}, Lcom/baidu/themeanimation/element/AnimatorParser;->setAnimationListener(Lcom/baidu/themeanimation/view/AnimationViewFactory$AnimationListener;)V
 
@@ -451,12 +451,12 @@
 
     .prologue
     .line 96
-    iget-object v0, p0, Lcom/baidu/themeanimation/element/VisibleElement;->mAnimatorParser:Lcom/baidu/themeanimation/element/AnimatorParser;
+    iget-object v0, p0, Lcom/baidu/themeanimation/element/AnimationImageViewElement;->mAnimatorParser:Lcom/baidu/themeanimation/element/AnimatorParser;
 
     if-eqz v0, :cond_0
 
     .line 97
-    iget-object v0, p0, Lcom/baidu/themeanimation/element/VisibleElement;->mAnimatorParser:Lcom/baidu/themeanimation/element/AnimatorParser;
+    iget-object v0, p0, Lcom/baidu/themeanimation/element/AnimationImageViewElement;->mAnimatorParser:Lcom/baidu/themeanimation/element/AnimatorParser;
 
     invoke-virtual {v0}, Lcom/baidu/themeanimation/element/AnimatorParser;->startAnimations()V
 

@@ -1393,6 +1393,12 @@
 
 .field public static final replace:I = #string@replace#t
 
+.field public static final replace_browser_value:I = #string@replace_browser_value#t
+
+.field public static final replace_market_value:I = #string@replace_market_value#t
+
+.field public static final replace_reader_value:I = #string@replace_reader_value#t
+
 .field public static final report:I = #string@report#t
 
 .field public static final reset:I = #string@reset#t

@@ -95,31 +95,31 @@
     .line 493
     iget-object v2, p0, Lcom/baidu/security/sysop/YiRunningState$MergedItem;->mProcess:Lcom/baidu/security/sysop/YiRunningState$ProcessItem;
 
-    iget-object v2, v2, Lcom/baidu/security/sysop/YiRunningState$BaseItem;->mPackageInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v2, v2, Lcom/baidu/security/sysop/YiRunningState$ProcessItem;->mPackageInfo:Landroid/content/pm/ApplicationInfo;
 
-    iput-object v2, p0, Lcom/baidu/security/sysop/YiRunningState$BaseItem;->mPackageInfo:Landroid/content/pm/ApplicationInfo;
+    iput-object v2, p0, Lcom/baidu/security/sysop/YiRunningState$MergedItem;->mPackageInfo:Landroid/content/pm/ApplicationInfo;
 
     .line 494
     iget-object v2, p0, Lcom/baidu/security/sysop/YiRunningState$MergedItem;->mProcess:Lcom/baidu/security/sysop/YiRunningState$ProcessItem;
 
-    iget-object v2, v2, Lcom/baidu/security/sysop/YiRunningState$BaseItem;->mDisplayLabel:Ljava/lang/CharSequence;
+    iget-object v2, v2, Lcom/baidu/security/sysop/YiRunningState$ProcessItem;->mDisplayLabel:Ljava/lang/CharSequence;
 
-    iput-object v2, p0, Lcom/baidu/security/sysop/YiRunningState$BaseItem;->mDisplayLabel:Ljava/lang/CharSequence;
+    iput-object v2, p0, Lcom/baidu/security/sysop/YiRunningState$MergedItem;->mDisplayLabel:Ljava/lang/CharSequence;
 
     .line 495
     iget-object v2, p0, Lcom/baidu/security/sysop/YiRunningState$MergedItem;->mProcess:Lcom/baidu/security/sysop/YiRunningState$ProcessItem;
 
-    iget-object v2, v2, Lcom/baidu/security/sysop/YiRunningState$BaseItem;->mLabel:Ljava/lang/String;
+    iget-object v2, v2, Lcom/baidu/security/sysop/YiRunningState$ProcessItem;->mLabel:Ljava/lang/String;
 
-    iput-object v2, p0, Lcom/baidu/security/sysop/YiRunningState$BaseItem;->mLabel:Ljava/lang/String;
+    iput-object v2, p0, Lcom/baidu/security/sysop/YiRunningState$MergedItem;->mLabel:Ljava/lang/String;
 
     .line 496
-    iput-boolean p2, p0, Lcom/baidu/security/sysop/YiRunningState$BaseItem;->mBackground:Z
+    iput-boolean p2, p0, Lcom/baidu/security/sysop/YiRunningState$MergedItem;->mBackground:Z
 
     .line 517
     const-wide/16 v2, -0x1
 
-    iput-wide v2, p0, Lcom/baidu/security/sysop/YiRunningState$BaseItem;->mActiveSince:J
+    iput-wide v2, p0, Lcom/baidu/security/sysop/YiRunningState$MergedItem;->mActiveSince:J
 
     .line 518
     const/4 v0, 0x0
@@ -145,7 +145,7 @@
 
     .line 520
     .local v1, si:Lcom/baidu/security/sysop/YiRunningState$ServiceItem;
-    iget-wide v2, v1, Lcom/baidu/security/sysop/YiRunningState$BaseItem;->mActiveSince:J
+    iget-wide v2, v1, Lcom/baidu/security/sysop/YiRunningState$ServiceItem;->mActiveSince:J
 
     const-wide/16 v4, 0x0
 
@@ -153,18 +153,18 @@
 
     if-ltz v2, :cond_0
 
-    iget-wide v2, p0, Lcom/baidu/security/sysop/YiRunningState$BaseItem;->mActiveSince:J
+    iget-wide v2, p0, Lcom/baidu/security/sysop/YiRunningState$MergedItem;->mActiveSince:J
 
-    iget-wide v4, v1, Lcom/baidu/security/sysop/YiRunningState$BaseItem;->mActiveSince:J
+    iget-wide v4, v1, Lcom/baidu/security/sysop/YiRunningState$ServiceItem;->mActiveSince:J
 
     cmp-long v2, v2, v4
 
     if-gez v2, :cond_0
 
     .line 521
-    iget-wide v2, v1, Lcom/baidu/security/sysop/YiRunningState$BaseItem;->mActiveSince:J
+    iget-wide v2, v1, Lcom/baidu/security/sysop/YiRunningState$ServiceItem;->mActiveSince:J
 
-    iput-wide v2, p0, Lcom/baidu/security/sysop/YiRunningState$BaseItem;->mActiveSince:J
+    iput-wide v2, p0, Lcom/baidu/security/sysop/YiRunningState$MergedItem;->mActiveSince:J
 
     .line 518
     :cond_0
@@ -190,9 +190,9 @@
     .line 529
     iget-object v2, p0, Lcom/baidu/security/sysop/YiRunningState$MergedItem;->mProcess:Lcom/baidu/security/sysop/YiRunningState$ProcessItem;
 
-    iget-wide v2, v2, Lcom/baidu/security/sysop/YiRunningState$BaseItem;->mSize:J
+    iget-wide v2, v2, Lcom/baidu/security/sysop/YiRunningState$ProcessItem;->mSize:J
 
-    iput-wide v2, p0, Lcom/baidu/security/sysop/YiRunningState$BaseItem;->mSize:J
+    iput-wide v2, p0, Lcom/baidu/security/sysop/YiRunningState$MergedItem;->mSize:J
 
     .line 530
     const/4 v0, 0x0
@@ -208,7 +208,7 @@
     if-ge v0, v2, :cond_0
 
     .line 531
-    iget-wide v3, p0, Lcom/baidu/security/sysop/YiRunningState$BaseItem;->mSize:J
+    iget-wide v3, p0, Lcom/baidu/security/sysop/YiRunningState$MergedItem;->mSize:J
 
     iget-object v2, p0, Lcom/baidu/security/sysop/YiRunningState$MergedItem;->mOtherProcesses:Ljava/util/ArrayList;
 
@@ -218,11 +218,11 @@
 
     check-cast v2, Lcom/baidu/security/sysop/YiRunningState$ProcessItem;
 
-    iget-wide v5, v2, Lcom/baidu/security/sysop/YiRunningState$BaseItem;->mSize:J
+    iget-wide v5, v2, Lcom/baidu/security/sysop/YiRunningState$ProcessItem;->mSize:J
 
     add-long v2, v3, v5
 
-    iput-wide v2, p0, Lcom/baidu/security/sysop/YiRunningState$BaseItem;->mSize:J
+    iput-wide v2, p0, Lcom/baidu/security/sysop/YiRunningState$MergedItem;->mSize:J
 
     .line 530
     add-int/lit8 v0, v0, 0x1
@@ -231,7 +231,7 @@
 
     .line 534
     :cond_0
-    iget-wide v2, p0, Lcom/baidu/security/sysop/YiRunningState$BaseItem;->mSize:J
+    iget-wide v2, p0, Lcom/baidu/security/sysop/YiRunningState$MergedItem;->mSize:J
 
     invoke-static {p1, v2, v3}, Landroid/text/format/Formatter;->formatShortFileSize(Landroid/content/Context;J)Ljava/lang/String;
 
@@ -239,7 +239,7 @@
 
     .line 536
     .local v1, sizeStr:Ljava/lang/String;
-    iget-object v2, p0, Lcom/baidu/security/sysop/YiRunningState$BaseItem;->mSizeStr:Ljava/lang/String;
+    iget-object v2, p0, Lcom/baidu/security/sysop/YiRunningState$MergedItem;->mSizeStr:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -248,7 +248,7 @@
     if-nez v2, :cond_1
 
     .line 537
-    iput-object v1, p0, Lcom/baidu/security/sysop/YiRunningState$BaseItem;->mSizeStr:Ljava/lang/String;
+    iput-object v1, p0, Lcom/baidu/security/sysop/YiRunningState$MergedItem;->mSizeStr:Ljava/lang/String;
 
     .line 543
     :cond_1

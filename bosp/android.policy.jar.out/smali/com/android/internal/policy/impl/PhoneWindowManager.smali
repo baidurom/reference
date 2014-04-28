@@ -726,19 +726,19 @@
     const/4 v1, 0x0
 
     .line 181
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 302
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mLock:Ljava/lang/Object;
 
     .line 306
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyDispatchLock:Ljava/lang/Object;
 
@@ -760,7 +760,7 @@
     .line 328
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mServiceAquireLock:Ljava/lang/Object;
 
@@ -953,7 +953,7 @@
     .line 3545
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mScreenshotLock:Ljava/lang/Object;
 
@@ -4411,11 +4411,11 @@
 
     if-nez v0, :cond_3
 
-    iget v0, p2, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iget v0, p2, Landroid/view/WindowManager$LayoutParams;->width:I
 
     if-ne v0, v3, :cond_3
 
-    iget v0, p2, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iget v0, p2, Landroid/view/WindowManager$LayoutParams;->height:I
 
     if-ne v0, v3, :cond_3
 

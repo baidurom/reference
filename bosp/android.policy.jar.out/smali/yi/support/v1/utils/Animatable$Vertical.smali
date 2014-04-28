@@ -67,7 +67,7 @@
     invoke-direct/range {v0 .. v5}, Lyi/support/v1/utils/Animatable$Translate;-><init>(FFFFF)V
 
     .line 134
-    iput p3, p0, Lyi/support/v1/utils/Animatable$Translate;->mCurrent:F
+    iput p3, p0, Lyi/support/v1/utils/Animatable$Vertical;->mCurrent:F
 
     .line 135
     invoke-static {p1, p2, p3, p4, p5}, Lyi/support/v1/utils/Animatable;->getRemainingDuration(FFFJ)J
@@ -109,7 +109,7 @@
 
     aget v1, v0, v1
 
-    iput v1, p0, Lyi/support/v1/utils/Animatable$Translate;->mCurrent:F
+    iput v1, p0, Lyi/support/v1/utils/Animatable$Vertical;->mCurrent:F
 
     .line 145
     return-void

@@ -28,7 +28,7 @@
 
     .prologue
     .line 90
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 91
     iput-object p1, p0, Lyi/baidupay/ITradeServer$Stub$Proxy;->mRemote:Landroid/os/IBinder;

@@ -15,95 +15,95 @@
 
 
 # static fields
-.field public static final cld_ab_bottom_shadow_light_baidu:I = 0x508004d
+.field public static final cld_ab_bottom_shadow_light_baidu:I = 0x508004e
 
-.field public static final cld_ab_bottom_solid_light_baidu:I = 0x508004e
+.field public static final cld_ab_bottom_solid_light_baidu:I = 0x508004f
 
-.field public static final cld_ab_solid_dark_baidu:I = 0x5080052
+.field public static final cld_ab_solid_dark_baidu:I = 0x5080053
 
-.field public static final cld_action_bar_btn_background:I = 0x5080056
+.field public static final cld_action_bar_btn_background:I = 0x5080057
 
-.field public static final cld_filter_dropdown_panel_baidu_light:I = 0x508009f
+.field public static final cld_filter_dropdown_panel_baidu_light:I = 0x50800a0
 
-.field public static final cld_ic_ab_back_baidu_dark:I = 0x50800a0
+.field public static final cld_ic_ab_back_baidu_dark:I = 0x50800a1
 
-.field public static final cld_ic_filter_down:I = 0x50800ab
+.field public static final cld_ic_filter_down:I = 0x50800ac
 
-.field public static final cld_ic_filter_up:I = 0x50800ac
+.field public static final cld_ic_filter_up:I = 0x50800ad
 
-.field public static final cld_ic_more:I = 0x50800ad
+.field public static final cld_ic_more:I = 0x50800ae
 
-.field public static final cld_ic_search_api_baidu_light:I = 0x50800af
+.field public static final cld_ic_search_api_baidu_light:I = 0x50800b0
 
-.field public static final cld_ic_tab_point:I = 0x50800b0
+.field public static final cld_ic_tab_point:I = 0x50800b1
 
-.field public static final cld_icon_filter_down:I = 0x50800b2
+.field public static final cld_icon_filter_down:I = 0x50800b3
 
-.field public static final cld_icon_filter_down_pressed:I = 0x50800b3
+.field public static final cld_icon_filter_down_pressed:I = 0x50800b4
 
-.field public static final cld_icon_filter_up:I = 0x50800b4
+.field public static final cld_icon_filter_up:I = 0x50800b5
 
-.field public static final cld_icon_filter_up_pressed:I = 0x50800b5
+.field public static final cld_icon_filter_up_pressed:I = 0x50800b6
 
-.field public static final cld_list_bottom_selector_baidu_light:I = 0x50800bd
+.field public static final cld_list_bottom_selector_baidu_light:I = 0x50800be
 
-.field public static final cld_list_selector_baidu_light:I = 0x50800c4
+.field public static final cld_list_selector_baidu_light:I = 0x50800c5
 
-.field public static final cld_list_single_selector_baidu_light:I = 0x50800c8
+.field public static final cld_list_single_selector_baidu_light:I = 0x50800c9
 
-.field public static final cld_list_top_selector_baidu_light:I = 0x50800cc
+.field public static final cld_list_top_selector_baidu_light:I = 0x50800cd
 
-.field public static final cld_menu_dropdown_panel_baidu_light:I = 0x50800cd
+.field public static final cld_menu_dropdown_panel_baidu_light:I = 0x50800ce
 
-.field public static final cld_search_view_background:I = 0x50800e8
+.field public static final cld_search_view_background:I = 0x50800e9
 
-.field public static final cld_switch_bg_off_baidu_light:I = 0x50800f6
+.field public static final cld_switch_bg_off_baidu_light:I = 0x50800f7
 
-.field public static final cld_switch_bg_off_disabled_baidu_light:I = 0x50800f7
+.field public static final cld_switch_bg_off_disabled_baidu_light:I = 0x50800f8
 
-.field public static final cld_switch_bg_on_baidu_light:I = 0x50800f8
+.field public static final cld_switch_bg_on_baidu_light:I = 0x50800f9
 
-.field public static final cld_switch_bg_on_disabled_baidu_light:I = 0x50800f9
+.field public static final cld_switch_bg_on_disabled_baidu_light:I = 0x50800fa
 
-.field public static final cld_switch_inner_baidu_light:I = 0x50800fa
+.field public static final cld_switch_inner_baidu_light:I = 0x50800fb
 
-.field public static final cld_switch_thumb_activated_baidu_light:I = 0x50800fb
+.field public static final cld_switch_thumb_activated_baidu_light:I = 0x50800fc
 
-.field public static final cld_switch_thumb_activated_disabled_baidu_light:I = 0x50800fd
+.field public static final cld_switch_thumb_activated_disabled_baidu_light:I = 0x50800fe
 
-.field public static final cld_switch_thumb_actived_pressed_baidu_light:I = 0x50800fe
+.field public static final cld_switch_thumb_actived_pressed_baidu_light:I = 0x50800ff
 
-.field public static final cld_switch_thumb_baidu_light:I = 0x50800ff
+.field public static final cld_switch_thumb_baidu_light:I = 0x5080100
 
-.field public static final cld_switch_thumb_disabled_baidu_light:I = 0x5080100
+.field public static final cld_switch_thumb_disabled_baidu_light:I = 0x5080101
 
-.field public static final cld_switch_thumb_pressed_baidu_light:I = 0x5080101
+.field public static final cld_switch_thumb_pressed_baidu_light:I = 0x5080102
 
-.field public static final cld_switch_track_baidu_light:I = 0x5080103
+.field public static final cld_switch_track_baidu_light:I = 0x5080104
 
-.field public static final cld_tab_top_selected_baidu:I = 0x5080106
+.field public static final cld_tab_top_selected_baidu:I = 0x5080107
 
-.field public static final ic_lockscreen_emergency_call:I = 0x508011b
+.field public static final ic_lockscreen_emergency_call:I = 0x508011c
 
-.field public static final ic_tab_point:I = 0x508011e
+.field public static final ic_tab_point:I = 0x508011f
 
-.field public static final ic_voiceprint_unlock_main_loading:I = 0x5080125
+.field public static final ic_voiceprint_unlock_main_loading:I = 0x5080126
 
-.field public static final ic_voiceprint_unlock_main_sound_white:I = 0x5080126
+.field public static final ic_voiceprint_unlock_main_sound_white:I = 0x5080127
 
-.field public static final ic_voiceprint_unlock_settings_class0:I = 0x5080128
+.field public static final ic_voiceprint_unlock_settings_class0:I = 0x5080129
 
-.field public static final ic_voiceprint_unlock_settings_class1:I = 0x5080129
+.field public static final ic_voiceprint_unlock_settings_class1:I = 0x508012a
 
-.field public static final ic_voiceprint_unlock_settings_class2:I = 0x508012a
+.field public static final ic_voiceprint_unlock_settings_class2:I = 0x508012b
 
-.field public static final ic_voiceprint_unlock_settings_class3:I = 0x508012b
+.field public static final ic_voiceprint_unlock_settings_class3:I = 0x508012c
 
-.field public static final ic_voiceprint_unlock_settings_class4:I = 0x508012c
+.field public static final ic_voiceprint_unlock_settings_class4:I = 0x508012d
 
-.field public static final ic_voiceprint_unlock_settings_start:I = 0x5080130
+.field public static final ic_voiceprint_unlock_settings_start:I = 0x5080131
 
-.field public static final ic_voiceprint_unlock_sound:I = 0x5080133
+.field public static final ic_voiceprint_unlock_sound:I = 0x5080134
 
 .field public static final notify_panel_notification_icon_bg_tile:I = 0x5080042
 
@@ -143,7 +143,7 @@
 
 .field public static final yi_btn_green_small:I = 0x5080006
 
-.field public static final yi_btn_radio:I = 0x5080146
+.field public static final yi_btn_radio:I = 0x5080147
 
 .field public static final yi_btn_red:I = 0x5080001
 
@@ -153,13 +153,15 @@
 
 .field public static final yi_btn_star_on_normal_baidu_light:I = 0x508003f
 
-.field public static final yi_button_group_background:I = 0x508014a
+.field public static final yi_button_group_background:I = 0x508014b
 
-.field public static final yi_divider_horizontal_bright:I = 0x508014e
+.field public static final yi_content_empty:I = 0x5080046
+
+.field public static final yi_divider_horizontal_bright:I = 0x5080165
 
 .field public static final yi_divider_vertical_tab_baidu_light:I = 0x5080045
 
-.field public static final yi_edit_text_cancel:I = 0x5080151
+.field public static final yi_edit_text_cancel:I = 0x5080168
 
 .field public static final yi_expander_close_baidu_light:I = 0x5080025
 
@@ -219,17 +221,17 @@
 
 .field public static final yi_list_selector_background:I = 0x508001b
 
-.field public static final yi_menu_btn_default:I = 0x5080246
+.field public static final yi_menu_btn_default:I = 0x508025d
 
-.field public static final yi_menu_btn_green:I = 0x5080247
+.field public static final yi_menu_btn_green:I = 0x508025e
 
-.field public static final yi_menu_btn_red:I = 0x5080248
+.field public static final yi_menu_btn_red:I = 0x508025f
 
-.field public static final yi_menu_btn_sub:I = 0x5080249
+.field public static final yi_menu_btn_sub:I = 0x5080260
 
-.field public static final yi_popup_arrow_down:I = 0x508024c
+.field public static final yi_popup_arrow_down:I = 0x5080263
 
-.field public static final yi_popup_arrow_up:I = 0x508024d
+.field public static final yi_popup_arrow_up:I = 0x5080264
 
 .field public static final yi_rate_star_small_off_baidu_light:I = 0x508003a
 
@@ -255,19 +257,19 @@
 
 .field public static final yi_tab_background:I = 0x5080010
 
-.field public static final yi_tab_selected_baidu:I = 0x508026e
+.field public static final yi_tab_selected_baidu:I = 0x5080285
 
 .field public static final yi_tab_selected_pressed_baidu:I = 0x5080039
 
-.field public static final yi_tab_top_selected_baidu:I = 0x5080275
+.field public static final yi_tab_top_selected_baidu:I = 0x508028c
 
-.field public static final yi_text_select_magnifier:I = 0x5080285
+.field public static final yi_text_select_magnifier:I = 0x508029c
 
 .field public static final yi_textfield_activated_baidu_light:I = 0x5080038
 
 .field public static final yi_title_btn:I = 0x5080011
 
-.field public static final yi_title_button_group_background:I = 0x508028c
+.field public static final yi_title_button_group_background:I = 0x50802a3
 
 .field public static final yi_titlebar_background:I = 0x5080000
 
@@ -280,7 +282,7 @@
 
     .prologue
     .line 643
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

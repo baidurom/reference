@@ -457,7 +457,6 @@
     return v0
 .end method
 
-
 # virtual methods
 .method public describeContents()I
     .locals 1

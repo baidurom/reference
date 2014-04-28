@@ -159,9 +159,6 @@
 70000 screen_toggled (screen_state|1|5)
 70101 browser_zoom_level_change (start level|1|5),(end level|1|5),(time|2|3)
 70102 browser_double_tap_duration (duration|1|3),(time|2|3)
-70103 browser_bookmark_added (url|3), (where|3)
-70104 browser_page_loaded (url|3), (time|2|3)
-70105 browser_timeonpage (url|3), (time|2|3)
 70150 browser_snap_center
 70151 browser_text_size_change (oldSize|1|5), (newSize|1|5)
 70200 aggregation (aggregation time|2|3)
@@ -171,17 +168,6 @@
 70303 phone_ui_button_click (text|3)
 70304 phone_ui_ringer_query_elapsed
 70305 phone_ui_multiple_query
-71001 qsb_start (name|3),(version|1),(start_method|3),(latency|1|3),(search_source|3),(enabled_sources|3),(on_create_latency|1|3)
-71002 qsb_click (id|2),(suggestions|3),(queried_sources|3),(num_chars|1),(click_type|1)
-71003 qsb_search (search_source|3),(method|1),(num_chars|1)
-71004 qsb_voice_search (search_source|3)
-71005 qsb_exit (suggestions|3),(num_chars|1)
-71006 qsb_latency (corpus|3),(latency|1|3),(num_chars|1)
-74000 music_start_playback_requested (track_id|1|5) (source_id|3|50) (cache_hit|1|5)
-74001 music_stop_playback_requested (track_id|1|5) (source_id|3|50)
-74002 music_pause_playback_requested (track_id|1|5) (source_id|3|50)
-74003 music_download_status (track_id|1|5) (source_id|3|50) (status|1|5) (data|1|5) (latency|1|5) (network_type|1|5) (network_subtype|1|5) (download_type|1|5)
-74004 music_track_saved_as_ringtone (track_id|1|5) (source_id|3|50) (type|1|5)
 75000 sqlite_mem_alarm_current (current|1|2)
 75001 sqlite_mem_alarm_max (max|1|2)
 75002 sqlite_mem_alarm_alloc_attempt (attempts|1|4)
@@ -189,7 +175,6 @@
 75004 sqlite_db_corrupt (Database file corrupt|3)
 76001 tts_speak_success (engine|3),(caller_uid|1),(caller_pid|1),(length|1),(locale|3),(rate|1),(pitch|1),(engine_latency|2|3),(engine_total|2|3),(audio_latency|2|3)
 76002 tts_speak_failure (engine|3),(caller_uid|1),(caller_pid|1),(length|1),(locale|3),(rate|1),(pitch|1)
-77016 faceunlock (first|1), (second|1), (third|1)
 78001 dispatchCommand_overflow
 90000 nfc_first_share
 90001 nfc_share (size|1|2),(tnf|1),(type|3),(aar_present|1),(duration|1|3)
@@ -217,4 +202,3 @@
 205009 gls_account_saved (status|1)
 205010 gls_authenticate (status|1),(service|3)
 205011 google_mail_switch (direction|1)
-206002 gmail_perf_end (action|3),(cpu_time|1|3),(wall_time|1|3),(num_sub_iteration|1)

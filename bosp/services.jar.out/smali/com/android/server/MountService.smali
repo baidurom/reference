@@ -378,51 +378,51 @@
     :cond_0
     const/4 v4, 0x1
 
-    :goto_0
+    :goto_baidu_0
     iget-object v0, p0, Lcom/android/server/MountService;->mVolumes:Ljava/util/ArrayList;
-
+    
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
-
+    
     move-result v0
-
-    if-ge v4, v0, :cond_2
-
+    
+    if-ge v4, v0, :cond_baidu_0
+    
     iget-object v0, p0, Lcom/android/server/MountService;->mVolumes:Ljava/util/ArrayList;
-
+    
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
+    
     move-result-object v5
-
+    
     check-cast v5, Landroid/os/storage/StorageVolume;
-
+    
     invoke-virtual {v5}, Landroid/os/storage/StorageVolume;->getPath()Ljava/lang/String;
-
+    
     move-result-object v6
-
+    
     invoke-virtual {v5}, Landroid/os/storage/StorageVolume;->isEmulated()Z
-
+    
     move-result v1
-
-    if-eqz v1, :cond_1
-
+    
+    if-eqz v1, :cond_baidu_1
+    
     const-string v0, "MountService"
-
+    
     const-string v1, "using emulated external storage"
-
+    
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
+    
     iget-object v0, p0, Lcom/android/server/MountService;->mVolumeStates:Ljava/util/HashMap;
-
+    
     const-string v1, "mounted"
-
+    
     invoke-virtual {v0, v6, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_1
+    
+    :cond_baidu_1
     add-int/lit8 v4, v4, 0x1
-
-    goto :goto_0
-
-    :cond_2
+    
+    goto :goto_baidu_0
+    
+    :cond_baidu_0
     const-string v0, "package"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -447,7 +447,7 @@
     .line 1175
     iget-object v0, p0, Lcom/android/server/MountService;->mPrimaryVolume:Landroid/os/storage/StorageVolume;
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Lcom/android/server/MountService;->mPrimaryVolume:Landroid/os/storage/StorageVolume;
 
@@ -455,7 +455,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_1
 
     .line 1176
     const-string v0, "android.hardware.usb.action.USB_STATE"
@@ -463,7 +463,7 @@
     invoke-virtual {v6, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
     .line 1178
-    :cond_3
+    :cond_1
     iget-object v0, p0, Lcom/android/server/MountService;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/server/MountService;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
@@ -2189,7 +2189,7 @@
 
     move/from16 v1, v18
 
-    if-ge v0, v1, :cond_9
+    if-ge v0, v1, :cond_8
 
     .line 1145
     move-object/from16 v0, p0
@@ -2225,7 +2225,7 @@
     :cond_1
     :try_start_1
     const-string v23, "storage"
-
+    
     sget-object v24, Lcom/android/server/MountService$SdType;->TYPE:Ljava/lang/String;
 
     const-string v25, "4"
@@ -2234,11 +2234,11 @@
 
     move-result v24
 
-    if-eqz v24, :cond_2
+    if-eqz v24, :cond_baidu_0
 
     const-string v23, "storage_auto"
-
-    :cond_2
+    
+    :cond_baidu_0
     move-object/from16 v0, v23
 
     invoke-virtual {v0, v15}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2505,12 +2505,12 @@
     invoke-static/range {v23 .. v24}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 1112
-    if-eqz v20, :cond_3
+    if-eqz v20, :cond_2
 
-    if-nez v13, :cond_4
+    if-nez v13, :cond_3
 
     .line 1113
-    :cond_3
+    :cond_2
     const-string v23, "MountService"
 
     const-string v24, "path or description is null in readStorageList"
@@ -2582,7 +2582,7 @@
 
     move/from16 v1, v18
 
-    if-ge v0, v1, :cond_8
+    if-ge v0, v1, :cond_7
 
     .line 1145
     move-object/from16 v0, p0
@@ -2626,7 +2626,7 @@
     .restart local v15       #element:Ljava/lang/String;
     .restart local v20       #path:Ljava/lang/CharSequence;
     .restart local v21       #primary:Z
-    :cond_4
+    :cond_3
     :try_start_3
     invoke-virtual/range {v20 .. v20}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -2640,7 +2640,7 @@
 
     .line 1119
     .local v2, volume:Landroid/os/storage/StorageVolume;
-    if-eqz v21, :cond_5
+    if-eqz v21, :cond_4
 
     .line 1120
     move-object/from16 v0, p0
@@ -2649,7 +2649,7 @@
 
     move-object/from16 v23, v0
 
-    if-nez v23, :cond_6
+    if-nez v23, :cond_5
 
     .line 1121
     move-object/from16 v0, p0
@@ -2657,7 +2657,7 @@
     iput-object v2, v0, Lcom/android/server/MountService;->mPrimaryVolume:Landroid/os/storage/StorageVolume;
 
     .line 1126
-    :cond_5
+    :cond_4
     :goto_4
     move-object/from16 v0, p0
 
@@ -2667,7 +2667,7 @@
 
     move-object/from16 v0, v23
 
-    if-ne v0, v2, :cond_7
+    if-ne v0, v2, :cond_6
 
     .line 1128
     move-object/from16 v0, p0
@@ -2747,7 +2747,7 @@
     .restart local v15       #element:Ljava/lang/String;
     .restart local v20       #path:Ljava/lang/CharSequence;
     .restart local v21       #primary:Z
-    :cond_6
+    :cond_5
     :try_start_5
     const-string v23, "MountService"
 
@@ -2758,7 +2758,7 @@
     goto :goto_4
 
     .line 1130
-    :cond_7
+    :cond_6
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/MountService;->mVolumes:Ljava/util/ArrayList;
@@ -2791,7 +2791,7 @@
     .end local v21           #primary:Z
     .restart local v16       #i:I
     .restart local v18       #length:I
-    :cond_8
+    :cond_7
     invoke-interface/range {v19 .. v19}, Landroid/content/res/XmlResourceParser;->close()V
 
     .line 1143
@@ -2799,7 +2799,7 @@
 
     .line 1147
     .restart local v15       #element:Ljava/lang/String;
-    :cond_9
+    :cond_8
     invoke-interface/range {v19 .. v19}, Landroid/content/res/XmlResourceParser;->close()V
 
     .line 1149
@@ -3131,17 +3131,17 @@
     move-result-object v6
 
     invoke-static {v5, v6}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
+    
     invoke-static {}, Landroid/os/Environment;->getAsecVolumeDirectory()Ljava/io/File;
-
+    
     move-result-object v5
-
+    
     invoke-virtual {v5}, Ljava/io/File;->getPath()Ljava/lang/String;
-
+    
     move-result-object v5
 
     invoke-virtual {p1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
+    
     move-result v5
 
     if-eqz v5, :cond_1
@@ -3153,7 +3153,19 @@
     if-eqz v5, :cond_1
 
     .line 606
+    #iget-object v5, p0, Lcom/android/server/MountService;->mExternalStoragePath:Ljava/lang/String;
+
+    #invoke-virtual {p1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)
+    
+    #move-result v5
+
+    #if-eqz v5, :cond_1
+
     .line 608
+    #iget-boolean v5, p0, Lcom/android/server/MountService;->mEmulateExternalStorage:Z
+
+    #if-nez v5, :cond_1
+
     .line 609
     const-string v5, "unmounted"
 

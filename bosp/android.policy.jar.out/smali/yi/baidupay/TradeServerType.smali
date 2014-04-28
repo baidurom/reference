@@ -46,7 +46,7 @@
 
     .prologue
     .line 50
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 51
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -84,7 +84,7 @@
 
     .prologue
     .line 44
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 45
     iput-object p1, p0, Lyi/baidupay/TradeServerType;->type:Ljava/lang/String;
@@ -106,7 +106,7 @@
 
     .prologue
     .line 27
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 28
     if-nez p1, :cond_0

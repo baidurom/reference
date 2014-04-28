@@ -30,7 +30,7 @@
     .line 627
     iput-object p1, p0, Lcom/yi/internal/widget/VoiceprintUnlockView$Recognizing;->this$0:Lcom/yi/internal/widget/VoiceprintUnlockView;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 628
     return-void
@@ -117,7 +117,7 @@
 
     move-result-object v1
 
-    const v2, 0x5080125
+    const v2, 0x5080126
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -149,7 +149,7 @@
 
     move-result-object v1
 
-    const v2, 0x5080133
+    const v2, 0x5080134
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 

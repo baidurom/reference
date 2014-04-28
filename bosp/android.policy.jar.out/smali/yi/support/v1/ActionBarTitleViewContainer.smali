@@ -63,7 +63,7 @@
     const/4 v0, 0x0
 
     .line 63
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 49
     iput-boolean v0, p0, Lyi/support/v1/ActionBarTitleViewContainer;->mShowHomeAsUp:Z
@@ -568,7 +568,7 @@
 
     move-result-object v0
 
-    const v3, 0x5080052
+    const v3, 0x5080053
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

@@ -30,7 +30,7 @@
     .line 176
     iput-object p1, p0, Lcom/baidu/service/power/PowerModeManager$5;->this$0:Lcom/baidu/service/power/PowerModeManager;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -140,7 +140,7 @@
     if-eqz v2, :cond_0
 
     .line 197
-    invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
+    invoke-virtual {v2}, Ljava/io/InputStream;->close()V
 
     .line 198
     :cond_0
@@ -189,7 +189,7 @@
 
     .line 201
     :try_start_3
-    invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
+    invoke-virtual {v2}, Ljava/io/InputStream;->close()V
 
     .line 202
     :cond_4

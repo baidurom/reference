@@ -60,6 +60,30 @@
 
 .field public static final THEME_VALUE_FILE_NAME:Ljava/lang/String; = "theme_values.xml"
 
+.field private static iconReplaceMap:Ljava/util/HashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashMap",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private static replaceLabelMap:Ljava/util/HashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashMap",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field private static speciallPackage:Ljava/util/HashSet;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -77,8 +101,8 @@
     .locals 0
 
     .prologue
-    .line 11
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 14
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -97,19 +121,19 @@
     .end annotation
 
     .prologue
-    .line 163
+    .line 247
     sget-object v0, Landroid/content/ThemeDefine;->IconPath:Ljava/util/HashMap;
 
     if-nez v0, :cond_0
 
-    .line 164
+    .line 248
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     sput-object v0, Landroid/content/ThemeDefine;->IconPath:Ljava/util/HashMap;
 
-    .line 167
+    .line 251
     :cond_0
     sget-object v0, Landroid/content/ThemeDefine;->IconPath:Ljava/util/HashMap;
 
@@ -119,12 +143,88 @@
 
     if-nez v0, :cond_1
 
-    .line 168
+    .line 252
     invoke-static {}, Landroid/content/ThemeDefine;->initIconPath()V
 
-    .line 171
+    .line 255
     :cond_1
     sget-object v0, Landroid/content/ThemeDefine;->IconPath:Ljava/util/HashMap;
+
+    return-object v0
+.end method
+
+.method public static getIconReplaceMap()Ljava/util/HashMap;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/HashMap",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 192
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    if-eqz v0, :cond_0
+
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->size()I
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    .line 193
+    :cond_0
+    invoke-static {}, Landroid/content/ThemeDefine;->initIconRepalceMap()V
+
+    .line 195
+    :cond_1
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    return-object v0
+.end method
+
+.method public static getReplacelabel()Ljava/util/HashMap;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/HashMap",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 202
+    sget-object v0, Landroid/content/ThemeDefine;->replaceLabelMap:Ljava/util/HashMap;
+
+    if-eqz v0, :cond_0
+
+    sget-object v0, Landroid/content/ThemeDefine;->replaceLabelMap:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->size()I
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    .line 203
+    :cond_0
+    invoke-static {}, Landroid/content/ThemeDefine;->initRepalceLabel()V
+
+    .line 205
+    :cond_1
+    sget-object v0, Landroid/content/ThemeDefine;->replaceLabelMap:Ljava/util/HashMap;
 
     return-object v0
 .end method
@@ -133,7 +233,7 @@
     .locals 3
 
     .prologue
-    .line 127
+    .line 211
     sget-object v0, Landroid/content/ThemeDefine;->IconPath:Ljava/util/HashMap;
 
     const-string v1, "/ic_launcher_contacts.png"
@@ -142,7 +242,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 128
+    .line 212
     sget-object v0, Landroid/content/ThemeDefine;->IconPath:Ljava/util/HashMap;
 
     const-string v1, "/ic_launcher_phone.png"
@@ -151,7 +251,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 129
+    .line 213
     sget-object v0, Landroid/content/ThemeDefine;->IconPath:Ljava/util/HashMap;
 
     const-string v1, "/ic_launcher_smsmms.png"
@@ -160,7 +260,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 130
+    .line 214
     sget-object v0, Landroid/content/ThemeDefine;->IconPath:Ljava/util/HashMap;
 
     const-string v1, "/ic_launcher_camera.png"
@@ -169,7 +269,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 131
+    .line 215
     sget-object v0, Landroid/content/ThemeDefine;->IconPath:Ljava/util/HashMap;
 
     const-string v1, "/ic_launcher_shortcut_contact.png"
@@ -178,7 +278,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 132
+    .line 216
     sget-object v0, Landroid/content/ThemeDefine;->IconPath:Ljava/util/HashMap;
 
     const-string v1, "/ic_launcher_shortcut_directdial.png"
@@ -187,7 +287,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 133
+    .line 217
     sget-object v0, Landroid/content/ThemeDefine;->IconPath:Ljava/util/HashMap;
 
     const-string v1, "/ic_launcher_shortcut_directmessage.png"
@@ -196,7 +296,614 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 218
+    return-void
+.end method
+
+.method private static initIconRepalceMap()V
+    .locals 3
+
+    .prologue
+    .line 130
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    sput-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    .line 131
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
+
+    .line 132
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.baidu.BaiduMap"
+
+    const v2, #drawable@ic_launcher_baidumap#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 133
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.baidu.netdisk"
+
+    const v2, #drawable@ic_launcher_baidunetdisk#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 134
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.baidu.searchbox"
+
+    const v2, #drawable@ic_launcher_baidusearch#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 135
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.baidu.browser.apps"
+
+    const v2, #drawable@ic_launcher_baidubrowser#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 136
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.baidu.appsearch"
+
+    const v2, #drawable@ic_launcher_baidumarket#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 137
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.baidu.voiceassistant"
+
+    const v2, #drawable@ic_launcher_baiduvoiceassistant#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 139
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.duoku.coolreader"
+
+    const v2, #drawable@ic_launcher_baidureader#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 140
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.qihoo360.launcher"
+
+    const v2, #drawable@ic_launcher_360launcher#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 141
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.qihoo360.mobilesafe_mtk6573"
+
+    const v2, #drawable@ic_launcher_360#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 142
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.alibaba.mobileim"
+
+    const v2, #drawable@ic_launcher_aliwangwang#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 143
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.huluxia.gametools"
+
+    const v2, #drawable@ic_launcher_huluxia_gametools#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 144
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.chaozh.iReaderFree"
+
+    const v2, #drawable@ic_launcher_ireader#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 145
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.kugou.android"
+
+    const v2, #drawable@ic_launcher_kugou_music#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 146
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "cn.kuwo.player"
+
+    const v2, #drawable@ic_launcher_kuwo_player#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 147
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.moji.mjweather"
+
+    const v2, #drawable@ic_launcher_moji_weather#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 148
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.immomo.momo"
+
+    const v2, #drawable@ic_launcher_momo#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 149
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.pplive.androidphone"
+
+    const v2, #drawable@ic_launcher_pplive#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 150
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.tencent.qqmusic"
+
+    const v2, #drawable@ic_launcher_qqmusic#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 151
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.tencent.mobileqq"
+
+    const v2, #drawable@ic_launcher_qq#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 152
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.qvod.player"
+
+    const v2, #drawable@ic_launcher_qvodplayer#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 153
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.qzone"
+
+    const v2, #drawable@ic_launcher_qzone#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 154
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.renren.mobile.android"
+
+    const v2, #drawable@ic_launcher_renren#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 155
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.shuqi.controller"
+
+    const v2, #drawable@ic_launcher_shuqi#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 156
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.mediatek.StkSelection"
+
+    const v2, #drawable@ic_launcher_sim#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 157
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.sohu.inputmethod.sogou"
+
+    const v2, #drawable@ic_launcher_sogou_input#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 158
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.taobao.taobao"
+
+    const v2, #drawable@ic_launcher_taobao#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 159
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.tencent.news"
+
+    const v2, #drawable@ic_launcher_tencent_news#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 160
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.tencent.qqlive"
+
+    const v2, #drawable@ic_launcher_tencent_qqlive#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 161
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.UCMobile"
+
+    const v2, #drawable@ic_launcher_ucmobile#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 162
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.wandoujia.phoenix2"
+
+    const v2, #drawable@ic_launcher_wandoujia#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 163
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.tencent.mm"
+
+    const v2, #drawable@ic_launcher_wechat#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 164
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.sina.weibo"
+
+    const v2, #drawable@ic_launcher_weibo#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 165
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.snda.wifilocating"
+
+    const v2, #drawable@ic_launcher_wifiwnys#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 166
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "im.yixin"
+
+    const v2, #drawable@ic_launcher_yixin#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 167
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.youdao.dict"
+
+    const v2, #drawable@ic_launcher_youdao#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 168
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.youku.phone"
+
+    const v2, #drawable@ic_launcher_youku#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 169
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.eg.android.AlipayGphone"
+
+    const v2, #drawable@ic_launcher_zhifubao#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 170
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.baidu.security"
+
+    const v2, #drawable@ic_launcher_security#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 171
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.dolby.ds1appUI"
+
+    const v2, #drawable@ic_launcher_dolby#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 172
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.qiyi.video"
+
+    const v2, #drawable@ic_launcher_iyqiyi#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 173
+    sget-object v0, Landroid/content/ThemeDefine;->iconReplaceMap:Ljava/util/HashMap;
+
+    const-string v1, "com.baiyi_mobile.gamecenter"
+
+    const v2, #drawable@ic_launcher_baidugamecenter#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 175
+    return-void
+.end method
+
+.method private static initRepalceLabel()V
+    .locals 3
+
+    .prologue
+    .line 180
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    sput-object v0, Landroid/content/ThemeDefine;->replaceLabelMap:Ljava/util/HashMap;
+
+    .line 182
+    sget-object v0, Landroid/content/ThemeDefine;->replaceLabelMap:Ljava/util/HashMap;
+
+    const-string v1, "com.baidu.browser.apps"
+
+    const v2, #string@replace_browser_value#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 183
+    sget-object v0, Landroid/content/ThemeDefine;->replaceLabelMap:Ljava/util/HashMap;
+
+    const-string v1, "com.baidu.appsearch"
+
+    const v2, #string@replace_market_value#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 184
+    sget-object v0, Landroid/content/ThemeDefine;->replaceLabelMap:Ljava/util/HashMap;
+
+    const-string v1, "com.duoku.coolreader"
+
+    const v2, #string@replace_reader_value#t
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 186
     return-void
 .end method
 
@@ -204,21 +911,21 @@
     .locals 2
 
     .prologue
-    .line 140
+    .line 224
     sget-object v0, Landroid/content/ThemeDefine;->speciallPackage:Ljava/util/HashSet;
 
     const-string v1, "com.android.contacts"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 141
+    .line 225
     sget-object v0, Landroid/content/ThemeDefine;->speciallPackage:Ljava/util/HashSet;
 
     const-string v1, "com.baidu.gallery3d"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 142
+    .line 226
     return-void
 .end method
 
@@ -227,19 +934,19 @@
     .parameter "packageName"
 
     .prologue
-    .line 150
+    .line 234
     sget-object v0, Landroid/content/ThemeDefine;->speciallPackage:Ljava/util/HashSet;
 
     if-nez v0, :cond_0
 
-    .line 151
+    .line 235
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     sput-object v0, Landroid/content/ThemeDefine;->speciallPackage:Ljava/util/HashSet;
 
-    .line 153
+    .line 237
     :cond_0
     sget-object v0, Landroid/content/ThemeDefine;->speciallPackage:Ljava/util/HashSet;
 
@@ -249,10 +956,10 @@
 
     if-nez v0, :cond_1
 
-    .line 154
+    .line 238
     invoke-static {}, Landroid/content/ThemeDefine;->initSpecialSet()V
 
-    .line 156
+    .line 240
     :cond_1
     sget-object v0, Landroid/content/ThemeDefine;->speciallPackage:Ljava/util/HashSet;
 

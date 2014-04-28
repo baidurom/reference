@@ -30,7 +30,7 @@
     .line 1134
     iput-object p1, p0, Lyi/widget/SearchView$13;->this$0:Lyi/widget/SearchView;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

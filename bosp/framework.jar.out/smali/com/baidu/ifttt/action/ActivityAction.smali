@@ -82,7 +82,7 @@
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
     .line 33
-    iget-object v0, p0, Lcom/baidu/ifttt/action/Action;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/baidu/ifttt/action/ActivityAction;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/baidu/ifttt/action/ActivityAction;->mIntent:Landroid/content/Intent;
 

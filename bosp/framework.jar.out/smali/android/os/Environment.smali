@@ -76,7 +76,6 @@
 
 .field private static volatile mSecondaryVolume:Landroid/os/storage/StorageVolume;
 
-
 # direct methods
 .method static constructor <clinit>()V
     .locals 4
@@ -115,7 +114,7 @@
     const/4 v0, 0x0
 
     sput-object v0, Landroid/os/Environment;->mPrimaryVolume:Landroid/os/storage/StorageVolume;
-
+    
     sput-object v0, Landroid/os/Environment;->mSecondaryVolume:Landroid/os/storage/StorageVolume;
 
     .line 116
@@ -739,9 +738,9 @@
     invoke-static {v0}, Landroid/os/Environment;->getVolume(I)Landroid/os/storage/StorageVolume;
 
     move-result-object v3
-
-    goto :goto_1
-
+    
+    goto :goto_baidu_0
+    
     sget-object v3, Landroid/os/Environment;->mPrimaryVolume:Landroid/os/storage/StorageVolume;
 
     if-nez v3, :cond_1
@@ -803,7 +802,7 @@
     :cond_1
     sget-object v3, Landroid/os/Environment;->mPrimaryVolume:Landroid/os/storage/StorageVolume;
 
-    :goto_1
+    :goto_baidu_0
     return-object v3
 
     .line 50
@@ -1241,15 +1240,15 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1
-
+    if-eqz v1, :cond_baidu_0
+    
     invoke-static {}, Landroid/os/Environment;->getPrimaryVolume()Landroid/os/storage/StorageVolume;
 
     move-result-object v0
 
     .line 468
     .local v0, volume:Landroid/os/storage/StorageVolume;
-    :goto_0
+    :goto_baidu_0
     if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroid/os/storage/StorageVolume;->isEmulated()Z
@@ -1260,21 +1259,22 @@
 
     const/4 v1, 0x1
 
-    :goto_1
+    :goto_0
     return v1
 
     :cond_0
     const/4 v1, 0x0
 
-    goto :goto_1
-
+    goto :goto_0
+    
     .end local v0           #volume:Landroid/os/storage/StorageVolume;
-    :cond_1
+    :cond_baidu_0
     invoke-static {}, Landroid/os/Environment;->getSecondaryVolume()Landroid/os/storage/StorageVolume;
 
     move-result-object v0
 
-    goto :goto_0
+    goto :goto_baidu_0
+    
     .restart local v0       #volume:Landroid/os/storage/StorageVolume;
 .end method
 
@@ -1287,7 +1287,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_baidu_0
 
     invoke-static {}, Landroid/os/Environment;->getPrimaryVolume()Landroid/os/storage/StorageVolume;
 
@@ -1295,7 +1295,7 @@
 
     .line 450
     .local v0, volume:Landroid/os/storage/StorageVolume;
-    :goto_0
+    :goto_baidu_0
     if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroid/os/storage/StorageVolume;->isRemovable()Z
@@ -1306,21 +1306,22 @@
 
     const/4 v1, 0x1
 
-    :goto_1
+    :goto_0
     return v1
 
     :cond_0
     const/4 v1, 0x0
 
-    goto :goto_1
-
+    goto :goto_0
+    
     .end local v0           #volume:Landroid/os/storage/StorageVolume;
-    :cond_1
+    :cond_baidu_0
     invoke-static {}, Landroid/os/Environment;->getSecondaryVolume()Landroid/os/storage/StorageVolume;
 
     move-result-object v0
 
-    goto :goto_0
+    goto :goto_baidu_0
+
     .line 511
     .restart local v0       #volume:Landroid/os/storage/StorageVolume;
 .end method

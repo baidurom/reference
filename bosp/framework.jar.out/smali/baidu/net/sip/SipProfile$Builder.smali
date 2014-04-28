@@ -35,7 +35,7 @@
     const/4 v2, 0x0
 
     .line 107
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 90
     new-instance v1, Lbaidu/net/sip/SipProfile;
@@ -169,7 +169,7 @@
 
     .prologue
     .line 128
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 90
     new-instance v2, Lbaidu/net/sip/SipProfile;
@@ -300,7 +300,7 @@
 
     .prologue
     .line 151
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 90
     new-instance v1, Lbaidu/net/sip/SipProfile;

@@ -37,7 +37,7 @@
 
     .prologue
     .line 64
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 31
     new-instance v0, Lyi/support/v1/menu/MenuManager$MenuViewContainer;

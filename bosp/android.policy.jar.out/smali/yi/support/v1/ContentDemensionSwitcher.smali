@@ -23,7 +23,7 @@
 
     .prologue
     .line 11
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 18
     sget-object v0, Lyi/support/v1/ContentDemensionSwitcher$Demension;->STANDARD:Lyi/support/v1/ContentDemensionSwitcher$Demension;

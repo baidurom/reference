@@ -59,7 +59,7 @@
 
     .prologue
     .line 53
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 54
     iput p1, p0, Lbaidu/net/rtp/VideoCodec;->type:I

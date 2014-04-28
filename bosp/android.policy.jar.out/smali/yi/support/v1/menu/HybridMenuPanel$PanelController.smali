@@ -110,7 +110,7 @@
     .line 383
     const/4 v2, 0x1
 
-    iput-boolean v2, p0, Lyi/support/v1/menu/HybridMenuPanel$PanelState;->mIsTransitioning:Z
+    iput-boolean v2, p0, Lyi/support/v1/menu/HybridMenuPanel$PanelController;->mIsTransitioning:Z
 
     .line 384
     iget-object v2, p0, Lyi/support/v1/menu/HybridMenuPanel$PanelController;->this$0:Lyi/support/v1/menu/HybridMenuPanel;
@@ -162,7 +162,7 @@
     .end local v0           #current:F
     .end local v1           #to:F
     :goto_0
-    iput-boolean v4, p0, Lyi/support/v1/menu/HybridMenuPanel$PanelState;->mIsOpened:Z
+    iput-boolean v4, p0, Lyi/support/v1/menu/HybridMenuPanel$PanelController;->mIsOpened:Z
 
     .line 407
     iget-object v2, p0, Lyi/support/v1/menu/HybridMenuPanel$PanelController;->this$0:Lyi/support/v1/menu/HybridMenuPanel;
@@ -210,7 +210,7 @@
     if-nez v0, :cond_0
 
     .line 359
-    iput-boolean v8, p0, Lyi/support/v1/menu/HybridMenuPanel$PanelState;->mIsTransitioning:Z
+    iput-boolean v8, p0, Lyi/support/v1/menu/HybridMenuPanel$PanelController;->mIsTransitioning:Z
 
     .line 360
     iget-object v0, p0, Lyi/support/v1/menu/HybridMenuPanel$PanelController;->this$0:Lyi/support/v1/menu/HybridMenuPanel;
@@ -273,7 +273,7 @@
     .end local v2           #from:F
     .end local v4           #current:F
     :cond_0
-    iput-boolean v8, p0, Lyi/support/v1/menu/HybridMenuPanel$PanelState;->mIsOpened:Z
+    iput-boolean v8, p0, Lyi/support/v1/menu/HybridMenuPanel$PanelController;->mIsOpened:Z
 
     .line 379
     return-void

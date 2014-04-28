@@ -1707,20 +1707,20 @@
     .line 1465
     :cond_0
     new-instance v0, Landroid/content/Intent;
-
+    
     const-string v1, "android.intent.action.ime_changed"
-
+    
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
+    
     .local v0, intent:Landroid/content/Intent;
     const-string v1, "ime_state"
-
+    
     const/4 v2, 0x0
-
+    
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
-
+    
     invoke-virtual {p0, v0}, Landroid/inputmethodservice/InputMethodService;->sendBroadcast(Landroid/content/Intent;)V
-
+    
     return-void
 .end method
 
@@ -3530,21 +3530,21 @@
 
     .prologue
     new-instance v0, Landroid/content/Intent;
-
+    
     const-string v1, "android.intent.action.ime_changed"
-
+    
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
+    
     .line 1474
     .local v0, intent:Landroid/content/Intent;
     const-string v1, "ime_state"
-
+    
     const/4 v2, 0x1
-
+    
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
-
+    
     invoke-virtual {p0, v0}, Landroid/inputmethodservice/InputMethodService;->sendBroadcast(Landroid/content/Intent;)V
-
+    
     return-void
 .end method
 

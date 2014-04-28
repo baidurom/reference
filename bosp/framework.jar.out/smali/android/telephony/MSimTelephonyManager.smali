@@ -6,7 +6,6 @@
 # static fields
 .field private static sInstance:Landroid/telephony/MSimTelephonyManager;
 
-
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
@@ -52,7 +51,7 @@
     .prologue
     .line 90
     const-string/jumbo v0, "phone"
-
+    
     invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
@@ -79,8 +78,8 @@
     .prologue
     .line 1044
     const/4 v0, 0x0
-
-    return v0
+    
+    return v0  
 .end method
 
 .method public static getNetworkTypeName(I)Ljava/lang/String;
@@ -520,59 +519,19 @@
     goto :goto_0
 .end method
 
-
 # virtual methods
 .method public getAllCellInfo()Ljava/util/List;
     .locals 1
 
+
+
     .prologue
     .line 803
     invoke-super {p0}, Landroid/telephony/TelephonyManager;->getAllCellInfo()Ljava/util/List;
-
+    
     move-result-object v0
 
     return-object v0
-.end method
-
-.method public getAvailableSlotId()I
-    .locals 5
-
-    .prologue
-    const/4 v3, 0x5
-
-    .line 1311
-    const/4 v0, 0x0
-
-    .line 1312
-    .local v0, slotId:I
-    invoke-static {}, Landroid/telephony/MSimTelephonyManager;->isMultiSimEnabled()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_0
-
-    const/4 v2, 0x0
-
-    invoke-virtual {p0, v2}, Landroid/telephony/MSimTelephonyManager;->getSimState(I)I
-
-    move-result v1
-
-    if-eq v1, v3, :cond_0
-
-    const/4 v2, 0x1
-
-    invoke-virtual {p0, v2}, Landroid/telephony/MSimTelephonyManager;->getSimState(I)I
-
-    move-result v1
-
-    if-ne v1, v3, :cond_0
-
-    .line 1314
-    const/4 v0, 0x1
-
-    .line 1316
-    :cond_0
-    return v0
 .end method
 
 .method public getCallState()I
@@ -613,9 +572,9 @@
 
     .prologue
     invoke-super {p0}, Landroid/telephony/TelephonyManager;->getCallState()I
-
+    
     move-result v0
-
+    
     return v0
 .end method
 
@@ -835,7 +794,7 @@
     invoke-super {p0}, Landroid/telephony/TelephonyManager;->getCellLocation()Landroid/telephony/CellLocation;
 
     move-result-object v0
-
+    
     return-object v0
 .end method
 
@@ -956,6 +915,7 @@
     const/4 v0, 0x0
 
     return v0
+
 .end method
 
 .method public getDeviceId()Ljava/lang/String;
@@ -995,9 +955,10 @@
     .parameter "subscription"
 
     invoke-super {p0}, Landroid/telephony/TelephonyManager;->getDeviceId()Ljava/lang/String;
+    
 
     move-result-object v0
-
+    
     return-object v0
 .end method
 
@@ -1042,7 +1003,7 @@
     invoke-super {p0}, Landroid/telephony/TelephonyManager;->getDeviceSoftwareVersion()Ljava/lang/String;
 
     move-result-object v0
-
+    
     return-object v0
 .end method
 
@@ -1055,7 +1016,7 @@
     invoke-super {p0}, Landroid/telephony/TelephonyManager;->getIccCardType()Ljava/lang/String;
 
     move-result-object v0
-
+    
     return-object v0
 .end method
 
@@ -1097,6 +1058,7 @@
 
     .prologue
     .line 1170
+
     invoke-super {p0}, Landroid/telephony/TelephonyManager;->getLine1AlphaTag()Ljava/lang/String;
 
     move-result-object v0
@@ -1141,6 +1103,7 @@
     .parameter "subscription"
 
     .prologue
+
     .line 1162
     invoke-super {p0}, Landroid/telephony/TelephonyManager;->getLine1Number()Ljava/lang/String;
 
@@ -1200,6 +1163,7 @@
     .prologue
     .line 630
     const/4 v0, 0x0
+    
 
     return-object v0
 .end method
@@ -1262,6 +1226,7 @@
     const/4 v0, 0x0
 
     return-object v0
+
 .end method
 
 .method public getNetworkOperator()Ljava/lang/String;
@@ -1455,7 +1420,7 @@
     .prologue
     .line 630
     const/4 v0, 0x0
-
+    
     return v0
 .end method
 
@@ -1465,7 +1430,7 @@
     .prologue
     .line 630
     const/4 v0, 0x0
-
+    
     return v0
 .end method
 
@@ -1605,6 +1570,7 @@
 
     .prologue
     .line 1044
+
     invoke-super {p0}, Landroid/telephony/TelephonyManager;->getSimOperatorName()Ljava/lang/String;
 
     move-result-object v0
@@ -1650,6 +1616,7 @@
 
     .prologue
     .line 1044
+
     invoke-super {p0}, Landroid/telephony/TelephonyManager;->getSimSerialNumber()Ljava/lang/String;
 
     move-result-object v0
@@ -1689,12 +1656,55 @@
     goto :goto_0
 .end method
 
+.method public getAvailableSlotId()I
+    .locals 5
+
+    .prologue
+    const/4 v3, 0x5
+
+    .line 1311
+    const/4 v0, 0x0
+
+    .line 1312
+    .local v0, slotId:I
+    invoke-static {}, Landroid/telephony/MSimTelephonyManager;->isMultiSimEnabled()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0     
+
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p0, v2}, Landroid/telephony/MSimTelephonyManager;->getSimState(I)I
+
+    move-result v1
+
+    if-eq v1, v3, :cond_0
+
+    const/4 v2, 0x1
+
+    invoke-virtual {p0, v2}, Landroid/telephony/MSimTelephonyManager;->getSimState(I)I
+
+    move-result v1
+
+    if-ne v1, v3, :cond_0
+
+    .line 1314
+    const/4 v0, 0x1
+
+    .line 1316
+    :cond_0
+    return v0
+.end method
+
 .method public getSimState(I)I
     .locals 1
     .parameter "slotId"
 
     .prologue
     .line 1044
+
     invoke-super {p0}, Landroid/telephony/TelephonyManager;->getSimState()I
 
     move-result v0
@@ -1740,11 +1750,13 @@
 
     .prologue
     .line 1044
+
     invoke-super {p0}, Landroid/telephony/TelephonyManager;->getSubscriberId()Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
+
 .end method
 
 .method public getVoiceMailAlphaTag()Ljava/lang/String;
@@ -1785,6 +1797,7 @@
 
     .prologue
     .line 1044
+
     invoke-super {p0}, Landroid/telephony/TelephonyManager;->getVoiceMailAlphaTag()Ljava/lang/String;
 
     move-result-object v0
@@ -1830,6 +1843,7 @@
 
     .prologue
     .line 1044
+
     invoke-super {p0}, Landroid/telephony/TelephonyManager;->getVoiceMailNumber()Ljava/lang/String;
 
     move-result-object v0
@@ -1875,6 +1889,7 @@
 
     .prologue
     .line 1044
+
     invoke-super {p0}, Landroid/telephony/TelephonyManager;->getVoiceMessageCount()I
 
     move-result v0
@@ -1920,6 +1935,7 @@
 
     .prologue
     .line 1044
+
     invoke-super {p0}, Landroid/telephony/TelephonyManager;->hasIccCard()Z
 
     move-result v0
@@ -2030,7 +2046,7 @@
     .prologue
     .line 728
     invoke-super {p0, p1, p2}, Landroid/telephony/TelephonyManager;->listen(Landroid/telephony/PhoneStateListener;I)V
-
+    
     return-void
 .end method
 

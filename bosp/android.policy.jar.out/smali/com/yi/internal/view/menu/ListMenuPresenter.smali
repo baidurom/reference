@@ -51,7 +51,7 @@
 
     .prologue
     .line 74
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 75
     iput p1, p0, Lcom/yi/internal/view/menu/ListMenuPresenter;->mItemLayoutRes:I
@@ -475,7 +475,7 @@
     .line 193
     iget-object v1, p0, Lcom/yi/internal/view/menu/ListMenuPresenter;->mMenuView:Lcom/yi/internal/view/menu/ExpandedMenuView;
 
-    invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->restoreHierarchyState(Landroid/util/SparseArray;)V
+    invoke-virtual {v1, v0}, Landroid/view/View;->restoreHierarchyState(Landroid/util/SparseArray;)V
 
     .line 195
     :cond_0
@@ -501,7 +501,7 @@
     .line 185
     iget-object v1, p0, Lcom/yi/internal/view/menu/ListMenuPresenter;->mMenuView:Lcom/yi/internal/view/menu/ExpandedMenuView;
 
-    invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->saveHierarchyState(Landroid/util/SparseArray;)V
+    invoke-virtual {v1, v0}, Landroid/view/View;->saveHierarchyState(Landroid/util/SparseArray;)V
 
     .line 187
     :cond_0

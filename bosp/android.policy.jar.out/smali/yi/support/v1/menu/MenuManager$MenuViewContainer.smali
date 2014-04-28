@@ -33,7 +33,7 @@
     .line 37
     iput-object p1, p0, Lyi/support/v1/menu/MenuManager$MenuViewContainer;->this$0:Lyi/support/v1/menu/MenuManager;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 38
     iput-object v0, p0, Lyi/support/v1/menu/MenuManager$MenuViewContainer;->mActionMenuView:Landroid/view/ViewGroup;
@@ -55,7 +55,7 @@
     .line 42
     iput-object p1, p0, Lyi/support/v1/menu/MenuManager$MenuViewContainer;->this$0:Lyi/support/v1/menu/MenuManager;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 43
     iput-object p2, p0, Lyi/support/v1/menu/MenuManager$MenuViewContainer;->mActionMenuView:Landroid/view/ViewGroup;

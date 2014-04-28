@@ -29,7 +29,7 @@
     .line 139
     iput-object p1, p0, Lcom/baidu/server/dp/DynamicPermissionManager$MyPackageManager;->this$0:Lcom/baidu/server/dp/DynamicPermissionManager;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 140
     const-string/jumbo v0, "package"

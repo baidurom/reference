@@ -102,7 +102,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iput v0, p0, Lyi/widget/ButtonGroup$LayoutParams;->width:I
 
     .line 517
     :cond_0
@@ -119,7 +119,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iput v0, p0, Lyi/widget/ButtonGroup$LayoutParams;->height:I
 
     .line 520
     :cond_1

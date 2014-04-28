@@ -368,7 +368,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v3, "mCallRingDelay="
+    const-string v3, "mCallRingDelay="
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1895,78 +1895,76 @@
 
     .line 751
     .local v0, iccCard:Lcom/android/internal/telephony/IccCard;
-    if-nez v0, :cond_0
+    if-nez v0, :cond_baidu_0
 
     .line 752
     const-string v1, "UNKNOWN"
 
     .line 754
-    :goto_0
+    :goto_baidu_0
     return-object v1
 
-    :cond_0
+    :cond_baidu_0
     iget-object v1, v0, Lcom/android/internal/telephony/IccCard;->mIccCardStatus:Lcom/android/internal/telephony/IccCardStatus;
-
+    
     invoke-virtual {v0}, Lcom/android/internal/telephony/IccCard;->getCurrentApplicationIndex()I
-
+    
     move-result v0
-
+    
     invoke-virtual {v1, v0}, Lcom/android/internal/telephony/IccCardStatus;->getApplication(I)Lcom/android/internal/telephony/IccCardApplication;
-
+    
     move-result-object v0
-
+    
     iget-object v0, v0, Lcom/android/internal/telephony/IccCardApplication;->app_type:Lcom/android/internal/telephony/IccCardApplication$AppType;
-
+    
     invoke-virtual {v0}, Lcom/android/internal/telephony/IccCardApplication$AppType;->ordinal()I
-
+    
     move-result v0
-
-    packed-switch v0, :pswitch_data_0
-
+    
+    packed-switch v0, :pswitch_data_baidu_0
+    
     const-string v1, "UNKNOWN"
 
-    goto :goto_0
+    goto :goto_baidu_0
 
-    :pswitch_0
+    :pswitch_baidu_0
     const-string v1, "UNKNOWN"
 
-    goto :goto_0
+    goto :goto_baidu_0
 
-    :pswitch_1
+    :pswitch_baidu_1
     const-string v1, "SIM"
 
-    goto :goto_0
+    goto :goto_baidu_0
 
-    :pswitch_2
+    :pswitch_baidu_2
     const-string v1, "USIM"
 
-    goto :goto_0
+    goto :goto_baidu_0
 
-    :pswitch_3
+    :pswitch_baidu_3
     const-string v1, "RUIM"
 
-    goto :goto_0
+    goto :goto_baidu_0
 
-    :pswitch_4
+    :pswitch_baidu_4
     const-string v1, "CSIM"
 
-    goto :goto_0
+    goto :goto_baidu_0
 
-    :pswitch_5
+    :pswitch_baidu_5
     const-string v1, "ISIM"
 
-    goto :goto_0
+    goto :goto_baidu_0
 
-    nop
-
-    :pswitch_data_0
+    :pswitch_data_baidu_0
     .packed-switch 0x1
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-        :pswitch_3
-        :pswitch_4
-        :pswitch_5
+        :pswitch_baidu_0
+        :pswitch_baidu_1
+        :pswitch_baidu_2
+        :pswitch_baidu_3
+        :pswitch_baidu_4
+        :pswitch_baidu_5
     .end packed-switch
 .end method
 

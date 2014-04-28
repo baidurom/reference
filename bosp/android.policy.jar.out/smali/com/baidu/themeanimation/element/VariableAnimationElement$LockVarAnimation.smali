@@ -86,7 +86,7 @@
     :cond_0
     iget-object v3, p0, Lcom/baidu/themeanimation/element/VariableAnimationElement$LockVarAnimation;->this$0:Lcom/baidu/themeanimation/element/VariableAnimationElement;
 
-    iget-object v3, v3, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v3, v3, Lcom/baidu/themeanimation/element/VariableAnimationElement;->mKeyFrames:Ljava/util/List;
 
     iget v4, p0, Lcom/baidu/themeanimation/element/VariableAnimationElement$LockVarAnimation;->mCurrentStage:I
 
@@ -116,7 +116,7 @@
     .line 132
     iget-object v3, p0, Lcom/baidu/themeanimation/element/VariableAnimationElement$LockVarAnimation;->this$0:Lcom/baidu/themeanimation/element/VariableAnimationElement;
 
-    iget-object v3, v3, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v3, v3, Lcom/baidu/themeanimation/element/VariableAnimationElement;->mKeyFrames:Ljava/util/List;
 
     add-int/lit8 v4, v0, -0x1
 
@@ -149,7 +149,7 @@
     :cond_2
     iget-object v3, p0, Lcom/baidu/themeanimation/element/VariableAnimationElement$LockVarAnimation;->this$0:Lcom/baidu/themeanimation/element/VariableAnimationElement;
 
-    iget-object v3, v3, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v3, v3, Lcom/baidu/themeanimation/element/VariableAnimationElement;->mKeyFrames:Ljava/util/List;
 
     invoke-interface {v3, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -188,7 +188,7 @@
     :goto_1
     iget-object v3, p0, Lcom/baidu/themeanimation/element/VariableAnimationElement$LockVarAnimation;->this$0:Lcom/baidu/themeanimation/element/VariableAnimationElement;
 
-    iget-object v3, v3, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v3, v3, Lcom/baidu/themeanimation/element/VariableAnimationElement;->mKeyFrames:Ljava/util/List;
 
     invoke-interface {v3}, Ljava/util/List;->size()I
 
@@ -199,7 +199,7 @@
     .line 138
     iget-object v3, p0, Lcom/baidu/themeanimation/element/VariableAnimationElement$LockVarAnimation;->this$0:Lcom/baidu/themeanimation/element/VariableAnimationElement;
 
-    iget-object v3, v3, Lcom/baidu/themeanimation/element/AnimationElement;->mKeyFrames:Ljava/util/List;
+    iget-object v3, v3, Lcom/baidu/themeanimation/element/VariableAnimationElement;->mKeyFrames:Ljava/util/List;
 
     invoke-interface {v3, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 

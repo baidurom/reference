@@ -40,7 +40,7 @@
 
     iput-object p3, p0, Lcom/baidu/themeanimation/util/FileUtil$LoadBitmapTask$1;->val$bmp:Landroid/graphics/Bitmap;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

@@ -47,7 +47,7 @@
 
     .prologue
     .line 54
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 55
     iput p1, p0, Lcom/yi/internal/view/menu/ActionMenuPresenter;->mMenuLayoutRes:I
@@ -116,7 +116,7 @@
     :cond_0
     iget-object v1, p0, Lcom/yi/internal/view/menu/ActionMenuPresenter;->mMenuView:Lcom/yi/internal/view/menu/ActionMenuView;
 
-    invoke-virtual {v1, p1, p2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;I)V
+    invoke-virtual {v1, p1, p2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;I)V
 
     .line 152
     return-void
@@ -563,7 +563,7 @@
 
     .line 108
     .local v4, item:Lcom/yi/internal/view/menu/MenuItemImpl;
-    invoke-virtual {v8, v1}, Lcom/yi/internal/view/menu/ActionMenuView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v8, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
@@ -661,7 +661,7 @@
     .end local v7           #oldItem:Lcom/yi/internal/view/menu/MenuItemImpl;
     :cond_6
     :goto_3
-    invoke-virtual {v8}, Lcom/yi/internal/view/menu/ActionMenuView;->getChildCount()I
+    invoke-virtual {v8}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v9
 

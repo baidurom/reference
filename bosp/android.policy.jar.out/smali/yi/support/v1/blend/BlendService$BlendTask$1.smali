@@ -35,7 +35,7 @@
 
     iput-object p2, p0, Lyi/support/v1/blend/BlendService$BlendTask$1;->val$bmp:Landroid/graphics/Bitmap;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

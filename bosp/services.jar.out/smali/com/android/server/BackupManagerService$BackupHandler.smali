@@ -1382,9 +1382,9 @@
     move-exception v5
 
     goto :goto_5
-
+    
     .end local v20           #params:Lcom/android/server/BackupManagerService$FullParams;
-    :pswitch_d
+    :pswitch_baidu_0
     const-string v5, "BackupManagerService"
 
     const-string v6, "restart baidu backup agent"
@@ -1415,7 +1415,7 @@
         :pswitch_b
         :pswitch_c
         :pswitch_6
-        :pswitch_d
+        :pswitch_baidu_0
         :pswitch_0
         :pswitch_0
         :pswitch_0

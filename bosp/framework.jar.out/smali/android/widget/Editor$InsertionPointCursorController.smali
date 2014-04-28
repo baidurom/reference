@@ -128,7 +128,26 @@
     .locals 1
 
     .prologue
+    iget-object v0, p0, Landroid/widget/Editor$InsertionPointCursorController;->this$0:Landroid/widget/Editor;
+    
+    #getter for: Landroid/widget/Editor;->mMagnifierController:Landroid/widget/MagnifierController;
+    invoke-static {v0}, Landroid/widget/Editor;->access$baidu_200(Landroid/widget/Editor;)Landroid/widget/MagnifierController;
+    
+    move-result-object v0
+    
+    if-eqz v0, :cond_baidu_0
+    
     .line 3416
+    iget-object v0, p0, Landroid/widget/Editor$InsertionPointCursorController;->this$0:Landroid/widget/Editor;
+    
+    #getter for: Landroid/widget/Editor;->mMagnifierController:Landroid/widget/MagnifierController;
+    invoke-static {v0}, Landroid/widget/Editor;->access$baidu_200(Landroid/widget/Editor;)Landroid/widget/MagnifierController;
+    
+    move-result-object v0
+    
+    invoke-virtual {v0}, Landroid/widget/MagnifierController;->dismiss()V
+    
+    :cond_baidu_0
     iget-object v0, p0, Landroid/widget/Editor$InsertionPointCursorController;->mHandle:Landroid/widget/Editor$InsertionHandleView;
 
     if-eqz v0, :cond_0

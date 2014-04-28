@@ -45,7 +45,7 @@
 
     iput-object p4, p0, Lcom/baidu/notificationdefense/NotificationDefenseService$1;->val$ntf:Landroid/app/Notification;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

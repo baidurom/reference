@@ -167,14 +167,14 @@
     .line 240
     .local v6, wparams:Landroid/view/WindowManager$LayoutParams;
     invoke-virtual {p0, p1, v6}, Landroid/view/WindowManagerImpl;->disablePopupWindow(Landroid/view/View;Landroid/view/WindowManager$LayoutParams;)Z
-
+    
     move-result v7
-
-    if-eqz v7, :cond_1
-
+    
+    if-eqz v7, :cond_baidu_0
+    
     goto :goto_0
-
-    :cond_1
+    
+    :cond_baidu_0
     const/4 v4, 0x0
 
     .line 242
@@ -185,7 +185,7 @@
     :try_start_0
     iget-object v7, p0, Landroid/view/WindowManagerImpl;->mSystemPropertyUpdater:Ljava/lang/Runnable;
 
-    if-nez v7, :cond_2
+    if-nez v7, :cond_1
 
     .line 245
     new-instance v7, Landroid/view/WindowManagerImpl$1;
@@ -200,7 +200,7 @@
     invoke-static {v7}, Landroid/os/SystemProperties;->addChangeCallback(Ljava/lang/Runnable;)V
 
     .line 266
-    :cond_2
+    :cond_1
     const/4 v7, 0x0
 
     invoke-direct {p0, p1, v7}, Landroid/view/WindowManagerImpl;->findViewLocked(Landroid/view/View;Z)I
@@ -209,10 +209,10 @@
 
     .line 267
     .local v2, index:I
-    if-ltz v2, :cond_4
+    if-ltz v2, :cond_3
 
     .line 268
-    if-nez p4, :cond_3
+    if-nez p4, :cond_2
 
     .line 269
     new-instance v7, Ljava/lang/IllegalStateException;
@@ -258,7 +258,7 @@
 
     .line 272
     .restart local v2       #index:I
-    :cond_3
+    :cond_2
     :try_start_1
     iget-object v7, p0, Landroid/view/WindowManagerImpl;->mRoots:[Landroid/view/ViewRootImpl;
 
@@ -289,23 +289,23 @@
 
     .line 282
     .end local v5           #root:Landroid/view/ViewRootImpl;
-    :cond_4
+    :cond_3
     iget v7, v6, Landroid/view/WindowManager$LayoutParams;->type:I
 
     const/16 v8, 0x3e8
 
-    if-lt v7, v8, :cond_7
+    if-lt v7, v8, :cond_6
 
     iget v7, v6, Landroid/view/WindowManager$LayoutParams;->type:I
 
     const/16 v8, 0x7cf
 
-    if-gt v7, v8, :cond_7
+    if-gt v7, v8, :cond_6
 
     .line 284
     iget-object v7, p0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
 
-    if-eqz v7, :cond_5
+    if-eqz v7, :cond_4
 
     iget-object v7, p0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
 
@@ -313,12 +313,12 @@
 
     .line 285
     .local v0, count:I
-    :cond_5
+    :cond_4
     const/4 v1, 0x0
 
     .local v1, i:I
     :goto_1
-    if-ge v1, v0, :cond_7
+    if-ge v1, v0, :cond_6
 
     .line 286
     iget-object v7, p0, Landroid/view/WindowManagerImpl;->mRoots:[Landroid/view/ViewRootImpl;
@@ -333,7 +333,7 @@
 
     iget-object v8, v6, Landroid/view/WindowManager$LayoutParams;->token:Landroid/os/IBinder;
 
-    if-ne v7, v8, :cond_6
+    if-ne v7, v8, :cond_5
 
     .line 287
     iget-object v7, p0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
@@ -341,7 +341,7 @@
     aget-object v4, v7, v1
 
     .line 285
-    :cond_6
+    :cond_5
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
@@ -349,7 +349,7 @@
     .line 292
     .end local v0           #count:I
     .end local v1           #i:I
-    :cond_7
+    :cond_6
     new-instance v5, Landroid/view/ViewRootImpl;
 
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -365,7 +365,7 @@
     iput v7, v5, Landroid/view/ViewRootImpl;->mAddNesting:I
 
     .line 294
-    if-nez p3, :cond_8
+    if-nez p3, :cond_7
 
     .line 295
     new-instance v7, Landroid/view/CompatibilityInfoHolder;
@@ -381,7 +381,7 @@
     .line 302
     iget-object v7, p0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
 
-    if-nez v7, :cond_9
+    if-nez v7, :cond_8
 
     .line 303
     const/4 v2, 0x1
@@ -437,14 +437,14 @@
     goto :goto_0
 
     .line 297
-    :cond_8
+    :cond_7
     :try_start_2
     iput-object p3, v5, Landroid/view/ViewRootImpl;->mCompatibilityInfo:Landroid/view/CompatibilityInfoHolder;
 
     goto :goto_2
 
     .line 308
-    :cond_9
+    :cond_8
     iget-object v7, p0, Landroid/view/WindowManagerImpl;->mViews:[Landroid/view/View;
 
     array-length v7, v7
@@ -1117,7 +1117,7 @@
     .line 241
     .local v1, incomingRinging:Z
     :try_start_0
-    const-string/jumbo v7, "phone"
+    const-string v7, "phone"
 
     invoke-static {v7}, Landroid/os/ServiceManager;->checkService(Ljava/lang/String;)Landroid/os/IBinder;
 

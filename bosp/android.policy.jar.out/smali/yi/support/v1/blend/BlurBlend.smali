@@ -17,7 +17,7 @@
 
     .prologue
     .line 11
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 13
     return-void
@@ -41,7 +41,7 @@
     invoke-virtual {v0}, Lyi/support/v1/blend/BlurBlend$Task;->run()V
 
     .line 18
-    iget-object v1, v0, Lyi/support/v1/blend/BlendService$BlendTask;->mSrcBitmap:Landroid/graphics/Bitmap;
+    iget-object v1, v0, Lyi/support/v1/blend/BlurBlend$Task;->mSrcBitmap:Landroid/graphics/Bitmap;
 
     return-object v1
 .end method
