@@ -1264,7 +1264,7 @@
     const-wide/16 v2, 0x2
 
     invoke-direct {p0, v0, v2, v3}, Lcom/android/internal/widget/LockPatternUtils;->setLong(Ljava/lang/String;J)V
-    
+
     return-void
 .end method
 

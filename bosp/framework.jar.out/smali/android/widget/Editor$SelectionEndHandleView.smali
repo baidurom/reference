@@ -34,9 +34,9 @@
 
     .line 3339
     const/4 v0, 0x2
-    
+
     iput v0, p0, Landroid/widget/Editor$SelectionEndHandleView;->mCursorType:I
-    
+
     return-void
 .end method
 

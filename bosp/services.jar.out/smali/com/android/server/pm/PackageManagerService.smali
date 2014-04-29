@@ -16779,7 +16779,7 @@
 
     .line 3912
     .local v19, dataPathString:Ljava/lang/String;
-    goto :cond_36
+    goto/16 :goto_baidu_0
 
 
     invoke-static/range {p1 .. p1}, Lcom/android/server/pm/PackageManagerService;->isSystemApp(Landroid/content/pm/PackageParser$Package;)Z
@@ -17714,6 +17714,7 @@
     .restart local v29       #nativeLibraryDir:Ljava/io/File;
     .restart local v37       #path:Ljava/lang/String;
     :cond_36
+    :goto_baidu_0
     :try_start_7
     invoke-virtual/range {v29 .. v29}, Ljava/io/File;->getParentFile()Ljava/io/File;
 

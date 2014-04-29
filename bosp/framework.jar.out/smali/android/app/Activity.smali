@@ -1433,23 +1433,23 @@
     .line 2359
     :cond_0
     iget-object v2, p0, Landroid/app/Activity;->mTouchPadListener:Landroid/app/Activity$TouchPadListener;
-    
+
     if-eqz v2, :cond_baidu_0
-    
+
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getAction()I
-    
+
     move-result v2
-    
+
     const/4 v0, 0x1
-    
+
     if-ne v2, v0, :cond_baidu_0
-    
+
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
-    
+
     move-result v2
-    
+
     packed-switch v2, :pswitch_data_baidu_0
-    
+
     :cond_baidu_0
     iget-object v0, p0, Landroid/app/Activity;->mDecor:Landroid/view/View;
 
@@ -1480,12 +1480,12 @@
     const/4 v2, 0x0
 
     goto :goto_1
-    
+
     :pswitch_baidu_0
     iget-object v2, p0, Landroid/app/Activity;->mTouchPadListener:Landroid/app/Activity$TouchPadListener;
 
     invoke-interface {v2}, Landroid/app/Activity$TouchPadListener;->onLongPress()V
-    
+
     const/4 v2, 0x1
 
     goto :goto_0
@@ -1495,7 +1495,7 @@
     iget-object v2, p0, Landroid/app/Activity;->mTouchPadListener:Landroid/app/Activity$TouchPadListener;
 
     invoke-interface {v2}, Landroid/app/Activity$TouchPadListener;->onClick()V
-    
+
     const/4 v2, 0x1
 
     goto :goto_0
@@ -1505,10 +1505,11 @@
     iget-object v2, p0, Landroid/app/Activity;->mTouchPadListener:Landroid/app/Activity$TouchPadListener;
 
     invoke-interface {v2}, Landroid/app/Activity$TouchPadListener;->onDoubleClick()V
-    
+
     const/4 v2, 0x1
 
     goto :goto_0
+
 
     :pswitch_data_baidu_0
     .packed-switch 0x83
@@ -1814,7 +1815,7 @@
     .line 4720
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    const-string v1, "mChangingConfigurations="
+    const-string/jumbo v1, "mChangingConfigurations="
 
     invoke-virtual {p3, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -1826,7 +1827,7 @@
     .line 4722
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    const-string v1, "mCurrentConfig="
+    const-string/jumbo v1, "mCurrentConfig="
 
     invoke-virtual {p3, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -4476,8 +4477,8 @@
 
     .line 1424
     :cond_5
-    iput-object v7, p0, Landroid/app/Activity;->mTouchPadListener:Landroid/app/Activity$TouchPadListener;
-    
+    iput-object p0, p0, Landroid/app/Activity;->mTouchPadListener:Landroid/app/Activity$TouchPadListener;
+
     invoke-virtual {p0}, Landroid/app/Activity;->getApplication()Landroid/app/Application;
 
     move-result-object v5

@@ -60,15 +60,15 @@
     invoke-direct {p0, p1}, Landroid/widget/Editor$PinnedPopupWindow;-><init>(Landroid/widget/Editor;)V
 
     new-instance v0, Ljava/util/ArrayList;
-    
+
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-    
+
     iput-object v0, p0, Landroid/widget/Editor$ActionPopupWindow;->mVisibleList:Ljava/util/ArrayList;
-    
+
     const/4 v0, 0x1
-    
+
     iput v0, p0, Landroid/widget/Editor$ActionPopupWindow;->positionFlag:I
-    
+
     return-void
 .end method
 

@@ -838,13 +838,13 @@
     iget-object v4, p0, Landroid/content/pm/ResolveInfo;->resolvePackageName:Ljava/lang/String;
 
     invoke-direct {p0, p1, v4}, Landroid/content/pm/ResolveInfo;->loadLabelBaidu(Landroid/content/pm/PackageManager;Ljava/lang/String;)Ljava/lang/CharSequence;
-    
+
     move-result-object v2
-    
+
     if-nez v2, :cond_0
-    
+
     iget-object v4, p0, Landroid/content/pm/ResolveInfo;->resolvePackageName:Ljava/lang/String;
-    
+
     if-eqz v4, :cond_2
 
     iget v4, p0, Landroid/content/pm/ResolveInfo;->labelRes:I
@@ -894,13 +894,13 @@
     .line 146
     .local v0, ai:Landroid/content/pm/ApplicationInfo;
     iget-object v4, v1, Landroid/content/pm/ComponentInfo;->packageName:Ljava/lang/String;
-    
+
     invoke-direct {p0, p1, v4}, Landroid/content/pm/ResolveInfo;->loadLabelBaidu(Landroid/content/pm/PackageManager;Ljava/lang/String;)Ljava/lang/CharSequence;
-    
+
     move-result-object v2
-    
+
     if-nez v2, :cond_0
-    
+
     iget v4, p0, Landroid/content/pm/ResolveInfo;->labelRes:I
 
     if-eqz v4, :cond_4

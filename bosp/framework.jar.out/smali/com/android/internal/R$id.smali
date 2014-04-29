@@ -155,6 +155,8 @@
 
 .field public static final cancel:I = #id@cancel#t
 
+.field public static final cancel_button:I = #id@cancel_button#t
+
 .field public static final candidatesArea:I = #id@candidatesArea#t
 
 .field public static final carrier:I = #id@carrier#t

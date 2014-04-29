@@ -700,9 +700,6 @@
     new-instance v7, Lcom/android/server/AlarmManagerService;
 
     invoke-direct {v7, v4}, Lcom/android/server/AlarmManagerService;-><init>(Landroid/content/Context;)V
-
-    invoke-static {v4}, Lcom/baidu/service/YiServiceLoader;->main(Landroid/content/Context;)V
-
     :try_end_9
     .catch Ljava/lang/RuntimeException; {:try_start_9 .. :try_end_9} :catch_4f
 
@@ -815,6 +812,8 @@
     .catch Ljava/lang/RuntimeException; {:try_start_a .. :try_end_a} :catch_2
 
     :goto_a
+    invoke-static {v4}, Lcom/baidu/service/YiServiceLoader;->main(Landroid/content/Context;)V
+
     move-object/from16 v110, v111
 
     .end local v111           #vibrator:Lcom/android/server/VibratorService;

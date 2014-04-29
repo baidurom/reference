@@ -995,7 +995,7 @@
 
     .line 2425
     :cond_7
-    const-string v6, "mAllApns is empty!"
+    const-string/jumbo v6, "mAllApns is empty!"
 
     invoke-virtual {p0, v6}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->loge(Ljava/lang/String;)V
 

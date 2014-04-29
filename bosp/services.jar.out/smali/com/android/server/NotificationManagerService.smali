@@ -4015,7 +4015,7 @@
     move-result v5
 
     if-nez v5, :cond_0
-    
+
     move-object/from16 v0, p6
 
     iget v5, v0, Landroid/app/Notification;->priority:I

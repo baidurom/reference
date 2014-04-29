@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/widget/Editor;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-    .locals 0
+    .locals 1
     .parameter
     .parameter "drawableLtr"
     .parameter "drawableRtl"
@@ -33,9 +33,9 @@
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/Editor$HandleView;-><init>(Landroid/widget/Editor;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
     const/4 v0, 0x0
-    
+
     iput v0, p0, Landroid/widget/Editor$SelectionStartHandleView;->mCursorType:I
-    
+
     .line 3296
     return-void
 .end method

@@ -33,4 +33,16 @@
         <value>299</value>
         <value>397</value>
     </array>
+    <item name="backlight.full">230</item>
+    <item name="backlight.on">86</item>
+    <item name="bluetooth.open">6</item>
+    <item name="gps.open">12</item>
+    <item name="phone">163</item>
+    <item name="net">223</item>
+    <item name="music">65</item>
+    <item name="video">214</item>
+    <item name="game">283</item>
+    <item name="read">132</item>
+    <item name="photo">311</item>
+    <item name="available">100</item>
 </device>

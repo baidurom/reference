@@ -123,7 +123,7 @@
     if-ne v0, v1, :cond_0
 
     invoke-direct {p0}, Lcom/android/internal/widget/ActionBarView$HomeView;->getOffset()I
-    
+
     move-result v0
 
     :goto_0
