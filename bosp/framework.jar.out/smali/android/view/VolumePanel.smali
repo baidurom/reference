@@ -123,8 +123,6 @@
     .line 186
     const/16 v0, 0x8
     
-    add-int/lit8 v0, v0, 0x1
-
     new-array v0, v0, [Landroid/view/VolumePanel$StreamResources;
 
     sget-object v1, Landroid/view/VolumePanel$StreamResources;->BluetoothSCOStream:Landroid/view/VolumePanel$StreamResources;
@@ -170,12 +168,6 @@
     const/4 v1, 0x7
 
     sget-object v2, Landroid/view/VolumePanel$StreamResources;->RemoteStream:Landroid/view/VolumePanel$StreamResources;
-
-    aput-object v2, v0, v1
-    
-    sget-object v2, Landroid/view/VolumePanel$StreamResources;->FMStream:Landroid/view/VolumePanel$StreamResources;
-
-    add-int/lit8 v1, v1, 0x1
 
     aput-object v2, v0, v1
 

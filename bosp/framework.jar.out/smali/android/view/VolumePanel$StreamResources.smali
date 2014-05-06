@@ -30,8 +30,6 @@
 
 .field public static final enum BluetoothSCOStream:Landroid/view/VolumePanel$StreamResources;
 
-.field public static final enum FMStream:Landroid/view/VolumePanel$StreamResources;
-
 .field public static final enum MasterStream:Landroid/view/VolumePanel$StreamResources;
 
 .field public static final enum MediaStream:Landroid/view/VolumePanel$StreamResources;
@@ -237,33 +235,9 @@
     invoke-direct/range {v3 .. v10}, Landroid/view/VolumePanel$StreamResources;-><init>(Ljava/lang/String;IIIIIZ)V
 
     sput-object v3, Landroid/view/VolumePanel$StreamResources;->RemoteStream:Landroid/view/VolumePanel$StreamResources;
-    
-    new-instance v3, Landroid/view/VolumePanel$StreamResources;
-
-    const-string v4, "FMStream"
-    
-    add-int/lit8 v5, v5, 0x1
-
-    const/16 v6, 0xa
-
-    const v7, #drawable@ic_audio_vol#t
-
-    const v8, #drawable@ic_audio_vol_mute#t
-    
-    const v9, #string@volume_icon_description_media#t
-        
-    const/16 v0, 0x1
-
-    move v10, v0
-
-    invoke-direct/range {v3 .. v10}, Landroid/view/VolumePanel$StreamResources;-><init>(Ljava/lang/String;IIIIIZ)V
-
-    sput-object v3, Landroid/view/VolumePanel$StreamResources;->FMStream:Landroid/view/VolumePanel$StreamResources;
 
     .line 126
     const/16 v0, 0x8
-    
-    add-int/lit8 v0, v0, 0x1
 
     new-array v0, v0, [Landroid/view/VolumePanel$StreamResources;
 
@@ -302,12 +276,6 @@
     const/4 v1, 0x7
 
     sget-object v2, Landroid/view/VolumePanel$StreamResources;->RemoteStream:Landroid/view/VolumePanel$StreamResources;
-
-    aput-object v2, v0, v1
-    
-    add-int/lit8 v1, v1, 0x1
-
-    sget-object v2, Landroid/view/VolumePanel$StreamResources;->FMStream:Landroid/view/VolumePanel$StreamResources;
 
     aput-object v2, v0, v1
 
