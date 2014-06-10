@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="tab_btn_text_color">#173e63</color>
+    <color name="error_text_color">#ed3232</color>
+    <color name="btn_text_color">#173e63</color>
+    <color name="edit_text_color">#173e63</color>
+    <color name="edit_hint_color">#7bb8d9</color>
+    <color name="forget_passwd_color">#173e63</color>
+    <color name="user_agreement_text_color">#737373</color>
+    <color name="user_agreement_btn_text_color">#173e63</color>
+</resources>

@@ -1087,7 +1087,7 @@
 
     const/4 v6, 0x0
 
-    const v7, 0x3ca3d70a
+    const v7, 0x3c449ba6
 
     iget v8, p0, Lcom/baidu/internal/keyguard/space/textureview/AppRenderThread;->mSensorX:F
 
@@ -1097,7 +1097,7 @@
 
     const v7, -0x40666666
 
-    const v8, 0x3ca3d70a
+    const v8, 0x3c449ba6
 
     iget v9, p0, Lcom/baidu/internal/keyguard/space/textureview/AppRenderThread;->mSensorY:F
 

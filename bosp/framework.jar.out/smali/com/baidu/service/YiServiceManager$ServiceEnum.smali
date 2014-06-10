@@ -44,8 +44,6 @@
 
 .field public static final enum SERVICE_SMART_POWER:Lcom/baidu/service/YiServiceManager$ServiceEnum;
 
-.field public static final enum SERVICE_SYSTEM_VERIFY:Lcom/baidu/service/YiServiceManager$ServiceEnum;
-
 
 # instance fields
 .field private mClassName:Ljava/lang/String;
@@ -170,29 +168,12 @@
 
     sput-object v3, Lcom/baidu/service/YiServiceManager$ServiceEnum;->SERVICE_NOTIFICATION_DEFENSE:Lcom/baidu/service/YiServiceManager$ServiceEnum;
 
-    .line 59
-    new-instance v3, Lcom/baidu/service/YiServiceManager$ServiceEnum;
-
-    const-string v4, "SERVICE_SYSTEM_VERIFY"
-
-    const/4 v5, 0x6
-
-    const-class v6, Lcom/baidu/systemverify/VerificationService;
-
-    const-string v7, "VerificationService"
-
-    sget v8, Lcom/baidu/service/YiServiceManager;->START_TYPE_BOOT_COMPLETED:I
-
-    invoke-direct/range {v3 .. v8}, Lcom/baidu/service/YiServiceManager$ServiceEnum;-><init>(Ljava/lang/String;ILjava/lang/Class;Ljava/lang/String;I)V
-
-    sput-object v3, Lcom/baidu/service/YiServiceManager$ServiceEnum;->SERVICE_SYSTEM_VERIFY:Lcom/baidu/service/YiServiceManager$ServiceEnum;
-
     .line 62
     new-instance v3, Lcom/baidu/service/YiServiceManager$ServiceEnum;
 
     const-string v4, "SERVICE_PACKAGE_VERIFY"
 
-    const/4 v5, 0x7
+    const/4 v5, 0x6
 
     const-class v6, Lcom/baidu/systemverify/PackageVerificationService;
 
@@ -209,7 +190,7 @@
 
     const-string v4, "SERVICE_ACCESS_CONTROLL"
 
-    const/16 v5, 0x8
+    const/4 v5, 0x7
 
     const-class v6, Lcom/baidu/access/AccessControllService;
 
@@ -226,7 +207,7 @@
 
     const-string v4, "SERVICE_MANAGER"
 
-    const/16 v5, 0x9
+    const/16 v5, 0x8
 
     const/4 v6, 0x0
 
@@ -239,7 +220,7 @@
     sput-object v3, Lcom/baidu/service/YiServiceManager$ServiceEnum;->SERVICE_MANAGER:Lcom/baidu/service/YiServiceManager$ServiceEnum;
 
     .line 34
-    const/16 v0, 0xa
+    const/16 v0, 0x9
 
     new-array v0, v0, [Lcom/baidu/service/YiServiceManager$ServiceEnum;
 
@@ -271,23 +252,17 @@
 
     const/4 v1, 0x6
 
-    sget-object v2, Lcom/baidu/service/YiServiceManager$ServiceEnum;->SERVICE_SYSTEM_VERIFY:Lcom/baidu/service/YiServiceManager$ServiceEnum;
+    sget-object v2, Lcom/baidu/service/YiServiceManager$ServiceEnum;->SERVICE_PACKAGE_VERIFY:Lcom/baidu/service/YiServiceManager$ServiceEnum;
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x7
 
-    sget-object v2, Lcom/baidu/service/YiServiceManager$ServiceEnum;->SERVICE_PACKAGE_VERIFY:Lcom/baidu/service/YiServiceManager$ServiceEnum;
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x8
-
     sget-object v2, Lcom/baidu/service/YiServiceManager$ServiceEnum;->SERVICE_ACCESS_CONTROLL:Lcom/baidu/service/YiServiceManager$ServiceEnum;
 
     aput-object v2, v0, v1
 
-    const/16 v1, 0x9
+    const/16 v1, 0x8
 
     sget-object v2, Lcom/baidu/service/YiServiceManager$ServiceEnum;->SERVICE_MANAGER:Lcom/baidu/service/YiServiceManager$ServiceEnum;
 

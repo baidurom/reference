@@ -11910,6 +11910,15 @@
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 589
+    iget-object v0, p0, Lcom/baidu/internal/contacts/HanziToPinyin;->CORRECT_HANS:Ljava/util/Map;
+
+    const-string/jumbo v1, "\u4e39"
+
+    const-string v2, "DAN"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 590
     return-void
 .end method
 
@@ -11918,7 +11927,7 @@
     .parameter "letter"
 
     .prologue
-    .line 617
+    .line 618
     iget-object v0, p0, Lcom/baidu/internal/contacts/HanziToPinyin;->CORRECT_HANS:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -11935,7 +11944,7 @@
     .parameter "letter"
 
     .prologue
-    .line 621
+    .line 622
     sget-object v10, Lcom/baidu/internal/contacts/HanziToPinyin;->COLLATOR:Ljava/text/Collator;
 
     const-string/jumbo v11, "\u963f"
@@ -11944,7 +11953,7 @@
 
     move-result v3
 
-    .line 622
+    .line 623
     .local v3, cmpFirst:I
     sget-object v10, Lcom/baidu/internal/contacts/HanziToPinyin;->COLLATOR:Ljava/text/Collator;
 
@@ -11954,45 +11963,45 @@
 
     move-result v4
 
-    .line 623
+    .line 624
     .local v4, cmpLast:I
     const/4 v8, -0x1
 
-    .line 624
+    .line 625
     .local v8, offset:I
     if-ltz v3, :cond_0
 
     if-lez v4, :cond_1
 
-    .line 625
+    .line 626
     :cond_0
     const/4 v10, 0x0
 
-    .line 655
+    .line 656
     :goto_0
     return-object v10
 
-    .line 626
+    .line 627
     :cond_1
     if-nez v3, :cond_3
 
-    .line 627
+    .line 628
     const/4 v8, 0x0
 
-    .line 650
+    .line 651
     :cond_2
     :goto_1
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 651
+    .line 652
     .local v9, sb:Ljava/lang/StringBuilder;
     sget-object v10, Lcom/baidu/internal/contacts/HanziToPinyin;->PINYINS:[[B
 
     aget-object v1, v10, v8
 
-    .line 652
+    .line 653
     .local v1, bytes:[B
     const/4 v6, 0x0
 
@@ -12006,26 +12015,26 @@
 
     if-eqz v10, :cond_8
 
-    .line 653
+    .line 654
     aget-byte v10, v1, v6
 
     int-to-char v10, v10
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 652
+    .line 653
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_2
 
-    .line 628
+    .line 629
     .end local v1           #bytes:[B
     .end local v6           #j:I
     .end local v9           #sb:Ljava/lang/StringBuilder;
     :cond_3
     if-nez v4, :cond_4
 
-    .line 629
+    .line 630
     sget-object v10, Lcom/baidu/internal/contacts/HanziToPinyin;->UNIHANS:[C
 
     array-length v10, v10
@@ -12034,11 +12043,11 @@
 
     goto :goto_1
 
-    .line 631
+    .line 632
     :cond_4
     const/4 v0, 0x0
 
-    .line 632
+    .line 633
     .local v0, begin:I
     sget-object v10, Lcom/baidu/internal/contacts/HanziToPinyin;->UNIHANS:[C
 
@@ -12046,21 +12055,21 @@
 
     add-int/lit8 v5, v10, -0x1
 
-    .line 633
+    .line 634
     .local v5, end:I
     const/4 v2, -0x1
 
-    .line 634
+    .line 635
     .local v2, cmp:I
     :goto_3
     if-gt v0, v5, :cond_5
 
-    .line 635
+    .line 636
     add-int v10, v0, v5
 
     div-int/lit8 v8, v10, 0x2
 
-    .line 636
+    .line 637
     sget-object v10, Lcom/baidu/internal/contacts/HanziToPinyin;->UNIHANS:[C
 
     aget-char v10, v10, v8
@@ -12069,7 +12078,7 @@
 
     move-result-object v7
 
-    .line 637
+    .line 638
     .local v7, midStr:Ljava/lang/String;
     sget-object v10, Lcom/baidu/internal/contacts/HanziToPinyin;->COLLATOR:Ljava/text/Collator;
 
@@ -12077,36 +12086,36 @@
 
     move-result v2
 
-    .line 638
+    .line 639
     if-nez v2, :cond_6
 
-    .line 646
+    .line 647
     .end local v7           #midStr:Ljava/lang/String;
     :cond_5
     if-gez v2, :cond_2
 
-    .line 647
+    .line 648
     add-int/lit8 v8, v8, -0x1
 
     goto :goto_1
 
-    .line 640
+    .line 641
     .restart local v7       #midStr:Ljava/lang/String;
     :cond_6
     if-lez v2, :cond_7
 
-    .line 641
+    .line 642
     add-int/lit8 v0, v8, 0x1
 
     goto :goto_3
 
-    .line 643
+    .line 644
     :cond_7
     add-int/lit8 v5, v8, -0x1
 
     goto :goto_3
 
-    .line 655
+    .line 656
     .end local v0           #begin:I
     .end local v2           #cmp:I
     .end local v5           #end:I
@@ -12127,7 +12136,7 @@
     .parameter "letter"
 
     .prologue
-    .line 609
+    .line 610
     iget-object v0, p0, Lcom/baidu/internal/contacts/HanziToPinyin;->FIRST_HANS:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -12143,29 +12152,29 @@
     .locals 5
 
     .prologue
-    .line 592
+    .line 593
     const-class v3, Lcom/baidu/internal/contacts/HanziToPinyin;
 
     monitor-enter v3
 
-    .line 593
+    .line 594
     :try_start_0
     sget-object v2, Lcom/baidu/internal/contacts/HanziToPinyin;->sInstance:Lcom/baidu/internal/contacts/HanziToPinyin;
 
     if-eqz v2, :cond_0
 
-    .line 594
+    .line 595
     sget-object v2, Lcom/baidu/internal/contacts/HanziToPinyin;->sInstance:Lcom/baidu/internal/contacts/HanziToPinyin;
 
     monitor-exit v3
 
-    .line 604
+    .line 605
     .local v0, i:I
     .local v1, locale:[Ljava/util/Locale;
     :goto_0
     return-object v2
 
-    .line 596
+    .line 597
     .end local v0           #i:I
     .end local v1           #locale:[Ljava/util/Locale;
     :cond_0
@@ -12173,7 +12182,7 @@
 
     move-result-object v1
 
-    .line 597
+    .line 598
     .restart local v1       #locale:[Ljava/util/Locale;
     const/4 v0, 0x0
 
@@ -12183,7 +12192,7 @@
 
     if-ge v0, v2, :cond_2
 
-    .line 598
+    .line 599
     aget-object v2, v1, v0
 
     sget-object v4, Ljava/util/Locale;->CHINA:Ljava/util/Locale;
@@ -12194,7 +12203,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 599
+    .line 600
     new-instance v2, Lcom/baidu/internal/contacts/HanziToPinyin;
 
     const/4 v4, 0x1
@@ -12203,14 +12212,14 @@
 
     sput-object v2, Lcom/baidu/internal/contacts/HanziToPinyin;->sInstance:Lcom/baidu/internal/contacts/HanziToPinyin;
 
-    .line 600
+    .line 601
     sget-object v2, Lcom/baidu/internal/contacts/HanziToPinyin;->sInstance:Lcom/baidu/internal/contacts/HanziToPinyin;
 
     monitor-exit v3
 
     goto :goto_0
 
-    .line 605
+    .line 606
     :catchall_0
     move-exception v2
 
@@ -12220,13 +12229,13 @@
 
     throw v2
 
-    .line 597
+    .line 598
     :cond_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 603
+    .line 604
     :cond_2
     :try_start_1
     new-instance v2, Lcom/baidu/internal/contacts/HanziToPinyin;
@@ -12237,7 +12246,7 @@
 
     sput-object v2, Lcom/baidu/internal/contacts/HanziToPinyin;->sInstance:Lcom/baidu/internal/contacts/HanziToPinyin;
 
-    .line 604
+    .line 605
     sget-object v2, Lcom/baidu/internal/contacts/HanziToPinyin;->sInstance:Lcom/baidu/internal/contacts/HanziToPinyin;
 
     monitor-exit v3
@@ -12252,7 +12261,7 @@
     .parameter "letter"
 
     .prologue
-    .line 613
+    .line 614
     iget-object v0, p0, Lcom/baidu/internal/contacts/HanziToPinyin;->MULTI_HANS:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -12271,12 +12280,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 659
+    .line 660
     invoke-virtual {p1, v2}, Ljava/lang/String;->charAt(I)C
 
     move-result v0
 
-    .line 660
+    .line 661
     .local v0, character:C
     invoke-static {v0}, Lcom/baidu/internal/contacts/HanziToPinyin;->isNumer(C)Z
 
@@ -12284,18 +12293,18 @@
 
     if-eqz v1, :cond_0
 
-    .line 661
+    .line 662
     new-instance v1, Lcom/baidu/internal/contacts/HanziToPinyin$Token;
 
     const/4 v2, 0x4
 
     invoke-direct {v1, v2, p1}, Lcom/baidu/internal/contacts/HanziToPinyin$Token;-><init>(ILjava/lang/String;)V
 
-    .line 667
+    .line 668
     :goto_0
     return-object v1
 
-    .line 662
+    .line 663
     :cond_0
     invoke-static {v0}, Lcom/baidu/internal/contacts/HanziToPinyin;->isSymbol(C)Z
 
@@ -12303,7 +12312,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 663
+    .line 664
     new-instance v1, Lcom/baidu/internal/contacts/HanziToPinyin$Token;
 
     const/4 v2, 0x1
@@ -12312,7 +12321,7 @@
 
     goto :goto_0
 
-    .line 664
+    .line 665
     :cond_1
     invoke-static {v0}, Lcom/baidu/internal/contacts/HanziToPinyin;->isLetter(C)Z
 
@@ -12320,7 +12329,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 665
+    .line 666
     new-instance v1, Lcom/baidu/internal/contacts/HanziToPinyin$Token;
 
     const/4 v2, 0x3
@@ -12333,7 +12342,7 @@
 
     goto :goto_0
 
-    .line 667
+    .line 668
     :cond_2
     new-instance v1, Lcom/baidu/internal/contacts/HanziToPinyin$Token;
 
@@ -12347,7 +12356,7 @@
     .parameter "chr"
 
     .prologue
-    .line 755
+    .line 756
     const/16 v0, 0x61
 
     if-lt p0, v0, :cond_0
@@ -12382,7 +12391,7 @@
     .parameter "chr"
 
     .prologue
-    .line 763
+    .line 764
     const/16 v0, 0x30
 
     if-lt p0, v0, :cond_0
@@ -12407,7 +12416,7 @@
     .parameter "chr"
 
     .prologue
-    .line 759
+    .line 760
     const/16 v0, 0x40
 
     if-eq p0, v0, :cond_0
@@ -12451,12 +12460,12 @@
 
     const/4 v7, 0x0
 
-    .line 729
+    .line 730
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    .line 730
+    .line 731
     .local v4, tokens2:Ljava/util/List;,"Ljava/util/List<Lcom/baidu/internal/contacts/HanziToPinyin$Token;>;"
     if-eqz p0, :cond_0
 
@@ -12466,24 +12475,24 @@
 
     if-nez v5, :cond_1
 
-    .line 751
+    .line 752
     :cond_0
     :goto_0
     return-object v4
 
-    .line 733
+    .line 734
     :cond_1
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 734
+    .line 735
     .local v1, sb:Ljava/lang/StringBuilder;
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v2
 
-    .line 735
+    .line 736
     .local v2, size:I
     add-int/lit8 v0, v2, -0x1
 
@@ -12491,31 +12500,31 @@
     :goto_1
     if-ltz v0, :cond_4
 
-    .line 736
+    .line 737
     invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Lcom/baidu/internal/contacts/HanziToPinyin$Token;
 
-    .line 738
+    .line 739
     .local v3, token:Lcom/baidu/internal/contacts/HanziToPinyin$Token;
     iget v5, v3, Lcom/baidu/internal/contacts/HanziToPinyin$Token;->type:I
 
     if-ne v5, v8, :cond_2
 
-    .line 739
+    .line 740
     iget-object v5, v3, Lcom/baidu/internal/contacts/HanziToPinyin$Token;->source:Ljava/lang/String;
 
     invoke-virtual {v1, v7, v5}, Ljava/lang/StringBuilder;->insert(ILjava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 735
+    .line 736
     :goto_2
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_1
 
-    .line 741
+    .line 742
     :cond_2
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->length()I
 
@@ -12523,7 +12532,7 @@
 
     if-lez v5, :cond_3
 
-    .line 742
+    .line 743
     new-instance v5, Lcom/baidu/internal/contacts/HanziToPinyin$Token;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -12534,16 +12543,16 @@
 
     invoke-interface {v4, v7, v5}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    .line 743
+    .line 744
     invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 745
+    .line 746
     :cond_3
     invoke-interface {v4, v7, v3}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
     goto :goto_2
 
-    .line 748
+    .line 749
     .end local v3           #token:Lcom/baidu/internal/contacts/HanziToPinyin$Token;
     :cond_4
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->length()I
@@ -12552,7 +12561,7 @@
 
     if-lez v5, :cond_0
 
-    .line 749
+    .line 750
     new-instance v5, Lcom/baidu/internal/contacts/HanziToPinyin$Token;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -12571,7 +12580,7 @@
     .parameter "input"
 
     .prologue
-    .line 772
+    .line 773
     const/4 v0, 0x1
 
     invoke-static {p0, v0}, Lcom/baidu/internal/contacts/HanziToPinyin;->strip(Ljava/lang/String;Z)Ljava/lang/String;
@@ -12587,17 +12596,17 @@
     .parameter "strict"
 
     .prologue
-    .line 782
+    .line 783
     if-nez p0, :cond_0
 
-    .line 783
+    .line 784
     const/4 v1, 0x0
 
-    .line 786
+    .line 787
     :goto_0
     return-object v1
 
-    .line 785
+    .line 786
     :cond_0
     invoke-static {}, Lcom/baidu/internal/contacts/HanziToPinyin;->getInstance()Lcom/baidu/internal/contacts/HanziToPinyin;
 
@@ -12607,7 +12616,7 @@
 
     move-result-object v0
 
-    .line 786
+    .line 787
     .local v0, tokens:Ljava/util/List;,"Ljava/util/List<Lcom/baidu/internal/contacts/HanziToPinyin$Token;>;"
     invoke-static {v0, p1}, Lcom/baidu/internal/contacts/HanziToPinyin;->strip(Ljava/util/List;Z)Ljava/lang/String;
 
@@ -12631,7 +12640,7 @@
     .end annotation
 
     .prologue
-    .line 795
+    .line 796
     .local p0, tokens:Ljava/util/List;,"Ljava/util/List<Lcom/baidu/internal/contacts/HanziToPinyin$Token;>;"
     const/4 v0, 0x1
 
@@ -12658,19 +12667,19 @@
     .end annotation
 
     .prologue
-    .line 805
+    .line 806
     .local p0, tokens:Ljava/util/List;,"Ljava/util/List<Lcom/baidu/internal/contacts/HanziToPinyin$Token;>;"
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 806
+    .line 807
     .local v1, sb:Ljava/lang/StringBuilder;
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v2
 
-    .line 807
+    .line 808
     .local v2, size:I
     const/4 v0, 0x0
 
@@ -12678,14 +12687,14 @@
     :goto_0
     if-ge v0, v2, :cond_1
 
-    .line 808
+    .line 809
     invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Lcom/baidu/internal/contacts/HanziToPinyin$Token;
 
-    .line 809
+    .line 810
     .local v3, token:Lcom/baidu/internal/contacts/HanziToPinyin$Token;
     invoke-virtual {v3, p1}, Lcom/baidu/internal/contacts/HanziToPinyin$Token;->isSearchable(Z)Z
 
@@ -12693,7 +12702,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 811
+    .line 812
     iget-object v4, v3, Lcom/baidu/internal/contacts/HanziToPinyin$Token;->source:Ljava/lang/String;
 
     invoke-virtual {v4}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
@@ -12702,13 +12711,13 @@
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 807
+    .line 808
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 814
+    .line 815
     .end local v3           #token:Lcom/baidu/internal/contacts/HanziToPinyin$Token;
     :cond_1
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -12736,7 +12745,7 @@
     .end annotation
 
     .prologue
-    .line 677
+    .line 678
     const/4 v0, 0x1
 
     invoke-virtual {p0, p1, v0}, Lcom/baidu/internal/contacts/HanziToPinyin;->getTokens(Ljava/lang/String;Z)Ljava/util/List;
@@ -12763,12 +12772,12 @@
     .end annotation
 
     .prologue
-    .line 688
+    .line 689
     new-instance v7, Ljava/util/ArrayList;
 
     invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
 
-    .line 689
+    .line 690
     .local v7, tokens:Ljava/util/List;,"Ljava/util/List<Lcom/baidu/internal/contacts/HanziToPinyin$Token;>;"
     iget-boolean v8, p0, Lcom/baidu/internal/contacts/HanziToPinyin;->mHasChinaCollator:Z
 
@@ -12780,24 +12789,24 @@
 
     if-eqz v8, :cond_1
 
-    .line 725
+    .line 726
     .end local v7           #tokens:Ljava/util/List;,"Ljava/util/List<Lcom/baidu/internal/contacts/HanziToPinyin$Token;>;"
     :cond_0
     :goto_0
     return-object v7
 
-    .line 692
+    .line 693
     .restart local v7       #tokens:Ljava/util/List;,"Ljava/util/List<Lcom/baidu/internal/contacts/HanziToPinyin$Token;>;"
     :cond_1
     const/4 v1, 0x0
 
-    .line 693
+    .line 694
     .local v1, containPinyin:Z
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v3
 
-    .line 694
+    .line 695
     .local v3, length:I
     const/4 v2, 0x0
 
@@ -12805,86 +12814,86 @@
     :goto_1
     if-ge v2, v3, :cond_8
 
-    .line 695
+    .line 696
     invoke-virtual {p1, v2}, Ljava/lang/String;->charAt(I)C
 
     move-result v0
 
-    .line 696
+    .line 697
     .local v0, character:C
     invoke-static {v0}, Ljava/lang/Character;->toString(C)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 697
+    .line 698
     .local v4, letter:Ljava/lang/String;
     const/4 v6, 0x0
 
-    .line 698
+    .line 699
     .local v6, token:Lcom/baidu/internal/contacts/HanziToPinyin$Token;
     const/16 v8, 0x100
 
     if-ge v0, v8, :cond_2
 
-    .line 699
+    .line 700
     invoke-direct {p0, v4}, Lcom/baidu/internal/contacts/HanziToPinyin;->getNonPinyin(Ljava/lang/String;)Lcom/baidu/internal/contacts/HanziToPinyin$Token;
 
     move-result-object v6
 
-    .line 721
+    .line 722
     :goto_2
     invoke-interface {v7, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 694
+    .line 695
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 701
+    .line 702
     :cond_2
     const/4 v5, 0x0
 
-    .line 702
+    .line 703
     .local v5, pinyin:Ljava/lang/String;
     if-nez v2, :cond_3
 
-    .line 703
+    .line 704
     invoke-direct {p0, v4}, Lcom/baidu/internal/contacts/HanziToPinyin;->getFirstPinyin(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 705
+    .line 706
     :cond_3
     if-nez v5, :cond_4
 
-    .line 706
+    .line 707
     invoke-direct {p0, v4}, Lcom/baidu/internal/contacts/HanziToPinyin;->getMultiPinyin(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 708
+    .line 709
     :cond_4
     if-nez v5, :cond_5
 
-    .line 709
+    .line 710
     invoke-direct {p0, v4}, Lcom/baidu/internal/contacts/HanziToPinyin;->getCorrectPinyin(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 711
+    .line 712
     :cond_5
     if-nez v5, :cond_6
 
-    .line 712
+    .line 713
     invoke-direct {p0, v4}, Lcom/baidu/internal/contacts/HanziToPinyin;->getDefualtPinyin(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 714
+    .line 715
     :cond_6
     if-nez v5, :cond_7
 
-    .line 715
+    .line 716
     new-instance v6, Lcom/baidu/internal/contacts/HanziToPinyin$Token;
 
     .end local v6           #token:Lcom/baidu/internal/contacts/HanziToPinyin$Token;
@@ -12895,7 +12904,7 @@
     .restart local v6       #token:Lcom/baidu/internal/contacts/HanziToPinyin$Token;
     goto :goto_2
 
-    .line 717
+    .line 718
     :cond_7
     new-instance v6, Lcom/baidu/internal/contacts/HanziToPinyin$Token;
 
@@ -12904,13 +12913,13 @@
 
     invoke-direct {v6, v8, v4, v5}, Lcom/baidu/internal/contacts/HanziToPinyin$Token;-><init>(ILjava/lang/String;Ljava/lang/String;)V
 
-    .line 718
+    .line 719
     .restart local v6       #token:Lcom/baidu/internal/contacts/HanziToPinyin$Token;
     const/4 v1, 0x1
 
     goto :goto_2
 
-    .line 725
+    .line 726
     .end local v0           #character:C
     .end local v4           #letter:Ljava/lang/String;
     .end local v5           #pinyin:Ljava/lang/String;

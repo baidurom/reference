@@ -2621,16 +2621,7 @@
 
     iget-object v2, v0, Landroid/webkit/WebViewClassic$PrivateHandler;->this$0:Landroid/webkit/WebViewClassic;
 
-    #getter for: Landroid/webkit/WebViewClassic;->mWebViewCore:Landroid/webkit/WebViewCore;
-    invoke-static {v2}, Landroid/webkit/WebViewClassic;->access$1100(Landroid/webkit/WebViewClassic;)Landroid/webkit/WebViewCore;
-
-    move-result-object v2
-
-    move/from16 v0, v42
-
-    move/from16 v1, v43
-
-    invoke-virtual {v2, v0, v1}, Landroid/webkit/WebViewCore;->selectWordAt(II)Z
+    invoke-virtual {v2}, Landroid/webkit/WebViewClassic;->selectText()Z
 
     move-result v2
 

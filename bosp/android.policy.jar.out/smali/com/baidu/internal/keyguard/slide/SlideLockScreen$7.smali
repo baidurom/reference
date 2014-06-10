@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 678
+    .line 691
     iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$7;->this$0:Lcom/baidu/internal/keyguard/slide/SlideLockScreen;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,32 +39,32 @@
     .parameter "msg"
 
     .prologue
-    .line 681
+    .line 694
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 688
+    .line 701
     :cond_0
     :goto_0
     return-void
 
-    .line 683
+    .line 696
     :pswitch_0
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$7;->this$0:Lcom/baidu/internal/keyguard/slide/SlideLockScreen;
 
     #getter for: Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYimyAdapter:Lcom/baidu/internal/keyguard/slide/iqiyi/MyCursorAdapter;
-    invoke-static {v0}, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->access$1600(Lcom/baidu/internal/keyguard/slide/SlideLockScreen;)Lcom/baidu/internal/keyguard/slide/iqiyi/MyCursorAdapter;
+    invoke-static {v0}, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->access$1400(Lcom/baidu/internal/keyguard/slide/SlideLockScreen;)Lcom/baidu/internal/keyguard/slide/iqiyi/MyCursorAdapter;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 684
+    .line 697
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$7;->this$0:Lcom/baidu/internal/keyguard/slide/SlideLockScreen;
 
     #getter for: Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYimyAdapter:Lcom/baidu/internal/keyguard/slide/iqiyi/MyCursorAdapter;
-    invoke-static {v0}, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->access$1600(Lcom/baidu/internal/keyguard/slide/SlideLockScreen;)Lcom/baidu/internal/keyguard/slide/iqiyi/MyCursorAdapter;
+    invoke-static {v0}, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->access$1400(Lcom/baidu/internal/keyguard/slide/SlideLockScreen;)Lcom/baidu/internal/keyguard/slide/iqiyi/MyCursorAdapter;
 
     move-result-object v0
 
@@ -72,7 +72,7 @@
 
     goto :goto_0
 
-    .line 681
+    .line 694
     :pswitch_data_0
     .packed-switch 0x9823
         :pswitch_0

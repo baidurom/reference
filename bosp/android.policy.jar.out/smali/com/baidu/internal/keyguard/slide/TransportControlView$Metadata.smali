@@ -34,12 +34,12 @@
     .parameter
 
     .prologue
-    .line 396
+    .line 403
     iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;->this$0:Lcom/baidu/internal/keyguard/slide/TransportControlView;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 405
+    .line 412
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;->sessionId:I
@@ -52,7 +52,7 @@
     .parameter "x0"
 
     .prologue
-    .line 396
+    .line 403
     iget v0, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;->sessionId:I
 
     return v0
@@ -64,7 +64,7 @@
     .parameter "x1"
 
     .prologue
-    .line 396
+    .line 403
     iput p1, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;->sessionId:I
 
     return p1
@@ -75,7 +75,7 @@
     .parameter "x0"
 
     .prologue
-    .line 396
+    .line 403
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;->artist:Ljava/lang/String;
 
     return-object v0
@@ -87,7 +87,7 @@
     .parameter "x1"
 
     .prologue
-    .line 396
+    .line 403
     iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;->artist:Ljava/lang/String;
 
     return-object p1
@@ -98,7 +98,7 @@
     .parameter "x0"
 
     .prologue
-    .line 396
+    .line 403
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;->trackTitle:Ljava/lang/String;
 
     return-object v0
@@ -110,7 +110,7 @@
     .parameter "x1"
 
     .prologue
-    .line 396
+    .line 403
     iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;->trackTitle:Ljava/lang/String;
 
     return-object p1
@@ -121,7 +121,7 @@
     .parameter "x0"
 
     .prologue
-    .line 396
+    .line 403
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;->albumTitle:Ljava/lang/String;
 
     return-object v0
@@ -133,7 +133,7 @@
     .parameter "x1"
 
     .prologue
-    .line 396
+    .line 403
     iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;->albumTitle:Ljava/lang/String;
 
     return-object p1
@@ -144,7 +144,7 @@
     .parameter "x0"
 
     .prologue
-    .line 396
+    .line 403
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;->bitmap:Landroid/graphics/Bitmap;
 
     return-object v0
@@ -156,7 +156,7 @@
     .parameter "x1"
 
     .prologue
-    .line 396
+    .line 403
     iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;->bitmap:Landroid/graphics/Bitmap;
 
     return-object p1
@@ -168,7 +168,7 @@
     .locals 2
 
     .prologue
-    .line 408
+    .line 415
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

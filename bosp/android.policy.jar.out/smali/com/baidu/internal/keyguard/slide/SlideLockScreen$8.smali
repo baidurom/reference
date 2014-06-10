@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 701
+    .line 714
     iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$8;->this$0:Lcom/baidu/internal/keyguard/slide/SlideLockScreen;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
     .end annotation
 
     .prologue
-    .line 706
+    .line 719
     .local p1, arg0:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$8;->this$0:Lcom/baidu/internal/keyguard/slide/SlideLockScreen;
 
@@ -67,6 +67,6 @@
 
     invoke-virtual {v0, p3, v1}, Lcom/baidu/internal/keyguard/slide/iqiyi/SlideListView;->smoothScrollToPositionFromTop(II)V
 
-    .line 708
+    .line 721
     return-void
 .end method

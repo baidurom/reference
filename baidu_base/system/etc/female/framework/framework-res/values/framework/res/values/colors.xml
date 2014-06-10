@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--yi_primary_text_baidu_light-->
+    <color name="yi_bright_foreground_baidu_light">#ff173e63</color><!--系统字色值-->  
+    <color name="yi_bright_foreground_disabled_baidu_light">#668c92a1</color>
+    <!--yi_secondary_text_baidu_light-->
+    <color name="yi_dim_foreground_baidu_light">#ff6891b7</color>
+    <color name="yi_dim_foreground_disabled_baidu_light">#ffcbced5</color>
+
+    <!--action bar title-->
+    <color name="yi_dark_action_bar_title">#ffffffff</color>
+   <!--list divider text-->
+    <color name="yi_list_section_divider_text_light">#ff173e63</color>
+   <!--statusbar notification-->
+    <color name="yi_status_bar_event_content">#80878d</color>
+    <color name="yi_status_bar_event_content_title">#eeeeee</color>
+</resources>
+

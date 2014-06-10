@@ -928,9 +928,7 @@
 
     invoke-virtual/range {v17 .. v17}, Landroid/graphics/Bitmap;->getWidth()I
 
-    move-result v17
-
-    div-int/lit8 v13, v17, 0x2
+    move-result v13
 
     .line 478
     .local v13, radiusHandle:I
@@ -948,9 +946,7 @@
 
     invoke-virtual/range {v17 .. v17}, Landroid/graphics/Bitmap;->getWidth()I
 
-    move-result v17
-
-    div-int/lit8 v14, v17, 0x2
+    move-result v14
 
     .line 479
     .local v14, radiusMessage:I
@@ -968,9 +964,7 @@
 
     invoke-virtual/range {v17 .. v17}, Landroid/graphics/Bitmap;->getWidth()I
 
-    move-result v17
-
-    div-int/lit8 v12, v17, 0x2
+    move-result v12
 
     .line 480
     .local v12, radiusCamera:I
@@ -988,9 +982,7 @@
 
     invoke-virtual/range {v17 .. v17}, Landroid/graphics/Bitmap;->getWidth()I
 
-    move-result v17
-
-    div-int/lit8 v15, v17, 0x2
+    move-result v15
 
     .line 481
     .local v15, radiusPhone:I
@@ -1010,7 +1002,21 @@
 
     move-result v17
 
-    div-int/lit8 v16, v17, 0x2
+    move/from16 v0, v17
+
+    int-to-float v0, v0
+
+    move/from16 v17, v0
+
+    const v18, 0x3f99999a
+
+    mul-float v17, v17, v18
+
+    move/from16 v0, v17
+
+    float-to-int v0, v0
+
+    move/from16 v16, v0
 
     .line 482
     .local v16, radiusUnlock:I

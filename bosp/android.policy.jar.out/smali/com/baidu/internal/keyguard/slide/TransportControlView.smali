@@ -330,7 +330,7 @@
     .parameter "id"
 
     .prologue
-    .line 414
+    .line 421
     invoke-static {p2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
@@ -346,7 +346,7 @@
     .locals 2
 
     .prologue
-    .line 454
+    .line 465
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mMetadata:Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;
 
     #getter for: Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;->trackTitle:Ljava/lang/String;
@@ -360,7 +360,7 @@
 
     if-nez v0, :cond_0
 
-    .line 455
+    .line 466
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mTrackTitle:Landroid/widget/TextView;
 
     iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mMetadata:Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;
@@ -372,7 +372,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 458
+    .line 469
     :cond_0
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mMetadata:Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;
 
@@ -387,7 +387,7 @@
 
     if-nez v0, :cond_1
 
-    .line 459
+    .line 470
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mTrackAlbumTitle:Landroid/widget/TextView;
 
     iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mMetadata:Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;
@@ -399,13 +399,13 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 462
+    .line 473
     :cond_1
     sget v0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->sCurrentPlayState:I
 
     invoke-direct {p0, v0}, Lcom/baidu/internal/keyguard/slide/TransportControlView;->updatePlayPauseState(I)V
 
-    .line 463
+    .line 474
     return-void
 .end method
 
@@ -416,29 +416,29 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 627
+    .line 638
     iget-object v3, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mClientIntent:Landroid/app/PendingIntent;
 
     if-nez v3, :cond_0
 
-    .line 630
+    .line 641
     const-string v3, "TransportControlView"
 
     const-string v4, "sendMediaButtonClick(): No client is currently registered"
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 655
+    .line 666
     :goto_0
     return-void
 
-    .line 636
+    .line 647
     :cond_0
     new-instance v2, Landroid/view/KeyEvent;
 
     invoke-direct {v2, v4, p1}, Landroid/view/KeyEvent;-><init>(II)V
 
-    .line 637
+    .line 648
     .local v2, keyEvent:Landroid/view/KeyEvent;
     new-instance v1, Landroid/content/Intent;
 
@@ -446,13 +446,13 @@
 
     invoke-direct {v1, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 638
+    .line 649
     .local v1, intent:Landroid/content/Intent;
     const-string v3, "android.intent.extra.KEY_EVENT"
 
     invoke-virtual {v1, v3, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 640
+    .line 651
     :try_start_0
     iget-object v3, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mClientIntent:Landroid/app/PendingIntent;
 
@@ -466,7 +466,7 @@
     :try_end_0
     .catch Landroid/app/PendingIntent$CanceledException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 646
+    .line 657
     :goto_1
     new-instance v2, Landroid/view/KeyEvent;
 
@@ -475,7 +475,7 @@
 
     invoke-direct {v2, v3, p1}, Landroid/view/KeyEvent;-><init>(II)V
 
-    .line 647
+    .line 658
     .restart local v2       #keyEvent:Landroid/view/KeyEvent;
     new-instance v1, Landroid/content/Intent;
 
@@ -484,13 +484,13 @@
 
     invoke-direct {v1, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 648
+    .line 659
     .restart local v1       #intent:Landroid/content/Intent;
     const-string v3, "android.intent.extra.KEY_EVENT"
 
     invoke-virtual {v1, v3, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 650
+    .line 661
     :try_start_1
     iget-object v3, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mClientIntent:Landroid/app/PendingIntent;
 
@@ -506,11 +506,11 @@
 
     goto :goto_0
 
-    .line 651
+    .line 662
     :catch_0
     move-exception v0
 
-    .line 652
+    .line 663
     .local v0, e:Landroid/app/PendingIntent$CanceledException;
     const-string v3, "TransportControlView"
 
@@ -534,17 +534,17 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 653
+    .line 664
     invoke-virtual {v0}, Landroid/app/PendingIntent$CanceledException;->printStackTrace()V
 
     goto :goto_0
 
-    .line 641
+    .line 652
     .end local v0           #e:Landroid/app/PendingIntent$CanceledException;
     :catch_1
     move-exception v0
 
-    .line 642
+    .line 653
     .restart local v0       #e:Landroid/app/PendingIntent$CanceledException;
     const-string v3, "TransportControlView"
 
@@ -568,53 +568,71 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 643
+    .line 654
     invoke-virtual {v0}, Landroid/app/PendingIntent$CanceledException;->printStackTrace()V
 
     goto :goto_1
 .end method
 
 .method private setVisualizerEnable(Z)V
-    .locals 3
+    .locals 4
     .parameter "enable"
 
     .prologue
-    .line 382
-    iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mVisualizer:Landroid/media/audiofx/Visualizer;
+    .line 385
+    iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mVisualizer:Landroid/media/audiofx/Visualizer;
 
-    if-eqz v0, :cond_0
-
-    .line 383
-    const-string v0, "TransportControlView"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "set visualizer enable="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 384
-    iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mVisualizer:Landroid/media/audiofx/Visualizer;
-
-    invoke-virtual {v0, p1}, Landroid/media/audiofx/Visualizer;->setEnabled(Z)I
+    if-eqz v1, :cond_0
 
     .line 386
+    const-string v1, "TransportControlView"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "set visualizer enable="
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 388
+    :try_start_0
+    iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mVisualizer:Landroid/media/audiofx/Visualizer;
+
+    invoke-virtual {v1, p1}, Landroid/media/audiofx/Visualizer;->setEnabled(Z)I
+    :try_end_0
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 393
     :cond_0
+    :goto_0
     return-void
+
+    .line 389
+    :catch_0
+    move-exception v0
+
+    .line 390
+    .local v0, e:Ljava/lang/IllegalStateException;
+    const-string v1, "TransportControlView"
+
+    const-string v2, "setEnabled fail"
+
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto :goto_0
 .end method
 
 .method private toRoundBitmap(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
@@ -970,19 +988,19 @@
     .parameter "data"
 
     .prologue
-    .line 418
+    .line 425
     iget-boolean v3, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mAttached:Z
 
-    if-eqz v3, :cond_2
+    if-eqz v3, :cond_4
 
-    .line 419
+    .line 426
     const/4 v3, 0x2
 
     invoke-direct {p0, p1, v3}, Lcom/baidu/internal/keyguard/slide/TransportControlView;->getMdString(Landroid/os/Bundle;I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 420
+    .line 427
     .local v0, artistString:Ljava/lang/String;
     const-string v3, "TransportControlView"
 
@@ -1006,22 +1024,48 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 421
+    .line 428
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    .line 429
+    const/16 v3, 0xd
+
+    invoke-direct {p0, p1, v3}, Lcom/baidu/internal/keyguard/slide/TransportControlView;->getMdString(Landroid/os/Bundle;I)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 431
+    :cond_0
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    .line 432
+    const-string v0, ""
+
+    .line 434
+    :cond_1
     const/16 v3, 0x5f
 
     invoke-virtual {v0, v3}, Ljava/lang/String;->indexOf(I)I
 
     move-result v1
 
-    .line 422
+    .line 435
     .local v1, index:I
     const/4 v2, 0x0
 
-    .line 423
+    .line 436
     .local v2, newSessionId:I
-    if-ltz v1, :cond_1
+    if-ltz v1, :cond_3
 
-    .line 424
+    .line 437
     iget-object v3, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mMetadata:Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;
 
     const/4 v4, 0x0
@@ -1033,7 +1077,7 @@
     #setter for: Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;->artist:Ljava/lang/String;
     invoke-static {v3, v4}, Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;->access$1202(Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 425
+    .line 438
     add-int/lit8 v3, v1, 0x1
 
     invoke-virtual {v0, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
@@ -1048,7 +1092,7 @@
 
     move-result v2
 
-    .line 426
+    .line 439
     const-string v3, "TransportControlView"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1078,7 +1122,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 432
+    .line 444
     :goto_0
     iget-object v3, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mMetadata:Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;
 
@@ -1091,7 +1135,7 @@
     #setter for: Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;->trackTitle:Ljava/lang/String;
     invoke-static {v3, v4}, Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;->access$1302(Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 433
+    .line 445
     iget-object v3, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mMetadata:Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;
 
     const/4 v4, 0x1
@@ -1103,7 +1147,7 @@
     #setter for: Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;->albumTitle:Ljava/lang/String;
     invoke-static {v3, v4}, Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;->access$1402(Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 434
+    .line 446
     const-string v3, "TransportControlView"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1133,7 +1177,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 435
+    .line 447
     const-string v3, "TransportControlView"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1163,10 +1207,10 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 436
+    .line 448
     invoke-direct {p0}, Lcom/baidu/internal/keyguard/slide/TransportControlView;->populateMetadata()V
 
-    .line 438
+    .line 449
     iget-object v3, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mMetadata:Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;
 
     #getter for: Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;->sessionId:I
@@ -1174,26 +1218,26 @@
 
     move-result v3
 
-    if-eq v3, v2, :cond_0
+    if-eq v3, v2, :cond_2
 
     iget-object v3, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mVisualizer:Landroid/media/audiofx/Visualizer;
 
-    if-nez v3, :cond_0
+    if-nez v3, :cond_2
 
-    .line 439
+    .line 450
     const-string v3, "TransportControlView"
 
     const-string v4, "init Visualizer"
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 440
+    .line 451
     iget-object v3, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mMetadata:Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;
 
     #setter for: Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;->sessionId:I
     invoke-static {v3, v2}, Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;->access$1102(Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;I)I
 
-    .line 441
+    .line 452
     new-instance v3, Landroid/media/audiofx/Visualizer;
 
     iget-object v4, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mMetadata:Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;
@@ -1207,39 +1251,39 @@
 
     iput-object v3, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mVisualizer:Landroid/media/audiofx/Visualizer;
 
-    .line 442
+    .line 453
     iget-object v3, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mVisualizer:Landroid/media/audiofx/Visualizer;
 
     const/16 v4, 0x40
 
     invoke-virtual {v3, v4}, Landroid/media/audiofx/Visualizer;->setCaptureSize(I)I
 
-    .line 443
+    .line 454
     iget-object v3, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mSpectrumView:Lcom/baidu/internal/keyguard/slide/SpectrumView;
 
     iget-object v4, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mVisualizer:Landroid/media/audiofx/Visualizer;
 
     invoke-virtual {v3, v4}, Lcom/baidu/internal/keyguard/slide/SpectrumView;->setVisualizer(Landroid/media/audiofx/Visualizer;)V
 
-    .line 448
+    .line 459
     .end local v0           #artistString:Ljava/lang/String;
     .end local v1           #index:I
     .end local v2           #newSessionId:I
-    :cond_0
+    :cond_2
     :goto_1
     return-void
 
-    .line 428
+    .line 441
     .restart local v0       #artistString:Ljava/lang/String;
     .restart local v1       #index:I
     .restart local v2       #newSessionId:I
-    :cond_1
+    :cond_3
     iget-object v3, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mMetadata:Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;
 
     #setter for: Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;->artist:Ljava/lang/String;
     invoke-static {v3, v0}, Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;->access$1202(Lcom/baidu/internal/keyguard/slide/TransportControlView$Metadata;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 429
+    .line 442
     const-string v3, "TransportControlView"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1271,11 +1315,11 @@
 
     goto/16 :goto_0
 
-    .line 446
+    .line 457
     .end local v0           #artistString:Ljava/lang/String;
     .end local v1           #index:I
     .end local v2           #newSessionId:I
-    :cond_2
+    :cond_4
     iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mPopulateMetadataWhenAttached:Landroid/os/Bundle;
 
     goto :goto_1
@@ -1288,7 +1332,7 @@
     .prologue
     const/4 v5, 0x1
 
-    .line 467
+    .line 478
     const-string v2, "TransportControlView"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1323,26 +1367,26 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 470
+    .line 481
     packed-switch p1, :pswitch_data_0
 
-    .line 495
+    .line 506
     :goto_0
     :pswitch_0
     const v1, #drawable@baidu_keyguard_slide_play#t
 
-    .line 496
+    .line 507
     .local v1, imageResId:I
     const v0, #string@lockscreen_transport_play_description#t
 
-    .line 499
+    .line 510
     .local v0, imageDescId:I
     :goto_1
     iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mBtnPlay:Landroid/widget/ImageView;
 
     invoke-virtual {v2, v1}, Landroid/widget/ImageView;->setBackgroundResource(I)V
 
-    .line 500
+    .line 511
     iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mBtnPlay:Landroid/widget/ImageView;
 
     invoke-virtual {p0}, Lcom/baidu/internal/keyguard/slide/TransportControlView;->getResources()Landroid/content/res/Resources;
@@ -1355,7 +1399,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 501
+    .line 512
     iget-boolean v2, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mShowIfHidden:Z
 
     if-eqz v2, :cond_2
@@ -1372,82 +1416,82 @@
 
     if-eqz v2, :cond_2
 
-    .line 504
+    .line 515
     iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mTransportWidgetCallbacks:Lcom/baidu/internal/keyguard/slide/TransportWidgetCallback;
 
     if-eqz v2, :cond_0
 
-    .line 505
+    .line 516
     iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mTransportWidgetCallbacks:Lcom/baidu/internal/keyguard/slide/TransportWidgetCallback;
 
     invoke-interface {v2, p0}, Lcom/baidu/internal/keyguard/slide/TransportWidgetCallback;->requestShow(Landroid/view/View;)V
 
-    .line 512
+    .line 523
     :cond_0
     :goto_2
     sput p1, Lcom/baidu/internal/keyguard/slide/TransportControlView;->sCurrentPlayState:I
 
-    .line 518
+    .line 529
     iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mTransportWidgetCallbacks:Lcom/baidu/internal/keyguard/slide/TransportWidgetCallback;
 
     if-eqz v2, :cond_1
 
-    .line 519
+    .line 530
     iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mTransportWidgetCallbacks:Lcom/baidu/internal/keyguard/slide/TransportWidgetCallback;
 
     invoke-interface {v2, p1}, Lcom/baidu/internal/keyguard/slide/TransportWidgetCallback;->onPlayStateChanged(I)V
 
-    .line 521
+    .line 532
     :cond_1
     return-void
 
-    .line 472
+    .line 483
     .end local v0           #imageDescId:I
     .end local v1           #imageResId:I
     :pswitch_1
     const v1, #drawable@stat_sys_warning#t
 
-    .line 477
+    .line 488
     .restart local v1       #imageResId:I
     const v0, #string@lockscreen_transport_play_description#t
 
-    .line 478
+    .line 489
     .restart local v0       #imageDescId:I
     goto :goto_1
 
-    .line 481
+    .line 492
     .end local v0           #imageDescId:I
     .end local v1           #imageResId:I
     :pswitch_2
     const v1, #drawable@baidu_keyguard_slide_pause#t
 
-    .line 482
+    .line 493
     .restart local v1       #imageResId:I
     const v0, #string@lockscreen_transport_pause_description#t
 
-    .line 483
+    .line 494
     .restart local v0       #imageDescId:I
     iput-boolean v5, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mShowIfHidden:Z
 
     goto :goto_1
 
-    .line 487
+    .line 498
     .end local v0           #imageDescId:I
     .end local v1           #imageResId:I
     :pswitch_3
     const v1, #drawable@ic_media_stop#t
 
-    .line 488
+    .line 499
     .restart local v1       #imageResId:I
     const v0, #string@lockscreen_transport_stop_description#t
 
-    .line 489
+    .line 500
     .restart local v0       #imageDescId:I
     iput-boolean v5, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mShowIfHidden:Z
 
     goto :goto_1
 
-    .line 493
+    .line 504
     .end local v0           #imageDescId:I
     .end local v1           #imageResId:I
     :pswitch_4
@@ -1455,7 +1499,7 @@
 
     goto :goto_0
 
-    .line 508
+    .line 519
     .restart local v0       #imageDescId:I
     .restart local v1       #imageResId:I
     :cond_2
@@ -1463,14 +1507,14 @@
 
     if-eqz v2, :cond_0
 
-    .line 509
+    .line 520
     iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mTransportWidgetCallbacks:Lcom/baidu/internal/keyguard/slide/TransportWidgetCallback;
 
     invoke-interface {v2, p0}, Lcom/baidu/internal/keyguard/slide/TransportWidgetCallback;->requestHide(Landroid/view/View;)V
 
     goto :goto_2
 
-    .line 470
+    .line 481
     nop
 
     :pswitch_data_0
@@ -1731,145 +1775,165 @@
     .parameter "v"
 
     .prologue
-    .line 609
+    .line 620
     iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mAudioManager:Landroid/media/AudioManager;
 
     iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mIRCD:Lcom/baidu/internal/keyguard/slide/TransportControlView$IRemoteControlDisplayWeak;
 
     invoke-virtual {v1, v2}, Landroid/media/AudioManager;->registerRemoteControlDisplay(Landroid/media/IRemoteControlDisplay;)V
 
-    .line 610
+    .line 621
     const/4 v0, -0x1
 
-    .line 611
+    .line 622
     .local v0, keyCode:I
     iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mBtnPrev:Landroid/widget/ImageView;
 
     if-ne p1, v1, :cond_2
 
-    .line 612
+    .line 623
     const/16 v0, 0x58
 
-    .line 618
+    .line 629
     :cond_0
     :goto_0
     const/4 v1, -0x1
 
     if-eq v0, v1, :cond_1
 
-    .line 619
+    .line 630
     invoke-direct {p0, v0}, Lcom/baidu/internal/keyguard/slide/TransportControlView;->sendMediaButtonClick(I)V
 
-    .line 620
+    .line 631
     iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mTransportWidgetCallbacks:Lcom/baidu/internal/keyguard/slide/TransportWidgetCallback;
 
     if-eqz v1, :cond_1
 
-    .line 621
+    .line 632
     iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mTransportWidgetCallbacks:Lcom/baidu/internal/keyguard/slide/TransportWidgetCallback;
 
     invoke-interface {v1, p0}, Lcom/baidu/internal/keyguard/slide/TransportWidgetCallback;->userActivity(Landroid/view/View;)V
 
-    .line 624
+    .line 635
     :cond_1
     return-void
 
-    .line 613
+    .line 624
     :cond_2
     iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mBtnNext:Landroid/widget/ImageView;
 
     if-ne p1, v1, :cond_3
 
-    .line 614
+    .line 625
     const/16 v0, 0x57
 
     goto :goto_0
 
-    .line 615
+    .line 626
     :cond_3
     iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mBtnPlay:Landroid/widget/ImageView;
 
     if-ne p1, v1, :cond_0
 
-    .line 616
+    .line 627
     const/16 v0, 0x55
 
     goto :goto_0
 .end method
 
 .method public onDetachedFromWindow()V
-    .locals 4
+    .locals 5
 
     .prologue
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
     .line 366
     invoke-super {p0}, Landroid/widget/RelativeLayout;->onDetachedFromWindow()V
 
     .line 367
-    const-string v0, "TransportControlView"
+    const-string v1, "TransportControlView"
 
-    const-string v1, "onDetachedFromWindow()"
+    const-string v2, "onDetachedFromWindow()"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 368
-    iget-boolean v0, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mAttached:Z
+    iget-boolean v1, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mAttached:Z
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
     .line 370
-    const-string v0, "TransportControlView"
+    const-string v1, "TransportControlView"
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "Unregistering TCV "
+    const-string v3, "Unregistering TCV "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 371
-    iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mAudioManager:Landroid/media/AudioManager;
+    iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mAudioManager:Landroid/media/AudioManager;
 
-    iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mIRCD:Lcom/baidu/internal/keyguard/slide/TransportControlView$IRemoteControlDisplayWeak;
+    iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mIRCD:Lcom/baidu/internal/keyguard/slide/TransportControlView$IRemoteControlDisplayWeak;
 
-    invoke-virtual {v0, v1}, Landroid/media/AudioManager;->unregisterRemoteControlDisplay(Landroid/media/IRemoteControlDisplay;)V
+    invoke-virtual {v1, v2}, Landroid/media/AudioManager;->unregisterRemoteControlDisplay(Landroid/media/IRemoteControlDisplay;)V
 
-    .line 374
+    .line 373
     :cond_0
-    iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mVisualizer:Landroid/media/audiofx/Visualizer;
+    iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mVisualizer:Landroid/media/audiofx/Visualizer;
 
-    if-eqz v0, :cond_1
+    if-eqz v1, :cond_1
 
     .line 375
-    iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mVisualizer:Landroid/media/audiofx/Visualizer;
+    :try_start_0
+    iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mVisualizer:Landroid/media/audiofx/Visualizer;
 
-    invoke-virtual {v0, v3}, Landroid/media/audiofx/Visualizer;->setEnabled(Z)I
+    const/4 v2, 0x0
 
-    .line 376
-    iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mVisualizer:Landroid/media/audiofx/Visualizer;
-
-    invoke-virtual {v0}, Landroid/media/audiofx/Visualizer;->release()V
-
-    .line 378
-    :cond_1
-    iput-boolean v3, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mAttached:Z
+    invoke-virtual {v1, v2}, Landroid/media/audiofx/Visualizer;->setEnabled(Z)I
+    :try_end_0
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 379
+    :goto_0
+    iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mVisualizer:Landroid/media/audiofx/Visualizer;
+
+    invoke-virtual {v1}, Landroid/media/audiofx/Visualizer;->release()V
+
+    .line 381
+    :cond_1
+    iput-boolean v4, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mAttached:Z
+
+    .line 382
     return-void
+
+    .line 376
+    :catch_0
+    move-exception v0
+
+    .line 377
+    .local v0, e:Ljava/lang/IllegalStateException;
+    const-string v1, "TransportControlView"
+
+    const-string v2, "setEnabled fail"
+
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto :goto_0
 .end method
 
 .method public onFinishInflate()V
@@ -2010,10 +2074,10 @@
     .parameter "heightMeasureSpec"
 
     .prologue
-    .line 390
+    .line 397
     invoke-super {p0, p1, p2}, Landroid/widget/RelativeLayout;->onMeasure(II)V
 
-    .line 391
+    .line 398
     const/16 v1, 0x200
 
     invoke-virtual {p0}, Lcom/baidu/internal/keyguard/slide/TransportControlView;->getWidth()I
@@ -2032,7 +2096,7 @@
 
     move-result v0
 
-    .line 394
+    .line 401
     .local v0, dim:I
     return-void
 .end method
@@ -2044,32 +2108,32 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 583
+    .line 594
     const-string v0, "TransportControlView"
 
     const-string v1, "onRestoreInstanceState()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 584
+    .line 595
     iput-boolean v3, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mAttached:Z
 
-    .line 585
+    .line 596
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mPopulateMetadataWhenAttached:Landroid/os/Bundle;
 
     if-eqz v0, :cond_0
 
-    .line 586
+    .line 597
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mPopulateMetadataWhenAttached:Landroid/os/Bundle;
 
     invoke-direct {p0, v0}, Lcom/baidu/internal/keyguard/slide/TransportControlView;->updateMetadata(Landroid/os/Bundle;)V
 
-    .line 587
+    .line 598
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mPopulateMetadataWhenAttached:Landroid/os/Bundle;
 
-    .line 590
+    .line 601
     :cond_0
     const-string v0, "TransportControlView"
 
@@ -2093,17 +2157,17 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 591
+    .line 602
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mAudioManager:Landroid/media/AudioManager;
 
     iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mIRCD:Lcom/baidu/internal/keyguard/slide/TransportControlView$IRemoteControlDisplayWeak;
 
     invoke-virtual {v0, v1}, Landroid/media/AudioManager;->registerRemoteControlDisplay(Landroid/media/IRemoteControlDisplay;)V
 
-    .line 592
+    .line 603
     invoke-direct {p0, v3}, Lcom/baidu/internal/keyguard/slide/TransportControlView;->setVisualizerEnable(Z)V
 
-    .line 594
+    .line 605
     iget-boolean v0, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mShowIfHidden:Z
 
     if-eqz v0, :cond_1
@@ -2112,12 +2176,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 595
+    .line 606
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mSpectrumView:Lcom/baidu/internal/keyguard/slide/SpectrumView;
 
     invoke-virtual {v0}, Lcom/baidu/internal/keyguard/slide/SpectrumView;->show()V
 
-    .line 596
+    .line 607
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/baidu/internal/keyguard/slide/SpectrumSensorManager;->getInstance(Landroid/content/Context;)Lcom/baidu/internal/keyguard/slide/SpectrumSensorManager;
@@ -2128,11 +2192,11 @@
 
     invoke-virtual {v0, v1}, Lcom/baidu/internal/keyguard/slide/SpectrumSensorManager;->registerListener(Landroid/hardware/SensorEventListener;)V
 
-    .line 598
+    .line 609
     :cond_1
     invoke-super {p0, p1}, Landroid/widget/RelativeLayout;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
-    .line 606
+    .line 617
     return-void
 .end method
 
@@ -2142,19 +2206,19 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 560
+    .line 571
     const-string v0, "TransportControlView"
 
     const-string v1, "onSaveInstanceState()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 565
+    .line 576
     iget-boolean v0, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mAttached:Z
 
     if-eqz v0, :cond_0
 
-    .line 567
+    .line 578
     const-string v0, "TransportControlView"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2177,31 +2241,31 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 568
+    .line 579
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mAudioManager:Landroid/media/AudioManager;
 
     iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mIRCD:Lcom/baidu/internal/keyguard/slide/TransportControlView$IRemoteControlDisplayWeak;
 
     invoke-virtual {v0, v1}, Landroid/media/AudioManager;->unregisterRemoteControlDisplay(Landroid/media/IRemoteControlDisplay;)V
 
-    .line 569
+    .line 580
     iput-boolean v3, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mAttached:Z
 
-    .line 572
+    .line 583
     :cond_0
     invoke-direct {p0, v3}, Lcom/baidu/internal/keyguard/slide/TransportControlView;->setVisualizerEnable(Z)V
 
-    .line 573
+    .line 584
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mVisualizer:Landroid/media/audiofx/Visualizer;
 
     if-eqz v0, :cond_1
 
-    .line 574
+    .line 585
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mSpectrumView:Lcom/baidu/internal/keyguard/slide/SpectrumView;
 
     invoke-virtual {v0}, Lcom/baidu/internal/keyguard/slide/SpectrumView;->hide()V
 
-    .line 575
+    .line 586
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/baidu/internal/keyguard/slide/SpectrumSensorManager;->getInstance(Landroid/content/Context;)Lcom/baidu/internal/keyguard/slide/SpectrumSensorManager;
@@ -2212,7 +2276,7 @@
 
     invoke-virtual {v0, v1}, Lcom/baidu/internal/keyguard/slide/SpectrumSensorManager;->unRegisterListener(Landroid/hardware/SensorEventListener;)V
 
-    .line 577
+    .line 588
     :cond_1
     invoke-super {p0}, Landroid/widget/RelativeLayout;->onSaveInstanceState()Landroid/os/Parcelable;
 
@@ -2225,7 +2289,7 @@
     .locals 1
 
     .prologue
-    .line 662
+    .line 673
     const/4 v0, 0x0
 
     return v0
@@ -2236,12 +2300,12 @@
     .parameter "callback"
 
     .prologue
-    .line 658
+    .line 669
     check-cast p1, Lcom/baidu/internal/keyguard/slide/TransportWidgetCallback;
 
     .end local p1
     iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/TransportControlView;->mTransportWidgetCallbacks:Lcom/baidu/internal/keyguard/slide/TransportWidgetCallback;
 
-    .line 659
+    .line 670
     return-void
 .end method

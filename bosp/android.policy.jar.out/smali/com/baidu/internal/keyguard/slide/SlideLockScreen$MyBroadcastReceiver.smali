@@ -24,13 +24,13 @@
     .parameter "handler"
 
     .prologue
-    .line 549
+    .line 561
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
-    .line 550
+    .line 562
     iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$MyBroadcastReceiver;->mHandler:Landroid/os/Handler;
 
-    .line 551
+    .line 563
     return-void
 .end method
 
@@ -39,19 +39,19 @@
     .parameter "context"
 
     .prologue
-    .line 574
+    .line 586
     const/4 v8, 0x0
 
-    .line 575
+    .line 587
     .local v8, missCallCount:I
     const/4 v6, 0x0
 
-    .line 577
+    .line 589
     .local v6, c:Landroid/database/Cursor;
     :try_start_0
     const-string v3, "type=? and new=?"
 
-    .line 578
+    .line 590
     .local v3, selection:Ljava/lang/String;
     const/4 v0, 0x2
 
@@ -77,7 +77,7 @@
 
     aput-object v1, v4, v0
 
-    .line 581
+    .line 593
     .local v4, selectionArgs:[Ljava/lang/String;
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -113,10 +113,10 @@
 
     move-result-object v6
 
-    .line 584
+    .line 596
     if-eqz v6, :cond_0
 
-    .line 585
+    .line 597
     invoke-interface {v6}, Landroid/database/Cursor;->getCount()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -124,14 +124,14 @@
 
     move-result v8
 
-    .line 590
+    .line 602
     :cond_0
     if-eqz v6, :cond_1
 
-    .line 591
+    .line 603
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 594
+    .line 606
     .end local v3           #selection:Ljava/lang/String;
     .end local v4           #selectionArgs:[Ljava/lang/String;
     :cond_1
@@ -158,14 +158,14 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 595
+    .line 607
     return v8
 
-    .line 587
+    .line 599
     :catch_0
     move-exception v7
 
-    .line 588
+    .line 600
     .local v7, e:Ljava/lang/Exception;
     :try_start_1
     const-string v0, "SlideLockScreen"
@@ -192,22 +192,22 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 590
+    .line 602
     if-eqz v6, :cond_1
 
-    .line 591
+    .line 603
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     goto :goto_0
 
-    .line 590
+    .line 602
     .end local v7           #e:Ljava/lang/Exception;
     :catchall_0
     move-exception v0
 
     if-eqz v6, :cond_2
 
-    .line 591
+    .line 603
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     :cond_2
@@ -219,14 +219,14 @@
     .parameter "context"
 
     .prologue
-    .line 599
+    .line 611
     const/4 v8, 0x0
 
-    .line 600
+    .line 612
     .local v8, missMsgCount:I
     const/4 v6, 0x0
 
-    .line 602
+    .line 614
     .local v6, c:Landroid/database/Cursor;
     :try_start_0
     const-string v0, "content://sms"
@@ -235,7 +235,7 @@
 
     move-result-object v1
 
-    .line 604
+    .line 616
     .local v1, uri:Landroid/net/Uri;
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -253,21 +253,21 @@
 
     move-result-object v6
 
-    .line 605
+    .line 617
     if-eqz v6, :cond_0
 
-    .line 606
+    .line 618
     invoke-interface {v6}, Landroid/database/Cursor;->getCount()I
 
     move-result v8
 
-    .line 607
+    .line 619
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 608
+    .line 620
     const/4 v6, 0x0
 
-    .line 610
+    .line 622
     :cond_0
     const-string v0, "content://mms"
 
@@ -275,7 +275,7 @@
 
     move-result-object v1
 
-    .line 612
+    .line 624
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -306,33 +306,33 @@
 
     move-result-object v6
 
-    .line 615
+    .line 627
     if-eqz v6, :cond_1
 
-    .line 616
+    .line 628
     invoke-interface {v6}, Landroid/database/Cursor;->getCount()I
 
     move-result v0
 
     add-int/2addr v8, v0
 
-    .line 617
+    .line 629
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 618
+    .line 630
     const/4 v6, 0x0
 
-    .line 623
+    .line 635
     :cond_1
     if-eqz v6, :cond_2
 
-    .line 624
+    .line 636
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 627
+    .line 639
     .end local v1           #uri:Landroid/net/Uri;
     :cond_2
     :goto_0
@@ -358,14 +358,14 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 628
+    .line 640
     return v8
 
-    .line 620
+    .line 632
     :catch_0
     move-exception v7
 
-    .line 621
+    .line 633
     .local v7, e:Ljava/lang/Exception;
     :try_start_1
     const-string v0, "SlideLockScreen"
@@ -392,22 +392,22 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 623
+    .line 635
     if-eqz v6, :cond_2
 
-    .line 624
+    .line 636
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     goto :goto_0
 
-    .line 623
+    .line 635
     .end local v7           #e:Ljava/lang/Exception;
     :catchall_0
     move-exception v0
 
     if-eqz v6, :cond_3
 
-    .line 624
+    .line 636
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     :cond_3
@@ -426,12 +426,12 @@
 
     const/4 v9, 0x0
 
-    .line 555
+    .line 567
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 556
+    .line 568
     .local v0, action:Ljava/lang/String;
     const-string v6, "SlideLockScreen"
 
@@ -455,7 +455,7 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 557
+    .line 569
     const-string v6, "android.intent.action.BATTERY_CHANGED"
 
     invoke-virtual {v6, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -464,14 +464,14 @@
 
     if-eqz v6, :cond_1
 
-    .line 558
+    .line 570
     const-string v6, "status"
 
     invoke-virtual {p2, v6, v10}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v5
 
-    .line 559
+    .line 571
     .local v5, status:I
     const-string v6, "plugged"
 
@@ -479,7 +479,7 @@
 
     move-result v4
 
-    .line 560
+    .line 572
     .local v4, plugged:I
     const-string v6, "level"
 
@@ -487,7 +487,7 @@
 
     move-result v2
 
-    .line 561
+    .line 573
     .local v2, level:I
     const-string v6, "health"
 
@@ -495,7 +495,7 @@
 
     move-result v1
 
-    .line 562
+    .line 574
     .local v1, health:I
     iget-object v6, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$MyBroadcastReceiver;->mHandler:Landroid/os/Handler;
 
@@ -509,13 +509,13 @@
 
     move-result-object v3
 
-    .line 563
+    .line 575
     .local v3, msg:Landroid/os/Message;
     iget-object v6, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$MyBroadcastReceiver;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v6, v3}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 571
+    .line 583
     .end local v1           #health:I
     .end local v2           #level:I
     .end local v3           #msg:Landroid/os/Message;
@@ -525,7 +525,7 @@
     :goto_0
     return-void
 
-    .line 564
+    .line 576
     :cond_1
     const-string v6, "com.baidu.keyguard.internal.SMS_MISS_UPDATED"
 
@@ -535,7 +535,7 @@
 
     if-eqz v6, :cond_2
 
-    .line 565
+    .line 577
     iget-object v6, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$MyBroadcastReceiver;->mHandler:Landroid/os/Handler;
 
     const/16 v7, 0x65
@@ -552,7 +552,7 @@
 
     move-result-object v3
 
-    .line 566
+    .line 578
     .restart local v3       #msg:Landroid/os/Message;
     iget-object v6, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$MyBroadcastReceiver;->mHandler:Landroid/os/Handler;
 
@@ -560,7 +560,7 @@
 
     goto :goto_0
 
-    .line 567
+    .line 579
     .end local v3           #msg:Landroid/os/Message;
     :cond_2
     const-string v6, "com.baidu.keyguard.internal.CALL_MISS_UPDATED"
@@ -571,7 +571,7 @@
 
     if-eqz v6, :cond_0
 
-    .line 568
+    .line 580
     iget-object v6, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$MyBroadcastReceiver;->mHandler:Landroid/os/Handler;
 
     const/16 v7, 0x66
@@ -588,7 +588,7 @@
 
     move-result-object v3
 
-    .line 569
+    .line 581
     .restart local v3       #msg:Landroid/os/Message;
     iget-object v6, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$MyBroadcastReceiver;->mHandler:Landroid/os/Handler;
 

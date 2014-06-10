@@ -1123,7 +1123,7 @@
 
     mul-float/2addr v8, v9
 
-    sub-float/2addr v7, v8
+    add-float/2addr v7, v8
 
     const v8, 0x3ef5c28f
 
@@ -1201,7 +1201,7 @@
 
     mul-float/2addr v8, v9
 
-    sub-float/2addr v7, v8
+    add-float/2addr v7, v8
 
     const v8, 0x3dcccccd
 
@@ -1274,7 +1274,7 @@
 
     mul-float/2addr v8, v9
 
-    sub-float/2addr v7, v8
+    add-float/2addr v7, v8
 
     const/4 v8, 0x0
 
@@ -1350,7 +1350,7 @@
 
     mul-float/2addr v8, v9
 
-    add-float/2addr v7, v8
+    sub-float/2addr v7, v8
 
     const v8, -0x40266666
 
@@ -1423,7 +1423,7 @@
 
     mul-float/2addr v8, v9
 
-    add-float/2addr v7, v8
+    sub-float/2addr v7, v8
 
     const/high16 v8, -0x4080
 
@@ -1496,7 +1496,7 @@
 
     mul-float/2addr v8, v9
 
-    add-float/2addr v7, v8
+    sub-float/2addr v7, v8
 
     const v8, -0x41666666
 
@@ -1569,7 +1569,7 @@
 
     mul-float/2addr v8, v9
 
-    add-float/2addr v7, v8
+    sub-float/2addr v7, v8
 
     const v8, -0x4059999a
 

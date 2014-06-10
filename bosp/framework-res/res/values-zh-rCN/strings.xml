@@ -1419,5 +1419,10 @@
     <string name="replace_browser_value">浏览器</string>
     <string name="replace_market_value">云商店</string>
     <string name="replace_reader_value">阅读</string>
+    <string name="replace_dolby_value">杜比音效</string>
+    <string name="replace_browser_key">百度浏览器</string>
+    <string name="replace_market_key">百度手机助手</string>
+    <string name="replace_reader_key">百度多酷书城</string>
+    <string name="replace_dolby_key">Dolby</string>
     <string name="hot_keywords">实时热点</string>
 </resources>

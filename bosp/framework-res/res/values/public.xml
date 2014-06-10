@@ -4464,7 +4464,12 @@
     <public type="string" name="replace_browser_value" id="0x010405bf" />
     <public type="string" name="replace_market_value" id="0x010405c0" />
     <public type="string" name="replace_reader_value" id="0x010405c1" />
-    <public type="string" name="hot_keywords" id="0x010405c2" />
+    <public type="string" name="replace_dolby_value" id="0x010405c2" />
+    <public type="string" name="replace_browser_key" id="0x010405c3" />
+    <public type="string" name="replace_market_key" id="0x010405c4" />
+    <public type="string" name="replace_reader_key" id="0x010405c5" />
+    <public type="string" name="replace_dolby_key" id="0x010405c6" />
+    <public type="string" name="hot_keywords" id="0x010405c7" />
     <public type="dimen" name="app_icon_size" id="0x01050000" />
     <public type="dimen" name="thumbnail_height" id="0x01050001" />
     <public type="dimen" name="thumbnail_width" id="0x01050002" />

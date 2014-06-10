@@ -152,10 +152,7 @@
     invoke-virtual {v0}, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->reset()V
 
     .line 233
-    iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen$HandlerCallBack;->this$0:Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;
-
-    #getter for: Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
-    invoke-static {v0}, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->access$100(Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;)Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    invoke-static {}, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->access$100()Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
 
     move-result-object v0
 

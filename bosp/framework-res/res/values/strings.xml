@@ -1504,4 +1504,9 @@ Power-saving exits automatically when power recovers."</string>
     <string name="replace_browser_value">Browser</string>
     <string name="replace_market_value">App Search</string>
     <string name="replace_reader_value">Reader</string>
+    <string name="replace_dolby_value">Dolby</string>
+    <string name="replace_browser_key">Baidu Browser</string>
+    <string name="replace_market_key">App Search</string>
+    <string name="replace_reader_key">百度多酷书城</string>
+    <string name="replace_dolby_key">Dolby</string>
 </resources>

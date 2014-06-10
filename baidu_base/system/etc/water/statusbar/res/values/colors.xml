@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="notification_item_time_text_color">#c8e9ff</color>
+    <color name="traffic_config_text_color">#6891b7</color>
+    <color name="traffic_day_text_color">#6891b7</color>
+    <color name="traffic_month_text_color">#6891b7</color>
+    <color name="traffic_progress_text_color">#6891b7</color>
+    <color name="traffic_text_color">#6891b7</color>
+    <color name="switch_text_color">#6891b7</color>
+    <color name="status_bar_clock_color">#ffffff</color>
+    <color name="notification_item_primary_text_color">#173e63</color>
+    <color name="notification_item_secondary_text_color">#6891b7</color>
+    <color name="switch_line_color">#b9e3fa</color>
+    <color name="notification_item_time_text_color">#6891b7</color>
+    <color name="status_bar_line_indicator_bg">#dcf0fb</color>
+    <color name="status_bar_line_indicator">#2ca2ef</color>
+    <color name="status_bar_expanded_header_clock_text_color">#ffffff</color>
+    <color name="status_bar_expanded_header_date_text_color">#ffffff</color>
+    <color name="switch_item_swap_color">#9bd7f8</color>
+</resources>

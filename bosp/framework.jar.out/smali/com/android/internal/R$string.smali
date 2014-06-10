@@ -1287,9 +1287,19 @@
 
 .field public static final replace:I = #string@replace#t
 
+.field public static final replace_browser_key:I = #string@replace_browser_key#t
+
 .field public static final replace_browser_value:I = #string@replace_browser_value#t
 
+.field public static final replace_dolby_key:I = #string@replace_dolby_key#t
+
+.field public static final replace_dolby_value:I = #string@replace_dolby_value#t
+
+.field public static final replace_market_key:I = #string@replace_market_key#t
+
 .field public static final replace_market_value:I = #string@replace_market_value#t
+
+.field public static final replace_reader_key:I = #string@replace_reader_key#t
 
 .field public static final replace_reader_value:I = #string@replace_reader_value#t
 

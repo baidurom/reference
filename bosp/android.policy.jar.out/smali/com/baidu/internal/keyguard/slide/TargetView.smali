@@ -1632,9 +1632,17 @@
 
     .line 241
     :cond_0
-    iget v0, p0, Lcom/baidu/internal/keyguard/slide/TargetView;->mPlugged:I
+    iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/TargetView;->mCharggingView:Lcom/baidu/internal/keyguard/slide/CharggingView;
 
-    if-lez v0, :cond_1
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/TargetView;->mCharggingView:Lcom/baidu/internal/keyguard/slide/CharggingView;
+
+    invoke-virtual {v0}, Lcom/baidu/internal/keyguard/slide/CharggingView;->isShow()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
 
     .line 242
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/TargetView;->mCharggingView:Lcom/baidu/internal/keyguard/slide/CharggingView;
@@ -1796,6 +1804,10 @@
     iget v0, p0, Lcom/baidu/internal/keyguard/slide/TargetView;->mPlugged:I
 
     if-lez v0, :cond_1
+
+    iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/TargetView;->mCharggingView:Lcom/baidu/internal/keyguard/slide/CharggingView;
+
+    if-eqz v0, :cond_1
 
     .line 232
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/TargetView;->mCharggingView:Lcom/baidu/internal/keyguard/slide/CharggingView;

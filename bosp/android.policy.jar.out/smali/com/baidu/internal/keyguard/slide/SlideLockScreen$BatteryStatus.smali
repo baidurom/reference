@@ -33,21 +33,21 @@
     .parameter "health"
 
     .prologue
-    .line 475
+    .line 483
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 476
+    .line 484
     iput p1, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$BatteryStatus;->status:I
 
-    .line 477
+    .line 485
     iput p2, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$BatteryStatus;->level:I
 
-    .line 478
+    .line 486
     iput p3, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$BatteryStatus;->plugged:I
 
-    .line 479
+    .line 487
     iput p4, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$BatteryStatus;->health:I
 
-    .line 480
+    .line 488
     return-void
 .end method
