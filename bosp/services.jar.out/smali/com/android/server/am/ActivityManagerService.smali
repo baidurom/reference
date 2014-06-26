@@ -30470,7 +30470,7 @@
 
     iget v3, v3, Lcom/android/server/am/TaskRecord;->taskId:I
 
-    const/4 v4, 0x1
+    const/4 v4, 0x0
 
     invoke-virtual {p0, v3, v4}, Lcom/android/server/am/ActivityManagerService;->removeTask(II)Z
 

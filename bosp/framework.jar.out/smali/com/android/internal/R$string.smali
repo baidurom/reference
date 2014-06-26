@@ -77,23 +77,9 @@
 
 .field public static final accessibility_binding_label:I = #string@accessibility_binding_label#t
 
-.field public static final action_access_call_log:I = #string@action_access_call_log#t
-
-.field public static final action_access_contacts:I = #string@action_access_contacts#t
-
-.field public static final action_access_location:I = #string@action_access_location#t
-
-.field public static final action_access_sms:I = #string@action_access_sms#t
-
 .field public static final action_bar_home_description:I = #string@action_bar_home_description#t
 
 .field public static final action_bar_up_description:I = #string@action_bar_up_description#t
-
-.field public static final action_call:I = #string@action_call#t
-
-.field public static final action_mms:I = #string@action_mms#t
-
-.field public static final action_sms:I = #string@action_sms#t
 
 .field public static final activity_chooser_view_see_all:I = #string@activity_chooser_view_see_all#t
 
@@ -257,31 +243,9 @@
 
 .field public static final badPuk:I = #string@badPuk#t
 
-.field public static final badPuk_noretrytime:I = #string@badPuk_noretrytime#t
-
-.field public static final badPuk_one:I = #string@badPuk_one#t
-
-.field public static final baidu_account_verify_code_bind:I = #string@baidu_account_verify_code_bind#t
-
-.field public static final baidu_account_verify_code_password:I = #string@baidu_account_verify_code_password#t
-
-.field public static final baidu_keyguard_hotword_am:I = #string@baidu_keyguard_hotword_am#t
-
-.field public static final baidu_keyguard_hotword_date_format:I = #string@baidu_keyguard_hotword_date_format#t
-
-.field public static final baidu_keyguard_hotword_pm:I = #string@baidu_keyguard_hotword_pm#t
-
-.field public static final battery_apps_button:I = #string@battery_apps_button#t
-
-.field public static final battery_apps_message:I = #string@battery_apps_message#t
-
 .field public static final bluetooth_a2dp_audio_route_name:I = #string@bluetooth_a2dp_audio_route_name#t
 
 .field public static final byteShort:I = #string@byteShort#t
-
-.field public static final caller_info_or:I = #string@caller_info_or#t
-
-.field public static final caller_info_or_other:I = #string@caller_info_or_other#t
 
 .field public static final cancel:I = #string@cancel#t
 
@@ -298,18 +262,6 @@
 .field public static final cfTemplateRegistered:I = #string@cfTemplateRegistered#t
 
 .field public static final cfTemplateRegisteredTime:I = #string@cfTemplateRegisteredTime#t
-
-.field public static final charge_complete:I = #string@charge_complete#t
-
-.field public static final charge_finished:I = #string@charge_finished#t
-
-.field public static final chargging:I = #string@chargging#t
-
-.field public static final china_mobile:I = #string@china_mobile#t
-
-.field public static final china_telecom:I = #string@china_telecom#t
-
-.field public static final china_unicom:I = #string@china_unicom#t
 
 .field public static final chooseActivity:I = #string@chooseActivity#t
 
@@ -369,11 +321,7 @@
 
 .field public static final create_contact_using:I = #string@create_contact_using#t
 
-.field public static final custom_ringtone_picker:I = #string@custom_ringtone_picker#t
-
 .field public static final cut:I = #string@cut#t
-
-.field public static final data_sms_msg:I = #string@data_sms_msg#t
 
 .field public static final data_usage_3g_limit_snoozed_title:I = #string@data_usage_3g_limit_snoozed_title#t
 
@@ -517,8 +465,6 @@
 
 .field public static final deleteText:I = #string@deleteText#t
 
-.field public static final deny_btn_text:I = #string@deny_btn_text#t
-
 .field public static final description_target_unlock_tablet:I = #string@description_target_unlock_tablet#t
 
 .field public static final dial_number_using:I = #string@dial_number_using#t
@@ -534,12 +480,6 @@
 .field public static final dlg_ok:I = #string@dlg_ok#t
 
 .field public static final double_tap_toast:I = #string@double_tap_toast#t
-
-.field public static final dynamic_perm_dialog_msg:I = #string@dynamic_perm_dialog_msg#t
-
-.field public static final dynamic_perm_popup_dialog_title:I = #string@dynamic_perm_popup_dialog_title#t
-
-.field public static final elapsed_time_long_format_h_mm_ss:I = #string@elapsed_time_long_format_h_mm_ss#t
 
 .field public static final elapsed_time_short_format_h_mm_ss:I = #string@elapsed_time_short_format_h_mm_ss#t
 
@@ -575,8 +515,6 @@
 
 .field public static final eventTypeCustom:I = #string@eventTypeCustom#t
 
-.field public static final eventTypeLunarBirthday:I = #string@eventTypeLunarBirthday#t
-
 .field public static final eventTypeOther:I = #string@eventTypeOther#t
 
 .field public static final ext_media_badremoval_notification_message:I = #string@ext_media_badremoval_notification_message#t
@@ -602,8 +540,6 @@
 .field public static final ext_media_unmountable_notification_message:I = #string@ext_media_unmountable_notification_message#t
 
 .field public static final ext_media_unmountable_notification_title:I = #string@ext_media_unmountable_notification_title#t
-
-.field public static final external_sd:I = #string@external_sd#t
 
 .field public static final extmedia_format_button_format:I = #string@extmedia_format_button_format#t
 
@@ -635,10 +571,6 @@
 
 .field public static final global_action_power_off:I = #string@global_action_power_off#t
 
-.field public static final global_action_reboot:I = #string@global_action_reboot#t
-
-.field public static final global_action_screenshot:I = #string@global_action_screenshot#t
-
 .field public static final global_action_silent_mode_off_status:I = #string@global_action_silent_mode_off_status#t
 
 .field public static final global_action_silent_mode_on_status:I = #string@global_action_silent_mode_on_status#t
@@ -650,8 +582,6 @@
 .field public static final global_actions_airplane_mode_on_status:I = #string@global_actions_airplane_mode_on_status#t
 
 .field public static final global_actions_toggle_airplane_mode:I = #string@global_actions_toggle_airplane_mode#t
-
-.field public static final global_actions_toggle_airplane_mode_off:I = #string@global_actions_toggle_airplane_mode_off#t
 
 .field public static final gpsNotifMessage:I = #string@gpsNotifMessage#t
 
@@ -680,8 +610,6 @@
 .field public static final heavy_weight_notification:I = #string@heavy_weight_notification#t
 
 .field public static final heavy_weight_notification_detail:I = #string@heavy_weight_notification_detail#t
-
-.field public static final hot_keywords:I = #string@hot_keywords#t
 
 .field public static final hour_ampm:I = #string@hour_ampm#t
 
@@ -773,19 +701,9 @@
 
 .field public static final input_method_binding_label:I = #string@input_method_binding_label#t
 
-.field public static final internal_sd:I = #string@internal_sd#t
-
 .field public static final invalidPin:I = #string@invalidPin#t
 
-.field public static final invalidPinOneRemainTime:I = #string@invalidPinOneRemainTime#t
-
-.field public static final invalidPinRemainTime:I = #string@invalidPinRemainTime#t
-
 .field public static final invalidPuk:I = #string@invalidPuk#t
-
-.field public static final invalidPuk_noremaintime:I = #string@invalidPuk_noremaintime#t
-
-.field public static final invalidPuk_one:I = #string@invalidPuk_one#t
 
 .field public static final js_dialog_before_unload:I = #string@js_dialog_before_unload#t
 
@@ -816,10 +734,6 @@
 .field public static final keyguard_password_enter_puk_code:I = #string@keyguard_password_enter_puk_code#t
 
 .field public static final keyguard_password_wrong_pin_code:I = #string@keyguard_password_wrong_pin_code#t
-
-.field public static final keyguard_password_wrong_pin_code_no_remain_time:I = #string@keyguard_password_wrong_pin_code_no_remain_time#t
-
-.field public static final keyguard_password_wrong_pin_code_one:I = #string@keyguard_password_wrong_pin_code_one#t
 
 .field public static final kilobyteShort:I = #string@kilobyteShort#t
 
@@ -867,8 +781,6 @@
 
 .field public static final lockscreen_instructions_when_pattern_disabled:I = #string@lockscreen_instructions_when_pattern_disabled#t
 
-.field public static final lockscreen_interpretation:I = #string@lockscreen_interpretation#t
-
 .field public static final lockscreen_low_battery:I = #string@lockscreen_low_battery#t
 
 .field public static final lockscreen_missing_sim_instructions:I = #string@lockscreen_missing_sim_instructions#t
@@ -903,10 +815,6 @@
 
 .field public static final lockscreen_sound_on_label:I = #string@lockscreen_sound_on_label#t
 
-.field public static final lockscreen_statusbar_msg:I = #string@lockscreen_statusbar_msg#t
-
-.field public static final lockscreen_statusbar_title:I = #string@lockscreen_statusbar_title#t
-
 .field public static final lockscreen_too_many_failed_attempts_countdown:I = #string@lockscreen_too_many_failed_attempts_countdown#t
 
 .field public static final lockscreen_too_many_failed_attempts_dialog_message:I = #string@lockscreen_too_many_failed_attempts_dialog_message#t
@@ -923,35 +831,11 @@
 
 .field public static final lockscreen_unlock_label:I = #string@lockscreen_unlock_label#t
 
-.field public static final lockscreen_voiceprint_interpretation:I = #string@lockscreen_voiceprint_interpretation#t
-
-.field public static final low_battery_dialog_desc:I = #string@low_battery_dialog_desc#t
-
-.field public static final low_battery_dialog_tips:I = #string@low_battery_dialog_tips#t
-
-.field public static final low_battery_dialog_title:I = #string@low_battery_dialog_title#t
-
-.field public static final low_battery_toast:I = #string@low_battery_toast#t
-
 .field public static final low_internal_storage_view_text:I = #string@low_internal_storage_view_text#t
 
 .field public static final low_internal_storage_view_title:I = #string@low_internal_storage_view_title#t
 
 .field public static final low_memory:I = #string@low_memory#t
-
-.field public static final lunar_chushi:I = #string@lunar_chushi#t
-
-.field public static final lunar_day:I = #string@lunar_day#t
-
-.field public static final lunar_ershi:I = #string@lunar_ershi#t
-
-.field public static final lunar_leap:I = #string@lunar_leap#t
-
-.field public static final lunar_month:I = #string@lunar_month#t
-
-.field public static final lunar_sanshi:I = #string@lunar_sanshi#t
-
-.field public static final lunar_year:I = #string@lunar_year#t
 
 .field public static final media_bad_removal:I = #string@media_bad_removal#t
 
@@ -982,10 +866,6 @@
 .field public static final mmiError:I = #string@mmiError#t
 
 .field public static final mmiFdnError:I = #string@mmiFdnError#t
-
-.field public static final mode_name_normal:I = #string@mode_name_normal#t
-
-.field public static final mode_name_super:I = #string@mode_name_super#t
 
 .field public static final month:I = #string@month#t
 
@@ -1097,8 +977,6 @@
 
 .field public static final needPuk2:I = #string@needPuk2#t
 
-.field public static final network_invalid:I = #string@network_invalid#t
-
 .field public static final new_app_action:I = #string@new_app_action#t
 
 .field public static final new_app_description:I = #string@new_app_description#t
@@ -1161,43 +1039,9 @@
 
 .field public static final paste:I = #string@paste#t
 
-.field public static final permission_call_phone_message:I = #string@permission_call_phone_message#t
-
-.field public static final permission_confirm_deny:I = #string@permission_confirm_deny#t
-
-.field public static final permission_confirm_grant:I = #string@permission_confirm_grant#t
-
-.field public static final permission_dangrous_warning:I = #string@permission_dangrous_warning#t
-
-.field public static final permission_desc_message:I = #string@permission_desc_message#t
-
-.field public static final permission_desc_mms:I = #string@permission_desc_mms#t
-
-.field public static final permission_desc_phone:I = #string@permission_desc_phone#t
-
-.field public static final permission_dialog_button_ok:I = #string@permission_dialog_button_ok#t
-
-.field public static final permission_dialog_title:I = #string@permission_dialog_title#t
-
-.field public static final permission_prompt:I = #string@permission_prompt#t
-
 .field public static final permission_request_notification_with_subtitle:I = #string@permission_request_notification_with_subtitle#t
 
-.field public static final permission_send_sms_message:I = #string@permission_send_sms_message#t
-
-.field public static final permission_settings:I = #string@permission_settings#t
-
-.field public static final permission_statusbar_ignore:I = #string@permission_statusbar_ignore#t
-
-.field public static final permission_statusbar_show:I = #string@permission_statusbar_show#t
-
-.field public static final permission_toast_deny:I = #string@permission_toast_deny#t
-
-.field public static final permission_toast_eliminated:I = #string@permission_toast_eliminated#t
-
 .field public static final permissions_format:I = #string@permissions_format#t
-
-.field public static final permit_btn_text:I = #string@permit_btn_text#t
 
 .field public static final perms_description_app:I = #string@perms_description_app#t
 
@@ -1251,15 +1095,7 @@
 
 .field public static final phoneTypeWorkPager:I = #string@phoneTypeWorkPager#t
 
-.field public static final phone_call_info_msg:I = #string@phone_call_info_msg#t
-
-.field public static final phone_sms_info_msg:I = #string@phone_sms_info_msg#t
-
 .field public static final pm:I = #string@pm#t
-
-.field public static final policy_name_battery_low:I = #string@policy_name_battery_low#t
-
-.field public static final policy_name_screen_off:I = #string@policy_name_screen_off#t
 
 .field public static final policydesc_disableCamera:I = #string@policydesc_disableCamera#t
 
@@ -1307,12 +1143,6 @@
 
 .field public static final power_off:I = #string@power_off#t
 
-.field public static final power_off_alarm:I = #string@power_off_alarm#t
-
-.field public static final power_settings_notification_message:I = #string@power_settings_notification_message#t
-
-.field public static final power_settings_notification_title:I = #string@power_settings_notification_title#t
-
 .field public static final prepend_shortcut_label:I = #string@prepend_shortcut_label#t
 
 .field public static final preposition_for_date:I = #string@preposition_for_date#t
@@ -1321,35 +1151,7 @@
 
 .field public static final progress_erasing:I = #string@progress_erasing#t
 
-.field public static final progress_erasing_target:I = #string@progress_erasing_target#t
-
 .field public static final progress_unmounting:I = #string@progress_unmounting#t
-
-.field public static final progress_unmounting_target:I = #string@progress_unmounting_target#t
-
-.field public static final quick_boot_text_info:I = #string@quick_boot_text_info#t
-
-.field public static final quickboot_lowbat_poweroff:I = #string@quickboot_lowbat_poweroff#t
-
-.field public static final quickboot_lowbat_schedule_pwonoff:I = #string@quickboot_lowbat_schedule_pwonoff#t
-
-.field public static final quickboot_poweroff_alarm:I = #string@quickboot_poweroff_alarm#t
-
-.field public static final quickboot_real_shutdown:I = #string@quickboot_real_shutdown#t
-
-.field public static final quickboot_schedule_pwonoff:I = #string@quickboot_schedule_pwonoff#t
-
-.field public static final quickboot_shutdown_info:I = #string@quickboot_shutdown_info#t
-
-.field public static final reboot:I = #string@reboot#t
-
-.field public static final reboot_confirm:I = #string@reboot_confirm#t
-
-.field public static final reboot_progress:I = #string@reboot_progress#t
-
-.field public static final reboot_reboot:I = #string@reboot_reboot#t
-
-.field public static final reboot_recovery:I = #string@reboot_recovery#t
 
 .field public static final reboot_safemode_confirm:I = #string@reboot_safemode_confirm#t
 
@@ -1385,41 +1187,15 @@
 
 .field public static final relative_time:I = #string@relative_time#t
 
-.field public static final remember_info_text:I = #string@remember_info_text#t
-
-.field public static final remember_my_choice:I = #string@remember_my_choice#t
-
-.field public static final remember_tips_text:I = #string@remember_tips_text#t
-
 .field public static final replace:I = #string@replace#t
-
-.field public static final replace_browser_value:I = #string@replace_browser_value#t
-
-.field public static final replace_market_value:I = #string@replace_market_value#t
-
-.field public static final replace_reader_value:I = #string@replace_reader_value#t
 
 .field public static final report:I = #string@report#t
 
 .field public static final reset:I = #string@reset#t
 
-.field public static final ringtone_custom:I = #string@ringtone_custom#t
-
 .field public static final ringtone_default:I = #string@ringtone_default#t
 
 .field public static final ringtone_default_with_actual:I = #string@ringtone_default_with_actual#t
-
-.field public static final ringtone_picker_custom_title:I = #string@ringtone_picker_custom_title#t
-
-.field public static final ringtone_picker_nothing_selectecd:I = #string@ringtone_picker_nothing_selectecd#t
-
-.field public static final ringtone_picker_sdcard_busy:I = #string@ringtone_picker_sdcard_busy#t
-
-.field public static final ringtone_picker_sdcard_empty:I = #string@ringtone_picker_sdcard_empty#t
-
-.field public static final ringtone_picker_sdcard_unmount:I = #string@ringtone_picker_sdcard_unmount#t
-
-.field public static final ringtone_picker_select_title:I = #string@ringtone_picker_select_title#t
 
 .field public static final ringtone_picker_title:I = #string@ringtone_picker_title#t
 
@@ -1497,8 +1273,6 @@
 
 .field public static final save_password_remember:I = #string@save_password_remember#t
 
-.field public static final search_baidu_web:I = #string@search_baidu_web#t
-
 .field public static final search_go:I = #string@search_go#t
 
 .field public static final selectAll:I = #string@selectAll#t
@@ -1559,8 +1333,6 @@
 
 .field public static final shutdown_progress:I = #string@shutdown_progress#t
 
-.field public static final simInvalidation:I = #string@simInvalidation#t
-
 .field public static final sim_added_message:I = #string@sim_added_message#t
 
 .field public static final sim_added_title:I = #string@sim_added_title#t
@@ -1587,8 +1359,6 @@
 
 .field public static final sms_control_yes:I = #string@sms_control_yes#t
 
-.field public static final sms_info_msg:I = #string@sms_info_msg#t
-
 .field public static final smv_application:I = #string@smv_application#t
 
 .field public static final smv_process:I = #string@smv_process#t
@@ -1602,8 +1372,6 @@
 .field public static final status_bar_notification_info_overflow:I = #string@status_bar_notification_info_overflow#t
 
 .field public static final submit:I = #string@submit#t
-
-.field public static final switch_null_text:I = #string@switch_null_text#t
 
 .field public static final sync_binding_label:I = #string@sync_binding_label#t
 
@@ -1703,10 +1471,6 @@
 
 .field public static final use_physical_keyboard:I = #string@use_physical_keyboard#t
 
-.field public static final voice_search_not_found:I = #string@voice_search_not_found#t
-
-.field public static final voice_search_unavailable:I = #string@voice_search_unavailable#t
-
 .field public static final volume_alarm:I = #string@volume_alarm#t
 
 .field public static final volume_icon_description_bluetooth:I = #string@volume_icon_description_bluetooth#t
@@ -1736,10 +1500,6 @@
 .field public static final wday1_date1_wday2_date2:I = #string@wday1_date1_wday2_date2#t
 
 .field public static final wday_date:I = #string@wday_date#t
-
-.field public static final web_baike:I = #string@web_baike#t
-
-.field public static final web_translator:I = #string@web_translator#t
 
 .field public static final web_user_agent:I = #string@web_user_agent#t
 

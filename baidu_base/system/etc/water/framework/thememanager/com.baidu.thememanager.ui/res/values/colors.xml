@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="theme_item_text_color">#ff5f7a8f</color>
+    <color name="dialog_text_color">#FFFFFFFF</color>
+    
+    <color name="color_action_tab_unselected">#ff5f83a2</color>
+    <color name="color_action_tab_selected">#ffffffff</color>
+</resources>

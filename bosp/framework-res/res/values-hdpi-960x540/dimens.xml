@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="password_keyboard_key_height_numeric">55.0dip</dimen>
-    <dimen name="password_keyboard_verticalGap">0.0dip</dimen>
-    <dimen name="keyguard_lockscreen_clock_font_size">55.0dip</dimen>
-    <dimen name="yi_lockscreen_unlockWidget_height">304.0dip</dimen>
-</resources>

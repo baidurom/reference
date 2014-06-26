@@ -17,7 +17,7 @@
         <FrameLayout android:id="@id/custom" android:paddingTop="5.0dip" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" />
     </FrameLayout>
     <LinearLayout android:orientation="vertical" android:id="@id/buttonPanel" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="54.0dip">
-        <LinearLayout android:orientation="horizontal" android:background="@drawable/popup_bottom_bar" android:paddingLeft="2.0dip" android:paddingTop="4.0dip" android:paddingRight="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:measureWithLargestChild="true" style="?android:attr/buttonBarStyle">
+        <LinearLayout android:orientation="horizontal" android:paddingLeft="2.0dip" android:paddingTop="4.0dip" android:paddingRight="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:measureWithLargestChild="true" style="?android:attr/buttonBarStyle">
             <LinearLayout android:orientation="horizontal" android:id="@id/leftSpacer" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="0.25" />
             <Button android:layout_gravity="left" android:id="@id/button1" android:layout_width="0.0dip" android:layout_height="wrap_content" android:maxLines="2" android:layout_weight="1.0" style="?android:attr/buttonBarButtonStyle" />
             <Button android:layout_gravity="center_horizontal" android:id="@id/button3" android:layout_width="0.0dip" android:layout_height="wrap_content" android:maxLines="2" android:layout_weight="1.0" style="?android:attr/buttonBarButtonStyle" />

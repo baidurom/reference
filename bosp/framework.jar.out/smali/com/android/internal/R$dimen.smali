@@ -89,48 +89,6 @@
 
 .field public static final volume_panel_top:I = #dimen@volume_panel_top#t
 
-.field public static final yi_action_bar_default_height:I = #dimen@yi_action_bar_default_height#t
-
-.field public static final yi_alert_dialog_button_height:I = #dimen@yi_alert_dialog_button_height#t
-
-.field public static final yi_alert_dialog_title_height:I = #dimen@yi_alert_dialog_title_height#t
-
-.field public static final yi_floating_bar_divider_padding:I = #dimen@yi_floating_bar_divider_padding#t
-
-.field public static final yi_list_item_header_height:I = #dimen@yi_list_item_header_height#t
-
-.field public static final yi_lockscreen_hotword1_padding:I = #dimen@yi_lockscreen_hotword1_padding#t
-
-.field public static final yi_lockscreen_hotword2_padding:I = #dimen@yi_lockscreen_hotword2_padding#t
-
-.field public static final yi_lockscreen_hotword3_padding:I = #dimen@yi_lockscreen_hotword3_padding#t
-
-.field public static final yi_lockscreen_hotword4_padding:I = #dimen@yi_lockscreen_hotword4_padding#t
-
-.field public static final yi_lockscreen_hotword5_padding:I = #dimen@yi_lockscreen_hotword5_padding#t
-
-.field public static final yi_lockscreen_hotword6_padding:I = #dimen@yi_lockscreen_hotword6_padding#t
-
-.field public static final yi_lockscreen_hotword7_padding:I = #dimen@yi_lockscreen_hotword7_padding#t
-
-.field public static final yi_lockscreen_password_height:I = #dimen@yi_lockscreen_password_height#t
-
-.field public static final yi_lockscreen_password_top_padding:I = #dimen@yi_lockscreen_password_top_padding#t
-
-.field public static final yi_lockscreen_pattern_top_margin:I = #dimen@yi_lockscreen_pattern_top_margin#t
-
-.field public static final yi_lockscreen_pin_top_padding:I = #dimen@yi_lockscreen_pin_top_padding#t
-
-.field public static final yi_lockscreen_unlockWidget_height:I = #dimen@yi_lockscreen_unlockWidget_height#t
-
-.field public static final yi_lockscreen_unlockwidget_margintop:I = #dimen@yi_lockscreen_unlockwidget_margintop#t
-
-.field public static final yi_lockscreen_voiceprint_height:I = #dimen@yi_lockscreen_voiceprint_height#t
-
-.field public static final yi_magnifier_range_padding:I = #dimen@yi_magnifier_range_padding#t
-
-.field public static final yi_preference_item_padding_side:I = #dimen@yi_preference_item_padding_side#t
-
 
 # direct methods
 .method public constructor <init>()V

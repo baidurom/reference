@@ -17,8 +17,6 @@
 # static fields
 .field public static final config_MaxConcurrentDownloadsAllowed:I = #integer@config_MaxConcurrentDownloadsAllowed#t
 
-.field public static final config_automatic_rotate_delay:I = #integer@config_automatic_rotate_delay#t
-
 .field public static final config_carDockKeepsScreenOn:I = #integer@config_carDockKeepsScreenOn#t
 
 .field public static final config_carDockRotation:I = #integer@config_carDockRotation#t

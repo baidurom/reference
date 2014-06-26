@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="notification_item_song_name_text_color">#173e63</color>
+    <color name="notification_item_download_failure_text_color">#173e63</color>
+    <color name="notification_item_downlaod_title_text_color">#173e63</color>
+    <color name="notification_item_song_artist_text_color">#6891b7</color>
+    <color name="notification_item_download_name_text_color">#6891b7</color>
+    <color name="notification_item_download_progress_text_color">#6891b7</color>
+</resources>

@@ -12372,6 +12372,17 @@
     .parameter "who"
 
     .prologue
+    invoke-static {}, Landroid/app/ActivityManager;->isLowRamDeviceStatic()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_baidu_0
+    
+    const/4 v3, 0x0
+
+    goto :goto_baidu_0
+    
+    :cond_baidu_0
     const/4 v3, 0x0
 
     .line 907
@@ -12382,6 +12393,7 @@
     .line 924
     :cond_0
     :goto_0
+    :goto_baidu_0
     return-object v3
 
     .line 911

@@ -1168,10 +1168,6 @@
 
 .field public static final pivotY:I = #attr@pivotY#t
 
-.field public static final pointOff:I = #attr@pointOff#t
-
-.field public static final pointOn:I = #attr@pointOn#t
-
 .field public static final pointerStyle:I = #attr@pointerStyle#t
 
 .field public static final popupAnimationStyle:I = #attr@popupAnimationStyle#t

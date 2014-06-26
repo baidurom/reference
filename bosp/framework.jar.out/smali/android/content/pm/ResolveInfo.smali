@@ -269,56 +269,6 @@
     return-void
 .end method
 
-.method private loadLabelBaidu(Landroid/content/pm/PackageManager;Ljava/lang/String;)Ljava/lang/CharSequence;
-    .locals 2
-    .parameter "pm"
-    .parameter "packageName"
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 178
-    if-eqz p2, :cond_0
-
-    invoke-static {}, Landroid/content/ThemeDefine;->getReplacelabel()Ljava/util/HashMap;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p2}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 179
-    invoke-static {}, Landroid/content/ThemeDefine;->getReplacelabel()Ljava/util/HashMap;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    invoke-virtual {p1, p2, v0, v1}, Landroid/content/pm/PackageManager;->getText(Ljava/lang/String;ILandroid/content/pm/ApplicationInfo;)Ljava/lang/CharSequence;
-
-    move-result-object v0
-
-    .line 182
-    :goto_0
-    return-object v0
-
-    :cond_0
-    move-object v0, v1
-
-    goto :goto_0
-.end method
-
 
 # virtual methods
 .method public describeContents()I
@@ -830,21 +780,15 @@
 
     .line 156
     :cond_0
+    :cond_baidu_1
     :goto_0
+    :goto_baidu_0
     return-object v2
 
     .line 138
     :cond_1
     iget-object v4, p0, Landroid/content/pm/ResolveInfo;->resolvePackageName:Ljava/lang/String;
-
-    invoke-direct {p0, p1, v4}, Landroid/content/pm/ResolveInfo;->loadLabelBaidu(Landroid/content/pm/PackageManager;Ljava/lang/String;)Ljava/lang/CharSequence;
-
-    move-result-object v2
-
-    if-nez v2, :cond_0
-
-    iget-object v4, p0, Landroid/content/pm/ResolveInfo;->resolvePackageName:Ljava/lang/String;
-
+    
     if-eqz v4, :cond_2
 
     iget v4, p0, Landroid/content/pm/ResolveInfo;->labelRes:I
@@ -892,15 +836,7 @@
     iget-object v0, v1, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     .line 146
-    .local v0, ai:Landroid/content/pm/ApplicationInfo;
-    iget-object v4, v1, Landroid/content/pm/ComponentInfo;->packageName:Ljava/lang/String;
-
-    invoke-direct {p0, p1, v4}, Landroid/content/pm/ResolveInfo;->loadLabelBaidu(Landroid/content/pm/PackageManager;Ljava/lang/String;)Ljava/lang/CharSequence;
-
-    move-result-object v2
-
-    if-nez v2, :cond_0
-
+    .local v0, ai:Landroid/content/pm/ApplicationInfo;    
     iget v4, p0, Landroid/content/pm/ResolveInfo;->labelRes:I
 
     if-eqz v4, :cond_4
@@ -948,7 +884,7 @@
 
     .line 155
     .local v2, data:Ljava/lang/CharSequence;
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_baidu_0
 
     invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -958,7 +894,16 @@
 
     move-result-object v2
 
-    goto :goto_0
+    :cond_baidu_0 
+    if-eqz v2, :cond_baidu_1
+
+    iget-object v4, v1, Landroid/content/pm/ComponentInfo;->packageName:Ljava/lang/String;
+
+    invoke-static {p1, v4, v2}, Landroid/content/ThemeDefine;->interceptLabelRes(Landroid/content/pm/PackageManager;Ljava/lang/String;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+
+    move-result-object v2
+    
+    goto :goto_baidu_0
 .end method
 
 .method public toString()Ljava/lang/String;

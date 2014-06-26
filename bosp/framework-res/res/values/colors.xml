@@ -88,47 +88,4 @@
     <color name="legacy_selected_highlight">#fff17a0a</color>
     <color name="legacy_long_pressed_highlight">#ffffffff</color>
     <color name="config_defaultNotificationColor">#ffffffff</color>
-    <color name="yi_background_baidu_dark">#ff000000</color>
-    <color name="yi_background_baidu_light">#fff5f7fa</color>
-    <color name="yi_bright_foreground_baidu_dark">#ffffffff</color>
-    <color name="yi_bright_foreground_baidu_light">#ff54575f</color>
-    <color name="yi_bright_foreground_disabled_baidu_dark">#ff848688</color>
-    <color name="yi_bright_foreground_disabled_baidu_light">#6654575f</color>
-    <item type="color" name="yi_bright_foreground_inverse_baidu_dark">@color/yi_bright_foreground_baidu_light</item>
-    <item type="color" name="yi_bright_foreground_inverse_baidu_light">@color/yi_bright_foreground_baidu_dark</item>
-    <color name="yi_dim_foreground_baidu_dark">#ffb0b0b0</color>
-    <color name="yi_dim_foreground_disabled_baidu_dark">#ff464646</color>
-    <color name="yi_dim_foreground_inverse_baidu_dark">#ff8c8c8c</color>
-    <color name="yi_dim_foreground_inverse_disabled_baidu_dark">#808c8c8c</color>
-    <color name="yi_hint_foreground_baidu_dark">#ff808080</color>
-    <color name="yi_dim_foreground_baidu_light">#ffacb0b6</color>
-    <color name="yi_dim_foreground_disabled_baidu_light">#ffdee0e2</color>
-    <color name="yi_dim_foreground_inverse_baidu_light">#ffb0b0b0</color>
-    <color name="yi_dim_foreground_inverse_disabled_baidu_light">#ff464646</color>
-    <color name="yi_hint_foreground_baidu_light">#ffacb1b6</color>
-    <color name="yi_highlighted_text_baidu_dark">#662b7cef</color>
-    <color name="yi_highlighted_text_baidu_light">#6633b5e5</color>
-    <color name="yi_link_text_baidu_dark">#ff5c5cff</color>
-    <color name="yi_link_text_baidu_light">#ff0000ee</color>
-    <color name="yi_blue_header_text_baidu_light">#ff4a7cc1</color>
-    <color name="yi_group_button_dialog_pressed_baidu_dark">#46c5c1ff</color>
-    <color name="yi_group_button_dialog_focused_baidu_dark">#2699cc00</color>
-    <color name="yi_group_button_dialog_pressed_baidu_light">#ffffffff</color>
-    <color name="yi_group_button_dialog_focused_baidu_light">#4699cc00</color>
-    <color name="yi_baidu_blue_light">#ff4a7cc1</color>
-    <color name="yi_baidu_green_light">#ff99cc00</color>
-    <color name="yi_baidu_red_light">#ffff4444</color>
-    <color name="yi_baidu_blue_dark">#ff0099cc</color>
-    <color name="yi_baidu_green_dark">#ff669900</color>
-    <color name="yi_baidu_red_dark">#ffcc0000</color>
-    <color name="yi_baidu_purple">#ffaa66cc</color>
-    <color name="yi_baidu_orange_light">#ffffbb33</color>
-    <color name="yi_baidu_orange_dark">#ffff8800</color>
-    <color name="yi_baidu_blue_bright">#ff00ddff</color>
-    <color name="yi_dark_action_bar_title">#ffffffff</color>
-    <color name="yi_list_section_divider_text_light">#ff98a2b3</color>
-    <color name="yi_action_tab_text_selected_baidu_light">#ffffffff</color>
-    <color name="yi_status_bar_event_content">#ff80878d</color>
-    <color name="yi_status_bar_event_content_title">#ff4f555a</color>
-    <color name="yi_action_bar_title_shadow">#00000000</color>
 </resources>

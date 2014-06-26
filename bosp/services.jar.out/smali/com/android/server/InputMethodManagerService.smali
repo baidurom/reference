@@ -7383,6 +7383,8 @@
     invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
 
     .line 2564
+    iput-object v1, p0, Lcom/android/server/InputMethodManagerService;->mSwitchingDialogTitleView:Landroid/view/View;
+
     iput-object v1, p0, Lcom/android/server/InputMethodManagerService;->mSwitchingDialog:Landroid/app/AlertDialog;
 
     .line 2567

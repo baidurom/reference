@@ -27,11 +27,7 @@
 
 .field public static final bounce_interpolator:I = #anim@bounce_interpolator#t
 
-.field public static final charge_anim:I = #anim@charge_anim#t
-
 .field public static final cycle_interpolator:I = #anim@cycle_interpolator#t
-
-.field public static final decelerate_custom:I = #anim@decelerate_custom#t
 
 .field public static final decelerate_interpolator:I = #anim@decelerate_interpolator#t
 
@@ -54,14 +50,6 @@
 .field public static final fade_in:I = #anim@fade_in#t
 
 .field public static final fade_out:I = #anim@fade_out#t
-
-.field public static final halfcycle_interpolator:I = #anim@halfcycle_interpolator#t
-
-.field public static final hold:I = #anim@hold#t
-
-.field public static final home_open_enter:I = #anim@home_open_enter#t
-
-.field public static final home_open_exit:I = #anim@home_open_exit#t
 
 .field public static final linear_interpolator:I = #anim@linear_interpolator#t
 
@@ -115,10 +103,6 @@
 
 .field public static final screen_rotate_start_frame:I = #anim@screen_rotate_start_frame#t
 
-.field public static final slide_down_down:I = #anim@slide_down_down#t
-
-.field public static final slide_down_up:I = #anim@slide_down_up#t
-
 .field public static final slide_in_child_bottom:I = #anim@slide_in_child_bottom#t
 
 .field public static final slide_in_left:I = #anim@slide_in_left#t
@@ -128,10 +112,6 @@
 .field public static final slide_out_left:I = #anim@slide_out_left#t
 
 .field public static final slide_out_right:I = #anim@slide_out_right#t
-
-.field public static final slide_up_down:I = #anim@slide_up_down#t
-
-.field public static final slide_up_up:I = #anim@slide_up_up#t
 
 .field public static final window_move_from_decor:I = #anim@window_move_from_decor#t
 

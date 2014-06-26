@@ -45,8 +45,6 @@
 
 .field public static final config_cellBroadcastAppLinks:I = #bool@config_cellBroadcastAppLinks#t
 
-.field public static final config_close_button_backlight:I = #bool@config_close_button_backlight#t
-
 .field public static final config_deskDockEnablesAccelerometer:I = #bool@config_deskDockEnablesAccelerometer#t
 
 .field public static final config_disableMenuKeyInLockScreen:I = #bool@config_disableMenuKeyInLockScreen#t
@@ -72,12 +70,6 @@
 .field public static final config_lidControlsSleep:I = #bool@config_lidControlsSleep#t
 
 .field public static final config_mms_content_disposition_support:I = #bool@config_mms_content_disposition_support#t
-
-.field public static final config_pbap_support:I = #bool@config_pbap_support#t
-
-.field public static final config_poweron_by_twice_press:I = #bool@config_poweron_by_twice_press#t
-
-.field public static final config_quickbootSupport:I = #bool@config_quickbootSupport#t
 
 .field public static final config_reverseDefaultRotation:I = #bool@config_reverseDefaultRotation#t
 
@@ -110,8 +102,6 @@
 .field public static final config_use_strict_phone_number_comparation:I = #bool@config_use_strict_phone_number_comparation#t
 
 .field public static final config_voice_capable:I = #bool@config_voice_capable#t
-
-.field public static final config_wakeup_by_volume_key:I = #bool@config_wakeup_by_volume_key#t
 
 .field public static final config_wifi_background_scan_support:I = #bool@config_wifi_background_scan_support#t
 

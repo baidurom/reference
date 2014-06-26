@@ -287,12 +287,12 @@
         <item name="searchDropdownBackground">@drawable/spinner_dropdown_background</item>
         <item name="searchViewCloseIcon">@drawable/ic_clear</item>
         <item name="searchViewGoIcon">@drawable/ic_go</item>
-        <item name="searchViewSearchIcon">@drawable/yi_ic_search</item>
+        <item name="searchViewSearchIcon">@drawable/ic_search</item>
         <item name="searchViewVoiceIcon">@drawable/ic_voice_search</item>
         <item name="searchViewEditQuery">@drawable/ic_commit_search_api_holo_dark</item>
         <item name="searchViewEditQueryBackground">?selectableItemBackground</item>
-        <item name="searchViewTextField">@drawable/yi_textfield_searchview_baidu_dark</item>
-        <item name="searchViewTextFieldRight">@drawable/yi_textfield_searchview_right_baidu_dark</item>
+        <item name="searchViewTextField">@drawable/textfield_searchview_holo_dark</item>
+        <item name="searchViewTextFieldRight">@drawable/textfield_searchview_right_holo_dark</item>
         <item name="searchDialogTheme">@style/Theme.SearchBar</item>
         <item name="preferenceFrameLayoutStyle">@style/Widget.PreferenceFrameLayout</item>
         <item name="pointerStyle">@style/Pointer</item>
@@ -413,13 +413,13 @@
         <item name="actionModeFindDrawable">@drawable/ic_menu_find_holo_light</item>
         <item name="actionModeWebSearchDrawable">@drawable/ic_menu_search_holo_light</item>
         <item name="searchDropdownBackground">@drawable/search_dropdown_light</item>
-        <item name="searchViewCloseIcon">@drawable/yi_ic_clear_baidu_light</item>
-        <item name="searchViewGoIcon">@drawable/yi_ic_go_search_api_baidu_light</item>
-        <item name="searchViewSearchIcon">@drawable/yi_ic_search_api_baidu_light</item>
-        <item name="searchViewVoiceIcon">@drawable/yi_ic_voice_search_api_baidu_light</item>
-        <item name="searchViewEditQuery">@drawable/yi_ic_commit_search_api_baidu_light</item>
-        <item name="searchViewTextField">@drawable/yi_textfield_searchview_baidu_light</item>
-        <item name="searchViewTextFieldRight">@drawable/yi_textfield_searchview_right_baidu_light</item>
+        <item name="searchViewCloseIcon">@drawable/ic_clear_holo_light</item>
+        <item name="searchViewGoIcon">@drawable/ic_go_search_api_holo_light</item>
+        <item name="searchViewSearchIcon">@drawable/ic_search_api_holo_light</item>
+        <item name="searchViewVoiceIcon">@drawable/ic_voice_search_api_holo_light</item>
+        <item name="searchViewEditQuery">@drawable/ic_commit_search_api_holo_light</item>
+        <item name="searchViewTextField">@drawable/textfield_searchview_holo_light</item>
+        <item name="searchViewTextFieldRight">@drawable/textfield_searchview_right_holo_light</item>
         <item name="findOnPageNextDrawable">@drawable/ic_find_next_holo_light</item>
         <item name="findOnPagePreviousDrawable">@drawable/ic_find_previous_holo_light</item>
     </style>
@@ -553,7 +553,6 @@
     <style name="Widget.EditText" parent="@style/Widget">
         <item name="textAppearance">?textAppearanceMediumInverse</item>
         <item name="textColor">?editTextColor</item>
-        <item name="textColorHighlight">@color/yi_highlighted_text_baidu_dark</item>
         <item name="gravity">center_vertical</item>
         <item name="background">?editTextBackground</item>
         <item name="focusable">true</item>
@@ -1124,13 +1123,6 @@
         <item name="dialogTitleDecorLayout">@layout/dialog_title_holo</item>
         <item name="toastFrameBackground">@drawable/toast_frame_holo</item>
         <item name="searchDropdownBackground">@drawable/search_dropdown_dark</item>
-        <item name="searchViewCloseIcon">@drawable/ic_clear</item>
-        <item name="searchViewGoIcon">@drawable/ic_go</item>
-        <item name="searchViewSearchIcon">@drawable/ic_search</item>
-        <item name="searchViewVoiceIcon">@drawable/ic_voice_search</item>
-        <item name="searchViewEditQuery">@drawable/ic_commit_search_api_holo_dark</item>
-        <item name="searchViewTextField">@drawable/textfield_searchview_holo_dark</item>
-        <item name="searchViewTextFieldRight">@drawable/textfield_searchview_right_holo_dark</item>
         <item name="searchDialogTheme">@style/Theme.Holo.SearchBar</item>
         <item name="preferenceFrameLayoutStyle">@style/Widget.Holo.PreferenceFrameLayout</item>
         <item name="switchStyle">@style/Widget.Holo.CompoundButton.Switch</item>
@@ -1373,13 +1365,6 @@
         <item name="dialogTitleDecorLayout">@layout/dialog_title_holo</item>
         <item name="toastFrameBackground">@drawable/toast_frame_holo</item>
         <item name="searchDropdownBackground">@drawable/search_dropdown_light</item>
-        <item name="searchViewCloseIcon">@drawable/ic_clear_holo_light</item>
-        <item name="searchViewGoIcon">@drawable/ic_go_search_api_holo_light</item>
-        <item name="searchViewSearchIcon">@drawable/ic_search_api_holo_light</item>
-        <item name="searchViewVoiceIcon">@drawable/ic_voice_search_api_holo_light</item>
-        <item name="searchViewEditQuery">@drawable/ic_commit_search_api_holo_light</item>
-        <item name="searchViewTextField">@drawable/textfield_searchview_holo_light</item>
-        <item name="searchViewTextFieldRight">@drawable/textfield_searchview_right_holo_light</item>
         <item name="searchDialogTheme">@style/Theme.Holo.Light.SearchBar</item>
         <item name="preferenceFrameLayoutStyle">@style/Widget.Holo.PreferenceFrameLayout</item>
         <item name="switchStyle">@style/Widget.Holo.Light.CompoundButton.Switch</item>
@@ -1573,9 +1558,7 @@
     </style>
     <style name="Widget.Holo.CompoundButton.CheckBox" parent="@style/Widget.CompoundButton.CheckBox" />
     <style name="Widget.Holo.ListView.DropDown" parent="@style/Widget.Holo.ListView" />
-    <style name="Widget.Holo.EditText" parent="@style/Widget.EditText">
-        <item name="textColorHighlight">@color/highlighted_text_holo_dark</item>
-    </style>
+    <style name="Widget.Holo.EditText" parent="@style/Widget.EditText" />
     <style name="Widget.Holo.ExpandableListView" parent="@style/Widget.Holo.ListView">
         <item name="groupIndicator">@drawable/expander_group_holo_dark</item>
         <item name="indicatorLeft">?expandableListPreferredItemIndicatorLeft</item>
@@ -2108,9 +2091,8 @@
     <style name="TextAppearance.Holo.Widget.ActionBar.Title.Inverse" parent="@style/TextAppearance.Holo.Medium.Inverse">
         <item name="textSize">@dimen/action_bar_title_text_size</item>
     </style>
-    <style name="TextAppearance.Holo.Widget.ActionBar.Subtitle.Inverse" parent="@style/TextAppearance.Holo.Widget.ActionBar.Subtitle.Inverse">
+    <style name="TextAppearance.Holo.Widget.ActionBar.Subtitle.Inverse" parent="@style/TextAppearance.Holo.Small.Inverse">
         <item name="textSize">@dimen/action_bar_subtitle_text_size</item>
-        <item name="textColor">@color/yi_action_tab_text_selected_baidu_light</item>
     </style>
     <style name="TextAppearance.Holo.Widget.ActionMode.Title.Inverse" parent="@style/TextAppearance.Holo.Medium.Inverse">
         <item name="textSize">@dimen/action_bar_title_text_size</item>
@@ -2170,19 +2152,8 @@
         <item name="subtitleTextStyle">@style/TextAppearance.Holo.Widget.ActionMode.Subtitle.Inverse</item>
     </style>
     <style name="Theme.DeviceDefault" parent="@style/Theme.Holo">
-        <item name="colorBackground">@color/yi_background_baidu_dark</item>
         <item name="textAppearance">@style/TextAppearance.DeviceDefault</item>
         <item name="textAppearanceInverse">@style/TextAppearance.DeviceDefault.Inverse</item>
-        <item name="textColorPrimary">@color/yi_primary_text_baidu_dark</item>
-        <item name="textColorPrimaryDisableOnly">@color/yi_primary_text_disable_only_baidu_dark</item>
-        <item name="textColorSecondary">@color/yi_secondary_text_baidu_dark</item>
-        <item name="textColorPrimaryInverse">@color/yi_primary_text_baidu_light</item>
-        <item name="textColorSecondaryInverse">@color/yi_secondary_text_baidu_light</item>
-        <item name="textColorPrimaryNoDisable">@color/yi_primary_text_nodisable_baidu_dark</item>
-        <item name="textColorSecondaryNoDisable">@color/yi_secondary_text_nodisable_baidu_dark</item>
-        <item name="textColorPrimaryInverseNoDisable">@color/yi_primary_text_nodisable_baidu_light</item>
-        <item name="textColorSecondaryInverseNoDisable">@color/yi_secondary_text_nodisable_baidu_light</item>
-        <item name="textColorHintInverse">@color/yi_hint_foreground_baidu_light</item>
         <item name="textAppearanceLarge">@style/TextAppearance.DeviceDefault.Large</item>
         <item name="textAppearanceMedium">@style/TextAppearance.DeviceDefault.Medium</item>
         <item name="textAppearanceSmall">@style/TextAppearance.DeviceDefault.Small</item>
@@ -2193,13 +2164,9 @@
         <item name="buttonStyleSmall">@style/Widget.DeviceDefault.Button.Small</item>
         <item name="buttonStyleInset">@style/Widget.DeviceDefault.Button.Inset</item>
         <item name="buttonStyleToggle">@style/Widget.DeviceDefault.Button.Toggle</item>
-        <item name="windowBackground">@color/yi_background_baidu_dark</item>
         <item name="windowTitleStyle">@style/WindowTitle.DeviceDefault</item>
         <item name="windowTitleBackgroundStyle">@style/WindowTitleBackground.DeviceDefault</item>
         <item name="alertDialogStyle">@style/AlertDialog.DeviceDefault</item>
-        <item name="panelBackground">@drawable/yi_menu_hardkey_panel_baidu_dark</item>
-        <item name="scrollbarThumbHorizontal">@drawable/yi_scrollbar_handle_baidu_dark</item>
-        <item name="scrollbarThumbVertical">@drawable/yi_scrollbar_handle_baidu_dark</item>
         <item name="absListViewStyle">@style/Widget.DeviceDefault.AbsListView</item>
         <item name="autoCompleteTextViewStyle">@style/Widget.DeviceDefault.AutoCompleteTextView</item>
         <item name="checkboxStyle">@style/Widget.DeviceDefault.CompoundButton.CheckBox</item>
@@ -2239,23 +2206,14 @@
         <item name="dialogPreferenceStyle">@style/Preference.DeviceDefault.DialogPreference</item>
         <item name="editTextPreferenceStyle">@style/Preference.DeviceDefault.DialogPreference.EditTextPreference</item>
         <item name="ringtonePreferenceStyle">@style/Preference.DeviceDefault.RingtonePreference</item>
-        <item name="textColorHighlight">@color/yi_highlighted_text_baidu_dark</item>
-        <item name="textColorHint">@color/yi_hint_foreground_baidu_dark</item>
-        <item name="textColorLink">@color/yi_baidu_blue_light</item>
         <item name="windowAnimationStyle">@style/Animation.DeviceDefault.Activity</item>
         <item name="textAppearanceButton">@style/TextAppearance.DeviceDefault.Widget.Button</item>
         <item name="listSeparatorTextViewStyle">@style/Widget.DeviceDefault.TextView.ListSeparator</item>
         <item name="progressBarStyleSmallTitle">@style/Widget.DeviceDefault.ProgressBar.Small.Title</item>
         <item name="ratingBarStyleIndicator">@style/Widget.DeviceDefault.RatingBar.Indicator</item>
-        <item name="textColorTertiary">@color/yi_tertiary_text_baidu_dark</item>
-        <item name="textColorTertiaryInverse">@color/yi_tertiary_text_baidu_light</item>
-        <item name="listDivider">@drawable/yi_list_divider_baidu_dark</item>
-        <item name="listChoiceIndicatorSingle">@drawable/yi_btn_radio_baidu_dark</item>
-        <item name="listChoiceIndicatorMultiple">@drawable/yi_btn_check_baidu_dark</item>
         <item name="progressBarStyleInverse">@style/Widget.DeviceDefault.ProgressBar.Inverse</item>
         <item name="progressBarStyleSmallInverse">@style/Widget.DeviceDefault.ProgressBar.Small.Inverse</item>
         <item name="progressBarStyleLargeInverse">@style/Widget.DeviceDefault.ProgressBar.Large.Inverse</item>
-        <item name="textColorPrimaryInverseDisableOnly">@color/yi_primary_text_disable_only_baidu_light</item>
         <item name="textAppearanceSearchResultSubtitle">@style/TextAppearance.DeviceDefault.SearchResult.Subtitle</item>
         <item name="textAppearanceSearchResultTitle">@style/TextAppearance.DeviceDefault.SearchResult.Title</item>
         <item name="quickContactBadgeStyleWindowSmall">@style/Widget.DeviceDefault.QuickContactBadge.WindowSmall</item>
@@ -2271,97 +2229,42 @@
         <item name="dropDownSpinnerStyle">@style/Widget.DeviceDefault.Spinner.DropDown</item>
         <item name="actionDropDownStyle">@style/Widget.DeviceDefault.Spinner.DropDown.ActionBar</item>
         <item name="actionButtonStyle">@style/Widget.DeviceDefault.ActionButton</item>
-        <item name="actionModeBackground">@drawable/yi_cab_background_top_baidu_dark</item>
-        <item name="actionModeCloseDrawable">@drawable/yi_ic_cab_done_baidu_dark</item>
-        <item name="actionBarSize">@dimen/yi_action_bar_default_height</item>
-        <item name="listChoiceBackgroundIndicator">@drawable/yi_list_selector_baidu_dark</item>
         <item name="actionBarTabStyle">@style/Widget.DeviceDefault.ActionBar.TabView</item>
         <item name="actionBarTabBarStyle">@style/Widget.DeviceDefault.ActionBar.TabBar</item>
         <item name="actionBarTabTextStyle">@style/Widget.DeviceDefault.ActionBar.TabText</item>
         <item name="actionOverflowButtonStyle">@style/Widget.DeviceDefault.ActionButton.Overflow</item>
         <item name="actionModeCloseButtonStyle">@style/Widget.DeviceDefault.ActionButton.CloseMode</item>
-        <item name="activatedBackgroundIndicator">@drawable/yi_activated_background_baidu_dark</item>
         <item name="listPopupWindowStyle">@style/Widget.DeviceDefault.ListPopupWindow</item>
         <item name="popupMenuStyle">@style/Widget.DeviceDefault.PopupMenu</item>
         <item name="textAppearanceLargePopupMenu">@style/TextAppearance.DeviceDefault.Widget.PopupMenu.Large</item>
         <item name="textAppearanceSmallPopupMenu">@style/TextAppearance.DeviceDefault.Widget.PopupMenu.Small</item>
-        <item name="listDividerAlertDialog">@drawable/yi_list_divider_baidu_dark</item>
-        <item name="textColorAlertDialogListItem">@color/yi_primary_text_baidu_dark</item>
         <item name="dialogTheme">@style/Theme.DeviceDefault.Dialog</item>
         <item name="alertDialogTheme">@style/Theme.DeviceDefault.Dialog.Alert</item>
-        <item name="homeAsUpIndicator">@drawable/yi_ic_ab_back_baidu_dark</item>
-        <item name="selectableItemBackground">@drawable/yi_item_background_baidu_dark</item>
-        <item name="actionModeCutDrawable">@drawable/yi_ic_menu_cut_baidu_dark</item>
-        <item name="actionModeCopyDrawable">@drawable/yi_ic_menu_copy_baidu_dark</item>
-        <item name="actionModePasteDrawable">@drawable/yi_ic_menu_paste_baidu_dark</item>
         <item name="borderlessButtonStyle">@style/Widget.DeviceDefault.Button.Borderless</item>
         <item name="buttonBarStyle">@style/DeviceDefault.ButtonBar</item>
         <item name="segmentedButtonStyle">@style/DeviceDefault.SegmentedButton</item>
-        <item name="fastScrollThumbDrawable">@drawable/yi_fastscroll_thumb_baidu</item>
-        <item name="fastScrollPreviewBackgroundLeft">@drawable/yi_fastscroll_label_left_baidu_dark</item>
-        <item name="fastScrollPreviewBackgroundRight">@drawable/yi_fastscroll_label_right_baidu_dark</item>
-        <item name="fastScrollTrackDrawable">@drawable/yi_fastscroll_track_baidu_dark</item>
-        <item name="textColorHighlightInverse">@color/yi_highlighted_text_baidu_light</item>
-        <item name="textColorLinkInverse">@color/yi_baidu_blue_light</item>
-        <item name="editTextBackground">@drawable/yi_edit_text_baidu_dark</item>
         <item name="horizontalScrollViewStyle">@style/Widget.DeviceDefault.HorizontalScrollView</item>
-        <item name="alertDialogIcon">@drawable/yi_ic_dialog_alert_baidu_dark</item>
         <item name="datePickerStyle">@style/Widget.DeviceDefault.DatePicker</item>
         <item name="calendarViewStyle">@style/Widget.DeviceDefault.CalendarView</item>
-        <item name="textCursorDrawable">@drawable/text_cursor_holo_dark</item>
         <item name="switchPreferenceStyle">@style/Preference.DeviceDefault.SwitchPreference</item>
         <item name="textSuggestionsWindowStyle">@style/Widget.DeviceDefault.TextSuggestionsPopupWindow</item>
-        <item name="actionModeSelectAllDrawable">@drawable/yi_ic_menu_selectall_baidu_dark</item>
         <item name="actionModeStyle">@style/Widget.DeviceDefault.ActionMode</item>
-        <item name="actionModeSplitBackground">@drawable/yi_cab_background_bottom_baidu_dark</item>
         <item name="mediaRouteButtonStyle">@style/Widget.DeviceDefault.MediaRouteButton</item>
-        <item name="errorMessageBackground">@drawable/yi_popup_inline_error_baidu_dark</item>
-        <item name="errorMessageAboveBackground">@drawable/yi_popup_inline_error_above_baidu_dark</item>
-        <item name="panelMenuListTheme">@style/Theme.DeviceDefault.CompactMenu</item>
         <item name="gestureOverlayViewStyle">@style/Widget.DeviceDefault.GestureOverlayView</item>
         <item name="stackViewStyle">@style/Widget.DeviceDefault.StackView</item>
         <item name="numberPickerStyle">@style/Widget.DeviceDefault.NumberPicker</item>
         <item name="timePickerStyle">@style/Widget.DeviceDefault.TimePicker</item>
-        <item name="activityChooserViewStyle">@style/Widget.DeviceDefault.ActivityChooserView</item>
-        <item name="actionModeShareDrawable">@drawable/yi_ic_menu_share_baidu_dark</item>
-        <item name="actionModeFindDrawable">@drawable/yi_ic_menu_find_baidu_dark</item>
-        <item name="actionModeWebSearchDrawable">@drawable/yi_ic_menu_search_baidu_dark</item>
         <item name="actionModePopupWindowStyle">@style/Widget.DeviceDefault.PopupWindow.ActionMode</item>
-        <item name="dialogTitleIconsDecorLayout">@layout/yi_dialog_title_icons_baidu</item>
-        <item name="dialogCustomTitleDecorLayout">@layout/yi_dialog_custom_title_baidu</item>
-        <item name="dialogTitleDecorLayout">@layout/yi_dialog_title_baidu</item>
-        <item name="toastFrameBackground">@drawable/yi_toast_frame_baidu</item>
-        <item name="searchViewCloseIcon">@drawable/yi_ic_clear_baidu_dark</item>
-        <item name="searchViewSearchIcon">@drawable/yi_ic_search</item>
-        <item name="searchViewTextField">@drawable/yi_textfield_searchview_baidu_dark</item>
-        <item name="searchViewTextFieldRight">@drawable/yi_textfield_searchview_right_baidu_dark</item>
         <item name="searchDialogTheme">@style/Theme.DeviceDefault.SearchBar</item>
         <item name="preferenceFrameLayoutStyle">@style/Widget.DeviceDefault.PreferenceFrameLayout</item>
         <item name="switchStyle">@style/Widget.DeviceDefault.CompoundButton.Switch</item>
         <item name="keyboardViewStyle">@style/Widget.DeviceDefault.KeyboardView</item>
     </style>
-    <style name="Theme.DeviceDefault.NoActionBar" parent="@style/Theme.DeviceDefault">
-        <item name="windowNoTitle">true</item>
-        <item name="windowActionBar">false</item>
-    </style>
-    <style name="Theme.DeviceDefault.NoActionBar.Fullscreen" parent="@style/Theme.DeviceDefault.NoActionBar">
-        <item name="windowContentOverlay">@null</item>
-        <item name="windowFullscreen">true</item>
-    </style>
+    <style name="Theme.DeviceDefault.NoActionBar" parent="@style/Theme.Holo.NoActionBar" />
+    <style name="Theme.DeviceDefault.NoActionBar.Fullscreen" parent="@style/Theme.Holo.NoActionBar.Fullscreen" />
     <style name="Theme.DeviceDefault.Light" parent="@style/Theme.Holo.Light">
-        <item name="colorBackground">@color/yi_background_baidu_light</item>
         <item name="textAppearance">@style/TextAppearance.DeviceDefault.Light</item>
         <item name="textAppearanceInverse">@style/TextAppearance.DeviceDefault.Light.Inverse</item>
-        <item name="textColorPrimary">@color/yi_primary_text_baidu_light</item>
-        <item name="textColorPrimaryDisableOnly">@color/yi_primary_text_disable_only_baidu_light</item>
-        <item name="textColorSecondary">@color/yi_secondary_text_baidu_light</item>
-        <item name="textColorPrimaryInverse">@color/yi_primary_text_baidu_dark</item>
-        <item name="textColorSecondaryInverse">@color/yi_secondary_text_baidu_dark</item>
-        <item name="textColorPrimaryNoDisable">@color/yi_primary_text_nodisable_baidu_light</item>
-        <item name="textColorSecondaryNoDisable">@color/yi_secondary_text_nodisable_baidu_light</item>
-        <item name="textColorPrimaryInverseNoDisable">@color/yi_primary_text_nodisable_baidu_dark</item>
-        <item name="textColorSecondaryInverseNoDisable">@color/yi_secondary_text_nodisable_baidu_dark</item>
-        <item name="textColorHintInverse">@color/yi_hint_foreground_baidu_dark</item>
         <item name="textAppearanceLarge">@style/TextAppearance.DeviceDefault.Light.Large</item>
         <item name="textAppearanceMedium">@style/TextAppearance.DeviceDefault.Light.Medium</item>
         <item name="textAppearanceSmall">@style/TextAppearance.DeviceDefault.Light.Small</item>
@@ -2372,16 +2275,9 @@
         <item name="buttonStyleSmall">@style/Widget.DeviceDefault.Light.Button.Small</item>
         <item name="buttonStyleInset">@style/Widget.DeviceDefault.Light.Button.Inset</item>
         <item name="buttonStyleToggle">@style/Widget.DeviceDefault.Light.Button.Toggle</item>
-        <item name="listPreferredItemHeight">60.0dip</item>
-        <item name="windowBackground">@drawable/yi_window_bg_baidu</item>
-        <item name="windowContentOverlay">@drawable/yi_ab_solid_shadow_baidu</item>
         <item name="windowTitleStyle">@style/WindowTitle.DeviceDefault</item>
         <item name="windowTitleBackgroundStyle">@style/WindowTitleBackground.DeviceDefault</item>
         <item name="alertDialogStyle">@style/AlertDialog.DeviceDefault.Light</item>
-        <item name="panelBackground">@drawable/yi_menu_hardkey_panel_baidu_light</item>
-        <item name="scrollbarSize">8.0dip</item>
-        <item name="scrollbarThumbHorizontal">@drawable/yi_scrollbar_handle_baidu_light</item>
-        <item name="scrollbarThumbVertical">@drawable/yi_scrollbar_handle_baidu_light</item>
         <item name="absListViewStyle">@style/Widget.DeviceDefault.Light.AbsListView</item>
         <item name="autoCompleteTextViewStyle">@style/Widget.DeviceDefault.Light.AutoCompleteTextView</item>
         <item name="checkboxStyle">@style/Widget.DeviceDefault.Light.CompoundButton.CheckBox</item>
@@ -2419,26 +2315,16 @@
         <item name="checkBoxPreferenceStyle">@style/Preference.DeviceDefault.CheckBoxPreference</item>
         <item name="yesNoPreferenceStyle">@style/Preference.DeviceDefault.DialogPreference.YesNoPreference</item>
         <item name="dialogPreferenceStyle">@style/Preference.DeviceDefault.DialogPreference</item>
-        <item name="editTextPreferenceStyle">@style/Preference.DeviceDefault.Light.DialogPreference.EditTextPreference</item>
+        <item name="editTextPreferenceStyle">@style/Preference.DeviceDefault.DialogPreference.EditTextPreference</item>
         <item name="ringtonePreferenceStyle">@style/Preference.DeviceDefault.RingtonePreference</item>
-        <item name="preferenceLayoutChild">@layout/yi_preference_child_baidu</item>
-        <item name="textColorHighlight">@color/yi_highlighted_text_baidu_light</item>
-        <item name="textColorHint">@color/yi_hint_foreground_baidu_light</item>
-        <item name="textColorLink">@color/yi_baidu_blue_light</item>
         <item name="windowAnimationStyle">@style/Animation.DeviceDefault.Activity</item>
         <item name="textAppearanceButton">@style/TextAppearance.DeviceDefault.Light.Widget.Button</item>
         <item name="listSeparatorTextViewStyle">@style/Widget.DeviceDefault.Light.TextView.ListSeparator</item>
         <item name="progressBarStyleSmallTitle">@style/Widget.DeviceDefault.Light.ProgressBar.Small.Title</item>
         <item name="ratingBarStyleIndicator">@style/Widget.DeviceDefault.Light.RatingBar.Indicator</item>
-        <item name="textColorTertiary">@color/yi_tertiary_text_baidu_light</item>
-        <item name="textColorTertiaryInverse">@color/yi_tertiary_text_baidu_dark</item>
-        <item name="listDivider">@drawable/yi_list_divider_baidu_light</item>
-        <item name="listChoiceIndicatorSingle">@drawable/yi_btn_radio_baidu_light</item>
-        <item name="listChoiceIndicatorMultiple">@drawable/yi_btn_check_baidu_light</item>
         <item name="progressBarStyleInverse">@style/Widget.DeviceDefault.Light.ProgressBar.Inverse</item>
         <item name="progressBarStyleSmallInverse">@style/Widget.DeviceDefault.Light.ProgressBar.Small.Inverse</item>
         <item name="progressBarStyleLargeInverse">@style/Widget.DeviceDefault.Light.ProgressBar.Large.Inverse</item>
-        <item name="textColorPrimaryInverseDisableOnly">@color/yi_primary_text_disable_only_baidu_dark</item>
         <item name="textAppearanceSearchResultSubtitle">@style/TextAppearance.DeviceDefault.Light.SearchResult.Subtitle</item>
         <item name="textAppearanceSearchResultTitle">@style/TextAppearance.DeviceDefault.Light.SearchResult.Title</item>
         <item name="quickContactBadgeStyleWindowSmall">@style/Widget.DeviceDefault.QuickContactBadge.WindowSmall</item>
@@ -2454,515 +2340,187 @@
         <item name="dropDownSpinnerStyle">@style/Widget.DeviceDefault.Light.Spinner.DropDown</item>
         <item name="actionDropDownStyle">@style/Widget.DeviceDefault.Light.Spinner.DropDown.ActionBar</item>
         <item name="actionButtonStyle">@style/Widget.DeviceDefault.Light.ActionButton</item>
-        <item name="actionModeBackground">@drawable/yi_cab_background_top_baidu_light</item>
-        <item name="actionModeCloseDrawable">@drawable/yi_ic_cab_done_baidu_light</item>
-        <item name="actionBarSize">@dimen/yi_action_bar_default_height</item>
-        <item name="listChoiceBackgroundIndicator">@drawable/yi_list_selector_baidu_light</item>
         <item name="actionBarTabStyle">@style/Widget.DeviceDefault.Light.ActionBar.TabView</item>
         <item name="actionBarTabBarStyle">@style/Widget.DeviceDefault.Light.ActionBar.TabBar</item>
         <item name="actionBarTabTextStyle">@style/Widget.DeviceDefault.Light.ActionBar.TabText</item>
         <item name="actionOverflowButtonStyle">@style/Widget.DeviceDefault.Light.ActionButton.Overflow</item>
         <item name="actionModeCloseButtonStyle">@style/Widget.DeviceDefault.Light.ActionButton.CloseMode</item>
-        <item name="activatedBackgroundIndicator">@drawable/yi_activated_background_baidu_light</item>
         <item name="listPopupWindowStyle">@style/Widget.DeviceDefault.Light.ListPopupWindow</item>
         <item name="popupMenuStyle">@style/Widget.DeviceDefault.Light.PopupMenu</item>
         <item name="textAppearanceLargePopupMenu">@style/TextAppearance.DeviceDefault.Light.Widget.PopupMenu.Large</item>
         <item name="textAppearanceSmallPopupMenu">@style/TextAppearance.DeviceDefault.Light.Widget.PopupMenu.Small</item>
-        <item name="listDividerAlertDialog">@drawable/yi_list_divider_baidu_light</item>
-        <item name="textColorAlertDialogListItem">@color/yi_primary_text_baidu_light</item>
         <item name="dialogTheme">@style/Theme.DeviceDefault.Light.Dialog</item>
         <item name="alertDialogTheme">@style/Theme.DeviceDefault.Light.Dialog.Alert</item>
-        <item name="dividerVertical">@drawable/yi_divider_vertical_baidu_light</item>
-        <item name="homeAsUpIndicator">@drawable/yi_ic_ab_back_baidu_light</item>
-        <item name="selectableItemBackground">@drawable/yi_item_background_baidu_light</item>
-        <item name="actionModeCutDrawable">@null</item>
-        <item name="actionModeCopyDrawable">@null</item>
-        <item name="actionModePasteDrawable">@null</item>
         <item name="borderlessButtonStyle">@style/Widget.DeviceDefault.Light.Button.Borderless</item>
         <item name="buttonBarStyle">@style/DeviceDefault.Light.ButtonBar</item>
         <item name="segmentedButtonStyle">@style/DeviceDefault.Light.SegmentedButton</item>
-        <item name="fastScrollThumbDrawable">@drawable/yi_fastscroll_thumb_baidu</item>
-        <item name="fastScrollPreviewBackgroundLeft">@drawable/yi_fastscroll_label_left_baidu_light</item>
-        <item name="fastScrollPreviewBackgroundRight">@drawable/yi_fastscroll_label_right_baidu_light</item>
-        <item name="fastScrollTrackDrawable">@drawable/yi_fastscroll_track_baidu_light</item>
-        <item name="textColorHighlightInverse">@color/yi_highlighted_text_baidu_dark</item>
-        <item name="textColorLinkInverse">@color/yi_baidu_blue_light</item>
-        <item name="editTextColor">@color/yi_edit_text_color_baidu_light</item>
-        <item name="editTextBackground">@drawable/yi_edit_text_baidu_light</item>
         <item name="horizontalScrollViewStyle">@style/Widget.DeviceDefault.Light.HorizontalScrollView</item>
-        <item name="alertDialogIcon">@drawable/yi_ic_dialog_alert_baidu_light</item>
         <item name="datePickerStyle">@style/Widget.DeviceDefault.Light.DatePicker</item>
         <item name="calendarViewStyle">@style/Widget.DeviceDefault.Light.CalendarView</item>
-        <item name="actionMenuTextAppearance">@style/TextAppearance.DeviceDefault.Widget.ActionBar.Menu</item>
-        <item name="textCursorDrawable">@drawable/text_cursor_holo_light</item>
         <item name="switchPreferenceStyle">@style/Preference.DeviceDefault.SwitchPreference</item>
         <item name="textSuggestionsWindowStyle">@style/Widget.DeviceDefault.Light.TextSuggestionsPopupWindow</item>
-        <item name="actionModeSelectAllDrawable">@null</item>
-        <item name="listPreferredItemHeightLarge">80.0dip</item>
-        <item name="listPreferredItemHeightSmall">52.0dip</item>
         <item name="actionModeStyle">@style/Widget.DeviceDefault.Light.ActionMode</item>
-        <item name="actionModeSplitBackground">@drawable/yi_cab_background_bottom_baidu_light</item>
         <item name="mediaRouteButtonStyle">@style/Widget.DeviceDefault.Light.MediaRouteButton</item>
-        <item name="errorMessageBackground">@drawable/yi_popup_inline_error_baidu_light</item>
-        <item name="errorMessageAboveBackground">@drawable/yi_popup_inline_error_above_baidu_light</item>
-        <item name="panelMenuListTheme">@style/Theme.DeviceDefault.Light.CompactMenu</item>
         <item name="gestureOverlayViewStyle">@style/Widget.DeviceDefault.Light.GestureOverlayView</item>
         <item name="stackViewStyle">@style/Widget.DeviceDefault.StackView</item>
         <item name="numberPickerStyle">@style/Widget.DeviceDefault.Light.NumberPicker</item>
         <item name="timePickerStyle">@style/Widget.DeviceDefault.Light.TimePicker</item>
-        <item name="activityChooserViewStyle">@style/Widget.DeviceDefault.Light.ActivityChooserView</item>
-        <item name="actionModeShareDrawable">@null</item>
-        <item name="actionModeFindDrawable">@null</item>
-        <item name="actionModeWebSearchDrawable">@drawable/yi_ic_menu_search_baidu_dark</item>
         <item name="actionModePopupWindowStyle">@style/Widget.DeviceDefault.Light.PopupWindow.ActionMode</item>
-        <item name="dialogTitleIconsDecorLayout">@layout/yi_dialog_title_icons_baidu</item>
-        <item name="dialogCustomTitleDecorLayout">@layout/yi_dialog_custom_title_baidu</item>
-        <item name="dialogTitleDecorLayout">@layout/yi_dialog_title_baidu</item>
-        <item name="toastFrameBackground">@drawable/yi_toast_frame_baidu</item>
-        <item name="searchViewCloseIcon">@drawable/yi_ic_clear_baidu_light</item>
-        <item name="searchViewGoIcon">@drawable/yi_ic_go_search_api_baidu_light</item>
-        <item name="searchViewSearchIcon">@drawable/yi_ic_search_api_baidu_light</item>
-        <item name="searchViewVoiceIcon">@drawable/yi_ic_voice_search_api_baidu_light</item>
-        <item name="searchViewEditQuery">@drawable/yi_ic_commit_search_api_baidu_light</item>
-        <item name="searchViewTextField">@drawable/yi_textfield_searchview_baidu_light</item>
-        <item name="searchViewTextFieldRight">@drawable/yi_textfield_searchview_right_baidu_light</item>
         <item name="searchDialogTheme">@style/Theme.DeviceDefault.Light.SearchBar</item>
-        <item name="preferenceFrameLayoutStyle">@style/Widget.DeviceDefault.PreferenceFrameLayout</item>
-        <item name="switchStyle">@style/Widget.DeviceDefault.Light.CompoundButton.Switch</item>
         <item name="keyboardViewStyle">@style/Widget.DeviceDefault.KeyboardView</item>
     </style>
-    <style name="Theme.DeviceDefault.Light.NoActionBar" parent="@style/Theme.DeviceDefault.Light">
-        <item name="windowNoTitle">true</item>
-        <item name="windowActionBar">false</item>
-    </style>
-    <style name="Theme.DeviceDefault.Light.NoActionBar.Fullscreen" parent="@style/Theme.DeviceDefault.Light.NoActionBar">
-        <item name="windowContentOverlay">@null</item>
-        <item name="windowFullscreen">true</item>
-    </style>
-    <style name="Theme.DeviceDefault.Dialog" parent="@style/Theme.DeviceDefault">
+    <style name="Theme.DeviceDefault.Light.NoActionBar" parent="@style/Theme.Holo.Light.NoActionBar" />
+    <style name="Theme.DeviceDefault.Light.NoActionBar.Fullscreen" parent="@style/Theme.Holo.Light.NoActionBar.Fullscreen" />
+    <style name="Theme.DeviceDefault.Dialog" parent="@style/Theme.Holo.Dialog">
         <item name="textAppearance">@style/TextAppearance.DeviceDefault</item>
         <item name="textAppearanceInverse">@style/TextAppearance.DeviceDefault.Inverse</item>
-        <item name="windowBackground">@drawable/yi_dialog_full_baidu_dark</item>
-        <item name="windowFrame">@null</item>
-        <item name="windowIsFloating">true</item>
-        <item name="windowContentOverlay">@null</item>
         <item name="windowTitleStyle">@style/DialogWindowTitle.DeviceDefault</item>
         <item name="windowAnimationStyle">@style/Animation.DeviceDefault.Dialog</item>
-        <item name="windowSoftInputMode">adjustPan</item>
-        <item name="colorBackgroundCacheHint">@null</item>
-        <item name="windowActionBar">false</item>
-        <item name="windowActionModeOverlay">true</item>
         <item name="borderlessButtonStyle">@style/Widget.DeviceDefault.Button.Borderless.Small</item>
         <item name="buttonBarStyle">@style/DeviceDefault.ButtonBar.AlertDialog</item>
-        <item name="windowCloseOnTouchOutside">@bool/config_closeDialogWhenTouchOutside</item>
-        <item name="listPreferredItemPaddingLeft">16.0dip</item>
-        <item name="listPreferredItemPaddingRight">16.0dip</item>
     </style>
-    <style name="Theme.DeviceDefault.Dialog.MinWidth" parent="@style/Theme.DeviceDefault.Dialog">
-        <item name="windowMinWidthMajor">@dimen/dialog_min_width_major</item>
-        <item name="windowMinWidthMinor">@dimen/dialog_min_width_minor</item>
-    </style>
-    <style name="Theme.DeviceDefault.Dialog.NoActionBar" parent="@style/Theme.DeviceDefault.Dialog">
-        <item name="windowNoTitle">true</item>
-        <item name="windowActionBar">false</item>
-    </style>
-    <style name="Theme.DeviceDefault.Dialog.NoActionBar.MinWidth" parent="@style/Theme.DeviceDefault.Dialog.NoActionBar">
-        <item name="windowMinWidthMajor">@dimen/dialog_min_width_major</item>
-        <item name="windowMinWidthMinor">@dimen/dialog_min_width_minor</item>
-    </style>
-    <style name="Theme.DeviceDefault.Light.Dialog" parent="@style/Theme.DeviceDefault.Light">
+    <style name="Theme.DeviceDefault.Dialog.MinWidth" parent="@style/Theme.Holo.Dialog.MinWidth" />
+    <style name="Theme.DeviceDefault.Dialog.NoActionBar" parent="@style/Theme.Holo.Dialog.NoActionBar" />
+    <style name="Theme.DeviceDefault.Dialog.NoActionBar.MinWidth" parent="@style/Theme.Holo.Dialog.NoActionBar.MinWidth" />
+    <style name="Theme.DeviceDefault.Light.Dialog" parent="@style/Theme.Holo.Light.Dialog">
         <item name="textAppearance">@style/TextAppearance.DeviceDefault.Light</item>
         <item name="textAppearanceInverse">@style/TextAppearance.DeviceDefault.Light.Inverse</item>
-        <item name="windowBackground">@drawable/yi_dialog_full_light</item>
-        <item name="windowFrame">@null</item>
-        <item name="windowIsFloating">true</item>
-        <item name="windowContentOverlay">@null</item>
         <item name="windowTitleStyle">@style/DialogWindowTitle.DeviceDefault.Light</item>
         <item name="windowAnimationStyle">@style/Animation.DeviceDefault.Dialog</item>
-        <item name="windowSoftInputMode">adjustPan</item>
-        <item name="colorBackgroundCacheHint">@null</item>
-        <item name="windowActionBar">false</item>
-        <item name="windowActionModeOverlay">true</item>
-        <item name="borderlessButtonStyle">@style/Widget.DeviceDefault.Light.Button.Borderless</item>
+        <item name="borderlessButtonStyle">@style/Widget.DeviceDefault.Light.Button.Borderless.Small</item>
         <item name="buttonBarStyle">@style/DeviceDefault.Light.ButtonBar.AlertDialog</item>
-        <item name="windowCloseOnTouchOutside">@bool/config_closeDialogWhenTouchOutside</item>
-        <item name="listPreferredItemPaddingLeft">16.0dip</item>
-        <item name="listPreferredItemPaddingRight">16.0dip</item>
     </style>
-    <style name="Theme.DeviceDefault.Light.Dialog.MinWidth" parent="@style/Theme.DeviceDefault.Light.Dialog">
-        <item name="windowMinWidthMajor">@dimen/dialog_min_width_major</item>
-        <item name="windowMinWidthMinor">@dimen/dialog_min_width_minor</item>
-    </style>
-    <style name="Theme.DeviceDefault.Light.Dialog.NoActionBar" parent="@style/Theme.DeviceDefault.Light.Dialog">
-        <item name="windowNoTitle">true</item>
-        <item name="windowActionBar">false</item>
-    </style>
-    <style name="Theme.DeviceDefault.Light.Dialog.NoActionBar.MinWidth" parent="@style/Theme.DeviceDefault.Light.Dialog.NoActionBar">
-        <item name="windowMinWidthMajor">@dimen/dialog_min_width_major</item>
-        <item name="windowMinWidthMinor">@dimen/dialog_min_width_minor</item>
-    </style>
-    <style name="Theme.DeviceDefault.DialogWhenLarge" parent="@style/Theme.DeviceDefault" />
-    <style name="Theme.DeviceDefault.DialogWhenLarge.NoActionBar" parent="@style/Theme.DeviceDefault.NoActionBar" />
-    <style name="Theme.DeviceDefault.Light.DialogWhenLarge" parent="@style/Theme.DeviceDefault.Light" />
-    <style name="Theme.DeviceDefault.Light.DialogWhenLarge.NoActionBar" parent="@style/Theme.DeviceDefault.Light.NoActionBar" />
-    <style name="Theme.DeviceDefault.Panel" parent="@style/Theme.DeviceDefault">
-        <item name="windowBackground">@color/transparent</item>
-        <item name="windowFrame">@null</item>
-        <item name="windowNoTitle">true</item>
-        <item name="windowIsFloating">true</item>
-        <item name="windowIsTranslucent">true</item>
-        <item name="windowContentOverlay">@null</item>
-        <item name="windowAnimationStyle">@null</item>
-        <item name="backgroundDimEnabled">false</item>
-        <item name="colorBackgroundCacheHint">@null</item>
-    </style>
-    <style name="Theme.DeviceDefault.Light.Panel" parent="@style/Theme.DeviceDefault.Light">
-        <item name="windowBackground">@color/transparent</item>
-        <item name="windowFrame">@null</item>
-        <item name="windowNoTitle">true</item>
-        <item name="windowIsFloating">true</item>
-        <item name="windowIsTranslucent">true</item>
-        <item name="windowContentOverlay">@null</item>
-        <item name="windowAnimationStyle">@null</item>
-        <item name="backgroundDimEnabled">false</item>
-        <item name="colorBackgroundCacheHint">@null</item>
-    </style>
-    <style name="Theme.DeviceDefault.Wallpaper" parent="@style/Theme.DeviceDefault">
-        <item name="windowBackground">@color/transparent</item>
-        <item name="windowShowWallpaper">true</item>
-        <item name="colorBackgroundCacheHint">@null</item>
-    </style>
-    <style name="Theme.DeviceDefault.Wallpaper.NoTitleBar" parent="@style/Theme.DeviceDefault.Wallpaper">
-        <item name="windowNoTitle">true</item>
-    </style>
-    <style name="Theme.DeviceDefault.InputMethod" parent="@style/Theme.DeviceDefault.Light.Panel">
-        <item name="windowAnimationStyle">@style/Animation.InputMethod</item>
-        <item name="imeFullscreenBackground">@drawable/screen_background_selector_light</item>
-        <item name="imeExtractEnterAnimation">@anim/input_method_extract_enter</item>
-        <item name="imeExtractExitAnimation">@anim/input_method_extract_exit</item>
-    </style>
-    <style name="Theme.DeviceDefault.Light.DarkActionBar" parent="@style/Theme.DeviceDefault.Light">
+    <style name="Theme.DeviceDefault.Light.Dialog.MinWidth" parent="@style/Theme.Holo.Light.Dialog.MinWidth" />
+    <style name="Theme.DeviceDefault.Light.Dialog.NoActionBar" parent="@style/Theme.Holo.Light.Dialog.NoActionBar" />
+    <style name="Theme.DeviceDefault.Light.Dialog.NoActionBar.MinWidth" parent="@style/Theme.Holo.Light.Dialog.NoActionBar.MinWidth" />
+    <style name="Theme.DeviceDefault.DialogWhenLarge" parent="@style/Theme.Holo.DialogWhenLarge" />
+    <style name="Theme.DeviceDefault.DialogWhenLarge.NoActionBar" parent="@style/Theme.Holo.DialogWhenLarge.NoActionBar" />
+    <style name="Theme.DeviceDefault.Light.DialogWhenLarge" parent="@style/Theme.Holo.Light.DialogWhenLarge" />
+    <style name="Theme.DeviceDefault.Light.DialogWhenLarge.NoActionBar" parent="@style/Theme.Holo.Light.DialogWhenLarge.NoActionBar" />
+    <style name="Theme.DeviceDefault.Panel" parent="@style/Theme.Holo.Panel" />
+    <style name="Theme.DeviceDefault.Light.Panel" parent="@style/Theme.Holo.Light.Panel" />
+    <style name="Theme.DeviceDefault.Wallpaper" parent="@style/Theme.Holo.Wallpaper" />
+    <style name="Theme.DeviceDefault.Wallpaper.NoTitleBar" parent="@style/Theme.Holo.Wallpaper.NoTitleBar" />
+    <style name="Theme.DeviceDefault.InputMethod" parent="@style/Theme.Holo.InputMethod" />
+    <style name="Theme.DeviceDefault.Light.DarkActionBar" parent="@style/Theme.Holo.Light.DarkActionBar">
         <item name="actionBarStyle">@style/Widget.DeviceDefault.Light.ActionBar.Solid.Inverse</item>
-        <item name="actionDropDownStyle">@style/Widget.DeviceDefault.Light.Spinner.DropDown.DarkActionBar</item>
+        <item name="actionDropDownStyle">@style/Widget.DeviceDefault.Spinner.DropDown.ActionBar</item>
         <item name="actionButtonStyle">@style/Widget.DeviceDefault.ActionButton</item>
-        <item name="actionModeBackground">@drawable/yi_cab_background_top_inverse_baidu</item>
-        <item name="actionModeCloseDrawable">@drawable/yi_ic_cab_done_baidu_dark</item>
-        <item name="actionBarTabStyle">@style/Widget.DeviceDefault.Light.ActionBar.TabView</item>
+        <item name="actionBarTabStyle">@style/Widget.DeviceDefault.Light.ActionBar.TabView.Inverse</item>
         <item name="actionBarTabBarStyle">@style/Widget.DeviceDefault.Light.ActionBar.TabBar.Inverse</item>
-        <item name="actionBarTabTextStyle">@style/Widget.DeviceDefault.Light.ActionBar.TabText</item>
+        <item name="actionBarTabTextStyle">@style/Widget.DeviceDefault.Light.ActionBar.TabText.Inverse</item>
         <item name="actionOverflowButtonStyle">@style/Widget.DeviceDefault.ActionButton.Overflow</item>
         <item name="actionModeCloseButtonStyle">@style/Widget.DeviceDefault.ActionButton.CloseMode</item>
-        <item name="homeAsUpIndicator">@drawable/yi_ic_ab_back_baidu_dark</item>
-        <item name="actionMenuTextAppearance">@style/TextAppearance.DeviceDefault.Widget.ActionBar.Menu</item>
-        <item name="actionMenuTextColor">?textColorPrimaryInverse</item>
         <item name="actionModeStyle">@style/Widget.DeviceDefault.Light.ActionMode.Inverse</item>
-        <item name="actionBarDivider">?dividerVertical</item>
-        <item name="actionBarItemBackground">@drawable/yi_ab_item_background_baidu_light</item>
-        <item name="actionModeSplitBackground">@drawable/yi_cab_background_bottom_inverse_baidu</item>
         <item name="actionModePopupWindowStyle">@style/Widget.DeviceDefault.PopupWindow.ActionMode</item>
     </style>
     <style name="Widget.DeviceDefault" parent="@style/Widget.Holo" />
-    <style name="Widget.DeviceDefault.Button" parent="@style/Widget.Holo.Button">
-        <item name="background">@drawable/yi_btn_default_baidu_dark</item>
-    </style>
-    <style name="Widget.DeviceDefault.Button.Small" parent="@style/Widget.Holo.Button.Small">
-        <item name="background">@drawable/yi_btn_default_baidu_dark</item>
-    </style>
+    <style name="Widget.DeviceDefault.Button" parent="@style/Widget.Holo.Button" />
+    <style name="Widget.DeviceDefault.Button.Small" parent="@style/Widget.Holo.Button.Small" />
     <style name="Widget.DeviceDefault.Button.Inset" parent="@style/Widget.Holo.Button.Inset" />
-    <style name="Widget.DeviceDefault.Button.Toggle" parent="@style/Widget.Holo.Button.Toggle">
-        <item name="background">@drawable/yi_btn_toggle_baidu_dark</item>
-    </style>
+    <style name="Widget.DeviceDefault.Button.Toggle" parent="@style/Widget.Holo.Button.Toggle" />
     <style name="Widget.DeviceDefault.Button.Borderless.Small" parent="@style/Widget.Holo.Button.Borderless.Small" />
     <style name="Widget.DeviceDefault.TextView" parent="@style/Widget.Holo.TextView" />
-    <style name="Widget.DeviceDefault.AutoCompleteTextView" parent="@style/Widget.Holo.AutoCompleteTextView">
-        <item name="dropDownSelector">@drawable/yi_list_selector_baidu_dark</item>
-        <item name="popupBackground">@drawable/yi_menu_dropdown_panel_baidu_dark</item>
-    </style>
+    <style name="Widget.DeviceDefault.AutoCompleteTextView" parent="@style/Widget.Holo.AutoCompleteTextView" />
     <style name="Widget.DeviceDefault.CompoundButton.CheckBox" parent="@style/Widget.Holo.CompoundButton.CheckBox" />
     <style name="Widget.DeviceDefault.ListView.DropDown" parent="@style/Widget.Holo.ListView.DropDown" />
-    <style name="Widget.DeviceDefault.EditText" parent="@style/Widget.Holo.EditText">
-        <item name="textColorHighlight">@color/yi_highlighted_text_baidu_dark</item>
-    </style>
-    <style name="Widget.DeviceDefault.ExpandableListView" parent="@style/Widget.Holo.ExpandableListView">
-        <item name="groupIndicator">@drawable/yi_expander_group_baidu_dark</item>
-    </style>
+    <style name="Widget.DeviceDefault.EditText" parent="@style/Widget.Holo.EditText" />
+    <style name="Widget.DeviceDefault.ExpandableListView" parent="@style/Widget.Holo.ExpandableListView" />
     <style name="Widget.DeviceDefault.GridView" parent="@style/Widget.Holo.GridView" />
-    <style name="Widget.DeviceDefault.ImageButton" parent="@style/Widget.Holo.ImageButton">
-        <item name="background">@drawable/yi_btn_default_baidu_dark</item>
-    </style>
+    <style name="Widget.DeviceDefault.ImageButton" parent="@style/Widget.Holo.ImageButton" />
     <style name="Widget.DeviceDefault.ListView" parent="@style/Widget.Holo.ListView" />
     <style name="Widget.DeviceDefault.PopupWindow" parent="@style/Widget.Holo.PopupWindow" />
-    <style name="Widget.DeviceDefault.ProgressBar" parent="@style/Widget.Holo.ProgressBar">
-        <item name="indeterminateDrawable">@drawable/yi_progress_medium_baidu_dark</item>
-    </style>
-    <style name="Widget.DeviceDefault.ProgressBar.Horizontal" parent="@style/Widget.Holo.ProgressBar.Horizontal">
-        <item name="indeterminateDrawable">@drawable/yi_progress_indeterminate_horizontal_baidu</item>
-        <item name="progressDrawable">@drawable/yi_progress_horizontal_baidu_dark</item>
-    </style>
-    <style name="Widget.DeviceDefault.ProgressBar.Small" parent="@style/Widget.Holo.ProgressBar.Small">
-        <item name="indeterminateDrawable">@drawable/yi_progress_small_baidu_dark</item>
-    </style>
-    <style name="Widget.DeviceDefault.ProgressBar.Small.Title" parent="@style/Widget.DeviceDefault.ProgressBar.Small" />
-    <style name="Widget.DeviceDefault.ProgressBar.Large" parent="@style/Widget.Holo.ProgressBar.Large">
-        <item name="indeterminateDrawable">@drawable/yi_progress_large_baidu_dark</item>
-    </style>
-    <style name="Widget.DeviceDefault.SeekBar" parent="@style/Widget.Holo.SeekBar">
-        <item name="indeterminateDrawable">@drawable/yi_scrubber_progress_horizontal_baidu_dark</item>
-        <item name="progressDrawable">@drawable/yi_scrubber_progress_horizontal_baidu_dark</item>
-        <item name="thumb">@drawable/yi_scrubber_control_selector_baidu</item>
-    </style>
-    <style name="Widget.DeviceDefault.RatingBar" parent="@style/Widget.Holo.RatingBar">
-        <item name="indeterminateDrawable">@drawable/yi_ratingbar_full_baidu_dark</item>
-        <item name="progressDrawable">@drawable/yi_ratingbar_full_baidu_dark</item>
-    </style>
-    <style name="Widget.DeviceDefault.RatingBar.Indicator" parent="@style/Widget.Holo.RatingBar.Indicator">
-        <item name="indeterminateDrawable">@drawable/yi_ratingbar_baidu_dark</item>
-        <item name="progressDrawable">@drawable/yi_ratingbar_baidu_dark</item>
-    </style>
-    <style name="Widget.DeviceDefault.RatingBar.Small" parent="@style/Widget.Holo.RatingBar.Small">
-        <item name="indeterminateDrawable">@drawable/yi_ratingbar_small_baidu_dark</item>
-        <item name="progressDrawable">@drawable/yi_ratingbar_small_baidu_dark</item>
-    </style>
+    <style name="Widget.DeviceDefault.ProgressBar" parent="@style/Widget.Holo.ProgressBar" />
+    <style name="Widget.DeviceDefault.ProgressBar.Horizontal" parent="@style/Widget.Holo.ProgressBar.Horizontal" />
+    <style name="Widget.DeviceDefault.ProgressBar.Small" parent="@style/Widget.Holo.ProgressBar.Small" />
+    <style name="Widget.DeviceDefault.ProgressBar.Small.Title" parent="@style/Widget.Holo.ProgressBar.Small.Title" />
+    <style name="Widget.DeviceDefault.ProgressBar.Large" parent="@style/Widget.Holo.ProgressBar.Large" />
+    <style name="Widget.DeviceDefault.SeekBar" parent="@style/Widget.Holo.SeekBar" />
+    <style name="Widget.DeviceDefault.RatingBar" parent="@style/Widget.Holo.RatingBar" />
+    <style name="Widget.DeviceDefault.RatingBar.Indicator" parent="@style/Widget.Holo.RatingBar.Indicator" />
+    <style name="Widget.DeviceDefault.RatingBar.Small" parent="@style/Widget.Holo.RatingBar.Small" />
     <style name="Widget.DeviceDefault.CompoundButton.RadioButton" parent="@style/Widget.Holo.CompoundButton.RadioButton" />
     <style name="Widget.DeviceDefault.ScrollView" parent="@style/Widget.Holo.ScrollView" />
     <style name="Widget.DeviceDefault.HorizontalScrollView" parent="@style/Widget.Holo.HorizontalScrollView" />
-    <style name="Widget.DeviceDefault.Spinner" parent="@style/Widget.Holo.Spinner">
-        <item name="background">@drawable/yi_spinner_background_baidu_dark</item>
-        <item name="dropDownSelector">@drawable/yi_list_selector_baidu_dark</item>
-        <item name="popupBackground">@drawable/yi_menu_dropdown_panel_baidu_dark</item>
-    </style>
-    <style name="Widget.DeviceDefault.CompoundButton.Star" parent="@style/Widget.Holo.CompoundButton.Star">
-        <item name="button">@drawable/yi_btn_star_baidu_dark</item>
-    </style>
-    <style name="Widget.DeviceDefault.TabWidget" parent="@style/Widget.Holo.TabWidget">
-        <item name="showDividers">none</item>
-        <item name="tabLayout">@layout/yi_tab_indicator_baidu</item>
-    </style>
+    <style name="Widget.DeviceDefault.Spinner" parent="@style/Widget.Holo.Spinner" />
+    <style name="Widget.DeviceDefault.CompoundButton.Star" parent="@style/Widget.Holo.CompoundButton.Star" />
+    <style name="Widget.DeviceDefault.TabWidget" parent="@style/Widget.Holo.TabWidget" />
     <style name="Widget.DeviceDefault.WebTextView" parent="@style/Widget.Holo.WebTextView" />
     <style name="Widget.DeviceDefault.WebView" parent="@style/Widget.Holo.WebView" />
     <style name="Widget.DeviceDefault.DropDownItem" parent="@style/Widget.Holo.DropDownItem" />
     <style name="Widget.DeviceDefault.DropDownItem.Spinner" parent="@style/Widget.Holo.DropDownItem.Spinner" />
-    <style name="Widget.DeviceDefault.TextView.SpinnerItem" parent="@style/Widget.Holo.TextView.SpinnerItem">
-        <item name="textColor">?textColorPrimary</item>
-    </style>
-    <style name="Widget.DeviceDefault.ListPopupWindow" parent="@style/Widget.Holo.ListPopupWindow">
-        <item name="dropDownSelector">@drawable/yi_list_selector_baidu_dark</item>
-        <item name="popupBackground">@drawable/yi_menu_dropdown_panel_baidu_dark</item>
-    </style>
-    <style name="Widget.DeviceDefault.PopupMenu" parent="@style/Widget.Holo.PopupMenu">
-        <item name="dropDownSelector">@drawable/yi_list_selector_baidu_dark</item>
-        <item name="popupBackground">@drawable/yi_menu_dropdown_panel_baidu_dark</item>
-    </style>
+    <style name="Widget.DeviceDefault.TextView.SpinnerItem" parent="@style/Widget.Holo.TextView.SpinnerItem" />
+    <style name="Widget.DeviceDefault.ListPopupWindow" parent="@style/Widget.Holo.ListPopupWindow" />
+    <style name="Widget.DeviceDefault.PopupMenu" parent="@style/Widget.Holo.PopupMenu" />
     <style name="Widget.DeviceDefault.ActionButton" parent="@style/Widget.Holo.ActionButton" />
-    <style name="Widget.DeviceDefault.ActionButton.Overflow" parent="@style/Widget.Holo.ActionButton.Overflow">
-        <item name="src">@drawable/yi_ic_menu_moreoverflow_baidu_light</item>
-    </style>
+    <style name="Widget.DeviceDefault.ActionButton.Overflow" parent="@style/Widget.Holo.ActionButton.Overflow" />
     <style name="Widget.DeviceDefault.ActionButton.TextButton" parent="@style/Widget.Holo.ActionButton.TextButton" />
     <style name="Widget.DeviceDefault.ActionMode" parent="@style/Widget.Holo.ActionMode" />
-    <style name="Widget.DeviceDefault.ActionButton.CloseMode" parent="@style/Widget.Holo.ActionButton.CloseMode">
-        <item name="background">@drawable/yi_btn_cab_done_baidu_dark</item>
-    </style>
-    <style name="Widget.DeviceDefault.ActionBar" parent="@style/Widget.Holo.ActionBar">
-        <item name="progressBarStyle">@style/Widget.DeviceDefault.ProgressBar.Horizontal</item>
-        <item name="background">@drawable/yi_ab_transparent_dark_baidu</item>
-        <item name="indeterminateProgressStyle">@style/Widget.DeviceDefault.ProgressBar</item>
-        <item name="backgroundStacked">@drawable/yi_ab_stacked_transparent_dark_baidu</item>
-        <item name="backgroundSplit">@drawable/yi_ab_bottom_transparent_dark_baidu</item>
-    </style>
+    <style name="Widget.DeviceDefault.ActionButton.CloseMode" parent="@style/Widget.Holo.ActionButton.CloseMode" />
+    <style name="Widget.DeviceDefault.ActionBar" parent="@style/Widget.Holo.ActionBar" />
     <style name="Widget.DeviceDefault.Button.Borderless" parent="@style/Widget.Holo.Button.Borderless" />
-    <style name="Widget.DeviceDefault.Tab" parent="@style/Widget.Holo.Tab">
-        <item name="background">@drawable/yi_tab_indicator_baidu</item>
-    </style>
-    <style name="Widget.DeviceDefault.CalendarView" parent="@style/Widget.Holo.CalendarView">
-        <item name="selectedDateVerticalBar">@drawable/yi_day_picker_week_view_dayline_baidu</item>
-    </style>
+    <style name="Widget.DeviceDefault.Tab" parent="@style/Widget.Holo.Tab" />
+    <style name="Widget.DeviceDefault.CalendarView" parent="@style/Widget.Holo.CalendarView" />
     <style name="Widget.DeviceDefault.DatePicker" parent="@style/Widget.Holo.DatePicker" />
-    <style name="Widget.DeviceDefault.ActionBar.TabView" parent="@style/Widget.Holo.ActionBar.TabView">
-        <item name="background">@drawable/yi_tab_indicator_ab_baidu</item>
-    </style>
-    <style name="Widget.DeviceDefault.ActionBar.TabText" parent="@style/Widget.Holo.ActionBar.TabText">
-        <item name="textStyle">normal</item>
-    </style>
-    <style name="Widget.DeviceDefault.ActionBar.TabBar" parent="@style/Widget.Holo.ActionBar.TabBar">
-        <item name="showDividers">none</item>
-    </style>
-    <style name="Widget.DeviceDefault.ActionBar.Solid" parent="@style/Widget.Holo.ActionBar.Solid">
-        <item name="progressBarStyle">@style/Widget.DeviceDefault.ProgressBar.Horizontal</item>
-        <item name="background">@drawable/yi_ab_solid_dark_baidu</item>
-        <item name="indeterminateProgressStyle">@style/Widget.DeviceDefault.ProgressBar</item>
-        <item name="backgroundStacked">@drawable/yi_ab_stacked_solid_dark_baidu</item>
-        <item name="backgroundSplit">@drawable/yi_ab_bottom_solid_dark_baidu</item>
-    </style>
+    <style name="Widget.DeviceDefault.ActionBar.TabView" parent="@style/Widget.Holo.ActionBar.TabView" />
+    <style name="Widget.DeviceDefault.ActionBar.TabText" parent="@style/Widget.Holo.ActionBar.TabText" />
+    <style name="Widget.DeviceDefault.ActionBar.TabBar" parent="@style/Widget.Holo.ActionBar.TabBar" />
+    <style name="Widget.DeviceDefault.ActionBar.Solid" parent="@style/Widget.Holo.ActionBar.Solid" />
     <style name="Widget.DeviceDefault.Light" parent="@style/Widget.Holo.Light" />
-    <style name="Widget.DeviceDefault.Light.Button" parent="@style/Widget.Holo.Light.Button">
-        <item name="textColor">?textColorPrimary</item>
-        <item name="background">@drawable/yi_btn_default_baidu_light</item>
-        <item name="minHeight">42.0dip</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.Button.Small" parent="@style/Widget.Holo.Light.Button.Small">
-        <item name="textColor">?textColorPrimary</item>
-        <item name="background">@drawable/yi_btn_default_baidu_light</item>
-        <item name="minHeight">42.0dip</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.Button" parent="@style/Widget.Holo.Light.Button" />
+    <style name="Widget.DeviceDefault.Light.Button.Small" parent="@style/Widget.Holo.Light.Button.Small" />
     <style name="Widget.DeviceDefault.Light.Button.Inset" parent="@style/Widget.Holo.Light.Button.Inset" />
-    <style name="Widget.DeviceDefault.Light.Button.Toggle" parent="@style/Widget.Holo.Light.Button.Toggle">
-        <item name="textColor">?textColorPrimary</item>
-        <item name="background">@drawable/yi_btn_toggle_baidu_light</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.Button.Toggle" parent="@style/Widget.Holo.Light.Button.Toggle" />
     <style name="Widget.DeviceDefault.Light.Button.Borderless.Small" parent="@style/Widget.Holo.Light.Button.Borderless.Small" />
     <style name="Widget.DeviceDefault.Light.TextView" parent="@style/Widget.Holo.Light.TextView" />
-    <style name="Widget.DeviceDefault.Light.AutoCompleteTextView" parent="@style/Widget.Holo.Light.AutoCompleteTextView">
-        <item name="dropDownSelector">@drawable/yi_list_selector_baidu_light</item>
-        <item name="popupBackground">@drawable/yi_filter_dropdown_panel_baidu_light</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.AutoCompleteTextView" parent="@style/Widget.Holo.Light.AutoCompleteTextView" />
     <style name="Widget.DeviceDefault.Light.CompoundButton.CheckBox" parent="@style/Widget.Holo.Light.CompoundButton.CheckBox" />
     <style name="Widget.DeviceDefault.Light.ListView.DropDown" parent="@style/Widget.Holo.Light.ListView.DropDown" />
-    <style name="Widget.DeviceDefault.Light.EditText" parent="@style/Widget.Holo.Light.EditText">
-        <item name="textColorHighlight">@color/yi_highlighted_text_baidu_dark</item>
-        <item name="paddingTop">3.0dip</item>
-        <item name="paddingBottom">3.0dip</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.ExpandableListView" parent="@style/Widget.Holo.Light.ExpandableListView">
-        <item name="groupIndicator">@drawable/yi_expander_group_baidu_light</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.EditText" parent="@style/Widget.Holo.Light.EditText" />
+    <style name="Widget.DeviceDefault.Light.ExpandableListView" parent="@style/Widget.Holo.Light.ExpandableListView" />
     <style name="Widget.DeviceDefault.Light.GridView" parent="@style/Widget.Holo.Light.GridView" />
-    <style name="Widget.DeviceDefault.Light.ImageButton" parent="@style/Widget.Holo.Light.ImageButton">
-        <item name="background">@drawable/yi_btn_default_baidu_light</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.ImageButton" parent="@style/Widget.Holo.Light.ImageButton" />
     <style name="Widget.DeviceDefault.Light.ListView" parent="@style/Widget.Holo.Light.ListView" />
     <style name="Widget.DeviceDefault.Light.PopupWindow" parent="@style/Widget.Holo.Light.PopupWindow" />
-    <style name="Widget.DeviceDefault.Light.ProgressBar" parent="@style/Widget.Holo.Light.ProgressBar">
-        <item name="indeterminateDrawable">@drawable/yi_progress_medium_baidu_light</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.ProgressBar.Horizontal" parent="@style/Widget.Holo.Light.ProgressBar.Horizontal">
-        <item name="indeterminateDrawable">@drawable/yi_progress_indeterminate_horizontal_baidu</item>
-        <item name="progressDrawable">@drawable/yi_progress_horizontal_baidu_light</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.ProgressBar.Small" parent="@style/Widget.Holo.Light.ProgressBar.Small">
-        <item name="indeterminateDrawable">@drawable/yi_progress_small_baidu_light</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.ProgressBar.Small.Title" parent="@style/Widget.Holo.Light.ProgressBar.Small.Title">
-        <item name="indeterminateDrawable">@drawable/yi_progress_small_baidu_light</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.ProgressBar.Large" parent="@style/Widget.Holo.Light.ProgressBar.Large">
-        <item name="indeterminateDrawable">@drawable/yi_progress_large_baidu_light</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.ProgressBar.Inverse" parent="@style/Widget.Holo.Light.ProgressBar.Inverse">
-        <item name="indeterminateDrawable">@drawable/yi_progress_medium_baidu_dark</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.ProgressBar.Small.Inverse" parent="@style/Widget.Holo.Light.ProgressBar.Small.Inverse">
-        <item name="indeterminateDrawable">@drawable/yi_progress_small_baidu_dark</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.ProgressBar.Large.Inverse" parent="@style/Widget.Holo.Light.ProgressBar.Large.Inverse">
-        <item name="indeterminateDrawable">@drawable/yi_progress_large_baidu_dark</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.SeekBar" parent="@style/Widget.Holo.Light.SeekBar">
-        <item name="indeterminateDrawable">@drawable/yi_scrubber_progress_horizontal_baidu_light</item>
-        <item name="progressDrawable">@drawable/yi_scrubber_progress_horizontal_baidu_light</item>
-        <item name="thumb">@drawable/yi_scrubber_control_selector_baidu</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.RatingBar" parent="@style/Widget.Holo.Light.RatingBar">
-        <item name="indeterminateDrawable">@drawable/yi_ratingbar_full_baidu_light</item>
-        <item name="progressDrawable">@drawable/yi_ratingbar_full_baidu_light</item>
-        <item name="minHeight">48.0dip</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.RatingBar.Indicator" parent="@style/Widget.Holo.Light.RatingBar.Indicator">
-        <item name="indeterminateDrawable">@drawable/yi_ratingbar_baidu_light</item>
-        <item name="progressDrawable">@drawable/yi_ratingbar_baidu_light</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.RatingBar.Small" parent="@style/Widget.Holo.Light.RatingBar.Small">
-        <item name="indeterminateDrawable">@drawable/yi_ratingbar_small_baidu_light</item>
-        <item name="progressDrawable">@drawable/yi_ratingbar_small_baidu_light</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.CompoundButton.RadioButton" parent="@style/Widget.Holo.Light.CompoundButton.RadioButton">
-        <item name="button">@drawable/yi_btn_star_baidu_light</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.ProgressBar" parent="@style/Widget.Holo.Light.ProgressBar" />
+    <style name="Widget.DeviceDefault.Light.ProgressBar.Horizontal" parent="@style/Widget.Holo.Light.ProgressBar.Horizontal" />
+    <style name="Widget.DeviceDefault.Light.ProgressBar.Small" parent="@style/Widget.Holo.Light.ProgressBar.Small" />
+    <style name="Widget.DeviceDefault.Light.ProgressBar.Small.Title" parent="@style/Widget.Holo.Light.ProgressBar.Small.Title" />
+    <style name="Widget.DeviceDefault.Light.ProgressBar.Large" parent="@style/Widget.Holo.Light.ProgressBar.Large" />
+    <style name="Widget.DeviceDefault.Light.ProgressBar.Inverse" parent="@style/Widget.Holo.Light.ProgressBar.Inverse" />
+    <style name="Widget.DeviceDefault.Light.ProgressBar.Small.Inverse" parent="@style/Widget.Holo.Light.ProgressBar.Small.Inverse" />
+    <style name="Widget.DeviceDefault.Light.ProgressBar.Large.Inverse" parent="@style/Widget.Holo.Light.ProgressBar.Large.Inverse" />
+    <style name="Widget.DeviceDefault.Light.SeekBar" parent="@style/Widget.Holo.Light.SeekBar" />
+    <style name="Widget.DeviceDefault.Light.RatingBar" parent="@style/Widget.Holo.Light.RatingBar" />
+    <style name="Widget.DeviceDefault.Light.RatingBar.Indicator" parent="@style/Widget.Holo.Light.RatingBar.Indicator" />
+    <style name="Widget.DeviceDefault.Light.RatingBar.Small" parent="@style/Widget.Holo.Light.RatingBar.Small" />
+    <style name="Widget.DeviceDefault.Light.CompoundButton.RadioButton" parent="@style/Widget.Holo.Light.CompoundButton.RadioButton" />
     <style name="Widget.DeviceDefault.Light.ScrollView" parent="@style/Widget.Holo.Light.ScrollView" />
     <style name="Widget.DeviceDefault.Light.HorizontalScrollView" parent="@style/Widget.Holo.Light.HorizontalScrollView" />
-    <style name="Widget.DeviceDefault.Light.Spinner" parent="@style/Widget.Holo.Light.Spinner">
-        <item name="background">@drawable/yi_spinner_background_baidu_light</item>
-        <item name="minWidth">90.0dip</item>
-        <item name="minHeight">35.0dip</item>
-        <item name="dropDownSelector">@drawable/yi_list_selector_baidu_light</item>
-        <item name="popupBackground">@drawable/yi_spinner_popup_backgroud_baidu_light</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.CompoundButton.Star" parent="@style/Widget.Holo.Light.CompoundButton.Star">
-        <item name="button">@drawable/yi_btn_star_baidu_light</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.TabWidget" parent="@style/Widget.DeviceDefault.TabWidget">
-        <item name="background">@drawable/yi_ab_stacked_solid_inverse_baidu</item>
-        <item name="divider">@drawable/yi_divider_vertical_tab_baidu_light</item>
-        <item name="showDividers">middle</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.Spinner" parent="@style/Widget.Holo.Light.Spinner" />
+    <style name="Widget.DeviceDefault.Light.CompoundButton.Star" parent="@style/Widget.Holo.Light.CompoundButton.Star" />
+    <style name="Widget.DeviceDefault.Light.TabWidget" parent="@style/Widget.Holo.Light.TabWidget" />
     <style name="Widget.DeviceDefault.Light.WebTextView" parent="@style/Widget.Holo.Light.WebTextView" />
     <style name="Widget.DeviceDefault.Light.WebView" parent="@style/Widget.Holo.Light.WebView" />
     <style name="Widget.DeviceDefault.Light.DropDownItem" parent="@style/Widget.Holo.Light.DropDownItem" />
-    <style name="Widget.DeviceDefault.Light.DropDownItem.Spinner" parent="@style/Widget.Holo.Light.DropDownItem.Spinner">
-        <item name="textColor">?textColorPrimary</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.DropDownItem.Spinner" parent="@style/Widget.Holo.Light.DropDownItem.Spinner" />
     <style name="Widget.DeviceDefault.Light.TextView.SpinnerItem" parent="@style/Widget.Holo.Light.TextView.SpinnerItem" />
-    <style name="Widget.DeviceDefault.Light.ListPopupWindow" parent="@style/Widget.Holo.Light.ListPopupWindow">
-        <item name="dropDownSelector">@drawable/yi_list_selector_baidu_light</item>
-        <item name="popupBackground">@drawable/yi_spinner_popup_backgroud_baidu_light</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.PopupMenu" parent="@style/Widget.DeviceDefault.Light.ListPopupWindow" />
-    <style name="Widget.DeviceDefault.Light.Tab" parent="@style/Widget.Holo.Light.Tab">
-        <item name="background">@drawable/yi_tab_indicator_baidu</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.CalendarView" parent="@style/Widget.Holo.Light.CalendarView">
-        <item name="selectedDateVerticalBar">@drawable/yi_day_picker_week_view_dayline_baidu</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.ListPopupWindow" parent="@style/Widget.Holo.Light.ListPopupWindow" />
+    <style name="Widget.DeviceDefault.Light.PopupMenu" parent="@style/Widget.Holo.Light.PopupMenu" />
+    <style name="Widget.DeviceDefault.Light.Tab" parent="@style/Widget.Holo.Light.Tab" />
+    <style name="Widget.DeviceDefault.Light.CalendarView" parent="@style/Widget.Holo.Light.CalendarView" />
     <style name="Widget.DeviceDefault.Light.ActionButton" parent="@style/Widget.Holo.Light.ActionButton" />
-    <style name="Widget.DeviceDefault.Light.ActionButton.Overflow" parent="@style/Widget.Holo.Light.ActionButton.Overflow">
-        <item name="src">@drawable/yi_ic_menu_moreoverflow_baidu_light</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.ActionButton.Overflow" parent="@style/Widget.Holo.Light.ActionButton.Overflow" />
     <style name="Widget.DeviceDefault.Light.ActionMode" parent="@style/Widget.Holo.Light.ActionMode" />
-    <style name="Widget.DeviceDefault.Light.ActionButton.CloseMode" parent="@style/Widget.Holo.Light.ActionButton.CloseMode">
-        <item name="background">@drawable/yi_btn_cab_done_baidu_light</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.ActionBar" parent="@style/Widget.Holo.Light.ActionBar">
-        <item name="progressBarStyle">@style/Widget.DeviceDefault.Light.ProgressBar.Horizontal</item>
-        <item name="background">@drawable/yi_ab_transparent_light_baidu</item>
-        <item name="homeAsUpIndicator">@drawable/yi_ic_ab_back_baidu_light</item>
-        <item name="indeterminateProgressStyle">@style/Widget.DeviceDefault.Light.ProgressBar</item>
-        <item name="backgroundStacked">@drawable/yi_ab_stacked_transparent_light_baidu</item>
-        <item name="backgroundSplit">@drawable/yi_ab_bottom_transparent_light_baidu</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.ActionBar.TabView" parent="@style/Widget.Holo.Light.ActionBar.TabView">
-        <item name="background">@drawable/yi_tab_indicator_ab_baidu</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.ActionBar.TabText" parent="@style/Widget.Holo.Light.ActionBar.TabText">
-        <item name="textSize">14.0sp</item>
-        <item name="textStyle">normal</item>
-        <item name="textColor">@color/yi_primary_text_baidu_light</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.ActionBar.TabBar" parent="@style/Widget.Holo.Light.ActionBar.TabBar">
-        <item name="showDividers">none</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.ActionBar.Solid" parent="@style/Widget.Holo.Light.ActionBar.Solid">
-        <item name="progressBarStyle">@style/Widget.DeviceDefault.Light.ProgressBar.Horizontal</item>
-        <item name="background">@drawable/yi_ab_solid_light_baidu</item>
-        <item name="indeterminateProgressStyle">@style/Widget.DeviceDefault.Light.ProgressBar</item>
-        <item name="backgroundStacked">@drawable/yi_ab_stacked_solid_light_baidu</item>
-        <item name="backgroundSplit">@drawable/yi_ab_bottom_solid_light_baidu</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.ActionBar.Solid.Inverse" parent="@style/Widget.Holo.Light.ActionBar.Solid.Inverse">
-        <item name="progressBarStyle">@style/Widget.DeviceDefault.Light.ProgressBar.Horizontal</item>
-        <item name="background">@drawable/yi_ab_solid_dark_baidu</item>
-        <item name="titleTextStyle">@style/TextAppearance.DeviceDefault.Widget.ActionBar.Title.Inverse</item>
-        <item name="subtitleTextStyle">@style/TextAppearance.Holo.Widget.ActionBar.Subtitle.Inverse</item>
-        <item name="homeAsUpIndicator">@drawable/yi_ic_ab_back_baidu_dark</item>
-        <item name="indeterminateProgressStyle">@style/Widget.DeviceDefault.Light.ProgressBar</item>
-        <item name="backgroundStacked">@drawable/yi_ab_stacked_solid_inverse_baidu</item>
-        <item name="backgroundSplit">@drawable/yi_ab_bottom_solid_inverse_baidu</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.ActionBar.TabBar.Inverse" parent="@style/Widget.DeviceDefault.Light.ActionBar.TabBar">
-        <item name="divider">@drawable/yi_divider_vertical_tab_baidu_light</item>
-        <item name="showDividers">none</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.ActionBar.TabView.Inverse" parent="@style/Widget.Holo.Light.ActionBar.TabView.Inverse">
-        <item name="background">@drawable/yi_tab_indicator_ab_baidu</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.ActionButton.CloseMode" parent="@style/Widget.Holo.Light.ActionButton.CloseMode" />
+    <style name="Widget.DeviceDefault.Light.ActionBar" parent="@style/Widget.Holo.Light.ActionBar" />
+    <style name="Widget.DeviceDefault.Light.ActionBar.TabView" parent="@style/Widget.Holo.Light.ActionBar.TabView" />
+    <style name="Widget.DeviceDefault.Light.ActionBar.TabText" parent="@style/Widget.Holo.Light.ActionBar.TabText" />
+    <style name="Widget.DeviceDefault.Light.ActionBar.TabBar" parent="@style/Widget.Holo.Light.ActionBar.TabBar" />
+    <style name="Widget.DeviceDefault.Light.ActionBar.Solid" parent="@style/Widget.Holo.Light.ActionBar.Solid" />
+    <style name="Widget.DeviceDefault.Light.ActionBar.Solid.Inverse" parent="@style/Widget.Holo.Light.ActionBar.Solid.Inverse" />
+    <style name="Widget.DeviceDefault.Light.ActionBar.TabBar.Inverse" parent="@style/Widget.Holo.Light.ActionBar.TabBar.Inverse" />
+    <style name="Widget.DeviceDefault.Light.ActionBar.TabView.Inverse" parent="@style/Widget.Holo.Light.ActionBar.TabView.Inverse" />
     <style name="Widget.DeviceDefault.Light.ActionBar.TabText.Inverse" parent="@style/Widget.Holo.Light.ActionBar.TabText.Inverse" />
     <style name="Widget.DeviceDefault.Light.ActionMode.Inverse" parent="@style/Widget.Holo.Light.ActionMode.Inverse" />
     <style name="TextAppearance.DeviceDefault" parent="@style/TextAppearance.Holo" />
@@ -2976,10 +2534,7 @@
     <style name="TextAppearance.DeviceDefault.SearchResult.Title" parent="@style/TextAppearance.Holo.SearchResult.Title" />
     <style name="TextAppearance.DeviceDefault.SearchResult.Subtitle" parent="@style/TextAppearance.Holo.SearchResult.Subtitle" />
     <style name="TextAppearance.DeviceDefault.WindowTitle" parent="@style/TextAppearance.Holo.WindowTitle" />
-    <style name="TextAppearance.DeviceDefault.DialogWindowTitle" parent="@style/TextAppearance.Holo.DialogWindowTitle">
-        <item name="textSize">18.0sp</item>
-        <item name="textColor">@color/yi_baidu_blue_light</item>
-    </style>
+    <style name="TextAppearance.DeviceDefault.DialogWindowTitle" parent="@style/TextAppearance.Holo.DialogWindowTitle" />
     <style name="TextAppearance.DeviceDefault.Widget" parent="@style/TextAppearance.Holo.Widget" />
     <style name="TextAppearance.DeviceDefault.Widget.Button" parent="@style/TextAppearance.Holo.Widget.Button" />
     <style name="TextAppearance.DeviceDefault.Widget.IconMenu.Item" parent="@style/TextAppearance.Holo.Widget.IconMenu.Item" />
@@ -2997,37 +2552,17 @@
     <style name="TextAppearance.DeviceDefault.Widget.ActionBar.Subtitle" parent="@style/TextAppearance.Holo.Widget.ActionBar.Subtitle" />
     <style name="TextAppearance.DeviceDefault.Widget.ActionMode.Title" parent="@style/TextAppearance.Holo.Widget.ActionMode.Title" />
     <style name="TextAppearance.DeviceDefault.Widget.ActionMode.Subtitle" parent="@style/TextAppearance.Holo.Widget.ActionMode.Subtitle" />
-    <style name="TextAppearance.DeviceDefault.Widget.ActionBar.Title.Inverse" parent="@style/TextAppearance.Holo.Widget.ActionBar.Title.Inverse">
-        <item name="textSize">16.0sp</item>
-        <item name="textColor">@color/yi_dark_action_bar_title</item>
-    </style>
+    <style name="TextAppearance.DeviceDefault.Widget.ActionBar.Title.Inverse" parent="@style/TextAppearance.Holo.Widget.ActionBar.Title.Inverse" />
     <style name="TextAppearance.DeviceDefault.Widget.ActionBar.Subtitle.Inverse" parent="@style/TextAppearance.Holo.Widget.ActionBar.Subtitle.Inverse" />
     <style name="TextAppearance.DeviceDefault.Widget.ActionMode.Title.Inverse" parent="@style/TextAppearance.Holo.Widget.ActionMode.Title.Inverse" />
     <style name="TextAppearance.DeviceDefault.Widget.ActionMode.Subtitle.Inverse" parent="@style/TextAppearance.Holo.Widget.ActionMode.Subtitle.Inverse" />
-    <style name="TextAppearance.DeviceDefault.Widget.ActionBar.Menu" parent="@style/TextAppearance.Holo.Widget.ActionBar.Menu">
-        <item name="textSize">16.0sp</item>
-        <item name="textStyle">normal</item>
-        <item name="shadowColor">#33000000</item>
-        <item name="shadowDx">0.0</item>
-        <item name="shadowDy">5.0</item>
-        <item name="shadowRadius">5.0</item>
-    </style>
+    <style name="TextAppearance.DeviceDefault.Widget.ActionBar.Menu" parent="@style/TextAppearance.Holo.Widget.ActionBar.Menu" />
     <style name="DeviceDefault.ButtonBar" parent="@style/Holo.ButtonBar" />
     <style name="DeviceDefault.ButtonBar.AlertDialog" parent="@style/Holo.ButtonBar.AlertDialog" />
-    <style name="DeviceDefault.SegmentedButton" parent="@style/Holo.SegmentedButton">
-        <item name="background">@drawable/yi_btn_group_baidu_dark</item>
-    </style>
-    <style name="DeviceDefault.Light.ButtonBar" parent="@style/Holo.Light.ButtonBar">
-        <item name="divider">@drawable/yi_divider_vertical_tab_baidu_light</item>
-        <item name="showDividers">middle</item>
-        <item name="dividerPadding">10.0dip</item>
-    </style>
-    <style name="DeviceDefault.Light.ButtonBar.AlertDialog" parent="@style/Holo.Light.ButtonBar.AlertDialog">
-        <item name="divider">@drawable/yi_divider_vertical_tab_baidu_light</item>
-    </style>
-    <style name="DeviceDefault.Light.SegmentedButton" parent="@style/Holo.Light.SegmentedButton">
-        <item name="background">@drawable/yi_btn_group_baidu_light</item>
-    </style>
+    <style name="DeviceDefault.SegmentedButton" parent="@style/Holo.SegmentedButton" />
+    <style name="DeviceDefault.Light.ButtonBar" parent="@style/Holo.Light.ButtonBar" />
+    <style name="DeviceDefault.Light.ButtonBar.AlertDialog" parent="@style/Holo.Light.ButtonBar.AlertDialog" />
+    <style name="DeviceDefault.Light.SegmentedButton" parent="@style/Holo.Light.SegmentedButton" />
     <style name="Widget.Holo.MediaRouteButton" parent="@style/Widget.Holo">
         <item name="background">?selectableItemBackground</item>
         <item name="minWidth">56.0dip</item>
@@ -3097,12 +2632,12 @@
         <item name="windowExitAnimation">@anim/shrink_fade_out_center</item>
     </style>
     <style name="Animation.DropDownDown" parent="@style/Animation">
-        <item name="windowEnterAnimation">@anim/slide_up_down</item>
-        <item name="windowExitAnimation">@anim/slide_up_up</item>
+        <item name="windowEnterAnimation">@anim/grow_fade_in</item>
+        <item name="windowExitAnimation">@anim/shrink_fade_out</item>
     </style>
     <style name="Animation.DropDownUp" parent="@style/Animation">
-        <item name="windowEnterAnimation">@anim/slide_down_up</item>
-        <item name="windowExitAnimation">@anim/slide_down_down</item>
+        <item name="windowEnterAnimation">@anim/grow_fade_in_from_bottom</item>
+        <item name="windowExitAnimation">@anim/shrink_fade_out_from_bottom</item>
     </style>
     <style name="Animation.InputMethodFancy" parent="@style/Animation">
         <item name="windowEnterAnimation">@anim/input_method_fancy_enter</item>
@@ -3592,8 +3127,6 @@
         <item name="switchMinWidth">96.0dip</item>
         <item name="switchPadding">16.0dip</item>
         <item name="thumbTextPadding">12.0dip</item>
-        <item name="pointOn">@drawable/switch_thumb_dark_on_point</item>
-        <item name="pointOff">@drawable/switch_thumb_dark_off_point</item>
     </style>
     <style name="Widget.Holo.Light.Button.Borderless" parent="@style/Widget.Holo.Light.Button">
         <item name="background">?selectableItemBackground</item>
@@ -3642,8 +3175,6 @@
         <item name="switchMinWidth">96.0dip</item>
         <item name="switchPadding">16.0dip</item>
         <item name="thumbTextPadding">12.0dip</item>
-        <item name="pointOn">@drawable/switch_thumb_light_on_point</item>
-        <item name="pointOff">@drawable/switch_thumb_light_off_point</item>
     </style>
     <style name="Animation.Holo" parent="@style/Animation" />
     <style name="Animation.Holo.Activity" parent="@style/Animation.Activity" />
@@ -3735,198 +3266,78 @@
         <item name="layout_height">wrap_content</item>
     </style>
     <style name="Widget.DeviceDefault.AbsListView" parent="@style/Widget.Holo.AbsListView" />
-    <style name="Widget.DeviceDefault.Spinner.DropDown.ActionBar" parent="@style/Widget.DeviceDefault.Spinner.DropDown">
-        <item name="background">@drawable/yi_spinner_ab_baidu_dark</item>
-    </style>
+    <style name="Widget.DeviceDefault.Spinner.DropDown.ActionBar" parent="@style/Widget.Holo.Spinner.DropDown.ActionBar" />
     <style name="Widget.DeviceDefault.PopupWindow.ActionMode" parent="@style/Widget.Holo.PopupWindow.ActionMode" />
-    <style name="Widget.DeviceDefault.CompoundButton.Switch" parent="@style/Widget.Holo.CompoundButton.Switch">
-        <item name="textOn">@string/switch_null_text</item>
-        <item name="textOff">@string/switch_null_text</item>
-        <item name="thumb">@drawable/yi_switch_inner_baidu_dark</item>
-        <item name="track">@drawable/yi_switch_track_baidu_dark</item>
-        <item name="switchMinWidth">86.0dip</item>
-        <item name="switchPadding">0.0dip</item>
-        <item name="thumbTextPadding">25.0dip</item>
-    </style>
+    <style name="Widget.DeviceDefault.CompoundButton.Switch" parent="@style/Widget.Holo.CompoundButton.Switch" />
     <style name="Widget.DeviceDefault.ExpandableListView.White" parent="@style/Widget.Holo.ExpandableListView.White" />
     <style name="Widget.DeviceDefault.Gallery" parent="@style/Widget.Holo.Gallery" />
     <style name="Widget.DeviceDefault.GestureOverlayView" parent="@style/Widget.Holo.GestureOverlayView" />
     <style name="Widget.DeviceDefault.ImageWell" parent="@style/Widget.Holo.ImageWell" />
-    <style name="Widget.DeviceDefault.KeyboardView" parent="@style/Widget.Holo.KeyboardView">
-        <item name="keyBackground">@drawable/yi_btn_keyboard_key_ics</item>
-    </style>
+    <style name="Widget.DeviceDefault.KeyboardView" parent="@style/Widget.Holo.KeyboardView" />
     <style name="Widget.DeviceDefault.ListView.White" parent="@style/Widget.Holo.ListView.White" />
-    <style name="Widget.DeviceDefault.NumberPicker" parent="@style/Widget.Holo.NumberPicker">
-        <item name="selectionDivider">@drawable/yi_numberpicker_selection_divider</item>
-    </style>
+    <style name="Widget.DeviceDefault.NumberPicker" parent="@style/Widget.Holo.NumberPicker" />
     <style name="Widget.DeviceDefault.PreferenceFrameLayout" parent="@style/Widget.Holo.PreferenceFrameLayout" />
-    <style name="Widget.DeviceDefault.ProgressBar.Inverse" parent="@style/Widget.DeviceDefault.ProgressBar">
-        <item name="indeterminateDrawable">@drawable/yi_progress_medium_baidu_light</item>
-    </style>
-    <style name="Widget.DeviceDefault.ProgressBar.Large.Inverse" parent="@style/Widget.DeviceDefault.ProgressBar.Large">
-        <item name="indeterminateDrawable">@drawable/yi_progress_large_baidu_light</item>
-    </style>
-    <style name="Widget.DeviceDefault.ProgressBar.Small.Inverse" parent="@style/Widget.DeviceDefault.ProgressBar.Small">
-        <item name="indeterminateDrawable">@drawable/yi_progress_small_baidu_light</item>
-    </style>
+    <style name="Widget.DeviceDefault.ProgressBar.Inverse" parent="@style/Widget.Holo.ProgressBar.Inverse" />
+    <style name="Widget.DeviceDefault.ProgressBar.Large.Inverse" parent="@style/Widget.Holo.ProgressBar.Large.Inverse" />
+    <style name="Widget.DeviceDefault.ProgressBar.Small.Inverse" parent="@style/Widget.Holo.ProgressBar.Small.Inverse" />
     <style name="Widget.DeviceDefault.QuickContactBadge.WindowLarge" parent="@style/Widget.Holo.QuickContactBadge.WindowLarge" />
     <style name="Widget.DeviceDefault.QuickContactBadge.WindowMedium" parent="@style/Widget.Holo.QuickContactBadge.WindowMedium" />
     <style name="Widget.DeviceDefault.QuickContactBadge.WindowSmall" parent="@style/Widget.Holo.QuickContactBadge.WindowSmall" />
     <style name="Widget.DeviceDefault.QuickContactBadgeSmall.WindowLarge" parent="@style/Widget.Holo.QuickContactBadgeSmall.WindowLarge" />
     <style name="Widget.DeviceDefault.QuickContactBadgeSmall.WindowMedium" parent="@style/Widget.Holo.QuickContactBadgeSmall.WindowMedium" />
     <style name="Widget.DeviceDefault.QuickContactBadgeSmall.WindowSmall" parent="@style/Widget.Holo.QuickContactBadgeSmall.WindowSmall" />
-    <style name="Widget.DeviceDefault.Spinner.DropDown" parent="@style/Widget.DeviceDefault.Spinner" />
+    <style name="Widget.DeviceDefault.Spinner.DropDown" parent="@style/Widget.Holo.Spinner.DropDown" />
     <style name="Widget.DeviceDefault.StackView" parent="@style/Widget.Holo.StackView" />
     <style name="Widget.DeviceDefault.TextSelectHandle" parent="@style/Widget.Holo.TextSelectHandle" />
     <style name="Widget.DeviceDefault.TextSuggestionsPopupWindow" parent="@style/Widget.Holo.TextSuggestionsPopupWindow" />
-    <style name="Widget.DeviceDefault.TextView.ListSeparator" parent="@style/Widget.Holo.TextView.ListSeparator">
-        <item name="textStyle">normal</item>
-        <item name="background">@drawable/yi_list_section_divider_baidu_dark</item>
-    </style>
+    <style name="Widget.DeviceDefault.TextView.ListSeparator" parent="@style/Widget.Holo.TextView.ListSeparator" />
     <style name="Widget.DeviceDefault.TimePicker" parent="@style/Widget.Holo.TimePicker" />
     <style name="Widget.DeviceDefault.Light.AbsListView" parent="@style/Widget.Holo.Light.AbsListView" />
-    <style name="Widget.DeviceDefault.Light.Spinner.DropDown.ActionBar" parent="@style/Widget.DeviceDefault.Light.Spinner.DropDown">
-        <item name="background">@drawable/yi_spinner_ab_baidu_light</item>
-        <item name="popupBackground">@drawable/yi_filter_dropdown_panel_baidu_light</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.Spinner.DropDown.ActionBar" parent="@style/Widget.Holo.Light.Spinner.DropDown.ActionBar" />
     <style name="Widget.DeviceDefault.Light.PopupWindow.ActionMode" parent="@style/Widget.Holo.Light.PopupWindow.ActionMode" />
-    <style name="Widget.DeviceDefault.Light.Button.Borderless" parent="@style/Widget.Holo.Light.Button.Borderless">
-        <item name="textAppearance">?textAppearanceMediumInverse</item>
-        <item name="textColor">?textColorPrimary</item>
-        <item name="background">?listChoiceBackgroundIndicator</item>
-        <item name="paddingLeft">4.0dip</item>
-        <item name="paddingRight">4.0dip</item>
-        <item name="minWidth">64.0dip</item>
-        <item name="minHeight">42.0dip</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.DatePicker" parent="@style/Widget.Holo.Light.DatePicker">
-        <item name="internalLayout">@layout/yi_date_picker_baidu</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.Button.Borderless" parent="@style/Widget.Holo.Light.Button.Borderless" />
+    <style name="Widget.DeviceDefault.Light.DatePicker" parent="@style/Widget.Holo.Light.DatePicker" />
     <style name="Widget.DeviceDefault.Light.ExpandableListView.White" parent="@style/Widget.Holo.Light.ExpandableListView.White" />
     <style name="Widget.DeviceDefault.Light.Gallery" parent="@style/Widget.Holo.Light.Gallery" />
     <style name="Widget.DeviceDefault.Light.GestureOverlayView" parent="@style/Widget.Holo.Light.GestureOverlayView" />
     <style name="Widget.DeviceDefault.Light.ImageWell" parent="@style/Widget.Holo.Light.ImageWell" />
     <style name="Widget.DeviceDefault.Light.ListView.White" parent="@style/Widget.Holo.Light.ListView.White" />
-    <style name="Widget.DeviceDefault.Light.NumberPicker" parent="@style/Widget.Holo.Light.NumberPicker">
-        <item name="maxHeight">145.0dip</item>
-        <item name="minWidth">55.0dip</item>
-        <item name="selectionDivider">@null</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.Spinner.DropDown" parent="@style/Widget.DeviceDefault.Light.Spinner" />
-    <style name="Widget.DeviceDefault.Light.TextView.ListSeparator" parent="@style/Widget.Holo.Light.TextView.ListSeparator">
-        <item name="textSize">12.0sp</item>
-        <item name="textStyle">normal</item>
-        <item name="textColor">@color/yi_list_section_divider_text_light</item>
-        <item name="gravity">center_vertical</item>
-        <item name="background">@drawable/yi_list_section_divider_baidu_light</item>
-        <item name="paddingLeft">?listPreferredItemPaddingLeft</item>
-        <item name="paddingRight">?listPreferredItemPaddingLeft</item>
-        <item name="layout_width">fill_parent</item>
-        <item name="layout_height">wrap_content</item>
-        <item name="minHeight">24.0dip</item>
-        <item name="shadowColor">#ffffffff</item>
-        <item name="shadowDy">1.0</item>
-        <item name="textAllCaps">true</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.TimePicker" parent="@style/Widget.Holo.Light.TimePicker">
-        <item name="internalLayout">@layout/yi_time_picker_baidu</item>
-    </style>
+    <style name="Widget.DeviceDefault.Light.NumberPicker" parent="@style/Widget.Holo.Light.NumberPicker" />
+    <style name="Widget.DeviceDefault.Light.Spinner.DropDown" parent="@style/Widget.Holo.Light.Spinner.DropDown" />
+    <style name="Widget.DeviceDefault.Light.TextView.ListSeparator" parent="@style/Widget.Holo.Light.TextView.ListSeparator" />
+    <style name="Widget.DeviceDefault.Light.TimePicker" parent="@style/Widget.Holo.Light.TimePicker" />
     <style name="Widget.DeviceDefault.Light.TextSuggestionsPopupWindow" parent="@style/Widget.Holo.Light.TextSuggestionsPopupWindow" />
     <style name="TextAppearance.DeviceDefault.Light" parent="@style/TextAppearance.Holo.Light" />
     <style name="TextAppearance.DeviceDefault.Light.Inverse" parent="@style/TextAppearance.Holo.Light.Inverse" />
-    <style name="TextAppearance.DeviceDefault.Light.Large" parent="@style/TextAppearance.Holo.Light.Large">
-        <item name="textSize">18.0sp</item>
-    </style>
+    <style name="TextAppearance.DeviceDefault.Light.Large" parent="@style/TextAppearance.Holo.Light.Large" />
     <style name="TextAppearance.DeviceDefault.Light.Large.Inverse" parent="@style/TextAppearance.Holo.Light.Large.Inverse" />
-    <style name="TextAppearance.DeviceDefault.Light.Medium" parent="@style/TextAppearance.Holo.Light.Medium">
-        <item name="textSize">16.0sp</item>
-    </style>
+    <style name="TextAppearance.DeviceDefault.Light.Medium" parent="@style/TextAppearance.Holo.Light.Medium" />
     <style name="TextAppearance.DeviceDefault.Light.Medium.Inverse" parent="@style/TextAppearance.Holo.Light.Medium.Inverse" />
     <style name="TextAppearance.DeviceDefault.Light.SearchResult.Subtitle" parent="@style/TextAppearance.Holo.Light.SearchResult.Subtitle" />
     <style name="TextAppearance.DeviceDefault.Light.SearchResult.Title" parent="@style/TextAppearance.Holo.Light.SearchResult.Title" />
-    <style name="TextAppearance.DeviceDefault.Light.Small" parent="@style/TextAppearance.Holo.Light.Small">
-        <item name="textSize">14.0sp</item>
-    </style>
+    <style name="TextAppearance.DeviceDefault.Light.Small" parent="@style/TextAppearance.Holo.Light.Small" />
     <style name="TextAppearance.DeviceDefault.Light.Small.Inverse" parent="@style/TextAppearance.Holo.Light.Small.Inverse" />
     <style name="TextAppearance.DeviceDefault.Light.Widget.Button" parent="@style/TextAppearance.Holo.Light.Widget.Button" />
     <style name="TextAppearance.DeviceDefault.Light.Widget.PopupMenu.Large" parent="@style/TextAppearance.Holo.Light.Widget.PopupMenu.Large" />
     <style name="TextAppearance.DeviceDefault.Light.Widget.PopupMenu.Small" parent="@style/TextAppearance.Holo.Light.Widget.PopupMenu.Small" />
-    <style name="Preference.DeviceDefault" parent="@style/Preference.Holo">
-        <item name="layout">@layout/yi_preference_baidu</item>
-    </style>
+    <style name="Preference.DeviceDefault" parent="@style/Preference.Holo" />
     <style name="Preference.DeviceDefault.Category" parent="@style/Preference.Holo.Category" />
-    <style name="Preference.DeviceDefault.CheckBoxPreference" parent="@style/Preference.Holo.CheckBoxPreference">
-        <item name="layout">@layout/yi_preference_baidu</item>
-    </style>
-    <style name="Preference.DeviceDefault.DialogPreference" parent="@style/Preference.Holo.DialogPreference">
-        <item name="layout">@layout/yi_preference_baidu</item>
-    </style>
-    <style name="Preference.DeviceDefault.DialogPreference.EditTextPreference" parent="@style/Preference.Holo.DialogPreference.EditTextPreference">
-        <item name="layout">@layout/yi_preference_baidu</item>
-    </style>
-    <style name="Preference.DeviceDefault.DialogPreference.YesNoPreference" parent="@style/Preference.Holo.DialogPreference.YesNoPreference">
-        <item name="layout">@layout/yi_preference_baidu</item>
-    </style>
-    <style name="Preference.DeviceDefault.Information" parent="@style/Preference.Holo.Information">
-        <item name="layout">@layout/yi_preference_baidu</item>
-    </style>
-    <style name="Preference.DeviceDefault.PreferenceScreen" parent="@style/Preference.Holo.PreferenceScreen">
-        <item name="layout">@layout/yi_preference_baidu</item>
-    </style>
-    <style name="Preference.DeviceDefault.RingtonePreference" parent="@style/Preference.Holo.RingtonePreference">
-        <item name="layout">@layout/yi_preference_baidu</item>
-    </style>
-    <style name="Preference.DeviceDefault.SwitchPreference" parent="@style/Preference.Holo.SwitchPreference">
-        <item name="layout">@layout/yi_preference_baidu</item>
-        <item name="switchTextOn">@string/switch_null_text</item>
-        <item name="switchTextOff">@string/switch_null_text</item>
-    </style>
-    <style name="AlertDialog.DeviceDefault" parent="@style/AlertDialog.Holo">
-        <item name="fullDark">@drawable/yi_dialog_full_baidu_dark</item>
-        <item name="topDark">@drawable/yi_dialog_top_baidu_dark</item>
-        <item name="centerDark">@drawable/yi_dialog_middle_baidu_dark</item>
-        <item name="bottomDark">@drawable/yi_dialog_bottom_baidu_dark</item>
-        <item name="fullBright">@drawable/yi_dialog_full_baidu_dark</item>
-        <item name="topBright">@drawable/yi_dialog_top_baidu_dark</item>
-        <item name="centerBright">@drawable/yi_dialog_middle_baidu_dark</item>
-        <item name="bottomBright">@drawable/yi_dialog_bottom_baidu_dark</item>
-        <item name="bottomMedium">@drawable/yi_dialog_bottom_baidu_dark</item>
-        <item name="centerMedium">@drawable/yi_dialog_middle_baidu_dark</item>
-        <item name="layout">@layout/yi_alert_dialog_baidu</item>
-    </style>
-    <style name="AlertDialog.DeviceDefault.Light" parent="@style/AlertDialog.DeviceDefault">
-        <item name="fullDark">@drawable/yi_dialog_full_baidu_light</item>
-        <item name="topDark">@drawable/yi_dialog_top_baidu_light</item>
-        <item name="centerDark">@drawable/yi_dialog_middle_baidu_light</item>
-        <item name="bottomDark">@drawable/yi_dialog_bottom_baidu_light</item>
-        <item name="fullBright">@drawable/yi_dialog_full_baidu_light</item>
-        <item name="topBright">@drawable/yi_dialog_top_baidu_light</item>
-        <item name="centerBright">@drawable/yi_dialog_middle_baidu_light</item>
-        <item name="bottomBright">@drawable/yi_dialog_bottom_baidu_light</item>
-        <item name="bottomMedium">@drawable/yi_dialog_bottom_medium_baidu_light</item>
-        <item name="centerMedium">@drawable/yi_dialog_middle_baidu_light</item>
-        <item name="layout">@layout/yi_alert_dialog_baidu_light</item>
-        <item name="listLayout">@layout/yi_select_dialog_baidu_light</item>
-        <item name="multiChoiceItemLayout">@layout/yi_select_dialog_multichoice_baidu_light</item>
-        <item name="singleChoiceItemLayout">@layout/yi_select_dialog_singlechoice_baidu_light</item>
-        <item name="listItemLayout">@layout/yi_select_dialog_item_baidu_light</item>
-    </style>
+    <style name="Preference.DeviceDefault.CheckBoxPreference" parent="@style/Preference.Holo.CheckBoxPreference" />
+    <style name="Preference.DeviceDefault.DialogPreference" parent="@style/Preference.Holo.DialogPreference" />
+    <style name="Preference.DeviceDefault.DialogPreference.EditTextPreference" parent="@style/Preference.Holo.DialogPreference.EditTextPreference" />
+    <style name="Preference.DeviceDefault.DialogPreference.YesNoPreference" parent="@style/Preference.Holo.DialogPreference.YesNoPreference" />
+    <style name="Preference.DeviceDefault.Information" parent="@style/Preference.Holo.Information" />
+    <style name="Preference.DeviceDefault.PreferenceScreen" parent="@style/Preference.Holo.PreferenceScreen" />
+    <style name="Preference.DeviceDefault.RingtonePreference" parent="@style/Preference.Holo.RingtonePreference" />
+    <style name="Preference.DeviceDefault.SwitchPreference" parent="@style/Preference.Holo.SwitchPreference" />
+    <style name="AlertDialog.DeviceDefault" parent="@style/AlertDialog.Holo" />
+    <style name="AlertDialog.DeviceDefault.Light" parent="@style/AlertDialog.Holo.Light" />
     <style name="Animation.DeviceDefault.Activity" parent="@style/Animation.Holo.Activity" />
     <style name="Animation.DeviceDefault.Dialog" parent="@style/Animation.Holo.Dialog" />
-    <style name="DialogWindowTitle.DeviceDefault" parent="@style/DialogWindowTitle.Holo">
-        <item name="textAppearance">@style/TextAppearance.DeviceDefault.DialogWindowTitle</item>
-        <item name="textStyle">normal</item>
-    </style>
-    <style name="DialogWindowTitle.DeviceDefault.Light" parent="@style/DialogWindowTitle.Holo.Light">
-        <item name="textAppearance">@style/TextAppearance.DeviceDefault.Light.DialogWindowTitle</item>
-        <item name="textStyle">normal</item>
-    </style>
-    <style name="WindowTitle.DeviceDefault" parent="@style/WindowTitle.Holo">
-        <item name="textStyle">normal</item>
-    </style>
-    <style name="WindowTitleBackground.DeviceDefault" parent="@style/WindowTitleBackground.Holo">
-        <item name="textStyle">normal</item>
-    </style>
+    <style name="DialogWindowTitle.DeviceDefault" parent="@style/DialogWindowTitle.Holo" />
+    <style name="DialogWindowTitle.DeviceDefault.Light" parent="@style/DialogWindowTitle.Holo.Light" />
+    <style name="WindowTitle.DeviceDefault" parent="@style/WindowTitle.Holo" />
+    <style name="WindowTitleBackground.DeviceDefault" parent="@style/WindowTitleBackground.Holo" />
     <style name="ActiveWallpaperSettings" />
     <style name="PreviewWallpaperSettings" />
     <style name="Theme.Dialog.NoFrame" parent="@style/Theme.Dialog">
@@ -3992,13 +3403,13 @@
         <item name="background">@null</item>
         <item name="itemTextAppearance">?textAppearanceMedium</item>
     </style>
-    <style name="Theme.Dialog.AppError" parent="@style/Theme.DeviceDefault.Light.Dialog">
+    <style name="Theme.Dialog.AppError" parent="@style/Theme.Holo.Dialog">
         <item name="textAppearance">@style/TextAppearance.Theme.Dialog.AppError</item>
         <item name="windowBackground">@color/transparent</item>
         <item name="windowFrame">@null</item>
         <item name="windowIsFloating">true</item>
         <item name="windowContentOverlay">@null</item>
-        <item name="windowTitleStyle">@style/DialogWindowTitle.DeviceDefault.Light</item>
+        <item name="windowTitleStyle">@style/DialogWindowTitle</item>
         <item name="windowCloseOnTouchOutside">false</item>
     </style>
     <style name="Theme.Dialog.RecentApplications" parent="@style/Theme.DeviceDefault.Dialog">
@@ -4090,81 +3501,13 @@
         <item name="windowFixedWidthMinor">@dimen/dialog_fixed_width_minor</item>
         <item name="windowFixedHeightMajor">@dimen/dialog_fixed_height_major</item>
     </style>
-    <style name="Theme.DeviceDefault.Dialog.Alert" parent="@style/Theme.DeviceDefault.Dialog">
-        <item name="windowBackground">@color/transparent</item>
-        <item name="windowContentOverlay">@null</item>
+    <style name="Theme.DeviceDefault.Dialog.Alert" parent="@style/Theme.Holo.Dialog.Alert">
         <item name="windowTitleStyle">@style/DialogWindowTitle.DeviceDefault</item>
-        <item name="windowMinWidthMajor">@dimen/dialog_min_width_major</item>
-        <item name="windowMinWidthMinor">@dimen/dialog_min_width_minor</item>
     </style>
-    <style name="Theme.DeviceDefault.Light.Dialog.Alert" parent="@style/Theme.DeviceDefault.Light.Dialog">
-        <item name="windowBackground">@color/transparent</item>
-        <item name="windowContentOverlay">@null</item>
+    <style name="Theme.DeviceDefault.Light.Dialog.Alert" parent="@style/Theme.Holo.Light.Dialog.Alert">
         <item name="windowTitleStyle">@style/DialogWindowTitle.DeviceDefault.Light</item>
-        <item name="windowMinWidthMajor">@dimen/dialog_min_width_major</item>
-        <item name="windowMinWidthMinor">@dimen/dialog_min_width_minor</item>
     </style>
-    <style name="Theme.DeviceDefault.SearchBar" parent="@style/Theme.DeviceDefault.Panel">
-        <item name="actionModeBackground">@drawable/yi_cab_background_top_baidu_dark</item>
-        <item name="actionModeSplitBackground">@drawable/yi_cab_background_bottom_baidu_light</item>
-    </style>
-    <style name="Theme.DeviceDefault.Light.SearchBar" parent="@style/Theme.DeviceDefault.Light.Panel">
-        <item name="actionModeBackground">@drawable/yi_cab_background_top_baidu_light</item>
-        <item name="actionModeSplitBackground">@drawable/yi_cab_background_bottom_baidu_light</item>
-    </style>
-    <style name="Theme.DeviceDefault.Dialog.NoFrame" parent="@style/Theme.DeviceDefault.Dialog">
-        <item name="windowBackground">@color/transparent</item>
-        <item name="windowFrame">@null</item>
-        <item name="windowNoTitle">true</item>
-        <item name="windowIsTranslucent">true</item>
-        <item name="windowContentOverlay">@null</item>
-        <item name="windowAnimationStyle">@null</item>
-        <item name="backgroundDimEnabled">false</item>
-        <item name="windowCloseOnTouchOutside">false</item>
-    </style>
-    <style name="Widget.DeviceDefault.TabText" parent="@style/Widget.Holo.TabText">
-        <item name="textStyle">normal</item>
-    </style>
-    <style name="Widget.DeviceDefault.ActivityChooserView" parent="@style/Widget.Holo.ActivityChooserView">
-        <item name="background">@drawable/yi_ab_share_pack_baidu_dark</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.Switch.TextAppearance" parent="@style/TextAppearance.Holo.Widget.Switch">
-        <item name="textColor">?editTextColor</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.CompoundButton.Switch" parent="@style/Widget.Holo.Light.CompoundButton.Switch">
-        <item name="textOn">@string/switch_null_text</item>
-        <item name="textOff">@string/switch_null_text</item>
-        <item name="thumb">@drawable/yi_switch_inner_baidu_light</item>
-        <item name="switchTextAppearance">@style/Widget.DeviceDefault.Light.Switch.TextAppearance</item>
-        <item name="track">@drawable/yi_switch_track_baidu_light</item>
-        <item name="switchMinWidth">73.0dip</item>
-        <item name="switchPadding">0.0dip</item>
-        <item name="thumbTextPadding">19.0dip</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.Spinner.DropDown.DarkActionBar" parent="@style/Widget.DeviceDefault.Light.Spinner.DropDown">
-        <item name="background">@drawable/yi_spinner_ab_baidu_dark</item>
-        <item name="popupBackground">@drawable/yi_filter_dropdown_panel_baidu_light</item>
-    </style>
-    <style name="Widget.DeviceDefault.Light.ActivityChooserView" parent="@style/Widget.Holo.Light.ActivityChooserView">
-        <item name="background">@drawable/yi_ab_share_pack_baidu_light</item>
-    </style>
-    <style name="TextAppearance.DeviceDefault.Light.DialogWindowTitle" parent="@style/TextAppearance.Holo.Light.DialogWindowTitle">
-        <item name="textSize">18.0sp</item>
-        <item name="textColor">@color/yi_baidu_blue_light</item>
-    </style>
-    <style name="Preference.DeviceDefault.Light.DialogPreference.EditTextPreference" parent="@style/Preference.DeviceDefault.DialogPreference.EditTextPreference">
-        <item name="dialogLayout">@layout/yi_preference_dialog_edittext_light</item>
-    </style>
-    <style name="Theme.DeviceDefault.CompactMenu" parent="@style/Theme.DeviceDefault">
-        <item name="listViewStyle">@style/Widget.DeviceDefault.ListView</item>
-        <item name="windowAnimationStyle">@style/Animation.DropDownUp</item>
-        <item name="background">@null</item>
-        <item name="itemTextAppearance">?textAppearanceMedium</item>
-    </style>
-    <style name="Theme.DeviceDefault.Light.CompactMenu" parent="@style/Theme.DeviceDefault.Light">
-        <item name="listViewStyle">@style/Widget.DeviceDefault.Light.ListView</item>
-        <item name="windowAnimationStyle">@style/Animation.DropDownUp</item>
-        <item name="background">@null</item>
-        <item name="itemTextAppearance">?textAppearanceMedium</item>
-    </style>
+    <style name="Theme.DeviceDefault.SearchBar" parent="@style/Theme.Holo.SearchBar" />
+    <style name="Theme.DeviceDefault.Light.SearchBar" parent="@style/Theme.Holo.Light.SearchBar" />
+    <style name="Theme.DeviceDefault.Dialog.NoFrame" parent="@style/Theme.Holo.Dialog.NoFrame" />
 </resources>

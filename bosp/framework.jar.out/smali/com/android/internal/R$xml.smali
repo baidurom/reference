@@ -21,8 +21,6 @@
 
 .field public static final eri:I = #xml@eri#t
 
-.field public static final modes:I = #xml@modes#t
-
 .field public static final password_kbd_numeric:I = #xml@password_kbd_numeric#t
 
 .field public static final password_kbd_qwerty:I = #xml@password_kbd_qwerty#t
@@ -32,8 +30,6 @@
 .field public static final password_kbd_symbols:I = #xml@password_kbd_symbols#t
 
 .field public static final password_kbd_symbols_shift:I = #xml@password_kbd_symbols_shift#t
-
-.field public static final policys:I = #xml@policys#t
 
 .field public static final power_profile:I = #xml@power_profile#t
 

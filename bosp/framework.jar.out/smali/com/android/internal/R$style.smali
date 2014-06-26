@@ -91,8 +91,6 @@
 
 .field public static final MediaButton_Rew:I = #style@MediaButton.Rew#t
 
-.field public static final Preference_DeviceDefault_Light_DialogPreference_EditTextPreference:I = #style@Preference.DeviceDefault.Light.DialogPreference.EditTextPreference#t
-
 .field public static final PreviewWallpaperSettings:I = #style@PreviewWallpaperSettings#t
 
 .field public static final TextAppearance:I = #style@TextAppearance#t
@@ -106,8 +104,6 @@
 .field public static final TextAppearance_DeviceDefault_Large:I = #style@TextAppearance.DeviceDefault.Large#t
 
 .field public static final TextAppearance_DeviceDefault_Large_Inverse:I = #style@TextAppearance.DeviceDefault.Large.Inverse#t
-
-.field public static final TextAppearance_DeviceDefault_Light_DialogWindowTitle:I = #style@TextAppearance.DeviceDefault.Light.DialogWindowTitle#t
 
 .field public static final TextAppearance_DeviceDefault_Medium:I = #style@TextAppearance.DeviceDefault.Medium#t
 
@@ -309,8 +305,6 @@
 
 .field public static final Theme_DeviceDefault:I = #style@Theme.DeviceDefault#t
 
-.field public static final Theme_DeviceDefault_CompactMenu:I = #style@Theme.DeviceDefault.CompactMenu#t
-
 .field public static final Theme_DeviceDefault_Dialog:I = #style@Theme.DeviceDefault.Dialog#t
 
 .field public static final Theme_DeviceDefault_DialogWhenLarge:I = #style@Theme.DeviceDefault.DialogWhenLarge#t
@@ -330,8 +324,6 @@
 .field public static final Theme_DeviceDefault_InputMethod:I = #style@Theme.DeviceDefault.InputMethod#t
 
 .field public static final Theme_DeviceDefault_Light:I = #style@Theme.DeviceDefault.Light#t
-
-.field public static final Theme_DeviceDefault_Light_CompactMenu:I = #style@Theme.DeviceDefault.Light.CompactMenu#t
 
 .field public static final Theme_DeviceDefault_Light_DarkActionBar:I = #style@Theme.DeviceDefault.Light.DarkActionBar#t
 
@@ -533,8 +525,6 @@
 
 .field public static final Widget_DeviceDefault_ActionMode:I = #style@Widget.DeviceDefault.ActionMode#t
 
-.field public static final Widget_DeviceDefault_ActivityChooserView:I = #style@Widget.DeviceDefault.ActivityChooserView#t
-
 .field public static final Widget_DeviceDefault_AutoCompleteTextView:I = #style@Widget.DeviceDefault.AutoCompleteTextView#t
 
 .field public static final Widget_DeviceDefault_Button:I = #style@Widget.DeviceDefault.Button#t
@@ -603,8 +593,6 @@
 
 .field public static final Widget_DeviceDefault_Light_ActionMode_Inverse:I = #style@Widget.DeviceDefault.Light.ActionMode.Inverse#t
 
-.field public static final Widget_DeviceDefault_Light_ActivityChooserView:I = #style@Widget.DeviceDefault.Light.ActivityChooserView#t
-
 .field public static final Widget_DeviceDefault_Light_AutoCompleteTextView:I = #style@Widget.DeviceDefault.Light.AutoCompleteTextView#t
 
 .field public static final Widget_DeviceDefault_Light_Button:I = #style@Widget.DeviceDefault.Light.Button#t
@@ -624,8 +612,6 @@
 .field public static final Widget_DeviceDefault_Light_CompoundButton_RadioButton:I = #style@Widget.DeviceDefault.Light.CompoundButton.RadioButton#t
 
 .field public static final Widget_DeviceDefault_Light_CompoundButton_Star:I = #style@Widget.DeviceDefault.Light.CompoundButton.Star#t
-
-.field public static final Widget_DeviceDefault_Light_CompoundButton_Switch:I = #style@Widget.DeviceDefault.Light.CompoundButton.Switch#t
 
 .field public static final Widget_DeviceDefault_Light_DropDownItem:I = #style@Widget.DeviceDefault.Light.DropDownItem#t
 
@@ -681,10 +667,6 @@
 
 .field public static final Widget_DeviceDefault_Light_Spinner:I = #style@Widget.DeviceDefault.Light.Spinner#t
 
-.field public static final Widget_DeviceDefault_Light_Spinner_DropDown_DarkActionBar:I = #style@Widget.DeviceDefault.Light.Spinner.DropDown.DarkActionBar#t
-
-.field public static final Widget_DeviceDefault_Light_Switch_TextAppearance:I = #style@Widget.DeviceDefault.Light.Switch.TextAppearance#t
-
 .field public static final Widget_DeviceDefault_Light_Tab:I = #style@Widget.DeviceDefault.Light.Tab#t
 
 .field public static final Widget_DeviceDefault_Light_TabWidget:I = #style@Widget.DeviceDefault.Light.TabWidget#t
@@ -732,8 +714,6 @@
 .field public static final Widget_DeviceDefault_Spinner:I = #style@Widget.DeviceDefault.Spinner#t
 
 .field public static final Widget_DeviceDefault_Tab:I = #style@Widget.DeviceDefault.Tab#t
-
-.field public static final Widget_DeviceDefault_TabText:I = #style@Widget.DeviceDefault.TabText#t
 
 .field public static final Widget_DeviceDefault_TabWidget:I = #style@Widget.DeviceDefault.TabWidget#t
 

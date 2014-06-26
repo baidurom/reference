@@ -47,55 +47,9 @@
 
 .field public static final app_permission_item_old:I = #layout@app_permission_item_old#t
 
-.field public static final app_permission_table_item:I = #layout@app_permission_table_item#t
-
 .field public static final app_perms_summary:I = #layout@app_perms_summary#t
 
 .field public static final auto_complete_list:I = #layout@auto_complete_list#t
-
-.field public static final baidu_keyguard_axis_single_line:I = #layout@baidu_keyguard_axis_single_line#t
-
-.field public static final baidu_keyguard_constellation01:I = #layout@baidu_keyguard_constellation01#t
-
-.field public static final baidu_keyguard_constellation02:I = #layout@baidu_keyguard_constellation02#t
-
-.field public static final baidu_keyguard_constellation03:I = #layout@baidu_keyguard_constellation03#t
-
-.field public static final baidu_keyguard_constellation04:I = #layout@baidu_keyguard_constellation04#t
-
-.field public static final baidu_keyguard_constellation05:I = #layout@baidu_keyguard_constellation05#t
-
-.field public static final baidu_keyguard_constellation06:I = #layout@baidu_keyguard_constellation06#t
-
-.field public static final baidu_keyguard_constellation07:I = #layout@baidu_keyguard_constellation07#t
-
-.field public static final baidu_keyguard_constellation08:I = #layout@baidu_keyguard_constellation08#t
-
-.field public static final baidu_keyguard_constellation09:I = #layout@baidu_keyguard_constellation09#t
-
-.field public static final baidu_keyguard_constellation10:I = #layout@baidu_keyguard_constellation10#t
-
-.field public static final baidu_keyguard_hotword:I = #layout@baidu_keyguard_hotword#t
-
-.field public static final baidu_keyguard_search:I = #layout@baidu_keyguard_search#t
-
-.field public static final baidu_keyguard_slide:I = #layout@baidu_keyguard_slide#t
-
-.field public static final baidu_keyguard_slide_iqiyi_list_item:I = #layout@baidu_keyguard_slide_iqiyi_list_item#t
-
-.field public static final baidu_keyguard_slide_music_view:I = #layout@baidu_keyguard_slide_music_view#t
-
-.field public static final baidu_keyguard_slide_target_view:I = #layout@baidu_keyguard_slide_target_view#t
-
-.field public static final baidu_keyguard_space:I = #layout@baidu_keyguard_space#t
-
-.field public static final baidu_keyguard_space_target_view:I = #layout@baidu_keyguard_space_target_view#t
-
-.field public static final baidu_keyguard_target:I = #layout@baidu_keyguard_target#t
-
-.field public static final baidu_keyguard_water:I = #layout@baidu_keyguard_water#t
-
-.field public static final baidu_keyguard_water_target_view:I = #layout@baidu_keyguard_water_target_view#t
 
 .field public static final browser_link_context_header:I = #layout@browser_link_context_header#t
 
@@ -116,8 +70,6 @@
 .field public static final date_picker:I = #layout@date_picker#t
 
 .field public static final date_picker_dialog:I = #layout@date_picker_dialog#t
-
-.field public static final dynamic_perm_dialog:I = #layout@dynamic_perm_dialog#t
 
 .field public static final expandable_list_content:I = #layout@expandable_list_content#t
 
@@ -148,10 +100,6 @@
 .field public static final js_prompt:I = #layout@js_prompt#t
 
 .field public static final keyguard_screen_glogin_unlock:I = #layout@keyguard_screen_glogin_unlock#t
-
-.field public static final keyguard_screen_hot_music:I = #layout@keyguard_screen_hot_music#t
-
-.field public static final keyguard_screen_hotspot:I = #layout@keyguard_screen_hotspot#t
 
 .field public static final keyguard_screen_password_landscape:I = #layout@keyguard_screen_password_landscape#t
 
@@ -225,10 +173,6 @@
 
 .field public static final number_picker:I = #layout@number_picker#t
 
-.field public static final permission_prompt:I = #layout@permission_prompt#t
-
-.field public static final permission_prompt_item:I = #layout@permission_prompt_item#t
-
 .field public static final permissions_package_list_item:I = #layout@permissions_package_list_item#t
 
 .field public static final popup_menu_item_layout:I = #layout@popup_menu_item_layout#t
@@ -249,8 +193,6 @@
 
 .field public static final progress_dialog:I = #layout@progress_dialog#t
 
-.field public static final quickboot_dialog_confirm:I = #layout@quickboot_dialog_confirm#t
-
 .field public static final recent_apps_dialog:I = #layout@recent_apps_dialog#t
 
 .field public static final remote_views_adapter_default_loading_view:I = #layout@remote_views_adapter_default_loading_view#t
@@ -258,8 +200,6 @@
 .field public static final resolve_list_item:I = #layout@resolve_list_item#t
 
 .field public static final resolver_grid:I = #layout@resolver_grid#t
-
-.field public static final ringtone_custom_item:I = #layout@ringtone_custom_item#t
 
 .field public static final safe_mode:I = #layout@safe_mode#t
 
@@ -337,8 +277,6 @@
 
 .field public static final status_bar_latest_event_ticker_large_icon:I = #layout@status_bar_latest_event_ticker_large_icon#t
 
-.field public static final super_mode_dialog:I = #layout@super_mode_dialog#t
-
 .field public static final tab_content:I = #layout@tab_content#t
 
 .field public static final tab_indicator_holo:I = #layout@tab_indicator_holo#t
@@ -376,42 +314,6 @@
 .field public static final wifi_p2p_dialog:I = #layout@wifi_p2p_dialog#t
 
 .field public static final wifi_p2p_dialog_row:I = #layout@wifi_p2p_dialog_row#t
-
-.field public static final yi_alert_dialog_baidu:I = #layout@yi_alert_dialog_baidu#t
-
-.field public static final yi_alert_dialog_baidu_light:I = #layout@yi_alert_dialog_baidu_light#t
-
-.field public static final yi_date_picker_baidu:I = #layout@yi_date_picker_baidu#t
-
-.field public static final yi_dialog_custom_title_baidu:I = #layout@yi_dialog_custom_title_baidu#t
-
-.field public static final yi_dialog_title_baidu:I = #layout@yi_dialog_title_baidu#t
-
-.field public static final yi_dialog_title_icons_baidu:I = #layout@yi_dialog_title_icons_baidu#t
-
-.field public static final yi_preference_baidu:I = #layout@yi_preference_baidu#t
-
-.field public static final yi_preference_category_baidu:I = #layout@yi_preference_category_baidu#t
-
-.field public static final yi_preference_child_baidu:I = #layout@yi_preference_child_baidu#t
-
-.field public static final yi_preference_dialog_edittext_light:I = #layout@yi_preference_dialog_edittext_light#t
-
-.field public static final yi_ringtone:I = #layout@yi_ringtone#t
-
-.field public static final yi_select_dialog_baidu_light:I = #layout@yi_select_dialog_baidu_light#t
-
-.field public static final yi_select_dialog_item_baidu_light:I = #layout@yi_select_dialog_item_baidu_light#t
-
-.field public static final yi_select_dialog_multichoice_baidu_light:I = #layout@yi_select_dialog_multichoice_baidu_light#t
-
-.field public static final yi_select_dialog_singlechoice_baidu_light:I = #layout@yi_select_dialog_singlechoice_baidu_light#t
-
-.field public static final yi_tab_indicator_baidu:I = #layout@yi_tab_indicator_baidu#t
-
-.field public static final yi_text_edit_action_popup_text:I = #layout@yi_text_edit_action_popup_text#t
-
-.field public static final yi_time_picker_baidu:I = #layout@yi_time_picker_baidu#t
 
 .field public static final zoom_container:I = #layout@zoom_container#t
 

@@ -15,19 +15,7 @@
 
 
 # static fields
-.field public static final animals:I = #array@animals#t
-
 .field public static final carrier_properties:I = #array@carrier_properties#t
-
-.field public static final chineseDay:I = #array@chineseDay#t
-
-.field public static final chineseNumber:I = #array@chineseNumber#t
-
-.field public static final chineseTen:I = #array@chineseTen#t
-
-.field public static final chineseTimeSection:I = #array@chineseTimeSection#t
-
-.field public static final chineseYear:I = #array@chineseYear#t
 
 .field public static final common_nicknames:I = #array@common_nicknames#t
 
@@ -85,8 +73,6 @@
 
 .field public static final emailAddressTypes:I = #array@emailAddressTypes#t
 
-.field public static final gan:I = #array@gan#t
-
 .field public static final imProtocols:I = #array@imProtocols#t
 
 .field public static final lockscreen_targets_when_silent:I = #array@lockscreen_targets_when_silent#t
@@ -111,21 +97,11 @@
 
 .field public static final preloaded_drawables:I = #array@preloaded_drawables#t
 
-.field public static final quickboot_info_week_set:I = #array@quickboot_info_week_set#t
-
 .field public static final radioAttributes:I = #array@radioAttributes#t
-
-.field public static final shutdown_reboot_actions:I = #array@shutdown_reboot_actions#t
-
-.field public static final shutdown_reboot_options:I = #array@shutdown_reboot_options#t
-
-.field public static final solar_terms:I = #array@solar_terms#t
 
 .field public static final special_locale_codes:I = #array@special_locale_codes#t
 
 .field public static final special_locale_names:I = #array@special_locale_names#t
-
-.field public static final zhi:I = #array@zhi#t
 
 
 # direct methods
