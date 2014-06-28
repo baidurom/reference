@@ -15,17 +15,17 @@
 
 
 # static fields
-.field public static final voiceprint_recognize:I = 0x3070018
+.field public static final voiceprint_recognize:I = 0x5070018
 
-.field public static final voiceprint_record:I = 0x3070017
+.field public static final voiceprint_record:I = 0x5070017
 
-.field public static final voiceprint_start:I = 0x3070016
+.field public static final voiceprint_start:I = 0x5070016
 
-.field public static final voiceprint_unlock_1stfail:I = 0x307001a
+.field public static final voiceprint_unlock_1stfail:I = 0x507001a
 
-.field public static final voiceprint_unlock_failed:I = 0x307001b
+.field public static final voiceprint_unlock_failed:I = 0x507001b
 
-.field public static final voiceprint_unlock_success:I = 0x3070019
+.field public static final voiceprint_unlock_success:I = 0x5070019
 
 
 # direct methods

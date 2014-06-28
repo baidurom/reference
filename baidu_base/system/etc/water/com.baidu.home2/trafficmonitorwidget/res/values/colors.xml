@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="widget_color_tv_used_rate">#ffffffff</color>
+    <color name="widget_color_shadow">#ffd5d5d5</color>
+    <color name="widget_color_tv_used_rate_exceed">#ffffffff</color>
+    <color name="widget_color_traffic">#ffffffff</color>
+</resources>
+

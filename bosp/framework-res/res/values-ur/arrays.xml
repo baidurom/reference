@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="emailAddressTypes">
+        <item>ہوم</item>
+        <item>کام</item>
+        <item>دوسرے</item>
+        <item>ذاتی</item>
+    </string-array>
+    <string-array name="imProtocols">
+        <item>AIM</item>
+        <item>Windows Live</item>
+        <item>Yahoo</item>
+        <item>Skype</item>
+        <item>QQ</item>
+        <item>Google Talk</item>
+        <item>ICQ</item>
+        <item>Jabber</item>
+    </string-array>
+    <string-array name="organizationTypes">
+        <item>کام</item>
+        <item>دیگر</item>
+        <item>ذاتی</item>
+    </string-array>
+    <string-array name="phoneTypes">
+        <item>گھر</item>
+        <item>موبائل</item>
+        <item>کام</item>
+        <item>کام کا فیکس</item>
+        <item>گھر کا فیکس</item>
+        <item>پیجر</item>
+        <item>دیگر</item>
+        <item>ذاتی</item>
+    </string-array>
+    <string-array name="postalAddressTypes">
+        <item>ہوم</item>
+        <item>کام</item>
+        <item>دیگر</item>
+        <item>ذاتی</item>
+    </string-array>
+    <string-array name="imAddressTypes">
+        <item>ہوم</item>
+        <item>کام</item>
+        <item>دیگر</item>
+        <item>ذاتی</item>
+    </string-array>
+    <array name="carrier_properties" />
+</resources>

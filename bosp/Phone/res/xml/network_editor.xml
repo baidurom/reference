@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceScreen android:persistent="false" android:title="@string/throttle_data_usage" android:key="button_plmn_name_key" />
-    <ListPreference android:title="@string/dialog_network_priority_title" android:key="network_priority_key" android:summary="@string/preferred_network_mode_summary" android:dialogTitle="@string/dialog_network_priority_title" />
-    <ListPreference android:entries="@array/td_network_mode_choices" android:title="@string/dialog_network_mode_title" android:key="network_mode_key" android:summary="@string/preferred_network_mode_summary" android:dialogTitle="@string/dialog_network_mode_title" android:entryValues="@array/td_network_mode_values" />
-</PreferenceScreen>

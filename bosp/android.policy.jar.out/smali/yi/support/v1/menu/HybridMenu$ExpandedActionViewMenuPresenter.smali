@@ -117,7 +117,7 @@
 
     move-result-object v0
 
-    const v1, 0x30a000b
+    const v1, 0x50a000b
 
     invoke-static {v0, v1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -176,7 +176,7 @@
 
     move-result-object v1
 
-    const v2, 0x30a000a
+    const v2, 0x50a000a
 
     invoke-static {v1, v2}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -383,7 +383,7 @@
 
     move-result-object v2
 
-    const v3, 0x30800e9
+    const v3, 0x50800e9
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

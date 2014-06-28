@@ -84,7 +84,7 @@
     <dimen name="default_app_widget_padding_bottom">8.0dip</dimen>
     <dimen name="action_button_min_width">56.0dip</dimen>
     <dimen name="action_bar_stacked_max_height">48.0dip</dimen>
-    <dimen name="action_bar_stacked_tab_max_width">180.0dip</dimen>
+    <dimen name="action_bar_stacked_tab_max_width">200.0dip</dimen>
     <dimen name="notification_text_size">14.0dip</dimen>
     <dimen name="notification_title_text_size">18.0dip</dimen>
     <dimen name="notification_subtext_size">12.0dip</dimen>

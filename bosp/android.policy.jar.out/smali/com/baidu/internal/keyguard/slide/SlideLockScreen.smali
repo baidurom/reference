@@ -42,13 +42,7 @@
 
 .field private static mIQiYiUri:Landroid/net/Uri;
 
-.field private static mMissCall:Landroid/view/View;
-
 .field private static mMissCallCount:I
-
-.field private static mMissGroup:Landroid/view/View;
-
-.field private static mMissMsg:Landroid/view/View;
 
 .field private static mMissMsgCount:I
 
@@ -92,6 +86,12 @@
 
 .field private mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
+.field private mMissCall:Landroid/view/View;
+
+.field private mMissGroup:Landroid/view/View;
+
+.field private mMissMsg:Landroid/view/View;
+
 .field private mMmsObserver:Landroid/database/ContentObserver;
 
 .field private mMusicPlaying:Z
@@ -130,7 +130,7 @@
     .line 88
     sput v0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mMissCallCount:I
 
-    .line 682
+    .line 687
     const-string v0, "content://com.qiyi.video.MyContentProvider/pushmsg"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -151,24 +151,18 @@
     .parameter "callback"
 
     .prologue
-    const/high16 v5, 0x10e
-
-    const v2, #style@Theme.DeviceDefault#t
-
-    const/high16 v4, 0x3f00
-
-    const/4 v1, 0x0
-
-    const/4 v3, 0x1
-
     .line 223
     invoke-direct {p0, p1}, Landroid/widget/RelativeLayout;-><init>(Landroid/content/Context;)V
 
     .line 78
-    iput-boolean v3, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mShowingStatus:Z
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mShowingStatus:Z
 
     .line 102
-    iput-boolean v1, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mMusicPlaying:Z
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mMusicPlaying:Z
 
     .line 103
     new-instance v0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$1;
@@ -184,16 +178,22 @@
 
     iput-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mTransportWidgetCallback:Lcom/baidu/internal/keyguard/slide/TransportWidgetCallback;
 
-    .line 683
-    iput v1, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYiFirstVisibleItem:I
+    .line 688
+    const/4 v0, 0x0
 
-    .line 684
-    iput v1, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYiVisibleItemCount:I
+    iput v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYiFirstVisibleItem:I
 
-    .line 685
-    iput v1, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYiTotalItemCount:I
+    .line 689
+    const/4 v0, 0x0
 
-    .line 686
+    iput v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYiVisibleItemCount:I
+
+    .line 690
+    const/4 v0, 0x0
+
+    iput v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYiTotalItemCount:I
+
+    .line 691
     new-instance v0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$7;
 
     invoke-direct {v0, p0}, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$7;-><init>(Lcom/baidu/internal/keyguard/slide/SlideLockScreen;)V
@@ -201,10 +201,14 @@
     iput-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYiHandler:Landroid/os/Handler;
 
     .line 224
-    invoke-virtual {p0, v3}, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->setFocusable(Z)V
+    const/4 v0, 0x1
+
+    invoke-virtual {p0, v0}, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->setFocusable(Z)V
 
     .line 225
-    invoke-virtual {p0, v3}, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->setFocusableInTouchMode(Z)V
+    const/4 v0, 0x1
+
+    invoke-virtual {p0, v0}, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->setFocusableInTouchMode(Z)V
 
     .line 226
     const/high16 v0, 0x6
@@ -232,11 +236,15 @@
 
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mContext:Landroid/content/Context;
 
-    invoke-direct {v7, v0, v2}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
+    const v1, #style@Theme.DeviceDefault#t
+
+    invoke-direct {v7, v0, v1}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
 
     .line 232
     .local v7, contexttheme:Landroid/view/ContextThemeWrapper;
-    invoke-virtual {v7, v2}, Landroid/view/ContextThemeWrapper;->setTheme(I)V
+    const v0, #style@Theme.DeviceDefault#t
+
+    invoke-virtual {v7, v0}, Landroid/view/ContextThemeWrapper;->setTheme(I)V
 
     .line 233
     invoke-static {v7}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
@@ -247,7 +255,9 @@
     .local v8, inflater:Landroid/view/LayoutInflater;
     const v0, #layout@baidu_keyguard_slide#t
 
-    invoke-virtual {v8, v0, p0, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+    const/4 v1, 0x1
+
+    invoke-virtual {v8, v0, p0, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     .line 235
     const v0, #id@music_view#t
@@ -304,7 +314,7 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mMissGroup:Landroid/view/View;
+    iput-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mMissGroup:Landroid/view/View;
 
     .line 242
     const v0, #id@miss_mms#t
@@ -313,7 +323,7 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mMissMsg:Landroid/view/View;
+    iput-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mMissMsg:Landroid/view/View;
 
     .line 243
     const v0, #id@miss_call#t
@@ -322,7 +332,7 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mMissCall:Landroid/view/View;
+    iput-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mMissCall:Landroid/view/View;
 
     .line 244
     const v0, #id@alarm_status#t
@@ -359,7 +369,13 @@
 
     iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mTargetView:Lcom/baidu/internal/keyguard/slide/TargetView;
 
-    invoke-direct {v0, v1, v2}, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$MyHandler;-><init>(Landroid/content/Context;Lcom/baidu/internal/keyguard/slide/TargetView;)V
+    iget-object v3, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mMissGroup:Landroid/view/View;
+
+    iget-object v4, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mMissMsg:Landroid/view/View;
+
+    iget-object v5, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mMissCall:Landroid/view/View;
+
+    invoke-direct/range {v0 .. v5}, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$MyHandler;-><init>(Landroid/content/Context;Lcom/baidu/internal/keyguard/slide/TargetView;Landroid/view/View;Landroid/view/View;Landroid/view/View;)V
 
     iput-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mHandler:Landroid/os/Handler;
 
@@ -440,7 +456,9 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getInteger(I)I
+    const/high16 v2, 0x10e
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
     move-result v1
 
@@ -472,7 +490,9 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getInteger(I)I
+    const/high16 v2, 0x10e
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
     move-result v1
 
@@ -487,9 +507,13 @@
 
     const/high16 v2, 0x43b4
 
-    move v5, v3
+    const/4 v3, 0x1
 
-    move v6, v4
+    const/high16 v4, 0x3f00
+
+    const/4 v5, 0x1
+
+    const/high16 v6, 0x3f00
 
     invoke-direct/range {v0 .. v6}, Landroid/view/animation/RotateAnimation;-><init>(FFIFIF)V
 
@@ -514,7 +538,9 @@
     .line 323
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mRotateAnimation:Landroid/view/animation/Animation;
 
-    invoke-virtual {v0, v3}, Landroid/view/animation/Animation;->setRepeatMode(I)V
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Landroid/view/animation/Animation;->setRepeatMode(I)V
 
     .line 324
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mRotateAnimation:Landroid/view/animation/Animation;
@@ -596,27 +622,7 @@
     return-void
 .end method
 
-.method static synthetic access$1400()Landroid/view/View;
-    .locals 1
-
-    .prologue
-    .line 71
-    sget-object v0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mMissMsg:Landroid/view/View;
-
-    return-object v0
-.end method
-
-.method static synthetic access$1500()Landroid/view/View;
-    .locals 1
-
-    .prologue
-    .line 71
-    sget-object v0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mMissCall:Landroid/view/View;
-
-    return-object v0
-.end method
-
-.method static synthetic access$1600(Lcom/baidu/internal/keyguard/slide/SlideLockScreen;)Lcom/baidu/internal/keyguard/slide/iqiyi/MyCursorAdapter;
+.method static synthetic access$1400(Lcom/baidu/internal/keyguard/slide/SlideLockScreen;)Lcom/baidu/internal/keyguard/slide/iqiyi/MyCursorAdapter;
     .locals 1
     .parameter "x0"
 
@@ -627,7 +633,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1700(Lcom/baidu/internal/keyguard/slide/SlideLockScreen;)I
+.method static synthetic access$1500(Lcom/baidu/internal/keyguard/slide/SlideLockScreen;)I
     .locals 1
     .parameter "x0"
 
@@ -638,7 +644,7 @@
     return v0
 .end method
 
-.method static synthetic access$1702(Lcom/baidu/internal/keyguard/slide/SlideLockScreen;I)I
+.method static synthetic access$1502(Lcom/baidu/internal/keyguard/slide/SlideLockScreen;I)I
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -650,7 +656,7 @@
     return p1
 .end method
 
-.method static synthetic access$1802(Lcom/baidu/internal/keyguard/slide/SlideLockScreen;I)I
+.method static synthetic access$1602(Lcom/baidu/internal/keyguard/slide/SlideLockScreen;I)I
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -662,7 +668,7 @@
     return p1
 .end method
 
-.method static synthetic access$1902(Lcom/baidu/internal/keyguard/slide/SlideLockScreen;I)I
+.method static synthetic access$1702(Lcom/baidu/internal/keyguard/slide/SlideLockScreen;I)I
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -716,12 +722,13 @@
     return p0
 .end method
 
-.method static synthetic access$400()Landroid/view/View;
+.method static synthetic access$400(Lcom/baidu/internal/keyguard/slide/SlideLockScreen;)Landroid/view/View;
     .locals 1
+    .parameter "x0"
 
     .prologue
     .line 71
-    sget-object v0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mMissGroup:Landroid/view/View;
+    iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mMissGroup:Landroid/view/View;
 
     return-object v0
 .end method
@@ -832,12 +839,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 739
+    .line 744
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYiCR:Landroid/content/ContentResolver;
 
     if-nez v0, :cond_0
 
-    .line 740
+    .line 745
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -846,7 +853,7 @@
 
     iput-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYiCR:Landroid/content/ContentResolver;
 
-    .line 742
+    .line 747
     :cond_0
     const-string v0, "content://com.qiyi.video.MyContentProvider/pushmsg"
 
@@ -854,7 +861,7 @@
 
     move-result-object v1
 
-    .line 743
+    .line 748
     .local v1, uri:Landroid/net/Uri;
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYiCR:Landroid/content/ContentResolver;
 
@@ -870,7 +877,7 @@
 
     iput-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYiCursor:Landroid/database/Cursor;
 
-    .line 744
+    .line 749
     new-instance v0, Lcom/baidu/internal/keyguard/slide/iqiyi/MyCursorAdapter;
 
     iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mContext:Landroid/content/Context;
@@ -881,17 +888,17 @@
 
     iput-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYimyAdapter:Lcom/baidu/internal/keyguard/slide/iqiyi/MyCursorAdapter;
 
-    .line 745
+    .line 750
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYiShowMsgListView:Lcom/baidu/internal/keyguard/slide/iqiyi/SlideListView;
 
     iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYimyAdapter:Lcom/baidu/internal/keyguard/slide/iqiyi/MyCursorAdapter;
 
     invoke-virtual {v0, v2}, Lcom/baidu/internal/keyguard/slide/iqiyi/SlideListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
-    .line 746
+    .line 751
     invoke-direct {p0, v1}, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->iQiYiRegeistObserver(Landroid/net/Uri;)V
 
-    .line 747
+    .line 752
     return-void
 .end method
 
@@ -902,16 +909,16 @@
     .parameter "did"
 
     .prologue
-    .line 776
+    .line 789
     packed-switch p1, :pswitch_data_0
 
-    .line 902
+    .line 915
     :pswitch_0
     new-instance v12, Landroid/content/Intent;
 
     invoke-direct {v12}, Landroid/content/Intent;-><init>()V
 
-    .line 903
+    .line 916
     .local v12, lauchApp:Landroid/content/Intent;
     const-string v24, "com.qiyi.video"
 
@@ -923,21 +930,21 @@
 
     invoke-virtual {v12, v0, v1}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 904
+    .line 917
     const-string v24, "org.qiyi.android.video.MAIN"
 
     move-object/from16 v0, v24
 
     invoke-virtual {v12, v0}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 905
+    .line 918
     const/high16 v24, 0x1000
 
     move/from16 v0, v24
 
     invoke-virtual {v12, v0}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 907
+    .line 920
     :try_start_0
     move-object/from16 v0, p0
 
@@ -951,7 +958,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_7
 
-    .line 911
+    .line 924
     :goto_0
     move-object/from16 v0, p0
 
@@ -963,7 +970,7 @@
 
     invoke-interface/range {v24 .. v25}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;->dismiss(Z)V
 
-    .line 914
+    .line 927
     .end local v12           #lauchApp:Landroid/content/Intent;
     :cond_0
     :goto_1
@@ -994,11 +1001,11 @@
 
     move-result v18
 
-    .line 915
+    .line 928
     .local v18, row:I
     if-lez v18, :cond_1
 
-    .line 916
+    .line 929
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYimyAdapter:Lcom/baidu/internal/keyguard/slide/iqiyi/MyCursorAdapter;
@@ -1007,25 +1014,25 @@
 
     invoke-virtual/range {v24 .. v24}, Lcom/baidu/internal/keyguard/slide/iqiyi/MyCursorAdapter;->notifyDataSetChanged()V
 
-    .line 918
+    .line 931
     :cond_1
     if-eqz p2, :cond_2
 
-    .line 919
+    .line 932
     invoke-interface/range {p2 .. p2}, Landroid/database/Cursor;->close()V
 
-    .line 921
+    .line 934
     :cond_2
     return-void
 
-    .line 781
+    .line 794
     .end local v18           #row:I
     :pswitch_2
     new-instance v9, Landroid/content/Intent;
 
     invoke-direct {v9}, Landroid/content/Intent;-><init>()V
 
-    .line 782
+    .line 795
     .local v9, intentToLauchApp:Landroid/content/Intent;
     const-string v24, "com.qiyi.video"
 
@@ -1037,21 +1044,21 @@
 
     invoke-virtual {v9, v0, v1}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 783
+    .line 796
     const-string v24, "org.qiyi.android.video.MAIN"
 
     move-object/from16 v0, v24
 
     invoke-virtual {v9, v0}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 784
+    .line 797
     const/high16 v24, 0x1000
 
     move/from16 v0, v24
 
     invoke-virtual {v9, v0}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 785
+    .line 798
     const-string v24, "KEY_INIT_TYPE"
 
     const/16 v25, 0x4
@@ -1062,7 +1069,7 @@
 
     invoke-virtual {v9, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 787
+    .line 800
     :try_start_1
     move-object/from16 v0, p0
 
@@ -1076,7 +1083,7 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 791
+    .line 804
     :goto_2
     move-object/from16 v0, p0
 
@@ -1090,11 +1097,11 @@
 
     goto :goto_1
 
-    .line 788
+    .line 801
     :catch_0
     move-exception v5
 
-    .line 789
+    .line 802
     .local v5, e:Ljava/lang/Exception;
     const-string v24, "SlideLockScreen"
 
@@ -1108,7 +1115,7 @@
 
     goto :goto_2
 
-    .line 794
+    .line 807
     .end local v5           #e:Ljava/lang/Exception;
     .end local v9           #intentToLauchApp:Landroid/content/Intent;
     :pswitch_3
@@ -1130,11 +1137,11 @@
 
     move-result v16
 
-    .line 795
+    .line 808
     .local v16, pushAlbum_id:I
     const/16 v23, 0x0
 
-    .line 797
+    .line 810
     .local v23, tvId1:I
     const-string v24, "luke"
 
@@ -1162,7 +1169,7 @@
 
     invoke-static/range {v24 .. v25}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 798
+    .line 811
     new-instance v24, Ljava/lang/StringBuffer;
 
     const-string v25, "//self/res.made"
@@ -1267,13 +1274,13 @@
 
     move-result-object v13
 
-    .line 801
+    .line 814
     .local v13, mUrl:Ljava/lang/String;
     new-instance v6, Landroid/content/Intent;
 
     invoke-direct {v6}, Landroid/content/Intent;-><init>()V
 
-    .line 802
+    .line 815
     .local v6, intent:Landroid/content/Intent;
     const-string v24, "com.qiyi.video"
 
@@ -1281,28 +1288,28 @@
 
     invoke-virtual {v6, v0}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 803
+    .line 816
     const-string v24, "android.intent.action.qiyivideo.player"
 
     move-object/from16 v0, v24
 
     invoke-virtual {v6, v0}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 804
+    .line 817
     const/high16 v24, 0x1000
 
     move/from16 v0, v24
 
     invoke-virtual {v6, v0}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 805
+    .line 818
     const-string v24, "url"
 
     move-object/from16 v0, v24
 
     invoke-virtual {v6, v0, v13}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 807
+    .line 820
     :try_start_2
     move-object/from16 v0, p0
 
@@ -1316,7 +1323,7 @@
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
-    .line 811
+    .line 824
     :goto_3
     move-object/from16 v0, p0
 
@@ -1330,11 +1337,11 @@
 
     goto/16 :goto_1
 
-    .line 808
+    .line 821
     :catch_1
     move-exception v5
 
-    .line 809
+    .line 822
     .restart local v5       #e:Ljava/lang/Exception;
     const-string v24, "SlideLockScreen"
 
@@ -1348,7 +1355,7 @@
 
     goto :goto_3
 
-    .line 814
+    .line 827
     .end local v5           #e:Ljava/lang/Exception;
     .end local v6           #intent:Landroid/content/Intent;
     .end local v13           #mUrl:Ljava/lang/String;
@@ -1373,7 +1380,7 @@
 
     move-result-object v21
 
-    .line 815
+    .line 828
     .local v21, topicIdAndTitleStr:Ljava/lang/String;
     const-string v24, "luke"
 
@@ -1401,7 +1408,7 @@
 
     invoke-static/range {v24 .. v25}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 816
+    .line 829
     if-eqz v21, :cond_0
 
     const-string v24, "_"
@@ -1416,7 +1423,7 @@
 
     if-eqz v24, :cond_0
 
-    .line 817
+    .line 830
     const-string v24, "_"
 
     move-object/from16 v0, v21
@@ -1427,7 +1434,7 @@
 
     move-result-object v20
 
-    .line 818
+    .line 831
     .local v20, topicIdAndTitle:[Ljava/lang/String;
     const/16 v24, 0x0
 
@@ -1437,13 +1444,13 @@
 
     move-result v19
 
-    .line 819
+    .line 832
     .local v19, topicId:I
     new-instance v10, Landroid/content/Intent;
 
     invoke-direct {v10}, Landroid/content/Intent;-><init>()V
 
-    .line 820
+    .line 833
     .local v10, intentToLauchSpecial:Landroid/content/Intent;
     const-string v24, "com.qiyi.video"
 
@@ -1455,14 +1462,14 @@
 
     invoke-virtual {v10, v0, v1}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 821
+    .line 834
     const/high16 v24, 0x1000
 
     move/from16 v0, v24
 
     invoke-virtual {v10, v0}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 822
+    .line 835
     const-string v24, "KEY_INIT_TYPE"
 
     const/16 v25, 0x4
@@ -1473,7 +1480,7 @@
 
     invoke-virtual {v10, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 823
+    .line 836
     const-string v24, "START_PAGE_NO"
 
     const/16 v25, 0xd
@@ -1484,7 +1491,7 @@
 
     invoke-virtual {v10, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 824
+    .line 837
     const-string v24, "AlbumId"
 
     move-object/from16 v0, v24
@@ -1493,7 +1500,7 @@
 
     invoke-virtual {v10, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 825
+    .line 838
     const-string v24, "categoryid"
 
     const/16 v25, 0x14
@@ -1504,7 +1511,7 @@
 
     invoke-virtual {v10, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 826
+    .line 839
     const-string v24, "Title"
 
     const/16 v25, 0x1
@@ -1517,7 +1524,7 @@
 
     invoke-virtual {v10, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 828
+    .line 841
     :try_start_3
     move-object/from16 v0, p0
 
@@ -1531,7 +1538,7 @@
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_2
 
-    .line 832
+    .line 845
     :goto_4
     move-object/from16 v0, p0
 
@@ -1545,11 +1552,11 @@
 
     goto/16 :goto_1
 
-    .line 829
+    .line 842
     :catch_2
     move-exception v5
 
-    .line 830
+    .line 843
     .restart local v5       #e:Ljava/lang/Exception;
     const-string v24, "SlideLockScreen"
 
@@ -1563,7 +1570,7 @@
 
     goto :goto_4
 
-    .line 836
+    .line 849
     .end local v5           #e:Ljava/lang/Exception;
     .end local v10           #intentToLauchSpecial:Landroid/content/Intent;
     .end local v19           #topicId:I
@@ -1588,7 +1595,7 @@
 
     move-result v17
 
-    .line 837
+    .line 850
     .local v17, pushAlbum_id2:I
     const-string v24, "msgtvid"
 
@@ -1608,7 +1615,7 @@
 
     move-result v22
 
-    .line 838
+    .line 851
     .local v22, tvId:I
     const-string v24, "luke"
 
@@ -1636,7 +1643,7 @@
 
     invoke-static/range {v24 .. v25}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 839
+    .line 852
     new-instance v24, Ljava/lang/StringBuffer;
 
     const-string v25, "//self/res.made"
@@ -1741,13 +1748,13 @@
 
     move-result-object v14
 
-    .line 842
+    .line 855
     .local v14, mUrl2:Ljava/lang/String;
     new-instance v7, Landroid/content/Intent;
 
     invoke-direct {v7}, Landroid/content/Intent;-><init>()V
 
-    .line 843
+    .line 856
     .local v7, intent2:Landroid/content/Intent;
     const-string v24, "com.qiyi.video"
 
@@ -1755,28 +1762,28 @@
 
     invoke-virtual {v7, v0}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 844
+    .line 857
     const-string v24, "android.intent.action.qiyivideo.player"
 
     move-object/from16 v0, v24
 
     invoke-virtual {v7, v0}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 845
+    .line 858
     const/high16 v24, 0x1000
 
     move/from16 v0, v24
 
     invoke-virtual {v7, v0}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 846
+    .line 859
     const-string v24, "url"
 
     move-object/from16 v0, v24
 
     invoke-virtual {v7, v0, v14}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 848
+    .line 861
     :try_start_4
     move-object/from16 v0, p0
 
@@ -1790,7 +1797,7 @@
     :try_end_4
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_3
 
-    .line 852
+    .line 865
     :goto_5
     move-object/from16 v0, p0
 
@@ -1804,11 +1811,11 @@
 
     goto/16 :goto_1
 
-    .line 849
+    .line 862
     :catch_3
     move-exception v5
 
-    .line 850
+    .line 863
     .restart local v5       #e:Ljava/lang/Exception;
     const-string v24, "SlideLockScreen"
 
@@ -1822,7 +1829,7 @@
 
     goto :goto_5
 
-    .line 855
+    .line 868
     .end local v5           #e:Ljava/lang/Exception;
     .end local v7           #intent2:Landroid/content/Intent;
     .end local v14           #mUrl2:Ljava/lang/String;
@@ -1847,7 +1854,7 @@
 
     move-result-object v2
 
-    .line 856
+    .line 869
     .local v2, adURL:Ljava/lang/String;
     new-instance v4, Landroid/content/Intent;
 
@@ -1863,7 +1870,7 @@
 
     invoke-direct {v4, v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 857
+    .line 870
     .local v4, browserIntent:Landroid/content/Intent;
     const/high16 v24, 0x1000
 
@@ -1871,7 +1878,7 @@
 
     invoke-virtual {v4, v0}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 859
+    .line 872
     :try_start_5
     move-object/from16 v0, p0
 
@@ -1885,7 +1892,7 @@
     :try_end_5
     .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_4
 
-    .line 863
+    .line 876
     :goto_6
     move-object/from16 v0, p0
 
@@ -1899,11 +1906,11 @@
 
     goto/16 :goto_1
 
-    .line 860
+    .line 873
     :catch_4
     move-exception v5
 
-    .line 861
+    .line 874
     .restart local v5       #e:Ljava/lang/Exception;
     const-string v24, "SlideLockScreen"
 
@@ -1917,14 +1924,14 @@
 
     goto :goto_6
 
-    .line 868
+    .line 881
     .end local v2           #adURL:Ljava/lang/String;
     .end local v4           #browserIntent:Landroid/content/Intent;
     .end local v5           #e:Ljava/lang/Exception;
     :pswitch_7
     const/16 v15, 0x9
 
-    .line 869
+    .line 882
     .local v15, pageNo:I
     const/16 v24, 0x9
 
@@ -1934,16 +1941,16 @@
 
     if-ne v0, v1, :cond_3
 
-    .line 870
+    .line 883
     const/16 v15, 0xa
 
-    .line 874
+    .line 887
     :goto_7
     new-instance v8, Landroid/content/Intent;
 
     invoke-direct {v8}, Landroid/content/Intent;-><init>()V
 
-    .line 875
+    .line 888
     .local v8, intentBuy:Landroid/content/Intent;
     const-string v24, "com.qiyi.video"
 
@@ -1955,14 +1962,14 @@
 
     invoke-virtual {v8, v0, v1}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 876
+    .line 889
     const/high16 v24, 0x1000
 
     move/from16 v0, v24
 
     invoke-virtual {v8, v0}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 877
+    .line 890
     const-string v24, "KEY_INIT_TYPE"
 
     const/16 v25, 0x4
@@ -1973,14 +1980,14 @@
 
     invoke-virtual {v8, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 878
+    .line 891
     const-string v24, "START_PAGE_NO"
 
     move-object/from16 v0, v24
 
     invoke-virtual {v8, v0, v15}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 880
+    .line 893
     :try_start_6
     move-object/from16 v0, p0
 
@@ -1994,7 +2001,7 @@
     :try_end_6
     .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_5
 
-    .line 884
+    .line 897
     :goto_8
     move-object/from16 v0, p0
 
@@ -2008,19 +2015,19 @@
 
     goto/16 :goto_1
 
-    .line 872
+    .line 885
     .end local v8           #intentBuy:Landroid/content/Intent;
     :cond_3
     const/16 v15, 0xb
 
     goto :goto_7
 
-    .line 881
+    .line 894
     .restart local v8       #intentBuy:Landroid/content/Intent;
     :catch_5
     move-exception v5
 
-    .line 882
+    .line 895
     .restart local v5       #e:Ljava/lang/Exception;
     const-string v24, "SlideLockScreen"
 
@@ -2034,7 +2041,7 @@
 
     goto :goto_8
 
-    .line 887
+    .line 900
     .end local v5           #e:Ljava/lang/Exception;
     .end local v8           #intentBuy:Landroid/content/Intent;
     .end local v15           #pageNo:I
@@ -2057,7 +2064,7 @@
 
     move-result-object v3
 
-    .line 888
+    .line 901
     .local v3, adURL2:Ljava/lang/String;
     if-eqz v3, :cond_0
 
@@ -2071,12 +2078,12 @@
 
     if-nez v24, :cond_0
 
-    .line 889
+    .line 902
     new-instance v11, Landroid/content/Intent;
 
     invoke-direct {v11}, Landroid/content/Intent;-><init>()V
 
-    .line 890
+    .line 903
     .local v11, intentdown:Landroid/content/Intent;
     const/high16 v24, 0x1000
 
@@ -2084,14 +2091,14 @@
 
     invoke-virtual {v11, v0}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 891
+    .line 904
     const-string v24, "android.intent.action.VIEW"
 
     move-object/from16 v0, v24
 
     invoke-virtual {v11, v0}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 892
+    .line 905
     invoke-static {v3}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v24
@@ -2100,7 +2107,7 @@
 
     invoke-virtual {v11, v0}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    .line 894
+    .line 907
     :try_start_7
     move-object/from16 v0, p0
 
@@ -2114,7 +2121,7 @@
     :try_end_7
     .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_6
 
-    .line 898
+    .line 911
     :goto_9
     move-object/from16 v0, p0
 
@@ -2128,30 +2135,8 @@
 
     goto/16 :goto_1
 
-    .line 895
-    :catch_6
-    move-exception v5
-
-    .line 896
-    .restart local v5       #e:Ljava/lang/Exception;
-    const-string v24, "SlideLockScreen"
-
-    const-string v25, "startActivity fail:"
-
-    move-object/from16 v0, v24
-
-    move-object/from16 v1, v25
-
-    invoke-static {v0, v1, v5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto :goto_9
-
     .line 908
-    .end local v3           #adURL2:Ljava/lang/String;
-    .end local v5           #e:Ljava/lang/Exception;
-    .end local v11           #intentdown:Landroid/content/Intent;
-    .restart local v12       #lauchApp:Landroid/content/Intent;
-    :catch_7
+    :catch_6
     move-exception v5
 
     .line 909
@@ -2166,9 +2151,31 @@
 
     invoke-static {v0, v1, v5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    goto :goto_9
+
+    .line 921
+    .end local v3           #adURL2:Ljava/lang/String;
+    .end local v5           #e:Ljava/lang/Exception;
+    .end local v11           #intentdown:Landroid/content/Intent;
+    .restart local v12       #lauchApp:Landroid/content/Intent;
+    :catch_7
+    move-exception v5
+
+    .line 922
+    .restart local v5       #e:Ljava/lang/Exception;
+    const-string v24, "SlideLockScreen"
+
+    const-string v25, "startActivity fail:"
+
+    move-object/from16 v0, v24
+
+    move-object/from16 v1, v25
+
+    invoke-static {v0, v1, v5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
     goto/16 :goto_0
 
-    .line 776
+    .line 789
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1
@@ -2192,12 +2199,12 @@
     .parameter "uri"
 
     .prologue
-    .line 751
+    .line 756
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYiContentObserver:Lcom/baidu/internal/keyguard/slide/SlideLockScreen$QiYiContentObserver;
 
     if-nez v0, :cond_0
 
-    .line 752
+    .line 757
     new-instance v0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$QiYiContentObserver;
 
     iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYiHandler:Landroid/os/Handler;
@@ -2206,7 +2213,7 @@
 
     iput-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYiContentObserver:Lcom/baidu/internal/keyguard/slide/SlideLockScreen$QiYiContentObserver;
 
-    .line 754
+    .line 759
     :cond_0
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mContext:Landroid/content/Context;
 
@@ -2220,20 +2227,73 @@
 
     invoke-virtual {v0, p1, v1, v2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 755
+    .line 760
     return-void
+.end method
+
+.method private iQiYiUnregeistObserver()V
+    .locals 4
+
+    .prologue
+    .line 764
+    :try_start_0
+    iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYiContentObserver:Lcom/baidu/internal/keyguard/slide/SlideLockScreen$QiYiContentObserver;
+
+    invoke-virtual {v1, v2}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 768
+    :goto_0
+    return-void
+
+    .line 765
+    :catch_0
+    move-exception v0
+
+    .line 766
+    .local v0, e:Ljava/lang/Exception;
+    const-string v1, "SlideLockScreen"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "error:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
 .end method
 
 .method private initIQiYi()V
     .locals 4
 
     .prologue
-    .line 699
+    .line 704
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 700
+    .line 705
     .local v0, intent:Landroid/content/Intent;
     const-string v2, "com.qiyi.video.screenoffview"
 
@@ -2241,22 +2301,22 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 701
+    .line 706
     const-string v2, "com.qiyi.video.PushMsgService"
 
     invoke-virtual {v0, v2}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 702
+    .line 707
     iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2, v0}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
 
-    .line 703
+    .line 708
     new-instance v1, Landroid/content/Intent;
 
     invoke-direct {v1}, Landroid/content/Intent;-><init>()V
 
-    .line 704
+    .line 709
     .local v1, intent2:Landroid/content/Intent;
     const-string v2, "com.baidu.android.pushservice"
 
@@ -2264,12 +2324,12 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 705
+    .line 710
     iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2, v1}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
 
-    .line 706
+    .line 711
     const v2, #id@iqiyi_listview#t
 
     invoke-virtual {p0, v2}, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->findViewById(I)Landroid/view/View;
@@ -2280,15 +2340,15 @@
 
     iput-object v2, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYiShowMsgListView:Lcom/baidu/internal/keyguard/slide/iqiyi/SlideListView;
 
-    .line 707
+    .line 712
     invoke-direct {p0}, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->iQiYiInitView()V
 
-    .line 708
+    .line 713
     iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYiShowMsgListView:Lcom/baidu/internal/keyguard/slide/iqiyi/SlideListView;
 
     invoke-virtual {v2, p0}, Lcom/baidu/internal/keyguard/slide/iqiyi/SlideListView;->setRemoveListener(Lcom/baidu/internal/keyguard/slide/iqiyi/SlideListView$RemoveListener;)V
 
-    .line 709
+    .line 714
     iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYiShowMsgListView:Lcom/baidu/internal/keyguard/slide/iqiyi/SlideListView;
 
     new-instance v3, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$8;
@@ -2297,7 +2357,7 @@
 
     invoke-virtual {v2, v3}, Lcom/baidu/internal/keyguard/slide/iqiyi/SlideListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
-    .line 717
+    .line 722
     iget-object v2, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYiShowMsgListView:Lcom/baidu/internal/keyguard/slide/iqiyi/SlideListView;
 
     new-instance v3, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$9;
@@ -2306,7 +2366,7 @@
 
     invoke-virtual {v2, v3}, Lcom/baidu/internal/keyguard/slide/iqiyi/SlideListView;->setOnScrollListener(Landroid/widget/AbsListView$OnScrollListener;)V
 
-    .line 736
+    .line 741
     return-void
 .end method
 
@@ -2718,7 +2778,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 924
+    .line 937
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYiCR:Landroid/content/ContentResolver;
 
     sget-object v1, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYiUri:Landroid/net/Uri;
@@ -2755,11 +2815,11 @@
 
     move-result-object v7
 
-    .line 925
+    .line 938
     .local v7, cursor:Landroid/database/Cursor;
     invoke-interface {v7}, Landroid/database/Cursor;->moveToFirst()Z
 
-    .line 926
+    .line 939
     const-string v0, "msgat"
 
     invoke-interface {v7, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
@@ -2770,7 +2830,7 @@
 
     move-result v6
 
-    .line 927
+    .line 940
     .local v6, atValue:I
     const-string v0, "luke"
 
@@ -2818,10 +2878,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 928
+    .line 941
     invoke-direct {p0, v6, v7, p1}, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->iQiYiParsePushMeg(ILandroid/database/Cursor;I)V
 
-    .line 929
+    .line 942
     return-void
 .end method
 
@@ -2906,7 +2966,7 @@
     .locals 1
 
     .prologue
-    .line 661
+    .line 666
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mKeyguardCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
 
     return-object v0
@@ -2917,7 +2977,7 @@
     .parameter "duration"
 
     .prologue
-    .line 674
+    .line 679
     return-void
 .end method
 
@@ -2925,7 +2985,7 @@
     .locals 1
 
     .prologue
-    .line 641
+    .line 646
     const/4 v0, 0x0
 
     return v0
@@ -3041,18 +3101,21 @@
     .line 467
     :goto_4
     :try_start_5
+    invoke-direct {p0}, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->iQiYiUnregeistObserver()V
+
+    .line 468
     iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYiCursor:Landroid/database/Cursor;
 
     if-eqz v1, :cond_2
 
-    .line 468
+    .line 469
     iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYiCursor:Landroid/database/Cursor;
 
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
     :try_end_5
     .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_5
 
-    .line 473
+    .line 474
     :cond_2
     :goto_5
     return-void
@@ -3211,12 +3274,12 @@
 
     goto/16 :goto_4
 
-    .line 470
+    .line 471
     .end local v0           #e:Ljava/lang/Exception;
     :catch_5
     move-exception v0
 
-    .line 471
+    .line 472
     .restart local v0       #e:Ljava/lang/Exception;
     const-string v1, "SlideLockScreen"
 
@@ -3479,7 +3542,7 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 933
+    .line 946
     iget-object v3, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYiShowMsgListView:Lcom/baidu/internal/keyguard/slide/iqiyi/SlideListView;
 
     iget-object v4, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYiShowMsgListView:Lcom/baidu/internal/keyguard/slide/iqiyi/SlideListView;
@@ -3494,7 +3557,7 @@
 
     move-result-object v2
 
-    .line 934
+    .line 947
     .local v2, view:Landroid/view/View;
     sget-object v3, Lcom/baidu/internal/keyguard/slide/iqiyi/SlideListView$RemoveDirection;->LEFT:Lcom/baidu/internal/keyguard/slide/iqiyi/SlideListView$RemoveDirection;
 
@@ -3504,10 +3567,10 @@
 
     if-ne v3, v4, :cond_1
 
-    .line 935
+    .line 948
     if-eqz v2, :cond_0
 
-    .line 936
+    .line 949
     invoke-virtual {v2}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v3
@@ -3518,7 +3581,7 @@
 
     move-result v0
 
-    .line 937
+    .line 950
     .local v0, id:I
     iget-object v3, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYiCR:Landroid/content/ContentResolver;
 
@@ -3534,28 +3597,28 @@
 
     move-result v1
 
-    .line 938
+    .line 951
     .local v1, row:I
     if-lez v1, :cond_0
 
-    .line 939
+    .line 952
     iget-object v3, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYimyAdapter:Lcom/baidu/internal/keyguard/slide/iqiyi/MyCursorAdapter;
 
     invoke-virtual {v3}, Lcom/baidu/internal/keyguard/slide/iqiyi/MyCursorAdapter;->notifyDataSetChanged()V
 
-    .line 940
+    .line 953
     iget-object v3, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYiShowMsgListView:Lcom/baidu/internal/keyguard/slide/iqiyi/SlideListView;
 
     invoke-virtual {v3}, Lcom/baidu/internal/keyguard/slide/iqiyi/SlideListView;->invalidate()V
 
-    .line 949
+    .line 962
     .end local v0           #id:I
     .end local v1           #row:I
     :cond_0
     :goto_0
     return-void
 
-    .line 944
+    .line 957
     :cond_1
     invoke-virtual {v2}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
@@ -3567,7 +3630,7 @@
 
     move-result v0
 
-    .line 945
+    .line 958
     .restart local v0       #id:I
     iget-object v3, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mContext:Landroid/content/Context;
 
@@ -3577,7 +3640,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 946
+    .line 959
     invoke-direct {p0, v0}, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->playItem(I)V
 
     goto :goto_0
@@ -3587,12 +3650,12 @@
     .locals 1
 
     .prologue
-    .line 656
+    .line 661
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mTransportControlView:Lcom/baidu/internal/keyguard/slide/TransportControlView;
 
     invoke-virtual {v0}, Lcom/baidu/internal/keyguard/slide/TransportControlView;->cleanUp()V
 
-    .line 657
+    .line 662
     return-void
 .end method
 
@@ -3601,10 +3664,10 @@
     .parameter "callback"
 
     .prologue
-    .line 646
+    .line 651
     iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mKeyguardCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
 
-    .line 647
+    .line 652
     return-void
 .end method
 
@@ -3613,10 +3676,10 @@
     .parameter "utils"
 
     .prologue
-    .line 651
+    .line 656
     iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
-    .line 652
+    .line 657
     return-void
 .end method
 
@@ -3625,7 +3688,7 @@
     .parameter "duration"
 
     .prologue
-    .line 670
+    .line 675
     return-void
 .end method
 
@@ -3633,6 +3696,6 @@
     .locals 0
 
     .prologue
-    .line 666
+    .line 671
     return-void
 .end method

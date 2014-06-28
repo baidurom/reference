@@ -28,7 +28,7 @@
 
     .prologue
     .line 48
-    const v2, 0x3020022
+    const v2, 0x5020022
 
     invoke-virtual {p0, v2}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 
@@ -72,7 +72,7 @@
     const/4 v4, -0x1
 
     .line 35
-    const v3, 0x3020022
+    const v3, 0x5020022
 
     invoke-virtual {p0, v3}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 
@@ -133,7 +133,7 @@
 
     .prologue
     .line 58
-    const v1, 0x3020022
+    const v1, 0x5020022
 
     invoke-virtual {p0, v1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 

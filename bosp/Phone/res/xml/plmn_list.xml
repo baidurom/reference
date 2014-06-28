@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen android:title="@string/plmn_list_setting_title"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory android:title="@string/category_plmn_list" android:key="plmn_list" />
-    <PreferenceScreen android:persistent="false" android:title="@string/plmn_list_setting_add_plmn" android:key="button_add_plmn_key">
-        <intent android:targetPackage="com.android.phone" android:action="android.intent.action.MAIN" android:targetClass="com.android.phone.DataUsage" />
-    </PreferenceScreen>
-</PreferenceScreen>

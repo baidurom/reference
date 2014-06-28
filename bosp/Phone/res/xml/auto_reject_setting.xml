@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen android:title="@string/auto_reject_title"
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:phone="http://schemas.android.com/apk/res/com.android.phone">
-    <CheckBoxPreference android:persistent="true" android:title="@string/auto_reject_title_voice" android:key="voice_call_auto_reject_key" android:summary="@string/auto_reject_sum_voice" android:defaultValue="false" />
-    <CheckBoxPreference android:persistent="true" android:title="@string/auto_reject_title_video" android:key="video_call_auto_reject_key" android:summary="@string/auto_reject_sum_video" android:defaultValue="false" />
-    <CheckBoxPreference android:persistent="true" android:title="@string/auto_reject_title_sip" android:key="sip_call_auto_reject_key" android:summary="@string/auto_reject_sum_sip" android:defaultValue="false" />
-</PreferenceScreen>

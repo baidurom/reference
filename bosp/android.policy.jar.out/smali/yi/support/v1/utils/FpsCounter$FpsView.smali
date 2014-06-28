@@ -433,7 +433,7 @@
 
     .prologue
     .line 99
-    const v1, 0x3020022
+    const v1, 0x5020022
 
     invoke-virtual {p0, v1}, Lyi/support/v1/utils/FpsCounter$FpsView;->setId(I)V
 

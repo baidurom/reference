@@ -34,8 +34,4 @@
     <item type="drawable" name="yi_input_method_fullscreen_background_baidu">@drawable/yi_screen_background_baidu_dark</item>
     <item type="drawable" name="yi_screen_background_baidu_light">#fff3f3f3</item>
     <item type="drawable" name="yi_screen_background_baidu_dark">#ff000000</item>
-    <item type="drawable" name="APKTOOL_DUMMY_0612">false</item>
-    <item type="drawable" name="APKTOOL_DUMMY_0613">false</item>
-    <item type="drawable" name="APKTOOL_DUMMY_0614">false</item>
-    <item type="drawable" name="APKTOOL_DUMMY_06e9">false</item>
 </resources>

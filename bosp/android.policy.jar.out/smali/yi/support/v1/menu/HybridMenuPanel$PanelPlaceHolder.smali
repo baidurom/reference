@@ -195,7 +195,7 @@
     .line 465
     iget-object v5, p0, Lyi/support/v1/menu/HybridMenuPanel$PanelPlaceHolder;->mPlaceHolder:Landroid/view/View;
 
-    const v6, 0x3020024
+    const v6, 0x5020024
 
     invoke-virtual {v5, v6}, Landroid/view/View;->setId(I)V
 

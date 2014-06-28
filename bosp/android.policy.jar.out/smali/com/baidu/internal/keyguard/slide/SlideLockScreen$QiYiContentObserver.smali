@@ -27,16 +27,16 @@
     .parameter "handler"
 
     .prologue
-    .line 761
+    .line 774
     iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$QiYiContentObserver;->this$0:Lcom/baidu/internal/keyguard/slide/SlideLockScreen;
 
-    .line 762
+    .line 775
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 763
+    .line 776
     iput-object p2, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$QiYiContentObserver;->handler:Landroid/os/Handler;
 
-    .line 764
+    .line 777
     return-void
 .end method
 
@@ -47,22 +47,22 @@
     .parameter "selfChange"
 
     .prologue
-    .line 768
+    .line 781
     invoke-super {p0, p1}, Landroid/database/ContentObserver;->onChange(Z)V
 
-    .line 769
+    .line 782
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$QiYiContentObserver;->handler:Landroid/os/Handler;
 
     if-eqz v0, :cond_0
 
-    .line 770
+    .line 783
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$QiYiContentObserver;->handler:Landroid/os/Handler;
 
     const v1, 0x9823
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 772
+    .line 785
     :cond_0
     return-void
 .end method

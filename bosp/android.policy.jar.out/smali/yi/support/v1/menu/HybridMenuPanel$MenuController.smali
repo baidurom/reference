@@ -1023,7 +1023,7 @@
 
     move-result-object v0
 
-    const v1, 0x302003e
+    const v1, 0x502003e
 
     #calls: Lyi/support/v1/menu/HybridMenuPanel;->removeAndAddView(Landroid/view/ViewGroup;Landroid/view/View;I)Landroid/view/View;
     invoke-static {v0, p1, v1}, Lyi/support/v1/menu/HybridMenuPanel;->access$3900(Landroid/view/ViewGroup;Landroid/view/View;I)Landroid/view/View;

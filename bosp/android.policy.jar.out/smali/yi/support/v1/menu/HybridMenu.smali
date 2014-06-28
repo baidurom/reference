@@ -73,7 +73,7 @@
     iput-object v2, p0, Lyi/support/v1/menu/HybridMenu;->mActivity:Ljava/lang/ref/WeakReference;
 
     .line 62
-    const v2, 0x302003f
+    const v2, 0x502003f
 
     invoke-virtual {p1, v2}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 
@@ -91,7 +91,7 @@
 
     move-result-object v2
 
-    const v3, 0x309001e
+    const v3, 0x509001e
 
     const/4 v4, 0x0
 
@@ -127,7 +127,7 @@
     iput-object v2, p0, Lyi/support/v1/menu/HybridMenu;->mContentMask:Lyi/support/v1/menu/HybridMenu$ContentMask;
 
     .line 76
-    const v2, 0x3020042
+    const v2, 0x5020042
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -256,7 +256,7 @@
 
     sget-object v9, Lcom/yi/internal/R$styleable;->HybridMenu:[I
 
-    const v10, 0x3010049
+    const v10, 0x5010049
 
     const/4 v11, 0x0
 
@@ -344,7 +344,7 @@
 
     move-result-object v8
 
-    const v9, 0x308004e
+    const v9, 0x508004e
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -352,7 +352,7 @@
 
     .line 112
     :cond_1
-    const v8, 0x3020043
+    const v8, 0x5020043
 
     invoke-virtual {p2, v8}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -368,7 +368,7 @@
 
     move-result-object v8
 
-    const v9, 0x308004f
+    const v9, 0x508004f
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -376,7 +376,7 @@
 
     .line 117
     :cond_2
-    const v8, 0x3020044
+    const v8, 0x5020044
 
     invoke-virtual {p2, v8}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -392,7 +392,7 @@
 
     move-result-object v8
 
-    const v9, 0x30800ae
+    const v9, 0x50800ae
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -400,7 +400,7 @@
 
     .line 122
     :cond_3
-    const v8, 0x3020047
+    const v8, 0x5020047
 
     invoke-virtual {p2, v8}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 

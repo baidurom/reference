@@ -82,7 +82,7 @@
     .line 636
     iget-object v1, p0, Lcom/yi/internal/widget/VoiceprintUnlockView$Recognizing;->this$0:Lcom/yi/internal/widget/VoiceprintUnlockView;
 
-    const v2, 0x3070018
+    const v2, 0x5070018
 
     #calls: Lcom/yi/internal/widget/VoiceprintUnlockView;->updateTipWords(I)V
     invoke-static {v1, v2}, Lcom/yi/internal/widget/VoiceprintUnlockView;->access$1300(Lcom/yi/internal/widget/VoiceprintUnlockView;I)V
@@ -92,7 +92,7 @@
 
     iget-object v1, v1, Lcom/yi/internal/widget/VoiceprintUnlockView;->mContext:Landroid/content/Context;
 
-    const v2, 0x30a000c
+    const v2, 0x50a000c
 
     invoke-static {v1, v2}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -117,7 +117,7 @@
 
     move-result-object v1
 
-    const v2, 0x3080125
+    const v2, 0x5080125
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -149,7 +149,7 @@
 
     move-result-object v1
 
-    const v2, 0x3080133
+    const v2, 0x5080133
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 

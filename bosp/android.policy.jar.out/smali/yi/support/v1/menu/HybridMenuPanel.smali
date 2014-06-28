@@ -735,7 +735,7 @@
     invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
 
     .line 75
-    const v0, 0x3020044
+    const v0, 0x5020044
 
     invoke-virtual {p0, v0}, Lyi/support/v1/menu/HybridMenuPanel;->findViewById(I)Landroid/view/View;
 
@@ -746,7 +746,7 @@
     iput-object v0, p0, Lyi/support/v1/menu/HybridMenuPanel;->mPanelContainer:Landroid/view/ViewGroup;
 
     .line 76
-    const v0, 0x3020045
+    const v0, 0x5020045
 
     invoke-virtual {p0, v0}, Lyi/support/v1/menu/HybridMenuPanel;->findViewById(I)Landroid/view/View;
 
@@ -757,7 +757,7 @@
     iput-object v0, p0, Lyi/support/v1/menu/HybridMenuPanel;->mActionContainer:Landroid/view/ViewGroup;
 
     .line 77
-    const v0, 0x3020046
+    const v0, 0x5020046
 
     invoke-virtual {p0, v0}, Lyi/support/v1/menu/HybridMenuPanel;->findViewById(I)Landroid/view/View;
 
@@ -770,7 +770,7 @@
     .line 78
     new-instance v0, Lyi/support/v1/menu/HybridMenuPanel$MenuIndicator;
 
-    const v1, 0x3020047
+    const v1, 0x5020047
 
     invoke-virtual {p0, v1}, Lyi/support/v1/menu/HybridMenuPanel;->findViewById(I)Landroid/view/View;
 

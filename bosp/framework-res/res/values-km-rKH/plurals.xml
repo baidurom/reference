@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="num_seconds_ago">
+        <item quantity="other">%d វិនាទីកន្លងទៅ</item>
+        <item quantity="one">1 វិនាទីកន្លងទៅ</item>
+    </plurals>
+    <plurals name="num_minutes_ago">
+        <item quantity="other">%d នាទីកន្លងទៅ</item>
+        <item quantity="one">1 នាទីកន្លងទៅ</item>
+    </plurals>
+    <plurals name="num_hours_ago">
+        <item quantity="other">%d ម៉ោងកន្លងទៅ</item>
+        <item quantity="one">1 ម៉ោងកន្លងទៅ</item>
+    </plurals>
+    <plurals name="last_num_days">
+        <item quantity="other">ពី %d ថ្ងៃមុន</item>
+    </plurals>
+    <plurals name="num_days_ago">
+        <item quantity="other">%d ថ្ងៃកន្លងទៅ</item>
+        <item quantity="one">ម្សិលមិញ</item>
+    </plurals>
+    <plurals name="in_num_seconds">
+        <item quantity="other">ក្នុង %d វិនាទី</item>
+        <item quantity="one">ក្នុង 1 វិនាទី</item>
+    </plurals>
+    <plurals name="in_num_minutes">
+        <item quantity="other">ក្នុង %d នាទី</item>
+        <item quantity="one">ក្នុង 1 នាទី</item>
+    </plurals>
+    <plurals name="in_num_hours">
+        <item quantity="other">ក្នុង %d ម៉ោង</item>
+        <item quantity="one">ក្នុង 1 ម៉ោង</item>
+    </plurals>
+    <plurals name="in_num_days">
+        <item quantity="other">ក្នុង %d ថ្ងៃ</item>
+        <item quantity="one">ស្អែក</item>
+    </plurals>
+    <plurals name="abbrev_num_seconds_ago">
+        <item quantity="other">%d វិនាទីកន្លងទៅ</item>
+        <item quantity="one">1 វិនាទីកន្លងទៅ</item>
+    </plurals>
+    <plurals name="abbrev_num_minutes_ago">
+        <item quantity="other">%d នាទីកន្លងទៅ</item>
+        <item quantity="one">1 នាទីកន្លងទៅ</item>
+    </plurals>
+    <plurals name="abbrev_num_hours_ago">
+        <item quantity="other">%d ម៉ោងកន្លងទៅ</item>
+        <item quantity="one">1 ម៉ោងកន្លងទៅ</item>
+    </plurals>
+    <plurals name="abbrev_num_days_ago">
+        <item quantity="other">%d ថ្ងៃកន្លងទៅ</item>
+        <item quantity="one">ម្សិលមិញ</item>
+    </plurals>
+    <plurals name="abbrev_in_num_seconds">
+        <item quantity="other">ក្នុង %d វិនាទី</item>
+        <item quantity="one">ក្នុង 1 វិនាទី</item>
+    </plurals>
+    <plurals name="abbrev_in_num_minutes">
+        <item quantity="other">ក្នុង %d នាទី</item>
+        <item quantity="one">ក្នុង 1 នាទី</item>
+    </plurals>
+    <plurals name="abbrev_in_num_hours">
+        <item quantity="other">ក្នុង %d ម៉ោង</item>
+        <item quantity="one">ក្នុង 1 ម៉ោង</item>
+    </plurals>
+    <plurals name="abbrev_in_num_days">
+        <item quantity="other">ក្នុង %d ថ្ងៃ</item>
+        <item quantity="one">ស្អែក</item>
+    </plurals>
+    <plurals name="wifi_available">
+        <item quantity="other">មានបណ្តាញ Wi-Fi</item>
+        <item quantity="one">មានបណ្តាញWi-Fi</item>
+    </plurals>
+    <plurals name="wifi_available_detailed">
+        <item quantity="other">បើកបណ្តាញ Wi-Fi ដែលមាន</item>
+        <item quantity="one">បើកបណ្តាញ Wi-Fi ដែលមាន</item>
+    </plurals>
+    <plurals name="matches_found">
+        <item quantity="other">%1$d នៃ %2$d</item>
+        <item quantity="one">1 គូ</item>
+    </plurals>
+</resources>

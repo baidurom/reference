@@ -15,19 +15,19 @@
 
 
 # static fields
-.field public static final dropdownitem_icon_width:I = 0x305000c
+.field public static final dropdownitem_icon_width:I = 0x505000c
 
-.field public static final dropdownitem_text_padding_left:I = 0x305000a
+.field public static final dropdownitem_text_padding_left:I = 0x505000a
 
-.field public static final preference_fragment_padding_side:I = 0x3050001
+.field public static final preference_fragment_padding_side:I = 0x5050001
 
-.field public static final preference_item_padding_inner:I = 0x3050003
+.field public static final preference_item_padding_inner:I = 0x5050003
 
-.field public static final preference_item_padding_side:I = 0x3050002
+.field public static final preference_item_padding_side:I = 0x5050002
 
-.field public static final search_view_preferred_width:I = 0x305000e
+.field public static final search_view_preferred_width:I = 0x505000e
 
-.field public static final yi_list_item_header_height:I = 0x3050000
+.field public static final yi_list_item_header_height:I = 0x5050000
 
 
 # direct methods

@@ -13,7 +13,7 @@
 
     .prologue
     .line 12
-    const v0, 0x3080010
+    const v0, 0x5080010
 
     sput v0, Lyi/util/ViewHelper;->mBackground:I
 
@@ -95,7 +95,7 @@
 
     .line 25
     .local v6, inflater:Landroid/view/LayoutInflater;
-    const v9, 0x309003a
+    const v9, 0x509003a
 
     invoke-virtual {v6, v9, p0, v11}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -103,7 +103,7 @@
 
     .line 28
     .local v7, tabIndicator:Landroid/view/View;
-    const v9, 0x3020048
+    const v9, 0x5020048
 
     invoke-virtual {v7, v9}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -120,7 +120,7 @@
 
     .line 34
     :cond_0
-    const v9, 0x3020053
+    const v9, 0x5020053
 
     invoke-virtual {v7, v9}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -141,7 +141,7 @@
     :cond_1
     sget v9, Lyi/util/ViewHelper;->mBackground:I
 
-    const v10, 0x3080010
+    const v10, 0x5080010
 
     if-eq v9, v10, :cond_2
 

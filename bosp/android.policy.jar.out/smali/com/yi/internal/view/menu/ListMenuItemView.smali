@@ -149,7 +149,7 @@
 
     .line 252
     .local v0, inflater:Landroid/view/LayoutInflater;
-    const v1, 0x309001f
+    const v1, 0x509001f
 
     const/4 v2, 0x0
 
@@ -183,7 +183,7 @@
 
     .line 237
     .local v0, inflater:Landroid/view/LayoutInflater;
-    const v1, 0x3090020
+    const v1, 0x5090020
 
     invoke-virtual {v0, v1, p0, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -213,7 +213,7 @@
 
     .line 244
     .local v0, inflater:Landroid/view/LayoutInflater;
-    const v1, 0x3090022
+    const v1, 0x5090022
 
     const/4 v2, 0x0
 
@@ -332,7 +332,7 @@
     invoke-virtual {p0, v0}, Lcom/yi/internal/view/menu/ListMenuItemView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 84
-    const v0, 0x3020048
+    const v0, 0x5020048
 
     invoke-virtual {p0, v0}, Lcom/yi/internal/view/menu/ListMenuItemView;->findViewById(I)Landroid/view/View;
 
@@ -360,7 +360,7 @@
 
     .line 90
     :cond_0
-    const v0, 0x3020049
+    const v0, 0x5020049
 
     invoke-virtual {p0, v0}, Lcom/yi/internal/view/menu/ListMenuItemView;->findViewById(I)Landroid/view/View;
 

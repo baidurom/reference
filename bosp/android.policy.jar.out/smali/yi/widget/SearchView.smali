@@ -249,14 +249,14 @@
 
     .line 290
     .local v3, inflater:Landroid/view/LayoutInflater;
-    const v7, 0x3090019
+    const v7, 0x5090019
 
     const/4 v8, 0x1
 
     invoke-virtual {v3, v7, p0, v8}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     .line 292
-    const v7, 0x3020009
+    const v7, 0x5020009
 
     invoke-virtual {p0, v7}, Lyi/widget/SearchView;->findViewById(I)Landroid/view/View;
 
@@ -265,7 +265,7 @@
     iput-object v7, p0, Lyi/widget/SearchView;->mSearchButton:Landroid/view/View;
 
     .line 293
-    const v7, 0x3020036
+    const v7, 0x5020036
 
     invoke-virtual {p0, v7}, Lyi/widget/SearchView;->findViewById(I)Landroid/view/View;
 
@@ -287,7 +287,7 @@
 
     move-result-object v8
 
-    const v9, 0x30800b0
+    const v9, 0x50800b0
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -302,7 +302,7 @@
     invoke-virtual {v7, v8, v9, v10, v11}, Lyi/widget/SearchView$SearchAutoComplete;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
     .line 297
-    const v7, 0x3020033
+    const v7, 0x5020033
 
     invoke-virtual {p0, v7}, Lyi/widget/SearchView;->findViewById(I)Landroid/view/View;
 
@@ -311,7 +311,7 @@
     iput-object v7, p0, Lyi/widget/SearchView;->mSearchEditFrame:Landroid/view/View;
 
     .line 298
-    const v7, 0x3020035
+    const v7, 0x5020035
 
     invoke-virtual {p0, v7}, Lyi/widget/SearchView;->findViewById(I)Landroid/view/View;
 
@@ -320,7 +320,7 @@
     iput-object v7, p0, Lyi/widget/SearchView;->mSearchPlate:Landroid/view/View;
 
     .line 299
-    const v7, 0x3020038
+    const v7, 0x5020038
 
     invoke-virtual {p0, v7}, Lyi/widget/SearchView;->findViewById(I)Landroid/view/View;
 
@@ -329,7 +329,7 @@
     iput-object v7, p0, Lyi/widget/SearchView;->mSubmitArea:Landroid/view/View;
 
     .line 300
-    const v7, 0x3020039
+    const v7, 0x5020039
 
     invoke-virtual {p0, v7}, Lyi/widget/SearchView;->findViewById(I)Landroid/view/View;
 
@@ -338,7 +338,7 @@
     iput-object v7, p0, Lyi/widget/SearchView;->mSubmitButton:Landroid/view/View;
 
     .line 301
-    const v7, 0x3020037
+    const v7, 0x5020037
 
     invoke-virtual {p0, v7}, Lyi/widget/SearchView;->findViewById(I)Landroid/view/View;
 
@@ -349,7 +349,7 @@
     iput-object v7, p0, Lyi/widget/SearchView;->mCloseButton:Landroid/widget/ImageView;
 
     .line 302
-    const v7, 0x302003a
+    const v7, 0x502003a
 
     invoke-virtual {p0, v7}, Lyi/widget/SearchView;->findViewById(I)Landroid/view/View;
 
@@ -358,7 +358,7 @@
     iput-object v7, p0, Lyi/widget/SearchView;->mVoiceButton:Landroid/view/View;
 
     .line 303
-    const v7, 0x3020034
+    const v7, 0x5020034
 
     invoke-virtual {p0, v7}, Lyi/widget/SearchView;->findViewById(I)Landroid/view/View;
 
@@ -369,7 +369,7 @@
     iput-object v7, p0, Lyi/widget/SearchView;->mSearchHintIcon:Landroid/widget/ImageView;
 
     .line 304
-    const v7, 0x3020016
+    const v7, 0x5020016
 
     invoke-virtual {p0, v7}, Lyi/widget/SearchView;->findViewById(I)Landroid/view/View;
 
@@ -1003,13 +1003,13 @@
 
     if-eqz v4, :cond_1
 
-    const v4, 0x305000c
+    const v4, 0x505000c
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v4
 
-    const v5, 0x305000a
+    const v5, 0x505000a
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1773,7 +1773,7 @@
 
     move-result-object v0
 
-    const v1, 0x305000e
+    const v1, 0x505000e
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -3124,7 +3124,7 @@
 
     move-result-object v4
 
-    const v5, 0x30a0009
+    const v5, 0x50a0009
 
     invoke-static {v4, v5}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -3959,7 +3959,7 @@
 
     move-result-object v2
 
-    const v3, 0x30a0008
+    const v3, 0x50a0008
 
     invoke-static {v2, v3}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -4941,7 +4941,7 @@
 
     move-result-object v2
 
-    const v3, 0x30a0007
+    const v3, 0x50a0007
 
     invoke-static {v2, v3}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 

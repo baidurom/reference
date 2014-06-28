@@ -86,7 +86,10 @@
 
     .line 130
     :cond_0
-    invoke-static {}, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->access$400()Landroid/view/View;
+    iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$1;->this$0:Lcom/baidu/internal/keyguard/slide/SlideLockScreen;
+
+    #getter for: Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mMissGroup:Landroid/view/View;
+    invoke-static {v0}, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->access$400(Lcom/baidu/internal/keyguard/slide/SlideLockScreen;)Landroid/view/View;
 
     move-result-object v0
 
@@ -97,7 +100,10 @@
     if-nez v0, :cond_1
 
     .line 131
-    invoke-static {}, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->access$400()Landroid/view/View;
+    iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$1;->this$0:Lcom/baidu/internal/keyguard/slide/SlideLockScreen;
+
+    #getter for: Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mMissGroup:Landroid/view/View;
+    invoke-static {v0}, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->access$400(Lcom/baidu/internal/keyguard/slide/SlideLockScreen;)Landroid/view/View;
 
     move-result-object v0
 
@@ -111,7 +117,10 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
     .line 132
-    invoke-static {}, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->access$400()Landroid/view/View;
+    iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$1;->this$0:Lcom/baidu/internal/keyguard/slide/SlideLockScreen;
+
+    #getter for: Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mMissGroup:Landroid/view/View;
+    invoke-static {v0}, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->access$400(Lcom/baidu/internal/keyguard/slide/SlideLockScreen;)Landroid/view/View;
 
     move-result-object v0
 
@@ -205,7 +214,10 @@
     if-lez v0, :cond_2
 
     :cond_1
-    invoke-static {}, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->access$400()Landroid/view/View;
+    iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$1;->this$0:Lcom/baidu/internal/keyguard/slide/SlideLockScreen;
+
+    #getter for: Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mMissGroup:Landroid/view/View;
+    invoke-static {v0}, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->access$400(Lcom/baidu/internal/keyguard/slide/SlideLockScreen;)Landroid/view/View;
 
     move-result-object v0
 
@@ -216,7 +228,10 @@
     if-eqz v0, :cond_2
 
     .line 115
-    invoke-static {}, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->access$400()Landroid/view/View;
+    iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$1;->this$0:Lcom/baidu/internal/keyguard/slide/SlideLockScreen;
+
+    #getter for: Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mMissGroup:Landroid/view/View;
+    invoke-static {v0}, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->access$400(Lcom/baidu/internal/keyguard/slide/SlideLockScreen;)Landroid/view/View;
 
     move-result-object v0
 
@@ -230,7 +245,10 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
     .line 116
-    invoke-static {}, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->access$400()Landroid/view/View;
+    iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$1;->this$0:Lcom/baidu/internal/keyguard/slide/SlideLockScreen;
+
+    #getter for: Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mMissGroup:Landroid/view/View;
+    invoke-static {v0}, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->access$400(Lcom/baidu/internal/keyguard/slide/SlideLockScreen;)Landroid/view/View;
 
     move-result-object v0
 

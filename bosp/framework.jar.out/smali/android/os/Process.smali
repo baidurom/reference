@@ -143,8 +143,115 @@
     .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1067
+    .line 1112
     return-void
+.end method
+
+.method public static final getChildPid(I)[I
+    .locals 9
+    .parameter "pid"
+
+    .prologue
+    const/4 v8, -0x1
+
+    .line 740
+    const/4 v4, 0x0
+
+    .line 741
+    .local v4, pids:[I
+    const/4 v5, 0x0
+
+    .line 742
+    .local v5, result:I
+    const-string v7, "/proc"
+
+    invoke-static {v7, v4}, Landroid/os/Process;->getPids(Ljava/lang/String;[I)[I
+
+    move-result-object v4
+
+    .line 743
+    const/4 v1, 0x0
+
+    .local v1, i:I
+    :goto_0
+    array-length v7, v4
+
+    if-ge v1, v7, :cond_2
+
+    .line 744
+    aget v0, v4, v1
+
+    .line 745
+    .local v0, curPid:I
+    if-eq v0, v8, :cond_0
+
+    invoke-static {v0}, Landroid/os/Process;->getParentPid(I)I
+
+    move-result v7
+
+    if-eq v7, p0, :cond_1
+
+    .line 746
+    :cond_0
+    aput v8, v4, v1
+
+    .line 743
+    :goto_1
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    .line 748
+    :cond_1
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_1
+
+    .line 751
+    .end local v0           #curPid:I
+    :cond_2
+    new-array v6, v5, [I
+
+    .line 752
+    .local v6, ret:[I
+    const/4 v2, 0x0
+
+    .line 753
+    .local v2, j:I
+    const/4 v1, 0x0
+
+    :goto_2
+    array-length v7, v4
+
+    if-ge v1, v7, :cond_4
+
+    .line 754
+    aget v7, v4, v1
+
+    if-eq v7, v8, :cond_3
+
+    .line 755
+    add-int/lit8 v3, v2, 0x1
+
+    .end local v2           #j:I
+    .local v3, j:I
+    aget v7, v4, v1
+
+    aput v7, v6, v2
+
+    move v2, v3
+
+    .line 753
+    .end local v3           #j:I
+    .restart local v2       #j:I
+    :cond_3
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_2
+
+    .line 758
+    :cond_4
+    return-object v6
 .end method
 
 .method public static final native getElapsedCpuTime()J
@@ -241,24 +348,24 @@
 
     const/4 v4, 0x0
 
-    .line 740
+    .line 782
     new-array v0, v3, [Ljava/lang/String;
 
     const-string v2, "Tgid:"
 
     aput-object v2, v0, v4
 
-    .line 741
+    .line 783
     .local v0, procStatusLabels:[Ljava/lang/String;
     new-array v1, v3, [J
 
-    .line 742
+    .line 784
     .local v1, procStatusValues:[J
     const-wide/16 v2, -0x1
 
     aput-wide v2, v1, v4
 
-    .line 743
+    .line 785
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -285,7 +392,7 @@
 
     invoke-static {v2, v0, v1}, Landroid/os/Process;->readProcLines(Ljava/lang/String;[Ljava/lang/String;[J)V
 
-    .line 744
+    .line 786
     aget-wide v2, v1, v4
 
     long-to-int v2, v2
@@ -372,18 +479,18 @@
     .locals 6
 
     .prologue
-    .line 956
+    .line 1001
     invoke-static {}, Landroid/os/Debug;->getCompZram()J
 
     move-result-wide v0
 
-    .line 957
+    .line 1002
     .local v0, compZram:J
     invoke-static {}, Landroid/os/Debug;->getOrigZram()J
 
     move-result-wide v2
 
-    .line 958
+    .line 1003
     .local v2, origZram:J
     const-wide/16 v4, 0x0
 
@@ -391,10 +498,10 @@
 
     if-nez v4, :cond_0
 
-    .line 959
+    .line 1004
     const/high16 v4, 0x4000
 
-    .line 961
+    .line 1006
     :goto_0
     return v4
 
@@ -422,26 +529,26 @@
 
     const-wide/16 v4, 0x0
 
-    .line 989
+    .line 1034
     invoke-static {}, Landroid/os/Debug;->getTotalZram()J
 
     move-result-wide v6
 
-    .line 990
+    .line 1035
     .local v6, totalZram:J
     cmp-long v8, v6, v4
 
     if-nez v8, :cond_0
 
-    .line 1000
+    .line 1045
     :goto_0
     return-wide v4
 
-    .line 994
+    .line 1039
     :cond_0
     const-wide/32 v0, 0xf00000
 
-    .line 995
+    .line 1040
     .local v0, anonReserve:J
     invoke-static {}, Landroid/os/Process;->getLruAnonMemory()J
 
@@ -451,16 +558,16 @@
 
     sub-long v2, v8, v10
 
-    .line 996
+    .line 1041
     .local v2, anonToCompress:J
     cmp-long v8, v2, v4
 
     if-gez v8, :cond_1
 
-    .line 997
+    .line 1042
     const-wide/16 v2, 0x0
 
-    .line 999
+    .line 1044
     :cond_1
     long-to-float v8, v2
 
@@ -476,7 +583,7 @@
 
     float-to-long v4, v8
 
-    .line 1000
+    .line 1045
     .local v4, savableMemory:J
     goto :goto_0
 .end method
@@ -487,22 +594,22 @@
     .prologue
     const-wide/16 v6, 0x0
 
-    .line 971
+    .line 1016
     invoke-static {}, Landroid/os/Debug;->getTotalZram()J
 
     move-result-wide v4
 
-    .line 972
+    .line 1017
     .local v4, totalZram:J
     cmp-long v8, v4, v6
 
     if-nez v8, :cond_0
 
-    .line 980
+    .line 1025
     :goto_0
     return-wide v6
 
-    .line 977
+    .line 1022
     :cond_0
     invoke-static {}, Landroid/os/Process;->getTotalMemory()J
 
@@ -512,7 +619,7 @@
 
     div-long v0, v6, v8
 
-    .line 978
+    .line 1023
     .local v0, compTotalSize:J
     long-to-float v6, v0
 
@@ -524,7 +631,7 @@
 
     float-to-long v2, v6
 
-    .line 980
+    .line 1025
     .local v2, origTotalSize:J
     sub-long v6, v2, v0
 
@@ -565,17 +672,66 @@
     goto :goto_0
 .end method
 
+.method public static killChildProcess(I)V
+    .locals 6
+    .parameter "parentPid"
+
+    .prologue
+    .line 765
+    invoke-static {p0}, Landroid/os/Process;->getChildPid(I)[I
+
+    move-result-object v1
+
+    .line 766
+    .local v1, childPids:[I
+    move-object v0, v1
+
+    .local v0, arr$:[I
+    array-length v4, v0
+
+    .local v4, len$:I
+    const/4 v3, 0x0
+
+    .local v3, i$:I
+    :goto_0
+    if-ge v3, v4, :cond_1
+
+    aget v2, v0, v3
+
+    .line 767
+    .local v2, currPid:I
+    const/4 v5, -0x1
+
+    if-eq v2, v5, :cond_0
+
+    .line 768
+    const/16 v5, 0x9
+
+    invoke-static {v2, v5}, Landroid/os/Process;->sendSignalQuiet(II)V
+
+    .line 766
+    :cond_0
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_0
+
+    .line 771
+    .end local v2           #currPid:I
+    :cond_1
+    return-void
+.end method
+
 .method public static final killProcess(I)V
     .locals 1
     .parameter "pid"
 
     .prologue
-    .line 909
+    .line 951
     const/16 v0, 0x9
 
     invoke-static {p0, v0}, Landroid/os/Process;->sendSignal(II)V
 
-    .line 910
+    .line 952
     return-void
 .end method
 
@@ -584,12 +740,15 @@
     .parameter "pid"
 
     .prologue
-    .line 933
+    .line 976
+    invoke-static {p0}, Landroid/os/Process;->killChildProcess(I)V
+
+    .line 978
     const/16 v0, 0x9
 
     invoke-static {p0, v0}, Landroid/os/Process;->sendSignalQuiet(II)V
 
-    .line 934
+    .line 979
     return-void
 .end method
 
@@ -1322,7 +1481,7 @@
     .end annotation
 
     .prologue
-    .line 871
+    .line 913
     const/4 v0, 0x1
 
     return v0

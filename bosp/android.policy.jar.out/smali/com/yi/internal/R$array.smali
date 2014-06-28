@@ -15,7 +15,7 @@
 
 
 # static fields
-.field public static final chineseTimeSection:I = 0x30b0000
+.field public static final chineseTimeSection:I = 0x50b0000
 
 
 # direct methods

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager;->onScreenTurnedOn(Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager$ShowListener;)V
+    value = Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager;->maybeCreateKeyguardLocked(ZZLandroid/os/Bundle;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,20 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager;
 
-.field final synthetic val$showListener:Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager$ShowListener;
+.field final synthetic val$lastView:Lcom/android/internal/policy/impl/keyguard/KeyguardViewBase;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager;Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager$ShowListener;)V
+.method constructor <init>(Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager;Lcom/android/internal/policy/impl/keyguard/KeyguardViewBase;)V
     .locals 0
     .parameter
     .parameter
 
     .prologue
-    .line 417
+    .line 264
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager;
 
-    iput-object p2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager$1;->val$showListener:Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager$ShowListener;
+    iput-object p2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager$1;->val$lastView:Lcom/android/internal/policy/impl/keyguard/KeyguardViewBase;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -43,10 +43,21 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .locals 3
 
     .prologue
-    .line 420
+    .line 267
+    iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager;
+
+    monitor-enter v1
+
+    .line 268
+    :try_start_0
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager$1;->val$lastView:Lcom/android/internal/policy/impl/keyguard/KeyguardViewBase;
+
+    invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardViewBase;->cleanUp()V
+
+    .line 269
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager;->mKeyguardHost:Landroid/widget/FrameLayout;
@@ -54,57 +65,23 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/widget/FrameLayout;->getVisibility()I
+    iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager$1;->val$lastView:Lcom/android/internal/policy/impl/keyguard/KeyguardViewBase;
 
-    move-result v0
+    invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    if-nez v0, :cond_0
+    .line 270
+    monitor-exit v1
 
-    .line 421
-    invoke-static {}, Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager;->access$100()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "onScreenTurnedOn mKeyguardView visible, showListener.onShown"
-
-    invoke-static {v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 422
-    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager$1;->val$showListener:Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager$ShowListener;
-
-    iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager;
-
-    #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager;->mKeyguardHost:Landroid/widget/FrameLayout;
-    invoke-static {v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager;->access$200(Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager;)Landroid/widget/FrameLayout;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/widget/FrameLayout;->getWindowToken()Landroid/os/IBinder;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager$ShowListener;->onShown(Landroid/os/IBinder;)V
-
-    .line 427
-    :goto_0
+    .line 271
     return-void
 
-    .line 424
-    :cond_0
-    invoke-static {}, Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager;->access$100()Ljava/lang/String;
+    .line 270
+    :catchall_0
+    move-exception v0
 
-    move-result-object v0
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const-string v1, "onScreenTurnedOn mKeyguardView !visible showListener.onShown"
-
-    invoke-static {v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 425
-    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager$1;->val$showListener:Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager$ShowListener;
-
-    const/4 v1, 0x0
-
-    invoke-interface {v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager$ShowListener;->onShown(Landroid/os/IBinder;)V
-
-    goto :goto_0
+    throw v0
 .end method

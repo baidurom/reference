@@ -14,6 +14,8 @@
 # static fields
 .field public static final BAIDU_KEYGUARD_DEFAULT_TYPE_KEY:Ljava/lang/String; = "sys.product_default_lock_mode"
 
+.field public static final BAIDU_KEYGUARD_DISABLE_TYPE_KEY:Ljava/lang/String; = "sys.product_disable_lock_mode"
+
 .field public static final BAIDU_KEYGUARD_TYPE_KEY:Ljava/lang/String; = "lockscreen.lockmode_type"
 
 .field public static final LOCK_ACCOUNT:I = 0x7
@@ -42,15 +44,15 @@
 
 .field public static final LOCK_WATER:I = 0xb
 
-.field private static MEMORY_THRESHOLD:I = 0x0
+.field private static MEMORY_THRESHOLD:I
 
-.field private static TAG:Ljava/lang/String; = null
+.field private static TAG:Ljava/lang/String;
 
-.field private static final sGPULockType:[I = null
+.field private static final sGPULockType:[I
 
-.field private static final sPrimaryDefaultType:I = 0xa
+.field private static sPrimaryDefaultType:I
 
-.field private static final sSecondaryDefaultType:I = 0x1
+.field private static sSecondaryDefaultType:I
 
 
 # direct methods
@@ -58,12 +60,12 @@
     .locals 1
 
     .prologue
-    .line 33
+    .line 35
     const-string v0, "BaiduKeyguardManager"
 
     sput-object v0, Lcom/android/internal/policy/impl/keyguard/BaiduKeyguardManager;->TAG:Ljava/lang/String;
 
-    .line 50
+    .line 52
     const/4 v0, 0x2
 
     new-array v0, v0, [I
@@ -72,14 +74,14 @@
 
     sput-object v0, Lcom/android/internal/policy/impl/keyguard/BaiduKeyguardManager;->sGPULockType:[I
 
-    .line 56
+    .line 58
     const/16 v0, 0x300
 
     sput v0, Lcom/android/internal/policy/impl/keyguard/BaiduKeyguardManager;->MEMORY_THRESHOLD:I
 
     return-void
 
-    .line 50
+    .line 52
     nop
 
     :array_0
@@ -93,10 +95,10 @@
     .locals 0
 
     .prologue
-    .line 31
+    .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 231
+    .line 249
     return-void
 .end method
 
@@ -106,21 +108,21 @@
     .prologue
     const/4 v6, 0x1
 
-    .line 124
+    .line 142
     const-string v3, "/proc/meminfo"
 
-    .line 125
+    .line 143
     .local v3, path:Ljava/lang/String;
     const/4 v5, 0x0
 
-    .line 127
+    .line 145
     .local v5, totalMem:I
     :try_start_0
     new-instance v2, Ljava/io/FileReader;
 
     invoke-direct {v2, v3}, Ljava/io/FileReader;-><init>(Ljava/lang/String;)V
 
-    .line 128
+    .line 146
     .local v2, localFileReader:Ljava/io/FileReader;
     new-instance v1, Ljava/io/BufferedReader;
 
@@ -128,13 +130,13 @@
 
     invoke-direct {v1, v2, v7}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;I)V
 
-    .line 129
+    .line 147
     .local v1, localBufferedReader:Ljava/io/BufferedReader;
     invoke-virtual {v1}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 130
+    .line 148
     .local v4, str:Ljava/lang/String;
     const-string v7, "\\s+"
 
@@ -142,7 +144,7 @@
 
     move-result-object v0
 
-    .line 131
+    .line 149
     .local v0, arrayOfString:[Ljava/lang/String;
     const/4 v7, 0x1
 
@@ -158,12 +160,12 @@
 
     div-int/lit16 v5, v7, 0x400
 
-    .line 132
+    .line 150
     invoke-virtual {v1}, Ljava/io/BufferedReader;->close()V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 135
+    .line 153
     .end local v0           #arrayOfString:[Ljava/lang/String;
     .end local v1           #localBufferedReader:Ljava/io/BufferedReader;
     .end local v2           #localFileReader:Ljava/io/FileReader;
@@ -191,7 +193,7 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 136
+    .line 154
     sget v7, Lcom/android/internal/policy/impl/keyguard/BaiduKeyguardManager;->MEMORY_THRESHOLD:I
 
     if-le v5, v7, :cond_0
@@ -204,7 +206,7 @@
 
     goto :goto_1
 
-    .line 133
+    .line 151
     :catch_0
     move-exception v7
 
@@ -225,10 +227,10 @@
 
     const/4 v8, 0x0
 
-    .line 141
+    .line 159
     const/4 v0, 0x0
 
-    .line 142
+    .line 160
     .local v0, view:Landroid/view/View;
     sget-object v1, Lcom/android/internal/policy/impl/keyguard/BaiduKeyguardManager$1;->$SwitchMap$com$android$internal$policy$impl$keyguard$KeyguardSecurityModel$SecurityMode:[I
 
@@ -245,23 +247,23 @@
     :pswitch_0
     move-object v1, v0
 
-    .line 233
+    .line 251
     :goto_1
     return-object v1
 
-    .line 144
+    .line 162
     :pswitch_1
     const/4 v1, 0x0
 
     goto :goto_1
 
-    .line 146
+    .line 164
     :pswitch_2
     invoke-static {p0, p3}, Lcom/android/internal/policy/impl/keyguard/BaiduKeyguardManager;->getLockMode(Landroid/content/Context;Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;)I
 
     move-result v7
 
-    .line 147
+    .line 165
     .local v7, mode:I
     const/4 v1, 0x2
 
@@ -273,7 +275,7 @@
 
     if-nez v1, :cond_1
 
-    .line 148
+    .line 166
     new-instance v0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;
 
     .end local v0           #view:Landroid/view/View;
@@ -289,35 +291,35 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;-><init>(Landroid/content/Context;Landroid/content/res/Configuration;Lcom/android/internal/widget/LockPatternUtils;Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;)V
 
-    .line 150
+    .line 168
     .restart local v0       #view:Landroid/view/View;
     invoke-virtual {v0, v8, v8, v8, v8}, Landroid/view/View;->setPadding(IIII)V
 
     goto :goto_0
 
-    .line 151
+    .line 169
     :cond_1
     if-nez v7, :cond_2
 
-    .line 152
+    .line 170
     new-instance v0, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;
 
     .end local v0           #view:Landroid/view/View;
     invoke-direct {v0, p0, p4, p2}, Lcom/baidu/internal/keyguard/hotword/HotwordLockScreen;-><init>(Landroid/content/Context;Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;Lcom/android/internal/widget/LockPatternUtils;)V
 
-    .line 153
+    .line 171
     .restart local v0       #view:Landroid/view/View;
     invoke-virtual {v0, v8, v8, v8, v8}, Landroid/view/View;->setPadding(IIII)V
 
     goto :goto_0
 
-    .line 154
+    .line 172
     :cond_2
     const/4 v1, 0x1
 
     if-ne v1, v7, :cond_3
 
-    .line 155
+    .line 173
     new-instance v0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;
 
     .end local v0           #view:Landroid/view/View;
@@ -333,19 +335,19 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;-><init>(Landroid/content/Context;Landroid/content/res/Configuration;Lcom/android/internal/widget/LockPatternUtils;Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;)V
 
-    .line 156
+    .line 174
     .restart local v0       #view:Landroid/view/View;
     invoke-virtual {v0, v8, v8, v8, v8}, Landroid/view/View;->setPadding(IIII)V
 
     goto :goto_0
 
-    .line 157
+    .line 175
     :cond_3
     const/16 v1, 0xa
 
     if-ne v1, v7, :cond_4
 
-    .line 158
+    .line 176
     new-instance v0, Lcom/baidu/internal/keyguard/space/SpaceLockScreen;
 
     .end local v0           #view:Landroid/view/View;
@@ -361,19 +363,19 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/baidu/internal/keyguard/space/SpaceLockScreen;-><init>(Landroid/content/Context;Landroid/content/res/Configuration;Lcom/android/internal/widget/LockPatternUtils;Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;)V
 
-    .line 159
+    .line 177
     .restart local v0       #view:Landroid/view/View;
     invoke-virtual {v0, v8, v8, v8, v8}, Landroid/view/View;->setPadding(IIII)V
 
     goto :goto_0
 
-    .line 160
+    .line 178
     :cond_4
     const/16 v1, 0xb
 
     if-ne v1, v7, :cond_0
 
-    .line 161
+    .line 179
     new-instance v0, Lcom/baidu/internal/keyguard/water/WaterLockScreen;
 
     .end local v0           #view:Landroid/view/View;
@@ -389,13 +391,13 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/baidu/internal/keyguard/water/WaterLockScreen;-><init>(Landroid/content/Context;Landroid/content/res/Configuration;Lcom/android/internal/widget/LockPatternUtils;Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;)V
 
-    .line 162
+    .line 180
     .restart local v0       #view:Landroid/view/View;
     invoke-virtual {v0, v8, v8, v8, v8}, Landroid/view/View;->setPadding(IIII)V
 
     goto :goto_0
 
-    .line 166
+    .line 184
     .end local v7           #mode:I
     :pswitch_3
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/PatternUnlockScreen;
@@ -423,7 +425,7 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/internal/policy/impl/keyguard/PatternUnlockScreen;-><init>(Landroid/content/Context;Landroid/content/res/Configuration;Lcom/android/internal/widget/LockPatternUtils;Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;I)V
 
-    .line 169
+    .line 187
     .restart local v0       #view:Landroid/view/View;
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -437,7 +439,7 @@
 
     goto :goto_0
 
-    .line 174
+    .line 192
     :pswitch_4
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/AccountUnlockScreen;
 
@@ -456,7 +458,7 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/internal/policy/impl/keyguard/AccountUnlockScreen;-><init>(Landroid/content/Context;Landroid/content/res/Configuration;Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;Lcom/android/internal/widget/LockPatternUtils;)V
 
-    .line 176
+    .line 194
     .restart local v0       #view:Landroid/view/View;
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -470,7 +472,7 @@
 
     goto/16 :goto_0
 
-    .line 182
+    .line 200
     :pswitch_5
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;
 
@@ -489,7 +491,7 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/internal/policy/impl/keyguard/PasswordUnlockScreen;-><init>(Landroid/content/Context;Landroid/content/res/Configuration;Lcom/android/internal/widget/LockPatternUtils;Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;)V
 
-    .line 184
+    .line 202
     .restart local v0       #view:Landroid/view/View;
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -503,7 +505,7 @@
 
     goto/16 :goto_0
 
-    .line 142
+    .line 160
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_1
@@ -520,7 +522,7 @@
     .locals 2
 
     .prologue
-    .line 115
+    .line 125
     const-string v0, "sys.product_default_lock_mode"
 
     const/4 v1, -0x1
@@ -534,178 +536,207 @@
     return-wide v0
 .end method
 
+.method public static getDisableLockMode()Ljava/lang/String;
+    .locals 2
+
+    .prologue
+    .line 133
+    const-string v0, "sys.product_disable_lock_mode"
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public static getLockMode(Landroid/content/Context;Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;)I
-    .locals 9
+    .locals 8
     .parameter "context"
     .parameter "updateMonitor"
 
     .prologue
-    const/4 v5, 0x1
-
-    .line 85
+    .line 95
     invoke-static {}, Lcom/android/internal/policy/impl/keyguard/BaiduKeyguardManager;->initDefaultLockMode()J
 
     move-result-wide v0
 
-    .line 87
+    .line 97
     .local v0, defaultmode:J
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    move-result-object v6
+    move-result-object v5
 
-    const-string v7, "lockscreen.lockmode_type"
+    const-string v6, "lockscreen.lockmode_type"
 
-    invoke-static {v6, v7, v0, v1}, Landroid/provider/Settings$Secure;->getLong(Landroid/content/ContentResolver;Ljava/lang/String;J)J
+    invoke-static {v5, v6, v0, v1}, Landroid/provider/Settings$Secure;->getLong(Landroid/content/ContentResolver;Ljava/lang/String;J)J
 
     move-result-wide v3
 
-    .line 89
+    .line 99
     .local v3, mode:J
     invoke-static {}, Lcom/android/internal/policy/impl/keyguard/BaiduKeyguardManager;->aboveCertainMemory()Z
 
-    move-result v6
+    move-result v5
 
-    if-nez v6, :cond_0
+    if-nez v5, :cond_0
 
-    .line 90
+    .line 100
     const/4 v2, 0x0
 
     .local v2, i:I
     :goto_0
-    sget-object v6, Lcom/android/internal/policy/impl/keyguard/BaiduKeyguardManager;->sGPULockType:[I
+    sget-object v5, Lcom/android/internal/policy/impl/keyguard/BaiduKeyguardManager;->sGPULockType:[I
 
-    array-length v6, v6
+    array-length v5, v5
 
-    if-ge v2, v6, :cond_0
+    if-ge v2, v5, :cond_0
 
-    .line 91
-    sget-object v6, Lcom/android/internal/policy/impl/keyguard/BaiduKeyguardManager;->sGPULockType:[I
+    .line 101
+    sget-object v5, Lcom/android/internal/policy/impl/keyguard/BaiduKeyguardManager;->sGPULockType:[I
 
-    aget v6, v6, v2
+    aget v5, v5, v2
 
-    int-to-long v6, v6
+    int-to-long v5, v5
 
-    cmp-long v6, v6, v3
+    cmp-long v5, v5, v3
 
-    if-nez v6, :cond_2
+    if-nez v5, :cond_1
 
-    .line 92
-    const-wide/16 v3, 0x1
+    .line 102
+    sget v5, Lcom/android/internal/policy/impl/keyguard/BaiduKeyguardManager;->sSecondaryDefaultType:I
 
-    .line 93
+    int-to-long v3, v5
+
+    .line 103
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v5
+
+    const-string v6, "lockscreen.lockmode_type"
+
+    invoke-static {v5, v6, v3, v4}, Landroid/provider/Settings$Secure;->putLong(Landroid/content/ContentResolver;Ljava/lang/String;J)Z
+
+    .line 108
+    .end local v2           #i:I
+    :cond_0
+    sget-object v5, Lcom/android/internal/policy/impl/keyguard/BaiduKeyguardManager;->TAG:Ljava/lang/String;
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v7, "lockscreen.lockmode_type "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v6
 
-    const-string v7, "lockscreen.lockmode_type"
+    invoke-virtual {v6, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    invoke-static {v6, v7, v3, v4}, Landroid/provider/Settings$Secure;->putLong(Landroid/content/ContentResolver;Ljava/lang/String;J)Z
+    move-result-object v6
 
-    .line 98
-    .end local v2           #i:I
-    :cond_0
-    sget-object v6, Lcom/android/internal/policy/impl/keyguard/BaiduKeyguardManager;->TAG:Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    move-result-object v6
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    const-string v8, "lockscreen.lockmode_type "
+    .line 110
+    const-wide/16 v5, 0x2
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    cmp-long v5, v5, v3
 
-    move-result-object v7
-
-    invoke-virtual {v7, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 100
-    const-wide/16 v6, 0x2
-
-    cmp-long v6, v6, v3
-
-    if-nez v6, :cond_3
-
-    .line 101
-    const/4 v5, 0x2
+    if-nez v5, :cond_2
 
     .line 111
-    :cond_1
+    const/4 v5, 0x2
+
+    .line 121
     :goto_1
     return v5
 
-    .line 90
+    .line 100
     .restart local v2       #i:I
-    :cond_2
+    :cond_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 102
+    .line 112
     .end local v2           #i:I
-    :cond_3
-    const-wide/16 v6, 0x0
+    :cond_2
+    const-wide/16 v5, 0x0
 
-    cmp-long v6, v6, v3
+    cmp-long v5, v5, v3
 
-    if-nez v6, :cond_4
+    if-nez v5, :cond_3
 
-    .line 103
+    .line 113
     const/4 v5, 0x0
 
     goto :goto_1
 
-    .line 104
+    .line 114
+    :cond_3
+    const-wide/16 v5, 0x1
+
+    cmp-long v5, v5, v3
+
+    if-nez v5, :cond_4
+
+    .line 115
+    const/4 v5, 0x1
+
+    goto :goto_1
+
+    .line 116
     :cond_4
-    const-wide/16 v6, 0x1
+    const-wide/16 v5, 0xa
 
-    cmp-long v6, v6, v3
+    cmp-long v5, v5, v3
 
-    if-eqz v6, :cond_1
+    if-nez v5, :cond_5
 
-    .line 106
-    const-wide/16 v6, 0xa
-
-    cmp-long v6, v6, v3
-
-    if-nez v6, :cond_5
-
-    .line 107
+    .line 117
     const/16 v5, 0xa
 
     goto :goto_1
 
-    .line 108
+    .line 118
     :cond_5
-    const-wide/16 v6, 0xb
+    const-wide/16 v5, 0xb
 
-    cmp-long v6, v6, v3
+    cmp-long v5, v5, v3
 
-    if-nez v6, :cond_1
+    if-nez v5, :cond_6
 
-    .line 109
+    .line 119
     const/16 v5, 0xb
+
+    goto :goto_1
+
+    .line 121
+    :cond_6
+    sget v5, Lcom/android/internal/policy/impl/keyguard/BaiduKeyguardManager;->sSecondaryDefaultType:I
 
     goto :goto_1
 .end method
 
 .method public static initDefaultLockMode()J
-    .locals 5
+    .locals 6
 
     .prologue
-    .line 68
+    const/4 v5, 0x1
+
+    .line 71
     invoke-static {}, Lcom/android/internal/policy/impl/keyguard/BaiduKeyguardManager;->getDefaultLockMode()J
 
     move-result-wide v0
 
-    .line 69
+    .line 72
     .local v0, mode:J
     sget-object v2, Lcom/android/internal/policy/impl/keyguard/BaiduKeyguardManager;->TAG:Ljava/lang/String;
 
@@ -729,24 +760,75 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 70
+    .line 73
     const-wide/16 v2, -0x1
 
     cmp-long v2, v0, v2
 
-    if-nez v2, :cond_0
+    if-eqz v2, :cond_0
 
-    .line 71
+    invoke-static {}, Lcom/android/internal/policy/impl/keyguard/BaiduKeyguardManager;->getDisableLockMode()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    .line 74
+    :cond_0
+    sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v3, 0x10
+
+    if-eq v2, v3, :cond_1
+
     invoke-static {}, Lcom/android/internal/policy/impl/keyguard/BaiduKeyguardManager;->aboveCertainMemory()Z
 
     move-result v2
 
-    if-eqz v2, :cond_1
+    if-nez v2, :cond_3
 
-    .line 72
-    const-wide/16 v0, 0xa
+    .line 75
+    :cond_1
+    sput v5, Lcom/android/internal/policy/impl/keyguard/BaiduKeyguardManager;->sPrimaryDefaultType:I
 
-    .line 73
+    .line 76
+    sget-object v2, Lcom/android/internal/policy/impl/keyguard/BaiduKeyguardManager;->sGPULockType:[I
+
+    invoke-static {v2}, Ljava/util/Arrays;->toString([I)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "[\\[\\]\\ ]"
+
+    const-string v4, ""
+
+    invoke-virtual {v2, v3, v4}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/android/internal/policy/impl/keyguard/BaiduKeyguardManager;->setDisableLockMode(Ljava/lang/String;)V
+
+    .line 80
+    :goto_0
+    sput v5, Lcom/android/internal/policy/impl/keyguard/BaiduKeyguardManager;->sSecondaryDefaultType:I
+
+    .line 81
+    invoke-static {}, Lcom/android/internal/policy/impl/keyguard/BaiduKeyguardManager;->aboveCertainMemory()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_4
+
+    .line 82
+    sget v2, Lcom/android/internal/policy/impl/keyguard/BaiduKeyguardManager;->sPrimaryDefaultType:I
+
+    int-to-long v0, v2
+
+    .line 83
     sget-object v2, Lcom/android/internal/policy/impl/keyguard/BaiduKeyguardManager;->TAG:Ljava/lang/String;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -769,19 +851,29 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 78
-    :goto_0
+    .line 88
+    :goto_1
     invoke-static {v0, v1}, Lcom/android/internal/policy/impl/keyguard/BaiduKeyguardManager;->setDefaultLockMode(J)V
 
-    .line 80
-    :cond_0
+    .line 90
+    :cond_2
     return-wide v0
 
-    .line 75
-    :cond_1
-    const-wide/16 v0, 0x1
+    .line 78
+    :cond_3
+    const/16 v2, 0xa
 
-    .line 76
+    sput v2, Lcom/android/internal/policy/impl/keyguard/BaiduKeyguardManager;->sPrimaryDefaultType:I
+
+    goto :goto_0
+
+    .line 85
+    :cond_4
+    sget v2, Lcom/android/internal/policy/impl/keyguard/BaiduKeyguardManager;->sSecondaryDefaultType:I
+
+    int-to-long v0, v2
+
+    .line 86
     sget-object v2, Lcom/android/internal/policy/impl/keyguard/BaiduKeyguardManager;->TAG:Ljava/lang/String;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -804,7 +896,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_0
+    goto :goto_1
 .end method
 
 .method public static setDefaultLockMode(J)V
@@ -812,7 +904,7 @@
     .parameter "mode"
 
     .prologue
-    .line 119
+    .line 129
     const-string v0, "sys.product_default_lock_mode"
 
     invoke-static {p0, p1}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
@@ -821,6 +913,20 @@
 
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 120
+    .line 130
+    return-void
+.end method
+
+.method public static setDisableLockMode(Ljava/lang/String;)V
+    .locals 1
+    .parameter "mode"
+
+    .prologue
+    .line 137
+    const-string v0, "sys.product_disable_lock_mode"
+
+    invoke-static {v0, p0}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 138
     return-void
 .end method

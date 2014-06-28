@@ -70,7 +70,7 @@
     .line 708
     iget-object v0, p0, Lcom/yi/internal/widget/VoiceprintUnlockView$RecognizingSuccess;->this$0:Lcom/yi/internal/widget/VoiceprintUnlockView;
 
-    const v1, 0x3070019
+    const v1, 0x5070019
 
     #calls: Lcom/yi/internal/widget/VoiceprintUnlockView;->updateTipWords(I)V
     invoke-static {v0, v1}, Lcom/yi/internal/widget/VoiceprintUnlockView;->access$1300(Lcom/yi/internal/widget/VoiceprintUnlockView;I)V

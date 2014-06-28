@@ -15,23 +15,23 @@
 
 
 # static fields
-.field public static final cld_check_item_multichoice:I = 0x30a0002
+.field public static final cld_check_item_multichoice:I = 0x50a0002
 
-.field public static final cld_search_view_back_icon_left_in:I = 0x30a0007
+.field public static final cld_search_view_back_icon_left_in:I = 0x50a0007
 
-.field public static final cld_search_view_back_icon_left_out:I = 0x30a0008
+.field public static final cld_search_view_back_icon_left_out:I = 0x50a0008
 
-.field public static final cld_search_view_close_button_show:I = 0x30a0009
+.field public static final cld_search_view_close_button_show:I = 0x50a0009
 
-.field public static final cld_view_top_in:I = 0x30a000a
+.field public static final cld_view_top_in:I = 0x50a000a
 
-.field public static final cld_view_top_out:I = 0x30a000b
+.field public static final cld_view_top_out:I = 0x50a000b
 
-.field public static final ic_voiceprint_unlock_progress_bar_icon:I = 0x30a000c
+.field public static final ic_voiceprint_unlock_progress_bar_icon:I = 0x50a000c
 
-.field public static final yi_function_bar_hide:I = 0x30a0001
+.field public static final yi_function_bar_hide:I = 0x50a0001
 
-.field public static final yi_function_bar_show:I = 0x30a0000
+.field public static final yi_function_bar_show:I = 0x50a0000
 
 
 # direct methods

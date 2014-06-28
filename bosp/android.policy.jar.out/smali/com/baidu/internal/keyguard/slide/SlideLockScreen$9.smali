@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 717
+    .line 722
     iput-object p1, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$9;->this$0:Lcom/baidu/internal/keyguard/slide/SlideLockScreen;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,25 +45,25 @@
     .parameter "totalItemCount"
 
     .prologue
-    .line 731
+    .line 736
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$9;->this$0:Lcom/baidu/internal/keyguard/slide/SlideLockScreen;
 
     #setter for: Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYiFirstVisibleItem:I
-    invoke-static {v0, p2}, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->access$1702(Lcom/baidu/internal/keyguard/slide/SlideLockScreen;I)I
+    invoke-static {v0, p2}, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->access$1502(Lcom/baidu/internal/keyguard/slide/SlideLockScreen;I)I
 
-    .line 732
+    .line 737
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$9;->this$0:Lcom/baidu/internal/keyguard/slide/SlideLockScreen;
 
     #setter for: Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYiVisibleItemCount:I
-    invoke-static {v0, p3}, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->access$1802(Lcom/baidu/internal/keyguard/slide/SlideLockScreen;I)I
+    invoke-static {v0, p3}, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->access$1602(Lcom/baidu/internal/keyguard/slide/SlideLockScreen;I)I
 
-    .line 733
+    .line 738
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$9;->this$0:Lcom/baidu/internal/keyguard/slide/SlideLockScreen;
 
     #setter for: Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYiTotalItemCount:I
-    invoke-static {v0, p4}, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->access$1902(Lcom/baidu/internal/keyguard/slide/SlideLockScreen;I)I
+    invoke-static {v0, p4}, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->access$1702(Lcom/baidu/internal/keyguard/slide/SlideLockScreen;I)I
 
-    .line 734
+    .line 739
     return-void
 .end method
 
@@ -75,10 +75,10 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 720
+    .line 725
     if-nez p2, :cond_0
 
-    .line 721
+    .line 726
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$9;->this$0:Lcom/baidu/internal/keyguard/slide/SlideLockScreen;
 
     #getter for: Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYiShowMsgListView:Lcom/baidu/internal/keyguard/slide/iqiyi/SlideListView;
@@ -92,7 +92,7 @@
 
     if-nez v0, :cond_1
 
-    .line 722
+    .line 727
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$9;->this$0:Lcom/baidu/internal/keyguard/slide/SlideLockScreen;
 
     #getter for: Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYiShowMsgListView:Lcom/baidu/internal/keyguard/slide/iqiyi/SlideListView;
@@ -102,12 +102,12 @@
 
     invoke-virtual {v0, v2}, Lcom/baidu/internal/keyguard/slide/iqiyi/SlideListView;->setSelection(I)V
 
-    .line 727
+    .line 732
     :cond_0
     :goto_0
     return-void
 
-    .line 724
+    .line 729
     :cond_1
     iget-object v0, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$9;->this$0:Lcom/baidu/internal/keyguard/slide/SlideLockScreen;
 
@@ -119,7 +119,7 @@
     iget-object v1, p0, Lcom/baidu/internal/keyguard/slide/SlideLockScreen$9;->this$0:Lcom/baidu/internal/keyguard/slide/SlideLockScreen;
 
     #getter for: Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->mIQiYiFirstVisibleItem:I
-    invoke-static {v1}, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->access$1700(Lcom/baidu/internal/keyguard/slide/SlideLockScreen;)I
+    invoke-static {v1}, Lcom/baidu/internal/keyguard/slide/SlideLockScreen;->access$1500(Lcom/baidu/internal/keyguard/slide/SlideLockScreen;)I
 
     move-result v1
 

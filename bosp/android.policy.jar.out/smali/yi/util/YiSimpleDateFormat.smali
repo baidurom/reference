@@ -1319,7 +1319,7 @@
     if-eqz v2, :cond_0
 
     .line 144
-    const/high16 v2, 0x30b
+    const/high16 v2, 0x50b
 
     invoke-virtual {p1, v2}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 

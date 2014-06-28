@@ -18,13 +18,13 @@
 # static fields
 .field private static final TAG:Ljava/lang/String; = "MultithemeUnlockScreen"
 
+.field private static mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+
 
 # instance fields
 .field private isBackKeyDown:Ljava/lang/Boolean;
 
 .field private isTouchLeftTop:Ljava/lang/Boolean;
-
-.field private mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
 
 .field private mCategory:I
 
@@ -113,7 +113,7 @@
     iput-object p4, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mUpdateMonitor:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
 
     .line 88
-    iput-object p5, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    sput-object p5, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
 
     .line 89
     iput-object p1, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mContext:Landroid/content/Context;
@@ -229,13 +229,12 @@
     goto :goto_0
 .end method
 
-.method static synthetic access$100(Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;)Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+.method static synthetic access$100()Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
     .locals 1
-    .parameter "x0"
 
     .prologue
     .line 56
-    iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    sget-object v0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
 
     return-object v0
 .end method
@@ -451,7 +450,7 @@
     iput-object v2, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->isTouchLeftTop:Ljava/lang/Boolean;
 
     .line 278
-    iget-object v2, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    sget-object v2, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
 
     invoke-interface {v2, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;->dismiss(Z)V
 
@@ -567,7 +566,7 @@
 
     .line 220
     :cond_1
-    iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    sget-object v0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
 
     const-wide/16 v1, 0x0
 
@@ -622,7 +621,7 @@
 
     .prologue
     .line 339
-    iget-object v0, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    sget-object v0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
 
     return-object v0
 .end method
@@ -1057,7 +1056,7 @@
 
     .prologue
     .line 313
-    iput-object p1, p0, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    sput-object p1, Lcom/baidu/internal/keyguard/multitheme/MultithemeUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
 
     .line 314
     return-void

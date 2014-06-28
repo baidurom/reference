@@ -193,7 +193,7 @@
     .line 99
     iget-object v0, p0, Lcom/yi/internal/view/menu/ListMenuPresenter;->mInflater:Landroid/view/LayoutInflater;
 
-    const v1, 0x309001d
+    const v1, 0x509001d
 
     const/4 v2, 0x0
 

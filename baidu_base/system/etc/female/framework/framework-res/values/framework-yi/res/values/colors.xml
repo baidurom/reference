@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--color for actionbar -->
+    <color name="cld_bright_foreground_disabled_baidu_light">#ff9fa2af</color>
+    <color name="cld_action_tab_text_selected_baidu_light">#ffffffff</color>
+    <color name="cld_action_tab_text_unselected_baidu_light">#ffa7cded</color>
+    <!--color for action menu item-->
+    <color name="cld_action_menu_item_text_baidu_light">#ff5f647a</color>
+    <color name="cld_action_menu_item_text_shadow_baidu_light">#80ffffff</color>
+
+</resources>
+
+

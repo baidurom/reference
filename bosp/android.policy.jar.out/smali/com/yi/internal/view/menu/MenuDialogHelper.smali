@@ -347,7 +347,7 @@
 
     move-result-object v5
 
-    const v6, 0x3090021
+    const v6, 0x5090021
 
     invoke-direct {v4, v5, v6}, Lcom/yi/internal/view/menu/ListMenuPresenter;-><init>(Landroid/content/Context;I)V
 

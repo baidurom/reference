@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen android:title="@string/auto_redial_setting_title"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <SwitchPreference android:persistent="true" android:title="@string/auto_redial_enabler" android:key="button_auto_redial_enable" />
-    <PreferenceScreen android:title="@string/auto_redial_list" android:key="auto_redial_list" android:dependency="button_auto_redial_enable">
-        <intent android:targetPackage="com.android.phone" android:action="android.intent.action.MAIN" android:targetClass="com.android.phone.AutoRedialListActivity" />
-    </PreferenceScreen>
-</PreferenceScreen>

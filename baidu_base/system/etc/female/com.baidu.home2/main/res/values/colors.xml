@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="menu_text_color">#FF626778</color>
+    <!-- widget-->
+    <color name="switch_title_color">#FFFFFF</color>
+
+    <color name="widget_color_text_sim1">#28abfe</color>
+    <color name="widget_color_text_sim2">#a7a7a7</color>
+
+    <color name="widget_font">#FFFFFF</color>
+    <color name="divide_line">#4b494e</color>
+    <color name="widget_weather_text_color">#FFFFFF</color>
+	
+	<color name="contacts_index_text_color_normal">#FFFFFF</color>
+
+</resources>
