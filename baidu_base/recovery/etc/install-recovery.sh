@@ -1,9 +1,9 @@
 #!/system/bin/sh
   echo 1 > /sys/module/sec/parameters/recovery_done		#tony
-if ! applypatch -c EMMC:/dev/recovery:5969920:46570e4eb13082c3df2e203c6ed42d8c9f0c6c10; then
+if ! applypatch -c EMMC:/dev/recovery:5969920:b5cb060fec54b7dd805a351052a28b56018acd68; then
   log -t recovery "Installing new recovery image"
-  applypatch -b /system/etc/recovery-resource.dat EMMC:/dev/bootimg:5189632:6e6fce64c2775464ea57430f60478781c4ccbf84 EMMC:/dev/recovery 46570e4eb13082c3df2e203c6ed42d8c9f0c6c10 5969920 6e6fce64c2775464ea57430f60478781c4ccbf84:/system/recovery-from-boot.p
-  if applypatch -c EMMC:/dev/recovery:5969920:46570e4eb13082c3df2e203c6ed42d8c9f0c6c10; then		#tony
+  applypatch -b /system/etc/recovery-resource.dat EMMC:/dev/bootimg:5189632:8e15b9afc90c0521460854e9f08568ddd0781db7 EMMC:/dev/recovery b5cb060fec54b7dd805a351052a28b56018acd68 5969920 8e15b9afc90c0521460854e9f08568ddd0781db7:/system/recovery-from-boot.p
+  if applypatch -c EMMC:/dev/recovery:5969920:b5cb060fec54b7dd805a351052a28b56018acd68; then		#tony
 	echo 0 > /sys/module/sec/parameters/recovery_done		#tony
         log -t recovery "Install new recovery image completed"
   else

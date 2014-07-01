@@ -5,7 +5,7 @@ Name: system/lib/libmtk_vt_service.so
 SHA1-Digest: Vt7iTlERKeMmK7cJiDgavQYfhB0=
 
 Name: system/lib/libaudio-resampler.so
-SHA1-Digest: EW8Q31RUFWGYopr6sdwQJmZG/sY=
+SHA1-Digest: cEgKP687s9OEjyuim+EC8gmRCXU=
 
 Name: system/etc/female/com.baidu.home2/main/res/drawable-xhdpi/home_b
  utton_sethome_on.png
@@ -36,19 +36,19 @@ Name: system/lib/modules/mtk_wmt_wifi_soc.ko
 SHA1-Digest: noyjLDFmt16lP96TUBiZy4tFvpo=
 
 Name: system/lib/libsync.so
-SHA1-Digest: c3nLdZ2bn9tG6O7kPNNH3IWb+uE=
+SHA1-Digest: 5SHuUjCuJ+HdmNcqOiePc1fpHto=
 
 Name: system/lib/libpowermanager.so
-SHA1-Digest: o5DN20OO0Gw9FGGhPNa0tZCk4fk=
+SHA1-Digest: fCX7Epbi5gMDshqozHfwXpeAQEQ=
 
 Name: system/lib/libstagefright_soft_aacdec.so
-SHA1-Digest: LK8qYlozuSaTmYoPZQkD3DdNGVw=
+SHA1-Digest: CFlkpSOQ/LqAYkkFiql1sKdMwlA=
 
 Name: system/etc/permissions/android.hardware.sensor.accelerometer.xml
 SHA1-Digest: H/ej10L8o81LMOjg3YIBw6GjoiI=
 
 Name: system/lib/hw/sensors.goldfish.so
-SHA1-Digest: 32L6IDKFpskDPP0NAPGNTtazFbQ=
+SHA1-Digest: 9o2UsWcZZVO+J0iVmCiswhSMPHw=
 
 Name: system/etc/female/com.baidu.home2/main/res/drawable-xhdpi/ic_clo
  sed_normal.png
@@ -93,7 +93,7 @@ Name: system/etc/female/statusbar/res/drawable-xhdpi/ic_stat_sys_scree
 SHA1-Digest: o1/34bJPnXTzcVlwOn8EchIsWRc=
 
 Name: system/xbin/sane_schedstat
-SHA1-Digest: sWdhk4ZBIA/MvsV2+bO1n85ZQs8=
+SHA1-Digest: +3sdppDvg9j1JG3XihPpaU8hZRM=
 
 Name: system/etc/female/framework/powerOff/framework-res/res/drawable-
  xhdpi/ic_lock_power_off.png
@@ -104,7 +104,7 @@ Name: system/etc/water/com.baidu.home2/trafficmonitorwidget/res/drawab
 SHA1-Digest: kHCWkBez0viYeUYdqWoBVfGLzqE=
 
 Name: system/lib/libusbhost.so
-SHA1-Digest: dQN2i3EvbqLFhyyY/rI8WFzq19s=
+SHA1-Digest: NHujYb4f84WLwB7JoFM9KXNSWOQ=
 
 Name: system/etc/water/framework/framework-res/ic/framework-yi/res/dra
  wable-xhdpi/yi_ic_cab_done_baidu.png
@@ -132,14 +132,14 @@ Name: system/lib/libnvram.so
 SHA1-Digest: 5161bCe+47e3Ea4WEOD5VhdIru8=
 
 Name: system/app/Wallpaper.apk
-SHA1-Digest: H1YAhDdR4k6qO6G85B5Jna0KQKc=
+SHA1-Digest: sLTJo8ycW83lOUHn67864C76eBM=
 
 Name: system/etc/female/framework/appManager/com.android.settings/res/
  drawable-xhdpi/ic_settings_theme_selected.png
 SHA1-Digest: bUuUS8ZV91h275eXhAsDjOvShJk=
 
 Name: system/bin/sdcard
-SHA1-Digest: xJep4zq0mP6PkIpKruEC4aai4Ws=
+SHA1-Digest: InrmrVzftd4HJwzE8+YS7CbSko4=
 
 Name: system/etc/female/com.baidu.home2/main/res/drawable-xhdpi/qiyi_w
  idget_update_img_normal.png
@@ -194,7 +194,7 @@ Name: system/media/audio/notifications/PromptTone_04.ogg
 SHA1-Digest: 4M4c2Y39OaDBatscKws2WgfqR6Q=
 
 Name: system/app/BaiduDualCardSetting.apk
-SHA1-Digest: bgBsecJK2AyRi9HeL2vm5r5f0Mo=
+SHA1-Digest: fuCiBZj9fyTU30Y0L2UZvygJwcQ=
 
 Name: system/etc/water/icons/xhdpi/cn.etouch.ecalendar.png
 SHA1-Digest: GwEYevwJzhqttd9MqVSJt5Z9cns=
@@ -207,10 +207,10 @@ Name: system/media/audio/ringtones/Scarabaeus.ogg
 SHA1-Digest: jlK3tg9mmMI8zcMkIDpH8LJLBKo=
 
 Name: system/xbin/BGW
-SHA1-Digest: nHDD+lbzFDfH/182WIm+HZnDCBQ=
+SHA1-Digest: uPY6wiKvbBAF4MfRVAZIv5ffkn4=
 
 Name: system/app/BaiduSysFramework.apk
-SHA1-Digest: RcrDmBeNNJ8aKe6MJP5waAd3W6g=
+SHA1-Digest: o10wKyeQTLeQj+ov/eSwEpTQ7y8=
 
 Name: system/etc/female/csp/dial/res/drawable-xhdpi/ic_calllog_filter_
  call_all.png
@@ -269,7 +269,7 @@ Name: system/media/audio/notifications/SpaceSeed.ogg
 SHA1-Digest: xkyifT2mJnaopxECgJoFmq76mWM=
 
 Name: system/bin/mtpd
-SHA1-Digest: jxRXz5z/1CGhSJ73ZUJRo/lv77Y=
+SHA1-Digest: nSaSVUPnFumcKCu4G1AdjxC2r0w=
 
 Name: system/etc/defaultTheme/icons/preview/cover.png
 SHA1-Digest: cq7GTw+bPewppsWwzJvNUEA/oDI=
@@ -326,7 +326,7 @@ Name: system/media/audio/ringtones/NewPlayer.ogg
 SHA1-Digest: 25CatlY7tgx/w1kCPh/2CXN3ls8=
 
 Name: system/app/PackageInstaller.apk
-SHA1-Digest: inqCiPKjOL+BmskIFA7tLhjvhmU=
+SHA1-Digest: fJ7dQpmkorMno1nTpcwPn+BACTQ=
 
 Name: system/etc/female/csp/dial/res/drawable-xhdpi/ic_call_dial_bgsha
  dow.9.png
@@ -337,7 +337,7 @@ Name: system/etc/water/csp/contact/res/drawable-xhdpi/edit_spinner_bot
 SHA1-Digest: QTkWrVKJuHIbpaOrAtez48wassI=
 
 Name: system/etc/security/otacerts.zip
-SHA1-Digest: arDzcdGIsawaOjrzp2yvEOZNzXA=
+SHA1-Digest: xto68f3mhu/WvAWYM3Ns2Xp9Xkk=
 
 Name: system/etc/female/icons/xhdpi/ic_launcher_shortcut_directmessage
  .png
@@ -347,7 +347,7 @@ Name: system/etc/female/csp/message/res/drawable-xhdpi/simcard1.png
 SHA1-Digest: 01v+bKj/uqUlwzQyA2s38OjSspA=
 
 Name: system/etc/defaultTheme/com.baidu.home2/cover/cover.png
-SHA1-Digest: zaW/5pXOKbSAoZhY4B+TLD50xo8=
+SHA1-Digest: 7YwZSrb8AlupsDOdHgcHAHMwA2s=
 
 Name: system/etc/voicecommand/voiceui/uipattern/Chinese-Taiwan/c_t_dic
  .bin.f
@@ -379,7 +379,7 @@ Name: system/media/audio/ringtones/Backroad.ogg
 SHA1-Digest: aZLwTqcBx2p0u1zbo93/JP5MMNg=
 
 Name: system/app/DataUsageLockScreenClient.apk
-SHA1-Digest: numWY4ih36+FmIfz6U4pVCI8RpA=
+SHA1-Digest: +LmAhB6lhpFpExPyD8H1oUCfsig=
 
 Name: system/etc/firmware/mt6627/mt6627_fm_v4_coeff.bin
 SHA1-Digest: 2jmj7l5rSw0yVb/vlWAYkK/YBwk=
@@ -392,7 +392,7 @@ Name: system/etc/female/icons/xhdpi/cn.kuwo.player.png
 SHA1-Digest: aMhgYXKsgBrmOe9R+fqVJQvN2Rc=
 
 Name: system/app/StkSelection.apk
-SHA1-Digest: hTwt96hMXD2TNkWPao32Gib91PA=
+SHA1-Digest: rh8XmzRLppSeljYZn8I35K5lLTA=
 
 Name: system/etc/female/csp/contact/res/drawable-xhdpi/ic_contact_pict
  ure_bg.png
@@ -408,7 +408,7 @@ Name: system/lib/libstagefrighthw.so
 SHA1-Digest: D6U6MxkcpTMLr8L0ijIpV01SpfY=
 
 Name: system/lib/libmtp.so
-SHA1-Digest: 5gjhnAppcGK/X69hu2XLteqcy5A=
+SHA1-Digest: gvXksHfYwLWOee71g/z5+Yc14kU=
 
 Name: system/etc/female/com.baidu.home2/main/res/drawable-xhdpi/ic_cam
  era_widget_lamp_working_1.png
@@ -423,7 +423,7 @@ Name: system/etc/female/csp/dial/res/drawable-xhdpi/ic_call_dial_btn_c
 SHA1-Digest: Y080yLx5FnTfyRFnXuNXjyBM5dI=
 
 Name: system/lib/libstagefright_soft_vpxdec.so
-SHA1-Digest: 2BanaZ7Z72VM/oMAHvCSVuZhVUY=
+SHA1-Digest: pwqF1jtZFyomugtmFxZX4dH25XU=
 
 Name: system/etc/female/framework/appManager/com.android.settings/res/
  drawable-xhdpi/ic_settings_bluetooth2.png
@@ -475,10 +475,10 @@ Name: system/etc/water/wallpaper/preview/default_wallpaper.jpg
 SHA1-Digest: MHdiHwcgBdfuwqrLpL0EhogNhJk=
 
 Name: system/lib/libpixelflinger.so
-SHA1-Digest: n9ipFMbubWlStedpdQBiZHLM3Cw=
+SHA1-Digest: N1zTqC7dRUhVMEwg7oWUZWY1HgE=
 
 Name: system/app/BaiduAntiDisturbance.apk
-SHA1-Digest: 793LX7Z263cNqtyLM4vwXlkd08U=
+SHA1-Digest: +Nv0L5TuxZe6Gpq5x62rg/Ndj5Q=
 
 Name: system/media/audio/notifications/Proxima.ogg
 SHA1-Digest: hPBVi5WarvD9XgSd5TqA3yqXROM=
@@ -520,10 +520,10 @@ Name: system/etc/water/icons/xhdpi/tv.pps.mobile.png
 SHA1-Digest: h5glV/bdlqGWABKMwmK0ZlftB5Q=
 
 Name: system/lib/libext4_utils.so
-SHA1-Digest: HJ1vDh3SAL61mN5BYEUuw6PvFMQ=
+SHA1-Digest: qTNKsfeYh2StRA6ICqUgkJ3W90s=
 
 Name: system/lib/libOpenMAXAL.so
-SHA1-Digest: fi9UJGoLsXG1SiEQVn7pcEkh4Dc=
+SHA1-Digest: ybK47x0Buf+veb8NLHc9zzRDq1A=
 
 Name: system/etc/security/cacerts/1df5ec47.0
 SHA1-Digest: UujKW9YI89cjOO6uCaBGaKKEdIQ=
@@ -551,7 +551,7 @@ SHA1-Digest: maCFXiNFYo0MEATSyqYYm7Py2nc=
 
 Name: system/etc/female/framework/framework-res/other/framework/res/dr
  awable-xhdpi/yi_window_bg_baidu.9.png
-SHA1-Digest: 5mqmq29F24tTCLB3dalQ2E2h0rA=
+SHA1-Digest: 2NkxCZfaVdwZE9zxE0HELGqyiPM=
 
 Name: system/tts/lang_pico/en-US_lh0_sg.bin
 SHA1-Digest: Cckpd0CD5uEOlqA3HtczRvaOpJE=
@@ -569,7 +569,7 @@ Name: system/etc/water/com.baidu.home2/weatherwidget/res/drawable-xhdp
 SHA1-Digest: fvYQj2BJ9eQXo2oM3+WYqwP5NlY=
 
 Name: system/framework/mms-common.jar
-SHA1-Digest: xlCOvaU+gRMLni3uYhAS3QhbvHo=
+SHA1-Digest: PrXDtsN5g3rpL9lgx3ibsiL5Woc=
 
 Name: system/etc/water/com.baidu.home2/main/res/drawable-xhdpi/editing
  _delete_screen_n.png
@@ -589,13 +589,13 @@ Name: system/lib/libvcodec_utility.so
 SHA1-Digest: A3TQ2PLFB+9FcEINL0ZkapSs4rs=
 
 Name: system/lib/libstagefright_soft_amrnbenc.so
-SHA1-Digest: boPFlIks1cIKw4i3nDAB2T/F0rg=
+SHA1-Digest: Fw+GoxxwYK06hbLa+zfGFbNl7Ww=
 
 Name: system/bin/dualmdlogger
 SHA1-Digest: XKTQAfytXQK8Eq/fJrg/91/UW58=
 
 Name: system/bin/dhcp6s
-SHA1-Digest: A+aVPXtRl1NCJGKx3rBjG3+XZB4=
+SHA1-Digest: XTdi01LZD04/4EXMrOb6KQV3I3U=
 
 Name: system/etc/water/csp/message/res/drawable-xhdpi/ic_mess_sayhello
  everyday.png
@@ -620,7 +620,7 @@ Name: system/etc/water/com.baidu.home2/main/res/drawable-xhdpi/arrow_l
 SHA1-Digest: pyJvYCz8GvebnE83FYGxPNm4hxM=
 
 Name: system/bin/dhcp6c
-SHA1-Digest: QdGdqYCTNk0QcDP9H7Tc3BRYQFc=
+SHA1-Digest: IPz+ToM478lAaZ8hd+tcew0H8No=
 
 Name: system/etc/water/csp/contact/res/drawable-xhdpi/ic_contact_btn_b
  roswer_disable.png
@@ -641,7 +641,7 @@ Name: system/media/audio/alarms/Plutonium.ogg
 SHA1-Digest: mwXUuYVPJEw/69HlFgF+CuAhYJA=
 
 Name: system/lib/libdrm1.so
-SHA1-Digest: gwdtwt3VWMcehK9I4L8yGzTw1t8=
+SHA1-Digest: N8WNBuxQttJWfJ/YbGbXqtvmmHM=
 
 Name: system/etc/water/framework/appManager/com.android.settings/res/d
  rawable-xhdpi/ic_wifi_lock_signal_3.png
@@ -687,7 +687,7 @@ Name: system/etc/permissions/android.software.sip.voip.xml
 SHA1-Digest: RAtOmldFdIRPrBJF4bTmw+Q4OZA=
 
 Name: system/bin/ping
-SHA1-Digest: 5gxcN9SLDGPiK7HBG8+ECOiCT54=
+SHA1-Digest: +99txjmbUUrvkLqmUiilpvJUt4k=
 
 Name: system/etc/female/csp/contact/res/drawable-xhdpi/ic_contact_data
  _tab_call.png
@@ -764,7 +764,7 @@ Name: system/etc/water/framework/framework-res/ic/framework-yi/res/dra
 SHA1-Digest: SpQh6yz6XkIHcOqGpAuQNRB5zWw=
 
 Name: system/bin/keystore
-SHA1-Digest: hFTV+6gUuc24btVfYB2cjanol7Y=
+SHA1-Digest: +CaR/epR/K8j7LQudjaEsxyik8Y=
 
 Name: system/etc/water/csp/message/res/drawable-xhdpi/bg_ds_slot2_sms_
  unlock_disable.9.png
@@ -788,7 +788,7 @@ Name: system/fonts/Clockopia.ttf
 SHA1-Digest: +RPUxNPpLsZ8LSXfUkfgctYerrA=
 
 Name: system/lib/libfilterfw.so
-SHA1-Digest: W5LONcVrVjSWk8jl90Sy967u2kw=
+SHA1-Digest: MkakXAQ67lIxZSlx7/BsZr8I2sU=
 
 Name: system/lib/libbtcust.so
 SHA1-Digest: 0PmMEkI/RpvBiNF9upJ1nYU1tTc=
@@ -866,7 +866,7 @@ Name: system/etc/female/icons/xhdpi/com.baidu.appsearch.png
 SHA1-Digest: dANMKKdd/ZpaSyvZPAZXWX+aN8E=
 
 Name: system/lib/libnetutils.so
-SHA1-Digest: fZAbkFUH1YbCtomg5GHt7GASZfw=
+SHA1-Digest: Whwotl7nwA4wG4T3v3duoBk5T04=
 
 Name: system/etc/female/com.baidu.home2/main/res/drawable-xhdpi/ic_cam
  era_widget_dialoge_pressed.9.png
@@ -1010,7 +1010,7 @@ Name: system/etc/voicecommand/voiceui/uipattern/Chinese-Mandarin/a_c_d
 SHA1-Digest: 5MjMB7yEHhUXedBUrJcw2LE+5/8=
 
 Name: system/lib/libvideoeditor_osal.so
-SHA1-Digest: Mh+qPRIKvAuFUQuMAUQFgLowNxs=
+SHA1-Digest: SKolg9Rl0d3H5PR1bnTT7mvLSUU=
 
 Name: system/etc/water/com.baidu.home2/main/res/drawable-xhdpi/ic_clos
  ed_pressed.png
@@ -1137,7 +1137,7 @@ Name: system/etc/female/icons/xhdpi/folder_btn_left_pressed.9.png
 SHA1-Digest: idZZfzSkLhYCBGQ2kQdfT5vgE34=
 
 Name: system/bin/record
-SHA1-Digest: r4eUdo0p4MPe55SghwGM9s8oXqM=
+SHA1-Digest: fWf2zsbFNKeUWD+9h3BdMAa0nhc=
 
 Name: system/etc/water/framework/trafficmonitor/com.baidu.trafficmonit
  or/res/drawable-xhdpi/app_compress_traffic.png
@@ -1148,7 +1148,7 @@ Name: system/etc/female/lockscreen/advance-xhdpi/ic_main_unlock_chargi
 SHA1-Digest: zUJdDqapqX2aQ8kuhosxA+VKR9g=
 
 Name: system/etc/NOTICE.html.gz
-SHA1-Digest: 2mD0k/jTTzNt4/JZPjlMldI+lsk=
+SHA1-Digest: oJQ9ChnWhkgXZYuBhGAjzkB8mQk=
 
 Name: system/etc/female/framework/appManager/com.android.settings/res/
  drawable-xhdpi/ic_bt_cellphone.png
@@ -1199,7 +1199,7 @@ Name: system/etc/water/csp/message/res/drawable-xhdpi/ds_slot1_sms_unl
 SHA1-Digest: RSVfImbuJDiWckvyv6pwXZWJGvo=
 
 Name: system/app/BaiduDirectShare.apk
-SHA1-Digest: HH0qxjNZQ1M4+2s90sHY0EDcLxA=
+SHA1-Digest: 1im0WmNolWkwsDVQg1S6MPOcWWQ=
 
 Name: system/etc/player.cfg
 SHA1-Digest: 2XKR+qQJhTg7BEhJSrmcs6DleNI=
@@ -1209,7 +1209,7 @@ Name: system/etc/female/lockscreen/advance-xhdpi/ic_main_unlock_chargi
 SHA1-Digest: 3MfbYlToF/8yw3BlS0yxobjKKew=
 
 Name: system/app/TrafficMonitor.apk
-SHA1-Digest: ECQSWjSAOUzHSPoTO8CwP+YQr8U=
+SHA1-Digest: 1xPD9qRkUNQL/WtlEkwVVZjkrcg=
 
 Name: system/etc/water/framework/framework-res/textfield/framework/res
  /drawable-xhdpi/yi_textfield_multiline_focused_baidu_light.9.png
@@ -1245,13 +1245,13 @@ Name: system/etc/female/com.baidu.home2/weatherwidget/res/drawable-xhd
 SHA1-Digest: FCWOfp0SqnQD8gUpiFA/ZhfxfBE=
 
 Name: system/lib/libvideoeditor_core.so
-SHA1-Digest: xjQSXqNEunxwrHvZFdLcifwT3P4=
+SHA1-Digest: /zdYBwY9gdgs1BUtYfENtiZBBpM=
 
 Name: system/lib/libexpat.so
-SHA1-Digest: DVQy/3Ze5ST2h+2lK7OdYzhVN2k=
+SHA1-Digest: yRoXUv1600kRz/mXEf0RqYvI4h0=
 
 Name: system/bin/thermald
-SHA1-Digest: 2QtZL4/MD2JSKfEWNSa2KBVWA1A=
+SHA1-Digest: KVBlbRaYQ8RdPLiSbvm/CekqtTU=
 
 Name: system/lib/libMtkOmxCore.so
 SHA1-Digest: H0U9dQyQQI5PxXg1NXFKF7ysU6Q=
@@ -1295,7 +1295,7 @@ Name: system/etc/female/framework/baiduclock/com.baidu.baiduclock/res/
 SHA1-Digest: Aj5Nn7jgiiA8sQ9bA22QLKGj7qQ=
 
 Name: system/lib/libsqlite_jni.so
-SHA1-Digest: dItfb+mTlKKr1vwHyOqWQ7fbtoM=
+SHA1-Digest: 9/JXh7GCz2ZHSaLGies9XhkEXVc=
 
 Name: system/bin/ndc
 SHA1-Digest: qPUGa4u0ANr6BdCDnJ1OfKKVjqg=
@@ -1309,7 +1309,7 @@ Name: system/etc/female/statusbar/com.baidu.videoeditor/res/drawable-x
 SHA1-Digest: TmchTil8ly9iqa0G0Ng5JLMkwoM=
 
 Name: system/lib/libdrmframework.so
-SHA1-Digest: JRVEM/7ltfxI1krANalg5vYabEw=
+SHA1-Digest: sOzZmmMIqxYXwhm68PHZ/WoTBaE=
 
 Name: system/etc/female/framework/framework-res/tab/framework-yi/res/d
  rawable-xhdpi/yi_tab_top_selected_baidu.9.png
@@ -1319,10 +1319,10 @@ Name: system/etc/female/icons/xhdpi/com.baiyi_mobile.gamecenter.png
 SHA1-Digest: HI1+10VYtAJBFCPpNdEs4fGRvQI=
 
 Name: system/lib/libandroid_runtime.so
-SHA1-Digest: PUt9Q5aUEOOzc6skckt6x6Dmfbo=
+SHA1-Digest: d60AQWq9O+pit46YuMT7LZJkrps=
 
 Name: system/lib/libgabi++.so
-SHA1-Digest: AzqK3d8olR6Hd+wPe+4bJa9lqLU=
+SHA1-Digest: BK/Foz6wci/IVIYOb2VcWiGQIqA=
 
 Name: system/media/audio/ringtones/LoveFlute.ogg
 SHA1-Digest: pFizy1Z0ZkRaHi3MkgwVV3sVuCw=
@@ -1336,7 +1336,7 @@ Name: system/etc/water/framework/thememanager/com.baidu.thememanager.u
 SHA1-Digest: aDT8PweFfg3eZ3He5SALa/vKL+Y=
 
 Name: system/app/BaiduAppSearch.apk
-SHA1-Digest: T5OqNHdQFjJ+SGVAeKl0AyOseHQ=
+SHA1-Digest: DIqgoE50DGVvJTos7SyqcfP0ec4=
 
 Name: system/etc/female/framework/filemanager/com.baidu.resmanager.fil
  emanager/res/drawable-xhdpi/yi_btn_default_focused_baidu_light.9.png
@@ -1392,7 +1392,7 @@ Name: system/etc/water/framework/appManager/com.android.settings/res/d
 SHA1-Digest: 647wmw1RuhSQKUvpFLCDUCsI7rI=
 
 Name: system/bin/mksh
-SHA1-Digest: TX1xgjEzlLmS6CLjYf7bmyAo3hU=
+SHA1-Digest: Up5hOEieJIeMshSyc2/8zgVoW98=
 
 Name: system/etc/water/csp/contact/res/drawable-xhdpi/ic_contact_index
  _right_bottom_normal.9.png
@@ -1413,13 +1413,13 @@ Name: system/media/audio/ringtones/Shes_All_That.ogg
 SHA1-Digest: uBTEc31R1CJoKBCHSn20tvxXHf4=
 
 Name: system/lib/libm.so
-SHA1-Digest: 1h9hpWmjPRZYtu7ll7qoQDN26D0=
+SHA1-Digest: Ai0dlpXbeAxz8+AWSr0bCkBymcw=
 
 Name: system/lib/libdrmdecrypt.so
 SHA1-Digest: YbdUwNUn85vLdtjjHokREFGEunI=
 
 Name: system/bin/dhcp6ctl
-SHA1-Digest: VPZNtTlfYdquab9S9PI6WfNxaYI=
+SHA1-Digest: gCE+bcvC49ffzL3Hg3GwlKLyfZI=
 
 Name: system/etc/water/csp/dial/res/drawable-xhdpi/ic_call_qdial_btn_7
  .png
@@ -1446,7 +1446,7 @@ Name: system/media/audio/ringtones/Centaurus.ogg
 SHA1-Digest: K81XsaGiblATSjnlAnGPVeTWlWM=
 
 Name: system/lib/libwifitest.so
-SHA1-Digest: aWqkrC5ipsLlnm/1Vod6cNEGD1M=
+SHA1-Digest: Ou3fx4hxcPeWF4gjpyf38KlXABE=
 
 Name: system/etc/female/csp/dial/res/drawable-xhdpi/ic_call_dial_btn_0
  .png
@@ -1457,14 +1457,14 @@ Name: system/etc/water/csp/contact/res/drawable-xhdpi/ic_contact_index
 SHA1-Digest: bTePEJC2Cc0sYvQSkHAzdClH9G0=
 
 Name: system/app/FusedLocation.apk
-SHA1-Digest: x3IJIv9/eJLbq9AXQYZawYerZNw=
+SHA1-Digest: J9naXcwkqRX/WZDPBSu3b9ZqftU=
 
 Name: system/etc/water/csp/contact/res/drawable-xhdpi/ic_contact_face_
  quick_banner.9.png
 SHA1-Digest: 7rasSbrkhHZcRSPmWwZyZ6iy/YQ=
 
 Name: system/bin/memorydumper
-SHA1-Digest: Dvrzb4kGSflaSllD0MjDNoFH/a0=
+SHA1-Digest: tK6fg5z/pGKEimoBT0wJ10Xb3QM=
 
 Name: system/media/audio/notifications/Beryllium.ogg
 SHA1-Digest: 5m5rHllimjB64tHq+fBBvKvOiz8=
@@ -1494,7 +1494,7 @@ Name: system/etc/water/framework/framework-res/button/framework/res/dr
 SHA1-Digest: X2dz+emrZgBa45Th79YcOKdraAc=
 
 Name: system/lib/libjavacore.so
-SHA1-Digest: Hgc4N/JjYc7kLiGcsrhDs+lsayU=
+SHA1-Digest: nhU2focAOcvydTpDPQU6rgw9wwE=
 
 Name: system/etc/water/framework/filemanager/com.baidu.resmanager.file
  manager/res/drawable-xhdpi/ic_filemanager_actionbar_classified.png
@@ -1508,7 +1508,7 @@ Name: system/etc/female/icons/xhdpi/ic_launcher_shortcut_directdial.pn
 SHA1-Digest: AIF7dONB3R+bip5wXlRlByiffsk=
 
 Name: system/bin/superumount
-SHA1-Digest: BKyJidt5IsQEGzECyRUxK09OWNg=
+SHA1-Digest: 27vYUjtEO9SqTa78ToSPIynn/1E=
 
 Name: system/etc/security/cacerts/7651b327.0
 SHA1-Digest: j/CjK50zYtj/xzaZFhptUghXaPk=
@@ -1537,7 +1537,7 @@ Name: system/etc/female/framework/thememanager/com.baidu.thememanager.
 SHA1-Digest: FRzKoPB4It2smEEUNJvkBz0iLoY=
 
 Name: system/lib/libjni_pq.so
-SHA1-Digest: zGhTxem6ncIbUe7203dMAT8IGsc=
+SHA1-Digest: 12BSv6mRXa5JbKYPJflR8Kioohc=
 
 Name: system/etc/female/icons/xhdpi/com.nd.android.pandareader.png
 SHA1-Digest: WKytVfdfXLZ6zkkM3MLnKdBO01A=
@@ -1607,7 +1607,7 @@ Name: system/etc/water/framework/framework-res/battery/framework/res/d
 SHA1-Digest: w6HJQMsZO6OBqzfZ+lv1EDyGQsE=
 
 Name: system/bin/qemud
-SHA1-Digest: PIc70gmAXTXVZKdDPSRBoQCT+zM=
+SHA1-Digest: 8Ec4ofTlea6I5zsr9WgeJ9Ma2U8=
 
 Name: system/etc/female/csp/message/res/drawable-xhdpi/bg_ds_slot1_sms
  _unlock_normal.9.png
@@ -1637,7 +1637,7 @@ Name: system/etc/female/framework/framework-res/switch/framework/res/d
 SHA1-Digest: Qw75K26sOPn8bNkmNlOhW7/ODqo=
 
 Name: system/lib/libstagefright_enc_common.so
-SHA1-Digest: ILqYmv4szRPeFBbd1w27zfOtrb0=
+SHA1-Digest: CtKb7rb/h9rOhvzf8s4XOT+r/sQ=
 
 Name: system/etc/water/framework/framework-res/radio/framework/res/dra
  wable-xhdpi/yi_btn_star_off_focused_baidu_light.png
@@ -1716,7 +1716,7 @@ Name: system/lib/libregister.so
 SHA1-Digest: WAwIChLuz5ir6kiC3MMtgCW2QUY=
 
 Name: system/lib/libstagefright_soft_amrwbenc.so
-SHA1-Digest: NWpTyLyJzlzomXv+dYmBgchvNFk=
+SHA1-Digest: +0HuoDvy6hugFdp6opNJepGpOaw=
 
 Name: system/media/video/Sunset.480p.mp4
 SHA1-Digest: tVOTzpfdLr+BKK/shn13WnO9qew=
@@ -1730,10 +1730,10 @@ Name: system/etc/female/framework/framework-res/tab/framework/res/draw
 SHA1-Digest: MyBJ/LsJOvQpu0t3GwOgLNdg0Fw=
 
 Name: system/lib/libatvctrlservice.so
-SHA1-Digest: FLFxENGQHIpAAh+aBplBJns2lQw=
+SHA1-Digest: RSwiGFycxUSRnL/hNNfHGnN1jyQ=
 
 Name: system/lib/libOpenSLES.so
-SHA1-Digest: SqK5o6G8iR3C4pFIHK7xScvyfT8=
+SHA1-Digest: 7PzCNxNDLnxlqazvVkgECOXBnS0=
 
 Name: system/bin/ccci_fsd
 SHA1-Digest: 6HLw3q3b/lJsFeUowBrNDIDgop4=
@@ -1749,7 +1749,7 @@ Name: system/etc/female/lockscreen/advance-xhdpi/manifest.xml
 SHA1-Digest: Gp3oN6wYwIErqmLG6RShD/d8ucE=
 
 Name: system/lib/libhwui.so
-SHA1-Digest: lawjMl6PyEpIgLJ8nYIXUUPCWtI=
+SHA1-Digest: O6jztgFH0HjBCa6Vex1lNwdycvo=
 
 Name: system/etc/water/framework/framework-res/radio/framework/res/dra
  wable-xhdpi/yi_btn_star_on_normal_baidu_light.png
@@ -1800,13 +1800,13 @@ Name: system/etc/water/icons/xhdpi/com.android.calendar_10.png
 SHA1-Digest: 5LgHq+3PMnrAib8Mn+Wy0vG5aPQ=
 
 Name: system/lib/libmpoencoder.so
-SHA1-Digest: D/UsD/F82zNRL1hBuYyAefJ0Wx0=
+SHA1-Digest: BWuxBoos7fpocuDniz6gUdZ/Kw0=
 
 Name: system/etc/security/cacerts/10531352.0
 SHA1-Digest: x031sSTTrg99nYnqERvbmDu8aP8=
 
 Name: system/lib/soundfx/libaudiopreprocessing.so
-SHA1-Digest: pwHbzSR4hRYCumrdvkr9cns+7IU=
+SHA1-Digest: UR4h78J0ll0ALu+5b80aXkot8q0=
 
 Name: system/media/audio/ringtones/No_Limits.ogg
 SHA1-Digest: XAELJ6mvSSWmVJzcMXqKwsdsZt8=
@@ -1873,7 +1873,7 @@ Name: system/etc/female/com.baidu.home2/main/res/drawable-xhdpi/ic_lau
 SHA1-Digest: hGNSbq2IO8H1Ixd96R07VSsUvXM=
 
 Name: system/framework/requestsync.jar
-SHA1-Digest: 3MXhtzPrSUZuax6QnaIC0OyYyi4=
+SHA1-Digest: ygky+34KFNMCA1fHFGnhS9kxxVc=
 
 Name: system/etc/water/com.baidu.home2/weatherwidget/res/drawable-xhdp
  i/widget_weather_cloud.png
@@ -1918,7 +1918,7 @@ Name: system/etc/female/lockscreen/advance-xhdpi/ic_main_unlock_chargi
 SHA1-Digest: hTVN1ym/jbYvcArZRpmfoIADYKA=
 
 Name: system/lib/libgraphite2.so
-SHA1-Digest: GdaQdAMlO4KzgLTrARdzxa6wOXk=
+SHA1-Digest: 41foL4r8IMnCF/irebvywkrrTUw=
 
 Name: system/media/audio/notifications/Spica.ogg
 SHA1-Digest: QYkZyekhPGmpppRgc9HDU1iRq7s=
@@ -1940,7 +1940,7 @@ Name: system/etc/water/framework/filemanager/com.baidu.resmanager.file
 SHA1-Digest: 0+WinQUvgh+UAxyILc9ntBzl8Ps=
 
 Name: system/framework/services.jar.jex
-SHA1-Digest: mdAyg0pYxfasXFT/629YzjE5gr4=
+SHA1-Digest: b5NP32CbXFHIQcYEw7SNrn0uEkA=
 
 Name: system/etc/female/csp/dial/res/drawable-xhdpi/ic_call_dial_btn_c
  all1_normal.9.png
@@ -2040,7 +2040,7 @@ Name: system/etc/water/framework/appManager/com.android.settings/res/d
 SHA1-Digest: YjSN8RT6+I1U1mBJqKw9occ+9OE=
 
 Name: recovery/recovery-from-boot.p
-SHA1-Digest: nHuF79ZraXr8O2IiBvrlNY9l6/o=
+SHA1-Digest: BCBFb9tC1jZycbSCal/Om4asDj8=
 
 Name: system/lib/libterservice.so
 SHA1-Digest: W2p/ns9t6jjQsKtZ23z3ZXHrWrU=
@@ -2050,7 +2050,7 @@ Name: system/etc/water/framework/filemanager/com.baidu.resmanager.file
 SHA1-Digest: rRWsdqS+HzLMxPuF3xzhfpLpSKM=
 
 Name: system/bin/system_server
-SHA1-Digest: 86EotueoHqSW4ypcsF6aF3Jr8TA=
+SHA1-Digest: S7anx9oUfyd8GVU41zH+OeTFDJM=
 
 Name: system/bin/send_bug
 SHA1-Digest: qWYL2+yNAKmEEuvqYDKpTXa4ftw=
@@ -2089,7 +2089,7 @@ Name: system/etc/water/statusbar/com.baidu.trafficmonitor/res/drawable
 SHA1-Digest: 04UBsGvD9I5dwRV8hFr/Mlcwu9w=
 
 Name: system/app/Settings.apk
-SHA1-Digest: XXGRn6gOHOJjqj9RUlKlgXEw/Po=
+SHA1-Digest: xLmUILXUCwrHIFrko04tINSyq58=
 
 Name: system/etc/channel_files/Y29tLmJhaWR1LmJyb3dzZXIuYXBwc19yZXNfcmF
  3X3RuY29uZmlnLmluaQ
@@ -2099,7 +2099,7 @@ Name: system/media/audio/alarms/Barium.ogg
 SHA1-Digest: uvMFpl2dTzfhqsAqw5BYwQsxIME=
 
 Name: system/lib/libyi_compress_module.so
-SHA1-Digest: jLUh7Y9Jba1nuCwiIWkfKg0LPcs=
+SHA1-Digest: O2xGiGZVxyd6Y+sXJ9QdY6mam3I=
 
 Name: system/etc/female/com.baidu.home2/main/res/drawable-xhdpi/ic_cam
  era_widget_picture_bg.9.png
@@ -2139,7 +2139,7 @@ Name: system/etc/water/framework/email/com.android.email/res/drawable-
 SHA1-Digest: R+3+M07rdwqujIItZDOL7PwxJxE=
 
 Name: system/app/Contacts.apk
-SHA1-Digest: 0PFWViiY8U5JJAHUe1xr0S9LnoA=
+SHA1-Digest: QmVGon3bwJO2/gmSTEiynhpV8hI=
 
 Name: system/etc/water/framework/framework-res/numberpicker/framework/
  res/drawable-xhdpi/yi_numberpicker_up_pressed_baidu_light.png
@@ -2177,7 +2177,7 @@ Name: system/etc/female/statusbar/res/drawable-xhdpi/status_bar_quick_
 SHA1-Digest: SzPQXrEELaw5UvXMpqTJXjhTRUY=
 
 Name: system/lib/libvorbisidec.so
-SHA1-Digest: xiZP4jFJRmRS95s0Ex8UpHR8LJk=
+SHA1-Digest: r3BpEssAWi/TY/VSRfGsY+0323w=
 
 Name: system/etc/security/cacerts/48478734.0
 SHA1-Digest: CCkvYaE7BOlkHFDTReqBRiiR8II=
@@ -2242,7 +2242,7 @@ Name: system/etc/voicecommand/voiceui/uipattern/English/c_e_dic.bin.f
 SHA1-Digest: Mz7twpwipCox7IdLe7G3M3a9X/M=
 
 Name: system/lib/libstdc++.so
-SHA1-Digest: LLXaT/2UbEj/bUUvf1wmPJD3cFo=
+SHA1-Digest: ltKtxczlMf/GCiKQw6nN3GYgYyU=
 
 Name: system/etc/water/com.baidu.home2/weatherwidget/res/drawable-xhdp
  i/tpwidget_clock_5.png
@@ -2309,7 +2309,7 @@ Name: system/etc/defaultTheme/statusbar/preview/cover.png
 SHA1-Digest: PPs6tFoGFuvWiuWg9Yrz2s+ovkQ=
 
 Name: system/framework/uiautomator.jar
-SHA1-Digest: /tGNHn4qaxaiy512Chww/c24HM0=
+SHA1-Digest: d11QnJ+rfkICJqb81bHntq395eM=
 
 Name: system/etc/female/com.baidu.home2/main/res/drawable-xhdpi/all_ap
  ps_button_pressed.png
@@ -2322,7 +2322,7 @@ Name: system/media/audio/notifications/Krypton.ogg
 SHA1-Digest: cUUL9l5aSmwdGnuILteygeN8/z8=
 
 Name: system/framework/mediatek-res.apk
-SHA1-Digest: Vtu+KOJRvaVawd211DGFHzjx/UM=
+SHA1-Digest: ujIAN8NWJ7JVYqQOfvJJuP2PwDc=
 
 Name: system/etc/female/csp/dial/res/drawable-xhdpi/ic_call_dial_btn_c
  all1_norma.9.png
@@ -2336,14 +2336,14 @@ Name: system/usr/keylayout/mtk-kpd.kl
 SHA1-Digest: QalmP2T39HwGSZb0M6ixQVL/9sM=
 
 Name: META-INF/com/android/metadata
-SHA1-Digest: xoc5dqyFiXFNsj1rQfqGdNYmZ/I=
+SHA1-Digest: cKBgnTdr9uDxgJ7W6GjC4pULScQ=
 
 Name: system/etc/water/framework/thememanager/com.baidu.thememanager.u
  i/res/values/colors.xml
 SHA1-Digest: mNJs9YVbkhy+W4188DfOnzVRQ8s=
 
 Name: system/lib/libgui.so
-SHA1-Digest: ZooIdOC1YA0PR4tTitEy1TovrrM=
+SHA1-Digest: n+64f0L0fG0UiPZCXSuU9wrJF+c=
 
 Name: system/etc/water/framework/framework-res/switch/framework/res/dr
  awable-xhdpi/yi_switch_thumb_actived_pressed_baidu_light.9.png
@@ -2357,7 +2357,7 @@ Name: system/etc/water/framework/calendar/com.android.calendar/res/dra
 SHA1-Digest: y39+eGMqa0Ett2HmdFSOXBJTmU4=
 
 Name: system/lib/libinput.so
-SHA1-Digest: q51k7C1bRL2avnE6vL0SudOdsWM=
+SHA1-Digest: KlY5s2Cfr/0pP+3P63MQ1paVwlo=
 
 Name: system/etc/female/framework/framework-res/tab/framework/res/draw
  able-xhdpi/yi_tab_selected_focused_baidu.9.png
@@ -2400,7 +2400,7 @@ Name: system/etc/water/com.baidu.home2/main/res/drawable-xhdpi/home_bu
 SHA1-Digest: 1xIUcA981T9fWLR249r1yzApJiM=
 
 Name: system/lib/libmedia_jni.so
-SHA1-Digest: 5irpzOhcGESLE8eTbUn7EAGDJ4k=
+SHA1-Digest: +i4joTZ28e5TML5PLZy6pxkyL1c=
 
 Name: system/etc/water/lockwallpaper/preview/cover.png
 SHA1-Digest: FKw2RMtMSZwn4h7Qj/daMCkfGjs=
@@ -2472,7 +2472,7 @@ Name: system/etc/security/cacerts/d777342d.0
 SHA1-Digest: WdQWfF7rZDzaXOGfoJMJS1qOuYU=
 
 Name: system/lib/drm/libfwdlockengine.so
-SHA1-Digest: m9uXv71TWrmrOrnY16eXAbSWEr0=
+SHA1-Digest: Sct6deSVUxIYfFcMlq+VPqjvDL0=
 
 Name: system/etc/female/csp/contact/res/drawable-xhdpi/system_icon_xx_
  synchro.png
@@ -2510,7 +2510,7 @@ Name: system/lib/libmedia_native.so
 SHA1-Digest: 3CzKAvakO4rotmCVLG/6XJBSoKs=
 
 Name: system/app/KeyChain.apk
-SHA1-Digest: 5F3enjhDGKVmf5BQSNBpojFBWCc=
+SHA1-Digest: kAA9FseRBF7sModsFSk/GvJvLJk=
 
 Name: system/etc/security/cacerts/c33a80d4.0
 SHA1-Digest: rNpc82k59uWEFW5aGR7MLPbTGbI=
@@ -2526,10 +2526,10 @@ Name: system/etc/female/com.baidu.home2/main/res/drawable-xhdpi/full_s
 SHA1-Digest: +12pObXwUzCoZvhsGbqfuQobAwA=
 
 Name: system/app/UserDictionaryProvider.apk
-SHA1-Digest: HEspBMil/+LQ9MBhhhEI7DeDBkI=
+SHA1-Digest: k3C9cZ+nDNB5ShXhlYRKJGKvSks=
 
 Name: system/app/LiveWallpapers.apk
-SHA1-Digest: DN8PlOEQoXO9BDAxhGSdEycK3tM=
+SHA1-Digest: d0T4jRXinwCQ0wBxWLaMm1rZZfU=
 
 Name: system/etc/female/com.baidu.home2/main/res/drawable-xhdpi/ic_cam
  era_widget_time_bg.9.png
@@ -2554,10 +2554,10 @@ Name: system/etc/water/framework/DualcardSetting/com.baidu.dualcardset
 SHA1-Digest: arN4l8z3k/kKg8cU/51ZyVVxuLU=
 
 Name: system/framework/secondary-framework.jar
-SHA1-Digest: 0C4MS4cABZnVM2PngsPsEwqJPzo=
+SHA1-Digest: pAhIrJabCpTG3q0oqiE1uiajVvI=
 
 Name: system/lib/libsuspend.so
-SHA1-Digest: RJhpWjIU115FmvPuuhQf4eSu1uU=
+SHA1-Digest: OgXDJz364BFZEOPxmbNoIdVPSyw=
 
 Name: system/etc/water/framework/powerOff/framework-res/res/drawable-x
  hdpi/ic_audio_ring_notif_vibrate.png
@@ -2568,7 +2568,7 @@ Name: system/etc/water/framework/appManager/com.android.settings/res/d
 SHA1-Digest: dS0+CjKMmttrjtHJntSFRp24yXA=
 
 Name: system/bin/run-as
-SHA1-Digest: cETONysVVw6k16DxUX6UijpvqMY=
+SHA1-Digest: pWvJ07xmX1tx7/Wf+B9eGUGrHHE=
 
 Name: system/etc/female/statusbar/res/drawable-xhdpi/status_bar_popup_
  up.9.png
@@ -2585,7 +2585,7 @@ Name: system/etc/water/csp/message/res/drawable-xhdpi/tab_ic_mess_favo
 SHA1-Digest: FetyeWeE0qL7f9wPh+idy60dS/E=
 
 Name: system/framework/svc.jar
-SHA1-Digest: fpdZmz6VAeo2wln9Ewadz/MaCa4=
+SHA1-Digest: sF2btO3Gm3vdM+k4i/iJabFE77o=
 
 Name: system/etc/female/csp/message/res/drawable-xhdpi/ic_mess_top.png
 SHA1-Digest: TcuvM9YCmxMjQjdrTGywQmWpdmg=
@@ -2603,7 +2603,7 @@ Name: system/etc/female/framework/framework-res/textfield/framework/re
 SHA1-Digest: 9MfG0I5lEXBlw4BqVp1ALpwoNRc=
 
 Name: system/bin/tiny_swapoff
-SHA1-Digest: JG0TzLif8yf4jAlxOlrns5Hg/9k=
+SHA1-Digest: 714z9r+xX2RgSqR34Mymtqz4928=
 
 Name: system/etc/female/lockscreen/advance-xhdpi/ic_main_unlock_chargi
  ng_80_5.png
@@ -2629,7 +2629,7 @@ Name: system/etc/water/framework/framework-res/textfield/framework/res
 SHA1-Digest: p0At6FcBBxz37C7mUmI/aPw7B9M=
 
 Name: system/bin/ext4_resize
-SHA1-Digest: bbji7h2x9LlLJeDv+W6AGkjTyxw=
+SHA1-Digest: 8ehHCf8/U71tEmSdYx48WBWlguM=
 
 Name: system/etc/water/csp/dial/res/drawable-xhdpi/ic_btn_phone_call_d
  isable_baidu.png
@@ -2663,14 +2663,14 @@ Name: system/etc/female/statusbar/res/drawable-xhdpi/ic_stat_sys_brigh
 SHA1-Digest: Uy+/kWe8YHQuvmbtWq84ugjmp6o=
 
 Name: system/app/SettingsProvider.apk
-SHA1-Digest: 9iaK79+toRhB9tptPjiO22j/mes=
+SHA1-Digest: 0sWJiq4Ry1nsxpw9l5kpJQQ6HjY=
 
 Name: system/etc/water/framework/BaiduVideoPlayer/com.baidu.videoplaye
  r/res/drawable-xhdpi/icon_list_videofile.png
 SHA1-Digest: A3JMy5u0d7cvsRwjLXFSjjvJ0VI=
 
 Name: system/etc/defaultTheme.btp
-SHA1-Digest: MFwlHtRDmi2ZMBxn3fPon3hlsg4=
+SHA1-Digest: adBUoNfgWUU9+oFHmFClk/bxMSs=
 
 Name: system/etc/female/lockscreen/advance-xhdpi/ic_main_unlock_chargi
  ng_20_2.png
@@ -2698,16 +2698,16 @@ Name: system/etc/voicecommand/voiceui/uipattern/English/a_e_dic.bin.f
 SHA1-Digest: kGnKeOdFCihRc0MbPlLFwlKZ5HM=
 
 Name: system/bin/pppd_dt
-SHA1-Digest: 6tsGvhRgpblSgbfjeUr43KacQJI=
+SHA1-Digest: XLtxDHOJD82woZY9W25SQySpDiE=
 
 Name: system/etc/voicecommand/voiceui/uipattern/English/a_e_dic.bin.t
 SHA1-Digest: txcOtPicmIfEHZJvZyJRqucxnk0=
 
 Name: system/app/HelpBook.apk
-SHA1-Digest: 1F7TGXpIcxSFuQhstD+7Y2Bo/SQ=
+SHA1-Digest: ktWhKza1usSqyQ0oIh524qC3yH8=
 
 Name: system/lib/libnativehelper.so
-SHA1-Digest: QMetZCGswSjv2km2IgfAWSGDRnk=
+SHA1-Digest: oDYmDSsvVxKE+iRQKbYtybERulA=
 
 Name: system/etc/voicecommand/voiceui/uipattern/English/a_e_dic.bin.p
 SHA1-Digest: txcOtPicmIfEHZJvZyJRqucxnk0=
@@ -2739,7 +2739,7 @@ Name: system/etc/water/framework/powerOff/framework-res/res/drawable-x
 SHA1-Digest: 82ylyRfTc/82j2HC1D/l1eYSgEc=
 
 Name: system/xbin/strace
-SHA1-Digest: Vi3umhlN9KHKiHi0EO2AmcSSgaI=
+SHA1-Digest: qKFLVRzSyd1u3fogG12CDJxLrVM=
 
 Name: system/etc/female/icons/xhdpi/com.kingsoft.png
 SHA1-Digest: 3/gIXTnbMmF/qPCv9xRGrg2i51E=
@@ -2749,10 +2749,10 @@ Name: system/etc/water/framework/appManager/com.android.settings/res/d
 SHA1-Digest: xf7Z2+gl/POPO7R26fo7qg5x1jk=
 
 Name: system/app/BaiduProxy.apk
-SHA1-Digest: kOkJnfEPjVTRB/KkF1KEzNL6EQU=
+SHA1-Digest: qchJUg3J2R5svFwIjnxS98Tcpk0=
 
 Name: system/app/BaiduTheme.apk
-SHA1-Digest: R6l6eK7KBz5cFoIFppYeKUlFGOw=
+SHA1-Digest: elA+YUB+11GTS/jD4gQBhbvmtTc=
 
 Name: system/etc/water/csp/contact/res/drawable-xhdpi/tab_ic_add_attac
  h.png
@@ -2825,7 +2825,7 @@ Name: system/etc/female/csp/contact/res/drawable-xhdpi/edit_spinner_mi
 SHA1-Digest: yXV0Sa7DN4MhQp+kxrKZWXl+BkA=
 
 Name: system/bin/lcdc_screen_cap
-SHA1-Digest: 1ejpsgHxhXN1BLwux3FAxn2xN9w=
+SHA1-Digest: wBD8/SVH7XGjl0WT44Dj23znmKg=
 
 Name: system/etc/female/framework/framework-res/numberpicker/framework
  /res/drawable-xhdpi/yi_numberpicker_down_pressed_baidu_light.png
@@ -2840,13 +2840,13 @@ Name: system/etc/female/framework/framework-res/button/framework/res/d
 SHA1-Digest: yyoJ53xk/SPh70ODhKPmqRt7tIA=
 
 Name: system/app/BasicDreams.apk
-SHA1-Digest: tlNKdDzs+p2rv19GIkVjToKKgaM=
+SHA1-Digest: Ot+3+3eJITcZ5eoCZmscMbcZTUU=
 
 Name: system/framework/mediatek-framework.jar.jex
 SHA1-Digest: +WlkWpj/6MnfxIu+GZ0zPdllL08=
 
 Name: system/framework/framework.jar
-SHA1-Digest: ElgKs/aZbr0Vp41NXac/xr8Ld3M=
+SHA1-Digest: 627Ns1TCC0CrmQ9pwiESrZtTKiA=
 
 Name: system/lib/libGdmaScalerPipe.so
 SHA1-Digest: OQxvYsSpH8wA5P32pdiRge565ao=
@@ -2875,7 +2875,7 @@ Name: system/etc/female/framework/framework-res/button/framework/res/d
 SHA1-Digest: B4hMD8i5t3dt6xce8x9eQzj0zT4=
 
 Name: system/app/BaiduClickSearch.apk
-SHA1-Digest: 002fGrsaRc4qiUb6FGWTI6PJvJg=
+SHA1-Digest: haWovJdtTgYtCkRXRtEQ58UNBB0=
 
 Name: system/etc/water/com.baidu.home2/main/res/drawable-xhdpi/ic_laun
  cher_calendar_16.png
@@ -2918,7 +2918,7 @@ Name: system/etc/female/framework/appManager/com.android.settings/res/
 SHA1-Digest: ZB80Teybg8RGZhCeiCvG6FNum1c=
 
 Name: system/app/InputDevices.apk
-SHA1-Digest: 352uRiyB7FldsU9gxMI5iQnMk54=
+SHA1-Digest: ekzHJ7AG//sKCc4AEhSj9VZGzsY=
 
 Name: system/etc/water/com.baidu.home2/trafficmonitorwidget/res/drawab
  le-xhdpi/ic_widget_traffic_monitor1_20.png
@@ -2932,7 +2932,7 @@ Name: system/etc/female/csp/message/res/drawable-xhdpi/popup_notice_de
 SHA1-Digest: emke/9j6isdQWyV5rnFe9MjozOI=
 
 Name: system/xbin/micro_bench
-SHA1-Digest: xaBPdYBNUEHyz+QWJSU8gnYBPuM=
+SHA1-Digest: M28qintvQL4jrHtD3DJbEhawmCs=
 
 Name: system/etc/female/framework/framework-res/textfield/framework/re
  s/drawable-xhdpi/yi_textfield_default_baidu_light.9.png
@@ -2946,7 +2946,7 @@ Name: system/lib/libmtk_vt_client.so
 SHA1-Digest: F4T2peE/C9CtOxArj6N5lSQkDIM=
 
 Name: system/framework/bmgr.jar
-SHA1-Digest: 0F8j2XYoVAbjSTW0laGQlKF1BXg=
+SHA1-Digest: F+DBiqvj9lc1HhZu9grwAk1SAXI=
 
 Name: system/etc/female/framework/framework-res/tab/framework-yi/res/d
  rawable-xhdpi/yi_tab_top_selected_focused_baidu.9.png
@@ -2964,13 +2964,13 @@ Name: system/etc/water/framework/framework-res/button/framework/res/dr
 SHA1-Digest: PEikCG5DgfM7fbgwfJuKJQXu6PU=
 
 Name: system/lib/libexif.so
-SHA1-Digest: KrzgfAVZj5UJZvOrPRX1G5wd4js=
+SHA1-Digest: 8TI86TcEp3xxMF+x78AgoWyO4H8=
 
 Name: system/etc/security/cacerts/00673b5b.0
 SHA1-Digest: G5keTPZotrFLEINobTM5FTRYmLA=
 
 Name: system/bin/boot_logo_updater
-SHA1-Digest: r5Vo6QHuLPrjGzbzKCGXtYz1B2w=
+SHA1-Digest: U2LA1sEtkxQSpZWKu0CDE5JigWY=
 
 Name: system/etc/female/csp/contact/res/drawable-xhdpi/ic_contact_data
  _tab_card.png
@@ -3017,7 +3017,7 @@ Name: system/etc/female/csp/contact/res/drawable-xhdpi/ic_ab_contact_h
 SHA1-Digest: pmxiQKkNoNJWgLF0sMDR8s4KOYc=
 
 Name: system/framework/mediatek-framework.jar
-SHA1-Digest: Sllg+vvhBcNqkQgavscDKf/R2Fg=
+SHA1-Digest: Wn4OoAG4QjN8KVfyvzWRwPNbOgI=
 
 Name: system/etc/female/statusbar/res/drawable-xhdpi/status_bar_quick_
  switch_drag_bg.9.png
@@ -3050,7 +3050,7 @@ Name: system/lib/libMtkOmxG711Dec.so
 SHA1-Digest: OcdraddB1LeE61Ha3GCLlGTv4+M=
 
 Name: system/bin/make_ext4fs
-SHA1-Digest: S6G0Cxp7fo19A5aRcFisbTVw50Q=
+SHA1-Digest: JvWsxUKXi4hnwUTmAWJqYgJNBt8=
 
 Name: system/etc/water/framework/framework-res/actionbar/framework/res
  /drawable-xhdpi/yi_ab_stacked_transparent_light_baidu.9.png
@@ -3112,7 +3112,7 @@ Name: system/etc/water/framework/framework-res/switch/framework/res/dr
 SHA1-Digest: OcbSHrKTGXK2sXn1PXRl7GSksks=
 
 Name: system/lib/libwebrtc_audio_preprocessing.so
-SHA1-Digest: xKaHf6KFsZjbTXeoSPjx7Apn1q0=
+SHA1-Digest: t01IT5R3K6qHc4OfpeDkkpUpPxg=
 
 Name: system/etc/female/framework/framework-res/progressbar/framework/
  res/drawable-xhdpi/yi_progress_secondary_baidu_light.9.png
@@ -3157,7 +3157,7 @@ Name: system/etc/water/csp/dial/res/drawable-xhdpi/ic_menu_call_btn.pn
 SHA1-Digest: LL1Jn9ZyPdL5iRmxPlxGQE/8K2I=
 
 Name: system/bin/tiny_mkswap
-SHA1-Digest: pu/HKcgxZD4f2HbYAuGcQWEfbgg=
+SHA1-Digest: IIL2XKpUow9onemaMh3gXt3dY80=
 
 Name: system/etc/female/csp/contact/res/drawable-xhdpi/contact_list_it
  em_header_group_background.png
@@ -3215,10 +3215,10 @@ Name: system/etc/water/framework/email/com.android.email/res/drawable-
 SHA1-Digest: 80RqaR6CGRv25vdhsEEenpvFBd0=
 
 Name: system/framework/bu.jar
-SHA1-Digest: sHp01ciqEdIDthYRJXWLFyUMphQ=
+SHA1-Digest: zZqZw1vUz/he1gpXMquf5Mj1Qmk=
 
 Name: system/bin/fsck_msdos
-SHA1-Digest: EwRbh54TS7TPjQUvtXF9Y8nlFYY=
+SHA1-Digest: fKtISGsBiiXv8zxcRQrKndekFdM=
 
 Name: system/etc/water/icons/xhdpi/com.baidu.hao123.png
 SHA1-Digest: VqcoHSUaHtjX5toYXum4ZWrnvPQ=
@@ -3276,7 +3276,7 @@ Name: system/media/audio/notifications/MeadowLark_HappyChirps.ogg
 SHA1-Digest: aqdZpuNNGyRBA42AJRlO0uXYtdQ=
 
 Name: system/framework/apache-xml.jar
-SHA1-Digest: Z5J/H8e2jxY3E8b2zqYAiccCFeE=
+SHA1-Digest: RdTnyHNDXOsIBkHrrr/G64FL0CA=
 
 Name: system/etc/female/com.baidu.home2/main/res/drawable-xhdpi/tpwidg
  et_ic_weather_small_snow.png
@@ -3299,10 +3299,10 @@ Name: system/lib/libmtprocessor-jni.so
 SHA1-Digest: zOqIrlBVh5mohp57QFmRO28yKoc=
 
 Name: system/app/TelephonyProvider.apk
-SHA1-Digest: juiMColhCEIOcVT4J8IOU/zlwG0=
+SHA1-Digest: gsabOqzVsfxhriB2P6/KcA/oTF4=
 
 Name: system/app/BaiduTts.apk
-SHA1-Digest: MIHVm7IP2OSh89nhz9kuDyFYITQ=
+SHA1-Digest: z4n4BmXzRB3vw/WeR9pTXtRTIio=
 
 Name: system/media/audio/notifications/Fomalhaut.ogg
 SHA1-Digest: xhyYEkX3TFVW2wiqCf8U1To7osk=
@@ -3370,7 +3370,7 @@ Name: system/etc/water/statusbar/com.baidu.onekeywidget/res/drawable-x
 SHA1-Digest: lER+vMBCnqBkpIIq+5QyI1KYIuQ=
 
 Name: system/bin/logwrapper
-SHA1-Digest: FwweQH8NHD76XBWHQxqgNsQGxGQ=
+SHA1-Digest: 1NdD0BpE+8Za22Bs15mXGbzB35Q=
 
 Name: system/etc/water/csp/message/res/drawable-xhdpi/tab_ic_mess_wish
  .png
@@ -3412,7 +3412,7 @@ Name: system/media/audio/ringtones/Cairo.ogg
 SHA1-Digest: Wu1Tj8Y+jFP5JQjo9tA46NAXzHo=
 
 Name: system/lib/libstagefright_soft_aacenc.so
-SHA1-Digest: lx9OACwuwvTdQ+ezWcau10Wduv8=
+SHA1-Digest: +o0NVctCgwSm13uWEsWfb4m8epo=
 
 Name: system/etc/defaultTheme/wallpaper/hdpi/default_wallpaper.png
 SHA1-Digest: bWd/2wOt+IJfyTQNiSANQrGw/r4=
@@ -3492,7 +3492,7 @@ Name: system/etc/water/icons/xhdpi/com.tencent.mtt.png
 SHA1-Digest: +oP16T5SdiTmjIdqbuPmsrX+ArY=
 
 Name: system/etc/defaultTheme/preview_theme.png
-SHA1-Digest: PO6+JqAvmBBm0ub/zqN2epljqOI=
+SHA1-Digest: /jyZ0/MLM52kavrOFM0iy3Brt6E=
 
 Name: system/etc/female/com.baidu.home2/main/res/drawable-xhdpi/tpwidg
  et_clock_6.png
@@ -3507,7 +3507,7 @@ Name: system/etc/female/com.baidu.home2/main/res/drawable-xhdpi/tpwidg
 SHA1-Digest: lrGlEAtYIQf6tGllrCt+DCXTwEU=
 
 Name: system/framework/monkey.jar
-SHA1-Digest: I/yLB54aKpucBhmGPCeT9Zg8QU0=
+SHA1-Digest: TDABw7yeFCqLHxtCGgBIIPo8kYc=
 
 Name: system/etc/female/framework/filemanager/com.baidu.resmanager.fil
  emanager/res/drawable-xhdpi/ic_filemanager_actionbar_delete.png
@@ -3528,7 +3528,7 @@ Name: system/etc/channel_files/Y29tLmJhaWR1LkJhaWR1TWFwX2NoYW5uZWw
 SHA1-Digest: h3hv9EBAGr4WlAglXf2MCX+umZ4=
 
 Name: system/lib/libRSDriver.so
-SHA1-Digest: ADpZoSGD4k3Ybwdgr08GkpQ7tOg=
+SHA1-Digest: elIndMdwUs+mbytRF7b8JaKgy30=
 
 Name: system/etc/water/statusbar/res/drawable-xhdpi/status_bar_traffic
  _stat_progress_primary.9.png
@@ -3574,7 +3574,7 @@ Name: system/etc/female/framework/appManager/com.android.settings/res/
 SHA1-Digest: gNJ//zqsN5dUlLC1xuonNAuAiDQ=
 
 Name: system/bin/wfd
-SHA1-Digest: /T48e7c9wHJMdu3fuiyZdo2Xo2Y=
+SHA1-Digest: YHMKLGwxk+F9KqUDGIrE+WFgB5g=
 
 Name: system/etc/water/csp/contact/res/drawable-xhdpi/edit_spinner_mid
  dle_default_light.9.png
@@ -3700,7 +3700,7 @@ Name: system/etc/female/framework/appManager/com.android.settings/res/
 SHA1-Digest: 4Kha9ZrLCW+PrwpQfMgdJZDjZ8E=
 
 Name: system/lib/libmmfactoryutil.so
-SHA1-Digest: RZhkG4CNRFaonPi0to6v+W8e7So=
+SHA1-Digest: CACRN++KJBO44MT/+86o6LXIJ8w=
 
 Name: system/etc/female/framework/appManager/com.android.settings/res/
  drawable-xhdpi/yi_dialog_bottom_baidu.9.png
@@ -3717,7 +3717,7 @@ Name: system/etc/security/cacerts/57692373.0
 SHA1-Digest: cxktqBsx3bsf1do5QynEaxTvX64=
 
 Name: system/xbin/rawbu
-SHA1-Digest: sTn0waL561pppTparBGBysafmSU=
+SHA1-Digest: +sNNz7zVDobC+jP5vEfjF0RrP9Y=
 
 Name: system/etc/female/com.baidu.home2/main/res/drawable-xhdpi/ic_lau
  ncher_calendar_13.png
@@ -3739,16 +3739,16 @@ Name: system/etc/female/framework/filemanager/com.baidu.resmanager.fil
 SHA1-Digest: nhzIEP11UQRZYGRikFeMA7+iLaM=
 
 Name: system/lib/libandroidfw.so
-SHA1-Digest: OyOPkMevEWzCr6yclFkiD8MXD6E=
+SHA1-Digest: 4yRWO0kuXrSKxp9qQjL5ctRISak=
 
 Name: system/app/CellConnService.apk
-SHA1-Digest: fRLobklrDn0VwsMUPAftGcwnmjU=
+SHA1-Digest: m2l28atWh0YIlJIl/ZeHm/aYE54=
 
 Name: system/lib/libjpeg.so
 SHA1-Digest: RoTMPxa4CEFK9M4qC1lvNKIq66w=
 
 Name: system/xbin/opcontrol
-SHA1-Digest: j/bOBjhmH+OCVMsTCMq8LLaSPDY=
+SHA1-Digest: E8fVVhwqxZog1mOX0hzMXDGPyFE=
 
 Name: system/etc/water/csp/contact/res/drawable-xhdpi/edit_spinner_sin
  gle_focused_light.9.png
@@ -3860,7 +3860,7 @@ Name: system/etc/water/framework/framework-res-yi/res/drawable-xhdpi/c
 SHA1-Digest: jnLd5nLVPtX1XL8zuW8ZHI6hFcU=
 
 Name: system/app/BaiduUserFeedback.apk
-SHA1-Digest: 5+YD4eSV75XWHMZtap1SAauYOOM=
+SHA1-Digest: QSSsw1B0hKUP0VNbRw1uNZrFdtI=
 
 Name: system/lib/libmmprofile.so
 SHA1-Digest: DVqctuD+HRJ0WuCZ4N+5yg9FDv8=
@@ -3900,7 +3900,7 @@ Name: system/etc/female/framework/antiTheft/com.baidu.antitheft/res/dr
 SHA1-Digest: ArlotJqH13VT5Cwagfz6r+HdIWE=
 
 Name: system/lib/libgccdemangle.so
-SHA1-Digest: JXD2olIwsCQRqwteLx1GbhiV5y0=
+SHA1-Digest: xS4IMSh+xei8x8p+VM/E5964BMg=
 
 Name: system/etc/water/statusbar/res/drawable-xhdpi/notification_item_
  background_pressed.9.png
@@ -3925,7 +3925,7 @@ Name: system/etc/water/com.baidu.home2/switchwidget/res/drawable-xhdpi
 SHA1-Digest: AbHrPeLJJoXX9cS7hMyfMTnnVPw=
 
 Name: system/app/DownloadProviderUi.apk
-SHA1-Digest: 32buAwpzk20BWhcLtgIOEt9w+AI=
+SHA1-Digest: CWAS5/8ELLlCn70A7O+VEf8U/0U=
 
 Name: system/etc/water/icons/xhdpi/cn.kuwo.player.png
 SHA1-Digest: f400t+pWGIvaw47ZfkZWczH8VpM=
@@ -4008,7 +4008,7 @@ Name: system/media/audio/notifications/WaterDrop_04.ogg
 SHA1-Digest: ZrsREuVIGpfea5j2VhvZNevRiqA=
 
 Name: system/lib/libdcfdecoderjni.so
-SHA1-Digest: mv0ZOmfJ3hF8u53C2mPYmi3GtJU=
+SHA1-Digest: thrtewPCNXyy2ZgkhOdAAuB4lXI=
 
 Name: system/etc/female/statusbar/res/drawable-xhdpi/status_bar_traffi
  c_stat_progress_background.9.png
@@ -4036,7 +4036,7 @@ Name: system/lib/hw/camera.default.so
 SHA1-Digest: zUSZcZw3i7bYrAAhen1UYWQeIbI=
 
 Name: system/framework/com.android.future.usb.accessory.jar
-SHA1-Digest: S4aJbCmCC+jZeGj/vhqbUv9jOaI=
+SHA1-Digest: fbXBkis2BFoYC/bteLJ0yxVqNnQ=
 
 Name: system/etc/female/csp/contact/res/drawable-xhdpi/system_icons_xx
  _leadinout.png
@@ -4058,17 +4058,17 @@ Name: system/etc/water/framework/framework-res/button/framework-yi/res
 SHA1-Digest: 4cZLe0CXOzc9S27JPIg76IOiPlM=
 
 Name: system/lib/libwormjni.so
-SHA1-Digest: tJZ17LmiOIYKlUOazKjW6mqwZLI=
+SHA1-Digest: VdcmiwKc99usOh+8H++wgtAdMg0=
 
 Name: system/lib/hw/lights.goldfish.so
-SHA1-Digest: FDF3UqJmmcx6+5OCrzbxmT+d/Z4=
+SHA1-Digest: Y0ZFeRSIa0pxXjkNfZTk0wn3Wws=
 
 Name: system/etc/water/com.baidu.home2/main/res/drawable-xhdpi/home_ar
  rows_selected.png
 SHA1-Digest: ket+4TX8/bQrwe+HqSXouh3r+wk=
 
 Name: system/bin/installd
-SHA1-Digest: w6/uNkGLUIyikkt69bk/4wJW5zI=
+SHA1-Digest: U7Pil0VljjcHYSi+UOVsklaYycc=
 
 Name: system/etc/permissions/android.software.sip.xml
 SHA1-Digest: uitVJ6OU6f/ZZf/LDSDyBcFiGCg=
@@ -4081,7 +4081,7 @@ Name: system/media/audio/notifications/Highwire.ogg
 SHA1-Digest: a4posBTV+0q5h7jBDw3WmUDYT6o=
 
 Name: system/xbin/procrank
-SHA1-Digest: lYRAhEUFjrsldZ3uUNDKLKFIRxk=
+SHA1-Digest: urCBhpfr3lPvs4qgsJ1yLLQP8fc=
 
 Name: system/etc/female/csp/message/res/drawable-xhdpi/tab_ic_attach_c
  apture_picture.png
@@ -4106,7 +4106,7 @@ Name: system/etc/female/csp/cover/cover_csp.png
 SHA1-Digest: ZTjI7eheXAw48M167F3+edxow5I=
 
 Name: system/app/HomePro.apk
-SHA1-Digest: ibTwMv8l7Wt6rKBxgMO2qEEijFM=
+SHA1-Digest: 397oeZo7JC4yfED7t+WxKqPUCGY=
 
 Name: system/lib/libcam.paramsmgr.so
 SHA1-Digest: wuoEzmoWSaBIZkkj6ePdjsEDEFw=
@@ -4191,7 +4191,7 @@ Name: system/etc/water/framework/account/com.baidu.bsf.service/res/dra
 SHA1-Digest: 3j+zK1B3xy6FRczjBMQa1J3xIRo=
 
 Name: system/lib/libiprouteutil.so
-SHA1-Digest: nuFNLr7cTB8GP55JUaRjn+ZQw4g=
+SHA1-Digest: uGls6mWTmUYjvJ5+PWycHSr7pHo=
 
 Name: system/etc/water/framework/calendar/com.android.calendar/res/dra
  wable-xhdpi/ic_menu_add_reminder_holo_light.png
@@ -4245,7 +4245,7 @@ Name: system/etc/female/csp/message/res/drawable-xhdpi/ds_slot1_sms_lo
 SHA1-Digest: dArQAaDEsH6UDWDV+4OKwaemxf0=
 
 Name: system/app/MtkBt.apk
-SHA1-Digest: sJf7Q7Fc4jBDkfXOprFNcZFOuKo=
+SHA1-Digest: URVRx363xZurIlNpNiVBR8grGxM=
 
 Name: system/lib/libEGL.so
 SHA1-Digest: y77QPP+T0+1ZJCxZmXDjO+HWusE=
@@ -4321,19 +4321,19 @@ Name: system/etc/female/icons/xhdpi/com.android.calendar_21.png
 SHA1-Digest: LVadf6v4Q1PQd3iF8etfUfTLDdk=
 
 Name: system/lib/libstagefright_omx.so
-SHA1-Digest: cZoP9B44lxIc8hX8wQbYH24Ujxg=
+SHA1-Digest: hNkq9LXwuiqY0bKy4l0BDo7kdMQ=
 
 Name: system/etc/security/cacerts/add67345.0
 SHA1-Digest: 7q4BGtgTYUE358iZPLoaZft9+1U=
 
 Name: system/framework/mediatek-common.jar
-SHA1-Digest: +VXKZ4lkSz5UFDWgjVhCZTKm8eg=
+SHA1-Digest: AYleY2Nv78Sck5jsSfGQbUaquog=
 
 Name: system/media/audio/alarms/Alarm_Beep_03.ogg
 SHA1-Digest: h/yxjAGYwFu7hk6fuC+OyL1QG18=
 
 Name: system/lib/libstagefright_soft_amrdec.so
-SHA1-Digest: J0vp+8aCqJb2r03lH/z8EFFtE10=
+SHA1-Digest: sI9D/8XYnNi0YnJsIxtO151zZgU=
 
 Name: system/etc/female/framework/appManager/com.android.settings/res/
  drawable-xhdpi/ic_settings_development.png
@@ -4363,7 +4363,7 @@ Name: system/bin/rildmd2
 SHA1-Digest: VlKsZ8iJl46KPQjD2qe6C2iwAZE=
 
 Name: system/xbin/tcpdump
-SHA1-Digest: KpYgnZKfe/uFPKrGGBjlMzsmZLc=
+SHA1-Digest: fG0hgmNqDrZK4vF3NvF0G/fpZuc=
 
 Name: system/etc/firmware/modem/INT_SYSRAM
 SHA1-Digest: CE8DRmOdYu7UaE7E2sn+cvz0r4I=
@@ -4405,7 +4405,7 @@ Name: system/media/video/AndroidInSpace.480p.mp4
 SHA1-Digest: /7//tDWA9D4nzMMO2644SzuPvx8=
 
 Name: system/lib/hw/camera.goldfish.so
-SHA1-Digest: 7nB7/Z7mFCINNymPod2+/Qq8R6w=
+SHA1-Digest: inoESxg9IYBmUy/6gdRackvTP3I=
 
 Name: system/etc/female/framework/framework-res/switch/framework/res/d
  rawable-xhdpi/yi_switch_thumb_disabled_baidu_light.9.png
@@ -4482,7 +4482,7 @@ Name: system/media/audio/ringtones/Ring_Synth_02.ogg
 SHA1-Digest: GAkS3fU7B8v3z0jDjkeiFay+c3c=
 
 Name: system/xbin/cpustats
-SHA1-Digest: hmh7D2IXEiwTru/spulnk2tC6Us=
+SHA1-Digest: SiP8sTtAMfhl2O2stIExfYQLyLI=
 
 Name: system/usr/keylayout/hid-keyboard.kl
 SHA1-Digest: IsUjox3i4PuD9C6qOU98PJcipaI=
@@ -4534,16 +4534,16 @@ Name: system/etc/female/framework/framework-res/radio/framework/res/dr
 SHA1-Digest: LAcLXL2L06pWtNLx9JozOFypLw0=
 
 Name: system/lib/libttscompat.so
-SHA1-Digest: IDofXDmwX0msEQgS3yUprjt8XAc=
+SHA1-Digest: VD1MHjevkJqHr5i2FSSIrin9oog=
 
 Name: system/bin/http2wormhole
-SHA1-Digest: uxXaIfyFTiGBLffVQSOSckVNbNI=
+SHA1-Digest: 54g2dJohfca0vbSEEiDFHrWiFtY=
 
 Name: system/etc/female/icons/xhdpi/com.baidu.tieba.png
 SHA1-Digest: nGRNK3+uWL1W5KlOAONSg0237is=
 
 Name: system/lib/libperfservice_jni.so
-SHA1-Digest: MPWLpUM3g4N1bz6/h1jsZcUOd2Y=
+SHA1-Digest: tgtimFTkNxukiQd1fHbBsjkRtW4=
 
 Name: system/media/audio/ringtones/Funk_Yall.ogg
 SHA1-Digest: bTUJuGij78XPtGvYGLa1OX0f8X8=
@@ -4619,7 +4619,7 @@ Name: system/etc/water/icons/xhdpi/com.android.calendar_27.png
 SHA1-Digest: 1zVULNY4XldYOVkmJGbk2TfufCc=
 
 Name: system/lib/libbwc.so
-SHA1-Digest: QZj/Gh1q7wzleiJrNGxdyx8Ax2A=
+SHA1-Digest: 5Rf1GN9h/Rf/Yg4xakN0kzEuN44=
 
 Name: system/media/audio/notifications/Strontium.ogg
 SHA1-Digest: a1e5tA7dkby1GQ89ZsBkeex/piU=
@@ -4640,7 +4640,7 @@ Name: system/fonts/Roboto-Thin.ttf
 SHA1-Digest: hj49FvFGPIqtlOvhJEY7eSjxLnY=
 
 Name: system/framework/framework.jar.jex
-SHA1-Digest: 8sn0awcfGPgZoiGkIl6x0rk5MlY=
+SHA1-Digest: 5KK3Gj5pKX4A3ayakHeWoTrIe+E=
 
 Name: system/etc/water/csp/message/res/drawable-xhdpi/list_div_top_btm
  _mms_widget_holo.9.png
@@ -4676,7 +4676,7 @@ Name: system/etc/water/framework/antiTheft/com.baidu.antitheft/res/dra
 SHA1-Digest: ye6DYMW5rHmIIyxgmHkospDHz0s=
 
 Name: system/bin/qemu-props
-SHA1-Digest: zaRsRDU1Ofqu/VXN2vhp5HxqcHg=
+SHA1-Digest: 58Fu5twVTxujJt9JMcLaCOYA3Qw=
 
 Name: system/etc/firmware/mt6572_82_patch_e1_0_hdr.bin
 SHA1-Digest: 5h5gtIOVNLCqmZA/nEsOZPhNW0o=
@@ -4694,7 +4694,7 @@ Name: system/etc/female/lockscreen/advance-xhdpi/ic_main_unlock_normal
 SHA1-Digest: xrhCUq6tsNTBVv+Q/9Akv2vpUQQ=
 
 Name: system/etc/recovery-resource.dat
-SHA1-Digest: zsh8YGfBOQELl0OcBP9SajoL23Q=
+SHA1-Digest: V7KpVBvdhzs3T8Wsj+FSccRPm1k=
 
 Name: system/etc/female/icons/xhdpi/com.android.calendar_22.png
 SHA1-Digest: SqtgZeG3Muda+QdAGvfs/yEts4g=
@@ -4721,14 +4721,14 @@ Name: system/etc/water/icons/xhdpi/com.iqiyi.share.png
 SHA1-Digest: LWhc3ekGWLsC8fGEqN/y45VA+Wo=
 
 Name: system/bin/resize2fs
-SHA1-Digest: RZ7rtH2ZW6QjZ7ai7p0RNi+Mqqk=
+SHA1-Digest: wxb4y21hza3KgFx/h94Db1b7rIo=
 
 Name: system/etc/female/com.baidu.home2/weatherwidget/res/drawable-xhd
  pi/tpwidget_ic_weather_small_cloud.png
 SHA1-Digest: NJRq/1ebcBE29o5w8ba2dIpt/LQ=
 
 Name: system/lib/libFFTEm.so
-SHA1-Digest: e6hWUlrTk+Dluh6fNSQvhgX38Fs=
+SHA1-Digest: UxTXErbbo1HZtbbfY0JhQUPO4b0=
 
 Name: system/etc/female/csp/message/res/drawable-xhdpi/ic_mess_love.pn
  g
@@ -4842,7 +4842,7 @@ Name: system/etc/female/framework/appManager/com.android.settings/res/
 SHA1-Digest: m9PExhwPT5oe/Oi9Gex+yxKTjuI=
 
 Name: system/etc/defaultTheme/lockscreen/preview/cover.png
-SHA1-Digest: Im/be9oINXUrtxfI9J9QUYCQVRI=
+SHA1-Digest: 6nHn/dxUF+P5w+FnauhUxxwkHVw=
 
 Name: system/etc/water/framework/appManager/com.android.settings/res/d
  rawable-xhdpi/app_jurisdiction.png
@@ -4860,7 +4860,7 @@ Name: system/etc/female/framework/appManager/com.android.settings/res/
 SHA1-Digest: Epp7ThCS6j/Mi7gKuPU+kFoEQ+M=
 
 Name: system/bin/audioloop
-SHA1-Digest: Y6zGt6dKQAvpZUTCUKnPJb856bU=
+SHA1-Digest: OKO3IFihnfnRle+SSMKIX4jwUhA=
 
 Name: system/etc/water/icons/xhdpi/com.baidu.notepad.png
 SHA1-Digest: STs3qojbL2OgwgjCIRNIQRkeOQo=
@@ -4877,7 +4877,7 @@ Name: system/etc/female/lockscreen/advance-xhdpi/ic_settings_key.png
 SHA1-Digest: pPqoCC1XUJZnrk6kOYPlsPrc96c=
 
 Name: system/app/BaiduSoundRecorder.apk
-SHA1-Digest: Q9sVeRZxfOUVt7EfSyUuacjmVfU=
+SHA1-Digest: OC0O/Sfo3rRwf3CGbZvKk+9uj6w=
 
 Name: system/etc/female/lockscreen/advance-xhdpi/ic_main_unlock_chargi
  ng_99_1.png
@@ -4910,7 +4910,7 @@ Name: system/etc/water/csp/contact/res/drawable-xhdpi/ic_contact_index
 SHA1-Digest: dBmxeKA0fAOSn7+RSrxXPBTAJJk=
 
 Name: system/lib/libaudiocomponentengine.so
-SHA1-Digest: HtuHo81RagASUXy+Eimu6Lk7TM8=
+SHA1-Digest: aAX6Gayz8TWn1wLjsCMG2l4t1mc=
 
 Name: system/etc/female/csp/contact/res/drawable-xhdpi/edit_text_middl
  e_pressed_light.9.png
@@ -4937,7 +4937,7 @@ Name: system/etc/female/lockscreen/advance-xhdpi/ic_settings_slide_sel
 SHA1-Digest: Nypi33zc4VtB0cRK6Pfbznu/qyY=
 
 Name: system/app/WAPPushManager.apk
-SHA1-Digest: YSSeOi2wUIsbT+DwVg79arPx5dk=
+SHA1-Digest: q9V+b4a5HTxVjWZVMV2bLYBScqM=
 
 Name: system/etc/water/csp/contact/res/drawable-xhdpi/ic_menu_remove_f
  ield_holo_light.png
@@ -4979,7 +4979,7 @@ Name: system/etc/female/com.baidu.home2/main/res/drawable-xhdpi/tab_ba
 SHA1-Digest: fHxuaZUHOmFUz+QLIsaxnQ/eBkQ=
 
 Name: system/bin/sensorservice
-SHA1-Digest: lZeG+DaWIQdE0UNFW/np10V2HZo=
+SHA1-Digest: oh+FPzyunaCSyphl6kzDUunc5ps=
 
 Name: system/etc/female/csp/message/res/drawable-xhdpi/ic_contact_pict
  ure_sim1_contact.png
@@ -4997,7 +4997,7 @@ Name: system/etc/female/framework/filemanager/com.baidu.resmanager.fil
 SHA1-Digest: EIo7fb/amJvKWpm90839avoZIS4=
 
 Name: system/lib/libstagefright_soft_h264enc.so
-SHA1-Digest: 31rRfL32zLEHNLg87p7DGEp49m0=
+SHA1-Digest: gh5Gbyz8XDG2UFq5asJlI7zjcKw=
 
 Name: system/etc/init.goldfish.sh
 SHA1-Digest: oVAMzXnCy588jqkgurss/oczzDA=
@@ -5029,7 +5029,7 @@ Name: system/media/audio/ringtones/CasualBlues.ogg
 SHA1-Digest: gBRg+Ncb9CZp+Iesh68yGo0pdkc=
 
 Name: system/bin/vdc
-SHA1-Digest: GpWzlGB17Q8hcLaTekARvb/RaRs=
+SHA1-Digest: Fcy+33dZhZAOIxX09HfPDGMXX+o=
 
 Name: system/etc/water/statusbar/com.baidu.onekeywidget/res/drawable-x
  hdpi/item_app_close_unpress.png
@@ -5040,7 +5040,7 @@ Name: system/etc/water/framework/framework-res/radio/framework/res/dra
 SHA1-Digest: nrV3JRGXWUYPxTm0OZ+t+j0HVuc=
 
 Name: system/bin/corrupt_gdt_free_blocks
-SHA1-Digest: y9Awr0jZ7NtcvqJ+iII9LIkMmMg=
+SHA1-Digest: Je61Yi+Ix3w7xsH7+8K4d4x/KSk=
 
 Name: system/etc/water/csp/contact/res/drawable-xhdpi/edit_text_full_s
  ingle_focused_light.9.png
@@ -5147,6 +5147,9 @@ Name: system/etc/water/statusbar/com.baidu.onekeywidget/res/drawable-x
  hdpi/onekeyclearbtn_more.png
 SHA1-Digest: ZeVIBt2FfqsrUubgWSMZvFo4qfY=
 
+Name: system/etc/water/icons/xhdpi/com.baidu.trafficmonitor.png
+SHA1-Digest: NPZWt+PTMzH7iF3bV55KuCm3T08=
+
 Name: system/etc/water/framework/thememanager/com.baidu.thememanager.u
  i/res/drawable-xhdpi/tab_top_normal_background.9.png
 SHA1-Digest: oewB4ZTDjWPb/UvEMzEEH59EsLo=
@@ -5173,7 +5176,7 @@ Name: system/etc/water/icons/xhdpi/com.dianping.v1.png
 SHA1-Digest: JLRdE46a7AazatBtMNSpW8qz2Ng=
 
 Name: system/lib/libbcinfo.so
-SHA1-Digest: p6nOMnv8lkVf9G9KcryPyUdLlyo=
+SHA1-Digest: A10h1WOSCmObSJoi92hcfUc8J+w=
 
 Name: system/lib/libbtcusttable.so
 SHA1-Digest: EiS8Z03ZQVAZP3mxovC3db1a81c=
@@ -5196,14 +5199,14 @@ Name: system/framework/mediatek-common.jar.jex
 SHA1-Digest: TKKkh5+ksaIgk6sYqoQTJsUg1po=
 
 Name: system/lib/libmatv_cust.so
-SHA1-Digest: GqRrgm09iDrBa2g0yrRmop3VeEU=
+SHA1-Digest: f72oN7OylMXazPLaCMrWd2QRaIg=
 
 Name: system/etc/female/statusbar/res/drawable-xhdpi/progress_circle_b
  g.png
 SHA1-Digest: +7nT5UanX6gNPB7X6s8ig0nYzis=
 
 Name: system/app/MTKThermalManager.apk
-SHA1-Digest: D8b6UHfKFn4dDNDRJPPA4zpvK5g=
+SHA1-Digest: LipQUzfPgtcphiscMDgzEOLYxSU=
 
 Name: system/etc/female/statusbar/res/drawable-xhdpi/notify_panel_noti
  fication_icon_background.9.png
@@ -5220,10 +5223,10 @@ Name: system/etc/security/cacerts/74c26bd0.0
 SHA1-Digest: OaKWMuPk9pCf4isRHaBDfJj//V4=
 
 Name: system/framework/theme-res-mocha.apk
-SHA1-Digest: QdmXAf3f2d4cnp4G6sNjoBLnXLQ=
+SHA1-Digest: mSAcmUN0zRGRVmTX6EZAFlke5Lo=
 
 Name: system/bin/stagefright
-SHA1-Digest: cIq/FqJyr6CBCg7OKwCWANSEB4s=
+SHA1-Digest: 8s1SVGG4DX6sLq9mrAy/dHu7jCI=
 
 Name: system/etc/water/statusbar/com.baidu.onekeywidget/res/drawable-x
  hdpi/green_progress_0_75.png
@@ -5241,7 +5244,7 @@ Name: system/etc/water/framework/framework-res/battery/framework/res/d
 SHA1-Digest: oZ1mSm1G7nTl7SzEqpTdFntvDVM=
 
 Name: system/bin/set_ext4_err_bit
-SHA1-Digest: A1M+qwXsRCpbdsD6pJyGgAOVXeE=
+SHA1-Digest: qir/hdBZhKfDFh8AHohW0yrdQaA=
 
 Name: system/etc/female/csp/message/res/drawable-xhdpi/ic_mess_jok.png
 SHA1-Digest: d3ehbVF/apD0HdgBoafuK8Bkvis=
@@ -5263,14 +5266,14 @@ Name: system/lib/libbessound_mtk.so
 SHA1-Digest: KPIG4DP04vjFtMxJtUEyYXSNizQ=
 
 Name: system/lib/libutils.so
-SHA1-Digest: ozE7NvMP2e2X61Scy53DyScCiZ8=
+SHA1-Digest: FMN8x2sspmBaMY9G/PPPILy9INE=
 
 Name: system/etc/female/csp/more/res/drawable-xhdpi/tab_ic_attach_timi
  ngsms.png
 SHA1-Digest: zxnsvlqXzXU5QZsg2X9jEZ3y7VM=
 
 Name: system/xbin/dexdump
-SHA1-Digest: dsSmg6bnwwJOtdoRd+XJOScHH4w=
+SHA1-Digest: HT1b6DCLgPgBsgGqCACtwonPl5g=
 
 Name: system/etc/water/framework/account/com.baidu.bsf.service/res/val
  ues/colors.xml
@@ -5299,7 +5302,7 @@ Name: system/etc/water/csp/message/res/drawable-xhdpi/baidu_default_01
 SHA1-Digest: OMIf0JbHel/aimIaYGaTInC5Bi8=
 
 Name: system/lib/libstagefright_wfd.so
-SHA1-Digest: Bv1hlzwGB/8/HQzhxuCT5XwWQGE=
+SHA1-Digest: 1rH7ZOMI5R/Atw+dQCaEycljYs8=
 
 Name: system/etc/female/framework/framework-res/values/framework/res/v
  alues/colors.xml
@@ -5352,7 +5355,7 @@ Name: system/etc/water/csp/dial/res/drawable-xhdpi/ic_calllog_filter_c
 SHA1-Digest: Urpo2jR/3/bYuycIu5pNEBbRFCo=
 
 Name: system/lib/libmpojni.so
-SHA1-Digest: h2zfjd/d2bwaXRch1/Pi/GwjuLM=
+SHA1-Digest: frE783RgruiuUL11bBZN97BXEiI=
 
 Name: system/etc/water/statusbar/com.baidu.onekeywidget/res/drawable-x
  hdpi/circle_bg.png
@@ -5396,7 +5399,7 @@ Name: system/etc/female/framework/appManager/com.android.settings/res/
 SHA1-Digest: +wN8bypWr3DdMHUl/YguHKXqawQ=
 
 Name: system/app/ApplicationsProvider.apk
-SHA1-Digest: zh+zn2rptBtlRLaTIRSE1EXjNCA=
+SHA1-Digest: eIBgjeaKw2ioiQT8YGnHCt3856Q=
 
 Name: system/etc/female/csp/message/res/drawable-xhdpi/ic_attachment_u
  niversal_small.png
@@ -5454,7 +5457,7 @@ Name: system/etc/water/framework/trafficmonitor/com.baidu.trafficmonit
 SHA1-Digest: pU1wI1txpKYxvnAO0MScDBi/SOI=
 
 Name: system/framework/mediatek-telephony-common.jar
-SHA1-Digest: K0rooPkzz3F+4DzJBK752wrBGFc=
+SHA1-Digest: WC2xKYWwsfzJpBughpvRUL8LU5Q=
 
 Name: system/etc/water/framework/baiduclock/com.baidu.baiduclock/res/d
  rawable-xhdpi/ic_clock_delete_gray.png
@@ -5545,7 +5548,7 @@ Name: system/etc/female/framework/framework-res/radio/framework/res/dr
 SHA1-Digest: rT35OfOmpcbig0HUUNlupc9lIuA=
 
 Name: system/lib/libnetlink.so
-SHA1-Digest: YL/jv7ldQ+eo/oFn78q9xW7kuN4=
+SHA1-Digest: oKQp2OKQvYRMoAiHmXTFJwKtPRs=
 
 Name: system/etc/water/csp/message/res/drawable-xhdpi/ic_attachment_un
  iversal_small.png
@@ -5556,7 +5559,7 @@ Name: system/etc/female/framework/framework-res/radio/framework/res/dr
 SHA1-Digest: NS/MKWaK+KJ+vYWi9jOn6y7ZB/0=
 
 Name: system/app/CalendarImporter.apk
-SHA1-Digest: 5jk9YDwIRpeNueYp22cILNLorOU=
+SHA1-Digest: m8i0ZfeLh765Q46oOKjKLKnhxKE=
 
 Name: system/etc/water/framework/trafficmonitor/com.baidu.trafficmonit
  or/res/drawable-xhdpi/ic_widget_traffic_monitor_unset.png
@@ -5583,7 +5586,7 @@ Name: system/etc/female/com.baidu.home2/main/res/drawable-xhdpi/tpwidg
 SHA1-Digest: 12qA+ACe5ApY3l+Kzs83NE5sd8I=
 
 Name: system/bin/radvd
-SHA1-Digest: tPd6mtmxjX3yNPNBlHhQB79/Vbw=
+SHA1-Digest: j/HOJNbYi4T3qvyMtN7USARN0R8=
 
 Name: system/etc/female/csp/contact/res/drawable-xhdpi/ic_contact_data
  _bg.9.png
@@ -5615,7 +5618,7 @@ Name: system/etc/water/com.baidu.home2/weatherwidget/res/drawable-xhdp
 SHA1-Digest: hu2rhkfG56Gl7tTDXfpheNVCqc0=
 
 Name: system/xbin/busybox
-SHA1-Digest: 1SiRd6uyIKDizViwww9ZHU8KIzM=
+SHA1-Digest: 0SN9Ud7jW0QMAA90hcZh+OqB1DM=
 
 Name: system/etc/female/com.baidu.home2/main/res/drawable-xhdpi/ic_lau
  ncher_calendar_4.png
@@ -5746,7 +5749,7 @@ Name: system/etc/voicecommand/command/alarm/1/2.ogg
 SHA1-Digest: M1JcYwys3RNTophWNDEbbkUD+us=
 
 Name: system/lib/libkeystore_client.so
-SHA1-Digest: 0eQg1flxjOA7PmE1K1B9FhmxppA=
+SHA1-Digest: 6RjUYuf9h30ddBjbYJg39Xeq6jo=
 
 Name: system/lib/hw/gralloc.mt6592.so
 SHA1-Digest: f+cPda/BnZPtt9PZ4yCj2DhH88M=
@@ -5763,7 +5766,7 @@ Name: system/etc/water/framework/email/com.android.email/res/drawable-
 SHA1-Digest: lz8aWo5CMx34V61+HnUy3PJC8/Y=
 
 Name: system/lib/libz.so
-SHA1-Digest: FMK+bV/xDaI7ewbD0P/mBGh+/3Y=
+SHA1-Digest: yFdkX02vchLAzvEs2oeD58SrfR4=
 
 Name: system/etc/security/cacerts/111e6273.0
 SHA1-Digest: p+zFXiO2e0tv0nws8olvT8Aek/M=
@@ -5773,7 +5776,7 @@ Name: system/etc/water/csp/dial/res/drawable-xhdpi/ic_call_dial_btn_8.
 SHA1-Digest: h8LiesAQ8EK7NwN8sOmsfRuN1pk=
 
 Name: system/app/BaiduSync.apk
-SHA1-Digest: AedQcYj2eRQpOTcgu29Y9lDJKDY=
+SHA1-Digest: 5nWM0/CEDsY1mkSNhUEQk98HUcI=
 
 Name: system/etc/water/csp/contact/res/drawable-xhdpi/edit_text_part_t
  op_disabled_light.9.png
@@ -5813,7 +5816,7 @@ Name: system/media/audio/ringtones/Enter_the_Nexus.ogg
 SHA1-Digest: mLYNvCNYnKhcSp8V8lVXQ137hTA=
 
 Name: system/framework/framework-yi.jar.jex
-SHA1-Digest: Fl+BU2uuQKvTb2BDJdj4fXpLswg=
+SHA1-Digest: 6JdeK9XV0f79fhpfU9l0bJLpuz0=
 
 Name: system/etc/water/statusbar/com.baidu.flashlight/res/drawable-xhd
  pi/flashlight_open_normal.png
@@ -5878,10 +5881,10 @@ Name: system/etc/female/csp/message/res/drawable-xhdpi/tab_ic_attach_t
 SHA1-Digest: xs45PTHt8P1HI4afU+pmvvXyTqo=
 
 Name: system/lib/libemoji.so
-SHA1-Digest: XI4VXzMlP2obl+2IixKzl5sG5KM=
+SHA1-Digest: Qxd200WjoptXuLVQ2veFAvDcAm4=
 
 Name: system/lib/libft.so
-SHA1-Digest: bWY0FA+qZKVIymYSUnvz0WANwrk=
+SHA1-Digest: RmzpkhakZJS+BDrIbAi922lVK6A=
 
 Name: system/media/audio/notifications/DontPanic.ogg
 SHA1-Digest: pvgx0GchjymMGo64MMLTPpnFCeU=
@@ -5925,14 +5928,14 @@ Name: system/etc/female/csp/message/res/drawable-xhdpi/message_send_ba
 SHA1-Digest: 8wTvDkZ4RVQ9chxa32DKpcHsszk=
 
 Name: system/lib/libsystem_server.so
-SHA1-Digest: erFiLm2e/8S3K4tpUjQR5zqVRaI=
+SHA1-Digest: Tpviy8AiRwN+GVg5ilqYDnuUqBY=
 
 Name: system/etc/water/csp/message/res/drawable-xhdpi/ic_contact_pictu
  re_sim_contact.png
 SHA1-Digest: U6EQnW6bk2D6tcp7d5C7dff0SOc=
 
 Name: system/bin/racoon
-SHA1-Digest: 30lDPMGdi1psrzTE/YQLTEIGNVg=
+SHA1-Digest: EGUyiFa9bA1nLxqa6P1hZQQDYRU=
 
 Name: system/etc/water/csp/dial/res/drawable-xhdpi/ic_call_dial_btn_de
  let_disable.png
@@ -5989,7 +5992,7 @@ Name: system/etc/female/csp/message/res/drawable-xhdpi/tab_ic_mess_pic
 SHA1-Digest: OuGYjVPch8a7DushafFJMG+ZN6U=
 
 Name: system/lib/libstagefright_soft_vorbisdec.so
-SHA1-Digest: LEyqV7NEvh6HbDkoMONRw6kaW3Y=
+SHA1-Digest: m8OW/oAsRskCBWzWFYVxvbNdiRc=
 
 Name: system/etc/water/statusbar/com.baidu.onekeywidget/res/drawable-x
  hdpi/green_progress_0_50.png
@@ -6022,10 +6025,10 @@ Name: system/etc/water/icons/xhdpi/com.baidu.gallery3d.png
 SHA1-Digest: qBI0sx7EpCJbiOx9b/PmsrUFljw=
 
 Name: system/lib/libnbaio.so
-SHA1-Digest: YbqzWDynsmYjcbtt+kCLmaY7e7E=
+SHA1-Digest: rFae2dfLXKlgcfSS3VBKW3rotHE=
 
 Name: system/app/Stk1.apk
-SHA1-Digest: TiQVy2fVVKxSAqSHCHYG+FPqnnM=
+SHA1-Digest: JgowUGgrSc8fQdXZaaSiCEqj7gg=
 
 Name: system/etc/water/com.baidu.home2/switchwidget/res/drawable-xhdpi
  /ic_appwidget_settings_apn_off.png
@@ -6043,7 +6046,7 @@ Name: system/etc/female/com.baidu.home2/main/res/drawable-xhdpi/ic_cam
 SHA1-Digest: BJNEbD1ywi/LIWfnL+UwasADDdI=
 
 Name: system/lib/libui.so
-SHA1-Digest: kdKWOhaq/nMJaQfVQ6hkC0sMKEs=
+SHA1-Digest: PBDeRS1zboHnYd3bUxkTVCdTPOw=
 
 Name: system/lib/libhwm.so
 SHA1-Digest: zdbRVM5r26fxF4r5u7weE4Of1+Y=
@@ -6167,7 +6170,7 @@ Name: system/etc/female/com.baidu.home2/main/res/drawable-xhdpi/edit_d
 SHA1-Digest: 0RfleG5DvCLjquzcFPOm241FeTE=
 
 Name: system/etc/female.btp
-SHA1-Digest: 0JQkHFU6fTHh+MDhufJl4rOM1hE=
+SHA1-Digest: cuMujXHuCtqAblWlPI5wxUvVWvQ=
 
 Name: system/etc/water/framework/ota/com.baidu.android.ota/res/drawabl
  e-xhdpi/scan.png
@@ -6184,7 +6187,7 @@ Name: system/etc/water/com.baidu.home2/main/res/drawable-xhdpi/ic_laun
 SHA1-Digest: imCzShodAsgYDGAvfisqtxkUZVY=
 
 Name: system/framework/framework-yi.jar
-SHA1-Digest: pDqgJVP0QJNjHf+g8BbIT/1J220=
+SHA1-Digest: R8I+X4gltUznVULYDpMRB4nFOyk=
 
 Name: system/etc/female/framework/framework-res/other/framework/res/dr
  awable-xhdpi/notification_bg_normal.9.png
@@ -6198,7 +6201,7 @@ Name: system/lib/libwapi.so
 SHA1-Digest: Nn3NT5UTzdt5+cw8y3F8RQHKVGU=
 
 Name: system/framework/core.jar
-SHA1-Digest: iqGFh09JBuq09uFy13UucdyCeJw=
+SHA1-Digest: F1SQBVZLHnz06VroCeakpzGT330=
 
 Name: system/etc/water/statusbar/res/drawable-xhdpi/status_bar_notific
  ation_row_line.9.png
@@ -6224,10 +6227,10 @@ Name: system/etc/female/framework/framework-res/battery/framework/res/
 SHA1-Digest: erljOWvJ6FrKYpwy8FL5UQmayZM=
 
 Name: system/app/SharedStorageBackup.apk
-SHA1-Digest: T2E9nigtj/x+M0S+uwleTbaoJ/c=
+SHA1-Digest: 5C0f0+DR0M1Eme57gVtuklYRWBM=
 
 Name: system/lib/libstagefright_yuv.so
-SHA1-Digest: X5SZog0sEivBFEni7YIFfxOLIKk=
+SHA1-Digest: mWR/CuWAJiIQK3wfANWuHJ4ccco=
 
 Name: system/etc/female/icons/xhdpi/com.baidu.BaiduMap.png
 SHA1-Digest: EJZW+jh216bizVjUGvp3rBQKTSU=
@@ -6241,7 +6244,7 @@ Name: system/etc/female/csp/contact/res/drawable-xhdpi/edit_text_full_
 SHA1-Digest: R2AEM4Grx+yP/s/eU58Ew+Tc3og=
 
 Name: system/app/EngineerModeSim.apk
-SHA1-Digest: N6LOQ3KPyEwlovsvlzhu2jzq6qg=
+SHA1-Digest: OQP7cQlvWuPoR9Y69GR5z5XWrpw=
 
 Name: system/etc/female/framework/appManager/com.android.settings/res/
  drawable-xhdpi/ic_settings_location.png
@@ -6262,7 +6265,7 @@ Name: system/etc/defaultTheme/wallpaper/cover/cover.png
 SHA1-Digest: PmctejkPvsSnFmf1pbxbUSI8Ef4=
 
 Name: system/bin/dumpstate
-SHA1-Digest: j4EJGYw1D0wVPmeB0OvkN8exOqs=
+SHA1-Digest: hytLHDpwNOwK/UnfUaaU82I7FbU=
 
 Name: system/etc/female/com.baidu.home2/cover/cover_launcher.png
 SHA1-Digest: ZDVshQCBR7xq0kV/jcNkL7LsrD0=
@@ -6359,7 +6362,7 @@ Name: system/etc/female/framework/framework-res/button/framework/res/d
 SHA1-Digest: YGh9KQgP3mzCSu25n7hhLc402Cs=
 
 Name: system/lib/libbinder.so
-SHA1-Digest: EwxZ/Eks/8OcpNxEpS6De2TBbQk=
+SHA1-Digest: hLFtUrpylfHP5AaOeCB8m9llAwk=
 
 Name: system/etc/female/framework/appManager/com.android.settings/res/
  drawable-xhdpi/ic_sync_grey.png
@@ -6377,7 +6380,7 @@ Name: system/lib/libpalsecurity.so
 SHA1-Digest: 4dWCCDOqtePKf7nEWHm8Tarm7n0=
 
 Name: system/app/DynamicPermissionProvider.apk
-SHA1-Digest: SIygOsWG+vp8c7KUoP6nEmE9Bxs=
+SHA1-Digest: VLmQc+4je/4IccfK1uVKSit2Ggc=
 
 Name: system/etc/water/framework/filemanager/com.baidu.resmanager.file
  manager/res/drawable-xhdpi/ic_filemanager_list_item_start.png
@@ -6423,10 +6426,10 @@ Name: system/etc/voicecommand/voiceui/uipattern/Chinese-Mandarin/c_c_d
 SHA1-Digest: lFv/gaIILpc2KusY6cfpHoCBLvs=
 
 Name: system/app/CalendarProvider.apk
-SHA1-Digest: 5xFngLibb66G8sGQGejZ4Ss/7eQ=
+SHA1-Digest: SEXexbw9yVsSVXOUT+qR0A/5FSs=
 
 Name: system/app/BaiduMap.apk
-SHA1-Digest: eMoAk3SNXDVX5KxVsZAM8agpMpw=
+SHA1-Digest: 7PPDF/farmI7NA96EjPQQzMrqtQ=
 
 Name: system/etc/female/csp/message/res/drawable-xhdpi/tab_ic_attach_v
  oice.png
@@ -6482,7 +6485,7 @@ Name: system/etc/voicecommand/voiceui/uipattern/Chinese-Mandarin/c_c_d
 SHA1-Digest: 9V+DlVXtmHskzXm7sMyYwpy8jpE=
 
 Name: system/bin/servicemanager
-SHA1-Digest: a55g6LRHjVo1lsMcCgZ45tlJAwI=
+SHA1-Digest: fBxlIiFAkjtl63yFu3XLuJ22CEw=
 
 Name: system/etc/water/icons/xhdpi/com.baidu.musicplayer.png
 SHA1-Digest: 0Qc4cVo00Vrct2WytVxigiDxNxk=
@@ -6502,7 +6505,7 @@ Name: system/etc/water/com.baidu.home2/main/res/drawable-xhdpi/ic_laun
 SHA1-Digest: uDrdWuHhQs5MXF/MzjCsm1zA7sg=
 
 Name: system/lib/libvideoeditor_jni.so
-SHA1-Digest: rYkBvhmB/xy6gKlXcx/67Dr2IY0=
+SHA1-Digest: CQyM+JhFyfZTi1bCrEHFgf5QET0=
 
 Name: system/media/audio/notifications/arcturus.ogg
 SHA1-Digest: RnI0JEpkPcr/KxNPiNB6MzFaZ68=
@@ -6512,10 +6515,10 @@ Name: system/etc/female/framework/framework-res/textfield/framework/re
 SHA1-Digest: eCHTsQ9dxgeLfWBsY+FYq+SDuSU=
 
 Name: system/framework/send_bug.jar
-SHA1-Digest: oZlmZIroi6yaQ8O/NHI+aoP8tyY=
+SHA1-Digest: xQTzVvvt4B34HH2IJRTiKdggous=
 
 Name: system/lib/libgifEncoder_jni.so
-SHA1-Digest: B4J6h00uFUXIZBrYqm5byDz9uVY=
+SHA1-Digest: hgi72HTRIiIgVUym2CJeU14vkVE=
 
 Name: system/etc/female/framework/framework-res/radio/framework/res/dr
  awable-xhdpi/yi_btn_radio_on_pressed_baidu_light.png
@@ -6537,7 +6540,7 @@ Name: system/etc/female/framework/appManager/com.android.settings/res/
 SHA1-Digest: 7pGJqH0NF+CyY58mZTCax1qKXkM=
 
 Name: system/app/BaiduVideoEditor.apk
-SHA1-Digest: 85PiON5dCYeBL1g7M2oVjOJoaqY=
+SHA1-Digest: DY7yc/6iGHQIN+rB3XBxXr6dJB4=
 
 Name: system/etc/water/com.baidu.home2/switchwidget/res/drawable-xhdpi
  /ic_appwidget_ringermode_vibrate.png
@@ -6558,7 +6561,7 @@ Name: system/bin/write_mac
 SHA1-Digest: 8Vnrn+xCAZ/fL8cBVMupZj86pGI=
 
 Name: system/lib/libvt_custom.so
-SHA1-Digest: IAmTc1047Y96DBbJQGdDKikqhJw=
+SHA1-Digest: H3MxEVKl3nq+jdFDYXu8JiVJZ5U=
 
 Name: system/etc/water/icons/xhdpi/com.nd.android.pandareader.png
 SHA1-Digest: gQi9SsjU9Nr07cDDpyYJWLvx08g=
@@ -6586,7 +6589,7 @@ Name: system/etc/security/cacerts/12d55845.0
 SHA1-Digest: Dl66XTBMvMhwxbJmyV6GBJ6brpk=
 
 Name: system/lib/libwilhelm.so
-SHA1-Digest: P91dQjJW8OpzEUea9mLn9VG5lZk=
+SHA1-Digest: TkxGRObIkdbQTlC2JafBG/5rGbU=
 
 Name: system/etc/female/csp/contact/res/drawable-xhdpi/edit_text_part_
  single_pressed_light.9.png
@@ -6624,14 +6627,14 @@ Name: system/etc/female/icons/xhdpi/com.android.calendar_30.png
 SHA1-Digest: 8g6tMxHNI33nTwfFwylxiqo+sJA=
 
 Name: system/lib/libmedia.so
-SHA1-Digest: SDG1je0KQxscntBRYxGu8zRY5HQ=
+SHA1-Digest: Fp40AGwIuuK23ZO+jZt/my1vpQE=
 
 Name: system/etc/female/csp/contact/res/drawable-xhdpi/edit_spinner_to
  p_default_light.9.png
 SHA1-Digest: fkNyYrlcIhcbeQ3x96A3wgHF7zs=
 
 Name: system/lib/libfilterpack_imageproc.so
-SHA1-Digest: kbJfVDpKh2VEKhBIhAeC977R4+E=
+SHA1-Digest: 9RHr959IvpFWsNnU4boqv/MU+bM=
 
 Name: system/lib/libbluetooth_mtk.so
 SHA1-Digest: IqIhMVkvhCJv+Au06vl3fQzmq2U=
@@ -6650,7 +6653,7 @@ Name: system/etc/water/icons/xhdpi/com.baidu.BaiduMap.png
 SHA1-Digest: J/SBp5baXqmcmgqH1dNB18srHJs=
 
 Name: system/xbin/libmnlp_mt6592
-SHA1-Digest: t2ufl4EGRtEVd117MZC9x/ItKkY=
+SHA1-Digest: B+zYD1k8HOzyt1pe4IkcUubSlmA=
 
 Name: system/etc/female/lockscreen/advance-xhdpi/ic_main_unlock_chargi
  ng_100_5.png
@@ -6694,7 +6697,7 @@ Name: system/bin/lsm303md
 SHA1-Digest: 0CTXC5KpuPWLrvsOyevB42tv0Fw=
 
 Name: system/framework/pm.jar
-SHA1-Digest: ZCXxqMOl7ZJyWp16qSG9MHxZTqc=
+SHA1-Digest: 9BB67e3qCQBIEQuNZhGjkeCidWI=
 
 Name: system/etc/water/csp/contact/res/drawable-xhdpi/ic_contact_btn_m
  ap_normal.png
@@ -6790,7 +6793,7 @@ Name: system/lib/libhardware_legacy.so
 SHA1-Digest: VKxhGL4Omy0mx3FfzzGJmdSPKYQ=
 
 Name: system/framework/CustomProperties.jar
-SHA1-Digest: jC4wpZPlN3x7k0Q/i4G6Fcx1cp8=
+SHA1-Digest: JJRtBlAmNzJsW5vvvYhkE1a8ncg=
 
 Name: system/etc/water/framework/email/com.android.email/res/drawable-
  xhdpi/ic_menu_compose_normal_holo_light.png
@@ -6837,7 +6840,7 @@ Name: system/media/audio/ringtones/Glacial_Groove.ogg
 SHA1-Digest: 8ioRWpc66yq2afqZAmtcHDy4WTw=
 
 Name: system/lib/libstagefright_soft_g711dec.so
-SHA1-Digest: lRPGyyXWurA+cb11sE2yP6tXY54=
+SHA1-Digest: Gu3PfFpikEIkpiM/RUAVbfIZq5I=
 
 Name: system/etc/female/statusbar/res/drawable-xhdpi/ic_stat_sys_power
  off_on.png
@@ -6851,7 +6854,7 @@ Name: system/etc/water/framework/bluetooth/com.android.bluetooth/res/d
 SHA1-Digest: 9XwyMjqswNwI/HboGD2DoRzkQls=
 
 Name: system/lib/libvariablespeed.so
-SHA1-Digest: xRLIVZZKY6l4rxWqgNdpOk+/pvM=
+SHA1-Digest: mncG50sQJTPpPxU7m+YZIGUSuc8=
 
 Name: system/lib/libcustom_nvram.so
 SHA1-Digest: BbAjV8Rvoth9YIMcmc0yN2NCEbA=
@@ -6923,7 +6926,7 @@ Name: system/etc/spn-conf.xml
 SHA1-Digest: KdD7zAoRkpUr9X9KPPfH8Wa1dJQ=
 
 Name: system/bin/codec
-SHA1-Digest: +7iv++1u+rZFKLZw+yqzmSoLDCQ=
+SHA1-Digest: N0WW+lMTp/vD4A+RVDSLj1mGPT0=
 
 Name: system/etc/female/framework/framework-res/other/framework/res/dr
  awable-xhdpi/yi_toast_frame_baidu.9.png
@@ -6943,7 +6946,7 @@ Name: system/lib/libmnl.so
 SHA1-Digest: vvLtNsRb5av+X7AhFmHXdsItLZ0=
 
 Name: system/app/BaiduBrowser.apk
-SHA1-Digest: Gubj1WrnsB6qHNKaw8ti3Wj7e0A=
+SHA1-Digest: aAjG7XtG8IsgqihfAPwfQaJylYw=
 
 Name: system/etc/security/cacerts/c7e2a638.0
 SHA1-Digest: 9ya3Pspxo12STfIyX8NIsr5A/7c=
@@ -6979,7 +6982,7 @@ Name: system/etc/defaultTheme/lockwallpaper/cover/cover.png
 SHA1-Digest: exnxJCFeytZyuZUdwZFrQXsEhok=
 
 Name: system/lib/libandroid_servers.so
-SHA1-Digest: 3q0zQLNlgO+DdPJzO1GQ6jUUd3U=
+SHA1-Digest: BK1lksFSPiE8lgbPPSAhPbvwphw=
 
 Name: system/etc/female/framework/framework-res/numberpicker/framework
  /res/drawable-xhdpi/yi_numberpicker_down_disabled_baidu_light.png
@@ -7035,7 +7038,7 @@ Name: system/etc/water/com.baidu.home2/main/res/drawable-xhdpi/ic_laun
 SHA1-Digest: 9SSzHK0vO+9inXGg1HJPZub7kaY=
 
 Name: system/app/MediaProvider.apk
-SHA1-Digest: f2nAXoPLr+bleMujL+QUhYelUZ8=
+SHA1-Digest: djKfxO08IIfkhCkbY3bGtOSoMqg=
 
 Name: system/bin/aee_core_forwarder
 SHA1-Digest: X9wn107SoeOa7LhdxBGZ1b7XZT8=
@@ -7044,7 +7047,7 @@ Name: system/etc/water/csp/contact/res/drawable-xhdpi/ic_maps_next.png
 SHA1-Digest: id4QFTlTDfGKjViD8lZcWHpXKVY=
 
 Name: system/etc/defaultTheme/com.baidu.home2/preview/cover.png
-SHA1-Digest: B2OqKjxfVspTnLXfBPQKzU/CCQQ=
+SHA1-Digest: PTcdhYeKyLaA3zqMnt+RciY9rtM=
 
 Name: system/lib/egl/egl.cfg
 SHA1-Digest: YwcneEekM2aHbgh7QQrsuaEGUOs=
@@ -7068,7 +7071,7 @@ Name: system/etc/female/framework/framework-res/textfield/framework/re
 SHA1-Digest: Yh/beA+1P5hXCDTqALewt5aqBZg=
 
 Name: system/app/ContactsProvider.apk
-SHA1-Digest: TsJ9DwCOHIx/kBrg6mbTIS+mx8I=
+SHA1-Digest: 4sfr3wDMq0FL/8oi2DLL5h+On+M=
 
 Name: system/etc/water/csp/contact/res/drawable-xhdpi/edit_ringtone_bt
  n_focused_light.9.png
@@ -7088,7 +7091,7 @@ Name: system/media/audio/ringtones/World.ogg
 SHA1-Digest: gyfmfSAdpTHm8s9n/pFE1zF1XGo=
 
 Name: system/lib/libportable.so
-SHA1-Digest: ymThUR8Ih0wVyYB4VgIK2bbcRmQ=
+SHA1-Digest: C9cgiRUTJyOaGXa/CZcdQuD9HNk=
 
 Name: system/etc/security/cacerts/8f7b96c4.0
 SHA1-Digest: QfxKn6PfoE0C352mOtyffWA172I=
@@ -7120,10 +7123,10 @@ Name: system/media/audio/ringtones/SitarVsSitar.ogg
 SHA1-Digest: bLBNaX513sFoiouAnV1syHRXLjE=
 
 Name: system/lib/libstagefright_avc_common.so
-SHA1-Digest: cxu+MScthAKzJYghMtMQ9dxROMQ=
+SHA1-Digest: eXCTKvoTinDLRZBoLfSvj+4Jeis=
 
 Name: system/lib/libflv.so
-SHA1-Digest: tRNmiKqKtUIQrqUr5L/q4puOC9Q=
+SHA1-Digest: /4jW8P/QcA0Dw62WMWSE6cN1xyY=
 
 Name: system/media/audio/notifications/Helium.ogg
 SHA1-Digest: VfZpKPLjq5PYkZSzxj1S9x6RUiA=
@@ -7143,7 +7146,7 @@ Name: system/etc/water/icons/xhdpi/com.android.calendar_20.png
 SHA1-Digest: EYJEPzDorhP/n2EhvDrHpaeSKxM=
 
 Name: system/lib/libdiskconfig.so
-SHA1-Digest: NY+FFs3eGB7i/aN5hrC71uc/4qo=
+SHA1-Digest: kKP32T1ekJcCPC79+dZE8lQmO/8=
 
 Name: system/etc/female/framework/appManager/com.android.settings/res/
  drawable-xhdpi/ic_settings_slide.png
@@ -7249,7 +7252,7 @@ Name: system/etc/channel_files/Y29tLnNodXFpLmNvbnRyb2xsZXJfY29uZmlnX2N
 SHA1-Digest: p7bFIHHgUiiXTjBo4mLgcptg9nk=
 
 Name: system/app/BaiduNetworkLocation.apk
-SHA1-Digest: pBOAmVICeQp1n0Gw2sZ2ddlKKK0=
+SHA1-Digest: v35FLVT9SBwq4h5Pqt5Io9Fu8Wc=
 
 Name: system/etc/female/statusbar/res/drawable-xhdpi/ic_stat_sys_bluet
  ooth_on.png
@@ -7297,7 +7300,7 @@ Name: system/etc/female/framework/appManager/com.android.settings/res/
 SHA1-Digest: eJTOVTk5DAo1eOO7CyrgniG45bg=
 
 Name: system/app/BaiduClock.apk
-SHA1-Digest: XMWDocUmSMLfESidT/vAB97b2mw=
+SHA1-Digest: nMl09Mlw3KOC2uABSRraU6ynSpU=
 
 Name: system/etc/firmware/mt6627/mt6627_fm_v1_coeff.bin
 SHA1-Digest: bYUE1pMjKcchbIwBb6c1HQhKTTM=
@@ -7320,7 +7323,7 @@ Name: system/etc/water/csp/dial/res/drawable-xhdpi/ic_call_incoming_ho
 SHA1-Digest: fT9O2iaXb7Czk8PX0bFPwp1dBxY=
 
 Name: system/lib/libaudioeffect_jni.so
-SHA1-Digest: ZW1c9ANGO8+zAQ5MSozPMoONTeY=
+SHA1-Digest: pKE3kMdCFDD9DtoTTXmu7miNv/s=
 
 Name: system/etc/female/lockscreen/advance-xhdpi/ic_main_unlock_chargi
  ng_40_5.png
@@ -7334,7 +7337,7 @@ Name: system/etc/defaultTheme/lockscreen/preview/cover_3d.png
 SHA1-Digest: DnToI2hxizme6k5XzMMiK5ezeZQ=
 
 Name: system/lib/libdrm1_jni.so
-SHA1-Digest: mGQjJ0qS1lEfH/2IXk0zQ3BdP98=
+SHA1-Digest: TZLB+mL1iTcdPEkQi7XzS7r4sTc=
 
 Name: system/etc/female/framework/framework-res/checkbox/framework/res
  /drawable-xhdpi/yi_btn_check_on_disabled_baidu_light.png
@@ -7408,10 +7411,10 @@ Name: system/etc/water/framework/appManager/com.android.settings/res/d
 SHA1-Digest: gvL6UL8ENXzY4EW5bDk35GHI7j8=
 
 Name: system/lib/libmediatek_exceptionlog.so
-SHA1-Digest: dIuLQIdBW7jZXI1vDvBXC59p2ZI=
+SHA1-Digest: 4jRmSHdEw8NL35qHTHl/6z7Zee4=
 
 Name: system/framework/ext.jar
-SHA1-Digest: ejZL/+GMtsU9qI/S2xzCFeXeiTw=
+SHA1-Digest: Uu4V+TcbsQZ9vBbh7uKcjZyioyM=
 
 Name: system/etc/water/com.baidu.home2/switchwidget/res/drawable-xhdpi
  /ic_appwidget_settings_wifi_off.png
@@ -7422,7 +7425,7 @@ Name: system/etc/water/com.baidu.home2/switchwidget/res/drawable-xhdpi
 SHA1-Digest: UrRpewudkvJ0vOmcQHk8KoWjoDI=
 
 Name: system/bin/MtkCodecService
-SHA1-Digest: Nxz6P07frGzmSf5lT+wnCspTkxg=
+SHA1-Digest: Nkw4RUICRVItfEMlG3fHXSk+f7w=
 
 Name: system/etc/water/framework/framework-res/textfield/framework/res
  /drawable-xhdpi/yi_textfield_multiline_activated_baidu_light.9.png
@@ -7467,7 +7470,7 @@ Name: system/etc/water/com.baidu.home2/main/res/drawable-xhdpi/weather
 SHA1-Digest: a8iRvD0TcUQTTFOxOWgWL4vAGsY=
 
 Name: system/lib/libaal_cust.so
-SHA1-Digest: bxieiBO+YpzCRajLBbX2Lmt1IjI=
+SHA1-Digest: Tw20yQ15pdAFQAGp89SMbFezscU=
 
 Name: system/etc/water/statusbar/com.baidu.onekeywidget/res/drawable-x
  hdpi/green_progress_0_5.png
@@ -7478,22 +7481,22 @@ Name: system/etc/water/framework/appManager/com.android.settings/res/d
 SHA1-Digest: +uvcjal/+V8v1xYSEeXGphQTEm0=
 
 Name: system/lib/libstagefright_soft_mpeg4enc.so
-SHA1-Digest: +dEGqHveXE7Ja1a+JpunnX249Uw=
+SHA1-Digest: wcN7AXkAw9k261sMG1/ddelTRNI=
 
 Name: system/lib/mtk-ril.so
 SHA1-Digest: 1J7ME0tLHXkkEJoI7wTJ45cGn3E=
 
 Name: system/lib/libwpa_client.so
-SHA1-Digest: J+77qrvY3caVKaDNiys4uuQOlAg=
+SHA1-Digest: QPI90XRJ63LT0OmcwgIrVFdsWD4=
 
 Name: system/app/NewPhoneWizard.apk
-SHA1-Digest: uGxCZ01bj0iBVwGIEu62JN9ZTzM=
+SHA1-Digest: RTbhJrZuJUWErRcmRfP8PZX9sIw=
 
 Name: system/media/audio/ui/LowBattery.ogg
 SHA1-Digest: uuIldXjG+4uO9pGKN3pjkar13pA=
 
 Name: system/bin/linker
-SHA1-Digest: IBHMR8CqvmSXBPYSm2J2YllHUvU=
+SHA1-Digest: 5j29AHt7KPzAZtj7Dhwvh8nkrfQ=
 
 Name: system/etc/female/com.baidu.home2/main/res/drawable-xhdpi/tpwidg
  et_clock_5.png
@@ -7511,14 +7514,14 @@ Name: system/etc/female/framework/framework-res/radio/framework/res/dr
 SHA1-Digest: YTvBWj1ucfSCKiia7Z9hlw69OJA=
 
 Name: system/app/SchedulePowerOnOff.apk
-SHA1-Digest: y07Ux/J4isuJlpW125XsK+qrWcQ=
+SHA1-Digest: FMnceu8vryzsVVPPpGW7q3no/6s=
 
 Name: system/etc/water/csp/message/res/drawable-xhdpi/popup_notice_clo
  se.png
 SHA1-Digest: 9tZCLc8Th9KZvhOMNijhnTco8o0=
 
 Name: system/bin/keystore_cli
-SHA1-Digest: g/KR7eKdzKqVV5s1124Sjm3vpks=
+SHA1-Digest: YdqAhKnwACHS4TeUfPXMfKGRYt8=
 
 Name: system/etc/water/framework/appManager/com.android.settings/res/d
  rawable-xhdpi/ic_settings_add.png
@@ -7581,7 +7584,7 @@ Name: system/etc/female/icons/xhdpi/com.qzone.png
 SHA1-Digest: 0+SNlE+nbMmHOLqynRTqpXVoBcM=
 
 Name: system/bin/badblocks
-SHA1-Digest: YC5EIiuxCumdre6kcsgg6tvztB8=
+SHA1-Digest: Dwa8Ez2V/OhHwQfJW33PQKmyync=
 
 Name: system/etc/water/com.baidu.home2/weatherwidget/res/drawable-xhdp
  i/widget_weather_sand.png
@@ -7614,7 +7617,7 @@ Name: system/etc/water/framework/antiTheft/com.baidu.antitheft/res/dra
 SHA1-Digest: W9NWxADQh2OOPyO/5y6WB8aSmDo=
 
 Name: system/lib/libicuuc.so
-SHA1-Digest: YhFQn4B8+wzwcD78TwpuEv5Ryfg=
+SHA1-Digest: nMlaiFRGikvcK6OdvCV72yCDN9I=
 
 Name: system/etc/water/com.baidu.home2/main/res/drawable-xhdpi/ic_laun
  cher_calendar_14.png
@@ -7667,7 +7670,7 @@ Name: system/etc/water/icons/xhdpi/com.baidu.appsearch.small.png
 SHA1-Digest: leqTJf4fptqHVs7JNpUbSiXAGY4=
 
 Name: system/lib/libm4u.so
-SHA1-Digest: i6lzSxk2nml0et6EZT17toJTD+o=
+SHA1-Digest: zJmJZHGPfh8MC2HPu1/uB6ohUgY=
 
 Name: system/etc/water/framework/framework-res/battery/framework/res/d
  rawable-xhdpi/battery_3.png
@@ -7701,10 +7704,10 @@ Name: system/etc/voicecommand/command/alarm/3/3.ogg
 SHA1-Digest: IkDKW0akApdHHnepbvsLNvxaqIg=
 
 Name: system/etc/ppp/ip-up-vpn
-SHA1-Digest: Hi59Yzi86OHUCJ1ENy4H01IslrM=
+SHA1-Digest: FS4pSS43ZeU02n4V6NTUBUjlfNI=
 
 Name: system/lib/libandroid.so
-SHA1-Digest: td2uYaFrOit6pXHW/fOY1FBym1k=
+SHA1-Digest: hRrQJ48DLFsa+senicWCiX/5u5g=
 
 Name: system/lib/libcrypto.so
 SHA1-Digest: U9HOW6lGn/lF5/dRyUPWWDSHf2E=
@@ -7773,7 +7776,7 @@ Name: system/etc/raw_yellow_data.db
 SHA1-Digest: 38S89BBOpDUW9jOtvbB7v6SQeTc=
 
 Name: system/framework/input.jar
-SHA1-Digest: 9/QLBlOkhDBxTafwGB0R/ZiF7c4=
+SHA1-Digest: 89+Mdx/t6QvQjvIxBCDO3Ji+zL4=
 
 Name: system/etc/security/cacerts/85cde254.0
 SHA1-Digest: R9VocfbkwOamdyjLfP1NDBc/kug=
@@ -7789,7 +7792,7 @@ Name: system/etc/water/framework/thememanager/com.baidu.thememanager.u
 SHA1-Digest: UK+1lb2uGfUjMK5aVZ4gES41lV4=
 
 Name: system/framework/android.test.runner.jar
-SHA1-Digest: JXlmtbK6df5+MHLB22JUM2ZL0cM=
+SHA1-Digest: 14XmAfBGHWCW0QnMNSC8zN78258=
 
 Name: system/etc/female/icons/xhdpi/com.immomo.momo.png
 SHA1-Digest: x2PGUc+wyLYDOFj/ZfbU1HbpKEM=
@@ -7861,7 +7864,7 @@ Name: system/media/audio/ui/email.wav
 SHA1-Digest: 4Lbny5F377+c9GwbaYi6zFJyWR8=
 
 Name: system/app/BaiduVideoPlayer.apk
-SHA1-Digest: a21tyfmqLd8TMg6GxV8RCDfJr34=
+SHA1-Digest: P+YPqeTcM8Oix/mU4w0xPsMeqEo=
 
 Name: system/etc/female/framework/appManager/com.android.settings/res/
  drawable-xhdpi/ic_settings_battery.png
@@ -7903,7 +7906,7 @@ Name: system/etc/female/com.baidu.home2/main/res/drawable-xhdpi/ic_men
 SHA1-Digest: eZl55Kc1LkhrJBuppa68Iu4smpo=
 
 Name: system/lib/libvideoeditorplayer.so
-SHA1-Digest: iLa59Fs9RJb/5GZmcreGpYcyptI=
+SHA1-Digest: xwrQml/FdYoKM3ACSgwQlMaTdRM=
 
 Name: system/etc/female/framework/framework-res/actionbar/framework-yi
  /res/drawable-xhdpi/cld_ab_bottom_shadow_light_baidu.9.png
@@ -7941,7 +7944,7 @@ Name: system/etc/female/csp/contact/res/drawable-xhdpi/edit_text_multi
 SHA1-Digest: 4uRbnl9eb/x/HSUFLz/mdbW+Nig=
 
 Name: system/lib/libstlport.so
-SHA1-Digest: fkxohzJX4C7H4KyMWeVXahWPWUc=
+SHA1-Digest: gTWwIwiwyuGov6H4FZ6Mdc3XeQU=
 
 Name: system/etc/female/framework/thememanager/com.baidu.thememanager.
  ui/res/drawable-xhdpi/thumbnail_option_launcher.png
@@ -7962,7 +7965,7 @@ Name: system/etc/female/framework/BaiduMusicPlayer/com.baidu.musicplay
 SHA1-Digest: eXjuHPXlvEWE4c2bh4r5R294ZTE=
 
 Name: system/bin/mdnsd
-SHA1-Digest: CTJdo3/xp17Klxy32mOWH5zBA9k=
+SHA1-Digest: 8sLUWswbhKNUvTQpS/TEUclXLII=
 
 Name: system/bin/ipohctl
 SHA1-Digest: rzqhelihg2hYT7mwF3/8MdA5G0o=
@@ -7975,7 +7978,7 @@ Name: system/media/audio/ringtones/Ring_Digital_02.ogg
 SHA1-Digest: PIB2thaCvs7H7y7pq0qK0WO+g/0=
 
 Name: system/lib/libjnigraphics.so
-SHA1-Digest: kt7GDFhDak92IzT7v+nNr+qRhi8=
+SHA1-Digest: pVif+45j9Q3QWKL3JCdWl8+9FTI=
 
 Name: system/etc/female/framework/appManager/com.android.settings/res/
  drawable-xhdpi/yi_dialog_top_baidu.9.png
@@ -7986,10 +7989,10 @@ Name: system/etc/female/framework/framework-res/scrubber/framework/res
 SHA1-Digest: aXQImZjB7q0Hd3rcH3kbPxKArfs=
 
 Name: system/lib/libsysutils.so
-SHA1-Digest: 4sB46VpE/MKROozpG9rb+Fdy9sQ=
+SHA1-Digest: xjUddE9g0FH9fvN7m4eJJg+Ftis=
 
 Name: system/lib/ssl/engines/libkeystore.so
-SHA1-Digest: GFyWquMzuI04VM3Hk7XDL7OGfx4=
+SHA1-Digest: /IMlueRZ7aU9Z2zlKo8FDhHRnHI=
 
 Name: system/etc/female/framework/thememanager/com.baidu.thememanager.
  ui/res/drawable-xhdpi/ic_theme_delete.png
@@ -8029,7 +8032,7 @@ Name: system/etc/audio_policy.conf
 SHA1-Digest: YX58XIcOYQu5MSJ/48yYp9SXtIk=
 
 Name: system/framework/theme-res-raspberry.apk
-SHA1-Digest: zqe35Mv0Z4RuRYp2mrxhwmfd1Nk=
+SHA1-Digest: cuWw3BCFAj61NhuFvA/nfv9Cgps=
 
 Name: system/etc/female/framework/framework-res/radio/framework/res/dr
  awable-xhdpi/yi_btn_star_on_pressed_baidu_light.png
@@ -8048,7 +8051,7 @@ Name: system/etc/female/framework/account/com.baidu.bsf.service/res/dr
 SHA1-Digest: cPtkdKoJ7vmHHNWFgyy5OAuN9c4=
 
 Name: system/app/DownloadProvider.apk
-SHA1-Digest: BE4vyCQs9cOJ5PF59LDkXGmaJkE=
+SHA1-Digest: xDF0P8AbpJMubm+NkyWxKQqvtgk=
 
 Name: system/etc/water/framework/framework-res/radio/framework/res/dra
  wable-xhdpi/yi_btn_radio_off_disabled_focused_baidu_light.png
@@ -8077,7 +8080,7 @@ Name: system/etc/female/framework/baiduclock/com.baidu.baiduclock/res/
 SHA1-Digest: cV5RoU47zxzaQbT4hJgk5YIsQFY=
 
 Name: system/bin/dm_agent_binder
-SHA1-Digest: o7Ver7M00PNn16KOqVBrxO4wcuA=
+SHA1-Digest: 14IZcz4fMmBhtBTjtucmgx1deqU=
 
 Name: system/etc/water/framework/framework-res/numberpicker/framework/
  res/drawable-xhdpi/yi_numberpicker_down_normal_baidu_light.png
@@ -8099,7 +8102,7 @@ Name: system/etc/female/framework/framework-res/spinner/framework/res/
 SHA1-Digest: DJnlo0gCWUSluKMjFm3TSIplZJU=
 
 Name: system/xbin/su
-SHA1-Digest: Qx7et8zFhTwUS7LAQP+TcSmKVK4=
+SHA1-Digest: /vaAbfY0pJ67T+Nr1wVTHhF8yXM=
 
 Name: system/media/audio/notifications/Aldebaran.ogg
 SHA1-Digest: aJzy90WKZeAT+vNuaKX1YVLnLyk=
@@ -8116,7 +8119,7 @@ Name: system/lib/libcam.utils.so
 SHA1-Digest: ECgiuBP5moBe5ZkhY+IDw+4f/r0=
 
 Name: system/lib/libcutils.so
-SHA1-Digest: fJmuE6Tj3lf9tKP3ZiewESwjuas=
+SHA1-Digest: s+CHu6kQ0G+okXMzWeD0iBcB5Fs=
 
 Name: system/fonts/RobotoCondensed-Bold.ttf
 SHA1-Digest: IIA82t9wxAtGgB9tHwt16IBinrQ=
@@ -8155,7 +8158,7 @@ Name: system/etc/female/com.baidu.home2/main/res/drawable-xhdpi/ic_men
 SHA1-Digest: HyGeBwx+QkalkoOhc9Ldr1mqwtA=
 
 Name: system/xbin/oprofiled
-SHA1-Digest: ObuGfU/gcmz8DCj7gLPB2L7u2nI=
+SHA1-Digest: +p33TtxPCN0xMecIOPcB3Xkx9e0=
 
 Name: system/etc/water/framework/appManager/com.android.settings/res/d
  rawable-xhdpi/ic_wifi_lock_signal_1.png
@@ -8207,7 +8210,7 @@ Name: system/etc/female/framework/framework-res/spinner/framework/res/
 SHA1-Digest: L5/2T7c5DxKpuJNSCQb8/r2Nuos=
 
 Name: system/app/HTMLViewer.apk
-SHA1-Digest: 8mGpJzbVCKIOuViLI1vjzA5FOB4=
+SHA1-Digest: a2tsGZW5szt/YIN3qoCLpHG2Apo=
 
 Name: system/etc/female/icons/xhdpi/com.storm.smart.png
 SHA1-Digest: Di6gDB0nQaCiBvnt6N6faXsbRvk=
@@ -8270,7 +8273,7 @@ Name: system/etc/.tp/.ht120.mtc
 SHA1-Digest: 1lId4n77x0KrrszIT91LIcOrHA8=
 
 Name: system/lib/soundfx/libbundlewrapper.so
-SHA1-Digest: PrVTnOfMbYHe4iPXZsbKdoBXGec=
+SHA1-Digest: hHaRivMvfjyNkXSopX9b5/kCyO4=
 
 Name: system/etc/female/csp/contact/res/drawable-xhdpi/ic_menu_compose
  _holo_dark.png
@@ -8283,7 +8286,7 @@ Name: system/media/audio/notifications/Bird_OwlCallingHappySad.ogg
 SHA1-Digest: g3Bt1Fg/wWV86Vc3svZCvkWRJ40=
 
 Name: system/lib/libc_malloc_debug_qemu.so
-SHA1-Digest: vOn0NZwj/d61uCnpCpxDLbe+xbg=
+SHA1-Digest: +g4gfsV2EHa/mWQf/+oud0RbFSQ=
 
 Name: system/etc/female/framework/thememanager/com.baidu.thememanager.
  ui/res/drawable-xhdpi/option_item_background_pressed.9.png
@@ -8329,10 +8332,10 @@ Name: system/etc/security/cacerts/d16a5865.0
 SHA1-Digest: uhdS7HZmT6TkFszu7r9Y2xzhX2w=
 
 Name: system/framework/framework-res-yi.apk
-SHA1-Digest: yUkyuKe8nXv2SxUwtv0hMncMHsk=
+SHA1-Digest: 8xTqFEovsodbllH/JAUYuVvWZqA=
 
 Name: recovery/etc/install-recovery.sh
-SHA1-Digest: jozkSGo89AC7dN/820E96tYwjBE=
+SHA1-Digest: OeUq/gkPewApA14LELmLJgLsdYA=
 
 Name: system/etc/water/csp/contact/res/drawable-xhdpi/ic_contact_index
  _middle_bottom_pressed.9.png
@@ -8386,7 +8389,7 @@ Name: system/etc/water/framework/BaiduVideoPlayer/com.baidu.videoplaye
 SHA1-Digest: 9ZRIfT+FZ3WoHBwt+5HjOTPWzl8=
 
 Name: system/bin/testid3
-SHA1-Digest: Q5BCFFU7KNQBD3bTyUb2Ix644vQ=
+SHA1-Digest: YA3gv2pV+2KH+DyQuROHUxpSavo=
 
 Name: system/etc/water/csp/message/res/drawable-xhdpi/popup_notice_del
  ete_normal.png
@@ -8415,7 +8418,7 @@ Name: system/etc/female/csp/message/res/drawable-xhdpi/tab_ic_mess_wis
 SHA1-Digest: Zelb9KvsWuyAKOol/qC5fGqqWIo=
 
 Name: system/bin/gzip
-SHA1-Digest: SYawTfirpv219JmWmaE+TRNyyzw=
+SHA1-Digest: g7k2Blyy3nDThIzBZUd0N+Uvxxg=
 
 Name: system/etc/female/statusbar/res/drawable-xhdpi/ic_stat_sys_sync_
  off.png
@@ -8505,10 +8508,10 @@ Name: system/etc/water/icons/xhdpi/com.baidu.yisecurity.png
 SHA1-Digest: 2vu+uzIJgbVC8yvuDmw+DOL95ek=
 
 Name: system/lib/libGLES_trace.so
-SHA1-Digest: DIi7hCG34brN4MWx0zUqrPxPEUA=
+SHA1-Digest: 2pHsinyV4SZjlJFL4TPaAvnwJCM=
 
 Name: META-INF/com/google/android/update-binary
-SHA1-Digest: 45ojaVQeJw7glrQyxaViBSeiUe4=
+SHA1-Digest: PlDbuJlE2+19XqGvlGER5KJjJxg=
 
 Name: system/etc/security/cacerts/3e7271e8.0
 SHA1-Digest: exnkaZiA8uIb4yIVkEyv4B8Mo40=
@@ -8543,7 +8546,7 @@ Name: system/media/audio/ringtones/Girtab.ogg
 SHA1-Digest: zjPWIkT0TQl53Q9YfX3kfTqum2Y=
 
 Name: system/bin/screenshot
-SHA1-Digest: GXqkyfU+LfRcs5AgT8KclKQYoWs=
+SHA1-Digest: KhsVRq5B+9FiDJ5muSg01YIR5zU=
 
 Name: system/etc/water/framework/email/com.android.email/res/drawable-
  xhdpi/ic_menu_mark_read_holo_light.png
@@ -8554,7 +8557,7 @@ Name: system/etc/female/csp/contact/res/drawable-xhdpi/ic_contact_btn_
 SHA1-Digest: 2aH5KhvofwcKin0aa6XkDgdzs7w=
 
 Name: system/app/BaiduBackupRestore.apk
-SHA1-Digest: eV9T2ytk0T9LeTpNRaoZYzu9BjE=
+SHA1-Digest: MNv4y4ufvfcC40zHPW5yPlfXuL0=
 
 Name: system/etc/female/csp/contact/res/drawable-xhdpi/edit_text_part_
  bottom_default_light.9.png
@@ -8607,7 +8610,7 @@ Name: system/etc/water/com.baidu.home2/switchwidget/res/drawable-xhdpi
 SHA1-Digest: LJHkbAKMndf3BB8B0l2Nc03CN+E=
 
 Name: system/lib/libskia.so
-SHA1-Digest: 69z0t7yD2xZ8kICLZW3GwO5LNeU=
+SHA1-Digest: HqHDGplCjZCcrBUMF8J79Dg+TQQ=
 
 Name: system/etc/female/framework/appManager/com.android.settings/res/
  drawable-xhdpi/ic_menu_time.png
@@ -8628,7 +8631,7 @@ Name: system/media/audio/notifications/Zirconium.ogg
 SHA1-Digest: /VP9wpdl+aygdJJGhI9mz7m01Ww=
 
 Name: system/app/BaiduGallery3D.apk
-SHA1-Digest: 6sH7KWsjo7rPLovCjd4mOaU9YHs=
+SHA1-Digest: HwXN/m/9Hqn3iyh+YJsshbkHlXg=
 
 Name: system/etc/female/com.baidu.home2/weatherwidget/res/drawable-xhd
  pi/tpwidget_weather_sun_star.png
@@ -8657,7 +8660,7 @@ Name: system/etc/female/lockscreen/advance-xhdpi/ic_main_unlock_chargi
 SHA1-Digest: +dQymHPjt4AL4xDEpfxnQLqDWdc=
 
 Name: system/bin/ip
-SHA1-Digest: pkpXlryvqbryZBkzHYX73shN7PY=
+SHA1-Digest: ysyxmUBkD5xZ/Cy6hQB/sF0qDWs=
 
 Name: system/etc/water/com.baidu.home2/main/res/drawable-xhdpi/ic_clos
  ed_normal.png
@@ -8678,7 +8681,7 @@ Name: system/etc/water/framework/calendar/com.android.calendar/res/dra
 SHA1-Digest: 4CauYPrHTNhCMPRVxzhRWxQWh6s=
 
 Name: system/lib/libstagefright_soft_rawdec.so
-SHA1-Digest: lqg6kkt+pEhKhcAYZjASkPj6YcQ=
+SHA1-Digest: im86MHb5DAPP7I2MAI52viC5JNM=
 
 Name: system/etc/water/statusbar/com.baidu.onekeywidget/res/drawable-x
  hdpi/pop_mode_lock_unpress.png
@@ -8718,7 +8721,7 @@ Name: system/etc/water/icons/xhdpi/com.android.calendar_19.png
 SHA1-Digest: gx0focO54VVE3lD5t2i5KW1C0Ig=
 
 Name: system/framework/mediatek-op.jar
-SHA1-Digest: S69h8VM9eEDnifrGCTtBE4iQBdQ=
+SHA1-Digest: N2S/gN1D9aug3kRyx6F5AdKqZQ0=
 
 Name: system/etc/water/csp/contact/res/drawable-xhdpi/edit_text_full_t
  op_focused_light.9.png
@@ -8757,7 +8760,7 @@ Name: system/etc/female/framework/framework-res/button/framework-yi/re
 SHA1-Digest: bDHXVintlnzIkUQnIrY4aB5VrIc=
 
 Name: system/bin/radiooptions
-SHA1-Digest: fd5XrBcxxWn4uFwqW4p2eXFDuYU=
+SHA1-Digest: WAd8ZezH/5m/ilcOSJU1osoAxyc=
 
 Name: system/etc/water/csp/message/res/drawable-xhdpi/tab_ic_add_attac
  h_expand.png
@@ -8878,7 +8881,7 @@ Name: system/etc/water/framework/framework-res/battery/framework/res/d
 SHA1-Digest: 4LT78SIHvTQ60sxVzAi9G6c2hBk=
 
 Name: system/lib/libbt-utils.so
-SHA1-Digest: jstjB+BLxB8uyXx7ZLAEXJD5SM0=
+SHA1-Digest: g1DzUy2X6dEtBGe2Rn1n0N+XZTc=
 
 Name: system/etc/water/icons/xhdpi/com.qvod.player.png
 SHA1-Digest: ngOFCEfpcdawJb7kjkT/4nPvj+E=
@@ -8891,7 +8894,7 @@ Name: system/etc/water/statusbar/res/drawable-xhdpi/ic_stat_sys_data_o
 SHA1-Digest: YxPbAKkGq/z56FO/ZVrKHVH5mBg=
 
 Name: system/app/BatteryWarning.apk
-SHA1-Digest: I0raH0Odsmct/mVebNaPwywDERo=
+SHA1-Digest: nwe6xcESQiD9zyxWS9tlvZwrDlw=
 
 Name: system/usr/icu/icudt48l.dat
 SHA1-Digest: aPCW226x0E54llZt6h9vOtqRfkQ=
@@ -8908,7 +8911,7 @@ Name: system/etc/water/csp/contact/res/drawable-xhdpi/edit_text_full_t
 SHA1-Digest: shIUBtLcCFtL5bMN1KfZJC6Grko=
 
 Name: system/app/VpnDialogs.apk
-SHA1-Digest: Uo6lAhx64PmSrNmNqFZIMgCNSAI=
+SHA1-Digest: p+OWbP8mWRW48xCd09rtpXfGLQg=
 
 Name: system/etc/female/framework/appManager/com.android.settings/res/
  drawable-xhdpi/ic_wifi_lock_signal_2.png
@@ -8947,7 +8950,7 @@ Name: system/etc/female/statusbar/res/drawable-xhdpi/stat_usb_switch_t
 SHA1-Digest: Yy9Rkjlf+0tkgmkFpZlsP2ZmTiI=
 
 Name: system/lib/libdbus.so
-SHA1-Digest: Eju5qQV52lEiFriodBTnmtLBh8g=
+SHA1-Digest: Gk3d4dKU43NcE9k0kJmiG+b95yk=
 
 Name: system/bin/input
 SHA1-Digest: QALzgk6btxyAeKYglJuc20newks=
@@ -8966,7 +8969,7 @@ Name: system/bin/memsicd
 SHA1-Digest: RK5VreiMCwBnvhz3FAdvNzYsEEI=
 
 Name: system/bin/pq
-SHA1-Digest: LxT/08NUYGgKeU/mBb4toiCZrjE=
+SHA1-Digest: K7DxEAlj9txCKof+5OHR8XnakK4=
 
 Name: system/etc/female/framework/framework-res/actionbar/framework/re
  s/drawable-xhdpi/yi_ab_solid_shadow_baidu.9.png
@@ -8984,7 +8987,7 @@ Name: system/framework/core.jar.jex
 SHA1-Digest: gWnjesV7YdW7bu1ZLs9jkxi9NHM=
 
 Name: system/lib/libmmprofile_jni.so
-SHA1-Digest: uZEpBKBWCaOhBmEuXg2Ayk95Pgg=
+SHA1-Digest: RhMbLw1KuJykEpDhh6X3xtRHtyA=
 
 Name: system/etc/water/icons/xhdpi/com.baidu.tieba.png
 SHA1-Digest: Lms2YSc0Ol9+1fXPbQjjcRQ2e6Q=
@@ -9001,7 +9004,7 @@ Name: system/etc/water/framework/appManager/com.android.settings/res/d
 SHA1-Digest: ZHlfgaO74RggGymHSEYPfYAo3UI=
 
 Name: system/lib/libjni_filtershow_filtersForGallery.so
-SHA1-Digest: hU9m6WKVl68U5TtguxjOj28EGgY=
+SHA1-Digest: t4f/Hx1Qtw9TNMzJOi4nmr1WBk4=
 
 Name: system/etc/female/csp/yellowpage/res/drawable-xhdpi/ic_yellow_pa
  ges_btn_normal.9.png
@@ -9047,14 +9050,14 @@ Name: system/etc/female/csp/message/res/drawable-xhdpi/popup_notice_bg
 SHA1-Digest: 2nK4KpiUvRqbx/Z4+UBslRddr5k=
 
 Name: system/lib/libsurfaceflinger.so
-SHA1-Digest: E9KLPnsY2TM70KT5evpw/KIRf2g=
+SHA1-Digest: p+dG6O6FRcs3okPu/J54GM7zEyM=
 
 Name: system/etc/female/framework/downloads/com.android.providers.down
  loads.ui/res/drawable-xhdpi/size.png
 SHA1-Digest: 1sOuU1n8fOggrb4fR18jEy69BlI=
 
 Name: system/bin/sn
-SHA1-Digest: Hi1n1rvR/mRfnldUIDmag9p+3h0=
+SHA1-Digest: +VVLoNZaPHyU/1PV9OOf16H84UQ=
 
 Name: system/etc/female/csp/message/res/drawable-xhdpi/ic_mess_birsday
  .png
@@ -9064,7 +9067,7 @@ Name: system/etc/female/icons/xhdpi/com.android.calendar_12.png
 SHA1-Digest: Hunj+/mogPsmZnul0QPia6Tobl0=
 
 Name: system/etc/water.btp
-SHA1-Digest: YyB1kJrKKnd92QJOGFWEq7eU/h4=
+SHA1-Digest: sPOC7RZAD/JRpGEDzRq79X0ROPA=
 
 Name: system/etc/water/framework/framework-res/other/framework/res/dra
  wable-xhdpi/yi_toast_frame_baidu.9.png
@@ -9074,7 +9077,7 @@ Name: system/lib/libsapi_V5_1.so
 SHA1-Digest: icinB1bHU0IsnVqu716MxmcQLus=
 
 Name: system/bin/tc
-SHA1-Digest: JAj5ZT3BumlZcd7JAPJaQeBh1TI=
+SHA1-Digest: UNXz58ivRDi35ck6ckwP7ZpRljo=
 
 Name: system/etc/water/statusbar/res/drawable-xhdpi/ic_stat_sys_flashl
  ight_off.png
@@ -9119,7 +9122,7 @@ Name: system/etc/security/cacerts/33815e15.0
 SHA1-Digest: Tg2OusUL9dKQej4AiGYCRSEgVyY=
 
 Name: system/lib/libJniWordSegService.so
-SHA1-Digest: HdIXPxeChavYaIzPzLzPgrsgrTs=
+SHA1-Digest: 32O7RNQQiQEdAH+LOuh9PsMeLA4=
 
 Name: system/etc/water/icons/xhdpi/com.android.calendar_29.png
 SHA1-Digest: RMF4EzpsNKUTTHDI67COvbtP8Vc=
@@ -9128,7 +9131,7 @@ Name: system/etc/water/icons/xhdpi/com.baidu.searchbox.png
 SHA1-Digest: +ZXdd84g335Aiud7HIzg7fBLZi0=
 
 Name: system/lib/libwebcore.so
-SHA1-Digest: 8k7ycaPhdaTXkg51qNd+sSd4z9k=
+SHA1-Digest: BuasISNICDqSywz14oiHVUlTGIk=
 
 Name: system/etc/water/com.baidu.home2/main/res/drawable-xhdpi/ic_laun
  cher_calendar_18.png
@@ -9164,7 +9167,7 @@ Name: system/media/audio/alarms/Alarm_Rooster_02.ogg
 SHA1-Digest: JhaluUQTr5D/bqpvzCXxM4fZMOw=
 
 Name: system/app/BaiduServiceFramework.apk
-SHA1-Digest: QLKIREM1VoeR2pX3ArEnAac04Go=
+SHA1-Digest: F3XJmyDQs8kgmkxHHgfbDIBK3n4=
 
 Name: system/etc/female/com.baidu.home2/main/res/drawable-xhdpi/ic_lau
  ncher_calendar_22.png
@@ -9182,10 +9185,10 @@ Name: system/etc/water/framework/baiduclock/com.baidu.baiduclock/res/d
 SHA1-Digest: OzKSbxIexiEFHsv94avkwqOAsOM=
 
 Name: system/lib/hw/gps.goldfish.so
-SHA1-Digest: MdkTuPrGfmfQ/OUomkAbubTcZv8=
+SHA1-Digest: h02IGD/0H7M4lhCo6BlGpaWGqWw=
 
 Name: system/bin/factory
-SHA1-Digest: R5U3Z/js/O3i9ujKzy1HNjEuVPo=
+SHA1-Digest: jBuDHp3DlE3yjVS8CW0xXL67DLs=
 
 Name: system/etc/female/framework/appManager/com.android.settings/res/
  drawable-xhdpi/ic_settings_slide_selected.png
@@ -9235,7 +9238,7 @@ Name: system/etc/female/lockwallpaper/hdpi/default_lock_wallpaper.png
 SHA1-Digest: NC5hakie41e5qKYx65b8Q2IeV44=
 
 Name: system/bin/udptest
-SHA1-Digest: pnGLw9ZAsQQdDyy4Bh9LZfuMpKQ=
+SHA1-Digest: eWuOZdow0HGpDehkBOnGULyWbBQ=
 
 Name: system/etc/female/com.baidu.home2/weatherwidget/res/drawable-xhd
  pi/tpwidget_ic_weather_small_sun.png
@@ -9272,7 +9275,7 @@ Name: system/etc/water/statusbar/com.baidu.onekeywidget/res/drawable-x
 SHA1-Digest: 1wAaYAgnxACYlj2ckxDXKpxnK2M=
 
 Name: system/lib/libmdnssd.so
-SHA1-Digest: 8uRtXySl3mp960q10l6KMp/bV7s=
+SHA1-Digest: asNpj/1SFUdaaLdCEJh+Rzs+gQY=
 
 Name: system/etc/female/framework/powerOff/framework-res/res/drawable-
  xhdpi/ic_audio_ring_notif_vibrate.png
@@ -9323,7 +9326,7 @@ Name: system/etc/female/com.baidu.home2/main/res/drawable-xhdpi/ic_cam
 SHA1-Digest: /WRiVwky/IeKm4jS9RFwW7XAvEU=
 
 Name: system/bin/stream
-SHA1-Digest: xr8CLX7yyUGe5lXOwnwP21FJpEU=
+SHA1-Digest: dLO56lczJ/ongJrCCjy4uDbE6Do=
 
 Name: system/etc/water/framework/framework-res/numberpicker/framework/
  res/drawable-xhdpi/yi_numberpicker_down_disabled_focused_baidu_light.
@@ -9360,7 +9363,7 @@ Name: system/etc/water/framework/framework-res/textfield/framework/res
 SHA1-Digest: BwVqNZQQFrEdsMPNC0yv0tVNILk=
 
 Name: system/bin/permission_check
-SHA1-Digest: Dkij8qyJqzABs70SSqzga8spW8M=
+SHA1-Digest: wtf0+8F/55xQhQu5suy+iGgYzn0=
 
 Name: system/etc/water/statusbar/com.baidu.home2/res/drawable-xhdpi/on
  ekey_widget_medium_preview.png
@@ -9429,7 +9432,7 @@ Name: system/media/audio/alarms/Neptunium.ogg
 SHA1-Digest: DwU3eqPxlPlmgdhlf9eGw8eSfks=
 
 Name: system/lib/libSR_AudioIn.so
-SHA1-Digest: TLDqXCr/MpnkXanY/oNI8qr7P9E=
+SHA1-Digest: N/V/gF4ud8Fk1gsBF2K+Vn/Mu2s=
 
 Name: system/media/audio/notifications/Drip.ogg
 SHA1-Digest: sE+btoNoJLKDl3c9m4fbGnA/+UY=
@@ -9453,7 +9456,7 @@ Name: system/etc/vold.fstab
 SHA1-Digest: YrCKeGS2pNucAwGYp3ZO7hQV/LA=
 
 Name: system/bin/ip6tables
-SHA1-Digest: tfVq3r6zLHVhKY7oJa3sumySl/k=
+SHA1-Digest: 8FN/XSQBP3RqLYvGA4KH5qRELkE=
 
 Name: system/etc/female/csp/message/res/drawable-xhdpi/ic_send_color_h
  olo_light.9.png
@@ -9525,7 +9528,7 @@ Name: system/etc/female/com.baidu.home2/weatherwidget/res/drawable-xhd
 SHA1-Digest: HlzQYn9ToSkQaFM70HqqImFM6WI=
 
 Name: system/lib/libstagefright_soft_mp3dec.so
-SHA1-Digest: aSA0095KnhFxOI5u6OZshZmn+mA=
+SHA1-Digest: /JhqXPzBstm0OQcjxobqX7PwBLE=
 
 Name: system/media/audio/ringtones/WonderfulLife.ogg
 SHA1-Digest: uSXsbd/kQHoOZQgAACcqr4INm6E=
@@ -9539,7 +9542,7 @@ Name: system/etc/female/framework/framework-res/radio/framework/res/dr
 SHA1-Digest: wIdRQnJ/Wj/+VUKM6eErkLX38FI=
 
 Name: system/lib/libttspico.so
-SHA1-Digest: ljSl0kUGyq03MTZXssm+5HfCtP8=
+SHA1-Digest: wRdbmirnkq3ax0KdmI9brffqqsc=
 
 Name: system/etc/female/framework/framework-res/list/framework/res/dra
  wable-xhdpi/yi_list_activated_baidu.9.png
@@ -9577,7 +9580,7 @@ Name: system/usr/keylayout/Vendor_046d_Product_c532.kl
 SHA1-Digest: iT7ZHxI43pKBUzjQc541oOM22hc=
 
 Name: system/app/BulletinSubPage.apk
-SHA1-Digest: Rna3GrDqXqJ4zooxmkFVUIkvKLo=
+SHA1-Digest: Nodo/P5sqEu27LkNcxeeP5hADMs=
 
 Name: system/etc/water/csp/dial/res/drawable-xhdpi/ic_call_dial_btn_2.
  png
@@ -9648,7 +9651,7 @@ Name: system/etc/female/framework/filemanager/com.baidu.resmanager.fil
 SHA1-Digest: PhW5Sg2JJq4WZoC0AzqbFNCZctY=
 
 Name: system/lib/soundfx/libdownmix.so
-SHA1-Digest: OatlitTdpITtnMw2v2fWIKap9GA=
+SHA1-Digest: q2CA8kHCJu5bF3AuRi5ZHNLScEw=
 
 Name: system/etc/female/csp/dial/res/drawable-xhdpi/yi_ic_yellow_pages
  _holo_light.png
@@ -9658,7 +9661,7 @@ Name: system/usr/keychars/Virtual.kcm
 SHA1-Digest: xYiPhd++Jpvl6ARXJyusriz4pqE=
 
 Name: system/lib/libbcc.so
-SHA1-Digest: o9XT9rfd1MLtscNt39N7uaboOrY=
+SHA1-Digest: sih+uns5RfSsESjnS9s/oIoMEXU=
 
 Name: system/etc/female/framework/framework-res/radio/framework/res/dr
  awable-xhdpi/yi_btn_radio_off_focused_baidu_light.png
@@ -9726,7 +9729,7 @@ Name: system/etc/water/framework/framework-res/switch/framework/res/dr
 SHA1-Digest: QiZdI2F6uhZv9Ibe3K9phWQceAA=
 
 Name: system/lib/libc.so
-SHA1-Digest: D6A2156mCmVyq6R9ABhl/Azst4E=
+SHA1-Digest: ff6x+9ijDRFHf00IU42bsqEPjm0=
 
 Name: system/etc/water/framework/framework-res/radio/framework/res/dra
  wable-xhdpi/yi_btn_star_off_disabled_baidu_light.png
@@ -9813,10 +9816,10 @@ Name: system/etc/female/icons/xhdpi/com.baidu.notepad.png
 SHA1-Digest: Zl8xrGfk/ejROvADHsBFDcYbHbc=
 
 Name: system/bin/applypatch
-SHA1-Digest: 7qMUHkeljBahG4FDdRbNSoLcZxk=
+SHA1-Digest: jJWw5gpxMRnjYQmXIXBS8DXlJ2Q=
 
 Name: system/lib/libpower.so
-SHA1-Digest: IflQ90OCCWfDOE8fjOthhTxyY2c=
+SHA1-Digest: /Rnk4SoOp514qytFEjzVmEp3yk0=
 
 Name: system/etc/female/icons/xhdpi/com.baidu.backuprestore.png
 SHA1-Digest: MePLk5bwH378Fl5AUgtAvuJnu1E=
@@ -9835,22 +9838,22 @@ Name: system/etc/female/framework/framework-res/actionbar/framework/re
 SHA1-Digest: EPomrgUQCAH/ATFZxGJcvHht/Pw=
 
 Name: system/xbin/showslab
-SHA1-Digest: w75DpJMMBjje6bEcSQAk1hM0JFQ=
+SHA1-Digest: drY1+xVwMhzZAljjHpN6IkpHwvs=
 
 Name: system/lib/libsonivox.so
-SHA1-Digest: TYJi5p6gXcJhfogP3d9tXbygMYQ=
+SHA1-Digest: 2yi37bYRhA5Iwdis6pxBlxTQjFQ=
 
 Name: system/etc/water/icons/xhdpi/com.baidu.baiduclock.png
 SHA1-Digest: M4Or4cM54amd762LxoZXuwhpHjs=
 
 Name: system/lib/libstagefright.so
-SHA1-Digest: cLV80/3N3UR1mK20+J7xHhvQ5Ik=
+SHA1-Digest: Oq+PgS9as6wxpkFgh486gHcDiXE=
 
 Name: system/etc/permissions/android.hardware.sensor.gyroscope.xml
 SHA1-Digest: brL84JgL2wCWqFvQAQDPM5lm+4o=
 
 Name: system/lib/libion.so
-SHA1-Digest: F40nWA9RzlbwUT+rVNLq92VxxSs=
+SHA1-Digest: eSu765/7ZERgY6AqFTb62l1TwIQ=
 
 Name: system/etc/female/icons/xhdpi/com.android.stk.png
 SHA1-Digest: d3zZdRZ9i5CAKHrPykFmgeopmfU=
@@ -9863,7 +9866,7 @@ Name: system/bin/settings
 SHA1-Digest: 8QUkSKMNAWs5G/VQMdS9sQ7tl0s=
 
 Name: system/xbin/sqlite3
-SHA1-Digest: CLhvdJqj1WFlhzRi2NSoaLrqQjQ=
+SHA1-Digest: 7spsSQr+NbFbODWzdk3YUsaUZdE=
 
 Name: system/etc/water/icons/xhdpi/app_logo.png
 SHA1-Digest: rg5HwOzcOr/Kd8Rv4JTRKRyZ0vU=
@@ -9875,7 +9878,7 @@ Name: system/etc/security/cacerts/84cba82f.0
 SHA1-Digest: m8/Q3u0mnTMsbDO41AfCzDSrMvg=
 
 Name: system/framework/am.jar
-SHA1-Digest: taGU2wcyGN77hDkAmZ3QR6m03EA=
+SHA1-Digest: jLlpSrRCztcrGUuyS1D7QOyi4xw=
 
 Name: system/etc/water/csp/contact/res/drawable-xhdpi/ic_contact_btn_c
  all1_normal.png
@@ -9900,7 +9903,7 @@ Name: system/etc/female/icons/xhdpi/com.android.calendar_19.png
 SHA1-Digest: EM+gPfUvx4AiPA4RUhtkeWAfZVw=
 
 Name: system/lib/librs_jni.so
-SHA1-Digest: HSANSXlb5Oc2LY7kVvx4Z5bhEFc=
+SHA1-Digest: 5uXC0zQAi2C3N7X8uBiO0FPPY8g=
 
 Name: system/lib/libcam.camshot.so
 SHA1-Digest: kuXbZCz2sWfREZe6s8i+GEJTrFk=
@@ -9909,7 +9912,7 @@ Name: system/bin/rtt
 SHA1-Digest: juwJmunRh7B6tVmABI7g2pCtOz8=
 
 Name: system/lib/libWordSegService.so
-SHA1-Digest: GeDyncMIm4L0toBvDHis5MW/RbE=
+SHA1-Digest: dpoQzBG5Sr50EnMriKq8+dofclY=
 
 Name: system/etc/security/cacerts/bc3f2570.0
 SHA1-Digest: T0YolQvu92p5y+/IKRYPyfG1tQs=
@@ -9947,7 +9950,7 @@ Name: system/etc/water/framework/userfeedback/com.baidu.yi.userfeedbac
 SHA1-Digest: rmakVYg4oFwyZgHzP2vYrvOKNUQ=
 
 Name: system/xbin/librank
-SHA1-Digest: Y+BP+IS94S6QRTPa2dZRueYSGy0=
+SHA1-Digest: DxtBDtMwckzh+M37KPYNvgVM5js=
 
 Name: system/etc/female/csp/message/res/drawable-xhdpi/ic_menu_msg_com
  pose_holo_dark.png
@@ -10032,11 +10035,14 @@ Name: system/etc/water/icons/xhdpi/com.taobao.taobao.png
 SHA1-Digest: hHEtFdXbe2M0ALp8NJG2wIHd0xE=
 
 Name: system/lib/libsurfaceflinger_ddmconnection.so
-SHA1-Digest: xQlYvHldaOws8YvQwtQevcfG4s0=
+SHA1-Digest: n6h5f/qcf6LRtt3e2RojnHp/cTE=
 
 Name: system/etc/female/framework/framework-res/tab/framework-yi/res/d
  rawable-xhdpi/yi_tab_top_unselected_focused_baidu.9.png
 SHA1-Digest: MyBJ/LsJOvQpu0t3GwOgLNdg0Fw=
+
+Name: system/etc/female/icons/xhdpi/com.baidu.trafficmonitor.png
+SHA1-Digest: y4x3LjNKYiw/Qq7Qx665jvdnX34=
 
 Name: system/etc/water/icons/xhdpi/com.sohu.newsclient.png
 SHA1-Digest: rzykB3V2e/6gigPcA7WXBOBvTrc=
@@ -10050,7 +10056,7 @@ Name: system/etc/female/framework/email/com.android.email/res/drawable
 SHA1-Digest: kr9I4HiVFLyujAFzoWjtq1RUlNU=
 
 Name: system/lib/libstagefright_chromium_http.so
-SHA1-Digest: CGvRAxvyh/Ob39QdyEiXIuE4jlM=
+SHA1-Digest: A5ukxAD1UwmRDsdWmD0w4C6BDDk=
 
 Name: system/etc/water/csp/message/res/drawable-xhdpi/tab_ic_mess_pic.
  png
@@ -10061,7 +10067,7 @@ Name: system/etc/female/csp/message/res/drawable-xhdpi/ic_launcher_con
 SHA1-Digest: XCjS7UgYI4nP08KezLk/oylL3vM=
 
 Name: system/lib/libAGifEncoder.so
-SHA1-Digest: 6LBUgCn42mp2Mfq+vBhSAWcYlzE=
+SHA1-Digest: X1wz8lAJuYa7bttxmPJ4av0Z/iU=
 
 Name: system/etc/female/com.baidu.home2/main/res/drawable-xhdpi/tpwidg
  et_banner_front.png
@@ -10135,7 +10141,7 @@ Name: system/etc/water/icons/xhdpi/com.kugou.android.png
 SHA1-Digest: bIXrd6Bexb0VZNMAkJQR8GErVCE=
 
 Name: system/app/SystemUI.apk
-SHA1-Digest: FtrT2lF9Sa0rLj3bjhOK3dqQdeA=
+SHA1-Digest: dTkZATR/6vBSDYsTcjoOmKOBLdM=
 
 Name: system/bin/ami304d
 SHA1-Digest: 4gKaN1Xf0GGpe2pBXUuJJ4FC+Og=
@@ -10170,7 +10176,7 @@ Name: system/etc/female/statusbar/res/drawable-xhdpi/ic_stat_sys_silen
 SHA1-Digest: G4+QOlTlDZSL0uit+Zrwl4DElqg=
 
 Name: system/framework/content.jar
-SHA1-Digest: n/SUfndWku+bJ9DwMbFKDZ5HYBc=
+SHA1-Digest: iOl2H+1GsZL//hLMYfdJldsxaTw=
 
 Name: system/etc/voicecommand/voiceui/uipattern/English/p_e_dic.bin.t
 SHA1-Digest: rC/ws4pUVmUQtVKKjG4i+en0Wh8=
@@ -10179,10 +10185,10 @@ Name: system/etc/voicecommand/voiceui/uipattern/English/p_e_dic.bin.p
 SHA1-Digest: rC/ws4pUVmUQtVKKjG4i+en0Wh8=
 
 Name: system/lib/libimageio_plat_drv.so
-SHA1-Digest: 4nLMeo3blbno+jxJkWp3gapFtP8=
+SHA1-Digest: TKOV+3CZ3whKoQWVCJco6hgpv5I=
 
 Name: system/lib/libsched.so
-SHA1-Digest: miM2ZYV9zVMKAXVz+Duz0IjXsY4=
+SHA1-Digest: 44/HiTBuJ8lc/tKHmf0jNjqmC/A=
 
 Name: system/etc/female/framework/antiTheft/com.baidu.antitheft/res/dr
  awable-xhdpi/ic_phone_back_btn_blue_pressed.9.png
@@ -10213,7 +10219,7 @@ Name: system/etc/water/framework/email/com.android.email/res/drawable-
 SHA1-Digest: XsI5hslrzJL31m6buQ70L9xDGFQ=
 
 Name: system/lib/libexif_jni.so
-SHA1-Digest: +ou7J5LJlKrKNCz4HHxIz0iT8mc=
+SHA1-Digest: v3V9D9inoLUHTVRLiu8uKO3//TE=
 
 Name: system/etc/female/csp/dial/res/drawable-xhdpi/ic_call_dial_btn_7
  .png
@@ -10237,17 +10243,17 @@ Name: system/etc/gps.conf
 SHA1-Digest: BDrBcRxHmdR9I9IrA70Y+UjMVRg=
 
 Name: system/bin/dmlog
-SHA1-Digest: SZe4k87aXFkDwJFwdwJPFnzxbFI=
+SHA1-Digest: Cl5r9R6Gg0UcoLzkgDD4QxQGl+A=
 
 Name: system/bin/dalvikvm
-SHA1-Digest: /mIBvuUCq9xjW/+xS5+aUeoK2qQ=
+SHA1-Digest: rKv4/H3DeYSvFCnSa7OV8njOzjY=
 
 Name: system/etc/female/framework/framework-res/spinner/framework/res/
  drawable-xhdpi/yi_spinner_ab_disabled_baidu_dark.9.png
 SHA1-Digest: J7hCRr4GyMI4Dqcl5VV7u0oinlM=
 
 Name: system/lib/libc_malloc_debug_leak.so
-SHA1-Digest: DB93jElDHDCAyvaD3E/eLhtfnZk=
+SHA1-Digest: B5uKqgAi/SkiQ17gVn1aY7QWwig=
 
 Name: system/etc/female/framework/framework-res/spinner/framework/res/
  drawable-xhdpi/yi_spinner_48_inner_light_baidu.png
@@ -10261,13 +10267,13 @@ Name: system/etc/water/lockwallpaper/xhdpi/default_lock_wallpaper.png
 SHA1-Digest: uk9IAnUOCd/yOBbytl5yHCwoqtg=
 
 Name: system/lib/libjni_mosaic.so
-SHA1-Digest: R1nNdix6/Mzem+zUz98lMUl+a8Q=
+SHA1-Digest: HmQFxnpmQXjkfiw5cvyB3v5D3LM=
 
 Name: system/bin/decoder
-SHA1-Digest: u38gYyaetw23tJgRg4yTZxBUesI=
+SHA1-Digest: Fxc2hLQX5Pd/TK02vB/6VTrPIqw=
 
 Name: system/lib/libvideoeditor_videofilters.so
-SHA1-Digest: lzOn/DIJHCETuBdqK88fNiw+LVI=
+SHA1-Digest: QB2LAMuAm82HF5Dp3Hen/UwEkpw=
 
 Name: system/etc/female/csp/contact/res/drawable-xhdpi/ic_menu_done_ho
  lo_light.png
@@ -10302,7 +10308,7 @@ Name: system/etc/water/csp/dial/res/drawable-xhdpi/call_log_filter_bg.
 SHA1-Digest: evOYaa8dR9knHGzumGdxM8TcsJs=
 
 Name: system/lib/libmpo.so
-SHA1-Digest: D+UKl+rTGhHowF2T9DQ9e4LJU4k=
+SHA1-Digest: Y7NlyAFt5sAiu9faLX91kyL7loc=
 
 Name: system/etc/water/framework/framework-res/other/framework-yi/res/
  drawable-xhdpi/cld_filter_dropdown_panel_baidu_light.9.png
@@ -10317,10 +10323,10 @@ Name: system/etc/female/framework/appManager/com.android.settings/res/
 SHA1-Digest: k7zc1D164Yz/edVYVi38G0ODxis=
 
 Name: system/xbin/add-property-tag
-SHA1-Digest: HlmreXqE0k/MjYZ7XW25JHw7RLk=
+SHA1-Digest: FKuj44eNb+AcGHeAvTLGzbWTgD4=
 
 Name: system/lib/libsoundpool.so
-SHA1-Digest: 8fK+YxBC0o6Tysujqb1vsu2r/Tw=
+SHA1-Digest: M3T70zh6/jyCTKI7/e11B4BOyLk=
 
 Name: system/etc/voicecommand/command/alarm/3/2.ogg
 SHA1-Digest: 6YyiRG78/KTPu4eTKXs9zyt84LI=
@@ -10373,7 +10379,7 @@ Name: system/etc/water/csp/dial/res/drawable-xhdpi/ic_call_qdial_btn_a
 SHA1-Digest: 0d3/1zq5S8E+V0gk9sMrLAx0YB4=
 
 Name: system/lib/libyi_backup_module.so
-SHA1-Digest: ZNGnX8ikv3Lnse4bnCQ94PtxGTM=
+SHA1-Digest: 1aiEB1TESJ/RTlVZkGrbgfsztyg=
 
 Name: system/etc/water/com.baidu.home2/main/res/drawable-xhdpi/home_bu
  tton_sethome.png
@@ -10406,7 +10412,7 @@ Name: system/media/audio/ringtones/Gimme_Mo_Town.ogg
 SHA1-Digest: jxLAdtBtLZWcPDzvjvOiaECZ9GY=
 
 Name: system/lib/libharfbuzz.so
-SHA1-Digest: th3A7RaacD006dujYmowmPlKA5w=
+SHA1-Digest: u0z/Pw8UQLr08sWCNy9RVzr1yvs=
 
 Name: system/tts/lang_pico/fr-FR_ta.bin
 SHA1-Digest: k5eoGN7uJD6gPoD62ErDAhLNV3k=
@@ -10420,10 +10426,10 @@ Name: system/etc/water/framework/thememanager/com.baidu.thememanager.u
 SHA1-Digest: VempFS8+3Q6f9rnVuAKMyUXaLM8=
 
 Name: system/lib/libctest.so
-SHA1-Digest: UnvwSN8J7s7XU9tWVQyac5YKYzA=
+SHA1-Digest: FztdaJ7EJJe/8jNnfaSB3JAd+w4=
 
 Name: system/framework/bouncycastle.jar
-SHA1-Digest: ma54n8E1u34YqOJJ2muPcxEXWIE=
+SHA1-Digest: P2Xe16yYvVyLD1eyrbwp5o5D+eU=
 
 Name: system/etc/water/csp/contact/res/drawable-xhdpi/ic_contact_index
  _left_bottom_pressed.9.png
@@ -10450,7 +10456,7 @@ Name: META-INF/com/google/android/updater-script
 SHA1-Digest: VFNkROrmoljiLj5E56b6RAYLCX0=
 
 Name: system/bin/sf2
-SHA1-Digest: hghf3MPGffwfiY2vymvl4UNdekY=
+SHA1-Digest: QTkK85RWj9hL3YZfUGBU82BTFUA=
 
 Name: system/etc/female/framework/ota/com.baidu.android.ota/res/drawab
  le-xhdpi/cld_ab_bottom_solid_light_baidu.9.png
@@ -10478,7 +10484,7 @@ Name: system/etc/water/csp/contact/res/drawable-xhdpi/ds_slot2_sms_unl
 SHA1-Digest: 9ILA0g7tOovSa/WxssMWmXnAqx0=
 
 Name: system/app/Calendar.apk
-SHA1-Digest: XdE6bDemroritLpxfqkSNlOcZ1M=
+SHA1-Digest: BblwN+EIApwL26i6gcFTG8Cn9DU=
 
 Name: system/etc/female/icons/xhdpi/com.android.calendar_28.png
 SHA1-Digest: +bS5pLvG93hpHejJSATlXx86U5o=
@@ -10499,7 +10505,7 @@ Name: system/etc/female/com.baidu.home2/weatherwidget/res/drawable-xhd
 SHA1-Digest: lrGlEAtYIQf6tGllrCt+DCXTwEU=
 
 Name: system/lib/libharfbuzz_ng.so
-SHA1-Digest: NKxguh4ZszL0W3MRcq1+bgqXTes=
+SHA1-Digest: V3csOIfSlkOfbgXrYMVcW/RkNw0=
 
 Name: system/etc/water/framework/BaiduVideoPlayer/com.baidu.videoplaye
  r/res/drawable-xhdpi/icon_list_folder.png
@@ -10510,7 +10516,7 @@ Name: system/etc/defaultTheme/lockwallpaper/hdpi/default_lock_wallpape
 SHA1-Digest: qU24/nIcJbytgYra2qHul/QV8+M=
 
 Name: system/bin/drmserver
-SHA1-Digest: GE8IlVzOZHFeyFAT7sNGSQBP69k=
+SHA1-Digest: dIQNkJgZFSDoCNgnta8sy/qyoxs=
 
 Name: system/etc/female/csp/contact/res/drawable-xhdpi/ic_contact_btn_
  call1_pressed.png
@@ -10569,7 +10575,7 @@ Name: system/etc/.tp/thermal.conf
 SHA1-Digest: q5HC2TKrZUNHBz399H+91s/AWbg=
 
 Name: system/build.prop
-SHA1-Digest: Szou24miLFd0+XEmcQcdJTiWazw=
+SHA1-Digest: 4MH7J+cKZrbbXc9vEPqqme1wrno=
 
 Name: system/lib/libssladp.so
 SHA1-Digest: i6c0IF0+KlJfFjqWlp2TftxT6W4=
@@ -10609,10 +10615,10 @@ Name: system/etc/female/framework/framework-res/radio/framework/res/dr
 SHA1-Digest: kARuePKthVFR3vPQsbFxavAH4sU=
 
 Name: system/lib/libbcc.sha1.so
-SHA1-Digest: SBLp3HZ6xYgiyTXyVyQrD2J4uqU=
+SHA1-Digest: qJc6QnchyIN/bbX5TOhPDOlui1g=
 
 Name: system/lib/libcorkscrew.so
-SHA1-Digest: PcP3EihdCCaqiQJy1nLD+4ALv0U=
+SHA1-Digest: QxxFE1wHzmrPOcRMtHh2bdxbmEM=
 
 Name: system/etc/water/com.baidu.home2/main/res/drawable-xhdpi/ic_came
  ra_widget_camera_aperture_bg.png
@@ -10622,12 +10628,12 @@ Name: system/etc/female/lockscreen/advance-xhdpi/ic_main_unlock_presse
  d.png
 SHA1-Digest: bmlU2Vz/B0tWq130CCk5w/0NjkM=
 
+Name: system/etc/water/icons/xhdpi/com.tencent.qqmusic.png
+SHA1-Digest: tp/ZegwHM93FfmbXddzZrHxhf/g=
+
 Name: system/etc/water/framework/framework-res/button/framework/res/dr
  awable-xhdpi/yi_btn_toggle_off_pressed_baidu_light.9.png
 SHA1-Digest: B0UGES1qybCKH7+qZM2ZC59CYBA=
-
-Name: system/etc/water/icons/xhdpi/com.tencent.qqmusic.png
-SHA1-Digest: tp/ZegwHM93FfmbXddzZrHxhf/g=
 
 Name: system/etc/water/framework/appManager/com.android.settings/res/d
  rawable-xhdpi/ic_settings_applications.png
@@ -10658,7 +10664,7 @@ Name: system/etc/security/cacerts/1eb37bdf.0
 SHA1-Digest: vHz58A2QzT7wd83T0nvUMdAkBps=
 
 Name: system/lib/libRS.so
-SHA1-Digest: Ge7ueOSIYmO0KDrEIHu75beLsvo=
+SHA1-Digest: nxrYxfTiG2Zua5BIHvxu2lTMx4A=
 
 Name: system/etc/water/csp/contact/res/drawable-xhdpi/edit_text_full_b
  ottom_disabled_light.9.png
@@ -10693,10 +10699,10 @@ Name: system/etc/water/csp/dial/res/drawable-xhdpi/ic_menu_call_btn_2.
 SHA1-Digest: aPc5beeWt1LlxFBvPv79liqT+7Q=
 
 Name: system/lib/libaudioflinger.so
-SHA1-Digest: pp/5DHzGR9k4wX51uKpOhSfQ2wI=
+SHA1-Digest: FSpKk+6SWPiGHkptMpGNI7yeeCk=
 
 Name: system/lib/libperfservicenative.so
-SHA1-Digest: 9olQyi3on3TuX8cHkmd6g0eiUsc=
+SHA1-Digest: SXPB4IVUT1sVzeKX+Ve6htPzty4=
 
 Name: system/bin/6620_launcher
 SHA1-Digest: vYPchjinRbms+VN9qNKjI0Om7Ls=
@@ -10714,7 +10720,7 @@ Name: system/etc/female/csp/message/res/drawable-xhdpi/ic_multi_select
 SHA1-Digest: XCjS7UgYI4nP08KezLk/oylL3vM=
 
 Name: system/bin/dbus-daemon
-SHA1-Digest: KBLEDznAHRgJkE1iEW/rmmD5kx0=
+SHA1-Digest: N4TCWlTWcPkXOnR4BX7P6Hvf9L4=
 
 Name: system/etc/water/com.baidu.home2/main/res/drawable-xhdpi/weather
  widget_searching_normal.9.png
@@ -10775,17 +10781,17 @@ Name: system/etc/water/framework/framework-res/list/framework/res/draw
 SHA1-Digest: fcQYAsRQd5xk7EL8CSS43zdgLEo=
 
 Name: system/lib/libmpodecoder.so
-SHA1-Digest: XwG44G539i86JPHkzqOgSPE2gCI=
+SHA1-Digest: wLE2XmfGypIdmMU0eU+COfDwb5o=
 
 Name: system/app/ResManager.apk
-SHA1-Digest: q/fXX7985zZsCh5sx0kRE0uDTvs=
+SHA1-Digest: CutekaVxpsnMK7Kf+ZgIrohwOqQ=
 
 Name: system/etc/female/com.baidu.home2/main/res/drawable-xhdpi/ic_lau
  ncher_calendar_11.png
 SHA1-Digest: 9GAdzqxjtjRhkUmowxSCSj3hc1c=
 
 Name: system/lib/libdefcontainer_jni.so
-SHA1-Digest: CJ6QeChGnBIqwrA8LQgMT8yfXgk=
+SHA1-Digest: 7rHpNEOve5ca9HTldu6wA9/ykpM=
 
 Name: system/etc/security/cacerts/dbc54cab.0
 SHA1-Digest: G7ilNysmUiKqjP0b0/CgdRCDdpE=
@@ -10805,7 +10811,7 @@ Name: system/etc/female/framework/framework-res/radio/framework/res/dr
 SHA1-Digest: UCV7MTcgqnHJm6O9Bzey9gmrwbs=
 
 Name: system/bin/tiny_switch
-SHA1-Digest: Jxpi3pYEttvGIeuvN0xcSKqHLa0=
+SHA1-Digest: IlJQxJRueggP1CJfWa5TK+/TjY4=
 
 Name: system/etc/water/framework/framework-res/switch/framework/res/dr
  awable-xhdpi/yi_switch_thumb_activated_disabled_baidu_light.9.png
@@ -10821,7 +10827,7 @@ Name: system/etc/security/cacerts/5046c355.0
 SHA1-Digest: yq910Cd0R0uzSNpNm6fYzr5Q5Ho=
 
 Name: system/bin/surfaceflinger
-SHA1-Digest: Aijvi1Z27l2pfUeTtQ87T6COcpk=
+SHA1-Digest: ET4/qqPGnBy8WvTJsqZ20V+d0KU=
 
 Name: system/etc/female/framework/framework-res/battery/framework/res/
  drawable-xhdpi/battery_0.png
@@ -10854,7 +10860,7 @@ Name: system/etc/security/cacerts/9685a493.0
 SHA1-Digest: kaSX6pI0rQB+TDbRWSlOP44RXUE=
 
 Name: system/app/PicoTts.apk
-SHA1-Digest: yr6ihrMjQ8lKNe0JLa+WqwxKy1s=
+SHA1-Digest: qqhpUsqGqfFQcnA/R92Nlo9O0RU=
 
 Name: system/etc/female/csp/message/res/drawable-xhdpi/ic_maps_next.pn
  g
@@ -10872,14 +10878,14 @@ Name: system/etc/female/com.baidu.home2/main/res/drawable-xhdpi/all_ap
 SHA1-Digest: XssTrBH3i4fjcKoNmSqiLCe7SI4=
 
 Name: system/app/Exchange2.apk
-SHA1-Digest: KFGU+FZVlMCNcGGNk/N5hclI38w=
+SHA1-Digest: k692fRw0cGOPeMneftPzSj6jdM8=
 
 Name: system/etc/water/framework/framework-res/tab/framework-yi/res/dr
  awable-xhdpi/yi_tab_top_unselected_pressed_baidu.9.png
 SHA1-Digest: rtReuybawTsYxv8Lt1LiriGkClw=
 
 Name: system/lib/libcustom_jni.so
-SHA1-Digest: 9eR2qkSDlaCxzMzyJwXxUX5uXrM=
+SHA1-Digest: mDwjbNNaVnzn0BSdwN0tXhPb4UA=
 
 Name: system/etc/water/framework/appManager/com.android.settings/res/d
  rawable-xhdpi/ic_sync_green.png
@@ -10916,17 +10922,17 @@ Name: system/etc/female/framework/framework-res/button/framework/res/d
 SHA1-Digest: YGh9KQgP3mzCSu25n7hhLc402Cs=
 
 Name: system/bin/schedtest
-SHA1-Digest: BcO3GNEn7EbF6iE7aUrjlaEyYhM=
+SHA1-Digest: fHT5819OyKw33M+D/pMnl48z80g=
 
 Name: system/app/CertInstaller.apk
-SHA1-Digest: frsF4G8wbwj5PDwKAwJa2USo5Fg=
+SHA1-Digest: imIpuSgUoB3A+A+jeQF07/p/kD4=
 
 Name: system/etc/female/csp/message/res/drawable-xhdpi/bg_ds_slot1_sms
  _unlock_pressed.9.png
 SHA1-Digest: hF+2RR6MFU+nDr3OFePJfjAaD70=
 
 Name: system/app/PhotoTable.apk
-SHA1-Digest: JoCULkpu76/FgntQcAcPq45Umyo=
+SHA1-Digest: Kt+Gpc8QRLQJazCc6V/icoZjJ0Q=
 
 Name: system/etc/female/icons/xhdpi/com.autonavi.minimap.png
 SHA1-Digest: 4WI++q5x1XQ35kUovBhi4uA3QnA=
@@ -10965,7 +10971,7 @@ Name: system/etc/female/framework/antiTheft/com.baidu.antitheft/res/dr
 SHA1-Digest: jG0FTTVjA1Jx0npbnbrbU6wV/aw=
 
 Name: system/lib/libstagefright_soft_flacenc.so
-SHA1-Digest: fkUC3vCO2KeAx4N3aJAtaG/TKVw=
+SHA1-Digest: iQiR7q4OPxt/StnH5rwId2gZbVI=
 
 Name: system/etc/.tp/thermal.off.conf
 SHA1-Digest: l0I95x2tD1QyYz4iIa3PApFYYyc=
@@ -10982,7 +10988,7 @@ Name: system/etc/female/framework/antiTheft/com.baidu.antitheft/res/dr
 SHA1-Digest: RYmgsf6NGI7uzgdvEBUEDJjfP9k=
 
 Name: system/app/DrmProvider.apk
-SHA1-Digest: 7+Q+1bF7iTUhPgxR9/oB5+AgQh4=
+SHA1-Digest: zuJlNadXe8Qt/xQMO6mtfewzXBo=
 
 Name: system/etc/female/wallpaper/cover/default_wallpaper.jpg
 SHA1-Digest: PX8pz/KShrOPMwxuRsz8YotvUlY=
@@ -11032,7 +11038,7 @@ Name: system/lib/crtbegin_so.o
 SHA1-Digest: JkvT/RrzcTujr4IzJ6D5N9Fhu/8=
 
 Name: system/bin/atrace
-SHA1-Digest: 2RHXW1cV54V22vMUpKh4d7irDYY=
+SHA1-Digest: X7L9ONwb20lftl4ZjWwN6vGLZ68=
 
 Name: system/etc/water/csp/contact/res/drawable-xhdpi/tab_ic_page_sele
  cted.png
@@ -11042,7 +11048,7 @@ Name: system/fonts/DroidSansArmenian.ttf
 SHA1-Digest: lC+raRjA3Jv1n2KrFeP9OHNrvo0=
 
 Name: system/app/Yellowpages.apk
-SHA1-Digest: aJVkpddF/5InebJGtTS9/IcOmHk=
+SHA1-Digest: lHz2YSLAepokREz5+/9QfB+drT0=
 
 Name: system/etc/female/com.baidu.home2/main/res/drawable-xhdpi/ic_lau
  ncher_calendar_20.png
@@ -11052,7 +11058,7 @@ Name: system/etc/factory.ini
 SHA1-Digest: mrMI37AgPaDhkluPizAOqviN/OM=
 
 Name: system/bin/mediaserver
-SHA1-Digest: DTE9Lj5C4IZKAXOd2eJAQIx5VsM=
+SHA1-Digest: HnmOENoBObStpsYhJlELQuxYdas=
 
 Name: system/etc/female/csp/more/res/drawable-xhdpi/tab_ic_mess_wish.p
  ng
@@ -11083,7 +11089,7 @@ Name: system/etc/female/framework/framework-res/list/framework/res/dra
 SHA1-Digest: 6KIk9rV52lFzAPbTc9+4gH3c3y8=
 
 Name: system/app/BaiduUpdate.apk
-SHA1-Digest: zVeiLqRb+/TQVpKv3spTVDY47uw=
+SHA1-Digest: 4ymdsrRX+m6bv+QH9hTR2XMVH7o=
 
 Name: system/etc/water/statusbar/com.baidu.onekeywidget/res/drawable-x
  hdpi/item_app_lock_on.png
@@ -11126,7 +11132,7 @@ Name: system/etc/water/icons/xhdpi/com.android.calculator2.png
 SHA1-Digest: y7BR+Ujm3EFSAG9hUJkbpfYhhX0=
 
 Name: system/app/FindmeDM.apk
-SHA1-Digest: 2nX9Eo/HuGkjpDWb9TsOhA+AHBU=
+SHA1-Digest: tF2OJ0Vswh6mExJ0AdpSDHq6mr0=
 
 Name: system/etc/water/statusbar/com.baidu.onekeywidget/res/drawable-x
  hdpi/green_progress_0_30.png
@@ -11164,10 +11170,10 @@ Name: system/etc/water/framework/trafficmonitor/com.baidu.trafficmonit
 SHA1-Digest: 9yyXucv6rLXnVb/kyJbWbV20KMs=
 
 Name: system/bin/batterywarning
-SHA1-Digest: VVESHKhukRWXH44Zjtje4agH1aU=
+SHA1-Digest: HSh5PmsK5VFV0apDakRadojo/s8=
 
 Name: system/lib/liblog.so
-SHA1-Digest: ejkzVM3SXi2M+ISd9qajMRr/2+0=
+SHA1-Digest: NAehdr8aAKRl/j8VQfxnX8OyHSI=
 
 Name: system/vendor/lib/drm/libdrmwvmplugin.so
 SHA1-Digest: voGUSHm2UwaHseChvf1OSshTN5Y=
@@ -11192,10 +11198,10 @@ Name: system/etc/female/framework/framework-res/scrubber/framework/res
 SHA1-Digest: fiL0v4jtUfpXdLwG+Rkq7KNYHcQ=
 
 Name: system/lib/libjni_eglfenceForGallery.so
-SHA1-Digest: 6K9WRlDf6yLGN3PXwYMwt04P9zE=
+SHA1-Digest: u9lemkEsXp4DlDmVmQADAS7yx4A=
 
 Name: system/bin/iptables
-SHA1-Digest: H1CJboks9Ea/aBKrPFA2O/JE+Ro=
+SHA1-Digest: c34j3E0p0tl7KjEqWw8lvMeWaBA=
 
 Name: system/etc/female/icons/xhdpi/folder_edit_normal.png
 SHA1-Digest: ywlgbEgj35Nt5pcLGcjMT/hWoLk=
@@ -11221,7 +11227,7 @@ Name: system/etc/water/framework/appManager/com.android.settings/res/d
 SHA1-Digest: o7DMPQlrT0tCi6WdbtKR9H1Fzjg=
 
 Name: system/app/OnlineWallpaper.apk
-SHA1-Digest: H7Phul1wTIMIlciaDYGMkNGYjQg=
+SHA1-Digest: 39P+kBpJYRDd5YChM6ydsNj7m78=
 
 Name: system/etc/female/com.baidu.home2/main/res/drawable-xhdpi/ic_cam
  era_widget_off.png
@@ -11260,7 +11266,7 @@ Name: system/etc/water/framework/thememanager/com.baidu.thememanager.u
 SHA1-Digest: fvPD+z2XvgC82fFWKBmJ7N4QA78=
 
 Name: system/app/BaiduSecurityCenter.apk
-SHA1-Digest: 7V40f6ELCk+WIyQeukr+ugVmBcg=
+SHA1-Digest: q4uKUt79ClBn6BIGWKzl9NgVzB8=
 
 Name: system/etc/female/csp/message/res/drawable-xhdpi/tab_ic_mess_con
  tact.png
@@ -11290,7 +11296,7 @@ Name: system/etc/female/icons/xhdpi/com.baidu.thememanager.ui.png
 SHA1-Digest: oZ+SxkSBq/Blv3fPNNrc5UF0DJI=
 
 Name: system/app/LiveWallpapersPicker.apk
-SHA1-Digest: LbgjnTr8w3qUr0Y7m4orz43Y3q4=
+SHA1-Digest: DpeLK+N2bMnDGxiLEy2wJt8Jz6c=
 
 Name: system/media/audio/ringtones/OrganDub.ogg
 SHA1-Digest: B0hF9Oq6Ixz2/YNXo1zjEh12grM=
@@ -11303,7 +11309,7 @@ Name: system/etc/water/framework/filemanager/com.baidu.resmanager.file
 SHA1-Digest: ka4dCu/2i6LwEXN4LsFzll7ZDjk=
 
 Name: system/bin/thermal
-SHA1-Digest: YDXgkMfeNf62NC7sXlbYSsyrQ0E=
+SHA1-Digest: 4NYa+MuQq7MOJzOyT0yOmFIT92o=
 
 Name: system/etc/female/com.baidu.home2/main/res/drawable-xhdpi/tpwidg
  et_clock_9.png
@@ -11325,7 +11331,7 @@ Name: system/etc/water/csp/contact/res/drawable-xhdpi/edit_text_part_b
 SHA1-Digest: 3PqytIbJNBkdViDuoiolKRaUSBw=
 
 Name: system/lib/soundfx/libvisualizer.so
-SHA1-Digest: GqMFn9L1hS8zKwG4TSC5x+7ZI9Y=
+SHA1-Digest: JLyw8tBm//u+yYKqBLvgaHmLQZI=
 
 Name: system/etc/female/framework/appManager/com.android.settings/res/
  drawable-xhdpi/ic_settings_auto.png
@@ -11373,7 +11379,7 @@ Name: system/etc/female/icons/xhdpi/com.baidu.searchbox.png
 SHA1-Digest: 2kypGNFlcjrmj1lKao7Bui7ksMs=
 
 Name: system/xbin/procmem
-SHA1-Digest: kCaNyRKpE/vaTcLzrcyKFNbjNpc=
+SHA1-Digest: Sr6xGDU1vTyf5zfo2tGejMwu5tc=
 
 Name: system/etc/female/com.baidu.home2/main/res/drawable-xhdpi/ic_lau
  ncher_calendar_26.png
@@ -11528,7 +11534,7 @@ Name: system/etc/female/framework/appManager/com.android.settings/res/
 SHA1-Digest: VrooVaJi5senUZjgxbc+MaWclZU=
 
 Name: system/lib/libmediaplayerservice.so
-SHA1-Digest: abC/kzzW+i9i9QDiUUhkhTnxYbA=
+SHA1-Digest: AdV73e91hId3S5fj0etTKIo+f98=
 
 Name: system/etc/water/csp/contact/res/drawable-xhdpi/ic_contact_index
  _left_top_normal.9.png
@@ -11542,7 +11548,7 @@ Name: system/etc/water/com.baidu.home2/weatherwidget/res/drawable-xhdp
 SHA1-Digest: mErUCY3lsd9qf1cXzWamDJF3Mb8=
 
 Name: system/lib/libsensorservice.so
-SHA1-Digest: OfdhCwKId37Wcm+wd9fLSzWksk8=
+SHA1-Digest: zZAEGAAVyCfgjxrbQBydZSBxi+M=
 
 Name: system/etc/female/icons/xhdpi/com.baidu.android.ota.png
 SHA1-Digest: ogNppeJFYld/a5bQlfVYZSEcaNc=
@@ -11552,7 +11558,7 @@ Name: system/etc/water/framework/framework-res/radio/framework/res/dra
 SHA1-Digest: KBG6a6UdRMBZVVpLw9bDwcmm0EI=
 
 Name: system/bin/dexopt
-SHA1-Digest: n+SrgJ7VTls99nMTbAvW7IGMOE4=
+SHA1-Digest: fQ5ZH/5arUs0Rax4zu5L/2WpjvA=
 
 Name: system/etc/female/framework/appManager/com.android.settings/res/
  drawable-xhdpi/ic_bt_laptop.png
@@ -11622,7 +11628,7 @@ Name: system/etc/female/framework/appManager/com.android.settings/res/
 SHA1-Digest: 6XAbgpDaw8+PJob9cCoUspC/3NI=
 
 Name: system/framework/settings.jar
-SHA1-Digest: 9upmQb8gIgUP0Ygnl3kvnHtPqfU=
+SHA1-Digest: DHKr0WeE5Z9bU/XWie6Ffffiosg=
 
 Name: system/etc/female/icons/xhdpi/com.wochacha.png
 SHA1-Digest: YS3/PnZxbIKKWx9oT574DAzvm3I=
@@ -11634,7 +11640,7 @@ Name: system/etc/hosts
 SHA1-Digest: qoLbiBHBDHEvqhMNitAGjBu/De8=
 
 Name: system/lib/libcompiler_rt.so
-SHA1-Digest: kPMHFCd9R4FBz8XesCb9O2T9IlA=
+SHA1-Digest: LhkvR/eQfcXk69huGA3IJP0Ea+o=
 
 Name: system/etc/female/csp/message/res/drawable-xhdpi/popup_notice_bg
  _footer.9.png
@@ -11652,7 +11658,7 @@ Name: system/etc/water/com.baidu.home2/preview/preview_launcher.png
 SHA1-Digest: xWoSbEGJkU/xaB2510tXN7GWSOE=
 
 Name: system/lib/libstagefright_foundation.so
-SHA1-Digest: NlMX24jNf/o8Lx3FttdOAKLV5Ns=
+SHA1-Digest: VO3MBw+oHrX/BxxbAt1Nk1Ze2Lw=
 
 Name: system/etc/female/icons/xhdpi/fill_folder_bg.9.png
 SHA1-Digest: qhwFwkSK3Znv3txMqqJlQQv0TNA=
@@ -11710,7 +11716,7 @@ Name: system/etc/water/framework/DualcardSetting/com.baidu.dualcardset
 SHA1-Digest: xL9dwpPoJTMVOpvY284y0lxgd1E=
 
 Name: system/lib/libcommon_time_client.so
-SHA1-Digest: rvYKp7KkYmHzKCKLhsHUH2v6+eg=
+SHA1-Digest: qe6HJipF+T5k7YdEHglApV5Xbc4=
 
 Name: system/etc/security/cacerts/119afc2e.0
 SHA1-Digest: EWDvjIKz5iXOM8ywruinfBcudRs=
@@ -11728,7 +11734,7 @@ Name: system/etc/female/csp/dial/res/drawable-xhdpi/ic_call_qdial_btn_
 SHA1-Digest: gA9eImoJ4Pr8nMiStnm8hcuFnk8=
 
 Name: system/lib/libstagefright_amrnb_common.so
-SHA1-Digest: QGNNZRqAMpaXlHABmkDe6UUWVz0=
+SHA1-Digest: vvy/rEmN3ywAAmDLIRVFjb+yejw=
 
 Name: system/etc/dhcpcd/dhcpcd-run-hooks
 SHA1-Digest: 45jhBTsJr35CEQZApn9fjYeWTYA=
@@ -11765,10 +11771,10 @@ Name: system/etc/female/framework/appManager/com.android.settings/res/
 SHA1-Digest: e7+CytX2skkAoyksOLTOPQUxjqA=
 
 Name: system/bin/matv
-SHA1-Digest: QCR/rELmrUVXjWNpTLyQmnQIYJc=
+SHA1-Digest: 2Nu/Dp7N6Lqdhl+kBKJvejUHd1U=
 
 Name: system/lib/libsparse.so
-SHA1-Digest: fTQR/tMkV8tFbOhL0NKZZHkGbtM=
+SHA1-Digest: HjHuowqJYLsX0VoVxt0Q9bWPMHE=
 
 Name: system/etc/water/csp/contact/res/drawable-xhdpi/edit_spinner_top
  _pressed_light.9.png
@@ -11852,7 +11858,7 @@ Name: system/etc/female/framework/framework-res/button/framework/res/d
 SHA1-Digest: RG64OfAAuwrsAuBF/f3ySEmUTgU=
 
 Name: system/bin/app_process
-SHA1-Digest: n4daX2BZzHeH1hyH16xLJvP8eOo=
+SHA1-Digest: Hhc1CS3ZGZ7u6nqkw9grP4EM4mA=
 
 Name: system/lib/libimageeffectservice.so
 SHA1-Digest: IIevJU8CgR/P5s+tHpjufob/4sA=
@@ -11862,7 +11868,7 @@ Name: system/etc/water/csp/contact/res/drawable-xhdpi/ic_contact_data_
 SHA1-Digest: ZmTUqAEyN2t9eFqUrH8enWeXHNI=
 
 Name: system/lib/libstagefright_soft_h264dec.so
-SHA1-Digest: +lKPnmupnHoFBJUfMYJ84k29kSY=
+SHA1-Digest: jx1/0ddfD5T26kFcXAo7HqloXmQ=
 
 Name: system/etc/female/framework/account/com.baidu.bsf.service/res/dr
  awable-xhdpi/yi_textfield_default_baidu_light.9.png
@@ -11937,13 +11943,13 @@ Name: system/etc/female/csp/dial/res/drawable-xhdpi/ic_call_dial_btn_p
 SHA1-Digest: muTdmYTfisdc4lFBs3u+pfWs28M=
 
 Name: system/framework/framework-res.apk
-SHA1-Digest: DD3eVw36q7xEu1s26ZYT1AVDovw=
+SHA1-Digest: 4xPgXTQyDyN5UTmV6S62uKWlvsY=
 
 Name: system/framework/javax.obex.jar
-SHA1-Digest: eWWUVTLIZ2jGP/dsARECfOxVV5U=
+SHA1-Digest: 9nyc3Q+Kzj/6vi5Kvf9z4e7oF1I=
 
 Name: system/lib/libicui18n.so
-SHA1-Digest: pY435pJ8Jlup88+qWsDLoORPX2M=
+SHA1-Digest: tYK00ZKPy+m5SExKxF1ZQYFdnB4=
 
 Name: system/etc/water/csp/message/res/drawable-xhdpi/ic_phone_timelin
  e_line.9.png
@@ -11956,7 +11962,7 @@ Name: system/etc/security/cacerts/e8651083.0
 SHA1-Digest: WgJxTbOn+kJyfUYGkHMdssJ14+4=
 
 Name: system/app/BaiduSemiView.apk
-SHA1-Digest: YUT2CjsKkotEd1/iczhaOjcv//I=
+SHA1-Digest: vZlvl1Qm3TG0ZyU26YWNOhnElE4=
 
 Name: system/bin/dnsmasq
 SHA1-Digest: mw8/s9VqjC+EvNsTptAGlLNSFQo=
@@ -11985,7 +11991,7 @@ Name: system/etc/female/com.baidu.home2/main/res/drawable-xhdpi/ic_cam
 SHA1-Digest: yjTlHEfHCFM9KCoWy3cK83XRXAw=
 
 Name: system/bin/pngtest
-SHA1-Digest: XZJXqGNqIUQfMBbA0cwdNTsS1Qg=
+SHA1-Digest: Rpa18mmMbnij9dscvMuRUP/FuYM=
 
 Name: system/etc/water/framework/framework-res/dialog/framework/res/dr
  awable-xhdpi/yi_dialog_top_baidu_light.9.png
@@ -12030,7 +12036,7 @@ Name: system/etc/water/csp/contact/res/drawable-xhdpi/quickcontact_tra
 SHA1-Digest: 43KWrbJjWQNqdTPSm/oUSU5QtyY=
 
 Name: system/framework/core-junit.jar
-SHA1-Digest: 05iqPYYfqUmGTKQ83clDEaGCn4c=
+SHA1-Digest: MB3TtpPYVgnp2eXQ1oCc+vvE+Mc=
 
 Name: system/etc/female/statusbar/res/drawable-xhdpi/ic_switch_save_pr
  essed.png
@@ -12116,7 +12122,7 @@ SHA1-Digest: 9sVVh381NkZTsu85a6c/nRkvhl4=
 
 Name: system/etc/water/framework/framework-res/other/framework/res/dra
  wable-xhdpi/yi_window_bg_baidu.9.png
-SHA1-Digest: l7duM/xdw7tKJiRekdw/k48hpWc=
+SHA1-Digest: vgUMzqkJiH1V9/Pj/Ib45pjWFlA=
 
 Name: system/etc/female/framework/filemanager/com.baidu.resmanager.fil
  emanager/res/drawable-xhdpi/ic_filemanager_titlebar_path_normal.png
@@ -12186,7 +12192,7 @@ Name: system/etc/female/icons/xhdpi/ic_lc_shadow_dock.png
 SHA1-Digest: u0P+zEn3+XYWD2ICDF6WxDKpybc=
 
 Name: system/bin/tiny_swapon
-SHA1-Digest: YELkxkxgZRSegEpV1uBs6yWNPLQ=
+SHA1-Digest: Q9C8nx8/Hk0wKunbYAzBrg81sI4=
 
 Name: system/etc/water/icons/xhdpi/ic_lc_shadow_dock.png
 SHA1-Digest: Zxa1EzMyeMNl6ojXpRQKUztWOJY=
@@ -12211,7 +12217,7 @@ Name: system/etc/female/icons/xhdpi/com.baidu.account.png
 SHA1-Digest: D5OKG2OI1A0PqQaxDtL9dvEoK9Q=
 
 Name: system/bin/WordSegService
-SHA1-Digest: E4M//b9jiUzEdot5+pWaJPhm5oI=
+SHA1-Digest: e+DCgFLukifEMkFoRXJyn8a9HIE=
 
 Name: system/etc/water/framework/appManager/com.android.settings/res/d
  rawable-xhdpi/ic_settings_pattern_selected.png
@@ -12233,14 +12239,14 @@ Name: system/etc/female/framework/powerOff/framework-res/res/drawable-
 SHA1-Digest: ihxzfHTSIiXIXG8hrdNqXB2HF5o=
 
 Name: system/app/BaiduFM.apk
-SHA1-Digest: pa2hl47KaVChsLj+zsuAA0FfZ/4=
+SHA1-Digest: W4NCcJ0uPoOYWTz0OZUxR9mU+oY=
 
 Name: system/etc/female/com.baidu.home2/main/res/drawable-xhdpi/tpwidg
  et_clock_8.png
 SHA1-Digest: FsVfKvD0lUAUKQl5CFHQJG7rb7w=
 
 Name: system/lib/libthread_db.so
-SHA1-Digest: jT2Fc62ssbZHnYw8XRqMskrSZls=
+SHA1-Digest: T6TbqcLLKHwD2zx3XXncrFFF/g0=
 
 Name: system/etc/female/lockscreen/advance-xhdpi/ic_main_unlock_chargi
  ng_40_3.png
@@ -12293,24 +12299,24 @@ Name: system/etc/water/csp/contact/res/drawable-xhdpi/ic_menu_account_
 SHA1-Digest: oCCsqyJIv8VhUUN3HHzk7jN+NLk=
 
 Name: system/lib/libpagemap.so
-SHA1-Digest: sdE/5vpkxrRSpulH0QUIgO5K/UI=
+SHA1-Digest: e8aleWc2wGUaNIEDqAl0DKBVuMc=
 
 Name: system/etc/female/framework/appManager/com.android.settings/res/
  drawable-xhdpi/ic_settings_applications.png
 SHA1-Digest: V6HC2XKewdfkuvTxfBB2S9cHjdg=
 
 Name: system/xbin/latencytop
-SHA1-Digest: 1a9Txioc3aEuslhhz0j7nxJlc4g=
+SHA1-Digest: ORENfiD5PNdEyVSTNjsgBjcoJCY=
 
 Name: system/framework/com.mediatek.effect.jar
-SHA1-Digest: Gd2BX8ZvUxruzRbaVtQgeKGqCns=
+SHA1-Digest: wpHorKH9btLzsj7P5H1jvUmwpi8=
 
 Name: system/etc/female/framework/framework-res/other/framework/res/dr
  awable-xhdpi/notification_bg_normal_pressed.9.png
 SHA1-Digest: 2OXdy2VkNqyVhb+MnpyR8q3/qzc=
 
 Name: system/app/Calculator.apk
-SHA1-Digest: 4ZmPxd1F49RQOvcDdf+1Nj6kg/0=
+SHA1-Digest: DfJbqwh3JuPX8xyzVbobliZcriA=
 
 Name: system/etc/water/csp/contact/res/drawable-xhdpi/tab_ic_page_unse
  lected.png
@@ -12320,7 +12326,7 @@ Name: system/bin/ipod
 SHA1-Digest: 6JOYQryfsnmKJDXKExr02Fy3Jeo=
 
 Name: system/lib/libdrmmtkwhitelist.so
-SHA1-Digest: Vq6M0DUgv8tVJvg2iMS2gZmUMLQ=
+SHA1-Digest: M2Xm0NOhkwk6QUgCQCXAXtCL8Eg=
 
 Name: system/etc/water/icons/xhdpi/com.tencent.mobileqq.png
 SHA1-Digest: EhRoYuvgBosNg4tQH9IKal6Mj20=
@@ -12463,7 +12469,7 @@ Name: system/vendor/lib/libwvdrm_L3.so
 SHA1-Digest: AXs55jFjDk59ba/km3egob+p//8=
 
 Name: system/framework/android.policy.jar.jex
-SHA1-Digest: EKxWK28qfEagBqgodHJZCDgtf4U=
+SHA1-Digest: +NJhPJ4BiT5ouvot/47f1izNKUE=
 
 Name: system/etc/xlog-filter-tags
 SHA1-Digest: qnk2AzPuHoY9Bjs+DMg69xdmvgc=
@@ -12538,7 +12544,7 @@ Name: system/etc/female/framework/framework-res/other/framework-yi/res
 SHA1-Digest: zcT0Vk3L2x1OiaqEnCxQPaHLbE8=
 
 Name: system/app/Phone.apk
-SHA1-Digest: HUu1qrxteacGC8uSkdLOC8r0YSI=
+SHA1-Digest: u4STK9m1spOzgpHI4z7Qg9bSHBI=
 
 Name: system/etc/female/lockscreen/advance-xhdpi/ic_main_unlock_chargi
  ng_40_4.png
@@ -12581,7 +12587,7 @@ Name: system/etc/water/com.baidu.home2/weatherwidget/res/drawable-xhdp
 SHA1-Digest: ogr7TG+VVWOphkq33nw56elZW7k=
 
 Name: system/framework/android.policy.jar
-SHA1-Digest: NlD41bSGH3etS8Kv3yFWWon60ks=
+SHA1-Digest: yAxb0OQjkj25Gdhgf8H46zmjw7Y=
 
 Name: system/etc/defaultTheme/fonts/cover/cover.png
 SHA1-Digest: U3vUzsr5o/NGfKM6OE4+o2fw61Q=
@@ -12600,7 +12606,7 @@ Name: system/etc/female/framework/appManager/com.android.settings/res/
 SHA1-Digest: JA9fNCN+Bt5uWKg5ZQTF55ElWRU=
 
 Name: system/bin/recordvideo
-SHA1-Digest: sx+eVgs4CxHiJFqr+0vwKjEzOcc=
+SHA1-Digest: C0Kmq5trtJJFClazGjBuJ8zU1/Y=
 
 Name: system/media/audio/ui/KeypressStandard.ogg
 SHA1-Digest: WFdYi785ujyp6JwqtdsHziO5hjU=
@@ -12610,7 +12616,7 @@ Name: system/etc/water/framework/appManager/com.android.settings/res/d
 SHA1-Digest: qtK0k1lLOavV0i2wKjXHuDGjIfw=
 
 Name: system/lib/libeffects.so
-SHA1-Digest: 97xusIyJmaxgBIe9lsCalh5lRxQ=
+SHA1-Digest: X40mdo9PkaT9Nz0JqxkVfHGjh2s=
 
 Name: system/media/video/Sunset.240p.mp4
 SHA1-Digest: CBYXb7gePH/5F7RFTlVQRABxn4g=
@@ -12629,7 +12635,7 @@ Name: system/etc/water/icons/xhdpi/folder_checkbox.png
 SHA1-Digest: Zi2gw2f3sKLDxGzwPrrZuxdFMUM=
 
 Name: system/lib/libchromium_net.so
-SHA1-Digest: 6sFS3DcdwULCVL5Rk2UFoV94wR8=
+SHA1-Digest: OiUKnMh3vE0eNlbHEwxyrWc7dyc=
 
 Name: system/etc/water/csp/message/res/drawable-xhdpi/anim_dialog_bg.9
  .png
@@ -12643,7 +12649,7 @@ Name: system/etc/water/icons/xhdpi/folder_edit_normal.png
 SHA1-Digest: jwTBvohO/fFugtq9LAJidHBrx0s=
 
 Name: system/lib/libdrmframework_jni.so
-SHA1-Digest: qs0VKggKB+ZgqAGeX6qzQH6M2wo=
+SHA1-Digest: zC9F3BT7CijlsaXrL3HTjYMPvJE=
 
 Name: system/etc/water/com.baidu.home2/main/res/drawable-xhdpi/all_app
  s_button_pressed.png
@@ -12715,7 +12721,7 @@ Name: system/etc/water/framework/thememanager/com.baidu.thememanager.u
 SHA1-Digest: HwdTMxtxfon+VGVTXHxECVGKC0k=
 
 Name: system/lib/libJniAtvService.so
-SHA1-Digest: 2SkqVCBIZFXWR4E5R4rTI7aP4Ls=
+SHA1-Digest: or/NLO7i8p/zumDTfIgxREoWsYA=
 
 Name: system/etc/channel_files/Y29tLnRlbmNlbnQubmV3c19jaGFubmVsLmluaQ
 SHA1-Digest: Sghq1eCiluxL0fZFD0xTb656yyc=
@@ -12760,7 +12766,7 @@ Name: system/etc/bluetooth/network.conf
 SHA1-Digest: nu2dYktiZ0gI1G/0bmJQ0vG9GTw=
 
 Name: system/bin/bootanimation
-SHA1-Digest: Hqz62OWJZo0boMgV9qPMRiiVG9U=
+SHA1-Digest: GcVxKlYq7Rys2HHORSIe4LnliSQ=
 
 Name: system/etc/water/framework/filemanager/com.baidu.resmanager.file
  manager/res/values/colors.xml
@@ -12807,14 +12813,14 @@ Name: system/etc/water/framework/framework-res/textfield/framework/res
 SHA1-Digest: p0At6FcBBxz37C7mUmI/aPw7B9M=
 
 Name: system/framework/com.android.location.provider.jar
-SHA1-Digest: LNEmWdc5trZlZZcFVWla91MGC8k=
+SHA1-Digest: JJTlzwr8WLsPOIbBFZd5+S1M2BA=
 
 Name: system/etc/female/framework/framework-res/button/framework/res/d
  rawable-xhdpi/yi_btn_toggle_off_pressed_baidu_light.9.png
 SHA1-Digest: bPaFOe9FLcLKOvjrMjIjn7gcQUs=
 
 Name: system/bin/screencap
-SHA1-Digest: AzuFahEE7utqV6EBlfZvc+XgwqQ=
+SHA1-Digest: E5GRAXvmSTcimQcpM4aG6vI7J7Y=
 
 Name: system/etc/water/framework/framework-res/numberpicker/framework/
  res/drawable-xhdpi/yi_numberpicker_down_disabled_baidu_light.png
@@ -12923,13 +12929,13 @@ Name: system/fonts/RobotoCondensed-Regular.ttf
 SHA1-Digest: qY1rjMjPiMivTe+AYG+lleCOGYc=
 
 Name: system/xbin/autosanity
-SHA1-Digest: 9ss9mShDT3QQmqI3A9LlTm9Us8c=
+SHA1-Digest: 1A6JS3F5nih2fBVMbQkj6yaCw8c=
 
 Name: system/lib/libBnMtkCodec.so
-SHA1-Digest: o21YjNB2BNzIAQ1mIjZ9EazolnA=
+SHA1-Digest: cdUGtoHq9J0MUi3myu++k4aeuc4=
 
 Name: system/bin/vtservice
-SHA1-Digest: +9gODWfBJgh3grTAsbSRiG+Luls=
+SHA1-Digest: thwEQ9Zf428iq8Uk0BRlLqV+nc0=
 
 Name: system/etc/female/statusbar/res/drawable-xhdpi/ic_stat_sys_backt
  ouch_off.png
@@ -13077,7 +13083,7 @@ Name: system/etc/water/statusbar/com.mediatek.schpwronoff/res/drawable
 SHA1-Digest: 9iMlO+NjfdaCYDp/tAjdolBXhn0=
 
 Name: system/app/OnekeyWidget.apk
-SHA1-Digest: Xg1AiV/IEnF51Vh6K0T0dlvuUio=
+SHA1-Digest: g1iLsLRYJdp2VpxYZZ61iGlsYbw=
 
 Name: system/media/audio/notifications/CetiAlpha.ogg
 SHA1-Digest: 0a2x42vqO7QbSIviMonL7BkspLE=
@@ -13087,7 +13093,7 @@ Name: system/etc/female/framework/thememanager/com.baidu.thememanager.
 SHA1-Digest: lxtXICeI/ho6GTCp24HJW2RnxVE=
 
 Name: system/app/BaiduFlashlight.apk
-SHA1-Digest: RoBDqgZLk7J2H2W/Eces6BiG+fw=
+SHA1-Digest: 7e9vxWhoDuJSOaTrIEmj9VaejRE=
 
 Name: system/lib/libMtkOmxAdpcmEnc.so
 SHA1-Digest: QfPEBkPrNV2vON5QLfYeN7un+mQ=
@@ -13105,7 +13111,7 @@ Name: system/etc/female/framework/framework-res/dialog/framework/res/d
 SHA1-Digest: XWVUDorW2WqmKoZuzq9anTYhUZ8=
 
 Name: system/lib/libstagefright_soft_mpeg4dec.so
-SHA1-Digest: DZW+dmMOzoqoduMzoJwbdFp6gl8=
+SHA1-Digest: iFCt12yC6K/aigmRwx5TYQVItRA=
 
 Name: system/etc/water/framework/DualcardSetting/com.baidu.dualcardset
  ting/res/drawable-xhdpi/btn_cancel_normal.9.png
@@ -13128,10 +13134,10 @@ Name: system/etc/water/statusbar/res/drawable-xhdpi/stat_usb_switch_tu
 SHA1-Digest: u3ZAH71MJrbZWpvVfrB3L8y65/4=
 
 Name: system/framework/telephony-common.jar
-SHA1-Digest: hB88gZFzhC8GMr3G2N6xwCcuj5o=
+SHA1-Digest: vyhlmiyiw5ur1rO6G3vG4+wUdHM=
 
 Name: system/bin/poad
-SHA1-Digest: 4nJXxbMsp9QSpdGPfh3R3H4u+7k=
+SHA1-Digest: rxUT5wIfRk3H9bwCNv3QG7Az1d8=
 
 Name: system/etc/water/framework/calendar/com.android.calendar/res/dra
  wable-xhdpi/header_bg_cal_widget_pressed_holo.9.png
@@ -13171,7 +13177,7 @@ Name: system/etc/security/cacerts/9339512a.0
 SHA1-Digest: hsOnlnqeX401dhi0nNmDk65W+/4=
 
 Name: system/lib/libflvextractor.so
-SHA1-Digest: K6vE3piCW0NSLrx/fBkWjDIv5/0=
+SHA1-Digest: zXi939cMbhgHEpg1lAar2EzF5Q8=
 
 Name: system/lib/libbluetoothdrv.so
 SHA1-Digest: 1z6EuNLPR+XgS1az6fglNDnOtnc=
@@ -13285,7 +13291,7 @@ Name: system/etc/water/icons/xhdpi/com.dragon.android.pandaspace.png
 SHA1-Digest: nH4AtWQt2xhqqjUgNSFq++quzl4=
 
 Name: system/xbin/showmap
-SHA1-Digest: aymVvlQ93oV+b8zm0V6tBwH+uYo=
+SHA1-Digest: RbQfFgR1M5fJEuWk/ZEZyor43So=
 
 Name: system/etc/water/com.baidu.home2/switchwidget/res/drawable-xhdpi
  /ic_appwidget_ext_back.png
@@ -13358,7 +13364,7 @@ Name: system/etc/female/csp/message/res/drawable-xhdpi/timeline_bg.9.p
 SHA1-Digest: eykBinUzRNBqu/6Bb+jv59u9uHg=
 
 Name: system/lib/librtp_jni.so
-SHA1-Digest: IS21oBNaA5lvLLyAz8KzWPwxrW0=
+SHA1-Digest: kI61eW08teNJtILBtQ/o0JxKUlo=
 
 Name: system/etc/female/framework/framework-res/battery/framework/res/
  drawable-xhdpi/battery_3.png
@@ -13398,7 +13404,7 @@ Name: system/etc/water/icons/xhdpi/com.android.calendar_9.png
 SHA1-Digest: AtGi574lewUDeKgSUJk07gMr2Kw=
 
 Name: system/app/BaiduMusicPlayer.apk
-SHA1-Digest: bBSuYo+Bc/i3fi7+sfHXigt+JKs=
+SHA1-Digest: D6SWumEvC2ge5en11KmQTiqh8r0=
 
 Name: system/etc/water/csp/contact/res/drawable-xhdpi/system_icons_xx_
  leadinout.png
@@ -13406,7 +13412,7 @@ SHA1-Digest: ZTBjt3fGT2obOFrr1SIycOCZZaA=
 
 Name: system/etc/female/csp/message/res/drawable-xhdpi/ic_newmessage.p
  ng
-SHA1-Digest: 6qeaF3R8wzq71p3Vm/VpfhJOy6M=
+SHA1-Digest: ruCG6HtGPJt/TBjVUM5mGQ4I3CU=
 
 Name: system/media/audio/alarms/Argon.ogg
 SHA1-Digest: MCfiYi7WlIFVEUYR2hrSzlgbfuM=
@@ -13475,7 +13481,7 @@ Name: system/etc/female/csp/dial/res/drawable-xhdpi/ic_call_dial_btn_1
 SHA1-Digest: cfkGFbKZsjhY9uV6pIkfCb9jYuQ=
 
 Name: system/framework/ime.jar
-SHA1-Digest: PYse7pxL3uCHNU+KzdIrvrKhjto=
+SHA1-Digest: /t9X6Zbv8NgWAnG37HPi6oaSxyM=
 
 Name: system/etc/female/icons/xhdpi/com.android.calendar_1.png
 SHA1-Digest: 0bWSito6VrT6sLzuVg73ngbHkyM=
@@ -13531,7 +13537,7 @@ Name: system/etc/water/framework/antiTheft/com.baidu.antitheft/res/dra
 SHA1-Digest: 00ITlARDqo6mxUmbpSqZ091DP5E=
 
 Name: system/bin/logcat
-SHA1-Digest: A0M8LUGmDLVbKm+syb0/FW9TGQI=
+SHA1-Digest: 3Ei8dEczzeIXKZpkDxCJe59EPCQ=
 
 Name: system/etc/water/csp/message/res/drawable-xhdpi/ds_slot1_sms_unl
  ock_pressed.png
@@ -13542,10 +13548,10 @@ Name: system/etc/female/csp/contact/res/drawable-xhdpi/favorite_list_i
 SHA1-Digest: 31OwkgRECKw8kt4f3XdU45DbgVU=
 
 Name: system/bin/mke2fs
-SHA1-Digest: WbMX6PfmiT24Md5e8FfVJXcjwZM=
+SHA1-Digest: Cp8E8F38mcnpTS9AQ/illhx7KfY=
 
 Name: system/app/MTKAndroidSuiteDaemon.apk
-SHA1-Digest: vyf3q5hTUZtj0YF1v3LRttYmhjc=
+SHA1-Digest: IRb1zcxeop7IsiYNSusziIu1Ko8=
 
 Name: system/etc/water/framework/ota/com.baidu.android.ota/res/drawabl
  e-xhdpi/cancel.png
@@ -13593,7 +13599,7 @@ Name: system/etc/water/csp/contact/res/drawable-xhdpi/ic_contact_btn_b
 SHA1-Digest: WRoIaZIF+PI0sFKWHTvIgbJ+9lY=
 
 Name: system/app/DefaultContainerService.apk
-SHA1-Digest: L9iP1oEkUw9piTF9ikvyMJHhyY4=
+SHA1-Digest: lKxhRaSWU0CpXvXrCCxJRDBbNKY=
 
 Name: system/etc/ril/oper.lis
 SHA1-Digest: 52703X6mQn2IBsPNV22lBpZHYJA=
@@ -13644,7 +13650,7 @@ Name: system/etc/female/framework/appManager/com.android.settings/res/
 SHA1-Digest: teHN4b6oaz1KGnNpxnZZFTW8ic4=
 
 Name: system/bin/sdiotool
-SHA1-Digest: iWMFsKIMnJy+MgOY/hyn5NDN26w=
+SHA1-Digest: PjFt4WVl+inCAN9Vj9Xe1C/08m8=
 
 Name: system/etc/security/cacerts/9dbefe7b.0
 SHA1-Digest: EPhp4B4/b2pUwm0D3ZjC5np6RpI=
@@ -13660,7 +13666,7 @@ Name: system/etc/female/icons/xhdpi/ic_launcher_shortcut.png
 SHA1-Digest: dgHvwiAFlaE6wVbBjJWdp4FdXQo=
 
 Name: system/bin/service
-SHA1-Digest: i0ngu+TN95QMFCQ1BmS8QdIfDro=
+SHA1-Digest: 14s+odfnMQKxFwfINzwkSyLOOks=
 
 Name: system/etc/water/framework/account/com.baidu.bsf.service/res/dra
  wable-xhdpi/yi_tab_unselected_baidu.9.png
@@ -13703,7 +13709,7 @@ Name: system/etc/water/framework/framework-res/button/framework/res/dr
 SHA1-Digest: zkuRk8c4Apm/XZzjz+lqzWqe/j4=
 
 Name: system/app/Email2.apk
-SHA1-Digest: 4FnnS1Nb8NgICFTcK3JpRk90CwY=
+SHA1-Digest: VJCqzhK7luil10/sM2dZgC0SPN0=
 
 Name: system/etc/female/csp/message/res/drawable-xhdpi/tab_ic_mess_col
  lect.png
@@ -13735,10 +13741,10 @@ Name: system/etc/female/framework/BaiduVideoPlayer/com.baidu.videoplay
 SHA1-Digest: 5COgy3gxGrSOuaB8+kBZxVHOJ3k=
 
 Name: system/lib/libasf.so
-SHA1-Digest: bo5F5sIFqkXbwC34VkY9wh/HezY=
+SHA1-Digest: FgBYyDpo2FiIQGYk0dqTPO1cTaM=
 
 Name: system/framework/services.jar
-SHA1-Digest: xEw0P8zP3TyFiq1xmZhCg1RCvSU=
+SHA1-Digest: rrxtsYl21cndJEUSBxta/fcax0Q=
 
 Name: system/etc/channel_files/Y29tLnRlbmNlbnQucXFsaXZlX2NoYW5uZWwuaW5
  p
@@ -13748,7 +13754,7 @@ Name: system/media/audio/alarms/Alarm_Classic.ogg
 SHA1-Digest: KVjiTvHmV73nKpWUAXLks/DEVhc=
 
 Name: system/lib/libfmmt6627.so
-SHA1-Digest: 62dLN1Adrzn0x45Q4E02D+EFjYc=
+SHA1-Digest: EbXxfd78Sw2lhB4SSPL/MCqIBSE=
 
 Name: system/etc/water/csp/dial/res/drawable-xhdpi/ic_call_qdial_btn_8
  .png
@@ -13765,7 +13771,7 @@ Name: system/etc/voicecommand/command/camera/1/0.ogg
 SHA1-Digest: HYw2zSA0bKaAKhVIlccUB/fgzJk=
 
 Name: system/lib/libdl.so
-SHA1-Digest: QGZdPdyhrNjdl7okX3eaNF+8T4Y=
+SHA1-Digest: kxgg3ZCeesx4cUbWr8OmNfZqQKo=
 
 Name: system/etc/water/framework/trafficmonitor/com.baidu.trafficmonit
  or/res/drawable-xhdpi/ab_transparent_light.9.png
@@ -13783,10 +13789,10 @@ Name: system/etc/water/framework/framework-res/checkbox/framework/res/
 SHA1-Digest: hdymy7FlvWKLPLrF1v/mAI7tTZ8=
 
 Name: boot.img
-SHA1-Digest: bm/OZMJ3VGTqV0MPYEeHgcTMv4Q=
+SHA1-Digest: jhW5r8kMBSFGCFTp8IVo3dB4Hbc=
 
 Name: system/lib/libsqlite.so
-SHA1-Digest: TQ+FxdJgrLl2XnlaNnOISkjQj0c=
+SHA1-Digest: Sp8tbk50xFPxWvNBdOpl09IwMQE=
 
 Name: system/etc/female/framework/appManager/com.android.settings/res/
  drawable-xhdpi/battery_list_divider.9.png
@@ -13898,7 +13904,7 @@ Name: system/etc/water/icons/xhdpi/com.Qunar.png
 SHA1-Digest: 6WxrQgwbw8/+FDBr/8Fvvh6WqvM=
 
 Name: system/lib/soundfx/libreverbwrapper.so
-SHA1-Digest: ClqJKTkH5MlwR/n/uFxrG3RhRRg=
+SHA1-Digest: VsXPXopp2XUH2Lb3S+NkJYxztGQ=
 
 Name: system/fonts/DroidNaskh-Regular.ttf
 SHA1-Digest: BYgbdAaHcWR/QhWGAWHkf7yQLCM=
@@ -13942,7 +13948,7 @@ Name: system/media/audio/notifications/WaterDrop_02.ogg
 SHA1-Digest: OxWj6LXNy4lIDAJUBKjqcIbTz4o=
 
 Name: system/app/CDS_INFO.apk
-SHA1-Digest: D7AMfvSG47nfPTd3CrEmbW6xSxk=
+SHA1-Digest: CC1I/8yq1mAJ8SYt2CYb8blF9N0=
 
 Name: system/etc/female/framework/framework-res/actionbar/framework/re
  s/drawable-xhdpi/yi_cab_background_top_baidu_light.9.png
@@ -13952,7 +13958,7 @@ Name: system/lib/libmp4enc_sa.ca7.so
 SHA1-Digest: Yx2l4WPChHA3n1Bs6NmmXTi2Fgk=
 
 Name: system/bin/toolbox
-SHA1-Digest: Q7pKE129B0BVkqULoWcSQeVZDUQ=
+SHA1-Digest: Qgj7ZVlrpOzmzp4exUOa7X8J9hg=
 
 Name: system/etc/voicecommand/voiceui/uipattern/Chinese-Taiwan/p_t_dic
  .bin.t
@@ -13966,7 +13972,7 @@ Name: system/etc/security/cacerts/eb375c3e.0
 SHA1-Digest: tmCwIHz56faNDn0roOj08Yyrv0E=
 
 Name: system/app/BaiduNotepad.apk
-SHA1-Digest: Zq05k+bgS7jalgy3YfdrAcc+CUY=
+SHA1-Digest: ePRaazVn1klL4ZxksEKBzMTQkLM=
 
 Name: system/etc/female/com.baidu.home2/weatherwidget/res/drawable-xhd
  pi/widget_weather_rain.png
@@ -13984,7 +13990,7 @@ Name: system/etc/voicecommand/command/alarm/1/1.ogg
 SHA1-Digest: RJ2H+82ife0rbPmSCUWylK73iWo=
 
 Name: system/framework/theme-res-mint.apk
-SHA1-Digest: Bu004B0j5gjf3S810f8VzOKZmEY=
+SHA1-Digest: jSXxpCE1mEKuZCCmUzMvEYKNROw=
 
 Name: system/etc/voicecommand/voiceui/uipattern/Chinese-Taiwan/p_t_dic
  .bin.f
@@ -14001,7 +14007,7 @@ Name: system/etc/female/csp/dial/res/drawable-xhdpi/ic_call_dial_btn_d
 SHA1-Digest: r4U/ApH23kj4YFOW944iymltipg=
 
 Name: system/lib/libtinyalsa.so
-SHA1-Digest: Z8uuGVHkz0dM4NzaD8dz+hZoVyo=
+SHA1-Digest: CkJsoy4XtztG1l7BEctK3fB51L4=
 
 Name: system/etc/voicecommand/voiceui/uipattern/Chinese-Taiwan/p_t_dic
  .bin.p
@@ -14084,7 +14090,7 @@ Name: system/etc/water/framework/appManager/com.android.settings/res/d
 SHA1-Digest: oXIBjjWbqriqLkmTS1pzxoVLGNA=
 
 Name: system/xbin/check-lost+found
-SHA1-Digest: erin7gdCbHaHknR8bJ5IFxSGCM0=
+SHA1-Digest: TUFIJADGkIEAu85xUT3IfVl9kx4=
 
 Name: system/etc/female/icons/xhdpi/com.android.phone.png
 SHA1-Digest: DOh22WSR+TFMEb7nvuGpsat/bj4=
@@ -14101,7 +14107,7 @@ Name: system/etc/female/com.baidu.home2/main/res/drawable-xhdpi/arrow_
 SHA1-Digest: FlyBM9dKpKEA6wF10YYBIyws8ec=
 
 Name: system/bin/shutdown
-SHA1-Digest: I2zduOCRAUVjJLlvns5wzG/f3lI=
+SHA1-Digest: mJ8tVlTZLZoLnysqjkDYxq7DH18=
 
 Name: system/etc/female/csp/contact/res/drawable-xhdpi/ic_contact_face
  _quick_bg.9.png
@@ -14191,7 +14197,7 @@ Name: system/etc/water/framework/appManager/com.android.settings/res/d
 SHA1-Digest: RXhm0Mv7eBoSgsmDuz2Pe9fKmuo=
 
 Name: system/lib/libspeexresampler.so
-SHA1-Digest: 2kUbQRwFtdZ6tVsNYrk+nUDFNU4=
+SHA1-Digest: bAZKBrhbbIPd9bK77CiK+NS3jUY=
 
 Name: system/etc/female/framework/email/com.android.email/res/drawable
  -xhdpi/ic_menu_search_holo_light.png
@@ -14246,7 +14252,7 @@ Name: system/etc/water/csp/contact/res/drawable-xhdpi/recent_contact_b
 SHA1-Digest: l83xsvJKiU8WLTGqnclwX8vRdek=
 
 Name: system/lib/libbt-hci.so
-SHA1-Digest: Yg0LPkPOW5W5Roo0or4R5Tybyw4=
+SHA1-Digest: v/YzMCg9EFp750WHV61RztEQISs=
 
 Name: system/etc/water/framework/trafficmonitor/com.baidu.trafficmonit
  or/res/drawable-xhdpi/btn_trafficmonitor_normal.9.png
@@ -14263,14 +14269,14 @@ Name: system/lib/libmjc.so
 SHA1-Digest: tu68Kn+wlofapzriVRnJbzNBEa4=
 
 Name: system/bin/dumpsys
-SHA1-Digest: V7HWvzXFUFOsjsYvSS+VhYGDVvY=
+SHA1-Digest: ruAZ+4cMfSr7/85T3C+n6RDu6OQ=
 
 Name: system/etc/female/csp/message/res/drawable-xhdpi/ds_slot2_sms_un
  lock_highlight.png
 SHA1-Digest: r0Hc0g8LuGDxOLkKEsFfGxDv75w=
 
 Name: system/lib/libtinyxml.so
-SHA1-Digest: iaON7UjtextYH3UCiO9frh5MWjk=
+SHA1-Digest: fqJcoccWjPHNx6+Ye74opBxWoAk=
 
 Name: system/etc/female/framework/calendar/com.android.calendar/res/dr
  awable-xhdpi/ic_menu_add_event_holo_light.png
@@ -14345,7 +14351,7 @@ Name: system/etc/water/statusbar/res/drawable-xhdpi/ic_stat_sys_silent
 SHA1-Digest: CnQTbcrIPipvNT57cvpI+o+W3dE=
 
 Name: system/bin/adb
-SHA1-Digest: q9gcRtkhbcFra7ra+XhEckCpWoA=
+SHA1-Digest: JPOU4jZrkz/UusSF+xjP4hQTXEY=
 
 Name: system/etc/water/com.baidu.home2/main/res/drawable-xhdpi/qiyi_wi
  dget_update_img_down.png
@@ -14366,7 +14372,7 @@ Name: system/bin/aee_aed
 SHA1-Digest: jR1ySxKa9qVmTVWzHQsY3615M4Y=
 
 Name: system/lib/libasfextractor.so
-SHA1-Digest: 22g/XXU7lPrL+Wi9aDozUUwo704=
+SHA1-Digest: sDrPqmUky54vTa18ZSdspOxSwCQ=
 
 Name: system/etc/female/com.baidu.home2/main/res/drawable-xhdpi/ic_cam
  era_widget_dialoge_pic_bg.png
@@ -14384,7 +14390,7 @@ Name: system/etc/female/statusbar/res/drawable-xhdpi/notification_back
 SHA1-Digest: njjrj1yi6Ss/ulfgykiFlegXCBU=
 
 Name: system/bin/bugreport
-SHA1-Digest: aP1mfYQfFenevlDSyyY0Awr4KCc=
+SHA1-Digest: tsDyicYTaBcLU6tOPaFRo69yccA=
 
 Name: system/etc/water/framework/appManager/com.android.settings/res/d
  rawable-xhdpi/ic_settings_power.png
@@ -14434,10 +14440,10 @@ Name: system/media/audio/notifications/HorsesWhiney.ogg
 SHA1-Digest: Wy6zUt9aO6v20JmPt8rq142PUnE=
 
 Name: system/xbin/btool
-SHA1-Digest: XXhcDSXxEM/fdc1sP0xGgZlvX8w=
+SHA1-Digest: 4OYKwLZ3aq9gUnBDqVoiqps91cs=
 
 Name: system/app/Bluetooth.apk
-SHA1-Digest: K75Cw805yfBo5fDn5/I/7But+yI=
+SHA1-Digest: UjOXZp7thMhX1V6h0WPGv3o16MM=
 
 Name: system/etc/water/com.baidu.home2/main/res/drawable-xhdpi/ic_laun
  cher_calendar_21.png
@@ -14495,7 +14501,7 @@ Name: system/media/audio/ringtones/BentleyDubs.ogg
 SHA1-Digest: JgesNoDdGL0iCeazizfQed2ARV0=
 
 Name: system/app/Provision.apk
-SHA1-Digest: j/fsyunqACcnh2r4Sel2SGK/F38=
+SHA1-Digest: ScfSAhn+LnOw+MKNzXaJgUxpUgE=
 
 Name: system/etc/firmware/mt6572_82_patch_e1_1_hdr.bin
 SHA1-Digest: khHT9YJSTVUE5gwxzKFIXyg1YEY=
