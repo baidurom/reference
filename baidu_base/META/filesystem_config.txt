@@ -2546,6 +2546,7 @@ system/etc/water/icons/xhdpi/folder_checkbox.png 0 0 755
 system/etc/water/icons/xhdpi/com.sankuai.meituan.png 0 0 755
 system/etc/water/icons/xhdpi/com.mediatek.StkSelection.png 0 0 755
 system/etc/water/icons/xhdpi/com.youdao.dict.png 0 0 755
+system/etc/water/icons/xhdpi/com.baidu.trafficmonitor.png 0 0 755
 system/etc/water/icons/xhdpi/com.baidu.musicplayer.png 0 0 755
 system/etc/water/icons/xhdpi/com.baiyi_mobile.security.png 0 0 755
 system/etc/water/icons/xhdpi/com.android.calendar_31.png 0 0 755
@@ -3878,6 +3879,7 @@ system/etc/female/icons/xhdpi/folder_btn_left_pressed.9.png 0 0 755
 system/etc/female/icons/xhdpi/com.sankuai.meituan.png 0 0 755
 system/etc/female/icons/xhdpi/com.mediatek.StkSelection.png 0 0 755
 system/etc/female/icons/xhdpi/com.youdao.dict.png 0 0 755
+system/etc/female/icons/xhdpi/com.baidu.trafficmonitor.png 0 0 755
 system/etc/female/icons/xhdpi/com.baidu.musicplayer.png 0 0 755
 system/etc/female/icons/xhdpi/com.baiyi_mobile.security.png 0 0 755
 system/etc/female/icons/xhdpi/fill_folder_bg.9.png 0 0 755
