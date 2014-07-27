@@ -1,0 +1,10 @@
+recovery_api_version=3
+tool_extensions=mediatek/config/out/Coolpad8297/../common
+default_system_dev_certificate=build/target/product/security/testkey
+mkbootimg_args=
+fs_type=ext4
+system_size=838860800
+userdata_size=1240465408
+cache_size=134217728
+extfs_sparse_flag=-s
+mkyaffs2_extra_flags=-c 2048 -s 64   

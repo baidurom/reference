@@ -251,11 +251,6 @@
     monitor-exit p0
 
     .line 146
-
-    const-string v0, "/system/framework/framework-res-yi.apk"
-
-    invoke-virtual {p0, v0}, Landroid/content/res/AssetManager;->addAssetPath(Ljava/lang/String;)I
-
     return-void
 
     .line 145
@@ -329,11 +324,6 @@
     iput-object v0, p0, Landroid/content/res/AssetManager;->mIconPath:Ljava/util/HashMap;
 
     .line 171
-
-    const-string v0, "/system/framework/framework-res-yi.apk"
-
-    invoke-virtual {p0, v0}, Landroid/content/res/AssetManager;->addAssetPath(Ljava/lang/String;)I
-
     return-void
 .end method
 
@@ -779,141 +769,196 @@
     throw v1
 .end method
 
-.method private final findAccurateRes(Landroid/util/TypedValue;Ljava/lang/String;Ljava/lang/String;Z)Ljava/io/File;
-    .locals 6
+.method private static final findAccurateRes(ILandroid/util/TypedValue;Ljava/lang/String;Ljava/lang/String;Z)Ljava/io/File;
+    .locals 3
+    .parameter "dpi"
     .parameter "value"
     .parameter "folderPath"
     .parameter "fileName"
     .parameter "isIcon"
 
     .prologue
-    .line 1310
-    const/4 v2, 0x0
+    .line 1339
+    invoke-static {p2, p0, p3, p4}, Landroid/content/res/AssetManager;->getFileUnderDpi(Ljava/lang/String;ILjava/lang/String;Z)Ljava/io/File;
 
-    .line 1311
-    .local v2, result:Ljava/io/File;
-    new-instance v4, Ljava/lang/StringBuffer;
+    move-result-object v0
 
-    invoke-direct {v4, p2}, Ljava/lang/StringBuffer;-><init>(Ljava/lang/String;)V
+    .line 1340
+    .local v0, result:Ljava/io/File;
+    if-eqz v0, :cond_0
 
-    .line 1313
-    .local v4, tempPath:Ljava/lang/StringBuffer;
-    iget v5, p0, Landroid/content/res/AssetManager;->mDpi:I
+    invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
-    sparse-switch v5, :sswitch_data_0
+    move-result v1
 
-    .line 1324
-    :goto_0
-    const-string v1, ""
+    if-nez v1, :cond_2
 
-    .line 1325
-    .local v1, realFile:Ljava/lang/String;
-    if-nez p4, :cond_2
-
-    .line 1326
-    const-string v5, "/"
-
-    invoke-virtual {p3, v5}, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;)I
-
-    move-result v0
-
-    .line 1327
-    .local v0, lastIndex:I
-    if-ltz v0, :cond_0
-
-    .line 1328
-    invoke-virtual {p3}, Ljava/lang/String;->length()I
-
-    move-result v5
-
-    invoke-virtual {p3, v0, v5}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    .line 1341
+    :cond_0
+    invoke-virtual {p3}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1333
-    .end local v0           #lastIndex:I
-    :cond_0
-    :goto_1
-    const-string v5, ""
+    const-string v2, ".9.png"
 
-    invoke-virtual {v5, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
-    move-result v5
+    move-result v1
 
-    if-nez v5, :cond_1
+    if-eqz v1, :cond_3
 
-    .line 1334
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    .line 1342
+    const/16 p0, 0xf0
 
-    .line 1335
-    new-instance v3, Ljava/io/File;
+    .line 1343
+    invoke-static {p2, p0, p3, p4}, Landroid/content/res/AssetManager;->getFileUnderDpi(Ljava/lang/String;ILjava/lang/String;Z)Ljava/io/File;
 
-    invoke-virtual {v4}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v5
+    .line 1344
+    if-eqz v0, :cond_1
 
-    invoke-direct {v3, v5}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
-    .line 1336
-    .local v3, tempFile:Ljava/io/File;
-    invoke-virtual {v3}, Ljava/io/File;->exists()Z
+    move-result v1
 
-    move-result v5
+    if-nez v1, :cond_2
 
-    if-eqz v5, :cond_1
+    const/16 v1, 0x1e0
 
-    .line 1337
-    iget v5, p0, Landroid/content/res/AssetManager;->mDpi:I
+    if-ne v1, p0, :cond_2
 
-    iput v5, p1, Landroid/util/TypedValue;->density:I
-
-    .line 1338
-    move-object v2, v3
-
-    .line 1341
-    .end local v3           #tempFile:Ljava/io/File;
+    .line 1345
     :cond_1
-    return-object v2
+    const/16 p0, 0x140
 
-    .line 1315
-    .end local v1           #realFile:Ljava/lang/String;
-    :sswitch_0
-    const-string v5, "/res/drawable-xhdpi/"
+    .line 1346
+    invoke-static {p2, p0, p3, p4}, Landroid/content/res/AssetManager;->getFileUnderDpi(Ljava/lang/String;ILjava/lang/String;Z)Ljava/io/File;
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    move-result-object v0
 
-    goto :goto_0
-
-    .line 1318
-    :sswitch_1
-    const-string v5, "/res/drawable-hdpi/"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    goto :goto_0
-
-    .line 1321
-    :sswitch_2
-    const-string v5, "/res/drawable-xxhdpi/"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    goto :goto_0
-
-    .line 1331
-    .restart local v1       #realFile:Ljava/lang/String;
+    .line 1377
     :cond_2
-    move-object v1, p3
+    :goto_0
+    if-eqz v0, :cond_7
+
+    invoke-virtual {v0}, Ljava/io/File;->exists()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_7
+
+    .line 1378
+    iput p0, p1, Landroid/util/TypedValue;->density:I
+
+    .line 1382
+    :goto_1
+    return-object v0
+
+    .line 1349
+    :cond_3
+    sparse-switch p0, :sswitch_data_0
+
+    goto :goto_0
+
+    .line 1359
+    :sswitch_0
+    const/16 p0, 0x140
+
+    .line 1360
+    invoke-static {p2, p0, p3, p4}, Landroid/content/res/AssetManager;->getFileUnderDpi(Ljava/lang/String;ILjava/lang/String;Z)Ljava/io/File;
+
+    move-result-object v0
+
+    .line 1361
+    if-eqz v0, :cond_4
+
+    invoke-virtual {v0}, Ljava/io/File;->exists()Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    .line 1362
+    :cond_4
+    const/16 p0, 0x1e0
+
+    .line 1363
+    invoke-static {p2, p0, p3, p4}, Landroid/content/res/AssetManager;->getFileUnderDpi(Ljava/lang/String;ILjava/lang/String;Z)Ljava/io/File;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 1351
+    :sswitch_1
+    const/16 p0, 0x1e0
+
+    .line 1352
+    invoke-static {p2, p0, p3, p4}, Landroid/content/res/AssetManager;->getFileUnderDpi(Ljava/lang/String;ILjava/lang/String;Z)Ljava/io/File;
+
+    move-result-object v0
+
+    .line 1353
+    if-eqz v0, :cond_5
+
+    invoke-virtual {v0}, Ljava/io/File;->exists()Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    .line 1354
+    :cond_5
+    const/16 p0, 0xf0
+
+    .line 1355
+    invoke-static {p2, p0, p3, p4}, Landroid/content/res/AssetManager;->getFileUnderDpi(Ljava/lang/String;ILjava/lang/String;Z)Ljava/io/File;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 1367
+    :sswitch_2
+    const/16 p0, 0x140
+
+    .line 1368
+    invoke-static {p2, p0, p3, p4}, Landroid/content/res/AssetManager;->getFileUnderDpi(Ljava/lang/String;ILjava/lang/String;Z)Ljava/io/File;
+
+    move-result-object v0
+
+    .line 1369
+    if-eqz v0, :cond_6
+
+    invoke-virtual {v0}, Ljava/io/File;->exists()Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    .line 1370
+    :cond_6
+    const/16 p0, 0xf0
+
+    .line 1371
+    invoke-static {p2, p0, p3, p4}, Landroid/content/res/AssetManager;->getFileUnderDpi(Ljava/lang/String;ILjava/lang/String;Z)Ljava/io/File;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 1380
+    :cond_7
+    const/4 v0, 0x0
 
     goto :goto_1
 
-    .line 1313
-    nop
-
+    .line 1349
     :sswitch_data_0
     .sparse-switch
-        0xf0 -> :sswitch_1
-        0x140 -> :sswitch_0
+        0xf0 -> :sswitch_0
+        0x140 -> :sswitch_1
         0x1e0 -> :sswitch_2
     .end sparse-switch
 .end method
@@ -950,6 +995,111 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method private static final getFileUnderDpi(Ljava/lang/String;ILjava/lang/String;Z)Ljava/io/File;
+    .locals 5
+    .parameter "folderPath"
+    .parameter "dpi"
+    .parameter "fileName"
+    .parameter "isIcon"
+
+    .prologue
+    .line 1311
+    new-instance v2, Ljava/lang/StringBuffer;
+
+    invoke-direct {v2, p0}, Ljava/lang/StringBuffer;-><init>(Ljava/lang/String;)V
+
+    .line 1313
+    .local v2, tempPath:Ljava/lang/StringBuffer;
+    sparse-switch p1, :sswitch_data_0
+
+    .line 1324
+    :goto_0
+    const-string v1, ""
+
+    .line 1325
+    .local v1, realFile:Ljava/lang/String;
+    if-nez p3, :cond_1
+
+    .line 1326
+    const-string v3, "/"
+
+    invoke-virtual {p2, v3}, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;)I
+
+    move-result v0
+
+    .line 1327
+    .local v0, lastIndex:I
+    if-ltz v0, :cond_0
+
+    .line 1328
+    invoke-virtual {p2}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    invoke-virtual {p2, v0, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 1333
+    .end local v0           #lastIndex:I
+    :cond_0
+    :goto_1
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    .line 1334
+    new-instance v3, Ljava/io/File;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-direct {v3, v4}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    return-object v3
+
+    .line 1315
+    .end local v1           #realFile:Ljava/lang/String;
+    :sswitch_0
+    const-string v3, "/res/drawable-xhdpi/"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    goto :goto_0
+
+    .line 1318
+    :sswitch_1
+    const-string v3, "/res/drawable-hdpi/"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    goto :goto_0
+
+    .line 1321
+    :sswitch_2
+    const-string v3, "/res/drawable-xxhdpi/"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    goto :goto_0
+
+    .line 1331
+    .restart local v1       #realFile:Ljava/lang/String;
+    :cond_1
+    move-object v1, p2
+
+    goto :goto_1
+
+    .line 1313
+    nop
+
+    :sswitch_data_0
+    .sparse-switch
+        0xf0 -> :sswitch_1
+        0x140 -> :sswitch_0
+        0x1e0 -> :sswitch_2
+    .end sparse-switch
 .end method
 
 .method public static final native getGlobalAssetCount()I
@@ -1629,17 +1779,17 @@
 .end method
 
 .method private final openIconAsset(Landroid/util/TypedValue;Ljava/lang/String;Ljava/lang/String;Z)Ljava/io/InputStream;
-    .locals 9
+    .locals 10
     .parameter "value"
     .parameter "fileName"
     .parameter "packageName"
     .parameter "isIcon"
 
     .prologue
-    .line 1346
+    .line 1388
     const/4 v3, 0x0
 
-    .line 1350
+    .line 1391
     .local v3, inputStream:Ljava/io/InputStream;
     if-eqz p2, :cond_0
 
@@ -1652,20 +1802,20 @@
 
     if-nez v8, :cond_0
 
-    .line 1352
+    .line 1393
     new-instance v7, Ljava/lang/StringBuffer;
 
     const-string v8, "/data/data/com.baidu.thememanager.ui/files"
 
     invoke-direct {v7, v8}, Ljava/lang/StringBuffer;-><init>(Ljava/lang/String;)V
 
-    .line 1354
+    .line 1395
     .local v7, sb:Ljava/lang/StringBuffer;
     sget-object v8, Ljava/io/File;->separator:Ljava/lang/String;
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 1355
+    .line 1396
     if-eqz p4, :cond_1
 
     const-string v8, "icons"
@@ -1673,21 +1823,23 @@
     :goto_0
     invoke-virtual {v7, v8}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 1356
+    .line 1397
     sget-object v8, Ljava/io/File;->separator:Ljava/lang/String;
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 1358
+    .line 1399
+    iget v8, p0, Landroid/content/res/AssetManager;->mDpi:I
+
     invoke-virtual {v7}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-direct {p0, p1, v8, p2, p4}, Landroid/content/res/AssetManager;->findAccurateRes(Landroid/util/TypedValue;Ljava/lang/String;Ljava/lang/String;Z)Ljava/io/File;
+    invoke-static {v8, p1, v9, p2, p4}, Landroid/content/res/AssetManager;->findAccurateRes(ILandroid/util/TypedValue;Ljava/lang/String;Ljava/lang/String;Z)Ljava/io/File;
 
     move-result-object v0
 
-    .line 1359
+    .line 1400
     .local v0, accurateFile:Ljava/io/File;
     if-nez v0, :cond_2
 
@@ -1703,7 +1855,7 @@
 
     invoke-direct {v2, v8}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 1361
+    .line 1403
     .local v2, file:Ljava/io/File;
     :goto_1
     invoke-virtual {v2}, Ljava/io/File;->exists()Z
@@ -1712,7 +1864,7 @@
 
     if-eqz v8, :cond_3
 
-    .line 1362
+    .line 1404
     new-instance v4, Ljava/io/FileInputStream;
 
     invoke-direct {v4, v2}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
@@ -1721,7 +1873,7 @@
     .local v4, inputStream:Ljava/io/InputStream;
     move-object v3, v4
 
-    .line 1384
+    .line 1424
     .end local v0           #accurateFile:Ljava/io/File;
     .end local v2           #file:Ljava/io/File;
     .end local v4           #inputStream:Ljava/io/InputStream;
@@ -1737,17 +1889,17 @@
     :cond_1
     move-object v8, p3
 
-    .line 1355
+    .line 1396
     goto :goto_0
 
     .restart local v0       #accurateFile:Ljava/io/File;
     :cond_2
     move-object v2, v0
 
-    .line 1359
+    .line 1400
     goto :goto_1
 
-    .line 1365
+    .line 1407
     .restart local v2       #file:Ljava/io/File;
     :cond_3
     new-instance v6, Ljava/lang/StringBuffer;
@@ -1756,13 +1908,13 @@
 
     invoke-direct {v6, v8}, Ljava/lang/StringBuffer;-><init>(Ljava/lang/String;)V
 
-    .line 1366
+    .line 1408
     .local v6, ovlPath:Ljava/lang/StringBuffer;
     sget-object v8, Ljava/io/File;->separator:Ljava/lang/String;
 
     invoke-virtual {v6, v8}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 1367
+    .line 1409
     if-eqz p4, :cond_4
 
     const-string p3, "icons"
@@ -1771,15 +1923,15 @@
     :cond_4
     invoke-virtual {v6, p3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 1368
+    .line 1410
     sget-object v8, Ljava/io/File;->separator:Ljava/lang/String;
 
     invoke-virtual {v6, v8}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 1369
+    .line 1411
     invoke-virtual {v6, p2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 1370
+    .line 1412
     new-instance v5, Ljava/io/File;
 
     invoke-virtual {v6}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
@@ -1788,7 +1940,7 @@
 
     invoke-direct {v5, v8}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 1371
+    .line 1413
     .local v5, ovlFile:Ljava/io/File;
     invoke-virtual {v5}, Ljava/io/File;->exists()Z
 
@@ -1796,13 +1948,12 @@
 
     if-eqz v8, :cond_0
 
-    .line 1372
+    .line 1414
     new-instance v4, Ljava/io/FileInputStream;
 
     invoke-direct {v4, v5}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
     :try_end_0
     .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
 
     .end local v3           #inputStream:Ljava/io/InputStream;
     .restart local v4       #inputStream:Ljava/io/InputStream;
@@ -1812,7 +1963,7 @@
     .restart local v3       #inputStream:Ljava/io/InputStream;
     goto :goto_2
 
-    .line 1378
+    .line 1420
     .end local v0           #accurateFile:Ljava/io/File;
     .end local v2           #file:Ljava/io/File;
     .end local v5           #ovlFile:Ljava/io/File;
@@ -1821,20 +1972,9 @@
     :catch_0
     move-exception v1
 
-    .line 1379
+    .line 1421
     .local v1, e:Ljava/io/FileNotFoundException;
     invoke-virtual {v1}, Ljava/io/FileNotFoundException;->printStackTrace()V
-
-    goto :goto_2
-
-    .line 1380
-    .end local v1           #e:Ljava/io/FileNotFoundException;
-    :catch_1
-    move-exception v1
-
-    .line 1381
-    .local v1, e:Ljava/io/IOException;
-    invoke-virtual {v1}, Ljava/io/IOException;->printStackTrace()V
 
     goto :goto_2
 .end method
@@ -3753,7 +3893,7 @@
     .line 606
     .restart local v6       #packageId:I
     :cond_2
-    const/4 v10, 0x3
+    const/4 v10, 0x5
 
     if-ne v6, v10, :cond_1
 
