@@ -1,9 +1,10 @@
 recovery_api_version=3
-blocksize=4096
-tool_extensions=device/samsung/tuna
-default_system_dev_certificate=build/target/product/security/testkey
-mkbootimg_args=
-fs_type=ext4
-system_size=685768704
-userdata_size=14539537408
+blocksize=0xffffffff
+boot_size=0x800000
+recovery_size=0x800000
+system_size=0x30100000
+userdata_size=0x30100000
 extfs_sparse_flag=-s
+default_system_dev_certificate=tools/security/testkey
+tool_extensions=/work/src/platform/smali-4.2-release/devices/base/
+fstab_version=1
