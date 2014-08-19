@@ -1,4 +1,4 @@
-reference
+废弃reference 已经不再使用！
 =========
 
 reference提供Smali插桩的参考代码，以及其他配置参考。
